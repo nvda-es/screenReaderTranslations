@@ -9,7 +9,7 @@ Các cải tiến của bản phát hành này bao gồm cải thiện khả nă
 == Tính năng mới ==
 - Các bản chữ nổi mới: Tiếng Trung Quốc (Đài Loan, Quan Thoại) cấp 1 và cấp 2. (#5553)
 - Trạng thái trả lời (Replied) / chuyển tiếp (Forwarded) đã được thông báo trên các thư trong danh sách thư của Microsoft Outlook. (#6911)
-- NVDA giờ đây đã đọc được mô tả cho các biểu tượng cảm xúc và cả những kí tự là một phần của kho dữ liệu Unicode Common Locale Data Repository. (#6523)
+- NVDA giờ đây đã đọc được mô tả cho các biểu tượng cảm xúc và cả những kí tự là một bộ phận của kho dữ liệu Unicode Common Locale Data Repository. (#6523)
 - Trong Microsoft Word, có thể đọc thông báo khoảng cách con trỏ từ lề trên và lề trái của trang bằng cách bấm NVDA+Delete bàn phím số. (#1939)
 - Trong Google Sheets với chế độ chữ nổi được bật, NVDA không còn thông báo 'đã chọn' ở mọi ô khi di chuyển con trỏ giữa các ô. (#8879)
 - Đã hỗ trợ cho Foxit Reader và Foxit Phantom PDF (#8944)
@@ -885,6 +885,43 @@ Các cải tiến của bản phát hành này bao gồm chế độ duyệt cho
 - Trong Internet Explorer và các điều khiển MSHTML khác, nội dung bên trong các thành phần bị ẩn với visibility:hidden không còn hiển thị ngoài ý muốn trong chế độ duyệt. (#4839, #3776)
 - Trong Internet Explorer và các điều khiển MSHTML khác, thuộc tính tiêu đề trên các điều khiển biểu mẫu không còn sở hữu các liên kết nhãn khác. (#4491)
 - Trong Internet Explorer và các điều khiển MSHTML khác, NVDA không còn bỏ qua các thành phần tại vị trí con trỏ do thuộc tính aria-activedescendant. (#4667)
+
+
+= 2014.4 =
+
+== Các tính năng mới ==
+- Các ngôn ngữ mới: Colombian Spanish, Punjabi.
+- Giờ đây, đã có thể khởi động lại NVDA hay khởi động lại NVDA và vô hiệu hóa các add-on từ hộp thoại thoát NVDA. (#4057)
+ - Cũng có thể chạy NVDA ở chế độ vô hiệu hóa add-on bằng cách dùng --disable-addons trong tùy chọn dòng lệnh.
+- Trong từ điển phát âm, giờ đã có thể quy định một mẫu chỉ khớp khi nó là một từ trọn vẹn; chẳng hạn, không so sánh khi nó là một bộ phận của một từ. (#1704)
+
+
+== Các thay đổi ==
+- Nếu di chuyển bằng cách duyệt đối tượng đến một đối tượng bên trong một tài liệu ở chế độ duyệt, nhưng đối tượng trước đó thì không, con trỏ duyệt sẽ tự động bật cho tài liệu. Trước đây, điều đó chỉ xảy ra nếu con trỏ duyệt đối tượng bị chuyển đi vì focus có thay đổi. (#4369)
+- Danh sách các màn hình chữ nổi và bộ đọc trong các hộp thoại cài đặt giờ đây đã được sắp xếp theo bảng chữ cái, ngoại trừ không có màn hình nổi / không đọc, giờ đây được đặt ở cuối. (#2724)
+- Cập nhật thư viện phiên dịch chữ nổi liblouis lên 2.6.0. (#4434, #3835)
+- Trong chế độ duyệt, bấm e và shift+e để di chuyển đến các trường nhập liệu giờ đây đã bao gồm các hộp xổ nhập liệu. Điều này bao gồm ô tìm kiếm trong phiên bản mới nhất của trang tìm kiếm Google. (#4436)
+- Bấm chuột trái vào biểu tượng NVDA ở vùng thông báo giờ đây sẽ mở trình đơn NVDA thay vì không làm gì. (#4459)
+
+
+== Sửa lỗi ==
+- Khi chuyển focus trở về một tài liệu trong chế độ duyệt, (ví dụ: bấm alt+tab chuyển đến một trang web đang mở), con trỏ duyệt được đặt đúng vị trí của con trỏ ảo, thay vì là vị  trí của con trỏ hệ thống. (ví dụ: một liên kết gần đó). (#4369)
+- Trong trình chiếu PowerPoint, con trỏ duyệt đã đi theo con trỏ ảo một cách chính xác. (#4370)
+- Trong Mozilla Firefox và các trình duyệt trên nền Gecko-based khác, nội dung trong live region sẽ được thông báo nếu nó có một loại ARIA live có thể dùng được  khác với live region cha; ví dụ: khi nội dung được đánh dấu là chắc chắn được thêm vào live region được đánh dấu là polite. (#4169)
+- Trong Internet Explorer và các điều khiển MSHTML khác, trong vài trường hợp mà tài liệu nằm trong một tài liệu khác không còn ngăn chặn người dùng truy xuất một vài nội dung trong đó (cụ thể, framesets bên trong framesets). (#4418)
+- NVDA không còn xảy ra lỗi khi chuẩn bị dùng một màn hình nổi Handy Tech trong vài trường hợp. (#3709)
+- Trong Windows Vista, hộp thoại giả mạo tên gọi "Entry Point Not Found" không còn hiển thị trong vài trường hợp như là khi khởi động NVDA từ biểu tượng trên Desktop hoặc bằng phím nóng. (#4235)
+- Các lỗi nghiêm trọng với điều khiển nhập văn bản trong các hộp thoại của các phiên bản Eclipse gần đây đã được sửa. (#3872)
+- Trong Outlook 2010, việc di chuyển con trỏ giờ đây đã hoạt động như mong muốn trong trường location của appointments và meeting requests. (#4126)
+- Bên trong một live region, nội dung được đánh dấu không phải là live (aria-live="off" chẳng hạn) giờ đây đã bị bỏ qua một cách chính xác. (#4405)
+- Khi đọc nội dung của một thanh trạng thái có tên, tên của thanh trạng thái giờ đây đã tách rời với từ đầu tiên của nội dung thanh trạng thái đó. (#4430)
+- Ở các trường nhập mật khẩu với chế độ nhập từ khi đọc được bật, không còn tình trạng đọc nhiều dấu sao khi bắt đầu đánh một từ mới. (#4402)
+- Trong danh sách thư của Microsoft Outlook, các thành phần không còn bị đọc một cách vô nghĩa là thành phần dữ liệu. (#4439)
+- Khi chọn văn bản trong điều khiển chỉnh sửa mã của Eclipse IDE, không còn tình trạng toàn bộ nội dung đã chọn bị đọc lên mỗi khi thay đổi lựa chọn. (#2314)
+- Nhiều phiên bản của Eclipse, như là Spring Tool Suite và phiên bản được bao gồm trong Android Developer Tools bundle giờ đây đã được nhận dạng đúng là Eclipse và được quản lý một cách phù hợp. (#4360, #4454)
+- Theo dõi chuột và khám phá bằng cảm ứng trong Internet Explorer và các điều khiển MSHTML khác (bao gồm nhiều ứng dụng của Windows 8) giờ đây đã hoạt động chính xác hơn trên các màn hình có điểm ảnh cao hay kích thước thu phóng của tài liệu bị thay đổi . (#3494) 
+- Theo dõi chuột và khám phá bằng cảm ứng trong Internet Explorer và các điều khiển MSHTML khác giờ đây sẽ đọc nhãn của nhiều nút hơn. (#4173)
+- Khi dùng một màn hình nổi của Papenmeier BRAILLEX với BrxCom, các phím trên màn hình đã hoạt động như mong muốn. (#4614)
 
 
 == Các thay đổi cho nhà phát triển ==
