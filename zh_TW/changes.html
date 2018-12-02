@@ -10,6 +10,81 @@
 </CENTER>
 
 
+<H2>2018.4</H2>
+
+<P>
+Highlights of this release include performance improvements in recent Mozilla Firefox versions, announcement of emojis with all synthesizers, reporting of replied/forwarded status in Outlook, reporting the distance of the cursor to the edge of a Microsoft Word page, and many bug fixes.
+</P>
+
+<H3>New Features</H3>
+
+<UL>
+<LI>New braille tables: Chinese (China, Mandarin) grade 1 and grade 2. (<A HREF="https://github.com/nvaccess/nvda/issues/5553">#5553</A>)
+<LI>Replied / Forwarded status is now reported on mail items in the Microsoft Outlook message list. (<A HREF="https://github.com/nvaccess/nvda/issues/6911">#6911</A>)
+<LI>NVDA is now able to read descriptions for emoji as well as other characters that are part of the Unicode Common Locale Data Repository. (<A HREF="https://github.com/nvaccess/nvda/issues/6523">#6523</A>)
+<LI>In Microsoft Word, the cursor's distance from the top and left edges of the page can be reported by pressing NVDA+numpadDelete. (<A HREF="https://github.com/nvaccess/nvda/issues/1939">#1939</A>)
+<LI>In Google Sheets with braille mode enabled, NVDA no longer announces 'selected' on every cell when moving focus between cells. (<A HREF="https://github.com/nvaccess/nvda/issues/8879">#8879</A>)
+<LI>Added support for Foxit Reader and Foxit Phantom PDF. (<A HREF="https://github.com/nvaccess/nvda/issues/8944">#8944</A>)
+<LI>Added support for the DBeaver database tool. (<A HREF="https://github.com/nvaccess/nvda/issues/8905">#8905</A>)
+</UL>
+
+<H3>Changes</H3>
+
+<UL>
+<LI>"Report help balloons" in the Object Presentations dialog has been renamed to "Report notifications" to include reporting of toast notifications in Windows 8 and later. (<A HREF="https://github.com/nvaccess/nvda/issues/5789">#5789</A>)
+<LI>In NVDA's keyboard settings, the checkboxes to enable or disable NVDA modifier keys are now displayed in a list rather than as separate checkboxes.
+<LI>NVDA will no longer present redundant information when reading clock system tray on some versions of Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/4364">#4364</A>)
+<LI>Updated liblouis braille translator to version 3.7.0. (<A HREF="https://github.com/nvaccess/nvda/issues/8697">#8697</A>)
+<LI>Updated eSpeak-NG to commit 919f3240cbb.
+</UL>
+
+<H3>Bug Fixes</H3>
+
+<UL>
+<LI>In Outlook 2016/365, the category and flag status are reported for messages. (<A HREF="https://github.com/nvaccess/nvda/issues/8603">#8603</A>)
+<LI>When NVDA is set to languages such as Kirgyz, Mongolian or Macedonian, it no longer shows a dialog on start-up warning that the language is not supported by the Operating System. (<A HREF="https://github.com/nvaccess/nvda/issues/8064">#8064</A>)
+<LI>Moving the mouse to the navigator object will now much more accurately move the mouse to the browse mode position in Mozilla Firefox, Google Chrome and Acrobat Reader DC. (<A HREF="https://github.com/nvaccess/nvda/issues/6460">#6460</A>)
+<LI>Interacting with combo boxes on the web in Firefox, Chrome and Internet Explorer has been improved. (<A HREF="https://github.com/nvaccess/nvda/issues/8664">#8664</A>)
+<LI>If running on the Japanese version of Windows XP or Vista, NVDA now displays OS version requirements message as expected. (<A HREF="https://github.com/nvaccess/nvda/issues/8771">#8771</A>)
+<LI>Performance improvements when navigating large pages with lots of dynamic changes in Mozilla Firefox. (<A HREF="https://github.com/nvaccess/nvda/issues/8678">#8678</A>)
+<LI>Braille no longer shows font attributes  if they have been disabled in  Document Formatting settings. (<A HREF="https://github.com/nvaccess/nvda/issues/7615">#7615</A>)
+<LI>NVDA no longer fails to track focus in File Explorer and other applications using UI Automation when another app is busy (such as batch processing audio). (<A HREF="https://github.com/nvaccess/nvda/issues/7345">#7345</A>)
+<LI>In ARIA menus on the web, the Escape key will now be passed through to the menu and no longer turn off focus mode unconditionally. (<A HREF="https://github.com/nvaccess/nvda/issues/3215">#3215</A>)
+<LI>In the new Gmail web interface, when using quick navigation inside messages while reading them, the entire body of the message is no longer reported after the element to which you just navigated. (<A HREF="https://github.com/nvaccess/nvda/issues/8887">#8887</A>)
+<LI>After updating NVDA, Browsers such as Firefox and google Chrome should no longer crash, and browse mode should continue to correctly reflect updates to any currently loaded documents. (<A HREF="https://github.com/nvaccess/nvda/issues/7641">#7641</A>) 
+<LI>NVDA no longer reports clickable multiple times in a row when navigating clickable content in Browse Mode. (<A HREF="https://github.com/nvaccess/nvda/issues/7430">#7430</A>)
+<LI>Gestures performed on baum Vario 40 braille displays will no longer fail to execute. (<A HREF="https://github.com/nvaccess/nvda/issues/8894">#8894</A>)
+<LI>In Google Slides with Mozilla Firefox, NVDA no longer reports selected text on every control with focus. (<A HREF="https://github.com/nvaccess/nvda/issues/8964">#8964</A>)
+</UL>
+
+<H3>Changes for Developers</H3>
+
+<UL>
+<LI>gui.nvdaControls now contains two classes to create accessible lists with check boxes. (<A HREF="https://github.com/nvaccess/nvda/issues/7325">#7325</A>)
+ <UL>
+ <LI>CustomCheckListBox is an accessible subclass of wx.CheckListBox.
+ <LI>AutoWidthColumnCheckListCtrl adds accessible check boxes to an AutoWidthColumnListCtrl, which itself is based on wx.ListCtrl.
+ </UL>
+<LI>If you need to make a wx widget accessible which isn't already, it is possible to do so by using an instance of gui.accPropServer.IAccPropServer_impl. (<A HREF="https://github.com/nvaccess/nvda/issues/7491">#7491</A>)
+ <UL>
+ <LI>See the implementation of gui.nvdaControls.ListCtrlAccPropServer for more info.
+ </UL>
+<LI>Updated configobj to 5.1.0dev commit 5b5de48a. (<A HREF="https://github.com/nvaccess/nvda/issues/4470">#4470</A>)
+<LI>The config.post_configProfileSwitch action now takes the optional prevConf keyword argument, allowing handlers to take action based on differences between configuration before and after the profile switch. (<A HREF="https://github.com/nvaccess/nvda/issues/8758">#8758</A>)
+</UL>
+
+<H2>2018.3.2</H2>
+
+<P>
+This is a minor release to work around a crash in Google Chrome when navigating tweetts on <A HREF="http://www.twitter.com">www.twitter.com</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/8777">#8777</A>)
+</P>
+
+<H2>2018.3.1</H2>
+
+<P>
+This is a minor release to fix a critical bug in NVDA which caused 32 bit versions of Mozilla Firefox to crash. (<A HREF="https://github.com/nvaccess/nvda/issues/8759">#8759</A>)
+</P>
+
 <H2>2018.3</H2>
 
 <P>
@@ -78,6 +153,7 @@ Highlights of this release include automatic detection of many Braille displays,
  <LI>Newly inserted bullets/numbers in a Word document are correctly reported in both speech and braille. (<A HREF="https://github.com/nvaccess/nvda/issues/7970">#7970</A>)
  </UL>
 <LI>In Windows 10 1803 and later, it is now possible to install add-ons if the "Use Unicode UTF-8 for worldwide language support" feature is enabled. (<A HREF="https://github.com/nvaccess/nvda/issues/8599">#8599</A>)
+<LI>NVDA will no longer make iTunes 12.9 and newer completely unusable to interact with. (<A HREF="https://github.com/nvaccess/nvda/issues/8744">#8744</A>)
 </UL>
 
 <H3>Changes for Developers</H3>
@@ -1832,7 +1908,7 @@ Highlights of this release include support for Asian character input; experiment
  <LI>This is supported for both NVDA itself and add-ons.
  <LI>xgettext and msgfmt from GNU gettext must be used to create any PO and MO files. The Python tools do not support message contexts.
  <LI>For xgettext, pass the --keyword=pgettext:1c,2 command line argument to enable inclusion of message contexts.
- <LI>See <A HREF="https://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts">https://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts</A> for more information.
+ <LI>See <A HREF="http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts">http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts</A> for more information.
  </UL>
 <LI>It is now possible to access built-in NVDA modules where they have been overridden by third party modules. See the nvdaBuiltin module for details.
 <LI>Add-on translation support can now be used within the add-on installTasks module. (<A HREF="https://github.com/nvaccess/nvda/issues/2715">#2715</A>)
@@ -2613,7 +2689,7 @@ Major highlights of this release include support for 64 bit editions of Windows;
 <LI>Backspace is now handled correctly when speaking typed words. (<A HREF="https://github.com/nvaccess/nvda/issues/306">#306</A>)
 <LI>Don't incorrectly report "Start menu" for certain context menus in Windows Explorer/the Windows shell. (<A HREF="https://github.com/nvaccess/nvda/issues/257">#257</A>)
 <LI>NVDA now correctly handles ARIA labels in Mozilla Gecko when there is no other useful content. (<A HREF="https://github.com/nvaccess/nvda/issues/156">#156</A>)
-<LI>NVDA no longer incorrectly enables focus mode automatically for editable text fields which update their value when the focus changes; e.g. <A HREF="https://tigerdirect.com/">https://tigerdirect.com/</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/220">#220</A>)
+<LI>NVDA no longer incorrectly enables focus mode automatically for editable text fields which update their value when the focus changes; e.g. <A HREF="http://tigerdirect.com/">http://tigerdirect.com/</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/220">#220</A>)
 <LI>NVDA will now attempt to recover from some situations which would previously cause it to freeze completely. It may take up to 10 seconds for NVDA to detect and recover from such a freeze.
 <LI>When the NVDA language is set to "User default", use the user's Windows  display language setting instead of the Windows locale setting. (<A HREF="https://github.com/nvaccess/nvda/issues/353">#353</A>)
 <LI>NVDA now recognises the existence of controls in AIM 7.
@@ -2912,7 +2988,7 @@ Major highlights of this release include support for 64 bit editions of Windows;
 <LI>NVDA now has a built-in synthesizer called eSpeak, developed by Jonathan Duddington.It is very responsive and lite-weight, and has support for many different languages. Sapi synthesizers can still be used, but eSpeak will be used by default.
  <UL>
  <LI>eSpeak does not depend on any special software to be installed, so it can be used with NVDA on any computer, on a USB thumb drive, or anywhere. 
- <LI>For more info on eSpeak, or to find other versions, go to <A HREF="https://espeak.sourceforge.net/">https://espeak.sourceforge.net/</A>.
+ <LI>For more info on eSpeak, or to find other versions, go to <A HREF="http://espeak.sourceforge.net/">http://espeak.sourceforge.net/</A>.
  </UL>
 <LI>Fix bug where the wrong character was being announced when pressing delete in Internet Explorer / Outlook Express editable panes.
 <LI>Added support for more edit fields in Skype.
