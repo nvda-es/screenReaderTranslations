@@ -194,7 +194,7 @@ addresses = {
     },
     'sk': {
         'lang':'Slovak',
-        'email': ['Ondrej Rosik <ondrej.rosik@gmail.com>', 'Peter Vagner <peter.v@datagate.sk>'],
+        'email': ['Ondrej Rosik <ondrej.rosik@gmail.com>', 'Peter Vagner <peter.v@datagate.sk>', 'Jan Kulik <jan.kulik.szsle@outlook.sk>'],
     },
     'sl': {
         'lang':'Slovenian',
