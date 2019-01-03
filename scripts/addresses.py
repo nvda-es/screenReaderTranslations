@@ -117,7 +117,7 @@ addresses = {
         'email': ['Beqa Gozalishvili <beqaprogger@gmail.com>', 'Goderdzi Gogoladze <goderdzigogoladze@gmail.com>'],
     },
     'kk': {
-        'lang': 'Kazikh',
+        'lang': 'Kazakh',
         'email': ['Timati <timati_99999@mail.ru>'],
     },
     'kmr': {
