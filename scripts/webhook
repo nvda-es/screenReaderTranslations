@@ -11,7 +11,8 @@ SRT_PATH = "/home/nvdal10n/mr/srt"
 SCRIPTS_PATH = os.path.join(SRT_PATH, "scripts")
 
 # Ensure our overridden svn gets used, includingsubprocesses.
-os.environ["PATH"] = "/home/nvdal10n/bin:" + os.environ["PATH"]
+# Also add /usr/local/bin, which isn't already included in this context.
+os.environ["PATH"] = "/home/nvdal10n/bin:/usr/local/bin" + os.environ["PATH"]
 
 form = cgi.FieldStorage() # instantiate only once!
 
