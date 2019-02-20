@@ -10,6 +10,100 @@
 </CENTER>
 
 
+<H2>2019.1</H2>
+
+<H3>Neue Features</H3>
+
+<UL>
+<LI>Neue Braille-Tabellen: Arabisches 8-Punkt-Computerbraille, arabische Kurzschrift, spanische Kurzschrift. (<A HREF="https://github.com/nvaccess/nvda/issues/4435">#4435</A>)
+<LI>Den Maus-Einstellungen von NVDA wurde eine Option hinzugefügt, um Situationen in NVDA zu definieren, in denen die Maus von einer anderen Anwendung gesteuert wird. (<A HREF="https://github.com/nvaccess/nvda/issues/8452">#8452</A>) 
+ <UL>
+ <LI>Dadurch kann NVDA die Maus verfolgen, wenn ein System mit TeamViewer oder einer anderen Fernsteuerungssoftware ferngesteuert wird.
+ </UL>
+<LI>Der Befehlszeilenparameter "-disable-start-on-logon" wurde hinzugefügt, um stille Installationen von NVDA zu ermöglichen, die standardmäßig nicht auf dem Anmeldebildschirm ausgeführt werden. (<A HREF="https://github.com/nvaccess/nvda/issues/8574">#8574</A>)
+<LI>Es ist möglich, die Protokollierungsfunktionen von NVDA auszuschalten, indem Sie im Bereich Allgemeine Einstellungen die Protokollierungsstufe auf "deaktiviert" setzen. (<A HREF="https://github.com/nvaccess/nvda/issues/8516">#8516</A>)
+<LI>Das Vorhandensein von Formeln in LibreOffice und Apache OpenOffice Tabellenkalkulationen wird nun angesagt. (<A HREF="https://github.com/nvaccess/nvda/issues/860">#860</A>)
+<LI>In Mozilla Firefox und Google Chrome meldet der Lese-Modus nun das ausgewählte Element in Listenfeldern und Bäumen.
+ <UL>
+ <LI>Dies funktioniert ab Firefox 66 und höher.
+ <LI>Dies funktioniert nicht für bestimmte Listenfelder (HTML Select Controls) in Chrome.
+ </UL>
+<LI>Die afrikanische Braille-Tabelle wurde hinzugefügt. (<A HREF="https://github.com/nvaccess/nvda/issues/9186">#9186</A>)
+<LI>Frühzeitige Unterstützung von Apps wie Mozilla Firefox auf Computern mit ARM64-Prozessoren (z. B. Qualcom Snapdragon). (<A HREF="https://github.com/nvaccess/nvda/issues/9216">#9216</A>)
+<LI>Der Dialog Einstellungen von NVDA wurde um eine neue Kategorie Erweiterte Einstellungen ergänzt, einschließlich der Möglichkeit, die neue Unterstützung von Microsoft Word durch NVDA über die Microsoft UI Automation API auszuprobieren. (<A HREF="https://github.com/nvaccess/nvda/issues/9200">#9200</A>)
+<LI>Unterstützung für die grafische Ansicht in der Datenträgerverwaltung von Windows wurde hinzugefügt. (<A HREF="https://github.com/nvaccess/nvda/issues/1486">#1486</A>)
+<LI>Unterstützung für Handy Tech Connect Braille und Basic Braille 84 wurde zugefügt. (<A HREF="https://github.com/nvaccess/nvda/issues/9249">#9249</A>)
+<LI>Der Einstellbereich für den Suchmodus wurde um eine experimentelle Option erweitert, mit der Sie verhindern können, dass der Systemfokus dem Cursor im Suchmodus folgt. (<A HREF="https://github.com/nvaccess/nvda/issues/2039">#2039</A>) Obwohl dies nicht für alle Websites geeignet ist, kann dies behoben werden: 
+ <UL>
+ <LI>Gummibandeffekt: NVDA löscht sporadisch den letzten Tastendruck im Lese-Modus, indem es zur vorherigen Position springt.
+ <LI>Eingabefeldern stehlen den System-Fokus, wenn sie auf einigen Websites nach unten zeigen.
+ <LI>Die Tastenanschläge im Lese-Modus reagieren langsam.
+ </UL>
+</UL>
+
+<H3>Änderungen</H3>
+
+<UL>
+<LI>Der Liblouis-Brailleübersetzer wurde auf die Version 3.8.0 aktualisiert. (<A HREF="https://github.com/nvaccess/nvda/issues/9013">#9013</A>)
+<LI>Autoren von Erweiterungen können nun eine mindestens erforderliche NVDA-Version für ihre Erweiterungen durchsetzen. Nicht unterstützte Erweiterungen werden nicht geladen oder installiert. (<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>)
+<LI>Autoren von Erweiterungen müssen nun die letzte Version von NVDA angeben, mit der der Erweiterung getestet wurde. Die Benutzer werden vor der Installation oder Aktivierung ungetesteter Erweiterungen gewarnt. (<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>)
+<LI>Der Befehl "Maus auf Navigator-Objekt bewegen" ist nun sowohl in Microsoft Word als auch für UIA-Steuerelemente, insbesondere Microsoft Edge, verfügbar. (<A HREF="https://github.com/nvaccess/nvda/issues/7916">#7916</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8371">#8371</A>)
+<LI>Die Ansage von Text unter der Maus wurde innerhalb von Microsoft Edge und anderen UIA-Anwendungen verbessert. (<A HREF="https://github.com/nvaccess/nvda/issues/8370">#8370</A>)
+<LI>Wenn NVDA mit dem Befehlszeilenparameter "--portable-path" gestartet wird, wird der angegebene Pfad automatisch benutzt, wenn versucht wird, eine portable Kopie von NVDA über das NVDA-Menü zu erstellen. (<A HREF="https://github.com/nvaccess/nvda/issues/8623">#8623</A>)
+<LI>Der Weg zur norwegischen Braille-Tabelle wurde aktualisiert, um die Norm aus dem Jahr 2015 zu berücksichtigen. (<A HREF="https://github.com/nvaccess/nvda/issues/9170">#9170</A>)
+<LI>Bei der Navigation nach Absatz (Strg+Pfeiltaste) oder nach Tabellenzelle (Strg+Alt+Pfeiltaste) wird das Vorhandensein von Rechtschreibfehlern nicht mehr angezeigt, auch wenn NVDA konfiguriert ist, diese automatisch anzukündigen. Denn Absätze und Tabellenzellen können recht groß sein, und die Berechnung von Rechtschreibfehlern in einigen Anwendungen kann sehr kostspielig sein. (<A HREF="https://github.com/nvaccess/nvda/issues/9217">#9217</A>)
+<LI>NVDA lädt nicht mehr automatisch benutzerdefinierte AppModule, globalPlugins sowie Braille- und Synth-Treiber aus dem NVDA-Benutzerkonfigurationsverzeichnis. Dieser Code sollte stattdessen als Add-on mit korrekten Versionsinformationen verpackt werden, um sicherzustellen, dass inkompatibler Code nicht mit aktuellen Versionen von NVDA ausgeführt wird. (<A HREF="https://github.com/nvaccess/nvda/issues/9238">#9238</A>)
+ <UL>
+ <LI>Für Entwickler, die Code während der Entwicklung testen müssen, aktivieren Sie das Developer Scratchpad-Verzeichnis von NVDA in der Kategorie "Erweitert" der NVDA-Einstellungen und legen Sie Ihren Code in das Verzeichnis 'scratchpad' im NVDA-Benutzerkonfigurationsverzeichnis, wenn diese Option aktiviert ist.
+ </UL>
+</UL>
+
+<H3>Fehlerbehebungen</H3>
+
+<UL>
+<LI>OneCore-Sprachsynthesizer: Ab Windows 10. April 2018 werden große Teile der Stille nicht mehr zwischen Sprachäußerungen eingefügt. (<A HREF="https://github.com/nvaccess/nvda/issues/8985">#8985</A>)
+<LI>Wenn Sie sich in Klartext-Steuerelementen (z. B. Notepad) oder im Lese-Modus nach Zeichen bewegen, werden 32-Bit-Emoji-Zeichen, die aus zwei UTF-16-Codepunkten (z. B. ðŸ¤¦) bestehen, nun korrekt gelesen. (<A HREF="https://github.com/nvaccess/nvda/issues/8782">#8782</A>)
+<LI>Der Bestätigungsdialog für den Neustart nach dem Ändern der Sprache der Benutzeroberfläche wurde verbessert. Der Text und die Beschriftungen der Schaltflächen sind nun prägnanter und weniger verwirrend. (<A HREF="https://github.com/nvaccess/nvda/issues/6416">#6416</A>)
+<LI>Wenn ein Sprachsynthesizer eines Drittanbieters nicht geladen werden kann, greift NVDA unter Windows 10 auf Windows OneCore-Sprache zurück, anstatt espeak. (<A HREF="https://github.com/nvaccess/nvda/issues/9025">#9025</A>)
+<LI>Der Willkommensdialog im NVDA-Menü wurde auf geschützten Desktops entfernt. (<A HREF="https://github.com/nvaccess/nvda/issues/8520">#8520</A>)
+<LI>Beim Tabben oder bei der Schnellnavigation im Lese-Modus werden Legenden auf Registerkarten nun einheitlicher dargestellt. (<A HREF="https://github.com/nvaccess/nvda/issues/709">#709</A>)
+<LI>NVDA wird nun Auswahländerungen für bestimmte Zeitsammler bekannt geben, z. B. in der App Alarm und Uhr. (<A HREF="https://github.com/nvaccess/nvda/issues/5231">#5231</A>)
+<LI>Im Aktionscenter von Windows 10 meldet NVDA Statusmeldungen, wenn Sie zwischen schnellen Aktionen wie Helligkeit und Fokusunterstützung umschalten. (<A HREF="https://github.com/nvaccess/nvda/issues/8954">#8954</A>)
+<LI>Im Aktionscenter in Windows 10 Oktober 2018 Update und früher erkennt NVDA die Helligkeitsschnellsteuerung als Schaltfläche anstelle einer Umschalttaste. (<A HREF="https://github.com/nvaccess/nvda/issues/8845">#8845</A>)
+<LI>NVDA wird den Cursor erneut verfolgen und gelöschte Zeichen im Microsoft Excel "Gehe zu" und "Eingabefeldern suchen" ankündigen. (<A HREF="https://github.com/nvaccess/nvda/issues/9042">#9042</A>)
+<LI>Ein seltener Absturz im Lese-Modus in Firefox wurde behoben. (<A HREF="https://github.com/nvaccess/nvda/issues/9152">#9152</A>)
+<LI>NVDA meldet nicht mehr den Fokus für einige Steuerelemente in der Multifunktionsleiste von Microsoft Office 2016, wenn sie ausgeblendet wird.
+<LI>NVDA meldet den vorgeschlagenen Kontakt nicht mehr, wenn Adressen in neuen Nachrichten in Outlook 2016 eingegeben werden. (<A HREF="https://github.com/nvaccess/nvda/issues/8502">#8502</A>)
+<LI>Die letzten paar Cursor-Routing-Tasten auf der 80er Eurobraille-Anzeige führen den Cursor nicht mehr an eine Position an oder kurz nach dem Beginn der Braillezeile. (<A HREF="https://github.com/nvaccess/nvda/issues/9160">#9160</A>)
+<LI>Die Tabellennavigation in der Thread-Ansicht in Mozilla Thunderbird wurde korrigiert. (<A HREF="https://github.com/nvaccess/nvda/issues/8396">#8396</A>)
+<LI>In Mozilla Firefox und Google Chrome funktioniert die Umschaltung in den Fokus-Modus jetzt korrekt für bestimmte Listboxen und Bäume (wo die Listbox/Baum selbst nicht fokussierbar ist, aber ihre Elemente sind). (<A HREF="https://github.com/nvaccess/nvda/issues/3573">#3573</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9157">#9157</A>) 
+<LI>Der Lese-Modus ist nun standardmäßig korrekt eingeschaltet, wenn Nachrichten in Outlook 2016 / 365 gelesen werden, wenn die experimentelle UI-Automatisierung von NVDA für Word-Dokumente verwendet wird. (<A HREF="https://github.com/nvaccess/nvda/issues/9188">#9188</A>) 
+<LI>NVDA wird nun weniger wahrscheinlich so einfrieren, dass der einzige Weg zur Flucht darin besteht, sich von Ihrer aktuellen Windows-Sitzung abzumelden. (<A HREF="https://github.com/nvaccess/nvda/issues/6291">#6291</A>)
+<LI>In Windows 10. Oktober 2018 Update und später, beim Öffnen des Cloud-Clipboard-Verlaufs mit leerer Zwischenablage, wird NVDA den Status der Zwischenablage zurückmelden. (<A HREF="https://github.com/nvaccess/nvda/issues/9112">#9112</A>)
+<LI>In Windows 10. Oktober 2018 Update und später, bei der Suche nach Emojis im Emoji-Panel, wird NVDA die besten Suchergebnisse bekannt geben. (<A HREF="https://github.com/nvaccess/nvda/issues/9112">#9112</A>)
+<LI>NVDA friert im Hauptfenster von Virtualbox 5.2 und höher nicht mehr ein. (<A HREF="https://github.com/nvaccess/nvda/issues/9202">#9202</A>)
+<LI>Die Reaktionsfähigkeit in Microsoft Word bei der Navigation durch Zeilen, Absätze oder Tabellenzellen kann in einigen Dokumenten deutlich verbessert werden. Zur Erinnerung: Um die beste Leistung zu erzielen, stellen Sie Microsoft Word nach dem Öffnen eines Dokuments mit Alt+W auf Entwurfsansicht ein. (<A HREF="https://github.com/nvaccess/nvda/issues/9217">#9217</A>) 
+<LI>In Mozilla Firefox und Google Chrome werden leere Warnungen nicht mehr gemeldet. (<A HREF="https://github.com/nvaccess/nvda/issues/5657">#5657</A>)
+<LI>Deutliche Leistungssteigerungen bei der Navigation durch Zellen in Microsoft Excel, insbesondere wenn die Kalkulationstabelle Kommentare und / oder Ausklapplisten zur Validierung enthält. (<A HREF="https://github.com/nvaccess/nvda/issues/7348">#7348</A>)
+<LI>Es sollte nicht mehr notwendig sein, die Bearbeitung in der Zelle in den Optionen von Microsoft Excel zu deaktivieren, um in Excel 2016 / 365 auf die Steuerung der Zellenbearbeitung mit NVDA zuzugreifen. (<A HREF="https://github.com/nvaccess/nvda/issues/8146">#8146</A>).
+</UL>
+
+<H3>Änderungen für Entwickler</H3>
+
+<UL>
+<LI>NVDA kann nun mit allen Editionen von Microsoft Visual Studio 2017 (nicht nur mit der Community-Version) erstellt werden. (<A HREF="https://github.com/nvaccess/nvda/issues/8939">#8939</A>)
+<LI>Sie können nun die Protokollausgabe von Liblouis in das NVDA-Protokoll aufnehmen, indem Sie das boolesche Flag "louis" im Abschnitt "debugLogging" der NVDA-Konfiguration setzen. (<A HREF="https://github.com/nvaccess/nvda/issues/4554">#4554</A>)
+<LI>Autoren von Erweiterungen sind nun in der Lage, Informationen zur Kompatibilität mit NVDA-Versionen im Manifest der Erweiterungen bereitzustellen. (<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9055">#9055</A>)
+ <UL>
+ <LI>minimumNVDAVersion: Die minimale erforderliche Version von NVDA, damit eine Erweiterung ordnungsgemäß funktioniert. 
+ <LI>lastTestedNVDAVersion: Die zuletzt getestete Version von NVDA, mit der einer Erweiterung getestet wurde.
+ </UL>
+<LI>Die "OffsetsTextInfo"-Objekte können nun die Methode _getBoundingRectFromOffset implementieren, um das Abrufen von begrenzten Rechtecken pro Zeichen anstelle von Punkten zu ermöglichen. (<A HREF="https://github.com/nvaccess/nvda/issues/8572">#8572</A>)
+<LI>Den TextInfo-Objekten wurde eine Eigenschaft boundingRect hinzugefügt, um das umschließende Rechteck eines Textbereichs abzurufen. (<A HREF="https://github.com/nvaccess/nvda/issues/8371">#8371</A>)
+<LI>Eigenschaften und Methoden innerhalb von Klassen können nun in NVDA als abstrakt gekennzeichnet werden. Diese Klassen lösen einen Fehler aus, wenn sie instanziiert werden. (<A HREF="https://github.com/nvaccess/nvda/issues/8294">#8294</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8652">#8652</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8658">#8658</A>)
+<LI>NVDA kann die Zeit seit der Eingabe protokollieren, wenn Text gesprochen wird, was bei der Messung der wahrgenommenen Reaktionsfähigkeit hilft. Dies kann durch Setzen der Einstellung "timeSinceInput" auf "True" im Abschnitt "debugLog" der NVDA-Konfiguration aktiviert werden. (<A HREF="https://github.com/nvaccess/nvda/issues/9167">#9167</A>)
+</UL>
+
 <H2>2018.4.1</H2>
 
 <P>
