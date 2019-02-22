@@ -30,9 +30,10 @@
     <LI><A HREF="#PortableAndTemporaryCopyRestrictions">3.1. Restriccións da Copia Portable e Temporal</A>
     <LI><A HREF="#InstallingNVDA">3.2. Instalando NVDA</A>
       <UL>
-      <LI><A HREF="#StartAtWindowsLogon">3.2.1. Iniciar na Autentificación de Windows</A>
-      <LI><A HREF="#CreateDesktopShortcut">3.2.2. Crear Atallos do Escritorio (ctrl+alt+n)</A>
-      <LI><A HREF="#CopyPortableConfigurationToCurrentUserAccount">3.2.3. Copiar Configuración Portable da Actual Conta do Usuario</A>
+      <LI><A HREF="#InstallWithIncompatibleAddons">3.2.1. Aviso sobre complementos incompatibles</A>
+      <LI><A HREF="#StartAtWindowsLogon">3.2.2. Iniciar na Autentificación de Windows</A>
+      <LI><A HREF="#CreateDesktopShortcut">3.2.3. Crear Atallos do Escritorio (ctrl+alt+n)</A>
+      <LI><A HREF="#CopyPortableConfigurationToCurrentUserAccount">3.2.4. Copiar Configuración Portable da Actual Conta do Usuario</A>
       </UL>
     <LI><A HREF="#CreatingAPortableCopy">3.3. Creando unha Copia Portable</A>
     </UL>
@@ -140,6 +141,7 @@
       <LI><A HREF="#BrowseModeSettings">11.1.13. Modo Exploración (NVDA+control+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">11.1.14. Formateado de Documento (NVDA+control+d)</A>
       <LI><A HREF="#Win10OcrSettings">11.1.15. Opcións do OCR do Windows 10</A>
+      <LI><A HREF="#toc91">11.1.16. Opcións Avanzadas</A>
       </UL>
     <LI><A HREF="#MiscSettings">11.2. Miscelánea de Opcións</A>
       <UL>
@@ -164,8 +166,9 @@
     <LI><A HREF="#LogViewer">12.1. Visualizador do Rexistro</A>
     <LI><A HREF="#SpeechViewer">12.2. Visualizador de Voz</A>
     <LI><A HREF="#AddonsManager">12.3. Administrador de Complementos</A>
-    <LI><A HREF="#PythonConsole">12.4. Consola de Python</A>
-    <LI><A HREF="#ReloadPlugins">12.5. Recargar plugins</A>
+    <LI><A HREF="#incompatibleAddonsManager">12.4. Administrador de Complementos Incompatibles</A>
+    <LI><A HREF="#PythonConsole">12.5. Consola de Python</A>
+    <LI><A HREF="#ReloadPlugins">12.6. Recargar plugins</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">13. Sintetizadores de Voz Soportados</A>
     <UL>
@@ -188,9 +191,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant Series BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc126">14.9.1. Asignacións de teclas para todos os modelos</A>
-      <LI><A HREF="#toc127">14.9.2. Asignacións de teclas para Brailliant BI 32, BI 40 e B 80</A>
-      <LI><A HREF="#toc128">14.9.3. Asignacións de teclas para Brailliant BI 14</A>
+      <LI><A HREF="#toc129">14.9.1. Asignacións de teclas para todos os modelos</A>
+      <LI><A HREF="#toc130">14.9.2. Asignacións de teclas para Brailliant BI 32, BI 40 e B 80</A>
+      <LI><A HREF="#toc131">14.9.3. Asignacións de teclas para Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. Series das HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
     <LI><A HREF="#Seika">14.11. Pantallas Braille Seika</A>
@@ -367,16 +370,27 @@ Unha vez se completara a instalación, aparecerá una mensaxe dicíndoche que fo
 Premendo Aceptar neste ponto reiniciarase a copia nova instalada do NVDA.
 </P>
 
+<A NAME="InstallWithIncompatibleAddons"></A>
+<H4>3.2.1. Aviso sobre complementos incompatibles</H4>
+
+<P>
+Se xa tes complementos instalados tamén pode haber un aviso de que se deshabilitarán os complementos incompatibles.
+Antes de poder premer o botón Continuar terás que usar a caixa de verificación para confirmar que entendes que estos complementos serán desactivados.
+Tamén haberá presente un botón para revisar os complementos que se deshabilitarán.
+Consulta a <A HREF="#incompatibleAddonsManager">seción diálogo complementos incompatibles</A> para máis axuda sobre este botón.
+</P>
+
 <A NAME="StartAtWindowsLogon"></A>
-<H4>3.2.1. Iniciar na Autentificación de Windows</H4>
+<H4>3.2.2. Iniciar na Autentificación de Windows</H4>
 
 <P>
 Esta opción permíteche escoller se NVDA debería arrancar automáticamente ou non mentres está na ventá de autentificación de Windows, antes de introducir unha clave.
-Esto tamén inclúe ao control do UAC e outras pantallas seguras.
+Esto tamén inclúe o control da conta de usuario e outras pantallas seguras.
+Esta opción está habilitada por defecto para instalacións novas.
 </P>
 
 <A NAME="CreateDesktopShortcut"></A>
-<H4>3.2.2. Crear Atallos do Escritorio (ctrl+alt+n)</H4>
+<H4>3.2.3. Crear Atallos do Escritorio (ctrl+alt+n)</H4>
 
 <P>
 Esta opción permíteche escoller se NVDA debería crear ou non un atallo no escritorio para comezar o NVDA. 
@@ -384,7 +398,7 @@ Se se creou, a este atallo tamén se lle asignará unha tecla de atallo control+
 </P>
 
 <A NAME="CopyPortableConfigurationToCurrentUserAccount"></A>
-<H4>3.2.3. Copiar Configuración Portable da Actual Conta do Usuario</H4>
+<H4>3.2.4. Copiar Configuración Portable da Actual Conta do Usuario</H4>
 
 <P>
 Esta opción permíteche escoller se NVDA debería copiar ou non a configuración do usuario do actual NVDA en execución na configuración para o usuario actualmente autentificado, para a copia instalada do NVDA. 
@@ -2313,8 +2327,7 @@ Esta elección dirá ao NVDA que utilice a lingua na que Windows estea actualmen
 </P>
 <P>
 Por favor ten en conta que NVDA debe reiniciarse cando se cambie a lingua. 
-NVDA preguntarache se desexas reiniciar se fas cambios na selección e garda os cambios.
-Preme Aceptar e NVDA reiniciarase. 
+Cando apareza o diálogo de confirmación, seleciona "reiniciar agora" ou "reiniciar máis tarde" se desexas usar a lingua nova agora ou nun momento posterior, respectivamente. Se está selecionado "reiniciar máis tarde", a configuración debe gardarse (ou manualmente ou usando a funcionalidade gardar ao saír).
 </P>
 
 <A NAME="GeneralSettingsSaveConfig"></A>
@@ -2346,8 +2359,19 @@ Esta Opción é unha caixa de verificación que, cando está marcada, di ao NVDA
 <P>
 Este é unha caixa combinada que che permite elexir canto NVDA porá no rexistro segundo se executa. 
 Xeralmente os usuarios non deberían necesitar tocar esto xa que non é demasiado amigable. 
-Sen embargo se queres proporcionar información nun informe sobre un fallo etc, entón poderá ser unha boa opción.
+Sen embargo, se desexas proporcionar información nun informe de fallos, ou habilitar ou deshabilitar todo o rexistro, entón poderá seren unha opción útil.
 </P>
+<P>
+Os niveis dispoñibles do rexistro son:
+</P>
+
+<UL>
+<LI>Deshabilitado: aparte dunha curta mensaxe de inicio, o NVDA non rexistrará nada mentres se execute.
+<LI>Información: O NVDA rexistrará información básica coma mensaxes de inicio e información útil para os desenvolvedores.
+<LI>Aviso de depuración: rexistraranse mensaxes de aviso que non sexan causados por erros graves.
+<LI>Entrada/saída: rexistraranse as entradas das pantallas braille e dos teclados, así como a saída da voz e do braille. Se che preocupa a privacidade, non configures a esta opción de nivel de rexistro.
+<LI>Depuración: ademáis das mensaxes de información, aviso e entrada/saída, rexistraranse mensaxes de depuración adicionais. Ao igual que coa Entrada/saída, se che preocupa a privacidade, non deberías configurar o nivel de rexistro nesta opción.
+</UL>
 
 <A NAME="GeneralSettingsStartAfterLogOn"></A>
 <H5>Iniciar automáticamente nvda despois de autentificarse en windows</H5>
@@ -3062,6 +3086,27 @@ Se a caixa de verificación 'reproducir audio cando o rato se mova' está marcad
 Esto poderá causar algúns problemas de rendemento en Windows Vista, así que está desverificado de xeito predeterminado.
 </P>
 
+<A NAME="MouseSettingsHandleMouseControl"></A>
+<H5>Ignorar a entrada do rato dende outras aplicacións</H5>
+
+<P>
+Esta opción permite ao usuario ignorar os eventos do rato (incluindo o movemento do rato e as pulsacións de botóns) xerados por outras aplicacións como TeamViewer e outros programas de control remoto.
+Esta opción está desmarcada por defecto.
+Se marcas esta opción e tes activada a opción "Habilitar seguemento do rato", o NVDA non anunciará o que hai por enbaixo do rato se este é movido por outra aplicación.
+</P>
+
+<A NAME="BrowseModeSettingsFocusFollowsBrowseMode"></A>
+<H5>O foco sigue ao modo exploración</H5>
+
+<P>
+Tecla: NVDA+8
+</P>
+<P>
+Habilitada por defecto, esta opción permíteche escoller se o foco do sistema segue automáticamente ao foco do modo exploración nos navegadores web.
+Se está habilitado, esto representa o comportamento predeterminado do NVDA a partir da versión 2018.4 e anteriores.
+Deshabilitar esta opción pode resultar nunha experiencia de navegación máis rápida e unha mellor resposta no modo exploración. Esto é experimental a partir da versión 2019.1.
+</P>
+
 <A NAME="TouchInteraction"></A>
 <H4>11.1.9. Interación Tactil</H4>
 
@@ -3477,6 +3522,58 @@ Esta categoría contén as seguintes opcións:
 Esta caixa combinada permíteche escoller a lingua para usar co recoñecemento de texto.
 </P>
 
+<A NAME="toc91"></A>
+<H4>11.1.16. Opcións Avanzadas</H4>
+
+<P>
+¡Advertencia! As opcións nesta categoría son para usuarios avanzados e poden causar que o NVDA non funcione correctamente se se configura de xeito incorrecto.
+Realiza cambios nestas opcións únicamente se estás seguro de que sabes o que estás a facer ou se recibiches as instrucións específicas dun desenvolvedor do NVDA.
+</P>
+
+<H5>Habilitar a carga de código persoalizado dende o directorio Developer Scratchpad</H5>
+
+<P>
+Ao desenvolver complementos para o NVDA, é útil poder probar o código a medida que o escrebes.
+Esta opción ao estar habilitada, permite ao NVDA cargar appModules persoalizados, globalPlugins, brailleDisplayDrivers e synthDrivers, dende un directorio especial de desenvolvedores scratchpad do teu directorio de configuración de usuario do NVDA.
+Anteriormente, o NVDA cargaba código persoalizado directamente dende o directorio de configuración do usuario, sen posibilidade de deshabilitalo.
+Esta opción está desactivada de xeito predeterminado, o que garante que nunca se execute ningún código non probado no NVDA sen o coñecemento explícito do usuario.
+Se desexas distribuir código persoalizado a outros, debes empaquetalo coma un complemento de NVDA.
+</P>
+
+<H5>Abrir o directorio Developer Scratchpad</H5>
+
+<P>
+Este botón abre o directorio onde podes colocar o código persoalizado mentres o desenvolves.
+Este botón só está habilitado se o NVDA está configurado para permitir a carga de código persoalizado dende o directorio de desenvolvedores do Scratchpad.
+</P>
+
+<H5>Usar UI automation para acesar a controis de documento de Microsoft Word cando estea dispoñible</H5>
+
+<P>
+Cando esta opción estea activada, o NVDA tentará usar a API de accesibilidade de Microsoft UI Automation para obter información dos controis de documentos de Microsoft Word.
+Esto inclúe ao mesmo Microsoft Word, e tamén o visor de mensajes e o compositor de Microsoft Outlook.
+ Para as versións máis recentes de Microsoft Office 2016/365 que se executan en Windows 10, a compatibilidade coa UI Automation  é o suficentemente compreta como para proporcionar acceso a documentos de Microsoft Word case igual á compatibilidade con Microsoft Word existente de NVDA, coa ventaxa engadida de que a capacidade de resposta aumenta considerablemente.
+</P>
+<P>
+Sen embargo, pode haber algunha información que non estea exposta ou que estea incorrectamente exposta nalgunhas versións de Microsoft Office, o que significa que non sempre se pode confiar neste soporte da UI automation.
+Aínda non recomendamos que a maioría dos usuarios activen esta opción de xeito predeterminado, aínda que invitamos aos usuarios de Office 2016/365 a que proben esta función e que nos envíen os seus comentarios.
+</P>
+
+<H5>Tempo de espera para o movemento do cursor (en MS)</H5>
+
+<P>
+Esta opción permíteche configurar o número de milésimas de segundo que o NVDA esperará a que o cursor (ponto de inserción) se mova nos controis de texto editables.
+Se ves que o NVDA semella estar seguindo incorrectamente o cursor, por exemplo, parece estar sempre un carácter por detrás ou repetindo liñas, entón podes tentar aumentar este valor.
+</P>
+
+<H5>Categorías de rexistro de depuración</H5>
+
+<P>
+As caixas de verificación desta listaxe permíteche habilitar categorías específicas de mensaxes de depuración no rexistro do NVDA.
+O rexistro destas mensaxes pode incurrir nun menor rendemento e en arquivos de rexistro de gran tamaño.
+Activa só un deles se un desenvolvedor do NVDA che dou instrucións específicas, por exemplo, ao depurar por que un controlador de pantalla braille non está funcionando correctamente.
+</P>
+
 <A NAME="MiscSettings"></A>
 <H3>11.2. Miscelánea de Opcións</H3>
 
@@ -3852,7 +3949,8 @@ Para deshabilitar un complemento, preme o botón deshabilitar.
 Para habilitar un comnplemento anteriormente deshabilitado, preme o botón habilitar.
 Podes deshabilitar un complemento se o seu estado indica que está en execución ou habilitado, ou habilitalo se o complemento está suspendido ou deshabilitado.
 Para cada pulsación do botón habilitar/deshabilitar, o estado do complemento cambia para indicar que ocurrirá ao reiniciar NVDA.
-Se o complemento foi deshabilitado anteriormente, amosarase un estado "habilitado despois de reiniciar". Se o complemento foi anteriormente "Habilitado", amosarase un estado "deshabilitado despois de reiniciar"
+Se o complemento foi deshabilitado anteriormente, amosarase un estado "habilitado despois de reiniciar".
+Se o complemento foi anteriormente "Habilitado", amosarase un estado "deshabilitado despois de reiniciar"
 Ao igual que cando instalas ou eliminas complementos, tes que reiniciar o NVDA para que os cambios teñan efecto.
 </P>
 <P>
@@ -3860,16 +3958,37 @@ O administrador tamén ten un botón Pechar para pechar o diálogo.
 Se instalaches, eliminaches ou cambiaches o estado dos complementos, NVDA primeiro preguntarache se desexas reiniciar para que os cambios podan levarse a cabo.
 </P>
 <P>
-No pasado foi posible extender a funcionalidade do NVDA copiando plugins e controladores individuais no teu directorio de configuración do usuario do NVDA.
-Aíndaque esta versión do NVDA aínda poderá cargalos, Non se amosarán no Administrador de Complementos.
-É mellor eliminar estos ficheiros da túa configuración e instalar o complemento apropriado se hai un dispoñible.
+Algúns complementos vellos poden xa non ser compatibles coa versión do NVDA que tes.
+Cando uses unha versión máis vella de NVDA, algúns complementos novos poden non ser compatibles.
+Tentar instalar un complemento incompatible resultará nun erro explicando por qué o complemento se considera incompatible.
 </P>
 <P>
 Para aceder ao Administrador de Complementos dende calquera lugar, por favor asigna un xesto persoalizado utilizando o <A HREF="#InputGestures">diálogho Xestos de Entrada</A>.
 </P>
 
+<A NAME="incompatibleAddonsManager"></A>
+<H3>12.4. Administrador de Complementos Incompatibles</H3>
+
+<P>
+O Administrador de Complementos Incompatibles, ao que se pode acesar a través dos botóns "ver complementos incompatibles" no Administrador de Complementos, permíteche examinar calquera complemento incompatible e a razón pola que se consideran incompatibles.
+Os complementos considéranse incompatibles cando non foron actualizados para funcionar con cambios significativos do NVDA, ou cando se basean nunha característica non dispoñible na versión do NVDA que estás usando.
+O Administrador de Complementos Incompatibles ten unha mensaxe curta para explicar o seu propósito así como a versión do NVDA.
+Os complementos incompatibles preséntanse nunha listaxe coas seguintes columnas:
+</P>
+
+<OL>
+<LI>Paquete, o nome do complemento
+<LI>Versión, a versión do complemento
+<LI>Razón de Incompatiblilidade, unha explicación de por qué o complemento se considera incompatible
+</OL>
+
+<P>
+O Administrador de Complementos Incompatibles tamén ten un botón "Acerca do complemento...".
+Esto abre o que che permitirá conocer todos os detalles do complemento, o que é de axuda cando contactes co autor do complemento.
+</P>
+
 <A NAME="PythonConsole"></A>
-<H3>12.4. Consola de Python</H3>
+<H3>12.5. Consola de Python</H3>
 
 <P>
 A consola de Python do NVDA, atopada baixo Ferramentas no menú NVDA, é unha ferramenta de desenvolvemento que é útil para depuración, inspección xeral do interior  do NVDA ou inspeción da xerarquía de accesibilidade de unha aplicación.
@@ -3877,7 +3996,7 @@ Para máis información, por favor olla a Guía do desenvolvedor dispoñible na 
 </P>
 
 <A NAME="ReloadPlugins"></A>
-<H3>12.5. Recargar plugins</H3>
+<H3>12.6. Recargar plugins</H3>
 
 <P>
 Este elemento, unha vez activado, recarga app modules e plugins globais sen reiniciar ao NVDA, o cal é útil para desenvolvedores.
@@ -4744,7 +4863,7 @@ Seguidamente van as asignacións de teclas para as pantallas Brailliant BI/B e B
 Por favor consulta a documentación da pantalla para descripcións de onde poden atoparse estas teclas.
 </P>
 
-<A NAME="toc126"></A>
+<A NAME="toc129"></A>
 <H4>14.9.1. Asignacións de teclas para todos os modelos</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4834,7 +4953,7 @@ Por favor consulta a documentación da pantalla para descripcións de onde poden
 </TR>
 </TABLE>
 
-<A NAME="toc127"></A>
+<A NAME="toc130"></A>
 <H4>14.9.2. Asignacións de teclas para Brailliant BI 32, BI 40 e B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4856,7 +4975,7 @@ Por favor consulta a documentación da pantalla para descripcións de onde poden
 </TR>
 </TABLE>
 
-<A NAME="toc128"></A>
+<A NAME="toc131"></A>
 <H4>14.9.3. Asignacións de teclas para Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -6553,7 +6672,7 @@ Seguidamente van as opcións de liña de ordes para o NVDA:
 <TR>
 <TD>-l LOGLEVEL</TD>
 <TD>--log-level=LOGLEVEL</TD>
-<TD>O nivel máis baixo de mesaxe rexistrado (depuración 10, información 20, aviso 30, error 40, crítico 50), por defecto está en aviso</TD>
+<TD>O nível máis baixo de mensaxe rexistrada (debug 10, input/output 12, debug warning 15, info 20, warning 30, error 40, critical 50, disabled 100), default is warning</TD>
 </TR>
 <TR>
 <TD>-c CONFIGPATH</TD>
@@ -6568,7 +6687,7 @@ Seguidamente van as opcións de liña de ordes para o NVDA:
 <TR>
 <TD>-s</TD>
 <TD>--secure</TD>
-<TD>Modo seguro (deshabilita a consola Python)</TD>
+<TD>Modo seguro (deshabilita a consola Python e as características de rexistro, a menudo usado en pantallas seguras)</TD>
 </TR>
 <TR>
 <TD>None</TD>
@@ -6583,7 +6702,12 @@ Seguidamente van as opcións de liña de ordes para o NVDA:
 <TR>
 <TD>None</TD>
 <TD>--debug-logging</TD>
-<TD>Habilita o nivel depuración no rexistro só para esta execución. Esta opción anulará calquera outro argumento do nivel do rexistro ( --loglevel, -l) dado.</TD>
+<TD>Habilita o nível de rexistro de depuración só para esta execución. Esta configuración sobreescribirá calquera outro nível de rexistro ( --loglevel, -l) argumento dado, incluindo a opción non rexistro.</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--no-logging</TD>
+<TD>Deshabilita o rexistro durante o uso do NVDA. Esta opción pode sobreescribirse se se especifica un nível de rexistro ( --loglevel, -l) dende a liña de ordes ou se o rexistro de depuración está activado.</TD>
 </TR>
 <TR>
 <TD>None</TD>
@@ -6594,6 +6718,11 @@ Seguidamente van as opcións de liña de ordes para o NVDA:
 <TD>None</TD>
 <TD>--install-silent</TD>
 <TD>Instala en silenzo NVDA (Non comeza a nova copia instalada)</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--enable-start-on-logon=True|False</TD>
+<TD>Ao instalar, habilita <A HREF="#StartAtWindowsLogon">arrancar na pantalla de inicio</A> do NVDA</TD>
 </TR>
 <TR>
 <TD>None</TD>
