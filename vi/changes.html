@@ -30,7 +30,7 @@
  </UL>
 <LI>Đã thêm bảng chữ nổi tiếng Nam Phi. (<A HREF="https://github.com/nvaccess/nvda/issues/9186">#9186</A>)
 <LI>Sớm hỗ trợ cho các ứng dụng như Mozilla Firefox trên các máy vi tính với các bộ vi xử lý ARM64 (ví dụ: Qualcom Snapdragon). (<A HREF="https://github.com/nvaccess/nvda/issues/9216">#9216</A>)
-<LI>Một phân loại cài đặt nâng cao đã được thêm vào hộp thoại tùy chỉnh của NVDA, bao gồm một tùy chọn để dùng thử tính năng mới của NVDA hỗ trợ cho Microsoft Word thông qua Microsoft UI Automation API. (<A HREF="https://github.com/nvaccess/nvda/issues/9200">#9200</A>)
+<LI>Một phân loại cài đặt nâng cao đã được thêm vào hộp thoại cấu hình của NVDA, bao gồm một tùy chọn để dùng thử tính năng mới của NVDA hỗ trợ cho Microsoft Word thông qua Microsoft UI Automation API. (<A HREF="https://github.com/nvaccess/nvda/issues/9200">#9200</A>)
 <LI>Đã hỗ trợ dạng xem đồ họa trong Disk Management của Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/1486">#1486</A>)
 <LI>Đã thêm hỗ trợ cho Handy Tech Connect Braille và Basic Braille 84. (<A HREF="https://github.com/nvaccess/nvda/issues/9249">#9249</A>)
 <LI>Đã thêm một tùy chọn thử nghiệm vào bảng cài đặt chế độ duyệt cho phép bạn ngưng không cho con trỏ hệ thống đi theo con trỏ duyệt. (<A HREF="https://github.com/nvaccess/nvda/issues/2039">#2039</A>) Dù điều này không thể tắt trên toàn bộ các trang web, nó có thể khắc phục:
@@ -43,18 +43,56 @@
 
 <H3>Các thay đổi</H3>
 
-   <UL>
-   <LI>Cập nhật thư viện phiên dịch chữ nổi liblouis lên phiên bản 3.8.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9013">#9013</A>)
-   </UL>
-
 <UL>
+<LI>Cập nhật thư viện phiên dịch chữ nổi liblouis lên phiên bản 3.8.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9013">#9013</A>)
 <LI>Tác giả của add-on giờ đây có thể yêu cầu một phiên bản NVDA tối thiểu cho các add-onn của mình. Các add-on không hỗ trợ sẽ không được tải và cài đặt. (<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>)
 <LI>Các tác giả của add-on giờ đây phải xác nhận phiên bản NVDA cuối cùng mà add-on đã được thử nghiệm. Người dùng sẽ được cảnh báo khi cài hay bật các add-on chưa được thử nghiệm. (<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>)
 <LI>Lệnh di chuyển chuột đến đối tượng điều hướng giờ đây đã có trong Microsoft Word cũng như các điều khiển UIA, cụ thể là Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/7916">#7916</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8371">#8371</A>)
 <LI>Việc thông báo văn bản tại vị trí chuột đã được cải thiện trong Microsoft Edge và các ứng dụng UIA khác. (<A HREF="https://github.com/nvaccess/nvda/issues/8370">#8370</A>)
 <LI>Khi NVDA được khởi động với tham số dòng lệnh `--portable-path`, đường dẫn đã được cung cấp sẽ được điền tự động khi tạo bản NVDA chạy trực tiếp bằng thực đơn của NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/8623">#8623</A>)
 <LI>Đã cập nhật đường dẫn đến bản chữ nổi  tiếng Na Uy  để phản ánh đúng tiêu chuẩn từ năm 2015. (<A HREF="https://github.com/nvaccess/nvda/issues/9170">#9170</A>)
+<LI>Khi duyệt theo đoạn (control+các phím mũi tên) hay theo ô trong bảng (control+alt+các phím mũi tên), các lỗi chính tả đang tồn tại sẽ không còn được đọc lên nữa, ngay cả khi NVDA được cấu hình để tự đọc chúng. Điều này là do số lượng các đoạn và ô trong bảng có thể rất lớn, việc đếm các lỗi chính tả trong vài ứng dụng có thể mất rất nhiều thời gian. (<A HREF="https://github.com/nvaccess/nvda/issues/9217">#9217</A>)
+<LI>NVDA không còn tự gọi các Module ứng dụng, Plugins toàn cục, chữ nổi và các trình điều khiển bộ đọc đã tùy  chỉnh từ thư mục cấu hình người dùng NVDA.  Thay vào đó, những mã nguồn này nên được đóng gói như một add-on với thông tin phiên bản chính xác, đảm bảo rằng các đoạn mã không tương thích sẽ không chạy trên phiên bản NVDA hiện tại. (<A HREF="https://github.com/nvaccess/nvda/issues/9238">#9238</A>)
+ <UL>
+ <LI>Với những nhà phát triển muốn thử nghiệm các đoạn mã đang được phát triển,  hãy bật  tùy chọn developer scratchpad directory của NVDA trong phân loại nâng cao trong phần cài đặt NVDA, và lưu mã nguồn của bạn trong thư mục 'scratchpad'  được tìm thấy trong thư mục cấu hình người dùng của NVDA khi tùy chọn này được bật.
+ </UL>
 </UL>
+
+<H3>Sửa lỗi</H3>
+
+<UL>
+<LI>Bộ đọc OneCore: trên Windows 10 April 2018 trở lên, không còn tình trạng nhiều khoản lặng bị chèn vào giữa các câu nói. (<A HREF="https://github.com/nvaccess/nvda/issues/8985">#8985</A>)
+<LI>Khi di chuyển bằn kí tự trong   các điều khiển văn bản đơn giản (như là Notepad) hay trong chế độ duyệt, các kí tự biểu tượng cảm xúc 32 bit  gồm hai điểm mã UTF-16  (như ðŸ¤¦) giờ đây sẽ được đọc đúng cách. (<A HREF="https://github.com/nvaccess/nvda/issues/8782">#8782</A>)
+<LI>Cải thiện hộp thoại xác nhận khởi động lại sau khi thay đổi ngôn ngữ giao diện. Nội dung và nhãn của các nút giờ đây sẽ rõ ràng và dễ hiểu hơn. (<A HREF="https://github.com/nvaccess/nvda/issues/6416">#6416</A>)
+<LI>Nếu không gọi được một bộ đọc nào đó của bên thứ ba, NVDA sẽ gọi trở lại bộ đọc Windows OneCore trên Windows 10, thay vì là espeak. (<A HREF="https://github.com/nvaccess/nvda/issues/9025">#9025</A>)
+<LI>Gỡ bỏ mục "Hộp thoại chào mừng" trong thực đơn của NVDA khi ở  trong các màn hình bảo vệ. (<A HREF="https://github.com/nvaccess/nvda/issues/8520">#8520</A>)
+<LI>Khi chạm hay dùng di chuyển nhanh trong chế độ duyệt, các ghi chú trên tab panels giờ đây đã được đọc nhất quán hơn. (<A HREF="https://github.com/nvaccess/nvda/issues/709">#709</A>)
+<LI>NVDA giờ đây sẽ thông báo sự thay đổi lựa chọn cho một số bộ chọn giờ nhất định như trong ứng dụng Alarms and Clock. (<A HREF="https://github.com/nvaccess/nvda/issues/5231">#5231</A>)
+<LI>Trong Action Center của Windows 10, NVDA sẽ thông báo các thông điệp trạng thái  khi bật / tắt các hành động nhanh  như là độ sáng và hỗ trợ tập trung. (<A HREF="https://github.com/nvaccess/nvda/issues/8954">#8954</A>)
+<LI>Trong action Center của Windows 10 October 2018 Update trở về trước, NVDA sẽ nhận dạng điều khiển chỉnh độ sáng là một nút bấm thay vì là một nút chuyện. (<A HREF="https://github.com/nvaccess/nvda/issues/8845">#8845</A>)
+<LI>NVDA sẽ lại theo dõi  con trỏ và thông báo các kí tự đã xóa trong hộp thoại Go To và ô find edit của Microsoft Excel. (<A HREF="https://github.com/nvaccess/nvda/issues/9042">#9042</A>)
+<LI>Sửa một lỗi hiếm gặp làm cho bị treo ở chế độ duyệt trong Firefox. (<A HREF="https://github.com/nvaccess/nvda/issues/9152">#9152</A>)
+<LI>NVDA không còn bị lỗi khi thông báo focus cho vài điều khiển trong Microsoft Office 2016 ribbon khi bị thu gọn.
+<LI>NVDA không còn bị lỗi không đọc các gợi ý liên lạc khi nhập các địa chỉ cho các thư mới trong Outlook 2016. (<A HREF="https://github.com/nvaccess/nvda/issues/8502">#8502</A>)
+<LI>Vài phím đưa con trỏ cuối  trên các màn hình nổi 80 ô eurobraille  không còn đưa con trỏ đến ngay hoặc sau vị trí là nơi bắt đầu của một dòng chữ nổi. (<A HREF="https://github.com/nvaccess/nvda/issues/9160">#9160</A>)
+<LI>Sửa lỗi khi duyệt trong bảng ở chế độ xem threaded trong Mozilla Thunderbird. (<A HREF="https://github.com/nvaccess/nvda/issues/8396">#8396</A>)
+<LI>Trong Mozilla Firefox và Google Chrome, chuyển sang chế độ focus giờ đây đã hoạt động chính xác với một số hộp danh sách và  cây thư mục nhất định (khi mà hộp danh sách và cây thư mục không tự nó có focus nhưng các thành phần của chúng thì có). (<A HREF="https://github.com/nvaccess/nvda/issues/3573">#3573</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9157">#9157</A>)
+<LI>Chế độ duyệt giờ đã mặc định được bật một cách chính xác khi đọc thư trong  Outlook 2016/365 nếu dùng hỗ trợ thử nghiệm UI Automation của NVDA cho các tài liệu Word. (<A HREF="https://github.com/nvaccess/nvda/issues/9188">#9188</A>)
+<LI>NVDA giờ đây ít rơi vào tình trạng giống bị đóng băng theo cách  mà đó chỉ là cách duy nhất để thoát khỏi việc đăng xuất khỏi Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/6291">#6291</A>)
+<LI>Trong Windows 10 October 2018 Update trở lên, khi mở lịch sử bộ nhớ tạm đám mây mà bộ nhớ không có gì, NVDA sẽ thông báo trạng thái bộ nhớ tạm. (<A HREF="https://github.com/nvaccess/nvda/issues/9112">#9112</A>)
+<LI>Trong Windows 10 October 2018 Update trở lên, khi tìm các biểu tượng cảm xúc trong bảng biểu tượng cảm xúc, NVDA sẽ thông báo các kết quả tìm kiếm hàng đầu. (<A HREF="https://github.com/nvaccess/nvda/issues/9112">#9112</A>)
+<LI>NVDA không còn bị đóng băng trong cửa sổ chính của Virtualbox 5.2 trở lên. (<A HREF="https://github.com/nvaccess/nvda/issues/9202">#9202</A>)
+<LI>Phản hồi trong Microsoft Word khi duyệt theo dòng, đoạn hay theo ô trong bảng có thể được cải thiện đáng kể trong một số tài liệu. Một lời nhắc rằng để làm việc một cách tốt nhất, hãy thiết lập Microsoft Word ở dạng xem Draft với alt+w,e sau khi mở một tài liệu. (<A HREF="https://github.com/nvaccess/nvda/issues/9217">#9217</A>) 
+<LI>Trong Mozilla Firefox và Google Chrome, các thông báo rỗng không còn được đọc nữa. (<A HREF="https://github.com/nvaccess/nvda/issues/5657">#5657</A>)
+<LI>Cải thiện hiệu năng vận hành đáng kể khi duyệt qua các ô trong Microsoft Excel, cụ thể là khi một bảng tính có chứa các chú thích hay các hộp xổ xác nhận. (<A HREF="https://github.com/nvaccess/nvda/issues/7348">#7348</A>)
+<LI>Không cần phải tắt in-cell editing trong Options của Microsoft Excel để tiếp cận điều khiển nhập liệu của ô với NVDA trong Excel 2016/365. (<A HREF="https://github.com/nvaccess/nvda/issues/8146">#8146</A>).
+</UL>
+
+<H3>Các thay đổi cho nhà phát triển</H3>
+
+<P>
+Phần này không được dịch. Vui lòng xem bản tiếng Anh changes.t2t để biết thêm thông tin.
+</P>
 
 <H2>2018.4.1</H2>
 
