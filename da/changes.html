@@ -10,57 +10,82 @@
 </CENTER>
 
 
-<H2>2018.4.1</H2>
-
-<P>
-Denne version retter en fejl der gjorde at en fejl opstod, når sproget for NVDAs brugergrænseflade er sat til aragonsk. (<A HREF="https://github.com/nvaccess/nvda/issues/9089">#9089</A>)
-</P>
-
-<H2>2018.4</H2>
-
-<P>
-Af væsentlige forbedringer i denne version af NVDA kan nævnes bedre ydeevne i nylige versioner af Mozilla Firefox, annoncering af emoji med alle talesynteser, rapportering af statusflagene besvaret/videresendt for meddelelser i Microsoft Outlook, rapportering af afstand fra markørens aktuelle position til kanten af en side i Microsoft Word, samt mange fejlrettelser.
-</P>
+<H2>2019.1</H2>
 
 <H3>Nye funktioner</H3>
 
 <UL>
-<LI>Nye punkttabeller: Kinesisk (Mandarin-kinesisk) niveau 1 og 2. (<A HREF="https://github.com/nvaccess/nvda/issues/5553">#5553</A>)
-<LI>Status for besvarede/videresendte meddelelser rapporteres nu i meddelelseslisten i Microsoft Outlook. (<A HREF="https://github.com/nvaccess/nvda/issues/6911">#6911</A>)
-<LI>NVDA kan nu læse emoji såvel som andre tegn, der er en del af Unicode Common Locale Data Repository. (<A HREF="https://github.com/nvaccess/nvda/issues/6523">#6523</A>)
-<LI>Markørens position fra øverste og venstre kant på den aktuelle side kan nu blive oplyst ved at trykke NVDA+NumpadDelete i Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/1939">#1939</A>)
-<LI>NVDA vil ikke længere rapportere "Valgt" i Google Sheets, når der bevæges rundt imellem celler, hvis punkttilstand er aktiv. (<A HREF="https://github.com/nvaccess/nvda/issues/8879">#8879</A>)
-<LI>Tilføjet understøttelse for Foxit Reader og Foxit Phantom PDF (<A HREF="https://github.com/nvaccess/nvda/issues/8944">#8944</A>)
-<LI>Tilføjet understøttelse for databaseværktøjet DBeaver. (<A HREF="https://github.com/nvaccess/nvda/issues/8905">#8905</A>)
+<LI>Nye punkttabeller: Arabisk 8 punkt computer braille, arabisk niveau 2, spansk niveau 2. ( --loglevel, -l) (<A HREF="https://github.com/nvaccess/nvda/issues/4435">#4435</A>)
+<LI>Tilføjet en indstilling til NVDAs museindstillinge der lader brugeren bestemme, hvordan NVDA skal håndtere museinput fra andre applikationer. (<A HREF="https://github.com/nvaccess/nvda/issues/8452">#8452</A>)
+ <UL>
+ <LI>Dette vil lade NVDA følge musen, når systemet bliver styret via TeamViewer eller andet software til fjernstyrelse.
+ </UL>
+<LI>Tilføjet et en indstilling til brug på kommandolinjen (--disable-start-on-logon). Denne indstilling vil tillade tavse installationer af NVDA der normalt ikke kører på logon-skærmen som standard. (<A HREF="https://github.com/nvaccess/nvda/issues/8574">#8574</A>)
+<LI>Det er nu muligt at deaktivere logning fuldstændigt under NVDAs generelle indstillinger. (<A HREF="https://github.com/nvaccess/nvda/issues/8516">#8516</A>)
+<LI>Formularer i regneark i LibreOffice og Apache OpenOffice vil nu rapporteres. (<A HREF="https://github.com/nvaccess/nvda/issues/860">#860</A>)
+<LI>Gennemsynstilstand rapporter nu den valgte tilstand for elementer i listbokse og trævisninger.
+ <UL>
+ <LI>Dette virker i Firefox 66 og senere.
+ <LI>dette virker ikke for bestemte listbokse (HTML select kontroller) i Chrome.
+ </UL>
+<LI>Tilføjet punkttabel for Afrikaans. (<A HREF="https://github.com/nvaccess/nvda/issues/9186">#9186</A>)
+<LI>Første understøttelse for apps som Mozilla Firefox på computere med ARM64 (f.eks. Qualcom Snapdragon) processorer. (<A HREF="https://github.com/nvaccess/nvda/issues/9216">#9216</A>)
+<LI>En ny kategori med avancerede instillinger er nu at finde i NVDAs indstillingspanel, herunder en indstilling der lader dig afprøve NVDAs understøttelse for UI Automation API. (<A HREF="https://github.com/nvaccess/nvda/issues/9200">#9200</A>)
+<LI>Tilføjet understøttelse for den grafiske visning i Windows Diskhåndtering. (<A HREF="https://github.com/nvaccess/nvda/issues/1486">#1486</A>)
+<LI>Tilføjet understøttelse for Handy Tech Connect Braille og Basic Braille 84. (<A HREF="https://github.com/nvaccess/nvda/issues/9249">#9249</A>)
+<LI>Tilføjet en eksperimental indstilling i indstillingspanelet for gennemsynstilstand der lader dig forhindre systemfokus i at følge markøren i gennemsynstilstand. (<A HREF="https://github.com/nvaccess/nvda/issues/2039">#2039</A>) Selv om denne indstilling evt. ikke er passende at slå fra på alle websider, vil dette måske løse følgende problemer: 
+ <UL>
+ <LI>Rubber band effect: NVDA udrydder sporadisk den sidste tastaturgenvej der blev benyttet i gennemsynstilstand ved at springe til forrige position.
+ <LI>Edit-bokse stjæler fokus, når der piles nedad på nogle websider.
+ <LI>Tastaturkommandoer i gennemsynstilstand kan virke langsomme.
+ </UL>
 </UL>
 
 <H3>Ændringer</H3>
 
 <UL>
-<LI>Indstillingen "Oplys hjælpeballoner" i dialogen Objektpræsentation er blevet omdøbt til "Oplys meddelelser" for at inkludere toast-meddelelser i Windows 8 og nyere. (<A HREF="https://github.com/nvaccess/nvda/issues/5789">#5789</A>)
-<LI>Check boxe til at slå NVDA-funktionstasten til og fra i NVDAs tastaturindstillinger er nu i en liste, i stedet for at vise som særskilte check boxe.
-<LI>NVDA vil ikke længere vise overflødige informationer om uret, når dette læses fra systembakken i nogle versioner af Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/4364">#4364</A>)
-<LI>Opdaterede LibLouis punktoversætter til version 3.7.0. (<A HREF="https://github.com/nvaccess/nvda/issues/8697">#8697</A>)
-<LI>Opdaterede eSpeak-NG til commit 919f3240cbb
+<LI>Opdateret LibLouis punktoversætter til version 3.8.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9013">#9013</A>)
+<LI>Forfattere af NVDA-tilføjelser kan nu kræve, at der er et minimumkrav for versionsnummeret til NVDA. Ikke-understøttede tilføjelser vil ikke indlæse eller installere. (<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>)
+<LI>Forfattere af tilføjelser skal nu angive den sidste version, hvor tilføjelsen blev testet. Brugere vil blive advaret imod at installere eller aktivere ikke-testede tilføjelser. (<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>)
+<LI>Kommandoen der flytter musen til det aktuelle navigatorobjekt er nu tilgængelig i Microsoft Word og UIA-kontroller, særligt Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/7916">#7916</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8371">#8371</A>)
+<LI>Rapportering af tekst under musen er forbedret ved brug af Microsoft Edge og andre UIA-applkationer. (<A HREF="https://github.com/nvaccess/nvda/issues/8370">#8370</A>)
+<LI>Når NVDA startes og kommandoen "--portable-path" benyttes ved opstart, vil den angivne sti udfyldes automatisk, når der oprettes en flytbar kopi fra NVDA-menuen. (<A HREF="https://github.com/nvaccess/nvda/issues/8623">#8623</A>)
+<LI>Opdaterede stien til den svenske punkttabel for at benytte standarden for 2015. (<A HREF="https://github.com/nvaccess/nvda/issues/9170">#9170</A>)
+<LI>Når der navigeres via afsnit (Ctrl+piletaster) eller hvis der navigeres mellem tabelceller (Ctrl+Alt+piletaster) vil NVDA ikke længere oplyse stavefejl, selv hvis indstillingen er aktiveret. Dette er fordi nogle celler kan være ret store, og beregnelse af stavefejl kan tage lang tid. (<A HREF="https://github.com/nvaccess/nvda/issues/9217">#9217</A>)
+<LI>NVDA indlæser ikke længere tilpassede appModules, globalPlugins, drivere for talesyntese og punktdisplays fra NVDAs mappe med brugerkonfigurationen. Denne kode skal leveres som en tilføjelsespakke til NVDA med korrekte versionsnumre, der således sikre at inkompatibel kode ikke køres med aktuelle versioner af NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/9238">#9238</A>)
+ <UL>
+ <LI>for udviklere, der har brug for at afprøve kode under udvikling, aktivér indstilllingen der lader dig indlæse tilpasset kode fra mappen Developer Scratchpad. Denne indstilling findes i NVDAs indstillingskategori "Avanceret". Herefter skal du placere din kode i mappen "Scratchpad", som er at finde i mappen tilhørende den pågældende brugerkonfiguration.
+ </UL>
 </UL>
 
 <H3>Fejlrettelser</H3>
 
 <UL>
-<LI>Kategori- og status for flag er nu oplyst i Outlook 2016/365. (<A HREF="https://github.com/nvaccess/nvda/issues/8603">#8603</A>)
-<LI>Når NVDA er indstillet til sprog som kirgisisk, mongolsk eller makedonsk, vil NVDA ikke længere meddele at sproget ikke er understøttet af operativsystemet ved opstart. (<A HREF="https://github.com/nvaccess/nvda/issues/8603">#8603</A>)
-<LI>Flytning af musen til navigatorobjektet vil nu meget mere nøjagtigt flytte musen til positionen i gennemsynstilstand, når du benytter Mozilla Firefox, Google Chrome og Acrobat Reader DC. (<A HREF="https://github.com/nvaccess/nvda/issues/6460">#6460</A>)
-<LI>Interaktion med combo boxe på internettet med Firefox, Chrome og Internet Explorer er blevet forbedret. (<A HREF="https://github.com/nvaccess/nvda/issues/8664">#8664</A>)
-<LI>Hvis NVDA køres på en japansk version af Windows XP og Vista, vil beskeden om krævet operativsystem blive vist som forventet. (<A HREF="https://github.com/nvaccess/nvda/issues/8771">#8771</A>)
-<LI>Forbedring af ydeevne, når der navigeres rundt på store sider med mange dynamiske ændringer i Mozilla Firefox. (<A HREF="https://github.com/nvaccess/nvda/issues/8678">#8678</A>)
-<LI>Punktskrift viser ikke længere skrifttypeegenskaber, hvis skrifttypeattributterne er slået fra i dokumentformateringsindstillinger. (<A HREF="https://github.com/nvaccess/nvda/issues/7615">#7615</A>)
-<LI>NVDA vil ikke længere have problemer med at følge fokus i File Explorer og andre applikationer, der benytter UI Automation, når et andet program er optaget (f.eks. når der behandles flere lydfiler i et lydredigeringsprogram). (<A HREF="https://github.com/nvaccess/nvda/issues/7345">#7345</A>)
-<LI>ESC-tasten i ARIA-menuer på internettet vil ikke længere deaktivere fokustilstand ubetinget, men vil i stedet blive videresendt til menuen. (<A HREF="https://github.com/nvaccess/nvda/issues/3215">#3215</A>)
-<LI>Hele beskedindholdet vil ikke længere blive oplyst, når du benytter bogstavnavigation til at navigere til et element i det nye Gmail interface. (<A HREF="https://github.com/nvaccess/nvda/issues/8887">#8887</A>)
-<LI>Efter opdatering af NVDA, skulle browsere som Google Chrome og Firefox ikke længere gå ned, og gennemsynstilstand skulle fortsat gengive alt opdateret indhold i de aktuelt indlæste dokumenter. (<A HREF="https://github.com/nvaccess/nvda/issues/7641">#7641</A>)
-<LI>NVDA vil ikke længere oplyse "klikbart" flere gange lige efter hinanden, når du navigerer klikbart indhold. (<A HREF="https://github.com/nvaccess/nvda/issues/7430">#7430</A>)
-<LI>Kommandoer udført via Baum Vario 40 punktdisplays vil ikke længere fejle. (<A HREF="https://github.com/nvaccess/nvda/issues/8894">#8894</A>)
-<LI>I Google Slides med Mozilla Firefox, vil NVDA ikke længere rapportere "valgt tekst" ved hvert kontrolelement, der får fokus. (<A HREF="https://github.com/nvaccess/nvda/issues/8964">#8964</A>)
+<LI>Windows OneCore talesyntese: Store pauser vil ikke længere fremkomme under udtale i Windows April 2018-opdatering og nyere. (<A HREF="https://github.com/nvaccess/nvda/issues/8985">#8985</A>)
+<LI>Når der bevæges mellem tegn i edit-felter som dem der benyttes i Notesblok eller gennemsynstilstand, vil 32 bit emoji-tegn bestående af to UTF-16-kodepunkter (f.eks. ðŸ¤¦) vil nu korrekt oplæses. (<A HREF="https://github.com/nvaccess/nvda/issues/8782">#8782</A>)
+<LI>Forbedret dialog der fremkommer, når du skal bekræfte om du vil genstarte NVDA efter du har ændret sprog. Teksten og etiketterne på knapperne forekommer nu mere præcise og mindre forvirrende. (<A HREF="https://github.com/nvaccess/nvda/issues/6416">#6416</A>)
+<LI>Hvis en tredjeparts talesyntese ikke er i stand til at indlæse, vil NVDA nu skifte til Windows OneCore i stedet for eSpeak-NG, hvis du bruger Windows 10. (<A HREF="https://github.com/nvaccess/nvda/issues/9025">#9025</A>)
+<LI>Fjernet indstilling til at fremkalde velkomstdialogen på sikre skærme. (<A HREF="https://github.com/nvaccess/nvda/issues/8520">#8520</A>)
+<LI>Når du benytter tab eller hurtignavigation i gennemsyntilstand, vil legends på fanepaneler rapporteres mere konsekvent. (<A HREF="https://github.com/nvaccess/nvda/issues/709">#709</A>)
+<LI>NVDA ivl nu annoncere ændringer i værdier, når der vælges fra bestemte kontroller til valg af tid (f.eks. appen Alarmer og Ur). (<A HREF="https://github.com/nvaccess/nvda/issues/5231">#5231</A>)
+<LI>NVDA vil nu annoncere status, når hurtige handlinger som lysstyrke og fokushjælp slås til og fra i Handlingscenter i Windows 10. (<A HREF="https://github.com/nvaccess/nvda/issues/8954">#8954</A>)
+<LI>NVDA vil nu genkende knappen for lysstyrke i Handlingscenter som en knap i stedet for skiftknap i Windows 10 October 2018 Update og ældre. (<A HREF="https://github.com/nvaccess/nvda/issues/8845">#8845</A>)
+<LI>NVDA vil nu igen følge markøren og annoncere slettede tegn i editfelterne i Microsoft Excel i felterne "Find" og "Gå til". (<A HREF="https://github.com/nvaccess/nvda/issues/9042">#9042</A>)
+<LI>Rettede et sjældent nedbrud i Mozilla Firefox omfattende gennemsynstilstand. (<A HREF="https://github.com/nvaccess/nvda/issues/9152">#9152</A>)
+<LI>NVDA har ikke længere problemer med at rapportere nogle kontrolelementer i båndmenuen for i Office 2016.
+<LI>NVDA vil nu korrekt rapportere foreslåede kontakter, når der oprettes en ny meddelelse i Outlook 2016. (<A HREF="https://github.com/nvaccess/nvda/issues/8502">#8502</A>)
+<LI>De sidste markørknapper på Eurobraille 80-celler punktdisplay flytter ikke længere markøren til starten eller nogle få tegn fra starten på linjen. (<A HREF="https://github.com/nvaccess/nvda/issues/9160">#9160</A>)
+<LI>Rettet tabelnavigation under visning af meddelelsestråde i Mozilla Thunderbird. (<A HREF="https://github.com/nvaccess/nvda/issues/8396">#8396</A>)
+<LI>I Mozilla Firefox og Google Chrome, et skift til fokustilstand virker nu som forventet for bestemte listbokse og trævisninger (hvor listboksen eller trævisningen ikke er fokuserbar men dens elementer er). (<A HREF="https://github.com/nvaccess/nvda/issues/3573">#3573</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9157">#9157</A>)
+<LI>Gennemsynstilstand slås nu korrekt til under læsning af meddelelser i Microsoft Outlook 2016/365, når der bruges NVDAs nye UI Automation-funktionalitet. (<A HREF="https://github.com/nvaccess/nvda/issues/9188">#9188</A>)
+<LI>NVDA skulle nu ikke længere fryse så ofte, og det skulle ikke længere være nødvendigt at logge ud for at løse det. (<A HREF="https://github.com/nvaccess/nvda/issues/6291">#6291</A>)
+<LI>NVDA vil nu annoncere status af udklipsholderen, når du åbner udklipsholderoversigten og udklipsholderen er tom i Windows 10 October 2018 Update. (<A HREF="https://github.com/nvaccess/nvda/issues/9112">#9112</A>)
+<LI>NVDA vil nu annoncere topresultatet i emoji-panelet, når der søges efter emoji i Windows 10 October 2018 Update og nyere. (<A HREF="https://github.com/nvaccess/nvda/issues/9112">#9112</A>)
+<LI>NVDA fryser ikke længere i hovedvinduet i VirtualBox 5.2 eller ældre. (<A HREF="https://github.com/nvaccess/nvda/issues/9202">#9202</A>)
+<LI>reaktionshastigheden når der navigeres via linje, afsnit eller tabelceller skulle være markant forbedret i Microsoft Word. For bedste ydeevne, indstil Microsoft Word til kladevisning med Alt, U, Æ. (<A HREF="https://github.com/nvaccess/nvda/issues/9217">#9217</A>)
+<LI>Tomme beskeder i Mozilla Firefox og Google Chrome rapporteres ikke længere. (<A HREF="https://github.com/nvaccess/nvda/issues/5657">#5657</A>)
+<LI>Markante forbedringer til ydeevnen, når der navigeres i celler Microsoft Excel, særligt når regnearket indeholder kommentarer og/eller dropdown-lister til validering. (<A HREF="https://github.com/nvaccess/nvda/issues/7348">#7348</A>)
+<LI>Det skulle ikke længere være nødvendigt at deaktivere indstillingen "Tillad redigering direkte i cellen" for at redigere celler med NVDA i Excel 2016/365. (<A HREF="https://github.com/nvaccess/nvda/issues/8146">#8146</A>)
 </UL>
 
 <H3>Ændringer for udviklere</H3>
