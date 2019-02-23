@@ -22,7 +22,7 @@ addresses = {
     },
     'ar': {
         'lang':'Arabic',
-        'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>, Abdelkrim Bensaid <abdelkrim.bensaid@free.fr>'],
+        'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>, Abdelkrim Bensaid <abdelkrim.bensaid@free.fr>, Omar Alojaimi <amrahmad1995@gmail.com>'],
     },
     'bg': {
         'lang':'Bulgarian',
