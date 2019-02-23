@@ -1637,6 +1637,10 @@ Nó được tích hợp trong chính Microsoft Word cũng như trình xem và s
  Nếu bạn nhận thấy rằng có vẻ như NVDA theo dõi dấu náy không chính xác, ví dụ: nó có vẻ như luôn đứng ở một kí tự đằng sau hoặc lặp lại các dòng, có thể bạn sẽ phải thử tăng giá trị của nó.
  
  ==== Phân loại bản ghi dò lỗi ====
+ Các hộp kiểm trong danh sách này cho phép bạn bật một số loại thông điệp dò lỗi nhất định trong log của NVDA.
+ Việc ghi các thông điệp này có thể làm giảm hiệu năng vận hành và tạo các tập tin log dung lượng lớn.
+ Chỉ nên bật một trong số chúng nếu được  hướng dẫn cụ thể bởi một lập trình viên NVDA. Ví dụ: khi tìm hiểu xem tại sao một màn hình nổi không hoạt động như mong muốn.
+ 
 ++ Các thiết lập khác ++[MiscSettings]
 Bên cạnh  hộp thoại [cấu hình NVDA #NVDASettings], thực đơn tùy chọn trong thực đơn của NVDA còn có vài thành phần được liệt kê dưới đây.
 
@@ -1878,17 +1882,33 @@ Kích hoạt nút Tắt add-on để tắt add-on đang chọn.
 Kích hoạt nút Bật để bật add-on đang treo hoặc đã tắt trước đó.
 Bạn có thể chọn tắt add-on nếu trạng thái add-on đang bật và ngược lại.
 Mỗi khi tắt hoặc bật một add-on, trạng thái của add-on sẽ thay đổi như sau khi bạn khởi động lại NVDA.
-Nếu add-on đã được tắt trước đó, trạng thái sẽ hiển thị "bật sau khi khởi động lại". Còn nếu nó được "bật" trước đó, trạng thái sẽ hiển thị "tắt sau khi khởi động lại"
+Nếu add-on đã được tắt trước đó, trạng thái sẽ hiển thị "bật sau khi khởi động lại".
+Nếu nó được "bật" trước đó, trạng thái sẽ hiển thị "tắt sau khi khởi động lại"
 Cũng giống như khi bạn cài đặt hoặc gỡ bỏ add-on, bạn cần khởi động lại NVDA để các thay đổi có hiệu lực.
 
 Trình quản lý cũng có nút Đóng để đóng hộp thoại lại.
 Nếu bạn có cài đặt, gỡ bỏ hoặc thay đổi trạng thái của add-on, khi đóng hộp thoại, NVDA sẽ hỏi bạn có muốn khởi động lại NVDA để các thay đổi có hiệu lực không.
 
-Trong các phiên bản cũ thì bạn có thể sao chép trực tiếp các mô đun mở rộng cho NVDA vào thư mục cấu hình của NVDA.
-Ở phiên bản này vẫn hỗ trợ làm điều đó nhưng chúng sẽ không được hiển thị trong trình quản lý Add on.
-Tốt nhất là bạn nên xóa các mô đun này và tìm Add on tương ứng cho các chức năng đó rồi cài vào NVDA.
+Vài add-on cũ có thể không tương thích với phiên bản NVDA bạn đang có.
+Khi dùng một phiên bản NVDA cũ, vài add-on mới cũng có thể không tương thích.
+Việc cố gắng cài đặt một add-on không tương thích sẽ xuất hiện một thông điểp báo lỗi giải thích tại sao add-on lại được coi là không tương thích.
+Để xem xét các add-on không tương thích, bạn có thể dùng nút "xem các add-on không tương thích" để chạy trình quản lý các add-on không tương thích.
 
 Để mở trình quản lý add-on ở bất cứ đâu, bạn hãy gán phím tắt/thao tác cho nó trong hộp thoại [Quản lý thao tác #InputGestures].
+
+++ Trình Quản Lý Các Add-on không tương thích ++[incompatibleAddonsManager]
+Trình Quản Lý Các Add-on không tương thích có thể được mở thông qua nút "xem các add-on không tương thích" trong trình quản lý Add-on, cho phép bạn xem xét bất cứ add-on nào không tương thích, và lí do mà chúng được coi là không tương thích.
+Các Add-on được coi là không tương thích khi chúng không được cập nhật để hoạt động với các thay đổi đáng kể của NVDA, hoặc khi chúng dựa vào một tính năng không tồn tại trong phiên bản NVDA bạn đang dùng.
+Trình quản lý các add-on không tương thích có một thông điệp ngắn để giải thích mục đích của nó cũng như phiên bản NVDA.
+Các add-on không tương thích được trình bày trong một danh sách với các cột sau:
++ Gói, tên của add-on
++ Phiên bản, phiên bản của add-on
++ Lý do không tương thích, giải thích vì sao addon được coi là không tương thích
++
+
+Trình quản lý các add-on không tương thích cũng có nút "Thông tin về Add  - on...".
+Nó sẽ cho bạn biết đầy đủ các chi tiết của add-on, hữu ích khi liên lạc với tác giả của add-on.
+
 
 ++ Python Console ++[PythonConsole]
 Đây là công cụ hỗ trợ cho các lập trình viên trong việc phát hiện, kiểm tra lỗi trong NVDA, kiểm tra cấu trúc các đối tượng và tính tiếp cận của chúng.
@@ -2809,15 +2829,17 @@ Sau đây là các tùy chọn dòng lệnh cho NVDA:
 | -r | --replace | Đóng bản NVDA đang chạy và chạy với bản NVDA này |
 | -k | --check-running | Thông báo NVDA đang chạy hay không chạy thông qua mã exit; 0 nếu đang chạy và 1 nếu không chạy |
 | -f LOGFILENAME | --log-file=LOGFILENAME | Tập tin để ghi các thông điệp log vào |
-| -l LOGLEVEL | --log-level=LOGLEVEL | Cấp độ thấp nhất của thông điệp log (dò lỗi 10, thông tin 20, cảnh báo 30, lỗi 40, nghiêm trọng 50), mặc định là cảnh báo |
+| -l LOGLEVEL | --log-level=LOGLEVEL | Cấp độ thấp nhất của thông điệp log (dò lỗi 10, đầu vào / đầu ra 12, cảnh báo gỡ lỗi 15, thông tin 20, cảnh báo 30, lỗi 40, nghiêm trọng 50, tắt 100), mặc định là cảnh báo |
 | -c CONFIGPATH | --config-path=CONFIGPATH | Đường dẫn để lưu tất cả cấu hình của NVDA |
 | -m | --minimal | Không âm thanh, không giao diện, không thông báo bắt đầu vvv |
-| -s | --secure | Chế độ an toàn (tắt Python console) |
+| -s | --secure | Chế độ an toàn (tắt Python console và tính năng log, thường dùng trong các màn hình bảo vệ) |
 | Không có | --disable-addons | Các add-on không có hiệu lực |
-| Không có | --debug-logging | Bật cấp độ bản ghi dò lỗi cho lần chạy này. Thiết lập này được ghi chồng lên các cấp độ bản ghi khác ( ""--loglevel"", -l) tham số được cung cấp. |
+| Không có | --debug-logging | Bật cấp độ bản ghi dò lỗi cho lần chạy này. Thiết lập này được ghi đè lên các cấp độ bản ghi khác ( ""--loglevel"", -l) tham số được cung cấp, bao gồm tùy chọn tắt log. |
+| Không có | --no-logging | Tắt log hoàn toàn khi dùng NVDA. Thiết lập này có thể bị ghi đè nếu một cấp độ log ( ""--loglevel"", -l) được chỉ định từ dòng lệnh hoặc bản ghi dò lỗi đã được bật. |
 | Không có | --no-sr-flag  | Không thay đổi flag trình đọc màn hình hệ thống toàn cục |
 | Không có | --install | Cài NVDA (cài một bản mới của NVDA) |
 | Không có | --install-silent | Cài đặt NVDA ở chế độ im lặng (không chạy lên sau khi cài đặt) |
+| Không có | --enable-start-on-logon=True|False | trong khi cài đặt, bật NVDA [chạy ở màn hình đăng nhập của Windows #StartAtWindowsLogon] |
 | Không có | --create-portable | Tạo bản NVDA chạy trực tiếp (chạy lên sau khi tạo). yêu cầu khai báo đường dẫn cho bản chạy trực tiếp |
 | Không có | --create-portable-silent | Tạo bản NVDA chạy trực tiếp ở chế độ im lặng (không chạy lên sau khi cài). yêu cầu khai báo đường dẫn cho bản chạy trực tiếp |
 | Không có | --portable-path=PORTABLEPATH | đường dẫn để tạo bản chạy trực tiếp |
