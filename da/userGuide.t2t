@@ -107,9 +107,16 @@ Der er desuden nogle få indstillinger i denne dialog der vil blive forklaret ne
 Når installationen er færdig vil du få en besked om, at installationen er lykkedes.
 Når du trykker OK på dette tidspunkt, vil din nyinstallerede kopi af NVDA starte op.
 
++++ Advarsel om inkompatible tilføjelser +++[InstallWithIncompatibleAddons]
+Hvis du allerede har tilføjelser installeret, vil en dialog muligvis fremkomme der advarer om inkompatible tilføjelser.
+Før du kan fortsætte, vil det være nødvendigt at vælge check boxen der bekræfter, at inkompatible tilføjelser deaktiveres.
+I denne dialog vil du også finde en knap der lader dig gennemgå de inkompatible tilføjelser.
+Læs venligst afsnittet om [dialogen omfattende inkompatible tilføjelser #incompatibleAddonsManager] for yderligere hjælp med denne knap.
+
 +++ Start ved Windows Logon +++[StartAtWindowsLogon]
 Med denne indstilling bestemmer du, om du vil starte NVDA på Windows logon-skærmen, før du har indtastet din adgangskode.
-Dette omfanger også UAC kontrol af brugerkonti og andre sikre skærme.
+Dette omfanger også kontrol af brugerkonti og andre sikre skærme.
+Denne indstilling er aktiveret for nye installationer.
 
 +++ Opret Genvej på Skrivebordet (ctrl+alt+n) +++[CreateDesktopShortcut]
 Denne indstilling, hvis valgt, vil oprette en genvej til NVDA på skrivebordet. 
@@ -940,8 +947,7 @@ Der er mange sprog. Som standard sættes sproget imidlertid til Windows standard
 Denne valgmulighed giver NVDA besked på at benytte det sprog, som Windows aktuelt er sat til at bruge.
 
 Bemærk, at NVDA skal genstartes efter ændring af sproget.
-Hvis du ændrer denne indstilling, spørger NVDA dig, om du ønsker at genstarte.
-Tryk OK, hvorefter NVDA genstarter.
+Når dialogen til at bekræfte ændring til et andet sprog vises, skal du tage stilling til om du vil genstarte nu eller senere. Vælger du at genstarte senere, skal konfigurationen gemmes manuelt eller ved brug af den tilsvarende indstilling, der gemmer din konfiguration ved afslutning af NVDA.
 
 ==== Gem konfiguration ved afslutning ====[GeneralSettingsSaveConfig]
 Denne indstilling er en check box, der får NVDA til automatisk at gemme den aktuelle konfiguration ved afslutning, når den er slået til.
@@ -958,6 +964,14 @@ Dette er en check box, der, når den er slået til, får NVDA til at afspille en
 Dette er en combo box, hvor du kan bestemme, hvor meget NVDA skal logge under afvikling.
 Generelt bør det ikke være nødvendigt for brugeren at ændre denne indstilling, idet der ikke logges for meget.
 Det kan imidlertid være en nyttig funktion, hvis du ønsker at give tilbagemelding i forbindelse med fejlfinding til en fejlrapport.
+
+De tilgængelige logningsmuligheder er:
+- Deaktiveret: Udover en kort besked ved opstart, vil NVDA ikke benytte logning under kørsel-
+- Info: NVDA vil logge grundlæggende informationer under opstart og andre nyttige informationer for udviklere.
+- Fejlfinding og advarsler: Advarsler der ikke forårsages af alvorlige fejl vil logges.
+- Input/output: Denne indstilling logger både input og output fra punktdisplays, tastaturenheder samt tale. Hvis du bekymre dig om dit privatliv, benyt ikke denne valgmulighed.
+- Fejlfinding: Udover diverse informationer, input/output, og beskeder om advarsler, vil yderligere fejlbeskeder logges ved brug af denne indstilling. Hvis du ligeledes bekymre dig om dit privatliv, skal du ikke aktivere denne indstilling, da alt vil blive logget.
+-
 
 ==== Start NVDA automatisk, når jeg har logget på Windows ====[GeneralSettingsStartAfterLogOn]
 Hvis denne funktion er slået til, vil NVDA starte, så snart du er logget på Windows.
@@ -1350,6 +1364,11 @@ Jo længere mod venstre eller højre musen befinder sig på skærmen, desto læn
 Hvis check boxen "Afspil lydkoordinater under flytning af mus" er slået til, bevirker markering af denne check box, at lydstyrken på biptonen ved lydkoordinaterne bestemmes af, hvor lyst skærmbilledet under musen er.
 Denne indstilling er slået fra som standard.
 
+==== Ignorér museinput fra andre applikationer ====[MouseSettingsHandleMouseControl]
+Denne indstilling lader brugeren ignorere musehandlinger (f.eks. musebevægelse og museklik) udført af andre programmer som TeamViewer og andet software til fjernstyring.
+Denne indstilling er slået fra som standard.
+Hvis du vælger denne indstilling og du har musefølgning slået til, vil NVDA ikke annoncere hvad der befinder sig under musen, når musen flyttes af andre applikationer.
+
 +++ Berøringsinteraktion +++[TouchInteraction]
 Denne indstillingskategori vil kun være tilgængelig på computere, der kører Windows 8 og nyere, samt har mulighed for touch-funktionalitet. Disse indstillinger lader dig konfigurere, hvordan NVDA håndtere berøring af touchskærme.
 Denne kategori indeholder følgende indstillinger:
@@ -1517,6 +1536,13 @@ Hvis denne indstilling er slået til, afspiller NVDA en særlig lyd i stedet for
 med denne indstilling, som er slået til som udgangspunkt, kan du vælge om kommandobevægelser, f.eks. tastetryk, som ikke udgør en NVDA-kommando, og som ikke anses for at være en generel kommando, skal forhindres i at komme videre til det dokument, du har fokus på.
 Hvis denne indstilling er slået til, og du f.eks. trykker på bogstavet j, vil tastetrykket blive forhindret i at komme videre til dokumentet, selv om det ikke er en kommando til hurtignavigation, og det heller ikke er sandsynligt, at det er en kommando i selve programmet.
 
+==== Fokus følger gennemsynstilstand ====[BrowseModeSettingsFocusFollowsBrowseMode]
+Tast: NVDA+8
+
+denne indstilling er aktiveret som standard, og lader dig bestemme om systemfokus automatisk skal følge gennemsynstilstand i browsere.
+Hvis denne indstilling er slået til, fungerer NVDA som NVDA 2018.4 og tidligere.
+Deaktivering af denne indstilling kan betyde, at NVDA begår sig hurtigere på internettet og udviser bedre reaktionshastighed i gennemsynstilstand generelt. Denne funktion er eksperimental siden NVDA 2019.1.
+
 +++ Ddokumentformatering (NVDA+Ctrl+d) +++[DocumentFormattingSettings]
 De fleste check boxe i denne indstillingskategori bruges til at angive, hvilke typer formatering, du ønsker oplæst automatisk, når du flytter markøren rundt inden i dokumenter.
 Hvis du fx markerer check boxen "oplæs skrifttypenavn", hører du navnet på skrifttypen, hver gang du med piletasterne bevæger dig hen over tekst med en anden skrifttype.
@@ -1583,6 +1609,37 @@ Denne kategori indeholder følgende indstillinger:
 
 ==== Sprog til tekstgenkendelse ====[Win10OcrSettingsRecognitionLanguage]
 Denne combo box lader dig vælge det ønskede sprog til brugen af tekstgenkendelse.
+
++++ Avancerede Indstillinger +++
+Advarsel! Indstillingerne i denne kategori gælder for avancerede brugere. Hvis du ændrer disse, kan NVDA fungere uhensigtsmæssigt.
+Du skal kun ændre disse, hvis du ved hvad du laver eller er specifikt instrueret af NVDA-udviklere.
+
+==== Tillad indlæsning af tilpasset kode fra mappen Developer Scratchpad ====
+Når du udvikler kode for en NVDA-tilføjelse, så er det nyttigt at have muligheden for at afprøve din kode, når du skriver den.
+Denne indstilling, hvis slået til, lader dig indlæse tilpasset appModules, globalPlugins, brailleDisplayDrivers og synthDrivers fra en særlig mappe ved navn "Developer Scrachpad" i konfigurationsmappen for din bruger af NVDA.
+Tidligere ville NVDA indlæse tilpasset kode direkte fra brugerens konfigurationsmappe uden mulighed for at deaktivere dette.
+Denne indstilling er slået fra. Dette vil sikre, at ingen kode kan køres uden brugerens samtykke.
+Hvis du ønsker at distribuere kode til andre, skal du gøre dette som en tilføjelsespakke.
+
+==== Åbn mappen Developer Scratchpad ====
+Denne knap åbner mappen vor du kan placere din kode under udvikling.
+Denne knap vil kun være tilgængelig, hvis NVDA tillader indlæsning af tilpasset kode.
+
+==== Benyt UI Automation til at få adgang til kontrolelementer for Microsoft &Word-dokumenter, når disse er tilgængelige ====
+Når denne indstilling er aktiveret, vil NVDA forsøge at benytte Microsoft UI Automation tilgængeligheds-API for at indfange information om diverse kontrolelementer i Microsoft Word-dokumenter.
+Dette omfatter selve Microsoft Word, samt under skrivning og læsning af meddelelser i Microsoft Outlook.
+For de seneste versioner af Microsoft Office 2016/365 kørende på windows 10 er understøttelse af UI Automation komplet nok til næsten at give samme oplevelse, der allerede leveres med NVDA. Denne indstilling har også den fordel, at reaktionshastigheden er øget markant.
+Vær dog opmærksom på, at dette også kan betyde at noget information ikke er synligt, eller vises forkert, hvilket betyder at denne understøttelse ikke altid kan forekomme pålidelig.
+Vi anbefaler ikke at størstedelen af brugere slår denne indstilling til, men vi ønsker gerne henvendelser fra brugere af Office 2016/365.
+
+==== Interval for markøren (i MS) ====
+Denne indstilling lader dig konfigurere hvor mange millisekunder NVDA skal vente på systemmarkøren (indsættelsesmarkøren) i redigerbare tekstfelter.
+Hvis du opdager, at NVDA har problemer med at følge systemmarkøren (f.eks. hvis NVDA konsekvent er et tegn bagud eller gentager linjer), kan du forøge denne værdi.
+
+==== Aktiverede logningskategorier ====
+Check boxene i denne liste lader dig vælge, hvilke logningskategorier der skal benyttes under skrivning af NVDAs logfil.
+Logning af disse hændelser kan resultere i lavere ydeevne og store logfiler.
+Slå kun dette til, hvis du er blevet bedt om det af en NVDA-udvikler (f.eks. for at finde ud af, hvorfor et punktdisplay ikke fungere som forventet).
 
 ++ yderligere indstillinger ++[MiscSettings]
 Udover [NVDAs indstillingsdialog #NVDASettings], indeholder menuen "Opsætning" under NVDA-menuen yderligere indstillinger, der beskrives nedenfor.
@@ -1825,17 +1882,33 @@ For at deaktivére et tilføjelsesprogram, tryk på knappen "Deaktivér".
 For at aktivére et tidligere deaktivéret tilføjelsesprogram, tryk på knappen "Aktivér".
 Du kan deaktivére et tilføjelsesprogram, hvis status indikerer at tilføjelsespakken er aktiveret, eller deaktivére det hvis tilføjelsesprogrammet er aktiveret.
 For hvert tryk af disse knapper vil status ændres, så du ved hvad der vil ske, når NVDA genstartes.
-Hvis tilføjelsespakken tidligere var deaktiveret, vil status vise "aktiveret efter genstart". Hvis tilføjelsespakken tidligere var aktiveret, vil status vise "deaktiveret efter genstart".
+Hvis tilføjelsespakken tidligere var deaktiveret, vil status vise "aktiveret efter genstart".
+Hvis tilføjelsespakken tidligere var aktiveret, vil status vise "deaktiveret efter genstart".
 Hvis du har lavet ændringer til tilføjelsesprogrammer,skal du genstarte NVDA, så dine ændringer kan træde i kraft.
 
 Dialogboksen har også en luk-knap.
 Hvis du har installeret, fjernet eller ændret status af et tilføjelsesprogram, vil NVDA spørge om du ønsker at genstarte, så ændringerne kan træde i kraft.
 
-Det har før i tiden været muligt at udvide funktionaliteten af NVDA ved at kopiere plugins og drivere ind i mappen med brugerkonfigurationen til NVDA.
-Selv om denne version af NVDA kan indlæse dem, vil de ikke figurere i listen over tilføjelsesprogrammer.
-Det er bedst at slette disse filer, og derefter installere det rigtige tilføjelsesprogram hvis det er tilgængeligt.
+Nogle ældre tilføjelsesprogrammer er muligvis ikke længere kompatible med den version af NVDA, som du benytter.
+Hvis du benytter en ældre version af NVDA, kan det også være, at nyere tilføjelser ikke kan benyttes.
+Hvis du forsøger at installere en inkompatibel tilføjelsespakke, vil der fremkomme en fejl samt en beskrivelse af hvorfor pakken ikke kunne installeres.
+For at gennemgå disse inkompatible tilføjelser, kan du bruge knappen "Vis inkompatible tilføjelser...".
 
 Hvis du gerne vil kunne nå dialogen til styring af tilføjelsesprogrammer fra hvor som helst på computeren, kan du tilknytte en inputbevægelse med [dialogen inputbevægelser [InputGestures].
+
+++ Styring af inkompatible tilføjelser ++[incompatibleAddonsManager]
+Knappen "Vis inkompatible tilføjelser..." vil åbne en dialog, hvorfra du kan administrere og gennemse inkompatible tilføjelser, samt hvorfor disse anses for at være inkompatible med din version af NVDA.
+Tilføjelser anses som inkompatible, når de ikke har været opdateret således at de virker med markante ændringer til NVDA, eller benytter en funktion i NVDA der ikke længere er tilgængelig.
+Styringen af inkompatible tilføjelser viser en kort besked om dialogens formål, samt din NVDA-version.
+Inkompatible tilføjelser vises i en list omfattende følgende kolonner:
++ Pakke: Navnet på tilføjelsen
++ Version: versionsnummeret på tilføjelsen
++ Årsag for inkompatibilitet: Grunden til tilføjelsen anses for at vrære inkompatibel
++
+
+Dialogen har også en knap ved navn "Om tilføjelsesprogram...".
+Denne knap viser alle detaljer om tilføjelsen, så du evt. kan kontakte udvikleren af det pågældende tilføjelsesprogram.
+
 
 ++ Python konsollen ++[PythonConsole]
 NVDAs Python-konsol, der ligger under Værktøjer i NVDA-menuen, er et udviklerværktøj. Det er især velegnet til brug ved fejlfinding, generel inspektion af interne processer i NVDA eller inspektion af tilgængelighedshierarkiet i en applikation.
@@ -2756,15 +2829,17 @@ De mulige kommandolinjeparametre til NVDA er følgende:
 | -r | --replace | Afslut en allerede kørende kopi af NVDA og start denne kopi |
 | -k | --check-running | Fortæl via exitkoden, om NVDA kører (0 hvis NVDA kører, 1 hvis den ikke gør) |
 | -f LOGFILENAME | --log-file=LOGFILENAME | Filen hvor NVDAs log skal gemmes |
-| -l LOGLEVEL | --log-level=LOGLEVEL | Det laveste niveau af meddelelser, som skal logges (fejlfinding 10, info 20, advarsler 30, fejl 40 og kritiske fejl 50). Standard er advarsler. |
+| -l LOGLEVEL | --log-level=LOGLEVEL | Det laveste niveau af meddelelser, som skal logges (fejlfinding 10, input/output 12, fejlfinding og advarsler 15, info 20, advarsler 30, fejl 40, kritiske fejl 50, deaktiveret 100). Standard er advarsler. |
 | -c CONFIGPATH | --config-path=CONFIGPATH | Stien hvor alle indstillinger i NVDA bliver gemt |
 | -m | --minimal | Ingen lyde, ingen brugergrænseflade, ingen opstartsmeddelelser osv. |
-| -s | --secure | Sikker tilstand (uden Python console) |
+| -s | --secure | Sikker tilstand (deaktiverer Python console og logningsfunktioner, ofte brugt på sikre skærme) |
 | Ingen | --disable-addons | ingen tilføjelsesprogrammer |
 | Ingen | --debug-logging | Aktivér logningsniveau til brug ved fejlfinding for kun denne opstart. Denne indstilling vil overstyre alle logningsniveau ( ""--loglevel"", -l) argumenter. |
+| Ingen | --no-logging | Deaktivér logning fuldstændigt under brugen af NVDA. Denne indstilling kan blive tilsidesat hvis ( ""--loglevel"", -l) angives fra kommandolinjen eller såfremt logning for fejlfinding er slået til. |
 | Ingen | --no-sr-flag  | Forhindre ændring af det globale skærmlæserflag |
 | Ingen | --install | Installerer NVDA og starter den nyinstallerede kopi |
 | Ingen | --install-silent | Tavs installation af NVDA (Starter ikke den nyinstallerede kopi) |
+| Ingen | --enable-start-on-logon=True|False | Under installation vil dette aktivere [opstart ved logon-skærmen #StartAtWindowsLogon] |
 | Ingen | --create-portable | Opretter en flytbar kopi af NVDA (starter den nyoprettede kopi). Kræver --portable-path angives |
 | Ingen | --create-portable-silent | Opretter en flytbar kopi af NVDA (starter ikke den nyoprettede kopi). Kræver --portable-path angives |
 | Ingen | --portable-path=PORTABLEPATH | Stien hvor den flytbare kopi oprettes |
