@@ -166,13 +166,14 @@
     <LI><A HREF="#LogViewer">12.1. Trình hiển thị Log</A>
     <LI><A HREF="#SpeechViewer">12.2. Trình hiển thị nội dung đọc</A>
     <LI><A HREF="#AddonsManager">12.3. Trình quản lý Add-ons</A>
-    <LI><A HREF="#PythonConsole">12.4. Python Console</A>
-    <LI><A HREF="#ReloadPlugins">12.5. Cập nhật lại plugins</A>
+    <LI><A HREF="#incompatibleAddonsManager">12.4. Trình Quản Lý Các Add-on không tương thích</A>
+    <LI><A HREF="#PythonConsole">12.5. Python Console</A>
+    <LI><A HREF="#ReloadPlugins">12.6. Cập nhật lại plugins</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">13. Hỗ trợ các bộ đọc</A>
     <UL>
     <LI><A HREF="#eSpeakNG">13.1. eSpeak NG</A>
-    <LI><A HREF="#toc113">13.2. Microsoft Speech API phiên bản 4 (SAPI 4)</A>
+    <LI><A HREF="#toc114">13.2. Microsoft Speech API phiên bản 4 (SAPI 4)</A>
     <LI><A HREF="#SAPI5">13.3. Microsoft Speech API phiên bản 5 (SAPI 5)</A>
     <LI><A HREF="#MicrosoftSpeechPlatform">13.4. Microsoft Speech Platform</A>
     <LI><A HREF="#OneCore">13.5. Giọn Windows OneCore</A>
@@ -190,9 +191,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. Các dòng HumanWare Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc128">14.9.1. Các phím được gán cho tất cả sản phẩm</A>
-      <LI><A HREF="#toc129">14.9.2. Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80</A>
-      <LI><A HREF="#toc130">14.9.3. Phím gán cho Brailliant BI 14</A>
+      <LI><A HREF="#toc129">14.9.1. Các phím được gán cho tất cả sản phẩm</A>
+      <LI><A HREF="#toc130">14.9.2. Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80</A>
+      <LI><A HREF="#toc131">14.9.3. Phím gán cho Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. Các dòng HIMS Braille Sense/Braille EDGE/Smart Beetle</A>
     <LI><A HREF="#Seika">14.11. Màn hình nổi Seika</A>
@@ -3568,6 +3569,12 @@ Nó được tích hợp trong chính Microsoft Word cũng như trình xem và s
 
 <H5>Phân loại bản ghi dò lỗi</H5>
 
+<P>
+ Các hộp kiểm trong danh sách này cho phép bạn bật một số loại thông điệp dò lỗi nhất định trong log của NVDA.
+ Việc ghi các thông điệp này có thể làm giảm hiệu năng vận hành và tạo các tập tin log dung lượng lớn.
+ Chỉ nên bật một trong số chúng nếu được  hướng dẫn cụ thể bởi một lập trình viên NVDA. Ví dụ: khi tìm hiểu xem tại sao một màn hình nổi không hoạt động như mong muốn.
+</P>
+
 <A NAME="MiscSettings"></A>
 <H3>11.2. Các thiết lập khác</H3>
 
@@ -3943,7 +3950,8 @@ Kích hoạt nút Tắt add-on để tắt add-on đang chọn.
 Kích hoạt nút Bật để bật add-on đang treo hoặc đã tắt trước đó.
 Bạn có thể chọn tắt add-on nếu trạng thái add-on đang bật và ngược lại.
 Mỗi khi tắt hoặc bật một add-on, trạng thái của add-on sẽ thay đổi như sau khi bạn khởi động lại NVDA.
-Nếu add-on đã được tắt trước đó, trạng thái sẽ hiển thị "bật sau khi khởi động lại". Còn nếu nó được "bật" trước đó, trạng thái sẽ hiển thị "tắt sau khi khởi động lại"
+Nếu add-on đã được tắt trước đó, trạng thái sẽ hiển thị "bật sau khi khởi động lại".
+Nếu nó được "bật" trước đó, trạng thái sẽ hiển thị "tắt sau khi khởi động lại"
 Cũng giống như khi bạn cài đặt hoặc gỡ bỏ add-on, bạn cần khởi động lại NVDA để các thay đổi có hiệu lực.
 </P>
 <P>
@@ -3951,16 +3959,38 @@ Trình quản lý cũng có nút Đóng để đóng hộp thoại lại.
 Nếu bạn có cài đặt, gỡ bỏ hoặc thay đổi trạng thái của add-on, khi đóng hộp thoại, NVDA sẽ hỏi bạn có muốn khởi động lại NVDA để các thay đổi có hiệu lực không.
 </P>
 <P>
-Trong các phiên bản cũ thì bạn có thể sao chép trực tiếp các mô đun mở rộng cho NVDA vào thư mục cấu hình của NVDA.
-Ở phiên bản này vẫn hỗ trợ làm điều đó nhưng chúng sẽ không được hiển thị trong trình quản lý Add on.
-Tốt nhất là bạn nên xóa các mô đun này và tìm Add on tương ứng cho các chức năng đó rồi cài vào NVDA.
+Vài add-on cũ có thể không tương thích với phiên bản NVDA bạn đang có.
+Khi dùng một phiên bản NVDA cũ, vài add-on mới cũng có thể không tương thích.
+Việc cố gắng cài đặt một add-on không tương thích sẽ xuất hiện một thông điểp báo lỗi giải thích tại sao add-on lại được coi là không tương thích.
+Để xem xét các add-on không tương thích, bạn có thể dùng nút "xem các add-on không tương thích" để chạy trình quản lý các add-on không tương thích.
 </P>
 <P>
 Để mở trình quản lý add-on ở bất cứ đâu, bạn hãy gán phím tắt/thao tác cho nó trong hộp thoại <A HREF="#InputGestures">Quản lý thao tác</A>.
 </P>
 
+<A NAME="incompatibleAddonsManager"></A>
+<H3>12.4. Trình Quản Lý Các Add-on không tương thích</H3>
+
+<P>
+Trình Quản Lý Các Add-on không tương thích có thể được mở thông qua nút "xem các add-on không tương thích" trong trình quản lý Add-on, cho phép bạn xem xét bất cứ add-on nào không tương thích, và lí do mà chúng được coi là không tương thích.
+Các Add-on được coi là không tương thích khi chúng không được cập nhật để hoạt động với các thay đổi đáng kể của NVDA, hoặc khi chúng dựa vào một tính năng không tồn tại trong phiên bản NVDA bạn đang dùng.
+Trình quản lý các add-on không tương thích có một thông điệp ngắn để giải thích mục đích của nó cũng như phiên bản NVDA.
+Các add-on không tương thích được trình bày trong một danh sách với các cột sau:
+</P>
+
+<OL>
+<LI>Gói, tên của add-on
+<LI>Phiên bản, phiên bản của add-on
+<LI>Lý do không tương thích, giải thích vì sao addon được coi là không tương thích
+</OL>
+
+<P>
+Trình quản lý các add-on không tương thích cũng có nút "Thông tin về Add  - on...".
+Nó sẽ cho bạn biết đầy đủ các chi tiết của add-on, hữu ích khi liên lạc với tác giả của add-on.
+</P>
+
 <A NAME="PythonConsole"></A>
-<H3>12.4. Python Console</H3>
+<H3>12.5. Python Console</H3>
 
 <P>
 Đây là công cụ hỗ trợ cho các lập trình viên trong việc phát hiện, kiểm tra lỗi trong NVDA, kiểm tra cấu trúc các đối tượng và tính tiếp cận của chúng.
@@ -3968,7 +3998,7 @@ Tốt nhất là bạn nên xóa các mô đun này và tìm Add on tương ứn
 </P>
 
 <A NAME="ReloadPlugins"></A>
-<H3>12.5. Cập nhật lại plugins</H3>
+<H3>12.6. Cập nhật lại plugins</H3>
 
 <P>
 Chức năng này sẽ cập nhật lại tất cả các mô đun mở rộng trong NVDA mà không cần khởi động lại NVDA, nó rất tiện cho các lập trình viên.
@@ -3998,7 +4028,7 @@ Nó hỗ trợ hơn  43 ngôn ngữ khác nhau.
 Cũng có khá nhiều giọng khác nhau để bạn lựa chọn.
 </P>
 
-<A NAME="toc113"></A>
+<A NAME="toc114"></A>
 <H3>13.2. Microsoft Speech API phiên bản 4 (SAPI 4)</H3>
 
 <P>
@@ -4835,7 +4865,7 @@ Sau đây là danh sách các phím được gán của mẫu màn hình nổi n
 Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết các phím tương ứng.
 </P>
 
-<A NAME="toc128"></A>
+<A NAME="toc129"></A>
 <H4>14.9.1. Các phím được gán cho tất cả sản phẩm</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4925,7 +4955,7 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 </TR>
 </TABLE>
 
-<A NAME="toc129"></A>
+<A NAME="toc130"></A>
 <H4>14.9.2. Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4947,7 +4977,7 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 </TR>
 </TABLE>
 
-<A NAME="toc130"></A>
+<A NAME="toc131"></A>
 <H4>14.9.3. Phím gán cho Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -6646,7 +6676,7 @@ Sau đây là các tùy chọn dòng lệnh cho NVDA:
 <TR>
 <TD>-l LOGLEVEL</TD>
 <TD>--log-level=LOGLEVEL</TD>
-<TD>Cấp độ thấp nhất của thông điệp log (dò lỗi 10, thông tin 20, cảnh báo 30, lỗi 40, nghiêm trọng 50), mặc định là cảnh báo</TD>
+<TD>Cấp độ thấp nhất của thông điệp log (dò lỗi 10, đầu vào / đầu ra 12, cảnh báo gỡ lỗi 15, thông tin 20, cảnh báo 30, lỗi 40, nghiêm trọng 50, tắt 100), mặc định là cảnh báo</TD>
 </TR>
 <TR>
 <TD>-c CONFIGPATH</TD>
@@ -6661,7 +6691,7 @@ Sau đây là các tùy chọn dòng lệnh cho NVDA:
 <TR>
 <TD>-s</TD>
 <TD>--secure</TD>
-<TD>Chế độ an toàn (tắt Python console)</TD>
+<TD>Chế độ an toàn (tắt Python console và tính năng log, thường dùng trong các màn hình bảo vệ)</TD>
 </TR>
 <TR>
 <TD>Không có</TD>
@@ -6671,7 +6701,12 @@ Sau đây là các tùy chọn dòng lệnh cho NVDA:
 <TR>
 <TD>Không có</TD>
 <TD>--debug-logging</TD>
-<TD>Bật cấp độ bản ghi dò lỗi cho lần chạy này. Thiết lập này được ghi chồng lên các cấp độ bản ghi khác ( --loglevel, -l) tham số được cung cấp.</TD>
+<TD>Bật cấp độ bản ghi dò lỗi cho lần chạy này. Thiết lập này được ghi đè lên các cấp độ bản ghi khác ( --loglevel, -l) tham số được cung cấp, bao gồm tùy chọn tắt log.</TD>
+</TR>
+<TR>
+<TD>Không có</TD>
+<TD>--no-logging</TD>
+<TD>Tắt log hoàn toàn khi dùng NVDA. Thiết lập này có thể bị ghi đè nếu một cấp độ log ( --loglevel, -l) được chỉ định từ dòng lệnh hoặc bản ghi dò lỗi đã được bật.</TD>
 </TR>
 <TR>
 <TD>Không có</TD>
@@ -6687,6 +6722,11 @@ Sau đây là các tùy chọn dòng lệnh cho NVDA:
 <TD>Không có</TD>
 <TD>--install-silent</TD>
 <TD>Cài đặt NVDA ở chế độ im lặng (không chạy lên sau khi cài đặt)</TD>
+</TR>
+<TR>
+<TD>Không có</TD>
+<TD>--enable-start-on-logon=True|False</TD>
+<TD>trong khi cài đặt, bật NVDA <A HREF="#StartAtWindowsLogon">chạy ở màn hình đăng nhập của Windows</A></TD>
 </TR>
 <TR>
 <TD>Không có</TD>
