@@ -141,6 +141,7 @@
       <LI><A HREF="#BrowseModeSettings">11.1.13. 浏览模式设置 (NVDA+control+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">11.1.14. 文档格式设置 (NVDA+control+d)</A>
       <LI><A HREF="#Win10OcrSettings">11.1.15. Windows 10 光学字符识别 设置</A>
+      <LI><A HREF="#toc91">11.1.16. Advanced Settings</A>
       </UL>
     <LI><A HREF="#MiscSettings">11.2. 杂项设置</A>
       <UL>
@@ -165,8 +166,9 @@
     <LI><A HREF="#LogViewer">12.1. 日志查看器</A>
     <LI><A HREF="#SpeechViewer">12.2. 朗读查看器</A>
     <LI><A HREF="#AddonsManager">12.3. 插件管理器</A>
-    <LI><A HREF="#PythonConsole">12.4. Python 控制台</A>
-    <LI><A HREF="#ReloadPlugins">12.5. 重新加载插件</A>
+    <LI><A HREF="#incompatibleAddonsManager">12.4. Incompatible Add-ons Manager</A>
+    <LI><A HREF="#PythonConsole">12.5. Python 控制台</A>
+    <LI><A HREF="#ReloadPlugins">12.6. 重新加载插件</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">13. 支持的语音合成器</A>
     <UL>
@@ -189,9 +191,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant BI/B Series / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc127">14.9.1. Key assignments for All models</A>
-      <LI><A HREF="#toc128">14.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</A>
-      <LI><A HREF="#toc129">14.9.3. Key assignments for Brailliant BI 14</A>
+      <LI><A HREF="#toc129">14.9.1. Key assignments for All models</A>
+      <LI><A HREF="#toc130">14.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</A>
+      <LI><A HREF="#toc131">14.9.3. Key assignments for Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</A>
     <LI><A HREF="#Seika">14.11. 清华点显器</A>
@@ -2353,8 +2355,19 @@ Kindle允许您对所选文本执行各种功能，包括获取字典定义，�
 <P>
 这是一个组合框，允许您指定在 NVDA 运行时日志记录的数量。
 用户一般不用更改这一设置，以免日志太多。
-然而，如果您希望在报告 Bug 时提供信息，这个选项或许是有用的。
+然而，如果您希望在报告 Bug 时提供更多信息，或者完全关闭日志功能，这个选项或许是有用的。
 </P>
+<P>
+日志记录级别有以下几种：
+</P>
+
+<UL>
+<LI>停用 除了NVDA启动的信息，不记录其他日志。
+<LI>基本信息 启动信息以及对开发者有用的其他信息。
+<LI>调试警告 包括信息级别的日志以及不严重的错误
+<LI>输入/输出 包括上面几个级别的日志以及键盘和点显器的输入信息、语音和点显器输出信息，这些日志可能包含您的个人隐私，如果您希望保护隐私请不要把日志级别设为输入/输出。
+<LI>调试 包括上面几个级别的日志以及对调试有用的信息，这些日志同样可能包含您的个人隐私，如果您希望保护隐私请不要把日志级别设为调试。
+</UL>
 
 <A NAME="GeneralSettingsStartAfterLogOn"></A>
 <H5>系统启动后自动运行 NVDA</H5>
@@ -3065,7 +3078,16 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 
 <P>
 如果“鼠标移动时播放音频坐标”复选框被选中之后，选中此复选框意味着，播放音频坐标的音量由鼠标下的屏幕亮度的大小来决定。
-此设置默认情况下不选中。
+默认设置没有启用这个功能。
+</P>
+
+<A NAME="MouseSettingsHandleMouseControl"></A>
+<H5>忽略某些软件的鼠标操作</H5>
+
+<P>
+使用TeamViewer等远程控制软件时，远程控制端会操作鼠标，选中这个复选框可以让NVDA忽略这些操作。
+默认设置没有启用这个功能。
+如果您还选中了启用鼠标导航复选框，NVDA不会读出这些软件远程控制端对鼠标的操作。
 </P>
 
 <A NAME="TouchInteraction"></A>
@@ -3381,6 +3403,18 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 举一个例子，如果启用，当您按下字母“j”后，它会被阻拦在所聚焦的文档，极它既不会作为 NVDA 的跳转热键，也不会作为程序自身的命令(译者注：就上面的例子来说，假设我们现在聚焦在word文档里，当按j的时候，他不会跳转文档，也不会当成字母j输入到文档，就是j就无效了)。
 </P>
 
+<A NAME="BrowseModeSettingsFocusFollowsBrowseMode"></A>
+<H5>Focus follows browse mode</H5>
+
+<P>
+Key: NVDA+8
+</P>
+<P>
+Enabled by default, this option allows you to choose if system focus automatically follows browse mode focus in browsers.
+If enabled, this represents default behavior of NVDA as of version 2018.4 and before.
+Disabling this option might result in faster browsing experience and better responsiveness in browse mode. This is experimental as of version 2019.1.
+</P>
+
 <A NAME="DocumentFormattingSettings"></A>
 <H4>11.1.14. 文档格式设置 (NVDA+control+d)</H4>
 
@@ -3483,6 +3517,56 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 
 <P>
 此组合框允许您选择用于光学字符识别的语言。
+</P>
+
+<A NAME="toc91"></A>
+<H4>11.1.16. Advanced Settings</H4>
+
+<P>
+Warning! The settings in this category are for advanced users and may cause NVDA to not function correctly if configured in the wrong way.
+Only make changes to these settings if you are sure you know what you are doing or if you have been specifically instructed to by an NVDA developer.
+</P>
+
+<H5>Enable loading custom code from Developer Scratchpad Directory</H5>
+
+<P>
+When developing add-ons for NVDA, it is useful to be able to test code as you are writing it.
+This option when enabled, allows NVDA to load custom appModules, globalPlugins, brailleDisplayDrivers and synthDrivers, from a special developer scratchpad directory in your NVDA user configuration directory.
+Previously NVDA would load custom code directly from the user configuration directory, with no way of disabling this.
+This option is off by default, ensuring that no untested code is ever run in NVDA with out the user's explicit knowledge.
+If you wish to distribute custom code to others, you should package it as an NVDA add-on.
+</P>
+
+<H5>Open Developer Scratchpad Directory</H5>
+
+<P>
+This button opens the directory where you can place custom code while developing it.
+This button is only enabled if NVDA is configured to enable loading custom code from the Developer Scratchpad Directory.
+</P>
+
+<H5>Use UI automation to access Microsoft Word document controls when available</H5>
+
+<P>
+When this option is enabled, NVDA will try to use  the Microsoft UI Automation accessibility api in order to fetch information from Microsoft Word document controls.
+This includes in Microsoft Word itself, and also the Microsoft Outlook message viewer and composer.
+ For the most recent versions of Microsoft Office 2016/365 running on windows 10, UI Automation support is complete enough to provide access to Microsoft Word documents almost equal to NVDA's existing Microsoft Word support, with the added advantage that responsiveness is majorly increased.
+However, There may be some information which is either not exposed, or exposed incorrectly in some versions of Microsoft Office, which means this UI automation support cannot always be relied upon.
+We still do not recommend that  the majority of users turn this on by default, though we do welcome users of Office 2016/365 to test this feature and provide feedback.
+</P>
+
+<H5>Caret move timeout (in MS)</H5>
+
+<P>
+This option allows you to configure the number of mili seconds NVDA will wait for the caret (insertion point) to move in editable text controls.
+If you find that NVDA seems to be incorrectly tracking the caret E.g. it seems to be always one character behind or is repeating lines, then you may wish to try increasing this value.
+</P>
+
+<H5>Debug logging categories</H5>
+
+<P>
+The checkboxes in this list allow you to enable specific categories of debug messages in NVDA's log.
+Logging these messages can resort in decreased performance and large log files.
+Only turn one of these on if specifically instructed to by an NVDA developer e.g. when debugging why a braille display driver is not functioning correctly.
 </P>
 
 <A NAME="MiscSettings"></A>
@@ -3860,7 +3944,8 @@ NVDA 会询问您是否真的要这样做。
 要想启用先前停用的插件，点击“启用”按钮。
 当插件状态显示为“正在运行”或“已启用”时，您可以停用该插件；当状态显示为“挂起”或“已停用”时，您可以启用该插件。
 每次点击“启用”和“停用”按钮后，插件状态栏都能实时地显示在下次 NVDA 重新启动时会发生什么变化。
-如果之前停用了插件，状态一栏会显示“重启后启用”。如果之前插件是启用的，状态一栏会显示“重启后禁用”。
+如果之前停用了插件，状态一栏会显示“重启后启用”。
+如果之前插件是启用的，状态一栏会显示“重启后禁用”。
 就像是添加或删除插件一样，您必须重新启动 NVDA 才能使之生效。
 </P>
 <P>
@@ -3868,16 +3953,38 @@ NVDA 会询问您是否真的要这样做。
 如果您已经安装卸载插件或修改了插件的状态，NVDA 会首先询问您是否要重新启动以使修改生效。
 </P>
 <P>
-在过去，您只需单独复制插件或驱动到 NVDA 的用户配置目录即可扩展 NVDA 的功能。
-虽然此版本的 NVDA 仍然会加载他们，但是他们不会被显示在插件管理器。
-最好从您的配置删除这些文件并安装可用的适合插件。
+旧插件可能不兼容新版NVDA。
+为新版NVDA编写的插件也可能不兼容旧版NVDA。
+安装这些插件时，NVDA会报错并提示原因。
+您可以在插件管理器内找到“查看不兼容的插件”这个按钮，点击这个按钮就可以查看这些插件。
 </P>
 <P>
 要想在任何地方访问插件管理器，请在<A HREF="#InputGestures">输入手势对话框</A>定义一个自定义手势。
 </P>
 
+<A NAME="incompatibleAddonsManager"></A>
+<H3>12.4. Incompatible Add-ons Manager</H3>
+
+<P>
+The Incompatible Add-ons Manager, which can be accessed via the "view incompatible add-ons" buttons in the Add-on manager, allows you to inspect any incompatible add-ons, and the reason they are considered incompatible.
+Add-ons are considered incompatible when they have not been updated to work with significant changes to NVDA, or when they rely on a feature not available in the version of NVDA you are using.
+The Incompatible add-ons manager has a short message to explain its purpose as well as the version of NVDA.
+The incompatible add-ons are presented in a list with the following columns:
+</P>
+
+<OL>
+<LI>Package, the name of the add-on
+<LI>Version, the version of the add-on
+<LI>Incompatible reason, an explanation of why the addon is considered incompatible
+</OL>
+
+<P>
+The Incompatible add-ons manager also has an "About add-on..." button.
+This opens will let you know the full details of the add-on, which is helpful when contacting the add-on author.
+</P>
+
 <A NAME="PythonConsole"></A>
-<H3>12.4. Python 控制台</H3>
+<H3>12.5. Python 控制台</H3>
 
 <P>
 NVDA Python 控制台可以再 NVDA 的“工具”菜单找到，他是一个开发工具，他可用来进行调试，一般的内部检查和程序可访问程度的检查。
@@ -3885,7 +3992,7 @@ NVDA Python 控制台可以再 NVDA 的“工具”菜单找到，他是一个�
 </P>
 
 <A NAME="ReloadPlugins"></A>
-<H3>12.5. 重新加载插件</H3>
+<H3>12.6. 重新加载插件</H3>
 
 <P>
 一旦此项目被激活，即可在不重新启动 NVDA 的情况下重新加载程序模块和全局插件，此功能对于开发者非常有用。
@@ -4751,7 +4858,7 @@ Following are the key assignments for  the Brailliant BI/B and BrailleNote touch
 Please see the display's documentation for descriptions of where these keys can be found.
 </P>
 
-<A NAME="toc127"></A>
+<A NAME="toc129"></A>
 <H4>14.9.1. Key assignments for All models</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4841,7 +4948,7 @@ Please see the display's documentation for descriptions of where these keys can 
 </TR>
 </TABLE>
 
-<A NAME="toc128"></A>
+<A NAME="toc130"></A>
 <H4>14.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4863,7 +4970,7 @@ Please see the display's documentation for descriptions of where these keys can 
 </TR>
 </TABLE>
 
-<A NAME="toc129"></A>
+<A NAME="toc131"></A>
 <H4>14.9.3. Key assignments for Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -6562,7 +6669,7 @@ nvda -q
 <TR>
 <TD>-l LOGLEVEL</TD>
 <TD>--log-level=LOGLEVEL</TD>
-<TD>日志消息记录的最低级(调试 10， 信息 20， 警告 30， 错误 40， 严重 50默认为“警告”。</TD>
+<TD>日志消息记录的最低级别(调试 10， 信息 20， 警告 30， 错误 40， 严重 50，停用 100 默认为“警告”。</TD>
 </TR>
 <TR>
 <TD>-c CONFIGPATH</TD>
@@ -6577,7 +6684,7 @@ nvda -q
 <TR>
 <TD>-s</TD>
 <TD>--secure</TD>
-<TD>安全模式 (禁用 Python 控制台)。</TD>
+<TD>安全模式 (禁用 Python 控制台并且停用日志)。</TD>
 </TR>
 <TR>
 <TD>None</TD>
@@ -6587,12 +6694,17 @@ nvda -q
 <TR>
 <TD>None</TD>
 <TD>--debug-logging</TD>
-<TD>开启调试日志 覆盖之前的日志等级设置( --loglevel, -l) argument given.</TD>
+<TD>开启调试日志 覆盖之前的日志等级设置( --loglevel, -l) 注意：这个参数会覆盖其他停用日志的参数</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--no-logging</TD>
+<TD>关闭NVDA日志功能 注意 --debug-logging 和 --loglevel 会覆盖这个参数|</TD>
 </TR>
 <TR>
 <TD>None</TD>
 <TD>--no-sr-flag</TD>
-<TD>不修改全局系统屏幕阅读器的标志。</TD>
+<TD>不修改Windows系统全局屏幕阅读器的标志。</TD>
 </TR>
 <TR>
 <TD>None</TD>
@@ -6603,6 +6715,11 @@ nvda -q
 <TD>None</TD>
 <TD>--install-silent</TD>
 <TD>静默安装 NVDA(不启动最新安装的副本)。</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--enable-start-on-logon=True|False</TD>
+<TD>为安装的副本开启<A HREF="#StartAtWindowsLogon">在 Windows 启动时运行</A>这个选项</TD>
 </TR>
 <TR>
 <TD>None</TD>
