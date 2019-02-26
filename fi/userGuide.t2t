@@ -105,11 +105,18 @@ Näkyviin tulevassa valintaikkunassa pyydetään vahvistus NVDA:n asentamiselle 
 Asennus käynnistyy painamalla Jatka-painiketta.
 Tässä valintaikkunassa on myös muutama asetus, jotka on selitetty alla.
 Kun asennus on suoritettu, näkyviin tulee ilmoitus onnistumisesta.
-Asennettu NVDA käynnistetään painamalla OK.
+Asennettu versio käynnistetään painamalla OK.
+
++++ Varoitus yhteensopimattomista lisäosista +++[InstallWithIncompatibleAddons]
+Jos lisäosia on jo asennettuna, asennusohjelmassa saatetaan myös näyttää varoitus, että yhteensopimattomat lisäosat poistetaan käytöstä.
+Ennen kuin voit painaa Jatka-painiketta, vahvista ymmärtäneesi, että nämä lisäosat poistetaan käytöstä valitsemalla kyseinen valintaruutu.
+Käytettävissä on myös painike, joka näyttää luettelon käytöstä poistettavista lisäosista.
+Saat lisätietoja tästä painikkeesta [Yhteensopimattomien lisäosien valintaikkuna -kappaleesta #incompatibleAddonsManager].
 
 +++ Käynnistä Windowsiin kirjauduttaessa +++[StartAtWindowsLogon]
 Tällä asetuksella voidaan valita, käynnistyykö NVDA automaattisesti Windowsin kirjautumisikkunassa ennen kuin salasana on annettu.
 Asetus vaikuttaa myös käyttäjätilien valvontaan sekä muihin suojattuihin ruutuihin.
+Se on oletusarvoisesti käytössä uusissa asennuksissa.
 
 +++ Luo pikakuvake työpöydälle (Ctrl+Alt+N) +++[CreateDesktopShortcut]
 Tällä asetuksella valitaan, luodaanko työpöydälle pikakuvake, josta NVDA voidaan käynnistää.
@@ -940,8 +947,7 @@ Kieliä on useita.
 Oletusarvoisesti on valittuna vaihtoehto "Windows", mikä tarkoittaa, että NVDA käyttää Windowsin maakohtaisissa asetuksissa määritettyä kieltä.
 
 Huom: NVDA on käynnistettävä uudelleen kieltä vaihdettaessa.
-Jos vaihdat kieltä ja tallennat tekemäsi muutoksen, NVDA kysyy, haluatko käynnistää sen uudelleen.
-Hyväksy painamalla OK.
+Kun vahvistusvalintaikkuna tulee näkyviin, valitse "Käynnistä uudelleen nyt", jos haluat käyttää uutta kieltä heti, tai "Käynnistä uudelleen myöhemmin", jos otat sen käyttöön myöhemmin. Jos valitset "Käynnistä uudelleen myöhemmin", asetukset on tallennettava (joko manuaalisesti tai Tallenna asetukset suljettaessa -toiminnallisuutta käyttäen).
 
 ==== Tallenna asetukset suljettaessa ====[GeneralSettingsSaveConfig]
 Jos tämä valintaruutu on valittuna, nykyiset asetukset tallennetaan, kun NVDA suljetaan.
@@ -955,9 +961,17 @@ Kun asetus ei ole käytössä, NVDA sulkeutuu heti.
 Kun tämä valintaruutu on valittuna, NVDA toistaa äänen käynnistyessään ja sulkeutuessaan.
 
 ==== Lokitaso ====[GeneralSettingsLogLevel]
-Tästä yhdistelmäruudusta voit valita, paljonko NVDA tallentaa tietoja lokiin käynnissä ollessaan.
+Tästä yhdistelmäruudusta voidaan valita, paljonko NVDA tallentaa tietoja lokiin käynnissä ollessaan.
 Tätä ei yleensä tarvitse muuttaa.
-Asetuksesta voi kuitenkin olla hyötyä, jos tarvitset tietoja esimerkiksi vikaraporttia varten.
+Asetuksesta voi kuitenkin olla hyötyä, jos tarvitaan tietoja esimerkiksi vikaraporttia varten tai halutaan poistaa loki kokonaan käytöstä.
+
+Käytettävissä ovat seuraavat lokitasot:
+- Ei käytössä: NVDA ei tallenna lokiin mitään käynnissä ollessaan lyhyttä käynnistysilmoitusta lukuun ottamatta.
+- Tiedot: NVDA tallentaa lokiin perustietoja, kuten käynnistysilmoituksia ja kehittäjille hyödyllistä tietoa.
+- Virheenkorjausvaroitus: Lokiin tallennetaan varoituksia, jotka eivät ole vakavien virheiden aiheuttamia.
+- Syöttö/tulostus: Lokiin tallennetaan näppäimistön ja pistenäyttöjen syöte sekä puhe- ja pistekirjoitustuloste. Jos olet huolissasi yksityisyydestä, älä määritä lokitasoksi tätä vaihtoehtoa.
+- Virheenkorjaus: Lokiin tallennetaan tiedot-, varoitukset- ja syöttö/tulostus-ilmoitusten lisäksi virheenkorjauksen lisäilmoituksia. Kuten syöttö/tulostus-tasolla, jos olet huolissasi yksityisyydestä, lokitasoksi ei tule määrittää tätä vaihtoehtoa.
+-
   
 ==== Käynnistä automaattisesti sisäänkirjautumisen jälkeen ====[GeneralSettingsStartAfterLogOn]
 Jos tämä asetus on käytössä, NVDA käynnistyy automaattisesti heti, kun Windowsiin on kirjauduttu sisään.
@@ -1350,6 +1364,11 @@ Mitä enemmän vasemmalla tai oikealla hiiri on, sitä enemmän vasemmalta tai o
 Jos Ilmaise hiiren koordinaatit äänimerkeillä -asetus on käytössä, tämän valintaruudun valitseminen tarkoittaa, että äänikoordinaattien voimakkuutta säädetään sen mukaan, miten kirkas ruutu on hiirikohdistimen alla.
 Tämä asetus ei ole oletusarvoisesti käytössä.
 
+==== Ohita hiirisyöte muista sovelluksista ====[MouseSettingsHandleMouseControl]
+Kun tämä asetus on käytössä, NVDA ohittaa hiiritapahtumat (liikuttaminen ja painikkeiden painallukset mukaan lukien), jotka ovat muiden sovellusten, kuten TeamViewerin ja muiden etähallintaohjelmistojen luomia.
+Asetus ei ole käytössä oletusarvoisesti.
+Jos tämä vaihtoehto on valittuna ja "Käytä hiiren seurantaa" -asetus on käytössä, NVDA ei puhu, mitä hiiren alla on, mikäli jokin toinen sovellus liikuttaa sitä.
+
 +++ Kosketuksen vuorovaikutus +++[TouchInteraction]
 Tästä asetuskategoriasta, joka on käytettävissä vain tietokoneissa, joissa on Windows 8 tai uudempi käyttöjärjestelmä sekä kosketusominaisuuksia, voit määrittää, miten NVDA on vuorovaikutuksessa kosketusnäyttöjen kanssa.
 Kategoriassa on seuraavat asetukset:
@@ -1517,6 +1536,13 @@ Jos tämä asetus on käytössä, NVDA toistaa äänimerkin vaihtaessaan selaus-
 Tällä oletusarvoisesti käytössä olevalla asetuksella voit valita, estetäänkö syötekomentojen (kuten näppäinpainallusten), jotka eivät suorita NVDA-komentoa tai joita ei pidetä yleisinä komentonäppäiminä, pääsy aktiivisena olevaan asiakirjaan.
 Esimerkiksi, jos asetuksen ollessa käytössä painat J-kirjainta, sen tulostuminen asiakirjaan estetään, sillä se ei ole pikaselausnäppäin, tai koska on epätodennäköistä, että se olisi sovelluksen käytössä oleva komento.
 
+==== Kohdistus seuraa selaustilakohdistinta ====[BrowseModeSettingsFocusFollowsBrowseMode]
+Pikanäppäin: NVDA+8
+
+Tällä asetuksella, joka on oletusarvoisesti käytössä, voidaan valita, seuraako järjestelmän kohdistus selaustilakohdistinta verkkoselaimissa.
+Jos tämä on käytössä, NVDA toimii kuten versio 2018.4 ja sitä aiemmat.
+Asetuksen käytöstä poistaminen saattaa tarjota nopeamman selauskokemuksen sekä komentoihin vastaamisen selaustilassa. Toiminto on kokeellinen versiossa 2019.1.
+
 +++ Asiakirjojen muotoilu (NVDA+Ctrl+D) +++[DocumentFormattingSettings]
 Useimmilla tämän kategorian valintaruuduilla voit määrittää, minkä tyyppisiä muotoilutietoja haluat automaattisesti kuulla siirtäessäsi kohdistinta asiakirjoissa.
 Jos esimerkiksi valitset Lue fontti -valintaruudun, joka kerta, kun siirryt nuolinäppäimillä sellaisen tekstin kohdalle, jonka fontti eroaa aikaisemmasta, NVDA kertoo fontin nimen.
@@ -1583,6 +1609,37 @@ Kategoria sisältää seuraavat asetukset:
 
 ==== Tunnistuksen kieli ====[Win10OcrSettingsRecognitionLanguage]
 Tästä yhdistelmäruudusta voit valita tekstintunnistuksessa käytettävän kielen.
+
++++ Lisäasetukset +++
+Varoitus! Tämän kategorian asetukset on tarkoitettu vain edistyneille käyttäjille, ja voivat aiheuttaa väärin muutettuina NVDA:n virheellistä toimintaa.
+Tee muutoksia näihin asetuksiin vain, jos olet varma, mitä teet tai jos NVDA:n kehittäjä on kehottanut tekemään niin.
+
+==== Ota käyttöön mukautetun koodin lataaminen kehittäjän leikepöytähakemistosta ====
+Koodin testaaminen on hyödyllistä NVDA:n lisäosia kehitettäessä.
+Tämä asetus sallii käytössä ollessaan NVDA:n ladata mukautettuja sovellusmoduuleita, yleisliitännäisiä sekä pistenäyttö- ja syntetisaattoriajureita erityisestä kehittäjän leikepöytähakemistosta, joka sijaitsee NVDA:n käyttäjän asetushakemistossa.
+Aiemmin NVDA latasi mukautetun koodin suoraan käyttäjän asetushakemistosta ilman mahdollisuutta toiminnallisuuden käytöstä poistamiseen.
+Tämä asetus on oletusarvoisesti poissa käytöstä, mikä varmistaa, ettei NVDA suorita testaamatonta koodia käyttäjän tietämättä.
+Jos kehittäjä haluaa jakaa koodiaan muille käyttäjille, se tulee paketoida NVDA:n lisäosaksi.
+
+==== Avaa kehittäjän leikepöytähakemisto ====
+Tämä painike avaa hakemiston, johon kehittäjä voi sijoittaa koodiaan.
+Se on käytettävissä vain, jos NVDA on määritetty lataamaan mukautettua koodia kehittäjän leikepöytähakemistosta.
+
+==== Käytä UI automation -rajapintaa Microsoft Wordin asiakirjasäädinten käyttämiseen, kun käytettävissä ====
+Kun tämä asetus on käytössä, NVDA yrittää käyttää UI Automation -saavutettavuusrajapintaa tietojen saamiseksi Microsoft Wordin asiakirjasäätimistä.
+Niitä ovat muun muassa itse Microsoft Word sekä lisäksi Microsoft Outlookin viestinluku- ja kirjoitusikkuna.
+Uusimpien Microsoft Office 2016/365 -versioiden UI Automation -tuki on windows 10:ssä käytettäessä riittävän kattava tarjotakseen lähes nykyisen kaltaisen tuen Microsoft Word -asiakirjoille, jossa on lisäetuna huomattavasti lisääntynyt reagoivuus.
+Joissakin Microsoft Officen versioissa ei ehkä kuitenkaan ole saatavilla kaikkea tietoa tai ne ilmaistaan väärin, minkä vuoksi UI automation -tukeen ei voi aina luottaa.
+Tämän asetuksen käyttöön ottamista ei vielä suositella suurimmalle osalle käyttäjistä, mutta Office 2016/365 -käyttäjät voivat silti testata ominaisuutta ja antaa palautetta.
+
+==== Kohdistimen siirtymisen aikakatkaisu (ms) ====
+Tällä asetuksella voidaan määrittää, montako millisekuntia NVDA odottaa kohdistimen (lisäyskohdan) siirtymistä muokattavissa tekstisäätimissä.
+Mikäli NVDA näyttää seuraavan kohdistinta virheellisesti, esim. on aina yhden merkin jäljessä tai toistaa rivejä, Tämän arvon kasvattamisesta voi olla apua.
+
+==== Virheenkorjauslokin kategoriat ====
+Tämän luettelon valintaruuduilla voidaan ottaa käyttöön tiettyjen kategorioiden virheenkorjausilmoituksia NVDA:n lokissa.
+Näiden ilmoitusten tallentamisesta lokiin voi olla seurauksena suorituskyvyn huonontumista sekä suurikokoisia lokitiedostoja.
+Ota jokin näistä käyttöön vain, jos NVDA:n kehittäjä on pyytänyt tekemään niin, esim. sen selvittämiseksi, miksi pistenäytön ajuri ei toimi oikein.
 
 ++ Sekalaiset asetukset ++[MiscSettings]
 [Asetukset #NVDASettings]-valintaikkunan lisäksi NVDA-valikosta löytyvä Asetukset-alavalikko sisältää myös useita muita kohteita, jotka on kuvailtu alla.
@@ -1825,17 +1882,33 @@ Poista lisäosa käytöstä painamalla Poista käytöstä -painiketta.
 Ota aiemmin käytöstä poistettu lisäosa käyttöön painamalla Ota käyttöön -painiketta.
 Voit poistaa lisäosan käytöstä, mikäli sen tilana on "Käytössä" tai ottaa käyttöön, mikäli tilana on "Ei käytössä".
 Jokainen Ota käyttöön/Poista käytöstä -painikkeen painallus muuttaa lisäosan tilaa, joka ilmaisee,  mitä NVDA:n uudelleenkäynnistyessä tapahtuu.
-Jos lisäosa ei ollut aiemmin käytössä, tilana näkyy "käytössä uudelleenkäynnistyksen jälkeen", tai  Jos se oli "käytössä", tilana näkyy "ei käytössä uudelleenkäynnistyksen jälkeen".
+Jos lisäosa ei ollut aiemmin käytössä, tilana näkyy "käytössä uudelleenkäynnistyksen jälkeen".
+Jos se oli käytössä, tilana näkyy "ei käytössä uudelleenkäynnistyksen jälkeen"
 NVDA on käynnistettävä uudelleen, jotta muutokset tulevat voimaan, aivan kuten lisäosia asennettaessa ja poistettaessa.
 
 Valintaikkunassa on myös Sulje-painike, josta lisäosien hallinta voidaan sulkea.
 Jos lisäosia on asennettu tai poistettu tai niiden tilaa on muutettu, NVDA kysyy, halutaanko se käynnistää uudelleen, jotta muutokset tulevat voimaan.
 
-NVDA:n toiminnallisuutta on ollut aiemmin mahdollista laajentaa kopioimalla asetushakemistoon erillisiä liitännäisiä ja ajureita.
-Vaikka tämä NVDA:n versio saattaa edelleen ladata niitä, ne eivät näy lisäosien hallinnassa.
-Nämä tiedostot on parasta poistaa ja asentaa tilalle asianmukainen lisäosa, mikäli sellainen on saatavilla.
+Jotkin vanhemmat lisäosat eivät ehkä ole enää yhteensopivia käyttämäsi NVDA:n version kanssa.
+Vanhempaa NVDA:n versiota käytettäessä myös uudet lisäosat voivat olla yhteensopimattomia.
+Yhteensopimattoman lisäosan asennusta yritettäessä näytetään virheilmoitus, joka kertoo, miksi kyseinen lisäosa ei ole yhteensopiva.
+Näitä lisäosia on mahdollista tarkastella yhteensopimattomien lisäosien hallinnassa painamalla "Näytä yhteensopimattomat lisäosat" -painiketta.
 
 Voit avata Lisäosien hallinnan mistä tahansa määrittämällä sille oman syötekomennon [Syötekomennot-valintaikkunaa käyttäen. #InputGestures]
+
+++ Yhteensopimattomien lisäosien hallinta ++[incompatibleAddonsManager]
+Yhteensopimattomien lisäosien hallinnan, johon pääsee painamalla Lisäosien hallinnassa "Näytä yhteensopimattomat lisäosat" -painiketta, avulla voi tarkastella kaikkia yhteensopimattomia lisäosia sekä syytä, miksi ne eivät ole yhteensopivia.
+Lisäosia pidetään yhteensopimattomina, kun niitä ei ole päivitetty toimimaan merkittävien NVDA:han tehtyjen muutosten kanssa tai kun ne hyödyntävät ominaisuutta, jota ei ole käytettävissä NVDA:n käytössä olevassa versiossa.
+Yhteensopimattomien lisäosien hallinnassa näytetään lyhyt ilmoitus, joka kertoo sen tarkoituksen sekä NVDA:n version.
+Lisäosat näytetään luettelossa, jossa on seuraavat sarakkeet:
++ Paketti (lisäosan nimi)
++ Versio (lisäosan versio)
++ Yhteensopimattomuuden syy (miksi lisäosaa pidetään yhteensopimattomana)
++
+
+Valintaikkunassa on myös "Tietoja lisäosasta..." -painike.
+Sitä painamalla saat näkyviin kaikki lisäosan tiedot, joista on apua otettaessa yhteyttä kyseisen lisäosan tekijään.
+
 
 ++ Python-konsoli ++[PythonConsole]
 NVDA:n Python-konsoli, joka löytyy NVDA-valikon Työkalut-alavalikosta, on kehitystyökalu, joka on hyödyllinen virheiden etsinnässä, yleisessä NVDA:n sisäisen toiminnan tai sovelluksen esteettömyyshierarkian tutkimisessa.
@@ -2756,15 +2829,17 @@ Seuraavassa on luettelo NVDA:n komentorivivalitsimista:
 | -r | --replace | Sulkee jo käynnissä olevan NVDA:n version ja käynnistää uuden. |
 | -k | --check-running | Ilmoittaa lopetuskoodilla, onko NVDA käynnissä, 0 = jos käynnissä tai 1 = jos ei käynnissä. |
 | -f LOKITIEDOSTO | --log-file=LOKITIEDOSTO | Tiedosto, johon lokiviestit tallennetaan. |
-| -l LOKITASO | --log-level=LOKITASO | Alin taso, jonka ilmoitukset tallennetaan lokiin (10 = virheenkorjaus, 20 = tiedot, 30 = varoitus, 40 = virhe, 50 = kriittinen). Oletustasona on varoitus. |
+| -l LOKITASO | --log-level=LOKITASO | Alin taso, jonka ilmoitukset tallennetaan lokiin (virheenkorjaus = 10, syöttö/tulostus = 12, virheenkorjausvaroitus = 15, tiedot = 20, varoitus = 30, virhe = 40, kriittinen = 50, ei käytössä = 100). Oletustaso on "varoitus". |
 | -c ASETUSPOLKU | --config-path=ASETUSPOLKU | Hakemistopolku, johon kaikki NVDA:n asetukset tallennetaan. |
 | -m | --minimal | Ei ääniä, käyttöliittymää tai käynnistysilmoitusta jne. |
-| -s | --secure | Suojattu tila (poistaa käytöstä Python-konsolin). |
+| -s | --secure | Suojattu tila (poistaa käytöstä Python-konsolin ja lokin tallennuksen, joita käytetään usein suojatuissa ruuduissa) |
 | Ei mitään | --disable-addons | Poistaa lisäosat käytöstä. |
-| Ei mitään | --debug-logging | Ottaa virheenkorjaus-lokitason käyttöön vain nykyisessä istunnossa. Tämä asetus korvaa minkä tahansa muun annetun lokitason argumentin (""--loglevel"", -l). |
+| Ei mitään | --debug-logging | Ottaa käyttöön virheenkorjaus-lokitason vain nykyisessä istunnossa. Tämä asetus korvaa minkä tahansa muun annetun lokitason (""--loglevel"", -l) argumentin, lokin käytöstä poistava valitsin mukaan lukien. |
+| Ei mitään | --no-logging | Poistaa lokin kokonaan käytöstä NVDA:ta käytettäessä. Tämä asetus voidaan korvata, mikäli lokitaso (""--loglevel"", -l) määritetään komentoriviparametrilla tai jos virheenkorjauslokin tallennus otetaan käyttöön. |
 | Ei mitään | --no-sr-flag | Ei muuta järjestelmänlaajuista ruudunlukijalippua. |
 | Ei mitään | --install | Asentaa NVDA:n ja käynnistää asennetun kopion. |
 | Ei mitään | --install-silent | Asentaa NVDA:n ilman kehotteita ja asennetun kopion käynnistämistä. |
+| Ei mitään | --enable-start-on-logon=True|False | Ottaa asennettaessa käyttöön NVDA:n [käynnistämisen kirjautumisikkunassa #StartAtWindowsLogon] |
 | Ei mitään | --create-portable | Luo ja käynnistää NVDA:n massamuistiversion. Parametri --portable-path on myös määritettävä. |
 | Ei mitään | --create-portable-silent | Luo NVDA:n massamuistiversion, eikä käynnistä sitä luonnin jälkeen. Parametri --portable-path on myös määritettävä. |
 | Ei mitään | --portable-path=POLKU | Hakemistopolku, jonne massamuistiversio luodaan. |
