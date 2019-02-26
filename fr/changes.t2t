@@ -28,14 +28,14 @@ Quoi de Neuf dans NVDA
 
 == Changements ==
 - Mise à jour du traducteur braille liblouis à la version 3.8.0. (#9013)
-- Les auteurs de modules complémentaires peuvent maintenant exiger une version minimum de NVDA pour leur module. Les modules non supportés ne se chargeront pas ou ne s'installeront pas. (#6275)
-- Les auteurs de modules complémentaires doivent maintenant spécifier la dernière version de NVDA pour laquelle le module a été testé. Les utilisateurs seront avertis de ne pas installer ou activer des modules non testés. (#6275)
+- Les auteurs d'extensions peuvent maintenant exiger une version minimum de NVDA pour leur extension. Les extensions non supportées ne se chargeront pas ou ne s'installeront pas. (#6275)
+- Les auteurs d'extensions doivent maintenant spécifier la dernière version de NVDA pour laquelle l'extension a été testée. Les utilisateurs seront avertis de ne pas installer ou activer des modules non testés. (#6275)
 - La commande de déplacement de la souris vers l'objet navigateur est maintenant disponible sous Microsoft Word ainsi que pour les contrôles UIA, en particulier pour Microsoft Edge. (#7916, #8371)
 - L'annonce du texte sous la souris a été améliorée sous Microsoft Edge et autres applications UIA. (#8370)
 - Quand NVDA est démarré avec le paramètre de ligne de commande `--portable-path`, le chemin fourni est automatiquement rempli quand on essaie de créer une copie portable de NVDA en utilisant le menu NVDA. (#8623)
 - Mise à jour du chemin de la table braille Norvégienne pour refléter le standard de l'année 2015. (#9170)
 - Durant la navigation par paragraphe (contrôle+flèches) ou par cellule de tableau (contrôle+alt+flèches), la présence de fautes d'orthographe n'est plus annoncée, même si NVDA est configuré pour les annoncer automatiquement. C'est parce que les paragraphes ou les cellules de tableau peuvent être très volumineux, et que le calcul des fautes d'orthographes dans certaines applications peut être très coûteux. (#9217)
-- NVDA ne charge plus automatiquement les appModules personnalisés, les modules globaux et les pilotes braille ou de synthétiseur depuis le répertoire de configuration utilisateur de NVDA. Ce code devrait plutôt être packagé comme un module complémentaire avec une information de version correcte, pour être sûr que du code incompatible n'est pas exécuté avec la version courante de NVDA. (#9238)
+- NVDA ne charge plus automatiquement les appModules personnalisés, les modules globaux et les pilotes braille ou de synthétiseur depuis le répertoire de configuration utilisateur de NVDA. Ce code devrait plutôt être packagé comme une extension avec une information de version correcte, pour être sûr que du code incompatible n'est pas exécuté avec la version courante de NVDA. (#9238)
  - Pour les développeurs qui ont besoin de tester du code en cours de développment, activez le répertoire du bloc-notes du développeur NVDA dans la catégorie Avancé des paramètres NVDA, et placez votre code dans le répertoire 'scratchpad' qui se trouve dans le répertoire de configuration utilisateur de NVDA quand cette option est activée.
 
 
@@ -70,9 +70,9 @@ Quoi de Neuf dans NVDA
 == Changements pour les Développeurs ==
 - NVDA peut maintenant être construit avec toutes les éditions de Microsoft Visual Studio 2017 (pas seulement l'édition Community). (#8939)
 - Vous pouvez maintenant inclure le journal de liblouis dans le journal NVDA en déclarant l'indicateur booléen louis dans la section debugLogging de la configuration de NVDA. (#4554)
-- Les auteurs de modules complémentaires peuvent maintenant fournir des informations de compatibilité de version de NVDA dans le manifests du module. (#6275, #9055)
- - minimumNVDAVersion : La version minimum de NVDA requise pour que le module fonctionne correctement.
- - lastTestedNVDAVersion : La dernière version de NVDA sur laquelle le module a été testé.
+- Les auteurs d'extensions peuvent maintenant fournir des informations de compatibilité de version de NVDA dans le manifests de l'extension. (#6275, #9055)
+ - minimumNVDAVersion : La version minimum de NVDA requise pour que l'extension fonctionne correctement.
+ - lastTestedNVDAVersion : La dernière version de NVDA sur laquelle l'extension a été testée.
 - Les objets OffsetsTextInfo peuvent maintenant implémenter la méthode _getBoundingRectFromOffset pour permettre de récupérer un rectangle frontière par caractère au lieu de points. (#8572)
 - Ajout d'une propriété boundingRect aux objets TextInfo pour récupérer le rectangle frontière d'un bloc de texte. (#8371)
 - Les propriétés et les méthodes dans les classes peuvent maintenant être marquées comme abstract dans NVDA. Ces classes signaleront une erreur si instanciées. (#8294, #8652, #8658)
