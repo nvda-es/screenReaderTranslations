@@ -4,6 +4,12 @@ Quoi de Neuf dans NVDA
 %!includeconf: ../changes.t2tconf
 
 = 2019.1 =
+Les points forts de cette version incluent des améliorations de performances lors de l'accès à Microsoft Word et Excel, des améliorations en matière de stabilité et de sécurité, comme la prise en charge des extensions comportant des informations de compatibilité de version, ainsi que de nombreuses corrections de bogues.
+Veuillez noter qu'à partir de cette version de NVDA, les modules applicatifs personnalisés, les globalPlugins, les pilotes d'afficheurs braille et les pilotes de synthèses vocales ne seront plus chargés automatiquement à partir de votre répertoire de configuration utilisateur NVDA. 
+Ceux-ci devront plutôt être installées en tant qu'extensions de NVDA. Pour ceux qui développent du code pour une extension, le code pour les tests peut être placé dans un nouveau répertoire du bloc-notes du développeur, dans le répertoire de configuration de l'utilisateur NVDA, si l'option du bloc-notes du développeur est activée dans le nouveau panneau des paramètres avancés de NVDA.
+Ces modifications sont nécessaires pour mieux assurer la compatibilité du code personnalisé, afin que NVDA ne soit pas endommagé lorsque ce code devient incompatible avec les nouvelles versions.
+Veuillez vous reporter à la liste des modifications plus bas pour plus de détails à ce sujet et pour savoir comment les extensions sont désormais mieux versionnées.
+
 
 == Nouvelles Fonctionnalités ==
 - Nouvelles tables braille : Afrikaans, Arabe braille informatique 8 points, Arabe abrégé, Espagnol abrégé. (#4435)
@@ -37,10 +43,10 @@ Quoi de Neuf dans NVDA
 
 
 == Corrections de Bogues ==
-- Lors de l''utilisation du Synthétiseur de parole OneCore sous Windows 10 April 2018 et au-delà, de longs silences ne sont plus insérés entre des segments de parole. (#8985)
+- Lors de l''utilisation de la synthèse vocale OneCore sous Windows 10 April 2018 et au-delà, de longs silences ne sont plus insérés entre des segments de parole. (#8985)
 - Durant le déplacement par caractère dans les contrôles texte plein (comme le Bloc-Notes) ou en mode navigation, les caractères emoji 32 bits consistant en deux points en code UTF-16 (comme ðŸ¤¦) sont maintenant lus correctement. (#8782)
 - Amélioration du dialogue de confirmation de redémarrage après changement de la langue d'interface de NVDA. Le texte et les étiquettes de boutons sont maintenant plus concis et prêtent moins à confusion. (#6416)
-- Si le chargement d'un synthétiseur de parole tiers échoue, NVDA se rabattra sur le synthétiseur de parole Windows OneCore sous Windows 10, et non sur ESpeak. (#9025)
+- Si le chargement d'une synthèse vocale tierce échoue, NVDA se rabattra sur la synthèse vocale Windows OneCore sous Windows 10, et non sur ESpeak. (#9025)
 - Suppression de l'entrée "Dialogue de Bienvenue" dans le menu NVDA quand on est sur un écran sécurisé. (#8520)
 - Quand on tabule ou qu'on utilise la navigation rapide en mode navigation, les légendes sur les panneaux d'onglets sont maintenant annoncées de manière plus claire. (#709)
 - NVDA annonce maintenant les changements de sélection pour certains sélecteurs d'heure comme sous l'application Horloge et Alarmes sous Windows 10. (#5231)
@@ -54,14 +60,15 @@ Quoi de Neuf dans NVDA
 - Correction de la navigation de tableau dans la vue en arborescence sous Mozilla Thunderbird. (#8396)
 - Sous Mozilla Firefox et Google Chrome, le passage en mode formulaire fonctionne maintenant correctement pour certaines listes déroulantes et arborescences (quand la liste ou arborescence n'est pas elle-même focussable mais que ses éléments le sont) . (#3573, #9157)
 - Le mode navigation est maintenant correctement activé par défaut quand on lit des messages sous Outlook 2016/365 si on utilise le support expérimental UI Automation pour les Documents Word. (#9188)
-- NVDA est maintenant moins sujet à se bloquer de telle manière que le seul moyen de s'en sortir est de se déconnecter de sa session Windows en cours. (#6291)
-- Sous Windows 10 October 2018 Update et au-delà, quand  on ouvre l'historique du presse-papiers et que le presse-papiers est vide, NVDA annonce l'état du presse-papiers. (#9112)
-- Sous Windows 10 October 2018 Update et au-delà, quand on cherche un emoji dans le panneau d'emojis, NVDA annonce le premier emoji trouvé. (#9112)
-- NVDA ne se bloque plus dans la fenêtre principale de Virtualbox 5.2 et au-delà. (#9202)
+- NVDA est maintenant moins sujet à se bloquer de telle façon que le seul moyen d'y échapper est de se déconnecter de sa session Windows en cours. (#6291)
+- Sous Windows 10 October 2018 Update et au-delà, lors de l'ouverture de l'historique du Presse-papiers dans le cloud avec le Presse-papiers vide, NVDA annoncera l'état du Presse-papiers. (#9103)
+- Sous Windows 10 October 2018 Update et au-delà, quand on cherche un emoji dans le panneau d'emojis, NVDA annonce le premier emoji trouvé. (#9105)
+- NVDA ne se bloque plus dans la fenêtre principale d’Oracle VirtualBox 5.2 ou au-delà. (#9202)
 - La réactivité sous Microsoft Word quand on navigue par ligne, paragraphe ou cellule de tableau peut être significativement améliorée dans certains documents. Un rappel, pour de meilleures performances, mettez Microsoft Word en affichage Brouillon avec alt+w,e après l'ouverture d'un document. (#9217) 
 - Sous Mozilla Firefox et Google Chrome, les alertes vides ne sont plus annoncées. (#5657)
 - Améliorations significatives de performance quand on navigue par cellule sous Microsoft Excel, en particulier quand la feuille de calcul contient des commentaires et ou des listes déroulantes de validation. (#7348)
 - Il ne devrait plus être nécessaire de désactiver l'édition directe de cellule dans les options de Microsoft Excel pour accéder au contrôle d'édition de cellule avec NVDA sous Excel 2016/365. (#8146).
+- Correction d'un blocage dans Firefox observé parfois lors de la navigation rapide par région, quand l'extension Enhanced Aria est utilisée. (#8980)
  
 
 == Changements pour les Développeurs ==
@@ -190,7 +197,7 @@ Les points forts de cette version incluent la détection automatique de beaucoup
  - Réduction de la présentation de focus trop verbeuse en vocal et en braille à la mise en focus d'un document Word. (#8407)
  - Le routage de curseur en braille fonctionne maintenant correctement quand on se trouve dans une liste dans un document Word. (#7971)
  - Les puces ou numérotations nouvellement insérées dans un document Word sont correctement signalées vocalement et en braille. (#7970)
-- Sous Windows 10 1803 et au-delà, il est maintenant possible d'installer des modules complémentaires si la fonctionnalité "Utiliser Unicode UTF-8 pour le support mondial des langues" est activé. (#8599)
+- Sous Windows 10 1803 et au-delà, il est maintenant possible d'installer des extensions si la fonctionnalité "Utiliser Unicode UTF-8 pour le support mondial des langues" est activé. (#8599)
 - Il n'est plus impossible d'interagir avec iTunes 12.9 et au-delà avec NVDA. (#8744)
 
 
@@ -235,7 +242,7 @@ Les points forts de cette version incluent la prise en charge des tableaux dans 
 
 
 == Changements ==
-- Dans le gestionnaire de modules complémentaires, la colonne état a été modifiée pour indiquer que le module est activé ou désactivé plutôt que en cours d'exécution ou suspendu. (#7929)
+- Dans le gestionnaire des extensions, la colonne état a été modifiée pour indiquer que l'extension est activée ou désactivée plutôt que en cours d'exécution ou suspendu. (#7929)
 - Mise à jour du convertisseur braille Liblouis à la version 3.5.0. (#7839)
 - La table braille lithuanienne a été renommée en  Lithuanien 6 points pour éviter  la confusion avec la nouvelle table 8 points. (#7839)
 - Les tables Français (Canada) intégral et abrégé  ont été supprimées. Elles sont remplacées par Français (unifié) braille littéraire 6 points  et Français (unifié) abrégé respectivement. (#7839)
@@ -349,7 +356,7 @@ Veuillez noter que cette version de NVDA ne supporte plus Windows XP et Windows 
 - Support initial de Windows 10 sur ARM64. (#7508)
 - Support initial de la lecture et de la navigation interactive dans du contenu mathématique pour les livres Kindle avec mathématique accessible. (#7536)
 - Ajout du support du lecteur de livres électroniques Azardi. (#5848)
-- L'information de version des modules complémentaires est maintenant annoncée quand ceux-ci sont mis à jour. (#5324)
+- L'information de version des extensions est maintenant annoncée quand celles-ci sont mises à jour. (#5324)
 - Ajout de nouveaux paramètres de ligne de commande pour créer une copie portable de NVDA. (#6329)
 - Support de Microsoft Edge s'exécutant dans Windows Defender Application Guard sous Windows 10 Fall Creators Update. (#7600)
 - S'il s'exécute sur un PC portable ou une tablette, NVDA annonce maintenant si le chargeur est connecté ou déconnecté, et quand l'orientation de l'écran change. (#4574, #4612)
@@ -373,7 +380,7 @@ Veuillez noter que cette version de NVDA ne supporte plus Windows XP et Windows 
 - Mise à jour du traducteur braille Liblouis à la version 3.3.0. (#7565)
 - Les fichiers de dictionnaires vocaux sont maintenant versionnés et ont été déplacés vers le répertoire 'speechDicts/voiceDicts.v1'. (#7592)
 - Les modifications des fichiers versionnés (configuration utilisateur, dictionnaires vocaux) ne sont plus sauvegardés quand NVDA est exécuté depuis le lanceur. (#7688)
-- Les afficheurs braille Handy Tech Braillino, Bookworm et Modular (avec un ancien microprogramme) ne sont plus supportés nativement. Veuillez installer le pilote universel Handy Tech et le module complémentaire NVDA pour utiliser ces afficheurs. (#7590)
+- Les afficheurs braille Handy Tech Braillino, Bookworm et Modular (avec un ancien microprogramme) ne sont plus supportés nativement. Veuillez installer le pilote universel Handy Tech et l'extension NVDA pour utiliser ces afficheurs. (#7590)
 
 
 == Corrections de Bogues ==
