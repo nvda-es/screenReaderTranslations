@@ -1535,13 +1535,6 @@ Bei eingeschalteter Option ertönt in NVDA vor der Ansage über die Änderung ei
 Wenn diese Option aktiviert ist, werden Tastenkombinationen, die nicht mit Schnellnavigationsbefehlen belegt sind, direkt an die aktuelle Anwendung weitergereicht, wenn Sie diese innerhalb des Lesemodus benutzen. 
 Wenn die Option aktiviert ist, wird beispielsweise der Buchstabe "J" vom Dokument ferngehalten, da "J" keine Schnellnavigationstaste sowie wahrscheinlich kein Tastenkürzel im Programm ist. 
 
-==== Fokus folgt Lesemodus ====[BrowseModeSettingsFocusFollowsBrowseMode]
-Tastenkombination: NVDA+8
-
-Diese Option ist standardmäßig aktiviert und ermöglicht es Ihnen, auszuwählen, ob der System-Fokus automatisch dem Fokus im Lesemodus folgt.
-Falls aktiviert, stellt dieses das Standardverhalten von NVDA ab Version 2018.4 und früher dar.
-Das Deaktivieren dieser Option kann zu einem schnelleren Browser-Erlebnis und einer besseren Reaktionsfähigkeit im Lesemodus führen. Dies ist ab der Version 2019.1 experimentell.
-
 +++ Dokumentformatierungen (NVDA+Strg+D) +++[DocumentFormattingSettings]
 Mit den meisten Kontrollfeldern in diesem Dialogfenster steuern Sie die Ansage der Formatierungen, die Sie während des Navigierens in einem Dokument angesagt bekommen möchten.
 Wenn Sie z. B. das Kontrollkästchen ""Schriftartennamen ansagen"" aktivieren und anschließend in einem Text navigieren, wird NVDA jedes Mal den Namen der Schriftart ansagen, sobald sich die Schriftart ändert.
@@ -1609,33 +1602,41 @@ Folgende Optionen sind enthalten:
 ==== Erkennungssprache ====[Win10OcrSettingsRecognitionLanguage]
 In diesem Kombinationsfeld können Sie die Sprache festlegen, die für die Zeichenerkennung verwendet werden soll.
 
-+++ Erweiterte Einstellungen +++
++++ Erweiterte Einstellungen +++[AdvancedSettings]
 Achtung! Die Einstellungen in dieser Kategorie sind für fortgeschrittene Benutzer und können dazu führen, dass NVDA bei falscher Konfiguration nicht richtig funktioniert.
 Nehmen Sie Änderungen an diesen Einstellungen nur dann vor, wenn Sie sicher sind, dass Sie wissen, was Sie tun, oder wenn Sie von einem NVDA-Entwickler ausdrücklich dazu angewiesen wurden.
 
-==== Laden von benutzerdefiniertem Code aus dem Developer Scratchpad-Verzeichnis aktivieren ====
+==== Änderungen an erweiterten Einstellungen vornehmen ====[AdvancedSettingsMakingChanges]
+Um Änderungen an den erweiterten Einstellungen vornehmen zu können, müssen die Bedienelemente aktiviert werden, indem Sie mit dem Kontrollkästchen bestätigen, dass Sie die Risiken einer Änderung dieser Einstellungen verstanden haben.
+
+==== Die Standard-Einstellungen wiederherstellen ====[AdvancedSettingsRestoringDefaults]
+Die Schaltfläche stellt die Standardwerte für die Einstellungen wieder her, auch wenn das Kontrollkästchen zur Bestätigung nicht aktiviert ist.
+Nach dem Ändern der Einstellungen können Sie zu den Standardwerten zurückkehren.
+Dies kann auch der Fall sein, wenn Sie sich nicht sicher sind, ob die Einstellungen geändert wurden.
+
+==== Laden von benutzerdefiniertem Code aus dem Developer Scratchpad-Verzeichnis aktivieren ====[AdvancedSettingsEnableScratchpad]
 Bei der Entwicklung von Erweiterungen für NVDA ist es sinnvoll, Code bereits beim Schreiben testen zu können.
 Diese Option ermöglicht es NVDA, benutzerdefinierte AppModule, globalPlugins, BrailleDisplayDrivers und synthDrivers aus einem speziellen Developer Scratchpad-Verzeichnis in Ihrem NVDA-Benutzerkonfigurationsverzeichnis zu laden.
 Bisher hat NVDA benutzerdefinierten Code direkt aus dem Konfigurationsverzeichnis des Benutzers geladen, ohne dass dies deaktiviert werden konnte.
 Diese Option ist standardmäßig deaktiviert und stellt sicher, dass kein ungetesteter Code ohne explizites Wissen des Benutzers in NVDA ausgeführt wird.
 Wenn Sie benutzerdefinierten Code an andere weitergeben möchten, sollten Sie ihn als NVDA-Erweiterungspaket verpacken.
 
-==== Developer Scratchpad-Verzeichnis öffnen ====
+==== Developer Scratchpad-Verzeichnis öffnen ====[AdvancedSettingsOpenScratchpadDir]
 Diese Schaltfläche öffnet das Verzeichnis, in dem Sie während der Entwicklung benutzerdefinierten Code platzieren können.
 Diese Schaltfläche ist nur aktiviert, wenn NVDA so konfiguriert ist, dass benutzerdefinierter Code aus dem Developer Scratchpad-Verzeichnis geladen werden kann.
  
-==== Verwenden Sie die Benutzeroberflächenautomatisierung, um auf Microsoft Word-Dokumenten-Steuerelemente zuzugreifen, falls verfügbar. ====
+==== Verwendung der Benutzeroberflächenautomatisierung, um auf Microsoft Word-Dokumenten-Steuerelemente zuzugreifen, falls verfügbar. ====[AdvancedSettingsUseUiaForWord]
 Wenn diese Option aktiviert ist, versucht NVDA, die Microsoft UI Automation Accessibility API zu verwenden, um Informationen von Microsoft Word-Dokument-Steuerelementen abzurufen.
 Dazu gehört in Microsoft Word selbst, aber auch der Microsoft Outlook Message Viewer und Composer.
  Für die neuesten Versionen von Microsoft Office 2016 / 365 unter Windows 10 ist die Unterstützung der Benutzeroberfläche vollständig genug, um den Zugriff auf Microsoft Word-Dokumente zu ermöglichen, die nahezu der bestehenden Microsoft Word-Unterstützung von NVDA entsprechen, mit dem zusätzlichen Vorteil, dass die Reaktionsfähigkeit erheblich gesteigert wird.
 Es kann jedoch einige Informationen geben, die in einigen Versionen von Microsoft Office entweder nicht oder falsch angezeigt werden, so dass man sich nicht immer auf diese Unterstützung der Benutzeroberflächenautomatisierung verlassen kann.
 Wir empfehlen immer noch nicht, dass die Mehrheit der Benutzer dies standardmäßig aktiviert, obwohl wir Benutzer von Office 2016 / 365 begrüßen, um diese Funktion zu testen und Rückmeldung zu geben.
 
-==== Zeitüberschreitung beim Bewegen des System-Cursors (in ms) ====
-Mit dieser Option können Sie die Anzahl der Millisekunden konfigurieren, die NVDA wartet, bis sich der Cursor (Einfügemarke) in den Steuerelement Eingabefeldern bewegt wird.
+==== Zeitüberschreitung beim Bewegen des System-Cursors (in Millisekunden) ====[AdvancedSettingsCaretMoveTimeout]
+Mit dieser Option können Sie die Anzahl der Millisekunden konfigurieren, die NVDA wartet, bis sich der Cursor (Einfügepunkt) in den editierbaren Textsteuerelementen bewegt.
 Wenn Sie feststellen, dass NVDA die Einfügemarke falsch zu verfolgen scheint, z.B. scheint es immer ein Zeichen hinterher zu liegen oder wiederholt Zeilen, dann sollten Sie versuchen, diesen Wert zu erhöhen.
 
-==== Kategorien der Protokollierungsstufe ====
+==== Kategorien der Protokollierungsstufe ====[AdvancedSettingsDebugLoggingCategories]
 Die Kontrollkästchen in dieser Liste ermöglichen es Ihnen, bestimmte Kategorien von Debug-Meldungen im Protokoll von NVDA zu aktivieren.
 Das Protokollieren dieser Meldungen kann zu Leistungseinbußen und großen Protokolldateien führen.
 Schalten Sie nur eines davon ein, wenn dies von einem NVDA-Entwickler ausdrücklich angeordnet wurde, z. B. beim Debuggen, warum ein Braille-Treiber nicht ordnungsgemäß funktioniert.
