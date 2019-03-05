@@ -174,7 +174,7 @@ addresses = {
     },
     'pl': {
         'lang':'Polish',
-        'email': ['Grzegorz Zlotowicz <grzezlo@wp.pl>', 'Patryk Faliszewski <patric3031@wp.pl>', 'Zvonimir Stanecic <9a5dsz@gozaltech.org>', 'Dorota Krac <dorkakrac@yandex.com>', 'Piotr Rakowski <kontakt@piotrrakowski.net>', 'Grzegorz Zlotowicz <g.zlotowicz@dzdn.pl>', 'Hubert Meyer <killer@tyflonet.com>' ],
+        'email': ['Grzegorz Zlotowicz <grzezlo@wp.pl>', 'Patryk Faliszewski <patric3031@wp.pl>', 'Zvonimir Stanecic <9a5dsz@gozaltech.org>', 'Dorota Krac <dorkakrac@yandex.com>', 'Piotr Rakowski <kontakt@piotrrakowski.net>', 'Grzegorz Zlotowicz <g.zlotowicz@dzdn.pl>', 'Hubert Meyer <hubert.meyer@wp.pl>' ],
     },
     'pt_BR': {
         'lang': 'Brazilian Portuguese',
