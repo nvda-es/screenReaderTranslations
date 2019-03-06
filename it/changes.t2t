@@ -3,6 +3,30 @@ Novità in NVDA
 
 %!includeconf: ../changes.t2tconf
 
+= 2019.1 =
+Le novità principali di questa versione si possono riassumere in un grosso miglioramento delle prestazioni quando si accede a Microsoft Word ed Excel, miglioramenti di stabilità e sicurezza come il supporto per i componenti aggiuntivi con informazioni sulla compatibilità della versione e molte altre correzioni di bug.
+
+Si tenga presente che a partire da questa versione di NVDA, non verranno più caricati automaticamente gli appmodules personalizzati, i globalplugins, i driver per barre braille e sintesi vocali che si trovano nella propria cartella delle impostazioni utente.
+Sarà necessario costruire un componente aggiuntivo per continuare ad usare questi elementi. Per coloro che svilupperanno componenti aggiuntivi, il codice di test può essere inserito in una nuova cartella dello sviluppatore chiamata scratchpad situata nella directory di configurazione utente di NVDA, purché l'opzione scratchpad dello sviluppatore sia attiva nel nuovo pannello delle impostazioni avanzate di NVDA.
+Queste modifiche sono necessarie per migliorare la compatibilità del codice personalizzato, in modo che NVDA non vada in crash o abbia problemi quando questo codice diventa incompatibile con le nuove versioni.
+Si prega di fare riferimento all'elenco delle modifiche più in basso per maggiori dettagli sull'argomento e su come sono stati migliorati i componenti aggiuntivi.
+
+ == Novità ==
+- Nuove Tabelle Braille: Afrikaans, Arabo 8 punti computer braille, Arabo grado 2, Spagnolo grado 2. (#4435, #9186)
+- Aggiunta un'opzione alle impostazioni del mouse di NVDA per far sì che NVDA gestisca situazioni in cui il mouse è controllato da un'altra applicazione. (#8452)
+ - Ciò consentirà a NVDA di tracciare il mouse quando il sistema viene controllato da remoto utilizzando TeamViewer o un altro software di controllo. 
+- Aggiunto un nuovo parametro a riga di comando `--enable-start-on-logon` per consentire alle installazioni silenziose di NVDA di scegliere se lo screen reader debba essere eseguito al login di Windows o meno. Specificare true in caso affermativo o false per non far partire NVDA al login. Se l'argomento --enable-start-on-logon non viene specificato, NVDA verrà eseguito al login, a meno che non sia stato configurato in maniera diversa in un'installazione precedente. (#8574)
+- È possibile disattivare le funzionalità di log di NVDA impostando il livello di log su "disabilitato" dal pannello delle impostazioni generali. (#8516)
+- Viene ora annunciata la presenza di formule nei fogli di lavoro di LibreOffice ed Apache OpenOffice. (#860)
+- In Mozilla Firefox e Google Chrome, in modalità navigazione ora viene annunciato l'elemento selezionato nelle caselle ad elenco e nelle visualizzazioni ad albero.
+ - Funziona su Firefox 66 e versioni successive.
+ - Non funziona invece per alcune caselle elenco (controlli di selezione html) in Chrome.
+- Supporto embrionale per app come Mozilla Firefox su computer con processori ARM64 (ad esempio Qualcomm Snapdragon). (#9216)
+- è stata aggiunta una nuova categoria nella finestra impostazioni di NVDA chiamata "avanzate", che tra le altre cose comprende un'opzione per provare il nuovo supporto di NVDA per Microsoft Word tramite Microsoft UI Automation API. (#9200)
+- Aggiunto il supporto per la visualizzazione grafica in Gestione disco di Windows. (#1486)
+- Aggiunto supporto per Handy Tech Connect Braille e Basic Braille 84. (#9249)
+
+
 = 2018.4.1 =
 Questa versione risolve un problema che si riscontrava all'avvio di NVDA nel caso in cui l'interfaccia fosse impostata in lingua aragonese. (#9089)
 
