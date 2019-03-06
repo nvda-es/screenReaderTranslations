@@ -11,7 +11,7 @@ Sarà necessario costruire un componente aggiuntivo per continuare ad usare ques
 Queste modifiche sono necessarie per migliorare la compatibilità del codice personalizzato, in modo che NVDA non vada in crash o abbia problemi quando questo codice diventa incompatibile con le nuove versioni.
 Si prega di fare riferimento all'elenco delle modifiche più in basso per maggiori dettagli sull'argomento e su come sono stati migliorati i componenti aggiuntivi.
 
- == Novità ==
+== Novità ==
 - Nuove Tabelle Braille: Afrikaans, Arabo 8 punti computer braille, Arabo grado 2, Spagnolo grado 2. (#4435, #9186)
 - Aggiunta un'opzione alle impostazioni del mouse di NVDA per far sì che NVDA gestisca situazioni in cui il mouse è controllato da un'altra applicazione. (#8452)
  - Ciò consentirà a NVDA di tracciare il mouse quando il sistema viene controllato da remoto utilizzando TeamViewer o un altro software di controllo. 
@@ -25,6 +25,20 @@ Si prega di fare riferimento all'elenco delle modifiche più in basso per maggio
 - è stata aggiunta una nuova categoria nella finestra impostazioni di NVDA chiamata "avanzate", che tra le altre cose comprende un'opzione per provare il nuovo supporto di NVDA per Microsoft Word tramite Microsoft UI Automation API. (#9200)
 - Aggiunto il supporto per la visualizzazione grafica in Gestione disco di Windows. (#1486)
 - Aggiunto supporto per Handy Tech Connect Braille e Basic Braille 84. (#9249)
+
+
+== Cambiamenti ==
+- Aggiornato liblouis braille translator alla versione 3.8.0. (#9013)
+- Gli autori dei componenti aggiuntivi ora possono specificare una versione minima richiesta di NVDA per i loro addon. NVDA si rifiuterà di installare o caricare un componente aggiuntivo la cui versione minima richiesta sia superiore alla versione attuale di NVDA. (#6275)
+- Gli autori dei componenti aggiuntivi ora possono specificare l'ultima versione di NVDA su cui è stato testato il componente aggiuntivo. Se un componente aggiuntivo è stato testato solo con una versione di NVDA inferiore a quella corrente, NVDA si rifiuterà di installare o caricare l'add-on. (#6275)
+- Questa versione di NVDA consentirà ancora di utilizzare componenti aggiuntivi che non contengono al proprio interno informazioni sulla versione minima e la versione testata di NVDA, ma è necessario porre molta attenzione per il futuro perché ad esempio la versione 2019.2 dello screen reader renderà obbligatori questi parametri, rendendo impossibile utilizzare addon molto datati.
+- Il comando sposta il mouse alla posizione del navigatore ad oggetti è ora disponibile in Microsoft Word e per i controlli UIA, in particolare Microsoft Edge. (#7916, #8371)
+- è stato migliorato l'annuncio del testo situato alla posizione del mouse in Microsoft Edge e altre applicazioni UIA.  (#8370)
+- Quando NVDA viene avviato con il parametro a riga di comando `--portable-path`, il percorso fornito viene inserito automaticamente quando si tenta di creare una copia portable utilizzando il menu NVDA. (# 8623)
+- Aggiornato il percorso alla tabella Braille Norvegese in modo da adeguarsi agli standard in vigore dall'anno 2015. (#9170)
+- Quando ci si sposta per paragrafi (control freccia su o freccia giù) oppure per celle in una tabella (control-alt-frecce direzionali), non verranno più annunciati gli errori di ortografia, anche nel caso in cui NVDA sia configurato allo scopo. Questo perché paragrafi e tabelle possono risultare abbastanza grandi e rilevare errori di ortografia in alcune applicazioni può essere molto costoso in termini di risorse. (#9217)
+- non verranno più caricati automaticamente gli appmodules personalizzati, i globalplugins, i driver per barre braille e sintesi vocali che si trovano nella propria cartella delle impostazioni utente. Il codice dovrà invece essere incluso in un componente aggiuntivo con informazioni corrette sulla versione, assicurandosi nel contempo che eventuale codice non compatibile non possa venir eseguito con la versione corrente di NVDA. 
+ - Per i programmatori che devono testare il codice mentre è in fase di sviluppo, è necessario abilitare una nuova opzione chiamata directory scratchpad per sviluppatori, situata nella categoria Avanzate delle impostazioni di NVDA; inserire quindi il codice nella cartella "scratchpad" presente nella directory di configurazione dell'utente.
 
 
 = 2018.4.1 =
