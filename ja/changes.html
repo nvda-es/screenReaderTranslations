@@ -10,6 +10,105 @@
 </CENTER>
 
 
+<H2>2019.1</H2>
+
+<P>
+このリリースのハイライトは、Microsoft Word および Excel 対応における性能の改善、アドオンのバージョン互換性情報などの導入による安定性とセキュリティの改善、その他のバグ修正です。
+</P>
+<P>
+注意: このバージョンから、NVDA ユーザー設定フォルダーに置かれたアプリモジュール、グローバルプラグイン、点字ディスプレイドライバー、音声合成エンジンは、自動的には読み込まれません。
+これらはNVDAアドオンとしてインストールする必要があります。アドオン開発者は、NVDAの「高度な設定」で「開発者用スクラッチパッドのフォルダーからカスタムコードを読み込む」を有効にすると、NVDAユーザー設定フォルダーの scratchpad フォルダーにテスト用のコードを置いて実行することができます。
+この変更は、カスタムコードの互換性をより確実にするために必要です。つまり、新しいNVDAがリリースされてカスタムコードとの互換性がなくなったときにNVDAが動作しなくなることを防ぎます。
+この変更およびアドオンのバージョン管理方法の詳細については、以下の変更点リストを参照してください。
+</P>
+
+<H3>新機能</H3>
+
+<UL>
+<LI>新しい点字テーブル：アフリカーンス語、アラビア語8点コンピューター点字、アラビア語2級、スペイン語2級（<A HREF="https://github.com/nvaccess/nvda/issues/4435">#4435</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9186">#9186</A>)
+<LI>外部アプリがマウスカーソルを制御している状況にNVDAが対応できるように、NVDAのマウス設定にオプションを追加しました。(<A HREF="https://github.com/nvaccess/nvda/issues/8452">#8452</A>)
+ <UL>
+ <LI>これにより、TeamViewerまたは他の遠隔制御ソフトウェアによってシステムが遠隔制御されているときにNVDAがマウスカーソルを追跡できます。
+ </UL>
+<LI>NVDAのサイレントインストールにおいて、「ログオン画面でNVDAを使用」を設定する `<S>enable-start-on-logon` コマンドライン引数を追加しました。ログオン画面で使用する場合はtrue、ログオン画面で使用しない場合はfalseを指定します。 `</S>enable-start-on-logon` が指定されておらず、前回のインストールで設定されていない場合の既定値では、ログオン画面でNVDAを使用します。(<A HREF="https://github.com/nvaccess/nvda/issues/8574">#8574</A>)
+<LI>NVDA設定の「全般」パネルからログレベル「無効」を選ぶことで、NVDAのログ機能を無効にできるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8516">#8516</A>)
+<LI>LibreOfficeおよびApache OpenOfficeのスプレッドシートで数式の存在を報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/860">#860</A>)
+<LI>Mozilla FirefoxおよびGoogle Chromeのブラウズモードにおいて、リストボックスやツリーで選択した項目が報告されるようになりました。
+ <UL>
+ <LI>Firefox はバージョン66以降で動作します。
+ <LI>Chrome について、特定のリストボックス（HTML select コントロール）では動作しません。
+ </UL>
+<LI>ARM64プロセッサ（Qualcomm Snapdragonなど）を搭載したコンピュータでのMozilla Firefoxなどのアプリの早期サポートを行いました。(<A HREF="https://github.com/nvaccess/nvda/issues/9216">#9216</A>)
+<LI>NVDA設定ダイアログに「高度な設定」カテゴリが追加されました。NVDAのMicrosoft Word対応において Microsoft UI オートメーションAPIを使用する新しいオプションを含んでいます。(<A HREF="https://github.com/nvaccess/nvda/issues/9200">#9200</A>)
+<LI>Windowsのディスクの管理でグラフィカルビューに対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/1486">#1486</A>)
+<LI>Handy Tech Connect Braille と Basic Braille 84 に対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/9249">#9249</A>)
+</UL>
+
+<H3>変更点</H3>
+
+<UL>
+<LI>liblouis点訳エンジンをバージョン3.8.0に更新しました。(<A HREF="https://github.com/nvaccess/nvda/issues/9013">#9013</A>)
+<LI>アドオンの開発者が「アドオンが正しく動作する最初のNVDAのバージョン」を指定できるようになりました。NVDAは、アドオンが指定した値が現在のNVDAのバージョンより高い場合に、アドオンのインストールまたは読み込みを行いません。(<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>)
+<LI>アドオンの開発者は「アドオンがテストされた最後のNVDAのバージョン」を指定できるようになりました。アドオンが現在のバージョンよりも前のバージョンのNVDAに対してのみテストされている場合、NVDAはアドオンのインストールまたは読み込みを行いません。(<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>)
+<LI>このバージョンのNVDAは、最初の対応NVDAバージョンおよび最新テスト済みNVDAバージョンの情報が含まれていないアドオンをインストールおよび読み込みできます。将来のバージョンのNVDA（例えば2019.2）に更新すると、これらの情報が含まれていないアドオンは自動的に無効になります。
+<LI>マウスカーソルをナビゲータオブジェクトに移動するコマンドが、Microsoft WordおよびMicrosoft Edge（およびその他のUIAコントロール）で使用できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7916">#7916</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8371">#8371</A>)
+<LI>マウスカーソル位置のテキストの報告が、Microsoft Edgeおよびその他のUIAアプリでより適切に動作するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8370">#8370</A>)
+<LI>NVDAを `--portable-path` コマンドライン引数をつけて起動することにより、NVDAメニューから「ポータブル版を作成」を実行したときに、ポータブル版を作成する場所の既定の値を指定できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8623">#8623</A>)
+<LI>ノルウェー語点字テーブルは2015年に改訂された標準のテーブルに変更されました。（<A HREF="https://github.com/nvaccess/nvda/issues/9170">#9170</A>）
+<LI>段落単位での移動（Ctrl + 上矢印または下矢印）またはテーブルのセル単位の移動（Ctrl + Alt + 矢印）を行うときに、スペルミスを自動的に報告しないようになりました。スペルミスを報告するようにNVDAが設定されている場合も同様です。これは、段落や表のセルは内容が非常に大きくなる可能性があり、またアプリによってはスペルミスを検出する処理に非常に時間がかかる可能性があるためです。(<A HREF="https://github.com/nvaccess/nvda/issues/9217">#9217</A>)
+<LI>NVDAは、NVDAユーザー設定フォルダーからカスタムのアプリモジュール、グローバルプラグイン、点字ディスプレイドライバー、音声合成エンジンを読み込まなくなりました。これらは適切なバージョン情報を持つアドオンとしてパッケージ化する必要があります。この変更により、互換性のないコードがNVDAから実行されることを防ぎます。(<A HREF="https://github.com/nvaccess/nvda/issues/9238">#9238</A>)
+ <UL>
+ <LI>開発者が開発中のコードをテストする必要がある場合は、NVDA設定ダイアログの「高度な設定」カテゴリで「開発者用スクラッチパッドのフォルダーからカスタムコードを読み込む」を有効にします。そしてNVDAユーザー設定フォルダーの scratchpad フォルダーにテストしたいコードをコピーします。
+ </UL>
+</UL>
+
+<H3>バグ修正</H3>
+
+<UL>
+<LI>Windows 10 April 2018 Update以降でOneCore音声合成エンジンを使用する場合、発話の間に長い無音が挿入される問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/8985">#8985</A>)
+<LI>プレーンテキストコントロール（メモ帳など）およびブラウズモードで文字単位の移動をするときに、2つのUTF-16コードポイントで構成される32ビットの絵文字（🤦など）が正しく扱えるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8782">#8782</A>)
+<LI>NVDAのインターフェイス言語を変更した後の再起動確認ダイアログを改善しました。テキストとボタンのラベルがより簡潔でわかりやすいものになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6416">#6416</A>)
+<LI>Windows 10においてサードパーティの音声合成エンジンが読み込みに失敗した場合、NVDAは eSpeak NG ではなくWindows OneCore音声を使用するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/9025">#9025</A>)
+<LI>セキュアスクリーンにおいてNVDAメニューに「ようこそ画面」の項目を表示しないようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8520">#8520</A>)
+<LI>ブラウズモードでタブキーまたは1文字ナビゲーションで移動するとき、タブパネルの凡例の報告がより一貫性のあるものになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/709">#709</A>)
+<LI>Windows 10の「アラーム＆クロック」アプリで使われているようなタイムピッカーにおいて、NVDAは選択状態の変化を報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/5231">#5231</A>)
+<LI>Windows 10の「アクションセンター」において、ディスプレイの明るさや集中モードなどのクイックアクションを切り替えたときに NVDA は状態を報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8954">#8954</A>)
+<LI>Windows 10 October 2018 Update およびそれ以前のバージョンのアクションセンターにおいて、ディスプレイの明るさのクイックアクションコントロールをNVDAはトグルボタンではなくボタンとして解釈するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8845">#8845</A>)
+<LI>Microsoft Excelの「移動と検索」エディットフィールドにおいて、キャレット位置の追跡や削除された文字の報告が正しく行えるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/9042">#9042</A>)
+<LI>Firefox をブラウズモードで使用する場合にクラッシュすることがある不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/9152">#9152</A>)
+<LI>Microsoft Office 2016 のリボンNVDAが折りたたまれた状態において、一部のコントロールでフォーカス位置を報告できなかった問題を修正しました。
+<LI>Outlook 2016の新規メッセージにアドレスを入力したときに、NVDAが連絡先の候補を報告できなかった問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/8502">#8502</A>)
+<LI>80セルの eurobraille ディスプレイにおいて、タッチカーソルキーの最後の数マスが押されたときに、カーソルが点字行の先頭またはその直後の位置に移動していた問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/9160">#9160</A>)
+<LI>Mozilla Thunderbird のスレッドビューにおけるテーブルナビゲーションの不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/8396">#8396</A>)
+<LI>Mozilla FirefoxおよびGoogle Chromeにおいて、特定のリストボックスおよびツリーでのフォーカスモードへの切り替えが正しく動作するようになりました。具体的には、リストボックスやツリー自体はフォーカス可能ではなく、それらに含まれる項目がフォーカス可能な場合です。(<A HREF="https://github.com/nvaccess/nvda/issues/3573">#3573</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9157">#9157</A>)
+<LI>NVDAのMicrosoft Word対応にUIオートメーションを使用している場合、Outlook 2016/365でメッセージを読むときに初期状態でブラウズモードに切り替わるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/9188">#9188</A>)
+<LI>NVDAがフリーズしにくくなりました。この問題でフリーズが起きた場合の対処として、現在のWindowsセッションからログアウトする必要がありました。(<A HREF="https://github.com/nvaccess/nvda/issues/6291">#6291</A>)
+<LI>Windows 10 October 2018 Update およびそれ以降において、クリップボードが空の状態でクラウドクリップボードの履歴を開くと、NVDAはクリップボードの状態を報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/9103">#9103</A>)
+<LI>Windows 10 October 2018 Update およびそれ以降において、絵文字パネルで絵文字を検索するとき、NVDAはトップの検索結果を法億するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/9105">#9105</A>)
+<LI>NVDAがOracle VirtualBox 5.2以上のメインウィンドウでフリーズしていた不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/9202">#9202</A>)
+<LI>Microsoft Wordにおいて一部の文書で行、段落、表のセル単位の移動をする場合の応答性が大幅に改善されました。Microsoft Wordで文書を開いた後に alt+w e で下書きビューに切り替えることをお勧めします。(<A HREF="https://github.com/nvaccess/nvda/issues/9217">#9217</A>)
+<LI>Mozilla FirefoxおよびGoogle Chromeにおいて、空のアラートを報告しないようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/5657">#5657</A>)
+<LI>Microsoft Excelで特にシートにコメントや検証のドロップダウンリストが含まれている場合の、セル単位の移動の処理速度が大幅に向上しました。(<A HREF="https://github.com/nvaccess/nvda/issues/7348">#7348</A>)
+<LI>Excel 2016/365でNVDAを使用してセルを編集する場合に、Microsoft Excelの「セルを直接編集する」オプションを無効にする必要がなくなりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8146">#8146</A>)
+<LI>Enhanced Ariaアドオンが使用されている場合に、1文字ナビゲーションでランドマーク単位の移動でFirefoxがしばしばフリーズしていた問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/8980">#8980</A>)
+</UL>
+
+<H3>開発者向けの変更</H3>
+
+<UL>
+<LI>NVDAは、Microsoft Visual Studio 2017のすべてのエディション（Communityエディションだけでなく）でビルドできるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8939">#8939</A>)
+<LI>NVDA設定の「デバッグログ」セクションで louis を有効にすると liblouis からのログ出力をNVDAログに含めることができます。(<A HREF="https://github.com/nvaccess/nvda/issues/4554">#4554</A>)
+<LI>アドオンの開発者は、アドオンマニフェストでNVDAバージョン互換性情報を提供できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9055">#9055</A>)
+ <UL>
+ <LI>minimumNVDAVersion: アドオンが正しく動作する最初のNVDAのバージョン
+ <LI>lastTestedNVDAVersion: アドオンがテストされた最後のNVDAのバージョン
+ </UL>
+<LI>OffsetsTextInfoオブジェクトは_getBoundingRectFromOffsetメソッドを実装できるようになりました。これにより座標ではなく文字ごとの境界矩形を取得できます。(<A HREF="https://github.com/nvaccess/nvda/issues/8572">#8572</A>)
+<LI>TextInfoオブジェクトにboundingRectプロパティが追加されました。これによりある範囲のテキストの境界矩形が取得できます。(<A HREF="https://github.com/nvaccess/nvda/issues/8371">#8371</A>)
+<LI>NVDAにおいてクラス内のプロパティとメソッドを抽象として定義できます。抽象クラスはインスタンス化されるとエラーを発生させます。(<A HREF="https://github.com/nvaccess/nvda/issues/8294">#8294</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8652">#8652</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8658">#8658</A>)
+<LI>NVDAは、入力からテキストが読み上げられるまでの経過時間を記録できます。これは、ユーザーに感じられる応答性能の測定に役立ちます。NVDA設定の「デバッグログ」セクションで timeSinceInput を有効にしてください。(<A HREF="https://github.com/nvaccess/nvda/issues/9167">#9167</A>)
+</UL>
+
 <H2>2018.4.1</H2>
 
 <P>
@@ -47,7 +146,7 @@
 <H3>バグ修正</H3>
 
 <UL>
-<LI>Outlook 2016/365 においてメッセージのカテゴリーとフラグの状態を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8603">#8603</A>)
+<LI>Outlook 2016/365 においてメッセージのカテゴリとフラグの状態を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8603">#8603</A>)
 <LI>NVDA の言語でキルギス語、モンゴル語、マセドニア語などが選択されている場合に、これらの言語がオペレーティングシステムでサポートされていないという警告を起動時に表示しないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8064">#8064</A>)
 <LI>Mozilla Firefox, Google Chrome, Acrobat Reader DC などのブラウズモードで、ナビゲーターオブジェクトにマウスポインタを移動する場合の処理がより正確に行われるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6460">#6460</A>)
 <LI>Firefox, Chrome, Internet Explorer などのウェブコンテンツにおけるコンボボックスの操作が改良されました。(<A HREF="https://github.com/nvaccess/nvda/issues/8664">#8664</A>)
@@ -120,7 +219,7 @@
 <H3>変更点</H3>
 
 <UL>
-<LI>NVDA設定ダイアログの「一般」カテゴリーで利用可能な言語のリストが言語の名前の順に並ぶようになりました。従来は ISO 639 コードの順番に並んでいました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7284">#7284</A>)
+<LI>NVDA設定ダイアログの「一般」カテゴリで利用可能な言語のリストが言語の名前の順に並ぶようになりました。従来は ISO 639 コードの順番に並んでいました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7284">#7284</A>)
 <LI>Freedom Scientific の点字ディスプレイにおいて Alt+Shift+Tab および Windows+Tab のデフォルトジェスチャーを割り当てるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7387">#7387</A>)
 <LI>ALVA BC680 およびプロトコルコンバーターによる点字ディスプレイ接続において、左右のスマートパッド、親指と etouch キーに異なるコマンドを割り当てられるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8230">#8230</A>)
 <LI>ALVA BC6 点字ディスプレイにおいて、キーの組み合わせ sp2+sp3 は現在の日付と時刻の報告に割り当てられました。また sp1+sp2 は Windows キーのエミュレーションになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8230">#8230</A>)
@@ -387,7 +486,7 @@
 <LI>ステータスバーの報告コマンドをすばやく3回押すと、内容をクリップボードにコピーするようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/1785">#1785</A>)
 <LI>Baum 点字ディスプレイのキーにジェスチャーを割り当てるときに、使用している点字ディスプレイだけを対象にできるようになりました（VarioUltra や Pronto など） (<A HREF="https://github.com/nvaccess/nvda/issues/7517">#7517</A>)
 <LI>ブラウズモードの要素リストで「フィルター」のアクセラレーターキーを Alt+F から Alt+E に変更しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7569">#7569</A>)
-<LI>ブラウズモードでレイアウト用のテーブルを含めるかどうかの切り替えを、入力ジェスチャーで使用できるようになりました。入力ジェスチャーのダイアログの「ブラウズモード」カテゴリーにこのコマンドがあり、既定では操作が未割り当てになっています。 (<A HREF="https://github.com/nvaccess/nvda/issues/7634">#7634</A>)
+<LI>ブラウズモードでレイアウト用のテーブルを含めるかどうかの切り替えを、入力ジェスチャーで使用できるようになりました。入力ジェスチャーのダイアログの「ブラウズモード」カテゴリにこのコマンドがあり、既定では操作が未割り当てになっています。 (<A HREF="https://github.com/nvaccess/nvda/issues/7634">#7634</A>)
 <LI>liblouis 点訳エンジンが 3.3.0 に更新されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7565">#7565</A>)
 <LI>読み上げ辞書のダイアログで正規表現のラジオボタンのアクセラレーターキーを Alt+R から Alt+E に変更しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/6782">#6782</A>)
 <LI>読み上げ辞書のファイルにフォーマットバージョンの概念が導入され 'speechDicts/voiceDicts.v1' ディレクトリに辞書ファイルが置かれるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7592">#7592</A>)
@@ -443,7 +542,7 @@
 <LI>Microsoft PowerPoint においてスライドの編集中にシェイプの具体的な種類（三角形、円、ビデオ、矢印など）を報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7111">#7111</A>)
 <LI>Google Chrome において、MathMLで記述された数式コンテンツを扱えるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7184">#7184</A>)
 <LI>NVDA は Windows 10 の OneCore 音声（モバイル音声）を音声エンジンとして使えるようになりました。NVDA メニューの「音声エンジン」から選択できます。(<A HREF="https://github.com/nvaccess/nvda/issues/6159">#6159</A>)
-<LI>NVDA のユーザー設定ファイルをローカル設定フォルダに保存できるようになりました。この切り替えにはレジストリの設定が必要です。ユーザーガイドの「システム全体のパラメーター」を参照してください。(<A HREF="https://github.com/nvaccess/nvda/issues/6812">#6812</A>)
+<LI>NVDA のユーザー設定ファイルをローカル設定フォルダーに保存できるようになりました。この切り替えにはレジストリの設定が必要です。ユーザーガイドの「システム全体のパラメーター」を参照してください。(<A HREF="https://github.com/nvaccess/nvda/issues/6812">#6812</A>)
 <LI>ウェブブラウザにおいてフィールドのプレイスホルダーの値を報告できるようになりました（具体的には aria-placeholder への対応です）。(<A HREF="https://github.com/nvaccess/nvda/issues/7004">#7004</A>)
 <LI>Microsoft Word のブラウズモードにおいて、1文字ナビゲーション w および shift+w でスペルミスに移動できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6942">#6942</A>)
 <LI>Microsoft Outlook の予定ダイアログで使われる日付選択コントロールに対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/7217">#7217</A>)
@@ -474,7 +573,7 @@
 <H3>変更点</H3>
 
 <UL>
-<LI>初期状態ではどのキーにも割り当てられていないコマンド「NVDAの再起動」を追加しました。入力ジェスチャーのダイアログで「全般」カテゴリーから選択可能です。(<A HREF="https://github.com/nvaccess/nvda/issues/6396">#6396</A>)
+<LI>初期状態ではどのキーにも割り当てられていないコマンド「NVDAの再起動」を追加しました。入力ジェスチャーのダイアログで「全般」カテゴリから選択可能です。(<A HREF="https://github.com/nvaccess/nvda/issues/6396">#6396</A>)
 <LI>「ようこそ画面」でキーボード配列を設定できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6863">#6863</A>)
 <LI>点字ディスプレイ出力においてコントロールの種類や状態などの短縮表記が追加されました。ランドマークも短縮表記になりました。詳しい情報はユーザーガイド「点字ディスプレイ」の「コントロールの種類、状態、ランドマークの表記」を参照してください。(<A HREF="https://github.com/nvaccess/nvda/issues/7188">#7188</A>, <A HREF="https://github.com/nvaccess/nvda/issues/3975">#3975</A>)
 <LI>eSpeak NG をバージョン 1.49.1 に更新しました。(<A HREF="https://github.com/nvaccess/nvda/issues/7280">#7280</A>)
@@ -1151,7 +1250,7 @@
 <LI>Skype (Windows デスクトップ版)において、通知の読み上げに対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4741">#4741</A>)
 <LI>Skype (Windows デスクトップ版)において、NVDA+Ctrl+1 から NVDA+Ctrl+0 までの操作でチャット履歴の項目への移動と通知が可能になりました。 NVDA+Ctrl+1 が最新のメッセージ、NVDA+Ctrl+0 は最新から10番目のメッセージにナビゲーターオブジェクトを移動します。(<A HREF="https://github.com/nvaccess/nvda/issues/3210">#3210</A>)
 <LI>Skype (Windows デスクトップ版)のチャット機能において、参加者のキー入力状態を通知するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3506">#3506</A>)
-<LI>NVDA を無音でインストールして、その後でインストールされた環境を実行しないためのコマンドラインのオプション --install-silent が追加されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4206">#4206</A>)
+<LI>NVDA を無音でインストールして、その後でインストールされた環境を実行しないためのコマンドライン引数 --install-silent が追加されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4206">#4206</A>)
 <LI>Papenmeier BRAILLEX Live 20, BRAILLEX Live および BRAILLEX Live Plus 点字ディスプレイに対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4614">#4614</A>)
 </UL>
 
@@ -1211,7 +1310,7 @@
 <LI>新しい言語: コロンビア国のスペイン語、パンジャーブ語
 <LI>NVDAの終了オプションのダイアログから「再起動」「アドオンを無効化して再起動」を選ぶことが可能になりました。(<A HREF="https://github.com/nvaccess/nvda/issues/4057">#4057</A>)
  <UL>
- <LI>NVDA にコマンドラインオプション --disable-addons をつけて起動することでアドオンを無効化できるようになりました。
+ <LI>NVDA にコマンドライン引数 --disable-addons をつけて起動することでアドオンを無効化できるようになりました。
  </UL>
 <LI>読み上げ辞書で、パターンが単語全体にあたる場合だけ適用するという指定が可能になりました。つまり長い単語の一部にその文字列が含まれる場合を除外できます。(<A HREF="https://github.com/nvaccess/nvda/issues/1704">#1704</A>)
 </UL>
@@ -1520,7 +1619,7 @@
 <LI>いくつかの新しいコンピュータの加速度センサーなどが発生するイベントが、不適切なキー入力として扱われていた問題を修正しました。以前は、このようなイベントが音声を休止させたり、NVDAのコマンドを誤って実行させたりしていました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3468">#3468</A>)
 <LI>NVDA は Poedit 1.5.7 で適切に動作するようになりました。これ以前のバージョンをお使いの場合はアップデートしてください。 (<A HREF="https://github.com/nvaccess/nvda/issues/3485">#3485</A>)
 <LI>NVDA は Microsoft Word 2010 の保護された文書をクラッシュせず読み上げるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/1686">#1686</A>)
-<LI>NVDA配布パッケージに未定義のコマンドラインスイッチを与えて実行したときに、エラーメッセージのダイアログが無限ループで表示される不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3463">#3463</A>)
+<LI>NVDA配布パッケージに未定義のコマンドライン引数を与えて実行したときに、エラーメッセージのダイアログが無限ループで表示される不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3463">#3463</A>)
 <LI>Microsoft Wordでグラフィックやオブジェクトの代替テキストが引用符や他の非標準文字を含んでいる場合、代替テキストの通知を失敗しないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3579">#3579</A>)
 <LI>ブラウズモードで特定の横方向のリスト項目数が正しく処理されるようになりました。以前は正しい値の2倍の値として扱われることがありました。 (<A HREF="https://github.com/nvaccess/nvda/issues/2151">#2151</A>)
 <LI>Microsoft Excel のワークシートで Ctrl+A を押したときに、選択範囲の更新が正しく通知されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3043">#3043</A>)
@@ -1534,7 +1633,7 @@
 <H3>開発者向けの変更</H3>
 
 <UL>
-<LI>ScriptableObject クラスの scriptCategory 属性と script メソッドの category 属性によって、ユーザーに見せるためのカテゴリーを指定できるようになりました。詳しくは baseObject.ScriptableObject のドキュメントを参照してください。 (<A HREF="https://github.com/nvaccess/nvda/issues/1532">#1532</A>)
+<LI>ScriptableObject クラスの scriptCategory 属性と script メソッドの category 属性によって、ユーザーに見せるためのカテゴリを指定できるようになりました。詳しくは baseObject.ScriptableObject のドキュメントを参照してください。 (<A HREF="https://github.com/nvaccess/nvda/issues/1532">#1532</A>)
 <LI>config.save は非推奨になりました。将来のリリースでは廃止されます。config.conf.save を使ってください。 (<A HREF="https://github.com/nvaccess/nvda/issues/667">#667</A>)
 <LI>config.validateConfig は非推奨になりました。将来のリリースでは廃止されます。アドオンがこの機能を使用する場合は、同等の機能を独自に実装してください。 (<A HREF="https://github.com/nvaccess/nvda/issues/667">#667</A>, <A HREF="https://github.com/nvaccess/nvda/issues/3632">#3632</A>)
 </UL>
@@ -1725,7 +1824,7 @@
 <LI>Windows 7 の中国語簡体字 Microsoft Pinyin の候補リストにおいて、左右矢印キーによるページの切替、Homeキーによる先頭候補への移動などを適切に通知するようになりました。
 <LI>記号の読みのカスタマイズ情報を保存したときに "preserve" フィールドが欠落しないようになりました (<A HREF="https://github.com/nvaccess/nvda/issues/2852">#2852</A>)
 <LI>自動アップデートのチェックを無効にしたときに、NVDA を再起動しなくても変更が反映されるようになりました。
-<LI>アドオンのフォルダが他のアプリケーションと共有されていてアドオンの削除に失敗した場合に、NVDAが起動に失敗しないようになりました (<A HREF="https://github.com/nvaccess/nvda/issues/2860">#2860</A>)
+<LI>アドオンのフォルダーが他のアプリケーションと共有されていてアドオンの削除に失敗した場合に、NVDAが起動に失敗しないようになりました (<A HREF="https://github.com/nvaccess/nvda/issues/2860">#2860</A>)
 <LI>DropBoxの設定ダイアログのタブのラベルがフラットレビューで閲覧できるようになりました。
 <LI>デフォルト以外の入力言語が選択されたときに、NVDAはコマンドと入力ヘルプモードのためのキー入力を正しく検出するようになりました。
 <LI>ドイツ語キーボードなどプラス記号が単独で入力できるキーボードに対応して、"plus"という名前でプラスキーにコマンドを割り当てられるようになりました(<A HREF="https://github.com/nvaccess/nvda/issues/2898">#2898</A>)
@@ -1922,7 +2021,7 @@
 
 <UL>
 <LI>NVDAは更新版のダウンロードとインストールを自動的にチェックするようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/73">#73</A>)
-<LI>アドオンマネージャーによってNVDAの拡張が簡単になりました。この機能はNVDAメニューの「ツール」にあり、アドオンパッケージ(拡張子 .nvda-addon のファイル)でプラグインやドライバをインストールしたり削除したりできます。アドオンマネージャーでは設定フォルダにコピーされた従来の形式のプラグインやドライバは表示されません。 (<A HREF="https://github.com/nvaccess/nvda/issues/213">#213</A>)
+<LI>アドオンマネージャーによってNVDAの拡張が簡単になりました。この機能はNVDAメニューの「ツール」にあり、アドオンパッケージ(拡張子 .nvda-addon のファイル)でプラグインやドライバをインストールしたり削除したりできます。アドオンマネージャーでは設定フォルダーにコピーされた従来の形式のプラグインやドライバは表示されません。 (<A HREF="https://github.com/nvaccess/nvda/issues/213">#213</A>)
 <LI>インストールされたリリース版のNVDAにおいて、多くのNVDAの機能が Windows 8 メトロスタイルのアプリケーションで使えるようになりました。入力された文字の読み上げ、Webドキュメントのブラウズモード（メトロバージョンのInternet Explorer 10を含みます）などです。ポータブル環境のNVDAはメトロスタイルのアプリケーションを読み上げできません。 (<A HREF="https://github.com/nvaccess/nvda/issues/1801">#1801</A>) 
 <LI>ブラウズモードのドキュメント（Internet Explorerや Firefoxなど）で、要素コンテナ（リストや表など）の先頭および末尾に shift+, (シフト カンマ)と , (カンマ)によってジャンプできます。(<A HREF="https://github.com/nvaccess/nvda/issues/123">#123</A>)
 <LI>新しい言語: ギリシャ語
