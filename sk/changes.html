@@ -10,6 +10,95 @@
 </CENTER>
 
 
+<H2>2019.1</H2>
+
+<P>
+Prednosti tejto verzie zahŕňajú vylepšenia pri používaní aplikácií Word a Excel, úpravy týkajúce sa stability a bezpečnosti, keďže sa vyžaduje väčšia kontrola kompatibility doplnkov a pár ďalších vylepšení.
+</P>
+<P>
+Od tejto verzie NVDA automaticky nebude načítavať aplikačné moduly, ovládače pre braillovské riadky, hlasové výstupy a globálne pluginy uložené priamo v adresári s nastaveniami NVDA.
+Pre bežné použitie by mali byť skompilované ako doplnok nvda-addon. Ak pracujete na vývoji doplnku a potrebujete testovať svoj kód, začiarknite v pokročilých nastaveniach načítanie vlastných modulov a následne uložte súbory do priečinka scratchpad v priečinku s vašou konfiguráciou NVDA.
+Tieto zmeny sú dôležité, aby sme zaistili kompatibilitu vlastnoručne písaného kódu, a aby nedochádzalo k pádom NVDA v prípade, že po aktualizácii prestane byť kód nekompatibilný.
+Podrobnosti nájdete popísané nižšie v zozname zmien.
+</P>
+
+<H3>Nové vlastnosti</H3>
+
+<UL>
+<LI>Pridané nové braillovské tabuľky: Afrikánčina, Arabský 8-bodový počítačový kód, Arabčina skratkopis, Španielčina skratkopis. (<A HREF="https://github.com/nvaccess/nvda/issues/4435">#4435</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9186">#9186</A>)
+<LI>V nastaveniach môžete určiť, ako sa má NVDA správať, ak s myšou pracuje iná aplikácia. (<A HREF="https://github.com/nvaccess/nvda/issues/8452">#8452</A>)
+ <UL>
+ <LI>Toto umožňuje sledovať kurzor myši aj v prípade, ak ju ovláda napríklad aplikácia TeamViewer.
+ </UL>
+<LI>Pri inštalácii NVDA z príkazového riadka je možné použiť parameter `--enable-start-on-logon`. Pomocou tohto parametra je možné určiť, či chcete NVDA spúšťať po prihlásení do systému (hodnota true) alebo NVDA nechcete spúšťať automaticky (hodnota false). Ak nie je tento parameter určený, pri prvej inštalácii NVDA sa bude predvolene  NVDA spúšťať po štarte systému. Ak ide o aktualizáciu NVDA, kde používateľ určil, že sa nemá NVDA spúšťať po štarte, bude toto nastavenie zachované. (<A HREF="https://github.com/nvaccess/nvda/issues/8574">#8574</A>)
+<LI>Vo všeobecných nastaveniach je teraz možné vypnúť zaznamenávanie do log súboru nastavením hodnoty na "zakázaný". (<A HREF="https://github.com/nvaccess/nvda/issues/8516">#8516</A>)
+<LI>Odteraz sú oznamované vzorce v aplikáciách LibreOffice a tabuľkách Apache OpenOffice. (<A HREF="https://github.com/nvaccess/nvda/issues/860">#860</A>)
+<LI>V prehliadačoch Mozilla Firefox a Google Chrome NVDA oznamuje vybraté položky v stromoch a zoznamoch.
+ <UL>
+ <LI>Toto funguje od verzie Firefox 66.
+ <LI>Toto nefunguje v niektorých zoznamoch (HTML select controls) v prehliadači  Chrome.
+ </UL>
+<LI>Prvotná podpora pre aplikácie ako napríklad Mozilla Firefox na počítačoch s procesorom ARM64 (napríklad Qualcomm Snapdragon). (<A HREF="https://github.com/nvaccess/nvda/issues/9216">#9216</A>)
+<LI>V nastaveniach sme pridali novú kategóriu pokročilé. Tu je napríklad možné zapnúť podporu pre Office aplikácie cez UI Automation. (<A HREF="https://github.com/nvaccess/nvda/issues/9200">#9200</A>)
+<LI>Pridaná podpora pre grafické rozhranie v aplikácii správa diskov. (<A HREF="https://github.com/nvaccess/nvda/issues/1486">#1486</A>)
+<LI>Pridaná podpora pre braillovské riadky Handy Tech Connect Braille a Basic Braille 84. (<A HREF="https://github.com/nvaccess/nvda/issues/9249">#9249</A>)
+</UL>
+
+<H3>zmeny</H3>
+
+<UL>
+<LI>Prekladová tabuľka liblouis aktualizovaná na verziu 3.8.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9013">#9013</A>)
+<LI>Autori doplnkov teraz môžu určiť minimálnu verziu NVDA, s ktorou ich doplnok spolupracuje. NVDA nenačíta a nenainštaluje doplnky, ktoré vyžadujú novšiu verziu NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>)
+<LI>Autori doplnkov môžu určiť, s ktorou verziou NVDA bol doplnok testovaný. Ak bol doplnok testovaný so staršou verziou NVDA, opäť NVDA nenainštaluje a nenačíta doplnok. (<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>)
+<LI>Táto verzia NVDA ešte načíta doplnky, ktoré nemajú špecifikovanú minimálnu a poslednú vyžadovanú verziu NVDA. Po aktualizácii na verziu 2019.2 však môžu byť tieto doplnky zakázané.
+<LI>Príkaz presunúť myš na miesto zamerané objektovou navigáciou je teraz dostupný v aplikácii MS Word a v UIA prvkoch, konkrétne v aplikácii Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/7916">#7916</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8371">#8371</A>)
+<LI>Vylepšené oznamovanie textu pod kurzorom myši v aplikácii MS Edge a iných UIA aplikáciách. (<A HREF="https://github.com/nvaccess/nvda/issues/8370">#8370</A>)
+<LI>Ak je NVDA spustené s argumentom `--portable-path`, pri vytváraní prenosnej verzie sa vyplní cesta z argumentu. (<A HREF="https://github.com/nvaccess/nvda/issues/8623">#8623</A>)
+<LI>Opravená cesta pre Nórsku braillovskú tabuľku, čím sa odteraz rešpektuje kodifikácia z roku 2015. (<A HREF="https://github.com/nvaccess/nvda/issues/9170">#9170</A>)
+<LI>Pri pohybe po odsekoch (ctrl+šípky hore dole) alebo po bunkách tabuľky (ctrl+alt+šípky) NVDA neoznamuje pravopisné chyby a to ani v takom prípade, ak je oznamovanie pravopisných chýb zapnuté. Odseky a stĺpce v tabuľkách môžu byť totiž dlhé a detegovanie chýb je náročné na výkon. (<A HREF="https://github.com/nvaccess/nvda/issues/9217">#9217</A>)
+<LI>NVDA viac automaticky nespúšťa aplikačné moduly, ovládače pre braillovské riadky a rečové syntézy a globálne pluginy priamo z používateľského priečinka NVDA. Tieto je potrebné skompilovať ako doplnok nvda-addon a určiť správne verzie, s ktorými je doplnok kompatibilný. (<A HREF="https://github.com/nvaccess/nvda/issues/9238">#9238</A>)
+ <UL>
+ <LI>Ak pracujete na vývoji vlastného kódu, povoľte načítanie vlastného kódu v pokročilých nastaveniach. Následne umiestnite kód do priečinka scratchpad v priečinku s nastaveniami NVDA.
+ </UL>
+</UL>
+
+<H3>Opravy</H3>
+
+<UL>
+<LI>Pri použití hlasového výstupu Onecore v systéme Windows 10 od verzie Apríl 2018, nie sú vkladané zbytočné pauzy. (<A HREF="https://github.com/nvaccess/nvda/issues/8985">#8985</A>)
+<LI>Pri pohybe po znakoch v editačných poliach (napríklad v poznámkovom bloku) alebo v režime prehliadania, NVDA správne oznamuje 32-bitové emoji pozostávajúce z dvoch buniek UTF-16 (napríklad đź¤¦). (<A HREF="https://github.com/nvaccess/nvda/issues/8782">#8782</A>)
+<LI>Upravený dialóg, ktorý sa objaví pri zmene jazyka. Text a tlačidlá sú teraz zrozumiteľnejšie. (<A HREF="https://github.com/nvaccess/nvda/issues/6416">#6416</A>)
+<LI>Ak nie je možné použiť nastavený hlasový výstup, NVDA sa v systéme Windows 10 vráti k hlasu Onecore a nie k syntéze eSpeak. (<A HREF="https://github.com/nvaccess/nvda/issues/9025">#9025</A>)
+<LI>Položka Vitajte v NVDA bola odstránená z menu NVDA na zabezpečených obrazovkách. (<A HREF="https://github.com/nvaccess/nvda/issues/8520">#8520</A>)
+<LI>V režime prehliadania pri použití tabulátora alebo skratiek rýchlej navigácie, NVDA presnejšie oznamuje popisy pre tab panely. (<A HREF="https://github.com/nvaccess/nvda/issues/709">#709</A>)
+<LI>NVDA správne oznamuje výber času v aplikáciách budík a hodiny v systéme Windows 10. (<A HREF="https://github.com/nvaccess/nvda/issues/5231">#5231</A>)
+<LI>V centre akcií v systéme Windows 10 NVDA odteraz oznamuje stav pri zmene jasu alebo asistenta na lepšie sústredenie. (<A HREF="https://github.com/nvaccess/nvda/issues/8954">#8954</A>)
+<LI>Od októbrovej aktualizácie Windows 10 NVDA správne rozpoznáva tlačidlo jas v centre akcií ako tlačidlo a nie ako prepínacie tlačidlo. (<A HREF="https://github.com/nvaccess/nvda/issues/8845">#8845</A>)
+<LI>NVDA opäť správne sleduje kurzor a oznamuje vymazané znaky v aplikácii Excel v dialógoch ísť na a vyhľadávanie. (<A HREF="https://github.com/nvaccess/nvda/issues/9042">#9042</A>)
+<LI>Opravené občasné pády v režime prehliadania v prehliadači Firefox. (<A HREF="https://github.com/nvaccess/nvda/issues/9152">#9152</A>)
+<LI>NVDA správne oznamuje fokus v zbalených prvkoch v rybbonoch v aplikácii MS Office 2016.
+<LI>NVDA správne oznamuje navrhnutý kontakt pri písaní e-mailovej adresy v novej správe v aplikácii Outlook 2016. (<A HREF="https://github.com/nvaccess/nvda/issues/8502">#8502</A>)
+<LI>Posledné klávesy na presun kurzora na bunku na 80-znakovom riadku eurobraille viac nesmerujú kurzor na začiatok alebo tesne po začiatku riadka. (<A HREF="https://github.com/nvaccess/nvda/issues/9160">#9160</A>)
+<LI>Opravená navigácia po tabuľkách ak je použité zobrazenie po vláknach v aplikácii Mozilla Thunderbird. (<A HREF="https://github.com/nvaccess/nvda/issues/8396">#8396</A>)
+<LI>V prehliadačoch Mozilla Firefox a Google Chrome je možné aktivovať režim fokusu v zoznamoch a stromoch, ktoré samotné síce nemôžu mať fokus, ale položky v nich už áno. (<A HREF="https://github.com/nvaccess/nvda/issues/3573">#3573</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9157">#9157</A>)
+<LI>V aplikácii Outlook 2016 sa automaticky aktivuje režim prehliadania aj v prípade, že je povolené experimentálne použitie UI Automation. (<A HREF="https://github.com/nvaccess/nvda/issues/9188">#9188</A>)
+<LI>NVDA viac nemrzne takým spôsobom, že jediné východisko je odhlásenie a opätovné prihlásenie používateľa. (<A HREF="https://github.com/nvaccess/nvda/issues/6291">#6291</A>)
+<LI>V systéme Windows 10 od  aktualizácie október 2018, NVDA oznámi, ak je schránka prázdna a pokúšate sa otvoriť zoznam textov pridaných do schránky Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/9103">#9103</A>)
+<LI>V systéme Windows 10 od verzie Október 2018 NVDA pri prezeraní Emoji panela  pri vyhľadávaní oznámi prvý navrhnutý symbol. (<A HREF="https://github.com/nvaccess/nvda/issues/9105">#9105</A>)
+<LI>NVDA viac nezamrzne v hlavnom okne aplikácie Oracle VirtualBox od verzie 5.2. (<A HREF="https://github.com/nvaccess/nvda/issues/9202">#9202</A>)
+<LI>Zrýchlená odozva pre niektoré dokumenty MS Word pri navigácii po riadkoch, odsekoch a bunkách v tabuľke. Odporúča sa použiť zobrazenie koncept. (<A HREF="https://github.com/nvaccess/nvda/issues/9217">#9217</A>)
+<LI>V prehliadačoch Mozilla Firefox a Google Chrome NVDA viac neoznamuje prázdne upozornenia. (<A HREF="https://github.com/nvaccess/nvda/issues/5657">#5657</A>)
+<LI>Zrýchlená navigácia v dokumentoch MS Excel v prípadoch, ak tabuľka obsahuje komentáre alebo zoznamy návrhov zmien. (<A HREF="https://github.com/nvaccess/nvda/issues/7348">#7348</A>)
+<LI>Nie je viac potrebné vypnúť editáciu vo vnútry bunky v aplikácii MS Excel 2016/365, aby bolo možné prejsť do editačného poľa bunky. (<A HREF="https://github.com/nvaccess/nvda/issues/8146">#8146</A>)
+<LI>Opravená chyba, ktorá spôsobila zamrznutie v režime prehliadania v prehliadači Mozilla Firefox pri navigácii po oblastiach stránky, ak je použité pokročilé Enhanced Aria add-on. (<A HREF="https://github.com/nvaccess/nvda/issues/8980">#8980</A>)
+</UL>
+
+<H2>2018.4.1</H2>
+
+<P>
+Táto verzia opravuje pád, ktorý nastával, ak bol jazyk NVDA nastavený na Aragónčinu.
+</P>
+
 <H2>2018.4</H2>
 
 <P>
