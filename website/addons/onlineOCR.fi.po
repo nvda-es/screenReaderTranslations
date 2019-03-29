@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Online image describer\n"
-"POT-Creation-Date: 2019-03-28 21:48+1000\n"
+"POT-Creation-Date: 2019-03-29 19:37+1000\n"
 "PO-Revision-Date: 2019-03-29 08:47+0200\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: Jani Kinnunen <jani.kinnunen@wippies.fi>\n"
@@ -40,19 +40,13 @@ msgid ""
 "This addon aims at adding online image recognition engines to NVDA.  There "
 "are two types of engines. OCR and image describer.  OCR extract text from "
 "image.  Image describer describe visual features in image in text form.  "
-"Such as general description, color type landmarks and so on."
+"Such as general description, color type landmarks and so on.  Internet "
+"connection is required to use this addon, since image describe services are "
+"provided by API endpoints on the Internet.  They are called engines in this "
+"addon."
 msgstr ""
 
-#. type: Plain text
-msgid ""
-"The author of addon have registered account with free API quota and set up a "
-"proxy server on www.nvdacn.com to make this addon easier to test at first. "
-"Test quota is limited and may be cancelled by API provider anytime.  It is "
-"highly recommended to register your own key according to guide in each "
-"engine."
-msgstr ""
-
-#. type: Title ###
+#. type: Title ##
 #, no-wrap
 msgid "Engine Configuration"
 msgstr ""
@@ -64,6 +58,15 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+msgid ""
+"The author of addon have registered account with free API quota and set up a "
+"proxy server on www.nvdacn.com to make this addon easier to test at first. "
+"Test quota is limited and may be cancelled by API provider anytime.  It is "
+"highly recommended to register your own key according to guide in each "
+"engine."
+msgstr ""
+
+#. type: Plain text
 msgid "The following settings are applicable to all engines."
 msgstr ""
 
@@ -71,60 +74,76 @@ msgstr ""
 #, no-wrap
 msgid ""
 "* Copy result to clipboard after recognition:\n"
-"    If enabled, recognition result will be copied to clipboard after recognition.\n"
+"If enabled, recognition result will be copied to clipboard after recognition.\n"
 msgstr ""
 
 #. type: Plain text
 #, no-wrap
 msgid ""
 "* Swap the effect of repeated gesture with none repeated ones:\n"
-"    By default, a virtual result document is shown only if you press the corresponding gesture twice, if you use that frequently you can enable this option so that you only need to press once to get a result viewer.\n"
+"By default, a virtual result document is shown only if you press the corresponding gesture twice, if you use that frequently you can enable this option so that you only need to press once to get a result viewer.\n"
 msgstr ""
 
 #. type: Plain text
 #, no-wrap
 msgid ""
 "* Enable more verbose logging for debug purpose:\n"
-"    Some logs are essential for debugging but affects performance and takes up a lot of space. Only turn this on if specifically instructed to by the addon author or an NVDA developer.\n"
+"Some logs are essential for debugging but affects performance and takes up a lot of space. Only turn this on if specifically instructed to by the addon author or an NVDA developer.\n"
 msgstr ""
 
 #. type: Plain text
 #, no-wrap
 msgid ""
 "* Proxy type:\n"
-"    Which type of proxy you are using. If you do not know what a proxy is just leave it as is.\n"
+"Which type of proxy you are using. If you do not know what a proxy is just leave it as is.\n"
 msgstr ""
 
 #. type: Plain text
 #, no-wrap
 msgid ""
 "* Proxy address:\n"
-"    Full URL of your proxy. If you do not know what a proxy is just leave it as is.\n"
-"    If you choose to use proxy your proxy will be verified before saving , after verification, there will be a prompt to tell you result.\n"
-msgstr ""
-
-#. type: Plain text
-msgid ""
-"The following settings means the same in all engines, describe them here to "
-"save space."
+"Full URL of your proxy. If you do not know what a proxy is just leave it as is.\n"
+"If you choose to use proxy your proxy will be verified before saving , after verification, there will be a prompt to tell you result.\n"
+"The following settings means the same in all engines, describe them here to save space.\n"
 msgstr ""
 
 #. type: Plain text
 #, no-wrap
 msgid ""
 "* API Access Type:\n"
-"    This controls how you get access to the corresponding API endpoints.\n"
-"    If you choose \"Use public quota\", you are using free quota in an account registered by addon author.\n"
-"    If you choose \"Use your own API key\", this addon will use quota from your own account.\n"
+"This controls how you get access to the corresponding API endpoints.\n"
+"If you choose \"Use public quota\", you are using free quota in an account registered by addon author.\n"
+"If you choose \"Use your own API key\", this addon will use quota from your own account.\n"
 msgstr ""
 
 #. type: Plain text
 #, no-wrap
 msgid ""
 "* APP ID, API key or API Secret Key:\n"
-"    If you want to use quota from your own account corresponding access tokens is required. Some engines only need API key.\n"
-"    Some engines require two tokens.\n"
-"    These are only valid if you choose \"use your own API key\" in API Access type.\n"
+"If you want to use quota from your own account corresponding access tokens is required. Some engines only need API key.\n"
+"Some engines require two tokens.\n"
+"These are only valid if you choose \"use your own API key\" in API Access type.\n"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"Note that the quality and accuracy of results are affected by many factors."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "Models and techniques used by engine provider"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "Quality of uploaded image"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "Is navigator object hidden behind something else"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "Screen resolution"
 msgstr ""
 
 #. type: Title ##
@@ -167,16 +186,29 @@ msgstr ""
 
 #. type: Title ###
 #, no-wrap
-msgid "Machine Learing Engine by Oliver Edholm"
+msgid "Machine Learning Engine by Oliver Edholm"
 msgstr ""
 
 #. type: Plain text
 msgid ""
 "It's a free engine gives description of an image.  If there is text inside "
-"it will do OCR on the image.  There are two settings for this engine.  * "
-"Language of result: English by default. If you configure another language "
-"than English, the description could have translation issues because it's "
-"automatically generated by machine translation service."
+"it will do OCR on the image.  There are two settings for this engine."
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"* Access Types\n"
+"The author of this addon has setup a proxy on www.nvdacn.com for users who cannot access google service access.\n"
+"If you want to use this proxy please chose Use proxy on www.nvdacn.com in access type settings.\n"
+"If you want to use your own key in the following two Microsoft engines. Please follow the guide in Microsoft Azure OCR section.\n"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"* Language of result:\n"
+"English by default. If you configure another language than English, the description could have translation issues because it's automatically generated by machine translation service.\n"
 msgstr ""
 
 #. type: Plain text
@@ -186,23 +218,16 @@ msgid ""
 "server and will never be seen again."
 msgstr ""
 
-#. type: Plain text
-msgid ""
-"The author of this addon has setup a proxy on www.nvdacn.com for users who "
-"cannot access google service access.  If you want to use this proxy please "
-"chose Use proxy on www.nvdacn.com in access type settings."
-msgstr ""
-
 #. type: Title ###
 #, no-wrap
-msgid "Azure Image Analyze"
+msgid "Microsoft Azure Image Analyser"
 msgstr ""
 
 #. type: Plain text
 msgid ""
 "This engine extracts a rich set of visual features based on the image "
-"content.  This engine supports 5 languages in its result.  English, "
-"Default.  Spanish.  Japanese.  Portuguese.  Simplified Chinese."
+"content.  This engine is english only. If you want description in other "
+"languages, you can use Microsoft Azure Image Describer"
 msgstr ""
 
 #. type: Plain text
@@ -234,7 +259,7 @@ msgstr ""
 
 #. type: Title ###
 #, no-wrap
-msgid "Azure image description"
+msgid "Microsoft Azure Image describer"
 msgstr ""
 
 #. type: Plain text
@@ -243,9 +268,14 @@ msgid ""
 "with complete sentences. The description is based on a collection of content "
 "tags, which are also returned by the operation. More than one description "
 "can be generated for each image. Descriptions are ordered by their "
-"confidence score.  There are two settings for this engine.  * Language The "
-"language in which the service will return a description of the image. "
-"English by default."
+"confidence score.  There are two settings for this engine."
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"* Language\n"
+"The language in which the service will return a description of the image. English by default.\n"
 msgstr ""
 
 #. type: Plain text
@@ -290,17 +320,17 @@ msgstr ""
 
 #. type: Plain text
 msgid ""
-"Control+Shift+NVDA+R Recognize current navigator object with online OCR "
-"engine Then read result. If pressed twice, open a virtual result document."
+"NVDA+Alt+R Recognize current navigator object with online OCR engine Then "
+"read result. If pressed twice, open a virtual result document."
 msgstr ""
 
 #. type: Plain text
 msgid ""
-"NVDA+Alt+R Recognizes image in clipboard with online OCR engine. Then read "
-"result. If pressed twice, open a virtual result document.  It accepts two "
-"kinds of content.  First is an actual image(CF_DIB), you can put that into "
-"clipboard by taking a screenshot with Print Screen key or copy image in a "
-"browser."
+"Control+Shift+NVDA+R Recognizes image in clipboard with online OCR engine. "
+"Then read result. If pressed twice, open a virtual result document.  It "
+"accepts two kinds of content.  First is an actual image(CF_DIB), you can put "
+"that into clipboard by taking a screenshot with Print Screen key or copy "
+"image in a browser."
 msgstr ""
 
 #. type: Title ##
@@ -343,17 +373,9 @@ msgid ""
 "Portuguese \n"
 "Russian \n"
 "Slovenian \n"
-"Spanish  \n"
-msgstr ""
-
-#. type: Plain text
-#, no-wrap
-msgid "Swedish  \n"
-msgstr ""
-
-#. type: Plain text
-#, no-wrap
-msgid "Turkish  \n"
+"Spanish\n"
+"Swedish\n"
+"Turkish  \n"
 msgstr ""
 
 #. type: Plain text
@@ -414,12 +436,10 @@ msgstr ""
 
 #. type: Plain text
 msgid ""
-"It supports 24 languages including (Chinese Simplified)  (Chinese "
-"Traditional)  (Czech)  (Danish)  (Dutch)  (English)  (Finnish)  (French)  "
-"(German)  (Greek)  (Hungarian)  (Italian)  (Japanese)  (Korean)  "
-"(Norwegian)  (Polish)  (Portuguese, (Russian)  (Spanish)  (Swedish)  "
-"(Turkish)  (Arabic)  (Romanian)  (Serbian Cyrillic)  (Serbian Latin)  "
-"(Slovak)"
+"It supports 24 languages including Chinese Simplified Chinese Traditional "
+"Czech Danish Dutch English Finnish French German Greek Hungarian Italian "
+"Japanese Korean Norwegian Polish Portuguese Russian Spanish Swedish Turkish "
+"Arabic Romanian Serbian Cyrillic Serbian Latin Slovak"
 msgstr ""
 
 #. type: Plain text
@@ -568,11 +588,50 @@ msgstr ""
 
 #. type: Title ###
 #, no-wrap
+msgid "0.14"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"Fixed some bugs: Cannot use your own api key in Microsoft Azure engines "
+"Cannot get text result if there is a braille display"
+msgstr ""
+
+#. type: Title ###
+#, no-wrap
+msgid "0.13"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"Make sure that the add-on works when reloading the plug-ins without restart "
+"(NVDA+Control+F3)"
+msgstr ""
+
+#. type: Title ###
+#, no-wrap
+msgid "0.12"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"Fixed browse mode message of Microsoft Azure Image Describer The accent "
+"color is now represented as NVDA colour descriptions.  Improved result "
+"format of Microsoft Azure Image Analyser Improve document according to "
+"review comments Fixed gesture inconsistency.  Control+Shift+NVDA for "
+"clipboard while NVDA+ALT for navigator object Fix missing imageInfo error "
+"while recognizing."
+msgstr ""
+
+#. type: Title ###
+#, no-wrap
 msgid "0.11"
 msgstr ""
 
 #. type: Plain text
-msgid "Added image description capability Oliver Edholm"
+msgid ""
+"Added image description capability Change addon summary to online image "
+"describer"
 msgstr ""
 
 #. type: Title ###
@@ -581,11 +640,9 @@ msgid "0.10"
 msgstr ""
 
 #. type: Plain text
-msgid "Fix error using user's own api key in sougou API"
-msgstr ""
-
-#. type: Plain text
-msgid "Fix unknown panel issue by adding settings to supportedSettings"
+msgid ""
+"Fix error using user's own api key in sougou API.  Fix unknown panel issue "
+"by adding settings to supportedSettings"
 msgstr ""
 
 #. type: Title ###
