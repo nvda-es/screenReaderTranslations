@@ -74,7 +74,7 @@ addresses = {
     },
     'fr': {
         'lang':'French',
-        'email': ['Michel such <michel.such@free.fr>', 'Patrick ZAJDA <patrick@zajda.fr>', 'Remy Ruiz <remyruiz@gmail.com>', 'Bachir Benanou <ben_bach@yahoo.fr>', 'Abdelkrim Bensaid <abdelkrim.bensaid@free.fr>', 'Cyrille Bougot <cyrille.bougot2@laposte.net>', 'Ali Amri <alamri86@gmail.com>', 'Corentin Bacqu&-Cazenave <corentin@progaccess33.net>'],
+        'email': ['Michel such <michel.such@free.fr>', 'Patrick ZAJDA <patrick@zajda.fr>', 'Remy Ruiz <remyruiz@gmail.com>', 'Bachir Benanou <ben_bach@yahoo.fr>', 'Abdelkrim Bensaid <abdelkrim.bensaid@free.fr>', 'Cyrille Bougot <cyrille.bougot2@laposte.net>', 'Corentin Bacqu&-Cazenave <corentin@progaccess33.net>'],
     },
     'ga': {
         'lang': 'Gaeilge',
