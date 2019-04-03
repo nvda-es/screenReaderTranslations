@@ -22,7 +22,10 @@ It is highly recommended to register your own key according to guide in each eng
 The following settings are applicable to all engines.
 
 * Copy result to clipboard after recognition:
-If enabled, recognition result will be copied to clipboard after recognition.
+If enabled, recognition result text will be copied to clipboard after recognition.
+
+* Use browseable message for text result
+If enabled, recognition result text will be shown in a popup window instead of speech or braille message. 
 
 * Swap the effect of repeated gesture with none repeated ones:
 By default, a virtual result document is shown only if you press the corresponding gesture twice, if you use that frequently you can enable this option so that you only need to press once to get a result viewer.
@@ -151,6 +154,10 @@ Second is a file copied in  explorer.(CF_HDROP)
 If it is not an image. This addon will tell you, No image in clipboard.
 If there is only text in clipboard, this addon will try to use it as a path of local file. If it is not a path, this addon will tell you: Text in clipboard is not a valid path. If the corresponding file is not an image this addon will tell you: The file specified in clipboard is not an image.
 
+There is also a gesture to cancel current recognition. 
+This gesture can be useful if you think you have waited for too long and want to cancel.
+Also sometimes you do not want to be disturbed by recognition message because you need to review some messages arrived after recognition start.
+This gesture is left unassigned. Please assign it before using.
 
 ## Engines
 
@@ -336,6 +343,25 @@ According to my test Chinese and English and their mixture is supported.
 There is no additional configuration for these API.
 
 ## Change Log
+
+### 0.16
+
+Add a cancel recognition gesture
+
+Fixed following issues:
+CheckListBox state change not announced
+Swap the effect of repeated gesture not working in online image describer
+
+### 0.15
+
+Add an option to pop up a window containing message instead of speech or braille message for text results
+Change checkboxes for visual features in Microsoft Azure Image Analyzer into a CheckBoxList.
+
+Fix following issues:
+Cannot load jpg image file from clipboard
+Result document object do not show up after recognition.
+Position in result document objects are not reliable if image is resized internally.
+Result from Microsoft Azure Image Describer is in the same line which makes it hard to navigate around. 
 
 ### 0.14
 
