@@ -271,6 +271,13 @@ If you have modified the cities list, by pressing "Cancel", you will be remember
 
 # What's new: #
 
+# Version 6.2 #
+* Fixed bug in the "Add" function.
+* Fixed bug that did not assign the variable "_volume" when starting the addon.
+* Added missing code from version 6.0;
+	* Now you can recover the saved cities from the version that uses the Apixu API;
+	* The "Test" and "Remove" buttons and non-compatible cities are available in the format: "Ferrara, iter 44.83,11.58 0" (city, geographic coordinates, area definition).
+
 # Version 6.1 #
 * Fixed 2 bugs.
 
