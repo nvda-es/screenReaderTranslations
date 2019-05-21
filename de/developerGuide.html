@@ -6,7 +6,7 @@
 <TITLE>NVDA 2019.2-dev Entwicklerhandbuch</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>NVDA 2019.2-dev Entwicklerhandbuch</H2>
+<H2>﻿NVDA 2019.2-dev Entwicklerhandbuch</H2>
 </CENTER>
 
 
@@ -36,7 +36,7 @@
   <LI><A HREF="#toc12">3.3. Grundlagen eines Anwendungsmoduls</A>
   <LI><A HREF="#Example1">3.4. Beispiel 1: Ein Anwendungsmodul erzeugt Signaltöne, wenn sich der Fokus verändert</A>
   <LI><A HREF="#toc14">3.5. Grundlagen allgemeiner Erweiterungen</A>
-  <LI><A HREF="#toc15">3.6. Beispiel 2: Eine Standarderweiterung - Ein Skript zur Ansage der NVDA-Version</A>
+  <LI><A HREF="#toc15">3.6. Beispiel 2: Eine Standard-Erweiterung - Ein Skript zur Ansage der NVDA-Version</A>
   <LI><A HREF="#toc16">3.7. NVDA-Objekte</A>
   <LI><A HREF="#toc17">3.8. Skripte und Tastenanbindung</A>
   <LI><A HREF="#toc18">3.9. Beispiel 3: Eine globale Erweiterungzum Aufspüren von FensterKlassen und Steuerelementen</A>
@@ -94,7 +94,7 @@
 <H2>1. Einleitung</H2>
 
 <P>
-Dieses Handbuch stellt Informationen zur Entwicklung von NVDA und dessen Komponenten sowie ihre Übersetzungen bereit.
+Dieses Entwicklerhandbuch stellt Informationen zur Entwicklung von NVDA und dessen Komponenten sowie ihre Übersetzungen bereit.
 (HINWEIS: Dies ist lediglich eine Einführung. Für die komplette Referenz ist es für Entwickler empfehlenswert, sich die Code-Dokumentation durchzulesen.)
 </P>
 
@@ -108,11 +108,11 @@ Die Dokumentationen und weitere Materialien sind in einer oder mehreren der folg
 </P>
 
 <UL>
-<LI>Einen guten Einstieg in Python bietet das Buch <A HREF="https://gwise.itwelzel.biz/Books/Openbook%20GalileoComputing/python/index.htm">Python 2.5</A> von Galileo computing.
-<LI>Ein sehr gutes Nachschlagewerk bietet außerdem das <A HREF="https://wiki.python.de/">deutsche Python-Wiki</A>
+<LI>Einen guten Einstieg in Python bietet das Buch <A HREF="https://gwise.itwelzel.biz/Books/Openbook%20GalileoComputing/python/index.htm">Python 2.5</A> von Galileo Computing.
+<LI>Ein sehr gutes Nachschlagewerk bietet außerdem das deutsche <A HREF="https://wiki.python.de/">Python-Wiki</A>
 <LI>Mit Hilfe der Python-Konsole können weitere Informationen über ein bestimmtes Objekt gewonnen werden. Wenn Sie den Navigator auf das fragliche Objekt gesetzt und die Python-Konsole aufgerufen haben, können Sie mit den folgenden Befehlen weitere Informationen über dieses Objekt erhalten:
  <UL>
- <LI>Um die Code-Dokumentation und die Online-Hilfe zu dem aktuellen Navigator-Objekt anzuzeigen, verwenden Sie den folgenden Befehl: help(nav) Die ausgabe des Befehls kann sehr umfangreich sein, weil nicht nur Informationen über das Navigator-Objekt selbst, sondern auch über alle seine Vorfahren angezeigt werden. Es ist daher zu empfehlen, sich den Inhalt des ausgabefensters in einer Textdatei zu speichern, um bei der weiteren Entwicklungsarbeit darauf zurückgreifen zu können.
+ <LI>Um die Code-Dokumentation und die Online-Hilfe zu dem aktuellen Navigator-Objekt anzuzeigen, verwenden Sie den folgenden Befehl: help(nav) - Die Ausgabe des Befehls kann sehr umfangreich sein, weil nicht nur Informationen über das Navigator-Objekt selbst, sondern auch über alle seine Vorfahren angezeigt werden. Es ist daher zu empfehlen, sich den Inhalt des Ausgabefensters in einer Textdatei zu speichern, um bei der weiteren Entwicklungsarbeit darauf zurückgreifen zu können.
  <LI>Um alle Eigenschaften und Methoden des aktuellen Navigator-Objekts als Python-Liste anzuzeigen, verwenden Sie den folgenden Befehl: dir(nav)
  <LI>Um alle Eigenschaften des aktuellen Navigator-Objekts mitsamt ihren Werten als Python-Wörterbuch angezeigt zu bekommen, verwenden Sie den folgenden Befehl: print nav.<U>dict</U>
  <LI>Um eine Liste aller zur Laufzeit geladenen Module und Variablen angezeigt zu bekommen, verwenden Sie den folgenden Befehl: dir()
@@ -143,9 +143,9 @@ Zwei Zeichen können beispielsweise identisch ausgesprochen werden, auch wenn es
 Um dieses problem zu lösen, können Zeichenbeschreibungen bereitgestellt werden, die jedes Zeichen eindeutig beschreiben.
 </P>
 <P>
-Zeichenbeschreibungen für einen Sprachraum können in einer Datei namens "characterDescriptions.dic" bereitgestellt werden, die sich im Verzeichnis des jeweiligen Sprachraums befinden muss.
+Zeichenbeschreibungen für einen Sprachraum können in der Datei "characterDescriptions.dic" bereitgestellt werden, die sich im Verzeichnis des jeweiligen Sprachraums befinden muss.
 Dazu muss die Datei im UTF-8 kodiert werden.
-Leerzeilen und Zeilen, die mit dem Zeichen "#" beginnen, werden ignoriert.
+Leerzeilen und Zeilen, die mit dem Kommentar-Zeichen "#" beginnen, werden ignoriert.
 Alle anderen Zeilen müssen ein Zeichen gefolgt von einem Tabulator und dessen Beschreibung enthalten.
 </P>
 <P>
@@ -153,11 +153,9 @@ zum Beispiel:
 </P>
 
 <PRE>
-
 # Dies ist eine Kommentarzeile
 a   Anton
 b   Berta
-
 </PRE>
 
 <P>
@@ -173,12 +171,12 @@ Unglücklicherweise sprechen verschiedene Sprachausgaben die Sonderzeichen sehr 
 Hierfür können Informationen über die Aussprache von Sonderzeichen in NVDA bereitgestellt werden.
 </P>
 <P>
-Dieses kann sprachspezifisch in der im UTF-8 kodierten Datei namens "Symbols.dic" im Verzeichnis des jeweiligen Sprachraums erfolgen.
-Leerzeilen und Zeilen, die mit "#" beginnen, werden ignoriert.
-Alle Sprachräume übernehmen die Sonderzeichenaussprache des Englischen.
+Dieses kann sprachspezifisch in der im UTF-8 kodierten Datei "Symbols.dic" im Verzeichnis des jeweiligen Sprachraums erfolgen.
+Leerzeilen und Zeilen, die mit dem Kommentar-Zeichen "#" beginnen, werden ignoriert.
+Alle Sprachräume übernehmen die Sonderzeichen-Aussprache des Englischen.
 </P>
 <P>
-Die Datei enthält zwei Abschnitte.
+Die Datei enthält zwei Abschnitte:
 </P>
 
 <A NAME="toc7"></A>
@@ -246,7 +244,7 @@ Folgende Felder sind verfügbar:
  </UL>
 <LI>Ersatztext: Der Text, der anstelle des Symbols ausgesprochen werden soll.
 <LI>Ebene: Die Symbolebene, ab der das Symbol gesprochen werden soll. Die Symbolebene kann vom Anwender konfiguriert werden und gibt die Menge an auszusprechenden Sonderzeichen an. Dieses Feld sollte einen der Werte "none", "some", "most", "all" oder "char" enthalten oder "-", um den Standardwert zu erzwingen. Die angabe "char" bedeutet, dass das Symbol nur bei der zeichenweisen Navigation verarbeitet wird. Standardmäßig wird hier der Wert aus dem englischen Sprachraum verwendet. Ist in der Symboldefinitionsdatei für den englischen Sprachraum kein Wert angegeben, so wird der Wert "all" angenommen.
-<LI>Beibehalten: Dieses Feld muss immer dann belegt sein, wenn ein bestimmtes Symbol unverarbeitet an die Sprachausgabe weitergegeben werden soll, um eine korrekte Aussprache zu ermöglichen. Beispiele hierfür sind Sonderzeichen, die Sprechpausen verursachen, wie z.B. der Punkt, das Komma etc. Dieses Feld kann die folgenden Werte enthalten:
+<LI>Beibehalten: Dieses Feld muss immer dann belegt sein, wenn ein bestimmtes Symbol unverarbeitet an die Sprachausgabe weitergegeben werden soll, um eine korrekte Aussprache zu ermöglichen. Beispiele hierfür sind Sonderzeichen, die Sprechpausen verursachen, wie z. B. der Punkt, das Komma etc. Dieses Feld kann die folgenden Werte enthalten:
  <UL>
  <LI>never: Das Symbol wird nie beibehalten.
  <LI>always: Das Symbol wird immer beibehalten.
@@ -390,7 +388,6 @@ Wenn Sie sich jedoch außerhalb des Editors (z. B. im Explorer) befinden, sollte
 import appModuleHandler
 
 class AppModule(appModuleHandler.AppModule):
-
     def event_gainFocus(self, obj, nextHandler):
         import tones
         tones.beep(550, 50)
@@ -438,7 +435,7 @@ NVDA lädt alle globalen Erweiterungen, sobald es gestartet wird und entlädt si
 </P>
 
 <A NAME="toc15"></A>
-<H3>3.6. Beispiel 2: Eine Standarderweiterung - Ein Skript zur Ansage der NVDA-Version</H3>
+<H3>3.6. Beispiel 2: Eine Standard-Erweiterung - Ein Skript zur Ansage der NVDA-Version</H3>
 
 <P>
 Das folgende Beispiel erlaubt Ihnen, sich von überall im System aus mit der Tastenkombination NVDA+Umschalt+V die NVDA-Version anzeigen zu lassen.
@@ -449,7 +446,7 @@ Kopieren sie den folgenden Text zwischen den Anfangs- und Endmarkern (jedoch nic
 Lassen Sie dabei alle Tabs und Leerzeichen stehen.
 </P>
 <P>
-Starten Sie nach dem Speichern entweder NVDA neu oder wählen aus dem menü Extras des NVDA-Menüs den Befehl "Erweiterungen neu laden".
+Starten Sie nach dem Speichern entweder NVDA neu oder wählen aus dem Menü "Extras" des NVDA-Menüs den Befehl "Erweiterungen neu laden".
 </P>
 <P>
 Von nun an können Sie NVDA+Umschalt+V drücken, um die NVDA-Version angesagt und in Braille angezeigt zu bekommen.
@@ -517,7 +514,7 @@ einige der nützlichsten sind:
 <LI>name: Die Beschriftung des Steuerelements
 <LI>role: Der Typ des Steuerelements, repräsentiert durch eine der ROLE_*-Konstanten aus dem Modul controltypes; Schaltfläche, Dialogfeld, Eingabefeld, Fenster und Kontrollkästchen sind nur einige Beispiele für Steuerelementtypen.
 <LI>states: Status des Steuerelements, repräsentiert durch einen Satz von 0 oder mehr STATE_*-Konstanten aus dem Modul controltypes. hervorhebbar, hervorgehoben, ausgewählt, auswählbar, erweitert, reduziert und aktiviert sind nur einige Beispiele für den Status.
-<LI>value: Der Wert des Steuerelements z.B. der aktuelle Stand einer Fortschrittsanzeige oder der aktuelle gewählte Eintrag in einem Kombinationsfeld.
+<LI>value: Der Wert des Steuerelements, z. B. der aktuelle Stand einer Fortschrittsanzeige oder der aktuelle gewählte Eintrag in einem Kombinationsfeld.
 <LI>description: Eine kurze Beschreibung, die den Zweck des Steuerelements erläutert (üblicherweise identisch mit der Minihilfe).
 <LI>location: Der Abstand eines Objektes von der oberen linken Ecke des Bildschirms sowie dessen Breite und Höhe in Form von Bildschirmkoordinaten.
 <LI>parent: Das übergeordnete Objekt; Das Übergeordnete Objekt eines Listeneintrags ist beispielsweise die Liste, die ihn enthält.
@@ -827,7 +824,7 @@ class EnhancedEditField(IAccessible):
         ui.message("%d" % len(self.value))
 
     __gestures = {
-        "kb:NVDA+l": "reportLength",
+        "kb:NVDA+L": "reportLength",
     }
 </PRE>
 
@@ -925,7 +922,7 @@ class AppModule(appModuleHandler.AppModule):
                         focus = i+1;
                         # und die Schleife verlassen
                         break
-                # Tritt beim durchlauf ein Ausnahmefehler auf (z.B. wegen nicht existenter Formatierungsinformationen (siehe oben)
+                # Tritt beim durchlauf ein Ausnahmefehler auf (z. B., wegen nicht existenter Formatierungsinformationen (siehe oben)
                 except:
                     # so wird dieser ignoriert
                     pass
@@ -996,7 +993,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 <H4>3.20.1. Hinweise zur Funktion "wx.CallAfter"</H4>
 
 <UL>
-<LI>Problem: Technisch sind Eingabemethoden wie tastaturanschläge nichts anderes als Ereignisse, auf die innerhalb von NVDA mit Hilfe von Skripten reagiert wird. Es kann immer nur ein Ereignis zur selben Zeit abgearbeitet werden. Dies bedeutet, dass NVDA z.B. nicht auf Tastendrücke oder Braillezeilen-Aktionen reagieren kann, wenn ein an ein Ereignis gekoppeltes Skript stehen bleibt, weil es auf eine Benutzereingabe wartet.
+<LI>Problem: Technisch sind Eingabemethoden wie tastaturanschläge nichts anderes als Ereignisse, auf die innerhalb von NVDA mit Hilfe von Skripten reagiert wird. Es kann immer nur ein Ereignis zur selben Zeit abgearbeitet werden. Dies bedeutet, dass NVDA z. B. nicht auf Tastendrücke oder Braillezeilen-Aktionen reagieren kann, wenn ein an ein Ereignis gekoppeltes Skript stehen bleibt, weil es auf eine Benutzereingabe wartet.
 <LI>Lösung: Mit Hilfe der in "wx" enthaltenen Funktion "CallAfter" kann (wie der Name verrät) Code ausgeführt werden, nachdem die Ereignisbehandlung abgearbeitet wurde. Die ausführung des mit CallAfter angegebenen codes wird gewissermaßen "vorgemerkt" und unmittelbar nach Abschluss der Ereignisbehandlungsroutine ausgeführt. Hierdurch ist es NVDA möglich, auf Braillezeilen-Navigationstasten zu reagieren, wenn der Anwender versucht, ein meldungsfenster auszulesen, das in ein Skript eingebunden war.
 </UL>
 
@@ -1060,11 +1057,15 @@ Anderenfalls wird das Paket nicht installiert.
 <A NAME="toc35"></A>
 <H4>4.2.2. Beispiel für eine Manifest-Datei</H4>
 
+<P>
+So könnte diese Datei aussehen:
+</P>
+
 <PRE>
-name = mentestpaket
+name = testpaket
 summary = Coole Erweiterung zum Testen
 version = 1.0
-description = Eine Beispielerweiterung die zeigt, wie Erweiterungen erstellt werden
+description = Eine Beispiel-Erweiterung die zeigt, wie Erweiterungen erstellt werden
 author = Michael Curran &lt;mick@kulgan.net&gt;
 url = https://www.nvda-project.org/wiki/Development
 </PRE>
@@ -1168,7 +1169,7 @@ Die aktuelle Zeile wird durch Drücken von Eingabe abgearbeitet.
 Mit den Pfeiltasten können Sie durch die Ausgaben von ausgeführten Befehlen navigieren.
 </P>
 <P>
-Die ausgabe des Befehls wird beim Drücken von Eingabe vorgelesen.
+Die Ausgabe des Befehls wird beim Drücken von Eingabe vorgelesen.
 Mit F6 können Sie zwischen Ein- und Ausgabefenster wechseln.
 </P>
 <P>
@@ -1213,7 +1214,7 @@ Diese funktioniert ähnlich wie die weiter oben beschrieben <A HREF="#PythonCons
 </P>
 <P>
 Bitte bedenken Sie, dass dies ein hohes Sicherheitsrisiko darstellt!
-Sie sollten die Remote-Python-Konsole nur dann aktivieren, wenn Sie mit vertrauenswürdigen Netzwerken wie etwa VPNs verbunden sind.
+Sie sollten die Remote-Python-Konsole nur dann aktivieren, wenn Sie mit vertrauenswürdigen Netzwerken über VPN verbunden sind!
 </P>
 
 <A NAME="toc49"></A>
