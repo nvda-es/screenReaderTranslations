@@ -1,4 +1,4 @@
-NVDA NVDA_VERSION Entwicklerhandbuch
+﻿NVDA NVDA_VERSION Entwicklerhandbuch
 
 
 %!includeconf: ../userGuide.t2tconf
@@ -10,17 +10,17 @@ NVDA NVDA_VERSION Entwicklerhandbuch
 %%toc
 
 + Einleitung +
-Dieses Handbuch stellt Informationen zur Entwicklung von NVDA und dessen Komponenten sowie ihre Übersetzungen bereit.
+Dieses Entwicklerhandbuch stellt Informationen zur Entwicklung von NVDA und dessen Komponenten sowie ihre Übersetzungen bereit.
 (HINWEIS: Dies ist lediglich eine Einführung. Für die komplette Referenz ist es für Entwickler empfehlenswert, sich die Code-Dokumentation durchzulesen.)
 
 ++ Eine Anmerkung zu Python ++
 NVDA und dessen Erweiterungen werden in der Programmiersprache Python geschrieben.
 Das Ziel dieses Handbuches ist nicht, Ihnen Python beizubringen. Es stellt lediglich Beispiele zur Veranschaulichung der Syntax von Python bereit.
 Die Dokumentationen und weitere Materialien sind in einer oder mehreren der folgenden Bezugsquellen zu finden:
-- Einen guten Einstieg in Python bietet das Buch [Python 2.5 https://gwise.itwelzel.biz/Books/Openbook%20GalileoComputing/python/index.htm] von Galileo computing.
-- Ein sehr gutes Nachschlagewerk bietet außerdem das [deutsche Python-Wiki https://wiki.python.de/]
+- Einen guten Einstieg in Python bietet das Buch [Python 2.5 https://gwise.itwelzel.biz/Books/Openbook%20GalileoComputing/python/index.htm] von Galileo Computing.
+- Ein sehr gutes Nachschlagewerk bietet außerdem das deutsche [Python-Wiki https://wiki.python.de/]
 - Mit Hilfe der Python-Konsole können weitere Informationen über ein bestimmtes Objekt gewonnen werden. Wenn Sie den Navigator auf das fragliche Objekt gesetzt und die Python-Konsole aufgerufen haben, können Sie mit den folgenden Befehlen weitere Informationen über dieses Objekt erhalten:
- - Um die Code-Dokumentation und die Online-Hilfe zu dem aktuellen Navigator-Objekt anzuzeigen, verwenden Sie den folgenden Befehl: help(nav) Die ausgabe des Befehls kann sehr umfangreich sein, weil nicht nur Informationen über das Navigator-Objekt selbst, sondern auch über alle seine Vorfahren angezeigt werden. Es ist daher zu empfehlen, sich den Inhalt des ausgabefensters in einer Textdatei zu speichern, um bei der weiteren Entwicklungsarbeit darauf zurückgreifen zu können.
+ - Um die Code-Dokumentation und die Online-Hilfe zu dem aktuellen Navigator-Objekt anzuzeigen, verwenden Sie den folgenden Befehl: help(nav) - Die Ausgabe des Befehls kann sehr umfangreich sein, weil nicht nur Informationen über das Navigator-Objekt selbst, sondern auch über alle seine Vorfahren angezeigt werden. Es ist daher zu empfehlen, sich den Inhalt des Ausgabefensters in einer Textdatei zu speichern, um bei der weiteren Entwicklungsarbeit darauf zurückgreifen zu können.
  - Um alle Eigenschaften und Methoden des aktuellen Navigator-Objekts als Python-Liste anzuzeigen, verwenden Sie den folgenden Befehl: dir(nav)
  - Um alle Eigenschaften des aktuellen Navigator-Objekts mitsamt ihren Werten als Python-Wörterbuch angezeigt zu bekommen, verwenden Sie den folgenden Befehl: print nav.__dict__
  - Um eine Liste aller zur Laufzeit geladenen Module und Variablen angezeigt zu bekommen, verwenden Sie den folgenden Befehl: dir()
@@ -43,18 +43,17 @@ Manchmal kann es schwierig bis unmöglich sein, zwei Zeichen voneinander zu unte
 Zwei Zeichen können beispielsweise identisch ausgesprochen werden, auch wenn es eigentlich völlig unterschiedliche Zeichen sind.
 Um dieses problem zu lösen, können Zeichenbeschreibungen bereitgestellt werden, die jedes Zeichen eindeutig beschreiben.
 
-Zeichenbeschreibungen für einen Sprachraum können in einer Datei namens "characterDescriptions.dic" bereitgestellt werden, die sich im Verzeichnis des jeweiligen Sprachraums befinden muss.
+Zeichenbeschreibungen für einen Sprachraum können in der Datei "characterDescriptions.dic" bereitgestellt werden, die sich im Verzeichnis des jeweiligen Sprachraums befinden muss.
 Dazu muss die Datei im UTF-8 kodiert werden.
-Leerzeilen und Zeilen, die mit dem Zeichen "#" beginnen, werden ignoriert.
+Leerzeilen und Zeilen, die mit dem Kommentar-Zeichen "#" beginnen, werden ignoriert.
 Alle anderen Zeilen müssen ein Zeichen gefolgt von einem Tabulator und dessen Beschreibung enthalten.
 
 zum Beispiel:
-```
 
+```
 # Dies ist eine Kommentarzeile
 a   Anton
 b   Berta
-
 ```
 
 Ein vollständiges Beispiel finden Sie in der Datei "locale\de\characterDescriptions.dic".
@@ -64,11 +63,11 @@ Für Sprachausgabennutzer ist es oft sinnvoll, beim zeichenweisen Navigieren Son
 Unglücklicherweise sprechen verschiedene Sprachausgaben die Sonderzeichen sehr unterschiedlich aus. Manche Sprachausgaben erlauben keine Kontrolle über die Aussprache von Sonderzeichen.
 Hierfür können Informationen über die Aussprache von Sonderzeichen in NVDA bereitgestellt werden.
 
-Dieses kann sprachspezifisch in der im UTF-8 kodierten Datei namens "Symbols.dic" im Verzeichnis des jeweiligen Sprachraums erfolgen.
-Leerzeilen und Zeilen, die mit "#" beginnen, werden ignoriert.
-Alle Sprachräume übernehmen die Sonderzeichenaussprache des Englischen.
+Dieses kann sprachspezifisch in der im UTF-8 kodierten Datei "Symbols.dic" im Verzeichnis des jeweiligen Sprachraums erfolgen.
+Leerzeilen und Zeilen, die mit dem Kommentar-Zeichen "#" beginnen, werden ignoriert.
+Alle Sprachräume übernehmen die Sonderzeichen-Aussprache des Englischen.
 
-Die Datei enthält zwei Abschnitte.
+Die Datei enthält zwei Abschnitte:
 
 +++ Komplexe Symbole definieren +++
 Der erste Abschnitt ist optional und enthält Definitionen komplexer Symbole in Form regulärer Ausdrücke.
@@ -77,6 +76,7 @@ Ein Beispiel ist der Punkt als Satzzeichen im Deutschen.
 Da der Punkt mehrere Bedeutungen hat, ist eine komplexere Überprüfung erforderlich um zu bestimmen, ob er sich auch tatsächlich am Ende eines Satzes befindet.
 
 Der Abschnitt für komplexe Symbole beginnt mit der folgenden Zeile:
+
 ```
 complexSymbols:
 ```
@@ -84,6 +84,7 @@ complexSymbols:
 Die einzelnen Zeilen innerhalb dieses Abschnittes enthalten einen Namen für ein Symbol, ein Tab-Zeichen und einen Regulären Ausdruck für ein Symbol.
 
 Zum Beispiel:
+
 ```
 . Satzende (?<=[^\s.])\.(?=[\"')\s]|$)
 ```
@@ -93,6 +94,7 @@ Da jeder Sprachraum die komplexen Symbole des englischen Sprachraumes übernimmt
 +++ Symbol-Informationen definieren +++
 Der zweite Abschnitt enthält Informationen darüber, ob und wie Symbole ausgesprochen werden.
 Er beginnt mit der Zeile:
+
 ```
 symbols:
 ```
@@ -111,7 +113,7 @@ Folgende Felder sind verfügbar:
  - \#: #-Zeichen (benötigt einen Backslash, da dieses #-Zeichen sonst als Kommentar angesehen wird)
 - Ersatztext: Der Text, der anstelle des Symbols ausgesprochen werden soll.
 - Ebene: Die Symbolebene, ab der das Symbol gesprochen werden soll. Die Symbolebene kann vom Anwender konfiguriert werden und gibt die Menge an auszusprechenden Sonderzeichen an. Dieses Feld sollte einen der Werte "none", "some", "most", "all" oder "char" enthalten oder "-", um den Standardwert zu erzwingen. Die angabe "char" bedeutet, dass das Symbol nur bei der zeichenweisen Navigation verarbeitet wird. Standardmäßig wird hier der Wert aus dem englischen Sprachraum verwendet. Ist in der Symboldefinitionsdatei für den englischen Sprachraum kein Wert angegeben, so wird der Wert "all" angenommen.
-- Beibehalten: Dieses Feld muss immer dann belegt sein, wenn ein bestimmtes Symbol unverarbeitet an die Sprachausgabe weitergegeben werden soll, um eine korrekte Aussprache zu ermöglichen. Beispiele hierfür sind Sonderzeichen, die Sprechpausen verursachen, wie z.B. der Punkt, das Komma etc. Dieses Feld kann die folgenden Werte enthalten:
+- Beibehalten: Dieses Feld muss immer dann belegt sein, wenn ein bestimmtes Symbol unverarbeitet an die Sprachausgabe weitergegeben werden soll, um eine korrekte Aussprache zu ermöglichen. Beispiele hierfür sind Sonderzeichen, die Sprechpausen verursachen, wie z. B. der Punkt, das Komma etc. Dieses Feld kann die folgenden Werte enthalten:
  - never: Das Symbol wird nie beibehalten.
  - always: Das Symbol wird immer beibehalten.
  - norep: Das Symbol wird nur dann beibehalten, wenn es nicht ersetzt wird (z. B. wenn der Anwender die Satzzeichen- und Symbolebene niedriger eingestellt hat, als für das betreffende Symbol.
@@ -124,17 +126,23 @@ Am ende der Zeile kann schließlich noch ein Anzeigename für ein Symbol vergebe
 Dieser Name wird Anwendern angezeigt, wenn sie die komplexen Symbole bearbeiten wollen. Er kann auch von übersetzern verwendet werden, um übersetzte Namen für die englischen komplexen Symbole bereitzustellen.
 
 Hierzu einige Beispiele:
+
 ```
 (   Runde Klammer auf   most
 ```
+
 Dies bedeutet, dass das Zeichen "(" als "Runde Klammer auf" gesprochen werden soll, wenn der Anwender die Satzzeichen- und Symbolebene auf "meiste" oder "alle" eingestellt hat.
+
 ```
 ,   Komma   all always
 ```
+
 Dies bedeutet, dass das Zeichen "," als "Komma" gesprochen werden soll, wenn als Satzzeichen- und Symbolebene "alle" eingestellt ist. Außerdem wird das Zeichen immer unverändert an die Sprachausgabe übergeben, um Sprechpausen korrekt zu setzen.
+
 ```
 . sentence ending   point   # . fin de phrase
 ```
+
 Diese Zeile stammt aus der französischen Datei symbols.dic.
 Sie besagt, dass das komplexe Symbol ". sentence ending" als "point" gesprochen werden soll..
 Ebene und Einstellung zum Beibehalten des Symbols sind hier nicht angegeben, werden also aus dem englischen Sprachraum übernommen.
@@ -206,7 +214,6 @@ Wenn Sie sich jedoch außerhalb des Editors (z. B. im Explorer) befinden, sollte
 import appModuleHandler
 
 class AppModule(appModuleHandler.AppModule):
-
     def event_gainFocus(self, obj, nextHandler):
         import tones
         tones.beep(550, 50)
@@ -239,14 +246,14 @@ All dies wird im Folgenden behandelt.
 
 NVDA lädt alle globalen Erweiterungen, sobald es gestartet wird und entlädt sie beim Beenden wieder.
 
-++ Beispiel 2: Eine Standarderweiterung - Ein Skript zur Ansage der NVDA-Version ++
+++ Beispiel 2: Eine Standard-Erweiterung - Ein Skript zur Ansage der NVDA-Version ++
 Das folgende Beispiel erlaubt Ihnen, sich von überall im System aus mit der Tastenkombination NVDA+Umschalt+V die NVDA-Version anzeigen zu lassen.
 Das Beispiel dient lediglich dazu, den grundlegenden Aufbau globaler Erweiterungen zu veranschaulichen.
 
 Kopieren sie den folgenden Text zwischen den Anfangs- und Endmarkern (jedoch nicht die Marker selbst), in eine Datei namens beispiel2.py und speichern Sie diese im Unterordner "GlobalErweiterungen" Ihres NVDA-Konfigurationsverzeichnisses.
 Lassen Sie dabei alle Tabs und Leerzeichen stehen.
 
-Starten Sie nach dem Speichern entweder NVDA neu oder wählen aus dem menü Extras des NVDA-Menüs den Befehl "Erweiterungen neu laden".
+Starten Sie nach dem Speichern entweder NVDA neu oder wählen aus dem Menü "Extras" des NVDA-Menüs den Befehl "Erweiterungen neu laden".
 
 Von nun an können Sie NVDA+Umschalt+V drücken, um die NVDA-Version angesagt und in Braille angezeigt zu bekommen.
 
@@ -297,7 +304,7 @@ einige der nützlichsten sind:
 - name: Die Beschriftung des Steuerelements
 - role: Der Typ des Steuerelements, repräsentiert durch eine der ROLE_*-Konstanten aus dem Modul controltypes; Schaltfläche, Dialogfeld, Eingabefeld, Fenster und Kontrollkästchen sind nur einige Beispiele für Steuerelementtypen.
 - states: Status des Steuerelements, repräsentiert durch einen Satz von 0 oder mehr STATE_*-Konstanten aus dem Modul controltypes. hervorhebbar, hervorgehoben, ausgewählt, auswählbar, erweitert, reduziert und aktiviert sind nur einige Beispiele für den Status.
-- value: Der Wert des Steuerelements z.B. der aktuelle Stand einer Fortschrittsanzeige oder der aktuelle gewählte Eintrag in einem Kombinationsfeld.
+- value: Der Wert des Steuerelements, z. B. der aktuelle Stand einer Fortschrittsanzeige oder der aktuelle gewählte Eintrag in einem Kombinationsfeld.
 - description: Eine kurze Beschreibung, die den Zweck des Steuerelements erläutert (üblicherweise identisch mit der Minihilfe).
 - location: Der Abstand eines Objektes von der oberen linken Ecke des Bildschirms sowie dessen Breite und Höhe in Form von Bildschirmkoordinaten.
 - parent: Das übergeordnete Objekt; Das Übergeordnete Objekt eines Listeneintrags ist beispielsweise die Liste, die ihn enthält.
@@ -518,7 +525,7 @@ class EnhancedEditField(IAccessible):
         ui.message("%d" % len(self.value))
 
     __gestures = {
-        "kb:NVDA+l": "reportLength",
+        "kb:NVDA+L": "reportLength",
     }
 ```
 
@@ -556,6 +563,7 @@ Manchmal können Sie NVDA-Objekte nicht anhand von Eigenschaften (wie etwa Name,
 
 ++ Beispiel 7: Verwenden von Textinfo-Objekten zum Ermitteln des hervorgehobenen Objekts ++
 Das folgende Anwendungsmodul für Tuneup System Control 2012 zeigt, wie anhand von Vorder- und Hintergrundfarbe versucht wird, das hervorgehobene Objekt in der Navigationsleiste von Tuneup System control zu ermitteln. Speichern Sie den Quelltext in einer Datei systemcontrol.py im benutzerspezifischen Konfigurationsverzeichnis.
+
 ```
 #appModules/systemcontrol.py
 #A part of NonVisual Desktop Access (NVDA)
@@ -594,7 +602,7 @@ class AppModule(appModuleHandler.AppModule):
                         focus = i+1;
                         # und die Schleife verlassen
                         break
-                # Tritt beim durchlauf ein Ausnahmefehler auf (z.B. wegen nicht existenter Formatierungsinformationen (siehe oben)
+                # Tritt beim durchlauf ein Ausnahmefehler auf (z. B., wegen nicht existenter Formatierungsinformationen (siehe oben)
                 except:
                     # so wird dieser ignoriert
                     pass
@@ -650,7 +658,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 ```
 
 +++ Hinweise zur Funktion "wx.CallAfter" +++
-- Problem: Technisch sind Eingabemethoden wie tastaturanschläge nichts anderes als Ereignisse, auf die innerhalb von NVDA mit Hilfe von Skripten reagiert wird. Es kann immer nur ein Ereignis zur selben Zeit abgearbeitet werden. Dies bedeutet, dass NVDA z.B. nicht auf Tastendrücke oder Braillezeilen-Aktionen reagieren kann, wenn ein an ein Ereignis gekoppeltes Skript stehen bleibt, weil es auf eine Benutzereingabe wartet.
+- Problem: Technisch sind Eingabemethoden wie tastaturanschläge nichts anderes als Ereignisse, auf die innerhalb von NVDA mit Hilfe von Skripten reagiert wird. Es kann immer nur ein Ereignis zur selben Zeit abgearbeitet werden. Dies bedeutet, dass NVDA z. B. nicht auf Tastendrücke oder Braillezeilen-Aktionen reagieren kann, wenn ein an ein Ereignis gekoppeltes Skript stehen bleibt, weil es auf eine Benutzereingabe wartet.
 - Lösung: Mit Hilfe der in "wx" enthaltenen Funktion "CallAfter" kann (wie der Name verrät) Code ausgeführt werden, nachdem die Ereignisbehandlung abgearbeitet wurde. Die ausführung des mit CallAfter angegebenen codes wird gewissermaßen "vorgemerkt" und unmittelbar nach Abschluss der Ereignisbehandlungsroutine ausgeführt. Hierdurch ist es NVDA möglich, auf Braillezeilen-Navigationstasten zu reagieren, wenn der Anwender versucht, ein meldungsfenster auszulesen, das in ein Skript eingebunden war.
 -
 
@@ -693,11 +701,13 @@ Anderenfalls wird das Paket nicht installiert.
 -
 
 +++ Beispiel für eine Manifest-Datei +++
+So könnte diese Datei aussehen:
+
 ```
-name = mentestpaket
+name = testpaket
 summary = Coole Erweiterung zum Testen
 version = 1.0
-description = Eine Beispielerweiterung die zeigt, wie Erweiterungen erstellt werden
+description = Eine Beispiel-Erweiterung die zeigt, wie Erweiterungen erstellt werden
 author = Michael Curran <mick@kulgan.net>
 url = https://www.nvda-project.org/wiki/Development
 ```
@@ -759,7 +769,7 @@ Die Eingabe wird zeilenweise abgearbeitet.
 Die aktuelle Zeile wird durch Drücken von Eingabe abgearbeitet.
 Mit den Pfeiltasten können Sie durch die Ausgaben von ausgeführten Befehlen navigieren.
 
-Die ausgabe des Befehls wird beim Drücken von Eingabe vorgelesen.
+Die Ausgabe des Befehls wird beim Drücken von Eingabe vorgelesen.
 Mit F6 können Sie zwischen Ein- und Ausgabefenster wechseln.
 
 Durch Schließen des Fensters wird die Sitzung lediglich verborgen. Dies macht es möglich, zur Konsole zurückzukehren und alle bisherigen Eingaben und Variablen beizubehalten
@@ -788,7 +798,7 @@ Für Situationen, in denen Fehler in NVDA über ein Netzwerk hinweg aus der Fern
 Diese funktioniert ähnlich wie die weiter oben beschrieben [lokale Python-Konsole #PythonConsole], der Zugriff erfolgt jedoch über TCP.
 
 Bitte bedenken Sie, dass dies ein hohes Sicherheitsrisiko darstellt!
-Sie sollten die Remote-Python-Konsole nur dann aktivieren, wenn Sie mit vertrauenswürdigen Netzwerken wie etwa VPNs verbunden sind.
+Sie sollten die Remote-Python-Konsole nur dann aktivieren, wenn Sie mit vertrauenswürdigen Netzwerken über VPN verbunden sind!
 
 ++ Verwendung ++
 Um die Remote-Python-Konsole zu aktivieren, verwenden Sie die lokale Python-Konsole und importieren Sie remotePythonConsole. Rufen Sie anschließend remotePythonConsole.initialize() auf.
