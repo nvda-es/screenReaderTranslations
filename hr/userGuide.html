@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>NVDA 2019.1-dev Vodič za korisnike</TITLE>
+<TITLE>NVDA 2019.2-dev Vodič za korisnike</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>NVDA 2019.1-dev Vodič za korisnike</H2>
+<H2>NVDA 2019.2-dev Vodič za korisnike</H2>
 </CENTER>
 
 
@@ -79,7 +79,8 @@
     <UL>
     <LI><A HREF="#SingleLetterNavigation">6.1. Brzo Kretanje pomoću početnih slova</A>
     <LI><A HREF="#ElementsList">6.2. Lista elemenata</A>
-    <LI><A HREF="#ImbeddedObjects">6.3. ugrađeni objekti</A>
+    <LI><A HREF="#SearchingForText">6.3. Pretraga teksta</A>
+    <LI><A HREF="#ImbeddedObjects">6.4. ugrađeni objekti</A>
     </UL>
   <LI><A HREF="#ReadingMath">7. Čitanje matematičkog sadržaja</A>
     <UL>
@@ -147,7 +148,7 @@
       <UL>
       <LI><A HREF="#SpeechDictionaries">11.2.1. Govorni rječnici</A>
       <LI><A HREF="#SymbolPronunciation">11.2.2. Izgovor simbola interpunkcije</A>
-      <LI><A HREF="#toc95">11.2.3. Ulazne geste</A>
+      <LI><A HREF="#toc96">11.2.3. Ulazne geste</A>
       </UL>
     <LI><A HREF="#SavingAndReloading">11.3. Spremanje i vraćanje konfiguracije</A>
     <LI><A HREF="#ConfigurationProfiles">11.4. Konfiguracijski profili</A>
@@ -158,6 +159,7 @@
       <LI><A HREF="#ConfigProfileTriggers">11.4.4. okidači</A>
       <LI><A HREF="#ConfigProfileEditing">11.4.5. Uređivanje profila</A>
       <LI><A HREF="#ConfigProfileDisablingTriggers">11.4.6. Privremeno onemogućavanje okidača</A>
+      <LI><A HREF="#ConfigProfileGestures">11.4.7. Aktiviranje profila uz pomoć ulaznih gesti</A>
       </UL>
     <LI><A HREF="#LocationOfConfigurationFiles">11.5. Lokacija konfiguracijskih datoteka</A>
     </UL>
@@ -191,9 +193,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant BI/B Serije / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc129">14.9.1. dodijele prečaca za sve modele</A>
-      <LI><A HREF="#toc130">14.9.2. dodijeljeni prečaci za Brailliant BI 32, BI 40 and B 80</A>
-      <LI><A HREF="#toc131">14.9.3. Dodijeljeni prečaci za Brailliant BI 14</A>
+      <LI><A HREF="#toc131">14.9.1. dodijele prečaca za sve modele</A>
+      <LI><A HREF="#toc132">14.9.2. dodijeljeni prečaci za Brailliant BI 32, BI 40 and B 80</A>
+      <LI><A HREF="#toc133">14.9.3. Dodijeljeni prečaci za Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Serije</A>
     <LI><A HREF="#Seika">14.11. Seika brajični retci</A>
@@ -289,7 +291,7 @@ NVDA podržava brajične kodove za mnoge jezike, uključujući kratkopis, puno p
 <H3>1.5. Licenca i Autorska prava</H3>
 
 <P>
-NVDA sva prava zadržana 2006-2018 NVDA doprinositelji.
+NVDA sva prava zadržana 2006-2019 NVDA doprinositelji.
 </P>
 <P>
 Nvda pokriva GNU General Public License (Inačica 2).
@@ -1288,7 +1290,23 @@ Iako bi se za navigaciju mišem trebao koristiti miš ili trackpad, NVDA ima nek
 
 <P>
 Kompleksni dokumenti koji su samo za čitanje kao na primjer web stranice uz pomoć NVDA pregledavaju se koristeći način pregleda.
-Ovo uključuje dokumente u Mozilla Firefoxu, Microsoft Internet Exploreru, Mozilla Thunderbirdu, html poruke u Microsoft Outlooku, Google Chromeu, Adobe Readeru i Adobe Flashu.
+Ovo uključuje dokumente u sljedećim aplikacijama:
+</P>
+
+<UL>
+<LI>Mozilla Firefox
+<LI>Microsoft Internet Explorer
+<LI>Mozilla Thunderbird
+<LI>HTML poruke u Microsoft Outlooku
+<LI>Google Chrome
+<LI>Microsoft Edge
+<LI>Adobe Reader
+<LI>Foxit Reader
+<LI>Adobe Flash
+<LI>Podržane knjige u Amazon Kindle za osobna računala
+</UL>
+
+<P>
 Također, način pregleda je neobavezno dostupan u microsoft word dokumentima.
 </P>
 <P>
@@ -1330,8 +1348,8 @@ Dodatno, ručno možete uključiti način fokusa, nakon čega će ostati aktivan
 </TR>
 <TR>
 <TD>Traži</TD>
-<TD>NVDA+control+f</TD>
-<TD>otvara dijaloški okvir u kojem možete upisati neki tekst za pretragu u trenutnom dokumentu</TD>
+<TD>NVDA+ctrl+f</TD>
+<TD>Otvara dijaloški okvir pretrage, u kojem možete uisati bilo koji tekst za pretragu po dokumentu. Pogledajte <A HREF="#SearchingForText">pretragu teksta</A> za više informacija.</TD>
 </TR>
 <TR>
 <TD>pretraži slijedeće</TD>
@@ -1439,8 +1457,45 @@ Jednom kad ste odabrali stavku, možete koristiti ponuđene gumbe u dijaloškom 
 </TR>
 </TABLE>
 
+<A NAME="SearchingForText"></A>
+<H3>6.3. Pretraga teksta</H3>
+
+<P>
+Ovaj vam dijaloški okvir omogućuje pretragu teksta u trenutnom dokumentu.
+U polju za uređivanje "Upišite pojam kojeg želite pronaći", možete upisati tekst koji biste željeli naći.
+Kada se nalazite na polju za uređivanje, također možete koristiti strelice gore i dolje kako biste pretraživali prethodno upisane pojmove.
+Potvrdni okvir "osjetljivost na velika slova" će prouzročiti da pretraga program pazi na velika i mala slova pri pretraživanju.
+Na primjer, Kada je potvrdni okvir "osjetljivost na velika slova" označen moći ćete proonaći "NV Access" ali ne i "nv access".
+Razlike u veličini slova neće biti spremljene u povijesit pretrage.
+Kada se NVDA ponovno pokrene, popis prethodno pretraživanih pojmova će biti izbrisan.
+Prilikom pretraživanja, koristite sljedeće prečace:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Naziv</TH>
+<TH>Prečac</TH>
+<TH>Opis</TH>
+</TR>
+<TR>
+<TD>Pretraži tekst</TD>
+<TD>NVDA+ctrl+f</TD>
+<TD>otvara dijaloški okvir pretrage</TD>
+</TR>
+<TR>
+<TD>Traži sljedeće</TD>
+<TD>NVDA+f3</TD>
+<TD>Nalazi sljedeću podudarnost pojma u dokumentu</TD>
+</TR>
+<TR>
+<TD>Traži prethodno</TD>
+<TD>NVDA+shift+f3</TD>
+<TD>Traži prethodnu podudarnost u dokumentu</TD>
+</TR>
+</TABLE>
+
 <A NAME="ImbeddedObjects"></A>
-<H3>6.3. ugrađeni objekti</H3>
+<H3>6.4. ugrađeni objekti</H3>
 
 <P>
 Web stranice mogu uključivati obogaćeni sadržaj koristeći tehnologije kao što su Adobe Flash, Oracle Java, i HTML5, kao i aplikacije i dijaloške okvire.
@@ -3061,6 +3116,9 @@ Kad je ova opcija uključena, NVDA će izvijestiti o tekstu koji je trenutno isp
 Ako je NVDA podešen da izgovara tekst ispod miša kako pomićete pokazivač, ova vam opcija omogućuje podešavanje koliko će biti teksta izgovoreno pod mišem.
 Možete birati između znaka, retka, riječi i odlomka.
 </P>
+<P>
+Kako biste se mogli prebacivati između izgovora jedinica teksta pod mišem sa bilo kojeg mjesta, molimo pridjelite prilagođeni prečac u <A HREF="#InputGestures">Dijaloškom okviru ulazne geste</A>.
+</P>
 
 <A NAME="MouseSettingsRole"></A>
 <H5>Izgovor svojstva prilikom unošenja objekta mišem</H5>
@@ -3345,7 +3403,19 @@ Ovo polje postavlja količinu redaka po kojima se možete kretati kad u načinu 
 Prečac: NVDA+v
 </P>
 <P>
-Ova vam opcija omogućuje određivanje hoće li sadržaj u načinu pregleda biti u zasebnim retcima. To se odnosi na linkove i naslove. Ako je opcija omogućena, elementi će ostati onakvi kakvi su vizualno prikazani, ali ako je onemogućena, svi elementi će dobiti svoj redak.
+Ova opcija vam omogućuje da odredite  razmještaj sadržaja u načinu pregleda kao što su to veze i ostali elementi u zasebnom retku, ili da ostaju u "tekstualnoj struji" kako je vizualno prikazano na zaslonu.
+Ako je opcija omogućena onda će sve ostati kako je to prikazano vizualno, ali ako je onemogućeno onda će svako polje biti razmješteno u zasebnom retku.
+</P>
+
+<A NAME="BrowseModeSettingsEnableOnPageLoad"></A>
+<H5>Uključi način pregleda pri učitavanju stranice</H5>
+
+<P>
+Ovaj potvrdni okvir regulira hoće li se način pregleda uključiti prilikom učitavanja stranice.
+Kada je ova opcija uključena, način pregleda može biti uključen ručno na stranicama ili u dokumentima gdje je način pregleda podržan.
+Pogledajte <A HREF="#BrowseMode">Poglavlje način pregleda</A> kako biste pogledali popis podržanih aplikacija u načinu pregleda.
+Imajte na umu da se ovo ne primjenjuje u situacijama gdje je način pregleda uvijek neobavezan, NPR u Microsoft Wordu.
+Ova je opcija podrazumjevano uključena.
 </P>
 
 <A NAME="BrowseModeSettingsAutoSayAll"></A>
@@ -3565,7 +3635,22 @@ Kada je ova opcija uključena, NVDA će dohvaćati sve informacije iz Microsoft 
 Ovo uključuje Microsoft Word, te sastavljač i preglednik poruka u Microsoft Outlooku.
  Za zadnje inačice Microsoft Office 2016(365, ova podrška je skoro jednaka podrazumijevanoj podršci za Microsoft Word, uz tu razliku, da su performanse poboljšane.
 Međutim, postoje neke informacije koje se ne mogu dohvatiti koristeći ovu podršku, stoga se na nju ne možemo potpuno pouzdati.
-Još uvijek ne preporučujemo ukljućivanje ove opcije podrazumijevano, ali pozivamo korisnike Microsoft Office 2016/365 da testiraju ovu funkcionalnost, te da daju povratne informacije.
+Još uvijek ne preporučujemo uključivanje ove opcije za stalno korištenje, ali pozivamo korisnike Microsoft Office 2016/365 da testiraju ovu značajku, te da šalju povratne informacije.
+</P>
+
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Automatski postavi fokus na stavku koja može biti fokusirana u načinu pregleda</H5>
+
+<P>
+Prečac: NVDA+8
+</P>
+<P>
+Podrazumjevano omogućena, ova opcija omogućuje postavljanje fokusa pokazivača sustava na stavke koje mogu biti fokusirane (veze, polja za uređivanje, itd.) prilikom kretanja po sadržaju u načinu pregleda.
+Ako je ova opcija omogućena, ovo je podrazumjevano ponašanje NVDA čitača zaslona od inačice 2019.1 i prijašnjih.
+Ako omogućite ovu opciju, NVDA neće automatski fokusirati stavke koje se mogu fokusirati kada su iste označene kursorom u načinu pregleda.
+Ovo može rezultirati bržim iskustvom pregledavanja i bržim odzivom načinu pregleda.
+Fokus će se još osvježavati na određenoj stavci kada s njom uđete u interakciju (npr. pritiskanje gumba, označavanje potvrdnog okvira).
+Od inačice NVDA 2019.2, ova značajka je eksperimentalna.
 </P>
 
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
@@ -3652,6 +3737,7 @@ Imajte na umu da ovaj dijaloški okvir poštuje opciju "vjeruj jeziku trenutnog 
 </P>
 <P>
 Da biste promijenili simbol, označite ga u listi simbola.
+Možete filtrirati simbol, upisujući cijelu zamjenu ili dio zamjene simbola u  polje za uređivanje filtriraj po.
 </P>
 
 <UL>
@@ -3681,7 +3767,7 @@ Možete ukloniti simbol kojeg ste prije dodali kad pritisnete gumb ukloni.
 Kad završite, pritisnite gumb u redu da biste spremili vaše promjene ili gumb odustani da bi ste ih poništili.
 </P>
 
-<A NAME="toc95"></A>
+<A NAME="toc96"></A>
 <H4>11.2.3. Ulazne geste</H4>
 
 <P>
@@ -3760,7 +3846,7 @@ Konfiguracijski profil sadrži samo one postavke koje su mjenjane kad je profil 
 Većina postavki mogu se promijeniti u konfiguracijskim profilima osim onih postavki, koje se nalaze u kategoriji općenito u <A HREF="#NVDASettings">dijaloškom okviru postavki</A>, jer se te postavke primjenjuju na NVDA u cijelosti.
 </P>
 <P>
-Konfiguracijski profili mogu biti ručno aktivirani.
+Konfiguracijski profili mogu biti aktivirani putem dijaloškog okvira ili uz pomoć prilagođenih dodanih gesti.
 Oni se mogu aktivirati i automatski zbog okidača kao što je prebacivanje na određenu aplikaciju.
 </P>
 
@@ -3863,7 +3949,19 @@ Na primjer, možda biste htjeli urediti ručno aktivirani profil ili urediti va�
 Možete to učiniti tako da ćete odabrati potvrdni okvir onemogući okidače u dijaloškom okviru konfiguracijski profili.
 </P>
 <P>
-Kako biste mogli onemogućiti okidaće profila od bilo kuda,, molimo pidijeliti prilagođenu gestu koristeći <A HREF="#InputGestures">dijaloški okvir ulaznih gesti</A>.
+Kako biste mogli onemogućiti okidače profila s bilo kojeg mjesta,, molimo pridjelite prilagođenu gestu koristeći <A HREF="#InputGestures">dijaloški okvir ulaznih gesti</A>.
+</P>
+
+<A NAME="ConfigProfileGestures"></A>
+<H4>11.4.7. Aktiviranje profila uz pomoć ulaznih gesti</H4>
+
+<P>
+Možete dodati tipkovnički prečac za svaki profil koji stvorite kako boste ga mogli aktivirati.
+Podrazumjevano, konfiguracijski profili nemaju pridjeljenje ulazne geste.
+Možete dodati prečace koristeći <A HREF="#InputGestures">Dijaloški okvir ulazne geste</A>.
+Svaki profil ima svoj zapis u kategoriji ulaznih gesti.
+Kada preimenujete profil, bilo koji prečac kojeg ste prethodno dodali oš će uvijek biti dostupan.
+Kada izbrišete profil, također će biti izbrisane i geste, koje su s njim povezane.
 </P>
 
 <A NAME="LocationOfConfigurationFiles"></A>
@@ -3873,7 +3971,7 @@ Kako biste mogli onemogućiti okidaće profila od bilo kuda,, molimo pidijeliti 
 Prijenosne inačice NVDA spremaju sve postavke, prilagođene module za aplikacije i prilagođene upravljačke programe za govorne jedinice u mapu userConfig koja se nalazi u mapi gdje je smješten NVDA.
 </P>
 <P>
-Instalirane inačice NVDA spremaju sve postavke, prilagođene module aplikacije i prilagođene upravljačke programe za govorne jedinice u posebnu mapu NVDA koja se nalazi u vašem windows korisničkom profilu.
+Instalirane inačice NVDA spremaju sve postavke, prilagođene module aplikacija i prilagođene upravljačke programe za govorne jedinice u posebnu mapu NVDA koja se nalazi u vašem windows korisničkom profilu.
 To znači da svaki korisnik može imati svoje vlastite NVDA postavke spremljene u sustavu.
 Da biste došli do vaše mape, gdje NVDA sprema svoje postavke, u izborniku start možete ići u podizbornik programi -&gt; NVDA -&gt; istraži mapu s NVDA postavkama.
 </P>
@@ -4875,7 +4973,7 @@ Slijede tipkovnički prečaci za Brailliant BI/B i BrailleNote touch brajične r
 Molimo pogledajte uputstvo za upotrebu ovih brajičnih redaka kako biste saznali opise tipaka i njihov raspored.
 </P>
 
-<A NAME="toc129"></A>
+<A NAME="toc131"></A>
 <H4>14.9.1. dodijele prečaca za sve modele</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4965,7 +5063,7 @@ Molimo pogledajte uputstvo za upotrebu ovih brajičnih redaka kako biste saznali
 </TR>
 </TABLE>
 
-<A NAME="toc130"></A>
+<A NAME="toc132"></A>
 <H4>14.9.2. dodijeljeni prečaci za Brailliant BI 32, BI 40 and B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4987,7 +5085,7 @@ Molimo pogledajte uputstvo za upotrebu ovih brajičnih redaka kako biste saznali
 </TR>
 </TABLE>
 
-<A NAME="toc131"></A>
+<A NAME="toc133"></A>
 <H4>14.9.3. Dodijeljeni prečaci za Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
