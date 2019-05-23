@@ -271,7 +271,7 @@ If you have modified the cities list, by pressing "Cancel", you will be remember
 # What's new: #
 
 # Version 6.4 #
-* Removed daily saving time function in details;
+* Daylight saving time removed in the "Details" function;
 	* The service used by this function has changed, so it has been removed.
 * Improved audio effects reproduction;
 	* Now they update regularly if the weather conditions change.
