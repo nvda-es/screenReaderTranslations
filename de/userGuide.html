@@ -79,7 +79,8 @@
     <UL>
     <LI><A HREF="#SingleLetterNavigation">6.1. Die Schnellnavigationstasten</A>
     <LI><A HREF="#ElementsList">6.2. Die Liste der Elemente</A>
-    <LI><A HREF="#ImbeddedObjects">6.3. Eingebettete Objekte</A>
+    <LI><A HREF="#SearchingForText">6.3. Nach Text suchen</A>
+    <LI><A HREF="#ImbeddedObjects">6.4. Eingebettete Objekte</A>
     </UL>
   <LI><A HREF="#ReadingMath">7. Mathematische Inhalte lesen</A>
     <UL>
@@ -158,6 +159,7 @@
       <LI><A HREF="#ConfigProfileTriggers">11.4.4. Die Auslöser</A>
       <LI><A HREF="#ConfigProfileEditing">11.4.5. Bearbeiten eines Konfigurationsprofils</A>
       <LI><A HREF="#ConfigProfileDisablingTriggers">11.4.6. Auslöser vorübergehend abschalten</A>
+      <LI><A HREF="#ConfigProfileGestures">11.4.7. Aktivieren eines Profils mit Eingabegesten</A>
       </UL>
     <LI><A HREF="#LocationOfConfigurationFiles">11.5. Speicherorte für Konfigurationsdateien</A>
     </UL>
@@ -191,9 +193,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant BI/B-Serie / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc129">14.9.1. Tasten für alle Braillezeilenmodelle</A>
-      <LI><A HREF="#toc130">14.9.2. Tastenzuweisungen für Brailliant BI 32, BI 40 und B 80</A>
-      <LI><A HREF="#toc131">14.9.3. Tastenzuweisungen für Brailliant BI 14</A>
+      <LI><A HREF="#toc131">14.9.1. Tasten für alle Braillezeilenmodelle</A>
+      <LI><A HREF="#toc132">14.9.2. Tastenzuweisungen für Brailliant BI 32, BI 40 und B 80</A>
+      <LI><A HREF="#toc133">14.9.3. Tastenzuweisungen für Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Syncbraille Serie</A>
     <LI><A HREF="#Seika">14.11. Seika-Braillezeilen</A>
@@ -211,16 +213,16 @@
     <LI><A HREF="#SystemWideParameters">15.2. Systemparameter</A>
     </UL>
   <LI><A HREF="#FurtherInformation">16. Weitere Informationen</A>
-  <LI><A HREF="#toc145">17. Anhang</A>
+  <LI><A HREF="#toc147">17. Anhang</A>
     <UL>
-    <LI><A HREF="#toc146">17.1. Hinweise zu Java</A>
+    <LI><A HREF="#toc148">17.1. Hinweise zu Java</A>
       <UL>
-      <LI><A HREF="#toc147">17.1.1. Aktivieren der Java-Zugänglichkeitsschnittstelle unter Windows XP</A>
-      <LI><A HREF="#toc148">17.1.2. Aktivieren der Zugänglichkeitsschnittstellen unter Windows Vista und neuer</A>
+      <LI><A HREF="#toc149">17.1.1. Aktivieren der Java-Zugänglichkeitsschnittstelle unter Windows XP</A>
+      <LI><A HREF="#toc150">17.1.2. Aktivieren der Zugänglichkeitsschnittstellen unter Windows Vista und neuer</A>
       </UL>
-    <LI><A HREF="#toc149">17.2. Mit der Tastaturmaus von Windows navigieren</A>
+    <LI><A HREF="#toc151">17.2. Mit der Tastaturmaus von Windows navigieren</A>
       <UL>
-      <LI><A HREF="#toc150">17.2.1. Klicken mit Hilfe der Tastaturmaus von Windows</A>
+      <LI><A HREF="#toc152">17.2.1. Klicken mit Hilfe der Tastaturmaus von Windows</A>
       </UL>
     </UL>
   </UL>
@@ -1299,7 +1301,23 @@ Zum Navigieren mit der Maus sollte eine richtige Maus oder eine Mauskugel benutz
 
 <P>
 Umfangreiche schreibgeschützte Dokumente - wie beispielsweise Webseiten - werden in NVDA im so genannten Lesemodus dargestellt. 
-Dies betrifft Dokumente in Mozilla Firefox, Microsoft Internet Explorer, Mozilla Thunderbird, Google Chrome, Adobe Reader und Adobe Flash sowie HTML-Nachrichten in Microsoft Outlook. 
+Dies betrifft Dokumente in den folgenden Anwendungen:
+</P>
+
+<UL>
+<LI>Mozilla Firefox
+<LI>Microsoft Internet Explorer
+<LI>Mozilla Thunderbird
+<LI>HTML-Nachrichten in Microsoft Outlook
+<LI>Google Chrome
+<LI>Microsoft Edge
+<LI>Adobe Reader
+<LI>Foxit Reader
+<LI>Adobe Flash
+<LI>Unterstützte Bücher in Amazon Kindle für PC
+</UL>
+
+<P>
 Der Lesemodus ist optional in Microsoft Word-Dokumenten verfügbar. 
 </P>
 <P>
@@ -1342,7 +1360,7 @@ Zusätzlich können Sie auch den Fokusmodus erzwingen. In diesem Fall bleibt der
 <TR>
 <TD>Suchen</TD>
 <TD>NVDA+Strg+F</TD>
-<TD>Öffnet ein weiteres Fenster, in dem Sie einen Text eingeben können, der im aktuellen Dokument gesucht werden soll.</TD>
+<TD>Öffnet einen Dialog, in dem Sie einen Text eingeben können, der im aktuellen Dokument zu finden ist. Weitere Informationen finden Sie unter <A HREF="#SearchingForText">Nach Text suchen</A>.</TD>
 </TR>
 <TR>
 <TD>Vorwärts suchen</TD>
@@ -1450,8 +1468,45 @@ Wenn Sie einmal einen Eintrag ausgewählt haben, können Sie mit den Schaltfläc
 </TR>
 </TABLE>
 
+<A NAME="SearchingForText"></A>
+<H3>6.3. Nach Text suchen</H3>
+
+<P>
+In diesem Dialogfeld können Sie nach Begriffen im aktuellen Dokument suchen.
+Im Feld "Geben Sie den zu suchenden Text ein" kann der zu suchende Text eingegeben werden.
+Während Sie sich im Textfeld befinden, können Sie auch die Pfeile nach oben und unten verwenden, um die zuvor gesuchten Begriffe auszuwählen.
+Das Kontrollkästchen "Groß- / Kleinschreibung beachten" bewirkt, dass die Suche Groß- und Kleinschreibung unterschiedlich berücksichtigt wird.
+Wenn Sie beispielsweise "Groß- / Kleinschreibung beachten" ausgewählt haben, finden Sie "NV Access", nicht aber "nv access".
+In dem Fall werden Unterscheidungen im Suchverlauf nicht gespeichert.
+Sobald NVDA neu gestartet wird, wird die Liste der zuvor gesuchten Begriffe gelöscht.
+Verwenden Sie die folgenden Tasten für die Suche:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Taste</TH>
+<TH>BEschreibung</TH>
+</TR>
+<TR>
+<TD>Text suchen</TD>
+<TD>NVDA+Strg+F</TD>
+<TD>Öffnet das Suchfeld.</TD>
+</TR>
+<TR>
+<TD>Weitersuchen</TD>
+<TD>NVDA+F3</TD>
+<TD>Sucht das nächste Vorkommen des aktuellen Suchbegriffs.</TD>
+</TR>
+<TR>
+<TD>Rückwärtssuchen</TD>
+<TD>NVDA+Umschalt+F3</TD>
+<TD>Sucht das vorherige Vorkommen des aktuellen Suchbegriffs.</TD>
+</TR>
+</TABLE>
+
 <A NAME="ImbeddedObjects"></A>
-<H3>6.3. Eingebettete Objekte</H3>
+<H3>6.4. Eingebettete Objekte</H3>
 
 <P>
 Es gibt zunehmend Internetseiten, die mit Technologien für mediale Inhalte wie Adobe Flash, Oracle Java oder html5 mit Anwendungen und Dialogen ausgestattet sind.
@@ -3072,7 +3127,10 @@ Dieses Kontrollfeld weist NVDA an, den Text unter dem Mauszeiger vorzulesen. Das
 
 <P>
 Wenn die vorherige Option aktiviert ist, können Sie festlegen, wieviel Text angesagt wird, während Sie die Maus bewegen.
-Sie können dabei zwischen Zeichen, Wort, Zeile oder Satz auswählen.
+Sie können dabei zwischen Zeichen, Wörter, Zeile oder Absätze auswählen.
+</P>
+<P>
+Um die Auflösung der Texteinheiten von überall her umzuschalten, weisen Sie bitte eine benutzerdefinierte Geste über den Dialog <A HREF="#InputGestures">Eingaben</A> zu.
 </P>
 
 <A NAME="MouseSettingsRole"></A>
@@ -3358,7 +3416,19 @@ Wenn gleich der Lesemodus keine wirklichen Seiten hat, können Sie jedoch hier f
 Tastenkombination: NVDA+V
 </P>
 <P>
-Diese Option legt fest, wie der Inhalt einer Seite in den Lesemodus übernommen werden soll. Wenn die Option aktiviert ist, bekommen Sie die Ansicht exakt so, wie sie am Bildschirm erscheint. Wenn die Option deaktiviert ist, werden alle Elemente, wie beispielsweise Links im Textverlauf in einer neuen Zeile dargestellt.
+Mit dieser Option können Sie festlegen, ob Inhalte im Lesemodus Inhalte wie Links und andere Steuerelemente in einer eigenen Zeile dargestellt werden oder ob sie im Textfluss beibehalten werden sollen, wie er visuell am Bildschirm dargestellt wird.
+Wenn die Option aktiviert ist, bleiben die Dinge so, wie sie visuell dargestellt werden, aber wenn sie deaktiviert sind, werden die Steuerelemente in einer eigenen Zeile dargestellt.
+</P>
+
+<A NAME="BrowseModeSettingsEnableOnPageLoad"></A>
+<H5>Lesemodus beim Seitenladen</H5>
+
+<P>
+Mit diesem Kontrollkästchen legen Sie fest, ob der Lesemodus beim Laden einer Webseite aktiviert werden soll.
+Wenn diese Option deaktiviert ist, kann der Suchmodus auf Seiten oder in Dokumenten, in denen der Suchmodus unterstützt wird, weiterhin manuell aktiviert werden.
+Weitere Informationen, welche Anwendungen im Lesemodus unterstützt werden, finden Sie im Abschnitt <A HREF="#BrowseMode">Lesemodus</A>.
+Beachten Sie, dass diese Option nicht für Situationen gilt, in denen der Lesemodus immer optional ist, zum Beispiel in Microsoft Word.
+Diese Option ist standardmäßig aktiviert.
 </P>
 
 <A NAME="BrowseModeSettingsAutoSayAll"></A>
@@ -3579,6 +3649,21 @@ Es kann jedoch einige Informationen geben, die in einigen Versionen von Microsof
 Wir empfehlen noch nicht diese Funktion standardmäßig zu aktivieren. Allerdings ist ausdrücklich erwünscht, dass Benutzer von Office 2016 / 365 diese Funktion testen und Rückmeldung geben.
 </P>
 
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Automatisches Setzen des System-Fokus auf hervorhebbare Elemente im Lesemodus</H5>
+
+<P>
+Tastenkombination: NVDA+8
+</P>
+<P>
+Sie können mit dieser standardmäßig aktivierten Option auswählen, ob der System-Fokus automatisch auf Elemente gesetzt werden soll, die den System-Fokus übernehmen können (Links, Formularfelder, etc.), wenn Sie mit den Pfeiltasten im Lesemodus durch Inhalte navigieren.
+Wenn aktiviert, stellt dies das Standardverhalten von NVDA ab Version 2019.1 und früher dar.
+Wenn Sie diese Option deaktivieren, werden hervorhebbare Elemente nicht automatisch hervorgehoben, wenn sie mit dem Pfeiltasten im Lesemodus ausgewählt werden.
+Dies kann zu einer schnelleren und besseren Reaktionsfähigkeit beim Lesen führen.
+Der Fokus wird noch auf das jeweilige Element aktualisiert, wenn Sie mit ihm interagieren (z. B. durch Drücken einer Taste, aktivieren eines Kontrollkästchens).
+Diese Funktionalität ist ab NVDA 2019.2 experimentell.
+</P>
+
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
 <H5>Zeitüberschreitung beim Bewegen des System-Cursors (in Millisekunden)</H5>
 
@@ -3615,18 +3700,18 @@ Diese sind:
 <UL>
 <LI>Standard: Regeln in diesem Wörterbuch haben Einfluss auf alle Aussprachen in NVDA.
 <LI>Stimme: Regeln in diesem Wörterbuch haben Einfluss auf die momentan verwendete Stimme der Sprachausgabe in NVDA.
-<LI>temporär: Regeln in diesem Wörterbuch haben nur vorläufigen Einfluss auf alle Stimmen in NVDA (gilt nur für diese Sitzung). Beim nächsten Neustart von NVDA sind diese nicht mehr vorhanden.
+<LI>Temporär: Regeln in diesem Wörterbuch haben nur vorläufigen Einfluss auf alle Stimmen in NVDA (gilt nur für diese Sitzung). Beim nächsten Neustart von NVDA sind diese nicht mehr vorhanden.
 </UL>
 
 <P>
-Sie müssen den Dialogen eigene Tastenkombinationen zuweisen, falls Sie die Wörterbücher per Tastenkürzel aufrufen wollen. Verwenden Sie hierzu den <A HREF="#InputGestures">Dialog Eingaben</A>.
+Sie müssen den Dialogfeldern eigene Tastenkombinationen zuweisen, falls Sie die Wörterbücher per Tastenkürzel aufrufen wollen. Verwenden Sie hierzu den Dialog <A HREF="#InputGestures">Eingaben</A>.
 </P>
 <P>
 Alle Wörterbücher enthalten eine Liste von Sprachregeln, welche verwendet werden, um die Sprache zu verbessern.
 Die Dialogfelder enthalten die folgenden Schaltflächen: "Hinzufügen", "Bearbeiten" und "Entfernen".
 </P>
 <P>
-Mit der Schaltfläche "Hinzufügen" erstellen Sie eine neue Regel im Wörterbuch. Anschließend füllen Sie die entsprechenden Felder aus und klicken abschließend auf "OK".
+Mit der Schaltfläche "Hinzufügen" erstellen Sie eine neue Regel im Wörterbuch. Anschließend füllen Sie die entsprechenden Felder aus und klicken danach auf "OK".
 Sie sehen nun die neu hinzugefügte Regel in der Regelliste.
 Um sicherzustellen, dass die neu hinzugefügten oder bearbeiteten Regeln auch tatsächlich gespeichert bleiben, klicken Sie einmal auf die "OK"-Schaltfläche, um damit auch das Dialogfeld der Wörterbücher zu schließen.
 </P>
@@ -3634,7 +3719,7 @@ Um sicherzustellen, dass die neu hinzugefügten oder bearbeiteten Regeln auch ta
 Mit den Regeln für die Aussprachewörterbücher von NVDA können Sie eine Zeichenkette in eine andere ändern.
 Ein einfaches Beispiel wäre, wenn Sie möchten, dass NVDA bei dem Wort "Frosch" jedes Mal "Vogel" sagt.
 Der einfachste Weg um dies zu erreichen ist wie folgt: Im Dialog "Wörterbucheintrag hinzufügen" geben Sie im Eingabefeld bei "Muster" das Wort "Frosch" (ohne Anführungszeichen) ein und im Eingabefeld bei "Ersetzen durch" das Wort "Vogel" (ohne Anführungszeichen) ein.
-Im Eingabefeld für die Beschreibung können Sie auch z. B. "Anpassen des Wortes Frosch durch Vogel" mit angeben.	
+Im Eingabefeld für die Beschreibung können Sie auch zum Beispiel "Anpassen des Wortes Frosch durch Vogel" mit angeben.	
 </P>
 <P>
 Die leistungsstarken Aussprachewörterbücher können weitaus mehr, als nur Wörter ersetzen.
@@ -3659,7 +3744,10 @@ In diesem Dialog können Sie die Aussprache von Satz- und Sonderzeichen verände
 </P>
 <P>
 Die Sprache, in der die Aussprache von Sonderzeichen geändert wird, wird im Dialogtitel angezeigt.
-Außerdem wird die Option "beim Sprechen von Zeichen und Symbolen die Sprache der Stimme berücksichtigen" aus der Kategorie <A HREF="#SpeechSettings">Stimme und Sprachausgabe</A> berücksichtigt; beispielsweise wird hierbei die Sprache der eingestellten Stimme anstelle der NVDA-Sprache verwendet.
+Außerdem wird die Option "Beim Sprechen von Zeichen und Symbolen die Sprache der Stimme berücksichtigen" aus der Kategorie <A HREF="#SpeechSettings">Stimme und Sprachausgabe</A> berücksichtigt; beispielsweise wird hierbei die Sprache der eingestellten Stimme anstelle der NVDA-Sprache verwendet.
+</P>
+<P>
+Sie können die Symbole auch filtern, indem Sie das Symbol oder einen Teil der Ersetzung des Symbols in das Bearbeitungsfeld "Filter nach" eingeben.
 </P>
 <P>
 Um die Aussprache eines Sonderzeichens zu verändern, wählen Sie es in der Liste der Symbole aus.
@@ -3667,29 +3755,29 @@ Um die Aussprache eines Sonderzeichens zu verändern, wählen Sie es in der List
 
 <UL>
 <LI>Das Eingabefeld "Ersetzen durch" erlaubt Ihnen, den Text zu ändern, der an Stelle des Symbols angesagt wird.
-<LI>im Kombinationsfeld "Stufe" kann eingestellt werden, ab welcher Stufe Satz- und Sonderzeichen angesagt werden sollen.
-<LI>Im Konbinationsfeld "aktuelles Symbol an Sprachausgabe senden" kann eingestellt werden, ob das Symbol anstelle seines Ersatztextes an die Sprachausgabe gesendet werden soll.
+<LI>Im Kombinationsfeld "Stufe" kann eingestellt werden, ab welcher Stufe Satz- und Sonderzeichen angesagt werden sollen.
+<LI>Im Konbinationsfeld "Aktuelles Symbol an Sprachausgabe senden" kann eingestellt werden, ob das Symbol anstelle seines Ersatztextes an die Sprachausgabe gesendet werden soll.
 Dies ist nützlich, wenn das Symbol die Sprachausgabe zu einer Pause oder einer anderen Betonung bringen soll.
 Beispielsweise pausiert die Sprachausgabe nach einem Komma.
 Dieses Konbinationsfeld enthält drei Optionen:
  <UL>
- <LI>niemals: das Sonderzeichen wird niemals an die Sprachausgabe gesendet.
- <LI>immer: Das Symbol wird immer an die Sprachausgabe gesendet.
- <LI>nur unterhalb der Symbolebene: Das Sonderzeichen wird nur an die Sprachausgabe gesendet, wenn die momentan eingestellte Symbolebene niedriger ist, als im Konbinationsfeld "Stufe" (siehe oben)
+ <LI>Niemals: das Sonderzeichen wird niemals an die Sprachausgabe gesendet.
+ <LI>Immer: Das Symbol wird immer an die Sprachausgabe gesendet.
+ <LI>Nur unterhalb der Symbolebene: Das Sonderzeichen wird nur an die Sprachausgabe gesendet, wenn die momentan eingestellte Symbolebene niedriger ist, als im Konbinationsfeld "Stufe" (siehe oben)
  Beispielsweise kann ein Symbol bei einer höheren Stufe ohne Pausieren gesprochen werden, während die Sprachausgabe bei einer niedrigeren Stufe pausiert.
  </UL>
 </UL>
 
 <P>
-Um Symbole hinzuzufügen, benutzen Sie den Schalter hinzufügen.
-Geben Sie im erscheinenden Dialog das Symbol ein und drücken Sie den Schalter "OK".
+Um Symbole hinzuzufügen, benutzen Sie den Schalter "Hinzufügen".
+Geben Sie im erscheinenden Dialog das Symbol ein und klicken Sie auf den Schalter "OK".
 Ändern Sie anschließend die anderen Optionen nach Ihren Wünschen, wie Sie es bei den anderen Symbolen machen würden.
 </P>
 <P>
-Über den Schalter "entfernen" können Sie ein Symbol wieder löschen.
+Über den Schalter "Entfernen" können Sie ein Symbol wieder löschen.
 </P>
 <P>
-Wenn Sie fertig sind, bestätigen Sie die Änderungen mit "ok" oder verwerfen Sie diese mittels "abbrechen".
+Wenn Sie fertig sind, bestätigen Sie die Änderungen mit "OK" oder verwerfen Sie diese mittels "Abbrechen".
 </P>
 
 <A NAME="InputGestures"></A>
@@ -3770,7 +3858,7 @@ Ein Konfigurationsprofil enthält nur die geänderten Einstellungen für das akt
 In Konfigurationsprofilen können die meisten Einstellungen geändert werden. Eine Ausnahme sind die Einstellungen aus der Kategorie "Allgemein" im Einstellungsdialog, da diese NVDA generell betreffen.
 </P>
 <P>
-Konfigurationsprofile können manuell aktiviert werden.
+Konfigurationsprofile können manuell aktiviert werden, entweder über einen Dialog oder mit benutzerdefinierten Gesten.
 Außerdem können Sie solche Profile auch automatisch aktivieren (beispielsweise beim Wechsel in eine bestimmte Anwendung).
 </P>
 
@@ -3874,6 +3962,18 @@ Dies erreichen Sie über die Option "Alle Auslöser temporär deaktivieren" im D
 </P>
 <P>
 Sie können auch eine Tastenkombination dafür im Dialog <A HREF="#InputGestures">Eingaben</A> definieren.
+</P>
+
+<A NAME="ConfigProfileGestures"></A>
+<H4>11.4.7. Aktivieren eines Profils mit Eingabegesten</H4>
+
+<P>
+Für jedes Profil, das Sie hinzufügen, können Sie eine oder mehrere Eingabegesten zuweisen, um es zu aktivieren.
+Standardmäßig sind den Konfigurationsprofilen keine Eingabegesten zugeordnet.
+Sie können Gesten für ein Profil im Dialog <A HREF="#InputGestures">Eingaben</A> definieren.
+Jedes Profil hat einen eigenen Eintrag unter der Kategorie Konfigurationsprofile.
+Wenn Sie ein Profil umbenennen, ist jede Geste, die Sie zuvor hinzugefügt haben, weiterhin verfügbar.
+Das Entfernen eines Profils löscht automatisch die damit verbundenen Gesten.
 </P>
 
 <A NAME="LocationOfConfigurationFiles"></A>
@@ -4885,7 +4985,7 @@ Folgende Tastenkombinationen sind bei diesen Braillezeilen verfügbar
 Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechenden Tasten zu finden sind.
 </P>
 
-<A NAME="toc129"></A>
+<A NAME="toc131"></A>
 <H4>14.9.1. Tasten für alle Braillezeilenmodelle</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4975,7 +5075,7 @@ Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechen
 </TR>
 </TABLE>
 
-<A NAME="toc130"></A>
+<A NAME="toc132"></A>
 <H4>14.9.2. Tastenzuweisungen für Brailliant BI 32, BI 40 und B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4997,7 +5097,7 @@ Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechen
 </TR>
 </TABLE>
 
-<A NAME="toc131"></A>
+<A NAME="toc133"></A>
 <H4>14.9.3. Tastenzuweisungen für Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -6813,10 +6913,10 @@ Dort finden Sie auch neben der Community und dem Technischen Support auch die zu
 Diese Seite stellt auch die Informationen zur Weiterentwicklung von NVDA bereit.
 </P>
 
-<A NAME="toc145"></A>
+<A NAME="toc147"></A>
 <H2>17. Anhang</H2>
 
-<A NAME="toc146"></A>
+<A NAME="toc148"></A>
 <H3>17.1. Hinweise zu Java</H3>
 
 <P>
@@ -6830,7 +6930,7 @@ Da es sich bei NVDA um eine 32-Bit-Anwendung handelt, müssen auch 32-Bit-Versio
 <LI>Um zu testen, ob Java und Java Access Bridge funktionieren, können Sie die Java-Systemsteuerung unter dem Eintrag Java (32-Bit) in der Systemsteuerung aufrufen. Wenn jetzt alle Dialogelemente richtig angezeigt werden, sind Java und Java Access Bridge korrekt installiert.
 </OL>
 
-<A NAME="toc147"></A>
+<A NAME="toc149"></A>
 <H4>17.1.1. Aktivieren der Java-Zugänglichkeitsschnittstelle unter Windows XP</H4>
 
 <P>
@@ -6845,7 +6945,7 @@ Unter Windows XP müssen Sie die Kommandozeile verwenden, um die Zugänglichkeit
 Wenn Sie eine Meldung wie "The Java Access Bridge has been enabled" erhalten haben, wurde die Zugänglichkeitsschnittstelle erfolgreich aktiviert. Wiederholen Sie die Ausführung dieses Befehls für jeden Benutzer Ihres Rechners, der die Zugänglichkeitsschnittstellen benötigt.
 </P>
 
-<A NAME="toc148"></A>
+<A NAME="toc150"></A>
 <H4>17.1.2. Aktivieren der Zugänglichkeitsschnittstellen unter Windows Vista und neuer</H4>
 
 <P>
@@ -6863,7 +6963,7 @@ Unter Windows Vista und neuer können Sie das Center für erleichterte Bedienung
 Wiederholen Sie die obigen Schritte für jeden Benutzer, der die Java-Zugänglichkeitsschnittstellen benötigt.
 </P>
 
-<A NAME="toc149"></A>
+<A NAME="toc151"></A>
 <H3>17.2. Mit der Tastaturmaus von Windows navigieren</H3>
 
 <P>
@@ -6907,7 +7007,7 @@ Um die Ausgabe via Braillezeile zu erhalten, müssen folgende Voraussetzungen ge
 <LI>Im Dialog NVDA-Cursor muss die Option "Mauszeiger verfolgen" eingeschaltet sein.
 </UL>
 
-<A NAME="toc150"></A>
+<A NAME="toc152"></A>
 <H4>17.2.1. Klicken mit Hilfe der Tastaturmaus von Windows</H4>
 
 <P>
