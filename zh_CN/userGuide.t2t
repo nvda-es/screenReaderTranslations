@@ -471,9 +471,20 @@ NVDA 的这个额外的鼠标特性默认情况下是关闭的。
 %kc:endInclude
 
 + 浏览模式 +[BrowseMode]
-NVDA 使用浏览模式来浏览复杂的只读文档，如 web 页面。
-这包括Mozilla Firefox, Microsoft Internet Explorer, Mozilla Thunderbird, Microsoft Outlook  的 HTML 消息， Google Chrome, Adobe Reader 和 Adobe Flash 的文档。
-浏览模式在阅读 Microsoft Word 文档时也可用(可选)。
+NVDA 使用浏览模式来浏览复杂的只读文档，比如网页或者PDF文档。
+NVDA支持以下应用的文档
+- 火狐浏览器
+- IE浏览器
+- Mozilla Thunderbird
+- Microsoft Outlook 邮件内网页形式的消息
+- 谷歌浏览器
+- 微软Edge浏览器
+- Adobe PDF阅读器
+- 福昕PDF阅读器
+- Adobe Flash
+- 亚马逊Kindle阅读软件
+-
+浏览模式在阅读微软Word文档时也可用(可选)。
 
 在浏览模式中，文档的内容将可以以平面的形式用浏览光标快捷键进行浏览，前提是它是传统的文本文档。
 所有 NVDA 的[系统输入焦点 #SystemCaret]快捷键都可以正常的在此模式下工作，例如全文朗读、朗读格式、表格导航快捷键等等。
@@ -493,7 +504,7 @@ NVDA 使用浏览模式来浏览复杂的只读文档，如 web 页面。
 | 切换浏览/焦点模式 | NVDA+空格 | 在焦点模式和浏览模式之间切换。 |
 | 退出焦点模式 | esc | 如果上次已经自动切换到了焦点模式则返回到浏览模式。 |
 | 刷新浏览模式文档 | NVDA+f5 | 重载当前文档的内容(对于那些丢失了原来文档内容的情况非常实用，但不可用于 Microsoft Word 和 Outlook)。 |
-| 查找 | NVDA+control+f | 弹出一个对话框，您可以输入一些文本在当前文档中进行查找。 |
+| 查找 | NVDA+control+f | 弹出一个对话框，您可以输入一些文本在当前文档中进行查找。请查看[搜索文本 #SearchingForText]这一节了解详细情况。|
 | 查找下一个 | NVDA+f3 | 在当前文档查找下一个您先前键入的文本的结果。 |
 | 查找上一个 | NVDA+shift+f3 | 在当前文档查找上一个您先前键入的文本的结果。 |
 | 打开长描述 | NVDA+d | 打开一个新窗口，显示您当前浏览元素的详细描述(如果有的话)。 |
@@ -550,6 +561,22 @@ NVDA 使用浏览模式来浏览复杂的只读文档，如 web 页面。
 %kc:beginInclude
 || 名称 | 按键 | 描述 |
 | 浏览模式元素列表 | NVDA+f7 | 列举当前文档的各种元素。 |
+%kc:endInclude
+
+++ 搜索文本 ++[SearchingForText]
+此对话框允许您在当前文档中搜索术语。
+在“键入要查找的文本”字段中，可以输入要查找的文本。
+在文本字段中，您还可以使用向上和向下箭头选择以前搜索的术语。
+“区分大小写”复选框使搜索以不同的方式考虑大写和小写字母。
+例如，选择“区分大小写”，您可以找到“NV Access”但不能找到“nv access”。
+案例中的差异不会保存在搜索历史记录中。
+重新启动NVDA时，将清除先前搜索的术语列表。
+使用以下快捷键执行搜索：
+%kc:beginInclude
+|| 名称 | 按键 | 描述 |
+| 查找 | NVDA+control+f | 弹出搜索对话框。|
+| 查找下一个 | NVDA+f3 | 在当前文档查找下一个您先前键入的文本的结果。 |
+| 查找上一个 | NVDA+shift+f3 | 在当前文档查找上一个您先前键入的文本的结果。 |
 %kc:endInclude
 
 ++ 嵌入式对象 ++[ImbeddedObjects]
@@ -1352,6 +1379,8 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 如果设置 NVDA 在鼠标经过时朗读文本，此选项允许您设置朗读文本的多少。
 选项分别为字符、单词和段落。
 
+要从任何地方切换文本单位，请使用[输入手势对话框 #InputGestures]分配自定义手势。
+
 ==== 读出鼠标所进入对象的类型 ====[MouseSettingsRole]
 如果此复选框被选中，NVDA 将读出鼠标所进入的对象的类型。
 
@@ -1632,6 +1661,16 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
   对于在Windows 10上运行的最新版本的Office 2016或者Office 365，UIA能够获取的信息和原来的方式差不多，而且响应速度更快。
 但是，在某些版本的Office中可能存在某些未公开或未正确显示的信息，这意味着UIA支持不好用。
 我们建议大多数用户不要启用此功能，但我们欢迎Office 2016或者Office 365的用户测试此功能并提供反馈。
+
+==== Automatically set system focus to focusable elements in Browse Mode ====[BrowseModeSettingsAutoFocusFocusableElements]
+Key: NVDA+8
+
+Enabled by default, this option allows you to choose if the system focus should automatically be set to elements that can take the system focus (links, form fields, etc.) when navigating content with the browse mode caret.
+If enabled, this represents default behavior of NVDA as of version 2019.1 and before.
+Disabling this option will not automatically focus focusable elements when they are selected with the browse mode caret.
+This might result in faster browsing experience and better responsiveness in browse mode.
+The focus will yet be updated to the particular element when interacting with it (e.g. pressing a button, checking a check box).
+This functionality is experimental as of NVDA 2019.2.
 
 ==== 光标移动超时（单位是千分之一秒） ====[AdvancedSettingsCaretMoveTimeout]
 此选项允许您配置NVDA等多长时间之后才从编辑框获取光标位置。
