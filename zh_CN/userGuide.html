@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>NVDA 2019.1-dev 用户指南</TITLE>
+<TITLE>NVDA 2019.2-dev 用户指南</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>NVDA 2019.1-dev 用户指南</H2>
+<H2>NVDA 2019.2-dev 用户指南</H2>
 </CENTER>
 
 
@@ -79,7 +79,8 @@
     <UL>
     <LI><A HREF="#SingleLetterNavigation">6.1. 单键导航</A>
     <LI><A HREF="#ElementsList">6.2. 元素列表</A>
-    <LI><A HREF="#ImbeddedObjects">6.3. 嵌入式对象</A>
+    <LI><A HREF="#SearchingForText">6.3. 搜索文本</A>
+    <LI><A HREF="#ImbeddedObjects">6.4. 嵌入式对象</A>
     </UL>
   <LI><A HREF="#ReadingMath">7. 阅读数学内容</A>
     <UL>
@@ -141,7 +142,7 @@
       <LI><A HREF="#BrowseModeSettings">11.1.13. 浏览模式设置 (NVDA+control+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">11.1.14. 文档格式设置 (NVDA+control+d)</A>
       <LI><A HREF="#Win10OcrSettings">11.1.15. Windows 10 光学字符识别 设置</A>
-      <LI><A HREF="#toc91">11.1.16. 高级设置</A>
+      <LI><A HREF="#toc92">11.1.16. 高级设置</A>
       </UL>
     <LI><A HREF="#MiscSettings">11.2. 杂项设置</A>
       <UL>
@@ -191,9 +192,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant BI/B Series / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc129">14.9.1. Key assignments for All models</A>
-      <LI><A HREF="#toc130">14.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</A>
-      <LI><A HREF="#toc131">14.9.3. Key assignments for Brailliant BI 14</A>
+      <LI><A HREF="#toc130">14.9.1. Key assignments for All models</A>
+      <LI><A HREF="#toc131">14.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</A>
+      <LI><A HREF="#toc132">14.9.3. Key assignments for Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</A>
     <LI><A HREF="#Seika">14.11. 清华点显器</A>
@@ -289,7 +290,7 @@ NVDA 支持显示多种语言的简写或非简写点字以及电脑点字。
 <H3>1.5. 许可证与著作权</H3>
 
 <P>
- NVDA版权归 NVDA贡献者所有 @ 2006-2018 。
+ NVDA版权归 NVDA贡献者所有 @ 2006-2019 。
 </P>
 <P>
 NVDA 受到《GNU 通用公共许可证条款(第二版)》的保护。 
@@ -1279,9 +1280,25 @@ NVDA 的这个额外的鼠标特性默认情况下是关闭的。
 <H2>6. 浏览模式</H2>
 
 <P>
-NVDA 使用浏览模式来浏览复杂的只读文档，如 web 页面。
-这包括Mozilla Firefox, Microsoft Internet Explorer, Mozilla Thunderbird, Microsoft Outlook  的 HTML 消息， Google Chrome, Adobe Reader 和 Adobe Flash 的文档。
-浏览模式在阅读 Microsoft Word 文档时也可用(可选)。
+NVDA 使用浏览模式来浏览复杂的只读文档，比如网页或者PDF文档。
+NVDA支持以下应用的文档
+</P>
+
+<UL>
+<LI>火狐浏览器
+<LI>IE浏览器
+<LI>Mozilla Thunderbird
+<LI>Microsoft Outlook 邮件内网页形式的消息
+<LI>谷歌浏览器
+<LI>微软Edge浏览器
+<LI>Adobe PDF阅读器
+<LI>福昕PDF阅读器
+<LI>Adobe Flash
+<LI>亚马逊Kindle阅读软件
+</UL>
+
+<P>
+浏览模式在阅读微软Word文档时也可用(可选)。
 </P>
 <P>
 在浏览模式中，文档的内容将可以以平面的形式用浏览光标快捷键进行浏览，前提是它是传统的文本文档。
@@ -1323,7 +1340,7 @@ NVDA 使用浏览模式来浏览复杂的只读文档，如 web 页面。
 <TR>
 <TD>查找</TD>
 <TD>NVDA+control+f</TD>
-<TD>弹出一个对话框，您可以输入一些文本在当前文档中进行查找。</TD>
+<TD>弹出一个对话框，您可以输入一些文本在当前文档中进行查找。请查看<A HREF="#SearchingForText">搜索文本</A>这一节了解详细情况。|</TD>
 </TR>
 <TR>
 <TD>查找下一个</TD>
@@ -1431,8 +1448,45 @@ NVDA 使用浏览模式来浏览复杂的只读文档，如 web 页面。
 </TR>
 </TABLE>
 
+<A NAME="SearchingForText"></A>
+<H3>6.3. 搜索文本</H3>
+
+<P>
+此对话框允许您在当前文档中搜索术语。
+在“键入要查找的文本”字段中，可以输入要查找的文本。
+在文本字段中，您还可以使用向上和向下箭头选择以前搜索的术语。
+“区分大小写”复选框使搜索以不同的方式考虑大写和小写字母。
+例如，选择“区分大小写”，您可以找到“NV Access”但不能找到“nv access”。
+案例中的差异不会保存在搜索历史记录中。
+重新启动NVDA时，将清除先前搜索的术语列表。
+使用以下快捷键执行搜索：
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>按键</TH>
+<TH>描述</TH>
+</TR>
+<TR>
+<TD>查找</TD>
+<TD>NVDA+control+f</TD>
+<TD>弹出搜索对话框。|</TD>
+</TR>
+<TR>
+<TD>查找下一个</TD>
+<TD>NVDA+f3</TD>
+<TD>在当前文档查找下一个您先前键入的文本的结果。</TD>
+</TR>
+<TR>
+<TD>查找上一个</TD>
+<TD>NVDA+shift+f3</TD>
+<TD>在当前文档查找上一个您先前键入的文本的结果。</TD>
+</TR>
+</TABLE>
+
 <A NAME="ImbeddedObjects"></A>
-<H3>6.3. 嵌入式对象</H3>
+<H3>6.4. 嵌入式对象</H3>
 
 <P>
 使用 Adobe Flash 和 Sun Java 的技术可以使得页面的内容变得很丰富，甚至可以包含应用程序和对话框。
@@ -3056,6 +3110,9 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 如果设置 NVDA 在鼠标经过时朗读文本，此选项允许您设置朗读文本的多少。
 选项分别为字符、单词和段落。
 </P>
+<P>
+要从任何地方切换文本单位，请使用<A HREF="#InputGestures">输入手势对话框</A>分配自定义手势。
+</P>
 
 <A NAME="MouseSettingsRole"></A>
 <H5>读出鼠标所进入对象的类型</H5>
@@ -3507,7 +3564,7 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 此组合框允许您选择用于光学字符识别的语言。
 </P>
 
-<A NAME="toc91"></A>
+<A NAME="toc92"></A>
 <H4>11.1.16. 高级设置</H4>
 
 <P>
@@ -3559,6 +3616,21 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
   对于在Windows 10上运行的最新版本的Office 2016或者Office 365，UIA能够获取的信息和原来的方式差不多，而且响应速度更快。
 但是，在某些版本的Office中可能存在某些未公开或未正确显示的信息，这意味着UIA支持不好用。
 我们建议大多数用户不要启用此功能，但我们欢迎Office 2016或者Office 365的用户测试此功能并提供反馈。
+</P>
+
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Automatically set system focus to focusable elements in Browse Mode</H5>
+
+<P>
+Key: NVDA+8
+</P>
+<P>
+Enabled by default, this option allows you to choose if the system focus should automatically be set to elements that can take the system focus (links, form fields, etc.) when navigating content with the browse mode caret.
+If enabled, this represents default behavior of NVDA as of version 2019.1 and before.
+Disabling this option will not automatically focus focusable elements when they are selected with the browse mode caret.
+This might result in faster browsing experience and better responsiveness in browse mode.
+The focus will yet be updated to the particular element when interacting with it (e.g. pressing a button, checking a check box).
+This functionality is experimental as of NVDA 2019.2.
 </P>
 
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
@@ -4867,7 +4939,7 @@ Following are the key assignments for  the Brailliant BI/B and BrailleNote touch
 Please see the display's documentation for descriptions of where these keys can be found.
 </P>
 
-<A NAME="toc129"></A>
+<A NAME="toc130"></A>
 <H4>14.9.1. Key assignments for All models</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4957,7 +5029,7 @@ Please see the display's documentation for descriptions of where these keys can 
 </TR>
 </TABLE>
 
-<A NAME="toc130"></A>
+<A NAME="toc131"></A>
 <H4>14.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4979,7 +5051,7 @@ Please see the display's documentation for descriptions of where these keys can 
 </TR>
 </TABLE>
 
-<A NAME="toc131"></A>
+<A NAME="toc132"></A>
 <H4>14.9.3. Key assignments for Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
