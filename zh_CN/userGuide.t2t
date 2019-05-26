@@ -1532,7 +1532,15 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 ==== 使用屏幕真实布局 ====[BrowseModeSettingsScreenLayout]
 按键: NVDA+v
 
- 此选项允许您定义是否把内容(如链接、表单)独立成为一行，或者象视觉所看到的，保持文字的布局不变。如果此选项启用，文字的布局就会与视觉同步，如果此选项被关闭，每个不同的区域就会独立成为一行。
+此选项允许您定义是否把内容(如链接、表单)独立成为一行，或者象视觉所看到的，保持文字的布局不变。如果此选项启用，文字的布局就会与屏幕的布局同步.
+如果此选项被关闭，每个不同的区域就会独立成为一行。
+
+==== 页面加载完成后启用浏览模式 ====[BrowseModeSettingsEnableOnPageLoad]
+This checkbox toggles whether browse mode should be automatically enabled when loading a page.
+When this option is disabled, browse mode can still be manually activated on pages or in documents where browse mode is supported.
+See the [Browse Mode section #BrowseMode] for a list of applications supported by browse mode.
+Note that this option does not apply to situations where browse mode is always optional, e.g. in Microsoft Word.
+这个选项默认情况下是开启的。
 
 ==== 页面加载完成后朗读所有内容 ====[BrowseModeSettingsAutoSayAll]
 此复选框用来切换在浏览模式下，页面加载完成之后自动朗读所有内容的开关。
@@ -1662,15 +1670,15 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 但是，在某些版本的Office中可能存在某些未公开或未正确显示的信息，这意味着UIA支持不好用。
 我们建议大多数用户不要启用此功能，但我们欢迎Office 2016或者Office 365的用户测试此功能并提供反馈。
 
-==== Automatically set system focus to focusable elements in Browse Mode ====[BrowseModeSettingsAutoFocusFocusableElements]
-Key: NVDA+8
+==== 浏览模式中自动把焦点放到可聚焦的元素上 ====[BrowseModeSettingsAutoFocusFocusableElements]
+快捷键: NVDA+8
 
-Enabled by default, this option allows you to choose if the system focus should automatically be set to elements that can take the system focus (links, form fields, etc.) when navigating content with the browse mode caret.
-If enabled, this represents default behavior of NVDA as of version 2019.1 and before.
-Disabling this option will not automatically focus focusable elements when they are selected with the browse mode caret.
-This might result in faster browsing experience and better responsiveness in browse mode.
-The focus will yet be updated to the particular element when interacting with it (e.g. pressing a button, checking a check box).
-This functionality is experimental as of NVDA 2019.2.
+默认情况下启用。此选项允许您选择在使用浏览模式插入符导航内容时是否应自动将系统焦点设置为可以获取系统焦点的元素（链接，表单域等）。
+如果启用，则表示自版本2019.1及之前的NVDA的默认行为。
+禁用此选项不会自动聚焦可聚焦元素。
+这可能会在浏览模式下提供更快的浏览体验和更好的响应能力。
+当与其交互时，焦点将更新为特定元素（例如，按下按钮，选中复选框）。
+此功能在NVDA 2019.2中是实验性质的。
 
 ==== 光标移动超时（单位是千分之一秒） ====[AdvancedSettingsCaretMoveTimeout]
 此选项允许您配置NVDA等多长时间之后才从编辑框获取光标位置。
@@ -1725,6 +1733,7 @@ NVDA 的语音字典比之单词替换更为强大。
 请注意，此对话框依照可在[语音设置对话框 #VoiceSettings]中找到的选项“处理字符和标点时信任语音语言”而定，极如果此选项被选中，将使用语音语言代替 NVDA 本地语言设置。
 
 要想修改某个标点，请在标点列表选择它。
+您可以通过在“查找”编辑框中输入符号或符号替换的一部分来寻找符号。
 
 - “替换文本”编辑区域允许您定义用来替换此标点的文本。
 - 使用“标点符号级别”区域，您可以为希望读出的标点指定更低的级别。
@@ -1790,7 +1799,7 @@ NVDA 的语音字典比之单词替换更为强大。
 配置文件仅包含当配置文件处于编辑状态时进行的那些设置。
 大多数设置都可以由配置文件进行修改，但“常规设置”对话框包含的那些可影响 NVDA 全局的设置除外。
 
-配置文件也可手动激活。
+配置文件也可手动激活。可以从对话框或使用自定义添加的手势手动激活配置文件。
 它也可由一些触发条件自动的激活，如切换到特定的程序。
 
 +++ 基本配置管理 +++[ProfilesBasicManagement]
@@ -1856,6 +1865,14 @@ NVDA 的语音字典比之单词替换更为强大。
 您可以在“管理配置”对话框中选中“临时停用所有关联”复选框达到此目的。
 
 要想在任何地方切换是否临时停用所有关联，请在[输入手势对话框 #InputGestures]定义一个自定义手势。
+
++++ 使用输入手势激活配置 +++[ConfigProfileGestures]
+对于您添加的每个配置文件，您都可以分配一个或多个输入手势来激活它。
+默认情况下，配置文件没有分配输入手势。
+您可以使用[输入手势对话框#InputGestures]添加手势以激活配置文件。
+每个配置文件在配置文件类别下都有自己的条目。
+重命名配置文件时，您之前添加的任何手势仍然可用。
+删除配置文件将自动删除与其关联的手势。
 
 ++ 配置文件保存的位置 ++[LocationOfConfigurationFiles]
 便携版本的 NVDA 设置(包括自定义程序模块、自定义驱动)都被直接存放在 NVDA 的 userConfig 目录下。
