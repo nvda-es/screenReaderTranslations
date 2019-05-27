@@ -79,7 +79,8 @@
     <UL>
     <LI><A HREF="#SingleLetterNavigation">6.1. Tek Tuş Dolaşımı</A>
     <LI><A HREF="#ElementsList">6.2. Öğe Listesi</A>
-    <LI><A HREF="#ImbeddedObjects">6.3. Gömülü Nesneler</A>
+    <LI><A HREF="#SearchingForText">6.3. Metin arama</A>
+    <LI><A HREF="#ImbeddedObjects">6.4. Gömülü Nesneler</A>
     </UL>
   <LI><A HREF="#ReadingMath">7. Matematiksel İçerik Okuma</A>
     <UL>
@@ -141,13 +142,13 @@
       <LI><A HREF="#BrowseModeSettings">11.1.13. Tarama Kipi (NVDA+kontrol+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">11.1.14. Belge formatları (NVDA+kontrol+d)</A>
       <LI><A HREF="#Win10OcrSettings">11.1.15. Windows 10 OCR Ayarları</A>
-      <LI><A HREF="#toc91">11.1.16. Gelişmiş Ayarlar</A>
+      <LI><A HREF="#toc92">11.1.16. Gelişmiş Ayarlar</A>
       </UL>
     <LI><A HREF="#MiscSettings">11.2. çeşitli Ayarlar</A>
       <UL>
       <LI><A HREF="#SpeechDictionaries">11.2.1. Konuşma Sözlükleri</A>
       <LI><A HREF="#SymbolPronunciation">11.2.2. Noktalama/imla sözlüğü</A>
-      <LI><A HREF="#toc95">11.2.3. Girdi Hareketleri</A>
+      <LI><A HREF="#toc96">11.2.3. Girdi Hareketleri</A>
       </UL>
     <LI><A HREF="#SavingAndReloading">11.3. Konfigürasyonu Kaydetme ve Yeniden Yükleme</A>
     <LI><A HREF="#ConfigurationProfiles">11.4. Konfigürasyon Profilleri</A>
@@ -158,6 +159,7 @@
       <LI><A HREF="#ConfigProfileTriggers">11.4.4. Tetikleyiciler</A>
       <LI><A HREF="#ConfigProfileEditing">11.4.5. Profil Düzenleme</A>
       <LI><A HREF="#ConfigProfileDisablingTriggers">11.4.6. Tetikleyicileri Geçici Olarak Devre Dışı Bırakma</A>
+      <LI><A HREF="#ConfigProfileGestures">11.4.7. Girdi hareketlerini kullanarak bir profili etkinleştirme</A>
       </UL>
     <LI><A HREF="#LocationOfConfigurationFiles">11.5. Konfigürasyon Dosyalarının Konumu</A>
     </UL>
@@ -191,9 +193,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant BI/B Serisi / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc129">14.9.1. Tüm modeller için tuş atamaları</A>
-      <LI><A HREF="#toc130">14.9.2. Brailliant BI 32, BI 40 ve  B 80 için Tuş atamaları</A>
-      <LI><A HREF="#toc131">14.9.3. Brailliant BI 14 için Tuş atamaları</A>
+      <LI><A HREF="#toc131">14.9.1. Tüm modeller için tuş atamaları</A>
+      <LI><A HREF="#toc132">14.9.2. Brailliant BI 32, BI 40 ve  B 80 için Tuş atamaları</A>
+      <LI><A HREF="#toc133">14.9.3. Brailliant BI 14 için Tuş atamaları</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Serileri</A>
     <LI><A HREF="#Seika">14.11. Seika Braille Displays</A>
@@ -1292,7 +1294,23 @@ NVDA, fareyi hareket ettirmek için, ek bir işleve sahip değildir. Fiziksel fa
 
 <P>
 Web sayfaları gibi karmaşık salt okunur belgeler, NVDA'da tarama kipinde gösterilir.
- Bu, Mozilla Firefox, Microsoft Internet Explorer, Mozilla Thunderbird, Google Chrome, Microsoft outlook HTML mesajları, Adobe Reader ve Adobe Flash ile açılan belgeler için geçerlidir.
+ Bu, aşağıdaki uygulamalardaki belgeleri içerir:
+</P>
+
+<UL>
+<LI>Mozilla Firefox
+<LI>Microsoft Internet Explorer
+<LI>Mozilla Thunderbird
+<LI>Microsoft Outlook'da HTML mesajları
+<LI>Google Chrome
+<LI>Microsoft Edge
+<LI>Adobe Reader
+<LI>Foxit Reader
+<LI>Adobe Flash
+<LI>Amazon Kindle for PC içinde desteklenen kitaplar
+</UL>
+
+<P>
 Tarama kipi aynı zamanda Microsoft Word için karmaşık belgelerde dolaşılırken kullanılmak üzere opsiyonel olarak mevcuttur.
 </P>
 <P>
@@ -1335,7 +1353,7 @@ Tarama ve odak kipleri arasında manuel olarak da geçiş yapabilirsiniz ve Odak
 <TR>
 <TD>Metin ara</TD>
 <TD>NVDA+kontrol+f</TD>
-<TD>Geçerli belgede yazıp bir metin arayabileceğiniz bir iletişim kutusu açar</TD>
+<TD>Geçerli belgede yazıp bir metin arayabileceğiniz bir iletişim kutusu açar Daha fazla bilgi için <A HREF="#SearchingForText">metin arama</A> bölümüne bakın.</TD>
 </TR>
 <TR>
 <TD>Sonrakini bul</TD>
@@ -1443,8 +1461,45 @@ Seçim düğmeleri, bu öge türlerinden hangilerinin görüntüleneceğini beli
 </TR>
 </TABLE>
 
+<A NAME="SearchingForText"></A>
+<H3>6.3. Metin arama</H3>
+
+<P>
+Bu iletişim kutusu, geçerli belgedeki terimleri aramanızı sağlar.
+"Aramak istediğiniz metni yazın" alanına, bulunacak metin girilebilir.
+Metin alanındayken, daha önce aranan terimleri seçmek için yukarı ve aşağı okları da kullanabilirsiniz.
+"Büyük / küçük harfe duyarlı" onay kutusu, aramanın büyük ve küçük harfleri farklı düşünmesini sağlar.
+Örneğin, "Büyük / küçük harfe duyarlı" seçiliyken "NV Access" ifadesini bulabilirken, "nv access" ifadesini bulamazsınız.
+Büyük küçük harf duyarlılığı arama geçmişine kaydedilmez.
+NVDA yeniden başlatıldığında, önceki aranan terimlerin listesi temizlenir.
+Arama yapmak için aşağıdaki tuşları kullanın:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Ad</TH>
+<TH>Kısayol</TH>
+<TH>Açıklama</TH>
+</TR>
+<TR>
+<TD>Metin ara</TD>
+<TD>NVDA+kontrol+f</TD>
+<TD>Arama iletişim kutusunu açar</TD>
+</TR>
+<TR>
+<TD>Sonrakini ara</TD>
+<TD>NVDA+f3</TD>
+<TD>Mevcut arama teriminin bir sonraki tekrarını arar</TD>
+</TR>
+<TR>
+<TD>Öncekini ara</TD>
+<TD>NVDA+shift+f3</TD>
+<TD>geçerli arama teriminin önceki tekrarını arar</TD>
+</TR>
+</TABLE>
+
 <A NAME="ImbeddedObjects"></A>
-<H3>6.3. Gömülü Nesneler</H3>
+<H3>6.4. Gömülü Nesneler</H3>
 
 <P>
 Sayfalar, Adobe Flash, Oracle Java ve HTML 5 gibi teknolojilerle üretilmiş öğelerin yanında uygulamalar ve iletişim kutuları gibi zengin içerikler barındırabilir.
@@ -3068,6 +3123,9 @@ Etkinleştirildiğinde, fare ile ekranda dolaşırken, NVDA, fare işaretinin al
 Eğer NVDA siz hareket ettikçe fare altındaki metni söyleyecek biçimde ayarlandıysa, bu seçenek, tam olarak ne kadar metnin söyleneceğini seçmenizi sağlar.
 Seçenekler, karakter, sözcük, satır ve paragraftır.
 </P>
+<P>
+Herhangi bir yerdeyken metin birim çözünürlüğünü değiştirmek için,   <A HREF="#InputGestures">Girdi Hareketleri iletişim kutusunu</A> kullanarak özel bir kısayol atayın.
+</P>
 
 <A NAME="MouseSettingsRole"></A>
 <H5>Fare altındaki nesne tiplerini Seslendir</H5>
@@ -3352,7 +3410,19 @@ Bu değer, önceki sayfa ve sonraki sayfa tuşlarıyla tarama kipinde gösterile
 Kısayol tuşu: NVDA+v
 </P>
 <P>
-Bu seçenek, tarama kipindeki bağlantı ve metin gibi içeriklerin her birinin ayrı satırlarda gösterilmesi ya da ekranda görsel olarak nasıl görünüyorsa o biçimde aktarılması seçenekleri arasında tercih yapmanızı sağlar. Etkinleştirilirse, ekrandaki içerik, görsel olarak nasıl görünüyorsa öyle sergilenir. ancak devre dışı bırakılırsa, her alan ayrı satırlara yerleştirilir.
+Bu seçenek, tarama kipindeki bağlantı ve metin gibi içeriklerin her birinin ayrı satırlarda gösterilmesi ya da ekranda görsel olarak nasıl görünüyorsa o biçimde aktarılması seçenekleri arasında tercih yapmanızı sağlar.
+Etkinleştirilirse, ekrandaki içerik, görsel olarak nasıl görünüyorsa öyle sergilenir. ancak devre dışı bırakılırsa, her alan ayrı satırlara yerleştirilir.
+</P>
+
+<A NAME="BrowseModeSettingsEnableOnPageLoad"></A>
+<H5>Sayfa yüklendiğinde tarama kipini etkinleştir</H5>
+
+<P>
+Bu onay kutusu, bir sayfayı yüklendiğinde göz tarama kipinin otomatik olarak etkinleştirilip etkinleştirilmeyeceğini belirler.
+Bu seçenek devre dışı bırakılsa bile, sayfalarda veya tarama kipinin desteklendiği belgelerde tarama kipi manuel olarak etkinleştirilebilir.
+tarama kipinin  desteklendiği uygulamaların listesi için <A HREF="#BrowseMode">tarama kipi bölümüne</A> bakın.
+Bu seçeneğin, tarama kipinin her zaman isteğe bağlı olduğu durumlar için geçerli olmadığını unutmayın; mesela Microsoft Word'de.
+Bu seçenek varsayılan olarak etkindir.
 </P>
 
 <A NAME="BrowseModeSettingsAutoSayAll"></A>
@@ -3512,7 +3582,7 @@ Kategori aşağıdaki seçenekleri içerir:
 Bu seçim kutusu metin tanıma için kullanılacak dili seçmek içindir.
 </P>
 
-<A NAME="toc91"></A>
+<A NAME="toc92"></A>
 <H4>11.1.16. Gelişmiş Ayarlar</H4>
 
 <P>
@@ -3545,6 +3615,21 @@ Buna, Microsoft Word’ün yanı sıra,  Microsoft Outlook mesaj görüntüleyic
  Windows 10'da çalışan Microsoft Office 2016/365'in en yeni sürümleri için, UI Automation desteği, NVDA'nın mevcut Microsoft Word desteğine neredeyse eşit olan Microsoft Word belgelerine erişim sağlayacak kadar eksiksizdir ve yanıt verme kabiliyetinin büyük oranda artması avantajını sağlar.
 Ancak, Microsoft Office'in bazı sürümlerinde ya açığa çıkmamış ya da yanlış açıklanmış bazı bilgiler olabilir; bu, bu UI otomasyon desteğinin her zaman güvenilemeyeceği anlamına gelir.
 Kullanıcıların çoğunun varsayılan olarak bunu açmasını önermiyoruz, ancak Office 2016/365 kullanıcılarının bu özelliği test etmesini ve geri bildirimde bulunmasını memnuniyetle karşılarız.
+</P>
+
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Tarama kipinde sistem odağını otomatik olarak odaklanabilir öğelere taşı</H5>
+
+<P>
+Kısayol: NVDA+8
+</P>
+<P>
+Varsayılan olarak etkinleştirildiğinde, bu seçenek, tarama kipi imleci ile içerikte gezinirken, sistem odağının otomatik olarak odaklanılabilecek öğelere (bağlantılar, form alanları vb.) taşınıp taşınmayacağını belirlemenizi sağlar.
+Etkinleştirilirse, bu NVDA’nın 2019.1 ve önceki sürümlerindeki gibi sonuç verir.
+Bu seçeneği devre dışı bırakmak, tarama kipi imleci ile üzewrlerine gelindiğinde  sistem odağını odaklanabilir öğelerin üzerine  otomatik olarak taşımaz.
+Bu, tarama kipinde daha hızlı dolaşma ve daha iyi tepki deneyimi sunabilir.
+Sistem odağı Yine de, herhangi bir öğeyle  etkileşime girildiğinde güncellenecektir ve o öğe üzerine taşınacaktır (örneğin, bir düğmeye basıldığında, bir onay kutusu işaretlendiğinde).
+Bu işlev NVDA 2019.2'den itibaren deneyseldir.
 </P>
 
 <H5>Düzenleme imleci hareketi zaman aşımı (MS cinsinden)</H5>
@@ -3629,6 +3714,7 @@ Bu iletişim kutusunun , NVDA ayarları iletişim kutusu altındaki <A HREF="#Sp
 </P>
 <P>
 Önce semboller listesinden değişiklik yapmak istediğiniz sembol/işareti bulun.
+Sembolü veya sembolün  bir bölümünü, Filtreye göre düzenle kutusuna girerek sembolleri filtreleyebilirsiniz.
 </P>
 
 <UL>
@@ -3658,7 +3744,7 @@ Kaldır düğmesine basarak daha önce eklediğiniz işareti silebilirsiniz.
 Bu ayarlamaları yaptıktan sonra tamam düğmesine basarak değişiklikleri kaydedebilir; iptal düğmesiyle de değişiklik öncesi ayarlara geri dönebilirsiniz.
 </P>
 
-<A NAME="toc95"></A>
+<A NAME="toc96"></A>
 <H4>11.2.3. Girdi Hareketleri</H4>
 
 <P>
@@ -3737,7 +3823,7 @@ Bir konfigürasyon profili, sadece profil düzenlenirken değiştirilen ayarlar�
 Konfigürasyon profillerinde, NVDA bütünlüğü için geçerli olan <A HREF="#NVDASettings">NVDA ayarları</A> iletişim kutusundaki Genel  kategorisindekiler hariç, çoğu ayar değiştirilebilir.
 </P>
 <P>
-Konfigürasyon profilleri elle aktif hale getirilebilir.
+Konfigürasyon profilleri iletişim kutusu üzerinden manuel olarak  ya da atanacak özel bir kısayol ile etkinleştirilebilir.
 Ayrıca, tetikleyuiciler vesilesiyle, örneğin belli bir uygulama açıldığında konfigürasyon profili otomatik olarak aktif hale getirilebilir.
 </P>
 
@@ -3841,6 +3927,18 @@ Bunu, Konfigürasyon Profilleri iletişim kutusunda bulunan , Tüm tetikliyicele
 </P>
 <P>
 Tetikleyicilerin herhangi bir yerdeyken devre dışı bırakılması ya da tekrar etkinleştirilmesi için , <A HREF="#InputGestures">girdi hareketleri iletişim kutusunu</A> kullanarak özel bir kısayol tuşu atayabilirsiniz.
+</P>
+
+<A NAME="ConfigProfileGestures"></A>
+<H4>11.4.7. Girdi hareketlerini kullanarak bir profili etkinleştirme</H4>
+
+<P>
+Eklediğiniz her profil için, etkinleştirmek üzere bir veya daha fazla girdi hareketi atayabilirsiniz.
+Varsayılan olarak, konfigürasyon profilleri için atanmış girdi hareketleri yoktur.
+<A HREF="#InputGestures">Girdi Hareketleri iletişim kutusunu</A> kullanarak Bir profili etkinleştirmek için girdi hareketi  ekleyebilirsiniz.
+Konfigürasyon profilleri kategorisi altında  her profil için bir  giriş vardır.
+Bir profili yeniden adlandırdığınızda, daha önce eklediğiniz herhangi bir hareket hala  kullanılabilir olacaktır.
+Profillerden birini kaldırmak, onunla ilişkilendirilen hareketleri de otomatik olarak siler.
 </P>
 
 <A NAME="LocationOfConfigurationFiles"></A>
@@ -4851,7 +4949,7 @@ Aşağıda Brailliant BI/B ve BrailleNote touch braille ekranları NVDA ile hang
 Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 </P>
 
-<A NAME="toc129"></A>
+<A NAME="toc131"></A>
 <H4>14.9.1. Tüm modeller için tuş atamaları</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4941,7 +5039,7 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 </TR>
 </TABLE>
 
-<A NAME="toc130"></A>
+<A NAME="toc132"></A>
 <H4>14.9.2. Brailliant BI 32, BI 40 ve  B 80 için Tuş atamaları</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4963,7 +5061,7 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 </TR>
 </TABLE>
 
-<A NAME="toc131"></A>
+<A NAME="toc133"></A>
 <H4>14.9.3. Brailliant BI 14 için Tuş atamaları</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
