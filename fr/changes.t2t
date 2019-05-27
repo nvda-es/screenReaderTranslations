@@ -29,7 +29,7 @@ Quoi de Neuf dans NVDA
 - Le volume du synthétiseur est maintenant augmenté et diminué de 5 incréments au lieu de 10 dans la boucle paramètres du synthétiseur. (#6754)
 - Clarification du texte dans le gestionnaire des extensions lors du lancement de NVDA avec l'argument --disable-addons. (#9473)
 - Mise à jour des annotations emoji du référentiel de données locales communes Unicode vers la version 35.0. (#9445)
-- Mise à jour du traducteur braille LibLouis vers la version 3.9.0. (#9439)
+- Mise à jour du traducteur braille liblouis vers la version 3.9.0. (#9439)
 - Le raccourci clavier pour le champ de filtrage dans la liste des éléments en mode navigation a été remplacé par alt + y. (#8728)
 
 
@@ -62,15 +62,14 @@ Quoi de Neuf dans NVDA
 
 = 2019.1 =
 Les points forts de cette version incluent des améliorations de performances lors de l'accès à Microsoft Word et Excel, des améliorations en matière de stabilité et de sécurité, comme la prise en charge des extensions comportant des informations de compatibilité de version, ainsi que de nombreuses corrections de bogues.
-Veuillez noter qu'à partir de cette version de NVDA, les modules applicatifs personnalisés, les globalPlugins, les pilotes d'afficheurs braille et les pilotes de synthèses vocales ne seront plus chargés automatiquement à partir de votre répertoire de configuration utilisateur NVDA. 
-Ceux-ci devront plutôt être installées en tant qu'extensions de NVDA. Pour ceux qui développent du code pour une extension, le code pour les tests peut être placé dans un nouveau répertoire bloc-notes du développeur, dans le répertoire de configuration de l'utilisateur NVDA, si l'option du bloc-notes du développeur est activée dans le nouveau panneau des paramètres avancés de NVDA.
+Veuillez noter qu'à partir de cette version de NVDA, les modules applicatifs personnalisés, les globalPlugins, les pilotes d'afficheurs braille et les pilotes de synthèses vocales ne seront plus chargés automatiquement à partir de votre répertoire de configuration utilisateur NVDA. Ceux-ci devront plutôt être installées en tant qu'extensions de NVDA. Pour ceux qui développent du code pour une extension, le code pour les tests peut être placé dans un nouveau répertoire bloc-notes du développeur, dans le répertoire de configuration de l'utilisateur NVDA, si l'option du bloc-notes du développeur est activée dans le nouveau panneau des paramètres avancés de NVDA.
 Ces modifications sont nécessaires pour mieux assurer la compatibilité du code personnalisé, afin que NVDA ne soit pas endommagé lorsque ce code devient incompatible avec les nouvelles versions.
 Veuillez vous reporter à la liste des modifications plus bas pour plus de détails à ce sujet et pour savoir comment les extensions sont désormais mieux versionnées.
 
 
 == Nouvelles Fonctionnalités ==
 - Nouvelles tables braille : Afrikaans, Arabe braille informatique 8 points, Arabe abrégé, Espagnol abrégé. (#4435, #9186)
-- Ajout d'une option dans les paramètres de la souris de NVDA pour que NVDA supporte les situations où la souris est contrôlée par une autre application. (#8452) 
+- Ajout d'une option dans les paramètres de la souris de NVDA pour que NVDA supporte les situations où la souris est contrôlée par une autre application. (#8452)
  - Cela permet à NVDA de suivre la souris quand un système est contrôlé à distance en utilisant TeamViewer ou un autre logiciel de contrôle à distance.
 - Ajout du paramètre de ligne de commande `--enable-start-on-logon` pour configurer si les installations silencieuses de NVDA le définissent pour démarrer à l'ouverture de session Windows ou non. Spécifiez true pour démarrer à l'ouverture de session ou false pour ne pas démarrer à l'ouverture de session. Si l'argument --enable-start-on-logon n'est pas spécifié, NVDA démarrera par défaut à l'ouverture de session, à moins qu'il n'ait déjà été configuré par une installation précédente. (#8574)
 - Il est possible de désactiver la journalisation de NVDA en mettant le niveau de journalisation sur "désactivé" dans le panneau de paramètres généraux. (#8516)
@@ -160,8 +159,8 @@ Les points forts de cette version incluent des améliorations de performances da
 - " Annoncer les bulles d'aide " dans le dialogue de Présentation des Objets a été renommé en "Annoncer les notifications" pour inclure l'annonce notifications toast sous Windows 8 et au-delà. (#5789)
 - Dans les paramètres clavier de NVDA, les cases à cocher permettant d'activer ou désactiver les touches NVDA sont maintenant affichées dans une liste plutôt que comme des cases à cocher séparées.
 - NVDA n'annoncera plus d'informations redondantes à la lecture de l'horloge de la barre des tâches système sous certaines versions de Windows. (#4364)
-- Mise à jour du traducteur braille liblouis à la version  3.7.0. (#8697)
-- Mise à jour de  eSpeak-NG à la révision 919f3240cbb
+- Mise à jour du traducteur braille liblouis à la version 3.7.0. (#8697)
+- Mise à jour de eSpeak-NG à la révision 919f3240cbb
 
 
 == Corrections de bogues ==
@@ -186,7 +185,7 @@ Les points forts de cette version incluent des améliorations de performances da
  - CustomCheckListBox est une sous-classe accessible de wx.CheckListBox.
  - AutoWidthColumnCheckListCtrl ajoute des cases à cocher accessibles à un contrôle AutoWidthColumnListCtrl, qui est lui-même basé sur wx.ListCtrl.
 - Si vous avez besoin de rendre accessible un widget wx qui ne l'est pas déjà, il est possible de le faire en utilisant une instance de gui.accPropServer.IAccPropServer_impl. (#7491)
- - Consultez  l'implémentation de gui.nvdaControls.ListCtrlAccPropServer pour plus d'informations.
+ - Consultez l'implémentation de gui.nvdaControls.ListCtrlAccPropServer pour plus d'informations.
 - configobj mis à jour à la version 5.1.0dev commit 5b5de48a. (#4470)
 - L'action config.post_configProfileSwitch prend maintenant l'argument optionnel mot clé prevConf, permettant aux gestionnaires de prendre des actions basées sur les différences entre les configurations avant et après le changement de profil. (#8758)
 
@@ -205,7 +204,7 @@ Les points forts de cette version incluent la détection automatique de beaucoup
 == Nouvelles Fonctionnalités ==
 - NVDA Annoncera les erreurs grammaticales correctement exposées dans les pages web sous Mozilla Firefox et Google Chrome. (#8280)
 - Le contenu marqué comme inséré ou supprimé dans les pages web est maintenant signalé sous Google Chrome. (#8558)
-- Ajout du support de la roue de défilement du BrailleNote QT et de l'Apex BT quand le  BrailleNote est utilisé comme afficheur braille par NVDA. (#6316)
+- Ajout du support de la roue de défilement du BrailleNote QT et de l'Apex BT quand le BrailleNote est utilisé comme afficheur braille par NVDA. (#6316)
 - Ajout de scripts pour annoncer le temps écoulé et le temps total de la piste en cours sous Foobar2000. (#6596)
 - Le symbole touche de commande Mac (⌘) est maintenant annoncé par tous les synthétiseurs durant la lecture de texte. (#8366)
 - Les rôles personnalisés via l'attribut aria-roledescription sont maintenant supportés dans tous les navigateurs web.
@@ -225,7 +224,7 @@ Les points forts de cette version incluent la détection automatique de beaucoup
 - Pour les terminaux ALVA BC6, la combinaison de touches sp2+sp3 annonce maintenant la date et l'heure courante, et sp1+sp2 émule la touche Windows. (#8230)
 - Au premier démarrage de NVDA, il est maintenant demandé à l'utilisateur s'il souhaite envoyer des statistiques d'utilisation à NV Access lors de la vérification automatique de mises à jour. (#8217)
 - Lors de la vérification de mises à jour, si l'utilisateur a accepté d'envoyer des données statistiques à NV Access, NVDA enverra maintenant le nom du synthétiseur et le terminal braille en cours, pour permettre une meilleure priorisation du travail futur sur ces pilotes. (#8217)
-- Mise à jour du convertisseur braille Liblouis à la version 3.6.0. (#8365)
+- Mise à jour du convertisseur braille liblouis à la version 3.6.0. (#8365)
 - Mise à jour du chemin vers la bonne table braille russe 8 points. (#8446)
 - Mise à jour de eSpeak-ng au niveau 1.49.3dev commit 910f4c2 (#8561)
 
@@ -299,9 +298,9 @@ Les points forts de cette version incluent la prise en charge des tableaux dans 
 
 == Changements ==
 - Dans le gestionnaire des extensions, la colonne état a été modifiée pour indiquer que l'extension est activée ou désactivée plutôt que en cours d'exécution ou suspendu. (#7929)
-- Mise à jour du convertisseur braille Liblouis à la version 3.5.0. (#7839)
-- La table braille lithuanienne a été renommée en  Lithuanien 6 points pour éviter  la confusion avec la nouvelle table 8 points. (#7839)
-- Les tables Français (Canada) intégral et abrégé  ont été supprimées. Elles sont remplacées par Français (unifié) braille littéraire 6 points  et Français (unifié) abrégé respectivement. (#7839)
+- Mise à jour du convertisseur braille liblouis à la version 3.5.0. (#7839)
+- La table braille lithuanienne a été renommée en Lithuanien 6 points pour éviter la confusion avec la nouvelle table 8 points. (#7839)
+- Les tables Français (Canada) intégral et abrégé ont été supprimées. Elles sont remplacées par Français (unifié) braille littéraire 6 points et Français (unifié) abrégé respectivement. (#7839)
 - Les boutons secondaires de routage sur les terminaux braille Alva BC6, EuroBraille et Papenmeier annoncent maintenant l'information de mise en forme pour le texte sous la cellule braille correspondant au bouton. (#7106)
 - Les tables de saisie braille abrégé retourneront automatiquement en mode intégral dans les champs non-éditables (ex : Les contrôles où il n'y a pas de curseur ou en mode navigation). (#7306)
 - NVDA est maintenant moins verbeux lorsqu'un rendez-vous ou un créneau horaire dans le calendrier Outlook couvre un jour entier. (#7949)
@@ -324,7 +323,7 @@ Les points forts de cette version incluent la prise en charge des tableaux dans 
 - Correction des problèmes de stabilité de connexion pour les terminaux Handy Tech Easy Braille et Braille Wave . (#8016)
 - Sous Windows 8 et au-delà, NVDA n'annoncera plus "inconnu" à l'ouverture du menu de liens rapides (Windows+X) et à la sélection d'un élément de ce menu. (#8137)
 - Sur les terminaux Hims, les boutons de commandes spécifiques à chaque modèle fonctionnent maintenant comme indiqué dans le manuel. (#8096)
-- NVDA essaiera maintenant de coriger les problèmes d'Inscription COM du système qui font que certains programmes comme Firefox et Internet Explorer deviennent  inaccessibles par NVDA et annoncent "Inconnu". (#2807)
+- NVDA essaiera maintenant de coriger les problèmes d'Inscription COM du système qui font que certains programmes comme Firefox et Internet Explorer deviennent inaccessibles par NVDA et annoncent "Inconnu". (#2807)
 - Contournement d'un bogue dans le gestionnaire des tâches empêchant NVDA de permettre aux utilisateurs d'accéder au contenu des détails spécifiques aux processus. (#8147)
 - Les nouvelles voix Microsoft SAPI5 n'accusent plus de retard en fin d'énoncé, ce qui rend beaucoup plus efficace la navigation avec ces voix. (#8174)
 - NVDA ne signale plus (marques LTR et RTL) ni en Braille ni quand on se déplace vocalement par caractère, lors de l'accès à l'horloge dans les versions récentes de Windows. (#5729)
@@ -336,11 +335,11 @@ Les points forts de cette version incluent la prise en charge des tableaux dans 
 == Changements pour les développeurs ==
 - L'information pour le dévelopeur des objets UIA contient maintenant une liste des modèles UIA disponibles. (#5712)
 - Les App modules peuvent maintenant forcer certaines fenêtres à toujours utiliser UIA en implémentant la méthode isGoodUIAWindow. (#7961)
-- Le booléen caché "outputPass1Only" dans la section braille de la configuration a de nouveau été retiré. Liblouis ne supporte plus l'affichage en une seule passe. (#7839)
+- Le booléen caché "outputPass1Only" dans la section braille de la configuration a de nouveau été retiré. liblouis ne supporte plus l'affichage en une seule passe. (#7839)
 
 
 = 2018.1.1 =
-Ceci est une version spéciale de NVDA qui pallie à un bogue dans le pilote du synthétiseur vocal Windows Onecore, qui le faisait parler plus aigu et plus vite sous Windows 10 Redstone 4 (1803). (#8082)  
+Ceci est une version spéciale de NVDA qui pallie à un bogue dans le pilote du synthétiseur vocal Windows OneCore, qui le faisait parler plus aigu et plus vite sous Windows 10 Redstone 4 (1803). (#8082)
 
 
 = 2018.1 =
@@ -355,7 +354,7 @@ Points forts de cette version : support des graphiques sous Microsoft word et Po
 - Ajout du support de VitalSource Bookshelf. (#7155)
 - Ajout du support du convertisseur de protocole Optelec, un mécanisme permettant d'utiliser les terminaux Braille Voyager et Satellite avec le protocole de communication ALVA BC6. (#6731)
 - Il est maintenant possible d'utiliser la saisie braille avec un terminal ALVA 640 Comfort braille. (#7733) 
- - Les fonctionnalités de saisie braille de NVDA peuvent être utilisées avec  ceux-ci ainsi qu'avec les autres terminaux BC6 possédant le firmware 3.0.0 et au-delà.
+ - Les fonctionnalités de saisie braille de NVDA peuvent être utilisées avec ceux-ci ainsi qu'avec les autres terminaux BC6 possédant le firmware 3.0.0 et au-delà.
 - Support initial de Google Sheets avec le mode Braille activé. (#7935)
 - Support des terminaux braille Eurobraille Esys, Esytime et Iris . (#7488)
 
@@ -390,7 +389,7 @@ Points forts de cette version : support des graphiques sous Microsoft word et Po
 
 == Changements pour les Développeurs ==
 - Ajout d'un indicateur booléen caché à la section braille dans la configuration : "outputPass1Only". (#7301, #7693, #7702) 
- - Cet indicateur est sur true par défaut. S'il est sur false, les règles de passage multiple de Liblouis seront utilisées pour la sortie braille.
+ - Cet indicateur est sur true par défaut. S'il est sur false, les règles de passage multiple de liblouis seront utilisées pour la sortie braille.
 - Un nouveau dictionnaire (braille.RENAMED_DRIVERS) a été ajouté pour permettre une transition en douceur aux utilisateurs utilisant des pilotes remplacés par d'autres. (#7459)
 - Le package comtypes a été mis à jour à la version 1.1.3. (#7831)
 - Implémentation d'un système générique dans braille.BrailleDisplayDriver pour communiquer avec les terminaux qui envoient des paquets de confirmation. Consultez le pilote braille handyTech comme exemple. (#7590, #7721)
@@ -433,7 +432,7 @@ Veuillez noter que cette version de NVDA ne supporte plus Windows XP et Windows 
 - Sur un terminal Baum, l'assignation d'un geste de commande à une touche peut être limitée au modèle de terminal en cours d'utilisation (ex : VarioUltra ou Pronto). (#7517)
 - Le raccourci clavier du champ de filtre de la liste d'éléments en mode navigation est passé de alt+f à alt+e. (#7569)
 - Une commande non assignée a été ajoutée pour activer/désactiver l'inclusion des tables de disposition à la volée en mode navigation. Vous trouverez cette commande dans la catégorie Mode Navigation du dialogue Gestes de commandes. (#7634)
-- Mise à jour du traducteur braille Liblouis à la version 3.3.0. (#7565)
+- Mise à jour du traducteur braille liblouis à la version 3.3.0. (#7565)
 - Les fichiers de dictionnaires vocaux sont maintenant versionnés et ont été déplacés vers le répertoire 'speechDicts/voiceDicts.v1'. (#7592)
 - Les modifications des fichiers versionnés (configuration utilisateur, dictionnaires vocaux) ne sont plus sauvegardés quand NVDA est exécuté depuis le lanceur. (#7688)
 - Les afficheurs braille Handy Tech Braillino, Bookworm et Modular (avec un ancien microprogramme) ne sont plus supportés nativement. Veuillez installer le pilote universel Handy Tech et l'extension NVDA pour utiliser ces afficheurs. (#7590)
@@ -450,7 +449,7 @@ Veuillez noter que cette version de NVDA ne supporte plus Windows XP et Windows 
 - Quand on redémarre NVDA avec Mozilla Firefox en focus, le mode navigation reste disponible, bien que vous puissiez avoir besoin de quitter la fenêtre et d'y revenir. (#5758)
 - Il est maintenant possible d'accéder à du contenu mathématique sous Google Chrome sur un système où Mozilla Firefox n'est pas installé. (#7308)
 - Le système d'exploitation et les autres applications devraient être plus stables juste après l'installation de NVDA avant de redémarrer le système, comparativement aux versions précédentes de NVDA. (#7563)
-- Quand on utilise une commande de reconnaissance de contenu (ex :  NVDA+r), NVDA annonce maintenant un message d'erreur si l'objet navigateur a disparu. (#7567)
+- Quand on utilise une commande de reconnaissance de contenu (ex : NVDA+r), NVDA annonce maintenant un message d'erreur si l'objet navigateur a disparu. (#7567)
 - La fonction de défilement arrière a été corrigée pour les afficheurs Freedom Scientific comportant une barre de stickers gauche. (#7713)
 
 
@@ -473,19 +472,19 @@ Les points forts de cette version incluent la saisie en braille abrégé, le sup
 - Dans les listes de messages sous Microsoft Outlook, NVDA signale maintenant si un message est marqué. (#6374)
 - Sous Microsoft Powerpoint, le type exact d'une forme est maintenant annoncé quand on édite une diapositive (Exemples : triangle, cercle, vidéo, flèche), plutôt que juste "forme". (#7111)
 - Le contenu mathématique (fourni par MathML) est maintenant supporté sous Google Chrome. (#7184)
-- NVDA peut maintenant parler en utilisant les nouvelles voix Windows OneCore (aussi connues sous le nom  mobile voices) incluses dans Windows 10. Vous y avez accès en sélectionnant voix Windows OneCore dans le dialogue Synthétiseurs de NVDA. (#6159)
+- NVDA peut maintenant parler en utilisant les nouvelles voix Windows OneCore (aussi connues sous le nom mobile voices) incluses dans Windows 10. Vous y avez accès en sélectionnant voix Windows OneCore dans le dialogue Synthétiseurs de NVDA. (#6159)
 - Les fichiers de configuration utilisateur de NVDA peuvent maintenant être enregistrés dans le dossier local application data de l'utilisateur. Ceci est activé via un paramètre dans le registre. Veuillez consulter 'paramètres système' dans le guide de l'utilisateur pour plus de détails. (#6812)
 - Dans les navigateurs internet, NVDA signale maintenant les valeurs d'espaces réservés pour les champs (en particulier, aria-placeholder est maintenant supporté). (#7004)
 - En mode navigation sous Microsoft Word, il est maintenant possible d'atteindre les fautes d'orthographe en utilisant les touches de navigation rapide (w et maj+w) (#6942)
 - Ajout du support du contrôle de sélection de date qu'on trouve dans les dialogues de rendez-vous de Microsoft Outlook. (#7217)
 - Dans l'application Courrier de Windows 10, la suggestion sélectionnée est maintenant annoncée pour les champs à/cc, et il en va de même pour le champ de recherche des paramètres de Windows 10. (#6241)
 - Un son est maintenant émis pour indiquer l'apparition d'une suggestion dans certains champs de recherche de Windows 10 (ex : écran de démarrage, recherche de paramètres, champs à/cc de Windows 10 courrier). (#6241)
-- Annonce automatique des notifications sous Skype for Business Desktop, par exemple quand quelqu'un démarre une conversation avec vous.  (#7281)
+- Annonce automatique des notifications sous Skype for Business Desktop, par exemple quand quelqu'un démarre une conversation avec vous. (#7281)
 - Annonce automatique des messages de discussion instantannée dans une conversation sous Skype for Business. (#7286)
-- Annonce automatique des notifications sous Microsoft Edge, par exemple lorsqu'un téléchargement démarre.  (#7281)
+- Annonce automatique des notifications sous Microsoft Edge, par exemple lorsqu'un téléchargement démarre. (#7281)
 - Vous pouvez maintenant taper en braille intégral ou abrégé depuis un terminal braille avec un clavier braille. Veuillez consulter la section Saisie en Braille du Guide de l'Utilisateur pour les détails. (#2439)
 - Vous pouvez maintenant entrer des caractères braille unicode depuis le clavier braille d'un terminal braille en sélectionnant Braille Unicode comme table de saisie dans les Paramètres Braille. (#6449)
-- Ajout du support du terminal braille  SuperBraille  utilisé à Taiwan. (#7352)
+- Ajout du support du terminal braille SuperBraille utilisé à Taiwan. (#7352)
 - Nouvelles tables de traduction braille : Danois braille informatique 8 points, Lithuanien, Perse braille informatique 8 points, Perse intégral, Slovène braille informatique 8 points. (#6188, #6550, #6773, #7367)
 - Amélioration de la table Anglaise (U.S.) braille informatique 8 points , incluant le support des puces, du signe euro et des lettres accentuées. (#6836)
 - NVDA peut maintenant utiliser la fonctionnalité de reconnaissance de caractères incluse dans Windows 10 pour reconnaître le texte d'images ou d'applications inaccessibles. (#7361)
@@ -494,7 +493,7 @@ Les points forts de cette version incluent la saisie en braille abrégé, le sup
  - Veuillez consulter la section Reconnaissance de Contenu du Guide de l'Utilisateur pour plus de détails.
 - Vous pouvez maintenant choisir les informations contextuelles affichées sur un terminal braille quand un objet prend le focus en utilisant le nouveau paramètre "Présentation contextuelle du focus" dans le dialogue Paramètres Braille. (#217)
  - Par exemple, les options "Afficher lors des changements contextuels" ou "Seulement lors d'un défilement arrière" peuvent rendre le travail avec les menus et les listes plus efficace, puisque les éléments ne changeront pas continuellement de position sur l'afficheur.
- - Veuillez consulter la section concernant le paramètre de "présentation contextuelle du focus"  du Guide de l'Utilisateur pour plus de détails et des exemples.
+ - Veuillez consulter la section concernant le paramètre de "présentation contextuelle du focus" du Guide de l'Utilisateur pour plus de détails et des exemples.
 - Sous Firefox et Chrome, NVDA supporte maintenant les tableaux dynamiques complexes tels que les feuilles de calcul quand seule une partie du contenu est chargée ou affichée (spécifiquement, les attributs aria-rowcount, aria-colcount, aria-rowindex et aria-colindex introduits avec ARIA 1.1). (#7410)
 
 
@@ -504,7 +503,7 @@ Les points forts de cette version incluent la saisie en braille abrégé, le sup
 - Beaucou plus de contrôles et d'états ont été abrégés pour le braille. Les rpères ont aussi été abrégés. Veuillez consulter "Abbréviations de Contrôles, États et Repères" sous Braille dans le Guide de l'Utilisateur pour une liste complète. (#7188)
 - Mise à jour de Espeak-ng à la version 1.49.1 (#7280).
 - Les tables d'affichage et de saisie sont maintenant triées dans l'ordre alphabétique dans le dialogue Paramètres Braille. (#6113)
-- Mise à jour du convertisseur braille Liblouis à la version 3.2.0. (#6935)
+- Mise à jour du convertisseur braille liblouis à la version 3.2.0. (#6935)
 - La table braille par défaut est maintenant le code Anglais unifié intégral. (#6952)
 - Par défaut, NVDA n'affiche maintenant que la partie de l'information contextuelle qui a changé quand un objet prend le focus. (#217)
  - Précédemment, il affichait toujours autant d'information que possible, sans se préoccuper de savoir si vous aviez déjà vu ces mêmes informations avant.
@@ -926,7 +925,6 @@ Les points forts de cette version incluent des améliorations de performances so
   + Ouvrez de nouveau le dialogue "Paramètres Généraux".
   + Cochez la case "Démarrer NVDA automatiquement après ma connexion à Windows".
   + Appuyez sur le bouton OK.
-- Améliorations de performances pour UI Automation incluant l'explorateur de fichiers et la barre des tâches. (#5293)
 - Améliorations de performance pour UI Automation incluant l'Explorateur de fichier et la barre des tâches. (#5293)
 - NVDA passe maintenant correctement en mode formulaire quand on tabule vers des contrôles ARIA grid en lecture seule en mode navigation pour Mozilla Firefox et autres contrôles basés sur Gecko. (#5118)
 - NVDA annonce maintenant correctement " Pas de précédent " au lieu de " pas de suivant " quand il n'y a plus d'objet quand on glisse à gauche sur un écran tactile.
@@ -957,7 +955,7 @@ Les points forts de cette version incluent le support initial de Windows 10 ; la
  
 
 == Changements ==
-- Mise à jour du traducteur braille Liblouis à la version 2.6.3. (#5137)
+- Mise à jour du traducteur braille liblouis à la version 2.6.3. (#5137)
 - Si vous essayez d'installer une version de NVDA plus ancienne que la version déjà installée, vous serez maintenant averti que ce n'est pas recommandé et que NVDA devrait être complètement désinstallé avant de continuer. (#5037)
 
  
@@ -1101,7 +1099,7 @@ Les points forts de cette version incluent la possibilité de lire les graphique
 == Changements ==
 - Si vous vous déplacez vers un objet en mode navigation par objet et que cet objet est dans un document en mode revue de document, le mode de revue de document sera automatiquement activé. Précédemment, cela n'arrivait que si l'objet navigateur était déplacé à la suite d'un changement de focus. (#4369)
 - La liste des afficheurs braille et celle des synthétiseurs dans leurs dialogues de paramétrage respectifs sont maintenant triées dans l'ordre alphabétique à l'exception de "Pas de Braille" et "Pas de parole" qui se trouvent maintenant en fin de liste. (#2724)
-- Mise à jour du traducteur Braille Liblouis à la version 2.6.0. (#4434, #3835)
+- Mise à jour du traducteur Braille liblouis à la version 2.6.0. (#4434, #3835)
 - En mode navigation, l'appui sur e et maj+e pour naviguer entre les zones dédition inclut maintenant les listes déroulantes éditables. Ceci inclut la boîte de recherche dans la dernière version de Google Search. (#4436)
 - Un clic gauche sur l'icône NVDA dans la zone de notification ouvre maintenant le menu NVDA au lieu de ne rien faire. (#4459)
 
@@ -1396,7 +1394,7 @@ Les points forts de cette version incluent la possibilité de lire les graphique
  - Le navigateur d'objet suit automatiquement le curseur de revue lorsqu'en mode revue d'objet.
  - Lorsqu'en mode revue de l'écran, celui-ci reste actif jusqu'à ce que vous en changiez.
  - Lorsqu'en mode revue d'objet ou de document, NVDA peut automatiquement basculer d'un mode à l'autre selon que vous êtes ou non sur un document en mode navigation.
-- Librairie de traduction braille libLouis mise à jour vers la version 2.5.3. (#3371)
+- Librairie de traduction braille liblouis mise à jour vers la version 2.5.3. (#3371)
 
 
 == Corrections de Bogues ==
@@ -1490,7 +1488,7 @@ Veuillez lire le document [Résumé des commandes keyCommands.html] pour les nou
 
 
 == Changements ==
-- LibLouis Braille Translator mis à jours vers la version 1.5.2. (#2737)
+- liblouis Braille Translator mis à jours vers la version 1.5.2. (#2737)
 - La disposition clavier ordinateur portable a été revue pour être plus intuitive et cohérente. (#804)
 - Mise à jours de la synthèse vocale eSpeak vers la version 1.47.11. (#2680, #3124, #3132, #3141, #3143, #3172)
 
@@ -1741,8 +1739,8 @@ Les apports majeurs de cette version incluent des fonctionnalités pour une lect
 - Certaines informations affichées en Braille ont été abrégées. (#1955)
 - Quand le curseur de revue ou le curseur système se déplacent, le braille défile maintenant de la même manière que par le défilement manuel. Ceci est plus cohérent quand le Braille est configuré pour une lecture par paragraphe ou pour éviter la coupure de mots. (#1996)
 - Mise à jour de la table Espagnole Grade 1.
-- Mise à jour du convertisseur braille Liblouis à la version 2.4.0.
-- Mise à jour du convertisseur braille Liblouis à la version 2.4.1.
+- Mise à jour du convertisseur braille liblouis à la version 2.4.0.
+- Mise à jour du convertisseur braille liblouis à la version 2.4.1.
 
 
 == Corrections de Bogues ==
@@ -1895,7 +1893,7 @@ Les apports majeurs de cette version incluent des améliorations notables concer
 - Mise à jour de la synthèse vocale eSpeak vers la version 1.45.03. (#1465)
 - Les tableaux de visualisation ne sont plus annoncés dans les applications Mozilla Gecko quand le focus s'y déplace en mode navigation ou en dehors d'un document.
 - Sous Internet Explorer et d'autres contrôles MSHTML, le mode navigation fonctionne maintenant dans les applications ARIA. (#1452)
-- Mise à jour dutraducteur braille LibLouis vers la version 2.3.0.
+- Mise à jour dutraducteur braille liblouis vers la version 2.3.0.
 - Quand le mode navigation est actif et que l'on atteint un contrôle soit par une touche de navigation rapide ou en y déplaçant le focus, le nom du contrôle est annoncé s'il y a lieu.
 - Les barres de progression sont désormais signalées en mode navigation.
 - Les nœuds marqués avec un rôle ARIA de présentation dans Internet Explorer et autres contrôles MSHTML sont maintenant filtrés du mode revue simple et de l'ascendance du focus.
@@ -2150,7 +2148,7 @@ Les points forts de cette version incluent une navigation par objets grandement 
 - Suppression de la case à cocher Annoncer le texte souris du dialogue Paramètres de la souris, remplacé par une case à cocher "Activer le suivi de la souris qui convient mieux au script Bascule du sivi de la souris (NVDA+m).
 - Mise à jour de la configuration clavier Laptop pour qu'elle contienne toutes les commandes disponibles dans la configuration Desktop et qu'elle fonctionne sur les claviers non anglophones. (#798, #800)
 - Améliorations et mises à jour significatives de la documentation incluant la documentation de la configuration clavier Laptop et la synchronisation entre le manuel Référence rapide des touches de commande et le guide utilisateur. (#455)
-- Mise à jour du traducteur braille Liblouis à la version 2.11. Cela corrige en particulier des problèmes avec les tables de conversion chinoises et l'affichage des caractères non définis dans les tables. (#484, #499)
+- Mise à jour du traducteur braille liblouis à la version 2.11. Cela corrige en particulier des problèmes avec les tables de conversion chinoises et l'affichage des caractères non définis dans les tables. (#484, #499)
 
 
 == Corrections de bogues ==
@@ -2216,7 +2214,7 @@ Cette version met l'accent principalement sur des corrections de bugs et des am�
 - Les messages s'affichant en Braille seront automatiquement abandonné si l'utilisateur appuie sur une touche qui se traduit par un changement tel qu'un mouvement de focus. Auparavant, le message restait affiché pendant la durée qui a été initialement configurée.
 - Possibilité de choisir si le Braille doit être attaché au focus ou au pointeur de revue (NVDA+Ctrl+T). Ceci peut désormais être également paramétré à partir du dialogue des options Braille, et est enregistré dans la configuration utilisateur.
 - Mise à jour de la synthèse vocale eSpeak vers la version 1.43.03.
-- Mise à jour de Liblouis vers la version 1.8.0.
+- Mise à jour de liblouis vers la version 1.8.0.
 - En mode navigation, l'annonce des éléments lors du déplacement par caractère ou par mot a été nettement améliorée. Auparavant, beaucoup d'informations non-pertinentes étaient transmises et les rapports étaient très différents de ceux obtenus lors du déplacement par ligne. (#490)
 - Désormais, la touche Ctrl arrête tout simplement la parole comme c'est le cas pour les autres touches, plutôt que de la mettre en pause. Pour suspendre / reprendre la parole, utilisez la touche Maj.
 - Le nombre de ligne et de colonnes des tableaux ne sont plus annoncés quand le focus change, car cette annonce est plutôt verbeuse et n'est généralement pas utile.
@@ -2485,7 +2483,8 @@ Les points forts principaux de cette version comprennent le support des édition
 
 
 = 0.6p1 =
-Accès au contenu web grâce aux nouveaux tampons virtuels en développement (présentement pour les applications Mozilla Gecko comprenant Firefox3 et Thunderbird3)
+
+== Accès au contenu web grâce aux nouveaux tampons virtuels en développement (présentement pour les applications Mozilla Gecko comprenant Firefox3 et Thunderbird3) ==
 - Les temps de chargement ont été améliorés à un facteur de presque trente (vous n'avez plus à attendre du tout pour que la plupart des pages Web se chargent dans la mémoire tampon).
 - Ajout d'une liste de liens (NVDA+F7)
 - Amélioration du dialogue de recherche (contrôle+NVDA+f) afin que NVDA effectue une recherche insensible à la casse, plus une correction de problèmes de focus dans ledit dialogue.
@@ -2508,7 +2507,7 @@ Accès au contenu web grâce aux nouveaux tampons virtuels en développement (pr
 - Ajout de la traduction en japonais par Katsutoshi Tsuji.
 - Ajout de la traduction en thaï par Amorn Kiattikhunrat.
 - Ajout de la traduction en croate par Mario Percinic et Hrvoje Katic.
-- Ajout de la traduction en galicien par Juan C. Buno.
+- Ajout de la traduction en galicien par Juan C. Buño.
 - Ajout de la traduction en ukrainien par Aleksey Sadovoy.
 
 
@@ -2535,7 +2534,7 @@ Accès au contenu web grâce aux nouveaux tampons virtuels en développement (pr
 
 
 == Raccourcis clavier ==
-- NVDA+Maj+PavNum6 et NVDA+Maj+PavNum4 vous permettent de naviguer vers l'objet suivant ou précédent à la volée, respectivement. Cela signifie que vous pouvez naviguer dans un programme en utilisant uniquement ces deux touches sans souci, vers le haut par objet parent ou vers le bas pour atteindre le premier enfant quand vous parcourez la hiérarchie des objets. Par exemple dans un navigateur web comme Firefox, vous pouvez parcourir le document de l'objet, en utilisant simplement ces deux touches. Si suivant ou précédent vous amène vers le haut d'un objet, ou vers le bas au sein d'un objet, des bips se feront entendre et vous indiquent la direction.
+- NVDA+ Maj + PavNum6 et NVDA + Maj + PavNum4 vous permettent de naviguer vers l'objet suivant ou précédent à la volée, respectivement. Cela signifie que vous pouvez naviguer dans un programme en utilisant uniquement ces deux touches sans souci, vers le haut par objet parent ou vers le bas pour atteindre le premier enfant quand vous parcourez la hiérarchie des objets. Par exemple dans un navigateur web comme Firefox, vous pouvez parcourir le document de l'objet, en utilisant simplement ces deux touches. Si suivant ou précédent vous amène vers le haut d'un objet, ou vers le bas au sein d'un objet, des bips se feront entendre et vous indiquent la direction.
 - Vous pouvez maintenant ajuster les paramètres de la voix sans ouvrir le dialogue Paramètres vocaux, grâce à la boucle de réglages de la synthèse vocale. La boucle de la synthèse est un groupe de paramètres de voix que vous pouvez faire défiler en appuyant sur Ctrl+NVDA+droite et Ctrl+NVDA+gauche. Pour modifier un paramètre, utilisez Ctrl+NVDA+haut et Ctrl+NVDA+bas.
 - Ajout d'un raccourci pour l'annonce de la sélection en cours dans les zones d'édition. (NVDA+maj+Flèche haut).
 - Plusieurs raccourcis NVDA qui prononcent le texte (comme l'annonce de la ligne courante etc), épellent le texte désormais, si elles sont exécutées deux fois rapidement.
@@ -2618,7 +2617,7 @@ Accès au contenu web grâce aux nouveaux tampons virtuels en développement (pr
 - Ajout d'un pilote de synthétisation appelé Silence. Il s'agit d'un pilote de synthhétiseur qui ne parle pas du tout, ce qui permet de rendre NVDA complètement silencieux, tout le temps. Finalement, cela pourrait être utilisé avec le support Braille, quand nous aurons mis ce dernier en place.
 - Ajout du réglage de la hauteur des majuscules pour synthèses vocales (capitalPitchChange) grâce à JJ Meddaugh
 - Ajout d'un correctif de J.J. Meddaugh qui rend le script de basculement de l'annonce des objets sous la souris conforme aux autres scripts. NVDA annonce (activé / désactivé) plutôt que de changer toute la déclaration.
-- Ajout de la traduction en espagnol (es), contribution de by Juan C. buo.
+- Ajout de la traduction en espagnol (es), contribution de Juan C. Buño.
 - Ajout du fichier de la langue hongroise par Tamas Gczy.
 - Ajout du fichier pour la langue portugaise par Rui Batista.
 - La modification de la voix dans le dialogue Paramètres vocaux définit maintenant les curseurs de débit, de tonalité et de volume aux nouvelles valeurs selon le synthétiseur, plutôt que de forcer ce dernier à prendre en compte les anciennes valeurs. Cela résout des problèmes où une synthèse vocale comme Eloquence ou viavoice tendaient à parler à un débit beaucoup plus rapide que toutes les autres synthèses.
