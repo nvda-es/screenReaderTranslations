@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>NVDA 2019.1-dev - käyttöopas</TITLE>
+<TITLE>NVDA 2019.2-dev - käyttöopas</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>﻿NVDA 2019.1-dev - käyttöopas</H2>
+<H2>﻿NVDA 2019.2-dev - käyttöopas</H2>
 </CENTER>
 
 
@@ -79,7 +79,8 @@
     <UL>
     <LI><A HREF="#SingleLetterNavigation">6.1. Pikaselausnäppäimet</A>
     <LI><A HREF="#ElementsList">6.2. Elementtilista</A>
-    <LI><A HREF="#ImbeddedObjects">6.3. Upotetut objektit</A>
+    <LI><A HREF="#SearchingForText">6.3. Tekstin etsiminen</A>
+    <LI><A HREF="#ImbeddedObjects">6.4. Upotetut objektit</A>
     </UL>
   <LI><A HREF="#ReadingMath">7. Matemaattisen sisällön lukeminen</A>
     <UL>
@@ -158,6 +159,7 @@
       <LI><A HREF="#ConfigProfileTriggers">11.4.4. ´Käynnistimet</A>
       <LI><A HREF="#ConfigProfileEditing">11.4.5. Profiilin muokkaaminen</A>
       <LI><A HREF="#ConfigProfileDisablingTriggers">11.4.6. Käynnistimien tilapäinen käytöstä poistaminen</A>
+      <LI><A HREF="#ConfigProfileGestures">11.4.7. Activating a profile using input gestures</A>
       </UL>
     <LI><A HREF="#LocationOfConfigurationFiles">11.5. Asetustiedostojen sijainti</A>
     </UL>
@@ -191,9 +193,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc129">14.9.1. Kaikki mallit</A>
-      <LI><A HREF="#toc130">14.9.2. Brailliant BI 32, BI 40 ja B 80</A>
-      <LI><A HREF="#toc131">14.9.3. Brailliant BI 14</A>
+      <LI><A HREF="#toc131">14.9.1. Kaikki mallit</A>
+      <LI><A HREF="#toc132">14.9.2. Brailliant BI 32, BI 40 ja B 80</A>
+      <LI><A HREF="#toc133">14.9.3. Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
     <LI><A HREF="#Seika">14.11. Seika</A>
@@ -289,7 +291,7 @@ NVDA tukee useiden kielten pistekirjoitusjärjestelmiä, lyhennekirjoitus ja tav
 <H3>1.5. Lisenssi ja tekijänoikeustiedot</H3>
 
 <P>
-NVDA on copyright 2006-2018 NVDA:n tekijät.
+NVDA on copyright 2006-2019 NVDA:n tekijät.
 </P>
 <P>
 NVDA on suojattu GNU GPL v2 -lisenssillä.
@@ -1287,8 +1289,24 @@ Vaikka hiiren avulla liikkumiseen tulisikin käyttää fyysistä hiirtä tai kos
 <H2>6. Selaustila</H2>
 
 <P>
-Monisisältöisiä, ei-muokattavia asiakirjoja kuten verkkosivuja luetaan NVDA:lla selaustilassa.
-Tällaisia ovat Mozilla Firefoxissa, Microsoft Internet Explorerissa, Mozilla Thunderbirdissä, Google Chromessa ja Adobe Readerissa luettavat asiakirjat, Microsoft Outlookin HTML-viestit sekä Flash-sisältö.
+Monisisältöisiä, ei-muokattavia asiakirjoja kuten verkkosivuja luetaan NVDA:lla selaustilaa käyttäen.
+Tällaisia asiakirjoja voidaan lukea seuraavissa sovelluksissa:
+</P>
+
+<UL>
+<LI>Mozilla Firefox
+<LI>Microsoft Internet Explorer
+<LI>Mozilla Thunderbird
+<LI>Microsoft Outlookin HTML-viestit
+<LI>Google Chrome
+<LI>Microsoft Edge
+<LI>Adobe Reader
+<LI>Foxit Reader
+<LI>Adobe Flash
+<LI>Tuetut kirjat Amazon Kindle for PC:ssä
+</UL>
+
+<P>
 Selaustila on käytettävissä valinnaisesti myös Microsoft Wordissa.
 </P>
 <P>
@@ -1331,7 +1349,7 @@ Vuorovaikutustila voidaan lisäksi pakottaa käyttöön manuaalisesti, jolloin s
 <TR>
 <TD>Etsi</TD>
 <TD>NVDA+Ctrl+F</TD>
-<TD>Avaa valintaikkunan, jossa voidaan etsiä tekstiä nykyisestä asiakirjasta.</TD>
+<TD>Avaa valintaikkunan, jossa voidaan etsiä tekstiä nykyisestä asiakirjasta. Katso lisätietoja <A HREF="#SearchingForText">Tekstin etsiminen</A> -kappaleesta.</TD>
 </TR>
 <TR>
 <TD>Etsi seuraava</TD>
@@ -1439,11 +1457,48 @@ Kun haluttu kohde on valittu, sen kohdalle voidaan siirtyä tai se voidaan avata
 </TR>
 </TABLE>
 
-<A NAME="ImbeddedObjects"></A>
-<H3>6.3. Upotetut objektit</H3>
+<A NAME="SearchingForText"></A>
+<H3>6.3. Tekstin etsiminen</H3>
 
 <P>
-Sivut voivat sisältää monipuolista sisältöä, joka käyttää sellaisia teknologioita kuin Flash, Java, HTML5, kuten myös sovelluksia ja valintaikkunoita.
+Tämän valintaikkunan avulla voidaan etsiä tekstiä nykyisestä asiakirjasta.
+Teksti kirjoitetaan "Kirjoita etsittävä teksti" -kenttään.
+Hakukentässä oltaessa on myös mahdollista käyttää ylä- ja alanuolta aiempien hakuehtojen valitsemiseen.
+"Sama kirjainkoko" -valintaruutu saa haun käsittelemään isoja ja pieniä kirjaimia eri tavalla.
+Esim. kun tämä on valittuna, teksti "NV Access" löytyy, muttei tekstiä "nv access".
+Kirjainkoon eroja ei tallenneta hakuhistoriaan.
+Hakuehdot tyhjennetään, kun NVDA käynnistetään uudelleen.
+hakujen suorittamiseen käytetään seuraavia näppäimiä:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nimi</TH>
+<TH>Näppäinkomento</TH>
+<TH>kuvaus</TH>
+</TR>
+<TR>
+<TD>Etsi tekstiä</TD>
+<TD>NVDA+Ctrl+F</TD>
+<TD>Avaa Etsi-valintaikkunan.</TD>
+</TR>
+<TR>
+<TD>Etsi seuraava</TD>
+<TD>NVDA+F3</TD>
+<TD>Etsii nykyisen hakuehdon seuraavan esiintymän.</TD>
+</TR>
+<TR>
+<TD>Etsi edellinen</TD>
+<TD>NVDA+Vaihto+F3</TD>
+<TD>Etsii nykyisen hakuehdon edellisen esiintymän.</TD>
+</TR>
+</TABLE>
+
+<A NAME="ImbeddedObjects"></A>
+<H3>6.4. Upotetut objektit</H3>
+
+<P>
+Sivut voivat sisältää monipuolista sisältöä, jossa käytetään sellaisia tekniikoita kuin Flash, Java, HTML5, kuten myös sovelluksia ja valintaikkunoita.
 Kun selaustilassa tullaan niiden kohdalle, NVDA ilmoittaa "upotettu objekti", "sovellus" tai "valintaikkuna".
 Niihin voidaan siirtyä nopeasti käyttäen upotettuihin objekteihin siirtäviä pikaselausnäppäimiä O ja Vaihto+O.
 Näiden objektien kanssa voidaan olla vuorovaikutuksessa painamalla Enteriä niiden kohdalla.
@@ -1481,7 +1536,7 @@ NVDA tukee seuraavia matemaattisia sisältöjä:
 <LI>Design Science MathType Microsoft Wordissa ja PowerPointissa.
 MathTypen on oltava asennettuna. Kokeiluversio riittää.
 <LI>MathML Adobe Readerissa.
-Huomaa, että tämä ei ole vielä virallinen standardi, joten sisältöä tuottavaa ohjelmistoa ei ole julkisesti saatavilla.
+Huom: Tämä ei ole vielä virallinen standardi, joten sisältöä tuottavaa ohjelmistoa ei ole julkisesti saatavilla.
 <LI>Math Kindle for PC:ssä kirjoille, joissa on esteetöntä matemaattista sisältöä.
 </UL>
 
@@ -3053,7 +3108,7 @@ Windowsissa hiirikohdistin muuttaa muotoaan ilmaistakseen tiettyjä asioita, kut
 Näppäinkomento: NVDA+M
 </P>
 <P>
-Kun tämä valintaruutu on valittuna, NVDA lukee hiiriosoittimen alla olevan tekstin. Tällä tavalla on mahdollista löytää asioita ruudulta hiirtä liikuttamalla sen sijaan, että yritettäisiin käyttää objektinavigointia.
+Kun tämä valintaruutu on valittuna, NVDA lukee hiiriosoittimen alla olevan tekstin. Tällä tavalla on mahdollista löytää asioita ruudulta hiirtä liikuttamalla sen sijaan, että käytettäisiin objektinavigointia.
 </P>
 
 <A NAME="MouseSettingsTextUnit"></A>
@@ -3062,6 +3117,9 @@ Kun tämä valintaruutu on valittuna, NVDA lukee hiiriosoittimen alla olevan tek
 <P>
 Jos NVDA on asetettu lukemaan hiiren alla oleva teksti, Tämän asetuksen avulla voidaan määrittää tarkasti, minkä verran tekstiä luetaan.
 Vaihtoehtoina ovat merkki, sana, rivi ja kappale.
+</P>
+<P>
+Tekstiyksikön tarkkuutta voidaan muuttaa mistä tahansa  liittämällä toimintoon syötekomento <A HREF="#InputGestures">Syötekomennot-valintaikkunassa.</A>.
 </P>
 
 <A NAME="MouseSettingsRole"></A>
@@ -3347,7 +3405,19 @@ Tämä asettaa rivimäärän, joka selaustilassa siirrytään painettaessa Page 
 Pikanäppäin: NVDA+V
 </P>
 <P>
-Tällä asetuksella määritetään, sijoitetaanko sellainen sisältö kuten linkit ja muut elementit selaustilassa omille riveilleen, vai säilytetäänkö ne sellaisina kuin ne ruudulla näytetään. Jos asetus on käytössä, kentät jätetään sellaisiksi kuin ne ruudulla näytetään, jos asetus poistetaan käytöstä, kentät sijoitetaan omille riveilleen.
+Tällä asetuksella määritetään, sijoitetaanko esim. linkit ja muut elementit selaustilassa omille riveilleen, vai säilytetäänkö ne sellaisina kuin ne ovat ruudulla.
+Jos asetus on käytössä, elementit näytetään sellaisinaan, mutta jos asetus poistetaan käytöstä, elementit sijoitetaan omille riveilleen.
+</P>
+
+<A NAME="BrowseModeSettingsEnableOnPageLoad"></A>
+<H5>Ota selaustila käyttöön sivua ladattaessa</H5>
+
+<P>
+Tällä valintaruudulla voidaan määrittää, otetaanko selaustila käyttöön automaattisesti sivua ladattaessa.
+Kun asetus ei ole käytössä, selaustila voidaan edelleen ottaa käyttöön manuaalisesti verkkosivuilla tai asiakirjoissa, joissa selaustilaa tuetaan.
+Luettelo selaustilaa tukevista sovelluksista on <A HREF="#BrowseMode">Selaustila -kappaleessa.</A>
+Huom: Tämä asetus ei koske sovelluksia, joissa selaustila on aina valinnainen, kuten esim. Microsoft Wordissa.
+Asetus on oletusarvoisesti käytössä.
 </P>
 
 <A NAME="BrowseModeSettingsAutoSayAll"></A>
@@ -3407,7 +3477,7 @@ Jos tämä asetus on käytössä, NVDA toistaa äänimerkin vaihtaessaan selaus-
 
 <P>
 Tällä oletusarvoisesti käytössä olevalla asetuksella voidaan valita, estetäänkö syötekomentojen (kuten näppäinpainallusten), jotka eivät suorita NVDA-komentoa tai joita ei pidetä yleisinä komentonäppäiminä, pääsy aktiivisena olevaan asiakirjaan.
-Esim. jos asetuksen ollessa käytössä painetaan J-kirjainta, sen tulostuminen asiakirjaan estetään, sillä se ei ole pikaselausnäppäin, tai koska on epätodennäköistä, että se olisi sovelluksen käytössä oleva komento.
+Esim. jos asetuksen ollessa käytössä painetaan J-kirjainta, sen tulostuminen asiakirjaan estetään, sillä se ei ole pikaselausnäppäin, tai koska on epätodennäköistä, että se olisi sovelluksen käytössä oleva näppäinkomento.
 </P>
 
 <A NAME="DocumentFormattingSettings"></A>
@@ -3562,10 +3632,25 @@ Se on käytettävissä vain, jos NVDA on määritetty lataamaan mukautettua kood
 
 <P>
 Kun tämä asetus on käytössä, NVDA yrittää käyttää UI Automation -saavutettavuusrajapintaa tietojen saamiseksi Microsoft Wordin asiakirjasäätimistä.
-Niitä ovat muun muassa itse Microsoft Word sekä lisäksi Microsoft Outlookin viestinluku- ja kirjoitusikkuna.
+Tällaisia ovat muun muassa itse Microsoft Word sekä lisäksi Microsoft Outlookin viestinluku- ja kirjoitusikkuna.
 Uusimpien Microsoft Office 2016/365 -versioiden UI Automation -tuki on windows 10:ssä käytettäessä riittävän kattava tarjotakseen lähes nykyisen kaltaisen tuen Microsoft Word -asiakirjoille, jossa on lisäetuna huomattavasti lisääntynyt reagoivuus.
 Joissakin Microsoft Officen versioissa ei ehkä kuitenkaan ole saatavilla kaikkea tietoa tai ne ilmaistaan väärin, minkä vuoksi UI automation -tukeen ei voi aina luottaa.
-Tämän asetuksen käyttöön ottamista ei vielä suositella suurimmalle osalle käyttäjistä, mutta Office 2016/365 -käyttäjät voivat silti testata ominaisuutta ja antaa palautetta.
+Tämän asetuksen käyttöön ottamista ei vielä suositella, mutta Office 2016/365 -käyttäjien palaute on kuitenkin tervetullutta.
+</P>
+
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Siirrä kohdistus automaattisesti kohdistettaviin elementteihin</H5>
+
+<P>
+Pikanäppäin: NVDA+8
+</P>
+<P>
+Tällä asetuksella, joka on oletusarvoisesti käytössä, voidaan valita, siirretäänkö järjestelmän kohdistus automaattisesti kohdistettaviin elementteihin (linkit, lomakekentät, jne.) selattaessa sisältöä selaustilakohdistimella.
+Jos tämä on käytössä, NVDA toimii kuten versio 2019.1 ja sitä aiemmat.
+Kun asetus poistetaan käytöstä, kohdistusta ei siirretä automaattisesti kohdistettaviin elementteihin selaustilakohdistimella valittaessa.
+Tämä saattaa tarjota nopeamman selauskokemuksen sekä komentoihin vastaamisen.
+Kohdistus päivitetään kuitenkin elementtiin, kun sen kanssa ollaan vuorovaikutuksessa (esim. painiketta painettaessa tai valintaruutua valittaessa).
+Tämä toiminnallisuus on kokeellinen NVDA 2019.2:ssa.
 </P>
 
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
@@ -3652,6 +3737,7 @@ Huom: Tässä noudatetaan <A HREF="#NVDASettings">Asetukset</A>-valintaikkunan <
 </P>
 <P>
 Symbolia muutetaan valitsemalla se Symbolit-luettelosta.
+Symboleita voidaan suodattaa kirjoittamalla Suodata-muokkauskenttään haluttu symboli tai osa sen korvaavasta tekstistä.
 </P>
 
 <UL>
@@ -3760,7 +3846,7 @@ Asetusprofiili sisältää vain ne asetukset, joita profiilia muokattaessa muute
 Useimpien asetusten muuttaminen on profiileissa mahdollista, paitsi <A HREF="#NVDASettings">Asetukset</A>-valintaikkunan Yleiset-kategoriassa olevien, joita käytetään kaikkialla.
 </P>
 <P>
-Asetusprofiilit voidaan ottaa käyttöön manuaalisesti.
+Asetusprofiilit voidaan ottaa käyttöön manuaalisesti joko valintaikkunasta tai itse määritetyillä syötekomennoilla.
 Ne voidaan ottaa käyttöön myös automaattisesti käynnistimien avulla, kuten tiettyyn sovellukseen siirryttäessä.
 </P>
 
@@ -3864,6 +3950,18 @@ Tämä tehdään valitsemalla Asetusprofiilit-valintaikkunassa Poista kaikki kä
 </P>
 <P>
 Käynnistimet poistetaan käytöstä tai otetaan uudelleen käyttöön mistä tahansa liittämällä asetukseen oma syötekomento <A HREF="#InputGestures">Syötekomennot-valintaikkunaa</A> käyttäen.
+</P>
+
+<A NAME="ConfigProfileGestures"></A>
+<H4>11.4.7. Activating a profile using input gestures</H4>
+
+<P>
+Jokaiseen lisättyyn profiiliin voidaan sen käyttöön ottamiseksi liittää yksi tai useampi syötekomento.
+Asetusprofiileilla ei oletusarvoisesti ole syötekomentoja.
+Syötekomennot lisätään <A HREF="#InputGestures">Syötekomennot-valintaikkunaa</A> käyttäen.
+Kullakin profiililla  on oma kohtansa Asetusprofiilit-kategoriassa.
+Kun profiili nimetään uudelleen, kaikki aiemmin lisätyt syötekomennot ovat edelleen käytettävissä.
+Profiilin poistaminen poistaa automaattisesti myös siihen liitetyt syötekomennot.
 </P>
 
 <A NAME="LocationOfConfigurationFiles"></A>
@@ -4875,7 +4973,7 @@ Seuraavassa on Brailliant BI/B- ja BrailleNote Touch -näyttöjen näppäinkomen
 Katso laitteiden käyttöohjeista kuvaukset näppäinten paikoista.
 </P>
 
-<A NAME="toc129"></A>
+<A NAME="toc131"></A>
 <H4>14.9.1. Kaikki mallit</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4965,7 +5063,7 @@ Katso laitteiden käyttöohjeista kuvaukset näppäinten paikoista.
 </TR>
 </TABLE>
 
-<A NAME="toc130"></A>
+<A NAME="toc132"></A>
 <H4>14.9.2. Brailliant BI 32, BI 40 ja B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4987,7 +5085,7 @@ Katso laitteiden käyttöohjeista kuvaukset näppäinten paikoista.
 </TR>
 </TABLE>
 
-<A NAME="toc131"></A>
+<A NAME="toc133"></A>
 <H4>14.9.3. Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
