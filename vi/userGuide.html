@@ -79,7 +79,8 @@
     <UL>
     <LI><A HREF="#SingleLetterNavigation">6.1. Ký tự di chuyển đơn</A>
     <LI><A HREF="#ElementsList">6.2. Hộp thoại danh sách các thành phần</A>
-    <LI><A HREF="#ImbeddedObjects">6.3. Thao tác trên đối tượng nhúng</A>
+    <LI><A HREF="#SearchingForText">6.3. Tìm kiếm văn bản</A>
+    <LI><A HREF="#ImbeddedObjects">6.4. Thao tác trên đối tượng nhúng</A>
     </UL>
   <LI><A HREF="#ReadingMath">7. Đọc nội dung toán học</A>
     <UL>
@@ -158,6 +159,7 @@
       <LI><A HREF="#ConfigProfileTriggers">11.4.4. Tác nhân</A>
       <LI><A HREF="#ConfigProfileEditing">11.4.5. Sửa một hồ sơ cấu hình</A>
       <LI><A HREF="#ConfigProfileDisablingTriggers">11.4.6. Tạm thời tắt tác nhân</A>
+      <LI><A HREF="#ConfigProfileGestures">11.4.7. Kích hoạt một hồ sơ bằng thao tác</A>
       </UL>
     <LI><A HREF="#LocationOfConfigurationFiles">11.5. Tập tin cấu hình</A>
     </UL>
@@ -173,7 +175,7 @@
   <LI><A HREF="#SupportedSpeechSynths">13. Hỗ trợ các bộ đọc</A>
     <UL>
     <LI><A HREF="#eSpeakNG">13.1. eSpeak NG</A>
-    <LI><A HREF="#toc114">13.2. Microsoft Speech API phiên bản 4 (SAPI 4)</A>
+    <LI><A HREF="#toc116">13.2. Microsoft Speech API phiên bản 4 (SAPI 4)</A>
     <LI><A HREF="#SAPI5">13.3. Microsoft Speech API phiên bản 5 (SAPI 5)</A>
     <LI><A HREF="#MicrosoftSpeechPlatform">13.4. Microsoft Speech Platform</A>
     <LI><A HREF="#OneCore">13.5. Giọn Windows OneCore</A>
@@ -191,9 +193,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. Các dòng HumanWare Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc129">14.9.1. Các phím được gán cho tất cả sản phẩm</A>
-      <LI><A HREF="#toc130">14.9.2. Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80</A>
-      <LI><A HREF="#toc131">14.9.3. Phím gán cho Brailliant BI 14</A>
+      <LI><A HREF="#toc131">14.9.1. Các phím được gán cho tất cả sản phẩm</A>
+      <LI><A HREF="#toc132">14.9.2. Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80</A>
+      <LI><A HREF="#toc133">14.9.3. Phím gán cho Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. Các dòng HIMS Braille Sense/Braille EDGE/Smart Beetle</A>
     <LI><A HREF="#Seika">14.11. Màn hình nổi Seika</A>
@@ -1289,7 +1291,24 @@ Bên cạnh sử dụng trực tiếp chuột thì NVDA cung cấp cho bạn th�
 <P>
 Với các tài liệu phức tạp có thuộc tính chỉ đọc như tài liệu web thì sẽ được duyệt bằng chế độ duyệt tài liệu trong NVDA.
 Bao gồm các tài liệu được mở bằng  Mozilla Firefox, Microsoft Internet Explorer, Mozilla Thunderbird, nội dung HTML trong Microsoft Outlook, Google Chrome, Adobe Reader và Adobe Flash.
-Chế độ duyệt tài liệu cũng được hỗ trợ cho Microsoft Word.
+Chế độ này bao gồm tài liệu trong các ứng dụng sau:
+</P>
+
+<UL>
+<LI>Mozilla Firefox
+<LI>Microsoft Internet Explorer
+<LI>Mozilla Thunderbird
+<LI>Các tin nhắn HTML trong Microsoft Outlook
+<LI>Google Chrome
+<LI>Microsoft Edge
+<LI>Adobe Reader
+<LI>Foxit Reader
+<LI>Adobe Flash
+<LI>Các sách của  Amazon được hỗ trợ với máy Kindle
+</UL>
+
+<P>
+Chế độ duyệt tài liệu cũng được hỗ trợ cho Microsoft Word dưới dạng tùy chọn.
 </P>
 <P>
 Trong chế độ duyệt tài liệu, nội dung có thể được duyệt bằng các phím mũi tên.
@@ -1329,9 +1348,9 @@ Thêm vào đó, bạn cũng có thể thiết lập để chế độ focus ti�
 <TD>Cập nhật lại nội dung tài liệu ví dụ như thông tin trong một trang web hiển thị chưa đầy đủ. Chức năng này không hỗ trợ trong Microsoft Word và Outlook</TD>
 </TR>
 <TR>
-<TD>Tìm kiếm nội dung trong tài liệu</TD>
+<TD>Tìm kiếm</TD>
 <TD>NVDA+control+f</TD>
-<TD>Tìm kiếm nội dung trong tài liệu</TD>
+<TD>hiển thị một hộp thoại để bạn có thể nhập nội dung tìm kiếm trong tài liệu hiện hành. Xem phần <A HREF="#SearchingForText">tìm kiếm văn bản</A> để biết thêm thông tin.</TD>
 </TR>
 <TR>
 <TD>Tìm kết quả tiếp theo</TD>
@@ -1439,8 +1458,45 @@ Khi tìm thấy đối tượng mong muốn, bạn có thể đi đến đối t
 </TR>
 </TABLE>
 
+<A NAME="SearchingForText"></A>
+<H3>6.3. Tìm kiếm văn bản</H3>
+
+<P>
+Hộp thoại này cho phép bạn tìm kiếm nội dung trong tài liệu hiện hành.
+Ở phần "Nhập nội dung muốn tìm", có thể nhập nội dung để tìm kiếm.
+Khi ở trường nhập văn bản, bạn có thể dùng mũi tên lên xuống để chọn các nội dung tìm kiếm trước đó.
+Hộp kiểm "Phân biệt chữ hoa và chữ thường" giúp cho việc tìm kiếm cân nhắc đến nội dung chữ hoa / chữ thường.
+Ví dụ, chọn vào "Phân biệt chữ hoa và chữ thường", bạn có thể tìm "NV Access" mà không phải là "nv access".
+Sự khác biệt chữ hoa / thường sẽ không được lưu vào lịch sử tìm kiếm.
+Khi khởi động lại NVDA, lịch sử tìm kiếm trước đó sẽ bị xóa.
+Dùng các phím lệnh sau để thực hiện tìm kiếm:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Tên</TH>
+<TH>Phím</TH>
+<TH>Mô tả</TH>
+</TR>
+<TR>
+<TD>Tìm kiếm văn bản</TD>
+<TD>NVDA+control+f</TD>
+<TD>Mở hộp thoại tìm kiếm</TD>
+</TR>
+<TR>
+<TD>Tìm tiếp</TD>
+<TD>NVDA+f3</TD>
+<TD>tìm sự xuất hiện tiếp theo của nội dung tìm kiếm hiện hành</TD>
+</TR>
+<TR>
+<TD>Tìm trước</TD>
+<TD>NVDA+shift+f3</TD>
+<TD>tìm sự xuất hiện trước đó của nội dung tìm kiếm hiện hành</TD>
+</TR>
+</TABLE>
+
 <A NAME="ImbeddedObjects"></A>
-<H3>6.3. Thao tác trên đối tượng nhúng</H3>
+<H3>6.4. Thao tác trên đối tượng nhúng</H3>
 
 <P>
 Các trang có thể chứa các loại đối tượng sử dụng công nghệ như Adobe Flash, Oracle Java, HTML5 cũng như các hộp thoại hay ứng dụng  khác.
@@ -1991,7 +2047,7 @@ Nghĩa là khi người dùng sử dụng trình đọc màn hình khác và m�
 <P>
 Tương tự đối với web, chế độ duyệt có thể được dùng trong Word, bạn có thể sử dụng những chức năng như duyệt nhanh, duyệt danh sách các thành phần.
 Để bật tắt chế độ duyệt trong Word, bấm NVDA+khoảng trắng.
-Xem thêm thông tin về chế độ duyệt và duyệt nhanh trong phần <A HREF="#BrowseMode">Chế độ duyệt</A>.
+Xem thêm thông tin về chế độ duyệt và duyệt nhanh trong phần <A HREF="#BrowseMode">Chế độ duyệt tài liệu</A>.
 </P>
 
 <A NAME="WordElementsList"></A>
@@ -2095,7 +2151,7 @@ Chuyển qua chế độ duyệt bằng cách bấm NVDA+khoảng trắng. Lúc 
 Các bảng tính của Excel có thể có các biểu mẫu.
 Bạn có thể đi nhanh đến các biểu mẫu thông qua danh sách thành phần hoặc bằng ký tự di chuyển đơn với f và shift+f.
 Khi bạn chuyển đến một biểu mẫu ở chế độ duyệt, bấm enter hoặc khoảng trắng để kích hoạt hoặc chuyển qua chế độ focus và tương tác với biểu mẫu đó.
-Để biết thêm về chế độ duyệt và ký tự di chuyển đơn, hãy xem <A HREF="#BrowseMode">phần chế độ duyệt</A>.
+Để biết thêm về chế độ duyệt và ký tự di chuyển đơn, hãy xem <A HREF="#BrowseMode">phần chế độ duyệt tài liệu</A>.
 </P>
 
 <A NAME="MicrosoftPowerPoint"></A>
@@ -3062,6 +3118,9 @@ Nếu được chọn và bạn di chuyển chuột trên màn hình thì NVDA s
 Tùy chọn này cho phép bạn chọn lượng nội dung sẽ được đọc khi chuột đi qua một đối tượng.
 Các giá trị cho tùy chọn này là: ký tự, từ, dòng hay đoạn.
 </P>
+<P>
+Để chọn lượng nội dung từ bất cứ đâu, hay gán một thao tác thông qua <A HREF="#InputGestures">hộp thoại Quản lý các thao tác</A>.
+</P>
 
 <A NAME="MouseSettingsRole"></A>
 <H5>Thông báo vai trò đối tượng tại vị trí chuột</H5>
@@ -3346,7 +3405,19 @@ Có các mục sau trong cửa sổ phân loại này:
 Phím bật/tắt: NVDA+v
 </P>
 <P>
-Tùy chọn này cho phép bạn thiết lập nội dung ở chế độ duyệt sẽ được trình bày nội dung như các liên kết hay những trường khác trên mỗi dòng; hoặc trình bày như nó hiển thị trên màn hình. Nếu bật, những đối tượng đó sẽ được trình bày như nó hiển thị trên màn hình; nếu tắt, mỗi trường/đối tượng sẽ được trình bày trên từng dòng riêng.
+Tùy chọn này cho phép bạn thiết lập nội dung ở chế độ duyệt sẽ được trình bày nội dung như các liên kết hay những trường khác trên mỗi dòng; hoặc trình bày như nó hiển thị trên màn hình.
+Nếu bật, những đối tượng đó sẽ được trình bày như nó hiển thị trên màn hình; nếu tắt, mỗi trường/đối tượng sẽ được trình bày trên từng dòng riêng.
+</P>
+
+<A NAME="BrowseModeSettingsEnableOnPageLoad"></A>
+<H5>Bật chế độ duyệt khi tải trang</H5>
+
+<P>
+Hộp kiểm này bật tắt tính năng cho phép chế độ duyệt tự động bật khi tải một trang.
+Khi tắt tùy chọn này, vẫn có thể kích hoạt thủ công chế độ duyệt trên các trang hay tài liệu có hỗ trợ chế độ duyệt.
+Xem phần <A HREF="#BrowseMode">Chế độ duyệt tài liệu</A> để biết các ứng dụng được hỗ trợ bởi chế độ này.
+Lưu ý rằng tùy chọn này không áp dụng cho các tình huống mà chế độ duyệt luôn là một tùy chỉnh, ví dụ như trong Microsoft Word.
+Mặc định, tùy chọn này được bật.
 </P>
 
 <A NAME="BrowseModeSettingsAutoSayAll"></A>
@@ -3567,6 +3638,22 @@ Nó được tích hợp trong chính Microsoft Word cũng như trình xem và s
  Chúng tôi vẫn không khuyến khích đa số người dùng bật tính năng này làm mặc định, dù rằng vẫn hoan nghênh những người dùng Office 2016/365 thử nghiệm tính năng này và cung cấp phản hồi.
 </P>
 
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Tự đưa con trỏ hệ thống đến các thành phần có thể có focus trong chế độ duyệt</H5>
+
+<P>
+Phím tắt: NVDA+8
+</P>
+<P>
+Mặc định được bật, tùy chọn này cho phép con trỏ hệ thống tự đưa đến các thành phần có thể có focus hệ thống (liên kết, biểu mẫu, v...v...) khi duyệt nội dugn với con trỏ chế độ duyệt.
+Nếu được bật, tùy chọn này sẽ hoạt động như với các phiên bản NVDA 2019.1 trở về trước.
+Tắt tùy chọn này sẽ không tự đưa focus đến các thành phần có thể có focus khi chúng được chọn với con trỏ chế độ duyệt.
+Kết quả của tùy chọn này có thể là trải nghiệm duyệt web nhanh và phản hồi tốt hơn trong chế độ duyệt.
+Focus sẽ vẫn được cập nhật cho các thành phần cụ thể khi tương tác với nó (ví dụ như bấm vào một nút, chọn vào một hộp kiểm).
+Tính năng này đang được thử nghiệm trong NVDA 2019.2.
++ 
+</P>
+
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
 <H5>Thời gian chờ di chuyển dấu nháy (ms)</H5>
 
@@ -3650,12 +3737,12 @@ Tên ngôn ngữ cho phần chỉnh sửa các phát âm ký hiệu được hi�
 Lưu ý, thiết lập trong hộp thoại này dựa vào thiết lập của tùy chọn "Sử dụng giọng đọc của ngôn ngữ để xử lý ký hiệu và ký tự" trong phân loại <A HREF="#SpeechSettings">tiếng nói</A> trong <A HREF="#NVDASettings">hộp thoại cấu hình của NVDA</A>; cụ thể, nó sẽ sử dụng giọng đọc của ngôn ngữ đó thay vì dùng các thiết lập ngôn ngữ chung của NVDA nếu mục này được chọn.
 </P>
 <P>
-Để thay đổi một ký hiệu, trước tiên, hãy chọn một ký hiệu trong danh sách.
+Để thay đổi một ký hiệu, trước tiên, hãy chọn nó trong danh sách.
+Bạn có thể lọc các kí hiệu bằng cách nhập kí hiệu hay một phần kí hiệu thay thế vào ô nhập liệu tên Lọc theo
+.
 </P>
 
 <UL>
-<LI>Phần thay thế sẽ là văn bản được đọc thay cho ký hiệu.
-<LI>Ở mục mức độ, bạn có thể chọn mức độ đọc cho dấu câu này.
 <LI>Mục Gửi ký hiệu gốc đến bộ đọc sẽ xác định nếu phần thay thế ngược với ký hiệu, nó sẽ gửi trực tiếp đến bộ đọc.
 Điều này sẽ hữu ích khi ký hiệu có nhiệm vụ làm bộ đọc ngưng nghỉ hoặc thay đổi ngữ điệu.
 Ví dụ, bộ đọc sẽ ngưng khi gặp dấu phẩy.
@@ -3759,7 +3846,7 @@ Một hồ sơ cấu hình chỉ chứa các thông tin khác so với cấu hì
 Phần lớn các thông tin cấu hình có thể được thay đổi trong các hồ sơ cấu hình riêng đó, trừ các cấu hình trong phân loại chung  trong hộp thoại <A HREF="#NVDASettings">cấu hình NVDA</A> vì chúng được dùng cho cả NVDA.
 </P>
 <P>
-Bạn có thể chủ động kích hoạt hồ sơ cấu hình của bạn.
+Bạn có thể chủ động kích hoạt hồ sơ cấu hình của bạn từ hộp thoại hoặc bằng thao tác được gán bởi người dùng.
 Hoặc nó cũng có thể được kích hoạt tự động cho một ứng dụng nào đó.
 </P>
 
@@ -3863,6 +3950,18 @@ Bạn có thể làm điều đó bằng cách chọn hộp kiểm "tạm thời
 </P>
 <P>
 Để bật / tắt tạm thời tác nhân ở bất cứ đâu, hãy dùng <A HREF="#InputGestures">hộp thoại  Quản lý thao tác</A> để gán phím lệnh hay thao tác cảm ứng.
+</P>
+
+<A NAME="ConfigProfileGestures"></A>
+<H4>11.4.7. Kích hoạt một hồ sơ bằng thao tác</H4>
+
+<P>
+Với mọi hồ sơ được thêm vào, bạn có thể gán một hay nhiều thao tác để kích hoạt nó.
+Mặc định, hồ sơ cấu hình không được gán thao tác.
+Bạn có thể gán thao tác để kích hoạt một hồ sơ bằng <A HREF="#InputGestures">Hộp thoại quản lý các thao tác</A>.
+Mỗi hồ sơ sẽ tồn tại trong phân loại hồ sơ cấu hình.
+Khi bạn đổi tên một hồ sơ, các thao tác được gán trước đó vẫn hoạt động.
+Việc xóa một hồ sơ sẽ tự xóa luôn thao tác đã gán cho nó.
 </P>
 
 <A NAME="LocationOfConfigurationFiles"></A>
@@ -4037,7 +4136,7 @@ Nó hỗ trợ hơn  43 ngôn ngữ khác nhau.
 Cũng có khá nhiều giọng khác nhau để bạn lựa chọn.
 </P>
 
-<A NAME="toc114"></A>
+<A NAME="toc116"></A>
 <H3>13.2. Microsoft Speech API phiên bản 4 (SAPI 4)</H3>
 
 <P>
@@ -4874,7 +4973,7 @@ Sau đây là danh sách các phím được gán của mẫu màn hình nổi n
 Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết các phím tương ứng.
 </P>
 
-<A NAME="toc129"></A>
+<A NAME="toc131"></A>
 <H4>14.9.1. Các phím được gán cho tất cả sản phẩm</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4964,7 +5063,7 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 </TR>
 </TABLE>
 
-<A NAME="toc130"></A>
+<A NAME="toc132"></A>
 <H4>14.9.2. Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4986,7 +5085,7 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 </TR>
 </TABLE>
 
-<A NAME="toc131"></A>
+<A NAME="toc133"></A>
 <H4>14.9.3. Phím gán cho Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
