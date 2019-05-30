@@ -3,8 +3,9 @@ Quoi de Neuf dans NVDA
 
 %!includeconf: ../changes.t2tconf
 = 2019.2 =
+Les principales améliorations de cette version consistent en l'ajout de l'auto-détection des afficheurs Braille Freedom Scientific, de l'ajout d'un paramètre expérimental dans les paramètres avancés pour empêcher le mode navigation de se déplacer automatiquement vers le curseur (ce qui peut améliorer les performances), une option pour trippler le débit du synthétiseur Windows OneCore, et plein d'autres correctifs.
 
-== Nouvelles fonctionnalités ==
+== Nouveautés ==
 - Le dialogue de recherche inclut maintenant un historique des 20 dernières recherches. (#8482)
  - L'historique de la recherche est effacé lorsque NVDA se ferme ou redémarre.
 - Le support NVDA pour Miranda NG fonctionne avec les versions les plus récentes du client. (#9053)
@@ -23,6 +24,7 @@ Quoi de Neuf dans NVDA
  - Les zones d'édition volent le focus système lorsque vous les parcourez aux flèches sur certains sites Web.
  - Les touches du mode Navigation sont lentes à réagir.
 - Pour les pilotes d'afficheurs braille qui le supportent, les paramètres du pilote peuvent maintenant être modifiés à partir de la catégorie paramètres braille dans le dialogue des paramètres de NVDA. (#7452)
+- Les afficheurs Braille de Freedom Scientific sont maintenant supportés par l'auto-détection des afficheurs Braille. (#7727)
 
 
 == Changements ==
@@ -31,6 +33,7 @@ Quoi de Neuf dans NVDA
 - Mise à jour des annotations emoji du référentiel de données locales communes Unicode vers la version 35.0. (#9445)
 - Mise à jour du traducteur braille liblouis vers la version 3.9.0. (#9439)
 - Le raccourci clavier pour le champ de filtrage dans la liste des éléments en mode navigation a été remplacé par alt + y. (#8728)
+- Lorsqu'un afficheur Braille pris en charge par l'auto-détection est connecté via Bluetooth, NVDA arrête temporairement la recherche des afficheurs Braille connectés en USB pour le même pilote et rebascule sur l'USB lorsqu'il est à nouveau disponible. (#8853)
 
 
 == Corrections de Bogues ==
@@ -51,6 +54,8 @@ Quoi de Neuf dans NVDA
 - Pour les voix Windows OneCore, le débit défini dans NVDA n'est plus affecté par celui défini dans les paramètres vocaux de Windows 10. (#7498)
 - Le journal peut maintenant être ouvert avec NVDA + F1 en l'absence d'informations développeur pour l'objet navigateur courant. (#8613)
 - Il est à nouveau possible d'utiliser les commandes de navigation NVDA dans les tableaux de Google Docs, Firefox et Chrome. (#9494)
+- Les touches "bumper" fonctionnent maintenant correctement sur les afficheurs Braille Freedom Scientific. (#8849)
+- Lors de la lecture du premier caractère d'un document dans Notepad++ 7.7 X64, NVDA ne se bloque plus pendant 10 secondes. (#9609)
 
 
 == Changements pour les développeurs ==
@@ -58,6 +63,7 @@ Quoi de Neuf dans NVDA
 - Le style de fenêtre étendu d'une fenêtre est maintenant exposé à l'aide de la propriété `extendedWindowStyle` sur les objets Window et leurs dérivés. (#9136)
 - Mise à jour du paquet comtypes vers 1.1.7. (#9440, #8522)
 - Lors de l'utilisation de la commande report module info, l'ordre des informations a été modifié pour présenter le module en premier. (#7338)
+- Ajout d'un exemple d'utilisation de nvdaControllerClient.dll avec C#. (#9600)
 
 
 = 2019.1 =
