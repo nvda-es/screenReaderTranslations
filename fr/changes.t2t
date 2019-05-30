@@ -37,11 +37,11 @@ Les améliorations principales de cette version consistent en l'ajout de l'auto-
 
 
 == Corrections de Bogues ==
-- NVDA ne se bloque plus lorsqu'un répertoire d'extensions est vide. (#7686)
+- NVDA ne plante plus lorsqu'un répertoire d'extensions est vide. (#7686)
 - Les marques LTR et RTL ne sont signalées ni en braille ni par épellation lors de l'accès à la fenêtre des propriétés. (#8361)
-- Lorsqu'on se déplace entre les formulaires avec la navigation rapide en mode Navigation, le formulaire entier est maintenant annoncé plutôt que la première ligne seulement. (#9388)
+- Quand on se déplace entre les formulaires avec la navigation rapide en mode Navigation, le formulaire entier est maintenant annoncé plutôt que la première ligne seulement. (#9388)
 - NVDA ne restera plus silencieux quand on quitte l'application Windows 10 Mail. (#9341)
-- NVDA n'échoue plus au démarrage lorsque les paramètres régionaux des utilisateurs sont définis sur une langue inconnue de NVDA, telle que l'anglais (Pays-Bas). (#8726)
+- NVDA n'échoue plus au démarrage lorsque les paramètres régionaux utilisateur sont définis sur une langue inconnue de NVDA, telle que l'anglais (Pays-Bas). (#8726)
 - Quand le mode navigation est activé dans Microsoft Excel et que l'on passe en mode formulaire ou inversement, l'état du mode navigation est désormais correctement signalé. (#8846)
 - NVDA rend maintenant correctement la ligne située au curseur souris dans Notepad ++ et d'autres éditeurs basés sur Scintilla. (#5450)
 - Dans Google Docs (et d'autres éditeurs basés sur le Web), le braille n'indique plus parfois incorrectement " fin de lst " avant le curseur situé au milieu d'un élément de liste. (#9477)
@@ -62,8 +62,16 @@ Les améliorations principales de cette version consistent en l'ajout de l'auto-
 - Vous pouvez maintenant définir la propriété "disableBrowseModeByDefault" sur les modules d'application pour que le mode navigation soit désactivé par défaut. (#8846)
 - Le style de fenêtre étendu d'une fenêtre est maintenant exposé à l'aide de la propriété `extendedWindowStyle` sur les objets Window et leurs dérivés. (#9136)
 - Mise à jour du paquet comtypes vers 1.1.7. (#9440, #8522)
-- Lors de l'utilisation de la commande report module info, l'ordre des informations a été modifié pour présenter le module en premier. (#7338)
+- Lors de l'utilisation de la commande report module info, l'ordre des informations a été modifié pour présenter d'abord le module. (#7338)
 - Ajout d'un exemple d'utilisation de nvdaControllerClient.dll avec C#. (#9600)
+
+
+= 2019.1.1 =
+Cette version ponctuelle corrige les bogues suivants :
+- NVDA ne provoque plus le blocage d'Excel 2007 ou le refus de signaler qu'une cellule contient une formule. (#9431)
+- Google Chrome ne se bloque plus lors de l'interaction avec certaines listes de sélection. (#9364)
+- Un problème empêchant la copie d'une configuration utilisateur dans le profil de configuration système a été corrigé. (#9448)
+- Dans Microsoft Excel, NVDA utilise à nouveau le message traduit pour signaler l'emplacement des cellules fusionnées. (#9471)
 
 
 = 2019.1 =
@@ -2644,6 +2652,6 @@ Les points forts principaux de cette version comprennent le support des édition
 - Les scripts d'augmentation ou de diminution de débit ne montent plus à plus de 100 et ne descendent plus à moins de 0.
 - Si une erreur est détectée quand on choisit une langue via le dialogue Langue de l'interface utilisateur, NVDA alerte l'utilisateur à ce sujet.
 - NVDA demande si la configuration doit être sauvegardée et s'il doit redémarrer lors du changement de langue sous le dialogue Langue de l'interface utilisateur. NVDA doit être relancé pour que les changements prennent effet.
-- Lorsqu'une synthèse vocale choisie par l'utilisateur ne peut pas être chargé par le moyen du dialogue Synthétiseur, NVDA affiche une alerte à cet effet.
-- Lors du chargement d'une synthèse vocale pour la première fois, NVDA permet au synthétiseur de choisir les paramètres de voix, de débit et de hauteur les mieux adaptés, plutôt que de le forcer à appliquer des valeurs par défaut qu’il juge correctes. Cela corrige un problème où les synthétiseurs Eloquence et Viavoice sapi4 tendaient à parler trop vite de prime abord.
+- Lorsqu'un synthétiseur choisi par l'utilisateur ne peut pas être chargé à l'aide du dialogue Synthétiseur, NVDA affiche une alerte à cet effet.
+- Lors du chargement d'un synthétiseur pour la première fois, NVDA lui permet de choisir les paramètres de voix, de débit et de hauteur les mieux adaptés, plutôt que de le forcer à appliquer des valeurs par défaut qu’il juge correctes. Cela corrige un problème où les synthétiseurs Eloquence et Viavoice sapi4 tendaient à parler trop vite de prime abord.
 
