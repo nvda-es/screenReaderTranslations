@@ -10,10 +10,91 @@
 </CENTER>
 
 
+<H2>2019.2</H2>
+
+<P>
+Ebben a kiadásban: Freedom Scientific braille kijelzők automatikus felismerése; kísérleti opcióval kikapcsolható az a viselkedés, hogy a rendszerfókusz automatikusan kövesse a böngészőmód kurzorát, ez bizonyos esetekben hatékonyabbá teheti a böngészést; sebességfokozás opció a Windows OneCore hangokhoz és más hibajavítások.
+</P>
+
+<H3>Újdonságok</H3>
+
+<UL>
+<LI>A keresés párbeszédablak már eltárolja a legutóbbi 20 keresést. (<A HREF="https://github.com/nvaccess/nvda/issues/8482">#8482</A>)
+ <UL>
+ <LI>A keresési előzmények törlődnek az NVDA bezárásakor és újraindításakor.
+ </UL>
+<LI>Az NVDA már támogatja a Miranda NG kliens újabb verzióit is. (<A HREF="https://github.com/nvaccess/nvda/issues/9053">#9053</A>) 
+<LI>Új opció a böngészőmód beállításai közt: Már kikapcsolható az automatikus böngészőmódra váltás lapok betöltésénél. ehhez meg kell szűntetni a "Böngészőmód engedélyezése lapok betöltésekor" opció bejelölt állapotát. (<A HREF="https://github.com/nvaccess/nvda/issues/8716">#8716</A>) 
+ <UL>
+ <LI>Ez az opció az alapértelmezett viselkedést szabályozza, a böngészőmód bármikor bekapcsolható a megfelelő billentyűparanccsal (alapértelmezés szerint: NVDA+szóköz).
+ </UL>
+<LI>Most már az Írásjelkiejtés párbeszédablakon is van lehetőség szűrésre, hasonló módon, mint az elemlistában és a beviteli parancsok párbeszédablakán. (<A HREF="https://github.com/nvaccess/nvda/issues/5761">#5761</A>)
+<LI>Billentyűparancs rendelhető az egér szövegfeldolgozási egységének beállításához. Nincs alapértelmezetten hozzárendelt parancs, aki használni szeretné, a beviteli parancsok közt beállíthatja. (<A HREF="https://github.com/nvaccess/nvda/issues/9056">#9056</A>)
+<LI>A windows OneCore beszédszintetizátornál is működik már a Sebességfokozás opció, ami jelentősen felgyorsítja a beszédet. (<A HREF="https://github.com/nvaccess/nvda/issues/7498">#7498</A>)
+<LI>Az eSpeak-NG és a Windows OneCore szintetizátorok használatakor a sebességfokozás beállítható a szintetizátor beállítási körön is. (<A HREF="https://github.com/nvaccess/nvda/issues/8934">#8934</A>)
+<LI>A profilok már aktiválhatók billentyűparancsal is. A billentyűparancsok beállítására a Beviteli parancsok párbeszédablakában a Profilok kategóriában van lehetőség. (<A HREF="https://github.com/nvaccess/nvda/issues/4209">#4209</A>)
+ <UL>
+ <LI>Eclipse: Támogatás az automatikus kiegészítéshez a kódszerkesztőben. (<A HREF="https://github.com/nvaccess/nvda/issues/5667">#5667</A>)
+ <LI>Ezenkívül Javadoc információk is kinyerhetők a szerkesztőből, amennyiben rendelkezésre állnak. Billentyűparancs: NVDA+d.
+ </UL>
+<LI>Új, kísérleti opció a Haladó beállítások közt, mely lehetővé teszi, hogy a rendszerfókusz ne kövesse automatikusan a böngészőmód kurzorát. (Automatikus rendszerfókusz az aktiválható elemekre) (<A HREF="https://github.com/nvaccess/nvda/issues/2039">#2039</A>) Ez a viselkedés nem kapcsolható ki minden weboldalon, de az alábbi problémákat orvosolhatja: 
+ <UL>
+ <LI>Az NVDA visszavonja a legutóbb kiadott böngészőmódú parancsot, és a kurzor visszaugrik a parancs kiadását megelőző állapotba.
+ <LI>Böngészőmódú navigáció során egy szerkesztőmező magához ragadja a fókuszt, és kéretlenül aktív elemmé válik.
+ <LI>A böngészőmódú parancsok túl lassan reagálnak.
+ </UL>
+<LI>Braille kijelzők: Amelyik driver támogatja, annak a beállításai már módosíthatók a Braille beállítások között. (<A HREF="https://github.com/nvaccess/nvda/issues/7452">#7452</A>)
+</UL>
+
+<H3>Változások</H3>
+
+<UL>
+<LI>A beszédszintetizátor hangereje most már 5 egységenként állítható a szintetizátor beállítási körben. (<A HREF="https://github.com/nvaccess/nvda/issues/6754">#6754</A>)
+<LI>A bővítménykezelő címsorában jelzi, hogy minden bővítmény le van tiltva, amikor az NVDA --disable-addons paraméterrel lett elindítva. (<A HREF="https://github.com/nvaccess/nvda/issues/9473">#9473</A>)
+<LI>Frissült az Unikód CLDR, új emodzsi verzió: 35.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9445">#9445</A>)
+<LI>Frissült a liblouis braille fordító, új verzió: 3.9.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9439">#9439</A>)
+<LI>Az angol verzióban megváltoztatták az elemlista szűrőjének a gyorsgombját, mostantól alt+y. (<A HREF="https://github.com/nvaccess/nvda/issues/8728">#8728</A>)
+</UL>
+
+<H3>Hibajavítások</H3>
+
+<UL>
+<LI>Az NVDA már nem fagy le, ha egy bővítmény mappája üres. (<A HREF="https://github.com/nvaccess/nvda/issues/7686">#7686</A>)
+<LI>A tulajdonságok ablak megnyitásakor már nem jelennek meg LTR és RTL jelölők sem Brailleban, sem karakterenkénti olvasásnál. (<A HREF="https://github.com/nvaccess/nvda/issues/8361">#8361</A>)
+<LI>Ha böngészőmódban gyorsnavigációval űrlapmezőre ugrunk, az NVDA már a mező teljes tartalmát bejelenti, nemcsak az első sorát. (<A HREF="https://github.com/nvaccess/nvda/issues/9388">#9388</A>)
+<LI>Az NVDA már nem némul el a Windows 10 Posta alkalmazás bezárása után. (<A HREF="https://github.com/nvaccess/nvda/issues/9341">#9341</A>)
+<LI>Az NVDA indulását már nem akadályozza meg, ha a felhasználó a Windows területi beállításaiban olyan területi formátumot adott meg,ami az NVDA számára ismeretlen, pl. Angol (Hollandia). (<A HREF="https://github.com/nvaccess/nvda/issues/8726">#8726</A>)
+<LI>Ha a Microsoft excelben aktiválva van a böngészőmód, és átvált egy fókuszmódú böngészőre, vagy egy fókuszmódú böngészőről egy böngészőmódú Exceles dokumentumra, a böngészőmód bejelentése az elvártnak megfelelően történik. (<A HREF="https://github.com/nvaccess/nvda/issues/8846">#8846</A>)
+<LI>Notepad++ és más Scintilla alapú szerkesztők: Az NVDA már helyesen jelenti be az egérkurzornál található sort. (<A HREF="https://github.com/nvaccess/nvda/issues/5450">#5450</A>)
+<LI>Google Dokumentumok és más web-alapú szerkesztők: braille kijelzőkön nem jelenik meg egy lista vége előtt a lista végét jelző szimbólum. (<A HREF="https://github.com/nvaccess/nvda/issues/9477">#9477</A>)
+<LI>Windows 10 2019 májusi frissítés: az NVDA már nem jelent be túl sok értesítést a hangerő változásáról, amennyiben azt hardveres gombokkal változtatják miközben a fájlkezelő az aktív alkalmazás. (<A HREF="https://github.com/nvaccess/nvda/issues/9466">#9466</A>)
+<LI>Az Írásjelkiejtés párbeszédablak betöltődése sokkal gyorsabb lett ezernél is több elemet tartalmazó szimbólumszótárak használatakor. (<A HREF="https://github.com/nvaccess/nvda/issues/8790">#8790</A>)
+<LI>Notepad++ és más Scintilla alapú szerkesztők: az NVDA helyesen jelenti be a sorokat, amennyiben a "Hosszú sorok tördelése" opció be van kapcsolva. (<A HREF="https://github.com/nvaccess/nvda/issues/9424">#9424</A>)
+<LI>Microsoft Excel: az NVDA a shift+enter és a shift+numpadEnter parancsok használata után bejelenti az aktív cella koordinátáit. (<A HREF="https://github.com/nvaccess/nvda/issues/9499">#9499</A>)
+<LI>Visual Studio 2017 és újabb verziók: az Objects Explorer ablakban az NVDA megfelelően jelenti be a fa struktúrák kijelölt elemeit. (<A HREF="https://github.com/nvaccess/nvda/issues/9311">#9311</A>)
+<LI>Ha két bővítmény nevében csak kisbetűk-nagybetűk terén van eltérés, az NVDA nem fogja két különböző bővítménynek érzékelni azokat. (<A HREF="https://github.com/nvaccess/nvda/issues/9334">#9334</A>)
+<LI>Windows OneCore hangok: Az NVDA-ban beállított beszédsebességet nem befolyásolja a Windows beszéd beállításaiban beállított beszédsebesség. (<A HREF="https://github.com/nvaccess/nvda/issues/7498">#7498</A>)
+<LI>A napló akkor is megnyitható az NVDA+F1 paranccsal, amikor nem áll rendelkezésre fejlesztői információ a navigátorkurzor alatt található elemhez. (<A HREF="https://github.com/nvaccess/nvda/issues/8613">#8613</A>)
+<LI>Újra használhatóak az NVDA táblázatnavigációs  parancsai  a Google Dokumentumokban, a Firefoxban és a Chromeban. (<A HREF="https://github.com/nvaccess/nvda/issues/9494">#9494</A>)
+</UL>
+
+<H2>2019.1.1</H2>
+
+<P>
+Ez a kiadás az alábbi hibajavításokat tartalmazza:
+</P>
+
+<UL>
+<LI>Az Excel 2007 nem omlik össze és nem is utasítja vissza az elvárt visszajelzést, amennyiben képletet tartalmazó cellára navigálunk. (<A HREF="https://github.com/nvaccess/nvda/issues/9431">#9431</A>)
+<LI>A Google Chrome nem omlik össze bizonyos listamezők használatakor. (<A HREF="https://github.com/nvaccess/nvda/issues/9364">#9364</A>)
+<LI>javítottak egy hibát,ami megakadályozta, hogy egy felhasználó átmásolja a beállításait a rendszerkonfigurációs profilba. (<A HREF="https://github.com/nvaccess/nvda/issues/9448">#9448</A>)
+<LI>Microsoft Excelben az NVDA a beállított nyelven jelzi az egyesített cellák koordinátáit. (<A HREF="https://github.com/nvaccess/nvda/issues/9471">#9471</A>)
+</UL>
+
 <H2>2019.1</H2>
 
 <P>
-Ebben a kiadásban: Microsoft word és Excel kezelhetőségének javítása; stabilitási és biztonsági fejlesztések, mint pl. kompatibilitással kapcsolatos információkkal ellátott bővítmények; és sok más hibajavítás.
+ Ebben a kiadásban: Microsoft word és Excel kezelhetőségének javítása; stabilitási és biztonsági fejlesztések, mint pl. kompatibilitással kapcsolatos információkkal ellátott bővítmények; és sok más hibajavítás.
 </P>
 
 <H3>Újdonságok</H3>
