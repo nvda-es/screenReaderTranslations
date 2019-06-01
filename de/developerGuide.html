@@ -50,7 +50,7 @@
   <LI><A HREF="#toc26">3.17. Hervorhebungsfarben setzen mit Textinfo-Objekten</A>
   <LI><A HREF="#toc27">3.18. Beispiel 7: Verwenden von Textinfo-Objekten zum Ermitteln des hervorgehobenen Objekts</A>
   <LI><A HREF="#toc28">3.19. Verwenden von Dialog- und Meldungsfenstern zur Interaktion mit Anwendungsmodulen und globalen Erweiterungen</A>
-  <LI><A HREF="#toc29">3.20. Beispiel 8: Eine globale Erweiterung, das beim Drücken von NVDA+Umschalt+R nach  dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Werkseinstellungen zurücksetzt</A>
+  <LI><A HREF="#toc29">3.20. Beispiel 8: Eine globale Erweiterung, das beim Drücken von NVDA+Umschalt+R nach dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Standard-Einstellungen zurücksetzt</A>
     <UL>
     <LI><A HREF="#toc30">3.20.1. Hinweise zur Funktion "wx.CallAfter"</A>
     </UL>
@@ -733,7 +733,7 @@ Anwendungsmodule besitzen eine sehr nützliche Eigenschaft namens "sleepmode". D
 Der Schlafmodus ist nützlich für anwendungen, die eigene Bildschirmlese-Funktionen besitzen oder für Spiele, bei denen man volle Kontrolle über die Tastatur benötigt.
 </P>
 <P>
-Obwohl der Anwender den Schlafmodus mit NVDA+Umschalt+S ein- und ausschalten kann, kann der Entwickler trotzdem die Standardeinstellung des Schlafmodus vorgeben.
+Obwohl der Anwender den Schlafmodus mit NVDA+Umschalt+S umschalten kann, kann der Entwickler trotzdem die Standardeinstellung des Schlafmodus vorgeben.
 Dies geschied einfach durch setzen der Eigenschaft "sleepMode" auf "True" in der Klasse des Anwendungsmoduls.
 </P>
 
@@ -963,7 +963,7 @@ Hinweis: Die Konstanten, die die angezeigten Schaltflächen angeben, können auc
 </P>
 
 <A NAME="toc29"></A>
-<H3>3.20. Beispiel 8: Eine globale Erweiterung, das beim Drücken von NVDA+Umschalt+R nach  dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Werkseinstellungen zurücksetzt</H3>
+<H3>3.20. Beispiel 8: Eine globale Erweiterung, das beim Drücken von NVDA+Umschalt+R nach dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Standard-Einstellungen zurücksetzt</H3>
 
 <P>
 Das folgende Beispiel zeigt, wie Sie die im Python-Modul "gui" mitgelieferte Funktion "messageBox" verwenden können, um einen Bestätigungsdialog anzuzeigen. gleichzeitig wird die Verwendung der Funktion CallAfter() aus dem Modul "wx" demonstriert, die nötig ist, um zu verhindern, dass sich NVDA während der Anzeige des Bestätigungsdialogs aufhängt. Kopieren sie den folgenden Quelltext in eine Datei beliebigen namens in ihr benutzerspezifisches Verzeichnis für globale Erweiterungen.
@@ -984,7 +984,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
     def script_resetconfig(self, gestures):
         wx.CallAfter(self.resetconfig)
     def resetconfig(self):
-        if gui.messageBox(caption='Konfiguration zurücksetzen', message='Möchten Sie wirklich die Konfiguration auf die Werkseinstellungen zurücksetzen und NVDA danach neu starten?', style=wx.YES|wx.NO)==wx.YES:
+        if gui.messageBox(caption='Konfiguration zurücksetzen', message='Möchten Sie wirklich die Konfiguration auf die Standard-Einstellungen zurücksetzen und NVDA danach neu starten?', style=wx.YES|wx.NO)==wx.YES:
             config.load(True)
             core.restart()
 </PRE>
