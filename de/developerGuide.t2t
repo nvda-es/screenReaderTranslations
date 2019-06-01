@@ -458,7 +458,7 @@ Ein Beispiel für eine Ereignisbehandlungsroutine finden Sie im Beispiel 1.
 Anwendungsmodule besitzen eine sehr nützliche Eigenschaft namens "sleepmode". Diese Eigenschaft deaktiviert, wenn sie auf "True" gesetzt wird, fast alle Funktionen von NVDA.
 Der Schlafmodus ist nützlich für anwendungen, die eigene Bildschirmlese-Funktionen besitzen oder für Spiele, bei denen man volle Kontrolle über die Tastatur benötigt.
 
-Obwohl der Anwender den Schlafmodus mit NVDA+Umschalt+S ein- und ausschalten kann, kann der Entwickler trotzdem die Standardeinstellung des Schlafmodus vorgeben.
+Obwohl der Anwender den Schlafmodus mit NVDA+Umschalt+S umschalten kann, kann der Entwickler trotzdem die Standardeinstellung des Schlafmodus vorgeben.
 Dies geschied einfach durch setzen der Eigenschaft "sleepMode" auf "True" in der Klasse des Anwendungsmoduls.
 
 ++ Beispiel 4: Ein Schlafmodus-Anwendungsmodul ++
@@ -634,7 +634,7 @@ Wenn Sie Anwendungsmodule oder globale Erweiterungen schreiben, kann es manchmal
 Hinweis: Die Konstanten, die die angezeigten Schaltflächen angeben, können auch benutzt werden, um zu prüfen, welche Schaltfläche der Anwender gedrückt hat, um das Meldungsfenster zu schließen.
 
 
-++ Beispiel 8: Eine globale Erweiterung, das beim Drücken von NVDA+Umschalt+R nach  dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Werkseinstellungen zurücksetzt ++
+++ Beispiel 8: Eine globale Erweiterung, das beim Drücken von NVDA+Umschalt+R nach dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Standard-Einstellungen zurücksetzt ++
 Das folgende Beispiel zeigt, wie Sie die im Python-Modul "gui" mitgelieferte Funktion "messageBox" verwenden können, um einen Bestätigungsdialog anzuzeigen. gleichzeitig wird die Verwendung der Funktion CallAfter() aus dem Modul "wx" demonstriert, die nötig ist, um zu verhindern, dass sich NVDA während der Anzeige des Bestätigungsdialogs aufhängt. Kopieren sie den folgenden Quelltext in eine Datei beliebigen namens in ihr benutzerspezifisches Verzeichnis für globale Erweiterungen.
 
 ```
@@ -652,7 +652,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
     def script_resetconfig(self, gestures):
         wx.CallAfter(self.resetconfig)
     def resetconfig(self):
-        if gui.messageBox(caption='Konfiguration zurücksetzen', message='Möchten Sie wirklich die Konfiguration auf die Werkseinstellungen zurücksetzen und NVDA danach neu starten?', style=wx.YES|wx.NO)==wx.YES:
+        if gui.messageBox(caption='Konfiguration zurücksetzen', message='Möchten Sie wirklich die Konfiguration auf die Standard-Einstellungen zurücksetzen und NVDA danach neu starten?', style=wx.YES|wx.NO)==wx.YES:
             config.load(True)
             core.restart()
 ```
