@@ -10,6 +10,104 @@
 </CENTER>
 
 
+<H2>2019.2</H2>
+
+<P>
+このリリースのハイライトは Freedom Scientific 点字ディスプレイの自動検出、ブラウズモードでフォーカスを自動的に移動させないための「高度な設定」の実験的オプション（性能の改善に役立つ可能性があります）、Windows OneCore 音声の「高速読み上げ」オプションへの対応、および多くのバグ修正です。
+</P>
+
+<H3>新機能</H3>
+
+<UL>
+<LI>「検索」ダイアログで20件まで履歴を利用できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8482">#8482</A>)
+ <UL>
+ <LI>NVDA を終了または再起動すると、検索の履歴は消去されます。
+ </UL>
+<LI>NVDA の Miranda NG 対応において、このアプリの最近のバージョンを使用できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9053">#9053</A>) 
+<LI>NVDA設定ダイアログの「ブラウズモード」カテゴリ「ページの読み込み時にブラウズモードを有効にする」をチェックなしにすると、初期状態でブラウズモードを無効にできます。 (<A HREF="https://github.com/nvaccess/nvda/issues/8716">#8716</A>) 
+ <UL>
+ <LI>このオプションをチェックなしにしても、NVDA+スペースを押すと、手動でブラウズモードに切り替えることができます。
+ </UL>
+<LI>句読点/記号読み辞書のダイアログにおいて、要素リストや入力ジェスチャーのダイアログと同様に、「フィルター」を使って該当する項目だけを表示できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5761">#5761</A>)
+<LI>マウスカーソル位置のテキスト（マウスカーソルが移動した場合）の読み上げ範囲を変更するコマンドが追加されました。ただし既定のジェスチャーは割り当てられていません。 (<A HREF="https://github.com/nvaccess/nvda/issues/9056">#9056</A>)
+<LI>Windows OneCore 音声の設定に「高速読み上げ」オプションが追加されました。これにより従来よりも大幅に高速に読み上げることができます。 (<A HREF="https://github.com/nvaccess/nvda/issues/7498">#7498</A>)
+<LI>「高速読み上げ」オプションは「簡単音声設定」の設定項目に追加されました。現在は eSpeak NG および Windows OneCore 音声で利用できます。 (<A HREF="https://github.com/nvaccess/nvda/issues/8934">#8934</A>)
+<LI>設定プロファイルを手動でアクティブ化するジェスチャーを割り当てることが可能になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4209">#4209</A>)
+ <UL>
+ <LI>このジェスチャーは「入力ジェスチャー」ダイアログで設定してください。
+ </UL>
+<LI>Eclipse のコードエディターにおける自動入力候補に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5667">#5667</A>)
+ <UL>
+ <LI>エディターで NVDA+d を押すと Javadoc の情報を利用できる場合に読むことができます。
+ </UL>
+<LI>システムのフォーカスをブラウズモードのカーソルに追従させたくない場合に、NVDA設定ダイアログの「高度な設定」オプション「ブラウズモード」→「可能な場合にフォーカスを自動的に移動」をチェックなしにできます。(<A HREF="https://github.com/nvaccess/nvda/issues/2039">#2039</A>) これをすべてのウェブサイトでチェックなしにすることはお勧めできませんが、以下を解決できる可能性があります: 
+ <UL>
+ <LI>ラバーバンド効果: NVDA が直前のブラウズモードのキー入力を取り消して以前の位置にジャンプしてしまう場合があります。
+ <LI>一部のウェブサイトで、複数のエディットボックスがある場合に下矢印キーを押すとシステムフォーカスが移動してしまう場合があります。
+ <LI>ブラウズモードのキー操作への反応が遅くなる場合があります。
+ </UL>
+<LI>新しい点字ディスプレイドライバーが提供されている場合に、NVDA設定ダイアログの「点字」カテゴリから点字ディスプレイの設定を変更できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7452">#7452</A>)
+<LI>Freedom Scientific の点字ディスプレイが点字ディスプレイの自動検出に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7727">#7727</A>)
+</UL>
+
+<H3>変更点</H3>
+
+<UL>
+<LI>簡単音声設定において、音量が10ずつではなく5ずつ増えたり減ったりするようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/6754">#6754</A>)
+<LI>NVDAを --disable-addons オプションをつけて起動したときのアドオンマネージャーの表示をわかりやすくしました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9473">#9473</A>)
+<LI>Unicode 共通ロケールデータリポジトリの絵文字説明をバージョン35.0に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9445">#9445</A>)
+<LI>liblouis 点訳エンジンをバージョン3.9.0に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9439">#9439</A>)
+<LI>ブラウズモードの要素リストのフィルタフィールドのショートカットキーを alt+y に変更しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8728">#8728</A>)
+<LI>自動検出された点字ディスプレイが Bluetooth 経由で接続されている場合、 NVDA は同じドライバーでサポートされている USB 接続の点字ディスプレイを引き続き検索します。そして USB 接続が利用可能になった場合はそちらに切り替えます。 (<A HREF="https://github.com/nvaccess/nvda/issues/8853">#8853</A>)
+</UL>
+
+<H3>バグ修正</H3>
+
+<UL>
+<LI>アドオンフォルダーが空のときに NVDA がクラッシュする不具合が修正されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7686">#7686</A>)
+<LI>エクスプローラーのプロパティウィンドウを点字ディスプレイで表示したり1文字単位で読み上げたりした場合にLTRやRTLのマークが報告されていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8361">#8361</A>)
+<LI>ブラウズモードの1文字ナビゲーションでフォームフィールドにジャンプすると、そのフォームフィールドの最初の行だけを報告するのではなく、フォームフィールド全体を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9388">#9388</A>)
+<LI>Windows 10 Mail アプリを終了した後で NVDA が応答しなくなる問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9341">#9341</A>)
+<LI>ユーザーの地域設定が NVDA が認識できない値（例えば「英語（オランダ）」など）に設定されていても、NVDA が起動に失敗しないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8726">#8726</A>)
+<LI>Microsoft Excel でブラウズモードが有効になっているときに、ウェブブラウザ（フォーカスモードであってもブラウズモードであっても）に切り替えると、ブラウズモードの状態が適切に報告されなかった問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8846">#8846</A>)
+<LI>NVDA は Notepad++ および他の Scintilla ベースのエディターでマウスカーソルの位置にある行を正しく報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5450">#5450</A>)
+<LI>Google ドキュメント（およびその他の Web ベースのエディター）において、リスト項目の途中で、カーソルの手前に "lst end" が存在すると誤って表示していた不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9477">#9477</A>)
+<LI>Windows 10 May 2019 アップデートにおいて、ファイルエクスプローラーにフォーカスがあるときにハードウェアボタンで音量を変更すると不適切に頻繁に音量の通知をしていた不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9466">#9466</A>)
+<LI>1000以上の項目を含む「句読点/記号読み辞書」を使用するとき、ダイアログを従来よりもずっと高速に開くことができるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8790">#8790</A>)
+<LI>Notepad++ などで使用されている Scintilla コントロールにおいて、ワードラップが有効になっていても NVDA が正しく行を読み取れるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9424">#9424</A>)
+<LI>Microsoft Excel において、shift+enter または shift+numpadEnter ジェスチャーでセルを移動した場合に、セル座標を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9499">#9499</A>)
+<LI>Visual Studio 2017 以降の「オブジェクトエクスプローラー」ウィンドウにおいて、カテゴリを使用するオブジェクトツリーまたはメンバーツリーで、選択した項目を正しく報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9311">#9311</A>)
+<LI>大文字と小文字の違いでしか名前を区別できないアドオンが、異なるアドオンとして扱われていた問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/9334">#9334</A>)
+<LI>Windows OneCore 音声において、NVDA の設定における音声の速さが Windows 10 の「音声の速度」の設定の影響を受けなくなりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7498">#7498</A>)
+<LI>NVDA+F1 が押されたときに現在のナビゲータオブジェクトに関する開発者情報がない場合、ログを開くようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8613">#8613</A>)
+<LI>Firefox および Chrome で Google ドキュメントを使用する場合に NVDA のテーブルナビゲーションコマンドを使用できなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9494">#9494</A>)
+<LI>Freedom Scientific の点字ディスプレイでバンパーキーが使えるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8849">#8849</A>)
+<LI>Notepad++ 7.7 の64ビット版において、ドキュメントの最初の文字を読むと NVDA は最大で10秒間フリーズしていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9609">#9609</A>)
+</UL>
+
+<H3>開発者向けの変更</H3>
+
+<UL>
+<LI>アプリモジュールの "disableBrowseModeByDefault" プロパティを使うと、デフォルトでブラウズモードをオフにできます。 (<A HREF="https://github.com/nvaccess/nvda/issues/8846">#8846</A>)
+<LI>ウィンドウの拡張ウィンドウスタイルを、 Window オブジェクトおよびそのサブクラスの `extendedWindowStyle` プロパティから参照できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9136">#9136</A>)
+<LI>comtypes パッケージを 1.1.7 に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9440">#9440</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8522">#8522</A>)
+<LI>モジュール情報の報告コマンド（NVDA+Ctrl+F1)において、報告する情報の順序が変更され、モジュール名を最初に報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7338">#7338</A>)
+<LI>C# から nvdaControllerClient.dll を使用するサンプルが追加されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9600">#9600</A>)
+</UL>
+
+<H2>2019.1.1</H2>
+
+<P>
+このリリースでは以下の不具合を修正しました:
+</P>
+
+<UL>
+<LI>Excel 2007 でセルに数式がある場合に、NVDA がクラッシュする、またはセルの内容を報告しないことがある問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/9431">#9431</A>)
+<LI>Google Chrome がリストボックスの操作でクラッシュすることがある問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/9364">#9364</A>)
+<LI>ユーザーの設定プロファイルを「ログオンまたはその他のセキュアスクリーン」の設定にコピーできないことがある問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9448">#9448</A>)
+<LI>Microsoft Excel において結合されたセルの座標を報告するときに NVDA がローカライズされたメッセージを使用していなかった問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9471">#9471</A>)
+</UL>
+
 <H2>2019.1</H2>
 
 <P>
@@ -941,7 +1039,7 @@
 <LI>ブラウズモードにおいて、1文字ナビゲーションで移動しようとした要素が現在のドキュメントで未対応の場合に、その方向にこれ以上要素がないと報告するのではなく、サポートされていないと報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5691">#5691</A>)
 <LI>Microsoft Excel の要素リストでシートの一覧を表示するときに、グラフだけが含まれているシートが正しく含まれるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5698">#5698</A>)
 <LI>IntelliJ や Android Studio など複数のウィンドウを持つ Java アプリにおいて、ウィンドウを切り替えるときに NVDA は不必要な情報を報告しないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5732">#5732</A>)
-<LI>Notepad++ など Scintilla ベースのテキストエディタにおいて、点字ディスプレイを使用する場合に、カーソルの移動によって点字出力が適切に更新されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5678">#5678</A>)
+<LI>Notepad++ など Scintilla ベースのテキストエディターにおいて、点字ディスプレイを使用する場合に、カーソルの移動によって点字出力が適切に更新されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5678">#5678</A>)
 <LI>点字出力を有効化したときに NVDA がクラッシュすることがある問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4457">#4457</A>)
 <LI>Microsoft Word において、段落インデントは常にユーザーが指定した長さの単位（センチメートルやインチなど）で報告されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5804">#5804</A>)
 <LI>音声のみで出力されていた NVDA のメッセージの多くが、点字ディスプレイでも出力されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5557">#5557</A>)
