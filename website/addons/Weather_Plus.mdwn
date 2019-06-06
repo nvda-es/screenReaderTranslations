@@ -275,6 +275,9 @@ If you have modified the cities list, by pressing "Cancel", you will be remember
 	* a couple of "for" cycles with incorrect maximum values caused the call to a non-existent sound effect.
 * Fixed bug in local time in "details";
 	* 12-hour time conversion gave a error.
+* Fixed a bug in the Yahoo Weather Forecast report;
+	* In some cities the forecasts start from the previous day and not from the current one.
+	* The correction of these cities entails the loss of the last days of forecast proportionate to the mismatch of dates (if the forecast days are set to 10).
 
 # Version 6.4 #
 * Daylight saving time removed in the "Details" function;
