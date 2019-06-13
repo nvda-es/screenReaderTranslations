@@ -12,6 +12,10 @@ addresses = {
         'lang': '',
         'email': ['nvdal10n@exbi.nvaccess.org'],
     },
+    'af_ZA': {
+        'lang':'Afrikaans',
+        'email': ['Hendrik Steyn <groothendrik.steyn@gmail.com>', 'Dr. Tamru E. Belay <g.braille@sympatico.ca>'],
+    },
     'am': {
         'lang':'Amharic',
         'email': ['KETEMA ZEREGAW <kzeregaw@msn.com>', 'Dr. Tamru E. Belay <g.braille@sympatico.ca>'],
