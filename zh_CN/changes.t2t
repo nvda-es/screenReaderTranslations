@@ -23,7 +23,7 @@ NVDA更新日志
 - A command has been added to change the mouse text unit resolution (how much text will be spoken when the mouse moves), it has not been assigned a default gesture. (#9056)
 - Windows OneCore 语音合成器现在有了一个语速倍增选项，支持明显更快的语速。 (#7498)
 - The windows OneCore synthesizer now has a rate boost option, which allows for significantly faster speech. (#7498)
-- 现在可以在支持的语音合成器设置中配置语速加倍选项了，（目前支持 eSpeak-NG 和 Windows OneCore）。 (#8934)
+- 现在可以在支持的语音合成器设中配置语速加倍选项了，（目前支持 eSpeak-NG 和 Windows OneCore）。 (#8934)
 - The Rate Boost option is now configurable from the Synth Settings Ring for supported speech synthesizers. (Currently eSpeak-NG and Windows OneCore). (#8934)
 - 现在可以用手势激活用户配置文件了。 (#4209)
  - 手势必须在“输入手势”对话框中设定。
@@ -33,7 +33,7 @@ NVDA更新日志
  - 另外，当 Javadoc 信息被显示时，可以通过NVDA加d来阅读。
 - In Eclipse, added support for autocompletion in code editor. (#5667)
  - Additionally, Javadoc information can be read from the editor when it is present by using NVDA+d.
-- 在高级设置面板中增加了一个实验选项，用于防止系统焦点随浏览模式光标移动而移动（自动把焦点跳转到可聚焦的元素上）。 (#2039) 尽管这个选项并不适合在所有网页中禁用，但它能够修复以下问题：
+- 在高级设置面板中增加了一个实验选项，用于防止系统焦点随浏览模式光标移动而移动（自动把焦点跳转到可聚焦的元素上）。 (#2039) 尽管这个选项并不适合在所有网页中禁用，但这能够修复以下问题：
  - Rubber效应： NVDA在使用跳转到上一个位置的快捷键时，偶尔会撤消上次的浏览模式的快捷键。
   - 在某些网站上使用下光标浏览时，编辑框会窃取系统焦点。
    - 浏览模式快捷键响应速度缓慢。
@@ -52,19 +52,30 @@ NVDA更新日志
 - Synthesizer volume is now increased and decreased by 5 instead of 10 when using the settings ring. (#6754)
 - 当NVDA加上“禁用插件”标签运行时，插件管理器的文字显示更加准确。 (#9473)
 - Clarified the text in the add-on manager when NVDA is launched with the --disable-addons flag. (#9473)
+- 更新 Unicode 通用本地表情解释库至35.0版本。 (#9445)
 - Updated Unicode Common Locale Data Repository emoji annotations to version 35.0. (#9445)
+- 更新 liblouis 盲文翻译器至3.9.0。 (#9439)
 - Updated liblouis braille translator to version 3.9.0. (#9439)
+- 浏览模式下的元素列表过滤器快捷键更改成了alt+y。 (#8728)
 - The hotkey for the filter field in the elements list in browse mode has changed to alt+y. (#8728)
+- 当一台自动检测盲文显示器通过蓝牙连接至电脑，NVDA将会持续搜索同一驱动所支持的USB盲文显示器，并且在其可用时立刻切换到USB连接。 (#8853)
 - When an auto detected braille display is connected via Bluetooth, NVDA will keep searching for USB displays supported by the same driver and switch to a USB connection if it becomes available. (#8853)
 
 
-== Bug Fixes ==
+== 错误修复 ==
+- 当一个插件目录为空时，NVDA不再崩溃。 (#7686)
 - NVDA no longer crashes when an add-on directory is empty. (#7686)
+- 查看属性窗口时，NVDA在盲文和逐字浏览时不在读出LTR和RTL标签。 (#8361)
 - LTR and RTL marks are no longer reported in Braille or per-character speech when accessing the properties window. (#8361)
+- 当使用浏览模式在表格中快速导航时，现在整个表格都会被朗读，而不仅仅是第一行。 (#9388)
 - When jumping to form fields with Browse Mode quick navigation, the entire form field is now announced rather than just the first line. (#9388)
+- 在退出Windows 10邮件应用时，NVDA不在没有声音。 (#9341)
 - NVDA will no longer become silent after exiting the Windows 10 Mail app. (#9341)
+- 当默认语言被设置成NVDA所不识别的语言时，NVDA不在无法启动，例如英语（荷兰）。 (#8726)
 - NVDA no longer fails to start when the users regional settings are set to a locale unknown to NVDA, such as English (Netherlands). (#8726)
+- 当在 Excel 中启用浏览模式后跳转到处于聚焦模式的浏览器中，或者反过来时，浏览模式状态将被正确朗读。 (#8846)
 - When browse mode is enabled in Microsoft Excel and you switch to a browser in focus mode or vice versa, browse mode state is now reported appropriately. (#8846)
+- 在 Notepad++或其他基于 Scintilla 的编辑器中，鼠标指向的那一行现在能被正确朗读。 (#5450)
 - NVDA now properly reports the line at the mouse cursor in Notepad++ and other Scintilla based editors. (#5450)
 - In Google Docs (and other web-based editors), braille no longer sometimes incorrectly shows "lst end" before the cursor in the middle of a list item. (#9477)
 - In the Windows 10 May 2019 Update, NVDA no longer speaks many volume notifications if changing the volume with hardware buttons when File Explorer has focus. (#9466)
