@@ -103,11 +103,13 @@ NVDA更新日志
 - When reading the first character of a document in Notepad++ 7.7 X64, NVDA no longer freezes for up to ten seconds. (#9609)
 
 
-== 开发者修改 ==
+== 插件以及NVDA核心开发者需要了解的变动 ==
+- You can now set the "disableBrowseModeByDefault" property on app modules to leave browse mode off by default. (#8846)
 - You can now set the "disableBrowseModeByDefault" property on app modules to leave browse mode off by default. (#8846)
 - The extended window style of a window is now exposed using the `extendedWindowStyle` property on Window objects and their derivatives. (#9136)
 - Updated comtypes package to 1.1.7. (#9440, #8522)
 - When using the report module info command, the order of information has changed to present the module first. (#7338)
+- 增加了C#语言调用nvdaControllerClient.dll的例子 (#9600)
 - Added an example to demonstrate using nvdaControllerClient.dll from C#. (#9600)
 
 
@@ -251,7 +253,7 @@ This point release fixes the following bugs:
 - It should be no longer necessary to turn off in-cell editing in Microsoft Excel's options to access the cell edit control with NVDA in Excel 2016/365. (#8146).
  
 
-== 开发者修改 ==
+== 插件以及NVDA核心开发者需要了解的变动 ==
 - NVDA can now  be built with all editions of Microsoft Visual Studio 2017 (not just the Community edition). (#8939)
 - You can now include log output from liblouis into the NVDA log by setting the louis boolean flag in the debugLogging section of the NVDA configuration. (#4554)
 - Add-on authors are now able to provide NVDA version compatibility information in add-on manifests. (#6275, #9055)
@@ -332,7 +334,7 @@ This release fixes a crash at start up if NVDA's user interface language is set 
 - In Google Slides with Mozilla Firefox, NVDA no longer reports selected text on every control with focus. (#8964)
 
 
-== 开发者修改 ==
+== 插件以及NVDA核心开发者需要了解的变动 ==
 - gui.nvdaControls now contains two classes to create accessible lists with check boxes. (#7325)
  - CustomCheckListBox is an accessible subclass of wx.CheckListBox.
  - AutoWidthColumnCheckListCtrl adds accessible check boxes to an AutoWidthColumnListCtrl, which itself is based on wx.ListCtrl.
@@ -456,7 +458,7 @@ This is a minor release to fix a critical bug in NVDA which caused 32 bit versio
 - NVDA will no longer make iTunes 12.9 and newer completely unusable to interact with. (#8744)
 
 
-== 开发者修改 ==
+== 插件以及NVDA核心开发者需要了解的变动 ==
 - Added scriptHandler.script, which can function as a decorator for scripts on scriptable objects. (#6266)
 - A system test framework has been introduced for NVDA. (#708)
 - Some changes have been made to the hwPortUtils module: (#1271)
@@ -575,7 +577,7 @@ This is a minor release to fix a critical bug in NVDA which caused 32 bit versio
 - In Windows 10 RS5, NVDA no longer reports extra redundant information when switching tasks with alt+tab. (#8258)
 
 
-== 开发者修改 ==
+== 插件以及NVDA核心开发者需要了解的变动 ==
 - The developer info for UIA objects now contains a list of the UIA patterns available. (#5712)
 - App modules can now force certain windows to always use UIA by implementing the isGoodUIAWindow method. (#7961)
 - The hidden boolean flag "outputPass1Only" in the braille section of the configuration has again been removed. Liblouis no longer supports pass 1 only output. (#7839)
@@ -664,7 +666,7 @@ This is a special release of NVDA which addresses   a bug in the Onecore Windows
 - NVDA no longer fails to start on Windows 7 complaining about an internal api-ms dll, when a particular version of the Visual Studio 2017 redistributables have been installed by another application. (#7975)
 
 
-== 开发者修改 ==
+== 插件以及NVDA核心开发者需要了解的变动 ==
 - Added a hidden boolean flag to the braille section in the configuration: "outputPass1Only". (#7301, #7693, #7702) 
  - This flag defaults to true. If false, liblouis multi pass rules will be used for braille output.
 - A new dictionary (braille.RENAMED_DRIVERS) has been added to allow for smooth transition for users using drivers that have been superseded by others. (#7459)
@@ -771,7 +773,7 @@ This is a special release of NVDA which addresses   a bug in the Onecore Windows
 - Backward scrolling functionality has been fixed for Freedom Scientific braille displays containing a left bumper bar. (#7713)
 
 
-== 开发者修改 ==
+== 插件以及NVDA核心开发者需要了解的变动 ==
 - "scons tests" now checks that translatable strings have translator comments. You can also run this alone with "scons checkPot". (#7492)
 - There is now a new extensionPoints module which provides a generic framework to enable code extensibility at specific points in the code. This allows interested parties to register to be notified when some action occurs (extensionPoints.Action), to modify a specific kind of data (extensionPoints.Filter) or to participate in deciding whether something will be done (extensionPoints.Decider). (#3393)
 - You can now register to be notified about configuration profile switches via the config.configProfileSwitched Action. (#3393)
@@ -918,7 +920,7 @@ This is a special release of NVDA which addresses   a bug in the Onecore Windows
 - In Firefox and Chrome, Browse Mode table navigation commands now skip over hidden table cells. (#6652, #5655)
 
 
-== 开发者修改 ==
+== 插件以及NVDA核心开发者需要了解的变动 ==
 - Timestamps in the log now include milliseconds. (#7163)
 - NVDA must now be built with Visual Studio Community 2015. Visual Studio Express is no longer supported. (#7110)
  - The Windows 10 Tools and SDK are now also required, which can be enabled when installing Visual Studio.
@@ -995,7 +997,7 @@ This is a special release of NVDA which addresses   a bug in the Onecore Windows
 - Fixed some other rare selection problems in browse mode. (#7131)
 
 
-== 开发者修改 ==
+== 插件以及NVDA核心开发者需要了解的变动 ==
 - Commandline arguments are now processed with Python's argparse module, rather than optparse. This allows certain options such as -r and -q to be handled exclusively. (#6865)
 - core.callLater now queues the callback to NVDA's main queue after the given delay, rather than waking the core and executing it directly. This stops possible freezes due to the  core accidentally going to sleep after processing a callback, in the midle of  a modal call such as the desplaying of a message box. (#6797)
 - The InputGesture.identifiers property has been changed so that it is no longer normalized. (#6945)
@@ -1080,7 +1082,7 @@ This is a special release of NVDA which addresses   a bug in the Onecore Windows
 - NVDA no longer becomes unusable after exiting Windows Media Player while focused on a slider control. (#5467)
 
 
-== 开发者修改 ==
+== 插件以及NVDA核心开发者需要了解的变动 ==
 - Profiles and configuration files are now automatically upgraded to meet the requirements of schema modifications. If there is an error during upgrade, a notification is shown, the configuration is reset and the old configuration file is available in the NVDA log at 'Info' level. (#6470)
 
 
