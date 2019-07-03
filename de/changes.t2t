@@ -5,7 +5,6 @@ Was ist neu in NVDA
 = 2019.2 =
 Zu den Highlights dieser Version gehören die automatische Erkennung von Braillezeilen der Firma Freedom Scientific, eine experimentelle Einstellung im erweiterten Bedienfeld, um den Lesemodus vom automatisch sich bewegenden Fokus auszuschließen (was zu Leistungssteigerungen führen kann), eine Option zur Geschwindigkeitserhöhung für die Windows OneCore-Sprachausgabe, um sehr schnelle Sprechgeschwindigkeiten zu erreichen und viele andere Fehlerbehebungen.
 
-
 == Neue Funktionen ==
 - Der NVDA-spezifische Suchdialog enthält nun einen Verlauf der letzten 20 Sucheinträge. (#8482)
  - Der Suchverlauf wird gelöscht, wenn NVDA beendet oder neu gestartet wird.
@@ -20,8 +19,7 @@ Zu den Highlights dieser Version gehören die automatische Erkennung von Braille
  - Die Tastenkürzel müssen im Dialog "Eingaben..." konfiguriert werden.
 - In eClipse wurde die Unterstützung für die Autovervollständigung im Code-Editor hinzugefügt. (#5667)
  - Zusätzlich können vorhandene JavaDoc-Informationen aus dem Editor über den Tastenbefehl NVDA+d gelesen werden.
-- Dem Bereich Erweiterte Einstellungen wurde eine experimentelle Option hinzugefügt, mit der Sie den System-Fokus daran hindern können, dem viertuellen Cursor zu folgen (Automatische Bewegung des System-Fokus auf hervorhebbare Elemente ausschalten). (#2039)
- Diese Option ist nicht für jede Seite von Nutzen, aber für viele Webseiten löst diese Option folgende Probleme:
+- Dem Bereich Erweiterte Einstellungen wurde eine experimentelle Option hinzugefügt, mit der Sie den System-Fokus daran hindern können, dem viertuellen Cursor zu folgen (Automatische Bewegung des System-Fokus auf hervorhebbare Elemente ausschalten). (#2039) Diese Option ist nicht für jede Seite von Nutzen, aber für viele Webseiten löst diese Option folgende Probleme:
  - Gummibandeffekt: Der virtuelle Cursor im Lesemodus springt sporadisch zu vorherigen Positionen.
  - Eingabefelder blockieren den System-Fokus, wenn sie auf einigen Webseiten mit Pfeiltaste nach unten navigieren.
  - Die Schnellnavigationstasten im Lesemodus reagieren langsam.
@@ -70,16 +68,11 @@ Zu den Highlights dieser Version gehören die automatische Erkennung von Braille
 
 
 = 2019.1.1 =
-Diese Version behebt mehrere Sicherheits- und andere wichtige Probleme, die in NVDA 2019.1 enthalten sind.
-
-== Fehlerbehebungen ==
-- Der Eintrag Spenden im NVDA-Menü ist nun in den Sicherheitsmeldungen, Benutzerkontensteuerung, Windows-Anmeldung, etc. deaktiviert, da dies ein Sicherheitsrisiko darstellt. (#1419)
-- Es ist nun nicht mehr möglich, innerhalb der Benutzeroberfläche von NVDA in sicheren Desktops (Sperrbildschirm, Benutzerkontensteuerung und Windows-Anmeldung) zu kopieren oder einzufügen, da dies ein Sicherheitsrisiko darstellt. (#1421)
-- In Mozilla Firefox 4 funktioniert der Wechsel zum Befehl mit dem virtuellen Puffer (NVDA+control+space) nun so, wie er sollte, um eingebettete Objekte wie Flash-Inhalte zu umgehen. (#1429)
-- Wenn das Sprechen von Befehlstasten aktiviert ist, werden verschobene Zeichen nicht mehr falsch als Befehlstasten gesprochen. (#1422)
-- Wenn das Sprechen von Befehlstasten aktiviert ist, wird das Betätigen von Leertaste mit anderen Modifikatoren als Umschalt (wie Strg und Alt) nun als Befehlstaste angezeigt. (#1424)
-- Die Protokollierung ist nun vollständig deaktiviert im Anmelde- und Sperrbildschirm sowie der Benutzerkontensteuerung und anderen Sicherheitsmeldungen, da dies ein Sicherheitsrisiko darstellt. (#1435)
-- Im Eingabehilfemodus werden Gesten nun auch dann protokolliert, wenn sie nicht an ein Skript gebunden sind (gemäß der Bedienungsanleitung). (#1425)
+Diese Version behebt die folgenden Probleme:
+- Es kommt in Excel 2007 nicht mehr zu Abstürzen, wenn NVDA ansagen soll, ob eine Zelle eine Formel enthält. (#9431)
+- Beim Umgang mit Listenfeldern in Google Chrome kommt es nicht mehr zu Abstürzen. (#9364)
+- Ein Problem beim Kopieren der Benutzerkonfiguration ins Systemprofil wurde behoben. (#9448)
+- Bei der Angabe der Zellkoordinaten für verbundene Zellen in Excel verwendet NVDA nun wieder die übersetzten Meldungen. (#9471)
 
 
 = 2019.1 =
@@ -108,6 +101,7 @@ Bitte beachten Sie die unten folgende Liste der Änderungen für weitere Details
 
 == Änderungen ==
 - Liblouis braille-Übersetzer wurde auf Version 3.8.0 aktualisiert. (#9013)
+- Entwickler können nun eine NVDA-Version angeben, die für eine Erweiterung mindestens erforderlich ist. NVDA wird eine Erweiterung nicht laden, wenn die angegebene Minimalversion neuer ist als die aktuell verwendete NVDA-Version. (#6275)
 - Autoren von Erweiterungen können nun die letzte Version von NVDA angeben, mit der die Erweiterung getestet wurde. Wenn eine Erweiterung nur mit einer Version von NVDA getestet wurde, die niedriger ist als die aktuelle Version, wird NVDA die Installation oder das Laden der entsprechenden Erweiterungen ablehnen. (#6275)
 - Diese Version von NVDA ermöglicht die Installation und das Laden von Erweiterungen, die noch keine Informationen zur minimalen und letzten getesteten NVDA-Version enthalten, aber ein Upgrade auf zukünftige Versionen von NVDA (z.B. 2019.2) kann automatisch dazu führen, dass diese älteren Erweiterungen deaktiviert werden.
 - Der Befehl zum Bewegen der Maus zum Navigator-Objekt (NVDA-Cursor) funktioniert nun sowohl in Microsoft Word als auch für UIA-Steuerungen, insbesondere in Microsoft Edge. (#7916, #8371)
@@ -116,7 +110,7 @@ Bitte beachten Sie die unten folgende Liste der Änderungen für weitere Details
 - Der Pfad zur norwegischen Braille-Table wurde geändert, um dem Standard aus dem Jahr 2015 zu entsprechen. (#9170)
 - Bei der Navigation nach Absatz (Strg+Pfeiltasten) oder nach Tabellenzelle (Strg+Alt+Pfeiltasten) werden Rechtschreibfehler nicht mehr gemeldet, auch wenn dies in den Einstellungen aktiviert ist. Absätze und Tabellenzellen können recht groß sein und große Textmengen enthalten. Die Berechnung von Rechtschreibfehlern in einigen Anwendungen kann sehr kostspielig sein und die Performance stark beeinträchtigen. (#9217)
 - NVDA lädt nicht mehr automatisch benutzerdefinierte Anwendungsmodulle, globalPlugins sowie Braille- und Sprachausgabentreiber aus dem NVDA-Benutzer-Konfigurationsverzeichnis. Dieser Code sollte stattdessen als Erweiterung mit korrekten Versionsinformationen verpackt werden, um sicherzustellen, dass inkompatibler Code nicht mit aktuellen Versionen von NVDA ausgeführt wird. (#9238)
-- Für Entwickler, die Code während der Entwicklung testen müssen, aktivieren Sie das Developer Scratchpad-Verzeichnis von NVDA in der Kategorie Erweiterte Einstellungen in den NVDA-Einstellungen und legen Sie Ihren Code in das Verzeichnis 'scratchpad' im NVDA-Benutzerkonfigurationsverzeichnis ab, nachdem  diese Option aktiviert wurde.
+ - Für Entwickler, die Code während der Entwicklung testen müssen, aktivieren Sie das Developer Scratchpad-Verzeichnis von NVDA in der Kategorie Erweiterte Einstellungen in den NVDA-Einstellungen und legen Sie Ihren Code in das Verzeichnis 'scratchpad' im NVDA-Benutzerkonfigurationsverzeichnis ab, nachdem  diese Option aktiviert wurde.
 
 
 == Fehlerbehebungen ==
