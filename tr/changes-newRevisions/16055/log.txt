@@ -1,0 +1,20 @@
+commit 0d29265e6400faac824a7a44c5d127f6ee45fd2a
+Author: Michael Curran <michaelDCurran@users.noreply.github.com>
+Date:   Wed May 22 11:28:52 2019 +1000
+
+    Report virtual desktop switches in Windows 10 (#8259)
+    
+    * Report virtual desktop switches in Windows 10.
+    The desktop is checked on focus changes, and also the desktop's own name changes in case the focus does not move (such as when on the task bar).
+    
+    * eventHandler: desktop switches can only be reported on Windows 10 April 2019 and above.
+    
+    * Update what's new.
+    
+    * Fix winVersion check for virtual desktop switches.
+    
+    * Desktop IAccessible NVDAObject: hardcode its role to window, and ensure that parent, next and previous are all None, so that it could be used for the root of the NVDAObject tree. Window NVDAObject: don't ban the desktop window class from using a higher API, which means it will no use IAccessible., and therefore on newer Windows 10 builds, the virtual desktop name will be reflected in the Desktop NVDAObject's name.
+    
+    * Event handler: April 2019 -> May 2019 Update
+    
+    * Update what's new.
