@@ -401,6 +401,7 @@ Las siguientes órdenes están disponibles para revisión de texto:
 | Seleccionar después Copiar desde cursor de revisión | NVDA+f9 | NVDA+f9 | none | Comienza la selección después procesa la copia desde la posición actual del cursor de revisión. La acción actual no se lleva a cabo hasta que digas a NVDA dónde está el final del rango de texto |
 | Seleccionar después copiar a cursor de revisión | NVDA+f10 | NVDA+f10 | none | En la primera pulsación, el texto se selecciona desde encima de la posición previamente fijada como marca de comienzo e incluyendo la posición actual del cursor de revisión. Después de pulsar esta tecla una segunda vez, el texto se copiará al portapapeles de Windows |
 | Anunciar formato del texto | NVDA+f | NVDA+f | no | Informa del formato del texto donde esté situado actualmente el cursor de revisión. Pulsando dos veces muestra la información en modo exploración |
+| Anunciar reemplazo de símbolo actual | No | No | no | Verbaliza el símbolo donde esté colocado el cursor de revisión. Pulsado dos veces, muestra el símbolo y el texto utilizado para verbalizarlo en modo exploración. |
 %kc:endInclude
 
 nota: las teclas del teclado numérico requieren que la tecla BloqNum esté desactivada para funcionar apropiadamente.
@@ -1670,6 +1671,12 @@ Esto incluye el mismo Microsoft Word, y también el visor de mensajes y el compo
 Sin embargo, puede haber alguna información que no esté expuesta o que esté incorrectamente expuesta en algunas versiones de Microsoft Office, lo que significa que no siempre se puede confiar en este soporte de la UI automation.
 Todavía no recomendamos que la mayoría de los usuarios activen esta opción de forma predeterminada, aunque invitamos a los usuarios de Office 2016/365 a que prueben esta función y nos envíen sus comentarios.
 
+==== Utilizar UI Automation para acceder a la Consola de Windows cuando esté disponible ====[AdvancedSettingsConsoleUIA]
+Cuando esta opción esté activada, NVDA utilizará una versión nueva de trabajo en curso de su soporte para la Consola de Windows que aprovecha las ventajas de las [mejoras de accesibilidad hechas por Microsoft https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/]. Esta característica es altamente experimental y todavía incompleta, así que su uso aún no está recomendado. Sin embargo, una vez completado, se prevé que este nuevo soporte se convierta  en el predeterminado, mejorando el rendimiento y la estabilidad de NVDA en las consolas de órdenes de Windows.
+
+==== Verbalizar contraseñas en consolas UIA ====[AdvancedSettingsWinConsoleSpeakPasswords]
+Esta opción controla si se verbalizan los caracteres por [verbalizar caracteres al escribir #KeyboardSettingsSpeakTypedCharacters] o [verbalizar palabras al escribir #KeyboardSettingsSpeakTypedWords] en situaciones donde la pantalla no se actualice (tales como entrada de contraseña) en la Consola de Windows con el soporte UI automation activado. Por razones de seguridad, esta opción debería dejarse deshabilitada. Sin embargo, es posible que desees habilitarla si experimentas problemas de rendimiento o de inestabilidad con el anuncio de caracteres y/o palabras al escribir mientras utilizas el nuevo soporte experimental de NVDA para la Consola.
+
 ==== Poner Automáticamente el Foco del Sistema en los Elementos enfocables en Modo Exploración ====[BrowseModeSettingsAutoFocusFocusableElements]
 Tecla: NVDA+8
 
@@ -1889,7 +1896,7 @@ Para cambiar cómo se configura NVDA en las pantallas de inicio de sesión/UAC, 
 
 ++ Visualizador del Registro ++[LogViewer]
 El visualizador del Registro, encontrado en Herramientas en el menú NVDA, te permite ver toda la salida que haya ocurrido hasta ahora desde cuando iniciaste NVDA por última vez.
-
+Utilizando NVDA+F1 se abrirá el visualizador del registro y se mostrará la información del desarrollador sobre el navegador de objetos actual.
 Además de leer el contenido, también puedes guardar una copia del fichero de registro, o refrescar el visualizador tal que se muestre la salida más reciente desde que el visualizador de registro fue abierto.
 Estas acciones están disponibles en el menú de visualizador de Registro.
 
