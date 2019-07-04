@@ -1,0 +1,73 @@
+commit 52bf8b78ce2e69543eac20501dc9ffba99ffe9a3
+Author: Bill Dengler <codeofdusk@gmail.com>
+Date:   Mon May 27 18:03:39 2019 -0400
+
+    Preliminary support for UI Automation in Windows Console (#9614)
+    
+    * Add a feature flag for UIA console support.
+    
+    At the moment, it merely disables NVDA's existing console support, falling back to what UIA support is available in NVDA. The option is currently called `ConsoleUIA`, but we'll need to change this once autodetection is implemented (as there will be three options at that point).
+    
+    Typed characters are now spoken in UIA consoles, but characters are doubled when typing quickly, leading to incorrect typed word reporting.
+    
+    * Disable in-process injection for speak typed characters for now.
+    
+    This fixes the doubled characters bug, making speaked typed words function as intended, but it may have other implications.
+    
+    * Receive textChanged events from UIA and add consoleUIA and consoleUIATextInfo classes to implement automatic readout and work around a caret movement bug in Windows 10 version 1903.
+    
+    The consoleUIA class inherits from NVDAObjects.behaviors.Terminal, which serves as the foundation for automatic readout support. At the moment, it is likely that such support will either be not functional at all or report extraneous text from user input.
+    
+    * Introduce basic automatic readout support, and rename ConsoleUIATextInfo->consoleUIATextInfo for consistency.
+    
+    See the source code comments in this commit for some steps still incomplete.
+    
+    * Filter out extraneous characters by disabling live text reporting while a user is typing.
+    
+    This does not regress NVDA functionality, since we already cancel speech when the user types.
+    
+    * Cleanup.
+    
+    * Style, eliminate magic number, halve typing timeout, update label in GUI to inform the user that restarting NVDA is required to switch console implementations.
+    
+    * Clear isTyping when tab is pressed to announce tab completion.
+    
+    * Re-implement consoleUIA._getTextLines using UIATextPattern.GetVisibleRanges. This may improve performance when large amounts of text are written to the console, but possibly at the cost of less reliable autoread (particularly when the screen is refreshed or scrolled).
+    
+    * Review actions, style, update user guide.
+    
+    The user guide will need to be updated once auto-detection is introduced (and therefore the NVDA preference is changed).
+    
+    * Review actions.
+    
+    * Remove unneeded event_textChanged
+    
+    * Fix document review on Windows 10 1903.
+    
+    This fix adds a new textInfo instance variable, _expandCollapseBeforeReview, which stops review from expanding and immediately collapsing the textInfo during review. For some reason, this was causing object review to malfunction in this instance.
+    
+    * Remove 1903 warning from user guide.
+    
+    * Check bad UIA window class name at runtime.
+    
+    This allows for UIA console support to be dynamically enabled/disabled.
+    
+    Note: _UIAHandler.badUIAWindowClassNames has been removed. To check if a UIA windowClassName is bad, use the new _UIAHandler.UIAHandler._isBadUIAWindowClassName method.
+    
+    * Add a new winVersion.isAtLeastWin10 function for checking win10 builds with friendly version numbers, and only register for UIA textChange on Windows 10.
+    
+    * Misc review actions.
+    
+    * Review actions.
+    
+    * Change config spec
+    
+    * Meeting actions.
+    
+    * Make auto the default.
+    
+    * Use->force
+    
+    * Updated what's new.
+    
+    * Settings dialog: Ensure that the UIA in Windows Consoles option can be restored to default using the Advance Panel's restore to defaults button.
