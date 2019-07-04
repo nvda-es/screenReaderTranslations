@@ -48,6 +48,9 @@ O subliñable desta versión inclúe a deteción automática de pantallas braill
  </UL>
 <LI>Para os controladores de pantalla braille que o admitan, agora pódense cambiar as opcións do controlador dende a categoría de opcións braille na caixa de diálogo de opcións do NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/7452">#7452</A>)
 <LI>Agora as pantallas braille de Freedom Scientific admiten a deteción automática de pantallas braille. (<A HREF="https://github.com/nvaccess/nvda/issues/7727">#7727</A>)
+<LI>Engadida unha orde para amosar o reemprazo do símbolo baixo o cursor de revisión. (<A HREF="https://github.com/nvaccess/nvda/issues/9286">#9286</A>)
+<LI>Engadida unha opción experimental ao panel de Opcións avanzadas que che permite probar unha nova reescritura en curso do soporte do NVDA para a Consola de Windows usando a API Microsoft UI Automation. (<A HREF="https://github.com/nvaccess/nvda/issues/9614">#9614</A>)
+<LI>Na Consola Python, o campo de entrada agora admite o pegado de varias liñas dende o portapapeis. (<A HREF="https://github.com/nvaccess/nvda/issues/9776">#9776</A>)
 </UL>
 
 <H3>Cambios</H3>
@@ -56,9 +59,12 @@ O subliñable desta versión inclúe a deteción automática de pantallas braill
 <LI>O volume do sintetizador aumenta e diminúe en 5 en lugar de en 10 cando se usa o anel de opcións. (<A HREF="https://github.com/nvaccess/nvda/issues/6754">#6754</A>)
 <LI>Acrarado o texto no administrador de complementos cando se lanza o NVDA co indicador --disable-addons. (<A HREF="https://github.com/nvaccess/nvda/issues/9473">#9473</A>)
 <LI>Actualizado Unicode Common Locale Data Repository anotacións emoji á versión 35.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9445">#9445</A>)
-<LI>Actualizado o transcriptor de braille liblouis á versión 3.9.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9439">#9439</A>)
 <LI>En inglés, a tecla de atallo para o campo filtrar na listaxe de elementos no modo exploración cambiou a alt+y. (<A HREF="https://github.com/nvaccess/nvda/issues/8728">#8728</A>)
 <LI>Cando unha pantalla braille autodetectada se conecte a través do Bluetooth, o NVDA seguerá procurando pantallas USB compatibles co mesmo controlador e cambiará a unha conexión USB se está dispoñible. (<A HREF="https://github.com/nvaccess/nvda/issues/8853">#8853</A>)
+<LI>Actualizado eSpeak-NG a commit 67324cc.
+<LI>Actualizado o transcriptor braille liblouis á versión 3.10.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9439">#9439</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9678">#9678</A>)
+<LI>O NVDA agora anunciará a palabra 'selecionado' despois de dicir o que estea selecionado. (<A HREF="https://github.com/nvaccess/nvda/issues/9028">#9028</A>)
+<LI>En Microsoft Visual Studio Code, o modo exploración está desactivado por defecto. (<A HREF="https://github.com/nvaccess/nvda/issues/9828">#9828</A>)
 </UL>
 
 <H3>corrección de Fallos</H3>
@@ -84,6 +90,8 @@ O subliñable desta versión inclúe a deteción automática de pantallas braill
 <LI>As teclas frontais agora funcionan correctamente nas pantallas braille de Freedom Scientific. (<A HREF="https://github.com/nvaccess/nvda/issues/8849">#8849</A>)
 <LI>Ao se ler o primeiro carácter dun documento en Notepad++ 7.7 X64, o NVDA xa non se conxela durante un máximo de diez segundos. (<A HREF="https://github.com/nvaccess/nvda/issues/9609">#9609</A>)
 <LI>HTCom agora pode usarse cunha pantalla braille Handy Tech en combinación co NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/9691">#9691</A>)
+<LI>En Mozilla Firefox, as actualizacións para unha rexión activa xa non se anuncian se a rexión activa está nunha pestana de fondo. (<A HREF="https://github.com/nvaccess/nvda/issues/1318">#1318</A>)
+<LI>O diálogo Procurar do modo exploración do NVDA xa non deixa de funcionar se o diálogo Acerca de... do NVDA está actualmente aberto de fondo. (<A HREF="https://github.com/nvaccess/nvda/issues/8566">#8566</A>)
 </UL>
 
 <H3>Cambios para Desenvolvedores</H3>
@@ -94,6 +102,12 @@ O subliñable desta versión inclúe a deteción automática de pantallas braill
 <LI>Actualizado o paquete comtypes a 1.1.7. (<A HREF="https://github.com/nvaccess/nvda/issues/9440">#9440</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8522">#8522</A>)
 <LI>Ao se usar a orde report module info, o orden da información cambiouse para presentar o módulo primeiro. (<A HREF="https://github.com/nvaccess/nvda/issues/7338">#7338</A>)
 <LI>Engadido un exemplo para demostrar o uso de nvdaControllerClient.dll dende C#. (<A HREF="https://github.com/nvaccess/nvda/issues/9600">#9600</A>)
+<LI>Engadida unha nova función isWin10 ao módulo winVersion que devolve se esta copia do NVDA se está a executar en (ao menos) a versión suministrada de Windows 10 (como a 1903). (<A HREF="https://github.com/nvaccess/nvda/issues/9761">#9761</A>)
+<LI>A consola pytnon do NVDA agora contén módulos máis utis no seu namespace (como appModules, globalPlugins, config e textInfos). (<A HREF="https://github.com/nvaccess/nvda/issues/9789">#9789</A>)
+<LI>O resultado da última orde executada na consola Python do NVDA agora é acesible dende a variable _ (line). (<A HREF="https://github.com/nvaccess/nvda/issues/9782">#9782</A>)
+ <UL>
+ <LI>Ten en conta que esto agocha a función de traducción gettext tamén chamada "_". Para acesar á función de traducción: del _
+ </UL>
 </UL>
 
 <H2>2019.1.1</H2>
