@@ -26,15 +26,21 @@ Lo reseñable de esta versión incluye la detección automática de pantallas br
  - Las pulsaciones de teclas del modo exploración son lentas de respuesta.
 - Para los controladores de pantalla braille que lo admitan, ahora se pueden cambiar las opciones del controlador desde la categoría de opciones braille en el cuadro de diálogo de opciones de NVDA. (#7452)
 - Ahora las pantallas braille de Freedom Scientific admiten la detección automática de pantallas braille. (#7727)
+- Añadida una orden para mostrar el reemplazo del símbolo bajo el cursor de revisión. (#9286)
+- Añadida una opción experimental al panel de Opciones avanzadas que te permite probar una nueva reescritura en curso del soporte de NVDA para la Consola de Windows utilizando la API Microsoft UI Automation. (#9614)
+- En la Consola Python, el campo de entrada ahora admite el pegado de varias líneas desde el portapapeles. (#9776)
 
 
 == Cambios ==
 - El volumen del sintetizador aumenta y disminuye en 5 en lugar de en 10 cuando se utiliza el anillo de opciones. (#6754)
 - Aclarado el texto en el administrador de complementos cuando se lanza NVDA con el indicador --disable-addons. (#9473)
 - Actualizado Unicode Common Locale Data Repository anotaciones emoji a la versión 35.0. (#9445)
-- Actualizado el transcriptor de braille liblouis a la versión 3.9.0. (#9439)
 - En inglés, la tecla de acceso directo para el campo filtrar en la lista de elementos en modo exploración ha cambiado a alt+y. (#8728)
 - Cuando una pantalla braille autodetectada se conecte a través de Bluetooth, NVDA seguirá buscando pantallas USB compatibles con el mismo controlador y cambiará a una conexión USB si está disponible. (#8853)
+- Actualizado eSpeak-NG a commit 67324cc.
+- Actualizado el transcriptor braille liblouis a la versión 3.10.0. (#9439, #9678)
+- NVDA ahora anunciará la palabra 'seleccionado' después de decir lo que esté seleccionado. (#9028)
+- En Microsoft Visual Studio Code, el modo exploración está desactivado por defecto. (#9828)
 
 
 == corrección de Fallos ==
@@ -58,6 +64,8 @@ Lo reseñable de esta versión incluye la detección automática de pantallas br
 - Las teclas frontales ahora funcionan correctamente en las pantallas braille de Freedom Scientific. (#8849)
 - Al leer el primer carácter de un documento en Notepad++ 7.7 X64, NVDA ya no se congela durante un máximo de diez segundos. (#9609)
 - HTCom ahora puede utilizarse con una pantalla braille Handy Tech en combinación con NVDA. (#9691)
+- En Mozilla Firefox, las actualizaciones para una región activa ya no se anuncian si la región activa está en una pestaña en segundo plano. (#1318)
+- El diálogo buscar del modo exploración de NVDA ya no deja de funcionar si el diálogo Acerca de... de NVDA está actualmente abierto en segundo plano. (#8566)
 
 
 == Cambios para Desarrolladores ==
@@ -66,6 +74,10 @@ Lo reseñable de esta versión incluye la detección automática de pantallas br
 - Actualizado el paquete comtypes a 1.1.7. (#9440, #8522)
 - Al utilizar la orden report module info, el orden de la información se ha cambiado para presentar el módulo primero. (#7338)
 - Añadido un ejemplo para demostrar el uso de nvdaControllerClient.dll desde C#. (#9600)
+- Añadida una nueva función isWin10 al módulo winVersion que devuelve si esta copia de NVDA se está ejecutando en (al menos) la versión suministrada de Windows 10 (tal como la 1903). (#9761)
+- La consola pytnon de NVDA ahora contiene módulos más útiles en su namespace (tales como appModules, globalPlugins, config y textInfos). (#9789)
+- El resultado de la última orden ejecutada en la consola Python de NVDA ahora es accesible desde la variable _ (line). (#9782)
+ - Ten en cuenta que esto oculta la función de traducción gettext también llamada "_". Para acceder a la función de traducción: del _
 
 
 = 2019.1.1 =
