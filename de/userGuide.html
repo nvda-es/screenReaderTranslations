@@ -1125,6 +1125,13 @@ Die folgenden Tastenkombinationen zum Betrachten von Text sind verfügbar:
 <TD>Keine</TD>
 <TD>Gibt die Formatierungen unter dem NVDA-Cursor aus. Bei zweimaligen Drücken der Tastenkombination wird die Ausgabe im Lesemodus dargestellt.</TD>
 </TR>
+<TR>
+<TD>Ansage des aktuellen Symbol-Ersatzes</TD>
+<TD>Keine</TD>
+<TD>Keine</TD>
+<TD>Keine</TD>
+<TD>Spricht das Symbol, an dem sich dem Cursor befindet. Zweimal gedrückt, zeigt das Symbol und den Text an, mit dem es im Lesemodus gesprochen wird.</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -3646,7 +3653,22 @@ Wenn diese Option aktiviert ist, versucht NVDA über die API-Schnittstelle der M
 Dazu gehört in Microsoft Word selbst aber auch der Microsoft Outlook Message Viewer und Composer.
  Für die neuesten Versionen von Microsoft Office 2016 / 365 unter Windows 10 ist die Unterstützung der Benutzeroberfläche vollständig genug, um den Zugriff auf Microsoft Word-Dokumente zu ermöglichen, die nahezu der bestehenden Microsoft Word-Unterstützung von NVDA entsprechen, mit dem zusätzlichen Vorteil, dass die Reaktionsfähigkeit erheblich gesteigert wird.
 Es kann jedoch einige Informationen geben, die in einigen Versionen von Microsoft Office entweder nicht oder falsch angezeigt werden, so dass man sich nicht immer auf diese Unterstützung der Benutzeroberflächenautomatisierung verlassen kann.
-Wir empfehlen noch nicht diese Funktion standardmäßig zu aktivieren. Allerdings ist ausdrücklich erwünscht, dass Benutzer von Office 2016 / 365 diese Funktion testen und Rückmeldung geben.
+Wir empfehlen noch nicht diese Funktion standardmäßig zu aktivieren. Allerdings ist ausdrücklich erwünscht, dass Benutzer von Office 2016 / 365 diese Funktion testen und Rückmeldung geben können.
+</P>
+
+<A NAME="AdvancedSettingsConsoleUIA"></A>
+<H5>Benutzeroberflächenautomatisierung verwenden, um auf die Windows-Konsole zuzugreifen, falls verfügbar</H5>
+
+<P>
+Wenn diese Option aktiviert ist, verwendet NVDA eine neue, noch nicht abgeschlossene Version der Unterstützung für Windows-Konsole, die die Vorteile von der <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Verbesserungen der Barrierefreiheit durch Microsoft (englisch)</A> nutzt. Diese Funktion ist sehr experimentell und noch unvollständig, so dass ihre Verwendung noch nicht empfohlen wird. Nach Fertigstellung wird jedoch erwartet, dass diese neue Unterstützung zum Standard wird, was die Leistung und Stabilität von NVDA in Windows-Konsolen verbessert.
+</P>
+
+<A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
+<H5>Passwörter in Konsolen der Benutzeroberflächenautomatisierung ansagen</H5>
+
+<P>
+This setting controls whether characters are spoken by <A HREF="#KeyboardSettingsSpeakTypedCharacters">speak typed characters</A> or <A HREF="#KeyboardSettingsSpeakTypedWords">speak typed words</A> in situations where the screen does not update (such as password entry) in the Windows Console with UI automation support enabled. For security purposes, this setting should be left disabled. However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting while using NVDA's new experimental console support.
+Diese Einstellung steuert, ob Zeichen durch <A HREF="#KeyboardSettingsSpeakTypedCharacters">eingegebene Zeichen ansagen</A> oder <A HREF="#KeyboardSettingsSpeakTypedWords">eingegebene Wörter ansagen</A> gesprochen werden, wenn der Bildschirm in der Windows-Konsole bei aktivierter Automatisierungsunterstützung der Benutzeroberflächenautomatisierung nicht aktualisiert wird (z. B. Passworteingabe). Aus Sicherheitsgründen sollte diese Einstellung deaktiviert bleiben. Sie können es jedoch aktivieren, wenn Sie bei der Verwendung der neuen experimentellen Konsolen-Unterstützung von NVDA Leistungsprobleme oder Instabilität bei der Eingabe von Zeichen und/oder Wörtern feststellen.
 </P>
 
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
@@ -3999,8 +4021,7 @@ Um NVDA im Anmeldebildschirm und auch in den Sicherheitsmeldungen der Benutzerko
 
 <P>
 Den Protokollbetrachter finden Sie im NVDA-Menü unter "Extras". Dieses Werkzeug gibt Ihnen die Möglichkeit, alles was seit dem Start von NVDA intern abläuft, einzusehen.
-</P>
-<P>
+Mit NVDA+F1 wird der Log-Viewer geöffnet und Entwickler-Informationen über das aktuelle Navigator-Objekt angezeigt.
 Den Protokollinhalt können Sie auch abspeichern oder den Betrachter aktualisieren, so dass lediglich die Einträge angezeigt werden, die seit dem Aufruf des Protokollbetrachters aufgelistet sind.
 Diese Optionen sind entsprechend im Menü "Protokoll" des Betrachters verfügbar.
 </P>
