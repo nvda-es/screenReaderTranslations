@@ -49,6 +49,9 @@ Os destaques desta versão incluem a detecção automática de linhas braille da
  </UL>
 <LI>Para drivers de linha braille que o suportam, as configurações do driver agora podem ser alteradas a partir da categoria de configurações de braille no diálogo de configurações do NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/7452">#7452</A>)
 <LI>As linhas braille da Freedom Scientific agora são suportadas pela detecção automática de linha braille. (<A HREF="https://github.com/nvaccess/nvda/issues/7727">#7727</A>)
+<LI>Adicionado um comando para mostrar a substituição do símbolo sob o cursor de exploração. (<A HREF="https://github.com/nvaccess/nvda/issues/9286">#9286</A>)
+<LI>Adicionada uma opção experimental ao painel Configurações Avançadas que permite que você experimente uma nova reescrita em andamento, do suporte do NVDA ao Console do Windows usando a API de Microsoft UI Automation API [Interface de Programação de Aplicativos de Automação da Interface do Usuário da Microsoft]. (<A HREF="https://github.com/nvaccess/nvda/issues/9614">#9614</A>)
+<LI>No Console Python, o campo de entrada agora suporta a colagem de várias linhas da área de transferência. (<A HREF="https://github.com/nvaccess/nvda/issues/9776">#9776</A>)
 </UL>
 
 <H3>Alterações</H3>
@@ -60,6 +63,10 @@ Os destaques desta versão incluem a detecção automática de linhas braille da
 <LI>Atualizado o transcritor braille liblouis para a versão 3.9.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9439">#9439</A>)
 <LI>A tecla de atalho para o campo de filtro na lista de elementos no modo de navegação foi alterada para alt+y. (<A HREF="https://github.com/nvaccess/nvda/issues/8728">#8728</A>)
 <LI>Quando uma linha braille detectada automaticamente é conectada via Bluetooth, o NVDA continuará procurando por linhas USB suportadas pelo mesmo driver e alternará para uma conexão USB se disponível. (<A HREF="https://github.com/nvaccess/nvda/issues/8853">#8853</A>)
+<LI>eSpeak-NG atualizado para commit 67324cc.
+<LI>Atualizado o transcritor braille liblouis para a versão 3.10.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9439">#9439</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9678">#9678</A>)
+<LI>O NVDA agora informará a palavra 'selecionado' depois de dizer o que foi selecionado. (<A HREF="https://github.com/nvaccess/nvda/issues/9028">#9028</A>)
+<LI>No código do Microsoft Visual Studio, o modo de navegação está desativado por padrão. (<A HREF="https://github.com/nvaccess/nvda/issues/9828">#9828</A>)
 </UL>
 
 <H3>Correção de Falhas</H3>
@@ -85,6 +92,8 @@ Os destaques desta versão incluem a detecção automática de linhas braille da
 <LI>As teclas balanceadoras [bumper] agora funcionam corretamente nas linhas braille da Freedom Scientific. (<A HREF="https://github.com/nvaccess/nvda/issues/8849">#8849</A>)
 <LI>Ao ler o primeiro caractere dum documento no Notepad++ 7.7 X64, o NVDA não congela mais por até dez segundos. (<A HREF="https://github.com/nvaccess/nvda/issues/9609">#9609</A>)
 <LI>HTCom agora pode ser usado com uma Linha braille Handy Tech em combinação com o NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/9691">#9691</A>)
+<LI>No Mozilla Firefox, as atualizações em uma região ativa [conteúdo dinâmico] não serão mais informadas se a região ativa estiver em uma guia em segundo plano. (<A HREF="https://github.com/nvaccess/nvda/issues/1318">#1318</A>)
+<LI>Diálogo Modo de navegação do NVDA não deixa de funcionar se a caixa de diálogo Sobre do NVDA estiver atualmente aberta em segundo plano. (<A HREF="https://github.com/nvaccess/nvda/issues/8566">#8566</A>)
 </UL>
 
 <H3>Alterações para Desenvolvedores</H3>
@@ -95,6 +104,12 @@ Os destaques desta versão incluem a detecção automática de linhas braille da
 <LI>Atualizado o pacote comtypes para a versão 1.1.7. (<A HREF="https://github.com/nvaccess/nvda/issues/9440">#9440</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8522">#8522</A>)
 <LI>Ao usar o comando info do módulo de relatório [report], a ordem das informações foi alterada para apresentar o módulo primeiro. (<A HREF="https://github.com/nvaccess/nvda/issues/7338">#7338</A>)
 <LI>Adicionado um exemplo para demonstrar o uso de nvdaControllerClient.dll por C#. (<A HREF="https://github.com/nvaccess/nvda/issues/9600">#9600</A>)
+<LI>Adicionado uma nova função isWin10 ao módulo winVersion que retorna se esta cópia do NVDA está sendo executada (pelo menos) na versão de lançamento fornecida do Windows 10 (como 1903). (<A HREF="https://github.com/nvaccess/nvda/issues/9761">#9761</A>)
+<LI>O console do Python NVDA agora contém módulos mais úteis em seu namespace (como appModules, globalPlugins, config e textInfos). (<A HREF="https://github.com/nvaccess/nvda/issues/9789">#9789</A>)
+<LI>O resultado do último comando executado no console do Python NVDA agora está acessível a partir da variável _ (sublinha). (<A HREF="https://github.com/nvaccess/nvda/issues/9782">#9782</A>)
+ <UL>
+ <LI>Observe que isso faz com que a função de conversão gettext também seja chamada por "_". Para acessar a função de tradução: del _
+ </UL>
 </UL>
 
 <H2>2019.1.1</H2>
@@ -698,7 +713,7 @@ Os destaques desta versão incluem a entrada de braille abreviado, suporte para 
  <LI>Anteriormente, sempre mostrou tanta informação de contexto quanto possível, independentemente de antes já ter visto as mesmas informações de contexto.
  <LI>Você pode reverter para o comportamento antigo alterando a nova configuração "Apresentação do contexto do foco" na caixa de diálogo Opções de Braille para "Sempre preencher a linha".
  </UL>
-<LI>Ao usar Braille, o cursor pode ser configurado para ter uma forma diferente quando seguindo foco ou revisão. (<A HREF="https://github.com/nvaccess/nvda/issues/7122">#7122</A>)
+<LI>Ao usar Braille, o cursor pode ser configurado para ter uma forma diferente quando seguindo foco ou exploração. (<A HREF="https://github.com/nvaccess/nvda/issues/7122">#7122</A>)
 <LI>O logotipo NVDA foi atualizado. O logotipo NVDA atualizado é uma mistura estilizada das letras NVDA em branco, em um fundo púrpura sólido. Isso garante que ele será visível em qualquer fundo colorido e usará o púrpura do logotipo NV Access. (<A HREF="https://github.com/nvaccess/nvda/issues/7446">#7446</A>)
 </UL>
 
