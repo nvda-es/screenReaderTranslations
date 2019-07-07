@@ -665,12 +665,12 @@ Damit möglichst viele Daten auf der Braillezeile Platz finden, wurden folgende 
 | hlf | Hilfesprechblase |
 | smk | Sprungmarke |
 | lnk | Link |
-| lst | Liste |
 | bl | Besuchter Link |
+| lst | Liste |
 | mnü | Menü |
 | mnülst | Menüleiste |
 | mnüsltr | Menüschalter |
-| mne | Menüeintrag |
+| mnüe | Menüeintrag |
 | strg | Steuerung |
 | fortschritt | Fortschrittsanzeige |
 | as | Auswahlschalter |
@@ -683,10 +683,10 @@ Damit möglichst viele Daten auf der Braillezeile Platz finden, wurden folgende 
 | rN | Reihe N in einer Tabelle, z. B. R1, R2. |
 | ea | Eingabeaufforderung |
 | wl | Werkzeugleiste |
-| mhlf | Minihilfe |
+| mh | Minihilfe |
+| ba | Baumansicht |
 | gldsltr | Gliederungsschalter |
 | bae | Eintrag einer Baumstruktur |
-| ba | Baumansicht |
 | en | Ein Eintrag in einer Baumansicht in der Ebene N |
 | fst | Fenster |
 | ``⠤⠤⠤⠤⠤`` | Trennlinie |
@@ -696,9 +696,9 @@ Für die folgenden Statusanzeigen wurden ebenfalls Abkürzungen festgelegt:
 | ... | Wird angezeigt, wenn ein Objekt automatische Vervollständigung unterstützt. |
 | ⢎⣿⡱ | Wird angezeigt, wenn ein Schalter gedrückt wurde |
 | ⢎⣀⡱ | Wird angezeigt, wenn ein Schalter nicht gedrückt wurde |
-| ⣏⣀⣹ | Wird angezeigt, wenn ein Objekt (z. B. ein Kontrollkästchen) nicht aktiviert ist. |
-| ⣏⣿⣹ | Wird angezeigt, wenn ein Objekt (z. B. ein Kontrollfeld) aktiviert ist. |
+| | ⣏⣿⣹ | Wird angezeigt, wenn ein Objekt (z. B. ein Kontrollfeld) aktiviert ist. |
 | ⣏⣸⣹ | Wird angezeigt, wenn ein Objekt (z. B. ein Kontrollfeld) teilweise aktiviert ist. |
+⣏⣀⣹ | Wird angezeigt, wenn ein Objekt (z. B. ein Kontrollkästchen) nicht aktiviert ist. |
 | - | Wird bei Objekten (z. B. Baumeinträgen) angezeigt, die reduziert werden können. |
 | + | Wird bei Objekten (z. B. Baumeinträgen) angezeigt, die erweitert werden können. |
 | *** | wird angezeigt, wenn das Objekt geschützt ist |
@@ -710,10 +710,10 @@ Für die folgenden Statusanzeigen wurden ebenfalls Abkürzungen festgelegt:
 | mz | Wird angezeigt, wenn Sie in das aktuelle Eingabefeld mehrere Zeilen Text eingeben können |
 | erf | Wird angezeigt, wenn in dem aktuellen Eingabefeld eine Eingabe erforderlich ist |
 | sef | Wird bei Objekten (z. B. Eingabefeldern) angezeigt, die schreibgeschützt sind. |
-| {x} | Wird angezeigt, wenn ein Objekt ausgewählt ist. |
-| { } | Wird angezeigt, wenn der aktuelle Listeneintrag nicht ausgewählt ist |
-| <aufsteigend sortiert> | Wird angezeigt, wenn die aktuelle Liste aufsteigend sortiert ist|
-| <absteigend sortiert> | Wird angezeigt, wenn die aktuelle Liste absteigend sortiert ist |
+| (x) | Wird angezeigt, wenn ein Objekt ausgewählt ist. |
+| ( ) | Wird angezeigt, wenn das aktuelle Objekt nicht ausgewählt ist |
+| auf sortiert | Wird angezeigt, wenn die aktuelle Liste aufsteigend sortiert ist|
+| ab sortiert | Wird angezeigt, wenn die aktuelle Liste absteigend sortiert ist |
 | -> | Wird angezeigt, wenn ein Objekt ein Untermenü besitzt. |
 
 Die folgenden Abkürzungen werden für Sprungmarken verwendet:
@@ -1153,7 +1153,7 @@ Tastenkombination: NVDA+Umschalt+D
 
 In Windows 8 und höher kann diese Option die Systemlautstärke automatisch immer dann reduzieren, wenn NVDA spricht oder die ganze Zeit, wenn NVDA ausgeführt wird.
 - Nie: die Lautstärke anderer Audioquellen wird nicht reduziert. 
-- Beim Sprechen und Wiedergeben von NVDA-Signaltönen: NVDA wird die Lautstärke anderer Audioquellen nur dann reduzieren, wenn es spricht oder Töne ausgibt. Diese Option funktioniert nicht bei allen Sprachausgaben. 
+- während des Sprechens und bei Wiedergabe der Signaltöne: NVDA wird die Lautstärke anderer Audioquellen nur dann reduzieren, wenn es spricht oder Töne ausgibt. Diese Option funktioniert nicht bei allen Sprachausgaben. 
 - Immer: Die Lautstärke anderer Audioquellen wird immer reduziert, solange NVDA ausgeführt wird.
 -
 
@@ -1257,20 +1257,20 @@ Ein Beispiel: Wenn Sie einen Listeneintrag fokussieren, ist dieser ein Teil eine
 Diese Liste könnte ein Teil eines Dialogs oder ähnlichem sein.
 Weitere Informationen über die Objekthierarchie finden Sie im Abschnitt über [Objektnavigation #ObjectNavigation].
 
-Bei der Einstellung "bei Änderungen" wird die Kontextinformation nur dann angezeigt, wenn sich der Kontext ändert.
+Bei der Einstellung "Fülle Zeile bei Kontext-Änderungen" wird die Kontextinformation nur dann angezeigt, wenn sich der Kontext ändert.
 Für das obige Beispiel bedeutet das, dass NVDA zunächst so viel Information wie möglich auf der Braillezeile anzeigt, sobald ein Listeneintrag den Fokus erhalten hat.
 Sollte noch Platz auf der Braillezeile vorhanden sein, so wird außerdem der Name der Liste angezeigt.
 Wenn Sie sich mit den Pfeiltasten durch die Liste bewegen, wird angenommen, dass Sie wissen, dass Sie sich innerhalb einer Liste befinden.
 Dies bedeutet, dass nur noch die Listeneinträge auf der Braillezeile angezeigt werden.
 Um die Kontextinformationen anzuzeigen können Sie die Braillezeile rückwärtsscrollen.
 
-Bei der Einstellung "immer" wird NVDA immer so viel Kontextinformation wie möglich auf der Braillezeile anzeigen, selbst wenn Sie diese Information schon vorher bekommen haben.
+Bei der Einstellung "immer Zeile auffüllen" wird NVDA immer so viel Kontextinformation wie möglich auf der Braillezeile anzeigen, selbst wenn Sie diese Information schon vorher bekommen haben.
 Dies hat den Vorteil, dass immer so viel Information wie möglich auf der Braillezeile angezeigt wird.
 Andererseits kann es zu einer "springenden Anzeige" kommen, wenn sich die Position des fokussierten Objekts auf der Braillezeile ständig ändert.
 Dies kann beim Navigieren durch lange Listen zu Problemen führen, weil Sie mit Ihrem Finger immer wieder den Anfang des Eintrags aufsuchen müssen.
 Dies ist das Standardverhalten von NVDA 2017.2 und älter.
 
-Bei der Einstellung "nur beim scrollen" wird NVDA niemals automatisch Kontextinformationen anzeigen.
+Bei der Einstellung "nur beim zurückscrollen" wird NVDA niemals automatisch Kontextinformationen anzeigen.
 Für das obige Beispiel bedeutet dies, dass NVDA immer nur den aktuellen Listeneintrag anzeigt.
 Wenn Sie dennoch Kontextinformationen (wie z. B. den Namen der Liste) angezeigt bekommen möchten, müssen Sie die Braillezeile rückwärtsscrollen.
 
@@ -1741,6 +1741,7 @@ Außerdem wird die Option "Beim Sprechen von Zeichen und Symbolen die Sprache de
 
 Um die Aussprache eines Sonderzeichens zu verändern, wählen Sie es in der Liste der Symbole aus.
 Sie können die Symbole auch filtern, indem Sie das Symbol oder einen Teil der Ersetzung des Symbols in das Bearbeitungsfeld "Filter nach" eingeben.
+
 - Das Eingabefeld "Ersetzen durch" erlaubt Ihnen, den Text zu ändern, der an Stelle des Symbols angesagt wird.
 - Im Kombinationsfeld "Stufe" kann eingestellt werden, ab welcher Stufe Satz- und Sonderzeichen angesagt werden sollen.
 - Im Konbinationsfeld "Aktuelles Symbol an Sprachausgabe senden" kann eingestellt werden, ob das Symbol anstelle seines Ersatztextes an die Sprachausgabe gesendet werden soll.
@@ -1749,7 +1750,7 @@ Beispielsweise pausiert die Sprachausgabe nach einem Komma.
 Dieses Konbinationsfeld enthält drei Optionen:
  - Niemals: das Sonderzeichen wird niemals an die Sprachausgabe gesendet.
  - Immer: Das Symbol wird immer an die Sprachausgabe gesendet.
- - Nur unterhalb der Symbolebene: Das Sonderzeichen wird nur an die Sprachausgabe gesendet, wenn die momentan eingestellte Symbolebene niedriger ist, als im Konbinationsfeld "Stufe" (siehe oben)
+ - Unterhalb der Symbolebene: Das Sonderzeichen wird nur an die Sprachausgabe gesendet, wenn die momentan eingestellte Symbolebene niedriger ist, als im Konbinationsfeld "Stufe" (siehe oben)
  Beispielsweise kann ein Symbol bei einer höheren Stufe ohne Pausieren gesprochen werden, während die Sprachausgabe bei einer niedrigeren Stufe pausiert.
  -
 -
