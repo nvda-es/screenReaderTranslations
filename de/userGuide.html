@@ -1718,12 +1718,12 @@ Damit möglichst viele Daten auf der Braillezeile Platz finden, wurden folgende 
 <TD>Link</TD>
 </TR>
 <TR>
-<TD>lst</TD>
-<TD>Liste</TD>
-</TR>
-<TR>
 <TD>bl</TD>
 <TD>Besuchter Link</TD>
+</TR>
+<TR>
+<TD>lst</TD>
+<TD>Liste</TD>
 </TR>
 <TR>
 <TD>mnü</TD>
@@ -1738,7 +1738,7 @@ Damit möglichst viele Daten auf der Braillezeile Platz finden, wurden folgende 
 <TD>Menüschalter</TD>
 </TR>
 <TR>
-<TD>mne</TD>
+<TD>mnüe</TD>
 <TD>Menüeintrag</TD>
 </TR>
 <TR>
@@ -1790,8 +1790,12 @@ Damit möglichst viele Daten auf der Braillezeile Platz finden, wurden folgende 
 <TD>Werkzeugleiste</TD>
 </TR>
 <TR>
-<TD>mhlf</TD>
+<TD>mh</TD>
 <TD>Minihilfe</TD>
+</TR>
+<TR>
+<TD>ba</TD>
+<TD>Baumansicht</TD>
 </TR>
 <TR>
 <TD>gldsltr</TD>
@@ -1800,10 +1804,6 @@ Damit möglichst viele Daten auf der Braillezeile Platz finden, wurden folgende 
 <TR>
 <TD>bae</TD>
 <TD>Eintrag einer Baumstruktur</TD>
-</TR>
-<TR>
-<TD>ba</TD>
-<TD>Baumansicht</TD>
 </TR>
 <TR>
 <TD>en</TD>
@@ -1841,17 +1841,20 @@ Für die folgenden Statusanzeigen wurden ebenfalls Abkürzungen festgelegt:
 <TD>Wird angezeigt, wenn ein Schalter nicht gedrückt wurde</TD>
 </TR>
 <TR>
-<TD>⣏⣀⣹</TD>
-<TD>Wird angezeigt, wenn ein Objekt (z. B. ein Kontrollkästchen) nicht aktiviert ist.</TD>
-</TR>
-<TR>
-<TD>⣏⣿⣹</TD>
+<TD>| ⣏⣿⣹</TD>
 <TD>Wird angezeigt, wenn ein Objekt (z. B. ein Kontrollfeld) aktiviert ist.</TD>
 </TR>
 <TR>
 <TD>⣏⣸⣹</TD>
 <TD>Wird angezeigt, wenn ein Objekt (z. B. ein Kontrollfeld) teilweise aktiviert ist.</TD>
 </TR>
+</TABLE>
+
+<P>
+⣏⣀⣹ | Wird angezeigt, wenn ein Objekt (z. B. ein Kontrollkästchen) nicht aktiviert ist. |
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>-</TD>
 <TD>Wird bei Objekten (z. B. Baumeinträgen) angezeigt, die reduziert werden können.</TD>
@@ -1897,19 +1900,19 @@ Für die folgenden Statusanzeigen wurden ebenfalls Abkürzungen festgelegt:
 <TD>Wird bei Objekten (z. B. Eingabefeldern) angezeigt, die schreibgeschützt sind.</TD>
 </TR>
 <TR>
-<TD>{x}</TD>
+<TD>(x)</TD>
 <TD>Wird angezeigt, wenn ein Objekt ausgewählt ist.</TD>
 </TR>
 <TR>
-<TD>{ }</TD>
-<TD>Wird angezeigt, wenn der aktuelle Listeneintrag nicht ausgewählt ist</TD>
+<TD>( )</TD>
+<TD>Wird angezeigt, wenn das aktuelle Objekt nicht ausgewählt ist</TD>
 </TR>
 <TR>
-<TD>&lt;aufsteigend sortiert&gt;</TD>
+<TD>auf sortiert</TD>
 <TD>Wird angezeigt, wenn die aktuelle Liste aufsteigend sortiert ist|</TD>
 </TR>
 <TR>
-<TD>&lt;absteigend sortiert&gt;</TD>
+<TD>ab sortiert</TD>
 <TD>Wird angezeigt, wenn die aktuelle Liste absteigend sortiert ist</TD>
 </TR>
 <TR>
@@ -2721,7 +2724,7 @@ In Windows 8 und höher kann diese Option die Systemlautstärke automatisch imme
 
 <UL>
 <LI>Nie: die Lautstärke anderer Audioquellen wird nicht reduziert. 
-<LI>Beim Sprechen und Wiedergeben von NVDA-Signaltönen: NVDA wird die Lautstärke anderer Audioquellen nur dann reduzieren, wenn es spricht oder Töne ausgibt. Diese Option funktioniert nicht bei allen Sprachausgaben. 
+<LI>während des Sprechens und bei Wiedergabe der Signaltöne: NVDA wird die Lautstärke anderer Audioquellen nur dann reduzieren, wenn es spricht oder Töne ausgibt. Diese Option funktioniert nicht bei allen Sprachausgaben. 
 <LI>Immer: Die Lautstärke anderer Audioquellen wird immer reduziert, solange NVDA ausgeführt wird.
 </UL>
 
@@ -2924,7 +2927,7 @@ Diese Liste könnte ein Teil eines Dialogs oder ähnlichem sein.
 Weitere Informationen über die Objekthierarchie finden Sie im Abschnitt über <A HREF="#ObjectNavigation">Objektnavigation</A>.
 </P>
 <P>
-Bei der Einstellung "bei Änderungen" wird die Kontextinformation nur dann angezeigt, wenn sich der Kontext ändert.
+Bei der Einstellung "Fülle Zeile bei Kontext-Änderungen" wird die Kontextinformation nur dann angezeigt, wenn sich der Kontext ändert.
 Für das obige Beispiel bedeutet das, dass NVDA zunächst so viel Information wie möglich auf der Braillezeile anzeigt, sobald ein Listeneintrag den Fokus erhalten hat.
 Sollte noch Platz auf der Braillezeile vorhanden sein, so wird außerdem der Name der Liste angezeigt.
 Wenn Sie sich mit den Pfeiltasten durch die Liste bewegen, wird angenommen, dass Sie wissen, dass Sie sich innerhalb einer Liste befinden.
@@ -2932,14 +2935,14 @@ Dies bedeutet, dass nur noch die Listeneinträge auf der Braillezeile angezeigt 
 Um die Kontextinformationen anzuzeigen können Sie die Braillezeile rückwärtsscrollen.
 </P>
 <P>
-Bei der Einstellung "immer" wird NVDA immer so viel Kontextinformation wie möglich auf der Braillezeile anzeigen, selbst wenn Sie diese Information schon vorher bekommen haben.
+Bei der Einstellung "immer Zeile auffüllen" wird NVDA immer so viel Kontextinformation wie möglich auf der Braillezeile anzeigen, selbst wenn Sie diese Information schon vorher bekommen haben.
 Dies hat den Vorteil, dass immer so viel Information wie möglich auf der Braillezeile angezeigt wird.
 Andererseits kann es zu einer "springenden Anzeige" kommen, wenn sich die Position des fokussierten Objekts auf der Braillezeile ständig ändert.
 Dies kann beim Navigieren durch lange Listen zu Problemen führen, weil Sie mit Ihrem Finger immer wieder den Anfang des Eintrags aufsuchen müssen.
 Dies ist das Standardverhalten von NVDA 2017.2 und älter.
 </P>
 <P>
-Bei der Einstellung "nur beim scrollen" wird NVDA niemals automatisch Kontextinformationen anzeigen.
+Bei der Einstellung "nur beim zurückscrollen" wird NVDA niemals automatisch Kontextinformationen anzeigen.
 Für das obige Beispiel bedeutet dies, dass NVDA immer nur den aktuellen Listeneintrag anzeigt.
 Wenn Sie dennoch Kontextinformationen (wie z. B. den Namen der Liste) angezeigt bekommen möchten, müssen Sie die Braillezeile rückwärtsscrollen.
 </P>
@@ -3782,7 +3785,7 @@ Dieses Konbinationsfeld enthält drei Optionen:
  <UL>
  <LI>Niemals: das Sonderzeichen wird niemals an die Sprachausgabe gesendet.
  <LI>Immer: Das Symbol wird immer an die Sprachausgabe gesendet.
- <LI>Nur unterhalb der Symbolebene: Das Sonderzeichen wird nur an die Sprachausgabe gesendet, wenn die momentan eingestellte Symbolebene niedriger ist, als im Konbinationsfeld "Stufe" (siehe oben)
+ <LI>Unterhalb der Symbolebene: Das Sonderzeichen wird nur an die Sprachausgabe gesendet, wenn die momentan eingestellte Symbolebene niedriger ist, als im Konbinationsfeld "Stufe" (siehe oben)
  Beispielsweise kann ein Symbol bei einer höheren Stufe ohne Pausieren gesprochen werden, während die Sprachausgabe bei einer niedrigeren Stufe pausiert.
  </UL>
 </UL>
