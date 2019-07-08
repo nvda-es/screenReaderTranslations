@@ -45,6 +45,14 @@ NVDA更新日志
 - For braille display drivers that support it, driver settings can now be changed from the braille settings category in NVDA's settings dialog. (#7452)
 - 点显器自动检测现在支持 Freedom Scientific系列点显器。 (#7727)
 - Freedom Scientific braille displays are now supported by braille display auto detection. (#7727)
+- 再 Windows 2019年五月更新中切换虚拟桌面时，当前虚拟桌面名称会被朗读。 (#5641)
+- The name of the current virtual desktop on windows 10 May 2019update is now reported when switching virtual desktops. (#5641)
+- 添加了一条命令，用于显示当前光标所在字符的替换。 (#9286)
+- Added a command to show the replacement for the symbol under the review cursor. (#9286)
+- 再高级设置面板中添加了一个实验选项，允许用户通过 Microsoft UI Automation 接口，尝试 NVDA 新的 Windows 控制台 work-in-progress 重写支持。 (#9614)
+- Added an experimental option to the Advanced Settings panel that allows you to try out a new, work-in-progress rewrite of NVDA's Windows Console support using the Microsoft UI Automation API. (#9614)
+- 再 Python 控制台中，文本框现在支持从剪贴板粘贴多行内容。 (#9776)
+- In the Python Console, the input field now supports pasting multiple lines from the clipboard. (#9776)
 
 
 == 修改 ==
@@ -60,6 +68,12 @@ NVDA更新日志
 - The hotkey for the filter field in the elements list in browse mode has changed to alt+y. (#8728)
 - 当一台自动检测点显器通过蓝牙连接至电脑，NVDA将会持续搜索同一驱动所支持的USB点显器，并且在其可用时立刻切换到USB连接。 (#8853)
 - When an auto detected braille display is connected via Bluetooth, NVDA will keep searching for USB displays supported by the same driver and switch to a USB connection if it becomes available. (#8853)
+- 再 winVersion 模块添加了一项新的 isAtLeastWin10 功能，用于回答当前的 NVDA 副本是否运行在 Windows 10 的最低发行版上（例如1809或1903）。 (#9614)
+- Added a new isAtLeastWin10 function to the winVersion module which returns whether or not this copy of NVDA is running on at least the supplied release version of Windows 10 (such as 1809 or 1903) of Windows 10. (#9614)
+- 现在NVDA会再朗读已选文本之后 报告“已选择”。 (#9028)
+- NVDA will now report the word 'selected' after saying what is selected. (#9028)
+- 再 Microsoft Visual Studio 代码中，浏览模式默认关闭。 (#9828)
+- In Microsoft Visual Studio Code, browse mode is now off by default. (#9828)
 
 
 == 错误修复 ==
@@ -103,15 +117,22 @@ NVDA更新日志
 - When reading the first character of a document in Notepad++ 7.7 X64, NVDA no longer freezes for up to ten seconds. (#9609)
 - HTCom现在可以合Handy Tech盲文点显器以即NVDA配合使用。 (#9691)
 - HTCom can now be used with a Handy Tech Braille display in combination with NVDA. (#9691)
+- 再 Mozilla Firefox，如果居住区域处于背景标签中，居住区域更新不在被读出。 (#1318)
+- In Mozilla Firefox, updates to a live region are no longer reported if the live region is in a background tab. (#1318)
+- 当 NVDA 关于对话框处于打开状态时， NVDA 的浏览模式查找窗口不再失效。 (#8566)
+- NVDA's browse mode Find dialog no longer fails to function if NVDA's About dialog is currently open in the background. (#8566)
 
 
 == 插件以及NVDA核心开发者需要了解的变动 ==
-- You can now set the "disableBrowseModeByDefault" property on app modules to leave browse mode off by default. (#8846)
 - You can now set the "disableBrowseModeByDefault" property on app modules to leave browse mode off by default. (#8846)
 - The extended window style of a window is now exposed using the `extendedWindowStyle` property on Window objects and their derivatives. (#9136)
 - Updated comtypes package to 1.1.7. (#9440, #8522)
 - When using the report module info command, the order of information has changed to present the module first. (#7338)
 - Added an example to demonstrate using nvdaControllerClient.dll from C#. (#9600)
+- Added a new isWin10 function to the winVersion module which returns whether or not this copy of NVDA is running on (at least) the supplied release version of Windows 10 (such as 1903). (#9761)
+- The NVDA Python console now  contains more useful modules in its namespace (such as appModules, globalPlugins, config and textInfos). (#9789)
+- The result of the last executed command in the NVDA Python console is now accessible from the _ (line) variable. (#9782)
+
 
 
 = 2019.1.1 =
