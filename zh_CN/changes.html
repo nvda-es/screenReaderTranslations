@@ -81,6 +81,14 @@
 <LI>For braille display drivers that support it, driver settings can now be changed from the braille settings category in NVDA's settings dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/7452">#7452</A>)
 <LI>点显器自动检测现在支持 Freedom Scientific系列点显器。 (<A HREF="https://github.com/nvaccess/nvda/issues/7727">#7727</A>)
 <LI>Freedom Scientific braille displays are now supported by braille display auto detection. (<A HREF="https://github.com/nvaccess/nvda/issues/7727">#7727</A>)
+<LI>再 Windows 2019年五月更新中切换虚拟桌面时，当前虚拟桌面名称会被朗读。 (<A HREF="https://github.com/nvaccess/nvda/issues/5641">#5641</A>)
+<LI>The name of the current virtual desktop on windows 10 May 2019update is now reported when switching virtual desktops. (<A HREF="https://github.com/nvaccess/nvda/issues/5641">#5641</A>)
+<LI>添加了一条命令，用于显示当前光标所在字符的替换。 (<A HREF="https://github.com/nvaccess/nvda/issues/9286">#9286</A>)
+<LI>Added a command to show the replacement for the symbol under the review cursor. (<A HREF="https://github.com/nvaccess/nvda/issues/9286">#9286</A>)
+<LI>再高级设置面板中添加了一个实验选项，允许用户通过 Microsoft UI Automation 接口，尝试 NVDA 新的 Windows 控制台 work-in-progress 重写支持。 (<A HREF="https://github.com/nvaccess/nvda/issues/9614">#9614</A>)
+<LI>Added an experimental option to the Advanced Settings panel that allows you to try out a new, work-in-progress rewrite of NVDA's Windows Console support using the Microsoft UI Automation API. (<A HREF="https://github.com/nvaccess/nvda/issues/9614">#9614</A>)
+<LI>再 Python 控制台中，文本框现在支持从剪贴板粘贴多行内容。 (<A HREF="https://github.com/nvaccess/nvda/issues/9776">#9776</A>)
+<LI>In the Python Console, the input field now supports pasting multiple lines from the clipboard. (<A HREF="https://github.com/nvaccess/nvda/issues/9776">#9776</A>)
 </UL>
 
 <H3>修改</H3>
@@ -98,6 +106,12 @@
 <LI>The hotkey for the filter field in the elements list in browse mode has changed to alt+y. (<A HREF="https://github.com/nvaccess/nvda/issues/8728">#8728</A>)
 <LI>当一台自动检测点显器通过蓝牙连接至电脑，NVDA将会持续搜索同一驱动所支持的USB点显器，并且在其可用时立刻切换到USB连接。 (<A HREF="https://github.com/nvaccess/nvda/issues/8853">#8853</A>)
 <LI>When an auto detected braille display is connected via Bluetooth, NVDA will keep searching for USB displays supported by the same driver and switch to a USB connection if it becomes available. (<A HREF="https://github.com/nvaccess/nvda/issues/8853">#8853</A>)
+<LI>再 winVersion 模块添加了一项新的 isAtLeastWin10 功能，用于回答当前的 NVDA 副本是否运行在 Windows 10 的最低发行版上（例如1809或1903）。 (<A HREF="https://github.com/nvaccess/nvda/issues/9614">#9614</A>)
+<LI>Added a new isAtLeastWin10 function to the winVersion module which returns whether or not this copy of NVDA is running on at least the supplied release version of Windows 10 (such as 1809 or 1903) of Windows 10. (<A HREF="https://github.com/nvaccess/nvda/issues/9614">#9614</A>)
+<LI>现在NVDA会再朗读已选文本之后 报告“已选择”。 (<A HREF="https://github.com/nvaccess/nvda/issues/9028">#9028</A>)
+<LI>NVDA will now report the word 'selected' after saying what is selected. (<A HREF="https://github.com/nvaccess/nvda/issues/9028">#9028</A>)
+<LI>再 Microsoft Visual Studio 代码中，浏览模式默认关闭。 (<A HREF="https://github.com/nvaccess/nvda/issues/9828">#9828</A>)
+<LI>In Microsoft Visual Studio Code, browse mode is now off by default. (<A HREF="https://github.com/nvaccess/nvda/issues/9828">#9828</A>)
 </UL>
 
 <H3>错误修复</H3>
@@ -143,17 +157,23 @@
 <LI>When reading the first character of a document in Notepad++ 7.7 X64, NVDA no longer freezes for up to ten seconds. (<A HREF="https://github.com/nvaccess/nvda/issues/9609">#9609</A>)
 <LI>HTCom现在可以合Handy Tech盲文点显器以即NVDA配合使用。 (<A HREF="https://github.com/nvaccess/nvda/issues/9691">#9691</A>)
 <LI>HTCom can now be used with a Handy Tech Braille display in combination with NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/9691">#9691</A>)
+<LI>再 Mozilla Firefox，如果居住区域处于背景标签中，居住区域更新不在被读出。 (<A HREF="https://github.com/nvaccess/nvda/issues/1318">#1318</A>)
+<LI>In Mozilla Firefox, updates to a live region are no longer reported if the live region is in a background tab. (<A HREF="https://github.com/nvaccess/nvda/issues/1318">#1318</A>)
+<LI>当 NVDA 关于对话框处于打开状态时， NVDA 的浏览模式查找窗口不再失效。 (<A HREF="https://github.com/nvaccess/nvda/issues/8566">#8566</A>)
+<LI>NVDA's browse mode Find dialog no longer fails to function if NVDA's About dialog is currently open in the background. (<A HREF="https://github.com/nvaccess/nvda/issues/8566">#8566</A>)
 </UL>
 
 <H3>插件以及NVDA核心开发者需要了解的变动</H3>
 
 <UL>
 <LI>You can now set the "disableBrowseModeByDefault" property on app modules to leave browse mode off by default. (<A HREF="https://github.com/nvaccess/nvda/issues/8846">#8846</A>)
-<LI>You can now set the "disableBrowseModeByDefault" property on app modules to leave browse mode off by default. (<A HREF="https://github.com/nvaccess/nvda/issues/8846">#8846</A>)
 <LI>The extended window style of a window is now exposed using the `extendedWindowStyle` property on Window objects and their derivatives. (<A HREF="https://github.com/nvaccess/nvda/issues/9136">#9136</A>)
 <LI>Updated comtypes package to 1.1.7. (<A HREF="https://github.com/nvaccess/nvda/issues/9440">#9440</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8522">#8522</A>)
 <LI>When using the report module info command, the order of information has changed to present the module first. (<A HREF="https://github.com/nvaccess/nvda/issues/7338">#7338</A>)
 <LI>Added an example to demonstrate using nvdaControllerClient.dll from C#. (<A HREF="https://github.com/nvaccess/nvda/issues/9600">#9600</A>)
+<LI>Added a new isWin10 function to the winVersion module which returns whether or not this copy of NVDA is running on (at least) the supplied release version of Windows 10 (such as 1903). (<A HREF="https://github.com/nvaccess/nvda/issues/9761">#9761</A>)
+<LI>The NVDA Python console now  contains more useful modules in its namespace (such as appModules, globalPlugins, config and textInfos). (<A HREF="https://github.com/nvaccess/nvda/issues/9789">#9789</A>)
+<LI>The result of the last executed command in the NVDA Python console is now accessible from the _ (line) variable. (<A HREF="https://github.com/nvaccess/nvda/issues/9782">#9782</A>)
 </UL>
 
 <H2>2019.1.1</H2>
