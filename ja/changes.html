@@ -47,7 +47,10 @@
  <LI>ブラウズモードでキー操作への反応に時間がかかる場合があります。
  </UL>
 <LI>新しい点字ディスプレイドライバーが提供されている場合に、NVDA設定ダイアログの「点字」カテゴリから点字ディスプレイの設定を変更できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7452">#7452</A>)
-<LI>Freedom Scientific の点字ディスプレイが点字ディスプレイの自動検出に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7727">#7727</A>)
+<LI>Freedom Scientific の点字ディスプレイが自動検出に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7727">#7727</A>)
+<LI>レビューカーソル位置の句読点や記号を報告するコマンドが追加されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9286">#9286</A>)
+<LI>「高度な設定」パネルに「可能な場合に Windows コンソールで UI オートメーションを使用」という実験的な機能を有効にするためのオプションが追加されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9614">#9614</A>)
+<LI>Python コンソールの入力フィールドにおいて、クリップボードから複数行のテキストを貼り付けできるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9776">#9776</A>)
 </UL>
 
 <H3>変更点</H3>
@@ -56,9 +59,12 @@
 <LI>簡単音声設定において、音量が10ずつではなく5ずつ増えたり減ったりするようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/6754">#6754</A>)
 <LI>NVDAを --disable-addons オプションをつけて起動したときのアドオンマネージャーの表示をわかりやすくしました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9473">#9473</A>)
 <LI>Unicode 共通ロケールデータリポジトリの絵文字説明をバージョン35.0に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9445">#9445</A>)
-<LI>liblouis 点訳エンジンをバージョン3.9.0に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9439">#9439</A>)
 <LI>ブラウズモードの要素リストの「フィルター」フィールドのショートカットキーを alt+y に変更しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8728">#8728</A>)
 <LI>自動検出された点字ディスプレイが Bluetooth 接続の場合に、 NVDA は同じドライバーでサポートされている USB 接続の点字ディスプレイを引き続き検索します。そして USB 接続が利用可能になった場合はそちらに切り替えます。 (<A HREF="https://github.com/nvaccess/nvda/issues/8853">#8853</A>)
+<LI>eSpeak-NG 音声エンジンをコミット 67324cc に更新しました。
+<LI>liblouis 点訳エンジンをバージョン3.10.0に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9439">#9439</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9678">#9678</A>)
+<LI>テキストが選択された直後に NVDA はまず選択されたテキストを報告して、最後に「選択」と報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/9028">#9028</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9909">#9909</A>)
+<LI>Microsoft Visual Studio Code の起動直後にブラウズモードを有効にしないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9828">#9828</A>)
 </UL>
 
 <H3>バグ修正</H3>
@@ -83,6 +89,9 @@
 <LI>Firefox および Chrome で Google ドキュメントを使用する場合に NVDA のテーブルナビゲーションコマンドを使用できなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9494">#9494</A>)
 <LI>Freedom Scientific の点字ディスプレイでバンパーキーが使えるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8849">#8849</A>)
 <LI>Notepad++ 7.7 の64ビット版において、ドキュメントの最初の文字を読むと NVDA が最大で10秒間フリーズしていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9609">#9609</A>)
+<LI>Handy Tech 点字ディスプレイを NVDA で使用する場合に HTCom を使用できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9691">#9691</A>)
+<LI>Mozilla Firefox において、バックグラウンドのタブのドキュメントのライブリージョンを報告しないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/1318">#1318</A>)
+<LI>バックグラウンドで「NVDAについて」のダイアログが開いている場合にも、NVDA のブラウズモードの「検索」ダイアログが失敗しないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8566">#8566</A>)
 </UL>
 
 <H3>開発者向けの変更</H3>
@@ -93,6 +102,12 @@
 <LI>comtypes パッケージを 1.1.7 に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9440">#9440</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8522">#8522</A>)
 <LI>モジュール情報の報告コマンド（NVDA+Ctrl+F1)において、報告する情報の順序が変更され、モジュール名を最初に報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7338">#7338</A>)
 <LI>C# から nvdaControllerClient.dll を使用するサンプルが追加されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9600">#9600</A>)
+<LI>winVersion モジュールに isWin10 関数が追加されました。これは NVDA を実行している環境が特定のバージョンの Windows 10 以上であるか（たとえば 1903 以上かどうか）を返します。 (<A HREF="https://github.com/nvaccess/nvda/issues/9761">#9761</A>)
+<LI>NVDA Python コンソールの名前空間に多くの有用なモジュールが追加されました。例えば appModules, globalPlugins, config, textInfos などです。 (<A HREF="https://github.com/nvaccess/nvda/issues/9789">#9789</A>)
+<LI>NVDA Python コンソールで直前に実行したコマンドの結果を _ （アンダースコア）変数で参照できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9782">#9782</A>)
+ <UL>
+ <LI>注意: この変更により gettext 翻訳で使われる "_" という名前の関数にアクセスできなくなります。翻訳の _ 関数を使いたい場合は del _ を実行します。
+ </UL>
 </UL>
 
 <H2>2019.1.1</H2>
