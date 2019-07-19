@@ -54,16 +54,28 @@ Embora possa não ser adequado desactivar em todas as páginas, pode resolver:
  </UL>
 <LI>Para os drivers das linhas Braille que o suportem, as configurações específicas do driver podem ser alteradas nas configurações de Braille do diálogo de configurações do NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/7452">#7452</A>)
 <LI>As linhas Braille da Freedom Scientific passam a ser suportadas pela detecção automática de linhas Braille. (<A HREF="https://github.com/nvaccess/nvda/issues/7727">#7727</A>)
-<P></P>
-== Alterações ==
+<LI>Adicionado um comando para mostrar o substituto para um símbolo sob o cursor de revisão. (<A HREF="https://github.com/nvaccess/nvda/issues/9286">#9286</A>)
+<LI>Adicionada uma opção experimental às configurações Avançadas que permite testar uma, ainda em progresso, versão reescrita do suporte do NVDA à consola do Windows, usando a API Microsoft UI Automation. (<A HREF="https://github.com/nvaccess/nvda/issues/9614">#9614</A>)
+<LI>Na consola de Python, o campo de edição já suporta a colagem de múltiplas linhas daÁrea de transferência. (<A HREF="https://github.com/nvaccess/nvda/issues/9776">#9776</A>)
+</UL>
+
+<H3>Alterações</H3>
+
+<UL>
 <LI>O volume do sintetizador passa a ser alterado de 5 em 5% em vez de 10% quando se usa o anel de configurações do sintetizador. (<A HREF="https://github.com/nvaccess/nvda/issues/6754">#6754</A>)
 <LI>Clarificada a informação no Gestor de extras quando se inicia o NVDA com os extras desactivados. (<A HREF="https://github.com/nvaccess/nvda/issues/9473">#9473</A>)
 <LI>Actualizado o Unicode Common Locale Data Repository emoji annotations para a versão 35.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9445">#9445</A>)
-<LI>Actualizado o liblouis braille translator para a versão 3.9.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9439">#9439</A>)
+<LI>Actualizado o liblouis braille translator para a versão 3.10.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9439">#9439</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9678">#9678</A>)
+<LI>Actualizado o eSpeak-NG para a versão  commit 67324cc.
 <LI>A tecla de atalho, em inglês, para o campo "Filtrar por:", no diálogo "Lista de elementos" foi alterada para alt+y. (<A HREF="https://github.com/nvaccess/nvda/issues/8728">#8728</A>)
 <LI>Quando uma linha Braille, ligada via Bluetooth, é detectada automaticamente, o NVDA continuará à procura por dispositivos suportados pelo mesmo driver, via USB, e alternará para uma ligação USB, se a encontrar. (# 8853)
-<P></P>
-== Correcções ==
+<LI>O NVDA passa a anunciar a selecção ou des-selecção após o anúncio do texto respectivo. (<A HREF="https://github.com/nvaccess/nvda/issues/9028">#9028</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9909">#9909</A>)
+<LI>No código do  Microsoft Visual Studio, o modo de navegação é desactivado por padrão. (<A HREF="https://github.com/nvaccess/nvda/issues/9828">#9828</A>)
+</UL>
+
+<H3>Correcções</H3>
+
+<UL>
 <LI>O NVDA já não cracha quando uma pasta de um extra está vazia. (<A HREF="https://github.com/nvaccess/nvda/issues/7686">#7686</A>)
 <LI>As marcas LTR e RTL já não são anunciadas em Braille ou em voz ao navegar por caractere ao aceder à janela de propriedades. (<A HREF="https://github.com/nvaccess/nvda/issues/8361">#8361</A>)
 <LI>Ao saltar para um campo de formulário, em Modo de navegação, o campo será lido na sua totalidade e não apenas a primeira linha. (<A HREF="https://github.com/nvaccess/nvda/issues/9388">#9388</A>)
@@ -84,13 +96,24 @@ Embora possa não ser adequado desactivar em todas as páginas, pode resolver:
 <LI>As teclas "bumper" das linhas Braille da Freedom Scientific já funcionam correctamente. (# 8849)
 <LI>Ao ler o primeiro caractere de um documento, no Notepad ++ 7.7 X64, o NVDA já não congela por até dez segundos. (# 9609)
 <LI>O HTCom já pode ser usado com uma linha Braille da Handy Tech em conjunto com o NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/9691">#9691</A>)
-<P></P>
-== Alterações para desenvolvedores ==
+<LI>No Mozilla Firefox, as actualizações de uma live region já não são anunciadas se a live region estiver numa aba em segundo plano. (<A HREF="https://github.com/nvaccess/nvda/issues/1318">#1318</A>)
+<LI>O diálogo Localizar do NVDA, em modo de navegação, já não falha, mesmo que o diálogo Sobre o NVDA esteja aberto em segundo plano. (<A HREF="https://github.com/nvaccess/nvda/issues/8566">#8566</A>)
+</UL>
+
+<H3>Alterações para desenvolvedores</H3>
+
+<UL>
 <LI>You can now set the "disableBrowseModeByDefault" property on app modules to leave browse mode off by default. (<A HREF="https://github.com/nvaccess/nvda/issues/8846">#8846</A>)
 <LI>The extended window style of a window is now exposed using the `extendedWindowStyle` property on Window objects and their derivatives. (<A HREF="https://github.com/nvaccess/nvda/issues/9136">#9136</A>)
 <LI>Updated comtypes package to 1.1.7. (<A HREF="https://github.com/nvaccess/nvda/issues/9440">#9440</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8522">#8522</A>)
 <LI>When using the report module info command, the order of information has changed to present the module first. (<A HREF="https://github.com/nvaccess/nvda/issues/7338">#7338</A>)
 <LI>Added an example to demonstrate using nvdaControllerClient.dll from C#. (<A HREF="https://github.com/nvaccess/nvda/issues/9600">#9600</A>)
+<LI>Added a new isWin10 function to the winVersion module which returns whether or not this copy of NVDA is running on (at least) the supplied release version of Windows 10 (such as 1903). (<A HREF="https://github.com/nvaccess/nvda/issues/9761">#9761</A>)
+<LI>The NVDA Python console now  contains more useful modules in its namespace (such as appModules, globalPlugins, config and textInfos). (<A HREF="https://github.com/nvaccess/nvda/issues/9789">#9789</A>)
+<LI>The result of the last executed command in the NVDA Python console is now accessible from the _ (line) variable. (<A HREF="https://github.com/nvaccess/nvda/issues/9782">#9782</A>)
+ <UL>
+ <LI>Note that this shadows the gettext translation function also called "_". To access the translation function: del _
+ </UL>
 </UL>
 
 <H2>2019.1.1</H2>
