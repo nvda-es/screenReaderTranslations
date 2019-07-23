@@ -48,6 +48,9 @@ Highlights of this release include auto detection of Freedom Scientific braille 
  </UL>
 <LI>For braille display drivers that support it, driver settings can now be changed from the braille settings category in NVDA's settings dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/7452">#7452</A>)
 <LI>Freedom Scientific braille displays are now supported by braille display auto detection. (<A HREF="https://github.com/nvaccess/nvda/issues/7727">#7727</A>)
+<LI>Added a command to show the replacement for the symbol under the review cursor. (<A HREF="https://github.com/nvaccess/nvda/issues/9286">#9286</A>)
+<LI>Added an experimental option to the Advanced Settings panel that allows you to try out a new, work-in-progress rewrite of NVDA's Windows Console support using the Microsoft UI Automation API. (<A HREF="https://github.com/nvaccess/nvda/issues/9614">#9614</A>)
+<LI>In the Python Console, the input field now supports pasting multiple lines from the clipboard. (<A HREF="https://github.com/nvaccess/nvda/issues/9776">#9776</A>)
 </UL>
 
 <H3>Changes</H3>
@@ -56,9 +59,12 @@ Highlights of this release include auto detection of Freedom Scientific braille 
 <LI>Synthesizer volume is now increased and decreased by 5 instead of 10 when using the settings ring. (<A HREF="https://github.com/nvaccess/nvda/issues/6754">#6754</A>)
 <LI>Clarified the text in the add-on manager when NVDA is launched with the --disable-addons flag. (<A HREF="https://github.com/nvaccess/nvda/issues/9473">#9473</A>)
 <LI>Updated Unicode Common Locale Data Repository emoji annotations to version 35.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9445">#9445</A>)
-<LI>Updated liblouis braille translator to version 3.9.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9439">#9439</A>)
 <LI>The hotkey for the filter field in the elements list in browse mode has changed to alt+y. (<A HREF="https://github.com/nvaccess/nvda/issues/8728">#8728</A>)
 <LI>When an auto detected braille display is connected via Bluetooth, NVDA will keep searching for USB displays supported by the same driver and switch to a USB connection if it becomes available. (<A HREF="https://github.com/nvaccess/nvda/issues/8853">#8853</A>)
+<LI>Updated eSpeak-NG to commit 67324cc.
+<LI>Updated liblouis braille translator to version 3.10.0. (<A HREF="https://github.com/nvaccess/nvda/issues/9439">#9439</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9678">#9678</A>)
+<LI>NVDA will now report the word 'selected' after reporting the text a user has just selected.(<A HREF="https://github.com/nvaccess/nvda/issues/9028">#9028</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9909">#9909</A>)
+<LI>In Microsoft Visual Studio Code, browse mode is now off by default. (<A HREF="https://github.com/nvaccess/nvda/issues/9828">#9828</A>)
 </UL>
 
 <H3>Bug Fixes</H3>
@@ -83,6 +89,9 @@ Highlights of this release include auto detection of Freedom Scientific braille 
 <LI>It is again possible to use NvDA's table navigation commands in Google Docs, in Firefox and Chrome. (<A HREF="https://github.com/nvaccess/nvda/issues/9494">#9494</A>)
 <LI>The bumper keys now work correctly on Freedom Scientific braille displays. (<A HREF="https://github.com/nvaccess/nvda/issues/8849">#8849</A>)
 <LI>When reading the first character of a document in Notepad++ 7.7 X64, NVDA no longer freezes for up to ten seconds. (<A HREF="https://github.com/nvaccess/nvda/issues/9609">#9609</A>)
+<LI>HTCom can now be used with a Handy Tech Braille display in combination with NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/9691">#9691</A>)
+<LI>In Mozilla Firefox, updates to a live region are no longer reported if the live region is in a background tab. (<A HREF="https://github.com/nvaccess/nvda/issues/1318">#1318</A>)
+<LI>NVDA's browse mode Find dialog no longer fails to function if NVDA's About dialog is currently open in the background. (<A HREF="https://github.com/nvaccess/nvda/issues/8566">#8566</A>)
 </UL>
 
 <H3>Changes for Developers</H3>
@@ -93,6 +102,12 @@ Highlights of this release include auto detection of Freedom Scientific braille 
 <LI>Updated comtypes package to 1.1.7. (<A HREF="https://github.com/nvaccess/nvda/issues/9440">#9440</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8522">#8522</A>)
 <LI>When using the report module info command, the order of information has changed to present the module first. (<A HREF="https://github.com/nvaccess/nvda/issues/7338">#7338</A>)
 <LI>Added an example to demonstrate using nvdaControllerClient.dll from C#. (<A HREF="https://github.com/nvaccess/nvda/issues/9600">#9600</A>)
+<LI>Added a new isWin10 function to the winVersion module which returns whether or not this copy of NVDA is running on (at least) the supplied release version of Windows 10 (such as 1903). (<A HREF="https://github.com/nvaccess/nvda/issues/9761">#9761</A>)
+<LI>The NVDA Python console now  contains more useful modules in its namespace (such as appModules, globalPlugins, config and textInfos). (<A HREF="https://github.com/nvaccess/nvda/issues/9789">#9789</A>)
+<LI>The result of the last executed command in the NVDA Python console is now accessible from the _ (line) variable. (<A HREF="https://github.com/nvaccess/nvda/issues/9782">#9782</A>)
+ <UL>
+ <LI>Note that this shadows the gettext translation function also called "_". To access the translation function: del _
+ </UL>
 </UL>
 
 <H2>2019.1.1</H2>
