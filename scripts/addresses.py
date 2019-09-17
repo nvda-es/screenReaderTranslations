@@ -214,7 +214,7 @@ addresses = {
     },
     'sv': {
         'lang':'Swedish',
-        'email': ['Daniel Johansson <daniel.johansson@coeptus.se>', 'Niklas Johansson <sleeping.pillow@gmail.com>'],
+        'email': ['Daniel Johansson <daniel.johansson@coeptus.se>', 'Niklas Johansson <sleeping.pillow@gmail.com>', 'Karl-Otto Rosenqvist <Karl-otto@mawingu.se>',],
     },
     'ta': {
         'lang':'Tamil',
