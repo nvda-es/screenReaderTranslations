@@ -144,13 +144,15 @@ Klicken Sie auf "OK", um den Dialog zu schließen.
 ++ NVDA starten ++[LaunchingNVDA]
 Wenn Sie NVDA bereits installiert haben, können Sie es entweder vom Desktop aus mit Strg+Alt+N aufrufen oder wählen Sie NVDA aus dem Startmenü unter Programme "NVDA" aus.
 Optional können Sie auch im Dialog "Ausführen..." (Windows-Taste+R) den Befehl "NVDA" (ohne Anführungszeichen) eingeben und mit der Eingabetaste aufrufen.
-Sie können außerdem einige [Befehlszeilenoptionen #CommandLineOptions] angeben. Hiermit können Sie z. B. NVDA neu starten (-r), NVDA beenden (-q), oder die Erweiterungen deaktivieren (--disable-addons).
+Wenn NVDA bereits läuft, wird es neu gestartet.
+Sie können auch einige [Kommandozeilenparameter #CommandLineOptions] übergeben, mit denen Sie das Programm beenden (-q), Erweiterungen deaktivieren (-disable-addons, etc.) können.
 
 Bei installierten Versionen von NVDA werden die Konfigurationsdateien normalerweise im Roaming-Verzeichnis des aktuell angemeldeten Benutzers gespeichert (z. B. "C:\Users\<Benutzer>\AppData\Roaming").
 Sie können NVDA jedoch so einstellen, dass die Konfigurationsdateien stattdessen im Lokalen Verzeichnis des aktuellen Benutzers gespeichert werden.
 Weitere Informationen dazu finden Sie im Abschnitt [Systemparameter #SystemWideParameters].
 
-Um die Portable Version von NVDA zu starten, wechseln Sie in den Ordner, in welchem Sie die Dateien entpackt haben und starten anschließend die Datei "NVDA.exe" mit der Eingabetaste oder mit einem Doppelklick.
+Um die portable NVDA-Version zu starten, wechseln Sie in den Ordner, in welchem Sie die Dateien entpackt haben und starten anschließend die Datei "NVDA.exe" mit der Eingabetaste oder mit einem Doppelklick.
+Wenn NVDA bereits ausgeführt wurde, wird es automatisch gestoppt, bevor die portable Version gestartet wird.
 
 Während des Startvorgangs hören Sie als Erstes eine aufsteigende Melodie.
 Je nach dem, wie schnell Ihr Computer ist oder wenn Sie NVDA von einem USB-Stick oder einem anderen Medium aus starten, so kann das einen Moment dauern, bis der Prozess abgeschlossen ist.
@@ -400,6 +402,7 @@ Die folgenden Tastenkombinationen zum Betrachten von Text sind verfügbar:
 | Alles ansagen | Num Plus | NVDA+Umschalt+A | Nach unten streichen mit drei Fingern (Textmodus) | Liest von der aktuellen Cursor-Position des NVDA-Cursors den Text vor und bewegt ihn mit. |
 | Vom NVDA-Cursor markieren und kopieren | NVDA+F9 | NVDA+F9 | Keine | Setzt eine Startmarke an der aktuellen Position des NVDA-Cursors ab, der markiert oder kopiert werden soll. Die Aktion (Markieren/Kopieren) wird nicht ausgeführt, bis Sie NVDA den Textende mitgeteilt haben. |
 | Bis zum NVDA-Cursor markieren und kopieren | NVDA+F10 | NVDA+F10 | Keine | Wird die Tastenkombination einmal gedrückt, markiert NVDA den Text zwischen der zuvor gesetzten Startmarke und der aktuellen Position des NVDA-Cursors. Wird die Tastenkombination zweimal gedrückt, so kopiert NVDA den Text zwischen der zuvor gesetzten Startmarke und der aktuellen Position des NVDA-Cursors in die Zwischenablage |
+| Springt zum markierten Start für die Kopie in der Ansicht | NVDA+Umschalt+F9 | NVDA+Umschalt+F9 | none | Zieht den System-Cursor an die zuvor eingestellte Startmarkierung für das Kopieren. |
 | Textformatierung ausgeben | NVDA+F | NVDA+F | Keine | Gibt die Formatierungen unter dem NVDA-Cursor aus. Bei zweimaligen Drücken der Tastenkombination wird die Ausgabe im Lesemodus dargestellt. |
 | Ansage des aktuellen Symbol-Ersatzes | Keine | Keine | Keine | Spricht das Symbol, an dem sich dem Cursor befindet. Zweimal gedrückt, zeigt das Symbol und den Text an, mit dem es im Lesemodus gesprochen wird. |
 %kc:endInclude
@@ -939,6 +942,21 @@ Wenn Sie sich in der Tabellenansicht der hinzugefügten Bücher befinden:
 | Kontextmenü | Anwendungen | Öffnet das Kontextmenü für das ausgewählte Buch. |
 %kc:endInclude
 
+++ Die Windows-Konsole ++[WinConsole]
+NVDA bietet Unterstützung für die Windows-Befehlskonsole, die von der Eingabeaufforderung, PowerShell und dem Windows-Subsystem für Linux verwendet wird.
+Das Konsolenfenster ist von fester Größe und typischerweise viel kleiner als der Puffer, der die Ausgabe enthält.
+Wenn ein neuer Text eingegeben wird, scrollt der Inhalt nach oben und der vorherige Text ist nicht mehr sichtbar. 
+Text, der im Fenster nicht sichtbar angezeigt wird, ist mit den Textanzeigebefehlen von NVDA nicht zugänglich.
+Daher ist es notwendig, im Konsolenfenster zu scrollen, um frühere Texte zu lesen.
+%kc:beginInclude
+Die folgenden integrierten Tastenkombinationen der Windows-Konsole können nützlich sein, wenn Sie [Text #ReviewingText] mit NVDA lesen möchten:
+|| Name | Tastenkombination | Beschreibung |
+| Nach oben scrollen | Strg+Pfeiltaste nach oben | Scrollt das Konsolenfenster nach oben, so dass früherer Text gelesen werden kann. |
+| Nach unten scrollen | Strg+Pfeiltaste nach unten | Scrollt das Konsolenfenster nach unten, so dass späterer Text gelesen werden kann. |
+| Zum Anfang scrollen | Strg+Pos1 | Scrollt das Konsolenfenster zum Anfang des Puffers. |
+| Zum Ende scrollen | Strg+Ende | Scrollt das Konsolenfenster zum Ende des Puffers. |
+%kc:endInclude
+
 + NVDA konfigurieren +[ConfiguringNVDA]
 Die meisten NVDA-Einstellungen können über Dialogfelder vorgenommen werden, welche man im Untermenü Anpassen des NVDA-Menü findet. 
 Viele Einstellungen können in einem mehrseitigen [Dialogfeld #NVDASettings] geändert werden. 
@@ -1104,6 +1122,8 @@ Wenn Sie jedoch einen Sprachsynthesizer verwenden, der das Sprechen von Emoji-Be
 Beachten Sie, dass manuell hinzugefügte oder bearbeitete Charakterbeschreibungen als Teil Ihrer Benutzereinstellungen gespeichert werden.
 Wenn Sie also die Beschreibung eines bestimmten Emoji ändern, wird Ihre benutzerdefinierte Beschreibung für diesen Emoji bevorzugt, unabhängig davon, ob diese Option aktiviert ist.
 Sie können die Symbolbeschreibungen in [Aussprache von Symbolen und Satzzeichen #SymbolPronunciation] hinzufügen, bearbeiten oder entfernen.
+
+Um die Dateneinbindung im Unicode-Konsortium von überall her umzuschalten, weisen Sie bitte eine benutzerdefinierte Geste über den Dialog [Eingaben #InputGestures] zu.
 
 ==== Stimme bei Großbuchstaben anheben in % ====[SpeechSettingsCapPitchChange]
 Dieses Eingabefeld legt fest, wie die Stimmhöhe beim Ansagen von Großbuchstaben verändert werden soll.
@@ -1606,8 +1626,9 @@ Konfigurieren können Sie die Meldungen von:
  - Listen
  - Zitatblöcke
  - Sprungmarken
+ - Artikel
  - Rahmen
- - anklickbare Elemente
+ - Anklickbare Elemente
  -
 -
 
@@ -1624,11 +1645,11 @@ Schalten Sie diese Option nur dann ein, wenn beim Lesen in einem WordPad-Dokumen
 Mit dieser Option legen Sie fest, wie Zeileneinrückungen durch NVDA wiedergegeben werden sollen.
 Das Kombinationsfeld enthält vier Einträge:
 
-- aus: NVDA wird Zeileneinrückungen in keiner Weise gesondert ausgeben
+- Aus: NVDA wird Zeileneinrückungen in keiner Weise gesondert ausgeben
 - Sprache: Diese Einstellung bringt NVDA dazu die Anzahl von Zeichen anzusagen, mit denen eine Zeile eingerückt wurde (z. B. 12 Leerzeichen oder 4 Tabulatoren)
 - Signaltöne: Diese Einstellung bringt NVDA dazu, die Einrückung mit Hilfe von Signaltönen anzugeben. Wenn sich die Einrückung ändert, wird der Signalton höher, je stärker eine Zeile eingerückt ist. 
 Die Einrückung um einen Tabulator entspricht hierbei der Einrückung um vier Leerzeichen.
-- beides: dies ist eine Kombination der beiden obigen Optionen.
+- Beides: Dies ist eine Kombination der beiden obigen Optionen.
 -
 
 +++ Windows 10-Texterkennung +++[Win10OcrSettings]
@@ -1668,11 +1689,21 @@ Dazu gehört in Microsoft Word selbst aber auch der Microsoft Outlook Message Vi
 Es kann jedoch einige Informationen geben, die in einigen Versionen von Microsoft Office entweder nicht oder falsch angezeigt werden, so dass man sich nicht immer auf diese Unterstützung der Benutzeroberflächenautomatisierung verlassen kann.
 Wir empfehlen noch nicht diese Funktion standardmäßig zu aktivieren. Allerdings ist ausdrücklich erwünscht, dass Benutzer von Office 2016 / 365 diese Funktion testen und Rückmeldung geben können.
 
-==== Benutzeroberflächenautomatisierung verwenden, um auf die Windows-Konsole zuzugreifen, falls verfügbar ====[AdvancedSettingsConsoleUIA]
-Wenn diese Option aktiviert ist, verwendet NVDA eine neue, noch nicht abgeschlossene Version der Unterstützung für Windows-Konsole, die die Vorteile von der [Verbesserungen der Barrierefreiheit durch Microsoft (englisch) https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/] nutzt. Diese Funktion ist sehr experimentell und noch unvollständig, so dass ihre Verwendung noch nicht empfohlen wird. Nach Fertigstellung wird jedoch erwartet, dass diese neue Unterstützung zum Standard wird, was die Leistung und Stabilität von NVDA in Windows-Konsolen verbessert.
+==== Die Windows-Konsolenunterstützung ====[AdvancedSettingsConsoleUIA]
+Diese Option legt fest, wie NVDA mit der von der Eingabeaufforderung, PowerShell und dem Windows-Subsystem für Linux verwendeten Windows-Konsole interagiert.
+Es hat keinen Einfluss auf das moderne Windows-Terminal.
+In Windows 10 Version 1709 hat Microsoft[Unterstützung für seine API für die Benutzeroberflächenautomatisierung in die Konsole https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/] aufgenommen, was der Konsole eine erheblich verbesserte Leistung und Stabilität für Screenreader bringt, die sie unterstützen.
+In Situationen, in denen die Benutzeroberflächenautomatisierung nicht verfügbar ist oder bekanntermaßen zu einer schlechteren Benutzererfahrung führt, ist die Unterstützung der Legacy-Konsole von NVDA als Rückhalt verfügbar.
+Das Kombinationsfeld für die Unterstützung der Windows-Konsole hat drei Optionen:
+- Automatisch: Verwendet die Benutzeroberflächenautomatisierung in Konsolen unter Windows 10 Version 1809 und neuer. Diese Option wird empfohlen und ist standardmäßig eingestellt.
+- Benutzeroberflächenautomatisierung bevorzugen: Verwendet die Benutzeroberflächenautomatisierung in Konsolen, falls verfügbar, auch bei Windows-Versionen mit unvollständigen oder fehlerhaften Implementierungen. Obwohl diese eingeschränkte Funktion nützlich (und sogar ausreichend für Ihre Nutzung) sein kann, geschieht die Nutzung dieser Option auf eigene Gefahr und wird nicht unterstützt.
+- Legacy: Die Benutzeroberflächenautomatisierung in der Windows-Konsole wird vollständig deaktiviert, so dass immer die Legacy-Variante verwendet wird.
+-
 
-==== Passwörter in Konsolen der Benutzeroberflächenautomatisierung ansagen ====[AdvancedSettingsWinConsoleSpeakPasswords]
-Diese Einstellung steuert, ob Zeichen durch [eingegebene Zeichen ansagen #KeyboardSettingsSpeakTypedCharacters] oder [eingegebene Wörter ansagen #KeyboardSettingsSpeakTypedWords] gesprochen werden, wenn der Bildschirm in der Windows-Konsole bei aktivierter Automatisierungsunterstützung der Benutzeroberflächenautomatisierung nicht aktualisiert wird (z. B. Passworteingabe). Aus Sicherheitsgründen sollte diese Einstellung deaktiviert bleiben. Sie können es jedoch aktivieren, wenn Sie bei der Verwendung der neuen experimentellen Konsolen-Unterstützung von NVDA Leistungsprobleme oder Instabilität bei der Eingabe von Zeichen und/oder Wörtern feststellen.
+==== Passwörter in der Windows-Konsole ansagen ====[AdvancedSettingsWinConsoleSpeakPasswords]
+Diese Einstellung steuert, ob Zeichen durch [Zeichen während der Eingabe ansagen #KeyboardSettingsSpeakTypedCharacters] oder [Wörter während der Eingabe ansagen #KeyboardSettingsSpeakTypedWords] gesprochen werden, wenn der Bildschirm in einigen Terminal-Programmen, wie der Windows-Konsole mit aktivierter Unterstützung der Benutzeroberflächenautomatisierung und Mintty, nicht aktualisiert wird.
+Aus Sicherheitsgründen sollte diese Einstellung deaktiviert bleiben.
+Sie können es jedoch aktivieren, wenn Sie Leistungsprobleme oder Instabilität bei der Eingabe von Zeichen und/oder Wörtern in Konsolen haben, oder in vertrauenswürdigen Umgebungen arbeiten und die Bekanntgabe von Passwörtern bevorzugen.
 
 ==== Automatisches Bewegen des System-Fokus auf hervorhebbare Elemente im Lesemodus ====[BrowseModeSettingsAutoFocusFocusableElements]
 Tastenkombination: NVDA+8
@@ -2862,9 +2893,7 @@ Bitte lesen Sie hierzu die [BRLTTY-Dokumentation für Tastaturbelegungen https:/
 Mit Hilfe von Befehlszeilenoptionen können Sie das Verhalten von NVDA beeinflussen.
 Sie können beliebig viele Optionen angeben.
 Sie können die Befehlszeilenoptionen entweder in den Eigenschaften einer Verknüpfung, im Dialog "Ausführen" oder in einer Eingabeaufforderung eingeben.
-Die Optionen müssen durch Leerzeichen getrennt eingegeben werden.
-Die Desktop-Verknüpfung von NVDA enthält beispielsweise die Option -r, mit deren Hilfe eine laufende Instanz von NVDA beendet wird, bevor NVDA neu gestartet wird.
-Eine andere hilfreiche Option ist --disable-addons, mit deren Hilfe Sie alle Erweiterungen vorübergehend deaktivieren können.
+Eine nützliche Option ist beispielsweise "-disable-addons", die NVDA anweist, alle laufenden Erweiterungen auszusetzen.
 So können Sie beispielsweise feststellen, ob ein Problem durch eine bestimmte Erweiterung verursacht wird.
 
 Mit dem folgenden Befehl können Sie über den Dialog "ausführen" eine laufende Instanz von NVDA beenden:
@@ -2873,8 +2902,8 @@ nvda -q
 
 Einige Befehlszeilenoptionen besitzen eine kurze und eine Lange Form und wiederum einige nur eine lange Form.
 Die Kurzformen mehrerer Optionen können beispielsweise wie folgt kombiniert werden:
-| nvda -rm | Dieser Aufruf wird die laufende Instanz von NVDA beenden und eine neue Instanz mit deaktivierten Klängen starten. |
-| nvda -rm --disable-addons | Siehe oben; zusätzlich werden alle Erweiterungen deaktiviert |
+| nvda -mc <Konfigurationspfad> | Dadurch wird NVDA mit Starttönen und deaktivierter Meldung sowie der angegebenen Konfiguration gestartet. |
+| nvda -mc <Konfigurationspfad> --disable-addons | Wie zuvor, jedoch mit deaktivierten Erweiterungen. |
 
 Einige Optionen akzeptieren zusätzliche Parameter, mit denen Sie z. B. den Umfang der Protokollierung oder den Namen einer Konfigurationsdatei angeben können.
 Die Parameter müssen durch ein Leerzeichen von der Option getrennt angegeben werden, wenn Sie die Kurzform verwenden. Wenn Sie die Langform benutzen, müssen Sie den Parameter mit einem Gleichheitszeichen von der Option trennen. Beispiele:
@@ -2886,7 +2915,6 @@ Folgende Kommandozeilenoptionen werden akzeptiert:
 || Kurzform | Langform | Beschreibung |
 | -h | --help | Zeigt eine Hilfe zur Befehlszeile an und beendet NVDA. |
 | -q | --quit | Beendet eine laufende Instanz von NVDA. |
-| -r | --replace | Beendet eine laufende Instanz von NVDA und startet eine neue. |
 | -k | --check-running | Meldet, ob NVDA bereits ausgeführt wird. Falls ja, wird ein Fehlercode von 0 zurückgegeben, anderenfalls wird 1 zurückgegeben. |
 | -f Protokolldateiname | --log-file=Protokolldateiname | Legt die Datei fest, in der NVDA sein Protokoll schreiben soll. |
 | -l Protokollierungsstufe | --log-level=Protokollierungsstufe | Die niedrigste Stufe der protokollierten Nachricht (Debug 10, Input/Output 12, Debug-Warnung 15, Info 20, Warnung 30, Fehler 40, kritisch 50, deaktiviert 100), Standard ist Warnung. |
