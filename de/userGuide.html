@@ -122,6 +122,7 @@
       <LI><A HREF="#KindleUserNotes">10.8.2. Notizen</A>
       </UL>
     <LI><A HREF="#Azardi">10.9. Azardi</A>
+    <LI><A HREF="#WinConsole">10.10. Die Windows-Konsole</A>
     </UL>
   <LI><A HREF="#ConfiguringNVDA">11. NVDA konfigurieren</A>
     <UL>
@@ -193,9 +194,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant BI/B-Serie / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc131">14.9.1. Tasten für alle Braillezeilenmodelle</A>
-      <LI><A HREF="#toc132">14.9.2. Tastenzuweisungen für Brailliant BI 32, BI 40 und B 80</A>
-      <LI><A HREF="#toc133">14.9.3. Tastenzuweisungen für Brailliant BI 14</A>
+      <LI><A HREF="#toc132">14.9.1. Tasten für alle Braillezeilenmodelle</A>
+      <LI><A HREF="#toc133">14.9.2. Tastenzuweisungen für Brailliant BI 32, BI 40 und B 80</A>
+      <LI><A HREF="#toc134">14.9.3. Tastenzuweisungen für Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Syncbraille Serie</A>
     <LI><A HREF="#Seika">14.11. Seika-Braillezeilen</A>
@@ -434,7 +435,8 @@ Klicken Sie auf "OK", um den Dialog zu schließen.
 <P>
 Wenn Sie NVDA bereits installiert haben, können Sie es entweder vom Desktop aus mit Strg+Alt+N aufrufen oder wählen Sie NVDA aus dem Startmenü unter Programme "NVDA" aus.
 Optional können Sie auch im Dialog "Ausführen..." (Windows-Taste+R) den Befehl "NVDA" (ohne Anführungszeichen) eingeben und mit der Eingabetaste aufrufen.
-Sie können außerdem einige <A HREF="#CommandLineOptions">Befehlszeilenoptionen</A> angeben. Hiermit können Sie z. B. NVDA neu starten (-r), NVDA beenden (-q), oder die Erweiterungen deaktivieren (--disable-addons).
+Wenn NVDA bereits läuft, wird es neu gestartet.
+Sie können auch einige <A HREF="#CommandLineOptions">Kommandozeilenparameter</A> übergeben, mit denen Sie das Programm beenden (-q), Erweiterungen deaktivieren (-disable-addons, etc.) können.
 </P>
 <P>
 Bei installierten Versionen von NVDA werden die Konfigurationsdateien normalerweise im Roaming-Verzeichnis des aktuell angemeldeten Benutzers gespeichert (z. B. "C:\Users\&lt;Benutzer&gt;\AppData\Roaming").
@@ -442,7 +444,8 @@ Sie können NVDA jedoch so einstellen, dass die Konfigurationsdateien stattdesse
 Weitere Informationen dazu finden Sie im Abschnitt <A HREF="#SystemWideParameters">Systemparameter</A>.
 </P>
 <P>
-Um die Portable Version von NVDA zu starten, wechseln Sie in den Ordner, in welchem Sie die Dateien entpackt haben und starten anschließend die Datei "NVDA.exe" mit der Eingabetaste oder mit einem Doppelklick.
+Um die portable NVDA-Version zu starten, wechseln Sie in den Ordner, in welchem Sie die Dateien entpackt haben und starten anschließend die Datei "NVDA.exe" mit der Eingabetaste oder mit einem Doppelklick.
+Wenn NVDA bereits ausgeführt wurde, wird es automatisch gestoppt, bevor die portable Version gestartet wird.
 </P>
 <P>
 Während des Startvorgangs hören Sie als Erstes eine aufsteigende Melodie.
@@ -1105,6 +1108,13 @@ Die folgenden Tastenkombinationen zum Betrachten von Text sind verfügbar:
 <TD>NVDA+F10</TD>
 <TD>Keine</TD>
 <TD>Wird die Tastenkombination einmal gedrückt, markiert NVDA den Text zwischen der zuvor gesetzten Startmarke und der aktuellen Position des NVDA-Cursors. Wird die Tastenkombination zweimal gedrückt, so kopiert NVDA den Text zwischen der zuvor gesetzten Startmarke und der aktuellen Position des NVDA-Cursors in die Zwischenablage</TD>
+</TR>
+<TR>
+<TD>Springt zum markierten Start für die Kopie in der Ansicht</TD>
+<TD>NVDA+Umschalt+F9</TD>
+<TD>NVDA+Umschalt+F9</TD>
+<TD>none</TD>
+<TD>Zieht den System-Cursor an die zuvor eingestellte Startmarkierung für das Kopieren.</TD>
 </TR>
 <TR>
 <TD>Textformatierung ausgeben</TD>
@@ -2337,6 +2347,46 @@ Wenn Sie sich in der Tabellenansicht der hinzugefügten Bücher befinden:
 </TR>
 </TABLE>
 
+<A NAME="WinConsole"></A>
+<H3>10.10. Die Windows-Konsole</H3>
+
+<P>
+NVDA bietet Unterstützung für die Windows-Befehlskonsole, die von der Eingabeaufforderung, PowerShell und dem Windows-Subsystem für Linux verwendet wird.
+Das Konsolenfenster ist von fester Größe und typischerweise viel kleiner als der Puffer, der die Ausgabe enthält.
+Wenn ein neuer Text eingegeben wird, scrollt der Inhalt nach oben und der vorherige Text ist nicht mehr sichtbar. 
+Text, der im Fenster nicht sichtbar angezeigt wird, ist mit den Textanzeigebefehlen von NVDA nicht zugänglich.
+Daher ist es notwendig, im Konsolenfenster zu scrollen, um frühere Texte zu lesen.
+Die folgenden integrierten Tastenkombinationen der Windows-Konsole können nützlich sein, wenn Sie <A HREF="#ReviewingText">Text</A> mit NVDA lesen möchten:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Tastenkombination</TH>
+<TH>Beschreibung</TH>
+</TR>
+<TR>
+<TD>Nach oben scrollen</TD>
+<TD>Strg+Pfeiltaste nach oben</TD>
+<TD>Scrollt das Konsolenfenster nach oben, so dass früherer Text gelesen werden kann.</TD>
+</TR>
+<TR>
+<TD>Nach unten scrollen</TD>
+<TD>Strg+Pfeiltaste nach unten</TD>
+<TD>Scrollt das Konsolenfenster nach unten, so dass späterer Text gelesen werden kann.</TD>
+</TR>
+<TR>
+<TD>Zum Anfang scrollen</TD>
+<TD>Strg+Pos1</TD>
+<TD>Scrollt das Konsolenfenster zum Anfang des Puffers.</TD>
+</TR>
+<TR>
+<TD>Zum Ende scrollen</TD>
+<TD>Strg+Ende</TD>
+<TD>Scrollt das Konsolenfenster zum Ende des Puffers.</TD>
+</TR>
+</TABLE>
+
 <A NAME="ConfiguringNVDA"></A>
 <H2>11. NVDA konfigurieren</H2>
 
@@ -2622,6 +2672,9 @@ Wenn Sie jedoch einen Sprachsynthesizer verwenden, der das Sprechen von Emoji-Be
 Beachten Sie, dass manuell hinzugefügte oder bearbeitete Charakterbeschreibungen als Teil Ihrer Benutzereinstellungen gespeichert werden.
 Wenn Sie also die Beschreibung eines bestimmten Emoji ändern, wird Ihre benutzerdefinierte Beschreibung für diesen Emoji bevorzugt, unabhängig davon, ob diese Option aktiviert ist.
 Sie können die Symbolbeschreibungen in <A HREF="#SymbolPronunciation">Aussprache von Symbolen und Satzzeichen</A> hinzufügen, bearbeiten oder entfernen.
+</P>
+<P>
+Um die Dateneinbindung im Unicode-Konsortium von überall her umzuschalten, weisen Sie bitte eine benutzerdefinierte Geste über den Dialog <A HREF="#InputGestures">Eingaben</A> zu.
 </P>
 
 <A NAME="SpeechSettingsCapPitchChange"></A>
@@ -3534,8 +3587,9 @@ Konfigurieren können Sie die Meldungen von:
  <LI>Listen
  <LI>Zitatblöcke
  <LI>Sprungmarken
+ <LI>Artikel
  <LI>Rahmen
- <LI>anklickbare Elemente
+ <LI>Anklickbare Elemente
  </UL>
 </UL>
 
@@ -3565,11 +3619,11 @@ Das Kombinationsfeld enthält vier Einträge:
 </P>
 
 <UL>
-<LI>aus: NVDA wird Zeileneinrückungen in keiner Weise gesondert ausgeben
+<LI>Aus: NVDA wird Zeileneinrückungen in keiner Weise gesondert ausgeben
 <LI>Sprache: Diese Einstellung bringt NVDA dazu die Anzahl von Zeichen anzusagen, mit denen eine Zeile eingerückt wurde (z. B. 12 Leerzeichen oder 4 Tabulatoren)
 <LI>Signaltöne: Diese Einstellung bringt NVDA dazu, die Einrückung mit Hilfe von Signaltönen anzugeben. Wenn sich die Einrückung ändert, wird der Signalton höher, je stärker eine Zeile eingerückt ist. 
 Die Einrückung um einen Tabulator entspricht hierbei der Einrückung um vier Leerzeichen.
-<LI>beides: dies ist eine Kombination der beiden obigen Optionen.
+<LI>Beides: Dies ist eine Kombination der beiden obigen Optionen.
 </UL>
 
 <A NAME="Win10OcrSettings"></A>
@@ -3642,17 +3696,29 @@ Wir empfehlen noch nicht diese Funktion standardmäßig zu aktivieren. Allerding
 </P>
 
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Benutzeroberflächenautomatisierung verwenden, um auf die Windows-Konsole zuzugreifen, falls verfügbar</H5>
+<H5>Die Windows-Konsolenunterstützung</H5>
 
 <P>
-Wenn diese Option aktiviert ist, verwendet NVDA eine neue, noch nicht abgeschlossene Version der Unterstützung für Windows-Konsole, die die Vorteile von der <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Verbesserungen der Barrierefreiheit durch Microsoft (englisch)</A> nutzt. Diese Funktion ist sehr experimentell und noch unvollständig, so dass ihre Verwendung noch nicht empfohlen wird. Nach Fertigstellung wird jedoch erwartet, dass diese neue Unterstützung zum Standard wird, was die Leistung und Stabilität von NVDA in Windows-Konsolen verbessert.
+Diese Option legt fest, wie NVDA mit der von der Eingabeaufforderung, PowerShell und dem Windows-Subsystem für Linux verwendeten Windows-Konsole interagiert.
+Es hat keinen Einfluss auf das moderne Windows-Terminal.
+In Windows 10 Version 1709 hat Microsoft<A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Unterstützung für seine API für die Benutzeroberflächenautomatisierung in die Konsole</A> aufgenommen, was der Konsole eine erheblich verbesserte Leistung und Stabilität für Screenreader bringt, die sie unterstützen.
+In Situationen, in denen die Benutzeroberflächenautomatisierung nicht verfügbar ist oder bekanntermaßen zu einer schlechteren Benutzererfahrung führt, ist die Unterstützung der Legacy-Konsole von NVDA als Rückhalt verfügbar.
+Das Kombinationsfeld für die Unterstützung der Windows-Konsole hat drei Optionen:
 </P>
 
+<UL>
+<LI>Automatisch: Verwendet die Benutzeroberflächenautomatisierung in Konsolen unter Windows 10 Version 1809 und neuer. Diese Option wird empfohlen und ist standardmäßig eingestellt.
+<LI>Benutzeroberflächenautomatisierung bevorzugen: Verwendet die Benutzeroberflächenautomatisierung in Konsolen, falls verfügbar, auch bei Windows-Versionen mit unvollständigen oder fehlerhaften Implementierungen. Obwohl diese eingeschränkte Funktion nützlich (und sogar ausreichend für Ihre Nutzung) sein kann, geschieht die Nutzung dieser Option auf eigene Gefahr und wird nicht unterstützt.
+<LI>Legacy: Die Benutzeroberflächenautomatisierung in der Windows-Konsole wird vollständig deaktiviert, so dass immer die Legacy-Variante verwendet wird.
+</UL>
+
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>Passwörter in Konsolen der Benutzeroberflächenautomatisierung ansagen</H5>
+<H5>Passwörter in der Windows-Konsole ansagen</H5>
 
 <P>
-Diese Einstellung steuert, ob Zeichen durch <A HREF="#KeyboardSettingsSpeakTypedCharacters">eingegebene Zeichen ansagen</A> oder <A HREF="#KeyboardSettingsSpeakTypedWords">eingegebene Wörter ansagen</A> gesprochen werden, wenn der Bildschirm in der Windows-Konsole bei aktivierter Automatisierungsunterstützung der Benutzeroberflächenautomatisierung nicht aktualisiert wird (z. B. Passworteingabe). Aus Sicherheitsgründen sollte diese Einstellung deaktiviert bleiben. Sie können es jedoch aktivieren, wenn Sie bei der Verwendung der neuen experimentellen Konsolen-Unterstützung von NVDA Leistungsprobleme oder Instabilität bei der Eingabe von Zeichen und/oder Wörtern feststellen.
+Diese Einstellung steuert, ob Zeichen durch <A HREF="#KeyboardSettingsSpeakTypedCharacters">Zeichen während der Eingabe ansagen</A> oder <A HREF="#KeyboardSettingsSpeakTypedWords">Wörter während der Eingabe ansagen</A> gesprochen werden, wenn der Bildschirm in einigen Terminal-Programmen, wie der Windows-Konsole mit aktivierter Unterstützung der Benutzeroberflächenautomatisierung und Mintty, nicht aktualisiert wird.
+Aus Sicherheitsgründen sollte diese Einstellung deaktiviert bleiben.
+Sie können es jedoch aktivieren, wenn Sie Leistungsprobleme oder Instabilität bei der Eingabe von Zeichen und/oder Wörtern in Konsolen haben, oder in vertrauenswürdigen Umgebungen arbeiten und die Bekanntgabe von Passwörtern bevorzugen.
 </P>
 
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
@@ -4987,7 +5053,7 @@ Folgende Tastenkombinationen sind bei diesen Braillezeilen verfügbar
 Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechenden Tasten zu finden sind.
 </P>
 
-<A NAME="toc131"></A>
+<A NAME="toc132"></A>
 <H4>14.9.1. Tasten für alle Braillezeilenmodelle</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5077,7 +5143,7 @@ Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechen
 </TR>
 </TABLE>
 
-<A NAME="toc132"></A>
+<A NAME="toc133"></A>
 <H4>14.9.2. Tastenzuweisungen für Brailliant BI 32, BI 40 und B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5099,7 +5165,7 @@ Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechen
 </TR>
 </TABLE>
 
-<A NAME="toc133"></A>
+<A NAME="toc134"></A>
 <H4>14.9.3. Tastenzuweisungen für Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -6714,9 +6780,7 @@ Bitte lesen Sie hierzu die <A HREF="https://mielke.cc/brltty/doc/KeyBindings/">B
 Mit Hilfe von Befehlszeilenoptionen können Sie das Verhalten von NVDA beeinflussen.
 Sie können beliebig viele Optionen angeben.
 Sie können die Befehlszeilenoptionen entweder in den Eigenschaften einer Verknüpfung, im Dialog "Ausführen" oder in einer Eingabeaufforderung eingeben.
-Die Optionen müssen durch Leerzeichen getrennt eingegeben werden.
-Die Desktop-Verknüpfung von NVDA enthält beispielsweise die Option -r, mit deren Hilfe eine laufende Instanz von NVDA beendet wird, bevor NVDA neu gestartet wird.
-Eine andere hilfreiche Option ist --disable-addons, mit deren Hilfe Sie alle Erweiterungen vorübergehend deaktivieren können.
+Eine nützliche Option ist beispielsweise "-disable-addons", die NVDA anweist, alle laufenden Erweiterungen auszusetzen.
 So können Sie beispielsweise feststellen, ob ein Problem durch eine bestimmte Erweiterung verursacht wird.
 </P>
 <P>
@@ -6732,12 +6796,12 @@ Die Kurzformen mehrerer Optionen können beispielsweise wie folgt kombiniert wer
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>nvda -rm</TD>
-<TD>Dieser Aufruf wird die laufende Instanz von NVDA beenden und eine neue Instanz mit deaktivierten Klängen starten.</TD>
+<TD>nvda -mc &lt;Konfigurationspfad&gt;</TD>
+<TD>Dadurch wird NVDA mit Starttönen und deaktivierter Meldung sowie der angegebenen Konfiguration gestartet.</TD>
 </TR>
 <TR>
-<TD>nvda -rm --disable-addons</TD>
-<TD>Siehe oben; zusätzlich werden alle Erweiterungen deaktiviert</TD>
+<TD>nvda -mc &lt;Konfigurationspfad&gt; --disable-addons</TD>
+<TD>Wie zuvor, jedoch mit deaktivierten Erweiterungen.</TD>
 </TR>
 </TABLE>
 
@@ -6780,11 +6844,6 @@ Folgende Kommandozeilenoptionen werden akzeptiert:
 <TD>-q</TD>
 <TD>--quit</TD>
 <TD>Beendet eine laufende Instanz von NVDA.</TD>
-</TR>
-<TR>
-<TD>-r</TD>
-<TD>--replace</TD>
-<TD>Beendet eine laufende Instanz von NVDA und startet eine neue.</TD>
 </TR>
 <TR>
 <TD>-k</TD>
