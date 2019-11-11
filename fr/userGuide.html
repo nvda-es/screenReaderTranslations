@@ -122,6 +122,7 @@
       <LI><A HREF="#KindleUserNotes">10.8.2. Notes de l'Utilisateur</A>
       </UL>
     <LI><A HREF="#Azardi">10.9. Azardi</A>
+    <LI><A HREF="#WinConsole">10.10. Console Windows</A>
     </UL>
   <LI><A HREF="#ConfiguringNVDA">11. Configurer NVDA</A>
     <UL>
@@ -193,9 +194,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Séries Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc131">14.9.1. Assignations des Touches pour tous les Modèles</A>
-      <LI><A HREF="#toc132">14.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</A>
-      <LI><A HREF="#toc133">14.9.3. Assignations de Touches pour le Brailliant BI 14</A>
+      <LI><A HREF="#toc132">14.9.1. Assignations des Touches pour tous les Modèles</A>
+      <LI><A HREF="#toc133">14.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</A>
+      <LI><A HREF="#toc134">14.9.3. Assignations de Touches pour le Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</A>
     <LI><A HREF="#Seika">14.11. Seika Braille Displays</A>
@@ -434,7 +435,8 @@ Cliquez sur "OK" pour fermer ce dialogue.
 <P>
 Si NVDA a été installé à l'aide de l'installateur, alors il suffit, soit de frapper la combinaison contrôle+alt+n, soit de choisir dans le menu Démarrer / Programmes / NVDA / NVDA. 
 De plus, Vous pouvez taper NVDA dans le dialogue "Exécuter" puis appuyer sur "Entrée".
-Vous pouvez aussi ajouter quelques <A HREF="#CommandLineOptions">options de ligne de commande</A> vous permettant de redémarrer NVDA (-r), quitter (-q), désactiver les extensions (--disable-addons), etc.
+Si NVDA est déjà en cours d'exécution, il sera redémarré.
+Vous pouvez aussi ajouter quelques <A HREF="#CommandLineOptions">options de ligne de commande</A> vous permettant de quitter (-q), désactiver les extensions (--disable-addons), etc.
 </P>
 <P>
 Pour les copies installées, NVDA enregistre la configuration dans le dossier de données applicatives roaming de l'utilisateur courant par défaut (ex : "C:\Users\&lt;user&gt;\AppData\Roaming").
@@ -443,6 +445,7 @@ Consultez la section concernant les <A HREF="#SystemWideParameters">paramètres 
 </P>
 <P>
 Pour démarrer la copie portable, rendez-vous dans le dossier où NVDA a été décompressé, et appuyez sur "Entrée" ou double-cliquez sur nvda.exe.
+Si NVDA est déjà en cours d'exécution, il s'arrêtera pour démarrer la version portable.
 </P>
 <P>
 Au démarrage de NVDA, on entend d'abord une série de sons ascendants (indiquant que NVDA se charge). 
@@ -1106,6 +1109,13 @@ Vous disposez des commandes suivantes pour explorer du texte :
 <TD>NVDA+f10</TD>
 <TD>Aucun</TD>
 <TD>Au premier appui, le texte est sélectionné depuis la position préalablement définie par "copier à partir du curseur de revue" jusqu'à la position actuelle du curseur de revue. Au second appui, le texte est copié dans le presse-papiers de Windows.</TD>
+</TR>
+<TR>
+<TD>aller au marqueur de début de copie en mode revue</TD>
+<TD>NVDA+maj+f9</TD>
+<TD>NVDA+maj+f9</TD>
+<TD>aucun</TD>
+<TD>Amène le curseur de revue à la position préalablement définiee comme marqueur de début de copie</TD>
 </TR>
 <TR>
 <TD>Annonce du formatage du texte</TD>
@@ -2338,6 +2348,46 @@ Quand vous êtes dans le tableau des livres ajoutés :
 </TR>
 </TABLE>
 
+<A NAME="WinConsole"></A>
+<H3>10.10. Console Windows</H3>
+
+<P>
+NVDA fournit un support pour la console de commande de Windows utilisée par l'invite de commandes, PowerShell, et le sous-système Windows pour Linux.
+La console Windows est de taille fixe, typiquement beaucoup plus petite que le tampon contenant l'affichage.
+Quand du nouveau texte est écrit, le contenu défile vers le haut et le texte précédent n'est plus visible. 
+Le texte qui n'est pas visiblement affiché dans la fenêtre n'est pas accessible avec les commandes de revue de texte de NVDA.
+Ainsi, il est nécessaire de faire défiler la fenêtre de la console pour lire le texte plus ancien.
+Les raccourcis clavier propres à Windows suivants peuvent être utiles pour <A HREF="#ReviewingText">revoir du texte</A> avec NVDA :
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nom</TH>
+<TH>Touche</TH>
+<TH>Description</TH>
+</TR>
+<TR>
+<TD>Défilement vers le haut</TD>
+<TD>contrôle+flècheHaute</TD>
+<TD>Fait défiler la fenêtre de la console vers le haut pour que le texte plus ancien puisse être lu.</TD>
+</TR>
+<TR>
+<TD>Défilement vers le bas</TD>
+<TD>contrôle+flècheBasse</TD>
+<TD>Fait défiler la fenêtre de la console vers le bas pour que le texte plus récent puisse être lu.</TD>
+</TR>
+<TR>
+<TD>Aller au début</TD>
+<TD>contrôle+début</TD>
+<TD>Aligne la fenêtre de la console sur le début du tampon.</TD>
+</TR>
+<TR>
+<TD>Aller à la fin</TD>
+<TD>contrôle+fin</TD>
+<TD>Aligne la fenêtre de la console sur la fin du tampon.</TD>
+</TR>
+</TABLE>
+
 <A NAME="ConfiguringNVDA"></A>
 <H2>11. Configurer NVDA</H2>
 
@@ -2623,6 +2673,9 @@ Cependant, si vous utilisez un synthétiseur vocal supportant nativement ces des
 Notez que les descriptions de caractères ajoutées manuellement ou modifiées sont sauvegardées dans vos paramètres personnels.
 Ainsi, si vous changez la description d'un emoji particulier, votre description personnalisée sera annoncée pour cet emoji que cette option soit activée ou non.
 Vous pouvez ajouter, modifier ou supprimer des descriptions de symboles par le dialogue <A HREF="#SymbolPronunciation">Prononciation des ponctuations et symboles</A> de NVDA.
+</P>
+<P>
+Pour activer/désactiver l'inclusion des données du Consortium Unicode de n'importe où, veuillez assigner un geste personnalisé en utilisant le <A HREF="#InputGestures">dialogue des Gestes de Commandes</A>.
 </P>
 
 <A NAME="SpeechSettingsCapPitchChange"></A>
@@ -3532,6 +3585,7 @@ On peut configurer les annonces suivantes :
  <LI>Listes
  <LI>Citations
  <LI>Régions
+ <LI>Articles
  <LI>Cadres
  <LI>Cliquable
  </UL>
@@ -3640,17 +3694,40 @@ Nous ne recommandons pas encore à la majorité des utilisateurs d'activer cette
 </P>
 
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Utiliser UI Automation pour accéder à la Console Windows quand c'est possible</H5>
+<H5>Support de la Console Windows</H5>
 
 <P>
-Quand cette option est activée, NVDA utilise une nouvelle version, en cours de développement, du support de la Console Windows qui tire avantage des <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">améliorations d'accessibilité faites par Microsoft</A>. Cette fonctionnalité est hautement expérimentale et encore incomplète, son utilisation n'est donc pas encore recommandée. Cependant, une fois terminée, il est prévu que ce nouveau support deviendra le défaut, améliorant les performances et la stabilité de NVDA dans les consoles de commande Windows.
+Cette option définit comment NVDA interagit avec la Console Windows utilisée par l'invite de commandes, PowerShell, et le sous-système Windows pour Linux.
+Elle n'affecte pas le terminal moderne de Windows.
+Sous Windows 10 version 1709, Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">a ajouté le support de son API UI Automation à la console</A>, apportant des performances et une stabilité grandement améliorées aux revues d'écran qui la supportent.
+Dans les situations où UI Automation n'est pas disponible ou connue pour dégrader l'expérience utilisateur, le support ancien de la console de NVDA est disponible comme recours.
+La liste déroulant Support de la Console Windows a trois options :
 </P>
 
+<UL>
+<LI>Automatique : Utilise UI Automation dans les consoles sous Windows 10 version 1809 et au-delà. Cette option est recommandée et définie par défaut.
+<LI>Préférer UIA : Utilise UI Automation dans les consoles quand disponible, même sous les versions de Windows avec une implémentation incomplète ou boguée. Bien que cette fonctionnalité limitée puisse être utile (et même suffisante pour votre usage), l'utilisation de cette option est entièrement à vos risques et aucun support ne sera fourni pour elle.
+<LI>Héritage : UI Automation dans la console Windows sera entièrement désactivée, et l'ancienne méthode sera toujours utilisée.
+</UL>
+
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>Dire les mots de passe dans les consoles UIA</H5>
+<H5>Dire les mots de passe dans la Console Windows</H5>
 
 <P>
-Ce paramètre contrôle si les caractères sont annoncés par <A HREF="#KeyboardSettingsSpeakTypedCharacters">écho clavier par caractère</A> ou <A HREF="#KeyboardSettingsSpeakTypedWords">écho clavier par mot</A> dans les situations où l'écran ne se met pas à jour (comme les champs de saisie de mot de passe) dans la console Windows avec le support UI automation activé. Pour des raisons de sécurité, ce paramètre devrait rester désactivé. Cependant, vous pouvez souhaiter l'activer si vous expérimentez des problèmes de performances ou des instabilités avec l'écho par caractère et/ou l'écho par mot en utilisant le nouveau support expérimental de la console.
+Cette option définit si les caractères sont annoncés par <A HREF="#KeyboardSettingsSpeakTypedCharacters">Écho clavier par caractère</A> ou <A HREF="#KeyboardSettingsSpeakTypedWords">Écho clavier par mot</A> dans les situation où l'écran ne se met pas à jour (telles que les zones de saisie de mot de passe) dans certains programmes de terminaux, comme la Console Windows avec le support UI automation activé et Mintty.
+Pour des raisons de sécurité, ce paramètre devrait rester désactivé.
+Cependant, vous pouvez souhaiter l'activer si vous ressentez des problèmes de performances ou d'instabilité avec l'écho par caractère ou par mot dans la console, ou si vous travaillez dans un environnement de confiance et préférez l'annonce des mots de passe.
+</P>
+
+<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
+<H5>Utiliser le nouveau support de l'écho par caractère dans les anciennes consoles Windows quand disponible</H5>
+
+<P>
+Cette option active une méthode alternative pour détecter la frappe des caractères dans les anciennes consoles Windows.
+Bien qu'elle améliore les performances et empêche certains affichages de console d'être épelés, elle peut être incompatible avec certains programmes de terminaux.
+Cette fonctionnalité est disponible et activée par défaut sous Windows 10 versions 1607, 1703, 1709 et 1803 ainsi que sous les versions plus récentes de Windows 10 quand UI Automation n'est pas disponible ou désactivée.
+Avertissement : quand cette option est activée, les caractères tapés qui n'apparaissent pas à l'écran comme les mots de passe, ne seront pas supprimés.
+Dans les environnement non sûrs, vous pouvez désactiver temporairement <A HREF="#KeyboardSettingsSpeakTypedCharacters">Écho clavier par caractère</A> et <A HREF="#KeyboardSettingsSpeakTypedWords">Écho clavier par mot</A> quand vous entrez un mot de passe.
 </P>
 
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
@@ -4986,7 +5063,7 @@ Voici les assignations de touches pour Brailliant BI/B et BrailleNote touch sous
 Veuillez consulter la documentation du terminal pour savoir où se situent ces touches.
 </P>
 
-<A NAME="toc131"></A>
+<A NAME="toc132"></A>
 <H4>14.9.1. Assignations des Touches pour tous les Modèles</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5076,7 +5153,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 </TABLE>
 
-<A NAME="toc132"></A>
+<A NAME="toc133"></A>
 <H4>14.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5098,7 +5175,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 </TABLE>
 
-<A NAME="toc133"></A>
+<A NAME="toc134"></A>
 <H4>14.9.3. Assignations de Touches pour le Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -6713,8 +6790,7 @@ Au démarrage, NVDA peut accepter une ou plusieurs options additionnelles pour m
 Vous pouvez passer autant d'options que nécessaire.
 Ces options peuvent être passées quand on démarre depuis un raccourci (dans les propriétés du raccourci), depuis le dialogue Exécuter (Menu Démarrer -&gt; Exécuter ou Windows+r) ou depuis une console de commande Windows.
 Les options doivent être séparées du nom de l'exécutable NVDA et des autres options par des espaces.
-Par exemple, le raccourci de bureau créé par NVDA pendant l'installation a l'option -r, qui dit à NVDA d'arrêter la copie en cours avant d'en démarrer une nouvelle.
-Une autre option utile est --disable-addons, qui dit à NVDA d'interrompre toutes les extensions en cours d'exécution.
+Par exemple, une option utile est --disable-addons, qui dit à NVDA d'interrompre toutes les extensions en cours d'exécution.
 Cela vous permet de déterminer si un problème est causé par une extension et de vous sortir de sérieux problèmes pouvant être causés par des extensions.
 </P>
 <P>
@@ -6730,11 +6806,11 @@ Pour celles qui ont une version courte, vous pouvez les combiner ainsi :
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>nvda -rm</TD>
-<TD>Ceci arrêtera la version en cours de NVDA et redémarrera avec le son de démarrage désactivé, etc.</TD>
+<TD>nvda -mc CONFIGPATH</TD>
+<TD>Ceci démarrera NVDA avec le son et le message de démarrage  désactivé, et la configuration spécifiée.</TD>
 </TR>
 <TR>
-<TD>nvda -rm --disable-addons</TD>
+<TD>nvda -mc CONFIGPATH --disable-addons</TD>
 <TD>Même chose, mais avec les extensions désactivées</TD>
 </TR>
 </TABLE>
@@ -6778,11 +6854,6 @@ Voici les options de ligne de commande de NVDA :
 <TD>-q</TD>
 <TD>--quit</TD>
 <TD>Quitte la copie en cours d'exécution de NVDA</TD>
-</TR>
-<TR>
-<TD>-r</TD>
-<TD>--replace</TD>
-<TD>Quitte la copie en cours d'exécution de NVDA et démarre celle-ci</TD>
 </TR>
 <TR>
 <TD>-k</TD>
