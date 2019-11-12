@@ -122,6 +122,7 @@
       <LI><A HREF="#KindleUserNotes">10.8.2. Ghi Chú Người Đọc</A>
       </UL>
     <LI><A HREF="#Azardi">10.9. Azardi</A>
+    <LI><A HREF="#WinConsole">10.10. Windows Console</A>
     </UL>
   <LI><A HREF="#ConfiguringNVDA">11. Cấu hình NVDA</A>
     <UL>
@@ -175,7 +176,7 @@
   <LI><A HREF="#SupportedSpeechSynths">13. Hỗ trợ các bộ đọc</A>
     <UL>
     <LI><A HREF="#eSpeakNG">13.1. eSpeak NG</A>
-    <LI><A HREF="#toc116">13.2. Microsoft Speech API phiên bản 4 (SAPI 4)</A>
+    <LI><A HREF="#toc117">13.2. Microsoft Speech API phiên bản 4 (SAPI 4)</A>
     <LI><A HREF="#SAPI5">13.3. Microsoft Speech API phiên bản 5 (SAPI 5)</A>
     <LI><A HREF="#MicrosoftSpeechPlatform">13.4. Microsoft Speech Platform</A>
     <LI><A HREF="#OneCore">13.5. Giọn Windows OneCore</A>
@@ -193,9 +194,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. Các dòng HumanWare Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc131">14.9.1. Các phím được gán cho tất cả sản phẩm</A>
-      <LI><A HREF="#toc132">14.9.2. Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80</A>
-      <LI><A HREF="#toc133">14.9.3. Phím gán cho Brailliant BI 14</A>
+      <LI><A HREF="#toc132">14.9.1. Các phím được gán cho tất cả sản phẩm</A>
+      <LI><A HREF="#toc133">14.9.2. Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80</A>
+      <LI><A HREF="#toc134">14.9.3. Phím gán cho Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. Các dòng HIMS Braille Sense/Braille EDGE/Smart Beetle</A>
     <LI><A HREF="#Seika">14.11. Màn hình nổi Seika</A>
@@ -434,6 +435,7 @@ Bấm Đồng ý để đóng cửa sổ đó.
 <P>
 Nếu đã cài NVDA thì bạn có thể khởi động nó bằng cách bấm tổ hợp phím ctrl + alt + n, hoặc chọn NVDA từ thực đơn NVDA trong Programs  trên menu start.
 Thêm vào đó, bạn có thể gõ nvda vào hộp thoại Run và bấm enter.
+Nếu NVDA đang chạy, nó sẽ được khởi động lại.
 Bạn cũng có thể đưa thêm vào một số <A HREF="#CommandLineOptions">tùy chọn của dòng lệnh</A> khi chạy NVDA chẳng hạn như khởi động lại NVDA (-r), thoát (-q), vô hiệu hóa add-ons (--disable-addons), v...v...
 </P>
 <P>
@@ -442,7 +444,8 @@ Hiện đã có thể thay đổi để NVDA tải và sử dụng cấu hình t
 Hãy tham khảo thêm phần <A HREF="#SystemWideParameters">các tham số hệ thống</A>.
 </P>
 <P>
-Để khởi động bản NVDA chạy trực tiếp thì bạn tìm đến thư mục của bản chạy, sau đó tìm tập tin nvda.exe và bấm Enter hay nhấp đôi chuột trái lên nó.
+Để khởi động bản NVDA chạy trực tiếp, hãy tìm đến thư mục của bản chạy, sau đó tìm tập tin nvda.exe và bấm Enter hay nhấp đôi chuột trái lên nó.
+Nếu NVDA đang chạy, nó sẽ tự tắt trước khi gọi bản chạy trực tiếp.
 </P>
 <P>
 Khi NVDA khởi động, bạn sẽ nghe thấy những nốt nhạc cao dần thông báo là NVDA đang được gọi chạy.
@@ -1106,6 +1109,13 @@ Dưới đây là một số phím tắt dùng để duyệt nội dung:
 <TD>NVDA+f10</TD>
 <TD>không có</TD>
 <TD>Bấm lần đầu để đánh dấu điểm kết thúc và chọn vùng nội dung từ điểm bắt đầu đến điểm kết.  Bấm lần hai để thực hiện lệnh sao chép nội dung lên bộ nhớ tạm.</TD>
+</TR>
+<TR>
+<TD>Chuyển đến điểm bắt đầu để sao chép trong chế độ duyệt</TD>
+<TD>NVDA+shift+f9</TD>
+<TD>NVDA+shift+f9</TD>
+<TD>không có</TD>
+<TD>di chuyển con trỏ duyệt đến vị trí đã được chọn là điểm bắt đầu để sao chép</TD>
 </TR>
 <TR>
 <TD>Thông báo định dạng nội dung</TD>
@@ -2337,6 +2347,46 @@ Khi ở trong bảng xem các sách đã thêm vào:
 </TR>
 </TABLE>
 
+<A NAME="WinConsole"></A>
+<H3>10.10. Windows Console</H3>
+
+<P>
+NVDA cung cấp hỗ trợ cho Windows command console sử dụng bởi Command Prompt, PowerShell và Windows Subsystem for Linux.
+Cửa sổ console có kích thước cố định, thường nhỏ hơn nhiều so với màn hình hiển thị đầu ra nội dung.
+Khi văn bản mới được nhập vào, nội dung sẽ được cuộn lên trên và các văn bản trước đó không hiển thị nữa. 
+văn bản không hiển thị trực quan trên cửa sổ thì không tiếp cận được với các lệnh duyệt văn bản của NVDA.
+Vậy nên, cần phải cuộn cửa sổ console để đọc các nội dung phía trên.
+Các phím tắt có sẵn sau đây của Windows Console  có thể hữu ích khi <A HREF="#ReviewingText">duyệt nội dung</A> với NVDA:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Tên</TH>
+<TH>Phím</TH>
+<TH>Mô tả</TH>
+</TR>
+<TR>
+<TD>Cuộn lên</TD>
+<TD>control+mũi tên lên</TD>
+<TD>Cuộn cửa sổ console lên để đọc các nội dung phía trên.</TD>
+</TR>
+<TR>
+<TD>Cuộn xuống</TD>
+<TD>control+mũi tên xuống</TD>
+<TD>Cuộn cửa sổ console xuống để đọc các nội dung bên dứi.</TD>
+</TR>
+<TR>
+<TD>Cuộn về đầu</TD>
+<TD>control+home</TD>
+<TD>Cuộn cửa sổ console về đầu màn hình.</TD>
+</TR>
+<TR>
+<TD>Cuộn về cuối</TD>
+<TD>control+end</TD>
+<TD>Cuộn cửa sổ console về cuối màn hình.</TD>
+</TR>
+</TABLE>
+
 <A NAME="ConfiguringNVDA"></A>
 <H2>11. Cấu hình NVDA</H2>
 
@@ -2622,6 +2672,9 @@ Tuy nhiên, nếu bạn đang dùng một bộ đọc có hỗ trợ mô tả c�
 Lưu ý rằng việc thêm hay sửa thủ công các mô tả cho kí tự sẽ được lưu lại thành một phần trong thiết lập người dùng của bạn.
 Vậy nên, nếu thay đổi mô tả của một biểu tượng cảm xúc cụ thể, tùy chỉnh mô tả của bạn sẽ được đọc cho  biểu tượng đó, bất kể tùy chọn này có bật hay không.
 Bạn có thể thêm, sửa hay xóa các mô tả kí hiệu trong <A HREF="#SymbolPronunciation">hộp thoại phát âm kí hiệu / dấu câu</A> của NVDA.
+</P>
+<P>
+Để bật / tắt việc bao gồm dữ liệu Unicode Consortium ở bất cứ đâu, hãy gán một thao tác thông qua <A HREF="#InputGestures">Hộp thoại quản lý các cử chỉ</A>.
 </P>
 
 <A NAME="SpeechSettingsCapPitchChange"></A>
@@ -3534,6 +3587,7 @@ Bạn có thể chọn các mục sau:
  <LI>Danh sách
  <LI>Đoạn trích dẫn
  <LI>cột mốc
+ <LI>Bài viết
  <LI>Khung
  <LI>Có thể click
  </UL>
@@ -3642,17 +3696,40 @@ Nó được tích hợp trong chính Microsoft Word cũng như trình xem và s
 </P>
 
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Sử dụng UI Automation để truy cập Windows Console khi có thể</H5>
+<H5>Hỗ trợ Windows Console</H5>
 
 <P>
-Khi bật tùy chọn này, NVDA sẽ dùng  một phiên bản mới, đang được thực hiện nhằm hỗ trợ cho Windows Console lợi dụng <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">các cải tiến cho tính tiếp cận của  Microsoft</A>. Tính năng này thật sự còn đang được thử nghiệm và chưa hoàn thành. Vậy nên việc sử dụng nó vẫn chưa được khuyến khích. Tuy nhiên, khi hoàn tất, hỗ trợ mới này dự đoán sẽ mặc định là cải thiện khả năng vận hành và tính ổn định của NVDA trong dòng lệnh Windows  consoles.
+Tùy chọn này là cách mà NVDA tương tác với Windows Console, được dùng bởi command prompt, PowerShell và Windows Subsystem for Linux.
+Nó không ảnh hưởng gì đến  Windows Terminal.
+Trong Windows 10 phiên bản 1709, Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">đã thêm hỗ trợ UI Automation API của mình cho console</A>, mang đến cải thiện hiệu suất vận hành triệt để và ổn định cho các trình đọc màn hình có hỗ trợ nó.
+Trường hợp UI Automation không hoạt động hoặc biết trước kết quả là trải nghiệm không tốt cho người dùng, hỗ trợ thừa kế Console của NVDA sẽ tồn tại như là để dự phòng.
+Hộp xổ hỗ trợ Windows Console có ba tùy chọn:
 </P>
+
+<UL>
+<LI>Tự động: sử dụng UI Automation cho console trên Windows 10 phiên bản 1809 trở lên. Tùy chọn này được khuyên dùng và mặc định được chọn.
+<LI>Ưu tiên UIA: sử dụng UI Automation cho console nếu có thể, thậm chí trên các phiên bản Windows chưa hoàn thiện hoặc triển khai bị lỗi. While this limited functionality may be useful (and even sufficient for your usage), use of this option is entirely at your own risk and no support for it will be provided.
+<LI>Thừa kế: UI Automation trong  Windows Console sẽ bị vô hiệu hoàn toàn, bản thừa kế dự phòng sẽ luôn được dùng.
+</UL>
 
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
 <H5>Nói mật khẩu trong UIA consoles</H5>
 
 <P>
-Thiết lập này điều khiển việc các kí tự sẽ được đọc bởi <A HREF="#KeyboardSettingsSpeakTypedCharacters">đọc ký tự khi gõ</A> hay <A HREF="#KeyboardSettingsSpeakTypedWords">đọc từ khi gõ</A> trong tình huống mà màn hình không được cập nhật (ô nhập mật khẩu chẳng hạn) trong Windows Console khi đã bật hỗ trợ UI automation. Vì mục đích bảo mật, thiết lập này nên được để nguyên, tức là tắt. Tuy nhiên, có thể bạn muốn bật nó khi gặp các vấn đề  về hiệu suất vận hành hoặc việc đọc khi gõ kí tự hay từ  trong khi sử dụng tính năng thử nghiệm mới của NVDA hỗ trợ cho console.
+Thiết lập này điều khiển việc các kí tự sẽ được đọc bởi <A HREF="#KeyboardSettingsSpeakTypedCharacters">đọc ký tự khi gõ</A> hay <A HREF="#KeyboardSettingsSpeakTypedWords">đọc từ khi gõ</A> trong tình huống mà màn hình không được cập nhật (ô nhập mật khẩu chẳng hạn) trong vài ứng dụng terminal như Windows Console khi đã bật hỗ trợ UI automation và Mintty.
+Vì mục đích bảo mật, thiết lập này nên được để nguyên, tức là tắt.
+Tuy nhiên, có thể bạn muốn bật nó khi gặp các vấn đề  về hiệu suất vận hành hoặc việc đọc khi gõ kí tự hay từ  trong console, hay đang làm việc ở những nơi an toàn và thích nghe đọc mật khẩu.
+</P>
+
+<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
+<H5>Dùng hỗ trợ nhập văn bản mới trong  Windows console thừa kế nếu có thể</H5>
+
+<P>
+Tùy chọn này  gọi một phương thức thay thế để nhận các kí tự đã nhập trong Windows console thừa kế.
+Trong khi nó cải thiện hiệu suất và ngăn chặn việc đánh vần thông tin đầu ra của console, nó cũng có thể không tương thích với vài ứng dụng terminal .
+Tính năng này tồn tại và mặc định được bật trên Windows 10 phiên bản 1607, 1703, 1709 và 1803, cũng như các phiên bản Windows 10 mới hơn, phát hành khi  UI Automation không có hoặc bị vô hiệu.
+Cảnh báo: khi bật tùy chọn này, các kí tự được nhập mà không hiển thị trên màn hình như mật khẩu chẳng hạn sẽ không bị bỏ qua.
+Trong những môi trường không an toàn, bạn có thể tạm thời vô hiệu <A HREF="#KeyboardSettingsSpeakTypedCharacters">đọc kí tự khi gõ</A> và <A HREF="#KeyboardSettingsSpeakTypedWords">đọc từ khi gõ</A> khi nhập mật khẩu.
 </P>
 
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
@@ -4155,7 +4232,7 @@ Nó hỗ trợ hơn  43 ngôn ngữ khác nhau.
 Cũng có khá nhiều giọng khác nhau để bạn lựa chọn.
 </P>
 
-<A NAME="toc116"></A>
+<A NAME="toc117"></A>
 <H3>13.2. Microsoft Speech API phiên bản 4 (SAPI 4)</H3>
 
 <P>
@@ -4989,7 +5066,7 @@ Sau đây là danh sách các phím được gán của mẫu màn hình nổi n
 Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết các phím tương ứng.
 </P>
 
-<A NAME="toc131"></A>
+<A NAME="toc132"></A>
 <H4>14.9.1. Các phím được gán cho tất cả sản phẩm</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5079,7 +5156,7 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 </TR>
 </TABLE>
 
-<A NAME="toc132"></A>
+<A NAME="toc133"></A>
 <H4>14.9.2. Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5101,7 +5178,7 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 </TR>
 </TABLE>
 
-<A NAME="toc133"></A>
+<A NAME="toc134"></A>
 <H4>14.9.3. Phím gán cho Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -6716,8 +6793,7 @@ NVDA có thể nhận một hoặc nhiều hơn các tùy chọn để thay đ�
 Sẽ không giới hạn số lượng tùy chọn mà bạn muốn đưa vào.  
 Những tùy chọn này có thể đưa vào từ hộp thoại thuộc tính của biểu tượng, từ hộp thoại Run (mở từ start menu hoặc windows+r) hoặc từ cửa sổ dòng lệnh của Windows.
 Tùy chọn được viết phân cách với tên tập tin thực thi của NVDA và giữa mỗi tùy chọn.
-Ví dụ: biểu tượng của NVDA trên desktop được tạo khi cài đặt có một tùy chọn là -r.  Tùy chọn này yêu cầu khi chạy NVDA sẽ đóng bản NVDA đang chạy trước khi chạy bản mới.
-Một tùy chọn hữu ích khác là --disable-addons, sẽ yêu cầu NVDA tắt tất cả các add-on đang chạy.
+Ví dụ, một tùy chọn hữu ích là --disable-addons, nhằm khai báo với NVDA là vô hiệu tất cả add-on đang chạy.
 Điều này giúp bạn kiểm tra những vấn đề hoặc lỗi gây ra có phải do các add-on hay không; và từ đó có thể khắc phục lại các lỗi gây ra bởi add-on.
 </P>
 <P>
@@ -6733,12 +6809,12 @@ Có một số tùy chọn có cả phần viết tắt và đầy đủ; trong 
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>nvda -rm</TD>
-<TD>Sẽ đóng bản NVDA đang chạy và chạy lại với phần âm thanh khởi động được tắt..</TD>
+<TD>nvda -mc CONFIGPATH</TD>
+<TD>Sẽ khởi động NVDA với âm thanh và thông điệp khởi động bị vô hiệu, và định sẵn cấu hình</TD>
 </TR>
 <TR>
-<TD>nvda -rm --disable-addons</TD>
-<TD>giống như ở trên nhưng thêm phần tắt tất cả các add-on.</TD>
+<TD>nvda -mc CONFIGPATH --disable-addons</TD>
+<TD>Giống như trên, nhưng vô hiệu hóa các add-on</TD>
 </TR>
 </TABLE>
 
@@ -6781,16 +6857,6 @@ Sau đây là các tùy chọn dòng lệnh cho NVDA:
 <TD>-q</TD>
 <TD>--quit</TD>
 <TD>Đóng bản NVDA đang chạy</TD>
-</TR>
-<TR>
-<TD>-r</TD>
-<TD>--replace</TD>
-<TD>Đóng bản NVDA đang chạy và chạy với bản NVDA này</TD>
-</TR>
-<TR>
-<TD>-k</TD>
-<TD>--check-running</TD>
-<TD>Thông báo NVDA đang chạy hay không chạy thông qua mã exit; 0 nếu đang chạy và 1 nếu không chạy</TD>
 </TR>
 <TR>
 <TD>-f LOGFILENAME</TD>
