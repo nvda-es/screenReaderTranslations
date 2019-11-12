@@ -10,6 +10,81 @@
 </CENTER>
 
 
+<H2>2019.3</H2>
+
+<H3>New Features</H3>
+
+<UL>
+<LI>In Command Prompt, PowerShell, and the Windows Subsystem for Linux on Windows 10 version 1809 and later:
+ <UL>
+ <LI>Vastly improved performance and stability (<A HREF="https://github.com/nvaccess/nvda/issues/9771">#9771</A>)
+ <LI>Reporting of typed text that does not appear onscreen (such as passwords) can now be enabled via an option in NVDA's advanced settings panel. (<A HREF="https://github.com/nvaccess/nvda/issues/9649">#9649</A>)
+ </UL>
+<LI>The accuracy of the move mouse to navigator object command has been improved in text fields in Java applications. (<A HREF="https://github.com/nvaccess/nvda/issues/10157">#10157</A>)
+<LI>Screen curtain, which when enabled, makes the whole screen black on Windows 8 and above. (<A HREF="https://github.com/nvaccess/nvda/issues/7857">#7857</A>)
+<LI>Added support for  the following Handy Tech Braille displays (<A HREF="https://github.com/nvaccess/nvda/issues/8955">#8955</A>):
+ <UL>
+ <LI>Basic Braille Plus 40
+ <LI>Basic Braille Plus 32
+ <LI>Connect Braille
+ </UL>
+<LI>All user-defined gestures can now be removed via a new "Reset to factory defaults" button in the Input Gestures dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/10293">#10293</A>)
+<LI>Font reporting in Microsoft Word now includes if text is marked as hidden. (<A HREF="https://github.com/nvaccess/nvda/issues/8713">#8713</A>)
+<LI>Added a command to move the review cursor to the position previously set as start marker for selection or copy: NVDA+shift+F9. (<A HREF="https://github.com/nvaccess/nvda/issues/1969">#1969</A>)
+<LI>In Internet Explorer, Microsoft Edge and recent versions of Firefox and Chrome, landmarks are now reported in focus mode and object navigation. (<A HREF="https://github.com/nvaccess/nvda/issues/10101">#10101</A>)
+<LI>In Internet Explorer, Google Chrome and Mozilla Firefox, You can now navigate by article using quick navigation scripts. These scripts are unbound by default and can be assigned in the Input Gestures dialog when the dialog is opened from a browse mode document. (<A HREF="https://github.com/nvaccess/nvda/issues/9227">#9227</A>)
+<LI>In Internet Explorer, Google Chrome and Mozilla Firefox, article elements are now reported with object navigation, and optionally in browse mode if turned on in Document Formatting settings. (<A HREF="https://github.com/nvaccess/nvda/issues/10424">#10424</A>)
+</UL>
+
+<H3>Changes</H3>
+
+<UL>
+<LI>The user guide now describes how to use NVDA in the Windows Console. (<A HREF="https://github.com/nvaccess/nvda/issues/9957">#9957</A>)
+<LI>Running nvda.exe now defaults to replace an already running copy of NVDA. The -r|--replace command line parameter is still accepted, but ignored. (<A HREF="https://github.com/nvaccess/nvda/issues/8320">#8320</A>)
+<LI>On Windows 8 and later, NVDA will now report product name and version information for hosted apps such as apps downloaded from Microsoft Store using information provided by the app. (<A HREF="https://github.com/nvaccess/nvda/issues/4259">#4259</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10108">#10108</A>)
+<LI>When toggling track changes on and off with the keyboard in Microsoft Word, NVDA will announce the state of the setting. (<A HREF="https://github.com/nvaccess/nvda/issues/942">#942</A>) 
+<LI>The NVDA version number is now logged as the first message in the log. This occurs even if logging has been disabled from the GUI. (<A HREF="https://github.com/nvaccess/nvda/issues/9803">#9803</A>)
+<LI>The settings dialog no longer allows for changing the configured log level if it has been overridden from the command line. (<A HREF="https://github.com/nvaccess/nvda/issues/10209">#10209</A>)
+<LI>In Microsoft Word, NVDA now announces the display state of non printable characters when pressing the toggle shortcut Ctrl+Shift+8 . (<A HREF="https://github.com/nvaccess/nvda/issues/10241">#10241</A>)
+<LI>Updated Liblouis braille translator to commit 58d67e63. (<A HREF="https://github.com/nvaccess/nvda/issues/10094">#10094</A>)
+<LI>When CLDR characters (including emojis) reporting is enabled, they are announced at all punctuation levels. (<A HREF="https://github.com/nvaccess/nvda/issues/8826">#8826</A>)
+<LI>Third party python packages included in NVDA, such as comtypes, now log their warnings and errors to the NVDA log. (<A HREF="https://github.com/nvaccess/nvda/issues/10393">#10393</A>)
+<LI>Updated Unicode Common Locale Data Repository emoji annotations to version 36.0. (<A HREF="https://github.com/nvaccess/nvda/issues/10426">#10426</A>)
+</UL>
+
+<H3>Bug Fixes</H3>
+
+<UL>
+<LI>Emoji and other 32 bit unicode characters now take less space on a braille display when they are shown as hexadecimal values. (<A HREF="https://github.com/nvaccess/nvda/issues/6695">#6695</A>)
+<LI>In Windows 10, NVDA will announce tooltips from universal apps if NVDA is configured to report tooltips in object presentation dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/8118">#8118</A>)
+<LI>On Windows 10 version 1607 and later, typed text is now reported in Mintty. (<A HREF="https://github.com/nvaccess/nvda/issues/1348">#1348</A>)
+<LI>On Windows 10 version 1607 and later, output in the Windows Console that appears close to the caret is no longer spelled out. (<A HREF="https://github.com/nvaccess/nvda/issues/513">#513</A>)
+<LI>controls in Audacitys compressor dialog are now announced when navigating the dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/10103">#10103</A>)
+<LI>NVDA no longer treats spaces as words in object review in Scintilla based editors such as Notepad++. (<A HREF="https://github.com/nvaccess/nvda/issues/8295">#8295</A>)
+<LI>NVDA will prevent the  system from entering sleep mode when scrolling through text with braille display gestures. (<A HREF="https://github.com/nvaccess/nvda/issues/9175">#9175</A>)
+<LI>On Windows 10, braille will now follow when editing cell contents in Microsoft Excel and in other UIA text controls where it was lagging behind. (<A HREF="https://github.com/nvaccess/nvda/issues/9749">#9749</A>)
+<LI>NVDA will once again report suggestions in the Microsoft Edge address bar. (<A HREF="https://github.com/nvaccess/nvda/issues/7554">#7554</A>)
+<LI>NVDA is no longer silent when focusing an HTML tab control header in Internet Explorer. (<A HREF="https://github.com/nvaccess/nvda/issues/8898">#8898</A>)
+<LI>In Microsoft Edge based on EdgeHTML, NVDA will no longer play search suggestion sound when the window becomes maximized. (<A HREF="https://github.com/nvaccess/nvda/issues/9110">#9110</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10002">#10002</A>)
+<LI>ARIA 1.1 combo boxes are now supported in Mozilla Firefox and Google Chrome. (<A HREF="https://github.com/nvaccess/nvda/issues/9616">#9616</A>)
+<LI>NVDA will no longer report content of visually hidden columns for list items in SysListView32 controls. (<A HREF="https://github.com/nvaccess/nvda/issues/8268">#8268</A>)
+<LI>The settings dialog no longer shows "info" as the current log level when in secure mode. (<A HREF="https://github.com/nvaccess/nvda/issues/10209">#10209</A>)
+<LI>In Start menu for Windows 10 Anniversary Update and later, NVDA will announce details of search results. (<A HREF="https://github.com/nvaccess/nvda/issues/10232">#10232</A>)
+<LI>In browse mode, if moving the cursor or using quick navigation causes the document to change, NVDA no longer speaks incorrect content in some cases. (<A HREF="https://github.com/nvaccess/nvda/issues/8831">#8831</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10343">#10343</A>)
+<LI>Some bullet names in Microsoft Word have been corrected. (<A HREF="https://github.com/nvaccess/nvda/issues/10399">#10399</A>)
+<LI>In Windows 10 May 2019 Update and later, NVDA will once again announce first selected emoji or clipboard item when emoji panel and clipboard history opens, respectively. (<A HREF="https://github.com/nvaccess/nvda/issues/9204">#9204</A>)
+<LI>In Poedit, it is once again possible to view some translations for right to left languages. (<A HREF="https://github.com/nvaccess/nvda/issues/9931">#9931</A>)
+<LI>In the Settings app in Windows 10 April 2018 Update and later, NVDA will no longer announce progress bar information for volume meters found in the System/Sound page. (<A HREF="https://github.com/nvaccess/nvda/issues/10284">#10284</A>)
+<LI>Invalid regular expressions in speech dictionaries no longer completely break speech in NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/10334">#10334</A>)
+<LI>When reading bulleted items in Microsoft Word with UIA enabled, the bullet from the next list item is no longer inappropriately announced. (<A HREF="https://github.com/nvaccess/nvda/issues/9613">#9613</A>)
+</UL>
+
+<H3>Izmjene za razvojne programere</H3>
+
+<P>
+Informacije za razvojne programere nisu prevedene, molimo ’pogledajte <A HREF="../en/changes.html">englesku inačicu ovog dokumenta</A>.
+</P>
+
 <H2>2019.2.1</H2>
 
 <P>
