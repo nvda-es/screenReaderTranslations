@@ -122,6 +122,7 @@
       <LI><A HREF="#KindleUserNotes">10.8.2. korisničke bilješke</A>
       </UL>
     <LI><A HREF="#Azardi">10.9. Azardi</A>
+    <LI><A HREF="#WinConsole">10.10. Windows naredbeni redak</A>
     </UL>
   <LI><A HREF="#ConfiguringNVDA">11. Podešavanje NVDA</A>
     <UL>
@@ -148,7 +149,7 @@
       <UL>
       <LI><A HREF="#SpeechDictionaries">11.2.1. Govorni rječnici</A>
       <LI><A HREF="#SymbolPronunciation">11.2.2. Izgovor simbola interpunkcije</A>
-      <LI><A HREF="#toc96">11.2.3. Ulazne geste</A>
+      <LI><A HREF="#toc97">11.2.3. Ulazne geste</A>
       </UL>
     <LI><A HREF="#SavingAndReloading">11.3. Spremanje i vraćanje konfiguracije</A>
     <LI><A HREF="#ConfigurationProfiles">11.4. Konfiguracijski profili</A>
@@ -193,9 +194,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant BI/B Serije / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc131">14.9.1. dodijele prečaca za sve modele</A>
-      <LI><A HREF="#toc132">14.9.2. dodijeljeni prečaci za Brailliant BI 32, BI 40 and B 80</A>
-      <LI><A HREF="#toc133">14.9.3. Dodijeljeni prečaci za Brailliant BI 14</A>
+      <LI><A HREF="#toc132">14.9.1. dodijele prečaca za sve modele</A>
+      <LI><A HREF="#toc133">14.9.2. dodijeljeni prečaci za Brailliant BI 32, BI 40 and B 80</A>
+      <LI><A HREF="#toc134">14.9.3. Dodijeljeni prečaci za Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Serije</A>
     <LI><A HREF="#Seika">14.11. Seika brajični retci</A>
@@ -434,7 +435,8 @@ Pritisnite U redu da bi ste zatvorili ovaj dijaloški okvir.
 <P>
 Ako ste instalirali NVDA pomoću instalacijskog programa, tada je pokretanje NVDA jednostavno kao i  pritisak kontrol+alt+f5, Ili odabirom NVDA iz NVDA izbornika U podizborniku programi u start izborniku.
 Dodatno, možete upisati "nvda", u dijaloški okvir pokreni i pritisnuti enter da biste pokrenuli NVDA.
-Možete također dodati nekoliko <A HREF="#CommandLineOptions">opcija naredbenog retka</A> koje vam omogućuju ponovno pokretanje NVDA (-r), izlaz (-q), onemogućavanje dodataka (--disable-addons) itd.
+Ako je NVDA već pokrenut, biti će ponovno pokrenut.
+Možete također dodati neke <A HREF="#CommandLineOptions">opcije naredbenog retka</A> koje vam omogućuju izlazak (-q), onemogućavanje dodataka (--disable-addons), itd.
 </P>
 <P>
 U instaliranim kopijama, NVDA posprema konfiguraciju u roaming application data mapu trenutnog korisnika podrazumijevano (npr. "C:\Users\&lt;user&gt;\AppData\Roaming").
@@ -443,6 +445,7 @@ Za više detalja, pročitajte poglavlje o <A HREF="#SystemWideParameters">cjelos
 </P>
 <P>
 Da biste pokrenuli prijenosnu inačicu, uđite u mapu u kojoj ste raspakirali NVDA i pritisnite enter ili dva puta kliknite na datoteku nvda.exe.
+Ako je NVDA bio ponovno pokrenut, isti će se isključiti prije pokretanja prijenosne inačice.
 </P>
 <P>
 Kad se NVDA pokreće, prvo ćete čuti seriju uzlaznih tonova (koji vam govore da se NVDA učitava).
@@ -1106,6 +1109,13 @@ Sljedeći prečaci su dostupni za pregled teksta:
 <TD>insert+f10</TD>
 <TD>nema</TD>
 <TD>prilikom prvog pritiska, tekst je označen od pozicije od koje je označen početni marker uključujući trenutnu poziciju preglednog kursora. Poslije drugog pritiska iste prečice, tekst će biti kopiran u windowsow međuspremnik</TD>
+</TR>
+<TR>
+<TD>Premjesti se na označeni početak kopiranja na pregled</TD>
+<TD>NVDA+shift+f9</TD>
+<TD>NVDA+shift+f9</TD>
+<TD>Nema</TD>
+<TD>Premješta na poziciju koja je određena kao početak markera za kopiranje</TD>
 </TR>
 <TR>
 <TD>Izvijesti o oblikovanju teksta</TD>
@@ -2335,7 +2345,47 @@ Kada se nalazite u tabličnom pregledu dodanih knjiga:
 <TR>
 <TD>Kontekstni izbornik</TD>
 <TD>aplikacijska tipka</TD>
-<TD>Okvara kontekstni izbornik za označenu knjigu.</TD>
+<TD>Otvara kontekstni izbornik za označenu knjigu.</TD>
+</TR>
+</TABLE>
+
+<A NAME="WinConsole"></A>
+<H3>10.10. Windows naredbeni redak</H3>
+
+<P>
+NVDA omogućuje podršku za windowsow naredbeni redak kojeg koriste sama aplikacija naredbenog retka, PowerShell, i podsustav sustava linux za windows.
+Prozor naredbenog retka je fiksne veličine, tipično veći od spremnika koji sadrži informaciju.
+Kako se novi tekst zapisuje, sadržaj se pomiće prema gore i stari tekst više nije vidljiv. 
+Tekst koji nije prikazan na vidljiv način u prozoru nije dostupan uz pomoć NVDA komandi pregleda.
+stoga, potrebno je pomicati prozor kako bi se pročitao raniji tekst.
+Sljedeći ugrađeni tipkovnički prečaci naredbenog retka mogu biti korisni prilikom <A HREF="#ReviewingText">pregledavanja teksta</A> uz pomoć NVDA:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Naziv</TH>
+<TH>Prečac</TH>
+<TH>Opis</TH>
+</TR>
+<TR>
+<TD>Pomakni prema gore</TD>
+<TD>ctrl+strelicaGore</TD>
+<TD>Pomiće prozor naredbenog retka prema gore, tako da se raniji tekst može čitati.</TD>
+</TR>
+<TR>
+<TD>pomakni prema dolje</TD>
+<TD>ctrl+StrelicaDolje</TD>
+<TD>Pomiće prozor naredbenog retka prema dolje, tako da se kasniji tekst može čitati.</TD>
+</TR>
+<TR>
+<TD>Pomakni se na početak</TD>
+<TD>ctrl+home</TD>
+<TD>Pomiće naredbeni redak na početak spremnika.</TD>
+</TR>
+<TR>
+<TD>Pomakni se na kraj</TD>
+<TD>ctrl+end</TD>
+<TD>Pomiće naredbeni redak na kraj spremnika.</TD>
 </TR>
 </TABLE>
 
@@ -2621,6 +2671,9 @@ Međutim, ako vaša govorna jedinica čita emoji, možete isključiti ovu opciju
 Imajte na umu, da izmijenjeni opisi znakova se spremaju u vašu korisničku mapu.
 Dakle, ako izmijenite naziv određenog emoji,, vaš će opis biti izgovoren neovisno o tome, je li ova opcija uključena.
 Možete dodati, ukloniti ili urediti opise simbola u <A HREF="#SymbolPronunciation">dijaloškom okviru izgovaranja simbola</A>.
+</P>
+<P>
+Kako biste odasvud mogli uključivati ili isključivati izgovor Unicode znakova poput emoji, molimo pridjelite prilagođeni prečac ili gestu u <A HREF="#InputGestures">dijaloškom okviru ulaznih gesti</A>.
 </P>
 
 <A NAME="SpeechSettingsCapPitchChange"></A>
@@ -3535,8 +3588,9 @@ Možete podesiti izgovor slijedećeg:
  <LI>Popisi
  <LI>citati
  <LI>Orjentiri
+ <LI>članci
  <LI>okviri
- <LI>klikajuće elemente
+ <LI>klikajući elementi
  </UL>
 </UL>
 
@@ -3643,17 +3697,40 @@ Još uvijek ne preporučujemo uključivanje ove opcije za stalno korištenje, al
 </P>
 
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Koristi UI Automation za pristup windows naredbenim retcima kada je to moguće</H5>
+<H5>Podrška Windows naredbenog retka</H5>
 
 <P>
-Kada je ova opcija omogućena, NVDA će koristiti novu podrškuza windowsowe naredbene retke koja iskorištava <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">unapređenja pristupačnosti koje je razvio Microsoft</A>. Ova je značajka eksperimentalna te je stoga nepotpuna, stoga njeno korištenje se ne preporučuje. Međutim, jednom kada postane dovršena, podrazumijeva se da će ta podrška biti podrazumjevana, unapređujući tako performanse i stabilnost NVDA u windowsovim naredbenim retcima.
+Ova opcija regulira kako NVDA pristupa naredbenim retcima koje koriste aplikacija naredbenog retka, PowerShell, i podsustav sustava Linux za Windows.
+Ovo ne utjeće na suvremeni Windows terminal.
+U Windowsima 10 inačici 1709, Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">dodao je podršku za svoj UI automation API u naredbeni redak</A>, dajući mogućnost drastično unapređenih performansi za čitače zaslona koji su to omogućili.
+U situacijama kada je UI automation podrška nedostupna, ili ista prouzrokuje loše korisničko iskustvo, NVDAova stara podrška naredbenog retka dostupna je kao obratno rješenje.
+The Windows Console support combo box has three options:
 </P>
 
+<UL>
+<LI>Automatski: koristi UI automation u naredbenim retcima u Windowsima 10 inačici 1809 i novijima. Ova opcija je preporučena i podrazumjevano postavljena.
+<LI>Preferiraj UIA: koristi UI automation u naredbenim retcima kada je to dostupno, čak i u inačicama windowsa sa nekompletnim ili bubičastim implementacijama. Iako ta ograničena implementacija može biti korisna (pa čak i dostatna za vaše korištenje), koristite ju na vlastitu odgovornost i za nju neće biti pružena tehnička podrška.
+<LI>stara implementacija: UI Automation u naredbenim retcima bit će kompletno isključena, te će stari način biti uvijek korišten.
+</UL>
+
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>Izgovaraj lozinke u UIA naredbenim retcima</H5>
+<H5>Izgovaraj lozinke u Windows naredbenim retcima</H5>
 
 <P>
-Ova opcija kontrolira izgovor znakova opcijama <A HREF="#KeyboardSettingsSpeakTypedCharacters">čitaj upisane znakove</A> ili <A HREF="#KeyboardSettingsSpeakTypedWords">čitaj upisane riječi</A> u slučaju kada se zaslon ne osvježava (poput upisa lozinke) u windowsovom naredbenom retku s uključenom podrškom za UI automation. Radi sigurnosti, ova opcija bi trebala biti isključena. Međutim, možda biste htjeli uključiti ovu opciju ako se susrećete sa problamima performansi sa uključenim izgovorom znakova ili riječi Prilikom korištenja NVDA nove podrške za windowsowe naredbene retke.
+Ova opcija regulira izgovaranje znakova kada su opcije <A HREF="#KeyboardSettingsSpeakTypedCharacters">izgovori upisane znakove</A> ili <A HREF="#KeyboardSettingsSpeakTypedWords">izgovori upisane riječi</A> uključene kada se zaslon ne osvježava (kao što je to slučaj sa upisivanjem lozinki) u nekim programima naredbenom retka, kao što je to windows naredbeni redak sa UI automation podrškom i Mintty.
+Iz sigurnosnih razloga, ova postavka treba biti isključena.
+Međutim, možda biste ju htjeli uključiti ako osjećate probleme s performansama ili nestabilnost sa izgovaranjem upisanih znakova ili riječi u naredbenim retcima, ili radite u okruženju u kojem imate povjerenja i preferirate izgovaranje lozinki.
+</P>
+
+<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
+<H5>Koristi novu podršku izgovora upisanih znakova u starim Windows naredbenim retcima</H5>
+
+<P>
+Ova opcija uključuje alternativnu metodu otkrivanja upisanih znakova u windows naredbenom retku.
+Iako ova opcija  donosi unapređenja performansi i ispravlja problem slovkanja neželjenih stavki, ista može biti nekompatibilna s nekim programima naredbenog retka.
+Ova je opcija dostupna i podrazumjevano uključena u Windowsima 10 inačicama 1607, 1703, 1709 i 1803 kao i na novim Windows 10 inačicama gdje je UIA nedostupna ili isključena.
+Upozorenje: sa uključenom ovom opcijom, izgovoreni znakovi koji se ne pokazuju na zaslonu, poput lozinki, neće biti spriječeni u izgovoru.
+U nepovjerljivim okruženjima, možda biste trebali privremeno isključiti opcije <A HREF="#KeyboardSettingsSpeakTypedCharacters">izgovor upisanih znakova</A> i <A HREF="#KeyboardSettingsSpeakTypedWords">Izgovor upisanih riječi</A> pri upisivanju lozinki.
 </P>
 
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
@@ -3785,7 +3862,7 @@ Možete ukloniti simbol kojeg ste prije dodali kad pritisnete gumb ukloni.
 Kad završite, pritisnite gumb u redu da biste spremili vaše promjene ili gumb odustani da bi ste ih poništili.
 </P>
 
-<A NAME="toc96"></A>
+<A NAME="toc97"></A>
 <H4>11.2.3. Ulazne geste</H4>
 
 <P>
@@ -4989,7 +5066,7 @@ Slijede tipkovnički prečaci za Brailliant BI/B i BrailleNote touch brajične r
 Molimo pogledajte uputstvo za upotrebu ovih brajičnih redaka kako biste saznali opise tipaka i njihov raspored.
 </P>
 
-<A NAME="toc131"></A>
+<A NAME="toc132"></A>
 <H4>14.9.1. dodijele prečaca za sve modele</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5079,7 +5156,7 @@ Molimo pogledajte uputstvo za upotrebu ovih brajičnih redaka kako biste saznali
 </TR>
 </TABLE>
 
-<A NAME="toc132"></A>
+<A NAME="toc133"></A>
 <H4>14.9.2. dodijeljeni prečaci za Brailliant BI 32, BI 40 and B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5101,7 +5178,7 @@ Molimo pogledajte uputstvo za upotrebu ovih brajičnih redaka kako biste saznali
 </TR>
 </TABLE>
 
-<A NAME="toc133"></A>
+<A NAME="toc134"></A>
 <H4>14.9.3. Dodijeljeni prečaci za Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -6716,8 +6793,7 @@ Kad se pokreće, NVDA može prihvatiti jednu ili više opcija što mjenja način
 Možete zadati onoliko opcija koliko trebate.
 Ove opcije mogu biti zadane kada se NVDA pokreće putem prečaca na radnoj površini (u svojstvima prečaca), iz dijaloškog okvira "pokreni" (izbornik start -&gt; pokreni ili prečac Windows+r) ili iz windowsovog naredbenog retka.
 Opcije moraju biti odvojene od imena NVDA izvršne datoteke i od drugih opcija znacima razmaka.
-Na primjer, prečac na radnoj površini koju stvara tijekom instalacije ima opciju -r, koja prosljeđuje naredbu NVDA da zatvori trenutnu kopiju prije pokretanja nove.
-Druga korisna opcija je --disable-addons, koja prosljeđuje komandu NVDA da onemogući sve pokrenute dodatke.
+Na primjer, korisna opcija je --disable-addons, koja govori NVDA da se pokrene sa svim onemogućenim dodacima.
 Ovo vam pomaže otkriti je li problem nastao zbog dodatka i kako biste oporavili NVDA od ozbiljnih problema koje dodaci mogu prouzročiti.
 </P>
 <P>
@@ -6733,12 +6809,12 @@ Za opcije koje imaju kratku inačicu, Možete ih kombinirati kako slijedi:
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>nvda -rm</TD>
-<TD>Ovo će iskljućiti NVDA i pokrenuti novu kopiju sa onemogućenim zvukom za pokretanje, itd.</TD>
+<TD>nvda -mc CONFIGPATH</TD>
+<TD>Ova će opcija pokrenuti NVDA sa onemogućenim zvukom pokretanja i onemogućenom porukom, i sa točno određenom konfiguracijom</TD>
 </TR>
 <TR>
-<TD>nvda -rm --disable-addons</TD>
-<TD>isto kao i ovo gore, ali sa onemogućenim dodacima</TD>
+<TD>nvda -mc CONFIGPATH --disable-addons</TD>
+<TD>Ista opcija kao i prethodna, ali sa isključenim dodacima</TD>
 </TR>
 </TABLE>
 
@@ -6781,11 +6857,6 @@ Sljede opcije naredbenog retka za NVDA:
 <TD>-q</TD>
 <TD>--quit</TD>
 <TD>Zaustavlja trenutno pokrenutu kopiju NVDA</TD>
-</TR>
-<TR>
-<TD>-r</TD>
-<TD>--replace</TD>
-<TD>Zaustavlja sadašnju kopiju NVDA i ponovno je pokreće</TD>
 </TR>
 <TR>
 <TD>-k</TD>
