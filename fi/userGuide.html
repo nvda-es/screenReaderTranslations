@@ -122,6 +122,7 @@
       <LI><A HREF="#KindleUserNotes">10.8.2. Käyttäjän muistiinpanot</A>
       </UL>
     <LI><A HREF="#Azardi">10.9. Azardi</A>
+    <LI><A HREF="#WinConsole">10.10. Windows-konsoli</A>
     </UL>
   <LI><A HREF="#ConfiguringNVDA">11. Asetusten määrittäminen</A>
     <UL>
@@ -193,9 +194,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc131">14.9.1. Kaikki mallit</A>
-      <LI><A HREF="#toc132">14.9.2. Brailliant BI 32, BI 40 ja B 80</A>
-      <LI><A HREF="#toc133">14.9.3. Brailliant BI 14</A>
+      <LI><A HREF="#toc132">14.9.1. Kaikki mallit</A>
+      <LI><A HREF="#toc133">14.9.2. Brailliant BI 32, BI 40 ja B 80</A>
+      <LI><A HREF="#toc134">14.9.3. Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
     <LI><A HREF="#Seika">14.11. Seika</A>
@@ -434,15 +435,17 @@ Valintaikkuna suljetaan Painamalla OK.
 <P>
 Mikäli NVDA on asennettu omalla asennusohjelmallaan, se voidaan käynnistää joko painamalla Ctrl+Alt+N tai valitsemalla Käynnistä-valikosta Ohjelmat -&gt; NVDA -&gt; NVDA.
 Se on mahdollista käynnistää myös kirjoittamalla Suorita-valintaikkunaan NVDA ja painamalla Enter.
-Lisäksi on mahdollista syöttää joitakin <A HREF="#CommandLineOptions">komentorivivalitsimia</A>, joilla NVDA voidaan käynnistää uudelleen (-r), sulkea (-q), poistaa lisäosat käytöstä (--disable-addons) jne.
+Mikäli NVDA on jo käynnissä, se käynnistetään uudelleen.
+Lisäksi on mahdollista syöttää joitakin <A HREF="#CommandLineOptions">komentorivivalitsimia</A>, joilla NVDA voidaan sulkea (-q), poistaa lisäosat käytöstä (--disable-addons) jne.
 </P>
 <P>
-NVDA:n asennettu versio tallentaa asetukset oletusarvoisesti nykyisen käyttäjän sovellustietojen Roaming-kansioon (esim. "C:\Users\&lt;Käyttäjä&gt;\AppData\Roaming").
+NVDA:n asennettu versio tallentaa asetuksensa oletusarvoisesti nykyisen käyttäjän sovellustietojen Roaming-kansioon (esim. "C:\Users\&lt;Käyttäjä&gt;\AppData\Roaming").
 Tämä on mahdollista muuttaa myös niin, että asetukset ladataan em. sijainnin asemesta paikallisten sovellustietojen kansiosta.
 Lisätietoja on <A HREF="#SystemWideParameters">Järjestelmänlaajuiset parametrit</A> -kappaleessa.
 </P>
 <P>
 Massamuistiversio käynnistetään menemällä hakemistoon, johon se on purettu, ja painamalla Enteriä nvda.exe-tiedoston kohdalla tai kaksoisnapsauttamalla sitä hiiren vasemmalla painikkeella.
+Mikäli NVDA oli jo käynnissä, se suljetaan automaattisesti ennen massamuistiversion käynnistämistä.
 </P>
 <P>
 NVDA:n käynnistyessä kuuluu joukko nousevia ääniä.
@@ -857,7 +860,7 @@ Taulukoissa ovat käytettävissä lisäksi seuraavat näppäinkomennot:
 <P>
 Sovelluksia käytetään enimmäkseen komennoilla, jotka siirtävät <A HREF="#SystemFocus">kohdistusta</A> ja <A HREF="#SystemCaret">kohdistinta</A>.
 Toisinaan voi kuitenkin olla tarpeen tutkia nykyistä sovellusta tai käyttöjärjestelmää ilman, että kohdistus tai kohdistin liikkuu.
-Saatetaan myös haluta siirtyä <A HREF="#Objects">objekteihin</A>, joihin ei ole mahdollista päästä normaalisti näppäimistöä käyttäen.
+Saatat myös haluta siirtyä <A HREF="#Objects">objekteihin</A>, joihin ei ole mahdollista päästä normaalisti näppäimistöä käyttäen.
 Tällaisissa tapauksissa voidaan käyttää objektinavigointia.
 </P>
 <P>
@@ -1098,7 +1101,7 @@ Seuraavat tekstintarkastelukomennot ovat käytettävissä:
 <TD>NVDA+F9</TD>
 <TD>NVDA+F9</TD>
 <TD>Ei mitään</TD>
-<TD>Aloittaa tekstin valitsemisen ja  kopioinnin tarkastelukohdistimen nykyisestä kohdasta. Varsinaista kopiointia ei suoriteta ennen kuin NVDA:lle kerrotaan, missä tekstilohkon loppu on.</TD>
+<TD>Aloittaa tekstin valitsemisen ja  kopioinnin tarkastelukohdistimen nykyisestä kohdasta. Varsinaista kopiointia ei suoriteta, ennen kuin NVDA:lle kerrotaan, missä tekstilohkon loppu on.</TD>
 </TR>
 <TR>
 <TD>Valitse ja kopioi tarkastelukohdistimeen</TD>
@@ -1106,6 +1109,13 @@ Seuraavat tekstintarkastelukomennot ovat käytettävissä:
 <TD>NVDA+F10</TD>
 <TD>Ei mitään</TD>
 <TD>Valitsee ensimmäisellä painalluksella aiemmin asetetusta tekstilohkon alkukohdasta lähtien tarkastelukohdistimen nykyiseen sijaintiin saakka. Toisen kerran painettaessa teksti kopioidaan leikepöydälle.</TD>
+</TR>
+<TR>
+<TD>Siirrä tarkastelukohdistin kopioitavaksi merkityn tekstin alkukohtaan</TD>
+<TD>NVDA+Vaihto+F9</TD>
+<TD>NVDA+Vaihto+F9</TD>
+<TD>Ei mitään</TD>
+<TD>Siirtää tarkastelukohdistimen aiemmin kopioitavaksi merkityn tekstin alkukohtaan.</TD>
 </TR>
 <TR>
 <TD>Puhu tekstin muotoilutiedot</TD>
@@ -2338,6 +2348,46 @@ Lisättyjen kirjojen taulukkonäkymässä:
 </TR>
 </TABLE>
 
+<A NAME="WinConsole"></A>
+<H3>10.10. Windows-konsoli</H3>
+
+<P>
+NVDA tarjoaa tuen Windowsin komentokonsolille, jota komentokehote, PowerShell ja Windows-alijärjestelmä Linuxille käyttävät.
+Konsoli-ikkunan koko on kiinteä, tyypillisesti paljon pienempi kuin puskuri, joka sisältää komentojen palauttaman tulosteen.
+Kun uutta tekstiä kirjoitetaan, sisältöä vieritetään ylöspäin, eikä aiempi teksti ole enää näkyvissä.
+Tekstiä, jota ei näy ikkunassa, ei voi tarkastella NVDA:n tekstintarkastelukomennoilla.
+Konsoli-ikkunan vierittäminen on siksi tarpeen, jotta aiempaa tekstiä voidaan lukea.
+Seuraavat sisäänrakennetut Windows-konsolin pikanäppäimet voivat olla hyödyllisiä <A HREF="#ReviewingText">tarkasteltaessa tekstiä</A> NVDA:lla:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nimi</TH>
+<TH>Näppäinkomento</TH>
+<TH>Kuvaus</TH>
+</TR>
+<TR>
+<TD>Vieritä ylös</TD>
+<TD>Ctrl+Ylänuoli</TD>
+<TD>Vierittää konsoli-ikkunaa ylöspäin, jotta aiempaa tekstiä voidaan lukea.</TD>
+</TR>
+<TR>
+<TD>Vieritä alas</TD>
+<TD>Ctrl+Alanuoli</TD>
+<TD>Vierittää konsoli-ikkunaa alaspäin, jotta uudempaa tekstiä voidaan lukea.</TD>
+</TR>
+<TR>
+<TD>Vieritä alkuun</TD>
+<TD>Ctrl+Home</TD>
+<TD>Vierittää konsoli-ikkunan puskurin alkuun.</TD>
+</TR>
+<TR>
+<TD>Vieritä loppuun</TD>
+<TD>Ctrl+End</TD>
+<TD>Vierittää konsoli-ikkunan puskurin loppuun.</TD>
+</TR>
+</TABLE>
+
 <A NAME="ConfiguringNVDA"></A>
 <H2>11. Asetusten määrittäminen</H2>
 
@@ -2622,7 +2672,10 @@ Jos kuitenkin käytössä on puhesyntetisaattori, joka jo valmiiksi tukee emojie
 <P>
 Huom: Manuaalisesti lisätyt tai muokatut merkkikuvaukset tallennetaan osana käyttäjän asetuksia.
 Mikäli siis jonkin emojin kuvausta muutetaan, kyseiselle emojille käytetään muokattua kuvausta riippumatta siitä, onko tämä asetus käytössä vai ei.
-Symboleiden kuvauksia voi lisätä, muokata ja poistaa NVDA:n <A HREF="#SymbolPronunciation">Välimerkkien ja symboleiden puhuminen -valintaikkunassa.</A>
+Symboleiden kuvauksia on mahdollista lisätä, muokata ja poistaa NVDA:n <A HREF="#SymbolPronunciation">Välimerkkien ja symboleiden puhuminen -valintaikkunassa.</A>
+</P>
+<P>
+Unicode-konsortion datan sisällyttämistä voi vaihtaa mistä tahansa lisäämällä mukautettu syötekomento <A HREF="#InputGestures">Syötekomennot-valintaikkunaa</A> käyttäen.
 </P>
 
 <A NAME="SpeechSettingsCapPitchChange"></A>
@@ -3535,6 +3588,7 @@ Seuraavien tietojen lukeminen voidaan määrittää:
  <LI>Luettelot
  <LI>Sisennetyt lainaukset
  <LI>Kiintopisteet
+ <LI>Artikkelit
  <LI>Kehykset
  <LI>Napsautettavat kohteet
  </UL>
@@ -3643,17 +3697,40 @@ Tämän asetuksen käyttöön ottamista ei vielä suositella, mutta Office 2016/
 </P>
 
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Käytä UI Automation -rajapintaa Windowsin komentokehotteessa, kun mahdollista</H5>
+<H5>Windows-konsolin tuki</H5>
 
 <P>
-Kun tämä asetus on käytössä, NVDA käyttää uutta, työn alla olevaa komentokehotteen tukea, joka hyödyntää <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Microsoftin tekemiä saavutettavuusparannuksia.</A> Tämä ominaisuus on erittäin kokeellinen ja keskeneräinen, joten sen käyttöä ei vielä suositella. On kuitenkin odotettavissa, että uusi tuki tulee oletusarvoiseksi parantaen NVDA:n suorituskykyä ja vakautta Windowsin komentokehotteessa.
+Tämä asetus valitsee, miten NVDA on vuorovaikutuksessa Windows-konsolin kanssa, jota komentokehote, PowerShell ja Windows-alijärjestelmä Linuxille käyttävät.
+Se ei vaikuta moderniin Windows-päätteeseen.
+Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">lisäsi konsoliin tuen UI Automation -rajapinnalleen</A> Windows 10:n versioon 1709, mikä paransi huomattavasti sitä tukevien ruudunlukijoiden suorituskykyä ja vakautta.
+Tilanteissa, joissa UI Automation -rajapinta ei ole käytettävissä tai sen tiedetään johtavan huonompaan käyttäjäkokemukseen, NVDA:n vanha konsolituki on käytettävissä varalla.
+Windows-konsolin tuki -yhdistelmäruudussa on kolme vaihtoehtoa:
 </P>
 
+<UL>
+<LI>Automaattinen: Käyttää UI Automation -rajapintaa konsoleissa Windows 10:n versiossa 1809 ja uudemmissa. Tätä vaihtoehtoa suositellaan, ja se on oletusarvoisesti valittuna.
+<LI>UIA etusijalla: Käyttää UI Automation -rajapintaa konsoleissa, mikäli se on käytettävissä, jopa sellaisissa Windows-versioissa, joissa sen tuki on keskeneräinen tai buginen. Vaikka tämä rajoitettu toiminnallisuus voi olla hyödyllinen (ja jopa riittävä käyttötarkoituksiisi), käytät sitä kokonaan omalla vastuullasi, eikä sille tarjota tukea.
+<LI>Vanha: Windows-konsolin UI Automation -rajapinnan tuki poistetaan kokonaan käytöstä, jolloin käytetään aina vanhaa varatukea.
+</UL>
+
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>Puhu salasanat UIA-komentokehotteessa</H5>
+<H5>Puhu salasanat Windows-konsolissa</H5>
 
 <P>
-Tämä asetus määrittää, puhutaanko merkit <A HREF="#KeyboardSettingsSpeakTypedCharacters">puhu kirjoitetut merkit-</A> tai <A HREF="#KeyboardSettingsSpeakTypedWords">puhu kirjoitetut sanat -ominaisuuden</A> ollessa käytössä tilanteissa, joissa ruutu ei päivity (kuten esim. salasanan syöttökentissä) UI automation -rajapintaa käyttävän komentokehotetuen ollessa käytössä. Tätä asetusta ei tulisi ottaa käyttöön turvallisuussyistä. Se voidaan kuitenkin ottaa haluttaessa käyttöön, mikäli kirjoitettujen merkkien ja/tai sanojen puhumisessa havaitaan suorituskykyongelmia tai epävakautta NVDA:n uutta kokeellista komentokehotetukea käytettäessä.
+Tämä asetus säätää, puhutaanko merkit <A HREF="#KeyboardSettingsSpeakTypedCharacters">Puhu kirjoitetut merkit-</A> tai <A HREF="#KeyboardSettingsSpeakTypedWords">Puhu kirjoitetut sanat</A> -asetusta käytettäessä tilanteissa, joissa ruutu ei päivity (kuten salasanaa syötettäessä) joissakin pääteohjelmissa, kuten Windows-konsolissa UI automation -tuen ollessa käytössä ja Mintty:ssä.
+Turvallisuussyistä tämä asetus tulisi pitää poissa käytöstä.
+Voit kuitenkin halutessasi ottaa sen käyttöön, mikäli konsoleissa on suorituskykyongelmia tai epävakautta kirjoitettujen merkkien ja/tai sanojen puhumisessa, tai työskentelet luotetuissa ympäristöissä ja haluat, että salasanat puhutaan.
+</P>
+
+<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
+<H5>Käytä uutta kirjoitettujen merkkien tukea vanhoissa Windows-konsoleissa (kun käytettävissä)</H5>
+
+<P>
+Tämä asetus ottaa käyttöön vaihtoehtoisen menetelmän kirjoitettujen merkkien tunnistamiseen vanhoissa Windows-konsoleissa.
+Vaikka se parantaa suorituskykyä ja estää konsolitulosteen tavaamista, se ei ehkä ole yhteensopiva joidenkin pääteohjelmien kanssa.
+Tämä ominaisuus on käytettävissä ja käytössä oletusarvoisesti Windows 10:n versioissa 1607, 1703, 1709 ja 1803 sekä uudemmissa, kun UI Automation -rajapinta ei ole käytettävissä tai se on poistettu käytöstä.
+Varoitus: Kun tämä asetus on käytössä, ruudulla näkymättömät kirjoitetut merkit, kuten salasanat, puhutaan.
+Epäluotettavissa ympäristöissä voit salasanoja kirjoittaessasi poistaa väliaikaisesti käytöstä <A HREF="#KeyboardSettingsSpeakTypedCharacters">Puhu kirjoitetut merkit-</A> ja <A HREF="#KeyboardSettingsSpeakTypedWords">Puhu kirjoitetut sanat</A> -asetukset.
 </P>
 
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
@@ -4989,7 +5066,7 @@ Seuraavassa on Brailliant BI/B- ja BrailleNote Touch -näyttöjen näppäinkomen
 Katso laitteiden käyttöohjeista kuvaukset näppäinten paikoista.
 </P>
 
-<A NAME="toc131"></A>
+<A NAME="toc132"></A>
 <H4>14.9.1. Kaikki mallit</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5079,7 +5156,7 @@ Katso laitteiden käyttöohjeista kuvaukset näppäinten paikoista.
 </TR>
 </TABLE>
 
-<A NAME="toc132"></A>
+<A NAME="toc133"></A>
 <H4>14.9.2. Brailliant BI 32, BI 40 ja B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5101,7 +5178,7 @@ Katso laitteiden käyttöohjeista kuvaukset näppäinten paikoista.
 </TR>
 </TABLE>
 
-<A NAME="toc133"></A>
+<A NAME="toc134"></A>
 <H4>14.9.3. Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -6716,8 +6793,7 @@ NVDA hyväksyy käynnistyessään yhden tai useamman toimintaansa vaikuttavan ko
 Voit käyttää kerralla niin monta valitsinta kuin tarvitset.
 Valitsimet voidaan antaa pikakuvakkeesta käynnistettäessä (syötetään kuvakkeen Ominaisuudet-valintaikkunassa olevaan Kohde-kenttään), Suorita-valintaikkunasta (Käynnistä-valikko -&gt; Suorita tai Windows+R) tai Windowsin komentokehotteesta.
 Valitsimet erotetaan NVDA:n ohjelmatiedoston nimestä ja toisistaan välilyönnillä.
-Esimerkiksi asennuksen aikana Työpöydälle luodussa pikakuvakkeessa on -r-valitsin, joka sulkee NVDA:n käynnissä olevan version ennen uuden käynnistämistä.
-Toinen hyödyllinen valitsin on --disable-addons, joka poistaa kaikki lisäosat käytöstä.
+Hyödyllinen valitsin on esim. --disable-addons, joka poistaa kaikki lisäosat käytöstä.
 Sen avulla voit selvittää, aiheuttaako jokin lisäosa ongelmia.
 </P>
 <P>
@@ -6733,17 +6809,17 @@ Voit yhdistellä lyhyitä valitsimia näin:
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>nvda -rm</TD>
-<TD>Tämä sulkee NVDA:n nykyisen version ja käynnistää uuden poistaen samalla käynnistysäänet käytöstä jne.</TD>
+<TD>nvda -mc CONFIGPATH</TD>
+<TD>Tämä käynnistää NVDA:n poistaen käytöstä sekä käynnistysäänen että -ilmoituksen, ja käyttää määritetyssä hakemistossa olevia asetuksia.</TD>
 </TR>
 <TR>
-<TD>nvda -rm --disable-addons</TD>
+<TD>nvda -mc CONFIGPATH --disable-addons</TD>
 <TD>Muuten sama kuin edellä, mutta poistaa myös lisäosat käytöstä.</TD>
 </TR>
 </TABLE>
 
 <P>
-Jotkin valitsimet hyväksyvät lisäparametrejä, esim. miten yksityiskohtaisia tietoja lokiin tallennetaan tai käyttäjän asetushakemiston polkumäärityksen.
+Jotkin valitsimet hyväksyvät lisäparametreja, esim. miten yksityiskohtaisia tietoja lokiin tallennetaan tai käyttäjän asetushakemiston polkumäärityksen.
 Parametrit annetaan valitsimen jälkeen ja erotetaan sen lyhyestä muodosta välilyönnillä tai pitkää muotoa käytettäessä yhtä suuri -merkillä (=), esim.:
 </P>
 
@@ -6781,11 +6857,6 @@ Seuraavassa on luettelo NVDA:n komentorivivalitsimista:
 <TD>-q</TD>
 <TD>--quit</TD>
 <TD>Sulkee jo käynnissä olevan NVDA:n version.</TD>
-</TR>
-<TR>
-<TD>-r</TD>
-<TD>--replace</TD>
-<TD>Sulkee jo käynnissä olevan NVDA:n version ja käynnistää uuden.</TD>
 </TR>
 <TR>
 <TD>-k</TD>
