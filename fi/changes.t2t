@@ -3,6 +3,69 @@
 
 %!includeconf: ../changes.t2tconf
 
+= 2019.3 =
+
+== Uudet ominaisuudet ==
+- Komentokehote, PowerShell ja Windows-alijärjestelmä Linuxille Windows 10:n versiossa 1809 ja uudemmissa:
+ - Suorituskykyä ja vakautta parannettu huomattavasti. (#9771)
+ - Ruudulla näkymättömän kirjoitetun tekstin (kuten salasanat) ilmaiseminen voidaan nyt ottaa käyttöön NVDA:n lisäasetusten paneelissa olevalla asetuksella. (#9649)
+- Siirrä hiiri navigointiobjektiin -komennon  tarkkuutta parannettu Java-sovellusten tekstikentissä. (#10157)
+- Näyttöverho, joka käytössä ollessaan pimentää koko ruudun Windows 8:ssa ja uudemmissa. (#7857)
+- Lisätty tuki seuraaville Handy Tech -pistenäytöille (#8955):
+ - Basic Braille Plus 40
+ - Basic Braille Plus 32
+ - Connect Braille
+- Kaikki käyttäjän määrittelemät syötekomennot voidaan nyt poistaa uudella Syötekomennot-valintaikkunan Palauta oletukset -painikkeella. (#10293)
+- Microsoft Wordissa kerrotaan nyt fonttia ilmaistaessa, onko teksti piilotettu. (#8713)
+- Lisätty komento  tarkastelukohdistimen siirtämiseksi aiemmin asetetun, valittavaksi tai kopioitavaksi merkityn tekstin alkukohdan sijaintiin. (#1969)
+- Kiintopisteet ilmaistaan nyt Internet Explorerissa, Microsoft Edgessä sekä Firefoxin ja Chromen uusimmissa versioissa vuorovaikutustilassa ja objektinavigointia käytettäessä. (#10101)
+- Pikaselauskomennoilla on nyt mahdollista liikkua artikkeleittain Internet Explorerissa, Google Chromessa ja Mozilla Firefoxissa. Näihin komentoihin ei oletusarvoisesti ole liitetty näppäimiä, mutta ne voidaan määrittää Syötekomennot-valintaikkunasta, kun se avataan selaustila-asiakirjan ollessa avoimena. (#9227)
+- Artikkelielementit ilmaistaan nyt Internet Explorerissa, Google Chromessa ja Mozilla Firefoxissa objektinavigointia käytettäessä ja vaihtoehtoisesti selaustilassa, mikäli kyseinen asetus on otettu käyttöön asiakirjojen muotoiluasetuksista. (#10424)
+
+
+== Muutokset ==
+- Käyttöoppaassa selitetään nyt, miten NVDA:ta käytetään Windowsin komentokehotteessa. (#9957)
+- Nvda.exe:n suorittaminen korvaa nyt oletusarvoisesti jo käynnissä olevan NVDA-version. Komentoriviparametri -r|--replace hyväksytään edelleen, mutta se ohitetaan. (#8320)
+- NVDA ilmaisee nyt Windows 8:ssa ja uudemmissa isännöityjen sovellusten, kuten Microsoft Storesta ladattujen, tuotteen nimen ja versiotiedot sovelluksen tarjoamia tietoja käyttäen. (#4259, #10108)
+- Kun muutosten jäljittäminen otetaan käyttöön tai poistetaan käytöstä Microsoft Wordissa näppäimistöä käyttäen, NVDA kertoo asetuksen tilan. (#942)
+- NVDA:n versionumero tallennetaan nyt lokiin ensimmäisenä ilmoituksena. Näin tapahtuu, vaikka lokin tallennus olisi poistettu käytöstä yleisistä asetuksista. (#9803)
+- Asetukset-valintaikkuna ei enää salli lokitason muuttamista, mikäli se on ohitettu komentorivivalitsimella. (#10209)
+- NVDA kertoo nyt Microsoft Wordissa tulostumattomien merkkien näyttötilan painettaessa tilanvaihtopikanäppäintä Ctrl+Vaihto+8. (#10241)
+- Päivitetty Liblouis-pistekirjoituskääntäjä muutoksella 58d67e63. (#10094)
+- Kun CLDR-merkkien (emojit mukaan lukien) puhuminen on käytössä, ne sanotaan kaikilla välimerkkitasoilla. (#8826)
+- NVDA:han sisältyvät kolmannen osapuolen Python-paketit, kuten comtypes, tallentavat nyt varoituksensa ja virheensä NVDA:n lokiin. (#10393)
+- Päivitetty Unicode Common Locale Data Repository -tietokannan emojiselitteet versioksi 36.0. (#10426)
+
+
+== Korjatut ohjelmavirheet ==
+- Emojit ja muut 32-bittiset Unicode-merkit vievät nyt vähemmän tilaa pistenäytöllä, kun ne näytetään heksadesimaaliarvoina. (#6695)
+- NVDA puhuu Windows 10:ssä universaalien sovellusten työkaluvihjeet, mikäli työkaluvihjeiden ilmaiseminen on otettu käyttöön Objektien lukeminen -valintaikkunassa. (#8118)
+- Kirjoitettu teksti puhutaan nyt Mintty:ssä Windows 10:n versiossa 1607 ja uudemmissa. (#1348)
+- Windowsin komentokehotteessa kohdistimen lähelle ilmestyvää tulostetta ei enää tavata Windows 10:n versiossa 1607 ja uudemmissa. (#513)
+- Audacityn kompressorivalintaikkunan säätimet puhutaan nyt valintaikkunassa liikuttaessa . (#10103)
+- NVDA ei enää käsittele välilyöntejä sanoina objektintarkastelussa Scintilla-pohjaisissa editoreissa, kuten Notepad++:ssa. (#8295)
+- NVDA estää järjestelmää siirtymästä lepotilaan, kun tekstiä vieritetään pistenäytön näppäimillä. (#9175)
+- Pistenäyttö seuraa nyt Windows 10:ssä, kun solun sisältöä muokataan Microsoft Excelissä sekä muissa UIA-tekstisäätimissä, joissa se jäi aiemmin jälkeen. (#9749)
+- NVDA puhuu jälleen kerran ehdotukset Microsoft Edgen osoitepalkissa. (#7554)
+- NVDA ei enää hiljene, kun kohdistus siirtyy Internet Explorerissa HTML-välilehtisäätimen otsakkeeseen. (#8898)
+- NVDA ei enää toista hakuehdotusääntä EdgeHTML-pohjaisessa Microsoft Edgessä, kun ikkuna suurennetaan. (#9110, #10002)
+- ARIA 1.1 -yhdistelmäruutuja tuetaan nyt Mozilla Firefoxissa ja Google Chromessa. (#9616)
+- NVDA ei enää puhu luettelokohteiden visuaalisesti piilossa olevia sarakkeita SysListView32-säätimissä. (#8268)
+- Asetusvalintaikkuna ei enää näytä suojatussa tilassa nykyisenä lokitasona "tiedot". (#10209)
+- NVDA puhuu Käynnistä-valikossa hakutulosten tiedot Windows 10:n Anniversary-päivityksessä ja uudemmissa. (#10232)
+- Mikäli kohdistimen siirtäminen tai pikanavigoinnin käyttäminen aiheuttaa selaustilassa asiakirjan muuttumisen, NVDA ei enää puhu joissakin tapauksissa virheellistä sisältöä. (#8831, #10343)
+- Joitakin Microsoft Wordin luettelomerkkien nimiä on korjattu. (#10399)
+- NVDA sanoo jälleen kerran Windows 10:n toukokuun 2019 päivityksessä ja uudemmissa ensimmäisen valitun emojin tai leikepöydän kohteen, kun emojipaneeli ja leikepöydän historia avautuvat. (#9204)
+- Poeditissä on jälleen kerran mahdollista tarkastella oikealta vasemmalle luettavien kielten käännöksiä. (#9931)
+- NVDA ei enää puhu edistymispalkin tietoja Järjestelmä/Ääni-sivun äänenvoimakkuusmittareille Windows 10:n huhtikuun 2018 päivityksen ja uudempien Asetukset-sovelluksessa. (#10284)
+- Puhesanastojen virheelliset säännölliset lausekkeet eivät enää mykistä täysin NVDA:n puhetta. (#10334)
+- Kun Microsoft Wordissa luetaan luettelomerkillisiä kohteita UIA:n ollessa käytössä, seuraavan luettelokohteen luettelomerkkiä ei enää virheellisesti puhuta. (#9613)
+
+
+== Muutokset kehittäjille ==
+Katso muutokset tämän dokumentin [englanninkielisestä versiosta. ../en/changes.html]
+
+
 = 2019.2.1 =
 Tämä versio korjaa useita 2019.2:ssa olevia kaatumisia. Muun muassa seuraavat ongelmat on korjattu:
 - Ratkaistu useita Gmailin kaatumisia, joita on esiintynyt sekä Firefoxissa että Chromessa oltaessa vuorovaikutuksessa ponnahdusvalikoiden kanssa, kuten esim. luotaessa suodattimia tai muutettaessa tiettyjä Gmailin asetuksia. (#10175, #9402, #8924)
@@ -15,7 +78,7 @@ Tämä versio korjaa useita 2019.2:ssa olevia kaatumisia. Muun muassa seuraavat 
 Tämän version merkittävimpiä uusia ominaisuuksia ovat Freedom Scientificin pistenäyttöjen automaattinen tunnistus, Lisäasetukset-paneelin kokeellinen asetus, jolla selaustila ei siirrä kohdistusta automaattisesti (mikä saattaa parantaa suorituskykyä), nopeudenlisäysasetus Windows OneCore -syntetisaattorille hyvin suurten nopeuksien saavuttamiseksi, sekä useita ohjelmavirheiden korjauksia.
 
 == Uudet ominaisuudet ==
-- NVDA:n Miranda NG -tuki toimii uudempien asiakasohjelmaversioiden kanssa. (#9053) 
+- NVDA:n Miranda NG -tuki toimii asiakasohjelman uudempien versioiden kanssa. (#9053) 
 - Selaustilan oletusarvoinen käytöstä poistaminen on nyt mahdollista poistamalla käytöstä uusi "Ota selaustila käyttöön sivun latautuessa" -asetus NVDA:n selaustilan asetuksista. (#8716) 
  - Huom: Selaustila voidaan edelleen ottaa käyttöön manuaalisesti painamalla NVDA+Väli, vaikka tämä asetus olisi poistettu käytöstä.
 - Symbolien suodattaminen on nyt mahdollista Välimerkkien ja symbolien puhuminen -valintaikkunassa samaan tapaan kuin elementtilistassa ja Syötekomennot-valintaikkunassa. (#5761)
@@ -32,15 +95,21 @@ Tämän version merkittävimpiä uusia ominaisuuksia ovat Freedom Scientificin p
  - Hidas reagointi selaustilan näppäinkomentoihin.
 - Tuettujen pistenäyttöajureiden asetuksia on nyt mahdollista muuttaa NVDA:n asetusvalintaikkunan Pistekirjoitus-kategoriasta. (#7452)
 - Pistenäyttöjen automaattinen tunnistus tukee nyt Freedom Scientificin pistenäyttöjä. (#7727)
+- Lisätty komento tarkastelukohdistimen kohdalla olevan symbolin korvauksen näyttämiseen. (#9286)
+- Lisäasetukset-paneeliin lisätty kokeellinen asetus, jolla voi testata uutta NVDA:n työn alla olevaa Microsoft UI Automation -rajapintaa käyttävää komentokehotteen tukea. (#9614)
+- Python-konsolin syöttökenttä tukee nyt usean rivin liittämistä leikepöydältä. (#9776)
 
 
 == Muutokset ==
 - Syntetisaattorin äänenvoimakkuutta lisätään ja vähennetään nyt 10:n asemesta 5:llä asetusrengasta käytettäessä. (#6754)
 - Selvennetty lisäosien hallinnan tekstiä, joka näytetään kun NVDA on käynnistetty --disable-addons-komentoriviparametrilla. (#9473)
 - Unicode Common Locale Data Repository -tietokannan emojiselitteet päivitetty versioksi 35.0. (#9445)
-- Liblouis-pistekirjoituskääntäjä päivitetty versioksi 3.9.0. (#9439)
 - Selaustilan elementtilistan suodatuskentän pikanäppäin on muutettu englanninkielisessä käyttöliittymässä Alt+Y:ksi. (#8728)
 - Kun automaattisesti tunnistettu pistenäyttö kytketään bluetoothin kautta, NVDA jatkaa saman ajurin tukemien USB-näyttöjen etsimistä ja vaihtaa USB-yhteyteen, mikäli sellainen tulee saataville. (#8853)
+- eSpeak-NG päivitetty muutoksella 67324cc.
+- Liblouis-pistekirjoituskääntäjä päivitetty versioksi 3.10.0. (#9439)
+- NVDA sanoo nyt "valittu" ilmoitettuaan ensin käyttäjän valitseman tekstin. (#9028, #9909)
+- Vuorovaikutustila on oletusarvoisesti käytössä Microsoft Visual Studio Codessa. (#9828)
 
 
 == Korjatut ohjelmavirheet ==
@@ -55,20 +124,17 @@ Tämän version merkittävimpiä uusia ominaisuuksia ovat Freedom Scientificin p
 - NVDA ei enää puhu Windows 10:n May 2019 -päivityksessä useita ilmoituksia, jos äänenvoimakkuutta muutetaan fyysisillä painikkeilla Resurssienhallinnan ollessa aktiivisena. (#9466)
 - Välimerkkien ja symbolien puhuminen -valintaikkuna avautuu nyt paljon nopeammin, kun käytössä on yli 1000 symbolia sisältäviä symbolisanastoja. (#8790)
 - NVDA lukee  asianmukaisen rivin, kun automaattinen rivitys on käytössä Scintilla-säätimissä, kuten Notepad++:ssa. (#9424)
-- Solun sijainti ilmoitetaan Microsoft Excelissä sen muuttuessa Vaihto+Enter- tai Vaihto+Numeronäppäimistön Enter -syötekomentojen vuoksi. (#9499)
+- Solun sijainti ilmoitetaan Microsoft Excelissä sen muuttuessa Vaihto+Enter- tai Vaihto+Numeronäppäimistön Enter -syötekomentojen takia. (#9499)
 - Objects Explorer -ikkunan valittu kohde ilmoitetaan nyt asianmukaisesti kategorioita sisältävissä olio- ja alkiopuunäkymissä Visual Studio 2017:ssä ja uudemmissa. (#9311)
 - Lisäosia, joiden nimet eroavat toisistaan vain kirjainkoon osalta, ei enää käsitellä erillisinä. (#9334)
 - Windows 10:n teksti puheeksi -asetuksissa määritetty nopeus ei enää vaikuta Windows OneCore -ääniä käytettäessä NVDA:ssa määritettyyn nopeuteen. (#7498)
 - Lokin voi nyt avata painamalla NVDA+F1, kun nykyisestä navigointiobjektista ei ole saatavilla kehittäjätietoja. (#8613)
 - NVDA:n taulukkonavigointikomentojen käyttäminen on jälleen mahdollista Google Docsissa, Firefoxissa ja Chromessa. (#9494)
-<<<<<<< .mine
-§- The bumper keys now work correctly on Freedom Scientific braille displays. (#8849)
-||||||| .r49291
-=======
 - Freedom Scientific -pistenäyttöjen vieritysnäppäimet toimivat nyt asianmukaisesti. (#8849)
 - NVDA ei enää hjyydy enimillään 10 sekunniksi luettaessa asiakirjan ensimmäistä merkkiä 64-bittisessä Notepad++ 7.7:ssä. (#9609)
 - NVDA:ssa voidaan nyt käyttää HTComia Handy Tech -pistenäytön kanssa. (#9691)
->>>>>>> .r51124
+- Taustavälilehdellä olevan Aktiivisen alueen päivityksiä ei enää puhuta Mozilla Firefoxissa. (#1318)
+- Selaustilan Etsi-valintaikkuna ei enää lakkaa toimimasta, jos NVDA:n Tietoja-valintaikkuna on avoimena taustalla. (#8566)
 
 
 == Muutokset kehittäjille ==
