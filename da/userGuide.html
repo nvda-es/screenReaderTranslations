@@ -122,6 +122,7 @@
       <LI><A HREF="#KindleUserNotes">10.8.2. Brugernoter</A>
       </UL>
     <LI><A HREF="#Azardi">10.9. Azardi</A>
+    <LI><A HREF="#WinConsole">10.10. Windows-konsollen</A>
     </UL>
   <LI><A HREF="#ConfiguringNVDA">11. Opsætning af NVDA</A>
     <UL>
@@ -142,7 +143,7 @@
       <LI><A HREF="#BrowseModeSettings">11.1.13. Gennemsynstilstand (NVDA+Ctrl+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">11.1.14. Dokumentformatering (NVDA+Ctrl+d)</A>
       <LI><A HREF="#Win10OcrSettings">11.1.15. Windows 10 tekstgenkendelse</A>
-      <LI><A HREF="#toc92">11.1.16. Avancerede Indstillinger</A>
+      <LI><A HREF="#toc93">11.1.16. Avancerede Indstillinger</A>
       </UL>
     <LI><A HREF="#MiscSettings">11.2. Yderligere indstillinger</A>
       <UL>
@@ -191,9 +192,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant BI/B Series/BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc129">14.9.1. Tastekombinationer til alle modeller</A>
-      <LI><A HREF="#toc130">14.9.2. Tastekombinationer for Brailliant BI 32, BI 40 og B 80</A>
-      <LI><A HREF="#toc131">14.9.3. Tastekombinationer for Brailliant BI 14</A>
+      <LI><A HREF="#toc130">14.9.1. Tastekombinationer til alle modeller</A>
+      <LI><A HREF="#toc131">14.9.2. Tastekombinationer for Brailliant BI 32, BI 40 og B 80</A>
+      <LI><A HREF="#toc132">14.9.3. Tastekombinationer for Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS Braille Sense/Braille EDGE/Smart Beetle+ Sync Braille Series</A>
     <LI><A HREF="#Seika">14.11. Seika Braille Displays</A>
@@ -432,6 +433,7 @@ Tryk Ok for at lukke denne dialog.
 <P>
 Hvis du har installeret NVDA med installationsprogrammet, kan du blot starte NVDA ved enten at trykke Ctrl+Alt+n eller vælge NVDA fra NVDA-menuen under Programmer i menuen Start.
 Derudover kan du skrive NVDA i dialogboksen Kør og trykke på Enter.
+Hvis NVDA allerede kører, vil programmet blive genstartet.
 Du kan også skrive nogle <A HREF="#CommandLineOptions">kommandolinjeparametre</A>, som du kan bruge til følgende: Genstarte NVDA (-r), afslut (-q) deaktivere tilføjelsesprogrammer fra (--disable-addons) osv.
 </P>
 <P>
@@ -441,6 +443,7 @@ Læs afsnittet <A HREF="#SystemWideParameters">systemspecifikke parametre</A> fo
 </P>
 <P>
 Hvis du vil starte den flytbare version, skal du åbne den mappe hvori du udpakkede NVDA, og trykke enter eller dobbeltklikke på nvda.exe.
+Hvis NVDA allerede kørte, vil den aktuelle version af NVDA stoppes og den flytbare version køres i stedet.
 </P>
 <P>
 Mens NVDA starter, vil du først høre en stigende række toner, som fortæller, at NVDA er ved at blive indlæst.
@@ -1102,6 +1105,13 @@ Følgende tastekommandoer er tilgængelige for gennemsyn af tekst:
 <TD>NVDA+f10</TD>
 <TD>Ingen</TD>
 <TD>Ved et tryk, vil tekst blive valgt fra den tidligere startmarkør, som er blevet sat, til og med læsemarkørens aktuelle position. Når du trykker på denne tast to gange, bliver teksten kopieret til Windows udklipsholderen.</TD>
+</TR>
+<TR>
+<TD>Flyt til starten af markeringen  for kopiering for læsemarkør</TD>
+<TD>NVDA+shift+f9</TD>
+<TD>NVDA+shift+f9</TD>
+<TD>none</TD>
+<TD>Flytter læsemarkøren til placeringen for den tidligere indstillede startmarkering til kopiering</TD>
 </TR>
 <TR>
 <TD>Sig tekstformatering</TD>
@@ -2336,6 +2346,46 @@ Når du befinder dig i tabelvisningen for tilføjede bøger:
 </TR>
 </TABLE>
 
+<A NAME="WinConsole"></A>
+<H3>10.10. Windows-konsollen</H3>
+
+<P>
+NVDA har understøttelse for Windows-kommandokonsollen brugt af Kommandoprompt, PowerShell, og Windows Subsystem for Linux.
+Kommandokonsollens vindue har en forudbestemt størrelse, der typisk er meget mindre end den beholder, der indeholder den tekst, der kommer frem på skærmen.
+Efterhånden som nyere linjer af tekst skrives, vil teksten rulle opad og forrige linjer af tekst vil ikke forblive synlige.
+Tekst, der ikke er synlig, kan ikke læses ved brug af NVDAs læsekommandoer.
+Derfor er det nødvendigt at bruge kommandoer til at rulle konsolvinduet.
+Følgende indbyggede kommandoer til manipulering af konsolvinduet kan være nyttige, når du skal <A HREF="#ReviewingText">læse teksten</A> med NVDA:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Navn</TH>
+<TH>Tast</TH>
+<TH>Beskrivelse</TH>
+</TR>
+<TR>
+<TD>Rul op</TD>
+<TD>control+Pil op</TD>
+<TD>Ruller konsolvinduet opad, så tidligere tekst kan læses.</TD>
+</TR>
+<TR>
+<TD>Rul ned</TD>
+<TD>control+Pil ned</TD>
+<TD>Ruller konsolvinduet nedad, så nyere tekst kan læses.</TD>
+</TR>
+<TR>
+<TD>Rul til begyndelsen</TD>
+<TD>control+hjem</TD>
+<TD>Ruller konsolvinduet til begyndelsen af teksten.</TD>
+</TR>
+<TR>
+<TD>Rul til den sidste tekst</TD>
+<TD>control+end</TD>
+<TD>Ruller konsolvinduet til den sidst modtagede tekst.</TD>
+</TR>
+</TABLE>
+
 <A NAME="ConfiguringNVDA"></A>
 <H2>11. Opsætning af NVDA</H2>
 
@@ -2621,6 +2671,9 @@ Hvis du derimod bruger en talesyntese, der har denne funktionalitet indbygget, v
 Bemærk: Manuelt tilføjede og redigerede tegnbeskrivelser gemmes som en del af din brugerkonfiguration.
 Dette betyder, at dine tilpassede udtaler for emoji vil blive udtalt, uanset om denne indstilling er slået til eller ej.
 Du kan tilføje, redigere og fjerne symbolbeskrivelser i NVDAs <A HREF="#SymbolPronunciation"> dialog Udtale af Sætningstegn og Symboler</A>.
+</P>
+<P>
+For at ændre denne indstilling fra hvor som helst, kan du tildele en kommando i Inputbevægelser under NVDA-menuen&gt;Opsætning&gt;Inputbevægelser.
 </P>
 
 <A NAME="SpeechSettingsCapPitchChange"></A>
@@ -3528,6 +3581,7 @@ Du kan tilpasse annoncering af:
  <LI>Lister
  <LI>Bloksitater
  <LI>Landmærker
+ <LI>Artikler
  <LI>Rammer
  <LI>Klikbart
  </UL>
@@ -3581,7 +3635,7 @@ Denne kategori indeholder følgende indstillinger:
 Denne combo box lader dig vælge det ønskede sprog til brugen af tekstgenkendelse.
 </P>
 
-<A NAME="toc92"></A>
+<A NAME="toc93"></A>
 <H4>11.1.16. Avancerede Indstillinger</H4>
 
 <P>
@@ -3633,14 +3687,40 @@ Vi anbefaler ikke at størstedelen af brugere slår denne indstilling til, men v
 </P>
 
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Benyt UI Automation i Windows Console når tilgængelig</H5>
+<H5>Understøttelse af Windows-konsoller</H5>
 
 <P>
-Når denne indstiling er slået til, vil NVDA benytte en nyere metode til oplæsning og håndtering af konsolvinduer ved at udnytte <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">tilgængelighedsforbedringer udviklet af Microsoft</A>. Denne funktion er dog eksperimentel, og det anbefales ikke, at de fleste bruger denne. Når arbejdet på denne funktion er fuldendt, vil den tilsyneladende blive standardadfærden i fremtiden. Denne funktion øger ydeevnen og stabiliteten under læsning af Windows-konsolvinduer.
+Denne indstilling bestemmer hvordan NVDA fungerer med Windows-konsolvinduer brugt af Kommandoprompt, PowerShell, og Windows Subsystem for Linux.
+Dette påvirker ikke den moderne Windows-terminal.
+I Windows 10 version 1709, Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">tilføjede understøttelse for deres UI Automation API til konsollen</A>, hvilket forbedrede ydeevnen for skærmlæser der understøtter denne.
+I situationer hvor UI Automation ikke er tilgængeligt eller vil resultere i en forværret brugeroplevelse, vil NVDAs understøttelse for forældet metoder være tilgængelige.
+Indstillingen har tre muligheder i den tilsvarende combo box:
 </P>
+
+<UL>
+<LI>Automatisk: Bruger UI Automation i Windows-konsoller i Windows 10 version 1809 og nyere. Denne indstilling anbefales og er standardindstillingen.
+<LI>Foretræk UIA: Bruger UI Automation i konsoller, hvis denne er tilgængelig. Dette er også tilfældet i Windows-versioner, hvor implementeringen af denne er fejlagtig. Brug af denne indstilling er på egen hånd, og intet support er tilgængelig for denne.
+<LI>Forældet: UI Automation vil være deaktiveret fuldstændigt, og den forældede metode vil altid benyttes.
+</UL>
+
+<A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
+<H5>Udtal adgangskoder i Windows-konsoller</H5>
+
 <P>
-+==== Udtal adgangskoder i UIA-konsoller ====[AdvancedSettingsWinConsoleSpeakPasswords]
-Denne funktion bestemmer om tegn udtales ved brug af indstillingen <A HREF="#KeyboardSettingsSpeakTypedCharacters">sig indtastede tegn</A> eller <A HREF="#KeyboardSettingsSpeakTypedWords">sig indtastede ord</A>. Dette kan evt. være nyttigt i situationer hvor skærmen ikke opdateres (som ved indtastning af adgangskoder i konsolvinduer). Dette bruger UIA. Vi anbefaler at denne funktion forbliver deaktiveret. I nogle tilfælde kan denne indstilling dog være nyttig, især hvis du oplever at NVDA opfører sig uhensigtsmæssigt og virker ustabil ved indtastning af tegn under brugen af UIAutomation.
+Denne funktion bestemmer om tegn udtales ved brug af indstillingen <A HREF="#KeyboardSettingsSpeakTypedCharacters">sig indtastede tegn</A> eller <A HREF="#KeyboardSettingsSpeakTypedWords">sig indtastede ord</A>. Dette kan evt. være nyttigt i situationer hvor skærmen ikke opdateres (som ved indtastning af adgangskoder i konsolvinduer), i nogle terminalprogrammer som Windows-konsollen med understøttelse for UIA aktiveret, samt Mintty. 
+På grund af sikkerhedsårsager bør denne indstilling forblive deaktiveret.
+Du kan dog ønske at aktivere indstillingen, hvis du oplever problemer med udtale af indtastede ord og tegn eller arbejder i sikre miljøer, hvor du foretrækker at adgangskoder udtales.
+</P>
+
+<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
+<H5>Benyt den nye understøttelse for indtastede tegn i forældede Windows-konsoller når tilgængelig</H5>
+
+<P>
+Denne indstilling aktivere en alternative metode til at opdage indtastede tegn i forældede konsolvinduer. 
+Selvom denne indstilling kan forbedre ydeevnen og forhindre at noget konsolindhold staves, kan denne indstilling forekomme inkompatibel med nogle terminalprogrammer.
+Denne funktion kan aktiveres i Windows 10 version 1607, 1703, 1709 og 1803 såvel som nyere versioner af Windows 10, hvor UI AAutomation ikke er tilgængelig.
+Advarsel: Med denne indstilling aktiveret vil indtastede tegn, der ikke vises på skærmen såsom adgangskoder ikke blive undertrykket.
+I usikre miljøer, kan du midlertidigt deaktivere <A HREF="#KeyboardSettingsSpeakTypedCharacters">sig indtastede tegn</A> og <A HREF="#KeyboardSettingsSpeakTypedWords">sig indtastede ord</A> under indtastning af adgangskoder.
 </P>
 
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
@@ -4961,7 +5041,7 @@ Dette er tastekombinationerne til Brailliant BI/B og BrailleNote Touch displays 
 Se venligst dokumentationen til dit display for at finde ud af, hvor du kan finde knapperne.
 </P>
 
-<A NAME="toc129"></A>
+<A NAME="toc130"></A>
 <H4>14.9.1. Tastekombinationer til alle modeller</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5051,7 +5131,7 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 </TR>
 </TABLE>
 
-<A NAME="toc130"></A>
+<A NAME="toc131"></A>
 <H4>14.9.2. Tastekombinationer for Brailliant BI 32, BI 40 og B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5073,7 +5153,7 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 </TR>
 </TABLE>
 
-<A NAME="toc131"></A>
+<A NAME="toc132"></A>
 <H4>14.9.3. Tastekombinationer for Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -6691,8 +6771,7 @@ Du kan angive en eller flere indstillinger på kommandolinjen, når du starter N
 Du kan angive så mange indstillinger, som du har brug for.
 Disse indstillinger kan angives, når du starter NVDA fra en genvej (under egenskaber for genvej), fra Kør-dialogen (Startmenu -&gt; Kør eller Windows+r) eller eller fra Windows kommandoprompt.
 kommandolinjeparametre skal adskilles fra navnet på NVDAs eksekverbare fil og fra andre kommandolinjeparametre af mellemrum.
-For eksempel: Den genvej på skrivebordet, som NVDA opretter under installationen, rummer indstillingen -r, som får NVDA til at lukke den aktuelle kopi, inden en ny startes.
-En anden nyttig kommandolinjeparameter er --disable-addons, som får NVDA til at afbryde alle tilføjelsesprogrammer
+En nyttig kommandolinjeparameter er for eksempel --disable-addons, som får NVDA til at afbryde alle tilføjelsesprogrammer
 Med den kan du finde ud af, om et givet problem skyldes et tilføjelsesprogram eller klare et alvorligt problem, som er forårsaget af et tilføjelsesprogram.
 </P>
 <P>
@@ -6703,14 +6782,17 @@ nvda -q
 </P>
 <P>
 Nogle af kommandolinjeparametrene har både en kort og en lang version, mens andre kun har en lang version.
-De, som har en kort version, kan kombineres på denne måde:
-|NVDA -rm | Afslutter den nuværende kopi af NVDA, og starter en ny kopi med startoplyde slået fra osv. |
+Dem  som har en kort version, kan kombineres på denne måde:
 </P>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>NVDA -rm --disable-addons</TD>
-<TD>Samme som ovenfor, men med tilføjelsesprogrammer slået fra.</TD>
+<TD>nvda -mc CONFIGPATH</TD>
+<TD>Dette vil starte NVDA uden at afspille opstartslyden eller udtale en besked, og med den angivne konfiguration</TD>
+</TR>
+<TR>
+<TD>nvda -mc CONFIGPATH --disable-addons</TD>
+<TD>Det samme som ovenfor, men deaktivere også tilføjelser</TD>
 </TR>
 </TABLE>
 
@@ -6753,11 +6835,6 @@ De mulige kommandolinjeparametre til NVDA er følgende:
 <TD>-q</TD>
 <TD>--quit</TD>
 <TD>Afslut den nuværende kopi af NVDA</TD>
-</TR>
-<TR>
-<TD>-r</TD>
-<TD>--replace</TD>
-<TD>Afslut en allerede kørende kopi af NVDA og start denne kopi</TD>
 </TR>
 <TR>
 <TD>-k</TD>
