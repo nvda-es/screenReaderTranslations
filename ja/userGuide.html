@@ -122,6 +122,7 @@
       <LI><A HREF="#KindleUserNotes">10.8.2. ユーザーノート</A>
       </UL>
     <LI><A HREF="#Azardi">10.9. Azardi</A>
+    <LI><A HREF="#WinConsole">10.10. Windows コンソール</A>
     </UL>
   <LI><A HREF="#ConfiguringNVDA">11. NVDAの設定</A>
     <UL>
@@ -193,9 +194,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare製Brailliant BI/Bシリーズ / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc131">14.9.1. すべてのモデル</A>
-      <LI><A HREF="#toc132">14.9.2. Brailliant BI 32, BI 40 および B 80</A>
-      <LI><A HREF="#toc133">14.9.3. Brailliant BI 14</A>
+      <LI><A HREF="#toc132">14.9.1. すべてのモデル</A>
+      <LI><A HREF="#toc133">14.9.2. Brailliant BI 32, BI 40 および B 80</A>
+      <LI><A HREF="#toc134">14.9.3. Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS製 Braille Sense/Braille EDGE/Smart Beetle/Sync Braille シリーズ</A>
     <LI><A HREF="#Seika">14.11. 清華 点字ディスプレイ</A>
@@ -434,7 +435,8 @@ NVDAのダウンロードパッケージから直接ポータブル版を作成�
 <P>
 インストーラーでNVDAをインストールした場合、ショートカットキーCtrl+Alt+Nを押すか、スタートメニュー「プログラム」にあるNVDAのグループから「NVDA」を選択することで起動します。
 また、「ファイル名を指定して実行」ダイアログに、NVDAと入力してEnterキーを押すことでも実行できます。
-NVDAの実行ファイルに <A HREF="#CommandLineOptions">コマンドラインオプション</A> をつけて実行することもできます。NVDAの再起動(-r), 終了(-q), アドオンの無効化(--disable-addons)などです。
+NVDAの実行中に再度NVDAを起動すると、実行中のNVDAを再起動します。
+NVDAの実行ファイルに <A HREF="#CommandLineOptions">コマンドラインオプション</A> をつけて実行することもできます。NVDAの終了(-q), アドオンの無効化(--disable-addons)などです。
 </P>
 <P>
 インストールされたNVDAの実行に使われる設定ファイルは、既定では現在のユーザーのローミング設定フォルダー("C:\Users\&lt;user&gt;\AppData\Roaming")に保存されます。
@@ -443,6 +445,7 @@ NVDAの設定をローカル設定フォルダーから読み込むように変�
 </P>
 <P>
 ポータブル版を起動するには、NVDAを展開したフォルダーを開いて、nvda.exeファイルに移動してEnterキーを押すかダブルクリックしてください。
+NVDAの実行中にポータブル版のNVDAを起動すると、実行中のNVDAを停止してからポータブル版を開始します。
 </P>
 <P>
 NVDAを起動すると、最初に上り調子の音が聞こえます (読み込み中であることを伝えています) 。
@@ -1106,6 +1109,13 @@ NVDAでは、<A HREF="#ScreenReview">画面</A>の内容、現在の<A HREF="#Do
 <TD>NVDA+F10</TD>
 <TD>なし</TD>
 <TD>1回押すと、設定された開始位置からレビューカーソルの現在の位置までテキストを選択します。2回押すと、そのテキストをWindowsのクリップボードにコピーします。</TD>
+</TR>
+<TR>
+<TD>テキストの選択またはコピー開始位置にレビューカーソルを移動</TD>
+<TD>NVDA+Shift+F9</TD>
+<TD>NVDA+Shift+F9</TD>
+<TD>なし</TD>
+<TD>テキストの選択またはコピーの開始位置にレビューカーソルを移動します。</TD>
 </TR>
 <TR>
 <TD>書式とドキュメント情報の報告</TD>
@@ -2338,6 +2348,46 @@ Kindleでは、辞書の検索、メモやハイライトの追加、テキス�
 </TR>
 </TABLE>
 
+<A NAME="WinConsole"></A>
+<H3>10.10. Windows コンソール</H3>
+
+<P>
+NVDA は Windows コンソールに対応しています。これはコマンドプロンプト、PowerShell、Windows Subsystem for Linux で使われています。
+コンソールのウィンドウの大きさは固定で、通常は出力を保存するバッファーの中の、わずかな行数だけを表示します。
+ウィンドウの下に新しいテキストが出力されると、内容はスクロールされ、ウィンドウの上に表示されていた過去のテキストは見えなくなります。
+表示されなくなったテキストは、NVDA のテキストレビューでは読むことができません。
+そのため、過去に表示されていたテキストを読むためには、まずコンソールのスクロール位置を変える必要があります。
+以下は Windows コンソールの標準的なキーボードショートカットです。これらは NVDA で <A HREF="#ReviewingText">テキストのレビュー</A> をする場合に役立ちます:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>キー</TH>
+<TH>説明</TH>
+</TR>
+<TR>
+<TD>スクロール位置を上に移動</TD>
+<TD>Ctrl+上矢印</TD>
+<TD>コンソールのスクロール位置を上に移動します。過去のテキストが再び表示されます。</TD>
+</TR>
+<TR>
+<TD>スクロール位置を下に移動</TD>
+<TD>Ctrl+下矢印</TD>
+<TD>コンソールのスクロール位置を下に移動します。新しいテキストが再び表示されます。</TD>
+</TR>
+<TR>
+<TD>スクロール位置を一番上に移動</TD>
+<TD>Ctrl+Home</TD>
+<TD>コンソールのスクロール位置をバッファーの最初に移動します。</TD>
+</TR>
+<TR>
+<TD>スクロール位置を一番下に移動</TD>
+<TD>Ctrl+End</TD>
+<TD>コンソールのスクロール位置をバッファーの最後に移動します。</TD>
+</TR>
+</TABLE>
+
 <A NAME="ConfiguringNVDA"></A>
 <H2>11. NVDAの設定</H2>
 
@@ -2623,6 +2673,9 @@ NVDA にこのデータに基づく絵文字の読み上げをさせたい場合
 句読点と記号の読み上げ辞書にユーザーが追加した文字説明は、NVDAのユーザー設定に保存されます。
 つまり、このオプションの選択に関わらず、ユーザーがある絵文字に文字説明を追加した場合は、その文字説明が使用されます。
 記号の説明の追加、修正、削除などはNVDAの<A HREF="#SymbolPronunciation">句読点/記号読み辞書ダイアログ</A>で行うことができます。
+</P>
+<P>
+NVDA設定ダイアログを開かないでこのオプションを切り替えたい場合は、<A HREF="#InputGestures">入力ジェスチャーのダイアログ</A> で操作をカスタマイズしてください。
 </P>
 
 <A NAME="SpeechSettingsCapPitchChange"></A>
@@ -3535,6 +3588,7 @@ NVDA設定ダイアログを開かないでレイアウトテーブルのオプ�
  <LI>リスト
  <LI>引用
  <LI>ランドマーク
+ <LI>記事
  <LI>フレーム
  <LI>クリック可能
  </UL>
@@ -3643,17 +3697,40 @@ Windows 10で最新バージョンのMicrosoft Office 2016/365を使用すると
 </P>
 
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>可能な場合に Windows コンソールで UI オートメーションを使用</H5>
+<H5>Windows コンソール</H5>
 
 <P>
-このオプションを有効にすると Windows コンソールにおける <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Microsoft のアクセシビリティ改善</A> に NVDA が対応します。これは実験的な機能で、まだ不完全であり、現在は一般的には利用を推奨できません。しかし、開発が完了すると、このオプションは既定で有効になり、 Windows コンソールにおける NVDA の性能や安定性は改善される予定です。
+このオプションは NVDA が Windows コンソールを操作する方法を選択できます。Windows コンソールはコマンドプロンプト、 PowerShell、 Windows Subsystem for Linux で使用されます。
+このオプションはストアアプリの Windows Terminal には影響しません。
+Windows 10 バージョン 1709 において Microsoft は <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Windows コンソールを UI オートメーション API に対応させ</A>、この技術を使用するスクリーンリーダーが性能と安定性を改善できるようになりました。
+UI オートメーションが利用できない場合、あるいはユーザー体験を悪化させる場合には、従来の NVDA のコンソール対応も利用できます。
+Windows コンソールのコンボボックスには3個のオプションがあります:
 </P>
 
+<UL>
+<LI>自動設定: Windows 10 バージョン 1809 とそれ以降では UI オートメーションを使用します。このオプションは推奨であり既定の設定です。
+<LI>UIオートメーション優先: Windows のバージョンによっては不完全だったり不具合がある場合でも、コンソールで UI オートメーションが使用できる場合には常に使用します。このオプションはユーザーの使用状況によっては有用であったり十分なものであるかも知れません。しかし、このオプションのサポートは行われません。ユーザーの自己責任で使用してください。
+<LI>レガシー: Windows コンソールでは常に UI オートメーションを無効化し、従来の NVDA のコンソール対応を使います。
+</UL>
+
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>UI オートメーションのコンソールでパスワードを読み上げ</H5>
+<H5>Windows コンソールでパスワードを報告</H5>
 
 <P>
-このオプションは「Windows コンソールで UI オートメーションを使用」を有効にしていて文字を入力しても（パスワード入力などで）画面が更新されない場合に <A HREF="#KeyboardSettingsSpeakTypedCharacters">入力文字の読み上げ</A> および <A HREF="#KeyboardSettingsSpeakTypedWords">入力単語の読み上げ</A> を有効にするかどうかを制御します。この設定はセキュリティに配慮してチェックなしにすることを推奨します。しかし NVDA の新しい Windows コンソール対応において、性能の問題がある場合や「入力文字の読み上げ」「入力単語の読み上げ」の動作が不安定な場合に、このオプションを有効にすると不具合を回避できることがあります。
+このオプションは一部のターミナルのアプリで、画面に表示されない文字入力（パスワード入力など）が行われた場合に、<A HREF="#KeyboardSettingsSpeakTypedCharacters">入力文字の読み上げ</A> や <A HREF="#KeyboardSettingsSpeakTypedWords">入力単語の読み上げ</A> が、それらの文字や単語を報告するかどうかを選択します。この設定が有効なのは Windows コンソールで UI オートメーションが有効な場合、および Mintty などです。
+セキュリティに関する問題が懸念されるため、この設定は無効のままにすることをお勧めします。
+この設定を有効にする目的や状況は、以下が考えられます。まず Windows コンソールで入力文字の報告や入力単語の報告を行うと性能や安定性に問題が生じる場合、あるいは、信頼できる環境で作業を行っていて、パスワードの報告が必要な場合です。
+</P>
+
+<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
+<H5>従来の Windows コンソールで新しい入力文字サポートを使用</H5>
+
+<P>
+このオプションは従来の Windows コンソールで入力文字を取得する方法を選択できます。
+有効にすると性能が改善され、出力が不必要にスペル読みされることを回避できる場合があります。しかし、一部のターミナルのアプリとは互換性がありません。
+既定の設定では、この機能が使用されるのは Windows 10 のバージョン 1607, 1703, 1709, 1803 およびこれ以降のリリースで、UI オートメーションが利用できない場合や無効にされた場合です。
+注意: このオプションを有効にすると、画面に表示されない文字入力（パスワードなど）も報告されます。
+信頼できない環境でパスワードを入力する場合には、<A HREF="#KeyboardSettingsSpeakTypedCharacters">入力文字の読み上げ</A> および <A HREF="#KeyboardSettingsSpeakTypedWords">入力単語の読み上げ</A> を一時的に無効にしてください。
 </P>
 
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
@@ -4988,7 +5065,7 @@ BrailleNote Touch にも対応しています。ドライバーをインスト�
 各キーの位置については、ディスプレイの説明書を参照してください。
 </P>
 
-<A NAME="toc131"></A>
+<A NAME="toc132"></A>
 <H4>14.9.1. すべてのモデル</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5078,7 +5155,7 @@ BrailleNote Touch にも対応しています。ドライバーをインスト�
 </TR>
 </TABLE>
 
-<A NAME="toc132"></A>
+<A NAME="toc133"></A>
 <H4>14.9.2. Brailliant BI 32, BI 40 および B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5100,7 +5177,7 @@ BrailleNote Touch にも対応しています。ドライバーをインスト�
 </TR>
 </TABLE>
 
-<A NAME="toc133"></A>
+<A NAME="toc134"></A>
 <H4>14.9.3. Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -6715,9 +6792,8 @@ NVDA の実行ファイルにコマンドラインオプションをつけて実
 必要な数だけ複数のオプションをつけることができます。
 オプションをショートカットのプロパティから指定して実行することも、「ファイル名を指定して実行」（スタートメニューから「ファイル名を指定して実行」または Windows+R で利用可能）でオプションをつけることも、コマンドプロンプトから指定することもできます。
 NVDAの実行ファイル名とオプション、およびオプション同士は、空白で区切ってください。
-例えばNVDAがインストールのときにデスクトップに作成するショートカットには -r というオプションがつけられています。これは NVDA を新たに起動する前にすでに実行中のNVDAがあればまずそれを終了する、という指定です。
-もうひとつの便利なオプションは --disable-addons です。これはすべてのアドオンを無効にするという指定です。
-もしなにかの不具合の原因がアドオンかどうかを確認する、あるいはアドオンの影響で深刻な不具合が起きたときに問題を回避する、といった使い方ができます。
+便利なオプションのひとつは --disable-addons です。これはすべてのアドオンを無効にするという指定です。
+これは、なにかの不具合の原因がアドオンかどうかを確認する、あるいはアドオンの影響で深刻な不具合が起きたときに問題を回避する、といった使い方ができます。
 </P>
 <P>
 例えば、NVDA の実行中に「ファイル名を指定して実行」で以下を実行すると、NVDA が終了します:
@@ -6732,12 +6808,12 @@ nvda -q
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>nvda -rm</TD>
-<TD>現在実行しているNVDAを終了してNVDAをもう一度実行する。そのときに起動のサウンドを無効にする。</TD>
+<TD>nvda -mc CONFIGPATH</TD>
+<TD>サウンド、インターフェイス、開始メッセージなどを出さないでNVDAを実行し、そのときに CONFIGPATH の場所をNVDA設定フォルダーとして使用する</TD>
 </TR>
 <TR>
-<TD>nvda -rm --disable-addons</TD>
-<TD>上記と同じで、さらにアドオンを無効にする。</TD>
+<TD>nvda -mc CONFIGPATH --disable-addons</TD>
+<TD>上記と同じで、さらにアドオンを無効にする</TD>
 </TR>
 </TABLE>
 
@@ -6780,11 +6856,6 @@ nvda -q
 <TD>-q</TD>
 <TD>--quit</TD>
 <TD>現在実行中のNVDAを終了</TD>
-</TR>
-<TR>
-<TD>-r</TD>
-<TD>--replace</TD>
-<TD>現在実行中のNVDAを終了してもう一度NVDAを起動</TD>
 </TR>
 <TR>
 <TD>-k</TD>
