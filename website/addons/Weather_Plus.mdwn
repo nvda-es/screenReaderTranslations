@@ -270,6 +270,9 @@ If you have modified the cities list, by pressing "Cancel", you will be remember
 
 # What's new: #
 
+# Version 7.3 #
+* Fixed unexpected bug in case of page not found while searching for updates.
+
 # Version 7.2 #
 * Fixed bug after adding a city, if it is the first one entered it if you press ok button and restart the add-on.
 * Now the progressdialog show again the time remaining and time elapsed.
