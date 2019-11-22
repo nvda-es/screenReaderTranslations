@@ -98,7 +98,7 @@ addresses = {
     },
     'hr': {
         'lang': 'Croatian',
-        'email': ['Hrvoje Katic <hrvojekatic@gmail.com>', 'Zvonimir Stanecic <9a5dsz@gozaltech.org>', 'Tea Turkovic <tturkovi@gmail.com>', 'Dejana Rakic <dejana.rakic.2@gmail.com>'],
+        'email': ['Hrvoje Katic <hrvojekatic@gmail.com>', 'Zvonimir Stanecic <9a5dsz@gozaltech.org>', 'Milo Ivir <mivir@milotype.de>', 'Dejana Rakic <dejana.rakic.2@gmail.com>'],
     },
     'hu': {
         'lang': 'Hungarian',
