@@ -29,8 +29,9 @@ Glavne značajke uključuju:
 - podršku za moderne Windows operativne sustave u 32 i 64 bitnim inačicama
 - mogućnost pokretanja na Windows zaslonu za prijavu i ostalim sigurnosnim zaslonima
 - izgovaranje kontrola i teksta pri korištenju dodirnih gesti
-- podršku za uobičajena sučelja za pristupačnost, kao što su to Microsoft Active Accessibility, Java Access Bridge, IAccessible2 i UI Automation (UI Automation je podržan samo u windows 7 i novijim inačicama)
+- podršku za uobičajena sučelja za pristupačnost, kao što su to Microsoft Active Accessibility, Java Access Bridge, IAccessible2 i UI Automation
 - podršku za windows naredbeni redak i druge aplikacije koje rade u naredbenom retku
+- Mogućnost označavanja fokusa sustava
 -
 
 ++ Internacionalizacija ++[Internationalization]
@@ -292,6 +293,7 @@ Na primjer, ako upisujete tekst u polje za uređivanje teksta, polje za uređiva
 
 Najčešći način navigacije pomoću fokusa s NVDA je jednostavno pomicanje fokusa sustava koristeći osnovne windows prečace, kao što su pritiskanje tab i shift+tab da biste se pomicali naprijed i natrag između kontrola, pritisak tipke alt da biste došli do trake s izbornicima i korištenje strelica gore, dolje, lijevo i desno za kretanje po izbornicima i korištenje alt+tab da biste se pomicali između pokrenutih programa.
 Kad to činite, NVDA će izvještavati o objektu koji je u fokusu, kao što su ime objekta, tip, vrijednost, stanje, opis, tipkovnički prečac i informacije o položaju.
+Kada je uključeno [označavanje fokusa #VisionFocusHighlight], prikazana je pozicija fokusa na zaslonu.
 
 Postoji nekoliko tipkovničkih prečaca koji su korisni za kretanje po objektima:
 %kc:beginInclude
@@ -347,6 +349,7 @@ Slično tome, alatna traka sadrži kontrole, dakle, pomaknite se na alatnu traku
 
 Objekt koji se trenutno pregledava naziva se objektom navigatora.
 Jednom kad se nađete na objektu, možete pregledati njegov sadržaj koristeći [prečace za pregled teksta #ReviewingText], kad ste u [načinu pregleda objekta #ObjectReview].
+Kada je uključeno [označavanje fokusa #VisionFocusHighlight], pozicija objekta navigatora prikazana je na zaslonu.
 Podrazumjeva se da se navigator objekta pokreće jednako kao i fokus sustava, ali se takvo ponašanje može uključiti ili isključiti.
 
 Imajte na umu, da brajica podrazumijevano prati [fokus #SystemFocus] i [kursor #SystemCaret] isto kao i pregled teksta i objektnu navigaciju.
@@ -488,10 +491,12 @@ Ovo uključuje dokumente u sljedećim aplikacijama:
 - Adobe Flash
 - Podržane knjige u Amazon Kindle za osobna računala
 -
+
 Također, način pregleda je neobavezno dostupan u microsoft word dokumentima.
 
 U načinu pregleda, html dokument je dostupan u virtualnom pregledu koji omogućuje navigaciju pomoću kursorskih tipaka kao da je to običan tekstualni dokument.
 Svi NVDA [prečaci #SystemCaret] kursora sustava će raditi u ovom načinu; npr. čitaj sve, izvijesti o oblikovanju, Prečaci za kretanje po tablicama, itd.
+Kada je [označavanje fokusa #VisionFocusHighlight] uključeno, na zaslonu se pokazuje pozicija objekta.
 Informacije o tome je li tekst veza, naslov, itd. se izgovaraju uz tekst kako se krećete po istom.
 
 Ponekad ćete se trebati služiti kontrolama u tom dokumentu.
@@ -644,12 +649,14 @@ Kako bi stalo čim više informacija na brajični redak, slijedeće kratice za t
 
 || kratica | tip kontrole |
 | ap | aplikacija |
+| čl | članak
 | ct | citat |
 | gb | gumb |
 | kg | klizajući gumb |
 | og | odabirni gumb |
 | rg | razdjeljeni gumb |
 | pg | preklopni gumb |
+| cap | animacija |
 | oo | odabirni okvir |
 | po | potvrdni okvir |
 | do | dijaloški okvir |
@@ -659,6 +666,7 @@ Kako bi stalo čim više informacija na brajični redak, slijedeće kratice za t
 | sl | grafika |
 | uo | ugrađeni objekt |
 | kb | kraj bilješke |
+| fig | figura |
 | fn | fusnota |
 | gr | grupiranje |
 | nN | naslov na razini X, npr. h1, h2. |
@@ -741,6 +749,33 @@ Pritisak točkice 7 briše zadnju brajevu čeliju ili znak.
 Točkica 8 prevodi bilo koji brajični unos i pritišće enter.
 Pritišćući kombinaciju točkica 7 + točkica 8 prevodi brajični unos, ali bez dodavanja razmaka ili pritiska entera.
 %kc:endInclude
+
++ Vision +[Vision]
+While NVDA is primairly aimed at blind or vision impaired people how primarily use speech and/or braille to operate a computer, it also provides built-in facilities to change the contents of the screen.
+Within NVDA, such a visual aid is called a vision enhancement provider.
+
+NVDA offers several built-in vision enhancement providers which are described below.
+Additional vision enhancement providers can be provided in [NVDA add-ons #AddonsManager].
+
+NVDA's vision settings can be changed in the [vision category #VisionSettings] of the [NVDA Settings #NVDASettings] dialog.
+
+++ Focus Highlight ++[VisionFocusHighlight]
+Focus Highlight can help to identify the [system focus #SystemFocus], [navigator object #ObjectNavigation] and [browse mode #BrowseMode] positions.
+These positions are highlighted with a colored rectangle outline.
+- Solid blue highlights a combined navigator object and system focus location (e.g. because [the navigator object follows the system focus #ReviewCursorFollowFocus]).
+- Dashed blue highlights just the system focus object.
+- Solid pink highlights just the navigator object.
+- Solid yellow highlights the virtual caret used in browse mode (where there is no physical caret such as in web browsers).
+-
+
+When Focus Highlight is enabled in the [vision category #VisionSettings] of the [NVDA Settings #NVDASettings] dialog, you can [change whether or not to highlight the focus, navigator object or browse mode caret #VisionSettingsFocusHighlight]
+
+++ Screen Curtain ++[VisionScreenCurtain]
+As a blind or vision impaired user, it is often not possible or necessary to see the contents of the screen.
+Furthermore, it might be hard to ensure that there isn't someone looking over your shoulder.
+For this situation, NVDA contains a feature called "screen curtain" which can be enabled to make the screen black.
+
+You can enable the Screen Curtain in the [vision category #VisionSettings] of the [NVDA Settings #NVDASettings] dialog.
 
 + Prepoznavanje sadržaja +[ContentRecognition]
 Kada autori ne daju dovoljno informacija korisniku čitača ekrana, kako bi mogao prepoznati informaciju, mogu se koristiti razni alati, kako bi se tekst mogao prepoznati sa slike.
