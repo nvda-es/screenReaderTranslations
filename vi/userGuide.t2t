@@ -29,8 +29,9 @@ Một số tính năng nổi bật bao gồm:
 - Hỗ trợ các hệ điều hành Windows 32bit và 64 bit
 - Có khả năng chạy trong cửa sổ đăng nhập của Windows và trong các màn hình bảo vệ khác
 - Thông báo các điều khiển và văn bản khi dùng thao tác trên màn hình cảm ứng
-- Hỗ trợ tương tác với các giao diện tiếp cận phổ biến như Microsoft Active Accessibility, Java Access Bridge, IAccessible2 và UI Automation (UI Automation chỉ được hỗ trợ từ Windows 7 trở lên)
+- Hỗ trợ tương tác với các giao diện tiếp cận phổ biến như Microsoft Active Accessibility, Java Access Bridge, IAccessible2 và UI Automation
 - Hỗ trợ đọc trong các cửa sổ console như dòng lệnh Windows (Windows Command Prompt) và những ứng dụng console khác
+- Khả năng làm nổi bật focus hệ thống
 - 
 
 ++ Tính quốc tế ++[Internationalization]
@@ -290,8 +291,9 @@ Một đối tượng là một thành phần riêng rẽ như các nút, các �
 Con trỏ hệ thống hay còn gọi là Focus hệ thống là [các đối tượng #Objects] nhận tương tác trực tiếp từ bàn phím.
 Ví dụ khi bạn gõ văn bản trên một ô nhập liệu thì ô nhập liệu đó có focus.
 
-Một cách đơn giản để chuyển qua lại giữa các đối tượng trên cửa sổ là sử dụng phím tắt chuẩn của Windows, đó là các phím tab hoặc shift + tab để chuyển qua lại giữa các đối tượng, bấm phím alt để truy cập đến thực đơn và dùng các phím mũi tên để khám phá trong thực đơn, dùng phím alt + tab để chuyển qua lại giữa các cửa sổ ứng dụng.
+Cách phổ biến nhất để di chuyển  trên cửa sổ với NVDA là sử dụng phím tắt chuẩn của Windows, đó là các phím tab hoặc shift + tab để chuyển qua lại giữa các đối tượng, bấm phím alt để truy cập đến thực đơn và dùng các phím mũi tên để khám phá trong thực đơn, dùng phím alt + tab để chuyển qua lại giữa các cửa sổ ứng dụng.
 Khi bạn di chuyển theo cách đó thì NVDA sẽ thông báo về các đối tượng đang có focus như tên đối tượng , kiểu, giá trị, trạng thái, mô tả, phím tắt và thông tin vị trí.
+Khi bật [Làm Nổi Focus #VisionFocusHighlight], vị trí hiện tại của focus hệ thống cũng sẽ được thể hiện một cách trực quan.
 
 Có một số phím tắt quan trọng khi di chuyển với focus hệ thống là:
 %kc:beginInclude
@@ -347,6 +349,7 @@ Tương tự như vậy, một thanh công cụ chứa các mục con và bạn 
 
 Đối tượng đang duyệt được gọi là đối tượng điều hướng.
 Khi duyệt đến một đối tượng, bạn có thể xem nội dung của nó bằng  [các lệnh duyệt nội dung #ReviewingText] trong [chế độ duyệt đối tượng #ObjectReview].
+Khi bật [Làm Nổi Focus #VisionFocusHighlight], vị trí hiện tại của focus hệ thống cũng sẽ được thể hiện một cách trực quan.
 Mặc định thì đối tượng điều hướng sẽ đi cùng với focus hệ thống; tuy nhiên, bạn có thể bật/tắt chế độ này.
 
 Lưu ý, con trỏ nổi mặc định sẽ đi theo [focus hệ thống #SystemFocus], [dấu nháy hệ thống #SystemCaret], cũng như khi duyệt đối tượng và duyệt nội dung.
@@ -488,11 +491,13 @@ Chế độ này bao gồm tài liệu trong các ứng dụng sau:
 - Adobe Flash
 - Các sách của  Amazon được hỗ trợ với máy Kindle
 -
+
 Chế độ duyệt tài liệu cũng được hỗ trợ cho Microsoft Word dưới dạng tùy chọn.
 
 Trong chế độ duyệt tài liệu, nội dung có thể được duyệt bằng các phím mũi tên.
 Tất cả các phím tắt sử dụng cho [con trỏ nháy #SystemCaret] cũng đều hoạt động tốt như đọc cả tài liệu, thông báo thuộc tính văn bản, di chuyển qua các hàng, các cột trong bảng, v...v...
 Các thông tin khác như liên kết, tiêu đề, v...v... của văn bản cũng sẽ được thông báo khi bạn duyệt qua.
+Khi bật [Làm Nổi Focus #VisionFocusHighlight], vị trí hiện tại của con trỏ chế độ duyệt cũng sẽ được thể hiện một cách trực quan.
 
 Đôi khi, bạn muốn tương tác trực tiếp với các đối tượng trong tài liệu.
 Ví dụ bạn cần thao tác trực tiếp với ô nhập liệu để nhập nội dung.
@@ -644,12 +649,14 @@ Bạn có thể cấu hình màn hình nổi với phân loại [Chữ nổi #Br
 
 || Viết tắt | Loại điều khiển |
 | app | application (ứng dụng) |
+| art | article (bài viết) |
 | bqt | block quote ()trích dẫn) |
 | btn | button (nút) |
 | drbtn | drop down button (nút xổ xuông) |
 | spnbtn | spin button (nút cuộn) |
 | splbtn | split button (nút tách) |
 | tgbtn | toggle button (nút bật / tắt) |
+| cap | caption (phụ đề) |
 | cbo | combo box (hộp xổ) |
 | chk | checkbox (hộp kiểm) |
 | dlg | dialog (hộp thoại) |
@@ -658,6 +665,7 @@ Bạn có thể cấu hình màn hình nổi với phân loại [Chữ nổi #Br
 | pwdedt | password edit (ô nhập mật khẩu) |
 | embedded | embedded object (đối tượng nhún) |
 | enote | end note (chú thích cuối) |
+| fig | figure (hình dáng) |
 | fnote | foot note (chú thích chân trang) |
 | gra | graphic (hình ảnh) |
 | grp | grouping |
@@ -741,6 +749,33 @@ Bấm chấm 7 để xóa ô hoặc ký tự vừa nhập.
 Chấm 8 dùng để chuyển dịch phần chữ nổi nhập liệu và bấm phím enter.
 Bấm chấm 7 + 8 để chuyển dịch phần chữ nổi nhập liệu nhưng không không thêm vào khoảng trắng hay bấm phím enter.
 %kc:endInclude
+
++ Nhìn +[Vision]
+Trong khi NVDA hướng đến người mù hoặc nhìn kém chủ yếu sử dụng bộ đọc hay chữ nổi để vận hành một máy vi tính, nó cũng cung cấp chức năng dựng sẵn để thay đổi nội dung trên màn hình.
+Trong NVDA, hỗ trợ nhìn được gọi là trình cung cấp cải thiện tầm nhìn.
+
+NVDA đưa ra vài trình cung cấp cải thiện tầm nhìn dựng sẵn được mô tả dưới đây.
+Các trình cải thiện tầm nhìn bổ sung có thể được cung cấp qua [các add-on của NVDA #AddonsManager].
+
+Có thể thay đổi các thiết lập về nhìn của NVDA trong [phân loại nhìn #VisionSettings] của hộp thoại [Cấu hình NVDA #NVDASettings].
+
+++ Làm Nổi Focus ++[VisionFocusHighlight]
+Làm Nổi Focus có thể giúp xác định [focus hệ thống #SystemFocus], [đối tượng điều hướng hiện tại #ObjectNavigation] và vị trí con trỏ [chế độ duyệt #BrowseMode].
+Những vị trí này được làm nổi bật với một đường viền màu hình chữ nhật.
+- Toàn bộ xanh dương là làm nổi vị trí kết hộp của đối tượng điều hướng hiện tại và focus hệ thống (ví dụ, [đối tượng điều hướng hiện tại đi theo focus hệ thống #ReviewCursorFollowFocus]).
+- Đường gạch xanh dương là chỉ làm nổi focus hệ thống.
+- Toàn bộ màu hồng là chỉ làm nổi đối tượng điều hướng.
+- Toàn bộ màu vàng làm nổi dấu nháy ảo được dùng trong chế độ duyệt (những nơi không có dấu nháy thật như trong các trình duyệt web).
+-
+
++Khi bật chức năng Làm Nổi  Focus trong [phân loại nhìn #VisionSettings] của hộp thoại [Cấu Hình NVDA #NVDASettings], bạn có thể [chọn có hay không làm nổi focus, đối tượng điều hướng hoặc dấu nháy chế độ duyệt #VisionSettingsFocusHighlight]
+
+++ Che màn hình ++[VisionScreenCurtain]
+Là người mù hay nhìn kém, sẽ có những lúc không thể hoặc không cần nhìn những gì trên màn hình.
+Hơn nữa, cũng có thể khó để biết có ai đó nhìn màn hình của bạn từ đằng sau hay không.
+Tình huống này, NVDA có một tính năng tên gọi "che màn hình", có thể bật lên để làm đen màn hình.
+
+Bạn có thể bật tính năng này trong [phân loại nhìn #VisionSettings] của hộp thoại [Cấu Hình NVDA #NVDASettings].
 
 + Nhận Dạng Nội Dung +[ContentRecognition]
 Khi tác giả không cung cấp đầy đủ thông tin của ứng dụng cho trình đọc màn hình, sẽ có nhiều công cụ khác nhau hỗ trợ để có thể nhận dạng nội dung của một hình ảnh chẳng hạn.
@@ -1321,6 +1356,41 @@ Một số lựa chọn thường gặp là: "tự động" (yêu cầu NVDA t�
 
 Bạn nên tham khảo tài liệu của màn hình nổi tại phần [Các màn hình nổi được hỗ trợ #SupportedBrailleDisplays] để kiểm tra các phương thức nào được hỗ trợ cho dòng màn hình chữ nổi của bạn.
 
++++ Nhìn +++[VisionSettings]
+Phân loại nhìn trong hộp thoại cấu hình NVDA cho phép bạn bật, tắt và cấu hình việc [hỗ trợ  nhìn #Vision].
+
+Lưu ý rằng các tùy chọn trong phân loại này có thể được mở rộng bởi [các add-on của NVDA #AddonsManager].
+Mặc định, phân loại này có các tùy chọn sau:
+
+==== Làm Nổi Focus ====[VisionSettingsFocusHighlight]
+Các hộp kiểm trong nhóm này điều khiển hoạt động của tính năng [Làm Nổi Focus #VisionFocusHighlight].
+
+- Kích hoạt làm nổi: bật / tắt Làm Nổi Focus.
+- Làm nổi focus hệ thống: bật / tắt làm nổi [focus hệ thống #SystemFocus].
+- Làm nổi đối tượng điều hướng: bật / tắt làm nổi [đối tượng điều hướng #ObjectNavigation].
+- Làm nổi con trỏ chế độ duyệt: bật / tắt làm nổi [con trỏ ảo trong chế độ duyệt #BrowseMode].
+-
+
+Lưu ý rằng việc chọn hay bỏ chọn hộp kiểm "Kích hoạt làm nổi" cũng kéo theo thay đổi trạng thái của ba hộp kiểm còn lại.
+Vậy nên, nếu "Kích hoạt làm nổi" bị tắt và bạn chọn hộp kiểm này, ba hộp kiểm còn lại cũng sẽ tự được chọn theo.
+Nếu bạn chỉ muốn làm nổi bật focus mà không chọn các hộp kiểm đối tượng điều hướng  và chế độ duyệt, bạn sẽ phải chọn vào hộp kiểm "Kích hoạt làm nổi".
+
+==== Che màn hình ====[VisionSettingsScreenCurtain]
+Bạn có thể bật tính năng [Che Màn Hình #VisionScreenCurtain] bằng cách chọn hộp kiểm "Làm đen màn hình (ngay lập tức)".
+Sẽ có một cảnh báo rằng màn hình của bạn sẽ trở nên đen sau khi kích hoạt.
+Trước khi tiếp tục (chọn "Có"), hãy chắc rằng bạn đã bật tiếng nói / chữ nổi và có thể kiểm soát  máy tính của mình mà không cần đến màn hình.
+Chọn "Không" nếu thấy không còn muốn che màn hình nữa.
+Nếu đã chắc chắn, bạn có thể bấm nút có để bật che màn hình.
+Nếu không muốn hiển thị thông điệp cảnh báo này nữa, bạn có thể cấu hình trong hộp thoại hiển thị nó.
+Bạn cũng có thể bật lại thông điệp cảnh báo bằng cách chọn hộp kiểm "Luôn hiện cảnh báo khi bật che màn hình" ở kế bên hộp kiểm "Làm đen màn hình".
+
+Để bật / tắt tính năng Che Màn Hình ở bất cứ đâu, hãy gán thao tác / phím tắt thông qua [hộp thoại Quản lý thao tác #InputGestures].
++
+==== Thiết lập cho công cụ hỗ trợ nhìn của bên thứ ba ====[VisionSettingsThirdPartyVisualAids]
+Các trình cải thiện khả năng nhìn bổ sung có thể được cung cấp trong [các gói add-on của NVDA #AddonsManager].
+Khi các trình hỗ trợ tồn tại các cài đặt có thể thiết lập, chúng sẽ hiển thị theo từng nhóm phân biệt trong phân loại cài đặt này.
+Để biết các thiết lập cho một trình hỗ trợ, vui lòng xem tài liệu của trình hỗ trợ đó.
+
 +++ Bàn phím (NVDA+control+k) +++[KeyboardSettings]
 Phân loại bàn phím  trong hộp thoại cấu hình NVDA có các tùy chọn cho việc dùng chương trình này với bàn phím.
 Phân loại này có các tùy chọn sau:
@@ -1625,6 +1695,7 @@ Bạn có thể chọn các mục sau:
  - Liên kết
  - Danh sách
  - Đoạn trích dẫn
+  - Grouping
  - cột mốc
  - Bài viết
  - Khung
@@ -2023,7 +2094,7 @@ Phần này có các thông tin về các bộ đọc mà NVDA hỗ trợ.
 
 ++ eSpeak NG++[eSpeakNG]
 Bộ đọc [eSpeak NG https://github.com/espeak-ng/espeak-ng] được tích hợp trực tiếp với NVDA và nó không cần cài thêm bất kỳ trình điều khiển hoặc gói dữ liệu nào.
-Mặc định, NVDA khi khởi động sẽ dùng bộ đọc eSpeak NG
+Trên Windows 7, 8 và 8.1, NVDA mặc định dùng bộ đọc  eSpeak NG ([bộ đọc Windows OneCore #OneCore] mặc định được dùng cho Windows 10).
 Vì được tích hợp sẵn trong NVDA nên nó có thể được sử dụng tốt cho bản NVDA chạy trực tiếp từ USB.
 
 Mỗi giọng trong eSpeak NG tương ứng với một ngôn ngữ khác nhau.
@@ -2059,20 +2130,9 @@ Những giọng đọc đó có thể được sử dụng với NVDA.
 ++ Giọn Windows OneCore ++[OneCore]
 Windows 10 đi kèm với những giọng đọc mới được gọi là OneCore, hoặc còn gọi là "Mobil voices".
 Những giọng đọc mới này hỗ trợ cho khá nhiều ngôn ngữ khác nhau và có tính phản hồi nhanh hơn so với những giọng theo chuân SAPI-5.
+Trên Windows 10, NVDA mặc định dùng các giọng Windows OneCore ([[eSpeak NG #eSpeakNG] thì dùng cho các bản phát hành khác).
 
 Vui lòng xem bài viết sau của Microsoft để biết danh sách các giọng và cách cài đặt: https://support.microsoft.com/en-us/help/22797/windows-10-narrator-tts-voices
-
-Lưu ý, chức năng đọc ở tốc độ nhanh hơn như trong Narrator vẫn chưa được hỗ trợ cho NVDA.
-Và tốc độ bạn thiết lập cho giọng với cài đặt của Windows sẽ có tác dụng lên NVDA.
-Hiện, đây là những vấn đề mà chúng tôi chưa thể khắc phục nếu không thay đổi Windows.
-Chúng tôi mong rằng những vấn đề này sẽ được sửa trong phiên bản cập nhật tương lai của Windows.
-
-++ Audiologic Tts3 ++[Audiologic]
-Đây là bộ đọc tiếng ý và là sản phẩm thương mại .
-Bạn phải cài bộ đọc này trước rồi mới sử dụng được trong NVDA.
-Để biết thêm thông tin chi tiết, xem tại  trang web của Audiologic www.audiologic.it.
-
-Bộ đọc này không hỗ trợ [chức năng đánh vần #SpeechSettingsUseSpelling].
 
 + Hỗ trợ màn hình nổi (Braille Displays) +[SupportedBrailleDisplays]
 Phần này gồm thông tin về các dòng màn hình nổi được hỗ trợ bởi NVDA.
