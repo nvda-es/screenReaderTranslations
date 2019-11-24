@@ -15,13 +15,12 @@
 <H3>Nuevas Características</H3>
 
 <UL>
-<LI>En el indicativo de órdenes, en PowerShell y en el subsistema de  Windows para Linux en Windows 10 versión 1809 y posterior:
+<LI>En el indicativo de órdenes, en PowerShell y en el subsistema de  Windows para Linux en Windows 10 versión de octubre de 2018 y posterior:
  <UL>
  <LI>Rendimiento y estabilidad enormemente mejorados (<A HREF="https://github.com/nvaccess/nvda/issues/9771">#9771</A>)
  <LI>El anunciado del texto escrito que no aparezca en pantalla  (tal como contraseñas) ahora puede activarse a través de una opción en el panel de opciones avanzadas de NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/9649">#9649</A>)
  </UL>
 <LI>La precisión de la orden mover el ratón al navegador de objetos se ha mejorado en campos de texto en aplicaciones Java. (<A HREF="https://github.com/nvaccess/nvda/issues/10157">#10157</A>)
-<LI>Cortina de pantalla, que al activarse, hace que toda la pantalla sea negra en Windows 8 y superior. (<A HREF="https://github.com/nvaccess/nvda/issues/7857">#7857</A>)
 <LI>Añadido el soporte para las siguientes pantallas braille Handy Tech (<A HREF="https://github.com/nvaccess/nvda/issues/8955">#8955</A>):
  <UL>
  <LI>Basic Braille Plus 40
@@ -32,8 +31,20 @@
 <LI>El anunciado de fuente en Microsoft Word ahora incluye si el texto se marca como oculto. (<A HREF="https://github.com/nvaccess/nvda/issues/8713">#8713</A>)
 <LI>Añadida una orden para mover el cursor de revisión a la posición anteriormente ajustada como marca de comienzo de selección o copia: NVDA+shift+F9. (<A HREF="https://github.com/nvaccess/nvda/issues/1969">#1969</A>)
 <LI>En Internet Explorer, Microsoft Edge y versiones recientes de Firefox y Chrome, las regiones ahora se anuncian en modo foco y en el navegador de objetos. (<A HREF="https://github.com/nvaccess/nvda/issues/10101">#10101</A>)
-<LI>En Internet Explorer, Google Chrome y Mozilla Firefox, ahora puedes navegar por artículos utilizando los scripts de navegación rápida. Estos scripts no están vinculados por omisión y pueden asignarse en el diálogo Gestos de Entrada cuando el diálogo se abra desde un documento en modo exploración. (<A HREF="https://github.com/nvaccess/nvda/issues/9227">#9227</A>)
+<LI>En Internet Explorer, Google Chrome y Mozilla Firefox, ahora puedes navegar por artículos y grupos utilizando los scripts de navegación rápida. Estos scripts no están vinculados por omisión y pueden asignarse en el diálogo Gestos de Entrada cuando el diálogo se abra desde un documento en modo exploración. (<A HREF="https://github.com/nvaccess/nvda/issues/9227">#9227</A>)
+<LI>Ahora se anuncian las figuras. Se consideran objetos y, por lo tanto, navegables con la tecla de navegación rápida o.
 <LI>En Internet Explorer, Google Chrome y Mozilla Firefox, ahora se anuncian los elementos artículo con el navegador de objeto, y opcionalmente, en modo Exploración si se activó en las opciones de Formateado de Documentos. (<A HREF="https://github.com/nvaccess/nvda/issues/10424">#10424</A>)
+<LI>Soporte para iframes fuera de proceso en Mozilla Firefox. (<A HREF="https://github.com/nvaccess/nvda/issues/9672">#9672</A>)
+<LI>Se añadió una Cortina de Pantalla que, al activarse, hace que toda la pantalla se vuelva negra en Windows 8 y posteriores. (<A HREF="https://github.com/nvaccess/nvda/issues/7857">#7857</A>)
+ <UL>
+ <LI>Se agregó un script para habilitar la cortina de pantalla (hasta el siguiente reinicio con una sola pulsación, o siempre mientras NVDA esté en ejecución con dos pulsaciones), no se asigna ningún gesto predeterminado.
+ <LI>Puede habilitarse y configurarse a través de la categoría 'visión' en el diálogo opciones de NVDA.
+ </UL>
+<LI>Añadida la funcionalidad Resaltado de pantalla a NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/971">#971</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9064">#9064</A>)
+ <UL>
+ <LI>El resaltado del foco, del navegador de objetos y de la posición del cursor del modo Exploración pueden habilitarse y configurarse a través de la categoría 'visión' en el diálogo Opciones de NVDA.
+ <LI>Nota: esta característica es incompatible con el complemento focus highlight, sin embargo, el complemento todavía puede utilizarse mientras el resaltador incorporado esté deshabilitado.
+ </UL>
 </UL>
 
 <H3>Cambios</H3>
@@ -50,6 +61,9 @@
 <LI>Cuando el anunciado de caracteres CLDR (incluyendo emojis) está activado, se anuncian en los niveles de toda la puntuación. (<A HREF="https://github.com/nvaccess/nvda/issues/8826">#8826</A>)
 <LI>Los paquetes python de terceros incluídos en NVDA como comtypes, ahora registran sus advertencias y errores en el registro de NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/10393">#10393</A>)
 <LI>Actualizado Unicode Common Locale Data Repository emoji annotations a la versión 36.0. (<A HREF="https://github.com/nvaccess/nvda/issues/10426">#10426</A>)
+<LI>Al enfocar un grupo en el modo Exploración, ahora también se lee la descripción. (<A HREF="https://github.com/nvaccess/nvda/issues/10095">#10095</A>)
+<LI>Ahora se incluye el Java Access Bridge con NVDA para permitir el acceso a aplicaciones Java, incluso para máquinas Java de 64 bits. (<A HREF="https://github.com/nvaccess/nvda/issues/7724">#7724</A>)
+<LI>Si el Java Access Bridge no está habilitado para el usuario, NVDA lo habilita actomáticamente al arrancar. (<A HREF="https://github.com/nvaccess/nvda/issues/7952">#7952</A>)
 </UL>
 
 <H3>Corrección de fallos</H3>
@@ -77,6 +91,9 @@
 <LI>En la aplicación de configuración de Windows 10 April 2018 Update y posteriores, NVDA ya no anunciará la información de las barras de progreso de los medidores de volumen que se encuentran en la página sistema/Sonido. (<A HREF="https://github.com/nvaccess/nvda/issues/10284">#10284</A>)
 <LI>Las expresiones regulares inválidas en los diccionarios del habla ya no interrumpen completamente la voz en NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/10334">#10334</A>)
 <LI>Cuando se leen elementos con viñetas en Microsoft Word con UIA activado, la viñeta del siguiente elemento de la lista ya no se anuncia de forma inapropiada. (<A HREF="https://github.com/nvaccess/nvda/issues/9613">#9613</A>)
+<LI>Se han resuelto algunos problemas raros de transcripción braille y errores con liblouis. (<A HREF="https://github.com/nvaccess/nvda/issues/9982">#9982</A>)
+<LI>Las aplicaciones Java iniciadas antes de NVDA ahora son accesibles sin la necesidad de iniciar la aplicación Java. (<A HREF="https://github.com/nvaccess/nvda/issues/10296">#10296</A>)
+<LI>En Mozilla Firefox, cuando el elemento enfocado se marca como actual (aria-current), este cambio ya no se verbaliza varias veces. (<A HREF="https://github.com/nvaccess/nvda/issues/8960">#8960</A>)
 </UL>
 
 <H3>Cambios para Desarrolladores</H3>
