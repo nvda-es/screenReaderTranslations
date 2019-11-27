@@ -31,7 +31,7 @@ Suas características mais notáveis incluem:
 - Anunciando controles e texto enquanto usa gestos de toque
 - Suporte para interfaces comuns de acessibilidade tais como Microsoft Active Accessibility, Java Access Bridge, IAccessible2 e UI Automation ""[Automação da Interface do Usuário]""
 - Suporte para o Prompt de Comando do Windows e aplicações de console
-- A capacidade de destacar o foco do sistema
+- A capacidade de realçar o foco do sistema
 -
 
 ++ Internacionalização ++[Internationalization]
@@ -293,7 +293,7 @@ Por exemplo, se você está digitando em um campo de texto editável, este entã
 
 A forma mais comum de navegar pelo Windows com o NVDA é simplesmente mover-se com os comandos de teclado normais do windows, tais como Tab e Shift+Tab para se mover para a frente e para trás entre controles, pressionar Alt para acessar a barra de menus e usar as setas para navegar pelos menus e Alt+Tab para se mover entre aplicações em execução.
 Quando você faz isso, o NVDA anuncia a informação sobre o objeto em foco, tal como o seu nome, tipo, valor, estado, descrição, atalho do teclado e informação da posição.
-Quando o [Destaque do Foco #VisionFocusHighlight] está ativado, o local do foco atual do sistema também é exposto visualmente.
+Quando o [Realce do Foco #VisionFocusHighlight] está ativado, o local do foco atual do sistema também é exposto visualmente.
 
 Existem alguns comandos de teclado úteis quando se move com o foco:
 %kc:beginInclude
@@ -349,7 +349,7 @@ Da mesma forma, se encontrar uma barra de ferramentas, deve mover-se para dentro
 
 O objeto que atualmente está sendo examinado chama-se objeto de navegação.
 Uma vez que tenha navegado para um objeto, pode explorá-lo com os comandos de [exploração de texto #ReviewingText] enquanto estiver no modo de [exploração de objeto #ObjectReview].
-Quando o [Destaque do Foco #VisionFocusHighlight] está ativado, o local do objeto de navegação atual também é exposto visualmente.
+Quando o [Realce do Foco #VisionFocusHighlight] está ativado, o local do objeto de navegação atual também é exposto visualmente.
 Por padrão, a navegação de objetos acompanha o foco do sistema, embora esse comportamento possa ser ativado e desativado.
 
 Note que o braille acompanha igualmente o [foco #SystemFocus] e o [cursor #SystemCaret], bem como a navegação de objeto e a exploração de texto por padrão.
@@ -496,7 +496,7 @@ O modo de navegação também encontra-se disponível opcionalmente para documen
 
 No modo de navegação, o conteúdo do documento é disposto numa representação plana que pode ser navegada com as teclas do cursor como se ele fosse um documento de texto qualquer.
 Todas as teclas de comando do NVDA para o [cursor do sistema #SystemCaret] funcionam neste modo; ex: leitura contínua, informar formatação, comandos de navegação para tabelas, etc.
-Quando o [Destaque do Foco #VisionFocusHighlight] está ativado, o local do cursor do modo de navegação virtual também é exposto visualmente.
+Quando o [Realce do Foco #VisionFocusHighlight] está ativado, o local do cursor do modo de navegação virtual também é exposto visualmente.
 A informação tal como se o texto é um link, título, etc, é anunciada conforme se movimenta pelo mesmo.
 
 Algumas vezes, você precisará interagir diretamente com os controles nesses documentos.
@@ -525,7 +525,7 @@ Note que nem todos os comandos são suportados em todos os tipos de documento.
 
 %kc:beginInclude
 As teclas seguintes só por si saltam para o próximo elemento disponível, adicionando-se a tecla Shift faz com que saltem para o elemento anterior:
-- h: cabeçalho ""[título]""
+- h: título ""[cabeçalho]""
 - l: lista
 - i: item de lista
 - t: tabela
@@ -545,7 +545,7 @@ As teclas seguintes só por si saltam para o próximo elemento disponível, adic
 - g: gráfico
 - d: marco
 - o: objeto embutido (tocador de áudio e vídeo, aplicativo, diálogo, etc.)
-- 1 a 6: cabeçalhos ""[títulos]"" de nível 1 a 6 respectivamente
+- 1 a 6: títulos ""[cabeçalhos]"" de nível 1 a 6 respectivamente
 - a: anotação (comentário, revisão do editor, etc.)
 - w: erro ortográfico
 -
@@ -563,7 +563,7 @@ Para alternar a ativação das teclas de navegação com caracteres avulsos no d
 
 ++ A Lista de Elementos ++[ElementsList]
 A lista de elementos fornece acesso a uma lista de vários tipos de elementos no documento, quando apropriado ao aplicativo.
-Por exemplo, nos navegadores Web, a lista de elementos pode listar links, cabeçalhos, campos de formulários, botões ou marcos.
+Por exemplo, nos navegadores Web, a lista de elementos pode listar links, títulos, campos de formulários, botões ou marcos.
 Os botões de opção permitem-lhe alternar entre os vários tipos de elementos.
 Um campo de edição também se encontra disponível na caixa de diálogo que permite filtrar a lista para o ajudar a procurar um item específico na página.
 Depois de ter escolhido um item, pode utilizar os botões fornecidos no diálogo para mover para ou ativar esse item.
@@ -669,7 +669,7 @@ Com vistas a fornecer tanta informação quanto possível numa linha braille, as
 | ntrdp | nota de rodapé |
 | gra | gráfico |
 | grp | grupo |
-| hN | cabeçalho ""[título]"" de nível n, isto é, h1, h2. |
+| tN | título ""[cabeçalho]"" de nível n, isto é, t1, t2. |
 | aju | balão de ajuda |
 | mrc | marco |
 | lnk | link |
@@ -759,16 +759,16 @@ Provedores adicionais de aprimoramento da visão podem ser fornecidos nos [compl
 
 As configurações de visão do NVDA podem ser alteradas na [categoria de visão #VisionSettings] do diálogo [Configurações do NVDA #NVDASettings].
 
-++ Destaque do Foco ++[VisionFocusHighlight]
-O Destaque do Foco pode ajudar a identificar o [foco do sistema #SystemFocus], [objeto de navegação #ObjectNavigation] e posições do [modo de navegação #BrowseMode].
-Essas posições são destacadas com um contorno de retângulo colorido.
-- O azul sólido destaca um local combinado do objeto de navegação e foco do sistema (por exemplo, porque [o objeto de navegação segue o foco do sistema #ReviewCursorFollowFocus]).
-- Azul tracejado destaca apenas o objeto com foco do sistema.
-- O rosa sólido destaca apenas o objeto de navegação.
-- Amarelo sólido destaca o cursor virtual usado no modo de navegação (onde não há nenhum cursor físico, como em navegadores web).
+++ Realce do Foco ++[VisionFocusHighlight]
+O Realce do Foco pode ajudar a identificar o [foco do sistema #SystemFocus], [objeto de navegação #ObjectNavigation] e posições do [modo de navegação #BrowseMode].
+Essas posições são realçadas com um contorno de retângulo colorido.
+- O azul sólido realça um local combinado do objeto de navegação e foco do sistema (por exemplo, porque [o objeto de navegação segue o foco do sistema #ReviewCursorFollowFocus]).
+- Azul tracejado realça apenas o objeto com foco do sistema.
+- O rosa sólido realça apenas o objeto de navegação.
+- Amarelo sólido realça o cursor virtual usado no modo de navegação (onde não há nenhum cursor físico, como em navegadores web).
 -
 
-Quando o Destaque do Foco está ativado na [categoria de visão #VisionSettings] do diálogo [Configurações do NVDA #NVDASettings], você pode [alterar se deseja ou não destacar o foco, o objeto de navegação ou o cursor do modo de navegação #VisionSettingsFocusHighlight].
+Quando o Realce do Foco está ativado na [categoria de visão #VisionSettings] do diálogo [Configurações do NVDA #NVDASettings], você pode [alterar se deseja ou não realçar o foco, o objeto de navegação ou o cursor do modo de navegação #VisionSettingsFocusHighlight].
 
 ++ Cortina de Tela ++[VisionScreenCurtain]
 Como usuário cego ou com deficiência visual, normalmente não é possível ou necessário ver o conteúdo da tela.
@@ -831,7 +831,7 @@ Para mais informações sobre o Modo de navegação e a Navegação Rápida, con
 %kc:beginInclude
 Estando em modo de navegação no Microsoft Word, você pode acessar a Lista de Elementos pressionando NVDA+f7.
 %kc:endInclude
-A Lista de Elementos pode listar cabeçalhos ""[títulos]"", links, anotações (o que inclui comentários e revisões de editores) e erros (atualmente limitado a erros ortográficos).
+A Lista de Elementos pode listar títulos ""[cabeçalhos]"", links, anotações (o que inclui comentários e revisões de editores) e erros (atualmente limitado a erros ortográficos).
 
 +++ Anunciar Comentários +++[WordReportingComments]
 %kc:beginInclude
@@ -1362,18 +1362,18 @@ A categoria Visão no diálogo Configurações do NVDA permite ativar, desativar
 Observe que as opções disponíveis nesta categoria podem ser estendidas pelos [Complementos do NVDA #AddonsManager].
 Por padrão, essa categoria de configurações contém as seguintes opções:
 
-==== Destaque do Foco ====[VisionSettingsFocusHighlight]
-As caixas de seleção no agrupamento Destaque de Foco controlam o comportamento do recurso [Destaque de Foco #VisionFocusHighlight] incorporado do NVDA.
+==== Realce do Foco ====[VisionSettingsFocusHighlight]
+As caixas de seleção no agrupamento Realce de Foco controlam o comportamento do recurso [Realce de Foco #VisionFocusHighlight] incorporado do NVDA.
 
-- Ativar Destaque: Alterna entre ativado e desativado o Destaque de Foco.
-- Realçar foco do sistema: alterna se o [foco do sistema #SystemFocus] será destacado.
-- Realçar objeto de navegação: alterna se o [objeto de navegação #ObjectNavigation] será destacado.
-- Realçar cursor do modo de navegação: Alterna se o [cursor do modo de navegação virtual #BrowseMode] será destacado.
+- Ativar Realce: Alterna entre ativado e desativado o Realce de Foco.
+- Realçar foco do sistema: alterna se o [foco do sistema #SystemFocus] será realçado.
+- Realçar objeto de navegação: alterna se o [objeto de navegação #ObjectNavigation] será realçado.
+- Realçar cursor do modo de navegação: Alterna se o [cursor do modo de navegação virtual #BrowseMode] será realçado.
 -
 
-Observe que marcar e desmarcar a caixa de seleção "Ativar Destaque" também mudará o estado das outras caixas de seleção da árvore consequentemente.
-Portanto, se "Ativar Destaque" estiver desativada e você marcar esta caixa de seleção, as outras caixas de seleção da árvore também serão marcadas automaticamente.
-Se você deseja destacar apenas o foco e deixar as caixas de seleção objeto de navegação e modo de navegação desmarcadas, o estado da caixa de seleção "Ativar Destaque" será parcialmente marcada.
+Observe que marcar e desmarcar a caixa de seleção "Ativar Realce" também mudará o estado das outras caixas de seleção da árvore consequentemente.
+Portanto, se "Ativar Realce" estiver desativada e você marcar esta caixa de seleção, as outras caixas de seleção da árvore também serão marcadas automaticamente.
+Se você deseja realçar apenas o foco e deixar as caixas de seleção objeto de navegação e modo de navegação desmarcadas, o estado da caixa de seleção "Ativar Realce" será parcialmente marcada.
 
 ==== Cortina de Tela ====[VisionSettingsScreenCurtain]
 Você pode ativar a [Cortina de Tela #VisionScreenCurtain] marcando a caixa de seleção "Tornar a tela preta (efeito imediato)".
@@ -1643,8 +1643,8 @@ Por padrão, essa opção está desativada.
 
 Para alternar a inclusão de tabelas de leiaute de qualquer lugar, atribua um comando personalizado usando o [diálogo Definir Comandos #InputGestures].
 
-==== Configurar O Anúncio de Campos Tais Como Links e Cabeçalhos [Títulos] ====[BrowseModeLinksAndHeadings]
-Por favor veja as opções na [categoria Formatação de Documentos #DocumentFormattingSettings] do diálogo de [Configurações do NVDA #NVDASettings] para a configuração dos campos que serão falados quando estiver navegando, tais como links, cabeçalhos e tabelas.
+==== Configurar O Anúncio de Campos Tais Como Links e Títulos [Cabeçalhos] ====[BrowseModeLinksAndHeadings]
+Por favor veja as opções na [categoria Formatação de Documentos #DocumentFormattingSettings] do diálogo de [Configurações do NVDA #NVDASettings] para a configuração dos campos que serão falados quando estiver navegando, tais como links, títulos e tabelas.
 
 ==== Modo de foco automático quando o foco muda ====[BrowseModeSettingsAutoPassThroughOnFocusChange]
 Esta opção permite que o modo de foco seja ativado quando este for modificado.
@@ -1691,7 +1691,7 @@ As opções de formatação de documentos são organizadas em grupos.
  - Coordenadas de Células
  - Bordas das Células (Desativado, Estilos, Tanto Cores como Estilos)
 - Elementos
- - Cabeçalhos ""[títulos]""
+ - Títulos ""[Cabeçalhos]""
  - Links
  - Listas
  - Blocos de citação
