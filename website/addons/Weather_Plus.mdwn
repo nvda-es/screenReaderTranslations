@@ -181,7 +181,7 @@ check box checked (by default)
 
 check box checked (by default)
 
-# Read wind informations #
+# Read wind information #
 
 check box not checked (by default)
 
@@ -207,7 +207,7 @@ check box checked (by default)
 
 check box checked (by default)
 
-# Read atmospherical informations #
+# Read atmospherical information #
 
 check box not checked (by default)
 
@@ -237,7 +237,7 @@ check box checked (by default)
 
 check box checked (by default)
 
-# Read astronomical informations #
+# Read astronomical information #
 
 Indicates the time of sunrise and sunset.
 
