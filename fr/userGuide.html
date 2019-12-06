@@ -42,6 +42,7 @@
     <LI><A HREF="#LaunchingNVDA">4.1. Démarrer NVDA</A>
       <UL>
       <LI><A HREF="#WelcomeDialog">4.1.1. Dialogue de Bienvenue</A>
+      <LI><A HREF="#UsageStatsDialog">4.1.2. Dialogue de statistiques d'utilisation des données</A>
       </UL>
     <LI><A HREF="#AboutNVDAKeyboardCommands">4.2. À Propos des Commandes Clavier de NVDA</A>
       <UL>
@@ -174,10 +175,11 @@
     <UL>
     <LI><A HREF="#LogViewer">13.1. Visionneuse du Journal</A>
     <LI><A HREF="#SpeechViewer">13.2. Visionneuse de Parole</A>
-    <LI><A HREF="#AddonsManager">13.3. Gestionnaire d'Extensions</A>
-    <LI><A HREF="#incompatibleAddonsManager">13.4. Le Gestionnaire d'Extensions Incompatibles</A>
-    <LI><A HREF="#PythonConsole">13.5. Console Python</A>
-    <LI><A HREF="#ReloadPlugins">13.6. Rechargement des Extensions</A>
+    <LI><A HREF="#BrailleViewer">13.3. Visionneuse de Braille</A>
+    <LI><A HREF="#AddonsManager">13.4. Gestionnaire d'Extensions</A>
+    <LI><A HREF="#incompatibleAddonsManager">13.5. Le Gestionnaire d'Extensions Incompatibles</A>
+    <LI><A HREF="#PythonConsole">13.6. Console Python</A>
+    <LI><A HREF="#ReloadPlugins">13.7. Rechargement des Extensions</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">14. Synthétiseurs de Parole Pris en Charge</A>
     <UL>
@@ -199,9 +201,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Séries Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc135">15.9.1. Assignations des Touches pour tous les Modèles</A>
-      <LI><A HREF="#toc136">15.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</A>
-      <LI><A HREF="#toc137">15.9.3. Assignations de Touches pour le Brailliant BI 14</A>
+      <LI><A HREF="#toc137">15.9.1. Assignations des Touches pour tous les Modèles</A>
+      <LI><A HREF="#toc138">15.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</A>
+      <LI><A HREF="#toc139">15.9.3. Assignations de Touches pour le Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</A>
     <LI><A HREF="#Seika">15.11. Seika Braille Displays</A>
@@ -474,6 +476,17 @@ La liste déroulante vous permet de sélectionner la configuration clavier.
 La première case à cocher vous permet de choisir si vous voulez utiliser la touche de verrouillage majuscules comme touche NVDA.
 La deuxième spécifie si NVDA doit démarrer à l'ouverture de votre session et est disponible uniquement sur la version installée.
 La troisième permet d'indiquer si ce dialogue d'accueil doit apparaître à chaque démarrage.
+</P>
+
+<A NAME="UsageStatsDialog"></A>
+<H4>4.1.2. Dialogue de statistiques d'utilisation des données</H4>
+
+<P>
+Depuis NVDA 2018.3, il est demandé à l'utilisateur s'il veut autoriser l'envoi de données d'utilisation à NV Access dans le but d'aider à l'amélioration de NVDA dans le futur. 
+Au premier démarrage de NVDA, un dialogue vous demandant si vous désirer envoyer des données à NV Access durant l'utilisation de NVDA apparaîtra.
+Vous pouvez obtenir plus d'informations concernant les données rassemblées par NV Access dans le chapitre 11 ci-dessous.
+Note : l'appui sur "oui" ou "non" sauvegardera ce choix et ce dialogue n'apparaîtra plus à moins que vous réinstalliez NVDA.
+Cependant, vous pouvez activer ou désactiver le processus de collecte de données manuellement dans l'écran de paramètres généraux de NVDA. Pour modifier ce paramètre manuellement, vous pouvez cocher ou décocher la case appelée <A HREF="#GeneralSettingsGatherUsageStats">Autoriser le projet NVDA à recueillir des statistiques d'utilisation</A>.
 </P>
 
 <A NAME="AboutNVDAKeyboardCommands"></A>
@@ -1617,6 +1630,7 @@ Quand vous voulez retourner au document, pressez simplement la touche échap.
 <P>
 Si vous possédez un afficheur braille, NVDA peut afficher des informations en braille.
 Si votre terminal braille possède un clavier de type Perkins, vous pouvez également saisir du texte en intégral ou abrégé.
+Le Braille peut aussi être affiché à l'écran en utilisant <A HREF="#BrailleViewer">la Visionneuse de Braille</A> en remplacement ou en parallèle d'un afficheur braille physique.
 </P>
 <P>
 Veuillez consulter la section <A HREF="#SupportedBrailleDisplays">Terminaux Braille Pris en Charge</A> pour des informations concernant les terminaux braille pris en charge.
@@ -3400,60 +3414,38 @@ Quand cette case est cochée, NVDA annonce les suggestions à leur apparition.
 De nombreuses fenêtres et commandes font apparaître un court message (ou suggestion) lorsqu'on y déplace la souris ou le focus.
 </P>
 
-<A NAME="ObjectPresentationReportBalloons"></A>
-<H5>Annoncer les bulles d'aide</H5>
+<A NAME="ObjectPresentationReportNotifications"></A>
+<H5>Annoncer les notifications</H5>
 
 <P>
-Quand cette case est cochée, NVDA annonce les bulles d'aide à leur apparition. 
+Quand cette case est cochée, NVDA annonce les bulles d'aide et les notifications d'invitation à leur apparition. 
 Les bulles d'aide sont semblables aux suggestions mais généralement de plus grande taille, et sont associées à des évènements système tels que le débranchement d'un câble réseau, ou bien des alertes relatives à la sécurité.
 </P>
 
-<A NAME="ObjectPresentationShortcutKeys"></A>
-<H5>Annoncer les raccourcis clavier des objets</H5>
-
-<P>
+<UL>
+<LI>Les notifications d'invitation ont été introduites dans Windows 10 et apparaissent dans le centre de notification  dans la barre d'état système, informant sur divers événements (ex : une mise à jour a été téléchargée, un ouveau courriel est arrivé dans votre boîte de réception, etc.).
+<P></P>
+==== Annoncer les raccourcis clavier des objets ====[ObjectPresentationShortcutKeys]
 Quand cette case est cochée, NVDA inclut, à l'annonce d'un objet ou d'une commande, le raccourci clavier qui lui est associé. 
 Par exemple, le menu "Fichier" d'une barre de menu peut avoir pour raccourci clavier Alt+f.
-</P>
-
-<A NAME="ObjectPresentationPositionInfo"></A>
-<H5>Annoncer le rang de l'objet dans une liste</H5>
-
-<P>
+<P></P>
+==== Annoncer le rang de l'objet dans une liste ====[ObjectPresentationPositionInfo]
 Cette option vous permet de choisir si vous voulez connaître le rang de l'objet dans une liste (ex : 1 sur 4) annoncé quand vous allez sur un objet au moyen du focus ou de la navigation par objet.
-</P>
-
-<A NAME="ObjectPresentationGuessPositionInfo"></A>
-<H5>Deviner le rang de l'objet quand l'information n'est pas disponible</H5>
-
-<P>
+<P></P>
+==== Deviner le rang de l'objet quand l'information n'est pas disponible ====[ObjectPresentationGuessPositionInfo]
 Si l'annonce du rang de l'objet dans une liste est activée, cette option autorise NVDA à deviner le rang de l'objet si cette information n'est pas disponible pour un objet particulier.
-</P>
-<P>
+<P></P>
 Quand l'option est activée, NVDA annonce le rang pour un plus grand nombre de contrôles tels que les menus et les barres d'outils. Cependant, cette information peut parfois être inexacte.
-</P>
-
-<A NAME="ObjectPresentationReportDescriptions"></A>
-<H5>Annonce de la description des objets</H5>
-
-<P>
+<P></P>
+==== Annonce de la description des objets ====[ObjectPresentationReportDescriptions]
  Décochez cette case si vous pensez que vous n'avez pas besoin d'entendre leur description annoncée avec les objets.
-</P>
-
-<A NAME="ObjectPresentationProgressBarOutput"></A>
-<H5>Suivi des barres de progression</H5>
-
-<P>
+<P></P>
+==== Suivi des barres de progression ====[ObjectPresentationProgressBarOutput]
 Raccourci clavier : NVDA+u
-</P>
-<P>
+<P></P>
 Cette option vous présente une liste déroulante qui contrôle la manière dont NVDA vous annonce l'évolution des barres de progression. 
-</P>
-<P>
+<P></P>
 Elle propose les options suivantes :
-</P>
-
-<UL>
 <LI>Désactivé : L'évolution des barres de progression ne sera pas annoncée.
 <LI>Vocal : Cette option dit à NVDA d'annoncer l'évolution des barres de progression en pourcentage. Chaque fois que la barre changera, NVDA dira la nouvelle valeur.
 <LI>Par des bips : Cette option dit à NVDA d'émettre un bip à chaque évolution de la barre de progression. Plus le bip est aigu, plus on approche de la fin de la barre.
@@ -4227,8 +4219,29 @@ Cependant, si vous cliquez ou mettez le focus sur la visionneuse, NVDA arrêtera
 Pour activer la visionneuse de parole de n'importe où, Veuillez assigner un geste personnalisé en utilisant le <A HREF="#InputGestures">dialogue Gestes de Commandes</A>.
 </P>
 
+<A NAME="BrailleViewer"></A>
+<H3>13.3. Visionneuse de Braille</H3>
+
+<P>
+Pour les voyants développeurs de logiciel ou les personnes présentant NVDA à un public voyant, une fenêtre flottante permettant de voir la sortie braille ainsi que le texte correspondant à chaque caractère braille est disponible.
+La visionneuse de braille peut être utilisée en même temps qu'un afficheur braille physique, elle s'adaptera au nombre de cellules sur l'afficheur physique.
+Quand la visionneuse braille est activée, elle se met à jour constamment pour vous montrer ce qui serait affiché sur un afficheur braille physique.
+</P>
+<P>
+Pour activer la visionneuse de Braille, cochez l'élément de menu "Visionneuse deBraille" dans Outils dans le menu de NVDA.
+Décochez l'élément de menu pour la désactiver.
+</P>
+<P>
+Les afficheurs braille physiques ont généralement des boutons pour faire défiler le texte en avant ou en arrière, pour permettre le défilement avec la visionneuse de braille utilisez le <A HREF="#InputGestures">dialogues de Gestes de Commandes</A> pour assigner des raccourcis clavier pour "faire défiler l'afficheur braille en arrière" et "faire défiler l'afficheur braille en avant"
+</P>
+<P>
+La fenêtre de la visionneuse de braille contient une case à cocher étiquetée "Montrer la visionneuse de braille au démarrage".
+Si elle est cochée, la visionneuse de braille s'affichera au démarrage de NVDA.
+La visionneuse de braille essaiera toujours de se rouvrir avec les mêmes dimensions et à la même position que lors de sa fermeture.
+</P>
+
 <A NAME="AddonsManager"></A>
-<H3>13.3. Gestionnaire d'Extensions</H3>
+<H3>13.4. Gestionnaire d'Extensions</H3>
 
 <P>
 Le Gestionnaire d'extensions, accessible en sélectionnant "Gestion des Extensions" dans le menu "Outils" du menu NVDA, permet d'installer, désinstaller, activer ou désactiver des paquets d'extensions pour NVDA.
@@ -4286,7 +4299,7 @@ Pour activer le gestionnaire d'extensions de n'importe où, Veuillez assigner un
 </P>
 
 <A NAME="incompatibleAddonsManager"></A>
-<H3>13.4. Le Gestionnaire d'Extensions Incompatibles</H3>
+<H3>13.5. Le Gestionnaire d'Extensions Incompatibles</H3>
 
 <P>
 Le Gestionnaire d'Extensions Incompatibles, auquel on accède via le bouton "voir les extensions incompatibles" dans le gestionnaire d'extensions, vous permet d'inspecter toutes les extensions incompatibles, et la raison pour laquelle elles sont considérées comme tel.
@@ -4307,7 +4320,7 @@ Il vous permet de connaître tous les détails concernant l'extension, ce qui es
 </P>
 
 <A NAME="PythonConsole"></A>
-<H3>13.5. Console Python</H3>
+<H3>13.6. Console Python</H3>
 
 <P>
 La console Python NVDA, située dans "Outils" du menu NVDA, est un outil de développement utile pour dépanner, inspecter le code ou inspecter la hiérarchie d'accessibilité d'une application.
@@ -4315,7 +4328,7 @@ Pour plus d'informations, veuillez consulter le "Guide du Développeur" disponib
 </P>
 
 <A NAME="ReloadPlugins"></A>
-<H3>13.6. Rechargement des Extensions</H3>
+<H3>13.7. Rechargement des Extensions</H3>
 
 <P>
 Cet élément, quand on l'active, recharge les extensions d'applications et les extensions globales sans avoir à redémarrer NVDA, ce qui peut être utile pour les développeurs.
@@ -5162,7 +5175,7 @@ Voici les assignations de touches pour Brailliant BI/B et BrailleNote touch sous
 Veuillez consulter la documentation du terminal pour savoir où se situent ces touches.
 </P>
 
-<A NAME="toc135"></A>
+<A NAME="toc137"></A>
 <H4>15.9.1. Assignations des Touches pour tous les Modèles</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5252,7 +5265,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 </TABLE>
 
-<A NAME="toc136"></A>
+<A NAME="toc138"></A>
 <H4>15.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5274,7 +5287,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 </TABLE>
 
-<A NAME="toc137"></A>
+<A NAME="toc139"></A>
 <H4>15.9.3. Assignations de Touches pour le Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5573,7 +5586,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 
 <P>
 Les afficheurs braille Seika Version 3, 4 et 5 (40 caractères) et Seika80 (80 caractères) de <A HREF="https://www.nippontelesoft.com/">Nippon Telesoft</A> sont pris en charge.
-Vous pouvez trouver plus d'informations sur ces afficheurs sur le site <A HREF="https://www.seika-braille.com/">https://www.seika-braille.com/</A>.
+Vous pouvez trouver plus d'informations sur ces afficheurs et les pilotes requis sur le site <A HREF="https://en.seika-braille.com/down/index.html">https://en.seika-braille.com/down/index.html</A>.
 Vous devez d'abord installer les pilotes USB fournis par le fabricant.
 </P>
 <P>
