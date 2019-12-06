@@ -171,6 +171,13 @@ Mit dem ersten Kontrollkästchen können Sie steuern, ob NVDA die Dauergroßschr
 Mit dem zweiten Kontrollkästchen können Sie bestimmen, ob NVDA nach der Anmeldung automatisch gestartet werden soll. Diese Option steht nur bei installierten Versionen von NVDA zur Verfügung.
 Mit dem dritten Kontrollkästchen legen Sie fest, ob bei jedem Start der Willkommensdialog angezeigt werden soll.
 
++++ Dialogfeld zur Statistik der Datennutzung +++[UsageStatsDialog]
+Seit NVDA 2018.3 wird der Benutzer gefragt, ob Nutzungsdaten an NV Access gesendet werden sollen, um in Zukunft zur Verbesserung von NVDA beizutragen.
+Beim ersten Start von NVDA erscheint ein Dialogfeld, in dem Sie gefragt werden, ob Sie das Senden der Nutzungsdaten an NV Access während der Verwendung von NVDA akzeptieren möchten.
+Weitere Informationen zu den von NV Access erfassten Daten finden Sie in Kapitel 11 unten.
+Hinweis: Durch Klicken auf "Ja" oder "Nein" wird diese Einstellung gespeichert und das Dialogfeld erscheint nicht wieder, wenn Sie NVDA nicht neu installieren.
+Sie können den Datenerhebungsprozess jedoch manuell in den NVDA-Einstellungen in der Kategorie "Allgemein" aktivieren oder deaktivieren. Um diese Einstellung manuell zu ändern, können Sie das Kontrollkästchen [NVDA-Nutzungsdaten sammeln und an NV Access übermitteln #GeneralSettingsGatherUsageStats] aktivieren oder deaktivieren.
+
 ++ Über die NVDA-Tastenkombinationen ++[AboutNVDAKeyboardCommands]
 
 +++ Die NVDA-Modifikationstaste +++[TheNVDAModifierKey]
@@ -641,8 +648,9 @@ Um die Navigation im Ausdruck zu beenden, drücken Sie die Escape-Taste.
 + Braille +[Braille]
 Wenn Sie eine Braillezeile besitzen, kann NVDA diese verwenden, um Informationen in Blindenschrift darzustellen.
 Falls Ihre Braillezeile eine Tastatur besitzt, können Sie außerdem Kurz-, Voll- oder Basisschrift eingeben.
+Die Braillezeile kann auch auf dem Bildschirm mit dem [Braille-Betrachter #BrailleViewer] anstelle oder gleichzeitig mit einer physischen Braillezeile angezeigt werden.
 
-Bitte sehen Sie im Abschnitt [unterstützte Braillezeilen #SupportedBrailleDisplays] nach, um zu erfahren, ob Ihre Braillezeile unterstützt wird.
+Bitte sehen Sie im Abschnitt [Unterstützte Braillezeilen #SupportedBrailleDisplays] nach, ob Ihre Braillezeile unterstützt wird.
 Dieser Abschnitt enthält auch Informationen darüber, welche Braillezeilen die automatische Braillezeilenerkennung von NVDA unterstützen.
 Verwenden Sie die Kategorie [Braille #BrailleSettings] im NVDA-Einstellungsdialog, um NVDA an Ihre Braillezeile anzupassen.
 
@@ -1078,7 +1086,7 @@ Die folgenden Informationen werden immer gesendet:
 - Systemarchitektur (32- oder 64-Bit)
 
 
-==== Sammeln von NVDA-Nutzungsstatistiken für das NVDA-Projekt ====[GeneralSettingsGatherUsageStats]
+==== NVDA-Nutzungsdaten sammeln und an NV Access übermitteln ====[GeneralSettingsGatherUsageStats]
 Ist diese Option aktiviert, sammelt NV Access zusätzliche Informationen wie die Landessprache, das Land oder die geografische Region. Diese Informationen werden benutzt, um Nutzungsstatistiken über die Anzahl der NVDA-Nutzer zu erstellen.
 Auch wenn die IP-Adresse zum Ermitteln des (ungefähren) geografischen Standortes verwendet wird, wird sie niemals protokolliert.
 Wenn die Option aktiviert ist, werden die folgenden Daten zusätzlich gesendet:
@@ -1531,9 +1539,10 @@ Diese Kategorie enthält die folgenden Optionen:
 Ein Kontrollkästchen, wenn es aktiviert ist, Sie NVDA dazuzubringen, diese Tooltipps mitzuteilen, sobald sie auftauchen.
 Viele Windows und Steuerelemente zeigen eine kleine Meldung (oder QuickInfo) an, wenn Sie den Mauszeiger über das Element bewegen, oder manchmal, wenn Sie den Fokus darauf verschieben.
 
-==== Hilfesprechblasen ansagen ====[ObjectPresentationReportBalloons]
-Wenn dieses Kontrollfeld aktiviert ist, liest NVDA die Hilfesprechblasen vor, sobald diese erscheinen.
-Hilfeballons sind wie Tooltipps, sind aber in der Regel größer und werden mit Systemereignissen in Verbindung gebracht, wie z. B. dem Trennen eines Netzwerkkabels oder vielleicht um Sie über Windows-Sicherheitsprobleme zu informieren.
+==== Benachrichtigungen mitteilen ====[ObjectPresentationReportNotifications]
+Wenn dieses Kontrollfeld aktiviert ist, teilt NVDA die Hilfesprechblasen und Toast-Benachrichtigungen mit, sobald diese erscheinen.
+- Hilfeballons sind wie Tooltipps, sind aber in der Regel größer und werden mit System-Ereignissen in Verbindung gebracht, wie z. B. dem Trennen eines Netzwerkkabels oder vielleicht um Sie über Windows-Sicherheitsprobleme zu informieren.
+- Toast-Benachrichtigungen wurden in Windows 10 eingeführt und erscheinen im Benachrichtigungs-Center in der Taskleiste, um über mehrere Ereignisse zu informieren (wenn z. B. ein Update heruntergeladen wurde, eine neue E-Mail in Ihrem Posteingang eintrifft, etc.)
 
 ==== Kurztasten der Objekte ausgeben ====[ObjectPresentationShortcutKeys]
 NVDA sagt zu den Einträgen eines Menüs oder Steuerelements zusätzlich die Kurztaste, sofern die Ansage dieser Option auch aktiviert ist.
@@ -2027,6 +2036,20 @@ Während der Sprachbetrachter eingeschaltet ist, aktualisiert sich sogleich der 
 Wenn Sie in das Fenster des Betrachters klicken, unterbricht NVDA augenblicklich die weitere Aktualisierung der gesprochenen Textdarstellungen, so dass Sie nun die entsprechenden Einträge markieren und in die Zwischenablage kopieren können.
 
 Um den Sprachbetrachter per Tastenkombination ein- oder auszuschalten, müssen Sie diesem mittels des []Dialog Eingaben #InputGestures] eine eigene Tastenkombination zuweisen.
+
+++ Der Braille-Betrachter ++[BrailleViewer]
+Für sehende Software-Entwickler oder Personen, die NVDA für ein sehendes Publikum demonstrieren, steht ein schwebendes Fenster zur Verfügung, mit dem Sie die Braille-Ausgabe und das Textäquivalent für jede Braillezeile anzeigen können.
+Der Braille-Betrachter kann gleichzeitig mit einer physischen Braillezeile verwendet werden, dieser entspricht der Anzahl der Module auf dem physischen Gerät.
+Während der Braille-Betrachter läuft, wird die Anzeige ständig mit der Darstellung auf der Braillezeile synchronisiert.
+
+Um den Braille-Betrachter zu aktivieren, wählen Sie im NVDA-Menü unter "Extras" den Menüpunkt "Braille-Betrachter".
+Deaktivieren Sie den Menüpunkt wieder, um ihn zu deaktivieren.
+
+Braillezeilen haben typischerweise Tasten zum Vorwärts- oder Rückwärtsnavigieren, um das Scrollen mit dem Braille-Betrachter zu ermöglichen, verwenden Sie das Dialogfeld für die [Eingaben #InputGestures], um Tastenkombinationen zuzuweisen, die "Braillezeile rückwärtsnavigieren" und "Braillezeile vorwärtsnavigieren".
+
+Das Fenster des Braille-Betrachters enthält ein Kontrollkästchen mit der Bezeichnung "Braille-Betrachter beim Starten anzeigen".
+Wenn dies aktiviert ist, öffnet sich der Braille-Betrachter beim Start von NVDA.
+Das Fenster des Braille-Betrachters wird immer versuchen, sich mit den gleichen Abmessungen und den Positionen wieder zu öffnen, wie beim Schließen.
 
 ++ Erweiterungen verwalten ++[AddonsManager]
 Im Dialog "Erweiterungen verwalten", den Sie über das Untermenü Extras im NVDA-Menü erreichen, können Sie Erweiterungspakete für NVDA installieren, deinstallieren, aktivieren oder deaktivieren. 
@@ -2529,8 +2552,8 @@ Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechen
 
 ++ Seika-Braillezeilen ++[Seika]
 Die Braillezeilen der Seika Versionen 3, 4 und 5 mit je 40 Modulen und die Seika 80 mit 80 Modulen der Firma [Nippon Telesoft #https://www.nippontelesoft.com/]werden unterstützt.
-Informationen zu diesen Zeilen erhalten Sie auf [[https://www.seika-braille.com]]
-Zuerst müssen Sie den USB-Treiber des Herstellers von der mitgelieferten CD-ROM installieren.
+Weitere Informationen zu den Braillezeilen und den benötigten Treibern finden Sie unter https://en.seika-braille.com/down/index.html.
+Zuerst müssen Sie die vom Hersteller gelieferten USB-Treiber installieren.
 
 Diese Braillezeilen unterstützen noch nicht die automatische Braillezeilenerkennung im Hintergrund von NVDA.
 
