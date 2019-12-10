@@ -42,6 +42,7 @@
     <LI><A HREF="#LaunchingNVDA">4.1. Lanzando NVDA</A>
       <UL>
       <LI><A HREF="#WelcomeDialog">4.1.1. Diálogo de Bienvenida</A>
+      <LI><A HREF="#UsageStatsDialog">4.1.2. Diálogo Estadísticas de Datos de Uso</A>
       </UL>
     <LI><A HREF="#AboutNVDAKeyboardCommands">4.2. Acerca de Órdenes de teclado de NVDA</A>
       <UL>
@@ -174,10 +175,11 @@
     <UL>
     <LI><A HREF="#LogViewer">13.1. Visualizador del Registro</A>
     <LI><A HREF="#SpeechViewer">13.2. Visualizador de Voz</A>
-    <LI><A HREF="#AddonsManager">13.3. Administrador de Complementos</A>
-    <LI><A HREF="#incompatibleAddonsManager">13.4. Administrador de Complementos Incompatibles</A>
-    <LI><A HREF="#PythonConsole">13.5. Consola de Python</A>
-    <LI><A HREF="#ReloadPlugins">13.6. Recargar plugins</A>
+    <LI><A HREF="#BrailleViewer">13.3. Visualizador Braille</A>
+    <LI><A HREF="#AddonsManager">13.4. Administrador de Complementos</A>
+    <LI><A HREF="#incompatibleAddonsManager">13.5. Administrador de Complementos Incompatibles</A>
+    <LI><A HREF="#PythonConsole">13.6. Consola de Python</A>
+    <LI><A HREF="#ReloadPlugins">13.7. Recargar plugins</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">14. Sintetizadores de Voz Admitidos</A>
     <UL>
@@ -199,9 +201,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. Series de la HumanWare Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc135">15.9.1. Asignaciones de teclas para todos los modelos</A>
-      <LI><A HREF="#toc136">15.9.2. Asignaciones de teclas para Brailliant BI 32, BI 40 y B 80</A>
-      <LI><A HREF="#toc137">15.9.3. Asignaciones de teclas para Brailliant BI 14</A>
+      <LI><A HREF="#toc137">15.9.1. Asignaciones de teclas para todos los modelos</A>
+      <LI><A HREF="#toc138">15.9.2. Asignaciones de teclas para Brailliant BI 32, BI 40 y B 80</A>
+      <LI><A HREF="#toc139">15.9.3. Asignaciones de teclas para Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. Series de las HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
     <LI><A HREF="#Seika">15.11. Pantallas Braille Seika</A>
@@ -474,6 +476,17 @@ El cuadro combinado te permite seleccionar la distribución de teclado.
 La primera casilla de verificación te permite controlar si NVDA debería utilizar BloqMayus como una tecla modificadora de NVDA. 
 La segunda especifica si NVDA debería arrancar automáticamente después del inicio de sesión de Windows y sólo está disponible para copias instaladas de NVDA.
 La tercera te permite controlar si este cuadro de bienvenida debería aparecer cada vez que NVDA arranque.
+</P>
+
+<A NAME="UsageStatsDialog"></A>
+<H4>4.1.2. Diálogo Estadísticas de Datos de Uso</H4>
+
+<P>
+A partir de NVDA 2018.3, se pregunta al usuario si quiere permitir que los datos de uso se envíen a NV Access para ayudar a mejorarlo en el futuro. 
+Al iniciar NVDA por primera vez, aparecerá un diálogo que te preguntará si quieres aceptar el envío de datos a NV Access mientras lo utilizas.
+Puedes leer más información sobre los datos recopilados por NV Access en el capítulo 11 más adelante.
+Nota: al pulsar en "sí" o "no" se guardará este ajuste y el diálogo no aparecerá nunca más a menos que reinstales NVDA.
+Sin embargo, puedes activar o desactivar el proceso de recopilación de datos manualmente en el panel de las opciones generales de NVDA. Para cambiar esta opción manualmente, puedes marcar o desmarcar la casilla de verificación llamada <A HREF="#GeneralSettingsGatherUsageStats">Permitir al proyecto de NVDA recolectar estadísticas de uso de NVDA</A>.
 </P>
 
 <A NAME="AboutNVDAKeyboardCommands"></A>
@@ -1617,6 +1630,7 @@ Cuando desees volver al documento, simplemente pulsa la tecla escape.
 <P>
 Si tienes una pantalla braille, NVDA puede mostrar información en braille.
 Si tu pantalla braille tiene un teclado tipo Perkins, también puedes introducir braille contraído o sin contraer.
+El Braille también puede mostrarse en pantalla utilizando el <A HREF="#BrailleViewer">Visualizador de Braille</A> en su lugar, o al mismo tiempo, utilizando una pantalla braille física.
 </P>
 <P>
 Por favor consulta la sección <A HREF="#SupportedBrailleDisplays">Pantallas Braille admitidas</A> para información  acerca de las pantallas braille soportadas.
@@ -2556,7 +2570,6 @@ Los niveles disponibles del registro son:
 <LI>Depuración: además de los mensajes de información, advertencia y entrada/salida, se registrarán mensajes de depuración adicionales.
  <UL>
  <LI>Al igual que con la Entrada/salida, si te preocupa la privacidad, no deberías configurar el nivel de registro en esta opción.
--
  <P></P>
 ==== Arrancar automáticamente NVDA después de Iniciar sesión en Windows ====[GeneralSettingsStartAfterLogOn]
 Si esta opción está activada, NVDA arrancará automáticamente tan pronto como inicies sesión en Windows. 
@@ -3404,55 +3417,37 @@ Una casilla de verificación que cuando está marcada dice a NVDA que anuncie co
 Muchas ventanas y controles muestran un pequeño mensaje (o consejo) cuando mueves el puntero del ratón sobre ellos, o algunas veces cuando te mueves con el foco por ellos.
 </P>
 
-<A NAME="ObjectPresentationReportBalloons"></A>
-<H5>Anunciar globos de ayuda</H5>
+<A NAME="ObjectPresentationReportNotifications"></A>
+<H5>Anunciar notificaciones</H5>
 
 <P>
-Esta casilla de verificación cuando está marcada dice a NVDA que anuncie los globos de ayuda cuando aparezcan. 
-Los globos de ayuda son como los consejos, pero normalmente son más grandes, y están asociados con eventos del Sistema tales como la desconexión de un cable de red, o quizás alertarte acerca de problemas de seguridad de Windows.
-</P>
-
-<A NAME="ObjectPresentationShortcutKeys"></A>
-<H5>Anunciar Teclas de Atajo de los Objetos</H5>
-
-<P>
-Cuando esta casilla de verificación está verificada, NVDA incluirá la tecla de atajo que esté asociada con cierto objeto o control cuando sea anunciado. 
-Por ejemplo el menú Archivo en una barra de menú podrá tener una tecla de atajo Alt+a.
-</P>
-
-<A NAME="ObjectPresentationReportDescriptions"></A>
-<H5>Anunciar Información de la Posición del Objeto</H5>
-
-<P>
-Esta opción te permite elegir si deseas que se te informe sobre la posición del objeto (por ejemplo: 1 de 4) cuando te mueves al objeto con el foco o el navegador de objetos.
-</P>
-
-<A NAME="ObjectPresentationGuessPositionInfo"></A>
-<H5>Deducir la información de Posición del Objeto cuando no esté disponible</H5>
-
-<P>
-Si el anunciado de información de posición del objeto está activado, esta opción permite a NVDA deducir la información de posición del objeto cuando no esté disponible para un control en particular.
-Cuando esté activada, NVDA anunciará información de posición para más controles tales como menús y barras de herramientas, no obstante esta información podrá ser ligeramente incorrecta. 
-</P>
-<P>
-==== Anunciar Descripciones de Objetos ========[ObjectPresentationReportDescriptions]
-Desmarca esta casilla de verificación si crees que no necesitas escuchar la descripción anunciada junto con los objetos (es decir, sugerencias de búsqueda, anunciado de toda la ventana de diálogo justo después de que se abra el diálogo, etc.).
-</P>
-
-<A NAME="ObjectPresentationProgressBarOutput"></A>
-<H5>Salida en las Barras de Progreso</H5>
-
-<P>
-Tecla: NVDA+u
-</P>
-<P>
-Esta opción se te presenta con un cuadro combinado que controla cómo NVDA anuncia las actualizaciones de las barras de progreso. 
-</P>
-<P>
-Tiene las siguientes opciones:
+Esta casilla de verificación, cuando está marcada, dice a NVDA que anuncie los globos de ayuda y las notificaciones a medida que aparezcan.
 </P>
 
 <UL>
+<LI>Los globos de ayuda son como consejos, pero normalmente son de mayor tamaño y están asociados con eventos del sistema tales como la desconexión de un cable de red, o tal vez para alertarte sobre problemas de seguridad de Windows.
+<LI>Las notificaciones se han introducido en Windows 10 y aparecen en el centro de notificaciones en la bandeja del sistema, informando sobre varios eventos (por ejemplo: si se ha descargado una actualización, ha aparecido un nuevo correo electrónico en tu bandeja de entrada, etc.).
+<P></P>
+==== Anunciar Teclas de Atajo de los Objetos ====[ObjectPresentationShortcutKeys]
+Cuando esta casilla de verificación está verificada, NVDA incluirá la tecla de atajo que esté asociada con cierto objeto o control cuando sea anunciado. 
+Por ejemplo el menú Archivo en una barra de menú podrá tener una tecla de atajo Alt+a.
+<P></P>
+==== Anunciar Información de la Posición del Objeto ====[ObjectPresentationReportDescriptions]
+Esta opción te permite elegir si deseas que se te informe sobre la posición del objeto (por ejemplo: 1 de 4) cuando te mueves al objeto con el foco o el navegador de objetos.
+<P></P>
+==== Deducir la información de Posición del Objeto cuando no esté disponible ====[ObjectPresentationGuessPositionInfo]
+Si el anunciado de información de posición del objeto está activado, esta opción permite a NVDA deducir la información de posición del objeto cuando no esté disponible para un control en particular.
+Cuando esté activada, NVDA anunciará información de posición para más controles tales como menús y barras de herramientas, no obstante esta información podrá ser ligeramente incorrecta. 
+<P></P>
+==== Anunciar Descripciones de Objetos ========[ObjectPresentationReportDescriptions]
+Desmarca esta casilla de verificación si crees que no necesitas escuchar la descripción anunciada junto con los objetos (es decir, sugerencias de búsqueda, anunciado de toda la ventana de diálogo justo después de que se abra el diálogo, etc.).
+<P></P>
+==== Salida en las Barras de Progreso ====[ObjectPresentationProgressBarOutput]
+Tecla: NVDA+u
+<P></P>
+Esta opción se te presenta con un cuadro combinado que controla cómo NVDA anuncia las actualizaciones de las barras de progreso. 
+<P></P>
+Tiene las siguientes opciones:
 <LI>Desactivado: Las barras de progreso no serán anunciadas según cambien.
 <LI>Verbalizar: Esta opción dice a NVDA que verbalice las barras de progreso en porcentajes. Cada vez que la barra de progreso cambie, NVDA verbalizará el valor nuevo. 
 <LI>Pitar: Esto dice a NVDA que pite cada vez que la barra de progreso cambie. Para un pitido más alto, el completado de la barra de progreso está más próximo
@@ -4226,8 +4221,29 @@ No obstante, si haces clic o colocas el foco dentro del visualizador,  NVDA dete
 Para conmutar el visualizador de voz desde cualquier lugar, por favor asigna un gesto personalizado utilizando el <A HREF="#InputGestures">diálogo Gestos de Entrada</A>.
 </P>
 
+<A NAME="BrailleViewer"></A>
+<H3>13.3. Visualizador Braille</H3>
+
+<P>
+Para los desarrolladores de software videntes o las personas que hagan demostraciones de NVDA para audiencias con visión, hay disponible una ventana flotante que les permite ver la salida braille y el texto equivalente para cada carácter braille.
+El Visualizador Braille puede utilizarse al mismo tiempo que una pantalla braille física, el cual coincidirá con el número de celdas del dispositivo físico.
+Mientras el Visualizador Braille esté activado, se actualiza constantemente para mostrarte el braille que se mostraría en la pantalla Braille física.
+</P>
+<P>
+Para activar el Visualizador Braille, marca el elemento de menú "Visualizador Braille" en Herramientas en el menú NVDA.
+Desmarca el elemento de menú para desactivarlo.
+</P>
+<P>
+Las pantallas braille físicas suelen tener botones para desplazarse hacia adelante o atrás, para activar el desplazamiento con la herramienta Visualizador Braille utiliza el <A HREF="#InputGestures">diálogo Gestos de Entrada</A> para asignar atajos de teclado que "Desplace la pantalla braille atrás" y "Desplace la pantalla braille adelante"
+</P>
+<P>
+La ventana del Visualizador Braille contiene una casilla de verificación etiquetada "Mostrar Visualizador de Braille al arrancar".
+Si esta opción está marcada, el Visualizador Braille se abrirá cuando se inicie NVDA.
+La ventana del Visualizador Braille siempre intentará volver a abrirse con las mismas dimensiones y ubicación que cuando se cerró.
+</P>
+
 <A NAME="AddonsManager"></A>
-<H3>13.3. Administrador de Complementos</H3>
+<H3>13.4. Administrador de Complementos</H3>
 
 <P>
 El Administrador de Complementos, al que se accede seleccionando Gestionar Complementos en Herramientas en el menú NVDA, te permite instalar, desinstalar, habilitar y deshabilitar paquetes de complementos para NVDA.
@@ -4284,7 +4300,7 @@ Para acceder al Administrador de Complementos desde cualquier lugar, por favor a
 </P>
 
 <A NAME="incompatibleAddonsManager"></A>
-<H3>13.4. Administrador de Complementos Incompatibles</H3>
+<H3>13.5. Administrador de Complementos Incompatibles</H3>
 
 <P>
 El Administrador de Complementos Incompatibles, al que se puede acceder a través de los botones "ver complementos incompatibles" en el Administrador de Complementos, te permite inspeccionar cualquier complemento incompatible y la razón por la que se consideran incompatibles.
@@ -4305,7 +4321,7 @@ Esto abre lo que te permitirá conocer todos los detalles del complemento, lo cu
 </P>
 
 <A NAME="PythonConsole"></A>
-<H3>13.5. Consola de Python</H3>
+<H3>13.6. Consola de Python</H3>
 
 <P>
 La consola de Python de NVDA, encontrada en Herramientas en el menú NVDA, es una herramienta de desarrollo que es útil para depuración, inspección general del interior  de NVDA o inspeción de la jerarquía de accesibilidad  de una aplicación.
@@ -4313,7 +4329,7 @@ Para más información, por favor consulta la Guía del desarrollador disponible
 </P>
 
 <A NAME="ReloadPlugins"></A>
-<H3>13.6. Recargar plugins</H3>
+<H3>13.7. Recargar plugins</H3>
 
 <P>
 Este elemento, una vez activado, recarga app modules y plugins globales sin reiniciar a NVDA, lo cual es útil para desarrolladores.
@@ -5159,7 +5175,7 @@ Seguidamente van las asignaciones de teclas para las pantallas Brailliant BI/B y
 Por favor conhsulta la documentación de la pantalla para descripciones de dónde pueden encontrarse estas teclas.
 </P>
 
-<A NAME="toc135"></A>
+<A NAME="toc137"></A>
 <H4>15.9.1. Asignaciones de teclas para todos los modelos</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5249,7 +5265,7 @@ Por favor conhsulta la documentación de la pantalla para descripciones de dónd
 </TR>
 </TABLE>
 
-<A NAME="toc136"></A>
+<A NAME="toc138"></A>
 <H4>15.9.2. Asignaciones de teclas para Brailliant BI 32, BI 40 y B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5271,7 +5287,7 @@ Por favor conhsulta la documentación de la pantalla para descripciones de dónd
 </TR>
 </TABLE>
 
-<A NAME="toc137"></A>
+<A NAME="toc139"></A>
 <H4>15.9.3. Asignaciones de teclas para Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
