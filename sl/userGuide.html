@@ -3703,27 +3703,34 @@ Tako mi še ne priporočamo, da bi večina uporabnikov to možnost imela privzet
 Ta možnost določa, kako NVDA sodeluje z Windows Konzolo, ki jo uporablja ukazni poziv, PowerShell in Windows Podsistem za Linux.
 To ne učinkuje na moderen Windos Terminal.
 V Windows 10 različici 1709, je Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">dodal podporo za njihov UI (UV) Automation API v konzolo</A> in s tem prinesel precejšnje izboljšave učinkovitosti in stabilnosti za bralnike zaslona, ki ta vmesnik podpirajo.
-+In situations where UI Automation is unavailable or known to result in an inferior user experience, NVDA's legacy console support is available as a fallback.
-+The Windows Console support combo box has three options:
-+- Automatic: Uses UI Automation in consoles on Windows 10 version 1809 and later. This option is recommended and set by default.
-+- Prefer UIA: Uses UI Automation in consoles if available, even on Windows versions with incomplete or buggy implementations. While this limited functionality may be useful (and even sufficient for your usage), use of this option is entirely at your own risk and no support for it will be provided.
-+- Legacy: UI Automation in the Windows Console will be completely disabled, so the legacy fallback will always be used.
-+-
-+
-+==== Speak passwords in Windows Console ====[AdvancedSettingsWinConsoleSpeakPasswords]
-+This setting controls whether characters are spoken by <A HREF="#KeyboardSettingsSpeakTypedCharacters">speak typed characters</A> or <A HREF="#KeyboardSettingsSpeakTypedWords">speak typed words</A> in situations where the screen does not update (such as password entry) in some terminal programs, such as the Windows Console with UI automation support enabled and Mintty.
-+For security purposes, this setting should be left disabled.
-+However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting in consoles, or work in trusted environments and prefer password announcement.
+V situacijah, kjer UI (UV) Automation ni na voljo ali se ve, da uporaba tega predstavlja slabšo uporabniško izkušnjo, je še vedno na voljo podpora v NVDA kot rezerva sicer opuščeni konzoli.
+Spustni seznam podpore Windows Konzoli ima tri možnosti:
 </P>
+
+<UL>
+<LI>Samodedjno: Uporabi UI (UV) Automation v konzolah v Windows 10 različici 1809 in kasnejših. Ta možnost se priporoča in je privzeta izbira.
+<LI>Izberi UIA: Uporabi UI (UV) Automation v konzolah, če je na voljo, tudi v različicah Oken z nepopolno ali hroščato implementacijo. Čeprav je lahko taka omejena funkcionalnost uporabna (in celo zadostna za vašo uporabo), gre uporaba te možnosti popolnoma na vašo lastno odgovornost in prav tako se ne bo nudilo nikakršne podpore za to.
+<LI>Opuščeno: UI (UV) Automation v Windows Konzoli bo popolnoma onemogočen, tako se bo vedno uporabila sicer opuščena rezerva .
+</UL>
+
+<A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
+<H5>Izgovori gesla v Windows Konzoli</H5>
+
 <P>
--==== Speak passwords in UIA consoles ====[AdvancedSettingsWinConsoleSpeakPasswords]
--This setting controls whether characters are spoken by <A HREF="#KeyboardSettingsSpeakTypedCharacters">speak typed characters</A> or <A HREF="#KeyboardSettingsSpeakTypedWords">speak typed words</A> in situations where the screen does not update (such as password entry) in the Windows Console with UI automation support enabled. For security purposes, this setting should be left disabled. However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting while using NVDA's new experimental console support.
-+==== Use the new typed character support in legacy Windows consoles when available ====[AdvancedSettingsKeyboardSupportInLegacy]
-+This option enables an alternative method for detecting typed characters in legacy Windows consoles.
-+While it improves performance and prevents some console output from being spelled out, it may be incompatible with some terminal programs.
-+This feature is available and enabled by default on Windows 10 versions 1607, 1703, 1709 and 1803 as well as on newer Windows 10 releases when UI Automation is unavailable or disabled.
-+Warning: with this option enabled, typed characters that do not appear onscreen, such as passwords, will not be suppressed.
-+In untrusted environments, you may temporarily disable <A HREF="#KeyboardSettingsSpeakTypedCharacters">speak typed characters</A> and <A HREF="#KeyboardSettingsSpeakTypedWords">speak typed words</A> when entering passwords.
+Ta nastavitev nadzira ali se znaki izgovarjajo prek <A HREF="#KeyboardSettingsSpeakTypedCharacters">izgovori natipkane znake</A> ali <A HREF="#KeyboardSettingsSpeakTypedWords">izgovori natipkane besede</A> v situacijah, kjer se ekran ne posodablja (kot je vnos gesla) v nekaterih terminalskih programih, kot je Windows Konzola z UI (UV) automation podporo omogočeno in v programu Mintty.
+Zaradi varnostnih razlogov bi morala biti ta nastavitev onemogočena.
+Toda, lahko bi jo želeli omogočiti, če se boste srečevali s težavami z učinkovitostjo  ali nestabilnostjo s sporočanjem natipkanih znakov in/ali besed v konzolah ali delate v zaupanja vrednih okoljih in vam ugaja naznanilo gesla.
+</P>
+
+<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
+<H5>Uporabi novo podporo za natipkane znake v opuščenih Windows konzolah, ko je na voljo</H5>
+
+<P>
+Ta možnost omogoči alternativno metodo za zaznavo natipkanih znakov v opuščenih Windows konzolah.
+Čeprav izboljša učinkovitost in prepreči prevents nekaj konzolskega iznosa, da se ne bi izgovoril, je to lahko nezdružljivo z nekaj terminalskimi programi.
++Ta zmožnost je na voljo in je privzeto omogočena v različicah Windows 10 1607, 1703, 1709 in 1803 kot tudi v novejših izdajah Windows 10, ko UI (UV) Automation ni na voljo ali je onemogočena.
+Opozorilo: ko je ta možnost omogočena, natipkani znaki, ki niso vidni na ekranu, kot so gesla, ne bodo odušeni.
+V okoljih, ki niso vredna zaupanja, boste morda začasno onemogočili <A HREF="#KeyboardSettingsSpeakTypedCharacters">izgovori natipkane znake</A> in <A HREF="#KeyboardSettingsSpeakTypedWords">izgovori natipkane besede</A>, ko boste vnašali gesla.
 </P>
 
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
