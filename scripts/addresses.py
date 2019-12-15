@@ -14,7 +14,7 @@ addresses = {
     },
     'af_ZA': {
         'lang':'Afrikaans',
-        'email': ['Hendrik Steyn <groothendrik.steyn@gmail.com>', 'Dr. Tamru E. Belay <g.braille@sympatico.ca>'],
+        'email': ['Hendrik Steyn <groothendrik.steyn@gmail.com>'],
     },
     'am': {
         'lang':'Amharic',
@@ -26,7 +26,7 @@ addresses = {
     },
     'ar': {
         'lang':'Arabic',
-        'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>, Abdelkrim Bensaid <abdelkrim.bensaid@free.fr>, Omar Alojaimi <amrahmad1995@gmail.com>'],
+        'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>', 'Abdelkrim Bensaid <abdelkrim.bensaid@free.fr>', 'Omar Alojaimi <amrahmad1995@gmail.com>'],
     },
     'bg': {
         'lang':'Bulgarian',
