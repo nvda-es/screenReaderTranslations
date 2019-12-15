@@ -355,7 +355,7 @@ If you have modified the cities list, by pressing "Cancel", you will be remember
 	* It gives you the amount in millimeters of precipitation.
 * Removed old checkbox "Indicates the wait with a beep while you search for the latest bulletin";
 	* Left active by default.
-* Added to the Astronomic informations;
+* Added to the Astronomic information;
 	* Time of moonrise and moonset.
 * Added new button "Rename";
 	* To rename cities more conveniently.
@@ -732,16 +732,16 @@ wxAssertionError: C++ assertion "Assert failure" failed at ..\..\src\common\evtl
 	* He asked updated sound effects because they could not find the file.
 * Added ability to read about wind ;
 	* Direction, speed and temperature of the wind.
-* Added ability to read atmospherical informations;
+* Added ability to read atmospherical information;
 	* Humidity, visibility, pressure and state of the barometric pressure.
-* Added ability to read the Astronomic informations;
+* Added ability to read the Astronomic information;
 	* Time of sunrise and sunset.
 
 `#`Changes to the Weather Plus Settings window:
 
 * Added 3 check boxes to manage their information listed above.
 * Added button " Details ";
-	* Provides some informations such as the real name of the city ( assigned by Yahoo Weather Forecast), the state / region and the nation to which it belongs;
+	* Provides some information such as the real name of the city ( assigned by Yahoo Weather Forecast), the state / region and the nation to which it belongs;
 	* With geographic coordinates, and height above sea level.
 * Added recognition of WoeID (location codes, eg. Bologna it corresponds to 711080).
 * Now you can type the name of the city, in this case, if any, the occurrences will be listed and you will be able to choose.
