@@ -257,7 +257,7 @@ Zu den wichtigsten Funktionen gehören:
 <LI>Unterstützung für moderne Windows-Betriebssystemvarianten (für 32- und 64-Bit).
 <LI>Lauffähig im Windows-Anmeldebildschirm sowie in den Dialogen der Sicherheitshinweise.
 <LI>Unterstützung für berührungsempfindliche Bildschirme (Touchscreens).
-<LI>Unterstützung gängiger Barrierefreiheitsschnittstellen wie Microsoft Active Accessibility, Java Access Bridge, IAccessible2 und Benutzeroberflächenautomatisierung.
+<LI>Unterstützung gängiger Barrierefreiheitsschnittstellen wie Microsoft Active Accessibility, Java Access Bridge, IAccessible2 und UIA.
 <LI>Unterstützung für die Windows-Eingabeaufforderung und -Konsolenanwendungen.
 <LI>Möglichkeit, den System-Fokus hervorzuheben.
 </UL>
@@ -3833,13 +3833,13 @@ Diese Schaltfläche ist nur aktiviert, wenn NVDA so konfiguriert ist, dass benut
 </P>
 
 <A NAME="AdvancedSettingsUseUiaForWord"></A>
-<H5>Verwendung der Benutzeroberflächenautomatisierung, um auf Microsoft Word-Dokumenten-Steuerelemente zuzugreifen, falls verfügbar.</H5>
+<H5>UIA für Steuerelemente in Microsoft Word verwenden (falls verfügbar)</H5>
 
 <P>
-Wenn diese Option aktiviert ist, versucht NVDA, die Microsoft die API für die Zugänglichkeit der Benutzeroberflächenautomatisierung zu verwenden, um Informationen von Steuerelementen in Microsoft Word-Dokumenten abzurufen.
+Wenn diese Option aktiviert ist, versucht NVDA, die Microsoft die API für die Zugänglichkeit der UIA zu verwenden, um Informationen von Steuerelementen in Microsoft Word-Dokumenten abzurufen.
 Dazu gehört Microsoft Word selbst, aber auch in Microsoft Outlook die Nachrichtenansicht und Nachrichten verfassen.
  Für die neuesten Versionen von Microsoft Office 2016 / 365 unter Windows 10 ist die Unterstützung der Benutzeroberfläche vollständig genug, um den Zugriff auf Microsoft Word-Dokumente zu ermöglichen, die nahezu der bestehenden Microsoft Word-Unterstützung von NVDA entsprechen, mit dem zusätzlichen Vorteil, dass die Reaktionsfähigkeit erheblich gesteigert wird.
-Es kann jedoch einige Informationen geben, die in einigen Versionen von Microsoft Office entweder nicht oder falsch angezeigt werden, so dass man sich nicht immer auf diese Unterstützung der Benutzeroberflächenautomatisierung verlassen kann.
+Es kann jedoch einige Informationen geben, die in einigen Versionen von Microsoft Office entweder nicht oder falsch angezeigt werden, so dass man sich nicht immer auf diese Unterstützung der UIA verlassen kann.
 Wir empfehlen noch nicht diese Funktion standardmäßig zu aktivieren. Allerdings ist ausdrücklich erwünscht, dass Benutzer von Office 2016 / 365 diese Funktion testen und Rückmeldung geben können.
 </P>
 
@@ -3849,22 +3849,22 @@ Wir empfehlen noch nicht diese Funktion standardmäßig zu aktivieren. Allerding
 <P>
 Diese Option legt fest, wie NVDA mit der von der Eingabeaufforderung, PowerShell und dem Windows-Subsystem für Linux verwendeten Windows-Konsole interagiert.
 Es hat keinen Einfluss auf das moderne Windows-Terminal.
-In Windows 10 Version 1709 hat Microsoft<A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Unterstützung für seine API für die Benutzeroberflächenautomatisierung in die Konsole</A> aufgenommen, was der Konsole eine erheblich verbesserte Leistung und Stabilität für Screenreader bringt, die sie unterstützen.
-In Situationen, in denen die Benutzeroberflächenautomatisierung nicht verfügbar ist oder bekanntermaßen zu einer schlechteren Benutzererfahrung führt, ist die Unterstützung der Legacy-Konsole von NVDA als Rückhalt verfügbar.
+In Windows 10 Version 1709 hat Microsoft<A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Unterstützung für seine API für die UIA in die Konsole</A> aufgenommen, was der Konsole eine erheblich verbesserte Leistung und Stabilität für Screenreader bringt, die sie unterstützen.
+In Situationen, in denen die UIA nicht verfügbar ist oder bekanntermaßen zu einer schlechteren Benutzererfahrung führt, ist die Unterstützung der Legacy-Konsole von NVDA als Rückhalt verfügbar.
 Das Kombinationsfeld für die Unterstützung der Windows-Konsole hat drei Optionen:
 </P>
 
 <UL>
-<LI>Automatisch: Verwendet die Benutzeroberflächenautomatisierung in Konsolen unter Windows 10 Version 1809 und neuer. Diese Option wird empfohlen und ist standardmäßig eingestellt.
-<LI>Benutzeroberflächenautomatisierung bevorzugen: Verwendet die Benutzeroberflächenautomatisierung in Konsolen, falls verfügbar, auch bei Windows-Versionen mit unvollständigen oder fehlerhaften Implementierungen. Obwohl diese eingeschränkte Funktion nützlich (und sogar ausreichend für Ihre Nutzung) sein kann, geschieht die Nutzung dieser Option auf eigene Gefahr und wird nicht unterstützt.
-<LI>Legacy: Die Benutzeroberflächenautomatisierung in der Windows-Konsole wird vollständig deaktiviert, so dass immer die Legacy-Variante verwendet wird.
+<LI>Automatisch: Verwendet die UIA in Konsolen unter Windows 10 Version 1809 und neuer. Diese Option wird empfohlen und ist standardmäßig eingestellt.
+<LI>UIA bevorzugen: Verwendet die UIA in Konsolen, falls verfügbar, auch bei Windows-Versionen mit unvollständigen oder fehlerhaften Implementierungen. Obwohl diese eingeschränkte Funktion nützlich (und sogar ausreichend für Ihre Nutzung) sein kann, geschieht die Nutzung dieser Option auf eigene Gefahr und wird nicht unterstützt.
+<LI>Legacy: Die UIA in der Windows-Konsole wird vollständig deaktiviert, so dass immer die Legacy-Variante verwendet wird.
 </UL>
 
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
 <H5>Passwörter in der Windows-Konsole ansagen</H5>
 
 <P>
-Diese Einstellung steuert, ob Zeichen durch <A HREF="#KeyboardSettingsSpeakTypedCharacters">Zeichen während der Eingabe ansagen</A> oder <A HREF="#KeyboardSettingsSpeakTypedWords">Wörter während der Eingabe ansagen</A> gesprochen werden, wenn der Bildschirm in einigen Terminal-Programmen, wie der Windows-Konsole mit aktivierter Unterstützung der Benutzeroberflächenautomatisierung und Mintty, nicht aktualisiert wird.
+Diese Einstellung steuert, ob Zeichen durch <A HREF="#KeyboardSettingsSpeakTypedCharacters">Zeichen während der Eingabe ansagen</A> oder <A HREF="#KeyboardSettingsSpeakTypedWords">Wörter während der Eingabe ansagen</A> gesprochen werden, wenn der Bildschirm in einigen Terminal-Programmen, wie der Windows-Konsole mit aktivierter Unterstützung der UIA und Mintty, nicht aktualisiert wird.
 Aus Sicherheitsgründen sollte diese Einstellung deaktiviert bleiben.
 Sie können es jedoch aktivieren, wenn Sie Leistungsprobleme oder Instabilität bei der Eingabe von Zeichen und/oder Wörtern in Konsolen haben, oder in vertrauenswürdigen Umgebungen arbeiten und die Bekanntgabe von Passwörtern bevorzugen.
 </P>
@@ -3875,7 +3875,7 @@ Sie können es jedoch aktivieren, wenn Sie Leistungsprobleme oder Instabilität 
 <P>
 Diese Option stellt eine alternative Methode zur Erkennung von eingegebenen Zeichen in älteren Windows-Konsolen zur Verfügung.
 Durch das Aktivieren dieser Option wird zwar die Leistung gesteigert und das Buchstabieren mancher Ausgaben in Windows-Konsolen verhindert; es könnten jedoch Probleme mit manchen Terminals auftreten.
-Diese Funktion ist verfügbar und standardmäßig aktiviert für Windows 10 Versionen 1607, 1703, 1709 und 1803 sowie für neuere Windows 10 Versionen, wenn die Benutzeroberflächenautomatisierung nicht verfügbar oder deaktiviert ist.
+Diese Funktion ist verfügbar und standardmäßig aktiviert für Windows 10 Versionen 1607, 1703, 1709 und 1803 sowie für neuere Windows 10 Versionen, wenn die UIA nicht verfügbar oder deaktiviert ist.
 Das eingeben von Zeichen, die nicht auf dem Bildschirm erscheinen (z. B. bei Passwörtern) wird nicht unterstützt, wenn diese Option aktiviert ist.
 In Umgebungen, die nicht unterstützt werden, können Sie vorübergehend <A HREF="#KeyboardSettingsSpeakTypedCharacters">Zeichen beim Eingeben ansagen</A> und <A HREF="#KeyboardSettingsSpeakTypedWords">Wörter beim Eingeben ansagen</A> deaktivieren, wenn Sie Passwörter eingeben.
 </P>
