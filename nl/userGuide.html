@@ -42,6 +42,7 @@
     <LI><A HREF="#LaunchingNVDA">4.1. NVDA starten</A>
       <UL>
       <LI><A HREF="#WelcomeDialog">4.1.1. Welkomsscherm</A>
+      <LI><A HREF="#UsageStatsDialog">4.1.2. Dialoogvenster Gebruiksgegevensstatistiek</A>
       </UL>
     <LI><A HREF="#AboutNVDAKeyboardCommands">4.2. Over NVDA toetsenbordcommando’s</A>
       <UL>
@@ -170,10 +171,12 @@
     <UL>
     <LI><A HREF="#LogViewer">13.1. Logboek weergeven</A>
     <LI><A HREF="#SpeechViewer">13.2. Spraakweergavevenster (schermweergave gesproken tekst)</A>
-    <LI><A HREF="#AddonsManager">13.3. Add-Ons Beheren</A>
-    <LI><A HREF="#incompatibleAddonsManager">13.4. Incompatibele Add-ons Manager</A>
-    <LI><A HREF="#PythonConsole">13.5. Python Console</A>
-    <LI><A HREF="#ReloadPlugins">13.6. Plugins herladen</A>
+    <LI><A HREF="#BrailleViewer">13.3. Braille Viewer (Brailleweergavevenster)</A>
+    <LI><A HREF="#AddonsManager">13.4. Add-Ons Beheren</A>
+    <LI><A HREF="#AddonsManager">13.5. Add-Ons Beheren</A>
+    <LI><A HREF="#incompatibleAddonsManager">13.6. Incompatibele Add-ons Manager</A>
+    <LI><A HREF="#PythonConsole">13.7. Python Console</A>
+    <LI><A HREF="#ReloadPlugins">13.8. Plugins herladen</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">14. Ondersteunde spraaksynthesizers</A>
     <UL>
@@ -195,9 +198,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Brailliant BI/B Serie / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc133">15.9.1. Toegewezen toetsen die gelden voor Alle modellen</A>
-      <LI><A HREF="#toc134">15.9.2. Toegewezen toetsen voor de Brailliant BI 32, BI 40 en B 80</A>
-      <LI><A HREF="#toc135">15.9.3. Toegewezen toetsen voor de Brailliant BI 14</A>
+      <LI><A HREF="#toc136">15.9.1. Toegewezen toetsen die gelden voor Alle modellen</A>
+      <LI><A HREF="#toc137">15.9.2. Toegewezen toetsen voor de Brailliant BI 32, BI 40 en B 80</A>
+      <LI><A HREF="#toc138">15.9.3. Toegewezen toetsen voor de Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Serie</A>
     <LI><A HREF="#Seika">15.11. Seika Brailleleesregels</A>
@@ -480,6 +483,17 @@ Via het vervolgkeuzemenu kunt u een toetsenbordindeling selecteren.
 Als u het eerste selectievakje inschakelt, wordt de CapsLock-toets ook als NVDA-programmatoets gebruikt.
 Als u het tweede selectievakje inschakelt, zal NVDA automatisch opstarten zodra u bij Windows bent aangemeld. Deze mogelijkheid is alleen beschikbaar voor de geïnstalleerde versie van NVDA. 
 Het inschakelen van het derde selectievakje zorgt ervoor dat dit welkomsscherm verschijnt, telkens wanneer NVDA wordt gestart.
+</P>
+
+<A NAME="UsageStatsDialog"></A>
+<H4>4.1.2. Dialoogvenster Gebruiksgegevensstatistiek</H4>
+
+<P>
+Met ingang van NVDA 2018.3, wordt de gebruiker gevraagd of hij / zij toestaat dat gegevens over het gebruik naar NV Access worden gestuurd met het doel NVDA verder te verbeteren. 
+Wanneer NVDA de eerste keer start, verschijnt er een dialoogvenster  met de vraag of u ermee akkoord gaat dat er gegevens naar NV Access worden gestuurd tijdens uw gebruik van NVDA.
+U leest meer over de door NV Access verzamelde data in Hoofdstuk 11 hierna.
+Merk op dat  door op "ja" of "nee"  te drukken  uw keuze wordt opgeslagen en dat  dit dialoogvenster dan niet meer zal verschijnen, tenzij u NVDA opnieuw installeert.
+U kunt het verzamelen van data echter handmatig in- of uitschakelen via de Instellingen van NVDA in de categorie Algemeen. Om de instelling handmatig te wijzigen zet of verwijdert u een vinkje in het selectievakje  met bijschrift Sta het NVDA project toe NVDA gebruiksstatistieken te verzamelen #GeneralSettingsGatherUsageStats].
 </P>
 
 <A NAME="AboutNVDAKeyboardCommands"></A>
@@ -1624,6 +1638,7 @@ Als u naar het document wilt teruggaan drukt u op Escape.
 <P>
 Als u over een brailleleesregel beschikt, kan NVDA informatie in braille weergeven.
 Als uw brailleleesregel een toetsenbord heeft van het type Perkins kunt u ook zowel verkort als onverkort braille invoeren.
+Braille kan ook op het scherm worden weergegeven met behulp van de <A HREF="#BrailleViewer">Braille Viewer</A> in plaats van, of tegelijk met een fysieke  brailleleesregel.
 </P>
 <P>
 Raadpleegde paragraaf <A HREF="#SupportedBrailleDisplays">Ondersteunde Brailleleesregels</A> voor informatie over de ondersteunde brailleleesregels.
@@ -3398,67 +3413,44 @@ In deze categorie treft u de volgende keuzemogelijkheden aan:
 
 <P>
 Als dit selectievakje aangevinkt is, zal NVDA eventuele flitsberichten (tooltips) laten horen wanneer deze op het scherm verschijnen.
-Bij veel Windows schermen en besturingselementen verschijnt een kort berichtje, – dat “tooltip” genoemd wordt, – wanneer deze zich onder de muisaanwijzer bevinden of soms wanneer deze gefocusseerd worden.
+Bij veel Windows schermen en besturingselementen verschijnt een kort berichtje, – dat “tooltip” genoemd wordt, – wanneer deze zich onder de muisaanwijzer bevinden of soms wanneer deze de focus krijgen.
 </P>
 
 <A NAME="ObjectPresentationReportBalloons"></A>
-<H5>Hulpballonnen melden</H5>
+<H5>Notificaties melden</H5>
 
 <P>
-Als dit selectievakje aangevinkt is, zal NVDA eventuele hulpballonnen laten horen wanneer deze op het scherm verschijnen.
-Hulpballonnen lijken op tooltips maar ze bevatten meer informatie dan tooltips. Ze hebben te maken met dingen die aan of met uw computer gebeuren zoals het verwijderen van een netwerk kabel of wellicht wordt u er attent op gemaakt dat er een beveiligingsprobleem is.
-</P>
-
-<A NAME="ObjectPresentationShortcutKeys"></A>
-<H5>Objectsneltoetsen melden</H5>
-
-<P>
-Als dit selectievakje is aangevinkt, zal NVDA bij de aankondiging van een bepaald object of element ook de bijbehorende sneltoetscombinatie vermelden.
-Zo zal bij voorbeeld bij het onderdeel Bestand op de menubalk ook gemeld worden dat hiervoor de sneltoetscombinatie Alt + b. beschikbaar is.
-</P>
-
-<A NAME="ObjectPresentationPositionInfo"></A>
-<H5>Informatie over objectpositie melden</H5>
-
-<P>
-Als dit selectievakje aangevinkt is, wordt de objectpositie gemeld,bijvoorbeeld 1 van 4, zodra het object focus krijgt, of zich in de objectnavigatie bevind.
-</P>
-<P>
-==== Objectpositie raden indien deze niet beschikbaar is [ObjectPresentationGuessPositionInfo]
-Als informatie van objectpositie weergeven is ingeschakeld, kan deze optie ervoor zorgen dat de positie van sommige objecten bij benadering wordt bepaald. Dit kan nodig zijn als de positie-informatie niet op een andere manier verkregen kan worden.
-</P>
-<P>
-Als deze optie is ingeschakeld, zal positie-informatie voor meer objecten (zoals menu's en werkbalken) beschikbaar zijn, maar deze informatie is mogelijk niet geheel nauwkeurig.
-</P>
-
-<A NAME="ObjectPresentationObjectCoordinates"></A>
-<H5>Geluid voor objectcoördinaten afspelen</H5>
-
-<P>
-Wanneeer het selectievakje aangevinkt is, krijgt u een piepsignaal te horen waarmee de plaats van het huidige object op het scherm wordt aangegeven. Dit is handig als u gebruik maakt van aanraakgebaren om naar volgende en vorige objecten te gaan.
-</P>
-
-<A NAME="ObjectPresentationReportDescriptions"></A>
-<H5>Objectbeschrijvingen melden</H5>
-
-<P>
-Vink dit selectievakje niet aan als u, behalve de naam van het object, geen extra informatie hoeft te horen ( zoals zoeksuggesties, het melden van volledig dialoogvenster rechts na openen  van de dialoog). 
-</P>
-
-<A NAME="ObjectPresentationProgressBarOutput"></A>
-<H5>Weergave voortgangsbalk</H5>
-
-<P>
-Toets : NVDA+u
-</P>
-<P>
-Via de vervolgkeuzelijst kunt u kiezen hoe u wilt worden geïnformeerd over de voortgang van de voortgangsbalk.
-</P>
-<P>
-U kunt kiezen uit
+Als dit selectievakje aangevinkt is, zal NVDA eventuele hulpballonnen en toast meldingen weergeven wanneer deze op het scherm verschijnen.
 </P>
 
 <UL>
+<LI>Hulpballonnen lijken op tooltips maar ze bevatten meer informatie dan tooltips. Ze hebben te maken met dingen die aan of met uw computer gebeuren zoals het verwijderen van een netwerk kabel of wellicht wordt u er attent op gemaakt dat er een beveiligingsprobleem is.
+<LI>Met Windows 10 zijn er zogenaamde 'toast' meldingen gekomen die in het  actiecentrum in het systeemvak te vinden zijn. Deze meldingen zijn van uiteenlopende aard  (bijv. dat er een update gedownload is, dat er een nieuw e-mailbericht  is binnengekomen, etc.).
+<P></P>
+==== Objectsneltoetsen melden ====[ObjectPresentationShortcutKeys]
+Als dit selectievakje is aangevinkt, zal NVDA bij de aankondiging van een bepaald object of element ook de bijbehorende sneltoetscombinatie vermelden.
+Zo zal bij voorbeeld bij het onderdeel Bestand op de menubalk ook gemeld worden dat hiervoor de sneltoetscombinatie Alt + b. beschikbaar is.
+<P></P>
+==== Informatie over objectpositie melden ====[ObjectPresentationPositionInfo]
+Als dit selectievakje aangevinkt is, wordt de objectpositie gemeld,bijvoorbeeld 1 van 4, zodra het object focus krijgt, of zich in de objectnavigatie bevind.
+<P></P>
+==== Objectpositie raden indien deze niet beschikbaar is [ObjectPresentationGuessPositionInfo]
+Als informatie van objectpositie weergeven is ingeschakeld, kan deze optie ervoor zorgen dat de positie van sommige objecten bij benadering wordt bepaald. Dit kan nodig zijn als de positie-informatie niet op een andere manier verkregen kan worden.
+<P></P>
+Als deze optie is ingeschakeld, zal positie-informatie voor meer objecten (zoals menu's en werkbalken) beschikbaar zijn, maar deze informatie is mogelijk niet geheel nauwkeurig.
+<P></P>
+==== Geluid voor objectcoördinaten afspelen ====[ObjectPresentationObjectCoordinates]
+Wanneeer het selectievakje aangevinkt is, krijgt u een piepsignaal te horen waarmee de plaats van het huidige object op het scherm wordt aangegeven. Dit is handig als u gebruik maakt van aanraakgebaren om naar volgende en vorige objecten te gaan.
+<P></P>
+==== Objectbeschrijvingen melden ====[ObjectPresentationReportDescriptions]
+Vink dit selectievakje niet aan als u, behalve de naam van het object, geen extra informatie hoeft te horen ( zoals zoeksuggesties, het melden van volledig dialoogvenster rechts na openen  van de dialoog). 
+<P></P>
+==== Weergave voortgangsbalk ====[ObjectPresentationProgressBarOutput]
+Toets : NVDA+u
+<P></P>
+Via de vervolgkeuzelijst kunt u kiezen hoe u wilt worden geïnformeerd over de voortgang van de voortgangsbalk.
+<P></P>
+U kunt kiezen uit
 <LI>uit: veranderingen in voortgangsbalken worden niet gemeld.
 <LI>uitspreken: u hoort het percentage dat aangeeft hoe ver het proces is gevorderd. Elke verandering wordt gemeld.
 <LI>Pieptonen: Bij elke verandering in de voortgangsbalk zal NVDA een pieptoon laten horen. Hoe hoger de toon, hoe verder de balk gevuld raakt.
@@ -4204,7 +4196,7 @@ Dit kunt u doen via het Logboek-menu (alt+l).
 <H3>13.2. Spraakweergavevenster (schermweergave gesproken tekst)</H3>
 
 <P>
-Goed-ziende software-ontwikkelaars of mensen die NVDA demonstreren voor een goed-ziend publiek is er een zwevend kader waarin alles op het scherm wordt getoond wat NVDA bezig is voor te lezen.
+Voor goedziende softwareontwikkelaars of mensen die NVDA demonstreren voor een goedziend publiek is er een zwevend kader waarin alles op het scherm wordt getoond wat NVDA bezig is voor te lezen.
 </P>
 <P>
 Om het spraakweergavevenster in te schakelen zet u een vinkje voor spraakweergavevenster onder Extra in het NVDA-menu.
@@ -4223,8 +4215,32 @@ Maar klikt u in of verplaatst u de focus naar het viewer venster, dan wordt het 
 Als u het Spraakweergavevenster altijd en overal wilt kunnen in- of uischakelen, kunt u daarvoor aangepaste invoerhandelingen aanmaken met behulp van <A HREF="#InputGestures">Invoerhandelingen koppelen onder Opties</A>.
 </P>
 
+<A NAME="BrailleViewer"></A>
+<H3>13.3. Braille Viewer (Brailleweergavevenster)</H3>
+
+<P>
+Voor goedziende softwareontwikkelaars of voor mensen die NVDA demonstreren aan een goedziend publiek is er een zwevend kader waarin alle brailleuitvoer  met het tekstequivalent voor elk brailleteken op het scherm wordt weergegeven.
+De braille viewer (brailleweergavevenster) kan tegelijk met een fysieke leesregel worden gebruikt, het aantal cellen  komt overeen met het aantal op het fysieke apparaat.
+Als de braille viewer ingeschakeld is, wordt de inhoud van het venster voortdurend ververst met wat er weergegeven wordt op de fysieke leesregel.
+</P>
+<P>
+Om het brailleweergavevenster in te schakelen zet u een vinkje voor brailleweergavevenster onder Extra in het NVDA-menu.
+Haal het vinkje weg om het uit te schakelen.
+</P>
+<P>
+Fysieke brailleleesregels zijn uiteraard der zaak voorzien van knoppen om vooruit of terug te scrollen; om scrollen met de braille viewer mogelijk te maken kunt u in het <A HREF="#InputGestures">dialoogvenster Invoerhandelingen</A> een sneltoets toewijzen waarmee u de brailleweergave 'terug- en vooruit scrollt'
+</P>
+<P>
+In het braille weergavevenster treft u een selectievakje aan met het bijschrift 'braille viewer tonen bij start".
+Als dit vakje is aangevinkt, opent de braille viewer wanneer  NVDA wordt gestart.
+Het brailleweergavevenster zal in principe elke keer dat het wordt geopend dezelfde plaats en grootte hebben als toen het de laatste keer gesloten werd.
+</P>
+
 <A NAME="AddonsManager"></A>
-<H3>13.3. Add-Ons Beheren</H3>
+<H3>13.4. Add-Ons Beheren</H3>
+
+<A NAME="AddonsManager"></A>
+<H3>13.5. Add-Ons Beheren</H3>
 
 <P>
 Met "Add-ons Beheren" onder Extra in het NVDA menu kunt u uitbreidingspakketten voor NVDA installeren, verwijderen alsmede in- en uitschakelen.
@@ -4281,7 +4297,7 @@ Als u Add-Ons Beheren altijd en overal wilt kunnen oproepen, kunt u daarvoor aan
 </P>
 
 <A NAME="incompatibleAddonsManager"></A>
-<H3>13.4. Incompatibele Add-ons Manager</H3>
+<H3>13.6. Incompatibele Add-ons Manager</H3>
 
 <P>
 Met de Manager Incompatibele Add-ons, die u bereikt via de knop "Incompatibele add-ons bekijken" in Add-ons Beheren, kunt u incompatibele add-ons, inspecteren en nagaan waarom ze als niet compatibel beschouwd worden.
@@ -4302,7 +4318,7 @@ Door op deze knop te drukken laat het dialoogvenster de volledige details van de
 </P>
 
 <A NAME="PythonConsole"></A>
-<H3>13.5. Python Console</H3>
+<H3>13.7. Python Console</H3>
 
 <P>
 Met de Python console die u vindt onder Extra in het NVDA-menu kunnen fouten in de programmacode worden opgespoord en hersteld, algemene inspecties van de programmatuur worden uitgevoerd of de mate van toegankelijkheid van een toepassing worden gecontroleerd.
@@ -4310,7 +4326,7 @@ Zie voor meer informatie de handleiding voor ontwikkelaars, dit document is besc
 </P>
 
 <A NAME="ReloadPlugins"></A>
-<H3>13.6. Plugins herladen</H3>
+<H3>13.8. Plugins herladen</H3>
 
 <P>
 Zodra deze optie wordt geactiveerd, zullen alle app modules en globale plugins opnieuw worden geladen zonder dat NVDA wordt herstart. Dit is handig voor ontwikkelaars.
@@ -5165,7 +5181,7 @@ Bij gebruik van de Brailliant BI/B en de BrailleNote touch met NVDA zijn de volg
 (Voor meer details kunt u de documentatie bij deze leesregels raadplegen.)
 </P>
 
-<A NAME="toc133"></A>
+<A NAME="toc136"></A>
 <H4>15.9.1. Toegewezen toetsen die gelden voor Alle modellen</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5255,7 +5271,7 @@ Bij gebruik van de Brailliant BI/B en de BrailleNote touch met NVDA zijn de volg
 </TR>
 </TABLE>
 
-<A NAME="toc134"></A>
+<A NAME="toc137"></A>
 <H4>15.9.2. Toegewezen toetsen voor de Brailliant BI 32, BI 40 en B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5278,7 +5294,7 @@ Bij gebruik van de Brailliant BI/B en de BrailleNote touch met NVDA zijn de volg
  %kc:endInclude
 </P>
 
-<A NAME="toc135"></A>
+<A NAME="toc138"></A>
 <H4>15.9.3. Toegewezen toetsen voor de Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5580,7 +5596,7 @@ Bij gebruik van deze leesregels met NVDA zijn de volgende toetscombinaties van t
 
 <P>
 De modellen Seika Version 3, 4 en 5 (40 cellen) en de Seika80 (80 cellen) van <A HREF="https://www.nippontelesoft.com/">Nippon Telesoft</A> worden ondersteund.
-Meer informatie over deze leesregels vindt u op <A HREF="https://en.seika-braille.com/down/index.html/">https://en.seika-braille.com/down/index.html/</A> 
+Meer informatie over deze leesregels en over de benodigde drivers vindt u op <A HREF="https://en.seika-braille.com/down/index.html">https://en.seika-braille.com/down/index.html</A> 
 U moet eerst de usb-driver van de fabrikant installeren voordat u de leesregel op de computer aansluit.
 </P>
 <P>
