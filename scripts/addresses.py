@@ -166,7 +166,7 @@ addresses = {
     },
     'ne': {
         'lang':'Nepali',
-        'email': ['him Prasad Gautam <drishtibachak@gmail.com>'],
+        'email': ['Puskal Gautam <nvda.nepali@gmail.com>'],
     },
     'nl': {
         'lang':'Dutch',
