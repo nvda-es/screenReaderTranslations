@@ -38,7 +38,7 @@ addresses = {
     },
     'ckb': {
         'lang':'Central Kurdish',
-        'email': ['Ali Ustek <aliustek@gmail.com>', 'Patrick Galasso <Patrice.galasso@gmail.com>', 'Jwanro Mustafa <jwanroabdula@hotmail.com>', 'Kosrat D Ahmad <kosrat.d.ahmad@gmail.com>'],
+        'email': ['Ali Ustek <aliustek@gmail.com>', 'Patrick Galasso <Patrice.galasso@gmail.com>', 'Jwanro Mustafa <jwanroabdula@hotmail.com>', 'Kosrat D Ahmad <kosrat.d.ahmad@gmail.com>', 'silva.hm88@gmail.com'],
     },
     'cs': {
         'lang': 'Czech',
