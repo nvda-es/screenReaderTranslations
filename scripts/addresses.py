@@ -66,7 +66,7 @@ addresses = {
     },
     'es_CO': {
         'lang': 'Spanish Colombia',
-        'email': ['Jorge Zarache <reydelasmaquinas@outlook.com>'],
+        'email': ['Jorge Zarache <reydelasmaquinas@outlook.com>', 'Luis Carlos Gonzáles Moráles <luiscarlosgm@hotmail.es>'],
     },
     'fa': {
         'lang':'Farsi',
