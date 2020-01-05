@@ -31,9 +31,9 @@
 <LI>Die Ansage der Schriftarten in Microsoft Word berücksichtigt nun auch, wenn Text als Verborgen markiert ist. (<A HREF="https://github.com/nvaccess/nvda/issues/8713">#8713</A>)
 <LI>Es wurde ein Befehl hinzugefügt, um den NVDA-Cursor an die zuvor als Startmarke für die Auswahl oder das Kopieren markierte Position zu bewegen: NVDA+Umschalt+F9. (<A HREF="https://github.com/nvaccess/nvda/issues/1969">#1969</A>)
 <LI>In Internet Explorer, Microsoft Edge und neue Versionen von Mozilla Firefox und Google Chrome werden Sprungmarken  nun auch im Fokusmodus und Objekt-Navigation angesagt. (<A HREF="https://github.com/nvaccess/nvda/issues/10101">#10101</A>)
-<LI>In Internet Explorer, Google Chrome und Mozilla Firefox können Sie nun mit Hilfe der Schnellnavigationsbefehle zu  Artikeln und Gruppen navigieren. Diese Befehle sind standardmäßig nicht zugewiesen und können im Dialogfeld "Tastenbefehle..." zugewiesen werden, wenn der Dialog aus einem Dokument im Lesemodus geöffnet wird. (<A HREF="https://github.com/nvaccess/nvda/issues/9485">#9485</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9227">#9227</A>)
+<LI>In Internet Explorer, Google Chrome und Mozilla Firefox können Sie nun mit Hilfe der Schnellnavigationsbefehle zu Artikeln und Gruppierungen navigieren. Diese Befehle sind standardmäßig nicht zugewiesen und können im Dialogfeld "Tastenbefehle" zugewiesen werden, wenn das Dialogfeld aus einem Dokument im Lesemodus geöffnet wird. (<A HREF="https://github.com/nvaccess/nvda/issues/9485">#9485</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9227">#9227</A>)
  <UL>
- <LI>Es werden auch Illustrationen erkannt und ausgesprochen. Sie gelten als Objekte und sind daher mit der Schnellnavigationstaste "O" navigierbar.
+ <LI>Es werden auch Illustrationen erkannt und angesagt. Sie gelten als Objekte und sind daher mit der Schnellnavigationstaste "o" navigierbar.
  </UL>
 <LI>In Internet Explorer, Google Chrome und Mozilla Firefox werden nun Artikel-Elemente in der Objektnavigation und optional im Lesemodus angezeigt, wenn sie in den Einstellungen für die Dokumentenformatierung aktiviert sind. (<A HREF="https://github.com/nvaccess/nvda/issues/10424">#10424</A>)
 <LI>Die Funktion eines Bildschirmvorhangs wurde hinzugefügt, die bei Aktivierung den gesamten Bildschirminhalt unter Windows 8 und neuer ausblendet und das Bildschirm verdunkelt. (<A HREF="https://github.com/nvaccess/nvda/issues/7857">#7857</A>)
@@ -131,11 +131,11 @@
  <UL>
  <LI>Stattdessen sollten sie die Aktion "synthDriverHandler.synthIndexReached" mit dem Index benachrichtigen, sobald alle vorherigen Audiodateien vor diesem Index abgespielt wurden.
  </UL>
-<LI>SynthDriver-Klassen müssen nun die Aktion "synthDriverHandler.synthDoneSpeaking" melden, sobald alle Audiodaten eines "SynthDriver.speak"-Aufrufs abgespielt wurden.
-<LI>SynthDriver-Klassen müssen die speech.PitchCommand in ihrer Sprachmethode unterstützen, da Änderungen in der Tonhöhe für die Rechtschreibung nun von dieser Funktionalität abhängen.
-<LI>Die Sprachfunktion "getSpeechTextForProperties" wurde in "getPropertiesSpeech" umbenannt. (<A HREF="https://github.com/nvaccess/nvda/issues/10098">#10098</A>)
+<LI>Die Klassen "SynthDriver" müssen nun die Aktion "synthDriverHandler.synthDoneSpeaking" melden, sobald alle Audiodaten eines "SynthDriver.speak"-Aufrufs abgespielt wurden.
+<LI>Die Klassen "SynthDriver" müssen die speech.PitchCommand in ihrer Sprachmethode unterstützen, da Änderungen in der Tonhöhe für die Rechtschreibung nun von dieser Funktionalität abhängen.
+<LI>Die Sprachausgaben-Funktion "getSpeechTextForProperties" wurde in "getPropertiesSpeech" umbenannt. (<A HREF="https://github.com/nvaccess/nvda/issues/10098">#10098</A>)
 <LI>Die Braille-Funktion "getBrailleTextForProperties" wurde in "getPropertiesBraille" umbenannt. (<A HREF="https://github.com/nvaccess/nvda/issues/10469">#10469</A>)
-<LI>Mehrere Sprachfunktionen wurden geändert, um Sprachsequenzen zurückzugeben. (<A HREF="https://github.com/nvaccess/nvda/issues/10098">#10098</A>)
+<LI>Mehrere Sprachausgaben-Funktionen wurden geändert, um Sprachsequenzen zurückzugeben. (<A HREF="https://github.com/nvaccess/nvda/issues/10098">#10098</A>)
  <UL>
  <LI>getControlFieldSpeech
  <LI>getFormatFieldSpeech
@@ -143,34 +143,34 @@
  <LI>getIndentationSpeech
  <LI>getTableInfoSpeech
  </UL>
-<LI>Es wurde ein textUtils-Modul hinzugefügt, um die Zeichenkettenunterschiede zwischen Zeichenketten in Python 3 und Windows-Unicode zu vereinfachen. (<A HREF="https://github.com/nvaccess/nvda/issues/9545">#9545</A>)
+<LI>Es wurde ein "textUtils"-Modul hinzugefügt, um die Zeichenkettenunterschiede zwischen Zeichenketten in Python 3 und Windows-Unicode zu vereinfachen. (<A HREF="https://github.com/nvaccess/nvda/issues/9545">#9545</A>)
  <UL>
- <LI>Siehe dazu im Module "documentation" und "textInfos.offsets" für die Implementierung des Frameworks bzw. der Beispiele.
+ <LI>Schauen Sie dazu im Module "documentation" und "textInfos.offsets" für die Implementierung des Frameworks bzw. der Beispiele nach.
  </UL>
 <LI>Veraltete Funktionen wurden entfernt. (<A HREF="https://github.com/nvaccess/nvda/issues/9548">#9548</A>)
  <UL>
- <LI>AppModules entfernt:
+ <LI>Anwendungsmodule entfernt:
   <UL>
-  <LI>Windows XP-Audiorekorder
-  <LI>Klango Player, der nicht mehr weiterentwickelt wurde.
+  <LI>Die Unterstützung des Audiorekorders unter Windows XP.
+  <LI>Klango Player, der nicht mehr weiterentwickelt wird.
   </UL>
- <LI>configobj.validate wrapper entfernt.
+ <LI>"configobj.validate"-Wrapper entfernt.
   <UL>
-  <LI>Neuer Code sollte benutzen configobj import validate stattdessen import validate
+  <LI>Im Code sollte nun "from configobj import validate" anstelle "import validate" verwendet werden.
   </UL>
- <LI>textInfos.Point und textInfos.Rect wurden jeweils ersetzt durch locationHelper.Point und locationHelper.RectLTRB.
- <LI>braille.BrailleHandler._get_tether und braille.BrailleHandler.set_tether wurden entfernt.
- <LI>config.getConfigDirs wurde entfernt.
- <LI>config.ConfigManager.getConfigValidationParameter wurde ersetzt durch getConfigValidation
- <LI>inputCore.InputGesture.logIdentifier property wurde entfernt.
+ <LI>"textInfos.Point" und "textInfos.Rect" wurden jeweils ersetzt durch "locationHelper.Point" und "locationHelper.RectLTRB".
+ <LI>"braille.BrailleHandler._get_tether" und "braille.BrailleHandler.set_tether" wurden entfernt.
+ <LI>"config.getConfigDirs" wurde entfernt.
+ <LI>"config.ConfigManager.getConfigValidationParameter" wurde ersetzt durch "getConfigValidation".
+ <LI>Die Eigenschaft "inputCore.InputGesture.logIdentifier" wurde entfernt.
    <UL>
    <LI>Verwenden Sie stattdessen "_get_identifiers" in "inputCore.InputGesture".
    </UL>
- <LI>synthDriverHandler.SynthDriver.speakText / speakCharacter wurden entfernt.
+ <LI>Die Eigenschaften "speakText" und "speakCharacter" in "synthDriverHandler.SynthDriver" wurden entfernt.
  <LI>Mehrere Klassen in "synthDriverHandler.SynthSetting" wurden entfernt.
    <UL>
    <LI>Zuvor aus Gründen der Rückwärtskompatibilität (<A HREF="https://github.com/nvaccess/nvda/issues/8214">#8214</A>) aufbewahrt, gilt nun als veraltet.
-   <LI>Treiber, die die SynthSetting-Klassen verwendet haben, sollten aktualisiert werden, um die DriverSetting-Klassen zu verwenden.
+   <LI>Treiber, die die Klassen "SynthSetting" verwendet haben, sollten aktualisiert werden, um die DriverSetting-Klassen zu verwenden.
    </UL>
  <LI>Einige ältere Code-Abschnitte wurden entfernt, insbesondere:
   <UL>
@@ -181,17 +181,17 @@
  </UL>
 <LI>Ein Framework zur Erstellung von Quellen für Verbesserungen visueller Darstellungen wurde hinzugefügt; Module, die Bildschirminhalte ändern können, optional basierend auf Eingaben von NVDA über Objektpositionen. (<A HREF="https://github.com/nvaccess/nvda/issues/9064">#9064</A>)
  <UL>
- <LI>Erweiterungen können ihre eigenen Provider (Quellen) in einem "visionEnhancementProvider"-Ordner bündeln.
- <LI>Siehe dazu im Module "vision" und "visionEnhancementProviders" für die Implementierung des Frameworks bzw. der Beispiele.
+ <LI>Erweiterungen können eigene Quellen in einem "visionEnhancementProvider"-Ordner bündeln.
+ <LI>Schauen Sie dazu im Module "vision" und "visionEnhancementProviders" für die Implementierung des Frameworks bzw. der Beispiele nach.
  <LI>Die Quelle für Verbesserungen visueller Darstellungen ist über die Kategorie "Visuelle Darstellungen" im NVDA-Einstellungsdialog aktivierbar.
  </UL>
-<LI>Abstrakte Klasseneigenschaften werden nun auch für Objekte unterstützt, die von "baseObject.AutoPropertyObject" erben (z. B. "NVDAObjects" und "TextInfos"). (<A HREF="https://github.com/nvaccess/nvda/issues/10102">#10102</A>)
-<LI>Einführung von displayModel.UNIT_DISPLAYCHUNK als eine für DisplayModelTextInfo spezifische TextInfos-Einheitenkonstante. (<A HREF="https://github.com/nvaccess/nvda/issues/10165">#10165</A>)
+<LI>Abstrakte Klassen-Eigenschaften werden nun auch für Objekte unterstützt, die von "baseObject.AutoPropertyObject" erben (z. B. "NVDAObjects" und "TextInfos"). (<A HREF="https://github.com/nvaccess/nvda/issues/10102">#10102</A>)
+<LI>Einführung von "displayModel.UNIT_DISPLAYCHUNK" als eine für "DisplayModelTextInfo" spezifische Einheitenkonstante für "TextInfos". (<A HREF="https://github.com/nvaccess/nvda/issues/10165">#10165</A>)
  <UL>
  <LI>Diese neue Konstante ermöglicht es, den Text in "DisplayModelTextInfo" in einer Weise zu behandeln, die der Speicherung der Textbausteine im zugrunde liegenden Modell ähnelt.
  </UL>
-<LI>displayModel.getCaretRect gibt nun eine Instanz von locationHelper.RectLTRB zurück. (<A HREF="https://github.com/nvaccess/nvda/issues/10233">#10233</A>)
-<LI>Die Konstanten UNIT_CONTROLFIELD und UNIT_FORMATFIELD wurden von "virtualBuffers.VirtualBufferTextInfo" in das Paket "textInfos" verschoben. (<A HREF="https://github.com/nvaccess/nvda/issues/10396">#10396</A>)
+<LI>"displayModel.getCaretRect" gibt nun eine Instanz von locationHelper.RectLTRB zurück. (<A HREF="https://github.com/nvaccess/nvda/issues/10233">#10233</A>)
+<LI>Die Konstanten "UNIT_CONTROLFIELD" und "UNIT_FORMATFIELD" wurden von "virtualBuffers.VirtualBufferTextInfo" in das Paket "textInfos" verschoben. (<A HREF="https://github.com/nvaccess/nvda/issues/10396">#10396</A>)
 <LI>Für jeden Eintrag im NVDA-Protokoll werden nun Informationen über den Ursprungs-Thread angezeigt. (<A HREF="https://github.com/nvaccess/nvda/issues/10259">#10259</A>)
 <LI>TextInfo-Objekte der UIA können nun verschoben / erweitert werden von den Text-Einheiten "page", "story" und "formatField". (<A HREF="https://github.com/nvaccess/nvda/issues/10396">#10396</A>)
 <LI>Externe Module (appModules und globalPlugins) sind nun weniger wahrscheinlich in der Lage, die Erstellung von NVDA-Objekten zu unterbrechen. 
@@ -304,8 +304,8 @@ Zu den Highlights dieser Version gehören die automatische Erkennung von braille
 <LI>Das aktuell geladene Anwendungsmodul wird nun zuerst angesagt, wenn Sie den Befehl "report module info" verwenden. (<A HREF="https://github.com/nvaccess/nvda/issues/7338">#7338</A>)
 <LI>Ein Beispiel zur Demonstration der Verwendung der Datei "nvdaControllerClient.dll" aus C# hinzugefügt. (<A HREF="https://github.com/nvaccess/nvda/issues/9600">#9600</A>)
 <LI>Dem Modul "winVersion" wurde eine neue Funktion "isWin10" hinzugefügt, die zurückgibt, ob NVDA auf (mindestens) der mitgelieferten Release-Version von Windows 10 (wie 1903) läuft oder nicht. (<A HREF="https://github.com/nvaccess/nvda/issues/9761">#9761</A>)
-<LI>Die Python-Konsole in NVDA enthält nun weitere nützliche Module im Namensraum (zum Beispiel "appModules", "globalPlugins", "config" und "textInfos"). (<A HREF="https://github.com/nvaccess/nvda/issues/9789">#9789</A>)
-<LI>Das Ergebnis des zuletzt ausgeführten Befehls in der Python-Konsole in NVDA ist nun über die Variable _ (line) zugänglich. (<A HREF="https://github.com/nvaccess/nvda/issues/9782">#9782</A>)
+<LI>Die Python-Konsole in NVDA enthält nun weitere nützliche Module im Namensraum (z. B. "appModules", "globalPlugins", "config" und "textInfos"). (<A HREF="https://github.com/nvaccess/nvda/issues/9789">#9789</A>)
+<LI>Das Ergebnis des zuletzt ausgeführten Befehls in der Python-Konsole in NVDA ist nun über die Variable "_" zugänglich. (<A HREF="https://github.com/nvaccess/nvda/issues/9782">#9782</A>)
  <UL>
  <LI>Beachten Sie, dass dies die Übersetzungsfunktion "gettext", die auch "_" (Unterstrich) genannt wird, überschattet. Um die Übersetzungsfunktion aufzurufen: "del _ _".
  </UL>
@@ -636,7 +636,7 @@ Zu den Highlights dieser Version gehören die Unterstützung von Tabellen in Kin
 <LI>Liblouis wurde auf Version 3.5.0 aktualisiert. (<A HREF="https://github.com/nvaccess/nvda/issues/7839">#7839</A>)
 <LI>Die litauische Braille-Übersetzungstabelle wurde auf Litauisch 6-Punkt umbenannt, um Verwechslungen mit der neuen 8-Punkt-Tabelle zu vermeiden. (<A HREF="https://github.com/nvaccess/nvda/issues/7839">#7839</A>)
 <LI>Die kanadisch-französischen Braille-Tabellen für Kurz- und Vollschrift wurden entfernt, stattdessen werden die vereinheitlichten 6-Punkt-Computerbraille und Kurzschrift-Tabellen verwendet. (<A HREF="https://github.com/nvaccess/nvda/issues/7839">#7839</A>)
-<LI>Die sekundären Routingtasten auf Alva BC6-, EuroBraille- und Papenmeier-Braillezeilen zeigen nun Formatierungsinformationen für den Text unter dem Braille-Modul dieser Taste an. (<A HREF="https://github.com/nvaccess/nvda/issues/7106">#7106</A>)
+<LI>Die sekundären Routing-Tasten auf Alva BC6-, EuroBraille- und Papenmeier-Braillezeilen zeigen nun Formatierungsinformationen für den Text unter dem Braille-Modul dieser Taste an. (<A HREF="https://github.com/nvaccess/nvda/issues/7106">#7106</A>)
 <LI>Beim Eingeben von Kurzschrift fällt NVDA automatisch auf eine Basisschrift-Eingabetabelle zurück, wenn sich der Fokus z. B. im Lesemodus auf einem Steuerelement befindet, das keine Einfügemarke besitzt. (<A HREF="https://github.com/nvaccess/nvda/issues/7306">#7306</A>)
 <LI>NVDA zeigt in Outlook weniger ausführliche Informationen an, wenn eine Besprechung oder ein Termin angezeigt wird, der/die einen ganzen Tag umfasst. (<A HREF="https://github.com/nvaccess/nvda/issues/7949">#7949</A>)
 <LI>Alle Einstellungen von NVDA werden nun in einem einzigen Dialogfeld unter Optionen -&gt; Einstellungen angezeigt. (<A HREF="https://github.com/nvaccess/nvda/issues/7302">#7302</A>)
@@ -737,8 +737,8 @@ Zu den Highlights dieser Version gehören die Unterstützung für Diagramme in M
 <LI>Dialoge, die von Erweiterungen wie LastPass oder bitwarden in Firefox erzeugt werden, werden nun korrekt im Lesemodus angezeigt. (<A HREF="https://github.com/nvaccess/nvda/issues/7809">#7809</A>)
 <LI>Sollten Firefox oder Chrome einfrieren oder abstürzen, ist nVDA jetzt nicht mehr unmittelbar betroffen. (<A HREF="https://github.com/nvaccess/nvda/issues/7818">#7818</A>)
 <LI>In Twitter-Clients, wie Chicken Nugget, werden beim Lesen von Beiträgen mit 280 Zeichen die letzten 20 Zeichen nicht mehr ignoriert. (<A HREF="https://github.com/nvaccess/nvda/issues/7828">#7828</A>)
-<LI>Beim Markieren von Text sagt NVDA Sonderzeichen und Symbole jetzt in der richtigen Sprache an. (<A HREF="https://github.com/nvaccess/nvda/issues/7687">#7687</A>)
-<LI>in aktuellen Versionen von Office können Sie wieder mit den Pfeiltasten in Microsoft Excel-Diagrammen navigieren. (<A HREF="https://github.com/nvaccess/nvda/issues/7046">#7046</A>)
+<LI>Beim Markieren von Text sagt NVDA die Sonderzeichen und Symbole jetzt in der richtigen Sprache an. (<A HREF="https://github.com/nvaccess/nvda/issues/7687">#7687</A>)
+<LI>In aktuellen Versionen von Microsoft Office können Sie wieder mit den Pfeiltasten in Microsoft Excel-Diagrammen navigieren. (<A HREF="https://github.com/nvaccess/nvda/issues/7046">#7046</A>)
 <LI>Der Status für aktivierbare Kontrollfelder wird nun in Sprache und braille immer in der richtigen Reihenfolge ausgegeben, sowohl im positiven als auch im negativen Fall. (<A HREF="https://github.com/nvaccess/nvda/issues/7076">#7076</A>)
 <LI>In Windows-Apps wie windows Mail sagt nVDA gelöschte zeichen beim Drücken der Rücktaste korrekt an. (<A HREF="https://github.com/nvaccess/nvda/issues/7456">#7456</A>)
 <LI>Alle Tasten der Hims Braille Sense Polaris Braillezeilen funktionieren nun richtig. (<A HREF="https://github.com/nvaccess/nvda/issues/7865">#7865</A>)
@@ -764,8 +764,8 @@ Zu den Highlights dieser Version gehören die Unterstützung für Diagramme in M
 <H2>2017.4</H2>
 
 <P>
-Schwerpunkt dieser Version sind zahlreiche Verbesserungen und Fehlerbehebungen im Lesemodus. Hierzu zählen die standardmäßige Verwendung des lesemodus in Webdialogen, eine verbesserte Anzeige von Beschriftungen von Gruppenfeldern im lesemodus, die Unterstützung neuer Windows-10-Technologien wie Windows Defender Application Guard und Windows 10 auf ARM64 sowie die automatische ausgabe der ausrichtung (hoch- oder Querformat) des Bildschirmes sowie des Akku-Status.
-Bitte beachten Sie, dass diese NVDA-Version unter Windows XP und Windows Vista nicht mehr ausgeführt werden kann. Sie benötigen mindestens Windows 7 mit Service pack 1.
+Schwerpunkt dieser Version sind zahlreiche Verbesserungen und Fehlerbehebungen im Lesemodus. Hierzu zählen die standardmäßige Verwendung des Lesemodus in Web-Dialogen, eine verbesserte Anzeige der Beschriftungen von Gruppierungen im Lesemodus, die Unterstützung neuer Windows 10-Technologien wie Windows Defender Application Guard und Windows 10 auf ARM64 sowie die automatische Ausgabe der Ausrichtung (Hoch- oder Querformat) des Bildschirms sowie des Akku-Status.
+Bitte beachten Sie, dass diese NVDA-Version unter Windows XP und Windows Vista nicht mehr läuft. Sie benötigen mindestens Windows 7 mit Service pack 1.
 </P>
 
 <H3>Neue Funktionen</H3>
@@ -812,7 +812,7 @@ Bitte beachten Sie, dass diese NVDA-Version unter Windows XP und Windows Vista n
 <UL>
 <LI>In Anwendungen, wie Microsoft Word, werden Links nun in Braille angezeigt. (<A HREF="https://github.com/nvaccess/nvda/issues/6780">#6780</A>)
 <LI>Wenn in Firefox oder Google Chrome viele Registerkarten geöffnet sind, reagiert NVDA nun schneller. (<A HREF="https://github.com/nvaccess/nvda/issues/3138">#3138</A>)
-<LI>Die Cursor-Routingtasten von MDV Lilli-Braillezeilen platzieren den Cursor nicht mehr eine Position hinter die gedrückte Position. (<A HREF="https://github.com/nvaccess/nvda/issues/7469">#7469</A>)
+<LI>Die Cursor-Routing-Tasten von MDV Lilli-Braillezeilen platzieren den Cursor nicht mehr eine Position hinter die gedrückte Position. (<A HREF="https://github.com/nvaccess/nvda/issues/7469">#7469</A>)
 <LI>Im Internet Explorer und anderen MSHTML-Dokumenten wird das Attribut Required korrekt unterstützt, sodass NVDA angiebt, dass ein Formularfeld zwingend ausgefüllt werden muss. (<A HREF="https://github.com/nvaccess/nvda/issues/7321">#7321</A>)
 <LI>Die Anzeige in Braille wird beim Eingeben arabischer Zeichen aktualisiert. (<A HREF="https://github.com/nvaccess/nvda/issues/511">#511</A>).
 <LI>In Firefox wird die Beschriftung von Formularelementen auch dann angezeigt, wenn die Beschriftung nicht auf den Formularelementen selbst zu finden ist. (<A HREF="https://github.com/nvaccess/nvda/issues/4773">#4773</A>)
@@ -988,7 +988,7 @@ Schwerpunkte dieser Version sind u. a. eine volle Unterstützung von Audio-Ducki
 <LI>Adobe Acrobat Reader stürtzt nicht mehr bei bestimmten PDF-Dokumenten ab (speziell jene, die ein lehres ActualText-Atribut haben). (<A HREF="https://github.com/nvaccess/nvda/issues/7021">#7021</A>, <A HREF="https://github.com/nvaccess/nvda/issues/7034">#7034</A>)
 <LI>Im Lesemodus von Microsoft Edge werden interaktive Tabellen (Aria-Gitternetzlinien) nicht mehr übersprungen, wenn Sie mit den Schnelltasten T und Umschalt+T navigieren. (<A HREF="https://github.com/nvaccess/nvda/issues/6977">#6977</A>)
 <LI>Wenn Sie im Lesemodus Umschalt+Pos1 drücken, nachdem Sie einen Text vorwärts markiert haben, wird nun die Zeile wie erwartet rückwärts demarkiert. (<A HREF="https://github.com/nvaccess/nvda/issues/5746">#5746</A>)
-<LI>Im Lesemodus funktioniert das Markieren des gesamten Dokuments mit Strg+A auch dann, wenn sich der Systemcursor nicht am Anfang des Dokuments befindet. (<A HREF="https://github.com/nvaccess/nvda/issues/6909">#6909</A>)
+<LI>Im Lesemodus funktioniert das Markieren des gesamten Dokuments mit Strg+A auch dann, wenn sich der System-Cursor nicht am Anfang des Dokuments befindet. (<A HREF="https://github.com/nvaccess/nvda/issues/6909">#6909</A>)
 <LI>Einige weitere Fehler beim Markieren im Lesemodus wurden behoben.. (<A HREF="https://github.com/nvaccess/nvda/issues/7131">#7131</A>)
 </UL>
 
@@ -1195,7 +1195,7 @@ Schwerpunkte dieser Version sind u. a. eine Möglichkeit zum Deaktivieren einzel
 <LI>Leistungsverbesserungen im Filter-Dialog im Lesemodus. (<A HREF="https://github.com/nvaccess/nvda/issues/6126">#6126</A>)
 <LI>Die von NVDA zurückgegebenen namen für Filtergrundmuster in Excel entsprechen jetzt denen, die tatsächlich in Excel verwendet wurden. (<A HREF="https://github.com/nvaccess/nvda/issues/6092">#6092</A>)
 <LI>Verbesserungen im Anmeldebildschirm von Windows 10 (einschließlich Aktivierung des Kennwortfeldes mittels Berührung) und der Ansage von Meldungen. (<A HREF="https://github.com/nvaccess/nvda/issues/6010">#6010</A>)
-<LI>NVDA unterstützt nun die zweiten Routingtasten an Alva BC640/680-Braillezeilen. (<A HREF="https://github.com/nvaccess/nvda/issues/5206">#5206</A>)
+<LI>NVDA unterstützt nun die zweiten Routing-Tasten an Alva BC640/680-Braillezeilen. (<A HREF="https://github.com/nvaccess/nvda/issues/5206">#5206</A>)
 <LI>NVDA kann Windows 10-Benachrichtigungen nun wieder anzeigen. Dies betrifft vor allem aktuelle Versionen von Windows 10. (<A HREF="https://github.com/nvaccess/nvda/issues/6096">#6096</A>)
 <LI>NVDA erkennt Tastendrücke an Baum-/Humanware-Braillezeilen zuverlässiger. (<A HREF="https://github.com/nvaccess/nvda/issues/6035">#6035</A>)
 <LI>Wenn die Ausgabe von Zeilennummern im Dialog für Dokumentformatierungen aktiviert ist, werden die Zeilennummern auch in Braille angezeigt. (<A HREF="https://github.com/nvaccess/nvda/issues/5941">#5941</A>)
@@ -1761,19 +1761,19 @@ Schwerpunkte dieser Version sind: LeseModus für Microsoft Word- und Outlook-Dok
 <LI>Im Dialog der Rechtschreibprüfung in Microsoft Word wird nun das falsch geschriebene Wort korrekt angezeigt, anstatt das erste fett gedruckte Wort anzuzeigen. (<A HREF="https://github.com/nvaccess/nvda/issues/3431">#3431</A>)
 <LI>Lesemodus: Im Internet Explorer und anderen MSHTML-Dokumenten werden die Beschriftungen von Formularfeldern korrekt angezeigt, wenn Sie die Tab-Taste oder die Schnellnavigationstasten zur Navigation im Dokument verwenden. Dies betrifft vor allem Formularfelder, bei denen das HTML-Element Label zur Beschriftung verwendet wurde. (<A HREF="https://github.com/nvaccess/nvda/issues/4170">#4170</A>)
 <LI>Die Existenz von Kommentaren wird in Microsoft Word zuverlässiger gemeldet. (<A HREF="https://github.com/nvaccess/nvda/issues/3528">#3528</A>)
-<LI>Der Umgang mit Dialogen in Microsoft Office-Produkten Word, Excel und Outlook wurde verbessert, indem manche Container-Symbolleisten ignoriert werden, die für den Anwender nicht hilfreich sind. (<A HREF="https://github.com/nvaccess/nvda/issues/4198">#4198</A>)
-<LI>Wenn Sie Word oder Excel öffnen, werden Aufgabenbereiche wie das Fenster zur Dateiwiederherstellung oder der Zwischenablagen-Manager nicht mehr versehentlich in den Fokus genommen. (<A HREF="https://github.com/nvaccess/nvda/issues/4199">#4199</A>)
-<LI>Wenn NVDA auf serbischen Windows-Systemen verwendet wird, funktioniert es ordnungsgemäß. (<A HREF="https://github.com/nvaccess/nvda/issues/4203">#4203</A>)
-<LI>NVDA verhält sich nun korrekt, wenn Sie bei eingeschalteter Eingabehilfe Numlock drücken, um den Nummernblock ein- oder auszuschalten. (<A HREF="https://github.com/nvaccess/nvda/issues/4226">#4226</A>)
+<LI>Der Umgang mit Dialogfeldern in Microsoft Word, Microsoft Excel und Microsoft Outlook wurde verbessert, indem manche Container-Symbolleisten ignoriert werden, die für den Anwender nicht hilfreich sind. (<A HREF="https://github.com/nvaccess/nvda/issues/4198">#4198</A>)
+<LI>Wenn Sie Microsoft Word oder Microsoft Excel öffnen, werden Aufgabenbereiche wie das Fenster zur Datei-Wiederherstellung oder der Zwischenablagen-Manager nicht mehr versehentlich in den Fokus genommen. (<A HREF="https://github.com/nvaccess/nvda/issues/4199">#4199</A>)
+<LI>NVDA funktioniert nun ordnungsgemäß auf serbischen Windows-Systemen. (<A HREF="https://github.com/nvaccess/nvda/issues/4203">#4203</A>)
+<LI>NVDA verhält sich nun korrekt, wenn Sie bei eingeschalteter Eingabehilfe die Taste für den Nummernblock drücken, um den Nummernblock ein- oder auszuschalten. (<A HREF="https://github.com/nvaccess/nvda/issues/4226">#4226</A>)
 <LI>In Google Chrome wird der Titel des Dokuments gelesen, wenn Sie die Registerkarte wechseln. (<A HREF="https://github.com/nvaccess/nvda/issues/4222">#4222</A>)
 <LI>In Google Chrome und Chrome-basierten Browsern wird die Adresse des Dokuments nicht mehr gelesen, wenn Sie das Dokument lesen. (<A HREF="https://github.com/nvaccess/nvda/issues/4223">#4223</A>)
-<LI>Der Sprachausgabentreiber "Keine Sprache" simuliert nun ein vollständiges "alles lesen", Dies ist insbesondere für automatisierte Tests nützlich. (<A HREF="https://github.com/nvaccess/nvda/issues/4225">#4225</A>)
-<LI>Der Dialog zum Bearbeiten von Signaturen in Outlook ist nun voll zugänglich (Incl. Formaterkennung und Cursorverfolgung). (<A HREF="https://github.com/nvaccess/nvda/issues/3833">#3833</A>)
+<LI>Der Treiber für die Sprachausgaben "Keine Sprache" simuliert nun ein vollständiges "alles lesen", Dies ist insbesondere für automatisierte Tests nützlich. (<A HREF="https://github.com/nvaccess/nvda/issues/4225">#4225</A>)
+<LI>Der Dialogfeld zum Bearbeiten von Signaturen in Outlook ist nun voll zugänglich (Incl. Formaterkennung und Cursor-Verfolgung). (<A HREF="https://github.com/nvaccess/nvda/issues/3833">#3833</A>)
 <LI>Wenn Sie in Microsoft Word die letzte Zeile einer Tabellenzelle lesen, wird nicht mehr die gesamte Zelle gelesen. (<A HREF="https://github.com/nvaccess/nvda/issues/3421">#3421</A>)
 <LI>In Microsoft Word wird nicht mehr das gesamte Inhaltsverzeichnis gelesen, wenn Sie die erste oder letzte Zeile in einem Inhaltsverzeichnis lesen. (<A HREF="https://github.com/nvaccess/nvda/issues/3421">#3421</A>)
-<LI>Beim sprechen geschriebener Wörter und in einigen anderen Fällen, werden indische Wörter, die Vokalzeichen und Virama enthalten, nicht mehr fälschlicherweise zerteilt. (<A HREF="https://github.com/nvaccess/nvda/issues/4254">#4254</A>)
+<LI>Bei Wörtern während der Eingabe und in einigen anderen Fällen werden indische Wörter, die Vokalzeichen und Virama enthalten, nicht mehr fälschlicherweise zerteilt. (<A HREF="https://github.com/nvaccess/nvda/issues/4254">#4254</A>)
 <LI>Numerische Eingabefelder in GoldWave werden korrekt verarbeitet. (<A HREF="https://github.com/nvaccess/nvda/issues/670">#670</A>)
-<LI>Wenn Sie sich in Microsoft Word absatzweise durch numerierte Listen oder Aufzählungslisten bewegen, müssen Sie die Tastenkonbinationen Strg+Pfeil auf/ab nicht mehr zweimal drücken. (<A HREF="https://github.com/nvaccess/nvda/issues/3290">#3290</A>)
+<LI>Wenn Sie sich in Microsoft Word absatzweise durch numerierte Listen oder Aufzählungslisten bewegen, müssen Sie die Tastenkonbinationen Strg+Pfeil nach oben/unten nicht mehr zweimal Drücken. (<A HREF="https://github.com/nvaccess/nvda/issues/3290">#3290</A>)
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
@@ -1818,14 +1818,14 @@ Schwerpunkte dieser Version sind: LeseModus für Microsoft Word- und Outlook-Dok
 <LI>Wenn im Lesemodus im Internet Explorer ein Element als gestaltendes Element markiert wurde (indem "aria-presentation" verwendet wird), wird der enthaltene Text nicht mehr ignoriert. (<A HREF="https://github.com/nvaccess/nvda/issues/4031">#4031</A>)
 <LI>Sie können nun wieder das Programm Unikey verwenden, um vietnamesische Sonderzeichen einzugeben. Deaktivieren Sie hierzu die neu hinzugekommene Option "Tastendrücke anderer Anwendungen verarbeiten" in den Tastatureinstellungen. (<A HREF="https://github.com/nvaccess/nvda/issues/4043">#4043</A>)
 <LI>Im Lesemodus werden aktivierbare menüeinträge (mit und ohne Mehrfachauswahl) innerhalb von anklickbarem Text erkannt. (<A HREF="https://github.com/nvaccess/nvda/issues/4092">#4092</A>)
-<LI>Wenn ein aktivierbarer Menüeintrag (mit oder ohne mehrfachauswahl) den Fokus erhält, wird nicht mehr vom Fokus- in den lesemodus gewechselt. (<A HREF="https://github.com/nvaccess/nvda/issues/4092">#4092</A>)
-<LI>Wenn in PowerPoint die Wortweise Ansage aktiviert ist, werden gelöschte Zeichen nicht mehr als Teil eines eingegebenen Wortes angesagt. (<A HREF="https://github.com/nvaccess/nvda/issues/3231">#3231</A>)
-<LI>In den Einstellungen von Office 2010 werden Kombinationsfelder korrekt beschriftet. (<A HREF="https://github.com/nvaccess/nvda/issues/4056">#4056</A>)
-<LI>Die Schnellnavigationsbefehle für Formularfelder und Schalter berücksichtigen in Mozilla-Anwendungen auch Umschalter. (<A HREF="https://github.com/nvaccess/nvda/issues/4098">#4098</A>)
+<LI>Wenn ein aktivierbarer Menü-Eintrag (mit oder ohne Mehrfachauswahl) den Fokus erhält, wird nicht mehr vom Fokus- in den Lesemodus gewechselt. (<A HREF="https://github.com/nvaccess/nvda/issues/4092">#4092</A>)
+<LI>Wenn in Microsoft PowerPoint die wortweise Ansage aktiviert ist, werden gelöschte Zeichen nicht mehr als Teil eines eingegebenen Wortes angesagt. (<A HREF="https://github.com/nvaccess/nvda/issues/3231">#3231</A>)
+<LI>In den Einstellungen von Microsoft Office 2010 werden Kombinationsfelder korrekt beschriftet. (<A HREF="https://github.com/nvaccess/nvda/issues/4056">#4056</A>)
+<LI>Die Schnellnavigationsbefehle für Formularfelder und Schalter berücksichtigen in Mozilla-Anwendungen auch die Umschalter. (<A HREF="https://github.com/nvaccess/nvda/issues/4098">#4098</A>)
 <LI>Hinweisdialoge werden in Mozilla-Anwendungen nicht mehr doppelt angesagt. (<A HREF="https://github.com/nvaccess/nvda/issues/3481">#3481</A>)
-<LI>Wenn im Lesemodus eine Webseite automatisch aktualisiert wird, werden Sprungmarken und Containerinhalte nicht doppelt angesagt, sobald in ihnen navigiert wird (z. B. Twitter und Facebook). (<A HREF="https://github.com/nvaccess/nvda/issues/2199">#2199</A>)
+<LI>Wenn im Lesemodus eine Webseite automatisch aktualisiert wird, werden Sprungmarken und Container-Inhalte nicht doppelt vorgelesen, sobald darin navigiert wird (z. B. Twitter und Facebook). (<A HREF="https://github.com/nvaccess/nvda/issues/2199">#2199</A>)
 <LI>Wenn Sie den Fokus von einer Anwendung wegschalten, die nicht mehr reagiert, wird sich NVDA zuverlässiger neu starten. (<A HREF="https://github.com/nvaccess/nvda/issues/3825">#3825</A>)
-<LI>Wenn sich der Systemcursor in einem Eingabefeld befindet, das direkt auf den Bildschirm geschrieben wird, wird die Position des Systemcursors zuverlässiger aktualisiert, wenn Sie die Funktion "alles lesen" verwenden. (<A HREF="https://github.com/nvaccess/nvda/issues/4125">#4125</A>)
+<LI>Wenn sich der System-Cursor in einem Eingabefeld befindet, das direkt auf den Bildschirm geschrieben wird, wird die Position des System-Cursors zuverlässiger aktualisiert, wenn Sie die Funktion "alles lesen" verwenden. (<A HREF="https://github.com/nvaccess/nvda/issues/4125">#4125</A>)
 </UL>
 
 <H2>2014.1</H2>
@@ -2163,8 +2163,8 @@ Für weitere Informationen sehen Sie in der <A HREF="keyCommands.html">Befehlsre
 <LI>Die Installation von NVDA wird nun nicht mehr fehlschlagen, wenn der Name des Benutzerprofilverzeichnisses bestimmte Multibyte-Zeichen enthält. (<A HREF="https://github.com/nvaccess/nvda/issues/2729">#2729</A>)
 <LI>Bei der Ausgabe von Gruppen in Listen-Steuerelementen (syslistview32) in 64-Bit-Anwendungen kommt es nun nicht mehr zu einem Fehler.
 <LI>Im Lesemodus von Mozilla-Anwendungen werden Textinhalte nun nicht mehr fälschlicherweise als deaktiviert angezeigt, auch wenn das selten der Fall ist. (<A HREF="https://github.com/nvaccess/nvda/issues/2959">#2959</A>)
-<LI>In IBM Lotus Symphony und Openoffice.org wird nun der NVDA-Cursor mitgezogen, wenn der Systemcursor bewegt wird.
-<LI>Im Internet Explorer unter Windows 8 sind Adobe-Flash-Inhalte nun zugänglich. (<A HREF="https://github.com/nvaccess/nvda/issues/2454">#2454</A>)
+<LI>In IBM Lotus Symphony und Apache OpenOffice wird nun der NVDA-Cursor mitgezogen, wenn der System-Cursor bewegt wird.
+<LI>Im Internet Explorer unter Windows 8 sind Inhalte mit Adobe Flash nun zugänglich. (<A HREF="https://github.com/nvaccess/nvda/issues/2454">#2454</A>)
 <LI>Bluetooth-Unterstützung für Papenmeier Braillex Trio korrigiert. (<A HREF="https://github.com/nvaccess/nvda/issues/2995">#2995</A>)
 <LI>Bestimmte Microsoft SAPI-5-Stimmen wie z. B. Stimmen von Koba Speech konnten von NVDA nicht verwendet werden. Dies wurde nun behoben (<A HREF="https://github.com/nvaccess/nvda/issues/2629">#2629</A>).
 <LI>In Java-Anwendungen wird nun die Braille-Anzeige korrekt aktualisiert, wenn Sie sich innerhalb von Textfeldern bewegen. (<A HREF="https://github.com/nvaccess/nvda/issues/3107">#3107</A>)
@@ -2228,7 +2228,7 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
  </UL>
 <LI>Es ist nun möglich, NVDA auf die Standard-Einstellungen zurückzusetzen. Dies kann entweder durch dreimaliges Drücken von NVDA+Strg+R oder durch Wählen von "Auf Standard-Einstellungen zurücksetzen" im NVDA-Menü erledigt werden. (<A HREF="https://github.com/nvaccess/nvda/issues/2086">#2086</A>)
 <LI>Unterstützung der Braillezeilen SEIKA Version 3, 4 und 5 sowie Seika80 von Nippon Telesoft. (<A HREF="https://github.com/nvaccess/nvda/issues/2452">#2452</A>)
-<LI>Bei Braillezeilen PAC Mate und Focus von Freedom Scientific können die Routingtasten über dem ersten oder letzten Modul nun zum Rückwärts- oder Vorwärtsscrollen verwendet werden (<A HREF="https://github.com/nvaccess/nvda/issues/2556">#2556</A>)
+<LI>Bei Braillezeilen PAC Mate und Focus von Freedom Scientific können die Routing-Tasten über dem ersten oder letzten Modul nun zum Rückwärts- oder Vorwärtsscrollen verwendet werden (<A HREF="https://github.com/nvaccess/nvda/issues/2556">#2556</A>)
 <LI>Viele weitere Funktionen der Braillezeilen Focus von Freedom Scientific erweiterte Tastenreihe, Daumenräder und bestimmte Punktkombinationen für allgemeine Funktionen werden unterstützt. (<A HREF="https://github.com/nvaccess/nvda/issues/2516">#2516</A>)
 <LI>In Anwendungen, die IAccessible2 verwenden (wie z. B. Mozilla-Anwendungen) werden nun Spalten- und Zeilenüberschriften auch außerhalb des Lesemodus angezeigt. (<A HREF="https://github.com/nvaccess/nvda/issues/926">#926</A>)
 <LI>Vorläufige Unterstützung für die Dokumentsteuerung in Microsoft Word 2013. (<A HREF="https://github.com/nvaccess/nvda/issues/2543">#2543</A>)
@@ -2410,7 +2410,7 @@ Die wichtigsten Neuerungen für diese Version beinhalten Funktionen, um Braille 
 <LI>Unterstützung für die hedo ProfiLine und MobilLine USB Braillezeilen. (<A HREF="https://github.com/nvaccess/nvda/issues/1863">#1863</A>, <A HREF="https://github.com/nvaccess/nvda/issues/1897">#1897</A>)
 <LI>NVDA bricht nun standardmäßig Wörter in Braille um. Dies kann in den Braille-Einstellungen ausgeschaltet werden. (<A HREF="https://github.com/nvaccess/nvda/issues/1890">#1890</A>, <A HREF="https://github.com/nvaccess/nvda/issues/1946">#1946</A>)
 <LI>Text kann auf der Braillezeile Absatzweise anstatt Zeilenweise angezeigt werden. Dies erlaubt ein flüssigeres Lesen großer Textmengen. Die Einstellung kann über die Option "absatzweise lesen" in den Braille-Einstellungen konfiguriert werden. (<A HREF="https://github.com/nvaccess/nvda/issues/1891">#1891</A>)
-<LI>Im Lesemodus können Sie nun durch einmaliges Drücken einer Routingtaste der Braillezeile das Objekt unter dem Cursor aktivieren. Dies bedeutet, dass Sie die Routingtaste zweimal drücken müssen, falls sich der Cursor noch nicht auf dem Objekt befindet. (<A HREF="https://github.com/nvaccess/nvda/issues/1893">#1893</A>)
+<LI>Im Lesemodus können Sie nun durch einmaliges Drücken einer Routing-Taste der Braillezeile das Objekt unter dem Cursor aktivieren. Dies bedeutet, dass Sie die Routing-Taste zweimal drücken müssen, falls sich der Cursor noch nicht auf dem Objekt befindet. (<A HREF="https://github.com/nvaccess/nvda/issues/1893">#1893</A>)
 <LI>Grundlegende Unterstützung für Internet-Bereiche in iTunes wie z. B. der Store. Andere Anwendungen, welche auf WebKit 1 beruhen, werden möglicherweise ebenfalls unterstützt. (<A HREF="https://github.com/nvaccess/nvda/issues/734">#734</A>)
 <LI>In Büchern in Adobe Digital Editions 1.8.1 und neuer erfolgt nun ein automatischer Seitenwechsel, wenn Sie die Funktion "Alles lesen" verwenden. (<A HREF="https://github.com/nvaccess/nvda/issues/1978">#1978</A>)
 <LI>Neue Braillezeichensätze: Portugiesische Kurzschrift, Isländisches 8-Punkt-Computerbraille, Tamilische Vollschrift, Spanisches 8-Punkt-Computerbraille, Persische Vollschrift. (<A HREF="https://github.com/nvaccess/nvda/issues/2014">#2014</A>)
@@ -2428,7 +2428,7 @@ Die wichtigsten Neuerungen für diese Version beinhalten Funktionen, um Braille 
 <LI>Sprachausgabe eSpeak auf 1.46.02 aktualisiert.
 <LI>Wenn bei der Darstellung von Links und Grafiken der Name aus der Adresse ermittelt werden muss, werden Namen abgekürzt, die länger als 30 zeichen sind. Derart lange Namen enthalten meist nutzlose Informationen. (<A HREF="https://github.com/nvaccess/nvda/issues/1989">#1989</A>)
 <LI>Einige neue verkürzte Klassennamen in Braille hinzugefügt (<A HREF="https://github.com/nvaccess/nvda/issues/1955">#1955</A>, <A HREF="https://github.com/nvaccess/nvda/issues/2043">#2043</A>)
-<LI>Wenn der Systemcursor oder der NVDA-Cursor bewegt wird, wird die Braillezeile so mitbewegt, wie wenn man die Braillezeile manuell weiterbewegen würde. Dies erleichtert das lesen, wenn die Einstellungen Absatzweise lesen und/oder der Wortumbruch aktiviert ist. (<A HREF="https://github.com/nvaccess/nvda/issues/1996">#1996</A>)
+<LI>Wenn der System-Cursor oder der NVDA-Cursor bewegt wird, wird die Braillezeile so mitbewegt, wie wenn man die Braillezeile manuell weiterbewegen würde. Dies erleichtert das lesen, wenn die Einstellungen Absatzweise lesen und/oder der Wortumbruch aktiviert ist. (<A HREF="https://github.com/nvaccess/nvda/issues/1996">#1996</A>)
 <LI>Braille-Übersetzungstabelle für spanische Vollschrift aktualisiert.
 <LI>Liblouis Braille-Übersetzer auf die Version 2.4.1 aktualisiert.
 </UL>
@@ -2436,7 +2436,7 @@ Die wichtigsten Neuerungen für diese Version beinhalten Funktionen, um Braille 
 <H3>Fehlerbehebungen</H3>
 
 <UL>
-<LI>im Windows-Explorer In Windows 8 wird der Fokus nun nicht mehr unerwartet aus dem Suchfeld springen. Dieser Fehler machte es unmöglich, mit NVDA mit dem windows-suchfeld zu arbeiten.
+<LI>Im Windows-Explorer In Windows 8 wird der Fokus nun nicht mehr unerwartet aus dem Suchfeld springen. Dieser Fehler machte es unmöglich, mit NVDA mit dem windows-suchfeld zu arbeiten.
 <LI>Optimierungen beim Lesen von und Navigieren in Microsoft Word-Dokumenten, wenn die ausgabe von Formatierungen eingeschaltet ist, sodass man konfortabel die Formatierung o. Ä. prüfen kann. Einige Benutzer werden möglicherweise eine Geschwindigkeitssteigerung bemerken.
 <LI>Für Flash-Inhalte, die im Vollbildmodus dargestellt werden, wird nun der Lesemodus benutzt.
 <LI>Probleme mit der Klangqualität in einigen Fällen behoben, in denen als Ausgabegerät etwas anderes eingestellt ist als "Microsoft Sound Mapper". Dies betrifft vor allem Microsoft SAPI Version 5. (<A HREF="https://github.com/nvaccess/nvda/issues/749">#749</A>)
@@ -2451,20 +2451,20 @@ Die wichtigsten Neuerungen für diese Version beinhalten Funktionen, um Braille 
 <LI>Wenn die Option "Bei Änderungen des Fokuses automatisch den Fokusmodus einschalten" aktiviert ist, wird der Fokus-Modus korrekt für fokusierte Tabellenzeilen z. B. in ARIA-Gittern verwendet. (<A HREF="https://github.com/nvaccess/nvda/issues/1763">#1763</A>)
 <LI>In Adobe Reader werden einige Links nicht mehr fälschlicherweise als schreibgeschützte Eingabefelder erkannt.
 <LI>Beim Lesen von Dialogfeldern werden nun keine Beschriftungen für Eingabefelder mehr einbezogen (<A HREF="https://github.com/nvaccess/nvda/issues/1960">#1960</A>)
-<LI>Wenn die Ansage von Objektbeschreibungen aktiviert ist, werden nun auch Beschreibungen von Gruppenfeldern ausgelesen.
-<LI>In den Laufwerkseigenschaften im Explorer wird nun auch die gerundete laufwerksgröße korrekt ausgelesen.
+<LI>Wenn die Ansage von Objektbeschreibungen aktiviert ist, werden nun auch Beschreibungen von Gruppenfeldern vorgelesen.
+<LI>In den Laufwerks-Eigenschaften im Windows-Explorer wird nun auch die gerundete laufwerksgröße korrekt ausgelesen.
 <LI>Die doppelte Ansage von Texten auf Registerkarten wird in einigen Fällen vermieden. (<A HREF="https://github.com/nvaccess/nvda/issues/218">#218</A>)
-<LI>Das Verhalten in einigen Eingabefeldern wurde verbessert, bei denen der Text direkt auf den Bildschirm geschrieben wird. Dies gilt insbesondere für den Excel-Zelleneditor und für den Nachrichteneditor in Eudora. (<A HREF="https://github.com/nvaccess/nvda/issues/1658">#1658</A>)
-<LI>In Firefox 11 funktioniert der Befehl "Zum Inhalt des Lesemodus zurückkehren" (NVDA+Steuerung+Leertaste) nun ordnungsgemäß und verlässt eingebettete Objekte wie Flasch-Inhalte.
-<LI>NVDA startet sich nun korrekt neu, wenn z. B. die eingestellte Sprache geändert wird und NVDA in einen Ordner installiert wurde, welcher nicht-ASCII-Zeichen enthält. (<A HREF="https://github.com/nvaccess/nvda/issues/2079">#2079</A>)
+<LI>Das Verhalten in einigen Eingabefeldern wurde verbessert, bei denen der Text direkt auf den Bildschirm ausgegeben wird. Dies gilt insbesondere für den Excel-Zelleneditor und für den Nachrichteneditor in Eudora. (<A HREF="https://github.com/nvaccess/nvda/issues/1658">#1658</A>)
+<LI>In Mozilla Firefox 11 funktioniert der Befehl "Zum Inhalt des Lesemodus zurückkehren" (NVDA+Steuerung+Leertaste) nun ordnungsgemäß und verlässt eingebettete Objekte wie Flasch-Inhalte.
+<LI>NVDA startet nun korrekt neu, wenn z. B. die eingestellte Sprache geändert und NVDA in einen Ordner installiert wurde, der keine ASCII-Zeichen enthält. (<A HREF="https://github.com/nvaccess/nvda/issues/2079">#2079</A>)
 <LI>In Braille werden nun die Einstellungen zur Anzeige von Objektposition, Kurztasten und objektbeschreibungen berücksichtigt.
-<LI>In Mozilla-Anwendungen ist das wechseln zwischen Fokus- und Lesemodus nicht mehr so langsam, wenn die Braille-Ausgabe aktiviert ist. (<A HREF="https://github.com/nvaccess/nvda/issues/2095">#2095</A>)
-<LI>Wenn die Routingtasten benutzt werden, um den Cursor an ein Leerzeichen zu ziehen, das sich am Ende einer Zeile befindet, funktioniert das Routing nun korrekt; der Cursor wird nun nicht mehr an den Anfang des Textes gezogen. (<A HREF="https://github.com/nvaccess/nvda/issues/2096">#2096</A>)
-<LI>NVDA arbeitet nun wieder korrekt mit der Sprachausgabe Audioologic Tts3. (<A HREF="https://github.com/nvaccess/nvda/issues/2109">#2109</A>)
-<LI>Microsoft-Word-dokumente werden korrekt als mehrzeilige Eingabefelder behandelt. Dies wirkt sich vor allem auf die anzeige in Braille aus, wenn ein Word-Dokument den Fokus erhält.
-<LI>In Microsoft Internet Explorer treten keine Fehler mehr auf, wenn bestimmte seltene Elemente fokusiert werden.(<A HREF="https://github.com/nvaccess/nvda/issues/2121">#2121</A>)
-<LI>Wenn ein Anwender die Aussprache von Satzzeichen und/oder Symbolen ändert, werden die Änderungen ohne Neustart von NVDA bzw. das deaktivierendes automatischen Sprachenwechsels übernommen.
-<LI>Wenn die Sprachausgabe eSpeak benutzt wird und Sie sich im Dialog speichern unter des Protokollbetrachters befinden, verstummt die Sprache in einigen Situationen nicht mehr. (<A HREF="https://github.com/nvaccess/nvda/issues/2145">#2145</A>)
+<LI>In Mozilla-Anwendungen ist das wechseln zwischen Fokus- und Lesemodus nicht mehr so träge, wenn die Braille-Ausgabe aktiviert ist. (<A HREF="https://github.com/nvaccess/nvda/issues/2095">#2095</A>)
+<LI>Wenn die Routing-Tasten benutzt werden, um den Cursor an ein Leerzeichen zu ziehen, das sich am Ende einer Zeile befindet, funktioniert das Routing nun korrekt; der Cursor wird nun nicht mehr an den Anfang des Textes gezogen. (<A HREF="https://github.com/nvaccess/nvda/issues/2096">#2096</A>)
+<LI>NVDA arbeitet nun wieder korrekt mit der Sprachausgabe Audioologic TTS3. (<A HREF="https://github.com/nvaccess/nvda/issues/2109">#2109</A>)
+<LI>Microsoft Word-Dokumente werden korrekt als mehrzeilige Eingabefelder behandelt. Dies wirkt sich vor allem auf die anzeige in Braille aus, wenn ein Word-Dokument den Fokus erhält.
+<LI>In Microsoft Internet Explorer treten keine Fehler mehr auf, wenn bestimmte seltene Elemente hervorgehoben werden.(<A HREF="https://github.com/nvaccess/nvda/issues/2121">#2121</A>)
+<LI>Wenn ein Anwender die Aussprache von Satzzeichen und/oder Symbolen ändert, werden die Änderungen ohne Neustart von NVDA bzw. das Deaktivieren des automatischen Sprachenwechsels übernommen.
+<LI>Wenn eSpeak benutzt wird und Sie sich im Dialogfeld "Speichern unter" des Protokollbetrachters befinden, verstummt die Sprachausgabe in einigen Situationen nicht mehr. (<A HREF="https://github.com/nvaccess/nvda/issues/2145">#2145</A>)
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
@@ -2474,16 +2474,16 @@ Die wichtigsten Neuerungen für diese Version beinhalten Funktionen, um Braille 
 <LI>Aus Gründen der besseren lesbarkeit wird beim Zurückverfolgen von Fehlern in den protokollen der Basispfad aus Dateireferenzen gestrichen. (<A HREF="https://github.com/nvaccess/nvda/issues/1880">#1880</A>)
 <LI>TextInfo-Objekte haben nun eine Methode namens Activate(), die das Aktivieren der von textinfo zurückgegebenen Position erlaubt.
  <UL>
- <LI>Dies erlaubt das Aktivieren unter Verwendung der Routingtasten einer Braillezeile. Hierfür könnte es jedoch in Zukunft andere Methoden geben.
+ <LI>Dies erlaubt das Aktivieren unter Verwendung der Routing-Tasten einer Braillezeile. Hierfür könnte es jedoch in Zukunft andere Methoden geben.
  </UL>
-<LI>TreeInterceptors und NVDAObjects, welche nur eine Seite beinhalten, können automatischen Seitenwechsel während alles lesen unterstützen, wenn sie textInfos.DocumentWithPageTurns verwenden. (<A HREF="https://github.com/nvaccess/nvda/issues/1978">#1978</A>)
+<LI>"TreeInterceptors" und "NVDAObjects", die nur eine Seite beinhalten, können automatischen Seitenwechsel während alles lesen unterstützen, wenn sie textInfos.DocumentWithPageTurns verwenden. (<A HREF="https://github.com/nvaccess/nvda/issues/1978">#1978</A>)
 <LI>Einige Konstanten für Steuerelemente und ausgaben wurden umbenannt oder verschoben. (<A HREF="https://github.com/nvaccess/nvda/issues/228">#228</A>)
  <UL>
- <LI>speech.REASON_*-Konstanten wurden in die Steuerelemente verschoben.
- <LI>Bei den Steuerelementen wurden speechRoleLabels und speechStateLabel in roleLabels bzw. stateLabels, umbenannt.
+ <LI>Die Konstanten "speech.REASON_*" wurden in die Steuerelemente verschoben.
+ <LI>Bei den Steuerelementen wurden "speechRoleLabels" und "speechStateLabel" in "roleLabels" bzw. "stateLabels" umbenannt.
  </UL>
 <LI>Der Text, welcher auf der Braillezeile angezeigt wird, wird ab der Protokollierungsstufe Ein- / Ausgabe protokolliert. Als erstes wird der unbehandelte Text angezeigt, gefolgt von den Braille-Modulen, die tatsächlich auf der Braillezeile angezeigt werden. (<A HREF="https://github.com/nvaccess/nvda/issues/2102">#2102</A>)
-<LI>Unterklassen des sapi5-treibers können _getVoiceTokens überschreiben und <U>init</U> erweitern, um benutzerdefinierte "voice tokens" zu unterstützen. So kann mit sapi.spObjectTokenCategory eine Stimme von einem benutzerdefinierten Standort in der Registry abgerufen werden.
+<LI>Unterklassen des SAPI5-Treibers können "_getVoiceTokens" überschreiben und "<U>init</U>" erweitern, um benutzerdefinierte "voice tokens" zu unterstützen. So kann mit "sapi.spObjectTokenCategory" eine Stimme von einem benutzerdefinierten Standort in der Registrierungsdatenbank abgerufen werden.
 </UL>
 
 <H2>2011.3</H2>
@@ -2583,7 +2583,7 @@ Die wichtigsten Neuerungen in dieser Version beinhalten umfangreiche Verbesserun
 <LI>Braillezeichen im Unicode-Format werden jetzt auf der Braillezeile richtig angezeigt. (<A HREF="https://github.com/nvaccess/nvda/issues/1505">#1505</A>)
 <LI>Wenn sich der Fokus Im Internet Explorer und anderen MSHTML-Dokumenten über eine Gruppe von Elementen bewegt, welche von einem "fieldset" umgeben ist, sagt NVDA den Namen der Gruppe, also die Legende an (<A HREF="https://github.com/nvaccess/nvda/issues/535">#535</A>).
 <LI>Im Internet Explorer und anderen MSHTML-Dokumenten werden jetzt die Eigenschaften "aria-labelledBy" und "aria-describedBy" beachtet.
-<LI>im Internet Explorer und anderen mshtml-Steuerelementen wurde die Unterstützung für ARIA-listen, Aria-Tabellenzellen, Schieberegler und Fortschrittsbalken verbessert.
+<LI>Im Internet Explorer und anderen mshtml-Steuerelementen wurde die Unterstützung für ARIA-listen, Aria-Tabellenzellen, Schieberegler und Fortschrittsbalken verbessert.
 <LI>Anwender können nun die Aussprache von Satzzeichen und anderen Symbolen ändern, so wie die Symbolebene, ab welcher sie angesagt werden. (<A HREF="https://github.com/nvaccess/nvda/issues/271">#271</A>, <A HREF="https://github.com/nvaccess/nvda/issues/1516">#1516</A>)
 <LI>In Microsoft Excel wird nun der Name des aktiven Blattes angesagt, wenn sie mit Steuerung+Bild auf bzw. Steuerung+Bild ab zwischen den Blättern wechseln. (<A HREF="https://github.com/nvaccess/nvda/issues/760">#760</A>)
 <LI>Beim Navigieren in Microsoft Word-Tabellen mit der Tabulator-Taste, wird NVDA nun die aktuelle Zelle ansagen, wenn sie sich bewegen (<A HREF="https://github.com/nvaccess/nvda/issues/159">#159</A>).
@@ -2599,7 +2599,7 @@ Die wichtigsten Neuerungen in dieser Version beinhalten umfangreiche Verbesserun
 <H3>Änderungen</H3>
 
 <UL>
-<LI>Um den Systemcursor zum NVDA-Cursor zu bewegen, führen Sie die Funktion "Fokus zum Navigator ziehen" (desktop NVDA+Umschalt+Nummernblock Minus, Laptop NVDA+Umschalt+Rücktaste) zwei Mal aus. Dies gibt mehr Tastenkombinationen für die künftige Verwendung frei. (<A HREF="https://github.com/nvaccess/nvda/issues/837">#837</A>)
+<LI>Um den System-Cursor zum NVDA-Cursor zu bewegen, führen Sie die Funktion "Fokus zum Navigator ziehen" (desktop NVDA+Umschalt+Nummernblock Minus, Laptop NVDA+Umschalt+Rücktaste) zwei Mal aus. Dies gibt mehr Tastenkombinationen für die künftige Verwendung frei. (<A HREF="https://github.com/nvaccess/nvda/issues/837">#837</A>)
 <LI>Um den dezimalen und hexadezimalen Code eines Zeichens zu erfahren, müssen Sie die Funktion "aktuelles zeichen ansagen" nun dreimal ausführen, da zweimaliges Ausführen die phonetische Beschreibung wiedergibt.
 <LI>eSpeak auf 1.45.03 aktualisiert. (<A HREF="https://github.com/nvaccess/nvda/issues/1465">#1465</A>)
 <LI>Layout-Tabellen werden im Mozilla Gecko-Anwendungen nicht mehr angesagt, während man sich im Fokus-Modus befindet und den Fokus bewegt bzw. außerhalb eines Dokuments.
@@ -2616,7 +2616,7 @@ Die wichtigsten Neuerungen in dieser Version beinhalten umfangreiche Verbesserun
 <LI>NVDA gibt nun den status eines Containers zurück, wenn sich der fokus auf ein Steuerelement innerhalb eines Containers bewegt. Wenn sie z. B. in ein html-Dokument springen, noch bevor es vollständig geladen wurde, wird dessen Status als "Beschäftigt" angezeigt.
 <LI>Die Benutzeroberfläche und die Dokumentation von NVDA verwenden nun nicht mehr die Begriffe "erstes Kind-Objekt" und "ElternObjekt", da diese im Zusammenhang mit objektnavigation verwirrend sein können.
 <LI>Der Status "reduziert" wird nun nicht mehr für Menüpunkte angezeigt, die ein Untermenü besitzen.
-<LI>Das Skript reportCurrentFormatting (NVDA+F) zeigt nun nicht mehr die Formatierungen am System-cursor, sondern die formatierungen am NVDA-Cursor an. Die meisten Anwender werden keinen Unterschied bemerken, weil der NVDA-Cursor standardmäßig dem Systemcursor folgt. Jetzt ist es jedoch möglich, z. B. im Flächenmodus die Formatierungen bestimmter Bildschirmbereiche abzufragen.
+<LI>Das Skript reportCurrentFormatting (NVDA+F) zeigt nun nicht mehr die Formatierungen am System-cursor, sondern die formatierungen am NVDA-Cursor an. Die meisten Anwender werden keinen Unterschied bemerken, weil der NVDA-Cursor standardmäßig dem System-Cursor folgt. Jetzt ist es jedoch möglich, z. B. im Flächenmodus die Formatierungen bestimmter Bildschirmbereiche abzufragen.
 </UL>
 
 <H3>Fehlerbehebungen</H3>
@@ -2681,8 +2681,8 @@ Die wichtigsten Neuerungen in dieser Version beinhalten umfangreiche Verbesserun
 <LI>In den Dialogen zum Verschieben und kopieren fährt sich NVDA nun nicht mehr fest. (<A HREF="https://github.com/nvaccess/nvda/issues/574">#574</A>)
 <LI>NVDA wird nun den Fokus in der Nachrichtenliste von Outlook 2010 korrekt verfolgen. (<A HREF="https://github.com/nvaccess/nvda/issues/1285">#1285</A>)
 <LI>einige Probleme beim Verbinden der MDV Lili-Braillezeile über USB behoben. (<A HREF="https://github.com/nvaccess/nvda/issues/241">#241</A>)
-<LI>im Internet Explorer und anderen MSHTML-Dokumenten werden nun Leerzeichen, die auf Links folgen, nicht mehr ignoriert.
-<LI>im Internet Explorer und anderen MSHTML-Dokumenten wurden unnötige Zeilenumbrüche entfernt, insbesondere erzeugen html-Elemente mit dem Attribut display=none keinen Zeilenumbruch mehr. (<A HREF="https://github.com/nvaccess/nvda/issues/1685">#1685</A>)
+<LI>Im Internet Explorer und anderen MSHTML-Dokumenten werden nun Leerzeichen, die auf Links folgen, nicht mehr ignoriert.
+<LI>Im Internet Explorer und anderen MSHTML-Dokumenten wurden unnötige Zeilenumbrüche entfernt, insbesondere erzeugen html-Elemente mit dem Attribut display=none keinen Zeilenumbruch mehr. (<A HREF="https://github.com/nvaccess/nvda/issues/1685">#1685</A>)
 <LI>Wenn NVDA nicht starten kann und die Wiedergabe des Klangs für kritische Fehler nicht möglich ist, wird keine Fehlermeldung mehr in die Protokolldatei geschrieben.
 </UL>
 
@@ -2787,7 +2787,7 @@ Unterstützung globaler Erweiterungen; die korrekte Anzeige von Aufzählungen un
 <LI>Anstatt leere Links anzuzeigen, benutzt NVDA im Internet Explorer und anderen MSHTML-Dokumenten nun die Zieladresse des Dokuments als Linkbeschriftung. (<A HREF="https://github.com/nvaccess/nvda/issues/633">#633</A>)
 <LI>In den Menüs vom AOL Instant Messenger 7 ignoriert NVDA nun nicht weiter den Fokus. (<A HREF="https://github.com/nvaccess/nvda/issues/655">#655</A>)
 <LI>Bei der Rechtschreibprüfung von Microsoft Word zeigt NVDA nun die korrekte Fehlerbeschreibung an (nicht im Wörterbuch, Gramatikfehler, Zeichensetzung). Bisher wurden alle Rechtschreibfehler als Gramatikfehler gekennzeichnet. (<A HREF="https://github.com/nvaccess/nvda/issues/883">#883</A>)
-<LI>Problem behoben, wonach beim Schreiben in Microsoft Word bei Verwendung einer Braillezeile falscher Text erzeugt wurde und Word abstürzte, sobald man eine Routingtaste drückte. (<A HREF="https://github.com/nvaccess/nvda/issues/1212">#1212</A>). Es gibt jedoch eine Einschränkung: In Word 2003 und älter können Sie keine arabischen Texte mehr lesen, wenn Sie eine Braillezeile verwenden. (<A HREF="https://github.com/nvaccess/nvda/issues/627">#627</A>)
+<LI>Problem behoben, wonach beim Schreiben in Microsoft Word bei Verwendung einer Braillezeile falscher Text erzeugt wurde und Word abstürzte, sobald man eine Routing-Taste drückte. (<A HREF="https://github.com/nvaccess/nvda/issues/1212">#1212</A>). Es gibt jedoch eine Einschränkung: In Word 2003 und älter können Sie keine arabischen Texte mehr lesen, wenn Sie eine Braillezeile verwenden. (<A HREF="https://github.com/nvaccess/nvda/issues/627">#627</A>)
 <LI>Wenn Sie in einem Eingabefeld die Entfern-Taste drücken, sollte sich die Anzeige auf der Braillezeile nun wie erwartet aktualisieren, um die Änderungen wiederzuspiegeln. (<A HREF="https://github.com/nvaccess/nvda/issues/947">#947</A>)
 <LI>Wenn in Gecko2-Dokumenten (Firefox 4) mehrere Registerkarten geöffnet sind, werden Änderungen auf dynamischen Webseiten nun korrekt von NVDA wiedergegeben. Bisher wurden nur Änderungen auf der ersten Registerkarte wiedergegeben. (Mozilla Fehlerbericht 610985)
 <LI>NVDA kann jetzt die Vorschläge bei der Grammatik- und Rechtschreibprüfung in Microsoft Word korrekt anzeigen. (<A HREF="https://github.com/nvaccess/nvda/issues/704">#704</A>)
@@ -2929,7 +2929,7 @@ Besondere Änderungen in dieser Version beinhalten eine sehr vereinfachte Objekt
 <LI>Falsche Ansagen von Zahlen (z. B. 1,023), die eine 0 nach dem Trennzeichen ausweisen, behoben. (<A HREF="https://github.com/nvaccess/nvda/issues/593">#593</A>)
 <LI>Adobe Acrobat Pro und Reader 9 werden nicht mehr abstürzen, wenn sie ein Dokument schließen. (<A HREF="https://github.com/nvaccess/nvda/issues/613">#613</A>)
 <LI>In Microsoft Word und in Eingabefeldern wird nun der gesamte markierte Text ausgegeben, wenn Sie Strg+A drücken. (<A HREF="https://github.com/nvaccess/nvda/issues/761">#761</A>)
-<LI>Wenn Sie sich In Scintilla-Steuerelementen wie notepad++ den gesamten Text vorlesen lassen und NVDA den Systemcursor bewegt, wird nun kein Text mehr markiert. (<A HREF="https://github.com/nvaccess/nvda/issues/746">#746</A>)
+<LI>Wenn Sie sich In Scintilla-Steuerelementen wie notepad++ den gesamten Text vorlesen lassen und NVDA den System-Cursor bewegt, wird nun kein Text mehr markiert. (<A HREF="https://github.com/nvaccess/nvda/issues/746">#746</A>)
 <LI>Es ist nun wieder möglich, sich mit dem NVDA-internen Cursor den Inhalt von Tabellenzellen in Microsoft Excel anzeigen zu lassen.
 <LI>In einigen problematischen mehrzeiligen Eingabefeldern in Internet Explorer 8 kann NVDA nun den Text zeilenweise auslesen. (<A HREF="https://github.com/nvaccess/nvda/issues/467">#467</A>)
 <LI>Windows Live Messenger 2009 stürzt nun nicht mehr nach dem Start ab, wenn NVDA läuft. (<A HREF="https://github.com/nvaccess/nvda/issues/677">#677</A>)
@@ -3261,7 +3261,7 @@ die wichtigsten Neuerungen dieser version sind u. a. die Unterstützung von 64-b
 <LI>Das NVDA-Programmsymbol wird jetzt anstelle eines Standardsymbols für die Verknüpfungen im Startmenü und auf dem Desktop verwendet.
 <LI>Beim Navigieren in Excel mit Tab und Umschalt+Tab werden die Zellen jetzt ordnungsgemäß gelesen (<A HREF="https://github.com/nvaccess/nvda/issues/146">#146</A>).
 <LI>Doppelte Ansagen in einigen Listen in Skype behoben.
-<LI>Verfolgung des Systemcursors in iAccessible2- und Java-Steuerelementen (wie OpenOffice.org und Lotus Symphony) behoben. NVDA wartet nun ab, bis sich der Systemcursor verschoben hat, anstatt versehentlich falsche Wörter, Zeilen oder Absätze zu lesen. (<A HREF="https://github.com/nvaccess/nvda/issues/119">#119</A>)
+<LI>Verfolgung des System-Cursors in iAccessible2- und Java-Steuerelementen (wie OpenOffice.org und Lotus Symphony) behoben. NVDA wartet nun ab, bis sich der System-Cursor verschoben hat, anstatt versehentlich falsche Wörter, Zeilen oder Absätze zu lesen. (<A HREF="https://github.com/nvaccess/nvda/issues/119">#119</A>)
 <LI>Unterstützung für Akeledit-Steuerelemente hinzgefügt, die z. B. in akelpad 4.0 zu finden sind.
 <LI>NVDA hängt sich nun nicht mehr auf, wenn Sie in Lotus Symphony vom Dokument in die Menüleiste wechseln.
 <LI>NVDA fährt sich nun nicht mehr im dialog "Programme ändern/entfernen" fest, während eine Deinstallation ausgeführt wird. (<A HREF="https://github.com/nvaccess/nvda/issues/30">#30</A>)
@@ -3383,7 +3383,7 @@ die wichtigsten Neuerungen dieser version sind u. a. die Unterstützung von 64-b
 <UL>
 <LI>Das NVDA-Hauptfenster wurde durch ein Popup-Menü ersetzt.
 <LI>Die Einstellungen zur Benutzeroberfläche wurden in Allgemeine Einstellungen umbenannt. Der Dialog enthält außerdem ein Kombinationsfeld für den Protokollumfang, mit dem eingestellt werden kann, wieviel im NVDA-Protokoll festgehalten werden soll. Die Protokolldatei wurde zudem von "debug.log" nach "nvda.log" umbenannt.
-<LI>Da die Behandlung von Gruppennamen unterschiedlich (je nach Objekttyp) gehandhabt wird, wurde die Option "Gruppennamen ansagen" aus dem Dialog "Objektdarstellung" entfernt.
+<LI>Da die Behandlung von Gruppennamen unterschiedlich (je nach Objekttyp) gehandhabt wird, wurde die Option "Gruppennamen ansagen" aus dem Dialogfeld "Objektdarstellung" entfernt.
 </UL>
 
 <H2>0.5</H2>
@@ -3436,7 +3436,7 @@ die wichtigsten Neuerungen dieser version sind u. a. die Unterstützung von 64-b
 <LI>Problem behoben, wonach entweder die Sprache abbrach oder NVDA abstürzte, sobald eine Eingabeaufforderung geöffnet wurde.
 <LI>Wenn unter Windows eine bestimmte Sprache eingestellt ist, die NVDA unterstützt, wird er diese auch automatisch benutzen. Die Sprache kann aber trotzdem noch manuell geändert werden.
 <LI>Skript "toggleReportDynamicContentChanges" (NVDA+5) hinzugefügt. Dies schaltet die ansage von neu erscheinendem Text oder dynamischen Inhalten um. Momentan funktioniert das nur in dos-Fenstern.
-<LI>Skript "toggleCaretMovesReviewCursor" (NVDA+6) hinzugefügt. Hiermit wird festgelegt, ob der NVDA-Cursor automatisch dem Systemcursor folgen soll. Dies kann beim Lesen von DOS-Fenstern sinnvoll sein, deren Inhalt schnell aktualisiert wird.
+<LI>Skript "toggleCaretMovesReviewCursor" (NVDA+6) hinzugefügt. Hiermit wird festgelegt, ob der NVDA-Cursor automatisch dem System-Cursor folgen soll. Dies kann beim Lesen von DOS-Fenstern sinnvoll sein, deren Inhalt schnell aktualisiert wird.
 <LI>Skript "toggleFocusMovesNavigatorObject" (NVDA+7) hinzugefügt. Hermit legen Sie fest, ob der Navigator automatisch nachgezogen werden soll, wenn sich der Fokus ändert.
 <LI>Dokumentation in einigen Sprachen hinzugefügt (u. a. Französisch, Spanisch und Finnisch.
 <LI>Entwicklerdokumentation aus den Binären Distributionen von NVDA entfernt, im Quellcode ist sie aber immer noch enthalten.
