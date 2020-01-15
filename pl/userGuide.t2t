@@ -144,13 +144,15 @@ Naciśnij "OK" aby zamknąć tę informację.
 ++ Uruchomienie NVDA ++[LaunchingNVDA]
 W celu uruchomienia programu zainstalowanego za pomocą instalatora wybierz NVDA z menu Programy w Menu Start lub użyj skrótu Ctrl+Alt+D.
 Możesz również wpisać NVDA w oknie Uruchom w menu Start i nacisnąć klawisz Enter, a program zostanie uruchomiony.
-Możesz również podać pewne [parametry linii komend #CommandLineOptions], które pozwalają zrestartować NVDA (-r), zakończyć (-q), wyłączyć dodatki (--disable-addons), etc.
+If NVDA is already running, it will be restarted.
+You can also pass some [command line options #CommandLineOptions] which allows you to quit (-q), disable add-ons (--disable-addons), etc.
 
 Dla zainstalowanych kopii, NVDA domyślnie przechowuje konfigurację w podfolderze roaming folderu dane aplikacji aktualnego użytkownika (np. "C:\Users\<uzytkownik>\AppData\Roaming").
 Można to zmienić w taki sposób, że NVDA wczyta konfigurację z lokalnego folderu danych aplikacji.
 Więcej w rozdziale o [Parametrach systemu #SystemWideParameters].
 
 Aby uruchomić wersję przenośną NVDA, przejdź do katalogu, w którym zostały wypakowane pliki, zaznacz plik  "nvda.exe" i naciśnij klawisz Enter lub dwukrotnie kliknij na nim lewym przyciskiem myszy.
+If NVDA was already running, it will automatically stop before starting the portable version.
 
 Po uruchomieniu NVDA usłyszysz coraz wyższe dźwięki wskazujące, że program się ładuje.
 Czas uruchamiania zależy od tego, jak szybki jest twój komputer, oraz od prędkości nośnika, jeśli NVDA jest uruchamiane z USB lub innego wolniejszego medium.
@@ -400,7 +402,8 @@ Do przeglądania tekstu są dostępne następujące polecenia:
 | Odczytaj wszystko z przeglądu | Numeryczny plus | NVDA+Shift+A | Machnięcie trzema palcami w dół (tryb tekstowy) | Odczytuje od punktu przeglądu do końca tekstu. |
 | Zaznacz i skopiuj od kursora przeglądu | NVDA+F9 | NVDA+F9 | Brak | Rozpoczyna proces zaznacz i kopiuj na aktualnej pozycji kursora przeglądu. Akcja nie jest wykonana do momentu wskazania NVDA miejsca końca zakresu tekstu |
 | Zaznacz i kopiuj do kursora przeglądu | NVDA+F10 | NVDA+F10 | Brak | Po jednokrotnym naciśnięciu, tekst jest zaznaczany od pozycji poprzednio ustawionej znacznikiem początku do aktualnej pozycji kursora przeglądu włącznie. Po naciśnięciu tego klawisza po raz drugi, tekst zostanie skopiowany do schowka systemowego |
-| Informacje o formatowaniu | NVDa+f | NVDA+F | Brak | Odczytuje informacje o formatowaniu tekstu pod kursorem. Podwójne naciśnięcie prezentuje informację w trybie czytania. |
+| Move to marked start for copy in review | NVDA+shift+f9 | NVDA+shift+f9 | none | Moves the review cursor to the position previously set start marker for copy |
+| Informacje o formatowaniu | NVDA+f | NVDA+F | Brak | Odczytuje informacje o formatowaniu tekstu pod kursorem. Podwójne naciśnięcie prezentuje informację w trybie czytania. |
 | Zgłoś zamiennik aktualnego symbolu | Brak | Brak | Brak | Wypowiada symbol na pozycji kursora przeglądu. Naciśnięty dwukrotnie, pokazuje w trybie czytania symbol i tekst użyty do jego wypowiedzenia. |
 %kc:endInclude
 
@@ -939,6 +942,21 @@ W widoku tabeli dodanych książek:
 | Menu kontekstowe | klawisz aplikacji | Otwiera menu kontekstowe wybranej książki. |
 %kc:endInclude
 
+++ Windows Console ++[WinConsole]
+NVDA provides support for the Windows command console used by Command Prompt, PowerShell, and the Windows Subsystem for Linux.
+The console window is of fixed size, typically much smaller than the buffer that holds the output.
+As new text is written, the content scroll upwards and previous text is no longer visible. 
+Text that is not visibly displayed in the window is not accessible with NVDA's text review commands.
+Therefore, it is necessary to scroll the console window to read earlier text.
+%kc:beginInclude
+The following built-in Windows Console keyboard shortcuts may be useful when [reviewing text #ReviewingText] with NVDA:
+|| Name | Key | Description |
+| Scroll up | control+upArrow | Scrolls the console window up, so earlier text can be read. |
+| Scroll down | control+downArrow | Scrolls the console window down, so later text can be read. |
+| Scroll to start | control+home | Scrolls the console window to the beginning of the buffer. |
+| Scroll to end | control+end | Scrolls the console window to the end of the buffer. |
+%kc:endInclude
+
 + Konfigurowanie NVDA +[ConfiguringNVDA]
 Większość ustawień NVDA może być zmieniona za pomocą okien dialogowych dostępnych poprzez podmenu Ustawienia z menu NVDA.
 Dużą część tych ustawień mmożna znaleźć w wielostronicowym [oknie preferencji NVDA #NVDASettings].
@@ -1104,6 +1122,8 @@ Jeśli używasz syntezatora, który obsługuje wypowiadanie emoji, możesz chcie
 Ręcznie dodane lub zmienione opisy, są zapisane jako część twoich ustawień użytkownika.
 Dlatego, jeśli zmienisz opis konkretnego znaku emoji, twój własny opis będzie wypowiadany dla tego znaku niezależnie czy ta opcja jest włączona.
 Możesz dodawać, edytować lub usuwać opisy symboli w oknie NVDA [Wymowa symboli / interpunkcja #SymbolPronunciation].
+
+To toggle Unicode Consortium data inclusion from anywhere, please assign a custom gesture using the [Input Gestures dialog #InputGestures].
 
 ==== Wyższy głos dla wielkich liter ====[SpeechSettingsCapPitchChange]
 To pole edycji pozwala ustawić o ile zmieni się wysokość głosu podczas czytania dużej litery. 
@@ -1606,6 +1626,7 @@ Możemy w ten sposób skonfigurować odczytywanie:
  - List
  - Cytatów
  - Punktów orientacyjnych
+ - Articles
  - Ramek
  - Gdy element jest klikalny
  -
@@ -1668,11 +1689,28 @@ Obejmuje to sam edytor Microsoft Word oraz okna przeglądania i tworzenia wiadom
 Mogą jednak istnieć informacje, które nie są wcale dostarczane, albo są dostarczane nieprawidłowo  w niektórych wersjach Microsoft Office,  co znaczy, że na obsłudze UI Automation nie zawsze można polegać.
 Wciąż nie zalecamy domyślnego włączania tej funkcji przez większość użytkowników, ale mile widziane będą testy i uwagi od użytkowników Office 2016/365.
 
-==== Używaj UI Automation w konsoli Windows jeśli dostępne ====[AdvancedSettingsConsoleUIA]
-Gdy włączone, NVDA będzie używać nowej i obecnie rozwijanej wersji wsparcia dla konsoli Windows, wykorzystującej  [poprawki dostępności wdrożone przez Microsoft https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/]. Ta funkcja jest wysoce eksperymentalna i wciąż niekompletna, więc jej używanie nie jest obecnie zalecane. Jakkolwiek po doprowadzeniu do kompletności przewidywane jest, że ten tryb wsparcia stanie się domyślny,  poprawiając wydajność i stabilność NVDA w konsoli wiersza poleceń Windows.
+==== Windows Console support ====[AdvancedSettingsConsoleUIA]
+This option selects how NVDA interacts with the Windows Console used by command prompt, PowerShell, and the Windows Subsystem for Linux.
+It does not affect the modern Windows Terminal.
+In Windows 10 version 1709, Microsoft [added support for its UI Automation API to the console https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/], bringing vastly improved performance and stability for screen readers that support it.
+In situations where UI Automation is unavailable or known to result in an inferior user experience, NVDA's legacy console support is available as a fallback.
+The Windows Console support combo box has three options:
+- Automatic: Uses UI Automation in consoles on Windows 10 version 1809 and later. This option is recommended and set by default.
+- Prefer UIA: Uses UI Automation in consoles if available, even on Windows versions with incomplete or buggy implementations. While this limited functionality may be useful (and even sufficient for your usage), use of this option is entirely at your own risk and no support for it will be provided.
+- Legacy: UI Automation in the Windows Console will be completely disabled, so the legacy fallback will always be used.
+-
 
-==== Wypowiadaj hasła w konsolach UIA ====[AdvancedSettingsWinConsoleSpeakPasswords]
-To ustawienie określa, czy znaki są wypowiadane po włączeniu [wypowiadaj pisane znaki  #KeyboardSettingsSpeakTypedCharacters] lub [Mów wpisywane słowa #KeyboardSettingsSpeakTypedWords] w sytuacjach, gdy ekran nie jest aktualizowany (takich jak wprowadzanie haseł) w konsolach Windows z włączonym wsparciem UI automation. Ze względów bezpieczeństwa, to ustawienie powinno zostać wyłączone. można je włączyć w przypadku pojawienia się problemów wydajności lub niestabilności podczas wpisywania znaków i/lub słów przy pracy w konsoli Windows z włączonym wsparciem UIA.
+==== Speak passwords in Windows Console ====[AdvancedSettingsWinConsoleSpeakPasswords]
+This setting controls whether characters are spoken by [speak typed characters #KeyboardSettingsSpeakTypedCharacters] or [speak typed words #KeyboardSettingsSpeakTypedWords] in situations where the screen does not update (such as password entry) in some terminal programs, such as the Windows Console with UI automation support enabled and Mintty.
+For security purposes, this setting should be left disabled.
+However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting in consoles, or work in trusted environments and prefer password announcement.
+
+==== Use the new typed character support in legacy Windows consoles when available ====[AdvancedSettingsKeyboardSupportInLegacy]
+This option enables an alternative method for detecting typed characters in legacy Windows consoles.
+While it improves performance and prevents some console output from being spelled out, it may be incompatible with some terminal programs.
+This feature is available and enabled by default on Windows 10 versions 1607, 1703, 1709 and 1803 as well as on newer Windows 10 releases when UI Automation is unavailable or disabled.
+Warning: with this option enabled, typed characters that do not appear onscreen, such as passwords, will not be suppressed.
+In untrusted environments, you may temporarily disable [speak typed characters #KeyboardSettingsSpeakTypedCharacters] and [speak typed words #KeyboardSettingsSpeakTypedWords] when entering passwords.
 
 ==== Automatycznie ustaw kursor systemowy na elementach interaktywnych w trybie czytania ====[BrowseModeSettingsAutoFocusFocusableElements]
 Key: NVDA+8
@@ -2863,8 +2901,7 @@ NVDA  akceptuje jeden lub więcej przełączników startowych, zmieniających je
 Możesz podać tak wiele opcji, jak to jest potrzebne.
 Te opcje mogą być wpisane podczas uruchamiania ze skrótu  (we właściwościach skrótu), w oknie dialogowym "Uruchom"  (Menu start-> Uruchom lub Windows+R) lub w konsoli wiersza poleceń Windows.
 Opcje powinny być oddzielone spacjami od nazwy pliku wykonywalnego NVDA, oraz od innych opcji.
-Przykładowo, skrót tworzony na pulpicie przez instalator, posiada przełącznik -r, który nakazuje NVDA zamknąć aktualnie uruchomioną kopię przed uruchomieniem nowej.
-Inny użyteczny parametr to --disable-addons, który nakazuje NVDA zawiesić wszystkie dodatki.
+For example, a useful option is --disable-addons, which tells NVDA to suspend all running add-ons.
 Pozwala to ustalić, czy jakiś problem jest powodowany przez dodatek i szybko go naprawić.
 
 Inny przykład, to zamknięcie aktualnie uruchomionej kopii NVDA poprzez wpisanie:
@@ -2873,8 +2910,8 @@ nvda -q
 
 Niektóre opcje występują w dwóch wersjach - krótkiej i długiej, inne tylko w długiej wersji.
 opcje posiadające krótką wersję, możesz łączyć np.:
-| nvda -rm | Zakończy uruchomioną kopię NVDA i uruchomi nową z wyłączonymi dźwiękami startowymi, etc. |
-| nvda -rm --disable-addons | To samo co powyżej, ale z wyłączonymi dodatkami |
+| nvda -mc CONFIGPATH | This will start NVDA with startup sounds and message disabled, and the specified configuration |
+| nvda -mc CONFIGPATH --disable-addons | Same as above, but with add-ons disabled |
 
 Niektóre przełączniki akceptują dodatkowe ustawienia; np. jak szczegółowy powinien być tworzony log albo ścieżkędo katalogu konfiguracyjnego użytkownika.
 Te ustawienia powinny być umieszczane po odpowiedniej opcji oddzielone spacją od krótkiej wersji przełącznika lub znakiem równości (=) od długiej wersji, np.:
@@ -2886,7 +2923,6 @@ Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 || Krótka | Długa | Opis |
 | -h | --help | Pokaż pomoc wiersza poleceń i wyjdź |
 | -q | --quit | Zakończ aktualnie uruchomioną kopię NVDA |
-| -r | --replace | Zakończ aktualną kopię NVDA i uruchom obecną |
 | -k | --check-running | Poinformuj kodem wyjścia, czy NVDA jest uruchomiony; 0 jeśli uruchomiony, 1 jeśli nie uruchomiony |
 | -f LOGFILENAME | --log-file=LOGFILENAME | Plik, do którego powinny być zapisywane informacje logu |
 | -l poziom | --log-level=poziom | Najniższy poziom zapisywanych informacji logu (debugowanie 10, wejście/wyjście 12, ostrzeżenie debugowania 15, informacje 20, ostrzeżenia 30, błędy 40, krytyczne 50, wyłączone 100), domyślnie ostrzeżenia |
