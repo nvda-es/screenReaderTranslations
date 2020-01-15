@@ -122,6 +122,7 @@
       <LI><A HREF="#KindleUserNotes">10.8.2. Notatki użytkownika</A>
       </UL>
     <LI><A HREF="#Azardi">10.9. Azardi</A>
+    <LI><A HREF="#WinConsole">10.10. Windows Console</A>
     </UL>
   <LI><A HREF="#ConfiguringNVDA">11. Konfigurowanie NVDA</A>
     <UL>
@@ -193,9 +194,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant BI/B Series/ BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc131">14.9.1. Przypisania klawiszy dla wszystkich modeli</A>
-      <LI><A HREF="#toc132">14.9.2. Przypisania klawiszy dla Brailliant BI 32, BI 40 and B 80</A>
-      <LI><A HREF="#toc133">14.9.3. Przypisania klawiszowe dla Brailliant BI 14</A>
+      <LI><A HREF="#toc132">14.9.1. Przypisania klawiszy dla wszystkich modeli</A>
+      <LI><A HREF="#toc133">14.9.2. Przypisania klawiszy dla Brailliant BI 32, BI 40 and B 80</A>
+      <LI><A HREF="#toc134">14.9.3. Przypisania klawiszowe dla Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
     <LI><A HREF="#Seika">14.11. Monitory brajlowskie Seika</A>
@@ -434,7 +435,8 @@ Naciśnij "OK" aby zamknąć tę informację.
 <P>
 W celu uruchomienia programu zainstalowanego za pomocą instalatora wybierz NVDA z menu Programy w Menu Start lub użyj skrótu Ctrl+Alt+D.
 Możesz również wpisać NVDA w oknie Uruchom w menu Start i nacisnąć klawisz Enter, a program zostanie uruchomiony.
-Możesz również podać pewne <A HREF="#CommandLineOptions">parametry linii komend</A>, które pozwalają zrestartować NVDA (-r), zakończyć (-q), wyłączyć dodatki (--disable-addons), etc.
+If NVDA is already running, it will be restarted.
+You can also pass some <A HREF="#CommandLineOptions">command line options</A> which allows you to quit (-q), disable add-ons (--disable-addons), etc.
 </P>
 <P>
 Dla zainstalowanych kopii, NVDA domyślnie przechowuje konfigurację w podfolderze roaming folderu dane aplikacji aktualnego użytkownika (np. "C:\Users\&lt;uzytkownik&gt;\AppData\Roaming").
@@ -443,6 +445,7 @@ Więcej w rozdziale o <A HREF="#SystemWideParameters">Parametrach systemu</A>.
 </P>
 <P>
 Aby uruchomić wersję przenośną NVDA, przejdź do katalogu, w którym zostały wypakowane pliki, zaznacz plik  "nvda.exe" i naciśnij klawisz Enter lub dwukrotnie kliknij na nim lewym przyciskiem myszy.
+If NVDA was already running, it will automatically stop before starting the portable version.
 </P>
 <P>
 Po uruchomieniu NVDA usłyszysz coraz wyższe dźwięki wskazujące, że program się ładuje.
@@ -1107,8 +1110,15 @@ Do przeglądania tekstu są dostępne następujące polecenia:
 <TD>Po jednokrotnym naciśnięciu, tekst jest zaznaczany od pozycji poprzednio ustawionej znacznikiem początku do aktualnej pozycji kursora przeglądu włącznie. Po naciśnięciu tego klawisza po raz drugi, tekst zostanie skopiowany do schowka systemowego</TD>
 </TR>
 <TR>
+<TD>Move to marked start for copy in review</TD>
+<TD>NVDA+shift+f9</TD>
+<TD>NVDA+shift+f9</TD>
+<TD>none</TD>
+<TD>Moves the review cursor to the position previously set start marker for copy</TD>
+</TR>
+<TR>
 <TD>Informacje o formatowaniu</TD>
-<TD>NVDa+f</TD>
+<TD>NVDA+f</TD>
 <TD>NVDA+F</TD>
 <TD>Brak</TD>
 <TD>Odczytuje informacje o formatowaniu tekstu pod kursorem. Podwójne naciśnięcie prezentuje informację w trybie czytania.</TD>
@@ -2337,6 +2347,46 @@ W widoku tabeli dodanych książek:
 </TR>
 </TABLE>
 
+<A NAME="WinConsole"></A>
+<H3>10.10. Windows Console</H3>
+
+<P>
+NVDA provides support for the Windows command console used by Command Prompt, PowerShell, and the Windows Subsystem for Linux.
+The console window is of fixed size, typically much smaller than the buffer that holds the output.
+As new text is written, the content scroll upwards and previous text is no longer visible. 
+Text that is not visibly displayed in the window is not accessible with NVDA's text review commands.
+Therefore, it is necessary to scroll the console window to read earlier text.
+The following built-in Windows Console keyboard shortcuts may be useful when <A HREF="#ReviewingText">reviewing text</A> with NVDA:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Key</TH>
+<TH>Description</TH>
+</TR>
+<TR>
+<TD>Scroll up</TD>
+<TD>control+upArrow</TD>
+<TD>Scrolls the console window up, so earlier text can be read.</TD>
+</TR>
+<TR>
+<TD>Scroll down</TD>
+<TD>control+downArrow</TD>
+<TD>Scrolls the console window down, so later text can be read.</TD>
+</TR>
+<TR>
+<TD>Scroll to start</TD>
+<TD>control+home</TD>
+<TD>Scrolls the console window to the beginning of the buffer.</TD>
+</TR>
+<TR>
+<TD>Scroll to end</TD>
+<TD>control+end</TD>
+<TD>Scrolls the console window to the end of the buffer.</TD>
+</TR>
+</TABLE>
+
 <A NAME="ConfiguringNVDA"></A>
 <H2>11. Konfigurowanie NVDA</H2>
 
@@ -2622,6 +2672,9 @@ Jeśli używasz syntezatora, który obsługuje wypowiadanie emoji, możesz chcie
 Ręcznie dodane lub zmienione opisy, są zapisane jako część twoich ustawień użytkownika.
 Dlatego, jeśli zmienisz opis konkretnego znaku emoji, twój własny opis będzie wypowiadany dla tego znaku niezależnie czy ta opcja jest włączona.
 Możesz dodawać, edytować lub usuwać opisy symboli w oknie NVDA <A HREF="#SymbolPronunciation">Wymowa symboli / interpunkcja</A>.
+</P>
+<P>
+To toggle Unicode Consortium data inclusion from anywhere, please assign a custom gesture using the <A HREF="#InputGestures">Input Gestures dialog</A>.
 </P>
 
 <A NAME="SpeechSettingsCapPitchChange"></A>
@@ -3534,6 +3587,7 @@ Możemy w ten sposób skonfigurować odczytywanie:
  <LI>List
  <LI>Cytatów
  <LI>Punktów orientacyjnych
+ <LI>Articles
  <LI>Ramek
  <LI>Gdy element jest klikalny
  </UL>
@@ -3642,17 +3696,40 @@ Wciąż nie zalecamy domyślnego włączania tej funkcji przez większość uży
 </P>
 
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Używaj UI Automation w konsoli Windows jeśli dostępne</H5>
+<H5>Windows Console support</H5>
 
 <P>
-Gdy włączone, NVDA będzie używać nowej i obecnie rozwijanej wersji wsparcia dla konsoli Windows, wykorzystującej  <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">poprawki dostępności wdrożone przez Microsoft</A>. Ta funkcja jest wysoce eksperymentalna i wciąż niekompletna, więc jej używanie nie jest obecnie zalecane. Jakkolwiek po doprowadzeniu do kompletności przewidywane jest, że ten tryb wsparcia stanie się domyślny,  poprawiając wydajność i stabilność NVDA w konsoli wiersza poleceń Windows.
+This option selects how NVDA interacts with the Windows Console used by command prompt, PowerShell, and the Windows Subsystem for Linux.
+It does not affect the modern Windows Terminal.
+In Windows 10 version 1709, Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">added support for its UI Automation API to the console</A>, bringing vastly improved performance and stability for screen readers that support it.
+In situations where UI Automation is unavailable or known to result in an inferior user experience, NVDA's legacy console support is available as a fallback.
+The Windows Console support combo box has three options:
 </P>
 
+<UL>
+<LI>Automatic: Uses UI Automation in consoles on Windows 10 version 1809 and later. This option is recommended and set by default.
+<LI>Prefer UIA: Uses UI Automation in consoles if available, even on Windows versions with incomplete or buggy implementations. While this limited functionality may be useful (and even sufficient for your usage), use of this option is entirely at your own risk and no support for it will be provided.
+<LI>Legacy: UI Automation in the Windows Console will be completely disabled, so the legacy fallback will always be used.
+</UL>
+
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>Wypowiadaj hasła w konsolach UIA</H5>
+<H5>Speak passwords in Windows Console</H5>
 
 <P>
-To ustawienie określa, czy znaki są wypowiadane po włączeniu <A HREF="#KeyboardSettingsSpeakTypedCharacters">wypowiadaj pisane znaki</A> lub <A HREF="#KeyboardSettingsSpeakTypedWords">Mów wpisywane słowa</A> w sytuacjach, gdy ekran nie jest aktualizowany (takich jak wprowadzanie haseł) w konsolach Windows z włączonym wsparciem UI automation. Ze względów bezpieczeństwa, to ustawienie powinno zostać wyłączone. można je włączyć w przypadku pojawienia się problemów wydajności lub niestabilności podczas wpisywania znaków i/lub słów przy pracy w konsoli Windows z włączonym wsparciem UIA.
+This setting controls whether characters are spoken by <A HREF="#KeyboardSettingsSpeakTypedCharacters">speak typed characters</A> or <A HREF="#KeyboardSettingsSpeakTypedWords">speak typed words</A> in situations where the screen does not update (such as password entry) in some terminal programs, such as the Windows Console with UI automation support enabled and Mintty.
+For security purposes, this setting should be left disabled.
+However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting in consoles, or work in trusted environments and prefer password announcement.
+</P>
+
+<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
+<H5>Use the new typed character support in legacy Windows consoles when available</H5>
+
+<P>
+This option enables an alternative method for detecting typed characters in legacy Windows consoles.
+While it improves performance and prevents some console output from being spelled out, it may be incompatible with some terminal programs.
+This feature is available and enabled by default on Windows 10 versions 1607, 1703, 1709 and 1803 as well as on newer Windows 10 releases when UI Automation is unavailable or disabled.
+Warning: with this option enabled, typed characters that do not appear onscreen, such as passwords, will not be suppressed.
+In untrusted environments, you may temporarily disable <A HREF="#KeyboardSettingsSpeakTypedCharacters">speak typed characters</A> and <A HREF="#KeyboardSettingsSpeakTypedWords">speak typed words</A> when entering passwords.
 </P>
 
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
@@ -4988,7 +5065,7 @@ Poniżej skróty klawiszowe dla Brailliant BI/B i BrailleNote touch, które dzia
 Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia.
 </P>
 
-<A NAME="toc131"></A>
+<A NAME="toc132"></A>
 <H4>14.9.1. Przypisania klawiszy dla wszystkich modeli</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5078,7 +5155,7 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia.
 </TR>
 </TABLE>
 
-<A NAME="toc132"></A>
+<A NAME="toc133"></A>
 <H4>14.9.2. Przypisania klawiszy dla Brailliant BI 32, BI 40 and B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5100,7 +5177,7 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia.
 </TR>
 </TABLE>
 
-<A NAME="toc133"></A>
+<A NAME="toc134"></A>
 <H4>14.9.3. Przypisania klawiszowe dla Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -6712,8 +6789,7 @@ NVDA  akceptuje jeden lub więcej przełączników startowych, zmieniających je
 Możesz podać tak wiele opcji, jak to jest potrzebne.
 Te opcje mogą być wpisane podczas uruchamiania ze skrótu  (we właściwościach skrótu), w oknie dialogowym "Uruchom"  (Menu start-&gt; Uruchom lub Windows+R) lub w konsoli wiersza poleceń Windows.
 Opcje powinny być oddzielone spacjami od nazwy pliku wykonywalnego NVDA, oraz od innych opcji.
-Przykładowo, skrót tworzony na pulpicie przez instalator, posiada przełącznik -r, który nakazuje NVDA zamknąć aktualnie uruchomioną kopię przed uruchomieniem nowej.
-Inny użyteczny parametr to --disable-addons, który nakazuje NVDA zawiesić wszystkie dodatki.
+For example, a useful option is --disable-addons, which tells NVDA to suspend all running add-ons.
 Pozwala to ustalić, czy jakiś problem jest powodowany przez dodatek i szybko go naprawić.
 </P>
 <P>
@@ -6729,12 +6805,12 @@ opcje posiadające krótką wersję, możesz łączyć np.:
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>nvda -rm</TD>
-<TD>Zakończy uruchomioną kopię NVDA i uruchomi nową z wyłączonymi dźwiękami startowymi, etc.</TD>
+<TD>nvda -mc CONFIGPATH</TD>
+<TD>This will start NVDA with startup sounds and message disabled, and the specified configuration</TD>
 </TR>
 <TR>
-<TD>nvda -rm --disable-addons</TD>
-<TD>To samo co powyżej, ale z wyłączonymi dodatkami</TD>
+<TD>nvda -mc CONFIGPATH --disable-addons</TD>
+<TD>Same as above, but with add-ons disabled</TD>
 </TR>
 </TABLE>
 
@@ -6777,11 +6853,6 @@ Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 <TD>-q</TD>
 <TD>--quit</TD>
 <TD>Zakończ aktualnie uruchomioną kopię NVDA</TD>
-</TR>
-<TR>
-<TD>-r</TD>
-<TD>--replace</TD>
-<TD>Zakończ aktualną kopię NVDA i uruchom obecną</TD>
 </TR>
 <TR>
 <TD>-k</TD>
