@@ -2352,7 +2352,7 @@ W widoku tabeli dodanych książek:
 <P>
 NVDA posiada wsparcie dla wiersza poleceń systemu Windows, używanego przez programy takie jak: CMD, Powershell czy podsystem Linuxa.
 Okno konsoli posiada stały rozmiar, przeważnie o wiele mniejszy niż bufor wyjściowy.
-Gdy nowy tekst jest zapisywany do bufora, okno przewija się w górę co uniemożliwia czytanie tekstu poprzednio widocznego na ekranie.
+Gdy nowy tekst jest zapisywany do bufora, okno przewija się w dół co uniemożliwia czytanie tekstu poprzednio widocznego na ekranie.
 Tekst który jest niewidoczny, jest niedostępny dla kursora przeglądu programu.
 A więc, czasami wymagane jest przewijanie okna konsoli.
 Następujące skróty wbudowane w system Windows mogą być przydatne podczas <A HREF="#ReviewingText">nawigacji po tekście</A> przy pomocy programu NVDA: 
@@ -2366,23 +2366,23 @@ Następujące skróty wbudowane w system Windows mogą być przydatne podczas <A
 </TR>
 <TR>
 <TD>Przewiń w górę</TD>
-<TD>strzałka w górę</TD>
+<TD>CTRL+strzałka w górę</TD>
 <TD>Przewija ekran do góry w celu pokazania wcześniejwidocznego tekstu.</TD>
 </TR>
 <TR>
-<TD>Scroll down</TD>
-<TD>control+downArrow</TD>
-<TD>Scrolls the console window down, so later text can be read.</TD>
+<TD>Przewiń w dół</TD>
+<TD>control+strzałka w dół</TD>
+<TD>Przewija ekran w dół, w celu pokazania późniejszego tekstu.</TD>
 </TR>
 <TR>
-<TD>Scroll to start</TD>
+<TD>Przewiń do początku bufora</TD>
 <TD>control+home</TD>
-<TD>Scrolls the console window to the beginning of the buffer.</TD>
+<TD>Przewija ekran na początek bufora</TD>
 </TR>
 <TR>
-<TD>Scroll to end</TD>
+<TD>Przewiń do końca bufora</TD>
 <TD>control+end</TD>
-<TD>Scrolls the console window to the end of the buffer.</TD>
+<TD>Przewija ekran na koniec bufora.</TD>
 </TR>
 </TABLE>
 
@@ -2673,7 +2673,7 @@ Dlatego, jeśli zmienisz opis konkretnego znaku emoji, twój własny opis będzi
 Możesz dodawać, edytować lub usuwać opisy symboli w oknie NVDA <A HREF="#SymbolPronunciation">Wymowa symboli / interpunkcja</A>.
 </P>
 <P>
-To toggle Unicode Consortium data inclusion from anywhere, please assign a custom gesture using the <A HREF="#InputGestures">Input Gestures dialog</A>.
+W celu przełączenia odczytywania znaków Unicode z dowolnego miejsca, wymagane jest przypisanie odpowiedniego skrótu klawiszowego w oknie <A HREF="#InputGestures">zdarzenia wejścia dialog</A>.
 </P>
 
 <A NAME="SpeechSettingsCapPitchChange"></A>
@@ -3586,7 +3586,7 @@ Możemy w ten sposób skonfigurować odczytywanie:
  <LI>List
  <LI>Cytatów
  <LI>Punktów orientacyjnych
- <LI>Articles
+ <LI>Artykułów
  <LI>Ramek
  <LI>Gdy element jest klikalny
  </UL>
@@ -3695,24 +3695,24 @@ Wciąż nie zalecamy domyślnego włączania tej funkcji przez większość uży
 </P>
 
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Windows Console support</H5>
+<H5>Wsparcie konsoli systemu Windows</H5>
 
 <P>
-This option selects how NVDA interacts with the Windows Console used by command prompt, PowerShell, and the Windows Subsystem for Linux.
-It does not affect the modern Windows Terminal.
-In Windows 10 version 1709, Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">added support for its UI Automation API to the console</A>, bringing vastly improved performance and stability for screen readers that support it.
-In situations where UI Automation is unavailable or known to result in an inferior user experience, NVDA's legacy console support is available as a fallback.
-The Windows Console support combo box has three options:
+To ustawienie kontroluje, w jaki sposób program NVDA interaguje z programami używającymi Wiersza Poleceń jako swojego silnika.
+Nie dotyczy ono nowego terminala systemu Windows.
+W systemie Windows 10 wersji 1709 firma Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">dodała wsparcie dla swojego UI Automation API dla konsoli</A>, bringing vastly improved performance and stability for screen readers that support it.
+W razie, gdy UIA jest niedostępne lub wykryte zostanie błędne zachowanie, starsze wsparcie konsoli jest wciąż obecne jako mechanizm ratunkowy.
+Lista rozwijana zawiera następujące opcje:
 </P>
 
 <UL>
-<LI>Automatic: Uses UI Automation in consoles on Windows 10 version 1809 and later. This option is recommended and set by default.
-<LI>Prefer UIA: Uses UI Automation in consoles if available, even on Windows versions with incomplete or buggy implementations. While this limited functionality may be useful (and even sufficient for your usage), use of this option is entirely at your own risk and no support for it will be provided.
-<LI>Legacy: UI Automation in the Windows Console will be completely disabled, so the legacy fallback will always be used.
+<LI>Automatyczne: używa UIA w sytuacjach kiedy jest ono zalecane.
+<LI>Preferuj UIA: używa UIA nawet jeżeli istnieje ryzyko błędnego zachowania.
+<LI>Stare wsparcie: UIA nie będzie używane w konsoli systemu Windows, a program NVDA będzie zachowywał się dokładnie tak samo, jak w poprzednich wersjach.
 </UL>
 
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>Speak passwords in Windows Console</H5>
+<H5>Wymawiaj hasła w konsoli systemu Windows</H5>
 
 <P>
 This setting controls whether characters are spoken by <A HREF="#KeyboardSettingsSpeakTypedCharacters">speak typed characters</A> or <A HREF="#KeyboardSettingsSpeakTypedWords">speak typed words</A> in situations where the screen does not update (such as password entry) in some terminal programs, such as the Windows Console with UI automation support enabled and Mintty.
