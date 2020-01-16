@@ -945,16 +945,16 @@ W widoku tabeli dodanych książek:
 ++ Konsola systemu Windows ++[WinConsole]
 NVDA posiada wsparcie dla wiersza poleceń systemu Windows, używanego przez programy takie jak: CMD, Powershell czy podsystem Linuxa.
 Okno konsoli posiada stały rozmiar, przeważnie o wiele mniejszy niż bufor wyjściowy.
-Gdy nowy tekst jest zapisywany do bufora, okno przewija się w górę co uniemożliwia czytanie tekstu poprzednio widocznego na ekranie.
+Gdy nowy tekst jest zapisywany do bufora, okno przewija się w dół co uniemożliwia czytanie tekstu poprzednio widocznego na ekranie.
 Tekst który jest niewidoczny, jest niedostępny dla kursora przeglądu programu.
 A więc, czasami wymagane jest przewijanie okna konsoli.
 %kc:beginInclude
 Następujące skróty wbudowane w system Windows mogą być przydatne podczas [nawigacji po tekście #ReviewingText] przy pomocy programu NVDA: 
 || Nazwa | Skrót klawiszowy | Opis |
-| Przewiń w górę | strzałka w górę | Przewija ekran do góry w celu pokazania wcześniejwidocznego tekstu. |
-| Scroll down | control+downArrow | Scrolls the console window down, so later text can be read. |
-| Scroll to start | control+home | Scrolls the console window to the beginning of the buffer. |
-| Scroll to end | control+end | Scrolls the console window to the end of the buffer. |
+| Przewiń w górę | CTRL+strzałka w górę | Przewija ekran do góry w celu pokazania wcześniejwidocznego tekstu. |
+| Przewiń w dół | control+strzałka w dół | Przewija ekran w dół, w celu pokazania późniejszego tekstu. |
+| Przewiń do początku bufora | control+home | Przewija ekran na początek bufora |
+| Przewiń do końca bufora | control+end | Przewija ekran na koniec bufora. |
 %kc:endInclude
 
 + Konfigurowanie NVDA +[ConfiguringNVDA]
@@ -1123,7 +1123,7 @@ Ręcznie dodane lub zmienione opisy, są zapisane jako część twoich ustawień
 Dlatego, jeśli zmienisz opis konkretnego znaku emoji, twój własny opis będzie wypowiadany dla tego znaku niezależnie czy ta opcja jest włączona.
 Możesz dodawać, edytować lub usuwać opisy symboli w oknie NVDA [Wymowa symboli / interpunkcja #SymbolPronunciation].
 
-To toggle Unicode Consortium data inclusion from anywhere, please assign a custom gesture using the [Input Gestures dialog #InputGestures].
+W celu przełączenia odczytywania znaków Unicode z dowolnego miejsca, wymagane jest przypisanie odpowiedniego skrótu klawiszowego w oknie [zdarzenia wejścia dialog #InputGestures].
 
 ==== Wyższy głos dla wielkich liter ====[SpeechSettingsCapPitchChange]
 To pole edycji pozwala ustawić o ile zmieni się wysokość głosu podczas czytania dużej litery. 
@@ -1626,7 +1626,7 @@ Możemy w ten sposób skonfigurować odczytywanie:
  - List
  - Cytatów
  - Punktów orientacyjnych
- - Articles
+ - Artykułów
  - Ramek
  - Gdy element jest klikalny
  -
@@ -1689,18 +1689,18 @@ Obejmuje to sam edytor Microsoft Word oraz okna przeglądania i tworzenia wiadom
 Mogą jednak istnieć informacje, które nie są wcale dostarczane, albo są dostarczane nieprawidłowo  w niektórych wersjach Microsoft Office,  co znaczy, że na obsłudze UI Automation nie zawsze można polegać.
 Wciąż nie zalecamy domyślnego włączania tej funkcji przez większość użytkowników, ale mile widziane będą testy i uwagi od użytkowników Office 2016/365.
 
-==== Windows Console support ====[AdvancedSettingsConsoleUIA]
-This option selects how NVDA interacts with the Windows Console used by command prompt, PowerShell, and the Windows Subsystem for Linux.
-It does not affect the modern Windows Terminal.
-In Windows 10 version 1709, Microsoft [added support for its UI Automation API to the console https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/], bringing vastly improved performance and stability for screen readers that support it.
-In situations where UI Automation is unavailable or known to result in an inferior user experience, NVDA's legacy console support is available as a fallback.
-The Windows Console support combo box has three options:
-- Automatic: Uses UI Automation in consoles on Windows 10 version 1809 and later. This option is recommended and set by default.
-- Prefer UIA: Uses UI Automation in consoles if available, even on Windows versions with incomplete or buggy implementations. While this limited functionality may be useful (and even sufficient for your usage), use of this option is entirely at your own risk and no support for it will be provided.
-- Legacy: UI Automation in the Windows Console will be completely disabled, so the legacy fallback will always be used.
+==== Wsparcie konsoli systemu Windows ====[AdvancedSettingsConsoleUIA]
+To ustawienie kontroluje, w jaki sposób program NVDA interaguje z programami używającymi Wiersza Poleceń jako swojego silnika.
+Nie dotyczy ono nowego terminala systemu Windows.
+W systemie Windows 10 wersji 1709 firma Microsoft [dodała wsparcie dla swojego UI Automation API dla konsoli https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/], bringing vastly improved performance and stability for screen readers that support it.
+W razie, gdy UIA jest niedostępne lub wykryte zostanie błędne zachowanie, starsze wsparcie konsoli jest wciąż obecne jako mechanizm ratunkowy.
+Lista rozwijana zawiera następujące opcje:
+- Automatyczne: używa UIA w sytuacjach kiedy jest ono zalecane.
+- Preferuj UIA: używa UIA nawet jeżeli istnieje ryzyko błędnego zachowania.
+- Stare wsparcie: UIA nie będzie używane w konsoli systemu Windows, a program NVDA będzie zachowywał się dokładnie tak samo, jak w poprzednich wersjach.
 -
 
-==== Speak passwords in Windows Console ====[AdvancedSettingsWinConsoleSpeakPasswords]
+==== Wymawiaj hasła w konsoli systemu Windows ====[AdvancedSettingsWinConsoleSpeakPasswords]
 This setting controls whether characters are spoken by [speak typed characters #KeyboardSettingsSpeakTypedCharacters] or [speak typed words #KeyboardSettingsSpeakTypedWords] in situations where the screen does not update (such as password entry) in some terminal programs, such as the Windows Console with UI automation support enabled and Mintty.
 For security purposes, this setting should be left disabled.
 However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting in consoles, or work in trusted environments and prefer password announcement.
