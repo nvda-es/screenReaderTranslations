@@ -3854,36 +3854,24 @@ Nó được tích hợp trong chính Microsoft Word cũng như trình xem và s
 </P>
 
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Hỗ trợ Windows Console</H5>
+<H5>Sử dụng UI Automation để truy cập Windows Console khi có thể</H5>
 
 <P>
-Tùy chọn này là cách mà NVDA tương tác với Windows Console, được dùng bởi command prompt, PowerShell và Windows Subsystem for Linux.
-Nó không ảnh hưởng gì đến  Windows Terminal.
-Trong Windows 10 phiên bản 1709, Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">đã thêm hỗ trợ UI Automation API của mình cho console</A>, mang đến cải thiện hiệu suất vận hành triệt để và ổn định cho các trình đọc màn hình có hỗ trợ nó.
-Trường hợp UI Automation không hoạt động hoặc biết trước kết quả là trải nghiệm không tốt cho người dùng, hỗ trợ  Console cũ (legacy console) của NVDA sẽ tồn tại như là để dự phòng.
-Hộp xổ hỗ trợ Windows Console có ba tùy chọn:
+Khi bật tùy chọn này, NVDA sẽ sử dụng một phiên bản mới, đang được hoàn thiện hỗ trợ cho Windows Console, có lợi thế trong việc  <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">cải tiến tính tiếp cận bởi Microsoft</A>. Tính năng này đang được thử nghiệm và vẫn chưa hoàn chỉnh nên việc sử dụng nó chưa được khuyến khích. Tuy nhiên, khi hoàn chỉnh, nó được dự đoán  sẽ là hỗ trợ mặc định, cải thiện hiệu năng và tính ổn định của NVDA trong Windows command consoles.
 </P>
 
-<UL>
-<LI>Tự động: sử dụng UI Automation cho console trên Windows 10 phiên bản 1809 trở lên. Tùy chọn này được khuyên dùng và mặc định được chọn.
-<LI>Ưu tiên UIA: sử dụng UI Automation cho console nếu có thể, thậm chí trên các phiên bản Windows chưa hoàn thiện hoặc triển khai bị lỗi. Trong khi các tính năng giới hạn của nó có thể hữu ích (và thậm chí đủ cho việc sử dụng của bạn), rủi ro của việc sử dụng tùy chọn này hoàn toàn là do bạn và không có hỗ trợ nào cho nó được cung cấp.
-<LI>Bản cũ: UI Automation trong  Windows Console sẽ bị vô hiệu hoàn toàn, bản dự phòng sẽ luôn được dùng.
-</UL>
-
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>Nói mật khẩu trong UIA consoles</H5>
+<H5>Nói mật khẩu trong UIA console</H5>
 
 <P>
-Thiết lập này điều khiển việc các kí tự sẽ được đọc bởi <A HREF="#KeyboardSettingsSpeakTypedCharacters">đọc ký tự khi gõ</A> hay <A HREF="#KeyboardSettingsSpeakTypedWords">đọc từ khi gõ</A> trong tình huống mà màn hình không được cập nhật (ô nhập mật khẩu chẳng hạn) trong vài ứng dụng terminal như Windows Console khi đã bật hỗ trợ UI automation và Mintty.
-Vì mục đích bảo mật, thiết lập này nên được để nguyên, tức là tắt.
-Tuy nhiên, có thể bạn muốn bật nó khi gặp các vấn đề  về hiệu suất vận hành hoặc việc đọc khi gõ kí tự hay từ  trong console, hay đang làm việc ở những nơi an toàn và thích nghe đọc mật khẩu.
+Thiết lập này điều khiển việc các kí tự sẽ được đọc bởi <A HREF="#KeyboardSettingsSpeakTypedCharacters">đọc ký tự khi gõ</A> hay <A HREF="#KeyboardSettingsSpeakTypedWords">đọc từ khi gõ</A> trong các tình huống mà màn hình không được cập nhật (ô nhập mật khẩu chẳng hạn) trong Windows Console khi đã bật hỗ trợ UI automation. Vì mục đích bảo mật, thiết lập này nên được để nguyên, tức là tắt. Tuy nhiên, có thể bạn muốn bật nó khi gặp các vấn đề  về hiệu suất vận hành hoặc  việc đọc từ / kí tự   đã nhập không ổn định khi dùng tính năng console mới, đang được thử nghiệm của NVDA.
 </P>
 
 <A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
-<H5>Dùng hỗ trợ nhập văn bản mới trong  Windows console bản cũ nếu có thể</H5>
+<H5>Dùng hỗ trợ nhập văn bản mới trong  Windows console khi có thể</H5>
 
 <P>
-Tùy chọn này  gọi một phương thức thay thế để nhận các kí tự đã nhập trong Windows console bản cũ.
+Tùy chọn này  gọi một phương thức thay thế để nhận các kí tự đã nhập trong Windows command console.
 Trong khi nó cải thiện hiệu suất và ngăn chặn việc đánh vần thông tin đầu ra của console, nó cũng có thể không tương thích với vài ứng dụng terminal .
 Tính năng này tồn tại và mặc định được bật trên Windows 10 phiên bản 1607, 1703, 1709 và 1803, cũng như các phiên bản Windows 10 mới hơn, phát hành khi  UI Automation không có hoặc bị vô hiệu.
 Cảnh báo: khi bật tùy chọn này, các kí tự được nhập mà không hiển thị trên màn hình như mật khẩu chẳng hạn sẽ không bị bỏ qua.
