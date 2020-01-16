@@ -3851,36 +3851,24 @@ Wir empfehlen noch nicht diese Funktion standardmäßig zu aktivieren. Allerding
 </P>
 
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Die Unterstützung der Windows-Konsole</H5>
+<H5>Für den Zugriff auf die Windows-Konsole UIA verwenden (falls verfügbar)</H5>
 
 <P>
-Diese Option legt fest, wie NVDA mit der von der Eingabeaufforderung, PowerShell und dem Windows-SubSystem für Linux verwendeten Windows-Konsole interagiert.
-Es hat keinen Einfluss auf das moderne Windows-Terminal.
-In Windows 10 Version 1709 hat Microsoftdie <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Unterstützung für die API für die UIA in die Konsole</A> integriert, welches der Konsole eine erheblich verbesserte Leistung und Stabilität für Screenreader bietet, die unterstützt werden.
-In Situationen, in denen die UIA nicht verfügbar ist oder bekanntermaßen zu einer schlechteren Benutzererfahrung führt, ist die Unterstützung der Legacy-Konsole von NVDA als Fallback verfügbar.
-Das Kombinationsfeld für die Unterstützung der Windows-Konsole hat drei Optionen:
+Wenn diese Option aktiviert ist, verwendet NVDA eine neue, experimentelle Version der Unterstützung für die Windows-Konsole, die die Vorteile von <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Verbesserungen der Zugänglichkeit durch Microsoft</A> nutzt. Diese Funktion ist sehr experimentell und noch unvollständig, daher wird ihre Verwendung noch nicht empfohlen. Es wird jedoch erwartet, dass diese neue Unterstützung nach ihrer Fertigstellung zur Standardeinstellung wird und die Leistung und Stabilität von NVDA in Windows-Kommandokonsolen verbessert.
 </P>
 
-<UL>
-<LI>Automatisch: Verwendet die UIA in Konsolen unter Windows 10 Version 1809 und neuer. Diese Option wird empfohlen und ist standardmäßig eingestellt.
-<LI>UIA bevorzugen: Verwendet die UIA in Konsolen, falls verfügbar, auch bei Windows-Versionen mit unvollständigen oder fehlerhaften Implementierungen. Obwohl diese eingeschränkte Funktion nützlich (und sogar ausreichend für Ihre Nutzung) sein kann, geschieht die Nutzung dieser Option auf eigene Gefahr und wird nicht unterstützt.
-<LI>Veraltet: Die UIA in der Windows-Konsole wird vollständig deaktiviert, so dass immer die Legacy-Variante verwendet wird.
-</UL>
-
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>Passwörter in der Windows-Konsole ansagen</H5>
+<H5>Passwörter vorlesen in der Windows-Konsole mit UIA-Unterstützung</H5>
 
 <P>
-Diese Einstellung steuert, ob Zeichen durch <A HREF="#KeyboardSettingsSpeakTypedCharacters">Zeichen während der Eingabe ansagen</A> oder <A HREF="#KeyboardSettingsSpeakTypedWords">Wörter während der Eingabe ansagen</A> gesprochen werden, wenn der Bildschirm in einigen Terminal-Programmen, wie der Windows-Konsole mit aktivierter Unterstützung der UIA und Mintty, nicht aktualisiert wird.
-Aus Sicherheitsgründen sollte diese Einstellung deaktiviert bleiben.
-Sie können es jedoch aktivieren, wenn Sie Leistungsprobleme oder Instabilität bei der Eingabe von Zeichen und/oder Wörtern in Konsolen haben, oder in vertrauenswürdigen Umgebungen arbeiten und die Bekanntgabe von Passwörtern bevorzugen.
+Diese Einstellung steuert, ob Zeichen während der Eingabe #KeyboardSettingsSpeakTypedCharacters] oder <A HREF="#KeyboardSettingsSpeakTypedWords">Wörter während der Eingabe</A> in Situationen vorgelesen werden sollen, in denen der Bildschirm in der Windows-Konsole bei aktivierter Unterstützung von UIA nicht aktualisiert wird (z. B. bei der Kennworteingabe). Aus Sicherheitsgründen sollte diese Einstellung deaktiviert bleiben. Sie sollten sie jedoch aktivieren, wenn Sie bei der Verwendung der neuen experimentellen Konsolenunterstützung von NVDA Leistungsprobleme oder Instabilität bei der Meldung von Zeichen und/oder Wörtern während der Eingabe feststellen.
 </P>
 
 <A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
-<H5>Neue Unterstützung für das Ansagen von Zeichen verwenden, falls verfügbar</H5>
+<H5>Unterstützung bei neu eingegebenen Zeichen in der Windows-Konsole (falls verfügbar)</H5>
 
 <P>
-Diese Option stellt eine alternative Methode zur Erkennung von eingegebenen Zeichen in älteren Windows-Konsolen zur Verfügung.
+Diese Option aktiviert eine alternative Methode zur Erkennung von Zeichen während der Eingabe in der Windows-Konsole.
 Durch das Aktivieren dieser Option wird zwar die Leistung gesteigert und das Buchstabieren mancher Ausgaben in Windows-Konsolen verhindert; es könnten jedoch Probleme mit einigen Terminals auftreten.
 Diese Funktion ist verfügbar und seit Windows 10 Version 1607 standardmäßig aktiviert, wenn die UIA nicht verfügbar oder deaktiviert ist.
 Das eingeben von Zeichen, die nicht auf dem Bildschirm erscheinen (z. B. bei Passwörtern) wird nicht unterstützt, wenn diese Option aktiviert ist.
