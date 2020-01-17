@@ -1779,24 +1779,14 @@ Buna, Microsoft Word’ün yanı sıra,  Microsoft Outlook mesaj görüntüleyic
 Ancak, Microsoft Office'in bazı sürümlerinde ya açığa çıkmamış ya da yanlış açıklanmış bazı bilgiler olabilir; bu, bu UI otomasyon desteğinin her zaman güvenilemeyeceği anlamına gelir.
 Kullanıcıların çoğunun varsayılan olarak bunu açmasını önermiyoruz, ancak Office 2016/365 kullanıcılarının bu özelliği test etmesini ve geri bildirimde bulunmasını memnuniyetle karşılarız.
 
-==== Windows Konsolu desteği ====[AdvancedSettingsConsoleUIA]
-Bu seçenek NVDA'nın komut istemi, PowerShell ve Linux için Windows Alt Sistemi tarafından kullanılan Windows Konsolu ile nasıl etkileşime gireceğini belirler.
-Modern Windows Terminalini etkilemez.
-Windows 10 1709 sürümüyle, Microsoft, onu destekleyen ekran okuyucular için son derece gelişmiş performans ve kararlılık getiren [UI Automation API'si için konsola destek eklendi https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/].
-Kullanıcı Arayüzü Otomasyonunun kullanılamadığı veya daha düşük bir kullanıcı deneyimine neden olduğu bilinen durumlarda, NVDA'nın eski konsol desteği kullanılabilir.
-Windows Konsolu desteği seçim kutusunda üç seçenek vardır:
-- Otomatik: Windows 10 sürüm 1809 ve sonraki sürümlerinde konsollarda UI Otomasyonu kullanır. Bu seçenek önerilir ve varsayılan olarak ayarlanmıştır.
-- UIA'yı tercih et: Eksikse veya buggy uygulamaları olan Windows sürümlerinde bile, konsollarda UI Otomasyonu kullanır. Bu sınırlı işlevsellik yararlı olabilir (ve kullanımınız için bile yeterli olsa da), bu seçeneğin kullanımı tamamen kendi sorumluluğunuzdadır ve bu konuda destek sağlanmaz.
-- Legacy: Windows Konsolu'ndaki UI Otomasyonu tamamen devre dışı bırakılır, bu nedenle her durumda eski metod  kullanılır.
--
+==== Windows Konsoluna erişmek için mevcut olduğunda UI Otomasyonunu kullan ====[AdvancedSettingsConsoleUIA]
+Bu seçenek etkinleştirildiğinde, NVDA, [Microsoft tarafından yapılan erişilebilirlik geliştirmelerinin https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/] Windows Konsolu desteğinden yararlanan yeni ve devam eden bir çalışmadan faydalanacaktır. Bu özellik oldukça deneyseldir ve hala eksiktir, bu nedenle kullanımı henüz tavsiye edilmez. Ancak, tamamlandığında, bu yeni desteğin varsayılan olacağı ve NVDA'nın Windows komut konsollarındaki performansını ve kararlılığını artıracağı tahmin edilmektedir.
 
-==== Windows Konsolunda şifreleri Seslendir ====[AdvancedSettingsWinConsoleSpeakPasswords]
-Bu ayar, karakterlerin [yazılan karakterleri seslendir  #KeyboardSettingsSpeakTypedCharacters] ya da  [yazılan sözcükleri seslendir #KeyboardSettingsSpeakTypedWords] UI otomasyon desteği etkinleştirilmiş Windows Konsolu ve Mintty gibi bazı terminal programlarında ekranın güncellenmediği durumlarda (parola girişi gibi) ayarlarına göre seslendirilip seslendirilmeyeceğini kontrol eder.
-Güvenlik nedeniyle bu ayar devre dışı bırakılmalıdır.
-Ancak, konsollarda yazılan karakterlerin  ve / veya sözcüklerin bildirimiyle ilgili performans sorunları veya kararsızlığı yaşarsanız veya güvenilir ortamlarda çalışıyorsanız ve parolaların seslendirilmesini istiyorsanız, bunu etkinleştirmek isteyebilirsiniz.
+==== UIA konsollarında şifreleri seslendir ====[AdvancedSettingsWinConsoleSpeakPasswords]
+Bu ayar ekranın güncellenmediği durumlarda (şifre girişi gibi) UI otomasyon desteği etkin Windows Konsolu'nda [yazılan karakterleri seslendir #KeyboardSettingsSpeakTypedCharacters] veya [yazılan sözcükleri seslendir #KeyboardSettingsSpeakTypedWords] ayrlarına bağlı olarak karakterlerin seslendirilip seslendirilmeyeceğini belirler. Güvenlik nedeniyle, bu ayar devre dışı bırakılmalıdır. Bununla birlikte, NVDA'nın yeni deneysel konsol desteğini kullanırken yazılan karakter ve / veya kelime bildiriminde performans sorunları veya kararsızlık yaşıyorsanız etkinleştirmek isteyebilirsiniz.
 
-==== Yeni girilen karakter desteğini, kullanılabilir olduğunda eski Windows konsollarında kullanın ====[AdvancedSettingsKeyboardSupportInLegacy]
-Bu seçenek, eski Windows konsollarında yazılan karakterleri algılamak için alternatif bir yöntem sağlar.
+==== Mevcutsa Windows Konsolu'nda yeni yazılan karakter desteğini kullan ====[AdvancedSettingsKeyboardSupportInLegacy]
+Bu seçenek, Windows komut konsollarında yazılan karakterleri algılamak için alternatif bir yöntem sunar.
 Performansı artırıp bazı konsol çıktılarının hecelenmesini engellerken, bazı terminal programlarıyla uyumlu olmayabilir.
 Bu özellik, varsayılan olarak Windows 10 sürüm 1607, 1703, 1709 ve 1803'te ve UI Automation kullanılamadığında veya devre dışı bırakıldığında daha yeni Windows 10 sürümlerinde kullanılabilir.
 Dikkat: bu seçenek etkin durumdayken, şifreler gibi ekranda görünmeyen yazılan karakterler gizlenmez.
