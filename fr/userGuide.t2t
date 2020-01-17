@@ -1775,28 +1775,18 @@ Ce bouton n'est disponible que si NVDA est configuré pour permettre le chargeme
 ==== Utiliser UI automation pour accéder aux contrôles des documents Microsoft Word quand disponible ====[AdvancedSettingsUseUiaForWord]
 Quand cette option est activée, NVDA essaie d'utiliser l'API d'accessibilité Microsoft UI Automation pour récupérer les informations des contrôles de documents Microsoft Word.
 Ceci inclut Microsoft Word lui-même, et aussi l'afficheur et le composeur de message de Microsoft Outlook.
- Pour les versions les plus récentes de Microsoft Office 2016/365 exécutées sous Windows 10, le support UI Automation est assez complet pour fournir un accès aux documents Microsoft Word presque égal au support existant de Microsoft Word par NVDA, avec l'avantage que la réactivité est nettement accrue.
+Pour les versions les plus récentes de Microsoft Office 2016/365 exécutées sous Windows 10, le support UI Automation est assez complet pour fournir un accès aux documents Microsoft Word presque égal au support existant de Microsoft Word par NVDA, avec l'avantage que la réactivité est nettement accrue.
 Cependant, il peut exister certaines informations qui ne sont pas exposées, ou exposées incorrectement sous certaines versions de Microsoft Office, ce qui signifie qu'on ne peut pas toujours se fier à ce support UI automation.
 Nous ne recommandons pas encore à la majorité des utilisateurs d'activer cette option par défaut, bien que nous encouragions les utilisateurs d'Office 2016/365 à tester cette fonctionnalité et à nous faire des retours d'expérience.
 
-==== Support de la Console Windows ====[AdvancedSettingsConsoleUIA]
-Cette option définit comment NVDA interagit avec la Console Windows utilisée par l'invite de commandes, PowerShell, et le sous-système Windows pour Linux.
-Elle n'affecte pas le terminal moderne de Windows.
-Sous Windows 10 version 1709, Microsoft [a ajouté le support de son API UI Automation à la console https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/], apportant des performances et une stabilité grandement améliorées aux revues d'écran qui la supportent.
-Dans les situations où UI Automation n'est pas disponible ou connue pour dégrader l'expérience utilisateur, le support ancien de la console de NVDA est disponible comme recours.
-La liste déroulant Support de la Console Windows a trois options :
-- Automatique : Utilise UI Automation dans les consoles sous Windows 10 version 1809 et au-delà. Cette option est recommandée et définie par défaut.
-- Préférer UIA : Utilise UI Automation dans les consoles quand disponible, même sous les versions de Windows avec une implémentation incomplète ou boguée. Bien que cette fonctionnalité limitée puisse être utile (et même suffisante pour votre usage), l'utilisation de cette option est entièrement à vos risques et aucun support ne sera fourni pour elle.
-- Héritage : UI Automation dans la console Windows sera entièrement désactivée, et l'ancienne méthode sera toujours utilisée.
--
+==== Utilisez UI Automation pour accéder à la console Windows quand elle est disponible ====[AdvancedSettingsConsoleUIA]
+Si cette option est activée, NVDA utilisera une nouvelle version de travail en cours sur son support de la console Windows qui tire parti des [améliorations de l'accessibilité apportées par Microsoft https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/] Cette fonctionnalité est très expérimentale et est encore incomplète, son utilisation n'est donc pas encore recommandée. Cependant, une fois terminée, il est prévu que cette nouvelle prise en charge deviendra la valeur par défaut, améliorant les performances et la stabilité de NVDA dans les consoles de commande Windows.
 
-==== Dire les mots de passe dans la Console Windows ====[AdvancedSettingsWinConsoleSpeakPasswords]
-Cette option définit si les caractères sont annoncés par [Écho clavier par caractère #KeyboardSettingsSpeakTypedCharacters] ou [Écho clavier par mot #KeyboardSettingsSpeakTypedWords] dans les situation où l'écran ne se met pas à jour (telles que les zones de saisie de mot de passe) dans certains programmes de terminaux, comme la Console Windows avec le support UI automation activé et Mintty.
-Pour des raisons de sécurité, ce paramètre devrait rester désactivé.
-Cependant, vous pouvez souhaiter l'activer si vous ressentez des problèmes de performances ou d'instabilité avec l'écho par caractère ou par mot dans la console, ou si vous travaillez dans un environnement de confiance et préférez l'annonce des mots de passe.
+==== Énoncer les mots de passe dans les consoles UIA ====[AdvancedSettingsWinConsoleSpeakPasswords]
+Cette option définit si les caractères sont annoncés par [Écho clavier par caractère #KeyboardSettingsSpeakTypedCharacters] ou [Écho clavier par mot #KeyboardSettingsSpeakTypedWords] dans les situation où l'écran ne se met pas à jour (telles que les zones de saisie de mot de passe) dans certains programmes de terminaux, comme la Console Windows avec le support UI automation activé. Pour des raisons de sécurité, ce paramètre devrait rester désactivé. Cependant, vous pouvez souhaiter l'activer si vous ressentez des problèmes de performances ou d'instabilité avec l'écho par caractère ou par mot dans la console, ou si vous travaillez dans un environnement de confiance et préférez l'annonce des mots de passe.
  
 ==== Utiliser le nouveau support de l'écho par caractère dans les anciennes consoles Windows quand disponible ====[AdvancedSettingsKeyboardSupportInLegacy]
-Cette option active une méthode alternative pour détecter la frappe des caractères dans les anciennes consoles Windows.
+Cette option active une méthode alternative pour détecter la frappe des caractères dans les consoles de commandes Windows.
 Bien qu'elle améliore les performances et empêche certains affichages de console d'être épelés, elle peut être incompatible avec certains programmes de terminaux.
 Cette fonctionnalité est disponible et activée par défaut sous Windows 10 versions 1607, 1703, 1709 et 1803 ainsi que sous les versions plus récentes de Windows 10 quand UI Automation n'est pas disponible ou désactivée.
 Avertissement : quand cette option est activée, les caractères tapés qui n'apparaissent pas à l'écran comme les mots de passe, ne seront pas supprimés.
