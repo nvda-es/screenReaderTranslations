@@ -1779,24 +1779,14 @@ Windows 10で最新バージョンのMicrosoft Office 2016/365を使用すると
 ただし一部のバージョンのMicrosoft OfficeではUIオートメーションの機能が不十分であったり不適切であったりする可能性があります。つまりUIオートメーションの有効化は常に改善につながるとは限りません。
 通常のユーザーにはこのオプションを有効にすることはお勧めしません。Office 2016/365のユーザーがこの機能を検証してNVDAの開発者に結果を報告することは歓迎です。
 
-==== Windows コンソール ====[AdvancedSettingsConsoleUIA]
-このオプションは NVDA が Windows コンソールを操作する方法を選択できます。Windows コンソールはコマンドプロンプト、 PowerShell、 Windows Subsystem for Linux で使用されます。
-このオプションはストアアプリの Windows Terminal には影響しません。
-Windows 10 バージョン 1709 において Microsoft は [Windows コンソールを UI オートメーション API に対応させ https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/]、この技術を使用するスクリーンリーダーが性能と安定性を改善できるようになりました。
-UI オートメーションが利用できない場合、あるいはユーザー体験を悪化させる場合には、従来の NVDA のコンソール対応も利用できます。
-Windows コンソールのコンボボックスには3個のオプションがあります:
-- 自動設定: Windows 10 バージョン 1809 とそれ以降では UI オートメーションを使用します。このオプションは推奨であり既定の設定です。
-- UIオートメーション優先: Windows のバージョンによっては不完全だったり不具合がある場合でも、コンソールで UI オートメーションが使用できる場合には常に使用します。このオプションはユーザーの使用状況によっては有用であったり十分なものであるかも知れません。しかし、このオプションのサポートは行われません。ユーザーの自己責任で使用してください。
-- レガシー: Windows コンソールでは常に UI オートメーションを無効化し、従来の NVDA のコンソール対応を使います。
--
+==== Windows コンソールに UI オートメーションを使用 ====[AdvancedSettingsConsoleUIA]
+このオプションを有効にすると、Windows コンソールについての [Microsoft によるアクセシビリティの改善 https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/] を NVDA が使用します。これは実験的で未完成の機能であり、現在は使用を推奨していません。将来、この機能が完成したら、既定で有効になり、NVDA の Windows コンソール対応はより高速で安定したものになります。
 
-==== Windows コンソールでパスワードを報告 ====[AdvancedSettingsWinConsoleSpeakPasswords]
-このオプションは一部のターミナルのアプリで、画面に表示されない文字入力（パスワード入力など）が行われた場合に、[入力文字の読み上げ #KeyboardSettingsSpeakTypedCharacters] や [入力単語の読み上げ #KeyboardSettingsSpeakTypedWords] が、それらの文字や単語を報告するかどうかを選択します。この設定が有効なのは Windows コンソールで UI オートメーションが有効な場合、および Mintty などです。
-セキュリティに関する問題が懸念されるため、この設定は無効のままにすることをお勧めします。
-この設定を有効にする目的や状況は、以下が考えられます。まず Windows コンソールで入力文字の報告や入力単語の報告を行うと性能や安定性に問題が生じる場合、あるいは、信頼できる環境で作業を行っていて、パスワードの報告が必要な場合です。
- 
-==== 従来の Windows コンソールで新しい入力文字サポートを使用 ====[AdvancedSettingsKeyboardSupportInLegacy]
-このオプションは従来の Windows コンソールで入力文字を取得する方法を選択できます。
+==== UI オートメーションの Windows コンソールでパスワードを報告 ====[AdvancedSettingsWinConsoleSpeakPasswords]
+このオプションは Windows コンソールで UI オートメーションを有効にした場合に、画面に表示されない文字入力（パスワード入力など）における [入力文字の読み上げ #KeyboardSettingsSpeakTypedCharacters] や [入力単語の読み上げ #KeyboardSettingsSpeakTypedWords] の動作を制御する設定です。セキュリティに関する問題が懸念されるため、この設定は無効のままにすることをお勧めします。しかし、Windows コンソールに UI オートメーションを使用していて、入力文字や入力単語の報告を行うと性能や安定性に問題が生じる場合に、このオプションが役に立つ可能性があります。
+
+==== Windows コンソールで新しい入力文字サポートを使用 ====[AdvancedSettingsKeyboardSupportInLegacy]
+このオプションは Windows コンソールで入力文字を取得する方法を選択できます。
 有効にすると性能が改善され、出力が不必要にスペル読みされることを回避できる場合があります。しかし、一部のターミナルのアプリとは互換性がありません。
 既定の設定では、この機能が使用されるのは Windows 10 のバージョン 1607, 1703, 1709, 1803 およびこれ以降のリリースで、UI オートメーションが利用できない場合や無効にされた場合です。
 注意: このオプションを有効にすると、画面に表示されない文字入力（パスワードなど）も報告されます。
