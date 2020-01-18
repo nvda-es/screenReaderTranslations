@@ -1779,24 +1779,14 @@ Ovo uključuje Microsoft Word, te sastavljač i preglednik poruka u Microsoft Ou
 Međutim, postoje neke informacije koje se ne mogu dohvatiti koristeći ovu podršku, stoga se na nju ne možemo potpuno pouzdati.
 Još uvijek ne preporučujemo uključivanje ove opcije za stalno korištenje, ali pozivamo korisnike Microsoft Office 2016/365 da testiraju ovu značajku, te da šalju povratne informacije.
 
-==== Podrška Windows naredbenog retka ====[AdvancedSettingsConsoleUIA]
-Ova opcija regulira kako NVDA pristupa naredbenim redcima koje koriste aplikacija naredbenog retka, PowerShell, i podsustav sustava Linux za Windows.
-Ovo ne utjeće na suvremeni Windows terminal.
-U Windows 10 verziji 1709, Microsoft [je dodao podršku za svoj UI automation API u naredbeni redak https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/], dajući mogućnost drastično unapređenih performansi za čitače ekrana koji to podržavaju.
-U situacijama kad je UI automation podrška nedostupna ili kad prouzrokuje loše korisničko iskustvo, NVDAova stara podrška naredbenog retka dostupna je kao rezervno rješenje.
-Odabirni okvir za podršku Windows konzole ima tri opcije:
-- Automatski: koristi UI automation u naredbenim redcima u Windows 10 verziji 1809 i novijima. Preporučuje se upotreba ove opcije i ona je standardno postavljena.
-- Preferiraj UIA: koristi UI automation u naredbenim redcima kad je to dostupno, čak i u Windows verzijama s nekompletnim ili bubičastim implementacijama. Iako ta ograničena implementacija može biti korisna (pa čak i dostatna za vašu upotrebu), koristite ju na vlastitu odgovornost. Za nju se ne pruža tehnička podrška.
-- Stara implementacija: UI Automation u Windows naredbenim redcima će se kompletno deaktivirati, te će uvijek koristiti stari način.
--
+==== Koristi UI Automation za pristup windows naredbenom retku kada je to dostupno ====[AdvancedSettingsConsoleUIA]
+Kada je ova opcija uključena, NVDA će koristiti nove, u toku razvoja [unapređenja pristupačnosti koje je napravio Microsoft https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/]. Ova je značajka još uvijek eksperimentalna, te njeno korištenje se ne preporučuje. Međutim, ista će podrazumjevano postati standard, kada se isprave sve pogreške.
 
-==== Izgovori lozinke u Windows naredbenim redcima ====[AdvancedSettingsWinConsoleSpeakPasswords]
-Ova opcija regulira izgovaranje znakova kad su opcije [izgovori upisane znakove #KeyboardSettingsSpeakTypedCharacters] ili [izgovori upisane riječi #KeyboardSettingsSpeakTypedWords] uključene kad se ekran ne osvježava (kao što je to slučaj s upisivanjem lozinki) u nekim programima naredbenom retka, kao što je to windows naredbeni redak s UI automation podrškom i Mintty.
-Iz sigurnosnih razloga, ova postavka treba biti deaktivirana.
-Međutim, možda biste je htjeli uključiti, ako osjećate probleme s performansama ili nestabilnost s izgovaranjem upisanih znakova ili riječi u naredbenim redcima ili ako radite u povjerljivom okruženju i preferirate najavu lozinke.
+==== Izgovaraj lozinke u UIA naredbenim retcima ====[AdvancedSettingsWinConsoleSpeakPasswords]
+Ova opcija regulira izgovor lozinki uz pomoć opcije [izgovori upisane znakove #KeyboardSettingsSpeakTypedCharacters] ili [izgovori upisane riječi #KeyboardSettingsSpeakTypedWords] u slučajevima kada se ekran ne osvježava (kao što je to upis lozinke) u naredbenim retcima s uključenim UIA. U cilju veće sigurnosti, preporučuje se isključivanje ove postavke. Međutim, možete ju uključiti ako osjećate nestabilnost pri korištenju nove podrške naredbenog retka.
 
-==== Koristi novu podršku za utipkane &znakove u starim Windowsovim naredbenim redcima kad je dostupno ====[AdvancedSettingsKeyboardSupportInLegacy]
-Ova opcija uključuje alternativnu metodu otkrivanja upisanih znakova u windows naredbenom retku.
+==== Koristi novu podršku upisanih znakova u Windowsovom naredbenom retku kada je to podržano ====[AdvancedSettingsKeyboardSupportInLegacy]
+Ova opcija pruža alternativnu metodu otkrivanja upisanih znakova u Windowsovom naredbenom retku.
 Iako ova opcija  donosi unapređenja performansi i ispravlja problem slovkanja neželjenih stavki, ista može biti nekompatibilna s nekim programima naredbenog retka.
 Ova je opcija dostupna i standardno je uključena u Windows 10 verzijama 1607, 1703, 1709 i 1803 kao i na novim Windows 10 verzijama, gdje je UIA nedostupno ili deaktivirano.
 Upozorenje: s uključenom ovom opcijom, izgovoreni znakovi koji se ne pokazuju na ekranu, poput lozinki, neće biti spriječeni u izgovoru.
