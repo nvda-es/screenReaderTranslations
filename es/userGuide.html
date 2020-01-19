@@ -3802,7 +3802,7 @@ Este botón sólo está habilitado si NVDA está configurado para permitir la ca
 <P>
 Cuando esta opción esté activada, NVDA intentará utilizar la API de accesibilidad de Microsoft UI Automation para obtener información de los controles de documentos de Microsoft Word.
 Esto incluye el mismo Microsoft Word, y también el visor de mensajes y el compositor de Microsoft Outlook.
- Para las versiones más recientes de Microsoft Office 2016/365 que se ejecutan en Windows 10, la compatibilidad con la UI Automation  es lo suficientemente completa como para proporcionar acceso a documentos de Microsoft Word casi igual a la compatibilidad con Microsoft Word existente de NVDA, con la ventaja añadida de que la capacidad de respuesta aumenta considerablemente.
+Para las versiones más recientes de Microsoft Office 2016/365 que se ejecutan en Windows 10, la compatibilidad con la UI Automation  es lo suficientemente completa como para proporcionar acceso a documentos de Microsoft Word casi igual a la compatibilidad con Microsoft Word existente de NVDA, con la ventaja añadida de que la capacidad de respuesta aumenta considerablemente.
 </P>
 <P>
 Sin embargo, puede haber alguna información que no esté expuesta o que esté incorrectamente expuesta en algunas versiones de Microsoft Office, lo que significa que no siempre se puede confiar en este soporte de la UI automation.
@@ -3810,36 +3810,24 @@ Todavía no recomendamos que la mayoría de los usuarios activen esta opción de
 </P>
 
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Compatibilidad con la Consola de Windows</H5>
+<H5>Utilizar UI Automation para acceder a la Consola de Windows cuando esté disponible</H5>
 
 <P>
-Esta opción selecciona cómo interactúa NVDA con la consola de Windows utilizada por la línea de órdenes, PowerShell y el subsistema de Windows para Linux.
-No afecta al terminal moderno de Windows.
-En la versión 1709 de Windows 10, Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">agregó soporte para su API de automatización de interfaz de usuario a la consola</A>, lo que aporta un rendimiento y una estabilidad ampliamente mejoradas para los lectores de pantalla que lo admitan.
-En situaciones en las que la UI Automation no esté disponible o se sepa que resulta en una experiencia de usuario inferior, la compatibilidad con la consola anterior de NVDA está disponible como solución alternativa.
-El cuadro combinado de compatibilidad con la Consola de Windows tiene tres opciones:
+Cuando esta opción esté activada, NVDA utilizará una versión nueva en progreso de su soporte para la Consola de Windows que tiene la ventaja de <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">la mejora de accesibilidad hecha por Microsoft</A>. Esta característica es muy experimental y todavía está incompleta, así que su uso aún no está recomendado. No obstante, una vez completada, se prevé que este nuevo soporte se convertirá en el predeterminado, mejorando el rendimiento y la estabilidad de NVDA en las consolas de órdenes de Windows.
 </P>
 
-<UL>
-<LI>Automático: utiliza UI Automation en consolas con Windows 10 versión 1809 y posteriores. Esta opción se recomienda y se configura por defecto.
-<LI>Preferir UIA: utiliza UI Automation en consolas si está disponible, incluso en versiones de Windows con implementaciones incompletas o fallidas. Aunque esta funcionalidad limitada podrá ser útil (e incluso suficiente para tu uso), la utilización de esta opción está totalmente bajo tu propio riesgo y no se proporcionará soporte para ella.
-<LI>Heredado: UI Automation en la consola de Windows se desactivará completamente, así que siempre se usará la alternativa heredada.
-</UL>
-
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>Verbalizar Contraseñas en la Consola de Windows</H5>
+<H5>Verbalizar Contraseñas en Consolas UIA</H5>
 
 <P>
-Esta opción controla si los caracteres se verbalizan por <A HREF="#KeyboardSettingsSpeakTypedCharacters">verbalizar caracteres al escribir</A> o <A HREF="#KeyboardSettingsSpeakTypedWords">verbalizar palabras al escribir</A> en situaciones donde la pantalla no se actualice (tal como entrada de conraseñas) en algunos programas de terminal, tales como la Consola de Windows con la compatibilidad con UI automation activada y Mintty.
-Por razones de seguridad, esta opción debe dejarse desactivada.
-Sin embargo, es posible que desees habilitarlo si experimentas problemas de rendimiento o inestabilidad con el anunciado de caracteres y/o palabras escritos en las consolas, o si trabajas en entornos de confianza y prefieres el anunciado de contraseñas.
+Esta opción controla si los caracteres se verbalizan por <A HREF="#KeyboardSettingsSpeakTypedCharacters">verbalizar caracteres al escribir</A> o por <A HREF="#KeyboardSettingsSpeakTypedWords">verbalizar palabras al escribir</A> en situaciones en las que la pantalla no se actualiza (tales como la entrada de contraseñas) en la Consola de Windows con el soporte para UI automation activado. Por razones de seguridad, esta opción debería permanecer desactivada. Sin embargo, es posible que desees habilitarlo si experimentas problemas de rendimiento o inestabilidad con el anunciado de caracteres y/o palabras al escribir mientras utilizas el nuevo soporte experimental de consolas de NVDA.
 </P>
 
 <A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
-<H5>Utilizar el soporte nuevo de caracteres escritos en las Consolas de Windows heredadas cuando esté disponible</H5>
+<H5>Utilizar el nuevo soporte de Caracteres al Escribir en la Consola de Windows cuando esté Disponible</H5>
 
 <P>
-Esta opción activa un método alternativo para detectar caracteres al escribir en Consolas heredadas de Windows.
+Esta opción habilita un método alternativo para detectar caracteres escritos en Consolas de órdenes de Windows.
 Aunque mejora el rendimiento y evita que se especifique la salida de la consola, puede ser incompatible con algunos programas de terminal.
 Esta característica está disponible y activada por omisión en versiones de Windows 10 1607, 1703, 1709 y 1803 así como en versiones de Windows 10 más modernas cuando UI Automation no esté disponible o desactivado.
 Advertencia: con esta opción activada, los caracteres escritos que no aparezcan en pantalla, tales como contraseñas, no se suprimirán.
