@@ -30,7 +30,8 @@ Le caratteristiche principali possono essere riassunte nei seguenti punti:
 - Supporto ai sistemi operativi più moderni, comprese le edizioni a 32 e 64 bit
 - Gestione delle videate di logon e quelle relative alla sicurezza
 - Lettura di testo e controlli  mentre si utilizza un touch screen.
-- Supporto alle più comuni interfacce per l'accessibilità, come Microsoft Active Accessibility, Java Access Bridge, IAccessible2 e UI Automation (quest'ultima viene supportata a partire da Windows7 e successivi).
+- Supporto alle interfacce più comuni per l'accessibilità, come Microsoft Active Accessibility, Java Access Bridge, IAccessible2 e UI Automation.
+- Capacità di evidenziare il focus di sistema.
 -
   
 ++ Internazionalizzazione ++[Internationalization]
@@ -169,7 +170,14 @@ La casella combinata consente di selezionare il layout tastiera.
 La prima casella di controllo permette di stabilire se NVDA debba usare il tasto "Blocca Maiuscole" come tasto funzione "NVDA".
 La seconda permette di specificare se NVDA debba avviarsi automaticamente dopo l'accesso a Windows ed è disponibile solo per le copie installate dello screen reader.
 La terza invece permette di decidere se questa finestra debba presentarsi ad ogni avvio dello Screen Reader.
- 
+
++++ Finestra di dialogo statistiche sull'utilizzo dei dati +++[UsageStatsDialog]
+A partire da NVDA 2018.3, viene chiesto all'utente il consenso alll'invio dei dati di utilizzo a NV Access al fine di contribuire a migliorare NVDA in futuro.
+Quando si avvia NVDA per la prima volta, viene visualizzata una finestra di dialogo dove si richiede di accettare l'invio di dati a NV Access durante l'utilizzo dello screen reader.
+È possibile leggere ulteriori informazioni riguardo i dati raccolti da NV Access nel capitolo 11 di questa guida..
+Nota: premendo "sì" o "no" l'impostazione verrà salvata  e la finestra di dialogo non verrà più visualizzata se non si reinstalla NVDA.
+Tuttavia, è possibile abilitare o disabilitare manualmente il processo di raccolta dei dati nelle impostazioni generali di NVDA. Per modificare questa impostazione, selezionare o deselezionare la casella di controllo denominata [Consenti al progetto NVDA di raccogliere statistiche sull'utilizzo dello screen reader #GeneralSettingsGatherUsageStats].
+
 ++ Sui comandi da tastiera di NVDA ++[AboutNVDAKeyboardCommands]
 
 +++ Il tasto funzione NVDA +++[TheNVDAModifierKey]
@@ -292,6 +300,7 @@ Ad esempio, se si sta scrivendo in un campo editazione, quel campo editazione ha
 
 Il modo più comune di esplorare le finestre con NVDA è proprio quello di utilizzare i normali comandi da tastiera come tab e shift tab per muoversi avanti ed indietro attraverso i vari controlli, alt per accedere alla barra dei menu quindi le frecce per esplorare i menu stessi ed alt-tab per spostarsi tra le applicazioni in esecuzione.
 Così facendo, NVDA fornirà informazioni sull'oggetto sul quale è posizionato il focus, come il suo nome, tipo, valore, stato, descrizione, tasto caldo e informazioni sulla posizione.
+Quando [l'evidenziatore del focus #VisionFocusHighlight] è attivato, viene evidenziata sullo schermo la posizione corrente del focus di sistema.
 
 Esistono alcuni comandi da tastiera utili per seguire il focus:
 %kc:beginInclude
@@ -347,6 +356,7 @@ Allo stesso modo, se si incontra una barra degli strumenti, bisogna entrare all'
 
 L'oggetto che attualmente viene esplorato è chiamato navigatore ad oggetti.
 Una volta che viene raggiunto un oggetto, è possibile esplorarlo utilizzando i [comandi di esplorazione testo #ReviewingText] in [modalità navigazione ad oggetti #ObjectReview].
+Quando [l'evidenziatore del focus #VisionFocusHighlight] è attivato, viene evidenziata sullo schermo la posizione corrente del navigatore ad oggetti.
 Da impostazioni predefinite, il navigatore ad oggetti si sposta in concomitanza con il focus di sistema, tuttavia questo comportamento può essere modificato, attivando o disattivando la relativa opzione.
 
 Si noti che il display braille da impostazioni predefinite è in grado di seguire sia il [focus #SystemFocus] e il [Cursore di Sistema #SystemCaret], sia il Navigatore ad oggetti e il cursore di controllo.
@@ -492,6 +502,7 @@ Inoltre, la modalità navigazione risulta disponibile anche per la gestione dei 
 
 Nella modalità navigazione, il contenuto del documento è reso disponibile tramite una rappresentazione lineare, che può essere esplorata con i comuni tasti dedicati al cursore, come se si trattasse di un normale documento.
 Tutte le combinazioni di tasti di NVDA dedicate al [cursore di sistema #SystemCaret] funzioneranno regolarmente, ad esempio dire tutto, annuncia formattazione, comandi per esplorare le tabelle, etc.
+Quando [l'evidenziatore del focus #VisionFocusHighlight] è attivato, viene evidenziata sullo schermo anche la posizione corrente di questo particolare cursore.
 Verranno annunciate  anche le informazioni inerenti il tipo di controllo su cui ci si trova, ad esempio link, intestazioni, etc.
 
 Talvolta, risulterà necessario anche interagire direttamente con i controlli presenti in questi documenti.
@@ -634,6 +645,7 @@ Quando si desidera tornare al documento, è sufficiente premere il tasto Esc.
 + Braille +[Braille]
 Se si possiede un Display Braille, NVDA sarà in grado di mostrare le informazioni sulla riga braille.
 Nel caso inoltre la barra braille sia dotata di tastiera perkins, è anche possibile servirsi della stessa per immettere il testo, sia in modalità standard che contratta (utile in Stati Uniti e Regno Unito).
+Un'altra possibilità è quella di visualizzare a schermo il contenuto del display braille servendosi della funzione [Visualizzatore Braille #BrailleViewer].
 
 Si prega di fare riferimento alla sezione [display braille supportati #SupportedBrailleDisplays] per ulteriori informazioni.
 Inoltre questa sezione contiene informazioni sui modelli di Display Braille che supportano la rilevazione automatica in background da parte dello screen reader.
@@ -644,12 +656,14 @@ Per far stare più informazioni possibili su di un display braille, sono state d
 
 || Abbreviazione | tipo di controllo |
 | app | applicazione |
+| art | articolo |
 | bqt | blocco tra virgolette |
 | btn | bottone |
 | drbtn | Pulsante a discesa |
 | spnbtn | Pulsante spin |
 | splbtn | Pulsante dividi |
 | intbtn | Interruttore |
+| didscl | Didascalia |
 | cbo | casella combinata |
 | chk | casella di controllo |
 | dlg | finestra di dialogo |
@@ -659,6 +673,7 @@ Per far stare più informazioni possibili su di un display braille, sono state d
 | ogg | oggetto |
 | enote | Fine nota |
 | fnote | nota a piè di pagina |
+| fig | figura |
 | gra | grafico |
 | grp | raggruppamento |
 | cN | numero colonna n di una tabella, ad esempio  c1, c2. |
@@ -741,6 +756,33 @@ Punto 7 elimina l'ultimo carattere o segno braille.
 Punto 8 elabora il braille inserito e aggiunge un invio.
 Tasto 7 + tasto 8 elabora il braille inserito, senza l'aggiunta di un invio o di uno spazio..
 %kc:endInclude
+
++ Visione +[Vision]
+Nonostante NVDA rimanga uno screen reader per persone non vedenti che si servono della sintesi vocale e/o di un display braille per utilizzare il computer, fornisce anche alcune funzioni che modificano l'aspetto del contenuto dello schermo.
+Tale caratteristica viene chiamata servizio di miglioramento visivo.
+
+NVDA fornisce al proprio interno una serie di servizi che andremo ad esaminare a breve.
+è possibile aggiungere ulteriori servizi relativi al miglioramento dell'aspetto visivo tramite il [gestore componenti aggiuntivi di NVDA #AddonsManager].
+
+Le impostazioni di visione possono essere modificate nella [categoria visione #VisionSettings] della [finestra impostazioni di NVDA #NVDASettings].
+
+++ Evidenziatore del focus ++[VisionFocusHighlight]
+L'evidenziazione del focus può risultare molto utile nell'individuare velocemente la posizione del [cursore di sistema #SystemFocus], del [navigatore ad oggetti #ObjectNavigation] e della [modalità navigazione #BrowseMode].
+Queste posizioni sono evidenziate tramite un contorno rettangolare colorato.
+- Il blu viene usato per evidenziare il cursore di sistema e il navigatore ad oggetti quando sono insieme e hanno la medesima posizione, cosa che generalmente accade quasi sempre. 
+- Il blu tratteggiato viene utilizzato per mostrare solo la posizione dell'oggetto su cui si trova il cursore di sistema.
+- Il rosa mostra la posizione del navigatore ad oggetti.
+- Il giallo infine serve a visualizzare la posizione del cursore virtuale, ad esempio durante la navigazione di pagine web.
+-
+
+Quando l'evidenziatore focus viene attivato nella [categoria visione #VisionSettings] della [finestra impostazioni di NVDA #NVDASettings], è possibile [stabilire se evidenziare o meno il focus, il navigatore ad oggetti o il cursore virtuale della modalità navigazione #VisionSettingsFocusHighlight]
+
+++ Tenda schermo ++[VisionScreenCurtain]
+Vi sono alcune circostanze in cui un utente non vedente può preferire che il contenuto dello schermo non sia visualizzato.
+Inoltre, potrebbe essere difficile garantire che non ci sia qualcuno che stia guardando ciò che si sta facendo.
+Per questi motivi, NVDA è fornito di una caratteristica chiamata "tenda schermo" che può essere attivata in modo che lo schermo diventi nero.
+
+è possibile attivare la tenda schermo nella [categoria visione #VisionSettings] della [Finestra impostazioni #NVDASettings].
 
 + OCR: Riconoscimento del contenuto +[ContentRecognition]
 Un utente non vedente può trovarsi di fronte a contenuti completamente inaccessibili, in quanto gli autori degli stessi non forniscono allo screen reader le informazioni necessarie affinché quest'ultimo possa gestirle correttamente (esempio, pdf immagine).
@@ -1320,6 +1362,41 @@ Quest'ultima opzione non sarà disponibile se il display braille supporta soltan
 
 Si consiglia di consultare la documentazione presente nella sezione [Display braille supportati #SupportedBrailleDisplays] per avere maggiori informazioni sulle porte e le connessioni disponibili per il display braille che si sta utilizzando.
 
++++ Visione +++[VisionSettings]
+La categoria visione nelle impostazioni di NVDA consente di attivare, disattivare e configurare i [miglioramenti visivi #Vision].
+
+Si noti che le opzioni disponibili in questa categoria possono essere estese dai [Componenti aggiuntivi di NVDA #AddonsManager].
+Per impostazione predefinita, questa categoria di impostazioni contiene le seguenti opzioni:
+
+==== Evidenziatore del Focus ====[VisionSettingsFocusHighlight]
+Le caselle di controllo presenti in questo gruppo di opzioni attivano o disattivano le funzionalità interne dell'[Evidenziatore focus #VisionFocusHighlight].
+
+- Abilita evidenziazione: attiva o disattiva l'evidenziazione del focus.
+- Evidenzia Focus di sistema: attiva o disattiva l'evidenziazione del Focus di Sistema #SystemFocus].
+- Evidenzia navigatore ad oggetti: attiva o disattiva l'evidenziazione del [navigatore ad oggetti #ObjectNavigation].
+- Evidenzia il cursore in modalità navigazione: attiva o disattiva l'evidenziazione del [cursore virtuale in modalità navigazione #BrowseMode]
+-
+
+Si noti che selezionando e deselezionando la casella di controllo principale "Abilita evidenziazione", si cambierà anche lo stato delle altre tre caselle di controllo.
+Va da sé che se la casella di controllo è disattivata e la si attiva, verranno attivate anche le altre tre.
+Se si desidera abilitare soltanto il focus e mantenere disabilitato il navigatore ad oggetti e il cursore virtuale, lo stato della casella di controllo "abilita evidenziazione" risulterà parzialmente attivato.
+
+==== Tenda Schermo ====[VisionSettingsScreenCurtain]
+è possibile attivare la [Tenda Schermo #VisionScreenCurtain] selezionando la "casella di controllo Rendi lo schermo nero (effetto immediato).
+Verrà visualizzato un avviso che lo schermo diventerà nero dopo l'attivazione.
+Prima di continuare (selezionando "Sì"), assicurarsi di aver abilitato la sintesi vocale o il display braille, di essere insomma in grado di controllare il computer senza l'aiuto dello schermo.
+Selezionare "No" se non si desidera più abilitare la tenda schermo.
+Se si è sicuri, scegliere il pulsante Sì per abilitare la tenda schermo.
+Nel caso in cui non si desideri essere avvisati con questo messaggio tutte le volte, è possibile modificare questo comportamento nella stessa finestra di dialogo.
+Se invece si volesse ripristinare la visualizzazione del messaggio, attivare la casella di controllo che si trova vicina all'opzione "Rendi lo schermo nero (effetto immediato".
+
+Per modificare lo stato della tenda schermo da qualsiasi punto ci si trovi, si prega di assegnare una combinazione di tasti o un gesto personalizzato servendosi della [Finestra Tasti e Gesti di immissione #InputGestures].
+
+==== Impostazioni per miglioramenti visivi di terze parti ====[VisionSettingsThirdPartyVisualAids]
+in NVDA si possono aggiungere ulteriori miglioramenti visivi tramite [i componenti aggiuntivi #AddonsManager].
+Nel caso in cui siano presenti impostazioni regolabili, esse verranno visualizzate in questa sezione, nel gruppo dedicato a quel determinato miglioramento visivo.
+Fare riferimento alla documentazione del miglioramento visivo in merito alla spiegazioni delle sue impostazioni.
+
 +++ Tastiera (NVDA+control+k) +++[KeyboardSettings]
 La categoria impostazioni tastiera della finestra impostazioni di NVDA contiene  opzioni che modificano il comportamento dello screen reader quando l'utente digita i caratteri sulla tastiera.
 Questa categoria Contiene le seguenti opzioni:
@@ -1456,9 +1533,10 @@ Contiene le seguenti opzioni:
 Una casella di controllo che, se attivata, istruisce NVDA ad annunciare i suggerimenti man mano che appaiono.
 Molte finestre o controlli visualizzano dei messaggi o suggerimenti quando si sposta il mouse o il focus su di essi, NVDA non farà altro che vocalizzarli.
 
-==== Leggi i fumetti d'aiuto ====[ObjectPresentationReportBalloons]
-Questa casella di controllo, se attivata, istruisce NVDA ad annunciare i fumetti d'aiuto quando appaiono. 
+==== Annuncia notifiche ====[ObjectPresentationReportNotifications]
+Questa casella di controllo, se attivata, istruisce NVDA ad annunciare i fumetti d'aiuto e le notifiche a scomparsa quando appaiono. 
 I fumetti assomigliano ai suggerimenti (tool-tips), ma in genere sono più larghi come dimensioni e vengono associati ad eventi di sistema come ad esempio il collegamento o scollegamento di un cavo di rete oppure avvisi inerenti la sicurezza.
+Le notifiche a scomparsa sono state introdotte in Windows10 e appaiono nel centro notifiche del system tray, informando su diversi eventi (ad es. se è stato scaricato un aggiornamento, se è arrivata una nuova e-mail nella posta in arrivo, ecc.).
 
 ==== Leggi i tasti di scelta rapida degli oggetti ====[ObjectPresentationShortcutKeys]
 Quando questa casella di controllo è attivata, NVDA pronuncerà il tasto caldo dell'oggetto o del controllo focalizzato. 
@@ -1625,6 +1703,7 @@ Le opzioni di formattazione documento sono divise in gruppi.
  - elenchi
  - Blocchi tra virgolette
  - Punti di riferimento
+ - Gruppi
  - Articoli
  - Frame
  - Quando qualcosa è cliccabile
@@ -1680,6 +1759,7 @@ Se si desidera  distribuire codice personalizzato ad altri, è necessario creare
 ==== Apri la cartella scratchpad dello sviluppatore ====[AdvancedSettingsOpenScratchpadDir]
 Questo pulsante apre la cartella all'interno della quale è possibile  inserire il codice personalizzato mentre si sviluppa.
 Il bottone risulta attivo solo nel caso in cui NVDA sia configurato per caricare codice personalizzato dalla cartella scratchpad dello sviluppatore.
+
 
 ==== Utilizza UI Automation per accedere ai controlli dei documenti Microsoft Word quando disponibili ====[AdvancedSettingsUseUiaForWord]
 Quando quest'opzione viene attivata, NVDA tenterà di utilizzare le API di accessibilità dell'interfaccia Microsoft UI Automation per recuperare informazioni dai controlli dei documenti di Microsoft Word.
@@ -1940,6 +2020,20 @@ Comunque, se si clicca o si focalizza la finestra, NVDA fermerà temporaneamente
 
 Per abilitare/disabilitare il visualizzatore sintesi vocale da qualsiasi punto ci si trovi, servirsi della finestra [tasti e gesti di immissione #InputGestures] ed assegnare un gesto o tasto rapido personalizzato per quella funzione.
 
+++ Visualizzatore Braille ++[BrailleViewer]
+Per sviluppatori vedenti di programmi o persone che stanno dimostrando le funzionalità di NVDA, è disponibile una finestra che mostra ciò che la persona non vedente sta leggendo sulla propria riga braille, ed il testo equivalente per ciascun carattere braille.
+Il visualizzatore Braille può essere utilizzato contemporaneamente a un display Braille fisico, il numero di celle corrisponderà al numero effettivo di quelle della barra braille.
+Quando questa caratteristica è attiva, il contenuto della finestra si aggiornerà in tempo reale per mostrare di continuo le informazioni che NVDA invia al display braille.
+
+Per abilitare il visualizzatore braille, attivare la voce apposita che si trova nel menu strumenti di NVDA.
+Disabilitare la voce di menu per disattivare il visualizzatore braille.
+
+I display Braille fisici in genere sono provvisti di pulsanti per scorrere avanti o indietro; per abilitare lo scorrimento con il visualizzatore Braille, utilizzare la finestra di dialogo [Gesti e tasti di immissione #InputGestures] per assegnare le scorciatoie da tastiera appropriate alle funzioni "Scorre display braille indietro" e "Scorre display braille avanti".
+
+La finestra visualizzatore braille contiene una casella di controllo chiamata "Mostra visualizzatore braille all'avvio".
+Se tale casella è selezionata,  il visualizzatore braille si caricherà all'avvio di NVDA.
+La finestra cercherà sempre di riaprirsi con le stesse dimensioni e posizione di quando è stata chiusa in precedenza.
+
 ++ Gestore componenti aggiuntivi ++[AddonsManager]
 Il gestore di componenti aggiuntivi, accessibile selezionando "gestisci componenti aggiuntivi" dal menu strumenti di NVDA, permette di installare, disinstallare, abilitare e disabilitare questo tipo di pacchetti. 
 Essi vengono prodotti  dalla comunità internazionale di NVDA  e contengono codice personalizzato che può aggiungere o modificare le caratteristiche dello screen reader, o anche fornire supporto per Display Braille o sintesi vocali extra.
@@ -2011,7 +2105,7 @@ Per una panoramica esaustiva dei sintetizzatori compatibili, sia gratuiti che a 
 
 ++ Espeak NG ++[eSpeakNG]
 La sintesi vocale [eSpeak NG https://github.com/espeak-ng/espeak-ng] è incorporata direttamente in NVDA, per cui non è necessario alcun driver o componente per farla funzionare. 
-Da impostazioni predefinite NVDA si avvia utilizzando Espeak NG.
+In Windows7, windows 8 e 8.1, da impostazioni predefinite NVDA si avvia utilizzando Espeak NG, mentre su Windows10 la sintesi vocale di default è [Windows OneCore #OneCore].
 Poiché questa sintesi è incorporata in NVDA, risulta molto comoda per utilizzare il prodotto da una chiavetta USB o in altri sistemi.
 
 Ciascuna voce presente in Espeak NG parla una lingua diversa.
@@ -2047,20 +2141,9 @@ Per usare queste voci, è necessaria l'installazione di due componenti:
 ++ Voci Windows OneCore ++[OneCore]
 In Windows10 sono presenti nuove voci conosciute come "OneCore", oppure come "mobile".
 Tali voci sono disponibili in diverse lingue e risultano più reattive rispetto alle classiche Sapi5.
+In Windows10 NVDA utilizza queste voci come sintesi vocale predefinita, mentre [[eSpeak NG #eSpeakNG] viene usata in altre versioni di Windows.
 
 Per installare voci in lingue aggiuntive, si veda questo articolo Microsoft: https://support.microsoft.com/en-us/help/22797/windows-10-narrator-tts-voices
-
-Si noti che le velocità più elevate che sono presenti in Narrator non sono attualmente disponibili in NVDA.
-Inoltre, la velocità che viene selezionata nelle impostazioni di Windows influenza anche quella di NVDA.
-Purtroppo si tratta di bug che non possono essere risolti da noi, senza l'intervento di Microsoft.
-Sono stati comunque segnalati, perciò speriamo che presto Windows riceva aggiornamenti in tal senso.
-
-++ Audiologic Tts3 ++[Audiologic]
-Si tratta di una sintesi vocale commerciale espressamente rivolta al mercato italiano. 
-Per farla funzionare bisogna possedere una regolare licenza installata sul proprio pc.
-Per maggiori informazioni si veda il sito www.audiologic.it.
-
-Questo sintetizzatore non supporta [funzionalità [spelling #SpeechSettingsUseSpelling].
 
 + Display braille supportati +[SupportedBrailleDisplays]
 Questa sezione contiene informazioni sulle barre braille supportate da NVDA.
@@ -2451,7 +2534,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 
 ++ Display Braille Seika ++[Seika]
 NVDA supporta i modelli Seika 3, 4 e 5 a 40 caratteri e Seika80 a 80 caratteri, prodotti dalla [Nippon Telesoft https://www.nippontelesoft.com/].
-Si possono ottenere maggiori informazioni e scaricare i driver per queste barre braille visitando la pagina https://en.seika-braille.com/down/index.html/.
+Si possono ottenere maggiori informazioni e scaricare i driver per queste barre braille visitando la pagina https://en.seika-braille.com/down/index.html
 è prima necessario installare i driver USB forniti in dotazione.
 
 Questi modelli non supportano ancora la funzione di rilevazione automatica in background.
