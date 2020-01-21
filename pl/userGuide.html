@@ -325,7 +325,7 @@ Dokładne brzmienie licencji znajdziesz online: <A HREF="https://www.gnu.org/lic
 <H2>3. Pobieranie i instalacja NVDA</H2>
 
 <P>
-Program NVDA można pobrać ze strony internetowej znajdującej się pod adresem: <A HREF="https://github.com/nvaccess/nvda/">www.nvaccess.org</A>.
+Program NVDA można pobrać ze strony internetowej <A HREF="https://github.com/nvaccess/nvda/">NV Access</A>.
 </P>
 <P>
 Przejdź na stronie do sekcji "Download", gdzie znajduje się link do najnowszej wersji programu. Możesz udać się także na polską stronę społeczności NVDA pod adresem <A HREF="http://www.nvda.pl">www.nvda.pl</A>
@@ -1555,7 +1555,9 @@ NVDA obsługuje następujące rodzaje treści matematycznej:
 <UL>
 <LI>MathML w Mozilla Firefox, Microsoft Internet Explorer i Google Chrome.
 <LI>Design Science MathType w Microsoft Word and PowerPoint. 
-Aby to działało, musi być zainstalowany mathtype. Wersja próbna jest wystarczająca.
+Aby to działało, musi być zainstalowany mathtype.
+Wersja próbna jest wystarczająca.
+Można ją pobrać z <A HREF="https://www.dessci.com/en/products/mathtype/">https://www.dessci.com/en/products/mathtype/</A>
 <LI>MathML w Adobe Reader.
 Nie jest to jeszcze oficjalny standard, nie istnieje publicznie dostępne oprogramowanie mogące wytwarzać taką treść.
 <LI>Matematyka w Kindle dla PC w książkach z dostępną matematyką.
@@ -2544,8 +2546,14 @@ Dostępne poziomy logowania, to:
 <LI>Wyłączone: poza krótką informacją przy uruchamianiu, NVDA nie będzie zapisywał niczego podczas działania.
 <LI>Info: NVDA będzie zapisywać podstawowe informacje, takie jak informacje startowe i inne użyteczne dla programistów.
 <LI>Ostrzeżenie debugowania: Komunikaty ostrzegawcze, które nie są spowodowane poważnymi błędami, będą zapisywane.
-<LI>Wejście/wyjście: zapisywane będą klawisze naciskane na klawiaturze lub linijkach brajlowskich, oraz komunikaty generowane mową i brajlem. If you are concerned about privacy, do not set logging level to this option.
-<LI>Debugowanie: jako rozszerzeniee informacji, ostrzeżeń i powiadomień wejścia/wyjścia, zapisywane będą dodatkowe informacje debugowania. Tak jak Wejście/wyjście, jeśli zwracasz uwagę na prywatność, nie powinieneś ustawiać poziomu komunikatów na ten poziom.
+<LI>Input/output: Input from keyboard and braille displays, as well as speech and braille output will be logged.
+ <UL>
+ <LI>If you are concerned about privacy, do not set the logging level to this option.
+ </UL>
+<LI>Debug: In addition to info, warning, and input/output messages, additional debug messages will be logged.
+ <UL>
+ <LI>Just like input/output, if you are concerned about privacy, you should not set the logging level to this option.
+ </UL>
 </UL>
 
 <A NAME="GeneralSettingsStartAfterLogOn"></A>
@@ -2654,6 +2662,7 @@ Strzałkami w lewo i w górę przesuwasz się w górę listy, a strzałkami w pr
 Jeśli korzystasz z dołączonego do NVDA syntezatora eSpeak NG, pole rozwijalne Wariant umożliwia zmianę brzmienia dla aktualnie używanego głosu.
 Warianty głosu Espeak NG to w zasadzie różne głosy, jako że modyfikują one parametry brzmienia głosu Espeak NG.
 Niektóre warianty będą brzmieć jak mężczyzna, inne jak kobieta, a jeszcze inne - jak żaba.
+If using a third-party synthesizer, you may also be able to change this value if your chosen voice supports it.
 </P>
 
 <A NAME="SpeechSettingsRate"></A>
@@ -2692,7 +2701,6 @@ Jest to suwak służący do zmiany intonacji (unoszenia i opadania) głosu w ska
 <P>
 To pole wyboru przełącza ustawienie automatycznej zmiany języka syntezatora w locie. Opcja ta działa tylko wówczas, gdy odpowiedni język jest zadeklarowany w kodzie dokumentu. 
 Domyślnie pole to jest zaznaczone.
-Aktualnie tylko syntezator Espeak NG obsługuje automatyczną zmianę języka .
 </P>
 
 <A NAME="SpeechSettingsDialectSwitching"></A>
@@ -2729,7 +2737,7 @@ Jeśli okaże się, że interpunkcja jest odczytywana w nieprawidłowym języku 
 
 <P>
 Gdy to pole wyboru jest zaznaczone, NVDA będzie używał dodatkowych słowników wymowy  symboli.
-Te słowniki zawierają opisy symboli (w szczególności emoji) dostarczane przez <A HREF="http://www.unicode.org/consortium/">Konsorcjum Unicode</A> jako część ich <A HREF="http://cldr.unicode.org/">wspólnego repozytorium danych lokalnych</A>.
+Te słowniki zawierają opisy symboli (w szczególności emoji) dostarczane przez <A HREF="https://www.unicode.org/consortium/">Konsorcjum Unicode</A> jako część ich <A HREF="https://cldr.unicode.org/">wspólnego repozytorium danych lokalnych</A>.
 Jeśli chcesz, by NVDA wymawiał opisy znaków emoji w oparciu o te dane, powinieneś włączyć tę opcję.
 Jeśli używasz syntezatora, który obsługuje wypowiadanie emoji, możesz chcieć wyłączyć to pole wyboru.
 </P>
@@ -2749,6 +2757,8 @@ W celu przełączenia odczytywania znaków Unicode z dowolnego miejsca, wymagane
 To pole edycji pozwala ustawić o ile zmieni się wysokość głosu podczas czytania dużej litery. 
 Wartość podajemy w procentach - liczba dodatnia oznacza podwyższenie wysokości, liczba ujemna - obniżenie.
 Wartość 0 oznacza brak zmiany wysokości.
+Usually, NVDA raises the pitch slightly for any capital letter, but some synthesizers may not support this well.
+In case pitch change for capitals is not supported, consider <A HREF="#SpeechSettingsSayCapBefore">Say "cap" before capitals</A> and/or <A HREF="#SpeechSettingsBeepForCaps"> Beep for capitals</A> instead.
 </P>
 
 <A NAME="SpeechSettingsSayCapBefore"></A>
@@ -2756,7 +2766,6 @@ Wartość 0 oznacza brak zmiany wysokości.
 
 <P>
 Jeśli zaznaczysz tę opcję, NVDA będzie sygnalizować wielkie litery czytając słowo "Duże", dla każdej litery wypowiadanej jako pojedynczy znak, np. podczas literowania.
-Ta opcja przydatna jest przy korzystaniu z syntezatora, który nie potrafi zmieniać wysokości głosu.
 </P>
 
 <A NAME="SpeechSettingsBeepForCaps"></A>
@@ -2764,7 +2773,6 @@ Ta opcja przydatna jest przy korzystaniu z syntezatora, który nie potrafi zmien
 
 <P>
 Jeśli zaznaczysz tę opcję, NVDA będzie sygnalizować pojedyncze wielkie litery za pomocą krótkiego dźwięku.
-Opcja ta jest przydatna dla syntezatorów, które nie potrafią zmieniać wysokości głosu przy odczytywaniu wielkich liter.
 </P>
 
 <A NAME="SpeechSettingsUseSpelling"></A>
@@ -2809,7 +2817,7 @@ Może to być przydatne dla kogoś chcącego używać NVDA tylko z monitorem bra
 <H5>Urządzenie wyjściowe</H5>
 
 <P>
-Ta opcja pozwala na wybór karty dźwiękowej, przez którą będzie słychać wybrany syntezator NVDA.
+Ta opcja pozwala na wybór urządzenia dźwiękowego, przez którą będzie słychać wybrany syntezator NVDA.
 </P>
 
 <A NAME="SelectSynthesizerDuckingMode"></A>
@@ -3639,7 +3647,8 @@ Jeśli poruszając się po stronie internetowej naciskając TAB znajdziesz się 
 
 <P>
 Opcja ta, gdy zaznaczona, powoduje automatyczne wejście i wyjście z trybu formularza za pomocą klawiszy strzałek.
-Na przykład, gdy poruszając się strzałkami po stronie internetowej natrafisz na pole edycyjne, NVDA automatycznie przejdzie w tryb formularza. Gdy natomiast naciśniesz w formularzu strzałkę w dół i wyjdziesz poza kontrolkę, NVDA powróci do trybu czytania.
+Na przykład, gdy poruszając się strzałkami po stronie internetowej natrafisz na pole edycyjne, NVDA automatycznie przejdzie w tryb formularza.
+Gdy natomiast naciśniesz w formularzu strzałkę w dół i wyjdziesz poza kontrolkę, NVDA powróci do trybu czytania.
 </P>
 
 <A NAME="BrowseModeSettingsPassThroughAudioIndication"></A>
@@ -3655,6 +3664,7 @@ Jeśli ta opcja jest włączona, NVDA będzie sygnalizować dźwiękiem przełą
 <P>
 Domyślnie włączone, to ustawienie pozwala zdecydować, że zdarzenia wejścia, (takie jak naciskane klawisze) które nie są poleceniami NVDA, ani nie wyglądają na polecenia aplikacji, powinny nie być przekazywane do dokumentu, w którym znajduje się punkt uwagi. 
 Dla przykładu: jeśli to ustawienie jest włączone i naciśnięto literę j, zostanie ona zignorowana, ponieważ nie jest komendą szybkiej nawigacji i nie wydaje się być poleceniem aplikacji.
+In this case NVDA will tell Windows to play a default sound whenever a key which gets trapped is pressed.
 </P>
 
 <A NAME="DocumentFormattingSettings"></A>
