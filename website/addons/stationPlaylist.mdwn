@@ -12,7 +12,7 @@ For more information about the add-on, read the [add-on guide][4]. For developer
 
 IMPORTANT NOTES:
 
-* This add-on requires NVDA 2019.3 or later and StationPlaylist suite 5.20 or later.
+* This add-on requires StationPlaylist suite 5.20 or later.
 * If using Windows 8 or later, for best experience, disable audio ducking mode.
 * Starting from 2018, [changelogs for old add-on releases][5] will be found on GitHub. This add-on readme will list changes from version 17.08 (2017 onwards).
 * Certain add-on features won't work under some conditions, including running NVDA in secure mode.
@@ -27,16 +27,21 @@ Most of these will work in Studio only unless otherwise specified.
 * Control+Alt+T (two finger flick down in SPL touch mode) from Studio window: announce remaining time for the currently playing trakc.
 * NVDA+Shift+F12 (two finger flick up in SPL touch mode) from Studio window: announces broadcaster time such as 5 minutes to top of the hour. Pressing this command twice will announce minutes and seconds till top of the hour.
 * Alt+NVDA+1 (two finger flick right in SPL mode) from Studio window: Opens end of track setting dialog.
+* Alt+NVDA+1 from Creator's Playlist Editor window: Announces scheduled time for the loaded playlist.
 * Alt+NVDA+2 (two finger flick left in SPL mode) from Studio window: Opens song intro alarm setting dialog.
+* Alt+NVDA+2 from Creator's Playlist Editor window: Announces total playlist duration.
 * Alt+NVDA+3 from Studio window: Toggles cart explorer to learn cart assignments.
+* Alt+NVDA+3 from Creator's Playlist Editor window: Announces when the selected track is scheduled to play.
 * Alt+NVDA+4 from Studio window: Opens microphone alarm dialog.
+* Alt+NVDA+4 from Creator's Playlist Editor window: Announces rotation and category associated with the loaded playlist.
 * Control+NVDA+f from Studio window: Opens a dialog to find a track based on artist or song name. Press NVDA+F3 to find forward or NVDA+Shift+F3 to find backward.
 * Alt+NVDA+R from Studio window: Steps through library scan announcement settings.
 * Control+Shift+X from Studio window: Steps through braille timer settings.
 * Control+Alt+left/right arrow (while focused on a track in Studio, Creator, and Track Tool): Announce previous/next track column.
-* Control+Alt+up/down arrow (while focused on a track in Studio only): Move to previous or next track and announce specific columns (unavailable in add-on 15.x).
+* Control+Alt+Home/End (while focused on a track in Studio, Creator, and Track Tool): Announce first/last track column.
+* Control+Alt+up/down arrow (while focused on a track in Studio only): Move to previous or next track and announce specific columns.
 * Control+NVDA+1 through 0 (while focused on a track in Studio, Creator, and Track Tool): Announce column content for a specified column. Pressing this command twice will display column information on a browse mode window.
-* Control+NVDA+- (hyphen in Studio): display data for all columns in a track on a browse mode window.
+* Control+NVDA+- (hyphen while focused on a track in Studio, Creator, and Track Tool): display data for all columns in a track on a browse mode window.
 * Alt+NVDA+C while focused on a track (Studio only): announces track comments if any.
 * Alt+NVDA+0 from Studio window: Opens the Studio add-on configuration dialog.
 * Alt+NVDA+- (hyphen) from Studio window: Send feedback to add-on developer using the default email client.
@@ -192,6 +197,17 @@ From studio window, you can press Alt+NVDA+0 to open the add-on configuration di
 ## SPL touch mode
 
 If you are using Studio on a touchscreen computer running Windows 8 or later and have NVDA 2012.3 or later installed, you can perform some Studio commands from the touchscreen. First use three finger tap to switch to SPL mode, then use the touch commands listed above to perform commands.
+
+## Version 20.02
+
+* Initial support for StationPlaylist Creator's Playlist Editor.
+* Added Alt+NVDA+number row commands to announce various status information in Playlist Editor. These include date and time for the playlist (1), total playlist duration (2), when the selected track is scheduled to play (3), and rotation and category (4).
+* While focused on a track in Creator and Track Tool (except in Creator's Playlist Editor), pressing Control+NVDA+Dash will display data for all columns on a browse mode window.
+* If NVDA Recognizes a track list item with less than 10 columns, NVDA will no longer announce headers for nonexistent columns if Control+NVDA+number row for out of range column is pressed.
+* In creator, NVDA will no longer announce column information if Control+NVDA+number row keys are pressed while focused on places other than track list.
+* When a track is playing, NVDA will no longer announce "no track is playing" if obtaining information about current and next tracks via SPL Assistant or SPL Controller.
+* If an alarm options dialog (intro, outro, microphone) is open, NVDA will no longer appear to do nothing or play error tone if attempting to open a second instance of any alarm dialog.
+* When trying to switch between active profile and an instant profile via SPL Assistant (F12), NVDA will present a message if attempting to do so while add-on settings screen is open.
 
 ## Version 20.01
 
