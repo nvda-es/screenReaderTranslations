@@ -171,6 +171,13 @@ Pierwsze pole wyboru pozwala ustalić, czy NVDA będzie używał klawisza CapsLo
 Drugie pozwala włączyć automatyczne uruchamianie programu po zalogowaniu do systemu i jest dostępny tylko dla zainstalowanych kopii NVDA.
 Trzecie pole wyboru określa, czy to okienko dialogowe ma się pojawiać przy każdym uruchomieniu programu.
 
++++ Data usage statistics dialog +++[UsageStatsDialog]
+Starting from NVDA 2018.3, the user is asked if they want to allow usage data to be sent to NV Access in order to help improve NVDA in the future. 
+When starting NVDA for the first time, a dialog will appear which will ask you if you want to accept sending data to NV Access while using NVDA.
+You can read more info about the data gathered by NV Access in Chapter 11 below.
+Note: pressing on "yes" or "no" will save this setting and the dialog will never appear again unless you reinstall NVDA.
+However, you can enable or disable the data gathering process manually in NVDA's general settings panel. For changing this setting manually, you can check or uncheck the checkbox called [Allow the NVDA project to gather NVDA usage statistics #GeneralSettingsGatherUsageStats].
+
 ++ Polecenia klawiszowe w NVDA ++[AboutNVDAKeyboardCommands]
 
 +++ Klawisz komend NVDA +++[TheNVDAModifierKey]
@@ -641,6 +648,7 @@ Aby powrócić do dokumentu, naciśnij klawisz Esc.
 + Brajl +[Braille]
 Jeśli posiadasz monitor brajlowski, NVDA może wyświetlać informacje w brajlu.
 Jeśli twój monitor ma klawiaturę brajlowską, możesz wprowadzać brajla skrótami lub w wersji nieskróconej.
+Braille can be also be displayed on screen using the [Braille Viewer #BrailleViewer] instead of, or at the same time as, using a physical braille display.
 
 Więcej informacji o obsługiwanych monitorach zawiera rozdział [Obsługiwane monitory brajlowskie #SupportedBrailleDisplays].
 Ten rozdział zawiera również informacje o linijkach brajlowskich obsługiwanych przez NVDA funkcją automatycznego wykrywania urządzeń brajlowskich.
@@ -1531,9 +1539,10 @@ Zawiera następujące ustawienia:
 Jeśli zaznaczysz to pole, NVDA będzie czytać pojawiające się dymki podpowiedzi (tooltip).
 Są to niewielkie wiadomości wyświetlane często po wskazaniu myszą lub przeniesieniu fokusa na dane okno lub kontrolkę.
 
-==== Czytaj dymki powiadomień ====[ObjectPresentationReportBalloons]
-Jeśli zaznaczysz to pole, NVDA będzie czytać informacje pojawiające się w postaci dymków w obszarze powiadomień systemu Windows.
-Dymki powiadomień są podobne do dymków podpowiedzi, jednak zazwyczaj są większe i sygnalizują zdarzenia systemowe, takie jak odłączenie kabla sieciowego czy brak ochrony antywirusowej, lób inne zdarzenia mające znaczenie dla bezpieczeństwa systemu.
+==== Report notifications ====[ObjectPresentationReportNotifications]
+This checkbox, when checked, tells NVDA to report help balloons and toast notifications as they appear.
+- Help Balloons are like tooltips, but are usually larger in size, and are associated with system events such as a network cable being unplugged, or perhaps to alert you about Windows security issues.
+- Toast notifications have been introduced in Windows 10 and appear in the notification center in the system tray, informing about several events (i.e. if an update has been downloaded, a new e-mail arived in your inbox, etc.).
 
 ==== Odczytuj klawisze skrótów ====[ObjectPresentationShortcutKeys]
 Jeśli zaznaczysz to pole, NVDA informując o obiektach, pozycjach menu lub kontrolkach okien dialogowych będzie wypowiadać również związany z nimi klawisz skrótu. 
@@ -2027,6 +2036,20 @@ Gdy podgląd mowy jest włączony, jego okienko stale się odświeża by pokaza�
 Gdy klikniesz lub umieścisz fokus wewnątrz podglądu, NVDA tymczasowo zatrzyma aktualizację tekstu, dzięki czemu możesz łatwo zaznaczyć lub skopiować istniejące treści.
 
 Aby przełączać podgląd mowy z każdego miejsca, zdefiniuj własne zdarzenie wejścia używając [okna Zdarzenia wejścia #InputGestures].
+
+++ Braille Viewer ++[BrailleViewer]
+For sighted software developers or people demoing NVDA to sighted audiences, a floating window is available that allows you to view braille output, and the text equivalent for each braille character.
+The braille viewer can be used at the same time as a physical braille display, it will match the number of cells on the physical device.
+While the braille viewer is enabled, it constantly updates to show you the braille that would be displayed on a physical braille display.
+
+To enable the braille viewer, check the "Braille Viewer" menu item under Tools in the NVDA menu.
+Uncheck the menu item to disable it.
+
+Physical braille displays typically have buttons to scroll forwards or backwards, to enable scrolling with the braille viewer tool use the [Input Gestures dialog #InputGestures] to assign keyboard shortcuts which "Scrolls the braille display back" and "Scrolls the braille display forward"
+
+The braille viewer window contains a check box labeled "Show braille viewer on startup".
+If this is checked, the braille viewer will open when NVDA is started.
+The braille viewer window will always attempt to re-open with the same dimensions and location as when it was closed.
 
 ++ Manager wtyczek ++[AddonsManager]
 Manager wtyczek, dostępny poprzez polecenie "Zarządzaj dodatkami" w menu NVDA: Narzędzia, pozwala na instalację, usuwanie, włączanie i wyłączanie dodatków NVDA.
