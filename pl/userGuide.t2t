@@ -174,7 +174,7 @@ Trzecie pole wyboru określa, czy to okienko dialogowe ma się pojawiać przy ka
 +++ Data usage statistics dialog +++[UsageStatsDialog]
 Starting from NVDA 2018.3, the user is asked if they want to allow usage data to be sent to NV Access in order to help improve NVDA in the future. 
 When starting NVDA for the first time, a dialog will appear which will ask you if you want to accept sending data to NV Access while using NVDA.
-You can read more info about the data gathered by NV Access in Chapter 11 below.
+You can read more info about the data gathered by NV Access in the general settings section, [Allow the NVDA project to gather NVDA usage statistics #GeneralSettingsGatherUsageStats].
 Note: pressing on "yes" or "no" will save this setting and the dialog will never appear again unless you reinstall NVDA.
 However, you can enable or disable the data gathering process manually in NVDA's general settings panel. For changing this setting manually, you can check or uncheck the checkbox called [Allow the NVDA project to gather NVDA usage statistics #GeneralSettingsGatherUsageStats].
 
@@ -659,7 +659,7 @@ Aby zmieścić jak najwięcej informacji na monitorze brajlowskim, zdefiniowano 
 
 || Skrót | Typ kontrolki |
 | app | aplikacja |
-| art | artykół |
+| art | artykuł |
 | qt | blok cytatu |
 | btn | Przycisk |
 | drbtn | przycisk rozwijany |
@@ -1061,7 +1061,7 @@ Dostępne poziomy logowania, to:
  - Jeżeli boisz się o swoją prywatność, nie włączaj tej opcji.
 - Debugowanie: Poza wiadomościami debugowania, wejściem klawiatury i mowy dodatkowe informacje będą zapisywane.
  - Tak samo jak w poprzednim, jeżeli boisz się o swoją prywatność, nie włączaj tej opcji.
-
+-
 
 ==== Automatycznie uruchom NVDA po zalogowaniu się do systemu Windows ====[GeneralSettingsStartAfterLogOn]
 Jeśli ta opcja jest włączona, NVDA uruchomi się automatycznie zaraz po zalogowaniu się do systemu.
@@ -1084,7 +1084,7 @@ Poniższe informacje są zawsze przesyłane:
 - Aktualna wersja NVDA
 - Wersja systemu operacyjnego
 - Czy system operacyjny jest 64, czy 32 bitowy
-
+-
 
 ==== Zezwalaj projektowi NVDA na zbieranie statystyk użytkowania programu ====[GeneralSettingsGatherUsageStats]
 Gdy włączone, NV Access będzie używać informacji przesyłanych przy sprawdzaniu dostępności aktualizacji, dla określania liczby użytkowników NVDA włączając w to informacje demograficzne, takie jak kraj i system operacyjny.
@@ -1095,7 +1095,7 @@ Prócz niezbędnych informacji umożliwiających sprawdzanie aktualizacji,  poni
 - Nazwa aktualnie używanego syntezatora mowy (włączając w to nazwę dodatku, z którego pochodzi sterownik)
 - Nazwa aktualnie używanej linijki brajlowskiej (włączając w to nazwę dodatku, z którego pochodzi sterownik)
 - Brajlowska tablica wyjścia (jeśli brajl jest używany)
-
+-
 
 Te informacje znacząco pomagają NV Access w priorytyzowaniu dalszych prac nad NVDA.
 
@@ -1779,31 +1779,21 @@ Obejmuje to sam edytor Microsoft Word oraz okna przeglądania i tworzenia wiadom
 Mogą jednak istnieć informacje, które nie są wcale dostarczane, albo są dostarczane nieprawidłowo  w niektórych wersjach Microsoft Office,  co znaczy, że na obsłudze UI Automation nie zawsze można polegać.
 Wciąż nie zalecamy domyślnego włączania tej funkcji przez większość użytkowników, ale mile widziane będą testy i uwagi od użytkowników Office 2016/365.
 
-==== Wsparcie konsoli systemu Windows ====[AdvancedSettingsConsoleUIA]
-To ustawienie kontroluje, w jaki sposób program NVDA interaguje z programami używającymi Wiersza Poleceń jako swojego silnika.
-Nie dotyczy ono nowego terminala systemu Windows.
-W systemie Windows 10 wersji 1709 firma Microsoft [dodała wsparcie dla swojego UI Automation API dla konsoli https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/], bringing vastly improved performance and stability for screen readers that support it.
-W razie, gdy UIA jest niedostępne lub wykryte zostanie błędne zachowanie, starsze wsparcie konsoli jest wciąż obecne jako mechanizm ratunkowy.
-Lista rozwijana zawiera następujące opcje:
-- Automatyczne: używa UIA w sytuacjach kiedy jest ono zalecane.
-- Preferuj UIA: używa UIA nawet jeżeli istnieje ryzyko błędnego zachowania.
-- Stare wsparcie: UIA nie będzie używane w konsoli systemu Windows, a program NVDA będzie zachowywał się dokładnie tak samo, jak w poprzednich wersjach.
--
+==== Use UI Automation to access the Windows Console when available ====[AdvancedSettingsConsoleUIA]
+When this option is enabled, NVDA will use a new, work in progress version of its support for Windows Console which takes advantage of [accessibility improvements made by Microsoft https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/]. This feature is highly experimental and is still incomplete, so its use is not yet recommended. However, once completed, it is anticipated that this new support will become the default, improving NVDA's performance and stability in Windows command consoles.
 
-==== Wymawiaj hasła w konsoli systemu Windows ====[AdvancedSettingsWinConsoleSpeakPasswords]
-This setting controls whether characters are spoken by [speak typed characters #KeyboardSettingsSpeakTypedCharacters] or [speak typed words #KeyboardSettingsSpeakTypedWords] in situations where the screen does not update (such as password entry) in some terminal programs, such as the Windows Console with UI automation support enabled and Mintty.
-For security purposes, this setting should be left disabled.
-However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting in consoles, or work in trusted environments and prefer password announcement.
+==== Speak passwords in UIA consoles ====[AdvancedSettingsWinConsoleSpeakPasswords]
+This setting controls whether characters are spoken by [speak typed characters #KeyboardSettingsSpeakTypedCharacters] or [speak typed words #KeyboardSettingsSpeakTypedWords] in situations where the screen does not update (such as password entry) in the Windows Console with UI automation support enabled. For security purposes, this setting should be left disabled. However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting while using NVDA's new experimental console support.
 
-==== Use the new typed character support in legacy Windows consoles when available ====[AdvancedSettingsKeyboardSupportInLegacy]
-This option enables an alternative method for detecting typed characters in legacy Windows consoles.
+==== Use the new typed character support in Windows Console when available ====[AdvancedSettingsKeyboardSupportInLegacy]
+This option enables an alternative method for detecting typed characters in Windows command consoles.
 While it improves performance and prevents some console output from being spelled out, it may be incompatible with some terminal programs.
 This feature is available and enabled by default on Windows 10 versions 1607, 1703, 1709 and 1803 as well as on newer Windows 10 releases when UI Automation is unavailable or disabled.
 Warning: with this option enabled, typed characters that do not appear onscreen, such as passwords, will not be suppressed.
 In untrusted environments, you may temporarily disable [speak typed characters #KeyboardSettingsSpeakTypedCharacters] and [speak typed words #KeyboardSettingsSpeakTypedWords] when entering passwords.
 
 ==== Automatycznie ustaw kursor systemowy na elementach interaktywnych w trybie czytania ====[BrowseModeSettingsAutoFocusFocusableElements]
-Key: NVDA+8
+skrót: NVDA+8
 
 Domyślnie włączona, opcja pozwala określić, czy fokus systemowy ma być automatycznie ustawianych na elementach, które mogą go otrzymać (linki, pola formularzy etc.) podczas nawigacji po treści w trybie czytania.
 Jeśli włączona, określa to domyślne zachowanie NVDA w wersji 2019.1 i starszych.
@@ -3022,7 +3012,7 @@ Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 | -l poziom | --log-level=poziom | Najniższy poziom zapisywanych informacji logu (debugowanie 10, wejście/wyjście 12, ostrzeżenie debugowania 15, informacje 20, ostrzeżenia 30, błędy 40, krytyczne 50, wyłączone 100), domyślnie ostrzeżenia |
 | -c ścieżka | --config-path=ścieżka | Ścieżka folderu, w którym zapisane są wszystkie ustawienia NVDA |
 | -m | --minimal | Bez dźwięku, interfejsu, informacji początkowej etc |
-| -s | --secure | Tryb bezpieczny (wyłącz konsolę Pythona i funkcje zapisywania logów, używane często na zabezpieczonych ekranach) |
+| -s | --secure | Secure mode: disables Python console, profile features such as creation, deletion, renaming profiles etc., update check, some checkboxes in the welcome dialog and in general settings category (e.g. start NVDA after logon, save configuration after exit etc.), as well as logviewer and logging features (used often in secure screens). Note also that this command will disable the possibility to save settings in system config and the gesture map will not be saved on the disk. |
 | Brak | --disable-addons | Dodatki będą ignorowane |
 | Brak | --debug-logging | Ustaw poziom logowania na informacje debugowania, dla bieżącego uruchomienia. To ustawienie nadpisze jakiekolwiek ustawienie poziomu logowania ( ""--loglevel"", -l) z wyłączeniem zapisywania logów włącznie. |
 | Brak | --no-logging | Wyłącz zapisywanie dziennika podczas używania NVDA. To ustawienie może być nadpisane, gdy poziom logowania ( ""--loglevel"", -l) jest określony w linii komend lub rejestrowanie debugowania jest włączone. |
