@@ -42,6 +42,7 @@
     <LI><A HREF="#LaunchingNVDA">4.1. Uruchomienie NVDA</A>
       <UL>
       <LI><A HREF="#WelcomeDialog">4.1.1. Okno powitalne</A>
+      <LI><A HREF="#UsageStatsDialog">4.1.2. Data usage statistics dialog</A>
       </UL>
     <LI><A HREF="#AboutNVDAKeyboardCommands">4.2. Polecenia klawiszowe w NVDA</A>
       <UL>
@@ -64,7 +65,7 @@
     <UL>
     <LI><A HREF="#Objects">5.1. Obiekty</A>
     <LI><A HREF="#SystemFocus">5.2. Nawigacja fokusem</A>
-    <LI><A HREF="#toc35">5.3. Nawigacja kursorem systemowym</A>
+    <LI><A HREF="#toc36">5.3. Nawigacja kursorem systemowym</A>
     <LI><A HREF="#ObjectNavigation">5.4. Nawigacja w hierarchii obiektów</A>
     <LI><A HREF="#ReviewingText">5.5. Przegląd tekstu w aktualnym obiekcie</A>
     <LI><A HREF="#ReviewModes">5.6. Tryby przeglądania</A>
@@ -174,10 +175,11 @@
     <UL>
     <LI><A HREF="#LogViewer">13.1. Podgląd logu</A>
     <LI><A HREF="#SpeechViewer">13.2. Podgląd mowy</A>
-    <LI><A HREF="#AddonsManager">13.3. Manager wtyczek</A>
-    <LI><A HREF="#incompatibleAddonsManager">13.4. Manager niezgodnych dodatków</A>
-    <LI><A HREF="#PythonConsole">13.5. Konsola Pythona</A>
-    <LI><A HREF="#ReloadPlugins">13.6. przeładuj wtyczki</A>
+    <LI><A HREF="#BrailleViewer">13.3. Braille Viewer</A>
+    <LI><A HREF="#AddonsManager">13.4. Manager wtyczek</A>
+    <LI><A HREF="#incompatibleAddonsManager">13.5. Manager niezgodnych dodatków</A>
+    <LI><A HREF="#PythonConsole">13.6. Konsola Pythona</A>
+    <LI><A HREF="#ReloadPlugins">13.7. przeładuj wtyczki</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">14. Obsługiwane syntezatory mowy</A>
     <UL>
@@ -199,9 +201,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Brailliant BI/B Series/ BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc135">15.9.1. Przypisania klawiszy dla wszystkich modeli</A>
-      <LI><A HREF="#toc136">15.9.2. Przypisania klawiszy dla Brailliant BI 32, BI 40 and B 80</A>
-      <LI><A HREF="#toc137">15.9.3. Przypisania klawiszowe dla Brailliant BI 14</A>
+      <LI><A HREF="#toc137">15.9.1. Przypisania klawiszy dla wszystkich modeli</A>
+      <LI><A HREF="#toc138">15.9.2. Przypisania klawiszy dla Brailliant BI 32, BI 40 and B 80</A>
+      <LI><A HREF="#toc139">15.9.3. Przypisania klawiszowe dla Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
     <LI><A HREF="#Seika">15.11. Monitory brajlowskie Seika</A>
@@ -474,6 +476,17 @@ Lista rozwijana pozwala wybrać układ klawiatury.
 Pierwsze pole wyboru pozwala ustalić, czy NVDA będzie używał klawisza CapsLock jako klawisza komend NVDA.
 Drugie pozwala włączyć automatyczne uruchamianie programu po zalogowaniu do systemu i jest dostępny tylko dla zainstalowanych kopii NVDA.
 Trzecie pole wyboru określa, czy to okienko dialogowe ma się pojawiać przy każdym uruchomieniu programu.
+</P>
+
+<A NAME="UsageStatsDialog"></A>
+<H4>4.1.2. Data usage statistics dialog</H4>
+
+<P>
+Starting from NVDA 2018.3, the user is asked if they want to allow usage data to be sent to NV Access in order to help improve NVDA in the future. 
+When starting NVDA for the first time, a dialog will appear which will ask you if you want to accept sending data to NV Access while using NVDA.
+You can read more info about the data gathered by NV Access in Chapter 11 below.
+Note: pressing on "yes" or "no" will save this setting and the dialog will never appear again unless you reinstall NVDA.
+However, you can enable or disable the data gathering process manually in NVDA's general settings panel. For changing this setting manually, you can check or uncheck the checkbox called <A HREF="#GeneralSettingsGatherUsageStats">Allow the NVDA project to gather NVDA usage statistics</A>.
 </P>
 
 <A NAME="AboutNVDAKeyboardCommands"></A>
@@ -774,7 +787,7 @@ Przydatne skróty klawiszowe do nawigacji za pomocą fokusa:
 </TR>
 </TABLE>
 
-<A NAME="toc35"></A>
+<A NAME="toc36"></A>
 <H3>5.3. Nawigacja kursorem systemowym</H3>
 
 <P>
@@ -1615,6 +1628,7 @@ Aby powrócić do dokumentu, naciśnij klawisz Esc.
 <P>
 Jeśli posiadasz monitor brajlowski, NVDA może wyświetlać informacje w brajlu.
 Jeśli twój monitor ma klawiaturę brajlowską, możesz wprowadzać brajla skrótami lub w wersji nieskróconej.
+Braille can be also be displayed on screen using the <A HREF="#BrailleViewer">Braille Viewer</A> instead of, or at the same time as, using a physical braille display.
 </P>
 <P>
 Więcej informacji o obsługiwanych monitorach zawiera rozdział <A HREF="#SupportedBrailleDisplays">Obsługiwane monitory brajlowskie</A>.
@@ -3400,60 +3414,38 @@ Jeśli zaznaczysz to pole, NVDA będzie czytać pojawiające się dymki podpowie
 Są to niewielkie wiadomości wyświetlane często po wskazaniu myszą lub przeniesieniu fokusa na dane okno lub kontrolkę.
 </P>
 
-<A NAME="ObjectPresentationReportBalloons"></A>
-<H5>Czytaj dymki powiadomień</H5>
+<A NAME="ObjectPresentationReportNotifications"></A>
+<H5>Report notifications</H5>
 
 <P>
-Jeśli zaznaczysz to pole, NVDA będzie czytać informacje pojawiające się w postaci dymków w obszarze powiadomień systemu Windows.
-Dymki powiadomień są podobne do dymków podpowiedzi, jednak zazwyczaj są większe i sygnalizują zdarzenia systemowe, takie jak odłączenie kabla sieciowego czy brak ochrony antywirusowej, lób inne zdarzenia mające znaczenie dla bezpieczeństwa systemu.
-</P>
-
-<A NAME="ObjectPresentationShortcutKeys"></A>
-<H5>Odczytuj klawisze skrótów</H5>
-
-<P>
-Jeśli zaznaczysz to pole, NVDA informując o obiektach, pozycjach menu lub kontrolkach okien dialogowych będzie wypowiadać również związany z nimi klawisz skrótu. 
-Dla przykładu, menu plik może mieć przypisany skrót Alt+P.
-</P>
-
-<A NAME="ObjectPresentationPositionInfo"></A>
-<H5>Odczytuj położenie obiektów</H5>
-
-<P>
-Ta opcja pozwala zmienić sposób ogłaszania pozycji obiektu po przejściu do obiektu z fokusem lub obiektu nawigacji (np. 1 z 4).
-</P>
-
-<A NAME="ObjectPresentationGuessPositionInfo"></A>
-<H5>odgadnij położenie obiektu, gdy nie dostępne</H5>
-
-<P>
-Gdy włączona jest opcja powiadamiania o położeniu obiektu, a z przyczyn technicznych jest ono niedostępne dla NVDA w aktualnej kontrolce, NVDA może próbować je odgadnąć.
-</P>
-<P>
-Gdy opcja powyższa jest zaznaczona, NVDA może odczytywać informacje o pozycji w większej ilości obiektów, jak niektóre paski narzędziowe czy menu, lecz informacje te mogą być nieco niedokładne.
-</P>
-
-<A NAME="ObjectPresentationReportDescriptions"></A>
-<H5>Odczytuj opisy obiektów</H5>
-
-<P>
-Odznacz to pole, jeśli nie chcesz, by program NVDA czytał opisy obiektów.
-</P>
-
-<A NAME="ObjectPresentationProgressBarOutput"></A>
-<H5>Sygnał paska postępu</H5>
-
-<P>
-Skrót Klawiszowy: NVDA+u
-</P>
-<P>
-Ta opcja określa w jaki sposób NVDA sygnalizuje aktualizację paska postępu.
-</P>
-<P>
-Dostępne są następujące opcje:
+This checkbox, when checked, tells NVDA to report help balloons and toast notifications as they appear.
 </P>
 
 <UL>
+<LI>Help Balloons are like tooltips, but are usually larger in size, and are associated with system events such as a network cable being unplugged, or perhaps to alert you about Windows security issues.
+<LI>Toast notifications have been introduced in Windows 10 and appear in the notification center in the system tray, informing about several events (i.e. if an update has been downloaded, a new e-mail arived in your inbox, etc.).
+<P></P>
+==== Odczytuj klawisze skrótów ====[ObjectPresentationShortcutKeys]
+Jeśli zaznaczysz to pole, NVDA informując o obiektach, pozycjach menu lub kontrolkach okien dialogowych będzie wypowiadać również związany z nimi klawisz skrótu. 
+Dla przykładu, menu plik może mieć przypisany skrót Alt+P.
+<P></P>
+==== Odczytuj położenie obiektów ====[ObjectPresentationPositionInfo]
+Ta opcja pozwala zmienić sposób ogłaszania pozycji obiektu po przejściu do obiektu z fokusem lub obiektu nawigacji (np. 1 z 4).
+<P></P>
+==== odgadnij położenie obiektu, gdy nie dostępne ====[ObjectPresentationGuessPositionInfo]
+Gdy włączona jest opcja powiadamiania o położeniu obiektu, a z przyczyn technicznych jest ono niedostępne dla NVDA w aktualnej kontrolce, NVDA może próbować je odgadnąć.
+<P></P>
+Gdy opcja powyższa jest zaznaczona, NVDA może odczytywać informacje o pozycji w większej ilości obiektów, jak niektóre paski narzędziowe czy menu, lecz informacje te mogą być nieco niedokładne.
+<P></P>
+==== Odczytuj opisy obiektów ====[ObjectPresentationReportDescriptions]
+Odznacz to pole, jeśli nie chcesz, by program NVDA czytał opisy obiektów.
+<P></P>
+==== Sygnał paska postępu ====[ObjectPresentationProgressBarOutput]
+Skrót Klawiszowy: NVDA+u
+<P></P>
+Ta opcja określa w jaki sposób NVDA sygnalizuje aktualizację paska postępu.
+<P></P>
+Dostępne są następujące opcje:
 <LI>Wyłączone: Nie będzie sygnalizowana żadna zmiana paska postępu.
 <LI>Mowa: Ta opcja instruuje NVDA, by zmiany pasków postępu były wypowiadane mową. Po każdej zmianie paska postępu, NVDA będzie wymawiać nową wartość.
 <LI>Dźwięk: Oznacza, że NVDA użyje sygnału dźwiękowego przy każdej zmianie paska postępu. Im wyższy dźwięk, tym bliżej jest do końca paska postępu.
@@ -4227,8 +4219,29 @@ Gdy klikniesz lub umieścisz fokus wewnątrz podglądu, NVDA tymczasowo zatrzyma
 Aby przełączać podgląd mowy z każdego miejsca, zdefiniuj własne zdarzenie wejścia używając <A HREF="#InputGestures">okna Zdarzenia wejścia</A>.
 </P>
 
+<A NAME="BrailleViewer"></A>
+<H3>13.3. Braille Viewer</H3>
+
+<P>
+For sighted software developers or people demoing NVDA to sighted audiences, a floating window is available that allows you to view braille output, and the text equivalent for each braille character.
+The braille viewer can be used at the same time as a physical braille display, it will match the number of cells on the physical device.
+While the braille viewer is enabled, it constantly updates to show you the braille that would be displayed on a physical braille display.
+</P>
+<P>
+To enable the braille viewer, check the "Braille Viewer" menu item under Tools in the NVDA menu.
+Uncheck the menu item to disable it.
+</P>
+<P>
+Physical braille displays typically have buttons to scroll forwards or backwards, to enable scrolling with the braille viewer tool use the <A HREF="#InputGestures">Input Gestures dialog</A> to assign keyboard shortcuts which "Scrolls the braille display back" and "Scrolls the braille display forward"
+</P>
+<P>
+The braille viewer window contains a check box labeled "Show braille viewer on startup".
+If this is checked, the braille viewer will open when NVDA is started.
+The braille viewer window will always attempt to re-open with the same dimensions and location as when it was closed.
+</P>
+
 <A NAME="AddonsManager"></A>
-<H3>13.3. Manager wtyczek</H3>
+<H3>13.4. Manager wtyczek</H3>
 
 <P>
 Manager wtyczek, dostępny poprzez polecenie "Zarządzaj dodatkami" w menu NVDA: Narzędzia, pozwala na instalację, usuwanie, włączanie i wyłączanie dodatków NVDA.
@@ -4286,7 +4299,7 @@ Aby uruchamiać manager dodatków z każdego miejsca, określ własne zdarzenie 
 </P>
 
 <A NAME="incompatibleAddonsManager"></A>
-<H3>13.4. Manager niezgodnych dodatków</H3>
+<H3>13.5. Manager niezgodnych dodatków</H3>
 
 <P>
 Manager niezgodnych dodatków, dostępny pod przyciskiem "Przeglądaj niezgodne dodatki"  w managerze dodatków, pozwala badać niezgodne dodatki, oraz przyczyny, dla których są uznawane za niezgodne.
@@ -4307,7 +4320,7 @@ Pozwala przejrzeć wszystkie szczegóły dodatku, co jest przydatne przy kontakc
 </P>
 
 <A NAME="PythonConsole"></A>
-<H3>13.5. Konsola Pythona</H3>
+<H3>13.6. Konsola Pythona</H3>
 
 <P>
 Konsola Pythona NVDA znajduje się w menu Narzędzia  w NVDA. Jest narzędziem dla programistów i jest używana do debugowania, przeglądania wewnątrz NVDA lub sprawdzania hierarchii dostępności aplikacji.
@@ -4315,7 +4328,7 @@ Więcej informacji znajduje się w <A HREF="https://www.nvaccess.org/files/nvda/
 </P>
 
 <A NAME="ReloadPlugins"></A>
-<H3>13.6. przeładuj wtyczki</H3>
+<H3>13.7. przeładuj wtyczki</H3>
 
 <P>
 Po aktywacji tego polecenia wszystkie moduły aplikacji oraz wtyczki zostaną przeładowane bez potrzeby restartu NVDA. Jest to użyteczne dla programistów.
@@ -5162,7 +5175,7 @@ Poniżej skróty klawiszowe dla Brailliant BI/B i BrailleNote touch, które dzia
 Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia.
 </P>
 
-<A NAME="toc135"></A>
+<A NAME="toc137"></A>
 <H4>15.9.1. Przypisania klawiszy dla wszystkich modeli</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5252,7 +5265,7 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia.
 </TR>
 </TABLE>
 
-<A NAME="toc136"></A>
+<A NAME="toc138"></A>
 <H4>15.9.2. Przypisania klawiszy dla Brailliant BI 32, BI 40 and B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5274,7 +5287,7 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia.
 </TR>
 </TABLE>
 
-<A NAME="toc137"></A>
+<A NAME="toc139"></A>
 <H4>15.9.3. Przypisania klawiszowe dla Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
