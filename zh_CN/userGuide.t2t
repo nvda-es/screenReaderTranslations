@@ -1689,12 +1689,29 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 但是，在某些版本的Office中可能存在某些未公开或未正确显示的信息，这意味着UIA支持不好用。
 我们建议大多数用户不要启用此功能，但我们欢迎Office 2016或者Office 365的用户测试此功能并提供反馈。
 
-==== 使用Microsoft UI Automation支持命令提示符 ====[AdvancedSettingsConsoleUIA]
-启用此选项后，NVDA将使用Microsoft UI Automation朗读命令提示符，该版本利用了[Windows10的对命令提示符的无障碍改进 https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/]。 此功能还在测试，仍然不稳定，因此尚未默认开启。 但是，一旦完成，预计这种新支持将成为默认设置，从而提高NVDA在Windows命令控制台中的性能和稳定性。
+==== Windows Console support ====[AdvancedSettingsConsoleUIA]
+This option selects how NVDA interacts with the Windows Console used by command prompt, PowerShell, and the Windows Subsystem for Linux.
+It does not affect the modern Windows Terminal.
+In Windows 10 version 1709, Microsoft [added support for its UI Automation API to the console https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/], bringing vastly improved performance and stability for screen readers that support it.
+In situations where UI Automation is unavailable or known to result in an inferior user experience, NVDA's legacy console support is available as a fallback.
+The Windows Console support combo box has three options:
+- Automatic: Uses UI Automation in consoles on Windows 10 version 1809 and later. This option is recommended and set by default.
+- Prefer UIA: Uses UI Automation in consoles if available, even on Windows versions with incomplete or buggy implementations. While this limited functionality may be useful (and even sufficient for your usage), use of this option is entirely at your own risk and no support for it will be provided.
+- Legacy: UI Automation in the Windows Console will be completely disabled, so the legacy fallback will always be used.
+-
 
-==== 命令提示符中读出密码 ====[AdvancedSettingsWinConsoleSpeakPasswords]
-这一项控制在使用Microsoft UI Automation支持命令提示符情况下屏幕内容不更新时是否[朗读输入字符  #KeyboardSettingsSpeakTypedCharacters] 或 [朗读输入单词 #KeyboardSettingsSpeakTypedWords]。通常输入密码的时候会遇到这种情况。 出于安全考虑，应禁用此设置。 但是，如果您在使用NVDA的新的命令提示符支持时遇到性能问题或朗读不稳定，您可能希望启用它。
-
+==== Speak passwords in Windows Console ====[AdvancedSettingsWinConsoleSpeakPasswords]
+This setting controls whether characters are spoken by [speak typed characters #KeyboardSettingsSpeakTypedCharacters] or [speak typed words #KeyboardSettingsSpeakTypedWords] in situations where the screen does not update (such as password entry) in some terminal programs, such as the Windows Console with UI automation support enabled and Mintty.
+For security purposes, this setting should be left disabled.
+However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting in consoles, or work in trusted environments and prefer password announcement.
+ 
+==== Use the new typed character support in legacy Windows consoles when available ====[AdvancedSettingsKeyboardSupportInLegacy]
+This option enables an alternative method for detecting typed characters in legacy Windows consoles.
+While it improves performance and prevents some console output from being spelled out, it may be incompatible with some terminal programs.
+This feature is available and enabled by default on Windows 10 versions 1607, 1703, 1709 and 1803 as well as on newer Windows 10 releases when UI Automation is unavailable or disabled.
+Warning: with this option enabled, typed characters that do not appear onscreen, such as passwords, will not be suppressed.
+In untrusted environments, you may temporarily disable [speak typed characters #KeyboardSettingsSpeakTypedCharacters] and [speak typed words #KeyboardSettingsSpeakTypedWords] when entering passwords.
+ 
 ==== 浏览模式中自动把焦点放到可聚焦的元素上 ====[BrowseModeSettingsAutoFocusFocusableElements]
 快捷键: NVDA+8
 
@@ -2884,8 +2901,7 @@ Please see the [BRLTTY key binding lists https://mielke.cc/brltty/doc/KeyBinding
 选项数量不限。
 这些选项可以通过快捷方式(快捷方式属性)、运行对话框(开始菜单 -> 运行 或 Windows+r)或一个 Windows 命令控制台启动时传给NVDA主程序。
 NVDA主程序文件名和选项之间以及每个选项之间需要用空格分开。
-如 在NVDA 安装时创建的快捷方式就有 -r 选项，告诉 NVDA 在启动新的 NVDA 前关闭当前运行的副本。
-另一个实用的选项是 --disable-addons，它告诉 NVDA 启动时不加载插件。
+一个实用的选项是 --disable-addons，它告诉 NVDA 启动时不加载插件。
 用这个选项可以判断遇到的问题是否由插件造成，也可以用于从插件造成的严重问题中恢复。
 
 这里有一个例子，您可以在“运行”对话框键入下面的代码退出当前运行的 NVDA 副本：
@@ -2894,8 +2910,8 @@ nvda -q
 
 有一些命令行选项有长和短两个版本，而另外一些则只有长的版本。
 对于那些有短版本的命令行选项，您可以像这样的组合他们：
-| nvda -rm | 这将退出 当前运行的 NVDA 副本并在停用启动声音的情况下启动新的副本等。 |
-| nvda -rm --disable-addons | 和上面一样，但停用了插件。 |
+| nvda -mc CONFIGPATH | 按照指定的配置目录启动NVDA并在停用启动声音和启动消息。 |
+| nvda -mc CONFIGPATH --disable-addons | 在上一行的效果的基础上另外停用了插件。 |
 
 一些命令行选项接受附加参数，如日志记录有多详细或用户配置目录的路径。
 那些参数应该被放在选项之后，短版本使用空格分隔，长版本使用等于号(=)分隔。如：
@@ -2907,7 +2923,6 @@ nvda -q
 || 短版本 | 长版本 | 描述 |
 | -h | --help | 显示命令行帮助并退出。 |
 | -q | --quit | 退出已运行的 NVDA 副本。 |
-| -r | --replace | 退出已运行的版本并启用这个版本。 |
 | -k | --check-running | 通过退出代码报告 NVDA 是否在运行，0 表示运行， 1 表示没有运行。 |
 | -f LOGFILENAME | --log-file=LOGFILENAME | 日志消息需要写入的文件。 |
 | -l LOGLEVEL | --log-level=LOGLEVEL | 日志消息记录的最低级别(调试 10， 信息 20， 警告 30， 错误 40， 严重 50，停用 100 默认为“警告”。 |
