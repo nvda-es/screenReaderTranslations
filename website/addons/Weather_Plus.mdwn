@@ -223,7 +223,7 @@ To add a new city: press the following item:
 
 # Version 4.6.7 #
 
-* Improved the reading of the current time; in some cities, it was not correct. Added daylight saving time to the details; Available only for the countries that adopt it.
+* Improved the reading of the current time; in some cities, it was not correct. Added daylight saving time to the details; available only for the countries that adopt it.
 
 # Version 4.6.5 #
 
@@ -453,7 +453,7 @@ To add a new city: press the following item:
 * F1 jumps into list and edit box of zip code.
 * F2 returns to the last selection reached with TAB.
 * F3 jumps into volume controls (if the sound effects are installed and activated).
-* Added shortcut commands for all checkboxes and buttons; Omitted the two radio buttons as they are present in succession and the first is reachable with the command control+shift+w.
+* Added shortcut commands for all checkboxes and buttons; omitted the two radio buttons as they are present in succession and the first is reachable with the command control+shift+w.
 * Changed, the button "define" is now disabled if the sound effects are not installed and activated.
 * Added volume controls; you can adjust the overall volume and the last heard sound effect; this option is enabled if the sound effects are installed and activated.
 * Added ability to set the system time in 12-hour format (12:30 AM `-` 12:30 PM) , or the 24-hour system (12:30 `-` 00:30).
