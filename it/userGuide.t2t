@@ -1123,6 +1123,7 @@ In particolare la freccia giù e la freccia sinistra sposteranno verso il basso 
 Una casella combinata che permette di selezionare con quale variante il sintetizzatore debba parlare. 
 Al momento, soltanto Espeak NG supporta questa impostazione. 
 Le varianti in Espeak sono simili alle voci, esse modificano i parametri e gli attributi della voce originale, per cui ad esempio potremmo avere voci simili a quelle maschili o femminili.
+Nel caso si utilizzi una sintesi vocale di terze parti, la funzione è disponibile solo se il sintetizzatore supporta le varianti.
 
 ==== Velocità ====[VoiceSettingsRate]
 Questa opzione permette di modificare la velocità della voce. 
@@ -1492,7 +1493,7 @@ Più in alto è la posizione del mouse sullo schermo, più acuti saranno i toni 
 Spostando il mouse a sinistra o a destra si otterrà lo spostamento del suono nelle direzioni corrispondenti sugli altoparlanti, a patto che si abbiano a disposizione degli altoparlanti stereo.
 
 ==== La luminosità controlla il volume delle coordinate audio ====[MouseSettingsBrightness]
-Se la casella di controllo "coordinate audio quando il mouse si sposta" è attiva, allora, attivando quest'opzione, il volume dei beeps delle coordinate audio è controllato dal livello di luminosità dello schermo, riferito alla posizione attuale del mouse. 
+Se la casella di controllo "coordinate audio quando il mouse si sposta" è attiva, allora, attivando quest'opzione, il volume dei beep delle coordinate audio è controllato dal livello di luminosità dello schermo, riferito alla posizione attuale del mouse. 
 Questa caratteristica viene disattivata di default.
 
 ==== Ignora il mouse se gestito da altre applicazioni ====[MouseSettingsHandleMouseControl]
@@ -1668,7 +1669,8 @@ In sostanza, quando ci si trova in una pagina web e premiamo il tasto tab, se l'
 
 ==== Modalità focus automatica per i movimenti del cursore ====[BrowseModeSettingsAutoPassThroughOnCaretMove]
 Quest'opzione, quando attivata, permette a NVDA di abilitare/disabilitare la modalità focus quando si utilizzano i tasti freccia.
-Per esempio, se si naviga in una pagina web e, scorrendo con il cursore, si incontra un campo editazione, NVDA attiverà subito la modalità focus, permettendo quindi in questa circostanza di scrivere del testo. Se si continua a scorrere la pagina web con le frecce, NVDA ripristinerà il buffer virtuale non appena si uscirà dal campo editazione.
+Per esempio, se si naviga in una pagina web e, scorrendo con il cursore, si incontra un campo editazione, NVDA attiverà subito la modalità focus, permettendo quindi in questa circostanza di scrivere del testo.
+Se si continua a scorrere la pagina web con le frecce e si esce dal campo editazione, NVDA ripristinerà la modalità navigazione.
 
 ==== indicazione audio delle modalità focus e buffer virtuale ====[BrowseModeSettingsPassThroughAudioIndication]
 Attivando questa casella di controllo, NVDA emetterà dei segnali acustici al passaggio tra la modalità navigazione e la modalità focus, piuttosto che annunciarli a parole.
@@ -1676,6 +1678,7 @@ Attivando questa casella di controllo, NVDA emetterà dei segnali acustici al pa
 ==== Inibisci tutti i gesti che non rappresentano un comando ====[BrowseModeSettingsTrapNonCommandGestures]
 Attivata da impostazioni predefinite, questa funzione permette di stabilire se, ai gesti (come le pressioni di un tasto) che non rappresentano comandi di NVDA e non sono considerati tasti caldi in generale, debba essere impedito di raggiungere il documento sul quale è posizionato il focus.
 Ad esempio, se abilitata, premendo la lettera "j", a questa verrebbe impedito di raggiungere il documento, nonostante non sia un comando veloce di navigazione o possa essere un comando dell'applicazione stessa.
+Ogni qualvolta questo accade, Windows emetterà un suono predefinito di avviso.
 
 +++ Formato documento (NVDA+Control+d) +++[documentFormattingSettings]
 la maggior parte delle caselle di controllo in questa categoria servono a configurare quali informazioni inerente la formattazione NVDA dovrà pronunciare quando si scorre un documento con le frecce. 
@@ -1768,7 +1771,6 @@ Se si desidera  distribuire codice personalizzato ad altri, è necessario creare
 ==== Apri la cartella scratchpad dello sviluppatore ====[AdvancedSettingsOpenScratchpadDir]
 Questo pulsante apre la cartella all'interno della quale è possibile  inserire il codice personalizzato mentre si sviluppa.
 Il bottone risulta attivo solo nel caso in cui NVDA sia configurato per caricare codice personalizzato dalla cartella scratchpad dello sviluppatore.
-
 
 ==== Utilizza UI Automation per accedere ai controlli dei documenti Microsoft Word quando disponibili ====[AdvancedSettingsUseUiaForWord]
 Quando quest'opzione viene attivata, NVDA tenterà di utilizzare le API di accessibilità dell'interfaccia Microsoft UI Automation per recuperare informazioni dai controlli dei documenti di Microsoft Word.
@@ -2101,6 +2103,7 @@ Tutti i componenti vengono presentati in un elenco con le seguenti colonne:
 Inoltre, il gestore componenti aggiuntivi non compatibili dispone di un pulsante "informazioni su".
 Come è semplice immaginare, verranno mostrate le informazioni sull'addon con la possibilità di contattare lo sviluppatore.
 
+
 ++ Console Python ++[PythonConsole]
 La Console Python di NVDA, situata nel menu strumenti, è uno strumento per sviluppatori che risulta utile in fase di debug, di diagnosi delle funzioni interne di NVDA o di analisi della gerarchia degli oggetti accessibili presenti in un'applicazione.
 Per ulteriori informazioni, si veda la [guida agli sviluppatori per NVDA https://www.nvaccess.org/files/nvda/documentation/developerGuide.html], in lingua inglese.
@@ -2153,6 +2156,7 @@ Tali voci sono disponibili in diverse lingue e risultano più reattive rispetto 
 In Windows10 NVDA utilizza queste voci come sintesi vocale predefinita, mentre [[eSpeak NG #eSpeakNG] viene usata in altre versioni di Windows.
 
 Per installare voci in lingue aggiuntive, si veda questo articolo Microsoft: https://support.microsoft.com/en-us/help/22797/windows-10-narrator-tts-voices
+
 
 + Display braille supportati +[SupportedBrailleDisplays]
 Questa sezione contiene informazioni sulle barre braille supportate da NVDA.
@@ -2283,7 +2287,6 @@ Si prega di consultare la documentazione della propria barra braille per avere i
 | tasto control+end | t3+spDown |
 | Tasto home | t3+spLeft |
 | Tasto end | t3+spRight |
-| Tasto alt | alt |
 | Tasto control | control |
 %kc:endInclude
 
@@ -2577,7 +2580,6 @@ Questi modelli non supportano ancora la funzione di rilevazione automatica in ba
 
 Se BrxCom è installato, NVDA lo utilizzerà.
 BrxCom è un utility che permette di gestire la scrittura tramite i tasti braille indipendentemente dallo screen reader in uso.
-Verrà realizzata presto da Papenmeier una nuova versione di BrXcom che funzioni con NVDA 
 La scrittura tramite i tasti braille è disponibile per i modelli Trio e Braillex live.
 
 La maggior parte dei dispositivi è dotata di una barra di navigazione facilitata (EAB) che permette di svolgere le operazioni in una modalità molto più rapida ed intuitiva..
