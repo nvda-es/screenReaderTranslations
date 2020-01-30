@@ -171,12 +171,12 @@ Pierwsze pole wyboru pozwala ustalić, czy NVDA będzie używał klawisza CapsLo
 Drugie pozwala włączyć automatyczne uruchamianie programu po zalogowaniu do systemu i jest dostępny tylko dla zainstalowanych kopii NVDA.
 Trzecie pole wyboru określa, czy to okienko dialogowe ma się pojawiać przy każdym uruchomieniu programu.
 
-+++ Data usage statistics dialog +++[UsageStatsDialog]
-Starting from NVDA 2018.3, the user is asked if they want to allow usage data to be sent to NV Access in order to help improve NVDA in the future. 
-When starting NVDA for the first time, a dialog will appear which will ask you if you want to accept sending data to NV Access while using NVDA.
-You can read more info about the data gathered by NV Access in the general settings section, [Allow the NVDA project to gather NVDA usage statistics #GeneralSettingsGatherUsageStats].
-Note: pressing on "yes" or "no" will save this setting and the dialog will never appear again unless you reinstall NVDA.
-However, you can enable or disable the data gathering process manually in NVDA's general settings panel. For changing this setting manually, you can check or uncheck the checkbox called [Allow the NVDA project to gather NVDA usage statistics #GeneralSettingsGatherUsageStats].
++++ Statystyki diagnostyczne +++[UsageStatsDialog]
+Od wersji programu NVDA 2018.3, użytkownik jest pytany czy czytnik ekranu może wysyłać pewne anonimowe dane diagnostyczne  swoim twórcom, w celu jego ulepszania w przyszłości.
+Gdy uruchomisz program poraz pierwszy, zostaniesz zapytany czy chcesz zezwolić fundacji NV Access na zbieranie danych.
+Możesz przeczytać więcej informacji o zbieranych danych w ustawieniach ogólnych w [sekcji im poświęconej #GeneralSettingsGatherUsageStats].
+Kiedy wybierzesz jakąś opcję ustawienie zostanie zachowane, a okno dialogowe nigdy więcej się nie pojawi, chyba że dokonasz reinstalacji programu.
+Jednakże, możliwe jest ręczne włączenie lub wyłączenie tej opcji w ustawieniach ogólnych w [sekcji jej poświęconej #GeneralSettingsGatherUsageStats].
 
 ++ Polecenia klawiszowe w NVDA ++[AboutNVDAKeyboardCommands]
 
@@ -648,7 +648,7 @@ Aby powrócić do dokumentu, naciśnij klawisz Esc.
 + Brajl +[Braille]
 Jeśli posiadasz monitor brajlowski, NVDA może wyświetlać informacje w brajlu.
 Jeśli twój monitor ma klawiaturę brajlowską, możesz wprowadzać brajla skrótami lub w wersji nieskróconej.
-Braille can be also be displayed on screen using the [Braille Viewer #BrailleViewer] instead of, or at the same time as, using a physical braille display.
+Brajl może być również wyświetlany za pomocą funkcji [podglądu brajla #BrailleViewer] zamiast lub też w konjunkcji z fizycznym monitorem brajlowskim.
 
 Więcej informacji o obsługiwanych monitorach zawiera rozdział [Obsługiwane monitory brajlowskie #SupportedBrailleDisplays].
 Ten rozdział zawiera również informacje o linijkach brajlowskich obsługiwanych przez NVDA funkcją automatycznego wykrywania urządzeń brajlowskich.
@@ -1398,8 +1398,8 @@ Pamiętaj, że zawsze możesz przywrócić powyższy monit korzystając z odpowi
 
 Jeżeli chcesz przełączać stan kurtyny z dowolnego miejsca, wymagane jest przypisanie odpowiedniego skrótu na ekranie ["Zdarzenia wejścia" #InputGestures].
 
-By default, sounds are played when the Screen Curtain is toggled.
-When you want to change this behavior, you can uncheck the "Play sound when toggling Screen Curtain" check box.
+Domyślnie, odtwarzany jest dźwięk w przypadku włączenia lub wyłączenia kurtyny.
+Jeżeli chcesz zmienić to zachowanie, przełącz odpowiednie pole wyboru w sekcji ustawień widoczności poświęconej kurtynie.
 
 ==== Ustawienia zewnętrznych usług wsparcia wizualnego ====[VisionSettingsThirdPartyVisualAids]
 Dodatkowe usługi wsparcia widoczności mogą być dostarczane jako [dodatki dla programu NVDA #AddonsManager].
@@ -1542,10 +1542,10 @@ Zawiera następujące ustawienia:
 Jeśli zaznaczysz to pole, NVDA będzie czytać pojawiające się dymki podpowiedzi (tooltip).
 Są to niewielkie wiadomości wyświetlane często po wskazaniu myszą lub przeniesieniu fokusa na dane okno lub kontrolkę.
 
-==== Report notifications ====[ObjectPresentationReportNotifications]
-This checkbox, when checked, tells NVDA to report help balloons and toast notifications as they appear.
-- Help Balloons are like tooltips, but are usually larger in size, and are associated with system events such as a network cable being unplugged, or perhaps to alert you about Windows security issues.
-- Toast notifications have been introduced in Windows 10 and appear in the notification center in the system tray, informing about several events (i.e. if an update has been downloaded, a new e-mail arived in your inbox, etc.).
+==== Czytaj powiadomienia  ====[ObjectPresentationReportNotifications]
+Pole to kontroluje zachowanie NVDA w przypadku napotkania powiadomienia.
+- Dymki pomocy są nieco większe od dymków podpowiedzi, i są powiązane ze zdarzeniami systemowymi takimi jak na przykład odłączenie zasilania, kabla sieciowego ITD.
+- Powiadomienia toast zostały wprowadzone w systemie Windows 10. Pojawiają się one w centrum akcji i informują o zdarzeniach takich jak nadejście poczty, nowej aktualizacji systemu ITD.
 
 
 ==== Odczytuj klawisze skrótów ====[ObjectPresentationShortcutKeys]
@@ -1779,18 +1779,18 @@ Obejmuje to sam edytor Microsoft Word oraz okna przeglądania i tworzenia wiadom
 Mogą jednak istnieć informacje, które nie są wcale dostarczane, albo są dostarczane nieprawidłowo  w niektórych wersjach Microsoft Office,  co znaczy, że na obsłudze UI Automation nie zawsze można polegać.
 Wciąż nie zalecamy domyślnego włączania tej funkcji przez większość użytkowników, ale mile widziane będą testy i uwagi od użytkowników Office 2016/365.
 
-==== Use UI Automation to access the Windows Console when available ====[AdvancedSettingsConsoleUIA]
-When this option is enabled, NVDA will use a new, work in progress version of its support for Windows Console which takes advantage of [accessibility improvements made by Microsoft https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/]. This feature is highly experimental and is still incomplete, so its use is not yet recommended. However, once completed, it is anticipated that this new support will become the default, improving NVDA's performance and stability in Windows command consoles.
+==== Używaj UIA Api w celu korzystania z konsoli systemu Windows, gdy to możliwe ====[AdvancedSettingsConsoleUIA]
+Gdy ta opcja jest włączona, NVDA będzie korzystać z nowego, eksperymentalnego wsparcia dla konsoli systemu Windows 10 korzystającego z  [poprawek dostępności poczynionych przez Microsoft https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/]. Jak powiedziano powyżej funckaj ta jest nadal bardzo eksperymentalna, toteż jej używanie nie jest jeszcze zalecane. Zakłada się że po ukończeniu prac stanie się ona nową domyślną metodą interakcji z programami konsolowymi.
 
-==== Speak passwords in UIA consoles ====[AdvancedSettingsWinConsoleSpeakPasswords]
-This setting controls whether characters are spoken by [speak typed characters #KeyboardSettingsSpeakTypedCharacters] or [speak typed words #KeyboardSettingsSpeakTypedWords] in situations where the screen does not update (such as password entry) in the Windows Console with UI automation support enabled. For security purposes, this setting should be left disabled. However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting while using NVDA's new experimental console support.
+==== Odczytuj hasła w konsolach UIA ====[AdvancedSettingsWinConsoleSpeakPasswords]
+To ustawienie kontroluje, czy odczytywanie znaków jest kontrolowane przez funkcję [czytaj pisane znaki #KeyboardSettingsSpeakTypedCharacters] or [speak typed words #KeyboardSettingsSpeakTypedWords] in situations where the screen does not update (such as password entry) in the Windows Console with UI automation support enabled. For security purposes, this setting should be left disabled. However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting while using NVDA's new experimental console support.
 
-==== Use the new typed character support in Windows Console when available ====[AdvancedSettingsKeyboardSupportInLegacy]
-This option enables an alternative method for detecting typed characters in Windows command consoles.
-While it improves performance and prevents some console output from being spelled out, it may be incompatible with some terminal programs.
-This feature is available and enabled by default on Windows 10 versions 1607, 1703, 1709 and 1803 as well as on newer Windows 10 releases when UI Automation is unavailable or disabled.
-Warning: with this option enabled, typed characters that do not appear onscreen, such as passwords, will not be suppressed.
-In untrusted environments, you may temporarily disable [speak typed characters #KeyboardSettingsSpeakTypedCharacters] and [speak typed words #KeyboardSettingsSpeakTypedWords] when entering passwords.
+==== Używaj nowej metody przetwarzania wpisywanych znaków, gdy wspierane ====[AdvancedSettingsKeyboardSupportInLegacy]
+Ta opcja aktywuje alternatywną metodę przetwarzania znaków w programach wiersza poleceń systemu Windows.
+ustawienie to powoduje znaczne przyspieszenie pracy i poprawia kilka błędów, jednakże może być ono niekompatybilne ze starszymi programami konsolowymi.
+Ta opcja jest wspierana i domyślnie włączona w systemach Windows 10 wersjach 1607, 1703, 1803 i nowszych, gdy UIA jest wyłączone lub niedostępne.
+Uwaga! Gdy ta opcja jest włączona wpisywane znaki, które nie pojawiają się na ekranie (takie jak hasła), będą odczytywane!
+W środowiskach niegodnych zaufania możesz tymczasowo wyłączyć opcję [czytaj pisane znaki #KeyboardSettingsSpeakTypedCharacters] oraz [czytaj pisane słowa #KeyboardSettingsSpeakTypedWords] podczas wpisywania haseł.
 
 ==== Automatycznie ustaw kursor systemowy na elementach interaktywnych w trybie czytania ====[BrowseModeSettingsAutoFocusFocusableElements]
 skrót: NVDA+8
