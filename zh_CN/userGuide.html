@@ -42,6 +42,7 @@
     <LI><A HREF="#LaunchingNVDA">4.1. 运行 NVDA</A>
       <UL>
       <LI><A HREF="#WelcomeDialog">4.1.1. 欢迎对话框</A>
+      <LI><A HREF="#UsageStatsDialog">4.1.2. Data usage statistics dialog</A>
       </UL>
     <LI><A HREF="#AboutNVDAKeyboardCommands">4.2. 关于 NVDA 的键盘命令</A>
       <UL>
@@ -149,7 +150,7 @@
       <LI><A HREF="#BrowseModeSettings">12.1.14. 浏览模式设置 (NVDA+control+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">12.1.15. 文档格式设置 (NVDA+control+d)</A>
       <LI><A HREF="#Win10OcrSettings">12.1.16. Windows 10 光学字符识别 设置</A>
-      <LI><A HREF="#toc97">12.1.17. 高级设置</A>
+      <LI><A HREF="#toc98">12.1.17. 高级设置</A>
       </UL>
     <LI><A HREF="#MiscSettings">12.2. 杂项设置</A>
       <UL>
@@ -174,10 +175,11 @@
     <UL>
     <LI><A HREF="#LogViewer">13.1. 日志查看器</A>
     <LI><A HREF="#SpeechViewer">13.2. 朗读查看器</A>
-    <LI><A HREF="#AddonsManager">13.3. 插件管理器</A>
-    <LI><A HREF="#incompatibleAddonsManager">13.4. 管理不兼容的插件</A>
-    <LI><A HREF="#PythonConsole">13.5. Python 控制台</A>
-    <LI><A HREF="#ReloadPlugins">13.6. 重新加载插件</A>
+    <LI><A HREF="#BrailleViewer">13.3. Braille Viewer</A>
+    <LI><A HREF="#AddonsManager">13.4. 插件管理器</A>
+    <LI><A HREF="#incompatibleAddonsManager">13.5. 管理不兼容的插件</A>
+    <LI><A HREF="#PythonConsole">13.6. Python 控制台</A>
+    <LI><A HREF="#ReloadPlugins">13.7. 重新加载插件</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">14. 支持的语音合成器</A>
     <UL>
@@ -199,9 +201,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Brailliant BI/B Series / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc135">15.9.1. Key assignments for All models</A>
-      <LI><A HREF="#toc136">15.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</A>
-      <LI><A HREF="#toc137">15.9.3. Key assignments for Brailliant BI 14</A>
+      <LI><A HREF="#toc137">15.9.1. Key assignments for All models</A>
+      <LI><A HREF="#toc138">15.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</A>
+      <LI><A HREF="#toc139">15.9.3. Key assignments for Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</A>
     <LI><A HREF="#Seika">15.11. 清华点显器</A>
@@ -472,6 +474,17 @@ NVDA安装版的配置在“漫游”应用程序配置文件夹 (比如 "C:\Use
 第一个允许您选择是否使用(大小写锁定键)作为 NVDA 键。
 第二个选择是否允许在 Windows 启动时启动 NVDA。
 第三个允许您选择是否希望在每次启动 NVDA 时显示此对话框。
+</P>
+
+<A NAME="UsageStatsDialog"></A>
+<H4>4.1.2. Data usage statistics dialog</H4>
+
+<P>
+Starting from NVDA 2018.3, the user is asked if they want to allow usage data to be sent to NV Access in order to help improve NVDA in the future. 
+When starting NVDA for the first time, a dialog will appear which will ask you if you want to accept sending data to NV Access while using NVDA.
+You can read more info about the data gathered by NV Access in Chapter 11 below.
+Note: pressing on "yes" or "no" will save this setting and the dialog will never appear again unless you reinstall NVDA.
+However, you can enable or disable the data gathering process manually in NVDA's general settings panel. For changing this setting manually, you can check or uncheck the checkbox called <A HREF="#GeneralSettingsGatherUsageStats">Allow the NVDA project to gather NVDA usage statistics</A>.
 </P>
 
 <A NAME="AboutNVDAKeyboardCommands"></A>
@@ -1605,6 +1618,9 @@ NVDA 支持下列类型的数学内容：
 <P>
 如果你有一个点显器，NVDA可以以盲文的形式显示屏幕上的信息
 如果你的点显器有 Perkins 键盘，你还可以键入简写或非简写点字。
+</P>
+<P>
+盲文也可以在<A HREF="#BrailleViewer">盲文浏览器</A>上以图形形式同步显示。
 </P>
 <P>
 有关支持的点显器的信息，请参阅<A HREF="#SupportedBrailleDisplays">支持的点显器</A>部分。
@@ -3404,59 +3420,37 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 </P>
 
 <A NAME="ObjectPresentationReportBalloons"></A>
-<H5>读出气球提示</H5>
+<H5>读出通知或气球提示</H5>
 
 <P>
-当此复选框被选中时，告诉 NVDA 在气球提示出现时朗读。
-气球提示就像工具提示，但尺寸通常比较大，提示的一般是系统事件。比如网络电缆没有插好、或向您指出 Windows 系统可能存在安全问题等。
-</P>
-
-<A NAME="ObjectPresentationShortcutKeys"></A>
-<H5>读出对象的快捷键</H5>
-
-<P>
-如果此复选框被选中，NVDA 会在朗读某些对象或控件时包含与其有关联的快捷键。
-例如，菜单栏的“文件”菜单就可能包含快捷键 alt+f。
-</P>
-
-<A NAME="ObjectPresentationPositionInfo"></A>
-<H5>读出对象的位置信息</H5>
-
-<P>
-此选项允许您选择是否在浏览到焦点对象或者浏览对象时，获取对象的位置信息(例如4之1项)
-</P>
-
-<A NAME="ObjectPresentationGuessPositionInfo"></A>
-<H5>在对象的位置信息不可用时进行推测</H5>
-
-<P>
-如果“读出对象的位置信息”复选框启用，此选项允许 NVDA 为位置信息不可用的特殊控件推断位置。
-</P>
-<P>
-如果启用，NVDA 会为更多的、如菜单、工具栏等控件读出位置信息，然而，这些信息可能会包含少许的错误。
-</P>
-
-<A NAME="ObjectPresentationReportDescriptions"></A>
-<H5>读出对象描述</H5>
-
-<P>
-如果您不希望了解和对象一起提供的描述，取消选中此复选框。
-</P>
-
-<A NAME="ObjectPresentationProgressBarOutput"></A>
-<H5>进度栏更新提示</H5>
-
-<P>
-按键: NVDA+u
-</P>
-<P>
-此选项控制 NVDA 如何向您报告进度栏的更新。
-</P>
-<P>
-它包含下列选项：
+当此复选框被选中时，告诉 NVDA 在通知或气球提示出现时朗读。
 </P>
 
 <UL>
+<LI>气球提示就像工具提示，但尺寸通常比较大，提示的一般是系统事件。比如网络电缆没有插好、或Windows 系统可能存在安全问题等。
+<LI>通知是Windows 10的新功能，在系统托盘的通知中心里可以找到，通知用户发生了某种事件比如更新下载完成、收到了新邮件。
+<P></P>
+==== 读出对象的快捷键 ====[ObjectPresentationShortcutKeys]
+如果此复选框被选中，NVDA 会在朗读某些对象或控件时包含与其有关联的快捷键。
+例如，菜单栏的“文件”菜单就可能包含快捷键 alt+f。
+<P></P>
+==== 读出对象的位置信息 ====[ObjectPresentationPositionInfo]
+此选项允许您选择是否在浏览到焦点对象或者浏览对象时，获取对象的位置信息(例如4之1项)
+<P></P>
+==== 在对象的位置信息不可用时进行推测 ====[ObjectPresentationGuessPositionInfo]
+如果选中“读出对象的位置信息”复选框，NVDA会推断位置信息不可用的特殊控件位置。
+<P></P>
+如果选中这一项，NVDA 会为更多的、如菜单、工具栏等控件读出位置信息，然而，这些信息可能会包含少许的错误。
+<P></P>
+==== 读出对象描述 ====[ObjectPresentationReportDescriptions]
+如果您不希望了解和对象一起提供的描述，取消选中此复选框。
+<P></P>
+==== 进度栏更新提示 ====[ObjectPresentationProgressBarOutput]
+按键: NVDA+u
+<P></P>
+此选项控制 NVDA 如何向您报告进度栏的更新。
+<P></P>
+它包含下列选项：
 <LI>无不报告进度栏的更新，即使他已经刷新。
 <LI>朗读进度栏更新此选项告诉 NVDA 以百分比为单位报告进度栏的更新。每次进度栏更新，NVDA 都会读出其更新后的值。
 <LI>用提示音表示进度栏更新： 告诉 NVDA 在每次进度栏更新时发出提示音。提示音越高，就越接近进度栏的完成。
@@ -3757,7 +3751,7 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 此组合框允许您选择用于光学字符识别的语言。
 </P>
 
-<A NAME="toc97"></A>
+<A NAME="toc98"></A>
 <H4>12.1.17. 高级设置</H4>
 
 <P>
@@ -4229,8 +4223,29 @@ NVDA 的语音字典比之单词替换更为强大。
 要想在任何地方切换朗读查看器的开关，请在<A HREF="#InputGestures">输入手势对话框</A>定义一个自定义手势。
 </P>
 
+<A NAME="BrailleViewer"></A>
+<H3>13.3. Braille Viewer</H3>
+
+<P>
+For sighted software developers or people demoing NVDA to sighted audiences, a floating window is available that allows you to view braille output, and the text equivalent for each braille character.
+The braille viewer can be used at the same time as a physical braille display, it will match the number of cells on the physical device.
+While the braille viewer is enabled, it constantly updates to show you the braille that would be displayed on a physical braille display.
+</P>
+<P>
+To enable the braille viewer, check the "Braille Viewer" menu item under Tools in the NVDA menu.
+Uncheck the menu item to disable it.
+</P>
+<P>
+Physical braille displays typically have buttons to scroll forwards or backwards, to enable scrolling with the braille viewer tool use the <A HREF="#InputGestures">Input Gestures dialog</A> to assign keyboard shortcuts which "Scrolls the braille display back" and "Scrolls the braille display forward"
+</P>
+<P>
+The braille viewer window contains a check box labeled "Show braille viewer on startup".
+If this is checked, the braille viewer will open when NVDA is started.
+The braille viewer window will always attempt to re-open with the same dimensions and location as when it was closed.
+</P>
+
 <A NAME="AddonsManager"></A>
-<H3>13.3. 插件管理器</H3>
+<H3>13.4. 插件管理器</H3>
 
 <P>
 您可以通过 NVDA 的“工具”菜单的“插件管理器”访问插件管理器，插件管理器允许您安装、移除、启用或停用 NVDA 的插件。
@@ -4288,7 +4303,7 @@ NVDA 会询问您是否真的要这样做。
 </P>
 
 <A NAME="incompatibleAddonsManager"></A>
-<H3>13.4. 管理不兼容的插件</H3>
+<H3>13.5. 管理不兼容的插件</H3>
 
 <P>
 可以通过插件管理器中的“查看不兼容的插件”按钮访问不兼容的加插件管理器，允许您检查任何不兼容的插件以及不兼容的原因。
@@ -4305,11 +4320,11 @@ NVDA 会询问您是否真的要这样做。
 
 <P>
 不兼容插件管理器里面也有关于插件按钮
-点击这个按钮会打开一个对话框，里面有这个插件的详细信息，或许可以帮你找到开发者。
+点击这个按钮会打开一个对话框，里面有这个插件的详细信息，可以帮你找到开发者的联系方式。
 </P>
 
 <A NAME="PythonConsole"></A>
-<H3>13.5. Python 控制台</H3>
+<H3>13.6. Python 控制台</H3>
 
 <P>
 NVDA Python 控制台可以再 NVDA 的“工具”菜单找到，他是一个开发工具，他可用来进行调试，一般的内部检查和程序可访问程度的检查。
@@ -4317,7 +4332,7 @@ NVDA Python 控制台可以再 NVDA 的“工具”菜单找到，他是一个�
 </P>
 
 <A NAME="ReloadPlugins"></A>
-<H3>13.6. 重新加载插件</H3>
+<H3>13.7. 重新加载插件</H3>
 
 <P>
 一旦此项目被激活，即可在不重新启动 NVDA 的情况下重新加载程序模块和全局插件，此功能对于开发者非常有用。
@@ -5166,7 +5181,7 @@ Following are the key assignments for  the Brailliant BI/B and BrailleNote touch
 Please see the display's documentation for descriptions of where these keys can be found.
 </P>
 
-<A NAME="toc135"></A>
+<A NAME="toc137"></A>
 <H4>15.9.1. Key assignments for All models</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5256,7 +5271,7 @@ Please see the display's documentation for descriptions of where these keys can 
 </TR>
 </TABLE>
 
-<A NAME="toc136"></A>
+<A NAME="toc138"></A>
 <H4>15.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5278,7 +5293,7 @@ Please see the display's documentation for descriptions of where these keys can 
 </TR>
 </TABLE>
 
-<A NAME="toc137"></A>
+<A NAME="toc139"></A>
 <H4>15.9.3. Key assignments for Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
