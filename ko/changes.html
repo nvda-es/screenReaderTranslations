@@ -14,8 +14,8 @@
 
 <P>
 NVDA 2019.3 버전은 내부적으로 많은 변화가 포함된 중요한 버전입니다. 이 버전은 파이썬 버전이 2에서 3으로 업그레이드되었으며, NVDA의 음성 서브시스템에도 주요한 재작업이 포함되어 있습니다.
-Although these changes do break compatibility with older NVDA add-ons, the upgrade to Python 3 is necessary for security, and the changes to speech allow for  some exciting innovations in the near future.
- Other highlights in this release include 64 bit support for Java VMs, Screen Curtain and Focus Highlight functionality, support for more braille displays and a new Braille viewer, and many many other bug fixes.
+이런 변화들이 기존의 NVDA 애드온에 대한 호환성 문제를 일으키기는 합니다. 하지만 파이썬 3으로의 업그레이드는 보안 개선은 물론, 조만간 벌어질 흥미로운 혁신을 위한 음성 시스템의 변화를 위해 필요한 작업입니다.
+그 외에도 이번 버전은 Java VM 에 대한 64비트 지원, 스크린 가리기 기능과 포커스 강조 기능, 점자 디스플레이 및 새로운 점자표시 장치 추가 지원, 그리고 수많은 버그 수정 등의 주요 변경 사항을 포함하고 있습니다.
 </P>
 
 <H3>새로 추가된 기능</H3>
@@ -44,7 +44,7 @@ Although these changes do break compatibility with older NVDA add-ons, the upgra
  </UL>
 <LI>화면 하이라이트 기능이 NVDA에 추가됨. (<A HREF="https://github.com/nvaccess/nvda/issues/971">#971</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9064">#9064</A>)
  <UL>
- <LI>초점, 탐색 객체, 그리고 브라우즈 모드의 커서 위치의 강조 기능은 NVDA 설정 대화상자의 '시각 보조' 카테고리에서 활성화하고 설정할 수 있습니다.
+ <LI>포커스, 탐색 객체, 그리고 브라우즈 모드의 커서 위치의 강조 기능은 NVDA 설정 대화상자의 '시각 보조' 카테고리에서 활성화하고 설정할 수 있습니다.
  <LI>참고: 이 기능은 focus highlight 추가 기능과 함깨 사용할 수 없습니다, 그러니 해당 추가 기능을 유지하려면 이 기능을 비활성화 하십시오.
  </UL>
 <LI>점자 뷰어 기능이 추가됨, 화면을 통해 점자 출력을 볼 수 있음. (<A HREF="https://github.com/nvaccess/nvda/issues/7788">#7788</A>)
@@ -54,28 +54,29 @@ Although these changes do break compatibility with older NVDA add-ons, the upgra
 
 <UL>
 <LI>이제 사용자 가이드에서 'Windows 콘솔에서 NVDA 사용하는 방법'을 설명합니다. (<A HREF="https://github.com/nvaccess/nvda/issues/9957">#9957</A>)
-<LI>Running nvda.exe now defaults to replacing an already running copy of NVDA. The -r|--replace command line parameter is still accepted, but ignored. (<A HREF="https://github.com/nvaccess/nvda/issues/8320">#8320</A>)
-<LI>On Windows 8 and later, NVDA will now report product name and version information for hosted apps such as apps downloaded from Microsoft Store using information provided by the app. (<A HREF="https://github.com/nvaccess/nvda/issues/4259">#4259</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10108">#10108</A>)
+<LI>nvda.exe 을 실행하면 앞서 실행 중이던 NVDA를 대체하는 방식을 기본 설정으로 바꾸었습니다. -r 혹은 --replace 명령어 파라미터는 여전히 사용할 수 있지만, 실제로는 아무 효력이 없게 됩니다. (<A HREF="https://github.com/nvaccess/nvda/issues/8320">#8320</A>)
+<LI>윈도우즈 8 혹은 그 이후의 버전에서, NVDA 는 이제 마이크로소프트 스토어에서 다운로드 받은 앱들처럼 온라인 서버를 통해서 운용되는 제품의 이름과 버전 정보를 알려줍니다. 이 정보는 앱에서 제공하는 정보를 바탕으로 합니다. (<A HREF="https://github.com/nvaccess/nvda/issues/4259">#4259</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10108">#10108</A>)
 <LI>Microsoft Word에서 키보드로 트랙 변경을 켜고 끌 때 NVDA가 설정 상태를 알림 (<A HREF="https://github.com/nvaccess/nvda/issues/942">#942</A>) 
-<LI>The NVDA version number is now logged as the first message in the log. This occurs even if logging has been disabled from the GUI. (<A HREF="https://github.com/nvaccess/nvda/issues/9803">#9803</A>)
-<LI>The settings dialog no longer allows for changing the configured log level if it has been overridden from the command line. (<A HREF="https://github.com/nvaccess/nvda/issues/10209">#10209</A>)
-<LI>In Microsoft Word, NVDA now announces the display state of non printable characters when pressing the toggle shortcut Ctrl+Shift+8 . (<A HREF="https://github.com/nvaccess/nvda/issues/10241">#10241</A>)
-<LI>Updated Liblouis braille translator to commit 58d67e63. (<A HREF="https://github.com/nvaccess/nvda/issues/10094">#10094</A>)
-<LI>When CLDR characters (including emojis) reporting is enabled, they are announced at all punctuation levels. (<A HREF="https://github.com/nvaccess/nvda/issues/8826">#8826</A>)
-<LI>Third party python packages included in NVDA, such as comtypes, now log their warnings and errors to the NVDA log. (<A HREF="https://github.com/nvaccess/nvda/issues/10393">#10393</A>)
-<LI>Updated Unicode Common Locale Data Repository emoji annotations to version 36.0. (<A HREF="https://github.com/nvaccess/nvda/issues/10426">#10426</A>)
-<LI>When focussing a grouping in browse mode, the description is now also read. (<A HREF="https://github.com/nvaccess/nvda/issues/10095">#10095</A>)
-<LI>The Java Access Bridge is now included with NVDA to enable access to Java applications, including for 64 bit Java VMs. (<A HREF="https://github.com/nvaccess/nvda/issues/7724">#7724</A>)
-<LI>If the Java Access Bridge is not enabled for the user, NVDA automatically enables it at NVDA startup. (<A HREF="https://github.com/nvaccess/nvda/issues/7952">#7952</A>)
+<LI>NVDA 버전 숫자가 앞으로는 로그 파일의 첫번째 문구로 기록됩니다. 이는 GUI에서 로그 기록이 비활성화된 경우에도 해당합니다. (<A HREF="https://github.com/nvaccess/nvda/issues/9803">#9803</A>)
+<LI>명령어를 통해 설정한 로그 기록 수준을 설정 대화상자에서 바꿀 수 없습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/10209">#10209</A>)
+<LI>Microsoft Word를 사용할 때, 인쇄되지 않는 문자의 표시 상태를 알려줍니다. Ctrl+Shift+8 를 눌러서 켜고 끌 수 있습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/10241">#10241</A>)
+<LI>점자 번역기 Liblouis를 commit 58d67e63 으로 업데이트했습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/10094">#10094</A>)
+<LI>CLDR 문자(이모지 포함)에 대한 알림 기능이 활성화되어 있으면, 모든 수준의 문장부호를 알려 줍니다. (<A HREF="https://github.com/nvaccess/nvda/issues/8826">#8826</A>)
+<LI>Comtypes 같이 외부에서 개발되어 NVDA에 포함된 파이썬 패키지도 경고나 에러 기록을 NVDA 로그에 저장합니다. (<A HREF="https://github.com/nvaccess/nvda/issues/10393">#10393</A>)
+<LI>유니코드 협회의 국제 표기양식 기록원(CLDR)에서 정한 이모지의 문자 정보를 36.0 버전으로 업데이트했습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/10426">#10426</A>)
+<LI>브라우즈 상태에서 그룹에 포커스를 뒀을 때, 그룹에 대한 설명 정보도 함께 읽습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/10095">#10095</A>)
+<LI>Java Access Bridge가 이제 NVDA에 포함되어 Java 어플리케이션에 접근할 수 있게 됩니다. 여기에는 64비트 Java VM 도 포함됩니다. (<A HREF="https://github.com/nvaccess/nvda/issues/7724">#7724</A>)
+<LI>사용자 시스템에서 Java Access Bridge가 활성화되어 있지 않은 경우, NVDA가 시작할 때 자동적으로 이를 활성화시킵니다. (<A HREF="https://github.com/nvaccess/nvda/issues/7952">#7952</A>)
 <LI>Updated eSpeak-NG to 1.51-dev, commit ca65812ac6019926f2fbd7f12c92d7edd3701e0c. (<A HREF="https://github.com/nvaccess/nvda/issues/10581">#10581</A>)
+<LI>eSpeak-NG 모듈을 1.51-dev 로 업데이트했습니다. Commit ID는 ca65812ac6019926f2fbd7f12c92d7edd3701e0c 입니다. (<A HREF="https://github.com/nvaccess/nvda/issues/10581">#10581</A>)
 </UL>
 
 <H3>버그 수정</H3>
 
 <UL>
-<LI>Emoji and other 32 bit unicode characters now take less space on a braille display when they are shown as hexadecimal values. (<A HREF="https://github.com/nvaccess/nvda/issues/6695">#6695</A>)
-<LI>In Windows 10, NVDA will announce tooltips from universal apps if NVDA is configured to report tooltips in object presentation dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/8118">#8118</A>)
-<LI>On Windows 10 Anniversary Update and later, typed text is now reported in Mintty. (<A HREF="https://github.com/nvaccess/nvda/issues/1348">#1348</A>)
+<LI>이모지 및 다른 32비트 유니코드 문자들이 16진수 형식을 사용할 경우 점자 디스플레이에서 차지하는 공간을 줄였습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/6695">#6695</A>)
+<LI>객체 표시 대화상자에서 도구설명 알림이 켜져있다면, 윈도우즈 10에서 동작하는 유니버설 앱의 도구설명을 읽습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/8118">#8118</A>)
+<LI>윈도우즈 10 Anniversary Update 혹은 그 이후의 버전에서, 이제 Mintty 에서 입력한 문자를 읽습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/1348">#1348</A>)
 <LI>On Windows 10 Anniversary Update and later, output in the Windows Console that appears close to the caret is no longer spelled out. (<A HREF="https://github.com/nvaccess/nvda/issues/513">#513</A>)
 <LI>Controls in Audacitys compressor dialog are now announced when navigating the dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/10103">#10103</A>)
 <LI>NVDA no longer treats spaces as words in object review in Scintilla based editors such as Notepad++. (<A HREF="https://github.com/nvaccess/nvda/issues/8295">#8295</A>)
