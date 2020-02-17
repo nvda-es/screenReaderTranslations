@@ -45,7 +45,6 @@ NVDA 2019.3 버전은 내부적으로 많은 변화가 포함된 중요한 버�
 - 브라우즈 상태에서 그룹에 포커스를 뒀을 때, 그룹에 대한 설명 정보도 함께 읽습니다. (#10095)
 - Java Access Bridge가 이제 NVDA에 포함되어 Java 어플리케이션에 접근할 수 있게 됩니다. 여기에는 64비트 Java VM 도 포함됩니다. (#7724)
 - 사용자 시스템에서 Java Access Bridge가 활성화되어 있지 않은 경우, NVDA가 시작할 때 자동적으로 이를 활성화시킵니다. (#7952)
-- Updated eSpeak-NG to 1.51-dev, commit ca65812ac6019926f2fbd7f12c92d7edd3701e0c. (#10581)
 - eSpeak-NG 모듈을 1.51-dev 로 업데이트했습니다. Commit ID는 ca65812ac6019926f2fbd7f12c92d7edd3701e0c 입니다. (#10581)
 
 
@@ -88,28 +87,28 @@ NVDA 2019.3 버전은 내부적으로 많은 변화가 포함된 중요한 버�
 
 
 = 2019.2.1 =
-This is a minor release to fix several crashes present in 2019.2. Fixes include:
-- Addressed several crashes in Gmail seen in both Firefox and Chrome when interacting with particular popup menus such as when creating filters or changing certain Gmail settings. (#10175, #9402, #8924)
-- In Windows 7, NVDA no longer causes Windows Explorer to crash when the mouse is used in the start menu. (#9435) 
-- Windows Explorer on Windows 7 no longer crashes when accessing metadata edit fields. (#5337) 
-- NVDA no longer freezes when interacting with images with a base64 URI in Mozilla Firefox or Google Chrome. (#10227)
+이 버전은 2019.2. 버전이 갑자기 동작이 멈추는 몇몇 상황을 수정한 소규모 업데이트입니다. 수정된 항목은 다음과 같습니다.
+- 파이어폭스 및 크롬 브라우저를 이용해서 Gmail에서 필터 생성이나 이메일 설정 등 특정 팝업 메뉴를 사용할 때 동작이 멈추는 현상을 해결했습니다. (#10175, #9402, #8924)
+- 윈도우즈 7의 시작 메뉴에서 마우스를 이용할 때 탐색기가 동작을 멈추는 문제를 해결했습니다. (#9435)
+- 윈도우즈 7의 탐색기에서 메타데이터 편집 창에 접근할 때 동작을 멈추는 현상을 해결했습니다. (#5337)
+- 파이어포스나 크롬 브라우저에서 base64로 인코딩된 위치에 있는 이미지에 접근할 때 NVDA가 멈추는 문제를 해결했습니다. (#10227)
 
 
 = 2019.2 =
-Highlights of this release include auto detection of Freedom Scientific braille displays, an experimental setting in the Advanced panel to stop browse mode from automatically moving focus (which may provide performance improvements), a rate boost option for the Windows OneCore synthesizer to achieve very fast rates, and many other bug fixes.
+이 버전의 주요 변경사항은 Freedom Scientific 사의 점자 디스플레이에 대한 자동 인식, 브라우저 모드에서 포커스가 자동으로 움직이는 (효율 향상을 목적으로 한) 기능 막기 위해서 고급 설정 패널에 추가된 실험적인 설정, Windows OneCore 음성합성기를 매우 빨리 말할 수 있도록 해주는 음성속도 향상 기능, 그리고 그밖에 많은 버그 수정을 포함합니다.
 
 == 새로 추가된 기능 ==
-- NVDA's Miranda NG support  works with newer versions of the client. (#9053) 
-- You can now disable browse mode by default by disabling the new "Enable browse mode on page load" option in NVDA's browse mode settings. (#8716) 
- - Note that when this option is disabled, you can still enable browse mode manually by pressing NVDA+space.
-- You can now filter symbols in the punctuation/symbol pronunciation dialog, similar to how filtering works in the elements list and input gestures dialog. (#5761)
-- A command has been added to change the mouse text unit resolution (how much text will be spoken when the mouse moves), it has not been assigned a default gesture. (#9056)
-- The windows OneCore synthesizer now has a rate boost option, which allows for significantly faster speech. (#7498)
-- The Rate Boost option is now configurable from the Synth Settings Ring for supported speech synthesizers. (Currently eSpeak-NG and Windows OneCore). (#8934)
-- Configuration profiles can now be manually activated with gestures. (#4209)
- - The gesture must be configured in the "Input gestures" dialog.
-- In Eclipse, added support for autocompletion in code editor. (#5667)
- - Additionally, Javadoc information can be read from the editor when it is present by using NVDA+d.
+- NVDA가 Miranda NG의 최근 버전 클라이언트와 함께 동작합니다. (#9053)
+- 브라우즈 모드 설정에 새로 추가된 "페이지가 로드되면 브라우즈 모드 활성화" 옵션을 비활성화하면, 이제 기본 설정으로 브라우즈 모드를 사용하지 않을 수 있습니다. (#8716)
+ - 이 옵션이 비활성화되어 있을 때에도 NVSA+Space 키를 눌러서 수동으로 브라우저 모드를 활성화할 수 있습니다.
+- 요소 목록이나 제스처 입력 대화상자의 필터 기능과 비슷한 방식으로, 구두점/기호 발음 설정 대화상자에서 기호 목록에 필터를 적용할 수 있습니다. (#5761)
+- 마우스 텍스트 해상도(마우스가 움직일 때 읽어주는 글자는 분량)을 변경하기 위한 명령이 추가됐습니다. 이 명령에는 기본 제스처가 부여되어 있지 않습니다. (#9056)
+- Windows OneCore 음성합성기에 음성속도 향상 기능이 추가되어 훨씬 빨리 읽을 수 있게 됐습니다. (#7498)
+- 이제 지원하는 음성합성기에 한하여 (현재는 eSpeak-NG 와 Windows OneCore 뿐입니다) 음성엔진 설정에서 음성속도 향상 옵션을 설정할 수 있습니다. (#8934)
+- 환경 설정 프로파일을 이제 제스처를 통해 직접 실행할 수 있습니다. (#4209)
+ - "제스처 설정" 대화상자를 통해 제스처를 설정해야 합니다.
+- Eclipse의 코드 편집창에서 자동완성에 대한 지원이 추가됐습니다. (#5667)
+ - 이 외에도, 편집기에서 NVDA+d 단축키로 Javadoc 정보가 표시됐을 때 그 내용을 읽을 수 있습니다.
 - Added an experimental option to the Advanced Settings panel that allows you to stop the system focus from following the browse mode cursor (Automatically set system focus to focusable elements). (#2039) Although this may not be suitable to turn off for all websites, this may fix: 
  - Rubber band effect: NVDA sporadically undoes the last browse mode keystroke by jumping to the previous location.
  - Edit boxes steal system focus when arrowing down through them on some websites.
