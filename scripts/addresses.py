@@ -86,7 +86,7 @@ addresses = {
     },
     'gl': {
         'lang': 'Galician',
-        'email': ['Juan C. buno <oprisniki@gmail.com>', 'Ivan Novegil <ivan.novegil@nvda.es>'],
+        'email': ['Juan C. buno <oprisniki@gmail.com>', 'Ivan Novegil <ivan.novegil@nvda.es>', 'Javier Curras <javier.curras@nvda.es>'],
     },
     'he': {
         'lang': 'Hebrew',
