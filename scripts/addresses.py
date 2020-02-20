@@ -22,7 +22,7 @@ addresses = {
     },
     'an': {
         'lang':'Aragonese',
-        'email': ['Jorge Perez <jorgtum@gmail.com>'],
+        'email': ['Jorge Perez <jorgtum@gmail.com>', 'Jose M. Delicado <jm.delicado@nvda.es>'],
     },
     'ar': {
         'lang':'Arabic',
@@ -34,7 +34,7 @@ addresses = {
     },
     'ca': {
         'lang': 'Catalan',
-        'email': ['Ruben Alcaraz <ruben.hangar1.8@gmail.com>', 'Dr. Mireia Ribera <mireia.ribera@gmail.com>', 'Santi Moese <santispock@gmail.com>', 'Marina Salse Rovira <salse@ub.edu>'],
+        'email': ['Ruben Alcaraz <ruben.hangar1.8@gmail.com>', 'Dr. Mireia Ribera <mireia.ribera@gmail.com>', 'Santi Moese <santispock@gmail.com>', 'Marina Salse Rovira <salse@ub.edu>', 'Jose M. Delicado <jm.delicado@nvda.es>'],
     },
     'ckb': {
         'lang':'Central Kurdish',
@@ -66,7 +66,7 @@ addresses = {
     },
     'es_CO': {
         'lang': 'Spanish Colombia',
-        'email': ['Jorge Zarache <reydelasmaquinas@outlook.com>', 'Luis Carlos Gonzáles Moráles <luiscarlosgm@hotmail.es>'],
+        'email': ['Jorge Zarache <reydelasmaquinas@outlook.com>', 'Luis Carlos Gonzáles Moráles <luiscarlosgm@hotmail.es>', 'Jose M. Delicado <jm.delicado@nvda.es>'],
     },
     'fa': {
         'lang':'Farsi',
@@ -86,7 +86,7 @@ addresses = {
     },
     'gl': {
         'lang': 'Galician',
-        'email': ['Juan C. buno <oprisniki@gmail.com>', 'Ivan Novegil <ivan.novegil@nvda.es>', 'Javier Curras <javier.curras@nvda.es>'],
+        'email': ['Juan C. buno <oprisniki@gmail.com>', 'Ivan Novegil <ivan.novegil@nvda.es>', 'Javier Curras <javier.curras@nvda.es>', 'Jose M. Delicado <jm.delicado@nvda.es>'],
     },
     'he': {
         'lang': 'Hebrew',
