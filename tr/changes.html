@@ -10,6 +10,60 @@
 </CENTER>
 
 
+<H2>2020.1</H2>
+
+<H3>New Features</H3>
+
+<UL>
+<LI>The currently selected item in listboxes is again presented in browse mode in Chrome, similar to NVDA 2019.1. (<A HREF="https://github.com/nvaccess/nvda/issues/10713">#10713</A>)
+<LI>You can now perform right mouse clicks on touch devices by doing a one finger tap and hold. (<A HREF="https://github.com/nvaccess/nvda/issues/3886">#3886</A>)
+<LI>Support for New braille displays: APH Chameleon 20, APH Mantis Q40, HumanWare BrailleOne, BrailleNote Touch v2, and NLS eReader. (<A HREF="https://github.com/nvaccess/nvda/issues/10830">#10830</A>)
+</UL>
+
+<H3>Changes</H3>
+
+<UL>
+<LI>NVDA prevents the system from locking or going to sleep when in say all. (<A HREF="https://github.com/nvaccess/nvda/issues/10643">#10643</A>)
+<LI>Support for out-of-process iframes in Mozilla Firefox. (<A HREF="https://github.com/nvaccess/nvda/issues/10707">#10707</A>)
+<LI>Updated liblouis braille translator to version 3.12 (<A HREF="https://github.com/nvaccess/nvda/issues/10161">#10161</A>)
+</UL>
+
+<H3>Changes for Developers</H3>
+
+<UL>
+<LI>Developer documentation is now build using sphinx. (<A HREF="https://github.com/nvaccess/nvda/issues/9840">#9840</A>)
+<LI>Several speech functions have been split into two. (<A HREF="https://github.com/nvaccess/nvda/issues/10593">#10593</A>)
+  The speakX version remains, but now depends on a getXSpeech function which returns a speech sequence.
+  <UL>
+  <LI>speakObjectProperties now relies on getObjectPropertiesSpeech
+  <LI>speakObject now relies on getObjectSpeech
+  <LI>speakTextInfo now relies on getTextInfoSpeech
+  <LI>speakWithoutPauses has been converted into a class, and refactored, but should not break compatibility.
+  <LI>getSpeechForSpelling is deprecated (though still available) use getSpellingSpeech instead.
+  Private changes that should not affect addon developers:
+  <LI>_speakPlaceholderIfEmpty is now _getPlaceholderSpeechIfTextEmpty
+  <LI>_speakTextInfo_addMath is now _extendSpeechSequence_addMathForTextInfo
+  </UL>
+<LI>Speech 'reason' has been converted to an Enum, see controlTypes.OutputReason class. (<A HREF="https://github.com/nvaccess/nvda/issues/10703">#10703</A>)
+  <UL>
+  <LI>Module level 'REASON_*' constants are deprecated.
+  </UL>
+<LI>Compiling NVDA dependencies now requires Visual Studio 2019 (16.2 or newer). (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
+<LI>Updated SCons to version 3.1.1. (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
+</UL>
+
+<H3>Bug Fixes</H3>
+
+<UL>
+<LI>Fixed not announcing Unicode minus symbol (U+2212) (<A HREF="https://github.com/nvaccess/nvda/issues/10633">#10633</A>)
+<LI>When installing add-on from add-ons manager names of files and folders in the browse window are no longer reported twice. (<A HREF="https://github.com/nvaccess/nvda/issues/10620">#10620</A>, <A HREF="https://github.com/nvaccess/nvda/issues/2395">#2395</A>)
+<LI>In Firefox, when loading Mastodon with the advanced web interface enabled, all timelines now render correctly in browse mode. (<A HREF="https://github.com/nvaccess/nvda/issues/10776">#10776</A>)
+<LI>In browse mode, NVDA now reports "not checked" for unchecked check boxes where it sometimes didn't previously. (<A HREF="https://github.com/nvaccess/nvda/issues/10781">#10781</A>)
+<LI>ARIA switch controls no longer report confusing information such as "not pressed checked" or "pressed checked". (<A HREF="https://github.com/nvaccess/nvda/issues/9187">#9187</A>)
+<LI>SAPI4 voices should no longer refuse to speak certain text. (<A HREF="https://github.com/nvaccess/nvda/issues/10792">#10792</A>)
+<LI>NVDA can again read and interact with math equations in Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/10803">#10803</A>)
+</UL>
+
 <H2>2019.3</H2>
 
 <P>
