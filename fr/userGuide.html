@@ -176,10 +176,14 @@
     <LI><A HREF="#LogViewer">13.1. Visionneuse du Journal</A>
     <LI><A HREF="#SpeechViewer">13.2. Visionneuse de Parole</A>
     <LI><A HREF="#BrailleViewer">13.3. Visionneuse Braille</A>
-    <LI><A HREF="#AddonsManager">13.4. Gestionnaire d'Extensions</A>
-    <LI><A HREF="#incompatibleAddonsManager">13.5. Le Gestionnaire d'Extensions Incompatibles</A>
-    <LI><A HREF="#PythonConsole">13.6. Console Python</A>
-    <LI><A HREF="#ReloadPlugins">13.7. Rechargement des Extensions</A>
+    <LI><A HREF="#PythonConsole">13.4. Console Python</A>
+    <LI><A HREF="#AddonsManager">13.5. Gestionnaire d'Extensions</A>
+      <UL>
+      <LI><A HREF="#incompatibleAddonsManager">13.5.1. Le Gestionnaire d'Extensions Incompatibles</A>
+      </UL>
+    <LI><A HREF="#CreatePortableCopy">13.6. Créer une copie portable</A>
+    <LI><A HREF="#RunCOMRegistrationFixingTool">13.7. Run COM registration fixing tool...</A>
+    <LI><A HREF="#ReloadPlugins">13.8. Rechargement des Extensions</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">14. Synthétiseurs de Parole Pris en Charge</A>
     <UL>
@@ -201,9 +205,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Séries Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc137">15.9.1. Assignations des Touches pour tous les Modèles</A>
-      <LI><A HREF="#toc138">15.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</A>
-      <LI><A HREF="#toc139">15.9.3. Assignations de Touches pour le Brailliant BI 14</A>
+      <LI><A HREF="#toc139">15.9.1. Assignations des Touches pour tous les Modèles</A>
+      <LI><A HREF="#toc140">15.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</A>
+      <LI><A HREF="#toc141">15.9.3. Assignations de Touches pour le Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</A>
     <LI><A HREF="#Seika">15.11. Seika Braille Displays</A>
@@ -4265,8 +4269,16 @@ Si elle est cochée, la visionneuse Braille s'affichera au démarrage de NVDA.
 La visionneuse Braille essaiera toujours de se rouvrir avec les mêmes dimensions et à la même position que lors de sa fermeture.
 </P>
 
+<A NAME="PythonConsole"></A>
+<H3>13.4. Console Python</H3>
+
+<P>
+La console Python de NVDA, disponible sous Outils dans le menu NVDA, est un outil de développement utile pour le débogage, l'inspection générale des internes de NVDA ou l'inspection de la hiérarchie d'accessibilité d'une application.
+Pour plus d'informations, veuillez consulter le <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html">Guide de développement NVDA</A>.
+</P>
+
 <A NAME="AddonsManager"></A>
-<H3>13.4. Gestionnaire d'Extensions</H3>
+<H3>13.5. Gestionnaire d'Extensions</H3>
 
 <P>
 Le Gestionnaire d'extensions, accessible en sélectionnant "Gestion des Extensions" dans le menu "Outils" du menu NVDA, permet d'installer, désinstaller, activer ou désactiver des paquets d'extensions pour NVDA.
@@ -4324,7 +4336,7 @@ Pour activer le gestionnaire d'extensions de n'importe où, Veuillez assigner un
 </P>
 
 <A NAME="incompatibleAddonsManager"></A>
-<H3>13.5. Le Gestionnaire d'Extensions Incompatibles</H3>
+<H4>13.5.1. Le Gestionnaire d'Extensions Incompatibles</H4>
 
 <P>
 Le Gestionnaire d'Extensions Incompatibles, auquel on accède via le bouton "voir les extensions incompatibles" dans le gestionnaire d'extensions, vous permet d'inspecter toutes les extensions incompatibles, et la raison pour laquelle elles sont considérées comme tel.
@@ -4344,16 +4356,51 @@ Le gestionnaire d'extensions incompatible a également un bouton "À propos de l
 Il vous permet de connaître tous les détails concernant l'extension, ce qui est utile pour contacter son auteur.
 </P>
 
-<A NAME="PythonConsole"></A>
-<H3>13.6. Console Python</H3>
+<A NAME="CreatePortableCopy"></A>
+<H3>13.6. Créer une copie portable</H3>
 
 <P>
-La console Python NVDA, située dans "Outils" du menu NVDA, est un outil de développement utile pour dépanner, inspecter le code ou inspecter la hiérarchie d'accessibilité d'une application.
-Pour plus d'informations, veuillez consulter le "Guide du Développeur" disponible dans <A HREF="https://community.nvda-project.org/wiki/Development">la section développement du site Web de NVDA</A>.
+Ceci ouvrira un dialogue vous permettant de créer une copie portable de NVDA à partir de la version installée.
+Au contraire, lors de l'exécution d'une copie portable de NVDA, dans le sous-menu Outils l'élément s'intitulera "installer NVDA sur ce PC" au lieu de "créer une copie portable".
+</P>
+<P>
+The dialog to create a portable copy of NVDA or to install NVDA on this PC will promt you to choose a folder path in which NVDA should create the portable copy or in which NVDA should be installed.
+</P>
+<P>
+In this dialog you can enable or disable the following:
 </P>
 
+<UL>
+<LI>Copy current user configuration (this includes the files in %appdata%\roaming\NVDA or in the user configuration of your portable copy and includes also addons and other modules)
+<LI>Start the new portable copy after creation or start NVDA after installation (starts NVDA automatically after the portable copy creation or the installation)
+</UL>
+
+<A NAME="RunCOMRegistrationFixingTool"></A>
+<H3>13.7. Run COM registration fixing tool...</H3>
+
+<P>
+Installing and uninstalling programs on a computer can, in certain cases, cause COM DLL files to get unregistered.
+As COM Interfaces such as IAccessible depend on correct COM DLL registrations, issues can appear in case the correct registration is missing.
+</P>
+<P>
+This can happen i.e. after installing and uninstalling Adobe Reader, Math Player and other programs.
+</P>
+<P>
+The missing registration can cause issues in browsers, desktop apps, task bar and other interfaces.
+</P>
+<P>
+Specifically, following issues can be solved by running this tool:
+</P>
+
+<UL>
+<LI>NVDA reports "unknown" when navigating in browsers such as Firefox, Thunderbird etc.
+<LI>NVDA fails to switch between focus mode and browse mode
+<LI>NVDA is very slow when navigating in browsers while using browse mode
+<LI>And possibly other issues.
+</UL>
+
 <A NAME="ReloadPlugins"></A>
-<H3>13.7. Rechargement des Extensions</H3>
+<H3>13.8. Rechargement des Extensions</H3>
 
 <P>
 Cet élément, quand on l'active, recharge les extensions d'applications et les extensions globales sans avoir à redémarrer NVDA, ce qui peut être utile pour les développeurs.
@@ -5208,7 +5255,7 @@ Voici les assignations de touches pour Brailliant BI/B et BrailleNote touch sous
 Veuillez consulter la documentation du terminal pour savoir où se situent ces touches.
 </P>
 
-<A NAME="toc137"></A>
+<A NAME="toc139"></A>
 <H4>15.9.1. Assignations des Touches pour tous les Modèles</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5298,7 +5345,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 </TABLE>
 
-<A NAME="toc138"></A>
+<A NAME="toc140"></A>
 <H4>15.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5320,7 +5367,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 </TABLE>
 
-<A NAME="toc139"></A>
+<A NAME="toc141"></A>
 <H4>15.9.3. Assignations de Touches pour le Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
