@@ -176,10 +176,14 @@
     <LI><A HREF="#LogViewer">13.1. ログビューアー</A>
     <LI><A HREF="#SpeechViewer">13.2. スピーチビューアー</A>
     <LI><A HREF="#BrailleViewer">13.3. 点字ビューアー</A>
-    <LI><A HREF="#AddonsManager">13.4. アドオン マネージャー</A>
-    <LI><A HREF="#incompatibleAddonsManager">13.5. アドオンの互換性の確認</A>
-    <LI><A HREF="#PythonConsole">13.6. Pythonコンソール</A>
-    <LI><A HREF="#ReloadPlugins">13.7. プラグインの再読み込み</A>
+    <LI><A HREF="#PythonConsole">13.4. Pythonコンソール</A>
+    <LI><A HREF="#AddonsManager">13.5. アドオン マネージャー</A>
+      <UL>
+      <LI><A HREF="#incompatibleAddonsManager">13.5.1. アドオンの互換性の確認</A>
+      </UL>
+    <LI><A HREF="#CreatePortableCopy">13.6. ポータブル版の作成</A>
+    <LI><A HREF="#RunCOMRegistrationFixingTool">13.7. COM 登録の修復を実行</A>
+    <LI><A HREF="#ReloadPlugins">13.8. プラグインの再読み込み</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">14. サポートされている音声エンジン</A>
     <UL>
@@ -201,9 +205,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare製Brailliant BI/Bシリーズ / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc137">15.9.1. すべてのモデル</A>
-      <LI><A HREF="#toc138">15.9.2. Brailliant BI 32, BI 40 および B 80</A>
-      <LI><A HREF="#toc139">15.9.3. Brailliant BI 14</A>
+      <LI><A HREF="#toc139">15.9.1. すべてのモデル</A>
+      <LI><A HREF="#toc140">15.9.2. Brailliant BI 32, BI 40 および B 80</A>
+      <LI><A HREF="#toc141">15.9.3. Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS製 Braille Sense/Braille EDGE/Smart Beetle/Sync Braille シリーズ</A>
     <LI><A HREF="#Seika">15.11. 清華 点字ディスプレイ</A>
@@ -1283,24 +1287,28 @@ NVDAは、ビープ音の変化によってマウスカーソルが画面上の�
 <TH>名称</TH>
 <TH>デスクトップ用キー</TH>
 <TH>ラップトップ用キー</TH>
+<TH>タッチ</TH>
 <TH>説明</TH>
 </TR>
 <TR>
 <TD>左マウスボタンをクリック</TD>
 <TD>テンキースラッシュ</TD>
 <TD>NVDA+開き角カッコ</TD>
+<TD>なし</TD>
 <TD>左マウスボタンをクリックします。一般的なダブルクリックはこのキーを素早く2回押すことで実行できます。</TD>
 </TR>
 <TR>
 <TD>左マウスボタンロック</TD>
 <TD>Shift+テンキースラッシュ</TD>
 <TD>NVDA+Ctrl+開き角カッコ</TD>
+<TD>なし</TD>
 <TD>左マウスボタンをロックします。もう1回押すとロックを解除します。ドラッグするにはこのキーで左マウスボタンをロックし、マウスを移動するか、マウスカーソル移動用コマンドを実行します。</TD>
 </TR>
 <TR>
 <TD>右マウスボタンをクリック</TD>
 <TD>テンキーアスタリスク</TD>
 <TD>NVDA+閉じ角カッコ</TD>
+<TD>タップしてホールド</TD>
 <TD>右マウスボタンをクリックします。</TD>
 </TR>
 <TR>
@@ -1313,12 +1321,14 @@ NVDAは、ビープ音の変化によってマウスカーソルが画面上の�
 <TD>マウスカーソルを現在のナビゲーターオブジェクトに移動</TD>
 <TD>NVDA+テンキースラッシュ</TD>
 <TD>NVDA+Shift+M</TD>
+<TD>なし</TD>
 <TD>マウスカーソルを現在のナビゲーターオブジェクトおよびレビューカーソルに移動します。</TD>
 </TR>
 <TR>
 <TD>マウスカーソル位置のオブジェクトに移動</TD>
 <TD>NVDA+テンキーアスタリスク</TD>
 <TD>NVDA+Shift+N</TD>
+<TD>なし</TD>
 <TD>ナビゲーターオブジェクトをマウスカーソル位置のオブジェクトに移動します。</TD>
 </TR>
 </TABLE>
@@ -4278,8 +4288,16 @@ NVDA メニューを開かないでスピーチビューアーの有効、無効
 この点字ビューアーのウィンドウは閉じるときに大きさと場所が記録され、次回も同じ場所に表示されます。
 </P>
 
+<A NAME="PythonConsole"></A>
+<H3>13.4. Pythonコンソール</H3>
+
+<P>
+NVDAメニュー内のツールにあるPythonコンソールは開発用のツールで、デバッグや一般的なNVDA内部の動作検証、アプリのアクセシビリティ階層構造の検査などに使用できます。
+詳細は、<A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html">NVDA 開発者ガイド</A>を参照してください。
+</P>
+
 <A NAME="AddonsManager"></A>
-<H3>13.4. アドオン マネージャー</H3>
+<H3>13.5. アドオン マネージャー</H3>
 
 <P>
 アドオン マネージャーではNVDAのアドオンパッケージをインストール、削除、有効化、または無効化できます。NVDAメニューの「ツール」「アドオン マネージャー」から実行できます。
@@ -4337,7 +4355,7 @@ NVDA メニューを開かないでアドオンマネージャーを直接開き
 </P>
 
 <A NAME="incompatibleAddonsManager"></A>
-<H3>13.5. アドオンの互換性の確認</H3>
+<H4>13.5.1. アドオンの互換性の確認</H4>
 
 <P>
 アドオンマネージャーの「アドオンの互換性の確認」ボタンを押すと表示される「互換性のないアドオン」ダイアログを使用すると、互換性のないアドオンと、互換性がないと見なされた理由を調べることができます。
@@ -4357,16 +4375,51 @@ NVDA メニューを開かないでアドオンマネージャーを直接開き
 これを押すとアドオンの詳細な情報を表示します。アドオンの作成者に連絡するときに役立ちます。
 </P>
 
-<A NAME="PythonConsole"></A>
-<H3>13.6. Pythonコンソール</H3>
+<A NAME="CreatePortableCopy"></A>
+<H3>13.6. ポータブル版の作成</H3>
 
 <P>
-NVDAメニュー内のツールにあるPythonコンソールは開発用のツールで、デバッグや一般的なNVDA内部の動作検証、アプリのアクセシビリティ階層構造の検査などに使用できます。
-詳細は、<A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html">NVDA 開発者ガイド</A>を参照してください。
+この機能を選ぶとダイアログが開き、そこで、インストールされた NVDA からポータブル版を作成できます。
+NVDA のポータブル版を実行している場合には、このメニュー項目は「ポータブル版の作成」ではなく「このコンピューターにNVDAをインストール」になります。
+</P>
+<P>
+「ポータブル版の作成」の場合はポータブル版を作成するフォルダーを選択します。「このコンピューターにNVDAをインストール」の場合は NVDA をインストールする場所を選択します。
+</P>
+<P>
+このダイアログでは以下を選ぶことができます:
 </P>
 
+<UL>
+<LI>現在のユーザー設定をコピー（ポータブル版作成の場合は %appdata%\roaming\NVDA にあるファイル、インストールの場合はポータブル版のフォルダーに含まれるユーザー設定ファイルが対象です。アドオンなどのモジュールも含まれます）
+<LI>作成したポータブル版を実行（ポータブル版の作成が終わったらそのポータブル版NVDAを起動します。インストールの場合は「インストールされたNVDAを実行」が選べまます）
+</UL>
+
+<A NAME="RunCOMRegistrationFixingTool"></A>
+<H3>13.7. COM 登録の修復を実行</H3>
+
+<P>
+コンピューターでアプリのインストールまたはアンインストールを行うと、COM DLL ファイルの登録が誤って解除されることがあります。
+IAccessibleなどのCOMインターフェイスを使用するには COM DLL が正しく登録されている必要があり、この登録が解除されると不具合が発生する可能性があります。
+</P>
+<P>
+特に Adobe Reader や Math Playerその他のアプリをインストールまたはアンインストールした後でこの不具合が起きる可能性があります。
+</P>
+<P>
+COM の登録が解除されると、ブラウザー、デスクトップアプリ、タスクバー、その他のインターフェイスで問題が発生する可能性があります。
+</P>
+<P>
+以下はこのツールを実行すると解決できる問題の例です:
+</P>
+
+<UL>
+<LI>Firefox や Thunderbird などのアプリで、移動の操作を行うと NVDA が「未定義」としか報告しない
+<LI>NVDAがフォーカスモードとブラウズモードの切り替えに失敗する
+<LI>ブラウズモードを使用しているときにブラウザーで移動すると、NVDAが非常に遅くなる
+<LI>その他の不具合を解決できる場合もあります
+</UL>
+
 <A NAME="ReloadPlugins"></A>
-<H3>13.7. プラグインの再読み込み</H3>
+<H3>13.8. プラグインの再読み込み</H3>
 
 <P>
 この項目を実行すると、アプリモジュールとグローバルプラグインをNVDAを再起動することなく再読み込みできます。これは開発者にとって便利です。
@@ -5206,14 +5259,22 @@ USB接続で HumanWare プロトコルを使用する場合は、事前に製造
 プロトコルとして OpenBraille を使用する場合は USB ドライバーは不要です。
 </P>
 <P>
-BrailleNote Touch にも対応しています。ドライバーをインストールする必要はありません。
+以下の機種にも対応しています。ドライバーをインストールする必要はありません。
 </P>
+
+<UL>
+<LI>APH Mantis Q40
+<LI>APH Chameleon 20
+<LI>Humanware BrailleOne
+<LI>NLS eReader
+</UL>
+
 <P>
 以下は Brailliant BI/B および BrailleNote touch で使用できるNVDA用のキー割り当てです。
 各キーの位置については、ディスプレイの説明書を参照してください。
 </P>
 
-<A NAME="toc137"></A>
+<A NAME="toc139"></A>
 <H4>15.9.1. すべてのモデル</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5303,7 +5364,7 @@ BrailleNote Touch にも対応しています。ドライバーをインスト�
 </TR>
 </TABLE>
 
-<A NAME="toc138"></A>
+<A NAME="toc140"></A>
 <H4>15.9.2. Brailliant BI 32, BI 40 および B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5325,7 +5386,7 @@ BrailleNote Touch にも対応しています。ドライバーをインスト�
 </TR>
 </TABLE>
 
-<A NAME="toc139"></A>
+<A NAME="toc141"></A>
 <H4>15.9.3. Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
