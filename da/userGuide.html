@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>NVDA 2019.3-dev brugervejledning</TITLE>
+<TITLE>NVDA 2020.1-dev brugervejledning</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>NVDA 2019.3-dev brugervejledning</H2>
+<H2>NVDA 2020.1-dev brugervejledning</H2>
 </CENTER>
 
 
@@ -174,10 +174,14 @@
     <LI><A HREF="#LogViewer">13.1. Logviser</A>
     <LI><A HREF="#SpeechViewer">13.2. Talevisning</A>
     <LI><A HREF="#BrailleViewer">13.3. Punktskriftsviser</A>
-    <LI><A HREF="#AddonsManager">13.4. Styring af tilføjelsesprogrammer</A>
-    <LI><A HREF="#incompatibleAddonsManager">13.5. Styring af inkompatible tilføjelser</A>
-    <LI><A HREF="#PythonConsole">13.6. Python konsollen</A>
-    <LI><A HREF="#ReloadPlugins">13.7. Genindlæs plugins</A>
+    <LI><A HREF="#PythonConsole">13.4. Python-konsol</A>
+    <LI><A HREF="#AddonsManager">13.5. Styring af tilføjelsesprogrammer</A>
+      <UL>
+      <LI><A HREF="#incompatibleAddonsManager">13.5.1. Styring af inkompatible tilføjelser</A>
+      </UL>
+    <LI><A HREF="#CreatePortableCopy">13.6. Opret flytbar kopi</A>
+    <LI><A HREF="#RunCOMRegistrationFixingTool">13.7. Kør værktøj til løsning af almindelige problemer...</A>
+    <LI><A HREF="#ReloadPlugins">13.8. Genindlæs plugins</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynth">14. Understøttede talesynteser</A>
     <UL>
@@ -199,9 +203,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Brailliant BI/B Series/BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc135">15.9.1. Tastekombinationer til alle modeller</A>
-      <LI><A HREF="#toc136">15.9.2. Tastekombinationer for Brailliant BI 32, BI 40 og B 80</A>
-      <LI><A HREF="#toc137">15.9.3. Tastekombinationer for Brailliant BI 14</A>
+      <LI><A HREF="#toc137">15.9.1. Tastekombinationer til alle modeller</A>
+      <LI><A HREF="#toc138">15.9.2. Tastekombinationer for Brailliant BI 32, BI 40 og B 80</A>
+      <LI><A HREF="#toc139">15.9.3. Tastekombinationer for Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE/Smart Beetle+ Sync Braille Series</A>
     <LI><A HREF="#Seika">15.11. Seika Braille Displays</A>
@@ -298,7 +302,7 @@ NVDA understøtter punkttabeller for mange sprog, herunder forkortet, fuldskrift
 <H3>1.5. Licens og Ophavsret</H3>
 
 <P>
-NVDA er ophavsret 2006-2019 NVDA bidragydere.
+NVDA er ophavsret 2006-2020 NVDA bidragydere.
 </P>
 <P>
 NVDA er dækket under GNU General Public License (version 2).
@@ -635,7 +639,7 @@ Når menuen kommer op, kan du bruge piletasterne til at navigere rundt i menuen,
 <TH>Navn</TH>
 <TH>Desktop tast</TH>
 <TH>Laptop tast</TH>
-<TH>Bevægelse</TH>
+<TH>Touchbevægelse</TH>
 <TH>Beskrivelse</TH>
 </TR>
 <TR>
@@ -916,7 +920,7 @@ For at navigere imellem objekter, skal du benytte følgende kommandoer:
 <TH>Navn</TH>
 <TH>Desktop tast</TH>
 <TH>Laptop tast</TH>
-<TH>Bevægelse</TH>
+<TH>Touchbevægelse</TH>
 <TH>Beskrivelse</TH>
 </TR>
 <TR>
@@ -1013,7 +1017,7 @@ Følgende tastekommandoer er tilgængelige for gennemsyn af tekst:
 <TH>Navn</TH>
 <TH>Desktop tast</TH>
 <TH>Laptop tast</TH>
-<TH>Bevægelse</TH>
+<TH>Touchbevægelse</TH>
 <TH>Beskrivelse</TH>
 </TR>
 <TR>
@@ -1192,7 +1196,7 @@ Du skifter mellem læsetilstandene med følgende kommandoer:
 <TH>Navn</TH>
 <TH>Desktop tast</TH>
 <TH>Laptop tast</TH>
-<TH>Bevægelse</TH>
+<TH>Touchbevægelse</TH>
 <TH>Beskrivelse</TH>
 </TR>
 <TR>
@@ -1279,41 +1283,48 @@ Selv om du bør bruge en fysisk mus eller et pegefelt til at navigere med musen,
 <TH>Navn</TH>
 <TH>Desktop tast</TH>
 <TH>Laptop tast</TH>
+<TH>Touchbevægelse</TH>
 <TH>Beskrivelse</TH>
 </TR>
 <TR>
 <TD>Venstre museklik</TD>
 <TD>Numpad-skråstreg</TD>
 <TD>NVDA+[</TD>
+<TD>Ingen</TD>
 <TD>Klikker en enkelt gang med venstre museknap. Det almindelige dobbeltklik kan udføres ved at trykke på denne tastekombination to gange hurtigt efter hinanden.</TD>
 </TR>
 <TR>
 <TD>Lås venstre museknap</TD>
 <TD>Shift+Numpad-divideret-med</TD>
 <TD>NVDA+ctrl+[</TD>
+<TD>Ingen</TD>
 <TD>Låser venstre museknap i nedtrykket tilstand. Tryk igen for at slippe den. Hvis du vil trække med musen, så tryk på denne tast for at låse museknappen, og flyt så musen, enten fysisk eller med en af de andre musekommandoer.</TD>
 </TR>
 <TR>
 <TD>Højre museklik</TD>
 <TD>Numpad-stjerne</TD>
 <TD>NVDA+]</TD>
+<TD>Tryk og hold</TD>
 <TD>Klikker en enkelt gang med højre museknap.</TD>
 </TR>
 <TR>
 <TD>Lås højre museknap</TD>
 <TD>Shift+Numpad-stjerne</TD>
 <TD>NVDA+ctrl+]</TD>
+<TD>Ingen</TD>
 <TD>Låser højre museknap i nedtrykket tilstand. Tryk igen for at slippe den. Hvis du vil trække med musen, så tryk på denne tast for at låse museknappen, og flyt så musen, enten fysisk eller med en af de andre musekommandoer.</TD>
 </TR>
 <TR>
 <TD>Flyt musen til det aktuelle navigatorobjekt</TD>
 <TD>NVDA+Numpad-skråstreg</TD>
 <TD>NVDA+Shift+m</TD>
+<TD>Ingen</TD>
 <TD>Flytter musen til positionen for det aktuelle navigatorobjekt og læsemarkøren</TD>
 </TR>
 <TR>
 <TD>Flyt til objektet ved musen</TD>
 <TD>NVDA+Numpad-stjerne NVDA+Shift+n</TD>
+<TD>Ingen</TD>
 <TD>Sætter navigatorobjektet til at være objektet på musens position</TD>
 </TR>
 </TABLE>
@@ -2734,7 +2745,7 @@ Hvis du opdager, at NVDA læser tegn og symboler på et forkert sprog med en bes
 
 <P>
 Når denne check box er valgt, vil NVDA benytte yderligere udtaleordbøger til udtale af symboler og tegn. 
-Disse ordbøger indeholder symboler (særligt emoji) der er angivet af <A HREF="http://www.unicode.org/consortium/">Unicode Consortium</A> som en del af deres <A HREF="http://cldr.unicode.org/">Common Locale Data Repository</A>.
+Disse ordbøger indeholder symboler (særligt emoji) der er angivet af <A HREF="https://www.unicode.org/consortium/">Unicode Consortium</A> som en del af deres <A HREF="http://cldr.unicode.org/">Common Locale Data Repository</A>.
 Hvis du ønsker, at NVDA skal udtale beskrivelser af emoji ved brug af denne data, skal indstillingen være slået til.
 Hvis du derimod bruger en talesyntese, der har denne funktionalitet indbygget, vil det evt. være nødvendigt at slå denne funktion fra.
 </P>
@@ -4236,8 +4247,16 @@ Hvis denne er valgt, vil viseren automatisk åbnes når NVDA startes.
 Dette vindue vil altid forsøge at åbne med samme dimensioner og samme placering, som de var, da vinduet blev lukket.
 </P>
 
+<A NAME="PythonConsole"></A>
+<H3>13.4. Python-konsol</H3>
+
+<P>
+Python-konsollen, der er at finde i menuen "Værktøjer" i NVDA-menuen fungerer som et udviklingsværktøj. Dette værktøj kan benyttes til generel fejlfinding, undersøgelse af interne komponenter i NVDA eller tilgængeligheden af en applikation.
+For yderligere information, læs <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html">NVDA Developer Guide</A>.
+</P>
+
 <A NAME="AddonsManager"></A>
-<H3>13.4. Styring af tilføjelsesprogrammer</H3>
+<H3>13.5. Styring af tilføjelsesprogrammer</H3>
 
 <P>
 Du kan administrere dine tilføjelsesprogrammer til NVDA ved at gå til "Administrer tilføjelsesprogrammer" under Værktøjer i NVDA-menuen. Dette værktøj giver dig mulighed for at installere tilføjelser til skærmlæseren, samt afinstallere, aktivére eller deaktivére tilføjelserne.
@@ -4295,7 +4314,7 @@ Hvis du gerne vil kunne nå dialogen til styring af tilføjelsesprogrammer fra h
 </P>
 
 <A NAME="incompatibleAddonsManager"></A>
-<H3>13.5. Styring af inkompatible tilføjelser</H3>
+<H4>13.5.1. Styring af inkompatible tilføjelser</H4>
 
 <P>
 Knappen "Vis inkompatible tilføjelser...", der kan tilgåes fra dialogen til styring af tilføjelsesprogrammer, vil åbne en dialog, hvorfra du kan administrere og gennemse inkompatible tilføjelser, samt hvorfor disse anses for at være inkompatible med din version af NVDA.
@@ -4315,16 +4334,51 @@ Dialogen har også en knap ved navn "Om tilføjelsesprogram...".
 Denne knap viser alle detaljer om tilføjelsen, så du evt. kan kontakte udvikleren af det pågældende tilføjelsesprogram.
 </P>
 
-<A NAME="PythonConsole"></A>
-<H3>13.6. Python konsollen</H3>
+<A NAME="CreatePortableCopy"></A>
+<H3>13.6. Opret flytbar kopi</H3>
 
 <P>
-NVDAs Python-konsol, der ligger under Værktøjer i NVDA-menuen, er et udviklerværktøj. Det er især velegnet til brug ved fejlfinding, generel inspektion af interne processer i NVDA eller inspektion af tilgængelighedshierarkiet i en applikation.
-For yderligere oplysninger henvises til <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html">udviklingsguiden til NVDA</A>.
+Dette vil åbne en dialog, således du kan oprette en flytbar kopi fra den installerede version af NVDA.
+Når du kører en flytbar kopi, vil dette menu punkt hedde "Installér NVDA på denne PC".
+</P>
+<P>
+Den tilsvarende dialog der vil åbne, vil bede om en sti, hvor NVDA skal oprette en flytbar kopi eller installeres på PC'en.
+</P>
+<P>
+I denne dialog kan du deaktivere følgende:
 </P>
 
+<UL>
+<LI>Kopiér aktuelle brugerindstillinger (dette inkluderer filerne i %appdata%\roaming\NVDA eller brugerkonfigurationen for din flytbare kopi samt installerede tilføjelser og andre moduler)
+<LI>"Start den nye flytare kopi efter oprettelse" eller "Start NVDA efter installation" (starter NVDA automatisk efter oprettelse af den flytbare kopi eller efter installation på computeren)
+</UL>
+
+<A NAME="RunCOMRegistrationFixingTool"></A>
+<H3>13.7. Kør værktøj til løsning af almindelige problemer...</H3>
+
+<P>
+Installation og afinstallation af programmer på computeren kan i nogle tilfælde resultere i at nogle COM DLL filer bliver afregistrerede.
+Eftersom COM-interfaces som IAccessible afhænger af korrekte registrering af COM DLL, vil problemer nogle gange opstå, hvis nogle filregistreringer mangler.
+</P>
+<P>
+Dette kan eksempelvis forekomme, hvis du har installeret og derefter afinstalleret Adobe Reader, Math Player og andre programmer.
+</P>
+<P>
+De manglende filregistreringer kan forårsage problemer med diverse browsere, skrivebordsprogrammer, joblinjen og andre brugergrænseflader.
+</P>
+<P>
+Følgende problemer kan løses ved at køre dette værktøj:
+</P>
+
+<UL>
+<LI>NVDA rapporterer "Ukendt", når der navigeres i browsere som Firefox, Thunderbird osv.
+<LI>NVDA er ikke i stand til at skifte korrekt mellem fokus- og gennemsynstilstand.
+<LI>NVDA forekommer meget langsom, når du navigere i gennemsynstilstand.
+<LI>Evt. andre problemer.
+</UL>
+
 <A NAME="ReloadPlugins"></A>
-<H3>13.7. Genindlæs plugins</H3>
+<H3>13.8. Genindlæs plugins</H3>
 
 <P>
 Denne indstilling vil genindlæse alle app moduler og globale tilføjelsesprogrammer uden at genstarte NVDA. Dette kan være nyttigt for udviklere.
@@ -5164,14 +5218,22 @@ Hvis du ønsker at koble displayet til ved brug af USB med protokollen sat til H
 USB drivere kræves ikke, hvis protokollen er sat til OpenBraille.
 </P>
 <P>
-BrailleNote Touch er også understøttet, men kræver ingen driver for at fungere.
+Følgende yderligere enheder understøttes også, men kræver ingen driver for at fungere:
 </P>
+
+<UL>
+<LI>APH Mantis Q40
+<LI>APH Chameleon 20
+<LI>Humanware BrailleOne
+<LI>NLS eReader
+</UL>
+
 <P>
 Dette er tastekombinationerne til Brailliant BI/B og BrailleNote Touch displays til brug med NVDA.
 Se venligst dokumentationen til dit display for at finde ud af, hvor du kan finde knapperne.
 </P>
 
-<A NAME="toc135"></A>
+<A NAME="toc137"></A>
 <H4>15.9.1. Tastekombinationer til alle modeller</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5261,7 +5323,7 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 </TR>
 </TABLE>
 
-<A NAME="toc136"></A>
+<A NAME="toc138"></A>
 <H4>15.9.2. Tastekombinationer for Brailliant BI 32, BI 40 og B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5283,7 +5345,7 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 </TR>
 </TABLE>
 
-<A NAME="toc137"></A>
+<A NAME="toc139"></A>
 <H4>15.9.3. Tastekombinationer for Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
