@@ -171,6 +171,13 @@ Prvi izbirnik sprašuje, če naj NVDA obravnava Caps Lock kot NVDA prikrojevalno
 Drugi določa ali naj se NVDA po prijavi v Windows zažene samodejno in je na voljo samo za namestitvene kopije NVDA.
 Tretji sprašuje, če naj se to pogovorno okno pokaže vedno, ko se NVDA zažene.
 
++++ Pogovorno okno uporabe statističnih podatkov +++[UsageStatsDialog]
+Od različice NVDA 2018.3, so uporabniki naprošani,, če  bi želeli dovoliti poslati podatke o uporabi organizaciji NV Access kot pomoč za izboljšanje NVDA v prihodnosti. 
+Ob prvem zagonu  NVDA se bo prikazalo pogovorno okno, ki vas bo zaprosilo za vaše soglasje k pošiljanju podatkov NV Access med uporabo NVDA.
+Več o zbiranju podatkov s strani NV Access lahko preberete in dobite informacije v razdelku Splošno v [Dovoli projektu NVDA zbiranje statistike rabe NVDA #GeneralSettingsGatherUsageStats].
+Pomnite: pritisk na "da" ali "ne" bo shranil to nastavitev in pogovorno okno se ne bo prikazalo nikdar več razen, če boste NVDA ponovno namestili.
+Toda vi lahko ročno omogočite ali onemogočite potek zbiranja podatkov na plošči splošnih nastavitev za NVDA. Za ročno spremembo te nastavitve lahko izberete ali odznačite izbirnik, ki se imenuje [Dovoli projektu NVDA zbiranje statistike rabe NVDA #GeneralSettingsGatherUsageStats].
+
 ++ O NVDA tipkovničnih ukazih ++[AboutNVDAKeyboardCommands]
 
 +++ NVDA Prikrojevalna Tipka +++[TheNVDAModifierKey]
@@ -641,6 +648,7 @@ Ko se boste želeli vrniti v dokument, preprosto pritisnite tipko Escape.
 + Brajica +[Braille]
 Če posedujete brajevo vrstico, vam na njo NVDA lahko posreduje informacije.
 In če je na vaši vrstici tipkovnica v Perkinsovem slogu, lahko tudi vnašate normalno in skrajšano brajico.
+Brajica je lahko prikazana tudi na ekranu z uporabo [Prikazovalnika Brajice #BrailleViewer] namesto ali pa ob istem času, ko se uporablja fizična brajeva vrstica.
 
 Prosimo, oglejte si razdelek [Podprtih Brajevih Vrstic #SupportedBrailleDisplays] za več informacij o podprtih brajevih vrsticah.
 Ta razdelek vsebuje tudi informacije o tem, katere vrstice podpirajo funkcijo samodejne zaznave brajeve v vrstice v ozadju prek NVDA.
@@ -1053,7 +1061,7 @@ Na voljo so tile nivoji beleženja:
  - Če vas skrbi zasebnost, nivo beleženja ne nastavite na to možnost.
 - Razhroščevanje: Poleg info, opozorila in sporočil vhoda/izhoda, se bodo beležila dodatna sporočila za razhroščevanje.
  - Kot velja za vhod/izhod,ravno tako tudi tu velja, če vas skrbi zasebnost, ne smete nastaviti ravni beleženja na to možnost.
--
+
 
 ==== Samodejno zaženi NVDA, ko se prijavim v Okna ====[GeneralSettingsStartAfterLogOn]
 Če je ta možnost izbrana, se NVDA zažene takoj, ko se prijavite v Okna.
@@ -1198,7 +1206,7 @@ Ta možnost vam omogoča izbiro sinteze, s katero želite, da NVDA govori.
 Seznam podprtih govornih sintez se nahaja v razdelku [Podprte govorne sinteze #SupportedSpeechSynths], prosimo, oglejte si ga.
 
 Posebna postavka, ki se bo vedno prikazala, je "Brez govora", z izbiro katere NVDA ne govori več.
-To je uporabno za tiste, ki želijo NVDA uporabljati samo z brajico ali za videčega razvijalca, ki bo uporabljal samo pregledovalnik govora.
+To je uporabno za tiste, ki želijo NVDA uporabljati samo z brajico ali za videčega razvijalca, ki bo uporabljal samo prikazovalnik govora.
 
 ==== Izhodna naprava ====[SelectSynthesizerOutputDevice]
 Ta možnost vam omogoča izbiro zvočne naprave, preko katere naj NVDA napoti zvok govorne sinteze.
@@ -1531,9 +1539,11 @@ Ta zvrst nastavitev vsebuje naslednje možnosti:
 To je izbirnik, ki NVDA sporoča, naj pove, kaj vsebujejo zaslonski namigi, ko je izbran.
 Veliko oken in kontrolnikov prikazuje majhna sporočila (ali zaslonske namige), ko pomaknete miškin kazalec prek njih ali ko včasih pomaknete žarišče nad njih.
 
-==== Sporočaj Oblačke Pomoči ====[ObjectPresentationReportBalloons]
-Ko je ta izbirnik izbran, pove NVDA, naj sporoča vsebino oblačkov pomoči, ko se pokažejo.
-Oblački pomoči so kot zaslonski namigi, samo da so običajno večji in se povezujejo s sistemskimi dogodki, kot je obvestilo o izključitvi omrežnega kabla ali opozorilo o varnostni pomanjkljivosti sistema.
+==== Sporočaj obvestila ====[ObjectPresentationReportNotifications]
+Ko je ta izbirnik izbran, pove NVDA, naj sporoča vsebino oblačkov pomoči in pojavnih obvestil, ko se pokažejo.
+- Oblački pomoči so kot zaslonski namigi samo, da so običajno večji in se povezujejo s sistemskimi dogodki, kot je obvestilo o izključitvi omrežnega kabla ali opozorilo o varnostni pomanjkljivosti sistema.
+- Pojavna obvestila so se predstavila v Windowsih 10 in se prikazujejo v središču za obvestila na sistemskem pladnju ter vas informirajo o večih dogodkih (npr., če se je posodobitev prenesla, v vapo mapo Prejeto je prispelo novo epoštno sporočilo ipd.).
+
 
 ==== Sporočaj Bližnjične Tipke Predmeta ====[ObjectPresentationShortcutKeys]
 Ko je ta izbirnik izbran, NVDA poleg vseh predmetov in kontrolnikov sporoča tudi bližnjične tipke, ki so z njimi povezane.
@@ -2006,7 +2016,7 @@ Za spremembo delovanja NVDA na prijavnem/NUR zaslonih nastavite NVDA, kot želit
 
 + Dodatna Orodja +[ExtraTools]
 
-++ Pregledovalnik Dnevnika ++[LogViewer]
+++ Preglej Dnevnik ++[LogViewer]
 Pregledovalnik dnevnika, ki se nahaja v Orodjih v meniju NVDA, vam omogoča ogled vseh zabeleženih dogodkov v dnevnik od zadnjega zagona NVDA pa do trenutka, ko ste začeli pregledovati dnevnik.
 Uporaba ukaza NVDA+F1 bo odprla pregledovalnik dnevnika in prikazala informacije za razvijalce o trenutnem predmetu krmiljenja.
 
@@ -2014,7 +2024,7 @@ Poleg branja vsebine, lahko kopijo dnevnika lahko tudi shranite ali osvežite dn
 Ukazi so na voljo v meniju Pregledovalnika dnevnika.
 
 ++ Prikazovalnik Govora ++[SpeechViewer]
-Za videče razvijalce ali za tiste, ki predstavljajo NVDA videči publiki, je na voljo plavajoče okno, ki vam omogoča spremljanje vsega besedila, ki ga NVDA trenutno izgovarja.
+Za videče razvijalce programov ali za ljudi, ki predstavljajo NVDA videči publiki, je na voljo plavajoče okno, ki vam omogoča spremljanje vsega besedila, ki ga NVDA trenutno izgovarja.
 
 Če želite omogočiti prikazovalnik govora, označite menijsko postavko "Prikazovalnik Govora" v Orodjih menija NVDA.
 Če ga želite izključiti, menijsko postavko odznačite.
@@ -2027,6 +2037,20 @@ Ko je prikazovalnik govora omogočen, se stalno posodablja, da vam pokaže besed
 Kakorkoli, če kliknete ali postavite žarišče znotraj prikazovalnika, bo NVDA začasno prenehala posodabljati besedilo, tako da ga boste lažje izbrali ali preslikali.
 
 Za vklapljanje in izklapljanje Prikazovalnika Govora od kjer koli, prosimo, dodelite lastno kretnjo z uporabo [pogovornega okna Kretenj Vnosa. #InputGestures]
+
+++ Prikazovalnik Brajice ++[BrailleViewer]
+Za videče razvijalce programov ali za ljudi, ki predstavljajo NVDA videči publiki, je na voljo plavajoče okno, ki vam dovoljuje prikaz brajevega iznosa in besedilo, ki je enako vsakemu brajevemu znaku.
+Prikazovalnik brajice se lahko uporablja vzporedno s fizično brajevo vrstico; ita bo prikazal enako število celic, kot jih ima fizična naprava.
+Ko je prikazovalnik brajice omogočen, se stalno posodablja, da vam pokaže brajico, ki naj bi se pokazala na fizični brajevi vrstici.
+
+Za omogočitev prikazovalnika brajice izberite menijsko postavko "Prikazovalnik Brajice" v Orodjih v meniju NVDA.
+Odznačite menijsko postavko za njegovo onemogočitev.
+
+Fizične brajeve vrstice imajo običajno gumbe, s katerimi uporabniki vrtijo vrstico nazaj ali naprej; za omogočitev vrtenja z orodjem prikazovalnik brajice uporabite [pogovorno okno Kretenj Vnosa #InputGestures] za določitev bližnjičnih tipk, ki bodo "Vrtele brajevo vrstico nazaj" in "vrtele brajevo vrstico naprej".
+
+Prikazovalnik brajice vsebuje izbirnik imenovan "Pokaži Prikazovalnik brajice ob zagonu".
+Če je izbran, se bo prikazovalnik brajice odprl, ko se bo NVDA zagnala.
+Okno prikazovalnika brajice se bo vedno poskušalo ponovno odpreti po isti širini in višini ter na istem položaju, kjer se je zaprlo.
 
 ++ Upravitelj Dodatkov ++[AddonsManager]
 Upravitelj dodatkov, dostopen preko izbire Orodij v meniju NVDA, vam omogoča namestitev in odstranitev paketov z dodatki za NVDA ter njihovo začasno izključitev ali vključitev.
@@ -2529,7 +2553,7 @@ Prosimo, oglejte si dokumentacijo posamezne vrstice, za točno lokacijo posamezn
 
 ++ Brajeve Vrstice Seika ++[Seika]
 Brajeve vrstice Seika v različici 3, 4 in 5 (40 celic) in Seika80 (80 celic) iz podjetja [Nippon Telesoft https://www.nippontelesoft.com/] NVDA podpira.
-Več informacij o teh vrsticah in potrebne gonilnike lahko najdete na https://en.seika-braille.com/down/index.html/.
+Več informacij o teh vrsticah in potrebne gonilnike lahko najdete na https://en.seika-braille.com/down/index.html
 Obvezno morate najprej namestiti USB gonilnike, ki ste jih prejeli s strani proizvajalca.
 
 Ta vrstica ne podpira funkcije samodejne zaznave brajeve vrstice v ozadju v NVDA.
