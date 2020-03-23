@@ -3,7 +3,7 @@
 * Authors: Geoff Shang, Joseph Lee and other contributors
 * Download [stable version][1]
 * Download [development version][2]
-* NVDA compatibility: 2019.3
+* NVDA compatibility: 2019.3 to 2020.1
 
 This add-on package provides improved usage of StationPlaylist Studio and other StationPlaylist apps, as well as providing utilities to control Studio from anywhere. Supported apps include Studio, Creator, Track Tool, VT Recorder, and Streamer, as well as SAM, SPL, and AltaCast encoders.
 
@@ -17,6 +17,8 @@ IMPORTANT NOTES:
 * Certain add-on features won't work under some conditions, including running NVDA in secure mode.
 * Due to tecnical limitations, you cannot install or use this add-on on Windows Store version of NVDA.
 * Features marked as "experimental" are meant to test something before a wider release, so they will not be enabled in stable releases.
+* While Studio is running, you can save, reload saved settings, or reset add-on settings to defaults by pressing Control+NVDA+C, Control+NVDA+R once, or Control+NVDA+R three times, respectively. This is also applicable to encoder settings - you can save and reset (not reload) encoder settings if using encoders.
+* Time-based broadcast profiles feature is deprecated and will be removed in a future release.
 
 ## Shortcut keys
 
@@ -43,6 +45,7 @@ Most of these will work in Studio only unless otherwise specified.
 * Control+NVDA+- (hyphen while focused on a track in Studio, Creator, and Track Tool): display data for all columns in a track on a browse mode window.
 * Alt+NVDA+C while focused on a track (Studio only): announces track comments if any.
 * Alt+NVDA+0 from Studio window: Opens the Studio add-on configuration dialog.
+* Alt+NVDA+P from Studio window: Opens the Studio broadcast profiles dialog.
 * Alt+NVDA+- (hyphen) from Studio window: Send feedback to add-on developer using the default email client.
 * Alt+NVDA+F1: Open welcome dialog.
 
@@ -122,7 +125,6 @@ The available commands are:
 * U: Studio up time.
 * W: Weather and temperature if configured.
 * Y: Playlist modified status.
-* 1 through 0: Announce column content for a specified column.
 * F8: Take playlist snapshots (number of tracks, longest track, etc.).
 * Shift+F8: Request playlist transcripts in numerous formats.
 * F9: Mark current track for start of playlist analysis (playlist viewer only).
@@ -193,18 +195,31 @@ Pressing SPL Assistant, Shift+F8 will present a dialog to let you request playli
 
 From studio window, you can press Alt+NVDA+0 to open the add-on configuration dialog. Alternatively, go to NVDA's preferences menu and select SPL Studio Settings item. This dialog is also used to manage broadcast profiles.
 
+## Broadcast profiles dialog
+
+You can save settings for specific shows into broadcast profiles. These profiles can be managed via SPL broadcast profiles dialog which can be accessed by pressing Alt+NVDA+P from Studio window.
+
 ## SPL touch mode
 
 If you are using Studio on a touchscreen computer running Windows 8 or later and have NVDA 2012.3 or later installed, you can perform some Studio commands from the touchscreen. First use three finger tap to switch to SPL mode, then use the touch commands listed above to perform commands.
+
+## Version 20.04
+
+* Time-based broadcast profiles feature is deprecated. A warning message will be shown when first starting Studio after installing add-on 20.04 if you have defined one or more time-based broadcast profiles.
+* Broadcast profiles management has been split from SPL add-on settings dialog into its own dialog. You can access broadcast profiles dialog by pressing Alt+NVDA+P from Studio window.
+* Due to duplication with Control+NVDA+number row commands for Studio tracks, columns explorer commands from SPL Assistant (number row) has been removed.
+* Changed error message shown when trying to open a Studio add-on settings dialog (such as metadata streaming dialog) while another settings dialog (such as end of track alarm dialog) is active. The new error message is same as the message shown when trying to open multiple NVDA settings dialogs.
+* NVDA will no longer play error tones or appear to do nothing when clicking OK button from Columns Explorer dialog after configuring column slots.
+* In encoders, you can now save and reset encoder settings (including stream labels) by pressing Control+NVDA+C or Control+NVDA+R three times, respectively.
 
 ## Version 20.03
 
 * Columns Explorer will now announce first ten columns by default (existing installations will continue to use old column slots).
 * The ability to announce name of the playing track automatically from places other than Studio has been removed. This feature, introduced in add-on 5.6 as a workaround for Studio 5.1x, is no longer functional. Users must now use SPL Controller and/or Assistant layer command to hear title of the currently playing track from everywhere (C).
 * Due to removal of automatic announcement of playing track title, the setting to configure this feature has been removed from add-on settings/status announcement category.
-* In encoders, NVDA will play connection tone every half a second while an encoder is connecting.
+* In encoders, NvDA will play connection tone every half a second while an encoder is connecting.
 * In encoders, NVDA will now announce connection attempt messages until an encoder is actually connected. Previously NVDA stopped when an error was encountered.
-* A new setting has been added to encoder settings to let NVDA announce connection messages until the selected encoder is connected. This setting is enabled by default.
+* A new setting has been added to encoder settings to let NvDA announce connection messages until the selected encoder is connected. This setting is enabled by default.
 
 ## Version 20.02
 
@@ -280,7 +295,7 @@ Version 19.06 supports SPL Studio 5.20 and later.
 
 * Pressing Control+NVDA+R to reload saved settings will now also reload Studio add-on settings, and pressing this command three times will also reset Studio add-on settings to defaults along with NVDA settings.
 * Renamed Studio add-on settings dialog's "Advanced options" panel to "Advanced".
-* 19.03 Experimental: in column announcements and playlist transcripts panels (add-on settings), custom column inclusion/order controls will be visible up front instead of having to select a button to open a dialog to configure these settings.
+* 19.03 experimental: in column announcements and playlist transcripts panels (add-on settings), custom column inclusion/order controls will be visible up front instead of having to select a button to open a dialog to configure these settings.
 
 ## Version 19.02
 
