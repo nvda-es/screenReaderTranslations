@@ -2045,6 +2045,10 @@ Okno podglądu brajla zawiera pole wyboru umożliwiające włączanie tej funkcj
 Jeżeli zostanie ono zaznaczone, to podgląd brajla będzie ładował się przy każdym starcie programu.
 Okno podglądu brajla dokona próby otwarcia się z takimi samymi wymiarami i w takiej samej pozycji, w jakiej zostało ono zamknięte.
 
+++ Konsola Pythona ++[PythonConsole]
+Konsola Pythona NVDA znajduje się w menu Narzędzia  w NVDA. Jest narzędziem dla programistów i jest używana do debugowania, przeglądania wewnątrz NVDA lub sprawdzania hierarchii dostępności aplikacji.
+Więcej informacji znajduje się w [podręczniku dla twórców https://www.nvaccess.org/files/nvda/documentation/developerGuide.html].
+
 ++ Manager wtyczek ++[AddonsManager]
 Manager wtyczek, dostępny poprzez polecenie "Zarządzaj dodatkami" w menu NVDA: Narzędzia, pozwala na instalację, usuwanie, włączanie i wyłączanie dodatków NVDA.
 Dodatki to pakiety przygotowywane przez społeczność, zawierające oprogramowanie, które może dodawać lub zmieniać funkcje NVDA, czy nawet dostarczać wsparcie dodatkowych monitorów brajlowskich lub syntezatorów mowy.
@@ -2090,7 +2094,7 @@ Aby przejrzeć te niezgodne dodatki, możesz użyć przycisku "podgląd niezgodn
 
 Aby uruchamiać manager dodatków z każdego miejsca, określ własne zdarzenie wejścia używając [okna zdarzenia wejścia #InputGestures].
 
-++ Manager niezgodnych dodatków ++[incompatibleAddonsManager]
++++ Manager niezgodnych dodatków +++[incompatibleAddonsManager]
 Manager niezgodnych dodatków, dostępny pod przyciskiem "Przeglądaj niezgodne dodatki"  w managerze dodatków, pozwala badać niezgodne dodatki, oraz przyczyny, dla których są uznawane za niezgodne.
 Dodatki są uznawane za niezgodne, jeśli nie zostały zaktualizowane do działania po istotnych zmianach w NVDA, lub jeśli polegają na funkcji niedostępnej w używanej wersji NVDA.
 Manager niezgodnych dodatków zawiera informację wyjaśniającą  jego cel i wersję NVDA.
@@ -2103,10 +2107,31 @@ Niezgodne dodatki są prezentowane na liście z następującymi kolumnami:
 Manager niezgodnych dodatków zawiera również przycisk "O dodatku...".
 Pozwala przejrzeć wszystkie szczegóły dodatku, co jest przydatne przy kontakcie z autorem dodatku.
 
+++ Create portable copy ++[CreatePortableCopy]
+This will open a dialog which allows you to create a portable copy of NVDA out of the installed version.
+Either way, when running a portable copy of NVDA, in the extra tool sub menu the menu item will be called "install NVDA on this PC" instead of "create portable copy).
 
-++ Konsola Pythona ++[PythonConsole]
-Konsola Pythona NVDA znajduje się w menu Narzędzia  w NVDA. Jest narzędziem dla programistów i jest używana do debugowania, przeglądania wewnątrz NVDA lub sprawdzania hierarchii dostępności aplikacji.
-Więcej informacji znajduje się w [podręczniku dla twórców https://www.nvaccess.org/files/nvda/documentation/developerGuide.html].
+The dialog to create a portable copy of NVDA or to install NVDA on this PC will promt you to choose a folder path in which NVDA should create the portable copy or in which NVDA should be installed.
+
+In this dialog you can enable or disable the following:
+- Copy current user configuration (this includes the files in %appdata%\roaming\NVDA or in the user configuration of your portable copy and includes also addons and other modules)
+- Start the new portable copy after creation or start NVDA after installation (starts NVDA automatically after the portable copy creation or the installation)
+-
+
+++ Run COM registration fixing tool... ++[RunCOMRegistrationFixingTool]
+Installing and uninstalling programs on a computer can, in certain cases, cause COM DLL files to get unregistered.
+As COM Interfaces such as IAccessible depend on correct COM DLL registrations, issues can appear in case the correct registration is missing.
+
+This can happen i.e. after installing and uninstalling Adobe Reader, Math Player and other programs.
+
+The missing registration can cause issues in browsers, desktop apps, task bar and other interfaces.
+
+Specifically, following issues can be solved by running this tool:
+- NVDA reports "unknown" when navigating in browsers such as Firefox, Thunderbird etc.
+- NVDA fails to switch between focus mode and browse mode
+- NVDA is very slow when navigating in browsers while using browse mode
+- And possibly other issues.
+-
 
 ++ przeładuj wtyczki ++[ReloadPlugins]
 Po aktywacji tego polecenia wszystkie moduły aplikacji oraz wtyczki zostaną przeładowane bez potrzeby restartu NVDA. Jest to użyteczne dla programistów.
