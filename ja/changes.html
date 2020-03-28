@@ -10,6 +10,70 @@
 </CENTER>
 
 
+<H2>2020.1</H2>
+
+<P>
+このリリースのハイライトは、HumanWare や APH の販売する新しい点字ディスプレイへの対応、Microsoft Word と MathPlayer や MathType を併用する場合の数式の読み上げに関するバグ修正、その他の重要なバグ修正です。
+</P>
+
+<H3>新機能</H3>
+
+<UL>
+<LI>Chrome のブラウズモードにおいて、リストボックスの選択中の項目を報告するようになりました。これは NVDA 2019.1 と同様の動作です。(<A HREF="https://github.com/nvaccess/nvda/issues/10713">#10713</A>)
+<LI>タッチ対応デバイスにおいて、一本指でタップして押さえ続けると、マウス右クリックの操作ができるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/3886">#3886</A>)
+<LI>新しい点字ディスプレイへの対応: APH Chameleon 20, APH Mantis Q40, HumanWare BrailleOne, BrailleNote Touch v2 および NLS eReader (<A HREF="https://github.com/nvaccess/nvda/issues/10830">#10830</A>)
+</UL>
+
+<H3>変更点</H3>
+
+<UL>
+<LI>「すべて読み上げ」の実行中に Windows システムのロックやスリープを許可しないようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/10643">#10643</A>)
+<LI>Mozilla Firefox の out-of-process iframes に対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/10707">#10707</A>)
+<LI>liblouis 点訳エンジンをバージョン 3.12 に更新しました。(<A HREF="https://github.com/nvaccess/nvda/issues/10161">#10161</A>)
+<LI>Visual Studio Code Insiders において Visual Studio Code 安定版と同様に、既定の状態でブラウズモードが無効になりました。(<A HREF="https://github.com/nvaccess/nvda/issues/10858">#10858</A>)
+</UL>
+
+<H3>バグ修正</H3>
+
+<UL>
+<LI>Unicode マイナス記号 (U+2212) を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10633">#10633</A>)
+<LI>アドオンマネージャーからアドオンをインストールするときにブラウズウィンドウのファイルやフォルダーを2回報告していた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10620">#10620</A>, <A HREF="https://github.com/nvaccess/nvda/issues/2395">#2395</A>)
+<LI>Firefox において、高度なウェブインタフェースを有効にした Mastodon を読み込むと、ブラウズモードでタイムラインが正しくレンダリングされなかった問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/10776">#10776</A>)
+<LI>ブラウズモードにおいて、チェックなしの状態のチェックボックスが「チェックなし」と報告されないことがある問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10781">#10781</A>)
+<LI>ARIA switch コントロールが「押されていません、チェック」「押されています、チェック」のように報告されていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9187">#9187</A>)
+<LI>SAPI4 音声を使う場合に特定のテキストを読み上げなかった問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/10792">#10792</A>)
+<LI>Microsoft Word で数式の読み上げやナビゲーションが行えなかった問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/10803">#10803</A>)
+<LI>ブラウズモードでテキストを選択してから矢印キーを押したときにテキストの選択解除を報告しなかった問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/10731">#10731</A>).
+<LI>eSpeak 音声エンジンの初期化に失敗したときに NVDA が不正に終了していた問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/10607">#10607</A>)
+<LI>インストーラーでショートカットの翻訳の不備によるエラーが発生した場合にインストールが失敗するのではなく、英語の表記でショートカットを作成するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/5166">#5166</A>, <A HREF="https://github.com/nvaccess/nvda/issues/6326">#6326</A>)
+<LI>「すべて読み上げ」の「流し読み」において、矢印キーでリストやテーブルの外に出た場合に、「リストの外」「テーブルの外」という報告を繰り返していた問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/10706">#10706</A>)
+</UL>
+
+<H3>開発者向けの変更</H3>
+
+<UL>
+<LI>開発者向けドキュメントの生成に Sphinx を使うようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9840">#9840</A>)
+<LI>speech モジュールのいくつかの関数が二つに分割されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10593">#10593</A>)
+  speakX 関数は引き続き存在しますが、これらは speech シーケンスを返す新しい関数 getXSpeech を内部で使用します。
+  <UL>
+  <LI>speakObjectProperties 関数は getObjectPropertiesSpeech 関数を使用します。
+  <LI>speakObject 関数は getObjectSpeech 関数を使用します。
+  <LI>speakTextInfo 関数は getTextInfoSpeech 関数を使用します。
+  <LI>speakWithoutPauses 関数は独立したクラスになり、リファクタリングされましたが、互換性は保たれます。
+  <LI>getSpeechForSpelling 関数は（まだ利用可能ですが）非推奨です。 getSpellingSpeech 関数を使用してください。
+  以下はアドオン開発者に影響を与えないはずのプライベートなメソッドの変更点です:
+  <LI>_speakPlaceholderIfEmpty 関数は _getPlaceholderSpeechIfTextEmpty 関数になりました。
+  <LI>_speakTextInfo_addMath 関数は_extendSpeechSequence_addMathForTextInfo 関数になりました。
+  </UL>
+<LI>Speech 'reason' は Enum に置き換えられました。詳細は controlTypes.OutputReason クラスを参照してください。 (<A HREF="https://github.com/nvaccess/nvda/issues/10703">#10703</A>)
+  <UL>
+  <LI>モジュールレベルの 'REASON_*' 定数は廃止されました。
+  </UL>
+<LI>NVDA の依存モジュールのコンパイルに Visual Studio 2019（16.2 またはそれ以降）が必要となりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
+<LI>SCons をバージョン 3.1.1 に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
+<LI>behaviors._FakeTableCell で location が未定義の場合を許容していなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10864">#10864</A>)
+</UL>
+
 <H2>2019.3</H2>
 
 <P>
