@@ -10,6 +10,69 @@
 </CENTER>
 
 
+<H2>2020.1</H2>
+
+<P>
+Caracteristicile principale ale acestei versiuni includ suportul pentru câteva noi afișaje braille de la HumanWare și APH, precum și reparări ale unor erori importante precum cea a citirii conținutului matematic în Microsoft Word utilizându-se MathPlayer / MathType.
+</P>
+
+<H3>Noi Funcționalități</H3>
+
+<UL>
+<LI>Elementul curent selectat din casetele de liste este prezentat din nou în modul de navigare din Google Chrome, așa cum se întâmpla și în NVDA 2019.1. (<A HREF="https://github.com/nvaccess/nvda/issues/10713">#10713</A>)
+<LI>Acum, puteți da click dreapta și dacă folosiți un dispozitiv cu ecran tactil, ca și cum ați folosi un maus fizic, apăsând o dată cu un deget și ținând apăsat. (<A HREF="https://github.com/nvaccess/nvda/issues/3886">#3886</A>)
+<LI>Suport pentru următoarele afișaje braille: APH Chameleon 20, APH Mantis Q40, HumanWare BrailleOne, BrailleNote Touch v2 și NLS eReader. (<A HREF="https://github.com/nvaccess/nvda/issues/10830">#10830</A>)
+</UL>
+
+<H3>Modificări</H3>
+
+<UL>
+<LI>NVDA va împiedica sistemul să se blocheze sau să intre în modul de repaus atunci când va citi tot. (<A HREF="https://github.com/nvaccess/nvda/issues/10643">#10643</A>)
+<LI>Suport pentru iframe-urile out-of-process din Mozilla Firefox. (<A HREF="https://github.com/nvaccess/nvda/issues/10707">#10707</A>)
+<LI>S-a actualizat traducătorul braille liblouis la versiunea 3.12. (<A HREF="https://github.com/nvaccess/nvda/issues/10161">#10161</A>)
+</UL>
+
+<H3>Defecte Rezolvate</H3>
+
+<UL>
+<LI>Am făcut astfel încât NVDA să nu mai anunțe simbolul Unicode „minus” (U+2212). (<A HREF="https://github.com/nvaccess/nvda/issues/10633">#10633</A>)
+<LI>La instalarea suplimentul din administratorul de suplimente, numele dosarelor și fișierelor din fereastra de navigare nu mai sunt raportate de două ori. (<A HREF="https://github.com/nvaccess/nvda/issues/10620">#10620</A>, <A HREF="https://github.com/nvaccess/nvda/issues/2395">#2395</A>)
+<LI>În Firefox, la încărcarea Mastodon având activată interfața web avansată, toate cronologiile sunt redate corect în modul de navigare. (<A HREF="https://github.com/nvaccess/nvda/issues/10776">#10776</A>)
+<LI>În modul de navigare, NVDA raportează „nebifat” pentru casetele care nu sunt bifate acolo unde uneori nu o făcea. (<A HREF="https://github.com/nvaccess/nvda/issues/10781">#10781</A>)
+<LI>Controalele de comutare ARIA nu mai raportează informații precum „nu este apăsat bifat” sau „apăsat bifat”, menite să genereze confuzie în rândul utilizatorilor. (<A HREF="https://github.com/nvaccess/nvda/issues/9187">#9187</A>)
+<LI>Nu ar mai trebui ca vocile SAPI4 să refuze să pronunțe un anume text. (<A HREF="https://github.com/nvaccess/nvda/issues/10792">#10792</A>)
+<LI>NVDA poate din nou să citească ecuațiile matematice din Microsoft Word și să interacționeze cu ele. (<A HREF="https://github.com/nvaccess/nvda/issues/10803">#10803</A>)
+<LI>NVDA va anunța din nou textul neselectat din modul de navigare la apăsarea unei taste săgeată cât timp textul este selectat. (<A HREF="https://github.com/nvaccess/nvda/issues/10731">#10731</A>)
+<LI>NVDA nu se mai închide dacă există o eroare la pornirea eSpeak. (<A HREF="https://github.com/nvaccess/nvda/issues/10607">#10607</A>)
+<LI>Erorile cauzate de Unicode în traduceri ăpentru scurtături nu mai opresc instalatorul, atenuate de revenirea la textul în engleză. (<A HREF="https://github.com/nvaccess/nvda/issues/5166">#5166</A>, <A HREF="https://github.com/nvaccess/nvda/issues/6326">#6326</A>)
+<LI>Ieșirea listelor și a tabelelor dinn sayAll, cu citirea de suprafață activată, nu mai anunță în continuu ieșirea din listă sau tabel.
+</UL>
+
+<H3>Modificări pentru Dezvoltatori</H3>
+
+<UL>
+<LI>Ghidul dezvoltatorului este construit acum cu Sphinx. (<A HREF="https://github.com/nvaccess/nvda/issues/9840">#9840</A>)
+<LI>Câteva funcții de vorbire au fost împărțite în două. (<A HREF="https://github.com/nvaccess/nvda/issues/10593">#10593</A>)
+  Versiunea speakX rămâne, însă acum depinde de o funcție getXSpeech, care întoarce o frecvență de vorbire.
+  <UL>
+  <LI>Acum, speakObjectProperties se bazează getObjectPropertiesSpeech
+  <LI>Acum, speakObject se bazează pe getObjectSpeech
+  <LI>Acum, speakTextInfo se bazează pe getTextInfoSpeech
+  <LI>speakWithoutPauses a fost convertită într-o clasă și refabricată, însă nu ar trebui să afecteze în vreun fel compatibilitatea.
+  <LI>getSpeechForSpelling este depreciată, (deși încă este disponibilă) utilizați în schimb getSpellingSpeech.
+  Modificări private care nu ar trebui să îi afecteze pe dezvoltatorii de suplimente:
+  <LI>Acum, _speakPlaceholderIfEmpty este _getPlaceholderSpeechIfTextEmpty
+  <LI>Acum, _speakTextInfo_addMath este _extendSpeechSequence_addMathForTextInfo
+  </UL>
+<LI>Vorbirea 'reason' a fost convertită într-un Enum, vedeți clasa controlTypes.OutputReason. (<A HREF="https://github.com/nvaccess/nvda/issues/10703">#10703</A>)
+  <UL>
+  <LI>Constantele nivelurilor de modul 'reason' sunt depreciate.
+  </UL>
+<LI>Dependințele de compilare ale NVDA necesită Visual Studio 2019 (16.2 sau mai nou). (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
+<LI>S-a actualizat SCons la versiunea 3.1.1. (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
+<LI>Se permite din nou behaviors._FakeTableCell să nu aibă nicio locație definită. (<A HREF="https://github.com/nvaccess/nvda/issues/10864">#10864</A>)
+</UL>
+
 <H2>2019.3</H2>
 
 <P>
