@@ -10,6 +10,69 @@
 </CENTER>
 
 
+<H2>2020.1</H2>
+
+<P>
+Основные новшества этого выпуска включают в себя поддержку ряда новых брайлевских дисплеев от HumanWare и APH, а также множество других важных исправлений, таких как возможность снова читать математическое содержимое в Microsoft Word с помощью MathPlayer/MathType.
+</P>
+
+<H3>Новое</H3>
+
+<UL>
+<LI>В режиме обзора, выделенный элемент списка в Google Chrome теперь снова сообщается таким же образом, как это было в NVDA 2019.1. (<A HREF="https://github.com/nvaccess/nvda/issues/10713">#10713</A>)
+<LI>На устройствах с сенсорным экраном, однократное касание экрана с удержанием, теперь выполняет щелчок правой кнопкой мыши в позиции касания. (<A HREF="https://github.com/nvaccess/nvda/issues/3886">#3886</A>)
+<LI>Добавлена поддержка новых брайлевских дисплеев: APH Chameleon 20, APH Mantis Q40, HumanWare BrailleOne, BrailleNote Touch v2 и NLS eReader. (<A HREF="https://github.com/nvaccess/nvda/issues/10830">#10830</A>)
+</UL>
+
+<H3>Изменения</H3>
+
+<UL>
+<LI>NVDA в режиме непрерывного чтения теперь предотвращает переход системы в спящий режим. (<A HREF="https://github.com/nvaccess/nvda/issues/10643">#10643</A>)
+<LI>Для Mozilla Firefox добавлена поддержка встроенных фреймов (элементы &lt;iframe&gt;), обработка которых вынесена в отдельный процесс. (<A HREF="https://github.com/nvaccess/nvda/issues/10707">#10707</A>)
+<LI>Библиотека брайлевской трансляции Liblouis обновлена до версии 3.12. (<A HREF="https://github.com/nvaccess/nvda/issues/10161">#10161</A>)
+</UL>
+
+<H3>Исправления</H3>
+
+<UL>
+<LI>В таблицу символов NVDA добавлен знак минуса (U+2212) (в таблице русской локали он присутствовал и раньше). (<A HREF="https://github.com/nvaccess/nvda/issues/10633">#10633</A>)
+<LI>При установке дополнений из окна менеджера дополнений, имена файлов и папок в диалоге выбора файла дополнения больше не читаются по два раза. (<A HREF="https://github.com/nvaccess/nvda/issues/10620">#10620</A>, <A HREF="https://github.com/nvaccess/nvda/issues/2395">#2395</A>)
+<LI>В Firefox, при загрузке соцсети Mastodon с включённом расширенном web-интерфейсом, все таймлайны в режиме обзора теперь отображаются корректно. (<A HREF="https://github.com/nvaccess/nvda/issues/10776">#10776</A>)
+<LI>В режиме обзора, NVDA теперь корректно читает состояние «не отмечено» для не отмеченных флажков, состояние для которых не было задано ранее. (<A HREF="https://github.com/nvaccess/nvda/issues/10781">#10781</A>)
+<LI>Для ARIA-переключателей, NVDA больше не сообщает непонятное описание состояний, такое как «не нажато отмечено» или «нажато отмечено». (<A HREF="https://github.com/nvaccess/nvda/issues/9187">#9187</A>)
+<LI>Голоса SAPI4 больше не должны отказываться произносить текст в некоторых ситуациях. (<A HREF="https://github.com/nvaccess/nvda/issues/10792">#10792</A>)
+<LI>NVDA теперь снова может читать и взаимодействовать с математическими выражениями в Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/10803">#10803</A>)
+<LI>NVDA теперь снова сообщает снятие выделения текста в режиме обзора, при нажатии клавиш-стрелок и наличии выделенного текста. (<A HREF="https://github.com/nvaccess/nvda/issues/10731">#10731</A>)
+<LI>NVDA больше не выполняет аварийное завершение работы при ошибки инициализации синтезатора eSpeak NG. (<A HREF="https://github.com/nvaccess/nvda/issues/10607">#10607</A>)
+<LI>Неверное определение горячей клавиши для запуска NVDA в той или иной локали, больше не вызывает крах установщика. Будет использовано сочетание клавиш по умолчанию (CTRL+ALT+N). (<A HREF="https://github.com/nvaccess/nvda/issues/5166">#5166</A>, <A HREF="https://github.com/nvaccess/nvda/issues/6326">#6326</A>)
+<LI>В режиме непрерывного чтения, и при включённой функции беглого чтения, использование клавиш быстрой навигации в режиме обзора больше не вызывает чтение сообщений о выходе из списков и таблиц. (<A HREF="https://github.com/nvaccess/nvda/issues/10706">#10706</A>)
+</UL>
+
+<H3>Изменения для разработчиков</H3>
+
+<UL>
+<LI>Документация для разработчиков теперь создаётся с помощью Sphinx. (<A HREF="https://github.com/nvaccess/nvda/issues/9840">#9840</A>)
+<LI>Ряд функций пакета speech были разделены на две. (<A HREF="https://github.com/nvaccess/nvda/issues/10593">#10593</A>)
+  Версии функций speakX сохранены, но теперь зависят от функций getXSpeech, которые возвращают речевую последовательность.
+  <UL>
+  <LI>speakObjectProperties теперь полагается на getObjectPropertiesSpeech
+  <LI>speakObject теперь полагается на getObjectSpeech
+  <LI>speakTextInfo теперь полагается на getTextInfoSpeech
+  <LI>Функция speakWithoutPauses была перенесена в класс и переписана, но без нарушения обратной совместимости.
+  <LI>Функция getSpeechForSpelling объявлена устаревшей, но оставлена для обратной совместимости. Вместо неё используйте функцию getSpellingSpeech.
+  Внутренние/приватные изменения, которые не должны влиять на разработчиков дополнений:
+  <LI>Функция _speakPlaceholderIfEmpty переименована в _getPlaceholderSpeechIfTextEmpty
+  <LI>Функция _speakTextInfo_addMath переименована в _extendSpeechSequence_addMathForTextInfo
+  </UL>
+<LI>Значения 'reason' из пакета speech теперь являются экземплярами перечисления, см. класс controlTypes.OutputReason. (<A HREF="https://github.com/nvaccess/nvda/issues/10703">#10703</A>)
+  <UL>
+  <LI>Константы controlTypes.REASON_* объявлены устаревшими.
+  </UL>
+<LI>Для сборки зависимостей NVDA теперь требуется Visual Studio 2019 (16.2 или новее). (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
+<LI>SCons обновлён до версии 3.1.1. (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
+<LI>Экземплярам NVDAObjects.behaviors._FakeTableCell снова разрешено не иметь расположения. (<A HREF="https://github.com/nvaccess/nvda/issues/10864">#10864</A>)
+</UL>
+
 <H2>2019.3</H2>
 
 <P>
