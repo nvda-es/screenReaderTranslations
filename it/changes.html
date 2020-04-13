@@ -10,6 +10,69 @@
 </CENTER>
 
 
+<H2>2020.1</H2>
+
+<P>
+Le principali migliorie presenti in questa versione si concentrano sul supporto per molti nuovi display braille prodotti da HumanWare e APH, oltre a molti importanti bug risolti , come la possibilità di leggere nuovamente i contenuti di tipo matematico presenti in Microsoft Word usando MathPlayer / MathType.
+</P>
+
+<H3>Novità</H3>
+
+<UL>
+<LI>L'elemento selezionato nelle caselle combinate di Google Chrome viene nuovamente mostrato anche in modalità navigazione, così come avveniva in NVDA 2019.1. (<A HREF="https://github.com/nvaccess/nvda/issues/10713">#10713</A>)
+<LI>Ora è possibile eseguire clic con il tasto destro del mouse sui dispositivi touch toccando e tenendo premuto un dito. (<A HREF="https://github.com/nvaccess/nvda/issues/3886">#3886</A>)
+<LI>Supporto per nuovi Display Braille: APH Chameleon 20, APH Mantis Q40, HumanWare BrailleOne, BrailleNote Touch v2, e NLS eReader. (<A HREF="https://github.com/nvaccess/nvda/issues/10830">#10830</A>)
+</UL>
+
+<H3>Cambiamenti</H3>
+
+<UL>
+<LI>NVDA impedisce al sistema di bloccarsi o andare in modalità di sospensione durante la modalità dire tutto. (<A HREF="https://github.com/nvaccess/nvda/issues/10643">#10643</A>)
+<LI>Supporto per iframe fuori processo in Mozilla Firefox. (<A HREF="https://github.com/nvaccess/nvda/issues/10707">#10707</A>)
+<LI>Aggiornato liblouis braille translator alla versione 3.12. (<A HREF="https://github.com/nvaccess/nvda/issues/10161">#10161</A>)
+</UL>
+
+<H3>Bug Corretti</H3>
+
+<UL>
+<LI>Risolto il problema con NVDA che non annunciava il simbolo meno Unicode (U+2212). (<A HREF="https://github.com/nvaccess/nvda/issues/10633">#10633</A>)
+<LI>Durante l'installazione di un addon da Gestione componenti aggiuntivi, i nomi dei file e cartelle nella finestra di ricerca non vengono più annunciati due volte. (<A HREF="https://github.com/nvaccess/nvda/issues/10620">#10620</A>, <A HREF="https://github.com/nvaccess/nvda/issues/2395">#2395</A>)
+<LI>In Firefox, quando si carica Mastodon con l'interfaccia Web avanzata abilitata, tutte le varie cronologie ora vengono visualizzate correttamente in modalità navigazione. (<A HREF="https://github.com/nvaccess/nvda/issues/10776">#10776</A>)
+<LI>In modalità navigazione, NVDA ora dirà "non attivato" per le caselle di controllo non selezionate, correggendo un bug che talvolta le faceva pronunciare come attivate. (<A HREF="https://github.com/nvaccess/nvda/issues/10781">#10781</A>)
+<LI>Non vengono piu' fornite informazioni errate sugli interruttori dei controlli Aria, come "non premuto attivato" o "premuto attivato". (<A HREF="https://github.com/nvaccess/nvda/issues/9187">#9187</A>)
+<LI>Le voci SAPI4 non dovrebbero piu' presentare problemi nella pronuncia di alcune sezioni di testo. (<A HREF="https://github.com/nvaccess/nvda/issues/10792">#10792</A>)
+<LI>NVDA può di nuovo leggere ed interagire con le equazioni matematiches in Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/10803">#10803</A>)
+<LI>NVDA annuncerà nuovamente  che il testo viene deselezionato in modalità navigazione se viene premuto un tasto freccia quando vi è del testo selezionato. (<A HREF="https://github.com/nvaccess/nvda/issues/10731">#10731</A>).
+<LI>NVDA non si chiuderà più nel caso in cui vi sia un errore durante l'inizializzazione di Espeak. (<A HREF="https://github.com/nvaccess/nvda/issues/10607">#10607</A>)
+<LI>Nel caso in cui vi siano errori unicode nelle traduzioni internazionali sui tasti rapidi, il programma di installazione non si bloccherà più e passerà alla lingua inglese. (<A HREF="https://github.com/nvaccess/nvda/issues/5166">#5166</A>, <A HREF="https://github.com/nvaccess/nvda/issues/6326">#6326</A>)
+<LI>Migliorata la gestione di tabelle ed elenchi in modalità dire tutto, ora NVDA siulta meno prolisso. (<A HREF="https://github.com/nvaccess/nvda/issues/10706">#10706</A>)
+</UL>
+
+<H3>Changes for Developers</H3>
+
+<UL>
+<LI>Developer documentation is now build using sphinx. (<A HREF="https://github.com/nvaccess/nvda/issues/9840">#9840</A>)
+<LI>Several speech functions have been split into two. (<A HREF="https://github.com/nvaccess/nvda/issues/10593">#10593</A>)
+  The speakX version remains, but now depends on a getXSpeech function which returns a speech sequence.
+  <UL>
+  <LI>speakObjectProperties now relies on getObjectPropertiesSpeech
+  <LI>speakObject now relies on getObjectSpeech
+  <LI>speakTextInfo now relies on getTextInfoSpeech
+  <LI>speakWithoutPauses has been converted into a class, and refactored, but should not break compatibility.
+  <LI>getSpeechForSpelling is deprecated (though still available) use getSpellingSpeech instead.
+  Private changes that should not affect addon developers:
+  <LI>_speakPlaceholderIfEmpty is now _getPlaceholderSpeechIfTextEmpty
+  <LI>_speakTextInfo_addMath is now _extendSpeechSequence_addMathForTextInfo
+  </UL>
+<LI>Speech 'reason' has been converted to an Enum, see controlTypes.OutputReason class. (<A HREF="https://github.com/nvaccess/nvda/issues/10703">#10703</A>)
+  <UL>
+  <LI>Module level 'REASON_*' constants are deprecated.
+  </UL>
+<LI>Compiling NVDA dependencies now requires Visual Studio 2019 (16.2 or newer). (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
+<LI>Updated SCons to version 3.1.1. (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
+<LI>Again allow behaviors._FakeTableCell to have no location defined (<A HREF="https://github.com/nvaccess/nvda/issues/10864">#10864</A>)
+</UL>
+
 <H2>2019.3</H2>
 
 <P>
