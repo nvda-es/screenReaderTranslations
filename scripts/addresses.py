@@ -194,7 +194,7 @@ addresses = {
     },
     'ru': {
         'lang': 'Russian',
-        'email': ['Ruslan Shukhanov <ru2020slan@yandex.ru>', 'Beqa Gozalishvili <beqaprogger@gmail.com>', "Aleksandr Lin'kov <kvark128@yandex.ru>", 'alexander Yashin <a.jaszyn@ya.ru>'],
+        'email': ['Zvonimir Stanecic <9a5dsz@gozaltech.org>', 'Beqa Gozalishvili <beqaprogger@gmail.com>', "Aleksandr Lin'kov <kvark128@yandex.ru>", 'alexander Yashin <a.jaszyn@ya.ru>'],
     },
     'sk': {
         'lang':'Slovak',
