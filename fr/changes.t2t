@@ -3,6 +3,63 @@ Quoi de Neuf dans NVDA
 
 %!includeconf: ../changes.t2tconf
 
+= 2020.2 =
+Les points de cette version incluent le support d'un nouvel afficheur Braille de Natiq nBraille, un meilleur support de l'antivirus Eset et de Windows Terminal, une amélioration des performances pour 1Password et le synthétiseur Windows OneCore, ainsi que beaucoup d'autres correctifs.
+
+== Nouvelles fonctionnalités ==
+- Support de nouveaux afficheurs Braille :
+  - Nattiq nBraille (#10778)
+- Ajout d'un script pour ouvrir le dossier de configuration de NVDA (aucun geste par défaut). (#2214)
+- Meilleur support pour l'interface de l'antivirus Eset. (#10894)
+- Ajout du support de Windows Terminal. (#10305)
+- Ajout d'une commande pour annoncer le profil de configuration actif. (#9325)
+- Ajout d'une commande pour basculer l'annonce des exposants et indices. (#10985)
+- Les applications Web (par exemple GMail) n'annonceront plus d'anciennes informations lors du déplacement rapide du curseur. (#10885)
+  - Ce correctif expérimental doit être activé manuellement via l'option "Essayer de couper la parole pour les évènements focus expirés" dans les paramètres avancés.
+- Ajout de plus de symboles. (#11105)
+
+
+== Changements ==
+- Mise à jour du transcripteur Braille Liblouis vers la version [3.14.0 https://github.com/liblouis/liblouis/releases/tag/v3.14.0] (de la version 3.12.0). (#10832)
+- L'annonce des exposants et indices est maintenant contrôlé séparément de l'annonce des attributs de la police. (#10919)
+- En raison de changements dans VS Code, NVDA ne désactivera plus le mode navigation dans Code par défaut. (#10888)
+- Suppression des messages "haut" et "bas" lors du déplacement du curseur de revue à la première ou dernière ligne de l'objet navigateur actuel. (#9551)
+- Suppression des messages "gauche" et "droite" lors du déplacement du curseur de revue au premier ou dernier caractère de la ligne actuelle de l'objet navigateur actuel. (#9551)
+
+
+== Corrections de bogues ==
+- NVDA démarre correctement quand le fichier journal ne peut être créé (#6330)
+- Dans les versions récentes de Microsoft Word 365, NVDA n'annoncera plus "mot précédent supprimé" quand CTRL+retour arrière est pressé pendant l'édition d'un document. (#10851)
+- Dans Winamp, NVDA annoncera à nouveau le changement de statut des fonctions répétition et aléatoire. (#10945)
+- NVDA n'est plus extrêmement lent lors du déplacement dans la liste des éléments de 1Password. (#10508)
+- Le synthétiseur Windows OneCore ne ralentira plus entre ses différentes paroles. (#10721)
+- NVDA ne se figera plus lors de l'ouverture du menu contextuel de 1Password depuis la zone de notifications système. (#11017)
+- Dans Office 2013 et plus ancien :
+  - Les rubans sont annoncés lorsque le curseur s'y déplace pour la première fois. (#4207)
+  - Les éléments du menu contextuel sont à nouveau annoncés correctement. (#9252)
+  - Les sexions des rubans sont annoncées constemment lors du déplacements avec CTRL+flèche. (#7067)
+- En mode navigation dans Mozilla Firefox et Google Chrome, le texte n'est plus incorrectement affiché sur une ligne séparée lorsque le contenu Web utilise l'affichage CSS : inline-flex. (#11075)
+- En mode navigation avec le positionnement automatique sur les éléments susceptibles d'être mis en focus désactivé, il est maintenant possible d'activer les éléments impossible à mettre en focus.
+- En mode navigation avec le positionnement automatique sur les éléments susceptibles d'être mis en focus désactivé, il est maintenant possible d'activer les éléments riches via la touche tab. (#8528)
+- En mode navigation avec le positionnement automatique sur les éléments susceptibles d'être mis en focus désactivé, activer certains éléments ne cliquera plus à la mauvaise position. (#9886)
+- Le son d'erreur de NVDA n'est plus joué lors de l'accès à un contrôle de texte DevExpress. (#10918)
+- Les infobulles des icônes de la zone de notifications ne sont plus annoncées lors de la navigation au clavier si elles sont identiques au texte de l'icône, pour éviter une double annonce. (#6656)
+- En mode navigation avec le positionnement automatique sur les éléments susceptibles d'être mis en focus désactivé, basculer en mode formulaire avec NVDA+espace met maintenant en focus l'élément sous le curseur. (#11206)
+- Il est à nouveau possible de vérifier les mises à jour de NVDA sur certains systèmes, par exemple les installations propres de Windows. (#11253)
+- Plus de changement de focus dans les applications Java lors d'un changement de sélection dans une liste, un onglet ou une arborressence ne pouvant avoir le focus. (#5989)
+
+
+== Changements pour les développeurs ==
+- execElevated et hasUiAccess ont été déplacés du module config au module systemUtils. L'usage via le module config est déprécié. (#10493)
+- Mise à jour de configobj à la version 5.1.0dev niveau f9a265c4. (#10939)
+- Les tests automatiques de NVDA avec Chrome et un exemple HTML sont maintenant possibles. (#10553)
+- IAccessibleHandler a été converti en un paquet, OrderedWinEventLimiter a été extrait en un module et ajouté à unit tests. (#10934)
+- Mise à jour de BrlApi en version 0.8 (BRLTTY 6.1). (#11065)
+- Le retour des barres de statut peut maintenant être personnalisé par un AppModule. (#2125, #4640)
+- NVDA ne suit plus IAccessible EVENT_OBJECT_REORDER. (#11076)
+- Un ScriptableObject bloqué (par exemple un globalplugin dont l'appel à la classe basique __INIT__ est manquant) ne bloquera plus le rendu des scripts de NVDA. (#5446)
+
+
 = 2020.1 =
 Les points forts de cette version incluent la prise en charge de nombreux nouveaux afficheurs Braille de HumanWare et APH, et beaucoup d'autres corrections de bogues comme la possibilité de lire à nouveau du contenu mathématiques dans Microsoft Word en utilisant MathPlayer/MathType.
 
