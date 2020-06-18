@@ -1,0 +1,11 @@
+commit 242e8734c6c38e2cc9b84a7bc82fc9851b50fcfc
+Author: James Teh <jamie@jantrid.net>
+Date:   Thu Jun 11 02:59:47 2020 +1000
+
+    Fix setting focus when forcing focus mode (PR #11206)
+    
+    Browse mode with 'auto focus focusable elements' disabled: Focus focusable ancestor at caret when forcing focus mode with NVDA+space.
+    
+    When enabling (forcing) focus mode with NVDA+space, NVDA wasn't setting focus to the element under the cursor with 'auto focus focusable elements' disabled.
+    
+    Switching to focus mode with NVDA+space sets disableAutoPassThrough to True on the TreeInterceptor. Previously, this was just a variable. Now, it's a property which calls _focusLastFocusableObject() if appropriate.
