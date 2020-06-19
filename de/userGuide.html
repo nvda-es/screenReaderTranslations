@@ -31,7 +31,7 @@
     <LI><A HREF="#InstallingNVDA">3.2. NVDA installieren</A>
       <UL>
       <LI><A HREF="#InstallWithIncompatibleAddons">3.2.1. Warnung bei inkompatiblen Erweiterungen</A>
-      <LI><A HREF="#StartAtWindowsLogon">3.2.2. NVDA während der Windows-Anmeldung verwenden</A>
+      <LI><A HREF="#StartAtWindowsLogon">3.2.2. NVDA während der Windows-Anmeldung starten</A>
       <LI><A HREF="#CreateDesktopShortcut">3.2.3. Desktop-Verknüpfung erstellen (Strg+Alt+N)</A>
       <LI><A HREF="#CopyPortableConfigurationToCurrentUserAccount">3.2.4. Portable Konfiguration in das aktuelle Benutzerkonto kopieren</A>
       </UL>
@@ -121,7 +121,7 @@
     <LI><A HREF="#Foobar2000">11.4. Foobar2000</A>
     <LI><A HREF="#MirandaIM">11.5. Miranda IM</A>
     <LI><A HREF="#Poedit">11.6. Poedit</A>
-    <LI><A HREF="#Kindle">11.7. Kindle für PC</A>
+    <LI><A HREF="#Kindle">11.7. Amazon Kindle für PC</A>
       <UL>
       <LI><A HREF="#KindleTextSelection">11.7.1. Markieren von Text</A>
       <LI><A HREF="#KindleUserNotes">11.7.2. Notizen</A>
@@ -216,7 +216,8 @@
     <LI><A HREF="#EcoBraille">15.15. EcoBraille</A>
     <LI><A HREF="#SuperBraille">15.16. SuperBraille</A>
     <LI><A HREF="#Eurobraille">15.17. Eurobraille Esys/Esytime/Iris-Braillezeilen</A>
-    <LI><A HREF="#BRLTTY">15.18. BRLTTY</A>
+    <LI><A HREF="#NattiqTechnologies">15.18. Nattiq nBraille</A>
+    <LI><A HREF="#BRLTTY">15.19. BRLTTY</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">16. Erweiterte Themen</A>
     <UL>
@@ -258,7 +259,7 @@ Zu den wichtigsten Funktionen gehören:
 <LI>Einfache Bedienung während der Installation mit Unterstützung durch die Sprachausgabe.
 <LI>Übersetzt in mehr als 54 Sprachen.
 <LI>Unterstützung für moderne Windows-Betriebssysteme (32- und 64-Bit).
-<LI>Lauffähig bei der Windows-Anmeldung und bei Sicherheitsmeldungen.
+<LI>Lauffähig während der Windows-Anmeldung und bei Sicherheitsmeldungen.
 <LI>Unterstützung für Touchscreens.
 <LI>Unterstützung gängiger Schnittstellen zur Barrierefreiheit wie Microsoft Active Accessibility, Java Access Bridge, IAccessible2 und UIA.
 <LI>Unterstützung für die Windows-Eingabeaufforderung und -Konsolenanwendungen.
@@ -306,9 +307,13 @@ NVDA enthält Braille-Übersetzungstabellen für Computerbraille sowie für Voll
 Copyright 2006-2020 NVDA-Mitwirkende.
 </P>
 <P>
-NVDA steht unter der GNU General Public License (Version 2).
+NVDA ist unter der GNU General Public License Version 2 verfügbar, mit zwei besonderen Ausnahmen.
+Die Ausnahmen sind im Lizenz-Dokument unter den Abschnitten "Nicht-GPL-Komponenten in Plugins und Treibern" und "Microsoft Distributable Code" aufgeführt.
+NVDA verwendet auch Komponenten, die unter verschiedenen freien und Open-Source-Lizenzen zur Verfügung gestellt werden.
 Es steht Ihnen frei, diese Software auf jede Art und Weise weiterzugeben oder zu verändern, solange Sie die Lizenz mitliefern und den gesamten Quellcode jedem zur Verfügung stellen.
 Dies gilt sowohl für Original- als auch für modifizierte Versionen dieser Software sowie für alle veränderten Versionen.
+</P>
+<P>
 Für weitere Informationen lesen Sie <A HREF="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">die vollständige Lizenz</A> auf Englisch.
 </P>
 
@@ -340,8 +345,8 @@ Wenn Sie die soeben heruntergeladene Datei ausführen, wird NVDA temporär entpa
 Sie werden dann gefragt, ob Sie NVDA installieren, eine portable Version erstellen oder nur temporär weiter verwenden möchten.
 </P>
 <P>
-Falls Sie vorhaben, NVDA auf diesem Computer dauerhaft einzusetzen, sollten Sie NVDA installieren.
-Eine solche installierte NVDA-Version hat gegenüber einer portablen Version Vorteile wie den automatischen Start nach der Anmeldung, die Erstellung von Verknüpfungen auf dem Desktop und im Startmenü oder die Windows-Anmeldung und -Sicherheitsdialoge auszulesen. Dies ist mit einer portablen oder temporären Version nicht möglich.
+Falls Sie vorhaben, NVDA auf dem Computer dauerhaft einzusetzen, sollten Sie NVDA installieren.
+Eine solche installierte NVDA-Version hat gegenüber einer portablen Version Vorteile wie den automatischen Start während und nach der Anmeldung, die Erstellung von Verknüpfungen auf dem Desktop und im Startmenü oder die Windows-Anmeldung und Sicherheitsmeldungen auszulesen. Dies ist mit einer portablen oder temporären Version nicht möglich.
 Mit Hilfe einer installierten Version können Sie auch jederzeit eine portable Version erstellen.
 </P>
 <P>
@@ -395,10 +400,10 @@ Weitere Informationen zu dieser Schaltfläche finden Sie im Abschnitt <A HREF="#
 </P>
 
 <A NAME="StartAtWindowsLogon"></A>
-<H4>3.2.2. NVDA während der Windows-Anmeldung verwenden</H4>
+<H4>3.2.2. NVDA während der Windows-Anmeldung starten</H4>
 
 <P>
-Mit dieser Option können Sie entscheiden, ob NVDA während der Windows-Anmeldung gestartet werden soll, bevor Sie ein Passwort eingegeben haben.
+Mit dieser Option können Sie entscheiden, ob NVDA automatisch gestartet werden soll, während Sie sich in der Windows-Anmeldung befinden, bevor Sie ein Passwort eingegeben haben.
 Dies betrifft auch die Benutzerkontensteuerung und andere Sicherheitsmeldungen.
 Diese Option ist standardmäßig während einer Neuinstallation aktiviert.
 </P>
@@ -416,7 +421,7 @@ Wenn diese Verknüpfung erstellt wird, wird ihr auch eine Tastenkombination (Str
 
 <P>
 Hiermit legen Sie fest, ob NVDA die Konfiguration der momentan laufenden NVDA-Instanz in das Konfigurationsverzeichnis des aktuell angemeldeten Benutzers kopieren soll.
-Die Konfigurationsverzeichnisse anderer angelegter Benutzer oder die systemweite Konfiguration bleiben davon jedoch unberührt.
+Dadurch wird weder die Konfiguration für andere Benutzer dieses Systems noch die Systemkonfiguration für die Verwendung während der Windows-Anmeldung und anderer Sicherheitsmeldungen kopiert.
 Diese Option ist nur verfügbar, wenn NVDA aus einer portablen Version heraus installiert wird - nicht jedoch beim Ausführen einer heruntergeladenen Version.
 </P>
 
@@ -907,10 +912,7 @@ Wenn <A HREF="#VisionFocusHighlight">Fokus hervorheben</A> aktiviert ist, wird d
 Standardmäßig folgt der Navigator dem System-Fokus, diese Kopplung kann jedoch umgeschaltet werden.
 </P>
 <P>
-Bedenken Sie, dass die Braillezeile standardmäßig sowohl dem <A HREF="#SystemFocus">Fokus</A> und dem <A HREF="#SystemCaret">System-Cursor</A> wie auch dem Navigator und dem NVDA-Cursor folgt.
-Wenn die Braillezeile nur dem System-Fokus oder dem System-Cursor folgen soll, müssen Sie die <A HREF="#BrailleTether">Kopplung der Braillezeile</A> so einstellen, dass die Braillezeile dem Fokus folgt.
-Bedenken Sie, dass die Braillezeile in einem solchen Fall nicht mehr der Objekt-Navigation und dem Bildschirm-Betrachter folgt.
-Wenn die Braillezeile dem NVDA-Cursor bzw. dem Navigator folgen soll, müssen Sie die <A HREF="#BrailleTether">Kopplung der Braillezeile</A> so einstellen, dass die Braillezeile dem NVDA-Cursor folgt.
+Hinweis: Braille nach Objekt-Navigation kann über <A HREF="#BrailleTether">Braille-Tether</A> konfiguriert werden.
 </P>
 <P>
 Mit den folgenden Befehlen navigieren Sie zwischen den Objekten:
@@ -1007,8 +1009,7 @@ Wenn Sie jedoch den System-Cursor bewegen, wird er vom NVDA-Cursor verfolgt.
 Diese Kopplung kann ein- und ausgeschaltet werden.
 </P>
 <P>
-Bedenken Sie, dass die Braillezeile standardmäßig sowohl dem <A HREF="#SystemFocus">System-Fokus</A> und dem <A HREF="#SystemCaret">System-Cursor</A> als auch dem NVDA-Cursor folgt.
-Um dies zu ändern, müssen Sie die <A HREF="#BrailleTether">Kopplung der Braillezeile</A> konfigurieren.
+Hinweis: Die Braille-Ausgabe nach dem NVDA-Cursor kann über <A HREF="#BrailleTether">Braille-Ausgabe koppen</A> konfiguriert werden.
 </P>
 <P>
 Die folgenden Tastenkombinationen zum Text betrachten sind verfügbar:
@@ -1132,7 +1133,7 @@ Die folgenden Tastenkombinationen zum Text betrachten sind verfügbar:
 <TD>NVDA+F10</TD>
 <TD>NVDA+F10</TD>
 <TD>Keine</TD>
-<TD>Wird die Tastenkombination einmal gedrückt, markiert NVDA den Text zwischen der zuvor gesetzten Startmarke und der aktuellen Position des NVDA-Cursors. Wird die Tastenkombination zweimal gedrückt, so kopiert NVDA den Text zwischen der zuvor gesetzten Startmarke und der aktuellen Position des NVDA-Cursors in die Zwischenablage</TD>
+<TD>Wird die Tastenkombination einmal gedrückt, markiert NVDA den Text zwischen der zuvor gesetzten Startmarke und der aktuellen Position des NVDA-Cursors. Ist die Startmarke mit dem System-Cursor erreichbar, wird der Fokus dorthin verschoben. Wird die Tastenkombination zweimal gedrückt, wird der markierte Text in die Zwischenablage kopiert.</TD>
 </TR>
 <TR>
 <TD>Springt zum markierten Start für die Kopie in der Ansicht</TD>
@@ -1632,6 +1633,10 @@ Weitere Informationen hierzu finden Sie in der <A HREF="https://www.dessci.com/e
 <P>
 Um die Navigation im Ausdruck zu beenden, drücken Sie die Escape-Taste.
 </P>
+<P>
+Manchmal kann mathematischer Inhalt als Schaltfläche oder eine andere Art von Element angezeigt werden, das, wenn es aktiviert ist, ein Dialogfeld oder weitere Informationen zur Formel anzeigen kann.
+Drücken Sie Strg+Eingabe, um die Schaltfläche oder das Element, welches die Formel enthält, zu aktivieren.
+</P>
 
 <A NAME="Braille"></A>
 <H2>8. Braille</H2>
@@ -1639,7 +1644,7 @@ Um die Navigation im Ausdruck zu beenden, drücken Sie die Escape-Taste.
 <P>
 Wenn Sie eine Braillezeile besitzen, kann NVDA diese verwenden, um Informationen in Blindenschrift darzustellen.
 Falls Ihre Braillezeile eine Tastatur besitzt, können Sie außerdem Kurz-, Voll- oder Basisschrift eingeben.
-Die Braillezeile kann auch auf dem Bildschirm mit dem <A HREF="#BrailleViewer">Braille-Betrachter</A> anstelle oder gleichzeitig mit einer physischen Braillezeile angezeigt werden.
+Die Braillezeile kann auch mit dem <A HREF="#BrailleViewer">Braille-Btrachter</A> anstelle oder gleichzeitig mit einer physischen Braille-Zeile auf dem Bildschirm angezeigt werden.
 </P>
 <P>
 Bitte lesen Sie im Abschnitt <A HREF="#SupportedBrailleDisplays">Unterstützte Braillezeilen</A>, ob Ihre Braillezeile unterstützt wird.
@@ -2238,7 +2243,19 @@ Wählen Sie ein Formularfeld in der Liste aus und verwenden Sie den Schalter wec
 
 <P>
 Verwenden Sie die Tastenkombination NVDA+Alt+C, um sich einen Kommentar der aktuellen Zelle anzeigen zu lassen, sofern vorhanden.
-Alle Kommentare des Tabellenblattes sind außerdem in der Elementliste aufgeführt, wenn Sie als Elementtyp "Kommentare" auswählen.
+Alle Kommentare für das Arbeitsblatt können nach Drücken von NVDA+F7 auch in der NVDA-Elementliste aufgelistet werden.
+</P>
+<P>
+NVDA kann auch ein spezielles Dialogfeld zum Hinzufügen oder Bearbeiten eines bestimmten Kommentars anzeigen.
+NVDA überschreibt aufgrund von Einschränkungen der Zugänglichkeit den nativen Kommentarbearbeitungsbereich von MS Excel, aber der Tastenanschlag für die Anzeige des Dialogs wird von MS Excel geerbt und funktioniert daher auch ohne NVDA.
+Um einen bestimmten Kommentar hinzuzufügen oder zu bearbeiten, können Sie in einer fokussierten Zelle Umschalt+F2 drücken.
+</P>
+<P>
+Diese Tastenkombination kann nicht im Dialogfeld für die Tastenbefehle geändert werden.
+</P>
+<P>
+Hinweis: Es ist möglich, den Bereich zur Bearbeitung von Kommentaren in MS Excel auch über das Kontextmenü einer beliebigen Zelle des Arbeitsblatts zu öffnen.
+Dadurch wird jedoch der unzugängliche Bereich zur Bearbeitung von Kommentaren geöffnet und nicht der NVDA-spezifische Dialog zur Bearbeitung von Kommentaren.
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -2343,7 +2360,7 @@ Hinweis: die obigen Tastenkombinationen funktionieren nur, wenn die Standard-Ein
 </TABLE>
 
 <A NAME="Kindle"></A>
-<H3>11.7. Kindle für PC</H3>
+<H3>11.7. Amazon Kindle für PC</H3>
 
 <P>
 NVDA unterstützt das Lesen von und das Navigieren in Büchern in Kindle für PC.
@@ -2496,7 +2513,7 @@ Weiter unten finden Sie Erläuterungen zu jeder Kategorie aus den NVDA-Einstellu
 <H4>12.1.1. Allgemein (NVDA+Strg+G)</H4>
 
 <P>
-Hier können allgemeingültige Einstellungen von NVDA vorgenommen werden. Sie können z. B. die Sprache einstellen, in der die Meldungen und Dialoge von NVDA angezeigt werden sollen. Sie können auch festlegen, dass regelmäßig geprüft werden soll, ob Updates für NVDA verfügbar sind.
+Die Kategorie "Allgemein" in den NVDA-Einstellungen legt das allgemeine Verhalten von NVDA fest, wie z. B. die Sprache der Benutzeroberfläche und ob nach Updates gesucht werden soll oder nicht.
 Diese Kategorie enthält die folgenden Optionen:
 </P>
 
@@ -2566,7 +2583,7 @@ Die verfügbaren Protokollierungsstufen sind:
 <H5>NVDA automatisch nach der Windows-Anmeldung starten</H5>
 
 <P>
-Wenn Sie dieses Kontrollfeld aktiviert haben, wird NVDA gleich nach der Anmeldung in Windows automatisch gestartet.
+Wenn diese Option aktiviert ist, wird NVDA automatisch gestartet, sobald Sie sich bei Windows anmelden.
 Diese Option ist nur in der installierten Version verfügbar!
 </P>
 
@@ -2579,10 +2596,10 @@ Diese Option ist nur in der installierten Version verfügbar!
 </P>
 
 <A NAME="GeneralSettingsCopySettings"></A>
-<H5>Aktuell gespeicherte Einstellungen im Anmeldebildschirm und bei Sicherheitsmeldungen verwenden (erfordert Administrationsberechtigungen!)</H5>
+<H5>Aktuell gespeicherte Einstellungen  für die Windows-Anmeldung und bei Sicherheitsmeldungen verwenden (erfordert Administrationsberechtigungen!)</H5>
 
 <P>
-Wenn Sie diesen Schalter betätigen, wird Ihre benutzerdefinierte Konfiguration in das Verzeichnis der Systemkonfiguration von NVDA kopiert, die dann genutzt werden, wenn Sie sich z. B. im Anmeldebildschirm von Windows befinden oder eine Sicherheitsmeldung von der Benutzerkontensteuerung angezeigt wird.
+Mit diesem Schalter wird Ihre aktuell gespeicherte NVDA-Benutzerkonfiguration in das Systemkonfigurationsverzeichnis von NVDA kopiert, so dass NVDA sie während der Anmeldung und beim Ausführen der Benutzerkontensteuerung und anderer Sicherheitsmeldungen unterstützt.
 Speichern Sie zuvor Ihre Konfiguration, um sicherzustellen, dass auch tatsächlich all Ihre Einstellungen übernommen wurden. Sie können dies im NVDA-Menü oder mit der Tastenkombination NVDA+Strg+C vornehmen.
 Diese Option ist nur in der installierten Version verfügbar!
 </P>
@@ -2636,11 +2653,11 @@ Sie können ausstehende Updates auch manuell über das NVDA-Menü, das Dialogfel
 <H4>12.1.2. Stimme- und Sprachausgabe (NVDA+Strg+V)</H4>
 
 <P>
-Die Kategorie Sprache in den NVDA-Einstellungen enthält Optionen, mit denen Sie die Sprachausgabe sowie die Sprachmerkmale der ausgewählten Sprachausgabe ändern können.
+Die Kategorie "Sprache" in den NVDA-Einstellungen enthält Optionen, mit denen Sie die Sprachausgabe sowie die Sprachmerkmale der ausgewählten Sprachausgabe ändern können.
 Für eine schnellere Möglichkeit, Sprachparameter von überall her zu steuern, lesen Sie bitte den Abschnitt <A HREF="#SynthSettingsRing">Sprachausgaben-Einstellungsring</A>.
 </P>
 <P>
-Die Kategorie Spracheinstellungen enthält die folgenden Optionen:
+Die Kategorie der Sprach-Einstellungen enthält die folgenden Optionen:
 </P>
 
 <A NAME="SpeechSettingsChange"></A>
@@ -2996,9 +3013,13 @@ Wird diese Option aktiviert, zeigt NVDA alle Meldungen dauerhaft auf der Braille
 Tastenkombination: NVDA+Strg+T
 </P>
 <P>
-Diese Option legt fest, ob die Braillezeile dem System-Cursor, dem Navigator-Objekt / NVDA-Cursor oder beiden Navigationsmethoden folgen soll.
+Mit dieser Option können Sie bestimmen, ob die Braillezeile dem System-Fokus / -Cursor, dem Navigator-Objekt / NVDA-Cursor oder beiden folgen soll.
 Wenn beiden Navigationsarten gefolgt wird, verfolgt die Braillezeile den Fokus bzw. den System-Cursor, sobald dieser seine Position ändert (z. B. beim Drücken von Tab oder Shift-tab zum Bewegen des Fokus oder beim Drücken der Pfeiltasten zum Bewegen des Cursors in einem Text).
 Sobald Sie den Navigator oder die Befehle zum Text betrachten verwenden, wird die Braillezeile automatisch an den NVDA-Cursor gekoppelt, bis sich der Fokus bewegt.
+Wenn Sie möchten, dass die Braillezeile nur dem Fokus und dem Cursor folgt, müssen Sie die Braillezeile so konfigurieren, dass sie an den Fokus gekoppelt ist.
+In diesem Fall folgt die Braillezeile nicht dem NVDA-Navigator während der Objekt-Navigation oder dem NVDA-Cursor während der Anzeige.
+Wenn Sie möchten, dass die Braillezeile stattdessen der Objektnavigation und der Textüberprüfung folgt, müssen Sie die Braillezeile so konfigurieren, dass sie für die Anzeige angekoppelt ist.
+In diesem Fall folgt die Braillezeile weder dem System-Fokus, noch dem System-Cursor.
 </P>
 
 <A NAME="BrailleSettingsReadByParagraph"></A>
@@ -3698,7 +3719,8 @@ Konfigurieren können Sie die Meldungen von:
  <UL>
  <LI>Name der Schriftart
  <LI>Schriftgröße
- <LI>Schriftattribut
+ <LI>Schrift-Attribute
+ <LI>Hoch- und tiefgestellte Zeichen
  <LI>Betonter Text
  <LI>Layout
  <LI>Farben
@@ -3708,10 +3730,10 @@ Konfigurieren können Sie die Meldungen von:
  <LI>Kommentare
  <LI>Dokumentänderungen
  <LI>Rechtschreibfehler
+ <LI>Seiten und Abstände
  </UL>
-<LI>Seiten und Abstände
+<LI>Seitenwechsel
  <UL>
- <LI>Seitenwechsel
  <LI>Zeilennummern
  <LI>Zeileneinrückungen ausgeben durch: <A HREF="#lineIndentationOptions">Aus, Ansage, Signaltöne oder Ansagen und Signaltöne</A>
  <LI>Absatzeinrückungen (z. B. hängender Einzug, Erstzeileneinzug)
@@ -3866,6 +3888,15 @@ Das eingeben von Zeichen, die nicht auf dem Bildschirm erscheinen (z. B. bei Pas
 In Umgebungen, die nicht unterstützt werden, können Sie vorübergehend <A HREF="#KeyboardSettingsSpeakTypedCharacters">Zeichen beim Eingeben ansagen</A> und <A HREF="#KeyboardSettingsSpeakTypedWords">Wörter beim Eingeben ansagen</A> deaktivieren, wenn Sie Passwörter eingeben.
 </P>
 
+<A NAME="CancelExpiredFocusSpeech"></A>
+<H5>Sprachausgabe unterbrechen, wenn das Ereignis für den Fokus abgelaufen ist:</H5>
+
+<P>
+Diese Option aktiviert ein Verhalten, welches bei abgelaufenen Ereignissen des Fokus versucht, die Sprachausgabe abzubrechen.
+Insbesondere das schnelle Durchlaufen von Nachrichten in Gmail mit Google Chrome kann dazu führen, dass NVDA alte Informationen noch vorliest.
+Diese Funktionalität ist ab NVDA 2020.2 experimentell.
+</P>
+
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
 <H5>Automatisches Bewegen des System-Fokus auf Fokussierbare Elemente im Lesemodus</H5>
 
@@ -3945,8 +3976,10 @@ Standardmäßig ignoriert NVDA die Groß- und Kleinschreibung.
 </P>
 <P>
 Schließlich enthält das Dialogfeld auch noch 3 Auswahlschalter, die festlegen, ob die betreffende Regel überall, nur auf ganze Wörter angewendet oder ob reguläre Ausdrücke berücksichtigt werden sollen.
-Wenn Sie das Muster auf "Ganze Wörter" anwenden, hat dies zur Folge, dass die Übersetzung nur angewandt wird, wenn das Wort nicht Teil eines längeren Wortes ist. Dies bedeutet, dass kein Sonderzeichen, wie ein Unterstrich, direkt vor bzw. hinter dem Muster stehen darf. Satzzeichen sind davon ausgenommen.
+Die Einstellung des Musters auf Übereinstimmung als ganzes Wort bedeutet, dass die Ersetzung nur dann vorgenommen wird, wenn das Muster nicht als Teil eines größeren Wortes vorkommt.
 Wenn Sie also das Wort "Vogel" wie im vorherigen Beispiel durch "Frosch" ersetzen und den Auswahlschalter auf "ganze Wörter setzen, wird die Regel nicht auf "Singvogel" oder "Vogelhaus" zutreffen.
+Diese Bedingung ist erfüllt, wenn die Zeichen unmittelbar vor und nach dem Wort etwas anderes sind als ein Buchstabe, eine Zahl oder ein Unterstrich, oder wenn überhaupt keine Zeichen vorhanden sind.
+Wenn man also das frühere Beispiel der Ersetzung des Wortes "Vogel" durch "Frosch" verwenden würde, würde das Wort "Vogel" oder "Blauer Vogel" nicht mit "Vögel" oder "Blauer Vogel" übereinstimmen.
 </P>
 <P>
 Ein sogenannter Regulärer Ausdruck ist ein Muster, welches spezielle Symbole enthält. Dies ermöglicht, dass das Muster auf Zahlen oder Buchstaben generell oder auf mehrere Zeichen gleichzeitig zutrifft
@@ -4187,8 +4220,8 @@ Für jedes Profil, das Sie hinzufügen, können Sie eine oder mehrere Befehle zu
 Standardmäßig sind den Konfigurationsprofilen keine Befehle zugeordnet.
 Sie können Tastenbefehle für ein Profil im Dialogfeld für die <A HREF="#InputGestures">Tastenbefehle</A> definieren.
 Jedes Profil hat einen eigenen Eintrag unter der Kategorie Konfigurationsprofile.
-Wenn Sie ein Profil umbenennen, ist jede Geste, die Sie zuvor hinzugefügt haben, weiterhin verfügbar.
-Das Entfernen eines Profils löscht automatisch die damit verbundenen Gesten.
+Wenn Sie ein Profil umbenennen, ist jeder Tastenbefehl, die Sie zuvor hinzugefügt haben, weiterhin verfügbar.
+Das Entfernen eines Profils löscht automatisch die damit verbundenen Tastenbefehlen.
 </P>
 
 <A NAME="LocationOfConfigurationFiles"></A>
@@ -4200,12 +4233,13 @@ In der portablen NVDA-Version werden sämtliche Einstellungen und Erweiterungen 
 <P>
 Bei den installierten NVDA-Versionen werden sämtliche Einstellungen und Erweiterungen in einem speziellen Ordner in dem Ordner des angemeldeten Benutzers in dessen Windows-Profil abgelegt.
 Dies bedeutet, dass jeder Benutzer im System so seine individuellen Einstellungen verwalten kann.
-Um an das Einstellungsverzeichnis einer installierten NVDA-Version zu gelangen, öffnen Sie das Startmenü und gehen auf "Programme -&gt; NVDA -&gt; Verzeichnis der Benutzereinstellungen durchsuchen...".
+Um das Einstellungs-Verzeichnis von überall her zu öffnen, können Sie das Dialogfeld für die <A HREF="#InputGestures">Tastenbefehle</A> verwenden, um dieser Funktion eine Taste zuzuordnen.
+Zusätzlich können Sie bei einer installierten Version von NVDA im Startmenü zu auf "Programme -&gt; NVDA -&gt; Benutzerkonfigurationsverzeichnis öffnen" gehen.
 </P>
 <P>
-Die Einstellungen von NVDA für das Anmeldefenster und die Sicherheitsabfragen der Benutzerkontensteuerung werden im Ordner "systemConfig" im Installationsordner von NVDA abgelegt.
+Die Einstellungen von NVDA für das Anmeldefenster und die Sicherheitsmeldungen der Benutzerkontensteuerung werden im Ordner "systemConfig" im Installationsordner von NVDA abgelegt.
 Für gewöhnlich sollte diese Konfiguration unberührt bleiben!
-Um NVDA im Anmeldebildschirm und auch in den Sicherheitsmeldungen der Benutzerkontensteuerung anzupassen, legen Sie Ihre gewünschten NVDA-Einstellungen fest, während Sie angemeldet sind, speichern Sie die Konfiguration und verwenden Sie den Schalter "Aktuell gespeicherte Einstellungen im Anmeldebildschirm und bei Sicherheitsmeldungen verwenden (erfordert Administrationsberechtigungen!)", den Sie in den allgemeinen Einstellungen finden.
+Um die Konfiguration von NVDA während der Anmeldung oder bei Sicherheitsmeldungen zu ändern, konfigurieren Sie NVDA wie gewünscht, während Sie bei Windows angemeldet sind, speichern Sie die Konfiguration und betätigen Sie dann den Schalter "Aktuell gespeicherte Einstellungen während der Anmeldung und bei Sicherheitsmeldungen verwenden" in der Kategorie "Allgemein" der <A HREF="#NVDASettings">NVDA-Einstellungen</A>.
 </P>
 
 <A NAME="ExtraTools"></A>
@@ -4510,6 +4544,7 @@ Die folgenden Braillezeilen unterstützen diese automatische Erkennung.
 <LI>Optelec-Serien ALVA 6
 <LI>HIMS-Serien Braille Sense, Braille EDGE, Smart Beetle, Sync Braille
 <LI>Braillezeilen von Eurobraille Esys, Esytime, Iris
+<LI>Braillezeilen von Nattiq nBraille
 </UL>
 
 <A NAME="FreedomScientificFocus"></A>
@@ -5401,7 +5436,7 @@ Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechen
 <P>
 NVDA unterstützt die Braillezeilenmodelle Braille Sense, Braille EDGE, SyncBraille und Smart Beetle von <A HREF="https://www.hims-inc.com/">HIMS</A>, wahlweise mit USB- oder Bluetooth-Anbindung.
 Wenn Sie die Braillezeile per USB anschließen, müssen Sie noch den USB-Treiber von HIMS auf Ihrem System installieren.
-Sie können diese unter <A HREF="https://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">https://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip</A> herunterladen.
+Sie können diese unter <A HREF="http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip</A> herunterladen.
 </P>
 <P>
 Folgende Tastenkombinationen sind in NVDA verfügbar:
@@ -6244,7 +6279,7 @@ Die folgenden Modelle werden unterstützt:
 </UL>
 
 <P>
-Weitere Informationen zu BrailleNote Touch finden Sie im Abschnitt über <A HREF="HumanWareBrailliant">Brailliant BI Series / BrailleNote Touch</A>.
+Für BrailleNote Touch lesen Sie bitte den Abschnitt <A HREF="#HumanWareBrailliant">Brailliant BI-Serie / BrailleNote Touch</A>.
 </P>
 <P>
 Außer beim Braillenote PK werden sowohl Braille BT- und die QT-Tastaturen unterstützt.
@@ -6922,8 +6957,48 @@ Für mehr Details über die Positionen der Tasten auf der Braillezeile lesen Sie
 </TR>
 </TABLE>
 
+<A NAME="NattiqTechnologies"></A>
+<H3>15.18. Nattiq nBraille</H3>
+
+<P>
+NVDA supports displays from <A HREF="https://www.nattiq.com/">Nattiq Technologies</A> when connected via USB.
+Windows 10 detects the Braille Displays once connected, you may need to install USB drivers if using older versions of Windows (below Win10).
+You can get them from the manufacturer's website.
+</P>
+<P>
+Following are the key assignments for Nattiq Technologies displays with NVDA.
+Please see the display's documentation for descriptions of where these keys can be found.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Taste</TH>
+</TR>
+<TR>
+<TD>Braillezeile rückwärts navigieren</TD>
+<TD>Aufwärts</TD>
+</TR>
+<TR>
+<TD>Braillezeile vorwärts navigieren</TD>
+<TD>Abwärts</TD>
+</TR>
+<TR>
+<TD>Braillezeile zur vorherigen zeile navigieren</TD>
+<TD>Nach links</TD>
+</TR>
+<TR>
+<TD>Braillezeile zur nächsten Zeile navigieren</TD>
+<TD>nach rechts</TD>
+</TR>
+<TR>
+<TD>Cursor zum Braille-Modul bewegen</TD>
+<TD>Routing-Taste</TD>
+</TR>
+</TABLE>
+
 <A NAME="BRLTTY"></A>
-<H3>15.18. BRLTTY</H3>
+<H3>15.19. BRLTTY</H3>
 
 <P>
 <A HREF="https://www.brltty.com/">BRLTTY</A> ist ein separates Programm, mit dem Sie viele weitere Braillezeilen ansteuern können.
@@ -6940,7 +7015,7 @@ BRLTTY ist nicht an der automatischen Erkennung von Braillezeilen im Hintergrund
 </P>
 <P>
 Folgende BRLTTY-Befehle wurden in NVDA zugewiesen.
-Bitte lesen Sie hierzu die <A HREF="https://mielke.cc/brltty/doc/KeyBindings/">BRLTTY-Dokumentation für Tastaturbelegungen</A> für Informationen darüber, wie BRLTTY-Befehle an Braillezeilentasten zugewiesen werden können.
+Bitte lesen Sie hierzu die <A HREF="http://mielke.cc/brltty/doc/KeyBindings/">BRLTTY-Dokumentation für Tastaturbelegungen</A> für Informationen darüber, wie BRLTTY-Befehle an Braillezeilentasten zugewiesen werden können.
 </P>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -7074,7 +7149,7 @@ Folgende Kommandozeilenoptionen gibt es:
 <TR>
 <TD>-s</TD>
 <TD>--secure</TD>
-<TD>Sicherer Modus: Deaktiviert die Python-Konsole, Profil-Funktionen wie Erstellen, Löschen, Umbenennen von Profilen, etc., Update-Check, einige Kontrollkästchen im Willkommensdialog und in der Kategorie "Allgemeine Einstellungen" (z. B. NVDA nach der Anmeldung starten, Konfiguration nach dem Beenden speichern, etc.) sowie im Protokoll-Betrachter- und Funktionen zur Protokollierung (werden oft in Sicherheitsmeldungen verwendet). Beachten Sie auch, dass dieser Befehl die Möglichkeit zum Speichern von Einstellungen in der Systemkonfiguration deaktiviert und die Tastenbefehle nicht gespeichert wird.</TD>
+<TD>Sicherer Modus: Deaktiviert die Python-Konsole, Profil-Funktionen wie Erstellen, Löschen, Umbenennen von Profilen, etc., Update-Check, einige Kontrollkästchen im Willkommensdialog und in der Kategorie "Allgemein" (z. B. NVDA nach der Anmeldung starten, Konfiguration nach dem Beenden speichern, etc.) sowie im Protokoll-Betrachter- und Funktionen zur Protokollierung (werden oft in Sicherheitsmeldungen verwendet). Beachten Sie auch, dass dieser Befehl die Möglichkeit zum Speichern von Einstellungen in der Systemkonfiguration deaktiviert und die Tastenbefehle nicht gespeichert werden.</TD>
 </TR>
 <TR>
 <TD>Keine</TD>
@@ -7109,7 +7184,7 @@ Folgende Kommandozeilenoptionen gibt es:
 <TR>
 <TD>Keine</TD>
 <TD>--enable-start-on-logon=True/False</TD>
-<TD>Aktivieren Sie bei der Installation <A HREF="#StartAtWindowsLogon">NVDA während der Windows-Anmeldung verwenden</A>.</TD>
+<TD>Aktivieren Sie bei der Installation <A HREF="#StartAtWindowsLogon">NVDA bei der Windows-Anmeldung starten</A>.</TD>
 </TR>
 <TR>
 <TD>Keine</TD>
