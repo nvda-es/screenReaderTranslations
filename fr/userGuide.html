@@ -121,14 +121,13 @@
     <LI><A HREF="#Foobar2000">11.4. Foobar2000</A>
     <LI><A HREF="#MirandaIM">11.5. Miranda IM</A>
     <LI><A HREF="#Poedit">11.6. Poedit</A>
-    <LI><A HREF="#Skype">11.7. Skype</A>
-    <LI><A HREF="#Kindle">11.8. Kindle pour PC</A>
+    <LI><A HREF="#Kindle">11.7. Kindle pour PC</A>
       <UL>
-      <LI><A HREF="#KindleTextSelection">11.8.1. Sélection de Texte</A>
-      <LI><A HREF="#KindleUserNotes">11.8.2. Notes de l'Utilisateur</A>
+      <LI><A HREF="#KindleTextSelection">11.7.1. Sélection de Texte</A>
+      <LI><A HREF="#KindleUserNotes">11.7.2. Notes de l'Utilisateur</A>
       </UL>
-    <LI><A HREF="#Azardi">11.9. Azardi</A>
-    <LI><A HREF="#WinConsole">11.10. Console Windows</A>
+    <LI><A HREF="#Azardi">11.8. Azardi</A>
+    <LI><A HREF="#WinConsole">11.9. Console Windows</A>
     </UL>
   <LI><A HREF="#ConfiguringNVDA">12. Configurer NVDA</A>
     <UL>
@@ -205,9 +204,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Séries Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc139">15.9.1. Assignations des Touches pour tous les Modèles</A>
-      <LI><A HREF="#toc140">15.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</A>
-      <LI><A HREF="#toc141">15.9.3. Assignations de Touches pour le Brailliant BI 14</A>
+      <LI><A HREF="#toc138">15.9.1. Assignations des Touches pour tous les Modèles</A>
+      <LI><A HREF="#toc139">15.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</A>
+      <LI><A HREF="#toc140">15.9.3. Assignations de Touches pour le Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</A>
     <LI><A HREF="#Seika">15.11. Seika Braille Displays</A>
@@ -308,10 +307,15 @@ NVDA propose de nombreux codes braille couvrant un grand ensemble de langues. Da
 NVDA est Copyright (C) 2006-2020 NVDA contributors.
 </P>
 <P>
-NVDA est couvert par la licence GNU General Public License (Version 2). 
+NVDA est disponible sous la licence GNU General Public License Version 2), avec deux exceptions spéciales. 
+Les exceptions sont précisées dans le document de licence dans la section "Non-GPL Components in Plugins and Drivers" et "Microsoft Distributable Code".
+NVDA inclut et utilise également des composants qui sont disponibles sous différentes licences libres et open source.
 Vous avez le droit de distribuer ou modifier ce logiciel comme il vous plaît pourvu que vous distribuiez la licence avec le logiciel, et rendiez disponible l'intégralité du code source pour toute personne qui le veut. 
 Ceci s'applique aussi bien à la version originale qu'aux copies modifiées de ce logiciel, et aussi à tout travail dérivé.
+</P>
+<P>
 Pour plus de détails, vous pouvez <A HREF="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">lire l'intégralité de la licence.</A>
+Pour les détails concernant les exceptions, veuillez consulter le document de licence depuis le menu NVDA dans la section "Aide".
 </P>
 
 <A NAME="SystemRequirements"></A>
@@ -909,10 +913,7 @@ Quand le <A HREF="#VisionFocusHighlight">Surlignage du Focus</A> est activé, la
 Par défaut, l'objet navigateur suit le focus système, mais ce comportement peut être désactivé.
 </P>
 <P>
-Note : Par défaut, le braille suit le <A HREF="#SystemFocus">focus</A>, le <A HREF="#SystemCaret">curseur système</A> ainsi que la navigation par objet et la revue de texte.
-Si vous voulez qu'il ne suive que le focus et le curseur, vous devez <A HREF="#BrailleTether">configurer le braille pour qu'il suive</A> le focus.
-Dans ce cas, le braille ne suivra pas la navigation par objet et la revue de texte.
-Si vous voulez que le braille suive la navigation par objet et la revue de texte, vous devrez <A HREF="#BrailleTether">configurer le braille pour qu'il suive</A> la revue.
+Note : Le suivi de la Navigation par Objet par le Braille peut être configuré via <A HREF="#BrailleTether">Braille Suit</A>.
 </P>
 <P>
 Pour naviguer par objet, utilisez les commandes suivantes :
@@ -1009,8 +1010,7 @@ Cependant, par défaut, quand le curseur système bouge, le curseur de revue le 
 Ceci peut être désactivé.
 </P>
 <P>
-Note : Par défaut, le braille suit le <A HREF="#SystemFocus">focus</A> et le <A HREF="#SystemCaret">curseur système</A> plutôt que la navigation par objet ou la revue de texte.
-Si vous voulez suivre la navigation par objet ou la revue de texte, vous devez <A HREF="#brailleTether">configurer le braille pour qu'il soit attaché</A> à la revue.
+Note : Le suivi de la Navigation par Objet par le Braille peut être configuré via <A HREF="#BrailleTether">Braille Suit</A>.
 </P>
 <P>
 Vous disposez des commandes suivantes pour explorer du texte :
@@ -1134,7 +1134,7 @@ Vous disposez des commandes suivantes pour explorer du texte :
 <TD>NVDA+f10</TD>
 <TD>NVDA+f10</TD>
 <TD>Aucun</TD>
-<TD>Au premier appui, le texte est sélectionné depuis la position préalablement définie par "copier à partir du curseur de revue" jusqu'à la position actuelle du curseur de revue. Au second appui, le texte est copié dans le presse-papiers de Windows.</TD>
+<TD>Au premier appui, le texte est sélectionné depuis la position préalablement définie par "copier à partir du curseur de revue" jusqu'à la position actuelle du curseur de revue. Si le curseur système peut atteindre le texte, il sera amené au texte sélectionné. Au second appui, le texte est copié dans le presse-papiers de Windows.</TD>
 </TR>
 <TR>
 <TD>aller au marqueur de début de copie en mode revue</TD>
@@ -2241,7 +2241,19 @@ La sélection d'un champ de formulaire et l'appui sur entrée ou le bouton Aller
 
 <P>
 Pour annoncer tout commentaire pour la cellule actuellement en focus, pressez NVDA+alt+c.
-Tous les commentaires de la feuille de calcul peuvent aussi être listés dans la liste d'éléments de NVDA.
+Tous les commentaires de la feuille de calcul peuvent aussi être listés dans la liste d'éléments de NVDAaprès appui sur NVDA+f7.
+</P>
+<P>
+NVDA peut aussi afficher un dialogue spécifique pour ajouter ou éditer un commentaire particulier.
+NVDA remplace la zone d'édition de commentaire originale de MS Excel en raison de contraintes d'accessibilité, mais le raccourci clavier pour afficher le dialogue est hérité de MS Excel et fonctionne aussi sans que NVDA soit actif.
+Pour ajouter ou éditer un commentaire, dans une cellule en focus, pressez maj+f2.
+</P>
+<P>
+Ce raccourci n'apparaît pas et ne peut être remplacé dans le dialogue Geste de Commandes de NVDA.
+</P>
+<P>
+Note : il est également possible d'ouvrir la zone d'édition de commentaire de MS Excel par le menu contextuel de n'importe quelle cellule de la feuille de calcul.
+Cependant, cela ouvrira la zone d'édition de commentaire inaccessible et non le dialogue spécifique d'édition de commentaire de NVDA.
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -2345,28 +2357,8 @@ Note : Les raccourcis ci-dessus fonctionnent seulement avec le format de chaîne
 </TR>
 </TABLE>
 
-<A NAME="Skype"></A>
-<H3>11.7. Skype</H3>
-
-<P>
-Dans une conversation :
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
-<TR>
-<TH>Nom</TH>
-<TH>Touche</TH>
-<TH>Description</TH>
-</TR>
-<TR>
-<TD>relire message</TD>
-<TD>NVDA+contrôle+1-0</TD>
-<TD>Lit et amène le curseur de revue à un message récent, selon le nombre pressé; ex : NVDA+contrôle+2 lit le second message plus récent.</TD>
-</TR>
-</TABLE>
-
 <A NAME="Kindle"></A>
-<H3>11.8. Kindle pour PC</H3>
+<H3>11.7. Kindle pour PC</H3>
 
 <P>
 NVDA supporte la lecture et la navigation dans les livres sous Amazon Kindle pour PC.
@@ -2388,7 +2380,7 @@ Veuillez consulter la section <A HREF="#ReadingMath">Lecture de Contenu Mathéma
 </P>
 
 <A NAME="KindleTextSelection"></A>
-<H4>11.8.1. Sélection de Texte</H4>
+<H4>11.7.1. Sélection de Texte</H4>
 
 <P>
 Kindle vous permet d'exécuter diverses fonctions relatives au texte sélectionné, incluant l'obtention d'une définition du dictionnaire, l'ajout de notes et de surlignages, la copie du texte dans le presse-papiers et la recherche sur le web.
@@ -2398,7 +2390,7 @@ Si vous faites ceci sans avoir sélectionné de texte, les options pour le mot s
 </P>
 
 <A NAME="KindleUserNotes"></A>
-<H4>11.8.2. Notes de l'Utilisateur</H4>
+<H4>11.7.2. Notes de l'Utilisateur</H4>
 
 <P>
 Vous pouvez ajouter une note concernant un mot ou un passage du texte.
@@ -2419,7 +2411,7 @@ Pour afficher, éditer ou effacer une note.
 </OL>
 
 <A NAME="Azardi"></A>
-<H3>11.9. Azardi</H3>
+<H3>11.8. Azardi</H3>
 
 <P>
 Quand vous êtes dans le tableau des livres ajoutés :
@@ -2444,7 +2436,7 @@ Quand vous êtes dans le tableau des livres ajoutés :
 </TABLE>
 
 <A NAME="WinConsole"></A>
-<H3>11.10. Console Windows</H3>
+<H3>11.9. Console Windows</H3>
 
 <P>
 NVDA fournit un support pour la console de commande de Windows utilisée par l'invite de commandes, PowerShell, et le sous-système Windows pour Linux.
@@ -2998,9 +2990,13 @@ Cette option permet aux messages de NVDA de rester affichés sur l'afficheur bra
 Raccourci clavier : NVDA+contrôle+t
 </P>
 <P>
-Cette option vous permet de choisir si le braille suivra le focus système, le curseur de l'objet navigateur ou les deux.
+Cette option vous permet de choisir si le braille suivra le curseur du focus système, le curseur de l'objet navigateur ou les deux.
 Quand "automatiquement" est sélectionné, NVDA suivra le curseur système et le focus par défaut.
 Dans ce cas, quand la position de l'objet de navigation ou du curseur de revue est modifiée par une action explicite de l'utilisateur, NVDA suivra temporairement la revue, jusqu'à ce que le focus ou le curseur système change.
+Si vous voulez qu'il ne suive que le focus et le curseur, vous devez configurer le braille pour qu'il suive le focus.
+Dans ce cas, le braille ne suivra pas le navigateur NVDA durant la navigation par objet ou le curseur de revue durant la revue.
+Si vous voulez que le braille suive la navigation par objet et la revue de texte, vous devez configurer le braille pour qu'il suive la revue.
+Dans ce cas, le braille ne suivra pas le focus système et le curseur système.
 </P>
 
 <A NAME="BrailleSettingsReadByParagraph"></A>
@@ -3701,6 +3697,7 @@ On peut configurer les annonces suivantes :
  <LI>Nom de la police
  <LI>Taille de la police,
  <LI>Attributs de la police,
+ <LI>Exposants et indices
  <LI>Emphase
  <LI>Style
  <LI>Couleurs
@@ -3863,7 +3860,7 @@ Cette option définit si les caractères sont annoncés par <A HREF="#KeyboardSe
 <P>
 Cette option active une méthode alternative pour détecter la frappe des caractères dans les consoles de commandes Windows.
 Bien qu'elle améliore les performances et empêche certains affichages de console d'être épelés, elle peut être incompatible avec certains programmes de terminaux.
-Cette fonctionnalité est disponible et activée par défaut sous Windows 10 versions 1607, 1703, 1709 et 1803 ainsi que sous les versions plus récentes de Windows 10 quand UI Automation n'est pas disponible ou désactivée.
+Cette fonctionnalité est disponible et activée par défaut sous Windows 10 versions 1607 et ultérieures quand UI Automation n'est pas disponible ou désactivée.
 Avertissement : quand cette option est activée, les caractères tapés qui n'apparaissent pas à l'écran comme les mots de passe, ne seront pas supprimés.
 Dans les environnement non sûrs, vous pouvez désactiver temporairement <A HREF="#KeyboardSettingsSpeakTypedCharacters">Écho clavier par caractère</A> et <A HREF="#KeyboardSettingsSpeakTypedWords">Écho clavier par mot</A> quand vous entrez un mot de passe.
 </P>
@@ -3947,7 +3944,8 @@ Par défaut, NVDA ne tient pas compte de la casse.
 </P>
 <P>
 Pour finir, un ensemble de boutons radio vous permet de dire à NVDA si votre modèle devrait s'appliquer partout, seulement dans le cas d'un mot entier ou s'il devrait être traité comme une "expression régulière".
-Définir le modèle comme un mot entier signifie que le remplacement ne sera fait que si le modèle n'est pas rencontré dans un mot plus grand; un caractère non alphanumérique ou un souligné ou pas de caractère doit être présent immédiatement avant et après le modèle.
+Définir le modèle comme un mot entier signifie que le remplacement ne sera fait que si le modèle n'est pas rencontré dans un mot plus grand.
+Un caractère non alphanumérique ou un souligné ou pas de caractère doit être présent immédiatement avant et après le modèle.
 Ainsi, en utilisant l'exemple précédent de remplacement du mot "oiseau" par le mot "grenouille", si vous le définissez comme un remplacement de mot entier, cela ne marcherait pas pour "oiseaux" ou "damoiseau".
 </P>
 <P>
@@ -4203,7 +4201,8 @@ Les versions portables de NVDA enregistrent tous les paramètres et extensions d
 <P>
 Les versions installées de NVDA enregistrent tous les paramètres et extensions dans un répertoire spécial de NVDA situé dans votre profil utilisateur Windows.
 Cela signifie que chaque utilisateur du système peut avoir ses propres paramètres NVDA.
-Pour accéder à votre répertoire de paramètres pour une version installée de NVDA, depuis le menu "Démarrer" vous pouvez aller à "Tous les programmes" -&gt; "NVDA" -&gt; "Explorer les paramètres utilisateur".
+Pour ouvrir votre répertoire de paramètres de n'importe où vous pouvez utiliser <A HREF="#InputGestures">le dialogue Geste de commandes</A> pour ajouter un geste personnalisé.
+De plus, pour une version installée de NVDA, depuis le menu démarrer vous pouvez aller dans programmes -&gt; NVDA -&gt; explorer le répertoire de configuration utilisateur de NVDA.
 </P>
 <P>
 Les paramètres qu'utilise NVDA quand il s'exécute sur l'écran de connexion ou l'écran UAC sont enregistrés dans le répertoire "systemConfig" situé dans le répertoire NVDA.
@@ -5257,7 +5256,7 @@ Voici les assignations de touches pour Brailliant BI/B et BrailleNote touch sous
 Veuillez consulter la documentation du terminal pour savoir où se situent ces touches.
 </P>
 
-<A NAME="toc139"></A>
+<A NAME="toc138"></A>
 <H4>15.9.1. Assignations des Touches pour tous les Modèles</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5347,7 +5346,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 </TABLE>
 
-<A NAME="toc140"></A>
+<A NAME="toc139"></A>
 <H4>15.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5369,7 +5368,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 </TABLE>
 
-<A NAME="toc141"></A>
+<A NAME="toc140"></A>
 <H4>15.9.3. Assignations de Touches pour le Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
