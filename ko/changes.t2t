@@ -4,41 +4,42 @@ NVDA 변경 이력
 %!includeconf: ../changes.t2tconf
 
 = 2020.2 =
-Highlights of this release include support for a new braille display from Nattiq, better support for ESET antivirus GUI and Windows Terminal, performance improvements 1Password, and with Windows OneCore synthesizer. Plus many other important bug fixes and improvements.
+이 릴리즈의 주요 변경사항으로는 새로 나온 Nattiq 점자 디스플레이 지원, 그리고 ESET 안티바이러스 제품의 GUI, 윈도우 터미널, 1Password의 성능 개선, 윈도우 OneCore 음성합성기의 연동성능 개선 등입니다. 이외에도 다른 중요한 버그 수정과 개선이 포함되어 있습니다.
 
-== New Features ==
-- Support for new braille displays:
+
+== 새로 추가된 기능 ==
+- 새로운 점자 디스플레이 지원
   - Nattiq nBraille (#10778)
-- Added script to open NVDA configuration directory (no default gesture). (#2214)
-- Better support for ESET antivirus GUI. (#10894)
-- Added support for Windows Terminal. (#10305)
-- Added a command to report the active configuration profile. (#9325)
-- Added a command to toggle reporting of subscripts and superscripts. (#10985)
-- Web applications (EG Gmail) no longer speak outdated information when moving focus rapidly. (#10885)
-  - This experimental fix must be manually enabled via the 'Attempt to cancel speech for expired focus events' option in the advanced settings panel.
-- Adds more symbols. (#11105)
+- NVDA 설정 디렉토리를 여는 스크립트 추가 (디폴트 제스처 없음) (#2214)
+- ESET 안티바이러스의 GUI 지원을 개선 (#10894)
+- 윈도우 터미널 지원을 추가 (#10305)
+- 선택되어 있는 설정 프로필을 알려주는 명령 추가 (#9325)
+- 위첨자와 아래첨자를 알려주는 기능을 켜고 끄는 명령 추가 (#10985)
+- 웹 어플리케이션(예: 지메일)에서 포커스를 빨리 움직일 때 정보가 업데이트되지 않는 문제가 해결되었습니다 (#10885)
+  - 이 항목은 실험적으로 수정된 것으로, 고급설정 패널에서 "포커스 이벤트가 만료되면 음성합성 중지" 설정을 이용해서 직접 활성화해야 합니다.
+- 심볼이 추가되었습니다. (#11105)
 
 
-== Changes ==
-- Updated liblouis braille translator to [3.14.0 https://github.com/liblouis/liblouis/releases/tag/v3.14.0] (from 3.12.0). (#10832, #11221)
-- The reporting of superscripts and subscripts is now controlled separately to the reporting of font attributes. (#10919)
-- Due to changes made in VS Code, NVDA no longer disables browse mode in Code by default. (#10888)
-- Removed "top" and "bottom" messages when moving the review cursor to the first or last line of the current navigator object. (#9551)
-- Removed "left" and "right" messages when moving the refiew cursor to the first or last character of the line for the current navigator object. (#9551)
+== 변경된 기능 ==
+- Liblouis 점자 번역기가 3.12.0에서 [3.14.0 https://github.com/liblouis/liblouis/releases/tag/v3.14.0]로 업데이트되었습니다. (#10832, #11221)
+- 위첨자와 아래첨자 알림 기능이 이제 글꼴 속성 알림 기능과 분리되어 조절됩니다. (#10919)
+- VS Code의 기능 변동으로 인해 더이상 브라우즈 모드를 자동으로 비활성화하지 않습니다. (#10888)
+- 리뷰 커서를 현재 네비게이터 객체의 첫번째나 마지막 줄로 옮길 때 안내되던 "맨 위"나 "맨 아래" 메시지를 없앴습니다. (#9551)
+- 리뷰 커서를 현재 네비게이터 객체의 첫번째나 마지막 문자로 옮길 때 안내되던 "왼쪽"나 "오른쪽" 메시지를 없앴습니다. (#9551)
 
 
-== Bug Fixes ==
-- NVDA starts correctly when log file cannot be created. (#6330)
-- In recent releases of Microsoft Word 365, NVDA will no longer announce "delete back word" when Control+Backspace is pressed while editing a document. (#10851)
-- In Winamp, NVDA will once again announce toggle status of shuffle and repeat. (#10945)
-- NVDA is no longer extremely sluggish when moving within the list of items in 1Password. (#10508)
-- The Windows OneCore speech synthesizer no longer lags between utterances. (#10721)
-- NVDA no longer freezes when you open the context menu for 1Password in the system notification area. (#11017)
-- In Office 2013 and older:
-  - Ribbons are announced when focus moves to them for the first time. (#4207)
-  - Context menu items  are once again reported properly. (#9252)
-  - Ribbon sections are consistently announced when navigating with Control+arrows. (#7067)
-- In browse mode in Mozilla Firefox and Google Chrome, text no longer incorrectly appears on a separate line when web content uses CSS display: inline-flex. (#11075)
+== 버그 수정 ==
+- 로그 파일을 생성할 수 없을 경우에도 NVDA가 정상적으로 실행됩니다. (#6330)
+- 마이크로소프트 워드 365의 최근 릴리즈에서 문서를 편집하던 중에 Control + Backspace를 누르면 NVDA가 "삭제 뒤로가기"라고 말하는 버그가 수정되었습니다. (#10851)
+- 윈앰프에서 셔플 및 반복의 토글 상태를 다시 알립니다. (#10945)
+- 1Password에서 목록 사이를 움직일 때 극단적으로 느려지는 버그가 수정되었습니다. (#10508)
+- 윈도우 OneCore 음성합성기에서 발화 사이에 느려지던 현상이 수정되었습니다. (#10721)
+- 시스템 알림 영역에서 1Password의 컨택스트 메뉴를 열었을 때 NVDA가 멈추는 현상이 수정되었습니다. (#11017)
+- 오피스 2013과 그 이전버전에서:
+  - 포커스가 리본 메뉴로 처음 옮겨갔을 때 알려줍니다. (#4207)
+  - 컨택스트 메뉴 항목을 다시 정상적으로 알려줍니다. (#9252)
+  - 리본 영역을 Control + 화살표키로 사용할 때 일관되게 알려줍니다. (#7067)
+- 모질라 파이어폭스와 구글 크롬에서 브라우즈 모드일 때, 웹 콘텐트의 CSS에 display: inline-flex가 적용되면 다른 줄에 문자가 잘못 나타나는 문제가 수정되었습니다. (#11075)
 - In browse mode with Automatically set system focus to focusable elements disabled, it is now possible to activate elements that aren't focusable.
 - In browse mode with Automatically set system focus to focusable elements disabled, it is now possible to activate elements reached by pressing the tab key. (#8528)
 - In browse mode with Automatically set system focus to focusable elements disabled, activating certain elements no longer clicks in an incorrect location. (#9886)
