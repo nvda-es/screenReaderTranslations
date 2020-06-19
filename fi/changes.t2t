@@ -3,8 +3,57 @@
 
 %!includeconf: ../changes.t2tconf
 
+= 2020.2 =
+Tämän version merkittävimpiä uusia ominaisuuksia ovat mm. tuki uudelle Nattiqin pistenäytölle, parempi tuki ESET Antivirus -ohjelmiston graafiselle käyttöliittymälle ja Windows Terminalille, suorituskyvyn parannuksia 1Passwordille ja Windows OneCore -syntetisaattorille sekä monia muita tärkeitä bugikorjauksia ja parannuksia.
+
+== Uudet ominaisuudet ==
+- Tuki Nattiq nBraille -pistenäytöille. (#10778)
+- Lisätty skripti NVDA:n asetushakemiston avaamiseen (syötekomentoa ei määritetty). (#2214)
+- Parempi tuki ESET Antivirus -ohjelmiston graafiselle käyttöliittymälle. (#10894)
+- Lisätty tuki Windows Terminalille. (#10305)
+- Lisätty komento aktiivisen asetusprofiilin ilmoittamiselle. (#9325)
+- Lisätty komento ala- ja yläindeksien ilmaisemisen käyttöön ottamiselle ja käytöstä poistamiselle. (#10985)
+- Verkkosovelluksissa (esim. Gmailissa) ei enää puhuta vanhentunutta tietoa, kun kohdistusta siirretään nopeasti. (#10885)
+ - Tämä kokeellinen korjaus on otettava käyttöön manuaalisesti Lisäasetukset-paneelin "Yritä perua vanhentuneiden kohdistustapahtumien puhe" -asetuksella.
+- Symboleita lisätty. (#11105)
+
+
+== Muutokset ==
+- Päivitetty liblouis-pistekirjoituskääntäjä versioksi [3.14.0 https://github.com/liblouis/liblouis/releases/tag/v3.14.0] (versiosta 3.12.0). (#10832, #11221)
+- Ylä- ja alaindeksien ilmaisemista säädetään nyt omalla erillisellä asetuksellaan, eikä fonttimääreiden ilmaiseminen vaikuta enää niihin. (#10919)
+- VS Codeen tehtyjen muutosten takia NVDA ei enää poista oletusarvoisesti selaustilaa käytöstä tässä sovelluksessa. (#10888)
+- Yläreuna- ja Alareuna-ilmoituksia ei enää puhuta, kun tarkastelukohdistin siirretään nykyisen navigointiobjektin ensimmäiselle tai viimeiselle riville. (#9551)
+- Vasen- ja Oikea-ilmoituksia ei enää puhuta, kun tarkastelukohdistin siirretään rivin ensimmäiseen tai viimeiseen merkkiin nykyisessä navigointiobjektissa. (#9551)
+
+
+== Bugikorjaukset ==
+- NVDA käynnistyy oikein, kun lokitiedostoa ei voi luoda. (#6330)
+- NVDA ei enää sano Microsoft Word 365:n uusimmissa versioissa asiakirjaa muokattaessa "poista edellinen sana" Ctrl+Askelpalautin-näppäinyhdistelmää painettaessa. (#10851)
+- NVDA kertoo taas Winampissa sekoituksen ja jatkuvan toiston tilan. (#10945)
+- NVDA ei enää ole erittäin hidas liikuttaessa kohteiden luettelossa 1Passwordissa. (#10508)
+- Windows OneCore -puhesyntetisaattori ei enää hidastele sanojen välillä. (#10721)
+- NVDA ei jää enää jumiin, kun 1Passwordin pikavalikko avataan järjestelmän ilmoitusalueelta. (#11017)
+- Office 2013:ssa ja sitä vanhemmissa:
+ - Valintanauhat puhutaan, kun kohdistus siirtyy niihin ensimmäisen kerran. (#4207)
+ - Pikavalikon kohteet puhutaan taas oikein. (#9252)
+ - Valintanauhan osat puhutaan yhdenmukaisesti Ctrl+nuolinäppäimillä liikuttaessa. (#7067)
+- Teksti ei enää näy virheellisesti eri rivillä selaustilassa Mozilla Firefoxissa ja Google Chromessa, kun verkkosisällössä käytetään CSS:n display: inline-flex -määrettä. (#11075)
+- Elementtejä, joihin ei voi siirtää kohdistusta selaustilassa, on nyt mahdollista aktivoida, kun Siirrä kohdistus automaattisesti kohdistettaviin elementteihin -asetus on poistettu käytöstä.
+- Elementtejä, joihin on siirrytty selaustilassa Sarkain-näppäimellä, on nyt mahdollista aktivoida, kun Siirrä kohdistus automaattisesti kohdistettaviin elementteihin -asetus on poistettu käytöstä. (#8528)
+- Tiettyjen elementtien aktivoiminen selaustilassa ei enää napsauta väärässä kohdassa, kun Siirrä kohdistus automaattisesti kohdistettaviin elementteihin -asetus on poistettu käytöstä. (#9886)
+- NVDA:n virheääniä ei enää kuulu käytettäessä DevExpressin tekstisäätimiä. (#10918)
+- Kahdesti puhumisen välttämiseksi ilmoitusalueen kuvakkeiden työkaluvihjeitä ei enää puhuta näppäimistön avulla liikuttaessa, mikäli niiden teksti on sama kuin kuvakkeiden nimet. (#6656)
+- Vuorovaikutustilaan vaihtaminen selaustilassa NVDA+Väli-näppäinyhdistelmällä siirtää nyt kohdistuksen kohdistimen alla olevaan elementtiin, kun Siirrä kohdistus automaattisesti kohdistettaviin elementteihin -asetus on poistettu käytöstä. (#11206)
+- NVDA-päivitysten tarkistaminen on taas mahdollista tietyissä järjestelmissä, esim. puhtaissa Windows-asennuksissa. (#11253)
+- Kohdistus ei muutu Java-sovelluksessa, kun valinta muuttuu ei-kohdistetussa puunäkymässä, taulukossa tai luettelossa. (#5989)
+
+
+== Muutokset kehittäjille ==
+Katso muutokset tämän dokumentin [englanninkielisestä versiosta. ../en/changes.html]
+
+
 = 2020.1 =
-Tämän version merkittävimpiä uusia ominaisuuksia ovat mm. tuki useille uusille HumanWaren ja APH:n pistenäytöille, sekä monet tärkeät bugikorjaukset, kuten mahdollisuus lukea jälleen matemaattisia yhtälöitä Microsoft Wordissa MathPlayeria / MathTypeä käyttäen.
+Tämän version merkittävimpiä uusia ominaisuuksia ovat mm. tuki useille uusille HumanWaren ja APH:n pistenäytöille, sekä monet tärkeät bugikorjaukset, kuten mahdollisuus lukea jälleen matemaattisia yhtälöitä Microsoft Wordissa MathPlayeria / MathTypea käyttäen.
  
 == Uudet ominaisuudet ==
 - Listaruuduissa valittuna oleva kohde näytetään jälleen selaustilassa Chromessa samalla tavoin kuin NVDA 2019.1:ssä. (#10713)
