@@ -56,10 +56,14 @@ NVDA propose de nombreux codes braille couvrant un grand ensemble de langues. Da
 ++ Licence et Copyright ++[LicenseAndCopyright]
 NVDA est Copyright (C) NVDA_COPYRIGHT_YEARS NVDA contributors.
 
-NVDA est couvert par la licence GNU General Public License (Version 2). 
+NVDA est disponible sous la licence GNU General Public License Version 2), avec deux exceptions spéciales. 
+Les exceptions sont précisées dans le document de licence dans la section "Non-GPL Components in Plugins and Drivers" et "Microsoft Distributable Code".
+NVDA inclut et utilise également des composants qui sont disponibles sous différentes licences libres et open source.
 Vous avez le droit de distribuer ou modifier ce logiciel comme il vous plaît pourvu que vous distribuiez la licence avec le logiciel, et rendiez disponible l'intégralité du code source pour toute personne qui le veut. 
 Ceci s'applique aussi bien à la version originale qu'aux copies modifiées de ce logiciel, et aussi à tout travail dérivé.
+
 Pour plus de détails, vous pouvez [lire l'intégralité de la licence. https://www.gnu.org/licenses/old-licenses/gpl-2.0.html]
+Pour les détails concernant les exceptions, veuillez consulter le document de licence depuis le menu NVDA dans la section "Aide".
 
 + Configuration Système Requise +[SystemRequirements]
 - Systèmes d'exploitation : toutes les variantes, 32 ou 64 bits, de Windows 7, Windows 8, Windows 8.1 et Windows 10 (y compris les versions serveur).
@@ -359,10 +363,7 @@ Quand vous atteignez un objet, vous pouvez examiner son contenu en utilisant les
 Quand le [Surlignage du Focus #VisionFocusHighlight] est activé, la position du focus système courant est également présentée visuellement.
 Par défaut, l'objet navigateur suit le focus système, mais ce comportement peut être désactivé.
 
-Note : Par défaut, le braille suit le [focus #SystemFocus], le [curseur système #SystemCaret] ainsi que la navigation par objet et la revue de texte.
-Si vous voulez qu'il ne suive que le focus et le curseur, vous devez [configurer le braille pour qu'il suive #BrailleTether] le focus.
-Dans ce cas, le braille ne suivra pas la navigation par objet et la revue de texte.
-Si vous voulez que le braille suive la navigation par objet et la revue de texte, vous devrez [configurer le braille pour qu'il suive #BrailleTether] la revue.
+Note : Le suivi de la Navigation par Objet par le Braille peut être configuré via [Braille Suit #BrailleTether].
 
 Pour naviguer par objet, utilisez les commandes suivantes :
 
@@ -390,8 +391,7 @@ Quand vous déplacez le curseur de revue, le curseur système ne bouge pas, ains
 Cependant, par défaut, quand le curseur système bouge, le curseur de revue le suit. 
 Ceci peut être désactivé.
 
-Note : Par défaut, le braille suit le [focus #SystemFocus] et le [curseur système #SystemCaret] plutôt que la navigation par objet ou la revue de texte.
-Si vous voulez suivre la navigation par objet ou la revue de texte, vous devez [configurer le braille pour qu'il soit attaché #brailleTether] à la revue.
+Note : Le suivi de la Navigation par Objet par le Braille peut être configuré via [Braille Suit #BrailleTether].
 
 Vous disposez des commandes suivantes pour explorer du texte :
 %kc:beginInclude
@@ -411,7 +411,7 @@ Vous disposez des commandes suivantes pour explorer du texte :
 | Aller en fin de ligne en revue | maj+pavnum3 | NVDA+fin | Aucun | Amène le curseur de revue à la fin de la ligne courante |
 | Dire tout en revue | pavnumPlus | NVDA+maj+a | Glisser vers le bas 3 doigts (mode texte) | Lit en partant de la position du curseur de revue, celui-ci suivant la lecture |
 | Sélectionner puis copier à partir du curseur de revue | NVDA+f9 | NVDA+f9 | Aucun | Commence à sélectionner puis copier le texte depuis la position du curseur de revue. La copie ne s'effectue pas tant qu'on n'a pas indiqué la fin du texte à copier |
-| Sélectionner puis copier jusqu'au curseur de revue | NVDA+f10 | NVDA+f10 | Aucun | Au premier appui, le texte est sélectionné depuis la position préalablement définie par "copier à partir du curseur de revue" jusqu'à la position actuelle du curseur de revue. Au second appui, le texte est copié dans le presse-papiers de Windows. |
+| Sélectionner puis copier jusqu'au curseur de revue | NVDA+f10 | NVDA+f10 | Aucun | Au premier appui, le texte est sélectionné depuis la position préalablement définie par "copier à partir du curseur de revue" jusqu'à la position actuelle du curseur de revue. Si le curseur système peut atteindre le texte, il sera amené au texte sélectionné. Au second appui, le texte est copié dans le presse-papiers de Windows. |
 | aller au marqueur de début de copie en mode revue | NVDA+maj+f9 | NVDA+maj+f9 | aucun | Amène le curseur de revue à la position préalablement définiee comme marqueur de début de copie |
 | Annonce du formatage du texte | NVDA+f | NVDA+f | Aucun | Annonce le formatage du texte à la position du curseur de revue. Un double appui affiche l'information en mode navigation |
 | Annonce le remplacement du symbole courant | Aucun | Aucun | aucun | Dit le symbole à la position du curseur de revue. Un double appui montre le symbole et le texte utilisé pour le remplacer en mode navigation. |
@@ -890,8 +890,19 @@ La sélection d'un champ de formulaire et l'appui sur entrée ou le bouton Aller
 %kc:beginInclude
 Pour annoncer tout commentaire pour la cellule actuellement en focus, pressez NVDA+alt+c.
 %kc:endInclude
-Tous les commentaires de la feuille de calcul peuvent aussi être listés dans la liste d'éléments de NVDA.
+Tous les commentaires de la feuille de calcul peuvent aussi être listés dans la liste d'éléments de NVDAaprès appui sur NVDA+f7.
 
+NVDA peut aussi afficher un dialogue spécifique pour ajouter ou éditer un commentaire particulier.
+NVDA remplace la zone d'édition de commentaire originale de MS Excel en raison de contraintes d'accessibilité, mais le raccourci clavier pour afficher le dialogue est hérité de MS Excel et fonctionne aussi sans que NVDA soit actif.
+%kc:beginInclude
+Pour ajouter ou éditer un commentaire, dans une cellule en focus, pressez maj+f2.
+%kc:endInclude
+
+Ce raccourci n'apparaît pas et ne peut être remplacé dans le dialogue Geste de Commandes de NVDA.
+
+Note : il est également possible d'ouvrir la zone d'édition de commentaire de MS Excel par le menu contextuel de n'importe quelle cellule de la feuille de calcul.
+Cependant, cela ouvrira la zone d'édition de commentaire inaccessible et non le dialogue spécifique d'édition de commentaire de NVDA.
+ 
 +++ Lecture des Cellules Protégées +++[ExcelReadingProtectedCells]
 Si un classeur a été protégé, il peut être impossible d'amener le focus à certaines cellules ayant été protégées en écriture.
 %kc:beginInclude
@@ -931,13 +942,6 @@ Note : Les raccourcis ci-dessus fonctionnent seulement avec le format de chaîne
 || Nom | Touche | Description |
 | Annonce de la fenêtre de commentaires | contrôle+maj+c | Annonce tout commentaire dans la fenêtre de commentaires. |
 | Annonce des notes pour les traducteurs | contrôle+maj+a | Annonce les notes pour les traducteurs. |
-%kc:endInclude
-
-++ Skype ++[Skype]
-%kc:beginInclude
-Dans une conversation :
-|| Nom | Touche | Description |
-| relire message | NVDA+contrôle+1-0 | Lit et amène le curseur de revue à un message récent, selon le nombre pressé; ex : NVDA+contrôle+2 lit le second message plus récent. |
 %kc:endInclude
 
 ++ Kindle pour PC ++[Kindle]
@@ -1291,9 +1295,13 @@ Cette option permet aux messages de NVDA de rester affichés sur l'afficheur bra
 ==== braille suit ====[BrailleTether]
 Raccourci clavier : NVDA+contrôle+t
 
-Cette option vous permet de choisir si le braille suivra le focus système, le curseur de l'objet navigateur ou les deux.
+Cette option vous permet de choisir si le braille suivra le curseur du focus système, le curseur de l'objet navigateur ou les deux.
 Quand "automatiquement" est sélectionné, NVDA suivra le curseur système et le focus par défaut.
 Dans ce cas, quand la position de l'objet de navigation ou du curseur de revue est modifiée par une action explicite de l'utilisateur, NVDA suivra temporairement la revue, jusqu'à ce que le focus ou le curseur système change.
+Si vous voulez qu'il ne suive que le focus et le curseur, vous devez configurer le braille pour qu'il suive le focus.
+Dans ce cas, le braille ne suivra pas le navigateur NVDA durant la navigation par objet ou le curseur de revue durant la revue.
+Si vous voulez que le braille suive la navigation par objet et la revue de texte, vous devez configurer le braille pour qu'il suive la revue.
+Dans ce cas, le braille ne suivra pas le focus système et le curseur système.
 
 ==== Lecture par paragraphe ====[BrailleSettingsReadByParagraph]
 Si cette option est activée, le braille sera affiché par paragraphe au lieu d'être affiché par ligne.
@@ -1690,6 +1698,7 @@ On peut configurer les annonces suivantes :
  - Nom de la police
  - Taille de la police,
  - Attributs de la police,
+ - Exposants et indices
  - Emphase
  - Style
  - Couleurs
@@ -1788,7 +1797,7 @@ Cette option définit si les caractères sont annoncés par [Écho clavier par c
 ==== Utiliser le nouveau support de l'écho par caractère dans les anciennes consoles Windows quand disponible ====[AdvancedSettingsKeyboardSupportInLegacy]
 Cette option active une méthode alternative pour détecter la frappe des caractères dans les consoles de commandes Windows.
 Bien qu'elle améliore les performances et empêche certains affichages de console d'être épelés, elle peut être incompatible avec certains programmes de terminaux.
-Cette fonctionnalité est disponible et activée par défaut sous Windows 10 versions 1607, 1703, 1709 et 1803 ainsi que sous les versions plus récentes de Windows 10 quand UI Automation n'est pas disponible ou désactivée.
+Cette fonctionnalité est disponible et activée par défaut sous Windows 10 versions 1607 et ultérieures quand UI Automation n'est pas disponible ou désactivée.
 Avertissement : quand cette option est activée, les caractères tapés qui n'apparaissent pas à l'écran comme les mots de passe, ne seront pas supprimés.
 Dans les environnement non sûrs, vous pouvez désactiver temporairement [Écho clavier par caractère #KeyboardSettingsSpeakTypedCharacters] et [Écho clavier par mot #KeyboardSettingsSpeakTypedWords] quand vous entrez un mot de passe.
 
@@ -1842,7 +1851,8 @@ Le dialogue "Ajout de règles" contient une case à cocher permettant de choisir
 Par défaut, NVDA ne tient pas compte de la casse.
 
 Pour finir, un ensemble de boutons radio vous permet de dire à NVDA si votre modèle devrait s'appliquer partout, seulement dans le cas d'un mot entier ou s'il devrait être traité comme une "expression régulière".
-Définir le modèle comme un mot entier signifie que le remplacement ne sera fait que si le modèle n'est pas rencontré dans un mot plus grand; un caractère non alphanumérique ou un souligné ou pas de caractère doit être présent immédiatement avant et après le modèle.
+Définir le modèle comme un mot entier signifie que le remplacement ne sera fait que si le modèle n'est pas rencontré dans un mot plus grand.
+Un caractère non alphanumérique ou un souligné ou pas de caractère doit être présent immédiatement avant et après le modèle.
 Ainsi, en utilisant l'exemple précédent de remplacement du mot "oiseau" par le mot "grenouille", si vous le définissez comme un remplacement de mot entier, cela ne marcherait pas pour "oiseaux" ou "damoiseau".
 
 Une expression régulière est un modèle contenant des symboles particuliers vous permettant de trouver une correspondance sur plus d'un caractère à la fois, ou seulement sur les lettres ou les chiffres etc. 
@@ -2001,7 +2011,8 @@ Les versions portables de NVDA enregistrent tous les paramètres et extensions d
 
 Les versions installées de NVDA enregistrent tous les paramètres et extensions dans un répertoire spécial de NVDA situé dans votre profil utilisateur Windows.
 Cela signifie que chaque utilisateur du système peut avoir ses propres paramètres NVDA.
-Pour accéder à votre répertoire de paramètres pour une version installée de NVDA, depuis le menu "Démarrer" vous pouvez aller à "Tous les programmes" -> "NVDA" -> "Explorer les paramètres utilisateur".
+Pour ouvrir votre répertoire de paramètres de n'importe où vous pouvez utiliser [le dialogue Geste de commandes #InputGestures] pour ajouter un geste personnalisé.
+De plus, pour une version installée de NVDA, depuis le menu démarrer vous pouvez aller dans programmes -> NVDA -> explorer le répertoire de configuration utilisateur de NVDA.
 
 Les paramètres qu'utilise NVDA quand il s'exécute sur l'écran de connexion ou l'écran UAC sont enregistrés dans le répertoire "systemConfig" situé dans le répertoire NVDA.
 En général, cette configuration n'a pas à être modifiée.
