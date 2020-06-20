@@ -11,6 +11,81 @@
 </CENTER>
 
 
+<H2>2020.2</H2>
+
+<P>
+Os destaques desta versão incluem:
+</P>
+
+<UL>
+<LI>Suporte para uma nova linha Braille da Nattiq;
+<LI>Melhor suporte para a GUI do ESET antivírus e do Windows Terminal;
+<LI>Melhoras no desempenho com 1Password e o sintetizador Windows OneCore;
+<LI>Muitas outras correções e melhorias importantes.
+<P></P>
+== Novas funcionalidades ==
+<LI>Suporte para a nova linha Braille Nattiq nBraille (# 10778)
+<LI>Adicionada função para abrir o diretório de configurações do NVDA sem comando definido. (# 2214)
+<LI>Melhor suporte para a GUI do ESET antivírus. (# 10894)
+<LI>Adicionado suporte para Windows Terminal. (# 10305)
+<LI>Adicionado um comando para anunciar o perfil de configurações ativo. (# 9325)
+<LI>Adicionado um comando para alternar o anúncio de subscrito e sobrescrito. (# 10985)
+<LI>As aplicações Web (como o GMail) já não anunciam informações desatualizadas ao mover o foco rapidamente. (# 10885)
+  <UL>
+  <LI>Esta correção experimental deve ser activada manualmente através da opção "Tentar cancelar a voz para eventos de foco expirados" na secção Avançadas das configurações do NVDA.
+  </UL>
+<LI>Adicionados mais símbolos. (# 11105)
+</UL>
+
+<H3>Alterações</H3>
+
+<UL>
+<LI>Actualizado o conversor Braille Liblouis para a versão <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.14.0">3.14.0</A> (de 3.12.0). (# 10832, # 11221)
+<LI>O anúncio de subscrito e sobrescrito passa a ser controlado separadamente dos atributos da fonte. (# 10919)
+<LI>Devido às alterações feitas no VS Code, o NVDA já não desactiva, por padrão, o modo de navegação no Código. (# 10888)
+<LI>Removidas as mensagens "topo" e "fundo" ao mover o cursor de revisão para a primeira ou última linha do objeto de navegação actual. (# 9551)
+<LI>Removidas as mensagens "esquerda" e "direita" ao mover o cursor de revisão para o primeiro ou último caractere da linha do objeto de navegação actual. (# 9551)
+</UL>
+
+<H3>Correcção de erros</H3>
+
+<UL>
+<LI>O NVDA já inicia correctamente mesmo quando o ficheiro de registo não pode ser criado. (# 6330)
+<LI>Nas versões recentes do Microsoft Word 365, o NVDA não anuncia mais "excluir palavra inversa" quando pressionar Control + Backspace ao editar um documento. (# 10851)
+<LI>No Winamp, o NVDA volta a anunciar o estado de alternância de reprodução aleatória e repetição. (# 10945)
+<LI>O NVDA já não é extremamente lento ao mover-se pela lista de itens do 1Password. (# 10508)
+<LI>O sintetizador Windows OneCore já não faz pausas entre as expressões. (# 10721)
+<LI>O NVDA já não congela quando se abre o menu de contexto do 1Password na área de notificações do sistema. (# 11017)
+<LI>Para o Office 2013 e versões anteriores:
+  <UL>
+  <LI>Os frisos são anunciados quando são focados pela primeira vez. (# 4207)
+  <LI>Os itens do menu de contexto são novamente anunciados correctamente. (# 9252)
+  <LI>As secções dos frisos são anunciadas de forma consistente ao navegar com Control mais setas. (# 7067)
+  </UL>
+<LI>Os sons de erro do NVDA já não são ouvidos ao aceder os controlos de texto do DevExpress. (# 10918)
+<LI>As sugestões dos ícones na área de notificações já não são anunciadas, ao navegar com o teclado, se o seu texto for igual ao nome dos ícones, para evitar um duplo anúncio. (# 6656)
+<LI>Em Modo de navegação, no Mozilla Firefox e Google Chrome, o texto já não aparece, incorretamente, numa linha separada, quando o conteúdo da web usa o esquema CSS: inline-flex. (# 11075)
+<LI>Em Modo de navegação, com a opção "Definir automaticamente o foco do sistema para os elementos focáveis" desactivada, já é possível activar elementos que não são focáveis.
+<LI>Em Modo de navegação, com a opção "Definir automaticamente o foco do sistema para os elementos focáveis" desactivada, já é possível activar os elementos alcançados pressionando Tab. (# 8528)
+<LI>Em Modo de navegação, com a opção "Definir automaticamente o foco do sistema para os elementos focáveis" desactivada, a activação de certos elementos já não activa um controlo incorreto. (# 9886)
+<LI>Em Modo de navegação, com a opção "Definir automaticamente o foco do sistema para os elementos focáveis" desactivada, alternar para o modo de foco, com NVDA+espaço,  já foca o elemento sob o cursor. (# 11206)
+<LI>É novamente possível verificar atualizações do NVDA em certos sistemas; por exemplo. instalações limpas do Windows. (# 11253)
+<LI>Numa aplicação Java, o foco não é alterado quando a seleção é alterada numa estrutura hierárquica, tabela ou lista não focada. (# 5989)
+</UL>
+
+<H3>Changes For Developers</H3>
+
+<UL>
+<LI>execElevated and hasUiAccess have moved from config module to systemUtils module. Usage via config module is deprecated. (<A HREF="https://github.com/nvaccess/nvda/issues/10493">#10493</A>)
+<LI>Updated configobj to 5.1.0dev commit f9a265c4. (<A HREF="https://github.com/nvaccess/nvda/issues/10939">#10939</A>)
+<LI>Automated testing of NVDA with Chrome and a HTML sample is now possible. (<A HREF="https://github.com/nvaccess/nvda/issues/10553">#10553</A>)
+<LI>IAccessibleHandler has been converted into a package, OrderedWinEventLimiter has been extracted to a module and unit tests added (<A HREF="https://github.com/nvaccess/nvda/issues/10934">#10934</A>)
+<LI>Updated BrlApi to version 0.8 (BRLTTY 6.1). (<A HREF="https://github.com/nvaccess/nvda/issues/11065">#11065</A>)
+<LI>Status bar retrieval may now be customized by an AppModule. (<A HREF="https://github.com/nvaccess/nvda/issues/2125">#2125</A>, <A HREF="https://github.com/nvaccess/nvda/issues/4640">#4640</A>)
+<LI>NVDA no longer listens for IAccessible EVENT_OBJECT_REORDER. (<A HREF="https://github.com/nvaccess/nvda/issues/11076">#11076</A>)
+<LI>A broken ScriptableObject (such as a GlobalPlugin missing a call to its base class' <U>init</U> method) no longer breaks NVDA's script handling. (<A HREF="https://github.com/nvaccess/nvda/issues/5446">#5446</A>)
+</UL>
+
 <H2>2020.1</H2>
 
 <P>
