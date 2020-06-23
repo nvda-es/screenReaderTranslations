@@ -307,10 +307,14 @@ NVDA podržava brajične kodove za mnoge jezike, uključujući kratkopis, puno p
 NVDA autorska prava 2006-2020 NVDA doprinositelji.
 </P>
 <P>
-NVDA je pokriven GNU općom javnom licencom (verzija 2).
+NVDA je dostupan pod uvjetima  GNU opće javne licence (verzija 2) uz dvije važne iznimke.
+Iznimke su istaknute u dokumentu licence u poglavljima "Non-GPL Components in Plugins and Drivers" i "Microsoft Distributable Code". Bilješka: dokument je dostupan samo na engleskom.
 Dozvoljeno je dijeljenje i promjena ovog softvera na koji god način želite, sve dok je popraćen licencom i dok omogućite pristup izvornom kodu bilo kome tko ga želi.
 Ovo se odnosi na originalni i promijenjeni softver, kao i na rad koji je iz toga proizašao.
+</P>
+<P>
 Za pojedinosti <A HREF="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">pogledajte cijelu licencu.</A>
+Za detalje o iznimkama, molimo pročitajte dokumenit licence kojeg možete naći u NVDA izborniku u podizborniku "pomoć".
 </P>
 
 <A NAME="SystemRequirements"></A>
@@ -908,10 +912,7 @@ Kad je <A HREF="#VisionFocusHighlight">Isticanje fokusa</A> aktivirano, pozicija
 Navigacijski objekt se standardno pokreće zajedno s fokusom sustava, ali se to ponašanje može uključiti ili isključiti.
 </P>
 <P>
-Imajte na umu, da brajični redak standardno prati <A HREF="#SystemFocus">fokus</A> i <A HREF="#SystemCaret">kursor</A> isto kao i pregled teksta i kretanje po objektima.
-Ako želite da brajični redak prati fokus i kursor, morate <A HREF="#BrailleTether">povezati brajični redak</A> s fokusom.
-U tom slučaju, brajični redak neće pratiti kretanje po objektima niti pregled teksta.
-Ako umjesto toga želite da brajični redak prati pregled teksta i kretanje po objektima, morate <A HREF="#BrailleTether">povezati brajični redak</A> s pregledom.
+Upozorenje: brajica koja prati objekt navigatora može se podesiti preko <A HREF="#BrailleTether">povezanosti brajice</A>.
 </P>
 <P>
 Da biste se kretali po objektima, koristite sljedeće prečace:
@@ -1008,8 +1009,7 @@ Međutim, kad pomičete kursor sustava, pregledni kursor se također pomiče.
 Ovo se može uključiti ili isključiti.
 </P>
 <P>
-Imajte na umu da brajični redak standardno prati <A HREF="#SystemFocus">fokus</A> i <A HREF="#SystemCaret">kursor</A>, a ne kretanje po objektima i pregled teksta.
-Ako umjesto toga želite da brajični redak prati kretanje po objektima i pregled teksta, <A HREF="#BrailleTether">povežite brajični redak</A> s pregledom.
+Upozorenje: brajica koja prati kursor pregleda može se konfigurirati putem <A HREF="#BrailleTether">povezivanja brajice</A>.
 </P>
 <P>
 Sljedeći prečaci su dostupni za pregledavanje teksta:
@@ -1129,11 +1129,11 @@ Sljedeći prečaci su dostupni za pregledavanje teksta:
 <TD>Započinje proces biranja, a zatim kopiranja od trenutačne pozicije preglednog kursora. Sama radnja se ne izvodi sve dok ne kažete NVDA-u gdje se nalazi kraj teksta</TD>
 </TR>
 <TR>
-<TD>Odaberi i potom kopiraj do preglednog kursora</TD>
-<TD>insert+f10</TD>
-<TD>insert+f10</TD>
+<TD>Odaberi a potom kopiraj do preglednog kursora</TD>
+<TD>NVDA+f10</TD>
+<TD>NVDA+f10</TD>
 <TD>nema</TD>
-<TD>Prilikom prvog pritiska, tekst je označen od pozicije od koje je označen početni marker uključujući trenutačnu poziciju preglednog kursora. Poslije drugog pritiska istog prečaca, tekst će biti kopiran u Windowsov međuspremnik</TD>
+<TD>Prilikom prvog pritiska, tekst je označen od pozicije od prije poznate kao početni marker sve do i uključujući poziciju preglednog kursora. Ako kursor sustava može dohvatiti tekst, isti će biti premješten na označeni tekst. Poslje pritiska prečaca drugi put, tekst će biti kopiran u windowsow međuspremnik</TD>
 </TR>
 <TR>
 <TD>Premjesti se na označeni početak kopiranja na pregled</TD>
@@ -2241,7 +2241,19 @@ Biranjem polja obrasca i pritiskom tipke enter ili gumba "Prijeđi na", premješ
 
 <P>
 Za izvještavanje o komentarima na poziciji kursora, pritisnite NVDA+alt+c.
-Svi komentari za radni list se mogu popisati i u NVDA popisu elemenata.
+Svi komentari za radni list se mogu popisati i u NVDA popisu elemenata poslije pritiska prečaca insert+f7.
+</P>
+<P>
+NVDA također može prikazati poseban dijaloški okvir za dodavanje ili uređivanje komentara.
+NVDA nadpisuje nativnu kontrolu za upis komentara u MS excelu zbog problema s pristupačnošću, ali se prećac za pristupanje istoj ne razlikuje stoga radi bez potrebe za uključenim NVDA.
+Kako biste dodali ili uredili komentar u fokusiranoj ćeliji, pritisnite shift+f2.
+</P>
+<P>
+Ovaj se prečac ne prikazuje, stoga se ne može mijenjati u dijaloškom okviru ulaznih gesti.
+</P>
+<P>
+Upozorenje: također postoji mogućnost otvaranja dijaloškog okvira upisivanja komentara iz kontekstnog izbornika.
+Međutim, to će otvoriti MS excelovu nedostupno regiju za uređivanje komentara umjesto specifičnog dijaloškog okvira za uređivanje komentara koji kiristi NVDA.
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -2999,9 +3011,13 @@ Ova opcija omogućuje neograničeno trajanje prikazivanja poruka na brajičnom r
 Prečac: NVDA+kontrol+t
 </P>
 <P>
-Ova opcija odlučuje hoće li brajični redak pratiti fokus sustava, navigacijski objekt/kursor pregleda ili oboje.
+Ova opcija kontrolira hoće li brajični redak pratiti fokus sustava / kursor, objekt navigatora / pregledni kursor, ili oboje.
 Kad je opcija "automatski" označena, NVDA će standardno pratiti fokus sustava i kursor.
 U tom slučaju, kad se pozicija navigacijskog objekta i-ili preglednog kursora promijeni korisničkom interakcijom, NVDA će se privremeno povezati na pregled, sve dok se ne promijeni fokus ili pregled.
+Ako želite praćenje samo fokusa i kursora, morate konfigurirati brajicu povezanu na fokus.
+U tom slučaju, NVDA neće pratiti pregledni kursor tijekom objektne navigacije ili pregledni kursor tokom pregleda sadržaja.
+Ako želite da NVDA prati pregled objekta i kursor pregleda umjesto toga, Morate postaviti brajicu povezanu na pregled.
+U tom slučaju, brajica neće pratiti kursor sustava i fokus.
 </P>
 
 <A NAME="BrailleSettingsReadByParagraph"></A>
