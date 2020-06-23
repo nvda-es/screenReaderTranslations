@@ -10,6 +10,56 @@
 </CENTER>
 
 
+<H2>2020.2</H2>
+
+<P>
+Основные новшества этого выпуска включают в себя поддержку нового дисплея от Nattiq, улучшенную поддержку интерфейса антивируса ESET и Windows Terminal, повышенную производительность в 1Password и синтезаторе Windows OneCore, а также множество других важных исправлений и улучшений.
+</P>
+
+<H3>Новое</H3>
+
+<UL>
+<LI>Добавлена поддержка новых брайлевских дисплеев:
+  <UL>
+  <LI>Nattiq nBraille (<A HREF="https://github.com/nvaccess/nvda/issues/10778">#10778</A>)
+  </UL>
+<LI>В диалоге «Жесты ввода» добавлена команда для открытия папки пользовательских настроек NVDA. Желаемый жест на неё пользователь должен назначить самостоятельно. (<A HREF="https://github.com/nvaccess/nvda/issues/2214">#2214</A>)
+<LI>Улучшена поддержка графического интерфейса антивируса ESET. (<A HREF="https://github.com/nvaccess/nvda/issues/10894">#10894</A>)
+<LI>Добавлена поддержка Windows Terminal. (<A HREF="https://github.com/nvaccess/nvda/issues/10305">#10305</A>)
+<LI>В диалоге «Жесты ввода» добавлена команда для получения имени активного профиля конфигурации NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/9325">#9325</A>)
+<LI>В диалоге «Жесты ввода» добавлена команда для включения и выключения чтения надстрочного и подстрочного форматирования текста. (<A HREF="https://github.com/nvaccess/nvda/issues/10985">#10985</A>)
+<LI>В некоторых web-приложениях (например в Gmail), NVDA больше не сообщает устаревшую информацию при быстром перемещении системного фокуса. (<A HREF="https://github.com/nvaccess/nvda/issues/10885">#10885</A>)
+  <UL>
+  <LI>Это экспериментальная возможность должна быть активирована вручную в комбинированном списке «Пытаться отменять речевой вывод для устаревших событий фокуса», который может быть найден в категории «Дополнительно» диалога настроек NVDA.
+  </UL>
+<LI>В таблицу символов NVDA добавлено множество новых символов. Преимущественно это различные надстрочные и подстрочные знаки. (<A HREF="https://github.com/nvaccess/nvda/issues/11105">#11105</A>)
+</UL>
+
+<H3>Изменения</H3>
+
+<UL>
+<LI>Liblouis braille translator обновлён до версии <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.14.0">3.14.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/10832">#10832</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11221">#11221</A>)
+<LI>Чтение надстрочного и подстрочного форматирования текста теперь управляется отдельным флажком и не зависит от настройки чтения атрибутов шрифта. (<A HREF="https://github.com/nvaccess/nvda/issues/10919">#10919</A>)
+<LI>Из-за изменений произошедших в редакторе кода VS Code, NVDA больше не отключает в нём по умолчанию режим обзора. (<A HREF="https://github.com/nvaccess/nvda/issues/10888">#10888</A>)
+<LI>Удалены сообщения «верхний» и «нижний» при использовании команд перемещения просмотрового курсора к первой и последней строке текущего объекта навигатора. (<A HREF="https://github.com/nvaccess/nvda/issues/9551">#9551</A>)
+<LI>Удалены сообщения «левый» и «правый» при использовании команд перемещения просмотрового курсора к первому и последнему символу текущей строки объекта навигатора. (<A HREF="https://github.com/nvaccess/nvda/issues/9551">#9551</A>)
+</UL>
+
+<H3>Исправления</H3>
+
+<H3>Изменения для разработчиков</H3>
+
+<UL>
+<LI>Функции execElevated и hasUiAccess перемещены из модуля config в модуль systemUtils. Их использование через модуль config объявлено устаревшим. (<A HREF="https://github.com/nvaccess/nvda/issues/10493">#10493</A>)
+<LI>Пакет configobj обновлён до версии 5.1.0dev (коммит f9a265c4). (<A HREF="https://github.com/nvaccess/nvda/issues/10939">#10939</A>)
+<LI>Automated testing of NVDA with Chrome and a HTML sample is now possible. (<A HREF="https://github.com/nvaccess/nvda/issues/10553">#10553</A>)
+<LI>Модуль IAccessibleHandler был преобразован в пакет, а OrderedWinEventLimiter выделен в отдельный модуль с добавлением unit тестов. (<A HREF="https://github.com/nvaccess/nvda/issues/10934">#10934</A>)
+<LI>BrlApi обновлён до версии 0.8 (BRLTTY 6.1). (<A HREF="https://github.com/nvaccess/nvda/issues/11065">#11065</A>)
+<LI>Модули для приложений теперь могут переопределять способ извлечения строки состояния в своём приложении. (<A HREF="https://github.com/nvaccess/nvda/issues/2125">#2125</A>, <A HREF="https://github.com/nvaccess/nvda/issues/4640">#4640</A>)
+<LI>NVDA no longer listens for IAccessible EVENT_OBJECT_REORDER. (<A HREF="https://github.com/nvaccess/nvda/issues/11076">#11076</A>)
+<LI>Сломанные экземпляры ScriptableObject (например глобальные плагины в конструкторе которых забыт вызов конструктора суперкласса), больше не ломают обработку скриптов NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/5446">#5446</A>)
+</UL>
+
 <H2>2020.1</H2>
 
 <P>
