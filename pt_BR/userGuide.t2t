@@ -27,7 +27,7 @@ Suas características mais notáveis incluem:
 - Instalação com voz e fácil de usar
 - Traduzido para 54 idiomas
 - Suporte para as modernas versões do sistema operacional Windows incluindo variantes de 32 e 64 bit
-- Possibilidade de uso na tela de logon do Windows e outras telas de segurança
+- Capacidade de executar durante a entrada ""[credenciais]"" do Windows e em telas seguras
 - Anunciando controles e texto enquanto usa gestos de toque
 - Suporte para interfaces comuns de acessibilidade tais como Microsoft Active Accessibility, Java Access Bridge, IAccessible2 e UI Automation ""[Automação da Interface do Usuário]""
 - Suporte para o Prompt de Comando do Windows e aplicações de console
@@ -56,10 +56,14 @@ O NVDA suporta códigos Braille para diversos idiomas, incluindo os códigos Bra
 ++ Licença e Copyright [Direitos autorais] ++[LicenseAndCopyright]
 NVDA tem copyright ""[direitos autorais]"" NVDA_COPYRIGHT_YEARS NVDA contributors ""[colaboradores do NVDA]"".
 
-O NVDA é coberto pela GNU General Public License ""[GNU GPL – Licença Pública Geral GNU]"" (Versão 2).
+O NVDA está disponível sob a GNU General Public License ""[GNU GPL — Licença Pública Geral GNU]"" versão 2, com duas exceções especiais.
+As exceções estão descritas no documento de licença nas seções "Non-GPL Components in Plugins and Drivers" ""[Componentes Não-GPL em Plug-ins e Controladores]"" e "Microsoft Distributable Code" ""[Código Distribuível da Microsoft]"".
+O NVDA também inclui e usa componentes que são disponibilizados sob diferentes licenças gratuitas e de código aberto.
 Você é livre para compartilhar ou alterar este software da forma que pretender, desde que seja acompanhado da licença e você disponibilize todo o código fonte para quem quiser.
 Isso se aplica a cópias originais e modificadas deste software, além de qualquer trabalho derivado.
+
 Para mais detalhes, pode [ver a licença completa ""[em inglês]"" https://www.gnu.org/licenses/old-licenses/gpl-2.0.html] [""[e"" GNU GPL 2 tradução não-oficial em ""português]."" https://www.neoscopio.com/licenca_GPL_pt.txt]
+Para detalhes sobre exceções, acesse o documento de licença no menu do NVDA na seção "ajuda".
 
 + Requisitos de Sistema +[SystemRequirements]
 - Sistemas Operacionais: todas as edições de 32-bit e 64-bit do Windows 7, Windows 8, Windows 8.1, Windows 10 e todos os sistemas operacionais de servidor a partir do Windows Server 2008 R2;
@@ -79,7 +83,7 @@ Ao executar o arquivo baixado, será iniciada uma cópia temporária do NVDA.
 Você será questionado se deseja instalá-lo, criar uma cópia portátil ou apenas continuar usando a cópia temporária.
 
 Caso pretenda usar constantemente o NVDA neste computador, deverá então optar por instalá-lo.
-O NVDA Instalado lhe permitirá ter recursos adicionais, tais como iniciá-lo automaticamente após o logon ""[início de sessão]"", a capacidade de ler a tela de Logon e outras telas seguras do Windows (o que não pode ser feito através de cópias portáteis e/ou temporárias) e a criação de atalhos no menu iniciar e na área de trabalho.
+O NVDA instalado lhe permitirá ter recursos adicionais, tais como inicialização automática após o login ""[início de sessão]"", a capacidade de ler as telas de entrada ""[credenciais]"" e segurança do Windows (que não podem ser feitas com cópias portáteis e temporárias) e a criação de atalhos no menu iniciar e na área de trabalho.
 As cópias instaladas também permitem elas próprias criar uma cópia portátil a qualquer momento.
 
 Se você deseja levar o NVDA com você em um dispositivo USB ou em outros dispositivos de mídia portáteis, então deverá escolher criar uma cópia portátil.
@@ -114,8 +118,8 @@ Antes de poder pressionar o botão Continuar, você deverá usar a caixa de sele
 Haverá também um botão presente para analisar os complementos que serão desativados.
 Consulte a [seção de diálogo de complementos incompatíveis #incompatibleAddonsManager] para obter mais ajuda sobre este botão.
 
-+++ Iniciar no Logon do Windows +++[StartAtWindowsLogon]
-Essa opção lhe permite escolher se o NVDA deverá ou não iniciar automaticamente com a tela de Logon do Windows, antes de você inserir sua senha.
++++ Usar o NVDA durante a entrada [tela de login] +++[StartAtWindowsLogon]
+Essa opção lhe permite escolher se o NVDA deverá ou não iniciar automaticamente enquanto estiver na tela de entrada ""[login]"" do Windows, antes de você inserir sua senha.
 Isso também inclui o Controle de Conta de Usuário e outras telas seguras.
 Essa opção está habilitada por padrão para instalações novas.
 
@@ -125,7 +129,7 @@ O atalho, se criado, também será atribuído uma tecla de atalho control+alt+n,
 
 +++ Copiar Configuração Portátil para a Conta de Usuário Atual +++[CopyPortableConfigurationToCurrentUserAccount]
 Essa opção lhe permite escolher se o NVDA deve ou não copiar as configurações do usuário oriundas da versão atualmente em execução para as configurações do usuário atualmente logado no Windows, no caso das cópias instaladas do NVDA.
-Isso não copiará a configuração para qualquer outro usuário desse computador, nem para as configurações de sistema, para uso no Logon do Windows e outras telas seguras.
+Isso não copiará a configuração para nenhum outro usuário deste sistema nem para a configuração do sistema para uso durante a entrada no Windows e outras telas seguras.
 Essa opção está disponível apenas quando se instala a partir de uma cópia portátil, não sendo possível ao instalar diretamente do pacote executável baixado.
 
 ++ Criando uma Cópia Portátil ++[CreatingAPortableCopy]
@@ -359,10 +363,7 @@ Uma vez que tenha navegado para um objeto, pode explorá-lo com os comandos de [
 Quando o [Realce do Foco #VisionFocusHighlight] está ativado, o local do objeto de navegação atual também é exposto visualmente.
 Por padrão, a navegação de objetos acompanha o foco do sistema, embora esse comportamento possa ser ativado e desativado.
 
-Note que o braille acompanha igualmente o [foco #SystemFocus] e o [cursor #SystemCaret], bem como a navegação de objeto e a exploração de texto por padrão.
-Se você quiser que ele acompanhe apenas o foco e o cursor, você precisa [configurar o braille para se vincular ao #BrailleTether] foco.
-Neste caso, o braille não acompanhará a navegação de objeto e exploração de texto.
-Caso queira que o braille acompanhe a navegação de objeto e a exploração de texto, você deve [configurar o braille para ser vinculado à #BrailleTether] exploração.
+Nota: O Braille acompanhando Navegação de Objetos pode ser configurado via [Vinculação de Braille #BrailleTether].
 
 Para navegar pelos objetos utilize as seguintes teclas de atalho:
 
@@ -390,8 +391,7 @@ Quando o cursor de exploração é movido, o cursor do Sistema não o acompanha,
 No entanto, por padrão, quando se move o cursor do Sistema, o cursor de exploração o acompanha.
 Esta opção pode ser ativada ou desativada.
 
-Note que o braille não acompanha a navegação de objetos e a exploração de texto por padrão, mas sim o [foco #SystemFocus] e o [cursor do sistema #SystemCaret].
-Caso queira que em lugar disso, o braille acompanhe a navegação de objetos e a exploração de texto, você deve [configurar o braille para ser vinculado a #BrailleTether] exploração.
+Nota: O Braille acompanhando o cursor de exploração pode ser configurado via [Vinculação de Braille #BrailleTether].
 
 As seguintes teclas de atalho estão disponíveis para a exploração de texto:
 %kc:beginInclude
@@ -411,7 +411,7 @@ As seguintes teclas de atalho estão disponíveis para a exploração de texto:
 | Mover para o fim da linha em exploração | shift+3 do teclado numérico | NVDA+end | nenhum | Move o cursor de exploração para o último caractere da linha atual do texto |
 | Ler tudo com exploração | Mais do teclado numérico | NVDA+shift+a | Varredura para baixo com 3 dedos (Modo de texto) | Lê a partir da posição atual do cursor de exploração, movendo-o à medida que avança |
 | Selecionar e Copiar a partir do cursor de exploração | NVDA+f9 | NVDA+f9 | nenhum | Inicia o processo de seleção e cópia do texto a partir da posição atual do cursor de exploração. A ação real não é executada até que você informe ao NVDA onde o fim do intervalo de texto está |
-| Selecionar e Copiar até o cursor de exploração | NVDA+f10 | NVDA+f10 | nenhum | Na primeira vez que pressionar, o texto é selecionado a partir do marcador de início de posição previamente definido até e incluindo a posição atual do cursor de exploração. Depois de pressionar esta tecla uma segunda vez, o texto será copiado para a área de transferência do Windows |
+| Selecionar e Copiar até o cursor de exploração | NVDA+f10 | NVDA+f10 | nenhum | Na primeira vez que pressionar, o texto é selecionado a partir da posição definida anteriormente como marcador inicial até e incluindo a posição atual do cursor de exploração. Se o cursor do sistema puder alcançar o texto, ele será movido para o texto selecionado. Depois de pressionar este lance de tecla uma segunda vez, o texto será copiado para a área de transferência do Windows |
 | Mover para o início de cópia marcado em exploração | NVDA+shift+f9 | NVDA+shift+f9 | nenhum | Move o cursor de revisão até o marcador de início de posição anteriormente definido para cópia |
 | Informar formatação de texto | NVDA+f | NVDA+f | nenhum | Anuncia a formatação do texto onde o cursor de exploração está posicionado atualmente. Pressionando duas vezes, exibe a informação em modo de navegação |
 | Informa a substituição do símbolo atual | Nenhum | Nenhum | nenhum | Fala o símbolo onde o cursor de revisão está posicionado. Pressionado duas vezes, mostra o símbolo e o texto usado para falar no modo de navegação. |
@@ -644,6 +644,10 @@ Por exemplo, você pode mover-se pela expressão com as setas à direita e à es
 Por favor consulte a [documentação do MathPlayer sobre comandos de navegação https://www.dessci.com/en/products/mathplayer/navigation_commands.htm] para informações adicionais.
 
 Quando quiser retornar ao documento, simplesmente pressione a tecla escape.
+
+Às vezes, o conteúdo matemático pode ser exibido como um botão ou outro tipo de elemento que, quando ativado, pode exibir um diálogo ou mais informações relacionadas à fórmula.
+Para ativar o botão ou o elemento que contém a fórmula, pressione ctrl+enter.
+
 
 + Braille +[Braille]
 Se você possui uma linha braille, o NVDA pode exibir informações em braille.
@@ -890,7 +894,18 @@ Selecionando um campo de formulário e pressionando enter ou o botão Mover para
 %kc:beginInclude
 Para anunciar quaisquer comentários na célula atualmente sob o foco, pressione NVDA+alt+c.
 %kc:endInclude
-Todos os comentários para a folha de cálculo também podem ser listados na Lista de Elementos do NVDA.
+Todos os comentários para a folha de cálculo também podem ser listados na Lista de Elementos do NVDA após pressionar NVDA+f7.
+
+O NVDA também pode exibir um diálogo específico para adicionar ou editar um determinado comentário.
+O NVDA substitui a região nativa de edição de comentários do MS Excel devido a restrições de acessibilidade, mas o pressionamento de tecla para exibir o diálogo é herdado do MS Excel e, portanto, funciona também sem o NVDA em execução.
+%kc:beginInclude
+Para adicionar ou editar um determinado comentário, em uma célula focalizada, pressione shift+f2.
+%kc:endInclude
+
+Esse pressionamento de tecla não aparece e não pode ser alterado no diálogo definir comando ""[gesto de entrada]"" do NVDA.
+
+Nota: é possível abrir a região de edição de comentários no MS Excel também no menu de contexto de qualquer célula da planilha.
+No entanto, isso abrirá a região de edição de comentários inacessível e não a caixa de diálogo de edição de comentários específica do NVDA.
 
 +++ Lendo Células Protegidas +++[ExcelReadingProtectedCells]
 Caso uma folha de cálculos tenha sido protegida, poderá não ser possível mover o foco para as células em particular que foram bloqueadas para edição.
@@ -1019,7 +1034,7 @@ Se você deseja acessar categorias que não possuem teclas de atalho dedicadas, 
 As categorias de configurações encontradas na caixa de diálogo de Configurações do NVDA serão descritas abaixo.
 
 +++ Geral (NVDA+control+g) +++[GeneralSettings]
-A categoria Geral do diálogo de Configurações do NVDA define o comportamento geral do NVDA, como o idioma da interface, e se deve ou não verificar se há atualizações.
+A categoria Geral do diálogo de Configurações do NVDA define o comportamento geral do NVDA, como o idioma da interface e se deve ou não verificar se há atualizações.
 Essa categoria contém as seguintes opções:
 
 ==== Idioma ====[GeneralSettingsLanguage]
@@ -1035,7 +1050,7 @@ Uma caixa de seleção que quando marcada informa ao leitor de tela para salvar 
 
 ==== Mostrar Opções ao Sair do NVDA ====[GeneralSettingsShowExitOptions]
 Essa opção é uma caixa de seleção que lhe permite escolher se aparecerá um diálogo perguntando que ação você pretende executar a quando do encerramento do NVDA.
-Se marcada, um diálogo aparecerá quando você tentar encerrar o NVDA, perguntando se deseja sair, reiniciar, reiniciar com complementos desativados ou instalar atualizações pendentes (se houver).
+Se marcada, um diálogo aparecerá quando você tentar encerrar o NVDA, perguntando se deseja sair, reiniciar, reiniciar com complementos desabilitados ou instalar atualizações pendentes (se houver).
 Quando desmarcada, o NVDA encerrará imediatamente.
 
 ==== Tocar Sons ao Iniciar ou Encerrar o NVDA ====[GeneralSettingsPlaySounds]
@@ -1054,19 +1069,18 @@ Os níveis de log disponíveis são:
  - Se você estiver preocupado com a privacidade, não defina o nível de log para essa opção.
 - Depuração ""[Debug]"": Além de informações, alertas e mensagens de entrada/saída, mensagens de depuração adicionais serão registradas.
  - Assim como entrada/saída, se você está preocupado com a privacidade, você não deve definir o nível de log para essa opção.
- -
--
 
-==== Iniciar o NVDA Automaticamente Após o Logon no Windows ====[GeneralSettingsStartAfterLogOn]
-Se essa opção estiver marcada, o NVDA será executado automaticamente logo que iniciar sessão no Windows.
+
+==== Iniciar o NVDA após entrar [após iniciar sessão] ====[GeneralSettingsStartAfterLogOn]
+Se essa opção estiver marcada, o NVDA será executado automaticamente logo que entrar ""[iniciar sessão]"" no Windows.
 Essa opção só estará disponível para as cópias instaladas do NVDA.
 
-==== Usar o NVDA no Logon do Windows (Requer privilégios administrativos) ====[GeneralSettingsStartOnLogOnScreen]
-Caso precise iniciar cessão no Windows através da inserção do nome de usuário e senha, ao marcar esta opção permitirá que o NVDA seja executado automaticamente no logon quando este sistema operacional for executado.
+==== Usar o NVDA durante a entrada [tela de login] (requer privilégios administrativos) ====[GeneralSettingsStartOnLogOnScreen]
+Se você entra no Windows fornecendo um nome de usuário e senha, habilitar essa opção fará o NVDA iniciar automaticamente na tela de login quando o Windows iniciar.
 Esta opção só estará disponível para as cópias instaladas do NVDA.
 
-==== Usar as opções salvas atuais no logon e outras telas seguras (requer privilégios administrativos) ====[GeneralSettingsCopySettings]
-Ao pressionar este botão, copiará as configurações atualmente salvas do usuário do NVDA para a pasta das configurações de sistema deste leitor de telas, de modo que o NVDA irá usá-las quando estiver na tela de logon, Conta de Controle de usuário (UAC) e outras telas de segurança do Windows.
+==== Usar as configurações salvas atualmente durante o login e em telas seguras (requer privilégios administrativos) ====[GeneralSettingsCopySettings]
+Ao pressionar este botão, copiará as configurações atualmente salvas do usuário do NVDA para a pasta das configurações de sistema deste leitor de telas, de modo que o NVDA irá usá-las durante o login e quando executando no Controle de Conta de Usuário (UAC) e em outras telas de segurança do Windows.
 Para certificar-se de que todas as suas opções serão transferidas, verifique em primeiro lugar se salvou suas configurações com control+NVDA+c ou através do item respectivo do Menu do NVDA.
 Essa opção só estará disponível para as cópias instaladas do NVDA.
 
@@ -1285,9 +1299,13 @@ Esta opção permite que as mensagens NVDA sejam exibidas na linha braille indef
 ==== Vincular Braille ====[BrailleTether]
 Tecla: NVDA+control+t
 
-Essa opção permite-lhe escolher se a linha Braille seguirá o cursor do sistema, o navegador de objetos / cursor de exploração, ou ambos.
+Essa opção permite-lhe escolher se a linha Braille acompanhará o foco / cursor do sistema, o navegador de objetos / cursor de exploração, ou ambos.
 Quando "automaticamente" é selecionado, o NVDA seguirá o foco do sistema e o cursor por padrão.
 Nesse caso, quando o objeto de navegação ou a posição do cursor de exploração forem alterados por meio de uma interação explícita do usuário, o NVDA irá vincular-se à exploração temporariamente, até que o foco ou o cursor se alterem.
+Se deseja que ele acompanhe apenas o foco e o cursor, é necessário configurar o braille para ser vinculado ao foco.
+Nesse caso, o braille não seguirá a navegação NVDA durante a navegação de objeto ou o cursor de exploração durante a exploração.
+Por outro lado, se deseja que o braille acompanhe a navegação de objetos e a exploração de texto, é necessário configurar o braille para ser vinculado à exploração.
+Nesse caso, o Braille não seguirá o foco e o cursor do sistema.
 
 ==== Ler por Parágrafo ====[BrailleSettingsReadByParagraph]
 Caso seja ativada, o braille será exibido por parágrafos em lugar de linhas.
@@ -1539,7 +1557,7 @@ Muitas janelas e controles mostram uma pequena mensagem (ou dica de ferramenta) 
 ==== Anunciar notificações ====[ObjectPresentationReportNotifications]
 Essa caixa de seleção, quando marcada, informa ao NVDA para anunciar balões de ajuda e notificações toast ""[brinde]"" à medida que apareçam.
 - Os Balões de Ajuda são como pequenas dicas de ferramentas, mas comumente são maiores em tamanho e estão associados com os eventos do sistema, tal como o cabo de rede ser desconectado, ou talvez para alertá-lo sobre problemas de segurança do Windows.
-- As notificações toast foram introduzidas no Windows 10 e aparecem na central de notificação na bandeja do sistema, informando sobre vários eventos (por exemplo, se uma atualização foi baixada, um novo e-mail surgiu na sua caixa de entrada, etc.).
+- As notificações toast foram introduzidas no Windows 10 e aparecem no centro de notificação na bandeja do sistema, informando sobre vários eventos (por exemplo, se uma atualização foi baixada, um novo e-mail chegou na sua caixa de entrada, etc.).
 
 
 ==== Anunciar Teclas de Atalho dos Objetos ====[ObjectPresentationShortcutKeys]
@@ -1684,6 +1702,7 @@ As opções de formatação de documentos são organizadas em grupos.
  - Nome da Fonte
  - Tamanho da Fonte
  - Atributos da Fonte
+ - Sobrescritos e subscritos
  - Ênfase
  - Estilo
  - Cores
@@ -1702,7 +1721,7 @@ As opções de formatação de documentos são organizadas em grupos.
  - Tabelas
  - Cabeçalhos de linhas/colunas
  - Coordenadas de Células
- - Bordas das Células (Desativado, Estilos, Tanto Cores como Estilos)
+ - Bordas das células (Desativado, Estilos, Tanto Cores como Estilos)
 - Elementos
  - Títulos ""[Cabeçalhos]""
  - Links
@@ -1782,15 +1801,20 @@ Essa configuração controla se os caracteres são falados por [falar caracteres
 ==== Use o novo suporte de caracteres digitados no Console do Windows quando disponível ====[AdvancedSettingsKeyboardSupportInLegacy]
 Essa opção permite um método alternativo para detectar caracteres digitados nos consoles de comando do Windows.
 Embora melhore o desempenho e evite que algumas saídas do console sejam soletradas, pode ser incompatível com alguns programas de terminal.
-Esse recurso está disponível e ativado por padrão nas versões 1607, 1703, 1709 e 1803 do Windows 10, bem como nas versões mais recentes do Windows 10 quando a UI Automation ""[Automação da Interface do Usuário]"" está indisponível ou desabilitada.
+Esse recurso está disponível e habilitado por padrão no Windows 10 versões 1607 e posteriores quando a UI Automation ""[Automação da Interface do Usuário]"" está indisponível ou desabilitada.
 Alerta: com essa opção ativada, os caracteres digitados que não aparecem na tela, como senhas, não serão suprimidos.
 Em ambientes não confiáveis, você pode desativar temporariamente [falar caracteres digitados #KeyboardSettingsSpeakTypedCharacters] e [falar palavras digitadas #KeyboardSettingsSpeakTypedWords] ao inserir senhas.
+
+==== Tentar cancelar a fala para eventos de foco expirados ====[CancelExpiredFocusSpeech]
+Essa opção habilita o comportamento que tenta cancelar a fala para eventos de foco expirados.
+Em particular, a movimentação rápida de mensagens no Gmail com o Chrome pode fazer com que o NVDA fale informações desatualizadas.
+Essa funcionalidade é experimental a partir do NVDA 2020.2.
 
 ==== Definir automaticamente o foco do sistema para elementos que podem ser focalizados no Modo de Navegação ====[BrowseModeSettingsAutoFocusFocusableElements]
 Tecla: NVDA+8
 
 Habilitada por padrão, essa opção permite escolher se o foco do sistema deve ser definido automaticamente para elementos que podem levar o foco do sistema (links, campos de formulário, etc.) ao navegar pelo conteúdo com o cursor do modo de navegação.
-Se ativado, isso representa o comportamento padrão do NVDA a partir da versão 2019.1 e anteriores.
+Se habilitado, isso representa o comportamento padrão do NVDA a partir da versão 2019.1 e anteriores.
 Desativar essa opção não irá focalizar automaticamente os elementos que podem ser focalizados quando eles são selecionados com o cursor de modo de navegação.
 Isso pode resultar em uma experiência de navegação mais rápida e melhor capacidade de resposta no modo de navegação.
 O foco ainda será atualizado para o elemento específico ao interagir com ele (por exemplo, pressionar um botão, marcar uma caixa de seleção).
@@ -1836,7 +1860,8 @@ O diálogo para a adição de regras também contém uma caixa de seleção onde
 O NVDA ignora a caixa por padrão).
 
 Finalmente, encontrará botões de opção que lhe permitem informar ao NVDA se o original deve corresponder em qualquer parte, se apenas caso seja uma palavra completa ou se será tratado como "expressão Regular".
-Configurar o original para corresponder em palavra inteira significa que a substituição será feita apenas se o original não aparecer como parte de uma palavra maior; ou seja, outro caractere que não seja alfanumérico ou uma sublinha (ou nenhum caractere) venha imediatamente antes ou depois do original.
+Configurar o original para corresponder em palavra inteira significa que a substituição será feita apenas se o original não aparecer como parte de uma palavra maior.
+Essa condição será atendida se os caracteres imediatamente antes e depois da palavra não forem uma letra, um número, ou uma sublinha, ou se não houver caracteres.
 Assim, usando o exemplo anterior de substituir a palavra "pássaro" por "sapo", caso você tenha feito isso para palavra inteira, ele não corresponderá em "pássaros" ou outra palavra que contenha a combinação pássaro.
 
 Expressão regular é um texto original que contém símbolos especiais que permitem introduzir mais de um caractere ao mesmo tempo, ou introduzir apenas números, ou só letras, segundo alguns poucos exemplos.
@@ -1995,11 +2020,12 @@ Versões portáteis do NVDA armazenam todas as configurações e complementos nu
 
 Versões instaladas armazenam suas configurações e complementos numa pasta especial do NVDA localizada no seu perfil de utilizador do Windows.
 Isto quer dizer que cada usuário do sistema pode ter suas próprias configurações do NVDA.
-Para acessar a pasta de suas configurações do NVDA de uma versão instalada, no Menu Iniciar pode ir aos programas -> NVDA -> Explorar o diretório de configurações do usuário do NVDA.
+Para abrir o diretório de configurações de qualquer lugar, você pode usar a caixa de diálogo [Definir Comandos #InputGestures] para adicionar um comando ""[gesto]"" personalizado.
+Além de uma versão instalada, no menu iniciar pode ir aos programas -> NVDA -> explorar o diretório de configurações do usuário.
 
-As configurações para o NVDA quando executado na tela de logon ou nas telas UAC são armazenadas na pasta systemConfig que se encontra na pasta de instalação do NVDA.
+As configurações para o NVDA ao executar durante a entrada ""[credenciais]"" ou nas telas do UAC ""[Controle de Conta do Usuário]"" são armazenadas na pasta systemConfig que se encontra na pasta de instalação do NVDA.
 Normalmente, não deve tocar nestas configurações.
-Para alterar a configuração do NVDA nas telas de logon/UAC, configure o NVDA como deseja enquanto tiver iniciado sessão no Windows e informe ao NVDA para copiar a configuração para a tela de logon através do botão que se encontra na categoria Geral do diálogo [Configurações do NVDA #NVDASettings].
+Para alterar a configuração do NVDA durante a entrada ou nas telas do UAC, configure o NVDA como desejar enquanto estiver conectado ao Windows, salve a configuração, e pressione o botão "usar configurações salvas atualmente durante o login e em telas seguras" na categoria Geral do diálogo [Configurações do NVDA #NVDASettings].
 
 + Ferramentas Adicionais +[ExtraTools]
 
@@ -2013,8 +2039,8 @@ Estas ações encontram-se disponíveis no menu Log do visualizador.
 ++ Visualizador de Fala ++[SpeechViewer]
 Para os desenvolvedores de software com visão ou para as pessoas que demonstram o NVDA para públicos sem quaisquer problemas relacionados com a visão, está disponível uma janela flutuante que lhes permite ver todo o texto que o NVDA fala no momento.
 
-Para ativar o visualizador de fala marque o item de menu "Visualizador de Fala" em Ferramentas no Menu do NVDA.
-Ao desmarcar esse item você o desativará.
+Para habilitar o visualizador de fala marque o item de menu "Visualizador de Fala" em Ferramentas no Menu do NVDA.
+Ao desmarcar esse item você o desabilitará.
 
 A janela do visualizador de fala contém uma caixa de seleção denominada "Mostrar visualizador de fala na inicialização".
 Se esta opção estiver marcada, o visualizador de fala será aberto quando o NVDA for iniciado.
@@ -2108,7 +2134,7 @@ De qualquer forma, ao executar uma cópia portátil do NVDA, no submenu extra de
 O diálogo para criar uma cópia portátil do NVDA ou instalar o NVDA neste PC solicitará que você escolha um caminho de pasta no qual o NVDA deve criar a cópia portátil ou no qual o NVDA deve ser instalado.
 
 Neste diálogo, você pode ativar ou desativar o seguinte:
-- Copiar a configuração atual do usuário (isso inclui os arquivos em %appdata%\roaming\NVDA ou na configuração do usuário da sua cópia portátil e inclui também complementos e outros módulos)
+- Copiar a configuração atual do usuário (isso inclui os arquivos em %appdata%\roaming\NVDA ou na configuração do usuário da sua cópia portátil e também inclui complementos e outros módulos)
 - Iniciar a nova cópia portátil após a criação ou iniciar o NVDA após a instalação (inicia o NVDA automaticamente após a criação ou instalação da cópia portátil)
 -
 
@@ -2183,7 +2209,7 @@ Esta seção contém informação sobre as linhas Braille que o NVDA suporta.
 ++ Linhas que suportam detecção automática em segundo plano ++[AutomaticDetection]
 O NVDA tem a capacidade de detectar automaticamente muitas linhas braille em segundo plano, seja via USB ou bluetooth.
 Este comportamento é conseguido selecionando a opção Automático assim como a linha braille preferida no [diálogo Configurações de Braille #BrailleSettings] do NVDA.
-Essa opção é selecionada por padrão.
+Essa opção está selecionada por padrão.
 
 As linhas a seguir suportam essa funcionalidade de detecção automática.
 - Linhas Handy Tech
@@ -2194,6 +2220,7 @@ As linhas a seguir suportam essa funcionalidade de detecção automática.
 - Optelec ALVA série 6
 - HIMS Séries Braille Sense/Braille EDGE/Smart Beetle/Sync Braille
 - Linhas Eurobraille Esys/Esytime/Iris
+- Linhas Nattiq nBraille
 -
 
 ++ Freedom Scientific Focus/PAC Mate Series ++[FreedomScientificFocus]
@@ -2499,7 +2526,7 @@ Por favor consulte a documentação da mesma para obter descrições de onde ess
 ++ HIMS Séries Braille Sense/Braille EDGE/Smart Beetle/Sync Braille ++[Hims]
 O NVDA suporta as linhas Braille Sense, Braille EDGE, Smart Beetle e Sync Braille da [Hims https://www.hims-inc.com/] quando conectadas via USB ou bluetooth.
 Caso esteja conectando via USB, você precisará instalar os drivers USB da HIMS em seu sistema.
-Você pode baixá-los daqui: https://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip
+Você pode baixá-los daqui: http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip
 
 A seguir estão as teclas de comando para essas linhas braille com o NVDA.
 Por favor consulte a documentação da mesma para obter descrições de onde essas teclas se encontram.
@@ -2783,7 +2810,7 @@ Caso conecte usando uma porta serial legada (ou um conversor de USB para serial)
 Antes de conectar seu BrailleNote Apex usando sua interface para cliente USB, você precisa instalar os drivers fornecidos pela HumanWare.
 
 No BrailleNote Apex BT, você pode usar a rodinha localizada entre os pontos 1 e 4 para vários comandos do NVDA.
-A rodinha consiste em quatro pontos direcionais, um botão de clique no centro, e uma roda que gira no sentido horário ou anti-horário.
+A rodinha consiste em quatro pontos direcionais, um botão de clique central, e uma roda que gira no sentido horário ou anti-horário.
 
 A seguir estão os comandos BrailleNote atribuídos para o NVDA.
 Por favor consulte a documentação de seu BrailleNote para informações sobre onde essas teclas se encontram.
@@ -2931,7 +2958,7 @@ Por favor, consulte a documentação da linha para descrições de onde essas te
 | tecla setaParaDireita | ponto5+espaço, joystick2Direita, setaParaDireita |
 | tecla setaParaCima | ponto1+espaço, joystick2Cima, setaParaCima |
 | tecla setaParaDireita | ponto6+espaço, joystick2Baixo, setaParaDireita |
-| tecla enter | joystick2Centro |
+| tecla enter | joystick2centro |
 | tecla pageUp | ponto1+ponto3+espaço |
 | tecla pageDown | ponto4+ponto6+espaço |
 | tecla numpad1 | ponto1+ponto6+backspace |
@@ -2980,6 +3007,22 @@ Por favor, consulte a documentação da linha para descrições de onde essas te
 | Alternar simulação de entrada de teclado HID | esytime):l1+joystick1Baixo, esytime):l8+joystick1Baixo |
 %kc:endInclude
 
+++ Linhas Nattiq nBraille ++[NattiqTechnologies]
+O NVDA suporta linhas da [Nattiq Technologies https://www.nattiq.com/] quando conectada via USB.
+O Windows 10 detecta as Linhas Braille depois de conectada, pode ser necessário instalar controladores ""[drivers]"" USB se você estiver usando versões mais antigas do Windows (abaixo do Win10).
+Você pode obtê-los no site do fabricante.
+
+A seguir estão as atribuições de teclas das linhas da Nattiq Technologies com o NVDA.
+Consulte a documentação da linha para obter descrições de onde essas teclas podem ser encontradas.
+%kc:beginInclude
+|| Nome | Tecla |
+| Rolar a linha braille para trás | cima |
+| Rolar a linha braille para frente | baixo |
+| Mover a linha braille para a linha anterior | esquerda |
+| Mover a linha braille para a próxima linha | direita |
+| Guiar para a cela braille | sensor |
+%kc:endInclude
+
 ++ BRLTTY ++[BRLTTY]
 O [BRLTTY https://www.brltty.com/] é um programa adicional que pode ser usado para suportar muito mais linhas Braille.
 Para usá-lo, será necessário instalar o [BRLTTY para Windows https://www.brltty.com/download.html].
@@ -2992,7 +3035,7 @@ Portanto, a configuração da tabela braille para entrada no NVDA não é releva
 O BRLTTY não está envolvido na funcionalidade automática de detecção de linha braille em segundo plano do NVDA.
 
 A seguir encontram-se os comandos do BRLTTY para o NVDA.
-Por favor consulte as [tabelas de documentação de teclas para o BRLTTY https://mielke.cc/brltty/doc/drivers/] para obter informações sobre como estão mapeados os comandos do BRLTTY para controlar cada linha braille.
+Por favor consulte as [tabelas de documentação de teclas para o BRLTTY http://mielke.cc/brltty/doc/drivers/] para obter informações sobre como estão mapeados os comandos do BRLTTY para controlar cada linha braille.
 %kc:beginInclude
 | Nome | Comando BRLTTY |
 | Rolar linha braille para trás | fwinlt (caminha uma janela à esquerda) |
@@ -3036,20 +3079,20 @@ A seguir estão as opções de linha de comando para o NVDA:
 | -l NÍVELDELOG | --log-level=NÍVELDELOG | O nível mais baixo de mensagem registrada (depuração 10, entrada/saída 12, alerta de depuração 15, informação 20, alerta 30, erro 40, crítico 50, desativado 100), o padrão é alerta |
 | -c CAMINHODASCONFIGURAÇÕES | --config-path=CAMINHODASCONFIGURAÇÕES | O caminho onde todas as configurações do NVDA são armazenadas |
 | -m | --minimal | Sem sons, sem interface, sem mensagem de início, etc. |
-| -s | --secure | Modo seguro: desabilita o console Python, recursos de perfil como criação, exclusão, renomeação de perfis etc., verificação de atualização, algumas caixas de diálogo no diálogo de boas-vindas e na categoria de configurações gerais (por exemplo, iniciar o NVDA após o logon, salvar a configuração após a saída etc.), bem como os recursos de visualizador de log e registração de eventos (geralmente usados em telas seguras). Observe também que esse comando desativará a possibilidade de salvar as definições ""[configurações]"" na configuração do sistema e o mapa de comandos ""[gestos]"" não serão salvos no disco. |
+| -s | --secure | Modo seguro: desabilita o console Python, recursos de perfil como criação, exclusão, renomeação de perfis etc., verificação de atualização, algumas caixas de diálogo no diálogo de boas-vindas e na categoria de configurações gerais (por exemplo, usar o NVDA durante o login, salvar a configuração após a saída etc.), bem como os recursos de visualizador de log e registração de eventos (geralmente usados em telas seguras). Observe também que esse comando desativará a possibilidade de salvar as definições ""[configurações]"" na configuração do sistema e o mapa de comandos ""[gestos]"" não serão salvos no disco. |
 | Nenhuma | --disable-addons | Complementos não funcionarão |
 | Nenhuma | --debug-logging | Ative o log de nível de depuração apenas para esta execução. Esta configuração substituirá qualquer outro argumento de nível de log ( ""--loglevel"", -l) fornecido, incluindo nenhuma opção de log. |
-| Nenhuma | --no-logging | Desativa completamente o registro ""[log]"" enquanto estiver usando o NVDA. Essa configuração pode ser sobrescrita se um nível de log ( ""--loglevel"", -l) for especificado na linha de comando ou se o log de depuração estiver ativado. |
+| Nenhuma | --no-logging | Desativa completamente o registro ""[log]"" enquanto estiver usando o NVDA. Essa configuração pode ser substituída se um nível de log ( ""--loglevel"", -l) for especificado na linha de comando ou se o log de depuração estiver ativado. |
 | Nenhuma | --no-sr-flag | Não altere o sinalizador ""[flag]"" de leitor de tela global do sistema |
 | Nenhuma | --install | Instala o NVDA (iniciando a cópia recém-instalada) |
 | Nenhuma | --install-silent | Instala silenciosamente o NVDA (não inicia a cópia recém-instalada) |
-| Nenhuma | --enable-start-on-logon=True|False | Ao instalar, ativa o [início do NVDA na tela de logon #StartAtWindowsLogon] |
+| Nenhuma | --enable-start-on-logon=True|False | Ao instalar, habilita [Usar NVDA durante a entrada do Windows #StartAtWindowsLogon] do NVDA |
 | Nenhuma | --create-portable | Cria uma cópia portátil do NVDA (iniciando a cópia recém criada). Requer --portable-path a ser especificado |
 | Nenhuma | --create-portable-silent | Cria uma cópia portátil do NVDA (não inicia a cópia recém-instalada). Requer --portable-path a ser especificado |
 | Nenhuma | --portable-path=CAMINHOPARAPORTÁTIL | O caminho em que uma cópia portátil será criada |
 
 ++ Parâmetros do Sistema ++[SystemWideParameters]
-O NVDA permite que alguns valores sejam definidos no registro do sistema, o que altera o comportamento geral do sistema do NVDA.
+O NVDA permite que alguns valores sejam definidos no registro do sistema, o que altera o comportamento do NVDA em todo o sistema.
 Esses valores são armazenados no registro em uma das seguintes chaves:
 - Sistema 32-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
 - Sistema 64-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
