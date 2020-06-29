@@ -59,10 +59,14 @@ Het betreft braillecodes voor verkort en onverkort Braille alsmede computerbrail
 ++ Licentie en Copyright ++[LicenseAndCopyright]
 NVDA is auteursrechtelijk beschermd NVDA_COPYRIGHT_YEARS NVDA contributors.
 
-Voor NVDA geldt de GNU General Public License (Versie 2).
+NVDA is beschikbaar op basis van de GNU General Public License (Versie 2) waarop 2 specifieke uitzonderingen zijn.
+Deze uitzonderingen staan omschreven in het document inhoudende de licentietekst in de paragrafen "Non-GPL Components in Plugins en Drivers" alsmede "Microsoft Distributable Code".
+NVDA omvat en maakt ook gebruik van componenten die beschikbaar zijn op basis van verschillende gratis en open source licenties.
 De software mag met anderen worden gedeeld of naar believen worden aangepast onder voorwaarde dat de licentie tezamen met de 	software wordt verspreid en de volledige broncode ter beschikking wordt gesteld aan iedereen die dat wil.
 Dit is van toepassing voor zowel originele als aangepaste kopieën van de software alsmede voor software die gebruik maakt van code uit de NVDA-software.
+
 Voor verdere bijzonderheden kunt u  de volledige licentie [raadplegen. https://www.gnu.org/licenses/old-licenses/gpl-2.0.html]
+Voor details betreffende uitzonderingen kunt u het licentiedocument raadplegen in het NVDA-menu onder "help".
 
 + Systeemvereisten +[SystemRequirements]
 - Besturingssystemen: alle 32-bit en 64-bit edities van Windows 7, Windows 8, Windows 8.1, Windows 10, alsmede alle Server-besturingssystemen vanaf Windows Server 2008 R2.
@@ -367,10 +371,7 @@ Wanneer u naar een object navigeert, kuntu de inhoud ervan bekijken met de [comm
 Wanneer  [Focusuitlichting  #VisionFocusHighlight] geactiveerd is, wordt de plaats waar het huidige navigator Object zich bevindt ook zichtbaar weergegeven.
 Standaard wordt in NVDA de object navigator tegelijk met de systeemfocus verplaatst, maar deze koppeling kan aan- en uitgezet worden.
 
-Merk op dat braille standaard zowel de [focus #SysteemFocus] en [Systeem- / tekstcursor #SysteemCursor] volgt alsmede objectnavigatie en de leescursor.
-Als u wilt dat alleen de focus en systeemcursor gevolgd worden, moet u [braille koppelen aan de focus #BrailleTether].
-In dit geval zal braille objectnavigatie en tekstreview niet volgen.
-Als u wilt dat objectnavigatie en de leescursor juist wel gevolgd worden, moet u [braille koppelen aan de leescursor #BrailleThether].
+Merk op dat u Braille objectnavigatie kunt laten volgen met behulp van [Braille Koppelen #BrailleTether].
 
 Voor objectnavigatie zijn de volgende toetscombinaties beschikbaar:
 
@@ -398,8 +399,7 @@ Bij het verplaatsen van de leescursor (review cursor) volgt de tekstcursor niet 
 Standaard wordt de leescursor echter gelijktijdig verplaatst wanneer de tekstcursor verplaatst wordt. 
 Deze koppeling kan in- en uitgeschakeld worden.
 
-Braille volgt normaalgesproken de [focus #SystemFocus] en [systeemcursor #SystemCaret] en niet de objectnavigatie en de review cursor.
-Als de braille uitvoer de objectnavigatie en tekst review moet volgen, [configureert u braille om de review cursor te volgen #BrailleTether].
+Merk op dat u Braille de leescursor  kunt laten volgen met behulp van [Braille Koppelen #BrailleTether].
 
 Voor het nalezen van tekst kunt u de volgende toetscombinaties gebruiken:
 %kc:beginInclude
@@ -419,7 +419,7 @@ Voor het nalezen van tekst kunt u de volgende toetscombinaties gebruiken:
 | In de leesmodus naar het einde van de regel gaan | shift+numeriek3 | NVDA+End | geen | De leescursor wordt naar het einde van de huidige tekstregel verplaatst |
 | Alles voorlezen in leesmodus | numeriek Plus | NVDA+shift+a | Veeg omlaag met 3 vingers (tekstmodus) | Leest vanaf de huidige positie van de leescursor waarbij de leescursor zich mee beweegt. |
 | Selecteer, kopieer dan vanaf leescursor | NVDA+f9 | NVDA+f9 | geen | Start het selectie- en daaropvolgend kopieerproces vanaf de huidige positie van de leescursor. De feitelijke actie wordt pas uitgevoerd zodra aan NVDA wordt doorgegeven waar het tekstgebied eindigt. |
-| Selecteer, kopieer dan tot leescursor | NVDA+f10 | NVDA+f10 | geen | Bij de eerste maal drukken wordt tekst geselecteerd vanaf het eerder ingestelde beginpunt tot einde inclusief de huidige positie van de leescursor. Nadat de toetscombinatie de 2de keer wordt ingedrukt wordt de tekst naar het klembord gekopieerd. |
+| Selecteer, kopieer dan tot leescursor | NVDA+f10 | NVDA+f10 | geen | Bij de eerste maal drukken wordt tekst geselecteerd vanaf het eerder ingestelde beginpunt tot einde inclusief de huidige positie van de leescursor. Als de systeemcursor bij de tekst kan komen, zal die naar de geselecteerde tekst worden verplaatst. Nadat de toetscombinatie de 2de keer wordt ingedrukt wordt de tekst naar het klembord gekopieerd. |
 |Verplaats naar ingesteld beginpunt voor kopie in leesmodus | NVDA+shift+f9 | NVDA+shift+f9 | geen | Verplaatst  leescursor naar het eerder ingestelde beginpunt voor kopie |
 | Tekstopmaak weergeven | NVDA+f | NVDA+f | geen | NVDA laat horen hoe de tekst waarin de leescursor zich bevindt, is opgemaakt. Bij tweemaal drukken krijgt u de informatie in bladermodus. |
 | Actuele symboolvervanging melden| geen | geen | geen | Het symbool waarbij de leescursor zich bevindt wordt uitgesproken. Bij tweemaal drukken wordt het symbool en de voor het benoemen hiervan gebruikte tekst weergegeven in bladermodus. |
@@ -897,7 +897,18 @@ Door een formulierveld te selecteren en op Enter of de Ga naar knop te drukken, 
 %kc:beginInclude
 Eventuele opmerkingen voor de cel die momenteel de focus heeft, kunt u laten horen door NVDA+alt+c in te drukken.
 %kc:endInclude
-Alle opmerkingen voor het werkblad kunnen ook worden weergegeven in de NVDA Elementenlijst.
+Alle opmerkingen voor het werkblad kunnen ook worden weergegeven in de NVDA Elementenlijst  door op NVDA+f7 te drukken.
+
+NVDA kan ook een speciaal dialoogvenster weergeven  voor het toevoegen of bewerken van een bepaalde opmerking.
+NVDA overschrijft het oorspronkelijke van MS Excel afkomstige invoerveldd voor opmerkingen vanwege toegankelijkheidsbeperkingen, maar de toetscombinatie om het dialoogvenster op te roepen  wordt aan MS Excel ontleend en werkt daarom ook zonder dat NVDA draait.
+%kc:beginInclude
+Om een opmerking toe te voegen of te bewerken in een cel die de focus heeft, drukt u op shift+f2.
+%kc:endInclude
+
+Deze toetscombinatie komt niet voor  en kan niet worden aangepast in de dialoog invoerhandelingen van NVDA. 
+
+Merk op dat u het invoergebied voor opmerkingen in MS Excel ook kunt openen vanuit het contextmenu van elke willekeurige cel van het werkblad.
+Hiermee opent u evenwel het ontoegankelijke invoerveld voor opmerkingen en niet het NVDA-specifieke dialoogvenster.
 
 +++ Beveiligde Cellen Lezen +++[ExcelReadingProtectedCells]
 Als een werkmap beveiligd is, kan het zijn dat bepaalde cellen die niet mogen worden bewerkt, de focus niet kunnen krijgen.
@@ -1292,9 +1303,13 @@ Met deze optie kunnen NVDA-meldingen voor onbepaalde tijd op de brailleleesregel
 ==== Braille koppelen ====[BrailleTether]
 Toets: NVDA+control+t
 
-Hiermee kunt u bepalen of de leesregel de systeemfocus, het navigatorobject / de reviewcursor of beide moet volgen
+Hiermee kunt u bepalen of de leesregel de systeemfocus / systeemcursor, het navigatorobject / de reviewcursor of beide moet volgen
 Wanneer u "automatisch" selecteert, zal NVDA de systeemfocus en systeemcursor standaard volgen.
 In dit geval zal NVDA, bij wisseling van positie met betrekking tot navigatorobject of de reviewcursor door toedoen van de gebruiker, tijdelijk overgaan naar de review-modus, tot de focus of de systeemcursor verandert.
+Als u wilt dat alleen focus en caret gevolgd worden moet u een braillekoppeling  met de focus instellen.
+In dit geval zal braille de NVDA navigator tijdens objectnavigatie of de leescursor bij het lezen niet volgen
+Als u wilt dat braille in plaats daarvan objectnavigatie en tekst-review volgt, moet u een braillekoppeling met  review instellen.
+In dit geval  zal Braille  de systeemfocus en systeemaanwijzer niet volgen.
 
 ==== Lezen per alinea ====[BrailleSettingsReadByParagraph]
 Als deze optie is ingeschakeld, zal braille per alinea in plaats van per regel worden weergegeven.
