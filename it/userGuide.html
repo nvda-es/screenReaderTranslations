@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>NVDA 2020.1-dev Manuale utente</TITLE>
+<TITLE>NVDA 2020.2-dev Manuale utente</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>NVDA 2020.1-dev Manuale utente</H2>
+<H2>NVDA 2020.2-dev Manuale utente</H2>
 </CENTER>
 
 
@@ -31,7 +31,7 @@
     <LI><A HREF="#InstallingNVDA">3.2. Installazione di NVDA</A>
       <UL>
       <LI><A HREF="#InstallWithIncompatibleAddons">3.2.1. Avviso sui componenti aggiuntivi non compatibili</A>
-      <LI><A HREF="#StartAtWindowsLogon">3.2.2. Esegui NVDA al logon di Windows</A>
+      <LI><A HREF="#StartAtWindowsLogon">3.2.2. Avvia all'accesso utente</A>
       <LI><A HREF="#CreateDesktopShortcut">3.2.3. Crea collegamento per il desktop e il tasto rapido (Control+alt+n)</A>
       <LI><A HREF="#CopyPortableConfigurationToCurrentUserAccount">3.2.4. Copia la configurazione portable nelle impostazioni dell'utente attuale</A>
       </UL>
@@ -213,7 +213,8 @@
     <LI><A HREF="#EcoBraille">15.15. EcoBraille</A>
     <LI><A HREF="#SuperBraille">15.16. SuperBraille</A>
     <LI><A HREF="#Eurobraille">15.17. Display Eurobraille Esys/Esytime/Iris</A>
-    <LI><A HREF="#BRLTTY">15.18. BRLTTY</A>
+    <LI><A HREF="#NattiqTechnologies">15.18. Display Braille Nattiq serie N</A>
+    <LI><A HREF="#BRLTTY">15.19. BRLTTY</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">16. Argomenti avanzati</A>
     <UL>
@@ -256,7 +257,7 @@ Le caratteristiche principali possono essere riassunte nei seguenti punti:
 <LI>Tradotto in 54 lingue
 <LI>Supporto ai sistemi operativi più moderni, comprese le edizioni a 32 e 64 bit
 <LI>Supporto al prompt dei comandi di Windows e alle applicazioni lanciate da console
-<LI>Gestione delle videate di logon e quelle relative alla sicurezza
+<LI>Gestione delle schermate di accesso utente e quelle relative alla sicurezza
 <LI>Lettura di testo e controlli  mentre si utilizza un touch screen.
 <LI>Supporto alle interfacce più comuni per l'accessibilità, come Microsoft Active Accessibility, Java Access Bridge, IAccessible2 e UI Automation.
 <LI>Capacità di evidenziare il focus di sistema.
@@ -338,7 +339,7 @@ In seguito verrà richiesto se installare NVDA sul disco fisso, se creare una ve
 </P>
 <P>
 Se si desidera utilizzare spesso NVDA sul computer, è consigliabile scegliere di installare NVDA nel sistema.
-L'installazione comporta alcuni vantaggi, come la possibilità di avviarsi automaticamente dopo il login, la lettura delle finestre di Logon e le schermate generate dal controllo utente per la sicurezza (UAC), ed inoltre verrà creata  un'icona sul desktop e una voce sul menu avvio, tutte caratteristiche non presenti nella versione portable.
+L'installazione comporta alcuni vantaggi, come la possibilità di avviarsi automaticamente dopo il login dell'utente, la lettura delle finestre di accesso e le schermate generate dal controllo utente per la sicurezza (UAC), ed inoltre verrà creata  un'icona sul desktop e una voce sul menu avvio, tutte caratteristiche non presenti nella versione portable.
 Si ricorda che una volta installato NVDA, sarà sempre possibile creare una copia portable in qualsiasi momento.
 </P>
 <P>
@@ -392,7 +393,7 @@ Si veda la <A HREF="#incompatibleAddonsManager">sezione componenti aggiuntivi no
 </P>
 
 <A NAME="StartAtWindowsLogon"></A>
-<H4>3.2.2. Esegui NVDA al logon di Windows</H4>
+<H4>3.2.2. Avvia all'accesso utente</H4>
 
 <P>
 Questa opzione permette di stabilire se NVDA debba automaticamente avviarsi o meno alla finestra di logon di Windows, prima di inserire la password.
@@ -2534,7 +2535,7 @@ Questa opzione è costituita da una casella di controllo che, se attivata, perme
 <P>
 Una casella combinata che permette di stabilire l'ammontare delle informazioni che NVDA scriverà sul suo file di log. 
 La maggior parte degli utenti non avrà bisogno di modificare questo parametro.
-Tuttavia nel caso si vogliano segnalare bug, può essere una buona idea alzare il livello di log, oppure disattivare completamente la funzione.
+Tuttavia, nel caso si vogliano segnalare bug, può essere una buona idea alzare il livello di log; naturalmente è anche possibile disattivare completamente la funzione.
 </P>
 <P>
 I livelli di log disponibili sono i seguenti:
@@ -2551,27 +2552,45 @@ I livelli di log disponibili sono i seguenti:
 <LI>Debug: Oltre alle informazioni, agli avvisi e ai messaggi di input / output, verranno loggati ulteriori messaggi di debug. 
  <UL>
  <LI>Proprio come input / output, Se vi sono problemi con la privacy, non abilitare mai questa funzione.
--
- <P></P>
-==== Esegui NVDA all'avvio di Windows ====[GeneralSettingsStartAfterLogOn]
-Una casella di controllo che, se attivata, permetterà a NVDA di avviarsi subito dopo la schermata di Logon del sistema operativo.
+ </UL>
+</UL>
+
+<A NAME="GeneralSettingsStartAfterLogOn"></A>
+<H5>Esegui NVDA dopo l'accesso</H5>
+
+<P>
+Una casella di controllo che, se attivata, permetterà a NVDA di avviarsi subito dopo che l'utente avrà inserito i propri dati nella schermata di accesso al sistema.
 Questa opzione è disponibile soltanto nelle versioni Installer.
- <P></P>
-==== Utilizza NVDA nella finestra di Logon, richiede privilegi di amministratore ====[GeneralSettingsStartOnLogOnScreen]
-Se si dispone di un sistema nel quale bisogna inserire nome e password durante la schermata di Logon, attivare questa casella di controllo per fare in modo che NVDA sia in grado di leggere questo tipo di informazioni.
+</P>
+
+<A NAME="GeneralSettingsStartOnLogOnScreen"></A>
+<H5>Utilizza NVDA nella finestra di Accesso, richiede privilegi di amministratore</H5>
+
+<P>
+Se si dispone di un sistema nel quale bisogna inserire nome e password per accedere al sistema, attivare questa casella di controllo per fare in modo che NVDA sia in grado di leggere questo tipo di informazioni.
 Questa opzione è disponibile soltanto nelle versioni Installer.
- <P></P>
-==== Utilizza le impostazioni salvate nella finestra di Logon ====[GeneralSettingsCopySettings]
-La pressione di questo tasto copierà le proprie impostazioni utente di NVDA nella cartella delle configurazioni di sistema, di modo che NVDA le possa utilizzare nelle schermate di Logon, nei controlli UAC e così via.
-Per precauzione, se si vuole essere certi che le proprie impostazioni vengano copiate correttamente, conviene salvare la configurazione con il comando Control+NVDA+c, oppure andare alla voce Salvare Configurazione nel menu di NVDA.
+</P>
+
+<A NAME="GeneralSettingsCopySettings"></A>
+<H5>Utilizza le impostazioni salvate nella finestra di Accesso</H5>
+
+<P>
+La pressione di questo tasto copierà le proprie impostazioni utente di NVDA nella cartella delle configurazioni di sistema, di modo che NVDA le possa utilizzare nelle schermate di Accesso utente, nei controlli UAC e così via.
+Per precauzione, se si vuole essere certi che le proprie impostazioni vengano copiate correttamente, conviene salvare la configurazione con il comando Control+NVDA+c, oppure andare alla voce Salva Configurazione nel menu di NVDA.
 Questa opzione è disponibile soltanto nelle versioni Installer.
- <P></P>
-==== Controlla automaticamente la presenza di aggiornamenti di NVDA ====[GeneralSettingsCheckForUpdates]
+</P>
+
+<A NAME="GeneralSettingsCheckForUpdates"></A>
+<H5>Controlla automaticamente la presenza di aggiornamenti di NVDA</H5>
+
+<P>
 Se attivata, NVDA controllerà automaticamente la presenza di nuove versioni e notificherà l'utente della loro disponibilità.
 è anche possibile controllare manualmente, selezionando la voce controllo presenza aggiornamenti, situata all'interno del menu aiuto.
 A prescindere dal metodo scelto per controllare la presenza di aggiornamenti, è necessario che NVDA invii al server alcune informazioni in modo da ricevere l'aggiornamento corretto per il proprio sistema.
 Verranno sempre inviate le seguenti informazioni:
- </UL>
+</P>
+
+<UL>
 <LI>Versione di NVDA
 <LI>Versione del sistema operativo in uso
 <LI>Se il sistema operativo è a 64 o a 32 bit
@@ -3248,7 +3267,7 @@ Questa funzione risulta disponibile soltanto se l'opzione Leggi errori di ortogr
 
 <P>
 Quest'opzione permette all'utente di controllare se le pressioni di tasti, generate da programmi che si basano sul riconoscimento vocale o sulle tastiere a schermo, debbano essere processate da NVDA.
-L'opzione risulta attiva di default, sebbene alcuni utenti che utilizzano la lingua di immissione Vietnamita dovrebbero disattivare questa funzione.
+L'opzione risulta attiva di default, sebbene alcuni utenti che utilizzano la lingua di immissione Vietnamita dovrebbero disattivare questa funzione nel caso si servano del software di scrittura Unikey.
 </P>
 
 <A NAME="toc89"></A>
@@ -3675,6 +3694,7 @@ Le opzioni di formattazione documento sono divise in gruppi.
  <LI>Commenti
  <LI>Revisioni
  <LI>Errori ortografici
+ <LI>Apici e pedici
  </UL>
 <LI>Pagine e spaziatura
  <UL>
@@ -3828,7 +3848,7 @@ Questa impostazione controlla il comportamento di due funzioni di NVDA, ossia <A
 <P>
 Questa opzione attiva un metodo alternativo per la rilevazione dei caratteri digitati nella console di Windows.
 Se da un lato migliora sensibilmente le prestazioni e previene alcuni errori di gestione del testo, può risultare non compatibile con alcuni programmi di terminale.
-Questa funzionalità è disponibile e abilitata per impostazione predefinita nelle versioni di Windows 10 1607, 1703, 1709 e 1803, nonché nelle versioni più recenti di Windows 10 quando UI Automation non è disponibile o è disabilitata.
+Questa funzionalità è disponibile e abilitata per impostazione predefinita nelle versioni di Windows 10 1607 e successive quando UI Automation non è disponibile o è disabilitata.
 Attenzione: con questa opzione abilitata, i caratteri digitati che non compaiono sullo schermo, come le password, verranno letti ugualmente.
 In ambienti non sicuri, è preferibile disattivare temporaneamente <A HREF="#KeyboardSettingsSpeakTypedCharacters">Leggi i caratteri digitati</A> e <A HREF="#KeyboardSettingsSpeakTypedWords">leggi le parole digitate</A> durante l'inserimento di password.
 </P>
@@ -4168,7 +4188,8 @@ Le versioni portabili di NVDA registrano tutte le impostazioni, i moduli persona
 <P>
 Le versioni installer di NVDA registrano tutte le impostazioni, i moduli personalizzati per le applicazioni e i driver in una cartella speciale situata nei profili utente di Windows. 
 Ciò significa che ciascun utente del sistema potrà avere le proprie impostazioni. 
-Per accedere a tale cartella, sarà sufficiente aprire il menu avvio, selezionare programmi - NVDA- esplora le impostazioni utente.
+Per accedere a tale cartella da qualsiasi punto ci si trovi, è possibile servirsi della <A HREF="#InputGestures">Finestra di dialogo Tasti e Gesti di immissione</A> per aggiungere un gesto personalizzato.
+Inoltre, solo per le versioni di NVDA installato nel sistema, sarà sufficiente aprire il menu avvio, selezionare programmi - NVDA- esplora le impostazioni utente.
 </P>
 <P>
 Le impostazioni di NVDA per quanto riguarda il proprio funzionamento nelle schermate di Logon o UAC sono salvate nella cartella systemConfig situata nella directory di installazione di NVDA.
@@ -4435,6 +4456,7 @@ Segue l'elenco di tutti i display braille che supportano il rilevamento automati
 <LI>Alva serie 6 di Optelec
 <LI>modelli Braille Sense/Braille EDGE/Smart Beetle/Sync della Hims.
 <LI>Display Esys/Esytime/Iris di Eurobraille
+<LI>Display Braille Nattiq serie N
 </UL>
 
 <A NAME="FreedomScientificFocus"></A>
@@ -6838,8 +6860,48 @@ Consultare la documentazione della barra braille per informazioni sulla posizion
 </TR>
 </TABLE>
 
+<A NAME="NattiqTechnologies"></A>
+<H3>15.18. Display Braille Nattiq serie N</H3>
+
+<P>
+NVDA supporta i display braille prodotti dalla <A HREF="https://www.nattiq.com/">Nattiq Technologies</A> se connessi via USB.
+Windows 10 rileva automaticamente la barra braille non appena connessa, mentre è necessario installare i driver manualmente nel caso si utilizzi una versione di Windows più vecchia di Windows10.
+è possibile scaricare i driver dal sito web dell'azienda.
+</P>
+<P>
+Seguono i tasti che sono stati associati per questi modelli a NVDA.
+Consultare la documentazione della barra braille per informazioni sulla posizione dei tasti.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tasto</TH>
+</TR>
+<TR>
+<TD>Scorri display braille indietro back</TD>
+<TD>su</TD>
+</TR>
+<TR>
+<TD>Scorri Display Braille avanti</TD>
+<TD>giù</TD>
+</TR>
+<TR>
+<TD>Sposta display braille alla riga precedente</TD>
+<TD>sinistra</TD>
+</TR>
+<TR>
+<TD>Sposta Display Braille alla riga successiva</TD>
+<TD>destra</TD>
+</TR>
+<TR>
+<TD>Funzioni di cursor routing</TD>
+<TD>routing</TD>
+</TR>
+</TABLE>
+
 <A NAME="BRLTTY"></A>
-<H3>15.18. BRLTTY</H3>
+<H3>15.19. BRLTTY</H3>
 
 <P>
 <A HREF="https://www.brltty.com">BRLTTY</A> è un programma a parte del quale è possibile avvalersi per avere supporto per molte altre barre braille. 
