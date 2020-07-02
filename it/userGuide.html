@@ -301,13 +301,18 @@ NVDA inoltre supporta moltissimi tipi di tabelle braille, permettendo quindi un 
 <H3>1.5. Licenza e Copyright</H3>
 
 <P>
-NVDA  copyright 2006-2020 NVDA contributors.
+NVDA è copyright 2006-2020 NVDA contributors.
 </P>
 <P>
-NVDA è coperto dalla licenza GNU versione 2. 
+NVDA è coperto dalla GNU General Public License versione 2, con due eccezioni speciali.
+Le eccezioni sono descritte nel documento di licenza nelle sezioni "Non-GPL Components in Plugins and Drivers" e "Microsoft Distributable Code".
+NVDA include e utilizza anche componenti resi disponibili con diverse licenze gratuite e open source.
 Siete liberi di condividere e modificare questo programma come volete, a patto che voi distribuiate la licenza assieme al software e rendiate disponibile il sorgente a chiunque ne faccia richiesta. 
 Questo si applica a copie originali e modificate del software ed a qualsiasi programma che utilizzi codice proveniente da questo software.
+</P>
+<P>
 Per maggiori informazioni è possibile <A HREF="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">Leggere l'intera licenza.</A>
+Per i dettagli relativi alle eccezioni, accedere al documento di licenza dal menu NVDA nella sezione "Guida".
 </P>
 
 <A NAME="SystemRequirements"></A>
@@ -902,10 +907,7 @@ Quando <A HREF="#VisionFocusHighlight">l'evidenziatore del focus</A> è attivato
 Da impostazioni predefinite, il navigatore ad oggetti si sposta in concomitanza con il focus di sistema, tuttavia questo comportamento può essere modificato, attivando o disattivando la relativa opzione.
 </P>
 <P>
-Si noti che il display braille da impostazioni predefinite è in grado di seguire sia il <A HREF="#SystemFocus">focus</A> e il <A HREF="#SystemCaret">Cursore di Sistema</A>, sia il Navigatore ad oggetti e il cursore di controllo.
-Se si desidera che il braille segua soltanto il focus e il cursore di sistema, sarà necessario <A HREF="#BrailleTether">configurare il braille affinché segua</A> il focus.
-In questo caso, il display braille non seguirà più il cursore mentre si usa la navigazione ad oggetti o in linea.
-Se invece si desidera che il braille segua il navigatore ad oggetti e la navigazione in linea, è necessario <A HREF="#BrailleTether">configurare il braille affinché segua</A> il cursore di controllo.
+Nota: le opzioni braille inerenti l'inseguimento del focus e la navigazione ad oggetti possono essere configurate tramite le funzioni di <A HREF="#BrailleTether">Inseguimento Braille</A>.
 </P>
 <P>
 Per navigare ad oggetti, utilizzare i tasti seguenti:
@@ -1002,8 +1004,7 @@ Comunque, da impostazioni predefinite, quando il cursore di sistema si sposta, i
 Tale impostazione può essere modificata attivandola o disattivandola.
 </P>
 <P>
-Si noti che il display braille da impostazioni predefinite segue il <A HREF="#SystemFocus">focus</A> e il <A HREF="#SystemCaret">Cursore di Sistema</A>, piuttosto che il Navigatore ad oggetti  o la Navigazione in linea.
-Se si desidera che il braille segua invece la navigazione ad oggetti o quella in linea, sarà necessario modificare l'opzione "Il Display Braille Segue", impostandola su "cursore di controllo".
+Nota: è possibile gestire il modo in cui il display braille si aggancia al cursore di controllo attraverso le opzioni <A HREF="#BrailleTether">Inseguimento Braille</A>.
 </P>
 <P>
 Sono disponibili i seguenti tasti caldi per esplorare il testo:
@@ -1127,7 +1128,7 @@ Sono disponibili i seguenti tasti caldi per esplorare il testo:
 <TD>NVDA+f10</TD>
 <TD>NVDA+f10</TD>
 <TD>Nessuno</TD>
-<TD>Una singola pressione seleziona il testo dalla posizione iniziale impostata in precedenza fino alla posizione attuale del cursore di controllo, incluso il carattere in cui si trova. Una seconda pressione copierà il testo negli appunti di Windows</TD>
+<TD>Una singola pressione seleziona il testo dalla posizione iniziale impostata in precedenza fino alla posizione attuale del cursore di controllo, incluso il carattere in cui si trova. Se possibile, il cursore di sistema si sposterà al testo selezionato.  Una seconda pressione copierà il testo negli appunti di Windows</TD>
 </TR>
 <TR>
 <TD>Spostare il cursore di controllo al marcatore iniziale per la copia</TD>
@@ -2232,7 +2233,19 @@ Selezionando un campo premendo invio o utilizzando il pulsante "vai a" provocher
 
 <P>
 Per far in modo che NVDA legga i commenti della cella evidenziata, premere NVDA+alt+c.
-Si noti che tutti i commenti del foglio di lavoro possono essere raggiunti anche dall'elenco elementi.
+Si noti che tutti i commenti del foglio di lavoro possono essere raggiunti anche dall'elenco elementi premendo NVDA+f7.
+</P>
+<P>
+NVDA può anche visualizzare una finestra di dialogo specifica per l'aggiunta o la modifica di un determinato commento.
+NVDA va a modificare il campo editazione messo a disposizione da MS Excel per aggirare un problema di accessibilità, ma la combinazione di tasti messa a disposizione funziona indipendentemente dal fatto che NVDA sia in esecuzione o meno.
+Per aggiungere o modificare un determinato commento, in una cella focalizzata, premere shift+f2.
+</P>
+<P>
+Questa combinazione di tasti non può essere modificata e non compare nella finestra tasti e gesti di immissione di NVDA.
+</P>
+<P>
+Nota: è possibile aprire l'area di modifica dei commenti in MS Excel anche dal menu contestuale di qualsiasi cella del foglio di lavoro.
+Tuttavia, questa operazione farà comparire la regione di modifica inaccessibile, non quella messa a punto da NVDA..
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -2989,6 +3002,10 @@ Tasto: NVDA+control+t
 Questa impostazione permette di decidere se il display braille seguirà il focus di sistema, il navigatore ad oggetti (cursore di controllo) o entrambi.
 Quando è selezionata "automatico", il braille seguirà il focus e il cursore di sistema.
 Tuttavia, nel momento in cui l'utente compie un'azione esplicita cambiando la posizione del cursore di controllo o del navigatore ad oggetti, il braille inizierà temporaneamente a seguire quest'ultimi,  fino a quando non verrà modificata la posizione del cursore di sistema.
+Se si desidera che il braille segua sempre il focus/cursore di sistema, configurare questa funzione su "Braille segue Focus".
+Così facendo, il braille non seguirà mai il navigatore ad oggetti o il cursore di controllo.
+Se si desidera che il braille segua sempre il cursore di controllo o il navigatore ad oggetti, configurare questa funzione su "Braille segue cursore di controllo".
+Così facendo, il braille non seguirà mai il focus / cursore di sistema.
 </P>
 
 <A NAME="BrailleSettingsReadByParagraph"></A>
@@ -3853,6 +3870,13 @@ Attenzione: con questa opzione abilitata, i caratteri digitati che non compaiono
 In ambienti non sicuri, è preferibile disattivare temporaneamente <A HREF="#KeyboardSettingsSpeakTypedCharacters">Leggi i caratteri digitati</A> e <A HREF="#KeyboardSettingsSpeakTypedWords">leggi le parole digitate</A> durante l'inserimento di password.
 </P>
 
+<H5>Tenta di non leggere informazioni obsolete concernenti il focus</H5>
+
+<P>
+Questa funzione cerca di inibire la lettura di informazioni obsolete che riguardano il focus di sistema.
+In particolare, lo spostamento rapido tra i messaggi in Gmail mentre si utilizza Chrome rischia di far leggere a NVDa informazioni non più accurate. Questa opzione cerca di risolvere il problema.
+</P>
+
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
 <H5>Spostamento automatico del focus in modalità navigazione</H5>
 
@@ -3933,6 +3957,7 @@ Di default NVDA non effettua questa distinzione.
 <P>
 In fine, una serie di pulsanti radio consente di stabilire se l'occorrenza inserita debba essere valutata ovunque, oppure solo come parola intera, o se invece si tratta di un'espressione regolare.
 Impostare  questa opzione su parola intera significa che non verranno presi in esame porzioni di parola.
+Questa condizione è soddisfatta se i caratteri immediatamente prima e dopo la parola sono qualcosa di diverso da una lettera, un numero o un carattere di sottolineatura o se non ci sono affatto caratteri.
 Per tornare all'esempio precedente, se scrivessimo UccelloMarino, e abbiamo selezionato di prendere in esame soltanto le parole intere, questa stringa verrebbe scartata.
 </P>
 <P>
@@ -5342,7 +5367,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 <P>
 NVDA supporta i modelli Braille Sense, Braille EDGE,  SmartBeetle e SyncBraille prodotti dalla <A HREF="https://www.hims-inc.com/">Hims</A> quando connessi tramite USB o bluetooth.
 In caso di connessione tramite USB, è necessario prima installare i driver sviluppati dal produttore.
-Si possono scaricare da qui all'indirizzo: <A HREF="https://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">https://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip</A>
+Si possono scaricare da qui all'indirizzo: <A HREF="http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip</A>
 </P>
 <P>
 Di seguito, ecco l'elenco dell'assegnazione dei tasti per queste righe braille con NVDA.
@@ -6184,7 +6209,7 @@ Sono supportati i seguenti modelli:
 </UL>
 
 <P>
-Per il BrailleNote Touch, si prega di fare riferimento alla <A HREF="HumanWareBrailliant">sezione Brailliant BI Series / BrailleNote Touch</A>.
+Per il BrailleNote Touch, si prega di fare riferimento alla <A HREF="#HumanWareBrailliant">sezione [Brailliant BI Series / BrailleNote Touch</A>.
 </P>
 <P>
 Ad eccezione del BrailleNote Pk, sono supportate sia tastiere braille (bt) che qwerty (qt).
@@ -6916,7 +6941,7 @@ Pertanto, le impostazioni tabella braille di immissione non sono rilevanti.
 <P>
 BRLTTY non è coinvolto nelle funzioni di rilevamento automatico display braille di NVDA.
 Seguono i tasti che sono stati assegnati con NVDA a Brltty.
-Si legga la <A HREF="https://mielke.cc/brltty/doc/KeyBindings/">tabella dei tasti di Brltty</A> per comprendere come i comandi di Brltty sono mappati sul Display Braille.
+Si legga la <A HREF="http://mielke.cc/brltty/doc/KeyBindings/">tabella dei tasti di Brltty</A> per comprendere come i comandi di Brltty sono mappati sul Display Braille.
 </P>
 
 <TABLE BORDER="1" CELLPADDING="4">
