@@ -28,7 +28,7 @@ Le caratteristiche principali possono essere riassunte nei seguenti punti:
 - Tradotto in 54 lingue
 - Supporto ai sistemi operativi più moderni, comprese le edizioni a 32 e 64 bit
 - Supporto al prompt dei comandi di Windows e alle applicazioni lanciate da console
-- Gestione delle videate di logon e quelle relative alla sicurezza
+- Gestione delle schermate di accesso utente e quelle relative alla sicurezza
 - Lettura di testo e controlli  mentre si utilizza un touch screen.
 - Supporto alle interfacce più comuni per l'accessibilità, come Microsoft Active Accessibility, Java Access Bridge, IAccessible2 e UI Automation.
 - Capacità di evidenziare il focus di sistema.
@@ -79,7 +79,7 @@ Una volta che si esegue il file appena scaricato, verrà lanciata una copia temp
 In seguito verrà richiesto se installare NVDA sul disco fisso, se creare una versione portable, oppure continuare ad utilizzare la copia in esecuzione dello screen reader.
 
 Se si desidera utilizzare spesso NVDA sul computer, è consigliabile scegliere di installare NVDA nel sistema.
-L'installazione comporta alcuni vantaggi, come la possibilità di avviarsi automaticamente dopo il login, la lettura delle finestre di Logon e le schermate generate dal controllo utente per la sicurezza (UAC), ed inoltre verrà creata  un'icona sul desktop e una voce sul menu avvio, tutte caratteristiche non presenti nella versione portable.
+L'installazione comporta alcuni vantaggi, come la possibilità di avviarsi automaticamente dopo il login dell'utente, la lettura delle finestre di accesso e le schermate generate dal controllo utente per la sicurezza (UAC), ed inoltre verrà creata  un'icona sul desktop e una voce sul menu avvio, tutte caratteristiche non presenti nella versione portable.
 Si ricorda che una volta installato NVDA, sarà sempre possibile creare una copia portable in qualsiasi momento.
 
 Se invece si desidera utilizzare NVDA in una chiavetta USB o su altri tipi di supporti scrivibili, allora è necessario selezionare l'opzione che permette di creare una copia portable.
@@ -114,7 +114,7 @@ Prima di poter premere il pulsante continua, è necessario selezionare la casell
 è presente anche un pulsante che consente di controllare quali componenti aggiuntivi verranno disabilitati.
 Si veda la [sezione componenti aggiuntivi non compatibili #incompatibleAddonsManager] per maggiori informazioni su questo pulsante.
 
-+++ Esegui NVDA al logon di Windows +++[StartAtWindowsLogon]
++++ Avvia all'accesso utente +++[StartAtWindowsLogon]
 Questa opzione permette di stabilire se NVDA debba automaticamente avviarsi o meno alla finestra di logon di Windows, prima di inserire la password.
 Inoltre, questo permette la lettura delle finestre controllo account utente e di altri controlli sulla sicurezza.
 Questa opzione è abilitata di default per le nuove installazioni.
@@ -1044,7 +1044,7 @@ Questa opzione è costituita da una casella di controllo che, se attivata, perme
 ==== Livello di logging ====[GeneralSettingsLogLevel]
 Una casella combinata che permette di stabilire l'ammontare delle informazioni che NVDA scriverà sul suo file di log. 
 La maggior parte degli utenti non avrà bisogno di modificare questo parametro.
-Tuttavia nel caso si vogliano segnalare bug, può essere una buona idea alzare il livello di log, oppure disattivare completamente la funzione.
+Tuttavia, nel caso si vogliano segnalare bug, può essere una buona idea alzare il livello di log; naturalmente è anche possibile disattivare completamente la funzione.
 
 I livelli di log disponibili sono i seguenti:
 - Disabilitato: al di là di un breve messaggio di avvio, NVDA non loggherà nulla durante l'esecuzione.
@@ -1054,19 +1054,19 @@ I livelli di log disponibili sono i seguenti:
  - Se vi sono problemi con la privacy, non abilitare mai questa funzione.
 - Debug: Oltre alle informazioni, agli avvisi e ai messaggi di input / output, verranno loggati ulteriori messaggi di debug. 
  - Proprio come input / output, Se vi sono problemi con la privacy, non abilitare mai questa funzione.
--
 
-==== Esegui NVDA all'avvio di Windows ====[GeneralSettingsStartAfterLogOn]
-Una casella di controllo che, se attivata, permetterà a NVDA di avviarsi subito dopo la schermata di Logon del sistema operativo.
+
+==== Esegui NVDA dopo l'accesso ====[GeneralSettingsStartAfterLogOn]
+Una casella di controllo che, se attivata, permetterà a NVDA di avviarsi subito dopo che l'utente avrà inserito i propri dati nella schermata di accesso al sistema.
 Questa opzione è disponibile soltanto nelle versioni Installer.
   
-==== Utilizza NVDA nella finestra di Logon, richiede privilegi di amministratore ====[GeneralSettingsStartOnLogOnScreen]
-Se si dispone di un sistema nel quale bisogna inserire nome e password durante la schermata di Logon, attivare questa casella di controllo per fare in modo che NVDA sia in grado di leggere questo tipo di informazioni.
+==== Utilizza NVDA nella finestra di Accesso, richiede privilegi di amministratore ====[GeneralSettingsStartOnLogOnScreen]
+Se si dispone di un sistema nel quale bisogna inserire nome e password per accedere al sistema, attivare questa casella di controllo per fare in modo che NVDA sia in grado di leggere questo tipo di informazioni.
 Questa opzione è disponibile soltanto nelle versioni Installer.
 
-==== Utilizza le impostazioni salvate nella finestra di Logon ====[GeneralSettingsCopySettings]
-La pressione di questo tasto copierà le proprie impostazioni utente di NVDA nella cartella delle configurazioni di sistema, di modo che NVDA le possa utilizzare nelle schermate di Logon, nei controlli UAC e così via.
-Per precauzione, se si vuole essere certi che le proprie impostazioni vengano copiate correttamente, conviene salvare la configurazione con il comando Control+NVDA+c, oppure andare alla voce Salvare Configurazione nel menu di NVDA.
+==== Utilizza le impostazioni salvate nella finestra di Accesso ====[GeneralSettingsCopySettings]
+La pressione di questo tasto copierà le proprie impostazioni utente di NVDA nella cartella delle configurazioni di sistema, di modo che NVDA le possa utilizzare nelle schermate di Accesso utente, nei controlli UAC e così via.
+Per precauzione, se si vuole essere certi che le proprie impostazioni vengano copiate correttamente, conviene salvare la configurazione con il comando Control+NVDA+c, oppure andare alla voce Salva Configurazione nel menu di NVDA.
 Questa opzione è disponibile soltanto nelle versioni Installer.
 
 ==== Controlla automaticamente la presenza di aggiornamenti di NVDA ====[GeneralSettingsCheckForUpdates]
@@ -1455,7 +1455,7 @@ Questa funzione risulta disponibile soltanto se l'opzione Leggi errori di ortogr
 
 ==== Gestisci tasti da altre applicazioni ====[KeyboardSettingsHandleKeys]
 Quest'opzione permette all'utente di controllare se le pressioni di tasti, generate da programmi che si basano sul riconoscimento vocale o sulle tastiere a schermo, debbano essere processate da NVDA.
-L'opzione risulta attiva di default, sebbene alcuni utenti che utilizzano la lingua di immissione Vietnamita dovrebbero disattivare questa funzione.
+L'opzione risulta attiva di default, sebbene alcuni utenti che utilizzano la lingua di immissione Vietnamita dovrebbero disattivare questa funzione nel caso si servano del software di scrittura Unikey.
 
 +++[Mouse (NVDA+control+m) +++
 La categoria Mouse della finestra impostazioni di NVDA permette di attivare o meno il tracciamento del mouse, ascoltarne la posizione con segnali audio e altre opzioni aggiuntive.
@@ -1690,6 +1690,7 @@ Le opzioni di formattazione documento sono divise in gruppi.
  - Commenti
  - Revisioni
  - Errori ortografici
+ - Apici e pedici
 - Pagine e spaziatura
  - Numeri di pagina
  - Numeri di riga
@@ -1781,7 +1782,7 @@ Questa impostazione controlla il comportamento di due funzioni di NVDA, ossia [L
 ==== Utilizza il nuovo supporto ai caratteri digitati nella Console di Windows quando disponibile ====[AdvancedSettingsKeyboardSupportInLegacy]
 Questa opzione attiva un metodo alternativo per la rilevazione dei caratteri digitati nella console di Windows.
 Se da un lato migliora sensibilmente le prestazioni e previene alcuni errori di gestione del testo, può risultare non compatibile con alcuni programmi di terminale.
-Questa funzionalità è disponibile e abilitata per impostazione predefinita nelle versioni di Windows 10 1607, 1703, 1709 e 1803, nonché nelle versioni più recenti di Windows 10 quando UI Automation non è disponibile o è disabilitata.
+Questa funzionalità è disponibile e abilitata per impostazione predefinita nelle versioni di Windows 10 1607 e successive quando UI Automation non è disponibile o è disabilitata.
 Attenzione: con questa opzione abilitata, i caratteri digitati che non compaiono sullo schermo, come le password, verranno letti ugualmente.
 In ambienti non sicuri, è preferibile disattivare temporaneamente [Leggi i caratteri digitati #KeyboardSettingsSpeakTypedCharacters] e [leggi le parole digitate #KeyboardSettingsSpeakTypedWords] durante l'inserimento di password.
 
@@ -1994,7 +1995,8 @@ Le versioni portabili di NVDA registrano tutte le impostazioni, i moduli persona
 
 Le versioni installer di NVDA registrano tutte le impostazioni, i moduli personalizzati per le applicazioni e i driver in una cartella speciale situata nei profili utente di Windows. 
 Ciò significa che ciascun utente del sistema potrà avere le proprie impostazioni. 
-Per accedere a tale cartella, sarà sufficiente aprire il menu avvio, selezionare programmi - NVDA- esplora le impostazioni utente.
+Per accedere a tale cartella da qualsiasi punto ci si trovi, è possibile servirsi della [Finestra di dialogo Tasti e Gesti di immissione #InputGestures] per aggiungere un gesto personalizzato.
+Inoltre, solo per le versioni di NVDA installato nel sistema, sarà sufficiente aprire il menu avvio, selezionare programmi - NVDA- esplora le impostazioni utente.
 
 Le impostazioni di NVDA per quanto riguarda il proprio funzionamento nelle schermate di Logon o UAC sono salvate nella cartella systemConfig situata nella directory di installazione di NVDA.
 In genere questa configurazione non dovrebbe essere modificata.
@@ -2167,6 +2169,7 @@ Segue l'elenco di tutti i display braille che supportano il rilevamento automati
 - Alva serie 6 di Optelec
 - modelli Braille Sense/Braille EDGE/Smart Beetle/Sync della Hims.
 - Display Esys/Esytime/Iris di Eurobraille
+- Display Braille Nattiq serie N
 -
 
 ++ Freedom Scientific Serie Focus/PAC Mate ++[FreedomScientificFocus]
@@ -2950,6 +2953,22 @@ Consultare la documentazione della barra braille per informazioni sulla posizion
 | Tasto alt | punto8+spazio, l6 |
 | Alterna tasto alt | punto1+punto8+spazio, punto4+punto8+spazio |
 | Alterna simulazione tastiera HID | esytime):l1+joystick1Giù, esytime):l8+joystick1Giù |
+%kc:endInclude
+
+++ Display Braille Nattiq serie N ++[NattiqTechnologies]
+NVDA supporta i display braille prodotti dalla [Nattiq Technologies https://www.nattiq.com/] se connessi via USB.
+Windows 10 rileva automaticamente la barra braille non appena connessa, mentre è necessario installare i driver manualmente nel caso si utilizzi una versione di Windows più vecchia di Windows10.
+è possibile scaricare i driver dal sito web dell'azienda.
+
+Seguono i tasti che sono stati associati per questi modelli a NVDA.
+Consultare la documentazione della barra braille per informazioni sulla posizione dei tasti.
+%kc:beginInclude
+|| Nome | Tasto |
+| Scorri display braille indietro back | su |
+| Scorri Display Braille avanti | giù |
+| Sposta display braille alla riga precedente | sinistra |
+| Sposta Display Braille alla riga successiva | destra |
+| Funzioni di cursor routing | routing |
 %kc:endInclude
 
 ++ BRLTTY ++[BRLTTY]
