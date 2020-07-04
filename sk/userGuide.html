@@ -31,7 +31,7 @@
     <LI><A HREF="#InstallingNVDA">3.2. Inštalácia NVDA</A>
       <UL>
       <LI><A HREF="#InstallWithIncompatibleAddons">3.2.1. Upozornenie na nekompatibilné doplnky</A>
-      <LI><A HREF="#StartAtWindowsLogon">3.2.2. Spúšťať NVDA pri zobrazení prihlasovacej obrazovky</A>
+      <LI><A HREF="#StartAtWindowsLogon">3.2.2. Spúšťať NVDA na prihlasovacej obrazovke</A>
       <LI><A HREF="#CreateDesktopShortcut">3.2.3. Vytvoriť odkaz na pracovnej ploche so skratkou ctrl+alt+n</A>
       <LI><A HREF="#CopyPortableConfigurationToCurrentUserAccount">3.2.4. Skopírovať nastavenia s prenosnej verzie do profilu aktuálne prihláseného používateľa</A>
       </UL>
@@ -216,7 +216,8 @@
     <LI><A HREF="#EcoBraille">15.15. Zobrazovače EcoBraille</A>
     <LI><A HREF="#SuperBraille">15.16. SuperBraille</A>
     <LI><A HREF="#Eurobraille">15.17. Eurobraille Esys/Esytime/Iris</A>
-    <LI><A HREF="#BRLTTY">15.18. BRLTTY</A>
+    <LI><A HREF="#NattiqTechnologies">15.18. Riadky Nattiq nBraille</A>
+    <LI><A HREF="#BRLTTY">15.19. BRLTTY</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">16. Pre pokročilých</A>
     <UL>
@@ -306,10 +307,15 @@ NVDA podporuje rôzne kódové tabuľky umožňujúce tak čítať braillový v�
 NVDA je chránený autorskými právami Copyright 2006-2020 Tím NVDA.
 </P>
 <P>
-Distribúcia NVDA je možná pod licenciou GNU General Public License 2.0.
+Distribúcia NVDA je možná pod licenciou GNU General Public License 2 s dvoma vínimkami.
+Výnimky sú uvedené v častiach licencie "komponenty a ovládače, ktoré nepodliehajú licencii GPL" (Non-GPL Components in Plugins and Drivers) a "Kód poskytovaný spoločnosťou Microsoft" (Microsoft Distributable Code).
+NVDA tiež používa kód, ktorý je dostupný pod licenciami s otvoreným kódom.
 Tento produkt môžete voľne šíriť a meniť rôznym spôsobom, podmienkou však je pripojiť k nemu túto licenciu a sprístupniť zdrojový kód každému, kto si to vyžiada.
 Týka sa to oboch pôvodných, aj upravených kópií daného software.
+</P>
+<P>
 Pre viac informácií si môžete pozrieť <A HREF="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">kompletnú licenciu (anglicky)</A>.
+Pre podrobné informácie o výnimkáchh, pozrite dokument v menu NVDA &gt; Pomocník &gt; Licencia (anglicky).
 </P>
 
 <A NAME="SystemRequirements"></A>
@@ -395,7 +401,7 @@ Podrobnosti si môžete prečítať v časti <A HREF="#incompatibleAddonsManager
 </P>
 
 <A NAME="StartAtWindowsLogon"></A>
-<H4>3.2.2. Spúšťať NVDA pri zobrazení prihlasovacej obrazovky</H4>
+<H4>3.2.2. Spúšťať NVDA na prihlasovacej obrazovke</H4>
 
 <P>
 Umožňuje nastaviť, či sa má NVDA automaticky spustiť pri zobrazení prihlasovacej obrazovky, teda ešte pred tým, ako zadáte svoje heslo.
@@ -416,7 +422,7 @@ Ak sa rozhodnete vytvoriť odkaz, inštalátor automaticky tomuto odkazu prirad�
 
 <P>
 Ak začiarknete túto voľbu, pri inštalácii sa skopírujú aktuálne nastavenia NVDA do profilu aktuálne prihláseného používateľa.
-Nastavenia nebudú skopírované do iných používateľských účtov v systéme a nebudú sa používať ani pri prihlasovacej obrazovke a iných zabezpečených obrazovkách.
+Nastavenia nebudú skopírované do iných používateľských účtov v systéme a nebudú sa používať ani na  prihlasovacej obrazovke a iných zabezpečených obrazovkách.
 Táto voľba je dostupná len ak inštalujete NVDA z prenosnej verzie. Voľba sa nezobrazí, ak inštalujete NVDA priamo zo súboru z webovej stránky NVDA.
 </P>
 
@@ -907,10 +913,7 @@ Ak je zapnuté <A HREF="#VisionFocusHighlight">zvýraznenie fokusu</A>, navigač
 Ak presuniete fokus na iný objekt, predvolene sa  zmení  aj objekt ktorý prezeráte, avšak toto je možné vypnúť a zapnúť podľa potreby.
 </P>
 <P>
-Pozor: Text na braillovskom riadku sleduje predvolene spolu <A HREF="#SystemFocus">systémový fokus</A> a <A HREF="#SystemCaret">systémový kurzor</A>.
-Ak by Ste radšej chceli, aby sa text zobrazovaný na braillovskom riadku prispôsoboval fokusu, môžete nastaviť <A HREF="#BrailleTether">zviazanie braillovského kurzoru</A> na fokus.
-V takom prípade braillovský kurzor nebude sledovať objektovú navigáciu a prezerací kurzor.
-Ak chcete, aby braillovský kurzor sledoval objektovú navigáciu a prezerací kurzor, musíte nastaviť <A HREF="#BrailleTether">braillovský kurzor zviazaný s</A> prezeracím kurzorom.
+Sledovanie objektov na braillovskom riadku je možné nastaviť s použitím funkcie <A HREF="#BrailleTether">zviazania braillovského kurzora</A>.
 </P>
 <P>
 Pre pohyb po objektoch použite nasledujúce príkazy:
@@ -1007,8 +1010,7 @@ Pri pohybe systémovým kurzorom sa prezerací kurzor automaticky prispôsobuje 
 Túto vlastnosť je možné prepínať.
 </P>
 <P>
-Pozor: Text na braillovskom riadku sleduje predvolene <A HREF="#SystemFocus">systémový fokus</A> a <A HREF="#SystemCaret">systémový kurzor</A>.
-Ak by Ste radšej chceli aby sa text zobrazovaný na braillovskom riadku prispôsoboval objektovej navigácii a prezeraciemu kurzoru, môžete nastaviť <A HREF="#BrailleTether">zviazanie braillovského kurzoru</A>.
+Text zobrazovaný na braillovskom riadku môžete prispôsobiť nastavením <A HREF="#BrailleTether">zviazania braillovského kurzoru</A>.
 </P>
 <P>
 Na navigáciu v texte je možné použiť nasledovné príkazy:
@@ -1132,7 +1134,7 @@ Na navigáciu v texte je možné použiť nasledovné príkazy:
 <TD>NVDA+f10</TD>
 <TD>NVDA+f10</TD>
 <TD>Nie je</TD>
-<TD>Po prvom stlačení označí text  od označeného miesta po aktuálnu pozíciu prezeracieho kurzora. Po dvojitom stlačení skopíruje text od značky po aktuálnu pozíciu  do schránky Windows.</TD>
+<TD>Po prvom stlačení označí text  od označeného miesta po aktuálnu pozíciu prezeracieho kurzora. Ak systémový kurzor dokáže nájsť text, označí ho. Po dvojitom stlačení skopíruje text od značky po aktuálnu pozíciu  do schránky Windows.</TD>
 </TR>
 <TR>
 <TD>Presunúť prezerací  kurzor na začiatok bloku na kopírovanie alebo označenie</TD>
@@ -1632,6 +1634,10 @@ Zoznam klávesových skratiek nájdete v <A HREF="https://www.dessci.com/en/prod
 </P>
 <P>
 Ak príklad dočítate a chcete sa vrátiť, stlačte Escape.
+</P>
+<P>
+Môžete sa stretnúť s tým, že je matematický obsah zobrazený ako tlačidlo alebo iný prvok a až  po jeho stlačení sa zobrazia podrobnosti.
+V tomto prípade na aktiváciu prvku použite skratku ctrl+enter.
 </P>
 
 <A NAME="Braille"></A>
@@ -2239,7 +2245,19 @@ Do požadovaného poľa sa presuniete klávesom enter, alebo aktivovaním tlači
 
 <P>
 Ak si chcete prečítať komentár pre aktuálnu bunku, stlačte NVDA+alt+c.
-Všetky komentáre  v aktuálnom hárku si môžete prezerať aj v zozname prvkov.
+Všetky komentáre  v aktuálnom hárku si môžete prezerať aj v zozname prvkov po stlačení nvda+F7.
+</P>
+<P>
+NVDA dokáže zobraziť vlastný dialóg na pridanie alebo úpravu komentára.
+Štandardné okno na prácu s komentármi v MS Excely nie je prístupné. Preto NVDA používa vlastný dialóg, ale používa klávesovú skratku, ktorú poskytuje MS Excel. Preto skratka funguje aj vtedy, ak NVDA nie je spustené.
+Na pridanie komentára, alebo úpravu existujúceho komentára pre aktuálnu bunku, stlačte shift+f2.
+</P>
+<P>
+Túto skratku nie je možné zmeniť.
+</P>
+<P>
+Upozorňujeme, že okno na prácu s komentármi je možné vyvolať aj z kontextovej ponuky pre bunku v MS Excely.
+Toto však otvorí predvolený neprístupný dialóg, ktorý sa štandardne používa v MS Excely.
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -2564,10 +2582,10 @@ Dostupné sú tieto možnosti:
 </UL>
 
 <A NAME="GeneralSettingsStartAfterLogOn"></A>
-<H5>Automaticky spustiť NVDA po prihlásení do Windows</H5>
+<H5>Spustiť NVDA po prihlásení</H5>
 
 <P>
-Ak je táto voľba zaškrtnutá, NVDA sa spustí hneď ako sa prihlásite do Windows.
+Ak je táto voľba začiarknutá, NVDA sa spustí hneď ako sa prihlásite do Windows.
 Táto voľba je dostupná len po nainštalovaní NVDA a nemôže byť použitá pri spustenej prenosnej verzii.
 </P>
 
@@ -2997,9 +3015,13 @@ Ak začiarknete túto možnosť, správy budú na riadku zobrazené bez časové
 Klávesová skratka: NVDA+ctrl+t
 </P>
 <P>
-Táto voľba umožňuje nastaviť či bude braillovský kurzor sledovať systémový kurzor, alebo či bude braillovský kurzor sledovať prezerací kurzor navigačného objektu, alebo oboje.
+Táto voľba umožňuje nastaviť, či bude braillovský kurzor sledovať systémový a textový kurzor, alebo či bude braillovský kurzor sledovať navigačný objekt a prezerací kurzor, alebo oboje.
 Ak nastavíte možnosť "automaticky", NVDA bude sledovať textový a systémový kurzor.
 Ak sa v tomto prípade presuniete na iný objekt, alebo pohnete prezeracím kurzorom, NVDA zviaže braillovský kurzor s prezeracím kurzorom až do momentu, keď sa zmení fokus.
+Ak chcete sledovať len textový kurzor a zamerané objekty, nastavte možnosť na fokus.
+V tomto prípade NVDA nebude sledovať navigačný objekt a prezerací kurzor.
+Ak chcete na braillovskom riadku sledovať objektovú navigáciu a prezerací kurzor, nastavte možnosť Na prezerací kurzor.
+V tomto prípade nebude braillovský riadok sledovať systémový a textový kurzor.
 </P>
 
 <A NAME="BrailleSettingsReadByParagraph"></A>
@@ -3868,6 +3890,15 @@ Pozor: Keď aktivujete túto funkciu, NVDA bude čítať napísané znaky a slov
 Ak tomu chcete zabrániť, vypnite dočasne čítanie poznakoch a po slovách.
 </P>
 
+<A NAME="CancelExpiredFocusSpeech"></A>
+<H5>Prerušiť reč po vypršaní zameranej udalosti</H5>
+
+<P>
+Ak je táto možnosť zapnutá, NVDA prestane čítať udalosti, ktoré už nie sú aktuálne.
+Toto môže vyriešiť problém, keď pri prezeraní správ v aplikácii Gmail v prehliadači Chrome NVDA čítalo neaktuálne informácie.
+Táto experimentálna funkcia bola pridaná od verzie NVDA 2020.2.
+</P>
+
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
 <H5>Automaticky presúvať fokus na zamerané prvky</H5>
 
@@ -3947,7 +3978,8 @@ Predvolene NVDA ignoruje veľkosť písmen.
 </P>
 <P>
 Nasleduje prepínač, ktorým určíte, či sa má výraz použiť ak sa nachádza kdekoľvek, ak je to celé slovo, alebo ide o "regulárny výraz".
-Ak nastavíte možnosť Iba celé slová, výraz sa použije len vtedy, ak nie je súčasťou väčšieho slova, teda pred a za výrazom nenasleduje žiadny alfanumerický znak, alebo podčiarkovník, alebo za a pred výrazom nie sú žiadne znaky a symboly.
+Ak nastavíte možnosť Iba celé slová, výraz sa použije len vtedy, ak nie je súčasťou väčšieho slova.
+Toto platí, keď pred a za výrazom nenasleduje žiadny alfanumerický znak, alebo podčiarkovník, alebo za a pred výrazom nie sú žiadne znaky a symboly.
 Vráťme sa ešte k predchádzajúcemu príkladu, v ktorom sme nahradili výraz "vták" výrazom "žaba". Ak nastavíte prepínač na Iba celé slová, výraz sa nezmení, ak bude v texte výraz "vtáky" alebo "bielyvták".
 </P>
 <P>
@@ -4207,7 +4239,7 @@ Môžete si nastaviť skratku na otvorenie adresára s nastaveniami v dialógu <
 Vstúpiť do svojho priečinka s nastaveniami nainštalovanej verzie NVDA môžete tiež cez odkaz Otvoriť adresár s používateľskými nastaveniami v ponuke štart, v priečinku Programy &gt; NVDA.
 </P>
 <P>
-Nastavenia, ktoré sa použijú v prípadoch, keď NVDA beží na prihlasovacej alebo inej zabezpečenej obrazovke sú uložené v priečinku systemConfig, ktorý je podpriečinkom inštalačného adresára NVDA.
+Nastavenia, ktoré sa použijú v prípadoch, keď NVDA beží na prihlasovacej alebo inej zabezpečenej obrazovke, sú uložené v priečinku systemConfig, ktorý je podpriečinkom inštalačného adresára NVDA.
 Normálne nie je potrebné do tohto priečinka zasahovať.
 Ak chcete zmeniť konfiguráciu NVDA pre prihlasovaciu obrazovku, nakonfigurujte NVDA podľa vašich predstáv kým ste prihlásení do Windows. Následne uložte nastavenia a potom pomocou tlačidla v kategórii  Všeobecné v dialógu <A HREF="#NVDASettings">Nastavenia</A> skopírujte vaše nastavenia na prihlasovaciu obrazovku.
 </P>
@@ -4514,6 +4546,7 @@ Funkcia aktuálne funguje s týmito riadkami:
 <LI>Optelec ALVA 6
 <LI>HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille
 <LI>Eurobraille Esys/Esytime/Iris
+<LI>Nattiq nBraille displays
 </UL>
 
 <A NAME="FreedomScientificFocus"></A>
@@ -5405,7 +5438,7 @@ Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie 
 <P>
 NVDA podporuje riadky Braille Sense, Smart Beetle, Sync Braille a Braille EDGE od spoločnosti <A HREF="https://www.hims-inc.com/">Hims</A>. Je potrebné ich pripájať cez USB alebo bluetooth rozhranie.
 Ak máte riadok pripojený cez USB, je potrebné nainštalovať ovládač dodávaný spoločnosťou HIMS.
-Ovládače si môžete stiahnuť zo stránky: <A HREF="https://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">https://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip</A>
+Ovládače si môžete stiahnuť zo stránky: <A HREF="http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip</A>
 </P>
 <P>
 Nasleduje zoznam klávesových príkazov pre tieto typy riadkov.
@@ -6248,7 +6281,7 @@ Podporované sú tieto typy:
 </UL>
 
 <P>
-Pre informácie o podpore zariadenia BrailleNote Touch, Pozrite časť <A HREF="HumanWareBrailliant">Brailliant BI / BrailleNote Touch</A>.
+Pre informácie o podpore zariadenia BrailleNote Touch, Pozrite časť <A HREF="#HumanWareBrailliant">Brailliant BI  / BrailleNote Touch</A>.
 </P>
 <P>
 Podporované je písanie cez braillovskú klávesnicu (BT) aj cez qwerty klávesnicu (QT). Výnimku tvorí zariadenie BrailleNote PK.
@@ -6925,8 +6958,48 @@ Pre popis a umiestnenie tlačidiel si prosím pozrite návod k vášmu riadku.
 </TR>
 </TABLE>
 
+<A NAME="NattiqTechnologies"></A>
+<H3>15.18. Riadky Nattiq nBraille</H3>
+
+<P>
+NVDA podporuje braillovské riadky od spoločnosti <A HREF="https://www.nattiq.com/">Nattiq Technologies</A> pripojené cez USB.
+V systéme Windows 10 sú riadky rozpoznané automaticky. Pre staršie verzie operačného systému Windows je potrebné ručne nainštalovať ovládače.
+Tie sú dostupné zo stránok výrobcu.
+</P>
+<P>
+Nasledujú príkazy, ktoré môžete používať na tomto riadku v kombinácii s NVDA.
+Umiestnenie jednotlivých tlačidiel je popísané v dokumentácii k zariadeniu.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Názov</TH>
+<TH>klávesová skratka</TH>
+</TR>
+<TR>
+<TD>Posunúť riadok späť</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>Posunúť riadok vpred</TD>
+<TD>down</TD>
+</TR>
+<TR>
+<TD>Predchádzajúci riadok</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Nasledujúci riadok</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Prejsť na znak</TD>
+<TD>routing</TD>
+</TR>
+</TABLE>
+
 <A NAME="BRLTTY"></A>
-<H3>15.18. BRLTTY</H3>
+<H3>15.19. BRLTTY</H3>
 
 <P>
 <A HREF="https://www.brltty.com/">BRLTTY</A> je osobitný program, prostredníctvom ktorého je možné použiť množstvo ďalších braillovských zobrazovačov.
@@ -6943,7 +7016,7 @@ Ovládač brltty nie je zahrnutý do automatického rozpoznávania braillovskýc
 </P>
 <P>
 Nasledujú brltty klávesové skratky pre NVDA.
-Prosím prečítajte si <A HREF="https://mielke.cc/brltty/doc/KeyBindings/">dokumentáciu skratiek  brltty</A> pre viac informácií o tom, ako sú príkazy brltty mapované na tlačidlá skutočných zobrazovačov.
+Prosím prečítajte si <A HREF="http://mielke.cc/brltty/doc/KeyBindings/">dokumentáciu skratiek  brltty</A> pre viac informácií o tom, ako sú príkazy brltty mapované na tlačidlá skutočných zobrazovačov.
 </P>
 
 <TABLE BORDER="1" CELLPADDING="4">
