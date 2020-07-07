@@ -304,10 +304,15 @@ NVDA understøtter punkttabeller for mange sprog, herunder forkortet, fuldskrift
 NVDA er ophavsret 2006-2020 NVDA bidragydere.
 </P>
 <P>
-NVDA er dækket under GNU General Public License (version 2).
+NVDA er omfattet under GNU General Public License (version 2) med to undtagelser.
+Undtagelserne beskrives i licensdokumentet under paragrafferne "Non-GPL Components in Plugins and Drivers" og "Microsoft Distributable Code".
+NVDA inkluderer og benytter også komponenter, der omfattes af forskellige gratis og open source licenser, der gør komponenterne tilgængelige.
 Du kan frit dele eller ændre denne software så længe du distribuerer licensen sammen med softwaren og stiller hele kildekoden til rådighed for alle, der ønsker det.
 Dette gælder både originale og modificerede kopier af softwaren, plus software der anvender kode taget fra denne software.
+</P>
+<P>
 For yderligere oplysninger, kan du <A HREF="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">læse den fulde licens</A>.
+For oplysninger om, hvilke undtagelser gør sig gældende, læs licensvilkårene under "Licens" under NVDA-menu&gt;Hjælp.
 </P>
 
 <A NAME="SystemRequirements"></A>
@@ -905,10 +910,7 @@ Når <A HREF="#VisionFocusHighlight">Fremhæv fokus</A> er aktiveret, vil det ak
 Som standard, flytter navigator objektet sammen med System fokus, men denne adfærd kan slås til  og fra.
 </P>
 <P>
-Bemærk, at punkt følger <A HREF="#SystemFocus">fokus</A> og <A HREF="#SystemCaret">systemmarkør</A>, samt objektnavigation og læsemarkøren som standardindstilling.
-Hvis du derimod ønsker at punkt kun skal følge fokus og systemmarkøren, skal du <A HREF="#BrailleTether">konfigurere punkt til at følge</A> fokus.
-I dette tilfæld vil punkt ikke følge objektnavigation og læsemarkøren.
-Hvis du derimod ønsker at punkt skal følge objektnavigation og læsemarkøren i stedet, skal du <A HREF="#BrailleTether">konfigurere punkt til at følge</A> læsemarkøren.
+Bemærk: Du kan konfigurere, hvordan punkt skal følge objektnavigation under <A HREF="#BrailleTether">Punkt følger</A>.
 </P>
 <P>
 For at navigere imellem objekter, skal du benytte følgende kommandoer:
@@ -1005,8 +1007,7 @@ Men når du flytter rundt med systemets markør, følger den ubegrænsede markø
 Dette kan slås til og fra.
 </P>
 <P>
-Bemærk, at punkt følger <A HREF="#SystemFocus">fokus</A> og <A HREF="#SystemCaret">systemmarkør</A> som standardindstilling, i stedet for objekt navigation og tekstgennemsyn.
-Hvis du derimod ønsker at punkt skal følge objekt navigation og tekstgennemsyn, skal du <A HREF="#BrailleTether">konfigurere punkt til at være tøjret til</A> gennemsyn.
+Bemærk: Hvordan punkt skal følge læsemarkøren kan konfigureres via indstillingen <A HREF="#BrailleTether">Punkt følger</A>.
 </P>
 <P>
 Følgende tastekommandoer er tilgængelige for gennemsyn af tekst:
@@ -1129,7 +1130,7 @@ Følgende tastekommandoer er tilgængelige for gennemsyn af tekst:
 <TD>NVDA+f10</TD>
 <TD>NVDA+f10</TD>
 <TD>Ingen</TD>
-<TD>Ved et tryk, vil tekst blive valgt fra den tidligere startmarkør, som er blevet sat, til og med læsemarkørens aktuelle position. Når du trykker på denne tast to gange, bliver teksten kopieret til Windows udklipsholderen.</TD>
+<TD>Ved et tryk, vil tekst blive valgt fra den tidligere startmarkør, som er blevet sat, til og med læsemarkørens aktuelle position. Hvis systemmarkøren kan nå den aktuelle tekst, vil systemmarkøren flytte dertil. Når du trykker på denne tast to gange, bliver teksten kopieret til Windows udklipsholderen.</TD>
 </TR>
 <TR>
 <TD>Flyt til starten af markeringen  for kopiering for læsemarkør</TD>
@@ -1628,6 +1629,10 @@ Læs venligst <A HREF="https://www.dessci.com/en/products/mathplayer/navigation_
 </P>
 <P>
 Når du vil tilbage til dokumentet, skal du blot trykke på Escape-tasten.
+</P>
+<P>
+Nogle gange kan matematisk indhold blive præsenteret som en knap eller en anden type element, hvilket evt. viser en dialog eller yderligere informationer om formeln, når denne aktiveres.
+For at aktivere knappen eller elementet, der indeholder formlen, tryk Ctrl+enter.
 </P>
 
 <A NAME="toc51"></A>
@@ -2238,7 +2243,21 @@ Ved at vælge et formularfelt og derefter trykke på "Flyt til" knappen eller en
 
 <P>
 For at få oplæst en kommentar for den celle, som er i fokus, skal du trykke NVDA+alt+c.
-Du kan også få vist alle kommentarer i projektarket i elementlisten.
+Du kan også få vist alle kommentarer i projektarket i elementlisten ved at trykke NVDA+F7.
+</P>
+<P>
+NVDA kan også vise en bestemt dialog, der tillader dig at tilføje eller redigere en bestemt kommentar.
+NVDA overtager det oprindelige MS Excel-kommentarredigeringsområde på grund af tilgængelighedsbegrænsninger, men tastaturkommandoen for visning af dialogen er arvet fra MS Excel og fungerer derfor også uden at NVDA kører.
++%kc:beginInclude
+For at tilføje eller redigere en kommentar, tryk Shift+F2 på en celle med fokus.
++%kc:endInclude
+</P>
+<P>
+Denne tastaturkommando vises ikke og kan ikke redigeres via dialogen for inputbevægelser.
+</P>
+<P>
+Bemærk: Det er også muligt at åbne lignende redigeringsmuligheder for kommentarer i et ark via kontekstmenuen..
+Dette åbner dog de utilgængelige kommentarredigeringsværktøjer.
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -2962,7 +2981,7 @@ Denne indstilling er et felt til indtastning af en talværdi. Her har du mulighe
 <H5>Markørform til fokus</H5>
 
 <P>
-Denne indstilling lader dig vælge formen (punktmønstret) til brugen af punktmarkøren, når punktmarkøren er tøjret til fokus.
+Denne indstilling lader dig vælge formen (punktmønstret) til brugen af punktmarkøren, når punktmarkøren følger fokus.
 Udvælgelsesindikatoren påvirkes ikke af denne indstilling,  men vil altid forblive punkt 7 og 8 uden disse punkter blinker.
 </P>
 
@@ -2970,7 +2989,7 @@ Udvælgelsesindikatoren påvirkes ikke af denne indstilling,  men vil altid forb
 <H5>Markørform til læsning</H5>
 
 <P>
-Denne indstilling lader dig vælge formen (punktmønstret) til brugen af punktmarkøren, når punktmarkøren er tøjret til fokus.
+Denne indstilling lader dig vælge formen (punktmønstret) til brugen af punktmarkøren, når punktmarkøren følger læsemarkøren.
 Udvælgelsesindikatoren påvirkes ikke af denne indstilling,  men vil altid forblive punkt 7 og 8 uden disse punkter blinker.
 </P>
 
@@ -2996,9 +3015,13 @@ Denne indstilling tillader at NVDA-meddelelser kan vises på ubestemt tid på et
 Tast: NVDA+Ctrl+t
 </P>
 <P>
-Med denne indstilling kan du vælge, om punktdisplayet skal følge systemfokus, om det skal følge navigatorobjektet /læsemarkøren eller begge dele.
+Med denne indstilling kan du vælge, om punktdisplayet skal følge systemfokus/systemmarkøren, om det skal følge navigatorobjektet /læsemarkøren eller begge dele.
 Når "automatisk" er valgt, vil NVDA følge systemmarkøren og læsemarkøren som standard.
 I dette tilfæld vil NVDA følge læsemarkøren midlertidigt, når brugeren ændre positionen af læsemarkøren, eller når navigatorobjektet ændres. Denne tilstand ophører, når systemmarkøren flyttes eller fokus ændres.
+Hvis punkt kun skal følge systemfokus og systemmarkøren, skal indstillingen ændres til "Fokus".
+I dette tilfælde vil punkt ikke følge navigatorobjektet eller læsemarkøren.
+Hvis du derimod vil have at punkt følger læsemarkøren, skal du vælge "Læsemarkør".
+I dette tilfælde vil punkt ikke følge systemfokus og systemmarkøren.
 </P>
 
 <A NAME="BrailleSettingsReadByParagraph"></A>
@@ -3053,7 +3076,7 @@ Når denne indstilling er indstillet til altid at fylde displayet, vil NVDA fors
 Dette har den fordel, at NVDA vil vise så meget information som muligt på skærmen.
 Ulempen er imidlertid, at der altid er en forskel i den position, hvor fokus befinder sig på punktdisplayet.
 Dette kan gøre det vanskeligt at skimme en lang liste med emner, for eksempel, da du bliver nødt til løbende at flytte din finger for at finde starten på emnet.
-Dette var standardadfærden for NVDA 2017.2 og før.
+Dette var standardadfærden for NVDA 2017.2 og tidligere.
 </P>
 <P>
 Når du indstiller fokuskontekstpræsentationsfunktionen til kun at vise kontekstoplysningerne, når du ruller tilbage, viser NVDA som standard aldrig kontekstoplysninger på dit punktdisplay.
@@ -3276,7 +3299,7 @@ Denne indstilling er kun tilgængelig hvis "Annoncér stavefejl" indstillingen e
 
 <P>
 Med denne indstilling kan du vælge, om NVDA skal behandle tastetryk, der bliver genereret af andre programmer som fx. skærmtastaturer eller talegenkendelsesprogrammer. 
-Denne indstilling er slået til som standard, men nogle brugere vil måske foretrække at slå den fra, fx. hvis man skriver vietnamesisk med Unikey typing . I dette tilfælde kan det forårsage indtastning af forkerte bogstaver.
+Denne indstilling er slået til som standard, men nogle brugere vil måske foretrække at slå den fra, fx. hvis man skriver vietnamesisk med UniKey. I dette tilfælde kan det forårsage indtastning af forkerte bogstaver.
 </P>
 
 <A NAME="MouseSettings"></A>
@@ -3698,6 +3721,7 @@ Du kan tilpasse annoncering af:
  <LI>Navn på skrifttype 
  <LI>Størrelse på skrifttype 
  <LI>Skrifttypeattributter
+ <LI>hævet og sænket skrift
  <LI>fremhævelse
  <LI>Typografi 
  <LI>Farve
@@ -3853,9 +3877,18 @@ Denne funktion bestemmer om tegn udtales ved brug af indstillingen <A HREF="#Key
 <P>
 Denne indstilling aktivere en alternative metode til at opdage indtastede tegn i konsolvinduer.
 Selvom denne indstilling kan forbedre ydeevnen og forhindre at noget konsolindhold staves, kan denne indstilling forekomme inkompatibel med nogle terminalprogrammer.
-Denne funktion kan aktiveres i Windows 10 version 1607, 1703, 1709 og 1803 såvel som nyere versioner af Windows 10, hvor UI AAutomation ikke er tilgængelig.
+Denne funktion kan aktiveres i Windows 10 version 1607 og nyere versioner af Windows 10, hvor UI Automation ikke er tilgængelig.
 Advarsel: Med denne indstilling aktiveret vil indtastede tegn, der ikke vises på skærmen såsom adgangskoder ikke blive undertrykket.
 I usikre miljøer, kan du midlertidigt deaktivere <A HREF="#KeyboardSettingsSpeakTypedCharacters">sig indtastede tegn</A> og <A HREF="#KeyboardSettingsSpeakTypedWords">sig indtastede ord</A> under indtastning af adgangskoder.
+</P>
+
+<A NAME="CancelExpiredFocusSpeech"></A>
+<H5>Forsøg på at annullere tale for udløbne fokushændelser</H5>
+
+<P>
+Denne indstilling gør det muligt for NVDA at forsøge på at annullere tale for udløbne fokushændelser
+Som et eksempel kan hurtig navigation gennem GMail i Chrome forårsage, at NVDA oplæser forældede  informationer.
+Denne indstilling skal anses for at være eksperimentel.
 </P>
 
 <A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
@@ -3935,7 +3968,8 @@ NVDA gør som standard ikke forskel på store og små bogstaver).
 </P>
 <P>
 Endelig er der et sæt radioknapper, som du kan bruge til at fortælle NVDA, hvorvidt dit søgemønster skal gælde overalt, om det kun skal bruges som et helt ord, eller om det skal behandles som et regulært udtryk (regular expression).
-Hvis du sætter mønsteret til kun at gælde for hele ord, betyder det, at mønsteret ikke vil blive erstattet, hvis det forekommer som en del af et længere ord, dvs. at det enten skal stå alene, eller det, der kommer før eller efter, ikke må være et alfanumerisk tegn eller et understregningstegn.
+Hvis du sætter mønsteret til kun at gælde for hele ord, betyder det, at mønsteret kun vil blive erstattet, hvis mønstret ikke forekommer som en del af et længere ord.
+Dette er eksempelvis tilfældet, hvis de tegn, der kommer før eller efter, ikke er et bogstav, alfanumerisk tegn eller et understregningstegn eller hvis der ingen tegn er tilstede som en del af mønstret.
 Hvis du med eksemplet fra før vil erstatte ordet "fugl" med "frø", og det kun skulle gælde som et helt ord, ville det ikke komme til at gælde ord som "fugle" eller "sommerfugl".
 </P>
 <P>
@@ -4178,7 +4212,8 @@ Flytbare versioner af NVDA opbevarer alle indstillinger og tilføjelsesprogramme
 <P>
 Installerede versioner af NVDA opbevarer alle indstillinger og tilføjelsesprogrammer i en bestemt NVDA-mappe, som findes i din Windows brugerprofil.
 Det betyder, at alle brugere på systemet kan have hver sine NVDA-indstillinger.
-Du kommer til mappen med dine NVDA-indstillinger ved at gå til Start-menuen og derefter Programmer -&gt; NVDA -&gt; Udforsk mappen med bruger-indstillinger.
+Du kan åbne din egen konfigurationsmappe fra hvor som helst ved at tildele en kommando til den ved brug af dialogen <A HREF="#InputGestures">Inputbevægelser</A>.
+Hvis du har NVDA installeret, kan du finde mappen med dine NVDA-indstillinger ved at gå til Start-menuen og derefter Programmer -&gt; NVDA -&gt; Udforsk mappen med bruger-indstillinger.
 </P>
 <P>
 De indstillinger, som NVDA bruger ved kørsel på logon-skærmen eller skærmbilledet i forbindelse med brugerkonto-kontrol findes i mappen systemConfig i NVDAs installationsmappe.
@@ -4760,7 +4795,7 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 <TD>t4+t5</TD>
 </TR>
 <TR>
-<TD>Skift punkt tøjret til</TD>
+<TD>Skift indstilling for, hvad punkt følger</TD>
 <TD>t1+t3</TD>
 </TR>
 <TR>
@@ -4941,7 +4976,7 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 <TD>b2+b4+b5+b6</TD>
 </TR>
 <TR>
-<TD>Ændre indstillingen punkt tøjret til</TD>
+<TD>Skift indstilling for, hvad punkt følger</TD>
 <TD>b2</TD>
 </TR>
 <TR>
@@ -5379,7 +5414,7 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 <P>
 NVDA understøtter Braille Sense, Braille EDGE, Smart Beetle og Sync punktdisplays fra <A HREF="https://www.hims-inc.com/">Hims</A> hvis disse displays kobles til med USB eller Bluetooth. 
 Hvis du ønsker at koble displayet til ved brug af USB, skal du først installere driveren fra HIMS på dit system.
-Du kan hente disse fra denne side: <A HREF="https://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">https://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip</A>
+Du kan hente disse fra denne side: <A HREF="http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip</A>
 </P>
 <P>
 Tastekombinationerne til disse displays med NVDA er følgende.
@@ -6920,7 +6955,7 @@ BRLTTY har ikke noget med NVDAs automatiske tilkobling af punktdisplays at gøre
 </P>
 <P>
 Dette er tastekombinationerne til BRLTTY til brug med NVDA.
-Se venligst <A HREF="https://mielke.cc/brltty/doc/KeyBindings/">BRLTTY dokumentationen for tastekombinationer</A> for yderliger information om, hvordan BRLTTY kommandoer er indstillet til kontroller på diverse punktdisplays.
+Se venligst <A HREF="http://mielke.cc/brltty/doc/KeyBindings/">BRLTTY dokumentationen for tastekombinationer</A> for yderliger information om, hvordan BRLTTY kommandoer er indstillet til kontroller på diverse punktdisplays.
 </P>
 
 <TABLE BORDER="1" CELLPADDING="4">
