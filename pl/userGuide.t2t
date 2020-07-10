@@ -56,10 +56,14 @@ NVDA obsługuje kody brajla dla wielu języków, w tym brajl zwykły, skróty br
 ++ Licencja i prawa autorskie ++[LicenseAndCopyright]
 NVDA copyright NVDA_COPYRIGHT_YEARS autorzy NVDA.
 
-NVDA jest objęty przez GNU General Public License (wersja 2). 
+NVDA jest dostępny pod licencją GNU General Public License (wersja 2) z dwoma specjalnymi wyjątkami.
+Wyjątki są zawarte w dokumencie licency w rozdziałach "Non-GPL Components in Plugins and Drivers" i "Microsoft Distributable Code". Notatka tłumacza: nazwy rozdziałów pozostały nieprzetłumaczone z powodu cytowania oryginalnego dokumentu.
+NVDA także zawiera i używa komponentów które są objęte różnymi innymi bezpłatnymi i otwartoźródłowymi licencjami.
 Możesz za darmo udostępniać ten program i dowolnie zmieniać go, pod warunkiem, że dołączysz do niego tę licencję oraz udostępnisz pełny kod źródłowy każdemu zainteresowanemu. 
 Dotyczy to zarówno oryginalnej wersji programu, jak i jego zmienionych kopii, a także każdego innego oprogramowania, które korzysta z kodu zaczerpniętego z tego programu. 
+
 Dokładne brzmienie licencji znajdziesz online: [Pełna treść licencji. https://www.gnu.org/licenses/old-licenses/gpl-2.0.html]
+Dla szczegułowych informacji dotyczących wyjątków, skonsultuj się z dokumentem dostępnym w meni NVDA w podmeni "pomoc".
 
 + Wymagania systemowe +[SystemRequirements]
 - Systemy operacyjne: wsparcie wszystkich 32-bitowych i 64-bitowych wersji systemu Windows 7, Windows 8, Windows 8.1 i Windows 10 (w tym systemów operacyjnych dla serwerów od Windows Server 2008 R2).
@@ -359,10 +363,7 @@ Gdy dotrzesz do obiektu, możesz przejrzeć jego treść, używając [poleceń p
 Podczas gdy [Podświetlanie Fokusa #VisionFocusHighlight] jest włączone, aktualna pozycja obiektu nawigatora jest również pokazywana wizualnie.
 Domyślnie obiekt nawigatora podąża za fokusem, ale to zachowanie można włączać i wyłączać.
 
-Monitor brajlowski domyślnie podąża za [fokusem #SystemFocus] i [kursorem systemowym #SystemCaret] oraz obiektem nawigatora i kursorem przeglądu tekstu.
-Jeśli chcesz spowodować podążanie brajla tylko za obiektem nawigatora lub przeglądaniem tekstu, musisz [ustawić powiązanie brajla z #BrailleTether] fokusem.
-W takim przypadku, brajl nie będzie podążał za obiektem nawigacyjnym i kursorem przeglądu.
-Aby brajl podążał za obiektem nawigatora i przeglądem tekstu, należy [skonfigurować powiązanie brajla z #BrailleTether] przeglądem.
+Uwaga: brajl śledzący objekt nawigatora może być skonfigurowany za pomocą opcji  [Przywiązanie brajla #BrailleTether].
  
 Poniżej znajdują się skróty klawiszowe do nawigacji w hierarchii obiektów:
 
@@ -390,8 +391,7 @@ Przesuwając kursor przeglądania, nie zmieniasz położenia kursora systemowego
 Jeśli jednak kursor systemowy zostanie przesunięty, kursor przeglądu domyślnie podąża za nim.
 To domyślne zachowanie można wyłączyć.
 
-Monitor brajlowski domyślnie podąża za [fokusem #SystemFocus] i [kursorem systemowym #SystemCaret] zamiast za obiektem nawigatora i przeglądaniem tekstu.
-Jeśli chcesz spowodować podążanie brajla za obiektem nawigatora lub przeglądaniem tekstu, musisz [ustawić powiązanie brajla z #BrailleTether] przeglądaniem.
+Uwaga: brajl śledzący za kursorem przeglądu może być skonfigurowany za pomocą opcji [przywiązanie brajla #BrailleTether].
 
 Do przeglądania tekstu są dostępne następujące polecenia:
 %kc:beginInclude
@@ -890,7 +890,18 @@ Zaznaczenie pola i naciśnięcie Enter lub przycisku "idź do", przeniesie fokus
 %kc:beginInclude
 Aby odczytać komentarz zaznaczonej komórki, naciśnij NVDA+Alt+C.
 %kc:endInclude
- Wszystkie komentarze arkusza mogą być wymienione na liście elementów NVDA.
+Wszystkie komentarze arkusza mogą być wymienione na liście elementów NVDA po naciśnięciu NVDA+f7.
+
+NVDA także może wyświetlać okno dialogowe do dodania lub edycji określonego komentarza.
+NVDA nadpisuje Excelowe okno do edytowania komentarzy z powodów dostępnościowych, ake skrót do edytowania komentarzy jest dostarczany z MS excela, i także działa bez konieczności uruchamiania NVDA.
+%kc:beginInclude
+Aby dodać lub edytować określony komentarz, w fokusowanej komórce, naciśnij shift+f2.
+%kc:endInclude
+
+Ten skrót nigdzie nie występuje i i nie może być zmieniony z poziomu dialogowego okna "zdarzenia wejścia".
+
+Uwaga: istnieje możliwość otworzenia MS excel regiony do komentarzy z poziomu meni kontekstowego jakielkolwiek komórki skoroszytu.
+Jednakże, to spowoduje otwarcie niedostępnego regionu do edytowania komentarzy, ale nie i określonego dialogu przez NVDA.
 
 +++ Odczyt zablokowanych komórek +++[ExcelReadingProtectedCells]
 Jeśli skoroszyt został zabezpieczony, może nie być możliwe przejście do niektórych komórek, które zostały zablokowane do edycji.
@@ -1284,9 +1295,13 @@ Ta opcja powoduje, że wiadomości NVDA są w nieskończoność wyświetlane na 
 ==== Powiązanie brajla ====[BrailleTether]
 Skrót Klawiszowy: NVDA+Ctrl+T
 
-Ta opcja pozwala wybrać, czy monitor brajlowski będzie podążać za fokusem, czy obiektem nawigatora/punktem przeglądu, albo oboma.
+Ta opcja pozwala wybrać, czy monitor brajlowski będzie podążać za fokusem / kursorem systemowym, czy obiektem nawigatora/punktem przeglądu, albo oboma.
 Gdy ustawione jest "automatycznie", NVDA będzie domyślnie podążać za fokusem i kursorem systemu.
 W takim przypadku, gdy pozycja obiektu nawigatora lub kursora przeglądu zmieni się na skutek interakcji użytkownika, NVDA tymczasowo powiąże brajl z kursorem przeglądu, do czasu, gdy zmieni się pozycja fokusa lub kursora systemowego.
+Jeśli chcesz, żeby NVDA śledziła kursor systemowy wraz z fokusem, Musisz skonfigurować brajl powiązany do fokusu.
+W takim przypadku NVDA nie będzie śledziła nawigację obiektową  oraz kursor przeglądu podczas przeglądu obiektów.
+Jeśli chcesz żeby NVDA śledziła nawigację obiektową zamiast kursoru systemowego, musisz skonfigurować NVDA tak, żeby brajl był powiązany do przeglądu.
+W takim przypadku brajl nie będzie śledził kursor i fokus systemowy.
 
 ==== czytaj akapitami ====[BrailleSettingsReadByParagraph]
 Gdy zaznaczysz to pole, monitor brajlowski będzie wyświetlać tekst akapitami, nie liniami. 
