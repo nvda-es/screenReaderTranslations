@@ -172,7 +172,7 @@ addresses = {
         'lang':'Dutch',
         'email': ['Bram Duvigneau <bram@bramd.nl>', 'Bart Simons <bart@bartsimons.be>', 'A Campen <a.campen@wxs.nl>', 'Leonard de Ruijter <alderuijter@gmail.com>'],
     },
-        'pa': {
+    'pa': {
         'lang':'Punjabi',
         'email': ['Maheshinder Singh Khosla <mahesh.khosla@gmail.com>', 'Dinesh Mittal <punjabimaster259@gmail.com>'],
     },
