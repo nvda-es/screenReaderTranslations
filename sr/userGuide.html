@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE> NVDA 2020.2-dev korisničko uputstvo</TITLE>
+<TITLE> NVDA 2020.3-dev korisničko uputstvo</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2> NVDA 2020.2-dev korisničko uputstvo</H2>
+<H2> NVDA 2020.3-dev korisničko uputstvo</H2>
 </CENTER>
 
 
@@ -113,7 +113,7 @@
       <UL>
       <LI><A HREF="#ExcelAutomaticColumnAndRowHeaderReading">11.2.1. Automatsko čitanje zaglavlja redova i kolona</A>
       <LI><A HREF="#ExcelElementsList">11.2.2. Lista elemenata</A>
-      <LI><A HREF="#ExcelReportingComments">11.2.3. Prijavljivanje komentara</A>
+      <LI><A HREF="#ExcelReportingComments">11.2.3. Prijavljivanje napomena</A>
       <LI><A HREF="#ExcelReadingProtectedCells">11.2.4. Čitanje zaštićenih ćelija</A>
       <LI><A HREF="#ExcelFormFields">11.2.5. Polja za unos</A>
       </UL>
@@ -329,9 +329,7 @@ Oba bi trebalo da budu instalirana ako su primenjena sva ažuriranja koristeći 
  </UL>
 
 <UL>
-<LI>Memorija: 256 mb ili više RAM memorije
-<LI>Brzina procesora: 1.0 ghz ili više
-<LI>Oko 90 MB prostora.
+<LI>Barem 150 MB memorijskog prostora.
 </UL>
 
 <A NAME="GettingAndSettingUpNVDA"></A>
@@ -536,8 +534,10 @@ Ako vaš laptop ne može da uradi ovo ili vam ne dozvoljava da isključite numlo
 
 <P>
 Ako koristite NVDA sa ekranom osetljivim na dodir i imate Windows 8 ili noviji, možete da koristite NVDA putem prečica na ekranu.
-Dok je NVDA pokrenut, sve akcije sa ekrana preuzima NVDA. 
+Dok je NVDA pokrenut, osim ako je podrška za interakciju sa ekranom onemogućena, sve akcije sa ekrana preuzima NVDA. 
 Tako da, radnje koje normalno funkcionišu bez NVDA-a neće raditi.
+Da omogućite ili onemogućite podršku interakcije sa ekranom osetljivim na dodir, pritisnite NVDA+control+alt+t.
+Takođe možete da omogućite ili onemogućite <A HREF="#TouchSupportEnable">podršku interakcije sa ekranom</A> iz kategorije interakcija sa ekranom osetljivim na dodir u NVDA podešavanjima.
 </P>
 
 <A NAME="ExploringTheScreen"></A>
@@ -649,6 +649,13 @@ Kada se meni pojavi, možete koristiti strelice da se krećete kroz meni, i tast
 <TH>Desktop komanda</TH>
 <TH>Laptop komanda</TH>
 <TH>Ekran osetljiv na dodir| Opis</TH>
+</TR>
+<TR>
+<TD>Pokreće ili restartuje NVDA</TD>
+<TD>Control+alt+n</TD>
+<TD>Control+alt+n</TD>
+<TD>Nema</TD>
+<TD>Pokreće ili restartuje NVDA sa radne površine, ako je ova Windows prečica omogućena u procesu instalacije programa NVDA. Ovo je Windows prečica i zato se ne može promeniti u dijalogu ulazne komande.</TD>
 </TR>
 <TR>
 <TD>Zaustavi govor</TD>
@@ -817,6 +824,12 @@ NVDA Pruža sledeće komande za sistemski kursor:
 <TD>Pročitaj trenutni izbor teksta| NVDA+šift+strelica gore</TD>
 <TD>NVDA+šift+s</TD>
 <TD>Čita trenutno odabran tekst|</TD>
+</TR>
+<TR>
+<TD>Prijavi formatiranje teksta</TD>
+<TD>NVDA+f</TD>
+<TD>NVDA+f</TD>
+<TD>Prijavljuje formatiranje teksta na trenutnoj poziciji kursora. Ako se pritisne dva puta prikazuje informaciju u režimu pretraživanja</TD>
 </TR>
 <TR>
 <TD>Sledeća rečenica</TD>
@@ -1099,10 +1112,11 @@ Sledeće komande su dostupne za pregled teksta:
 <TD>Pomera pregledni kursor na poziciju koja je prethodno označena kao početak za kopiranje|</TD>
 </TR>
 <TR>
-<TD>Prijavi formatiranje teksta| NVDA+f</TD>
-<TD>NVDA+f</TD>
-<TD>Nema komande</TD>
-<TD>Prijavljuje informacije o formatiranju teksta na poziciji preglednog kursora. Ako se pritisne dva puta informacije se prikazuju u režimu pretraživanja|</TD>
+<TD>Prijavi formatiranje teksta</TD>
+<TD>NVDA+šift+f</TD>
+<TD>NVDA+šift+f</TD>
+<TD>Nema</TD>
+<TD>Prijavljuje formatiranje teksta na poziciji preglednog kursora. Ako se pritisne dva puta prikazuje informacije u režimu pretraživanja</TD>
 </TR>
 <TR>
 <TD>Prijavi zamenu za trenutni simbol| nema</TD>
@@ -1801,6 +1815,10 @@ Kako bi što je više informacija moguće stalo na brajev red, sledeće skraćen
 <TD>⠤⠤⠤⠤⠤</TD>
 <TD>separator</TD>
 </TR>
+<TR>
+<TD>mrkd</TD>
+<TD>Obeležen sadržaj</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -2172,23 +2190,30 @@ Pritiskanje entera ili dugmeta za pomeranje na element vas prebacuje na to polje
 </UL>
 
 <A NAME="ExcelReportingComments"></A>
-<H4>11.2.3. Prijavljivanje komentara</H4>
+<H4>11.2.3. Prijavljivanje napomena</H4>
 
 <P>
-Da čujete sve komentare za trenutno fokusiranu ćeliju, pritisnite NVDA+alt+c.
-Svi komentari za radni list se takođe mogu prikazati u NVDA listi elemenata nakon što pritisnete NVDA plus f7.
+Da čujete sve napomene za trenutno fokusiranu ćeliju, pritisnite NVDA+alt+c.
+U Microsoft 2016, 365 i novijim office verzijama, komentari u programu Microsoft Excel su preimenovani u "napomene".
+Sve napomene za radni list se takođe mogu prikazati u NVDA listi elemenata nakon što pritisnete NVDA plus f7.
 </P>
 <P>
-NVDA može takođe da prikaže poseban dijalog za dodavanje ili uređivanje komentara.
+NVDA može takođe da prikaže poseban dijalog za dodavanje ili uređivanje određene napomene.
 NVDA menja podrazumevani Excel dijalog zbog problema u pristupačnosti, ali je prečica za prikazivanje dijaloga preuzeta iz Excela što znači da takođe radi bez programa NVDA.
-Da biste dodali ili uredili određen komentar, u fokusiranoj ćeliji, pritisnite shift+f2.
+Da biste dodali ili uredili određenu napomenu, u fokusiranoj ćeliji, pritisnite šift+f2.
 </P>
 <P>
 Ova prečica se ne pojavljuje i ne može se promeniti u NVDA dijalogu za ulazne komande.
 </P>
 <P>
-Napomena: Moguće je takođe otvoriti region za uređivanje komentara iz kontekstnog menija Excela u bilo kojoj ćeliji.
+Napomena: Moguće je takođe otvoriti region za uređivanje napomena iz kontekstnog menija Excela u bilo kojoj ćeliji.
 Ali, ovo će otvoriti nepristupačan region za uređivanje a ne dijalog programa NVDA.
+</P>
+<P>
+U Microsoft Office 2016, 365 i novijim verzijama, novi stil dijaloga za komentare je dodat.
+Ovaj dijalog je pristupačan i nudi dodatne opcije kao što su odgovaranje na komentare, i slično.
+Takođe se može otvoriti iz kontekstnog menija određene ćelije.
+Komentari koji se dodaju iz novog dijaloga nisu vezani za "napomene".
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -2920,6 +2945,7 @@ Ova opcija ne utiče na pokazivač izbora, uvek izbor pokazuju tačke 7 i 8 bez 
 <P>
 Ova opcija je brojčano polje koje bira koliko dugo se poruke zadržavaju na brajevom redu.
 Upisivanje broja 0 isključuje ovakve poruke.
+NVDA poruka se odbacuje kada se pritisne dugme na brajevom redu koje prebacuje kursor, ali se ponovo pojavljuje kada se pritisne odgovarajući taster koji prikazuje poruku ponovo.
 </P>
 
 <A NAME="BrailleSettingsNoMessageTimeout"></A>
@@ -3302,6 +3328,16 @@ Ova kategorija podešavanja, dostupna samo na računarima koji koriste Windows 8
 Ova kategorija sadrži sledeće opcije:
 </P>
 
+<A NAME="TouchSupportEnable"></A>
+<H5>Omogući podršku interakcije sa ekranom</H5>
+
+<P>
+Ovo izborno polje će omogućiti podršku interakcije programa NVDA sa ekranom.
+Ako je omogućeno, možete da koristite vaš prst da se krećete i aktivirate stavke na ekranu osetljivom na dodir.
+Ako je onemogućeno, podrška za ekran osetljiv na dodir biće potpuno onemogućena kao da NVDA nije pokrenut.
+Ovo podešavavnje se takođe može menjati korišćenjem prečice NVDA+control+alt+t. 
+</P>
+
 <A NAME="TouchTypingMode"></A>
 <H5>Režim pisanja na ekranu</H5>
 
@@ -3625,6 +3661,20 @@ Kao primer, ako je omogućena, ako se pritisne slovo j, neće doći do dokumenta
 U ovom slučaju NVDA će reći Windowsu da reprodukuje zvuk kada se pritisne taster koji nije deo brze navigacije.
 </P>
 
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Automatski postavi sistemski fokus na elemente koji se mogu fokusirati u režimu pretraživanja</H5>
+
+<P>
+Komanda: NVDA+8
+</P>
+<P>
+Onemogućena po podrazumevanim podešavanjima, ova opcija vam omogućava da izaberete da li će sistemski fokus automatski biti postavljen na elemente koji se mogu fokusirati (linkovi, polja za unos, i tako dalje.) u toku navigacije kroz sadržaj kursorom režima pretraživanja.
+Ako ostavite ovu opciju onemogućenu elementi izabrani kursorom režima pretraživanja se neće automatski fokusirati.
+Ovo može omogućiti brže pretraživanje i bolji odziv u režimu pretraživanja.
+Fokus će ipak biti ažuriran kada vršite interakciju sa elementom (na primer pritiskanje dugmeta, označavanje izbornog polja).
+Ako se ova opcija omogući može poboljšati podršku za neke sajtove uz sporiji odziv i manju stabilnost.
+</P>
+
 <A NAME="DocumentFormattingSettings"></A>
 <H4>12.1.15. Formatiranje dokumenta (NVDA+kontrol+d)</H4>
 
@@ -3649,6 +3699,7 @@ Možete podesiti prijavljivanje sledećih elemenata:
  </UL>
 <LI>Naglašenost teksta
  <UL>
+ <LI>Markiran (obeležen tekst)
  <LI>Stil
  <LI>Boje
  </UL>
@@ -3678,7 +3729,12 @@ Možete podesiti prijavljivanje sledećih elemenata:
  <UL>
  <LI>Naslovi
  <LI>Linkovi
- <LI>Liste
+  <UL>
+  <LI>Slike
+  </UL>
+ </UL>
+<LI>Liste
+ <UL>
  <LI>Citati
   <UL>
   <LI>Grupisanja
@@ -3785,6 +3841,17 @@ Ovo dugme otvara folder u koji možete da kopirate prilagođen kod dok ga razvij
 Ovo dugme je omogućeno samo ako je NVDA podešen da učitava kod iz Scratchpad foldera.
 </P>
 
+<A NAME="AdvancedSettingsSelectiveUIAEventRegistration"></A>
+<H5>Omogući selektivnu registraciju za UI Automation događaje i promene svojstava</H5>
+
+<P>
+Ova opcija menja kako će NVDA registrovati događaje  Microsoft UI Automation accessibility API-a.
+Kada je ova opcija onemogućena, NVDA registruje puno događaja koje odbacuje.
+Ovo ima ogroman negativan uticaj na brzinu, posebno u aplikacijama kao što je Microsoft Visual Studio.
+Zato, kada je ova opcija omogućena, NVDA će ograničiti registraciju događaja na sistemski fokus za većinu događaja.
+Ako imate probleme u brzini jedne ili više aplikacija, preporučujemo da probate ovu opciju i proverite da li se brzina poboljšala.
+</P>
+
 <A NAME="AdvancedSettingsUseUiaForWord"></A>
 <H5>Koristi UI automation za pristup Microsoft Word kontrolama kada je dostupan</H5>
 
@@ -3828,21 +3895,6 @@ U nesigurnim okruženjima, možete privremeno onemogućiti <A HREF="#KeyboardSet
 Ova opcija će  omogućiti ponašanje koje pokušava da otkaže govor za događaje koji više nisu fokusirani.
 Na primer brzo pomeranje kroz poruke na lokaciji Gmail može izgovarati informacije koje više nisu tačne.
 Ova funkcija je eksperimentalna od NVDA verzije 2020.2.
-</P>
-
-<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
-<H5>Automatski postavi sistemski fokus na elemente koji se mogu fokusirati u režimu pretraživanja</H5>
-
-<P>
-Komanda: NVDA+8
-</P>
-<P>
-Omogućena po podrazumevanim podešavanjima, ova opcija vam omogućava da izaberete da li će sistemski fokus automatski biti postavljen na elemente koji se mogu fokusirati (linkovi, polja za unos, i tako dalje.) u toku navigacije kroz sadržaj kursorom režima pretraživanja.
-Ako je omogućena, predstavlja podrazumevano ponašanje  programa NVDA od verzije 2019.1 i starijim.
-Onemogućavanje ove opcije neće automatski fokusirati ove elemente kada su izabrani kursorom režima pretraživanja.
-Ovo može izazvati brže pretraživanje i bolje iskustvo korišćenja režima pretraživanja.
-Fokus će ipak biti ažuriran kada se vrši interakcija sa elementom  (na primer aktiviranje dugmeta, označavanje izbornog polja).
-Ova funkcija je eksperimentalna od  NVDA 2019.2.
 </P>
 
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
@@ -3915,7 +3967,8 @@ Zbog toga, ako koristimo prethodni primer menjanja reči"Ptica" sa"Žaba", ako u
 </P>
 <P>
 Standardan izraz je poseban znak koji vam dozvoljava da promenite više znakova odjednom, ili promena svih brojeva, ili svih slova, kao nekoliko primera.
-Standardni izrazi nisu uključeni u ovo uputstvo, ali postoji puno uputstva na Webu koja vam mogu pružiti više informacija.
+Standardni izrazi nisu uključeni u ovo uputstvo.
+Za uvodni tutorijal na Engleskom jeziku, molimo pročitajte [<A HREF="https://docs.python.org/3.7/howto/regex.html">https://docs.python.org/3.7/howto/regex.html</A>].
 </P>
 
 <A NAME="SymbolPronunciation"></A>
@@ -3985,6 +4038,24 @@ U ovom dijalogu, možete prilagoditi ulazne komande(tastere na tastaturi, taster
 <P>
 Да уклоните команду са функције, изаберите функцију и притисните дугме уклони.
 </P>
+<P>
+Kategorija emulirani tasteri sistemske tastature sadrži komande za emulaciju sistemskih tastera na tastaturi.
+Ovi  emulirani tasteri se mogu koristiti kako biste kontrolisali vašu tastaturu sa brajevog reda.
+Da biste dodali emuliranu komandu, izaberite kategoriju emulirani tasteri sistemske tastature a zatim pritisnite dugme dodaj.
+Zatim, pritisnite taster na tastaturi koji želite da emulirate.
+Nakon toga, taster će biti dostupan u kategoriji emulirani sistemski tasteri i moćićete da podesite komandu za taj taster kao što je i opisano iznad.
+</P>
+<P>
+Napomena:
+</P>
+
+ <UL>
+ <LI>Emulirani tasteri moraju da sadrže komandu kako bi ostali sačuvani kada se dijalog zatvori.
+ <LI>Ulazna komanda sa modifikatorskim tasterima možda neće moći da se podesi kao emulirana komanda bez modifikatorskih
+ tastera. Na primer, podešavanje emuliranog unosa 'a' i podešavanje komande 'ctrl+m', će možda izazvati
+ da aplikacija primi komandu 'ctrl+a'.
+ </UL>
+
 <P>
 Када завршите са променама, притисните дугме уреду да их сачувате или откажи да их одбаците.
 </P>
