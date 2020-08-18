@@ -113,7 +113,7 @@
       <UL>
       <LI><A HREF="#ExcelAutomaticColumnAndRowHeaderReading">11.2.1. Lectura Automática de Encabezado de Columna y fila</A>
       <LI><A HREF="#ExcelElementsList">11.2.2. La Lista de Elementos</A>
-      <LI><A HREF="#ExcelReportingComments">11.2.3. Anunciando Comentarios</A>
+      <LI><A HREF="#ExcelReportingComments">11.2.3. Anunciando Notas</A>
       <LI><A HREF="#ExcelReadingProtectedCells">11.2.4. Leyendo Celdas Protegidas</A>
       <LI><A HREF="#ExcelFormFields">11.2.5. Campos de Formulario</A>
       </UL>
@@ -327,9 +327,7 @@ Para obtener detalles sobre las escepciones, accede al documento de licencia des
  <LI>Para Windows 7, NVDA requiere del Service Pack 1 o superior.
  <LI>Para Windows Server 2008 R2, NVDA requiere del Service Pack 1 o superior.
  </UL>
-<LI>Memoria: 256 mb o más de RAM
-<LI>Velocidad de Procesador: 1.0 ghz o superior
-<LI>Aproximadamente 90 MB de espacio de almacenamiento.
+<LI>Al menos 150 MB de espacio de almacenamiento.
 </UL>
 
 <A NAME="GettingAndSettingUpNVDA"></A>
@@ -534,8 +532,10 @@ Si tu portátil no puede hacer esto, o no te permite desactivar el bloqueo numé
 
 <P>
 Si estás ejecutando NVDA en un dispositivo con una pantalla táctil y con Windows 8 o superior, también puedes controlar a NVDA directamente a través de órdenes táctiles.
-Mientras NVDA esté en ejecución, toda la entrada táctil irá directamente a NVDA. 
+Mientras NVDA esté en ejecución, al menos que el soporte de interacción esté deshabilitado,, toda la entrada táctil irá directamente a NVDA. 
 Por lo tanto, las acciones que puedan efectuarse normalmente sin NVDA no funcionarán.
+Para conmutar el soporte de la interacción táctil, pulsa NVDA+control+alt+t.
+También puedes habilitar o deshabilitar el <A HREF="#TouchSupportEnable">soporte de interacción táctil</A> desde la categoría Interacción táctil de las opciones de NVDA.
 </P>
 
 <A NAME="ExploringTheScreen"></A>
@@ -648,6 +648,13 @@ Cuando aparezca el menú, puedes utilizar las teclas de cursor para navegar por 
 <TH>Tecla portátil</TH>
 <TH>Táctil</TH>
 <TH>Descripción</TH>
+</TR>
+<TR>
+<TD>Arrancar o reiniciar NVDA</TD>
+<TD>Control+alt+n</TD>
+<TD>Control+alt+n</TD>
+<TD>no</TD>
+<TD>Arranca o reinicia NVDA desde el Escritorio, si este atajo de Windows se habilita durante el proceso de instalación de NVDA. Este es un atajo específico de Windows y por lo tanto no se puede reasignar en el diálogo Gestos de Entrada.</TD>
 </TR>
 <TR>
 <TD>Detener voz</TD>
@@ -836,6 +843,12 @@ NVDA proporciona las siguientes teclas de órdenes en relación al cursor del si
 <TD>NVDA+Shift+Flecha Arriba</TD>
 <TD>NVDA+shift+s</TD>
 <TD>Lee cualquier texto seleccionado actualmente</TD>
+</TR>
+<TR>
+<TD>Anunciar formato de texto</TD>
+<TD>NVDA+f</TD>
+<TD>NVDA+f</TD>
+<TD>Anuncia el formato del texto donde esté situado actualmente el cursor. Pulsando dos veces muestra la información en el modo Exploración</TD>
 </TR>
 <TR>
 <TD>frase siguiente</TD>
@@ -1145,8 +1158,8 @@ Las siguientes órdenes están disponibles para revisión de texto:
 </TR>
 <TR>
 <TD>Anunciar formato del texto</TD>
-<TD>NVDA+f</TD>
-<TD>NVDA+f</TD>
+<TD>NVDA+shift+f</TD>
+<TD>NVDA+shift+f</TD>
 <TD>no</TD>
 <TD>Informa del formato del texto donde esté situado actualmente el cursor de revisión. Pulsando dos veces muestra la información en modo exploración</TD>
 </TR>
@@ -1863,8 +1876,12 @@ Con el fin de tener la mayor cantidad de información posible en una pantalla br
 <TD>ventana</TD>
 </TR>
 <TR>
-<TD><CODE>-----</CODE></TD>
+<TD><S>-</S></TD>
 <TD>separador</TD>
+</TR>
+<TR>
+<TD>cmr</TD>
+<TD>contenido marcado</TD>
 </TR>
 </TABLE>
 
@@ -2241,23 +2258,30 @@ Al seleccionar un campo de formulario y al pulsar intro o el botón Mover te mue
 </UL>
 
 <A NAME="ExcelReportingComments"></A>
-<H4>11.2.3. Anunciando Comentarios</H4>
+<H4>11.2.3. Anunciando Notas</H4>
 
 <P>
-Para anunciar cualquier comentario para la celda actualmente enfocada, pulsa NVDA+alt+c.
-Todos los comentarios para la hoja de cálculo también pueden listarse en la Lista de Elementos de NVDA después de pulsar F7.
+Para anunciar cualquier nota para la celda actualmente enfocada, pulsa NVDA+alt+c.
+En Microsoft 2016, 365 y más recientes, los clásicos comentarios en Microsoft Excel se han renombrado como "notas".
+Todas las notas para la hoja de cálculo también pueden listarse en la Lista de Elementos de NVDA después de pulsar F7.
 </P>
 <P>
-NVDA también puede mostrar un diálogo específico para añadir o editar un comentario.
-NVDA sobreescribe el comentario nativo de MS Excel editando la región debido a limitaciones de accesibilidad, pero el atajo de teclado para mostrar el diálogo se hereda de MS Excel y por lo tanto también funciona fuera de la ejecución de NVDA.
-Para añadir o editar un comentario dado, en una celda enfocada, pulsa shift+f2.
+NVDA también puede mostrar un diálogo específico para añadir o editar una nota.
+NVDA sobreescribe la nota nativa de MS Excel editando la región debido a limitaciones de accesibilidad, pero el atajo de teclado para mostrar el diálogo se hereda de MS Excel y por lo tanto también funciona fuera de la ejecución de NVDA.
+Para añadir o editar una nota dada, en una celda enfocada, pulsa shift+f2.
 </P>
 <P>
 Este atajo de teclado no aparece y no se puede cambiar en el diálogo Gestos de Entrada de NVDA.
 </P>
 <P>
-Nota: también es posible abrir la región de edición de comentarios en MS Excel desde el menú de contexto de cualquier celda de la hoja de cálculo.
-Por lo tanto, esto abrirá la región inaccesible de comentarios y no un diálogo específico de edición de comentarios de NVDA.
+Nota: también es posible abrir la región de edición de notas en MS Excel desde el menú de contexto de cualquier celda de la hoja de cálculo.
+Por lo tanto, esto abrirá la región inaccesible de notas y no un diálogo específico de edición de notas de NVDA.
+</P>
+<P>
+En Microsoft Office 2016, 365 y más reciente, se ha añadido un nuevo diálogo estilo de comentario.
+Este diálogo es accesible y proporciona más características tales como respuestas a los comentarios, etc.
+También puede abrirse desde el menú de contexto de una celda determinada.
+Los comentarios añadidos a las celdas a través del nuevo diálogo estilo de comentario no están relacionados con las "notas".
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -3000,6 +3024,7 @@ El indicador de selección no está afectado por esta opción, siempre son los p
 <P>
 Esta opción es un campo numérico que controla durante cuánto tiempo se muestran los mensajes del sistema en la pantalla braille.
 Especifycando 0 se deshabilita el mostrado de estos mensajes completamente.
+El mensaje de NVDA se cierra inmediatamente al pulsar un sensor en la pantalla braille, pero aparece de nuevo al pulsar la correspondiente tecla que lo disparó.
 </P>
 
 <A NAME="BrailleSettingsNoMessageTimeout"></A>
@@ -3382,6 +3407,16 @@ Esta categoría de opciones, sólo disponible en ordenadores que ejecuten Window
 Esta Categoría contiene las siguientes opciones:
 </P>
 
+<A NAME="TouchSupportEnable"></A>
+<H5>Habilitar soporte de interacción táctil</H5>
+
+<P>
+Esta casilla de verificación habilita el soporte de interacción táctil de NVDA.
+Si se habilita, puedes utilizar tus dedos para navegar e interactuar con los elementos en la pantalla utilizando un dispositivo táctil.
+Si se deshabilita, el soporte de pantalla táctil se desactivará como si NVDA no estuviera funcionando.
+Esta opción también puede conmutarse utilizando NVDA+control+alt+t. 
+</P>
+
 <A NAME="TouchTypingMode"></A>
 <H5>Modo de escritura táctil</H5>
 
@@ -3678,6 +3713,20 @@ Como un ejemplo, al estar activada, si se pulsó la letra j, debería capturarse
 En este caso, NVDA pedirá a Windows que reproduzca un sonido predeterminado cada vez que se pulse una tecla que quede atrapada.
 </P>
 
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Poner el Foco del Sistema Automáticamente en los Elementos Enfocables</H5>
+
+<P>
+Tecla: NVDA+8
+</P>
+<P>
+Desactivada por defecto, esta opción te permite elegir si el foco del sistema debería ponerse automáticamente en elementos que puedan tener el foco del sistema (enlaces, campos de formulario, etc.) al navegar por contenidos con el cursor del modo Exploración.
+Dejando esta opción deshabilitada no se enfocarán automáticamente los elementos enfocables  cuando se seleccionen con el cursor del modo Exploración.
+Esto podría dar como resultado una experiencia de navegación más rápida y una mejor respuesta en el modo Exploración.
+El foco todavía se actualizará en el elemento en particular cuando se interactúe con él (ej.: pulsando un botón o marcando una casilla de verificación).
+Habilitar esta opción puede mejorar el soporte para algunos sitios web a costa del rendimiento y de la estabilidad.
+</P>
+
 <A NAME="DocumentFormattingSettings"></A>
 <H4>12.1.15. Formateado de Documento (NVDA+control+d)</H4>
 
@@ -3698,6 +3747,7 @@ Puedes configurar el anunciado de:
  <LI>Atributos de fuente
  <LI>Superíndices y subíndices
  <LI>Énfasis
+ <LI>Marcado (texto resaltado)
  <LI>Estilo
  <LI>Colores
  </UL>
@@ -3727,6 +3777,7 @@ Puedes configurar el anunciado de:
  <UL>
  <LI>Encabezados
  <LI>Enlaces
+ <LI>Gráficos
  <LI>Listas
  <LI>Citas
  <LI>Grupos
@@ -3828,6 +3879,17 @@ Este botón abre el directorio donde puedes colocar el código personalizado mie
 Este botón sólo está habilitado si NVDA está configurado para permitir la carga de código personalizado desde el directorio de desarrolladores del Scratchpad.
 </P>
 
+<A NAME="AdvancedSettingsSelectiveUIAEventRegistration"></A>
+<H5>Habilitar registro selectivo para eventos y cambios de propiedades para UI Automation</H5>
+
+<P>
+Esta opción cambia cómo NVDA registra los eventos lanzados por la API de accesibilidad Microsoft UI Automation.
+Cuando esta opción está deshabilitada, NVDA registra muchos  eventos UIA que se procesan y se descartan dentro del mismo NVDA.
+Esto tiene un mayor impacto negativo en el rendimiento, especialmente en aplicaciones como Microsoft Visual Studio.
+Por lo tanto, cuando se activa esta opción, NVDA limitará el registro de eventos al foco del sistema para la mayoría de los eventos.
+Si sufres problemas de rendimiento en una o más aplicaciones, te recomendamos que pruebes esta funcionalidad para ver si el rendimiento mejora.
+</P>
+
 <A NAME="AdvancedSettingsUseUiaForWord"></A>
 <H5>Utilizar UI automation para acceder a controles de documento de Microsoft Word cuando esté disponible</H5>
 
@@ -3873,21 +3935,6 @@ En entornos no confiables, podrás desactivar temporalmente <A HREF="#KeyboardSe
 Esta opción habilita el comportamiento que intenta cancelar la voz para eventos de foco caducados.
 En particular moverse rápidamente por los mensajes  en Gmail con Chrome puede hacer que NVDA verbalice información obsoleta.
 Esta funcionalidad es experimental a partir de NVDA 2020.2.
-</P>
-
-<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
-<H5>Poner Automáticamente el Foco del Sistema en los Elementos enfocables en Modo Exploración</H5>
-
-<P>
-Tecla: NVDA+8
-</P>
-<P>
-Habilitada por omisión, esta opción te permite elegir si el foco del sistema debería ponerse automáticamente en los elementos que puedan tenerlo (enlaces, campos de formulario, etc.) cuando se navegue por el contenido con el cursor del modo exploración.
-Si se habilita, esto representa el comportamiento predeterminado de NVDA como la versión 2019.1 y anteriores.
-Deshabilitando esta opción no se enfocarán automáticamente los elementos enfocables cuando se seleccionen con el cursor del modo exploración.
-Esto podría resultar en una mejor experiencia de navegación y una mejor respuesta en el modo exploración.
-El foco todavía se actualizará al elemento en particular cuando interactúes con él (por ejemplo, pulsando un botón, marcando una casilla de verificación).
-Esta funcionalidad es experimental a partir de NVDA 2019.2.
 </P>
 
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
@@ -3960,7 +4007,8 @@ Por lo tanto, utilizando el ejemplo anterior de la sustitución de la palabra "p
 </P>
 <P>
 Una expresión regular es un patrón que contiene símbolos especiales que te permiten emparejar más de un carácter al mismo tiempo, o emparejar solo números, o solo letras, según unos pocos ejemplos. 
-Las expresiones regulares no están cubiertas en esta Guía del Usuario, pero hay muchos tutoriales en la Web que pueden proporcionarte más información.
+Las expresiones regulares no están cubiertas en esta Guía del Usuario.
+Para un tutorial introductorio, Por favor consulta [<A HREF="https://docs.python.org/3.7/howto/regex.html">https://docs.python.org/3.7/howto/regex.html</A>].
 </P>
 
 <A NAME="SymbolPronunciation"></A>
@@ -4030,6 +4078,24 @@ En este caso, aparecerá un menú que te permite seleccionar la opción deseada.
 <P>
 Para borrar un gesto de una orden, selecciona el gesto y pulsa el botón Eliminar.
 </P>
+<P>
+La categoría Teclas del Sistema de Teclado Emuladas contiene órdenes de NVDA que emulan teclas del teclado del sistema.
+Estas teclas emuladas del teclado del sistema pueden utilizarse para controlar un teclado del sistema directamente desde tu pantalla braille.
+Para añadir un gesto de entrada emulado, selecciona la categoría Teclas del Sistema de Teclado Emuladas y pulsa el botón Añadir.
+Entonces, pulsa la tecla en el teclado que desees emular.
+Después de eso, la tecla estará disponible desde la categoría Teclas del Sistema de Teclado Emuladas y podrás asignarle un gesto de entrada según se describió anteriormente.
+</P>
+<P>
+Notas:
+</P>
+
+ <UL>
+ <LI>Las teclas asignadas deben tener gestos asignados para persistir cuando se guarden o se cierre el diálogo.
+ <LI>Un gesto de entrada con teclas modificadoras puede no ser capaz de mapearse a un gesto emulado sin teclas modificadoras.
+ Por ejemplo, configurar la entrada emulada 'a' y configurar un gesto de entrada de 'ctrl+m', puede resultar
+ en que la aplicación reciba un 'ctrl+a'.
+ </UL>
+
 <P>
 Cuando hayas terminado de realizar cambios, pulsa el botón Aceptar para guardarlos o el botón Cancelar para descartarlos.
 </P>
