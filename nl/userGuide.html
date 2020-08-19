@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>NVDA 2020.2-dev Gebruikershandleiding</TITLE>
+<TITLE>NVDA 2020.3-dev Gebruikershandleiding</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>NVDA 2020.2-dev Gebruikershandleiding</H2>
+<H2>NVDA 2020.3-dev Gebruikershandleiding</H2>
 </CENTER>
 
 
@@ -110,7 +110,7 @@
       <UL>
       <LI><A HREF="#ExcelAutomaticColumnAndRowHeaderReading">11.2.1. Automatisch Lezen van Kolom- en Rijkoppen</A>
       <LI><A HREF="#ExcelElementsList">11.2.2. De Elementenlijst</A>
-      <LI><A HREF="#ExcelReportingComments">11.2.3. Opmerkingen Melden</A>
+      <LI><A HREF="#ExcelReportingComments">11.2.3. Notities Melden</A>
       <LI><A HREF="#ExcelReadingProtectedCells">11.2.4. Beveiligde Cellen Lezen</A>
       <LI><A HREF="#ExcelFormFields">11.2.5. Formuliervelden</A>
       </UL>
@@ -322,9 +322,7 @@ Voor details betreffende uitzonderingen kunt u het licentiedocument raadplegen i
 <LI>Besturingssystemen: alle 32-bit en 64-bit edities van Windows 7, Windows 8, Windows 8.1, Windows 10, alsmede alle Server-besturingssystemen vanaf Windows Server 2008 R2.
 <LI>Voor Windows 7, heeft NVDA Service Pack 1 of hoger nodig.
 <LI>Voor Windows Server 2008 R2, heeft NVDA Service Pack 1 of hoger nodig.
-<LI>- Geheugen: 256 MB RAM of meer.
-<LI>Processorsnelheid: 1.0 ghz of hoger.
-<LI>Opslagcapaciteit: ongeveer 90 MB vrije ruimte.
+<LI>tenminste 150 mb aan opslagruimte.
 </UL>
 
 <A NAME="GettingAndSettingUpNVDA"></A>
@@ -538,8 +536,10 @@ Als dit niet mogelijk is op uw laptop of als u NumLock niet kunt uitschakelen, k
 
 <P>
 Als u met NVDA werkt op een met een aanraakscherm uitgerust apparaat dat draait onder Windows 8 of hoger dan kunt u NVDA ook rechtstreeks met aanraakcommando's bedienen.
-Terwijl NVDA actief is, gaat alle door aanraking gegenereerde invoer rechtstreeks naar NVDA.
-Daarom zullen taken die normaal zonder NVDA kunnen worden uitgevoerd niet werken.
+Terwijl NVDA actief is, gaat alle door aanraking gegenereerde invoer rechtstreeks naar NVDA tenzij de ondersteuning voor aanraakinteractie is uitgeschakeld.
+Daarom zullen taken die normaal zonder NVDA kunnen worden uitgevoerd niet uitvoerbaar zijn.
+Om ondersteuning voor aanraakinteractie aan- of uit te zetten drukt u op NVDA+control+alt+t.
+U kunt  <A HREF="#TouchSupportEnable">ondersteuning voor aanraakinteractie</A> ook aan- of uitzetten viahet menu Instellingen van NVDA in de categorie Aanraakinteractie.
 </P>
 
 <A NAME="ExploringTheScreen"></A>
@@ -652,6 +652,13 @@ Wanneer het menu is geopend gebruikt u de pijltjestoetsen om door het menu te ga
 <TH>Laptoptoets</TH>
 <TH>Aanraken</TH>
 <TH>Beschrijving</TH>
+</TR>
+<TR>
+<TD>Start of herstart NVDA</TD>
+<TD>Control+alt+n</TD>
+<TD>Control+alt+n</TD>
+<TD>geen</TD>
+<TD>Hiermee Start of herstart u NVDA vanaf  het bureaublad, als  deze Windows sneltoets  wordt geactiveerd tijdens het installatieproces van NVDA. Het gaat hier om  een Windows-specifieke ssneltoetscombinatie en daarom  is het niet mogelijk  deze te wijzigen in het dialoogvenster Invoerhandelingen.</TD>
 </TR>
 <TR>
 <TD>Spraak stoppen</TD>
@@ -848,6 +855,12 @@ U kunt de volgende NVDA-toetscommando’s gebruiken om met de textcursor te navi
 <TD>NVDA+Shift+pijl omhoog</TD>
 <TD>NVDA+Shift+s</TD>
 <TD>Hiermee wordt geselecteerde tekst voorgelezen.</TD>
+</TR>
+<TR>
+<TD>Tekstopmaak melden</TD>
+<TD>NVDA+f</TD>
+<TD>NVDA+f</TD>
+<TD>Meldt  de opmaakkenmerken van de tekst op  de huidige cursorpositie. Bij tweemaal  drukken wordt de informatie weergegeven in bladermodus.</TD>
 </TR>
 <TR>
 <TD>Volgende zin</TD>
@@ -1156,9 +1169,9 @@ Voor het nalezen van tekst kunt u de volgende toetscombinaties gebruiken:
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>Tekstopmaak weergeven</TD>
-<TD>NVDA+f</TD>
-<TD>NVDA+f</TD>
+<TD>Tekstopmaak melden</TD>
+<TD>NVDA+shift+f</TD>
+<TD>NVDA+shift+f</TD>
 <TD>geen</TD>
 <TD>NVDA laat horen hoe de tekst waarin de leescursor zich bevindt, is opgemaakt. Bij tweemaal drukken krijgt u de informatie in bladermodus.</TD>
 </TR>
@@ -1871,6 +1884,10 @@ Om zoveel mogelijk informatie op een brailleleesregel te krijgen zijn de volgend
 <TD>⠤⠤⠤⠤⠤</TD>
 <TD>scheiding</TD>
 </TR>
+<TR>
+<TD>mrkd</TD>
+<TD>gemarkeerde inhoud</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -2244,23 +2261,30 @@ Door een formulierveld te selecteren en op Enter of de Ga naar knop te drukken, 
 </UL>
 
 <A NAME="ExcelReportingComments"></A>
-<H4>11.2.3. Opmerkingen Melden</H4>
+<H4>11.2.3. Notities Melden</H4>
 
 <P>
-Eventuele opmerkingen voor de cel die momenteel de focus heeft, kunt u laten horen door NVDA+alt+c in te drukken.
-Alle opmerkingen voor het werkblad kunnen ook worden weergegeven in de NVDA Elementenlijst  door op NVDA+f7 te drukken.
+Eventuele notities voor de cel die momenteel de focus heeft, kunt u laten horen door NVDA+alt+c in te drukken.
+In Microsoft 2016, 365 en later is de klassieke benaming 'opmerkingen' in Microsoft Excel vervangen door 'notities'.
+Alle notities voor het werkblad kunnen ook worden weergegeven in de NVDA Elementenlijst  door op NVDA+f7 te drukken.
 </P>
 <P>
-NVDA kan ook een speciaal dialoogvenster weergeven  voor het toevoegen of bewerken van een bepaalde opmerking.
-NVDA neemt de plaats in van het oorspronkelijke van MS Excel afkomstige invoerveldd voor opmerkingen vanwege toegankelijkheidsbeperkingen, maar de toetscombinatie om het dialoogvenster op te roepen  wordt aan MS Excel ontleend en werkt daarom ook zonder dat NVDA draait.
-Om een opmerking toe te voegen of te bewerken in een cel die de focus heeft, drukt u op shift+f2.
+NVDA kan ook een speciaal dialoogvenster weergeven  voor het toevoegen of bewerken van een bepaalde notitie.
+NVDA neemt de plaats in van het oorspronkelijke van MS Excel afkomstige invoerveldd voor notities vanwege toegankelijkheidsbeperkingen, maar de toetscombinatie om het dialoogvenster op te roepen  wordt aan MS Excel ontleend en werkt daarom ook zonder dat NVDA draait.
+Om een notitie toe te voegen of te bewerken in een cel die de focus heeft, drukt u op shift+f2.
 </P>
 <P>
 Deze toetscombinatie komt niet voor  en kan niet worden aangepast in de dialoog invoerhandelingen van NVDA. 
 </P>
 <P>
-Merk op dat u het invoergebied voor opmerkingen in MS Excel ook kunt openen vanuit het contextmenu van elke willekeurige cel van het werkblad.
-Hiermee opent u evenwel het ontoegankelijke invoerveld voor opmerkingen en niet het NVDA-specifieke dialoogvenster.
+Merk op dat u het invoergebied voor notities in MS Excel ook kunt openen vanuit het contextmenu van elke willekeurige cel van het werkblad.
+Hiermee opent u evenwel het ontoegankelijke invoerveld voor notities en niet het NVDA-specifieke dialoogvenster.
+</P>
+<P>
+In Microsoft Office 2016, 365 en later, is een dialoogvenster voor notities nieuwe stijl toegevoegd.
+Dit dialoogvenster  is toegankelijk en biedt meer functionaliteit zoals reageren op notities etc.
+Het kan ook geopend worden vanuit  het contextmenu van een specifieke cel.
+De opmerkingen die aan cellen worden toegevoegd via het dialoogvenster  voor opmerkingen nieuwe stijl staan los van "notities".
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -2998,6 +3022,7 @@ Deze optie heeft geen invloedt op de selectie-indicator. Hierop is altijd punt 7
 <P>
 In het invoerveld kunt u een getal invoeren waarmee u bepaalt hoe lang NVDA-meldingen op de brailleleesregel worden weergegeven.
 Als u "0" als waarde invult, worden geen meldingen getoond.
+De melding van NVDA  verdwijnt onmiddellijk wanneer er een routing-toets op de brailleleesregel  wordt ingedrukt, maar verschijnt bij het indrukken van een corresponderende toets waarmee de melding wordt opgeroepen.
 </P>
 
 <A NAME="BrailleSettingsNoMessageTimeout"></A>
@@ -3385,6 +3410,15 @@ Via deze categorie instellingen, die u alleen aantreft op computers die draaien 
 In deze categorie zijn de volgende keuzemogelijkheden beschikbaar:
 </P>
 
+<A NAME="TouchSupportEnable"></A>
+<H5>Ondersteuning voor Aanraakinteractie inschakelen</H5>
+
+<P>
+Door dit selectievakje aan te vinken activeert u de ondersteuning voor aanraakinteractie van NVDA.
+Eenmaal geactiveerd kunt u uw vingers gebruiken om over het scherm  te navigeren  en er handelingen uit te voeren met betrekking tot de daar voorkomende items, mits een apparaat met aanraakscherm wordt gebruikt.
+Als deze functionaliteit uitgeschakeld is, wordt de ondersteuning voor aanraakschermen gestopt alsof NVDA niet actief is.
+</P>
+
 <A NAME="TouchTypingMode"></A>
 <H5>Direct typen met aanraken</H5>
 
@@ -3714,6 +3748,20 @@ Ervan uitgaande dat de optie is ingeschakeld zal de letter "j", bij voorbeeld, w
 In een dergelijk geval geeft NVDA Windows opdracht een standaard-geluid af te spelen telkens wanneer er een onderschepte toets wordt ingedrukt. 
 </P>
 
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Systeemfocus automatisch op focus-gevoelige elementen plaatsen</H5>
+
+<P>
+Toets: NVDA+8
+</P>
+<P>
+Met deze optie die standaard uit staat, kunt u zorgen dat de systeemfocus automatisch naar elementen gaat  die de systeemfocus kunnen krijgen (links, formuliervelden, etc.) bij het navigeren door content met de bladermoduscursor.
+Als u deze optie uit laat staan krijgen focus-gevoelige elementen niet automatisch de focus wanneer ze geselecteerd worden met de bladermoduscursor.
+Dit kan er voor zorgen dat browsen sneller gaat en de reactiegevoeligheid verbetert in de bladermodus.
+De focus zal evenwel alsnog naar een bepaald element worden verplaatst zodra er sprake is van inter-activiteit bijv.  het indrukken van een knop, het aanvinken van een selectievakje.
+Het inschakelen van deze optie kan ondersteuing voor sommige websites verbeteren ten koste van de prestatie en de stabiliteit.
+</P>
+
 <A NAME="DocumentFormattingSettings"></A>
 <H4>12.1.15. Documentopmaak (NVDA+control+d)</H4>
 
@@ -3734,6 +3782,7 @@ U kunt de vermelding laten horen van:
  <LI>Lettertype-eigenschappen
  <LI>Superscripts en subscripts
  <LI>Nadruk
+ <LI>Gemarkeerd  (uitgelichte / highlighted tekst)
  <LI>Stijl
  <LI>Kleuren
  </UL>
@@ -3763,6 +3812,9 @@ U kunt de vermelding laten horen van:
   <UL>
   <LI>Links
   <LI>Koppen
+  </UL>
+<LI>Grafisch  
+  <UL>
   <LI>Lijsten
   <LI>Blokcitaten
   <LI>groeperingen 
@@ -3852,6 +3904,17 @@ Deze knop is eerst dan ingeschakeld als NVDA zo is ingesteld dat het laden van a
 - 
 </P>
 
+<A NAME="AdvancedSettingsSelectiveUIAEventRegistration"></A>
+<H5>Selectief registrreren inschakelen betreffende gebeurtenissen en aanpassingen  in UI Automation</H5>
+
+<P>
+Met deze optie kunt u bepalen hoe NVDA gebeurtenissen (events) die door de UI Automation accessibility API van Microsoft worden gegenereerd, moeten worden geregistreerd.
+Wanneer deze optie uit staat, zal NVDA registratietaken uitvoeren  voor veel  UIA-gebeurtenissen die binnen NVDA zelf verlopen en beëindigd worden.
+Het gevolg is dat de prestatie flink nadelig wordt beïnvloed, vooral bij  toepassingen zoals Microsoft Visual Studio.
+Daarom zal NVDA,wanneer deze optie is ingeschakeld, registratie van gebeurtenissen  grotendeels beperken tot de systeemfocus.
+Als u te kampen hebt met prestatieproblemen bij één of meer toepassingen, raden we u aan deze functionaliteit uit te proberen om te zien of de prestaties verbeteren.
+</P>
+
 <A NAME="AdvancedSettingsUseUiaForWord"></A>
 <H5>UI automation gebruiken voor toegang tot besturingselementen van Microsoft Word-documenten voor zover beschikbaar</H5>
 
@@ -3895,21 +3958,6 @@ In een omgeving die u niet vertrouwt kunt u <A HREF="#KeyboardSettingsSpeakTyped
 Met deze optie kunt u ervoor zorgen dat geprobeerd wordt spraak bij verlopen gebeurtenissen met focus uitte zetten.
 Met name als u snel met Chrome door berichten in Gmail gaat, doet de gesproken informatie die NVDA geeft er mogelijk niet meer toe.
 Met de introductie van NVDA 2020.2 is deze fucntionaliteit bij wijze van experiment beschikbaar.
-</P>
-
-<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
-<H5>Systeemfocus automatisch instellen op focusgevoelige elementen in de Bladermodus</H5>
-
-<P>
-Toets: NVDA+8
-</P>
-<P>
-Met deze optie, die standaard ingeschakeld staat, kunt u bepalen of de systeemfocus automatisch moet worden ingesteld op elementen die de systeemfocus kunnen krijgen (links, formuliervelden, etc.) wanneer u door de inhoud navigeert met de bladermoduscursor.
-Voor versie 2019.1 en eerder van NVDA geldt dit als het standaardgedrag indien de optie ingeschakeld is.
-Als deze optie uitgeschakeld is, krijgen focusgevoelige elementen niet automatisch de focus wanneer ze worden geselecteerd met de bladermoduscursor.
-Zo krijgt u mogelijk een snellere browse-ervaring en een betere reactiegevoeligheid in de bladermodus.
-De focus wordt even goed gericht op het specifieke element zodra er sprake is van interactie(bijvoorbeeld bij het indrukken van een knop, het aanvinken van een selectievakje.
-Deze functionaliteit is experimenteel vanaf NVDA 2019.2.
 </P>
 
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
@@ -3978,7 +4026,8 @@ Als voor een patroon de voorwaarde voor overeenkomst wordt ingesteld als “heel
 Aan deze voorwaarde wordt voldaan  indien de tekens direct voor en direct na het woord iets anders zijn dan een letter, een cijfer of een liggend streepje (underscore) of dat er helemaal geen tekens staan.
 Als we uitgaan van het eerder gebruikte voorbeeld waarin “luid” werd vervangen door “hard”, dan zou er bij vervanging van een “heel woord” geen sprake van overeenkomst zijn voor harde en gehard.
 Een regulieire expressie (regular expression) is een reeks waarin speciale tekens worden gebruikt om aan te geven hoe en in welke mate de reeks moet worden toegepast (op specifieke tekens, alleen getallen of alleen letters, bij voorbeeld).
-In deze handleiding wordt niet verder ingegaan op reguliere expressies, maar op het internet zijn allerlei tutorials te vinden die meer informatie geven.
+In deze handleiding wordt niet verder ingegaan op reguliere expressies. 
+Voor een inleidende  tutorial kunt u terecht op [<A HREF="https://docs.python.org/3.7/howto/regex.html">https://docs.python.org/3.7/howto/regex.html</A>].
 </P>
 
 <A NAME="SymbolPronunciation"></A>
@@ -4051,6 +4100,23 @@ Desgewenst kunt u via een menu de relevante optie instellen.
 <P>
 Om de aan een commando verbonden invoerhandeling ongedaan te maken, selecteert u de invoerhandeling en drukt u op de knop Ongedaan maken.
 </P>
+<P>
+De categorie Geëmuleerde systeemtoetsenbordtoetsen bevat NVDA commando's welke toetsen op het systeemtoetsenbord emuleren.
+Deze geëmuleerde systeemtoetsenbordtoetsen kunnen gebruikt worden om een systeemtoetsenbord rechtstreeks vanaf uw brailleleesregel te bedienen.
+Om  een geëmuleerde invoerhandeling toe te voegen selecteert  u de categorie Geëmuleerde systeemtoetsenbortoetsen  en drukt  u op the knop Toevoegen.
+Druk vervolgens op de toets van het toetsenbord die u wilt emuleren.
+Hierna is de toets beschikbaar via de categorie Geëmuleerde systeemtoetsenbortoetsen  en kunt u er een invoerhandeling aan toekennen zoals hierboven beschreven.
+</P>
+<P>
+Merk op:
+</P>
+
+ <UL>
+ <LI>Aan geëmuleerde toetsen moeten handelingen zijn toegewezen om ze van kracht telaten blijven wanneer het dialoogvenster wordt opgeslagen / gesloten.
+ <LI>Een invoerhandeling met  zogenaamde 'modifier'-toetsen kan mogelijk niet ingesteld (mapped) worden als geëmuleerde invoerhandeling zonder 'modifier'
+ toetsen. Het instellen van de geëmuleerde invoer 'a' bij voorbeeld en het configureren van een ivoerhandeling 'ctrl+m', kan tot gevolg hebben dat de toepassing 'ctrl+a' krijgt.
+ </UL>
+
 <P>
 Als u klaar bent met het aanbrengen van de wijzigingen drukt u op de knop OK om de wijzigingen op te slaan of op de knop Annuleren als u geen wijzigingen wilt doorvoeren.
 </P>
