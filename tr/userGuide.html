@@ -113,7 +113,7 @@
       <UL>
       <LI><A HREF="#ExcelAutomaticColumnAndRowHeaderReading">11.2.1. Otomatik Sütun ve Satır Başlığı Okuma</A>
       <LI><A HREF="#ExcelElementsList">11.2.2. Öğe Listesi</A>
-      <LI><A HREF="#ExcelReportingComments">11.2.3. Yorumların Bİldirimi</A>
+      <LI><A HREF="#ExcelReportingComments">11.2.3. Notların Bİldirimi</A>
       <LI><A HREF="#ExcelReadingProtectedCells">11.2.4. Korunan Hücreleri Okuma</A>
       <LI><A HREF="#ExcelFormFields">11.2.5. Form Alanları</A>
       </UL>
@@ -324,9 +324,7 @@ Daha fazla detay için <A HREF="https://www.gnu.org/licenses/old-licenses/gpl-2.
 <LI>İşletim Sistemleri: Windows 7, windows 8, Windows 8.1, Windows 10 ve Windows Server 2008 R2'den itibaren Server işletim sistemleri dahil, işletim sistemlerinin tüm 32 ve 64 bit sürümleri.
 <LI>Windows 7 için, NVDA Service Pack 1 veya daha yüksek bir sürüme ihtiyaç duyar.
 <LI>Windows Server 2008 için, NVDA Service Pack 1 veya daha yüksek bir sürüme ihtiyaç duyar.
--- Hafıza: 256 mb Veya daha fazla ram
-<LI>İşlemci Hızı: 1.0 ghz veya yukarısı
-<LI>Yaklaşık 90 MB depolama alanı.
+<LI>en az 150 MB depolama alanı.
 </UL>
 
 <A NAME="GettingAndSettingUpNVDA"></A>
@@ -531,8 +529,11 @@ Dizüstü bilgisayarınız bunu yapamıyorsa veya numaratörü kapamanıza izin 
 
 <P>
 NVDA'yı dokunmatik ekranı olan bir cihaz üzerinde kullanıyorsanız ve cihaz üzerinde Windows 8 ya da daha sonraki bir sürümü çalışıyorsa, NVDA'yı dokunmatik hareketlerle de kontrol edebilirsiniz.
-NVDA çalışırken bütün dokunma hareketleri doğrudan NVDA'ya gönderilir.
+NVDA çalışırken, dokunma etkileşimi desteği devre dışı bırakılmadıkça, tüm dokunma girdileri doğrudan NVDA'ya gönderilir.
 Dolayısıyla, NVDA çalışmıyorken normal olarak gerçekleştirilen işlemler NVDA açıkken yapılmaz.
++%kc:beginInclude
+Dokunma etkileşimi desteğini açıp  kapatmak için, NVDA+kontrol+alt+t tuşlarına basın.
+<A HREF="#TouchSupportEnable">dokunma etkileşimi desteği</A> NVDA ayarlarının Dokunma Etkileşimi kategorisinden de etkinleştirilip devre dışı bırakılabilir.
 </P>
 
 <A NAME="ExploringTheScreen"></A>
@@ -645,6 +646,13 @@ Menü açıldığında, menü ögeleri arasında yön tuşlarınızla dolaşabil
 <TH>Dizüstü kısayol tuşu</TH>
 <TH>Dokunma hareketi</TH>
 <TH>Tarif</TH>
+</TR>
+<TR>
+<TD>NVDA'yı başlatır veya yeniden başlatır</TD>
+<TD>Control+alt+n</TD>
+<TD>Control+alt+n</TD>
+<TD>yok</TD>
+<TD>Bu Windows kısayolu NVDA'nın yükleme işlemi sırasında etkinleştirilirse, NVDA'yı Masaüstünden başlatır veya yeniden başlatır. Bu, Windows'a özgü bir kısayoldur ve bu nedenle girdi hareketleri iletişim kutusunda yeniden atanamaz.</TD>
 </TR>
 <TR>
 <TD>Konuşmayı Durdur</TD>
@@ -830,9 +838,15 @@ Sistem düzenleme imleciyle ilişkili olarak NVDA aşağıdaki tuş komutların�
 </TR>
 <TR>
 <TD>Seçili metnin okunması</TD>
-<TD>NVDA+Şift+Yukarı yön tuşu</TD>
+<TD>NVDA+shift+Yukarı yön tuşu</TD>
 <TD>NVDA+Şift+s</TD>
 <TD>o an seçili olan metni okur</TD>
+</TR>
+<TR>
+<TD>Metin biçimlendirmesini bildir</TD>
+<TD>NVDA+f</TD>
+<TD>NVDA+f</TD>
+<TD>İmlecin o anda bulunduğu metnin biçim bilgisini bildirir. İki kez basılırsa bilgileri tarama modunda gösterir</TD>
 </TR>
 <TR>
 <TD>sonrakiCümle</TD>
@@ -845,12 +859,6 @@ Sistem düzenleme imleciyle ilişkili olarak NVDA aşağıdaki tuş komutların�
 <TD>alt+yukarıOk</TD>
 <TD>alt+yukarıOk</TD>
 <TD>Önceki cümleye gider ve okur. (Yalnızca Microsoft Word ve outlook için desteklenmektedir)</TD>
-</TR>
-<TR>
-<TD>Metin biçimlendirmesinin bildirimi</TD>
-<TD>NVDA+f</TD>
-<TD>NVDA+f</TD>
-<TD>Sistem imlecinin üzerinde bulunduğu metnin biçim bilgisini okur</TD>
 </TR>
 </TABLE>
 
@@ -1148,8 +1156,8 @@ Metni incelerken, aşağıdaki komutlar kullanılabilir:
 </TR>
 <TR>
 <TD>Metin biçimini söyle</TD>
-<TD>NVDA+f</TD>
-<TD>NVDA+f</TD>
+<TD>NVDA+shift+f</TD>
+<TD>NVDA+shift+f</TD>
 <TD>yok</TD>
 <TD>İnceleme imlecinin pozisyonundaki metnin biçimi hakkında bilgi verir. İki kez basılırsa, biçim bilgisi tarama kipinde gösterilir</TD>
 </TR>
@@ -1484,7 +1492,7 @@ Tablolar, listeler vb öge bloklarının başına ve sonuna gitmek için:
 <P>
 Bazı web uygulamaları mesela Gmail, Twitter and Facebook tek harfleri kısayol olarak kullanmaktadır.
 Tarama kipinde kalarak harfleri kısayol olarak kullanmak istiyorsanız tek harf dolaşımını geçici olarak kapatabilirsiniz.
-Mevcut belge için tek harf dolaşımını açıp kapatmak için, NVDA+shift+space tuşlarını kullanın.
+Mevcut belge için tek harf dolaşımını açıp kapatmak için, NVDA+shift+aralık tuşlarını kullanın.
 </P>
 
 <A NAME="ElementsList"></A>
@@ -1869,6 +1877,10 @@ Braille ekranaa mümkün olduğunca fazla bilgi sığdırmak amacıyla, kontrol 
 <TD>⠤⠤⠤⠤⠤</TD>
 <TD>ayraç</TD>
 </TR>
+<TR>
+<TD>sçli</TD>
+<TD>işaretli içerik</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -2244,23 +2256,30 @@ Bir form alanını seçip entır tuşuna ya da git düğmesine basarak tarama ki
 </UL>
 
 <A NAME="ExcelReportingComments"></A>
-<H4>11.2.3. Yorumların Bİldirimi</H4>
+<H4>11.2.3. Notların Bİldirimi</H4>
 
 <P>
-Üzerinde bulunduğunuz hücreyle ilgili yorumu okumak için NVDA+alt+c tuşlarını kullanın.
-Çalışma sayfasındaki tüm yorumlar NVDA+F7 ile açılan öğe listesinde de gösterilebilir.
+Üzerinde bulunduğunuz hücreyle ilgili notu okumak için NVDA+alt+c tuşlarını kullanın.
+Microsoft 2016, 365 ve daha yeni sürümlerde, Microsoft Excel'deki klasik yorumlar "notlar" olarak yeniden adlandırılmıştır.
+Çalışma sayfasındaki tüm notlar NVDA+F7 ile açılan öğe listesinde de gösterilebilir.
 </P>
 <P>
-NVDA ayrıca  bir yorum eklenmesi  veya düzenlenmesi için bir iletişim kutusu açabilir.
+NVDA ayrıca  bir not eklenmesi  veya düzenlenmesi için bir iletişim kutusu açabilir.
 NVDA, erişilebilirlik kısıtlamaları nedeniyle yerel MS Excel bölge düzenleme özelliğini geçersiz kılar, ancak iletişim kutusunu görüntülemek için kullanılan kısayol tuşu  MS Excel'den devralınır ve bu nedenle NVDA aktif değilken de çalışır.
-Bir yorum eklemek veya düzenlemek için, odaklanmış bir hücrede, shift + f2 tuşlarına basın.
+Bir not eklemek veya düzenlemek için, odaklanmış bir hücrede, shift + f2 tuşlarına basın.
 </P>
 <P>
 Bu kısayol tuşu NVDA girdi hareketleri altında gösterilmez ve dolayısıyla değiştirilemez.
 </P>
 <P>
-Not: MS Excel'de yorum düzenleme bölgesini, çalışma sayfasının herhangi bir hücresinin bağlam menüsünden de açmak mümkündür.
-Ancak bu, NVDA'ya özgü yorum düzenleme iletişim kutusunu değil, erişilebilir olmayan yorum düzenleme bölgesini açar.
+Not: MS Excel'de not düzenleme bölgesini, çalışma sayfasının herhangi bir hücresinin bağlam menüsünden de açmak mümkündür.
+Ancak bu, NVDA'ya özgü not düzenleme iletişim kutusunu değil, erişilebilir olmayan not düzenleme bölgesini açar.
+</P>
+<P>
+Microsoft Office 2016, 365 ve daha yeni sürümlerde, yeni bir stil yorum iletişim kutusu eklendi.
+Bu iletişim kutusu  erişilebilirdir ve yorumları yanıtlama vb. Gibi daha fazla işlem sağlar.
+Ayrıca belirli bir hücrenin içerik menüsünden de açılabilir.
+Yeni stil yorum iletişim kutusu aracılığıyla hücrelere eklenen yorumlar "notlar" ile ilgili değildir.
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -3002,6 +3021,7 @@ Seçim belirteci bu tercihten etkilenmez, her zaman 7 ve 8 nokta yukarıdadır.
 <P>
 Bu seçenek, sistem mesajlarının braille ekranda ne kadar uzun süre gösterileceğini kontrol eden bir rakamsal alandır.
 0 yazılırsa mesajların gösterimi tamamen kapatılır.
+Braille ekranında bir yönlendirme tuşuna basıldığında NVDA mesajı hemen kapatılır, ancak mesajı tetikleyen ilgili tuşa basıldığında tekrar gösterilir.
 </P>
 
 <A NAME="BrailleSettingsNoMessageTimeout"></A>
@@ -3384,6 +3404,16 @@ Yalnızca dokunmatik ekranlı ve windows 8 ve sonraki işletim sistemlerinde bul
 Bu kategori aşağıdaki seçenekleri içerir:
 </P>
 
+<A NAME="TouchSupportEnable"></A>
+<H5>Dokunmatik etkileşim desteğini etkinleştir</H5>
+
+<P>
+Bu onay kutusu, NVDA'nın dokunmatik etkileşim desteğini etkinleştirir.
+Etkinleştirilirse, dokunmatik ekranlı bir cihaz kullanarak ekrandaki öğelerde gezinmek ve etkileşimde bulunmak için parmaklarınızı kullanabilirsiniz.
+Devre dışı bırakılırsa, NVDA çalışmıyormuş gibi dokunmatik ekran desteği devre dışı bırakılır.
+Bu ayar, NVDA+kontrol+alt+t kullanılarak da değiştirilebilir. 
+</P>
+
 <A NAME="TouchTypingMode"></A>
 <H5>Dokunarak yazma kipi</H5>
 
@@ -3707,6 +3737,20 @@ Etkinleştirildiğinde, örneğin ş harfine basılırsa, bu tuş ne NVDA komutu
 Bu durumda NVDA, Windows’a bu türden  bir tuşa basıldığında varsayılan bir ses çalmasını söyler.
 </P>
 
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Sistem Odağı Tarama Kipi İmlecini Takip Etsin</H5>
+
+<P>
+Tuş: NVDA+8
+</P>
+<P>
+Varsayılan olarak devre dışı bırakılan bu seçenek, tarama kipi imleciyle dolaşılırken sistem odağının otomatik olarak (bağlantılar, form alanları vb.) odaklanılabilecek öğelere taşınıp taşınmayacağını belirlemenize olanak tanır.
+Bu seçenek  devre dışı bırakılırsa, tarama kipi imleci ile üzerlerine gelindiğinde sistem imleci odaklanabilir öğelere otomatik olarak taşınmayacaktır.
+Bu, daha hızlı tarama deneyimine ve tarama kipinde daha iyi yanıt verme hızına neden olabilir.
+Yine de bir öğeyle etkileşim kurulduğunda (bir düğmeye basmak ya da bir onay kutusunu işaretlemek vb) sistem odağı otomatik olarak taşınır.
+Bu seçeneğin etkinleştirilmesi, performans ve istikrar pahasına bazı web siteleri için desteği iyileştirebilir.
+</P>
+
 <A NAME="DocumentFormattingSettings"></A>
 <H4>12.1.15. Belge formatları (NVDA+kontrol+d)</H4>
 
@@ -3726,10 +3770,11 @@ Belge biçimlendirme seçenekleri gruplar halinde düzenlenmiştir.
 <LI>Yazı tipi özellikleri
  <UL>
  <LI>Üst ve alt simgeler
+ <LI>Vurgu
+ <LI>İşaretlenmiş (Öne çıkarılan metin)
+ <LI>Stil
+ <LI>Renkler
  </UL>
-<LI>Vurgu
-<LI>Stil
-<LI>Renkler
 <LI>Belge Bilgileri
  <UL>
  <LI>Yorumlar
@@ -3756,6 +3801,9 @@ Belge biçimlendirme seçenekleri gruplar halinde düzenlenmiştir.
  <UL>
  <LI>Başlıklar
  <LI>Bağlantılar
+  <UL>
+  <LI>Grafikler
+  </UL>
  <LI>Listeler
  <LI>Alıntılar
  <LI>Gruplandırmalar
@@ -3855,6 +3903,18 @@ Bu düğme, geliştirirken özel kod yerleştirebileceğiniz dizini açar.
 Bu düğme yalnızca NVDA, Geliştirici Scratchpad Dizininden özel kod yüklenmesini sağlayacak şekilde yapılandırılmışsa etkindir.
 </P>
 
+<A NAME="AdvancedSettingsSelectiveUIAEventRegistration"></A>
+<H5>UI Otomasyon etkinlikleri ve özellik değişiklikleri için seçimli kaydı etkinleştirin</H5>
+
+<P>
+Bu seçenek, NVDA'nın Microsoft UI Otomasyon erişilebilirlik API'si tarafından tetiklenen olaylara nasıl kaydolacağını değiştirir.
+Bu seçenek devre dışı bırakıldığında, NVDA, NVDA'nın kendi içinde işlenen ve atılan birçok UIA olayına kaydolur.
+Bunun, özellikle Microsoft Visual Studio gibi uygulamalarda performans üzerinde büyük bir olumsuz etkisi vardır.
+Bu nedenle, bu seçenek etkinleştirildiğinde, NVDA çoğu olay için olay kaydını sistem odağıyla sınırlayacaktır.
+Bir veya daha fazla uygulamada performans sorunları yaşıyorsanız, performansın iyileşip iyileşmediğini görmek için bu işlevi denemenizi öneririz.
+</P>
+
+<A NAME="AdvancedSettingsUseUiaForWord"></A>
 <H5>Varsa Microsoft Word belge denetimlerine erişmek için UI otomasyonunu kullanın</H5>
 
 <P>
@@ -3899,21 +3959,7 @@ Bu seçenek, süresi dolmuş odak olayları için konuşmanın iptal edilmesi  d
 Bu işlev NVDA 2020.2'den itibaren deneysel olarak eklenmiştir.
 </P>
 
-<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
-<H5>Sistem Odağı Tarama kipi imlecini takip etsin</H5>
-
-<P>
-Kısayol: NVDA+8
-</P>
-<P>
-Seçenek varsayılan olarak etkindir ve tarama kipi imleci ile içerikte gezinirken, sistem odağının otomatik olarak odaklanılabilecek öğelere (bağlantılar, form alanları vb.) taşınıp taşınmayacağını belirlemenizi sağlar.
-Etkinleştirildiğinde, NVDA’nın 2019.1 ve önceki sürümlerindeki gibi sonuç verir.
-Bu seçenek devre dışı bırakılırsa, tarama kipi imleci ile üzewrlerine gelindiğinde  sistem odağı odaklanabilir öğelerin üzerine  otomatik olarak taşınmaz.
-Bu, tarama kipinde daha hızlı dolaşma ve daha iyi tepki deneyimi sunabilir.
-Sistem odağı Yine de, herhangi bir öğeyle  etkileşime girildiğinde güncellenecektir ve o öğe üzerine taşınacaktır (örneğin, bir düğmeye basıldığında, bir onay kutusu işaretlendiğinde).
-Bu işlev NVDA 2019.2'den itibaren deneyseldir.
-</P>
-
+<A NAME="AdvancedSettingsCaretMoveTimeout"></A>
 <H5>Düzenleme imleci hareketi zaman aşımı (MS cinsinden)</H5>
 
 <P>
@@ -3921,6 +3967,7 @@ Bu seçenek, NVDA'nın düzenleme imleci (ekleme noktası) düzenlenebilir metin
 NVDA’nın, düzenleme imlecini yanlış şekilde takip ettiğini fark ederseniz, her zaman arkasında bir karakter gibi görünüyor veya satırları tekrarlıyor, o zaman bu değeri arttırmayı deneyebilirsiniz.
 </P>
 
+<A NAME="AdvancedSettingsDebugLoggingCategories"></A>
 <H5>Hata ayıklama kategorileri</H5>
 
 <P>
@@ -3981,8 +4028,9 @@ Son olarak, bir dizi seçim düğmesi, NVDA'ya girdiğiniz ifadenin her yerde mi
 Öyleyse, yukarıdaki "kuş" ifadesini "kurbağa" ile değiştirme örneğini kullanırsak, ifadenin tamamı seçeneği tercih edildiyse, "kuşlar" ifadesi "kurbağalar" olarak seslendirilmez.
 </P>
 <P>
-Bir düzenli ifade, içinde bir seferde birden fazla karakterle eşleştirme yapmanızı sağlayan özel karakterler barındıran bir öbektir.
-bu eşleşme yalnızca rakamlar veya yalnızca harfler de olabilir. Düzenli ifadeler konusu bu kullanıcı rehberinde kapsanmamıştır, ancak webde size konuyla ilgili çok daha fazla bilgi verebilecek eğitimler bulunmaktadır.
+Bir düzenli ifade, içinde bir seferde birden fazla karakterle eşleştirme yapmanızı sağlayan özel karakterler barındıran bir öbektir. Bu eşleşme yalnızca rakamlar veya yalnızca harfler de olabilir. 
+Düzenli ifadeler konusu bu kullanıcı rehberinde kapsanmamıştır.
+Giriş eğitimi için lütfen şu adrese bakın: [<A HREF="https://docs.python.org/3.7/howto/regex.html">https://docs.python.org/3.7/howto/regex.html</A>].
 </P>
 
 <A NAME="SymbolPronunciation"></A>
@@ -4052,6 +4100,24 @@ Bu durumda,, seçim yapmanız için bir menü belirir.
 <P>
 Bir komutla ilgili hareketi silmek için, hareket seçiliyken kaldır tuşuna basın.
 </P>
+<P>
+Taklit sistem klavye tuşları kategorisi, sistem klavyesindeki tuşları taklit eden NVDA komutlarını içerir.
+Bu taklit sistem klavyesi tuşları, doğrudan braille ekranınızdan bir sistem klavyesini kontrol etmek için kullanılabilir.
+Taklit bir girdi hareketi eklemek için, taklit sistem klavye tuşları kategorisini seçin ve Ekle düğmesine basın.
+Ardından, taklit etmek istediğiniz klavyedeki tuşa basın.
+Bundan sonra, tuş taklit sistem klavye tuşları kategorisinde bulunacak ve ona yukarıda açıklandığı gibi bir girdi hareketi atayabileceksiniz..
+</P>
+<P>
+Not:
+</P>
+
+ <UL>
+ <LI>Taklit tuşlara, iletişim kutusunu kaydederken / kapatırken silinmemeleri için atanmış hareketler olmalıdır.
+ <LI>Değişken tuşlara sahip bir giriş hareketi, değişken tuş olmadan taklit edilen bir hareketle eşlenemeyebilir.
+Örneğin, taklit 'a' girişini ayarlamak ve 'ctrl + m' giriş hareketini yapılandırmak,
+ uygulamanın 'ctrl + a' almasına neden olabilir.
+ </UL>
+
 <P>
 Değişiklikleri yaptıktan sonra, kaydetmek için tamam, vazgeçmek için iptal tuşuna basın.
 </P>
