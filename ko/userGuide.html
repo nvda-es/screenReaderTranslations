@@ -78,7 +78,8 @@
     <UL>
     <LI><A HREF="#SingleLetterNavigation">6.1. 첫글자로 탐색</A>
     <LI><A HREF="#ElementsList">6.2. 요소 목록(Elements List)</A>
-    <LI><A HREF="#ImbeddedObjects">6.3. 임베디드 객체</A>
+    <LI><A HREF="#SearchingForText">6.3. 검색</A>
+    <LI><A HREF="#ImbeddedObjects">6.4. 임베디드 객체</A>
     </UL>
   <LI><A HREF="#ReadingMath">7. 수학 컨텐츠 읽기</A>
     <UL>
@@ -174,7 +175,7 @@
     <LI><A HREF="#SAPI5">13.3. Microsoft Speech API version 5 (SAPI 5)</A>
     <LI><A HREF="#MicrosoftSpeechPlatform">13.4. Microsoft Speech Platform</A>
     <LI><A HREF="#OneCore">13.5. Windows OneCore</A>
-    <LI><A HREF="#toc115">13.6. Audiologic Tts3</A>
+    <LI><A HREF="#toc116">13.6. Audiologic Tts3</A>
     </UL>
   <LI><A HREF="#SupportedBrailleDisplays">14. 지원하는 점자 디스플레이들</A>
     <UL>
@@ -188,9 +189,9 @@
     <LI><A HREF="#HedoMobilLine">14.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.9. HumanWare Brailliant BI/B/브레일노트 터치</A>
       <UL>
-      <LI><A HREF="#toc126">14.9.1. 모든 모델에 적용된 명령 목록</A>
-      <LI><A HREF="#toc127">14.9.2. Brailliant BI 32, BI 40, B 80</A>
-      <LI><A HREF="#toc128">14.9.3. Brailliant BI 14</A>
+      <LI><A HREF="#toc127">14.9.1. 모든 모델에 적용된 명령 목록</A>
+      <LI><A HREF="#toc128">14.9.2. Brailliant BI 32, BI 40, B 80</A>
+      <LI><A HREF="#toc129">14.9.3. Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">14.10. HIMS 한소네/브레일 엣지/스마트 비틀/싱크브레일</A>
     <LI><A HREF="#Seika">14.11. Seika</A>
@@ -411,7 +412,7 @@ NVDA를 임시 버전으로 사용하는 것도 한가지 선택사항이긴 합
 이 기능은 설치 버전에서 휴대용 버전을 제작할때에만 제공되며 임시 버전에서 휴대용 버전 제작시 제공되지 않습니다.
 'Continue(계속)' 버튼을 누르시면 휴대용 버전이 만들어 집니다.
 휴대용 버전 만들기가 완료되면 휴대용 버전 만들기가 성공하였다는 메시지가 나타납니다.
-'Ok'를 누르면 이 대화상자가 사라집니다.
+"OK"를 누르면 이 대화상자가 사라집니다.
 </P>
 
 <A NAME="GettingStartedWithNVDA"></A>
@@ -423,7 +424,8 @@ NVDA를 임시 버전으로 사용하는 것도 한가지 선택사항이긴 합
 <P>
 NVDA를 인스톨러로 설치한 경우 control+alt+n을 누르거나 시작 메뉴 - 프로그램  - NVDA 메뉴 - NVDA를 선택하면 간단히 NVDA가 실행됩니다.
 그밖에 실행 대화상자(윈도우키+R)에서 nvda를 입력하고 엔터키를 눌러도 됩니다.
-또한 <A HREF="#CommandLineOptions">실행 옵션</A>을 사용하여 NVDA 재시작 (-r), 종료 (-q), 추가 기능 미사용 (--disable-addons) 등을 지정할 수 있습니다.
+만약 NVDA를 사용하고 있다면 NVDA는 재시작합니다.
+또한 <A HREF="#CommandLineOptions">실행 옵션</A>을 사용하여 NVDA 종료 (-q), 추가 기능 미사용 (--disable-addons) 등을 지정할 수 있습니다.
 </P>
 <P>
 설치 버전 사용시 사용자 설정은 roaming application data 폴더(예: "C:\Users\&lt;user&gt;\AppData\Roaming")에 저장됩니다.
@@ -432,6 +434,7 @@ NVDA를 인스톨러로 설치한 경우 control+alt+n을 누르거나 시작 �
 </P>
 <P>
 휴대용 버전에서 NVDA를 실행하려면 NVDA를 풀어 놓았던 디렉토리로 이동한 후 nvda.exe에서 엔터키를 누르거나 더블 클릭합니다.
+만약 NVDA를 사용하고 있다면 NVDA 종료 후 휴대용 버전이 자동으로 실행됩니다.
 </P>
 <P>
 NVDA가 시작하면 곧바로 맨처음에 점차 높은 음으로 띠리링 소리가 들립니다(그리고 나서 "NVDA가 로딩 중입니다"라고 알려줍니다).
@@ -451,7 +454,7 @@ NVDA가 시작하면 곧바로 맨처음에 점차 높은 음으로 띠리링 �
 (이 주제에 관한 아래의 섹션을 참고해 주세요.)
 또한 이 대화상자는 1개의 콤보박스와 3개의 체크박스를 포함합니다.
 콤보박스를 사용하여 사용하고자 하는 키보드 레이아웃을 선택합니다.
-첫째 체크박스는 capslock 키를 NVDA 기능키로 사용할것인지를 묻습니다(체크하면 사용 가능).
+첫째 체크박스는 caps lock 키를 NVDA 기능키로 사용할것인지를 묻습니다(체크하면 사용 가능).
 두번째 체크박스는 윈도우 로그인 후 NVDA를 실행할것인지를 묻습니다(설치 버전에만 적용됨).
 세번째 체크박스는 NVDA가 실행될 때마다 이 대화상자를 보여줄것인지를 묻습니다 (체크시 보여줍니다).
 </P>
@@ -467,24 +470,24 @@ NVDA 단축키는 대부분 NVDA 키라 불리는 특정한 키와 하나 이상
 여기에서 예외는 numpad키만을 단독으로 이용하는 텍스트 리뷰 단축키(데스크탑 레이아웃 사용시) 외 여럿입니다.
 </P>
 <P>
-NVDA에서는 numpad 인서트키나 확장 인서트키 혹은 capslock키를 NVDA키로 설정할 수 있습니다.
+NVDA에서는 numpad 인서트키나 확장 인서트키 혹은 caps lock키를 NVDA키로 설정할 수 있습니다.
 초기값으로 numpad 인서트키와 확장 인서트키가 NVDA키로 설정되어 있습니다.
 </P>
 <P>
-만약 NVDA키 중 하나를 원래의 키로 동작시키려면(예를 들어 capslock키를 NVDA키로 설정한 상태에서 capslock키를 on으로 켜려고 하는 경우) 그 키를 연속하여 재빨리 두차례 누르세요.
+만약 NVDA키 중 하나를 원래의 키로 동작시키려면(예를 들어 caps lock키를 NVDA키로 설정한 상태에서 caps lock키를 on으로 켜려고 하는 경우) 그 키를 연속하여 재빨리 두차례 누르세요.
 </P>
 
 <A NAME="KeyboardLayouts"></A>
 <H4>4.2.2. 키보드 레이아웃</H4>
 
 <P>
-NVDA는 일반적으로 데스크탑 레이아웃과 랩탑 레이아웃의 두 가지 단축키 세트를 가지고 있습니다.
+NVDA는 데스크탑 레이아웃과 랩탑 레이아웃의 두 가지 단축키 세트를 가지고 있습니다.
 NVDA는 초기값으로 데스크탑 레이아웃을 사용할 수 있도록 설정되어 있지만 NVDA 메뉴 - 설정 - <A HREF="#NVDASettings">NVDA 설정</A> - 키보드 설정에서 랩탑 레이아웃으로 전환 가능합니다.
 </P>
 <P>
-데스크탑 레이아웃은 (numlock 오프 상태에서) numpad 키들을 빈번하게 사용합니다.
+데스크탑 레이아웃은 (num lock 오프 상태에서) numpad 키들을 빈번하게 사용합니다.
 대부분의 랩탑은 물리적인 numpad를 갖고 있지 않지만 일부 랩탑은 Fn키를 누르고 있는 상태에서 키보드의 오른손 부분의 글자와 숫자키를 누름으로써 (예를 들어 (7 8 9 u i o j k l 등) numpad를 모방할 수 있습니다.
-만약 여러분이 가진 랩탑이 이렇게 할 수 없거나 numlock를 오프할 수 없다면 랩탑 레이아웃으로 전환해도 좋을 것입니다.
+만약 여러분이 가진 랩탑이 이렇게 할 수 없거나 num lock를 오프할 수 없다면 랩탑 레이아웃으로 전환해도 좋을 것입니다.
 </P>
 
 <A NAME="NVDATouchGestures"></A>
@@ -492,7 +495,10 @@ NVDA는 초기값으로 데스크탑 레이아웃을 사용할 수 있도록 설
 
 <P>
 만약 터치스크린을 장착한 기기를 사용하시고 그 컴퓨터에 윈도우 8 이상이 설치된 경우 터치 기능을 통해 NVDA를 제어할 수 있습니다
-NVDA가 동작하는 동안 모든 터치 입력은 NVDA가 처리합니다. 그러므로 NVDA 비동작시 사용되던 터치 기능은 사용할 수 없습니다.
+NVDA가 동작하는 동안 터치 지원이 꺼져있지 않는한 모든 터치 입력은 NVDA가 처리합니다. 그러므로 NVDA 비동작시 사용되던 터치 기능은 사용할 수 없습니다.
+그럼으로 NVDA가 실행하지 않는 상태에서 동작하는 터치 명령은 실행되지 않습니다.
+터치 명령 지원을 토글하려면 NVDA+control+alt+t를 누르십시오.
+또한 터치 기능 설정에 있는 <A HREF="#TouchSupportEnable">터치 명령 지원</A> 설정을 통해 터치 기능을 토글할 수 있습니다.
 </P>
 
 <A NAME="ExploringTheScreen"></A>
@@ -521,7 +527,8 @@ NVDA에서 사용하는 터치 제스추어 및 그 제스추어의 사용 요�
 한손가락으로 태핑하면 "한손가락 태핑", 두손가락으로 태핑하면 "두손가락 태핑" 등으로 처리합니다.
 </P>
 <P>
-또한 한개 이상의 손가락으로 여러번 태핑할 수 있는데 이것을 "다중태핑"이라고 합니다. 즉 여러 손가락으로 두번 태핑아면 "두번 태핑", 세번 태핑하면 '세번 태핑" 등으로 처리됩니다.
+또한 한개 이상의 손가락으로 여러번 태핑할 수 있는데 이것을 "다중태핑"이라고 합니다.
+즉 여러 손가락으로 두번 태핑아면 "두번 태핑", 세번 태핑하면 '세번 태핑" 등으로 처리됩니다.
 NVDA 사용시 여러 손가락을 이용한 다중 태핑도 가능합니다 (예: 두손가락으로 두번 태핑, 네손가락으로 한번 태핑 등).
 </P>
 
@@ -559,7 +566,7 @@ NVDA 사용시 여러 손가락을 이용한 다중 태핑도 가능합니다 (�
 터치 키보드를 닫으려면 터치 키보드 아이콘을 두번 태핑하거나 포커스를 편집창에서 옮기십시오.
 </P>
 <P>
-터치 키보드 입력 방식을 사용하려면 터치 키보드를 찬은 후(보통 화면 하단에 위치함) 한 손가락으로 터치 키를 탐색합니다.
+터치 키보드 입력 방식을 사용하려면 터치 키보드를 찾은 후(보통 화면 하단에 위치함) 한 손가락으로 터치 키를 탐색합니다.
 원하는 키를 찾았으면 NVDA 설정내 <A HREF="#TouchInteraction">터치 기능 설정</A>에서 설정한 값에 따라 두번 태핑하거나 손가락을 화면에서 뗍니다.
 </P>
 
@@ -945,7 +952,7 @@ NVDA는 시스템 케럿과 관련하여 다음과 같은 단축키를 제공합
 </TABLE>
 
 <P>
-주의: numpad 키는 numlock키를  오프 시켜야 제대로 동작합니다.
+주의: numpad 키는 num lock키를  오프 시켜야 제대로 동작합니다.
 </P>
 
 <A NAME="ReviewingText"></A>
@@ -1096,10 +1103,17 @@ NVDA를 사용하여 현재 <A HREF="#ScreenReview">화면</A>, <A HREF="#Docume
 <TD>없음</TD>
 <TD>리뷰 커서가 현재 위치한 글자의 서식을 알려 줍니다. 두번 누르면 서식 정보를 브라우즈 모드로 보여줍니다.</TD>
 </TR>
+<TR>
+<TD>기호 정보</TD>
+<TD>없음</TD>
+<TD>없음</TD>
+<TD>없음</TD>
+<TD>리뷰 커서가 현재 위치한 기호 정보를 알려줍니다. 두번 누르면 기호와 기호 정보를 브라우즈 모드로 보여줍니다.</TD>
+</TR>
 </TABLE>
 
 <P>
-주의: numpad 키는 numlock키를  오프 시켜야 제대로 동작합니다.
+주의: numpad 키는 num lock키를  오프 시켜야 제대로 동작합니다.
 </P>
 <P>
 데스크탑 레이아웃 사용시: 이 단축키를 쉽게 암기하려면 다음을 주목하세요. 기본적인 텍스트 리뷰 단축키는 가로 세 칸 세로 세 칸의 격자 모양으로 구성됩니다. 위에서 아래로는 각각 줄, 단어, 글자가 되고, 왼쪽에서 오른쪽으로는 이전, 현재, 다음이 됩니다.
@@ -1268,7 +1282,23 @@ NVDA는 비프음의 변화로 마우스가 스크린의 어느 곳에 위치하
 
 <P>
 NVDA에서는 브라우즈 모드를 사용하여 웹 페이지처럼 복잡한 읽기전용 문서를 읽을 수 있습니다.
-여기에는 모질라 파이어폭스, 모질라 썬더버드, 마이크로소프트 인터넷 익스플로러, 마이크로소프트 ㅜ어드, Microsoft Outlook내 HTML 메시지, 구글 크롬, 어도비 리더, 어도비 플래시 등의 문서가 포함됩니다.
+다음 앱에서 문서를 열었을때 브라우즈 모드를 사용할 수 있습니다:
+</P>
+
+<UL>
+<LI>모질라 파이어폭스
+<LI>마이크로소프트 인터넷 익스플로러
+<LI>모질라 썬더버드
+<LI>Microsoft Outlook내 HTML 메시지
+<LI>구글 크롬
+<LI>마이크로소프트 Edge
+<LI>어도비 리더
+<LI>Foxit Reader
+<LI>어도비 플래시
+<LI>Amazon Kindle for PC(책이 지원하는 경우)
+</UL>
+
+<P>
 또한 브라우즈 모드를 사용하여 마이크로소프트 워드 문서 일기도 가능합니다.
 </P>
 <P>
@@ -1311,7 +1341,7 @@ NVDA에서는 브라우즈 모드를 사용하여 웹 페이지처럼 복잡한 
 <TR>
 <TD>찾기</TD>
 <TD>NVDA+control+f</TD>
-<TD>현재 문서 내용을 검색하기 위하여 텍스트를 입력할 수 있는 대화상자를 팝업합니다.</TD>
+<TD>현재 문서 내용을 검색하기 위하여 텍스트를 입력할 수 있는 대화상자를 팝업합니다. 자세한 내용은 <A HREF="#SearchingForText">검색</A> 섹션을 참조하세요.</TD>
 </TR>
 <TR>
 <TD>다음 찾기</TD>
@@ -1419,8 +1449,42 @@ Gmail, Twitter, Facebook과 같은 웹 앱에서 가끔 첫 글자를 핫키로 
 </TR>
 </TABLE>
 
+<A NAME="SearchingForText"></A>
+<H3>6.3. 검색</H3>
+
+<P>
+This dialog allows you to search for terms in the current document.
+In the "Type the text you wish to find" field, the text to be found can be entered.
+The "Case sensitive" checkbox makes the search consider uppercase and lowercase letters differently.
+For example, with "Case sensitive" selected you can find "NV Access" but not "nv access".
+Use the following keys for performing searches:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Key</TH>
+<TH>Description</TH>
+</TR>
+<TR>
+<TD>Find text</TD>
+<TD>NVDA+control+f</TD>
+<TD>Opens the  search dialog</TD>
+</TR>
+<TR>
+<TD>Find next</TD>
+<TD>NVDA+f3</TD>
+<TD>searches the next occurrence of the current search term</TD>
+</TR>
+<TR>
+<TD>Find previous</TD>
+<TD>NVDA+shift+f3</TD>
+<TD>searches the previous  occurrence of the current search term</TD>
+</TR>
+</TABLE>
+
 <A NAME="ImbeddedObjects"></A>
-<H3>6.3. 임베디드 객체</H3>
+<H3>6.4. 임베디드 객체</H3>
 
 <P>
 가끔 여러 페이지들은 Adobe Flash, Oracle Java나 HTML5 또는 에플리케이션과 대화상자같은 리치 컨텐트(rich content)를 포함하는 경우도 있습니다.
@@ -2925,8 +2989,8 @@ NVDA 기능키가 지정되지 않은 경우 대부분의 NVDA 명령을 사용�
 <H5>caps lock이 켜져 있을때 소문자 입력시 경고음 출력</H5>
 
 <P>
-이 옵션이 선택된 후 만약 capslock이 켜져 있고 쉬프트와 동시에 글자키가 입력되었다면 경고 비프음이 출력됩니다.
-일반적으로 capslock이 켜져 있고 쉬프트와 동시에 글자키가 입력된 경우는 의도적으로 발생하지 않으며 capslock이 켜져있다는 사실을 자각하지 못한데서 기인합니다.
+이 옵션이 선택된 후 만약 caps lock이 켜져 있고 쉬프트와 동시에 글자키가 입력되었다면 경고 비프음이 출력됩니다.
+일반적으로 caps lock이 켜져 있고 쉬프트와 동시에 글자키가 입력된 경우는 의도적으로 발생하지 않으며 caps lock이 켜져있다는 사실을 자각하지 못한데서 기인합니다.
 그러므로 이것을 경고하는 것은 매ㅜ 유익할 수 있습니다.
 </P>
 
@@ -3871,7 +3935,7 @@ Windows 10 사용 시 OneCore(또는 Mobile)라는 음성 엔진을 사용할 �
 이 이슈들은 새 Windows 버전을 통해서 변경되지 않는 한 NVDA에서 해결할 수 없으며 우리는 추후 Windows 업데이트에서 변경될 것이라 희망합니다.
 </P>
 
-<A NAME="toc115"></A>
+<A NAME="toc116"></A>
 <H3>13.6. Audiologic Tts3</H3>
 
 <P>
@@ -3921,14 +3985,11 @@ NVDA는 자동으로 USB나 블루투스로 연결된 디스플레이를 인식 
 먼저 Freedom scientific 점자 디스플레이 드라이버를 설치하십시요.
 만약 드라이버를 설치하지 않았다면 <A HREF="https://www2.freedomscientific.com/downloads/focus-40-blue/focus-40-14-blue-downloads.asp">https://www2.freedomscientific.com/downloads/focus-40-blue/focus-40-14-blue-downloads.asp</A>에서 다운로드 받으실 수 있습니다.
 여기에서는 Focus 40 Blue에 대해 소개하고 있지만 점자 디스플레이 드라이버를 설치한 경우 Freedom Scientific에서 출시한 디스플레이를 사용할 수 있습니다.
-만약 64비트 윈도우와 스크린 리더를 설치한 경우 NVDA용 파일들이 설치되어있지 않을 수 있음으로 위 링크에서 드라이버를 다운받아 설치하시기 바랍니다.
 </P>
 <P>
 기본적으로 NVDA는 USB나 블루투스를 통해 이 디스플레이를 자동으로 인식 후 연결을 시도합니다.
 그러나 사용자는 특정 연결 방식 (포트)로만으로 연결하도록 (예: 블루투스로 사용하면서 USB로 충전할 경우) 포트를 지정할 수 있습니다.
-</P>
-<P>
-현재 본 디스플레이는 자동 인식 및 연결 기능을 지원하지 않습니다.
+이때 NVDA는 USB나 블루투스로 연결시 자동 인식 및 연결 기능을 통해 본 디스플레이를 인식할 수 있습니다.
 </P>
 <P>
 다음은 이 디스플레이에 할당된 NVDA 기능키 목록입니다.
@@ -4645,7 +4706,7 @@ NVDA에서는  <A HREF="https://www.hedo.de/">hedo Reha-Technik</A> 에서 출�
 각 키의 위치에 대해서는 디스플레이의 사용설명서를 참고하십시요.
 </P>
 
-<A NAME="toc126"></A>
+<A NAME="toc127"></A>
 <H4>14.9.1. 모든 모델에 적용된 명령 목록</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4735,7 +4796,7 @@ NVDA에서는  <A HREF="https://www.hedo.de/">hedo Reha-Technik</A> 에서 출�
 </TR>
 </TABLE>
 
-<A NAME="toc127"></A>
+<A NAME="toc128"></A>
 <H4>14.9.2. Brailliant BI 32, BI 40, B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4757,7 +4818,7 @@ NVDA에서는  <A HREF="https://www.hedo.de/">hedo Reha-Technik</A> 에서 출�
 </TR>
 </TABLE>
 
-<A NAME="toc128"></A>
+<A NAME="toc129"></A>
 <H4>14.9.3. Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4870,7 +4931,7 @@ NVDA에서는  <A HREF="https://www.hedo.de/">hedo Reha-Technik</A> 에서 출�
 <TD>dot1+dot2+dot3+dot4+space, f8</TD>
 </TR>
 <TR>
-<TD>capsLock</TD>
+<TD>Caps Lock</TD>
 <TD>1점+3점+6점+스페이스</TD>
 </TR>
 <TR>
@@ -6272,11 +6333,11 @@ Iris 및 Esys 디스플레이는 10개 키로 된 점자 키보드를 탑제하�
 <TD>dot1+dot2+dot3+dot4+backspace</TD>
 </TR>
 <TR>
-<TD>capsLock key</TD>
+<TD>Caps Lock key</TD>
 <TD>dot7+backspace, dot8+backspace</TD>
 </TR>
 <TR>
-<TD>numLock key</TD>
+<TD>num lock key</TD>
 <TD>dot3+backspace, dot6+backspace</TD>
 </TR>
 <TR>
