@@ -30,7 +30,7 @@
     <LI><A HREF="#PortableAndTemporaryCopyRestrictions">3.1. 휴대용 및 임시 버전 사용시 제한 사항</A>
     <LI><A HREF="#InstallingNVDA">3.2. NVDA 설치하기</A>
       <UL>
-      <LI><A HREF="#StartAtWindowsLogon">3.2.1. 윈도우 로그온에서 시작하기</A>
+      <LI><A HREF="#StartAtWindowsLogon">3.2.1. 로그인 중에 NVDA 사용</A>
       <LI><A HREF="#CreateDesktopShortcut">3.2.2. 바탕화면 바로가기 아이콘 및 단축키(컨트롤+알트+n) 만들기</A>
       <LI><A HREF="#CopyPortableConfigurationToCurrentUserAccount">3.2.3. 휴대용 버전의 환경 설정을 현재 사용자 계정으로 복사하기</A>
       </UL>
@@ -244,8 +244,9 @@ NVDA는 <A HREF="https://www.nvaccess.org/">NV Access</A>와 커뮤니티의 후
 <LI>최신 윈도우 (32 비트 및 64 비트) 버전 지원
 <LI>윈도우 로그온과 다른 보안 스크린에서도 실행 가능
 <LI>터치 명령을 사용하여 컨트롤 및 텍스트 읽기 가능
-<LI>일반적인 접근성 인터페이스 지원 예: Microsoft Active Accessibility, Java Access Bridge, IAccessible2, UI 오토메이션(UI 오토메이션은 윈도우즈7 이상에서만 지원)
+<LI>일반적인 접근성 인터페이스 지원 예: Microsoft Active Accessibility, Java Access Bridge, IAccessible2, UI 오토메이션
 <LI>윈도우 명령 프롬프트와 콘솔 애플리케이션 지원
+<LI>시스템 포커스 하이라이트 기능
 </UL>
 
 <A NAME="Internationalization"></A>
@@ -289,10 +290,15 @@ NVDA는 다국어 점자 정자, 약자 및 컴퓨터 점자 코드를 지원합
 NVDA is copyright 2006-2020 NVDA contributors.
 </P>
 <P>
-NVDA는 GNU General Public License(Version 2)를 따릅니다.
+NVDA는 특정 예외를 제외하고 GNU General Public License(Version 2)를 따릅니다.
+특정 예외 항목들은 라이센스 문서내 "Non-GPL Components in Plugins and Drivers"와 "Microsoft Distributable Code" 섹션에서 설명합니다.
+이 외에 NVDA는 타 무료 및 오픈소스 라이센스를 따르는 소프트웨어도 사용하고 있습니다.
 이 라이센스를 동반하고 모든 소스 코드를 원하는 사람에게 이용 가능하도록 허용한다면 누구든지 NVDA를 자유롭게 배포하거나 원하는 방식으로 프로그램을 변경할 수 있습니다.
 이 규정은 NVDA의 원본과 수정본 및 모든 파생물에 적용됩니다.
-더 상세한 정보는 <A HREF="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">라이센스 전본를 참조하세요.</A>
+</P>
+<P>
+자세한 내용은 <A HREF="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">라이센스 전본를 참조하세요.</A>
+예외 항목에 대해서는 NVDA 메뉴내 도움말 하위 메뉴에 있는 라이센스 문서 항목을 통해 읽으실 수 있습니다.
 </P>
 
 <A NAME="SystemRequirements"></A>
@@ -304,16 +310,14 @@ NVDA는 GNU General Public License(Version 2)를 따릅니다.
  <LI>윈도우 7 사용시 서비스팩 1 이상 지원.
  <LI>윈도우 서버 2008 R2 사용시 서비스팩 1 이상 지원.
  </UL>
-<LI>메모리 용량: 256 MB 이상
-<LI>프로세서 속도: 1.0 GHz 이상
-<LI>약 90 MB의 설치공간
+<LI>약 150 MB 이상의 설치공간
 </UL>
 
 <A NAME="GettingAndSettingUpNVDA"></A>
 <H2>3. NVDA 다운로드 및 설치</H2>
 
 <P>
-아직 NVDA를 갖고 있지 않으시면 <A HREF="https://github.com/nvaccess/nvda/">www.nvaccess.org</A>에서 다운 받으실 수 있습니다.
+아직 NVDA를 갖고 있지 않으시면 <A HREF="https://github.com/nvaccess/nvda/">NV Access 웹사이트</A>에서 다운 받으실 수 있습니다.
 </P>
 <P>
 다운로드 섹션으로 가시면 NVDA 최신 버전 다운로드 링크를 찾을 수 있습니다.
@@ -364,15 +368,16 @@ NVDA를 임시 버전으로 사용하는 것도 한가지 선택사항이긴 합
 'Continue(계속)' 버튼을 누르면 NVDA 설치가 시작됩니다.
 이 대화상자에는 차후에 설명될 몇가지 옵션이 있습니다.
 설치가 완료되면 설치가 성공했습니다'라는 메시지가 나타납니다.
-여기에서 'Ok' (확인) 버튼을 누르면 새롭게 설치된 NVDA 설치 버전이 실행됩니다.
+여기에서 'OK' (확인) 버튼을 누르면 새롭게 설치된 NVDA 설치 버전이 실행됩니다.
 </P>
 
 <A NAME="StartAtWindowsLogon"></A>
-<H4>3.2.1. 윈도우 로그온에서 시작하기</H4>
+<H4>3.2.1. 로그인 중에 NVDA 사용</H4>
 
 <P>
 이 옵션을 선택하면 윈도우 로그온 화면에서 패스워드를 입력하기 전에 NVDA가 자동으로 실행됩니다.
 또한 이 옵션은 사용자 계정 컨트롤(UAC)와 다른 보안 화면에서도 적용됩니다.
+새로 설치하였다면 본 옵션은 기본적으로 선택되어 있습니다.
 </P>
 
 <A NAME="CreateDesktopShortcut"></A>
@@ -2288,7 +2293,8 @@ NVDA 설정에 나열된 설정 페널들을 알아보겠습니다.
 본 설정 페널은 다음 옵션을 포함합니다:
 </P>
 
-<H5>사용 언어</H5>
+<A NAME="GeneralSettingsLanguage"></A>
+<H5>NVDA 사용 언어</H5>
 
 <P>
 이 콤보박스에서 NVDA의 인터페이스 및 메시지 표시 언어를 선택할 수 있습니다.
@@ -2301,13 +2307,15 @@ NVDA 설정에 나열된 설정 페널들을 알아보겠습니다.
 OK를 누르면 NVDA가 재시작됩니다.
 </P>
 
-<H5>NVDA 종료시 환경설정 저장</H5>
+<A NAME="GeneralSettingsSaveConfig"></A>
+<H5>종료 시 NVDA 환경설정 저장</H5>
 
 <P>
 이 체크상자를 체크하면 NVDA 종료시 현재 환경 설정이 자동으로 저장됩니다.
 </P>
 
-<H5>NVDA 종료전 종료 옵션 호출</H5>
+<A NAME="GeneralSettingsShowExitOptions"></A>
+<H5>종료 시 NVDA 종료 옵션 표시</H5>
 
 <P>
 이 옵션은 NVDA 종료시 종료 옵션 대화상자를 띄울것인지를 조절합니다.
@@ -2315,13 +2323,15 @@ OK를 누르면 NVDA가 재시작됩니다.
 본 옵션을 해제하면 NVDA 종료 명령을 누르면 NVDA는 곧바로 종료됩니다.
 </P>
 
+<A NAME="GeneralSettingsPlaySounds"></A>
 <H5>NVDA 시작 및 종료음 재생</H5>
 
 <P>
 이 체크상자를 체크하면 NVDA 시작 및 종료시 시작 및 종료음이 재생됩니다.
 </P>
 
-<H5>실행 로그 기록 레벨</H5>
+<A NAME="GeneralSettingsLogLevel"></A>
+<H5>로깅 레벨</H5>
 
 <P>
 이 콤보박스에서 NVDA 실행중 로그 기록 불량을 설정할 수 있습니다.
@@ -2329,21 +2339,24 @@ OK를 누르면 NVDA가 재시작됩니다.
 그러나 개발자에게 버그 리포트 정보를 제공하고자 할때 이 옵션이 유용합니다.
 </P>
 
-<H5>윈도우 로그인 후 NVDA 자동 실행</H5>
+<A NAME="GeneralSettingsStartAfterLogOn"></A>
+<H5>로그인 후에 NVDA 시작</H5>
 
 <P>
 이 옵션을 선택하면 NVDA는 윈도우즈에 로그온 후 자동으로 실행됩니다.
 이 옵션은 NVDA 설치 버전에서만 유효합니다.
 </P>
 
-<H5>윈도우 로그인 창에서 NVDA 사용 (시스템 관리자 권한 필요)</H5>
+<A NAME="GeneralSettingsStartOnLogOnScreen"></A>
+<H5>로그인 중에 NVDA 사용 (관리자 권한 필요)</H5>
 
 <P>
 이 옵션을 선택하면 NVDA는 로그온 화면에서 (예: 사용자 이름과 암호를 입력하여 윈도우즈에 로그온할 때) 자동으로 실행됩니다.
 이 옵션은 NVDA 설치 버전에서만 유효합니다.
 </P>
 
-<H5>현재 NVDA 환경 설정을 윈도우 로그인 창 및 보안 윈도우에서도 사용 (시스템 관리자 권한 필요)</H5>
+<A NAME="GeneralSettingsCopySettings"></A>
+<H5>Windows 로그인 및 보안 화면에서 현재 저장된 설정 사용 (관리자 권한 필요)</H5>
 
 <P>
 이 버튼을 누르면 현재 저장된 NVDA 사용자 환경 설정을 NVDA 시스템 환경 설정 디렉토리에 복사합니다. 이후 갓 복사된 사용자 환경 설정은 윈도우즈 로그온 화면이나 사용자 계정 컨트롤(UAC) 및 기타 보안 화면에서 NVDA 사용시 적용됩니다.
@@ -2351,7 +2364,8 @@ OK를 누르면 NVDA가 재시작됩니다.
 이 옵션은 NVDA 설치 버전에서만 유효합니다.
 </P>
 
-<H5>NVDA 업데이트 자동 확인</H5>
+<A NAME="GeneralSettingsCheckForUpdates"></A>
+<H5>NVDA에서 업데이트를 자동으로 확인</H5>
 
 <P>
 이 옵션을 선택하면 NVDA는 자동으로 업데이트 버전을 체크하며 업데이트가 있을때 업데이트 대화상자를 띄웁니다.
@@ -2366,10 +2380,8 @@ OK를 누르면 NVDA가 재시작됩니다.
 <LI>32비트 또는 64비트 OS
 </UL>
 
-<A NAME="GeneralSettingsGatherUsageStats"></A>
-<H5>NVDA 프로잭트에 NVDA 사용 통계를 전송하도록 허용</H5>
-
 <P>
+==== NVDA 프로잭트에 NVDA 사용 통계를 전송하도록 허용 ====[GeneralSettingsGatherUsageStats][GeneralSettingsGatherUsageStats]
 본 옵션을 선택시 NVDA 업데이트 확인시 사용자 현황(사용 국가 등)이 NV Access에 전송됩니다.
 참고로 IP 주소를 통해 사용 국가는 확인할 수 있어도 IP 주소 자체는 업데이트 서버에 저장되지 않습니다.
 업데이트 확인에 필요한 정보 외에도 다음 데이터가 전송됩니다:
