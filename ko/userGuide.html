@@ -173,9 +173,15 @@
     <UL>
     <LI><A HREF="#LogViewer">13.1. 로그 보기</A>
     <LI><A HREF="#SpeechViewer">13.2. 음성 출력 뷰어</A>
-    <LI><A HREF="#AddonsManager">13.3. 추가 기능 관리자</A>
+    <LI><A HREF="#BrailleViewer">13.3. 점자 출력 뷰어</A>
     <LI><A HREF="#PythonConsole">13.4. 파이썬 콘솔</A>
-    <LI><A HREF="#ReloadPlugins">13.5. 플러그인 재등록</A>
+    <LI><A HREF="#AddonsManager">13.5. 추가 기능 관리자</A>
+      <UL>
+      <LI><A HREF="#incompatibleAddonsManager">13.5.1. Incompatible Add-ons Manager</A>
+      </UL>
+    <LI><A HREF="#CreatePortableCopy">13.6. Create portable copy</A>
+    <LI><A HREF="#RunCOMRegistrationFixingTool">13.7. Run COM registration fixing tool...</A>
+    <LI><A HREF="#ReloadPlugins">13.8. 플러그인 재등록</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">14. 지원하는 음성 엔진</A>
     <UL>
@@ -184,7 +190,6 @@
     <LI><A HREF="#SAPI5">14.3. Microsoft Speech API version 5 (SAPI 5)</A>
     <LI><A HREF="#MicrosoftSpeechPlatform">14.4. Microsoft Speech Platform</A>
     <LI><A HREF="#OneCore">14.5. Windows OneCore</A>
-    <LI><A HREF="#toc123">14.6. Audiologic Tts3</A>
     </UL>
   <LI><A HREF="#SupportedBrailleDisplays">15. 지원하는 점자 디스플레이들</A>
     <UL>
@@ -198,9 +203,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Brailliant BI/B/브레일노트 터치</A>
       <UL>
-      <LI><A HREF="#toc134">15.9.1. 모든 모델에 적용된 명령 목록</A>
-      <LI><A HREF="#toc135">15.9.2. Brailliant BI 32, BI 40, B 80</A>
-      <LI><A HREF="#toc136">15.9.3. Brailliant BI 14</A>
+      <LI><A HREF="#toc137">15.9.1. 모든 모델에 적용된 명령 목록</A>
+      <LI><A HREF="#toc138">15.9.2. Brailliant BI 32, BI 40, B 80</A>
+      <LI><A HREF="#toc139">15.9.3. Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS 한소네/브레일 엣지/스마트 비틀/싱크브레일</A>
     <LI><A HREF="#Seika">15.11. Seika</A>
@@ -3977,8 +3982,37 @@ NVDA 메뉴 -&gt; 도구에 있는 로그 보기에서는 최근 NVDA의 시작�
 어느곳에서나 음성 출력 뷰어를 토글하려면 <A HREF="#InputGestures">단춧키 설정 대화상자</A>에서 음성 뷰어 토글 핫키를 설정하시기 바랍니다.
 </P>
 
+<A NAME="BrailleViewer"></A>
+<H3>13.3. 점자 출력 뷰어</H3>
+
+<P>
+For sighted software developers or people demoing NVDA to sighted audiences, a floating window is available that allows you to view braille output, and the text equivalent for each braille character.
+The braille viewer can be used at the same time as a physical braille display, it will match the number of cells on the physical device.
+While the braille viewer is enabled, it constantly updates to show you the braille that would be displayed on a physical braille display.
+</P>
+<P>
+To enable the braille viewer, check the "Braille Viewer" menu item under Tools in the NVDA menu.
+Uncheck the menu item to disable it.
+</P>
+<P>
+Physical braille displays typically have buttons to scroll forwards or backwards, to enable scrolling with the braille viewer tool use the <A HREF="#InputGestures">Input Gestures dialog</A> to assign keyboard shortcuts which "Scrolls the braille display back" and "Scrolls the braille display forward"
+</P>
+<P>
+The braille viewer window contains a check box labelled "Show braille viewer on startup".
+If this is checked, the braille viewer will open when NVDA is started.
+The braille viewer window will always attempt to re-open with the same dimensions and location as when it was closed.
+</P>
+
+<A NAME="PythonConsole"></A>
+<H3>13.4. 파이썬 콘솔</H3>
+
+<P>
+NVDA 메뉴 -&gt; 도구에 있는 NVDA 파이썬 콘솔은 개발 도구로서 디버깅과 NVDA 내부에 대한 일반적인 검사 혹은 애플리케이션에 대한 접근성 계층 구조의 검사에 유용합니다.
+자세한 정보는 <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html">NVDA 개발 문건</A>을 참조하세요.
+</P>
+
 <A NAME="AddonsManager"></A>
-<H3>13.3. 추가 기능 관리자</H3>
+<H3>13.5. 추가 기능 관리자</H3>
 
 <P>
 NVDA 메뉴 -도구 -&gt; 추가 기능 관리를 선택하면 추가 기능 관리자가 나타납니다. 추가 기능 관리자에서는 NVDA 추가 기능 패키지를 설치, 제거 또는 사용 여부를 설정할 수 있습니다.
@@ -4031,16 +4065,72 @@ NVDA는 정말로 추가기능을 삭제할 것인지 묻습니다.
 어느곳에서나 추가 기능 관리자를 열려면 <A HREF="#InputGestures">단춧키 설정 대화상자</A>에서 추가 기능 관리자 핫키를 설정하시기 바랍니다.
 </P>
 
-<A NAME="PythonConsole"></A>
-<H3>13.4. 파이썬 콘솔</H3>
+<A NAME="incompatibleAddonsManager"></A>
+<H4>13.5.1. Incompatible Add-ons Manager</H4>
 
 <P>
-NVDA 메뉴 -&gt; 도구에 있는 NVDA 파이썬 콘솔은 개발 도구로서 디버깅과 NVDA 내부에 대한 일반적인 검사 혹은 애플리케이션에 대한 접근성 계층 구조의 검사에 유용합니다.
-자세한 정보는 <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html">NVDA 개발 문건</A>을 참조하세요.
+The Incompatible Add-ons Manager, which can be accessed via the "view incompatible add-ons" button in the Add-on manager, allows you to inspect any incompatible add-ons, and the reason they are considered incompatible.
+Add-ons are considered incompatible when they have not been updated to work with significant changes to NVDA, or when they rely on a feature not available in the version of NVDA you are using.
+The Incompatible add-ons manager has a short message to explain its purpose as well as the version of NVDA.
+The incompatible add-ons are presented in a list with the following columns:
 </P>
 
+<OL>
+<LI>Package, the name of the add-on
+<LI>Version, the version of the add-on
+<LI>Incompatible reason, an explanation of why the add-on is considered incompatible
+</OL>
+
+<P>
+The Incompatible add-ons manager also has an "About add-on..." button.
+This dialog will provide you with the full details of the add-on, which is helpful when contacting the add-on author.
+</P>
+
+<A NAME="CreatePortableCopy"></A>
+<H3>13.6. Create portable copy</H3>
+
+<P>
+This will open a dialog which allows you to create a portable copy of NVDA out of the installed version.
+Either way, when running a portable copy of NVDA, in the extra tool sub menu the menu item will be called "install NVDA on this PC" instead of "create portable copy).
+</P>
+<P>
+The dialog to create a portable copy of NVDA or to install NVDA on this PC will prompt you to choose a folder path in which NVDA should create the portable copy or in which NVDA should be installed.
+</P>
+<P>
+In this dialog you can enable or disable the following:
+</P>
+
+<UL>
+<LI>Copy current user configuration (this includes the files in %appdata%\roaming\NVDA or in the user configuration of your portable copy and also includes add-ons and other modules)
+<LI>Start the new portable copy after creation or start NVDA after installation (starts NVDA automatically after the portable copy creation or the installation)
+</UL>
+
+<A NAME="RunCOMRegistrationFixingTool"></A>
+<H3>13.7. Run COM registration fixing tool...</H3>
+
+<P>
+Installing and uninstalling programs on a computer can, in certain cases, cause COM DLL files to get unregistered.
+As COM Interfaces such as IAccessible depend on correct COM DLL registrations, issues can appear in case the correct registration is missing.
+</P>
+<P>
+This can happen i.e. after installing and uninstalling Adobe Reader, Math Player and other programs.
+</P>
+<P>
+The missing registration can cause issues in browsers, desktop apps, task bar and other interfaces.
+</P>
+<P>
+Specifically, following issues can be solved by running this tool:
+</P>
+
+<UL>
+<LI>NVDA reports "unknown" when navigating in browsers such as Firefox, Thunderbird etc.
+<LI>NVDA fails to switch between focus mode and browse mode
+<LI>NVDA is very slow when navigating in browsers while using browse mode
+<LI>And possibly other issues.
+</UL>
+
 <A NAME="ReloadPlugins"></A>
-<H3>13.5. 플러그인 재등록</H3>
+<H3>13.8. 플러그인 재등록</H3>
 
 <P>
 이 옵션을 선택하면 NVDA 재시작 없이도 애플리케이션 모듈과 전역 플러그인을 다시 불러옵니다. 이 옵션은 개발자에게 유용합니다.
@@ -4118,27 +4208,10 @@ Microsoft Speech Platform은 보통 서버 기반의 음성 애플리케이션 �
 <P>
 Windows 10 사용 시 OneCore(또는 Mobile)라는 음성 엔진을 사용할 수 있습니다.
 여러 언어를 지원하고 각 언어마다 다른 보이스를 제공하며 마이크로소프트 SAPI 5 엔진보다 반응 속도가 빠릅니다.
+On Windows 10, NVDA uses Windows OneCore voices by default (<A HREF="#eSpeakNG">eSpeak NG</A> is used in other releases).
 </P>
 <P>
 각 언어별 보이스 목록과 설치 방법에 대해서는 다음 마이크로소프트 웹사이트를 참조하세요: <A HREF="https://support.microsoft.com/en-us/help/22797/windows-10-narrator-tts-voices">https://support.microsoft.com/en-us/help/22797/windows-10-narrator-tts-voices</A>
-</P>
-<P>
-현재 NVDA에서 음성 속도를 조절할 때 Narrator에서 제공하는 빠른 속도는 제공되지 않습니다.
-또한 전체적인 속도 설정은 설정(Settings) 앱의 설정을 따릅니다.
-설정 앱에서 변경된 값은 NVDA에도 적용됩니다.
-이 이슈들은 새 Windows 버전을 통해서 변경되지 않는 한 NVDA에서 해결할 수 없으며 우리는 추후 Windows 업데이트에서 변경될 것이라 희망합니다.
-</P>
-
-<A NAME="toc123"></A>
-<H3>14.6. Audiologic Tts3</H3>
-
-<P>
-이것은 상용 이탈리아어 음성 엔진입니다.
-NVDA에서 이 음성 엔진을 사용하려면 반드시 시스템에 설치해야 합니다.
-더 상세한 정보를 원하시면 Audiologic 웹사이트 <A HREF="http://www.audiologic.it">www.audiologic.it</A>를 방문하세요.
-</P>
-<P>
-이 음성 엔진은 <A HREF="#VoiceSpellingFunctionality">spelling functionality</A>을 지원하지 않습니다.
 </P>
 
 <A NAME="SupportedBrailleDisplays"></A>
@@ -4900,7 +4973,7 @@ NVDA에서는  <A HREF="https://www.hedo.de/">hedo Reha-Technik</A> 에서 출�
 각 키의 위치에 대해서는 디스플레이의 사용설명서를 참고하십시요.
 </P>
 
-<A NAME="toc134"></A>
+<A NAME="toc137"></A>
 <H4>15.9.1. 모든 모델에 적용된 명령 목록</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -4990,7 +5063,7 @@ NVDA에서는  <A HREF="https://www.hedo.de/">hedo Reha-Technik</A> 에서 출�
 </TR>
 </TABLE>
 
-<A NAME="toc135"></A>
+<A NAME="toc138"></A>
 <H4>15.9.2. Brailliant BI 32, BI 40, B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5012,7 +5085,7 @@ NVDA에서는  <A HREF="https://www.hedo.de/">hedo Reha-Technik</A> 에서 출�
 </TR>
 </TABLE>
 
-<A NAME="toc136"></A>
+<A NAME="toc139"></A>
 <H4>15.9.3. Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
