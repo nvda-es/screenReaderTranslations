@@ -6903,11 +6903,11 @@ nvda -q
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>nvda -rm</TD>
-<TD>NVDA를 재시작함과 동시에 시작음 재생 불가 등을 적용합니다.</TD>
+<TD>nvda -mc</TD>
+<TD>시작음 재생 불가 및 특정 환경 파일에 저장된 환경을 적용합니다.</TD>
 </TR>
 <TR>
-<TD>nvda -rm --disable-addons</TD>
+<TD>nvda -mc --disable-addons</TD>
 <TD>위와 같으며 또한 추가 기능을 일시 정지시킵니다.</TD>
 </TR>
 </TABLE>
@@ -6953,11 +6953,6 @@ nvda -q
 <TD>NVDA 종료</TD>
 </TR>
 <TR>
-<TD>-r</TD>
-<TD>--replace</TD>
-<TD>NVDA 재시작</TD>
-</TR>
-<TR>
 <TD>-k</TD>
 <TD>--check-running</TD>
 <TD>NVDA 실행 여부 확인(0=실행중, 1=실행하지 않음)</TD>
@@ -6970,7 +6965,7 @@ nvda -q
 <TR>
 <TD>-l LOGLEVEL</TD>
 <TD>--log-level=LOGLEVEL</TD>
-<TD>최소 로그 레벨 지정(debug 10, info 20, warning 30, error 40, critical 50, 기본으로 warning)</TD>
+<TD>최소 로그 레벨 지정(debug 10, input/output 12, debug warning 15, info 20, warning 30, error 40, critical 50, disabled 100, 기본으로 warning)</TD>
 </TR>
 <TR>
 <TD>-c CONFIGPATH</TD>
@@ -6995,7 +6990,12 @@ nvda -q
 <TR>
 <TD>없음</TD>
 <TD>--debug-logging</TD>
-<TD>NVDA 재시작시 디버그 기록을 출력하도록 설정합니다. 본 옵션 사용시 명령 목록에 입력된 로그 레벨 설정( --loglevel, -l)은 무시됩니다.</TD>
+<TD>NVDA 재시작시 디버그 기록을 출력하도록 설정합니다. 본 옵션 사용시 명령 목록에 입력된 로그 레벨 설정( --loglevel, -l)과 로깅 않함은 무시됩니다.</TD>
+</TR>
+<TR>
+<TD>없음</TD>
+<TD>--no-logging</TD>
+<TD>실행 기록을 남기지 않습니다. 본 옵션은 특정 로깅 레벨 ( --loglevel, -l) 또는 디버그 로그 옵션이 주어지면 무시됩니다.</TD>
 </TR>
 <TR>
 <TD>없음</TD>
@@ -7011,6 +7011,11 @@ nvda -q
 <TD>없음</TD>
 <TD>--install-silent</TD>
 <TD>조용하게 NVDA 설치 (자동 실행 차단)</TD>
+</TR>
+<TR>
+<TD>없음</TD>
+<TD>--enable-start-on-logon=True|False</TD>
+<TD>NVDA 설치후 <A HREF="#StartAtWindowsLogon">로그인중 사용</A> 여부 설정</TD>
 </TR>
 <TR>
 <TD>없음</TD>
