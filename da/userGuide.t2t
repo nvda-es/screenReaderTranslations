@@ -69,9 +69,7 @@ For oplysninger om, hvilke undtagelser gør sig gældende, læs licensvilkårene
 - Operativsystemer: alle 32-bit og 64-bit versioner af Windows 7, Windows 8, Windows 8.1 og Windows 10, samt alle serverstyresystemer fra Server 2008 R2.
  - For Windows 7 kræver NVDA Service Pack 1 eller højere.
  - For Windows Server 2008  R2 kræver NVDA Service Pack 1 eller højere.
-- Hukommelse: 256 MB eller mere RAM
-- Processor hastighed: 1,0 GHz eller højere
-- Omkring 90 MB lagerplads.
+- Mindst 150 MB lagerplads.
 -
 
 + Hente og opsætte NVDA +[GettingAndSettingUpNVDA]
@@ -203,8 +201,12 @@ Hvis din bærbare computer ikke kan gøre brug af dette, eller ikke tillader dig
 
 ++ NVDA Berøringsbevægelser ++[NVDATouchGestures]
 Hvis du kører NVDA på en enhed med touchskærm og Windows 8 eller nyere, kan du kontrollere NVDA direkte ved hjælp af den berøringsfølsomme skærm.
-Når NVDA er i gang, vil alle bevægelser registreret af skærmen blive indfanget af NVDA. 
+Når NVDA er i gang, vil alle bevægelser registreret af skærmen blive indfanget af NVDA, medmindre berøringsinteraktion er deaktiveret.
 Dette betyder, at handlinger der kan udføres normalt uden NVDA ikke vil virke.
+%kc:beginInclude
+For at slå understøttelse for berøring til eller fra, tryk NVDA+Ctrl+alt+T.
+%kc:endInclude
+Du kan også skifte denne indstilling ved at gå til [Berøringsinteraktion #TouchSupportEnable] i NVDAs indstillingspanel.
 
 +++ Udforsk skærmen +++[ExploringTheScreen]
 Den mest grundlæggende handling du kan udføre er at få annonceret et element eller noget tekst på skærmen uanset hvor det befinder sig.
@@ -214,6 +216,8 @@ Du kan også beholde din finger på skærmen, og derefter bevæge den rundt på 
 +++ Berøringsbevægelser +++[TouchGestures]
 Når NVDA-kommandoer er beskrevet senere i denne brugermanual, kan de indeholde information om hvordan man benytter touchskærmen til at udføre den tilsvarende kommando.
 Følgende information beskriver hvordan du kan udføre diverse berøringsbevægelser.
+
+
 
 ==== Tryk ====
 Tryk på skærmen hurtigt med en eller flere fingre.
@@ -273,6 +277,7 @@ Når menuen kommer op, kan du bruge piletasterne til at navigere rundt i menuen,
 ++ Grundlæggende NVDA-kommandoer ++[BasicNVDACommands]
 %kc:beginInclude
 || Navn | Desktop tast | Laptop tast | Touchbevægelse | Beskrivelse |
+| Starter eller genstarter NVDA | Control+alt+n | Control+alt+n | ingen | Starter eller genstarter NVDA. Dette er en Windows-kommando tildelt til ikonet på skrivebordet under installationen, hvis den pågældende indstilling er markeret. Denne genvej kan ikke ændres via dialogen til håndtering af kommandoer. |
 | Stop tale | Kontrol | Kontrol | enkelt tryk med to fingre | stopper talen med det samme |
 | Pause Tale | Shift | Shift | Ingen | Sætter talen på pause. Når du trykker igen, fortsætter talen, hvor den slap (hvis pause er understøttet af den aktuelle talesyntese) |
 | NVDA-menu | NVDA+n | NVDA+n | Dobbelttryk med to fingre | Fremkalder NVDA-menuen, så du får adgang til indstillinger, værktøjer og hjælp osv. |
@@ -328,6 +333,7 @@ Følgende NVDA-kommandoer kan bruges i forbindelse med systemmarkøren:
 | Sig alt | NVDA+Pil-ned | NVDA+a | Starter læsningen fra markørens nuværende position og flytter markøren med ned i teksten |
 | Læs aktuelle linje | NVDA+Pil-op | NVDA+l | Læser den linje, hvor markøren for øjeblikket befinder sig. Tryk to gange for at få linjen stavet. Tryk tre gange for at stave linjen ved brug af tegnbeskrivelser. |
 | Læs den valgte tekst | NVDA+Shift+Pil-op | NVDA+Shift+s | Læser den tekst, som er blevet markeret |
+| Rapportér tekstformatering | NVDA+f | NVDA+f | Oplyser formateringsinformation for systemmarkørens aktuelle position i et dokument. Ved et dobbelttryk vil denne information blive vist i gennemsynstilstand |
 | Næste sætning | Alt+Pil-ned | Alt+Pil-ned | Flytter markøren til den næste sætning og læser den (kun understøttet i Microsoft Word og Outlook). |
 | Forrige sætning | Alt+Pil-op | Alt+Pil-op | Flytter markøren til den forrige sætning og læser den (kun understøttet i Microsoft Word og Outlook). |
 
@@ -712,6 +718,7 @@ For at få plads til så meget som muligt på et punktdisplay bruger NVDA følge
 | nv N | Et emne i en trævisning har niveau N |
 | vnd | vindue |
 | ⠤⠤⠤⠤⠤ | skilletegn |
+| mrkt | markeret indhold |
 
 Desuden er følgende indikatorer for tilstande defineret:
 || Forkortelse | tilstand for felt |
@@ -890,22 +897,28 @@ Alternativ tekst vil blive vist for hvert formularfelt, samt celleadresserne for
 Ved at vælge et formularfelt og derefter trykke på "Flyt til" knappen eller enter, vil fokus flyttes til formularfeltet i gennemsynstilstand.
 -
 
-+++ Annoncering af kommentarer +++[ExcelReportingComments]
++++ Annoncering af noter +++[ExcelReportingComments]
 %kc:beginInclude
-For at få oplæst en kommentar for den celle, som er i fokus, skal du trykke NVDA+alt+c.
+For at få oplæst en note for den celle, som er i fokus, skal du trykke NVDA+alt+c.
+I Microsoft 2016, 365 og nyere er "Kommentarer" omdøbt til "Noter".
 %kc:endInclude
-Du kan også få vist alle kommentarer i projektarket i elementlisten ved at trykke NVDA+F7.
+Du kan også få vist alle noter i projektarket i elementlisten ved at trykke NVDA+F7.
 
-NVDA kan også vise en bestemt dialog, der tillader dig at tilføje eller redigere en bestemt kommentar.
-NVDA overtager det oprindelige MS Excel-kommentarredigeringsområde på grund af tilgængelighedsbegrænsninger, men tastaturkommandoen for visning af dialogen er arvet fra MS Excel og fungerer derfor også uden at NVDA kører.
-+%kc:beginInclude
-For at tilføje eller redigere en kommentar, tryk Shift+F2 på en celle med fokus.
+NVDA kan også vise en bestemt dialog, der tillader dig at tilføje eller redigere en bestemt note.
+NVDA overtager det oprindelige MS Excel-noteredigeringsområde på grund af tilgængelighedsbegrænsninger, men tastaturkommandoen for visning af dialogen er arvet fra MS Excel og fungerer derfor også uden at NVDA kører.
+%kc:beginInclude
+For at tilføje eller redigere en note, tryk Shift+F2 på en celle med fokus.
 +%kc:endInclude
 
 Denne tastaturkommando vises ikke og kan ikke redigeres via dialogen for inputbevægelser.
 
-Bemærk: Det er også muligt at åbne lignende redigeringsmuligheder for kommentarer i et ark via kontekstmenuen..
-Dette åbner dog de utilgængelige kommentarredigeringsværktøjer.
+Bemærk: Det er også muligt at åbne lignende redigeringsmuligheder for noter i et ark via kontekstmenuen.
+Dette åbner dog de utilgængelige noteredigeringsværktøjer og ikke den specifik til NVDA.
+
+En ny dialog for kommentarer er blevet tilføjet i Microsoft Office 2016, 365 og nyere.
+Denne dialog er tilgængelig og indeholder flere funktioner, der lader dig besvare kommentarer osv.
+Den kan også tilgås fra kontekstmenuen af en bestemt celle.
+Kommentarerne tilføjet via denne dialog har intet at gøre med "Noter".
 
 +++ Læsning af beskyttede celler +++[ExcelReadingProtectedCells]
 Hvis en projektmappe er blevet skrivebeskyttet, kan det være, det ikke er muligt at flytte fokus til de celler, der er låst for redigering.
@@ -1291,6 +1304,7 @@ Udvælgelsesindikatoren påvirkes ikke af denne indstilling,  men vil altid forb
 ==== Besked vises i (sek) ====[BrailleSettingsMessageTimeout]
 Denne indstilling er et felt til indtastning af en talværdi, som styrer, hvor længe NVDA-meddelelser vises på punktdisplayet.
 Hvis du skriver 0 i feltet, slår du visning af disse meddelelser helt fra.
+Ved et tryk på en markørknap på dit punktdisplay, vil beskeden forsvinde med det samme indtil du trykker en anden tast, der viser disse beskeder.
 
 ==== Vis meddelelser på ubestemt tid ====[BrailleSettingsNoMessageTimeout]
 Denne indstilling tillader at NVDA-meddelelser kan vises på ubestemt tid på et punktdisplay.
@@ -1517,6 +1531,12 @@ Hvis du vælger denne indstilling og du har musefølgning slået til, vil NVDA i
 Denne indstillingskategori vil kun være tilgængelig på computere, der kører Windows 8 og nyere, samt har mulighed for touch-funktionalitet. Disse indstillinger lader dig konfigurere, hvordan NVDA håndtere berøring af touchskærme.
 Denne kategori indeholder følgende indstillinger:
 
+==== Aktivér berøringsinteraktion ====[TouchSupportEnable]
+Denne indstilling aktivérer NVDAs understøttelse for touchskærme.
+Hvis indstillingen er slået til, kan du bruge fingrene til at navigere på en enhed med en touchskærm.
+Hvis indstillingen er slået fra, vil almindelige bevægelser på touchskærmen fungere som om NVDA var slået fra.
+Denne indstilling kan også slås til og fra ved brug af NVDA+Control+T.
+
 ==== Berøringsindtastning ====[TouchTypingMode]
 Denne check box lader dig vælge den metode du ønsker at bruge, når du benytter berøringstastaturet.
 Hvis denne check box er valgt, kan du indtaste bogstaver blot ved at løfte din finger fra den pågældende tast på tastaturet.
@@ -1692,6 +1712,15 @@ med denne indstilling, som er slået til som udgangspunkt, kan du vælge om komm
 Hvis denne indstilling er slået til, og du f.eks. trykker på bogstavet j, vil tastetrykket blive forhindret i at komme videre til dokumentet, selv om det ikke er en kommando til hurtignavigation, og det heller ikke er sandsynligt, at det er en kommando i selve programmet.
 I dette tilfæld vil NVDA få Windows til at afspille en standardlyde, hver gang en kommando forhindres i at nå dokumentet.
 
+==== Placer automatisk systemfokus på fokuserbare elementer i gennemsynstilstand ====[BrowseModeSettingsAutoFocusFocusableElements]
+Tast: NVDA+8
+
+Denne indstilling bestemmer om systemfokus automatisk skal flyttes til fokuserbare elementer der kan overtage systemfokus (formfelter, links, osv), når du navigerer indhold med gennemsynstilstand. Denne indstilling er deaktiveret som standard.
+Ved at deaktivere denne indstilling vil elementer der er valgt med markøren i gennemsynstilstand ikke automatisk få fokus.
+Dette kan resultere i hurtigere navigation på nettet og forekomme mere responsivt.
+Fokus vil stadig blive opdateret, hvis du trykker på en knap, markere en check box, osv.
+Aktivering af denne indstilling kan forbedre oplevelsen på nogle sider, men med risiko for ustabilitet og dårlig ydeevne.
+
 +++ Dokumentformatering (NVDA+Ctrl+d) +++[DocumentFormattingSettings]
 De fleste check boxe i denne indstillingskategori bruges til at angive, hvilke typer formatering, du ønsker oplæst automatisk, når du flytter markøren rundt inden i dokumenter.
 Hvis du fx markerer check boxen "oplæs skrifttypenavn", hører du navnet på skrifttypen, hver gang du med piletasterne bevæger dig hen over tekst med en anden skrifttype.
@@ -1704,6 +1733,7 @@ Du kan tilpasse annoncering af:
  - Skrifttypeattributter
  - hævet og sænket skrift
  - fremhævelse
+ - Markeret (fremhævet tekst)
  - Typografi 
  - Farve
 - Dokumentinformation
@@ -1725,6 +1755,7 @@ Du kan tilpasse annoncering af:
  - Elementer
  - Overskrifter
  - Links
+ - Grafik
  - Lister
  - Bloksitater
  - Grupper
@@ -1785,8 +1816,15 @@ Hvis du ønsker at distribuere kode til andre, skal du gøre dette som en tilfø
 Denne knap åbner mappen vor du kan placere din kode under udvikling.
 Denne knap vil kun være tilgængelig, hvis NVDA tillader indlæsning af tilpasset kode.
 
+==== Aktivér selektiv registrering af UI Automation-hændelser og egenskabsændringer ====[AdvancedSettingsSelectiveUIAEventRegistration]
+Denne indstilling ændre, hvordan NVDA registrere og behandler hændelser fra UI Automation Accessibility API.
+Når denne indstilling er deaktiveret, vil NVDA registrere mange af disse hændelser og henholdsvis behandle og kassere dem bagefter.
+Dette har en meget negativ indflydelse på ydelsen, særligt i programmer som Microsoft Visual Studio.
+Når denne indstilling er aktiveret, vil NVDA hovedsageligt begrænse registreringen af disse hændelser til systemfokus.
+Hvis du oplever at NVDA forekommer langsom, kan du forsøge dig med denne indstilling.
+
 ==== Benyt UI Automation til at få adgang til kontrolelementer for Microsoft &Word-dokumenter, når disse er tilgængelige ====
-Når denne indstilling er aktiveret, vil NVDA forsøge at benytte Microsoft UI Automation tilgængeligheds-API for at indfange information om diverse kontrolelementer i Microsoft Word-dokumenter.
+Når denne indstilling er aktiveret, vil NVDA forsøge at benytte Microsoft UI Automation Accessibility API for at indfange information om diverse kontrolelementer i Microsoft Word-dokumenter.
 Dette omfatter selve Microsoft Word, samt under skrivning og læsning af meddelelser i Microsoft Outlook.
 For de seneste versioner af Microsoft Office 2016/365 kørende på windows 10 er understøttelse af UI Automation komplet nok til næsten at give samme oplevelse, der allerede leveres med NVDA. Denne indstilling har også den fordel, at reaktionshastigheden er øget markant.
 Vær dog opmærksom på, at dette også kan betyde at noget information ikke er synligt, eller vises forkert, hvilket betyder at denne understøttelse ikke altid kan forekomme pålidelig.
@@ -1809,16 +1847,6 @@ I usikre miljøer, kan du midlertidigt deaktivere [sig indtastede tegn #Keyboard
 Denne indstilling gør det muligt for NVDA at forsøge på at annullere tale for udløbne fokushændelser
 Som et eksempel kan hurtig navigation gennem GMail i Chrome forårsage, at NVDA oplæser forældede  informationer.
 Denne indstilling skal anses for at være eksperimentel.
-
-==== Placer automatisk systemfokus på fokuserbare elementer i gennemsynstilstand ====[BrowseModeSettingsAutoFocusFocusableElements]
-Tast: NVDA+8
-
-Denne indstilling er slået til som standard. Denne indstilling lader dig vælge om systemfokus automatisk skal placeres på elementer, der kan indfange systemfokus (f.eks. links, knapper, formularfelter), når du navigerer indhold via gennemsynstilstand.
-Hvis denne indstilling er slået til, vil dette være standardadfærden for NVDA 2019.1 og tidligere.
-Ved at slå denne indstilling fra vil fokuserbare elementer ikke automatisk indfange fokus, når disse vælges ved hjælp af gennemsynstilstand.
-Dette kan resultere i en hurtigere navigation og bedre oplevelse, når gennemsynstilstand benyttes.
-Fokus vil dog genopfriskes, når du interagerer med et element (f.eks. vælger en check box, trykker en knap).
-Denne funktion er eksperimentel siden NVDA 2019.2.
 
 ==== Interval for markøren (i MS) ====
 Denne indstilling lader dig konfigurere hvor mange millisekunder NVDA skal vente på systemmarkøren (indsættelsesmarkøren) i redigerbare tekstfelter.
@@ -1865,7 +1893,9 @@ Dette er eksempelvis tilfældet, hvis de tegn, der kommer før eller efter, ikke
 Hvis du med eksemplet fra før vil erstatte ordet "fugl" med "frø", og det kun skulle gælde som et helt ord, ville det ikke komme til at gælde ord som "fugle" eller "sommerfugl".
 
 Et regulært udtryk er en række af specielle symboler, som sætter dig i stand til at søge på mere end et tegn ad gangen, at søge udelukkende på tal eller udelukkende på bogstaver for blot at nævne nogle få eksempler.
-Regulære udtryk bliver ikke beskrevet nærmere i denne brugervejledning. Men der findes en mængde materiale om emnet på internettet, hvor du kan finde yderligere oplysninger.
+Regulære udtryk bliver ikke beskrevet nærmere i denne brugervejledning.
+For en introduktion til regulære udtryk, læs [https://docs.python.org/3.7/howto/regex.html].
+
 
 +++ Udtale af sætningstegn og symboler +++[SymbolPronunciation]
 Denne dialog giver dig mulighed for at bestemme, hvordan sætningstegn og andre symboler skal udtales, samt på hvilket niveau de skal udtales.
@@ -1913,7 +1943,18 @@ Ofte kan en bevægelse fortolkes på mere end en måde.
 Hvis du fx. trykker på en tast på tastaturet, kan det være, at tastetrykket skal være specifikt for enten Desktop-layout eller laptop-layout eller gælde for alle tastatur-layouts.
 I det tilfælde kommer der en menu til syne, hvor du kan vælge den mulighed, du vil have.
 
-Hvis du vil fjerne en bevægelse fra en kommando, så vælg bevægelsen og tryk på Fjern-knappen.
+Hvis du vil fjerne et tastetryk eller bevægelse fra en kommando, så vælg bevægelsen og tryk på Fjern-knappen.
+
+Kategorien "Emulerede tastaturtryk" indeholder kommandoer, der lader dig emulere almindelige tastaturtryk.
+Disse kommandoer kan benyttes til at kontrollere systemets tastatur direkte fra dit punktdisplay.
+For at tilføje en af disse taster, kan du vælge ovennævnte kategori og vælge "Tilføj".
+Herefter skal du trykke den tast, som du ønsker at emulere.
+Den emulerede tast vil herefter vises i kategorien "Emulerede tastaturtryk" og du kan tildele en kommando som beskrevet ovenfor.
+
+Bemærk:
+ - Emulerede tastaturtryk skal have en kommando tildelt, før du kan gemme dine indstillinger.
+ - En kommando der benytter en funktionstast kan ikke tildeles et emuleret tastaturtryk uden funktionstast. F.eks. ved at indstille emuleret tastaturtryk "A" til kommandoen "Control+M" kan forårsage, at programmet eksempelvis kun modtager Control+A.
+ -
 
 Når du er færdig med dine ændringer, så tryk OK for at gemme dem eller Annuller for at kassere dem.
 
