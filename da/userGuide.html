@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>NVDA 2020.2-dev brugervejledning</TITLE>
+<TITLE>NVDA 2020.3-dev brugervejledning</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>NVDA 2020.2-dev brugervejledning</H2>
+<H2>NVDA 2020.3-dev brugervejledning</H2>
 </CENTER>
 
 
@@ -113,7 +113,7 @@
       <UL>
       <LI><A HREF="#ExcelAutomaticColumnAndRowHeaderReading">11.2.1. Automatisk læsning af kolonne- og rækkeoverskrifter</A>
       <LI><A HREF="#ExcelElementsList">11.2.2. Elementlisten</A>
-      <LI><A HREF="#ExcelReportingComments">11.2.3. Annoncering af kommentarer</A>
+      <LI><A HREF="#ExcelReportingComments">11.2.3. Annoncering af noter</A>
       <LI><A HREF="#ExcelReadingProtectedCells">11.2.4. Læsning af beskyttede celler</A>
       <LI><A HREF="#ExcelFormFields">11.2.5. Formularfelter</A>
       </UL>
@@ -324,9 +324,7 @@ For oplysninger om, hvilke undtagelser gør sig gældende, læs licensvilkårene
  <LI>For Windows 7 kræver NVDA Service Pack 1 eller højere.
  <LI>For Windows Server 2008  R2 kræver NVDA Service Pack 1 eller højere.
  </UL>
-<LI>Hukommelse: 256 MB eller mere RAM
-<LI>Processor hastighed: 1,0 GHz eller højere
-<LI>Omkring 90 MB lagerplads.
+<LI>Mindst 150 MB lagerplads.
 </UL>
 
 <A NAME="GettingAndSettingUpNVDA"></A>
@@ -531,8 +529,10 @@ Hvis din bærbare computer ikke kan gøre brug af dette, eller ikke tillader dig
 
 <P>
 Hvis du kører NVDA på en enhed med touchskærm og Windows 8 eller nyere, kan du kontrollere NVDA direkte ved hjælp af den berøringsfølsomme skærm.
-Når NVDA er i gang, vil alle bevægelser registreret af skærmen blive indfanget af NVDA. 
+Når NVDA er i gang, vil alle bevægelser registreret af skærmen blive indfanget af NVDA, medmindre berøringsinteraktion er deaktiveret.
 Dette betyder, at handlinger der kan udføres normalt uden NVDA ikke vil virke.
+For at slå understøttelse for berøring til eller fra, tryk NVDA+Ctrl+alt+T.
+Du kan også skifte denne indstilling ved at gå til <A HREF="#TouchSupportEnable">Berøringsinteraktion</A> i NVDAs indstillingspanel.
 </P>
 
 <A NAME="ExploringTheScreen"></A>
@@ -645,6 +645,13 @@ Når menuen kommer op, kan du bruge piletasterne til at navigere rundt i menuen,
 <TH>Laptop tast</TH>
 <TH>Touchbevægelse</TH>
 <TH>Beskrivelse</TH>
+</TR>
+<TR>
+<TD>Starter eller genstarter NVDA</TD>
+<TD>Control+alt+n</TD>
+<TD>Control+alt+n</TD>
+<TD>ingen</TD>
+<TD>Starter eller genstarter NVDA. Dette er en Windows-kommando tildelt til ikonet på skrivebordet under installationen, hvis den pågældende indstilling er markeret. Denne genvej kan ikke ændres via dialogen til håndtering af kommandoer.</TD>
 </TR>
 <TR>
 <TD>Stop tale</TD>
@@ -833,6 +840,12 @@ Følgende NVDA-kommandoer kan bruges i forbindelse med systemmarkøren:
 <TD>NVDA+Shift+Pil-op</TD>
 <TD>NVDA+Shift+s</TD>
 <TD>Læser den tekst, som er blevet markeret</TD>
+</TR>
+<TR>
+<TD>Rapportér tekstformatering</TD>
+<TD>NVDA+f</TD>
+<TD>NVDA+f</TD>
+<TD>Oplyser formateringsinformation for systemmarkørens aktuelle position i et dokument. Ved et dobbelttryk vil denne information blive vist i gennemsynstilstand</TD>
 </TR>
 <TR>
 <TD>Næste sætning</TD>
@@ -1861,6 +1874,10 @@ For at få plads til så meget som muligt på et punktdisplay bruger NVDA følge
 <TD>⠤⠤⠤⠤⠤</TD>
 <TD>skilletegn</TD>
 </TR>
+<TR>
+<TD>mrkt</TD>
+<TD>markeret indhold</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -2239,25 +2256,31 @@ Ved at vælge et formularfelt og derefter trykke på "Flyt til" knappen eller en
 </UL>
 
 <A NAME="ExcelReportingComments"></A>
-<H4>11.2.3. Annoncering af kommentarer</H4>
+<H4>11.2.3. Annoncering af noter</H4>
 
 <P>
-For at få oplæst en kommentar for den celle, som er i fokus, skal du trykke NVDA+alt+c.
-Du kan også få vist alle kommentarer i projektarket i elementlisten ved at trykke NVDA+F7.
+For at få oplæst en note for den celle, som er i fokus, skal du trykke NVDA+alt+c.
+I Microsoft 2016, 365 og nyere er "Kommentarer" omdøbt til "Noter".
+Du kan også få vist alle noter i projektarket i elementlisten ved at trykke NVDA+F7.
 </P>
 <P>
-NVDA kan også vise en bestemt dialog, der tillader dig at tilføje eller redigere en bestemt kommentar.
-NVDA overtager det oprindelige MS Excel-kommentarredigeringsområde på grund af tilgængelighedsbegrænsninger, men tastaturkommandoen for visning af dialogen er arvet fra MS Excel og fungerer derfor også uden at NVDA kører.
-+%kc:beginInclude
-For at tilføje eller redigere en kommentar, tryk Shift+F2 på en celle med fokus.
+NVDA kan også vise en bestemt dialog, der tillader dig at tilføje eller redigere en bestemt note.
+NVDA overtager det oprindelige MS Excel-noteredigeringsområde på grund af tilgængelighedsbegrænsninger, men tastaturkommandoen for visning af dialogen er arvet fra MS Excel og fungerer derfor også uden at NVDA kører.
+For at tilføje eller redigere en note, tryk Shift+F2 på en celle med fokus.
 +%kc:endInclude
 </P>
 <P>
 Denne tastaturkommando vises ikke og kan ikke redigeres via dialogen for inputbevægelser.
 </P>
 <P>
-Bemærk: Det er også muligt at åbne lignende redigeringsmuligheder for kommentarer i et ark via kontekstmenuen..
-Dette åbner dog de utilgængelige kommentarredigeringsværktøjer.
+Bemærk: Det er også muligt at åbne lignende redigeringsmuligheder for noter i et ark via kontekstmenuen.
+Dette åbner dog de utilgængelige noteredigeringsværktøjer og ikke den specifik til NVDA.
+</P>
+<P>
+En ny dialog for kommentarer er blevet tilføjet i Microsoft Office 2016, 365 og nyere.
+Denne dialog er tilgængelig og indeholder flere funktioner, der lader dig besvare kommentarer osv.
+Den kan også tilgås fra kontekstmenuen af en bestemt celle.
+Kommentarerne tilføjet via denne dialog har intet at gøre med "Noter".
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -2999,6 +3022,7 @@ Udvælgelsesindikatoren påvirkes ikke af denne indstilling,  men vil altid forb
 <P>
 Denne indstilling er et felt til indtastning af en talværdi, som styrer, hvor længe NVDA-meddelelser vises på punktdisplayet.
 Hvis du skriver 0 i feltet, slår du visning af disse meddelelser helt fra.
+Ved et tryk på en markørknap på dit punktdisplay, vil beskeden forsvinde med det samme indtil du trykker en anden tast, der viser disse beskeder.
 </P>
 
 <A NAME="BrailleSettingsNoMessageTimeout"></A>
@@ -3380,6 +3404,16 @@ Denne indstillingskategori vil kun være tilgængelig på computere, der kører 
 Denne kategori indeholder følgende indstillinger:
 </P>
 
+<A NAME="TouchSupportEnable"></A>
+<H5>Aktivér berøringsinteraktion</H5>
+
+<P>
+Denne indstilling aktivérer NVDAs understøttelse for touchskærme.
+Hvis indstillingen er slået til, kan du bruge fingrene til at navigere på en enhed med en touchskærm.
+Hvis indstillingen er slået fra, vil almindelige bevægelser på touchskærmen fungere som om NVDA var slået fra.
+Denne indstilling kan også slås til og fra ved brug af NVDA+Control+T.
+</P>
+
 <A NAME="TouchTypingMode"></A>
 <H5>Berøringsindtastning</H5>
 
@@ -3703,6 +3737,20 @@ Hvis denne indstilling er slået til, og du f.eks. trykker på bogstavet j, vil 
 I dette tilfæld vil NVDA få Windows til at afspille en standardlyde, hver gang en kommando forhindres i at nå dokumentet.
 </P>
 
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Placer automatisk systemfokus på fokuserbare elementer i gennemsynstilstand</H5>
+
+<P>
+Tast: NVDA+8
+</P>
+<P>
+Denne indstilling bestemmer om systemfokus automatisk skal flyttes til fokuserbare elementer der kan overtage systemfokus (formfelter, links, osv), når du navigerer indhold med gennemsynstilstand. Denne indstilling er deaktiveret som standard.
+Ved at deaktivere denne indstilling vil elementer der er valgt med markøren i gennemsynstilstand ikke automatisk få fokus.
+Dette kan resultere i hurtigere navigation på nettet og forekomme mere responsivt.
+Fokus vil stadig blive opdateret, hvis du trykker på en knap, markere en check box, osv.
+Aktivering af denne indstilling kan forbedre oplevelsen på nogle sider, men med risiko for ustabilitet og dårlig ydeevne.
+</P>
+
 <A NAME="DocumentFormattingSettings"></A>
 <H4>12.1.15. Dokumentformatering (NVDA+Ctrl+d)</H4>
 
@@ -3723,6 +3771,7 @@ Du kan tilpasse annoncering af:
  <LI>Skrifttypeattributter
  <LI>hævet og sænket skrift
  <LI>fremhævelse
+ <LI>Markeret (fremhævet tekst)
  <LI>Typografi 
  <LI>Farve
  </UL>
@@ -3748,6 +3797,7 @@ Du kan tilpasse annoncering af:
  <LI>Elementer
  <LI>Overskrifter
  <LI>Links
+ <LI>Grafik
  <LI>Lister
  <LI>Bloksitater
  <LI>Grupper
@@ -3847,10 +3897,21 @@ Denne knap åbner mappen vor du kan placere din kode under udvikling.
 Denne knap vil kun være tilgængelig, hvis NVDA tillader indlæsning af tilpasset kode.
 </P>
 
+<A NAME="AdvancedSettingsSelectiveUIAEventRegistration"></A>
+<H5>Aktivér selektiv registrering af UI Automation-hændelser og egenskabsændringer</H5>
+
+<P>
+Denne indstilling ændre, hvordan NVDA registrere og behandler hændelser fra UI Automation Accessibility API.
+Når denne indstilling er deaktiveret, vil NVDA registrere mange af disse hændelser og henholdsvis behandle og kassere dem bagefter.
+Dette har en meget negativ indflydelse på ydelsen, særligt i programmer som Microsoft Visual Studio.
+Når denne indstilling er aktiveret, vil NVDA hovedsageligt begrænse registreringen af disse hændelser til systemfokus.
+Hvis du oplever at NVDA forekommer langsom, kan du forsøge dig med denne indstilling.
+</P>
+
 <H5>Benyt UI Automation til at få adgang til kontrolelementer for Microsoft &amp;Word-dokumenter, når disse er tilgængelige</H5>
 
 <P>
-Når denne indstilling er aktiveret, vil NVDA forsøge at benytte Microsoft UI Automation tilgængeligheds-API for at indfange information om diverse kontrolelementer i Microsoft Word-dokumenter.
+Når denne indstilling er aktiveret, vil NVDA forsøge at benytte Microsoft UI Automation Accessibility API for at indfange information om diverse kontrolelementer i Microsoft Word-dokumenter.
 Dette omfatter selve Microsoft Word, samt under skrivning og læsning af meddelelser i Microsoft Outlook.
 For de seneste versioner af Microsoft Office 2016/365 kørende på windows 10 er understøttelse af UI Automation komplet nok til næsten at give samme oplevelse, der allerede leveres med NVDA. Denne indstilling har også den fordel, at reaktionshastigheden er øget markant.
 Vær dog opmærksom på, at dette også kan betyde at noget information ikke er synligt, eller vises forkert, hvilket betyder at denne understøttelse ikke altid kan forekomme pålidelig.
@@ -3889,21 +3950,6 @@ I usikre miljøer, kan du midlertidigt deaktivere <A HREF="#KeyboardSettingsSpea
 Denne indstilling gør det muligt for NVDA at forsøge på at annullere tale for udløbne fokushændelser
 Som et eksempel kan hurtig navigation gennem GMail i Chrome forårsage, at NVDA oplæser forældede  informationer.
 Denne indstilling skal anses for at være eksperimentel.
-</P>
-
-<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
-<H5>Placer automatisk systemfokus på fokuserbare elementer i gennemsynstilstand</H5>
-
-<P>
-Tast: NVDA+8
-</P>
-<P>
-Denne indstilling er slået til som standard. Denne indstilling lader dig vælge om systemfokus automatisk skal placeres på elementer, der kan indfange systemfokus (f.eks. links, knapper, formularfelter), når du navigerer indhold via gennemsynstilstand.
-Hvis denne indstilling er slået til, vil dette være standardadfærden for NVDA 2019.1 og tidligere.
-Ved at slå denne indstilling fra vil fokuserbare elementer ikke automatisk indfange fokus, når disse vælges ved hjælp af gennemsynstilstand.
-Dette kan resultere i en hurtigere navigation og bedre oplevelse, når gennemsynstilstand benyttes.
-Fokus vil dog genopfriskes, når du interagerer med et element (f.eks. vælger en check box, trykker en knap).
-Denne funktion er eksperimentel siden NVDA 2019.2.
 </P>
 
 <H5>Interval for markøren (i MS)</H5>
@@ -3974,7 +4020,8 @@ Hvis du med eksemplet fra før vil erstatte ordet "fugl" med "frø", og det kun 
 </P>
 <P>
 Et regulært udtryk er en række af specielle symboler, som sætter dig i stand til at søge på mere end et tegn ad gangen, at søge udelukkende på tal eller udelukkende på bogstaver for blot at nævne nogle få eksempler.
-Regulære udtryk bliver ikke beskrevet nærmere i denne brugervejledning. Men der findes en mængde materiale om emnet på internettet, hvor du kan finde yderligere oplysninger.
+Regulære udtryk bliver ikke beskrevet nærmere i denne brugervejledning.
+For en introduktion til regulære udtryk, læs [<A HREF="https://docs.python.org/3.7/howto/regex.html">https://docs.python.org/3.7/howto/regex.html</A>].
 </P>
 
 <A NAME="SymbolPronunciation"></A>
@@ -4033,22 +4080,32 @@ Ofte kan en bevægelse fortolkes på mere end en måde.
 Hvis du fx. trykker på en tast på tastaturet, kan det være, at tastetrykket skal være specifikt for enten Desktop-layout eller laptop-layout eller gælde for alle tastatur-layouts.
 I det tilfælde kommer der en menu til syne, hvor du kan vælge den mulighed, du vil have.
    <P></P>
-Hvis du vil fjerne en bevægelse fra en kommando, så vælg bevægelsen og tryk på Fjern-knappen.
+Hvis du vil fjerne et tastetryk eller bevægelse fra en kommando, så vælg bevægelsen og tryk på Fjern-knappen.
    <P></P>
+Kategorien "Emulerede tastaturtryk" indeholder kommandoer, der lader dig emulere almindelige tastaturtryk.
+Disse kommandoer kan benyttes til at kontrollere systemets tastatur direkte fra dit punktdisplay.
+For at tilføje en af disse taster, kan du vælge ovennævnte kategori og vælge "Tilføj".
+Herefter skal du trykke den tast, som du ønsker at emulere.
+Den emulerede tast vil herefter vises i kategorien "Emulerede tastaturtryk" og du kan tildele en kommando som beskrevet ovenfor.
+   <P></P>
+Bemærk:
+   </UL>
+  </UL>
+ <LI>Emulerede tastaturtryk skal have en kommando tildelt, før du kan gemme dine indstillinger.
+ <LI>En kommando der benytter en funktionstast kan ikke tildeles et emuleret tastaturtryk uden funktionstast. F.eks. ved at indstille emuleret tastaturtryk "A" til kommandoen "Control+M" kan forårsage, at programmet eksempelvis kun modtager Control+A.
+ </UL>
+<P></P>
 Når du er færdig med dine ændringer, så tryk OK for at gemme dem eller Annuller for at kassere dem.
-   <P></P>
+<P></P>
 ++ Gemme og genindlæse  konfigurationen ++[SavingAndReloading]
 Som standard gemmer NVDA dine indstillinger automatisk.
 Du skal dog være opmærksm på, at denne indstilling kan ændres under de generelle indstillinger i menuen Indstillinger.
  Ved at aktivere "Gem konfiguration" i NVDAs hovedmenu, kan du altid gemme dine indstillinger manuelt.
-   <P></P>
+<P></P>
 Hvis du laver fejl i dine indstillinger og ønsker at vende tilbage til de gemte indstillinger, vælger du "Vend tilbage til gemt konfiguration" i NVDAs hovedmenu.
 Du kan også nulstille dine indstillinger til de oprindelige fabriksindstillinger ved at vælge dette menupunkt under NVDA-menuen.
-   <P></P>
+<P></P>
 Følgende NVDA-genvejstaster kan være nyttige:
-   </UL>
-  </UL>
- </UL>
 </UL>
 
 <TABLE BORDER="1" CELLPADDING="4">
