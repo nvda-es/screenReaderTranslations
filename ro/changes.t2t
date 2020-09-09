@@ -26,6 +26,7 @@ Ce este nou în NVDA
 - În Microsoft Excel, fereastra de dialog a listei de elemente prezintă formulele în forma lor localizată. (#9144)
 - NVDA raportează terminologia corectă pentru notele din MS Excel. (#11311)
 - La folosirea comenzii „mută cursorul de examinare la focalizare” în modul de navigare, cursorul de examinare este setat la poziția cursorului virtual de scriere. (#9622)
+- Informațiile raportată în modul de navigare, cum ar fi cele de formatare cu NVDA+F, sunt afișate într-o fereastră puțin mai mare aflată în centrul ecranului. (#9910)
 
 
 == Defecte Rezolvate ==
@@ -44,15 +45,25 @@ Ce este nou în NVDA
 - În Google Chrome, NVDA va raporta ca nebifate toate controalele ce pot fi bifate (nu doar casetele de bifat) care sunt nebifate în acel moment. (#11377)
 - Este din nou posibilă navigarea prin diverse controale atunci când limba interfeței NVDA este setată în aragoneză. (#11384)
 - Nu ar trebui ca NVDA, fie și din când în când, să se mai blocheze în Microsoft Word la o apăsare rapidă a săgeților sus și jos sau la tastarea de caractere cu braille-ul activat. (#11431, #11425, #11414)
-- NVDA nu mai adaugă un spațiu de urmărire inexistent la copierea obiectului navigator curent pe planșetă.
+- NVDA nu mai adaugă un spațiu de urmărire inexistent la copierea obiectului navigator curent pe planșetă. (#11438)
 - NVDA nu mai activează profilul Spune Tot dacă nu este nimic de citit. (#10899, #9947)
 - NVDA poate să citească lista de caracteristici din administratorul Internet Information Services (IIS). (#11468)
+- NVDA ține dispozitivul audio deschis, îmbunătățind astfel performanța pentru niște plăci de sunet. (#5172, #10721)
+- NVDA nu se va mai bloca sau închide atunci când țineți apăsate în același timp tastele control+shift+săgeată jos în Microsoft Word. (#9463)
+- Starea de extins/redus a folderelor din treeview-ul de navigare pe drive.google.com este mereu raportată de NVDA. (#11520)
+- NVDA va autodetecta afișajul braille NLS eReader de la Humanware prin Bluetooth, întrucât numele său de Bluetooth este „NLS eReader Humanware”. (#11561)
 
 
 == Modificări pentru Dezvoltatori ==
 BoxSizerHelper.addDialogDismissButtons al GUI Helper-ului suportă un nou argument cuvânt cheie „separat” pentru adăugarea unui separator orizontal standard la dialoguri (altele decât mesajele și dialogurile singure de intrare). (#6468)
 - S-au adăugat proprietăți suplimentare la App module-uri, incluzând calea pentru executabil (appPath), este o aplicație din Windows Store (isWindowsStoreApp), și arhitectura computerului pentru aplicație (appArchitecture). (#7894)
 - Este posibilă crearea de app module-uri pentru aplicații găzduite în cadrul wwahost.exe pe Windows 8 și mai nou. (#4569)
+- Poate fi delimitat un fragment din jurnal și copiat pe planșetă folosindu-se NVDA+control+shift+F1. (#9280)
+- Obiectele specifice NVDA care sunt găsite de colectorul de gunoi ciclic al Python sunt acum înregistrate atunci când sunt șterse de colector pentru a ajuta la eliminarea ciclurilor de referință din NVDA. (#11499)
+ - Majoritatea claselor NVDA sunt urmărite, incluzând NVDAObjects, appModule-uri, GlobalPlugin-uri, SynthDrivere și TreeInterceptoare.
+ - O clasă care trebuie să fie urmărită ar trebui să moștenească de la garbageHandler.TrackedObject.
+- Diagnosticarea semnificativă pentru evenimentele MSAA poate fi activată din panoul setărilor avansate NVDA. (#11521)
+- WinEvent-urile MSAA pentru obiectul navigator curent nu mai sunt filtrate împreună cu alte evenimente dacă numărătoarea de evenimente pentru un anumit thread este depășit. (#11520)
 
 
 = 2020.2 =
