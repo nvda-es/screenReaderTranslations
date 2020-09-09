@@ -113,7 +113,7 @@
       <UL>
       <LI><A HREF="#ExcelAutomaticColumnAndRowHeaderReading">11.2.1. Automatsko čitanje zaglavlja redaka i stupaca</A>
       <LI><A HREF="#ExcelElementsList">11.2.2. Popis elemenata</A>
-      <LI><A HREF="#ExcelReportingComments">11.2.3. Izvještavanje o komentarima</A>
+      <LI><A HREF="#ExcelReportingComments">11.2.3. Izvještavanje o bilješkama</A>
       <LI><A HREF="#ExcelReadingProtectedCells">11.2.4. Čitanje zaštićenih ćelija</A>
       <LI><A HREF="#ExcelFormFields">11.2.5. Polja obrazaca</A>
       </UL>
@@ -327,9 +327,7 @@ Za detalje o iznimkama, molimo pročitajte dokumenit licence kojeg možete naći
  <LI>Za Windows 7, NVDA treba servisni paket 1 ili noviji.
  <LI>Za Windows Server 2008 R2, NVDA treba servisni paket 1 ili noviji.
  </UL>
-<LI>Memorija: 256 MB ili više RAM-a
-<LI>Brzina procesora: 1.0 gHZ ili više
-<LI>Oko 90 MB prostora na hard disku.
+<LI>Najmanje 150 MB prostora na tvrdom disku.
 </UL>
 
 <A NAME="GettingAndSettingUpNVDA"></A>
@@ -533,9 +531,11 @@ Ako vaše prijenosno računalo to ne može izvršiti ili ako ne postoji mogućno
 <H3>4.3. NVDA dodirne geste</H3>
 
 <P>
-Ako pokrećete NVDA na uređaju koji ima ekran osjetljiv na dodir s pokrenutim sustavom Windows 8 ili noviji, možete upravljati NVDA čitačem izravno pomoću dodirnih naredbi.
+Ako pokrećete NVDA na uređaju koji ima ekran osjetljiv na dodir s pokrenutim sustavom Windows 8 ili noviji, možete upravljati NVDA čitačem izravno pomoću dodirnih naredbi, osim ako podrška ekrana osjetljivih na dodir nije isključena.
 Kad je NVDA pokrenut, svaki unos dodirom bit će proslijeđen izravno NVDA čitaču. 
 Stoga, radnje koje se mogu uraditi normalno bez NVDA čitača, neće raditi.
+Kako biste uključili ili isključili podršku ekrana osjetljivih na dodir, pritisnite NVDA+control+alt+t.
+<A HREF="#TouchSupportEnable">Podršku ekrana osjetljivih na dodir</A> možete uključiti ili isključiti u kategoriji interakciaj s ekranima osjetljivim na dodir u NVDA postavkama.
 </P>
 
 <A NAME="ExploringTheScreen"></A>
@@ -648,6 +648,13 @@ Kad se izbornik prikaže, koristite strelice za kretanje po izborniku i tipku en
 <TH>Tipka za prijenosna računala</TH>
 <TH>Dodir</TH>
 <TH>Opis</TH>
+</TR>
+<TR>
+<TD>Pokreće ili ponovno pokreće NVDA</TD>
+<TD>Control+alt+f5</TD>
+<TD>Control+alt+f5</TD>
+<TD>nema</TD>
+<TD>Pokreće ili ponovno pokreće NVDA s radne površine, ako je ovaj Windowsov prečac omogućen tijekom NVDA instalacijskog procesa. Ovo je Windowsov prečac stoga se ne može mijenjati u dijaloškom okviru ulaznih gesti.</TD>
 </TR>
 <TR>
 <TD>Zaustavi govor</TD>
@@ -836,6 +843,12 @@ NVDA omogućuje korištenje sljedećih prečaca u svezi s kursorom sustava:
 <TD>NVDA+šift+strelicaGore</TD>
 <TD>NVDA+šift+s</TD>
 <TD>Čita bilo koji trenutačno označen tekst</TD>
+</TR>
+<TR>
+<TD>Izvijesti o oblikovanju teksta</TD>
+<TD>NVDA+f</TD>
+<TD>NVDA+f</TD>
+<TD>Izgovara svojstva oblikovanja teksta na mjestu gdje se kursor sustava nalazi. Kada se pritisne dva put pokazuje informaciju u modusu čitanja</TD>
 </TR>
 <TR>
 <TD>Sljedeća rečenica</TD>
@@ -1145,8 +1158,8 @@ Sljedeći prečaci su dostupni za pregledavanje teksta:
 </TR>
 <TR>
 <TD>Izvijesti o oblikovanju teksta</TD>
-<TD>NVDA+f</TD>
-<TD>NVDA+f</TD>
+<TD>NVDA+šift+f</TD>
+<TD>NVDA+šift+f</TD>
 <TD>nema</TD>
 <TD>Izvještava o oblikovanje teksta gdje se pregledni kursor nalazi. Kad se pritisne dvaput, informacija se prikazuje u modusu čitanja.</TD>
 </TR>
@@ -1866,6 +1879,10 @@ Kako bi stalo što više informacija na brajični redak, definirane su sljedeće
 <TD>⠤⠤⠤⠤⠤</TD>
 <TD>rastavljač</TD>
 </TR>
+<TR>
+<TD>⠕⠃⠣⠮</TD>
+<TD>obilježen sadržaj</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -2242,23 +2259,30 @@ Biranjem polja obrasca i pritiskom tipke enter ili gumba "Prijeđi na", premješ
 </UL>
 
 <A NAME="ExcelReportingComments"></A>
-<H4>11.2.3. Izvještavanje o komentarima</H4>
+<H4>11.2.3. Izvještavanje o bilješkama</H4>
 
 <P>
-Za izvještavanje o komentarima na poziciji kursora, pritisnite NVDA+alt+c.
-Svi komentari za radni list se mogu popisati i u NVDA popisu elemenata poslije pritiska prečaca insert+f7.
+Za izvještavanje o bilješkama na poziciji kursora, pritisnite NVDA+alt+c.
+In Microsoft Officeu 2016, 365 i novijim inačicama, klasični su komentari u Microsoft Excelu su preimenovani u "bilješke".
+Sve bilješke za radni list se mogu popisati i u NVDA popisu elemenata poslije pritiska prečaca insert+f7.
 </P>
 <P>
-NVDA također može prikazati poseban dijaloški okvir za dodavanje ili uređivanje komentara.
-NVDA nadpisuje nativnu kontrolu za upis komentara u MS excelu zbog problema s pristupačnošću, ali se prećac za pristupanje istoj ne razlikuje stoga radi bez potrebe za uključenim NVDA.
-Kako biste dodali ili uredili komentar u fokusiranoj ćeliji, pritisnite shift+f2.
+NVDA također može prikazati poseban dijaloški okvir za dodavanje ili uređivanje bilješke.
+NVDA nadpisuje nativnu kontrolu za upis bilješki u MS excelu zbog problema s pristupačnošću, ali se prećac za pristupanje istoj ne razlikuje stoga radi bez potrebe za uključenim NVDA.
+Kako biste dodali ili uredili bilješku u fokusiranoj ćeliji, pritisnite shift+f2.
 </P>
 <P>
 Ovaj se prečac ne prikazuje, stoga se ne može mijenjati u dijaloškom okviru ulaznih gesti.
 </P>
 <P>
-Upozorenje: također postoji mogućnost otvaranja dijaloškog okvira upisivanja komentara iz kontekstnog izbornika.
-Međutim, to će otvoriti MS excelovu nedostupno regiju za uređivanje komentara umjesto specifičnog dijaloškog okvira za uređivanje komentara koji kiristi NVDA.
+Upozorenje: također postoji mogućnost otvaranja dijaloškog okvira upisivanja bilješki iz kontekstnog izbornika.
+Međutim, to će otvoriti MS excelovu nedostupnu regiju za uređivanje bilješki umjesto specifičnog dijaloškog okvira za uređivanje komentara koji kiristi NVDA.
+</P>
+<P>
+In Microsoft Officeu 2016, 365 i novijim inačicama, dodan je novi dijaloški okvir za dodavanje komentara.
+Ovaj dijaloški okvir je pristupačan te pruža nove značajke poput odgovaranja na komentare i tako dalje
+Isti se također može otvoriti iz kontekstnog izbornika određene ćelije.
+Komentari koji su dodani iz ovog dijaloškog okvira nisu povezani s "bilješkama".
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -2991,7 +3015,7 @@ Ova opcija ne utječe na indikatora odabira, to su uvijek točkice 7 i 8 bez tit
 
 <P>
 Ova opcija omogućuje biranje oblika (kombinacije točkica) brajičnog kursora, kad je brajični redak povezan na pregled.
-Ova opcija ne utječe na indikatora odabira, to su uvijek točkice 7 i 8 bez titranja.
+Ova opcija ne utječe na indikator odabira, to su uvijek točkice 7 i 8 bez titranja.
 </P>
 
 <A NAME="BrailleSettingsMessageTimeout"></A>
@@ -3000,6 +3024,7 @@ Ova opcija ne utječe na indikatora odabira, to su uvijek točkice 7 i 8 bez tit
 <P>
 Ova opcija je numeričko polje, kojim se određuje trajanje prikazivanja NVDA poruka na brajičnom retku.
 Upisom vrijednosti 0, ove poruke se uopće neće prikazivati na brajičnom retku.
+Poruka odmah nestaje prilikom pritiska routing tipke na brajičnom retku, ali se ponovno pojavljuje prilikom pritiska tipke koja ju okida.
 </P>
 
 <A NAME="BrailleSettingsNoMessageTimeout"></A>
@@ -3382,6 +3407,16 @@ Ova kategorija postavki, koja je dostupna samo na računalima s instaliranim sus
 Ova kategorija sadrži sljedeće opcije:
 </P>
 
+<A NAME="TouchSupportEnable"></A>
+<H5>Uključi podršku ekrana osjetljivih na dodir</H5>
+
+<P>
+Ovaj potvrdni okvir uključuje podršku ekrana osjetljivih na dodir.
+Ako je uključen, možete koristiti vaše prste za interakciju sa ekranom i elementima na njemu koristeći uređaj koji podržava zaslon osjetljiv na dodir.
+Ako je isključen, podrška zaslona osjetljivih na dodir bit će isključena kao da NVDA nije niti pokrenut.
+Ova postavka može biti regulirana koristeći NVDA+control+alt+t. 
+</P>
+
 <A NAME="TouchTypingMode"></A>
 <H5>Modus tipkanja dodirom</H5>
 
@@ -3705,6 +3740,20 @@ Na primjer, kad je ova opcija aktivirana, ako se pritisne slovo j, ono se neće 
 U tom slučaju će NVDA narediti operativnom sustavu da svira standardni zvuk, kadgod se pritisne tipka koja se ne proslijeđuje.
 </P>
 
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Automatski postavi fokus na elemente koji se mogu fokusirati</H5>
+
+<P>
+Prečac: NVDA+8
+</P>
+<P>
+Onemogućena podrazumjevano, ova opcija omogućuje vam hoće li elementi koji  mogu preuzeti fokus sustava činiti isto. To mogu biti Veze, polja obrazaca, itd. when navigating content with the browse mode caret.
+Ako ostavite ovu opciju isključenom elementi koji se mogu fokusirati automatski neće biti fokusirani kada se odaberu korsorom modusa čitanja.
+Ovo može prouzročiti bržu reakciju i rad u modusu čitanja.
+Fokus će se aktivirati samo onda kada dođete u interakciju s elementom  (na primjer pritiščući gumb, odabirući potvrdni okvir).
+Ako omogućite ovu opciju, možda će se poboljšati podrška za neke web stranice u zamjenu za perfornse i stabilnost.
+</P>
+
 <A NAME="DocumentFormattingSettings"></A>
 <H4>12.1.15. Oblikovanje dokumenta (NVDA+kontrol+d)</H4>
 
@@ -3724,6 +3773,7 @@ Možete podesiti izvještavanje o sljedećim elementima:
  <LI>veličina fonta
  <LI>Indeksi i eksponenti
  <LI>karakteristika fonta
+ <LI>Obilježen tekst
  <LI>isticanje
  <LI>stil
  <LI>boje
@@ -3754,6 +3804,7 @@ Možete podesiti izvještavanje o sljedećim elementima:
  <UL>
  <LI>naslovi
  <LI>poveznice
+ <LI>grafički elementi
  <LI>popisi
  <LI>citati
  <LI>grupe
@@ -3855,6 +3906,17 @@ Ovaj gumb otvara mapu gdje je smješten prilagođeni kod kojeg trenutačno razvi
 Ovaj gumb postoji samo kad je uključena opcija "omogući bilježnicu razvojnog programera NVDA".
 </P>
 
+<A NAME="AdvancedSettingsSelectiveUIAEventRegistration"></A>
+<H5>Omogući selektivnu registraciju UIA događaja i izmjena svojstva</H5>
+
+<P>
+Ova opcija mijenja način na koji NVDA registrira događaje NI automation sučelja za pristupačnost.
+Ako je ova opcija onemogućena, NVDA registrira više UIA događaja koji su procesuirani i odmah uništavani u samom NVDA čitaču.
+Ovo ima veliki negativni utjecaj na performanse, pogotovo na Microsoft visual studio.
+Stoga, ako je ova opcija uključena, NVDA NVDA će ograničiti registraciju događaja samo na fokus sustava za većinu događaja.
+Ako vam smetaju problemi sa performansama u jednoj ili više aplikacija, preporučujemo vam da isprobate ovu funkciju i vodite postoji li poboljšanje u performansama.
+</P>
+
 <A NAME="AdvancedSettingsUseUiaForWord"></A>
 <H5>Koristi automatizaciju korisničkog sučelja za pristup kontrolama Microsoft Word dokumenata, kad je dostupna</H5>
 
@@ -3898,21 +3960,6 @@ U nepovjerljivim okruženjima, možda biste trebali privremeno isključiti opcij
 Ova opcija uključuje ponašanje koje omogućuje zaustavljanje govora za događaje fokusa koji su istekli.
 Uobičajeno kretanje kroz poruke u Gmailu sa Chromeom može prouzročiti da NVDA izgovara netočne informacije.
 Ova je funkcija eksperimentalna od  NVDA verzije 2020.2.
-</P>
-
-<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
-<H5>Automatski postavi fokus sustava na elemente koje je moguće fokusirati u modusu čitanja</H5>
-
-<P>
-Prečac: NVDA+8
-</P>
-<P>
-Standardno aktivirana, ova opcija omogućuje postavljanje fokusa pokazivača sustava na stavke koje mogu biti fokusirane (poveznice, polja za uređivanje, itd.) prilikom kretanja po sadržaju u modusu čitanja.
-Ako je ova opcija aktivirana, ovo je standardno ponašanje NVDA čitača ekrana od verzije 2019.1 i starijih verzija.
-Ako aktivirate ovu opciju, NVDA neće automatski fokusirati stavke koje se mogu fokusirati kad su označene kursorom u modusu čitanja.
-Ovo može rezultirati bržim iskustvom pregledavanja i bržim odzivom modusu čitanja.
-Fokus će se još aktualizirati na određenoj stavci kad s njom uđete u interakciju (npr. pritiskanje gumba, označavanje potvrdnog okvira).
-Od verzije NVDA 2019.2, ova značajka je eksperimentalna.
 </P>
 
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
@@ -3984,8 +4031,9 @@ Ovaj je uvjet zadovoljen ako znakovi neposredno prije i poslije riječi su sve o
 Već, kad koristimo primjer zamjene riječi "ptica" s riječi "žaba", ako ste izabrali da NVDA tu riječ tretira kao zamjenu za cijelu riječ, neće se poklapati s "ptice" ili "bluebird".
 </P>
 <P>
-Regularni je izraz uzorak koji sadrži specijalne znakove koji omogućuju preklapanja više znakova od jednom ili podudaranje samo brojevima ili samo slova, kao nekoliko primjera.
-Regularni izrazi nisu pokriveni ovim korisničkim vodičem, ali postoji puno tutorijala na internetu koji pružaju više informacija.
+Regularni je izraz uzorak koji sadrži specijalne znakove koji omogućuju preklapanja više znakova od jednom ili podudaranje samo brojeva ili samo slova, kao nekoliko primjera.
+Regularni izrazi nisu pokriveni u ovom korisničkom priručniku.
+Za uvodni tutorijal, molimo konzultirajte [<A HREF="https://docs.python.org/3.7/howto/regex.html">https://docs.python.org/3.7/howto/regex.html</A>].
 </P>
 
 <A NAME="SymbolPronunciation"></A>
@@ -4055,6 +4103,24 @@ U tom slučaju, pojavit će se izbornik u kojem ćete moći označiti željenu o
 <P>
 Da biste uklonili gestu iz prečaca, označite gestu i pritisnite gumb Ukloni.
 </P>
+<P>
+Kategorija Emulirani prečaci sustava sadrži prečace koji emuliraju prečace na tipkovnici sustava.
+Ovi prečaci se mogu koristiti za kontrolu tipkovnice s vašeg brajičnig retka.
+Kako biste dodali emulirani prečac, odaberite kategoriju emulirani prečaci i pritisnite gumb dodaj.
+Potom pritisnite gumb na tipkovnici kojeg želite emulirati.
+Poslije toga, tipka će biti dostupna u popisu emuliranih prečaca te će te moći dodjeliti prečac na način kako je to opisano iznad.
+</P>
+<P>
+Upozorenje:
+</P>
+
+ <UL>
+ <LI>Emulirani prečaci moraju imati pridjeljene geste kako bi se zadržali prilikom spremanja /zatvaranja dijaloškog okvira.
+ <LI>Geste sa modifikatorima možda neće moći biti pridjeljene emuliranoj gesti bez modifikatora
+ Na primjer, postavljenj emuliranog unosa 'a' i podešavanje ulazne geste 'ctrl+m', prouzrokovat će
+ da će program primiti 'ctrl+a'.
+ </UL>
+
 <P>
 Kad ste gotovi s promjenama, pritisnite gumb U redu da biste ih sačuvali ili gumb Odustani da biste ih poništili.
 </P>
