@@ -12,6 +12,11 @@
 
 <H2>2020.3</H2>
 
+<P>
+Esta versión incluye varias grandes mejoras para la estabilidad y el rendimiento, especialmente en las aplicaciones de Microsoft Office. Hay nuevas opciones para conmutar el soporte de las pantallas táctiles y del anunciado de gráficos.
+La existencia de contenido marcado (resaltado) puede anunciarse en los navegadores, y hay nuevas tablas braille alemanas.
+</P>
+
 <H3>Nuevas Características</H3>
 
 <UL>
@@ -41,6 +46,7 @@
 <LI>En Microsoft Excel, el diálogo de lista de elementos ahora presenta fórmulas en su forma localizada. (<A HREF="https://github.com/nvaccess/nvda/issues/9144">#9144</A>)
 <LI>NVDA ahora anuncia la terminología correcta para notas en MS Excel. (<A HREF="https://github.com/nvaccess/nvda/issues/11311">#11311</A>)
 <LI>Al utilizar la orden "mover cursor de revisión al foco" en modo Exploración, el cursor de revisión ahora se pone en la posición del cursor virtual. (<A HREF="https://github.com/nvaccess/nvda/issues/9622">#9622</A>)
+<LI>La información anunciada en el modo exploración, como la información de formato con NVDA+F, se muestra ahora en una ventana ligeramente más grande centrada en la pantalla. (<A HREF="https://github.com/nvaccess/nvda/issues/9910">#9910</A>)
 </UL>
 
 <H3>Corrección de Errores</H3>
@@ -66,6 +72,10 @@
 <LI>NVDA ya no añade un espacio no existente en el arrastre al copiar el navegador de objetos actual al portapapeles. (<A HREF="https://github.com/nvaccess/nvda/issues/11438">#11438</A>)
 <LI>NVDA ya no activa el perfil Leer todo si no hay nada que leer. (<A HREF="https://github.com/nvaccess/nvda/issues/10899">#10899</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9947">#9947</A>)
 <LI>NVDA ya no es incapaz de leer la lista de características en el administrador Internet Information Services (IIS). (<A HREF="https://github.com/nvaccess/nvda/issues/11468">#11468</A>)
+<LI>NVDA ahora mantiene el dispositivo de audio abierto mejorando el rendimiento en algunas tarjetas de sonido (<A HREF="https://github.com/nvaccess/nvda/issues/5172">#5172</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10721">#10721</A>)
+<LI>NVDA ya no se congelará ni se apagará cuando mantengas pulsado control+shift+flecha abajo en Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/9463">#9463</A>)
+<LI>El estado expandido/colapsado de los directorios en el árbol de navegación de drive.google.com ahora siempre se anuncia por NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/11520">#11520</A>)
+<LI>NVDA detectará automáticamente la pantalla braille NLS eReader Humanware a través de Bluetooth, ya que su nombre Bluethooth es ahora "NLS eReader Humanware". (<A HREF="https://github.com/nvaccess/nvda/issues/11561">#11561</A>)
 </UL>
 
 <H3>Cambios para Desarrolladores</H3>
@@ -74,6 +84,14 @@
 <LI>El GUI Helper's BoxSizerHelper.addDialogDismissButtons soporta una nueva palabra clave de argumento "separated", para añadir un separador horizontal estándar a los diálogos (que no sean mensajes y diálogos de entrada simples). (<A HREF="https://github.com/nvaccess/nvda/issues/6468">#6468</A>)
 <LI>Se añadieron propiedades adicionales a los app modules, incluyendo la ruta para el ejecutable (appPath), es una app de almacenamiento de Windows (isWindowsStoreApp), y arquitectura de máquina para la app (appArchitecture). (<A HREF="https://github.com/nvaccess/nvda/issues/7894">#7894</A>)
 <LI>Ahora es posible crear app modules para apps hospedadas dentro de wwahost.exe en Windows 8 y posteriores. (<A HREF="https://github.com/nvaccess/nvda/issues/4569">#4569</A>)
+<LI>Ahora se puede delimitar un fragmento del registro y luego copiarlo al portapapeles usando NVDA+control+shift+F1. (<A HREF="https://github.com/nvaccess/nvda/issues/9280">#9280</A>)
+<LI>Los objetos específicos de NVDA que se encuentran por el recolector de basura cíclica de Python ahora se registran cuando se borran por el recolector para ayudar en la eliminación de los ciclos de referencia de NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/11499">#11499</A>)
+ <UL>
+ <LI>La mayoría de las clases de NVDA se rastrean incluyendo NVDAObjects, appModules, GlobalPlugins, SynthDrivers, y TreeInterceptors.
+ <LI>Una clase que se necesita rastrear debe heredar de garbageHandler.TrackedObject.
+ </UL>
+<LI>El registro de depuración significativo para los eventos de MSAA ahora puede habilitarse en la configuración avanzada de NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/11521">#11521</A>)
+<LI>Los eventos de MSAA para el objeto enfocado actualmente ya no se filtran junto con otros eventos si se excede la cuenta de eventos para un hilo determinado. (<A HREF="https://github.com/nvaccess/nvda/issues/11520">#11520</A>)
 </UL>
 
 <H2>2020.2</H2>
