@@ -10,65 +10,71 @@
 </CENTER>
 
 
-<H2>2020.2</H2>
+<H2>2020.3</H2>
 
 <P>
-Af væsentlige ændringer i denne udgave af NVDA kan nævnes understøttelse af et nyt punktdisplay fra Nattiq, bedre understøttelse af ESET antivirus og Windows Terminal, forbedret ydeevne ved brug af 1Password og forbedringer til til talesyntesen Windows OneCore. Desuden er der mange flere fejlrettelser og forbedringer.
+Af væsentlige ændringer i denne udgave af NVDA kan nævnes flere markante forbedringer især til Microsoft Office. Der er nu indstillinger, der lader dig slå understøttelse for berøringsinteraktion til og fra og grafikelementer. Markeret (fremhævet) indhold kan nu oplyses i browsere, og der er nye tyske punkttabeller.
 </P>
 
 <H3>Nye funktioner</H3>
 
 <UL>
-<LI>Understøttelse for nye punktdisplays:
+<LI>Du kan nu slå rapportering af grafik til og fra i NVDAs dokumentformateringsindstillinger. Bemærk, at NVDA fortsat vil oplyse grafikelementer med alternativ tekst. (<A HREF="https://github.com/nvaccess/nvda/issues/4837">#4837</A>)
+<LI>Du kan nu slå understøttelse for berøringsinteraktion til og fra. Dette gøres under "Berøringsinteraktion" i NVDAs indstillingspanel. Tastaturkommandoen er NVDA+control+alt+t. (<A HREF="https://github.com/nvaccess/nvda/issues/9682">#9682</A>)
+<LI>Tilføjet nye tyske punkttabeller. (<A HREF="https://github.com/nvaccess/nvda/issues/11268">#11268</A>)
+<LI>NVDA opfanger nu skrivebeskyttede UIA-kontrolelementer. (<A HREF="https://github.com/nvaccess/nvda/issues/10494">#10494</A>)
+<LI>Markeret (fremhævet) tekst rapporteres nu både med tale og punktskrift i alle browsere. (<A HREF="https://github.com/nvaccess/nvda/issues/11436">#11436</A>)
+ <UL>
+ <LI>Dette kan slås fra under "Dokumentformatering" med den nye indstilling for markeret tekst.
+ </UL>
+<LI>Nye emulerede systemtaster kan tildeles under NVDAs dialog til håndtering af kommandoer. (<A HREF="https://github.com/nvaccess/nvda/issues/6060">#6060</A>)
   <UL>
-  <LI>Nattiq nBraille (<A HREF="https://github.com/nvaccess/nvda/issues/10778">#10778</A>)
+  <LI>For at gøre dette, skal du vælge "Tilføj" efter du har valgt kategorien "Emulerede tastaturtryk".
   </UL>
-<LI>Tilføjet et script, der åbner NVDAs konfigurationsmappe (ikke tildelt en kommando som standard). (<A HREF="https://github.com/nvaccess/nvda/issues/2214">#2214</A>)
-<LI>Bedre understøttelse for brugergrænsefladen, der benyttes af ESET antivirus. (<A HREF="https://github.com/nvaccess/nvda/issues/10894">#10894</A>)
-<LI>Understøttelse for Windows Terminal. (<A HREF="https://github.com/nvaccess/nvda/issues/10305">#10305</A>)
-<LI>Tilføjet kommando, der oplyser den aktive konfigurationsprofil (ikke tildelt kommando som standard). (<A HREF="https://github.com/nvaccess/nvda/issues/9325">#9325</A>)
-<LI>Tilføjet et script, der slår rapportering om sænket og hævet skrift til og fra (ikke tildelt kommando som standard). (<A HREF="https://github.com/nvaccess/nvda/issues/10985">#10985</A>)
-<LI>Webapplikationer (f.eks. Gmail) udtaler ikke længere forældede informationer, når du hurtigt bevæger dig rundt. (<A HREF="https://github.com/nvaccess/nvda/issues/10885">#10885</A>)
-  <UL>
-  <LI>Denne eksperimentelle rettelse skal aktiveres under NVDA-menuen/Opsætning/Indstillinger og under kategorien "Avanceret". Vælg "Forsøg at annullere udløbne fokushændelser"
-  </UL>
-<LI>Mange flere symboler er blevet tilføjet til den symbolordbog, der benyttes som standard. (<A HREF="https://github.com/nvaccess/nvda/issues/11105">#11105</A>)
 </UL>
 
 <H3>Ændringer</H3>
 
 <UL>
-<LI>Opdaterede LibLouis punktoversættelse fra 3.12 til <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.14.0">3.14.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/10832">#10832</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11221">#11221</A>)
-<LI>Informationer om hævet og sænket skrift kontrolleres nu særsklit fra skrifttypeattributter. (<A HREF="https://github.com/nvaccess/nvda/issues/10919">#10919</A>)
-<LI>På grund af ændringer foretaget i VS Code, vil NVDA ikke længere deaktivere gennemsynstilstand som standard i Code. (<A HREF="https://github.com/nvaccess/nvda/issues/10888">#10888</A>)
-<LI>NVDA oplyser ikke længere "top" eller "bund", når du flytter til den første eller sidste linje i et navigatorobjekt. (<A HREF="https://github.com/nvaccess/nvda/issues/9551">#9551</A>)
-<LI>NVDA oplyser ikke længere "højre" eller "venstre", når du flytter til det første eller sidste tegn for den aktuelle linje i et navigatorobjekt. (<A HREF="https://github.com/nvaccess/nvda/issues/9551">#9551</A>)
+<LI>Scriptet til rapportering af tekstformatering (NVDA+f) vil nu rapportere tekstformateringen for systemmarkørens aktuelle position i stedet for ved læsemarkøren. For at få oplyst tekstformatering ved læsemarkørens aktuelle position, skal du trykke NVDA+shift+F. (<A HREF="https://github.com/nvaccess/nvda/issues/9505">#9505</A>)
+<LI>NVDA flytter ikke længere systemfokus til fokuserbare elementer som standard i gennemsynstilstand, hvilket vil forbedre ydeevne og stabilitet. (<A HREF="https://github.com/nvaccess/nvda/issues/11190">#11190</A>)
+<LI>CLDR opdateret fra version 36.1 til version 37. (<A HREF="https://github.com/nvaccess/nvda/issues/11303">#11303</A>)
+<LI>Opdaterede eSpeak-NG til 1.51-dev, commit 1fb68ffffea4
+<LI>Du kan nu benytte kommandoer til navigering i tabeller, hvis du er i en listboks med flere listelementer der kan markeres, såfremt den pågældende liste har flere kolonner. (<A HREF="https://github.com/nvaccess/nvda/issues/8857">#8857</A>)
+<LI>Når du skal bekræfte om du vil slette en tilføjelse, vil "Nej" nu være standardknappen. (<A HREF="https://github.com/nvaccess/nvda/issues/10015">#10015</A>)
+<LI>NVDAs Elementlist i Microsoft Excel vil nu vise formularer i deres lokaliserede format. (<A HREF="https://github.com/nvaccess/nvda/issues/9144">#9144</A>)
+<LI>NVDA benytter nu den korrekte terminologi i Microsoft Excel. (<A HREF="https://github.com/nvaccess/nvda/issues/11311">#11311</A>)
+<LI>Når du bruger kommandoen til at flytte læsemarkøren til fokus, vil læsemarkøren nu befinde sig ved den virtuelle markørs aktuelle position. (<A HREF="https://github.com/nvaccess/nvda/issues/9622">#9622</A>)
+<LI>Informationer oplyst i gennemsynstilstand, eksempelvis tekstformateringsoplysningerne med NVDA+F, vises nu i et større vindue centreret på skærmen. (<A HREF="https://github.com/nvaccess/nvda/issues/9910">#9910</A>)
 </UL>
 
 <H3>Fejlrettelser</H3>
 
 <UL>
-<LI>NVDA starter nu korrekt, når logfilen ikke kan oprettes. (<A HREF="https://github.com/nvaccess/nvda/issues/6330">#6330</A>)
-<LI>I nylige udgaver af Microsoft Word 365 vil NVDA ikke længere oplyse "slet ord bagud", når Ctrl+Backspace benyttes under redigering af et dokument. (<A HREF="https://github.com/nvaccess/nvda/issues/10851">#10851</A>)
-<LI>NVDA vil nu korrekt oplyse status for funktionerne "Bland" og "Gentag" i Winamp. (<A HREF="https://github.com/nvaccess/nvda/issues/10945">#10945</A>)
-<LI>NVDA er ikke længere ekstremt langsom, når der flyttes mellem emner i en liste i 1Password. (<A HREF="https://github.com/nvaccess/nvda/issues/10508">#10508</A>)
-<LI>Talesyntesen Windows OneCore er ikke længere forsinket mellem udtalelser. (<A HREF="https://github.com/nvaccess/nvda/issues/10721">#10721</A>)
-<LI>NVDA fryser ikke længere, når du åbner kontekstmenuen for 1Password i meddelelsesområdet. (<A HREF="https://github.com/nvaccess/nvda/issues/11017">#11017</A>)
-<LI>I Office 2013 og ældre:
+<LI>NVDA vil nu altid tale, når der navigeres efter ord og man lander på et symbol efterfulgt af et blanktegn uanset tegnsætningsniveau. (<A HREF="https://github.com/nvaccess/nvda/issues/5133">#5133</A>)
+<LI>Objektbeskrivelser rapporteres nu igen i applikationer, der bruger QT 5.11 eller nyere. (<A HREF="https://github.com/nvaccess/nvda/issues/8604">#8604</A>)
+<LI>Når et ord slettes med control+delete, vil NVDA ikke længere forblive stille. (<A HREF="https://github.com/nvaccess/nvda/issues/3298">#3298</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11029">#11029</A>)
   <UL>
-  <LI>Bånd annonceres nu korrekt, når fokus flyttes til dem for første gang. (<A HREF="https://github.com/nvaccess/nvda/issues/4207">#4207</A>)
-  <LI>Emner i kontekstmenuer rapporteres nu igen korrekt. (<A HREF="https://github.com/nvaccess/nvda/issues/9252">#9252</A>)
-  <LI>Diverse sektioner i båndmenuer oplyses nu korrekt, når du bevæger dig mellem dem med Ctrl+piletaster. (<A HREF="https://github.com/nvaccess/nvda/issues/7067">#7067</A>)
+  <LI>Ordet til højre for det slettede ord vil blive oplyst.
   </UL>
-<LI>Tekst vil ikke længere vises på en ny linje i Google Chrome og Mozilla Firefox i gennemsynstilstand, når webindhold benytter CSS display: inline-flex. (<A HREF="https://github.com/nvaccess/nvda/issues/11075">#11075</A>)
-<LI>Hvis indstillingen "Placer automatisk systemfokus på fokuserbare elementer i gennemsynstilstand" er deaktiveret, vil det nu være muligt at aktivere elementer der ikke er fokuserbare.
-<LI>Hvis indstillingen "Placer automatisk systemfokus på fokuserbare elementer i gennemsynstilstand" er deaktiveret, vil det nu være muligt at aktivere elementer, der kun kan nåes ved at trykke på tab-tasten. (<A HREF="https://github.com/nvaccess/nvda/issues/8528">#8528</A>)
-<LI>Hvis indstillingen "Placer automatisk systemfokus på fokuserbare elementer i gennemsynstilstand" er deaktiveret, vil NVDA ikke længere klikke på en ukorrekt placering i forhold til bestemte elementer. (<A HREF="https://github.com/nvaccess/nvda/issues/9886">#9886</A>)
-<LI>NVDA afspiller ikke længere fejltoner, når DevExpress tekstkontrolelementer håndteres. (<A HREF="https://github.com/nvaccess/nvda/issues/10918">#10918</A>)
-<LI>Værktøjstips oplyses ikke i meddelelsesområdet, hvis teksten er den samme som ikonet. (<A HREF="https://github.com/nvaccess/nvda/issues/6656">#6656</A>)
-<LI>Hvis indstillingen "Placer automatisk systemfokus på fokuserbare elementer i gennemsynstilstand" er deaktiveret, vil NVDA+mellemrum for at skifte til fokustilstand fokusere elementet under markøren. (<A HREF="https://github.com/nvaccess/nvda/issues/11206">#11206</A>)
-<LI>Det er nu igen muligt at søge efter opdateringer på bestemte systemer (f.eks. en ren Windows-installation). (<A HREF="https://github.com/nvaccess/nvda/issues/11253">#11253</A>)
-<LI>Fokus flyttes ikke i Java-applikationer, når et valg ændres i en trævisning, tabel eller liste, der ikke har fokus. (<A HREF="https://github.com/nvaccess/nvda/issues/5989">#5989</A>)
+<LI>Listen over sprog i NVDAs generelle indstillinger er nu sorteret korrekt. (<A HREF="https://github.com/nvaccess/nvda/issues/10348">#10348</A>)
+-Markant forbedret ydeevne i dialogen til håndtering af kommandoer, når der filtreres. (<A HREF="https://github.com/nvaccess/nvda/issues/10307">#10307</A>)
+<LI>Du kan nu sende andre Unicode-tegn end U+FFFF fra et punktdisplay. (<A HREF="https://github.com/nvaccess/nvda/issues/10796">#10796</A>)
+<LI>NVDA vil nu korrekt rapportere indholdet af dialoger, når du skal åbne en fil uden tilknyttet program i Windows 10 Maj 2020 opdateringen. (<A HREF="https://github.com/nvaccess/nvda/issues/11335">#11335</A>)
+<LI>A new experimental option in Advanced settings (Enable selective registration for UI Automation events and property changes) can provide major performance improvements in Microsoft Visual Studio and other UIAutomation based applications if enabled. (<A HREF="https://github.com/nvaccess/nvda/issues/11077">#11077</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11209">#11209</A>)
+<LI>For checkable list items, the selected state is no longer announced redundantly, and if applicable, the unselected state is announced instead. (<A HREF="https://github.com/nvaccess/nvda/issues/8554">#8554</A>)
+<LI>On Windows 10 May 2020 Update, NVDA now shows the Microsoft Sound Mapper when viewing output devices from synthesizer dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/11349">#11349</A>)
+<LI>In Internet Explorer, numbers are now announced correctly for ordered lists if the list does not start with 1. (<A HREF="https://github.com/nvaccess/nvda/issues/8438">#8438</A>)
+<LI>In Google chrome, NVDA will now report not checked for all checkable controls (not just check boxes) that are currently not checked. (<A HREF="https://github.com/nvaccess/nvda/issues/11377">#11377</A>)
+<LI>It is once again possible to navigate in various controls when NVDA's language is set to Aragonese. (<A HREF="https://github.com/nvaccess/nvda/issues/11384">#11384</A>)
+<LI>NVDA should no longer sometimes freeze in Microsoft Word when rapidly arrowing up and down or typing characters with Braille enabled. (<A HREF="https://github.com/nvaccess/nvda/issues/11431">#11431</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11425">#11425</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11414">#11414</A>)
+<LI>NVDA no longer appends nonexistent trailing space when copying the current navigator object to the clipboard. (<A HREF="https://github.com/nvaccess/nvda/issues/11438">#11438</A>)
+<LI>NVDA no longer activates the Say All profile if there is nothing to read. (<A HREF="https://github.com/nvaccess/nvda/issues/10899">#10899</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9947">#9947</A>)
+<LI>NVDA is no longer unable to read the features list in Internet Information Services (IIS) Manager. (<A HREF="https://github.com/nvaccess/nvda/issues/11468">#11468</A>)
+<LI>NVDA now keeps the audio device open improving performance on some sound cards (<A HREF="https://github.com/nvaccess/nvda/issues/5172">#5172</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10721">#10721</A>)
+<LI>NVDA will no longer freeze or exit when holding down control+shift+downArrow in Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/9463">#9463</A>)
+<LI>The expanded / collapsed state of directories in the navigation treeview on drive.google.com is now always reported by NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/11520">#11520</A>)
+<LI>NVDA will auto detect the NLS eReader Humanware braille display via Bluetooth as its Bluethooth name is now "NLS eReader Humanware". (<A HREF="https://github.com/nvaccess/nvda/issues/11561">#11561</A>)
 </UL>
 
 <H3>Ændringer for udviklere</H3>
