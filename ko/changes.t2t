@@ -19,40 +19,41 @@ NVDA 변경 이력
 
 
 == 변경된 기능 ==
-- The Report formatting script (NVDA+f) has now been changed to report the formatting at the system caret rather than at the review cursor position. To report formatting at the review cursor position now use NVDA+shift+f. (#9505)
-- NVDA no longer automatically sets the system focus to focusable elements by default in browse mode, improving performance and stability. (#11190)
-- CLDR updated from version 36.1 to version 37. (#11303)
-- Updated eSpeak-NG to 1.51-dev, commit 1fb68ffffea4
+- 글자 서식 알림(NVDA+F)이 리뷰 커서 위치가 아닌 시스탬 캐럿을 기준으로 텍스트 서식을 알리도록 변경되었습니다. 기존의 리뷰 커서 위치의 텍스트 서식 알림을 들으려면 NVDA+Shift+F를 사용합니다.
+- 성능 및 안정성 향상을 위해 NVDA의 브라우저 모드에서 더 이상 기본적으로 초점을 받을 수 있는 요소에 자동으로 초점을 보내지 않습니다. (#11190)
+- CLDR의 버전이 36.1 에서 37 버전으로 업데이트되었습니다. (#11303)
+- eSpeak-NG 음성엔진 버전이 1.51-dev 버전으로 업데이트 되었습니다, commit 1fb68ffffea4
 - You can now utilize table navigation in list boxes with checkable list items when the particular list has multiple columns. (#8857)
-- In the Add-ons manager, when prompted to confirm removal of an add-on, "No" is now the default. (#10015)
+- 이제 추가 기능 관리에서 추가 기능 제거 확인을 위한 대화상자 창이 표시될 때, "아니오" 버튼에 기본 초점이 제공됩니다. (#10015)
 - In Microsoft Excel, the Elements List dialog now presents formulas in their localized form. (#9144)
 - NVDA now reports the correct terminology for notes in MS Excel. (#11311)
-- When using the "move review cursor to focus" command in browse mode, the review cursor is now set at the position of the virtual caret. (#9622)
-- Information reported in browse mode, such as the formatting info with NVDA+F, are now displayed in a slightly bigger window centered on screen. (#9910)
+- When using the "move review cursor to focus" command in browse mode, the review cursor is now set at the position of the virtual caret.ㅜ (#9622)
+- 이제 브라우즈 모드에서 NVDA+F 두 번 눌러 서식 정보를 볼 때 화면 중앙에 조금 더 큰 창으로 표시됩니다. (#9910)
 
 
-== Bug Fixes ==
+== 버그 수정 ==
 - NVDA now always speaks when navigating by word and landing on any single symbol followed by white space, whatever the verbosity settings. (#5133)
-- In applications using QT 5.11 or newer, object descriptions are again reported. (#8604)
+- QT 5.11 이상의 버전을 사용하는 응용 프로그램에서 객체 설명을 다시 알립니다. (#8604)
 - When deleting a word with control+delete, NVDA no longer remains silent. (#3298, #11029)
-  - Now the word to the right of the deleted word is announced.
-- In general settings panel, the language list is now sorted correctly. (#10348)
-- In the Input Gestures dialog, significantly improved performance while filtering. (#10307)
-- You can now send Unicode characters beyond U+FFFF from a braille display. (#10796)
+- 이제 ctrl + delete 키로 단어 단위로 글자를 지웠을 때 침묵하지 않습니다. (#3298, #11029)
+  - 이제 지워진 단어의 오른쪽에 있는 단어를 알립니다.
+- 일반 설정 패널에서 언어 목록의 순서가 올바르게 재정렬되었습니다. (#10348)
+- 제스처 설정 대화상자에서 명령 검색 중 성능이 향상되었습니다. (#10307)
+- 이제 점자 디스플레이에서 U+FFFF 이상의 유니코드 문자를 보낼 수 있습니다.. (#10796)
 - NVDA will announce Open With dialog content in Windows 10 May 2020 Update. (#11335)
 - A new experimental option in Advanced settings (Enable selective registration for UI Automation events and property changes) can provide major performance improvements in Microsoft Visual Studio and other UIAutomation based applications if enabled. (#11077, #11209)
-- For checkable list items, the selected state is no longer announced redundantly, and if applicable, the unselected state is announced instead. (#8554)
-- On Windows 10 May 2020 Update, NVDA now shows the Microsoft Sound Mapper when viewing output devices from synthesizer dialog. (#11349)
-- In Internet Explorer, numbers are now announced correctly for ordered lists if the list does not start with 1. (#8438)
-- In Google chrome, NVDA will now report not checked for all checkable controls (not just check boxes) that are currently not checked. (#11377)
+- 체크 가능한 목록 항목의 경우 선택한 상태가 더 이상 중복으로 알리지 않으며, 선택되지 않은 상태를 알립니다. (#8554)
+- 2020년 5월 업데이트가 적용된 Windows 10에서 NVDA의 음성엔진 선택 대화상자의 음성 출력 장치 콤보상자 목록으로 Microsoft Sound Mapper가 표시됩니다. (#11349)
+- Internet Explorer에서 순서 있는 목록 중, 목록이 1로 시작되지 않는 목록에 대한 숫자 블릿을 올바르게 읽습니다. (#8438)
+- Google Chrome에서 선택되지 않은 상태의 체크 가능한 컨트롤에 "해제됨" 상태를 제공합니다(체크상자와 유사한 모든 요소). (#11377)
 - It is once again possible to navigate in various controls when NVDA's language is set to Aragonese. (#11384)
-- NVDA should no longer sometimes freeze in Microsoft Word when rapidly arrowing up and down or typing characters with Braille enabled. (#11431, #11425, #11414)
+- Microsoft Word에서 화살표 키를 위 아래로 빠르게 반복 입력하거나, 점자 입력이 활성화된 상태로 문자를 입력할 때 NVDA가 더 이상 멈추지 않습니다. (#11431, #11425, #11414)
 - NVDA no longer appends nonexistent trailing space when copying the current navigator object to the clipboard. (#11438)
-- NVDA no longer activates the Say All profile if there is nothing to read. (#10899, #9947)
+- 읽을 내용이 없으면 NVDA는 더 이상 'Say All' 프로필을 활성화하지 않습니다. (#10899, #9947)
 - NVDA is no longer unable to read the features list in Internet Information Services (IIS) Manager. (#11468)
 - NVDA now keeps the audio device open improving performance on some sound cards (#5172, #10721)
-- NVDA will no longer freeze or exit when holding down control+shift+downArrow in Microsoft Word. (#9463)
-- The expanded / collapsed state of directories in the navigation treeview on drive.google.com is now always reported by NVDA. (#11520)
+- Microsoft Word에서  'ctrl+shift+아래 화살표 키'를 길게 눌러도 더 이상 NVDA가 멈추거나 종료되지 않습니다. (#9463)
+- Google Drive(drive.google.com)의 탐색 트리뷰에 있는 경로의 확장/축소 상태를 NVDA가 항상 알립니다. (#11520)
 - NVDA will auto detect the NLS eReader Humanware braille display via Bluetooth as its Bluethooth name is now "NLS eReader Humanware". (#11561)
 
 == 개발자를 위한 내용 ==
@@ -78,7 +79,7 @@ NVDA 변경 이력
 == 변경된 기능 ==
 - Liblouis 점자 번역기가 3.12.0에서 [3.14.0 https://github.com/liblouis/liblouis/releases/tag/v3.14.0]로 업데이트되었습니다. (#10832, #11221)
 - 위첨자와 아래첨자 알림 기능이 이제 글꼴 속성 알림 기능과 분리되어 조절됩니다. (#10919)
-- VS Code의 기능 변동으로 인해 더이상 브라우즈 모드를 자동으로 비활성화하지 않습니다. (#10888)
+- VS Code의 기능 변동으로 인해 더 이상 브라우즈 모드를 자동으로 비활성화하지 않습니다. (#10888)
 - 리뷰 커서를 현재 네비게이터 객체의 첫번째나 마지막 줄로 옮길 때 안내되던 "맨 위"나 "맨 아래" 메시지를 없앴습니다. (#9551)
 - 리뷰 커서를 현재 네비게이터 객체의 첫번째나 마지막 문자로 옮길 때 안내되던 "왼쪽"나 "오른쪽" 메시지를 없앴습니다. (#9551)
 
@@ -204,7 +205,7 @@ NVDA 2019.3 버전은 내부적으로 많은 변화가 포함된 중요한 버�
 - Microsoft Word에서 일부 불릿 명칭이 수정됐습니다. (#10399)
 - 윈도우즈 10의 2019년 5월 이후 업데이트에서, 이모지 패널이나 클립보드 기록 창이 열릴 때 처음 선택한 이모지나 클립보드를 정상적으로 읽습니다. (#9204)
 - Poedit에서 오른쪽에서 왼쪽으로 읽는 언어로 해석된 내용을 일부 읽지 못했던 것이 수정됐습니다. (#9931)
-- 윈도우즈 10의 2018년 4월 이후 업데이트에서 설정 앱을 사용할 때, 시스템/음향 화면에 나타나는 음량 표시기의 진행 정보를 더이상 읽지 않습니다. (#10284)
+- 윈도우즈 10의 2018년 4월 이후 업데이트에서 설정 앱을 사용할 때, 시스템/음향 화면에 나타나는 음량 표시기의 진행 정보를 더 이상 읽지 않습니다. (#10284)
 - 음성 사전에 포함된 정규식의 형식이 잘못됐을 경우 NVDA의 음성이 완전히 멈추는 현상을 수정했습니다. (#10334)
 - Microsoft Word에서 UIA가 활성화된 상태로 불릿 목록을 읽을 때, 다음 목록 항목의 불릿을 잘못 읽는 버그가 수정됐습니다. (#9613)
 - Liblouis에서 드물게 나타나는 일부 점자번역 문제와 오류가 수정됐습니다. (#9982)
@@ -270,7 +271,7 @@ NVDA 2019.3 버전은 내부적으로 많은 변화가 포함된 중요한 버�
 
 == 버그 수정 ==
 - 추가 기능 목록이 비어 있을 때 NVDA가 동작을 멈추는 현상이 수정됐습니다. (#7686)
-- 점자나 글자별 읽기 모드에서 속성 윈도우에 접근할 때, 더이상 LTR 이나 RTL 표시를 읽지 않습니다. (#8361)
+- 점자나 글자별 읽기 모드에서 속성 윈도우에 접근할 때, 더 이상 LTR 이나 RTL 표시를 읽지 않습니다. (#8361)
 - 이제는 브라우즈 모드의 빠른 탐색 기능으로 폼 양식에 들어갈 때, 첫 줄만 읽는 대신 폼 양식 전체를 읽습니다. (#9388)
 - Windows 10 Mail app 을 나간 후에 NVDA 가 조용해지는 현상을 수정했습니다. (#9341)
 - 사용자의 지역 설정이 '영어 (네델란드)'처럼 NVDA가 모르는 항목으로 설정됐을 때 NVDA가 시작되지 않는 문제가 해결됐습니다. (#8726)
