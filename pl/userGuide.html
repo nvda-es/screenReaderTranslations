@@ -113,7 +113,7 @@
       <UL>
       <LI><A HREF="#ExcelAutomaticColumnAndRowHeaderReading">11.2.1. Automatyczny odczyt nagłówków kolumn i wierszy</A>
       <LI><A HREF="#ExcelElementsList">11.2.2. Lista elementów</A>
-      <LI><A HREF="#ExcelReportingComments">11.2.3. Zgłaszanie komentarzy</A>
+      <LI><A HREF="#ExcelReportingComments">11.2.3. Reporting Notes</A>
       <LI><A HREF="#ExcelReadingProtectedCells">11.2.4. Odczyt zablokowanych komórek</A>
       <LI><A HREF="#ExcelFormFields">11.2.5. Pola formularzy</A>
       </UL>
@@ -327,9 +327,7 @@ Dla szczegułowych informacji dotyczących wyjątków, skonsultuj się z dokumen
  <LI>Dla Windows 7, NVDA wymaga Service Pack 1 lub wyższego.
  <LI>Dla Windows Server 2008 R2, NVDA wymaga Service Pack 1 lub wyższego.
  </UL>
-<LI>Pamięć operacyjna: przynajmniej 256 MB.
-<LI>Procesor: częstotliwość przynajmniej 1.0 GHz.
-<LI>Około 90 MB wolnego miejsca na dysku.
+<LI>at least 150 MB of storage space.
 </UL>
 
 <A NAME="GettingAndSettingUpNVDA"></A>
@@ -534,8 +532,10 @@ Jeśli twój laptop nie może tego zrobić albo nie pozwala wyłączyć klawisza
 
 <P>
 Jeśli korzystasz z NVDA pod kontrolą systemu Windows 8 lub nowszego i posiadasz komputer z ekranem dotykowym, możesz korzystać z gestów dotykowych NVDA.
-Gdy NVDA jest uruchomiony, gesty dotykowe wykonywane na ekranie są przechwytywane przez program bezpośrednio. 
+While NVDA is running, unless touch interaction support is disabled, all touch input will go directly to NVDA. 
 Oznacza to, że gesty wykonywane normalnie nie będą działać, jeśli włączony jest NVDA.
+To toggle touch interaction support, press NVDA+control+alt+t.
+You can also enable or disable <A HREF="#TouchSupportEnable">touch interaction support</A> from the Touch Interaction category of the NVDA settings.
 </P>
 
 <A NAME="ExploringTheScreen"></A>
@@ -648,6 +648,13 @@ Spowoduje to rozwinięcie menu. Nawigacja w menu odbywa się za pomocą strzałe
 <TH>Skrót laptopa</TH>
 <TH>Gest dotykowy</TH>
 <TH>Opis</TH>
+</TR>
+<TR>
+<TD>Starts or restarts NVDA</TD>
+<TD>Control+alt+d</TD>
+<TD>Control+alt+d</TD>
+<TD>none</TD>
+<TD>Starts or restarts NVDA from the Desktop, if this Windows shortcut is enabled during NVDA's installation process. This is a Windows specific shortcut and therefore it cannot be reassigned in the input gestures dialog.</TD>
 </TR>
 <TR>
 <TD>Zatrzymuje mowę</TD>
@@ -835,6 +842,12 @@ NVDA wykorzystuje następujące klawisze poleceń do nawigacji kursorem klawiatu
 <TD>NVDA+Shift+Strzałka w górę</TD>
 <TD>NVDA+Shift+S</TD>
 <TD>Odczytuje cały aktualnie zaznaczony tekst</TD>
+</TR>
+<TR>
+<TD>Report text formatting</TD>
+<TD>NVDA+f</TD>
+<TD>NVDA+f</TD>
+<TD>Reports the formatting of the text where the caret is currently situated. Pressing twice shows the information in browse mode</TD>
 </TR>
 <TR>
 <TD>Następne zdanie</TD>
@@ -1142,11 +1155,11 @@ Do przeglądania tekstu są dostępne następujące polecenia:
 <TD>Przenosi kursor do początku zaznaczenia</TD>
 </TR>
 <TR>
-<TD>Informacje o formatowaniu</TD>
-<TD>NVDA+f</TD>
-<TD>NVDA+F</TD>
-<TD>Brak</TD>
-<TD>Odczytuje informacje o formatowaniu tekstu pod kursorem. Podwójne naciśnięcie prezentuje informację w trybie czytania.</TD>
+<TD>Report text formatting</TD>
+<TD>NVDA+shift+f</TD>
+<TD>NVDA+shift+f</TD>
+<TD>none</TD>
+<TD>Reports the formatting of the text where the review cursor is currently situated. Pressing twice shows the information in browse mode</TD>
 </TR>
 <TR>
 <TD>Zgłoś zamiennik aktualnego symbolu</TD>
@@ -1864,6 +1877,10 @@ Aby zmieścić jak najwięcej informacji na monitorze brajlowskim, zdefiniowano 
 <TD>⠤⠤⠤⠤⠤</TD>
 <TD>separator</TD>
 </TR>
+<TR>
+<TD>mrkd</TD>
+<TD>marked content</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -2238,23 +2255,30 @@ Zaznaczenie pola i naciśnięcie Enter lub przycisku "idź do", przeniesie fokus
 </UL>
 
 <A NAME="ExcelReportingComments"></A>
-<H4>11.2.3. Zgłaszanie komentarzy</H4>
+<H4>11.2.3. Reporting Notes</H4>
 
 <P>
-Aby odczytać komentarz zaznaczonej komórki, naciśnij NVDA+Alt+C.
-Wszystkie komentarze arkusza mogą być wymienione na liście elementów NVDA po naciśnięciu NVDA+f7.
+To report any notes for the currently focused cell, press NVDA+alt+c.
+In Microsoft 2016, 365 and newer, the classic comments in Microsoft Excel have been renamed to "notes".
+All notes for the worksheet can also be listed in the NVDA Elements List after pressing NVDA+f7.
 </P>
 <P>
-NVDA także może wyświetlać okno dialogowe do dodania lub edycji określonego komentarza.
-NVDA nadpisuje Excelowe okno do edytowania komentarzy z powodów dostępnościowych, ake skrót do edytowania komentarzy jest dostarczany z MS excela, i także działa bez konieczności uruchamiania NVDA.
-Aby dodać lub edytować określony komentarz, w fokusowanej komórce, naciśnij shift+f2.
+NVDA can also display a specific dialog for adding or editing a certain note.
+NVDA overrides the native MS Excel notes editing region due to accessibility constraints, but the key stroke for displaying the dialog is inherited from MS Excel and therefore works also without NVDA running.
+To add or edit a certain note, in a focused cell, press shift+f2.
 </P>
 <P>
 Ten skrót nigdzie nie występuje i i nie może być zmieniony z poziomu dialogowego okna "zdarzenia wejścia".
 </P>
 <P>
-Uwaga: istnieje możliwość otworzenia MS excel regiony do komentarzy z poziomu meni kontekstowego jakielkolwiek komórki skoroszytu.
-Jednakże, to spowoduje otwarcie niedostępnego regionu do edytowania komentarzy, ale nie i określonego dialogu przez NVDA.
+Note: it is possible to open the note editing region in MS Excel also from the context menu of any cell of the work sheet.
+However, this will open the inaccessible note editing region and not the NVDA specific note editing dialog.
+</P>
+<P>
+In Microsoft Office 2016, 365 and newer, a new style comment dialog has been added.
+This dialog is accessible and provides more features such as replying to comments, etc.
+It can also be opened from the context menu of a certain cell.
+The comments added to the cells via the new style comment dialog are not related to "notes".
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -2996,6 +3020,7 @@ Ustawienie nie ma wpływu na wskaźnik zaznaczenia, są to zawsze punkty 7 i 8 b
 <P>
 To ustawienie jest polem liczbowym określającym w sekundach, jak długo na monitorze brajlowskim są wyświetlane komunikaty programu NVDA.
 Wprowadzenie wartości 0, wyłącza całkowicie wyświetlanie tych komunikatów.
+The NVDA message is imediately dismissed when pressing a routing key on the braille display, but appears again when pressing a coresponding key which triggers the message.
 </P>
 
 <A NAME="BrailleSettingsNoMessageTimeout"></A>
@@ -3378,6 +3403,16 @@ Ta kategoria preferencji, , dostępna tylko na komputerach z systemem Windows 8 
 Zawiera następujące ustawienia:
 </P>
 
+<A NAME="TouchSupportEnable"></A>
+<H5>Enable touch interaction support</H5>
+
+<P>
+This checkbox enables NVDA's touch interaction support.
+If enabled, you can use your fingers to navigate and interact with items on screen using a touchscreen device.
+If disabled, touchscreen support will be disabled as though NVDA is not running.
+This setting can also be toggled using NVDA+control+alt+t. 
+</P>
+
 <A NAME="TouchTypingMode"></A>
 <H5>Tryb wpisywania dotykowego</H5>
 
@@ -3701,6 +3736,20 @@ Dla przykładu: jeśli to ustawienie jest włączone i naciśnięto literę j, z
 W takim wypadku zostanie odegrany domyślny dźwięk systemowy.
 </P>
 
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Automatically set system focus to focusable elements</H5>
+
+<P>
+Key: NVDA+8
+</P>
+<P>
+Disabled by default, this option allows you to choose if the system focus should automatically be set to elements that can take the system focus (links, form fields, etc.) when navigating content with the browse mode caret.
+Leaving this option disabled will not automatically focus focusable elements when they are selected with the browse mode caret.
+This might result in faster browsing experience and better responsiveness in browse mode.
+The focus will yet be updated to the particular element when interacting with it (e.g. pressing a button, checking a check box).
+Enabling this option may improve support for some websites at the cost of performance and stability.
+</P>
+
 <A NAME="DocumentFormattingSettings"></A>
 <H4>12.1.15. Formatowanie dokumentów (NVDA+Ctrl+D)</H4>
 
@@ -3720,6 +3769,7 @@ Możemy w ten sposób skonfigurować odczytywanie:
  <LI>Rozmiaru czcionki
  <LI>Atrybutów czcionki
  <LI>Podkreślenia
+ <LI>Marked (Highlighted text)
  <LI>Stylu tekstu
  <LI>Kolorów
  </UL>
@@ -3750,6 +3800,7 @@ Możemy w ten sposób skonfigurować odczytywanie:
  <UL>
  <LI>Nagłówków
  <LI>Linków
+ <LI>Graphics
  <LI>List
  <LI>Cytatów
  <LI>Grup
@@ -3851,6 +3902,17 @@ Ten przycisk otwiera folder, w którym możesz umieszczać własny kod podczas p
 Przycisk jest aktywny tylko, gdy NVDA jest ustawione na wczytywanie własnego kodu z piaskownicy programisty.
 </P>
 
+<A NAME="AdvancedSettingsSelectiveUIAEventRegistration"></A>
+<H5>Enable selective registration for UI Automation events and property changes</H5>
+
+<P>
+This option changes how NVDA registers for events fired by the Microsoft UI Automation accessibility API.
+When this option is disabled, NVDA registers for many UIA events that are processed and discarded within NVDA itself.
+This has a major negative impact on performance, especially in applications like Microsoft Visual Studio.
+Therefore, when this option is enabled, NVDA will limit event registration to the system focus for most events.
+If you suffer from performance issues in one or more applications, We recommend you to try this functionality to see whether performance improves.
+</P>
+
 <A NAME="AdvancedSettingsUseUiaForWord"></A>
 <H5>Użyj Microsoft UI automation do interakcji z kontrolkami dokumentów  Word</H5>
 
@@ -3894,21 +3956,6 @@ W środowiskach niegodnych zaufania możesz tymczasowo wyłączyć opcję <A HRE
 Ta opcja włącza zachowanie, które spowoduje próby zatrzymywania mowy dla przestarzałych zdarzeń mowy.
 ogólnie może się zdarzyć, że NVDA będzie wymawiałą przestarzałą informację w aplikacjach webowych, takich jak Gmail przy szybkim przechodzeniu używając przeglądarki Chrome.
 Jest to funkcja eksperymentalna od wersji NVDA 2020.2.
-</P>
-
-<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
-<H5>Automatycznie ustaw kursor systemowy na elementach interaktywnych w trybie czytania</H5>
-
-<P>
-skrót: NVDA+8
-</P>
-<P>
-Domyślnie włączona, opcja pozwala określić, czy fokus systemowy ma być automatycznie ustawianych na elementach, które mogą go otrzymać (linki, pola formularzy etc.) podczas nawigacji po treści w trybie czytania.
-Jeśli włączona, określa to domyślne zachowanie NVDA w wersji 2019.1 i starszych.
-Wyłączenie tej opcji sprawi, że fokus systemowy nie będzie automatycznie  ustawiany na elementach pod kursorem trybu czytania.
-Może to przyśpieszyć wczytywanie dokumentów i poprawić responsywność w trybie czytania.
-Fokus będzie przenoszony na element w momencie wykonania na nim interakcji (np. naciśnięcie przycisku, zaznaczenie pola wyboru).
-Ta funkcjonalność jest eksperymentalna w wersji NVDA 2019.2.
 </P>
 
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
@@ -3981,7 +4028,8 @@ Wracając do wcześniejszego przykładu zamiany "ptak" na "żaba", jeśli reguł
 </P>
 <P>
 Wyrażenie regularne jest to wzorzec zawierający specjalne symbole, które pozwalają na dopasowanie więcej niż jednego znaku jednocześnie, mogą to być np. cyfry lub litery.
-Wyrażenia regularne nie są opisane w tym podręczniku, ale wiele podręczników na ich temat można znaleźć w internecie.
+Regular expressions are not covered in this user guide.
+For an introductory tutorial, please refer to [<A HREF="https://docs.python.org/3.7/howto/regex.html">https://docs.python.org/3.7/howto/regex.html</A>].
 </P>
 
 <A NAME="SymbolPronunciation"></A>
@@ -4051,6 +4099,24 @@ W takim przypadku pojawi się menu umożliwiające wybór pożądanej opcji.
 <P>
 Aby usunąć powiązanie zdarzenia wejścia z poleceniem, wybierz to zdarzenie i naciśnij przycisk "Usuń".
 </P>
+<P>
+The Emulated system keyboard keys category contains NVDA commands that emulate keys on the system keyboard.
+These emulated system keyboard keys can be used to control a system keyboard right from your braille display.
+To add an emulated input gesture, select the Emulated system keyboard keys category and press the Add button.
+Then, press the key on the keyboard you wish to emulate.
+After that, the key will be available from the Emulated system keyboard keys category and you will be able to assign an input gesture to it as described above.
+</P>
+<P>
+Note:
+</P>
+
+ <UL>
+ <LI>Emulated keys must have gestures assigned in order to persist when saving / closing the dialog.
+ <LI>An input gesture with modifier keys may not be able to be mapped to an emulated gesture without modifier
+ keys. For instance, setting the emulated input 'a' and configuring an input gesture of 'ctrl+m', may result
+ in the application receiving 'ctrl+a'.
+ </UL>
+
 <P>
 Po zakończeniu wprowadzania zmian, naciśnij przycisk OK aby je zachować albo przycisk Anuluj, aby odrzucić.
 </P>
