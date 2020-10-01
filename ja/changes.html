@@ -10,6 +10,93 @@
 </CENTER>
 
 
+<H2>2020.3</H2>
+
+<P>
+このリリースでは、特に Microsoft Office アプリの安定性とパフォーマンスが改善されました。また、タッチ操作サポートや画像の報告を切り替える設定が追加されました。
+ブラウザにおいてマーク(テキストのハイライト)を報告できるようになりました。また、新しいドイツ語の点字テーブルが追加されました。
+</P>
+
+<H3>新機能</H3>
+
+<UL>
+<LI>NVDAの「書式とドキュメント情報」の設定で、画像の報告を切り替えることができます。このオプションを無効にしても、画像の代替テキストは読み上げられます。(<A HREF="https://github.com/nvaccess/nvda/issues/4837">#4837</A>)
+<LI>NVDAの「タッチ操作サポート」を切り替えることができます。NVDAの設定「タッチ操作」カテゴリに「タッチ操作サポートの有効化」が追加されました。この設定の既定の入力ジェスチャーは NVDA+Ctrl+Alt+T です。(<A HREF="https://github.com/nvaccess/nvda/issues/9682">#9682</A>)
+<LI>新しいドイツ語の点字テーブルを追加しました。(<A HREF="https://github.com/nvaccess/nvda/issues/11268">#11268</A>)
+<LI>NVDAが読み取り専用テキストのUIAコントロールを検出するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/10494">#10494</A>)
+<LI>すべてのWebブラウザーで、マーク(テキストのハイライト)が存在する場合に、音声と点字の両方で報告されます。(<A HREF="https://github.com/nvaccess/nvda/issues/11436">#11436</A>)
+  <UL>
+  <LI>「書式とドキュメント情報」の設定「マーク(テキストのハイライト)」オプションで有効と無効を切り替えることができます。
+  </UL>
+<LI>NVDAの「入力ジェスチャー」ダイアログから、システムキーボードのキー入力のエミュレートを追加できます。(<A HREF="https://github.com/nvaccess/nvda/issues/6060">#6060</A>)
+  <UL>
+  <LI>追加するには「システムキーボードのキー入力エミュレート」カテゴリを選択して「追加」ボタンを押します。
+  </UL>
+<LI>ジョイスティック付きの Handy Tech Active Braille 点字ディスプレイに対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/11655">#11655</A>)
+</UL>
+
+<H3>変更点</H3>
+
+<UL>
+<LI>「書式とドキュメント情報の報告」(NVDA+F)の仕様が変更され、レビューカーソル位置ではなくテキストカーソル位置の書式を報告するようになりました。レビューカーソル位置の書式を報告するには NVDA+Shift+F を使用します。(<A HREF="https://github.com/nvaccess/nvda/issues/9505">#9505</A>)
+<LI>NVDA のブラウズモードで、フォーカス可能な要素に移動したときに、システムフォーカスを自動的に移動しなくなりました。これにより、性能と安定性が向上しました。(<A HREF="https://github.com/nvaccess/nvda/issues/11190">#11190</A>)
+<LI>CLDR がバージョン 36.1 からバージョン 37 に更新されました。(<A HREF="https://github.com/nvaccess/nvda/issues/11303">#11303</A>)
+<LI>eSpeak-NG を 1.51-dev コミット 1fb68ffffea4 に更新しました。
+<LI>チェック可能なリスト項目を含むリストボックスで、リストに複数の列がある場合に、テーブルナビゲーションを利用できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8857">#8857</A>)
+<LI>アドオンマネージャーで、アドオンの削除の確認をするときの既定の選択肢が「いいえ」がになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10015">#10015</A>)
+<LI>Microsoft Excel で「要素リスト」ダイアログに表示される数式がローカライズされるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9144">#9144</A>)
+<LI>Excel のコメント機能とメモ機能の用語を更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11311">#11311</A>)
+<LI>ブラウズモードで「レビューカーソルをフォーカス位置に移動」コマンドを使用すると、レビューカーソルが仮想テキストカーソルの位置に設定されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9622">#9622</A>)
+<LI>NVDA+F による書式とドキュメント情報など、ブラウズモードで情報を報告する場合に、ウィンドウを表示する位置や大きさを改善しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9910">#9910</A>)
+</UL>
+
+<H3>バグ修正</H3>
+
+<UL>
+<LI>NVDAで単語単位の移動を行い、記号1文字に移動し、その記号の直後が空白である場合に、記号読み上げレベルの設定に関わらず、常にその記号を読み上げるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5133">#5133</A>)
+<LI>QT 5.11 以降を使用するアプリで、オブジェクトの説明が報告されなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8604">#8604</A>)
+<LI>Ctrl+Delete を使用して単語を削除するときに、NVDA が読み上げを行わなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3298">#3298</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11029">#11029</A>)
+  <UL>
+  <LI>削除された単語の右側の単語が報告されます。
+  </UL>
+<LI>設定パネル「一般」カテゴリで、言語のリストの表示の順序を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10348">#10348</A>)
+<LI>入力ジェスチャーのダイアログで、フィルタリングの処理速度が大幅に向上しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10307">#10307</A>)
+<LI>U+FFFF を超えるコードの Unicode 文字を点字ディスプレイから送信できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10796">#10796</A>)
+<LI>NVDA は Windows 10 May 2020 Update の「プログラムから開く」ダイアログの内容を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11335">#11335</A>)
+<LI>NVDA 設定の新しい実験的なオプション「UIオートメーションのイベントとプロパティ変更を選択的に取得」を有効にすると、Microsoft Visual Studio およびその他の UI Automation ベースのアプリの性能が大幅に向上します。 (<A HREF="https://github.com/nvaccess/nvda/issues/11077">#11077</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11209">#11209</A>)
+<LI>チェック可能なリスト項目において、選択の状態が重複して報告されていた不具合を修正しました。選択されていない状態の報告も行います。 (<A HREF="https://github.com/nvaccess/nvda/issues/8554">#8554</A>)
+<LI>Windows 10 May 2020 Update において、NVDAの音声エンジンのダイアログで、出力デバイスに Microsoft Sound Mapper を表示しなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11349">#11349</A>)
+<LI>Internet Explorer において順序付きリストの番号が1で始まらない場合にも、番号が正しく報告されるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8438">#8438</A>)
+<LI>Google Chrome において、チェックボックスに限らず、チェック可能な全てのコントロールについて、チェックなしの状態を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11377">#11377</A>)
+<LI>NVDA の言語がアラゴン語に設定されている場合に、コントロールを移動できなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11384">#11384</A>)
+<LI>点字を有効にして、上下に矢印キーで移動したり、文字を入力したりするときに Microsoft Word で NVDA がフリーズしていた不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11431">#11431</A>,<A HREF="https://github.com/nvaccess/nvda/issues/11425">#11425</A>,<A HREF="https://github.com/nvaccess/nvda/issues/11414">#11414</A>)
+<LI>NVDA は、現在のナビゲーターオブジェクトをクリップボードにコピーするときに、末尾に不必要な空白を追加しなくなりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11438">#11438</A>)
+<LI>読み取るものがない場合、NVDA は Say All プロファイルをアクティブにしなくなりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10899">#10899</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9947">#9947</A>)
+<LI>NVDA がインターネットインフォメーションサービス(IIS)マネージャーの機能リストを読み取れなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11468">#11468</A>)
+<LI>一部のサウンドカードにおいて NVDA はオーディオデバイスをオープンのままにします。これにより性能が改善します。 (<A HREF="https://github.com/nvaccess/nvda/issues/5172">#5172</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10721">#10721</A>)
+<LI>Microsoft Word で Ctrl+Shift+下矢印 を押したままにすると NVDA がフリーズまたは終了していた不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9463">#9463</A>)
+<LI>drive.google.com のツリービューのディレクトリの展開/折りたたみ状態を常に NVDA で報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11520">#11520</A>)
+<LI>NVDA が "NLS eReader Humanware" 点字ディスプレイを Bluetooth 経由で自動検出するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11561">#11561</A>)
+<LI>特定の SAPI5 音声(Ivonaなど)が音声をスキップしていた不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10901">#10901</A>)
+<LI>Visual Studio Code の性能が大幅に向上しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11533">#11533</A>)
+</UL>
+
+<H3>開発者向けの変更</H3>
+
+<UL>
+<LI>GUI Helper の BoxSizerHelper.addDialogDismissButtons は新しい "separated" キーワード引数をサポートします。 これは、ダイアログ(メッセージや単一入力ダイアログを除く)に標準の水平区切り線を追加します。(<A HREF="https://github.com/nvaccess/nvda/issues/6468">#6468</A>)
+<LI>アプリモジュールにプロパティが追加されました。実行可能ファイルのパス(appPath)、Windowsストアアプリかどうか(isWindowsStoreApp)、アプリのマシンアーキテクチャ(appArchitecture)などです。 (<A HREF="https://github.com/nvaccess/nvda/issues/7894">#7894</A>)
+<LI>Windows 8 以降の wwahost.exe 内でホストされるアプリに対応するモジュールを作成できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4569">#4569</A>)
+<LI>ログのフラグメントを区切って NVDA+Ctrl+Shift+F1 でクリップボードにコピーできるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9280">#9280</A>)
+<LI>Python のガベージコレクターが NVDA 固有のオブジェクトを削除したときにログに記録されるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/11499">#11499</A>)
+ <UL>
+ <LI>NVDAObjects, appModules, GlobalPlugins, SynthDrivers, TreeInterceptors など、NVDAのクラスの大部分を追跡します。
+ <LI>追跡する必要のあるクラスは garbageHandler.TrackedObject から継承する必要があります。
+ </UL>
+<LI>MSAA イベントの重要なデバッグログを NVDA の詳細設定で有効にできるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11521">#11521</A>)
+<LI>現在フォーカスされているオブジェクトの MSAA winEvents は、特定のスレッドのイベントカウントが増加した場合に、他のイベントとともに除外されなくなりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11520">#11520</A>)
+</UL>
+
 <H2>2020.2</H2>
 
 <P>
@@ -23,7 +110,7 @@
   <UL>
   <LI>Nattiq nBraille (<A HREF="https://github.com/nvaccess/nvda/issues/10778">#10778</A>)
   </UL>
-<LI>NVDA 設定フォルダーを開くコマンドが追加されました。（既定のジェスチャーは設定されていません） (<A HREF="https://github.com/nvaccess/nvda/issues/2214">#2214</A>)
+<LI>NVDA 設定フォルダーを開くコマンドが追加されました。(既定のジェスチャーは設定されていません) (<A HREF="https://github.com/nvaccess/nvda/issues/2214">#2214</A>)
 <LI>ESET antivirus GUI 対応の改善 (<A HREF="https://github.com/nvaccess/nvda/issues/10894">#10894</A>)
 <LI>Windows Terminal への対応 (<A HREF="https://github.com/nvaccess/nvda/issues/10305">#10305</A>)
 <LI>アクティブな設定プロファイルを報告するコマンドが追加されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9325">#9325</A>)
@@ -133,7 +220,7 @@
   <LI>speakObject 関数は getObjectSpeech 関数を使用します。
   <LI>speakTextInfo 関数は getTextInfoSpeech 関数を使用します。
   <LI>speakWithoutPauses 関数は独立したクラスになり、リファクタリングされましたが、互換性は保たれます。
-  <LI>getSpeechForSpelling 関数は（まだ利用可能ですが）非推奨です。 getSpellingSpeech 関数を使用してください。
+  <LI>getSpeechForSpelling 関数は(まだ利用可能ですが)非推奨です。 getSpellingSpeech 関数を使用してください。
   以下はアドオン開発者に影響を与えないはずのプライベートなメソッドの変更点です:
   <LI>_speakPlaceholderIfEmpty 関数は _getPlaceholderSpeechIfTextEmpty 関数になりました。
   <LI>_speakTextInfo_addMath 関数は_extendSpeechSequence_addMathForTextInfo 関数になりました。
@@ -142,7 +229,7 @@
   <UL>
   <LI>モジュールレベルの 'REASON_*' 定数は廃止されました。
   </UL>
-<LI>NVDA の依存モジュールのコンパイルに Visual Studio 2019（16.2 またはそれ以降）が必要となりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
+<LI>NVDA の依存モジュールのコンパイルに Visual Studio 2019(16.2 またはそれ以降)が必要となりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
 <LI>SCons をバージョン 3.1.1 に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10169">#10169</A>)
 <LI>behaviors._FakeTableCell で location が未定義の場合を許容していなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10864">#10864</A>)
 </UL>
@@ -169,11 +256,11 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>Microsoft Word において、テキストが非表示に設定されている場合でもフォントを報告できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8713">#8713</A>)
 <LI>テキストの選択またはコピーの開始位置にレビューカーソルを移動するコマンド NVDA+shift+F9 が追加されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/1969">#1969</A>)
 <LI>Internet Explorer, Microsoft Edge および最近のバージョンの Firefox や Chrome のフォーカスモードとオブジェクトナビゲーションで、ランドマークを報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10101">#10101</A>)
-<LI>Internet Explorer, Google Chrome および Mozilla Firefox において、記事（article 要素）やグループ (role="group") に対する1文字ナビゲーションが可能になりました。これらの機能には既定ではキーボード操作は割り当てられていません。入力ジェスチャーのダイアログから「ブラウズモード」の中のこれらの機能をカスタマイズしてください。 (<A HREF="https://github.com/nvaccess/nvda/issues/9485">#9485</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9227">#9227</A>)
+<LI>Internet Explorer, Google Chrome および Mozilla Firefox において、記事(article 要素)やグループ (role="group") に対する1文字ナビゲーションが可能になりました。これらの機能には既定ではキーボード操作は割り当てられていません。入力ジェスチャーのダイアログから「ブラウズモード」の中のこれらの機能をカスタマイズしてください。 (<A HREF="https://github.com/nvaccess/nvda/issues/9485">#9485</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9227">#9227</A>)
  <UL>
  <LI>図も報告の対象になりました。図は「オブジェクト」として扱われます。1文字ナビゲーション o で移動できます。
  </UL>
-<LI>Internet Explorer, Google Chrome および Mozilla Firefox において、記事（article 要素）をオブジェクトナビゲーションで報告するようになりました。また「書式とドキュメント情報」で設定した場合には、ブラウズモードにおいても報告が行われます。 (<A HREF="https://github.com/nvaccess/nvda/issues/10424">#10424</A>)
+<LI>Internet Explorer, Google Chrome および Mozilla Firefox において、記事(article 要素)をオブジェクトナビゲーションで報告するようになりました。また「書式とドキュメント情報」で設定した場合には、ブラウズモードにおいても報告が行われます。 (<A HREF="https://github.com/nvaccess/nvda/issues/10424">#10424</A>)
 <LI>スクリーンカーテン機能が追加されました。この機能を有効にすると、Windows 8 以降において、画面を完全に黒にできます。 (<A HREF="https://github.com/nvaccess/nvda/issues/7857">#7857</A>)
  <UL>
  <LI>スクリーンカーテンを有効化するスクリプトが追加されました。1回押すと再起動されるまで、2回押すとNVDAの実行中に常に有効です。このスクリプトには既定のジェスチャーは割り当てられていません。
@@ -198,10 +285,10 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>NVDA のコマンドラインオプションでログ記録レベルが変更された場合に、NVDA設定ダイアログでログ記録レベルを変更できないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10209">#10209</A>)
 <LI>Microsoft Word において Ctrl+Shift+8 で「編集記号の表示」を切り替えたときに結果を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10241">#10241</A>)
 <LI>Liblouis 点訳エンジンを commit 58d67e63 に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10094">#10094</A>)
-<LI>Unicode 共通ロケールデータリポジトリ (CLDR) の記号（絵文字など）の報告を有効にした場合に、記号読み上げレベルの設定に関わらず報告を行うようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8826">#8826</A>)
+<LI>Unicode 共通ロケールデータリポジトリ (CLDR) の記号(絵文字など)の報告を有効にした場合に、記号読み上げレベルの設定に関わらず報告を行うようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8826">#8826</A>)
 <LI>NVDA で使用している comtypes などのサードパーティ Python パッケージについて、警告やエラーを NVDA のログに記録するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10393">#10393</A>)
 <LI>Unicode 共通ロケールデータリポジトリの絵文字データばバージョン 36.0 に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10426">#10426</A>)
-<LI>ブラウズモードでグループ（role="group"など）にフォーカスが移動した場合に、その説明 (aria-describedby) を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10095">#10095</A>)
+<LI>ブラウズモードでグループ(role="group"など)にフォーカスが移動した場合に、その説明 (aria-describedby) を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10095">#10095</A>)
 <LI>Java Access Bridge は NVDA に同梱されるようになりました。追加のインストールを必要せず Java アプリが NVDA で利用できます。64 ビット Java VM にも対応しています。 (<A HREF="https://github.com/nvaccess/nvda/issues/7724">#7724</A>)
 <LI>Java Access Bridge がユーザーごとの設定で無効になっている場合は、NVDA は起動時にこの設定を有効化します。 (<A HREF="https://github.com/nvaccess/nvda/issues/7952">#7952</A>)
 <LI>eSpeak-NG を 1.51-dev commit ca65812ac6019926f2fbd7f12c92d7edd3701e0c に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10581">#10581</A>)
@@ -235,7 +322,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>liblouis における特定の点訳の不具合やエラーを修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9982">#9982</A>)
 <LI>NVDA が起動する前に実行されていた Java アプリを、アプリの再起動をしなくても NVDA で操作できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10296">#10296</A>)
 <LI>Mozilla Firefox において、要素がフォーカスされて「現在位置」(aria-current) に変わった場合に、このことを不必要に繰り返し報告していた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8960">#8960</A>)
-<LI>NVDA で文字単位の移動を行ったときに特定の Unicode の合字（「eにアキュート」など）を1文字として扱うようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10550">#10550</A>)
+<LI>NVDA で文字単位の移動を行ったときに特定の Unicode の合字(「eにアキュート」など)を1文字として扱うようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10550">#10550</A>)
 <LI>Spring Tool Suite Version 4 に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10001">#10001</A>)
 <LI>aria-labelledby で関連付けた対象が内側の要素である場合に、名前(name)を繰り返し報告しないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10552">#10552</A>)
 <LI>Windows 10 version 1607 およびそれ以降において、点字ディスプレイから入力された文字が報告されなかった問題を改善しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10569">#10569</A>)
@@ -356,7 +443,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <H2>2019.2</H2>
 
 <P>
-このリリースのハイライトは Freedom Scientific 点字ディスプレイの自動検出、ブラウズモードでフォーカスを自動的に移動させないための「高度な設定」の実験的オプション（性能の改善に役立つ可能性があります）、Windows OneCore 音声の「高速読み上げ」オプションへの対応、および多くのバグ修正です。
+このリリースのハイライトは Freedom Scientific 点字ディスプレイの自動検出、ブラウズモードでフォーカスを自動的に移動させないための「高度な設定」の実験的オプション(性能の改善に役立つ可能性があります)、Windows OneCore 音声の「高速読み上げ」オプションへの対応、および多くのバグ修正です。
 </P>
 
 <H3>新機能</H3>
@@ -368,7 +455,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
  <LI>このオプションをチェックなしにしても、NVDA+スペースを押すと、手動でブラウズモードに切り替えることができます。
  </UL>
 <LI>句読点/記号読み辞書のダイアログにおいて、要素リストや入力ジェスチャーのダイアログと同様に、「フィルター」を使って該当する項目だけを表示できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5761">#5761</A>)
-<LI>マウスカーソル位置のテキスト（マウスカーソルが移動した場合）の読み上げ範囲を変更するコマンドが追加されました。ただし既定のジェスチャーは割り当てられていません。 (<A HREF="https://github.com/nvaccess/nvda/issues/9056">#9056</A>)
+<LI>マウスカーソル位置のテキスト(マウスカーソルが移動した場合)の読み上げ範囲を変更するコマンドが追加されました。ただし既定のジェスチャーは割り当てられていません。 (<A HREF="https://github.com/nvaccess/nvda/issues/9056">#9056</A>)
 <LI>Windows OneCore 音声の設定に「高速読み上げ」オプションが追加されました。これにより従来よりも大幅に高速に読み上げることができます。 (<A HREF="https://github.com/nvaccess/nvda/issues/7498">#7498</A>)
 <LI>「簡単音声設定」の設定項目に「高速読み上げ」オプションが追加されました。現在は eSpeak NG および Windows OneCore 音声で利用できます。 (<A HREF="https://github.com/nvaccess/nvda/issues/8934">#8934</A>)
 <LI>設定プロファイルを手動でアクティブ化するジェスチャーを割り当てることが可能になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4209">#4209</A>)
@@ -413,10 +500,10 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>エクスプローラーのプロパティウィンドウを点字ディスプレイで表示したり1文字単位で読み上げたりした場合にLTRやRTLのマークが報告されていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8361">#8361</A>)
 <LI>ブラウズモードの1文字ナビゲーションでフォームフィールドにジャンプすると、そのフォームフィールドの最初の行だけを報告するのではなく、フォームフィールド全体を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9388">#9388</A>)
 <LI>Windows 10 Mail アプリを終了した後で NVDA が応答しなくなる問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9341">#9341</A>)
-<LI>ユーザーの地域設定が NVDA が認識できない値（例えば「英語（オランダ）」など）に設定されていても、NVDA が起動に失敗しないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8726">#8726</A>)
-<LI>Microsoft Excel でブラウズモードが有効になっているときに、ウェブブラウザ（フォーカスモードであってもブラウズモードであっても）に切り替えると、ブラウズモードの状態が適切に報告されなかった問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8846">#8846</A>)
+<LI>ユーザーの地域設定が NVDA が認識できない値(例えば「英語(オランダ)」など)に設定されていても、NVDA が起動に失敗しないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8726">#8726</A>)
+<LI>Microsoft Excel でブラウズモードが有効になっているときに、ウェブブラウザ(フォーカスモードであってもブラウズモードであっても)に切り替えると、ブラウズモードの状態が適切に報告されなかった問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8846">#8846</A>)
 <LI>NVDA は Notepad++ およびその他の Scintilla ベースのエディターでマウスカーソルの位置にある行を正しく報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5450">#5450</A>)
-<LI>Google ドキュメント（およびその他のウェブベースのエディター）において、リスト項目の途中で、カーソルの手前に "lst end" が存在すると誤って表示していた不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9477">#9477</A>)
+<LI>Google ドキュメント(およびその他のウェブベースのエディター)において、リスト項目の途中で、カーソルの手前に "lst end" が存在すると誤って表示していた不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9477">#9477</A>)
 <LI>Windows 10 May 2019 アップデートにおいて、ファイルエクスプローラーにフォーカスがあるときにハードウェアボタンで音量を変更すると不適切に頻繁に音量の通知をしていた不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9466">#9466</A>)
 <LI>1000以上の項目を含む「句読点/記号読み辞書」を使用するとき、ダイアログが従来よりもずっと高速に開くようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8790">#8790</A>)
 <LI>Notepad++ などで使用されている Scintilla コントロールにおいて、ワードラップが有効になっていても NVDA が正しく行を読み取れるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9424">#9424</A>)
@@ -439,11 +526,11 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>アプリモジュールの "disableBrowseModeByDefault" プロパティを使うと、デフォルトでブラウズモードをオフにできます。 (<A HREF="https://github.com/nvaccess/nvda/issues/8846">#8846</A>)
 <LI>ウィンドウの拡張ウィンドウスタイルを、 Window オブジェクトおよびそのサブクラスの `extendedWindowStyle` プロパティから参照できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9136">#9136</A>)
 <LI>comtypes パッケージを 1.1.7 に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9440">#9440</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8522">#8522</A>)
-<LI>モジュール情報の報告コマンド（NVDA+Ctrl+F1)において、報告する情報の順序が変更され、モジュール名を最初に報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7338">#7338</A>)
+<LI>モジュール情報の報告コマンド(NVDA+Ctrl+F1)において、報告する情報の順序が変更され、モジュール名を最初に報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7338">#7338</A>)
 <LI>C# から nvdaControllerClient.dll を使用するサンプルが追加されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9600">#9600</A>)
-<LI>winVersion モジュールに isWin10 関数が追加されました。これは NVDA を実行している環境が特定のバージョンの Windows 10 以上であるか（たとえば 1903 以上かどうか）を返します。 (<A HREF="https://github.com/nvaccess/nvda/issues/9761">#9761</A>)
+<LI>winVersion モジュールに isWin10 関数が追加されました。これは NVDA を実行している環境が特定のバージョンの Windows 10 以上であるか(たとえば 1903 以上かどうか)を返します。 (<A HREF="https://github.com/nvaccess/nvda/issues/9761">#9761</A>)
 <LI>NVDA Python コンソールの名前空間に多くの有用なモジュールが追加されました。例えば appModules, globalPlugins, config, textInfos などです。 (<A HREF="https://github.com/nvaccess/nvda/issues/9789">#9789</A>)
-<LI>NVDA Python コンソールで直前に実行したコマンドの結果を _ （アンダースコア）変数で参照できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9782">#9782</A>)
+<LI>NVDA Python コンソールで直前に実行したコマンドの結果を _ (アンダースコア)変数で参照できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9782">#9782</A>)
  <UL>
  <LI>注意: この変更により gettext 翻訳で使われる "_" という名前の関数にアクセスできなくなります。翻訳の _ 関数を使いたい場合は del _ を実行します。
  </UL>
@@ -477,7 +564,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <H3>新機能</H3>
 
 <UL>
-<LI>新しい点字テーブル：アフリカーンス語、アラビア語8点コンピューター点字、アラビア語2級、スペイン語2級（<A HREF="https://github.com/nvaccess/nvda/issues/4435">#4435</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9186">#9186</A>)
+<LI>新しい点字テーブル：アフリカーンス語、アラビア語8点コンピューター点字、アラビア語2級、スペイン語2級(<A HREF="https://github.com/nvaccess/nvda/issues/4435">#4435</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9186">#9186</A>)
 <LI>外部アプリがマウスカーソルを制御している状況にNVDAが対応できるように、NVDAのマウス設定にオプションを追加しました。(<A HREF="https://github.com/nvaccess/nvda/issues/8452">#8452</A>)
  <UL>
  <LI>これにより、TeamViewerまたは他の遠隔制御ソフトウェアによってシステムが遠隔制御されているときにNVDAがマウスカーソルを追跡できます。
@@ -488,9 +575,9 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>Mozilla FirefoxおよびGoogle Chromeのブラウズモードにおいて、リストボックスやツリーで選択した項目が報告されるようになりました。
  <UL>
  <LI>Firefox はバージョン66以降で動作します。
- <LI>Chrome について、特定のリストボックス（HTML select コントロール）では動作しません。
+ <LI>Chrome について、特定のリストボックス(HTML select コントロール)では動作しません。
  </UL>
-<LI>ARM64プロセッサ（Qualcomm Snapdragonなど）を搭載したコンピュータでのMozilla Firefoxなどのアプリの早期サポートを行いました。(<A HREF="https://github.com/nvaccess/nvda/issues/9216">#9216</A>)
+<LI>ARM64プロセッサ(Qualcomm Snapdragonなど)を搭載したコンピュータでのMozilla Firefoxなどのアプリの早期サポートを行いました。(<A HREF="https://github.com/nvaccess/nvda/issues/9216">#9216</A>)
 <LI>NVDA設定ダイアログに「高度な設定」カテゴリが追加されました。NVDAのMicrosoft Word対応において Microsoft UI オートメーションAPIを使用する新しいオプションを含んでいます。(<A HREF="https://github.com/nvaccess/nvda/issues/9200">#9200</A>)
 <LI>Windowsのディスクの管理でグラフィカルビューに対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/1486">#1486</A>)
 <LI>Handy Tech Connect Braille と Basic Braille 84 に対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/9249">#9249</A>)
@@ -502,12 +589,12 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>liblouis点訳エンジンをバージョン3.8.0に更新しました。(<A HREF="https://github.com/nvaccess/nvda/issues/9013">#9013</A>)
 <LI>アドオンの開発者が「アドオンが正しく動作する最初のNVDAのバージョン」を指定できるようになりました。NVDAは、アドオンが指定した値が現在のNVDAのバージョンより高い場合に、アドオンのインストールまたは読み込みを行いません。(<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>)
 <LI>アドオンの開発者は「アドオンがテストされた最後のNVDAのバージョン」を指定できるようになりました。アドオンが現在のバージョンよりも前のバージョンのNVDAに対してのみテストされている場合、NVDAはアドオンのインストールまたは読み込みを行いません。(<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>)
-<LI>このバージョンのNVDAは、最初の対応NVDAバージョンおよび最新テスト済みNVDAバージョンの情報が含まれていないアドオンをインストールおよび読み込みできます。将来のバージョンのNVDA（例えば2019.2）に更新すると、これらの情報が含まれていないアドオンは自動的に無効になります。
-<LI>マウスカーソルをナビゲータオブジェクトに移動するコマンドが、Microsoft WordおよびMicrosoft Edge（およびその他のUIAコントロール）で使用できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7916">#7916</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8371">#8371</A>)
+<LI>このバージョンのNVDAは、最初の対応NVDAバージョンおよび最新テスト済みNVDAバージョンの情報が含まれていないアドオンをインストールおよび読み込みできます。将来のバージョンのNVDA(例えば2019.2)に更新すると、これらの情報が含まれていないアドオンは自動的に無効になります。
+<LI>マウスカーソルをナビゲータオブジェクトに移動するコマンドが、Microsoft WordおよびMicrosoft Edge(およびその他のUIAコントロール)で使用できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7916">#7916</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8371">#8371</A>)
 <LI>マウスカーソル位置のテキストの報告が、Microsoft Edgeおよびその他のUIAアプリでより適切に動作するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8370">#8370</A>)
 <LI>NVDAを --portable-path コマンドライン引数をつけて起動することにより、NVDAメニューから「ポータブル版を作成」を実行したときに、ポータブル版を作成する場所の既定の値を指定できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8623">#8623</A>)
-<LI>ノルウェー語点字テーブルは2015年に改訂された標準のテーブルに変更されました。（<A HREF="https://github.com/nvaccess/nvda/issues/9170">#9170</A>）
-<LI>段落単位での移動（Ctrl + 上矢印または下矢印）またはテーブルのセル単位の移動（Ctrl + Alt + 矢印）を行うときに、スペルミスを自動的に報告しないようになりました。スペルミスを報告するようにNVDAが設定されている場合も同様です。これは、段落や表のセルは内容が非常に大きくなる可能性があり、またアプリによってはスペルミスを検出する処理に非常に時間がかかる可能性があるためです。(<A HREF="https://github.com/nvaccess/nvda/issues/9217">#9217</A>)
+<LI>ノルウェー語点字テーブルは2015年に改訂された標準のテーブルに変更されました。(<A HREF="https://github.com/nvaccess/nvda/issues/9170">#9170</A>)
+<LI>段落単位での移動(Ctrl + 上矢印または下矢印)またはテーブルのセル単位の移動(Ctrl + Alt + 矢印)を行うときに、スペルミスを自動的に報告しないようになりました。スペルミスを報告するようにNVDAが設定されている場合も同様です。これは、段落や表のセルは内容が非常に大きくなる可能性があり、またアプリによってはスペルミスを検出する処理に非常に時間がかかる可能性があるためです。(<A HREF="https://github.com/nvaccess/nvda/issues/9217">#9217</A>)
 <LI>NVDAは、NVDAユーザー設定フォルダーからカスタムのアプリモジュール、グローバルプラグイン、点字ディスプレイドライバー、音声合成エンジンを読み込まなくなりました。これらは適切なバージョン情報を持つアドオンとしてパッケージ化する必要があります。この変更により、互換性のないコードがNVDAから実行されることを防ぎます。(<A HREF="https://github.com/nvaccess/nvda/issues/9238">#9238</A>)
  <UL>
  <LI>開発者が開発中のコードをテストする必要がある場合は、NVDA設定ダイアログの「高度な設定」カテゴリで「開発者用スクラッチパッドのフォルダーからカスタムコードを読み込む」を有効にします。そしてNVDAユーザー設定フォルダーの scratchpad フォルダーにテストしたいコードをコピーします。
@@ -518,7 +605,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 
 <UL>
 <LI>Windows 10 April 2018 Update以降でOneCore音声合成エンジンを使用する場合、発話の間に長い無音が挿入される問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/8985">#8985</A>)
-<LI>プレーンテキストコントロール（メモ帳など）およびブラウズモードで文字単位の移動をするときに、2つのUTF-16コードポイントで構成される32ビットの絵文字（🤦など）が正しく扱えるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8782">#8782</A>)
+<LI>プレーンテキストコントロール(メモ帳など)およびブラウズモードで文字単位の移動をするときに、2つのUTF-16コードポイントで構成される32ビットの絵文字(🤦など)が正しく扱えるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8782">#8782</A>)
 <LI>NVDAのインターフェイス言語を変更した後の再起動確認ダイアログを改善しました。テキストとボタンのラベルがより簡潔でわかりやすいものになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6416">#6416</A>)
 <LI>Windows 10においてサードパーティの音声合成エンジンが読み込みに失敗した場合、NVDAは eSpeak NG ではなくWindows OneCore音声を使用するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/9025">#9025</A>)
 <LI>セキュアスクリーンにおいてNVDAメニューに「ようこそ画面」の項目を表示しないようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8520">#8520</A>)
@@ -548,7 +635,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <H3>開発者向けの変更</H3>
 
 <UL>
-<LI>NVDAは、Microsoft Visual Studio 2017のすべてのエディション（Communityエディションだけでなく）でビルドできるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8939">#8939</A>)
+<LI>NVDAは、Microsoft Visual Studio 2017のすべてのエディション(Communityエディションだけでなく)でビルドできるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/8939">#8939</A>)
 <LI>NVDA設定の「デバッグログ」セクションで louis を有効にすると liblouis からのログ出力をNVDAログに含めることができます。(<A HREF="https://github.com/nvaccess/nvda/issues/4554">#4554</A>)
 <LI>アドオンの開発者は、アドオンマニフェストでNVDAバージョン互換性情報を提供できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6275">#6275</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9055">#9055</A>)
  <UL>
@@ -605,7 +692,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>Windows XP および Vista では実行できないことを知らせるメッセージを Windows 日本語版で正しく表示できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8771">#8771</A>)
 <LI>Mozilla Firefox において、多くの要素が動的に変化する大規模なページの中でのナビゲーションの性能を改善しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8678">#8678</A>)
 <LI>書式とドキュメント情報の設定でフォント属性を無効にした場合に、点字ディスプレイで表示が無効になっていなかった問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7615">#7615</A>)
-<LI>ファイルエクスプローラーなど UI オートメーションを使用するアプリにおいて、他のアプリが処理中（たとえばバッチ処理で音声の加工を行うなど）の場合に NVDA がフォーカス位置を正しく処理できなくなっていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7345">#7345</A>)
+<LI>ファイルエクスプローラーなど UI オートメーションを使用するアプリにおいて、他のアプリが処理中(たとえばバッチ処理で音声の加工を行うなど)の場合に NVDA がフォーカス位置を正しく処理できなくなっていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7345">#7345</A>)
 <LI>ウェブコンテンツの ARIA menus において、 Escape キーが入力されたときにキーイベントがメニューに送信されず、無条件にフォーカスモードが解除されていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3215">#3215</A>)
 <LI>新しい Gmail ウェブインターフェイスにおいて、メッセージを読んでいる途中で1文字ナビゲーションを使うと、移動先の要素を報告した直後にメッセージの全体を報告していた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8887">#8887</A>)
 <LI>NVDA を更新した後で Firefox や Google Chrome などのブラウザがクラッシュする不具合を修正しました。またブラウザで読み込まれたドキュメントがある場合に、NVDA を更新した後で引き続きブラウズモードを使用できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7641">#7641</A>) 
@@ -773,7 +860,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>アドオンマネージャーで状態の列に「有効」「無効」と表示されるようになりました。以前は「実行中」「保留」などが表示されていました。(<A HREF="https://github.com/nvaccess/nvda/issues/7929">#7929</A>)
 <LI>liblouis 点訳エンジンを 3.5.0 に更新しました。(<A HREF="https://github.com/nvaccess/nvda/issues/7839">#7839</A>)
 <LI>リトアニア語点字テーブルの名前を「リトアニア語6点」に変更しました。これは新しい8点のテーブルとの区別を容易にするためです。(<A HREF="https://github.com/nvaccess/nvda/issues/7839">#7839</A>)
-<LI>フランス語（カナダ）1級および2級の点字テーブルが廃止され、フランス語統一6点コンピューター点字および2級点字が使用されるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7839">#7839</A>)
+<LI>フランス語(カナダ)1級および2級の点字テーブルが廃止され、フランス語統一6点コンピューター点字および2級点字が使用されるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7839">#7839</A>)
 <LI>Alva BC6, EuroBraille および Papenmeier 点字ディスプレイの第2タッチカーソルボタンで、その場所のテキストの書式とドキュメント情報が報告されるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7106">#7106</A>)
 <LI>縮約点字入力テーブルの使用中に、読み取り専用であれば自動的に非縮約モードに切り替わるようになりました。例えば、キャレットが表示されないコントロールやブラウズモードの場合などです。(<A HREF="https://github.com/nvaccess/nvda/issues/7306">#7306</A>)
 <LI>Outlook カレンダーの予定または時間帯が一日の全体をカバーしている場合に、 NVDA の読み上げが冗長すぎる問題を改善しました。(<A HREF="https://github.com/nvaccess/nvda/issues/7949">#7949</A>)
@@ -867,7 +954,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <H3>バグ修正</H3>
 
 <UL>
-<LI>NVDA が非ASCII文字を含むパスにインストールされている場合に、NVDA+f を2回押す操作（現在のフォーマット情報の確認）などブラウズ可能メッセージ表示で不具合を起こさないようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7474">#7474</A>)
+<LI>NVDA が非ASCII文字を含むパスにインストールされている場合に、NVDA+f を2回押す操作(現在のフォーマット情報の確認)などブラウズ可能メッセージ表示で不具合を起こさないようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7474">#7474</A>)
 <LI>Spotify アプリに他のアプリからフォーカスを戻した場合に、フォーカスが正常に戻るようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7689">#7689</A>)
 <LI>Windows 10 Fall Creaters Update において Windows Defender セキュリティセンターでフォルダーアクセスの制御を有効にした場合に、 NVDA の更新が失敗しないようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7696">#7696</A>)
 <LI>Hims Smart Beetle ディスプレイのスクロールキー検出に関する不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/6086">#6086</A>)
@@ -910,7 +997,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <H3>新機能</H3>
 
 <UL>
-<LI>ブラウズモードにおいて「コンテナの直後に移動」「コンテナの先頭に移動」（コンマとShift+コンマ）で、現在のランドマークの残りの部分を飛ばしたり、現在のランドマークの先頭に移動したりできるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5482">#5482</A>)
+<LI>ブラウズモードにおいて「コンテナの直後に移動」「コンテナの先頭に移動」(コンマとShift+コンマ)で、現在のランドマークの残りの部分を飛ばしたり、現在のランドマークの先頭に移動したりできるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5482">#5482</A>)
 <LI>Firefox, Chrome, Internet Explorer において、1文字ナビゲーションの「エディットフィールド」や「フォームフィールド」の対象に編集可能なリッチテキスト(contentEditable)が含まれるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5534">#5534</A>)
 <LI>Webブラウザの要素リストで「フォームフィールド」と「ボタン」のリストが利用可能になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/588">#588</A>)
 <LI>Windows 10 on ARM64 への対応 (<A HREF="https://github.com/nvaccess/nvda/issues/7508">#7508</A>)
@@ -933,17 +1020,17 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>Firefox と Chrome において role が dialog であるような Web コンテンツでは自動的にブラウズモードに切り替わるようになりました。ただし Web アプリケーションの場合を除きます。 (<A HREF="https://github.com/nvaccess/nvda/issues/4493">#4493</A>)
 <LI>ブラウズモードにおいて、タブによる移動や1文字ナビゲーションによる移動の場合に、リストやテーブルから抜けたことを報告しないようになりました。これによりナビゲーションが効率的になります。 (<A HREF="https://github.com/nvaccess/nvda/issues/2591">#2591</A>)
 <LI>Firefox と Chrome のブラウズモードにおいて、1文字ナビゲーションやTabキーによるフォーカス移動で、フォームフィールドのグループの名前が報告されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3321">#3321</A>)
-<LI>ブラウズモードの1文字ナビゲーションで、埋め込みオブジェクトへの移動（O と Shift+O）が、オーディオやビデオの要素、ARIA role が application および dialog である要素を対象とするようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7239">#7239</A>)
+<LI>ブラウズモードの1文字ナビゲーションで、埋め込みオブジェクトへの移動(O と Shift+O)が、オーディオやビデオの要素、ARIA role が application および dialog である要素を対象とするようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7239">#7239</A>)
 <LI>Espeak-ng が 1.49.2 に更新されました。リリースビルドにおける問題が修正されています。 (<A HREF="https://github.com/nvaccess/nvda/issues/7385">#7385</A>, <A HREF="https://github.com/nvaccess/nvda/issues/7583">#7583</A>)
 <LI>ステータスバーの報告コマンドをすばやく3回押すと、内容をクリップボードにコピーするようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/1785">#1785</A>)
-<LI>Baum 点字ディスプレイのキーにジェスチャーを割り当てるときに、使用している点字ディスプレイだけを対象にできるようになりました（VarioUltra や Pronto など） (<A HREF="https://github.com/nvaccess/nvda/issues/7517">#7517</A>)
+<LI>Baum 点字ディスプレイのキーにジェスチャーを割り当てるときに、使用している点字ディスプレイだけを対象にできるようになりました(VarioUltra や Pronto など) (<A HREF="https://github.com/nvaccess/nvda/issues/7517">#7517</A>)
 <LI>ブラウズモードの要素リストで「フィルター」のアクセラレーターキーを Alt+F から Alt+E に変更しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7569">#7569</A>)
 <LI>ブラウズモードでレイアウト用のテーブルを含めるかどうかの切り替えを、入力ジェスチャーで使用できるようになりました。入力ジェスチャーのダイアログの「ブラウズモード」カテゴリにこのコマンドがあり、既定では操作が未割り当てになっています。 (<A HREF="https://github.com/nvaccess/nvda/issues/7634">#7634</A>)
 <LI>liblouis 点訳エンジンが 3.3.0 に更新されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7565">#7565</A>)
 <LI>読み上げ辞書のダイアログで正規表現のラジオボタンのアクセラレーターキーを Alt+R から Alt+E に変更しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/6782">#6782</A>)
 <LI>読み上げ辞書のファイルにフォーマットバージョンの概念が導入され 'speechDicts/voiceDicts.v1' ディレクトリに辞書ファイルが置かれるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7592">#7592</A>)
 <LI>設定プロファイルや音声読み上げ辞書など、フォーマットバージョンで管理されるファイルについて、インストーラーの中で動作する NVDA が設定の変更を保存しないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7688">#7688</A>)
-<LI>Handy Tech 社の点字ディスプレイ Braillino, Bookworm, Modular（旧バージョンのファームウェア）への NVDA 単独でのサポートを終了しました。ただし Handy Tech Universal Driver をインストールして NVDA アドオンを追加すれば、引き続きこれらの機種を NVDA で使用できます。 (<A HREF="https://github.com/nvaccess/nvda/issues/7590">#7590</A>)
+<LI>Handy Tech 社の点字ディスプレイ Braillino, Bookworm, Modular(旧バージョンのファームウェア)への NVDA 単独でのサポートを終了しました。ただし Handy Tech Universal Driver をインストールして NVDA アドオンを追加すれば、引き続きこれらの機種を NVDA で使用できます。 (<A HREF="https://github.com/nvaccess/nvda/issues/7590">#7590</A>)
 </UL>
 
 <H3>バグ修正</H3>
@@ -991,23 +1078,23 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <UL>
 <LI>点字設定に「メッセージの表示を終了させない」オプションが追加されました。(<A HREF="https://github.com/nvaccess/nvda/issues/6669">#6669</A>)
 <LI>Microsoft Outlook のメッセージ一覧において、メッセージにフラグがついていることを報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6374">#6374</A>)
-<LI>Microsoft PowerPoint においてスライドの編集中にシェイプの具体的な種類（三角形、円、ビデオ、矢印など）を報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7111">#7111</A>)
+<LI>Microsoft PowerPoint においてスライドの編集中にシェイプの具体的な種類(三角形、円、ビデオ、矢印など)を報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7111">#7111</A>)
 <LI>Google Chrome において、MathMLで記述された数式コンテンツを扱えるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7184">#7184</A>)
-<LI>NVDA は Windows 10 の OneCore 音声（モバイル音声）を音声エンジンとして使えるようになりました。NVDA メニューの「音声エンジン」から選択できます。(<A HREF="https://github.com/nvaccess/nvda/issues/6159">#6159</A>)
+<LI>NVDA は Windows 10 の OneCore 音声(モバイル音声)を音声エンジンとして使えるようになりました。NVDA メニューの「音声エンジン」から選択できます。(<A HREF="https://github.com/nvaccess/nvda/issues/6159">#6159</A>)
 <LI>NVDA のユーザー設定ファイルをローカル設定フォルダーに保存できるようになりました。この切り替えにはレジストリの設定が必要です。ユーザーガイドの「システム全体のパラメーター」を参照してください。(<A HREF="https://github.com/nvaccess/nvda/issues/6812">#6812</A>)
-<LI>ウェブブラウザにおいてフィールドのプレイスホルダーの値を報告できるようになりました（具体的には aria-placeholder への対応です）。(<A HREF="https://github.com/nvaccess/nvda/issues/7004">#7004</A>)
+<LI>ウェブブラウザにおいてフィールドのプレイスホルダーの値を報告できるようになりました(具体的には aria-placeholder への対応です)。(<A HREF="https://github.com/nvaccess/nvda/issues/7004">#7004</A>)
 <LI>Microsoft Word のブラウズモードにおいて、1文字ナビゲーション w および shift+w でスペルミスに移動できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6942">#6942</A>)
 <LI>Microsoft Outlook の予定ダイアログで使われる日付選択コントロールに対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/7217">#7217</A>)
-<LI>現在選択されている自動入力候補（Windows 10 メールの to や cc フィールド、Windows 10 設定の検索フィールドなど）を報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6241">#6241</A>)
-<LI>特定の検索フィールドで自動入力候補が表示されたことを音で知らせるようになりました（スタートウィンドウ、設定の検索、Windows 10 メールの to や cc フィールドなど）。(<A HREF="https://github.com/nvaccess/nvda/issues/6241">#6241</A>)
-<LI>Skype for Business Desktop において通知を自動的に知らせるようになりました（例えば誰かがあなたとの会話を開始したときなど）。(<A HREF="https://github.com/nvaccess/nvda/issues/7281">#7281</A>)
+<LI>現在選択されている自動入力候補(Windows 10 メールの to や cc フィールド、Windows 10 設定の検索フィールドなど)を報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6241">#6241</A>)
+<LI>特定の検索フィールドで自動入力候補が表示されたことを音で知らせるようになりました(スタートウィンドウ、設定の検索、Windows 10 メールの to や cc フィールドなど)。(<A HREF="https://github.com/nvaccess/nvda/issues/6241">#6241</A>)
+<LI>Skype for Business Desktop において通知を自動的に知らせるようになりました(例えば誰かがあなたとの会話を開始したときなど)。(<A HREF="https://github.com/nvaccess/nvda/issues/7281">#7281</A>)
 <LI>Skype for Business の会話において受信したチャットのメッセージが自動的に報告されるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7286">#7286</A>)
-<LI>Microsoft Edge で通知を自動的に知らせるようになりました（例えばダウンロードの開始など）。(<A HREF="https://github.com/nvaccess/nvda/issues/7281">#7281</A>)
+<LI>Microsoft Edge で通知を自動的に知らせるようになりました(例えばダウンロードの開始など)。(<A HREF="https://github.com/nvaccess/nvda/issues/7281">#7281</A>)
 <LI>点字キーボードのついた点字ディスプレイを使って、縮約点字および非縮約点字のどちらも入力ができるようになりました。ユーザーガイドの「点字入力」セクションを参照してください。(<A HREF="https://github.com/nvaccess/nvda/issues/2439">#2439</A>)
 <LI>点字設定「入力テーブル」で「Unicode 点字」を選択すると Unicode 点字パターンを入力できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6449">#6449</A>)
 <LI>台湾で使われている SuperBraille 点字ディスプレイに対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/7352">#7352</A>)
 <LI>新しい点字変換テーブルが追加されました: デンマーク語8点コンピューター点字、リトアニア語、ペルシア語8点コンピューター点字、ペルシア語1級点字、スロベニア語8点コンピューター点字 (<A HREF="https://github.com/nvaccess/nvda/issues/6188">#6188</A>, <A HREF="https://github.com/nvaccess/nvda/issues/6550">#6550</A>, <A HREF="https://github.com/nvaccess/nvda/issues/6773">#6773</A>, <A HREF="https://github.com/nvaccess/nvda/issues/7367">#7367</A>)
-<LI>英語（米国）8点コンピューター点字のテーブルが改良され、ビュレット、ユーロ記号、アクセント付き文字などがサポートされました。(<A HREF="https://github.com/nvaccess/nvda/issues/6836">#6836</A>)
+<LI>英語(米国)8点コンピューター点字のテーブルが改良され、ビュレット、ユーロ記号、アクセント付き文字などがサポートされました。(<A HREF="https://github.com/nvaccess/nvda/issues/6836">#6836</A>)
 <LI>NVDA から Windows 10 文字認識エンジンを使って画像やアクセシブルでないアプリに含まれる文字を認識できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7361">#7361</A>)
  <UL>
  <LI>文字認識の言語は NVDA 設定「Windows 10 文字認識」ダイアログで選択します。
@@ -1019,7 +1106,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
  <LI>「変化したら表示」「前にスクロールしたら表示」を選ぶと、リストやメニューをより効率的に操作できます。これらの項目はディスプレイ上での位置が連続的に変化しないからです。
  <LI>ユーザーガイド「フォーカスの前後の情報」セクションを参照してください。
  </UL>
-<LI>Firefox と Chrome において、コンテンツの一部分だけが読み込まれたり表示されたりするスプレッドシートなど複雑で動的なグリッドを扱えるようになりました（具体的には ARIA 1.1 で導入された aria-rowcount, aria-colcount, aria-rowindex および aria-colindex への対応です）。(<A HREF="https://github.com/nvaccess/nvda/issues/7410">#7410</A>)
+<LI>Firefox と Chrome において、コンテンツの一部分だけが読み込まれたり表示されたりするスプレッドシートなど複雑で動的なグリッドを扱えるようになりました(具体的には ARIA 1.1 で導入された aria-rowcount, aria-colcount, aria-rowindex および aria-colindex への対応です)。(<A HREF="https://github.com/nvaccess/nvda/issues/7410">#7410</A>)
 </UL>
 
 <H3>変更点</H3>
@@ -1051,11 +1138,11 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>ダイアログがプログレスバーを含んでいるときに、プログレスバーが変化した場合にダイアログのテキストが点字ディスプレイで適切に更新されるようになりました。例えば NVDA の「更新をダウンロード中」ダイアログで残り時間を読み取れるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6862">#6862</A>)
 <LI>Windows 10 の自動再生や設定など一部のコンボボックスで、選択項目の変化を NVDA が報告しなかった問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/6337">#6337</A>)
 <LI>Microsoft Outlook において「会議」「連絡先」の新規作成ダイアログで無駄な情報が報告されていた問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/7216">#7216</A>)
-<LI>進捗度が不確定なプログレスバーのダイアログ（更新の確認など）において、「プログレスバー出力」の設定を無視してビープ音を出力していた問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/6759">#6759</A>)
+<LI>進捗度が不確定なプログレスバーのダイアログ(更新の確認など)において、「プログレスバー出力」の設定を無視してビープ音を出力していた問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/6759">#6759</A>)
 <LI>Microsoft Excel 2003 および 2007 において、矢印キーでワークシート内を移動したときにセルの内容を報告していなかった問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/7243">#7243</A>)
 <LI>Windows 10 Creators Update およびそれ以降のバージョンにおける「メール」アプリでメールを読むときにブラウズモードに自動的に切り替わらなかった問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/7289">#7289</A>)
 <LI>点字キーボードを備えた点字ディスプレイにおいて、7の点は直前の点字セル入力または文字入力の取り消し、8の点は Enter キーとして機能するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6054">#6054</A>)
-<LI>編集可能なテキストにおいて、キャレットが移動したときに（カーソルキーやバックスペースが押されたときに）、NVDA が報告する文字がより適切になりました。具体的には Chrome やターミナルなどのアプリにおける改善です。(<A HREF="https://github.com/nvaccess/nvda/issues/6424">#6424</A>)
+<LI>編集可能なテキストにおいて、キャレットが移動したときに(カーソルキーやバックスペースが押されたときに)、NVDA が報告する文字がより適切になりました。具体的には Chrome やターミナルなどのアプリにおける改善です。(<A HREF="https://github.com/nvaccess/nvda/issues/6424">#6424</A>)
 <LI>Microsoft Outlook 2016 の「署名の編集」の内容が読み上げられるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/7253">#7253</A>)
 <LI>Java Swing アプリにおけるテーブルのナビゲーションで NVDA がクラッシュすることがあった問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/6992">#6992</A>)
 <LI>Windows 10 Creators Update において同じトースト通知を NVDA が何度も繰り返し報告していた問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/7128">#7128</A>)
@@ -1085,7 +1172,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <H2>2017.2</H2>
 
 <P>
-このリリースのハイライトは、Windows 10 Creators Update における「音のダッキング」対応の改善、ブラウズモードにおける選択操作（「すべて選択」を含む）の不具合修正、Microsoft Edge ブラウザ対応の改善、Web閲覧における現在の選択の属性(aria-current)への対応の改善です。
+このリリースのハイライトは、Windows 10 Creators Update における「音のダッキング」対応の改善、ブラウズモードにおける選択操作(「すべて選択」を含む)の不具合修正、Microsoft Edge ブラウザ対応の改善、Web閲覧における現在の選択の属性(aria-current)への対応の改善です。
 </P>
 
 <H3>新機能</H3>
@@ -1113,18 +1200,18 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>設定プロファイルの「削除の確認」ダイアログにおいて Esc キーを押してもダイアログが閉じなかった問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/6851">#6851</A>)
 <LI>マルチプロセス機能を有効にした Mozilla Firefox とその他の Gecko アプリがクラッシュする問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/6885">#6885</A>)
 <LI>画面レビューにおける背景の色の報告が、背景の透明な場所に表示されたテキストについてもより正確に行われるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6467">#6467</A>)
-<LI>Internet Explorer 11 でウェブページを表示する場合に、コントロールの説明をより適切に行うようになりました。（具体的には iframe の内側で aria-describedby に複数の ID が指定されている場合に関する改善です）(<A HREF="https://github.com/nvaccess/nvda/issues/5784">#5784</A>)
+<LI>Internet Explorer 11 でウェブページを表示する場合に、コントロールの説明をより適切に行うようになりました。(具体的には iframe の内側で aria-describedby に複数の ID が指定されている場合に関する改善です)(<A HREF="https://github.com/nvaccess/nvda/issues/5784">#5784</A>)
 <LI>Windows 10 Creators Update において NVDA の「音のダッキング」が再び適切に動作するようになりました。つまり「音声とサウンドの出力時にダッキング」「常にダッキング」「ダッキングなし」がすべて利用できます。(<A HREF="https://github.com/nvaccess/nvda/issues/6933">#6933</A>)
 <LI>キーボードショートカットの定義がない UIA コントロールに対する移動や報告を NVDA が適切に行えない問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/6779">#6779</A>)
 <LI>UIA コントロールのキーボードショートカット情報において2個の空白が追加されていた問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/6790">#6790</A>)
-<LI>HIMS 点字ディスプレイの特定のキーの組み合わせ（スペース+4の点）がときどき操作できなくなっていた問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/3157">#3157</A>)
+<LI>HIMS 点字ディスプレイの特定のキーの組み合わせ(スペース+4の点)がときどき操作できなくなっていた問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/3157">#3157</A>)
 <LI>英語以外の言語に設定された環境において、シリアルポートで点字ディスプレイに接続できない場合がある問題を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/6845">#6845</A>)
 <LI>Windows がシャットダウンするときに設定ファイルが破壊されることがある問題に対応しました。設定ファイルを保存する場合にいったん別のファイルに書き込みを行い、それからファイルの入れ替えを行うようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/3165">#3165</A>)
 <LI>現在の行の報告コマンドを2回繰り返して押したときに、スペルを正しい言語で報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6726">#6726</A>)
 <LI>Windows 10 Creators Update の Microsoft Edge において、前後の行への移動が最高で約3倍高速になりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6994">#6994</A>)
 <LI>Windows 10 Creators Update の Microsoft Edge ドキュメントにフォーカスが移動するときに "Web Runtime grouping" という報告をしないようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6948">#6948</A>)
 <LI>すべてのバージョンの SecureCRT がサポートされるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6302">#6302</A>)
-<LI>Adobe Acrobat Reader で特定の PDF ファイルの操作中にクラッシュしないようになりました。(具体的には空の ActualText 属性がある場合）(<A HREF="https://github.com/nvaccess/nvda/issues/7021">#7021</A>, <A HREF="https://github.com/nvaccess/nvda/issues/7034">#7034</A>)
+<LI>Adobe Acrobat Reader で特定の PDF ファイルの操作中にクラッシュしないようになりました。(具体的には空の ActualText 属性がある場合)(<A HREF="https://github.com/nvaccess/nvda/issues/7021">#7021</A>, <A HREF="https://github.com/nvaccess/nvda/issues/7034">#7034</A>)
 <LI>Microsoft Edge のブラウズモードにおいて、対話的なテーブル(ARIA grids)に T および Shift+T で適切に移動できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6977">#6977</A>)
 <LI>ブラウズモードにおいて、次の文字や行に選択範囲を広げた後に Shift+Home を押した場合に、適切に選択を解除して行の先頭に移動するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/5746">#5746</A>)
 <LI>ブラウズモードにおいて Ctrl+A で「すべて選択」を実行した場合に、キャレットがテキストの先頭にない場合でもすべてのテキストが適切に選択されるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/6909">#6909</A>)
@@ -1395,16 +1482,16 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>IntelliJ や Android Studio など複数のウィンドウを持つ Java アプリにおいて、ウィンドウを切り替えるときに NVDA は不必要な情報を報告しないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5732">#5732</A>)
 <LI>Notepad++ など Scintilla ベースのテキストエディターにおいて、点字ディスプレイを使用する場合に、カーソルの移動によって点字出力が適切に更新されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5678">#5678</A>)
 <LI>点字出力を有効化したときに NVDA がクラッシュすることがある問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4457">#4457</A>)
-<LI>Microsoft Word において、段落インデントは常にユーザーが指定した長さの単位（センチメートルやインチなど）で報告されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5804">#5804</A>)
+<LI>Microsoft Word において、段落インデントは常にユーザーが指定した長さの単位(センチメートルやインチなど)で報告されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5804">#5804</A>)
 <LI>音声のみで出力されていた NVDA のメッセージの多くが、点字ディスプレイでも出力されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5557">#5557</A>)
 <LI>アクセシブルな Java アプリにおいて、ツリービューの項目のレベルの報告が行われるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5766">#5766</A>)
 <LI>Mozilla Firefox において Adobe Flash がクラッシュすることがある問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5367">#5367</A>)
 <LI>Google Chrome および Chrome ベースのブラウザにおいて、ダイアログやアプリに含まれるドキュメントがブラウズモードで読み取れるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5818">#5818</A>)
 <LI>Google Chrome および Chrome ベースのブラウザにおいて、ウェブのダイアログやアプリで NVDA を強制的にブラウズモードに切り替えることが可能になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5818">#5818</A>)
-<LI>Internet Explorer およびその他の MSHTML コントロールにおいて、特定のコントロール（具体的には aria-activedescendant が使われているもの）にフォーカスを移動した場合に、不適切にブラウズモードに切り替わる問題を修正しました。この現象は、例えば Gmail でメッセージを作成するときに、アドレスフィールドの予測候補への移動で起きていました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5676">#5676</A>)
+<LI>Internet Explorer およびその他の MSHTML コントロールにおいて、特定のコントロール(具体的には aria-activedescendant が使われているもの)にフォーカスを移動した場合に、不適切にブラウズモードに切り替わる問題を修正しました。この現象は、例えば Gmail でメッセージを作成するときに、アドレスフィールドの予測候補への移動で起きていました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5676">#5676</A>)
 <LI>Microsoft Word において行列見出しの報告が有効な場合に、大きなテーブルで NVDA がフリーズしていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5878">#5878</A>)
 <LI>Microsoft Word において、組み込みの見出しスタイルではないアウトラインレベルが設定されたテキストを、NVDA が不適切に見出しと報告していた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5186">#5186</A>)
-<LI>Microsoft Word のブラウズモードにおいて、コンテナの先頭や直後に移動するコマンド（コンマ、Shift+コンマ）がテーブルで使えるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5883">#5883</A>)
+<LI>Microsoft Word のブラウズモードにおいて、コンテナの先頭や直後に移動するコマンド(コンマ、Shift+コンマ)がテーブルで使えるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5883">#5883</A>)
 </UL>
 
 <H3>開発者向けの変更</H3>
@@ -1445,13 +1532,13 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 
 <UL>
 <LI>iTunes 12 で iTunes Store のページが読み込まれたときに、ブラウズモードの更新が正しく行われるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5191">#5191</A>)
-<LI>Internet Explorer およびその他の MSHTML コントロールにおいて、アクセシビリティ目的の見出しレベルが追加指定されていても、1文字ナビゲーションによる見出しジャンプが適切に動作するようになりました（具体的には H タグの見出しレベルが aria-level 属性で上書きされる場合）。 (<A HREF="https://github.com/nvaccess/nvda/issues/5434">#5434</A>)
+<LI>Internet Explorer およびその他の MSHTML コントロールにおいて、アクセシビリティ目的の見出しレベルが追加指定されていても、1文字ナビゲーションによる見出しジャンプが適切に動作するようになりました(具体的には H タグの見出しレベルが aria-level 属性で上書きされる場合)。 (<A HREF="https://github.com/nvaccess/nvda/issues/5434">#5434</A>)
 <LI>Spotify におけるフォーカス移動で「未定義」オブジェクトが頻繁に出現する問題に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5439">#5439</A>)
 <LI>他のアプリから Spotify に戻ったときにフォーカスの位置が適切に処理されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5439">#5439</A>)
 <LI>ブラウズモードとフォーカスモードを切り替えたときに、音声に加えて点字ディスプレイでもモードを報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/5239">#5239</A>)
 <LI>特定のバージョンの Windows でタスクバーのスタートボタンがリストまたは選択済みと報告される問題に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5178">#5178</A>)
 <LI>Microsoft Outlook のメッセージ作成において「追加マークあり」などの不必要なメッセージを報告していた問題に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5486">#5486</A>)
-<LI>点字ディスプレイ利用時に現在の行のテキストが選択されていた場合（テキストエディターで文字列を検索して、現在の行にその文字列が見つかった場合など）に、点字ディスプレイのスクロールが必要に応じて適切に行われるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5410">#5410</A>)
+<LI>点字ディスプレイ利用時に現在の行のテキストが選択されていた場合(テキストエディターで文字列を検索して、現在の行にその文字列が見つかった場合など)に、点字ディスプレイのスクロールが必要に応じて適切に行われるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5410">#5410</A>)
 <LI>Windows 10 においてコマンドプロンプトを Alt+F4 で終了したときに NVDA 自身が終了していた問題に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5343">#5343</A>)
 <LI>ブラウズモードの要素リストにおいて、要素の種別を変更したときに、フィルターのフィールドがクリアされるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5511">#5511</A>)
 <LI>Mozilla アプリケーションの編集可能テキストでマウスポインタを移動したときに、適切な行や単語などの読み上げではなく内容全体を読み上げていた問題に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/5535">#5535</A>)
@@ -1479,7 +1566,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>音を出力する処理で audioDucking.AudioDucker クラスを使うことにより、バックグラウンドの音のダッキングを制御できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3830">#3830</A>)
 <LI>nvwave.WavePlayer のコンストラクタは wantDucking キーワード引数を取ることができます。これは音の出力中にバックグラウンドの音をダッキングさせたいかどうかの指定です。 (<A HREF="https://github.com/nvaccess/nvda/issues/3830">#3830</A>)
  <UL>
- <LI>これを有効（既定値）にする場合は、適切なタイミングで WavePlayer.idle を呼び出す必要があります。
+ <LI>これを有効(既定値)にする場合は、適切なタイミングで WavePlayer.idle を呼び出す必要があります。
  </UL>
 <LI>点字ディスプレイのための拡張 I/O : (<A HREF="https://github.com/nvaccess/nvda/issues/5609">#5609</A>)
  <UL>
@@ -1498,15 +1585,15 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
  </UL>
 <LI>2種類の新しいタッチジェスチャーを生成するようになりました: (<A HREF="https://github.com/nvaccess/nvda/issues/5652">#5652</A>)
  <UL>
- <LI>複数回のタップとホールド（例: 2回タップとホールド）
- <LI>指の数がない一般化されたホールド（具体的には hold+hover は 1finger_hold+hover を一般化）
+ <LI>複数回のタップとホールド(例: 2回タップとホールド)
+ <LI>指の数がない一般化されたホールド(具体的には hold+hover は 1finger_hold+hover を一般化)
  </UL>
 </UL>
 
 <H2>2015.4</H2>
 
 <P>
-このリリースのハイライトは、Windows 10 対応の改良、Windows 8 以降の「コンピューターの簡単操作センター」への対応、Microsoft Excel 対応の改良（シートの一覧と名前変更、保護されたワークシートのセルの参照）、Mozilla Firefox, Google Chrome, Mozilla Thunderbird におけるリッチテキスト編集への対応などです。
+このリリースのハイライトは、Windows 10 対応の改良、Windows 8 以降の「コンピューターの簡単操作センター」への対応、Microsoft Excel 対応の改良(シートの一覧と名前変更、保護されたワークシートのセルの参照)、Mozilla Firefox, Google Chrome, Mozilla Thunderbird におけるリッチテキスト編集への対応などです。
 </P>
 
 <H3>新機能</H3>
@@ -1693,7 +1780,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>入力ジェスチャーのダイアログにおいて「フィルター」フィールドを使い、特定の言葉を含んでいるジェスチャーだけを絞り込んで表示できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4458">#4458</A>)
 <LI>mintty において新しいテキストが自動的に通知されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4588">#4588</A>)
 <LI>ブラウズモードの検索ダイアログにおいて、大文字と小文字を区別する検索のオプションが利用できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4584">#4584</A>)
-<LI>Microsoft Word のドキュメントにおいて NVDA+スペースを押すとブラウズモードが利用できるようになりました。ブラウズモードでは1文字ナビゲーション（hを押すと次の見出しにジャンプするなど）および要素リスト(NVDA+f7)が利用できます。 (<A HREF="https://github.com/nvaccess/nvda/issues/2975">#2975</A>)
+<LI>Microsoft Word のドキュメントにおいて NVDA+スペースを押すとブラウズモードが利用できるようになりました。ブラウズモードでは1文字ナビゲーション(hを押すと次の見出しにジャンプするなど)および要素リスト(NVDA+f7)が利用できます。 (<A HREF="https://github.com/nvaccess/nvda/issues/2975">#2975</A>)
 <LI>Microsoft Outlook 2007 以降において、HTMLメッセージの読み取りでブラウズモードに自動的に切り替わるようになりました。自動的にブラウズモードに切り替わらない場合は、NVDA+スペースで手動切り替えできます。 (<A HREF="https://github.com/nvaccess/nvda/issues/2975">#2975</A>)
 <LI>Microsoft Word において、ドキュメントの作成者がテーブルの属性で列見出しの行を指定していれば、テーブルの列見出しを自動的に通知するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/4510">#4510</A>)
  <UL>
@@ -1780,7 +1867,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <H3>バグ修正</H3>
 
 <UL>
-<LI>ブラウズモードドキュメントにフォーカスが戻るとき（すでに開いているウェブページにAlt+Tabキーで移動する場合など）、レビューカーソルが適切に仮想文字カーソルに移るようになりました。以前はフォーカスの移動した先のオブジェクト（近くのリンク項目など）に移っていました。(<A HREF="https://github.com/nvaccess/nvda/issues/4369">#4369</A>)
+<LI>ブラウズモードドキュメントにフォーカスが戻るとき(すでに開いているウェブページにAlt+Tabキーで移動する場合など)、レビューカーソルが適切に仮想文字カーソルに移るようになりました。以前はフォーカスの移動した先のオブジェクト(近くのリンク項目など)に移っていました。(<A HREF="https://github.com/nvaccess/nvda/issues/4369">#4369</A>)
 <LI>PowerPoint スライドショーにおいて、レビューカーソルが適切に仮想文字カーソルに追従するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/4370">#4370</A>)
 <LI>Mozilla Firefox などの Gecko 技術を用いたブラウザにおいて、親ライブリージョンと内部のライブリージョンが異なるARIAライブタイプになっている場合も、内部のリージョンの新しいコンテンツが適切に通知されるようになりました。具体的にはpoliteと指定されたリージョンの内側にassertiveと指定されたコンテンツが追加された場合です。(<A HREF="https://github.com/nvaccess/nvda/issues/4169">#4169</A>)
 <LI>Internet Explorer などの MSHTML コントロールにおいて、ドキュメントが別のドキュメントに含まれている場合に、内容の一部が操作不能になる問題に対応しました。例えばframesetの内側にframesetがある場合などです。(<A HREF="https://github.com/nvaccess/nvda/issues/4418">#4418</A>)
@@ -1794,14 +1881,14 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>Microsoft Outlook メッセージ一覧で、項目が不適切にデータ項目と通知されていた問題に対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/4439">#4439</A>)
 <LI>Eclipse IDE のコード編集コントロールで、テキスト選択の選択範囲を変更するたびにすべての選択範囲を通知していた問題に対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/2314">#2314</A>)
 <LI>Eclipseのいろいろなバージョン、例えば Spring Tool Suite や Android Developer Tools バンドルなどが Eclipse として認識され、適切に動作するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/4360">#4360</A>, <A HREF="https://github.com/nvaccess/nvda/issues/4454">#4454</A>)
-<LI>Internet Explorer などの MSHTML コントロール（多くの Windows 8 アプリケーションにも含まれます）において、マウス追跡およびタッチ探索が、高解像度ディスプレイの場合やドキュメントのズーム倍率が変更された場合に不適切に動作していた問題に対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/3494">#3494</A>) 
+<LI>Internet Explorer などの MSHTML コントロール(多くの Windows 8 アプリケーションにも含まれます)において、マウス追跡およびタッチ探索が、高解像度ディスプレイの場合やドキュメントのズーム倍率が変更された場合に不適切に動作していた問題に対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/3494">#3494</A>) 
 <LI>Internet Explorer などの MSHTML コントロールにおいてマウス追跡とタッチ探索は、より多くのボタンでラベルの通知を行うようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/4173">#4173</A>)
 </UL>
 
 <H3>開発者向けの変更</H3>
 
 <UL>
-<LI>いろいろなアプリケーションをホストする実行ファイル（javaw.exeなど）について、すべてのホストされたアプリケーションで共通のアプリケーションモジュールが読み込まれるのではなく、それぞれのアプリケーションに個別のアプリケーションモジュールを提供できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/4360">#4360</A>)
+<LI>いろいろなアプリケーションをホストする実行ファイル(javaw.exeなど)について、すべてのホストされたアプリケーションで共通のアプリケーションモジュールが読み込まれるのではなく、それぞれのアプリケーションに個別のアプリケーションモジュールを提供できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/4360">#4360</A>)
  <UL>
  <LI>詳細はソースコード appModuleHandler.AppModule の説明を参照してください。
  <LI>現在は javaw.exe について実装されています。
@@ -1946,7 +2033,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>画面レビューでテキストをコピーするときに、改行を無視しないようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/3900">#3900</A>)
 <LI>フォーカスの移動や簡易レビューモードでのオブジェクトナビゲーションにおいて、一部のアプリケーションで無意味な空白オブジェクトを通知しないようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/3839">#3839</A>)
 <LI>NVDAのメッセージボックスやダイアログにおいて、ダイアログの通知を行う前に、直前の読み上げを中断しなかった不具合を修正しました。
-<LI>ブラウズモードにおいて、リンクやボタンなどのコントロールのラベルがアクセシビリティ関連の属性（具体的にはaria-labelやaria-labelledbyなど）でオーバライドされていても適切にレンダリングされるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/1354">#1354</A>)
+<LI>ブラウズモードにおいて、リンクやボタンなどのコントロールのラベルがアクセシビリティ関連の属性(具体的にはaria-labelやaria-labelledbyなど)でオーバライドされていても適切にレンダリングされるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/1354">#1354</A>)
 <LI>Internet Explorerのブラウズモードで、プレゼンテーション(ARIA role="presentation")と指定された要素に含まれるテキストが不適切に無視される不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/4031">#4031</A>)
 <LI>Unikeyソフトウェアによるベトナム語の文字入力の不具合を解決しました。NVDAのキーボード設定「外部アプリケーションからの文字入力」をチェックなしにしてください。(<A HREF="https://github.com/nvaccess/nvda/issues/4043">#4043</A>)
 <LI>ブラウズモードにおいて、ラジオボタンとチェックボックスのついたメニュー項目が単なるクリック可能テキストではなくコントロールとして扱われるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/4092">#4092</A>)
@@ -1955,9 +2042,9 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>Microsoft Office 2010 のオプションのダイアログで、コンボボックスのラベルが適切に通知されるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/4056">#4056</A>)
 <LI>Mozilla アプリケーションのブラウズモードで、一文字ナビゲーションで前後のボタンやフォームフィールドに移動するときにトグルボタンを無視しないようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/4098">#4098</A>)
 <LI>Mozilla アプリケーションにおけるアラートの内容が2回通知される不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/3481">#3481</A>)
-<LI>ブラウズモードにおいて、ナビゲーションとページ内容の更新が同時に行われるような場合（例えばFacebookやTwitterのウェブサイト閲覧）に、コンテナとランドマークが不適切に繰り返される不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/2199">#2199</A>)
+<LI>ブラウズモードにおいて、ナビゲーションとページ内容の更新が同時に行われるような場合(例えばFacebookやTwitterのウェブサイト閲覧)に、コンテナとランドマークが不適切に繰り返される不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/2199">#2199</A>)
 <LI>応答しなくなったアプリケーションから他のアプリケーションに切り替えたときにNVDAがより適切に処理を再開できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/3825">#3825</A>)
-<LI>画面に直接描画される編集可能テキストにおいて「すべて読み上げ」を実行したときに、キャレット（挿入ポイント）が適切に更新されない不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/4125">#4125</A>)
+<LI>画面に直接描画される編集可能テキストにおいて「すべて読み上げ」を実行したときに、キャレット(挿入ポイント)が適切に更新されない不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/4125">#4125</A>)
 </UL>
 
 <H2>2014.1</H2>
@@ -2050,11 +2137,11 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 
 <UL>
 <LI>Microsoft Word 文書でフォームフィールドを読み上げるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/2295">#2295</A>)
-<LI>NVDA は Microsoft Word で変更履歴の記録があるときに、改訂の情報を通知するようになりました。これは NVDA の文書読み上げ設定ダイアログで、校閲者による更新の通知（デフォルトはオフの状態）も有効にしないと通知されません。(<A HREF="https://github.com/nvaccess/nvda/issues/1670">#1670</A>)
+<LI>NVDA は Microsoft Word で変更履歴の記録があるときに、改訂の情報を通知するようになりました。これは NVDA の文書読み上げ設定ダイアログで、校閲者による更新の通知(デフォルトはオフの状態)も有効にしないと通知されません。(<A HREF="https://github.com/nvaccess/nvda/issues/1670">#1670</A>)
 <LI>Microsoft Excel 2003 から 2010 のドロップダウンリストを開いたりナビゲーションで移動したときに読み上げるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3382">#3382</A>)
 <LI>キーボード設定ダイアログの「すべて読み上げで流し読みを許可」オプションによって、ドキュメントをブラウズモードでナビゲーションしているときにクイックナビゲーションや行、段落単位での移動をしながら「すべて読み上げ」を継続できるようになりました。これはデフォルトでは無効です。 (<A HREF="https://github.com/nvaccess/nvda/issues/2766">#2766</A>) 
 <LI>入力ジェスチャーのダイアログによって、NVDAの制御コマンドに対応するキーボードのキー操作などの入力ジェスチャーを簡単にカスタマイズできるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/1532">#1532</A>)
-<LI>設定プロファイルの機能によって設定を目的ごとに使い分けられるようになりました。プロファイルは手動でも自動（特定のアプリケーションへの切り替え）でもアクティベートできます。 (<A HREF="https://github.com/nvaccess/nvda/issues/87">#87</A>, <A HREF="https://github.com/nvaccess/nvda/issues/667">#667</A>, <A HREF="https://github.com/nvaccess/nvda/issues/1913">#1913</A>)
+<LI>設定プロファイルの機能によって設定を目的ごとに使い分けられるようになりました。プロファイルは手動でも自動(特定のアプリケーションへの切り替え)でもアクティベートできます。 (<A HREF="https://github.com/nvaccess/nvda/issues/87">#87</A>, <A HREF="https://github.com/nvaccess/nvda/issues/667">#667</A>, <A HREF="https://github.com/nvaccess/nvda/issues/1913">#1913</A>)
 <LI>Microsoft Excel においてリンクになっているセルをリンクと通知するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3042">#3042</A>)
 <LI>Microsoft Excel においてセルにコメントがある場合に通知するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/2921">#2921</A>)
 </UL>
@@ -2066,7 +2153,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>Microsoft Outlook 2010のメッセージ仕分けルールのダイアログにおいて、チェックボックスの変更内容が、自動的に通知されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3063">#3063</A>)
 <LI>Mozila Firefoxにおいて、ピンどめされたコントロールの内容を通知するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3372">#3372</A>)
 <LI>キーボードのAltキーおよび／あるいはWindowsキーを押すジェスチャーを、スクリプトに関連づけできるようになりました。以前はこのような記述をすると、操作をしたときにスタートメニューやメニューバーがアクティブになっていました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3472">#3472</A>)
-<LI>ブラウザモードでテキストを選択する操作（例えばcontrol+shift+endキー）を行うとき、複数のキーボードレイアウトが使われているシステムにおいても、キーボードレイアウトの切り替えが起こらないようにしました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3472">#3472</A>)
+<LI>ブラウザモードでテキストを選択する操作(例えばcontrol+shift+endキー)を行うとき、複数のキーボードレイアウトが使われているシステムにおいても、キーボードレイアウトの切り替えが起こらないようにしました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3472">#3472</A>)
 <LI>NVDA終了時に、Internet Explorerが強制終了する、または使用できなくなる問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3397">#3397</A>)
 <LI>いくつかの新しいコンピュータの加速度センサーなどが発生するイベントが、不適切なキー入力として扱われていた問題を修正しました。以前は、このようなイベントが音声を休止させたり、NVDAのコマンドを誤って実行させたりしていました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3468">#3468</A>)
 <LI>NVDA は Poedit 1.5.7 で適切に動作するようになりました。これ以前のバージョンをお使いの場合はアップデートしてください。 (<A HREF="https://github.com/nvaccess/nvda/issues/3485">#3485</A>)
@@ -2109,7 +2196,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>Freedom Scientific の Focus 14 Blue および Focus 80 Blue 点字ディスプレイのBluetooth接続に対応しました。Focus 40 Blue ではこれまで未対応だった一部の設定にも対応しています。(<A HREF="https://github.com/nvaccess/nvda/issues/3307">#3307</A>)
 <LI>Outlook 2010 オートコンプリートのサジェストを通知するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/2816">#2816</A>)
 <LI>新しい点訳テーブル: 英語(英国)コンピューター点字、韓国語2級、ロシア語コンピューター点字。
-<LI>新しい言語：ファルシ（ペルシア）語。(<A HREF="https://github.com/nvaccess/nvda/issues/1427">#1427</A>)
+<LI>新しい言語：ファルシ(ペルシア)語。(<A HREF="https://github.com/nvaccess/nvda/issues/1427">#1427</A>)
 </UL>
 
 <H3>変更点</H3>
@@ -2119,7 +2206,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>ブラウズモードの設定項目「レイアウト目的のテーブルを通知する」は「レイアウト目的のテーブルを区別しない」に変更しました。このチェックボックスがチェックなしのときには1文字ナビゲーションにおいてもレイアウト目的のテーブルに移動しなくなったためです。(<A HREF="https://github.com/nvaccess/nvda/issues/3140">#3140</A>)
 <LI>フラットレビュー機能をオブジェクト、ドキュメント、画面のレビューモード切り替え機能に置き換えました。(<A HREF="https://github.com/nvaccess/nvda/issues/2996">#2996</A>)
  <UL>
- <LI>オブジェクトレビューではナビゲーターオブジェクトの中のテキストをレビューします。ドキュメントレビューでは（利用できる場合に）ブラウズモード文書のすべてのテキストをレビューします。画面レビューは現在のアプリケーション画面のテキストをレビューします。
+ <LI>オブジェクトレビューではナビゲーターオブジェクトの中のテキストをレビューします。ドキュメントレビューでは(利用できる場合に)ブラウズモード文書のすべてのテキストをレビューします。画面レビューは現在のアプリケーション画面のテキストをレビューします。
  <LI>フラットレビューの開始と終了のコマンドは、新しく導入したレビューモードの切り替え操作に置き換えられました。
  <LI>ナビゲーターオブジェクトは自動的にレビューカーソルに追従します。、レビューカーソルは、ドキュメントまたは画面のレビューモードにおけるレビュー位置に対応する、最も階層の深いオブジェクトに設定されます。
  <LI>画面レビューモードに切り替えると、明示的にドキュメントまたはオブジェクトのレビューモードに戻すまで、NVDAは画面レビューモードのままになります。
@@ -2154,11 +2241,11 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>Microsoft Office 2013 の確認ダイアログが表示されたときに、その内容が自動的に通知されるようになりました。
 <LI>Microsoft Word の特定のテーブルのナビゲーションにおける性能を改善しました。(<A HREF="https://github.com/nvaccess/nvda/issues/3326">#3326</A>)
 <LI>NVDAのテーブルナビゲーションコマンド(control+alt+矢印)機能が Microsoft Word の複数の列が結合された特定のテーブルセルでより適切に動作するようになりました。
-<LI>アドオンマネージャーがすでに開いているときに、もう一度開こうとすると（ツールメニューから起動したり、アドオンファイルを関連づけで開いたりしたときに）処理が失敗したり、アドオンマネージャーがクローズしなくなる不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/3351">#3351</A>)
+<LI>アドオンマネージャーがすでに開いているときに、もう一度開こうとすると(ツールメニューから起動したり、アドオンファイルを関連づけで開いたりしたときに)処理が失敗したり、アドオンマネージャーがクローズしなくなる不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/3351">#3351</A>)
 <LI>日本語または中国語の Office 2010 IME が使われているときに特定のダイアログがフリーズする不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/3064">#3064</A>)
 <LI>点字ディスプレイに複数のスペースを表示するときにスペース1個に変換されないようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/1366">#1366</A>)
 <LI>Zend Eclipse PHP Developer Tools が Eclipse と同じようにサポートされました。(<A HREF="https://github.com/nvaccess/nvda/issues/3353">#3353</A>)
-<LI>Internet Explorer において、埋め込みオブジェクト（Frashコンテンツなど）でEnterキーを押したあと、さらにTabキーを押さなくても操作が有効になりました。(<A HREF="https://github.com/nvaccess/nvda/issues/3364">#3364</A>)
+<LI>Internet Explorer において、埋め込みオブジェクト(Frashコンテンツなど)でEnterキーを押したあと、さらにTabキーを押さなくても操作が有効になりました。(<A HREF="https://github.com/nvaccess/nvda/issues/3364">#3364</A>)
 <LI>Microsoft PowerPointにおいて選択したり編集しようとしたオブジェクトを2回重複して通知する現象を解決しました。(<A HREF="https://github.com/nvaccess/nvda/issues/3394">#3394</A>)
 <LI>Adobe Reader でテーブルの外に行が存在するような不適切なPDFファイルを開くとNVDAが不正終了する問題を解決しました。(<A HREF="https://github.com/nvaccess/nvda/issues/3399">#3399</A>)
 <LI>Microsoft PowerPointのサムネイルビューで、フォーカスされた次のスライドを、スライドが削除されたときにも正しく扱えるようにしました。(<A HREF="https://github.com/nvaccess/nvda/issues/3415">#3415</A>)
@@ -2242,14 +2329,14 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>Lotus Notes 8.5 のメッセージ読み上げと作成の基本的なサポート(<A HREF="https://github.com/nvaccess/nvda/issues/543">#543</A>)
 <LI>Microsoft Wordで文書を読み上げるときに言語の自動切り替えが有効になりました(<A HREF="https://github.com/nvaccess/nvda/issues/2047">#2047</A>) 
 <LI>MSHTML(Internet Explorer)およびGecko(Firefox)のブラウズモードで、詳細説明(long description)があるときに通知を行います。NVDA+Dを押すと新しいウィンドウで詳細説明を開きます。(<A HREF="https://github.com/nvaccess/nvda/issues/809">#809</A>)
-<LI>Internet Explorer のバージョン9以降で、通知を読み上げるようになりました。（コンテンツのブロックやファイルのダウンロードなど）(<A HREF="https://github.com/nvaccess/nvda/issues/2343">#2343</A>)
+<LI>Internet Explorer のバージョン9以降で、通知を読み上げるようになりました。(コンテンツのブロックやファイルのダウンロードなど)(<A HREF="https://github.com/nvaccess/nvda/issues/2343">#2343</A>)
 <LI>Internet Explorerとその他のMSHTMLコンポーネントにおいて、ブラウズモードでのテーブルの行と列のヘッダーを自動的に通知するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/778">#778</A>)
 <LI>新しい言語：アラゴン語、アイルランド語
 <LI>新しい点字テーブル：デンマーク語2級、韓国語1級(<A HREF="https://github.com/nvaccess/nvda/issues/2737">#2737</A>)
 <LI>東芝のブルートゥーススタックが使われているときに、点字ディスプレイをブルートゥースで接続できるようになりました(<A HREF="https://github.com/nvaccess/nvda/issues/2419">#2419</A>)
-<LI>Freedom Scientific社の点字ディスプレイでポートの選択をサポートしました（自動、USB、ブルートゥース）
+<LI>Freedom Scientific社の点字ディスプレイでポートの選択をサポートしました(自動、USB、ブルートゥース)
 <LI>HumanwareのノートテイカーBrailleNoteシリーズの点字ディスプレイモードに対応しました。(<A HREF="https://github.com/nvaccess/nvda/issues/2012">#2012</A>)
-<LI>Papenmeier BRAILLEX（ブレイレックス）点字ディスプレイの旧式モデルに対応しました(<A HREF="https://github.com/nvaccess/nvda/issues/2679">#2679</A>)
+<LI>Papenmeier BRAILLEX(ブレイレックス)点字ディスプレイの旧式モデルに対応しました(<A HREF="https://github.com/nvaccess/nvda/issues/2679">#2679</A>)
 <LI>点字入力キーを持つ点字ディスプレイから、コンピューター点字で文字を入力できるようになりました(<A HREF="https://github.com/nvaccess/nvda/issues/808">#808</A>)
 <LI>キーボード設定で「Enterキーで読み上げを中断」「文字入力で読み上げを中断」が設定できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/698">#698</A>)
 <LI>Google Chromeの技術に基づくウェブブラウザ Rockmelt, BlackHawk, Comodo Dragon, SRWare Iron に対応しました (<A HREF="https://github.com/nvaccess/nvda/issues/2236">#2236</A>, <A HREF="https://github.com/nvaccess/nvda/issues/2813">#2813</A>, <A HREF="https://github.com/nvaccess/nvda/issues/2814">#2814</A>, <A HREF="https://github.com/nvaccess/nvda/issues/2815">#2815</A>)
@@ -2284,7 +2371,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>HumanWare Brailliant BI/B シリーズ点字ディスプレイのドライバーが、USBで一度も接続されたことがない場合に、ブルートゥースでの接続が選べるようになりました。
 <LI>ブラウズモードの要素リストにおける要素のフィルターで、フィルター文字列が大文字であっても、大文字と小文字を区別せず結果を得るようになりました (<A HREF="https://github.com/nvaccess/nvda/issues/2951">#2951</A>)
 <LI>Mozilla ブラウザにおいて、Flash コンテンツにフォーカスがある場合にもブラウズモードが使えるようになりました(<A HREF="https://github.com/nvaccess/nvda/issues/2546">#2546</A>)
-<LI>点字テーブルで単語の省略形を使い、カーソル位置の単語をコンピューター点字に展開しているときに、単語の中の1つの文字が複数の点字セルに展開されているような単語の後にカーソルを移動しても、点字カーソルの位置が適切になるようにしました（大文字符、アルファベット、数字など）(<A HREF="https://github.com/nvaccess/nvda/issues/2947">#2947</A>)
+<LI>点字テーブルで単語の省略形を使い、カーソル位置の単語をコンピューター点字に展開しているときに、単語の中の1つの文字が複数の点字セルに展開されているような単語の後にカーソルを移動しても、点字カーソルの位置が適切になるようにしました(大文字符、アルファベット、数字など)(<A HREF="https://github.com/nvaccess/nvda/issues/2947">#2947</A>)
 <LI>Microsoft Word 2003 と Internet Explorer エディットコントロールのテキスト選択が、点字ディスプレイに正しく出力されるようになりました。 
 <LI>Microsoft Word で点字出力を使うときに、逆方向の操作でテキスト選択をする処理を修正しました。
 <LI>Scintilla のエディットコントロールでバックスペースやデリートによる文字削除をしたときに、マルチバイト文字が正しく通知されるようになりました(<A HREF="https://github.com/nvaccess/nvda/issues/2855">#2855</A>)
@@ -2474,8 +2561,8 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <UL>
 <LI>NVDAは更新版のダウンロードとインストールを自動的にチェックするようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/73">#73</A>)
 <LI>アドオンマネージャーによってNVDAの拡張が簡単になりました。この機能はNVDAメニューの「ツール」にあり、アドオンパッケージ(拡張子 .nvda-addon のファイル)でプラグインやドライバをインストールしたり削除したりできます。アドオンマネージャーでは設定フォルダーにコピーされた従来の形式のプラグインやドライバは表示されません。 (<A HREF="https://github.com/nvaccess/nvda/issues/213">#213</A>)
-<LI>インストールされたリリース版のNVDAにおいて、多くのNVDAの機能が Windows 8 メトロスタイルのアプリケーションで使えるようになりました。入力された文字の読み上げ、Webドキュメントのブラウズモード（メトロバージョンのInternet Explorer 10を含みます）などです。ポータブル環境のNVDAはメトロスタイルのアプリケーションを読み上げできません。 (<A HREF="https://github.com/nvaccess/nvda/issues/1801">#1801</A>) 
-<LI>ブラウズモードのドキュメント（Internet Explorerや Firefoxなど）で、要素コンテナ（リストや表など）の先頭および末尾に shift+, (シフト コンマ)と , (コンマ)によってジャンプできます。(<A HREF="https://github.com/nvaccess/nvda/issues/123">#123</A>)
+<LI>インストールされたリリース版のNVDAにおいて、多くのNVDAの機能が Windows 8 メトロスタイルのアプリケーションで使えるようになりました。入力された文字の読み上げ、Webドキュメントのブラウズモード(メトロバージョンのInternet Explorer 10を含みます)などです。ポータブル環境のNVDAはメトロスタイルのアプリケーションを読み上げできません。 (<A HREF="https://github.com/nvaccess/nvda/issues/1801">#1801</A>) 
+<LI>ブラウズモードのドキュメント(Internet Explorerや Firefoxなど)で、要素コンテナ(リストや表など)の先頭および末尾に shift+, (シフト コンマ)と , (コンマ)によってジャンプできます。(<A HREF="https://github.com/nvaccess/nvda/issues/123">#123</A>)
 <LI>新しい言語: ギリシャ語
 <LI>Microsoft Word の文書で、グラフィックスと代替テキストを通知します。 (<A HREF="https://github.com/nvaccess/nvda/issues/2282">#2282</A>, <A HREF="https://github.com/nvaccess/nvda/issues/1541">#1541</A>)
 </UL>
@@ -2536,7 +2623,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <LI>hedo ProfiLine USB点字ディスプレイとMobilLine USB点字ディスプレイをサポートしました。 (<A HREF="https://github.com/nvaccess/nvda/issues/1863">#1863</A>, <A HREF="https://github.com/nvaccess/nvda/issues/1897">#1897</A>)
 <LI>可能な場合、点字表示で単語が切れないようにしました。この機能は点字設定ダイアログで無効にすることができます。 (<A HREF="https://github.com/nvaccess/nvda/issues/1890">#1890</A>, <A HREF="https://github.com/nvaccess/nvda/issues/1946">#1946</A>)
 <LI>点字が、行単位の代わりに段落単位に表示できるようになり、多くのテキストがより早く読めるようになりました。点字設定ダイアログ内の「段落ごとに読み上げ」で設定してください。 (<A HREF="https://github.com/nvaccess/nvda/issues/1891">#1891</A>)
-<LI>ブラウズモード使用中に、カーソル位置のオブジェクトを点字ディスプレイから有効化できるようになりました。カーソルがオブジェクト上にある時にタッチカーソルを押してください (カーソルがまだそこにない場合は2度押してください）。 (<A HREF="https://github.com/nvaccess/nvda/issues/1893">#1893</A>)
+<LI>ブラウズモード使用中に、カーソル位置のオブジェクトを点字ディスプレイから有効化できるようになりました。カーソルがオブジェクト上にある時にタッチカーソルを押してください (カーソルがまだそこにない場合は2度押してください)。 (<A HREF="https://github.com/nvaccess/nvda/issues/1893">#1893</A>)
 <LI>iTunes Storeなどで使用されている、iTunesのWeb領域のサポートを開始しました。WebKit 1を使用している他のアプリケーションもサポートできるかもしれません。 (<A HREF="https://github.com/nvaccess/nvda/issues/734">#734</A>)
 <LI>Adobe Digital Editions 1.8.1以降において、「すべて読み上げ」を使用中の場合、自動的にページをめくれるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/1978">#1978</A>)
 <LI>新しい点字の変換テーブル、ポルトガル語2級、アイスランド語8点コンピューター点字、タミル語1級、スペイン語8点コンピューター点字及びペルシャ語1級を追加しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/2014">#2014</A>)
@@ -2552,7 +2639,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 <UL>
 <LI>自動言語切り換えが有効で適切な言語情報が提供されている場合、現在文字の説明や現在の単語や行のスペル読みで適切な言語が使用できるようになりました。
 <LI>eSpeak音声エンジンを1.46.02に更新しました。
-<LI>画像及びリンクURLから推測されたとても長い名前（30文字以上）はほとんどの場合ゴミであることから、無効なものとして切り捨てるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/1989">#1989</A>)
+<LI>画像及びリンクURLから推測されたとても長い名前(30文字以上)はほとんどの場合ゴミであることから、無効なものとして切り捨てるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/1989">#1989</A>)
 <LI>一部の点字で表示される情報が短縮されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/1955">#1955</A>, <A HREF="https://github.com/nvaccess/nvda/issues/2043">#2043</A>)
 <LI>キャレットまたはレビューカーソルが移動する時、点字も手動でスクロールさせるのと同じようにスクロールするようになりました。これにより、点字を段落単位で読むように設定している時に、より正確に単語を分断することなくめるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/1996">#1996</A>)
 <LI>最新のスペイン語1級点字変換テーブルに更新しました。
