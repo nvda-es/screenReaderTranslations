@@ -113,7 +113,7 @@
       <UL>
       <LI><A HREF="#ExcelAutomaticColumnAndRowHeaderReading">11.2.1. Lettura automatica delle intestazioni di riga e colonna</A>
       <LI><A HREF="#ExcelElementsList">11.2.2. L'elenco elementi</A>
-      <LI><A HREF="#ExcelReportingComments">11.2.3. Leggere i commenti</A>
+      <LI><A HREF="#ExcelReportingComments">11.2.3. Leggere le note</A>
       <LI><A HREF="#ExcelReadingProtectedCells">11.2.4. Lettura di celle protette</A>
       <LI><A HREF="#ExcelFormFields">11.2.5. Campi</A>
       </UL>
@@ -324,9 +324,7 @@ Per i dettagli relativi alle eccezioni, accedere al documento di licenza dal men
  <LI>Per Windows 7, NVDA richiede Service Pack 1 o successivo.
  <LI>Per Windows Server 2008 R2, NVDA richiede Service Pack 1 o successivo.
  </UL>
-<LI>Memoria: 256 mb di Ram o superiore
-<LI>Velocità processore: 1.0 ghz o superiore.
-<LI>Circa 90 Megabytes di spazio disco.
+<LI>Circa 150 Megabytes di spazio disco.
 </UL>
 
 <A NAME="GettingAndSettingUpNVDA"></A>
@@ -530,9 +528,11 @@ Se il portatile in proprio possesso non è in grado di compiere questa operazion
 <H3>4.3. Gesti di NVDA nei dispositivi a tocco</H3>
 
 <P>
-Se si sta eseguendo NVDA in un dispositivo dotato di touch screen e con un sistema operativo pari a Windows8 o superiore, è possibile controllare lo screen reader direttamente dallo schermo.
-Quando NVDA è in esecuzione, tutti i gesti di immissione a tocco verranno diretti a NVDA.
+Se si sta eseguendo NVDA in un dispositivo dotato di touch screen e con un sistema operativo pari a Windos8 o superiore, è possibile controllare lo screen reader direttamente dallo schermo.
+Quando NVDA è in esecuzione, a meno che il supporto per l'interazione al tocco non sia stato disattivato, tutti i gesti di immissione a tocco verranno diretti a NVDA.
 Tenere presente che le azioni che normalmente funzionerebbero senza NVDA non saranno disponibili.
+Per attivare o disattivare il supporto TouchScreen di NVDA, premere NVDA+control+alt+t.
+è anche possibile attivare o disattivare il <A HREF="#TouchSupportEnable">supporto al touch screen</A> dalla categoria tocco delle impostazioni di NVDA.
 </P>
 
 <A NAME="ExploringTheScreen"></A>
@@ -645,6 +645,13 @@ Una volta che il menu appare, è possibile scorrerlo con le frecce direzionali, 
 <TH>Tasto laptop</TH>
 <TH>Tocco</TH>
 <TH>Descrizione</TH>
+</TR>
+<TR>
+<TD>Esegue o Riavvia NVDA</TD>
+<TD>Control+alt+n</TD>
+<TD>Control+alt+n</TD>
+<TD>none</TD>
+<TD>Esegue o riavvia NVDA dal desktop, se durante il processo di installazione di NVDA si è scelto di creare un collegamento. Si tratta di un collegamento specifico di Windows e pertanto non può essere riassegnato nella finestra di dialogo dei gesti di immissione.</TD>
 </TR>
 <TR>
 <TD>Interrompe la Sintesi Vocale</TD>
@@ -830,6 +837,12 @@ NVDA fornisce i seguenti comandi quando si lavora con il cursore di sistema:
 <TD>NVDA+Shift+freccia su</TD>
 <TD>NVDA+shift+s</TD>
 <TD>Legge il testo selezionato ammesso che ve ne sia uno.</TD>
+</TR>
+<TR>
+<TD>Annuncia formattazione testo</TD>
+<TD>NVDA+f</TD>
+<TD>NVDA+f</TD>
+<TD>Legge la formattazione del testo alla posizione del cursore di sistema. Una doppia pressione visualizzerà le informazioni in modalità navigazione</TD>
 </TR>
 <TR>
 <TD>frase successiva</TD>
@@ -1138,9 +1151,10 @@ Sono disponibili i seguenti tasti caldi per esplorare il testo:
 <TD>Sposta il cursore di controllo alla posizione precedentemente impostata come marcatore iniziale per la copia</TD>
 </TR>
 <TR>
-<TD>Annuncia formattazione del testo</TD>
-<TD>NVDA+f</TD>
-<TD>| Nessuno Annuncia la formattazione del testo sul quale è posizionato il cursore di controllo. Una doppia pressione mostrerà le informazioni in modalità navigazione</TD>
+<TD>Annuncia formattazione testo</TD>
+<TD>NVDA+SHIFT+f</TD>
+<TD>NVDA+shift+f</TD>
+<TD>Legge la formattazione del testo alla posizione del cursore di controllo. Una doppia pressione visualizzerà le informazioni in modalità navigazione</TD>
 </TR>
 <TR>
 <TD>Annuncia sostituzione simbolo corrente</TD>
@@ -1855,8 +1869,12 @@ Per far stare più informazioni possibili su di un display braille, sono state d
 <TD>finestra</TD>
 </TR>
 <TR>
-<TD><CODE>-----</CODE></TD>
+<TD>⠤⠤⠤⠤⠤</TD>
 <TD>separatore</TD>
+</TR>
+<TR>
+<TD>mrkd</TD>
+<TD>contenuto contrassegnato</TD>
 </TR>
 </TABLE>
 
@@ -2233,23 +2251,30 @@ Selezionando un campo premendo invio o utilizzando il pulsante "vai a" provocher
 </UL>
 
 <A NAME="ExcelReportingComments"></A>
-<H4>11.2.3. Leggere i commenti</H4>
+<H4>11.2.3. Leggere le note</H4>
 
 <P>
-Per far in modo che NVDA legga i commenti della cella evidenziata, premere NVDA+alt+c.
-Si noti che tutti i commenti del foglio di lavoro possono essere raggiunti anche dall'elenco elementi premendo NVDA+f7.
+Per far in modo che NVDA legga note e commenti della cella evidenziata, premere NVDA+alt+c.
+In Microsoft 2016, 365 e successivi, i commenti classici in Microsoft Excel sono stati rinominati "note".
+Si noti che tutte le note del foglio di lavoro possono essere raggiunte anche dall'elenco elementi premendo NVDA+f7.
 </P>
 <P>
-NVDA può anche visualizzare una finestra di dialogo specifica per l'aggiunta o la modifica di un determinato commento.
+NVDA può anche visualizzare una finestra di dialogo specifica per l'aggiunta o la modifica di una determinata nota.
 NVDA va a modificare il campo editazione messo a disposizione da MS Excel per aggirare un problema di accessibilità, ma la combinazione di tasti messa a disposizione funziona indipendentemente dal fatto che NVDA sia in esecuzione o meno.
-Per aggiungere o modificare un determinato commento, in una cella focalizzata, premere shift+f2.
+Per aggiungere o modificare una determinata nota, in una cella focalizzata, premere shift+f2.
 </P>
 <P>
 Questa combinazione di tasti non può essere modificata e non compare nella finestra tasti e gesti di immissione di NVDA.
 </P>
 <P>
-Nota: è possibile aprire l'area di modifica dei commenti in MS Excel anche dal menu contestuale di qualsiasi cella del foglio di lavoro.
+Nota: è possibile aprire l'area di modifica delle note in MS Excel anche dal menu contestuale di qualsiasi cella del foglio di lavoro.
 Tuttavia, questa operazione farà comparire la regione di modifica inaccessibile, non quella messa a punto da NVDA..
+</P>
+<P>
+In Microsoft Office 2016, 365 e successivi, è stata aggiunta una nuova finestra di dialogo per i commenti sullo stile.
+Questa finestra di dialogo è accessibile e fornisce più funzioni come la risposta ai commenti, ecc.
+Può anche essere aperta dal menu contestuale di una determinata cella.
+I commenti aggiunti alle celle tramite la finestra di dialogo del nuovo stile non sono correlati alle "note".
 </P>
 
 <A NAME="ExcelReadingProtectedCells"></A>
@@ -2989,6 +3014,7 @@ L'indicatore della selezione non è affetto da questa funzione.
 <P>
 Si tratta di un campo numerico che controlla per quanto tempo i messaggi di NVDA saranno mostrati sul Display Braille.
 Il valore 0 farà in modo che non verrà visualizzato più alcun messaggio.
+Il messaggio sparirà immediatamente non appena si preme un cursor routing sulla barra braille, ma lo si potrà rileggere se si preme una combinazione di tasti che attivano il messaggio.
 </P>
 
 <A NAME="BrailleSettingsNoMessageTimeout"></A>
@@ -3371,6 +3397,16 @@ Questa categoria, disponibile soltanto  nei computer che montano Windows8 e succ
 Contiene le seguenti opzioni:
 </P>
 
+<A NAME="TouchSupportEnable"></A>
+<H5>Attiva supporto al tocco</H5>
+
+<P>
+Questa casella di controllo attiva il supporto al tocco da parte di NVDA.
+Se abilitata, è possibile servirsi delle dita per navigare e interagire con gli elementi sullo schermo utilizzando un dispositivo touchscreen.
+Se disabilitata, il supporto del touchscreen verrà disattivato come se NVDA non fosse in esecuzione.
+Questa impostazione può anche essere attivata / disattivata utilizzando NVDA + control + alt + t.
+</P>
+
 <A NAME="TouchTypingMode"></A>
 <H5>Modalità di digitazione a tocco</H5>
 
@@ -3693,6 +3729,20 @@ Ad esempio, se abilitata, premendo la lettera "j", a questa verrebbe impedito di
 Ogni qualvolta questo accade, Windows emetterà un suono predefinito di avviso.
 </P>
 
+<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
+<H5>Spostamento automatico del focus sugli elementi raggiungibili durante la navigazione</H5>
+
+<P>
+Tasto: NVDA+8
+</P>
+<P>
+Disabilitata per impostazione predefinita, questa opzione consente di scegliere se il focus di sistema debba essere impostato automaticamente su elementi raggiungibili dal focus stesso (collegamenti, campi modulo, ecc.) quando si utilizza la modalità navigazione.
+Lasciando l'impostazione disattiva, si farà in modo che questi elementi non saranno più attivati quando  vengono selezionati con il cursore virtuale..
+Ciò potrebbe comportare un'esperienza di navigazione più rapida e una migliore reattività in modalità di navigazione.
+Il focus verrà ancora aggiornato sull'elemento quando si interagisce con esso (ad esempio premendo un pulsante, selezionando una casella di controllo).
+L'abilitazione di questa opzione può migliorare il supporto per alcuni siti Web a scapito delle prestazioni e della stabilità.
+</P>
+
 <A NAME="documentFormattingSettings"></A>
 <H4>12.1.15. Formato documento (NVDA+Control+d)</H4>
 
@@ -3712,6 +3762,7 @@ Le opzioni di formattazione documento sono divise in gruppi.
  <LI>dimensione carattere
  <LI>attributi carattere
  <LI>Testo enfatizzato
+ <LI>Contrassegnato (testo evidenziato)
  <LI>Stile
  <LI>Colori
  </UL>
@@ -3742,6 +3793,7 @@ Le opzioni di formattazione documento sono divise in gruppi.
  <UL>
  <LI>collegamenti
  <LI>intestazioni
+ <LI>Grafici
  <LI>elenchi
  <LI>Blocchi tra virgolette
  <LI>Punti di riferimento
