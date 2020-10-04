@@ -150,7 +150,7 @@ addresses = {
     },
     'mk': {
         'lang':'Macedonian',
-        'email': ['zvonimir stanecic <9a5dsz@gozaltech.org>', 'Kiko Lazarev <kristijan.lazarev@gmail.com>'],
+        'email': ['zvonimir stanecic <9a5dsz@gozaltech.org>', 'Ertay Shashko <ertay@outlook.com>', 'Kiko Lazarev <kristijan.lazarev@gmail.com>'],
     },
     'mn': {
         'lang':'Mongolian',
