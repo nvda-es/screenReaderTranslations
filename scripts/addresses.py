@@ -106,7 +106,7 @@ addresses = {
     },
     'is': {
         'lang':'Icelandic',
-        'email': ['Birkir R. Gunnarsson <birkir.gunnarsson@gmail.com>', 'Hlynur Hreinsson <hm.hreinsson@gmail.com>'],
+        'email': ['Birkir R. Gunnarsson <birkir.gunnarsson@gmail.com>', 'Eythor Thrastarsson <eythor.kamban@midstod.is>', 'Hlynur Hreinsson <hm.hreinsson@gmail.com>'],
     },
     'it': {
         'lang':'Italian',
