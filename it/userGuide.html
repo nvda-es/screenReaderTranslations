@@ -3895,6 +3895,17 @@ Questo pulsante apre la cartella all'interno della quale è possibile  inserire 
 Il bottone risulta attivo solo nel caso in cui NVDA sia configurato per caricare codice personalizzato dalla cartella scratchpad dello sviluppatore.
 </P>
 
+<A NAME="AdvancedSettingsSelectiveUIAEventRegistration"></A>
+<H5>Abilita la registrazione selettiva per eventi UI Automation e cambiamenti di proprietà</H5>
+
+<P>
+Questa opzione modifica il modo in cui NVDA registra gli eventi attivati dall'API di accessibilità di Microsoft UI Automation.
+Se la funzione è disabilitata, NVDA terrà traccia di molti eventi UIA, che per lo più sono gestiti e scartati da NVDA stesso.
+Questo può risultare molto dispendioso in termini di risorse soprattutto in applicazioni  quali Microsoft Visual Studio.
+Invece, se l'opzione risulta attivata, NVDA si limiterà a tener conto degli eventi UIA che riguardano unicamente il focus.
+Nel caso in cui si riscontrino problemi di stabilità o di prestazioni, si consiglia di attivare la funzione per vedere se il problema può risolversi.
+</P>
+
 <A NAME="AdvancedSettingsUseUiaForWord"></A>
 <H5>Utilizza UI Automation per accedere ai controlli dei documenti Microsoft Word quando disponibili</H5>
 
@@ -3937,21 +3948,6 @@ In ambienti non sicuri, è preferibile disattivare temporaneamente <A HREF="#Key
 Questa funzione cerca di inibire la lettura di informazioni obsolete che riguardano il focus di sistema.
 In particolare, lo spostamento rapido tra i messaggi in Gmail mentre si utilizza Chrome rischia di far leggere a NVDa informazioni non più accurate. Questa opzione cerca di risolvere il problema.
 Questa funzionalità è sperimentale a partire da NVDA 2020.2.
-</P>
-
-<A NAME="BrowseModeSettingsAutoFocusFocusableElements"></A>
-<H5>Spostamento automatico del focus in modalità navigazione</H5>
-
-<P>
-Tasto: NVDA+8
-</P>
-<P>
-Attivata da impostazioni predefinite,  questa opzione consente di stabilire se, in modalità navigazione, il focus di sistema debba spostarsi automaticamente sugli elementi che lo consentono (link, campi dei form, etc) quando si utilizzano le frecce con il cursore virtuale.
-Questa è sempre stata l'impostazione predefinita dalla versione 2019.1 di NVDA e precedenti.
-Disattivandola si farà in modo che il focus di sistema rimarrà fermo mentre ci si sposta con le frecce in modalità navigazione.
-Ciò potrebbe comportare un'esperienza di navigazione più veloce e una migliore reattività nella modalità di navigazione.
-Il focus verrà immediatamente spostato non appena si interagisce con un elemento (ad esempio premendo un pulsante, selezionando una casella di controllo).
-Questa funzionalità è sperimentale a partire da NVDA 2019.2.
 </P>
 
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
@@ -4023,8 +4019,9 @@ Questa condizione è soddisfatta se i caratteri immediatamente prima e dopo la p
 Per tornare all'esempio precedente, se scrivessimo UccelloMarino, e abbiamo selezionato di prendere in esame soltanto le parole intere, questa stringa verrebbe scartata.
 </P>
 <P>
-Le espressioni regolari sono strumenti molto potenti per manipolare porzioni di testo, ma non verranno trattate in questo manuale a causa della loro complessità.
-Si consiglia di cercare in rete tutorials che ne spieghino l'uso.
+Le espressioni regolari sono strumenti molto potenti per manipolare porzioni di testo.
+Esse non verranno trattate in questo manuale a causa della loro complessità.
+Per un tutorial introduttivo fare riferimento al seguente indirizzo: [<A HREF="https://docs.python.org/3.7/howto/regex.html">https://docs.python.org/3.7/howto/regex.html</A>].
 </P>
 
 <A NAME="SymbolPronunciation"></A>
@@ -4094,6 +4091,22 @@ In questo caso, viene visualizzato un menu che consente di selezionare l'opzione
 <P>
 Per rimuovere un gesto da un comando, selezionare il gesto e premere il pulsante Rimuovi.
 </P>
+<P>
+La categoria emulazione tasti di sistema contiene comandi di NVDA che simulano la  tastiera fisica.
+In sostanza, si può utilizzare questa funzione per gestire la tastiera del pc attraverso un display braille.
+Per aggiungere un gesto di emulazione, selezionare la categoria emulazione tasti di sistema e premere il pulsante aggiungi.
+Quindi, premere il tasto sulla tastiera che si desidera emulare.
+Dopodiché, il tasto sarà disponibile nella categoria emulazione tasti di sistema e si potrà assegnargli un gesto di input come descritto sopra.
+</P>
+<P>
+Nota:
+</P>
+
+ <UL>
+ <LI>Ai tasti simulati deve essere assegnato un gesto , altrimenti andranno persi nella finestra di salvataggio/chiusura.
+ <LI>Potrebbe non essere possibile mappare un gesto di immissione con tasto modificatore ad un tasto emulato senza modificatore. Per esempio, se vogliamo mappare al tasto "a" la combinazione emulata "ctrl-m", il risultato finale potrebbe essere "ctrl-a".
+ </UL>
+
 <P>
 Al termine delle modifiche, premere il pulsante OK per salvarle, o il tasto Annulla per non modificare alcunché.
 </P>
