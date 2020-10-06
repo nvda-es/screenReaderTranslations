@@ -13,7 +13,7 @@
 <H2>2020.3</H2>
 
 <P>
-本版在稳定性和性能方面进行了多项重大改进，尤其是在 Microsoft Office 应用程序中。此外还增加了切换触摸支持和图形朗读的设置。
+本版在稳定性和性能方面进行了多项重大改进，尤其是在 Microsoft Office 应用程序中。此外还增加了切换触摸屏支持和图形朗读的设置。
 在浏览器中支持朗读标记（高亮文本）等内容，还增加了新的德语盲文表。
 </P>
 
@@ -43,38 +43,46 @@
 <LI>将 eSpeak-NG更新到 1.51-dev， commit 1fb68ffffea4
 <LI>您可以使用 NVDA 的表格导航，在具有多列的可选择列表框中移动。 (<A HREF="https://github.com/nvaccess/nvda/issues/8857">#8857</A>)
 <LI>在“插件管理器”中，当系统询问您确认删除插件时，默认聚焦在“否”按钮上。 (<A HREF="https://github.com/nvaccess/nvda/issues/10015">#10015</A>)
-<LI>在 Microsoft Excel 中，“元素列表”对话框现在以本地化语言显示公式。 (<A HREF="https://github.com/nvaccess/nvda/issues/9144">#9144</A>)
-<LI>NVDA现在可报告MS Excel中notes的正确术语。 (<A HREF="https://github.com/nvaccess/nvda/issues/11311">#11311</A>)
+<LI>在 Microsoft Excel 中，“元素列表”对话框以本地化语言显示公式。 (<A HREF="https://github.com/nvaccess/nvda/issues/9144">#9144</A>)
+<LI>NVDA现在可读出MS Excel中notes的正确术语。 (<A HREF="https://github.com/nvaccess/nvda/issues/11311">#11311</A>)
 <LI>在浏览模式下使用“将浏览光标移动到系统焦点”时，浏览光标现在会被设置在虚拟输入光标的位置。 (<A HREF="https://github.com/nvaccess/nvda/issues/9622">#9622</A>)
-<LI>在浏览模式下报告的信息窗口，例如连按两次 NVDA + F 的格式化信息，将其显示在屏幕中心的位置，且将窗口调整的更大一些。 (<A HREF="https://github.com/nvaccess/nvda/issues/9910">#9910</A>)
-</UL>
-
-<H3>错误修复</H3>
-
-<UL>
+<LI>在浏览模式下显示的信息窗口，例如连按两次 NVDA + F 的格式化信息，现在将其显示在屏幕中心的位置，且将窗口调整的更大一些。 (<A HREF="https://github.com/nvaccess/nvda/issues/9910">#9910</A>)
+<P></P>
+== 错误修复 ==
 <LI>通过单词导航，移动到任何单个符号且后面紧跟一个空格的情况，无论符号级别设置如何，始终会读出该符号。 (<A HREF="https://github.com/nvaccess/nvda/issues/5133">#5133</A>)
 <LI>在使用 QT 5.11或更高版本的应用程序中，重新支持了朗读对象描述。 (<A HREF="https://github.com/nvaccess/nvda/issues/8604">#8604</A>)
-<LI>使用 Control + Delete 删除单词时，NVDA不再无声。 (<A HREF="https://github.com/nvaccess/nvda/issues/3298">#3298</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11029">#11029</A>)
-<LI>现在是读出被删除单词右边的单词。
+<LI>使用 Control + Delete 删除单词时，NVDA不再完全无声，而是读出已被删除单词右边的单词。 (<A HREF="https://github.com/nvaccess/nvda/issues/3298">#3298</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11029">#11029</A>)
 <LI>在NVDA 设置“常规”分类下语言列表中的项目现在按英文缩写进行正确排列。 (<A HREF="https://github.com/nvaccess/nvda/issues/10348">#10348</A>)
 <LI>在“热键首饰”对话框中，显著提高了查找的性能。 (<A HREF="https://github.com/nvaccess/nvda/issues/10307">#10307</A>)
 <LI>可以通过盲文点显器输入超过 U+FFFF 的 Unicode字符。 (<A HREF="https://github.com/nvaccess/nvda/issues/10796">#10796</A>)
-<LI>NVDA will announce Open With dialog content in Windows 10 May 2020 Update. (<A HREF="https://github.com/nvaccess/nvda/issues/11335">#11335</A>)
-<LI>A new experimental option in Advanced settings (Enable selective registration for UI Automation events and property changes) can provide major performance improvements in Microsoft Visual Studio and other UIAutomation based applications if enabled. (<A HREF="https://github.com/nvaccess/nvda/issues/11077">#11077</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11209">#11209</A>)
-<LI>For checkable list items, the selected state is no longer announced redundantly, and if applicable, the unselected state is announced instead. (<A HREF="https://github.com/nvaccess/nvda/issues/8554">#8554</A>)
-<LI>On Windows 10 May 2020 Update, NVDA now shows the Microsoft Sound Mapper when viewing output devices from synthesizer dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/11349">#11349</A>)
-<LI>In Internet Explorer, numbers are now announced correctly for ordered lists if the list does not start with 1. (<A HREF="https://github.com/nvaccess/nvda/issues/8438">#8438</A>)
-<LI>In Google chrome, NVDA will now report not checked for all checkable controls (not just check boxes) that are currently not checked. (<A HREF="https://github.com/nvaccess/nvda/issues/11377">#11377</A>)
-<LI>It is once again possible to navigate in various controls when NVDA's language is set to Aragonese. (<A HREF="https://github.com/nvaccess/nvda/issues/11384">#11384</A>)
-<LI>NVDA should no longer sometimes freeze in Microsoft Word when rapidly arrowing up and down or typing characters with Braille enabled. (<A HREF="https://github.com/nvaccess/nvda/issues/11431">#11431</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11425">#11425</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11414">#11414</A>)
-<LI>NVDA no longer appends nonexistent trailing space when copying the current navigator object to the clipboard. (<A HREF="https://github.com/nvaccess/nvda/issues/11438">#11438</A>)
-<LI>NVDA no longer activates the Say All profile if there is nothing to read. (<A HREF="https://github.com/nvaccess/nvda/issues/10899">#10899</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9947">#9947</A>)
-<LI>NVDA is no longer unable to read the features list in Internet Information Services (IIS) Manager. (<A HREF="https://github.com/nvaccess/nvda/issues/11468">#11468</A>)
-<LI>NVDA now keeps the audio device open improving performance on some sound cards (<A HREF="https://github.com/nvaccess/nvda/issues/5172">#5172</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10721">#10721</A>)
-<LI>NVDA will no longer freeze or exit when holding down control+shift+downArrow in Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/9463">#9463</A>)
-<LI>The expanded / collapsed state of directories in the navigation treeview on drive.google.com is now always reported by NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/11520">#11520</A>)
-<LI>NVDA will auto detect the NLS eReader Humanware braille display via Bluetooth as its Bluetooth name is now "NLS eReader Humanware". (<A HREF="https://github.com/nvaccess/nvda/issues/11561">#11561</A>)
-<LI>Major performance improvements in Visual Studio Code. (<A HREF="https://github.com/nvaccess/nvda/issues/11533">#11533</A>)
+<LI>在 Windows 10的 2020年5月版更新中能读出打开方式对话框中的内容。 (<A HREF="https://github.com/nvaccess/nvda/issues/11335">#11335</A>)
+<LI>高级设置中的实验性选项（为UI Automation接口属性更改启用选择性注册），若启用该选项，可大幅改善Microsoft Visual Studio和其他基于UIAutomation应用程序的性能。 (<A HREF="https://github.com/nvaccess/nvda/issues/11077">#11077</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11209">#11209</A>)
+<LI>对于可选择列表框中的列表项，不再读出冗余选择状态，在适当的情况下，会朗读未选择的状态。 (<A HREF="https://github.com/nvaccess/nvda/issues/8554">#8554</A>)
+<LI>在 Windows 10的 2020年5月版更新中，从合成器对话框查看输出设备时，显示为 Microsoft声音映射器。 (<A HREF="https://github.com/nvaccess/nvda/issues/11349">#11349</A>)
+<LI>在 Internet Explorer 中，如果有序列表的列表编号不是从 1 开始，则可正确声明有序列表编号。 (<A HREF="https://github.com/nvaccess/nvda/issues/8438">#8438</A>)
+<LI>在 Google chrome 中，对于当前未选中的所有可选择性控件（不仅仅是复选框），NVDA会读出其未选中状态。 (<A HREF="https://github.com/nvaccess/nvda/issues/11377">#11377</A>)
+<LI>当 NVDA 的语言设置为阿拉贡语时，重新支持了在各种控件中导航。 (<A HREF="https://github.com/nvaccess/nvda/issues/11384">#11384</A>)
+<LI>在Microsoft Word中快速按上下方向键或在使用盲文点显器键入文字时，NVDA不再停止响应。 (<A HREF="https://github.com/nvaccess/nvda/issues/11431">#11431</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11425">#11425</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11414">#11414</A>)
+<LI>将当前导航对象的名称和值复制到剪贴板时，不会在末尾追加多余的空格。 (<A HREF="https://github.com/nvaccess/nvda/issues/11438">#11438</A>)
+<LI>如果没有可朗读的内容，使用NVDA + A（朗读全部）时则不会激活所有配置文件。 (<A HREF="https://github.com/nvaccess/nvda/issues/10899">#10899</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9947">#9947</A>)
+<LI>通过将音频设备设置为打开状态，从而改善了某些声卡的性能。 (<A HREF="https://github.com/nvaccess/nvda/issues/5172">#5172</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10721">#10721</A>)
+<LI>在Microsoft Word中按住control + shift + 下方向键时，NVDA不再退出或无响应。 (<A HREF="https://github.com/nvaccess/nvda/issues/9463">#9463</A>)
+<LI>NVDA 能够读出 drive.google.com 上导航树视图中目录的展开/折叠状态。 (<A HREF="https://github.com/nvaccess/nvda/issues/11520">#11520</A>)
+<LI>NVDA可通过蓝牙自动检测 NLS eReader Humanware 盲文点显器。 (<A HREF="https://github.com/nvaccess/nvda/issues/11561">#11561</A>)
+<LI>在 Visual Studio Code 中的重大性能改进。 (<A HREF="https://github.com/nvaccess/nvda/issues/11533">#11533</A>)
+<P></P>
+== 插件以及NVDA核心开发者需要了解的变动 ==
+<LI>The GUI Helper's BoxSizerHelper.addDialogDismissButtons supports a new "separated" keyword argument, for adding a standard horizontal separator to dialogs (other than messages and single input dialogs). (<A HREF="https://github.com/nvaccess/nvda/issues/6468">#6468</A>)
+<LI>Additional properties were added to app modules, including path for the executable (appPath), is a Windows Store app (isWindowsStoreApp), and machine architecture for the app (appArchitecture). (<A HREF="https://github.com/nvaccess/nvda/issues/7894">#7894</A>)
+<LI>It is now possible to create app modules for apps hosted inside wwahost.exe on Windows 8 and later. (<A HREF="https://github.com/nvaccess/nvda/issues/4569">#4569</A>)
+<LI>A fragment of the log can now be delimited and then copied to clipboard using NVDA+control+shift+F1. (<A HREF="https://github.com/nvaccess/nvda/issues/9280">#9280</A>)
+<LI>NVDA-specific objects that are found by Python's cyclic garbage collector are now logged when being deleted by the collector to aide in removing reference cycles from NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/11499">#11499</A>)
+ <UL>
+ <LI>The majority of NVDA's classes are tracked including NVDAObjects, appModules, GlobalPlugins, SynthDrivers, and TreeInterceptors.
+ <LI>A class that needs to be tracked should inherit from garbageHandler.TrackedObject.
+ </UL>
+<LI>Significant debug logging for MSAA events can be now enabled in NVDA's Advanced settings. (<A HREF="https://github.com/nvaccess/nvda/issues/11521">#11521</A>)
+<LI>MSAA winEvents for the currently focused object are no longer filtered out along with other events if the event count for a given thread is exceeded. (<A HREF="https://github.com/nvaccess/nvda/issues/11520">#11520</A>)
 </UL>
 
 <H2>2020.2</H2>
