@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NVDA bzr main:5884\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 13:54+1000\n"
+"POT-Creation-Date: 2020-11-20 00:10+1000\n"
 "PO-Revision-Date: 2020-09-23 13:41+0900\n"
 "Last-Translator: Takuya Nishimoto <nishimotz@gmail.com>\n"
 "Language-Team: NVDA Japanese Team <nishimotz@gmail.com>\n"
@@ -3011,10 +3011,6 @@ msgstr "前回入力された文字列に一致するカーソル位置より前
 msgid "No selection"
 msgstr "選択なし"
 
-#. Translators: Message presented when text has been copied to clipboard.
-msgid "Copied to clipboard"
-msgstr "クリップボードにコピーしました"
-
 #. Translators: The message reported when a user attempts to use a table movement command
 #. when the cursor is not within a table.
 #. Translators: a message when trying to perform an action on a cell when not in one in Microsoft word
@@ -3355,6 +3351,21 @@ msgstr "強調を報告する"
 #. Translators: Input help mode message for toggle report emphasis command.
 msgid "Toggles on and off the reporting of emphasis"
 msgstr "強調の報告の切り替え"
+
+#. Translators: Input help mode message for toggle report marked (highlighted) content command.
+#, fuzzy
+msgid "Toggles on and off the reporting of marked text"
+msgstr "記事の報告の切り替え"
+
+#. Translators: The message announced when toggling the report marked document formatting setting.
+#, fuzzy
+msgid "report marked on"
+msgstr "ページ番号を報告する"
+
+#. Translators: The message announced when toggling the report marked document formatting setting.
+#, fuzzy
+msgid "report marked off"
+msgstr "ページ番号を報告しない"
 
 #. Translators: The message announced when toggling the report colors document formatting setting.
 msgid "report colors off"
@@ -3711,12 +3722,6 @@ msgstr "簡易レビューモードの切り替え"
 #. but there is no current navigator object.
 msgid "No navigator object"
 msgstr "ナビゲーターオブジェクトなし"
-
-#. Translators: Indicates something has been copied to clipboard (example output: title text copied to clipboard).
-#. Translators: The message presented when the status bar is copied to the clipboard.
-#, python-format
-msgid "%s copied to clipboard"
-msgstr "%sをクリップボードにコピーしました"
 
 #. Translators: Input help mode message for report current navigator object command.
 msgid ""
@@ -4170,6 +4175,8 @@ msgid "Log fragment copied to clipboard"
 msgstr "ログをクリップボードにコピーしました"
 
 #. Translators: Presented when unable to copy to the clipboard because of an error.
+#. Translators: Presented when unable to copy to the clipboard because of an error
+#. or the clipboard content did not match what was just copied.
 msgid "Unable to copy"
 msgstr "コピーできません"
 
@@ -4523,10 +4530,6 @@ msgstr "コピーするテキストがありません"
 #. Translators: Presented when unable to select the marked text.
 msgid "Can't select text, press twice to copy"
 msgstr "選択できません。2回押すとコピーします"
-
-#. Translators: Presented when some review text has been copied to clipboard.
-msgid "Review selection copied to clipboard"
-msgstr "レビューの選択範囲をクリップボードへコピーしました"
 
 #. Translators: Input help mode message for the select then copy command. The select then copy command first selects the review cursor text, then copies it to the clipboard.
 msgid ""
@@ -6478,6 +6481,18 @@ msgstr "長押しの指を離す"
 msgid "NVDA Message"
 msgstr "NVDAのメッセージ"
 
+#. Translators: Announced when a text has been copied to clipboard.
+#. {text} is replaced by the copied text.
+#, fuzzy, python-brace-format
+msgid "Copied to clipboard: {text}"
+msgstr "クリップボードにコピーしました"
+
+#. Translators: Displayed in braille when a text has been copied to clipboard.
+#. {text} is replaced by the copied text.
+#, fuzzy, python-brace-format
+msgid "Copied: {text}"
+msgstr "スペル {text}"
+
 #. Translators: The title of the dialog displayed while manually checking for an NVDA update.
 msgid "Checking for Update"
 msgstr "更新を確認中"
@@ -6496,6 +6511,9 @@ msgstr "更新をチェック中にエラーが発生しました。"
 #. Translators: The title of an error message dialog.
 #. Translators: An title for an error displayed when saving user defined input gestures fails.
 #. Translators: The title of a dialog presented when an error occurs.
+#. Translators: The message title displayed
+#. when the user has not specified an absolute destination directory
+#. in the Create Portable NVDA dialog.
 #. Translators: The title of an error message dialog.
 #. Translators: The title of the message box
 #. Translators: The title of the error dialog displayed when there is an error showing the GUI
@@ -6787,6 +6805,8 @@ msgid "Composition"
 msgstr "コンポジション"
 
 #. Translators: The label for a 'candidate' list that shows a choice of symbols a user can choose from when typing east-Asian characters into a document.
+#. Translators: A label for a 'candidate' list
+#. which contains symbols the user can choose from  when typing east-asian characters into a document.
 #. Translators: A label for a 'candidate' list which contains symbols the user can choose from  when typing east-asian characters into a document.
 msgid "Candidate"
 msgstr "候補リスト"
@@ -6806,6 +6826,10 @@ msgstr "ドキュメントのウインドウが見つかりません。"
 msgid "No track playing"
 msgstr "何も再生されていません"
 
+#. Translators: Reported if the remaining time can not be calculated in Foobar2000
+msgid "Unable to determine remaining time"
+msgstr ""
+
 #. Translators: The description of an NVDA command for reading the remaining time of the currently playing track in Foobar 2000.
 msgid "Reports the remaining time of the currently playing track, if any"
 msgstr "もし何か再生されている場合は、現在再生中のトラックの残り時間を報告"
@@ -6813,6 +6837,11 @@ msgstr "もし何か再生されている場合は、現在再生中のトラッ
 #. Translators: The description of an NVDA command for reading the elapsed time of the currently playing track in Foobar 2000.
 msgid "Reports the elapsed time of the currently playing track, if any"
 msgstr "もし何か再生されている場合は、現在再生中のトラックの経過時間を報告"
+
+#. Translators: Reported if the total time is not available in Foobar2000
+#, fuzzy
+msgid "Total time not available"
+msgstr "ログが使用できません"
 
 #. Translators: The description of an NVDA command for reading the length of the currently playing track in Foobar 2000.
 msgid "Reports the length of the currently playing track, if any"
@@ -7427,6 +7456,11 @@ msgstr "NVDA点字ビューアー"
 msgid "&Show Braille Viewer on Startup"
 msgstr "NVDA起動時に点字ビューアーを表示(&S)"
 
+#. Translators: The label for a setting in the braille viewer that controls
+#. whether hovering mouse routes to the cell.
+msgid "&Hover for cell routing"
+msgstr ""
+
 #. Translators: The title of the document used to present the result of content recognition.
 msgid "Result"
 msgstr "認識結果"
@@ -8025,6 +8059,8 @@ msgid "Install"
 msgstr "インストール"
 
 #. Translators: The status shown for an addon when its currently suspended do to addons being disabled.
+#. Translators: One of the show states of braille messages
+#. (the disabled mode turns off showing of braille messages completely).
 msgid "Disabled"
 msgstr "無効"
 
@@ -8362,6 +8398,17 @@ msgstr ""
 msgid "Manual Activation"
 msgstr "手動アクティブ化"
 
+#. Translators: Message indicating no context sensitive help is available for the control or dialog.
+#, fuzzy
+msgid "No help available here."
+msgstr "更新はありません。"
+
+#. Translators: Message shown when trying to display context sensitive help,
+#. indicating that	the user guide could not be found.
+#, fuzzy
+msgid "No user guide found."
+msgstr "ステータスバーがみつかりません"
+
 #. Translators: Describes a gesture in the Input Gestures dialog.
 #. {main} is replaced with the main part of the gesture; e.g. alt+tab.
 #. {source} is replaced with the gesture's source; e.g. laptop keyboard.
@@ -8592,6 +8639,14 @@ msgstr "作成したポータブル版を実行(&S)"
 #. Translators: The message displayed when the user has not specified a destination directory
 #. in the Create Portable NVDA dialog.
 msgid "Please specify a directory in which to create the portable copy."
+msgstr "ポータブル版を作成する場所を指定してください。"
+
+#. Translators: The message displayed when the user has not specified an absolute destination directory
+#. in the Create Portable NVDA dialog.
+#, fuzzy
+msgid ""
+"Please specify an absolute path (including drive letter)  in which to create "
+"the portable copy."
 msgstr "ポータブル版を作成する場所を指定してください。"
 
 #. Translators: The message displayed when the user specifies an invalid destination drive
@@ -9221,7 +9276,8 @@ msgstr "強調(&M)"
 
 #. Translators: This is the label for a checkbox in the
 #. document formatting settings panel.
-msgid "Marked (highlighted text)"
+#, fuzzy
+msgid "Mar&ked (highlighted text)"
 msgstr "マーク（テキストのハイライト）"
 
 #. Translators: This is the label for a checkbox in the
@@ -9674,13 +9730,27 @@ msgstr "フォーカス追従のカーソルの形(&F)"
 msgid "Cursor shape for &review:"
 msgstr "レビューカーソル追従のカーソルの形(&R)"
 
+#. Translators: One of the show states of braille messages
+#. (the timeout mode shows messages for the specific time).
+#, fuzzy
+msgid "Use timeout"
+msgstr "メッセージの表示終了待ち時間(秒)(&T)"
+
+#. Translators: One of the show states of braille messages
+#. (the indefinitely mode prevents braille messages from disappearing automatically).
+#, fuzzy
+msgid "Show indefinitely"
+msgstr "メッセージの表示を終了させない(&M)"
+
+#. Translators: The label for a setting in braille settings to combobox enabling user
+#. to decide if braille messages should be shown and automatically disappear from braille display.
+#, fuzzy
+msgid "Show messages"
+msgstr "メッセージはまだありません"
+
 #. Translators: The label for a setting in braille settings to change how long a message stays on the braille display (in seconds).
 msgid "Message &timeout (sec)"
 msgstr "メッセージの表示終了待ち時間(秒)(&T)"
-
-#. Translators: The label for a setting in braille settings to display a message on the braille display indefinitely.
-msgid "Show &messages indefinitely"
-msgstr "メッセージの表示を終了させない(&M)"
 
 #. Translators: The label for a setting in braille settings to set whether braille should be tethered to focus or review cursor.
 msgid "Tether B&raille:"
@@ -11847,3 +11917,9 @@ msgstr "2行の行間"
 #. Translators: a message when switching to 1.5 line spaceing  in Microsoft word
 msgid "1.5 line spacing"
 msgstr "1.5行の行間"
+
+#~ msgid "%s copied to clipboard"
+#~ msgstr "%sをクリップボードにコピーしました"
+
+#~ msgid "Review selection copied to clipboard"
+#~ msgstr "レビューの選択範囲をクリップボードへコピーしました"
