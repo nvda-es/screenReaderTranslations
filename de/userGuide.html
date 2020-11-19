@@ -2717,7 +2717,14 @@ Wenn Sie eine Sprachausgabe eines Drittanbieters verwenden, können Sie diesen W
 
 <P>
 Mit dieser Option können Sie die Sprechgeschwindigkeit der Stimme festlegen.
-Dies ist ein Schieberegler, der von 0 bis 100 reicht - 0 ist sehr langsam, 100 ist sehr schnell.
+Dies ist ein Schieberegler, der von 0 bis 100 reicht (0 ist sehr langsam, 100 ist sehr schnell).
+</P>
+
+<A NAME="SpeechSettingsRateBoost"></A>
+<H5>Geschwindigkeitserhöhung</H5>
+
+<P>
+Durch Aktivieren dieser Option wird die Sprachgeschwindigkeit deutlich erhöht, sofern dies von der aktuellen Sprachausgabe unterstützt wird.
 </P>
 
 <A NAME="SpeechSettingsPitch"></A>
@@ -2725,14 +2732,14 @@ Dies ist ein Schieberegler, der von 0 bis 100 reicht - 0 ist sehr langsam, 100 i
 
 <P>
 Mit dieser Option können Sie die Stimmhöhe der aktuell ausgewählten Stimme festlegen.
-Es ist ein Schieberegler, der von 0 bis 100 reicht - 0 ist sehr tief und 100 ist sehr hoch.
+Es ist ein Schieberegler, der von 0 bis 100 reicht (0 ist sehr tief und 100 ist sehr hoch).
 </P>
 
 <A NAME="SpeechSettingsVolume"></A>
 <H5>Lautstärke</H5>
 
 <P>
-Diese Option ist ein Schieberegler, der von 0 bis 100 reicht - 0 ist sehr leise und 100 ist sehr laut.
+Diese Option ist ein Schieberegler, der von 0 bis 100 reicht (0 ist sehr leise und 100 ist sehr laut).
 </P>
 
 <A NAME="SpeechSettingsInflection"></A>
@@ -3012,7 +3019,14 @@ Die Anzeige für Markierungen wird dadurch nicht beeinflusst, Markierungen werde
 
 <P>
 Hiermit legen Sie das Punktmuster des Cursors fest, welches verwendet werden soll, wenn die Braillezeile an den NVDA-Cursor gekoppelt wird.
-Die Anzeige für Markierungen wird dadurch nicht beeinflusst, Markierungen werden immer durch statische Punkte 7 und 8 angezeigt.
+Die Anzeige für Markierungen wird dadurch nicht beeinflusst. Markierungen werden immer durch statische Punkte 7 und 8 angezeigt.
+</P>
+
+<A NAME="BrailleSettingsShowMessages"></A>
+<H5>Meldungen anzeigen</H5>
+
+<P>
+In diesem Kombinationsfeld können Sie auswählen, ob NVDA Braille-Meldungen auf der Braillezeile anzeigen soll und wann diese automatisch verschwinden sollen.
 </P>
 
 <A NAME="BrailleSettingsMessageTimeout"></A>
@@ -3020,15 +3034,8 @@ Die Anzeige für Markierungen wird dadurch nicht beeinflusst, Markierungen werde
 
 <P>
 Dieses numerische Eingabefeld legt fest, wie viele Sekunden die NVDA-Meldungen auf der Braillezeile angezeigt werden sollen. Wenn eine Meldung erscheint, kann diese durch Drücken einer Routing-Taste geschlossen werden. Durch Drücken einer Navigationstaste kann die Anzeigedauer einer Meldung verlängert werden.
-Um die Anzeige der Meldungen abzuschalten, geben Sie hier 0 an.
 Die NVDA-Meldung wird beim Drücken einer Routing-Taste auf der Braillezeile sofort verworfen, erscheint aber wieder, wenn eine entsprechende Taste gedrückt wird, die die Nachricht auslöst.
-</P>
-
-<A NAME="BrailleSettingsNoMessageTimeout"></A>
-<H5>Meldungen dauerhaft anzeigen</H5>
-
-<P>
-Wird diese Option aktiviert, zeigt NVDA alle Meldungen dauerhaft auf der Braillezeile an.
+Diese Option wird nur angezeigt, wenn "Meldungen anzeigen" auf "Zeitüberschreitung verwenden" eingestellt ist.
 </P>
 
 <A NAME="BrailleTether"></A>
@@ -3969,7 +3976,7 @@ Wenn Sie feststellen, dass NVDA die Einfügemarke falsch zu verfolgen scheint, z
 
 <P>
 Die Kontrollkästchen in dieser Liste ermöglichen es Ihnen, bestimmte Kategorien von Debug-Meldungen im Protokoll von NVDA zu aktivieren.
-Das Protokollieren dieser Meldungen kann zu Leistungseinbußen und großen Protokolldateien führen.
+Das Protokollieren dieser Nachrichten kann zu Leistungseinbußen und großen Protokolldateien führen.
 Schalten Sie nur eines davon ein, wenn dies von einem NVDA-Entwickler ausdrücklich angeordnet wurde, z. B. beim Debuggen, warum ein Braille-Treiber nicht ordnungsgemäß funktioniert.
 </P>
 
@@ -4070,6 +4077,10 @@ Geben Sie im erscheinenden Dialogfeld das Symbol ein und klicken Sie auf den Sch
 </P>
 <P>
 Wenn Sie die gewünschten Änderungen vorgenommen haben, bestätigen Sie die Änderungen mit "OK" oder verwerfen Sie diese mittels "Abbrechen".
+</P>
+<P>
+Bei komplexen Symbolen muss das Feld Ersetzen möglicherweise einige Gruppenreferenzen des übereinstimmenden Textes enthalten. Beispielsweise müssten für ein Muster, das mit einem ganzen Datum übereinstimmt, \ 1, \ 2 und \ 3 im Feld angezeigt werden, um durch die entsprechenden Teile des Datums ersetzt zu werden.
+Normale Backslashes im Feld "Ersetzen" sollten daher verdoppelt werden, z. "a \\ b" sollte eingegeben werden, um den Ersatz "a \ b" zu erhalten.
 </P>
 
 <A NAME="InputGestures"></A>
@@ -4359,6 +4370,15 @@ Braillezeilen haben typischerweise Tasten zum Vorwärts- oder Rückwärtsnavigie
 Das Fenster des Braille-Betrachters enthält ein Kontrollkästchen mit der Bezeichnung "Braille-Betrachter beim Starten anzeigen".
 Wenn dies aktiviert ist, öffnet sich der Braille-Betrachter beim Starten von NVDA.
 Sofern möglich, wird dessen Fenster dieselbe Position sowie die gleiche Größe wie bei der letzten Verwendung einnehmen.
+</P>
+<P>
+Der Braille-Betrachter enthält ein Kontrollkästchen mit der Bezeichnung "Schweben für Zell-Routing", der standardmäßig deaktiviert ist.
+Wenn diese Option aktiviert ist, wird durch Bewegen der Maus über eine Braillezelle der Befehl "Route zur Braillezelle" für diese Zelle ausgelöst.
+Das wird häufig verwendet, um den System-Cursor zu bewegen oder die Aktion für eine Steuerung auszulösen.
+Dies kann zum Testen nützlich sein. NVDA kann die Zuordnung einer Braillezelle korrekt umkehren.
+Um ein unbeabsichtigtes Weiterleiten an Zellen zu verhindern, wird der Befehl verzögert.
+Die Mauszeiger muss schweben, bis die Zelle grün wird.
+Die Zelle beginnt hellgelb, geht in orange über und wird plötzlich grün.
 </P>
 
 <A NAME="PythonConsole"></A>
@@ -5730,7 +5750,7 @@ Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechen
 </TR>
 <TR>
 <TD>F3</TD>
-<TD>Punkt1+Punkt2+Punkt4+Punkt8</TD>
+<TD>Punkt1+Punkt4+Punkt8+Leertaste</TD>
 </TR>
 <TR>
 <TD>F4</TD>
@@ -7245,6 +7265,11 @@ Folgende Kommandozeilenoptionen gibt es:
 <TD>Keine</TD>
 <TD>--enable-start-on-logon=True/False</TD>
 <TD>Aktivieren Sie bei der Installation <A HREF="#StartAtWindowsLogon">NVDA bei der Windows-Anmeldung starten</A>.</TD>
+</TR>
+<TR>
+<TD>Keine</TD>
+<TD>--copy-portable-config</TD>
+<TD>Kopieren Sie bei der Installation die portable Konfiguration vom angegebenen Pfad (-c, --config-path) in das aktuelle Benutzerkonto.</TD>
 </TR>
 <TR>
 <TD>Keine</TD>
