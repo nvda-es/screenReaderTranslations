@@ -155,7 +155,7 @@
       <UL>
       <LI><A HREF="#SpeechDictionaries">12.2.1. Konuşma Sözlükleri</A>
       <LI><A HREF="#SymbolPronunciation">12.2.2. Noktalama/imla sözlüğü</A>
-      <LI><A HREF="#toc101">12.2.3. Girdi Hareketleri</A>
+      <LI><A HREF="#InputGestures">12.2.3. Girdi Hareketleri</A>
       </UL>
     <LI><A HREF="#SavingAndReloading">12.3. Konfigürasyonu Kaydetme ve Yeniden Yükleme</A>
     <LI><A HREF="#ConfigurationProfiles">12.4. Konfigürasyon Profilleri</A>
@@ -2721,6 +2721,13 @@ Bu seçenek konuşma hızını değiştirmenizi sağlar.
 Burası 0'dan 100'e giden bir göstergedir, ve 0 en yavaşı gösterirken, 100 en hızlıyı gösterir.
 </P>
 
+<A NAME="SpeechSettingsRateBoost"></A>
+<H5>Hızlandırıcı</H5>
+
+<P>
+Bu seçeneğin etkinleştirilmesi, mevcut sentezleyici tarafından destekleniyorsa konuşma hızını önemli ölçüde artıracaktır.
+</P>
+
 <A NAME="SpeechSettingsPitch"></A>
 <H5>Ses Perdesi</H5>
 
@@ -3016,6 +3023,13 @@ Bu seçenek, inceleme imleci tarafından taşındığı durumda braille imlecin 
 Seçim belirteci bu tercihten etkilenmez, her zaman 7 ve 8 nokta yukarıdadır.
 </P>
 
+<A NAME="BrailleSettingsShowMessages"></A>
+<H5>Mesajları Göster</H5>
+
+<P>
+Bu, NVDA'nın braille mesajlarını görüntüleyip görüntülemeyeceğini ve bunların ne zaman otomatik olarak kaybolacağını seçmenize olanak tanıyan bir seçim kutusudur.
+</P>
+
 <A NAME="BrailleSettingsMessageTimeout"></A>
 <H5>Mesaj Zaman Aşımı Saniyesi</H5>
 
@@ -3023,13 +3037,7 @@ Seçim belirteci bu tercihten etkilenmez, her zaman 7 ve 8 nokta yukarıdadır.
 Bu seçenek, sistem mesajlarının braille ekranda ne kadar uzun süre gösterileceğini kontrol eden bir rakamsal alandır.
 0 yazılırsa mesajların gösterimi tamamen kapatılır.
 Braille ekranında bir yönlendirme tuşuna basıldığında NVDA mesajı hemen kapatılır, ancak mesajı tetikleyen ilgili tuşa basıldığında tekrar gösterilir.
-</P>
-
-<A NAME="BrailleSettingsNoMessageTimeout"></A>
-<H5>Mesajları süresiz olarak göster</H5>
-
-<P>
-Bu seçenek NVDA mesajlarının braille ekranda süresiz olarak görüntülenmesini sağlar.
+Bu seçenek yalnızca "Mesajları Göster", "Zaman aşımını kullan" olarak ayarlanmışsa gösterilir.
 </P>
 
 <A NAME="BrailleTether"></A>
@@ -4075,8 +4083,12 @@ Kaldır düğmesine basarak daha önce eklediğiniz işareti silebilirsiniz.
 <P>
 Bu ayarlamaları yaptıktan sonra tamam düğmesine basarak değişiklikleri kaydedebilir; iptal düğmesiyle de değişiklik öncesi ayarlara geri dönebilirsiniz.
 </P>
+<P>
+Karmaşık semboller söz konusu olduğunda, Değiştirme alanı eşleşen metnin bazı grup referanslarını içermelidir. Örneğin, tam bir tarihle eşleşen bir desen için, \ 1, \ 2 ve \ 3'ün tarihin karşılık gelen bölümleriyle değiştirilmesi için alanda görünmesi gerekir.
+Bu nedenle, değiştirme alanındaki Normal ters bölüler iki katına çıkarılmalıdır, örneğin "a\b" yerine geçmesi için "a\\b" yazılmalıdır.
+</P>
 
-<A NAME="toc101"></A>
+<A NAME="InputGestures"></A>
 <H4>12.2.3. Girdi Hareketleri</H4>
 
 <P>
@@ -4366,6 +4378,15 @@ Fiziksel braille ekranlarında genellikle ileri veya geri kaydırma düğmeleri 
 Braille görüntüleyici penceresinde "Başlangıçta braille görüntüleyicisini göster" adlı  bir onay kutusu bulunur.
 Bu işaretliyse, NVDA başlatıldığında braille görüntüleyici açılacaktır.
 Braille görüntüleme penceresi her zaman kapatıldığı zamanki boyut ve konumlarla yeniden açılmaya çalışır.
+</P>
+<P>
+Braille görüntüleyici penceresi,  "Hücre yönlendirmesi için üzerine gelin"etiketli bir onay kutusu içerir, varsayılanı işaretli değildir.
+İşaretlenirse, fareyi bir braille hücresinin üzerine getirmek, o hücre için "Braille hücresine yönlendir" komutunu tetikleyecektir.
+Bu genellikle imleci hareket ettirmek veya bir kontrol için eylemi tetiklemek için kullanılır.
+Bu, NVDA'NIN Braille hücresinden a haritasını doğru bir şekilde tersine çevirebileceğini test etmek için yararlı olabilir.
+İstemeden hücrelere yönlendirmeyi önlemek için komut gecikir.
+Hücre yeşile dönene kadar fare üzerinde olmalıdır.
+Hücre açık sarı renkte başlar, turuncuya geçer, sonra aniden yeşile döner.
 </P>
 
 <A NAME="PythonConsole"></A>
@@ -5736,7 +5757,7 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 </TR>
 <TR>
 <TD>f3 key</TD>
-<TD>dot1+dot2+dot4+dot8</TD>
+<TD>dot1+dot4+dot8+space</TD>
 </TR>
 <TR>
 <TD>f4 key</TD>
@@ -7250,6 +7271,11 @@ Aşağıdakiler NVDA komut satırı seçenekleridir:
 <TD>None</TD>
 <TD>--enable-start-on-logon=True|False</TD>
 <TD>Yüklerken, NVDA'nın <A HREF="#StartAtWindowsLogon">oturum açma ekranında başlamasını</A> etkinleştirir</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD><S>copy-portable-config</TD>
+<TD>Yüklerken, taşınabilir yapılandırmayı sağlanan yoldan (</S>config-path,- c) geçerli kullanıcı hesabına kopyalar</TD>
 </TR>
 <TR>
 <TD>None</TD>
