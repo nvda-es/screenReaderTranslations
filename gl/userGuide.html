@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>Guía do Usuario do NVDA 2020.3-dev</TITLE>
+<TITLE>Guía do Usuario do NVDA 2020.4-dev</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>﻿Guía do Usuario do NVDA 2020.3-dev</H2>
+<H2>﻿Guía do Usuario do NVDA 2020.4-dev</H2>
 </CENTER>
 
 
@@ -2720,6 +2720,13 @@ Esta opción permíteche cambiar a velocidade da voz.
 Esta é unha barra de desprazamento que vai dende 0 ata 100, (sendo 0 a velocidade máis lenta e sendo 100 a máis rápida).
 </P>
 
+<A NAME="SpeechSettingsRateBoost"></A>
+<H5>Aumento da Velocidade</H5>
+
+<P>
+Habilitar esta opción aumentará significativamente a velocidade da voz se está admitida polo sintetizador actual.
+</P>
+
 <A NAME="SpeechSettingsPitch"></A>
 <H5>Ton</H5>
 
@@ -3015,20 +3022,20 @@ Esta opción permíteche escoller a forma (patrón de puntos) do cursor braille 
 O indicador de seleción non está afectado por esta opción, sempre son os puntos 7 e 8 sen palpebrar.
 </P>
 
+<A NAME="BrailleSettingsShowMessages"></A>
+<H5>Amosar Mensaxes</H5>
+
+<P>
+Este é unha caixa combinada que che permite selecionar se o NVDA debería amosar as mensaxes braille e cando deberían desaparecer automáticamente.
+</P>
+
 <A NAME="BrailleSettingsMessageTimeout"></A>
 <H5>Duración da Mensaxe (en seg)</H5>
 
 <P>
 Esta opción é un campo numérico que controla durante canto tempo se amosan as mensaxes do sistema na pantalla braille.
-Especifycando 0 deshabilítase o amosado destas mesaxes completamente.
 A mensaxe do NVDA péchase inmediatamente ao se premer un sensor na pantalla braille, pero aparece de novo ao se premer a correspondente tecla que o disparou.
-</P>
-
-<A NAME="BrailleSettingsNoMessageTimeout"></A>
-<H5>amosar Mensaxes Indefinidamente</H5>
-
-<P>
-Esta opción permite ás mensaxes do NVDA amosarse na pantalla braille indefinidamente.
+Esta opción só se amosa se se pon "Amosar Mensaxes" en "Usar Tempo de Espera".
 </P>
 
 <A NAME="BrailleTether"></A>
@@ -4074,6 +4081,10 @@ Podes eliminar un símbolo que engadiches anteriormente premendo o botón Elimin
 <P>
 Cando remates, preme o botón Aceptar para gardar os teus cambios ou o botón Cancelar para descartalos.
 </P>
+<P>
+No caso de símbolos comprexos, o campo Reemprazar pode ter que incluir algunhas referencias de grupo do texto coincidente. Por exemplo, para un patrón que coincida cunha data compreta, \1, \2, e \3 tería que aparecer no campo, para seren reemprazado polas partes correspondentes da data.
+Polo tanto, as barras inversas normais no campo Reemprazar deberían duplicarse, por exemplo, "a\\b" debería escribirse para obter o reemprazo "a\b".
+</P>
 
 <A NAME="InputGestures"></A>
 <H4>12.2.3. Xestos de Entrada</H4>
@@ -4365,6 +4376,15 @@ As pantallas braille físicas soen ter botóns para desprazarse cara adiante ou 
 A ventá do Visualizador Braille contén unha caixa de verificación etiquetada "Amosar Visualizador de Braille ao comezar".
 Se esta opción está marcada, o Visualizador Braille abrirase cando se inicie o NVDA.
 A ventá do Visualizador Braille sempre tentará voltar a abrirse coas mesmas dimensións e colocación que cando se pechou.
+</P>
+<P>
+A ventá do Visualizador Braille contén unha caixa de verificación etiquetada coma "Sobrevoar para enrutamento de celda", por omisión está desmarcada.
+Se se marca, pasar o rato sobre unha celda braille activará unha orde "enrutar a celda braille" para esa celda.
+De cotío úsase esto para mover o cursor ou activar a acción dun control.
+Esto pode ser útil para comprobar que o NVDA sexa capaz de revertir correctamente o mapa dunha celda braille.
+Para evitar o enrutamento involuntario ás celdas, a orde ten un retraso.
+O rato debe sobrevoar ata que a celda se volte verde.
+A celda comezará cunha cor marela crara, pasará a ser laranxa, e de repente convertirase en verde.
 </P>
 
 <A NAME="PythonConsole"></A>
@@ -5735,7 +5755,7 @@ Por favor consulta a documentación das pantallas para descripcións de onde pod
 </TR>
 <TR>
 <TD>tecla f3</TD>
-<TD>punto1+punto2+punto4+punto8</TD>
+<TD>punto1+punto2+punto4+punto8+espazo</TD>
 </TR>
 <TR>
 <TD>tecla f4</TD>
@@ -7247,6 +7267,11 @@ Seguidamente van as opcións de liña de ordes para o NVDA:
 <TD>None</TD>
 <TD>--enable-start-on-logon=True|False</TD>
 <TD>Ao instalar, habilita <A HREF="#StartAtWindowsLogon">arrancar na pantalla de inicio</A> do NVDA</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD><S>copy-portable-config</TD>
+<TD>Ao instalar, copia a configuración portable dende a ruta proporcionada (</S>config-path, -c) á actual conta de usuario</TD>
 </TR>
 <TR>
 <TD>None</TD>
