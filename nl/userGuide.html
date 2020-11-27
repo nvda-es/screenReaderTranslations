@@ -2723,7 +2723,14 @@ Bij gebruik van een synthesizer van derden, kunt u deze waarde wellicht ook aanp
 
 <P>
 Hiermee kunt u de spraaksnelheid instellen.
-De schuifregelaar gaat van 0 tot 100 (0 is de laagste en 100 de hoogste snelheid).
+tDe schuifregelaar gaat van 0 tot 100 (0 is de laagste en 100 de hoogste snelheid).
+</P>
+
+<A NAME="SpeechSettingsRateBoost"></A>
+<H5>Snelheid opvoeren</H5>
+
+<P>
+Met het activeren van deze optie verhoogt u de spreeksnelheid flink, op voorwaarde dat de gebruikte synthesizer hiervoor ondersteuning biedt.
 </P>
 
 <A NAME="SpeechSettingsPitch"></A>
@@ -2844,7 +2851,7 @@ In het algemeen is het aan te bevelen dit selectievakje aan te vinken. Er zijn e
 <H4>12.1.3. Synthesizer Selecteren (NVDA+control+s)</H4>
 
 <P>
-Via het dialoogvenster Synthesizer dat u kunt openen door de knop Verander te activeren in de categorie spraak van de dialoog Instellingen van NVDA kunt u selecteren welke Synthesizer NVDA moet gebruiken voor spraakuitvoer.
+Via het dialoogvenster Synthesizer dat u kunt openen door de knop Wijzigen te activeren in de categorie spraak van de dialoog Instellingen van NVDA kunt u selecteren welke Synthesizer NVDA moet gebruiken voor spraakuitvoer.
 Als u de synthesizer van uw keuze hebt geselecteerd, kunt u op Ok drukken en NVDA zal de geselecteerde Synthesizer laden.
 Als er een fout optreedt bij het laden van de synthesizer, zal NVDA dit melden en de vorige synthesizer blijven gebruiken.
 </P>
@@ -3018,20 +3025,22 @@ Met deze optie kunt u de vorm (puntenpatroon) van de braillecursor kiezen wannee
 Deze optie heeft geen invloedt op de selectie-indicator. Hierop is altijd punt 7 en punt 8 van toepassing en de indicator knippert niet.
 </P>
 
+<A NAME="BrailleSettingsShowMessages"></A>
+<H5>Meldingen tonen</H5>
+
+<P>
+Dit is een keuzelijst waarmee u kunt kiezen of NVDA braillemeldingen wel of niet moet tonen  en wanneer eventuele meldingen automatisch moeten verdwijnen.
+</P>
+
 <A NAME="BrailleSettingsMessageTimeout"></A>
 <H5>Time-out voor meldingen (sec.)</H5>
 
 <P>
 In het invoerveld kunt u een getal invoeren waarmee u bepaalt hoe lang NVDA-meldingen op de brailleleesregel worden weergegeven.
-Als u "0" als waarde invult, worden geen meldingen getoond.
-De melding van NVDA  verdwijnt onmiddellijk wanneer er een routing-toets op de brailleleesregel  wordt ingedrukt, maar verschijnt bij het indrukken van een corresponderende toets waarmee de melding wordt opgeroepen.
 </P>
-
-<A NAME="BrailleSettingsNoMessageTimeout"></A>
-<H5>Meldingen voor onbepaalde tijd tonen</H5>
-
 <P>
-Met deze optie kunnen NVDA-meldingen voor onbepaalde tijd op de brailleleesregel worden getoond.
+De melding van NVDA  verdwijnt onmiddellijk wanneer er een routing-toets op de brailleleesregel  wordt ingedrukt, maar verschijnt bij het indrukken van een corresponderende toets waarmee de melding wordt opgeroepen.
+Deze optie is alleen beschikbaar als Meldingen tonen" ingesteld is op 'timeout" gebruiken.
 </P>
 
 <A NAME="BrailleTether"></A>
@@ -4076,6 +4085,10 @@ U kunt een eerder ingevoerd symbool verwijderen door op de knop Verwijderen te d
 <P>
 Als u klaar bent, drukt u op Ok om de wijzigingen op te slaan of op Annuleren om deze niet door te voeren.
 </P>
+<P>
+In geval van complexe symbolen kan het nodig zijn in het veld 'Vervangen door' bepaalde samengestelde verwijzingen van de gematchte tekst op te nemen. Voor een patroon dat overeenkomt met een complete datum, bij voorbeeld, zou \1, \2, en \3 in het veld moeten komen te staan,  om er voor te zorgen dat een juiste vervanging door de corresponderende delen van de datum plaats vindt.
+In het veld 'Vervangen door' moeten normale (enkelvoudige) backslashes derhalve worden verdubbeld,u moet bijv.  "a\\b" typen om "a\b" als vervanging te krijgen.
+</P>
 
 <A NAME="InputGestures"></A>
 <H4>12.2.3. Invoerhandelingen</H4>
@@ -4368,6 +4381,15 @@ Fysieke brailleleesregels zijn uiteraard der zaak voorzien van knoppen om voorui
 In het braille weergavevenster treft u een selectievakje aan met het bijschrift 'braille viewer tonen bij start".
 Als dit vakje is aangevinkt, opent de braille viewer wanneer  NVDA wordt gestart.
 Het brailleweergavevenster zal in principe elke keer dat het wordt geopend dezelfde plaats en grootte hebben als toen het de laatste keer gesloten werd.
+</P>
+<P>
+Het brailleweergavevenster  heeft een selectievakje met als label cel-routing via muisbeweging". Als standaardinstelling geldt dat dit vakje niet is aangevinkt.
+Als het vakje is aangevinkt, zal het bewegen van de muis boven een braillecel ertoe leiden dat het commando "routeer naar braillecel" voor die cel wordt geactiveerd.
+Hier wordt vaak mee gewerkt om de muisaanwijzer te verplaatsen of om een besturingselement te activeren.
+Dit kan nuttig zijn om te testen of NVDA in staat is map a correct van braillecel terug te halen.
+Om te voorkomen dat onbedoeld naar cellen wordt gerouteerd wordt het commando met een vertraging uitgevoerd.
+Er moet met de muis bewogen worden tot dat deze groen kleurt.
+De cell begint lichgeel gekleurd, gaat over in oranje en wordt dan plotseling groen.
 </P>
 
 <A NAME="PythonConsole"></A>
@@ -5745,7 +5767,7 @@ Bij gebruik van deze leesregels met NVDA zijn de volgende toetscombinaties van t
 </TR>
 <TR>
 <TD>f3-toets</TD>
-<TD>punt1+plus2+punt4+punt8</TD>
+<TD>punt1+punt4+punt8+spatie</TD>
 </TR>
 <TR>
 <TD>f4toets</TD>
@@ -7265,6 +7287,11 @@ Hieronder volgen de commandoregelopties voor NVDA:
 <TD>Geen</TD>
 <TD>--enable-start-on-logon=True|False</TD>
 <TD>Bij het installeren NVDA <A HREF="#StartAtWindowsLogon"> gebruiken  voor aanmelding bij Windows</A></TD>
+</TR>
+<TR>
+<TD>Geen</TD>
+<TD><S>copy-portable-config</TD>
+<TD>Bij het installeren de portable configuratie vanaf het aangeboden pad (</S>config-path, -c) naar huidige gebruikersaccount kopiëren</TD>
 </TR>
 <TR>
 <TD>Geen</TD>
