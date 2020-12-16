@@ -2712,6 +2712,13 @@ Questa opzione permette di modificare la velocità della voce.
 Si tratta di un controllo che va da 0 a 100, (dove 0 indica il limite più lento e 100 il massimo della velocità).
 </P>
 
+<A NAME="SpeechSettingsRateBoost"></A>
+<H5>Aumento velocità</H5>
+
+<P>
+Abilitando questa opzione si aumenterà in modo significativo la velocità del parlato, se supportato dal sintetizzatore corrente.
+</P>
+
 <A NAME="VoiceSettingsPitch"></A>
 <H5>Tono</H5>
 
@@ -2999,12 +3006,11 @@ Questa opzione permette di selezionare la forma, in punti braille, del cursore b
 L'indicatore della selezione non è affetto da questa funzione.
 </P>
 
-<A NAME="BrailleSettingsCursorShapeForReview"></A>
-<H5>Forma del cursore di controllo</H5>
+<A NAME="BrailleSettingsShowMessages"></A>
+<H5>Mostra Messaggi</H5>
 
 <P>
-Questa opzione permette di selezionare la forma, in punti braille, del cursore braille quando il braille segue il cursore di controllo.
-L'indicatore della selezione non è affetto da questa funzione.
+Si tratta di una casella combinata che stabilisce se NVDA debba visualizzare o meno messaggi in braille e la loro durata in secondi sul display, prima che essi scompaiano automaticamente.
 </P>
 
 <A NAME="BrailleSettingsMessageTimeout"></A>
@@ -3012,15 +3018,16 @@ L'indicatore della selezione non è affetto da questa funzione.
 
 <P>
 Si tratta di un campo numerico che controlla per quanto tempo i messaggi di NVDA saranno mostrati sul Display Braille.
-Il valore 0 farà in modo che non verrà visualizzato più alcun messaggio.
 Il messaggio sparirà immediatamente non appena si preme un cursor routing sulla barra braille, ma lo si potrà rileggere se si preme una combinazione di tasti che attivano il messaggio.
+L'opzione è visibile soltanto se "mostra messaggi" è impostato su "usa timeout".
 </P>
 
-<A NAME="BrailleSettingsNoMessageTimeout"></A>
-<H5>Mostra messaggi a tempo indeterminato</H5>
+<A NAME="BrailleSettingsCursorShapeForReview"></A>
+<H5>Forma del cursore di controllo</H5>
 
 <P>
-Questa funzione fa in modo che NVDA mostri i messaggi sul display braille a tempo indeterminato.
+Questa opzione permette di selezionare la forma, in punti braille, del cursore braille quando il braille segue il cursore di controllo.
+L'indicatore della selezione non è affetto da questa funzione.
 </P>
 
 <A NAME="BrailleTether"></A>
@@ -3945,7 +3952,7 @@ In ambienti non sicuri, è preferibile disattivare temporaneamente <A HREF="#Key
 
 <P>
 Questa funzione cerca di inibire la lettura di informazioni obsolete che riguardano il focus di sistema.
-In particolare, lo spostamento rapido tra i messaggi in Gmail mentre si utilizza Chrome rischia di far leggere a NVDa informazioni non più accurate. Questa opzione cerca di risolvere il problema.
+In particolare, lo spostamento rapido tra i messaggi in Gmail mentre si utilizza Chrome rischia di far leggere a NVDA informazioni non più accurate. Questa opzione cerca di risolvere il problema.
 Questa funzionalità è sperimentale a partire da NVDA 2020.2.
 </P>
 
@@ -4063,6 +4070,10 @@ Sarà sempre possibile eliminare un simbolo aggiunto in precedenza tramite il pu
 </P>
 <P>
 Una volta terminate le modifiche, premere il pulsante OK per salvare i cambiamenti oppure il bottone Annulla per annullare l'operazione.
+</P>
+<P>
+Nel caso di simboli complessi, il campo voce in sostituzione potrebbe dover includere alcuni riferimenti al testo corrspondente. Per esempio, per uno schema che comprende una data intera, \1, \2, e \3 dovrebbero apparire nel campo, per essere sostituiti dalle parti corrispondenti della data.
+I normali simboli di backslash nel campo voce in sostituzione devono quindi essere raddoppiati, ad esempio bisogna digitare "a\\b" in modo da ottenere "a\b".
 </P>
 
 <A NAME="InputGestures"></A>
@@ -4344,7 +4355,7 @@ Quando questa caratteristica è attiva, il contenuto della finestra si aggiorner
 </P>
 <P>
 Per abilitare il visualizzatore braille, attivare la voce apposita che si trova nel menu strumenti di NVDA.
-Disabilitare la voce di menu per disattivare il visualizzatore braille.
+Deselezionare la voce di menu per disattivare il visualizzatore braille.
 </P>
 <P>
 I display Braille fisici in genere sono provvisti di pulsanti per scorrere avanti o indietro; per abilitare lo scorrimento con il visualizzatore Braille, utilizzare la finestra di dialogo <A HREF="#InputGestures">Gesti e tasti di immissione</A> per assegnare le scorciatoie da tastiera appropriate alle funzioni "Scorre display braille indietro" e "Scorre display braille avanti".
@@ -4353,6 +4364,15 @@ I display Braille fisici in genere sono provvisti di pulsanti per scorrere avant
 La finestra visualizzatore braille contiene una casella di controllo chiamata "Mostra visualizzatore braille all'avvio".
 Se tale casella è selezionata,  il visualizzatore braille si caricherà all'avvio di NVDA.
 La finestra cercherà sempre di riaprirsi con le stesse dimensioni e posizione di quando è stata chiusa in precedenza.
+</P>
+<P>
+Un'altra casella di controllo presente all'interno della finestra è chiamata "il passaggio del mouse attiva i cursor routing"
+Se selezionata, basterà posizionare il mouse su di una cella per simulare la pressione del cursor routing di quella cella sulla barra braille.
+Ciò viene spesso usato per spostare il cursore o attivare l'azione per un controllo.
+Questo può essere utile per testare che NVDA sia in grado di invertire correttamente la mappatura a da una cella braille.
+Per impedire che il comando venga eseguito involontariamente, esso viene ritardato.
+Il mouse deve rimanere fermo finché la cella non diventa verde.
+La cella avrà dapprima un colore tendente al  giallo chiaro, effettuerà una transizione all'arancio, per poi  diventare improvvisamente verde.
 </P>
 
 <A NAME="PythonConsole"></A>
@@ -5679,7 +5699,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 <TR>
 <TD>tasto f3</TD>
-<TD>punto1+punto2+punto4+punto8</TD>
+<TD>punto1+punto4+punto8+spazio</TD>
 </TR>
 <TR>
 <TD>tasto f4</TD>
@@ -7189,6 +7209,11 @@ Ecco l'elenco dei parametri a riga di comando di NVDA:
 <TD>None</TD>
 <TD>--enable-start-on-logon=True|False</TD>
 <TD>Durante l'installazione, abilita <A HREF="#StartAtWindowsLogon">l'avvio di NVDA alla schermata di logon</A></TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD><S>copy-portable-config</TD>
+<TD>Durante l'installazione, copia la configurazione portable dal percorso specificato (</S>config-path, -c) all'account utente corrente</TD>
 </TR>
 <TR>
 <TD>None</TD>
