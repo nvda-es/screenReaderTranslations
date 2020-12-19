@@ -155,7 +155,7 @@
       <UL>
       <LI><A HREF="#SpeechDictionaries">12.2.1. Govorni rječnici</A>
       <LI><A HREF="#SymbolPronunciation">12.2.2. Izgovor simbola interpunkcije</A>
-      <LI><A HREF="#toc101">12.2.3. Ulazne geste</A>
+      <LI><A HREF="#InputGestures">12.2.3. Ulazne geste</A>
       </UL>
     <LI><A HREF="#SavingAndReloading">12.3. Spremanje i vraćanje konfiguracije</A>
     <LI><A HREF="#ConfigurationProfiles">12.4. Konfiguracijski profili</A>
@@ -2724,10 +2724,10 @@ Ovaj klizač ima vrijednosti od 0 do 100 (0 je najsporije, 100 je najbrže).
 </P>
 
 <A NAME="SpeechSettingsRateBoost"></A>
-<H5>Rate boost</H5>
+<H5>Pojačanje brzine</H5>
 
 <P>
-Enabling this option will significantly increase the speech rate, if supported by the current synthesizer.
+Ako uključite ovu opciju, brzina će se značajno povećati ako to podržava trenutna govorna jedinica.
 </P>
 
 <A NAME="SpeechSettingsPitch"></A>
@@ -3025,20 +3025,20 @@ Ova opcija omogućuje biranje oblika (kombinacije točkica) brajičnog kursora, 
 Ova opcija ne utječe na indikator odabira, to su uvijek točkice 7 i 8 bez titranja.
 </P>
 
+<A NAME="BrailleSettingsShowMessages"></A>
+<H5>Prikazuj poruke</H5>
+
+<P>
+Ovo je odabirni okvir koji vam omogućuje odabir toga kako će se prikazivati poruke na brajičnom retku te kada te poruke trebaju nestati.
+</P>
+
 <A NAME="BrailleSettingsMessageTimeout"></A>
 <H5>Trajanje poruke (u sekundama)</H5>
 
 <P>
 Ova opcija je numeričko polje, kojim se određuje trajanje prikazivanja NVDA poruka na brajičnom retku.
-Upisom vrijednosti 0, ove poruke se uopće neće prikazivati na brajičnom retku.
 Poruka odmah nestaje prilikom pritiska routing tipke na brajičnom retku, ali se ponovno pojavljuje prilikom pritiska tipke koja ju okida.
-</P>
-
-<A NAME="BrailleSettingsNoMessageTimeout"></A>
-<H5>Prikaži poruke neograničeno dugo</H5>
-
-<P>
-Ova opcija omogućuje neograničeno trajanje prikazivanja poruka na brajičnom retku.
+Ova se poruka prikazuje samo ako je  opcija "prikazuj poruke" podešena da "koristi stanku".
 </P>
 
 <A NAME="BrailleTether"></A>
@@ -3974,7 +3974,7 @@ Ova je funkcija eksperimentalna od  NVDA verzije 2020.2.
 
 <P>
 Ova opcija omogućuje povećanje ogranićenja čekanja, u kojem NVDA čeka da se pojavi pokazivač u polju za uređivanje.
-Ako mislite da je NVDA uvijek kasni jedan znak iza ili ponavlja retke, tada biste trebali povećati ovu vrijednost.
+Ako mislite da NVDA uvijek kasni jedan znak iza ili ponavlja retke, tada biste trebali povećati ovu vrijednost.
 </P>
 
 <A NAME="AdvancedSettingsDebugLoggingCategories"></A>
@@ -3982,7 +3982,7 @@ Ako mislite da je NVDA uvijek kasni jedan znak iza ili ponavlja retke, tada bist
 
 <P>
 Potvrdni okviri u ovoj kategoriji omogućuju dodavanje kategorija debugiranja u zapisnik.
-Zapisivanje ovih poruka može prouzročiti pad performansi, te velike datoteke zapisnika.
+Zapisivanje ovih poruka može prouzročiti pad performansi i velike datoteke zapisnika.
 Uključite iste samo ako vas je na to naveo Programer NVDA razvojnog tima, u slučaju da, na primjer, ne radi brajični redak.
 </P>
 
@@ -4084,8 +4084,12 @@ Možete ukloniti simbol kojeg ste prije dodali kad pritisnete gumb ukloni.
 <P>
 Kad završite, pritisnite gumb u redu da biste spremili vaše promjene ili gumb odustani da bi ste ih poništili.
 </P>
+<P>
+U slučaju kompleksnih simbola, polje zamjene bi trebalo sadržavati neke grupne reference teksta koji se poklapa. Na primjer, za uzorak koji se poklapa sa cijelim datumom, \1, \2, i \3 trebalo bi se pokazati u polju, te bi trebalo biti zamjeno sa određenim dijelovima datuma.
+Obične obrnute kose crte trebale bi biti duplicirane, npr. "a\\b" treba biti upisano kako biste dobili "a\b" zamjenu.
+</P>
 
-<A NAME="toc101"></A>
+<A NAME="InputGestures"></A>
 <H4>12.2.3. Ulazne geste</H4>
 
 <P>
