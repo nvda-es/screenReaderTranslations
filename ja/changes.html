@@ -10,6 +10,101 @@
 </CENTER>
 
 
+<H2>2020.4</H2>
+
+<P>
+このリリースでは、新しい中国語入力メソッドへの対応や点訳エンジン Liblouis の更新などが行われました。また要素リスト(NVDA+f7)がフォーカスモードで動作するようになりました。
+NVDA ダイアログで F1 キーを押したときに、コンテキスト依存のヘルプが利用できるようになりました。
+句読点/記号読み辞書、読み上げ辞書、点字メッセージ、流し読みなどの機能が改良されました。
+Mail, Outlook, Teams, Visual Studio, Azure Data Studio, Foobar2000 などへの対応でバグ修正や改良が行われました。
+Google Docs への対応、 ARIA 対応など、Web 関連の改良もあります。
+その他、多くの重要なバグ修正と改善が行われました。
+</P>
+
+<H3>新機能</H3>
+
+<UL>
+<LI>NVDAダイアログにおいてF1キーを押すと、ヘルプファイルの関連するセクションを表示するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7757">#7757</A>)
+<LI>Microsoft SQL Server Management Studio と Visual Studio 2017 およびそれ以降において、自動入力候補(オートコンプリート, IntelliSense) に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7504">#7504</A>)
+<LI>記号読み上げ辞書: 複雑な記号定義においてグループ化が利用できます。この場合「読み方」でグループ参照を記述できます。これにより記号読み上げ辞書がよりシンプルで強力なものになります。 (<A HREF="https://github.com/nvaccess/nvda/issues/11107">#11107</A>)
+<LI>読み上げ辞書で正規表現に誤りがある場合に報告されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11407">#11407</A>)
+  <UL>
+  <LI>具体的にはグループ化のエラーが検出されるようになりました。
+  </UL>
+<LI>Windows 10 の新しい中国語繁体字クイック入力とピンイン入力に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11562">#11562</A>)
+<LI>1文字ナビゲーションでタブヘッダーがフォームフィールドとみなされる（Fキーでジャンプできる）ようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10432">#10432</A>)
+<LI>マークされた(ハイライトされた)テキストの報告を切り替えるコマンドを追加しました。(<A HREF="https://github.com/nvaccess/nvda/issues/11807">#11807</A>)
+<LI>NVDAをサイレントインストールする場合に、事前に用意した設定フォルダーを現在のユーザーアカウントに自動的にコピーできるようになりました。インストーラーのコマンドライン引数 `--copy-portable-config` を使用します。 (<A HREF="https://github.com/nvaccess/nvda/issues/9676">#9676</A>)
+<LI>点字ビューアーでマウスカーソルを使って点字セルのタッチカーソルを操作できるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/11804">#11804</A>)
+<LI>NVDA が USB と Bluetooth の両方で点字ディスプレイ Humanware Brailliant BI 40Xと20Xのデバイスを自動検出するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11819">#11819</A>)
+</UL>
+
+<H3>変更点</H3>
+
+<UL>
+<LI>liblouis 点訳エンジンをバージョン 3.16.1 に更新しました:
+ <UL>
+ <LI>複数の不具合に対応しました
+ <LI>バシキール語1級点字を追加しました
+ <LI>コプト語8点コンピューター点字を追加しました
+ <LI>ロシア文学点字とロシア文学点字（詳細）を追加しました
+ <LI>ロシア語1級点字を削除しました
+ </UL>
+<LI>ブラウズモードで流し読みを許可する設定で「すべて読み上げ」を使用した場合に、「次を検索」「前を検索」を操作してもジャンプした場所から読み上げを続けるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11563">#11563</A>)
+<LI>HIMS 点字ディスプレイにおいて F3 キーの割り当てを「1の点+4の点+8の点+スペース」に変更しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11710">#11710</A>)
+<LI>点字の「メッセージの表示」「メッセージの表示終了待ち時間」の設定方法を改善しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11602">#11602</A>)
+<LI>Webブラウザーなどのブラウズモードをサポートするアプリで、フォーカスモードのときに要素リスト(NVDA+F7)を使用できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10453">#10453</A>)
+<LI>動的コンテンツの変化を報告しない場合に、ARIA ライブリージョンの更新の報告を行わないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9077">#9077</A>)
+<LI>NVDA+F10 を2回押した場合など NVDA が「クリップボードにコピーしました」と報告するときに、コピーしたテキストをメッセージの前ではなくメッセージの後に報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/6757">#6757</A>)
+<LI>Windows の「ディスクの管理」でのグラフィカルなテーブルへの対応を改善しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10048">#10048</A>)
+<LI>NVDA のウィンドウでコントロールが無効の場合に、そのコントロールのラベルも無効になる（グレーアウトする）ようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11809">#11809</A>)
+<LI>CLDRの絵文字アノテーションをバージョン38に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11817">#11817</A>)
+<LI>NVDA 内蔵の「フォーカスハイライト」機能の名前を「ビジュアルハイライト」に変更しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11700">#11700</A>)
+</UL>
+
+<H3>バグ修正</H3>
+
+<UL>
+<LI>Fast Log Entry アプリにおいて、エディットフィールドで NVDA が正しく動作しなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8996">#8996</A>)
+<LI>Foobar2000 において、合計時間がない（例えばライブストリームを再生している）場合に、経過時間を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11337">#11337</A>)
+<LI>Webページの編集可能なコンテンツで、要素の aria-roledescription 属性を NVDA が使用するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11607">#11607</A>)
+<LI>Google Docs や Google Chrome で編集可能なコンテンツにおいて、リストの行ごとに「リスト」と報告していた不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7562">#7562</A>)
+<LI>Web上の編集可能なコンテンツで、あるリスト項目から別のリスト項目へ、矢印キーで文字単位または単語単位の移動を行うときに、新しいリスト項目に移動したことが報告されるようになりました。  (<A HREF="https://github.com/nvaccess/nvda/issues/11569">#11569</A>)
+<LI>Google DocsなどのWeb上の編集可能なコンテンツにおいて、リスト項目の最後にあるリンクの末尾にテキストカーソルがある場合に、行の読み上げを正しく行うようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11606">#11606</A>)
+<LI>Windows 7 において、デスクトップからスタートメニューを開いたり閉じたりした場合に、フォーカスが正しく設定されるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/10567">#10567</A>)
+<LI>「失効したフォーカス イベントの読み上げを停止」が有効な場合に、Firefoxでタブを切り替えた際にタブのタイトルが報告されなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11397">#11397</A>)
+<LI>NVDA で SAPI5 Ivona 音声を使う場合に、リストの中で文字を入力した後にリストの項目の報告ができなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11651">#11651</A>)
+<LI>Windows 10 Mail 16005.13110 以降でメールを読むときにブラウズモードが使えなかった不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/11439">#11439</A>)
+<LI>harposoftware.com の SAPI5 Ivona 音声を使う場合に、NVDAの設定の保存、音声エンジンの切り替え、再起動などで起きていた不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11650">#11650</A>)
+<LI>HIMS点字ディスプレイの点字キーボードからコンピューター点字で数字の6を入力できなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11710">#11710</A>)
+<LI>Azure Data Studio 対応において性能を大幅に改善しました。(<A HREF="https://github.com/nvaccess/nvda/issues/11533">#11533</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11715">#11715</A>)
+<LI>「失効したフォーカス イベントの読み上げを停止」が有効な場合に、NVDA の検索ダイアログのタイトルが報告されなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11632">#11632</A>)
+<LI>PC を起動した直後に Microsoft Edge にフォーカスが移動すると NVDA がフリーズしていた不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/11576">#11576</A>)
+<LI>Microsoft Edge でコンテクストメニューを閉じたあとでブラウズモードが使えなくなり、Tab キーを押してフォーカスを移動するなどして回避する必要があった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11202">#11202</A>)
+<LI>NVDA が Tortoise SVN などの 64 ビットアプリ内のリストビューの項目を読み上げできなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8175">#8175</A>)
+<LI>Firefox および Chrome のブラウズモードにおいて、ARIA ツリーグリッドが通常のテーブルのように扱われるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9715">#9715</A>)
+<LI>NVDA+Shift+F3 の「前を検索」で前方に向かう検索を開始できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11770">#11770</A>)
+<LI>NVDA スクリプトが2回実行される間に関連のないキーが押された場合には、同じコマンドを繰り返したものとして扱わないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11388">#11388</A>) 
+<LI>NVDA の「書式とドキュメント情報」の設定で「強調の報告」をオフにしても Internet Explorer の strong タグや em タグが報告されていた不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11808">#11808</A>)
+<LI>Excel で矢印キーを使ってセルを移動するときに、数秒間のフリーズが発生することがあった不具合を修正しました。(<A HREF="https://github.com/nvaccess/nvda/issues/11818">#11818</A>)
+<LI>Microsoft Teams バージョン 1.3.00.28xxx において、NVDA が不適切にメニューにフォーカスを移動してしまい、チャットやTeamsチャンネルのメッセージを読み取れなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11821">#11821</A>)
+<LI>Google Chrome において、スペルミスと文法ミスの両方が同時にマークされたテキストを NVDA が適切に報告するようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/11787">#11787</A>)
+<LI>Outlook をフランス語環境で使用している場合に「すべてに返信」のショートカット(Ctrl+Shift+R)が使用できなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11196">#11196</A>)
+<LI>Visual Studio において、現在選択されている IntelliSense 項目に追加の詳細を提供する IntelliSense ツールのヒントの報告が1回だけ行われるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11611">#11611</A>)
+<LI>Windows 10 電卓において、NVDAの「入力文字の読み上げ」が無効の場合に、計算の進捗を報告できなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9428">#9428</A>)
+<LI>アメリカ英語2級点字とコンピューター点字(NABCC)を使用している場合に、点字ディスプレイにURLのような特定の文字列が表示されるとNVDAがクラッシュしていた不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11754">#11754</A>)
+<LI>Excel においてフォーカスされたセルの書式情報を NVDA+F で報告できなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11914">#11914</A>)
+</UL>
+
+<H3>開発者向けの変更</H3>
+
+<UL>
+<LI>システムテストにおいて spy.emulateKeyPress を使用してキーイベントを送信できるようになりました。これはNVDA独自のキー名に準拠したキー識別子を受け取ります。また、デフォルトではアクションが実行されるまで処理はブロックされます。 (<A HREF="https://github.com/nvaccess/nvda/issues/11581">#11581</A>)
+<LI>カレントディレクトリがNVDAアプリのディレクトリでなくてもNVDAが動作するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/6491">#6491</A>)
+<LI>NVDAオブジェクトの liveRegionPoliteness プロパティを使用してライブリージョンの aria live politeness 設定を確認できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11596">#11596</A>)
+<LI>Outlook ドキュメントとWord ドキュメントで別々のジェスチャーを定義できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11196">#11196</A>)
+</UL>
+
 <H2>2020.3</H2>
 
 <P>
