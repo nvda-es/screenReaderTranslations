@@ -1,0 +1,11 @@
+commit 3f1e47e0cbf1fd8641fe65bd4fcb8c2aac87d08f
+Author: Michael Curran <michaelDCurran@users.noreply.github.com>
+Date:   Tue Dec 22 14:52:33 2020 +1000
+
+    Fix QWERTY input - Papenmeier braille displays (PR #11944)
+    
+    * keyboardHandler.injectRawKeyboardInput:
+    Previously, NVDA would send the input manually to its keyboard input hook, and then if the hook didn't handle the input, calling keybd_event. This now avoids assumptions about how NVDA's input hook worked, which are no longer true since #11478 and #11597 were merged.
+    
+    * Papenmeier braille driver:
+    More gesture bindings and fix detection of keyboard input.
