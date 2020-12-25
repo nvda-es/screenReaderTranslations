@@ -1,79 +1,81 @@
-What's New in NVDA
+NVDA'daki Yenilikler
 
 
 %!includeconf: ../changes.t2tconf
 
 = 2020.4 =
-This release includes new Chinese Input methods, an update to Liblouis and the elements list (NVDA+f7) now works in focus mode.
-Context sensitive help is now available when pressing F1 in NVDA dialogs.
-Improvements to symbol pronunciation rules, speech dictionary, Braille message and skim reading.
-Bug fixes and improvements to Mail, Outlook, Teams, Visual Studio, Azure Data Studio, Foobar2000.
-On the web, there are improvements to Google Docs, and greater support for ARIA.
-Plus many other important bug fixes and improvements.
+Bu sürüm, yeni Çince Giris yöntemlerini, Liblouis güncellemesini ve artik odak modunda da çalisan ögeler listesi (NVDA + f7) gibi yenilikler içeriyor.
+Baglama duyarli yardim artik NVDA iletisim kutularinda F1'e basildiginda kullanilabiliyor.
+Sembol telaffuz kurallari, konusma sözlügü, braille mesajlari ve tümünü okurken atlayarak okumada iyilestirmeler.
+Mail, Outlook, Teams, Visual Studio, Azure Data Studio, Foobar2000 için hata düzeltmeleri ve iyilestirmeler.
+Web'de Google Dokümanlar için iyilestirmeler ve ARIA için daha fazla destek var.
+Ayrica diger birçok önemli hata düzeltmesi ve iyilestirme.
 
-== New Features ==
-- Pressing F1 inside NVDA dialogs will now open the help file to most relevant section. (#7757)
-- Support for auto complete suggestions (IntelliSense) in Microsoft SQL Server Management Studio plus Visual Studio 2017 and higher. (#7504)
-- Symbol pronunciation: Support for grouping in a complex symbol definition and support group references in a replacement rule making them simpler and more powerful. (#11107)
-- Users are now notified when attempting to create Speech Dictionary entries with invalid regular expression substitutions. (#11407)
-  - Specifically grouping errors are now detected.
-- Added support for the new chinese Traditional Quick and Pinyin Input methods in Windows 10. (#11562)
-- Tab headers are now considered form fields with quick navigation f key. (#10432)
-- Added a command to toggle reporting of marked (highlighted) text; There is no default associated gesture. (#11807)
-- Added the --copy-portable-config command line parameter that allows you to automatically copy the provided configuration to the user account when silently installing NVDA. (#9676)
-- Braille routing is now supported with the Braille Viewer for mouse users, hover to route to a braille cell. (#11804)
-- NVDA will now automatically detect the Humanware Brailliant BI 40X and 20X devices via both USB and Bluetooth. (#11819)
-
-
-== Changes ==
-- Updated liblouis braille translator to version 3.16.1:
- - Addresses multiple crashes
- - Adds Bashkir grade 1 Braille table
- - adds Coptic 8 dot computer braille table
- - Adds Russian literary braille and Russian literary braille (detailed) tables.
- - Removes the Russian grade 1 Braille table
-- When reading with say all in browse mode, the find next and find previous commands do not stop reading anymore if Allow skim reading option is enabled; say all rather resumes from after the next or previous found term. (#11563)
-- For HIMS braille displays F3 has been remapped to Space + dots 148. (#11710)
-- Improvements to the UX of the "braille message timeout" and "Show messages indefinitely" options. (#11602)
-- In web browsers and other applications that support browse mode, the Elements List dialog (NVDA+F7) can now be invoked when in focus mode. (#10453)
-- Updates to ARIA live regions are now suppressed when reporting of dynamic content changes is disabled. (#9077)
-- NVDA will now report "Copied to clipboard" before the copied text. (#6757)
-- Presentation of graphical view table in disk management has been improved. (#10048)
-- Labels for controls are now disabled (greyed out) when the control is disabled. (#11809)
-- Updated CLDR emoji annotation to version 38. (#11817)
-- The inbuilt "Focus Highlight" feature has been renamed "Vision Highlight". (#11700)
+== Yeni özellikler ==
+- NVDA iletisim kutularinda F1'e basmak artik yardim dosyasinda en alakali bölümü açiyor. (#7757)
+- Microsoft SQL Server Management Studio ve Visual Studio 2017 ve sonraki sürümlerinde otomatik tamamlama önerileri (IntelliSense) destegi. (#7504)
+- Sembol telaffuzu: Karmasik bir sembol taniminda gruplama destegi ve bir degistirme kuralinda grup referanslarini destekleyerek onlari daha basit ve daha güçlü hale getiriyor. (#11107)
+- Artik geçersiz düzenli ifade ((regular expression) ikamelerine sahip Konusma Sözlügü girisleri olusturmaya çalisirken kullanicilar bilgilendiriliyor. (#11407)
+  - Özellikle gruplama hatalari tespit ediliyor.
+- Windows 10'da yeni Çince Geleneksel Hizli ve Pinyin Giris yöntemleri için destek eklendi. (#11562)
+- Sekme basliklari artik f tusu ile hizli gezinilebilen form alanlari olarak kabul ediliyor. (#10432)
+- Isaretli (vurgulanan) metnin raporlamasini degistirmek için bir komut eklendi; Varsayilan olarak iliskilendirilmis bir hareket yok. (#11807)
+- NVDA'yi sessizce kurarken, saglanan yapilandirmayi kullanici hesabina otomatik olarak kopyalamaniza izin veren --copy-portable-config komut satiri parametresi eklendi. (#9676)
+- Braille yönlendirme artik fare kullanicilari için Braille Görüntüleyici ile destekleniyor, fareyle bir braille hücresine yönlendirebilirsiniz. (#11804)
+- NVDA artik Humanware Brailliant BI 40X ve 20X cihazlarini hem USB hem de Bluetooth araciligiyla otomatik olarak algilayacaktir. (#11819)
 
 
-== Bug Fixes ==
-- NVDA once again works correctly with edit fields when using the Fast Log Entry application. (#8996)
-- Report elapsed time in Foobar2000 if no total time is available (e.g. when playing a live stream). (#11337)
-- NVDA now honors the aria-roledescription attribute on elements in editable content in web pages. (#11607)
-- 'list' is no longer announced on every line of a list in Google Docs or other editable content in Google Chrome. (#7562)
-- When arrowing by character or word from one list item to another in editable content on the web, entering the new list item is now announced. (#11569)
-- NVDA now reads the correct line when the caret is placed at the end of a link on the end of a list item in Google Docs or other editable content on the web. (#11606)
-- On Windows 7, opening and closing the start menu from the desktop now sets focus correctly. (#10567)
-- When "attempt to cancel expired focus events" is enabled, the title of the tab is now announced again when switching tabs in Firefox. (#11397)
-- NVDA no longer fails to announce a list item after typing a character in a list when speaking with the SAPI5 Ivona voices. (#11651)
-- It is again possible to use browse mode when reading emails in Windows 10 Mail 16005.13110 and later. (#11439)
-- When using the SAPI5 Ivona voices from harposoftware.com, NVDA is now able to save configuration, switch synthesizers, and no longer will stay silent after restarting. (#11650)
-- It is now possible to enter number 6 in computer braille from a braille keyboard on HIMS displays. (#11710)
-- Major performance improvements in Azure Data Studio. (#11533, #11715)
-- With "Attempt to Cancel speech for expired focus events" enabled the title of the NVDA Find dialog is announced again. (#11632)
-- NVDA should no longer freeze when waking the computer and focus lands in a Microsoft Edge document. (#11576)
-- It is no longer necessary to press tab or move focus after closing a context menu in MS Edge for browse mode to be functional again. (#11202)
-- NVDA no longer fails to read items in list views within a 64-bit application such as Tortoise SVN. (#8175)
-- ARIA treegrids are now exposed as normal tables in browse mode in both Firefox and Chrome. (#9715)
-- A reverse search can now be initiated with 'find previous' via NVDA+shift+F3 (#11770)
-- An NVDA script is no longer treated as being repeated if an unrelated key press happens in between the two executions of the script. (#11388) 
-- Strong and emphasis tags in Internet Explorer can again be suppressed from being reported by returning off Report Emphasis in NVDA's Document Formatting settings. (#11808)
-- A freeze of several seconds experienced by a small amount of users when arrowing between cells in Excel should no longer occur. (#11818)
-- In Microsoft Teams builds with version numbers like 1.3.00.28xxx, NVDA no longer fails reading messages in chats or Teams channels due to an incorrectly focused menu. (#11821)
-- Text marked both as being a spelling and grammar error at the same time in Google Chrome will be appropriately announced as both a spelling and grammar error by NVDA. (#11787)
-- When using Outlook (French locale), the shortcut for 'Reply all' (control+shift+R) works again. (#11196)
-- In Visual Studio, IntelliSense tool tips that provide additional details about the currently selected IntelliSense item are now only reported once. (#11611)
-- In Windows 10 Calculator, NVDA will not announce progress of calculations if speak typed characters is disabled. (#9428)
-- NVDA no longer crashes when using English US grade 2 and expand to computer Braille at the cursor is on, when displaying certain content such as a URL in Braille. (#11754)
-- It is again possible to report formatting information for the focused Excel cell using NVDA+F. (#11914)
+== Degisiklikler ==
+- Liblouis braille çevirmeni 3.16.1 sürümüne güncellendi:
+ - Birden çok çökme sorununu  gideriyor
+ - Baskurt 1. derece Braille tablosu eklendi
+ - Coptic 8 noktali bilgisayar braille tablosu eklendi
+ - Rus edebi braille ve Rus edebi braille (ayrintili) tablolari eklendi
+ - Afrikaca 2. derece braille tablosu eklendi
+ - Rus 1. derece Braille tablosu kaldirildi
+- Tarama kipinde tümünü oku  ile okurken, sonrakini bul ve öncekini bul komutlari, okumayi durdurmaz, tümünü okurken atlamaya izin ver seçenegi isaretlenmisse artik    okuma sonraki veya önceki bulunan terimden sonra devam eder. (#11563)
+- HIMS braille ekranlari için F3, Bosluk + nokta 148 olarak yeniden degistirildi. (#11710)
+- "Braille mesaj zaman asimi" ve "Mesajlari süresiz göster" seçeneklerinin kullanici deneyimi iyilestirmeleri. (#11602)
+- Web tarayicilari ve tarama kipini destekleyen diger uygulamalar için Öge Listesi iletisim kutusu (NVDA + F7) artik odak kipindeyken de kullanilabilir. (#10453)
+- ARIA canli bölgelerinde yapilan güncellemeler artik dinamik içerik degisikliklerinin raporlanmasi devre disi birakildiginda engelleniyor. (#9077)
+- NVDA artik kopyalanan metinden önce "Panoya kopyalandi" ifadesini söylüyor. (#6757)
+- Disk yönetiminde grafiksel görünüm tablosunun sunumu iyilestirildi. (#10048)
+- Kontrol devre disi birakildiginda, kontrol etiketleri artik devre disi birakilir (grilesir). (#11809)
+- CLDR emoji notu sürüm 38'e güncellendi. (#11817)
+- Dahili "Odak Vurgulamasi" özelligi "görsel vurgu" olarak yeniden adlandirildi. (#11700)
+
+
+== Hata düzeltmeleri ==
+- NVDA, Hizli Günlük Girisi uygulamasini kullanirken düzenleme alanlariyla artik dogru sekilde çalisiyor. (#8996)
+- Toplam süre yoksa (ör. Canli yayin oynatirken) Foobar2000'de geçen süreyi  dogru olarak bildiriyor. (#11337)
+- NVDA artik web sayfalarindaki düzenlenebilir içerikteki ögelerde aria-roledescription özelligini kapsiyor. (#11607)
+- "liste" artik Google Dokümanlar'daki bir listenin her satirinda veya Google Chrome'daki diger düzenlenebilir içerikte duyurulmuyor. (#7562)
+- Web'deki düzenlenebilir içerikte bir liste ögesinden digerine karakter veya kelime bazinda navigasyon yaparken, yeni liste ögesine gelindigi  artik bildiriliyor. (#11569)
+- NVDA artik, düzenleme imleci Google Dokümanlar'daki bir liste ögesinin veya web üzerindeki diger düzenlenebilir içerigin sonundaki bir baglantinin sonuna yerlestirildiginde dogru satiri okuyor. (#11606)
+- Windows 7'de, masaüstünden baslat menüsünü açip kapatmak artik odagi dogru sekilde ayarliyor. (#10567)
+- "Süresi dolan odak olaylarini iptal etme girisimi" etkinlestirildiginde, sekme basligi artik Firefox'ta sekmeler arasinda geçis yapilirken tekrar duyuruluyor. (#11397)
+- NVDA, SAPI5 Ivona sesleriyle konusurken bir listeye bir karakter yazdiktan sonra bir liste ögesini artik okuyabiliyor. (#11651)
+- Windows 10 Mail 16005.13110 ve sonraki sürümlerde e-postalari okurken tarama kipini kullanmak yine mümkün. (#11439)
+- Harposoftware.com'dan SAPI5 Ivona seslerini kullanirken, NVDA artik konfigürasyonu kaydedebiliyor, sentezleyicileri degistirebiliyor ve yeniden baslatildiktan sonra artik sessiz kalmiyor. (#11650)
+- Artik HIMS ekranlarindaki bir braille klavyeden bilgisayar braille'ine 6 rakamini girmek mümkün. (#11710)
+- Azure Data Studio'da önemli performans iyilestirmeleri. (#11533, #11715)
+- "Süresi dolan odak olaylari için konusmayi iptal etme girisimi" etkinlestirildiginde, NVDA Bul iletisim kutusunun basligi  okunabiliyor. (#11632)
+- NVDA bilgisayar uyandirildiginda odak bir Microsoft Edge belgesindeyse artik donmuyor. (#11576)
+- Tarama kipinin tekrar islevsel olmasi için MS Edge'de bir baglam menüsünü kapattiktan sonra sekmeye basmak veya odagi hareket ettirmek gerekmiyor. (#11202)
+- NVDA, Tortoise SVN gibi 64 bitlik bir uygulama içindeki liste görünümlerindeki ögeleri artik okuyabiliyor. (#8175)
+- ARIA agaç izgaralari artik hem Firefox hem de Chrome'da tarama kipinde normal tablolar olarak gösteriliyor. (#9715)
+- Geriye dogru arama artik NVDA + shift + F3 araciligiyla 'öncekini bul' ile baslatilabilir. (#11770)
+- Bir NVDA komutu, komutun iki yürütmesi arasinda ilgisiz bir tusa basilmasi durumunda artik tekrarlanmis olarak degerlendirilmez. (#11388) 
+- Internet Explorer'da güçlü ve vurgulu etiketleri NVDA'nin Belge Biçimlendirme ayarlarinda Vurgu bildirimi  kapaliysa artik  bildirilmiyor. (#11808)
+- Excel'de hücreler arasinda gezinirken az sayida kullanicinin yasadigi birkaç saniyelik bir donma artik olmuyor. (#11818)
+- Microsoft Teams 1.3.00.28xxx gibi sürüm numaralarina sahip derlemelerde, NVDA artik yanlis odaklanmis bir menü nedeniyle sohbetlerde veya Teams kanallarinda mesajlari okuyabiliyor. (#11821)
+- Google Chrome'da ayni anda hem yazim hem de dil bilgisi hatasi olarak isaretlenen metin, NVDA tarafindan uygun sekilde hem yazim hem de dil bilgisi hatasi olarak bildiriliyor. (#11787)
+- Outlook'u (Fransizca yerel ayar) kullanirken, 'Tümünü yanitla' (control + shift + R) kisayolu yeniden çalisiyor. (#11196)
+- Visual Studio'da, mevcut seçili IntelliSense ögesi hakkinda ek ayrintilar saglayan IntelliSense araç ipuçlari artik yalnizca bir kez bildiriliyor. (#11611)
+- Windows 10 Hesap Makinesi'nde, yazilan karakterlerin  bildirimi devre disi birakilmissa NVDA hesaplamalarin ilerlemesini bildirmez. (#9428)
+- NVDA ABD Ingilizcesi 2. derece kullanirken ve bilgisayar Braille'ine açarken Braille imleci bir URL gibi belirli bir içerigi gösterirken artik çökmüyor.  (#11754)
+- NVDA + F kullanarak odaklanmis Excel hücresi için biçimlendirme bilgilerini almak yine mümkün. (#11914)
+- Papenmeier braille ekranlarindaki QWERTY girisi, onu destekleyen ekranlar için tekrar çalisiyor ve artik NVDA'nin rastgele donmasina neden olmuyor. (#11944)
 
 
 == Changes for Developers ==
