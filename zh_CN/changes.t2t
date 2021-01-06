@@ -5,12 +5,11 @@ NVDA更新日志
 
 = 2020.4 =
 
-此版本包括对新版中文输入法的改进，对 Liblouis 的更新，以及支持在焦点模式下使用 NVDA + F7 的元素列表对话框。
-当您在 NVDA 设置对话框中按 F1 时，可以调用相关的上下文帮助。
-改进了标点符号读音规则，语音词典，盲文消息和略读功能。
-针对 Windows Mail, Outlook, Teams, Visual Studio, Azure Data Studio以及 Foobar2000 等应用程序的增强支持和错误修复.
-在网页上，对 Google Docs进行了改进，并提供了更多 ARIA 支持。
-以及其他许多重要的 Bug 修复和改进。
+此版本包括对新版中文输入法的改进，对 Liblouis 的更新，支持在焦点模式下使用 NVDA + F7 的元素列表对话框，增加了在 NVDA 设置对话框内按 F1 调用对应选项上下文帮助的新特性。
+本版还改进了标点符号读音规则，语音词典，盲文消息和全文朗读功能。
+另外，针对 Windows Mail, Outlook, Teams, Visual Studio, Azure Data Studio以及 Foobar2000 等应用程序也进行了众多改进和 Bug 修复。
+在网页方面，我们针对 Google Docs 进行了优化，对更多的 ARIA 属性提供了支持。
+还有一些比较重要的改进和错误修复，见以下详细日志。
 
 == 新特性 ==
 - 在 NVDA 对话框中按 F1 键会打开帮助文档并跳转到相应章节。 (#7757)
@@ -18,7 +17,7 @@ NVDA更新日志
 - 符号发音：复杂的正则表达式符号定义支持分组匹配，并在替换规则中支持引用组，从而使表达式更简洁，功能更强大。 (#11107)
 - 在用户创建语音词典条目时，若使用了无效的正则表达式会给出提示。 (#11407)
   - 现在可以检测到具体的分组错误。
-- 添加了对 Windows 10 新版繁体中文快速拼音输入法的支持。 (#11562)
+- 添加了对 Windows 10 新版繁体中文速成输入法的支持。 (#11562)
 - Tab选项卡被归于表单字段，可用单键导航的 F 键定位。 (#10432)
 - 添加了一个命令来切换是否读出标记（高亮）文本；默认没有分配首饰。 (#11807)
 - 增加了 --copy-portable-config 命令行参数，该参数允许您在从便携版静默安装 NVDA 时将配置自动复制到用户帐户。 (#9676)
@@ -46,11 +45,11 @@ NVDA更新日志
 - 将 CLDR 表情符号解释库更新为 38版。 (#11817)
 - 将设置面板中“视觉辅助”下的“焦点高亮显示”功能重命名为“视觉高亮显示”。 (#11700)
 
-== Bug Fixes ==
-- NVDA once again works correctly with edit fields when using the Fast Log Entry application. (#8996)
-- Report elapsed time in Foobar2000 if no total time is available (e.g. when playing a live stream). (#11337)
-- NVDA now honors the aria-roledescription attribute on elements in editable content in web pages. (#11607)
-- 'list' is no longer announced on every line of a list in Google Docs or other editable content in Google Chrome. (#7562)
+== 错误修复 ==
+- NVDA重新支持了 Fast Log Entry 的编辑区。 (#8996)
+- 在 Foobar2000 播放过程中若没有总时间（比如，播放流媒体直播时），也可以读出已经过时间，并且会给出总时间和剩余时间不可用的提示。 (#11337)
+- NVDA支持了网页中可编辑元素的 aria-roledescription 属性。 (#11607)
+- 不会在 Google Docs中 列表的每一行或 Google Chrome 中其他的富文本编辑区域读“列表”。 (#7562)
 - When arrowing by character or word from one list item to another in editable content on the web, entering the new list item is now announced. (#11569)
 - NVDA now reads the correct line when the caret is placed at the end of a link on the end of a list item in Google Docs or other editable content on the web. (#11606)
 - On Windows 7, opening and closing the start menu from the desktop now sets focus correctly. (#10567)
