@@ -2719,6 +2719,13 @@ Ta opcja pozwala na zmianę prędkości głosu.
 Jest to suwak służący do zmiany prędkości czytania w skali od 0 do 100, (0 oznacza tempo najwolniejsze, 100 najszybsze).
 </P>
 
+<A NAME="SpeechSettingsRateBoost"></A>
+<H5>Podkręć szybkość</H5>
+
+<P>
+Jeśli ta opcja zostanie włączona, a syntezator mowy ją wspiera, prędkość będzie znacznie zwiększona.
+</P>
+
 <A NAME="SpeechSettingsPitch"></A>
 <H5>Wysokość</H5>
 
@@ -3014,20 +3021,20 @@ Ta opcja pozwala wybrać kształt (wzorzec punktowy) kursora brajlowskiego, gdy 
 Ustawienie nie ma wpływu na wskaźnik zaznaczenia, są to zawsze punkty 7 i 8 bez migotania.
 </P>
 
+<A NAME="BrailleSettingsShowMessages"></A>
+<H5>Pokazuj wiadomości</H5>
+
+<P>
+Jest to lista rozwijana która umożliwia  włączenie i wyłączenie pokazywania wiadomości na monitorze brajlowskim a także ustawianie czasu, po którym te wiadomości powinne zniknąć.
+</P>
+
 <A NAME="BrailleSettingsMessageTimeout"></A>
 <H5>Czas wygasania komunikatów</H5>
 
 <P>
 To ustawienie jest polem liczbowym określającym w sekundach, jak długo na monitorze brajlowskim są wyświetlane komunikaty programu NVDA.
-Wprowadzenie wartości 0, wyłącza całkowicie wyświetlanie tych komunikatów.
 Komunikat NVDA znika natychmiast po naciśnięciu klawisza CURSOR ROUTING na monitorze brajlowskim. Ponowne naciśnięcie klawisza przywraca komunikat.
-</P>
-
-<A NAME="BrailleSettingsNoMessageTimeout"></A>
-<H5>Pokazuj wiadomości w nieskończoność</H5>
-
-<P>
-Ta opcja powoduje, że wiadomości NVDA są w nieskończoność wyświetlane na monitorze brajlowskim.
+Ta opcja jest widoczna gdy wartość opcji "pokazuj wiadomości" jest ustawiona na "użyj wygasania".
 </P>
 
 <A NAME="BrailleTether"></A>
@@ -4071,7 +4078,11 @@ Następnie zmodyfikuj pozostałe pola, tak jak przy innych symbolach.
 Możesz usunąć symbol, naciskając przycisk "Usuń".
 </P>
 <P>
-Aby zapisać zmiany kliknij przycisk ok, aby je odrzucić - kliknij Anuluj.
+Aby zapisać zmiany naciśnij przycisk ok, aby je odrzucić - naciśnij zrezygnuj.
+</P>
+<P>
+W przypadku złożonych symboli, pole zamiany powinno zawierać referencję grupową tekstu docelowego. Na przykłąd, dla wzorca, który stosuje się do całej daty, w polu powinno być napisane \1, \2, i \3, aby zmiana zadziałała dla odpowiednich części daty.
+Normalne ukośniki wsteczne powinni być dublowane, na przykład "a\\b" powinno być wpisane właśnie w takim porządku, aby dostać zamianę "a\b".
 </P>
 
 <A NAME="InputGestures"></A>
@@ -4364,6 +4375,15 @@ Fizyczne monitory brajlowskie przeważnie posiadają przyciski umożliwiające p
 Okno podglądu brajla zawiera pole wyboru umożliwiające włączanie tej funkcji przy każdym starcie programu NVDA.
 Jeżeli zostanie ono zaznaczone, to podgląd brajla będzie ładował się przy każdym starcie programu.
 Okno podglądu brajla dokona próby otwarcia się z takimi samymi wymiarami i w takiej samej pozycji, w jakiej zostało ono zamknięte.
+</P>
+<P>
+Okno przegląd brajla zawiera pole wyboru  "przesuwanie po komórkach brajlowskich za pomocą myszy", które domyślnie jest odznaczone.
+Jeżeli to pole wyboru jest zaznaczone, przemieszczanie się po komórce brajlowskiej wywoła polecenie "przenieś się do komórki brajlowskiej" dla wybranej komórki.
+Często jest to używane do wywołania akcji oraz do ustawiania kursora na konkretną komórkę.
+Jest to korzystne, kiedy testujemy przekształcanie brajlowskich komórek na znaki i odwrotnie.
+Aby zapobiec niechciane przywoływanie komórek, polecenie jest opóźnione.
+Mysz powinna się ruszać do póki komórka nie stanie się zielona.
+Na początku kursor myszy będzie światło żólty, potem kolor zmieni się na pomorańczowy, a potem stanie się zielony.
 </P>
 
 <A NAME="PythonConsole"></A>
@@ -5733,8 +5753,8 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 <TD>punkt 1+punkt 2+punkt 5+spacja</TD>
 </TR>
 <TR>
-<TD>Klawisz f3</TD>
-<TD>punkt 1+punkt 2+punkt 4+punkt 8</TD>
+<TD>Klawisz F3</TD>
+<TD>punkt1+punkt4+punkt8+spacja</TD>
 </TR>
 <TR>
 <TD>Klawisz f4</TD>
@@ -7241,6 +7261,11 @@ Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 <TD>Brak</TD>
 <TD>--install-silent</TD>
 <TD>Po cichu instaluje NVDA (nie uruchamia zainstalowanej kopii)</TD>
+</TR>
+<TR>
+<TD>Brak</TD>
+<TD><S>copy-portable-config</TD>
+<TD>Podczas instalacji kopiuję konfigurację wersji przenośnej z określonej ścieżki (</S>config-path, -c) do aktualnego konta użytkownika</TD>
 </TR>
 <TR>
 <TD>Brak</TD>
