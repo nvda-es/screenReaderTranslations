@@ -180,7 +180,9 @@
       <UL>
       <LI><A HREF="#toc118">13.5.1. Gestore componenti aggiuntivi non compatibili</A>
       </UL>
-    <LI><A HREF="#ReloadPlugins">13.6. Ricarica componenti aggiuntivi</A>
+    <LI><A HREF="#CreatePortableCopy">13.6. Crea copia portable</A>
+    <LI><A HREF="#RunCOMRegistrationFixingTool">13.7. Esegui Utility risoluzione registrazioni Com di sistema...</A>
+    <LI><A HREF="#ReloadPlugins">13.8. Ricarica componenti aggiuntivi</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">14. Sintesi vocali supportate</A>
     <UL>
@@ -202,9 +204,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Brailliant BI/B Series / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc136">15.9.1. Assegnazione tasti per tutti i modelli</A>
-      <LI><A HREF="#toc137">15.9.2. Assegnazione tasti per Brailliant BI 32, BI 40 e B 80</A>
-      <LI><A HREF="#toc138">15.9.3. Assegnazione tasti per Brailliant BI 14</A>
+      <LI><A HREF="#toc138">15.9.1. Assegnazione tasti per tutti i modelli</A>
+      <LI><A HREF="#toc139">15.9.2. Assegnazione tasti per Brailliant BI 32, BI 40 e B 80</A>
+      <LI><A HREF="#toc140">15.9.3. Assegnazione tasti per Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS serie Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
     <LI><A HREF="#Seika">15.11. Display Braille Seika</A>
@@ -4116,7 +4118,9 @@ Nota:
 
  <UL>
  <LI>Ai tasti simulati deve essere assegnato un gesto , altrimenti andranno persi nella finestra di salvataggio/chiusura.
- <LI>Potrebbe non essere possibile mappare un gesto di immissione con tasto modificatore ad un tasto emulato senza modificatore. Per esempio, se vogliamo mappare al tasto "a" la combinazione emulata "ctrl-m", il risultato finale potrebbe essere "ctrl-a".
+ <LI>Potrebbe non essere possibile mappare un gesto di immissione con tasto modificatore ad un tasto emulato senza modificatore. 
+ Per esempio, se vogliamo mappare al tasto "a" la combinazione emulata "ctrl-m", 
+ il risultato finale potrebbe essere "ctrl-a".
  </UL>
 
 <P>
@@ -4132,7 +4136,7 @@ Si noti che comunque è possibile modificare questo comportamento tramite l'opzi
 Per salvare le impostazioni manualmente, scegliere la voce salva Configurazione dal menu di NVDA.
 </P>
 <P>
-Se si è fatto un errore nelle impostazioni e si desidera tornare indietro alle impostazioni salvate in precedenza, scegliere la voce "torna alla configurazione salvata dal menu NVDA.
+Se è stato commesso un errore nelle impostazioni e si desidera tornare indietro a quelle salvate in precedenza, scegliere la voce "torna alla configurazione salvata dal menu NVDA.
 è anche possibile resettare le impostazioni ai valori predefiniti, scegliendo la voce "Ripristina la configurazione ai valori di fabbrica", presente sul menu principale di NVDA.
 </P>
 <P>
@@ -4150,7 +4154,7 @@ I seguenti tasti rapidi risultano molto utili:
 <TD>Salva Configurazione</TD>
 <TD>NVDA+Control+c</TD>
 <TD>NVDA+Control+c</TD>
-<TD>Salva la configurazione attuale in modo che non verrà persa all'uscita da NVDA</TD>
+<TD>Salva la configurazione attuale in modo che non venga persa all'uscita da NVDA</TD>
 </TR>
 <TR>
 <TD>Torna alla configurazione salvata</TD>
@@ -4464,8 +4468,51 @@ Inoltre, il gestore componenti aggiuntivi non compatibili dispone di un pulsante
 Come è semplice immaginare, verranno mostrate le informazioni sull'addon con la possibilità di contattare lo sviluppatore.
 </P>
 
+<A NAME="CreatePortableCopy"></A>
+<H3>13.6. Crea copia portable</H3>
+
+<P>
+Verrà visualizzata una finestra di dialogo che consente di creare una copia portable di NVDA a partire dalla versione installata.
+Di contro, quando si esegue una copia portable di NVDA, nel sottomenu strumenti la voce di menu sarà chiamata "installa NVDA su questo PC" invece di "crea copia portable).
+</P>
+<P>
+In questa finestra, verrà chiesto  di selezionare la cartella in cui lo screen reader dovrà essere copiato o installato.
+</P>
+<P>
+Inoltre è possibile attivare o disattivare le seguenti opzioni:
+</P>
+
+<UL>
+<LI>Copia la configurazione utente corrente (ciò comprende i file presenti in %appdata%\roaming\NVDA, o quelli della configurazione utente della copia portable, oltre a componenti aggiuntivi e altri moduli)
+<LI>Avvia la nuova copia portable dopo la creazione o avvia NVDA dopo l'installazione, le due funzioni si spiegano da sé.)
+</UL>
+
+<A NAME="RunCOMRegistrationFixingTool"></A>
+<H3>13.7. Esegui Utility risoluzione registrazioni Com di sistema...</H3>
+
+<P>
+L'installazione e la disinstallazione di programmi su un computer può, in alcuni casi, causare l'annullamento della registrazione dei file DLL COM.
+Dato che le interfacce Com, come Iaccessible, dipendono dalla corretta registrazione delle dll, si possono verificare problemi nel caso in cui tale registrazione sia stata persa o non sia stata effettuata correttamente..
+</P>
+<P>
+Ciò può accadere, ad esempio, dopo aver installato e disinstallato Adobe Reader, Math Player e altri programmi.
+</P>
+<P>
+La mancata registrazione può causare problemi a browser, app desktop, barra delle applicazioni e altre interfacce.
+</P>
+<P>
+In particolare, i seguenti problemi possono essere risolti eseguendo questo strumento:
+</P>
+
+<UL>
+<LI>NVDA dice "sconosciuto" durante la navigazione in browser come Firefox, Thunderbird ecc.
+<LI>NVDA non riesce a passare dalla modalità focus alla modalità navigazione
+<LI>NVDA è molto lento nei browser quando si cerca di navigare
+<LI>E probabilmente altri problemi.
+</UL>
+
 <A NAME="ReloadPlugins"></A>
-<H3>13.6. Ricarica componenti aggiuntivi</H3>
+<H3>13.8. Ricarica componenti aggiuntivi</H3>
 
 <P>
 Questa voce, una volta attivata, ricarica tutti i plugin e i moduli specifici per le applicazioni senza riavviare NVDA. Risulta utile per gli sviluppatori.
@@ -5329,7 +5376,7 @@ Di seguito, ecco l'elenco dell'assegnazione dei tasti  per queste righe braille 
 Si legga la documentazione della propria barra Braille per ottenere informazioni su dove sono situati i vari tasti.
 </P>
 
-<A NAME="toc136"></A>
+<A NAME="toc138"></A>
 <H4>15.9.1. Assegnazione tasti per tutti i modelli</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5419,7 +5466,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 </TABLE>
 
-<A NAME="toc137"></A>
+<A NAME="toc139"></A>
 <H4>15.9.2. Assegnazione tasti per Brailliant BI 32, BI 40 e B 80</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5441,7 +5488,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 </TABLE>
 
-<A NAME="toc138"></A>
+<A NAME="toc140"></A>
 <H4>15.9.3. Assegnazione tasti per Brailliant BI 14</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
