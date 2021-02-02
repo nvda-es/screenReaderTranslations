@@ -2722,6 +2722,13 @@ Med denne indstilling kan du ændre hastigheden for den aktuelle stemme.
 Det er en skyderkontrol, der går fra 0 til 100, (med 0 som det langsommeste, 100 som det hurtigste).
 </P>
 
+<A NAME="SpeechSettingsRateBoost"></A>
+<H5>Højere hastighed</H5>
+
+<P>
+Denne indstilling vil markant forøge talehastigheden, hvis denne funktion understøttes af din aktuelle talesyntese.
+</P>
+
 <A NAME="SpeechSettingsPitch"></A>
 <H5>Toneleje</H5>
 
@@ -3017,20 +3024,20 @@ Denne indstilling lader dig vælge formen (punktmønstret) til brugen af punktma
 Udvælgelsesindikatoren påvirkes ikke af denne indstilling,  men vil altid forblive punkt 7 og 8 uden disse punkter blinker.
 </P>
 
+<A NAME="BrailleSettingsShowMessages"></A>
+<H5>Vis beskeder</H5>
+
+<P>
+Denne indstilling lader dig vælge, hvordan NVDA skal vise beskeder på punkt og om disse skal forsvinde automatisk.
+</P>
+
 <A NAME="BrailleSettingsMessageTimeout"></A>
 <H5>Besked vises i (sek)</H5>
 
 <P>
 Denne indstilling er et felt til indtastning af en talværdi, som styrer, hvor længe NVDA-meddelelser vises på punktdisplayet.
-Hvis du skriver 0 i feltet, slår du visning af disse meddelelser helt fra.
-Ved et tryk på en markørknap på dit punktdisplay, vil beskeden forsvinde med det samme indtil du trykker en anden tast, der viser disse beskeder.
-</P>
-
-<A NAME="BrailleSettingsNoMessageTimeout"></A>
-<H5>Vis meddelelser på ubestemt tid</H5>
-
-<P>
-Denne indstilling tillader at NVDA-meddelelser kan vises på ubestemt tid på et punktdisplay.
+Ved et tryk på en markørknap på punktdisplayet, vil beskeden forsvinde. Beskeden vil blive vist igen, såfremt der trykkes en tilsvarende tast.
+Denne indstilling vises kun, hvis "Vis beskeder" er indstillet til "Brug timeout".
 </P>
 
 <A NAME="BrailleTether"></A>
@@ -4065,6 +4072,9 @@ Du kan fjerne et symbol, som du tidligere har tilføjet, ved at trykke på Fjern
    <P></P>
 Når du er færdig, skal du trykke på OK-knappen for at gemme dine ændringer, eller Annuller-knappen for at kassere dem.
    <P></P>
+I tilfælde af komplekse symboler skal feltet Erstatning muligvis omfatte nogle gruppereferencer for den matchede tekst. F.eks. et mønster, der skal matche til en hel dato, vil det være nødvendigt at inkludere \1, \2, og \3 i feltet, hvorefter erstatningen ville blive ændret til den tilsvarende del af den pågældende dato.
+Normale omvendte skråstreger (\) skal derfor skrives to gange, f.eks. "a\\b" skal indtastes for at få "a\b" erstattet.
+   <P></P>
 +++ Håndter Kommandoer +++[InputGestures]
 I denne dialog kan du tilpasse kommandoer for de forskellige NVDA-funktioner (taster på tastaturet, knapper på et punktdisplay osv.)
    <P></P>
@@ -4338,6 +4348,15 @@ Fysiske punktdisplays har typisk knapper til at panorere displayet frem og tilba
 Vinduet til punktskriftsviseren viser en check box med navnet "Vis punktskriftsviser ved opstart".
 Hvis denne er valgt, vil viseren automatisk åbnes når NVDA startes.
 Dette vindue vil altid forsøge at åbne med samme dimensioner og samme placering, som de var, da vinduet blev lukket.
+</P>
+<P>
+Dette vindue indeholder desuden en check box kaldet "Hold musen over for at flytte til den pågældende celle".
+Hvis denne indstilling er valgt, vil dette simulere markørknapper og fungere, som havde du trykket på en knap over en punktcelle.
+Denne funktion benyttes ofte, når du skal flytte markøren eller udføre en handling på en kontrol.
+Dette kan eksempelvis være nyttigt, når du skal bekræfte om NVDA er i stand til at flytte til en bestemt celle.
+For at forhindre at NVDA utilsigtet flytter til celler, vil kommandoen være forsinket.
+Musen skal holdes over cellen, indtil cellen bliver grøn.
+Cellen starter som en lysegul farve, overgår til orange og bliver pludselig grøn. 
 </P>
 
 <A NAME="PythonConsole"></A>
@@ -5712,7 +5731,7 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 </TR>
 <TR>
 <TD>f3-tast</TD>
-<TD>punkt1+punkt2+punkt4+punkt8</TD>
+<TD>punkt1+punkt4+punkt8+mellemrum</TD>
 </TR>
 <TR>
 <TD>f4-tast</TD>
@@ -7226,6 +7245,11 @@ De mulige kommandolinjeparametre til NVDA er følgende:
 <TD>Ingen</TD>
 <TD>--enable-start-on-logon=True|False</TD>
 <TD>Under installation vil dette aktivere <A HREF="#StartAtWindowsLogon">opstart ved logon-skærmen</A></TD>
+</TR>
+<TR>
+<TD>Ingen</TD>
+<TD><S>copy-portable-config</TD>
+<TD>Kopierer den flytbare konfiguration til den angivne sti under installation (</S>config-path, -c) til den aktuelle brugerkonto</TD>
 </TR>
 <TR>
 <TD>Ingen</TD>
