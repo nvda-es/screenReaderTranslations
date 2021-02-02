@@ -1147,6 +1147,9 @@ Du kan også ændre denne indstilling, hvis du bruger en talesyntese fra en tred
 Med denne indstilling kan du ændre hastigheden for den aktuelle stemme.
 Det er en skyderkontrol, der går fra 0 til 100, (med 0 som det langsommeste, 100 som det hurtigste).
 
+==== Højere hastighed ====[SpeechSettingsRateBoost]
+Denne indstilling vil markant forøge talehastigheden, hvis denne funktion understøttes af din aktuelle talesyntese.
+
 ==== Toneleje ====[SpeechSettingsPitch]
 Med denne indstilling kan du ændre tonelejet for den aktuelle stemme.
 Det er en skyderkontrol, der går fra 0 til 100, (med 0 som det laveste toneleje og 100 som den højeste).
@@ -1298,13 +1301,13 @@ Udvælgelsesindikatoren påvirkes ikke af denne indstilling,  men vil altid forb
 Denne indstilling lader dig vælge formen (punktmønstret) til brugen af punktmarkøren, når punktmarkøren følger læsemarkøren.
 Udvælgelsesindikatoren påvirkes ikke af denne indstilling,  men vil altid forblive punkt 7 og 8 uden disse punkter blinker.
 
+==== Vis beskeder ====[BrailleSettingsShowMessages]
+Denne indstilling lader dig vælge, hvordan NVDA skal vise beskeder på punkt og om disse skal forsvinde automatisk.
+
 ==== Besked vises i (sek) ====[BrailleSettingsMessageTimeout]
 Denne indstilling er et felt til indtastning af en talværdi, som styrer, hvor længe NVDA-meddelelser vises på punktdisplayet.
-Hvis du skriver 0 i feltet, slår du visning af disse meddelelser helt fra.
-Ved et tryk på en markørknap på dit punktdisplay, vil beskeden forsvinde med det samme indtil du trykker en anden tast, der viser disse beskeder.
-
-==== Vis meddelelser på ubestemt tid ====[BrailleSettingsNoMessageTimeout]
-Denne indstilling tillader at NVDA-meddelelser kan vises på ubestemt tid på et punktdisplay.
+Ved et tryk på en markørknap på punktdisplayet, vil beskeden forsvinde. Beskeden vil blive vist igen, såfremt der trykkes en tilsvarende tast.
+Denne indstilling vises kun, hvis "Vis beskeder" er indstillet til "Brug timeout".
 
 %kc:setting
 ==== Punkt følger ====[BrailleTether]
@@ -1923,6 +1926,9 @@ Du kan fjerne et symbol, som du tidligere har tilføjet, ved at trykke på Fjern
 
 Når du er færdig, skal du trykke på OK-knappen for at gemme dine ændringer, eller Annuller-knappen for at kassere dem.
 
+I tilfælde af komplekse symboler skal feltet Erstatning muligvis omfatte nogle gruppereferencer for den matchede tekst. F.eks. et mønster, der skal matche til en hel dato, vil det være nødvendigt at inkludere \1, \2, og \3 i feltet, hvorefter erstatningen ville blive ændret til den tilsvarende del af den pågældende dato.
+Normale omvendte skråstreger (\) skal derfor skrives to gange, f.eks. "a\\b" skal indtastes for at få "a\b" erstattet.
+
 +++ Håndter Kommandoer +++[InputGestures]
 I denne dialog kan du tilpasse kommandoer for de forskellige NVDA-funktioner (taster på tastaturet, knapper på et punktdisplay osv.)
 
@@ -2103,6 +2109,14 @@ Fysiske punktdisplays har typisk knapper til at panorere displayet frem og tilba
 Vinduet til punktskriftsviseren viser en check box med navnet "Vis punktskriftsviser ved opstart".
 Hvis denne er valgt, vil viseren automatisk åbnes når NVDA startes.
 Dette vindue vil altid forsøge at åbne med samme dimensioner og samme placering, som de var, da vinduet blev lukket.
+
+Dette vindue indeholder desuden en check box kaldet "Hold musen over for at flytte til den pågældende celle".
+Hvis denne indstilling er valgt, vil dette simulere markørknapper og fungere, som havde du trykket på en knap over en punktcelle.
+Denne funktion benyttes ofte, når du skal flytte markøren eller udføre en handling på en kontrol.
+Dette kan eksempelvis være nyttigt, når du skal bekræfte om NVDA er i stand til at flytte til en bestemt celle.
+For at forhindre at NVDA utilsigtet flytter til celler, vil kommandoen være forsinket.
+Musen skal holdes over cellen, indtil cellen bliver grøn.
+Cellen starter som en lysegul farve, overgår til orange og bliver pludselig grøn. 
 
 ++ Python-konsol ++[PythonConsole]
 Python-konsollen, der er at finde i menuen "Værktøjer" i NVDA-menuen fungerer som et udviklingsværktøj. Dette værktøj kan benyttes til generel fejlfinding, undersøgelse af interne komponenter i NVDA eller tilgængeligheden af en applikation.
@@ -2625,7 +2639,7 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 | esc+tast | punkt1+punkt5+mellemrum, f4, brailleedge:f1 |
 | tasten slet | punkt1+punkt3+punkt5+mellemrum, punkt1+punkt4+punkt5+mellemrum |
 | f1-tast | punkt1+punkt2+punkt5+mellemrum |
-| f3-tast | punkt1+punkt2+punkt4+punkt8 |
+| f3-tast | punkt1+punkt4+punkt8+mellemrum |
 | f4-tast | punkt7+f3 |
 | tasterne windows+b | punkt1+punkt2+f1 |
 | tasterne windows+d | punkt1+punkt4+punkt5+f1 |
@@ -3125,6 +3139,7 @@ De mulige kommandolinjeparametre til NVDA er følgende:
 | Ingen | --install | Installerer NVDA og starter den nyinstallerede kopi |
 | Ingen | --install-silent | Tavs installation af NVDA (Starter ikke den nyinstallerede kopi) |
 | Ingen | --enable-start-on-logon=True|False | Under installation vil dette aktivere [opstart ved logon-skærmen #StartAtWindowsLogon] |
+| Ingen | --copy-portable-config | Kopierer den flytbare konfiguration til den angivne sti under installation (--config-path, -c) til den aktuelle brugerkonto |
 | Ingen | --create-portable | Opretter en flytbar kopi af NVDA (starter den nyoprettede kopi). Kræver --portable-path angives |
 | Ingen | --create-portable-silent | Opretter en flytbar kopi af NVDA (starter ikke den nyoprettede kopi). Kræver --portable-path angives |
 | Ingen | --portable-path=PORTABLEPATH | Stien hvor den flytbare kopi oprettes |
