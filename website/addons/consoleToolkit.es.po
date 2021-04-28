@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-04-28 13:27+0000\n"
-"PO-Revision-Date: 2021-04-28 15:14+0200\n"
+"PO-Revision-Date: 2021-04-28 16:04+0200\n"
 "Last-Translator: José Manuel Delicado <jmdaweb@hotmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -152,27 +152,31 @@ msgstr ""
 
 #. type: Plain text
 msgid "Here is how add-on extracts current command."
-msgstr ""
+msgstr "A continuación se explica cómo extrae el complemento la orden actual."
 
 #. type: Bullet: '1. '
 msgid ""
 "It presses `End` key and then sends a control character, that is a rare "
 "Unicodecharacter not likely to be used anywhere."
 msgstr ""
+"Pulsa la tecla `Fin` y envía un carácter de control, un extraño carácter "
+"Unicode que probablemente no se use en ningún sitio."
 
 #. type: Bullet: '2. '
 msgid "Then it presses `home` key and sends another control character."
-msgstr ""
+msgstr "Después pulsa la tecla `Inicio` y envía otro carácter de control."
 
 #. type: Bullet: '3. '
 msgid ""
 "Then it waits for control characters to appear on the screen, which might "
 "take some time on slow SSH connections."
 msgstr ""
+"Después espera a que los caracteres de control aparezcan en pantalla, algo "
+"que puede tardar un poco en conexiones SSH lentas."
 
 #. type: Bullet: '4. '
 msgid "Command is what appears between two control characters."
-msgstr ""
+msgstr "La orden es lo que se encuentra entre los dos caracteres."
 
 #. type: Bullet: '5. '
 msgid ""
@@ -185,6 +189,15 @@ msgid ""
 "preserve the number of spaces between words, we only guarantee to preserve "
 "the presence of spaces."
 msgstr ""
+"Cuando se habilita la opción \"Utilizar UI Automation para acceder a la "
+"Consola de Windows cuando esté disponible\" en las preferencias de NVDA, se "
+"envía un carácter de control adicional al principio de la cadena. Esto es "
+"necesario para interpretar correctamente órdenes de varias líneas: la "
+"implementación de UIA suprime los espacios en blanco al final de cada línea, "
+"por lo que para deducir si hay un espacio entre dos líneas, hay que rotarlas "
+"un carácter. Ten en cuenta, sin embargo, que puede que no se preserven todos "
+"los espacios entre palabras, este mecanismo sólo preserva la presencia de "
+"espacios."
 
 #. type: Bullet: '6. '
 msgid ""
@@ -192,10 +205,15 @@ msgid ""
 "cursor in the beginning and end and simulating `Delete` and `Backspace` key "
 "presses."
 msgstr ""
+"Antes de editar, el complemento se asegura de eliminar los caracteres de "
+"control situando el cursor al principio y al final y simulando pulsaciones "
+"de las teclas `suprimir` y `retroceso`."
 
 #. type: Bullet: '7. '
 msgid "It presents command in \"Edit prompt\" window for user to view or edit."
 msgstr ""
+"Presenta la orden en la ventana \"Editar orden\" para que el usuario la "
+"visualice o la edite."
 
 #. type: Bullet: '8. '
 msgid ""
@@ -203,6 +221,9 @@ msgid ""
 "console.  This is achieved via one of four methods, the choice of the method "
 "is configurable. Currently four methods are supported:"
 msgstr ""
+"Después de que el usuario pulse intro, se borra la línea actual de la "
+"consola. Esto se logra mediante uno de estos cuatro métodos, la elección del "
+"método es configurable. Los métodos soportados son:"
 
 #. type: Bullet: '    * '
 msgid ""
@@ -210,47 +231,61 @@ msgid ""
 "visible on the screen; doesn't work in emacs; sometimes unreliable on slow "
 "SSH connections"
 msgstr ""
+"`Control+c`: funciona en `cmd.exe` y `Bash`, pero deja la orden anterior "
+"visible; no funciona en Emacs y a veces es poco fiable en conexiones SSH "
+"lentas"
 
 #. type: Bullet: '    * '
 msgid "`Escape`: works only in `cmd.exe`\"),"
-msgstr ""
+msgstr "`Escape`: sólo funciona en `cmd.exe`\"),"
 
 #. type: Bullet: '    * '
 msgid ""
 "`Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd.exe`"
 msgstr ""
+"`Control+a` y `control+k`: funciona en `Bash` y `Emacs`, pero no funciona en "
+"`cmd.exe`"
 
 #. type: Bullet: '    * '
 msgid ""
 "`Backspace` (recommended): works in all environments; however slower and may "
 "cause corruption if the length of the line has changed"
 msgstr ""
+"`Retroceso` (recomendado): funciona en todos los entornos, pero es lento y "
+"puede causar corrupción si la longitud de la línea ha cambiado"
 
 #. type: Bullet: '9. '
 msgid ""
 "Then add-on simulates keystrokes to type the updated command and optionally "
 "simulates `Enter` key press."
 msgstr ""
+"Finalmente, el complemento simula pulsaciones de teclas para teclear la "
+"orden actualizada y, opcionalmente, simula una pulsación de la tecla `intro`."
 
 #. type: Plain text
 msgid "Troubleshooting:"
-msgstr ""
+msgstr "Resolución de problemas:"
 
 #. type: Bullet: '* '
 msgid ""
 "Verify that 'Home', 'End', 'Delete' and 'Backspace' keys work as expected in "
 "your console."
 msgstr ""
+"Comprueba que las teclas 'Inicio', 'Fin', 'Retroceso' y 'Suprimir' funcionan "
+"como se espera en tu consola."
 
 #. type: Bullet: '* '
 msgid ""
 "Verify that your console supports Unicode characters. Some ssh connections "
 "don't support Unicode."
 msgstr ""
+"Comprueba que tu consola soporta caracteres Unicode. Algunas conexiones SSH "
+"no soportan Unicode."
 
 #. type: Bullet: '* '
 msgid "Verify that selected deleting method works in your console."
 msgstr ""
+"Comprueba que el método de eliminación seleccionado funciona en tu consola."
 
 #. type: Title ##
 #, no-wrap
@@ -346,14 +381,19 @@ msgid ""
 "After a failed output capturing attempt, press `UpArrow` in the console to "
 "check what command has actually been executed."
 msgstr ""
+"Después de un intento de captura fallido, pulsa `flecha arriba` en la "
+"consola para comprobar qué orden se ha ejecutado en realidad."
 
 #. type: Bullet: '* '
 msgid "Revert back to default capturing suffix, mentioned above."
 msgstr ""
+"Vuelve a usar el sufijo de captura predeterminado, mencionado anteriormente."
 
 #. type: Bullet: '* '
 msgid "Try troubleshooting steps from \"command prompt editing\" section."
 msgstr ""
+"Prueba los pasos de resolución de problemas de la sección \"Edición del "
+"símbolo del sistema\"."
 
 #. type: Plain text
 #, no-wrap
