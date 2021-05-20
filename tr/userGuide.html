@@ -1277,7 +1277,6 @@ Web sayfaları gibi karmaşık salt okunur belgeler, NVDA'da tarama kipinde gös
 <LI>Microsoft Edge
 <LI>Adobe Reader
 <LI>Foxit Reader
-<LI>Adobe Flash
 <LI>Amazon Kindle for PC içinde desteklenen kitaplar
 </UL>
 
@@ -1462,7 +1461,7 @@ Arama yapmak için aşağıdaki tuşları kullanın:
 <A NAME="ImbeddedObjects"></A>
 <H3>6.4. Gömülü Nesneler</H3>
 <P>
-Sayfalar, Adobe Flash, Oracle Java ve HTML 5 gibi teknolojilerle üretilmiş öğelerin yanında uygulamalar ve iletişim kutuları gibi zengin içerikler barındırabilir.
+Sayfalar, Oracle Java ve HTML 5 gibi teknolojilerle üretilmiş öğelerin yanında uygulamalar ve iletişim kutuları gibi zengin içerikler barındırabilir.
 Bunlarla tarama kipinde karşılaşıldığında, NVDA "gömülü nesne", "uygulama" ya da "iletişim kutusu" olduklarını bildirecektir.
 Bu öğelere o ve shift+o gömülü nesne tek harf dolaşım tuşlarını kullanarak hızlı bir şekilde ulaşabilirsiniz.
 Enter tuşuna basarak onlarla etkileşime geçebilirsiniz.
@@ -1976,6 +1975,9 @@ Bu tür durumlar için  NVDA, ekranı karartmak için etkinleştirilebilen "ekra
 <P>
 <A HREF="#NVDASettings">NVDA Ayarları</A> iletişim kutusunda <A HREF="#VisionSettings">görsellik  kategorisi</A> altından ekran perdesini etkinleştirebilirsiniz.
 </P>
+<P>
+Ekran perdesi etkinse, <A HREF="#Win10Ocr">OCR</A> veya  ekran görüntüsü almak gibi doğrudan ekranda görünenle ilgili işlemler gerçekleştirilemez.
+</P>
 <A NAME="ContentRecognition"></A>
 <H2>10. Görsel İçerik Tanıma</H2>
 <P>
@@ -2003,6 +2005,9 @@ NVDA bu aracı imajlardaki metni ya da erişilebilir olmayan uygulamalardaki kon
 <P>
 <A HREF="#NVDASettings">NVDA ayarları</A> iletişim kutusundaki <A HREF="#Win10OcrSettings">Windows 10 OCR kategorisi</A> altından metin tanıma için kullanılacak dili seçebilirsiniz.
 başlat menüsü, ayarlar, zaman ve dil, bölge ve dil altında dil ekle düğmesi kullanılarak ek diller yüklenebilir.
+</P>
+<P>
+Windows 10 OCR, <A HREF="#Vision">NVDA görsel geliştirmeleri</A> ya da  diğer harici görsel yardımcılarla  kısmen veya tamamen uyumsuz olabilir. Tanıma işlemine geçmeden önce bu araçları devre dışı bırakmanız gerekecektir.
 </P>
 <P>
 Windows 10 OCR kullanarak geçerli nesne içindeki metni tanımak için, NVDA+r tuşlarına basın.
@@ -3403,7 +3408,7 @@ Belge biçimlendirme seçenekleri gruplar halinde düzenlenmiştir.
  <UL>
  <LI>Sayfa numaraları
  <LI>Satır Numaraları
- <LI>Satır girintilerinin bildirimi <A HREF="#lineIndentationOptions">(Kapalı, Konuşma, Ses çalarak, Konuşarak ve Ses çalarak)</A>
+ <LI>Satır girintilerinin bildirimi <A HREF="#DocumentFormattingSettingsLineIndentation">(Kapalı, Konuşma, Ses çalarak, Konuşarak ve Ses çalarak)</A>
  <LI>Paragraf girintisi (Örn, asılı girinti, ilk satır girintisi)
  <LI>Satır aralığı (tek, çift vs)
  <LI>Hizzalama
@@ -3532,6 +3537,31 @@ Bu seçenek etkinleştirildiğinde, NVDA, <A HREF="https://devblogs.microsoft.co
 <P>
 Bu ayar ekranın güncellenmediği durumlarda (şifre girişi gibi) UI otomasyon desteği etkin Windows Konsolu'nda <A HREF="#KeyboardSettingsSpeakTypedCharacters">yazılan karakterleri seslendir</A> veya <A HREF="#KeyboardSettingsSpeakTypedWords">yazılan sözcükleri seslendir</A> ayrlarına bağlı olarak karakterlerin seslendirilip seslendirilmeyeceğini belirler. Güvenlik nedeniyle, bu ayar devre dışı bırakılmalıdır. Bununla birlikte, NVDA'nın yeni deneysel konsol desteğini kullanırken yazılan karakter ve / veya kelime bildiriminde performans sorunları veya kararsızlık yaşıyorsanız etkinleştirmek isteyebilirsiniz.
 </P>
+<A NAME="ChromiumUIA"></A>
+<H5>Microsoft Edge ve diğer Chromium tabanlı tarayıcılar'la uygun olduğunda UIA kullan</H5>
+<P>
+Microsoft Edge gibi Chromium tabanlı tarayıcılarda mevcut olduğunda UIA'nın ne zaman kullanılacağını belirlemenize izin verir.
+Chromium tabanlı tarayıcılar için UIA desteği geliştirme aşamasındadır ve IA2 ile aynı düzeyde erişim sağlamayabilir.
+Seçim kutusunda aşağıdaki seçenekler vardır:
+</P>
+<UL>
+<LI>Varsayılan (Yalnızca gerekli olduğunda): NVDA varsayılanı, şu anda bu "Yalnızca gerektiğinde" dir. Bu varsayılan durum, teknoloji olgunlaştıkça gelecekte değişebilir.
+<LI>Yalnızca gerekli olduğunda: NVDA, IA2'yi kullanmak için tarayıcı sürecine enjekte edemediğinde ve UIA mevcut olduğunda, NVDA UIA kullanacaktır.
+<LI>Evet: Tarayıcı UIA'yı kullanılabilir hale getirirse, NVDA onu kullanır.
+<LI>Hayır: NVDA işlem sırasında enjekte edemese bile UIA'yı kullanmaz. Bu, geliştiriciler için IA2 ile ilgili sorunları gidermek için yararlı olabilir ve NVDA'nın UIA'ya geri dönmediğinden emin olmak isteyebilirler.
+</UL>
+
+<P></P>
+<A NAME="UseUiaForExcel"></A>
+<H5>mevcut olduğunda Microsoft Excel elektronik tablo kontrollerine erişmek için UI otomasyonunu kullan</H5>
+<P>
+Bu seçenek etkinleştirildiğinde, NVDA, Microsoft Excel Elektronik Tablo kontrollerinden bilgi almak için Microsoft UI Otomasyon erişilebilirlik API'sini kullanmayı deneyecektir.
+Bu geliştirilmekte olan deneysel bir özelliktir ve Microsoft Excel'in bazı özellikleri bu modda kullanılamayabilir.
+Örneğin, formülleri ve yorumları listelemek için NVDA Öğeler Listesi ve bir elektronik tablodaki form alanlarına atlamak için tarama kipi  hızlı dolaşım özellikleri kullanılamaz.
+Bununla birlikte, temel elektronik tablo gezinme / düzenleme işlemleri için bu seçenek, önemli bir performans artışı sağlayabilir.
+Kullanıcıların çoğunun bunu varsayılan olarak açmasını önermemekle birlikte, Microsoft Excel'in 16.0.13522.10000 veya sonraki sürümlerini kullananların bu özelliği test etmelerini ve geri bildirimde bulunmalarını memnuniyetle karşılarız.
+Microsoft Excel'in UI otomasyon uygulaması sürekli değişiyor ve Microsoft Office'in 16.0.13522.10000'den daha eski sürümleri, bu seçeneğin herhangi bir şekilde kullanılması için yeterli bilgiyi sunmayabilir.
+</P>
 <A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
 <H5>Mevcutsa Windows Konsolu'nda yeni yazılan karakter desteğini kullan</H5>
 <P>
@@ -3541,18 +3571,37 @@ Bu özellik varsayılan olarak etkindir, Windows 10 1607 ve sonraki sürümlerde
 Dikkat: bu seçenek etkin durumdayken, şifreler gibi ekranda görünmeyen yazılan karakterler gizlenmez.
 Güvensiz ortamlarda, parola girerken <A HREF="#KeyboardSettingsSpeakTypedCharacters">karakterleri seslendir</A> ve <A HREF="#KeyboardSettingsSpeakTypedWords">sözcükleri seslendir</A> özelliklerini geçici olarak kapatabilirsiniz.
 </P>
+<A NAME="DiffAlgo"></A>
+<H5>Diff algorithm</H5>
+<P>
+Bu ayar, NVDA'nın terminallerde  yeni metni nasıl konuşacağını kontrol eder.
+diff algorithm seçim kutusunda üç seçenek vardır:
+</P>
+<UL>
+<LI>Automatic: NVDA 2021.1'den itibaren bu seçenek Difflib'e eşdeğerdir.
+Gelecekteki bir sürümde, pozitif kullanıcı testi yapılıncaya kadar Diff Match Patch olarak değiştirilebilir.
+<LI>allow Diff Match Patch: Bu seçenek, NVDA'nın terminal metnindeki değişiklikleri karakter karakter hesaplamasına neden olur.
+Konsola büyük hacimlerde metin girildiğinde  performansı artırabilir ve satırların ortasında yapılan değişikliklerin daha doğru raporlanmasına olanak tanır.
+Ancak bazı uygulamalarla uyumsuz olabilir.
+Bu özellik, Windows 10'un 1607 ve sonraki sürümlerinde Windows Konsolunda desteklenir.
+Ek olarak, önceki Windows sürümlerindeki diğer terminallerde de mevcut olabilir.
+<LI>force Difflib: bu seçenek NVDA'nın terminal metnindeki değişiklikleri satır satır hesaplamasına neden olur.
+NVDA'nın 2020.4 ve daha önceki sürümlerindeki davranışıyla aynıdır.
+</UL>
+
+<P></P>
 <A NAME="CancelExpiredFocusSpeech"></A>
 <H5>Süresi dolmuş odak etkinlikleri için konuşmayı iptal etmeyi dene</H5>
 <P>
 Bu seçenek, süresi dolmuş odak olayları için konuşmanın iptal edilmesi  davranışını etkinleştirir.
-Özellikle Chrome ile Gmail'deki mesajlarda hızlı bir şekilde hareket etmek NVDA'nın artık geçerli olmayan bilgileri konuşmasına neden olabilir.
+Özellikle Chrome ile Gmail'deki mesajlarda hızlı bir şekilde hareket etmek NVDA'nın artık geçerli olmayan bilgileri aktarmasına neden olabilir.
 Bu işlev NVDA 2020.2'den itibaren deneysel olarak eklenmiştir.
 </P>
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
 <H5>Düzenleme imleci hareketi zaman aşımı (MS cinsinden)</H5>
 <P>
 Bu seçenek, NVDA'nın düzenleme imleci (ekleme noktası) düzenlenebilir metin kontrollerinde hareket etmesini bekleyeceği mili saniye sayısını ayarlamanızı sağlar.
-NVDA’nın, düzenleme imlecini yanlış şekilde takip ettiğini fark ederseniz, her zaman arkasında bir karakter gibi görünüyor veya satırları tekrarlıyor, o zaman bu değeri arttırmayı deneyebilirsiniz.
+NVDA’nın, düzenleme imlecini yanlış şekilde takip ettiğini fark ederseniz, her zaman arkasında bir karakter varmış gibi görünüyor veya satırları tekrarlıyorsa, o zaman bu değeri arttırmayı deneyebilirsiniz.
 </P>
 <A NAME="AdvancedSettingsDebugLoggingCategories"></A>
 <H5>Hata ayıklama kategorileri</H5>
@@ -4127,6 +4176,16 @@ Birçok dil birden çok aksan içerir.
 "Birleşik Krallık" ve "Avustralya" İngilizce aksanlardan ikisidir.
 "Fransa", "Kanada" ve "İsviçre", mevcut Fransızca aksanlardır.
 Farklı aksanlara  sahip dili (İngilizce veya Fransızca gibi) arayın, ardından aksanı listede bulun.
+İstediğiniz dilleri seçin ve eklemek için "ekle" düğmesini kullanın.
+Ekledikten sonra NVDA'yı yeniden başlatın.
+</P>
+<P>
+Yeni Windows OneCore seslerinden birini  eklemek için Windows sistem ayarlarında "Konuşma Ayarları"na gidin. 
+"Ses ekle" seçeneğini kullanın ve istediğiniz dili arayın.
+Birçok dilde birden çok seçenek bulunabilir.
+"Birleşik Krallık" ve "Avustralya" İngilizce seçeneklerden ikisidir.
+"Fransa", "Kanada" ve "İsviçre", mevcut Fransızca seçenekleridir.
+Daha geniş  bir dil (İngilizce veya Fransızca gibi) arayın, ardından alt seçeneği listede bulun.
 İstediğiniz dilleri seçin ve eklemek için "ekle" düğmesini kullanın.
 Ekledikten sonra NVDA'yı yeniden başlatın.
 </P>
