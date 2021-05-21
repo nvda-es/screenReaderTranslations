@@ -1,0 +1,11 @@
+commit f442b9f27d2dd28eb5c8c80f543d12ea6b01ba17
+Author: Łukasz Golonka <lukasz.golonka@mailbox.org>
+Date:   Thu May 20 00:32:08 2021 +0200
+
+    Revert "Don't use UnidentifiedEdit for windows with empty windowText (#11966)" (#12429)
+    
+    This reverts commit 4288882b4f83d3f2c7c3cdb3de0ac0067533a026.
+    
+    PR #11966 started using DisplayModelEditableText for edit fields with empty window text to improve access to IDE's by MCS Electronic - this unfortunately broke access to some edit fields in Excel as they were forcibly using DisplayModelEditableText and now they were getting this class twice in the MRO. When trying to come up with a fix I've found another problems with the approach from #11966 namely edit fields which require UnidentifiedEdit weren't getting it in the MRO when they are initially empty.
+    
+    Since we're quite close to the release it makes sense to revert #11966 for now and investigate another approach - the program for which the original fix was needed is quite niche and therefore I don't consider this to be a big loss. I'll try to come up with something better for the next release.
