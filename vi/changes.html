@@ -18,7 +18,7 @@ Các cập nhật cho Unicode CLDR và kí hiệu toán học, eSpeak-NG và Lib
 <P>
 Sửa nhiều lỗi và có nhiều cải thiện, bao gồm cải thiện trong  Office, Visual Studio và vài ngôn ngữ.
 Lưu ý: đây là bản phát hành bổ trợ Add-on API.
-Các add-on cần phải được thử nghiệm lại và phải cập nhật lại manifest.
+Các add-on cần phải được thử nghiệm lại và phải cập lại manifest.
 Bản phát hành này cũng ngưng hỗ trợ cho Adobe Flash.
 </P>
 <H3>Tính năng mới</H3>
@@ -47,40 +47,46 @@ Bản phát hành này cũng ngưng hỗ trợ cho Adobe Flash.
   <LI>Các ứng dụng web  (Gmail chẳng hạn) không còn đọc các thông tin lỗi thời khi di chuyển focus một cách nhanh chóng.
   </UL>
 <LI>Espeak-ng đã được cập nhật lên 1.51-dev commit cad1c8e87fcccf677a445202e340f61980450a84. (<A HREF="https://github.com/nvaccess/nvda/issues/12202">#12202</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12280">#12280</A>)
-<LI>Đã cập nhật bản phiên dịch chữ nổi liblouis lên <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.17.0">3.17.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/12137">#12137</A>)
-+  - New braille tables: Belarusian literary braille, Belarusian computer braille, Urdu grade 1, Urdu grade 2.
-+- Support for Adobe Flash content has been removed from NVDA due to the use of Flash being actively discouraged by Adobe. (<A HREF="https://github.com/nvaccess/nvda/issues/11131">#11131</A>)
-+- NVDA will exit even with windows still open, the exit process now closes all NVDA windows and dialogs. (<A HREF="https://github.com/nvaccess/nvda/issues/1740">#1740</A>)
-+- The Speech Viewer can now be closed with <CODE>alt+F4</CODE> and has a standard close button for easier interaction with users of pointing devices. (<A HREF="https://github.com/nvaccess/nvda/issues/12330">#12330</A>)
-+- The Braille Viewer now has a standard close button for easier interaction with users of pointing devices. (<A HREF="https://github.com/nvaccess/nvda/issues/12328">#12328</A>)
-+- In the Elements List dialog, the accelerator key on the "Activate" button has been removed in some locales to avoid collision with an element type radio button label. When available, the button is still the default of the dialog and as such can still be invoked by simply pressing enter from the elements list itself. (<A HREF="https://github.com/nvaccess/nvda/issues/6167">#6167</A>)
-+
-+
-+== Bug Fixes ==
-+- The list of messages in Outlook 2010 is once again readable. (<A HREF="https://github.com/nvaccess/nvda/issues/12241">#12241</A>)
-+- In terminal programs on Windows 10 version 1607 and later, when inserting or deleting characters in the middle of a line, the characters to the right of the caret are no longer read out. (<A HREF="https://github.com/nvaccess/nvda/issues/3200">#3200</A>)
-+  - This experimental fix must be manually enabled in NVDA's advanced settings panel by changing the diff algorithm to Diff Match Patch.
-+- Fixed access to edit fields in MCS Electronics IDE's. (<A HREF="https://github.com/nvaccess/nvda/issues/11966">#11966</A>)
-+- In MS Outlook, inappropriate distance reporting when shift+tabbing from the message body to the subject field should not occur anymore. (<A HREF="https://github.com/nvaccess/nvda/issues/10254">#10254</A>)
-+- In the Python Console, inserting a tab for indentation at the beginning of a non-empty input line and performing tab-completion in the middle of an input line are now supported. (<A HREF="https://github.com/nvaccess/nvda/issues/11532">#11532</A>)
-+- Formatting information and other browseable messages no longer present unexpected blank lines when screen layout is turned off. (<A HREF="https://github.com/nvaccess/nvda/issues/12004">#12004</A>)
-+- It is now possible to read comments in MS Word with UIA enabled. (<A HREF="https://github.com/nvaccess/nvda/issues/9285">#9285</A>)
-+- Performance when interacting with Visual Studio has been improved. (<A HREF="https://github.com/nvaccess/nvda/issues/12171">#12171</A>)
-+- Fix graphical bugs such as missing elements when using NVDA with a right-to-left layout. (<A HREF="https://github.com/nvaccess/nvda/issues/8859">#8859</A>)
-+- Respect the GUI layout direction based on the NVDA language, not the system locale. (<A HREF="https://github.com/nvaccess/nvda/issues/638">#638</A>)
-+  - known issue for right-to-left languages: the right border of groupings clips with labels/controls. (<A HREF="https://github.com/nvaccess/nvda/issues/12181">#12181</A>)
-+- The python locale is set to match the language selected in preferences consistently, and will occur when using the default language. (<A HREF="https://github.com/nvaccess/nvda/issues/12214">#12214</A>)
-+- TextInfo.getTextInChunks no longer freezes when called on Rich Edit controls such as the NVDA log viewer. (<A HREF="https://github.com/nvaccess/nvda/issues/11613">#11613</A>)
-+- It is once again possible to use NVDA in languages containing underscores in the locale name such as de_CH on Windows 10 1803 and 1809. (<A HREF="https://github.com/nvaccess/nvda/issues/12250">#12250</A>)
-+- In WordPad, configuration of superscript/subscript reporting works as expected. (<A HREF="https://github.com/nvaccess/nvda/issues/12262">#12262</A>)
-+- NVDA no longer fails to announce the newly focused content on a web page if the old focus disappears and is replaced by the new focus in the same position. (<A HREF="https://github.com/nvaccess/nvda/issues/12147">#12147</A>)
-+- Strikethrough, superscript and subscript formatting for entire Excel cells are now reported if the corresponding option is enabled. (<A HREF="https://github.com/nvaccess/nvda/issues/12264">#12264</A>)
-+- Fixed copying config during installation from a portable copy when default destination config directory is empty. (<A HREF="https://github.com/nvaccess/nvda/issues/12071">#12071</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12205">#12205</A>)
-+- Fixed incorrect announcement of some letters with accents or diacritic when 'Say cap before capitals' option is checked. (<A HREF="https://github.com/nvaccess/nvda/issues/11948">#11948</A>)
-+- Fixed the pitch change failure in SAPI4 speech synthesizer. (<A HREF="https://github.com/nvaccess/nvda/issues/12311">#12311</A>)
-+- The NVDA installer now also honors the <CODE>--minimal</CODE> command line parameter and does not play the start-up sound, following the same documented behavior as an installed or portable copy NVDA executable. (<A HREF="https://github.com/nvaccess/nvda/issues/12289">#12289</A>)
-+- In MS Word or Outlook, the table quick navigation key can now jump to layout table if "Include layout tables" option is enabled in Browse mode settings. (<A HREF="https://github.com/nvaccess/nvda/issues/11899">#11899</A>)
-+- NVDA will no longer announce "↑↑↑" for emojis in particular languages. (<A HREF="https://github.com/nvaccess/nvda/issues/11963">#11963</A>)
+<LI>Đã cập nhật thư viện phiên dịch chữ nổi liblouis lên <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.17.0">3.17.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/12137">#12137</A>)
+  <UL>
+  <LI>Các bản chữ nổi mới: Belarus chữ nổi văn học, Belarus chữ nổi máy tính, Urdu cấp 1, Urdu cấp 2.
+  </UL>
+<LI>Hỗ trợ cho nội dung của Adobe Flash đã bị gỡ khỏi NVDA vì việc dùng Flash đang được Adobe mạnh mẽ không khuyên khích. (<A HREF="https://github.com/nvaccess/nvda/issues/11131">#11131</A>)
+<LI>NVDA sẽ bị thoát ngay cả khi các cửa sổ đang mở. Việc thoát chương trình giờ đây sẽ đóng tất cả cửa sổ và hộp thoại của NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/1740">#1740</A>)
+<LI>Giờ đây, có thể đóng trình hiển thị nội dung đọc bằng <CODE>alt+F4</CODE> và có nút đóng để người dùng các thiết bị trỏ dễ tương tác hơn. (<A HREF="https://github.com/nvaccess/nvda/issues/12330">#12330</A>)
+<LI>Trình xem chữ nổi giờ đây có nút đóng để người dùng các thiết bị trỏ dễ tương tác hơn. (<A HREF="https://github.com/nvaccess/nvda/issues/12328">#12328</A>)
+<LI>Trong hộp thoại danh sách các thành phần, phím tắt cho nút "Kích hoạt" đã dược gỡ khỏi vài ngôn ngữ để tránh xung đột với loại thành phần nút radio. Khi khả dụng, đây vẫn là nút mặc định của hộp thoại và vẫn có thể kích hoạt bằng cách đơn giản là bấm enter từ danh sách các thành phần. (<A HREF="https://github.com/nvaccess/nvda/issues/6167">#6167</A>)
+</UL>
+
+<H3>Sửa lỗi</H3>
+<UL>
+<LI>Danh sách thư trong Outlook 2010 lại có thể đọc được. (<A HREF="https://github.com/nvaccess/nvda/issues/12241">#12241</A>)
+<LI>Trong các chương trình terminal trên Windows 10 phiên bản 1607 trở lên, khi chèn hay xóa kí từ ở giữa một dòng, kí tự bên phải kí tự đó không còn bị đọc lên. (<A HREF="https://github.com/nvaccess/nvda/issues/3200">#3200</A>)
+  <UL>
+  <LI>Sửa lỗi thử nghiệm này phải được bật thủ công trong bảng cài đặt nâng cao của NVDA bằng cách đổi thuật toán diff algorithm thành Diff Match Patch.
+  </UL>
+<LI>Trong MS Outlook, việc thông báo khoảng cách một cách không hợp lý khi shift+tab từ nội dung thư đến trường tiêu đề sẽ không còn nữa. (<A HREF="https://github.com/nvaccess/nvda/issues/10254">#10254</A>)
+<LI>Trong Python Console, việc chèn một tab để thụt lề ở đầu của một dòng nhập liệu không rỗng và thao tác từ hoàn thành bằng tab ở giữa một dòng giờ đã được hỗ trợ. (<A HREF="https://github.com/nvaccess/nvda/issues/11532">#11532</A>)
+<LI>Thông tin định dạng và các thông điệp có thể duyệt khác không còn đọc là dòng trắng ngoài ý muốn khi tắt trình bày theo màn hình. (<A HREF="https://github.com/nvaccess/nvda/issues/12004">#12004</A>)
+<LI>Giờ đây, có thể đọc bình luận trong MS Word khi bật UIA. (<A HREF="https://github.com/nvaccess/nvda/issues/9285">#9285</A>)
+<LI>Khả năng vận hành khi tương tác với Visual Studio đã được cải thiện. (<A HREF="https://github.com/nvaccess/nvda/issues/12171">#12171</A>)
+<LI>Sửa các lỗi đồ họa như thiếu thành phần khi dùng NVDA với phác thảo từ phải sang trái. (<A HREF="https://github.com/nvaccess/nvda/issues/8859">#8859</A>)
+<LI>Tôn trọng phác thảo giao diện người dùng dựa trên ngôn ngữ NVDA, không phải bản địa hóa của hệ thống. (<A HREF="https://github.com/nvaccess/nvda/issues/638">#638</A>)
+  <UL>
+  <LI>vấn đề đã biết cho các ngôn ngữ từ phải sang trái: bảng bên phải của các nhóm clip với các nhãn / điều khiển. (<A HREF="https://github.com/nvaccess/nvda/issues/12181">#12181</A>)
+  </UL>
+<LI>Phần bản đĩa của python đã được thiết lập là khớp với ngôn ngữ đã chọn trong tùy chọn, và sẽ xuất hiện khi dùng ngôn ngữ mặc định. (<A HREF="https://github.com/nvaccess/nvda/issues/12214">#12214</A>)
+<LI>TextInfo.getTextInChunks không còn bị treo khi dược gọi trong các điều khiển Rich Edit như trình xem log của NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/11613">#11613</A>)
+<LI>Lại có thể dùng NVDA trong các ngôn ngữ có chứa dấu gạch dưới trong tên bản địa của nó như de_CH trên Windows 10 1803 và 1809. (<A HREF="https://github.com/nvaccess/nvda/issues/12250">#12250</A>)
+<LI>Trong WordPad, cấu hình việc đọc chỉ số trên / chỉ số dưới đã hoạt động như mong muốn. (<A HREF="https://github.com/nvaccess/nvda/issues/12262">#12262</A>)
+<LI>NVDA không còn bị lỗi khi đọc nội dung mới có focus trên một trang web nếu focus cũ biến mất và được thay thế bằng focus mới ở cùng vị trí. (<A HREF="https://github.com/nvaccess/nvda/issues/12147">#12147</A>)
+<LI>Định dạng gạch ngang, chỉ số trên và chỉ số dưới cho toàn bộ ô trong Excel giờ đã được đọc nếu bật các tùy chọn tương ứng. (<A HREF="https://github.com/nvaccess/nvda/issues/12264">#12264</A>)
+<LI>Sửa lỗi sao chép cấu hình trong khi cài đặt từ một bản chạy trực tiếp khi thư mục mặc định để chép cấu hình là thư mục rỗng. (<A HREF="https://github.com/nvaccess/nvda/issues/12071">#12071</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12205">#12205</A>)
+<LI>Sửa lỗi đọc không chính xác cho vài kí tự có âm nhấn hoặc âm tiêu khi bật tùy chọn 'Đọc chữ hoa'. (<A HREF="https://github.com/nvaccess/nvda/issues/11948">#11948</A>)
+<LI>Sửa lỗi thay đổi cao độ trong các bộ đọc SAPI4. (<A HREF="https://github.com/nvaccess/nvda/issues/12311">#12311</A>)
+<LI>Bộ cài NVDA giờ đây tôn trọng tham số của dòng lệnh <CODE>--minimal</CODE> và không phát âm thanh khởi động, hoạt động giống nahu với tập tin thực thi của bản cái hay bản chạy trực tiếp của NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/12289">#12289</A>)
+<LI>In MS Word hay Outlook, các phím di chuyển nhanh trong bảng giờ đây có thẻ đi đến bố cục bảng nếu bật tùy chọn "Đọc các bảng bố cục" trong cài đặt chế độ duyệt. (<A HREF="https://github.com/nvaccess/nvda/issues/11899">#11899</A>)
+<LI>NVDA sẽ không còn đọc "↑↑↑" cho các biểu tượng cảm xúc trong một số ngôn ngữ. (<A HREF="https://github.com/nvaccess/nvda/issues/11963">#11963</A>)
 +
 +
 == Các thay đổi cho nhà phát triển ==
