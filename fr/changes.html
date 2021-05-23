@@ -91,125 +91,117 @@ Cette version interrompt également le support d'Adobe Flash.
 
 <H3>Changements pour les développeurs</H3>
 <UL>
-<LI>Note: this is an Add-on API compatibility breaking release. Add-ons will need to be re-tested and have their manifest updated.
-<LI>NVDA's build system now fetches all Python dependencies with pip and stores them in a Python virtual environment. This is all done transparently.
+<LI>Remarque : Cette version rompt la compatibilité de l'API des extensions. Les extensions devront être retestés et leur manifeste mis à jour.
+<LI>Le système de construction de NVDA récupère désormais toutes les dépendances Python avec pip et les stocke dans un environnement virtuel Python. Tout cela est fait de manière transparente.
   <UL>
-  <LI>To build NVDA, SCons should continue to be used in the usual way. E.g. executing scons.bat in the root of the repository. Running <CODE>py -m SCons</CODE> is no longer supported, and <CODE>scons.py</CODE> has also been removed.
-  <LI>To run NVDA from source, rather than executing <CODE>source/nvda.pyw</CODE> directly, the developer should now use <CODE>runnvda.bat</CODE> in the root of the repository. If you do try to execute <CODE>source/nvda.pyw</CODE>, a message box will alert you this is no longer supported.
-  <LI>To perform unit tests, execute <CODE>rununittests.bat [&lt;extra unittest discover options&gt;]</CODE>
-  <LI>To perform system tests: execute <CODE>runsystemtests.bat [&lt;extra robot options&gt;]</CODE>
-  <LI>To perform linting, execute <CODE>runlint.bat &lt;base branch&gt;</CODE>
-  <LI>Please refer to readme.md for more details.
+  <LI>Pour construire NVDA, SCons doit continuer à être utilisés de la manière habituelle. Par exemple. exécuter scons.bat à la racine du dépôt. L'exécution de <CODE>py -m SCons</CODE> n'est plus prise en charge, et <CODE>scons.py</CODE> a également été supprimé.
+  <LI>Pour exécuter NVDA à partir des sources, plutôt que d'exécuter directement <CODE>source/nvda.pyw</CODE>, le développeur doit maintenant utiliser <CODE>runnvda.bat</CODE> à la racine du dépôt. Si vous essayez d'exécuter <CODE>source/nvda.pyw</CODE>, une boîte de message vous avertira que ce n'est plus supporté.
+  <LI>Pour effectuer des tests unitaires, exécutez <CODE>rununittests.bat [&lt;options de découverte unittest additionnelles&gt;]</CODE>
+  <LI>Pour effectuer des tests système : exécutez <CODE>runsystemtests.bat [&lt;options robot additionnelles&gt;]</CODE>
+  <LI>Pour effectuer le linting, exécutez <CODE>runlint.bat &lt;branche de base&gt;</CODE>
+  <LI>Veuillez consulter readme.md pour plus de détails.
   </UL>
-<LI>The following Python dependencies have also been upgraded:
+<LI>Les dépendances Python suivantes ont également été mises à niveau :
   <UL>
-  <LI>comtypes updated to 1.1.8.
-  <LI>pySerial updated to 3.5.
-  <LI>wxPython updated to 4.1.1.
-  <LI>Py2exe updated to 0.10.1.0.
+  <LI>comtypes mis à jour à la version 1.1.8.
+  <LI>pySerial mis à jour à la version 3.5.
+  <LI>wxPython mis à jour vers la version 4.1.1.
+  <LI>Py2exe mis à jour à la version 0.10.1.0.
   </UL>
-<LI><CODE>LiveText._getTextLines</CODE> has been removed. (<A HREF="https://github.com/nvaccess/nvda/issues/11639">#11639</A>)
+<LI><CODE>LiveText._getTextLines</CODE> a été supprimé. (<A HREF="https://github.com/nvaccess/nvda/issues/11639">#11639</A>)
   <UL>
-  <LI>Instead, override <CODE>_getText</CODE> which returns a string of all text in the object.
+  <LI>Au lieu de cela, remplacez <CODE>_getText</CODE> qui renvoie une chaîne contenant tout le texte de l'objet.
   </UL>
-<LI><CODE>LiveText</CODE> objects can now calculate diffs by character. (<A HREF="https://github.com/nvaccess/nvda/issues/11639">#11639</A>)
+<LI>Les objets <CODE>LiveText</CODE> peuvent désormais calculer les différences par caractère. (<A HREF="https://github.com/nvaccess/nvda/issues/11639">#11639</A>)
   <UL>
-  <LI>To alter the diff behaviour for some object, override the <CODE>diffAlgo</CODE> property (see the docstring for details).
+  <LI>Pour modifier le comportement de diff pour certains objets, remplacez la propriété <CODE>diffAlgo</CODE> (voir la docstring pour plus de détails).
   </UL>
-<LI>When defining a script with the script decorator, the 'allowInSleepMode' boolean argument can be specified to control if a script is available in sleep mode or not. (<A HREF="https://github.com/nvaccess/nvda/issues/11979">#11979</A>)
-<LI>The following functions are removed from the config module. (<A HREF="https://github.com/nvaccess/nvda/issues/11935">#11935</A>)
+<LI>Lors de la définition d'un script avec le décorateur de script, l'argument booléen 'allowInSleepMode' peut être spécifié pour contrôler si un script est disponible en mode veille ou non. (<A HREF="https://github.com/nvaccess/nvda/issues/11979">#11979</A>)
+<LI>Les fonctions suivantes sont supprimées du module config. (<A HREF="https://github.com/nvaccess/nvda/issues/11935">#11935</A>)
   <UL>
-  <LI>canStartOnSecureScreens - use config.isInstalledCopy instead.
-  <LI>hasUiAccess and execElevated - use them from the systemUtils module.
-  <LI>getConfigDirs - use globalVars.appArgs.configPath instead.
+  <LI>canStartOnSecureScreens - utilisez config.isInstalledCopy à la place.
+  <LI>hasUiAccess et execElevated - utilisez-les depuis le module systemUtils.
+  <LI>getConfigDirs - utilisez globalVars.appArgs.configPath à la place.
   </UL>
-<LI>Module level REASON_* constants are removed from controlTypes - please use controlTypes.OutputReason instead. (<A HREF="https://github.com/nvaccess/nvda/issues/11969">#11969</A>)
-<LI>REASON_QUICKNAV has been removed from browseMode - use controlTypes.OutputReason.QUICKNAV instead. (<A HREF="https://github.com/nvaccess/nvda/issues/11969">#11969</A>)
-<LI><CODE>NVDAObject</CODE> (and derivatives) property <CODE>isCurrent</CODE> now strictly returns Enum class <CODE>controlTypes.IsCurrent</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
+<LI>Les constantes REASON_ * définies au niveau du module sont supprimées de controlTypes - veuillez utiliser controlTypes.OutputReason à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/11969">#11969</A>)
+<LI>REASON_QUICKNAV a été supprimé de BrowseMode - utilisez controlTypes.OutputReason.QUICKNAV à la place . (<A HREF="https://github.com/nvaccess/nvda/issues/11969">#11969</A>)
+<LI>La propriété <CODE>isCurrent</CODE> de <CODE>NVDAObject</CODE> (et ses dérivés) renvoie désormais strictement la classe d'énumération <CODE>controlTypes.IsCurrent</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
   <UL>
-  <LI><CODE>isCurrent</CODE> is no longer Optional, and thus will not return None.
-  <LI>When an object is not current <CODE>controlTypes.IsCurrent.NO</CODE> is returned.
+  <LI><CODE>isCurrent</CODE> n'est plus optionnel et ne retournera donc pas None.
+  <LI>Lorsqu'un objet n'est pas le courant, <CODE>controlTypes.IsCurrent.NO</CODE> est renvoyé.
   </UL>
-<LI>The <CODE>controlTypes.isCurrentLabels</CODE> mapping has been removed. (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
+<LI>Le dictionnaire <CODE>controlTypes.isCurrentLabels</CODE> a été supprimé. (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
   <UL>
-  <LI>Instead use the <CODE>displayString</CODE> property on a <CODE>controlTypes.IsCurrent</CODE> enum value. EG <CODE>controlTypes.IsCurrent.YES.displayString</CODE>
+  <LI>A la place, utilisez la propriété <CODE>displayString</CODE> sur une valeur d'énumération <CODE>controlTypes.IsCurrent</CODE>. Par exemple <CODE>controlTypes.IsCurrent.YES.displayString</CODE>
   </UL>
-<LI><CODE>NVDAObject</CODE> (and derivatives) property <CODE>isCurrent</CODE> now strictly returns <CODE>controlTypes.IsCurrent</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
+<LI><CODE>winKernel.GetTimeFormat</CODE> a été supprimé - utilisez <CODE>winKernel.GetTimeFormatEx</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12139">#12139</A>)
+<LI><CODE>winKernel.GetDateFormat</CODE> a été supprimé - utilisez <CODE>winKernel.GetDateFormatEx</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12139">#12139</A>)
+<LI><CODE>gui.DriverSettingsMixin</CODE> a été supprimé - utilisez <CODE>gui.AutoSettingsMixin</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12144">#12144</A>)
+<LI><CODE>speech.getSpeechForSpelling</CODE> a été supprimé - utilisez <CODE>speech.getSpellingSpeech</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12145">#12145</A>)
+<LI>Les commandes ne peuvent pas être directement importées depuis speech de la façon suivante: <CODE>import speech; speech.ExampleCommand ()</CODE> ou <CODE>import speech.manager; speech.manager.ExampleCommand()</CODE> - utilisez <CODE>from speech.commands import ExampleCommand</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12126">#12126</A>)
+<LI><CODE>speakTextInfo</CODE> n'enverra plus de parole via <CODE>speakWithoutPauses</CODE> si la raison est <CODE>SAYALL</CODE>, vu que <CODE>SayAllHandler</CODE> le fait maintenant manuellement. (<A HREF="https://github.com/nvaccess/nvda/issues/12150">#12150</A>)
+<LI>Le contenu du module <CODE>synthDriverHandler</CODE> n'est plus importée globalement (<CODE>from synthDriverHandler import *</CODE>) dans <CODE>globalCommands</CODE> et <CODE>gui.settingsDialogs</CODE> - utilisez <CODE>from synthDriverHandler import synthFunctionExample</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12172">#12172</A>)
+<LI><CODE>ROLE_EQUATION</CODE> a été supprimé de controlTypes - utilisez <CODE>ROLE_MATH</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12164">#12164</A>)
+<LI>Les classes <CODE>autoSettingsUtils.driverSetting</CODE> sont supprimées de <CODE>driverHandler</CODE> - veuillez les utiliser depuis <CODE>autoSettingsUtils.driverSetting</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12168">#12168</A>)
+<LI>Les classes <CODE>autoSettingsUtils.utils</CODE> sont supprimées de <CODE>driverHandler</CODE> - veuillez les utiliser depuis <CODE>autoSettingsUtils.utils</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12168">#12168</A>)
+<LI>La prise en charge des <CODE>TextInfo</CODE> qui n'héritent pas de <CODE>contentRecog.BaseContentRecogTextInfo</CODE> est supprimée. (<A HREF="https://github.com/nvaccess/nvda/issues/12157">#12157</A>)
+<LI><CODE>speech.speakWithoutPauses</CODE> a été supprimé - veuillez utiliser <CODE>speech.speechWithoutPauses.SpeechWithoutPauses(speakFunc=speech.speak).speakWithoutPauses</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12195">#12195</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12251">#12251</A>)
+<LI><CODE>speech.re_last_pause</CODE> a été supprimé - veuillez utiliser <CODE>speech.speechWithoutPauses.SpeechWithoutPauses.re_last_pause</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12195">#12195</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12251">#12251</A>)
+<LI><CODE>WelcomeDialog</CODE>, <CODE>LauncherDialog</CODE> et <CODE>AskAllowUsageStatsDialog</CODE> sont déplacés vers le module <CODE>gui.startupDialogs</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12105">#12105</A>)
+<LI><CODE>getDocFilePath</CODE> a été déplacé de <CODE>gui</CODE> vers le module <CODE>documentationUtils</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12105">#12105</A>)
+<LI>Le module gui.accPropServer ainsi que les classes AccPropertyOverride et ListCtrlAccPropServer du module gui.nvdaControls ont été supprimés au profit de la prise en charge native de WX pour le remplacement des propriétés d'accessibilité. Si vous voulez améliorer l'accessibilité des contrôles WX, implémentez wx.Accessible à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12215">#12215</A>)
+<LI>Les fichiers dans <CODE>source/comInterfaces/</CODE> sont désormais plus facilement consommables par les outils de développement tels que les IDE. (<A HREF="https://github.com/nvaccess/nvda/issues/12201">#12201</A>)
+<LI>Des méthodes et des types ont été ajoutés au module winVersion pour faciliter l'obtention et la comparaison des versions de Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/11909">#11909</A>)
   <UL>
-  <LI><CODE>isCurrent</CODE> is no longer Optional, and thus will not return None, when an object is not current <CODE>controlTypes.IsCurrent.NO</CODE> is returned.
+  <LI>La fonction isWin10 située dans le module winVersion a été supprimée.
+  <LI>la classe winVersion.WinVersion est un type comparable et pouvant être classé encapsulant les informations de version de Windows.
+  <LI>La fonction winVersion.getWinVer a été ajoutée pour obtenir une winVersion.WinVersion représentant le système d'exploitation en cours d'exécution.
+  <LI>Des constantes ont été ajoutées pour les versions Windows connues, voir les constantes winVersion.WIN*.
   </UL>
-<LI>The <CODE>controlTypes.isCurrentLabels</CODE> has been removed, instead use the <CODE>displayString</CODE> property on a <CODE>controlTypes.IsCurrent</CODE> enum value. (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
+<LI>IAccessibleHandler n'importe plus tout depuis les interfaces IAccessible et IA2 COM - veuillez les utiliser directement. (<A HREF="https://github.com/nvaccess/nvda/issues/12232">#12232</A>)
+<LI>Les objets TextInfo ont maintenant des propriétés de début et de fin qui peuvent être comparées mathématiquement avec des opérateurs tels que &lt; &lt;= == != &gt;= &gt;. (<A HREF="https://github.com/nvaccess/nvda/issues/11613">#11613</A>)
   <UL>
-  <LI>EG <CODE>controlTypes.IsCurrent.YES.displayString</CODE>
+  <LI>Par exemple ti1.start &lt;= ti2.end
+  <LI>Cette utilisation est désormais préférée à ti1.compareEndPoints(ti2, "startToEnd") &lt;= 0
   </UL>
-<LI><CODE>winKernel.GetTimeFormat</CODE> has been removed - use <CODE>winKernel.GetTimeFormatEx</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12139">#12139</A>)
-<LI><CODE>winKernel.GetDateFormat</CODE> has been removed - use <CODE>winKernel.GetDateFormatEx</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12139">#12139</A>)
-<LI><CODE>gui.DriverSettingsMixin</CODE> has been removed - use <CODE>gui.AutoSettingsMixin</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12144">#12144</A>)
-<LI><CODE>speech.getSpeechForSpelling</CODE> has been removed - use <CODE>speech.getSpellingSpeech</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12145">#12145</A>)
-<LI>Commands cannot be directly imported from speech as <CODE>import speech; speech.ExampleCommand()</CODE> or <CODE>import speech.manager; speech.manager.ExampleCommand()</CODE> - use <CODE>from speech.commands import ExampleCommand</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12126">#12126</A>)
-<LI><CODE>speakTextInfo</CODE> will no longer send speech through <CODE>speakWithoutPauses</CODE> if reason is <CODE>SAYALL</CODE>, as <CODE>SayAllHandler</CODE> does this manually now. (<A HREF="https://github.com/nvaccess/nvda/issues/12150">#12150</A>)
-<LI>The <CODE>synthDriverHandler</CODE> module is no longer star imported into <CODE>globalCommands</CODE> and <CODE>gui.settingsDialogs</CODE> - use <CODE>from synthDriverHandler import synthFunctionExample</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12172">#12172</A>)
-<LI><CODE>ROLE_EQUATION</CODE> has been removed from controlTypes - use <CODE>ROLE_MATH</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12164">#12164</A>)
-<LI><CODE>autoSettingsUtils.driverSetting</CODE> classes are removed from <CODE>driverHandler</CODE> - please use them from <CODE>autoSettingsUtils.driverSetting</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12168">#12168</A>)
-<LI><CODE>autoSettingsUtils.utils</CODE> classes are removed from <CODE>driverHandler</CODE> - please use them from <CODE>autoSettingsUtils.utils</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12168">#12168</A>)
-<LI>Support of <CODE>TextInfo</CODE>s that do not inherit from <CODE>contentRecog.BaseContentRecogTextInfo</CODE> is removed. (<A HREF="https://github.com/nvaccess/nvda/issues/12157">#12157</A>)
-<LI><CODE>speech.speakWithoutPauses</CODE> has been removed - please use <CODE>speech.speechWithoutPauses.SpeechWithoutPauses(speakFunc=speech.speak).speakWithoutPauses</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12195">#12195</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12251">#12251</A>)
-<LI><CODE>speech.re_last_pause</CODE> has been removed - please use <CODE>speech.speechWithoutPauses.SpeechWithoutPauses.re_last_pause</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12195">#12195</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12251">#12251</A>)
-<LI><CODE>WelcomeDialog</CODE>, <CODE>LauncherDialog</CODE> and <CODE>AskAllowUsageStatsDialog</CODE> are moved to the <CODE>gui.startupDialogs</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12105">#12105</A>)
-<LI><CODE>getDocFilePath</CODE> has been moved from <CODE>gui</CODE> to the <CODE>documentationUtils</CODE> module. (<A HREF="https://github.com/nvaccess/nvda/issues/12105">#12105</A>)
-<LI>The gui.accPropServer module as well as the AccPropertyOverride and ListCtrlAccPropServer classes from the gui.nvdaControls module have been removed in favor of WX native support for overriding accessibility properties. When enhancing accessibility of WX controls, implement wx.Accessible instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12215">#12215</A>)
-<LI>Files in <CODE>source/comInterfaces/</CODE> are now more easily consumable by developer tools such as IDEs. (<A HREF="https://github.com/nvaccess/nvda/issues/12201">#12201</A>)
-<LI>Convenience methods and types have been added to the winVersion module for getting and comparing Windows versions. (<A HREF="https://github.com/nvaccess/nvda/issues/11909">#11909</A>)
+<LI>Les propriétés start et end de TextInfo peuvent également être définies l'une à partir de l'autre. (<A HREF="https://github.com/nvaccess/nvda/issues/11613">#11613</A>)
   <UL>
-  <LI>isWin10 function found in winVersion module has been removed.
-  <LI>class winVersion.WinVersion is a comparable and order-able type encapsulating Windows version information.
-  <LI>Function winVersion.getWinVer has been added to get a winVersion.WinVersion representing the currently running OS.
-  <LI>Convenience constants have been added for known Windows releases, see winVersion.WIN* constants.
+  <LI>Par exemple ti1.start = ti2.end
+  <LI>Cette utilisation est préférée à ti1.SetEndPoint(ti2, "startToEnd")
   </UL>
-<LI>IAccessibleHandler no longer star imports everything from IAccessible and IA2 COM interfaces - please use them directly. (<A HREF="https://github.com/nvaccess/nvda/issues/12232">#12232</A>)
-<LI>TextInfo objects now have start and end properties which can be compared mathematically with operators such as &lt; &lt;= == != &gt;= &gt;. (<A HREF="https://github.com/nvaccess/nvda/issues/11613">#11613</A>)
+<LI><CODE>wx.CENTRE_ON_SCREEN</CODE> et <CODE>wx.CENTRE_ON_SCREEN</CODE> sont supprimés, utilisez <CODE>self.CentreOnScreen()</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12309">#12309</A>)
+<LI><CODE>easeOfAccess.isSupported</CODE> a été supprimé, NVDA ne prend en charge que les versions de Windows où cette valeur est évaluée à <CODE>True</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12222">#12222</A>)
+<LI><CODE>sayAllHandler</CODE> a été déplacé vers <CODE>speech.sayAll</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12251">#12251</A>)
   <UL>
-  <LI>E.g. ti1.start &lt;= ti2.end
-  <LI>This usage is now prefered instead of ti1.compareEndPoints(ti2,"startToEnd") &lt;= 0
+  <LI><CODE>speech.sayAll.SayAllHandler</CODE> expose les fonctions <CODE>stop</CODE>, <CODE>isRunning</CODE>, <CODE>readObjects</CODE>, <CODE>readText</CODE>, <CODE>lastSayAllMode</CODE>.
+  <LI><CODE>SayAllHandler.stop</CODE> réinitialise également l'instance <CODE>SpeechWithoutPauses</CODE> de <CODE>SayAllHandler</CODE>.
+  <LI><CODE>CURSOR_REVIEW</CODE> et <CODE>CURSOR_CARET</CODE> ont été remplacés par <CODE>CURSOR.REVIEW</CODE> et <CODE>CURSOR.CARET</CODE>.
   </UL>
-<LI>TextInfo start and end properties can also be set to each other. (<A HREF="https://github.com/nvaccess/nvda/issues/11613">#11613</A>)
-  <UL>
-  <LI>E.g. ti1.start = ti2.end
-  <LI>This usage is prefered instead of ti1.SetEndPoint(ti2,"startToEnd")
-  </UL>
-<LI><CODE>wx.CENTRE_ON_SCREEN</CODE> and <CODE>wx.CENTER_ON_SCREEN</CODE> are removed, use <CODE>self.CentreOnScreen()</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12309">#12309</A>)
-<LI><CODE>easeOfAccess.isSupported</CODE> has been removed, NVDA only supports versions of Windows where this evaluates to <CODE>True</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12222">#12222</A>)
-<LI><CODE>sayAllHandler</CODE> has been moved to <CODE>speech.sayAll</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12251">#12251</A>)
-  <UL>
-  <LI><CODE>speech.sayAll.SayAllHandler</CODE> exposes the functions <CODE>stop</CODE>, <CODE>isRunning</CODE>, <CODE>readObjects</CODE>, <CODE>readText</CODE>, <CODE>lastSayAllMode</CODE>.
-  <LI><CODE>SayAllHandler.stop</CODE> also resets the <CODE>SayAllHandler</CODE> <CODE>SpeechWithoutPauses</CODE> instance.
-  <LI><CODE>CURSOR_REVIEW</CODE> and <CODE>CURSOR_CARET</CODE> has been replaced with <CODE>CURSOR.REVIEW</CODE> and <CODE>CURSOR.CARET</CODE>.
-  </UL>
-<LI><CODE>speech.SpeechWithoutPauses</CODE> has been moved to <CODE>speech.speechWithoutPauses.SpeechWithoutPauses</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12251">#12251</A>)
-<LI><CODE>speech.curWordChars</CODE> has been renamed <CODE>speech._curWordChars</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12395">#12395</A>)
-<LI>the following have been removed from <CODE>speech</CODE> and can be accessed through <CODE>speech.getState()</CODE>. These are readonly values now. (<A HREF="https://github.com/nvaccess/nvda/issues/12395">#12395</A>)
+<LI><CODE>speech.SpeechWithoutPauses</CODE> a été déplacé vers <CODE>speech.speechWithoutPauses.SpeechWithoutPauses</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12251">#12251</A>)
+<LI><CODE>speech.curWordChars</CODE> a été renommé <CODE>speech._curWordChars</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12395">#12395</A>)
+<LI>les éléments suivants ont été supprimés de <CODE>speech</CODE> et sont accessibles via <CODE>speech.getState()</CODE>. Ce sont maintenant des valeurs en lecture seule. (<A HREF="https://github.com/nvaccess/nvda/issues/12395">#12395</A>)
   <UL>
   <LI>speechMode
   <LI>speechMode_beeps_ms
   <LI>beenCanceled
   <LI>isPaused
   </UL>
-<LI>to update <CODE>speech.speechMode</CODE> use <CODE>speech.setSpeechMode</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12395">#12395</A>)
-<LI>the following have been moved to <CODE>speech.SpeechMode</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12395">#12395</A>)
+<LI>pour mettre à jour <CODE>speech.speechMode</CODE>, utilisez <CODE>speech.setSpeechMode</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12395">#12395</A>)
+<LI>les éléments suivants ont été déplacés vers <CODE>speech.SpeechMode</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12395">#12395</A>)
   <UL>
-  <LI><CODE>speech.speechMode_off</CODE> becomes <CODE>speech.SpeechMode.off</CODE>
-  <LI><CODE>speech.speechMode_beeps</CODE> becomes <CODE>speech.SpeechMode.beeps</CODE>
-  <LI><CODE>speech.speechMode_talk</CODE> becomes <CODE>speech.SpeechMode.talk</CODE>
+  <LI><CODE>speech.speechMode_off</CODE> devient <CODE>speech.SpeechMode.off</CODE>
+  <LI><CODE>speech.speechMode_beeps</CODE> devient <CODE>speech.SpeechMode.beeps</CODE>
+  <LI><CODE>speech.speechMode_talk</CODE> devient <CODE>speech.SpeechMode.talk</CODE>
   </UL>
-<LI><CODE>IAccessibleHandler.IAccessibleObjectIdentifierType</CODE> is now <CODE>IAccessibleHandler.types.IAccessibleObjectIdentifierType</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12367">#12367</A>)
-<LI>The following in <CODE>NVDAObjects.UIA.WinConsoleUIA</CODE> have been changed (<A HREF="https://github.com/nvaccess/nvda/issues/12094">#12094</A>)
+<LI><CODE>IAccessibleHandler.IAccessibleObjectIdentifierType</CODE> devient désormais <CODE>IAccessibleHandler.types.IAccessibleObjectIdentifierType</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12367">#12367</A>)
+<LI>Les éléments suivants dans <CODE>NVDAObjects.UIA.WinConsoleUIA</CODE> ont été modifiés (<A HREF="https://github.com/nvaccess/nvda/issues/12094">#12094</A>)
   <UL>
-  <LI><CODE>NVDAObjects.UIA.winConsoleUIA.is21H1Plus</CODE> renamed <CODE>NVDAObjects.UIA.winConsoleUIA.isImprovedTextRangeAvailable</CODE>.
-  <LI><CODE>NVDAObjects.UIA.winConsoleUIA.consoleUIATextInfo</CODE> renamed to start class name with upper case.
-  <LI><CODE>NVDAObjects.UIA.winConsoleUIA.consoleUIATextInfoPre21H1</CODE> renamed <CODE>NVDAObjects.UIA.winConsoleUIA.ConsoleUIATextInfoWorkaroundEndInclusive</CODE>
+  <LI><CODE>NVDAObjects.UIA.winConsoleUIA.is21H1Plus</CODE> renommé <CODE>NVDAObjects.UIA.winConsoleUIA.isImprovedTextRangeAvailable</CODE>.
+  <LI><CODE>NVDAObjects.UIA.winConsoleUIA.consoleUIATextInfo</CODE> renommé pour que le nom de classe commence par une majuscule.
+  <LI><CODE>NVDAObjects.UIA.winConsoleUIA.consoleUIATextInfoPre21H1</CODE> renommé <CODE>NVDAObjects.UIA.winConsoleUIA.ConsoleUIATextInfoWorkaroundEndInclusive</CODE>
     <UL>
-    <LI>The implementation works around both end points being inclusive (in text ranges) before <A HREF="https://github.com/microsoft/terminal/pull/4018">microsoft/terminal PR 4018</A>
-    <LI>Workarounds for <CODE>expand</CODE>, <CODE>collapse</CODE>, <CODE>compareEndPoints</CODE>, <CODE>setEndPoint</CODE>, etc
+    <LI>L'implementation définit une solution alternative au fait que les deux extrémités sont incluses (dans les plages de texte) avant <A HREF="https://github.com/microsoft/terminal/pull/4018">microsoft/terminal PR 4018</A>
+    <LI>Solutions alternatives pour <CODE>expand</CODE>, <CODE>collapse</CODE>, <CODE>compareEndPoints</CODE>, <CODE>setEndPoint</CODE>, etc
     </UL>
   </UL>
 </UL>
