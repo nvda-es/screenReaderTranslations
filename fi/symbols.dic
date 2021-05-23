@@ -5,6 +5,13 @@
 
 complexSymbols:
 # identifier	regexp
+# Sentence endings
+. sentence ending	(?<=[^\s.])\.(?=[\"'”’)\s]|$)
+! sentence ending	(?<=[^\s!])\!(?=[\"'”’)\s]|$)
+? sentence ending	(?<=[^\s?])\?(?=[\"'”’)\s]|$)
+# Phrase endings
+; phrase ending	(?<=[^\s;]);(?=\s|$)
+: phrase ending	(?<=[^\s:]):(?=\s|$)
 # Others
 decimal comma	(?<![^\d -])\,(?=\d)
 negative number	(?<!\w)[-−]{1}(?=[$£€¥,]?\d)
@@ -27,7 +34,7 @@ symbols:
 ... sentence ending	piste piste piste	all	always
 … sentence ending	piste piste piste	all	always
 ; phrase ending	puolipiste	most	always
-: phrase ending	kaksoispiste	most	never
+: phrase ending	kaksoispiste	most	always
 
 decimal comma		none	always
 in-word '	heitto	all	norep
@@ -73,7 +80,7 @@ $	dollari	all	norep
 -	viiva	most
 .	piste	some
 /	kautta	some
-:	kaksoispiste	most	never
+:	kaksoispiste	most	norep
 ;	puolipiste	most
 ?	kysymys	all
 @	ät	some
