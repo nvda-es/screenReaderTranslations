@@ -4,7 +4,7 @@ Quoi de Neuf dans NVDA
 %!includeconf: ../changes.t2tconf
 
 = 2021.1 =
-Cette version inclu un support expérimental d'UIA dans Microsoft Excel et les navigateurs basés sur Chromium.
+Cette version inclut un support expérimental d'UIA dans Microsoft Excel et les navigateurs basés sur Chromium.
 Elle contient également des correctifs pour de nombreuses langues, et pour l'accès aux liens en Braille.
 Des mises à jour de la base CLDR, des symboles mathématiques, de eSpeak-NG et de Liblouis.
 
@@ -17,47 +17,47 @@ Cette version interrompt également le support d'Adobe Flash.
 == Nouvelles fonctionnalités ==
 - Support initial d'UIA dans les navigateurs basés sur Chromium (tel que Edge). (#12025)
 - Support expérimental optionnel de Microsoft Excel via UIAutomation. Recommandé uniquement pour Microsoft Excel version 16.0.13522.10000 ou supérieur. (#12210)
-- Facilité de navigation dans la sortie de la console Python de NVDA. (#9784)
+- Facilité de navigation dans l'affichage de la console Python de NVDA. (#9784)
   - alt+haut/bas amène au résultat précédent/suivant (ajouter shift pour sélectionner).
-  - CTRL+L vide le paneau de sortie.
+  - CTRL+L vide le volet d'affichage.
 - NVDA reporte maintenant les catégories auxquelles un rendez-vous est assigné dans Microsoft Outlook, s'il y en a. (#11598)
 
 
 == Changements ==
-- En mode navigation, les contrôles peuvent maintenant être activés sur leurs descripteurs en utilisant les routing curseur d'un afficheur Braille (par exemple ln pour un lien). Cela est particulièrement utile sur les cases à cocher sans label par exemple. (#7447)
+- En mode navigation, les contrôles peuvent maintenant être activés sur leurs descripteurs en utilisant les curseurs éclair d'un afficheur Braille (par exemple ln pour un lien). Ceci est particulièrement utile sur les cases à cocher sans label par exemple. (#7447)
 - NVDA empêche maintenant l'utilisateur d'exécuter la reconnaissance optique de caractères de Windows 10 quand le rideau d'écran est actif. (#11911)
-- Mise à jour du référenciel commun de données Unicode (CLDR) à la version 38.1. (#11943)
+- Mise à jour du référentiel commun de données Unicode (CLDR) à la version 38.1. (#11943)
 - Ajout de plusieurs symboles mathématiques au dictionnaire de symboles. (#11467)
 - Le guide utilisateur, la liste de changements et le résumé des commandes ont maintenant une apparence révisée. (#12027)
 - "Non supporté" est maintenant retourné lorsque vous essayez de changer la disposition de l'écran dans des applications ne le supportant pas, comme Microsoft Word. (#7297)
-- L'option "Essayer de couper la parole pour les événements de focus expirés" dans les paramètres avancés est maintenant activée par défaut. (#10885)
+- Dans les paramètres avancés, l'option "Essayer de couper la parole pour les événements de focus expirés" est maintenant activée par défaut. (#10885)
   - Ce comportement peut être désactivé en définissant cette option sur "Non".
   - Les applications Web, comme GMail, n'annoncent plus d'informations erronées lors du déplacement rapide du focus.
 - eSpeak-NG a été mis à jour à la version 1.51-dev révision cad1c8e87fcccf677a445202e340f61980450a84. (#12202, #12280)
 - Mise à jour du transcripteur Braille Liblouis à la version [3.17.0 https://github.com/liblouis/liblouis/releases/tag/v3.17.0]. (#12137)
   - Nouvelles tables Braille: Bélarusse Braille littéraire, Bélarusse Braille informatique, Urdu intégral, Urdu abrégé.
 - Le support des contenus flash a été supprimé de NVDA en raison de l'utilisation de flash déconseillée par Adobe. (#11131)
-- NVDA se quittera maintenant même avec des fenêtres ouvertes, le processus de fermeture ferme maintenant toutes les fenêtres et dialogues de NVDA. (#1740)
+- On pourra maintenant quitter NVDA même avec des fenêtres ouvertes, le processus de fermeture ferme maintenant toutes les fenêtres et dialogues de NVDA. (#1740)
 - La visionneuse de parole peut maintenant être fermée par Alt-F4 et contient un bouton de fermeture standard pour les utilisateurs de périphériques de pointage. (#12330)
 - La visionneuse Braille a maintenant un bouton de fermeture standard pour les utilisateurs de périphériques de pointage. (#12328)
-- Dansla liste d'éléments, la touche accélératrice du bouton "Activer" a été retirée dans certaines langues afin d'éviter un conflit avec le ty pe d'élément "Bouton radio". Quand il est disponible, le bouton est toujours celui par défaut pour la boîte de dialogue et peut donc être activé simplement en appuyant sur entrée dans la liste d'éléments elle-même. (#6167)
+- Dans la liste d'éléments, la touche accélératrice du bouton "Activer" a été retirée dans certaines langues afin d'éviter un conflit avec le type d'élément "Bouton radio". Quand il est disponible, le bouton est toujours celui par défaut pour le dialogue et peut donc être activé simplement en appuyant sur entrée dans la liste d'éléments elle-même. (#6167)
 
 
 == Corrections de bogues ==
 - La liste de messages dans Outlook 2010 est à nouveau lisible. (#12241)
 - Dans les programmes de terminal sous Windows 1607 et supérieur, lors de l'insertion ou de la suppression d'un caractère au milieu d'une ligne, le caractère à droite du curseur n'est plus annoncé. (#3200)
   - Ce correctif expérimental doit être manuellement activé dans les paramètres avancés de NVDA en changeant l'algorithme de diff pour "Autoriser diff Match Patch".
-- Dans Microsoft Outlook, une distance inappropriée entre le corps et le sujet d'un mail lors de l'utilisation de shift-tab ne devrait plus apparaître. (#10254)
-- Dans la console Python, insérer une tabulation pour l'indentation en début d'une ligne qui n'est pas vide et utiliser l'autocomplétion en milieu de ligne est maintenant supporté. (#11532)
+- Dans Microsoft Outlook, une distance inappropriée entre le corps et le sujet d'un mail lors de l'utilisation de maj+tab ne devrait plus apparaître. (#10254)
+- Dans la console Python, insérer une tabulation pour l'indentation en début d'une ligne non vide et utiliser l'autocomplétion en milieu de ligne est maintenant supporté. (#11532)
 - Les informations de mise en forme et les autres messages navigables ne comportent plus de ligne vide non souhaitée à leur fin lorsque la disposition de l'écran est désactivée. (#12004)
 - Il est maintenant possible de lire les commentaires dans Microsoft Word avec UIA activé. (#9285)
 - Les performances lors de l'interaction avec Visual Studio ont été améliorées. (#12171)
 - Corrections de problèmes graphiques comme l'absence d'un élément lors de l'utilisation de NVDA avec une disposition de droite à gauche. (#8859)
 - Respect de la disposition de l'interface graphique en se basant sur la langue de NVDA plutôt que celle du système. (#638)
-  - problèmes connus pour les langues de droite à gauche: le bordure droite des groupes d'éléments masque une partie des labels des contrôles. (#12181)
+  - problème connu pour les langues de droite à gauche : la bordure droite des groupes d'éléments masque une partie des labels des contrôles. (#12181)
 - La langue de Python est définie pour toujours respecter la langue des préférences et devrait maintenant utiliser la langue par défaut. (#12214)
-- TextInfo.getTextInChunks ne ralenti plus lorsqu'appelé dans des contrôles d'édition riches comme la visionneuse du journal. (#11613)
-- Il est à nouveau possible d'utiliser NVDA avec des langues qui contiennent des soulignements dans leur nom comme de_CH sous Windows 10 1803 et 1809. (#12250)
+- TextInfo.getTextInChunks ne ralentit plus lorsqu'appelé dans des contrôles d'édition riches comme la visionneuse du journal. (#11613)
+- Il est à nouveau possible d'utiliser NVDA avec des langues contenant des soulignements dans leur nom comme de_CH sous Windows 10 1803 et 1809. (#12250)
 - Dans WordPad, le report des exposants et indices fonctionne maintenant comme attendu. (#12262)
 - NVDA n'échoue plus à lire le nouveau contenu sous le curseur sur une page Web si l'ancien contenu disparaît et est remplacé par le nouveau à la même place. (#12147)
 - Le formatage barré, exposant et indice est maintenant correctement renvoyé pour des celules Excel entières si les options correspondantes sont activées. (#12264)
