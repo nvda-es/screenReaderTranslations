@@ -44,9 +44,9 @@ Bu sürüm ayrıca Adobe Flash desteğini de kaldırmaktadır.
 <LI>Gelişmiş ayarlar kategorisindeki 'Süresi dolan odak olayları için konuşmayı iptal etmeyi dene' seçeneği artık varsayılan olarak etkindir. (<A HREF="https://github.com/nvaccess/nvda/issues/10885">#10885</A>)
   <UL>
   <LI>Bu davranış, bu seçenek "Hayır" olarak ayarlanarak devre dışı bırakılabilir.
-  <LI>Web uygulamaları (Gmail gibi) artık odağı hızla hareket ettirirken güncel olmayan bilgileri söylemez.
+  <LI>Web uygulamaları (Gmail gibi) artık odağı hızla hareket ettirirken güncel olmayan bilgiler söylenmez.
   </UL>
-<LI>Espeak-ng, 1.51-dev commit cad1c8e87fcccf677a445202e340f61980450a84 olarak güncellendi. (<A HREF="https://github.com/nvaccess/nvda/issues/12202">#12202</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12280">#12280</A>)
+<LI>Espeak-ng, 1.51-dev commit f6d092a9c13d864ede78c493f64a7d32cde41f09 olarak güncellendi. (<A HREF="https://github.com/nvaccess/nvda/issues/12202">#12202</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12280">#12280</A>)
 <LI>liblouis braille çevirmen  <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.17.0">3.17.0</A> sürümüne güncellendi. (<A HREF="https://github.com/nvaccess/nvda/issues/12137">#12137</A>)
   <UL>
   <LI>Yeni braille tabloları: Belarus edebi braille, Belarus bilgisayar braille, Urduca derece 1, Urduca derece 2.
@@ -128,21 +128,18 @@ Bu sürüm ayrıca Adobe Flash desteğini de kaldırmaktadır.
 <LI><CODE>NVDAObject</CODE> (and derivatives) property <CODE>isCurrent</CODE> now strictly returns Enum class <CODE>controlTypes.IsCurrent</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
   <UL>
   <LI><CODE>isCurrent</CODE> is no longer Optional, and thus will not return None.
-  <LI>When an object is not current <CODE>controlTypes.IsCurrent.NO</CODE> is returned.
+    <UL>
+    <LI>When an object is not current <CODE>controlTypes.IsCurrent.NO</CODE> is returned.
+    </UL>
   </UL>
 <LI>The <CODE>controlTypes.isCurrentLabels</CODE> mapping has been removed. (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
   <UL>
-  <LI>Instead use the <CODE>displayString</CODE> property on a <CODE>controlTypes.IsCurrent</CODE> enum value. EG <CODE>controlTypes.IsCurrent.YES.displayString</CODE>
+  <LI>Instead use the <CODE>displayString</CODE> property on a <CODE>controlTypes.IsCurrent</CODE> enum value.
+    <UL>
+    <LI>For example: <CODE>controlTypes.IsCurrent.YES.displayString</CODE>.
+  <CODE>winKernel.GetTimeFormat</CODE> has been removed - use <CODE>winKernel.GetTimeFormatEx</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12139">#12139</A>)
+    </UL>
   </UL>
-<LI><CODE>NVDAObject</CODE> (and derivatives) property <CODE>isCurrent</CODE> now strictly returns <CODE>controlTypes.IsCurrent</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
-  <UL>
-  <LI><CODE>isCurrent</CODE> is no longer Optional, and thus will not return None, when an object is not current <CODE>controlTypes.IsCurrent.NO</CODE> is returned.
-  </UL>
-<LI>The <CODE>controlTypes.isCurrentLabels</CODE> has been removed, instead use the <CODE>displayString</CODE> property on a <CODE>controlTypes.IsCurrent</CODE> enum value. (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
-  <UL>
-  <LI>EG <CODE>controlTypes.IsCurrent.YES.displayString</CODE>
-  </UL>
-<LI><CODE>winKernel.GetTimeFormat</CODE> has been removed - use <CODE>winKernel.GetTimeFormatEx</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12139">#12139</A>)
 <LI><CODE>winKernel.GetDateFormat</CODE> has been removed - use <CODE>winKernel.GetDateFormatEx</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12139">#12139</A>)
 <LI><CODE>gui.DriverSettingsMixin</CODE> has been removed - use <CODE>gui.AutoSettingsMixin</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12144">#12144</A>)
 <LI><CODE>speech.getSpeechForSpelling</CODE> has been removed - use <CODE>speech.getSpellingSpeech</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12145">#12145</A>)
