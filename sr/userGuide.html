@@ -1223,7 +1223,6 @@ Ovo uključuje dokumente u sledećim aplikacijama:
 <LI>Microsoft Edge
 <LI>Adobe Reader
 <LI>Foxit Reader
-<LI>Adobe Flash
 <LI>Podržane knjige u programu  Amazon Kindle za  PC
 </UL>
 
@@ -1400,7 +1399,7 @@ Koristite sledeće tastere za izvršavanje pretraga:
 <A NAME="ImbeddedObjects"></A>
 <H3>6.4. Umetnuti objekti</H3>
 <P>
-Stranice mogu uključiti obogaćene elemente koristeći tehnologije kao što su Adobe Flash,  Oracle Java i  HTML5, kao i aplikacije i dijaloge.
+Stranice mogu uključiti obogaćene elemente koristeći tehnologije kao što su Oracle Java i  HTML5, kao i aplikacije i dijaloge.
 Kada naiđete na njih u dokumentu režima pretraživanja, NVDA će izgovoriti"Umetnuti objekat", "Aplikacija" ili"Dijalog".
 Možete se brzo kretati između njih koristeći o i  šift+o tastere za brzu navigaciju kroz umetnute objekte.
 Za interakciju sa ovim objektima, možete pritisnuti enter na njih.
@@ -1912,6 +1911,9 @@ Za ovu situaciju, NVDA sadrži opciju koja se zove "zatamnjivanje ekrana" koja m
 <P>
 Možete omogućiti zatamnjivanje ekrana u <A HREF="#VisionSettings">kategoriji vid</A> dijaloga <A HREF="#NVDASettings">NVDA podešavanja</A>.
 </P>
+<P>
+Kada je zatamnjivanje ekrana omogućeno neki zadaci koji zavise od sadržaja vidljivog na ekranu kao što su izvršavanje funkcije <A HREF="#Win10Ocr">OCR</A> ili slikanje ekrana nisu mogući.
+</P>
 <A NAME="ContentRecognition"></A>
 <H2>10. Prepoznavanje sadržaja</H2>
 <P>
@@ -1941,6 +1943,8 @@ Možete podesiti jezik koji ćese koristiti za prepoznavanje u <A HREF="#Win10Oc
 Dodatni jezici se mogu instalirati otvaranjem start menija, biranjem opcije podešavanja, zatim opcije vreme i jezik -&gt; region i jezik a nakon toga izabrati opciju dodaj jezik.
 </P>
 <P>
+Windows 10 OCR može biti delimično ili potpuno nekompatibilan sa <A HREF="#Vision">NVDA vizuelnim poboljšanjima</A> ili drugim vizuelnim pomoćnim alatima. Morate onemogućiti ove alate pre nego što započnete proces prepoznavanja.
++
 Da prepoznate tekst trenutnog navigacionog objekta koristeći Windows 10 OCR, pritisnite NVDA+r.
 </P>
 <A NAME="ApplicationSpecificFeatures"></A>
@@ -3329,7 +3333,7 @@ Možete podesiti prijavljivanje sledećih elemenata:
  <UL>
  <LI>Brojevi strana
  <LI>Brojevi redova
- <LI>Prijavljivanje uvlačenja redova<A HREF="#lineIndentationOptions">(isključeno, govor, tonovi, govor i tonovi)</A>
+ <LI>Prijavljivanje uvlačenja redova<A HREF="#DocumentFormattingSettingsLineIndentation">(isključeno, govor, tonovi, govor i tonovi)</A>
  <LI>Uvlačenja pasusa(na primer puno uvlačenje, uvučen prvi red)
  <LI>Odvajanje redova (Pojedinačno, dvostruko i tako dalje)
  <LI>Poravnanje
@@ -3339,7 +3343,7 @@ Možete podesiti prijavljivanje sledećih elemenata:
  <LI>Tabele
  <LI>Zaglavlja redova/kolona
  <LI>Koordinati ćelija
- <LI>Granice ćelija [(isključeno, stilovi, boje i stilovi)
+ <LI>Granice ćelija (isključeno, stilovi, boje i stilovi)
  </UL>
 <LI>Elementi
  <UL>
@@ -3463,6 +3467,31 @@ I dalje ne preporučujemo većini korisnika da ovo uključe, ali preporučujemo 
 <P>
 Kada je ova opcija omogućena, NVDA će koristiti novu, eksperimentalnu podršku za Windows konzole koja koristi nova <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">poboljšanja u pristupačnosti od strane Microsofta</A>. Ova opcija je još uvek eksperimentalna i nije kompletna, tako da njeno korišćenje još nije preporučeno. Ali, kada se završi, ova podrška će verovatno postati podrazumevana, što će poboljšati stabilnost i brzinu programa NVDA u Windows konzoli.
 </P>
+<A NAME="ChromiumUIA"></A>
+<H5>Koristi UIA podršku za Microsoft Edge i druge Chromium pretraživače  kada je dostupna</H5>
+<P>
+Dozvoljava da odredite kada će se koristiti UIA u Chromium pretraživačima kao što je Microsoft Edge.
+UIA podrška za Chromium pretraživače je u ranoj fazi razvoja i možda neće pružati isti nivo pristupačnosti kao IA2.
+Izborni okvir ima sledeće opcije:
+</P>
+<UL>
+<LI>Podrazumevano (samo kada je neophodna): NVDA podrazumevano podešavanje, trenutno ovo je "samo kada je neophodna". Ovo podrazumevano podešavanje će možda biti promenjeno u budućnosti kako tehnologija bude razvijenija.
+<LI>Samo kada je neophodna: Kada NVDA ne može da ima direktan pristup procesu pretraživača i koristi IA2 a UIA podrška je dostupna, NVDA će koristiti ovu podršku.
+<LI>Da: Ako pretraživač učini da UIA podrška bude dostupna, NVDA će je koristiti.
+<LI>Ne: Ne koristi UIA podršku, čak iako NVDA nema pristup procesu. Ovo može biti korisno za programere koji žele da otkriju problem u podršci IA2 i žele da budu sigurni da NVDA neće koristiti UIA podršku.
+</UL>
+
+<P></P>
+<A NAME="UseUiaForExcel"></A>
+<H5>koristi UI automation za pristup Microsoft Excel kontrolama ćelija kada je dostupan</H5>
+<P>
+Kada je ova opcija omogućena, NVDA će pokušati da koristi informacije iz Microsoft UI Automation accessibility API-a kako bi preuzeo informacije iz kontrola za Microsoft Excel ćelije.
+Ovo je eksperimentalna opcija, i neke opcije programa Excel možda neće biti dostupne u ovom modu.
+Na primer, lista elemenata programa NVDA za listanje formula u ćeliji, kao i brza navigacija u režimu pretraživanja za skakanje sa jednog polja za unos na drugo  nisu dostupne.
+Ali, za osnovnu navigaciju i uređivanje ćelija, ova opcija će možda doneti značajna poboljšanja u brzini.
+Mi još uvek ne preporučujemo da većina korisnika ovaj način koristi kao podrazumevani, ali korisnici programa Microsoft Excel  verzije 16.0.13522.10000 ili novijih su dobrodošli da testiraju ovu opciju i pruže svoje povratne informacije.
+Microsoft Excel UI automation podrška se uvek menja, i starije Microsoft Office verzije od 16.0.13522.10000 možda ne pružaju dovoljno informacija da ova opcija bude uopšte korisna.
+</P>
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
 <H5>Izgovaraj lozinke u UIA konzolama</H5>
 <P>
@@ -3477,12 +3506,31 @@ Ova opcija je dostupna i podrazumevano omogućena na Windowsu 10 verzijama 1607 
 Upozorenje: Kada je ova opcija omogućena, ukucani znakovi koji se ne pojavljuju na ekranu, kao što su lozinke, neće biti skriveni.
 U nesigurnim okruženjima, možete privremeno onemogućiti <A HREF="#KeyboardSettingsSpeakTypedCharacters">izgovor ukucanih znakova</A> i <A HREF="#KeyboardSettingsSpeakTypedWords">izgovor ukucanih reči</A> kada kucate lozinke.
 </P>
+<A NAME="DiffAlgo"></A>
+<H5>Algoritam razlikovanja teksta</H5>
+<P>
+Ovo podešavanje određuje kako će NVDA razlikovati novi tekst koji treba da se izgovori u Terminalu.
+Ovaj izborni okvir ima sledeće opcije:
+</P>
+<UL>
+<LI>Automatski: Od NVDA verzije 2021.1, ova opcija ima istu funkciju kao i opcija Difflib.
+U budućim nadogradnjama, možda će biti promenjena u Diff Match Patch nakon uspešnog testiranja od strane korisnika.
+<LI>Dozvoli algoritam Diff Match Patch: Ova opcija izaziva da NVDA računa razlike u tekstu po znakovima.
+Možda će poboljšati brzinu kada se veći delovi teksta pojavljuju u konzoli kao i poboljšati preciznost prijavljivanja promenjenih znakova u sredini reda.
+Ali, možda je nekompatibilna sa nekim aplikacijama.
+Ova opcija je podržana u Windows konzoli na Windowsu 10 verziji 1607 i novijim.
+Takođe, možda će biti dostupna na drugim terminalima na starijim verzijama Windowsa.
+<LI>Nateraj korišćenje algoritma Difflib: Ova opcija izaziva da NVDA računa razlike u tekstu u zavisnosti od reda.
+Identična je ponašanju programa NVDA u verziji 2020.4 i starijim.
+</UL>
+
+<P></P>
 <A NAME="CancelExpiredFocusSpeech"></A>
 <H5>Pokušavanje otkazivanja govora za kontrole koje više nisu fokusirane</H5>
 <P>
 Ova opcija će  omogućiti ponašanje koje pokušava da otkaže govor za događaje koji više nisu fokusirani.
 Na primer brzo pomeranje kroz poruke na lokaciji Gmail može izgovarati informacije koje više nisu tačne.
-Ova funkcija je eksperimentalna od NVDA verzije 2020.2.
+Ova funkcija je podrazumevano omogućena od NVDA verzije 2021.1.
 </P>
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
 <H5>Vreme pomeranja kursora (u milisekundama)</H5>
