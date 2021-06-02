@@ -2,18 +2,19 @@
 
 Note: this document is based on an older "NVDA add-ons and Python 3" document, which is also available for historical reasons.
 
-This page aims to document add-ons compatible with latest backwards incompatible version of NVDA, as well as highlighting issues when using add-ons with future NVDA releases.
+This page aims to document add-ons compatible with latest backwards incompatible version of NVDA, as well as highlighting their status regarding their availability on this website.
 
 ## What you need to know about backwards incompatible NVDA releases and add-ons
 
-Once a year, NV Access releases a backwards incompatible NVDA release. Here, "backwards incompatible" refers to NVDA releases that can make add-ons incompatible due to API changes.
+Once a year, NV Access may publish a backwards incompatible NVDA release. Here, "backwards incompatible" refers to NVDA releases that make add-ons incompatible due to API changes.
 
-Backwards incompatible changes can come from one or more of the following:
+when this happens, authors have to test their add-ons, providing an updated version to make it compatible with NVDA.
 
-* Upgrading from an older version of Python to a newer release.
-* Upgrades to one or more NvDA dependencies such as wxPython.
-* Adding or dropping support for Windows releases or programs.
-* Changes to modules, classes, and functions such as renaming, restructuring and/or refactoring, removing deprecated code, etc.
+As mentioned in the NVDA's user guide:
+
+The Incompatible Add-ons Manager, which can be accessed via the "view incompatible add-ons" button in the Add-on manager, allows you to inspect any incompatible add-ons, and the reason they are considered incompatible. Add-ons are considered incompatible when they have not been updated to work with significant changes to NVDA, or when they rely on a feature not available in the version of NVDA you are using. The Incompatible add-ons manager has a short message to explain its purpose as well as the version of NVDA. 
+
+The Incompatible add-ons manager also has an "About add-on..." button. This dialog will provide you with the full details of the add-on, which is helpful when contacting the add-on author. 
 
 ### Key changes in backwards incompatible NVDA releases
 
@@ -22,57 +23,41 @@ Below is a list of backwards incompatible NVDA releases and key changes in each:
 * 2019.3: Python 2 to 3, speech refactor
 * 2021.1: code refactoring, wxPython 4.1.1
 
-### Effects on add-ons
-
-NVDA releases with backwards incompatible API changes affect many add-ons hosted on the community add-ons website. Specifically, the following issues are known:
-
-* Add-on does not load because they are flagged as incompatible by NVDA.
-* Add-on does load, but errors such as attribute errors and module not found errors are seen.
-* Add-on does not load due to incompatible C extension (.pyd) file in use, particularly when upgrading Python versions.
-* Add-on behaves oddly when working with text.
-* Add-on works, but certain features that rely on Python standard library are not working such as internet access.
-* Some speech synthesizer and braille display add-ons behave oddly around text output.
-
-When you encounter these issues, you should contact the author(s) of the add-on(s) in question (see the below list for contact info for add-ons hosted on this website). Be sure to provide details when contacting authors.
-
 Note to add-on authors: when backwards incompatible NVDA release enters beta testing phase (with the release of beta 1), be sure to test your add-ons and report your next steps, including update plans and release announcements to NVDA community through various channels (add-ons list, users list, Facebook, Twitter, etc.).
+
+
+Also, send a pull request against nvaccess/addonFiles repo on GitHub, so that your add-on can be posted on this website.
 
 Unless otherwise specified, add-ons listed on this page are checked against latest backwards incompatible NVDA release (2021.1).
 
-Compatibility status key for add-ons listed below:
+## Status of add-ons compatible with NVDA 2021.1 and availability on the website
 
-* Yes: compatible with latest backwards incompatible NVDA version
-* Up to NVDA release: compatible with the specified backwards incompatible release
-* Included in NVDA: add-on functionality is now part of NVDA as of specified NVDA release
-* No: incompatible (manifest edits and other tricks will not work; this includes add-ons with compatibility manifest issues)
-* TBD: to be determined
-* Planned: author indicated plans to update the add-on
-* Work in progress: add-on is being updated, including testing in progress
+Below is a list of add-ons hosted on this website (in the stable section). The list also includes contact information for add-on author(s).
 
-## Status of add-ons compatible with NVDA 2021.1
+### Notes:
 
-Below is a list of add-ons hosted on this website, along with their compatibility status with latest backwards incompatible version of NVDA and known issues if any. The list also includes contact information for add-on author(s).
-
-Note: Add-on compatibility status subject to change without notice. Also, although one way to work around compatibility issues is editing the add-on manifest, some add-ons listed below are still incompatible.
+- Add-on compatibility status subject to change without notice.
+- Please, don't change the manifest.ini file of incompatible add-ons if you don't know what you're doing, since this can affect NVDA's stability.
+- When maintainers have asked to post an add-on on the website via a pull request, this will be reflected as (coming soon to the website).
 
 ### Access8Math
 
-* Compatible: Yes
+* Compatible: Yes (not updated on the website)
 * Contact: Tseng Woody <tsengwoody.tw@gmail.com>
 
 ### Add-on Updater
 
-* Compatible: Yes
+* Compatible: Yes (available on the website)
 * Contact: Joseph Lee <joseph.lee22590@gmail.com>
 
 ### Add-ons Documentation
 
-* Compatible: Yes
+* Compatible: Yes (not updated on the website)
 * Contact: Rui Fontes <rui.fontes@tiflotecnia.com>, Zougane, Rémy and Abdel
 
 ### Addon to count elements of selected text
 
-* Compatible: Yes
+* Compatible: Yes (not updated on the website)
 * Contact: Rui Fontes <rui.fontes@tiflotecnia.com>
 
 ### Audio Themes
@@ -82,104 +67,97 @@ Note: Add-on compatibility status subject to change without notice. Also, althou
 
 ### AudioChart
 
-* Compatible: TBD
+* Compatible: Yes (coming soon to the website)
 * Contact: Tony Malykh <anton.malykh@gmail.com>
 
 ### Beep keyboard
 
-* Compatible: TBD
+* Compatible: No
 * Contact: David CM <dhf360@gmail.com>
-
-### Bit Che
-
-* Compatible: TBD
-* Note: BitChe might be abandoned (notice from add-on author)
-* Contact: Alberto Zanella <lapostadialberto@gmail.com>, Alberto Buffolino <a.buffolino@gmail.com>, other contributors
 
 ### Bluetooth Audio
 
-* Compatible: TBD
+* Compatible: Yes (coming soon to the website)
 * Contact: Tony Malykh <anton.malykh@gmail.com>
 
 ### Braille Extender
 
-* Compatible: TBD
+* Compatible: No
 * Contact: André-Abush Clause <dev@andreabc.net>
 
 ### BrowserNav
 
-* Compatible: TBD
+* Compatible: Yes (coming soon to the website)
 * Contact: Tony Malykh <anton.malykh@gmail.com>
 
 ### Calibre
 
-* Compatible: TBD
+* Compatible: Yes (not updated on the website)
 * Contact: Javi Dominguez <fjavids@gmail.com>
 
 ### Character Information
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Contact: Cyrille Bougot <cyrille.bougot2@laposte.net>
 
 ### Check Input Gestures
 
-* Compatible: TBD
+* Compatible: Yes (updated on the website)
 * Contact: Oleksandr Gryshchenko <grisov.nvaccess@mailnull.com>
 
 ### Classic Selection
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Tyler Spivey <tspivey@pcdesk.net>
 
 ### Clip Contents Designer
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Noelia Ruiz Martínez <nrm1977@gmail.com>
 
 ### Clipspeak
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Damien Sykes-Lindley <damien@dcpendleton.plus.com>
 
 ### Clock and calendar Add-on for NVDA
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Hrvoje Katić <hrvojekatic@gmail.com>, Abdel <abdelkrim.bensaid@gmail.com>
 
 ### Console Toolkit
 
-* Compatible: TBD
+* Compatible: Yes (coming soon to the website)
 * Contact: Tony Malykh <anton.malykh@gmail.com>
 
 ### Control Usage Assistant
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Contact: Joseph Lee <joseph.lee22590@gmail.com>
 
 ### Crash Hero
 
 * Compatible: No
-* Issues: Python 3 syntax errors, no compatibility information
 * Contact: Derek Riemer <driemer.riemer@gmail.com>
 
 ### Day of the week
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Abdel <abdelkrim.bensaid@gmail.com>, Noelia Ruiz Martínez <nrm1977@gmail.com>
 
 ### Debug Helper
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Luke Davis <newanswertech@gmail.com>
 
 ### Developer Toolkit
 
-* Compatible: TBD
+* Compatible: Yes (not updated on the website)
 * Contact: Andy Borka <ajborka@gmail.com>
 
 ### Dropbox
 
-* Compatible: Yes
+* Compatible: Yes (coming soon to the website)
 * Contact: Patrick Zajda <patrick@zajda.fr>, Filaos and other contributors
 
 ### Dual Voice
@@ -195,32 +173,32 @@ Note: Add-on compatibility status subject to change without notice. Also, althou
 
 ### Emoticons
 
-* Compatible: TBD
-* Contact: Chris Leo <llajta2012@gmail.com>, Noelia Ruiz Martínez <nrm1977@gmail.com>, Mesar Hameed <mhameed@src.gnome.org>, Francisco Javier Estrada Martínez <Fjestrad@hotmail.com>
+* Compatible: No
+* Contact: Chris Leo <llajta2012@gmail.com>, Noelia Ruiz Martínez <nrm1977@gmail.com>, Mesar Hameed <mesar.hameed@gmail.com>, Francisco Javier Estrada Martínez <Fjestrad@hotmail.com>
 
 ### eMule
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Noelia Ruiz Martínez <nrm1977@gmail.com>, Chris <llajta2012@gmail.com>, Alberto <a.buffolino@gmail.com>
 
 ### Enhanced Aria
 
-* Compatible: Included in NVDA 2019.3
+* Compatible: No
 * Contact: José Manuel Delicado <jm.delicado@nvda.es>
 
 ### Enhanced Touch Gestures
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Contact: Joseph Lee <joseph.lee22590@gmail.com>
 
 ### extendedWinamp
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Hrvoje Katić <hrvojekatic@gmail.com>, NVDA Add-ons Team
 
 ### Focus Highlight
 
-* Compatible: Included in NVDA 2019.3
+* Compatible: No
 * Contact: Takuya Nishimoto <nishimotz@gmail.com>
 
 ### Golden Cursor
@@ -230,153 +208,151 @@ Note: Add-on compatibility status subject to change without notice. Also, althou
 
 ### GoldWave
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Note: no longer maintained
 * Contact: Joseph Lee <joseph.lee22590@gmail.com>, David Parduhn <xkill85@gmx.net>, Mesar Hameed <mhameed@src.gnome.org>
 
 ### Image Describer
 
 * Compatible: No
-* Issues: attempting to import a module that no longer exists in Python 3, out of date compatibility information (last compatible: 2019.1)
-* Contact: Oliver Edholm <oliver.edholm@gmail.com>
+ * Contact: Oliver Edholm <oliver.edholm@gmail.com>
 
 ### IndentNav
 
-* Compatible: TBD
+* Compatible: Yes (coming soon to the website)
 * Contact: Tony Malykh <anton.malykh@gmail.com>
 
 ### Input Lock
 
-* Compatible: Yes
+* Compatible: No
 * Contact: José Manuel Delicado <jm.delicado@nvda.es>
 
 ### Kill NvDA
 
-* Compatible: Yes
+* Compatible: No
 * Contact: Tyler Spivey <tspivey@pcdesk.net>
 
 ### Lambda Add-On for NVDA
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Alberto Zanella, Ivan Novegil
 
 ### Mozilla Apps Enhancements
 
-* Compatible: TBD
+* Compatible: Yes (not updated on the website)
 * Contact: Javi Dominguez <fjavids@gmail.com>
 
 ### mp3DirectCut
 
-* Compatible: Up to 2019.3
+* Compatible: No
 * Contact: Abdel, Rémy Ruiz, Abdellah Zineddine, Jean-François Colas
 
 ### Newfon
 
 * Compatible: No
-* Issues: no compatibility information
 * Contact: Sergey Shishmintzev
 
 ### NoBeepsSpeechMode
 
-* Compatible: Yes
+* Compatible: Yes (not updated on the website)
 * Note: new releases are compatible with 2021.1 only, older versions should be used for older NVDA releases
 * Contact: Alberto Buffolino <a.buffolino@gmail.com>
 
 ### Notepad++
 
-* Compatible: Up to 2019.3
+* Compatible: No (Up to 2019.3)
 * Contact: Derek Riemer <driemer.riemer@gmail.com>
 
 ### Numpad Nav Mode
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Contact: Luke Davis (Open Source Systems, Ltd.) <newanswertech@gmail.com>
 
 ### NVDA Remote Support
 
-* Compatible: Up to 2019.3, work in progress
+* Compatible: No (Up to 2019.3, work in progress)
 * Contact: Tyler Spivey <tspivey@pcdesk.net>, Christopher Toth <q@q-continuum.net>
 
 ### NVDAUpdate Channel Selector
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Contact: Jose Manuel Delicado <jm.delicado@nvda.es>
 
 ### Object Location Tones
 
-* Compatible: UP to 2019.3
+* Compatible: No (UP to 2019.3)
 * Note: no longer maintained
 * Contact: Joseph Lee <joseph.lee22590@gmail.com>
 
 ### ObjPad
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Note: no longer maintained
 * Contact: Joseph Lee <joseph.lee22590@gmail.com>
 
 ### OCR
 
-* Compatible: Up to 2019.3
+* Compatible: No (Up to 2019.3)
 * Contact: NV Access <info@nvaccess.org>
 
 ### Outlook Extended
 
-* Compatible: Work in progress
+* Compatible: No
 * Contact: Cyrille Bougot <cyrille.bougot2@laposte.net>, Ralf Kefferpuetz <ralf.kefferpuetz@elra-consulting.de>
 
 ### Phonetic Punctuation
 
-* Compatible: TBD
+* Compatible: Yes (coming soon to the website)
 * Contact: Tony Malykh <anton.malykh@gmail.com>
 
 ### placeMarkers
 
-* Compatible: Yes
+* Compatible: Yes (coming soon to the website)
 * Contact: Noelia Ruiz Martínez <nrm1977@gmail.com>, Chris <llajta2012@gmail.com>
 
 ### Proxy support for NVDA
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Contact: Jose Manuel Delicado <jm.delicado@nvda.es>
 
 ### Quick Dictionary
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Contact: Oleksandr Gryshchenko <grisov.nvaccess@mailnull.com>
 
 ### Read Feeds
 
-* Compatible: TBD
-* Contact: Noelia Ruiz Martínez <nrm1977@gmail.com>, Mesar Hameed <mhameed@src.gnome.org>
+* Compatible: No
+* Contact: Noelia Ruiz Martínez <nrm1977@gmail.com>, Mesar Hameed
 
 ### Report Passwords
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Noelia Ruiz Martínez <nrm1977@gmail.com>
 
 ### Report Symbols
 
-* Compatible: Up to 2019.3
+* Compatible: No
 * Contact: Noelia Ruiz Martínez <nrm1977@gmail.com>
 
 ### Resource Monitor
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Contact: Alex Hall <mehgcap@gmail.com>, Joseph Lee <joseph.lee22590@gmail.com>, beqa gozalishvili <beqaprogger@gmail.com>, Tuukka Ojala <tuukka.ojala@gmail.com>, Ethin Probst <harlydavidsen@gmail.com> and other NVDA contributors
 
 ### Review Cursor Copier
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Tuukka Ojala <tuukka.ojala@gmail.com>
 
 ### sayCurrentKeyboardLanguage
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Abdel <abdelkrim.bensaid@gmail.com>, Noelia <nrm1977@gmail.com>
 
 ### SentenceNav
 
-* Compatible: Yes
+* Compatible: Yes (coming soon to the website)
 * Contact: Tony Malykh <anton.malykh@gmail.com>
 
 ### Speak Passwords
@@ -386,113 +362,112 @@ Note: Add-on compatibility status subject to change without notice. Also, althou
 
 ### Speech History
 
-* Compatible: Up to 2019.3
+* Compatible: No
 * Contact: Tyler Spivey, James Scholes
 
 ### Station Playlist
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Contact: Geoff Shang, Joseph Lee and other contributors
 
 ### Switch synth
 
-* Compatible: Up to 2019.3
+* Compatible: No
 * Contact: Tyler Spivey <tspivey@pcdesk.net>
 
 ### Synth ring settings selector
 
-* Compatible: TBD
+* Compatible: No
 * Contact: David CM <dhf360@gmail.com>
 
 ### systrayList
 
-* Compatible: Yes
+* Compatible: No
 * Contact: Rui Fontes <rui.fontes@tiflotecnia.com>, Rui Batista <ruiandrebatista@gmail.com>, Joseph Lee <joseph.lee22590@gmail.com>, NVDA Community Contributors
 
 ### TeamTalk Classic
 
-* Compatible: Yes
+* Compatible: Yes (not updated on the website)
 * Contact: Doug Lee with initial work by Tyler Spivey and others
 
 ### Text Information
 
-* Compatible: Up to 2019.3
+* Compatible: No
 * Contact: Carter Temm <crtbraille@gmail.com>
 
 ### TextNav
 
-* Compatible: Yes
+* Compatible: Yes (coming soon to the website)
 * Contact: Tony Malykh <anton.malykh@gmail.com>
 
 ### Time Zoner
 
-* Compatible: Up to 2019.3
+* Compatible: No
 * Contact: Munawar Bijani
 
 ### Tip of the Day
 
-* Compatible: Planned
+* Compatible: No
 * Contact: Derek Riemer <driemer.riemer@gmail.com>
 
 ### Tony's enhancements
 
-* Compatible: TBD
+* Compatible: Yes (coming soon to the website)
 * Contact: Tony Malykh <anton.malykh@gmail.com>
 
 ### ToolbarsExplorer
 
-* Compatible: Up to 2019.3
+* Compatible: No
 * Contact: Alberto Buffolino <a.buffolino@gmail.com>
 
 ### Tone Master
 
 * Compatible: No
-* Issues: no compatibility information
 * Contact: Hrvoje Katić <hrvojekatic@gmail.com>
 
 ### Training Keyboard commands
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Contact: Ibrahim Hamadeh <ibra.hamadeh@hotmail.com>
 
 ### UnicodeBrailleInput
 
-* Compatible: Up to 2019.3
+* Compatible: No
 * Contact: Mesar Hameed <mhameed@src.gnome.org>, Patrick ZAJDA <patrick@zajda.fr>, Leonard de Ruijter (Babbage B.V.) <leonard@babbage.com>
 
 ### Virtual Review
 
-* Compatible: Yes
+* Compatible: No
 * Contact: Rui Batista <ruiandrebatista@gmail.com> and NVDA Addon Team
 
 ### VLC Media Player
 
-* Compatible: Yes
+* Compatible: Yes (not updated on the website)
 * Contact: Javi Dominguez <fjavids@gmail.com>
 
 ### Weather Plus
 
-* Compatible: Up to 2019.3
+* Compatible: No
 * Contact: Adriano Barbieri <adrianobarb@yahoo.it>
 
 ### Windows 10 App Essentials
 
-* Compatible: Yes
+* Compatible: Yes (updated on the website)
 * Contact: Joseph Lee <joseph.lee22590@gmail.com>, Derek Riemer <driemer.riemer@gmail.com> and others
 
 ### Win Wizard
 
-* Compatible: TBD
+* Compatible: No
 * Contact: Oriol Gomez <ogomez.s92@gmail.com>, Łukasz Golonka <lukasz.golonka@mailbox.org>
 
 ### WordNav
 
-* Compatible: TBD
+* Compatible: Yes (coming soon to the website)
 * Contact: Tony Malykh <anton.malykh@gmail.com>
 
 ### Zoom Accessibility Enhancements
 
-* Compatible: Up to 2019.3
+* Compatible: No
 * Contact: Mohammad Suliman <mohmad.s93@gmail.com>, Eilana Benish <benish.ilana@gmail.com>
 
 [[!tag announcements]]
