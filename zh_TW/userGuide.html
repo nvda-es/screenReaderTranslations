@@ -1276,7 +1276,6 @@ NVDA 也提供一個利用音調的高低來提示鼠標所指位置在螢幕上
 <LI>Microsoft Edge
 <LI>Adobe Reader
 <LI>Foxit Reader
-<LI>Adobe Flash
 <LI>適用於電腦閱讀的 Amazon Kindle 電子書
 </UL>
 
@@ -1461,7 +1460,7 @@ NVDA 也提供一個利用音調的高低來提示鼠標所指位置在螢幕上
 <A NAME="ImbeddedObjects"></A>
 <H3>6.4. 嵌入式物件</H3>
 <P>
-有些網頁像 Adobe Flash、Oracle Java 或 HTML5 採用了一些嵌入式物件的技術，以豐富其頁面的呈現。
+有些網頁像 、Oracle Java 或 HTML5 採用了一些嵌入式物件的技術，以豐富其頁面的呈現。
 當在瀏覽模式時，游標遇到這些元件，NVDA 會分別讀出「嵌入式物件」、「應用程式」或「對話框」等的提示。
 若要快速的移到這些物件，您可使用 o 及 shift+o，單鍵導航的操作
 要進入並與這些項目互動，您可在移到後，接著按 Enter。
@@ -1975,6 +1974,9 @@ NVDA 的視覺相關設定可以從<A HREF="#NVDASettings">NVDA 設定</A>對話
 <P>
 您可以在<A HREF="#NVDASettings">NVDA 設定</A>對話框中的.<A HREF="#VisionSettings">視覺類別</A>中啟用該功能。
 </P>
+<P>
+當啟用螢幕簾幕時，一些需查看螢幕畫面的動作，如<A HREF="#Win10Ocr">OCR</A>或螢幕截圖會無法執行。
+</P>
 <A NAME="ContentRecognition"></A>
 <H2>10. 內容辨識</H2>
 <P>
@@ -2002,6 +2004,9 @@ NVDA 可利用這個功能從圖像或某些系統焦點不可及的地方來辨
 <P>
 您可以在 <A HREF="#NVDASettings">NVDA 設定</A> 對話框中 <A HREF="#Win10OcrSettings">Windows 10 OCR 類別</A>設定文字辨識的語言。
 利用開啟「開始功能表」，選擇設定，接著選「時間與語言」，再到「地區與語言」，最後選擇「新增語言」來安裝額外的語言。
+</P>
+<P>
+Windows 10 OCR 可能部分或完全無法與<A HREF="#Vision">NVDA 視覺增強</A>或其他額外針對視覺輔助的附加元件相容，若要進行辨識前，需先將這些視覺設定關閉。
 </P>
 <P>
 要從目前導航器物件來使用 Windows 10光學字元辨識的功能，可按 NVDA+r。
@@ -3405,7 +3410,7 @@ NVDA 會依照所選定的轉譯表項目，將您在柏金斯點字鍵盤上輸
  <UL>
  <LI>頁碼
  <LI>行號
- <LI>讀出行縮排 <A HREF="#lineIndentationOptions">（有4種不同的選項，包括：關、語音、提示音、語音及提示音）</A>
+ <LI>讀出行縮排 <A HREF="#DocumentFormattingSettingsLineIndentation">（包括關、語音、提示音、語音及提示音）</A>
  <LI>段落縮排 （例如：凸排縮排、第一行縮排）
  <LI>行距 （單行間距、兩倍行高等）
  <LI>對齊
@@ -3415,7 +3420,7 @@ NVDA 會依照所選定的轉譯表項目，將您在柏金斯點字鍵盤上輸
  <LI>表格
  <LI>列及欄標題
  <LI>儲存格座標
- <LI>儲存格框線 [(關, 樣式, 色彩與樣式)
+ <LI>儲存格框線 （關, 樣式, 色彩與樣式）
  </UL>
 <LI>「元件」群組
  <UL>
@@ -3516,9 +3521,9 @@ NVDA 會偵測到編輯游標／檢閱游標所在位置的格式，在某些情
 若您在使用一個或更多的應用程式時，覺得操作效能不佳，我們建議您啟用此選項，看是否可以改善效能。
 </P>
 <A NAME="AdvancedSettingsUseUiaForWord"></A>
-<H5>使用 UI Automation 抓取微軟 Word 中的控制項資訊 (若有支援)</H5>
+<H5>使用 UI Automation 處理微軟 Word 文件中的控制項 (若有支援)</H5>
 <P>
-當啟用此選項，NVDA 會嘗試使用微軟 UI Automation 無障礙介面來抓取微軟 Word 文件的控制元件資訊。
+當啟用此選項，NVDA 會嘗試使用微軟 UI Automation 無障礙介面來處理微軟 Word 文件中的控制項。
 這包括微軟 Word 本身，以及 Outlook 的檢視及撰寫郵件。
 對於在 Windows 10中執行最新版的微軟 Office 2016/365 ，其本身的 UI Automation 所提供的無障礙支援幾乎已等同 NVDA 現有對於微軟 Word 的無障礙支援，這個好處能夠使操作的反應更加快速。
 然而在某些微軟 Office 中的一些資訊可能沒有顯示或顯示錯誤，因此 UI automation 目前還不能算是完全可靠。
@@ -3534,6 +3539,31 @@ NVDA 會偵測到編輯游標／檢閱游標所在位置的格式，在某些情
 <P>
 此項設定用於輸入字元（如輸入密碼）時螢幕不會隨著變化的情況，例如在支援 UI Automation 的 Windows 主控台，此設定會依據<A HREF="#KeyboardSettingsSpeakTypedCharacters">讀出輸入字元</A>或<A HREF="#KeyboardSettingsSpeakTypedWords">讀出輸入字詞</A>的設定是開或關，而切換是否讀出所輸入的字元或字詞。為了隱私安全，此選項應該保持關閉，但當您發現在使用 NVDA 新嘗試支援主控台的功能時，輸入文字時的效能或穩定性有問題，則可以開啟該功能來報讀密碼
 </P>
+<A NAME="ChromiumUIA"></A>
+<H5>在微軟 Edge 及其他以 Chromium 為基礎的瀏覽器中使用 UIA (若有支援)</H5>
+<P>
+允許在使用以 Chromium 為基礎的瀏覽器時（如微軟 Edge），指定是否使用 UIA。
+支援以 Chromium 為基礎瀏覽器的 UIA 仍在初期開發階段，它的效果可能比不上 IA2。
+此下拉方塊有以下選項：
+</P>
+<UL>
+<LI>預設 (必要時使用):NVDA 的預設選項，目前為「必要時使用」，未來待此技術更加成熟後此預設選項可能會修改。
+<LI>必要時使用：若 NVDA 無法支援瀏覽器使用 IA2，而瀏覽器仍支援 UIA 的情況下，NVDA 會回到使用 UIA。
+<LI>一律使用：若瀏覽器允許使用 UIA，NVDA 便會使用它
+<LI>不使用：不使用 UIA，即使 NVDA 無法載入瀏覽器內容。此選項適合讓開發者在強迫其不要使用 UIA 時，測試 NVDA 使用 IA2 時的情況。
+</UL>
+
+<P></P>
+<A NAME="UseUiaForExcel"></A>
+<H5>使用 UI Automation 處理微軟 Excel 工作表中的控制項 (若有支援)</H5>
+<P>
+當啟用此選項，NVDA 會嘗試使用微軟 UI Automation 無障礙介面來處理微軟 Excel 工作表中的控制項。
+此為實驗性功能，在此模式下，一些微軟 Excel 的功能可能還無法使用。
+例如，在 NVDA 的元件清單中列出公式和附註，在瀏覽模式中使用單鍵導航跳到表單項目等功能會無法使用。
+然而，對於基本的工作表瀏覽及編輯動作，此選項或許可提供最佳的效能之改善。
+我們仍不建議分使用者預設啟用此選項，但我們歡迎使用微軟 Excel  build 16.0.13522.10000 或更高版本的使用者測試此選項，並提供我們使用回饋。
+微軟 Excel 的 UI automation 內容會時時更新，而微軟 Office 版本低於 16.0.13522.10000 可能尚未開放這些功能，若啟用此選項，並沒有太大用處。
+</P>
 <A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
 <H5>在 Windows 主控台中使用新的輸入支援 (若有支援)</H5>
 <P>
@@ -3543,12 +3573,31 @@ NVDA 會偵測到編輯游標／檢閱游標所在位置的格式，在某些情
 警告：當開啟此選項後，輸入的字元不會顯示在螢幕上 (如密碼) 也同樣會被報讀出來。
 若要在比較沒有隱私的環境下輸入密碼，您可以暫時停用「<A HREF="#KeyboardSettingsSpeakTypedCharacters">讀出輸入字元</A>」及「<A HREF="#KeyboardSettingsSpeakTypedWords">讀出輸入字詞</A>」兩個選項。
 </P>
+<A NAME="DiffAlgo"></A>
+<H5>內容差異分析</H5>
+<P>
+此設定用來決定 NVDA 如何報讀在終端程式中的新增文字。
+「內容差異分析」包含三個選項：
+</P>
+<UL>
+<LI>自動：在 NVDA 2021.1 中，此選項等同於「單行分析」。
+在未來，若使用者的測試及反應佳，此自動選項可能會改成等同於「字元分析」。
+<LI>字元分析：此選項讓 NVDA 以逐字的方式來分析終端程式中，文字內容的改變。
+此選項在當有大量文字填入主控台時，可能會提高效能，以及當在一行文字的中間有文字改變時能夠更精準地報讀。
+然而，這可能與某些應用程式不相容。
+此功能支援 Windows 10 1607 以上版本的 Windows 主控台。
+此外，它可能也支援部分較舊  Windows 版本上的終端程式。
+<LI>單行分析：此選項讓 NVDA 以逐行的方式來分析終端程式中內容的改變。
+此選項與 NVDA 2020.4 及以前版本的預設作法相同。
+</UL>
+
+<P></P>
 <A NAME="CancelExpiredFocusSpeech"></A>
 <H5>嘗試將已過期焦點事件的語音取消</H5>
 <P>
 此選項會啟用一個功能來嘗試將已過期的焦點事件之語音取消。
 尤其是以 Chrome 瀏覽 Gmail 中快速移動的訊息，常引發 NVDA 報讀過時的資訊。
-這是 NVDA 2020.2 的實驗性功能。
+此功能在 NVDA 2021.1 預設是啟用的。
 </P>
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
 <H5>等待游標移動時間 (以毫秒計)</H5>
