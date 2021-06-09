@@ -9,6 +9,212 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2021.1</H2>
+<P>
+このリリースは Excel および Chromium ブラウザでの UI オートメーションを実験的にサポートしています。これはオプションです。
+点字はいくつかの言語への対応について修正が行われました。また、点字ディスプレイでリンクを操作する方法が改善されました。
+Unicode 共通ロケールデータリポジトリ、数学記号、点訳エンジンなどが更新されました。
+Microsoft Office、Visual Studio、およびいくつかの言語に関する多くのバグ修正と改善が行われてました。
+</P>
+<P>
+注意:
+</P>
+ <UL>
+ <LI>このリリースでは、既存のアドオンとの互換性が失われています。
+ <LI>このリリースでは、Adobe Flash のサポートが廃止されました。
+ </UL>
+
+<P></P>
+<H3>新機能</H3>
+<UL>
+<LI>Chromium ベースのブラウザ(Edgeなど)での UI オートメーションの初期サポート (<A HREF="https://github.com/nvaccess/nvda/issues/12025">#12025</A>)
+<LI>UI オートメーションによる Microsoft Excel の実験的サポート(オプション)。Microsoft Excel ビルド 16.0.13522.10000 以上でのみ推奨されます。 (<A HREF="https://github.com/nvaccess/nvda/issues/12210">#12210</A>)
+<LI>NVDA Python コンソールで出力のナビゲーションが容易になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/9784">#9784</A>)
+  <UL>
+  <LI>Alt+上矢印/下矢印は、前/次の出力結果にジャンプします。さらに Shift も同時に押すと選択できます。
+  <LI>Ctrl+L で出力ペインをクリアします。
+  </UL>
+<LI>NVDA は Microsoft Outlook で予定に割り当てられたカテゴリがあれば、それを報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11598">#11598</A>)
+</UL>
+
+<H3>変更点</H3>
+<UL>
+<LI>ブラウズモードにおいて、コントロールの省略表記(例えばリンクは lnk など)で点字ディスプレイのタッチカーソルを使ってアクションの実行ができるようになりました。これはラベルのないチェックボックスなどを選択する場合に特に有効です。  (<A HREF="https://github.com/nvaccess/nvda/issues/7447">#7447</A>)
+<LI>スクリーンカーテンが有効の場合に Windows 10 文字認識を実行できないことを NVDA が報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11911">#11911</A>)
+<LI>Unicode 共通ロケールデータリポジトリ (CLDR) をバージョン 39.0 に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11943">#11943</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12314">#12314</A>)
+<LI>記号読み上げ辞書に数学記号を追加しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11467">#11467</A>)
+<LI>ユーザーガイド、最新情報、コマンド一覧表のスタイルを更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12027">#12027</A>)
+<LI>画面レイアウトをサポートしていないアプリ（Microsoft Word など）で画面レイアウトに切り替えようとすると「サポートされていない入力」と報告されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/7297">#7297</A>)
+<LI>高度な設定パネルの「失効したフォーカスイベントの読み上げを停止」は既定の設定で有効になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10885">#10885</A>)
+  <UL>
+  <LI>このオプションを「しない」に設定すると無効になります。
+  <LI>Webアプリ(Gmailなど)において、フォーカスを速く移動する場合に、古い情報を報告していた問題が改善されました。
+  </UL>
+<LI>liblouis 点訳エンジンを <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.17.0">3.17.0</A> に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12137">#12137</A>)
+  <UL>
+  <LI>新しい点訳テーブル: ベラルーシ語文学点字、ベラルーシ語コンピューター点字、ウルドゥ語1級点字、ウルドゥ語2級点字
+  </UL>
+<LI>NVDA の Adobe Flash 対応を削除しました。Adobe が Flash 技術を非推奨としたためです。 (<A HREF="https://github.com/nvaccess/nvda/issues/11131">#11131</A>)
+<LI>NVDA のウィンドウが開いていても NVDA を終了できるようになりました。NVDA を終了すると NVDA のウィンドウとダイアログはすべて閉じられます。 (<A HREF="https://github.com/nvaccess/nvda/issues/1740">#1740</A>)
+<LI>スピーチビューアーを <CODE>Alt+F4</CODE> で閉じられるようになりました。また標準的な「閉じる」ボタンが追加され、GUI での操作が容易になりました。(<A HREF="https://github.com/nvaccess/nvda/issues/12330">#12330</A>)
+<LI>点字ビューアーに標準的な「閉じる」ボタンが追加され、GUI での操作が容易になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12328">#12328</A>)
+<LI>要素リストのダイアログにおいて、種別のラジオボタンのラベルとの衝突を回避するために、一部の言語で「アクションの実行」ボタンのアクセラレーターキーが削除されました。使用可能な場合、このボタンはダイアログの既定のアクションであり、要素リスト自体で Enter キーを押すことでアクションを実行できます。 (<A HREF="https://github.com/nvaccess/nvda/issues/6167">#6167</A>)
+</UL>
+
+<H3>バグ修正</H3>
+<UL>
+<LI>Outlook 2010 のメッセージ一覧が読めなくなっていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12241">#12241</A>)
+<LI>Windows 10 バージョン 1607 以降のターミナルで、行の途中にある文字を削除または挿入するときに、テキストカーソルの右側の文字を読み上げていた問題に対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/3200">#3200</A>)
+  <UL>
+  <LI>これは実験的な修正です。有効にするには、NVDA の高度な設定の「差分アルゴリズム」で「ディフマッチパッチを許可」する必要があります。
+  </UL>
+<LI>Microsoft Outlook においてメッセージ本文から件名のフィールドに Shift+Tab で移動したときに、不適切に距離を読み上げていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10254">#10254</A>)
+<LI>Python コンソールにおいて、空でない入力行の先頭へのインデント用のタブの挿入と、入力行の途中でのタブ補完が可能になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11532">#11532</A>)
+<LI>画面レイアウトを使用しない場合に、フォーマット情報などブラウズ可能なメッセージで、不適切に空行が報告されていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12004">#12004</A>)
+<LI>Microsoft Word で UI オートメーションを有効にした場合に、コメントの読み上げが可能になりました。(<A HREF="https://github.com/nvaccess/nvda/issues/9285">#9285</A>)
+<LI>Visual Studio を操作する場合の性能が向上しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12171">#12171</A>)
+<LI>RTL（右から左）レイアウトを NVDA で扱う場合に、要素の欠落などグラフィックに関する不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/8859">#8859</A>)
+<LI>システムのロケールではなく NVDA の言語設定に基づいて GUI のレイアウト方向を判断するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/638">#638</A>)
+  <UL>
+  <LI>RTL言語の既知の問題: ラベルやコントロールでクリップするグループの右の境界 (<A HREF="https://github.com/nvaccess/nvda/issues/12181">#12181</A>)
+  </UL>
+<LI>「既定の言語」を選択している場合に Python ロケールは環境設定で選択された言語と一貫して一致するように設定されます。 (<A HREF="https://github.com/nvaccess/nvda/issues/12214">#12214</A>)
+<LI>NVDAログビューアなどのリッチエディットコントロールにおいて TextInfo.getTextInChunks がフリーズする問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11613">#11613</A>)
+<LI>Windows 10 1803 および 1809 において、ロケール名にアンダースコアが含まれる言語(de_CHなど)で NVDA が使用できなくなっていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12250">#12250</A>)
+<LI>WordPad において、上付き文字や下付き文字の報告の設定が正しく動作するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12262">#12262</A>)
+<LI>ウェブページである場所がフォーカスされなくなり、同じ場所に新たにフォーカスが移動した場合に、NVDA が新たにフォーカスされたコンテンツを報告できなかった問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12147">#12147</A>)
+<LI>書式とドキュメント情報で対応するオプションを有効にした場合に、Excel セル全体の打ち消し線、上付き文字および下付き文字の書式が報告されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12264">#12264</A>)
+<LI>ポータブル版からのインストールにおいて、デフォルトのコピー先設定フォルダが空の場合に設定がコピーされる問題が修正されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12071">#12071</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12205">#12205</A>)
+<LI>「大文字の前にオオモジと読む」オプションが有効の場合に、アクセント記号や発音区別記号がついた一部の文字が誤って読み上げられていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11948">#11948</A>)
+<LI>SAPI4 音声エンジンのピッチ変更の不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12311">#12311</A>)
+<LI>NVDA インストーラーがコマンドライン引数 <CODE>--minimal</CODE> を受け付けるようになりました。このとき起動音は再生されません。インストールされた場合やポータブル版の NVDA 実行ファイルについてユーザーガイドで説明された仕様と同じです。 (<A HREF="https://github.com/nvaccess/nvda/issues/12289">#12289</A>)
+<LI>Microsoft Word または Outlook において、ブラウズモード設定で「レイアウト目的のテーブルを区別しない」が有効の場合に、テーブルの1文字ナビゲーションでレイアウトテーブルに移動できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11899">#11899</A>)
+<LI>NVDA が特定の言語の絵文字を "↑↑↑" と報告していた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11963">#11963</A>)
+<LI>Espeak が広東語と北京語を再びサポートしました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10418">#10418</A>)
+<LI>Chromium ベースの Microsoft Edge において、アドレスバーなどのテキストフィールドが、内容が空のときに報告されなかった問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12474">#12474</A>)
+<LI>清華点字ディスプレイのドライバーを更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10787">#10787</A>)
+</UL>
+
+<H3>開発者向けの変更</H3>
+<UL>
+<LI>注意: これはアドオン API 非互換のリリースです。アドオンは再テストとマニフェストの更新が必要です。
+<LI>NVDA のビルドシステムは、依存している Python パッケージを pip で取得し仮想環境に格納するようになりました。これはすべて透過的に行われます。
+  <UL>
+  <LI>NVDA をビルドするには従来の方法で SCons を使用します。つまりリポジトリのルートで scons.bat を実行します。<CODE>py -m SCons</CODE> の実行はサポートされなくなり <CODE>scons.py</CODE> も削除されました。
+  <LI>ソースから NVDA を実行するには <CODE>source/nvda.pyw</CODE> のではなく、リポジトリのルートで <CODE>runnvda.bat</CODE> を使用する必要があります。<CODE>source/nvda.pyw</CODE> を実行すると、サポートされなくなったことを警告するメッセージボックスが表示されます。
+  <LI>ユニットテストを実行するには <CODE>rununittests.bat [&lt;extra unittest discover options&gt;]</CODE> を使います。
+  <LI>システムテストを実行するには <CODE>runsystemtests.bat [&lt;extra robot options&gt;]</CODE> を使います。
+  <LI>linting を行うには <CODE>runlint.bat &lt;base branch&gt;</CODE> を使います。
+  <LI>詳細は readme.md を参照してください。
+  </UL>
+<LI>下記の Python パッケージの更新も行われました:
+  <UL>
+  <LI>comtypes 1.1.8
+  <LI>pySerial 3.5
+  <LI>wxPython 4.1.1
+  <LI>Py2exe 0.10.1.0
+  </UL>
+<LI><CODE>LiveText._getTextLines</CODE> は削除されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11639">#11639</A>)
+  <UL>
+  <LI>かわりに、オブジェクト内のすべてのテキストの文字列を返す <CODE>_getText</CODE> をオーバーライドします。
+  </UL>
+<LI><CODE>LiveText</CODE> オブジェクトが文字単位で差分を計算できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11639">#11639</A>)
+  <UL>
+  <LI>オブジェクトの差分の処理を変更するには <CODE>diffAlgo</CODE> プロパティをオーバーライドします(詳細はdocstringを参照)。
+  </UL>
+<LI>script デコレータを使用してスクリプトを定義する場合 'allowInSleepMode' ブール引数を指定して、スクリプトがスリープモードで使用可能かどうかを制御できます。 (<A HREF="https://github.com/nvaccess/nvda/issues/11979">#11979</A>)
+<LI>config モジュールから以下の関数が削除されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11935">#11935</A>)
+  <UL>
+  <LI>canStartOnSecureScreens - かわりに config.isInstalledCopy を使用します。
+  <LI>hasUiAccess および execElevated - かわりに systemUtils モジュールを使用します。
+  <LI>getConfigDirs - かわりに globalVars.appArgs.configPath を使用します。
+  </UL>
+<LI>モジュールレベルの REASON_* 定数が controlTypes から削除されました - かわりに controlTypes.OutputReason を使用します。 (<A HREF="https://github.com/nvaccess/nvda/issues/11969">#11969</A>)
+<LI>REASON_QUICKNAV は browseMode から削除されました - かわりに controlTypes.OutputReason.QUICKNAV を使用します。 (<A HREF="https://github.com/nvaccess/nvda/issues/11969">#11969</A>)
+<LI><CODE>NVDAObject</CODE> (およびその派生) のプロパティ <CODE>isCurrent</CODE> は Enum クラス <CODE>controlTypes.IsCurrent</CODE> を返します。 (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
+  <UL>
+  <LI><CODE>isCurrent</CODE> は Optional ではありません。つまり None を返さなくなりました。
+  <LI>オブジェクトが current でない場合は <CODE>controlTypes.IsCurrent.NO</CODE> を返します。
+  </UL>
+<LI><CODE>controlTypes.isCurrentLabels</CODE> のマッピングを削除しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
+  <UL>
+  <LI>かわりに <CODE>controlTypes.IsCurrent</CODE> enum 値の <CODE>displayString</CODE> プロパティを使います。例えば <CODE>controlTypes.IsCurrent.YES.displayString</CODE> です。
+    <UL>
+    <LI>例: <CODE>controlTypes.IsCurrent.YES.displayString</CODE>
+    </UL>
+  </UL>
+<LI><CODE>winKernel.GetTimeFormat</CODE> が削除されました - かわりに <CODE>winKernel.GetTimeFormatEx</CODE> を使用します。 (<A HREF="https://github.com/nvaccess/nvda/issues/12139">#12139</A>)
+<LI><CODE>winKernel.GetDateFormat</CODE> が削除されました - かわりに <CODE>winKernel.GetDateFormatEx</CODE> を使用します。 (<A HREF="https://github.com/nvaccess/nvda/issues/12139">#12139</A>)
+<LI><CODE>gui.DriverSettingsMixin</CODE> が削除されました - かわりに <CODE>gui.AutoSettingsMixin</CODE> を使用します。 (<A HREF="https://github.com/nvaccess/nvda/issues/12144">#12144</A>)
+<LI><CODE>speech.getSpeechForSpelling</CODE> が削除されました - かわりに <CODE>speech.getSpellingSpeech</CODE> を使用します。 (<A HREF="https://github.com/nvaccess/nvda/issues/12145">#12145</A>)
+<LI>speech モジュールから <CODE>import speech; speech.ExampleCommand()</CODE> または <CODE>import speech.manager; speech.manager.ExampleCommand()</CODE> のようにコマンドを直接インポートすることはできません。<CODE>import speech; speech.ExampleCommand()</CODE> を使用します。 (<A HREF="https://github.com/nvaccess/nvda/issues/12126">#12126</A>)
+<LI><CODE>speakTextInfo</CODE> は reason が <CODE>SAYALL</CODE> の場合に <CODE>speakWithoutPauses</CODE> を使って音声を出力しません。かわりに <CODE>SayAllHandler</CODE> を使用します。 (<A HREF="https://github.com/nvaccess/nvda/issues/12150">#12150</A>)
+<LI><CODE>synthDriverHandler</CODE> モジュールから <CODE>globalCommands</CODE> および <CODE>gui.settingsDialogs</CODE> へのスターインポートは行われません - かわりに <CODE>from synthDriverHandler import synthFunctionExample</CODE> を使います。 (<A HREF="https://github.com/nvaccess/nvda/issues/12172">#12172</A>)
+<LI>controlTypes から <CODE>ROLE_EQUATION</CODE> が削除されました - かわりに <CODE>ROLE_MATH</CODE> を使います。 (<A HREF="https://github.com/nvaccess/nvda/issues/12164">#12164</A>)
+<LI><CODE>autoSettingsUtils.driverSetting</CODE> で定義されたクラスが <CODE>driverHandler</CODE> から削除されました - かわりに <CODE>autoSettingsUtils.driverSetting</CODE> から直接インポートします。 (<A HREF="https://github.com/nvaccess/nvda/issues/12168">#12168</A>)
+<LI><CODE>autoSettingsUtils.utils</CODE> で定義されたクラスが <CODE>driverHandler</CODE> から削除されました - かわりに <CODE>autoSettingsUtils.utils</CODE> から直接インポートします。 (<A HREF="https://github.com/nvaccess/nvda/issues/12168">#12168</A>)
+<LI><CODE>contentRecog.BaseContentRecogTextInfo</CODE> を継承しない <CODE>TextInfo</CODE> はサポートされなくなりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12157">#12157</A>)
+<LI><CODE>speech.speakWithoutPauses</CODE> が削除されました - かわりに <CODE>speech.speechWithoutPauses.SpeechWithoutPauses(speakFunc=speech.speak).speakWithoutPauses</CODE> を使用します。 (<A HREF="https://github.com/nvaccess/nvda/issues/12195">#12195</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12251">#12251</A>)
+<LI><CODE>speech.re_last_pause</CODE> が削除されました - かわりに <CODE>speech.speechWithoutPauses.SpeechWithoutPauses.re_last_pause</CODE> を使用します。 (<A HREF="https://github.com/nvaccess/nvda/issues/12195">#12195</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12251">#12251</A>)
+<LI><CODE>WelcomeDialog</CODE>, <CODE>LauncherDialog</CODE>, <CODE>AskAllowUsageStatsDialog</CODE> は <CODE>gui.startupDialogs</CODE> に移動しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12105">#12105</A>)
+<LI><CODE>getDocFilePath</CODE> は <CODE>gui</CODE> モジュールから <CODE>documentationUtils</CODE> モジュールに移動しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12105">#12105</A>)
+<LI><CODE>gui.accPropServer</CODE> モジュール、 <CODE>AccPropertyOverride</CODE> クラス、および <CODE>ListCtrlAccPropServer</CODE> クラスは gui.nvdaControls モジュールから削除されました。 wx はアクセシビリティプロパティのオーバーライドをネイティブサポートします。 wx のコントロールのアクセシビリティを改善するには wx.Accessible を実装します。 (<A HREF="https://github.com/nvaccess/nvda/issues/12215">#12215</A>)
+<LI><CODE>source/comInterfaces/</CODE> に含まれていたファイルが IDE などの開発者ツールから利用しやすくなりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12201">#12201</A>)
+<LI>Windows バージョンを取得・比較するための便利なメソッドと型が winVersion モジュールに追加されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11909">#11909</A>)
+  <UL>
+  <LI>winVersion モジュールの isWin10 関数が削除されました。
+  <LI>クラス winVersion.WinVersion は比較やソートに対応しており Windows バージョン情報をカプセル化しています。
+  <LI>関数 winVersion.getWinVer が追加されました。これは現在実行中の OS の情報を winVersion.WinVersion として取得できます。
+  <LI>既知の Windows リリースに関する定数が追加されました。詳細は winVersion.WIN* を参照してください。
+  </UL>
+<LI>IAccessibleHandler は IAccessible と IA2 COM インタフェースをスターインポートしません - これらを使用するには直接インポートします。 (<A HREF="https://github.com/nvaccess/nvda/issues/12232">#12232</A>)
+<LI>TextInfo オブジェクトは start と end の各プロパティを持ちます。これらは &lt; &lt;= == != &gt;= &gt; などの演算子で数学的に比較できます。 (<A HREF="https://github.com/nvaccess/nvda/issues/11613">#11613</A>)
+  <UL>
+  <LI>例 ti1.start &lt;= ti2.end
+  <LI>これは ti1.compareEndPoints(ti2,"startToEnd") &lt;= 0 よりも望ましい記法です。
+  </UL>
+<LI>TextInfo の start と end の各プロパティは相互に代入もできます。 (<A HREF="https://github.com/nvaccess/nvda/issues/11613">#11613</A>)
+  <UL>
+  <LI>例 ti1.start = ti2.end
+  <LI>これは ti1.SetEndPoint(ti2,"startToEnd") よりも望ましい記法です。
+  </UL>
+<LI><CODE>wx.CENTRE_ON_SCREEN</CODE> および <CODE>wx.CENTER_ON_SCREEN</CODE> が削除されました。かわりに <CODE>self.CentreOnScreen()</CODE> を使います。 (<A HREF="https://github.com/nvaccess/nvda/issues/12309">#12309</A>)
+<LI><CODE>easeOfAccess.isSupported</CODE> が削除されました。現在の NVDA はこの値が <CODE>True</CODE> となるバージョンの Windows だけをサポートしています。 (<A HREF="https://github.com/nvaccess/nvda/issues/12222">#12222</A>)
+<LI><CODE>sayAllHandler</CODE> が <CODE>speech.sayAll</CODE> に移動しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12251">#12251</A>)
+  <UL>
+  <LI><CODE>speech.sayAll.SayAllHandler</CODE> が公開する関数は <CODE>stop</CODE>, <CODE>isRunning</CODE>, <CODE>readObjects</CODE>, <CODE>readText</CODE>, <CODE>lastSayAllMode</CODE> です。
+  <LI><CODE>SayAllHandler.stop</CODE> は <CODE>SayAllHandler</CODE> <CODE>SpeechWithoutPauses</CODE> の各インスタンスをリセットします。
+  <LI><CODE>CURSOR_REVIEW</CODE> と <CODE>CURSOR_CARET</CODE> はそれぞれ <CODE>CURSOR.REVIEW</CODE> と <CODE>CURSOR.CARET</CODE> に変更されました。
+  </UL>
+<LI><CODE>speech.SpeechWithoutPauses</CODE> は <CODE>speech.speechWithoutPauses.SpeechWithoutPauses</CODE> に移動しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12251">#12251</A>)
+<LI><CODE>speech.curWordChars</CODE> は <CODE>speech._curWordChars</CODE> に変更されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12395">#12395</A>)
+<LI>以下は <CODE>speech</CODE> モジュールから削除され <CODE>speech.getState()</CODE> から参照できる読み取り専用の値になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12395">#12395</A>)
+  <UL>
+  <LI>speechMode
+  <LI>speechMode_beeps_ms
+  <LI>beenCanceled
+  <LI>isPaused
+  </UL>
+<LI><CODE>speech.speechMode</CODE> を変更するには <CODE>speech.setSpeechMode</CODE> を使います。 (<A HREF="https://github.com/nvaccess/nvda/issues/12395">#12395</A>)
+<LI>下記は <CODE>speech.SpeechMode</CODE> に移動しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12395">#12395</A>)
+  <UL>
+  <LI><CODE>speech.speechMode_off</CODE> の移動先は <CODE>speech.SpeechMode.off</CODE>
+  <LI><CODE>speech.speechMode_beeps</CODE> の移動先は <CODE>speech.SpeechMode.beeps</CODE>
+  <LI><CODE>speech.speechMode_talk</CODE> の移動先は <CODE>speech.SpeechMode.talk</CODE>
+  </UL>
+<LI><CODE>IAccessibleHandler.IAccessibleObjectIdentifierType</CODE> は <CODE>IAccessibleHandler.types.IAccessibleObjectIdentifierType</CODE> に移動しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12367">#12367</A>)
+<LI><CODE>NVDAObjects.UIA.WinConsoleUIA</CODE> において以下が変更されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12094">#12094</A>)
+  <UL>
+  <LI><CODE>NVDAObjects.UIA.winConsoleUIA.is21H1Plus</CODE> の新しい名前は <CODE>NVDAObjects.UIA.winConsoleUIA.isImprovedTextRangeAvailable</CODE>.
+  <LI><CODE>NVDAObjects.UIA.winConsoleUIA.consoleUIATextInfo</CODE> は大文字で始まるクラス名に変更されました。
+  <LI><CODE>NVDAObjects.UIA.winConsoleUIA.consoleUIATextInfoPre21H1</CODE> の新しい名前は <CODE>NVDAObjects.UIA.winConsoleUIA.ConsoleUIATextInfoWorkaroundEndInclusive</CODE>
+    <UL>
+    <LI>テキスト範囲において両端点を含む（<A HREF="https://github.com/microsoft/terminal/pull/4018">microsoft/terminal PR 4018</A> 以前の）場合への対策
+    <LI><CODE>expand</CODE>, <CODE>collapse</CODE>, <CODE>compareEndPoints</CODE>, <CODE>setEndPoint</CODE> などへの対応
+    </UL>
+  </UL>
+</UL>
+
 <H2>2020.4</H2>
 <P>
 このリリースでは、新しい中国語入力メソッドへの対応や点訳エンジン Liblouis の更新などが行われました。また要素リスト(NVDA+f7)がフォーカスモードで動作するようになりました。
