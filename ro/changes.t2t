@@ -6,11 +6,13 @@ Ce este nou în NVDA
 = 2021.1 =
 Această versiune include suportul opțional și experimental pentru UIA-ul din Excel și din navigatoarele web bazate pe Chromium.
 Există corecturi pentru câteva limbi și pentru accesarea link-urilor în Braille.
-De asemenea, există actualizări făcute la Unicode CLDR și la simbolurile matematice, precum și la eSpeak-NG și LibLouis.
-
+De asemenea, există actualizări făcute la Unicode CLDR și la simbolurile matematice, precum și la LibLouis.
 Versiunea vine la pachet și cu rezolvarea multor erori precum cele din Office, Visual Studio și din interfețele câtorva limbi.
-Notă: Suplimentele trebuie să fie retestate, iar fișierele lor manifest.ini să fie actualizate. Nu trebuie să existe niciun semn de îndoială asupra compatibilității acestora cu NVDA.
-Adobe Flash nu va mai avea suport începând cu această versiune de NVDA.
+
+Notă:
+ - Această versiune afectează compatibilitatea cu suplimentele existente.
+ - Adobe Flash nu va mai avea suport începând cu această versiune de NVDA.
+ -
 
 
 == Noi Funcționalități ==
@@ -20,6 +22,7 @@ Adobe Flash nu va mai avea suport începând cu această versiune de NVDA.
   - cu alt+săgețile sus/jos se sare la rezultatul următor/precedent al ieșirii (se adaugă shift pentru selectare).
   - control+l curăță panoul de ieșire.
 - NVDA raportează categoriile atribuite unei întâlniri din Microsoft Outlook dacă aceasta există. (#11598)
+- Suport pentru afișajul braille Seika Notetaker de la Nippon Telesoft. (#11514)
 
 
 == Modificări ==
@@ -32,7 +35,6 @@ Adobe Flash nu va mai avea suport începând cu această versiune de NVDA.
 - Opțiunea „Încearcă să anulezi vorbirea pentru evenimentele expirate ale focalizării” din panoul de setări avansate este activă în mod implicit. (#10885)
   - Acest comportament poate fi dezactivat setând opțiunea la valoarea „Nu”.
   - Aplicațiile web precum Gmail nu mai furnizează informații învechite la deplasarea focalizării într-un mod rapid.
-- S-a actualizat Espeak-ng la 1.51-dev commit f6d092a9c13d864ede78c493f64a7d32cde41f09. (#12449, #12202, #12280)
 - S-a actualizat traducătorul braille liblouis la [3.17.0 https://github.com/liblouis/liblouis/releases/tag/v3.17.0]. (#12137)
   - Noi tabele braille: braille literar bielorus, braille bielorus pentru calculator, urdu grad 1, urdu grad 2.
 - A fost eliminat din NVDA suportul pentru conținutul Adobe Flash, fiindcă utilizarea acestui program este activ descurajată de către cei care l-au dezvoltat. (#11131)
@@ -43,6 +45,20 @@ Adobe Flash nu va mai avea suport începând cu această versiune de NVDA.
 
 
 == Defecte Rezolvate ==
+- Lista de mesaje din Outlook 2010 poate fi citită din nou. (#12241)
+- În programele terminale din versiunea 1607 a Windows 10 și din cele mai noi decât aceasta, nu mai sunt citite caracterele din dreapta cursorului de scriere atunci când sunt inserate caractere în mijlocul unui rând sau sunt șterse. (#3200)
+  - Această soluție experimentală trebuie să fie activată manual din panoul setărilor avansate NVDA prin modificarea algoritmului diff la Diff Match Patch.
+- Nu ar trebui să mai apară în Microsoft Outlook distanța inadecvată care este raportată la apăsarea combinației Shift+Tab pentru deplasarea de la corpul mesajului la câmpul „Subiect”. (#10254)
+- Inserarea caracterului tab pentru indentare la începutul unei linii de intrare care nu este goală, precum și efectuarea completării tab-ului în mijlocul unei linii de intrare, sunt suportate. (#11532)
+- Informațiile de formatare și celelalte mesaje navigabile nu mai prezintă rânduri goale neașteptate atunci când aspectul ecranului este dezactivat. (#12004)
+- Acum se pot citi comentariile din Microsoft Word cu UIA-ul activat. (#9285)
+- A fost îmbunătățită performanța la interacțiunea cu Visual Studio. (#12171)
+- Au fost reparate niște erori grafice precum lipsa elementelor la utilizarea NVDA cu un aspect de la stânga la dreapta. (#8859)
+- Se respectă direcția aspectului GUI bazată pe limba NVDA, nu pe cea a sistemului de operare Windows. (#638)
+  - problemă cunoscută pentru limbile care se citesc de la dreapta la stânga: marginea din dreapta a clipurilor grupate pe etichete/controale. (#12181)
+- Locația Python este setată să corespundă în mod consecvent limbii selectate în preferințe și va apărea la utilizarea limbii implicite. (#12214)
+- TextInfo.getTextInChunks nu se mai blochează atunci când este apelat în controalele Rich Edit precum vizualizatorul jurnalului NVDA. (#11613)
+- În versiunile 1803 și 1809 ale Windows 10, se poate din nou folosi NVDA în limbile care au semnul Underscore (_) în cadrul numelui acestora. Una dintre aceste limbi este germana elvețiană, al cărei nume în sistemul NVDA de traduceri este de_CH. (#12250)
 
 
 
