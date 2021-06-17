@@ -13,13 +13,18 @@
 <P>
 Această versiune include suportul opțional și experimental pentru UIA-ul din Excel și din navigatoarele web bazate pe Chromium.
 Există corecturi pentru câteva limbi și pentru accesarea link-urilor în Braille.
-De asemenea, există actualizări făcute la Unicode CLDR și la simbolurile matematice, precum și la eSpeak-NG și LibLouis.
+De asemenea, există actualizări făcute la Unicode CLDR și la simbolurile matematice, precum și la LibLouis.
+Versiunea vine la pachet și cu rezolvarea multor erori precum cele din Office, Visual Studio și din interfețele câtorva limbi.
 </P>
 <P>
-Versiunea vine la pachet și cu rezolvarea multor erori precum cele din Office, Visual Studio și din interfețele câtorva limbi.
-Notă: Suplimentele trebuie să fie retestate, iar fișierele lor manifest.ini să fie actualizate. Nu trebuie să existe niciun semn de îndoială asupra compatibilității acestora cu NVDA.
-Adobe Flash nu va mai avea suport începând cu această versiune de NVDA.
+Notă:
 </P>
+ <UL>
+ <LI>Această versiune afectează compatibilitatea cu suplimentele existente.
+ <LI>Adobe Flash nu va mai avea suport începând cu această versiune de NVDA.
+ </UL>
+
+<P></P>
 <H3>Noi Funcționalități</H3>
 <UL>
 <LI>Suport prematur pentru UIA cu navigatoarele web bazate pe Chromium precum Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/12025">#12025</A>)
@@ -30,6 +35,7 @@ Adobe Flash nu va mai avea suport începând cu această versiune de NVDA.
   <LI>control+l curăță panoul de ieșire.
   </UL>
 <LI>NVDA raportează categoriile atribuite unei întâlniri din Microsoft Outlook dacă aceasta există. (<A HREF="https://github.com/nvaccess/nvda/issues/11598">#11598</A>)
+<LI>Suport pentru afișajul braille Seika Notetaker de la Nippon Telesoft. (<A HREF="https://github.com/nvaccess/nvda/issues/11514">#11514</A>)
 </UL>
 
 <H3>Modificări</H3>
@@ -45,7 +51,6 @@ Adobe Flash nu va mai avea suport începând cu această versiune de NVDA.
   <LI>Acest comportament poate fi dezactivat setând opțiunea la valoarea „Nu”.
   <LI>Aplicațiile web precum Gmail nu mai furnizează informații învechite la deplasarea focalizării într-un mod rapid.
   </UL>
-<LI>S-a actualizat Espeak-ng la 1.51-dev commit f6d092a9c13d864ede78c493f64a7d32cde41f09. (<A HREF="https://github.com/nvaccess/nvda/issues/12449">#12449</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12202">#12202</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12280">#12280</A>)
 <LI>S-a actualizat traducătorul braille liblouis la <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.17.0">3.17.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/12137">#12137</A>)
   <UL>
   <LI>Noi tabele braille: braille literar bielorus, braille bielorus pentru calculator, urdu grad 1, urdu grad 2.
@@ -58,6 +63,27 @@ Adobe Flash nu va mai avea suport începând cu această versiune de NVDA.
 </UL>
 
 <H3>Defecte Rezolvate</H3>
+<UL>
+<LI>Lista de mesaje din Outlook 2010 poate fi citită din nou. (<A HREF="https://github.com/nvaccess/nvda/issues/12241">#12241</A>)
+<LI>În programele terminale din versiunea 1607 a Windows 10 și din cele mai noi decât aceasta, nu mai sunt citite caracterele din dreapta cursorului de scriere atunci când sunt inserate caractere în mijlocul unui rând sau sunt șterse. (<A HREF="https://github.com/nvaccess/nvda/issues/3200">#3200</A>)
+  <UL>
+  <LI>Această soluție experimentală trebuie să fie activată manual din panoul setărilor avansate NVDA prin modificarea algoritmului diff la Diff Match Patch.
+  </UL>
+<LI>Nu ar trebui să mai apară în Microsoft Outlook distanța inadecvată care este raportată la apăsarea combinației Shift+Tab pentru deplasarea de la corpul mesajului la câmpul „Subiect”. (<A HREF="https://github.com/nvaccess/nvda/issues/10254">#10254</A>)
+<LI>Inserarea caracterului tab pentru indentare la începutul unei linii de intrare care nu este goală, precum și efectuarea completării tab-ului în mijlocul unei linii de intrare, sunt suportate. (<A HREF="https://github.com/nvaccess/nvda/issues/11532">#11532</A>)
+<LI>Informațiile de formatare și celelalte mesaje navigabile nu mai prezintă rânduri goale neașteptate atunci când aspectul ecranului este dezactivat. (<A HREF="https://github.com/nvaccess/nvda/issues/12004">#12004</A>)
+<LI>Acum se pot citi comentariile din Microsoft Word cu UIA-ul activat. (<A HREF="https://github.com/nvaccess/nvda/issues/9285">#9285</A>)
+<LI>A fost îmbunătățită performanța la interacțiunea cu Visual Studio. (<A HREF="https://github.com/nvaccess/nvda/issues/12171">#12171</A>)
+<LI>Au fost reparate niște erori grafice precum lipsa elementelor la utilizarea NVDA cu un aspect de la stânga la dreapta. (<A HREF="https://github.com/nvaccess/nvda/issues/8859">#8859</A>)
+<LI>Se respectă direcția aspectului GUI bazată pe limba NVDA, nu pe cea a sistemului de operare Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/638">#638</A>)
+  <UL>
+  <LI>problemă cunoscută pentru limbile care se citesc de la dreapta la stânga: marginea din dreapta a clipurilor grupate pe etichete/controale. (<A HREF="https://github.com/nvaccess/nvda/issues/12181">#12181</A>)
+  </UL>
+<LI>Locația Python este setată să corespundă în mod consecvent limbii selectate în preferințe și va apărea la utilizarea limbii implicite. (<A HREF="https://github.com/nvaccess/nvda/issues/12214">#12214</A>)
+<LI>TextInfo.getTextInChunks nu se mai blochează atunci când este apelat în controalele Rich Edit precum vizualizatorul jurnalului NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/11613">#11613</A>)
+<LI>În versiunile 1803 și 1809 ale Windows 10, se poate din nou folosi NVDA în limbile care au semnul Underscore (_) în cadrul numelui acestora. Una dintre aceste limbi este germana elvețiană, al cărei nume în sistemul NVDA de traduceri este de_CH. (<A HREF="https://github.com/nvaccess/nvda/issues/12250">#12250</A>)
+</UL>
+
 <H2>2020.4</H2>
 <P>
 Această versiune include noi metode de intrare chinezești, o actualizare la Liblouis și la lista de elemente (NVDA+f7) funcționează acum în modul de focalizare.
