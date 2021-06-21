@@ -17,46 +17,46 @@ NVDA更新日志
 
 == 新特性 ==
 
-- Early support for UIA with Chromium based browsers (such as Edge). (#12025)
-- Optional experimental support for Microsoft Excel via UI Automation. Only recommended for Microsoft Excel build 16.0.13522.10000 or higher. (#12210)
-- Easier navigation of output in NVDA Python Console. (#9784)
-  - alt+up/down jumps to the previous/next output result (add shift for selecting).
-  - control+l clears the output pane.
-- NVDA now reports the categories assigned to an appointment in Microsoft Outlook, if any. (#11598)
-- Support for the Seika Notetaker braille display from Nippon Telesoft. (#11514)
+-    Chromium 内核浏览器的初步 UIA 支持（如 Edge）。 (#12025)
+- 为微软 Excel 启用可选的实验性 UI automation 支持。 仅推荐 Excel 16.0.13522.10000 或更高版本使用。 (#12210)
+- 更便利的 NVDA Python 控制台的输出浏览支持。 (#9784)
+  - alt+上光标/下光标 跳转到上一个/下一个输出结果(同时按下 shift 键可进行选择)。
+  - control+l 清除输出窗格。
+- NVDA 现在可朗读在微软 Outlook 中为特定约会指定的分类（如果存在）。 (#11598)
+-   支持 Nippon Telesoft 开发的 Seika Notetaker 点显器。 (#11514)
 
 
-== Changes ==
-- In browse mode, controls can now be activated with braille cursor routing on their descriptor (ie. "lnk" for a link). This is especially useful for activating eg. check-boxes with no labels. (#7447)
-- NVDA now prevents the user from performing Windows 10 OCR if screen curtain is enabled. (#11911)
-- Updated Unicode Common Locale Data Repository (CLDR) to 39.0. (#11943, #12314)
-- Added more mathematical symbols to the symbols dictionary. (#11467)
-- The user guide, changes file, and key commands listing now have a refreshed appearance. (#12027)
-- "Unsupported" now reported when attempting to toggle screen layout in applications that do not support it, such as Microsoft Word. (#7297)
-- 'Attempt to cancel speech for expired focus events' option in the advanced settings panel now enabled by default. (#10885)
-  - This behaviour can be disabled by setting this option to "No".
-  - Web applications (E.G. Gmail) no longer speak outdated information when moving focus rapidly.
-- Updated liblouis braille translator to [3.17.0 https://github.com/liblouis/liblouis/releases/tag/v3.17.0]. (#12137)
-  - New braille tables: Belarusian literary braille, Belarusian computer braille, Urdu grade 1, Urdu grade 2.
-- Support for Adobe Flash content has been removed from NVDA due to the use of Flash being actively discouraged by Adobe. (#11131)
-- NVDA will exit even with windows still open, the exit process now closes all NVDA windows and dialogs. (#1740)
-- The Speech Viewer can now be closed with ``alt+F4`` and has a standard close button for easier interaction with users of pointing devices. (#12330)
-- The Braille Viewer now has a standard close button for easier interaction with users of pointing devices. (#12328)
-- In the Elements List dialog, the accelerator key on the "Activate" button has been removed in some locales to avoid collision with an element type radio button label. When available, the button is still the default of the dialog and as such can still be invoked by simply pressing enter from the elements list itself. (#6167)
+== 修改 ==
+- 在浏览模式中，现在可使用点字光标来直接点击控件标记。(如 "lnk" 是链接)。这特别·适合用来点击没有标签的控件（如复选框）、  (#7447)
+- NVDA 现在将防止用户在启用黑屏状态下使用 windows 10 ocr 识别。 (#11911)
+- 升级 Unicode 通用本地化数据 库 (CLDR) 到 39.0. (#11943, #12314)
+-  在符号词典中增加更多的数学符号。 (#11467)
+- 用户文档、更新日志、快捷键快速参考的列表拥有新的展现形式。 (#12027)
+- 如在不支持屏幕布局切换的应用中切换屏幕布局，会给出提示“不支持”（如微软 word。） (#7297)
+- 在“高级”面板的“尝试取消过期的焦点事件的语音输出”选项默认启用。 (#10885)
+  - 此行为可通过把选项设置为“否”禁用。
+  - 快速浏览时忽略 Web 应用的过期信息（如 GMail）。
+- 升级 liblouis braille translator 到 [3.17.0 https://github.com/liblouis/liblouis/releases/tag/v3.17.0]. (#12137)
+  -新的盲文表： Belarusian literary braille, Belarusian computer braille, Urdu grade 1, Urdu grade 2.
+- 音 adobe 已经弃用 flash，故此移除相关支持。 (#11131)
+- 哪怕 Windows 还在运行，NVDA 也将连同所有的窗口和对话框一起退出。 (#1740)
+- 现在，可使用 alt+f4 关闭“语音查看器”的独立窗口，还未点字用户增加了“关闭”按钮。 (#12330)
+- 为“盲文查看器”新增了标准的“关闭”按钮，以方便点字用户。 (#12328)
+- 由于快捷键冲突，为某些语言版本删除“元素列表”对话框“激活”按钮的默认快捷键“a”，您仍然可以使用回车点击这个默认按钮。 (#6167)
 
 
-== Bug Fixes ==
-- The list of messages in Outlook 2010 is once again readable. (#12241)
-- In terminal programs on Windows 10 version 1607 and later, when inserting or deleting characters in the middle of a line, the characters to the right of the caret are no longer read out. (#3200)
-  - This experimental fix must be manually enabled in NVDA's advanced settings panel by changing the diff algorithm to Diff Match Patch.
-- In MS Outlook, inappropriate distance reporting when shift+tabbing from the message body to the subject field should not occur anymore. (#10254)
-- In the Python Console, inserting a tab for indentation at the beginning of a non-empty input line and performing tab-completion in the middle of an input line are now supported. (#11532)
-- Formatting information and other browseable messages no longer present unexpected blank lines when screen layout is turned off. (#12004)
-- It is now possible to read comments in MS Word with UIA enabled. (#9285)
-- Performance when interacting with Visual Studio has been improved. (#12171)
-- Fix graphical bugs such as missing elements when using NVDA with a right-to-left layout. (#8859)
-- Respect the GUI layout direction based on the NVDA language, not the system locale. (#638)
-  - known issue for right-to-left languages: the right border of groupings clips with labels/controls. (#12181)
+== Bug 修复 ==
+- Outlook 2010的消息列表再次可读。 (#12241)
+- 在 windows 10 版本1607 或更高版本的终端程序删除中间字符时，不再朗读其后面的字符。 (#3200)
+  - 此实验性特性紧可通过 NVDA 的“高级设置”面板把差分算法设置为“差异匹配修补”启用。
+- 在微软 outlook 中，使用 shift+tab 从“消息”切换到“主题”时不在朗读错误的距离。 (#10254)
+- 在 Python 控制台中， 现在可为非空行增加制表符做行首缩进，也可在中间的行使用 tab 键进行自动缩进。 (#11532)
+- “屏幕布局”关闭时，格式信息和其他可浏览的消息不再出现于空行 (#12004)
+- UIA启用时，可在微软 word中朗读注释内容 (#9285)
+- 提升 Visual Studio 交互速度。 (#12171)
+- 修复 NVDA 的可视化错误（如使用从右到左布局时元素丢失）等。 (#8859)
+- 优先使用 NVDA 语言的布局偏好设置，而不是系统默认。 (#638)
+  - 已知从右到左语言的群集边缘会被标签或控件分割。 (#12181)
 - The python locale is set to match the language selected in preferences consistently, and will occur when using the default language. (#12214)
 - TextInfo.getTextInChunks no longer freezes when called on Rich Edit controls such as the NVDA log viewer. (#11613)
 - It is once again possible to use NVDA in languages containing underscores in the locale name such as de_CH on Windows 10 1803 and 1809. (#12250)
