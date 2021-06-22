@@ -9,6 +9,35 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2021.1</H2>
+<P>
+Этот выпуск включает в себя опциональную экспериментальную поддержку UI Automation для Microsoft Excel и web-браузеров на основе движка Chromium.
+There are fixes for several languages, and for accessing links in Braille.
+Имеются обновления для общей языковой базы Unicode, математических символов и брайлевского транслятора LibLouis.
+А также множество улучшений и исправлений ошибок, в том числе для Microsoft Office, Visual Studio и ряда языков.
+</P>
+<P>
+Обратите внимание:
+</P>
+ <UL>
+ <LI>Этот выпуск нарушает совместимость с существующими дополнениями.
+ <LI>Также в нём прекращена поддержка Adobe Flash.
+-
+ </UL>
+
+<H3>Новое</H3>
+<UL>
+<LI>Добавлена предварительная поддержка UI Automation в web-браузерах на основе движка Chromium (таких как Microsoft Edge). (<A HREF="https://github.com/nvaccess/nvda/issues/12025">#12025</A>)
+<LI>Добавлена экспериментальная поддержка UI Automation в Microsoft Excel. Рекомендуется только для сборок Microsoft Excel 16.0.13522.10000 и выше. (<A HREF="https://github.com/nvaccess/nvda/issues/12210">#12210</A>)
+<LI>В Python консоли NVDA, упрощена навигация по результатам вывода выполненных команд. (<A HREF="https://github.com/nvaccess/nvda/issues/9784">#9784</A>)
+  <UL>
+  <LI>Сочетания Alt+стрелки вверх/вниз выполняют переход к следующему или предыдущему результату вывода (при зажатой клавише Shift происходит его выделение).
+  <LI>Сочетание Control+L очищает область вывода результатов.
+  </UL>
+<LI>NVDA теперь сообщает категории, назначенные на встречи в Microsoft Outlook, если таковые имеются. (<A HREF="https://github.com/nvaccess/nvda/issues/11598">#11598</A>)
+<LI>Добавлена поддержка брайлевского дисплея Seika Notetaker от Nippon Telesoft. (<A HREF="https://github.com/nvaccess/nvda/issues/11514">#11514</A>)
+</UL>
+
 <H2>2020.4</H2>
 <P>
 Этот выпуск включает в себя поддержку новых методов ввода для китайского языка, обновлённую версию библиотеки брайлевской трансляции Liblouis, а также возможность вызова диалога «Список элементов» (NVDA+F7) в режиме редактирования.
@@ -90,6 +119,7 @@
 <LI>NVDA больше не завершает аварийно свою работу при использовании таблицы американского английского брайля второй ступени, при отображении некоторого содержимого, такого как URL. (<A HREF="https://github.com/nvaccess/nvda/issues/11754">#11754</A>)
 <LI>По команде NVDA+F теперь снова возможно получать информацию о форматировании сфокусированной ячейки в Microsoft Excel. (<A HREF="https://github.com/nvaccess/nvda/issues/11914">#11914</A>)
 <LI>На брайлевских дисплеях Papenmeier, поддерживающих QWERTY-ввод, он теперь снова работает и не вызывает случайные зависания NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/11944">#11944</A>)
+<LI>В web-браузерах на основе движка Chromium, были решены наблюдаемые в некоторых случаях проблемы, когда не работала навигация по таблицам, а NVDA не сообщала число строк/столбцов в таблицах. (<A HREF="https://github.com/nvaccess/nvda/issues/12359">#12359</A>)
 </UL>
 
 <H3>Изменения для разработчиков</H3>
@@ -3517,7 +3547,6 @@ This release fixes several security and other important issues found in NVDA 201
 <LI>NVDA now asks if it should save configuration and restart if the user has just changed the language in the User Interface Settings Dialog. NVDA must be restarted for the language change to fully take effect.
 <LI>If a synthesizer can not be loaded, when choosing it from the synthesizer dialog, a message box alerts the user to the fact.
 <LI>When loading a synthesizer for the first time, NVDA lets the synthesizer choose the most suitable voice, rate and pitch parameters, rather than forcing it to defaults it thinks are ok. This fixes a problem where Eloquence and Viavoice sapi4 synths start speaking way too fast for the first time.
-<P></P>
 </UL>
 
 
