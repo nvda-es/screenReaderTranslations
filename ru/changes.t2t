@@ -4,7 +4,7 @@
 %!includeconf: ../changes.t2tconf
 
 = 2021.1 =
-Этот выпуск включает в себя опциональную экспериментальную поддержку UI Automation для Microsoft Excel и web-браузеров на основе движка Chromium.
+Этот выпуск включает в себя экспериментальную поддержку UI Automation для Microsoft Excel и web-браузеров на основе движка Chromium.
 Имеются исправления для ряда языков и улучшение в активации ссылок с брайлевского дисплея.
 Обновлён общий репозиторий языковых данных консорциума Unicode, набор читаемых математических символов и брайлевский транслятор LibLouis.
 А также множество других улучшений и исправлений, в том числе для Microsoft Office, Visual Studio и ряда языков.
@@ -16,18 +16,18 @@
 
 
 == Новое ==
-- Добавлена предварительная поддержка UI Automation в web-браузерах на основе движка Chromium (таких как Microsoft Edge). (#12025)
-- Добавлена экспериментальная поддержка UI Automation в Microsoft Excel. Рекомендуется только для сборок Microsoft Excel 16.0.13522.10000 и выше. (#12210)
-- В Python консоли NVDA, упрощена навигация по результатам вывода выполненных команд. (#9784)
-  - Сочетания Alt+стрелки вверх/вниз выполняют переход к следующему или предыдущему результату вывода (при зажатой клавише Shift происходит его выделение).
-  - Сочетание Control+L очищает область вывода результатов.
+- Добавлена предварительная поддержка UI Automation для web-браузеров на основе движка Chromium (таких как Microsoft Edge). (#12025)
+- Добавлена экспериментальная поддержка UI Automation для Microsoft Excel. Рекомендуется только для сборок Excel 16.0.13522.10000 и выше. (#12210)
+- В Python консоли NVDA, упрощена навигация по результатам выполненных команд. (#9784)
+  - Команды Alt+стрелки вниз/вверх выполняют переход к следующему или предыдущему результату вывода (при зажатой клавише Shift происходит его выделение).
+  - Команда Control+L очищает область вывода результатов.
 - NVDA теперь сообщает категории, назначенные на встречи в Microsoft Outlook, если таковые имеются. (#11598)
 - Добавлена поддержка брайлевского дисплея Seika Notetaker от Nippon Telesoft. (#11514)
 
 
 == Изменения ==
 - В режиме обзора, элементы управления теперь могут быть активированы кнопками маршрутизации на брайлевском дисплее, расположенными над их сокращённом описанием (например «с» для ссылки). Это особенно полезно при активации флажков не имеющих текстовой метки. (#7447)
-- NVDA теперь уведомляет пользователя о невозможности использования компонента Windows 10 OCR, при активном режиме затемнения экрана. (#11911)
+- При активной функции затемнения экрана, NVDA теперь уведомляет пользователя о невозможности использования компонента Windows 10 OCR. (#11911)
 - Общий репозиторий языковых данных консорциума Unicode (CLDR), используемый в NVDA для чтения символов эмодзи, обновлён до версии 39.0. (#11943, #12314)
 - В таблицу символов NVDA добавлено большое количество различных математических знаков. (#11467)
 - Поставляемая с NVDA документация, а именно руководство пользователя, список изменений и список горячих клавиш, теперь имеет обновлённый внешний вид. (#12027)
@@ -70,24 +70,24 @@
 - NVDA больше не будет объявлять «↑↑↑» для символов эмодзи в некоторых языках. (#11963)
 - Синтезатор eSpeak теперь снова поддерживает кантонский и мандаринский языки. (#10418)
 - В новом Microsoft Edge на основе Chromium, текстовые поля, такие как адресная строка, теперь корректно сообщаются даже если они являются пустыми. (#12474)
-- Исправлен драйвер брайлевских дисплеев Seika. (#10787)
+- Исправлен драйвер для брайлевских дисплеев Seika. (#10787)
 
 
 == Изменения для разработчиков ==
-- Note: this is an Add-on API compatibility breaking release. Add-ons will need to be re-tested and have their manifest updated.
-- NVDA's build system now fetches all Python dependencies with pip and stores them in a Python virtual environment. This is all done transparently.
-  - To build NVDA, SCons should continue to be used in the usual way. E.g. executing scons.bat in the root of the repository. Running ``py -m SCons`` is no longer supported, and ``scons.py`` has also been removed.
-  - To run NVDA from source, rather than executing ``source/nvda.pyw`` directly, the developer should now use ``runnvda.bat`` in the root of the repository. If you do try to execute ``source/nvda.pyw``, a message box will alert you this is no longer supported.
-  - To perform unit tests, execute ``rununittests.bat [<extra unittest discover options>]``
-  - To perform system tests: execute ``runsystemtests.bat [<extra robot options>]``
-  - To perform linting, execute ``runlint.bat <base branch>``
-  - Please refer to readme.md for more details.
-- The following Python dependencies have also been upgraded:
-  - comtypes updated to 1.1.8.
-  - pySerial updated to 3.5.
-  - wxPython updated to 4.1.1.
-  - Py2exe updated to 0.10.1.0.
-- ``LiveText._getTextLines`` has been removed. (#11639)
+- Внимание: этот выпуск нарушает совместимость с API существующих дополнений. Дополнения необходимо будет повторно протестировать и обновить их манифест.
+- Система сборки NVDA теперь извлекает все Python-зависимости с помощью pip и сохраняет их в виртуальном окружении Python. Всё это делается прозрачно для пользователя.
+  - Для сборки NVDA, следует как и раньше использовать SCons. То есть выполнять scons.bat в корневом каталоге репозитория. Запуск ``py -m SCons`` больше не поддерживается, а также ``scons.py`` был удалён.
+  - Для запуска NVDA из исходного кода, вместо прямого выполнения ``source/nvda.pyw``, разработчик теперь должен использовать ``runnvda.bat`` из корневого каталога репозитория. Если вы попытаетесь выполнить ``source/nvda.pyw``, то получите окно с уведомлением о том, что это больше не поддерживается.
+  - Для выполнения модульных тестов, выполните ``rununittests.bat [<дополнительные опции тестирования>]``
+  - Для выполнения системных тестов, выполните ``runsystemtests.bat [<дополнительные опции тестирования>]``
+  - Для выполнения статического анализа, выполните ``runlint.bat <base branch>``
+  - Для получения дополнительной информации, пожалуйста, обратитесь к файлу readme.md.
+- Также были обновлены следующие Python-зависимости:
+  - comtypes обновлён до версии 1.1.8.
+  - pySerial обновлён до версии 3.5.
+  - wxPython обновлён до версии 4.1.1.
+  - Py2exe обновлён до версии 0.10.1.0.
+- ``LiveText._getTextLines`` был удалён. (#11639)
   - Instead, override ``_getText`` which returns a string of all text in the object.
 - ``LiveText`` objects can now calculate diffs by character. (#11639)
   - To alter the diff behaviour for some object, override the ``diffAlgo`` property (see the docstring for details).
