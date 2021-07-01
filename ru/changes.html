@@ -115,22 +115,22 @@
   <LI>wxPython обновлён до версии 4.1.1.
   <LI>Py2exe обновлён до версии 0.10.1.0.
   </UL>
-<LI><CODE>LiveText._getTextLines</CODE> был удалён. (<A HREF="https://github.com/nvaccess/nvda/issues/11639">#11639</A>)
+<LI>Метод <CODE>LiveText._getTextLines</CODE> был удалён. (<A HREF="https://github.com/nvaccess/nvda/issues/11639">#11639</A>)
   <UL>
-  <LI>Instead, override <CODE>_getText</CODE> which returns a string of all text in the object.
+  <LI>Вместо него следует переопределять метод <CODE>_getText</CODE>, который возвращает весь текст объекта.
   </UL>
-<LI><CODE>LiveText</CODE> objects can now calculate diffs by character. (<A HREF="https://github.com/nvaccess/nvda/issues/11639">#11639</A>)
+<LI>Экземпляры <CODE>LiveText</CODE> теперь могут вычислять разницу в текстах посимвольно. (<A HREF="https://github.com/nvaccess/nvda/issues/11639">#11639</A>)
   <UL>
-  <LI>To alter the diff behaviour for some object, override the <CODE>diffAlgo</CODE> property (see the docstring for details).
+  <LI>Чтобы изменить поведение в поиске различий для некоторого объекта, переопределите свойство <CODE>diffAlgo</CODE> (см. строку документации для получения дополнительной информации).
   </UL>
-<LI>When defining a script with the script decorator, the 'allowInSleepMode' boolean argument can be specified to control if a script is available in sleep mode or not. (<A HREF="https://github.com/nvaccess/nvda/issues/11979">#11979</A>)
-<LI>The following functions are removed from the config module. (<A HREF="https://github.com/nvaccess/nvda/issues/11935">#11935</A>)
+<LI>При определении скрипта с помощью декоратора scriptHandler.script, теперь может быть указан логический аргумент 'allowInSleepMode', управляющий доступностью скрипта в режиме сна. (<A HREF="https://github.com/nvaccess/nvda/issues/11979">#11979</A>)
+<LI>Следующие функции были удалены из модуля config. (<A HREF="https://github.com/nvaccess/nvda/issues/11935">#11935</A>)
   <UL>
-  <LI>canStartOnSecureScreens - use config.isInstalledCopy instead.
-  <LI>hasUiAccess and execElevated - use them from the systemUtils module.
-  <LI>getConfigDirs - use globalVars.appArgs.configPath instead.
+  <LI>canStartOnSecureScreens - вместо него используйте config.isInstalledCopy.
+  <LI>hasUiAccess и execElevated - используйте их из модуля systemUtils.
+  <LI>getConfigDirs - вместо него используйте globalVars.appArgs.configPath.
   </UL>
-<LI>Module level REASON_* constants are removed from controlTypes - please use controlTypes.OutputReason instead. (<A HREF="https://github.com/nvaccess/nvda/issues/11969">#11969</A>)
+<LI>Константы REASON_* были удалены из модуля controlTypes. Пожалуйста, вместо них используйте controlTypes.OutputReason. (<A HREF="https://github.com/nvaccess/nvda/issues/11969">#11969</A>)
 <LI>REASON_QUICKNAV has been removed from browseMode - use controlTypes.OutputReason.QUICKNAV instead. (<A HREF="https://github.com/nvaccess/nvda/issues/11969">#11969</A>)
 <LI><CODE>NVDAObject</CODE> (and derivatives) property <CODE>isCurrent</CODE> now strictly returns Enum class <CODE>controlTypes.IsCurrent</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/11782">#11782</A>)
   <UL>
