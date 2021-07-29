@@ -2579,6 +2579,13 @@ Ova opcija omogućuje određivanje količine interpunkcijskih znakova i drugih s
 Na primjer, kad je ova opcija postavljena na sve, svi će se simboli izgovoriti kao riječi.
 Ova se opcija primjenjuje na sve govorne jedinice, ne samo na trenutačno aktivnu.
 </P>
+<A NAME="SpeechSettingsSymbolLevelWord"></A>
+<H5>Izgovaraj svu interpunkciju i simbole prilikom čitanja riječ po riječ</H5>
+<P>
+Prilikom čitanja teksta riječ po riječ, poželjno je dobivati više detalja u usporedbi sa čitanjem po rečenicama.
+Kada je opcija odabrana (podrazumjevano), NVDA izgovara sve znakove interpunkcije i simbole prilikom čitanja riječ po riječ, kao da je razina čitanja interpunkcije postavljena na "sve".
+Imajte na umu, da u bilo kojem slučaju, NVDA čita interpunkciju i simbole kada čitate znak po znak.
+</P>
 <A NAME="SpeechSettingsTrust"></A>
 <H5>Vjeruj jeziku glasa za čitanje opisa znakova i simbola</H5>
 <P>
@@ -3548,41 +3555,43 @@ Odabirni okvir sadrđi sljedeće opcije:
 <LI>Podrazumijevano (samo kada ej to potrebno): podrazumjevana opcija koju koristi NVDA, trenutno se koristi "samo kada je to potrebno". Ova se podrazumjevana opcija može promijeniti u budućnosti kada tehnologija bude zrela za široku uporabu.
 <LI>Samo kada je to potrebno: kada NVDA ne može ući u proces preglednika kako bi koristio IA2 UIA će biti dostupna, te će se tada NVAD prebaciti na UIA.
 <LI>Da: Ako će UIA biti dostupna u pregledniku, će ju koristiti.
-<LI>ne: ne koristi UIA, čak ako NVDA nije u stanju ući u proces. This may be useful for developers debugging issues with IA2 and want to ensure that NVDA does not fall back to UIA.
+<LI>ne: ne koristi UIA, čak ako NVDA nije u stanju ući u proces. Ovo može biti zanimljivo za razvojne programere koji otklanjaju pogreške sa IA2, i žele osigurati da se NVDA ne vraća na korištenje UIA.
 </UL>
 
 <P></P>
-<A NAME="UseUiaForExcel"></A>
-<H5>Koristi UI automation za pristup Excel proračunskim tablicama kada je to moguće</H5>
+<A NAME="Annotations"></A>
+<H5>Uključi eksperimentalnu podršku Aria zabilješki</H5>
 <P>
+Koristi se za omogućavanje značajki koje uključuju izgovor Aria zabilješki.
+Neke od ovih značajki može biti nekompletno.
+Postoje sljedeće opcije: 
+</P>
+<UL>
+<LI>"Izgovori detalje u modusu čitanja": izgovara detalje ako objekt posjeduje iste u modusu čitanja.
+Čitanje skraćenog pregleda tih detalja može se učiniti pridjeljivanjem gesti koristeći <A HREF="#InputGestures">dijaloški okvir ulaznih gesti</A>.
+<P></P>
+==== Koristi UI automation za pristup Excel proračunskim tablicama kada je to moguće ====[UseUiaForExcel]
 Kada je ova opcija omogućena, NVDA će probati koristiti Microsoft UI Automation API za pristupačnost kako bi izvlačio informacije iz kontrola proračunskih tablica Microsoft Excela.
 To je eksperimentalna funkcija, i neke značajke Microsoft Excela mogu biti nedostupne koristeći taj modus.
 Na primjer, NVDA popis elemenata za popisivanej formula i komentara, i i brzo kretanje u modusu čitanje za preskakanje na polja obrazaca u proračunskoj tablici.
 Međutim, prilikom osnovnog kretanja po proračunskoj tablici ili uređivanja , ova opcija može donijeti značajno unapređenje u performansama.
 Još uvijek ne preporučujemo da većina korisnika uključuje ovo kao podrazumjevani način rada, ali pozivamo korisnike Microsoft Excela  koji koriste verziju 16.0.13522.10000 ili noviju da testiraju ovu funkciju i poišalju povratnu informaciju.
 Implementacija UIA u Microsoft excelu se mijenja od verzije do verzije, te  verzije Microsoft offoce paketa starije od 16.0.13522.10000 mogu pružati nedovoljno informacija na način da ova opcija bude od koristi.
-</P>
-<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
-<H5>Koristi novu podršku upisanih znakova u Windowsovom naredbenom retku kada je to podržano</H5>
-<P>
+<P></P>
+==== Koristi novu podršku upisanih znakova u Windowsovom naredbenom retku kada je to podržano ====[AdvancedSettingsKeyboardSupportInLegacy]
 Ova opcija pruža alternativnu metodu otkrivanja upisanih znakova u Windowsovom naredbenom retku.
 Iako ova opcija  donosi unapređenja performansi i ispravlja problem slovkanja neželjenih stavki, ista može biti nekompatibilna s nekim programima naredbenog retka.
 Ova je opcija dostupna i standardno je uključena u Windows 10 verzijama 1607, i novijim kad je UIA nedostupno ili deaktivirano.
 Upozorenje: s uključenom ovom opcijom, izgovoreni znakovi koji se ne pokazuju na ekranu, poput lozinki, neće biti spriječeni u izgovoru.
 U nepovjerljivim okruženjima, možda biste trebali privremeno isključiti opcije <A HREF="#KeyboardSettingsSpeakTypedCharacters">izgovor upisanih znakova</A> i <A HREF="#KeyboardSettingsSpeakTypedWords">Izgovor upisanih riječi</A> pri upisivanju lozinki.
-</P>
-<A NAME="DiffAlgo"></A>
-<H5>Metoda praćenja izmjena sadržaja u konzolama</H5>
-<P>
+<P></P>
+==== Metoda praćenja izmjena sadržaja u konzolama ====[DiffAlgo]
 Ovom se opcijom određuje kako NVDA označuje novi tekst koji treba biti ozgovoren u programima koji koriste naredbeni redak.
 Odabirni okvir  metoda praćenja izmjena sadržaja u konzolama sadrži tri opcije:
-</P>
-<UL>
-<LI>Automatski: od NVDA 2021.1, ova je opcija ekvivalentna opciji Difflib.
-U budućoj novoj verziji, to može biti promijenjeno na Diff Match Patch ako će korisnička povratna informacija biti pozitivna.
+<LI>Automatski: Od verzije NVDA 2021.2, Ova je opcija istovjetan sa opcijom "dozvoli Diff Match Patch".
 <LI>Dozvoli Diff Match Patch: Ova opcija prouzrokuje da NVDA računa izmjene u tekstu naredbenog redka znak po znak.
 To može unaprediti performanse kada se zapisuju velike količine teksta u terminal te omogućuje točnije ozgovaranje novog teksta.
-Međutim, to može biti nekompatibilno sa većinom programa.
+Međutim, to može biti nekompatibilno sa većinom programa, tako da se diff match patch neće uvijek koristiti.
 Ova je značajka podržana u Windowsima 10 inačicama 1607 i novijim.
 Dodatno to može biti dostupn u starijim inačicama operacijskog sustava Windows.
 <LI>prisilno koristi Difflib: prouzrokuje da NVDA izračunava promjene terminala redak po redak.
