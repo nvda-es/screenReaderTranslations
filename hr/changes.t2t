@@ -4,20 +4,24 @@
 %!includeconf: ../changes.t2tconf
 
 = 2021.2 =
+This release introduces preliminary Windows 11 support.
+While Windows 11 is yet to be released, this release has been tested on preview versions of Windows 11.
+This includes an important fix for Screen Curtain (see important notes).
+The COM Registration Fixing Tool can now resolve more problems when running NVDA.
+There are updates to the synthesizer eSpeak and braille translator LibLouis.
+There are also various bug fixes and improvements, notably for braille support and Windows terminals, calculator, emoji panel and clipboard history.
+
+
 == Važna upozorenja ==
-
-- Zaslonska zavjesa više nije kompatibilna sa NVDA i verzijama operacijskog sustava Windows novijim od Windows 10 21H2 (10.0.19044).
+Due to a change in the Windows Magnification API, Screen Curtain had to be updated to support the newest versions of Windows.
+Use NVDA 2021.2 to activate Screen Curtain with Windows 10 21H2 (10.0.19044) or later.
 Ovo uključuje Windows 10 insidere i Windows 11.
-Ovo je prouzrokovano promjenom u Windows API za uvećavanje.
-Prilikom korištenja starijih NVDA inačica i Windowsa novijih od Windows 10 21H2, zaslonska zavjesa može prestati raditi bez upozorenja.
-Kako biste se osigurali, provjerite radi li zaslonska zavjesa pravilno sa novijim ili eksperimentalnim inačicama operacijskog sustava Windows.
-(#12491, #12684)
-
+For security purposes, when using a new version of Windows, get visual confirmation that the Screen Curtain makes the screen entirely black.
 
 == Nove značajke ==
-- Podrška za ARIA zabilješke:
+- Experimental support for ARIA annotations:
   - Dodaje prečac za čitanje detalja objekta koji sadrži aria-details. (#12364)
-  - Dodaje opciju u naprednim postavkama za izgovaranje postojanja detalja u načinu pregleda. (#12439) 
+  - adds an option in advanced preferences to report if an object has details in browse mode. (#12439) 
   -
 - U Windowsima 10 verziji 1909 i novijim (uključujući Windows 11), NVDA će izgovarati broj prijedloga prilikom izvođenja pretrage u eksploreru za datoteke. (#10341, #12628)
 - U Microsoft Wordu, NVDA sada čita rezultat prečaca za normalnu i viseću uvlaku pri izvršavanju. (#6269)
@@ -49,6 +53,7 @@ Kako biste se osigurali, provjerite radi li zaslonska zavjesa pravilno sa noviji
 - Inačice Windowsa 10.0.22000 ili novije sada se prepoznaju kao Windows 11, a ne kao Windows 10. (#12626)
 - Ispravljena je podrška zaslonske zavjese te je ista testirana sa inačicama do 10.0.22000. (#12684)
 - Ako nema rezultata ulaznih gesti, dijaloški okvir konfiguracije i dalje radi kako je to očekivano. (#12673)
+- Fixed a bug where the first menu item of a submenu is not announced in some contexts. (#12624)
 -
 
 
