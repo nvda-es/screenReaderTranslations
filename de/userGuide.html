@@ -215,6 +215,7 @@
     <LI><A HREF="#Eurobraille">15.17. Eurobraille Esys/Esytime/Iris-Braillezeilen</A>
     <LI><A HREF="#NattiqTechnologies">15.18. Nattiq nBraille</A>
     <LI><A HREF="#BRLTTY">15.19. BRLTTY</A>
+    <LI><A HREF="#HIDBraille">15.20. Standard-HID-Braillezeilen</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">16. Erweiterte Themen</A>
     <UL>
@@ -733,7 +734,7 @@ Einige nützliche Tastenkombinationen zum Navigieren mit dem System-Fokus sind:
 <TD>Statuszeile ausgeben</TD>
 <TD>NVDA+Ende</TD>
 <TD>NVDA+Umschalt+Ende</TD>
-<TD>Gibt die Statuszeile aus, falls eine gefunden wird und platziert den NVDA-Cursor darauf. Wenn Sie diese Tastenkombination zweimal drücken, wird die Statuszeile buchstabiert. Wenn Sie die Tastenkombination dreimal drücken, wird die Statuszeile in die Zwischenablage kopiert.</TD>
+<TD>Liest die Statusleiste vor, falls vorhanden. Durch zweimaliges Drücken werden die Informationen buchstabiert. Durch dreimaliges Drücken werden die Informationen in die Zwischenablage kopiert.</TD>
 </TR>
 </TABLE>
 
@@ -930,6 +931,13 @@ Mit den folgenden Befehlen navigieren Sie zwischen den Objekten:
 <TD>NVDA+Entfernen</TD>
 <TD>Keine</TD>
 <TD>Meldet Informationen über die Position des Textes oder des Objektes, in welchem sich der NVDA-Cursor befindet, z. B. Dokumentposition in Prozent oder die exakte Objektposition. Zweimaliges Drücken der Tastenkombination meldet möglicherweise weitere Informationen.</TD>
+</TR>
+<TR>
+<TD>NVDA-Cursor in die Statusleiste verschieben</TD>
+<TD>Keine</TD>
+<TD>Keine</TD>
+<TD>Keine</TD>
+<TD>Liest die Statusleiste vor, falls vorhanden. Es verschiebt auch das Navigator-Objekt an diese Position.</TD>
 </TR>
 </TABLE>
 
@@ -2907,6 +2915,10 @@ Diese Option ist nicht verfügbar, wenn Ihre Braillezeile nur die automatische S
 <P>
 Für weitere Informationen sehen Sie im Abschnitt <A HREF="#SupportedBrailleDisplays">Unterstützte Braillezeilen</A>, welche Anschlüsse für Ihre Braillezeile zur Verfügung stehen.
 </P>
+<P>
+Bitte beachten: Wenn Sie mehrere Braille-Displays gleichzeitig an Ihr Gerät anschließen, die denselben Treiber verwenden (z. B. zwei Seika-Braillezeilen anschließen), ist es derzeit nicht möglich, NVDA mitzuteilen, welche Braillezeile verwendet werden soll.
+Es wird daher empfohlen, immer nur eine Braillezeile eines bestimmten Typs / Herstellers an Ihr Gerät anzuschließen.
+</P>
 <A NAME="VisionSettings"></A>
 <H4>12.1.7. Visuelle Darstellungen</H4>
 <P>
@@ -3398,7 +3410,7 @@ Konfigurieren können Sie die Meldungen von:
  <LI>Schrift-Attribute
  <LI>Hoch- und tiefgestellte Zeichen
  <LI>Betonter Text
- <LI>Markierter (hervorgehobener Text)
+ <LI>Hervorgehobener (markierter) Text
  <LI>Layout
  <LI>Farben
  </UL>
@@ -3524,13 +3536,13 @@ Wenn diese Option aktiviert ist, beschränkt NVDA daher die Ereignisregistrierun
 Wenn Sie in einer oder mehreren Anwendungen damit probleme haben sollten, empfehlen wir Ihnen, diese Funktionalität auszuprobieren, um zu sehen, ob sich die leistung dadurch verbessert.
 </P>
 <A NAME="AdvancedSettingsUseUiaForWord"></A>
-<H5>UIA für Steuerelemente in Microsoft Word verwenden (falls verfügbar)</H5>
+<H5>Immer die UI-Automatisierung verwenden, um auf Microsoft Word-Dokumentsteuerelemente zuzugreifen, wenn verfügbar</H5>
 <P>
-Wenn diese Option aktiviert ist, versucht NVDA, die Microsoft-API für die Zugänglichkeit der UIA zu verwenden, um Informationen von Steuerelementen in Microsoft Word-Dokumenten abzurufen.
+Wenn diese Option aktiviert ist, versucht NVDA immer, die Microsoft UI Automation Accessibility API zu verwenden, um Informationen aus Steuerelementen in Microsoft Word-Dokumente abzurufen, auch für weniger aktuelle Versionen von Microsoft Office 2016 / 365.
 Dazu gehört Microsoft Word selbst, aber auch die Nachrichtenansicht und das Verfassen von Nachrichten in Microsoft Outlook.
- Für die neuesten Versionen von Microsoft Office 2016 / 365, die unter Windows 10 und neuer ausgeführt werden, ist die Unterstützung für die  UIA vollständig genug, um den Zugriff auf Microsoft Word-Dokumente nahezu gleich der bestehenden Microsoft Word-Unterstützung von NVDA zu ermöglichen, mit dem zusätzlichen Vorteil, dass die Reaktionsfähigkeit erheblich verbessert wird.
-Es kann jedoch einige Informationen geben, die in einigen Versionen von Microsoft Office entweder nicht oder falsch angezeigt werden, sodass man sich nicht immer auf diese Unterstützung dieser UIA verlassen kann.
-Wir empfehlen noch nicht diese Funktion standardmäßig zu aktivieren. Allerdings ist ausdrücklich erwünscht, dass Benutzer von Office 2016 / 365 diese Funktion testen und Rückmeldung geben können.
+ Für Microsoft Office Build-Version 16.0.13901 oder neuer verwendet NVDA immer die Benutzeroberflächenautomatisierung, um auf Microsoft Word-Dokumente zuzugreifen, unabhängig davon, wie diese Einstellung konfiguriert ist.
+Für die neuesten Versionen von Microsoft Office 2016 / 365, die unter Windows 10 und neuer ausgeführt werden, ist die Unterstützung für die Benutzeroberflächenautomatisierung vollständig genug, um den Zugriff auf Microsoft Word-Dokumente nahezu gleich der bestehenden Microsoft Word-Unterstützung von NVDA zu ermöglichen, mit dem zusätzlichen Vorteil, dass die Reaktionsfähigkeit erheblich verbessert wird.
+Es kann jedoch sein, dass einige Informationen in einigen älteren Versionen von Microsoft Office nicht oder falsch angezeigt werden, was bedeutet, dass man sich nicht immer auf diese Unterstützung der Benutzeroberflächenautomatisierung verlassen sollte.
 </P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
 <H5>Für den Zugriff auf die Windows-Konsole UIA verwenden (falls verfügbar)</H5>
@@ -3558,44 +3570,46 @@ Das Kombinationsfeld hat die folgenden Optionen:
 
 <P></P>
 <A NAME="Annotations"></A>
-<H5>Unterstützung für experimentelle ARIA-Anmerkungen aktivieren</H5>
+<H5>Anmerkungen</H5>
 <P>
-Dies wird verwendet, um Funktionen zu aktivieren, die experimentelle Unterstützung für ARIA-Anmerkungen hinzufügen.
+Diese Gruppe der Optionen wird verwendet, um Funktionen zu aktivieren, die experimentelle Unterstützung für ARIA-Anmerkungen ergänzen.
 Einige dieser Funktionen sind möglicherweise noch nicht vollständig.
 Es gibt folgende Möglichkeiten:
 </P>
 <UL>
 <LI>"Details im Lesemodus mitteilen": Ermöglicht die Berichterstellung, wenn ein Objekt Details im Browse-Modus hat.
 Die Zusammenfassung dieser Details kann durch Zuweisen eines Tastenbefehls mit dem Dialogfeld der <A HREF="#InputGestures">Tastenbefehle</A> gemeldet werden.
-</UL>
-
-<P></P>
-<A NAME="UseUiaForExcel"></A>
-<H5>UIA verwenden, um auf die Steuerelemente der Microsoft Excel-Tabelle zuzugreifen, sofern verfügbar</H5>
-<P>
+<LI>"Aria-Beschreibung immer ansagen":
+  Wenn die Quelle von <CODE>accDescription</CODE> aria-description ist, wird die Beschreibung mitgeteilt.
+  Dies ist nützlich für Anmerkungen im Web.
+  Hinweis:
+  <UL>
+  <LI>Es gibt viele Quellen für <CODE>accDescription</CODE>, einige haben eine gemischte oder unzuverlässige Semantik.
+    Historisch gesehen war AT nicht in der Lage, Quellen von <CODE>accDescription</CODE> zu unterscheiden, typischerweise wurde es aufgrund der gemischten Semantik nicht gesprochen.
+  <LI>Diese Option befindet sich in einer sehr frühen Entwicklungsphase, sie basiert auf Browserfunktionen, die noch nicht weit verbreitet sind.
+  <LI>Funktioniert voraussichtlich ab Chromium 92.0.4479.0
+ -
+-
+  <P></P>
+==== UIA verwenden, um auf die Steuerelemente der Microsoft Excel-Tabelle zuzugreifen, sofern verfügbar ====[UseUiaForExcel]
 Wenn diese Option aktiviert ist, versucht NVDA, die Eingabehilfen-API von Microsoft UI Automation zu verwenden, um Informationen aus den Steuerelementen von Microsoft Excel-Tabellen abzurufen.
 Dies ist eine experimentelle Funktion, und einige Funktionen von Microsoft Excel sind in diesem Modus möglicherweise nicht verfügbar.
 So sind z. B. die NVDA-Elementeliste zum Auflisten von Formeln und Kommentaren und die Schnellnavigation im Lesemodus zum Springen zu Formularfeldern in einer Kalkulationstabelle nicht verfügbar.
 Für die grundlegende Navigation bzw. Bearbeitung von Tabellenkalkulationen kann diese Option jedoch eine enorme Leistungsverbesserung darstellen.
 Es wird nach wie vor empfohlen, dass die meisten Benutzer diese Funktion sie nicht standardmäßig aktivieren. Dafür wird mindestens Microsoft Excel Build 16.0.13522.10000 oder neuer benötigt. Jedoch können die Anwender diese Funktion trotzdem testen und Feedback auf Englisch bei NV Access einreichen.
 Die UIA-Implementierung von Microsoft Excel wird fortlaufend angepasst. die Versionen von Microsoft Office, die noch die Build 16.0.13522.10000 haben, stellen möglicherweise nicht genügend Informationen bereit, damit diese Option von Nutzen ist.
-</P>
-<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
-<H5>Unterstützung bei neu eingegebenen Zeichen in der Windows-Konsole (falls verfügbar)</H5>
-<P>
+  <P></P>
+==== Unterstützung bei neu eingegebenen Zeichen in der Windows-Konsole (falls verfügbar) ====[AdvancedSettingsKeyboardSupportInLegacy]
 Diese Option aktiviert eine alternative Methode zur Erkennung von Zeichen während der Eingabe in der Windows-Konsole.
 Durch das Aktivieren dieser Option wird zwar die Leistung gesteigert und das Buchstabieren mancher Ausgaben in Windows-Konsolen verhindert; es könnten jedoch Probleme mit einigen Terminals auftreten.
 Diese Funktion ist verfügbar und seit Windows 10 Version 1607 standardmäßig aktiviert, wenn die UIA nicht verfügbar oder deaktiviert ist.
 Das eingeben von Zeichen, die nicht auf dem Bildschirm erscheinen (z. B. bei Passwörtern) wird nicht unterstützt, wenn diese Option aktiviert ist.
 In Umgebungen, die nicht unterstützt werden, können Sie vorübergehend <A HREF="#KeyboardSettingsSpeakTypedCharacters">Zeichen beim Eingeben ansagen</A> und <A HREF="#KeyboardSettingsSpeakTypedWords">Wörter beim Eingeben ansagen</A> deaktivieren, wenn Sie Passwörter eingeben.
-</P>
-<A NAME="DiffAlgo"></A>
-<H5>Diff-Algorithmus</H5>
-<P>
+  <P></P>
+==== Diff-Algorithmus ====[DiffAlgo]
 Diese Einstellung steuert, wie NVDA neuen Text in Terminals vorgelesen werden sollen.
 Das Kombinationsfeld "Diff-Algorithmus" hat drei Optionen:
-</P>
-<UL>
+  </UL>
 <LI>Automatisch: Ab NVDA 2021.2 entspricht diese Option "Diff Match Patch zulassen".
 <LI>Diff Match Patch zulassen: Diese Option veranlasst NVDA, Änderungen am Terminaltext zeichenweise zu berechnen.
 Dies kann die Leistung verbessern, wenn große Textmengen in die Konsole geschrieben werden, und ermöglicht eine genauere Meldung von Änderungen, die in der Mitte von Zeilen vorgenommen wurden.
@@ -3619,12 +3633,27 @@ Diese Funktion ist ab NVDA 2021.1 standardmäßig aktiviert.
 Mit dieser Option können Sie die Anzahl der Millisekunden konfigurieren, die NVDA wartet, bis sich der Cursor (Einfügepunkt) in den editierbaren Textsteuerelementen bewegt.
 Wenn Sie feststellen, dass NVDA die Einfügemarke falsch zu verfolgen scheint, z. B., wenn NVDA immer ein Zeichen hinterher liegt oder beim Navigieren manche Zeilen wiederholt, dann sollten Sie versuchen, diesen Wert zu erhöhen.
 </P>
+<A NAME="ReportTransparentColors"></A>
+<H5>Transparente Farben ansagen</H5>
+<P>
+Diese Option teilt mit, wenn Farben transparent sind. Dies ist nützlich für Entwickler von Erweiterungen und App-Modulen, die Informationen sammeln, um die Benutzererfahrung mit einer Drittanbieteranwendung zu verbessern.
+Einige GDI-Anwendungen heben Text mit einer Hintergrundfarbe hervor, NVDA (über das Anzeigemodell) versucht, diese Farbe zu melden.
+In einigen Situationen kann der Texthintergrund vollständig transparent sein, wobei der Text über einem anderen GUI-Element liegt.
+Bei mehreren historisch beliebten GUI-APIs kann der Text mit einem transparenten Hintergrund gerendert werden, aber die Hintergrundfarbe ist visuell korrekt.
+</P>
 <A NAME="AdvancedSettingsDebugLoggingCategories"></A>
 <H5>Kategorien der Protokollierungsstufe</H5>
 <P>
 Die Kontrollkästchen in dieser Liste ermöglichen es Ihnen, bestimmte Kategorien von Debug-Meldungen im Protokoll von NVDA zu aktivieren.
 Das Protokollieren dieser Nachrichten kann zu Leistungseinbußen und großen Protokolldateien führen.
 Schalten Sie nur eines davon ein, wenn dies von einem NVDA-Entwickler ausdrücklich angeordnet wurde, z. B. beim Debuggen, warum ein Braille-Treiber nicht ordnungsgemäß funktioniert.
+</P>
+<A NAME="PlayErrorSound"></A>
+<H5>Fehlern im Protokoll mit einem Sound kennzeichnen</H5>
+<P>
+Mit dieser Option können Sie festlegen, ob NVDA einen Fehlerton abspielen soll, falls ein Fehler protokolliert wird.
+Bei Auswahl von Nur in Testversionen (Standard) ertönt nur dann ein NVDA-Wiedergabefehler, wenn die aktuelle NVDA-Version eine Testversion ist (Alpha-, Beta- oder Source-Code).
+Wenn Sie "Ja" auswählen, können Sie unabhängig von Ihrer aktuellen NVDA-Version die Fehlertöne aktivieren.
 </P>
 <A NAME="MiscSettings"></A>
 <H3>12.2. Verschiedene Optionen</H3>
@@ -4222,6 +4251,7 @@ Die folgenden Braillezeilen unterstützen diese automatische Erkennung.
 <LI>HIMS-Serien Braille Sense, Braille EDGE, Smart Beetle, Sync Braille
 <LI>Braillezeilen von Eurobraille Esys, Esytime, Iris
 <LI>Braillezeilen von Nattiq nBraille
+<LI>Jede Braillezeile, welches das Standard-HID-Braille-Protokoll unterstützt
 </UL>
 
 <P></P>
@@ -6668,6 +6698,105 @@ Bitte lesen Sie hierzu die <A HREF="http://mielke.cc/brltty/doc/KeyBindings/">BR
 <TR>
 <TD>Cursor zum Braille-Modul ziehen</TD>
 <TD>Routing-Taste (Cursor zum Zeichen bewegen)</TD>
+</TR>
+</TABLE>
+
+<A NAME="HIDBraille"></A>
+<H3>15.20. Standard-HID-Braillezeilen</H3>
+<P>
+Dies ist ein experimenteller Treiber für die neue Standard-HID-Braille-Spezifikation, die 2018 von Microsoft, Google, Apple und weiteren Unternehmen, die Hilfstechnologien verwenden, darunter NV Access, vereinbart wurde.
+Es besteht die Hoffnung, dass alle zukünftigen Braille-Display-Modelle aller Hersteller dieses Standardprotokoll verwenden, wodurch herstellerspezifische Braille-Treiber überflüssig werden.
+</P>
+<P>
+Die automatische Braillezeilenerkennung von NVDA erkennt auch alle Displays, die dieses Protokoll unterstützen.
+</P>
+<P>
+Im Folgenden sind die aktuellen Tastenbelegungen für diese Anzeigen aufgeführt:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Taste</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>pan left</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>pan right</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>space + dot1</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>space + dot4</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing set 1|</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>up+down</TD>
+</TR>
+<TR>
+<TD>upArrow key</TD>
+<TD>joystick up</TD>
+</TR>
+<TR>
+<TD>downArrow key</TD>
+<TD>joystick down</TD>
+</TR>
+<TR>
+<TD>leftArrow key</TD>
+<TD>space+dot3 or joystick left</TD>
+</TR>
+<TR>
+<TD>rightArrow key</TD>
+<TD>space+dot6 or joystick right</TD>
+</TR>
+<TR>
+<TD>shift+tab key</TD>
+<TD>space+dot1+dot3</TD>
+</TR>
+<TR>
+<TD>tab key</TD>
+<TD>space+dot4+dot6</TD>
+</TR>
+<TR>
+<TD>alt key</TD>
+<TD>space+dot1+dot3+dot4 (space+m)</TD>
+</TR>
+<TR>
+<TD>escape key</TD>
+<TD>space+dot1+dot5 (space+e)</TD>
+</TR>
+<TR>
+<TD>enter key</TD>
+<TD>dot8 or joystick center</TD>
+</TR>
+<TR>
+<TD>windows key</TD>
+<TD>space+dot3+dot4</TD>
+</TR>
+<TR>
+<TD>alt+tab key</TD>
+<TD>space+dot2+dot3+dot4+dot5 (space+t)</TD>
+</TR>
+<TR>
+<TD>NVDA Menu</TD>
+<TD>space+dot1+dot3+dot4+dot5 (space+n)</TD>
+</TR>
+<TR>
+<TD>windows+d key (minimize all applications)</TD>
+<TD>space+dot1+dot4+dot5 (space+d)</TD>
+</TR>
+<TR>
+<TD>Say all</TD>
+<TD>space+dot1+dot2+dot3+dot4+dot5+dot6</TD>
 </TR>
 </TABLE>
 
