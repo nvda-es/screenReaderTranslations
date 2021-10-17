@@ -1839,8 +1839,8 @@ Si vous rencontrez des problèmes de performances dans une ou plusieurs applicat
 Quand cette option est activée, NVDA essaiera toujours d'utiliser l'API d'accessibilité Microsoft UI Automation afin de récupérer les informations des contrôles de document Microsoft Word, même pour les versions moins récentes de Microsoft Office 2016/365.
 Ceci inclut Microsoft Word lui-même, et aussi l'afficheur et le composeur de message de Microsoft Outlook.
  Pour Microsoft Office avec une version de build de 16.0.13901 ou supérieure, NVDA utilisera toujours UI Automation pour accéder aux documents Microsoft Word, quelle que soit la configuration de ce paramètre.
-Pour les versions les plus récentes de Microsoft Office 2016/365 fonctionnant sur Windows 10 et versions ultérieures, la prise en charge de l'automatisation de l'interface utilisateur est suffisamment complète pour fournir un accès aux documents Microsoft Word presque égal à la prise en charge Microsoft Word existante de NVDA, avec l'avantage supplémentaire que la réactivité est considérablement augmentée.
-Cependant, certaines informations peuvent ne pas être exposées ou être exposées de manière incorrecte dans certaines versions plus anciennes de Microsoft Office, ce qui signifie que cette prise en charge de l'automatisation de l'interface utilisateur ne peut pas toujours être utilisée.
+Pour les versions les plus récentes de Microsoft Office 2016/365 fonctionnant sur Windows 10 et versions ultérieures, la prise en charge de UI Automation est suffisamment complète pour fournir un accès aux documents Microsoft Word presque égal à la prise en charge Microsoft Word existante de NVDA, avec l'avantage supplémentaire que la réactivité est considérablement augmentée.
+Cependant, certaines informations peuvent ne pas être exposées ou être exposées de manière incorrecte dans certaines versions plus anciennes de Microsoft Office, ce qui signifie que cette prise en charge de UI Automation ne peut pas toujours être utilisée.
 
 ==== Utilisez UI Automation pour accéder à la console Windows quand elle est disponible ====[AdvancedSettingsConsoleUIA]
 Si cette option est activée, NVDA utilisera une nouvelle version en cours de développement de son support de la console Windows qui tire parti des [améliorations de l'accessibilité apportées par Microsoft https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/] Cette fonctionnalité est très expérimentale et est encore incomplète, son utilisation n'est donc pas encore recommandée. Cependant, une fois terminée, il est prévu que cette nouvelle prise en charge deviendra la valeur par défaut, améliorant les performances et la stabilité de NVDA dans les consoles de commande Windows.
@@ -1864,13 +1864,13 @@ Certaines de ces fonctionnalités peuvent être incomplètes.
 Les options suivantes existent :
 - "Annoncer les détails en mode navigation" : permet de signaler si un objet a des détails en mode navigation.
 L'annonce du résumé de ces détails peut être faite en attribuant un geste à l'aide du [dialogue Gestes de commandes #InputGestures].
-+  When the source of ``accDescription`` is aria-description, the description is reported.
 - "Toujours annoncer aria-description" :
+  Lorsque la source de ``accDescription`` est aria-description, la description est annoncée.
   Ceci est utile pour les annotations sur le web.
   Note :
   - Il existe de nombreuses sources pour ``accDescription`` plusieurs ont une sémantique mixte ou peu fiable.
-    Historiquement, AT n'a pas été en mesure de différencier les sources de ``accDescription`` généralement, il n'a pas été prononcé en raison de la sémantique mixte.
-  - Cette option est en tout début de développement, elle repose sur des fonctionnalités de navigateur pas encore largement disponibles.
+    Historiquement, les technologies d'assistance n'ont pas été en mesure de différencier les sources de ``accDescription`` généralement, elle n'a pas été annoncée en raison de la sémantique mixte.
+  - Cette option est en développement très précoce, elle repose sur des fonctionnalités de navigateur pas encore largement disponibles.
   - Elle devrait fonctionner avec Chromium 92.0.4479.0+
   -
 -
@@ -1925,8 +1925,8 @@ N'activez l'une d'entre elle que si un développeur de NVDA vous l'a spécifique
 
 ==== Jouer un son pour les erreurs journalisées ====[PlayErrorSound]
 Cette option vous permet de spécifier si NVDA joue un son d'erreur au cas où une erreur est enregistrée.
-Choisir Uniquement dans les versions de test (par défaut) émet des sons d'erreur de lecture de NVDA uniquement si la version actuelle de NVDA est une version de test (alpha, bêta ou exécutée à partir de la source).
-Choisir Oui permet d'activer les sons d'erreur quelle que soit votre version actuelle de NVDA.
+En sélectionnant Uniquement dans les versions de test (par défaut), NVDA émet des sons d'erreur uniquement si la version actuelle de NVDA est une version de test (alpha, bêta ou exécutée à partir de la source).
+En sélectionnant Oui les sons d'erreur sont activés quelle que soit votre version actuelle de NVDA.
 
 ++ Autres Paramètres ++[MiscSettings]
 En plus du dialogue [Paramètres #NVDASettings], le sous-menu Préférences du menu NVDA contient plusieurs autres éléments décrits ci-dessous.
@@ -3192,7 +3192,7 @@ Voici les affectations de touches actuelles pour ces affichages.
 | Défilement avant de l'afficheur braille | panoramique à droite |
 | Déplacer l'affichage braille à la ligne précédente | espace+point1 |
 | Déplacer l'affichage braille à la ligne suivante | espace+point4 |
-| Aller à la cellule braille | ensemble de routage 1|
+| Aller à la cellule braille | routage 1|
 | Basculer braille suit to | haut+bas |
 | Touche FlècheHaut | joystick vers le haut |
 | Touche FlècheBas | joystick vers le bas |
