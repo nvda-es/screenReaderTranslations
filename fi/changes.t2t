@@ -3,6 +3,66 @@
 
 %!includeconf: ../changes.t2tconf
 
+= 2021.3 =
+
+== Uudet ominaisuudet ==
+- Lisätty syötekomento solun reunojen tyylin ilmaisemisasetuksen vaihtamiseen. (#10408)
+- Tuki uudelle HID Braille -määritykselle, jonka tarkoituksena on pistenäyttötuen standardointi. (#12523)
+ - NVDA tunnistaa Tätä määritystä tukevat laitteet automaattisesti.
+ - Tekniset tiedot tämän määrityksen NVDA-toteutuksesta ovat osoitteessa https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md
+- Lisätty tuki VisioBraille Vario 4 -pistenäytölle. (#12607)
+- Virheilmoitukset voidaan ottaa käyttöön lisäasetuksista mitä tahansa NVDA:n versiota käytettäessä. (#12672)
+- NVDA puhuu Windows 10:ssä ja uudemmissa ehdotusten määrän kirjoitettaessa hakuehtoja sellaisissa sovelluksissa kuin Asetukset ja Microsoft Store. (#7330, #12758, #12790)
+-
+
+
+== Muutokset ==
+- Espeak-NG on päivitetty versioksi 1.51-dev muutos ``74068b91bcd578bd7030a7a6cde2085114b79b44``. (#12665)
+- NVDA käyttää oletusarvoisesti eSpeakia, mikäli asennetut OneCore-äänet eivät tue NVDA:n käyttämää kieltä. (#10451)
+- Mikäli OneCore-äänet eivät johdonmukaisesti puhu mitään, palataan käyttämään eSpeak-syntetisaattoria. (#11544)
+- Kun tilarivi luetaan ``NVDA+End``-näppäinkomennolla, tarkastelukohdistinta ei enää siirretä sen kohdalle.
+Mikäli tarvitset tätä toiminnallisuutta, määritä syötekomento asianmukaiselle skriptille Syötekomennot-valintaikkunan Objektinavigointi-kategoriassa. (#8600)
+- Kun avaat jo avatun valintaikkunan, NVDA ei näytä enää virhettä vaan siirtää kohdistuksen avoimeen valintaikkunaan. (#5383)
+- Microsoft Office 2016:n/365:n uudemmissa koontiversioissa kuin 13900 NVDA käyttää nyt aina UI Automation -rajapintaa Word-asiakirjasäätimissä riippumatta siitä, onko Lisäasetukset-paneelin "Käytä UI Automation -rajapintaa Microsoft word -asiakirjasäätimissä" -asetus valittuna vai ei. (#12770)
+- Päivitetty liblouis-pistekirjoituskääntäjä versioksi [3.19.0 https://github.com/liblouis/liblouis/releases/tag/v3.19.0]. (#12810)
+ - Uusia pistetaulukoita: venäläinen taso 1, venda taso 1, venda taso 2
+ -
+- "Merkitty sisältö" tai "mrkt" -ilmoitusten asemesta sanotaan "korostus" tai näytetään pistenäytöllä "krt". (#12892)
+-
+
+
+== Bugikorjaukset ==
+- Kun NVDA palautuu virheestä, näppäimistön muokkausnäppäinten (kuten Ctrl tai Ins) seuranta on vikasietoisempaa. (#12609)
+- NVDA-päivitysten tarkistaminen on jälleen mahdollista tietyissä järjestelmissä, esim. puhtaissa Windows-asennuksissa. (#12729)
+- NVDA ilmaisee asianmukaisesti tyhjät taulukon solut Microsoft Wordissa UI automation -rajapintaa käytettäessä. (#11043)
+- Verkon ARIA-tietoruudukon soluissa Esc-näppäimen painallus välitetään nyt kyseiselle ruudukolle, eikä enää poista kohdistustilaa ehdottomasti käytöstä. (#12413)
+- Korjattu sarakenimen kahdesti puhuminen Chromessa taulukon otsikkosolua luettaessa. (#10840)
+- NVDA ei enää ilmoita numeerista arvoa UIA-liukusäätimissä, joiden arvo on määritetty tekstinä. (UIA:n ValuePattern asetetaan nyt etusijalle RangeValuePattern:in asemesta). (#12724)
+- NVDA ei enää käsittele UIA-liukusäätimien arvoa aina prosentteina.
+- Solun sijainnin ilmoittaminen Microsoft Excelissä toimii taas oikein Windows 11:ssä UI Automation -rajapintaa käytettäessä. (#12782)
+- NVDA ei enää määritä virheellisiä Pythonin kieliasetuksia. (#12753)
+- Jos käytöstä poistettu lisäosa poistetaan ja asennetaan sitten uudelleen, se otetaan uudelleen käyttöön. (#12792)
+- Korjattu bugeja lisäosien päivittämisessä ja poistamisessa, jos lisäosakansio on nimetty uudelleen tai sisältää avoimia tiedostoja. (#12792, #12629)
+- Kun Microsoft Excel -laskentataulukon säätimissä käytetään UI Automation -rajapintaa, NVDA ei enää ilmoita tarpeettomasti valittuna olevaa yksittäistä solua. (#12530)
+- LibreOffice Writerin valintaikkunoissa (esim. vahvistusta kysyvissä) luetaan automaattisesti enemmän tekstiä. (#11687)
+- Microsoft Wordin Selaustilassa luettaessa/navigoitaessa UI automation -rajapintaa käytettäessä varmistetaan, että asiakirjaa vieritetään aina siten, että nykyinen selaustilakohdistimen sijainti on näkyvissä ja että kohdistimen sijainti kohdistustilassa vastaa asianmukaisesti selaustilakohdistimen sijaintia. (#9611)
+- Asiakirjaa vieritetään nyt automaattisesti ja kohdistimen sijainti päivitetään asianmukaisesti Microsoft Wordissa jatkuvaa lukua käytettäessä UI automation -rajapinnan ollessa käytössä. (#9611)
+- Kun NVDA käyttää Outlookissa sähköposteja luettaessa UI Automation -rajapintaa, tiyetyt taulukot merkitään nyt asettelutaulukoiksi, mikä tarkoittaa, ettei niitä ilmaista oletusarvoisesti. (#11430)
+- Korjattu harvinainen virhe äänilaitteiden vaihdossa. (#12620)
+- HID Braille -ajurin tukemien pistenäyttöjen kosketuskohdistinnäppäinten järjestys ei ole enää käänteinen. (#12860)
+- Pistekirjoituksen syötön  pitäisi toimia luotettavammin muokkauskentissä kaunokirjallisia pistetaulukkoja käytettäessä. (#12667)
+- NVDA ilmoittaa nyt viikonpäivän kokonaisuudessaan Windowsin ilmoitusalueen kalenterissa liikuttaessa. (#12757)
+- Pistenäytön vierittäminen eteen- ja taaksepäin ei enää siirrä virheellisesti takaisin kohdistimen alkuperäiseen sijaintiin Microsoft Wordissa käytettäessä kiinalaista syöttömenetelmää, kuten Taiwan - Microsoft Quick. (#12855)
+- Kun Microsoft Word -asiakirjojen lukemiseen käytetään UIA:ta, virkkeittäin liikkuminen (Alt+Alanuoli / Alt+Ylänuoli) on taas mahdollista. (#9254)
+- Kappalesisennykset ilmoitetaan nyt, kun MS Wordia käytetään UIA:n kautta. (#12899(
+- Muutosten seurantakomento ja jotkin muut lokalisoidut komennot puhutaan, kun MS Wordia käytetään UIA:n kautta. (#12904)
+-
+
+
+== Muutokset kehittäjille ==
+Katso muutokset tämän dokumentin [englanninkielisestä versiosta. ../en/changes.html]
+
+
 = 2021.2 =
 Tämä versio esittelee alustavan Windows 11 -tuen.
 Testaus on suoritettu käyttöjärjestelmän esiversioilla, koska lopullista versiota ei ole vielä julkaistu.
