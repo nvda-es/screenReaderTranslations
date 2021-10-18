@@ -9,6 +9,71 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2021.3</H2>
+<H3>Uudet ominaisuudet</H3>
+<UL>
+<LI>Lisätty syötekomento solun reunojen tyylin ilmaisemisasetuksen vaihtamiseen. (<A HREF="https://github.com/nvaccess/nvda/issues/10408">#10408</A>)
+<LI>Tuki uudelle HID Braille -määritykselle, jonka tarkoituksena on pistenäyttötuen standardointi. (<A HREF="https://github.com/nvaccess/nvda/issues/12523">#12523</A>)
+ <UL>
+ <LI>NVDA tunnistaa Tätä määritystä tukevat laitteet automaattisesti.
+ <LI>Tekniset tiedot tämän määrityksen NVDA-toteutuksesta ovat osoitteessa <A HREF="https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md">https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md</A>
+ </UL>
+<LI>Lisätty tuki VisioBraille Vario 4 -pistenäytölle. (<A HREF="https://github.com/nvaccess/nvda/issues/12607">#12607</A>)
+<LI>Virheilmoitukset voidaan ottaa käyttöön lisäasetuksista mitä tahansa NVDA:n versiota käytettäessä. (<A HREF="https://github.com/nvaccess/nvda/issues/12672">#12672</A>)
+<LI>NVDA puhuu Windows 10:ssä ja uudemmissa ehdotusten määrän kirjoitettaessa hakuehtoja sellaisissa sovelluksissa kuin Asetukset ja Microsoft Store. (<A HREF="https://github.com/nvaccess/nvda/issues/7330">#7330</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12758">#12758</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12790">#12790</A>)
+</UL>
+
+<P></P>
+<H3>Muutokset</H3>
+<UL>
+<LI>Espeak-NG on päivitetty versioksi 1.51-dev muutos <CODE>74068b91bcd578bd7030a7a6cde2085114b79b44</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12665">#12665</A>)
+<LI>NVDA käyttää oletusarvoisesti eSpeakia, mikäli asennetut OneCore-äänet eivät tue NVDA:n käyttämää kieltä. (<A HREF="https://github.com/nvaccess/nvda/issues/10451">#10451</A>)
+<LI>Mikäli OneCore-äänet eivät johdonmukaisesti puhu mitään, palataan käyttämään eSpeak-syntetisaattoria. (<A HREF="https://github.com/nvaccess/nvda/issues/11544">#11544</A>)
+<LI>Kun tilarivi luetaan <CODE>NVDA+End</CODE>-näppäinkomennolla, tarkastelukohdistinta ei enää siirretä sen kohdalle.
+Mikäli tarvitset tätä toiminnallisuutta, määritä syötekomento asianmukaiselle skriptille Syötekomennot-valintaikkunan Objektinavigointi-kategoriassa. (<A HREF="https://github.com/nvaccess/nvda/issues/8600">#8600</A>)
+<LI>Kun avaat jo avatun valintaikkunan, NVDA ei näytä enää virhettä vaan siirtää kohdistuksen avoimeen valintaikkunaan. (<A HREF="https://github.com/nvaccess/nvda/issues/5383">#5383</A>)
+<LI>Microsoft Office 2016:n/365:n uudemmissa koontiversioissa kuin 13900 NVDA käyttää nyt aina UI Automation -rajapintaa Word-asiakirjasäätimissä riippumatta siitä, onko Lisäasetukset-paneelin "Käytä UI Automation -rajapintaa Microsoft word -asiakirjasäätimissä" -asetus valittuna vai ei. (<A HREF="https://github.com/nvaccess/nvda/issues/12770">#12770</A>)
+<LI>Päivitetty liblouis-pistekirjoituskääntäjä versioksi <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.19.0">3.19.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/12810">#12810</A>)
+ <UL>
+ <LI>Uusia pistetaulukoita: venäläinen taso 1, venda taso 1, venda taso 2
+ </UL>
+<LI>"Merkitty sisältö" tai "mrkt" -ilmoitusten asemesta sanotaan "korostus" tai näytetään pistenäytöllä "krt". (<A HREF="https://github.com/nvaccess/nvda/issues/12892">#12892</A>)
+</UL>
+
+<P></P>
+<H3>Bugikorjaukset</H3>
+<UL>
+<LI>Kun NVDA palautuu virheestä, näppäimistön muokkausnäppäinten (kuten Ctrl tai Ins) seuranta on vikasietoisempaa. (<A HREF="https://github.com/nvaccess/nvda/issues/12609">#12609</A>)
+<LI>NVDA-päivitysten tarkistaminen on jälleen mahdollista tietyissä järjestelmissä, esim. puhtaissa Windows-asennuksissa. (<A HREF="https://github.com/nvaccess/nvda/issues/12729">#12729</A>)
+<LI>NVDA ilmaisee asianmukaisesti tyhjät taulukon solut Microsoft Wordissa UI automation -rajapintaa käytettäessä. (<A HREF="https://github.com/nvaccess/nvda/issues/11043">#11043</A>)
+<LI>Verkon ARIA-tietoruudukon soluissa Esc-näppäimen painallus välitetään nyt kyseiselle ruudukolle, eikä enää poista kohdistustilaa ehdottomasti käytöstä. (<A HREF="https://github.com/nvaccess/nvda/issues/12413">#12413</A>)
+<LI>Korjattu sarakenimen kahdesti puhuminen Chromessa taulukon otsikkosolua luettaessa. (<A HREF="https://github.com/nvaccess/nvda/issues/10840">#10840</A>)
+<LI>NVDA ei enää ilmoita numeerista arvoa UIA-liukusäätimissä, joiden arvo on määritetty tekstinä. (UIA:n ValuePattern asetetaan nyt etusijalle RangeValuePattern:in asemesta). (<A HREF="https://github.com/nvaccess/nvda/issues/12724">#12724</A>)
+<LI>NVDA ei enää käsittele UIA-liukusäätimien arvoa aina prosentteina.
+<LI>Solun sijainnin ilmoittaminen Microsoft Excelissä toimii taas oikein Windows 11:ssä UI Automation -rajapintaa käytettäessä. (<A HREF="https://github.com/nvaccess/nvda/issues/12782">#12782</A>)
+<LI>NVDA ei enää määritä virheellisiä Pythonin kieliasetuksia. (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
+<LI>Jos käytöstä poistettu lisäosa poistetaan ja asennetaan sitten uudelleen, se otetaan uudelleen käyttöön. (<A HREF="https://github.com/nvaccess/nvda/issues/12792">#12792</A>)
+<LI>Korjattu bugeja lisäosien päivittämisessä ja poistamisessa, jos lisäosakansio on nimetty uudelleen tai sisältää avoimia tiedostoja. (<A HREF="https://github.com/nvaccess/nvda/issues/12792">#12792</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12629">#12629</A>)
+<LI>Kun Microsoft Excel -laskentataulukon säätimissä käytetään UI Automation -rajapintaa, NVDA ei enää ilmoita tarpeettomasti valittuna olevaa yksittäistä solua. (<A HREF="https://github.com/nvaccess/nvda/issues/12530">#12530</A>)
+<LI>LibreOffice Writerin valintaikkunoissa (esim. vahvistusta kysyvissä) luetaan automaattisesti enemmän tekstiä. (<A HREF="https://github.com/nvaccess/nvda/issues/11687">#11687</A>)
+<LI>Microsoft Wordin Selaustilassa luettaessa/navigoitaessa UI automation -rajapintaa käytettäessä varmistetaan, että asiakirjaa vieritetään aina siten, että nykyinen selaustilakohdistimen sijainti on näkyvissä ja että kohdistimen sijainti kohdistustilassa vastaa asianmukaisesti selaustilakohdistimen sijaintia. (<A HREF="https://github.com/nvaccess/nvda/issues/9611">#9611</A>)
+<LI>Asiakirjaa vieritetään nyt automaattisesti ja kohdistimen sijainti päivitetään asianmukaisesti Microsoft Wordissa jatkuvaa lukua käytettäessä UI automation -rajapinnan ollessa käytössä. (<A HREF="https://github.com/nvaccess/nvda/issues/9611">#9611</A>)
+<LI>Kun NVDA käyttää Outlookissa sähköposteja luettaessa UI Automation -rajapintaa, tiyetyt taulukot merkitään nyt asettelutaulukoiksi, mikä tarkoittaa, ettei niitä ilmaista oletusarvoisesti. (<A HREF="https://github.com/nvaccess/nvda/issues/11430">#11430</A>)
+<LI>Korjattu harvinainen virhe äänilaitteiden vaihdossa. (<A HREF="https://github.com/nvaccess/nvda/issues/12620">#12620</A>)
+<LI>HID Braille -ajurin tukemien pistenäyttöjen kosketuskohdistinnäppäinten järjestys ei ole enää käänteinen. (<A HREF="https://github.com/nvaccess/nvda/issues/12860">#12860</A>)
+<LI>Pistekirjoituksen syötön  pitäisi toimia luotettavammin muokkauskentissä kaunokirjallisia pistetaulukkoja käytettäessä. (<A HREF="https://github.com/nvaccess/nvda/issues/12667">#12667</A>)
+<LI>NVDA ilmoittaa nyt viikonpäivän kokonaisuudessaan Windowsin ilmoitusalueen kalenterissa liikuttaessa. (<A HREF="https://github.com/nvaccess/nvda/issues/12757">#12757</A>)
+<LI>Pistenäytön vierittäminen eteen- ja taaksepäin ei enää siirrä virheellisesti takaisin kohdistimen alkuperäiseen sijaintiin Microsoft Wordissa käytettäessä kiinalaista syöttömenetelmää, kuten Taiwan - Microsoft Quick. (<A HREF="https://github.com/nvaccess/nvda/issues/12855">#12855</A>)
+<LI>Kun Microsoft Word -asiakirjojen lukemiseen käytetään UIA:ta, virkkeittäin liikkuminen (Alt+Alanuoli / Alt+Ylänuoli) on taas mahdollista. (<A HREF="https://github.com/nvaccess/nvda/issues/9254">#9254</A>)
+<LI>Kappalesisennykset ilmoitetaan nyt, kun MS Wordia käytetään UIA:n kautta. (<A HREF="https://github.com/nvaccess/nvda/issues/12899">#12899</A>(
+<LI>Muutosten seurantakomento ja jotkin muut lokalisoidut komennot puhutaan, kun MS Wordia käytetään UIA:n kautta. (<A HREF="https://github.com/nvaccess/nvda/issues/12904">#12904</A>)
+</UL>
+
+<P></P>
+<H3>Muutokset kehittäjille</H3>
+<P>
+Katso muutokset tämän dokumentin <A HREF="../en/changes.html">englanninkielisestä versiosta.</A>
+</P>
 <H2>2021.2</H2>
 <P>
 Tämä versio esittelee alustavan Windows 11 -tuen.
