@@ -7,8 +7,8 @@ Quoi de Neuf dans NVDA
 
 == Nouvelles fonctionnalités ==
 - Ajout d'un geste de commande pour basculer le paramètre d'annonce du style des bordures de cellules. (#10408)
-- Support de la nouvelle spécification Braille HID qui se veut standardiser le support des afficheurs Braille. (#12523)
- - Les terminaux qui supporte cette spécification seront détectés automatiquement par NVDA.
+- Support de la nouvelle spécification Braille HID qui a pour but de standardiser le support des afficheurs Braille. (#12523)
+ - Les terminaux qui supportent cette spécification seront détectés automatiquement par NVDA.
  - Pour les détails techniques sur l'implémentation de cette spécification dans NVDA, voir https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md
 - Ajout du support du terminal Braille VisioBraille Vario 4. (#12607)
 - Les notifications d'erreur peuvent être activées (paramètres avancés) lors de l'utilisation de toutes les versions de NVDA. (#12672)
@@ -22,7 +22,7 @@ Quoi de Neuf dans NVDA
 - Si les voix OneCore échouent constamment à parler, NVDA basculera sur le synthétiseur eSpeak. (#11544)
 - Lors de la lecture de la barre d'état par ``NVDA+Fin``, le curseur de revue n'est plus déplacé vers son emplacement.
 Si vous souhaitez cette fonctionnalité, veuillez assigner un geste au script approprié dans la rubrique "Navigation par objet" d dialogue "Gestes de commandes". (#8600)
-- Lors de l'ouverture d'un dialogue de paramétrage qui est déjà ouvert, NVDA donne le focus au dialogue ouvert au lieu de retourner une erreur. (#5383)
+- Lors de l'ouverture d'un dialogue de paramétrage déjà ouvert, NVDA donne le focus au dialogue ouvert au lieu de retourner une erreur. (#5383)
 - Pour les versions de Microsoft Office 2016/365 supérieures à 13900, NVDA utilisera maintenant toujours UI Automation pour accéder aux contrôles des documents Microsoft Word, indépendamment de si l'utilisateur a activé ou non l'option Utiliser UI Automation pour accéder aux contrôles des documents Microsoft word dans les paramètres avancés. (#12770)
 - Mise à jour du transcripteur Braille Liblouis en version [3.19.0 https://github.com/liblouis/liblouis/releases/tag/v3.19.0]. (#12810)
   - Nouvelles tables Braille : Russe intégral, Tshivenda intégral, Tshivenda abrégé
@@ -47,9 +47,9 @@ Si vous souhaitez cette fonctionnalité, veuillez assigner un geste au script ap
 - Le texte de plus de dialogues est automatiquement lu dans LibreOffice Writer, comme dans les dialogues de confirmation. (#11687)
 - Lire/naviguer en mode navigation dans Microsoft Word via UI automation s'assure maintenant toujours du défilement du document, que la position actuelle du mode navigation soit visible, et que la position du mode en mode formulaire reflète la position du mode navigation. (#9611)
 - Lors de l'utilisation du mode dire tout dans Microsoft Word via UI automation, le document défile maintenant automatiquement, et la position du curseur est correctement mise à jour. (#9611)
-- Lors de la lecture d'e-mails dans Outlook et que NVDA accède aux message en utilisant UI Automation, certains tableaux sont maintenant marqués comme tableau de disposition, et ne seront donc plus annoncés par défaut. (#11430)
+- Lors de la lecture d'e-mails dans Outlook quand NVDA accède aux message en utilisant UI Automation, certains tableaux sont maintenant marqués comme tableau de disposition, et ne seront donc plus annoncés par défaut. (#11430)
 - Une erreur rare lors du changement de périphérique audio a été résolue. (#12620)
-- Les touches de routage sur les afficheurs Braille supportés par le pilote Braille HID ne sont plus inversés. (#12860)
+- Les touches de routage sur les afficheurs Braille supportés par le pilote Braille HID ne sont plus inversées. (#12860)
 - La saisie avec des tables Braille littéraires devrait être plus fiable dans les champs d'édition. (#12667)
 - Lors de la navigation dans le calendrier de la zone de notifications Windows, NVDA annonce maintenant le jour de la semaine en intégralité. (#12757)
 - Lors de l'utilisation d'une méthode de saisie chinoise telle que Taïwan - Microsoft Quick dans Microsoft Word, le défilement du Braille vers l'avant et l'arrière ne revient plus à la position initiale du curseur. (# 12855)
@@ -60,15 +60,15 @@ Si vous souhaitez cette fonctionnalité, veuillez assigner un geste au script ap
 
 
 == Changements pour les Développeurs ==
-- Compiler NVDA requière maintenant Visual Studio 2019 16.10.4 ou supérieur.
-Pour correspondre à l'environnement de compilation de production, mettez à jour Visual Studio pour rester synchroniser avec la [version actuellement utilisée par AppVeyor https://www.appveyor.com/docs/windows-images-software/#visual-studio-2019]. (#12728)
+- Compiler NVDA requiert maintenant Visual Studio 2019 16.10.4 ou supérieur.
+Pour correspondre à l'environnement de compilation de production, mettez à jour Visual Studio pour rester synchronisé avec la [version actuellement utilisée par AppVeyor https://www.appveyor.com/docs/windows-images-software/#visual-studio-2019]. (#12728)
 - ``NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable`` a été dépréciée pour suppression dans NVDA 2022.1. (#12660)
   - Utiliser ``apiLevel`` à la place (voir les commentaires dans ``_UIAConstants.WinConsoleAPILevel`` pour les détails).
   -
 - La transparence de la couleur d'arrière-plan du texte provenant des applications GDI (via le modèle d'affichage) est désormais exposée pour les extensions ou les appModules. (#12658)
 - ``LOCALE_SLANGUAGE``, ``LOCALE_SLIST`` et ``LOCALE_SLANGDISPLAYNAME`` ont été déplacés vers l'enum ``LOCALE`` dans languageHandler.
 Ils sont toujours disponibles au niveau du module mais sont obsolètes et seront supprimés dans NVDA 2022.1. (#12753)
-- L'utilisation des fonctions ``addonHandler.loadState`` et ``addonHandler.saveState`` doivent être remplacés par leur équivalents ``addonHandler.state.save`` et ``addonHandler.state.load`` avant NVDA 2022.1. (#12792)
+- L'utilisation des fonctions ``addonHandler.loadState`` et ``addonHandler.saveState`` doit être remplacée par leurs équivalents ``addonHandler.state.save`` et ``addonHandler.state.load`` avant NVDA 2022.1. (#12792)
 -
 
 
