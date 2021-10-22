@@ -10,6 +10,23 @@
 </FONT></CENTER>
 
 <H2>2021.3</H2>
+<P>
+Diese Version bietet Unterstützung für die neue HID-Braille-Spezifikation.
+Diese Spezifikation zielt darauf ab, die Unterstützung für Braillezeilen zu standardisieren, ohne dass individuelle Treiber benötigt werden.
+Es gibt Updates für eSpeak-NG und LibLouis, einschließlich neue Braille-Tabellen für Russisch und Tshivenda.
+Fehlertöne können in stabilen Builds von NVDA über eine neue Option für erweiterte Einstellungen aktiviert werden.
+Alles Lesen in Microsoft Word scrollt nun durch die Ansicht, um die aktuelle Position sichtbar zu halten.
+Es gibt viele Verbesserungen bei der Verwendung von UIA in Office-Anwendungen.
+Ein Problem mit UIA wurde behoben, dass Outlook jetzt mehr Arten von Layouttabellen in Nachrichten ignoriert.
+</P>
+<P>
+Wichtige Anmerkungen:
+</P>
+<P>
+Auf Grund einer Aktualisierung unseres Sicherheitszertifikats erhalten einige Benutzer einen Fehler, wenn NVDA 2021.2 nach Updates suchen.
+NVDA fordert nun Windows auf, Sicherheitszertifikate zu aktualisieren, wodurch dieser Fehler in Zukunft verhindert wird.
+Betroffene Benutzer müssen dieses Update manuell herunterladen.
+</P>
 <H3>Neue Features</H3>
 <UL>
 <LI>Fügt einen Tastenbefehl zum Umschalten der Einstellungen zum Mitteilen des Stils von Zellenrahmen hinzu. (<A HREF="https://github.com/nvaccess/nvda/issues/10408">#10408</A>)
@@ -17,10 +34,12 @@
  <UL>
  <LI>Geräte, die diese Spezifikation unterstützen, werden von NVDA automatisch erkannt.
  <LI>Technische Details zur Implementierung dieser Spezifikation durch NVDA finden Sie unter <A HREF="https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md">https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md</A>
+-
  </UL>
 <LI>Unterstützung für VisioBraille Vario 4 Braille hinzugefügt. (<A HREF="https://github.com/nvaccess/nvda/issues/12607">#12607</A>)
 <LI>Fehlermeldungen können bei Verwendung einer beliebigen Version von NVDA aktiviert werden (erweiterte Einstellungen). (<A HREF="https://github.com/nvaccess/nvda/issues/12672">#12672</A>)
 <LI>In Windows 10 und neuer gibt NVDA die Anzahl der Vorschläge bei der Eingabe von Suchbegriffen in Apps wie Einstellungen und Microsoft Store an. (<A HREF="https://github.com/nvaccess/nvda/issues/7330">#7330</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12758">#12758</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12790">#12790</A>)
+<LI>Die Tabellen-Navigation wird nun in Rastersteuerelementen unterstützt, die mit dem Out-GridView-Cmdlet in PowerShell erstellt wurden. (<A HREF="https://github.com/nvaccess/nvda/issues/12928">#12928</A>)
 </UL>
 
 <P></P>
@@ -37,7 +56,7 @@ Wenn Sie jedoch diese Funktionalität benötigen, weisen Sie dem entsprechenden 
   <UL>
   <LI>Neue Braille-Tabellen: Russisch Vollschrift, Tshivenda Vollschrift, Tshivenda Kurzschrift
   </UL>
-<LI>Anstelle von "markierter Inhalt" oder "mrkd" wird "hervorgehoben" bzw. "hlight" für die Sprachausgabe bzw. Braille mitgeteilt. (<A HREF="https://github.com/nvaccess/nvda/issues/12892">#12892</A>)
+<LI>Anstelle von "Markierter Inhalt" oder "mrkd" wird "hervorgehoben" in Braille oder mit der Sprachausgabe mitgeteilt. (<A HREF="https://github.com/nvaccess/nvda/issues/12892">#12892</A>)
 </UL>
 
 <P></P>
@@ -60,13 +79,15 @@ Wenn Sie jedoch diese Funktionalität benötigen, weisen Sie dem entsprechenden 
 <LI>Beim Ausführen von Alles Lesen in Microsoft Word über die UIA wird das Dokument nun automatisch gescrollt und die Position der Einfügemarke wird korrekt aktualisiert. (<A HREF="https://github.com/nvaccess/nvda/issues/9611">#9611</A>)
 <LI>Wenn E-Mails in Outlook gelesen werden und NVDA mit der UIA auf die Nachricht zugreift, werden bestimmte Tabellen jetzt als Layouttabellen markiert, was bedeutet, dass sie nicht mehr standardmäßig mitgeteilt werden. (<A HREF="https://github.com/nvaccess/nvda/issues/11430">#11430</A>)
 <LI>Ein seltener Fehler beim Wechseln von Audio-Geräten wurde behoben. (<A HREF="https://github.com/nvaccess/nvda/issues/12620">#12620</A>)
-<LI>Routing-Tasten auf Braillezeilen, die vom HID-Braille-Treiber unterstützt werden, werden nicht mehr umgekehrt. (<A HREF="https://github.com/nvaccess/nvda/issues/12860">#12860</A>)
-<LI>Eingaben mit Kurzschrift-Tabellen sollten sich in Eingabefeldern zuverlässiger verhalten. (<A HREF="https://github.com/nvaccess/nvda/issues/12667">#12667</A>)
+<LI>Eingaben in Kurzschrift sollten sich in Eingabefeldern zuverlässiger verhalten. (<A HREF="https://github.com/nvaccess/nvda/issues/12667">#12667</A>)
 <LI>Beim Navigieren im Windows-Taskleistenkalender teilt NVDA nun den Wochentag vollständig mit. (<A HREF="https://github.com/nvaccess/nvda/issues/12757">#12757</A>)
 <LI>Bei Verwendung einer chinesischen Eingabemethode wie Taiwan - Microsoft Quick in Microsoft Word springt das Vor- und Zurücknavigieren der Braillezeile nicht mehr fälschlicherweise immer wieder an die ursprüngliche Position der Einfügemarke zurück. (<A HREF="https://github.com/nvaccess/nvda/issues/12855">#12855</A>)
 <LI>Beim Zugriff auf Microsoft Word-Dokumente über UIA ist die satzweise Navigation (Alt+Pfeil nach oben/unten) wieder möglich. (<A HREF="https://github.com/nvaccess/nvda/issues/9254">#9254</A>)
-<LI>Beim Zugriff auf Microsoft Word mit UIA wird nun das Einrücken von Absätzen mitgeteilt. (<A HREF="https://github.com/nvaccess/nvda/issues/12899">#12899</A>(
-<LI>Beim Zugriff auf MS Word mit UIA werden der Befehl zur Änderungsverfolgung und einige andere lokalisierte Befehle jetzt in Word gemeldet. (<A HREF="https://github.com/nvaccess/nvda/issues/12904">#12904</A>)
+<LI>Beim Zugriff auf MS Word mit UIA wird jetzt das Einrücken von Absätzen mitgeteilt. (<A HREF="https://github.com/nvaccess/nvda/issues/12899">#12899</A>)
+<LI>Beim Zugriff auf MS Word mit UIA werden der Befehl zur Änderungsverfolgung und einige andere lokalisierte Befehle jetzt in Word mitgeteilt. (<A HREF="https://github.com/nvaccess/nvda/issues/12904">#12904</A>)
+<LI>Doppelte Ausgaben in Braille und der Sprachausgabe behoben, wenn "description" mit "content" oder "name" übereinstimmt. (<A HREF="https://github.com/nvaccess/nvda/issues/12888">#12888</A>)
+<LI>Bei der Eingabe in Microsoft Word mit aktiviertem UIA teilt NVDA die Rechtschreibfehler exakter mit. (<A HREF="https://github.com/nvaccess/nvda/issues/12161">#12161</A>)
+<LI>In Windows 11 teilt NVDA "Fenster" nicht mehr mit, wenn Sie Alt+Tab drücken, um zwischen den Anwendungen zu wechseln. (<A HREF="https://github.com/nvaccess/nvda/issues/12648">#12648</A>)
 </UL>
 
 <P></P>
@@ -82,6 +103,7 @@ Aktualisieren Sie Visual Studio, damit es der Produktionsumgebung des Builds ent
 <LI><CODE>LOCALE_SLANGUAGE</CODE>, <CODE>LOCALE_SLIST</CODE> und <CODE>LOCALE_SLANGDISPLAYNAME</CODE> werden in die <CODE>LOCALE</CODE>-Enumeration im languageHandler verschoben.
 Sie sind weiterhin auf Modulebene verfügbar, aber veraltet und werden in NVDA 2022.1 entfernt. (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
 <LI>Die Verwendung der Funktionen <CODE>addonHandler.loadState</CODE> und <CODE>addonHandler.saveState</CODE> sollte vor 2022.1 durch ihre Äquivalente <CODE>addonHandler.state.save</CODE> und <CODE>addonHandler.state.load</CODE> ersetzt werden. (<A HREF="https://github.com/nvaccess/nvda/issues/12792">#12792</A>)
+<LI>Die Braille-Ausgabe kann nun in System-Tests überprüft werden. (<A HREF="https://github.com/nvaccess/nvda/issues/12917">#12917</A>)
 </UL>
 
 <P></P>
