@@ -10,6 +10,23 @@
 </FONT></CENTER>
 
 <H2>2021.3</H2>
+<P>
+Tämä versio esittelee tuen uudelle HID Braille -määritykselle.
+Sen tarkoituksena on standardoida pistenäyttöjen tuki, jossa ei tarvita valmistajakohtaisia ajureita.
+Päivityksiä eSpeak-NG:hen ja LibLouis-pistekirjoituskääntäjään, mukaan lukien uusi venäläinen ja vendalainen taulukko.
+Virheäänet voidaan ottaa käyttöön NVDA:n vakaissa versioissa uudella Lisäasetukset-paneelin asetuksella.
+Jatkuva luku vierittää nyt näkymää Wordissa pitääkseen nykyisen sijainnin näkyvissä.
+Paljon parannuksia käytettäessä Officea UIA:n kanssa.
+Eräs UIA-korjaus on, että Outlook jättää nyt huomiotta viesteissä useammantyyppisiä asettelutaulukoita.
+</P>
+<P>
+Tärkeitä huomautuksia:
+</P>
+<P>
+Suojausvarmenteemme päivityksen vuoksi pieni määrä käyttäjiä saa virheilmoituksen, kun NVDA 2021.2 tarkistaa päivityksiä.
+NVDA pyytää nyt Windowsia päivittämään suojausvarmenteet, mikä estää tämän virheen tulevaisuudessa.
+Asianomaisten käyttäjien on ladattava tämä päivitys manuaalisesti.
+</P>
 <H3>Uudet ominaisuudet</H3>
 <UL>
 <LI>Lisätty syötekomento solun reunojen tyylin ilmaisemisasetuksen vaihtamiseen. (<A HREF="https://github.com/nvaccess/nvda/issues/10408">#10408</A>)
@@ -21,6 +38,7 @@
 <LI>Lisätty tuki VisioBraille Vario 4 -pistenäytölle. (<A HREF="https://github.com/nvaccess/nvda/issues/12607">#12607</A>)
 <LI>Virheilmoitukset voidaan ottaa käyttöön lisäasetuksista mitä tahansa NVDA:n versiota käytettäessä. (<A HREF="https://github.com/nvaccess/nvda/issues/12672">#12672</A>)
 <LI>NVDA puhuu Windows 10:ssä ja uudemmissa ehdotusten määrän kirjoitettaessa hakuehtoja sellaisissa sovelluksissa kuin Asetukset ja Microsoft Store. (<A HREF="https://github.com/nvaccess/nvda/issues/7330">#7330</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12758">#12758</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12790">#12790</A>)
+<LI>Taulukossa liikkumista tuetaan nyt ruudukkosäätimissä, jotka on luotu PowerShellin Out-GridView-cmdlet-komentoa käyttäen. (<A HREF="https://github.com/nvaccess/nvda/issues/12928">#12928</A>)
 </UL>
 
 <P></P>
@@ -60,13 +78,15 @@ Mikäli tarvitset tätä toiminnallisuutta, määritä syötekomento asianmukais
 <LI>Asiakirjaa vieritetään nyt automaattisesti ja kohdistimen sijainti päivitetään asianmukaisesti Microsoft Wordissa jatkuvaa lukua käytettäessä UI automation -rajapinnan ollessa käytössä. (<A HREF="https://github.com/nvaccess/nvda/issues/9611">#9611</A>)
 <LI>Kun NVDA käyttää Outlookissa sähköposteja luettaessa UI Automation -rajapintaa, tiyetyt taulukot merkitään nyt asettelutaulukoiksi, mikä tarkoittaa, ettei niitä ilmaista oletusarvoisesti. (<A HREF="https://github.com/nvaccess/nvda/issues/11430">#11430</A>)
 <LI>Korjattu harvinainen virhe äänilaitteiden vaihdossa. (<A HREF="https://github.com/nvaccess/nvda/issues/12620">#12620</A>)
-<LI>HID Braille -ajurin tukemien pistenäyttöjen kosketuskohdistinnäppäinten järjestys ei ole enää käänteinen. (<A HREF="https://github.com/nvaccess/nvda/issues/12860">#12860</A>)
 <LI>Pistekirjoituksen syötön  pitäisi toimia luotettavammin muokkauskentissä kaunokirjallisia pistetaulukkoja käytettäessä. (<A HREF="https://github.com/nvaccess/nvda/issues/12667">#12667</A>)
 <LI>NVDA ilmoittaa nyt viikonpäivän kokonaisuudessaan Windowsin ilmoitusalueen kalenterissa liikuttaessa. (<A HREF="https://github.com/nvaccess/nvda/issues/12757">#12757</A>)
 <LI>Pistenäytön vierittäminen eteen- ja taaksepäin ei enää siirrä virheellisesti takaisin kohdistimen alkuperäiseen sijaintiin Microsoft Wordissa käytettäessä kiinalaista syöttömenetelmää, kuten Taiwan - Microsoft Quick. (<A HREF="https://github.com/nvaccess/nvda/issues/12855">#12855</A>)
 <LI>Kun Microsoft Word -asiakirjojen lukemiseen käytetään UIA:ta, virkkeittäin liikkuminen (Alt+Alanuoli / Alt+Ylänuoli) on taas mahdollista. (<A HREF="https://github.com/nvaccess/nvda/issues/9254">#9254</A>)
-<LI>Kappalesisennykset ilmoitetaan nyt, kun MS Wordia käytetään UIA:n kautta. (<A HREF="https://github.com/nvaccess/nvda/issues/12899">#12899</A>(
-<LI>Muutosten seurantakomento ja jotkin muut lokalisoidut komennot puhutaan, kun MS Wordia käytetään UIA:n kautta. (<A HREF="https://github.com/nvaccess/nvda/issues/12904">#12904</A>)
+<LI>Kappalesisennykset ilmoitetaan, kun MS Wordia käytetään UIA:n kautta. (<A HREF="https://github.com/nvaccess/nvda/issues/12899">#12899</A>(
+<LI>Muutostenjäljityskomento ja jotkin muut lokalisoidut komennot puhutaan, kun MS Wordia käytetään UIA:n kautta. (<A HREF="https://github.com/nvaccess/nvda/issues/12904">#12904</A>)
+<LI>Korjattu kaksinkertainen pistekirjoituksen ja puheen tuottaminen, kun "kuvaus" on sama kuin "sisältö" tai "nimi". (<A HREF="https://github.com/nvaccess/nvda/issues/12888">#12888</A>)
+<LI>Kirjoitusvirheäänien toistaminen on nyt tarkempaa kirjoitettaessa MS Wordissa UIA:n ollessa käytössä. (<A HREF="https://github.com/nvaccess/nvda/issues/12161">#12161</A>)
+<LI>NVDA ei enää sano "ruutu" Windows 11:ssä vaihdettaessa ohjelmien välillä Alt+Sarkain-näppäinyhdistelmällä. (<A HREF="https://github.com/nvaccess/nvda/issues/12648">#12648</A>)
 </UL>
 
 <P></P>
