@@ -1,0 +1,21 @@
+commit 47a4605d2c6022a8575d62d180e10071ac15a519
+Author: Sean Budd <sean@nvaccess.org>
+Date:   Thu Oct 28 14:08:29 2021 +1100
+
+    Add check for open messageBoxes to prevent exit (PR #12984)
+    
+    Relates to #12976
+    
+    Summary:
+    NVDA was crashing when trying to exit NVDA while a messageBox was open (eg the About Dialog).
+    This is due to wx Idle Events firing on the dialogs while they are being forced to close in the exit process.
+    
+    Repro steps:
+    - have NVDA running:
+    - Press NVDA+n then h to open the help menu, down arrow to "About dialog" and enter to open that.
+    - Press NVDA+Q then ENTER to quit NVDA
+    
+    The change:
+    Prevent user initiated exit while a MessageBox dialog is open. If a modal is used, generally the outcome of the MessageBox is important and must be resolved before exit.
+    
+    Co-authored-by: Reef Turner <reef@nvaccess.org>
