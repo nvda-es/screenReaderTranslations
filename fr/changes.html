@@ -10,17 +10,35 @@
 </FONT></CENTER>
 
 <H2>2021.3</H2>
+<P>
+Cette version introduit le support de la nouvelle spécification Braille HID.
+Cette spécification se veut standardiser le support des afficheurs Braille sans nécessiter de pilotes individuels.
+eSpeak et Liblouis ont été mis à jour, incluant de nouvelles tables Braille Russe et Tshivenda.
+Le son d'erreur peut être activé dans les versions stables de NVDA via un nouveau paramètre avancé.
+Dire tout dans Word fait maintenant défiler le document afin de garder la position actuelle visible.
+Sont également présentes de nombreuses améliorations lors de l'utilisation d'Office avec UIA.
+Un des correctifs UIA est qu'Outlook ignore maintenant plus de tableaux de disposition dans les messages.
+</P>
+<P>
+Notes importantes :
+</P>
+<P>
+En raison d'une mise à jour de notre certificat de sécurité, un petit nombre d'utilisateurs rencontre une erreur lorsque NVDA 2021.2 vérifie les mises à jour.
+NVDA demande maintenant à Windows de mettre à jour les certificats de sécurité, ce qui évitera ce type d'erreurs dans le futur.
+Les utilisateurs affectés devront télécharger cette mise à jour manuellement.
+</P>
 <H3>Nouvelles fonctionnalités</H3>
 <UL>
 <LI>Ajout d'un geste de commande pour basculer le paramètre d'annonce du style des bordures de cellules. (<A HREF="https://github.com/nvaccess/nvda/issues/10408">#10408</A>)
 <LI>Support de la nouvelle spécification Braille HID qui a pour but de standardiser le support des afficheurs Braille. (<A HREF="https://github.com/nvaccess/nvda/issues/12523">#12523</A>)
- <UL>
- <LI>Les terminaux qui supportent cette spécification seront détectés automatiquement par NVDA.
- <LI>Pour les détails techniques sur l'implémentation de cette spécification dans NVDA, voir <A HREF="https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md">https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md</A>
- </UL>
+  <UL>
+  <LI>Les terminaux qui supportent cette spécification seront détectés automatiquement par NVDA.
+  <LI>Pour les détails techniques sur l'implémentation de cette spécification dans NVDA, voir <A HREF="https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md">https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md</A>
+  </UL>
 <LI>Ajout du support du terminal Braille VisioBraille Vario 4. (<A HREF="https://github.com/nvaccess/nvda/issues/12607">#12607</A>)
 <LI>Les notifications d'erreur peuvent être activées (paramètres avancés) lors de l'utilisation de toutes les versions de NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/12672">#12672</A>)
 <LI>Sous Windows 10 et supérieur, NVDA annoncera le nombre de suggestions lors de la saisie de termes de recherche dans des applications telles que les paramètres ou le Microsoft Store. (<A HREF="https://github.com/nvaccess/nvda/issues/7330">#7330</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12758">#12758</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12790">#12790</A>)
+<LI>La navigation dans les tableaux est désormais prise en charge dans les contrôles de grille créés à l'aide de l'applet de commande Out-GridView dans PowerShell. (<A HREF="https://github.com/nvaccess/nvda/issues/12928">#12928</A>)
 </UL>
 
 <P></P>
@@ -32,12 +50,12 @@
 <LI>Lors de la lecture de la barre d'état par <CODE>NVDA+Fin</CODE>, le curseur de revue n'est plus déplacé vers son emplacement.
 Si vous souhaitez cette fonctionnalité, veuillez assigner un geste au script approprié dans la rubrique "Navigation par objet" du dialogue "Gestes de commandes". (<A HREF="https://github.com/nvaccess/nvda/issues/8600">#8600</A>)
 <LI>Lors de l'ouverture d'un dialogue de paramétrage déjà ouvert, NVDA donne le focus au dialogue ouvert au lieu de retourner une erreur. (<A HREF="https://github.com/nvaccess/nvda/issues/5383">#5383</A>)
-<LI>Pour les versions de Microsoft Office 2016/365 supérieures à 13900, NVDA utilisera maintenant toujours UI Automation pour accéder aux contrôles des documents Microsoft Word, indépendamment de si l'utilisateur a activé ou non l'option Utiliser UI Automation pour accéder aux contrôles des documents Microsoft word dans les paramètres avancés. (<A HREF="https://github.com/nvaccess/nvda/issues/12770">#12770</A>)
 <LI>Mise à jour du transcripteur Braille Liblouis en version <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.19.0">3.19.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/12810">#12810</A>)
   <UL>
   <LI>Nouvelles tables Braille : Russe intégral, Tshivenda intégral, Tshivenda abrégé
   </UL>
 <LI>Au lieu de "contenu marqué" ou "mrq", "surligné" ou "mrq" sera annoncé vocalement et en Braille respectivement. (<A HREF="https://github.com/nvaccess/nvda/issues/12892">#12892</A>)
+<LI>NVDA n'essaiera plus de se fermer lorsqu'une boîte de dialogue requière une action (par exemple Confirmer ou Annuler). (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>)
 </UL>
 
 <P></P>
@@ -60,13 +78,16 @@ Si vous souhaitez cette fonctionnalité, veuillez assigner un geste au script ap
 <LI>Lors de l'utilisation du mode dire tout dans Microsoft Word via UI automation, le document défile maintenant automatiquement, et la position du curseur est correctement mise à jour. (<A HREF="https://github.com/nvaccess/nvda/issues/9611">#9611</A>)
 <LI>Lors de la lecture d'e-mails dans Outlook quand NVDA accède aux message en utilisant UI Automation, certains tableaux sont maintenant marqués comme tableau de disposition, et ne seront donc plus annoncés par défaut. (<A HREF="https://github.com/nvaccess/nvda/issues/11430">#11430</A>)
 <LI>Une erreur rare lors du changement de périphérique audio a été résolue. (<A HREF="https://github.com/nvaccess/nvda/issues/12620">#12620</A>)
-<LI>Les touches de routage sur les afficheurs Braille supportés par le pilote Braille HID ne sont plus inversées. (<A HREF="https://github.com/nvaccess/nvda/issues/12860">#12860</A>)
 <LI>La saisie avec des tables Braille littéraires devrait être plus fiable dans les champs d'édition. (<A HREF="https://github.com/nvaccess/nvda/issues/12667">#12667</A>)
 <LI>Lors de la navigation dans le calendrier de la zone de notifications Windows, NVDA annonce maintenant le jour de la semaine en intégralité. (<A HREF="https://github.com/nvaccess/nvda/issues/12757">#12757</A>)
 <LI>Lors de l'utilisation d'une méthode de saisie chinoise telle que Taïwan - Microsoft Quick dans Microsoft Word, le défilement du Braille vers l'avant et l'arrière ne revient plus à la position initiale du curseur. (# 12855)
 <LI>Lors de l'accès aux documents Microsoft Word via UIA, naviguer par phrase (alt+flèche bas / alt+flèche haut) est à nouveau possible. (<A HREF="https://github.com/nvaccess/nvda/issues/9254">#9254</A>)
 <LI>Lors de l'accès à MS Word avec UIA, l'indentation des paragraphes est maintenant annoncée. (<A HREF="https://github.com/nvaccess/nvda/issues/12899">#12899</A>)
 <LI>Lors de l'accès à MS Word avec UIA, la commande de suivi des modifications et d'autres commandes localisées sont maintenant reportées dans Word. (<A HREF="https://github.com/nvaccess/nvda/issues/12904">#12904</A>)
+<LI>Correction d'un doublon en Braille et vocal quand 'description' est identique 'content' ou 'name'. (<A HREF="https://github.com/nvaccess/nvda/issues/12888">#12888</A>)
+<LI>Dans MS Word avec UIA activé, la lecture du son d'erreur d'orthographe est plus précise au fur et à mesure que vous tapez. (<A HREF="https://github.com/nvaccess/nvda/issues/12161">#12161</A>)
+<LI>Sous Windows 11, NVDA n'annoncera plus "volet" lors de l'appui sur Alt+Tab pour circuler entre les programmes. (<A HREF="https://github.com/nvaccess/nvda/issues/12648">#12648</A>)
+<LI>Le nouveau volet latéral des commentaires modernes est désormais pris en charge dans MS Word lorsque vous n'accédez pas au document via UIA. Appuyez sur Alt+F12 pour naviguer entre le volet latéral et le document. (<A HREF="https://github.com/nvaccess/nvda/issues/12982">#12982</A>)
 </UL>
 
 <P></P>
@@ -82,6 +103,7 @@ Pour correspondre à l'environnement de compilation de production, mettez à jou
 <LI><CODE>LOCALE_SLANGUAGE</CODE>, <CODE>LOCALE_SLIST</CODE> et <CODE>LOCALE_SLANGDISPLAYNAME</CODE> ont été déplacés vers l'enum <CODE>LOCALE</CODE> dans languageHandler.
 Ils sont toujours disponibles au niveau du module mais sont obsolètes et seront supprimés dans NVDA 2022.1. (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
 <LI>L'utilisation des fonctions <CODE>addonHandler.loadState</CODE> et <CODE>addonHandler.saveState</CODE> doit être remplacée par leurs équivalents <CODE>addonHandler.state.save</CODE> et <CODE>addonHandler.state.load</CODE> avant NVDA 2022.1. (<A HREF="https://github.com/nvaccess/nvda/issues/12792">#12792</A>)
+<LI>La sortie Braille peut maintenant être vérifiée dans les tests système. (<A HREF="https://github.com/nvaccess/nvda/issues/12917">#12917</A>)
 </UL>
 
 <P></P>
