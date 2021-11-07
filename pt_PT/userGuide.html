@@ -216,7 +216,7 @@ Traduzido pela equipa portuguesa do NVDA.
     <LI><A HREF="#Eurobraille">15.17. Eurobraille Esys/Esytime/Iris displays</A>
     <LI><A HREF="#NattiqTechnologies">15.18. Linhas Nattiq nBraille</A>
     <LI><A HREF="#BRLTTY">15.19. BRLTTY</A>
-    <LI><A HREF="#HIDBraille">15.20. Standard HID Braille displays</A>
+    <LI><A HREF="#HIDBraille">15.20. Linhas Braille com protocolo HID</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">16. tópicos Avançados</A>
     <UL>
@@ -3172,7 +3172,8 @@ Para activar ou desactivar o Modo de revisão simples, em qualquer local, por fa
 <H4>12.1.12. Apresentação de Objectos (NVDA+Ctrl+O)</H4>
 <P>
 A secção "Apresentação de objectos" permite-lhe configurar o nível de informação que o NVDA dará sobre os objectos em foco, como descrição, posição, etc.
-Esta secção contém as seguintes opções:
+Estas opções normalmente não se aplicam ao modo de navegação.
+Pelo contrário, normalmente aplicam-se ao anúncio do foco e à navegação por objetos do NVDA, mas não à leitura de conteúdo de texto, como por exemplo. em modo de navegação.
 </P>
 <A NAME="ObjectPresentationReportToolTips"></A>
 <H5>Anunciar Sugestões</H5>
@@ -3536,12 +3537,12 @@ Portanto, com esta opção activada, o NVDA limitará o registo de eventos para 
 Se notar problemas de performance numa ou várias aplicações, recomendamos que experimente esta funcionalidade para verificar se a performance melhora.
 </P>
 <P>
-==== Usar sempre UI Automation para aceder a controlos de documentos do Microsoft Word, se disponível ====[AdvancedSettingsUseUiaForWord].
-Quando esta opção estiver activada, o NVDA tentará sempre utilizar a API de acessibilidade da Microsoft UI Automation para obter informações dos controlos dos documentos do Microsoft Word, mesmo para versões menos recentes do Microsoft Office 2016.
+==== Usar UI Automation para aceder a controlos de documentos do Microsoft Word, se disponível ====[AdvancedSettingsUseUiaForWord].
+Quando esta opção estiver activada, o NVDA tentará utilizar a API de acessibilidade da Microsoft UI Automation para obter informações dos controlos dos documentos do Microsoft Word.
 Isto inclui o próprio Microsoft Word e também o visualizador e o compositor de mensagens do Microsoft Outlook.
-Para uma versão do Microsoft Office com compilação 16.0.13901 ou superior, o NVDA utilizará sempre a UI Automation para aceder aos documentos do Microsoft Word, independentemente desta configuração.
-Para as versões mais recentes do Microsoft Office, 2016/365, em Windows 10 e seguintes, o suporte da UI Automation está suficientemente completo para fornecer praticamente o mesmo acesso aos documentos do Microsoft Word, que havia antes, com a vantagem adicional de aumentar significativamente a capacidade de resposta.
+Para as versões mais recentes do Microsoft Office, 2016/365, em Windows 10 e seguintes, o suporte da UI Automation está suficientemente completo para fornecer praticamente o mesmo acesso aos documentos do Microsoft Word, que havia antes, com a vantagem adicional de aumentar significativamente a rapidez de resposta.
 No entanto, em algumas versões antigas do Microsoft Office, pode haver algumas informações que não são expostas, ou o são incorrectamente, pelo que o suporte UI Automation nem sempre deve ser activado.
+Ainda não se recomenda que todos os utilizadores activem esta opção, embora agradeçamos aos utilizadors do Office 2016/365 que testem este recurso e forneçam retorno.
 </P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
 <H5>Usar UI Automation para aceder à Consola Windows quando disponível</H5>
@@ -3577,16 +3578,25 @@ Existem as seguintes opções:
 </P>
 <UL>
 <LI>Anunciar detalhes em modo de navegação: Activa o anúncio de que um objecto tem detalhes em modo de navegação.
-Anunciar o sumário dos detalhes pode ser feito atribuindo um comando através do diálogo <A HREF="#InputGestures">Definir comandos</A>.
+  Anunciar o sumário dos detalhes pode ser feito atribuindo um comando através do diálogo <A HREF="#InputGestures">Definir comandos</A>.
 <LI>Anunciar sempre aria-description":
-Quando a fonte da "descrição" é aria-description, a descrição é anunciada.
-Isto é útil para anotações na web.
-Nota:
-<LI>Existem muitas fontes de "accDescription", e várias têm uma semântica mista ou não fiável;
-  Historicamente AT não tem sido capaz de diferenciar fontes de <CODE>descrição`</CODE> tipicamente não era falada devido à semântica mista.
-<LI>Esta opção está em desenvolvimento muito precoce, e depende de características dos navegadores  ainda não amplamente disponíveis;
-<LI>Espera-se que funcione com o Chromium 92.0.4479.0+.
+  Quando a fonte da "descrição" é aria-description, a descrição é anunciada.
+  Isto é útil para anotações na web.
+  Nota:
 </UL>
+
+	<BLOCKQUOTE>
+		<BLOCKQUOTE>
+		- Existem muitas fontes de "accDescription", e várias têm uma semântica mista ou não fiável;
+		</BLOCKQUOTE>
+	</BLOCKQUOTE>
+<P>
+    Historicamente AT não tem sido capaz de diferenciar fontes de <CODE>descrição`</CODE> tipicamente não era falada devido à semântica mista.
+</P>
+  <UL>
+  <LI>Esta opção está em desenvolvimento muito precoce, e depende de características dos navegadores  ainda não amplamente disponíveis;
+  <LI>Espera-se que funcione com o Chromium 92.0.4479.0+.
+  </UL>
 
 <P></P>
 <A NAME="UseUiaForExcel"></A>
@@ -3645,7 +3655,7 @@ Se o NVDA parecer estar a seguir incorrectamente o cursor de inserção, por exe
 Esta opção permite anunciar quando as cores são transparentes, útil para desenvolvedores de  addons/appModule ao reunir informações para melhorar a experiência do utilizador com uma aplicação de terceiros.
 Algumas aplicações GDI realçam o texto com uma cor de fundo, e o  NVDA (via "display model) tenta anunciar esta cor.
 Em algumas situações, o fundo do texto pode ser totalmente transparente, com o texto em sobreposto a algum outro elemento GUI.
-Com várias APIs de GUI, historicamente populares, o texto pode ser apresentado com um fundo transparente, mas visualmente a cor de fundo é exacta.
+Com várias API's de GUI, historicamente populares, o texto pode ser apresentado com um fundo transparente, mas visualmente a cor de fundo é exacta.
 </P>
 <A NAME="AdvancedSettingsDebugLoggingCategories"></A>
 <H5>Categorias do registo em modo de depuração</H5>
@@ -6706,13 +6716,13 @@ Por favor, consulte na documentação do BRLTTY as <A HREF="http://mielke.cc/brl
 </TABLE>
 
 <A NAME="HIDBraille"></A>
-<H3>15.20. Standard HID Braille displays</H3>
+<H3>15.20. Linhas Braille com protocolo HID</H3>
 <P>
-This is an experimental driver for the new Standard HID Braille Specification, agreed upon in 2018 by Microsoft, Google, Apple and several assistive technology companies including NV Access. 
-The hope is that all future Braille Display models created by any manufacturer, will use this standard protocol which will remove the need for manufacturer-specific Braille drivers.
+Este é um driver experimental para o novo protocolo Braille HID, aprovado em 2018 por Microsoft, Google, Apple e várias entidades de tecnologia assistiva, incluindo a NV Access. 
+Espera-se que todos os dispositivos Braille futuros, desenvolvidos por qualquer fabricante utilize este protocolo, o que dispensará drivers específicos de cada fabricante.
 </P>
 <P>
-NVDA's automatic braille display detection will also recognize any display that supports this protocol.
+A detecção automática de dispositivos Braille do NVDA reconhecerá qualquer dispositivo que utilize este protocolo.
 </P>
 <P>
 Following are the current key assignments for these displays.
@@ -6722,13 +6732,15 @@ Following are the current key assignments for these displays.
 <TH>Name</TH>
 <TH>Key</TH>
 </TR>
-<TR>
-<TD>Scroll braille display back</TD>
-<TD>pan left</TD>
-</TR>
+</TABLE>
+
+<P>
+\| Scroll braille display back | pan left or rocker up |
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>Scroll braille display forward</TD>
-<TD>pan right</TD>
+<TD>pan right or rocker down</TD>
 </TR>
 <TR>
 <TD>Move braille display to previous line</TD>
