@@ -141,7 +141,7 @@
       <LI><A HREF="#MouseSettings">12.1.9. 滑鼠 (NVDA+Ctrl+m)</A>
       <LI><A HREF="#TouchInteraction">12.1.10. 觸控互動</A>
       <LI><A HREF="#ReviewCursorSettings">12.1.11. 檢閱游標</A>
-      <LI><A HREF="#ObjectPresentationSettings">12.1.12. 物件顯示 (NVDA+Ctrl+o)</A>
+      <LI><A HREF="#ObjectPresentationSettings">12.1.12. 物件呈現 (NVDA+Ctrl+o)</A>
       <LI><A HREF="#InputCompositionSettings">12.1.13. 輸入法組字</A>
       <LI><A HREF="#BrowseModeSettings">12.1.14. 瀏覽模式 (NVDA+Ctrl+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">12.1.15. 文件格式 (NVDA+Ctrl+d)</A>
@@ -170,7 +170,7 @@
   <LI><A HREF="#ExtraTools">13. 工具</A>
     <UL>
     <LI><A HREF="#LogViewer">13.1. 檢視事件記錄</A>
-    <LI><A HREF="#SpeechViewer">13.2. 檢視報讀內容</A>
+    <LI><A HREF="#SpeechViewer">13.2. 語音檢視器</A>
     <LI><A HREF="#BrailleViewer">13.3. 點字檢視器</A>
     <LI><A HREF="#PythonConsole">13.4. Python 主控台</A>
     <LI><A HREF="#AddonsManager">13.5. 管理附加元件</A>
@@ -215,6 +215,7 @@
     <LI><A HREF="#Eurobraille">15.17. Eurobraille Esys/Esytime/Iris 點顯器</A>
     <LI><A HREF="#NattiqTechnologies">15.18. Nattiq nBraille 點顯器</A>
     <LI><A HREF="#BRLTTY">15.19. BRLTTY</A>
+    <LI><A HREF="#HIDBraille">15.20. 標準 HID 點顯器</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">16. 進階主題</A>
     <UL>
@@ -734,7 +735,7 @@ NVDA 可讓使用者以不同的方式在系統間導航並與之互動，包括
 <TD>讀出狀態列的訊息</TD>
 <TD>NVDA+end</TD>
 <TD>NVDA+shift+end</TD>
-<TD>如果可讀取的話，讀出目前應用程式的狀態列內容，且將導航器移到該處，連按兩次拼讀其內容，連按三次複製其內容到剪貼簿。</TD>
+<TD>如果可讀取的話，讀出目前應用程式的狀態列內容，連按兩次拼讀其內容，連按三次複製其內容到剪貼簿。</TD>
 </TR>
 </TABLE>
 
@@ -783,16 +784,16 @@ NVDA 可讓使用者以不同的方式在系統間導航並與之互動，包括
 <TD>讀出游標當前所在的文字格式，按兩下以瀏覽模式顯示資訊。</TD>
 </TR>
 <TR>
-<TD>讀出後一個句子</TD>
+<TD>讀出下一個句子</TD>
 <TD>alt+向下鍵</TD>
 <TD>alt+向下鍵</TD>
-<TD>移動游標到後一個句子的開頭字元並讀出該句子（僅支援 Microsoft Word 和 Outlook 應用程式）</TD>
+<TD>移動游標到下一個句子的開頭字元並讀出該句子（僅支援 Microsoft Word 和 Outlook 應用程式）</TD>
 </TR>
 <TR>
-<TD>讀出前一個句子</TD>
+<TD>讀出上一個句子</TD>
 <TD>alt+向上鍵</TD>
 <TD>alt+向上鍵</TD>
-<TD>移動游標到前一個句子的開頭字元並讀出整個句子（僅支援 Microsoft Word 和 Outlook 應用程式）</TD>
+<TD>移動游標到上一個句子的開頭字元並讀出整個句子（僅支援 Microsoft Word 和 Outlook 應用程式）</TD>
 </TR>
 </TABLE>
 
@@ -885,18 +886,18 @@ NVDA 可讓使用者以不同的方式在系統間導航並與之互動，包括
 <TD>移至目前物件的母物件（也就是包含此物件的容器）</TD>
 </TR>
 <TR>
-<TD>移至前一個物件</TD>
+<TD>移至上一個物件</TD>
 <TD>NVDA+數字鍵盤4</TD>
 <TD>NVDA+Shift+向左鍵</TD>
 <TD>向左滑動（物件模式）</TD>
-<TD>直接移至目前所在物件的前一個物件</TD>
+<TD>直接移至目前所在物件的上一個物件</TD>
 </TR>
 <TR>
-<TD>移至後一個物件</TD>
+<TD>移至下一個物件</TD>
 <TD>NVDA+數字鍵盤6</TD>
 <TD>NVDA+Shift+向右鍵</TD>
 <TD>向右滑動（物件模式）</TD>
-<TD>直接移至目前所在物件的後一個物件</TD>
+<TD>直接移至目前所在物件的下一個物件</TD>
 </TR>
 <TR>
 <TD>移至第一個子物件</TD>
@@ -932,6 +933,13 @@ NVDA 可讓使用者以不同的方式在系統間導航並與之互動，包括
 <TD>NVDA+Delete</TD>
 <TD>無</TD>
 <TD>讀出檢閱游標所在的文字或物件的位置，例如：這可能包括與螢幕左側與上緣的距離，以及它在螢暮上的位置。若按兩下，則可能提供更多的資訊。</TD>
+</TR>
+<TR>
+<TD>將檢閱游標移到狀態列</TD>
+<TD>無</TD>
+<TD>無</TD>
+<TD>無</TD>
+<TD>讀出狀態列 (若 NVDA 有找到)，同時會將導航器物件移到該處。</TD>
 </TR>
 </TABLE>
 
@@ -998,11 +1006,11 @@ NVDA 允許您以逐一字元、字詞及逐行方式，讀出視窗畫面、目
 <TD>移動檢閱游標到文件中的最後一行</TD>
 </TR>
 <TR>
-<TD>移到前一個字詞</TD>
+<TD>移到上一個字詞</TD>
 <TD>數字鍵盤4</TD>
 <TD>NVDA+control+向左鍵</TD>
 <TD>雙指向左滑動（文字模式）</TD>
-<TD>檢閱游標移到目前所在位置的前一個字詞並讀出</TD>
+<TD>檢閱游標移到目前所在位置的上一個字詞並讀出</TD>
 </TR>
 <TR>
 <TD>讀出檢閱游標所在的字詞</TD>
@@ -1012,11 +1020,11 @@ NVDA 允許您以逐一字元、字詞及逐行方式，讀出視窗畫面、目
 <TD>讀出目前檢閱游標所在的字詞，連按兩下拼讀出這個字詞，連按三下讀出字詞解釋</TD>
 </TR>
 <TR>
-<TD>移到後一個字詞</TD>
+<TD>移到下一個字詞</TD>
 <TD>數字鍵盤6</TD>
 <TD>NVDA+control+向右鍵</TD>
 <TD>雙指向右滑動（文字模式）</TD>
-<TD>檢閱游標移到目前所在位置的後一個字詞，並讀出</TD>
+<TD>檢閱游標移到目前所在位置的下一個字詞，並讀出</TD>
 </TR>
 <TR>
 <TD>移到行首</TD>
@@ -1026,11 +1034,11 @@ NVDA 允許您以逐一字元、字詞及逐行方式，讀出視窗畫面、目
 <TD>移動檢閱游標到目前所在行的行首</TD>
 </TR>
 <TR>
-<TD>移到前一個字元</TD>
+<TD>移到上一個字元</TD>
 <TD>數字鍵盤1</TD>
 <TD>NVDA+向左鍵</TD>
 <TD>向左滑動（文字模式）</TD>
-<TD>移動檢閱游標到目前所在位置的前一個字元並讀出</TD>
+<TD>移動檢閱游標到目前所在位置的上一個字元並讀出</TD>
 </TR>
 <TR>
 <TD>讀出檢閱游標所在的字元</TD>
@@ -1040,11 +1048,11 @@ NVDA 允許您以逐一字元、字詞及逐行方式，讀出視窗畫面、目
 <TD>讀出檢閱游標所在的字元，連按兩下讀出該字元的字詞解釋，連按三下讀出字元的十進位值和十六進位值</TD>
 </TR>
 <TR>
-<TD>移到後一個字元</TD>
+<TD>移到下一個字元</TD>
 <TD>數字鍵盤3</TD>
 <TD>NVDA+向右鍵</TD>
 <TD>向右滑動（文字模式）</TD>
-<TD>移動檢閱游標到目前所在位置的後一個字元並讀出</TD>
+<TD>移動檢閱游標到目前所在位置的下一個字元並讀出</TD>
 </TR>
 <TR>
 <TD>移到行尾</TD>
@@ -1101,7 +1109,7 @@ NVDA 允許您以逐一字元、字詞及逐行方式，讀出視窗畫面、目
 附註：要讓檢閱游標正常運作，數字鍵盤的 Num Lock 鍵應在關閉狀態。
 </P>
 <P>
-當使用桌上型電腦配置時，提供一個好記的方法，也就是想像基本的文字瀏覽指令是安排在 3乘以3的數字鍵盤九宮格中，由上到下分別是讀出「行、字詞、字元」，而從左到右是讀出「前一個、目前及後一個」。
+當使用桌上型電腦配置時，提供一個好記的方法，也就是想像基本的文字瀏覽指令是安排在 3乘以3的數字鍵盤九宮格中，由上到下分別是讀出「行、字詞、字元」，而從左到右是讀出「上一個、目前及下一個」。
 版面配置的說明如下：
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
@@ -1111,14 +1119,14 @@ NVDA 允許您以逐一字元、字詞及逐行方式，讀出視窗畫面、目
 <TD>下一行</TD>
 </TR>
 <TR>
-<TD>前一個字詞</TD>
+<TD>上一個字詞</TD>
 <TD>目前的字詞</TD>
-<TD>後一個字詞</TD>
+<TD>下一個字詞</TD>
 </TR>
 <TR>
-<TD>前一個字元</TD>
+<TD>上一個字元</TD>
 <TD>目前的字元</TD>
-<TD>後一個字元</TD>
+<TD>下一個字元</TD>
 </TR>
 </TABLE>
 
@@ -1140,18 +1148,18 @@ NVDA 允許您以逐一字元、字詞及逐行方式，讀出視窗畫面、目
 <TH>說明</TH>
 </TR>
 <TR>
-<TD>切換到後一個檢閱模式</TD>
+<TD>切換到下一個檢閱模式</TD>
 <TD>NVDA+數字鍵盤7</TD>
 <TD>NVDA+pageUp</TD>
 <TD>雙指向上滑動</TD>
-<TD>切換到後一個可供使用的檢閱模式</TD>
+<TD>切換到下一個可供使用的檢閱模式</TD>
 </TR>
 <TR>
-<TD>切換到前一個檢閱模式</TD>
+<TD>切換到上一個檢閱模式</TD>
 <TD>NVDA+數字鍵盤1</TD>
 <TD>NVDA+pageDown</TD>
 <TD>雙指向下滑動</TD>
-<TD>切換到前一個可供使用的檢閱模式</TD>
+<TD>切換到上一個可供使用的檢閱模式</TD>
 </TR>
 </TABLE>
 
@@ -1326,14 +1334,14 @@ NVDA 也提供一個利用音調的高低來提示鼠標所指位置在螢幕上
 <TD>開啟一個對話框，以便輸入字串，在目前的文件中搜尋。請參閱 <A HREF="#SearchingForText">尋找文字</A> 段落來獲取更多資訊</TD>
 </TR>
 <TR>
-<TD>尋找後一個</TD>
+<TD>尋找下一個</TD>
 <TD>NVDA+F3</TD>
-<TD>在目前文件中向後尋找前次搜尋的文字。</TD>
+<TD>在目前文件中向下尋找前次搜尋的文字。</TD>
 </TR>
 <TR>
-<TD>尋找前一個</TD>
+<TD>尋找上一個</TD>
 <TD>NVDA+Shift+F3</TD>
-<TD>在目前文件中向前尋找前次搜尋的文字。</TD>
+<TD>在目前文件中向上尋找前次搜尋的文字。</TD>
 </TR>
 <TR>
 <TD>開啟長說明</TD>
@@ -1349,7 +1357,7 @@ NVDA 也提供一個利用音調的高低來提示鼠標所指位置在螢幕上
 值得注意的是，並非所有這些的單鍵導航指令在不同的文件均有支援。
 </P>
 <P>
-下列的按鍵，若僅按該單一鍵，則會跳至其對應的後一個元件位置，如果同時按 Shift+該單一按鍵，則會跳至前一個元件位置。
+下列的按鍵，若僅按該單一鍵，則會跳至其對應的下一個元件位置，如果同時按 Shift+該單一按鍵，則會跳至上一個元件位置。
 </P>
 <UL>
 <LI>h: 標題 (heading)
@@ -1446,14 +1454,14 @@ NVDA 也提供一個利用音調的高低來提示鼠標所指位置在螢幕上
 <TD>開啟尋找對話框</TD>
 </TR>
 <TR>
-<TD>尋找後一個</TD>
+<TD>尋找下一個</TD>
 <TD>NVDA+f3</TD>
-<TD>尋找後一個當前搜尋的字串</TD>
+<TD>尋找下一個當前搜尋的字串</TD>
 </TR>
 <TR>
-<TD>尋找前一個</TD>
+<TD>尋找上一個</TD>
 <TD>NVDA+shift+f3</TD>
-<TD>尋找前一個當前搜尋的字串</TD>
+<TD>尋找上一個當前搜尋的字串</TD>
 </TR>
 </TABLE>
 
@@ -1962,7 +1970,7 @@ NVDA 的視覺相關設定可以從<A HREF="#NVDASettings">NVDA 設定</A>對話
 
 <P></P>
 <P>
-當您在<A HREF="#NVDASettings">NVDA 設定</A>對話框中的<A HREF="#VisionSettings">視覺類別</A>內啟用了視覺醒目提示後，您便可以<A HREF="#VisionSettingsFocusHighlight">更改是否醒目提示系統焦點、瀏覽器物件或瀏覽模式游標</A>。
+當您在<A HREF="#NVDASettings">NVDA 設定</A>對話框中的<A HREF="#VisionSettings">視覺類別</A>內啟用了視覺醒目提示後，您便可以<A HREF="#VisionSettingsFocusHighlight">更改是否醒目提示系統焦點、導航器物件或瀏覽模式游標</A>。
 </P>
 <A NAME="VisionScreenCurtain"></A>
 <H3>9.2. 螢幕簾幕</H3>
@@ -2653,7 +2661,7 @@ NVDA 可以支援的語音合成器清單，請參見<A HREF="#SupportedSpeechSy
 </P>
 <P>
 有一個特定選項一定會出現在清單中，那就是「沒有語音」。這個選項允許您在沒有語音輸出的情況下使用 NVDA。
-這可能對於想要使用點字的人或者有視力但只想使用「檢視報讀內容」功能瀏覽的程式開發者有幫助。
+這對於希望只使用點字的人或者有視力但只想使用語音檢視器查看報讀內容的程式開發者或許有幫助。
 </P>
 <A NAME="SelectSynthesizerOutputDevice"></A>
 <H5>輸出裝置</H5>
@@ -2707,7 +2715,7 @@ NVDA 可以支援的語音合成器清單，請參見<A HREF="#SupportedSpeechSy
 <TD>增加目前語音控制項的設定值</TD>
 <TD>NVDA+Ctrl+向上鍵</TD>
 <TD>NVDA+Shift+Ctrl+向上鍵</TD>
-<TD>增加目前使用的語音控制項的設定值，例如選擇前一個語音、加快速度、提高音調及調大音量。</TD>
+<TD>增加目前使用的語音控制項的設定值，例如選擇上一個語音、加快速度、提高音調及調大音量。</TD>
 </TR>
 <TR>
 <TD>減少目前語音控制項的設定值</TD>
@@ -2741,7 +2749,7 @@ NVDA 設定對話框中「點字」類別的「變更...」按鈕，會開啟<A 
 <A NAME="BrailleSettingsInputTable"></A>
 <H5>輸入轉譯表</H5>
 <P>
-下一個選項為點顯器的輸入轉譯表下拉選單，此係搭配前一個輸入轉譯表使用。
+下一個選項為點顯器的輸入轉譯表下拉選單，此係搭配前一個輸出轉譯表使用。
 NVDA 會依照所選定的轉譯表項目，將您在柏金斯點字鍵盤上輸入的點字轉譯成一般文字。
 </P>
 <P>
@@ -2907,6 +2915,11 @@ NVDA 會依照所選定的轉譯表項目，將您在柏金斯點字鍵盤上輸
 </P>
 <P>
 您可參照點顯器所提供文件的相關章節 <A HREF="#SupportedBrailleDisplays">支援的點顯器</A>確認更多相關資訊，針對所支援的通訊類型或可用的連接埠。
+</P>
+<P>
+請注意：若您同時用相同的驅動程式連接多台點顯器 (如：連接兩台 Seika 點顯器)，
+目前並無法告訴 NVDA 要使用哪一台點顯器來顯示，
+因此建議一次只連接一個機型/製造商的點顯器。
 </P>
 <A NAME="VisionSettings"></A>
 <H4>12.1.7. 視覺</H4>
@@ -3157,10 +3170,11 @@ NVDA 會依照所選定的轉譯表項目，將您在柏金斯點字鍵盤上輸
 若要在任何狀況下啟用簡易瀏覽模式，可在「輸入手勢」對話框內指定一個客製化手勢。
 </P>
 <A NAME="ObjectPresentationSettings"></A>
-<H4>12.1.12. 物件顯示 (NVDA+Ctrl+o)</H4>
+<H4>12.1.12. 物件呈現 (NVDA+Ctrl+o)</H4>
 <P>
-「NVDA 設定」對話框中「物件顯示」類別，可以設定NVDA將顯示多少資訊，例如描述、位置資訊等。
-此類別包括了以下的控制項：
+「NVDA 設定」對話框中「物件呈現」類別，可以設定NVDA將呈現多少資訊，例如描述、位置資訊等。
+這些選項通常不適用於瀏覽模式。
+這些選項通常適用於讀出焦點及 NVDA 物件導航，但不適用於閱讀文字內容，例如：瀏覽模式。
 </P>
 <A NAME="ObjectPresentationReportToolTips"></A>
 <H5>讀出工具提示</H5>
@@ -3399,10 +3413,8 @@ NVDA 會依照所選定的轉譯表項目，將您在柏金斯點字鍵盤上輸
  <LI>字型屬性
  <LI>上標及下標
  <LI>強調標記
- <LI>標記（強調文字）
-  <UL>
-  <LI>樣式
-  </UL>
+ <LI>高亮文字
+ <LI>樣式
  <LI>色彩
  </UL>
 <LI>「文件資訊」群組
@@ -3560,15 +3572,25 @@ NVDA 會偵測到編輯游標／檢閱游標所在位置的格式，在某些情
 
 <P></P>
 <A NAME="Annotations"></A>
-<H5>啟用實驗性 ARIA 標記支援</H5>
+<H5>注釋</H5>
 <P>
-此功能用來啟用針對 ARIA 標記加上實驗性支援的功能。
-但有些功能可能尚未完成。
-包含以下選項：
+此群組的選項用來啟用實驗性的 ARIA 註釋功能，
+其中有些功能可能是不完整的，
+現有以下選項。
 </P>
 <UL>
 <LI>「在瀏覽模式中讀出詳細資料」：若物件在此模式下有詳細資料時報讀出來。
-讀出那些詳細資料摘要的指令可以在 <A HREF="#InputGestures">輸入手勢對話框</A> 中指派手勢。
+  讀出那些詳細資料摘要的指令可以在 <A HREF="#InputGestures">輸入手勢對話框</A> 中指派手勢。
+<LI>「總是讀出 aria 描述」：
+  當 <CODE>accDescription</CODE> 的來源是 aria-description 時，會將描述讀出來。
+  這對於網頁上的註解很有用。
+  注意：
+  <UL>
+  <LI>accDescription 有很多來源，其中一些具有混合或不可靠的語義。
+    過去 AT 無法區分 accDescription 的來源，由於混合語義，通常無法被讀出來。
+  <LI>此選項處於早期開發階段，它依賴於尚未廣泛使用的瀏覽器功能。
+  <LI>預計適用於 Chromium 92.0.4479.0+
+  </UL>
 </UL>
 
 <P></P>
@@ -3622,12 +3644,27 @@ Microsoft Excel 的 UI automation 內容會時時更新，而 Microsoft Office �
 此選項用來讓您設定 NVDA 等待游標（插入點）在可編輯的文字元件中移動的時間（以毫秒計）。
 如果您發現 NVDA 顯示的編輯游標位置時常不正確，例如總是比實際的游標位置慢一個字元，或是重覆報讀同一行的內容時，您也許可試著將此數值調高。
 </P>
+<A NAME="ReportTransparentColors"></A>
+<H5>讀出色彩的透明度</H5>
+<P>
+此選項可在色彩是透明時讀出來，這對於附加元件/appModule 的開發人員收集資訊以改善第三方應用程式的使用者體驗非常有用。
+一些 GDI 應用程式會用背景顏色來強調文字，NVDA (透過 display model) 會嘗試讀出這種色彩。
+在某些情況下，文字背景可能是完全透明的，文字直接覆蓋在其他 GUI 元素上。
+對於幾個過去流行的 GUI API，文字可能會以透明背景呈現，但在視覺上背景顏色是準確的。
+</P>
 <A NAME="AdvancedSettingsDebugLoggingCategories"></A>
 <H5>偵錯紀錄類別</H5>
 <P>
 此清單中的核取方塊，是用來讓您設定在偵錯紀錄中，需紀錄的特定訊息類別。
 選擇這些紀錄選項會導致效能降低及更大的事件紀錄檔。
 建議僅在遵照 NVDA 開發者的指示，才將這些選項啟用，例如要針對點顯器驅動程式異常時進行偵錯。
+</P>
+<A NAME="PlayErrorSound"></A>
+<H5>紀錄錯誤時播放音效</H5>
+<P>
+此選項讓您設定 NVDA 是否在記錄錯誤時播放錯誤音效。
+選擇「僅限於測試版本」(預設) 時，讓 NVDA 僅在執行測試版本 (alpha 、 beta 或從原始程式碼執行) 時播放錯誤音效。
+選擇「開」，則不論您目前使用的 NVDA 版本為何，均會播放錯誤音效。
 </P>
 <A NAME="MiscSettings"></A>
 <H3>12.2. 其他設定</H3>
@@ -3951,24 +3988,25 @@ NVDA 允許您使用修改「組態設定檔」來達成前述的功能。
 這些控制都可以從開啟「檢視事件記錄」的功能表中執行。
 </P>
 <A NAME="SpeechViewer"></A>
-<H3>13.2. 檢視報讀內容</H3>
+<H3>13.2. 語音檢視器</H3>
 <P>
-對於有視力的軟體開發者，或是為了向明眼人示範 NVDA，「檢視報讀內容」的浮動視窗可以允許您看到所有目前 NVDA 報讀的文字。
+對於有視力的軟體開發者，或是為了向明眼人示範 NVDA，「語音檢視器」的浮動視窗可以允許您看到所有目前 NVDA 報讀的文字。
 </P>
 <P>
-要開啟「檢視報讀內容」，可以從 NVDA 功能表內的「工具」選項進入。
+要開啟語音檢視器，可以從 NVDA 功能表的工具」選項進入。
+若要關閉則將該選項取消勾選。
 </P>
 <P>
-檢視報讀內容視窗包含一個標記為「在啟動時顯示檢視報讀內容」的核取方塊。
-如果勾選，當開啟 NVDA 時，則檢視報讀內容也會開啟。
-「檢視報讀內容」開啟的視窗總是會嘗試維持與其處在關閉時，有相同的尺寸大小與位置。
+語音檢視器視窗包含一個「在啟動時顯示語音檢視器」的核取方塊，
+如果勾選，當開啟 NVDA 時，則語音檢視器也會開啟。
+語音檢視器開啟的視窗總是會嘗試維持與其處在關閉時，有相同的尺寸大小與位置。
 </P>
 <P>
-當開啟「檢視報讀內容」時，它會持續更新並顯示目前報讀的文字，
-但當移動滑鼠點擊或將系統焦點移到此浮動視窗內，則 NVDA 將停止更新，此時，您可很容易的選取或複製現有的內容。
+當開啟語音檢視器時，它會持續更新並顯示目前報讀的文字，
+但當移動滑鼠點擊或將系統焦點移到此浮動視窗內，則 NVDA 將停止更新，此時您能夠方便的選取或複製現有的內容。
 </P>
 <P>
-如果您想要在任何處切換開啟「檢視報讀內容」的手勢，您需要在 <A HREF="#InputGestures">輸入手勢</A> 對話框來新增設定。
+如果您想要隨時可開關語音檢視器，請在 <A HREF="#InputGestures">輸入手勢</A> 對話框指派手勢。
 </P>
 <A NAME="BrailleViewer"></A>
 <H3>13.3. 點字檢視器</H3>
@@ -4227,6 +4265,7 @@ Windows 10 及更新版本含有新的語音，一般稱之為「OneCore」或�
 <LI>HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille 系列
 <LI>Eurobraille Esys/Esytime/Iris 點顯器
 <LI>Nattiq nBraille 點顯器
+<LI>任何支援標準 HID 通訊協定的點顯器
 </UL>
 
 <P></P>
@@ -6672,6 +6711,105 @@ BRLTTY 並不支援NVDA背景自動偵側的功能。
 <TR>
 <TD>Route to braille cell</TD>
 <TD>route (bring cursor to character)</TD>
+</TR>
+</TABLE>
+
+<A NAME="HIDBraille"></A>
+<H3>15.20. 標準 HID 點顯器</H3>
+<P>
+這是由 Microsoft、Google、Apple 和包括 NV Access 在內的幾家輔助科技公司於 2018 年所達成的新標準 HID 點顯器規範的實驗性驅動程式，
+希望所有未來任何製造商製造的點顯器均使用此標準通訊協定，從而消除對特定點顯器驅動程式的需求。
+</P>
+<P>
+NVDA的自動點顯器偵測也會辨認支援此通訊協定的任何點顯器。
+</P>
+<P>
+以下是此點顯器目前的按鍵指派。
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>pan left or rocker up</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>pan right or rocker down</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>space + dot1</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>space + dot4</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing set 1|</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>up+down</TD>
+</TR>
+<TR>
+<TD>upArrow key</TD>
+<TD>joystick up</TD>
+</TR>
+<TR>
+<TD>downArrow key</TD>
+<TD>joystick down</TD>
+</TR>
+<TR>
+<TD>leftArrow key</TD>
+<TD>space+dot3 or joystick left</TD>
+</TR>
+<TR>
+<TD>rightArrow key</TD>
+<TD>space+dot6 or joystick right</TD>
+</TR>
+<TR>
+<TD>shift+tab key</TD>
+<TD>space+dot1+dot3</TD>
+</TR>
+<TR>
+<TD>tab key</TD>
+<TD>space+dot4+dot6</TD>
+</TR>
+<TR>
+<TD>alt key</TD>
+<TD>space+dot1+dot3+dot4 (space+m)</TD>
+</TR>
+<TR>
+<TD>escape key</TD>
+<TD>space+dot1+dot5 (space+e)</TD>
+</TR>
+<TR>
+<TD>enter key</TD>
+<TD>dot8 or joystick center</TD>
+</TR>
+<TR>
+<TD>windows key</TD>
+<TD>space+dot3+dot4</TD>
+</TR>
+<TR>
+<TD>alt+tab key</TD>
+<TD>space+dot2+dot3+dot4+dot5 (space+t)</TD>
+</TR>
+<TR>
+<TD>NVDA Menu</TD>
+<TD>space+dot1+dot3+dot4+dot5 (space+n)</TD>
+</TR>
+<TR>
+<TD>windows+d key (minimize all applications)</TD>
+<TD>space+dot1+dot4+dot5 (space+d)</TD>
+</TR>
+<TR>
+<TD>Say all</TD>
+<TD>space+dot1+dot2+dot3+dot4+dot5+dot6</TD>
 </TR>
 </TABLE>
 
