@@ -109,66 +109,66 @@ They are still available at the module level but are deprecated and to be remove
 <P></P>
 <H2>2021.2</H2>
 <P>
-This release introduces preliminary Windows 11 support.
-While Windows 11 is yet to be released, this release has been tested on preview versions of Windows 11.
-This includes an important fix for Screen Curtain (see important notes).
-The COM Registration Fixing Tool can now resolve more problems when running NVDA.
-There are updates to the synthesizer eSpeak and braille translator LibLouis.
-There are also various bug fixes and improvements, notably for braille support and Windows terminals, calculator, emoji panel and clipboard history.
+В этом выпуске представлена предварительная поддержка Windows 11.
+Хотя Windows 11 ещё не выпущена, этот выпуск был протестирован на её предварительных версиях.
+Он также включает важное исправление для функции затемнения экрана (см. Важное примечание).
+Средство восстановления COM-объектов теперь может решать больше проблем при запуске NVDA.
+Есть обновления синтезатора eSpeak и брайлевского транслятора LibLouis.
+Также есть различные исправления ошибок и улучшения, в частности, для поддержки брайля и терминальных программ Windows, калькулятора, панели эмодзи и истории буфера обмена.
 </P>
-<H3>Important notes</H3>
+<H3>Важное примечание</H3>
 <P>
-Due to a change in the Windows Magnification API, Screen Curtain had to be updated to support the newest versions of Windows.
-Use NVDA 2021.2 to activate Screen Curtain with Windows 10 21H2 (10.0.19044) or later.
-This includes Windows 10 Insiders and Windows 11.
-For security purposes, when using a new version of Windows, get visual confirmation that the Screen Curtain makes the screen entirely black.
+Из-за изменений в Windows Magnification API, функцию затемнения экрана пришлось обновить для поддержки новейших версий Windows.
+Используйте NVDA 2021.2 для активации функции затемнения экрана в Windows 10 21H2 (10.0.19044) или более поздних версиях.
+Сюда входят участники программы предварительной оценки Windows 10 и Windows 11.
+В целях безопасности при использовании новой версии Windows, получите визуальное подтверждение того, что затемнение экрана делает экран полностью чёрным.
 </P>
-<H3>New Features</H3>
+<H3>Новое</H3>
 <UL>
-<LI>Experimental support for ARIA annotations:
+<LI>Экспериментальная поддержка аннотаций ARIA, а именно:
   <UL>
-  <LI>adds a command to read a summary of details of an object with aria-details. (<A HREF="https://github.com/nvaccess/nvda/issues/12364">#12364</A>)
-  <LI>adds an option in advanced preferences to report if an object has details in browse mode. (<A HREF="https://github.com/nvaccess/nvda/issues/12439">#12439</A>) 
+  <LI>Добавлена команда для чтения сводки деталей объекта с aria-details. (<A HREF="https://github.com/nvaccess/nvda/issues/12364">#12364</A>)
+  <LI>В категорию настроек «Дополнительно» добавлен флажок «Сообщать наличие дополнительных подробностей в режиме обзора». (<A HREF="https://github.com/nvaccess/nvda/issues/12439">#12439</A>)
   </UL>
-<LI>In Windows 10 Version 1909 and later (including Windows 11), NVDA will announce suggestion count when performing searches in File Explorer. (<A HREF="https://github.com/nvaccess/nvda/issues/10341">#10341</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12628">#12628</A>)
-<LI>In Microsoft Word, NVDA now announces the result of indent and hanging indent shortcuts when executed. (<A HREF="https://github.com/nvaccess/nvda/issues/6269">#6269</A>)
+<LI>В Windows 10 версии 1909 и более поздних (включая Windows 11), NVDA объявляет количество предложений при выполнении поиска в проводнике. (<A HREF="https://github.com/nvaccess/nvda/issues/10341">#10341</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12628">#12628</A>)
+<LI>В Microsoft Word NVDA теперь объявляет результат использования горячих клавиш отступов и висячих отступов при выполнении соответствующих команд. (<A HREF="https://github.com/nvaccess/nvda/issues/6269">#6269</A>)
 </UL>
 
 <P></P>
-<H3>Changes</H3>
+<H3>Изменения</H3>
 <UL>
-<LI>Espeak-ng has been updated to 1.51-dev commit <CODE>ab11439b18238b7a08b965d1d5a6ef31cbb05cbb</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12449">#12449</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12202">#12202</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12280">#12280</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12568">#12568</A>)
-<LI>If article is enabled in the user preferences for document formatting, NVDA announces "article" after the content. (<A HREF="https://github.com/nvaccess/nvda/issues/11103">#11103</A>)
-<LI>Updated liblouis braille translator to <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.18.0">3.18.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/12526">#12526</A>)
+<LI>Синтезатор eSpeak-NG обновлён до версии 1.51-dev (коммит <CODE>ab11439b18238b7a08b965d1d5a6ef31cbb05cbb</CODE>). (<A HREF="https://github.com/nvaccess/nvda/issues/12449">#12449</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12202">#12202</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12280">#12280</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12568">#12568</A>)
+<LI>Если чтение статей включено в настройках форматирования документа (флажок «Статьи»), то NVDA объявляет «статья» после произнесения содержимого соответствующей области, а не перед, как было раньше. (<A HREF="https://github.com/nvaccess/nvda/issues/11103">#11103</A>)
+<LI>Брайлевский транслятор Liblouis обновлён до версии <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.18.0">3.18.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/12526">#12526</A>)
   <UL>
-  <LI>New braille tables: Bulgarian grade 1, Burmese grade 1, Burmese grade 2, Kazakh grade 1, Khmer grade 1, Northern Kurdish grade 0, Sepedi grade 1, Sepedi grade 2, Sesotho grade 1, Sesotho grade 2, Setswana grade 1, Setswana grade 2, Tatar grade 1, Vietnamese grade 0, Vietnamese grade 2, Southern Vietnamese grade 1, Xhosa grade 1, Xhosa grade 2, Yakut grade 1, Zulu grade 1, Zulu grade 2
+  <LI>Добавлено большое число новых трансляционных таблиц.
   </UL>
-<LI>Windows 10 OCR was renamed to Windows OCR. (<A HREF="https://github.com/nvaccess/nvda/issues/12690">#12690</A>)
+<LI>Название компонента Windows 10 OCR было изменено на Windows OCR. (<A HREF="https://github.com/nvaccess/nvda/issues/12690">#12690</A>)
 </UL>
 
 <P></P>
-<H3>Bug Fixes</H3>
+<H3>Исправления</H3>
 <UL>
-<LI>In Windows 10 Calculator, NVDA will announce calculator expressions on a braille display. (<A HREF="https://github.com/nvaccess/nvda/issues/12268">#12268</A>)
-<LI>In terminal programs on Windows 10 version 1607 and later, when inserting or deleting characters in the middle of a line, the characters to the right of the caret are no longer read out. (<A HREF="https://github.com/nvaccess/nvda/issues/3200">#3200</A>)
+<LI>В калькуляторе Windows 10 NVDA теперь выводит выражения калькулятора на брайлевский дисплей. (<A HREF="https://github.com/nvaccess/nvda/issues/12268">#12268</A>)
+<LI>В терминальных программах в Windows 10 версии 1607 и более поздних при вставке или удалении символов в середине строки символы справа от каретки больше не считываются. (<A HREF="https://github.com/nvaccess/nvda/issues/3200">#3200</A>)
   <UL>
-  <LI>Diff Match Patch now enabled by default. (<A HREF="https://github.com/nvaccess/nvda/issues/12485">#12485</A>)
+  <LI>Diff Match Patch включён по умолчанию. (<A HREF="https://github.com/nvaccess/nvda/issues/12485">#12485</A>)
   </UL>
-<LI>The braille input works properly with the following contracted tables: Arabic grade 2, Spanish grade 2, Urdu grade 2, Chinese (China, Mandarin) grade 2. (<A HREF="https://github.com/nvaccess/nvda/issues/12541">#12541</A>)
-<LI>The COM Registration Fixing Tool now resolves more issues, especially on 64 bit Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/12560">#12560</A>)
-<LI>Improvements to button handling for the Seika Notetaker braille device from Nippon Telesoft. (<A HREF="https://github.com/nvaccess/nvda/issues/12598">#12598</A>)
-<LI>Improvements to announcing the Windows emoji panel and clipboard history. (<A HREF="https://github.com/nvaccess/nvda/issues/11485">#11485</A>)
-<LI>Updated the Bengali alphabet character descriptions. (<A HREF="https://github.com/nvaccess/nvda/issues/12502">#12502</A>)
-<LI>NVDA exits safely when a new process is started. (<A HREF="https://github.com/nvaccess/nvda/issues/12605">#12605</A>)
-<LI>Reselecting the Handy Tech braille display driver from the Select Braille Display dialog no longer causes errors. (<A HREF="https://github.com/nvaccess/nvda/issues/12618">#12618</A>)
-<LI>Windows version 10.0.22000 or later is recognized as Windows 11, not Windows 10. (<A HREF="https://github.com/nvaccess/nvda/issues/12626">#12626</A>)
-<LI>Screen curtain support has been fixed and tested for Windows versions up until 10.0.22000. (<A HREF="https://github.com/nvaccess/nvda/issues/12684">#12684</A>)
-<LI>If no results are shown when filtering input gestures, the input gesture configuration dialog continues to work as expected. (<A HREF="https://github.com/nvaccess/nvda/issues/12673">#12673</A>)
-<LI>Fixed a bug where the first menu item of a submenu is not announced in some contexts. (<A HREF="https://github.com/nvaccess/nvda/issues/12624">#12624</A>)
+<LI>Брайлевский ввод правильно работает со следующими сокращёнными таблицами второй ступени: арабский, испанский, урду, китайский (мандаринский диалект). (<A HREF="https://github.com/nvaccess/nvda/issues/12541">#12541</A>)
+<LI>Средство восстановления COM-объектов теперь решает больше проблем, особенно в 64-разрядной Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/12560">#12560</A>)
+<LI>Улучшения в работе с кнопками на брайлевском устройстве Seika Notetaker от Nippon Telesoft. (<A HREF="https://github.com/nvaccess/nvda/issues/12598">#12598</A>)
+<LI>Улучшения в оповещениях панели эмодзи Windows и истории буфера обмена. (<A HREF="https://github.com/nvaccess/nvda/issues/11485">#11485</A>)
+<LI>Обновлены описания символов бенгальского алфавита. (<A HREF="https://github.com/nvaccess/nvda/issues/12502">#12502</A>)
+<LI>NVDA безопасно завершает работу при запуске нового процесса. (<A HREF="https://github.com/nvaccess/nvda/issues/12605">#12605</A>)
+<LI>Повторный выбор драйвера брайлевского дисплея Handy Tech в диалоговом окне «Выбор брайлевского дисплея» больше не вызывает ошибок. (<A HREF="https://github.com/nvaccess/nvda/issues/12618">#12618</A>)
+<LI>Windows версии 10.0.22000 или более поздней распознаётся как Windows 11, а не Windows 10. (<A HREF="https://github.com/nvaccess/nvda/issues/12626">#12626</A>)
+<LI>Поддержка затемнения экрана была исправлена и протестирована для версий Windows до 10.0.22000. (<A HREF="https://github.com/nvaccess/nvda/issues/12684">#12684</A>)
+<LI>Если при фильтрации жестов ввода не отображаются результаты, диалоговое окно настройки жестов ввода продолжает работать должным образом. (<A HREF="https://github.com/nvaccess/nvda/issues/12673">#12673</A>)
+<LI>Исправлена ошибка, из-за которой в некоторых ситуациях не объявлялся первый пункт подменю. (<A HREF="https://github.com/nvaccess/nvda/issues/12624">#12624</A>)
 </UL>
 
 <P></P>
-<H3>Changes for Developers</H3>
+<H3>Изменения для разработчиков</H3>
 <UL>
 <LI><CODE>characterProcessing.SYMLVL_*</CODE> constants should be replaced using their equivalent <CODE>SymbolLevel.*</CODE> before 2022.1. (<A HREF="https://github.com/nvaccess/nvda/issues/11856">#11856</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12636">#12636</A>)
 <LI><CODE>controlTypes</CODE> has been split up into various submodules, symbols marked for deprecation must be replaced before 2022.1. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
