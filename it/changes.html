@@ -45,37 +45,37 @@ Gli utenti interessati dovranno scaricare questo aggiornamento manualmente.
 <H3>Cambiamenti</H3>
 <UL>
 <LI>Espeak-ng è stata aggiornata alla versione 1.51-dev commit <CODE>74068b91bcd578bd7030a7a6cde2085114b79b44</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12665">#12665</A>)
-<LI>NVDA will default to eSpeak if no installed OneCore voices support the NVDA preferred language. (<A HREF="https://github.com/nvaccess/nvda/issues/10451">#10451</A>)
-<LI>If OneCore voices consistently fail to speak, revert to eSpeak as a synthesizer. (<A HREF="https://github.com/nvaccess/nvda/issues/11544">#11544</A>)
-<LI>When reading status bar with <CODE>NVDA+end</CODE>, the review cursor is no longer moved to its location.
-If you need this functionality please assign a gesture to the appropriate script in the Object Navigation category in the Input Gestures dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/8600">#8600</A>)
-<LI>When opening a settings dialog which is already open, NVDA sets focus on the existing dialog rather than raise an error. (<A HREF="https://github.com/nvaccess/nvda/issues/5383">#5383</A>)
-<LI>Updated liblouis braille translator to <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.19.0">3.19.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/12810">#12810</A>)
+<LI>NVDA utilizzerà ESpeak nel caso in cui nessuna voce OneCore installata sia in grado di parlare nella lingua scelta in NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/10451">#10451</A>)
+<LI>Se le voci OneCore dovessero smettere di parlare, verrà caricata automaticamente la sintesi Espeak. (<A HREF="https://github.com/nvaccess/nvda/issues/11544">#11544</A>)
+<LI>Quando si legge la barra di stato con <CODE>NVDA+fine</CODE>, il cursore di controllo non sarà più spostato in quella posizione.
+Se si necessita di questa funzione si prega di assegnare un gesto allo script appropriato nella categoria navigazione ad oggetti della finestra di dialogo tasti e gesti di immissione. (<A HREF="https://github.com/nvaccess/nvda/issues/8600">#8600</A>)
+<LI>Se si apre la finestra di dialogo delle impostazioni ed essa risulta già aperta, NVDA imposta il focus su tale finestra di dialogo piuttosto che provocare un errore. (<A HREF="https://github.com/nvaccess/nvda/issues/5383">#5383</A>)
+<LI>Aggiornato liblouis braille translator alla versione <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.19.0">3.19.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/12810">#12810</A>)
   <UL>
-  <LI>New braille tables: Russian grade 1, Tshivenda grade 1, Tshivenda grade 2
+  <LI>Nuove tabelle braille: russo grado 1, Tshivenda grado 1, Tshivenda grado 2
   </UL>
-<LI>Instead of "marked content" or "mrkd", "highlight" or "hlght" will be announced for speech and braille respectively. (<A HREF="https://github.com/nvaccess/nvda/issues/12892">#12892</A>)
-<LI>NVDA will no longer attempt to exit when dialogs are awaiting a required action (eg Confirm/Cancel). (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>)
+<LI>Anziché annunciare "contenuto contrassegnato" o "mrkd", ora viene usata la dicitura "evidenziato" o "hlght". (<A HREF="https://github.com/nvaccess/nvda/issues/12892">#12892</A>)
+<LI>NVDA non tenterà più di uscire quando le finestre di dialogo sono in attesa di un'azione richiesta (es. Conferma/Annulla). (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>)
 </UL>
 
 <P></P>
-<H3>Bug Fixes</H3>
+<H3>Bug Corretti</H3>
 <UL>
-<LI>Tracking keyboard modifiers (such as Control, or Insert) is more robust when watchdog is recovering. (<A HREF="https://github.com/nvaccess/nvda/issues/12609">#12609</A>)
-<LI>It is once again possible to check for NVDA updates on certain systems; e.g. clean Windows installs. (<A HREF="https://github.com/nvaccess/nvda/issues/12729">#12729</A>)
-<LI>NVDA correctly announces blank table cells in Microsoft Word when using UI automation. (<A HREF="https://github.com/nvaccess/nvda/issues/11043">#11043</A>)
-<LI>In ARIA data grid cells on the web, the Escape key will now be passed through to the grid and no longer turn off focus mode unconditionally. (<A HREF="https://github.com/nvaccess/nvda/issues/12413">#12413</A>)
-<LI>When reading a header cell of a table in Chrome, fix the column name being announced twice. (<A HREF="https://github.com/nvaccess/nvda/issues/10840">#10840</A>)
-<LI>NVDA no longer reports a numerical value for UIA sliders that have a textual representation of their value defined. (UIA ValuePattern is now preferred over RangeValuePattern). (<A HREF="https://github.com/nvaccess/nvda/issues/12724">#12724</A>)
-<LI>NVDA no longer treats the value of UIA sliders as always percentage based.
-<LI>Reporting the location of a cell in Microsoft Excel when accessed via UI Automation again works correctly on Windows 11. (<A HREF="https://github.com/nvaccess/nvda/issues/12782">#12782</A>)
-<LI>NVDA no longer sets invalid Python locales. (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
-<LI>If a disabled addon is uninstalled and then re-installed it is re-enabled. (<A HREF="https://github.com/nvaccess/nvda/issues/12792">#12792</A>)
-<LI>Fixed bugs around updating and removing addons where the addon folder has been renamed or has files opened. (<A HREF="https://github.com/nvaccess/nvda/issues/12792">#12792</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12629">#12629</A>)
-<LI>When using UI Automation to access Microsoft Excel spreadsheet controls, NVDA no longer redundantly announces when a single cell is selected. (<A HREF="https://github.com/nvaccess/nvda/issues/12530">#12530</A>)
-<LI>More dialog text is automatically read in LibreOffice Writer, such as in confirmation dialogs. (<A HREF="https://github.com/nvaccess/nvda/issues/11687">#11687</A>)
-<LI>Reading / navigating with browse mode in Microsoft Word via UI automation now ensures the document is always scrolled so that the current browse mode position is visible, and that the caret position in focus mode correctly reflects the browse mode position. (<A HREF="https://github.com/nvaccess/nvda/issues/9611">#9611</A>)
-<LI>When performing Say all in Microsoft Word via UI automation, the document is now automatically scrolled, and the caret position is correctly updated. (<A HREF="https://github.com/nvaccess/nvda/issues/9611">#9611</A>)
+<LI>Il monitoraggio dei tasti modificatori (come Control, o Insert) risulta più affidabile quando viene ripristinato il watchdog. (<A HREF="https://github.com/nvaccess/nvda/issues/12609">#12609</A>)
+<LI>Ora risulta nuovamente possibile controllare se vi sono aggiornamenti di NVDA su alcuni sistemi; ad esempio installazioni pulite di Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/12729">#12729</A>)
+<LI>NVDA rileva correttamente le celle nelle tabelle vuote in Microsoft Word quando si usa UI automation. (<A HREF="https://github.com/nvaccess/nvda/issues/11043">#11043</A>)
+<LI>Nel web, nelle celle con griglie di dati ARIA, il tasto Escape avrà effetto sulla griglia e non disattiverà più la modalità focus. (<A HREF="https://github.com/nvaccess/nvda/issues/12413">#12413</A>)
+<LI>Durante la lettura di una cella di intestazione di una tabella in Chrome, corretto un problema che provocava l'annuncio del nome della colonna due volte. (<A HREF="https://github.com/nvaccess/nvda/issues/10840">#10840</A>)
+<LI>NVDA non annuncia più un valore numerico per i cursori di avanzamento UIA che hanno una rappresentazione testuale del loro valore. (Viene quindi preferita UIA ValuePattern rispetto a RangeValuePattern). (<A HREF="https://github.com/nvaccess/nvda/issues/12724">#12724</A>)
+<LI>NVDA non considera più il valore dei cursori di avanzamento UIA sempre basati su percentuale.
+<LI>Funziona nuovamente l'annuncio della posizione di una cella in Microsoft Excel when ci si serve di UI Automation in Windows 11. (<A HREF="https://github.com/nvaccess/nvda/issues/12782">#12782</A>)
+<LI>NVDA non imposta più localizzazioni Python non valide. (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
+<LI>Se un componente aggiuntivo disabilitato viene disinstallato e poi reinstallato, esso sarà riabilitato. (<A HREF="https://github.com/nvaccess/nvda/issues/12792">#12792</A>)
+<LI>Risolti gli errori sulla rimozione e l'aggiornamento dei componenti aggiuntivi nel caso in cui la cartella degli addon sia stata rinominata o contenga file aperti. (<A HREF="https://github.com/nvaccess/nvda/issues/12792">#12792</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12629">#12629</A>)
+<LI>Quando si utilizza UI Automation per accedere ai controlli dei fogli di lavoro in Microsoft Excel, NVDA non annuncerà più continuamente che una cella è stata selezionata. (<A HREF="https://github.com/nvaccess/nvda/issues/12530">#12530</A>)
+<LI>In LibreOffice Writer NVDA è in grado di annunciare una maggiore quantità di testo nelle finestre di di conferma. (<A HREF="https://github.com/nvaccess/nvda/issues/11687">#11687</A>)
+<LI>La lettura e l'esplorazione in Microsoft Word nella modalità navigazione via UI automation ora gestisce correttamente lo scrolling del documento in modo che la posizione del cursore virtuale risulti sempre visibile, e che la posizione del cursore di sistema coincida con quella di navigazione (<A HREF="https://github.com/nvaccess/nvda/issues/9611">#9611</A>)
+<LI>Quando si utilizza la modalità dire tutto in Microsoft Word tramite UI Automation, il documento viene ora automaticamente fatto scorrere e la posizione del cursore viene aggiornata correttamente. (<A HREF="https://github.com/nvaccess/nvda/issues/9611">#9611</A>)
 <LI>When reading emails in Outlook and NVDA is accessing the message with UI Automation, certain tables are now marked as layout tables, which means they will no longer be reported by default. (<A HREF="https://github.com/nvaccess/nvda/issues/11430">#11430</A>)
 <LI>A rare error when changing audio devices has been fixed. (<A HREF="https://github.com/nvaccess/nvda/issues/12620">#12620</A>)
 <LI>Input with literary braille tables should behave more reliably when in edit fields. (<A HREF="https://github.com/nvaccess/nvda/issues/12667">#12667</A>)
