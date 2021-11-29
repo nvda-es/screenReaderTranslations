@@ -79,16 +79,16 @@ NVDA 会请求 Windows 更新安全证书，以避免日后再次出现该错误
 
 
 == 插件以及NVDA核心开发者需要了解的变动 ==
-- Building NVDA now requires Visual Studio 2019 16.10.4 or later.
-To match the production build environment, update Visual Studio to keep in sync with the [current version AppVeyor is using https://www.appveyor.com/docs/windows-images-software/#visual-studio-2019]. (#12728)
-- ``NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable`` has been deprecated for removal in 2022.1. (#12660)
-  - Instead use ``apiLevel`` (see the comments at ``_UIAConstants.WinConsoleAPILevel`` for details).
+- 构建 NVDA 现在需要 Visual Studio 2019 16.10.4 或更新版本。
+要想匹配产品的开发环境， 请与 [AppVeyor 当前使用的 Visual Studio 最新版本 https://www.appveyor.com/docs/windows-images-software/#visual-studio-2019]更新同步。   (#12728)
+- 不在推荐使用 ``NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable`` ，且将在  版本 2022.1 时移除。 (#12660)
+  - 可使用 ``apiLevel`` 代替(请查看 ``_UIAConstants.WinConsoleAPILevel`` 的评论获取详情)。
   -
-- Transparency of text background color sourced from GDI applications (via the display model), is now exposed for add-ons or appModules. (#12658)
-- ``LOCALE_SLANGUAGE``, ``LOCALE_SLIST`` and ``LOCALE_SLANGDISPLAYNAME`` are moved to the ``LOCALE`` enum in languageHandler.
-They are still available at the module level but are deprecated and to be removed in NVDA 2022.1. (#12753)
-- The usage of functions ``addonHandler.loadState`` and ``addonHandler.saveState`` should be replaced with their equivalents ``addonHandler.state.save`` and ``addonHandler.state.load`` before 2022.1. (#12792)
-- Braille output can now be checked in system tests. (#12917)
+- GDI 应用程序的文本背景颜色透明度 (使用 display 模块查看)现可暴露在插件的模块中。 (#12658)
+- languageHandler 中的 ``LOCALE_SLANGUAGE``、 ``LOCALE_SLIST`` 和 ``LOCALE_SLANGDISPLAYNAME``已迁移到  ``LOCALE`` 条目。
+他们依然可用，但将在 2022.1中删除。 (#12753)
+- 函数 ``addonHandler.loadState`` 和 ``addonHandler.saveState`` 须在2022.1以前用其对应的 ``addonHandler.state.save`` 和 ``addonHandler.state.load`` 代替。 (#12792)
+-   现在可在系统测试中检测盲文输出。 (#12917)
 -
 
 
@@ -117,7 +117,7 @@ NVDA 中的COM 注册修复工具现在能够解决更多的系统问题。
   - “高级”选项中增加“在浏览模式下读出对象的详细信息”的选项。 (#12439) 
   -
 - 在 Windows 10 版本 1909 或其后更新 (包括 Windows 11)中， NVDA 在文件浏览器搜索时将朗读搜索建议数量。 (#10341, #12628)
-- 在Microsoft Word中， 在执行缩进或手型缩进命令时，NVDA 将朗读其结果。  (#6269)
+- 在Microsoft Word中， 在执行缩进或手型缩进命令时，NVDA 将朗读该快捷方式。  (#6269)
 -
 
 
