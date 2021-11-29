@@ -35,35 +35,35 @@ Gli utenti interessati dovranno scaricare questo aggiornamento manualmente.
 
 == Cambiamenti ==
 - Espeak-ng è stata aggiornata alla versione 1.51-dev commit ``74068b91bcd578bd7030a7a6cde2085114b79b44``. (#12665)
-- NVDA will default to eSpeak if no installed OneCore voices support the NVDA preferred language. (#10451)
-- If OneCore voices consistently fail to speak, revert to eSpeak as a synthesizer. (#11544)
-- When reading status bar with ``NVDA+end``, the review cursor is no longer moved to its location.
-If you need this functionality please assign a gesture to the appropriate script in the Object Navigation category in the Input Gestures dialog. (#8600)
-- When opening a settings dialog which is already open, NVDA sets focus on the existing dialog rather than raise an error. (#5383)
-- Updated liblouis braille translator to [3.19.0 https://github.com/liblouis/liblouis/releases/tag/v3.19.0]. (#12810)
-  - New braille tables: Russian grade 1, Tshivenda grade 1, Tshivenda grade 2
+- NVDA utilizzerà ESpeak nel caso in cui nessuna voce OneCore installata sia in grado di parlare nella lingua scelta in NVDA. (#10451)
+- Se le voci OneCore dovessero smettere di parlare, verrà caricata automaticamente la sintesi Espeak. (#11544)
+- Quando si legge la barra di stato con ``NVDA+fine``, il cursore di controllo non sarà più spostato in quella posizione.
+Se si necessita di questa funzione si prega di assegnare un gesto allo script appropriato nella categoria navigazione ad oggetti della finestra di dialogo tasti e gesti di immissione. (#8600)
+- Se si apre la finestra di dialogo delle impostazioni ed essa risulta già aperta, NVDA imposta il focus su tale finestra di dialogo piuttosto che provocare un errore. (#5383)
+- Aggiornato liblouis braille translator alla versione [3.19.0 https://github.com/liblouis/liblouis/releases/tag/v3.19.0]. (#12810)
+  - Nuove tabelle braille: russo grado 1, Tshivenda grado 1, Tshivenda grado 2
   -
-- Instead of "marked content" or "mrkd", "highlight" or "hlght" will be announced for speech and braille respectively. (#12892)
-- NVDA will no longer attempt to exit when dialogs are awaiting a required action (eg Confirm/Cancel). (#12984)
+- Anziché annunciare "contenuto contrassegnato" o "mrkd", ora viene usata la dicitura "evidenziato" o "hlght". (#12892)
+- NVDA non tenterà più di uscire quando le finestre di dialogo sono in attesa di un'azione richiesta (es. Conferma/Annulla). (#12984)
 -
 
 
-== Bug Fixes ==
-- Tracking keyboard modifiers (such as Control, or Insert) is more robust when watchdog is recovering. (#12609)
-- It is once again possible to check for NVDA updates on certain systems; e.g. clean Windows installs. (#12729)
-- NVDA correctly announces blank table cells in Microsoft Word when using UI automation. (#11043)
-- In ARIA data grid cells on the web, the Escape key will now be passed through to the grid and no longer turn off focus mode unconditionally. (#12413)
-- When reading a header cell of a table in Chrome, fix the column name being announced twice. (#10840)
-- NVDA no longer reports a numerical value for UIA sliders that have a textual representation of their value defined. (UIA ValuePattern is now preferred over RangeValuePattern). (#12724)
-- NVDA no longer treats the value of UIA sliders as always percentage based.
-- Reporting the location of a cell in Microsoft Excel when accessed via UI Automation again works correctly on Windows 11. (#12782)
-- NVDA no longer sets invalid Python locales. (#12753)
-- If a disabled addon is uninstalled and then re-installed it is re-enabled. (#12792)
-- Fixed bugs around updating and removing addons where the addon folder has been renamed or has files opened. (#12792, #12629)
-- When using UI Automation to access Microsoft Excel spreadsheet controls, NVDA no longer redundantly announces when a single cell is selected. (#12530)
-- More dialog text is automatically read in LibreOffice Writer, such as in confirmation dialogs. (#11687)
-- Reading / navigating with browse mode in Microsoft Word via UI automation now ensures the document is always scrolled so that the current browse mode position is visible, and that the caret position in focus mode correctly reflects the browse mode position. (#9611)
-- When performing Say all in Microsoft Word via UI automation, the document is now automatically scrolled, and the caret position is correctly updated. (#9611)
+== Bug Corretti ==
+- Il monitoraggio dei tasti modificatori (come Control, o Insert) risulta più affidabile quando viene ripristinato il watchdog. (#12609)
+- Ora risulta nuovamente possibile controllare se vi sono aggiornamenti di NVDA su alcuni sistemi; ad esempio installazioni pulite di Windows. (#12729)
+- NVDA rileva correttamente le celle nelle tabelle vuote in Microsoft Word quando si usa UI automation. (#11043)
+- Nel web, nelle celle con griglie di dati ARIA, il tasto Escape avrà effetto sulla griglia e non disattiverà più la modalità focus. (#12413)
+- Durante la lettura di una cella di intestazione di una tabella in Chrome, corretto un problema che provocava l'annuncio del nome della colonna due volte. (#10840)
+- NVDA non annuncia più un valore numerico per i cursori di avanzamento UIA che hanno una rappresentazione testuale del loro valore. (Viene quindi preferita UIA ValuePattern rispetto a RangeValuePattern). (#12724)
+- NVDA non considera più il valore dei cursori di avanzamento UIA sempre basati su percentuale.
+- Funziona nuovamente l'annuncio della posizione di una cella in Microsoft Excel when ci si serve di UI Automation in Windows 11. (#12782)
+- NVDA non imposta più localizzazioni Python non valide. (#12753)
+- Se un componente aggiuntivo disabilitato viene disinstallato e poi reinstallato, esso sarà riabilitato. (#12792)
+- Risolti gli errori sulla rimozione e l'aggiornamento dei componenti aggiuntivi nel caso in cui la cartella degli addon sia stata rinominata o contenga file aperti. (#12792, #12629)
+- Quando si utilizza UI Automation per accedere ai controlli dei fogli di lavoro in Microsoft Excel, NVDA non annuncerà più continuamente che una cella è stata selezionata. (#12530)
+- In LibreOffice Writer NVDA è in grado di annunciare una maggiore quantità di testo nelle finestre di di conferma. (#11687)
+- La lettura e l'esplorazione in Microsoft Word nella modalità navigazione via UI automation ora gestisce correttamente lo scrolling del documento in modo che la posizione del cursore virtuale risulti sempre visibile, e che la posizione del cursore di sistema coincida con quella di navigazione (#9611)
+- Quando si utilizza la modalità dire tutto in Microsoft Word tramite UI Automation, il documento viene ora automaticamente fatto scorrere e la posizione del cursore viene aggiornata correttamente. (#9611)
 - When reading emails in Outlook and NVDA is accessing the message with UI Automation, certain tables are now marked as layout tables, which means they will no longer be reported by default. (#11430)
 - A rare error when changing audio devices has been fixed. (#12620)
 - Input with literary braille tables should behave more reliably when in edit fields. (#12667)
