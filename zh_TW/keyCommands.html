@@ -1,926 +1,3269 @@
-﻿NVDA NVDA_VERSION 指令快速參考
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="http://txt2tags.sf.net">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<TITLE>NVDA 2021.3-dev 指令快速參考</TITLE>
+</HEAD><BODY BGCOLOR="white" TEXT="black">
+<P ALIGN="center"><CENTER><H1>NVDA 2021.3-dev 指令快速參考</H1>
+<FONT SIZE="4">
+</FONT></CENTER>
 
-
-%!includeconf: ../global.t2tconf
-
-= 開始使用 NVDA =[GettingStartedWithNVDA]
-
-== NVDA 觸控手勢 ==[NVDATouchGestures]
-
+<A NAME="GettingStartedWithNVDA"></A>
+<H2>開始使用 NVDA</H2>
+<A NAME="NVDATouchGestures"></A>
+<H3>NVDA 觸控手勢</H3>
+<P>
 要切換觸控互動支援，按 NVDA+CtrL+Alt+T。
-
-=== 觸控模式 ===[TouchModes]
-
+</P>
+<A NAME="TouchModes"></A>
+<H4>觸控模式</H4>
+<P>
 若要切換啟用觸控模式，使用三根手指點擊一下。
+</P>
+<A NAME="BasicNVDACommands"></A>
+<H3>基本按鍵指令</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>觸控</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>啟動或重新啟動 NVDA</TD>
+<TD>Ctrl+Alt+N</TD>
+<TD>Ctrl+Alt+N</TD>
+<TD>無</TD>
+<TD>若在安裝 NVDA 時有啟用此快速鍵選項，可以用它來啟動或重新開啟桌面上的 NVDA。因為它是一個 Windows 所指定的快速鍵，因此您無法在輸入手勢對話框中進行更改。</TD>
+</TR>
+<TR>
+<TD>停止報讀</TD>
+<TD>Ctrl</TD>
+<TD>control</TD>
+<TD>雙指點選</TD>
+<TD>立即停止報讀。</TD>
+</TR>
+<TR>
+<TD>暫停/繼續報讀</TD>
+<TD>Shift</TD>
+<TD>shift</TD>
+<TD>無</TD>
+<TD>立即暫停報讀，再按一次會從原來暫停的地方繼續報讀(若使用的語音合成器有支援的話)。</TD>
+</TR>
+<TR>
+<TD>NVDA 功能表</TD>
+<TD>NVDA+n</TD>
+<TD>NVDA+n</TD>
+<TD>雙指雙重點選</TD>
+<TD>開啟 NVDA 功能表以存取偏好設定、工具及輔助說明等。</TD>
+</TR>
+<TR>
+<TD>切換語音模式</TD>
+<TD>NVDA+s</TD>
+<TD>NVDA+s</TD>
+<TD>無</TD>
+<TD>每按鍵一次，NVDA會在報讀、靜音及發出逼逼聲三個模式間依序循環切換。</TD>
+</TR>
+<TR>
+<TD>按鍵指令說明模式</TD>
+<TD>NVDA+1</TD>
+<TD>NVDA+1</TD>
+<TD>無</TD>
+<TD>在這個模式下，按下任何按鍵組合，即會報讀出相關的 NVDA 的按鍵名稱與功能說明。</TD>
+</TR>
+<TR>
+<TD>關閉 NVDA</TD>
+<TD>NVDA+q</TD>
+<TD>NVDA+q</TD>
+<TD>無</TD>
+<TD>關閉 NVDA。</TD>
+</TR>
+<TR>
+<TD>跳過下一個 NVDA 按鍵指令</TD>
+<TD>NVDA+F2</TD>
+<TD>NVDA+F2</TD>
+<TD>無</TD>
+<TD>告知 NVDA 忽略執行下一個 NVDA 的組合按鍵，即使此指令通常是 NVDA 的一個按鍵指令。</TD>
+</TR>
+<TR>
+<TD>切換目前所在程式的 NVDA 睡眠狀態</TD>
+<TD>NVDA+shift+s</TD>
+<TD>NVDA+shift+z</TD>
+<TD>無</TD>
+<TD>在睡眠模式下，目前所在程式的所有 NVDA 指令及語音、點字輸出都會被關閉。此功能可用於某些本身即具備語音功能的應用程式，再按一次這個指令則可回復到之前的狀態。</TD>
+</TR>
+</TABLE>
 
-== 基本按鍵指令 ==[BasicNVDACommands]
+<A NAME="ReportingSystemInformation"></A>
+<H3>報讀系統資訊</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>讀出日期或時間</TD>
+<TD>NVDA+F12</TD>
+<TD>按一次讀出目前時間，連按兩次讀出目前日期。</TD>
+</TR>
+<TR>
+<TD>讀出電池狀態</TD>
+<TD>NVDA+Shift+b</TD>
+<TD>適用在筆記型電腦，讀出系統目前電池的可用電量和是否接通交流電源。</TD>
+</TR>
+<TR>
+<TD>讀出剪貼簿文字內容</TD>
+<TD>NVDA+c</TD>
+<TD>讀出剪貼簿內的文字內容，如果剪貼簿的文字太多雖然程式不會一一都說出來，但會讓您知道共有多少個字元。</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 觸控 | 說明 |
-| 啟動或重新啟動 NVDA | Ctrl+Alt+N | Ctrl+Alt+N | 無 | 若在安裝 NVDA 時有啟用此快速鍵選項，可以用它來啟動或重新開啟桌面上的 NVDA。因為它是一個 Windows 所指定的快速鍵，因此您無法在輸入手勢對話框中進行更改。 |
-| 停止報讀 | Ctrl | control | 雙指點選 | 立即停止報讀。 |
-| 暫停/繼續報讀 | Shift | shift | 無 | 立即暫停報讀，再按一次會從原來暫停的地方繼續報讀(若使用的語音合成器有支援的話)。 |
-| NVDA 功能表 | NVDA+n | NVDA+n | 雙指雙重點選 | 開啟 NVDA 功能表以存取偏好設定、工具及輔助說明等。 |
-| 切換語音模式 | NVDA+s | NVDA+s | 無 | 每按鍵一次，NVDA會在報讀、靜音及發出逼逼聲三個模式間依序循環切換。 |
-| 按鍵指令說明模式 | NVDA+1 | NVDA+1 | 無 | 在這個模式下，按下任何按鍵組合，即會報讀出相關的 NVDA 的按鍵名稱與功能說明。 |
-| 關閉 NVDA | NVDA+q | NVDA+q | 無 | 關閉 NVDA。 |
-| 跳過下一個 NVDA 按鍵指令 | NVDA+F2 | NVDA+F2 | 無 | 告知 NVDA 忽略執行下一個 NVDA 的組合按鍵，即使此指令通常是 NVDA 的一個按鍵指令。 |
-| 切換目前所在程式的 NVDA 睡眠狀態 | NVDA+shift+s | NVDA+shift+z | 無 | 在睡眠模式下，目前所在程式的所有 NVDA 指令及語音、點字輸出都會被關閉。此功能可用於某些本身即具備語音功能的應用程式，再按一次這個指令則可回復到之前的狀態。 |
+<A NAME="NavigatingWithNVDA"></A>
+<H2>NVDA 導航</H2>
+<A NAME="SystemFocus"></A>
+<H3>系統焦點導航</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>讀出目前焦點</TD>
+<TD>NVDA+tab</TD>
+<TD>NVDA+tab</TD>
+<TD>讀出目前焦點所在的物件或控制項，連按兩次將拼讀其資訊。</TD>
+</TR>
+<TR>
+<TD>讀出視窗標題</TD>
+<TD>NVDA+t</TD>
+<TD>NVDA+t</TD>
+<TD>讀出目前作用中的視窗標題，連按兩下拼讀標題，連按三下複製標題到剪貼簿。</TD>
+</TR>
+<TR>
+<TD>讀出作用中的視窗內容</TD>
+<TD>NVDA+b</TD>
+<TD>NVDA+b</TD>
+<TD>讀出目前作用中視窗所有的控制項（尤其在對話框中很有用）。</TD>
+</TR>
+<TR>
+<TD>讀出狀態列</TD>
+<TD>NVDA+end</TD>
+<TD>NVDA+shift+end</TD>
+<TD>如果可讀取的話，讀出目前應用程式的狀態列內容，連按兩下拼讀其內容，連按三下複製其內容到剪貼簿。</TD>
+</TR>
+</TABLE>
 
-== 報讀系統資訊 ==[ReportingSystemInformation]
+<A NAME="SystemCaret"></A>
+<H3>系統游標導航</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>讀出全部</TD>
+<TD>NVDA+向下鍵</TD>
+<TD>NVDA+a</TD>
+<TD>從目前游標位置往下讀出直到結尾，游標會跟隨移動</TD>
+</TR>
+<TR>
+<TD>讀出游標所在行</TD>
+<TD>NVDA+向上鍵</TD>
+<TD>NVDA+l</TD>
+<TD>讀出游標所在行的內容，連按兩下會拼讀出這一行內容，連按三下讀出字詞解釋。</TD>
+</TR>
+<TR>
+<TD>讀出選取部分</TD>
+<TD>NVDA+Shift+向上鍵</TD>
+<TD>NVDA+Shift+s</TD>
+<TD>讀出目前已選取的文字。</TD>
+</TR>
+<TR>
+<TD>讀出文字格式</TD>
+<TD>NVDA+F</TD>
+<TD>NVDA+F</TD>
+<TD>讀出游標所在的文字格式，按兩下以瀏覽模式顯示資訊</TD>
+</TR>
+<TR>
+<TD>下一句| alt+向下鍵</TD>
+<TD>alt+向下鍵</TD>
+<TD>移動游標到下一個句子的開頭並讀出該句子 （僅支援 Microsoft Word 及 Outlook）</TD>
+</TR>
+<TR>
+<TD>上一句</TD>
+<TD>alt+向上鍵</TD>
+<TD>alt+向上鍵</TD>
+<TD>移動游標到上一個句子的開頭並讀出該句子 （僅支援 Microsoft Word 及 Outlook）</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 快速鍵 | 說明 |
-| 讀出日期或時間 | NVDA+F12 | 按一次讀出目前時間，連按兩次讀出目前日期。 |
-| 讀出電池狀態 | NVDA+Shift+b | 適用在筆記型電腦，讀出系統目前電池的可用電量和是否接通交流電源。 |
-| 讀出剪貼簿文字內容 | NVDA+c | 讀出剪貼簿內的文字內容，如果剪貼簿的文字太多雖然程式不會一一都說出來，但會讓您知道共有多少個字元。 |
-
-= NVDA 導航 =[NavigatingWithNVDA]
-
-== 系統焦點導航 ==[SystemFocus]
-
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
-| 讀出目前焦點 | NVDA+tab | NVDA+tab | 讀出目前焦點所在的物件或控制項，連按兩次將拼讀其資訊。 |
-| 讀出視窗標題 | NVDA+t | NVDA+t | 讀出目前作用中的視窗標題，連按兩下拼讀標題，連按三下複製標題到剪貼簿。 |
-| 讀出作用中的視窗內容 | NVDA+b | NVDA+b | 讀出目前作用中視窗所有的控制項（尤其在對話框中很有用）。 |
-| 讀出狀態列 | NVDA+end | NVDA+shift+end | 如果可讀取的話，讀出目前應用程式的狀態列內容，連按兩下拼讀其內容，連按三下複製其內容到剪貼簿。 |
-
-== 系統游標導航 ==[SystemCaret]
-
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
-| 讀出全部 | NVDA+向下鍵 | NVDA+a | 從目前游標位置往下讀出直到結尾，游標會跟隨移動 |
-| 讀出游標所在行 | NVDA+向上鍵 | NVDA+l | 讀出游標所在行的內容，連按兩下會拼讀出這一行內容，連按三下讀出字詞解釋。 |
-| 讀出選取部分 | NVDA+Shift+向上鍵 | NVDA+Shift+s | 讀出目前已選取的文字。 |
-| 讀出文字格式 | NVDA+F | NVDA+F | 讀出游標所在的文字格式，按兩下以瀏覽模式顯示資訊 |
-| 下一句| alt+向下鍵 | alt+向下鍵 | 移動游標到下一個句子的開頭並讀出該句子 （僅支援 Microsoft Word 及 Outlook） |
-| 上一句 | alt+向上鍵 | alt+向上鍵 | 移動游標到上一個句子的開頭並讀出該句子 （僅支援 Microsoft Word 及 Outlook） |
-
+<P>
 當系統游標在表格內時，也可使用下列的按鍵指令：
-|| 名稱 | 快速鍵 | 說明 |
-| 移到左一欄 | Ctrl+Alt+向左鍵 | 移動游標到左一欄（仍在同一列中）。 |
-| 移到右一欄 | Ctrl+Alt+向右鍵 | 移動游標到右一欄（仍在同一列中）。 |
-| 移到上一列 | Ctrl+Alt+向上鍵 | 移動游標到上一列（仍在同一欄中）。 |
-| 移到下一列 | Ctrl+Alt+向下鍵 | 移動游標到下一列（仍在同一欄中）。 |
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>移到左一欄</TD>
+<TD>Ctrl+Alt+向左鍵</TD>
+<TD>移動游標到左一欄（仍在同一列中）。</TD>
+</TR>
+<TR>
+<TD>移到右一欄</TD>
+<TD>Ctrl+Alt+向右鍵</TD>
+<TD>移動游標到右一欄（仍在同一列中）。</TD>
+</TR>
+<TR>
+<TD>移到上一列</TD>
+<TD>Ctrl+Alt+向上鍵</TD>
+<TD>移動游標到上一列（仍在同一欄中）。</TD>
+</TR>
+<TR>
+<TD>移到下一列</TD>
+<TD>Ctrl+Alt+向下鍵</TD>
+<TD>移動游標到下一列（仍在同一欄中）。</TD>
+</TR>
+</TABLE>
 
-== 物件導航 ==[ObjectNavigation]
+<A NAME="ObjectNavigation"></A>
+<H3>物件導航</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>觸控</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>讀出目前物件</TD>
+<TD>NVDA+數字鍵盤5</TD>
+<TD>NVDA+Shift+o</TD>
+<TD>無</TD>
+<TD>讀出目前所在物件，連按兩下拼讀物件資訊，連按三下複製物件名稱到剪貼簿。</TD>
+</TR>
+<TR>
+<TD>移至母物件</TD>
+<TD>NVDA+數字鍵盤8</TD>
+<TD>NVDA+Shift+向上鍵</TD>
+<TD>向上滑動（物件模式）</TD>
+<TD>移至目前物件的母物件（也就是包含此物件的容器）</TD>
+</TR>
+<TR>
+<TD>移至上一個物件</TD>
+<TD>NVDA+數字鍵盤4</TD>
+<TD>NVDA+Shift+向左鍵</TD>
+<TD>向左滑動（物件模式）</TD>
+<TD>直接移至目前所在物件的上一個物件</TD>
+</TR>
+<TR>
+<TD>移至下一個物件</TD>
+<TD>NVDA+數字鍵盤6</TD>
+<TD>NVDA+Shift+向右鍵</TD>
+<TD>向右滑動（物件模式）</TD>
+<TD>直接移至目前所在物件的下一個物件</TD>
+</TR>
+<TR>
+<TD>移至第一個子物件</TD>
+<TD>NVDA+數字鍵盤2</TD>
+<TD>NVDA+Shift+向下鍵</TD>
+<TD>向下滑動（物件模式）</TD>
+<TD>移至包含於目前物件內的第一個子物件</TD>
+</TR>
+<TR>
+<TD>移至焦點物件</TD>
+<TD>NVDA+數字鍵盤減號</TD>
+<TD>NVDA+backspace</TD>
+<TD>無</TD>
+<TD>將檢閱游標移至目前系統焦點所在的物件</TD>
+</TR>
+<TR>
+<TD>啟動目前導航器物件</TD>
+<TD>NVDA+數字鍵盤Enter</TD>
+<TD>NVDA+enter</TD>
+<TD>雙重點選</TD>
+<TD>啟動目前導航器物件（與在系統焦點下按空白鍵或點擊滑鼠類似）</TD>
+</TR>
+<TR>
+<TD>將系統焦點或游標移到目前的檢閱位置</TD>
+<TD>NVDA+Shift+數字鍵盤減號</TD>
+<TD>NVDA+Shift+backspace</TD>
+<TD>無</TD>
+<TD>按一下，系統焦點移到目前的導航器物件，按兩下，系統游標移到檢閱游標。</TD>
+</TR>
+<TR>
+<TD>讀出檢閱游標位置</TD>
+<TD>NVDA+數字鍵盤 Delete</TD>
+<TD>NVDA+Delete</TD>
+<TD>無</TD>
+<TD>讀出檢閱游標所在的文字或物件的位置，例如：這可能包括文件中的百分比、頁面與邊緣的距離或精確的螢幕位置，連按兩下可提供更多細節。</TD>
+</TR>
+<TR>
+<TD>將檢閱游標移到狀態列</TD>
+<TD>無</TD>
+<TD>無</TD>
+<TD>無</TD>
+<TD>讀出狀態列 (若 NVDA 有找到)，同時會將導航器物件移到該處。</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 觸控 | 說明 |
-| 讀出目前物件 | NVDA+數字鍵盤5 | NVDA+Shift+o | 無 | 讀出目前所在物件，連按兩下拼讀物件資訊，連按三下複製物件名稱到剪貼簿。 |
-| 移至母物件 | NVDA+數字鍵盤8 | NVDA+Shift+向上鍵 | 向上滑動（物件模式） | 移至目前物件的母物件（也就是包含此物件的容器） |
-| 移至上一個物件 | NVDA+數字鍵盤4 | NVDA+Shift+向左鍵 | 向左滑動（物件模式） | 直接移至目前所在物件的上一個物件 |
-| 移至下一個物件 | NVDA+數字鍵盤6 | NVDA+Shift+向右鍵 | 向右滑動（物件模式） | 直接移至目前所在物件的下一個物件 |
-| 移至第一個子物件 | NVDA+數字鍵盤2 | NVDA+Shift+向下鍵 | 向下滑動（物件模式） | 移至包含於目前物件內的第一個子物件 |
-| 移至焦點物件 | NVDA+數字鍵盤減號 | NVDA+backspace | 無 | 將檢閱游標移至目前系統焦點所在的物件 |
-| 啟動目前導航器物件 | NVDA+數字鍵盤Enter | NVDA+enter | 雙重點選 | 啟動目前導航器物件（與在系統焦點下按空白鍵或點擊滑鼠類似） |
-| 將系統焦點或游標移到目前的檢閱位置 | NVDA+Shift+數字鍵盤減號 | NVDA+Shift+backspace | 無 | 按一下，系統焦點移到目前的導航器物件，按兩下，系統游標移到檢閱游標。 |
-| 讀出檢閱游標位置 | NVDA+數字鍵盤 Delete | NVDA+Delete | 無 | 讀出檢閱游標所在的文字或物件的位置，例如：這可能包括文件中的百分比、頁面與邊緣的距離或精確的螢幕位置，連按兩下可提供更多細節。 |
-| 將檢閱游標移到狀態列 | 無 | 無 | 無 | 讀出狀態列 (若 NVDA 有找到)，同時會將導航器物件移到該處。 |
+<A NAME="ReviewingText"></A>
+<H3>檢閱文字</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>觸控</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>檢閱游標移到第一行</TD>
+<TD>Shift+數字鍵盤7</TD>
+<TD>NVDA+control+home</TD>
+<TD>無</TD>
+<TD>將檢閱游標移到第一行文字</TD>
+</TR>
+<TR>
+<TD>檢閱游標移到上一行</TD>
+<TD>數字鍵盤7</TD>
+<TD>NVDA+向上鍵</TD>
+<TD>向上滑動（文字模式）</TD>
+<TD>將檢閱游標移到上一行文字</TD>
+</TR>
+<TR>
+<TD>讀出檢閱游標所在行</TD>
+<TD>數字鍵盤8</TD>
+<TD>NVDA+shift+句點</TD>
+<TD>無</TD>
+<TD>讀出檢閱游標所在的一行文字，連按兩下拼讀出整行，連按三下讀出該行的字詞解釋</TD>
+</TR>
+<TR>
+<TD>檢閱游標移到下一行</TD>
+<TD>數字鍵盤9</TD>
+<TD>NVDA+向下鍵</TD>
+<TD>向下滑動（文字模式）</TD>
+<TD>將檢閱游標移到下一行文字</TD>
+</TR>
+<TR>
+<TD>檢閱游標移到最後一行</TD>
+<TD>Shift+數字鍵盤9</TD>
+<TD>NVDA+control+end</TD>
+<TD>無</TD>
+<TD>將檢閱游標移到最後一行文字</TD>
+</TR>
+<TR>
+<TD>檢閱游標移到上一個字詞</TD>
+<TD>數字鍵盤4</TD>
+<TD>NVDA+control+向左鍵</TD>
+<TD>雙指向左滑動（文字模式）</TD>
+<TD>將檢閱游標移到文字中的上一個字詞</TD>
+</TR>
+<TR>
+<TD>讀出檢閱游標所在字詞</TD>
+<TD>數字鍵盤5</TD>
+<TD>NVDA+control+句點</TD>
+<TD>無</TD>
+<TD>讀出文字中目前檢閱游標所在的字詞，連按兩下拼讀出這個字詞，連按三下讀出字詞解釋</TD>
+</TR>
+<TR>
+<TD>檢閱游標移到下一個字詞</TD>
+<TD>數字鍵盤6</TD>
+<TD>NVDA+control+向右鍵</TD>
+<TD>雙指向右滑動（文字模式）</TD>
+<TD>將檢閱游標移到文字中的下一個字詞</TD>
+</TR>
+<TR>
+<TD>檢閱游標移到行首</TD>
+<TD>Shift+數字鍵盤1</TD>
+<TD>NVDA+home</TD>
+<TD>無</TD>
+<TD>將檢閱游標移到目前所在行文字的開頭</TD>
+</TR>
+<TR>
+<TD>檢閱游標移到上一個字元</TD>
+<TD>數字鍵盤1</TD>
+<TD>NVDA+向左鍵</TD>
+<TD>向左滑動（文字模式）</TD>
+<TD>將檢閱游標移到目前所在行文字的上一個字元</TD>
+</TR>
+<TR>
+<TD>讀出檢閱游標所在字元</TD>
+<TD>數字鍵盤2</TD>
+<TD>NVDA+句點</TD>
+<TD>無</TD>
+<TD>讀出文字中檢閱游標所在行的字元，連按兩下讀出該字元的字詞解釋，連按三下讀出字元的十進位值和十六進位值</TD>
+</TR>
+<TR>
+<TD>檢閱游標移到下一個字元</TD>
+<TD>數字鍵盤3</TD>
+<TD>NVDA+向右鍵</TD>
+<TD>向右滑動（文字模式）</TD>
+<TD>將檢閱游標移到目前所在行文字的下一個字元</TD>
+</TR>
+<TR>
+<TD>檢閱游標移到行尾</TD>
+<TD>Shift+數字鍵盤3</TD>
+<TD>NVDA+end</TD>
+<TD>無</TD>
+<TD>將檢閱游標移到目前所在行文字的結尾</TD>
+</TR>
+<TR>
+<TD>以檢閱游標讀出全部</TD>
+<TD>數字鍵盤加號</TD>
+<TD>NVDA+shift+a</TD>
+<TD>三根手指向下滑動（文字模式）</TD>
+<TD>從檢閱游標目前所在位置往下讀出，檢閱游標跟著移動</TD>
+</TR>
+<TR>
+<TD>選取從檢閱游標開始複製</TD>
+<TD>NVDA+f9</TD>
+<TD>NVDA+f9</TD>
+<TD>無</TD>
+<TD>啟動選取從檢閱游標開始複製的程序，在沒有告訴 NVDA 文字範圍的結束位置之前不會有實際動作。</TD>
+</TR>
+<TR>
+<TD>選取或複製到檢閱游標</TD>
+<TD>NVDA+f10</TD>
+<TD>NVDA+f10</TD>
+<TD>無</TD>
+<TD>按一下將先前設定為開始標記的位置到現在檢閱游標位置之間的文字選取，如果系統游標可以到達文字則會移到選取的文字，連按兩下將這段文字複製到剪貼簿。</TD>
+</TR>
+<TR>
+<TD>移動檢閱游標到標記要複製的開頭</TD>
+<TD>NVDA+shift+f9</TD>
+<TD>NVDA+shift+f9</TD>
+<TD>無</TD>
+<TD>將檢閱游標移至先前已標記要複製的開頭位置</TD>
+</TR>
+<TR>
+<TD>讀出文字格式</TD>
+<TD>NVDA+shift+f</TD>
+<TD>NVDA+shift+f</TD>
+<TD>無</TD>
+<TD>讀出檢閱游標所在位置的文字格式資訊，連按兩下，將文字格式資訊顯示在瀏覽模式視窗中。</TD>
+</TR>
+<TR>
+<TD>讀出符號的替代文字讀音</TD>
+<TD>無</TD>
+<TD>無</TD>
+<TD>無</TD>
+<TD>讀出當前檢閱游標所在的符號，連按兩下在瀏覽模式視窗中顯示該符號及讀音替代文字</TD>
+</TR>
+</TABLE>
 
-== 檢閱文字 ==[ReviewingText]
+<A NAME="ReviewModes"></A>
+<H3>檢閱模式</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>觸控</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>切換到下一個檢閱模式</TD>
+<TD>NVDA+數字鍵盤7</TD>
+<TD>NVDA+pageUp</TD>
+<TD>雙指向上滑動</TD>
+<TD>切換到下一個可供使用的檢閱模式</TD>
+</TR>
+<TR>
+<TD>切換到上一個檢閱模式</TD>
+<TD>NVDA+數字鍵盤1</TD>
+<TD>NVDA+pageDown</TD>
+<TD>雙指向下滑動</TD>
+<TD>切換到上一個可供使用的檢閱模式</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 觸控 | 說明 |
-| 檢閱游標移到第一行 | Shift+數字鍵盤7 | NVDA+control+home | 無 | 將檢閱游標移到第一行文字 |
-| 檢閱游標移到上一行 | 數字鍵盤7 | NVDA+向上鍵 | 向上滑動（文字模式） | 將檢閱游標移到上一行文字 |
-| 讀出檢閱游標所在行 | 數字鍵盤8 | NVDA+shift+句點 | 無 | 讀出檢閱游標所在的一行文字，連按兩下拼讀出整行，連按三下讀出該行的字詞解釋 |
-| 檢閱游標移到下一行 | 數字鍵盤9 | NVDA+向下鍵 | 向下滑動（文字模式） | 將檢閱游標移到下一行文字 |
-| 檢閱游標移到最後一行 | Shift+數字鍵盤9 | NVDA+control+end | 無 | 將檢閱游標移到最後一行文字 |
-| 檢閱游標移到上一個字詞 | 數字鍵盤4 | NVDA+control+向左鍵 | 雙指向左滑動（文字模式） | 將檢閱游標移到文字中的上一個字詞 |
-| 讀出檢閱游標所在字詞 | 數字鍵盤5 | NVDA+control+句點 | 無 | 讀出文字中目前檢閱游標所在的字詞，連按兩下拼讀出這個字詞，連按三下讀出字詞解釋 |
-| 檢閱游標移到下一個字詞 | 數字鍵盤6 | NVDA+control+向右鍵 | 雙指向右滑動（文字模式） | 將檢閱游標移到文字中的下一個字詞 |
-| 檢閱游標移到行首 | Shift+數字鍵盤1 | NVDA+home | 無 | 將檢閱游標移到目前所在行文字的開頭 |
-| 檢閱游標移到上一個字元 | 數字鍵盤1 | NVDA+向左鍵 | 向左滑動（文字模式） | 將檢閱游標移到目前所在行文字的上一個字元 |
-| 讀出檢閱游標所在字元 | 數字鍵盤2 | NVDA+句點 | 無 | 讀出文字中檢閱游標所在行的字元，連按兩下讀出該字元的字詞解釋，連按三下讀出字元的十進位值和十六進位值 |
-| 檢閱游標移到下一個字元 | 數字鍵盤3 | NVDA+向右鍵 | 向右滑動（文字模式） | 將檢閱游標移到目前所在行文字的下一個字元 |
-| 檢閱游標移到行尾 | Shift+數字鍵盤3 | NVDA+end | 無 | 將檢閱游標移到目前所在行文字的結尾 |
-| 以檢閱游標讀出全部 | 數字鍵盤加號 | NVDA+shift+a | 三根手指向下滑動（文字模式） | 從檢閱游標目前所在位置往下讀出，檢閱游標跟著移動 |
-| 選取從檢閱游標開始複製 | NVDA+f9 | NVDA+f9 | 無 | 啟動選取從檢閱游標開始複製的程序，在沒有告訴 NVDA 文字範圍的結束位置之前不會有實際動作。 |
-| 選取或複製到檢閱游標 | NVDA+f10 | NVDA+f10 | 無 | 按一下將先前設定為開始標記的位置到現在檢閱游標位置之間的文字選取，如果系統游標可以到達文字則會移到選取的文字，連按兩下將這段文字複製到剪貼簿。 |
-| 移動檢閱游標到標記要複製的開頭 | NVDA+shift+f9 | NVDA+shift+f9 | 無 | 將檢閱游標移至先前已標記要複製的開頭位置 |
-| 讀出文字格式 | NVDA+shift+f | NVDA+shift+f | 無 | 讀出檢閱游標所在位置的文字格式資訊，連按兩下，將文字格式資訊顯示在瀏覽模式視窗中。 |
-| 讀出符號的替代文字讀音 | 無 | 無 | 無 | 讀出當前檢閱游標所在的符號，連按兩下在瀏覽模式視窗中顯示該符號及讀音替代文字 |
+<A NAME="NavigatingWithTheMouse"></A>
+<H3>鼠標導航</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>觸控</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>點擊滑鼠左鍵</TD>
+<TD>數字鍵盤除號</TD>
+<TD>NVDA+左中括號</TD>
+<TD>無</TD>
+<TD>點擊滑鼠左鍵一次。連續快按兩下為雙擊滑鼠左鍵。</TD>
+</TR>
+<TR>
+<TD>鎖定滑鼠左鍵</TD>
+<TD>Shift+數字鍵盤除號</TD>
+<TD>NVDA+control+左中括號</TD>
+<TD>無 |鎖定滑鼠左鍵，再按一次則解鎖。此功能可模擬按住滑鼠左鍵，執行拖曳的動作。</TD>
+</TR>
+<TR>
+<TD>點擊滑鼠右鍵</TD>
+<TD>數字鍵盤乘號</TD>
+<TD>NVDA+右中括號</TD>
+<TD>點擊並按住</TD>
+<TD>點擊滑鼠右鍵一次。通常用於在鼠標位置開啟快顯功能表。</TD>
+</TR>
+<TR>
+<TD>鎖定滑鼠右鍵</TD>
+<TD>Shift+數字鍵盤乘號</TD>
+<TD>NVDA+control+右中括號</TD>
+<TD>無</TD>
+<TD>鎖定滑鼠右鍵，再按一次則解鎖。此功能可模擬按住滑鼠右鍵，執行拖曳的動作。</TD>
+</TR>
+<TR>
+<TD>移動鼠標到目前導航器物件</TD>
+<TD>NVDA+數字鍵盤除號</TD>
+<TD>NVDA+shift+m</TD>
+<TD>無</TD>
+<TD>移動鼠標到目前導航器物件及檢閱游標。</TD>
+</TR>
+<TR>
+<TD>導航到鼠標所在物件</TD>
+<TD>NVDA+數字鍵盤乘號</TD>
+<TD>NVDA+shift+n</TD>
+<TD>無</TD>
+<TD>將導航器物件移到目前鼠標所在的物件。</TD>
+</TR>
+</TABLE>
 
-== 檢閱模式 ==[ReviewModes]
+<A NAME="BrowseMode"></A>
+<H2>瀏覽模式</H2>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>切換瀏覽/焦點模式</TD>
+<TD>NVDA+空白鍵</TD>
+<TD>在焦點模式與瀏覽模式之間切換</TD>
+</TR>
+<TR>
+<TD>離開焦點模式</TD>
+<TD>Esc</TD>
+<TD>如果先前自動切換到焦點模式則切換回瀏覽模式</TD>
+</TR>
+<TR>
+<TD>更新瀏覽模式</TD>
+<TD>NVDA+F5</TD>
+<TD>重新載入目前文件內容（若發現似乎文件內容有些遺失，此功能相當管用，但對於 Microsoft Word 及 Outlook 則不適用）</TD>
+</TR>
+<TR>
+<TD>尋找</TD>
+<TD>NVDA+Ctrl+F</TD>
+<TD>開啟一個對話框，以便輸入文字在目前的文件中搜尋。請參閱<A HREF="#SearchingForText">尋找文字</A>獲取更多資訊</TD>
+</TR>
+<TR>
+<TD>尋找下一個</TD>
+<TD>NVDA+F3</TD>
+<TD>在目前文件中向下尋找前次搜尋的文字。</TD>
+</TR>
+<TR>
+<TD>尋找上一個</TD>
+<TD>NVDA+Shift+F3</TD>
+<TD>在目前文件中向上尋找前次搜尋的文字。</TD>
+</TR>
+<TR>
+<TD>開啟長說明</TD>
+<TD>NVDA+d</TD>
+<TD>開啟一個新視窗，其中含有針對所在元素的長說明</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 觸控 | 說明 |
-| 切換到下一個檢閱模式 | NVDA+數字鍵盤7 | NVDA+pageUp | 雙指向上滑動 | 切換到下一個可供使用的檢閱模式 |
-| 切換到上一個檢閱模式 | NVDA+數字鍵盤1 | NVDA+pageDown | 雙指向下滑動 | 切換到上一個可供使用的檢閱模式 |
-
-== 鼠標導航 ==[NavigatingWithTheMouse]
-
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 觸控 | 說明 |
-| 點擊滑鼠左鍵 | 數字鍵盤除號 | NVDA+左中括號 | 無 | 點擊滑鼠左鍵一次。連續快按兩下為雙擊滑鼠左鍵。 |
-| 鎖定滑鼠左鍵 | Shift+數字鍵盤除號 | NVDA+control+左中括號 | 無 |鎖定滑鼠左鍵，再按一次則解鎖。此功能可模擬按住滑鼠左鍵，執行拖曳的動作。 |
-| 點擊滑鼠右鍵 | 數字鍵盤乘號 | NVDA+右中括號 | 點擊並按住 | 點擊滑鼠右鍵一次。通常用於在鼠標位置開啟快顯功能表。 |
-| 鎖定滑鼠右鍵 | Shift+數字鍵盤乘號 | NVDA+control+右中括號 | 無 | 鎖定滑鼠右鍵，再按一次則解鎖。此功能可模擬按住滑鼠右鍵，執行拖曳的動作。 |
-| 移動鼠標到目前導航器物件 | NVDA+數字鍵盤除號 | NVDA+shift+m | 無 | 移動鼠標到目前導航器物件及檢閱游標。 |
-| 導航到鼠標所在物件 | NVDA+數字鍵盤乘號 | NVDA+shift+n | 無 | 將導航器物件移到目前鼠標所在的物件。 |
-
-= 瀏覽模式 =[BrowseMode]
-
-|| 名稱 | 快速鍵 | 說明 |
-| 切換瀏覽/焦點模式 | NVDA+空白鍵 | 在焦點模式與瀏覽模式之間切換 |
-| 離開焦點模式 | Esc | 如果先前自動切換到焦點模式則切換回瀏覽模式 |
-| 更新瀏覽模式 | NVDA+F5 | 重新載入目前文件內容（若發現似乎文件內容有些遺失，此功能相當管用，但對於 Microsoft Word 及 Outlook 則不適用）
-| 尋找 | NVDA+Ctrl+F | 開啟一個對話框，以便輸入文字在目前的文件中搜尋。請參閱[尋找文字 #SearchingForText]獲取更多資訊 |
-| 尋找下一個 | NVDA+F3 | 在目前文件中向下尋找前次搜尋的文字。 |
-| 尋找上一個 | NVDA+Shift+F3 | 在目前文件中向上尋找前次搜尋的文字。 |
-| 開啟長說明 | NVDA+d | 開啟一個新視窗，其中含有針對所在元素的長說明 |
-
-== 單鍵導航 ==[SingleLetterNavigation]
-
+<A NAME="SingleLetterNavigation"></A>
+<H3>單鍵導航</H3>
+<P>
 下列的按鍵，若僅按該單一按鍵，則會跳至其對應的下一個元素位置，如果同時按 Shift+該單一按鍵，則會跳至上一個元素位置。
-- h: 標題 (heading)
-- l: 清單 (list)
-- i: 清單項目 (list item)
-- t: 表格 (table)
-- k: 連結 (link)
-- n: 非連結文字 (nonLinked text)
-- f: 表單欄位 (form field)
-- u: 未到訪過的連結 (unvisited link)
-- v: 已到訪過的連結 (visited link)
-- e: 編輯區 (edit field)
-- b: 按鈕 (button)
-- x: 核取方塊 (checkbox)
-- c: 下拉式方塊 (combo box)
-- r: 選擇鈕 (radio button)
-- q: 引述 (block quote)
-- s: 分隔線 (separator)
-- m: 頁框 (frame)
-- g: 圖片 (graphic)
-- d: 地標 (landmark)
-- o: 嵌入式物件（音訊和視訊播放器、應用程式、對話框等） (embedded object)
-- 主鍵盤上的1到6: 第一層級到第六層級標題。
-- a: 註釋（註解、編輯者修訂等） (annotation)
-- w: 拼字錯誤 (spelling error)
--
+</P>
+<UL>
+<LI>h: 標題 (heading)
+<LI>l: 清單 (list)
+<LI>i: 清單項目 (list item)
+<LI>t: 表格 (table)
+<LI>k: 連結 (link)
+<LI>n: 非連結文字 (nonLinked text)
+<LI>f: 表單欄位 (form field)
+<LI>u: 未到訪過的連結 (unvisited link)
+<LI>v: 已到訪過的連結 (visited link)
+<LI>e: 編輯區 (edit field)
+<LI>b: 按鈕 (button)
+<LI>x: 核取方塊 (checkbox)
+<LI>c: 下拉式方塊 (combo box)
+<LI>r: 選擇鈕 (radio button)
+<LI>q: 引述 (block quote)
+<LI>s: 分隔線 (separator)
+<LI>m: 頁框 (frame)
+<LI>g: 圖片 (graphic)
+<LI>d: 地標 (landmark)
+<LI>o: 嵌入式物件（音訊和視訊播放器、應用程式、對話框等） (embedded object)
+<LI>主鍵盤上的1到6: 第一層級到第六層級標題。
+<LI>a: 註釋（註解、編輯者修訂等） (annotation)
+<LI>w: 拼字錯誤 (spelling error)
+</UL>
+
+<P>
 若要移到容器元素例如清單或表格的最開頭或最後面：
-|| 名稱 | 快速鍵 | 說明 |
-| 移到容器的開頭 | shift+, | 移動到此容器例如清單或表格的開頭位置 |
-| 跳開容器 | , | 跳離開此容器例如清單或表格  |
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>移到容器的開頭</TD>
+<TD>shift+,</TD>
+<TD>移動到此容器例如清單或表格的開頭位置</TD>
+</TR>
+<TR>
+<TD>跳開容器</TD>
+<TD>,</TD>
+<TD>跳離開此容器例如清單或表格</TD>
+</TR>
+</TABLE>
 
+<P>
 要在目前文件中將 NVDA 的單鍵導航關閉或開啟，按 NVDA+shift+空白鍵。
+</P>
+<A NAME="ElementsList"></A>
+<H3>項目清單</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>瀏覽模式項目清單</TD>
+<TD>NVDA+f7</TD>
+<TD>列出在目前文件中各種類型的項目</TD>
+</TR>
+</TABLE>
 
-== 項目清單 ==[ElementsList]
+<A NAME="SearchingForText"></A>
+<H3>尋找文字</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>尋找文字</TD>
+<TD>NVDA+control+f</TD>
+<TD>開啟尋找對話框</TD>
+</TR>
+<TR>
+<TD>尋找下一個</TD>
+<TD>NVDA+f3</TD>
+<TD>尋找下一個當前搜尋的字串</TD>
+</TR>
+<TR>
+<TD>尋找上一個</TD>
+<TD>NVDA+shift+f3</TD>
+<TD>尋找上一個當前搜尋的字串</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 快速鍵 | 說明 |
-| 瀏覽模式項目清單 | NVDA+f7 | 列出在目前文件中各種類型的項目 |
+<A NAME="ImbeddedObjects"></A>
+<H3>嵌入式物件</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>回到包含物件的瀏覽模式</TD>
+<TD>NVDA+Ctrl+空白鍵</TD>
+<TD>焦點離開目前的嵌入式物件回到包含該物件的文件中。</TD>
+</TR>
+</TABLE>
 
-== 尋找文字 ==[SearchingForText]
+<A NAME="ReadingMath"></A>
+<H2>讀取數學內容</H2>
+<A NAME="InteractiveNavigation"></A>
+<H3>互動式導航</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>與數學內容互動</TD>
+<TD>NVDA+alt+m</TD>
+<TD>開始與數學內容互動</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 快速鍵 | 說明 |
-| 尋找文字 | NVDA+control+f | 開啟尋找對話框 |
-| 尋找下一個 | NVDA+f3 | 尋找下一個當前搜尋的字串  |
-| 尋找上一個 | NVDA+shift+f3 | 尋找上一個當前搜尋的字串  |
-
-== 嵌入式物件 ==[ImbeddedObjects]
-
-|| 名稱 | 快速鍵 | 說明 |
-| 回到包含物件的瀏覽模式 | NVDA+Ctrl+空白鍵 | 焦點離開目前的嵌入式物件回到包含該物件的文件中。 |
-
-= 讀取數學內容 =[ReadingMath]
-
-== 互動式導航 ==[InteractiveNavigation]
-
-|| 名稱 | 快速鍵 | 說明 |
-| 與數學內容互動 | NVDA+alt+m | 開始與數學內容互動 |
-
-= 點字 =[Braille]
-
-== 點字輸入 ==[BrailleInput]
-
+<A NAME="Braille"></A>
+<H2>點字</H2>
+<A NAME="BrailleInput"></A>
+<H3>點字輸入</H3>
+<P>
 按第7點 清除最後輸入的點字方或字元。
 按第8點 轉譯任何點字輸入並按 Enter。
 按第7與第8點 轉譯任何點字的輸入，但沒有加空格或按 Enter。
-
-= 內容辨識 =[ContentRecognition]
-
-== Windows OCR ==[Win10Ocr]
-
+</P>
+<A NAME="ContentRecognition"></A>
+<H2>內容辨識</H2>
+<A NAME="Win10Ocr"></A>
+<H3>Windows OCR</H3>
+<P>
 要使用 Windows OCR 功能辨識目前導航器物件中的文字，可按 NVDA+r。
+</P>
+<A NAME="ApplicationSpecificFeatures"></A>
+<H2>特定應用程式指令的功能</H2>
+<A NAME="MicrosoftWord"></A>
+<H3>Microsoft Word</H3>
+<A NAME="WordAutomaticColumnAndRowHeaderReading"></A>
+<H4>欄及列標題的自動報讀</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>設定欄標題</TD>
+<TD>NVDA+shift+c</TD>
+<TD>按一下，告訴 NVDA 此為標題開頭第一列，並將此列設為欄標題，當在這列以下的各欄之間左右移動時，會自動讀出標題名稱。連續按兩下，即清除對此列的設定。</TD>
+</TR>
+<TR>
+<TD>設定列標題</TD>
+<TD>NVDA+shift+r</TD>
+<TD>按一下，告訴 NVDA 此為標題開頭第一欄，並將此欄設為列標題，當在其右的各欄上下移動時，會自動讀出列標題名稱。連續按兩下，即清除此欄的設定。</TD>
+</TR>
+</TABLE>
 
-= 特定應用程式指令的功能 =[ApplicationSpecificFeatures]
-
-== Microsoft Word ==[MicrosoftWord]
-
-=== 欄及列標題的自動報讀 ===[WordAutomaticColumnAndRowHeaderReading]
-
-|| 名稱 | 快速鍵 | 說明 |
-| 設定欄標題 | NVDA+shift+c | 按一下，告訴 NVDA 此為標題開頭第一列，並將此列設為欄標題，當在這列以下的各欄之間左右移動時，會自動讀出標題名稱。連續按兩下，即清除對此列的設定。 |
-| 設定列標題 | NVDA+shift+r | 按一下，告訴 NVDA 此為標題開頭第一欄，並將此欄設為列標題，當在其右的各欄上下移動時，會自動讀出列標題名稱。連續按兩下，即清除此欄的設定。 |
-
-===  在 Microsoft Word 的瀏覽模式 ===[BrowseModeInMicrosoftWord]
-
+<A NAME="BrowseModeInMicrosoftWord"></A>
+<H4>在 Microsoft Word 的瀏覽模式</H4>
+<P>
 要在 Microsoft Word 上，切換瀏覽模式的開與關，按 NVDA+ 空白鍵。
-
-==== 元件清單 ====[WordElementsList]
-
+</P>
+<A NAME="WordElementsList"></A>
+<H5>元件清單</H5>
+<P>
 當 Microsoft Word 處於瀏覽模式時，您可按 NVDA+ F7，來 呼叫出「元件清單」的對話框。
-
-=== 報讀註解 ===[WordReportingComments]
-
+</P>
+<A NAME="WordReportingComments"></A>
+<H4>報讀註解</H4>
+<P>
 要讀出目前游標所在位置的註解，按 NVDA+alt+c。
+</P>
+<A NAME="MicrosoftExcel"></A>
+<H3>Microsoft Excel</H3>
+<A NAME="ExcelAutomaticColumnAndRowHeaderReading"></A>
+<H4>欄及列標題的自動報讀</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>設定欄標題</TD>
+<TD>NVDA+shift+c</TD>
+<TD>按一下，告訴 NVDA 此為標題開頭第一列，並將此列設為欄標題，當在這列以下的各欄之間左右移動時，會自動讀出欄標題名稱。連續按兩下，即清除此設定。</TD>
+</TR>
+<TR>
+<TD>設定列標題</TD>
+<TD>NVDA+shift+r</TD>
+<TD>按一下，告訴 NVDA 此為標題開頭第一欄，並將此欄設為列標題，當在這欄右側的各列之間的儲存格上下移動時，會自動讀出列標題名稱。連續按兩下，即清除此設定。</TD>
+</TR>
+</TABLE>
 
-== Microsoft Excel ==[MicrosoftExcel]
-
-=== 欄及列標題的自動報讀 ===[ExcelAutomaticColumnAndRowHeaderReading]
-
-|| 名稱 | 快速鍵 | 說明 |
-| 設定欄標題 | NVDA+shift+c | 按一下，告訴 NVDA 此為標題開頭第一列，並將此列設為欄標題，當在這列以下的各欄之間左右移動時，會自動讀出欄標題名稱。連續按兩下，即清除此設定。 |
-| 設定列標題 | NVDA+shift+r | 按一下，告訴 NVDA 此為標題開頭第一欄，並將此欄設為列標題，當在這欄右側的各列之間的儲存格上下移動時，會自動讀出列標題名稱。連續按兩下，即清除此設定。 |
-
-=== 元件清單 ===[ExcelElementsList]
-
+<A NAME="ExcelElementsList"></A>
+<H4>元件清單</H4>
+<P>
 要在 Excel 上呼叫出「元件清單」，按 NVDA+f7。
-
-=== 報讀附註 ===[ExcelReportingComments]
-
+</P>
+<A NAME="ExcelReportingComments"></A>
+<H4>報讀附註</H4>
+<P>
 要讀出目前焦點所在儲存格的附註，按 NVDA+alt+c。
 在 Microsoft 2016、365 及更新的版本上，已經將傳統稱所稱的「註解」改為「附註」。
-
+</P>
+<P>
 在目前焦點的儲存格新增或編輯附註，按 Shift+F2。
-
-=== 報讀受保護的儲存格 ===[ExcelReadingProtectedCells]
-
+</P>
+<A NAME="ExcelReadingProtectedCells"></A>
+<H4>報讀受保護的儲存格</H4>
+<P>
 若要在鎖住的各儲存格間移動，需先按 NVDA+空白鍵，然後使用標準 Excel 儲存格的移動指令，例如使用方向鍵在工作表中的儲存格之間移動。
+</P>
+<A NAME="MicrosoftPowerPoint"></A>
+<H3>Microsoft PowerPoint</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>切換報讀備忘稿或實際投影片內容</TD>
+<TD>control+shift+s</TD>
+<TD>當投影片撥放時，此快速鍵可切換報讀備忘稿或實際投影片內容，此操作不影響螢幕上的視覺呈現，僅改變 NVDA 報讀的內容。</TD>
+</TR>
+</TABLE>
 
-==  Microsoft PowerPoint ==[MicrosoftPowerPoint]
+<A NAME="Foobar2000"></A>
+<H3>foobar2000</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>報讀剩餘時間</TD>
+<TD>control+shift+r</TD>
+<TD>報讀目前播放中曲目的剩餘時間。</TD>
+</TR>
+<TR>
+<TD>報讀已撥放時間</TD>
+<TD>control+shift+e</TD>
+<TD>如果有的話，讀出目前播放曲目的已撥放時間。</TD>
+</TR>
+<TR>
+<TD>報讀曲目長度</TD>
+<TD>control+shift+t</TD>
+<TD>如果有的話，讀出目前播放曲目的長度。</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 快速鍵 | 說明 |
-| 切換報讀備忘稿或實際投影片內容 | control+shift+s | 當投影片撥放時，此快速鍵可切換報讀備忘稿或實際投影片內容，此操作不影響螢幕上的視覺呈現，僅改變 NVDA 報讀的內容。 |
+<A NAME="MirandaIM"></A>
+<H3>Miranda IM</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>讀出最近的訊息</TD>
+<TD>NVDA+control+1-4</TD>
+<TD>依據所按的數字，讀出最近訊息中的某一則，例如 NVDA+control+2 會讀出最近的第二則訊息</TD>
+</TR>
+</TABLE>
 
-== foobar2000 ==[Foobar2000]
+<A NAME="Poedit"></A>
+<H3>Poedit</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>讀出註解</TD>
+<TD>control+shift+c</TD>
+<TD>讀出註解視窗的註解</TD>
+</TR>
+<TR>
+<TD>讀出供翻譯者的註解</TD>
+<TD>control+shift+a</TD>
+<TD>讀出供翻譯者的註解訊息</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 快速鍵 | 說明 |
-| 報讀剩餘時間 | control+shift+r | 報讀目前播放中曲目的剩餘時間。 |
-| 報讀已撥放時間 | control+shift+e | 如果有的話，讀出目前播放曲目的已撥放時間。 |
-| 報讀曲目長度 | control+shift+t | 如果有的話，讀出目前播放曲目的長度。 |
-
-== Miranda IM ==[MirandaIM]
-
-|| 名稱 | 快速鍵 | 說明 |
-| 讀出最近的訊息 | NVDA+control+1-4 | 依據所按的數字，讀出最近訊息中的某一則，例如 NVDA+control+2 會讀出最近的第二則訊息 |
-
-== Poedit ==[Poedit]
-
-|| 名稱 | 快速鍵 | 說明 |
-| 讀出註解 | control+shift+c | 讀出註解視窗的註解 |
-| 讀出供翻譯者的註解 | control+shift+a | 讀出供翻譯者的註解訊息 |
-
-== Kindle for PC ==[Kindle]
-
+<A NAME="Kindle"></A>
+<H3>Kindle for PC</H3>
+<P>
 您可手動翻頁；如按 PageDown 鍵可以翻到下一頁，PageUp 鍵可以翻到前一頁。
-
-=== 選取文字 ===[KindleTextSelection]
-
+</P>
+<A NAME="KindleTextSelection"></A>
+<H4>選取文字</H4>
+<P>
 當選擇了文字，按快顯鍵或 shift+f10來顯示在此應用程式下可使用的選項。
-
-== Azardi ==[Azardi]
-
+</P>
+<A NAME="Azardi"></A>
+<H3>Azardi</H3>
+<P>
 當以表格檢視書目時：
-|| 名稱 | 按鍵 | 說明 |
-| Enter | enter | 打開選取的書。 |
-| Context menu | applications | 打開選取的書目錄。 |
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>Enter</TD>
+<TD>enter</TD>
+<TD>打開選取的書。</TD>
+</TR>
+<TR>
+<TD>Context menu</TD>
+<TD>applications</TD>
+<TD>打開選取的書目錄。</TD>
+</TR>
+</TABLE>
 
-== Windows 主控台 ==[WinConsole]
+<A NAME="WinConsole"></A>
+<H3>Windows 主控台</H3>
+<P>
+以下 Windows 主控台預設的快速鍵可以幫助我們搭配 NVDA 來<A HREF="#ReviewingText">檢閱文字</A>。
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>向上捲動</TD>
+<TD>control+upArrow</TD>
+<TD>向上捲動主控台視窗以讀取先前的文字</TD>
+</TR>
+<TR>
+<TD>向下捲動</TD>
+<TD>control+downArrow</TD>
+<TD>向下捲動主控台視窗以讀取較新的文字</TD>
+</TR>
+<TR>
+<TD>捲動至開頭</TD>
+<TD>control+home</TD>
+<TD>將主控台視窗捲動至內容開頭</TD>
+</TR>
+<TR>
+<TD>捲動至結尾</TD>
+<TD>control+end</TD>
+<TD>將主控台視窗捲動至內容結尾</TD>
+</TR>
+</TABLE>
 
-以下 Windows 主控台預設的快速鍵可以幫助我們搭配 NVDA 來[檢閱文字 #ReviewingText]。
-|| 名稱 | 快速鍵 | 說明 |
-| 向上捲動 | control+upArrow | 向上捲動主控台視窗以讀取先前的文字 |
-| 向下捲動 | control+downArrow | 向下捲動主控台視窗以讀取較新的文字 |
-| 捲動至開頭 | control+home | 將主控台視窗捲動至內容開頭 |
-| 捲動至結尾 | control+end | 將主控台視窗捲動至內容結尾 |
+<A NAME="ConfiguringNVDA"></A>
+<H2>設定 NVDA</H2>
+<A NAME="NVDASettings"></A>
+<H3>NVDA 設定</H3>
+<A NAME="SpeechSettings"></A>
+<H4>語音設定 (NVDA+control+v)</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD ALIGN="center">標點及符號等級</TD>
+<TD>NVDA+p</TD>
+<TD>NVDA+p</TD>
+<TD>此選項讓您可依不同的等級畫分決定標點符號及其它符號是否要當做一般文字讀出來，</TD>
+</TR>
+</TABLE>
 
+<A NAME="SelectSynthesizer"></A>
+<H4>選擇語音合成器 (NVDA+control+s)</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD ALIGN="center">自動音量調整模式</TD>
+<TD>NVDA+shift+d</TD>
+<TD>NVDA+shift+d</TD>
+<TD>在 Windows 8 或以上版本，此選項允許您選擇是否當 NVDA 正在朗讀時降低其他應用程式的音量，或是當 NVDA 執行時始終降低其他應用程式的音量。</TD>
+</TR>
+</TABLE>
 
-= 設定 NVDA =[ConfiguringNVDA]
+<A NAME="SynthSettingsRing"></A>
+<H4>快速語音設定</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>切換到下一個語音控制項</TD>
+<TD>NVDA+Ctrl+向右鍵</TD>
+<TD>NVDA+Shift+Ctrl+向右鍵</TD>
+<TD>切換到下一個語音控制項，若已到最後一個則會回到第一個設定控制項。</TD>
+</TR>
+<TR>
+<TD>切換到上一個語音控制項</TD>
+<TD>NVDA+Ctrl+向左鍵</TD>
+<TD>NVDA+Shift+Ctrl+向左鍵</TD>
+<TD>切換到上一個語音控制項，若已到第一個則會回到最後一個設定。</TD>
+</TR>
+<TR>
+<TD>增加目前語音控制項的設定值</TD>
+<TD>NVDA+Ctrl+向上鍵</TD>
+<TD>NVDA+Shift+Ctrl+向上鍵</TD>
+<TD>增加目前語音控制項的設定值，例如選擇下一個語音、加快速度、提高音調及調大音量。</TD>
+</TR>
+<TR>
+<TD>減少目前語音控制項的設定值</TD>
+<TD>NVDA+Ctrl+向下鍵</TD>
+<TD>NVDA+Shift+Ctrl+向下鍵</TD>
+<TD>減少目前語音控制項的設定值。</TD>
+</TR>
+</TABLE>
 
-== NVDA 設定 ==[NVDASettings]
+<A NAME="BrailleSettings"></A>
+<H4>點字</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD ALIGN="center">點字游標跟隨</TD>
+<TD>NVDA+Ctrl+t</TD>
+<TD>NVDA+Ctrl+t</TD>
+<TD>此選項允許您選擇顯示在點顯器上的訊息是要跟隨系統焦點 / 游標，或是導航器物件 / 檢閱游標，或是兩者均有。</TD>
+</TR>
+</TABLE>
 
-=== 語音設定 (NVDA+control+v) ===[SpeechSettings]
+<A NAME="KeyboardSettings"></A>
+<H4>鍵盤 (NVDA+Ctrl+k)</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD ALIGN="center">讀出輸入字元</TD>
+<TD>NVDA+2</TD>
+<TD>NVDA+2</TD>
+<TD>當啟用時， NVDA 將讀出所有在鍵盤上輸入的字元。</TD>
+</TR>
+<TR>
+<TD ALIGN="center">讀出輸入字詞</TD>
+<TD>NVDA+3</TD>
+<TD>NVDA+3</TD>
+<TD>當啟用時， NVDA 將讀出所有在鍵盤上輸入的字詞，此處所指的字詞，在英文是一個單字。</TD>
+</TR>
+<TR>
+<TD ALIGN="center">讀出指令鍵</TD>
+<TD>NVDA+4</TD>
+<TD>NVDA+4</TD>
+<TD>當啟用時，NVDA 將讀出所有在鍵盤上輸入的非字元按鍵，包括組合鍵，如 Ctrl 加上其它字母鍵。</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
-|  標點及符號等級  | NVDA+p | NVDA+p | 此選項讓您可依不同的等級畫分決定標點符號及其它符號是否要當做一般文字讀出來， |
+<A NAME="MouseSettings"></A>
+<H4>滑鼠 (NVDA+Ctrl+m)</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD ALIGN="center">啟用跟隨鼠標朗讀</TD>
+<TD>NVDA+m</TD>
+<TD>NVDA+m</TD>
+<TD>當啟用時，移動螢幕上的鼠標 NVDA 將會讀出鼠標所指的文字。這允許您藉由移動滑鼠來尋找螢幕上的物件，而不是藉由物件導航的方式。</TD>
+</TR>
+</TABLE>
 
-=== 選擇語音合成器 (NVDA+control+s) ===[SelectSynthesizer]
+<A NAME="ReviewCursorSettings"></A>
+<H4>檢閱游標</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD ALIGN="center">跟隨系統焦點</TD>
+<TD>NVDA+7</TD>
+<TD>NVDA+7</TD>
+<TD>啟用後，每當焦點改變時，檢閱游標將始終與系統焦點位在同一個物件上。</TD>
+</TR>
+<TR>
+<TD ALIGN="center">跟隨系統游標</TD>
+<TD>NVDA+6</TD>
+<TD>NVDA+6</TD>
+<TD>啟用後，每當游標移動時，檢閱游標將自動移到系統游標所在的位置。</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
-|  自動音量調整模式  | NVDA+shift+d | NVDA+shift+d | 在 Windows 8 或以上版本，此選項允許您選擇是否當 NVDA 正在朗讀時降低其他應用程式的音量，或是當 NVDA 執行時始終降低其他應用程式的音量。 |
-=== 快速語音設定 ===[SynthSettingsRing]
+<A NAME="ObjectPresentationSettings"></A>
+<H4>物件呈現 (NVDA+Ctrl+o)</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD ALIGN="center">進度列輸出</TD>
+<TD>NVDA+u</TD>
+<TD>NVDA+u</TD>
+<TD>此選項控制 NVDA 如何讀出進度列的更新進度，</TD>
+</TR>
+<TR>
+<TD ALIGN="center">讀出動態內容變化</TD>
+<TD>NVDA+5</TD>
+<TD>NVDA+5</TD>
+<TD>切換是否讀出某些特定物件中產生的新內容，例如即時通訊軟體的新交談訊息，命令提示字元視窗輸入指令後所顯示的內容、網頁上動態更新的內容。</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
-| 切換到下一個語音控制項 | NVDA+Ctrl+向右鍵 | NVDA+Shift+Ctrl+向右鍵 | 切換到下一個語音控制項，若已到最後一個則會回到第一個設定控制項。 |
-| 切換到上一個語音控制項 | NVDA+Ctrl+向左鍵 | NVDA+Shift+Ctrl+向左鍵 | 切換到上一個語音控制項，若已到第一個則會回到最後一個設定。 |
-| 增加目前語音控制項的設定值 | NVDA+Ctrl+向上鍵 | NVDA+Shift+Ctrl+向上鍵 | 增加目前語音控制項的設定值，例如選擇下一個語音、加快速度、提高音調及調大音量。 |
-| 減少目前語音控制項的設定值 | NVDA+Ctrl+向下鍵 | NVDA+Shift+Ctrl+向下鍵 | 減少目前語音控制項的設定值。 |
+<A NAME="BrowseModeSettings"></A>
+<H4>瀏覽模式 (NVDA+Ctrl+b)</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD ALIGN="center">使用畫面版面配置 (當有支援時)</TD>
+<TD>NVDA+v</TD>
+<TD>NVDA+v</TD>
+<TD>此選項決定是否讓瀏覽模式呈現的內容與畫面上的版面配置相同，或是將連結之類的項目單獨列在一行，</TD>
+</TR>
+</TABLE>
 
+<A NAME="SavingAndReloading"></A>
+<H3>儲存與還原組態</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>桌電快速鍵</TH>
+<TH>筆電快速鍵</TH>
+<TH>說明</TH>
+</TR>
+<TR>
+<TD>儲存組態</TD>
+<TD>NVDA+Ctrl+c</TD>
+<TD>NVDA+Ctrl+c</TD>
+<TD>儲存目前的組態，當結束 NVDA 時設定不會遺失。</TD>
+</TR>
+<TR>
+<TD>還原組態</TD>
+<TD>NVDA+Ctrl+r</TD>
+<TD>NVDA+Ctrl+r</TD>
+<TD>按一下回復到上次儲存的組態，連按三下回復到原始預設值。</TD>
+</TR>
+</TABLE>
 
-=== 點字 ===[BrailleSettings]
+<A NAME="ConfigurationProfiles"></A>
+<H3>組態設定檔</H3>
+<A NAME="ProfilesBasicManagement"></A>
+<H4>基本管理</H4>
+<UL>
+<LI>NVDA+control+p: 顯示「組態設定檔」對話框
+</UL>
 
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
-|  點字游標跟隨  | NVDA+Ctrl+t | NVDA+Ctrl+t | 此選項允許您選擇顯示在點顯器上的訊息是要跟隨系統焦點 / 游標，或是導航器物件 / 檢閱游標，或是兩者均有。 |
+<P></P>
+<A NAME="SupportedBrailleDisplays"></A>
+<H2>支援的點顯器</H2>
+<A NAME="FreedomScientificFocus"></A>
+<H3>Freedom Scientific Focus/PAC Mate 系列</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>點字游標向前捲動</TD>
+<TD>topRouting1 （點顯器第一方）</TD>
+</TR>
+<TR>
+<TD>點字游標向後捲動</TD>
+<TD>topRouting20/40/80 （點顯器最後一方）</TD>
+</TR>
+<TR>
+<TD>點字游標向前捲動</TD>
+<TD>左邊 AdvanceBar</TD>
+</TR>
+<TR>
+<TD>點字游標向後捲動</TD>
+<TD>右邊 AdvanceBar</TD>
+</TR>
+<TR>
+<TD>切換點字游標跟隨</TD>
+<TD>左邊 GDFButton加右邊 GDFButton</TD>
+</TR>
+<TR>
+<TD>切換左邊滾輪操控</TD>
+<TD>左邊滾輪 按下</TD>
+</TR>
+<TR>
+<TD>使用左邊滾輪向前捲動點字游標</TD>
+<TD>左邊滾輪 向上</TD>
+</TR>
+<TR>
+<TD>使用左邊滾輪向後捲動點字游標</TD>
+<TD>左邊滾輪 向下</TD>
+</TR>
+<TR>
+<TD>切換右邊滾輪操控</TD>
+<TD>右邊滾輪 按下</TD>
+</TR>
+<TR>
+<TD>使用右邊滾輪向前捲動點字游標</TD>
+<TD>右邊滾輪 向上</TD>
+</TR>
+<TR>
+<TD>使用右邊滾輪向後捲動點字游標</TD>
+<TD>右邊滾輪 向下</TD>
+</TR>
+<TR>
+<TD>移到對應的點字方</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>shift+tab 鍵</TD>
+<TD>點顯器空白鍵加 一,二點</TD>
+</TR>
+<TR>
+<TD>tab 鍵</TD>
+<TD>點顯器空白鍵加 四,五點</TD>
+</TR>
+<TR>
+<TD>向上鍵</TD>
+<TD>點顯器空白鍵加 一點</TD>
+</TR>
+<TR>
+<TD>向下鍵</TD>
+<TD>點顯器空白鍵加 四點</TD>
+</TR>
+<TR>
+<TD>control+向左鍵</TD>
+<TD>點顯器空白鍵加 二點</TD>
+</TR>
+<TR>
+<TD>control+向右鍵</TD>
+<TD>點顯器空白鍵加 五點</TD>
+</TR>
+<TR>
+<TD>向左鍵</TD>
+<TD>點顯器空白鍵加 三點</TD>
+</TR>
+<TR>
+<TD>向右鍵</TD>
+<TD>點顯器空白鍵加 六點</TD>
+</TR>
+<TR>
+<TD>home 鍵</TD>
+<TD>點顯器空白鍵加 一,三點</TD>
+</TR>
+<TR>
+<TD>end 鍵</TD>
+<TD>點顯器空白鍵加 四,六點</TD>
+</TR>
+<TR>
+<TD>control+home 鍵</TD>
+<TD>點顯器空白鍵加 一,二,三點</TD>
+</TR>
+<TR>
+<TD>control+end 鍵</TD>
+<TD>點顯器空白鍵加 四,五,六點</TD>
+</TR>
+<TR>
+<TD>alt 鍵</TD>
+<TD>點顯器空白鍵加 一,三,四點</TD>
+</TR>
+<TR>
+<TD>alt+tab 鍵</TD>
+<TD>點顯器空白鍵加 二,三,四,五點</TD>
+</TR>
+<TR>
+<TD>alt+shift+tab 鍵</TD>
+<TD>點顯器空白鍵加 一,二,五,六點</TD>
+</TR>
+<TR>
+<TD>windows+tab 鍵</TD>
+<TD>點顯器空白鍵加 二,三,四點</TD>
+</TR>
+<TR>
+<TD>escape 鍵</TD>
+<TD>點顯器空白鍵加 一,五點</TD>
+</TR>
+<TR>
+<TD>windows 鍵</TD>
+<TD>點顯器空白鍵加 二,四,五,六點</TD>
+</TR>
+<TR>
+<TD>space 鍵</TD>
+<TD>點顯器空白鍵</TD>
+</TR>
+<TR>
+<TD>windows+d 鍵 （最小化所有應用程式）</TD>
+<TD>點顯器空白鍵加 一,二,三,四,五,六點</TD>
+</TR>
+<TR>
+<TD>讀出游標所在行的內容</TD>
+<TD>點顯器空白鍵加 一,四點</TD>
+</TR>
+<TR>
+<TD>NVDA 功能表</TD>
+<TD>點顯器空白鍵加 一,三,四,五點</TD>
+</TR>
+</TABLE>
 
-=== 鍵盤 (NVDA+Ctrl+k) ===[KeyboardSettings]
-
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
-|  讀出輸入字元  | NVDA+2 | NVDA+2 | 當啟用時， NVDA 將讀出所有在鍵盤上輸入的字元。 |
-|  讀出輸入字詞  | NVDA+3 | NVDA+3 | 當啟用時， NVDA 將讀出所有在鍵盤上輸入的字詞，此處所指的字詞，在英文是一個單字。 |
-|  讀出指令鍵  | NVDA+4 | NVDA+4 | 當啟用時，NVDA 將讀出所有在鍵盤上輸入的非字元按鍵，包括組合鍵，如 Ctrl 加上其它字母鍵。 |
-
-=== 滑鼠 (NVDA+Ctrl+m) ===[MouseSettings]
-
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
-|  啟用跟隨鼠標朗讀  | NVDA+m | NVDA+m | 當啟用時，移動螢幕上的鼠標 NVDA 將會讀出鼠標所指的文字。這允許您藉由移動滑鼠來尋找螢幕上的物件，而不是藉由物件導航的方式。 |
-
-=== 檢閱游標 ===[ReviewCursorSettings]
-
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
-|  跟隨系統焦點  | NVDA+7 | NVDA+7 | 啟用後，每當焦點改變時，檢閱游標將始終與系統焦點位在同一個物件上。 |
-|  跟隨系統游標  | NVDA+6 | NVDA+6 | 啟用後，每當游標移動時，檢閱游標將自動移到系統游標所在的位置。 |
-
-=== 物件呈現 (NVDA+Ctrl+o) ===[ObjectPresentationSettings]
-
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
-|  進度列輸出  | NVDA+u | NVDA+u | 此選項控制 NVDA 如何讀出進度列的更新進度， |
-|  讀出動態內容變化  | NVDA+5 | NVDA+5 | 切換是否讀出某些特定物件中產生的新內容，例如即時通訊軟體的新交談訊息，命令提示字元視窗輸入指令後所顯示的內容、網頁上動態更新的內容。 |
-
-=== 瀏覽模式 (NVDA+Ctrl+b) ===[BrowseModeSettings]
-
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
-|  使用畫面版面配置 (當有支援時)  | NVDA+v | NVDA+v | 此選項決定是否讓瀏覽模式呈現的內容與畫面上的版面配置相同，或是將連結之類的項目單獨列在一行， |
-== 儲存與還原組態 ==[SavingAndReloading]
-
-|| 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
-| 儲存組態 | NVDA+Ctrl+c | NVDA+Ctrl+c | 儲存目前的組態，當結束 NVDA 時設定不會遺失。 |
-| 還原組態 | NVDA+Ctrl+r | NVDA+Ctrl+r | 按一下回復到上次儲存的組態，連按三下回復到原始預設值。 |
-
-== 組態設定檔 ==[ConfigurationProfiles]
-
-=== 基本管理 ===[ProfilesBasicManagement]
-
-- NVDA+control+p: 顯示「組態設定檔」對話框
--
-
-= 支援的點顯器 =[SupportedBrailleDisplays]
-
-== Freedom Scientific Focus/PAC Mate 系列 ==[FreedomScientificFocus]
-
-|| 名稱 | 按鍵 |
-| 點字游標向前捲動 | topRouting1 （點顯器第一方） |
-| 點字游標向後捲動 | topRouting20/40/80 （點顯器最後一方） |
-| 點字游標向前捲動 | 左邊 AdvanceBar |
-| 點字游標向後捲動 | 右邊 AdvanceBar |
-| 切換點字游標跟隨 | 左邊 GDFButton加右邊 GDFButton |
-| 切換左邊滾輪操控 | 左邊滾輪 按下 |
-| 使用左邊滾輪向前捲動點字游標 | 左邊滾輪 向上 |
-| 使用左邊滾輪向後捲動點字游標 | 左邊滾輪 向下 |
-| 切換右邊滾輪操控 | 右邊滾輪 按下 |
-| 使用右邊滾輪向前捲動點字游標 | 右邊滾輪 向上 |
-| 使用右邊滾輪向後捲動點字游標 | 右邊滾輪 向下 |
-| 移到對應的點字方 | routing |
-| shift+tab 鍵 | 點顯器空白鍵加 一,二點 |
-| tab 鍵 | 點顯器空白鍵加 四,五點 |
-| 向上鍵 | 點顯器空白鍵加 一點 |
-| 向下鍵 | 點顯器空白鍵加 四點 |
-| control+向左鍵 | 點顯器空白鍵加 二點 |
-| control+向右鍵 | 點顯器空白鍵加 五點 |
-| 向左鍵 | 點顯器空白鍵加 三點 |
-| 向右鍵 | 點顯器空白鍵加 六點 |
-| home 鍵 | 點顯器空白鍵加 一,三點 |
-| end 鍵 | 點顯器空白鍵加 四,六點 |
-| control+home 鍵 | 點顯器空白鍵加 一,二,三點 |
-| control+end 鍵 | 點顯器空白鍵加 四,五,六點 |
-| alt 鍵 | 點顯器空白鍵加 一,三,四點 |
-| alt+tab 鍵 | 點顯器空白鍵加 二,三,四,五點 |
-| alt+shift+tab 鍵 | 點顯器空白鍵加 一,二,五,六點 |
-| windows+tab 鍵 | 點顯器空白鍵加 二,三,四點 |
-| escape 鍵 | 點顯器空白鍵加 一,五點 |
-| windows 鍵 | 點顯器空白鍵加 二,四,五,六點 |
-| space 鍵 | 點顯器空白鍵 |
-| windows+d 鍵 （最小化所有應用程式） | 點顯器空白鍵加 一,二,三,四,五,六點 |
-| 讀出游標所在行的內容 | 點顯器空白鍵加 一,四點 |
-| NVDA 功能表 | 點顯器空白鍵加 一,三,四,五點 |
-
+<P>
 以下適用於較新的 Focus 模組，其含有rocker bar keys  (focus 40, focus 80 and focus blue)：
-|| 名稱 | 按鍵 |
-| 點字游標移到上一行 | 左邊 RockerBar 向上, 右邊 RockerBar 向上 |
-| 點字游標移到下一行 | 左邊 RockerBar 向下, 右邊 RockerBar 向下 |
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>點字游標移到上一行</TD>
+<TD>左邊 RockerBar 向上, 右邊 RockerBar 向上</TD>
+</TR>
+<TR>
+<TD>點字游標移到下一行</TD>
+<TD>左邊 RockerBar 向下, 右邊 RockerBar 向下</TD>
+</TR>
+</TABLE>
 
+<P>
 以下只適用於Focus 80：
-|| 名稱 | 按鍵 |
-| 點字游標向前捲動 | 左邊 BumperBar 向上, 右邊 BumperBar 向上 |
-| 點字游標向後捲動 | 左邊 BumperBar 向下, 右邊 BumperBar 向下 |
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>點字游標向前捲動</TD>
+<TD>左邊 BumperBar 向上, 右邊 BumperBar 向上</TD>
+</TR>
+<TR>
+<TD>點字游標向後捲動</TD>
+<TD>左邊 BumperBar 向下, 右邊 BumperBar 向下</TD>
+</TR>
+</TABLE>
 
-== Optelec ALVA 6 系列/協議轉換器 ==[OptelecALVA]
+<A NAME="OptelecALVA"></A>
+<H3>Optelec ALVA 6 系列/協議轉換器</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>t1, etouch1</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>t2</TD>
+</TR>
+<TR>
+<TD>Move to current focus</TD>
+<TD>t3</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>t4</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>t5, etouch3</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Report text formatting under braille cell</TD>
+<TD>secondary routing</TD>
+</TR>
+<TR>
+<TD>Toggle HID keyboard simulation</TD>
+<TD>t1+spEnter</TD>
+</TR>
+<TR>
+<TD>Move to top line in review</TD>
+<TD>t1+t2</TD>
+</TR>
+<TR>
+<TD>Move to bottom line in review</TD>
+<TD>t4+t5</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>t1+t3</TD>
+</TR>
+<TR>
+<TD>Report title</TD>
+<TD>etouch2</TD>
+</TR>
+<TR>
+<TD>Report status bar</TD>
+<TD>etouch4</TD>
+</TR>
+<TR>
+<TD>shift+tab key</TD>
+<TD>sp1</TD>
+</TR>
+<TR>
+<TD>alt key</TD>
+<TD>sp2, alt</TD>
+</TR>
+<TR>
+<TD>escape key</TD>
+<TD>sp3</TD>
+</TR>
+<TR>
+<TD>tab key</TD>
+<TD>sp4</TD>
+</TR>
+<TR>
+<TD>upArrow key</TD>
+<TD>spUp</TD>
+</TR>
+<TR>
+<TD>downArrow key</TD>
+<TD>spDown</TD>
+</TR>
+<TR>
+<TD>leftArrow key</TD>
+<TD>spLeft</TD>
+</TR>
+<TR>
+<TD>rightArrow key</TD>
+<TD>spRight</TD>
+</TR>
+<TR>
+<TD>enter key</TD>
+<TD>spEnter, enter</TD>
+</TR>
+<TR>
+<TD>Report date/time</TD>
+<TD>sP2+sp3</TD>
+</TR>
+<TR>
+<TD>NVDA Menu</TD>
+<TD>sp1+sp3</TD>
+</TR>
+<TR>
+<TD>windows+d key (minimize all applications)</TD>
+<TD>sp1+sp4</TD>
+</TR>
+<TR>
+<TD>windows+b key (focus system tray)</TD>
+<TD>sp3+sp4</TD>
+</TR>
+<TR>
+<TD>windows key</TD>
+<TD>sp1+sp2, windows</TD>
+</TR>
+<TR>
+<TD>alt+tab key</TD>
+<TD>sp2+sp4</TD>
+</TR>
+<TR>
+<TD>control+home key</TD>
+<TD>t3+spUp</TD>
+</TR>
+<TR>
+<TD>control+end key</TD>
+<TD>t3+spDown</TD>
+</TR>
+<TR>
+<TD>home key</TD>
+<TD>t3+spLeft</TD>
+</TR>
+<TR>
+<TD>end key</TD>
+<TD>t3+spRight</TD>
+</TR>
+<TR>
+<TD>control key</TD>
+<TD>control</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 按鍵 |
-| Scroll braille display back | t1, etouch1 |
-| Move braille display to previous line | t2 |
-| Move to current focus | t3 |
-| Move braille display to next line | t4 |
-| Scroll braille display forward | t5, etouch3 |
-| Route to braille cell | routing |
-| Report text formatting under braille cell | secondary routing |
-| Toggle HID keyboard simulation | t1+spEnter |
-| Move to top line in review | t1+t2 |
-| Move to bottom line in review | t4+t5 |
-| Toggle braille tethered to | t1+t3 |
-| Report title | etouch2 |
-| Report status bar | etouch4 |
-| shift+tab key | sp1 |
-| alt key | sp2, alt |
-| escape key | sp3 |
-| tab key | sp4 |
-| upArrow key | spUp |
-| downArrow key | spDown |
-| leftArrow key | spLeft |
-| rightArrow key | spRight |
-| enter key | spEnter, enter |
-| Report date/time | sP2+sp3 |
-| NVDA Menu | sp1+sp3 |
-| windows+d key (minimize all applications) | sp1+sp4 |
-| windows+b key (focus system tray) | sp3+sp4 |
-| windows key | sp1+sp2, windows |
-| alt+tab key | sp2+sp4 |
-| control+home key | t3+spUp |
-| control+end key | t3+spDown |
-| home key | t3+spLeft |
-| end key | t3+spRight |
-| control key | control |
+<A NAME="HandyTech"></A>
+<H3>Handy Tech 顯示器</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>left, up, b3</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>right, down, b6</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>b4</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>b5</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>shift+tab 鍵</TD>
+<TD>esc, left triple action key up+down</TD>
+</TR>
+<TR>
+<TD>alt 鍵</TD>
+<TD>b2+b4+b5</TD>
+</TR>
+<TR>
+<TD>escape 鍵</TD>
+<TD>b4+b6</TD>
+</TR>
+<TR>
+<TD>tab 鍵</TD>
+<TD>enter, right triple action key up+down</TD>
+</TR>
+<TR>
+<TD>enter 鍵</TD>
+<TD>esc+enter, left+right triple action key up+down, joystickAction</TD>
+</TR>
+<TR>
+<TD>向上鍵</TD>
+<TD>joystickUp</TD>
+</TR>
+<TR>
+<TD>向下鍵</TD>
+<TD>joystickDown</TD>
+</TR>
+<TR>
+<TD>向左鍵</TD>
+<TD>joystickLeft</TD>
+</TR>
+<TR>
+<TD>向右鍵</TD>
+<TD>joystickRight</TD>
+</TR>
+<TR>
+<TD>NVDA 功能表</TD>
+<TD>b2+b4+b5+b6</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>b2</TD>
+</TR>
+<TR>
+<TD>Toggle the braille cursor</TD>
+<TD>b1</TD>
+</TR>
+<TR>
+<TD>Toggle focus context presentation</TD>
+<TD>b7</TD>
+</TR>
+<TR>
+<TD>Toggle braille input</TD>
+<TD>space+b1+b3+b4 (space+capital B)</TD>
+</TR>
+</TABLE>
 
-== Handy Tech 顯示器 ==[HandyTech]
+<A NAME="MDVLilli"></A>
+<H3>MDV Lilli</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display backward</TD>
+<TD>LF</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>RG</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>UP</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>DN</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>route</TD>
+</TR>
+<TR>
+<TD>shift+tab 鍵</TD>
+<TD>SLF</TD>
+</TR>
+<TR>
+<TD>tab 鍵</TD>
+<TD>SRG</TD>
+</TR>
+<TR>
+<TD>alt+tab 鍵</TD>
+<TD>SDN</TD>
+</TR>
+<TR>
+<TD>alt+shift+tab 鍵</TD>
+<TD>SUP</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 按鍵 |
-| Scroll braille display back | left, up, b3 |
-| Scroll braille display forward | right, down, b6 |
-| Move braille display to previous line | b4 |
-| Move braille display to next line | b5 |
-| Route to braille cell | routing |
-| shift+tab 鍵 | esc, left triple action key up+down |
-| alt 鍵 | b2+b4+b5 |
-| escape 鍵 | b4+b6 |
-| tab 鍵 | enter, right triple action key up+down |
-| enter 鍵 | esc+enter, left+right triple action key up+down, joystickAction |
-| 向上鍵 | joystickUp |
-| 向下鍵 | joystickDown |
-| 向左鍵 | joystickLeft |
-| 向右鍵 | joystickRight |
-| NVDA 功能表 | b2+b4+b5+b6 |
-| Toggle braille tethered to | b2 |
-| Toggle the braille cursor | b1 |
-| Toggle focus context presentation | b7 |
-| Toggle braille input | space+b1+b3+b4 (space+capital B) |
+<A NAME="Baum"></A>
+<H3>Baum/Humanware/APH/Orbit 點顯器</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>d2</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>d5</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>d1</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>d3</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+</TABLE>
 
-== MDV Lilli ==[MDVLilli]
-
-|| 名稱 | 按鍵 |
-| Scroll braille display backward | LF |
-| Scroll braille display forward | RG |
-| Move braille display to previous line | UP |
-| Move braille display to next line | DN |
-| Route to braille cell | route |
-| shift+tab 鍵 | SLF |
-| tab 鍵 | SRG |
-| alt+tab 鍵 | SDN |
-| alt+shift+tab 鍵 | SUP |
-
-== Baum/Humanware/APH/Orbit 點顯器 ==[Baum]
-
-|| 名稱 | 按鍵 |
-| Scroll braille display back | d2 |
-| Scroll braille display forward | d5 |
-| Move braille display to previous line | d1 |
-| Move braille display to next line | d3 |
-| Route to braille cell | routing |
-
+<P>
 有搖桿顯示器的按鍵指令如下所示:
-|| 名稱 | 按鍵 |
-| 向上鍵 | up |
-| 向下鍵 | down |
-| 向左鍵 | left |
-| 向右鍵 | right |
-| enter 鍵 | select |
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>向上鍵</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>向下鍵</TD>
+<TD>down</TD>
+</TR>
+<TR>
+<TD>向左鍵</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>向右鍵</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>enter 鍵</TD>
+<TD>select</TD>
+</TR>
+</TABLE>
 
-== hedo ProfiLine USB ==[HedoProfiLine]
+<A NAME="HedoProfiLine"></A>
+<H3>hedo ProfiLine USB</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>K1</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>K3</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>B2</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>B5</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>K2</TD>
+</TR>
+<TR>
+<TD>Say all</TD>
+<TD>B6</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 按鍵 |
-| Scroll braille display back | K1 |
-| Scroll braille display forward | K3 |
-| Move braille display to previous line | B2 |
-| Move braille display to next line | B5 |
-| Route to braille cell | routing |
-| Toggle braille tethered to | K2 |
-| Say all | B6 |
+<A NAME="HedoMobilLine"></A>
+<H3>hedo MobilLine USB</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>K1</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>K3</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>B2</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>B5</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>K2</TD>
+</TR>
+<TR>
+<TD>Say all</TD>
+<TD>B6</TD>
+</TR>
+</TABLE>
 
-== hedo MobilLine USB ==[HedoMobilLine]
+<A NAME="HumanWareBrailliant"></A>
+<H3>HumanWare Brailliant BI/B 系列 / BrailleNote Touch</H3>
+<H4>所有型號的按鍵配置</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>down</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>up+down</TD>
+</TR>
+<TR>
+<TD>upArrow key</TD>
+<TD>space+dot1</TD>
+</TR>
+<TR>
+<TD>downArrow key</TD>
+<TD>space+dot4</TD>
+</TR>
+<TR>
+<TD>leftArrow key</TD>
+<TD>space+dot3</TD>
+</TR>
+<TR>
+<TD>rightArrow key</TD>
+<TD>space+dot6</TD>
+</TR>
+<TR>
+<TD>shift+tab key</TD>
+<TD>space+dot1+dot3</TD>
+</TR>
+<TR>
+<TD>tab key</TD>
+<TD>space+dot4+dot6</TD>
+</TR>
+<TR>
+<TD>alt key</TD>
+<TD>space+dot1+dot3+dot4 (space+m)</TD>
+</TR>
+<TR>
+<TD>escape key</TD>
+<TD>space+dot1+dot5 (space+e)</TD>
+</TR>
+<TR>
+<TD>enter key</TD>
+<TD>dot8</TD>
+</TR>
+<TR>
+<TD>windows key</TD>
+<TD>space+dot3+dot4</TD>
+</TR>
+<TR>
+<TD>alt+tab key</TD>
+<TD>space+dot2+dot3+dot4+dot5 (space+t)</TD>
+</TR>
+<TR>
+<TD>NVDA Menu</TD>
+<TD>space+dot1+dot3+dot4+dot5 (space+n)</TD>
+</TR>
+<TR>
+<TD>windows+d key (minimize all applications)</TD>
+<TD>space+dot1+dot4+dot5 (space+d)</TD>
+</TR>
+<TR>
+<TD>Say all</TD>
+<TD>space+dot1+dot2+dot3+dot4+dot5+dot6</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 按鍵 |
-| Scroll braille display back | K1 |
-| Scroll braille display forward | K3 |
-| Move braille display to previous line | B2 |
-| Move braille display to next line | B5 |
-| Route to braille cell | routing |
-| Toggle braille tethered to | K2 |
-| Say all | B6 |
+<H4>Brailliant BI 32、BI 40 和 B 80 的按鍵配置</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>NVDA Menu</TD>
+<TD>c1+c3+c4+c5 (command n)</TD>
+</TR>
+<TR>
+<TD>windows+d key (minimize all applications)</TD>
+<TD>c1+c4+c5 (command d)</TD>
+</TR>
+<TR>
+<TD>Say all</TD>
+<TD>c1+c2+c3+c4+c5+c6</TD>
+</TR>
+</TABLE>
 
-== HumanWare Brailliant BI/B 系列 / BrailleNote Touch  ==[HumanWareBrailliant]
+<H4>Brailliant BI 14 的按鍵配置</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>up arrow key</TD>
+<TD>joystick up</TD>
+</TR>
+<TR>
+<TD>down arrow key</TD>
+<TD>joystick down</TD>
+</TR>
+<TR>
+<TD>left arrow key</TD>
+<TD>joystick left</TD>
+</TR>
+<TR>
+<TD>right arrow key</TD>
+<TD>joystick right</TD>
+</TR>
+<TR>
+<TD>enter key</TD>
+<TD>joystick action</TD>
+</TR>
+</TABLE>
 
-=== 所有型號的按鍵配置 ===
+<A NAME="Hims"></A>
+<H3>HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille 點顯器系列</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>leftSideScrollUp, rightSideScrollUp, leftSideScroll</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>leftSideScrollDown, rightSideScrollDown, rightSideScroll</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>leftSideScrollUp+rightSideScrollUp</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>leftSideScrollDown+rightSideScrollDown</TD>
+</TR>
+<TR>
+<TD>Move to previous line in review</TD>
+<TD>rightSideUpArrow</TD>
+</TR>
+<TR>
+<TD>Move to next line in review</TD>
+<TD>rightSideDownArrow</TD>
+</TR>
+<TR>
+<TD>Move to previous character in review</TD>
+<TD>rightSideLeftArrow</TD>
+</TR>
+<TR>
+<TD>Move to next character in review</TD>
+<TD>rightSideRightArrow</TD>
+</TR>
+<TR>
+<TD>Move to current focus</TD>
+<TD>leftSideScrollUp+leftSideScrollDown, rightSideScrollUp+rightSideScrollDown, leftSideScroll+rightSideScroll</TD>
+</TR>
+<TR>
+<TD>control key</TD>
+<TD>smartbeetle:f1, brailleedge:f3</TD>
+</TR>
+<TR>
+<TD>windows key</TD>
+<TD>f7, smartbeetle:f2</TD>
+</TR>
+<TR>
+<TD>alt key</TD>
+<TD>dot1+dot3+dot4+space, f2, smartbeetle:f3, brailleedge:f4</TD>
+</TR>
+<TR>
+<TD>shift key</TD>
+<TD>f5</TD>
+</TR>
+<TR>
+<TD>insert key</TD>
+<TD>dot2+dot4+space, f6</TD>
+</TR>
+<TR>
+<TD>applications key</TD>
+<TD>dot1+dot2+dot3+dot4+space, f8</TD>
+</TR>
+<TR>
+<TD>Caps Lock key</TD>
+<TD>dot1+dot3+dot6+space</TD>
+</TR>
+<TR>
+<TD>tab key</TD>
+<TD>dot4+dot5+space, f3, brailleedge:f2</TD>
+</TR>
+<TR>
+<TD>shift+alt+tab key</TD>
+<TD>f2+f3+f1</TD>
+</TR>
+<TR>
+<TD>alt+tab key</TD>
+<TD>f2+f3</TD>
+</TR>
+<TR>
+<TD>shift+tab key</TD>
+<TD>dot1+dot2+space</TD>
+</TR>
+<TR>
+<TD>end key</TD>
+<TD>dot4+dot6+space</TD>
+</TR>
+<TR>
+<TD>control+end key</TD>
+<TD>dot4+dot5+dot6+space</TD>
+</TR>
+<TR>
+<TD>home key</TD>
+<TD>dot1+dot3+space, smartbeetle:f4</TD>
+</TR>
+<TR>
+<TD>control+home key</TD>
+<TD>dot1+dot2+dot3+space</TD>
+</TR>
+<TR>
+<TD>alt+f4 key</TD>
+<TD>dot1+dot3+dot5+dot6+space</TD>
+</TR>
+<TR>
+<TD>leftArrow key</TD>
+<TD>dot3+space, leftSideLeftArrow</TD>
+</TR>
+<TR>
+<TD>control+shift+leftArrow key</TD>
+<TD>dot2+dot8+space+f1</TD>
+</TR>
+<TR>
+<TD>control+leftArrow key</TD>
+<TD>dot2+space</TD>
+</TR>
+<TR>
+<TD>shift+alt+leftArrow key</TD>
+<TD>dot2+dot7+f1</TD>
+</TR>
+<TR>
+<TD>alt+leftArrow key</TD>
+<TD>dot2+dot7</TD>
+</TR>
+<TR>
+<TD>rightArrow key</TD>
+<TD>dot6+space, leftSideRightArrow</TD>
+</TR>
+<TR>
+<TD>control+shift+rightArrow key</TD>
+<TD>dot5+dot8+space+f1</TD>
+</TR>
+<TR>
+<TD>control+rightArrow key</TD>
+<TD>dot5+space</TD>
+</TR>
+<TR>
+<TD>shift+alt+rightArrow key</TD>
+<TD>dot5+dot7+f1</TD>
+</TR>
+<TR>
+<TD>alt+rightArrow key</TD>
+<TD>dot5+dot7</TD>
+</TR>
+<TR>
+<TD>pageUp key</TD>
+<TD>dot1+dot2+dot6+space</TD>
+</TR>
+<TR>
+<TD>control+pageUp key</TD>
+<TD>dot1+dot2+dot6+dot8+space</TD>
+</TR>
+<TR>
+<TD>upArrow key</TD>
+<TD>dot1+space, leftSideUpArrow</TD>
+</TR>
+<TR>
+<TD>control+shift+upArrow key</TD>
+<TD>dot2+dot3+dot8+space+f1</TD>
+</TR>
+<TR>
+<TD>control+upArrow key</TD>
+<TD>dot2+dot3+space</TD>
+</TR>
+<TR>
+<TD>shift+alt+upArrow key</TD>
+<TD>dot2+dot3+dot7+f1</TD>
+</TR>
+<TR>
+<TD>alt+upArrow key</TD>
+<TD>dot2+dot3+dot7</TD>
+</TR>
+<TR>
+<TD>shift+upArrow key</TD>
+<TD>leftSideScrollDown+space</TD>
+</TR>
+<TR>
+<TD>pageDown key</TD>
+<TD>dot3+dot4+dot5+space</TD>
+</TR>
+<TR>
+<TD>control+pageDown key</TD>
+<TD>dot3+dot4+dot5+dot8+space</TD>
+</TR>
+<TR>
+<TD>downArrow key</TD>
+<TD>dot4+space, leftSideDownArrow</TD>
+</TR>
+<TR>
+<TD>control+shift+downArrow key</TD>
+<TD>dot5+dot6+dot8+space+f1</TD>
+</TR>
+<TR>
+<TD>control+downArrow key</TD>
+<TD>dot5+dot6+space</TD>
+</TR>
+<TR>
+<TD>shift+alt+downArrow key</TD>
+<TD>dot5+dot6+dot7+f1</TD>
+</TR>
+<TR>
+<TD>alt+downArrow key</TD>
+<TD>dot5+dot6+dot7</TD>
+</TR>
+<TR>
+<TD>shift+downArrow key</TD>
+<TD>space+rightSideScrollDown</TD>
+</TR>
+<TR>
+<TD>escape key</TD>
+<TD>dot1+dot5+space, f4, brailleedge:f1</TD>
+</TR>
+<TR>
+<TD>delete key</TD>
+<TD>dot1+dot3+dot5+space, dot1+dot4+dot5+space</TD>
+</TR>
+<TR>
+<TD>f1 key</TD>
+<TD>dot1+dot2+dot5+space</TD>
+</TR>
+<TR>
+<TD>f3 key</TD>
+<TD>dot1+dot4+dot8</TD>
+</TR>
+<TR>
+<TD>f4 key</TD>
+<TD>dot7+f3</TD>
+</TR>
+<TR>
+<TD>windows+b key</TD>
+<TD>dot1+dot2+f1</TD>
+</TR>
+<TR>
+<TD>windows+d key</TD>
+<TD>dot1+dot4+dot5+f1</TD>
+</TR>
+<TR>
+<TD>control+insert key</TD>
+<TD>smartbeetle:f1+rightSideScroll</TD>
+</TR>
+<TR>
+<TD>alt+insert key</TD>
+<TD>smartbeetle:f3+rightSideScroll</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 按鍵 |
-| Scroll braille display back | left |
-| Scroll braille display forward | right |
-| Move braille display to previous line | up |
-| Move braille display to next line | down |
-| Route to braille cell | routing |
-| Toggle braille tethered to | up+down |
-| upArrow key | space+dot1 |
-| downArrow key | space+dot4 |
-| leftArrow key | space+dot3 |
-| rightArrow key | space+dot6 |
-| shift+tab key | space+dot1+dot3 |
-| tab key | space+dot4+dot6 |
-| alt key | space+dot1+dot3+dot4 (space+m) |
-| escape key | space+dot1+dot5 (space+e) |
-| enter key | dot8 |
-| windows key | space+dot3+dot4 |
-| alt+tab key | space+dot2+dot3+dot4+dot5 (space+t) |
-| NVDA Menu | space+dot1+dot3+dot4+dot5 (space+n) |
-| windows+d key (minimize all applications) | space+dot1+dot4+dot5 (space+d) |
-| Say all | space+dot1+dot2+dot3+dot4+dot5+dot6 |
+<A NAME="Seika"></A>
+<H3>Seika Braille Displays</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>b3</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>b4</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>b5</TD>
+</TR>
+<TR>
+<TD>Say all</TD>
+<TD>b6</TD>
+</TR>
+<TR>
+<TD>tab</TD>
+<TD>b1</TD>
+</TR>
+<TR>
+<TD>shift+tab</TD>
+<TD>b2</TD>
+</TR>
+<TR>
+<TD>alt+tab</TD>
+<TD>b1+b2</TD>
+</TR>
+<TR>
+<TD>NVDA Menu</TD>
+<TD>left+right</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+</TABLE>
 
-=== Brailliant BI 32、BI 40 和 B 80 的按鍵配置 ===
+<A NAME="Papenmeier"></A>
+<H3>Papenmeier BRAILLEX 較新模組</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>dn</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Report current character in review</TD>
+<TD>l1</TD>
+</TR>
+<TR>
+<TD>Activate current navigator object</TD>
+<TD>l2</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>r2</TD>
+</TR>
+<TR>
+<TD>Report title</TD>
+<TD>l1+up</TD>
+</TR>
+<TR>
+<TD>Report Status Bar</TD>
+<TD>l2+down</TD>
+</TR>
+<TR>
+<TD>Move to containing object</TD>
+<TD>up2</TD>
+</TR>
+<TR>
+<TD>Move to first contained object</TD>
+<TD>dn2</TD>
+</TR>
+<TR>
+<TD>Move to previous object</TD>
+<TD>left2</TD>
+</TR>
+<TR>
+<TD>Move to next object</TD>
+<TD>right2</TD>
+</TR>
+<TR>
+<TD>Report text formatting under braille cell</TD>
+<TD>upper routing row</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 按鍵 |
-| NVDA Menu | c1+c3+c4+c5 (command n) |
-| windows+d key (minimize all applications) | c1+c4+c5 (command d) |
-| Say all | c1+c2+c3+c4+c5+c6 |
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>escape key</TD>
+<TD>space with dot 7</TD>
+</TR>
+<TR>
+<TD>upArrow key</TD>
+<TD>space with dot 2</TD>
+</TR>
+<TR>
+<TD>leftArrow key</TD>
+<TD>space with dot 1</TD>
+</TR>
+<TR>
+<TD>rightArrow key</TD>
+<TD>space with dot 4</TD>
+</TR>
+<TR>
+<TD>downArrow</TD>
+<TD>space with dot 5</TD>
+</TR>
+<TR>
+<TD>control key</TD>
+<TD>lt+dot2</TD>
+</TR>
+<TR>
+<TD>alt key</TD>
+<TD>lt+dot3</TD>
+</TR>
+<TR>
+<TD>control+escape key</TD>
+<TD>space with dot 1 2 3 4 5 6</TD>
+</TR>
+<TR>
+<TD>tab key</TD>
+<TD>space with dot 3 7</TD>
+</TR>
+</TABLE>
 
-=== Brailliant BI 14 的按鍵配置 ===
-
-|| 名稱 | 按鍵 |
-| up arrow key | joystick up |
-| down arrow key | joystick down |
-| left arrow key | joystick left |
-| right arrow key | joystick right |
-| enter key | joystick action |
-
-== HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille 點顯器系列 ==[Hims]
-
-|| 名稱 | 按鍵 |
-| Route to braille cell | routing |
-| Scroll braille display back | leftSideScrollUp, rightSideScrollUp, leftSideScroll |
-| Scroll braille display forward | leftSideScrollDown, rightSideScrollDown, rightSideScroll |
-| Move braille display to previous line | leftSideScrollUp+rightSideScrollUp |
-| Move braille display to next line | leftSideScrollDown+rightSideScrollDown |
-| Move to previous line in review | rightSideUpArrow |
-| Move to next line in review | rightSideDownArrow |
-| Move to previous character in review | rightSideLeftArrow |
-| Move to next character in review | rightSideRightArrow |
-| Move to current focus | leftSideScrollUp+leftSideScrollDown, rightSideScrollUp+rightSideScrollDown, leftSideScroll+rightSideScroll |
-| control key | smartbeetle:f1, brailleedge:f3 |
-| windows key | f7, smartbeetle:f2 |
-| alt key | dot1+dot3+dot4+space, f2, smartbeetle:f3, brailleedge:f4 |
-| shift key | f5 |
-| insert key | dot2+dot4+space, f6 |
-| applications key | dot1+dot2+dot3+dot4+space, f8 |
-| Caps Lock key | dot1+dot3+dot6+space |
-| tab key | dot4+dot5+space, f3, brailleedge:f2 |
-| shift+alt+tab key | f2+f3+f1 |
-| alt+tab key | f2+f3 |
-| shift+tab key | dot1+dot2+space |
-| end key | dot4+dot6+space |
-| control+end key | dot4+dot5+dot6+space |
-| home key | dot1+dot3+space, smartbeetle:f4 |
-| control+home key | dot1+dot2+dot3+space |
-| alt+f4 key | dot1+dot3+dot5+dot6+space |
-| leftArrow key | dot3+space, leftSideLeftArrow |
-| control+shift+leftArrow key | dot2+dot8+space+f1 |
-| control+leftArrow key | dot2+space |
-| shift+alt+leftArrow key | dot2+dot7+f1 |
-| alt+leftArrow key | dot2+dot7 |
-| rightArrow key | dot6+space, leftSideRightArrow |
-| control+shift+rightArrow key | dot5+dot8+space+f1 |
-| control+rightArrow key | dot5+space |
-| shift+alt+rightArrow key | dot5+dot7+f1 |
-| alt+rightArrow key | dot5+dot7 |
-| pageUp key | dot1+dot2+dot6+space |
-| control+pageUp key | dot1+dot2+dot6+dot8+space |
-| upArrow key | dot1+space, leftSideUpArrow |
-| control+shift+upArrow key | dot2+dot3+dot8+space+f1 |
-| control+upArrow key | dot2+dot3+space |
-| shift+alt+upArrow key | dot2+dot3+dot7+f1 |
-| alt+upArrow key | dot2+dot3+dot7 |
-| shift+upArrow key | leftSideScrollDown+space |
-| pageDown key | dot3+dot4+dot5+space |
-| control+pageDown key | dot3+dot4+dot5+dot8+space |
-| downArrow key | dot4+space, leftSideDownArrow |
-| control+shift+downArrow key | dot5+dot6+dot8+space+f1 |
-| control+downArrow key | dot5+dot6+space |
-| shift+alt+downArrow key | dot5+dot6+dot7+f1 |
-| alt+downArrow key | dot5+dot6+dot7 |
-| shift+downArrow key | space+rightSideScrollDown |
-| escape key | dot1+dot5+space, f4, brailleedge:f1 |
-| delete key | dot1+dot3+dot5+space, dot1+dot4+dot5+space |
-| f1 key | dot1+dot2+dot5+space |
-| f3 key | dot1+dot4+dot8 |
-| f4 key | dot7+f3 |
-| windows+b key | dot1+dot2+f1 |
-| windows+d key | dot1+dot4+dot5+f1 |
-| control+insert key | smartbeetle:f1+rightSideScroll |
-| alt+insert key | smartbeetle:f3+rightSideScroll |
-
-== Seika Braille Displays ==[Seika]
-
-|| 名稱 | 按鍵 |
-| Scroll braille display back | left |
-| Scroll braille display forward | right |
-| Move braille display to previous line | b3 |
-| Move braille display to next line | b4 |
-| Toggle braille tethered to | b5 |
-| Say all | b6 |
-| tab | b1 |
-| shift+tab | b2 |
-| alt+tab | b1+b2 |
-| NVDA Menu | left+right |
-| Route to braille cell | routing |
-
-== Papenmeier BRAILLEX 較新模組 ==[Papenmeier]
-
-|| 名稱 | 按鍵 |
-| Scroll braille display back | left |
-| Scroll braille display forward | right |
-| Move braille display to previous line | up |
-| Move braille display to next line | dn |
-| Route to braille cell | routing |
-| Report current character in review | l1 |
-| Activate current navigator object | l2 |
-| Toggle braille tethered to | r2 |
-| Report title | l1+up |
-| Report Status Bar | l2+down |
-| Move to containing object | up2 |
-| Move to first contained object | dn2 |
-| Move to previous object | left2 |
-| Move to next object | right2 |
-| Report text formatting under braille cell | upper routing row |
-
-| escape key | space with dot 7 |
-| upArrow key | space with dot 2 |
-| leftArrow key | space with dot 1 |
-| rightArrow key | space with dot 4 |
-| downArrow | space with dot 5 |
-| control key | lt+dot2 |
-| alt key | lt+dot3 |
-| control+escape key | space with dot 1 2 3 4 5 6 |
-| tab key | space with dot 3 7 |
-
-== Papenmeier Braille BRAILLEX 較舊模組 ==[PapenmeierOld]
-
+<A NAME="PapenmeierOld"></A>
+<H3>Papenmeier Braille BRAILLEX 較舊模組</H3>
+<P>
 支援 EAB 的裝置:
-|| 名稱 | 按鍵 |
-| Scroll braille display back | left |
-| Scroll braille display forward | right |
-| Move braille display to previous line | up |
-| Move braille display to next line | dn |
-| Route to braille cell | routing |
-| Report current character in review | l1 |
-| Activate current navigator object | l2 |
-| Report title | l1up |
-| Report Status Bar | l2down |
-| Move to containing object | up2 |
-| Move to first contained object | dn2 |
-| Move to next object | right2 |
-| Move to previous object | left2 |
-| Report text formatting under braille cell | upper routing strip |
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>dn</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Report current character in review</TD>
+<TD>l1</TD>
+</TR>
+<TR>
+<TD>Activate current navigator object</TD>
+<TD>l2</TD>
+</TR>
+<TR>
+<TD>Report title</TD>
+<TD>l1up</TD>
+</TR>
+<TR>
+<TD>Report Status Bar</TD>
+<TD>l2down</TD>
+</TR>
+<TR>
+<TD>Move to containing object</TD>
+<TD>up2</TD>
+</TR>
+<TR>
+<TD>Move to first contained object</TD>
+<TD>dn2</TD>
+</TR>
+<TR>
+<TD>Move to next object</TD>
+<TD>right2</TD>
+</TR>
+<TR>
+<TD>Move to previous object</TD>
+<TD>left2</TD>
+</TR>
+<TR>
+<TD>Report text formatting under braille cell</TD>
+<TD>upper routing strip</TD>
+</TR>
+</TABLE>
 
+<P>
 BRAILLEX Tiny:
-|| 名稱 | 按鍵 |
-| Report current character in review | l1 |
-| Activate current navigator object | l2 |
-| Scroll braille display back | left |
-| Scroll braille display forward | right |
-| Move braille display to previous line | up |
-| Move braille display to next line | dn |
-| Toggle braille tethered to | r2 |
-| Move to containing object | r1+up |
-| Move to first contained object | r1+dn |
-| Move to previous object | r1+left |
-| Move to next object | r1+right |
-| Report text formatting under braille cell | upper routing strip |
-| Report title | l1+up |
-| Report status bar | l2+down |
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Report current character in review</TD>
+<TD>l1</TD>
+</TR>
+<TR>
+<TD>Activate current navigator object</TD>
+<TD>l2</TD>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>dn</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>r2</TD>
+</TR>
+<TR>
+<TD>Move to containing object</TD>
+<TD>r1+up</TD>
+</TR>
+<TR>
+<TD>Move to first contained object</TD>
+<TD>r1+dn</TD>
+</TR>
+<TR>
+<TD>Move to previous object</TD>
+<TD>r1+left</TD>
+</TR>
+<TR>
+<TD>Move to next object</TD>
+<TD>r1+right</TD>
+</TR>
+<TR>
+<TD>Report text formatting under braille cell</TD>
+<TD>upper routing strip</TD>
+</TR>
+<TR>
+<TD>Report title</TD>
+<TD>l1+up</TD>
+</TR>
+<TR>
+<TD>Report status bar</TD>
+<TD>l2+down</TD>
+</TR>
+</TABLE>
 
+<P>
 BRAILLEX 2D 顯示器:
-|| 名稱 | 按鍵 |
-| Report current character in review | l1 |
-| Activate current navigator object | l2 |
-| Toggle braille tethered to | r2 |
-| Report text formatting under braille cell | upper routing strip |
-| Move braille display to previous line | up |
-| Scroll braille display back | left |
-| Scroll braille display forward | right |
-| Move braille display to next line | dn |
-| Move to next object | left2 |
-| Move to containing object | up2 |
-| Move to first contained object | dn2 |
-| Move to previous object | right2 |
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Report current character in review</TD>
+<TD>l1</TD>
+</TR>
+<TR>
+<TD>Activate current navigator object</TD>
+<TD>l2</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>r2</TD>
+</TR>
+<TR>
+<TD>Report text formatting under braille cell</TD>
+<TD>upper routing strip</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>dn</TD>
+</TR>
+<TR>
+<TD>Move to next object</TD>
+<TD>left2</TD>
+</TR>
+<TR>
+<TD>Move to containing object</TD>
+<TD>up2</TD>
+</TR>
+<TR>
+<TD>Move to first contained object</TD>
+<TD>dn2</TD>
+</TR>
+<TR>
+<TD>Move to previous object</TD>
+<TD>right2</TD>
+</TR>
+</TABLE>
 
-== HumanWare BrailleNote ==[HumanWareBrailleNote]
+<A NAME="HumanWareBrailleNote"></A>
+<H3>HumanWare BrailleNote</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>back</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>advance</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>previous</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>next</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>NVDA menu</TD>
+<TD>space+dot1+dot3+dot4+dot5 (space+n)</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>previous+next</TD>
+</TR>
+<TR>
+<TD>Up arrow key</TD>
+<TD>space+dot1</TD>
+</TR>
+<TR>
+<TD>Down arrow key</TD>
+<TD>space+dot4</TD>
+</TR>
+<TR>
+<TD>Left Arrow key</TD>
+<TD>space+dot3</TD>
+</TR>
+<TR>
+<TD>Right arrow key</TD>
+<TD>space+dot6</TD>
+</TR>
+<TR>
+<TD>Page up key</TD>
+<TD>space+dot1+dot3</TD>
+</TR>
+<TR>
+<TD>Page down key</TD>
+<TD>space+dot4+dot6</TD>
+</TR>
+<TR>
+<TD>Home key</TD>
+<TD>space+dot1+dot2</TD>
+</TR>
+<TR>
+<TD>End key</TD>
+<TD>space+dot4+dot5</TD>
+</TR>
+<TR>
+<TD>Control+home keys</TD>
+<TD>space+dot1+dot2+dot3</TD>
+</TR>
+<TR>
+<TD>Control+end keys</TD>
+<TD>space+dot4+dot5+dot6</TD>
+</TR>
+<TR>
+<TD>Space key</TD>
+<TD>space</TD>
+</TR>
+<TR>
+<TD>Enter</TD>
+<TD>space+dot8</TD>
+</TR>
+<TR>
+<TD>Backspace</TD>
+<TD>space+dot7</TD>
+</TR>
+<TR>
+<TD>Tab key</TD>
+<TD>space+dot2+dot3+dot4+dot5 (space+t)</TD>
+</TR>
+<TR>
+<TD>Shift+tab keys</TD>
+<TD>space+dot1+dot2+dot5+dot6</TD>
+</TR>
+<TR>
+<TD>Windows key</TD>
+<TD>space+dot2+dot4+dot5+dot6 (space+w)</TD>
+</TR>
+<TR>
+<TD>Alt key</TD>
+<TD>space+dot1+dot3+dot4 (space+m)</TD>
+</TR>
+<TR>
+<TD>Toggle input help</TD>
+<TD>space+dot2+dot3+dot6 (space+lower h)</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 按鍵 |
-| Scroll braille display back | back |
-| Scroll braille display forward | advance |
-| Move braille display to previous line | previous |
-| Move braille display to next line | next |
-| Route to braille cell | routing |
-| NVDA menu | space+dot1+dot3+dot4+dot5 (space+n) |
-| Toggle braille tethered to | previous+next |
-| Up arrow key | space+dot1 |
-| Down arrow key | space+dot4 |
-| Left Arrow key | space+dot3 |
-| Right arrow key | space+dot6 |
-| Page up key | space+dot1+dot3 |
-| Page down key | space+dot4+dot6 |
-| Home key | space+dot1+dot2 |
-| End key | space+dot4+dot5 |
-| Control+home keys | space+dot1+dot2+dot3 |
-| Control+end keys | space+dot4+dot5+dot6 |
-| Space key | space |
-| Enter | space+dot8 |
-| Backspace | space+dot7 |
-| Tab key | space+dot2+dot3+dot4+dot5 (space+t) |
-| Shift+tab keys | space+dot1+dot2+dot5+dot6 |
-| Windows key | space+dot2+dot4+dot5+dot6 (space+w) |
-| Alt key | space+dot1+dot3+dot4 (space+m) |
-| Toggle input help | space+dot2+dot3+dot6 (space+lower h) |
-
+<P>
 以下是 BrailleNote QT 不是在點字輸入模式時的指令。
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>NVDA menu</TD>
+<TD>read+n</TD>
+</TR>
+<TR>
+<TD>Up arrow key</TD>
+<TD>upArrow</TD>
+</TR>
+<TR>
+<TD>Down arrow key</TD>
+<TD>downArrow</TD>
+</TR>
+<TR>
+<TD>Left Arrow key</TD>
+<TD>leftArrow|</TD>
+</TR>
+<TR>
+<TD>Right arrow key</TD>
+<TD>rightArrow</TD>
+</TR>
+<TR>
+<TD>Page up key</TD>
+<TD>function+upArrow</TD>
+</TR>
+<TR>
+<TD>Page down key</TD>
+<TD>function+downArrow</TD>
+</TR>
+<TR>
+<TD>Home key</TD>
+<TD>function+leftArrow</TD>
+</TR>
+<TR>
+<TD>End key</TD>
+<TD>function+rightArrow</TD>
+</TR>
+<TR>
+<TD>Control+home keys</TD>
+<TD>read+t</TD>
+</TR>
+<TR>
+<TD>Control+end keys</TD>
+<TD>read+b</TD>
+</TR>
+<TR>
+<TD>Enter key</TD>
+<TD>enter</TD>
+</TR>
+<TR>
+<TD>Backspace key</TD>
+<TD>backspace</TD>
+</TR>
+<TR>
+<TD>Tab key</TD>
+<TD>tab</TD>
+</TR>
+<TR>
+<TD>Shift+tab keys</TD>
+<TD>shift+tab</TD>
+</TR>
+<TR>
+<TD>Windows key</TD>
+<TD>read+w</TD>
+</TR>
+<TR>
+<TD>Alt key</TD>
+<TD>read+m</TD>
+</TR>
+<TR>
+<TD>Toggle input help</TD>
+<TD>read+1</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 按鍵 |
-| NVDA menu | read+n |
-| Up arrow key | upArrow |
-| Down arrow key | downArrow |
-| Left Arrow key | leftArrow|
-| Right arrow key | rightArrow |
-| Page up key | function+upArrow |
-| Page down key | function+downArrow |
-| Home key | function+leftArrow |
-| End key | function+rightArrow |
-| Control+home keys | read+t |
-| Control+end keys | read+b |
-| Enter key | enter |
-| Backspace key | backspace |
-| Tab key | tab |
-| Shift+tab keys | shift+tab |
-| Windows key | read+w |
-| Alt key | read+m |
-| Toggle input help | read+1 |
-
+<P>
 以下是滾輪的指令:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Up arrow key</TD>
+<TD>upArrow</TD>
+</TR>
+<TR>
+<TD>Down arrow key</TD>
+<TD>downArrow</TD>
+</TR>
+<TR>
+<TD>Left Arrow key</TD>
+<TD>leftArrow</TD>
+</TR>
+<TR>
+<TD>Right arrow key</TD>
+<TD>rightArrow</TD>
+</TR>
+<TR>
+<TD>Enter key</TD>
+<TD>centre button</TD>
+</TR>
+<TR>
+<TD>Tab key</TD>
+<TD>scroll wheel clockwise</TD>
+</TR>
+<TR>
+<TD>Shift+tab keys</TD>
+<TD>scroll wheel counterclockwise</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 按鍵 |
-| Up arrow key | upArrow |
-| Down arrow key | downArrow |
-| Left Arrow key | leftArrow |
-| Right arrow key | rightArrow |
-| Enter key | centre button |
-| Tab key | scroll wheel clockwise |
-| Shift+tab keys | scroll wheel counterclockwise |
+<A NAME="EcoBraille"></A>
+<H3>EcoBraille 點顯器</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>T2</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>T4</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>T1</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>T5</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>Routing</TD>
+</TR>
+<TR>
+<TD>Activate current navigator object</TD>
+<TD>T3</TD>
+</TR>
+<TR>
+<TD>Switch to next review mode</TD>
+<TD>F1</TD>
+</TR>
+<TR>
+<TD>Move to containing object</TD>
+<TD>F2</TD>
+</TR>
+<TR>
+<TD>Switch to previous review mode</TD>
+<TD>F3</TD>
+</TR>
+<TR>
+<TD>Move to previous object</TD>
+<TD>F4</TD>
+</TR>
+<TR>
+<TD>Report current object</TD>
+<TD>F5</TD>
+</TR>
+<TR>
+<TD>Move to next object</TD>
+<TD>F6</TD>
+</TR>
+<TR>
+<TD>Move to focus object</TD>
+<TD>F7</TD>
+</TR>
+<TR>
+<TD>Move to first contained object</TD>
+<TD>F8</TD>
+</TR>
+<TR>
+<TD>Move System focus or caret to current review position</TD>
+<TD>F9</TD>
+</TR>
+<TR>
+<TD>Report review cursor location</TD>
+<TD>F0</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>A</TD>
+</TR>
+</TABLE>
 
-== EcoBraille 點顯器 ==[EcoBraille]
+<A NAME="SuperBraille"></A>
+<H3>超點</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>往後捲動點顯器</TD>
+<TD>數字鍵盤減號</TD>
+</TR>
+<TR>
+<TD>往前捲動點顯器</TD>
+<TD>數字鍵盤加號</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 按鍵 |
-| Scroll braille display back | T2 |
-| Scroll braille display forward | T4 |
-| Move braille display to previous line | T1 |
-| Move braille display to next line | T5 |
-| Route to braille cell | Routing |
-| Activate current navigator object | T3 |
-| Switch to next review mode | F1 |
-| Move to containing object | F2 |
-| Switch to previous review mode | F3 |
-| Move to previous object | F4 |
-| Report current object | F5 |
-| Move to next object | F6 |
-| Move to focus object | F7 |
-| Move to first contained object | F8 |
-| Move System focus or caret to current review position | F9 |
-| Report review cursor location | F0 |
-| Toggle braille tethered to | A |
+<A NAME="Eurobraille"></A>
+<H3>Eurobraille Esys/Esytime/Iris 點顯器</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Key</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>switch1-6left, l1</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>switch1-6Right, l8</TD>
+</TR>
+<TR>
+<TD>Move to current focus</TD>
+<TD>switch1-6Left+switch1-6Right, l1+l8</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Report text formatting under braille cell</TD>
+<TD>doubleRouting</TD>
+</TR>
+<TR>
+<TD>Move to previous line in review</TD>
+<TD>joystick1Up</TD>
+</TR>
+<TR>
+<TD>Move to next line in review</TD>
+<TD>joystick1Down</TD>
+</TR>
+<TR>
+<TD>Move to previous character in review</TD>
+<TD>joystick1Left</TD>
+</TR>
+<TR>
+<TD>Move to next character in review</TD>
+<TD>joystick1Right</TD>
+</TR>
+<TR>
+<TD>Switch to previous review mode</TD>
+<TD>joystick1Left+joystick1Up</TD>
+</TR>
+<TR>
+<TD>Switch to next review mode</TD>
+<TD>joystick1Right+joystick1Down</TD>
+</TR>
+<TR>
+<TD>Erase the last entered braille cell or character</TD>
+<TD>backSpace</TD>
+</TR>
+<TR>
+<TD>Translate any braille input and press the enter key</TD>
+<TD>backSpace+space</TD>
+</TR>
+<TR>
+<TD>insert key</TD>
+<TD>dot3+dot5+space, l7</TD>
+</TR>
+<TR>
+<TD>delete key</TD>
+<TD>dot3+dot6+space</TD>
+</TR>
+<TR>
+<TD>home key</TD>
+<TD>dot1+dot2+dot3+space, joystick2Left+joystick2Up</TD>
+</TR>
+<TR>
+<TD>end key</TD>
+<TD>dot4+dot5+dot6+space, joystick2Right+joystick2Down</TD>
+</TR>
+<TR>
+<TD>leftArrow key</TD>
+<TD>dot2+space, joystick2Left, leftArrow</TD>
+</TR>
+<TR>
+<TD>rightArrow key</TD>
+<TD>dot5+space, joystick2Right, rightArrow</TD>
+</TR>
+<TR>
+<TD>upArrow key</TD>
+<TD>dot1+space, joystick2Up, upArrow</TD>
+</TR>
+<TR>
+<TD>downArrow key</TD>
+<TD>dot6+space, joystick2Down, downArrow</TD>
+</TR>
+<TR>
+<TD>enter key</TD>
+<TD>joystick2Centre</TD>
+</TR>
+<TR>
+<TD>pageUp key</TD>
+<TD>dot1+dot3+space</TD>
+</TR>
+<TR>
+<TD>pageDown key</TD>
+<TD>dot4+dot6+space</TD>
+</TR>
+<TR>
+<TD>numpad1 key</TD>
+<TD>dot1+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad2 key</TD>
+<TD>dot1+dot2+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad3 key</TD>
+<TD>dot1+dot4+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad4 key</TD>
+<TD>dot1+dot4+dot5+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad5 key</TD>
+<TD>dot1+dot5+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad6 key</TD>
+<TD>dot1+dot2+dot4+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad7 key</TD>
+<TD>dot1+dot2+dot4+dot5+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad8 key</TD>
+<TD>dot1+dot2+dot5+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad9 key</TD>
+<TD>dot2+dot4+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpadInsert key</TD>
+<TD>dot3+dot4+dot5+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpadDecimal key</TD>
+<TD>dot2+backspace</TD>
+</TR>
+<TR>
+<TD>numpadDivide key</TD>
+<TD>dot3+dot4+backspace</TD>
+</TR>
+<TR>
+<TD>numpadMultiply key</TD>
+<TD>dot3+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>numpadMinus key</TD>
+<TD>dot3+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpadPlus key</TD>
+<TD>dot2+dot3+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>numpadEnter key</TD>
+<TD>dot3+dot4+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>escape key</TD>
+<TD>dot1+dot2+dot4+dot5+space, l2</TD>
+</TR>
+<TR>
+<TD>tab key</TD>
+<TD>dot2+dot5+dot6+space, l3</TD>
+</TR>
+<TR>
+<TD>shift+tab key</TD>
+<TD>dot2+dot3+dot5+space</TD>
+</TR>
+<TR>
+<TD>printScreen key</TD>
+<TD>dot1+dot3+dot4+dot6+space</TD>
+</TR>
+<TR>
+<TD>pause key</TD>
+<TD>dot1+dot4+space</TD>
+</TR>
+<TR>
+<TD>applications key</TD>
+<TD>dot5+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>f1 key</TD>
+<TD>dot1+backspace</TD>
+</TR>
+<TR>
+<TD>f2 key</TD>
+<TD>dot1+dot2+backspace</TD>
+</TR>
+<TR>
+<TD>f3 key</TD>
+<TD>dot1+dot4+backspace</TD>
+</TR>
+<TR>
+<TD>f4 key</TD>
+<TD>dot1+dot4+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>f5 key</TD>
+<TD>dot1+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>f6 key</TD>
+<TD>dot1+dot2+dot4+backspace</TD>
+</TR>
+<TR>
+<TD>f7 key</TD>
+<TD>dot1+dot2+dot4+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>f8 key</TD>
+<TD>dot1+dot2+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>f9 key</TD>
+<TD>dot2+dot4+backspace</TD>
+</TR>
+<TR>
+<TD>f10 key</TD>
+<TD>dot2+dot4+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>f11 key</TD>
+<TD>dot1+dot3+backspace</TD>
+</TR>
+<TR>
+<TD>f12 key</TD>
+<TD>dot1+dot2+dot3+backspace</TD>
+</TR>
+<TR>
+<TD>windows key</TD>
+<TD>dot1+dot2+dot3+dot4+backspace</TD>
+</TR>
+<TR>
+<TD>Caps Lock key</TD>
+<TD>dot7+backspace, dot8+backspace</TD>
+</TR>
+<TR>
+<TD>Num Lock key</TD>
+<TD>dot3+backspace, dot6+backspace</TD>
+</TR>
+<TR>
+<TD>shift key</TD>
+<TD>dot7+space, l4</TD>
+</TR>
+<TR>
+<TD>Toggle shift key</TD>
+<TD>dot1+dot7+space, dot4+dot7+space</TD>
+</TR>
+<TR>
+<TD>control key</TD>
+<TD>dot7+dot8+space, l5</TD>
+</TR>
+<TR>
+<TD>Toggle control key</TD>
+<TD>dot1+dot7+dot8+space, dot4+dot7+dot8+space</TD>
+</TR>
+<TR>
+<TD>alt key</TD>
+<TD>dot8+space, l6</TD>
+</TR>
+<TR>
+<TD>Toggle alt key</TD>
+<TD>dot1+dot8+space, dot4+dot8+space</TD>
+</TR>
+<TR>
+<TD>ToggleHID keyboard input simulation</TD>
+<TD>esytime):l1+joystick1Down, esytime):l8+joystick1Down</TD>
+</TR>
+</TABLE>
 
-== 超點 ==[SuperBraille]
+<A NAME="NattiqTechnologies"></A>
+<H3>Nattiq nBraille 點顯器</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>down</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+</TABLE>
 
-|| 名稱 | 按鍵 |
-| 往後捲動點顯器 | 數字鍵盤減號 |
-| 往前捲動點顯器 | 數字鍵盤加號 |
+<A NAME="BRLTTY"></A>
+<H3>BRLTTY</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>BRLTTY 指令</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>fwinlt (go left one window)</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>fwinrt (go right one window)</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>lnup (go up one line)</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>lndn (go down one line)</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>route (bring cursor to character)</TD>
+</TR>
+</TABLE>
 
-== Eurobraille Esys/Esytime/Iris 點顯器 ==[Eurobraille]
+<A NAME="HIDBraille"></A>
+<H3>標準 HID 點顯器</H3>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>pan left or rocker up</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>pan right or rocker down</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>space + dot1</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>space + dot4</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing set 1|</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>up+down</TD>
+</TR>
+<TR>
+<TD>upArrow key</TD>
+<TD>joystick up</TD>
+</TR>
+<TR>
+<TD>downArrow key</TD>
+<TD>joystick down</TD>
+</TR>
+<TR>
+<TD>leftArrow key</TD>
+<TD>space+dot3 or joystick left</TD>
+</TR>
+<TR>
+<TD>rightArrow key</TD>
+<TD>space+dot6 or joystick right</TD>
+</TR>
+<TR>
+<TD>shift+tab key</TD>
+<TD>space+dot1+dot3</TD>
+</TR>
+<TR>
+<TD>tab key</TD>
+<TD>space+dot4+dot6</TD>
+</TR>
+<TR>
+<TD>alt key</TD>
+<TD>space+dot1+dot3+dot4 (space+m)</TD>
+</TR>
+<TR>
+<TD>escape key</TD>
+<TD>space+dot1+dot5 (space+e)</TD>
+</TR>
+<TR>
+<TD>enter key</TD>
+<TD>dot8 or joystick center</TD>
+</TR>
+<TR>
+<TD>windows key</TD>
+<TD>space+dot3+dot4</TD>
+</TR>
+<TR>
+<TD>alt+tab key</TD>
+<TD>space+dot2+dot3+dot4+dot5 (space+t)</TD>
+</TR>
+<TR>
+<TD>NVDA Menu</TD>
+<TD>space+dot1+dot3+dot4+dot5 (space+n)</TD>
+</TR>
+<TR>
+<TD>windows+d key (minimize all applications)</TD>
+<TD>space+dot1+dot4+dot5 (space+d)</TD>
+</TR>
+<TR>
+<TD>Say all</TD>
+<TD>space+dot1+dot2+dot3+dot4+dot5+dot6</TD>
+</TR>
+</TABLE>
 
-|| Name | Key |
-| Scroll braille display back | switch1-6left, l1 |
-| Scroll braille display forward | switch1-6Right, l8 |
-| Move to current focus | switch1-6Left+switch1-6Right, l1+l8 |
-| Route to braille cell | routing |
-| Report text formatting under braille cell | doubleRouting |
-| Move to previous line in review | joystick1Up |
-| Move to next line in review | joystick1Down |
-| Move to previous character in review | joystick1Left |
-| Move to next character in review | joystick1Right |
-| Switch to previous review mode | joystick1Left+joystick1Up |
-| Switch to next review mode | joystick1Right+joystick1Down |
-| Erase the last entered braille cell or character | backSpace |
-| Translate any braille input and press the enter key | backSpace+space |
-| insert key | dot3+dot5+space, l7 |
-| delete key | dot3+dot6+space |
-| home key | dot1+dot2+dot3+space, joystick2Left+joystick2Up |
-| end key | dot4+dot5+dot6+space, joystick2Right+joystick2Down |
-| leftArrow key | dot2+space, joystick2Left, leftArrow |
-| rightArrow key | dot5+space, joystick2Right, rightArrow |
-| upArrow key | dot1+space, joystick2Up, upArrow |
-| downArrow key | dot6+space, joystick2Down, downArrow |
-| enter key | joystick2Centre |
-| pageUp key | dot1+dot3+space |
-| pageDown key | dot4+dot6+space |
-| numpad1 key | dot1+dot6+backspace |
-| numpad2 key | dot1+dot2+dot6+backspace |
-| numpad3 key | dot1+dot4+dot6+backspace |
-| numpad4 key | dot1+dot4+dot5+dot6+backspace |
-| numpad5 key | dot1+dot5+dot6+backspace |
-| numpad6 key | dot1+dot2+dot4+dot6+backspace |
-| numpad7 key | dot1+dot2+dot4+dot5+dot6+backspace |
-| numpad8 key | dot1+dot2+dot5+dot6+backspace |
-| numpad9 key | dot2+dot4+dot6+backspace |
-| numpadInsert key | dot3+dot4+dot5+dot6+backspace |
-| numpadDecimal key | dot2+backspace |
-| numpadDivide key | dot3+dot4+backspace |
-| numpadMultiply key | dot3+dot5+backspace |
-| numpadMinus key | dot3+dot6+backspace |
-| numpadPlus key | dot2+dot3+dot5+backspace |
-| numpadEnter key | dot3+dot4+dot5+backspace |
-| escape key | dot1+dot2+dot4+dot5+space, l2 |
-| tab key | dot2+dot5+dot6+space, l3 |
-| shift+tab key | dot2+dot3+dot5+space |
-| printScreen key | dot1+dot3+dot4+dot6+space |
-| pause key | dot1+dot4+space |
-| applications key | dot5+dot6+backspace |
-| f1 key | dot1+backspace |
-| f2 key | dot1+dot2+backspace |
-| f3 key | dot1+dot4+backspace |
-| f4 key | dot1+dot4+dot5+backspace |
-| f5 key | dot1+dot5+backspace |
-| f6 key | dot1+dot2+dot4+backspace |
-| f7 key | dot1+dot2+dot4+dot5+backspace |
-| f8 key | dot1+dot2+dot5+backspace |
-| f9 key | dot2+dot4+backspace |
-| f10 key | dot2+dot4+dot5+backspace |
-| f11 key | dot1+dot3+backspace |
-| f12 key | dot1+dot2+dot3+backspace |
-| windows key | dot1+dot2+dot3+dot4+backspace |
-| Caps Lock key | dot7+backspace, dot8+backspace |
-| Num Lock key | dot3+backspace, dot6+backspace |
-| shift key | dot7+space, l4 |
-| Toggle shift key | dot1+dot7+space, dot4+dot7+space |
-| control key | dot7+dot8+space, l5 |
-| Toggle control key | dot1+dot7+dot8+space, dot4+dot7+dot8+space |
-| alt key | dot8+space, l6 |
-| Toggle alt key | dot1+dot8+space, dot4+dot8+space |
-| ToggleHID keyboard input simulation | esytime):l1+joystick1Down, esytime):l8+joystick1Down |
 
-== Nattiq nBraille 點顯器 ==[NattiqTechnologies]
-
-|| 名稱 | 按鍵 |
-| Scroll braille display back | up |
-| Scroll braille display forward | down |
-| Move braille display to previous line | left |
-| Move braille display to next line | right |
-| Route to braille cell | routing |
-
-== BRLTTY ==[BRLTTY]
-
-|| 名稱 | BRLTTY 指令 |
-| Scroll braille display back | fwinlt (go left one window) |
-| Scroll braille display forward | fwinrt (go right one window) |
-| Move braille display to previous line | lnup (go up one line) |
-| Move braille display to next line | lndn (go down one line) |
-| Route to braille cell | route (bring cursor to character) |
-
-== 標準 HID 點顯器 ==[HIDBraille]
-
-|| 名稱 | 按鍵 |
-| Scroll braille display back | pan left or rocker up |
-| Scroll braille display forward | pan right or rocker down |
-| Move braille display to previous line | space + dot1 |
-| Move braille display to next line | space + dot4 |
-| Route to braille cell | routing set 1|
-| Toggle braille tethered to | up+down |
-| upArrow key | joystick up |
-| downArrow key | joystick down |
-| leftArrow key | space+dot3 or joystick left |
-| rightArrow key | space+dot6 or joystick right |
-| shift+tab key | space+dot1+dot3 |
-| tab key | space+dot4+dot6 |
-| alt key | space+dot1+dot3+dot4 (space+m) |
-| escape key | space+dot1+dot5 (space+e) |
-| enter key | dot8 or joystick center |
-| windows key | space+dot3+dot4 |
-| alt+tab key | space+dot2+dot3+dot4+dot5 (space+t) |
-| NVDA Menu | space+dot1+dot3+dot4+dot5 (space+n) |
-| windows+d key (minimize all applications) | space+dot1+dot4+dot5 (space+d) |
-| Say all | space+dot1+dot2+dot3+dot4+dot5+dot6 |
-
+<!-- html code generated by txt2tags 2.5 (http://txt2tags.sf.net) -->
+<!-- cmdline: txt2tags -q keyCommands.t2t -->
+</BODY></HTML>
