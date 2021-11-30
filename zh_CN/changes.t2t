@@ -79,16 +79,16 @@ NVDA 会请求 Windows 更新安全证书，以避免日后再次出现该错误
 
 
 == 插件以及NVDA核心开发者需要了解的变动 ==
-- 构建 NVDA 现在需要 Visual Studio 2019 16.10.4 或更新版本。
+- 构建 NVDA 现在需要 Visual Studio 2019 16.10.4 或更高版本。
 要想匹配产品的开发环境， 请与 [AppVeyor 当前使用的 Visual Studio 最新版本 https://www.appveyor.com/docs/windows-images-software/#visual-studio-2019]更新同步。   (#12728)
 - 不在推荐使用 ``NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable`` ，且将在  版本 2022.1 时移除。 (#12660)
-  - 可使用 ``apiLevel`` 代替(请查看 ``_UIAConstants.WinConsoleAPILevel`` 的注释获取详情)。
+  - 可使用 ``apiLevel`` 代替（请查看 ``_UIAConstants.WinConsoleAPILevel`` 的注释获取详情）。
   -
-- GDI 应用程序的文本背景颜色透明度 (使用 display 模块查看)现可暴露在插件和应用模块中。 (#12658)
-- languageHandler 中的 ``LOCALE_SLANGUAGE``、 ``LOCALE_SLIST`` 和 ``LOCALE_SLANGDISPLAYNAME``已迁移到  ``LOCALE`` 条目。
+- GDI 应用程序的文本背景颜色透明度 (使用 display 模块查看)现可供插件和应用程序模块使用。 (#12658)
+- ``LOCALE_SLANGUAGE``, ``LOCALE_SLIST`` 和 ``LOCALE_SLANGDISPLAYNAME`` 已被迁移到 languageHandler 中的 ``LOCALE`` 枚举。 
 他们依然可用，但将在 2022.1中删除。 (#12753)
 - 函数 ``addonHandler.loadState`` 和 ``addonHandler.saveState`` 须在2022.1以前用其对应的 ``addonHandler.state.save`` 和 ``addonHandler.state.load`` 代替。 (#12792)
--   现在可在系统测试中检测盲文输出。 (#12917)
+- 现在系统测试包括了对盲文输出的测试。 (#12917)
 -
 
 
