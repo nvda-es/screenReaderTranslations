@@ -1,19 +1,16 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD>
-<META NAME="generator" CONTENT="http://txt2tags.org">
+<META NAME="generator" CONTENT="http://txt2tags.sf.net">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>NVDA 2020.4-dev Entwicklerhandbuch</TITLE>
+<TITLE>NVDA 2021.3-dev Entwicklerhandbuch</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
-<CENTER>
-<H2>NVDA 2020.4-dev Entwicklerhandbuch</H2>
-</CENTER>
-
+<P ALIGN="center"><CENTER><H1>NVDA 2021.3-dev Entwicklerhandbuch</H1>
+<FONT SIZE="4">
+</FONT></CENTER>
 
 <A NAME="toc"></A>
 <H2>Inhaltsverzeichnis</H2>
-
-
 <UL>
 
 <LI><A HREF="#toc2">1. Einleitung</A>
@@ -86,35 +83,29 @@
   </UL>
 </UL>
 
+<P></P>
 <A NAME="toc2"></A>
 <H2>1. Einleitung</H2>
-
 <P>
 Dieses Entwicklerhandbuch enthält Informationen über die Entwicklung von NVDA, einschließlich der Übersetzung und der Entwicklung von Komponenten für NVDA.
 </P>
-
 <A NAME="toc3"></A>
 <H3>1.1. Eine Anmerkung zu Python</H3>
-
 <P>
 NVDA und dessen Komponenten sind hauptsächlich in der Programmiersprache Python geschrieben.
 Das Ziel dieses Leitfadens ist nicht, Ihnen Python beizubringen, obwohl in diesem Leitfaden Beispiele aufgeführt sind, die Ihnen helfen werden, sich mit der Python-Syntax vertraut zu machen.
 Weitere Dokumentation und andere Ressourcen im Zusammenhang mit der Sprache Python finden Sie auf den Seiten der <A HREF="https://www.python.org/">Python Software Foundation</A>.
 </P>
-
 <A NAME="toc4"></A>
 <H2>2. Übersetzung</H2>
-
 <P>
 Um mehrere Sprachräume bzw. Sprachen zu unterstützen, muss NVDA übersetzt und die für das Gebietsschema spezifischen Daten bereitgestellt werden.
 Dieser Abschnitt enthält lediglich Informationen über benutzerdefinierte NVDA-Dateiformate, die für die Übersetzung erforderlich sind.
 Andere Teile von NVDA, wie zum Beispiel die Benutzeroberfläche oder die Dokumentation verwenden Standard-Dateiformate.
 Weitere Informationen zu NVDA-Übersetzung finden Sie auf im <A HREF="https://github.com/nvaccess/nvda/wiki/Translating">GitHub-Wiki</A> von NV Access.
 </P>
-
 <A NAME="toc5"></A>
 <H3>2.1. Beschreibungen diverser Zeichen</H3>
-
 <P>
 Manchmal kann es sehr schwierig oder sogar unmöglich sein, ein Zeichen von einem anderen zu unterscheiden.
 Zwei Zeichen können beispielsweise auf die gleiche Weise ausgesprochen werden, obwohl es sich eigentlich um verschiedene Zeichen handelt.
@@ -129,13 +120,12 @@ Alle anderen Zeilen müssen ein Zeichen enthalten, gefolgt von einem Tabulatorze
 <P>
 zum Beispiel:
 </P>
-
 <PRE>
 # Dies ist eine Kommentarzeile
 a	Anton
 b	Berta
 </PRE>
-
+<P></P>
 <P>
 Beispiele finden Sie in der Datei "locale\de\characterDescriptions.dic".
 </P>
@@ -143,10 +133,8 @@ Beispiele finden Sie in der Datei "locale\de\characterDescriptions.dic".
 In den meisten Fällen sollten die Zeichen in dieser Datei ein einzelnes Zeichen in Kleinbuchstaben sein.
 Es wird davon ausgegangen, dass Zeichen unabhängig von ihrem Fall die gleiche Beschreibung haben, so dass Großbuchstaben in Kleinbuchstaben umgewandelt werden, bevor die jeweilige Beschreibung erfolgt.
 </P>
-
 <A NAME="toc6"></A>
 <H3>2.2. Aussprache von Symbolen</H3>
-
 <P>
 Es ist oft nützlich, Satzzeichen und andere Symbole zu hören, die beim Lesen von Texten als Wörter ausgesprochen werden, insbesondere beim Navigieren der einzelnen Zeichen.
 Unglücklicherweise ist die Aussprache von Symbolen zwischen Sprachausgaben nicht einheitlich und manche können viele Symbole gar nicht aussprechen oder erlauben keine Kontrolle darüber, welche Symbole wie ausgesprochen werden.
@@ -161,10 +149,8 @@ Alle Gebietsschema übernehmen die Aussprache der Symbole und Zeichen aus dem En
 <P>
 Die Datei enthält zwei Abschnitte:
 </P>
-
 <A NAME="toc7"></A>
 <H4>2.2.1. Komplexe Symbole definieren</H4>
-
 <P>
 Der erste Abschnitt ist optional und enthält Definitionen komplexer Symbole in Form regulärer Ausdrücke.
 Komplexe Symbole sind nicht einfach nur Sonderzeichen oder Sequenzen von Sonderzeichen, die durch Wörter ersetzt werden sollen. Stattdessen erfordern sie eine kompliziertere Überprüfung auf Übereinstimmung.
@@ -174,43 +160,37 @@ Da der Punkt "." mehrere Bedeutungen hat, daher ist eine kompliziertere Prüfung
 <P>
 Der Abschnitt für komplexe Symbole beginnt mit der folgenden Zeile:
 </P>
-
 <PRE>
 complexSymbols:
 </PRE>
-
+<P></P>
 <P>
 Nachfolgende Zeilen enthalten eine Bezeichnung, der zur Identifizierung des Symbols verwendet wird, ein Tabulatorzeichen und das Muster für den regulären Ausdruck für dieses Symbol.
 Zum Beispiel:
 </P>
-
 <PRE>
 . Satzpunkt	(?&lt;=[^\s.])\.(?=[\"')\s]|$)
 </PRE>
-
+<P></P>
 <P>
 Da jeder Sprachraum die komplexen Symbole des englischen Sprachraumes übernimmt, brauchen Sie diese in Ihrer Symboldefinition nicht noch einmal aufzuführen.
 </P>
-
 <A NAME="toc8"></A>
 <H4>2.2.2. Symbol-Informationen definieren</H4>
-
 <P>
 Der zweite Abschnitt enthält Informationen darüber, wann und wie alle Symbole ausgesprochen werden sollen.
 Es beginnt mit der Zeile:
 </P>
-
 <PRE>
 symbols:
 </PRE>
-
+<P></P>
 <P>
 Nachfolgende Zeilen enthalten mehrere Felder, die durch Tabulatorzeichen getrennt werden.
 Die einzigen Pflichtfelder sind der Name des Symbols und die entsprechende Beschriftung dazu.
 Für nicht mit angegebene Felder wird die Standard-einstellung verwendet.
 Die Felder sind wie folgt:
 </P>
-
 <UL>
 <LI>name: Der Name eines Symbols.
 In den meisten Fällen ist es nur das Zeichen oder das Zeichen des Symbols selbst.
@@ -242,6 +222,7 @@ Dieses Feld sollte eines der Folgenden sein:
 Die Standard-Vorgabe ist, den Wert zu übernehmen oder "none", wenn es nichts zu übernehmen gibt.
 </UL>
 
+<P></P>
 <P>
 Schließlich kann in einem Kommentar nach einem Tabulatorzeichen am Zeilenende ein Anzeigename für das Symbol angegeben werden.
 Dies wird dem Benutzer bei der Bearbeitung der Symbol-Informationen angezeigt und ist besonders hilfreich für Übersetzer, um übersetzte Namen für komplexe Symbole aus dem Englischen zu definieren.
@@ -249,27 +230,21 @@ Dies wird dem Benutzer bei der Bearbeitung der Symbol-Informationen angezeigt un
 <P>
 Hierzu einige Beispiele:
 </P>
-
 <PRE>
 (	Runde Klammer auf	most
 </PRE>
-
 <P>
 Das bedeutet, dass das Zeichen "(" nur dann als "Runde Klammer auf" gesprochen werden soll, wenn die Symbolstufe auf die höchste oder nächsthöhere Stufe gesetzt ist, d. h. "most" oder "all".
 </P>
-
 <PRE>
 ,	Komma	all	always
 </PRE>
-
 <P>
 Dies bedeutet, dass das Zeichen "," als "Komma" gesprochen werden soll, wenn als Satzzeichenebene und Symbolstufe auf "all" eingestellt ist. Außerdem wird das Zeichen immer unverändert an die Sprachausgabe übergeben, um Sprechpausen korrekt zu setzen.
 </P>
-
 <PRE>
 . Satzpunkt	Punkt	# . fin de phrase
 </PRE>
-
 <P>
 Diese Zeile stammt aus der französischen Datei "symbols.dic".
 Es bedeutet, dass das komplexe Symbol ". Satzpunkt" als "Punkt" gesprochen werden soll.
@@ -280,18 +255,14 @@ Ein anzeigename wird ebenfalls angegeben, sodass französische NVDA-Anwender wis
 Bitte beachten Sie die Datei "locale\en\symbols.dic" für die englischen Definitionen, die für alle Gebitsschemata verwendet werden.
 Dies ist auch ein gutes Beispiel.
 </P>
-
 <A NAME="toc9"></A>
 <H2>3. Erweiterungen</H2>
-
 <A NAME="toc10"></A>
 <H3>3.1. Übersicht</H3>
-
 <P>
 Erweiterungen ermöglichen es Ihnen, das Verhalten von NVDA insgesamt oder innerhalb einer bestimmten Anwendung anzupassen.
 Hierzu zählen z. B.:
 </P>
-
 <UL>
 <LI>Auf bestimmte Ereignisse reagieren, wenn sich zum Beispiel der Fokus verschiebt oder wenn sich die Eigenschaften eines Objekts ändern.
 <LI>Befehle implementieren, die an bestimmte Tastendrücke oder andere Eingabemethoden gebunden werden können.
@@ -299,18 +270,16 @@ Hierzu zählen z. B.:
 <LI>Unterstützung für Textinhalte oder komplexe Dokumente anpassen oder hinzufügen.
 </UL>
 
+<P></P>
 <P>
 Dieser Abschnitt enthält lediglich eine Einführung in die Entwicklung von Erweiterungen.
 Schauen Sie sich die Code-Dokumentation für eine komplette Referenz an.
 </P>
-
 <A NAME="toc11"></A>
 <H3>3.2. Typen von Modulen</H3>
-
 <P>
 Es gibt zwei unterschiedliche Typen von Modulen:
 </P>
-
 <UL>
 <LI>Anwendungsmodul: Enthalten speziellen Code für eine bestimmte Anwendung.
 Ein Anwendungsmodul nimmt Ereignisse für eine bestimmte Anwendung entgegen, auch wenn die Anwendung momentan nicht im Vordergrund sich befindet.
@@ -320,6 +289,7 @@ Dabei nehmen sie alle Ereignisse von allen Elementen im Betriebssystem entgegen.
 Befehle, die in allgemeinen Erweiterungen an Eingabemethoden zugewiesen wurden, können unabhängig davon ausgeführt werden, welche Anwendung grade aktiv ist.
 </UL>
 
+<P></P>
 <P>
 Wenn Sie vorhaben, die Zugänglichkeit von NVDA für bestimmte Anwendungen zu verbessern, ist ein "appModule" empfehlenswert.
 Wenn Sie im Gegensatz dazu vorhaben, globalen Code für NVDA zu entwickeln, der systemweit zugänglich sein soll, zum Beispiel um sich die Signalstärke von Funknetzwerken anzeigen zu lassen, ist eine "globalPlugin" empfehlenswert.
@@ -343,10 +313,8 @@ Die Kategorie "Erweitert" enthält auch eine Schaltfläche zum einfachen Öffnen
 In den folgenden Abschnitten wird separat auf Anwendungsmodule und allgemeine Module eingegangen.
 Nach diesem Punkt ist das Thema wieder allgemeiner.
 </P>
-
 <A NAME="toc12"></A>
 <H3>3.3. Grundlagen eines Anwendungsmoduls</H3>
-
 <P>
 Anwendungsmodule ("appModule") besitzen die Endung ".py" und haben den gleichen Namen wie die Anwendungen, für die sie verwendet werden sollen.
 Ein Anwendungsmodul für den Editor müsste zum Beispiel "notepad.py" lauten, weil die ausführbare Datei des Editors notepad.exe heißt.
@@ -364,10 +332,8 @@ Details hierzu lesen Sie weiter unten.
 Sobald NVDA erkennt, dass eine bestimmte Anwendung gestartet wird, wird das jeweilige Anwendungsmodul geladen.
 Wenn die betreffende Anwendung oder NVDA beendet wird, wird auch das Anwendungsmodul wieder aus dem Speicher entfernt.
 </P>
-
 <A NAME="Example1"></A>
 <H3>3.4. Beispiel 1: Ein Anwendungsmodul erzeugt Signaltöne, wenn sich der Fokus verändert</H3>
-
 <P>
 Das folgende Anwendungsmodul gibt jedes mal einen Signalton wieder, wenn sich innerhalb des Editors der Fokus ändert.
 Dieses Beispiel veranschaulicht den grundsätzlichen Aufbau eines solchen Anwendungsmoduls.
@@ -384,7 +350,6 @@ Starten Sie anschließend NVDA neu oder wählen Sie "Erweiterungen neu laden" au
 Sie sollten nun jedes Mal einen Signalton hören, wenn sich der Fokus ändert.
 Beachten Sie jedoch, dass Sie, wenn Sie sich außerhalb des Notepads bewegen - z. B. in den Windows Explorer - keine Signaltöne mehr hören.
 </P>
-
 <PRE>
 --- Anfang des Code-Blocks ---
 # Notepad-Anwendungsmodul für NVDA
@@ -401,7 +366,7 @@ class AppModule(appModuleHandler.AppModule):
 
 --- Ende des Code-Blocks ---
 </PRE>
-
+<P></P>
 <P>
 Dieses Anwendungsmodul beginnt mit zwei Kommentarzeilen, die den Zweck des Anwendungsmoduls beschreiben.
 </P>
@@ -421,10 +386,8 @@ Ereignisse werden weiter unten in diesem Handbuch näher erläutert.
 <P>
 Wie bei anderen Beispielen in diesem Handbuch, denken Sie daran, das erstellte Anwendungsmodul zu löschen, wenn Sie mit dem Testen fertig sind und starten Sie dann NVDA neu oder laden Sie das Modul neu, damit die ursprüngliche Funktionalität wiederhergestellt wird.
 </P>
-
 <A NAME="toc14"></A>
 <H3>3.5. Grundlagen von allgemeinen Modulen</H3>
-
 <P>
 Allgemeine Module sollten die Endung ".py" besitzen und einen kurzen Namen haben, der ihren Zweck beschreibt.
 </P>
@@ -439,10 +402,8 @@ Dies alles wird später ausführlich behandelt.
 <P>
 NVDA lädt alle allgemeinen Module, sobald es gestartet wird und entlädt sie beim Beenden wieder.
 </P>
-
 <A NAME="toc15"></A>
 <H3>3.6. Beispiel 2: Ein allgemeines Modul - Ein Skript zur Ansage der NVDA-Version</H3>
-
 <P>
 Das folgende Modul-Beispiel ermöglicht es Ihnen, NVDA+Umschalt+V zu drücken, während Sie sich irgendwo im Betriebssystem befinden, um die NVDA-Version herauszufinden.
 Das Beispiel dient lediglich dazu, den grundlegenden Aufbau globaler Erweiterungen zu veranschaulichen.
@@ -457,7 +418,6 @@ Starten Sie nach dem Speichern entweder NVDA neu oder wählen aus dem Menü "Wer
 <P>
 Von nun an können Sie NVDA+Umschalt+V drücken, um die NVDA-Version angesagt und in Braille angezeigt zu bekommen.
 </P>
-
 <PRE>
 --- Anfang des Code-Blocks ---
 # Modul zur Ausgabe der Versionsinformationen in NVDA
@@ -476,7 +436,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 --- Ende des Code-Blocks ---
 </PRE>
-
+<P></P>
 <P>
 Dieses Modul beginnt mit zwei Kommentarzeilen, die den Zweck der Datei kurz beschreibt.
 </P>
@@ -499,10 +459,8 @@ Weitere Informationen zu Skripten und dem Skriptdekorateur finden Sie im Abschni
 <P>
 Um das ursprüngliche Verhalten von NVDA wiederherzustellen, müssen Sie die Datei löschen und NVDA anschließend neu starten oder die Erweiterungen neu laden.
 </P>
-
 <A NAME="toc16"></A>
 <H3>3.7. NVDA-Objekte</H3>
-
 <P>
 NVDA stellt Steuerelemente und andere Bestandteile von Benutzeroberflächen in Form von NVDA-Objekten dar.
 Diese Objekte enthalten standardisierte Eigenschaften wie name, Typ, Wert, Status und Beschreibung. Dies erlaubt anderen Teilen von NVDA, diese Informationen über ein Objekt in verallgemeinerter Form abzufragen oder darzustellen.
@@ -517,7 +475,6 @@ Der oben angesprochene Schalter "OK" könnte also beispielsweise ein Java-Objekt
 NVDA-Objekte haben viele Eigenschaften.
 Einige der Nützlichsten sind:
 </P>
-
 <UL>
 <LI>name: Die Beschriftung des Steuerelements
 <LI>role: Der Typ des Steuerelements, repräsentiert durch eine der ROLE_*-Konstanten aus dem Modul controltypes.
@@ -537,6 +494,7 @@ Das erste, untergeordnete Objekt einer Liste ist beispielsweise deren erster Ein
 <LI>children: Eine Liste aller untergeordneten Objekte eines Objekts (beispielsweise alle Einträge eines Menüs).
 </UL>
 
+<P></P>
 <P>
 Es gibt auch noch Eigenschaften, die sich auf die vereinfachte Navigation beziehen wie "simpleParent", "simpleNext", "simpleFirstChild" und "simpleLastChild".
 Diese entsprechen den oben beschriebenen Eigenschaften, NVDA filtert hier jedoch nutzlose Objekte aus.
@@ -551,7 +509,6 @@ Da Module jedoch immer fortschrittlicher werden, ist es sicherlich möglich, tie
 <P>
 Es gibt drei Möglichkeiten, wie Module NVDA-Objekte verwenden können:
 </P>
-
 <UL>
 <LI>Die meisten Ereignisse verarbeiten ein Argument, das dasjenige Objekt angibt, auf das sich das Ereignis bezieht.
 Das Ereignis "event_gainfocus" übernimmt beispielsweise dasjenige Objekt als Parameter, das soeben den Fokus bekommen hat.
@@ -560,13 +517,12 @@ Anschließend könnten auf andere Objekte bezug genommen und Informationen von i
 <LI>Das Modul könnte auch eine eigene NVDA-Objektklasse definieren, um ein bestimmtes Steuerelement darin einzuschließen. Solche benutzerdefinierten NVDA-Objekte können einem NVDA-Objekt neue Funktionalität geben, dessen Eigenschaften umwandeln, etc.
 </UL>
 
+<P></P>
 <P>
 Ebenso wie Anwendungsmodule oder allgemeine Module können NVDA-Objekte Skripte, Ereignisse und Eingabemethoden-zuweisungen enthalten.
 </P>
-
 <A NAME="toc17"></A>
 <H3>3.8. Skripte und Tastenanbindung</H3>
-
 <P>
 Anwendungsmodule, allgemeine Module und NVDA-Objekte können Methoden enthalten, die an Ereignisse wie z. B. Tastendrücke zugewiesen werden können.
 Auf solche Methoden greift NVDA mittels Skripte zu.
@@ -577,12 +533,12 @@ Ein Skript ist eine Standard-Python-Instanzmethode mit einem Namen, der mit "scr
 <P>
 Eine Skriptmethode verarbeitet zwei Argumente:
 </P>
-
 <UL>
 <LI>self: Eine Referenz auf das Anwendungsmodul, allgemeines Modul oder NVDA-Objekt, von dem aus das Skript aufgerufen wird.
 <LI>gesture: Ein Eingabemethoden-Objekt, das die Ausführung des Skripts verursacht hat.
 </UL>
 
+<P></P>
 <P>
 Neben dem eigentlichen Skript muss noch ein Eingabemethoden-Objekt definiert werden, damit NVDA bekannt ist, durch welches Ereignis das Skript aufgerufen werden soll.
 </P>
@@ -593,7 +549,6 @@ Es besteht aus einem zweistelligen Zeichencode, der die Quelle der Eingabe angib
 <P>
 Einige Beispiele für solche Gesten sind:
 </P>
-
 <UL>
 <LI>"kb:NVDA+shift+v"
 <LI>"br(freedomScientific):leftWizWheelUp"
@@ -601,10 +556,10 @@ Einige Beispiele für solche Gesten sind:
 <LI>"kb(laptop):NVDA+t"
 </UL>
 
+<P></P>
 <P>
 Aktuell werden folgende Eingabequellen unterstützt:
 </P>
-
 <UL>
 <LI>kb: Tastatureingaben
 <LI>br: Steuerungstasten der Braillezeile
@@ -612,6 +567,7 @@ Aktuell werden folgende Eingabequellen unterstützt:
 <LI>bk: Eingabe über die Braille-Tastatur
 </UL>
 
+<P></P>
 <P>
 Wenn NVDA eine Tastatureingabe registriert, sucht es in einer bestimmten Reihenfolge nach einer entsprechenden Eingabemethoden-Zuweisung.
 Wurde eine Zuweisung gefunden, so wird das entsprechende Skript ausgeführt. Weder wird weiter nach Eingabemethoden-Zuweisungen gesucht, noch wird der Tastendruck ans Betriebssystem weitergereicht.
@@ -619,7 +575,6 @@ Wurde eine Zuweisung gefunden, so wird das entsprechende Skript ausgeführt. Wed
 <P>
 Folgende Reihenfolge wird bei der Suche nach den Zuweisungen der Eingabemethoden verwendet:
 </P>
-
 <UL>
 <LI>Die benutzerspezifischen Gesten
 <LI>Die sprachspezifischen Gesten
@@ -631,9 +586,9 @@ Folgende Reihenfolge wird bei der Suche nach den Zuweisungen der Eingabemethoden
 <LI>Globale Befehle (eingebaute Befehle wie Beenden von NVDA, Objektnavigationsbefehle, etc.)
 </UL>
 
+<P></P>
 <A NAME="DefiningScriptProperties"></A>
 <H4>3.8.1. Skript-Eigenschaften definieren</H4>
-
 <P>
 Für NVDA 2018.3 und neuer wird empfohlen, die Skript-Eigenschaften mit Hilfe des sogenannten Skript-Dekorators zu setzen.
 Kurz gesagt, das ist eine Funktion, die das Verhalten einer bestimmten Funktion anpasst.
@@ -643,18 +598,16 @@ Außerdem stellt es sicher, dass das Skript mit der von Ihnen angegebenen Beschr
 <P>
 Damit Sie den Skript-Dekorator verwenden können, müssen Sie ihn aus dem Modul "scriptHandler" importieren.
 </P>
-
 <PRE>
 --- Anfang des Code-Blocks ---
 from scriptHandler import script
 --- Ende des Code-Blocks ---
 </PRE>
-
+<P></P>
 <P>
 Anschließend fügen Sie direkt über Ihrer Skript-Definition den Skript-Dekorator hinzu und stellen ihm die gewünschten Argumente zur Verfügung.
 Beispiel:
 </P>
-
 <PRE>
 --- Anfang des Code-Blocks ---
 	@script(
@@ -666,7 +619,7 @@ Beispiel:
 
 --- Ende des Code-Blocks ---
 </PRE>
-
+<P></P>
 <P>
 In diesem Beispiel wird das Skript im Dialogfeld "Tastenbefehle" unter der Kategorie "Sonstiges" aufgelistet.
 Es hat die Bezeichnung "Datum und Uhrzeit ansagen" und ist für die Tastenkombinationen "NVDA+Umschalt+T" und "NVDA+Alt+R" definiert.
@@ -674,7 +627,6 @@ Es hat die Bezeichnung "Datum und Uhrzeit ansagen" und ist für die Tastenkombin
 <P>
 Die folgenden Schlüsselwort-Argumente können bei der Anwendung des Skript-Dekorators verwendet werden:
 </P>
-
 <UL>
 <LI>description: Ein kurzer, übersetzbarer String, der den Befehl für Benutzer beschreibt.
 Dies wird dem Benutzer im Eingabehilfemodus gemeldet und im Dialogfeld "Tastenbefehle" angezeigt.
@@ -696,6 +648,7 @@ Diese Option ist standardmäßig auf "False" eingestellt.
 Diese Option ist standardmäßig auf "False" eingestellt.
 </UL>
 
+<P></P>
 <P>
 Obwohl der Skript-Dekorator den Skript-Definitionsprozess viel einfacher macht, gibt es mehr Möglichkeiten, Gesten zu definieren und Skript-Eigenschaften zu setzen.
 Zum Beispiel kann ein spezielles "__gestures" Python-Wörterbuch als Klassenvariable in einem Anwendungsmodul, in einem globalen Modul oder in einem NVDA-Objekt definiert werden.
@@ -703,10 +656,8 @@ Dieses Wörterbuch sollte Strings zu Bezeichnungen der Gesten enthalten, die auf
 Sie können auch eine Beschreibung des Skripts im "docstring" der Funktion angeben.
 Eine alternative Möglichkeit, die Kategorie des Skripts anzugeben, besteht darin, ein Attribut "category" in der Skript-Funktion auf einen String zu setzen, der den Namen der Kategorie enthält.
 </P>
-
 <A NAME="toc19"></A>
 <H3>3.9. Beispiel 3: Ein allgemeines Modul zum Aufspüren von FensterKlassen und Steuerelemente</H3>
-
 <P>
 Das folgende Modul bewirkt, dass Sie NVDA+Pfeiltaste nach links drücken können, um die Fensterklasse des aktuellen Fensters zu erfahren. Ebenso können Sie NVDA+Pfeiltaste nach rechts drücken, um die Nummer des Steuerelements des aktuellen Objekts zu erfahren.
 Das Beispiel veranschaulicht, wie Sie ein Skript und eine Eingabemethodenzuweisung in einer globalen Erweiterung definieren können.
@@ -718,7 +669,6 @@ Achten Sie dabei darauf, alle Tabs und Leerzeichen exakt zu übernehmen.
 <P>
 Starten Sie nach dem Speichern entweder NVDA neu oder wählen Sie im NVDA-Menü den Befehl "Module neu laden" aus dem Menü "Werkzeuge" aus.
 </P>
-
 <PRE>
 --- Anfang des Code-Blocks ---
 # Hilfs-Skript für NVDA
@@ -753,10 +703,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 --- Ende des Code-Blocks ---
 </PRE>
-
+<P></P>
 <A NAME="toc20"></A>
 <H3>3.10. Ereignisse</H3>
-
 <P>
 Wenn NVDA bestimmte Toolkit-, API- oder Betriebssystemereignisse erkennt, abstrahiert es diese und löst seine eigenen internen Ereignisse auf Module und NVDA-Objekte aus.
 </P>
@@ -768,7 +717,6 @@ Das Weiterreichen des Ereignisses kann jedoch durch Code innerhalb der Ereignisb
 <P>
 Ereignisse werden in folgender Reihenfolge abgearbeitet:
 </P>
-
 <UL>
 <LI>Durch geladene globaler Module.
 <LI>Durch das Anwendungsmodul, das dem Objekt zugeordnet wurde, bei dem das Ereignis eintrat.
@@ -776,6 +724,7 @@ Ereignisse werden in folgender Reihenfolge abgearbeitet:
 <LI>Durch das NVDA-Objekt selbst.
 </UL>
 
+<P></P>
 <P>
 Ereignisse sind Python-Instanzmethoden, deren namen mit "event_" beginnen, gefolgt von dem Namen des eigentlichen Ereignisses (z. B. "gainFocus").
 </P>
@@ -789,17 +738,16 @@ einige Ereignisse verarbeiten noch zusätzliche Argumente, dies ist allerdings z
 <P>
 Wird ein Ereignis, das sich auf ein NVDA-Objekt bezieht, in einer globalen Erweiterung, in einem Anwendungsmodul oder in einem Interceptor definiert, verarbeitet es die folgenden Argumente:
 </P>
-
 <UL>
 <LI>self: Die Instanz des Anwendungsmoduls, des globalen Erweiterungen oder des Interceptors.
 <LI>obj: Das NVDA-Objekt, welches das Ereignis ausgelöst hat.
 <LI>nextHandler: Eine Funktion, die bei ihrem Aufruf das Ereignis weiter durchreicht.
 </UL>
 
+<P></P>
 <P>
 einige häufig verwendete NVDA-Objektereignisse sind:
 </P>
-
 <UL>
 <LI>foreground: Dieses Objekt wurde zum neuen Vordergrundfenster d.h. zur neuen aktiven Anwendung.
 <LI>gainFocus: Das Objekt erhielt soeben den Fokus.
@@ -811,16 +759,15 @@ einige häufig verwendete NVDA-Objektereignisse sind:
 <LI>locationChange: Wird ausgelöst, sobald ein Objekt physisch auf dem Bildschirm verschoben wird.
 </UL>
 
+<P></P>
 <P>
 Es gibt zwar noch viel mehr, die oben aufgeführten Ereignisse sind jedoch die gebräuchlichsten.
 </P>
 <P>
 Ein Beispiel für eine Ereignisbehandlungsroutine finden Sie im Beispiel 1.
 </P>
-
 <A NAME="toc21"></A>
 <H3>3.11. Die Schlafmodus-Variable</H3>
-
 <P>
 Anwendungsmodule besitzen eine sehr nützliche Eigenschaft namens "sleepmode". Diese Eigenschaft deaktiviert, wenn sie auf "True" gesetzt wird, fast alle Funktionen von NVDA.
 Der Schlafmodus ist nützlich für anwendungen, die eigene Bildschirmlese-Funktionen besitzen oder für Spiele, bei denen man volle Kontrolle über die Tastatur benötigt.
@@ -829,15 +776,12 @@ Der Schlafmodus ist nützlich für anwendungen, die eigene Bildschirmlese-Funkti
 Obwohl der Anwender den Schlafmodus mit NVDA+Umschalt+S umschalten kann, kann der Entwickler trotzdem die Standardeinstellung des Schlafmodus vorgeben.
 Dies geschied einfach durch setzen der Eigenschaft "sleepMode" auf "True" in der Klasse des Anwendungsmoduls.
 </P>
-
 <A NAME="toc22"></A>
 <H3>3.12. Beispiel 4: Ein Schlafmodus-Anwendungsmodul</H3>
-
 <P>
 Der folgende Code kann kopiert und im Anwendungsmodul-Verzeichnis in einer Datei für eine Anwendung gespeichert werden, für die Sie den Schlafmodus aktivieren möchten.
 Die Datei muss die Endung ".py" erhalten.
 </P>
-
 <PRE>
 --- Anfang des Code-Blocks ---
 
@@ -849,10 +793,9 @@ class AppModule(appModuleHandler.AppModule):
 
 --- Ende des Code-Blocks---
 </PRE>
-
+<P></P>
 <A NAME="toc23"></A>
 <H3>3.13. Eigene NVDA-Objektklassen erstellen</H3>
-
 <P>
 Um die Zugänglichkeit von anwendungen mit NVDA zu verbessern, ist das Definieren von eigenen NVDA-Objektklassen der effektivste Weg.
 Dies ermöglicht Ihnen, die gesamte für ein Steuerelement relevante Logik an einer einzigen Stelle zusammenzufassen, anstatt sie auf verschiedene Ereignisse einer Erweiterung aufzuteilen.
@@ -860,12 +803,12 @@ Dies ermöglicht Ihnen, die gesamte für ein Steuerelement relevante Logik an ei
 <P>
 die definition einer eigenen Objektklasse erfolgt in zwei Schritten:
 </P>
-
 <UL>
 <LI>Definieren der NVDA-Objektklasse und deren Skripte, Ereignisse, Eigenschaften und Eingabemethoden-Zuweisungen
 <LI>NVDA mitteilen, dass diese Klasse in bestimmten Situationen zu verwenden ist, indem Sie sie mit Hilfe der Methode "chooseNVDAObjectOverlayClasses" auf Ebene einer Erweiterung einbinden.
 </UL>
 
+<P></P>
 <P>
 Wenn Sie eigene NVDA-Objektklassen definieren, haben Sie viele NVDA-Objekt-basisklassen zur Auswahl.
 Diese Basisklassen enthalten die grundlegene Unterstützung von Betriebssystem- oder Zugänglichkeitsschnittstellen wie win32, MSAA oder Java Access Bridge.
@@ -879,21 +822,19 @@ Wenn Sie beispielsweise eine iAccessible-spezifische Eigenschaft wie "shouldAllo
 Die Methode "chooseNVDAObjectOverlayClasses" kann in Anwendungsmodulen oder globalen Erweiterungen eingesetzt werden.
 Dabei verarbeitet sie drei Argumente:
 </P>
-
 <OL>
 <LI>self: Die Instanz des anwendungsmoduls oder des globalen Erweiterungen.
 <LI>obj: Das Objekt, für das eine neue Klasse ausgewählt werden soll.
 <LI>clsList: Eine Python-Liste mit Klassen, die für das Objekt benutzt werden sollen.
 </OL>
 
+<P></P>
 <P>
 Innerhalb dieser Methode sollten Sie entscheiden, welche benutzerdefinierte(n) Objektklasse(n) das objekt verwenden soll, indem Sie dessen Eigenschaften prüfen.
 Wenn eine benutzerdefinierte Klasse verwendet werden soll, können Sie sie in die Klassenliste (üblicherweise vorn) einfügen. Sie können auch von NVDA ausgewählte Klassen aus der Liste entfernen, dies ist jedoch selten erforderlich.
 </P>
-
 <A NAME="toc24"></A>
 <H3>3.14. Beispiel 5: Ein Befehl zum Abrufen der Textlänge in einem Eingabefeld unter Verwendung einer eigenen NVDA-Objektklasse</H3>
-
 <P>
 Dieses Anwendungsmodul für den Editor stellt einen Befehl bereit, mit dem die Anzahl der Zeichen in einem Eingabefeld abgerufen werden kann.
 Dieser kann mit nvda+l aufgerufen werden.
@@ -902,7 +843,6 @@ Dieser Befehl ist nur in Eingabefeldern innerhalb des Editors verfügbar.
 <P>
 Speichern Sie den folgenden Code in einer Datei mit dem Namen "notepad.py" in ihrem NVDA-Konfigurationsverzeichnis.
 </P>
-
 <PRE>
 --- Anfang des Code-Blocks ---
 
@@ -926,10 +866,9 @@ class EnhancedEditField(IAccessible):
 
 --- Ende des Code_blocks ---
 </PRE>
-
+<P></P>
 <A NAME="toc25"></A>
 <H3>3.15. Kleine Änderungen an einem NVDA-Objekt in einem Anwendungsmodul vornehmen</H3>
-
 <P>
 Manchmal möchten Sie vielleicht nur kleine Änderungen an einem NVDA-Objekt in einer Anwendung vornehmen, z. B. den Namen oder die Rolle überschreiben.
 In diesen Fällen benötigen Sie nicht die volle Leistung einer benutzerdefinierten NVDA-Objektklasse.
@@ -938,19 +877,17 @@ Dazu können Sie das Ereignis "NVDAObject_init" verwenden, das nur in Anwendungs
 <P>
 Die Methode "event_NVDAObject_init" benötigt zwei Argumente:
 </P>
-
 <OL>
 <LI>self: Die Instanz des Anwendungsmoduls.
 <LI>obj: Das zu initialisierende NVDA-Objekt.
 </OL>
 
+<P></P>
 <P>
 Innerhalb dieser Methode können Sie prüfen, ob dieses Objekt relevant ist und dann Eigenschaften entsprechend überschreiben.
 </P>
-
 <A NAME="toc26"></A>
 <H3>3.16. Beispiel 6: Beschriftung des Notepad-Eingabefeldes mit "event_NVDAObject_init"</H3>
-
 <P>
 Dieses Anwendungsmodul für Notepad meldet NVDA zum Eingabefeld von Notepad, welches den Namen "content" trägt.
 Das bedeutet, wenn es den Fokus erhält, wird NVDA "Inhalt bearbeiten" ansagen.
@@ -958,7 +895,6 @@ Das bedeutet, wenn es den Fokus erhält, wird NVDA "Inhalt bearbeiten" ansagen.
 <P>
 Der folgende Code kann kopiert und in eine Textdatei eingefügt werden, die dann im Verzeichnis "appModules" unter dem Namen "notepad.py" gespeichert wird.
 </P>
-
 <PRE>
 --- Anfang des Code-Blocks ---
 
@@ -973,19 +909,16 @@ class AppModule(appModuleHandler.AppModule):
 
 --- Ende des Code-Blocks ---
 </PRE>
-
+<P></P>
 <A NAME="toc27"></A>
 <H2>4. Code als NVDA-Erweiterungspaket verpacken</H2>
-
 <P>
 Um den Benutzern die gemeinsame Nutzung und Installation von Plugins und Treibern zu erleichtern, können diese in ein einzelnes NVDA-Zusatzpaket gepackt werden, das der Benutzer dann über den Add-On-Manager, der sich im NVDA-Menü unter Tools befindet, in eine Kopie von NVDA installieren kann.
 Erweiterungspakete werden seit NVDA 2012.2 unterstützt.
 Ein Erweiterungspaket ist einfach ein Zip-Archiv mit der Datei-Erweiterung ".nvda-addon", welches eine Manifest-Datei, optionalen Installations- bzw. Deinstallationsroutine und ein oder mehrere Verzeichnisse mit Modulen und/oder Treibern enthält.
 </P>
-
 <A NAME="toc28"></A>
 <H3>4.1. Nicht-ASCII-Dateinamen in Zip-Archiven</H3>
-
 <P>
 Wenn Ihre Erweiterung Dateien enthält, die Nicht-ASCII-Zeichen (nicht in Englisch) enthalten, sollten Sie das Zip-Archiv so erstellen, dass es UTF-8-Dateinamen verwendet.
 Das bedeutet, dass diese Dateien auf allen Systemen korrekt entpackt werden können, unabhängig von der eingestellten Sprache des Systems.
@@ -993,24 +926,19 @@ Leider unterstützen viele Packprogramme dies nicht, auch nicht der Windows-Expl
 Generell muss die Option auch in Archiven, die sie unterstützen, explizit aktiviert werden.
 <A HREF="https://www.7-zip.org/">7-Zip</A> unterstützt dies, obwohl es durch die Angabe des Parameters "cu=on" aktiviert werden muss.
 </P>
-
 <A NAME="toc29"></A>
 <H3>4.2. Manifest-Dateien</H3>
-
 <P>
 Jedes Erweiterungspaket muss eine Manifest-Datei mit dem Namen "manifest.ini" enthalten.
 Dies muss eine Textdatei im UTF-8-Format sein.
 Diese Manifest-Datei enthält die Informationen wie den Namen, die Version und die Beschreibung der Erweiterung deklarieren.
 </P>
-
 <A NAME="toc30"></A>
 <H4>4.2.1. Verfügbare Felder</H4>
-
 <P>
 Obwohl es dringend empfohlen wird, dass Manifest-Dateien alle Felder enthalten, müssen die als obligatorisch gekennzeichneten Felder enthalten sein.
 Andernfalls wird die Erweiterung nicht installiert.
 </P>
-
 <UL>
 <LI>name: Ein kurzer, eindeutiger Name für die Erweiterung. Dieser dient der internen Unterscheidung von Erweiterungen und wird dem Benutzer nicht angezeigt. (obligatorisch)
 <LI>summary: Der Name der Erweiterungen, wie er dem Benutzer angezeigt wird. (obligatorisch)
@@ -1041,7 +969,6 @@ Es sichert den Autor der Erweiterung ab, damit Erweiterungen keine Instabilität
 Wenn diese nicht zur Verfügung gestellt wird oder kleiner als die aktuelle NVDA-Version ist (ohne Berücksichtigung der minimalen NVDA-Version; z. B. 2018.3.1), kann der Benutzer die Erweiterung nicht installieren.
 <P></P>
 +++ Eine Beispiel-Manifest-Datei +++
-
 <PRE>
 --- Anfang des Code-Blocks ---
 
@@ -1057,7 +984,6 @@ lastTestedNVDAVersion = "2019.1.0"
 
 --- Ende des Code-Blocks ---
 </PRE>
-
 <P></P>
 ++ Module und Treiber ++
 Die folgenden Module und Treiber können in eine Erweiterung eingebunden werden:
@@ -1068,65 +994,53 @@ Die folgenden Module und Treiber können in eine Erweiterung eingebunden werden:
 <LI>Treiber für Sprachausgaben: Gehören ins Verzeichnis "synthDrivers" im Archiv.
 </UL>
 
+<P></P>
 <A NAME="toc31"></A>
 <H3>4.3. Optionaler Code zum Installieren/Deinstallieren</H3>
-
 <P>
 Wenn Sie während der Installation oder Deinstallation Ihrer NVDA-Erweiterung Code ausführen müssen (z. B., um Lizenz-Informationen zu überprüfen oder Dateien in einen bestimmten Ordner zu kopieren), können Sie im Archiv eine Python-Datei mit dem Namen "installTasks.py" erstellen, die spezielle Funktionen enthält, die NVDA für die Erweiterung während der Installation oder Deinstallation ausführt.
 In dieser Datei sollten Sie vermeiden, nicht unbedingt notwendige Module zu laden, insbesondere Python-C-Erweiterungen oder Programmbibliotheken aus der eigenen Erweiterung, da dies zu einem späteren Entfernen der Erweiterung führen könnte.
 Sollte dies dennoch geschehen, wird das Verzeichnis der Erweiterung umbenannt und nach dem nächsten Neustart von NVDA gelöscht.
 Schließlich sollte es nicht von der Existenz oder dem Zustand anderer Erweiterungen abhängen sein, da diese möglicherweise nicht installiert sind, bereits entfernt wurden oder noch nicht initialisiert wurden.
 </P>
-
 <A NAME="toc32"></A>
 <H4>4.3.1. Die "onInstall"-Funktion</H4>
-
 <P>
 NVDA sucht und führt eine Funktion "onInstall" in Python-Datei "installTasks.py" aus, nachdem es die Erweiterung in NVDA entpackt hat.
 Beachten Sie, dass, obwohl die Erweiterung zu diesem Zeitpunkt entpackt wurde, dessen Verzeichnis mit der Endung ".pendingInstall" versehen wird, bis NVDA neu gestartet, das Verzeichnis umbenannt und die Erweiterung wirklich zum ersten Mal geladen wird.
 Wenn diese Funktion einen Fehler auslöst, schlägt die Installation der Erweiterung fehl und das Verzeichnis wird aufgeräumt.
 </P>
-
 <A NAME="toc33"></A>
 <H4>4.3.2. Die "onUninstall"-Funktion</H4>
-
 <P>
 NVDA sucht eine Funktion "onUninstall" in der Python-Datei "installTasks.py" und führt sie aus, wenn NVDA neu gestartet wird, nachdem der Benutzer sich entschieden hat, die Erweiterung zu entfernen.
 Nach Abschluss dieser Funktion wird das Verzeichnis der Erweiterung automatisch entfernt.
 Da dies beim NVDA-Start geschieht, bevor andere Komponenten initialisiert werden, kann diese Funktion keine Eingaben vom Benutzer anfordern.
 </P>
-
 <A NAME="toc34"></A>
 <H3>4.4. Erweiterungen übersetzen</H3>
-
 <P>
 Es ist möglich, lokal spezifische Informationen und Meldungen für Ihre Erweiterung bereitzustellen.
 Lokale Informationen können im Verzeichnis "locale" im Archiv gespeichert werden.
 Dieses Verzeichnis sollte Unterverzeichnisse für jede unterstützte Sprache enthalten, wobei das gleiche Format für die Sprach-Codes in NVDA verwendet wird; z. B. "en" für Englisch, "fr_CA" für kanadisches Französisch.
 </P>
-
 <A NAME="toc35"></A>
 <H4>4.4.1. Manifest-Dateien übersetzen</H4>
-
 <P>
 Jedes dieser Sprachverzeichnisse kann eine sprachspezifische Manifest-Datei mit dem Namen "manifest.ini" enthalten, die zu übersetzenden Felder des Manifests enthalten kann.
 Diese Felder sind "summary" und "description".
 Alle anderen Felder werden ignoriert.
 </P>
-
 <A NAME="toc36"></A>
 <H4>4.4.2. Sprachspezifische Meldungen</H4>
-
 <P>
 Jedes Sprachverzeichnis kann auch Informationen (gettext) enthalten, mit denen das System den Rest der NVDA-Benutzeroberfläche und die gemeldeten Meldungen übersetzt.
 Wie in NVDA selbst sollte eine kompilierte Datenbankdatei (gettext) mit dem Namen "nvda.mo" im Verzeichnis "LC_MESSAGES" innerhalb dieses Verzeichnisses abgelegt werden.
 Damit Module in Ihrer Erweiterung über Aufrufe von _() auf Informationen der Meldungen (gettext) zugreifen können, müssen Sie die Übersetzungen am Anfang jedes Python-Moduls durch den Aufruf der Funktion "addonHandler.initTranslation()" initialisieren.
 Für weitere Informationen zu "gettext" und die NVDA-Übersetzung im Allgemeinen lesen Sie bitte den Wiki-Artikel unter <A HREF="https://github.com/nvaccess/nvda/wiki/Translating">https://github.com/nvaccess/nvda/wiki/Translating</A> von NV Access auf GitHub.
 </P>
-
 <A NAME="AddonDoc"></A>
 <H3>4.5. Dokumentation zur Erweiterung</H3>
-
 <P>
 Die Dokumentation zu einer Erweiterung sollte im Verzeichnis "doc" im Archiv abgelegt werden.
 Ähnlich wie das Verzeichnis "locale" sollte dieses Verzeichnis auch Unterverzeichnisse für jede Sprache enthalten, in der die Dokumentation verfügbar ist.
@@ -1137,22 +1051,17 @@ Dadurch wird die im Parameter "docFileName" der Manifest-Datei benannte Datei ge
 NVDA wird diese Datei in den entsprechenden Sprachverzeichnissen suchen.
 Wenn zum Beispiel der Parameter "docFileName" auf die Datei "readme.html" gesetzt ist und der Benutzer Englisch benutzt, öffnet NVDA "doc\en\readme.html".
 </P>
-
 <A NAME="PythonConsole"></A>
 <H2>5. NVDA-Python-Konsole</H2>
-
 <P>
 Die NVDA-Python-Konsole emuliert den interaktiven Python-Interpreter aus NVDA heraus.
 Es ist ein Entwicklungswerkzeug, das für das Debugging, die allgemeine Inspektion von NVDA-Interna oder die Inspektion der Accessibility-Hierarchie einer Anwendung nützlich ist.
 </P>
-
 <A NAME="toc39"></A>
 <H3>5.1. Verwendung</H3>
-
 <P>
 Die Konsole kann auf zwei Arten aktiviert werden:
 </P>
-
 <UL>
 <LI>Durch Drücken von NVDA+Strg+Z.
 Wenn auf diese Weise aktiviert, wird eine Momentaufnahme des aktuellen Zustands von NVDA zum Zeitpunkt des Tastendrucks erstellt und in der Konsole in bestimmten Variablen gespeichert.
@@ -1160,6 +1069,7 @@ Für weitere Informationen lesen Sie im Abschnitt <A HREF="#PythonConsoleSnapsho
 <LI>Aus dem NVDA-Menü "Werkzeuge" -&gt; "Python-Konsole".
 </UL>
 
+<P></P>
 <P>
 Die Konsole ist dem interaktiven Standard-Python-Interpreter ähnlich.
 Die Eingabe wird zeilenweise übernommen und mit der Enter-Taste verarbeitet.
@@ -1179,26 +1089,20 @@ Sie kann durch Ausführung von "del _" gelöst und durch Ausführung von "_ = _"
 Durch Schließen des Konsolenfensters (mit Escape oder Alt+F4) wird es einfach ausgeblendet.
 Dadurch kann der Benutzer zu der Sitzung zurückkehren, wie er sie beim Schließen verlassen hat, einschließlich des Verlaufs und der Variablen.
 </P>
-
 <A NAME="PythonConsoleNamespace"></A>
 <H3>5.2. Namensraum in der Python-Konsole</H3>
-
 <A NAME="toc41"></A>
 <H4>5.2.1. Automatisches Importieren</H4>
-
 <P>
 Die folgenden Module und Variablen werden der Einfachheit halber automatisch in die Konsole importiert:
 sys, os, wx, log (from logHandler), api, queueHandler, speech, braille
 </P>
-
 <A NAME="PythonConsoleSnapshotVariables"></A>
 <H4>5.2.2. Snapshot-Variablen</H4>
-
 <P>
 Immer wenn NVDA+Strg+Z gedrückt wird, werden in der Konsole bestimmte Variablen entsprechend dem aktuellen Zustand von NVDA zugewiesen.
 Diese Variablen sind:
 </P>
-
 <UL>
 <LI>focus: Das aktuelle Fokus-Objekt.
 <LI>focusAnc: Die Familie des aktuellen Fokus-Objekts.
@@ -1209,9 +1113,9 @@ Diese Variablen sind:
 <LI>brlRegions: Die Braille-Regionen aus dem aktiven Braille-Puffer.
 </UL>
 
+<P></P>
 <A NAME="toc43"></A>
 <H3>5.3. Tab-Vervollständigung</H3>
-
 <P>
 Damit wird die Tabulator-Vervollständigung von Variablen und Namen der Attribute unterstützt.
 Drücken Sie einmal die Tabulator-Taste, um die aktuelle Eingabe abzuschließen, wenn es nur einen einzigen Schriftsatz gibt.
@@ -1221,10 +1125,8 @@ Lautet die Eingabe "nav.", werden Namen der Attribute ohne führenden Unterstric
 Lautet die Eingabe "nav._", werden Namen der Attribute mit einem einfachen führenden Unterstrich vorgeschlagen.
 Ebenso werden bei der Eingabe "nav.__" Namen der Attribute mit zwei führenden Unterstrichen vorgeschlagen.
 </P>
-
 <A NAME="toc44"></A>
 <H2>6. Remote-Python-Konsole</H2>
-
 <P>
 Für Situationen, in denen ein Remote-Debugging von NVDA hilfreich ist, steht eine Remote-Python-Konsole zur Verfügung.
 Sie ist ähnlich der lokalen <A HREF="#PythonConsole">Python-Konsole</A>, wird aber über TCP angesprochen.
@@ -1233,10 +1135,8 @@ Sie ist ähnlich der lokalen <A HREF="#PythonConsole">Python-Konsole</A>, wird a
 Bitte beachten Sie, dass dies ein großes Sicherheitsrisiko darstellt!
 Sie sollten sie nur aktivieren, wenn Sie sich in vertrauenswürdigen Netzwerken befinden.
 </P>
-
 <A NAME="toc45"></A>
 <H3>6.1. Verwendung</H3>
-
 <P>
 Um die Remote-Python-Konsole zu aktivieren, verwenden Sie die lokale Python-Konsole, um "remotePythonConsole" zu importieren und "remotePythonConsole.initialize()" aufzurufen.
 Sie können sich dann über den TCP-Port 6832 darüber verbinden.
@@ -1250,12 +1150,12 @@ Der Namensraum ist der gleiche wie der <A HREF="#PythonConsoleNamespace">Namensr
 <P>
 Es gibt einige spezielle Funktionen:
 </P>
-
 <UL>
 <LI>snap(): Erstellt einen Schnappschuss des aktuellen Zustands von NVDA und speichert ihn in den <A HREF="#PythonConsoleSnapshotVariables">Snapshot-Variablen</A>.
 <LI>rmSnap(): Entfernt alle Snapshot-Variablen.
 </UL>
 
-<!-- html code generated by txt2tags 2.6 (http://txt2tags.org) -->
+
+<!-- html code generated by txt2tags 2.5 (http://txt2tags.sf.net) -->
 <!-- cmdline: txt2tags -q developerGuide.t2t -->
 </BODY></HTML>
