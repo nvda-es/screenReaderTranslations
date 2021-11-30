@@ -94,17 +94,17 @@ NVDA 会请求 Windows 更新安全证书，以避免日后再次出现该错误
 <P></P>
 <H3>插件以及NVDA核心开发者需要了解的变动</H3>
 <UL>
-<LI>构建 NVDA 现在需要 Visual Studio 2019 16.10.4 或更新版本。
+<LI>构建 NVDA 现在需要 Visual Studio 2019 16.10.4 或更高版本。
 要想匹配产品的开发环境， 请与 <A HREF="https://www.appveyor.com/docs/windows-images-software/#visual-studio-2019">AppVeyor 当前使用的 Visual Studio 最新版本</A>更新同步。   (<A HREF="https://github.com/nvaccess/nvda/issues/12728">#12728</A>)
 <LI>不在推荐使用 <CODE>NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable</CODE> ，且将在  版本 2022.1 时移除。 (<A HREF="https://github.com/nvaccess/nvda/issues/12660">#12660</A>)
   <UL>
-  <LI>可使用 <CODE>apiLevel</CODE> 代替(请查看 <CODE>_UIAConstants.WinConsoleAPILevel</CODE> 的注释获取详情)。
+  <LI>可使用 <CODE>apiLevel</CODE> 代替（请查看 <CODE>_UIAConstants.WinConsoleAPILevel</CODE> 的注释获取详情）。
   </UL>
-<LI>GDI 应用程序的文本背景颜色透明度 (使用 display 模块查看)现可暴露在插件和应用模块中。 (<A HREF="https://github.com/nvaccess/nvda/issues/12658">#12658</A>)
-<LI>languageHandler 中的 <CODE>LOCALE_SLANGUAGE</CODE>、 <CODE>LOCALE_SLIST</CODE> 和 <CODE>LOCALE_SLANGDISPLAYNAME</CODE>已迁移到  <CODE>LOCALE</CODE> 条目。
+<LI>GDI 应用程序的文本背景颜色透明度 (使用 display 模块查看)现可供插件和应用程序模块使用。 (<A HREF="https://github.com/nvaccess/nvda/issues/12658">#12658</A>)
+<LI><CODE>LOCALE_SLANGUAGE</CODE>, <CODE>LOCALE_SLIST</CODE> 和 <CODE>LOCALE_SLANGDISPLAYNAME</CODE> 已被迁移到 languageHandler 中的 <CODE>LOCALE</CODE> 枚举。 
 他们依然可用，但将在 2022.1中删除。 (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
 <LI>函数 <CODE>addonHandler.loadState</CODE> 和 <CODE>addonHandler.saveState</CODE> 须在2022.1以前用其对应的 <CODE>addonHandler.state.save</CODE> 和 <CODE>addonHandler.state.load</CODE> 代替。 (<A HREF="https://github.com/nvaccess/nvda/issues/12792">#12792</A>)
--   现在可在系统测试中检测盲文输出。 (<A HREF="https://github.com/nvaccess/nvda/issues/12917">#12917</A>)
+<LI>现在系统测试包括了对盲文输出的测试。 (<A HREF="https://github.com/nvaccess/nvda/issues/12917">#12917</A>)
 </UL>
 
 <P></P>
