@@ -12,14 +12,14 @@ complexSymbols:
 ? sentence ending	(?<=[^\s?])\?(?=[\"'”’)\s]|$)
 
 # Phrase endings.
-; Satzzeichen	(?<=[^\s;]);(?=\s|$)
-: Satzzeichen	(?<=[^\s:]):(?=\s|$)
+; phrase ending	(?<=[^\s;]);(?=\s|$)
+: phrase ending	(?<=[^\s:]):(?=\s|$)
 
 # Others
-Dezimalpunkt	(?<![^\d -])\.(?=\d)
-in-word '	(?<=[^\W_])['’]
-negative Zahl	(?<!\w)[-−]{1}(?=[$£€¥.]?\d)
-Tausender Punkt	(?<=\d)\.(?=\d{3})
+Dezimaltrennzeichen	(?<![^\d -])\,(?=\d)
+' im Wort	(?<=[^\W_])['’]
+Negative Ziffer	(?<!\w)[-−]{1}(?=[$£€¥.]?\d)
+thousands separator	(?<![^\d -])\.(?=\d{3}(\D|$))
 Datumstrennzeichen	(?<=\d\d)\.(?=\d\d)
 
 symbols:
@@ -31,9 +31,11 @@ symbols:
 ? sentence ending	Fragezeichen	all	always
 ; phrase ending	Semikolon	most	always
 : phrase ending	Doppelpunkt	most	always
-decimal point		none	always
-in-word '	Apostroph	all	norep
-negative number	Minus	none	norep
+Dezimaltrennzeichen		none	always
+' im Wort	Apostroph	all	norep
+Negative Ziffer	Minus	none	norep
+thousands separator		# Tausender Punkt
+Datumstrennzeichen	Punkt	none	norep
 
 # Whitespace
 \0	Leer	char	# null
