@@ -80,7 +80,7 @@
 </UL>
 
 <P></P>
-<H3>Changements pour les dévelopeurs</H3>
+<H3>Changements pour les développeurs</H3>
 <UL>
 <LI>Remarque : Cette version rompt la compatibilité de l'API des extensions. Les extensions devront être retestées et leur manifeste mis à jour.
 <LI>La compilation des dépendances de NVDA avec Visual Studio 2022 (17.0) est désormais prise en charge. Pour les versions de développement et de release, Visual Studio 2019 est toujours utilisé. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
@@ -106,7 +106,7 @@
   <LI>Les utilisations de <CODE>constants.SVE*</CODE> doivent être remplacées par <CODE>SpeechVoiceEvents.*</CODE>
   </UL>
 <LI>Les classes et fonctions suivantes de l'appModule <CODE>soffice</CODE> sont supprimées : <CODE>JAB_OOTableCell</CODE>, <CODE>JAB_OOTable</CODE>, <CODE>gridCoordStringToNumbers</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12849">#12849</A>)
-<LI><CODE>core.CallCancelled</CODE> est à présent <CODE>exceptions.CallCancelled</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12940">#12940</A>)
+<LI><CODE>core.CallCancelled</CODE> devient <CODE>exceptions.CallCancelled</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12940">#12940</A>)
 <LI>Toutes les constantes commençant par RPC de <CODE>core</CODE> et <CODE>logHandler</CODE> sont déplacées dans l'énumération <CODE>RPCConstants.RPC</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12940">#12940</A>)
 <LI>Il est recommandé d'utiliser les fonctions <CODE>mouseHandler.doPrimaryClick</CODE> et <CODE>mouseHandler.doSecondaryClick</CODE> pour cliquer sur la souris pour effectuer une action logique telle que l'activation (principale) ou secondaire (afficher le menu contextuel),
 plutôt que d'utiliser <CODE>executeMouseEvent</CODE> et en spécifiant spécifiquement le bouton gauche ou droit de la souris.
@@ -121,35 +121,39 @@ Cela garantit que le code respectera le paramètre utilisateur Windows pour inte
   <UL>
   <LI>Si votre extension a besoin de traiter des arguments de ligne de commande supplémentaires, consultez la documentation de <CODE>addonHandler.isCLIParamKnown</CODE> et le guide du développeur pour plus de détails.
   </UL>
-+- The UIA handler module and other UIA support modules are now part of a UIAHandler package. (<A HREF="https://github.com/nvaccess/nvda/issues/10916">#10916</A>)
-+  - <CODE>UIAUtils</CODE> is now <CODE>UIAHandler.utils</CODE>
-+  - <CODE>UIABrowseMode</CODE> is now <CODE>UIAHandler.browseMode</CODE>
-+  - <CODE>_UIAConstants</CODE> is now <CODE>UIAHandler.constants</CODE>
-+  - <CODE>_UIACustomProps</CODE> is now <CODE>UIAHandler.customProps</CODE>
-+  - <CODE>_UIACustomAnnotations</CODE> is now <CODE>UIAHandler.customAnnotations</CODE>
-+- The <CODE>IAccessibleHandler</CODE> <CODE>IA2_RELATION_*</CODE> constants have been replaced with the <CODE>IAccessibleHandler.RelationType</CODE> enum. (<A HREF="https://github.com/nvaccess/nvda/issues/13096">#13096</A>)
-+  - Removed <CODE>IA2_RELATION_FLOWS_FROM</CODE>
-+  - Removed <CODE>IA2_RELATION_FLOWS_TO</CODE>
-+  - Removed <CODE>IA2_RELATION_CONTAINING_DOCUMENT</CODE>
-+  -
-+- <CODE>LOCALE_SLANGUAGE</CODE>, <CODE>LOCALE_SLIST</CODE> and <CODE>LOCALE_SLANGDISPLAYNAME</CODE> are removed from <CODE>languageHandler</CODE> - use members of <CODE>languageHandler.LOCALE</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
-+- Switched from Minhook to Microsoft Detours as a hooking library for NVDA. Hooking with this library is mainly used to aid the display model. (<A HREF="https://github.com/nvaccess/nvda/issues/12964">#12964</A>)
-+- <CODE>winVersion.WIN10_RELEASE_NAME_TO_BUILDS</CODE> is removed. (<A HREF="https://github.com/nvaccess/nvda/issues/13211">#13211</A>)
-+- SCons now builds with multiple concurrent jobs, equal to the number of logical processors in the system.
-+This can dramatically decrease build times on multi core systems. (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>)
-+- <CODE>characterProcessing.SYMLVL_*</CODE> constants are removed - please use <CODE>characterProcessing.SymbolLevel.*</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/13248">#13248</A>)
-+- Functions <CODE>loadState</CODE> and <CODE>saveState</CODE> are removed from addonHandler - please use <CODE>addonHandler.state.load</CODE> and <CODE>addonHandler.state.save</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/13245">#13245</A>)
-+- Moved the UWP/OneCore interaction layer of NVDAHelper <A HREF="https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx">from C++/CX to C++/Winrt</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/10662">#10662</A>)
-+- It is now mandatory to subclass <CODE>DictionaryDialog</CODE> to use it. (<A HREF="https://github.com/nvaccess/nvda/issues/13268">#13268</A>)
-+- <CODE>config.RUN_REGKEY</CODE>, <CODE>config.NVDA_REGKEY</CODE> are deprecated, please use <CODE>config.RegistryKey.RUN</CODE>, <CODE>config.RegistryKey.NVDA</CODE> instead. These will be removed in 2023. (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
-+- <CODE>easeOfAccess.ROOT_KEY</CODE>, <CODE>easeOfAccess.APP_KEY_PATH</CODE> are deprecated, please use<CODE>easeOfAccess.RegistryKey.ROOT</CODE>, <CODE>easeOfAccess.RegistryKey.APP</CODE> instead. These will be removed in 2023. (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
-+- <CODE>easeOfAccess.APP_KEY_NAME</CODE> has been deprecated, to be removed in 2023. (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
-+- <CODE>DictionaryDialog</CODE> and <CODE>DictionaryEntryDialog</CODE> are moved from <CODE>gui.settingsDialogs</CODE> to <CODE>gui.speechDict</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13294">#13294</A>)
-+- IAccessible2 relations are now shown in developer info for IAccessible2 objects. (<A HREF="https://github.com/nvaccess/nvda/issues/13315">#13315</A>)
-+- <CODE>languageHandler.windowsPrimaryLCIDsToLocaleNames</CODE> has been removed, instead use <CODE>languageHandler.windowsLCIDToLocaleName</CODE> or <CODE>winKernel.LCIDToLocaleName</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13342">#13342</A>)
-+- <CODE>UIAAutomationId</CODE> property for UIA objects should be preferred over <CODE>cachedAutomationId</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13125">#13125</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11447">#11447</A>)
-+  - <CODE>cachedAutomationId</CODE> can be used if obtained directly from the element.
-+  -
+<LI>Le module UIA handler et d'autres modules de support UIA font désormais partie du package UIAHandler. (<A HREF="https://github.com/nvaccess/nvda/issues/10916">#10916</A>)
+  <UL>
+  <LI><CODE>UIAUtils</CODE> devient <CODE>UIAHandler.utils</CODE>
+  <LI><CODE>UIABrowseMode</CODE> devient <CODE>UIAHandler.browseMode</CODE>
+  <LI><CODE>_UIAConstants</CODE> devient <CODE>UIAHandler.constants</CODE>
+  <LI><CODE>_UIACustomProps</CODE> devient <CODE>UIAHandler.customProps</CODE>
+  <LI><CODE>_UIACustomAnnotations</CODE> devient <CODE>UIAHandler.customAnnotations</CODE>
+  </UL>
+<LI>Les constantes <CODE>IA2_RELATION_*</CODE> de <CODE>IAccessibleHandler</CODE> ont été remplacées par l'énumération <CODE>IAccessibleHandler.RelationType</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13096">#13096</A>)
+  <UL>
+  <LI>Suppression de <CODE>IA2_RELATION_FLOWS_FROM</CODE>
+  <LI>Suppression de  <CODE>IA2_RELATION_FLOWS_TO</CODE>
+  <LI>Suppression de  <CODE>IA2_RELATION_CONTAINING_DOCUMENT</CODE>
+  </UL>
+<LI><CODE>LOCALE_SLANGUAGE</CODE>, <CODE>LOCALE_SLIST</CODE> et <CODE>LOCALE_SLANGDISPLAYNAME</CODE> sont supprimés de <CODE>languageHandler</CODE> - utilisez les membres de <CODE>languageHandler.LOCALE</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
+<LI>Remplacement de Minhook par Microsoft Detours comme bibliothèque de hooking pour NVDA. Le hooking avec cette bibliothèque est principalement utilisé pour le display model. (<A HREF="https://github.com/nvaccess/nvda/issues/12964">#12964</A>)
+<LI><CODE>winVersion.WIN10_RELEASE_NAME_TO_BUILDS</CODE> est supprimé. (<A HREF="https://github.com/nvaccess/nvda/issues/13211">#13211</A>)
+<LI>SCons compile désormais avec plusieurs jobs simultanées, égales au nombre de processeurs logiques dans le système.
+Cela peut réduire considérablement le temps de compilation sur les systèmes multicœurs. (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>)
+<LI>Les constantes <CODE>characterProcessing.SYMLVL_*</CODE> sont supprimées - veuillez utiliser <CODE>characterProcessing.SymbolLevel.*</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/13248">#13248</A>)
+<LI>Les fonctions <CODE>loadState</CODE> et <CODE>saveState</CODE> sont supprimées de addonHandler - veuillez utiliser <CODE>addonHandler.state.load</CODE> et <CODE>addonHandler.state.save</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/13245">#13245</A>)
+<LI>Déplacement de la couche d'interaction UWP/OneCore de NVDAHelper <A HREF="-de-cx">de C++/CX vers C++/Winrt https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/10662">#10662</A>)
+<LI>Il est maintenant obligatoire de créer une sous-classe de <CODE>DictionaryDialog</CODE> pour l'utiliser. (<A HREF="https://github.com/nvaccess/nvda/issues/13268">#13268</A>)
+<LI><CODE>config.RUN_REGKEY</CODE>, <CODE>config.NVDA_REGKEY</CODE> sont obsolètes, veuillez utiliser <CODE>config.RegistryKey.RUN</CODE>, <CODE>config.RegistryKey.NVDA</CODE> à la place. Ceux-ci seront supprimés en 2023. (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
+<LI><CODE>easeOfAccess.ROOT_KEY</CODE>, <CODE>easeOfAccess.APP_KEY_PATH</CODE> sont obsolètes, veuillez utiliser <CODE>easeOfAccess.RegistryKey.ROOT</CODE>, <CODE>easeOfAccess.RegistryKey.APP</CODE> à la place. Ceux-ci seront supprimés en 2023. (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
+<LI><CODE>easeOfAccess.APP_KEY_NAME</CODE> est obsolète et sera supprimé en 2023. (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
+<LI><CODE>DictionaryDialog</CODE> et <CODE>DictionaryEntryDialog</CODE> sont déplacés de <CODE>gui.settingsDialogs</CODE> vers <CODE>gui.speechDict</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13294">#13294</A>)
+<LI>Les relations IAccessible2 sont maintenant affichées dans les informations du développeur pour les objets IAccessible2. (<A HREF="https://github.com/nvaccess/nvda/issues/13315">#13315</A>)
+<LI><CODE>languageHandler.windowsPrimaryLCIDsToLocaleNames</CODE> a été supprimé, utilisez <CODE>languageHandler.windowsLCIDToLocaleName</CODE> ou <CODE>winKernel.LCIDToLocaleName</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/13342">#13342</A>)
+<LI>L'utilisation de la propriété <CODE>UIAAutomationId</CODE> pour les objets UIA doit être préférée à <CODE>cachedAutomationId</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13125">#13125</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11447">#11447</A>)
+  <UL>
+  <LI><CODE>cachedAutomationId</CODE> peut être utilisé s'il est obtenu directement à partir de l'élément.
+  </UL>
 </UL>
 
 <P></P>
