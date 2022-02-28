@@ -66,7 +66,7 @@ Quoi de Neuf dans NVDA
 - Correction de nombreux problèmes où les éléments de liste n'étaient pas reportés dans les applications 64 bits, comme Reaper. (#8175)
 -
 
-== Changements pour les dévelopeurs ==
+== Changements pour les développeurs ==
 - Remarque : Cette version rompt la compatibilité de l'API des extensions. Les extensions devront être retestées et leur manifeste mis à jour.
 - La compilation des dépendances de NVDA avec Visual Studio 2022 (17.0) est désormais prise en charge. Pour les versions de développement et de release, Visual Studio 2019 est toujours utilisé. (#13033)
 - SCons a été mis à jour à la version 4.3.0. (#13033)
@@ -88,7 +88,7 @@ Quoi de Neuf dans NVDA
   - Les utilisations de ``constants.SVE*`` doivent être remplacées par ``SpeechVoiceEvents.*``
   -
 - Les classes et fonctions suivantes de l'appModule ``soffice`` sont supprimées : ``JAB_OOTableCell``, ``JAB_OOTable``, ``gridCoordStringToNumbers``. (#12849)
-- ``core.CallCancelled`` est à présent ``exceptions.CallCancelled``. (#12940)
+- ``core.CallCancelled`` devient ``exceptions.CallCancelled``. (#12940)
 - Toutes les constantes commençant par RPC de ``core`` et ``logHandler`` sont déplacées dans l'énumération ``RPCConstants.RPC``. (#12940)
 - Il est recommandé d'utiliser les fonctions ``mouseHandler.doPrimaryClick`` et ``mouseHandler.doSecondaryClick`` pour cliquer sur la souris pour effectuer une action logique telle que l'activation (principale) ou secondaire (afficher le menu contextuel),
 plutôt que d'utiliser ``executeMouseEvent`` et en spécifiant spécifiquement le bouton gauche ou droit de la souris.
@@ -102,35 +102,35 @@ Cela garantit que le code respectera le paramètre utilisateur Windows pour inte
 - ``globalVars.appArgsExtra`` a été supprimé. (#13087)
   - Si votre extension a besoin de traiter des arguments de ligne de commande supplémentaires, consultez la documentation de ``addonHandler.isCLIParamKnown`` et le guide du développeur pour plus de détails.
   -
-+- The UIA handler module and other UIA support modules are now part of a UIAHandler package. (#10916)
-+  - ``UIAUtils`` is now ``UIAHandler.utils``
-+  - ``UIABrowseMode`` is now ``UIAHandler.browseMode``
-+  - ``_UIAConstants`` is now ``UIAHandler.constants``
-+  - ``_UIACustomProps`` is now ``UIAHandler.customProps``
-+  - ``_UIACustomAnnotations`` is now ``UIAHandler.customAnnotations``
-+- The ``IAccessibleHandler`` ``IA2_RELATION_*`` constants have been replaced with the ``IAccessibleHandler.RelationType`` enum. (#13096)
-+  - Removed ``IA2_RELATION_FLOWS_FROM``
-+  - Removed ``IA2_RELATION_FLOWS_TO``
-+  - Removed ``IA2_RELATION_CONTAINING_DOCUMENT``
-+  -
-+- ``LOCALE_SLANGUAGE``, ``LOCALE_SLIST`` and ``LOCALE_SLANGDISPLAYNAME`` are removed from ``languageHandler`` - use members of ``languageHandler.LOCALE`` instead. (#12753)
-+- Switched from Minhook to Microsoft Detours as a hooking library for NVDA. Hooking with this library is mainly used to aid the display model. (#12964)
-+- ``winVersion.WIN10_RELEASE_NAME_TO_BUILDS`` is removed. (#13211)
-+- SCons now builds with multiple concurrent jobs, equal to the number of logical processors in the system.
-+This can dramatically decrease build times on multi core systems. (#13226)
-+- ``characterProcessing.SYMLVL_*`` constants are removed - please use ``characterProcessing.SymbolLevel.*`` instead. (#13248)
-+- Functions ``loadState`` and ``saveState`` are removed from addonHandler - please use ``addonHandler.state.load`` and ``addonHandler.state.save`` instead. (#13245)
-+- Moved the UWP/OneCore interaction layer of NVDAHelper [from C++/CX to C++/Winrt https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx]. (#10662)
-+- It is now mandatory to subclass ``DictionaryDialog`` to use it. (#13268)
-+- ``config.RUN_REGKEY``, ``config.NVDA_REGKEY`` are deprecated, please use ``config.RegistryKey.RUN``, ``config.RegistryKey.NVDA`` instead. These will be removed in 2023. (#13242)
-+- ``easeOfAccess.ROOT_KEY``, ``easeOfAccess.APP_KEY_PATH`` are deprecated, please use``easeOfAccess.RegistryKey.ROOT``, ``easeOfAccess.RegistryKey.APP`` instead. These will be removed in 2023. (#13242)
-+- ``easeOfAccess.APP_KEY_NAME`` has been deprecated, to be removed in 2023. (#13242)
-+- ``DictionaryDialog`` and ``DictionaryEntryDialog`` are moved from ``gui.settingsDialogs`` to ``gui.speechDict``. (#13294)
-+- IAccessible2 relations are now shown in developer info for IAccessible2 objects. (#13315)
-+- ``languageHandler.windowsPrimaryLCIDsToLocaleNames`` has been removed, instead use ``languageHandler.windowsLCIDToLocaleName`` or ``winKernel.LCIDToLocaleName``. (#13342)
-+- ``UIAAutomationId`` property for UIA objects should be preferred over ``cachedAutomationId``. (#13125, #11447)
-+  - ``cachedAutomationId`` can be used if obtained directly from the element.
-+  -
+- Le module UIA handler et d'autres modules de support UIA font désormais partie du package UIAHandler. (#10916)
+  - ``UIAUtils`` devient ``UIAHandler.utils``
+  - ``UIABrowseMode`` devient ``UIAHandler.browseMode``
+  - ``_UIAConstants`` devient ``UIAHandler.constants``
+  - ``_UIACustomProps`` devient ``UIAHandler.customProps``
+  - ``_UIACustomAnnotations`` devient ``UIAHandler.customAnnotations``
+- Les constantes ``IA2_RELATION_*`` de ``IAccessibleHandler`` ont été remplacées par l'énumération ``IAccessibleHandler.RelationType``. (#13096)
+  - Suppression de ``IA2_RELATION_FLOWS_FROM``
+  - Suppression de  ``IA2_RELATION_FLOWS_TO``
+  - Suppression de  ``IA2_RELATION_CONTAINING_DOCUMENT``
+  -
+- ``LOCALE_SLANGUAGE``, ``LOCALE_SLIST`` et ``LOCALE_SLANGDISPLAYNAME`` sont supprimés de ``languageHandler`` - utilisez les membres de ``languageHandler.LOCALE`` à la place. (#12753)
+- Remplacement de Minhook par Microsoft Detours comme bibliothèque de hooking pour NVDA. Le hooking avec cette bibliothèque est principalement utilisé pour le display model. (#12964)
+- ``winVersion.WIN10_RELEASE_NAME_TO_BUILDS`` est supprimé. (#13211)
+- SCons compile désormais avec plusieurs jobs simultanées, égales au nombre de processeurs logiques dans le système.
+Cela peut réduire considérablement le temps de compilation sur les systèmes multicœurs. (#13226)
+- Les constantes ``characterProcessing.SYMLVL_*`` sont supprimées - veuillez utiliser ``characterProcessing.SymbolLevel.*`` à la place. (#13248)
+- Les fonctions ``loadState`` et ``saveState`` sont supprimées de addonHandler - veuillez utiliser ``addonHandler.state.load`` et ``addonHandler.state.save`` à la place. (#13245)
+- Déplacement de la couche d'interaction UWP/OneCore de NVDAHelper [de C++/CX vers C++/Winrt https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt -de-cx]. (#10662)
+- Il est maintenant obligatoire de créer une sous-classe de ``DictionaryDialog`` pour l'utiliser. (#13268)
+- ``config.RUN_REGKEY``, ``config.NVDA_REGKEY`` sont obsolètes, veuillez utiliser ``config.RegistryKey.RUN``, ``config.RegistryKey.NVDA`` à la place. Ceux-ci seront supprimés en 2023. (#13242)
+- ``easeOfAccess.ROOT_KEY``, ``easeOfAccess.APP_KEY_PATH`` sont obsolètes, veuillez utiliser ``easeOfAccess.RegistryKey.ROOT``, ``easeOfAccess.RegistryKey.APP`` à la place. Ceux-ci seront supprimés en 2023. (#13242)
+- ``easeOfAccess.APP_KEY_NAME`` est obsolète et sera supprimé en 2023. (#13242)
+- ``DictionaryDialog`` et ``DictionaryEntryDialog`` sont déplacés de ``gui.settingsDialogs`` vers ``gui.speechDict``. (#13294)
+- Les relations IAccessible2 sont maintenant affichées dans les informations du développeur pour les objets IAccessible2. (#13315)
+- ``languageHandler.windowsPrimaryLCIDsToLocaleNames`` a été supprimé, utilisez ``languageHandler.windowsLCIDToLocaleName`` ou ``winKernel.LCIDToLocaleName`` à la place. (#13342)
+- L'utilisation de la propriété ``UIAAutomationId`` pour les objets UIA doit être préférée à ``cachedAutomationId``. (#13125, #11447)
+  - ``cachedAutomationId`` peut être utilisé s'il est obtenu directement à partir de l'élément.
+  -
 -
 
 
