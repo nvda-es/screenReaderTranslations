@@ -88,6 +88,9 @@
     <UL>
     <LI><A HREF="#BrailleAbbreviations">8.1. Abréviations des Types, États des Contrôles et Repères en Braille</A>
     <LI><A HREF="#BrailleInput">8.2. Saisie en Braille</A>
+      <UL>
+      <LI><A HREF="#BrailleKeyboardShortcuts">8.2.1. Saisie de raccourcis clavier</A>
+      </UL>
     </UL>
   <LI><A HREF="#Vision">9. Vision</A>
     <UL>
@@ -201,9 +204,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Séries Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc138">15.9.1. Assignations des Touches pour tous les Modèles</A>
-      <LI><A HREF="#toc139">15.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</A>
-      <LI><A HREF="#toc140">15.9.3. Assignations de Touches pour le Brailliant BI 14</A>
+      <LI><A HREF="#toc139">15.9.1. Assignations des Touches pour tous les Modèles</A>
+      <LI><A HREF="#toc140">15.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</A>
+      <LI><A HREF="#toc141">15.9.3. Assignations de Touches pour le Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</A>
     <LI><A HREF="#Seika">15.11. Seika Braille Displays</A>
@@ -1520,7 +1523,8 @@ La version de démonstration est suffisante.
 Elle peut être téléchargée à partir de <A HREF="https://www.dessci.com/en/products/mathtype/">https://www.dessci.com/en/products/mathtype/</A>
 <LI>Adobe Reader. 
 Notez que ceci n'est pas un standard officiel, ce qui fait qu'actuellement, il n'existe pas de logiciels grand public pouvant produire ce contenu.
-<LI>Kindle Reader for PC:
+<LI>Kindle Reader pour PC :
+NVDA peut lire et parcourir Math dans Kindle pour PC pour les livres avec des mathématiques accessibles.
 </UL>
 
 <P></P>
@@ -1955,6 +1959,32 @@ Par exemple, si vous utilisez un code braille dont les nombres doivent commencer
 L'appui sur le point 7 efface la dernière cellule ou le dernier caractère braille saisi.
 Le point 8 traduit toute saisie braille puis appuie sur la touche Entrée.
 L'appui simultané sur les points 7 et 8 traduit toute saisie braille sans ajouter d'espace ou actionner la touche entrer.
+</P>
+<A NAME="BrailleKeyboardShortcuts"></A>
+<H4>8.2.1. Saisie de raccourcis clavier</H4>
+<P>
+NVDA prend en charge la saisie de raccourcis clavier et l'émulation de touches à l'aide de l'afficheur braille.
+Cette émulation se présente sous deux formes : l'attribution d'une entrée braille directement à un appui sur une touche et l'utilisation des touches de modification virtuelles.
+</P>
+<P>
+Les touches couramment utilisées, telles que les touches fléchées ou l'appui sur Alt pour accéder aux menus, peuvent être mappées directement sur la saisie braille.
+Le pilote de chaque afficheur braille est pré-équipé avec certaines de ces affectations.
+Vous pouvez modifier ces affectations ou ajouter de nouvelles touches émulées à partir de la <A HREF="#InputGestures">boîte de dialogue Gestes de commandes</A>.
+</P>
+<P>
+Bien que cette approche soit utile pour les touches fréquemment pressées ou uniques (telles que la tabulation), vous ne souhaiterez peut-être pas attribuer un ensemble unique de touches à chaque raccourci clavier.
+Pour permettre l'émulation de pression de touches lorsque les touches de modification sont maintenues enfoncées, NVDA fournit des commandes pour basculer entre les touches contrôle, alt, majuscule, windows et NVDA, ainsi que des commandes pour certaines combinaisons de ces touches.
+Pour utiliser ces bascules, appuyez d'abord sur la commande (ou la séquence de commandes) des touches de modification sur lesquelles vous souhaitez appuyer, puis saisissez le caractère faisant partie du raccourci clavier que vous souhaitez saisir.
+Par exemple, pour produire control+f, utilisez la commande "bascule de touche contrôle" puis tapez un f,
+et pour saisir control+alt+t, utilisez soit les commandes "bascule de touche contrôle" et "bascule de touche alt", dans n'importe quel ordre, soit la commande "bascule de touches Contrôle et alt", suivie de la saisie d'un t.
+</P>
+<P>
+Si vous basculez accidentellement les touches de modification, exécuter à nouveau la commande bascule supprimera le modificateur.
+</P>
+<P>
+Lors de la saisie en braille abrégé, l'utilisation des touches de modification entraînera la traduction de votre entrée comme si vous aviez appuyé sur les points 7 + 8.
+De plus, la touche émulée ne peut pas refléter le braille tapé avant que la touche de modification ne soit enfoncée.
+Cela signifie que, pour taper alt+2 avec un code braille qui utilise un signe dièse, vous devez d'abord basculer Alt puis taper un signe dièse.
 </P>
 <A NAME="Vision"></A>
 <H2>9. Vision</H2>
@@ -3433,6 +3463,7 @@ On peut configurer les annonces suivantes :
 <LI>Informations sur le document
  <UL>
  <LI>Commentaires
+ <LI>Signets
  <LI>Modifications de l'éditeur
  <LI>Fautes d'orthographe
  </UL>
@@ -3564,11 +3595,6 @@ Nous ne recommandons toujours pas à la majorité des utilisateurs d'activer cet
 <P>
 Si cette option est activée, NVDA utilisera une nouvelle version en cours de développement de son support de la console Windows qui tire parti des <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">améliorations de l'accessibilité apportées par Microsoft</A> Cette fonctionnalité est très expérimentale et est encore incomplète, son utilisation n'est donc pas encore recommandée. Cependant, une fois terminée, il est prévu que cette nouvelle prise en charge deviendra la valeur par défaut, améliorant les performances et la stabilité de NVDA dans les consoles de commande Windows.
 </P>
-<A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>Énoncer les mots de passe dans les consoles UIA</H5>
-<P>
-Cette option définit si les caractères sont annoncés par <A HREF="#KeyboardSettingsSpeakTypedCharacters">Écho clavier par caractère</A> ou <A HREF="#KeyboardSettingsSpeakTypedWords">Écho clavier par mot</A> dans les situation où l'écran ne se met pas à jour (telles que les zones de saisie de mot de passe) dans certains programmes de terminaux, comme la Console Windows avec le support UI automation activé. Pour des raisons de sécurité, ce paramètre devrait rester désactivé. Cependant, vous pouvez souhaiter l'activer si vous ressentez des problèmes de performances ou d'instabilité avec l'écho par caractère ou par mot dans la console, ou si vous travaillez dans un environnement de confiance et préférez l'annonce des mots de passe.
-</P>
 <A NAME="ChromiumUIA"></A>
 <H5>Utiliser UIA avec Microsoft Edge et autres navigateurs basés sur Chromium quand c'est possible</H5>
 <P>
@@ -3592,8 +3618,8 @@ Certaines de ces fonctionnalités peuvent être incomplètes.
 Les options suivantes existent :
 </P>
 <UL>
-<LI>"Annoncer les détails en mode navigation" : permet de signaler si un objet a des détails en mode navigation.
-L'annonce du résumé de ces détails peut être faite en attribuant un geste à l'aide du <A HREF="#InputGestures">dialogue Gestes de commandes</A>.
+<LI>"Annoncer 'contient des détails' pour les annotations structurées" : active l'annonce si le texte ou le contrôle contient plus de détails.
+Un résumé des détails supplémentaires peut être signalé en attribuant un geste à "Signaler le résumé de tous les détails d'annotation au niveau du curseur système" à l'aide de la <A HREF="#InputGestures">boîte de dialogue Gestes de commandes</A>.
 <LI>"Toujours annoncer aria-description" :
   Lorsque la source de <CODE>accDescription</CODE> est aria-description, la description est annoncée.
   Ceci est utile pour les annotations sur le web.
@@ -5001,7 +5027,7 @@ Les terminaux suivants sont également supportés (et ne nécessitent aucun pilo
 Voici les assignations de touches pour Brailliant BI/B et BrailleNote touch sous NVDA.
 Veuillez consulter la documentation du terminal pour savoir où se situent ces touches.
 </P>
-<A NAME="toc138"></A>
+<A NAME="toc139"></A>
 <H4>15.9.1. Assignations des Touches pour tous les Modèles</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5090,7 +5116,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 </TABLE>
 
-<A NAME="toc139"></A>
+<A NAME="toc140"></A>
 <H4>15.9.2. Assignations de Touches pour les Brailliant BI 32, BI 40 et B 80</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5111,7 +5137,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 </TABLE>
 
-<A NAME="toc140"></A>
+<A NAME="toc141"></A>
 <H4>15.9.3. Assignations de Touches pour le Brailliant BI 14</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
