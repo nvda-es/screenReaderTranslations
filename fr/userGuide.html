@@ -3643,10 +3643,17 @@ Cependant, pour la navigation/édition de feuilles de calcul basiques, cette opt
 Nous ne recommandons toujours pas que la majorité des utilisateurs active cette option par défaut, mais nous encourageons les utilisateurs de Microsoft Excel version 16.0.13522.10000 ou ultérieures à tester cette fonctionnalité et à nous faire part de leurs commentaires.
 L'implémentation d'UI Automation dans Microsoft Excel évolue fréquemment, et les versions de Microsoft Office antérieures à 16.0.13522.10000 n'exposent peut-être pas assez d'informations pour que cette option soit d'une quelconque utilité.
 </P>
-<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
-<H5>Utiliser le nouveau support de l'écho par caractère dans les anciennes consoles Windows quand disponible</H5>
+<A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
+<H5>Énoncer les mots de passe dans tous les terminaux améliorés</H5>
 <P>
-Cette option active une méthode alternative pour détecter la frappe des caractères dans les consoles de commandes Windows.
+Ce paramètre définit si les caractères sont prononcés en <A HREF="#KeyboardSettingsSpeakTypedCharacters">écho clavier par caractère</A> ou <A HREF="#KeyboardSettingsSpeakTypedWords">écho clavier par mot</A> dans les situations où l'écran ne se met pas à jour (comme la saisie du mot de passe) dans certains programmes de terminal, tels que la console Windows avec l'automatisation de l'interface utilisateur support activé et Mintty.
+Pour des raisons de sécurité, ce paramètre devrait être laissé désactivé.
+Cependant, vous souhaiterez peut-être l'activer si vous rencontrez des problèmes de performances ou une instabilité avec les annoncess de caractères et/ou de mots saisis dans les consoles, ou si vous travaillez dans des environnements de confiance et préférez l'annonce du mot de passe.
+</P>
+<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
+<H5>Utiliser la prise en charge améliorée de la saisie de caractères dans l'ancienne console Windows lorsqu'elle est disponible</H5>
+<P>
+Cette option active une méthode alternative pour détecter les caractères saisis dans les anciennes consoles Windows.
 Bien qu'elle améliore les performances et empêche certains affichages de console d'être épelés, elle peut être incompatible avec certains programmes de terminaux.
 Cette fonctionnalité est disponible et activée par défaut sous Windows 10 versions 1607 et ultérieures quand UI Automation n'est pas disponible ou désactivée.
 Avertissement : quand cette option est activée, les caractères tapés qui n'apparaissent pas à l'écran comme les mots de passe, ne seront pas supprimés.
@@ -3659,14 +3666,14 @@ Ce paramètre définit comment NVDA détermine le nouveau texte à annoncer dans
 La liste déroulante algorithme de diff a trois options :
 </P>
 <UL>
-<LI>Automatique : À partir de NVDA 2021.2, cette option est équivalente à "autoriser Diff Match Patch".
-<LI>Autoriser Diff Match Patch : Cette option fait que NVDA calcule les changements de texte du terminal par caractère.
+<LI>Automatique : Cette option fait que NVDA préfère Diff Match Patch dans la plupart des situations, mais se rabat sur Difflib dans les applications problématiques, telles que les anciennes versions de la console Windows et de Mintty.
+<LI>Diff Match Patch : Cette option permet à NVDA de calculer les modifications apportées au texte du terminal par caractère, même dans les situations où cela n'est pas recommandé.
 Cela peut améliorer les performances quand de grandes quantités de texte sont écrites à la console et permet l'annonce plus précises des changements intervenant en milieu de ligne.
-Cependant, cela peut être incompatible avec certaines applications.
-Cette fonctionnalité est supportée dans la Console Windows de Windows 10 versions 1607 et ultérieures.
-Par ailleurs, elle peut être disponible dans d'autres terminaux dans des versions antérieures de Windows.
-<LI>forcer Difflib : Cette option fait que NVDA calcule les changements de texte du terminal par ligne
+Cependant, dans certaines applications, la lecture d'un nouveau texte peut être saccadée ou incohérente.
+<LI>Difflib : cette option permet à NVDA de calculer les modifications apportées au texte du terminal par ligne, même dans les situations où cela n'est pas recommandé.
 Ce comportement est identique à celui de NVDA en version 2020.4 et antérieures.
+Ce paramètre peut stabiliser la lecture du texte entrant dans certaines applications.
+Cependant, dans les terminaux, lors de l'insertion ou de la suppression d'un caractère au milieu d'une ligne, le texte après le curseur sera lu.
 </UL>
 
 <P></P>
