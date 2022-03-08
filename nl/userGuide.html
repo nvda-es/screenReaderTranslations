@@ -3,9 +3,9 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.sf.net">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>NVDA 2021.3-dev Gebruikershandleiding</TITLE>
+<TITLE>NVDA 2022.1-dev Gebruikershandleiding</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
-<P ALIGN="center"><CENTER><H1>NVDA 2021.3-dev Gebruikershandleiding</H1>
+<P ALIGN="center"><CENTER><H1>NVDA 2022.1-dev Gebruikershandleiding</H1>
 <FONT SIZE="4">
 </FONT></CENTER>
 
@@ -85,6 +85,9 @@
     <UL>
     <LI><A HREF="#BrailleAbbreviations">8.1. Braille-afkortingen voor besturingselementen, status-indicatoren en oriëntatiepunten</A>
     <LI><A HREF="#BrailleInput">8.2. Brailleinvoer</A>
+      <UL>
+      <LI><A HREF="#BrailleKeyboardShortcuts">8.2.1. Sneltoetscombinaties instellen</A>
+      </UL>
     </UL>
   <LI><A HREF="#Vision">9. Zicht</A>
     <UL>
@@ -143,25 +146,21 @@
       <LI><A HREF="#DocumentFormattingSettings">12.1.15. Documentopmaak (NVDA+control+d)</A>
       <LI><A HREF="#Win10OcrSettings">12.1.16. Windows OCR</A>
       <LI><A HREF="#AdvancedSettings">12.1.17. Geavanceerde Instellingen</A>
+      <LI><A HREF="#SymbolPronunciation">12.1.18. Uitspraak van interpunctie/symbolen</A>
+      <LI><A HREF="#InputGestures">12.1.19. Invoerhandelingen</A>
       </UL>
-    <LI><A HREF="#MiscSettings">12.2. Diverse instellingen</A>
+    <LI><A HREF="#SavingAndReloading">12.2. De configuratie opslaan en opnieuw laden</A>
+    <LI><A HREF="#ConfigurationProfiles">12.3. Configuratieprofielen</A>
       <UL>
-      <LI><A HREF="#SpeechDictionaries">12.2.1. Uitspraakwoordenboeken</A>
-      <LI><A HREF="#SymbolPronunciation">12.2.2. Uitspraak van interpunctie/symbolen</A>
-      <LI><A HREF="#InputGestures">12.2.3. Invoerhandelingen</A>
+      <LI><A HREF="#ProfilesBasicManagement">12.3.1. Basisbeheer</A>
+      <LI><A HREF="#ProfilesCreating">12.3.2. Een Profiel aanmaken</A>
+      <LI><A HREF="#ConfigProfileManual">12.3.3. Handmatig activeren</A>
+      <LI><A HREF="#ConfigProfileTriggers">12.3.4. Triggers</A>
+      <LI><A HREF="#ConfigProfileEditing">12.3.5. Een Profiel bewerken</A>
+      <LI><A HREF="#ConfigProfileDisablingTriggers">12.3.6. Triggers tijdelijk uitschakelen</A>
+      <LI><A HREF="#ConfigProfileGestures">12.3.7. Een profiel activeren met behulp van invoerhandelingen</A>
       </UL>
-    <LI><A HREF="#SavingAndReloading">12.3. De configuratie opslaan en opnieuw laden</A>
-    <LI><A HREF="#ConfigurationProfiles">12.4. Configuratieprofielen</A>
-      <UL>
-      <LI><A HREF="#ProfilesBasicManagement">12.4.1. Basisbeheer</A>
-      <LI><A HREF="#ProfilesCreating">12.4.2. Een Profiel aanmaken</A>
-      <LI><A HREF="#ConfigProfileManual">12.4.3. Handmatig activeren</A>
-      <LI><A HREF="#ConfigProfileTriggers">12.4.4. Triggers</A>
-      <LI><A HREF="#ConfigProfileEditing">12.4.5. Een Profiel bewerken</A>
-      <LI><A HREF="#ConfigProfileDisablingTriggers">12.4.6. Triggers tijdelijk uitschakelen</A>
-      <LI><A HREF="#ConfigProfileGestures">12.4.7. Een profiel activeren met behulp van invoerhandelingen</A>
-      </UL>
-    <LI><A HREF="#LocationOfConfigurationFiles">12.5. De Locatie van Configuratiebestanden</A>
+    <LI><A HREF="#LocationOfConfigurationFiles">12.4. De Locatie van Configuratiebestanden</A>
     </UL>
   <LI><A HREF="#ExtraTools">13. Het menu Extra</A>
     <UL>
@@ -195,9 +194,9 @@
     <LI><A HREF="#HedoMobilLine">15.7. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.8. HumanWare Brailliant BI/B Serie / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc134">15.8.1. Toegewezen toetsen die gelden voor Alle modellen</A>
-      <LI><A HREF="#toc135">15.8.2. Toegewezen toetsen voor de Brailliant BI 32, BI 40 en B 80</A>
-      <LI><A HREF="#toc136">15.8.3. Toegewezen toetsen voor de Brailliant BI 14</A>
+      <LI><A HREF="#toc133">15.8.1. Toegewezen toetsen die gelden voor Alle modellen</A>
+      <LI><A HREF="#toc134">15.8.2. Toegewezen toetsen voor de Brailliant BI 32, BI 40 en B 80</A>
+      <LI><A HREF="#toc135">15.8.3. Toegewezen toetsen voor de Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.9. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Serie</A>
     <LI><A HREF="#Seika">15.10. Seika Brailleleesregels</A>
@@ -752,7 +751,7 @@ Enkele toetscommando’s die van pas komen bij het verplaatsen van de systeemfoc
 <A NAME="SystemCaret"></A>
 <H3>5.3. Navigeren met de systeemcursor</H3>
 <P>
-Wanneer er een <A HREF="#Objects">object</A> is <A HREF="#SystemFocus">gefocusseerd</A> dat de mogelijkheid heeft om tekst te lezen of te bewerken, kunt u de systeemcursor gebruiken om door de tekst te navigeren. De systeemcursor wordt ook wel de tekstcursor genoemd.
+Wanneer  er een <A HREF="#Objects">object</A>  <A HREF="#SystemFocus">gefocusseerd is</A> dat de mogelijkheid heeft om tekst te lezen of te bewerken, kunt u de systeemcursor gebruiken om door de tekst te navigeren. De systeemcursor wordt ook wel de tekstcursor genoemd.
 </P>
 <P>
 Als een object met de systeemcursor is gefocusseerd, kunt u de pijltoetsen, pageUp, pageDown, home, end, etc gebruiken om door de tekst te navigeren.
@@ -792,6 +791,12 @@ U kunt de volgende NVDA-toetscommando’s gebruiken om met de textcursor te navi
 <TD>NVDA+f</TD>
 <TD>NVDA+f</TD>
 <TD>Meldt  de opmaakkenmerken van de tekst op  de huidige cursorpositie. Bij tweemaal  drukken wordt de informatie weergegeven in bladermodus.</TD>
+</TR>
+<TR>
+<TD>Cursorlocatie melden| NVDA+numeriekDelete</TD>
+<TD>NVDA+delete</TD>
+<TD>geen</TD>
+<TD>Meldt informatie over de locatie van de tekst of het object ten opzichte van de positie van de systeemcursor. Hieronder kan bij voorbeeld vallen waar procentsgewijs in  het document de cursor zich bevindt, de afstand vanaf  de rand van de pagina of de exacte schermpositie. Ttweemaal drukken geeft mogelijk meer details.</TD>
 </TR>
 <TR>
 <TD>Volgende zin</TD>
@@ -938,8 +943,8 @@ Voor objectnavigatie zijn de volgende toetscombinaties beschikbaar:
 </TR>
 <TR>
 <TD>Positie van de leescursor melden</TD>
-<TD>NVDA+numeriek Delete</TD>
-<TD>NVDA+delete</TD>
+<TD>NVDA+shift+numeriek Delete</TD>
+<TD>NVDA+shift+delete</TD>
 <TD>geen</TD>
 <TD>Geeft informatie overde plaats van de tekst of het object bij de leescursor. Er kan, bij voorbeeld, in een percentage aangegeven worden waar in het document de cursor staat, wat de afstand is ten opzichte van de rand van de pagina of de exacte schermpositie. Door tweemaal te drukken krijgt u meer details.</TD>
 </TR>
@@ -1513,13 +1518,22 @@ NVDA ondersteunt de volgende types wiskundige inhoud:
 </P>
 <UL>
 <LI>MathML in Mozilla Firefox, Microsoft Internet Explorer en Google Chrome.
-<LI>Design Science MathType in Microsoft Word and PowerPoint. 
+ <UL>
+ <LI>Microsoft Word 365 Modern Math Equations via UI automation:
+NVDA kan wiskundige vergelijkingen in Microsoft Word 365/2016 build 14326 en hoger lezen  en er interactief mee omgaan.
+Merk evenwel op dat eerder gemaakte MathType-vergelijkingen eerst omgezet moeten worden naar Office Math door elk van de vergelijkingen te selecteren om vervolgens in het contextmenu van de opties voor vergelijkingen te kiezen voor -&gt; naar Office Math omzetten . Vergewis u ervan dat u over de nieuwste versie van MathType beschikt voordat u dit doet.
+Microsoft Word biedt nu ook de mogelijkheid lineaire symbool-gebaseerde navigatie door de  vergelijkingen zelf, en ondersteunt wiskundige invoer waarbij gebruik wordt gemaakt van syntaxis van uiteenlopende aard, waaronder LateX. Verdere details, vindt u onder <A HREF="https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8">Linear format equations using UnicodeMath and LaTeX in Word</A>
+ </UL>
+<LI>Microsoft Powerpoint, en oudere versies van Microsoft Word: 
+In zowel Microsoft Powerpoint als in  Microsoft Word kunt u met NVDA MathType-vergelijkingen lezen en er in navigeren. 
 MathType moet worden geïnstalleerd anders werkt dit niet. 
 De proefversie ishiervoor voldoende.
 U kunt deze  downloaden van <A HREF="https://www.dessci.com/en/products/mathtype/">https://www.dessci.com/en/products/mathtype/</A>
-<LI>MathML in Adobe Reader. 
+<LI>Adobe Reader. 
 NB. Dit is nog geen officiële standaard. Er is dan ook geen software publiek verkrijgbaar waarmee deze inhoud geproduceerd kan worden.
-<LI>Wiskunde in Kindle voor pc voor boeken met toegankelijke wiskundige inhoud.
+<LI>Kindle Reader voor PC.
+In boeken met toegankelijke wiskundige inhoud die u gebruikt via Kindle voor PC stelt NVDA u in staat de wiskundige inhoud te lezen en er in te navigeren.
+ -
 <P></P>
 Bij het lezen van een document zal NVDA alle ondersteunde wiskundige inhoud voorlezen wanneer deze voorkomt.
 Als u een brailleleesregel gebruikt, wordt deze ook in braille weergegeven.
@@ -1948,6 +1962,32 @@ Als u bijv. een braillecode gebruikt die getallen vooraf laat gaan door een numm
 Door punt 7 in te toetsen, verwijdert u de laatst ingevoerde braillecel of het laatste brailleteken.
 Punt 8 zet alle braille-invoer om en activeert de Enter-toets.
 Door punt 7 + punt 8 in te drukken wordt alle braille-invoer omgezet, maar zonder de spatiebalk of Enter-toets te activeren.
+</P>
+<A NAME="BrailleKeyboardShortcuts"></A>
+<H4>8.2.1. Sneltoetscombinaties instellen</H4>
+<P>
+NVDA ondersteunt het instellen  van sneltoetsen en het emuleren van toetsenbordaanslagen met de brailleleesregel.
+Dat emuleren kan op twee manieren: brailleinvoer rechtsreeks toewijzen aan een toetsaanslag en door gebruik te maken van virtuele functiewisseltoetsen.
+</P>
+<P>
+Algemeen gebruikte toetsen, zoals de pijltjestoetsen of de Alt-toets  om bij menu's te komen, kunnen rechtstreeks toegekend worden aan een (willekeurige) brailleinvoer.
+De driver voor iedere brailleleesregel is standaard voorzien van een aantal van deze toewijzingen.
+U kunt deze toewijzingen aanpassen of er nieuwe geëmuleerde toetsen aan toevoegen vanuit het <A HREF="#InputGestures">dialoogvenster Invoerhandelingen</A>.
+</P>
+<P>
+Hoewel deze aanpak goed bruikbaar isvoor algemeen gebruikte of unieke toetsen zoals Tab), wilt u misschien geen unieke set toetsen toewijzen aan elke sneltoets.
+Om het emuleren van het indrukken van een toets mogelijk te maken waarbij  een functiewisseltoets ingedrukt gehouden moet worden, beschikt u in NVDA over commando's om te schakelen met control, alt, shift, windows, en de NVDA-toetsen, alsmede over commando's voor enkele  combinaties van die toetsen.
+Om deze schakeltoetsen te gebruiken drukt u eerst op het commando (of de commandocombinatie) voor de functiewisseltoetsen die ingedrukt moeten worden, voer dan het karakter (teken) in dat deel uitmaakt van de sneltoets  die u wilt instellen.
+Als u bijvoorbeeld control+f wilt bewerkstelligen, gebruikt u  control " als funtiewisseltoetsd en dan typt u een f,
+en om control+alt+t, in te stellen gebruikt u of, de control-toets" en  de alt-toets" als de commandotoetsen, in willekeurige volgorde, of de control- en alt-toetsen" om vervolgens een t te typen.
+</P>
+<P>
+Als u per ongeluk functiewisseltoetsen omschakelt waarmee het funtiewisselcommando opnieuw wordt geactiveerd verliest u de toegewezen funtie.
+</P>
+<P>
+Als u werkt met verkort braille, met gebruikmaking van de functiewisseltoetsen zal uw invoer zodanig worden omgezet dat het lijkt alsof punten 7+8 werden ingedrukt.
+Daarenboven kan de geëmuleerde toetsaanslag geen braille weergeven die werd ingevoerd voordat de schakeltoets was ingedrukt.
+Dit houdt in dat, u om alt+2 te typen met een braillecode met een cijferteken erin u eerst moet schakelen met Alt om daarna een cijferteken in te geven.
 </P>
 <A NAME="Vision"></A>
 <H2>9. Zicht</H2>
@@ -3428,6 +3468,9 @@ U kunt de vermelding laten horen van:
 <LI>Documentinformatie
  <UL>
  <LI>Opmerkingen
+  <UL>
+  <LI>bladwijzers
+  </UL>
  <LI>Aangebrachte wijzigingen in de tekst
  <LI>Spelfouten
  </UL>
@@ -3554,16 +3597,11 @@ Het kan echter voorkomen dat informatie of niet of onjuist wordt weergegeven in 
 <P>
 Wanneer deze optie ingeschakeld is, zal NVDA een nieuwe, nog in otwikkeling zijnde, versie van haar ondersteuning voor de Windows-consool gebruiken waarmee toegankelijkheidsverbeteringen worden benut die Microsoft heeft doorgevoerd <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/</A>]. Deze mogelijkheid is nog zeer experimenteel van aard en  nog incompleet, dus wordt het gebruik ervan nog niet aanbevolen. Wanneer deze echter volledig is uitontwikkeld, dan is de verwachting dat deze nieuwe vorm van ondersteuning de standaard gaat worden waarmee de prestaties en stabiliteit van NVDA in opdrachtmodules van Windows worden verbeterd. 
 </P>
-<A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>Wachtwoorden uitspreken in  UIA consools</H5>
-<P>
-Hiermee bepaalt u of <A HREF="#KeyboardSettingsSpeakTypedCharacters">getypte karakters uitspreken</A> nof <A HREF="#KeyboardSettingsSpeakTypedWords">getypte woorden uitspreken</A> actief is in situaties waar het  scherm niet wordt ververst zoals bij het invoeren van een wachtwoord in het Windows-consool als ondersteuning voor UI automation ingeschakeld is. Om veiligheidsredenen moet deze instelling uitgeschakeld blijven. Het kan echter voorkomen dat u de instelling  zou willen inschakelen als het mis gaat met het uitsprken van getypte tekens / worden    bij gebruik van de nieuwe, experimentele consool-ondersteuning van NVDA. 
-</P>
 <A NAME="ChromiumUIA"></A>
 <H5>UI automation gebruiken bij Edge en andere op Chromium gebaseerde browsers waar beschikbaar</H5>
 <P>
 Biedt de mogelijkheid aan te geven wanneer UIA (User Interface Automation)  gebruikt wordt, voor zover deze beschikbaar is, in op Chromium gebaseerde browsers zoals Microsoft Edge.
-UIA Ondersteuning voor op Chromium gebaseerde browsers bevindt zich nog in een vroeg stadium van ontwikkeling en biedt wellicht nog niet hetzelfde toegangsniveau als IA2.
+UIA Ondersteuning voor op Chromium gebaseerde browsers bevindt zich nog in een vroeg stadium van ontwikkeling en biedt wellicht nog niet hetzelfde toegankelijkheidsniveau als IA2.
 Het keuzemenu heeft de volgende opties:
 </P>
 <UL>
@@ -3578,12 +3616,12 @@ Het keuzemenu heeft de volgende opties:
 <H5>annotaties</H5>
 <P>
 Deze groep opties dient ter uitbreiding van de mogelijkheden voor experimentele   ondersteuning  van ARIA  annotaties  (ARIA = Accessible Rich Internet Applications).
-Enkele van deze opties zijn mogelijk incompleet.
+Sommige van deze opties zijn mogelijk incompleet.
 De opties zijn: 
 </P>
 <UL>
-<LI>"Details in bladermodus melden": activeert een melding als er bij een object sprake is van details in bladermodus.
-Melding van een samenvatting van die details kan worden gerealiseerd door er een gebaar aan toe te kennen in het dialoogvenster <A HREF="InputGestures">Invoerhandelingen</A>.
+<LI>"Melding bevat details over samengestelde annotaties": maakt melding van verdere details mogelijk als deze beschikbaar zijn voor de tekst of het besturingselement.
+U kunt een samenvatting van de extra details laten weergeven door een gebaar toe te kennen aan "Samenvatting van gelijk welke annotatie-details melden bij de systeemcursor" met behulp van het dialoogvenster <A HREF="#InputGestures">Invoerhandelingen</A>.
 -  "Altijd aria-beschrijving melden":
   Wanneer  de bron van aria-beschrijving <CODE>accDescription</CODE> is, wordt de beschrijving gemeld.
   Dit is nuttig voor annotaties op het web.
@@ -3607,10 +3645,17 @@ Voor zover het gaat om navigeren in / werken met spreadsheets op een meer elemen
 Vooralsnog raden we de meeste gebruikers NIET aan dit standaard aan te zetten, al juichen we het toe dat gebruikers van Microsoft Excel  build 16.0.13522.10000  of hoger de optie activeren om uit te proberen en ons  feedback te geven over hun ervaringen.
 De implementatie van Microsoft Excel's UI automation is aan voortdurende verandering onderhevig, en  versies van Microsoft Office die ouder zijn dan 16.0.13522.10000 geven mogelijk niet genoeg informatie prijs, wat deze optie vokomen onbruikbaar maakt.
 </P>
-<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
-<H5>Gebruik de nieuwe ondersteuning voor getypte karakters in het Windows-consool wanneer beschikbaar</H5>
+<A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
+<H5>Wachtwoorden uitspreken in alle terminal-toepassingen</H5>
 <P>
-Met deze optie stelt u een alternatieve methode in voor het detecteren van getypte karakters in opdrachtmodules van Windows.
+Met deze instelling kunt u bepalen of tekens in spraak worden weergegeven <A HREF="#KeyboardSettingsSpeakTypedCharacters">via getypte tekens uitspreken</A> of <A HREF="#KeyboardSettingsSpeakTypedWords">met getypte woorden uitspreken</A> in situaties waar het scherm niet wordt ververst, zoals bij het invoeren van wachwoorden in sommige terminal-programma's, zoals  het Windows Console wanneer ondersteuning voor UI automation ingeschakeld is alsmede Mintty.
+Om veiligheidsredenen dient u deze instelling uitgeschakeld te laten.
+Het kan echter voorkomen dat u hem toch wilt inschakelen, als e.e.a. niet goed werkt of er sprake is van instabiliteit m.b.t. het melden van getypte tekens  en/of woordden in consoles, of bij het werken in een vertrouwde omgeving en u de voorkeur geeft om wachtwoorden te laten uitspreken.
+</P>
+<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
+<H5>Gebruik de verbeterde  ondersteuning voor getypte karakters in het Windows-consool wanneer beschikbaar</H5>
+<P>
+Met deze optie stelt u een alternatieve methode in voor het detecteren van getypte karakters in legacy opdrachtmodules van Windows.
 Terwijl de prestatie hiermee verbetert en voorkomen wordt dat consool-uitvoer wordt uitgespeld, kan deze methode incompatibel zijn  met enkele terminal-programma's.
 Dit alternatief is beschikbaar en staat standaard aan in Windows 10 versie 1607 en   in later uitgekomen versies van Windows 10 wanneer UI Automation niet beschikbaar is of uitgezet is.
 Waarschuwing: Als deze optie is ingeschakeld, worden getypte karakters die niet op het scherm te zien zijn zoals wachtwoorden, niet onderdrukt.
@@ -3623,65 +3668,47 @@ Deze instelling bepaalt hoe NVDA moet omgaan met de nieuwe in spraak om te zette
 Het diff algorithm keuzemenu heeft drie opties:
 </P>
 <UL>
-<LI>Automatisch: met ingang van NVDA 2021.2, is deze optie gelijk aan "Diff Match Patch toestaan".
-<LI>Diff Match Patch toestaan: Deze optie zorgt ervoor dat  NVDA wijzigingen aan de terminal-tekst per  teken berekent.
+<LI>Automatisch: Deze optie zorgt er voor dat NVDA in de meeste gevallen de voorkeur geeft aan Diff Match Patch maar op  Difflib terugvalt bij problematische toepassingen  zoals oudere versies van het Windows Console en Mintty.
+<LI>Diff Match Patch: Deze optie zorgt ervoor dat  NVDA wijzigingen aan de terminal-tekst per  teken berekent zelfs in situaties waar dat niet wordt aanbevolen.
 Dit kan de prestatie verbeteren wanneer er grote tekstvolumes  naar het console worden weggeschreven en maakt een nauwkeurigere melding van wijzigingen midden in regels mogelijk.
-De optie is mogelijk niet compatibel met sommige toepassingen, dus wordt Diff Match Patch niet altijd gebruikt.
-Deze feature wordt ondersteund in Windows Console van Windows 10 versies 1607 en later.
-Voorts kan er wellicht gebruik van worden gemaakt in andere terminals in eerder uitgebrachte versies van Windows.
-<LI>force Difflib: Deze optie zorgt ervoor dat  NVDA wijzigingen aan terminaltekst per regel berekent.
+In sommige toepassingen kan het (voor)lezen van nieuwe tekst echter onzorgvuldig of inconsistent verlopen.
+<LI>Difflib: Deze optie zorgt ervoor dat  NVDA wijzigingen aan terminaltekst per regel berekent, zelfs in situaties waar dit niet aanbevelenswaardig is.
 Hiermee zal NVDA zich hetzelfde gedragen als  in versie 2020.4 en in daaraan voorafgaande versies.
-</UL>
-
+Deze instelling kan meer stabiliteit bieden bij het lezen van nieuw in te voeren tekst in sommige toepassingen.
+Wanneer er echter in terminal-toepassingen  een tekenmidden in een regel wordt ingevoerd of verwijderd wordt de tekst achter de cursor voorgelezen.
 <P></P>
-<A NAME="CancelExpiredFocusSpeech"></A>
-<H5>Probeer spraak te annuleren bij verlopen gebeurtenissen met focus</H5>
-<P>
+==== Probeer spraak te annuleren bij verlopen gebeurtenissen met focus ====[CancelExpiredFocusSpeech]
 Met deze optie kunt u ervoor zorgen dat geprobeerd wordt spraak bij verlopen gebeurtenissen met focus uitte zetten.
 Met name als u snel met Chrome door berichten in Gmail gaat, doet de gesproken informatie die NVDA geeft er mogelijk niet meer toe.
 Met de introductie van NVDA 2021.1 staat deze fucntionaliteit standaard ingeschakeld.
-</P>
-<A NAME="AdvancedSettingsCaretMoveTimeout"></A>
-<H5>Reactievertraging invoercursor(in MS)</H5>
-<P>
+<P></P>
+==== Reactievertraging invoercursor(in MS) ====[AdvancedSettingsCaretMoveTimeout]
 Met deze optie kunt u het aantal miliseconden instellen dat NVDA wacht voordat de invoercursor beschikbaar is voor het invoeren / bewerken van tekst.
 Als u ervaart dat NVDA de invoercursor niet juist lijkt te volgen, hij loopt bijv. altijd 1 teken achter of herhaalt steeds regels dan kunt u eens proberen deze waarde te verhogen.
-</P>
-<A NAME="ReportTransparentColors"></A>
-<H5>Transparantie van kleuren melden</H5>
-<P>
+<P></P>
+==== Transparantie van kleuren melden ====[ReportTransparentColors]
 Met deze optie kan men laten melden wanneer kleuren transparant zijn, wat handig is voor addon/appModuleontwikklaars die informatie verzamelen met het doel de gebruikerservaring met een applicatie van derden te verbeteren.
 Enkele GDI-applicaties highlight (lichten) tekst (uit) door middel van achtergrondkleur en NVDA probeert (via display model) deze kleur te melden.
 In sommige situaties, is de tekstachtergrond mogelijk volkomen transparant, waarbij de tekst een laagje vormt op een ander GUI element.
 Bij verscheidene GUI API's, die al heel lang populair zijn, kan de  tekst weergegeven zijn door middel van een transparante achtergrond, maar visueel is de achtergrondkleur in orde.
-</P>
-<A NAME="AdvancedSettingsDebugLoggingCategories"></A>
-<H5>categorieën Debug logging</H5>
-<P>
+<P></P>
+==== categorieën Debug logging ====[AdvancedSettingsDebugLoggingCategories]
 Het selectievakje in deze lijst biedt u de mogelijkheid specifieke categorieën debug-meldingen in NVDA's log te activeren.
 Het loggen van deze meldingen kan de prestatie nadelig beïnvloeden en kan grote logbestanden tot gevolg hebben.
 Activeer er pas één als u daar uitdrukkelijk om gevraagd wordt door een ontwikkelaar van NVDA, bijv. bij  pogingen te achterhalen wat de oorzaak is dat de driver van een brailleleesregel niet goed werkt.
-</P>
-<A NAME="PlayErrorSound"></A>
-<H5>Een geluid afspelen voor gelogde fouten</H5>
-<P>
+<P></P>
+==== Een geluid afspelen voor gelogde fouten ====[PlayErrorSound]
 Met deze optie kunt u instellen of NVDA will een foutmeldingsgeluid afspeelt wanneer er een fout wordt gelogd.
 Door te kiezen voor 'Alleen in testversies (standaard) zorgt u ervoor dat NVDA alleen foutmeldingsgeluiden afspeelt als de op dat moment gebruikte versie van NVDA een testversie is (alpha, beta of 'run from source').
 Door voor 'Ja" te kiezen krijgt u foutmeldingsgeluiden te horen ongeacht welke versie van NVDA u op dat moment gebruikt.
-</P>
-<A NAME="MiscSettings"></A>
-<H3>12.2. Diverse instellingen</H3>
-<P>
+<P></P>
+++ Diverse instellingen ++[MiscSettings]
 Naast het dialoogvenster Instellingen van <A HREF="#NVDASettings">NVDA</A> kent het sub-menu Opties van het NVDA-menu nog verscheidene andere onderdelen die hierna worden voorgesteld.
-</P>
-<A NAME="SpeechDictionaries"></A>
-<H4>12.2.1. Uitspraakwoordenboeken</H4>
-<P>
+<P></P>
++++ Uitspraakwoordenboeken +++[SpeechDictionaries]
 Via het menu-item Uitspraakwoordenboeken dat te vinden is onder Opties kunt u aangeven hoe NVDA bepaalde woorden of woordgroepen moet uitspreken.
 Op dit moment zijn er 3 soorten woordenboeken beschikbaar,
 te weten, 
-</P>
-<UL>
 <LI>Standaard woordenboek: de regels hierin hebben betrekking op alles wat in NVDA wordt uitgesproken.
 <LI>Stem-afhankelijk woordenboek: de regels hierin hebben betrekking op de in gebruik zijnde synthesizer stem.
 <LI>Tijdelijk woordenboek: de regels hierin hebben betrekking op alles wat er door NVDA wordt uitgesproken, maar dan alleen voor de huidige sessie. De gemaakte regels gaan verloren wanneer NVDA opnieuw wordt gestart.
@@ -3693,7 +3720,7 @@ Als u deze woordenboeken altijd en overal wilt kunnen openen, kunt u daarvoor aa
 </P>
 <P>
 In de dialoogvensters van de verschillende woordenboeken vindt u een lijst met regels die gebruikt worden om de uitspraak te sturen.
-Tevens zijn er de knoppen Toevoegen, Bewerken en Verwijderen.
+Tevens zijn er de knoppen Toevoegen, Bewerken, Verwijderen en Alles verwijderen.
 </P>
 <P>
 Om een regel aan een woordenboek toe te voegen gebruikt u de knop Toevoegen. U vult de velden van het dialoogvenster in dat verschijnt en klikt op OK.
@@ -3719,7 +3746,7 @@ In deze handleiding wordt niet verder ingegaan op reguliere expressies.
 Voor een inleidende  tutorial kunt u terecht op [<A HREF="https://docs.python.org/3.7/howto/regex.html">https://docs.python.org/3.7/howto/regex.html</A>].
 </P>
 <A NAME="SymbolPronunciation"></A>
-<H4>12.2.2. Uitspraak van interpunctie/symbolen</H4>
+<H4>12.1.18. Uitspraak van interpunctie/symbolen</H4>
 <P>
 In dit dialoogvenster kan men de wijze waarop interpunctie en symbolen worden gemeld aanpassen, alsmede het interpunctieniveau waarop deze worden uitgesproken.
 </P>
@@ -3766,7 +3793,7 @@ In geval van complexe symbolen kan het nodig zijn in het veld 'Vervangen door' b
 In het veld 'Vervangen door' moeten normale (enkelvoudige) backslashes derhalve worden verdubbeld,u moet bijv.  "a\\b" typen om "a\b" als vervanging te krijgen.
 </P>
 <A NAME="InputGestures"></A>
-<H4>12.2.3. Invoerhandelingen</H4>
+<H4>12.1.19. Invoerhandelingen</H4>
 <P>
 In dit dialoogvenster kunt u toetsen voor invoerhandelingen op het toetsenbord, knoppen op de brailleleesregel, etc. instellen voor het uitvoeren van NVDA commando's.
 </P>
@@ -3810,7 +3837,7 @@ Merk op:
 Als u klaar bent met het aanbrengen van de wijzigingen drukt u op de knop OK om de wijzigingen op te slaan of op de knop Annuleren als u geen wijzigingen wilt doorvoeren.
 </P>
 <A NAME="SavingAndReloading"></A>
-<H3>12.3. De configuratie opslaan en opnieuw laden</H3>
+<H3>12.2. De configuratie opslaan en opnieuw laden</H3>
 <P>
 Als er wijzigingen worden aangebracht in de instellingen van NVDA worden deze automatisch opgeslagen bij het afsluiten van het programma.
 Dit is de standaardinstelling, maar u kunt dit veranderen onder Algemeen in het menu Opties.
@@ -3845,7 +3872,7 @@ De volgende toetscombinaties kunnen ook handig zijn:
 </TABLE>
 
 <A NAME="ConfigurationProfiles"></A>
-<H3>12.4. Configuratieprofielen</H3>
+<H3>12.3. Configuratieprofielen</H3>
 <P>
 Het kan voorkomen dat u bepaalde instellingen wilt die gelden voor bepaalde situaties.
 Zo kan het zijn dat u wilt dat "inspringen melden" aan staat als u een tekst aan het bewerken bent, of dat het melden van opmaakeigenschappen zoals lettertype, grootte, etc. is ingeschakeld als u tekst naleest ter correctie.
@@ -3860,7 +3887,7 @@ U kunt Configuratieprofielen handmatig activeren, hetzij via een dialoog dan wel
 Ze kunnen ook automatisch geactiveerd "worden met behulp van een zogenaamde "trigger". Het overschakelen naar een applicatie, bij voorbeeld, kan de "trigger" zijn die een bepaald configuratieprofiel activeert.
 </P>
 <A NAME="ProfilesBasicManagement"></A>
-<H4>12.4.1. Basisbeheer</H4>
+<H4>12.3.1. Basisbeheer</H4>
 <P>
 U kunt configuratieprofielen beheren door in het NVDA-menu Configuratieprofielen te selecteren.
 U kunt hiervoor ook de volgende toetscombinatie gebruiken:
@@ -3882,7 +3909,7 @@ U kunt een profiel hernoemen of verwijderen door respectievelijk op de knop "Her
 U sluit het dialoogvenster met de knop "Sluiten".
 </P>
 <A NAME="ProfilesCreating"></A>
-<H4>12.4.2. Een Profiel aanmaken</H4>
+<H4>12.3.2. Een Profiel aanmaken</H4>
 <P>
 U kunt een profiel aanmaken door op de knop "Nieuw" te drukken.
 </P>
@@ -3898,7 +3925,7 @@ Als u geen naam voor het profiel hebt ingevoerd, zal gemakshalve bij het selecte
 Door op OK te drukken wordt het profiel aangemaakt en het dialoogvenster gesloten. Vervolgens kunt u het profiel bewerken.
 </P>
 <A NAME="ConfigProfileManual"></A>
-<H4>12.4.3. Handmatig activeren</H4>
+<H4>12.3.3. Handmatig activeren</H4>
 <P>
 U kunt een profiel handmatig activeren door een profiel te selecteren en dan op de knop Handmatig Activeren te drukken
 Naast een handmatig geactiveerd profiel blijft het mogelijk met behulp van triggers andere profielen aan te zetten, maar de instellingen van een handmatig geactiveerd profiel krijgen prioriteit ten koste van de automatische instellingen. 
@@ -3908,7 +3935,7 @@ Instellingen die u wijzigt worden opgeslagen in het handmatig geactiveerde profi
 U kunt een dergelijk profiel déactiveren door het te selecteren en op de knop "Handmatig déactiveren" te drukken.
 </P>
 <A NAME="ConfigProfileTriggers"></A>
-<H4>12.4.4. Triggers</H4>
+<H4>12.3.4. Triggers</H4>
 <P>
 Door in het dialoogvenster Configuratieprofielen op de knop Triggers te drukken, kunt u instellen welke profielen met behulp van de verschillende triggers automatisch geactiveerd moeten worden.
 </P>
@@ -3929,7 +3956,7 @@ Als u niet wilt dat er een profiel wordt gebruikt, selecteert u "(normale config
 Druk op de knop Sluiten om naar het dialoogvenster Configuratieprofielen terug te gaan.
 </P>
 <A NAME="ConfigProfileEditing"></A>
-<H4>12.4.5. Een Profiel bewerken</H4>
+<H4>12.3.5. Een Profiel bewerken</H4>
 <P>
 Als u handmatig een profiel hebt geactiveerd, worden alle door u gewijzigde instellingen in dat profiel opgeslagen.
 Als dat niet het geval is,zullen wijzigingen die u in de instellingen aanbrengt worden opgeslagen in het meest recente door een trigger geactiveerde profiel.
@@ -3940,7 +3967,7 @@ Als er geen handmatig geactiveerd profiel is, en er ook geen sprake is van een a
 Om het profiel dat gekoppeld is aan alles voorlezen te bewerken, moet u dat profiel <A HREF="#ConfigProfileManual">handmatig activeren</A>. 
 </P>
 <A NAME="ConfigProfileDisablingTriggers"></A>
-<H4>12.4.6. Triggers tijdelijk uitschakelen</H4>
+<H4>12.3.6. Triggers tijdelijk uitschakelen</H4>
 <P>
 Het kan van pas komen dat alle triggers tijdelijk kunnen worden uitgeschakeld. 
 U wilt bij voorbeeld een handmatig geactiveerd profiel of de normale configuratie bewerken zonder last te hebben van door triggers geactiveerde profielen 
@@ -3950,7 +3977,7 @@ Dit kunt u doen door een vinkje te zetten in het selectievakje bij "Alle trigger
 Om vanaf een willekeurige plaats Triggers in of uit te schakelen wijst u een aangepaste invoerhandeling toe met behulp van het dialoogvenster <A HREF="#InputGestures">Invoerhandelingen</A>.
 </P>
 <A NAME="ConfigProfileGestures"></A>
-<H4>12.4.7. Een profiel activeren met behulp van invoerhandelingen</H4>
+<H4>12.3.7. Een profiel activeren met behulp van invoerhandelingen</H4>
 <P>
 Aan elk profiel dat u toevoegt, kunt u een of meer invoerhandelingen toekennen om het te  activeren.
 Standaard zijn aan configuratieprofielen geen invoerhandelingen toegekend.
@@ -3960,7 +3987,7 @@ Wanneer  u een  profiel hernoemt, blijven alle handelingen die u eerder bewerkte
 Met het verwijderen van een profiel worden de daaraan verbonden handelingen ook verwijderd.
 </P>
 <A NAME="LocationOfConfigurationFiles"></A>
-<H3>12.5. De Locatie van Configuratiebestanden</H3>
+<H3>12.4. De Locatie van Configuratiebestanden</H3>
 <P>
 Als u een draagbare versie van NVDA hebt, worden alle instellingen en add-ons opgeslagen in een sub-map genaamd user config. Deze map bevindt zich in de NVDA hoofdmap.
 </P>
@@ -4037,6 +4064,7 @@ Dit kan nuttig zijn om te testen of NVDA in staat is map a correct van braillece
 Om te voorkomen dat onbedoeld naar cellen wordt gerouteerd wordt het commando met een vertraging uitgevoerd.
 Er moet met de muis bewogen worden tot dat deze groen kleurt.
 De cell begint lichgeel gekleurd, gaat over in oranje en wordt dan plotseling groen.
+Als u het Brailleweergavevenster altijd en overal wilt kunnen in- of uischakelen, kunt u daarvoor een aangepaste invoerhandeling aanmaken met behulp van <A HREF="#InputGestures">het dialoogvenster Invoerhandelingen</A>.
 </P>
 <A NAME="PythonConsole"></A>
 <H3>13.4. Python-console</H3>
@@ -4261,6 +4289,7 @@ De volgende leesregels ondersteunen automatische herkenning:
 <LI>HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series
 <LI>Eurobraille Esys/Esytime/Iris leesregels
 <LI>Nattiq Brailleleesregels-
+<LI>Seika Notetaker: MiniSeika (16, 24 cellen), V6, en V6Pro (40 cellen)
 <LI>Elke leesregel met ondersteuning voor het Standaard HID Brailleprotocol
  -
 <P></P>
@@ -4417,6 +4446,48 @@ Bij gebruik van deze leesregel met NVDA zijn de volgende toetscombinaties van to
 <TR>
 <TD>Spatiebalk</TD>
 <TD>braillespatiebalk</TD>
+</TR>
+<TR>
+<TD>Functieschakeltoets control</TD>
+<TD>braillespatiebalk+punt3+punt8</TD>
+</TR>
+<TR>
+<TD>Functieschakeltoets alt</TD>
+<TD>brailleSpatieBalk+punt6+punt8</TD>
+</TR>
+<TR>
+<TD>Functieschakeltoets windows</TD>
+<TD>brailleSpatieBalk+punt4+punt8</TD>
+</TR>
+<TR>
+<TD>Functieschakeltoets NVDA</TD>
+<TD>brailleSpatieBalk+punt5+punt8</TD>
+</TR>
+<TR>
+<TD>Functieschakeltoets shifty</TD>
+<TD>brailleSpatieBalk+punt7+punt8</TD>
+</TR>
+</TABLE>
+
+<P>
++| Functieschakeltoetsen control en shift | brailleSpatieBalk+punt3+punt7+punt8 || Functieschakeltoetsen alt en shift | brailleSpatieBalk+punt6+punt7+punt8 |
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>Functieschakeltoetsen windows en shifts</TD>
+<TD>brailleSpatieBalk+punt4+punt7+punt8</TD>
+</TR>
+<TR>
+<TD>Functieschakeltoetsen NVDA en shift</TD>
+<TD>brailleSpatieBalk+punt5+punt7+punt8</TD>
+</TR>
+<TR>
+<TD>Functieschakeltoetsen control en alt</TD>
+<TD>brailleSpatieBalk+punt3+punt6+punt8</TD>
+</TR>
+<TR>
+<TD>Functieschakeltoetsen control, alt, en shift</TD>
+<TD>brailleSpatieBalk+punt3+punt6+punt7+punt8</TD>
 </TR>
 <TR>
 <TD>Windows+d (alle toepassingen minimaliseren)</TD>
@@ -4989,7 +5060,7 @@ Aanvullend worden ook de volgende  toestellen  ondersteund en hiervoor hoeven ge
 Bij gebruik van de Brailliant BI/B en de BrailleNote touch met NVDA zijn de volgende toetscombinaties van toepassing:
 (Voor meer details kunt u de documentatie bij deze leesregels raadplegen.)
 </P>
-<A NAME="toc134"></A>
+<A NAME="toc133"></A>
 <H4>15.8.1. Toegewezen toetsen die gelden voor Alle modellen</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5078,7 +5149,7 @@ Bij gebruik van de Brailliant BI/B en de BrailleNote touch met NVDA zijn de volg
 </TR>
 </TABLE>
 
-<A NAME="toc135"></A>
+<A NAME="toc134"></A>
 <H4>15.8.2. Toegewezen toetsen voor de Brailliant BI 32, BI 40 en B 80</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5099,7 +5170,7 @@ Bij gebruik van de Brailliant BI/B en de BrailleNote touch met NVDA zijn de volg
  |Alles lezen | c1+c2+c3+c4+c5+c6 |
  %kc:endInclude
 </P>
-<A NAME="toc136"></A>
+<A NAME="toc135"></A>
 <H4>15.8.3. Toegewezen toetsen voor de Brailliant BI 14</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5395,13 +5466,26 @@ Bij gebruik van deze leesregels met NVDA zijn de volgende toetscombinaties van t
 <A NAME="Seika"></A>
 <H3>15.10. Seika Brailleleesregels</H3>
 <P>
-De modellen Seika Version 3, 4 en 5 (40 cellen) en de Seika80 (80 cellen) van <A HREF="https://www.nippontelesoft.com/">Nippon Telesoft</A> worden ondersteund.
-Meer informatie over deze leesregels en over de benodigde drivers vindt u op <A HREF="https://en.seika-braille.com/down/index.html">https://en.seika-braille.com/down/index.html</A> 
-U moet eerst de usb-driver van de fabrikant installeren voordat u de leesregel op de computer aansluit.
+De volgende Seika Brailleleesregels van Nippon Telesoft onderverdeeld in twee groepen met verschillende functionaliteit worden ondersteund:
+</P>
+<UL>
+<LI><A HREF="#SeikaBrailleDisplays">Seika Versie 3, 4, en 5 (40 cellen), Seika80 (80 cellen)</A>
+<LI><A HREF="#SeikaNotetaker">MiniSeika (16, 24 cellen), V6, en V6Pro (40 cellen)</A>
+</UL>
+
+<P>
+U vindt meer informatie over de leesregels op <A HREF="https://en.seika-braille.com/down/index.html">https://en.seika-braille.com/down/index.html</A>.
 </P>
 <P>
-Deze leesregel heeft nog geen ondersteuning voor de op de achtergrond uitgevoerde automatische leesregelherkenning van NVDA.
+++++ Seika Versie 3, 4, en 5 (40 cellen), Seika80 (80 cellen) +++[SeikaBrailleDisplays]
 </P>
+<UL>
+<LI>Deze leesregels hebben nog geen ondersteuning voor de op de achtergrond uitgevoerde automatische leesregelherkenning van NVDA.
+<LI>Selecteer "Seika Braille Displays" om handmatig te configureren
+<LI>Voordat u de Seika v3/4/5/80 kunt gebruiken , moeten er apparaatstuurprogramma's worden geïnstalleerd. 
+De stuurprogramma's zijn bij de fabrikant verkrijgbaar <A HREF="https://en.seika-braille.com/down/index.html">https://en.seika-braille.com/down/index.html</A>].
+</UL>
+
 <P>
 Bij gebruik van deze leesregel met NVDA zijn de volgende toetscombinaties van toepassing:
 (Informatie over de plaats van de toetsen vindt u in de documentatie bij deze leesregel.)
@@ -5454,6 +5538,141 @@ Bij gebruik van deze leesregel met NVDA zijn de volgende toetscombinaties van to
 <TR>
 <TD>NVDA-menu</TD>
 <TD COLSPAN="2">links+rechts</TD>
+</TR>
+</TABLE>
+
+<P>
+++++ MiniSeika (16, 24 cellen), V6, en V6Pro (40 cellen) +++[SeikaNotetaker]
+</P>
+<UL>
+<LI>Deze leesregels hebben  ondersteuning voor de op de achtergrond uitgevoerde automatische leesregelherkenning van NVDA via bluetooth en usb.
+<LI>Selecteer "Seika Notetaker" of "auto" om te configureren.
+<LI>U hoeft geen extra stuurprogramma's te installeren bij gebruik van een Seika Notetaker brailleleesregel.
+]
+Hierna volgen toetstoewijzingen voor de Seika Notetaker.
+Informatie over de plaats van de toetsen vindt u in de documentatie bij deze leesregel.
+</UL>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Naam</TH>
+<TH>Toets</TH>
+</TR>
+<TR>
+<TD>Leesregel terugscrollen</TD>
+<TD>Links</TD>
+</TR>
+<TR>
+<TD>Leesregel vooruitscrollen</TD>
+<TD>rechts</TD>
+</TR>
+<TR>
+<TD>Alles  lezen</TD>
+<TD>spatie+Backspace</TD>
+</TR>
+<TR>
+<TD>NVDA-menu</TD>
+<TD>Links+Rechts</TD>
+</TR>
+<TR>
+<TD>Leesregel verplaatsen naar vorige regel</TD>
+<TD>LJ up</TD>
+</TR>
+<TR>
+<TD>Leesregel verplaatsen naar volgende regel</TD>
+<TD>LJ down</TD>
+</TR>
+<TR>
+<TD>Braille koppelen omschakelen</TD>
+<TD>LJ center</TD>
+</TR>
+<TR>
+<TD>tab</TD>
+<TD>LJ rechts</TD>
+</TR>
+<TR>
+<TD>shift+tab</TD>
+<TD>LJ links</TD>
+</TR>
+<TR>
+<TD>Pijl-omhoogtoets</TD>
+<TD>RJ up</TD>
+</TR>
+<TR>
+<TD>Pijl-omlaagtoets</TD>
+<TD>RJ down</TD>
+</TR>
+<TR>
+<TD>linkerPijltoets</TD>
+<TD>RJ links</TD>
+</TR>
+<TR>
+<TD>rechterPijltoets</TD>
+<TD>RJ rechts</TD>
+</TR>
+<TR>
+<TD>Naar braillecel routeren</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>shift+Pijl-omhoogtoets</TD>
+<TD>Spatie+RJ up, Backspace+RJ up</TD>
+</TR>
+<TR>
+<TD>shift+Pijl-omlaagtoets</TD>
+<TD>Spatie+RJ down, Backspace+RJ down</TD>
+</TR>
+<TR>
+<TD>shift+linkerPijltoets</TD>
+<TD>Spatie+RJ links, Backspace+RJ links</TD>
+</TR>
+<TR>
+<TD>shift+rechterPijltoets</TD>
+<TD>Spatie+RJ rechts, Backspace+RJ rechts</TD>
+</TR>
+<TR>
+<TD>entertoets</TD>
+<TD>RJ center, punt8</TD>
+</TR>
+<TR>
+<TD>escape-toets</TD>
+<TD>Spatie+RJ center</TD>
+</TR>
+<TR>
+<TD>windows-toets</TD>
+<TD>Backspace+RJ center</TD>
+</TR>
+<TR>
+<TD>spatie-toets</TD>
+<TD>Spatie, Backspace</TD>
+</TR>
+<TR>
+<TD>backspace-toets</TD>
+<TD>punt7</TD>
+</TR>
+<TR>
+<TD>pageup-toets</TD>
+<TD>spatie+LJ rechts</TD>
+</TR>
+<TR>
+<TD>pagedown-toets</TD>
+<TD>spatie+LJ links</TD>
+</TR>
+<TR>
+<TD>home-toets</TD>
+<TD>spatie+LJ up</TD>
+</TR>
+<TR>
+<TD>end-toets</TD>
+<TD>spatie+LJ down</TD>
+</TR>
+<TR>
+<TD>control+home-toets</TD>
+<TD>backspace+LJ up</TD>
+</TR>
+<TR>
+<TD>control+end-toets</TD>
+<TD>backspace+LJ down</TD>
 </TR>
 </TABLE>
 
@@ -6909,6 +7128,11 @@ Hieronder volgen de commandoregelopties voor NVDA:
 <TD>-c CONFIGPATH</TD>
 <TD>--config-path=CONFIGPATH</TD>
 <TD>Het pad waar alle instellingen voor NVDA worden opgeslagen.</TD>
+</TR>
+<TR>
+<TD>Geen</TD>
+<TD>--lang=LANGUAGE</TD>
+<TD>de ingestelde  NVDA-taal overschrijven. Instellen naar "Windows-standaardtaal voor huidige gebruiker, "en" voor het Engels, etc.</TD>
 </TR>
 <TR>
 <TD>-m</TD>
