@@ -332,6 +332,7 @@ NVDA fornisce i seguenti comandi quando si lavora con il cursore di sistema:
 | Legge Riga Corrente | NVDA+freccia su | NVDA+l | Legge la riga sulla quale si trova il cursore di sistema. Premendo la combinazione due volte viene effettuato lo spelling della riga. La tripla pressione effettuerà lo spelling utilizzando la descrizione dei caratteri (ancona, bari, como, domodossola, etc|
 | Legge Selezione corrente | NVDA+Shift+freccia su | NVDA+shift+s | Legge il testo selezionato ammesso che ve ne sia uno. |
 | Annuncia formattazione testo | NVDA+f | NVDA+f | Legge la formattazione del testo alla posizione del cursore di sistema. Una doppia pressione visualizzerà le informazioni in modalità navigazione |
+| Legge posizione cursore | NVDA+Canc tastierino numerico | NVDA+canc | none | Fornisce informazioni inerenti il testo o l'oggetto su cui è situato il cursore di sistema. Ad esempio, ciò potrebbe includere la percentuale in un documento, la distanza dal bordo della pagina o la posizione esatta dello schermo. Premendo due volte si possono ottenere ulteriori dettagli. |
 | frase successiva | alt+freccia Giù | alt+freccia Giù | Sposta il cursore sulla frase successiva e la legge. (Supportato solo in Microsoft Word e Outlook) |
 | frase precedente | alt+freccia Su | alt+freccia Su | Sposta il cursore sulla frase precedente e la legge. (Supportato solo in Microsoft Word e Outlook) |
 
@@ -380,7 +381,7 @@ Per navigare ad oggetti, utilizzare i tasti seguenti:
 | Spostarsi all'oggetto focalizzato | NVDA+Meno del tastierino numerico | NVDA+Backspace | Nessuno | Sposta il navigatore ad oggetti sull'oggetto che attualmente ha il focus di sistema, e porta anche il cursore di controllo in quella posizione, se il cursore di sistema è visualizzato |
 | Attivare l'oggetto corrente | NVDA+Invio del tastierino numerico | NVDA+Invio | Doppio tap | Attiva l'oggetto corrente (l'equivalente di cliccare col mouse o premere la barra spazio in presenza del focus) |
 | Spostare il focus o il cursore di sistema sull'oggetto corrente | NVDA+Shift+meno del tastierino numerico | NVDA+Shift+Backspace | Nessuno | Sposta il focus di sistema alla posizione del navigatore ad oggetti se possibile, mentre se premuto due volte sposta il cursore di sistema alla posizione del cursore di controllo |
-| Annuncia posizione del cursore di controllo | NVDA+Canc del tastierino numerico | NVDA+Canc | Nessuno | Legge la posizione del testo o dell'oggetto sul cursore di controllo. Ad esempio, può significare la percentuale in un documento, la distanza dal bordo della pagina o l'esatta posizione sullo schermo. Una doppia pressione fornirà se possibile ulteriori dettagli. |
+| Legge posizione cursore di controllo | NVDA+shift+Canc tastierino numerico | NVDA+shift+canc | none | Fornisce informazioni inerenti il testo o l'oggetto su cui è situato il cursore di controllo. Ad esempio, ciò potrebbe includere la percentuale in un documento, la distanza dal bordo della pagina o la posizione esatta dello schermo. Premendo due volte si possono ottenere ulteriori dettagli. |
 + | Sposta il cursore di controllo sulla barra di stato | nessuno | nessuno | nessuno | Legge il contenuto della barra di stato, se individuata. Inoltre sposta il navigatore ad oggetti su quella posizione. |
 %kc:endInclude
 
@@ -614,13 +615,19 @@ MathPlayer può essere scaricato gratuitamente dal seguente sito web: https://ww
 
 NVDA supporta la matematica nei seguenti formati:
 - MathML in Mozilla Firefox, Microsoft Internet Explorer e Google Chrome.
-- MathType Design Science in Microsoft Word e PowerPoint.
+- Le equazioni generate tramite lo strumento apposito di Microsoft Word 365 con UI automation attiva:
+NVDA è in grado di leggere e interagire con le equazioni matematiche in Microsoft Word 365/2016 build 14326 e versioni successive.
+Si noti tuttavia che qualsiasi equazione creata in precedenza con MathType dovrà essere convertita nel formato Office, selezionandola e scegliendo opzioni equazione - converti in matematica Office, dal menu contestuale. è bene assicurarsi di disporre dell'ultima versione di MathType  prima di farlo.
+Microsoft Word ora fornisce anche la navigazione in linea delle formule basata su simboli e supporta l'immissione di matematica utilizzando diverse sintassi, incluso LateX. Per ulteriori informazioni, si veda [Equazioni in formato Lineare che usano UnicodeMath e LaTeX in Word https://support.microsoft.com/it-it/office/equazioni-in-formato-lineare-che-usano-unicodemath-e-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8#:~:text=Equazioni%20in%20formato%20Lineare%20che%20usano%20UnicodeMath%20e%20LaTeX%20in%20Word,-Word%20per%20Microsoft&text=Per%20inserire%20un'equazione%20usando,usando%20Correzione%20automatica%20simboli%20matematici.]
+- Microsoft Powerpoint, e le versioni meno recenti di Microsoft Word: 
+NVDA è in grado di leggere e di navigare tra le equazioni Mathtype sia in Powerpoint che in Microsoft Word.
 Si noti che MathType dev'essere installato affinché il supporto funzioni correttamente.
 è sufficiente anche la versione di prova.
 Può essere scaricato da https://www.dessci.com/en/products/mathtype/
-- MathML in Adobe Reader.
+- Adobe Reader:
 Si noti che questo non è ancora uno standard ufficiale, per cui attualmente non esiste per il pubblico un software disponibile che possa produrre questo contenuto.
-- Math in Kindle per PC per libri con matematica accessibile.
+- Kindle Reader per PC:
+NVDA può leggere e navigare tra i contenuti di tipo matematico in Kindle per PC su libri con matematica accessibile.
 -
 
 Durante la lettura di un documento, NVDA sarà in grado di leggere qualsiasi contenuto di tipo matematico supportato.
@@ -766,6 +773,26 @@ Punto 7 elimina l'ultimo carattere o segno braille.
 Punto 8 elabora il braille inserito e aggiunge un invio.
 Tasto 7 + tasto 8 elabora il braille inserito, senza l'aggiunta di un invio o di uno spazio..
 %kc:endInclude
+
+++++ Immissione di scorciatoie da tastiera +++[BrailleKeyboardShortcuts]
+NVDA supporta l'immissione di scorciatoie da tastiera e l'emulazione della pressione dei tasti utilizzando il display braille.
+Tale emulazione può avvenire in due modi: assegnando una combinazione braille corrispondente alla pressione dei tasti desiderati servendosi anche dei tasti modificatori virtuali.
+
+I tasti comunemente usati, come le frecce o la pressione di Alt per accedere ai menu, possono essere mappati direttamente alle combinazioni di immissione braille.
+Il driver di ogni display Braille è già dotato di alcune di queste assegnazioni.
+è possibile modificare tali assegnazioni o aggiungere nuove emulazioni di tasti dalla [Finestra tasti e gesti di immissione #InputGestures].
+
+Sebbene questo approccio risulti utile per tasti singoli o comunque premuti di frequente (ad esempio Tab), si potrebbe non voler assegnare un set univoco di tasti a ciascuna scorciatoia da tastiera.
+Per consentire l'emulazione di combinazioni per le quali è necessario tener premuti i tasti modificatori, NVDA fornisce comandi per attivare/disattivare control, alt, shift, windows, eNVDA, oltre ad altri comandi per alcune combinazioni di quei tasti.
+Per utilizzare questi interruttori, innanzitutto è necessario attivare il comando (o la sequenza di comandi) per i tasti modificatori che si desidera rimangano premuti, quindi inserire il carattere che fa parte della scorciatoia da tastiera voluta.
+Per esempio, per ottenere control+f, usare il comando "attiva/disattiva tasto control" e poi digitare una f,
+e per inserire control+alt+t, servirsi o dei comandi "attiva/disattiva tasto control" e "Attiva/disattiva tasto alt", nell'ordine che si preferisce, oppure del comando "Attiva/disattiva tasti control e alt", per poi digitare la t.
+
+Se si attivano o disattivano accidentalmente i tasti modificatori, basterà rieseguire il comando per tornare alla situazione di partenza..
+
+Quando si digita in Braille contratto, l'attivazione/disattivazione dei tasti modificatori farà tradurre l'input proprio come se si avesse premuto i punti 7+8.
+Inoltre, la pressione dei tasti emulati non può rispecchiare il Braille digitato prima della pressione del tasto modificatore.
+Ciò significa che, per digitare alt+2 con un codice Braille che utilizza un segnanumero, bisogna prima attivare Alt e quindi digitare il segna numero.
 
 + Visione +[Vision]
 Nonostante NVDA rimanga uno screen reader per persone non vedenti che si servono della sintesi vocale e/o di un display braille per utilizzare il computer, fornisce anche alcune funzioni che modificano l'aspetto del contenuto dello schermo.
@@ -1725,6 +1752,7 @@ Attivata da impostazioni predefinite, questa funzione permette di stabilire se, 
 Ad esempio, se abilitata, premendo la lettera "j", a questa verrebbe impedito di raggiungere il documento, nonostante non sia un comando veloce di navigazione o possa essere un comando dell'applicazione stessa.
 Ogni qualvolta questo accade, Windows emetterà un suono predefinito di avviso.
 
+%kc:setting
 ==== Spostamento automatico del focus sugli elementi raggiungibili durante la navigazione ====[BrowseModeSettingsAutoFocusFocusableElements]
 Tasto: NVDA+8
 
@@ -1750,6 +1778,7 @@ Le opzioni di formattazione documento sono divise in gruppi.
  - Colori
 - Informazioni documento
  - Commenti
+ - Segnalibri
  - Revisioni
  - Errori ortografici
  - Apici e pedici
@@ -1836,10 +1865,9 @@ Questo può risultare molto dispendioso in termini di risorse soprattutto in app
 Invece, se l'opzione risulta attivata, NVDA si limiterà a tener conto degli eventi UIA che riguardano unicamente il focus.
 Nel caso in cui si riscontrino problemi di stabilità o di prestazioni, si consiglia di attivare la funzione per vedere se il problema può risolversi.
 
-==== Utilizza sempre UI Automation per accedere ai controlli dei documenti Microsoft Word quando disponibili ====[AdvancedSettingsUseUiaForWord]
-Quando quest'opzione viene attivata, NVDA tenterà sempre di utilizzare le API di accessibilità dell'interfaccia Microsoft UI Automation per recuperare informazioni dai controlli dei documenti di Microsoft Word, anche per build meno recenti di Microsoft Office 2016/365.
+==== Utilizza UI Automation per accedere ai controlli dei documenti Microsoft Word quando disponibili ====[AdvancedSettingsUseUiaForWord]
+Quando quest'opzione viene attivata, NVDA tenterà sempre di utilizzare le API di accessibilità dell'interfaccia Microsoft UI Automation per recuperare informazioni dai controlli dei documenti di Microsoft Word.
 Ciò comprende sia Word stesso, ma anche la finestra di visualizzazione e di composizione dei messaggi di Microsoft Outlook.
-Per Microsoft Office con una versione build a partire da 16.0.13901 o successiva, NVDA utilizzerà sempre le UI Automation per accedere ai documenti di Microsoft Word, indipendentemente dalla configurazione di questa impostazione.
 Per le versioni più recenti di Microsoft Office 2016/365 eseguite su Windows10 e versioni successive, il supporto Ui Automation risulta sufficientemente completo da fornire un accesso ai documenti Word paragonabile a quello presente finora in NVDA, con il grande vantaggio costituito da una reattività e una risposta ai comandi molto più efficente.
 Tuttavia, in alcune versioni di Microsoft Office, certe informazioni potrebbero non essere fornite, o essere esposte in modo errato, il che significa che non è sempre possibile fare affidamento sul supporto UI Automation.
 In linea generale, la maggior parte degli utenti non dovrebbe attivare questa funzione, a meno che non si stia utilizzando Office2016/365, nel qual caso sono graditi feedback e osservazioni  durante i test.
