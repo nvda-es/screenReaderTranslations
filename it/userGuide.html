@@ -207,8 +207,8 @@
     <LI><A HREF="#Hims">15.10. HIMS serie Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
     <LI><A HREF="#Seika">15.11. Display Braille Seika</A>
       <UL>
-      <LI><A HREF="#SeikaBrailleDisplays">15.11.1. Seika Version 3, 4, and 5 (40 cells), Seika80 (80 cells)</A>
-      <LI><A HREF="#SeikaNotetaker">15.11.2. MiniSeika (16, 24 cells), V6, and V6Pro (40 cells)</A>
+      <LI><A HREF="#SeikaBrailleDisplays">15.11.1. Seika Versione 3, 4, e 5 (40 celle), Seika80 (80 celle)</A>
+      <LI><A HREF="#SeikaNotetaker">15.11.2. MiniSeika (16, 24 celle), V6, e V6Pro (40 celle)</A>
       </UL>
     <LI><A HREF="#Papenmeier">15.12. Nuovi modelli Papenmeier BRAILLEX</A>
     <LI><A HREF="#PapenmeierOld">15.13. Papenmeier Braille BRAILLEX vecchi modelli</A>
@@ -1342,11 +1342,6 @@ Anche la pressione del tasto Esc farà in modo che NVDA attivi la modalità navi
 <TD>NVDA+Shift+f3</TD>
 <TD>Trova la stringa precedente di testo nel documento cercata con control+NVDA+f</TD>
 </TR>
-<TR>
-<TD>Apre descrizione</TD>
-<TD>NVDA+d</TD>
-<TD>Apre una nuova finestra contenente la descrizione dell'elemento, basata sull'attributo longdesc, se presente.</TD>
-</TR>
 </TABLE>
 
 <A NAME="SingleLetterNavigation"></A>
@@ -1492,7 +1487,8 @@ Se risulterà accessibile, premere il tasto tab o comunque muoversi all'interno 
 <P>
 NVDA è in grado di leggere ed interagire con la matematica nei contenuti che fanno uso del software MathPlayer4, prodotto da Design Science.
 Ciò richiede che MathPlayer4 sia installato sul computer.
-MathPlayer può essere scaricato gratuitamente dal seguente sito web: <A HREF="https://www.dessci.com/en/products/mathplayer/">https://www.dessci.com/en/products/mathplayer/</A>
+MathPlayer può essere scaricato gratuitamente dal seguente sito web: <A HREF="https://www.dessci.com/en/products/mathplayer/">https://www.dessci.com/en/products/mathplayer/</A>.
+Dopo aver installato MathPlayer, riavviare NVDA.
 </P>
 <P>
 NVDA supporta la matematica nei seguenti formati:
@@ -3350,8 +3346,8 @@ Sebbene il buffer virtuale non sia costituito da pagine, questo campo modifica i
 Tasto: NVDA+v
 </P>
 <P>
-Questa casella di controllo modifica la modalità di visualizzazione di alcuni elementi, come ad esempio link o campi editazione. 
-In sostanza, se la casella di controllo viene attivata, tali elementi vengono presentati all'utente esattamente come essi sono visualizzati sullo schermo, quindi, ad esempio, possono esservi più link in una stessa riga. Se invece la casella di controllo è disattivata, il buffer virtuale si occuperà di presentare ciascun elemento in una riga differente, permettendo una navigazione più comoda ma meno simile alla disposizione reale degli oggetti.
+Questa opzione consente di specificare se, in modalità navigazione, elementi quali pulsanti, link e campi debbano occupare un'unica riga o se debbano mantenere per quanto possibile il flusso di testo più simile alla visualizzazione reale. Tenere presente che questa opzione non si applica alle app di Microsoft Office come Outlook e Word, che utilizzano sempre il layout dello schermo.
+In sostanza, se la casella di controllo viene attivata, tali elementi vengono presentati all'utente esattamente come essi sono visualizzati sullo schermo, quindi, ad esempio, possono esservi più link in una stessa riga. Se invece la casella di controllo è disattivata, ciascun elemento sarà posto in una riga differente, permettendo una navigazione più comoda ma meno simile alla disposizione reale degli oggetti. 
 </P>
 <H5>Attiva modalità navigazione al caricamento della pagina</H5>
 <P>
@@ -3564,15 +3560,21 @@ Questo può risultare molto dispendioso in termini di risorse soprattutto in app
 Invece, se l'opzione risulta attivata, NVDA si limiterà a tener conto degli eventi UIA che riguardano unicamente il focus.
 Nel caso in cui si riscontrino problemi di stabilità o di prestazioni, si consiglia di attivare la funzione per vedere se il problema può risolversi.
 </P>
-<A NAME="AdvancedSettingsUseUiaForWord"></A>
-<H5>Utilizza UI Automation per accedere ai controlli dei documenti Microsoft Word quando disponibili</H5>
+<A NAME="MSWordUIA"></A>
+<H5>Utilizza UI Automation per accedere ai controlli dei documenti Microsoft Word</H5>
 <P>
-Quando quest'opzione viene attivata, NVDA tenterà sempre di utilizzare le API di accessibilità dell'interfaccia Microsoft UI Automation per recuperare informazioni dai controlli dei documenti di Microsoft Word.
-Ciò comprende sia Word stesso, ma anche la finestra di visualizzazione e di composizione dei messaggi di Microsoft Outlook.
- Per le versioni più recenti di Microsoft Office 2016/365 eseguite su Windows10 e versioni successive, il supporto Ui Automation risulta sufficientemente completo da fornire un accesso ai documenti Word paragonabile a quello presente finora in NVDA, con il grande vantaggio costituito da una reattività e una risposta ai comandi molto più efficente.
-Tuttavia, in alcune versioni di Microsoft Office, certe informazioni potrebbero non essere fornite, o essere esposte in modo errato, il che significa che non è sempre possibile fare affidamento sul supporto UI Automation.
-In linea generale, la maggior parte degli utenti non dovrebbe attivare questa funzione, a meno che non si stia utilizzando Office2016/365, nel qual caso sono graditi feedback e osservazioni  durante i test.
+Stabilisce se NVDA debba utilizzare o meno l'API di accessibilità UI Automation per accedere ai documenti di Microsoft Word, anziché il vecchio modello a oggetti  precedente.
+Questo vale per i documenti in Microsoft Word stesso, oltre ai messaggi in Microsoft Outlook.
+Questa impostazione contiene i seguenti valori:
 </P>
+<UL>
+<LI>Predefinito (se appropriato)
+<LI>Solo quando necessario: nel caso in cui il modello ad oggetti di Word non sia disponibile in nessuna circostanza
+<LI>Ove opportuno: Microsoft Word version 16.0.15000 o superiore, o nel caso in cui il modello ad oggetti di Word non è disponibile
+<LI>Sempre: ovunque sia disponibile la tecnologia UI automation in Microsoft word (non importa quanto completa).
+</UL>
+
+<P></P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
 <H5>Utilizza UI Automation per accedere alla console di Windows quando disponibile</H5>
 <P>
@@ -3598,11 +3600,15 @@ Nella casella combinata sono presenti le opzioni seguenti:
 <P>
 Questo gruppo di opzioni viene utilizzato per abilitare le funzionalità che aggiungono il supporto sperimentale per le annotazioni ARIA.
 Alcune di queste funzionalità potrebbero essere incomplete.
+</P>
+<P>
+Per "Leggere il riassunto di tutti i dettagli di un'annnotazione alla posizione del cursore di sistema", premere NVDA+d.
+</P>
+<P>
 Sono disponibili le seguenti opzioni:
 </P>
 <UL>
 <LI>"Annuncia 'con dettagli' per le annotazioni strutturate": ne abilita la segnalazione qualora il testo o il controllo contenga ulteriori dettagli.
-è possibile ottenere un sommario dei dettagli aggiuntivi assegnando una combinazione di tasti alla funzione "Legge il riassunto di tutti i dettagli di un'annnotazione alla posizione del cursore di sistema" tramite la <A HREF="#InputGestures">Finestra tasti e gesti di immissione</A>.
 <LI>"Annuncia sempre descrizioni-aria":
   Quando la fonte di <CODE>accDescription</CODE> è aria-description, viene sempre annunciata la descrizione.
   Questo è utile per le annotazioni sul web.
@@ -5479,209 +5485,18 @@ Si possono reperire maggiori informazioni su <A HREF="https://en.seika-braille.c
 </UL>
 
 <A NAME="SeikaBrailleDisplays"></A>
-<H4>15.11.1. Seika Version 3, 4, and 5 (40 cells), Seika80 (80 cells)</H4>
+<H4>15.11.1. Seika Versione 3, 4, e 5 (40 celle), Seika80 (80 celle)</H4>
 <UL>
-<LI>These displays do not yet support NVDA's automatic background braille display detection functionality.
-<LI>Select "Seika Braille Displays" to manually configure
-<LI>A device drivers must be installed before using Seika v3/4/5/80.
-The drivers are <A HREF="https://en.seika-braille.com/down/index.html">provided by the manufacturer</A>.
+<LI>Questi display non supportano ancora la funzionalità di rilevamento automatico del display braille in background di NVDA.
+<LI>Selezionare "Seika Braille Displays" per configurare manualmente
+<LI>È necessario installare un driver per il dispositivo prima di utilizzare Seika v3/4/5/80.
+I driver sono <A HREF="https://en.seika-braille.com/down/index.html">forniti dal produttore</A>.
 </UL>
 
 <P></P>
 <P>
-The Seika Braille Display key assignments follow.
-Please see the display's documentation for descriptions of where these keys can be found.
-</P>
-<TABLE BORDER="1" CELLPADDING="4">
-<TR>
-<TH>Name</TH>
-<TH>Key</TH>
-</TR>
-<TR>
-<TD>Scroll braille display back</TD>
-<TD>left</TD>
-</TR>
-<TR>
-<TD>Scroll braille display forward</TD>
-<TD>right</TD>
-</TR>
-<TR>
-<TD>Move braille display to previous line</TD>
-<TD>b3</TD>
-</TR>
-<TR>
-<TD>Move braille display to next line</TD>
-<TD>b4</TD>
-</TR>
-<TR>
-<TD>Toggle braille tethered to</TD>
-<TD>b5</TD>
-</TR>
-<TR>
-<TD>Say all</TD>
-<TD>b6</TD>
-</TR>
-<TR>
-<TD>tab</TD>
-<TD>b1</TD>
-</TR>
-<TR>
-<TD>shift+tab</TD>
-<TD>b2</TD>
-</TR>
-<TR>
-<TD>alt+tab</TD>
-<TD>b1+b2</TD>
-</TR>
-<TR>
-<TD>NVDA Menu</TD>
-<TD>left+right</TD>
-</TR>
-<TR>
-<TD>Route to braille cell</TD>
-<TD>routing</TD>
-</TR>
-</TABLE>
-
-<A NAME="SeikaNotetaker"></A>
-<H4>15.11.2. MiniSeika (16, 24 cells), V6, and V6Pro (40 cells)</H4>
-<UL>
-<LI>NVDA's automatic background braille display detection functionality is supported via USB and Bluetooth.
-<LI>Select "Seika Notetaker" or "auto" to configure.
-<LI>No extra drivers are required when using a Seika Notetaker braille display.
-</UL>
-
-<P></P>
-<P>
-The Seika Notetaker key assignments follow.
-Please see the display's documentation for descriptions of where these keys can be found.
-</P>
-<TABLE BORDER="1" CELLPADDING="4">
-<TR>
-<TH>Name</TH>
-<TH>Key</TH>
-</TR>
-<TR>
-<TD>Scroll braille display back</TD>
-<TD>left</TD>
-</TR>
-<TR>
-<TD>Scroll braille display forward</TD>
-<TD>right</TD>
-</TR>
-<TR>
-<TD>Say all</TD>
-<TD>space+Backspace</TD>
-</TR>
-<TR>
-<TD>NVDA Menu</TD>
-<TD>Left+Right</TD>
-</TR>
-<TR>
-<TD>Move braille display to previous line</TD>
-<TD>LJ up</TD>
-</TR>
-<TR>
-<TD>Move braille display to next line</TD>
-<TD>LJ down</TD>
-</TR>
-<TR>
-<TD>Toggle braille tethered to</TD>
-<TD>LJ center</TD>
-</TR>
-<TR>
-<TD>tab</TD>
-<TD>LJ right</TD>
-</TR>
-<TR>
-<TD>shift+tab</TD>
-<TD>LJ left</TD>
-</TR>
-<TR>
-<TD>upArrow key</TD>
-<TD>RJ up</TD>
-</TR>
-<TR>
-<TD>downArrow key</TD>
-<TD>RJ down</TD>
-</TR>
-<TR>
-<TD>leftArrow key</TD>
-<TD>RJ left</TD>
-</TR>
-<TR>
-<TD>rightArrow key</TD>
-<TD>RJ right</TD>
-</TR>
-<TR>
-<TD>Route to braille cell</TD>
-<TD>routing</TD>
-</TR>
-<TR>
-<TD>shift+upArrow key</TD>
-<TD>Space+RJ up, Backspace+RJ up</TD>
-</TR>
-<TR>
-<TD>shift+downArrow key</TD>
-<TD>Space+RJ down, Backspace+RJ down</TD>
-</TR>
-<TR>
-<TD>shift+leftArrow key</TD>
-<TD>Space+RJ left, Backspace+RJ left</TD>
-</TR>
-<TR>
-<TD>shift+rightArrow key</TD>
-<TD>Space+RJ right, Backspace+RJ right</TD>
-</TR>
-<TR>
-<TD>enter key</TD>
-<TD>RJ center, dot8</TD>
-</TR>
-<TR>
-<TD>escape key</TD>
-<TD>Space+RJ center</TD>
-</TR>
-<TR>
-<TD>windows key</TD>
-<TD>Backspace+RJ center</TD>
-</TR>
-<TR>
-<TD>space key</TD>
-<TD>Space, Backspace</TD>
-</TR>
-<TR>
-<TD>backspace key</TD>
-<TD>dot7</TD>
-</TR>
-<TR>
-<TD>pageup key</TD>
-<TD>space+LJ right</TD>
-</TR>
-<TR>
-<TD>pagedown key</TD>
-<TD>space+LJ left</TD>
-</TR>
-<TR>
-<TD>home key</TD>
-<TD>space+LJ up</TD>
-</TR>
-<TR>
-<TD>end key</TD>
-<TD>space+LJ down</TD>
-</TR>
-<TR>
-<TD>control+home key</TD>
-<TD>backspace+LJ up</TD>
-</TR>
-<TR>
-<TD>control+end key</TD>
-<TD>backspace+LJ down</TD>
-</TR>
-</TABLE>
-
-<P>
-Di seguito, ecco l'elenco dell'assegnazione dei tasti per queste righe braille con NVDA.
-Consultare la documentazione della barra braille per informazioni sulla posizione dei tasti.
+Seguono le assegnazioni dei tasti del display Braille Seika.
+Si prega di consultare la documentazione del display per le descrizioni di dove si trovano fisicamente i tasti.
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5689,19 +5504,19 @@ Consultare la documentazione della barra braille per informazioni sulla posizion
 <TH>Tasto</TH>
 </TR>
 <TR>
-<TD>Scorri display braille indietro</TD>
-<TD>sinistro</TD>
+<TD>Scorri indietro il display braille</TD>
+<TD>left</TD>
 </TR>
 <TR>
-<TD>Scorri display braille avanti</TD>
-<TD>destro</TD>
+<TD>Scorri display braille in avanti</TD>
+<TD>right</TD>
 </TR>
 <TR>
-<TD>Sposta display braille alla riga precedente</TD>
+<TD>Sposta il display braille alla riga precedente</TD>
 <TD>b3</TD>
 </TR>
 <TR>
-<TD>Sposta display braille alla riga successiva</TD>
+<TD>Sposta il display braille alla riga successiva</TD>
 <TD>b4</TD>
 </TR>
 <TR>
@@ -5726,11 +5541,147 @@ Consultare la documentazione della barra braille per informazioni sulla posizion
 </TR>
 <TR>
 <TD>Menu NVDA</TD>
-<TD>sinistro+destro</TD>
+<TD>left+right</TD>
 </TR>
 <TR>
 <TD>Route to braille cell</TD>
 <TD>routing</TD>
+</TR>
+</TABLE>
+
+<A NAME="SeikaNotetaker"></A>
+<H4>15.11.2. MiniSeika (16, 24 celle), V6, e V6Pro (40 celle)</H4>
+<UL>
+<LI>La funzionalità di rilevamento automatico del display braille in background di NVDA è supportata tramite USB e Bluetooth.
+<LI>Selezionare "Seika Notetaker" o "automatico" per configurare.
+<LI>Non sono richiesti driver aggiuntivi quando si utilizza un display braille Seika Notetaker.
+</UL>
+
+<P></P>
+<P>
+Seguono le assegnazioni dei tasti per i display Braille Seika Notetaker.
+Si prega di consultare la documentazione del display per le descrizioni di dove si trovano fisicamente i tasti.
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tasto</TH>
+</TR>
+<TR>
+<TD>Scorri indietro il display braille</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Scorri display braille in avanti</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Dire tutto</TD>
+<TD>spazio+Backspace</TD>
+</TR>
+<TR>
+<TD>Menu NVDA</TD>
+<TD>Left+Right</TD>
+</TR>
+<TR>
+<TD>Sposta il display braille alla riga precedente</TD>
+<TD>LJ up</TD>
+</TR>
+<TR>
+<TD>Sposta il display braille alla riga successiva</TD>
+<TD>LJ down</TD>
+</TR>
+<TR>
+<TD>Commuta inseguimento braille</TD>
+<TD>LJ center</TD>
+</TR>
+<TR>
+<TD>tab</TD>
+<TD>LJ right</TD>
+</TR>
+<TR>
+<TD>shift+tab</TD>
+<TD>LJ left</TD>
+</TR>
+<TR>
+<TD>Freccia su</TD>
+<TD>RJ up</TD>
+</TR>
+<TR>
+<TD>Freccia giù</TD>
+<TD>RJ down</TD>
+</TR>
+<TR>
+<TD>Freccia sinistra</TD>
+<TD>RJ left</TD>
+</TR>
+<TR>
+<TD>Freccia destra</TD>
+<TD>RJ right</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>shift+freccia su</TD>
+<TD>Spazio+RJ up, Backspace+RJ up</TD>
+</TR>
+<TR>
+<TD>shift+freccia giù</TD>
+<TD>Spazio+RJ down, Backspace+RJ down</TD>
+</TR>
+<TR>
+<TD>shift+freccia sinistra</TD>
+<TD>Spazio+RJ left, Backspace+RJ left</TD>
+</TR>
+<TR>
+<TD>shift+freccia destra</TD>
+<TD>Spazio+RJ right, Backspace+RJ right</TD>
+</TR>
+<TR>
+<TD>Tasto invio</TD>
+<TD>RJ center, punto8</TD>
+</TR>
+<TR>
+<TD>Tasto esc</TD>
+<TD>Spazio+RJ center</TD>
+</TR>
+<TR>
+<TD>Tasto windows</TD>
+<TD>Backspace+RJ center</TD>
+</TR>
+<TR>
+<TD>Spazio</TD>
+<TD>Spazio, Backspace</TD>
+</TR>
+<TR>
+<TD>backspace</TD>
+<TD>punto7</TD>
+</TR>
+<TR>
+<TD>pagina su</TD>
+<TD>spazio+LJ right</TD>
+</TR>
+<TR>
+<TD>pagina giù</TD>
+<TD>spazio+LJ left</TD>
+</TR>
+<TR>
+<TD>inizio</TD>
+<TD>spazio+LJ up</TD>
+</TR>
+<TR>
+<TD>fine</TD>
+<TD>spazio+LJ down</TD>
+</TR>
+<TR>
+<TD>control+home</TD>
+<TD>backspace+LJ up</TD>
+</TR>
+<TR>
+<TD>control+end</TD>
+<TD>backspace+LJ down</TD>
 </TR>
 </TABLE>
 
@@ -5749,11 +5700,6 @@ Sono supportati i seguenti display braille:
 <P></P>
 <P>
 Questi modelli non supportano ancora la funzione di rilevazione automatica in background.
-</P>
-<P>
-Se BrxCom è installato, NVDA lo utilizzerà.
-BrxCom è un utility che permette di gestire la scrittura tramite i tasti braille indipendentemente dallo screen reader in uso.
-La scrittura tramite i tasti braille è disponibile per i modelli Trio e Braillex live.
 </P>
 <P>
 La maggior parte dei dispositivi è dotata di una barra di navigazione facilitata (EAB) che permette di svolgere le operazioni in una modalità molto più rapida ed intuitiva..
