@@ -1357,11 +1357,6 @@ Ademáis, podes forzar manualmente o modo foco, despois permanecerá efectivo at
 <TD>NVDA+shift+f3</TD>
 <TD>Atopa a ocurrencia anterior do texto no documento buscado anteriormente</TD>
 </TR>
-<TR>
-<TD>abrir descripción longa</TD>
-<TD>NVDA+d</TD>
-<TD>Abre unha ventá nova contendo unha descripción longa para o elemento sobre o que estea se ten unha.</TD>
-</TR>
 </TABLE>
 
 <A NAME="SingleLetterNavigation"></A>
@@ -1507,7 +1502,8 @@ Proporciónase unha orde de teclado para voltar á páxina.
 <P>
 Usando MathPlayer 4 from Design Science, NVDA pode ler e navegar interactivamente polo contido matemático soportado.
 Esto require que MathPlayer 4 estea instalado no computador.
-MathPlayer está dispoñible como unha descarga gratuita dende: <A HREF="https://www.dessci.com/en/products/mathplayer/">https://www.dessci.com/en/products/mathplayer/</A>
+MathPlayer está dispoñible coma unha descarga gratuita dende: <A HREF="https://www.dessci.com/en/products/mathplayer/">https://www.dessci.com/en/products/mathplayer/</A>.
+Despois de instalar MathPlayer, reinicia o NVDA.
 </P>
 <P>
 NVDA soporta os seguintes tipos de contidos matemáticos:
@@ -3368,8 +3364,8 @@ Este campo axusta a cantidade de liñas que moverás cando premas Avance de páx
 Tecla: NVDA+v
 </P>
 <P>
-Esta opción permíteche especificar se o contido no modo navegación debería colocar cousas como ligas e outros campos na súa propria liña, ou se debería conservalos no fluxo de texto segundo sexa amosado visualmente.
-Se a opción está activada, entón as cousas permanecerán segundo sexan amosadas visualmente, pero se está desactivada, entón os campos serán colocados na súa propria liña.
+Esta opción permítech especificar se o modo exploración debería colocar o contido no que se pode facer clic (ligazóns, botóns e campos) na súa propria liña, ou se debería mantelo no fluxo de texto tal coma se amosa visualmente. Ten en conta que esta opción non se aplica ás aplicacións de Microsoft Office, coma Outlook e Word, que sempre usan o deseño de pantalla.
+Cando o deseño de pantalla está activado, os elementos da páxina manteranse tal como se amosan visualmente. Por exemplo, unha liña visual de múltiples ligazóns presentarase en voz e braille como múltiples ligazóns na mesma liña. Se se desactiva, os elementos da páxina colocaranse nas súas proprias liñas, o que pode seren máis sinxelo de entender durante a navegación da páxina liña por liña, e pode facer que os elementos sexan máis sinxelos de interactuar para algúns usuarios.
 </P>
 <A NAME="BrowseModeSettingsEnableOnPageLoad"></A>
 <H5>Habilitar modo Exploración ao cargar Páxina</H5>
@@ -3583,15 +3579,21 @@ Esto ten un maior impacto negativo no rendemento, especialmente en aplicacións 
 Polo tanto, cando se activa esta opción, o NVDA limitará o rexistro de eventos ao foco do sistema para a maioría dos eventos.
 Se sofres problemas de rendemento nunha ou máis aplicacións, recomendámosche que probes esta funcionalidade para ver se o rendemento mellora.
 </P>
-<A NAME="AdvancedSettingsUseUiaForWord"></A>
-<H5>Usar UI automation para acesar a controis de documento de Microsoft Word cando estea dispoñible</H5>
+<A NAME="MSWordUIA"></A>
+<H5>Usar UI automation para aceder a controis de documento de Microsoft Word</H5>
 <P>
-Cando esta opción estea activada, o NVDA tentará usar a API de accesibilidade de Microsoft UI Automation para obter información dos controis de documentos de Microsoft Word.
-Esto inclúe ao mesmo Microsoft Word, e tamén o visor de mensajes e o compositor de Microsoft Outlook.
-Para as versións máis recentes de Microsoft Office 2016/365 que se executen en Windows 10 e posteriores, a compatibilidade con UI Automation  é o suficentemente compreta como para proporcionar acceso aos documentos de Microsoft Word case que igual á compatibilidade con Microsoft Word existente do NVDA, coa ventaxa engadida de que a capacidade de resposta aumenta considerablemente.
-Sen embargo, pode haber algunha información que non estea exposta, ou que estea exposta de xeito incorrecto nalgunhas versións de Microsoft Office, o que significa que non sempre se pode confiar neste soporte de UI Automation.
-Aínda non recomendamos que a maioría dos usuarios activen esta función por defecto, aíndaque convidamos aos usuarios de Office 2016/365 a probar esta función e a dar a súa opinión.
+Configura se o NVDA debería usar ou non a API de acesibilidade UI Automation para aceder a documentos de Microsoft Word, en lugar do vello modelo de obxectos de Microsoft Word.
+Esto aplícase aos documentos no mesmo Microsoft word, ademáis das mensaxes en Microsoft Outlook.
+Esta opción contén os seguintes valores:
 </P>
+<UL>
+<LI>Por defecto (cando sexa adecuado)
+<LI>Só cando sexa necesario: cando o modelo de obxectos de Microsoft Word non estea dispoñible en absoluto
+<LI>Cando sexa adecuado: Microsoft Word version 16.0.15000 ou posteriores, ou cando non estea dispoñible o modelo de obxectos de Microsoft Word
+<LI>Sempre: cando a UI automation estea dispoñible en Microsoft word (sen importar cómo de compreta sexa).
+</UL>
+
+<P></P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
 <H5>Usar UI Automation para acesar á Consola de Windows cando estea dispoñible</H5>
 <P>
@@ -3617,6 +3619,11 @@ A caixa combinada ten as seguintes opcións:
 <P>
 Este grupo de opcións úsanse para habilitar as características que engaden soporte experimental para as anotacións ARIA.
 Algunhas destas características poden estar incompretas.
+</P>
+<P>
+Para "Anunciar resumo de calquera anotación de detalles no cursor do sistema", preme NVDA+d.
+</P>
+<P>
 Existen as seguintes opcións: 
 </P>
 <UL>
@@ -5714,11 +5721,6 @@ Sopórtanse as seguintes pantallas Braille:
 <P></P>
 <P>
 Estas pantallas non admiten a funcionalidade de detección automática do NVDA.
-</P>
-<P>
-Se está instalado BrxCom, NVDA utilizará BrxCom.
-BrxCom é unha ferramenta que che permite utilizar a entrada de teclado da pantalla braille para funcionar independientemente dun lector de pantalla.
-A entrada e posible cos modelos Trio e BRAILLEX Live.
 </P>
 <P>
 A maioría dos dispositivos teñen unha Barra de Acceso sinxelo (EAB) que permite operar rápida e intuitivamente.
