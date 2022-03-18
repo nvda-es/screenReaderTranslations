@@ -1,0 +1,20 @@
+commit d40a6d834fbc7993df0416944640cc89dac1a8e3
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Tue Mar 15 18:09:11 2022 +1000
+
+    MS Word with UIA: correctly fetch formatting in blank table cells and at the end of the document (#13477)
+    
+    Fixes #13458
+    fixes #13459
+    Partial fix for #13462
+    
+    Summary of the issue:
+    In MS word via UIA:
+    When at the end of a document and arrowing left or up into existing content, or when on a blank table cell and arrowing, tabbing or NVDA table cell navigating back into a cell with content, NVDA reports all formatting set for automatic reporting, even if the formatting between the blank position and the existing content does not differ.
+    For example, when on a blank table cell and pressing control+alt+leftArrow and moving to a cell with existing content, NVDA will report "section 1, page 1" before reporting the content of the cell. If the user has enabled automatic reporting of font color, then the font color will also be included.
+    This is due to the fact that NVDA fails to fetch formatting for blank table cells, and the insertion point at the end of the document. But still clears the formatting cache. Thus when fetching valid formatting after this, all the formatting is treated as changed.
+    Related somewhat to this, is the fact that new list items are not announced when being inserted at the end of the document.
+    
+    Description of how this pull request fixes the issue:
+    • UIAHandler.utils.iterUIARangeByUnit: when at the end of the document, it is impossible to move by unit at all. Thus if we cannot walk at all, then just yield the original range. This ensures that we do actually fetch text and fields for the insertion point at the end of the document.
+    • UIATextInfo's _getTextWithFields_text: don't refuse to yield a formatField before an empty text string. This is true on empty table cells and at the end of the document.
