@@ -1,0 +1,18 @@
+commit 3b352316a92b7d8f0159f6a265221f0a40350a5c
+Author: Sean Budd <sean@nvaccess.org>
+Date:   Thu Mar 17 11:37:44 2022 +1100
+
+    Initialize MathPlayer when NVDA starts (#13486)
+    
+    Fixes #13463
+    
+    Summary of the issue:
+    mathPres.ensureInit is called whenever math content is expected to be read, including from getTextWithFields.
+    This is called with every read when using UIA with Word.
+    If mathPlayer is not installed, this pollutes the log.
+    Ideally, math should be initialized at NVDA startup time.
+    
+    Description of how this pull request fixes the issue:
+    Makes mathPlayer initialize on start up.
+    Removes mathPlayer.ensureInit usages from within NVDA.
+    External documentation referencing mathPlayer may need to be updated to reflect the need to restart NVDA after installing mathPlayer.
