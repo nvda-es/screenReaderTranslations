@@ -1359,11 +1359,6 @@ Vuorovaikutustila voidaan lisäksi pakottaa käyttöön manuaalisesti, jolloin s
 <TD>NVDA+Vaihto+F3</TD>
 <TD>Etsii asiakirjasta aiemmin haetun tekstin edellisen esiintymän.</TD>
 </TR>
-<TR>
-<TD>Avaa pitkä kuvaus</TD>
-<TD>NVDA+D</TD>
-<TD>Avaa kohdalla olevan elementin mahdollisen pitkän kuvauksen uuteen ikkunaan.</TD>
-</TR>
 </TABLE>
 
 <A NAME="SingleLetterNavigation"></A>
@@ -1509,7 +1504,8 @@ Seuraavalla näppäinkomennolla voidaan palata alkuperäiselle upotetun objektin
 <P>
 NVDA:lla on mahdollista lukea ja liikkua vuorovaikutteisesti tuetussa matemaattisessa sisällössä Design Sciencen MathPlayer 4:ää käyttäen.
 Tämä edellyttää, että MathPlayer 4 on asennettu tietokoneelle.
-Se on ladattavissa ilmaiseksi osoitteesta <A HREF="https://www.dessci.com/en/products/mathplayer/">https://www.dessci.com/en/products/mathplayer/</A>
+Se on ladattavissa ilmaiseksi osoitteesta <A HREF="https://www.dessci.com/en/products/mathplayer/">https://www.dessci.com/en/products/mathplayer/</A>.
+Käynnistä NVDA uudelleen MathPlayerin asennuksen jälkeen.
 </P>
 <P>
 NVDA tukee seuraavia matemaattisia sisältöjä:
@@ -3370,8 +3366,8 @@ Tämä asettaa rivimäärän, joka selaustilassa siirrytään painettaessa Page 
 Pikanäppäin: NVDA+V
 </P>
 <P>
-Tällä asetuksella määritetään, sijoitetaanko esim. linkit ja muut elementit selaustilassa omille riveilleen, vai säilytetäänkö ne sellaisina kuin ne ovat ruudulla.
-Jos asetus on käytössä, elementit näytetään sellaisinaan, mutta jos asetus poistetaan käytöstä, elementit sijoitetaan omille riveilleen.
+Tällä asetuksella voidaan määrittää, sijoitetaanko napsautettava sisältö (linkit, painikkeet ja kentät) selaustilassa omille riveilleen vai säilytetäänkö ne sellaisina kuin ne ruudulla näytetään. Huomaa, että tämä asetus ei koske Microsoft Office -sovelluksia kuten Outlookia tai Wordia, joissa käytetään aina ruutuasettelua.
+Kun ruutuasettelu on käytössä, sivun elementit pysyvät sellaisina kuin ne visuaalisesti näytetään. Esimerkiksi useita linkkejä sisältävä visuaalinen rivi puhutaan ja näytetään pistenäytöllä samalla rivillä olevina useina linkkeinä. Jos asetus ei ole käytössä, sivun elementit sijoitetaan omille riveilleen, mitä voi olla helpompi ymmärtää sivua riveittäin selattaessa, ja vuorovaikutus kohteiden kanssa saattaa olla joillekin käyttäjille helpompaa.
 </P>
 <A NAME="BrowseModeSettingsEnableOnPageLoad"></A>
 <H5>Ota selaustila käyttöön sivua ladattaessa</H5>
@@ -3585,15 +3581,21 @@ Tällä on suuri kielteinen vaikutus suorituskykyyn, etenkin sellaisissa sovellu
 Tämän takia NVDA rajoittaa tapahtumien rekisteröinnin useimmissa tapauksissa järjestelmän kohdistukseen tämän asetuksen ollessa käytössä.
 Mikäli sinulla on suorituskykyongelmia yhdessä tai useammassa sovelluksessa, suosittelemme, että kokeilet tätä toimintoa nähdäksesi, paraneeko suorituskyky.
 </P>
-<A NAME="AdvancedSettingsUseUiaForWord"></A>
-<H5>Käytä UI automation -rajapintaa Microsoft Wordin asiakirjasäätimissä, kun käytettävissä</H5>
+<A NAME="MSWordUIA"></A>
+<H5>Käytä UI automation -rajapintaa Microsoft Wordin asiakirjasäätimissä</H5>
 <P>
-Kun tämä asetus on käytössä, NVDA yrittää käyttää UI Automation -saavutettavuusrajapintaa tietojen saamiseen Microsoft Wordin asiakirjasäätimistä.
-Tällaisia ovat muun muassa itse Microsoft Word sekä lisäksi Microsoft Outlookin viestinluku- ja kirjoitusikkuna.
-Uusimpien Microsoft Office 2016/365 -versioiden UI Automation -tuki on windows 10:ssä ja uudemmissa käytettäessä riittävän kattava tarjotakseen lähes nykyisen kaltaisen tuen Microsoft Word -asiakirjoille, jossa on lisäetuna huomattavasti lisääntynyt reagoivuus.
-Joissakin Officen versioissa ei välttämättä kuitenkaan ole saatavilla kaikkea tietoa tai ne ilmaistaan väärin, minkä vuoksi UI automation -tukeen ei voi aina luottaa.
-Suurimmalle osalle käyttäjistä tämän asetuksen oletusarvoinen käyttöön ottaminen ei silti ole suositeltavaa, vaikka Office 2016:n/365:n käyttäjät ovatkin tervetulleita testaamaan tätä ominaisuutta ja tarjoamaan palautetta.
+Määrittää, käyttääkö NVDA UI Automation -esteettömyysrajapintaa Microsoft Word -asiakirjoille vanhemman objektimallin asemesta.
+Tämä koskee itsensä Microsoft wordin asiakirjojen lisäksi Microsoft Outlookin viestejä.
+Asetus sisältää seuraavat arvot:
 </P>
+<UL>
+<LI>Oletus (kun käytettävissä)
+<LI>Vain tarvittaessa: Kun Microsoft Wordin objektimalli ei ole käytettävissä.
+<LI>Kun käytettävissä: Microsoft Wordin versio 16.0.15000 tai uudempi, tai kun Wordin objektimalli ei ole käytettävissä.
+<LI>Aina: Aina kun UI automation -rajapinta on käytettävissä Microsoft wordissa (riippumatta siitä, miten valmis se on).
+</UL>
+
+<P></P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
 <H5>Käytä UI Automation -rajapintaa Windows-konsolissa, kun käytettävissä</H5>
 <P>
@@ -3619,11 +3621,15 @@ Yhdistelmäruudussa on seuraavat vaihtoehdot:
 <P>
 Näillä asetuksilla otetaan käyttöön ominaisuudet, jotka lisäävät kokeellisen tuen ARIA-merkinnöille.
 Jotkin näistä ominaisuuksista voivat olla keskeneräisiä.
+</P>
+<P>
+Ilmoita järjestelmäkohdistimen kohdalla olevan merkinnän kaikkien tietojen yhteenveto painamalla NVDA+D.
+</P>
+<P>
 Seuraavat vaihtoehdot ovat käytettävissä:
 </P>
 <UL>
 <LI>Ilmoita rakenteellisten merkintöjen lisätiedoista: ilmoittaa, mikäli tekstillä tai säätimellä on lisätietoja.
-Lisätietojen yhteenvedon ilmoittaminen on mahdollista liittämällä Ilmoita järjestelmäkohdistimen kohdalla olevan merkinnän kaikkien tietojen yhteenveto -toimintoon syötekomento <A HREF="#InputGestures">Syötekomennot-valintaikkunaa</A> käyttäen.
 <LI>Puhu aina ARIA-kuvaukset:
   Kuvaus puhutaan, kun <CODE>accDescription</CODE>-attribuutin lähteenä on aria-description.
   Tästä on hyötyä verkkosivuilla olevissa merkinnöissä.
@@ -5719,11 +5725,6 @@ Seuraavia pistenäyttöjä tuetaan:
 <P></P>
 <P>
 Nämä näytöt eivät tue NVDA:n automaattista pistenäytön tunnistusta.
-</P>
-<P>
-NVDA käyttää BrxComia, mikäli se on asennettu.
-BrxCom on työkalu, joka mahdollistaa pistenäytön näppäimistösyötteen toimimisen itsenäisesti ruudunlukuohjelmasta riippumatta.
-Pistekirjoituksen syöttäminen on mahdollista Trio- ja BRAILLEX Live -malleissa.
 </P>
 <P>
 Useimmissa laitteissa on intuitiivisen ja nopean käytön mahdollistava helppokäyttönäppäin (EAB).
