@@ -1358,11 +1358,6 @@ Het is ook mogelijk om handmatig de focusmodus in te schakelen, deze zal dan act
 <TD>NVDA+shift+f3</TD>
 <TD>Hiermee kunt u nagaan of de gezochte tekst eerder in het document voorkomt</TD>
 </TR>
-<TR>
-<TD>Uitgebreide beschrijving openen</TD>
-<TD>NVDA+d</TD>
-<TD>Er wordt een nieuw venster geopend met een uitgebreide beschrijving, voor zover aanwezig, van het element waarop u zich bevindt.</TD>
-</TR>
 </TABLE>
 
 <A NAME="SingleLetterNavigation"></A>
@@ -3369,8 +3364,8 @@ Hoewel er in bladermodus eigenlijk geen echte pagina-indeling bestaat, kunt u hi
 Toets: NVDA+v
 </P>
 <P>
-Hiermee kunt u bepalen hoe de inhoud van een document in bladermodus moet worden weergegeven. Wilt u dat inhoud zoals links en andere velden op een aparte regel komen te staan of moet alles blijven zoals het wordt getoond. 
-Als het selectievakje is ingeschakeld blijft alles staan zoals weergegeven. Als u het vinkje weghaalt, worden de velden op aparte regels getoond.
+Hiermee kunt u bepalen hoe de klikbare inhoud (links, knoppen en velden)van een document in bladermodus moet worden weergegeven. Wilt u dat de klikbare items op een aparte regel komen te staan of moet alles blijven staan zoals het wordt getoond. Merk op dat deze optie niet geldt voor  Microsoft Office apps zoals Outlook en Word die altijd gebruik maken  van scherm-layout.  
+Wanneer  scherm-layout is ingeschakeld staan de elementen op de pagina zoals deze visueel worden weergegeven. Een regel waarop meerdere  links te zien zijn wordt in gesproken vorm en in braille gepresenteerd als inhoud van een en dezelfde regel. Als de optie uitgeschakeld is, dan komen elementen op de pagima elk op een eigen regel te staan wat het begrijpen ervan vergemakkelijkt bij het navigeren per regel op de pagina, en kan voor sommige gebruikers de interactie met deze items gemakkelijker worden.
 </P>
 <A NAME="BrowseModeSettingsEnableOnPageLoad"></A>
 <H5>Bladermodus inschakelen bij laden van pagina</H5>
@@ -3583,15 +3578,21 @@ Het gevolg is dat de prestatie flink nadelig wordt beïnvloed, vooral bij  toepa
 Daarom zal NVDA,wanneer deze optie is ingeschakeld, registratie van gebeurtenissen  grotendeels beperken tot de systeemfocus.
 Als u te kampen hebt met prestatieproblemen bij één of meer toepassingen, raden we u aan deze functionaliteit uit te proberen om te zien of de prestaties verbeteren.
 </P>
-<A NAME="AdvancedSettingsUseUiaForWord"></A>
-<H5>UI automation gebruiken voor toegang tot besturingselementen van Microsoft Word-documenten voor zover beschikbaar</H5>
+<A NAME="MSWordUIA"></A>
+<H5>UI automation gebruiken voor toegang tot besturingselementen van Microsoft Word-documenten</H5>
 <P>
-Wanneer  deze optie is ingeschakeld probeert  NVDA   de Microsoft UI (= User Interface) Automation accessibility API te gebruiken om informatie op te halen van besturingselementen van Microsoft Word-documenten.
-Dit betreft Microsoft Word zelf, en ook de Microsoft Outlook message viewer alsmede  de composer.
-Voor Microsoft Office met   versiekenmerk 16.0.13901 of hoger zal NVDA altijd UI Automation gebruiken voor toegang tot Microsoft Word-documenten ongeacht hoe deze optie is ingesteld.
-Voor de meest recente versies van Microsoft Office 2016/365 die onder windows 10 en later, draaien, is de ondersteuning  van UI Automation voldoende om toegang te kunnen bieden tot Microsoft Word-documenten. De ondersteuning is nagenoeg gelijk aan die welke NVDA reeds biedt voor Microsoft Word maar met het bijkomende voordeel dat de reactiegevoeligheid substantieel wordt verhoogd.
-Het kan echter voorkomen dat informatie of niet of onjuist wordt weergegeven in sommige oudere versies van Microsoft Office, waardoor  men niet in alle gevallen kan vertrouwen op deze UI automation ondersteuning.
+Hiermee stelt u in of NVDA al dan niet de UI (= User Interface) Automation accessibility API moet gebruiken voor  toegang tot Microsoft Word-documenten, in plaats van het oudere Microsoft Word object-model.
+Dit is van toepassing op documenten in Microsoft word zelf, alsmede op berichten in Microsoft Outlook.
+Deze instelling kent de volgende keuzemogelijkheden:
 </P>
+<UL>
+<LI>Standaard (waar toepasselijk)
+<LI>Alleen voor zover nodig: daar waar  het Microsoft Word object-model in het geheel niet beschikbaar is
+<LI>Waar toepasselijk: Microsoft Word versie 16.0.15000 of hoger, of waar het Microsoft Word object-model niet beschikbaar is
+<LI>Altijd: steeds waar over  UI automation beschikt kan worden  in Microsoft word (ongeacht de mate waarin).
+</UL>
+
+<P></P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
 <H5>UI Automation gebruiken om toegang te krijgen tot Windows-consool wanneer beschikbaar</H5>
 <P>
@@ -3617,11 +3618,16 @@ Het keuzemenu heeft de volgende opties:
 <P>
 Deze groep opties dient ter uitbreiding van de mogelijkheden voor experimentele   ondersteuning  van ARIA  annotaties  (ARIA = Accessible Rich Internet Applications).
 Sommige van deze opties zijn mogelijk incompleet.
+</P>
+<P>
++%kc:beginInclude
+Om een samenvatting van gelijk welke annotatie-details bij de systeemcursor te melden drukt u NVDA+d in.
+</P>
+<P>
 De opties zijn: 
 </P>
 <UL>
 <LI>"Melding bevat details over samengestelde annotaties": maakt melding van verdere details mogelijk als deze beschikbaar zijn voor de tekst of het besturingselement.
-U kunt een samenvatting van de extra details laten weergeven door een gebaar toe te kennen aan "Samenvatting van gelijk welke annotatie-details melden bij de systeemcursor" met behulp van het dialoogvenster <A HREF="#InputGestures">Invoerhandelingen</A>.
 -  "Altijd aria-beschrijving melden":
   Wanneer  de bron van aria-beschrijving <CODE>accDescription</CODE> is, wordt de beschrijving gemeld.
   Dit is nuttig voor annotaties op het web.
@@ -5691,12 +5697,6 @@ De volgende brailleleesregels worden ondersteund:
 <P></P>
 <P>
 Deze leesregel heeft geen ondersteuning voor de op de achtergrond uitgevoerde automatische leesregelherkenning van NVDA.
-</P>
-<P>
-Als BrxCom is geïnstalleerd, zal NVDA BrxCom gebruiken.
-BrxCom is een hulpprogramma waarmee invoer met de toetsen van de leesregel mogelijk is zonder tussenkomst van een schermlezer.
-Er zal binnenkort een nieuwe versie van BrxCom door Papenmeier worden uitgebracht die werkt met NVDA.
-Toetsinvoer is mogelijk met de modellen Trio en BRAILLEX Live.
 </P>
 <P>
 De meeste leesregels hebben een gebruiksvriendelijke navigatiebalk (EAB = Easy Access Bar, waarmee intuïtief en snel gewerkt kan worden.
