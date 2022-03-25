@@ -3532,16 +3532,16 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 仅当用户允许从开发者实验目录加载代码时，才会启用此按钮。
 </P>
 <A NAME="AdvancedSettingsSelectiveUIAEventRegistration"></A>
-<H5>为 UI Automation 接口属性更改启用选择性注册</H5>
+<H5>启用选择性注册 UIA 事件和属性改变</H5>
 <P>
-此选项更改NVDA接收的Microsoft UI Automation无障碍API触发的事件。
+此选项会改变 NVDA 接收哪些 Microsoft UIA 事件。
 禁用此选项后，NVDA将注册更多的UIA事件，这些事件将在NVDA本身内处理并丢弃。
 这会对性能产生重大负面影响，尤其是在像Microsoft Visual Studio这样的应用程序中。
 因此，启用此选项后，对于大多数事件，NVDA会将事件注册限制到系统焦点。
 如果您在一个或多个应用程序中遇到性能问题，我们建议您尝试使用此功能以查看性能是否有所提高。
 </P>
 <A NAME="AdvancedSettingsUseUiaForWord"></A>
-<H5>在 Word 中使用 UIA 接口（如果可用）</H5>
+<H5>在Word 中启用 UIA 接口（如果可用）</H5>
 <P>
 Microsoft UI Automation是微软的最新无障碍接口 简称 UIA，启用此选项后，NVDA 将尝试使用 Microsoft UIA 辅助功能 API 从 Microsoft Word 文档控件中获取信息。
 本选项应用于 Microsoft Word 本身，以及 Microsoft Outlook 消息查看器和编辑器。
@@ -3550,9 +3550,9 @@ Microsoft UI Automation是微软的最新无障碍接口 简称 UIA，启用此�
 我们建议大多数用户不要启用此功能，但我们欢迎Office 2016或者Office 365的用户测试此功能并提供反馈。
 </P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>使用Microsoft UI Automation支持命令提示符</H5>
+<H5>在 Windows 控制台中启用 UIA 接口</H5>
 <P>
-启用此选项后，NVDA将使用Microsoft UI Automation朗读命令提示符，该版本利用了<A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Windows10的对命令提示符的无障碍改进</A>。 此功能还在测试，仍然不稳定，因此尚未默认开启。 但是，一旦完成，预计这种新支持将成为默认设置，从而提高NVDA在Windows命令控制台中的性能和稳定性。
+启用此选项后，NVDA将使用Microsoft UI Automation朗读命令提示符，该版本利用了<A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Windows10对命令提示符的无障碍改进</A>。 此功能还在测试，仍然不稳定，因此尚未默认开启。 但是，一旦完成，预计这种新支持将成为默认设置，从而提高NVDA在Windows命令控制台中的性能和稳定性。
 </P>
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
 <H5>命令提示符中读出密码</H5>
@@ -3560,7 +3560,7 @@ Microsoft UI Automation是微软的最新无障碍接口 简称 UIA，启用此�
 这一项控制在使用Microsoft UI Automation支持命令提示符情况下屏幕内容不更新时是否<A HREF="#KeyboardSettingsSpeakTypedCharacters">朗读输入字符</A> 或 <A HREF="#KeyboardSettingsSpeakTypedWords">朗读输入单词</A>。通常输入密码的时候会遇到这种情况。 出于安全考虑，应禁用此设置。 但是，如果您在使用NVDA的新的命令提示符支持时遇到性能问题或朗读不稳定，您可能希望启用它。
 </P>
 <A NAME="ChromiumUIA"></A>
-<H5>在 Microsoft Edge 及其他基于 Chromium 内核浏览器调用 UI Automation 接口（如果可用）</H5>
+<H5>在 Microsoft Edge 及其他基于 Chromium 内核的浏览器中启用 UIA 接口（如果可用）</H5>
 <P>
 允许设置当 UIA 在 Chromium 系列浏览器（如 Microsoft Edge）中可用时何时启用。
 UIA 对基于 Chromium 的浏览器的支持目前处于早期开发阶段，可能无法提供与 IA2 相同的支持水平。
@@ -3598,7 +3598,7 @@ UIA 对基于 Chromium 的浏览器的支持目前处于早期开发阶段，可
 
 <P></P>
 <A NAME="UseUiaForExcel"></A>
-<H5>在 Excel 调用 UI Automation 接口（如果可用）</H5>
+<H5>在 Excel 中启用 UIA 接口（如果可用）</H5>
 <P>
 启用该选项后，NVDA 将尝试使用 Microsoft UI Automation 接口从 Excel 表格中获取信息。
 这是一项实验性功能，在此模式下可能无法使用 Excel 的某些功能。
@@ -3610,7 +3610,7 @@ Microsoft Excel 的 UI Automation 接口实现不断变化，早于 16.0.13522.1
 -
 </P>
 <A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
-<H5>在UI Automation不可用或被禁用时 读出输入的字符</H5>
+<H5>在UIA 不可用或被禁用时 读出输入的字符</H5>
 <P>
 启用此选项，可以使用另一种方法在Windows命令控制台中检测键入的字符。
 虽然它可以提高性能并防止某些控制台输出被逐字符拼读，但它可能与某些终端程序不兼容。
@@ -3640,7 +3640,7 @@ Windows 10 版本 1607 及更高版本上的 Windows 控制台支持此功能。
 
 <P></P>
 <A NAME="CancelExpiredFocusSpeech"></A>
-<H5>取消过期焦点事件的朗读</H5>
+<H5>取消无效焦点事件的朗读</H5>
 <P>
 启用此选项则会取消对无效焦点事件的朗读。
 尤其在chrome下，快速浏览Gmail中的信息时会导致nvda读出无效的内容。
