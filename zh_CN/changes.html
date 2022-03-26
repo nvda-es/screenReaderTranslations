@@ -9,6 +9,268 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2022.1</H2>
+<P>
+此版本针对 微软 Office 提供了 UIA 支持的重大改进。
+在 Windows 11 下，对于 Microsoft Office 16.0.15000 及后续版本，NVDA 浏览 Word 文档时，将默认开启UIA。
+与原有的对象浏览模式相比，开启 UIA 后的性能提升显著。
+</P>
+<P>
+针对清华盲文记事本、Papenmeier 以及 HID Braille点显器，新版软件在点显驱动方面提供了改进。
+对于 Windows 11 中诸如计算器、控制台、终端、邮件以及表情符号面板等系统应用，软件也修复了其原本存在的部分 Bug，
+</P>
+<P>
+eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，并添加了新的日语、、德语以及加泰罗尼亚语的盲文表。
+</P>
+<P>
+、注：
+</P>
+ <UL>
+ <LI>此版本将破坏现有插件的兼容性。
+ </UL>
+
+<P></P>
+<H3>新特性</H3>
+<UL>
+<LI>Windows 11下开启UIA后，支持在MS Excel中报读注释。 (<A HREF="https://github.com/nvaccess/nvda/issues/12861">#12861</A>)
+<LI>Windows 11下基于UIA接口，在最新的MS Word开发版中，能够通过语音和盲文呈现书签、草稿、批注及已解决批注等信息。 (<A HREF="https://github.com/nvaccess/nvda/issues/12861">#12861</A>)
+<LI>新的--lang命令行参数允许覆盖已设定的NVDA语言。 (<A HREF="https://github.com/nvaccess/nvda/issues/10044">#10044</A>)
+<LI>NVDA能够针对未知和未被任何插件使用的命令行参数发出警示。 (<A HREF="https://github.com/nvaccess/nvda/issues/12795">#12795</A>)
+<LI>基于UIA 支持， NVDA 能够在Microsoft Word中，利用MathPlayer朗读和浏览Office的数学公式。 (<A HREF="https://github.com/nvaccess/nvda/issues/12946">#12946</A>)
+  <UL>
+  <LI>若需使用该功能，你必须运行Microsoft Word 365 或2016 build 14326 及后续版本。 
+  <LI>必须手动将MathType 公式转换为 Office Math，方法是：选中公式并在上下文菜单中选择“Equation”对象 -&gt; 转换为 Office Math。
+  </UL>
+<LI>报读“有详细信息”以及综述详细信息关系的相关命令拓展至焦点浏览模式下可用。 (<A HREF="https://github.com/nvaccess/nvda/issues/13106">#13106</A>)
+<LI>通过USB或蓝牙连接清华盲用记事本后，可自动完成设备侦测。 (<A HREF="https://github.com/nvaccess/nvda/issues/13191">#13191</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13142">#13142</A>)
+  <UL>
+  <LI>该功能所涉及的机型包括：清华Mini16、Mini24以及拥有40个点字方的V6和V6Pro。
+  <LI>目前也同样支持手动选择蓝牙Com接口。
+  </UL>
+<LI>增加切换盲文查看器的命令；无默认的关联手势。 (<A HREF="https://github.com/nvaccess/nvda/issues/13258">#13258</A>)
+<LI>增加一组与点显器同步切换多个修饰符的命令。 (<A HREF="https://github.com/nvaccess/nvda/issues/13152">#13152</A>)
+<LI>语音词典对话框内的“移除所有”按钮可用于清除一个完整的词典。 (<A HREF="https://github.com/nvaccess/nvda/issues/11802">#11802</A>)
+<LI>增加对于Windows 11系统计算器的支持。 (<A HREF="https://github.com/nvaccess/nvda/issues/13212">#13212</A>)
+<LI>Windows 11下开启UIA，能够在Microsoft Word中报读行数、区域数与列数。 (<A HREF="https://github.com/nvaccess/nvda/issues/13283">#13283</A>)
+<LI>在Windows 11 下的 Microsoft Office 16.0.15000 及其后版本中，NVDA 将默认通过 UIA 访问 Microsoft Word 文档，相较于以往的对象浏览模式，性能提升显著。 (<A HREF="https://github.com/nvaccess/nvda/issues/13437">#13437</A>)
+ <UL>
+ <LI>除了 Word 文档本身， Microsoft outlook中的信息阅读器与编辑器也将受益于该特性。 
+ </UL>
+</UL>
+
+<P></P>
+<H3>改进</H3>
+<UL>
+<LI>Espeak-ng 升级至 1.51-dev commit <CODE>7e5457f91e10</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/12950">#12950</A>)
+<LI>将 liblouis 盲文翻译模块升级至 <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.21.0">3.21.0</A>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13141">#13141</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13438">#13438</A>)
+  <UL>
+  <LI>添加新盲文表：日语（kantenji）文学盲文。
+  <LI>添加新的德语6点计算机盲文表。
+  <LI>添加加泰罗尼亚语1级盲文表。
+  </UL>
+<LI>在（免费办公套件） LibreOffice Calc 7.3及以上版本中， NVDA可报读选中及合并的单元格。 (<A HREF="https://github.com/nvaccess/nvda/issues/9310">#9310</A>, <A HREF="https://github.com/nvaccess/nvda/issues/6897">#6897</A>)
+<LI>升级 Unicode Common Locale Data Repository (CLDR) 至 40.0. (<A HREF="https://github.com/nvaccess/nvda/issues/12999">#12999</A>)
+<LI><CODE>NVDA键+小键盘删除键</CODE> 默认情况下报读插入点或对象焦点的位置。 (<A HREF="https://github.com/nvaccess/nvda/issues/13060">#13060</A>)
+<LI>``NVDA键+Shift+小键盘删除键`报读浏览光标的位置。 (<A HREF="https://github.com/nvaccess/nvda/issues/13060">#13060</A>)
+<LI>为 Freedom Scientific 点显器添加切换修饰键的默认关联。 (<A HREF="https://github.com/nvaccess/nvda/issues/13152">#13152</A>)
+<LI>不在通过朗读文本格式命令 (NVDA+F) 报读“基准线”。 (<A HREF="https://github.com/nvaccess/nvda/issues/11815">#11815</A>)
+<LI>不在默认分配激活长描述的手势。 (<A HREF="https://github.com/nvaccess/nvda/issues/13380">#13380</A>)
+<LI>默认快捷键 <CODE>NVDA+d</CODE> 用于报读详细信息综述。 (<A HREF="https://github.com/nvaccess/nvda/issues/13380">#13380</A>)
+<LI>安装 MathPlayer 后，需重新启动 NVDA。 (<A HREF="https://github.com/nvaccess/nvda/issues/13486">#13486</A>)
+</UL>
+
+<P></P>
+<H3>错误修复</H3>
+<UL>
+<LI>打开某些 Office 程序时，剪贴板管理器将不在错误地获取焦点。 (<A HREF="https://github.com/nvaccess/nvda/issues/12736">#12736</A>)
+<LI>若用户将鼠标的主按件从左键改换至右键， 在诸如网页浏览器等应用中， NVDA 将不会偶尔出现按下右键弹出上下文菜单而非激活项目的情况。 (<A HREF="https://github.com/nvaccess/nvda/issues/12642">#12642</A>)
+<LI>针对诸如开启了 UIA 的Microsoft Word 等文本控制器，若将浏览光标移至末端，在更多情况下能够正确报读出“底部”。 (<A HREF="https://github.com/nvaccess/nvda/issues/12808">#12808</A>)
+<LI>在 64 位版本的 Windows 下，NVDA 可以报读出 system32 文件夹内的二进制文件的应用程序名称和版本。 (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
+<LI>增强终端程序输出朗读的一致性。 (<A HREF="https://github.com/nvaccess/nvda/issues/12974">#12974</A>)
+  <UL>
+  <LI>请注意，在某些情况下，在一行的中间插入或删除字符时，插入点后面的字符可能会再次被读出。
+  </UL>
+<LI>开启 UIA 后，在 MS Word中：浏览模式下的标题快速导航将不会卡在文档的最后一个标题上，该标题也不会在 NVDA 的元素列表中显示两次。 (<A HREF="https://github.com/nvaccess/nvda/issues/9540">#9540</A>)
+<LI>在 Windows 8 及后续版本中，只需按下快捷键 NVDA+end （台式机按键方案） / NVDA+shift+end （笔记本键盘方案），即可检索文件浏览状态栏。 (<A HREF="https://github.com/nvaccess/nvda/issues/12845">#12845</A>)
+<LI>修复在Skype企业版聊天界面中朗读收到的信息。 (<A HREF="https://github.com/nvaccess/nvda/issues/9295">#9295</A>)
+<LI>修复Windows 11 系统下，使用 Sapi 5 语音引擎时的音频闪避功能。 (<A HREF="https://github.com/nvaccess/nvda/issues/12913">#12913</A>)
+<LI>在Windows 10 的计算器中，NVDA可读出历史及记忆列表的标签。 (<A HREF="https://github.com/nvaccess/nvda/issues/11858">#11858</A>)
+<LI>修复HID 盲文设备诸如页面滚动、游标定位等快捷键。 (<A HREF="https://github.com/nvaccess/nvda/issues/13228">#13228</A>)
+<LI>Windows 11 邮件客户端：在阅读长邮件的过程中，在APP间切换过焦点之后，NVDA 的焦点仍会停留在邮件的正文内容部分。 (<A HREF="https://github.com/nvaccess/nvda/issues/13050">#13050</A>)
+<LI>HID 盲文设备：能够通过盲文点显器键入（诸如 空格键+第4点）这类组合件，并成功实现相应功能。 (<A HREF="https://github.com/nvaccess/nvda/issues/13326">#13326</A>)
+<LI>修复了同时打开多个设置对话框的问题。 (<A HREF="https://github.com/nvaccess/nvda/issues/12818">#12818</A>)
+<LI>修复了系统从休眠状态恢复后部分Focus Blue 点显器停止响应的问题。 (<A HREF="https://github.com/nvaccess/nvda/issues/9830">#9830</A>)
+<LI>在激活读出上标和下标字符的选项后，不再错乱的报读“基准线”。 (<A HREF="https://github.com/nvaccess/nvda/issues/11078">#11078</A>)
+<LI>在Windows 11 下，即使选中了表情符号，NVDA在表情面板中的浏览体验也不会受到影响。 (<A HREF="https://github.com/nvaccess/nvda/issues/13104">#13104</A>)
+<LI>在使用 Windows 控制台或终端应用时，防止一个 Bug 触发两次报错的情况出现。 (<A HREF="https://github.com/nvaccess/nvda/issues/13261">#13261</A>)
+<LI>修复在诸如 Reaper 等64位应用中，列表项目无法朗读的部分情况。 (<A HREF="https://github.com/nvaccess/nvda/issues/8175">#8175</A>)
+<LI>在 Edge 浏览器的下载管理器中，一旦最近下载列表项获得焦点，NVDA将自动切换为焦点模式。 (<A HREF="https://github.com/nvaccess/nvda/issues/13221">#13221</A>)
+<LI>NVDA将不再导致64位版本的 Notepad++ 8.3及以上版本的程序崩溃。 (<A HREF="https://github.com/nvaccess/nvda/issues/13311">#13311</A>)
+<LI>即使启用了文档保护模式，Adobe Reader 也不会在启动时出现程序崩溃。 (<A HREF="https://github.com/nvaccess/nvda/issues/11568">#11568</A>)
+<LI>修复了选中 Papenmeier 点显器驱动导致 NVDA崩溃的错误。 (<A HREF="https://github.com/nvaccess/nvda/issues/13348">#13348</A>)
+<LI>在 Firefox 浏览器中，即使aria-rowindex， aria-colindex， aria-rowcount 或 aria-colcount属性失效， NVDA 也能够报读出网页中的项目。 (<A HREF="https://github.com/nvaccess/nvda/issues/13405">#13405</A>)
+</UL>
+
+<P></P>
+<H3>插件以及 NVDA 核心开发者需要了解的变动</H3>
+<UL>
+<LI>注：本版软件将破坏原有插件的兼容性，因此开发者必须重新测试并更新插件清单。
+<LI>尽管 NVDA 仍需 Visual Studio 2019 支持，不过，但凡（诸如 2022）等新版 Visual Studio 与2019版一同安装，也不会导致 NVDA 软件崩溃。 (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13387">#13387</A>)
+<LI>升级 SCons 至 4.3.0 版。 (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
+<LI>升级 py2exe 至 0.11.0.1 版。 (<A HREF="https://github.com/nvaccess/nvda/issues/12357">#12357</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13066">#13066</A>)
+<LI>以 <CODE>apiLevel</CODE> 替代被移除的 <CODE>NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/12955">#12955</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12660">#12660</A>)
+<LI>从 <CODE>sysTreeView32</CODE> 移除 <CODE>TVItemStruct</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/12935">#12935</A>)
+-  从 Outlook 应用模块中移除 <CODE>MessageItem</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/12935">#12935</A>)
+<LI><CODE>audioDucking.AUDIODUCKINGMODE_*</CODE> 常量现为一个 <CODE>DisplayStringIntEnum</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12926">#12926</A>)
+  <UL>
+  <LI>其使用需被替换为 <CODE>AudioDuckingMode.*</CODE>
+  <LI><CODE>audioDucking.audioDuckingModes</CODE> 被 <CODE>AudioDuckingMode.*.displayString</CODE> 所替代
+  </UL>
+<LI><CODE>audioDucking.ANRUS_ducking_*</CODE> 常量的使用需被 <CODE>ANRUSDucking.*</CODE> 所替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/12926">#12926</A>)
+<LI><CODE>synthDrivers.sapi5</CODE> 的改变 (<A HREF="https://github.com/nvaccess/nvda/issues/12927">#12927</A>):
+  <UL>
+  <LI><CODE>SPAS_*</CODE> 的使用需被 <CODE>SPAudioState.*</CODE> 所替代
+  <LI><CODE>constants.SVSF*</CODE> 的使用需被 <CODE>SpeechVoiceSpeakFlags.*</CODE> 所替代
+    <UL>
+    <LI>注： 替代 <CODE>SVSFlagsAsync</CODE> 的是 <CODE>SpeechVoiceSpeakFlags.Async</CODE> 而不是 <CODE>SpeechVoiceSpeakFlags.lagsAsync</CODE>
+    </UL>
+  <LI><CODE>constants.SVE*</CODE> 的使用需被 <CODE>SpeechVoiceEvents.*</CODE> 所替代
+  </UL>
+<LI><CODE>soffice</CODE> 应用模块移除了以下函数和类 <CODE>JAB_OOTableCell</CODE>, <CODE>JAB_OOTable</CODE>, <CODE>gridCoordStringToNumbers</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12849">#12849</A>)
+<LI><CODE>core.CallCancelled</CODE> 现为 <CODE>exceptions.CallCancelled</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12940">#12940</A>)
+<LI><CODE>core</CODE> 和 <CODE>logHandler</CODE> 中所有以 RPC 开头的常量被移至 <CODE>RPCConstants.RPC</CODE> 枚举。 (<A HREF="https://github.com/nvaccess/nvda/issues/12940">#12940</A>)
+<LI>建议 将<CODE>mouseHandler.doPrimaryClick</CODE> 和 <CODE>mouseHandler.doSecondaryClick</CODE> 函数用于点击鼠标以执行诸如激活（主要按键）或次要按键（弹出上下文菜单）这类逻辑动作，
+而不是使用 <CODE>executeMouseEvent</CODE> 并专门指定鼠标左键或右键
+这确保代码能够将更换鼠标主要案件的权限下放给 Windows 用户。 (<A HREF="https://github.com/nvaccess/nvda/issues/12642">#12642</A>)
+<LI>移除 <CODE>config.getSystemConfigPath</CODE> ，未提供相应的替代项。 (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
+<LI>移除 <CODE>shlobj.SHGetFolderPath</CODE> ，请使用 <CODE>shlobj.SHGetKnownFolderPath</CODE> 代替。 (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
+<LI>移除常量 <CODE>shlobj</CODE> ，为 <CODE>SHGetKnownFolderPath</CODE> 的使用创建新枚举 <CODE>shlobj.FolderId</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
+<LI><CODE>diffHandler.get_dmp_algo</CODE> 和 <CODE>diffHandler.get_difflib_algo</CODE> 分别为 <CODE>diffHandler.prefer_dmp</CODE> 和 <CODE>diffHandler.prefer_difflib</CODE> 所替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/12974">#12974</A>)
+<LI>移除 <CODE>languageHandler.curLang</CODE> ，欲获取当前 NVDA 的语言可用 <CODE>languageHandler.getLanguage()</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13082">#13082</A>)
+<LI>可在应用模块上执行 <CODE>getStatusBarText</CODE>，以定制NVDA从状态栏获取文本的方式。  (<A HREF="https://github.com/nvaccess/nvda/issues/12845">#12845</A>)
+<LI>移除 <CODE>globalVars.appArgsExtra</CODE> has been removed.。 (<A HREF="https://github.com/nvaccess/nvda/issues/13087">#13087</A>)
+  如果您的插件需要处理额外的命令行参数，可参看 <CODE>addonHandler.isCLIParamKnown</CODE> 的说明文档以及开发者指南获取详细信息。
+  -
+<LI>UIA 控制模块以及其他 UIA 支持模块如今都包含于 UIAHandler 包中。 (<A HREF="https://github.com/nvaccess/nvda/issues/10916">#10916</A>)
+  <UL>
+  <LI><CODE>UIAUtils</CODE> 现为 <CODE>UIAHandler.utils</CODE>
+  <LI><CODE>UIABrowseMode</CODE> 现为 <CODE>UIAHandler.browseMode</CODE>
+  <LI><CODE>_UIAConstants</CODE> 现为 <CODE>UIAHandler.constants</CODE>
+  <LI><CODE>_UIACustomProps</CODE> 现为 <CODE>UIAHandler.customProps</CODE>
+  <LI><CODE>_UIACustomAnnotations</CODE> 现为 <CODE>UIAHandler.customAnnotations</CODE>
+  </UL>
+<LI><CODE>IAccessibleHandler</CODE> <CODE>IA2_RELATION_*</CODE> 常量被 <CODE>IAccessibleHandler.RelationType</CODE> 枚举所取代。 (<A HREF="https://github.com/nvaccess/nvda/issues/13096">#13096</A>)
+  <UL>
+  <LI>移除 <CODE>IA2_RELATION_FLOWS_FROM</CODE>
+  <LI>移除 <CODE>IA2_RELATION_FLOWS_TO</CODE>
+  <LI>移除 <CODE>IA2_RELATION_CONTAINING_DOCUMENT</CODE>
+  </UL>
+<LI>从 <CODE>languageHandler</CODE> 中移除 <CODE>LOCALE_SLANGUAGE</CODE>、 <CODE>LOCALE_SLIST</CODE> 以及 <CODE>LOCALE_SLANGDISPLAYNAME</CODE>，使用 <CODE>languageHandler.LOCALE</CODE> 的成员替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
+<LI>从 Minhook 转至 Microsoft Detours，将之作为 NVDA 的一个截获库。 通过此库所截获的信息主要用于支持显示模型。 (<A HREF="https://github.com/nvaccess/nvda/issues/12964">#12964</A>)
+<LI>移除 <CODE>winVersion.WIN10_RELEASE_NAME_TO_BUILDS</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13211">#13211</A>)
+<LI>现在， SCons 将提示建构与系统内逻辑处理器数量相等的任务。
+这可以显著减少在多核系统内的建构时间。 (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13371">#13371</A>)
+<LI>移除 <CODE>characterProcessing.SYMLVL_*</CODE> 常量，请使用 <CODE>characterProcessing.SymbolLevel.*</CODE> 替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/13248">#13248</A>)
+<LI>从插件管理器中移除函数 <CODE>loadState</CODE> 和 <CODE>saveState</CODE>，请使用 <CODE>addonHandler.state.load</CODE> 和 <CODE>addonHandler.state.save</CODE> 替代。. (<A HREF="https://github.com/nvaccess/nvda/issues/13245">#13245</A>)
+<LI>移动 NVDA帮助 的 UWP/OneCore 交互层 <A HREF="https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx">从 C++/CX 移至 C++/Winrt</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/10662">#10662</A>)
+<LI>其对子类 <CODE>DictionaryDialog</CODE> 强制使用。 (<A HREF="https://github.com/nvaccess/nvda/issues/13268">#13268</A>)
+<LI>不推荐使用<CODE>config.RUN_REGKEY</CODE>、 <CODE>config.NVDA_REGKEY</CODE>，请使用 <CODE>config.RegistryKey.RUN</CODE>、 <CODE>config.RegistryKey.NVDA</CODE> 替代，在2023版软件中，其将被移除。 (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
+<LI>不推荐使用 <CODE>easeOfAccess.ROOT_KEY</CODE>、 <CODE>easeOfAccess.APP_KEY_PATH</CODE>，请使用 <CODE>easeOfAccess.RegistryKey.ROOT</CODE>、 <CODE>easeOfAccess.RegistryKey.APP</CODE> 替代，在2023版软件中，其将被移除。 (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
+<LI><CODE>easeOfAccess.APP_KEY_NAME</CODE> 将在2023版软件中被移除，不推荐使用。 (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
+<LI><CODE>DictionaryDialog</CODE> 和 <CODE>DictionaryEntryDialog</CODE> 从 <CODE>gui.settingsDialogs</CODE> 移至 <CODE>gui.speechDict</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13294">#13294</A>)
+<LI>IAccessible2 关系 被至于 IAccessible2 对象的开发者信息中。 (<A HREF="https://github.com/nvaccess/nvda/issues/13315">#13315</A>)
+<LI>移除 <CODE>languageHandler.windowsPrimaryLCIDsToLocaleNames</CODE>，使用 <CODE>languageHandler.windowsLCIDToLocaleName</CODE> 或 <CODE>winKernel.LCIDToLocaleName</CODE> 替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/13342">#13342</A>)
+<LI>推荐将 UIA 对象的 <CODE>UIAAutomationId</CODE> 属性用于 <CODE>cachedAutomationId</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13125">#13125</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11447">#11447</A>)
+  <UL>
+  <LI>若从元素直接获取， <CODE>cachedAutomationId</CODE> 可被使用。
+  </UL>
+<LI>移动 <CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> 至 <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
+<LI>移除卜尔函数 <CODE>gui.isInMessageBox</CODE>，请使用 <CODE>gui.message.isModalMessageBoxActive</CODE> 函数替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
+<LI><CODE>controlTypes</CODE> 被拆分为不同的子模块。 (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
+  <UL>
+  <LI>替换 <CODE>ROLE_*</CODE> 和 <CODE>STATE_*</CODE> 为 <CODE>Role.*</CODE> 和 <CODE>State.*</CODE>。
+  <LI>移除 <CODE>roleLabels</CODE>、 <CODE>stateLabels</CODE> 和 <CODE>negativeStateLabels</CODE>。
+  诸如 <CODE>roleLabels[ROLE_*]</CODE> 的使用需被替换为与其等价的 <CODE>Role.*.displayString</CODE> 或 <CODE>State.*.negativeDisplayString</CODE>。
+  <LI>移除 <CODE>processPositiveStates</CODE> 和 <CODE>processNegativeStates</CODE>。
+  </UL>
+<LI><CODE>controlTypes.Role</CODE> 和 <CODE>controlTypes.State</CODE> 的值以可改变，不再是固定的/硬编码的枚举值。。 (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
+  <UL>
+  <LI><CODE>controlTypes.State</CODE> 的成员不再使用位标记,其状态无需通过位运算来确定。
+  <LI><CODE>IAccessible</CODE>、 <CODE>IAccessible2</CODE> 和 <CODE>UIA</CODE> 存在映射：
+    <UL>
+    <LI><CODE>IAccessibleHandler.IAccessible2StatesToNVDAStates</CODE>
+    <LI><CODE>IAccessibleHandler.IAccessibleStatesToNVDAStates</CODE>
+    <LI><CODE>IAccessibleHandler.IAccessibleRolesToNVDARoles</CODE>
+    <LI><CODE>UIAHandler.UIAControlTypesToNVDARoles</CODE>
+    </UL>
+  </UL>
+<LI>Excel 单元格状态常量 (<CODE>NVSTATE_*</CODE>) 现为 <CODE>NvCellState</CODE> 枚举中的值，在 <CODE>NVDAObjects/window/excel.py</CODE> 中的 <CODE>NvCellState</CODE> 枚举内作为镜像，并通过 _nvCellStatesToStates 映射于 <CODE>controlTypes.State</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
+<LI><CODE>EXCEL_CELLINFO</CODE> 的结构成员 <CODE>state</CODE> 现为 <CODE>nvCellStates</CODE>。
+<LI>移除 <CODE>mathPres.ensureInit</CODE>， MathPlayer 将随 NVDA的启动而初始化。 (<A HREF="https://github.com/nvaccess/nvda/issues/13486">#13486</A>)
+</UL>
+
+<P></P>
+<H2>2021.3.4</H2>
+<P>
+This is a minor release to fix several security issues raised.
+Please responsibly disclose security issues to <A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>.
+</P>
+<H3>Security Fixes</H3>
+<UL>
+<LI>Addressed security advisory <CODE>GHSA-354r-wr4v-cx28</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13488">#13488</A>)
+  <UL>
+  <LI>Remove the ability to start NVDA with debug logging enabled when NVDA runs in secure mode.
+  <LI>Remove the ability to update NVDA when NVDA runs in secure mode.
+  </UL>
+<LI>Addressed security advisory <CODE>GHSA-wg65-7r23-h6p9</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13489">#13489</A>)
+  <UL>
+  <LI>Remove the ability to open the input gestures dialog in secure mode.
+  <LI>Remove the ability to open the default, temporary and voice dictionary dialogs in secure mode.
+  </UL>
+<LI>Addressed security advisory <CODE>GHSA-mvc8-5rv9-w3hx</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13487">#13487</A>)
+  <UL>
+  <LI>The wx GUI inspection tool is now disabled in secure mode.
+  </UL>
+</UL>
+
+<P></P>
+<H2>2021.3.3</H2>
+<P>
+This release is identical to 2021.3.2.
+A bug existed in NVDA 2021.3.2 where it incorrectly identified itself as 2021.3.1.
+This release correctly identifies itself as 2021.3.3.
+</P>
+<H2>2021.3.2</H2>
+<P>
+This is a minor release to fix several security issues raised.
+Please responsibly disclose security issues to <A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>.
+</P>
+<H3>Bug Fixes</H3>
+<UL>
+<LI>Security fix: Prevent object navigation outside of the lockscreen on Windows 10 and Windows 11. (<A HREF="https://github.com/nvaccess/nvda/issues/13328">#13328</A>)
+<LI>Security fix: The addons manager dialog is now disabled on secure screens. (<A HREF="https://github.com/nvaccess/nvda/issues/13059">#13059</A>)
+<LI>Security fix: NVDA context help is no longer available on secure screens. (<A HREF="https://github.com/nvaccess/nvda/issues/13353">#13353</A>)
+</UL>
+
+<P></P>
+<H2>2021.3.1</H2>
+<P>
+This is a minor release to fix several issues in 2021.3.
+</P>
+<H3>Changes</H3>
+<UL>
+<LI>The new HID Braille protocol is no longer preferred when another braille display driver can be used. (<A HREF="https://github.com/nvaccess/nvda/issues/13153">#13153</A>)
+<LI>The new HID Braille protocol can be disabled via a setting in the advanced settings panel. (<A HREF="https://github.com/nvaccess/nvda/issues/13180">#13180</A>)
+</UL>
+
+<P></P>
+<H3>Bug Fixes</H3>
+<UL>
+<LI>Landmark is once again abbreviated in braille. <A HREF="https://github.com/nvaccess/nvda/issues/13158">#13158</A>
+<LI>Fixed unstable braille display auto detection for Humanware Brailliant and APH Mantis Q40 braille displays when using Bluetooth. (<A HREF="https://github.com/nvaccess/nvda/issues/13153">#13153</A>)
+</UL>
+
+<P></P>
 <H2>2021.3</H2>
 <P>
 本版增加了对 HID 新盲文规范的支持。
