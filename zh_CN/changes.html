@@ -11,19 +11,17 @@
 
 <H2>2022.1</H2>
 <P>
-此版本针对 微软 Office 提供了 UIA 支持的重大改进。
-在 Windows 11 下，对于 Microsoft Office 16.0.15000 及后续版本，NVDA 浏览 Word 文档时，将默认开启UIA。
-与原有的对象浏览模式相比，开启 UIA 后的性能提升显著。
+此版本针对 Microsoft Office 提供了 UIA 支持的重大改进。
+在 Windows 11 下，对于 Microsoft Office 16.0.15000 及后续版本，NVDA 浏览 Word 文档时，将默认启用 UIA。
+与原有的对象模型访问相比，开启 UIA 后的性能提升显著。
 </P>
 <P>
-针对清华盲文记事本、Papenmeier 以及 HID Braille点显器，新版软件在点显驱动方面提供了改进。
-对于 Windows 11 中诸如计算器、控制台、终端、邮件以及表情符号面板等系统应用，软件也修复了其原本存在的部分 Bug，
-</P>
-<P>
+针对Seika Notetaker（清华 Mini 系列）、Papenmeier 以及使用 HID 协议的点显器，本版在驱动支持方面提供了改进。
+对于 Windows 11 中的计算器、控制台、Terminal、邮件以及表情符号面板等系统应用，也修复了其原本存在的部分 Bug，
 eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，并添加了新的日语、、德语以及加泰罗尼亚语的盲文表。
 </P>
 <P>
-、注：
+注：
 </P>
  <UL>
  <LI>此版本将破坏现有插件的兼容性。
@@ -32,29 +30,29 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 <P></P>
 <H3>新特性</H3>
 <UL>
-<LI>Windows 11下开启UIA后，支持在MS Excel中报读注释。 (<A HREF="https://github.com/nvaccess/nvda/issues/12861">#12861</A>)
+<LI>Windows 11下开启UIA后，支持在MS Excel中读出注释。 (<A HREF="https://github.com/nvaccess/nvda/issues/12861">#12861</A>)
 <LI>Windows 11下基于UIA接口，在最新的MS Word开发版中，能够通过语音和盲文呈现书签、草稿、批注及已解决批注等信息。 (<A HREF="https://github.com/nvaccess/nvda/issues/12861">#12861</A>)
 <LI>新的--lang命令行参数允许覆盖已设定的NVDA语言。 (<A HREF="https://github.com/nvaccess/nvda/issues/10044">#10044</A>)
-<LI>NVDA能够针对未知和未被任何插件使用的命令行参数发出警示。 (<A HREF="https://github.com/nvaccess/nvda/issues/12795">#12795</A>)
+<LI>NVDA能够针对未知和未被任何插件使用的命令行参数发出警告。 (<A HREF="https://github.com/nvaccess/nvda/issues/12795">#12795</A>)
 <LI>基于UIA 支持， NVDA 能够在Microsoft Word中，利用MathPlayer朗读和浏览Office的数学公式。 (<A HREF="https://github.com/nvaccess/nvda/issues/12946">#12946</A>)
   <UL>
   <LI>若需使用该功能，你必须运行Microsoft Word 365 或2016 build 14326 及后续版本。 
   <LI>必须手动将MathType 公式转换为 Office Math，方法是：选中公式并在上下文菜单中选择“Equation”对象 -&gt; 转换为 Office Math。
   </UL>
-<LI>报读“有详细信息”以及综述详细信息关系的相关命令拓展至焦点浏览模式下可用。 (<A HREF="https://github.com/nvaccess/nvda/issues/13106">#13106</A>)
-<LI>通过USB或蓝牙连接清华盲用记事本后，可自动完成设备侦测。 (<A HREF="https://github.com/nvaccess/nvda/issues/13191">#13191</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13142">#13142</A>)
+<LI>读出“有详细信息”以及综述详细信息关系的相关命令拓展至焦点浏览模式下可用。 (<A HREF="https://github.com/nvaccess/nvda/issues/13106">#13106</A>)
+<LI>通过USB或蓝牙连接 Seika Notetaker 设备后，支持自动检测连接。 (<A HREF="https://github.com/nvaccess/nvda/issues/13191">#13191</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13142">#13142</A>)
   <UL>
-  <LI>该功能所涉及的机型包括：清华Mini16、Mini24以及拥有40个点字方的V6和V6Pro。
+  <LI>该功能所涉及的机型包括：Seika Notetaker Mini16、Mini24以及包含40个显示单元的V6和V6Pro。
   <LI>目前也同样支持手动选择蓝牙Com接口。
   </UL>
 <LI>增加切换盲文查看器的命令；无默认的关联手势。 (<A HREF="https://github.com/nvaccess/nvda/issues/13258">#13258</A>)
-<LI>增加一组与点显器同步切换多个修饰符的命令。 (<A HREF="https://github.com/nvaccess/nvda/issues/13152">#13152</A>)
-<LI>语音词典对话框内的“移除所有”按钮可用于清除一个完整的词典。 (<A HREF="https://github.com/nvaccess/nvda/issues/11802">#11802</A>)
+<LI>增加了一组在盲文键盘上模拟按下货放开多个修饰键的命令。 (<A HREF="https://github.com/nvaccess/nvda/issues/13152">#13152</A>)
+<LI>语音字典对话框内的“移除所有”按钮可用于清除所有的字典条目。 (<A HREF="https://github.com/nvaccess/nvda/issues/11802">#11802</A>)
 <LI>增加对于Windows 11系统计算器的支持。 (<A HREF="https://github.com/nvaccess/nvda/issues/13212">#13212</A>)
-<LI>Windows 11下开启UIA，能够在Microsoft Word中报读行数、区域数与列数。 (<A HREF="https://github.com/nvaccess/nvda/issues/13283">#13283</A>)
-<LI>在Windows 11 下的 Microsoft Office 16.0.15000 及其后版本中，NVDA 将默认通过 UIA 访问 Microsoft Word 文档，相较于以往的对象浏览模式，性能提升显著。 (<A HREF="https://github.com/nvaccess/nvda/issues/13437">#13437</A>)
+<LI>Windows 11下开启UIA，能够在Microsoft Word中读出行数、区域数与列数。 (<A HREF="https://github.com/nvaccess/nvda/issues/13283">#13283</A>)
+<LI>在Windows 11 下的 Microsoft Office 16.0.15000 及其后版本中，NVDA 将默认通过 UIA 访问 Microsoft Word 文档，相较于传统的对象模型方式性能提升显著。 (<A HREF="https://github.com/nvaccess/nvda/issues/13437">#13437</A>)
  <UL>
- <LI>除了 Word 文档本身， Microsoft outlook中的信息阅读器与编辑器也将受益于该特性。 
+ <LI>除了 Word 文档本身， Microsoft outlook中的消息阅读器与编辑器也将受益于该特性。 
  </UL>
 </UL>
 
@@ -65,17 +63,17 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 <LI>将 liblouis 盲文翻译模块升级至 <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.21.0">3.21.0</A>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13141">#13141</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13438">#13438</A>)
   <UL>
   <LI>添加新盲文表：日语（kantenji）文学盲文。
-  <LI>添加新的德语6点计算机盲文表。
-  <LI>添加加泰罗尼亚语1级盲文表。
+  <LI>添加德语6点计算机盲文。
+  <LI>添加加泰罗尼亚语1级盲文。
   </UL>
-<LI>在（免费办公套件） LibreOffice Calc 7.3及以上版本中， NVDA可报读选中及合并的单元格。 (<A HREF="https://github.com/nvaccess/nvda/issues/9310">#9310</A>, <A HREF="https://github.com/nvaccess/nvda/issues/6897">#6897</A>)
-<LI>升级 Unicode Common Locale Data Repository (CLDR) 至 40.0. (<A HREF="https://github.com/nvaccess/nvda/issues/12999">#12999</A>)
-<LI><CODE>NVDA键+小键盘删除键</CODE> 默认情况下报读插入点或对象焦点的位置。 (<A HREF="https://github.com/nvaccess/nvda/issues/13060">#13060</A>)
-<LI>``NVDA键+Shift+小键盘删除键`报读浏览光标的位置。 (<A HREF="https://github.com/nvaccess/nvda/issues/13060">#13060</A>)
+<LI>在（免费办公套件） LibreOffice Calc 7.3及以上版本中， NVDA可读出选中以及合并的单元格。 (<A HREF="https://github.com/nvaccess/nvda/issues/9310">#9310</A>, <A HREF="https://github.com/nvaccess/nvda/issues/6897">#6897</A>)
+<LI>升级 Unicode Common Locale Data Repository (CLDR) 至 40.0。 (<A HREF="https://github.com/nvaccess/nvda/issues/12999">#12999</A>)
+<LI><CODE>NVDA键+数字键盘删除键</CODE> 默认读出当前插入符或当前焦点对象的位置信息。 (<A HREF="https://github.com/nvaccess/nvda/issues/13060">#13060</A>)
+<LI>``NVDA键+Shift+数字键盘删除键`读出浏览光标的位置信息。 (<A HREF="https://github.com/nvaccess/nvda/issues/13060">#13060</A>)
 <LI>为 Freedom Scientific 点显器添加切换修饰键的默认关联。 (<A HREF="https://github.com/nvaccess/nvda/issues/13152">#13152</A>)
-<LI>不在通过朗读文本格式命令 (NVDA+F) 报读“基准线”。 (<A HREF="https://github.com/nvaccess/nvda/issues/11815">#11815</A>)
-<LI>不在默认分配激活长描述的手势。 (<A HREF="https://github.com/nvaccess/nvda/issues/13380">#13380</A>)
-<LI>默认快捷键 <CODE>NVDA+d</CODE> 用于报读详细信息综述。 (<A HREF="https://github.com/nvaccess/nvda/issues/13380">#13380</A>)
+<LI>不在通过读出文本格式的命令 (NVDA+F) 读出“基准线”。 (<A HREF="https://github.com/nvaccess/nvda/issues/11815">#11815</A>)
+<LI>不在默认分配读出长描述的手势。 (<A HREF="https://github.com/nvaccess/nvda/issues/13380">#13380</A>)
+<LI>默认快捷键 <CODE>NVDA+d</CODE> 用于读出详细信息综述。 (<A HREF="https://github.com/nvaccess/nvda/issues/13380">#13380</A>)
 <LI>安装 MathPlayer 后，需重新启动 NVDA。 (<A HREF="https://github.com/nvaccess/nvda/issues/13486">#13486</A>)
 </UL>
 
@@ -84,38 +82,38 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 <UL>
 <LI>打开某些 Office 程序时，剪贴板管理器将不在错误地获取焦点。 (<A HREF="https://github.com/nvaccess/nvda/issues/12736">#12736</A>)
 <LI>若用户将鼠标的主按件从左键改换至右键， 在诸如网页浏览器等应用中， NVDA 将不会偶尔出现按下右键弹出上下文菜单而非激活项目的情况。 (<A HREF="https://github.com/nvaccess/nvda/issues/12642">#12642</A>)
-<LI>针对诸如开启了 UIA 的Microsoft Word 等文本控制器，若将浏览光标移至末端，在更多情况下能够正确报读出“底部”。 (<A HREF="https://github.com/nvaccess/nvda/issues/12808">#12808</A>)
-<LI>在 64 位版本的 Windows 下，NVDA 可以报读出 system32 文件夹内的二进制文件的应用程序名称和版本。 (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
-<LI>增强终端程序输出朗读的一致性。 (<A HREF="https://github.com/nvaccess/nvda/issues/12974">#12974</A>)
+<LI>针对诸如开启了 UIA 的Microsoft Word 等文本控件，若将浏览光标移至最后一行，能够正确读出“底部”。 (<A HREF="https://github.com/nvaccess/nvda/issues/12808">#12808</A>)
+<LI>在 64 位版本的 Windows 下，NVDA 可以获取到 system32 文件夹内的二进制文件的应用程序名称和版本。 (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
+<LI>增强对终端程序输出朗读的一致性。 (<A HREF="https://github.com/nvaccess/nvda/issues/12974">#12974</A>)
   <UL>
   <LI>请注意，在某些情况下，在一行的中间插入或删除字符时，插入点后面的字符可能会再次被读出。
   </UL>
 <LI>开启 UIA 后，在 MS Word中：浏览模式下的标题快速导航将不会卡在文档的最后一个标题上，该标题也不会在 NVDA 的元素列表中显示两次。 (<A HREF="https://github.com/nvaccess/nvda/issues/9540">#9540</A>)
-<LI>在 Windows 8 及后续版本中，只需按下快捷键 NVDA+end （台式机按键方案） / NVDA+shift+end （笔记本键盘方案），即可检索文件浏览状态栏。 (<A HREF="https://github.com/nvaccess/nvda/issues/12845">#12845</A>)
-<LI>修复在Skype企业版聊天界面中朗读收到的信息。 (<A HREF="https://github.com/nvaccess/nvda/issues/9295">#9295</A>)
+<LI>在 Windows 8 及后续版本中，只需按下快捷键 NVDA+end （台式机按键方案） / NVDA+shift+end （笔记本键盘方案），即可读出资源管理器状态栏信息。 (<A HREF="https://github.com/nvaccess/nvda/issues/12845">#12845</A>)
+<LI>修复在Skype企业版聊天界面不会自动朗读收到的信息。 (<A HREF="https://github.com/nvaccess/nvda/issues/9295">#9295</A>)
 <LI>修复Windows 11 系统下，使用 Sapi 5 语音引擎时的音频闪避功能。 (<A HREF="https://github.com/nvaccess/nvda/issues/12913">#12913</A>)
 <LI>在Windows 10 的计算器中，NVDA可读出历史及记忆列表的标签。 (<A HREF="https://github.com/nvaccess/nvda/issues/11858">#11858</A>)
-<LI>修复HID 盲文设备诸如页面滚动、游标定位等快捷键。 (<A HREF="https://github.com/nvaccess/nvda/issues/13228">#13228</A>)
-<LI>Windows 11 邮件客户端：在阅读长邮件的过程中，在APP间切换过焦点之后，NVDA 的焦点仍会停留在邮件的正文内容部分。 (<A HREF="https://github.com/nvaccess/nvda/issues/13050">#13050</A>)
+<LI>修复HID 盲文设备诸如页面滚动、光标定位等快捷键。 (<A HREF="https://github.com/nvaccess/nvda/issues/13228">#13228</A>)
+<LI>Windows 11 邮件客户端：在阅读长邮件的过程中，在APP间切换过焦点之后，NVDA 的焦点仍可以停留在邮件的正文内容部分。 (<A HREF="https://github.com/nvaccess/nvda/issues/13050">#13050</A>)
 <LI>HID 盲文设备：能够通过盲文点显器键入（诸如 空格键+第4点）这类组合件，并成功实现相应功能。 (<A HREF="https://github.com/nvaccess/nvda/issues/13326">#13326</A>)
 <LI>修复了同时打开多个设置对话框的问题。 (<A HREF="https://github.com/nvaccess/nvda/issues/12818">#12818</A>)
 <LI>修复了系统从休眠状态恢复后部分Focus Blue 点显器停止响应的问题。 (<A HREF="https://github.com/nvaccess/nvda/issues/9830">#9830</A>)
-<LI>在激活读出上标和下标字符的选项后，不再错乱的报读“基准线”。 (<A HREF="https://github.com/nvaccess/nvda/issues/11078">#11078</A>)
+<LI>在开启读出上标和下标的选项后，不再错乱的报读“基准线”。 (<A HREF="https://github.com/nvaccess/nvda/issues/11078">#11078</A>)
 <LI>在Windows 11 下，即使选中了表情符号，NVDA在表情面板中的浏览体验也不会受到影响。 (<A HREF="https://github.com/nvaccess/nvda/issues/13104">#13104</A>)
 <LI>在使用 Windows 控制台或终端应用时，防止一个 Bug 触发两次报错的情况出现。 (<A HREF="https://github.com/nvaccess/nvda/issues/13261">#13261</A>)
-<LI>修复在诸如 Reaper 等64位应用中，列表项目无法朗读的部分情况。 (<A HREF="https://github.com/nvaccess/nvda/issues/8175">#8175</A>)
+<LI>修复在诸如 Reaper 等64位应用中，部分列表项目无法朗读的情况。 (<A HREF="https://github.com/nvaccess/nvda/issues/8175">#8175</A>)
 <LI>在 Edge 浏览器的下载管理器中，一旦最近下载列表项获得焦点，NVDA将自动切换为焦点模式。 (<A HREF="https://github.com/nvaccess/nvda/issues/13221">#13221</A>)
 <LI>NVDA将不再导致64位版本的 Notepad++ 8.3及以上版本的程序崩溃。 (<A HREF="https://github.com/nvaccess/nvda/issues/13311">#13311</A>)
 <LI>即使启用了文档保护模式，Adobe Reader 也不会在启动时出现程序崩溃。 (<A HREF="https://github.com/nvaccess/nvda/issues/11568">#11568</A>)
 <LI>修复了选中 Papenmeier 点显器驱动导致 NVDA崩溃的错误。 (<A HREF="https://github.com/nvaccess/nvda/issues/13348">#13348</A>)
-<LI>在 Firefox 浏览器中，即使aria-rowindex， aria-colindex， aria-rowcount 或 aria-colcount属性失效， NVDA 也能够报读出网页中的项目。 (<A HREF="https://github.com/nvaccess/nvda/issues/13405">#13405</A>)
+<LI>在 Firefox 浏览器中，即使aria-rowindex， aria-colindex， aria-rowcount 或 aria-colcount属性失效， NVDA 也能够读出网页中的项目。 (<A HREF="https://github.com/nvaccess/nvda/issues/13405">#13405</A>)
 </UL>
 
 <P></P>
 <H3>插件以及 NVDA 核心开发者需要了解的变动</H3>
 <UL>
 <LI>注：本版软件将破坏原有插件的兼容性，因此开发者必须重新测试并更新插件清单。
-<LI>尽管 NVDA 仍需 Visual Studio 2019 支持，不过，但凡（诸如 2022）等新版 Visual Studio 与2019版一同安装，也不会导致 NVDA 软件崩溃。 (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13387">#13387</A>)
+<LI>尽管 NVDA 的构建仍需要 Visual Studio 2019 支持，不过，但凡（诸如 2022）等新版 Visual Studio 与2019版同时安装，也不会导致 NVDA 构建失败。 (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13387">#13387</A>)
 <LI>升级 SCons 至 4.3.0 版。 (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
 <LI>升级 py2exe 至 0.11.0.1 版。 (<A HREF="https://github.com/nvaccess/nvda/issues/12357">#12357</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13066">#13066</A>)
 <LI>以 <CODE>apiLevel</CODE> 替代被移除的 <CODE>NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/12955">#12955</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12660">#12660</A>)
@@ -168,8 +166,7 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 <LI>从 <CODE>languageHandler</CODE> 中移除 <CODE>LOCALE_SLANGUAGE</CODE>、 <CODE>LOCALE_SLIST</CODE> 以及 <CODE>LOCALE_SLANGDISPLAYNAME</CODE>，使用 <CODE>languageHandler.LOCALE</CODE> 的成员替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
 <LI>从 Minhook 转至 Microsoft Detours，将之作为 NVDA 的一个截获库。 通过此库所截获的信息主要用于支持显示模型。 (<A HREF="https://github.com/nvaccess/nvda/issues/12964">#12964</A>)
 <LI>移除 <CODE>winVersion.WIN10_RELEASE_NAME_TO_BUILDS</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13211">#13211</A>)
-<LI>现在， SCons 将提示建构与系统内逻辑处理器数量相等的任务。
-这可以显著减少在多核系统内的建构时间。 (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13371">#13371</A>)
+<LI>现在， SCons 会提示支持使用系统内的所有逻辑处理器进行构建，这可以显著减少在多核系统内的构建时间。 (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13371">#13371</A>)
 <LI>移除 <CODE>characterProcessing.SYMLVL_*</CODE> 常量，请使用 <CODE>characterProcessing.SymbolLevel.*</CODE> 替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/13248">#13248</A>)
 <LI>从插件管理器中移除函数 <CODE>loadState</CODE> 和 <CODE>saveState</CODE>，请使用 <CODE>addonHandler.state.load</CODE> 和 <CODE>addonHandler.state.save</CODE> 替代。. (<A HREF="https://github.com/nvaccess/nvda/issues/13245">#13245</A>)
 <LI>移动 NVDA帮助 的 UWP/OneCore 交互层 <A HREF="https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx">从 C++/CX 移至 C++/Winrt</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/10662">#10662</A>)
