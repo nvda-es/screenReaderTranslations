@@ -18,6 +18,8 @@
 <P>
 针对Seika Notetaker（清华 Mini 系列）、Papenmeier 以及使用 HID 协议的点显器，本版在驱动支持方面提供了改进。
 对于 Windows 11 中的计算器、控制台、Terminal、邮件以及表情符号面板等系统应用，也修复了其原本存在的部分 Bug，
+</P>
+<P>
 eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，并添加了新的日语、、德语以及加泰罗尼亚语的盲文表。
 </P>
 <P>
@@ -145,7 +147,7 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 <LI>移除常量 <CODE>shlobj</CODE> ，为 <CODE>SHGetKnownFolderPath</CODE> 的使用创建新枚举 <CODE>shlobj.FolderId</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
 <LI><CODE>diffHandler.get_dmp_algo</CODE> 和 <CODE>diffHandler.get_difflib_algo</CODE> 分别为 <CODE>diffHandler.prefer_dmp</CODE> 和 <CODE>diffHandler.prefer_difflib</CODE> 所替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/12974">#12974</A>)
 <LI>移除 <CODE>languageHandler.curLang</CODE> ，欲获取当前 NVDA 的语言可用 <CODE>languageHandler.getLanguage()</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13082">#13082</A>)
-<LI>可在应用模块上执行 <CODE>getStatusBarText</CODE>，以定制NVDA从状态栏获取文本的方式。  (<A HREF="https://github.com/nvaccess/nvda/issues/12845">#12845</A>)
+<LI>可以在 appModule 上实现 <CODE>getStatusBarText</CODE>，来自定义NVDA从状态栏获取文本的方式。  (<A HREF="https://github.com/nvaccess/nvda/issues/12845">#12845</A>)
 <LI>移除 <CODE>globalVars.appArgsExtra</CODE> has been removed.。 (<A HREF="https://github.com/nvaccess/nvda/issues/13087">#13087</A>)
   如果您的插件需要处理额外的命令行参数，可参看 <CODE>addonHandler.isCLIParamKnown</CODE> 的说明文档以及开发者指南获取详细信息。
   -
@@ -164,25 +166,26 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
   <LI>移除 <CODE>IA2_RELATION_CONTAINING_DOCUMENT</CODE>
   </UL>
 <LI>从 <CODE>languageHandler</CODE> 中移除 <CODE>LOCALE_SLANGUAGE</CODE>、 <CODE>LOCALE_SLIST</CODE> 以及 <CODE>LOCALE_SLANGDISPLAYNAME</CODE>，使用 <CODE>languageHandler.LOCALE</CODE> 的成员替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
-<LI>从 Minhook 转至 Microsoft Detours，将之作为 NVDA 的一个截获库。 通过此库所截获的信息主要用于支持显示模型。 (<A HREF="https://github.com/nvaccess/nvda/issues/12964">#12964</A>)
+<LI>从 Minhook 转至 Microsoft Detours，将之作为 NVDA 的挂钩库。 通过此库所截获的信息主要用于支持显示模型。 (<A HREF="https://github.com/nvaccess/nvda/issues/12964">#12964</A>)
 <LI>移除 <CODE>winVersion.WIN10_RELEASE_NAME_TO_BUILDS</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13211">#13211</A>)
-<LI>现在， SCons 会提示支持使用系统内的所有逻辑处理器进行构建，这可以显著减少在多核系统内的构建时间。 (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13371">#13371</A>)
+<LI>现在， SCons 会提示支持使用系统内的所有逻辑处理器进行构建。
+这可以显著减少在多核系统内的构建时间。 (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13371">#13371</A>)
 <LI>移除 <CODE>characterProcessing.SYMLVL_*</CODE> 常量，请使用 <CODE>characterProcessing.SymbolLevel.*</CODE> 替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/13248">#13248</A>)
 <LI>从插件管理器中移除函数 <CODE>loadState</CODE> 和 <CODE>saveState</CODE>，请使用 <CODE>addonHandler.state.load</CODE> 和 <CODE>addonHandler.state.save</CODE> 替代。. (<A HREF="https://github.com/nvaccess/nvda/issues/13245">#13245</A>)
 <LI>移动 NVDA帮助 的 UWP/OneCore 交互层 <A HREF="https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx">从 C++/CX 移至 C++/Winrt</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/10662">#10662</A>)
-<LI>其对子类 <CODE>DictionaryDialog</CODE> 强制使用。 (<A HREF="https://github.com/nvaccess/nvda/issues/13268">#13268</A>)
+<LI>现在必须继承 <CODE>DictionaryDialog</CODE> 才能使用。 (<A HREF="https://github.com/nvaccess/nvda/issues/13268">#13268</A>)
 <LI>不推荐使用<CODE>config.RUN_REGKEY</CODE>、 <CODE>config.NVDA_REGKEY</CODE>，请使用 <CODE>config.RegistryKey.RUN</CODE>、 <CODE>config.RegistryKey.NVDA</CODE> 替代，在2023版软件中，其将被移除。 (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
 <LI>不推荐使用 <CODE>easeOfAccess.ROOT_KEY</CODE>、 <CODE>easeOfAccess.APP_KEY_PATH</CODE>，请使用 <CODE>easeOfAccess.RegistryKey.ROOT</CODE>、 <CODE>easeOfAccess.RegistryKey.APP</CODE> 替代，在2023版软件中，其将被移除。 (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
 <LI><CODE>easeOfAccess.APP_KEY_NAME</CODE> 将在2023版软件中被移除，不推荐使用。 (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
 <LI><CODE>DictionaryDialog</CODE> 和 <CODE>DictionaryEntryDialog</CODE> 从 <CODE>gui.settingsDialogs</CODE> 移至 <CODE>gui.speechDict</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13294">#13294</A>)
 <LI>IAccessible2 关系 被至于 IAccessible2 对象的开发者信息中。 (<A HREF="https://github.com/nvaccess/nvda/issues/13315">#13315</A>)
 <LI>移除 <CODE>languageHandler.windowsPrimaryLCIDsToLocaleNames</CODE>，使用 <CODE>languageHandler.windowsLCIDToLocaleName</CODE> 或 <CODE>winKernel.LCIDToLocaleName</CODE> 替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/13342">#13342</A>)
-<LI>推荐将 UIA 对象的 <CODE>UIAAutomationId</CODE> 属性用于 <CODE>cachedAutomationId</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13125">#13125</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11447">#11447</A>)
+<LI>推荐优先使用UIA 对象的“UIAAutomationId”属性，而不是“cachedAutomationId”。 (<A HREF="https://github.com/nvaccess/nvda/issues/13125">#13125</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11447">#11447</A>)
   <UL>
-  <LI>若从元素直接获取， <CODE>cachedAutomationId</CODE> 可被使用。
+  <LI>如果直接从元素中获取，可以使用<CODE>cachedAutomationId</CODE>。
   </UL>
 <LI>移动 <CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> 至 <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
-<LI>移除卜尔函数 <CODE>gui.isInMessageBox</CODE>，请使用 <CODE>gui.message.isModalMessageBoxActive</CODE> 函数替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
+<LI>移除 bool 型函数 <CODE>gui.isInMessageBox</CODE>，请使用 <CODE>gui.message.isModalMessageBoxActive</CODE> 函数替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
 <LI><CODE>controlTypes</CODE> 被拆分为不同的子模块。 (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
   <UL>
   <LI>替换 <CODE>ROLE_*</CODE> 和 <CODE>STATE_*</CODE> 为 <CODE>Role.*</CODE> 和 <CODE>State.*</CODE>。
@@ -209,62 +212,62 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 <P></P>
 <H2>2021.3.4</H2>
 <P>
-This is a minor release to fix several security issues raised.
-Please responsibly disclose security issues to <A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>.
+这是一个小版本，修复了发现的几个安全问题。
+请遵循负责任的披露原则像 NV Access （<A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>） 提交您发现的安全问题。
 </P>
-<H3>Security Fixes</H3>
+<H3>安全修复</H3>
 <UL>
-<LI>Addressed security advisory <CODE>GHSA-354r-wr4v-cx28</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13488">#13488</A>)
+<LI>解决了安全报告 <CODE>GHSA-354r-wr4v-cx28</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13488">#13488</A>)
   <UL>
-  <LI>Remove the ability to start NVDA with debug logging enabled when NVDA runs in secure mode.
-  <LI>Remove the ability to update NVDA when NVDA runs in secure mode.
+  <LI>当 NVDA 在安全模式下运行时，删除“重启并启用调试日志记录”的功能。
+  <LI>当 NVDA 在安全模式下运行时，删除“安装之前推迟的更新”功能
   </UL>
-<LI>Addressed security advisory <CODE>GHSA-wg65-7r23-h6p9</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13489">#13489</A>)
+<LI>解决了安全报告 <CODE>GHSA-wg65-7r23-h6p9</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13489">#13489</A>)
   <UL>
-  <LI>Remove the ability to open the input gestures dialog in secure mode.
-  <LI>Remove the ability to open the default, temporary and voice dictionary dialogs in secure mode.
+  <LI>删除在安全模式下打开“按键与手势”对话框的功能。
+  <LI>删除在安全模式下打开"默认"、“临时”和“语音”字典对话框的功能。
   </UL>
-<LI>Addressed security advisory <CODE>GHSA-mvc8-5rv9-w3hx</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13487">#13487</A>)
+<LI>解决了安全报告 <CODE>GHSA-mvc8-5rv9-w3hx</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13487">#13487</A>)
   <UL>
-  <LI>The wx GUI inspection tool is now disabled in secure mode.
+  <LI>wx GUI 检查工具在安全模式下被禁用。
   </UL>
 </UL>
 
 <P></P>
 <H2>2021.3.3</H2>
 <P>
-This release is identical to 2021.3.2.
-A bug existed in NVDA 2021.3.2 where it incorrectly identified itself as 2021.3.1.
-This release correctly identifies itself as 2021.3.3.
+此版本与 2021.3.2 相同。
+NVDA 2021.3.2 中存在一个错误——将版本标记成了 2021.3.1。
+该版本将版本纠正为 2021.3.3。
 </P>
 <H2>2021.3.2</H2>
 <P>
-This is a minor release to fix several security issues raised.
-Please responsibly disclose security issues to <A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>.
+这是一个小版本，修复了发现的几个安全问题。
+请遵循负责任的披露原则像 NV Access （<A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>） 提交您发现的安全问题。
 </P>
-<H3>Bug Fixes</H3>
+<H3>错误修复</H3>
 <UL>
-<LI>Security fix: Prevent object navigation outside of the lockscreen on Windows 10 and Windows 11. (<A HREF="https://github.com/nvaccess/nvda/issues/13328">#13328</A>)
-<LI>Security fix: The addons manager dialog is now disabled on secure screens. (<A HREF="https://github.com/nvaccess/nvda/issues/13059">#13059</A>)
-<LI>Security fix: NVDA context help is no longer available on secure screens. (<A HREF="https://github.com/nvaccess/nvda/issues/13353">#13353</A>)
+<LI>安全修复：在 Windows 10 和 Windows 11 上禁止对象导航到锁屏之外。 (<A HREF="https://github.com/nvaccess/nvda/issues/13328">#13328</A>)
+<LI>安全修复：在安全屏幕上禁用插件对话框。 (<A HREF="https://github.com/nvaccess/nvda/issues/13059">#13059</A>)
+<LI>安全修复：在安全屏幕上禁用了 NVDA 的上下文帮助。 (<A HREF="https://github.com/nvaccess/nvda/issues/13353">#13353</A>)
 </UL>
 
 <P></P>
 <H2>2021.3.1</H2>
 <P>
-This is a minor release to fix several issues in 2021.3.
+这是一个小版本，修复了 2021.3 中的几个问题。
 </P>
-<H3>Changes</H3>
+<H3>改进</H3>
 <UL>
-<LI>The new HID Braille protocol is no longer preferred when another braille display driver can be used. (<A HREF="https://github.com/nvaccess/nvda/issues/13153">#13153</A>)
-<LI>The new HID Braille protocol can be disabled via a setting in the advanced settings panel. (<A HREF="https://github.com/nvaccess/nvda/issues/13180">#13180</A>)
+<LI>当另一个盲文驱动程序可用时，不再首选新的 HID 盲文协议。 (<A HREF="https://github.com/nvaccess/nvda/issues/13153">#13153</A>)
+<LI>可以从高级设置面板中提供的选项禁用新的 HID 盲文协议。 (<A HREF="https://github.com/nvaccess/nvda/issues/13180">#13180</A>)
 </UL>
 
 <P></P>
-<H3>Bug Fixes</H3>
+<H3>错误修复</H3>
 <UL>
-<LI>Landmark is once again abbreviated in braille. <A HREF="https://github.com/nvaccess/nvda/issues/13158">#13158</A>
-<LI>Fixed unstable braille display auto detection for Humanware Brailliant and APH Mantis Q40 braille displays when using Bluetooth. (<A HREF="https://github.com/nvaccess/nvda/issues/13153">#13153</A>)
+<LI>恢复了路标的盲文缩写。 (<A HREF="https://github.com/nvaccess/nvda/issues/13158">#13158</A>)
+<LI>修复了 Humanware Brailliant 和 APH Mantis Q40 盲文点显器在使用蓝牙时自动检测不稳定的情况。 (<A HREF="https://github.com/nvaccess/nvda/issues/13153">#13153</A>)
 </UL>
 
 <P></P>
