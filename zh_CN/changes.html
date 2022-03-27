@@ -100,7 +100,7 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 <LI>HID 盲文设备：能够通过盲文点显器键入（诸如 空格键+第4点）这类组合件，并成功实现相应功能。 (<A HREF="https://github.com/nvaccess/nvda/issues/13326">#13326</A>)
 <LI>修复了同时打开多个设置对话框的问题。 (<A HREF="https://github.com/nvaccess/nvda/issues/12818">#12818</A>)
 <LI>修复了系统从休眠状态恢复后部分Focus Blue 点显器停止响应的问题。 (<A HREF="https://github.com/nvaccess/nvda/issues/9830">#9830</A>)
-<LI>在开启读出上标和下标的选项后，不再错乱的报读“基准线”。 (<A HREF="https://github.com/nvaccess/nvda/issues/11078">#11078</A>)
+<LI>在开启读出上标和下标的选项后，不再错乱的朗读“基准线”。 (<A HREF="https://github.com/nvaccess/nvda/issues/11078">#11078</A>)
 <LI>在Windows 11 下，即使选中了表情符号，NVDA在表情面板中的浏览体验也不会受到影响。 (<A HREF="https://github.com/nvaccess/nvda/issues/13104">#13104</A>)
 <LI>在使用 Windows 控制台或终端应用时，防止一个 Bug 触发两次报错的情况出现。 (<A HREF="https://github.com/nvaccess/nvda/issues/13261">#13261</A>)
 <LI>修复在诸如 Reaper 等64位应用中，部分列表项目无法朗读的情况。 (<A HREF="https://github.com/nvaccess/nvda/issues/8175">#8175</A>)
@@ -210,6 +210,20 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 </UL>
 
 <P></P>
+<H2>2021.3.5</H2>
+<P>
+这是一个小版本，修复了发现的几个安全问题。
+请遵循负责任的披露原则像 NV Access （<A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>） 提交您发现的安全问题。
+</P>
+<H3>安全修复</H3>
+<UL>
+<LI>修复了安全通报 <CODE>GHSA-xc5m-v23f-pgr7</CODE> 中的漏洞。
+  <UL>
+  <LI>标点符号读音对话框在安全模式下被禁用。
+  </UL>
+</UL>
+
+<P></P>
 <H2>2021.3.4</H2>
 <P>
 这是一个小版本，修复了发现的几个安全问题。
@@ -217,17 +231,17 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 </P>
 <H3>安全修复</H3>
 <UL>
-<LI>解决了安全报告 <CODE>GHSA-354r-wr4v-cx28</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13488">#13488</A>)
+<LI>修复了安全通报 <CODE>GHSA-354r-wr4v-cx28</CODE> 中的漏洞。 (<A HREF="https://github.com/nvaccess/nvda/issues/13488">#13488</A>)
   <UL>
   <LI>当 NVDA 在安全模式下运行时，删除“重启并启用调试日志记录”的功能。
   <LI>当 NVDA 在安全模式下运行时，删除“安装之前推迟的更新”功能
   </UL>
-<LI>解决了安全报告 <CODE>GHSA-wg65-7r23-h6p9</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13489">#13489</A>)
+<LI>修复了安全通报 <CODE>GHSA-wg65-7r23-h6p9</CODE> 中的漏洞。 (<A HREF="https://github.com/nvaccess/nvda/issues/13489">#13489</A>)
   <UL>
   <LI>删除在安全模式下打开“按键与手势”对话框的功能。
   <LI>删除在安全模式下打开"默认"、“临时”和“语音”字典对话框的功能。
   </UL>
-<LI>解决了安全报告 <CODE>GHSA-mvc8-5rv9-w3hx</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13487">#13487</A>)
+<LI>修复了安全通报 <CODE>GHSA-mvc8-5rv9-w3hx</CODE> 中的漏洞。 (<A HREF="https://github.com/nvaccess/nvda/issues/13487">#13487</A>)
   <UL>
   <LI>wx GUI 检查工具在安全模式下被禁用。
   </UL>
@@ -829,7 +843,7 @@ NVDA 中的COM 注册修复工具现在能够解决更多的系统问题。
 <LI>您可以切换 NVDA 的触摸屏支持。在 NVDA 的“输入首饰”的“触摸屏”分类下添加了一个选项。默认热键为 NVDA + control + alt + t。 (<A HREF="https://github.com/nvaccess/nvda/issues/9682">#9682</A>)
 <LI>添加了新版德语盲文表。 (<A HREF="https://github.com/nvaccess/nvda/issues/11268">#11268</A>)
 <LI>NVDA 能够检测到 UIA 文本控件中的止读状态。 (<A HREF="https://github.com/nvaccess/nvda/issues/10494">#10494</A>)
-<LI>在所有浏览器中，语音或盲文都可以报告存在的标记（高亮文本）等内容。 (<A HREF="https://github.com/nvaccess/nvda/issues/11436">#11436</A>)
+<LI>在所有浏览器中，语音或盲文都可以读出存在的标记（高亮文本）等内容。 (<A HREF="https://github.com/nvaccess/nvda/issues/11436">#11436</A>)
 <LI>可在 NVDA 的“文档格式”设置中打开或关闭该选项。
  <UL>
  <LI>可以从 NVDA 的“输入首饰”对话框中添加新的模拟系统按键。 (<A HREF="https://github.com/nvaccess/nvda/issues/6060">#6060</A>)
@@ -983,7 +997,7 @@ NVDA 中的COM 注册修复工具现在能够解决更多的系统问题。
 <LI>在Firefox中，当在启用了高级Web界面的情况下加载Mastodon时，所有时间轴现在都可以在浏览模式下正确呈现。 (<A HREF="https://github.com/nvaccess/nvda/issues/10776">#10776</A>)
 <LI>在浏览模式下，NVDA现在朗读“未选中”的未选中复选框，而以前有时没有选中。 (<A HREF="https://github.com/nvaccess/nvda/issues/10781">#10781</A>)
 <LI>当前ARIA开关不再读出令人困惑的信息，例如“未按下选中”或“按下选中”。 (<A HREF="https://github.com/nvaccess/nvda/issues/9187">#9187</A>)
-<LI>SAPI4语音合成器不应再拒绝报读某些文本。 (<A HREF="https://github.com/nvaccess/nvda/issues/10792">#10792</A>)
+<LI>SAPI4语音合成器可以朗读某些特殊文本。 (<A HREF="https://github.com/nvaccess/nvda/issues/10792">#10792</A>)
 <LI>NVDA现在可以再次读取Microsoft Word中的数学方程式并与之交互。 (<A HREF="https://github.com/nvaccess/nvda/issues/10803">#10803</A>)
 <LI>如果在选择文本时按下光标键，NVDA将再次读出在浏览模式下未选择的文本。 (<A HREF="https://github.com/nvaccess/nvda/issues/10731">#10731</A>).
 <LI>当前如果初始化eSpeak时出错，则NVDA不再退出。 (<A HREF="https://github.com/nvaccess/nvda/issues/10607">#10607</A>)
@@ -1788,7 +1802,7 @@ NVDA 中的COM 注册修复工具现在能够解决更多的系统问题。
 <UL>
 <LI>添加了盲文设置“无限期显示消息”。 (<A HREF="https://github.com/nvaccess/nvda/issues/6669">#6669</A>)
 <LI>在Microsoft Outlook消息列表中，NVDA现在会读出消息是否已经标记。 (#)6374)
-<LI>在Microsoft PowerPoint中，当编辑幻灯片时，现在会报告形状的确切类型（例如三角形，圆形，视频或光标），而不仅提示“形状”。 (<A HREF="https://github.com/nvaccess/nvda/issues/7111">#7111</A>)
+<LI>在Microsoft PowerPoint中，当编辑幻灯片时，现在会读出形状的确切类型（例如三角形，圆形，视频或光标），而不仅提示“形状”。 (<A HREF="https://github.com/nvaccess/nvda/issues/7111">#7111</A>)
 <LI>Google Chrome 现已支持以MathML格式提供的数学内容。 (<A HREF="https://github.com/nvaccess/nvda/issues/7184">#7184</A>)
 <LI>NVDA现在可以使用Windows 10中包含的新的Windows OneCore语音（也称为Microsoft Mobile语音）。您可以通过在NVDA的“合成器”对话框中选择Windows OneCore语音来使用这些声音。 (<A HREF="https://github.com/nvaccess/nvda/issues/6159">#6159</A>)
 <LI>NVDA用户配置文件现在可以存储在用户的本地应用程序数据文件夹中。这是通过注册表中的设置启用的。有关详细信息，请参阅“用户指南”中的“系统参数”。 (<A HREF="https://github.com/nvaccess/nvda/issues/6812">#6812</A>)
@@ -1952,7 +1966,7 @@ NVDA 中的COM 注册修复工具现在能够解决更多的系统问题。
 </P>
 <H3>新特性</H3>
 <UL>
-<LI>在Microsoft Word中，现在可以朗读页码。可以从文档格式对话框中的“报告页码”复选框启用或关闭。 (<A HREF="https://github.com/nvaccess/nvda/issues/5946">#5946</A>)
+<LI>在Microsoft Word中，现在可以读出页码。可以从文档格式对话框中的“读出页码”复选框启用或关闭。 (<A HREF="https://github.com/nvaccess/nvda/issues/5946">#5946</A>)
 <LI>在Microsoft Word中，现在可以朗读文本列。这是通过文档格式对话框中的“朗读页码”选项启用的。 (<A HREF="https://github.com/nvaccess/nvda/issues/5946">#5946</A>)
 <LI>写字板现在支持自动语言切换。 (<A HREF="https://github.com/nvaccess/nvda/issues/6555">#6555</A>)
 <LI>Microsoft Edge中的浏览模式现在支持NVDA find命令（NVDA + control + f）。 (<A HREF="https://github.com/nvaccess/nvda/issues/6580">#6580</A>)
