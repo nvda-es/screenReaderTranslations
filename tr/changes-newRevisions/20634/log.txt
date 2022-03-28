@@ -1,0 +1,19 @@
+commit d609af21a968ef683e76f3d71d37ecf272dc9d88
+Author: Sean Budd <sean@nvaccess.org>
+Date:   Fri Mar 25 12:20:51 2022 +1100
+
+    Introduce security patch 2021.3.5 to 2022.1beta3 (#13534)
+    
+    * Merge pull request from GHSA-xc5m-v23f-pgr7
+    
+    Unauthenticated users can modify NVDAs system profile for symbol pronunciation. This affects all users first (sign-on) interaction with the system. This action is intended to be limited to signed in users with administrator privileges.
+    If unexpected symbols are being replaced, a user may experience a denial of service. For example, being unable to sign-in to Windows.
+    
+    The symbol pronunciation dialog is disabled in secure mode
+    
+    1. Assign a gesture to "Shows the NVDA symbol pronunciation dialog".
+    2. Copy the config to secure screens via General Preferences
+    3. Run NVDA in secure mode with `-s`
+    4. Use the input gesture, note that the dialog is not opened
+    
+    * Update changes for 2021.3.5
