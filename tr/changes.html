@@ -51,7 +51,7 @@ eSpeak-NG ve LibLouis'in güncellenmesi ile Japonca, Almanca ve Katalanca Braill
 <LI>Braille ekranlarda aynı anda birden fazla değişken tuşu açıp kapatmak için komutlar eklendi (<A HREF="https://github.com/nvaccess/nvda/issues/13152">#13152</A>)
 <LI>Konuşma Sözlüğü iletişim kutusunda seçili sözlüğü kolayca temizlemek için "Tümünü kaldır" düğmesi eklendi. (<A HREF="https://github.com/nvaccess/nvda/issues/11802">#11802</A>)
 <LI>Windows 11 Hesap Makinesi desteği eklendi. (<A HREF="https://github.com/nvaccess/nvda/issues/13212">#13212</A>)
-<LI>Eğer Windows 11'de UI Otomasyonu etkinleştirilmişse, artık Microsoft word'de satır numaraları, sütun numaraları ve bölüm numaraları bildirilebilir. (<A HREF="https://github.com/nvaccess/nvda/issues/13283">#13283</A>)
+<LI>Eğer Windows 11'de UI Otomasyonu etkinleştirilmişse, artık Microsoft word'de satır ve sütun numaraları bildirilebilir. (<A HREF="https://github.com/nvaccess/nvda/issues/13283">#13283</A>)
 <LI>NVDA artık  Windows 11'de Microsoft Office 16.0.15000 ve sonrası için Word belgelerinde varsayılan olarak UI Otomasyonunu kullanıyor. UI Otomasyonunun kullanılması, önceden kullanılan Nesne tabanlı erişim modeli'ne (Object model access) göre farkedilebilir seviyede performans iyileştirmesi sağlıyor. (<A HREF="https://github.com/nvaccess/nvda/issues/13437">#13437</A>)
  <UL>
  <LI>Bu değişiklik, Microsoft Word belgelerinin yanı sıra Microsoft Outlook'un mesaj okuyucusu ve oluşturucusu için de geçerlidir. 
@@ -115,9 +115,12 @@ eSpeak-NG ve LibLouis'in güncellenmesi ile Japonca, Almanca ve Katalanca Braill
 <H3>Geliştiriciler için Değişiklikler</H3>
 <UL>
 <LI>Note: this is a Add-on API compatibility breaking release. Add-ons will need to be re-tested and have their manifest updated.
+ <UL>
+ <LI>Although NVDA still requires Visual Studio 2019, Builds should no longer fail if a newer version of Visual Studio (E.g. 2022) is installed along side 2019. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13387">#13387</A>)
+ </UL>
 <LI>Compiling NVDA dependencies with Visual Studio 2022 (17.0) is now supported. For development and release builds, Visual Studio 2019 is still used. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
 <LI>Updated SCons to version 4.3.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
-<LI>Updated py2exe to version 0.11.0.1. (<A HREF="https://github.com/nvaccess/nvda/issues/12357">#12357</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13066">#13066</A>)
+<LI>Updated py2exe to version 0.11.1.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13510">#13510</A>)
 <LI><CODE>NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable</CODE> has been removed. Use <CODE>apiLevel</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12955">#12955</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12660">#12660</A>)
 <LI><CODE>TVItemStruct</CODE> has been removed from <CODE>sysTreeView32</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12935">#12935</A>)
 <LI><CODE>MessageItem</CODE> has been removed from the Outlook appModule. (<A HREF="https://github.com/nvaccess/nvda/issues/12935">#12935</A>)
@@ -184,6 +187,20 @@ This can dramatically decrease build times on multi core systems. (<A HREF="http
 <LI><CODE>UIAAutomationId</CODE> property for UIA objects should be preferred over <CODE>cachedAutomationId</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13125">#13125</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11447">#11447</A>)
   <UL>
   <LI><CODE>cachedAutomationId</CODE> can be used if obtained directly from the element.
+  </UL>
+</UL>
+
+<P></P>
+<H2>2021.3.5</H2>
+<P>
+Bu sürüm bazı güvenlik sorunlarını giderir.
+Lütfen güvenlik sorunlarını <A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A> adresine bildirin.
+</P>
+<H3>Güvenlik güncellemeleri</H3>
+<UL>
+<LI>Addressed security advisory <CODE>GHSA-xc5m-v23f-pgr7</CODE>.
+  <UL>
+  <LI>Artık Noktalama imla sözlüğü güvenli modda kullanılamaz.
   </UL>
 </UL>
 
