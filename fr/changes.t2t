@@ -91,7 +91,7 @@ Note :
 
 == Changements pour les développeurs ==
 - Remarque : Cette version rompt la compatibilité de l'API des extensions. Les extensions devront être retestées et leur manifeste mis à jour.
-+- Although NVDA still requires Visual Studio 2019, Builds should no longer fail if a newer version of Visual Studio (E.g. 2022) is installed along side 2019. (#13033, #13387)
+- Bien que NVDA nécessite toujours Visual Studio 2019, les builds ne devraient plus échouer si une version plus récente de Visual Studio (par exemple 2022) est installée parallèlement à 2019. (#13033, #13387)
 - SCons a été mis à jour à la version 4.3.0. (#13033)
 - Mise à jour de py2exe à la version 0.11.1.0. (#12357, #13066)
 - ``NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable`` a été supprimé. Utilisez ``apiLevel`` à la place. (#12955, #12660)
@@ -138,8 +138,8 @@ Cela garantit que le code respectera le paramètre utilisateur Windows pour inte
 - ``LOCALE_SLANGUAGE``, ``LOCALE_SLIST`` et ``LOCALE_SLANGDISPLAYNAME`` sont supprimés de ``languageHandler`` - utilisez les membres de ``languageHandler.LOCALE`` à la place. (#12753)
 - Remplacement de Minhook par Microsoft Detours comme bibliothèque de hooking pour NVDA. Le hooking avec cette bibliothèque est principalement utilisé pour le display model. (#12964)
 - ``winVersion.WIN10_RELEASE_NAME_TO_BUILDS`` est supprimé. (#13211)
-+- SCons now warns to build with a number of jobs that is equal to the number of logical processors in the system.
-+This can dramatically decrease build times on multi core systems. (#13226, #13371)
+- SCons avertit désormais de construire avec un nombre de tâches égal au nombre de processeurs logiques du système.
+Cela peut réduire considérablement les temps de construction sur les systèmes multicœurs. (#13226, #13371)
 - Les constantes ``characterProcessing.SYMLVL_*`` sont supprimées - veuillez utiliser ``characterProcessing.SymbolLevel.*`` à la place. (#13248)
 - Les fonctions ``loadState`` et ``saveState`` sont supprimées de addonHandler - veuillez utiliser ``addonHandler.state.load`` et ``addonHandler.state.save`` à la place. (#13245)
 - Déplacement de la couche d'interaction UWP/OneCore de NVDAHelper [de C++/CX vers C++/Winrt https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt -de-cx]. (#10662)
@@ -153,26 +153,26 @@ Cela garantit que le code respectera le paramètre utilisateur Windows pour inte
 - L'utilisation de la propriété ``UIAAutomationId`` pour les objets UIA doit être préférée à ``cachedAutomationId``. (#13125, #11447)
   - ``cachedAutomationId`` peut être utilisé s'il est obtenu directement à partir de l'élément.
   -
-+- ``NVDAObjects.window.scintilla.CharacterRangeStruct`` has moved to ``NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct``. (#13364)
-+- Boolean ``gui.isInMessageBox`` is removed, please use the function ``gui.message.isModalMessageBoxActive`` instead. (#12984, #13376)
-+- ``controlTypes`` has been split up into various submodules. (#12510)
-+  - ``ROLE_*`` and ``STATE_*`` have been replaced with ``Role.*`` and ``State.*``.
-+  - ``roleLabels``, ``stateLabels`` and ``negativeStateLabels`` has been removed.
-+  Usages like ``roleLabels[ROLE_*]`` should be replaced to their equivalent ``Role.*.displayString`` or ``State.*.negativeDisplayString``.
-+  - ``processPositiveStates`` and ``processNegativeStates`` have been removed.
-+  -
-+- The ``controlTypes.Role`` and ``controlTypes.State`` enum values are no longer fixed/hardcoded and have changed. (#13414)
-+  - The ``controlTypes.State`` members are no longer bit flags, states should not be determined using bitwise operations.
-+  - There are mappings for ``IAccessible``, ``IAccessible2`` and ``UIA``:
-+    - ``IAccessibleHandler.IAccessible2StatesToNVDAStates``
-+    - ``IAccessibleHandler.IAccessibleStatesToNVDAStates``
-+    - ``IAccessibleHandler.IAccessibleRolesToNVDARoles``
-+    - ``UIAHandler.UIAControlTypesToNVDARoles``
+- ``NVDAObjects.window.scintilla.CharacterRangeStruct`` a été déplacé vers ``NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct``. (#13364)
+- Le booléen ``gui.isInMessageBox`` est supprimé, veuillez utiliser la fonction ``gui.message.isModalMessageBoxActive`` à la place. (#12984, #13376)
+- ``controlTypes`` a été divisé en plusieurs sous-modules. (#12510)
+  - ``ROLE_*`` et ``STATE_*`` ont été remplacés par ``Role.*`` et ``State.*``.
+  - ``roleLabels``, ``stateLabels`` et ``negativeStateLabels`` ont été supprimés.
+  Les utilisations telles que ``roleLabels[ROLE_*]`` doivent être remplacées par leur équivalent ``Role.*.displayString`` ou ``State.*.negativeDisplayString``.
+  - ``processPositiveStates`` et ``processNegativeStates`` ont été supprimés.
+  -
+- Les valeurs d'énumération ``controlTypes.Role`` et ``controlTypes.State`` ne sont plus fixes/codées en dur et ont changé. (#13414)
+  - Les membres ``controlTypes.State`` ne sont plus des drapeaux binaires, les états ne doivent pas être déterminés à l'aide d'opérations au niveau du bit.
+  - Il existe des mappages pour ``IAccessible``, ``IAccessible2`` et ``UIA`` :
+    - ``IAccessibleHandler.IAccessible2StatesToNVDAStates``
+    - ``IAccessibleHandler.IAccessibleStatesToNVDAStates``
+    - ``IAccessibleHandler.IAccessibleRolesToNVDARoles``
+    - ``UIAHandler.UIAControlTypesToNVDARoles``
     -
   -
-+- Excel cell state constants (``NVSTATE_*``) are now values in the ``NvCellState`` enum, mirrored in the ``NvCellState`` enum in ``NVDAObjects/window/excel.py`` and mapped to ``controlTypes.State`` via _nvCellStatesToStates. (#13465)
-+- ``EXCEL_CELLINFO`` struct member ``state`` is now ``nvCellStates``.
-+- ``mathPres.ensureInit`` has been removed, MathPlayer is now initialized when NVDA starts. (#13486)
+- Les constantes d'état des cellules Excel (``NVSTATE_*``) sont maintenant des valeurs dans l'énumération ``NvCellState``, reflétées dans l'énumération ``NvCellState`` dans ``NVDAObjects/window/excel.py`` et mappées à ``controlTypes.State`` via _nvCellStatesToStates. (#13465)
+- ``EXCEL_CELLINFO`` struct membre ``state`` est maintenant ``nvCellStates``.
+- ``mathPres.ensureInit`` a été supprimé, MathPlayer est maintenant initialisé au démarrage de NVDA. (#13486)
 -
 
 
