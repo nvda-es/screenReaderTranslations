@@ -115,7 +115,7 @@ Note :
 <H3>Changements pour les développeurs</H3>
 <UL>
 <LI>Remarque : Cette version rompt la compatibilité de l'API des extensions. Les extensions devront être retestées et leur manifeste mis à jour.
-+- Although NVDA still requires Visual Studio 2019, Builds should no longer fail if a newer version of Visual Studio (E.g. 2022) is installed along side 2019. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13387">#13387</A>)
+<LI>Bien que NVDA nécessite toujours Visual Studio 2019, les builds ne devraient plus échouer si une version plus récente de Visual Studio (par exemple 2022) est installée parallèlement à 2019. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13387">#13387</A>)
 <LI>SCons a été mis à jour à la version 4.3.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
 <LI>Mise à jour de py2exe à la version 0.11.1.0. (<A HREF="https://github.com/nvaccess/nvda/issues/12357">#12357</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13066">#13066</A>)
 <LI><CODE>NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable</CODE> a été supprimé. Utilisez <CODE>apiLevel</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12955">#12955</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12660">#12660</A>)
@@ -169,8 +169,8 @@ Cela garantit que le code respectera le paramètre utilisateur Windows pour inte
 <LI><CODE>LOCALE_SLANGUAGE</CODE>, <CODE>LOCALE_SLIST</CODE> et <CODE>LOCALE_SLANGDISPLAYNAME</CODE> sont supprimés de <CODE>languageHandler</CODE> - utilisez les membres de <CODE>languageHandler.LOCALE</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
 <LI>Remplacement de Minhook par Microsoft Detours comme bibliothèque de hooking pour NVDA. Le hooking avec cette bibliothèque est principalement utilisé pour le display model. (<A HREF="https://github.com/nvaccess/nvda/issues/12964">#12964</A>)
 <LI><CODE>winVersion.WIN10_RELEASE_NAME_TO_BUILDS</CODE> est supprimé. (<A HREF="https://github.com/nvaccess/nvda/issues/13211">#13211</A>)
-+- SCons now warns to build with a number of jobs that is equal to the number of logical processors in the system.
-+This can dramatically decrease build times on multi core systems. (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13371">#13371</A>)
+<LI>SCons avertit désormais de construire avec un nombre de tâches égal au nombre de processeurs logiques du système.
+Cela peut réduire considérablement les temps de construction sur les systèmes multicœurs. (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13371">#13371</A>)
 <LI>Les constantes <CODE>characterProcessing.SYMLVL_*</CODE> sont supprimées - veuillez utiliser <CODE>characterProcessing.SymbolLevel.*</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/13248">#13248</A>)
 <LI>Les fonctions <CODE>loadState</CODE> et <CODE>saveState</CODE> sont supprimées de addonHandler - veuillez utiliser <CODE>addonHandler.state.load</CODE> et <CODE>addonHandler.state.save</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/13245">#13245</A>)
 <LI>Déplacement de la couche d'interaction UWP/OneCore de NVDAHelper <A HREF="-de-cx">de C++/CX vers C++/Winrt https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/10662">#10662</A>)
@@ -185,26 +185,29 @@ Cela garantit que le code respectera le paramètre utilisateur Windows pour inte
   <UL>
   <LI><CODE>cachedAutomationId</CODE> peut être utilisé s'il est obtenu directement à partir de l'élément.
   </UL>
-+- <CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> has moved to <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
-+- Boolean <CODE>gui.isInMessageBox</CODE> is removed, please use the function <CODE>gui.message.isModalMessageBoxActive</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
-+- <CODE>controlTypes</CODE> has been split up into various submodules. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
-+  - <CODE>ROLE_*</CODE> and <CODE>STATE_*</CODE> have been replaced with <CODE>Role.*</CODE> and <CODE>State.*</CODE>.
-+  - <CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> and <CODE>negativeStateLabels</CODE> has been removed.
-+  Usages like <CODE>roleLabels[ROLE_*]</CODE> should be replaced to their equivalent <CODE>Role.*.displayString</CODE> or <CODE>State.*.negativeDisplayString</CODE>.
-+  - <CODE>processPositiveStates</CODE> and <CODE>processNegativeStates</CODE> have been removed.
-+  -
-+- The <CODE>controlTypes.Role</CODE> and <CODE>controlTypes.State</CODE> enum values are no longer fixed/hardcoded and have changed. (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
-+  - The <CODE>controlTypes.State</CODE> members are no longer bit flags, states should not be determined using bitwise operations.
-+  - There are mappings for <CODE>IAccessible</CODE>, <CODE>IAccessible2</CODE> and <CODE>UIA</CODE>:
-+    - <CODE>IAccessibleHandler.IAccessible2StatesToNVDAStates</CODE>
-+    - <CODE>IAccessibleHandler.IAccessibleStatesToNVDAStates</CODE>
-+    - <CODE>IAccessibleHandler.IAccessibleRolesToNVDARoles</CODE>
-+    - <CODE>UIAHandler.UIAControlTypesToNVDARoles</CODE>
-    -
-  -
-+- Excel cell state constants (<CODE>NVSTATE_*</CODE>) are now values in the <CODE>NvCellState</CODE> enum, mirrored in the <CODE>NvCellState</CODE> enum in <CODE>NVDAObjects/window/excel.py</CODE> and mapped to <CODE>controlTypes.State</CODE> via _nvCellStatesToStates. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
-+- <CODE>EXCEL_CELLINFO</CODE> struct member <CODE>state</CODE> is now <CODE>nvCellStates</CODE>.
-+- <CODE>mathPres.ensureInit</CODE> has been removed, MathPlayer is now initialized when NVDA starts. (<A HREF="https://github.com/nvaccess/nvda/issues/13486">#13486</A>)
+<LI><CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> a été déplacé vers <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
+<LI>Le booléen <CODE>gui.isInMessageBox</CODE> est supprimé, veuillez utiliser la fonction <CODE>gui.message.isModalMessageBoxActive</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
+<LI><CODE>controlTypes</CODE> a été divisé en plusieurs sous-modules. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
+  <UL>
+  <LI><CODE>ROLE_*</CODE> et <CODE>STATE_*</CODE> ont été remplacés par <CODE>Role.*</CODE> et <CODE>State.*</CODE>.
+  <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> et <CODE>negativeStateLabels</CODE> ont été supprimés.
+  Les utilisations telles que <CODE>roleLabels[ROLE_*]</CODE> doivent être remplacées par leur équivalent <CODE>Role.*.displayString</CODE> ou <CODE>State.*.negativeDisplayString</CODE>.
+  <LI><CODE>processPositiveStates</CODE> et <CODE>processNegativeStates</CODE> ont été supprimés.
+  </UL>
+<LI>Les valeurs d'énumération <CODE>controlTypes.Role</CODE> et <CODE>controlTypes.State</CODE> ne sont plus fixes/codées en dur et ont changé. (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
+  <UL>
+  <LI>Les membres <CODE>controlTypes.State</CODE> ne sont plus des drapeaux binaires, les états ne doivent pas être déterminés à l'aide d'opérations au niveau du bit.
+  <LI>Il existe des mappages pour <CODE>IAccessible</CODE>, <CODE>IAccessible2</CODE> et <CODE>UIA</CODE> :
+    <UL>
+    <LI><CODE>IAccessibleHandler.IAccessible2StatesToNVDAStates</CODE>
+    <LI><CODE>IAccessibleHandler.IAccessibleStatesToNVDAStates</CODE>
+    <LI><CODE>IAccessibleHandler.IAccessibleRolesToNVDARoles</CODE>
+    <LI><CODE>UIAHandler.UIAControlTypesToNVDARoles</CODE>
+    </UL>
+  </UL>
+<LI>Les constantes d'état des cellules Excel (<CODE>NVSTATE_*</CODE>) sont maintenant des valeurs dans l'énumération <CODE>NvCellState</CODE>, reflétées dans l'énumération <CODE>NvCellState</CODE> dans <CODE>NVDAObjects/window/excel.py</CODE> et mappées à <CODE>controlTypes.State</CODE> via _nvCellStatesToStates. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
+<LI><CODE>EXCEL_CELLINFO</CODE> struct membre <CODE>state</CODE> est maintenant <CODE>nvCellStates</CODE>.
+<LI><CODE>mathPres.ensureInit</CODE> a été supprimé, MathPlayer est maintenant initialisé au démarrage de NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13486">#13486</A>)
 </UL>
 
 <P></P>
