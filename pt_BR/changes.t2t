@@ -77,7 +77,7 @@ Nota:
 - Na Calculadora do Windows 10, o NVDA anunciará rótulos para itens de lista de histórico e memória. (#11858)
 - Gestos como rolagem e encaminhamento funcionam novamente com dispositivos HID Braille. (#13228)
 - Email do Windows 11: Depois de alternar o foco entre os aplicativos, ao ler um longo e-mail, o NVDA não fica mais preso em uma linha do e-mail. (#13050)
-- HID braille: comandos ""[gestos]"" com acordes ""[chorded]"" (por exemplo, ``espaço+ponto4``) podem ser executados com sucesso a partir da linha Braille. (#13326)
+- HID braille: comandos ""[gestos]"" com conjunto de teclas ""[acordes]"" (por exemplo, ``espaço+ponto4``) podem ser executados com sucesso a partir da linha Braille. (#13326)
 - Corrigido um problema em que várias caixas de diálogo de configurações podiam ser abertas ao mesmo tempo. (#12818)
 - Corrigido um problema em que algumas linhas Braille Focus Blue paravam de funcionar depois de acordar o computador do modo de suspensão. (#9830)
 - "Linha base" não é mais reportada de forma espúria quando a opção "anunciar sobrescrito e subscrito" estiver ativa. (#11078)
@@ -92,89 +92,90 @@ Nota:
 -
 
 == Alterações para Desenvolvedores ==
-- Note: this is a Add-on API compatibility breaking release. Add-ons will need to be re-tested and have their manifest updated.
-- Although NVDA still requires Visual Studio 2019, Builds should no longer fail if a newer version of Visual Studio (E.g. 2022) is installed along side 2019. (#13033, #13387)
-- Updated SCons to version 4.3.0. (#13033)
-- Updated py2exe to version 0.11.1.0. (#13510)
-- ``NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable`` has been removed. Use ``apiLevel`` instead. (#12955, #12660)
-- ``TVItemStruct`` has been removed from ``sysTreeView32``. (#12935)
-- ``MessageItem`` has been removed from the Outlook appModule. (#12935)
-- ``audioDucking.AUDIODUCKINGMODE_*`` constants are now a ``DisplayStringIntEnum``. (#12926)
-  - usages should be replaced with ``AudioDuckingMode.*``
-  - usages of ``audioDucking.audioDuckingModes`` should be replaced with ``AudioDuckingMode.*.displayString``
+- Nota: esta é uma versão de quebra de compatibilidade da API de complemento ""[Add-on]"". Os complementos precisarão ser testados novamente e ter seu manifesto ""[manifest]"" atualizado.
+- Embora o NVDA ainda exija o Visual Studio 2019, as compilações não devem mais falhar se uma versão mais recente do Visual Studio (por exemplo, 2022) for instalada ao lado da 2019. (#13033, #13387)
+- SCons atualizado para a versão 4.3.0. (#13033)
+- py2exe atualizado para a versão 0.11.1.0. (#13510)
+- ``NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable`` foi removido. Use ``apiLevel`` em vez disso. (#12955, #12660)
+- ``TVItemStruct`` foi removido de ``sysTreeView32``. (#12935)
+- ``MessageItem`` foi removido do Módulo de aplicativo ""[appModule]"" do Outlook. (#12935)
+- As constantes ``audioDucking.AUDIODUCKINGMODE_*`` são agora um ``DisplayStringIntEnum``. (#12926)
+  - os usos devem ser substituídos por ``AudioDuckingMode.*``
+  - usos de ``audioDucking.audioDuckingModes`` devem ser substituídos por ``AudioDuckingMode.*.displayString``
   -
-- ``audioDucking.ANRUS_ducking_*`` constants usages should be replaced with ``ANRUSDucking.*``. (#12926)
-- ``synthDrivers.sapi5`` changes (#12927):
-  - ``SPAS_*`` usages should be replaced with ``SPAudioState.*``
-  - ``constants.SVSF*`` usages should be replaced with ``SpeechVoiceSpeakFlags.*``
-    - Note: ``SVSFlagsAsync`` should be replaced with ``SpeechVoiceSpeakFlags.Async`` not ``SpeechVoiceSpeakFlags.lagsAsync``
+- Os usos das constantes ``audioDucking.ANRUS_ducking_*`` devem ser substituídos por ``ANRUSDucking.*``. (#12926)
+- Alterações em ``synthDrivers.sapi5`` (#12927):
+  - Os usos de ``SPAS_*`` devem ser substituídos por ``SPAudioState.*``
+  - Os usos de ``constants.SVSF*`` devem ser substituídos por ``SpeechVoiceSpeakFlags.*``
+    - Nota: ``SVSFlagsAsync`` deve ser substituído por ``SpeechVoiceSpeakFlags.Async`` e não por ``SpeechVoiceSpeakFlags.lagsAsync``
     -
-  - ``constants.SVE*`` usages should be replaced with ``SpeechVoiceEvents.*``
+  - Os usos de ``constants.SVE*`` devem ser substituídos por ``SpeechVoiceEvents.*``
   -
-- The ``soffice`` appModule has the following classes and functions removed ``JAB_OOTableCell``, ``JAB_OOTable``, ``gridCoordStringToNumbers``. (#12849)
-- ``core.CallCancelled`` is now ``exceptions.CallCancelled``. (#12940)
-- All constants starting with RPC from ``core`` and ``logHandler`` are moved into ``RPCConstants.RPC`` enum. (#12940)
-- It is recommended that ``mouseHandler.doPrimaryClick`` and ``mouseHandler.doSecondaryClick`` functions should be used to click the mouse to perform a logical action such as activating (primary) or secondary (show context menu),
-rather than using ``executeMouseEvent`` and specifying the left or right mouse button specifically.
-This ensures code will honor the Windows user setting for swapping the primary mouse button. (#12642)
-- ``config.getSystemConfigPath`` has been removed - there is no replacement. (#12943)
-- ``shlobj.SHGetFolderPath`` has been removed - please use ``shlobj.SHGetKnownFolderPath`` instead. (#12943)
-- ``shlobj`` constants have been removed. A new enum has been created, ``shlobj.FolderId`` for usage with ``SHGetKnownFolderPath``. (#12943)
-- ``diffHandler.get_dmp_algo`` and ``diffHandler.get_difflib_algo`` have been replaced with ``diffHandler.prefer_dmp`` and ``diffHandler.prefer_difflib`` respectively. (#12974)
-- ``languageHandler.curLang`` has been removed - to get the current NVDA language use ``languageHandler.getLanguage()``. (#13082)
-- A ``getStatusBarText`` method can be implemented on an appModule to customize the way NVDA fetches the text from the status bar. (#12845)
-- ``globalVars.appArgsExtra`` has been removed. (#13087)
-  - If your add-on need to process additional command line arguments see the documentation of ``addonHandler.isCLIParamKnown`` and the developer guide for details.
+- O Módulo de aplicativo ``soffice`` tem as seguintes classes e funções removidas ``JAB_OOTableCell``, ``JAB_OOTable``, ``gridCoordStringToNumbers``. (#12849)
+- ``core.CallCancelled`` agora é ``exceptions.CallCancelled``. (#12940)
+- Todas as constantes começando com RPC de ``core`` e ``logHandler`` estão movidas para a enum ""[enumeração]"" ``RPCConstants.RPC``. (#12940)
+- Recomenda-se que as funções ``mouseHandler.doPrimaryClick`` e ``mouseHandler.doSecondaryClick`` sejam usadas para clicar o mouse para realizar uma ação lógica como ativar (primário) ou secundário (mostrar menu de contexto),
+em vez de usar ``executeMouseEvent`` e especificar o botão esquerdo ou direito do mouse especificamente.
+Isso garante que o código respeite a configuração do usuário do Windows para trocar o botão principal do mouse. (#12642)
+- ``config.getSystemConfigPath`` foi removido - não há substituição. (#12943)
+- ``shlobj.SHGetFolderPath`` foi removido - por favor, use ``shlobj.SHGetKnownFolderPath``. (#12943)
+- As constantes ``shlobj`` foram removidas. Uma nova enum foi criada, ``shlobj.FolderId`` para uso com ``SHGetKnownFolderPath``. (#12943)
+- ``diffHandler.get_dmp_algo`` e ``diffHandler.get_difflib_algo`` foram substituídos por ``diffHandler.prefer_dmp`` e ``diffHandler.prefer_difflib`` respectivamente. (#12974)
+- ``languageHandler.curLang`` foi removido - para obter o idioma atual do NVDA use ``languageHandler.getLanguage()``. (#13082)
+- Um método ``getStatusBarText`` pode ser implementado num Módulo de aplicativo para personalizar a forma como o NVDA busca o texto da barra de status. (#12845)
+- ``globalVars.appArgsExtra`` foi removido. (#13087)
+  - Se seu complemento precisar processar argumentos de linha de comando adicionais, consulte a documentação de ``addonHandler.isCLIParamKnown`` e o guia do desenvolvedor para obter detalhes.
   -
-- The UIA handler module and other UIA support modules are now part of a UIAHandler package. (#10916)
-  - ``UIAUtils`` is now ``UIAHandler.utils``
-  - ``UIABrowseMode`` is now ``UIAHandler.browseMode``
-  - ``_UIAConstants`` is now ``UIAHandler.constants``
-  - ``_UIACustomProps`` is now ``UIAHandler.customProps``
-  - ``_UIACustomAnnotations`` is now ``UIAHandler.customAnnotations``
-- The ``IAccessibleHandler`` ``IA2_RELATION_*`` constants have been replaced with the ``IAccessibleHandler.RelationType`` enum. (#13096)
-  - Removed ``IA2_RELATION_FLOWS_FROM``
-  - Removed ``IA2_RELATION_FLOWS_TO``
-  - Removed ``IA2_RELATION_CONTAINING_DOCUMENT``
+- O módulo manipulador ""[handler]"" UIA e outros módulos de suporte UIA agora fazem parte de um pacote UIAHandler. (#10916)
+  - ``UIAUtils`` agora é ``UIAHandler.utils``
+  - ``UIABrowseMode`` agora é ``UIAHandler.browseMode``
+  - ``_UIConstants`` agora é ``UIAHandler.constants``
+  - ``_UIACustomProps`` agora é ``UIAHandler.customProps``
+  - ``_UIACustomAnnotations`` agora é ``UIAHandler.customAnnotations``
   -
-- ``LOCALE_SLANGUAGE``, ``LOCALE_SLIST`` and ``LOCALE_SLANGDISPLAYNAME`` are removed from ``languageHandler`` - use members of ``languageHandler.LOCALE`` instead. (#12753)
-- Switched from Minhook to Microsoft Detours as a hooking library for NVDA. Hooking with this library is mainly used to aid the display model. (#12964)
-- ``winVersion.WIN10_RELEASE_NAME_TO_BUILDS`` is removed. (#13211)
-- SCons now warns to build with a number of jobs that is equal to the number of logical processors in the system.
-This can dramatically decrease build times on multi core systems. (#13226, #13371)
-- ``characterProcessing.SYMLVL_*`` constants are removed - please use ``characterProcessing.SymbolLevel.*`` instead. (#13248)
-- Functions ``loadState`` and ``saveState`` are removed from addonHandler - please use ``addonHandler.state.load`` and ``addonHandler.state.save`` instead. (#13245)
-- Moved the UWP/OneCore interaction layer of NVDAHelper [from C++/CX to C++/Winrt https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx]. (#10662)
-- It is now mandatory to subclass ``DictionaryDialog`` to use it. (#13268)
-- ``config.RUN_REGKEY``, ``config.NVDA_REGKEY`` are deprecated, please use ``config.RegistryKey.RUN``, ``config.RegistryKey.NVDA`` instead. These will be removed in 2023. (#13242)
-- ``easeOfAccess.ROOT_KEY``, ``easeOfAccess.APP_KEY_PATH`` are deprecated, please use``easeOfAccess.RegistryKey.ROOT``, ``easeOfAccess.RegistryKey.APP`` instead. These will be removed in 2023. (#13242)
-- ``easeOfAccess.APP_KEY_NAME`` has been deprecated, to be removed in 2023. (#13242)
-- ``DictionaryDialog`` and ``DictionaryEntryDialog`` are moved from ``gui.settingsDialogs`` to ``gui.speechDict``. (#13294)
-- IAccessible2 relations are now shown in developer info for IAccessible2 objects. (#13315)
-- ``languageHandler.windowsPrimaryLCIDsToLocaleNames`` has been removed, instead use ``languageHandler.windowsLCIDToLocaleName`` or ``winKernel.LCIDToLocaleName``. (#13342)
-- ``UIAAutomationId`` property for UIA objects should be preferred over ``cachedAutomationId``. (#13125, #11447)
-  - ``cachedAutomationId`` can be used if obtained directly from the element.
+- As constantes ``IAccessibleHandler`` ``IA2_RELATION_*`` foram substituídas pela enum ``IAccessibleHandler.RelationType``. (#13096)
+  - Removido ``IA2_RELATION_FLOWS_FROM``
+  - Removido ``IA2_RELATION_FLOWS_TO``
+  - Removido ``IA2_RELATION_CONTAINING_DOCUMENT``
   -
-- ``NVDAObjects.window.scintilla.CharacterRangeStruct`` has moved to ``NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct``. (#13364)
-- Boolean ``gui.isInMessageBox`` is removed, please use the function ``gui.message.isModalMessageBoxActive`` instead. (#12984, #13376)
-- ``controlTypes`` has been split up into various submodules. (#12510)
-  - ``ROLE_*`` and ``STATE_*`` have been replaced with ``Role.*`` and ``State.*``.
-  - ``roleLabels``, ``stateLabels`` and ``negativeStateLabels`` has been removed.
-  Usages like ``roleLabels[ROLE_*]`` should be replaced to their equivalent ``Role.*.displayString`` or ``State.*.negativeDisplayString``.
-  - ``processPositiveStates`` and ``processNegativeStates`` have been removed.
+- ``LOCALE_SLANGUAGE``, ``LOCALE_SLIST`` e ``LOCALE_SLANGDISPLAYNAME`` foram removidos de ``languageHandler`` - use membros de ``languageHandler.LOCALE`` em vez disso. (#12753)
+- Mudou do Minhook para o Microsoft Detours como uma biblioteca de ganchos ""[hooking]"" para o NVDA. A conexão com esta biblioteca é usada principalmente para auxiliar o modelo de exibição ""[display model]"". (#12964)
+- ``winVersion.WIN10_RELEASE_NAME_TO_BUILDS`` foi removido. (#13211)
+- SCons agora adverte para compilar com um número de tarefas igual ao número de processadores lógicos no sistema.
+Isso pode diminuir drasticamente os tempos de compilação em sistemas com vários núcleos. (#13226, #13371)
+- As constantes ``characterProcessing.SYMLVL_*`` foram removidas - por favor, use ``characterProcessing.SymbolLevel.*`` em vez disso. (#13248)
+- As funções ``loadState`` e ``saveState`` foram removidas do addonHandler - por favor, use ``addonHandler.state.load`` e ``addonHandler.state.save``. (#13245)
+- Movida a camada de interação UWP/OneCore do NVDAHelper [de C++/CX para C++/WinRT https://docs.microsoft.com/pt-br/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx]. (#10662)
+- Agora é obrigatório usar a subclasse ``DictionaryDialog``. (#13268)
+- ``config.RUN_REGKEY``, ``config.NVDA_REGKEY`` estão obsoletos, por favor use ``config.RegistryKey.RUN``, ``config.RegistryKey.NVDA``. Eles serão removidos em 2023. (#13242)
+- ``easeOfAccess.ROOT_KEY``, ``easeOfAccess.APP_KEY_PATH`` estão obsoletos, por favor use ``easeOfAccess.RegistryKey.ROOT``, ``easeOfAccess.RegistryKey.APP`` em vez disso. Eles serão removidos em 2023. (#13242)
+- ``easeOfAccess.APP_KEY_NAME`` foi descontinuado, para ser removido em 2023. (#13242)
+- ``DictionaryDialog`` e ``DictionaryEntryDialog`` estão movidos de ``gui.settingsDialogs`` para ``gui.speechDict``. (#13294)
+- As relações IAccessible2 agora são mostradas nas informações do desenvolvedor para objetos IAccessible2. (#13315)
+- ``languageHandler.windowsPrimaryLCIDsToLocaleNames`` foi removido, em vez disso use ``languageHandler.windowsLCIDToLocaleName`` ou ``winKernel.LCIDToLocaleName``. (#13342)
+- A propriedade ``UIAAutomationId`` para objetos UIA deve ser preferida sobre ``cachedAutomationId``. (#13125, #11447)
+  - ``cachedAutomationId`` pode ser usado se obtido diretamente do elemento.
   -
-- The ``controlTypes.Role`` and ``controlTypes.State`` enum values are no longer fixed/hardcoded and have changed. (#13414)
-  - The ``controlTypes.State`` members are no longer bit flags, states should not be determined using bitwise operations.
-  - There are mappings for ``IAccessible``, ``IAccessible2`` and ``UIA``:
+- ``NVDAObjects.window.scintilla.CharacterRangeStruct`` foi movido para ``NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct``. (#13364)
+- ``gui.isInMessageBox`` booleano foi removido, por favor use a função ``gui.message.isModalMessageBoxActive``. (#12984, #13376)
+- ``controlTypes`` foi dividido em vários submódulos. (#12510)
+  - ``ROLE_*`` e ``STATE_*`` foram substituídos por ``Role.*`` e ``State.*``.
+  - ``roleLabels``, ``stateLabels`` e ``negativeStateLabels`` foram removidos.
+  Usos como ``roleLabels[ROLE_*]`` devem ser substituídos por seus equivalentes ``Role.*.displayString`` ou ``State.*.negativeDisplayString``.
+  - ``processPositiveStates`` e ``processNegativeStates`` foram removidos.
+  -
+- Os valores de enum ``controlTypes.Role`` e ``controlTypes.State`` não são mais fixos/codificados e foram alterados. (#13414)
+  - Os membros ``controlTypes.State`` não são mais sinalizadores ""[flags]"" de bit, os estados não devem ser determinados usando operações bit a bit ""[bitwise]"".
+  - Existem mapeamentos para ``IAccessible``, ``IAccessible2`` e ``UIA``:
     - ``IAccessibleHandler.IAccessible2StatesToNVDAStates``
     - ``IAccessibleHandler.IAccessibleStatesToNVDAStates``
     - ``IAccessibleHandler.IAccessibleRolesToNVDARoles``
     - ``UIAHandler.UIAControlTypesToNVDARoles``
     -
   -
-- Excel cell state constants (``NVSTATE_*``) are now values in the ``NvCellState`` enum, mirrored in the ``NvCellState`` enum in ``NVDAObjects/window/excel.py`` and mapped to ``controlTypes.State`` via _nvCellStatesToStates. (#13465)
-- ``EXCEL_CELLINFO`` struct member ``state`` is now ``nvCellStates``.
-- ``mathPres.ensureInit`` has been removed, MathPlayer is now initialized when NVDA starts. (#13486)
+- Constantes de estado de célula do Excel (``NVSTATE_*``) agora são valores na enum ``NvCellState``, espelhados na enum ``NvCellState`` em ``NVDAObjects/window/excel.py`` e mapeados para ` `controlTypes.State`` via _nvCellStatesToStates. (#13465)
+- ``state`` membro da estrutura ``EXCEL_CELLINFO`` agora é ``nvCellStates``.
+- ``mathPres.ensureInit`` foi removido, MathPlayer agora é inicializado quando o NVDA é iniciado. (#13486)
 -
 
 
