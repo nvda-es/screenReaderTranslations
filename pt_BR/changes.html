@@ -98,7 +98,7 @@ Nota:
 <LI>Na Calculadora do Windows 10, o NVDA anunciará rótulos para itens de lista de histórico e memória. (<A HREF="https://github.com/nvaccess/nvda/issues/11858">#11858</A>)
 <LI>Gestos como rolagem e encaminhamento funcionam novamente com dispositivos HID Braille. (<A HREF="https://github.com/nvaccess/nvda/issues/13228">#13228</A>)
 <LI>Email do Windows 11: Depois de alternar o foco entre os aplicativos, ao ler um longo e-mail, o NVDA não fica mais preso em uma linha do e-mail. (<A HREF="https://github.com/nvaccess/nvda/issues/13050">#13050</A>)
-<LI>HID braille: comandos [gestos] com acordes [chorded] (por exemplo, <CODE>espaço+ponto4</CODE>) podem ser executados com sucesso a partir da linha Braille. (<A HREF="https://github.com/nvaccess/nvda/issues/13326">#13326</A>)
+<LI>HID braille: comandos [gestos] com conjunto de teclas [acordes] (por exemplo, <CODE>espaço+ponto4</CODE>) podem ser executados com sucesso a partir da linha Braille. (<A HREF="https://github.com/nvaccess/nvda/issues/13326">#13326</A>)
 <LI>Corrigido um problema em que várias caixas de diálogo de configurações podiam ser abertas ao mesmo tempo. (<A HREF="https://github.com/nvaccess/nvda/issues/12818">#12818</A>)
 <LI>Corrigido um problema em que algumas linhas Braille Focus Blue paravam de funcionar depois de acordar o computador do modo de suspensão. (<A HREF="https://github.com/nvaccess/nvda/issues/9830">#9830</A>)
 <LI>"Linha base" não é mais reportada de forma espúria quando a opção "anunciar sobrescrito e subscrito" estiver ativa. (<A HREF="https://github.com/nvaccess/nvda/issues/11078">#11078</A>)
@@ -115,90 +115,90 @@ Nota:
 <P></P>
 <H3>Alterações para Desenvolvedores</H3>
 <UL>
-<LI>Note: this is a Add-on API compatibility breaking release. Add-ons will need to be re-tested and have their manifest updated.
-<LI>Although NVDA still requires Visual Studio 2019, Builds should no longer fail if a newer version of Visual Studio (E.g. 2022) is installed along side 2019. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13387">#13387</A>)
-<LI>Updated SCons to version 4.3.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
-<LI>Updated py2exe to version 0.11.1.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13510">#13510</A>)
-<LI><CODE>NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable</CODE> has been removed. Use <CODE>apiLevel</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12955">#12955</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12660">#12660</A>)
-<LI><CODE>TVItemStruct</CODE> has been removed from <CODE>sysTreeView32</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12935">#12935</A>)
-<LI><CODE>MessageItem</CODE> has been removed from the Outlook appModule. (<A HREF="https://github.com/nvaccess/nvda/issues/12935">#12935</A>)
-<LI><CODE>audioDucking.AUDIODUCKINGMODE_*</CODE> constants are now a <CODE>DisplayStringIntEnum</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12926">#12926</A>)
+<LI>Nota: esta é uma versão de quebra de compatibilidade da API de complemento [Add-on]. Os complementos precisarão ser testados novamente e ter seu manifesto [manifest] atualizado.
+<LI>Embora o NVDA ainda exija o Visual Studio 2019, as compilações não devem mais falhar se uma versão mais recente do Visual Studio (por exemplo, 2022) for instalada ao lado da 2019. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13387">#13387</A>)
+<LI>SCons atualizado para a versão 4.3.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
+<LI>py2exe atualizado para a versão 0.11.1.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13510">#13510</A>)
+<LI><CODE>NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable</CODE> foi removido. Use <CODE>apiLevel</CODE> em vez disso. (<A HREF="https://github.com/nvaccess/nvda/issues/12955">#12955</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12660">#12660</A>)
+<LI><CODE>TVItemStruct</CODE> foi removido de <CODE>sysTreeView32</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12935">#12935</A>)
+<LI><CODE>MessageItem</CODE> foi removido do Módulo de aplicativo [appModule] do Outlook. (<A HREF="https://github.com/nvaccess/nvda/issues/12935">#12935</A>)
+<LI>As constantes <CODE>audioDucking.AUDIODUCKINGMODE_*</CODE> são agora um <CODE>DisplayStringIntEnum</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12926">#12926</A>)
   <UL>
-  <LI>usages should be replaced with <CODE>AudioDuckingMode.*</CODE>
-  <LI>usages of <CODE>audioDucking.audioDuckingModes</CODE> should be replaced with <CODE>AudioDuckingMode.*.displayString</CODE>
+  <LI>os usos devem ser substituídos por <CODE>AudioDuckingMode.*</CODE>
+  <LI>usos de <CODE>audioDucking.audioDuckingModes</CODE> devem ser substituídos por <CODE>AudioDuckingMode.*.displayString</CODE>
   </UL>
-<LI><CODE>audioDucking.ANRUS_ducking_*</CODE> constants usages should be replaced with <CODE>ANRUSDucking.*</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12926">#12926</A>)
-<LI><CODE>synthDrivers.sapi5</CODE> changes (<A HREF="https://github.com/nvaccess/nvda/issues/12927">#12927</A>):
+<LI>Os usos das constantes <CODE>audioDucking.ANRUS_ducking_*</CODE> devem ser substituídos por <CODE>ANRUSDucking.*</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12926">#12926</A>)
+<LI>Alterações em <CODE>synthDrivers.sapi5</CODE> (<A HREF="https://github.com/nvaccess/nvda/issues/12927">#12927</A>):
   <UL>
-  <LI><CODE>SPAS_*</CODE> usages should be replaced with <CODE>SPAudioState.*</CODE>
-  <LI><CODE>constants.SVSF*</CODE> usages should be replaced with <CODE>SpeechVoiceSpeakFlags.*</CODE>
+  <LI>Os usos de <CODE>SPAS_*</CODE> devem ser substituídos por <CODE>SPAudioState.*</CODE>
+  <LI>Os usos de <CODE>constants.SVSF*</CODE> devem ser substituídos por <CODE>SpeechVoiceSpeakFlags.*</CODE>
     <UL>
-    <LI>Note: <CODE>SVSFlagsAsync</CODE> should be replaced with <CODE>SpeechVoiceSpeakFlags.Async</CODE> not <CODE>SpeechVoiceSpeakFlags.lagsAsync</CODE>
+    <LI>Nota: <CODE>SVSFlagsAsync</CODE> deve ser substituído por <CODE>SpeechVoiceSpeakFlags.Async</CODE> e não por <CODE>SpeechVoiceSpeakFlags.lagsAsync</CODE>
     </UL>
-  <LI><CODE>constants.SVE*</CODE> usages should be replaced with <CODE>SpeechVoiceEvents.*</CODE>
+  <LI>Os usos de <CODE>constants.SVE*</CODE> devem ser substituídos por <CODE>SpeechVoiceEvents.*</CODE>
   </UL>
-<LI>The <CODE>soffice</CODE> appModule has the following classes and functions removed <CODE>JAB_OOTableCell</CODE>, <CODE>JAB_OOTable</CODE>, <CODE>gridCoordStringToNumbers</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12849">#12849</A>)
-<LI><CODE>core.CallCancelled</CODE> is now <CODE>exceptions.CallCancelled</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12940">#12940</A>)
-<LI>All constants starting with RPC from <CODE>core</CODE> and <CODE>logHandler</CODE> are moved into <CODE>RPCConstants.RPC</CODE> enum. (<A HREF="https://github.com/nvaccess/nvda/issues/12940">#12940</A>)
-<LI>It is recommended that <CODE>mouseHandler.doPrimaryClick</CODE> and <CODE>mouseHandler.doSecondaryClick</CODE> functions should be used to click the mouse to perform a logical action such as activating (primary) or secondary (show context menu),
-rather than using <CODE>executeMouseEvent</CODE> and specifying the left or right mouse button specifically.
-This ensures code will honor the Windows user setting for swapping the primary mouse button. (<A HREF="https://github.com/nvaccess/nvda/issues/12642">#12642</A>)
-<LI><CODE>config.getSystemConfigPath</CODE> has been removed - there is no replacement. (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
-<LI><CODE>shlobj.SHGetFolderPath</CODE> has been removed - please use <CODE>shlobj.SHGetKnownFolderPath</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
-<LI><CODE>shlobj</CODE> constants have been removed. A new enum has been created, <CODE>shlobj.FolderId</CODE> for usage with <CODE>SHGetKnownFolderPath</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
-<LI><CODE>diffHandler.get_dmp_algo</CODE> and <CODE>diffHandler.get_difflib_algo</CODE> have been replaced with <CODE>diffHandler.prefer_dmp</CODE> and <CODE>diffHandler.prefer_difflib</CODE> respectively. (<A HREF="https://github.com/nvaccess/nvda/issues/12974">#12974</A>)
-<LI><CODE>languageHandler.curLang</CODE> has been removed - to get the current NVDA language use <CODE>languageHandler.getLanguage()</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13082">#13082</A>)
-<LI>A <CODE>getStatusBarText</CODE> method can be implemented on an appModule to customize the way NVDA fetches the text from the status bar. (<A HREF="https://github.com/nvaccess/nvda/issues/12845">#12845</A>)
-<LI><CODE>globalVars.appArgsExtra</CODE> has been removed. (<A HREF="https://github.com/nvaccess/nvda/issues/13087">#13087</A>)
+<LI>O Módulo de aplicativo <CODE>soffice</CODE> tem as seguintes classes e funções removidas <CODE>JAB_OOTableCell</CODE>, <CODE>JAB_OOTable</CODE>, <CODE>gridCoordStringToNumbers</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12849">#12849</A>)
+<LI><CODE>core.CallCancelled</CODE> agora é <CODE>exceptions.CallCancelled</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12940">#12940</A>)
+<LI>Todas as constantes começando com RPC de <CODE>core</CODE> e <CODE>logHandler</CODE> estão movidas para a enum [enumeração] <CODE>RPCConstants.RPC</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12940">#12940</A>)
+<LI>Recomenda-se que as funções <CODE>mouseHandler.doPrimaryClick</CODE> e <CODE>mouseHandler.doSecondaryClick</CODE> sejam usadas para clicar o mouse para realizar uma ação lógica como ativar (primário) ou secundário (mostrar menu de contexto),
+em vez de usar <CODE>executeMouseEvent</CODE> e especificar o botão esquerdo ou direito do mouse especificamente.
+Isso garante que o código respeite a configuração do usuário do Windows para trocar o botão principal do mouse. (<A HREF="https://github.com/nvaccess/nvda/issues/12642">#12642</A>)
+<LI><CODE>config.getSystemConfigPath</CODE> foi removido - não há substituição. (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
+<LI><CODE>shlobj.SHGetFolderPath</CODE> foi removido - por favor, use <CODE>shlobj.SHGetKnownFolderPath</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
+<LI>As constantes <CODE>shlobj</CODE> foram removidas. Uma nova enum foi criada, <CODE>shlobj.FolderId</CODE> para uso com <CODE>SHGetKnownFolderPath</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12943">#12943</A>)
+<LI><CODE>diffHandler.get_dmp_algo</CODE> e <CODE>diffHandler.get_difflib_algo</CODE> foram substituídos por <CODE>diffHandler.prefer_dmp</CODE> e <CODE>diffHandler.prefer_difflib</CODE> respectivamente. (<A HREF="https://github.com/nvaccess/nvda/issues/12974">#12974</A>)
+<LI><CODE>languageHandler.curLang</CODE> foi removido - para obter o idioma atual do NVDA use <CODE>languageHandler.getLanguage()</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13082">#13082</A>)
+<LI>Um método <CODE>getStatusBarText</CODE> pode ser implementado num Módulo de aplicativo para personalizar a forma como o NVDA busca o texto da barra de status. (<A HREF="https://github.com/nvaccess/nvda/issues/12845">#12845</A>)
+<LI><CODE>globalVars.appArgsExtra</CODE> foi removido. (<A HREF="https://github.com/nvaccess/nvda/issues/13087">#13087</A>)
   <UL>
-  <LI>If your add-on need to process additional command line arguments see the documentation of <CODE>addonHandler.isCLIParamKnown</CODE> and the developer guide for details.
+  <LI>Se seu complemento precisar processar argumentos de linha de comando adicionais, consulte a documentação de <CODE>addonHandler.isCLIParamKnown</CODE> e o guia do desenvolvedor para obter detalhes.
   </UL>
-<LI>The UIA handler module and other UIA support modules are now part of a UIAHandler package. (<A HREF="https://github.com/nvaccess/nvda/issues/10916">#10916</A>)
+<LI>O módulo manipulador [handler] UIA e outros módulos de suporte UIA agora fazem parte de um pacote UIAHandler. (<A HREF="https://github.com/nvaccess/nvda/issues/10916">#10916</A>)
   <UL>
-  <LI><CODE>UIAUtils</CODE> is now <CODE>UIAHandler.utils</CODE>
-  <LI><CODE>UIABrowseMode</CODE> is now <CODE>UIAHandler.browseMode</CODE>
-  <LI><CODE>_UIAConstants</CODE> is now <CODE>UIAHandler.constants</CODE>
-  <LI><CODE>_UIACustomProps</CODE> is now <CODE>UIAHandler.customProps</CODE>
-  <LI><CODE>_UIACustomAnnotations</CODE> is now <CODE>UIAHandler.customAnnotations</CODE>
+  <LI><CODE>UIAUtils</CODE> agora é <CODE>UIAHandler.utils</CODE>
+  <LI><CODE>UIABrowseMode</CODE> agora é <CODE>UIAHandler.browseMode</CODE>
+  <LI><CODE>_UIConstants</CODE> agora é <CODE>UIAHandler.constants</CODE>
+  <LI><CODE>_UIACustomProps</CODE> agora é <CODE>UIAHandler.customProps</CODE>
+  <LI><CODE>_UIACustomAnnotations</CODE> agora é <CODE>UIAHandler.customAnnotations</CODE>
   </UL>
-<LI>The <CODE>IAccessibleHandler</CODE> <CODE>IA2_RELATION_*</CODE> constants have been replaced with the <CODE>IAccessibleHandler.RelationType</CODE> enum. (<A HREF="https://github.com/nvaccess/nvda/issues/13096">#13096</A>)
+<LI>As constantes <CODE>IAccessibleHandler</CODE> <CODE>IA2_RELATION_*</CODE> foram substituídas pela enum <CODE>IAccessibleHandler.RelationType</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13096">#13096</A>)
   <UL>
-  <LI>Removed <CODE>IA2_RELATION_FLOWS_FROM</CODE>
-  <LI>Removed <CODE>IA2_RELATION_FLOWS_TO</CODE>
-  <LI>Removed <CODE>IA2_RELATION_CONTAINING_DOCUMENT</CODE>
+  <LI>Removido <CODE>IA2_RELATION_FLOWS_FROM</CODE>
+  <LI>Removido <CODE>IA2_RELATION_FLOWS_TO</CODE>
+  <LI>Removido <CODE>IA2_RELATION_CONTAINING_DOCUMENT</CODE>
   </UL>
-<LI><CODE>LOCALE_SLANGUAGE</CODE>, <CODE>LOCALE_SLIST</CODE> and <CODE>LOCALE_SLANGDISPLAYNAME</CODE> are removed from <CODE>languageHandler</CODE> - use members of <CODE>languageHandler.LOCALE</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
-<LI>Switched from Minhook to Microsoft Detours as a hooking library for NVDA. Hooking with this library is mainly used to aid the display model. (<A HREF="https://github.com/nvaccess/nvda/issues/12964">#12964</A>)
-<LI><CODE>winVersion.WIN10_RELEASE_NAME_TO_BUILDS</CODE> is removed. (<A HREF="https://github.com/nvaccess/nvda/issues/13211">#13211</A>)
-<LI>SCons now warns to build with a number of jobs that is equal to the number of logical processors in the system.
-This can dramatically decrease build times on multi core systems. (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13371">#13371</A>)
-<LI><CODE>characterProcessing.SYMLVL_*</CODE> constants are removed - please use <CODE>characterProcessing.SymbolLevel.*</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/13248">#13248</A>)
-<LI>Functions <CODE>loadState</CODE> and <CODE>saveState</CODE> are removed from addonHandler - please use <CODE>addonHandler.state.load</CODE> and <CODE>addonHandler.state.save</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/13245">#13245</A>)
-<LI>Moved the UWP/OneCore interaction layer of NVDAHelper <A HREF="https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx">from C++/CX to C++/Winrt</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/10662">#10662</A>)
-<LI>It is now mandatory to subclass <CODE>DictionaryDialog</CODE> to use it. (<A HREF="https://github.com/nvaccess/nvda/issues/13268">#13268</A>)
-<LI><CODE>config.RUN_REGKEY</CODE>, <CODE>config.NVDA_REGKEY</CODE> are deprecated, please use <CODE>config.RegistryKey.RUN</CODE>, <CODE>config.RegistryKey.NVDA</CODE> instead. These will be removed in 2023. (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
-<LI><CODE>easeOfAccess.ROOT_KEY</CODE>, <CODE>easeOfAccess.APP_KEY_PATH</CODE> are deprecated, please use<CODE>easeOfAccess.RegistryKey.ROOT</CODE>, <CODE>easeOfAccess.RegistryKey.APP</CODE> instead. These will be removed in 2023. (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
-<LI><CODE>easeOfAccess.APP_KEY_NAME</CODE> has been deprecated, to be removed in 2023. (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
-<LI><CODE>DictionaryDialog</CODE> and <CODE>DictionaryEntryDialog</CODE> are moved from <CODE>gui.settingsDialogs</CODE> to <CODE>gui.speechDict</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13294">#13294</A>)
-<LI>IAccessible2 relations are now shown in developer info for IAccessible2 objects. (<A HREF="https://github.com/nvaccess/nvda/issues/13315">#13315</A>)
-<LI><CODE>languageHandler.windowsPrimaryLCIDsToLocaleNames</CODE> has been removed, instead use <CODE>languageHandler.windowsLCIDToLocaleName</CODE> or <CODE>winKernel.LCIDToLocaleName</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13342">#13342</A>)
-<LI><CODE>UIAAutomationId</CODE> property for UIA objects should be preferred over <CODE>cachedAutomationId</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13125">#13125</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11447">#11447</A>)
+<LI><CODE>LOCALE_SLANGUAGE</CODE>, <CODE>LOCALE_SLIST</CODE> e <CODE>LOCALE_SLANGDISPLAYNAME</CODE> foram removidos de <CODE>languageHandler</CODE> - use membros de <CODE>languageHandler.LOCALE</CODE> em vez disso. (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
+<LI>Mudou do Minhook para o Microsoft Detours como uma biblioteca de ganchos [hooking] para o NVDA. A conexão com esta biblioteca é usada principalmente para auxiliar o modelo de exibição [display model]. (<A HREF="https://github.com/nvaccess/nvda/issues/12964">#12964</A>)
+<LI><CODE>winVersion.WIN10_RELEASE_NAME_TO_BUILDS</CODE> foi removido. (<A HREF="https://github.com/nvaccess/nvda/issues/13211">#13211</A>)
+<LI>SCons agora adverte para compilar com um número de tarefas igual ao número de processadores lógicos no sistema.
+Isso pode diminuir drasticamente os tempos de compilação em sistemas com vários núcleos. (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13371">#13371</A>)
+<LI>As constantes <CODE>characterProcessing.SYMLVL_*</CODE> foram removidas - por favor, use <CODE>characterProcessing.SymbolLevel.*</CODE> em vez disso. (<A HREF="https://github.com/nvaccess/nvda/issues/13248">#13248</A>)
+<LI>As funções <CODE>loadState</CODE> e <CODE>saveState</CODE> foram removidas do addonHandler - por favor, use <CODE>addonHandler.state.load</CODE> e <CODE>addonHandler.state.save</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13245">#13245</A>)
+<LI>Movida a camada de interação UWP/OneCore do NVDAHelper <A HREF="https://docs.microsoft.com/pt-br/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx">de C++/CX para C++/WinRT</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/10662">#10662</A>)
+<LI>Agora é obrigatório usar a subclasse <CODE>DictionaryDialog</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13268">#13268</A>)
+<LI><CODE>config.RUN_REGKEY</CODE>, <CODE>config.NVDA_REGKEY</CODE> estão obsoletos, por favor use <CODE>config.RegistryKey.RUN</CODE>, <CODE>config.RegistryKey.NVDA</CODE>. Eles serão removidos em 2023. (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
+<LI><CODE>easeOfAccess.ROOT_KEY</CODE>, <CODE>easeOfAccess.APP_KEY_PATH</CODE> estão obsoletos, por favor use <CODE>easeOfAccess.RegistryKey.ROOT</CODE>, <CODE>easeOfAccess.RegistryKey.APP</CODE> em vez disso. Eles serão removidos em 2023. (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
+<LI><CODE>easeOfAccess.APP_KEY_NAME</CODE> foi descontinuado, para ser removido em 2023. (<A HREF="https://github.com/nvaccess/nvda/issues/13242">#13242</A>)
+<LI><CODE>DictionaryDialog</CODE> e <CODE>DictionaryEntryDialog</CODE> estão movidos de <CODE>gui.settingsDialogs</CODE> para <CODE>gui.speechDict</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13294">#13294</A>)
+<LI>As relações IAccessible2 agora são mostradas nas informações do desenvolvedor para objetos IAccessible2. (<A HREF="https://github.com/nvaccess/nvda/issues/13315">#13315</A>)
+<LI><CODE>languageHandler.windowsPrimaryLCIDsToLocaleNames</CODE> foi removido, em vez disso use <CODE>languageHandler.windowsLCIDToLocaleName</CODE> ou <CODE>winKernel.LCIDToLocaleName</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13342">#13342</A>)
+<LI>A propriedade <CODE>UIAAutomationId</CODE> para objetos UIA deve ser preferida sobre <CODE>cachedAutomationId</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13125">#13125</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11447">#11447</A>)
   <UL>
-  <LI><CODE>cachedAutomationId</CODE> can be used if obtained directly from the element.
+  <LI><CODE>cachedAutomationId</CODE> pode ser usado se obtido diretamente do elemento.
   </UL>
-<LI><CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> has moved to <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
-<LI>Boolean <CODE>gui.isInMessageBox</CODE> is removed, please use the function <CODE>gui.message.isModalMessageBoxActive</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
-<LI><CODE>controlTypes</CODE> has been split up into various submodules. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
+<LI><CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> foi movido para <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
+<LI><CODE>gui.isInMessageBox</CODE> booleano foi removido, por favor use a função <CODE>gui.message.isModalMessageBoxActive</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
+<LI><CODE>controlTypes</CODE> foi dividido em vários submódulos. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
   <UL>
-  <LI><CODE>ROLE_*</CODE> and <CODE>STATE_*</CODE> have been replaced with <CODE>Role.*</CODE> and <CODE>State.*</CODE>.
-  <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> and <CODE>negativeStateLabels</CODE> has been removed.
-  Usages like <CODE>roleLabels[ROLE_*]</CODE> should be replaced to their equivalent <CODE>Role.*.displayString</CODE> or <CODE>State.*.negativeDisplayString</CODE>.
-  <LI><CODE>processPositiveStates</CODE> and <CODE>processNegativeStates</CODE> have been removed.
+  <LI><CODE>ROLE_*</CODE> e <CODE>STATE_*</CODE> foram substituídos por <CODE>Role.*</CODE> e <CODE>State.*</CODE>.
+  <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> e <CODE>negativeStateLabels</CODE> foram removidos.
+  Usos como <CODE>roleLabels[ROLE_*]</CODE> devem ser substituídos por seus equivalentes <CODE>Role.*.displayString</CODE> ou <CODE>State.*.negativeDisplayString</CODE>.
+  <LI><CODE>processPositiveStates</CODE> e <CODE>processNegativeStates</CODE> foram removidos.
   </UL>
-<LI>The <CODE>controlTypes.Role</CODE> and <CODE>controlTypes.State</CODE> enum values are no longer fixed/hardcoded and have changed. (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
+<LI>Os valores de enum <CODE>controlTypes.Role</CODE> e <CODE>controlTypes.State</CODE> não são mais fixos/codificados e foram alterados. (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
   <UL>
-  <LI>The <CODE>controlTypes.State</CODE> members are no longer bit flags, states should not be determined using bitwise operations.
-  <LI>There are mappings for <CODE>IAccessible</CODE>, <CODE>IAccessible2</CODE> and <CODE>UIA</CODE>:
+  <LI>Os membros <CODE>controlTypes.State</CODE> não são mais sinalizadores [flags] de bit, os estados não devem ser determinados usando operações bit a bit [bitwise].
+  <LI>Existem mapeamentos para <CODE>IAccessible</CODE>, <CODE>IAccessible2</CODE> e <CODE>UIA</CODE>:
     <UL>
     <LI><CODE>IAccessibleHandler.IAccessible2StatesToNVDAStates</CODE>
     <LI><CODE>IAccessibleHandler.IAccessibleStatesToNVDAStates</CODE>
@@ -206,9 +206,9 @@ This can dramatically decrease build times on multi core systems. (<A HREF="http
     <LI><CODE>UIAHandler.UIAControlTypesToNVDARoles</CODE>
     </UL>
   </UL>
-<LI>Excel cell state constants (<CODE>NVSTATE_*</CODE>) are now values in the <CODE>NvCellState</CODE> enum, mirrored in the <CODE>NvCellState</CODE> enum in <CODE>NVDAObjects/window/excel.py</CODE> and mapped to <CODE>controlTypes.State</CODE> via _nvCellStatesToStates. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
-<LI><CODE>EXCEL_CELLINFO</CODE> struct member <CODE>state</CODE> is now <CODE>nvCellStates</CODE>.
-<LI><CODE>mathPres.ensureInit</CODE> has been removed, MathPlayer is now initialized when NVDA starts. (<A HREF="https://github.com/nvaccess/nvda/issues/13486">#13486</A>)
+<LI>Constantes de estado de célula do Excel (<CODE>NVSTATE_*</CODE>) agora são valores na enum <CODE>NvCellState</CODE>, espelhados na enum <CODE>NvCellState</CODE> em <CODE>NVDAObjects/window/excel.py</CODE> e mapeados para ` `controlTypes.State`` via _nvCellStatesToStates. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
+<LI><CODE>state</CODE> membro da estrutura <CODE>EXCEL_CELLINFO</CODE> agora é <CODE>nvCellStates</CODE>.
+<LI><CODE>mathPres.ensureInit</CODE> foi removido, MathPlayer agora é inicializado quando o NVDA é iniciado. (<A HREF="https://github.com/nvaccess/nvda/issues/13486">#13486</A>)
 </UL>
 
 <P></P>
