@@ -1,0 +1,23 @@
+diff --git a/user_docs/en/changes.t2t b/user_docs/en/changes.t2t
+index 42bc04676..16b889775 100644
+-{-- a/user_docs/en/changes.t2t}-
++{++ b/user_docs/en/changes.t2t}+
+@@ -157,11 +157,13 @@ This can dramatically decrease build times on multi core systems. (#13226, #1337
+  -
+- ``NVDAObjects.window.scintilla.CharacterRangeStruct`` has moved to ``NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct``. (#13364)
+- Boolean ``gui.isInMessageBox`` is removed, please use the function ``gui.message.isModalMessageBoxActive`` instead. (#12984, #13376)
+
+- ``controlTypes`` has been split up into various submodules. -{(#12510)}- +{(#12510, #13588)}+
+  - ``ROLE_*`` and ``STATE_*`` have been replaced with ``Role.*`` and ``State.*``.
+
+
+
+  - +{Although still available, the following should be considered deprecated:
+    - ``ROLE_*`` and ``STATE_*``, use ``Role.*`` and ``State.*`` instead.
+    -}+ ``roleLabels``, ``stateLabels`` and -{``negativeStateLabels`` has been removed.
+  Usages}- +{``negativeStateLabels``, usages}+ like ``roleLabels[ROLE_*]`` should be replaced -{to}- +{with}+ their equivalent ``Role.*.displayString`` or ``State.*.negativeDisplayString``.
+    - ``processPositiveStates`` and ``processNegativeStates`` -{have been removed.}- +{should use ``processAndLabelStates`` instead.
+    -}+
+  -
+- The ``controlTypes.Role`` and ``controlTypes.State`` enum values are no longer fixed/hardcoded and have changed. (#13414)
+  - The ``controlTypes.State`` members are no longer bit flags, states should not be determined using bitwise operations.
