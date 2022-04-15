@@ -110,6 +110,7 @@ Nota:
 <LI>O Adobe Reader não trava mais na inicialização se o modo protegido do Adobe Reader estiver ativado. (<A HREF="https://github.com/nvaccess/nvda/issues/11568">#11568</A>)
 <LI>Corrigido um erro em que selecionar o driver da linha Braille Papenmeier causava o travamento do NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13348">#13348</A>)
 <LI>No Microsoft Word com UIA: o número da página e outras formatações não são mais anunciados de forma inadequada ao passar de uma célula da tabela em branco para uma célula com conteúdo ou do final do documento para o conteúdo existente. (<A HREF="https://github.com/nvaccess/nvda/issues/13458">#13458</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13459">#13459</A>)
+<LI>O NVDA não deixará de informar o título da página e começará a ler automaticamente, quando uma página for carregada no Google Chrome 100. (<A HREF="https://github.com/nvaccess/nvda/issues/13571">#13571</A>)
 </UL>
 
 <P></P>
@@ -188,22 +189,14 @@ Isso pode diminuir drasticamente os tempos de compilação em sistemas com vári
   </UL>
 <LI><CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> foi movido para <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
 <LI><CODE>gui.isInMessageBox</CODE> booleano foi removido, por favor use a função <CODE>gui.message.isModalMessageBoxActive</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
-<LI><CODE>controlTypes</CODE> foi dividido em vários submódulos. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
+<LI><CODE>controlTypes</CODE> foi dividido em vários submódulos. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13588">#13588</A>)
   <UL>
   <LI><CODE>ROLE_*</CODE> e <CODE>STATE_*</CODE> foram substituídos por <CODE>Role.*</CODE> e <CODE>State.*</CODE>.
-  <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> e <CODE>negativeStateLabels</CODE> foram removidos.
-  Usos como <CODE>roleLabels[ROLE_*]</CODE> devem ser substituídos por seus equivalentes <CODE>Role.*.displayString</CODE> ou <CODE>State.*.negativeDisplayString</CODE>.
-  <LI><CODE>processPositiveStates</CODE> e <CODE>processNegativeStates</CODE> foram removidos.
-  </UL>
-<LI>Os valores de enum <CODE>controlTypes.Role</CODE> e <CODE>controlTypes.State</CODE> não são mais fixos/codificados e foram alterados. (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
-  <UL>
-  <LI>Os membros <CODE>controlTypes.State</CODE> não são mais sinalizadores [flags] de bit, os estados não devem ser determinados usando operações bit a bit [bitwise].
-  <LI>Existem mapeamentos para <CODE>IAccessible</CODE>, <CODE>IAccessible2</CODE> e <CODE>UIA</CODE>:
+  <LI>Embora ainda disponível, o seguinte deve ser considerado obsoleto:
     <UL>
-    <LI><CODE>IAccessibleHandler.IAccessible2StatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleStatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleRolesToNVDARoles</CODE>
-    <LI><CODE>UIAHandler.UIAControlTypesToNVDARoles</CODE>
+    <LI><CODE>ROLE_*</CODE> e <CODE>STATE_*</CODE>, use em vez disso <CODE>Role.*</CODE> e <CODE>State.*</CODE>.
+    <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> e <CODE>negativeStateLabels</CODE>, usos como <CODE>roleLabels[ROLE_*]</CODE> devem ser substituídos por seus equivalentes <CODE>Role.*.displayString</CODE> ou <CODE>State.*.negativeDisplayString</CODE>.
+    <LI>Em vez de <CODE>processPositiveStates</CODE> e <CODE>processNegativeStates</CODE> deve usar <CODE>processAndLabelStates</CODE>.
     </UL>
   </UL>
 <LI>Constantes de estado de célula do Excel (<CODE>NVSTATE_*</CODE>) agora são valores na enum <CODE>NvCellState</CODE>, espelhados na enum <CODE>NvCellState</CODE> em <CODE>NVDAObjects/window/excel.py</CODE> e mapeados para ` `controlTypes.State`` via _nvCellStatesToStates. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
