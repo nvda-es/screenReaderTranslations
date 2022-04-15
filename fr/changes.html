@@ -109,6 +109,7 @@ Note :
 <LI>Adobe Reader ne plante plus au démarrage si le mode protégé d'Adobe Reader est activé. (<A HREF="https://github.com/nvaccess/nvda/issues/11568">#11568</A>)
 <LI>Correction d'un problème où la sélection du pilote Braille Papenmeier faisait planter NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13348">#13348</A>)
 <LI>Dans Microsoft Word avec UIA : le numéro de pages ou d'autres informations de formatage ne sont plus annoncées inutilement lors de la navigation d'une cellule de tableau vide à une cellule avec du contenu, ou de la fin du document vers du contenu. (<A HREF="https://github.com/nvaccess/nvda/issues/13458">#13458</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13459">#13459</A>)
+<LI>NVDA n'échoue plus à signaler le titre de la page et commence à lire automatiquement, lorsqu'une page se charge dans Google chrome 100. (<A HREF="https://github.com/nvaccess/nvda/issues/13571">#13571</A>)
 </UL>
 
 <P></P>
@@ -187,22 +188,14 @@ Cela peut réduire considérablement les temps de construction sur les systèmes
   </UL>
 <LI><CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> a été déplacé vers <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
 <LI>Le booléen <CODE>gui.isInMessageBox</CODE> est supprimé, veuillez utiliser la fonction <CODE>gui.message.isModalMessageBoxActive</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
-<LI><CODE>controlTypes</CODE> a été divisé en plusieurs sous-modules. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
+<LI><CODE>controlTypes</CODE> a été divisé en plusieurs sous-modules. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A> <A HREF="https://github.com/nvaccess/nvda/issues/13588">#13588</A>)
   <UL>
   <LI><CODE>ROLE_*</CODE> et <CODE>STATE_*</CODE> ont été remplacés par <CODE>Role.*</CODE> et <CODE>State.*</CODE>.
-  <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> et <CODE>negativeStateLabels</CODE> ont été supprimés.
-  Les utilisations telles que <CODE>roleLabels[ROLE_*]</CODE> doivent être remplacées par leur équivalent <CODE>Role.*.displayString</CODE> ou <CODE>State.*.negativeDisplayString</CODE>.
-  <LI><CODE>processPositiveStates</CODE> et <CODE>processNegativeStates</CODE> ont été supprimés.
-  </UL>
-<LI>Les valeurs d'énumération <CODE>controlTypes.Role</CODE> et <CODE>controlTypes.State</CODE> ne sont plus fixes/codées en dur et ont changé. (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
-  <UL>
-  <LI>Les membres <CODE>controlTypes.State</CODE> ne sont plus des drapeaux binaires, les états ne doivent pas être déterminés à l'aide d'opérations au niveau du bit.
-  <LI>Il existe des mappages pour <CODE>IAccessible</CODE>, <CODE>IAccessible2</CODE> et <CODE>UIA</CODE> :
+  <LI>Bien que toujours disponibles, les éléments suivants doivent être considérés comme obsolètes :
     <UL>
-    <LI><CODE>IAccessibleHandler.IAccessible2StatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleStatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleRolesToNVDARoles</CODE>
-    <LI><CODE>UIAHandler.UIAControlTypesToNVDARoles</CODE>
+    <LI><CODE>ROLE_*</CODE> et <CODE>STATE_*</CODE>, remplacés par <CODE>Role.*</CODE> et <CODE>State.*</CODE>.
+    <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> et <CODE>negativeStateLabels</CODE>, les utilisations telles que <CODE>roleLabels[ROLE_*]</CODE> doivent être remplacées par leur équivalent <CODE>Role.*.displayString</CODE> ou <CODE>State. *.negativeDisplayString</CODE>.  
+    <LI><CODE>processPositiveStates</CODE> et <CODE>processNegativeStates</CODE> remplacés par <CODE>processAndLabelStates</CODE>.
     </UL>
   </UL>
 <LI>Les constantes d'état des cellules Excel (<CODE>NVSTATE_*</CODE>) sont maintenant des valeurs dans l'énumération <CODE>NvCellState</CODE>, reflétées dans l'énumération <CODE>NvCellState</CODE> dans <CODE>NVDAObjects/window/excel.py</CODE> et mappées à <CODE>controlTypes.State</CODE> via _nvCellStatesToStates. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
