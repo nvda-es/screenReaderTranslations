@@ -109,6 +109,7 @@ Hinweis:
 <LI>Adobe Reader stürzt nicht mehr beim Start ab, sobald der geschützte Modus von Adobe Reader aktiviert ist. (<A HREF="https://github.com/nvaccess/nvda/issues/11568">#11568</A>)
 <LI>Ein Fehler wurde behoben, bei dem die Auswahl des Braillezeilen-Treibers von Papenmeier zu einem Absturz in NVDA führte. (<A HREF="https://github.com/nvaccess/nvda/issues/13348">#13348</A>)
 <LI>In Microsoft Word mit UIA: Seitenzahlen und andere Formatierungen werden nicht mehr fälschlicherweise angezeigt, wenn man von einer leeren Tabellenzelle in eine Zelle mit Inhalt oder vom Ende des Dokuments in einen bestehenden Inhalt wechselt. (<A HREF="https://github.com/nvaccess/nvda/issues/13458">#13458</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13459">#13459</A>)
+<LI>NVDA liest den Seitentitel vor und beginnt automatisch mit dem Lesen, wenn eine Seite in Google Chrome 100 geladen wurde. (<A HREF="https://github.com/nvaccess/nvda/issues/13571">#13571</A>)
 </UL>
 
 <P></P>
@@ -184,22 +185,14 @@ Hinweis:
   </UL>
 <LI><CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> wurde verschoben nach <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
 <LI><CODE>gui.isInMessageBox</CODE> (Boolean) wurde entfernt, bitte verwenden Sie stattdessen die Function <CODE>gui.message.isModalMessageBoxActive</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
-<LI><CODE>controlTypes</CODE> wurde in mehreren Submodulen aufgeteilt. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
+<LI><CODE>controlTypes</CODE> wurde in mehreren Submodulen aufgeteilt. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13588">#13588</A>)
   <UL>
   <LI><CODE>ROLE_*</CODE> und <CODE>STATE_*</CODE> wurden ersetzt durch <CODE>Role.*</CODE> und <CODE>State.*</CODE>.
-  <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> und <CODE>negativeStateLabels</CODE> wurden entfernt.
-  Die Syntax wie <CODE>roleLabels[ROLE_*]</CODE> sollte durch das Equivalent <CODE>Role.*.displayString</CODE> oder <CODE>State.*.negativeDisplayString</CODE> ersetzt werden.
-  <LI><CODE>processPositiveStates</CODE> und <CODE>processNegativeStates</CODE> wurden entfernt.
-  </UL>
-<LI>Die Enum-Werte <CODE>controlTypes.Role</CODE> und <CODE>controlTypes.State</CODE> sind nicht mehr fest/hardcodiert und haben sich geändert. (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
-  <UL>
-  <LI>Die <CODE>controlTypes.State</CODE>-Mitglieder sind keine Bit-Flags mehr, Zustände sollten nicht mit bitweisen Operationen ermittelt werden.
-  <LI>Es gibt Mappings für <CODE>IAccessible</CODE>, <CODE>IAccessible2</CODE> und <CODE>UIA</CODE>:
+  <LI>Obwohl sie noch verfügbar sind, sollten die Folgenden als veraltet betrachtet werden:
     <UL>
-    <LI><CODE>IAccessibleHandler.IAccessible2StatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleStatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleRolesToNVDARoles</CODE>
-    <LI><CODE>UIAHandler.UIAControlTypesToNVDARoles</CODE>
+    <LI><CODE>ROLE_*</CODE> und <CODE>STATE_*</CODE>, verwenden Sie stattdessen <CODE>Role.*</CODE> und <CODE>State.*</CODE>.
+    <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> und <CODE>negativeStateLabels</CODE>, verwenden Sie stattdessen <CODE>roleLabels[ROLE_*]</CODE> und deren Entsprechung <CODE>Role.*.displayString</CODE> oder <CODE>State.*.negativeDisplayString</CODE>.
+    <LI><CODE>processPositiveStates</CODE> und <CODE>processNegativeStates</CODE>, verwenden Sie stattdessen <CODE>processAndLabelStates</CODE>.
     </UL>
   </UL>
 <LI>Die Konstanten für den Status einer Excel-Zelle (<CODE>NVSTATE_*</CODE>) sind nun Werte im <CODE>NvCellState</CODE>-Enum, gespiegelt im <CODE>NvCellState</CODE>-Enum in <CODE>NVDAObjects/window/excel.py</CODE> und abgebildet auf <CODE>controlTypes.State</CODE> über _nvCellStatesToStates. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
