@@ -108,12 +108,11 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 <LI>NVDA将不再导致64位版本的 Notepad++ 8.3及以上版本的程序崩溃。 (<A HREF="https://github.com/nvaccess/nvda/issues/13311">#13311</A>)
 <LI>即使启用了文档保护模式，Adobe Reader 也不会在启动时出现程序崩溃。 (<A HREF="https://github.com/nvaccess/nvda/issues/11568">#11568</A>)
 <LI>修复了选中 Papenmeier 点显器驱动导致 NVDA崩溃的错误。 (<A HREF="https://github.com/nvaccess/nvda/issues/13348">#13348</A>)
+<LI>开启 UIA 后，在 MS Word 中：当从空白表格单元格移动到有内容的单元格，或从文档末尾移动到正文区域时，不会错误的读出页码和其他格式信息。 (<A HREF="https://github.com/nvaccess/nvda/issues/13458">#13458</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13459">#13459</A>)
+<LI>修复了在 Google chrome 100 中页面加载后，无法读出标题且无法自动朗读的错误。 (<A HREF="https://github.com/nvaccess/nvda/issues/13571">#13571</A>)
 </UL>
 
-<P>
-开启 UIA 后，在 MS Word 中：当从空白表格单元格移动到有内容的单元格，或从文档末尾移动到正文区域时，不会错误的读出页码和其他格式信息。 (<A HREF="https://github.com/nvaccess/nvda/issues/13458">#13458</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13459">#13459</A>)
--
-</P>
+<P></P>
 <H3>简体中文翻译条目更改</H3>
 <UL>
 <LI>对“点显器选择”对话框内的 Seika 和 Seika Notetaker 进行改进：体现相应选项具体支持的型号；
@@ -208,24 +207,14 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
   <LI>如果直接从元素中获取，可以使用<CODE>cachedAutomationId</CODE>。
   </UL>
 <LI>移动 <CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> 至 <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
-<LI>移除 bool 型函数 <CODE>gui.isInMessageBox</CODE>，请使用 <CODE>gui.message.isModalMessageBoxActive</CODE> 函数替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
-<LI><CODE>controlTypes</CODE> 被拆分为不同的子模块。 (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
+<LI>移除 bool 型的 <CODE>gui.isInMessageBox</CODE>，请使用 <CODE>gui.message.isModalMessageBoxActive</CODE> 函数替代。 (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
+<LI><CODE>controlTypes</CODE> 被拆分为不同的子模块。 (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13588">#13588</A>)
   <UL>
-  <LI>替换 <CODE>ROLE_*</CODE> 和 <CODE>STATE_*</CODE> 为 <CODE>Role.*</CODE> 和 <CODE>State.*</CODE>。
-  <LI>移除 <CODE>roleLabels</CODE>、 <CODE>stateLabels</CODE> 和 <CODE>negativeStateLabels</CODE>。
-  诸如 <CODE>roleLabels[ROLE_*]</CODE> 的使用需被替换为与其等价的 <CODE>Role.*.displayString</CODE> 或 <CODE>State.*.negativeDisplayString</CODE>。
-  <LI>移除 <CODE>processPositiveStates</CODE> 和 <CODE>processNegativeStates</CODE>。
-  </UL>
-<LI><CODE>controlTypes.Role</CODE> 和 <CODE>controlTypes.State</CODE> 的值以可改变，不再是固定的/硬编码的枚举值。。 (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
-  <UL>
-  <LI><CODE>controlTypes.State</CODE> 的成员不再使用位标记,其状态无需通过位运算来确定。
-  <LI><CODE>IAccessible</CODE>、 <CODE>IAccessible2</CODE> 和 <CODE>UIA</CODE> 存在映射：
-    <UL>
-    <LI><CODE>IAccessibleHandler.IAccessible2StatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleStatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleRolesToNVDARoles</CODE>
-    <LI><CODE>UIAHandler.UIAControlTypesToNVDARoles</CODE>
-    </UL>
+  <LI>虽仍然有效，但应该弃用以下内容：
+  <LI><CODE>ROLE_*</CODE> 和 <CODE>STATE_*</CODE> 应使用 <CODE>Role.*</CODE> 和 <CODE>State.*</CODE> 代替。
+  <LI><CODE>roleLabels</CODE>、<CODE>stateLabels</CODE> 和 <CODE>negativeStateLabels</CODE>，如 <CODE>roleLabels[ROLE_*]</CODE> 应替换为其等价的用法 <CODE>Role.*.displayString</CODE> 或 <CODE>State.*.negativeDisplayString</CODE>。
+  <LI><CODE>processPositiveStates</CODE> 和 <CODE>processNegativeStates</CODE> 应使用 <CODE>processAndLabelStates</CODE> 代替。
+    -
   </UL>
 <LI>Excel 单元格状态常量 (<CODE>NVSTATE_*</CODE>) 现为 <CODE>NvCellState</CODE> 枚举中的值，在 <CODE>NVDAObjects/window/excel.py</CODE> 中的 <CODE>NvCellState</CODE> 枚举内作为镜像，并通过 _nvCellStatesToStates 映射于 <CODE>controlTypes.State</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
 <LI><CODE>EXCEL_CELLINFO</CODE> 的结构成员 <CODE>state</CODE> 现为 <CODE>nvCellStates</CODE>。
