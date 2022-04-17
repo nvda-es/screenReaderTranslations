@@ -109,6 +109,7 @@ Nota:
 <LI>Adobe Reader ya no se cuelga al arrancar si el modo protegido de Adobe Reader está habilitado. (<A HREF="https://github.com/nvaccess/nvda/issues/11568">#11568</A>)
 <LI>Corregido un fallo donde al seleccionar el controlador de la pantalla braille Papenmeier provocaba que NVDA se colgase. (<A HREF="https://github.com/nvaccess/nvda/issues/13348">#13348</A>)
 <LI>En Microsoft word con UIA: el número de página y otros formatos ya no se anuncian inapropiadamente al moverse desde una celda de tabla en blanco a una celda con contenido, o desde el final del documento a un contenido existente. (<A HREF="https://github.com/nvaccess/nvda/issues/13458">#13458</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13459">#13459</A>)
+<LI>NVDA ya no falla al anunciar el título de página y al comenzar la lectura automática cuando se cargue una página en Google chrome 100. (<A HREF="https://github.com/nvaccess/nvda/issues/13571">#13571</A>)
 </UL>
 
 <P></P>
@@ -190,25 +191,17 @@ Esto puede reducir dramáticamente los tiempos de compilación en sistemas multi
 <UL>
 <LI><CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> se ha movido a <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
 <LI>El booleano <CODE>gui.isInMessageBox</CODE> se eliminó, por favor utiliza la función <CODE>gui.message.isModalMessageBoxActive</CODE> en su lugar. (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
-<LI><CODE>controlTypes</CODE> se ha separado en varios submodules. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
+<LI><CODE>controlTypes</CODE> se ha separado en varios submodules. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13588">#13588</A>)
   <UL>
   <LI><CODE>ROLE_*</CODE> y <CODE>STATE_*</CODE> se han reemplazado por <CODE>Role.*</CODE> y <CODE>State.*</CODE>.
-  <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> y <CODE>negativeStateLabels</CODE> se han eliminado.
-  Usos como <CODE>roleLabels[ROLE_*]</CODE> deberían reemplazarse por sus equivalentes <CODE>Role.*.displayString</CODE> o <CODE>State.*.negativeDisplayString</CODE>.
-  <LI><CODE>processPositiveStates</CODE> y <CODE>processNegativeStates</CODE> se han eliminado.
-  </UL>
-<LI>Los valores enum <CODE>controlTypes.Role</CODE> y <CODE>controlTypes.State</CODE> ya no se arreglaron/codificaron y han cambiado. (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
-  <UL>
-  <LI>Los miembros <CODE>controlTypes.State</CODE> ya no son banderas de bit, los estados no deberían determinarse utilizando operaciones bit a bit.
-  <LI>Hay mapeos para <CODE>IAccessible</CODE>, <CODE>IAccessible2</CODE> y <CODE>UIA</CODE>:
+  <LI>Aunque todavía están disponibles, las siguientes deben considerarse obsoletas:
     <UL>
-    <LI><CODE>IAccessibleHandler.IAccessible2StatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleStatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleRolesToNVDARoles</CODE>
-    <LI><CODE>UIAHandler.UIAControlTypesToNVDARoles</CODE>
+    <LI><CODE>ROLE_*</CODE> y <CODE>STATE_*</CODE>, utiliza <CODE>Role.*</CODE> y <CODE>State.*</CODE> en su lugar.
+    <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> y <CODE>negativeStateLabels</CODE>, usos como <CODE>roleLabels[ROLE_*]</CODE> deberían reemplazarse por sus equivalencias <CODE>Role.*.displayString</CODE> o <CODE>State.*.negativeDisplayString</CODE>.
+    <LI><CODE>processPositiveStates</CODE> y <CODE>processNegativeStates</CODE> deberían utilizar <CODE>processAndLabelStates</CODE> en su lugar.
     </UL>
   </UL>
-+- Las constantes de celda de Excel (<CODE>NVSTATE_*</CODE>) ahora son valores en el enum <CODE>NvCellState</CODE>, reflejadas en la enum <CODE>NvCellState</CODE> en <CODE>NVDAObjects/window/excel.py</CODE> y mapeadas en <CODE>controlTypes.State</CODE> a través de _nvCellStatesToStates. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
+<LI>Las constantes de celda de Excel (<CODE>NVSTATE_*</CODE>) ahora son valores en el enum <CODE>NvCellState</CODE>, reflejadas en la enum <CODE>NvCellState</CODE> en <CODE>NVDAObjects/window/excel.py</CODE> y mapeadas en <CODE>controlTypes.State</CODE> a través de _nvCellStatesToStates. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
 <LI>El mienbro de la estructura <CODE>EXCEL_CELLINFO</CODE> <CODE>state</CODE> ahora es <CODE>nvCellStates</CODE>.
 <LI><CODE>mathPres.ensureInit</CODE> se ha eliminado, MathPlayer ahora se inicializa cuando NVDA arranca. (<A HREF="https://github.com/nvaccess/nvda/issues/13486">#13486</A>)
 </UL>
