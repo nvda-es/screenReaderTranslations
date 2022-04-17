@@ -109,6 +109,7 @@ eSpeak-NG и LibLouis са обновени, добавени са нови та
 <LI>Adobe Reader вече не се срива при стартиране, ако защитеният му режим е активиран. (<A HREF="https://github.com/nvaccess/nvda/issues/11568">#11568</A>)
 <LI>Поправена е грешка, при която изборът на драйвер за брайловите дисплеи на Papenmeier води до срив на NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13348">#13348</A>)
 <LI>В Microsoft word с UIA: Номерът на страницата и други данни за форматирането вече не се докладват некоректно при преминаване от празна клетка на таблица към такава със съдържание или при преместване от края на документа в съществуващо съдържание. (<A HREF="https://github.com/nvaccess/nvda/issues/13458">#13458</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13459">#13459</A>)
+<LI>NVDA вече няма да пропуска да съобщава заглавието на страницата и да започва автоматично да чете, когато страницата се зареди в Google Chrome 100. (<A HREF="https://github.com/nvaccess/nvda/issues/13571">#13571</A>)
 </UL>
 
 <P></P>
@@ -187,22 +188,14 @@ eSpeak-NG и LibLouis са обновени, добавени са нови та
   </UL>
 <LI>„NVDAObjects.window.scintilla.CharacterRangeStruct“ беше преместено в „NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct“. (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
 <LI>Булевата „gui.isInMessageBox“ е премахната. Вместо това използвайте функцията „gui.message.isModalMessageBoxActive“. (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
-<LI>„controlTypes“ е разделено на няколко подмодула. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
+<LI>„controlTypes“ е разделено на няколко подмодула. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13588">#13588</A>)
   <UL>
   <LI>„ROLE_*“ и ``STATE_*“ бяха заменени с „Role.*“ и „State.*“.
-  <LI>„roleLabels“, „stateLabels“ и „negativeStateLabels“ бяха премахнати.
-  Употреби като „roleLabels[ROLE_*]“ трябва да бъдат заменени с техните еквиваленти „Role.*.displayString“ или „State.*.negativeDisplayString“.
-  <LI>„processPositiveStates“ и „processNegativeStates“ бяха премахнати.
-  </UL>
-<LI>Enum стойностите „controlTypes.Role“ и „controlTypes.State“ вече не са фиксирани/хардуерно кодирани и са променени. (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
-  <UL>
-  <LI>Членовете на „controlTypes.State“ вече не са битови флагове. Състоянията не трябва да се определят с помощта на побитови операции.
-  <LI>Има съпоставяния за „IAccessible“, „IAccessible2“ и „UIA“:
+  <LI>Въпреки че все още са налице, следните неща се препоръчва да се считат за оттеглени:
     <UL>
-    <LI>„IAccessibleHandler.IAccessible2StatesToNVDAStates“
-    <LI>„IAccessibleHandler.IAccessibleStatesToNVDAStates“
-    <LI>“IAccessibleHandler.IAccessibleRolesToNVDARoles“
-    <LI>„UIAHandler.UIAControlTypesToNVDARoles“
+    <LI>„ROLE_*“ и „STATE_*“ – вместо това използвайте „Role.*“ и „State.*“.
+    <LI>„roleLabels“, „stateLabels“ и „negativeStateLabels“. Употреби като „roleLabels[ROLE_*]“ трябва да бъдат заменени с техните еквиваленти „Role.*.displayString“ или „State.*.negativeDisplayString“.
+    <LI>„processPositiveStates“ и „processNegativeStates“ – вместо това използвайте „processAndLabelStates“.
     </UL>
   </UL>
 <LI>Константите за състоянието на клетките в Excel („NVSTATE_*“) вече са стойности в enum „NvCellState“, огледално отразявани в „NvCellState“ в „NVDAObjects/window/excel.py“ и съпоставяни с „controlTypes.State“ чрез „_nvCellStatesToStates“. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
