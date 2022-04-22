@@ -10,6 +10,26 @@
 </FONT></CENTER>
 
 <H2>2022.1</H2>
+<P>
+Ця версія містить серйозні поліпшення підтримки UIA з MS Office.
+У Windows 11 для Microsoft Office 16.0.15000 і новіших версій NVDA початково використовуватиме UI Automation для доступу до документів Microsoft Word.
+Це забезпечує значне підвищення продуктивності в порівнянні зі старою об’єктною моделлю доступу.
+</P>
+<P>
+Є вдосконалення драйверів брайлівських дисплеїв, включаючи Seika Notetaker, Papenmeier і HID Braille.
+Також є різні виправлення помилок Windows 11 для таких програм, як Калькулятор, Консоль, Термінал, Пошта та Панель емодзі.
+</P>
+<P>
+eSpeak-NG і LibLouis були оновлені, додано нові японські, німецькі та каталонські таблиці.
+</P>
+<P>
+Примітка:
+</P>
+ <UL>
+ <LI>Ця версія розриває сумісність із наявними додатками.
+ </UL>
+
+<P></P>
 <H3>Нові можливості</H3>
 <UL>
 <LI>Підтримка промовляння нотаток в MS Excel із увімкненим UI Automation у Windows 11. (<A HREF="https://github.com/nvaccess/nvda/issues/12861">#12861</A>)
@@ -31,6 +51,11 @@
 <LI>Додано команди для одночасного перемикання багатьох клавіш-модифікаторів за допомогою брайлівського дисплея (<A HREF="https://github.com/nvaccess/nvda/issues/13152">#13152</A>)
 <LI>Діалог «Мовленнєві словники» тепер містить кнопку «Видалити все», яка допомагає повністю очистити словник. (<A HREF="https://github.com/nvaccess/nvda/issues/11802">#11802</A>)
 <LI>Додано підтримку калькулятора у Windows 11. (<A HREF="https://github.com/nvaccess/nvda/issues/13212">#13212</A>)
+<LI>У Microsoft Word з увімкненим UI Automation у Windows 11 тепер промовляються номери рядків і номери розділів. (<A HREF="https://github.com/nvaccess/nvda/issues/13283">#13283</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13515">#13515</A>)
+<LI>У Windows 11 для Microsoft Office 16.0.15000 і новіших версій NVDA початково використовуватиме UI Automation для доступу до документів Microsoft Word. Це забезпечує значне підвищення продуктивності в порівнянні зі старою об’єктною моделлю доступу. (<A HREF="https://github.com/nvaccess/nvda/issues/13437">#13437</A>)
+ <UL>
+ <LI>Це стосується документів у Microsoft Word, а також читача і створювача повідомлень у Microsoft Outlook. 
+ </UL>
 </UL>
 
 <P></P>
@@ -40,21 +65,23 @@
 <LI>Бібліотеку брайлівського введення/виведення liblouis оновлено до <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.20.0">3.20.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/13141">#13141</A>)
   <UL>
   <LI>Нова брайлівська таблиця: Japanese (Kantenji) literary braille
+  <LI>Додано нову брайлівську таблицю  German 6 dot computer braille.
+  <LI>Додано брайлівську таблицю  Catalan grade 1. (<A HREF="https://github.com/nvaccess/nvda/issues/13408">#13408</A>)
   </UL>
 <LI>NVDA повідомляє виділені й об'єднані комірки в LibreOffice Calc 7.3 і новіших версіях. (<A HREF="https://github.com/nvaccess/nvda/issues/9310">#9310</A>, <A HREF="https://github.com/nvaccess/nvda/issues/6897">#6897</A>)
 <LI>Оновлено загальний репозиторій мовних даних юнікоду (CLDR) to 40.0. (<A HREF="https://github.com/nvaccess/nvda/issues/12999">#12999</A>)
 <LI><CODE>NVDA+додатковий деліт</CODE> початково повідомляє розташування каретки чи об’єкта в фокусі. (<A HREF="https://github.com/nvaccess/nvda/issues/13060">#13060</A>)
 <LI><CODE>NVDA+Shift+додатковий деліт</CODE> повідомляє розташування переглядового курсора. (<A HREF="https://github.com/nvaccess/nvda/issues/13060">#13060</A>)
 <LI>Додано початкові поєднання для перемикання клавіш-модифікаторів для брайлівських дисплеїв від Freedom Scientific (<A HREF="https://github.com/nvaccess/nvda/issues/13152">#13152</A>)
-<LI>'Базова лінія' більше не промовляється за допомогою команди повідомлення про форматування (NVDA+F). (<A HREF="https://github.com/nvaccess/nvda/issues/11815">#11815</A>)
+<LI>«Базова лінія» більше не промовляється за допомогою команди повідомлення про форматування (NVDA+F). (<A HREF="https://github.com/nvaccess/nvda/issues/11815">#11815</A>)
+<LI>Активація детального опису більше не має початково призначеного жесту. (<A HREF="https://github.com/nvaccess/nvda/issues/13380">#13380</A>)
+<LI>Промовляння зведення подробиць тепер має початково призначений жест (<CODE>NVDA+d</CODE>). (<A HREF="https://github.com/nvaccess/nvda/issues/13380">#13380</A>)
+<LI>NVDA потребує перезавантаження після встановлення MathPlayer. (<A HREF="https://github.com/nvaccess/nvda/issues/13486">#13486</A>)
 </UL>
 
 <P></P>
 <H3>Виправлення</H3>
 <UL>
-<LI>Виправлення безпеки: запобігання переміщення об’єктною навігацією за межі екрану блокування у Windows 10 і Windows 11. (<A HREF="https://github.com/nvaccess/nvda/issues/13328">#13328</A>)
-<LI>Виправлення безпеки: керування додатками тепер недоступне на захищених екранах. (<A HREF="https://github.com/nvaccess/nvda/issues/13059">#13059</A>)
-<LI>Виправлення безпеки: контекстна довідка NVDA Ббільше недоступна на захищених екранах. (<A HREF="https://github.com/nvaccess/nvda/issues/13353">#13353</A>) 
 <LI>Панель менеджера буфера обміну більше не буде неправильно перехоплювати фокус під час відкриття деяких программ Office. (<A HREF="https://github.com/nvaccess/nvda/issues/12736">#12736</A>)
 <LI>В системі, де користувач вирішив поміняти основну кнопку мышки з лівої на праву, NVDA більше не буде випадково викликати контекстне меню замість активації елемента в таких застосунках, як веб-браузери.. (<A HREF="https://github.com/nvaccess/nvda/issues/12642">#12642</A>)
 <LI>При переміщенні переглядового курсора в кінець елементів керування текстом, наприклад, в Microsoft Word за допомогою UI Automation, в більшій кількості ситуацій правильно повідомляється «нижній». (<A HREF="https://github.com/nvaccess/nvda/issues/12808">#12808</A>)
@@ -77,6 +104,12 @@
 <LI>У Windows 11 NVDA більше не перешкоджатиме навігації в панелі емодзі під час вибору емодзі. (<A HREF="https://github.com/nvaccess/nvda/issues/13104">#13104</A>)
 <LI>NVDA запобігає помилці, яка спричиняє подвійне звітування під час використання консолі та терміналу Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/13261">#13261</A>)
 <LI>Виправлено кілька випадків, коли елементи списку не можна було повідомити в 64-розрядних програмах, таких як REAPER. (<A HREF="https://github.com/nvaccess/nvda/issues/8175">#8175</A>)
+<LI>У менеджері завантажень Microsoft Edge NVDA тепер автоматично перемикається в режим фокуса, як тільки елемент списку з останніх завантажень отримає фокус. (<A HREF="https://github.com/nvaccess/nvda/issues/13221">#13221</A>)
+<LI>NVDA більше не викликає збою 64-розрядних версій Notepad++ 8.3 і новіших. (<A HREF="https://github.com/nvaccess/nvda/issues/13311">#13311</A>)
+<LI>Adobe Reader більше не дає збій під час запуску, якщо увімкнено захищений режим Adobe Reader. (<A HREF="https://github.com/nvaccess/nvda/issues/11568">#11568</A>)
+<LI>Виправлено помилку, коли вибір драйвера брайлівського дисплея Papenmeier ставав причиною збою NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13348">#13348</A>)
+<LI>У Microsoft word з UIA: номер сторінки й інше форматування більше не повідомляються неналежним способом у разі переміщення з порожньої комірки таблиці у комірку з вмістом чи з кінця документа до наявного вмісту. (<A HREF="https://github.com/nvaccess/nvda/issues/13458">#13458</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13459">#13459</A>)
+<LI>Під час завантаження сторінки в Google chrome 100 NVDA більше не виводитиме заголовок сторінки й автоматично розпочинати читання. (<A HREF="https://github.com/nvaccess/nvda/issues/13571">#13571</A>)
 </UL>
 
 <P></P>
