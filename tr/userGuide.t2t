@@ -527,7 +527,6 @@ Tarama ve odak kipleri arasında manuel olarak da geçiş yapabilirsiniz ve Odak
 | Metin ara | NVDA+kontrol+f | Geçerli belgede yazıp bir metin arayabileceğiniz bir iletişim kutusu açar Daha fazla bilgi için [metin arama #SearchingForText] bölümüne bakın. |
 | Sonrakini bul | NVDA+f3 | metni belgenin sonraki kısmında arar |
 | Öncekini bul | NVDA+şift+f3 | metni belgenin önceki kısmında arar |
-| uzun tarifi aç | NVDA+d | Eğer varsa, üzerinde bulunulan ögeyle ilgili uzun bir açıklamanın bulunduğu yeni bir pencere açar. | 
 %kc:endInclude
 
 ++ Tek Tuşla Dolaşım ++[SingleLetterNavigation]
@@ -1707,10 +1706,10 @@ Bu değer, önceki sayfa ve sonraki sayfa tuşlarıyla tarama kipinde gösterile
 
 %kc:setting
 ==== Destekleniyorsa Ekran Düzenini Kullan ====[BrowseModeSettingsScreenLayout]
-Kısayol tuşu: NVDA+v
+Tuş: NVDA+v
 
-Bu seçenek, tarama kipindeki bağlantı ve metin gibi içeriklerin her birinin ayrı satırlarda gösterilmesi ya da ekranda görsel olarak nasıl görünüyorsa o biçimde aktarılması seçenekleri arasında tercih yapmanızı sağlar.
-Etkinleştirilirse, ekrandaki içerik görsel olarak nasıl görünüyorsa öyle sergilenir. ancak devre dışı bırakılırsa, her alan ayrı satırlara yerleştirilir.
+Bu seçenek, tarama kipinin tıklanabilir içeriği (bağlantılar, düğmeler ve alanlar) ayrı satırlara  mı yerleştirmesi yoksa görsel olarak ekranda görüldüğü gibi metin akışında mı tutması gerektiğini belirlemenizi sağlar. Bu seçeneğin, her zaman ekran düzenini kullanan Outlook ve Word gibi Microsoft Office uygulamaları için geçerli olmadığını unutmayın.
+Ekran düzeni etkinleştirildiğinde, sayfa öğeleri görsel olarak gösterildiği gibi kalacaktır. Örneğin, birden çok bağlantının gösterildiği bir satır, konuşmaya ve braille'e de aynı şekilde aktarılır. Devre dışı bırakılırsa, öğeler ayrı satırlara yerleştirilecektir; bu, satır satır dolaşılırken  öğeler arasındaki farkı daha anlaşılabilir kılar ve bazı kullanıcılar için öğelerle etkileşimi kolaylaştırabilir.
 
 ==== Sayfa yüklendiğinde tarama kipini etkinleştir ====[BrowseModeSettingsEnableOnPageLoad]
 Bu onay kutusu, bir sayfa yüklendiğinde tarama kipinin otomatik olarak etkinleştirilip etkinleştirilmeyeceğini belirler.
@@ -1865,12 +1864,15 @@ Bunun, özellikle Microsoft Visual Studio gibi uygulamalarda performans üzerind
 Bu nedenle, bu seçenek etkinleştirildiğinde, NVDA çoğu olay için olay kaydını sistem odağıyla sınırlayacaktır.
 Bir veya daha fazla uygulamada performans sorunları yaşıyorsanız, performansın iyileşip iyileşmediğini görmek için bu işlevi denemenizi öneririz.
 
-==== Uygunsa Microsoft Word belge kontrollerine erişmek için UI otomasyonunu kullan ====[AdvancedSettingsUseUiaForWord]
-Bu seçenek etkinleştirildiğinde, NVDA, Microsoft Word belge kontrollerinden bilgi almak için Microsoft UI Otomasyonu erişilebilirlik API'sini kullanmayı deneyecektir.
-Buna, Microsoft Word’ün yanı sıra,  Microsoft Outlook mesaj görüntüleyicisi ve oluşturucusu dahildir.
- Windows 10 ve sonraki sürümlerde çalışan Microsoft Office 2016/365'in en son sürümleri için, UI Otomasyonu desteği, Microsoft Word belgelerine neredeyse NVDA'nın mevcut Microsoft Word desteğine eşit erişim sağlayacak kadar eksiksizdir ve yanıt hızının büyük ölçüde artması avantajını da beraberinde getirir.
-Ancak, Microsoft Office'in bazı sürümlerinde gösterilmeyen veya yanlış gösterilen bazı bilgiler olabilir; bu, UI otomasyon desteğine her zaman güvenilemeyeceği anlamına gelir.
-Office 2016/365 kullanıcılarının bu özelliği test etmesini ve geri bildirimde bulunmasını memnuniyetle karşılarız, bununla birlikte kullanıcıların çoğunluğunun bunu varsayılan olarak açmasını önermiyoruz.
+==== Microsoft Word belge kontrollerine erişmek için UI otomasyonunu kullan ====[MSWordUIA]
+NVDA'nın Microsoft Word belgelerine erişmek için eski Microsoft Word nesne modeli yerine UI Otomasyonu erişilebilirlik API'sini kullanıp kullanmayacağını belirler.
+Bu, Microsoft word'ün kendisindeki belgeler ve Microsoft Outlook'taki mesajlar için geçerlidir.
+Bu ayar aşağıdaki değerleri içerir:
+- Varsayılan (uygun olduğunda)
+- Sadece gerektiğinde: Microsoft Word nesne modelinin hiç mevcut olmadığı durumlarda
+- Uygun olduğunda: Microsoft Word sürüm 16.0.15000 veya üzeri veya Microsoft Word nesne modelinin kullanılamadığı durumlarda
+- Her zaman: UI otomasyonunun Microsoft word'de olduğu her yerde (tamamlanmamış olsa bile).
+-
 
 ==== Windows Konsoluna erişmek için mevcut olduğunda UI Otomasyonunu kullan ====[AdvancedSettingsConsoleUIA]
 Bu seçenek etkinleştirildiğinde, NVDA, [Microsoft tarafından yapılan erişilebilirlik geliştirmelerinin https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/] Windows Konsolu desteğinden yararlanan yeni ve devam eden bir çalışmadan faydalanacaktır. Bu özellik oldukça deneyseldir ve hala eksiktir, bu nedenle kullanımı henüz tavsiye edilmez. Ancak tamamlandığında, bu yeni desteğin varsayılan olacağı ve NVDA'nın Windows komut konsollarındaki performansını ve kararlılığını artıracağı tahmin edilmektedir.
@@ -1888,9 +1890,13 @@ Seçim kutusunda aşağıdaki seçenekler vardır:
 ==== Bİlgi notları ====[Annotations]
 Bu seçenek grubu, ARIA bilgi notları için deneysel destek ekleyen özellikleri etkinleştirmek için kullanılır.
 Bu özelliklerden bazıları eksik sunuluyor olabilir.
+
+%kc:beginInclude
+"sistem imleci konumundaki Tüm ek açıklama ayrıntılarının özetinin bildirimi" için, NVDA+d'ye basın.
+%kc:endInclude
+
 Aşağıdaki seçenekler mevcuttur: 
 - "Rapor, yapılandırılmış ek açıklamalar için 'ayrıntılara sahiptir'": metin veya kontrolde daha fazla ayrıntı varsa, raporlamayı etkinleştirir.
-Ek ayrıntıların bir özeti, "[Girdi Hareketleri iletişim kutusu #InputGestures] Sistem kategorisinde  tüm ek açıklama ayrıntılarının özetini bildir" öğesine bir hareket atanarak raporlanabilir.
 - "Aria açıklamasını her zaman bildir":
   ``accDescription`` kaynağı aria-description olduğunda, açıklama aktarılır.
   Bu, web'deki ek açıklamalar için kullanışlıdır.
@@ -2867,10 +2873,6 @@ Aşağıdaki Braille ekranlar desteklenmektedir:
 -
 
 Bu ekranlar henüz NVDA'nın otomatik arka plan braille görüntü algılama işlevini desteklememektedir.
-
-If BrxCom is installed, NVDA will use BrxCom.
-BrxCom is a tool that allows keyboard input from the braille display to function independently from a screen reader.
-Keyboard input is possible with the Trio and BRAILLEX Live models.
 
 Most devices have an Easy Access Bar (EAB) that allows intuitive and fast operation.
 The EAB can be moved in four directions where generally each direction has two switches.
