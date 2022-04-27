@@ -88,6 +88,9 @@
     <UL>
     <LI><A HREF="#BrailleAbbreviations">8.1. Braille Kontrol türü, Durumu ve Sınırimi kısaltmaları</A>
     <LI><A HREF="#BrailleInput">8.2. Braille Girişi</A>
+      <UL>
+      <LI><A HREF="#BrailleKeyboardShortcuts">8.2.1. Klavye kısayolları girişi</A>
+      </UL>
     </UL>
   <LI><A HREF="#Vision">9. Görsellik</A>
     <UL>
@@ -146,7 +149,7 @@
       <LI><A HREF="#BrowseModeSettings">12.1.14. Tarama Kipi (NVDA+kontrol+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">12.1.15. Belge formatları (NVDA+kontrol+d)</A>
       <LI><A HREF="#Win10OcrSettings">12.1.16. Windows OCR Ayarları</A>
-      <LI><A HREF="#toc97">12.1.17. Gelişmiş Ayarlar</A>
+      <LI><A HREF="#toc98">12.1.17. Gelişmiş Ayarlar</A>
       </UL>
     <LI><A HREF="#MiscSettings">12.2. çeşitli Ayarlar</A>
       <UL>
@@ -201,12 +204,16 @@
     <LI><A HREF="#HedoMobilLine">15.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Brailliant BI/B Serisi / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc138">15.9.1. Tüm modeller için tuş atamaları</A>
-      <LI><A HREF="#toc139">15.9.2. Brailliant BI 32, BI 40 ve  B 80 için Tuş atamaları</A>
-      <LI><A HREF="#toc140">15.9.3. Brailliant BI 14 için Tuş atamaları</A>
+      <LI><A HREF="#toc139">15.9.1. Tüm modeller için tuş atamaları</A>
+      <LI><A HREF="#toc140">15.9.2. Brailliant BI 32, BI 40 ve  B 80 için Tuş atamaları</A>
+      <LI><A HREF="#toc141">15.9.3. Brailliant BI 14 için Tuş atamaları</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Serileri</A>
     <LI><A HREF="#Seika">15.11. Seika Braille Displays</A>
+      <UL>
+      <LI><A HREF="#SeikaBrailleDisplays">15.11.1. Seika Versiyon 3, 4 ve 5 (40 hücre), Seika80 (80 hücre)</A>
+      <LI><A HREF="#SeikaNotetaker">15.11.2. MiniSeika (16, 24 hücre), V6 ve V6Pro (40 hücre)</A>
+      </UL>
     <LI><A HREF="#Papenmeier">15.12. Papenmeier BRAILLEX Yeni Modelleri</A>
     <LI><A HREF="#PapenmeierOld">15.13. Papenmeier Braille BRAILLEX Older Models</A>
     <LI><A HREF="#HumanWareBrailleNote">15.14. HumanWare BrailleNote</A>
@@ -293,7 +300,7 @@ NVDA birçok dilde kısaltmalı, kısaltmasız ve bilgisayar braille kodlarını
 <A NAME="LicenseAndCopyright"></A>
 <H3>1.5. Lisans ve Kopya Hakkı</H3>
 <P>
-NVDA kopya hakkı 2006-2021 NVDA katkı sağlayanlarına aittir.
+NVDA kopya hakkı 2006-2022 NVDA katkı sağlayanlarına aittir.
 </P>
 <P>
 NVDA GNU General Public License (Version 2) (Yeni Genel Kamu Lisansı Sürüm2) ile iki özel istisna dışında kullanılabilir.
@@ -783,6 +790,13 @@ Sistem düzenleme imleciyle ilişkili olarak NVDA aşağıdaki tuş komutların�
 <TD>İmlecin o anda bulunduğu metnin biçim bilgisini bildirir. İki kez basılırsa bilgileri tarama modunda gösterir</TD>
 </TR>
 <TR>
+<TD>İmleç konumunu bildir</TD>
+<TD>NVDA+numaratörSil</TD>
+<TD>NVDA+sil</TD>
+<TD>yok</TD>
+<TD>Sistem imleci bulunduğu pozisyondaki metin veya nesnenin konumuyla ilgili bilgileri raporlar. Örneğin, bu, belgede yüzdelik cinsinden konumu, sayfanın kenarından olan mesafeyi veya tam ekran konumunu içerebilir. İki kez basmak daha fazla ayrıntı sunabilir.</TD>
+</TR>
+<TR>
 <TD>sonrakiCümle</TD>
 <TD>alt+aşağıOk</TD>
 <TD>alt+aşağıOk</TD>
@@ -927,8 +941,8 @@ Nesneler arasında dolaşmak için aşağıdaki komutları kullanın:
 </TR>
 <TR>
 <TD>İnceleme imleci konumunu bildir</TD>
-<TD>NVDA+numaratörSil</TD>
-<TD>NVDA+Sil</TD>
+<TD>NVDA+şift+numaratörSil</TD>
+<TD>NVDA+şift+Sil</TD>
 <TD>yok</TD>
 <TD>İnceleme imlecinin konumundaki nesnenin belgenin neresinde ya da sayfanın solundan ya da üstünden ne kadar uzakta olduğuyla ilgili bilgi verir. İki kez basılırsa daha ayrıntılı bilgi sunulabilir</TD>
 </TR>
@@ -1501,13 +1515,19 @@ NVDA aşağıdaki matematiksel içerik türlerini destekler:
 </P>
 <UL>
 <LI>Mozilla Firefox, Microsoft Internet Explorer ve Google Chrome MathML.
-<LI>Microsoft Word ve PowerPoint'de, Design Science MathType.
+<LI>UI otomasyonu aracılığıyla Microsoft Word 365 Modern Matematik Denklemleri:
+NVDA, Microsoft Word 365/2016 build 14326 ve üzeri sürümlerde matematik denklemlerini okuyabilir ve bunlarla etkileşim kurabilir.
+Bununla birlikte, önceden oluşturulmuş MathType denklemlerinin önce her birini seçip bağlam menüsünde Denklem Seçenekleri -&gt; Office Math'a Dönüştür'ü seçerek Office Math'a dönüştürülmesi gerektiğini unutmayın. Bunu yapmadan önce MathType sürümünüzün en son sürüm olduğundan emin olun.
+Microsoft Word ayrıca denklemlerin kendisinde doğrusal sembol tabanlı gezinme sağlar ve LateX dahil olmak üzere çeşitli sözdizimlerini kullanarak matematik girişini destekler. Daha fazla ayrıntı için lütfen <A HREF="https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8">Word'de UnicodeMath ve LaTeX kullanan doğrusal biçimli denklemler</A> makalesine bakın
+<LI>Microsoft Powerpoint ve Microsoft Word'ün eski sürümleri:
+NVDA, MathType denklemlerini hem Microsoft Powerpoint hem de Microsoft word'de okuyabilir ve içlerinde dolaşılmasını sağlayabilir.
 Bunun çalışabilmesi için MathType'ın kurulu olması gerekir.
 Deneme sürümü yeterlidir.
-ŞUradan  <A HREF="https://www.dessci.com/en/products/mathtype/">https://www.dessci.com/en/products/mathtype/</A>  indirilebilir.
-<LI>Adobe Reader'de MathML.
+Şuradan <A HREF="https://www.dessci.com/en/products/mathtype/">https://www.dessci.com/en/products/mathtype/</A>  indirilebilir.
+<LI>Adobe Reader:
 Bunun henüz resmi bir standart olmadığını not edin, dolayısıyla şu anda bu içeriği üretebilen hiçbir kamuya açık yazılım bulunmamaktadır.
-<LI>PC için Kindle'de, erişilebilir matematik kitapları için.
+<LI>Kindle Reader for PC:
+NVDA, erişilebilir matematik içeren kitaplar için Kindle for PC'de Math'ı okuyabilir ve bu kitaplarda dolaşılmasını sağlayabilir.
 </UL>
 
 <P></P>
@@ -1942,6 +1962,32 @@ Mesela, rakam işaretiyle başlayıp girdiğiniz bazı rakamlardan sonra geri si
 7. nokta basarak son braille hücreyi ya da girilen karakteri silersiniz.
 8. nokta braille girişi çevirir ve enter tuşuna basar.
 7. ve 8. noktalara birlikte basarsanız aralık ya da enter tuşuna basılmaksızın braille girişi metne çevrilir.
+</P>
+<A NAME="BrailleKeyboardShortcuts"></A>
+<H4>8.2.1. Klavye kısayolları girişi</H4>
+<P>
+NVDA, klavye kısayollarının girilmesini ve braille ekranını kullanarak tuşlaran taklit edilmeisni destekler.
+Taklit iki şekilde gelir: bir tuşa doğrudan bir Braille girdisi atamak ve sanal değiştirici tuşları kullanmak.
+</P>
+<P>
+Ok tuşları veya menülere ulaşmak için Alt tuşuna basmak gibi yaygın olarak kullanılan tuşlar, doğrudan Braille girişlerine eşlenebilir.
+Her bir Braille ekranının sürücüsü, bu görevlerden bazılarıyla önceden donatılmış olarak gelir.
+<A HREF="#InputGestures">Girdi Hareketleri iletişim kutusu</A> altından bu atamaları değiştirebilir veya yeni taklit  tuşlar ekleyebilirsiniz.
+</P>
+<P>
+Bu yaklaşım, yaygın olarak basılan veya biricik tuşlar (Tab gibi) için kullanışlı olsa da, her klavye kısayoluna biricik bir tuş takımı atamak istemeyebilirsiniz.
+NVDA, değiştirici tuşların basılı tutulduğu durumlarda tuş basmalarının taklit edilmesini sağlamak için kontrol, alt, shift, windows ve NVDA tuşlarının  ayrı ayrı , bu tuşların bazı kombinasyonlarının birlikte kullanılması için çeşitli komutlar sunar.
+Bu geçişleri kullanmak için önce basılmasını istediğiniz değiştirici tuşlar için komuta (veya komut dizisine) basın, ardından girmek istediğiniz klavye kısayolunun parçası olan karakteri girin.
+Örneğin, kontrol+f kısayol tuşunu kullanmak için "Kontrol tuşunu aç" komutunu kullanın ve ardından f yazın,
+ve kontrol+alt+t'yi girmek için, sırası fark etmez, "Kontrol tuşunu aç" ve "Alt tuşunu aç" komutlarını veya "Kontrol+alt tuşlarını aç" komutunu kullanın ve ardından t yazın.
+</P>
+<P>
+Değiştirici tuşları yanlışlıkla açarsanız, geçiş komutunu tekrar çalıştırmak değiştiriciyi kaldıracaktır.
+</P>
+<P>
+Kısaltmalı Braille'de yazarken, değiştirici tuşlarını açıp kapatmak, girişinizin tıpkı 7+8 noktalarına basmışsınız gibi çevrilmesine neden olur.
+Ayrıca, taklit edilen tuş girişi, değiştirici tuşa basılmadan önce girilen Braille kodu yansıtamaz.
+Bu, rakam işareti kullanan bir Braille koduyla alt+2 basmak için önce Alt'ı açmanız ve ardından bir rakam işareti girmeniz gerektiği anlamına gelir.
 </P>
 <A NAME="Vision"></A>
 <H2>9. Görsellik</H2>
@@ -3420,6 +3466,7 @@ Belge biçimlendirme seçenekleri gruplar halinde düzenlenmiştir.
 <LI>Belge Bilgileri
  <UL>
  <LI>Açıklamalar
+ <LI>Yer imleri
  <LI>Editör düzenlemeleri
  <LI>Yazım hataları
  </UL>
@@ -3497,7 +3544,7 @@ Kategori aşağıdaki seçenekleri içerir:
 <P>
 Bu seçim kutusu metin tanıma için kullanılacak dili seçmek içindir.
 </P>
-<A NAME="toc97"></A>
+<A NAME="toc98"></A>
 <H4>12.1.17. Gelişmiş Ayarlar</H4>
 <P>
 Uyarı! Bu kategorideki ayarlar ileri seviye kullanıcılar içindir ve yanlış şekilde yapılandırılmışsa NVDA'nın düzgün çalışmamasına neden olabilir.
@@ -3551,11 +3598,6 @@ Office 2016/365 kullanıcılarının bu özelliği test etmesini ve geri bildiri
 <P>
 Bu seçenek etkinleştirildiğinde, NVDA, <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Microsoft tarafından yapılan erişilebilirlik geliştirmelerinin</A> Windows Konsolu desteğinden yararlanan yeni ve devam eden bir çalışmadan faydalanacaktır. Bu özellik oldukça deneyseldir ve hala eksiktir, bu nedenle kullanımı henüz tavsiye edilmez. Ancak tamamlandığında, bu yeni desteğin varsayılan olacağı ve NVDA'nın Windows komut konsollarındaki performansını ve kararlılığını artıracağı tahmin edilmektedir.
 </P>
-<A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
-<H5>UIA konsollarında şifreleri seslendir</H5>
-<P>
-Bu ayar ekranın güncellenmediği durumlarda (şifre girişi gibi) UI otomasyon desteği etkin Windows Konsolu'nda <A HREF="#KeyboardSettingsSpeakTypedCharacters">yazılan karakterleri seslendir</A> veya <A HREF="#KeyboardSettingsSpeakTypedWords">yazılan sözcükleri seslendir</A> ayrlarına bağlı olarak karakterlerin seslendirilip seslendirilmeyeceğini belirler. Güvenlik nedeniyle, bu ayar devre dışı bırakılmalıdır. Bununla birlikte, NVDA'nın yeni deneysel konsol desteğini kullanırken yazılan karakter ve / veya kelime bildiriminde performans sorunları veya kararsızlık yaşıyorsanız etkinleştirmek isteyebilirsiniz.
-</P>
 <A NAME="ChromiumUIA"></A>
 <H5>Microsoft Edge ve diğer Chromium tabanlı tarayıcılar'la uygun olduğunda UIA kullan</H5>
 <P>
@@ -3579,8 +3621,8 @@ Bu özelliklerden bazıları eksik sunuluyor olabilir.
 Aşağıdaki seçenekler mevcuttur: 
 </P>
 <UL>
-<LI>"Tarama kipinde ayrıntıları bildir": Varsa,tarama kipinde üzerine bulunulan nesne ayrıntıları gösterilir.
-Bu ayrıntıların özeti <A HREF="#InputGestures">girdi hareketleri iletişim kutusu</A> altından atanabilecek bir kısayol tuşu ile de alınabilir.
+<LI>"Rapor, yapılandırılmış ek açıklamalar için 'ayrıntılara sahiptir'": metin veya kontrolde daha fazla ayrıntı varsa, raporlamayı etkinleştirir.
+Ek ayrıntıların bir özeti, "<A HREF="#InputGestures">Girdi Hareketleri iletişim kutusu</A> Sistem kategorisinde  tüm ek açıklama ayrıntılarının özetini bildir" öğesine bir hareket atanarak raporlanabilir.
 <LI>"Aria açıklamasını her zaman bildir":
   <CODE>accDescription</CODE> kaynağı aria-description olduğunda, açıklama aktarılır.
   Bu, web'deki ek açıklamalar için kullanışlıdır.
@@ -3604,10 +3646,17 @@ Bununla birlikte, temel elektronik tablo gezinme / düzenleme işlemleri için b
 Kullanıcıların çoğunun bunu varsayılan olarak açmasını önermemekle birlikte, Microsoft Excel'in 16.0.13522.10000 veya sonraki sürümlerini kullananların bu özelliği test etmelerini ve geri bildirimde bulunmalarını memnuniyetle karşılarız.
 Microsoft Excel'in UI otomasyon uygulaması sürekli değişiyor ve Microsoft Office'in 16.0.13522.10000'den daha eski sürümleri, bu seçeneğin herhangi bir şekilde kullanılması için yeterli bilgiyi sunmayabilir.
 </P>
-<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
-<H5>Mevcutsa Windows Konsolu'nda yeni yazılan karakter desteğini kullan</H5>
+<A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
+<H5>Tüm gelişmiş terminallerde parolaları söyle</H5>
 <P>
-Bu seçenek, Windows komut konsollarında yazılan karakterleri algılamak için alternatif bir yöntem sunar.
+Bu ayar  <A HREF="#KeyboardSettingsSpeakTypedCharacters">yazılan karakterleri seslendir</A> veya <A HREF="#KeyboardSettingsSpeakTypedWords">yazılan sözcükleri seslendir</A> UI otomasyon desteği etkinleştirilmiş Windows Konsolu ve Mintty gibi bazı terminal programlarında ekranın güncellenmediği (şifre girişi gibi) durumlarda karakterlerin söylenip söylenmeyeceğini kontrol eder.
+Güvenlik düşünülerek bu ayar devre dışı bırakılmalıdır.
+Ancak konsollarda yazılan karakter ve/veya sözcük seslendirmelerinde performans sorunları veya kararsızlık yaşıyorsanız veya güvenilir ortamlarda çalışıyorsanız ve parola bildirimini tercih ediyorsanız etkinleştirmeyi isteyebilirsiniz.
+</P>
+<A NAME="AdvancedSettingsKeyboardSupportInLegacy"></A>
+<H5>Mevcut olduğunda eski Windows Konsolunda geliştirilmiş yazılı karakter desteğini kullan</H5>
+<P>
+Bu seçenek, eski Windows konsollarında yazılan karakterleri algılamak için alternatif bir yöntem sağlar.
 Performansı artırıp bazı konsol çıktılarının hecelenmesini engellerken, bazı terminal programlarıyla uyumlu olmayabilir.
 Bu özellik varsayılan olarak etkindir, Windows 10 1607 ve sonraki sürümlerde ve UI Automation kullanılamadığında veya devre dışı bırakıldığında kullanılabilir.
 Dikkat: bu seçenek etkin durumdayken, şifreler gibi ekranda görünmeyen yazılan karakterler gizlenmez.
@@ -3620,14 +3669,14 @@ Bu ayar, NVDA'nın terminallerde  yeni metni nasıl konuşacağını kontrol ede
 diff algoritması seçim kutusunda üç seçenek vardır:
 </P>
 <UL>
-<LI>Otomatik: NVDA 2021.2'den itibaren, bu seçenek "Diff Match Patch'e izin ver" ile eş değerdir.
-<LI>Diff Match Patch'e izin ver: Bu seçenek, NVDA'nın terminal metnindeki değişiklikleri karakter karakter hesaplamasına neden olur.
+<LI>Otomatik: Bu seçenek, NVDA'nın çoğu durumda Diff Match Patch'i tercih etmesine, ancak Windows Konsolu ve Mintty'nin eski sürümleri gibi sorunlu uygulamalarda Difflib'e geri dönmesine neden olur.
+<LI>Diff Match Patch: Bu seçenek, NVDA'nın, tavsiye edilmediği durumlarda bile, terminal metnindeki değişiklikleri karakter bazında hesaplamasına neden olur.
 Konsola büyük hacimlerde metin girildiğinde  performansı artırabilir ve satırların ortasında yapılan değişikliklerin daha doğru raporlanmasına olanak tanır.
-Ancak bazı uygulamalarla uyumsuz olabilir, bu nedenle Diff Match Patch her zaman kullanılmaz.
-Bu özellik, Windows 10'un 1607 ve sonraki sürümlerinde Windows Konsolunda desteklenir.
-Ek olarak, önceki Windows sürümlerindeki diğer terminallerde de mevcut olabilir.
-<LI>Difflib'e zorla: bu seçenek NVDA'nın terminal metnindeki değişiklikleri satır satır hesaplamasına neden olur.
+Ancak, bazı uygulamalarda yeni metnin okunması dalgalı veya tutarsız olabilir.
+<LI>Difflib: bu seçenek, NVDA'nın, tavsiye edilmediği durumlarda bile, terminal metnindeki değişiklikleri satır satır hesaplamasına neden olur.
 NVDA'nın 2020.4 ve daha önceki sürümlerindeki davranışıyla aynıdır.
+Bu ayar, bazı uygulamalarda gelen metnin okunmasını kararlı kılabilir.
+Ancak, terminallerde, bir satırın ortasına bir karakter eklerken veya silerken, imleçten sonraki metin okunacaktır.
 </UL>
 
 <P></P>
@@ -3690,7 +3739,7 @@ Herhangi bir yerden bu sözlüklerle ilgili iletişim kutularını açabilmek i�
 </P>
 <P>
 Tüm sözlük iletişim kutularında konuşma işlemlerinde kullanılacak kuralların bir listesi bulunmaktadır.
-İletişim kutularında ayrıca, Kural Ekle, Düzenle ve Sil düğmeleri de mevcuttur.
+İletişim kutularında ayrıca, Kural Ekle, Düzenle, kaldır ve tümünü kaldır düğmeleri de mevcuttur.
 </P>
 <P>
 Sözlüğe yeni bir kural eklemek için önce ekle düğmesine basın, iletişim kutusundaki alanları doldurun ve tamam düğmesine basın.
@@ -4035,6 +4084,10 @@ Bu, NVDA'NIN Braille hücresinden a haritasını doğru bir şekilde tersine çe
 Hücre yeşile dönene kadar fare üzerinde olmalıdır.
 Hücre açık sarı renkte başlar, turuncuya geçer, sonra aniden yeşile döner.
 </P>
+<P>
+Braille görüntüleyiciyi herhangi bir yerden açıp kapatmak  için, lütfen <A HREF="#InputGestures">Girdi Hareketleri iletişim kutusunu</A> kullanarak özel bir hareket atayın.
++
+</P>
 <A NAME="PythonConsole"></A>
 <H3>13.4. Python Konsolu</H3>
 <P>
@@ -4273,7 +4326,8 @@ Aşağıdaki ekranlar otomatik algılama işlevini destekler.
 <LI>HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series
 <LI>Eurobraille Esys/Esytime/Iris displays
 <LI>Nattiq nBraille displays
-<LI>Any Display that supports the Standard HID Braille protocol
+<LI>Seika Notetaker: MiniSeika (16, 24 cells), V6, and V6Pro (40 cells)
+<LI>Standart HID Braille protokolünü destekleyen herhangi bir Ekran
 </UL>
 
 <P></P>
@@ -4423,6 +4477,50 @@ Lütfen bu tuşların nerede bulunacağıyla ilgili Braille ekran yardım belgel
 <TR>
 <TD>space key</TD>
 <TD>brailleSpaceBar</TD>
+</TR>
+<TR>
+<TD>Toggle control key</TD>
+<TD>brailleSpaceBar+dot3+dot8</TD>
+</TR>
+<TR>
+<TD>Toggle alt key</TD>
+<TD>brailleSpaceBar+dot6+dot8</TD>
+</TR>
+<TR>
+<TD>Toggle windows key</TD>
+<TD>brailleSpaceBar+dot4+dot8</TD>
+</TR>
+<TR>
+<TD>Toggle NVDA key</TD>
+<TD>brailleSpaceBar+dot5+dot8</TD>
+</TR>
+<TR>
+<TD>Toggle shift key</TD>
+<TD>brailleSpaceBar+dot7+dot8</TD>
+</TR>
+<TR>
+<TD>Toggle control and shift keys</TD>
+<TD>brailleSpaceBar+dot3+dot7+dot8</TD>
+</TR>
+<TR>
+<TD>Toggle alt and shift keys</TD>
+<TD>brailleSpaceBar+dot6+dot7+dot8</TD>
+</TR>
+<TR>
+<TD>Toggle windows and shift keys</TD>
+<TD>brailleSpaceBar+dot4+dot7+dot8</TD>
+</TR>
+<TR>
+<TD>Toggle NVDA and shift keys</TD>
+<TD>brailleSpaceBar+dot5+dot7+dot8</TD>
+</TR>
+<TR>
+<TD>Toggle control and alt keys</TD>
+<TD>brailleSpaceBar+dot3+dot6+dot8</TD>
+</TR>
+<TR>
+<TD>Toggle control, alt, and shift keys</TD>
+<TD>brailleSpaceBar+dot3+dot6+dot7+dot8</TD>
 </TR>
 <TR>
 <TD>windows+d key (minimize all applications)</TD>
@@ -4997,7 +5095,7 @@ Ek olarak aşağıdaki aygıtlar da desteklenir (ve herhangi bir özel sürücü
 Aşağıda Brailliant BI/B ve BrailleNote touch braille ekranları NVDA ile hangi tuşlarla kullanabileceğinizi bulabilirsiniz.
 Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 </P>
-<A NAME="toc138"></A>
+<A NAME="toc139"></A>
 <H4>15.9.1. Tüm modeller için tuş atamaları</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5086,7 +5184,7 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 </TR>
 </TABLE>
 
-<A NAME="toc139"></A>
+<A NAME="toc140"></A>
 <H4>15.9.2. Brailliant BI 32, BI 40 ve  B 80 için Tuş atamaları</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5107,7 +5205,7 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 </TR>
 </TABLE>
 
-<A NAME="toc140"></A>
+<A NAME="toc141"></A>
 <H4>15.9.3. Brailliant BI 14 için Tuş atamaları</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5401,15 +5499,28 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 <A NAME="Seika"></A>
 <H3>15.11. Seika Braille Displays</H3>
 <P>
-<A HREF="https://www.nippontelesoft.com/">Nippon Telesoft</A> tarafından üretilen Seika sürüm 3, 4 ve 5 (40 hücreli) ve Seika80 (80 hücreli) braille ekranlar desteklenmektedir.
- <A HREF="https://en.seika-braille.com/down/index.html">https://en.seika-braille.com/down/index.html</A> adresinde bu ekranlar hakkında daha fazla bilgi bulabilirsiniz.
-Önce üretici tarafından sağlanan USB sürücülerini kurmalısınız.
+Nippon Telesoft'un aşağıdaki Seika Braille ekranları, farklı işlevlere sahip iki grupta desteklenir:
 </P>
+<UL>
+<LI><A HREF="#SeikaBrailleDisplays">Seika Version 3, 4, and 5 (40 cells), Seika80 (80 cells)</A>
+<LI><A HREF="#SeikaNotetaker">MiniSeika (16, 24 cells), V6, and V6Pro (40 cells)</A>
+</UL>
+
 <P>
-Bu ekranlar henüz NVDA'nın otomatik arka plan braille görüntü algılama işlevini desteklememektedir.
+Ekranlar hakkında daha fazla bilgiyi şurada bulabilirsiniz: <A HREF="https://en.seika-braille.com/down/index.html">https://en.seika-braille.com/down/index.html</A>.
 </P>
+<A NAME="SeikaBrailleDisplays"></A>
+<H4>15.11.1. Seika Versiyon 3, 4 ve 5 (40 hücre), Seika80 (80 hücre)</H4>
+<UL>
+<LI>Bu ekranlar henüz NVDA'nın otomatik arka plan braille ekran algılama işlevini desteklememektedir.
+<LI>Manuel olarak yapılandırmak için "Seika Braille Ekranları"nı seçin
+<LI>Seika v3/4/5/80'i kullanmadan önce bir aygıt sürücüsü kurulmalıdır.
+<A HREF="https://en.seika-braille.com/down/index.html">üretici tarafından sağlanan</A> sürücüler.
+</UL>
+
+<P></P>
 <P>
-Aşağıda braille ekranı NVDA ile hangi tuşlarla kullanabileceğinizi bulabilirsiniz.
+Seika Braille Ekran tuş atamaları aşağıdaki gibidir.
 Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
@@ -5460,6 +5571,142 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 <TR>
 <TD>Route to braille cell</TD>
 <TD>routing</TD>
+</TR>
+</TABLE>
+
+<A NAME="SeikaNotetaker"></A>
+<H4>15.11.2. MiniSeika (16, 24 hücre), V6 ve V6Pro (40 hücre)</H4>
+<UL>
+<LI>NVDA'nın otomatik arka plan braille ekranı algılama işlevi, USB ve Bluetooth aracılığıyla desteklenir.
+<LI>Yapılandırmak için "Seika Notetaker" veya "auto" öğesini seçin.
+<LI>Seika Notetaker braille ekranı kullanırken ek bir  sürücü gerekmez.
+</UL>
+
+<P></P>
+<P>
+Seika Notetaker tuş atamaları aşağıdaki gibidir.
+Bu tuşların nerede bulunabileceğinin açıklamaları için lütfen ekranın belgelerine bakın.
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Key</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Say all</TD>
+<TD>space+Backspace</TD>
+</TR>
+<TR>
+<TD>NVDA Menu</TD>
+<TD>Left+Right</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>LJ up</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>LJ down</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>LJ center</TD>
+</TR>
+<TR>
+<TD>tab</TD>
+<TD>LJ right</TD>
+</TR>
+<TR>
+<TD>shift+tab</TD>
+<TD>LJ left</TD>
+</TR>
+<TR>
+<TD>upArrow key</TD>
+<TD>RJ up</TD>
+</TR>
+<TR>
+<TD>downArrow key</TD>
+<TD>RJ down</TD>
+</TR>
+<TR>
+<TD>leftArrow key</TD>
+<TD>RJ left</TD>
+</TR>
+<TR>
+<TD>rightArrow key</TD>
+<TD>RJ right</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>shift+upArrow key</TD>
+<TD>Space+RJ up, Backspace+RJ up</TD>
+</TR>
+<TR>
+<TD>shift+downArrow key</TD>
+<TD>Space+RJ down, Backspace+RJ down</TD>
+</TR>
+<TR>
+<TD>shift+leftArrow key</TD>
+<TD>Space+RJ left, Backspace+RJ left</TD>
+</TR>
+<TR>
+<TD>shift+rightArrow key</TD>
+<TD>Space+RJ right, Backspace+RJ right</TD>
+</TR>
+<TR>
+<TD>enter key</TD>
+<TD>RJ center, dot8</TD>
+</TR>
+<TR>
+<TD>escape key</TD>
+<TD>Space+RJ center</TD>
+</TR>
+<TR>
+<TD>windows key</TD>
+<TD>Backspace+RJ center</TD>
+</TR>
+<TR>
+<TD>space key</TD>
+<TD>Space, Backspace</TD>
+</TR>
+<TR>
+<TD>backspace key</TD>
+<TD>dot7</TD>
+</TR>
+<TR>
+<TD>pageup key</TD>
+<TD>space+LJ right</TD>
+</TR>
+<TR>
+<TD>pagedown key</TD>
+<TD>space+LJ left</TD>
+</TR>
+<TR>
+<TD>home key</TD>
+<TD>space+LJ up</TD>
+</TR>
+<TR>
+<TD>end key</TD>
+<TD>space+LJ down</TD>
+</TR>
+<TR>
+<TD>control+home key</TD>
+<TD>backspace+LJ up</TD>
+</TR>
+<TR>
+<TD>control+end key</TD>
+<TD>backspace+LJ down</TD>
 </TR>
 </TABLE>
 
@@ -6911,6 +7158,11 @@ Aşağıdakiler NVDA komut satırı seçenekleridir:
 <TD>-c CONFIGPATH</TD>
 <TD>--config-path=CONFIGPATH</TD>
 <TD>NVDA ile ilgili tüm ayarların kaydedileceği adres</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--lang=LANGUAGE</TD>
+<TD>Yapılandırılmış NVDA dilini geçersiz kılın. Geçerli kullanıcı varsayılanı için "Windows", İngilizce için "en" vb. olarak ayarlayın.</TD>
 </TR>
 <TR>
 <TD>-m</TD>
