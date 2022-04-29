@@ -114,7 +114,7 @@ Note:
 <LI>Added commands for toggling multiple modifiers simultaneously with a Braille display (<A HREF="https://github.com/nvaccess/nvda/issues/13152">#13152</A>)
 <LI>The Speech Dictionary dialog now features a "Remove all" button to help clear a whole dictionary. (<A HREF="https://github.com/nvaccess/nvda/issues/11802">#11802</A>)
 <LI>Added support for Windows 11 Calculator. (<A HREF="https://github.com/nvaccess/nvda/issues/13212">#13212</A>)
-<LI>In Microsoft Word with UI Automation enabled on Windows 11, line numbers, section numbers and layout column numbers can now be reported. (<A HREF="https://github.com/nvaccess/nvda/issues/13283">#13283</A>)
+<LI>In Microsoft Word with UI Automation enabled on Windows 11, line numbers and section numbers can now be reported. (<A HREF="https://github.com/nvaccess/nvda/issues/13283">#13283</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13515">#13515</A>)
 <LI>For Microsoft Office 16.0.15000 and higher on Windows 11, NVDA will use UI Automation to access Microsoft Word documents by default, providing a significant performance improvement over the old Object model access. (<A HREF="https://github.com/nvaccess/nvda/issues/13437">#13437</A>)
  <UL>
  <LI>This includes documents in Microsoft Word itself, and also the message reader and composer in Microsoft Outlook. 
@@ -172,6 +172,8 @@ Note:
 <LI>Adobe Reader no longer crashes on startup if Adobe Reader's protected mode is enabled. (<A HREF="https://github.com/nvaccess/nvda/issues/11568">#11568</A>)
 <LI>Fixed a bug where selecting the Papenmeier Braille Display Driver caused NVDA to crash. (<A HREF="https://github.com/nvaccess/nvda/issues/13348">#13348</A>)
 <LI>In Microsoft word with UIA: page number and other formatting is no longer inappropriately announced when moving from a blank table cell to a cell with content, or from the end of the document into existing content. (<A HREF="https://github.com/nvaccess/nvda/issues/13458">#13458</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13459">#13459</A>)
+<LI>NVDA will no longer fail to report the page title and start automatically reading, when a page loads in Google chrome 100. (<A HREF="https://github.com/nvaccess/nvda/issues/13571">#13571</A>)
+<LI>NVDA no longer crashes when resetting the NVDA configuration to factory defaults while speak command keys is on. (<A HREF="https://github.com/nvaccess/nvda/issues/13634">#13634</A>)
 </UL>
 
 <P></P>
@@ -180,7 +182,7 @@ Note:
 <LI>Note: this is a Add-on API compatibility breaking release. Add-ons will need to be re-tested and have their manifest updated.
 <LI>Although NVDA still requires Visual Studio 2019, Builds should no longer fail if a newer version of Visual Studio (E.g. 2022) is installed along side 2019. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13387">#13387</A>)
 <LI>Updated SCons to version 4.3.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
-<LI>Updated py2exe to version 0.11.0.1. (<A HREF="https://github.com/nvaccess/nvda/issues/12357">#12357</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13066">#13066</A>)
+<LI>Updated py2exe to version 0.11.1.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13510">#13510</A>)
 <LI><CODE>NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable</CODE> has been removed. Use <CODE>apiLevel</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12955">#12955</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12660">#12660</A>)
 <LI><CODE>TVItemStruct</CODE> has been removed from <CODE>sysTreeView32</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12935">#12935</A>)
 <LI><CODE>MessageItem</CODE> has been removed from the Outlook appModule. (<A HREF="https://github.com/nvaccess/nvda/issues/12935">#12935</A>)
@@ -250,27 +252,33 @@ This can dramatically decrease build times on multi core systems. (<A HREF="http
   </UL>
 <LI><CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> has moved to <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
 <LI>Boolean <CODE>gui.isInMessageBox</CODE> is removed, please use the function <CODE>gui.message.isModalMessageBoxActive</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
-<LI><CODE>controlTypes</CODE> has been split up into various submodules. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
+<LI><CODE>controlTypes</CODE> has been split up into various submodules. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13588">#13588</A>)
   <UL>
   <LI><CODE>ROLE_*</CODE> and <CODE>STATE_*</CODE> have been replaced with <CODE>Role.*</CODE> and <CODE>State.*</CODE>.
-  <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> and <CODE>negativeStateLabels</CODE> has been removed.
-  Usages like <CODE>roleLabels[ROLE_*]</CODE> should be replaced to their equivalent <CODE>Role.*.displayString</CODE> or <CODE>State.*.negativeDisplayString</CODE>.
-  <LI><CODE>processPositiveStates</CODE> and <CODE>processNegativeStates</CODE> have been removed.
-  </UL>
-<LI>The <CODE>controlTypes.Role</CODE> and <CODE>controlTypes.State</CODE> enum values are no longer fixed/hardcoded and have changed. (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
-  <UL>
-  <LI>The <CODE>controlTypes.State</CODE> members are no longer bit flags, states should not be determined using bitwise operations.
-  <LI>There are mappings for <CODE>IAccessible</CODE>, <CODE>IAccessible2</CODE> and <CODE>UIA</CODE>:
+  <LI>Although still available, the following should be considered deprecated:
     <UL>
-    <LI><CODE>IAccessibleHandler.IAccessible2StatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleStatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleRolesToNVDARoles</CODE>
-    <LI><CODE>UIAHandler.UIAControlTypesToNVDARoles</CODE>
+    <LI><CODE>ROLE_*</CODE> and <CODE>STATE_*</CODE>, use <CODE>Role.*</CODE> and <CODE>State.*</CODE> instead.
+    <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> and <CODE>negativeStateLabels</CODE>, usages like <CODE>roleLabels[ROLE_*]</CODE> should be replaced with their equivalent <CODE>Role.*.displayString</CODE> or <CODE>State.*.negativeDisplayString</CODE>.
+    <LI><CODE>processPositiveStates</CODE> and <CODE>processNegativeStates</CODE> should use <CODE>processAndLabelStates</CODE> instead.
     </UL>
   </UL>
 <LI>Excel cell state constants (<CODE>NVSTATE_*</CODE>) are now values in the <CODE>NvCellState</CODE> enum, mirrored in the <CODE>NvCellState</CODE> enum in <CODE>NVDAObjects/window/excel.py</CODE> and mapped to <CODE>controlTypes.State</CODE> via _nvCellStatesToStates. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
 <LI><CODE>EXCEL_CELLINFO</CODE> struct member <CODE>state</CODE> is now <CODE>nvCellStates</CODE>.
 <LI><CODE>mathPres.ensureInit</CODE> has been removed, MathPlayer is now initialized when NVDA starts. (<A HREF="https://github.com/nvaccess/nvda/issues/13486">#13486</A>)
+</UL>
+
+<P></P>
+<H2>2021.3.5</H2>
+<P>
+This is a minor release to fix a security issue.
+Please responsibly disclose security issues to <A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>.
+</P>
+<H3>Security Fixes</H3>
+<UL>
+<LI>Addressed security advisory <CODE>GHSA-xc5m-v23f-pgr7</CODE>.
+  <UL>
+  <LI>The symbol pronunciation dialog is now disabled in secure mode.
+  </UL>
 </UL>
 
 <P></P>
@@ -332,18 +340,6 @@ This is a minor release to fix several issues in 2021.3.
 <UL>
 <LI>Landmark is once again abbreviated in braille. <A HREF="https://github.com/nvaccess/nvda/issues/13158">#13158</A>
 <LI>Fixed unstable braille display auto detection for Humanware Brailliant and APH Mantis Q40 braille displays when using Bluetooth. (<A HREF="https://github.com/nvaccess/nvda/issues/13153">#13153</A>)
-</UL>
-
-<P></P>
-<H3>重要新功能摘譯</H3>
-<UL>
-<LI>新增用於切換讀出儲存格框線樣式的輸入手勢。 (<A HREF="https://github.com/nvaccess/nvda/issues/10408">#10408</A>)
-<LI>支援新的 HID 點字規格，用來使點顯器支援標準化。支援此規格的裝置能夠讓 NVDA 自動偵測。
-<LI>使用任何版本的 NVDA 時都可以在進階設定中啟用錯誤通知。(<A HREF="https://github.com/nvaccess/nvda/issues/12672">#12672</A>)
-<LI>在 Windows 10 及更高版本中，當輸入搜尋字詞時，NVDA 將讀出自動建議的數量，如在設定及 Microsoft Store 等應用程式中。(<A HREF="https://github.com/nvaccess/nvda/issues/7330">#7330</A>、<A HREF="https://github.com/nvaccess/nvda/issues/12758">#12758</A>、<A HREF="https://github.com/nvaccess/nvda/issues/12790">#12790</A>)
-<LI>如果安裝的 OneCore 語音語言不支援 NVDA 的偏好語言，則 NVDA 將預設使用 eSpeak。
-<LI>如果 OneCore 語音持續無法使用，合成器將回復為 eSpeak。 (<A HREF="https://github.com/nvaccess/nvda/issues/11544">#11544</A>)
-<LI>當開啟一個已經開啟的設定對話框時，NVDA 會將焦點移到現有對話框上，而不會顯示錯誤。 (<A HREF="https://github.com/nvaccess/nvda/issues/5383">#5383</A>)
 </UL>
 
 <P></P>
@@ -445,20 +441,6 @@ They are still available at the module level but are deprecated and to be remove
 </UL>
 
 <P></P>
-<H2>2021.2 中文摘譯內容</H2>
-<P>
-此版本更新初步支援 Windows 11，雖然 Windows 11 尚未正式發佈，此版本的 NVDA 已在 Windows 11 的預覽版本中經過測試。
-此次更新包含了螢幕簾幕的修正 (參考以下第一點摘譯內容)。現在，COM 註冊修復工具能夠解決更多 NVDA 在執行上所遇到的問題；此外，合成器及點字表也有進行更新；以及一些錯誤的修正與改進。
-</P>
-<H3>新版重點</H3>
-<UL>
-<LI>由於 Windows 放大 API 的變更，螢幕簾幕亦需要更新才能支援最新版的 Windows。使用 NVDA 2021.2 搭配 Windows 10 21H2 (10.0.19044) 或更新版本，當要啟用螢幕簾幕時，為安全起見，請在視覺上確認螢幕簾幕功能有讓整個螢幕變黑。
-<LI>在 Windows 10 版本 1909 及以後 (含 Windows 11)，NVDA 會提示在檔案總管中搜尋檔案時所搜尋到的結果數量。(<A HREF="https://github.com/nvaccess/nvda/issues/10341">#10341</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12628">#12628</A>)
-<LI>在 Microsoft Word 中，當按下縮排或凸排的快速鍵時，NVDA 會讀出執行結果。(<A HREF="https://github.com/nvaccess/nvda/issues/6269">#6269</A>)
-<LI>Windows 10 OCR 被更名為 Windows OCR。(<A HREF="https://github.com/nvaccess/nvda/issues/12690">#12690</A>)
-</UL>
-
-<P></P>
 <H2>2021.2</H2>
 <P>
 This release introduces preliminary Windows 11 support.
@@ -534,52 +516,6 @@ For security purposes, when using a new version of Windows, get visual confirmat
 </UL>
 
 <P></P>
-<H2>2021.1 中文摘譯內容</H2>
-<P>
-此版本包括新增了在 Excel 和 Chromium 瀏覽器中對 UIA 的可選擇性支援，對一些語言和點字的錯誤進行修復，也對 Unicode CLDR 和數學符號、eSpeak-NG 語音和 LibLouis 都有更新。
-此外，也包括許多錯誤修正與改進，包括在 Office、Visual Studio 和一些語言上的支援均有改善。
-</P>
-<P>
-注意：
-</P>
- <UL>
- <LI>此版本可能導致舊的附加元件不相容，在更新附加元件前必須事先測試。
- <LI>此版本放棄了對Adobe Flash的支援。
- </UL>
-
-<P></P>
-<H3>新版重點</H3>
-<UL>
-<LI>初步支援在以 Chromium 為基礎的瀏覽器（如 Edge）中使用 UIA。
-<LI>可選擇的實驗性功能，在微軟 Excel 中使用 UIA。只推薦使用微軟 Excel 16.0.13522.10000 或更高版本的使用者啟用。
-<LI>在 NVDA Python 主控台的輸出窗格更容易瀏覽。
-  <UL>
-  <LI>按 Alt+上/下方向鍵來跳至上/下一個輸出結果；若要選取則加上 Shift。
-  <LI>Ctrl+L 可清除輸出窗格中的內容。
-  </UL>
-<LI>NVDA現在會報讀 Microsoft Outlook中的約會類別，如果有的話。 (<A HREF="https://github.com/nvaccess/nvda/issues/11598">#11598</A>)
-<LI>在瀏覽模式中，可以使用點顯器上的游標定位鍵，在元件描述的地方按下來啟用項目，（如：在表示連結的符號 lnk 上按定位鍵來啟用連結），這很適合用在沒有標籤文字的核取方塊。 (<A HREF="https://github.com/nvaccess/nvda/issues/7447">#7447</A>)
-<LI>如果啟用了螢幕簾幕，NVDA 會防止使用者執行Windows 10 光學字元辨識。 (<A HREF="https://github.com/nvaccess/nvda/issues/11911">#11911</A>)
-<LI>更新 Unicode 常用表情符號資料庫（CLDR）至39.0。 (<A HREF="https://github.com/nvaccess/nvda/issues/11943">#11943</A>)
-<LI>在標點符號讀音字庫中新增了更多數學符號。 (<A HREF="https://github.com/nvaccess/nvda/issues/11467">#11467</A>)
-<LI>用戶指南、新版資訊和指令快速參考表有了新的外觀。(<A HREF="https://github.com/nvaccess/nvda/issues/12027">#12027</A>)
-<LI>當試圖在不支援螢幕實際配置的應用程式（如微軟 Word）中切換螢幕實際配置時，現在將報讀「不支援」。 (<A HREF="https://github.com/nvaccess/nvda/issues/7297">#7297</A>)
-<LI>進階設定中的「嘗試將已過期焦點事件的語音取消」選項現在預設啟用。 (<A HREF="https://github.com/nvaccess/nvda/issues/10885">#10885</A>)
-  <UL>
-  <LI>若要停用該設定可將它取消勾選。
-  <LI>當在網頁應用程式（如Gmail）中快速移動焦點時，將不再報讀焦點已過期的資訊。
-  </UL>
-<LI>更新 liblouis 點字轉譯對照表至版本3.17.0。 (<A HREF="https://github.com/nvaccess/nvda/issues/12137">#12137</A>)
-  <UL>
-  <LI>新增點字表。白俄羅斯文點字，白俄羅斯文電腦點字，烏爾都文1級點字，烏爾都文二級點字。
-  </UL>
-<LI>由於 Adobe 目前已不再建議使用 Flash，NVDA 取消了對 Adobe Flash 內容的支援。 (<A HREF="https://github.com/nvaccess/nvda/issues/11131">#11131</A>)
-<LI>NVDA 即使在視窗開啟的情況下也會結束，結束過程現在會關閉所有NVDA視窗和對話框。 (<A HREF="https://github.com/nvaccess/nvda/issues/1740">#1740</A>)
-<LI>報讀內容檢視器現在可以用 Alt+F4 來關閉，並同時在畫面上有一個標準的「關閉」按鈕，以方便使用滑鼠點擊。 (<A HREF="https://github.com/nvaccess/nvda/issues/12330">#12330</A>)
-<LI>點字檢視器現在可以用 Alt+F4 來關閉，並同時在畫面上有一個標準的「關閉」按鈕，以方便使用滑鼠點擊。 (<A HREF="https://github.com/nvaccess/nvda/issues/12328">#12328</A>)
-<LI>在元件清單對話框中，「啟用」按鈕上的便捷鍵在某些地方已被移除，以避免與單選鈕元件類型的便捷鍵發生衝突。當可用時，該啟動按鈕仍然是對話框的預設值，因此仍然可以簡單地在元件清單中按下 Enter 來啟用。 (<A HREF="https://github.com/nvaccess/nvda/issues/6167">#6167</A>)
-</UL>
-
 <H2>2021.1</H2>
 <P>
 This release includes optional experimental support for UIA in Excel and Chromium browsers.
@@ -883,7 +819,8 @@ Plus many other important bug fixes and improvements.
 
 <H2>2020.3</H2>
 <P>
-此版本大幅改進了對於微軟 Office 應用程式的操作穩定性及效能。除了增加切換觸控互動支援與圖片報讀的選項外，在瀏覽器中也可報讀標記或強調文字。並新增了德文點字表。
+This release includes several large improvements to stability and performance particularly in Microsoft Office applications. There are new settings to toggle touchscreen support and graphics reporting.
+The existence of marked (highlighted) content can be reported in browsers, and there are new German braille tables.
 </P>
 <H3>New Features</H3>
 <UL>
