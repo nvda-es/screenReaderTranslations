@@ -109,16 +109,15 @@ eSpeak-NG ve LibLouis'in güncellenmesi ile Japonca, Almanca ve Katalanca Braill
 <LI>Adobe Reader'ın koruma modu etkinken başlangıçta çökme sorunu düzeltildi. (<A HREF="https://github.com/nvaccess/nvda/issues/11568">#11568</A>)
 <LI>Papenmeier Braille Ekran Sürücüsünün seçilmesinin NVDA'nın çökmesine neden olduğu bir hata düzeltildi. (<A HREF="https://github.com/nvaccess/nvda/issues/13348">#13348</A>)
 <LI>UIA ile Microsoft word'de: boş bir tablo hücresinden içerikli bir hücreye veya belgenin sonundan mevcut içeriğe geçerken sayfa numarası ve diğer biçimlendirme öğeleri beklenmedik zamanlarda bildirilmiyor. (<A HREF="https://github.com/nvaccess/nvda/issues/13458">#13458</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13459">#13459</A>)
+<LI>Artık NVDA, Google chrome 100'de bir sayfa yüklendiğinde sayfa başlığını doğru şekilde bildirecek ve otomatik olarak okumaya başlamayacaktır. (<A HREF="https://github.com/nvaccess/nvda/issues/13571">#13571</A>)
+<LI>Komut tuşlarını seslendir ayarı açıkken NVDA Konfigürasyonu fabrika ayarlarına döndürüldüğünde NVDA artık çökmüyor. (<A HREF="https://github.com/nvaccess/nvda/issues/13634">#13634</A>)
 </UL>
 
 <P></P>
 <H3>Geliştiriciler için Değişiklikler</H3>
 <UL>
 <LI>Note: this is a Add-on API compatibility breaking release. Add-ons will need to be re-tested and have their manifest updated.
- <UL>
- <LI>Although NVDA still requires Visual Studio 2019, Builds should no longer fail if a newer version of Visual Studio (E.g. 2022) is installed along side 2019. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13387">#13387</A>)
- </UL>
-<LI>Compiling NVDA dependencies with Visual Studio 2022 (17.0) is now supported. For development and release builds, Visual Studio 2019 is still used. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
+<LI>Although NVDA still requires Visual Studio 2019, Builds should no longer fail if a newer version of Visual Studio (E.g. 2022) is installed along side 2019. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13387">#13387</A>)
 <LI>Updated SCons to version 4.3.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
 <LI>Updated py2exe to version 0.11.1.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13510">#13510</A>)
 <LI><CODE>NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable</CODE> has been removed. Use <CODE>apiLevel</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12955">#12955</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12660">#12660</A>)
@@ -172,8 +171,8 @@ This ensures code will honor the Windows user setting for swapping the primary m
 <LI><CODE>LOCALE_SLANGUAGE</CODE>, <CODE>LOCALE_SLIST</CODE> and <CODE>LOCALE_SLANGDISPLAYNAME</CODE> are removed from <CODE>languageHandler</CODE> - use members of <CODE>languageHandler.LOCALE</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12753">#12753</A>)
 <LI>Switched from Minhook to Microsoft Detours as a hooking library for NVDA. Hooking with this library is mainly used to aid the display model. (<A HREF="https://github.com/nvaccess/nvda/issues/12964">#12964</A>)
 <LI><CODE>winVersion.WIN10_RELEASE_NAME_TO_BUILDS</CODE> is removed. (<A HREF="https://github.com/nvaccess/nvda/issues/13211">#13211</A>)
-<LI>SCons now builds with multiple concurrent jobs, equal to the number of logical processors in the system.
-This can dramatically decrease build times on multi core systems. (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>)
+<LI>SCons now warns to build with a number of jobs that is equal to the number of logical processors in the system.
+This can dramatically decrease build times on multi core systems. (<A HREF="https://github.com/nvaccess/nvda/issues/13226">#13226</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13371">#13371</A>)
 <LI><CODE>characterProcessing.SYMLVL_*</CODE> constants are removed - please use <CODE>characterProcessing.SymbolLevel.*</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/13248">#13248</A>)
 <LI>Functions <CODE>loadState</CODE> and <CODE>saveState</CODE> are removed from addonHandler - please use <CODE>addonHandler.state.load</CODE> and <CODE>addonHandler.state.save</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/13245">#13245</A>)
 <LI>Moved the UWP/OneCore interaction layer of NVDAHelper <A HREF="https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx">from C++/CX to C++/Winrt</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/10662">#10662</A>)
@@ -188,6 +187,21 @@ This can dramatically decrease build times on multi core systems. (<A HREF="http
   <UL>
   <LI><CODE>cachedAutomationId</CODE> can be used if obtained directly from the element.
   </UL>
+<LI><CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> has moved to <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
+<LI>Boolean <CODE>gui.isInMessageBox</CODE> is removed, please use the function <CODE>gui.message.isModalMessageBoxActive</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
+<LI><CODE>controlTypes</CODE> has been split up into various submodules. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13588">#13588</A>)
+  <UL>
+  <LI><CODE>ROLE_*</CODE> and <CODE>STATE_*</CODE> have been replaced with <CODE>Role.*</CODE> and <CODE>State.*</CODE>.
+  <LI>Although still available, the following should be considered deprecated:
+    <UL>
+    <LI><CODE>ROLE_*</CODE> and <CODE>STATE_*</CODE>, use <CODE>Role.*</CODE> and <CODE>State.*</CODE> instead.
+    <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> and <CODE>negativeStateLabels</CODE>, usages like <CODE>roleLabels[ROLE_*]</CODE> should be replaced with their equivalent <CODE>Role.*.displayString</CODE> or <CODE>State.*.negativeDisplayString</CODE>.
+    <LI><CODE>processPositiveStates</CODE> and <CODE>processNegativeStates</CODE> should use <CODE>processAndLabelStates</CODE> instead.
+    </UL>
+  </UL>
+<LI>Excel cell state constants (<CODE>NVSTATE_*</CODE>) are now values in the <CODE>NvCellState</CODE> enum, mirrored in the <CODE>NvCellState</CODE> enum in <CODE>NVDAObjects/window/excel.py</CODE> and mapped to <CODE>controlTypes.State</CODE> via _nvCellStatesToStates. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
+<LI><CODE>EXCEL_CELLINFO</CODE> struct member <CODE>state</CODE> is now <CODE>nvCellStates</CODE>.
+<LI><CODE>mathPres.ensureInit</CODE> has been removed, MathPlayer is now initialized when NVDA starts. (<A HREF="https://github.com/nvaccess/nvda/issues/13486">#13486</A>)
 </UL>
 
 <P></P>
