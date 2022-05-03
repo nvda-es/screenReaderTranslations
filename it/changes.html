@@ -109,6 +109,8 @@ Nota:
 <LI>Adobe Reader non si arresta più in modo anomalo all'avvio se la modalità protetta di Adobe Reader è abilitata. (<A HREF="https://github.com/nvaccess/nvda/issues/11568">#11568</A>)
 <LI>Risolto un bug per cui la selezione del driver del Display Braille Papenmeier causava l'arresto anomalo di NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13348">#13348</A>)
 <LI>In Microsoft Word con UIA: il numero di pagina e altre informazioni di formattazione non vengono più annunciate in modo inappropriato quando si passa da una cella vuota di una tabella a una cella con contenuto o dalla fine del documento al contenuto esistente. (<A HREF="https://github.com/nvaccess/nvda/issues/13458">#13458</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13459">#13459</A>)
+<LI>NVDA non avrà più difficoltà nel riportare il titolo della pagina e ne inizierà automaticamente la lettura dopo il caricamento  n Google chrome 100. (<A HREF="https://github.com/nvaccess/nvda/issues/13571">#13571</A>)
+<LI>NVDA non andrà più in crash quando si ripristina la configurazione ai valori di fabbrica con l'opzione leggi i tasti di comando attiva. (<A HREF="https://github.com/nvaccess/nvda/issues/13634">#13634</A>)
 </UL>
 
 <P></P>
@@ -117,7 +119,7 @@ Nota:
 <LI>Note: this is a Add-on API compatibility breaking release. Add-ons will need to be re-tested and have their manifest updated.
 <LI>Although NVDA still requires Visual Studio 2019, Builds should no longer fail if a newer version of Visual Studio (E.g. 2022) is installed along side 2019. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13387">#13387</A>)
 <LI>Updated SCons to version 4.3.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
-<LI>Updated py2exe to version 0.11.1.0. (<A HREF="https://github.com/nvaccess/nvda/issues/12357">#12357</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13066">#13066</A>)
+<LI>Updated py2exe to version 0.11.1.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13510">#13510</A>)
 <LI><CODE>NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable</CODE> has been removed. Use <CODE>apiLevel</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12955">#12955</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12660">#12660</A>)
 <LI><CODE>TVItemStruct</CODE> has been removed from <CODE>sysTreeView32</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12935">#12935</A>)
 <LI><CODE>MessageItem</CODE> has been removed from the Outlook appModule. (<A HREF="https://github.com/nvaccess/nvda/issues/12935">#12935</A>)
@@ -187,22 +189,14 @@ This can dramatically decrease build times on multi core systems. (<A HREF="http
   </UL>
 <LI><CODE>NVDAObjects.window.scintilla.CharacterRangeStruct</CODE> has moved to <CODE>NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13364">#13364</A>)
 <LI>Boolean <CODE>gui.isInMessageBox</CODE> is removed, please use the function <CODE>gui.message.isModalMessageBoxActive</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/12984">#12984</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13376">#13376</A>)
-<LI><CODE>controlTypes</CODE> has been split up into various submodules. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>)
+<LI><CODE>controlTypes</CODE> has been split up into various submodules. (<A HREF="https://github.com/nvaccess/nvda/issues/12510">#12510</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13588">#13588</A>)
   <UL>
   <LI><CODE>ROLE_*</CODE> and <CODE>STATE_*</CODE> have been replaced with <CODE>Role.*</CODE> and <CODE>State.*</CODE>.
-  <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> and <CODE>negativeStateLabels</CODE> has been removed.
-  Usages like <CODE>roleLabels[ROLE_*]</CODE> should be replaced to their equivalent <CODE>Role.*.displayString</CODE> or <CODE>State.*.negativeDisplayString</CODE>.
-  <LI><CODE>processPositiveStates</CODE> and <CODE>processNegativeStates</CODE> have been removed.
-  </UL>
-<LI>The <CODE>controlTypes.Role</CODE> and <CODE>controlTypes.State</CODE> enum values are no longer fixed/hardcoded and have changed. (<A HREF="https://github.com/nvaccess/nvda/issues/13414">#13414</A>)
-  <UL>
-  <LI>The <CODE>controlTypes.State</CODE> members are no longer bit flags, states should not be determined using bitwise operations.
-  <LI>There are mappings for <CODE>IAccessible</CODE>, <CODE>IAccessible2</CODE> and <CODE>UIA</CODE>:
+  <LI>Although still available, the following should be considered deprecated:
     <UL>
-    <LI><CODE>IAccessibleHandler.IAccessible2StatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleStatesToNVDAStates</CODE>
-    <LI><CODE>IAccessibleHandler.IAccessibleRolesToNVDARoles</CODE>
-    <LI><CODE>UIAHandler.UIAControlTypesToNVDARoles</CODE>
+    <LI><CODE>ROLE_*</CODE> and <CODE>STATE_*</CODE>, use <CODE>Role.*</CODE> and <CODE>State.*</CODE> instead.
+    <LI><CODE>roleLabels</CODE>, <CODE>stateLabels</CODE> and <CODE>negativeStateLabels</CODE>, usages like <CODE>roleLabels[ROLE_*]</CODE> should be replaced with their equivalent <CODE>Role.*.displayString</CODE> or <CODE>State.*.negativeDisplayString</CODE>.
+    <LI><CODE>processPositiveStates</CODE> and <CODE>processNegativeStates</CODE> should use <CODE>processAndLabelStates</CODE> instead.
     </UL>
   </UL>
 <LI>Excel cell state constants (<CODE>NVSTATE_*</CODE>) are now values in the <CODE>NvCellState</CODE> enum, mirrored in the <CODE>NvCellState</CODE> enum in <CODE>NVDAObjects/window/excel.py</CODE> and mapped to <CODE>controlTypes.State</CODE> via _nvCellStatesToStates. (<A HREF="https://github.com/nvaccess/nvda/issues/13465">#13465</A>)
