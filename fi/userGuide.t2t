@@ -27,7 +27,7 @@ Tärkeimpiä ominaisuuksia ovat:
 - Helppokäyttöinen puhuva asennusohjelma
 - Käännökset 54 kielelle
 - Tuki moderneille Windows-käyttöjärjestelmille, sekä 32- että 64-bittiset versiot mukaan lukien
-- Mahdollisuus käyttää Windowsin sisäänkirjautumisen aikana sekä suojatuissa ruuduissa
+- Mahdollisuus käyttää Windowsin sisäänkirjautumisen aikana sekä [muissa suojatuissa ruuduissa #SecureScreens].
 - Säätimien ja tekstin puhuminen kosketuseleitä käytettäessä
 - Tuki yleisille esteettömyysrajapinnoille, kuten Microsoft Active Accessibility, Java Access Bridge, IAccessible2 sekä UI Automation
 - Tuki Windowsin komentokehotteelle ja konsolisovelluksille
@@ -81,7 +81,7 @@ Ladatun tiedoston suorittaminen käynnistää NVDA:n tilapäisversion.
 Seuraavaksi kysytään, halutaanko se asentaa, luoda massamuistiversio tai jatkaa tilapäisversion käyttämistä.
 
 Kannattaa valita asennusvaihtoehto, jos NVDA:ta aiotaan käyttää aina samalla tietokoneella.
-Asentaminen mahdollistaa sellaiset lisätoiminnot kuin automaattinen käynnistys sisäänkirjautumisen jälkeen, Windowsin kirjautumisikkunan ja suojattujen ruutujen lukeminen (tämä ei ole mahdollista massamuisti- tai tilapäisversioissa) sekä pikakuvakkeen luomisen Käynnistä-valikkoon ja työpöydälle.
+Asentaminen mahdollistaa sellaiset lisätoiminnot kuin automaattinen käynnistys sisäänkirjautumisen jälkeen, Windowsin kirjautumisikkunan ja [suojattujen ruutujen #SecureScreens] lukeminen (tämä ei ole mahdollista massamuisti- tai tilapäisversioissa) sekä pikakuvakkeen luomisen Käynnistä-valikkoon ja työpöydälle.
 Asennetusta versiosta on mahdollista tehdä milloin tahansa myös massamuistiversio.
 
 Massamuistiversion luominen kannattaa valita, jos NVDA halutaan mukana kuljetettavaksi USB-muistitikulle tai muulle kirjoitettavalle tietovälineelle.
@@ -118,7 +118,7 @@ Lisätietoja tästä painikkeesta on [Yhteensopimattomien lisäosien valintaikku
 
 +++ Käytä sisäänkirjautumisen aikana +++[StartAtWindowsLogon]
 Tällä asetuksella voit valita, käynnistyykö NVDA automaattisesti Windowsin kirjautumisikkunassa ennen kuin olet syöttänyt salasanan.
-Asetus vaikuttaa myös käyttäjätilien valvontaan sekä muihin suojattuihin ruutuihin.
+Asetus vaikuttaa myös käyttäjätilien valvontaan sekä [muihin suojattuihin ruutuihin #SecureScreens].
 Se on oletusarvoisesti käytössä uusissa asennuksissa.
 
 +++ Luo pikakuvake työpöydälle (Ctrl+Alt+N) +++[CreateDesktopShortcut]
@@ -127,7 +127,7 @@ Jos kuvake luodaan, siihen liitetään myös pikanäppäin Ctrl+Alt+N, jolla NVD
 
 +++ Kopioi massamuistiversion asetukset nykyiseen käyttäjätiliin +++[CopyPortableConfigurationToCurrentUserAccount]
 Tällä asetuksella voit valita, kopioidaanko käynnissä olevan NVDA:n asetukset asennettuun versioon nykyiselle kirjautuneelle käyttäjälle. 
-Asetuksia ei kopioida tietokoneen muille käyttäjille eikä Windowsin sisäänkirjautumisen aikana ja suojatuissa ruuduissa käytettäväksi.
+Asetuksia ei kopioida tietokoneen muille käyttäjille eikä Windowsin sisäänkirjautumisen aikana tai [muissa suojatuissa ruuduissa #SecureScreens] käytettäväksi.
 Tämä vaihtoehto on käytettävissä vain massamuistiversiosta asennettaessa.
  
 ++ Massamuistiversion luominen ++[CreatingAPortableCopy]
@@ -342,6 +342,10 @@ Taulukoissa ovat käytettävissä lisäksi seuraavat näppäinkomennot:
 | Siirrä seuraavaan sarakkeeseen | Ctrl+Alt+Nuoli oikealle | Siirtää järjestelmäkohdistimen seuraavaan sarakkeeseen pysyen samalla rivillä. |
 | Siirrä edelliselle riville | Ctrl+Alt+Nuoli ylös | Siirtää järjestelmäkohdistimen edelliselle riville pysyen samassa sarakkeessa. |
 | Siirrä seuraavalle riville | Ctrl+Alt+Nuoli alas | Siirtää järjestelmäkohdistimen seuraavalle riville pysyen samassa sarakkeessa. |
+| Siirrä ensimmäiseen sarakkeeseen | Ctrl+Alt+Home | Siirtää järjestelmäkohdistimen ensimmäiseen sarakkeeseen pysyen samalla rivillä. |
+| Siirrä viimeiseen sarakkeeseen | Ctrl+Alt+End | Siirtää järjestelmäkohdistimen viimeiseen sarakkeeseen pysyen samalla rivillä. |
+| Siirrä ensimmäiselle riville | Ctrl+Alt+Page up | Siirtää järjestelmäkohdistimen ensimmäiselle riville pysyen samassa sarakkeessa. |
+| Siirrä viimeiselle riville | Ctrl+Alt+Page down | Siirtää järjestelmäkohdistimen viimeiselle riville pysyen samassa sarakkeessa. |
 %kc:endInclude
 
 ++ Objektinavigointi ++[ObjectNavigation]
@@ -617,8 +621,11 @@ NVDA tukee seuraavia matemaattisia sisältöjä:
 - MathML Mozilla Firefoxissa, Internet Explorerissa ja Google Chromessa.
 - Microsoft Word 365:n uudet matemaattiset yhtälöt UI Automationin välityksellä:
 NVDA pystyy lukemaan ja olemaan vuorovaikutuksessa matemaattisten yhtälöiden kanssa Microsoft Word 365:n/2016:n koontikäännösversiossa 14326 ja uudemmissa.
-Huomaa kuitenkin, että kaikki aiemmin luodut MathType-yhtälöt on ensin muunnettava Office Mathiksi valitsemalla ne ja valitsemalla sitten pikavalikosta Yhtälön asetukset -> Muunna Office Mathiksi. Varmista ennen tämän tekemistä, että käytössäsi on viimeisin MathType-versio.
-Microsoft Word tarjoaa nyt myös lineaarisen, symbolipohjaisen yhtälöissä liikkumisen, ja tukee matemaattisten merkkien syöttämistä useita syntakseja käyttäen, LateX mukaan lukien. Katso lisätietoja artikkelista [Lineaarisen muodon kaavat UnicodeMathin ja LaTeXin avulla Wordissa. https://support.microsoft.com/fi-fi/office/lineaarisen-muodon-kaavat-unicodemathin-ja-latexin-avulla-wordissa-2e00618d-b1fd-49d8-8cb4-8d17f25754f8]
+Huomaa kuitenkin, että kaikki aiemmin luodut MathType-yhtälöt on ensin muunnettava Office Mathiksi.
+Tämä tehdään valitsemalla muunnettavat yhtälöt ja valitsemalla sitten pikavalikosta Yhtälön asetukset -> Muunna Office Mathiksi.
+Varmista ennen muunnoksen suorittamista, että käytössäsi on viimeisin MathType-versio.
+Microsoft Word tarjoaa nyt myös lineaarisen, symbolipohjaisen yhtälöissä liikkumisen, ja tukee matemaattisten merkkien syöttämistä useita syntakseja käyttäen, LateX mukaan lukien.
+Katso lisätietoja artikkelista [Lineaarisen muodon kaavat UnicodeMathin ja LaTeXin avulla Wordissa https://support.microsoft.com/fi-fi/office/lineaarisen-muodon-kaavat-unicodemathin-ja-latexin-avulla-wordissa-2e00618d-b1fd-49d8-8cb4-8d17f25754f8].
 - Microsoft Powerpoint ja vanhemmat Microsoft Wordin versiot:
 NVDA voi lukea MathType-yhtälöitä ja liikkua niissä sekä Microsoft Powerpointissa että Microsoft Wordissa.
 MathTypen on oltava asennettuna.
@@ -704,6 +711,7 @@ Jotta pistenäytölle mahtuisi mahdollisimman paljon tietoa, seuraavat lyhenteet
 | vkokhde | valikkokohde |
 | pnl | paneeli |
 | edplk | edistymispalkki |
+| vrtilm | varattu-ilmaisin |
 | vpnk | valintapainike |
 | vrtsplk | vierityspalkki |
 | osa | osa |
@@ -784,7 +792,8 @@ Voit muuttaa niitä tai lisätä uusia jäljiteltyjä näppäimiä [Syötekomenn
 
 Vaikka tämä lähestymistapa on hyödyllinen usein painetuille tai yksilöllisille näppäimille (kuten Sarkain), et ehkä halua määrittää yksilöllistä näppäinsarjaa kullekin pikanäppäimelle.
 NVDA tarjoaa komennot Ctrl-, Alt-, Vaihto-, Win- ja NVDA-näppäinten tilan vaihtamiseen sekä komennot joillekin näiden näppäinten yhdistelmille, mikä mahdollistaa sellaisten näppäinpainallusten jäljittelyn, joissa muuntonäppäimiä pidetään alhaalla.
-Käytä näitä tilanvaihtokomentoja painamalla ensin haluamiesi muuntonäppäinten komentoa (tai komentosarjaa), ja syötä sitten merkki, joka on osa pikanäppäintä, jonka haluat suorittaa.
+Käytä näitä tilanvaihtokomentoja painamalla ensin haluamiesi muuntonäppäinten komentoa (tai komentosarjaa).
+Syötä sitten merkki, joka on osa pikanäppäintä, jonka haluat suorittaa.
 Tuota esim. Ctrl+F-pikanäppäin käyttämällä "Vaihda Ctrl-näppäimen tilaa" -komentoa ja kirjoittamalla F,
 ja syötä Ctrl+Alt+T käyttäen joko "Vaihda Ctrl-näppäimen tilaa"- ja "Vaihda Alt-näppäimen tilaa" -komentoja kummassa tahansa järjestyksessä tai "Vaihda Ctrl- ja Alt-näppäinten tilaa" -komentoa ja kirjoittamalla T.
 
@@ -1125,7 +1134,7 @@ Jos kirjaudut Windowsiin käyttäjänimellä ja salasanalla, tämä asetus saa N
 Asetus on käytettävissä vain NVDA:n asennetuissa versioissa.
 
 ==== Käytä tallennettuja asetuksia sisäänkirjautumisen aikana ja suojatuissa ruuduissa (edellyttää järjestelmänvalvojan oikeuksia) ====[GeneralSettingsCopySettings]
-Tämän painikkeen painaminen kopioi nykyiset tallennetut asetukset NVDA:n järjestelmäasetusten hakemistoon, jotta niitä käytetään sisäänkirjautumisen aikana ja käyttäjätilien valvonnan sekä muissa suojatuissa ruuduissa.
+Tämän painikkeen painaminen kopioi nykyiset tallennetut asetukset NVDA:n järjestelmäasetusten hakemistoon, jotta niitä käytetään sisäänkirjautumisen aikana ja käyttäjätilien valvonnassa sekä muissa [suojatuissa ruuduissa #SecureScreens].
 Voit varmistaa asetusten siirtämisen tallentamalla ne ensin painamalla Ctrl+NVDA+C tai valitsemalla NVDA-valikosta Tallenna asetukset.
 Tämä painike on käytettävissä vain NVDA:n asennetuissa versioissa.
 
@@ -1709,8 +1718,12 @@ Tämä asettaa rivimäärän, joka selaustilassa siirrytään painettaessa Page 
 ==== Käytä ruutuasettelua ====[BrowseModeSettingsScreenLayout]
 Pikanäppäin: NVDA+V
 
-Tällä asetuksella voidaan määrittää, sijoitetaanko napsautettava sisältö (linkit, painikkeet ja kentät) selaustilassa omille riveilleen vai säilytetäänkö ne sellaisina kuin ne ruudulla näytetään. Huomaa, että tämä asetus ei koske Microsoft Office -sovelluksia kuten Outlookia tai Wordia, joissa käytetään aina ruutuasettelua.
-Kun ruutuasettelu on käytössä, sivun elementit pysyvät sellaisina kuin ne visuaalisesti näytetään. Esimerkiksi useita linkkejä sisältävä visuaalinen rivi puhutaan ja näytetään pistenäytöllä samalla rivillä olevina useina linkkeinä. Jos asetus ei ole käytössä, sivun elementit sijoitetaan omille riveilleen, mitä voi olla helpompi ymmärtää sivua riveittäin selattaessa, ja vuorovaikutus kohteiden kanssa saattaa olla joillekin käyttäjille helpompaa.
+Tällä asetuksella voidaan määrittää, sijoitetaanko napsautettava sisältö (linkit, painikkeet ja kentät) selaustilassa omille riveilleen vai säilytetäänkö ne sellaisina kuin ne ruudulla näytetään.
+Huomaa, että tämä asetus ei koske Microsoft Office -sovelluksia kuten Outlookia tai Wordia, joissa käytetään aina ruutuasettelua.
+Kun ruutuasettelu on käytössä, sivun elementit pysyvät sellaisina kuin ne visuaalisesti näytetään.
+Esimerkiksi useita linkkejä sisältävä visuaalinen rivi puhutaan ja näytetään pistenäytöllä samalla rivillä olevina useina linkkeinä.
+Jos asetus ei ole käytössä, sivun elementit sijoitetaan omille riveilleen.
+Lisäksi sitä voi olla helpompi ymmärtää sivua riveittäin selattaessa, ja vuorovaikutus kohteiden kanssa saattaa olla joillekin käyttäjille helpompaa.
 
 ==== Ota selaustila käyttöön sivua ladattaessa ====[BrowseModeSettingsEnableOnPageLoad]
 Tällä valintaruudulla voidaan määrittää, otetaanko selaustila käyttöön automaattisesti sivua ladattaessa.
@@ -3310,6 +3323,34 @@ Seuraavassa ovat näiden näyttöjen näppäinkomennot NVDA:ta käytettäessä.
  
 + Edistyneet aiheet +[AdvancedTopics]
 
+++ Suojattu tila ++[SecureMode]
+NVDA voidaan käynnistää suojatussa tilassa ``-s``-[komentorivivalitsimella #CommandLineOptions].
+NVDA on käynnissä suojatussa tilassa, kun se suoritetaan [suojatuissa ruuduissa #SecureScreens], ellei [järjestelmänlaajuista parametria #SystemWideParameters] ``serviceDebug`` ole otettu käyttöön.
+
+Suojattu tila poistaa käytöstä:
+
+- NVDA:n omien ja muiden asetusten tallentamisen levylle
+- Syötekomentokartan tallentamisen levylle
+- [Asetusprofiilien #ConfigurationProfiles] ominaisuudet, kuten luonnin, poiston, profiilin uudelleennimeämisen jne.
+- NVDA:n päivittämisen ja massamuistiversion luonnin
+- [Python-konsolin #PythonConsole]
+- [Lokintarkastelun #LogViewer] ja lokiin tallentamisen
+-
+
+++ Suojatut ruudut ++[SecureScreens]
+NVDA on käynnissä [suojatussa tilassa #SecureMode], kun se suoritetaan suojatuissa ruuduissa, ellei [järjestelmänlaajuista parametria #SystemWideParameters] ``serviceDebug`` ole otettu käyttöön.
+
+NVDA käyttää järjestelmäprofiilia asetuksia varten ollessaan käynnissä suojatussa ruudussa.
+NVDA:n käyttäjäasetukset voidaan kopioida [suojatuissa ruuduissa käytettäväksi #GeneralSettingsCopySettings].
+
+Suojattuja ruutuja ovat:
+
+- Windowsin kirjautumisruutu
+- Käyttäjätilien valvonnan valintaikkuna, (aktiivinen suoritettaessa toimintoa järjestelmänvalvojana)
+  - Tämä sisältää ohjelmien asentamisen
+  -
+-
+
 ++ Komentorivivalitsimet ++[CommandLineOptions]
 NVDA hyväksyy käynnistyessään yhden tai useamman toimintaansa vaikuttavan komentorivivalitsimen.
 Voit käyttää kerralla niin monta valitsinta kuin tarvitset.
@@ -3343,7 +3384,7 @@ Seuraavassa on luettelo NVDA:n komentorivivalitsimista:
 | -c ASETUSPOLKU | --config-path=ASETUSPOLKU | Hakemistopolku, johon kaikki NVDA:n asetukset tallennetaan. |
 | Ei mitään | --lang=KIELI | Ohita NVDA:n asetuksissa määritetty kieli. Määritä kieleksi "Windows" käyttääksesi nykyistä käyttäjän oletusarvoa, "en" englantia jne. |
 | -m | --minimal | Ei ääniä, käyttöliittymää tai käynnistysilmoitusta jne. |
-| -s | --secure | Suojattu tila: poistaa käytöstä Python-konsolin, profiilitoiminnot, kuten luonnin, poiston, uudelleennimeämisen jne., päivitystarkistuksen, jotkin Tervetuloa-valintaikkunan ja yleisten asetusten kategorian valintaruudut (esim. Käytä sisäänkirjautumisen aikana, Tallenna asetukset suljettaessa jne.) sekä lokin tarkastelun ja lokin tallennuksen (käytetään usein suojatuissa ruuduissa). Huomaa myös, että tämä komento poistaa käytöstä järjestelmäasetuksiin tallentamisen sekä syötekomentokartan tallentamisen levylle. |
+| -s | --secure | Käynnistää NVDA:n [suojatussa tilassa #SecureMode]. |
 | Ei mitään | --disable-addons | Poistaa lisäosat käytöstä. |
 | Ei mitään | --debug-logging | Ottaa käyttöön virheenkorjaus-lokitason vain nykyisessä istunnossa. Tämä asetus korvaa minkä tahansa muun annetun lokitason (""--loglevel"", -l) argumentin, lokin käytöstä poistava valitsin mukaan lukien. |
 | Ei mitään | --no-logging | Poistaa lokin kokonaan käytöstä NVDA:ta käytettäessä. Tämä asetus voidaan ohittaa, mikäli lokitaso (""--loglevel"", -l) määritetään komentoriviparametrilla tai jos virheenkorjauslokin tallennus otetaan käyttöön. |
@@ -3366,7 +3407,7 @@ Arvot tallennetaan johonkin seuraavista rekisteriavaimista:
 Seuraavien rekisteriavainten määrittäminen on mahdollista:
 || Nimi | Tyyppi | Mahdolliset arvot | Kuvaus |
 | configInLocalAppData | DWORD | 0 (oletus) poistaa käytöstä, 1 ottaa käyttöön | Jos tämä asetus otetaan käyttöön, NVDA:n asetukset tallennetaan paikallisten sovellustietojen kansioon. |
-| serviceDebug | DWORD | 0 (oletus) poistaa käytöstä, 1 ottaa käyttöön | Jos tämä asetus otetaan käyttöön, suojattu tila poistetaan käytöstä Windowsin suojatuilla työpöydillä, mikä mahdollistaa Python-konsolin ja lokintarkastelun käytön. Tämän asetuksen käyttöä ei suositella tietoturvan merkittävän heikkenemisen takia. |
+| serviceDebug | DWORD | 0 (oletus) poistaa käytöstä, 1 ottaa käyttöön | Jos tämä asetus otetaan käyttöön, [suojattu tila #SecureMode] poistetaan käytöstä [suojatuissa ruuduissa #SecureScreens]. Tämän asetuksen käyttöä ei suositella tietoturvan merkittävän heikkenemisen takia. |
 
 + Lisätietoja +[FurtherInformation]
 Mikäli tarvitset lisätietoja tai neuvoja NVDA:han liittyen, käy sen verkkosivustolla osoitteessa NVDA_URL.
