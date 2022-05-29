@@ -3,6 +3,62 @@
 
 %!includeconf: ../changes.t2tconf
 
+= 2022.2 =
+
+== New Features ==
+- Support for interacting with Microsoft Loop Components in Microsoft Office products. (#13617)
+- New table navigation commands have been added. (#957)
+ - ``control+alt+home/end`` to jump to first/last column.
+ - ``control+alt+pageUp/pageDown`` to jump to first/last row.
+ -
+- An unassigned script to cycle through language and dialect switching modes has been added. (#10253)
+-
+
+== Changes ==
+- NSIS has been updated to version 3.08. (#9134)
+- CLDR has been updated to version 41.0. (#13582)
+- Added new role for "busy indicator" controls. (#10644)
+- NVDA now announces when an NVDA action cannot be performed. (#13500)
+  - This includes when:
+    - Using the NVDA Windows Store version.
+    - In a secure context.
+    - Waiting for a response to a modal dialog.
+    -
+  -
+-
+
+
+== Bug Fixes ==
+- The NVDA installer can now run from directories with special characters. (#13270)
+- In Firefox, NVDA no longer fails to report items in web pages when aria-rowindex, aria-colindex, aria-rowcount or aria-colcount attributes are invalid. (#13405)
+- The cursor does not switch row or column anymore when using table navigation to navigate through merged cells. (#7278)
+- When reading non-interactive PDFs in Adobe Reader, the type and state of form fields (such as checkboxes and radio buttons) are now reported. (#13285)
+- "Reset configuration to factory defaults" is now accessible in the NVDA menu during secure mode. (#13547)
+- Any locked mouse keys will be unlocked when NVDA exits, previously the mouse button would remain locked. (#13410)
+- Visual Studio now reports line numbers. (#13604)
+  - Note that for line number reporting to work, showing line numbers must be enabled in Visual Studio and NVDA.
+  -
+- Visual Studio now correctly reports line indentation. (#13574)
+- Fixes for Java based applications:
+  - NVDA will now announce readonly state. (#13692)
+  - NVDA will now announce disabled/enabled state correctly. (#10993)
+  - NVDA will now announce function key shortcuts. (#13643)
+  - NVDA can now beep or speak on progress bars. (#13594)
+  - NVDA will no longer incorrectly remove text from widgets when presenting to the user. (#13102)
+  -
+- NVDA will once again announce Start menu search result details in recent Windows 10 and 11 releases. (#13544)
+- In Windows 10 and 11 Calculator version 10.1908 and later, NVDA will announce results when more commands are pressed, such as commands from scientific mode. (#13386)
+- Fix braille output when navigating certain text in Mozilla rich edit controls, such as drafting a message in Thunderbird. (#12542)
+- In Windows 11, it is again possible to navigate and interact with user interface elements such as Taskbar and Task View using mouse and touch interaction. (#13508)
+- Hidden text is no longer announced in Wordpad and other ``richEdit`` controls. (#13618)
+- NVDA will announce status bar content in Windows 11 Notepad. (#13386)
+-
+
+
+== Izmjene za razvojne programere ==
+Informacije za razvojne programere nisu prevedene, molimo ’pogledajte [englesku inačicu ovog dokumenta ../en/changes.html].
+
+
 = 2022.1 =
 This release includes major improvements to UIA support with MS Office.
 For Microsoft Office 16.0.15000 and higher on Windows 11, NVDA will use UI Automation to access Microsoft Word documents by default.
@@ -88,9 +144,11 @@ Note:
 - Adobe Reader no longer crashes on startup if Adobe Reader's protected mode is enabled. (#11568)
 - Fixed a bug where selecting the Papenmeier Braille Display Driver caused NVDA to crash. (#13348)
 - In Microsoft word with UIA: page number and other formatting is no longer inappropriately announced when moving from a blank table cell to a cell with content, or from the end of the document into existing content. (#13458, #13459)
+- NVDA will no longer fail to report the page title and start automatically reading, when a page loads in Google chrome 100. (#13571)
+- NVDA no longer crashes when resetting the NVDA configuration to factory defaults while speak command keys is on. (#13634)
 -
 
-== Changes for Developers ==
+== Izmjene za razvojne programere ==
 Informacije za razvojne programere nisu prevedene, molimo ’pogledajte [englesku inačicu ovog dokumenta ../en/changes.html].
 
 
