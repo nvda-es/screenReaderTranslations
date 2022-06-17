@@ -29,11 +29,11 @@
 <LI>Ajout d'un nouveau rôle de contrôles "indicateur d'occupation". (<A HREF="https://github.com/nvaccess/nvda/issues/10644">#10644</A>)
 <LI>NVDA annonce maintenant quand une action NVDA ne peut être réalisée. (<A HREF="https://github.com/nvaccess/nvda/issues/13500">#13500</A>)
   <UL>
-  <LI>Cela inclut :
+  <LI>Cela peut se produire :
     <UL>
     <LI>Lors de l'utilisation de la version Windows Store
     <LI>Lors de l'utilisation dans un contexte sécurisé.
-    <LI>L'attente d'une réponse à une boîte de dialogue modale.
+    <LI>lors de l'attente d'une réponse à une boîte de dialogue modale.
     </UL>
   </UL>
 </UL>
@@ -72,35 +72,35 @@
 <H3>Changements pour les développeurs</H3>
 <UL>
 <LI>La compilation des dépendances de NVDA avec Visual Studio 2022 (17.0) est maintenant supportée. Pour le développement et les versions de production, Visual Studio 2019 est toujours utilisé. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
-<LI>When retrieving the count of selected children via accSelection, the case where a negative child ID or an IDispatch is returned by IAccessible::get_accSelection is now handled properly. (<A HREF="https://github.com/nvaccess/nvda/issues/13276">#13276</A>)
-<LI>New convenience functions <CODE>registerExecutableWithAppModule</CODE> and <CODE>unregisterExecutable</CODE> were added to the <CODE>appModuleHandler</CODE> module.
-They can be used to use a single App Module with multiple executables. (<A HREF="https://github.com/nvaccess/nvda/issues/13366">#13366</A>)
+<LI>Lors de la récupération du nombre d'enfants sélectionnés via accSelection, le cas où un ID d'enfant négatif ou un IDispatch est renvoyé par IAccessible::get_accSelection est désormais correctement géré. (<A HREF="https://github.com/nvaccess/nvda/issues/13276">#13276</A>)
+<LI>De nouvelles fonctions pratiques <CODE>registerExecutableWithAppModule</CODE> et <CODE>unregisterExecutable</CODE> ont été ajoutées au module <CODE>appModuleHandler</CODE>.
+Elles peuvent être utilisées pour utiliser un seul module d'application avec plusieurs exécutables. (<A HREF="https://github.com/nvaccess/nvda/issues/13366">#13366</A>)
 </UL>
 
 <P></P>
-<H4>Deprecations</H4>
+<H4>Dépréciations</H4>
 <P>
-These are proposed API breaking changes.
-The deprecated part of the API will continue to be available until the specified release.
-If no release is specified, the plan for removal has not been determined.
-Note, the roadmap for removals is 'best effort' and may be subject to change.
-Please test the new API and provide feedback.
-For add-on authors, please open a GitHub issue if these changes stop the API from meeting your needs.
+Voici des propositions de changements de rupture d'API.
+La partie obsolète de l'API restera disponible jusqu'à la version spécifiée.
+Si aucune version n'est spécifiée, le plan de suppression n'a pas été déterminé.
+Notez que la feuille de route pour les suppressions est « au mieux » et peut être sujette à modification.
+Veuillez tester la nouvelle API et fournir des commentaires.
+Pour les auteurs d'extensions, veuillez ouvrir un problème GitHub si ces modifications empêchent l'API de répondre à vos besoins.
 </P>
 <UL>
-<LI><CODE>gui.quit</CODE> has been deprecated for removal in 2023.1. (<A HREF="https://github.com/nvaccess/nvda/issues/13498">#13498</A>)
+<LI><CODE>gui.quit</CODE> est obsolète pour être supprimé en 2023.1. (<A HREF="https://github.com/nvaccess/nvda/issues/13498">#13498</A>)
   <UL>
-  <LI>Use <CODE>wx.CallAfter(mainFrame.onExitCommand, None)</CODE> directly instead.
+  <LI>Utilisez <CODE>wx.CallAfter(mainFrame.onExitCommand, None)</CODE> directement à la place.
   </UL>
-<LI>Some alias appModules are marked as deprecated and will be removed in 2023.1.
-Code which imports from one of them, should instead import from the replacement module.  (<A HREF="https://github.com/nvaccess/nvda/issues/13366">#13366</A>)
+<LI>Certains alias appModules sont marqués comme obsolètes et seront supprimés en 2023.1.
+Si votre code importe de l'un d'eux, il devra plutôt importer du module de remplacement. (<A HREF="https://github.com/nvaccess/nvda/issues/13366">#13366</A>)
 </UL>
 
 <P></P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TH>Removed module name</TH>
-<TH>Replacement module</TH>
+<TH>Nom du module supprimé</TH>
+<TH>Module de remplacement</TH>
 </TR>
 <TR>
 <TD>azuredatastudio</TD>
