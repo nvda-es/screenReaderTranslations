@@ -1358,11 +1358,6 @@ Dodatno, ručno možete uključiti modus fokusa, nakon čega će ostati aktivan 
 <TD>NVDA+šift+f3</TD>
 <TD>Traži prethodno pojavljivanje teksta u dokumentu kojeg ste prethodno tražili</TD>
 </TR>
-<TR>
-<TD>Otvori dugi opis</TD>
-<TD>NVDA+d</TD>
-<TD>Otvara novi prozor koji sadrži dugi opis za element na kojem se nalazite ako postoji.</TD>
-</TR>
 </TABLE>
 
 <A NAME="SingleLetterNavigation"></A>
@@ -3368,8 +3363,8 @@ Ovo polje postavlja količinu redaka po kojima se možete kretati kad u modusu �
 Prečac: NVDA+v
 </P>
 <P>
-Ova opcija omogućuje da odredite razmještaj sadržaja u modusu čitanja kao što su to poveznice i ostali elementi u zasebnom retku, ili da ostaju u "tekstualnoj struji" kako je vizualno prikazano na ekranu.
-Ako je opcija aktivirana onda će sve ostati kako je to prikazano vizualno, ali ako je deaktivirana, onda će svako polje biti razmješteno u zasebnom retku.
+Ova vam opcija omogoćuje da odredite treba li u načinu pregleda smjestiti sadržaj koji se može kliknuti (poveznice, gumbe i polja) u svoje zasebne redke, ili trebaju ostati zajedno s tekstom kao što je to vizualno prikazano. Imajute na umu da se ova opcija ne primjenjuje na Microsoft Office aplikacije poput Outlooka ili Worda koji uvijek koriste izgled zaslona.
+Kada je izgled zaslona uključen, elementi na stranici će ostati prikazani kako se vizualno prikazuju. Na primjer, vizualni redak sa više poveznica biti će prikazan u govoru i brajici kao više poveznica u više redaka. Ako je onemogućen, Elementi će biti smješteni u svojim zasebnim redcima, što će biti jednostavnije prilikom kretanja po stranici redak po redak, te što će učiniti stavke jednostavnima za interakciju za neke korisnike.
 </P>
 <A NAME="BrowseModeSettingsEnableOnPageLoad"></A>
 <H5>Aktiviraj modus čitanja nakon učitavanja stranice</H5>
@@ -3577,21 +3572,27 @@ Ovaj gumb postoji samo kad je uključena opcija "omogući bilježnicu razvojnog 
 <A NAME="AdvancedSettingsSelectiveUIAEventRegistration"></A>
 <H5>Omogući selektivnu registraciju UIA događaja i izmjena svojstva</H5>
 <P>
-Ova opcija mijenja način na koji NVDA registrira događaje NI automation sučelja za pristupačnost.
+Ova opcija mijenja način na koji NVDA registrira događaje UI automation sučelja za pristupačnost.
 Ako je ova opcija onemogućena, NVDA registrira više UIA događaja koji su procesuirani i odmah uništavani u samom NVDA čitaču.
 Ovo ima veliki negativni utjecaj na performanse, pogotovo na Microsoft visual studio.
 Stoga, ako je ova opcija uključena, NVDA će ograničiti registraciju događaja samo na fokus sustava za većinu događaja.
-Ako vam smetaju problemi sa performansama u jednoj ili više aplikacija, preporučujemo vam da isprobate ovu funkciju i vodite postoji li poboljšanje u performansama.
+Ako vam smetaju problemi sa performansama u jednoj ili više aplikacija, preporučujemo vam da isprobate ovu funkciju i vidite postoji li poboljšanje u performansama.
 </P>
-<A NAME="AdvancedSettingsUseUiaForWord"></A>
-<H5>Koristi UI automation za pristup kontrolama Microsoft Word dokumenata kada je to moguće</H5>
+<A NAME="MSWordUIA"></A>
+<H5>Koristi UI automation za pristup Microsoft Word dokumentima</H5>
 <P>
-Kada  je ova opcija uključena, NVDA će pokušavati koristiti Microsoft UI Automation API pristupačnosti u svrhu dohvaćanja informacija iz kontrola Microsoft Word dokumenata.
-Ovo uključuje Microsoft Word, te sastavljač i preglednik poruka u Microsoft Outlooku.
- Za posljednje verzije Microsoft Office 2016/365 koje su pokretane u Windowsima 10 i novijim, podrška UI automation je dovoljno dovršena u cilju omogućavanja dostupa do Microsoft Word dokumentima koja je jednaka ili ista sa postojećom podrškom u NVDA, sa dodanom prednošću da su poboljšane performanse.
-Međutim, postoje neke informacije, koje se pokazuju ili uopće ne pokazuju u nekim verzijama Microsoft officea, što znači da nije moguće ovisiti sasvim o toj podršci.
-Ne proporučujemo da korisnici uključuju ovo kao podrazumjevanu opciju, ali podržavamo korisnike Microsoft Office 2016/365 da testiruju ovu značajku i daju povratnu informaciju.
+Regulira treba li  NVDA koristiti UI Automation API za pristupačnost za pristup Microsoft Word dokumentima, umjesto starog Microsoft Word modela objekata.
+Ovo se primjenjuje na dokumente u Microsoft Wordu, te poruke u Microsoft Outlooku.
+Ova postavka sadrži sljedeće vrijednosti:
 </P>
+<UL>
+<LI>Podrazumjevano (gdje je to potrebno)
+<LI>Samo kada je to potrebno: Tamo gdje Microsoft Wordov model objekata nije dostupan sasvim
+<LI>Gdje je to potrebno: Microsoft Word inačica 16.0.15000 ili novija, ili ako Microsoft Word model objekata nije dostupan
+<LI>Svugdje: Gdjegod da je UI automation dostupan u Microsoft wordu (bez obzira na kompletnost).
+</UL>
+
+<P></P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
 <H5>Koristi UI Automation za pristup windows naredbenom retku kada je to dostupno</H5>
 <P>
@@ -3617,11 +3618,15 @@ Odabirni okvir sadrđi sljedeće opcije:
 <P>
 Ova grupa opcija se koristi za omogućavanje značajki koje dodaju eksperimentalnu podršku za ARIA zabilješke.
 Neke od ovih značajki mogu biti nedovršene.
+</P>
+<P>
+Kako biste "pročitali detalje bilo koje zabilješke pod kursorom", pritisnite NVDA+d.
+</P>
+<P>
 Postoje sljedeće opcije: 
 </P>
 <UL>
 <LI>"Izgovaraj 'postoje detalji' za strukturne zabilješke": uključuje izvještavanje o postojanju dodatnih detalja u tekstu ili kontroli.
-Kratak pregled dodatnih detalja može biti izgovoren tako da se najprije pridijeli prečac opciji "izgovori detalje  pod kursorom sustava za tekst ili kontrolu" koristeći <A HREF="#InputGestures">dijaloški okvir ulaznih gesti</A>.
 <LI>"Uvijek izgovaraj aria-description":
   Kada je izvor <CODE>accDescription</CODE> aria-description, opis će se izgovarati.
   ovo je korisno za zabilješke na mreži.
@@ -5702,11 +5707,6 @@ Sljedeći brajični redci su podržani:
 <P></P>
 <P>
 Ovaj brajični redak još uvijek ne podržava funkcionalnost automatskog otkrivanja brajičnih redaka.
-</P>
-<P>
-Ako je BrxCom instaliran, NVDA će koristiti BrxCom.
-BrxCom je alat koji omogućuje unos s tipkovnice odvojen od čitača ekrana.
-Unos znakova s tipkovnice brajičnog retka moguć je koristeći Trio i BRAILLEX Live modele brajičnih redaka..
 </P>
 <P>
 Većina uređaja ima tipku Easy Access Bar (EAB) koja omogućuje brzo i intuitivno rukovanje.
