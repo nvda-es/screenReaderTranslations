@@ -10,6 +10,15 @@
 </FONT></CENTER>
 
 <H2>2022.2</H2>
+<P>
+Cette version inclut beaucoup de correctifs.
+Notamment, il y a des améliorations significatives pour les applications Java, le Braille, et les fonctionnalités Windows.
+</P>
+<P>
+De nouvelles commandes de navigation pour les tableaux ont été introduites.
+Le CLDR Unicode a été mis à jour.
+LibLouis a été mis à jour, ce qui inclut une nouvelle table Braille allemande.
+</P>
 <H3>Nouvelles Fonctionnalités</H3>
 <UL>
 <LI>Support de l'interaction avec les composants Microsoft Loop dans les produits Microsoft Office. (<A HREF="https://github.com/nvaccess/nvda/issues/13617">#13617</A>)
@@ -26,6 +35,10 @@
 <UL>
 <LI>NSIS a été mis à jour à la version 3.08. (<A HREF="https://github.com/nvaccess/nvda/issues/9134">#9134</A>)
 <LI>Le CLDR a été mis à jour à la version 41.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13582">#13582</A>)
+<LI>Mise à jour du transcripteur Braille Liblouis à la version <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.22.0">3.22.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/13775">#13775</A>)
+  <UL>
+  <LI>Nouvelle table Braille : Allemand abrégé (détaillé)
+  </UL>
 <LI>Ajout d'un nouveau rôle de contrôles "indicateur d'occupation". (<A HREF="https://github.com/nvaccess/nvda/issues/10644">#10644</A>)
 <LI>NVDA annonce maintenant quand une action NVDA ne peut être réalisée. (<A HREF="https://github.com/nvaccess/nvda/issues/13500">#13500</A>)
   <UL>
@@ -41,6 +54,23 @@
 <P></P>
 <H3>Corrections de bogues</H3>
 <UL>
+<LI>Correctifs pour les applications basées sur Java :
+  <UL>
+  <LI>NVDA annoncera maintenant l'état lecture seule. (<A HREF="https://github.com/nvaccess/nvda/issues/13692">#13692</A>)
+  <LI>NVDA annoncera maintenant correctement l'état activé/désactivé. (<A HREF="https://github.com/nvaccess/nvda/issues/10993">#10993</A>)
+  <LI>NVDA annoncera maintenant les raccourcis des touches de fonction. (<A HREF="https://github.com/nvaccess/nvda/issues/13643">#13643</A>)
+  <LI>NVDA peut maintenant bipper ou parler sur des barres de progression. (<A HREF="https://github.com/nvaccess/nvda/issues/13594">#13594</A>)
+  <LI>NVDA ne retirera plus incorrectement du texte des widgets lors de leur présentation à l'utilisateur. (<A HREF="https://github.com/nvaccess/nvda/issues/13102">#13102</A>)
+  <LI>NVDA annoncera maintenant l'état des boutons bascule. (<A HREF="https://github.com/nvaccess/nvda/issues/9728">#9728</A>)
+  <LI>NVDA identifiera maintenant la fenêtre dans une application Java avec plusieurs fenêtres. (<A HREF="https://github.com/nvaccess/nvda/issues/9184">#9184</A>)
+  <LI>NVDA annoncera maintenant la position pour les contrôles d'onglet. (<A HREF="https://github.com/nvaccess/nvda/issues/13744">#13744</A>)
+  </UL>
+<LI>Correctifs Braille :
+  <UL>
+  <LI>Correction de la sortie Braille lors de la navigation de texte dans des contrôle d'édition Mozilla, comme l'édition d'un message brouillon dans Thunderbird. (<A HREF="https://github.com/nvaccess/nvda/issues/12542">#12542</A>)
+  <LI>Lorsque le Braille est détecté automatiquement et que la souris est déplacée avec le suivi de la souris actif, les commandes de déplacement du curseur de revue mettent maintenant à jour l'afficheur Braille avec le texte parlé. (<A HREF="https://github.com/nvaccess/nvda/issues/11519">#11519</A>)
+  <LI>Il est maintenant possible de défiler l'affichage Braille à travers le contenu après l'utilisation des commandes de révision de texte. (<A HREF="https://github.com/nvaccess/nvda/issues/8682">#8682</A>)
+  </UL>
 <LI>L'installeur NVDA peut maintenant s'exécuter depuis des dossiers contenant des caractères spéciaux (<A HREF="https://github.com/nvaccess/nvda/issues/13270">#13270</A>)
 <LI>Dans Firefox, NVDA n'échoue plus à annoncer les éléments lorsque les attributs aria-rowindex, aria-colindex, aria-rowcount ou aria-colcount sont invalides. (<A HREF="https://github.com/nvaccess/nvda/issues/13405">#13405</A>)
 <LI>Le curseur ne change plus de ligne ou de colonne lors de l'utilisation de la navigation de tableau pour naviguer dans des cellules fusionnées. (<A HREF="https://github.com/nvaccess/nvda/issues/7278">#7278</A>)
@@ -52,26 +82,22 @@
   <LI>Notez que pour le report des numéros de ligne, l'affichage des numéros de ligne doit être activé dans Visual Studio et NVDA.
   </UL>
 <LI>Visual Studio reporte maintenant correctement l'indentation des lignes. (<A HREF="https://github.com/nvaccess/nvda/issues/13574">#13574</A>)
-<LI>Correctifs pour les applications basées sur Java :
-  <UL>
-  <LI>NVDA annoncera maintenant l'état lecture seule. (<A HREF="https://github.com/nvaccess/nvda/issues/13692">#13692</A>)
-  <LI>NVDA annoncera maintenant correctement l'état activé/désactivé. (<A HREF="https://github.com/nvaccess/nvda/issues/10993">#10993</A>)
-  <LI>NVDA annoncera maintenant les raccourcis des touches de fonction. (<A HREF="https://github.com/nvaccess/nvda/issues/13643">#13643</A>)
-  <LI>NVDA peut maintenant bipper ou parler sur des barres de progression. (<A HREF="https://github.com/nvaccess/nvda/issues/13594">#13594</A>)
-  <LI>NVDA ne retirera plus incorrectement du texte des widgets lors de leur présentation à l'utilisateur. (<A HREF="https://github.com/nvaccess/nvda/issues/13102">#13102</A>)
-  </UL>
 <LI>NVDA annoncera à nouveau le détail des résultats de recherche dans le menu démarrer des versions récentes de Windows 10 et 11. (<A HREF="https://github.com/nvaccess/nvda/issues/13544">#13544</A>)
 <LI>Dans la calculatrice de Windows 10 et 11 version 10.1908 et supérieur, NVDA annoncera les résultats lorsque davantage de commandes seront pressées, telles que des commandes en mode scientifique. (<A HREF="https://github.com/nvaccess/nvda/issues/13386">#13386</A>)
-<LI>Correction de la sortie Braille lors de la navigation de texte dans des contrôle d'édition Mozilla, comme l'édition d'un message brouillon dans Thunderbird. (<A HREF="https://github.com/nvaccess/nvda/issues/12542">#12542</A>)
 <LI>Sous Windows 11, il est à nouveau possible de naviguer et d'interagir avec certains éléments de l'interface utilisateur comme la barre des tâches en utilisant la souris ou l'interaction tactile. (<A HREF="https://github.com/nvaccess/nvda/issues/13508">#13508</A>)
 <LI>Le texte masqué n'est plus annoncé dans WordPad et les autres contrôles <CODE>richEdit</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13618">#13618</A>)
 <LI>NVDA annoncera le contenu de la barre d'état dans le bloc-notes de Windows 11. (<A HREF="https://github.com/nvaccess/nvda/issues/13386">#13386</A>)
+<LI>Le soulignement de l'objet navigateur s'affiche maintenant tout de suite après l'activation de la fonctionnalité. (<A HREF="https://github.com/nvaccess/nvda/issues/13641">#13641</A>)
+<LI>Correction de la lecture des éléments de liste avec une seule colonne. (<A HREF="https://github.com/nvaccess/nvda/issues/13659">#13659</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13735">#13735</A>)
+<LI>Correction du changement automatique de langue d'eSpeak pour l'anglais et le français revenus à Anglais britanique et Français (France). (<A HREF="https://github.com/nvaccess/nvda/issues/13727">#13727</A>)
+<LI>Correction du changement automatique de langue de OneCore lors d'une tentative de passage vers une langue anciennement installée. (<A HREF="https://github.com/nvaccess/nvda/issues/13732">#13732</A>)
 </UL>
 
 <P></P>
 <H3>Changements pour les développeurs</H3>
 <UL>
-<LI>La compilation des dépendances de NVDA avec Visual Studio 2022 (17.0) est maintenant supportée. Pour le développement et les versions de production, Visual Studio 2019 est toujours utilisé. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
+<LI>La compilation des dépendances de NVDA avec Visual Studio 2022 (17.0) est maintenant supportée.
+Pour le développement et les versions de production, Visual Studio 2019 est toujours utilisé. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
 <LI>Lors de la récupération du nombre d'enfants sélectionnés via accSelection, le cas où un ID d'enfant négatif ou un IDispatch est renvoyé par IAccessible::get_accSelection est désormais correctement géré. (<A HREF="https://github.com/nvaccess/nvda/issues/13276">#13276</A>)
 <LI>De nouvelles fonctions pratiques <CODE>registerExecutableWithAppModule</CODE> et <CODE>unregisterExecutable</CODE> ont été ajoutées au module <CODE>appModuleHandler</CODE>.
 Elles peuvent être utilisées pour utiliser un seul module d'application avec plusieurs exécutables. (<A HREF="https://github.com/nvaccess/nvda/issues/13366">#13366</A>)
@@ -88,11 +114,10 @@ Veuillez tester la nouvelle API et fournir des commentaires.
 Pour les auteurs d'extensions, veuillez ouvrir un problème GitHub si ces modifications empêchent l'API de répondre à vos besoins.
 </P>
 <UL>
-<LI><CODE>gui.quit</CODE> est obsolète pour être supprimé en 2023.1. (<A HREF="https://github.com/nvaccess/nvda/issues/13498">#13498</A>)
-  <UL>
-  <LI>Utilisez <CODE>wx.CallAfter(mainFrame.onExitCommand, None)</CODE> directement à la place.
-  </UL>
-<LI>Certains alias appModules sont marqués comme obsolètes et seront supprimés en 2023.1.
+<LI><CODE>appModuleHandler.NVDAProcessID</CODE> est obsolète, utilisez <CODE>globalVars.appPid</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/13646">#13646</A>)
+<LI><CODE>gui.quit</CODE> est obsolète, utilisez <CODE>wx.CallAfter(mainFrame.onExitCommand, None)</CODE> directement à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/13498">#13498</A>)
+  -
+<LI>Certains alias appModules sont marqués comme obsolètes.
 Si votre code importe de l'un d'eux, il devra plutôt importer du module de remplacement. (<A HREF="https://github.com/nvaccess/nvda/issues/13366">#13366</A>)
 </UL>
 
