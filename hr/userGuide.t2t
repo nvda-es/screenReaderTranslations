@@ -27,7 +27,7 @@ Glavne značajke uključuju:
 - govorni instalacijski program koji je jednostavan za korištenje
 - preveden na 54 jezika
 - podrška za moderne operacijske sustave Windows u 32 i 64 bitnim verzijama
-- mogućnost pokretanja prilikom prijavljivanja u Windows te na ostalim sigurnim ekranima
+- Mogućnost pokretanja prilikom prijavljivanja te na [sigurnim zaslonima #SecureScreens].
 - najavljivanje kontrola i teksta pri korištenju dodirnih gesti
 - podrška za uobičajena sučelja za pristupačnost, kao što su Microsoft Active Accessibility, Java Access Bridge, IAccessible2 i UI Automation
 - podrška za Windowsov naredbeni redak i druge aplikacije koje rade u naredbenom retku
@@ -81,7 +81,7 @@ Pokrenete li datoteku koju ste upravo preuzeli, pokrenut će se privremena kopij
 Tada će vas NVDA pitati želite li instalirati NVDA, izraditi prijenosnu kopiju ili nastaviti koristiti privremenu kopiju.
 
 Ako planirate stalno koristiti NVDA na ovom računalu, htjeti ćete instalirati NVDA.
-NVDA instalacija omogućuje dodatne funkcije kao što su automatsko pokretanje prilikom prijavljivanja, mogućnost čitanja Windowsovog ekrana za prijavu i Windowsovih sigurnih ekrana (što nije moguće izvesti s prijenosnom niti s privremenom kopijom). Moguće je izraditi i prečace u izborniku Start i na radnoj površini.
+Instalacija NVDA će omogućiti dodatne funkcije poput automatskog pokretanja prilikom prijave, mogućnost čitanja prijave u operacijski sustav Windows te drugih [zaslona za prijavu #SecureScreens] (što se ne može učiniti sa prijenosnim i privremenim kopijama) te stvaranje prečaca na radnoj površini i u izborniku start.
 Prijenosnu kopiju možete stvoriti iz instalirane kopije u bilo kojem trenutku.
 
 Ako želite nositi NVDA sa sobom na USB sticku ili na drugom mediju koji podržava zapisivanje, morate odabrati izradu prijenosne kopije.
@@ -116,9 +116,9 @@ Prije nego što ćete moći pritisnuti gumb Nastavi, morat ćete označiti potvr
 Također postoji gumb, koji omogućuje pregled nekompatibilnih dodataka.
 Pogledajte poglavlje [Upravljanje nekompatibilnim dodacima #incompatibleAddonsManager] za daljnje informacije o ovom gumbu.
 
-+++ Koristi NVDDDA prilikom prijave  +++[StartAtWindowsLogon]
++++ Koristi NVDA prilikom prijave  +++[StartAtWindowsLogon]
 Ova opcija omogućuje automatsko pokretanje NVDA čitača na Windows ekranu za prijavu, prije upisivanja lozinke.
-To također uključuje kontrolu korisničkog računa i ostale sigurne ekrane.
+Ovo također uključuje kontrolu korisničkog računa i [ostale sigurne zaslone #SecureScreens].
 Ova je opcija standardno aktivirana za nove instalacije.
 
 +++ Izradi prečac na radnoj površini (kontrol+alt+F5) +++[CreateDesktopShortcut]
@@ -127,7 +127,7 @@ Ako je izrađen, prečacu na radnoj površini bit će dodijeljen tipkovnički pr
 
 +++ Kopiraj prijenosnu konfiguraciju na ovaj korisnički račun +++[CopyPortableConfigurationToCurrentUserAccount]
 Ova opcija omogućuje kopiranje trenutačne konfiguracije iz prijenosne kopije na trenutačno prijavljeni korisnički račun za trenutačno instaliranu kopiju NVDA čitača. 
-Ova opcija neće kopirati konfiguraciju za bilo kojeg drugog korisnika na tom sustavu niti za konfiguraciju koja se koristi na Windowsovom ekranu za prijavu i drugim sigurnim ekranima.
+Ova opcija neće kopirati konfiguraciju za bilo kojeg drugog korisnika ovog sustava niti u konfiguraciju sustava za korištenje prilikom prijave u sustav Windows i [ostale zaslone za prijavu #SecureScreens].
 Ova je opcija dostupna samo kad se NVDA instalira iz prijenosne kopije, ali ne i u trenutku kad se NVDA instalira iz instalacijske datoteke koja je preuzeta s interneta.
 
 ++ Izrada prijenosne kopije ++[CreatingAPortableCopy]
@@ -342,6 +342,10 @@ Unutar tablice su dostupni i sljedeći prečaci:
 | Premjesti se na sljedeći stupac | kontrol+alt+strelicaDesno | Premješta kursor sustava na sljedeći stupac (pritom ostajući u istom retku) |
 | Premjesti se na prethodni redak | kontrol+alt+strelicaGore | Premješta kursor sustava na prethodni redak (pritom ostajući u istom stupcu) |
 | Premjesti se na sljedeći stupac | kontrol+alt+strelicaDolje | Premješta kursor sustava na sljedeći redak (pritom ostajući u istom stupcu) |
+| Premjesti se na prvi stupac | ctrl+alt+home | Pomiće kursor sustava na prvi stupac (ostajući u istom redku) |
+| Premjesti se na zadnji stupac | ctrl+alt+end | pomiće kursor na zadnji stupac (ostajući u istom redku) |
+| Premjesti se na prvi redak | ctrl+alt+pageUp | Pomiće kursor sustava u prvi redak (ostajući u istom stupcu) |
+| Premjesti se na zadnji redak | ctrl+alt+pageDown | pomiće kursor sustava na zadnji redak (ostajući u istom stupcu) |
 %kc:endInclude
 
 ++ Kretanje po objektima ++[ObjectNavigation]
@@ -617,8 +621,11 @@ NVDA podržava sljedeće vrste matematičkog sadržaja:
 - MathML u Mozilla Firefoxu, Google Chromeu i Microsoft Internet Exploreru.
 - Microsoft Word 365 suvremene matematičke jednadžbe uz pomoć UI automation:
 NVDA može čitati i ulaziti u interakciju sa matematičkim jednadžbama u Microsoft Word 365/2016 međuverziji 14326 i novijim.
-Međutim, imajte na umu da bilo koja prethodno stvorena MathType jednadžba mora biti konvertirana u Office matematiku tako da označite svaku jednadžbu i odaberete opcije jednadžbe -> Konvertiraj u Office matematiku u kontekstnom izborniku. Prije nego što to učinite, uvjerite se da koristite posljednju verziju programa Mathtype.
-Microsoft Word sada također pruža linearnu navigaciju baziranu na znakovima po jednadžbama, te podržava unos matematičkih jednadžbi korištenjem nekoliko sintaksi, uključujućži LateX. Za više informacija, pogledajte [Jednadžbe u linearnom formatu uz pomoć UnicodeMath i LaTeX u Wordu https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8]
+Note however that any previously created MathType equations must be first converted to Office Math.
+Ovo može biti učinjeno tako da se označi svaka te odabere "Opcije jednadžbe", potom "Konvertiraj u Office matematiku" u kontekstnom izborniku.
+Prije nego što to učinite, uvjerite se da posjedujete posljednju verziju MathPlayera.
+Microsoft Word pruža linearno kretanje bazirano na znakovima po jednadžbama te podržava unos matematike korištenjem nekoliko sintaksi, uključujući LateX.
+Za više detalja, molimo pogledajte [Jednadžbe u linearnom formatu koristeći UnicodeMath i LaTeX u Wordu https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8]
 - Microsoft Powerpoint, i starije inačice Microsoft Worda: 
 NVDA može čitati i kretati se po MathType jednadžbama u Microsoft Wordu i Powerpointu.
 MathType mora biti instaliran kako bi ovo radilo.
@@ -704,6 +711,7 @@ Kako bi stalo što više informacija na brajični redak, definirane su sljedeće
 | stiz | stavka izbornika |
 | plč | ploča |
 | tn | traka napretka |
+| zind | indikator zauzetosti |
 | igb | izborni gumb |
 | kt | klizna traka |
 | odj | odjeljak |
@@ -784,7 +792,8 @@ Možete promijeniti te definicije ili dodati nove emulirane tipke koristeći [di
 
 Iako je takva metoda korisna za uobičajene ili često korištene tipkovničke prečace (poput tipke Tab), ne biste željeli dodjeljivati definiciju za svaki prečac.
 Kako bi se emulirali pritisci tipaka koji se zadržavaju, NVDA pruža prečace za uključivanje ili isključivanje control, alt, shift, windows, i NVDA tipaka, kao i prečace za druge kombinacije takvih tipki.
-Kako biste koristili te tipke, prvo pritisnite prečac (ili sekvencu prečaca) za modifikator koji želite pritisnuti, a potom pritisnite drugi dio prečaca kojeg želite izvesti.
+Kako biste koristili te tipke, prvo pritisnite prečac (ili sekvencu prečaca) za modifikator koji želite pritisnuti. 
+Poslije toga pritisnite drugi dio prečaca kojeg želite izvesti.
 Na primjer, kako biste pritisnuli CTRL+f, koristite prečac "prebacivanje tipke CTRL" a potom pritisnite f,
 a kako biste izveli prečac ctrl+alt+t, koristite prečace "uključi tipku Ctrl" i "uključi alt tipku", u bilo kojem poredku, ili prečac "uključi CTRL i alt tipke", poslije kojeg trebate napisati "t".
 
@@ -1125,7 +1134,7 @@ Aktiviranjem ove opcije, NVDA će se automatski pokrenuti na ekranu za prijavu t
 Ova je opcija dostupna samo u instaliranim kopijama NVDA čitača.
 
 ==== Koristi trenutačno spremljene postavke za ekran prijave te ostale sigurne ekrane (zahtijeva administratorska prava) ====[GeneralSettingsCopySettings]
-Kad je ovaj gumb pritisnut, NVDA postavke će biti kopirane u NVDA mapu za konfiguraciju sustava, tako da će se te postavke koristiti na Windowsovom ekranu za prijavu, kontroli korisničkog računa (UAC) i na drugim sigurnim ekranima Windows sustava.
+Kada pritisnete ovaj gumb, vaša trenutna NVDA  konfiguracija bit će kopirana u mapu NVDA konfiguracije sustava što znači da će ju NVDA koristiti na zaslonu za prijavu te ako se pokreće kontrola korisničkog računa (UAC) te na drugim [sigurnim zaslonima #SecureScreens].
 Da biste se uvjerili da su sve vaše postavke kopirane, prvo spremite vašu konfiguraciju pomoću prečaca kontrol+NVDA+c ili pomoću opcije spremi konfiguraciju u NVDA izborniku.
 Ova je opcija dostupna samo u instaliranim kopijama NVDA čitača.
 
@@ -1709,8 +1718,12 @@ Ovo polje postavlja količinu redaka po kojima se možete kretati kad u modusu �
 ==== Koristi raspored ekrana ====[BrowseModeSettingsScreenLayout]
 Prečac: NVDA+v
 
-Ova vam opcija omogoćuje da odredite treba li u načinu pregleda smjestiti sadržaj koji se može kliknuti (poveznice, gumbe i polja) u svoje zasebne redke, ili trebaju ostati zajedno s tekstom kao što je to vizualno prikazano. Imajute na umu da se ova opcija ne primjenjuje na Microsoft Office aplikacije poput Outlooka ili Worda koji uvijek koriste izgled zaslona.
-Kada je izgled zaslona uključen, elementi na stranici će ostati prikazani kako se vizualno prikazuju. Na primjer, vizualni redak sa više poveznica biti će prikazan u govoru i brajici kao više poveznica u više redaka. Ako je onemogućen, Elementi će biti smješteni u svojim zasebnim redcima, što će biti jednostavnije prilikom kretanja po stranici redak po redak, te što će učiniti stavke jednostavnima za interakciju za neke korisnike.
+Ova vam opcija omogućuje da odredite treba li u načinu pregleda smjestiti sadržaj koji se može kliknuti (poveznice, gumbe i polja) u svoje zasebne redke, ili trebaju ostati zajedno s tekstom kao što je to vizualno prikazano. 
+Imajte na umu da se ova opcija ne primjenjuje na Microsoft Office aplikacije poput Outlooka ili Worda koji uvijek koriste izgled zaslona.
+Kada je izgled zaslona uključen, elementi na stranici će ostati prikazani kako se vizualno prikazuju. 
+Na primjer, vizualni redak sa više poveznica biti će prikazan u govoru i brajici kao više poveznica u više redaka. 
+Ako je onemogućen, Elementi će biti smješteni u svojim zasebnim redcima, što će biti jednostavnije prilikom kretanja po stranici redak po redak. 
+To će učiniti stavke jednostavnima za interakciju za neke korisnike.
 
 ==== Aktiviraj modus čitanja nakon učitavanja stranice ====[BrowseModeSettingsEnableOnPageLoad]
 Ovaj potvrdni okvir regulira hoće li se modus čitanja uključiti prilikom učitavanja stranice.
@@ -3308,6 +3321,33 @@ Slijede dodjeljeni prečaci za te brajične retke.
 %kc:endInclude
 
 + Teme za napredne korisnike +[AdvancedTopics]
+
+++ Siguran način ++[SecureMode]
+NVDA može biti pokrenut u sigurnom načinu uz pomoć ``-s`` [paremetra naredbenog redka #CommandLineOptions].
+NVDA se pokreće u sigurnom načinu kada je pozvan iz [sigurnih zaslona #SecureScreens], osima ako ``serviceDebug`` [općesustavski parametar #SystemWideParameters] je uključen.
+
+Siguran način onemogućuje:
+
+- spremanje konfiguracije i ostalih postavki na disk
+- spremanje mape gesti i prečaca na disk
+- [Značajke konfiguracjskih profila #ConfigurationProfiles] poput stvaranja, brisanja, preimenovanja profila, itd.
+- nadogradnja NVDA ili stvaranja prijenosnih kopija
+- [Python konzola #PythonConsole]
+- [preglednik zapisnika #LogViewer] i zapisivanje
+-
+
+++ Sigurni zasloni ++[SecureScreens]
+NVDA se pokreće u [sigurnom načinu #SecureMode] kada se pokrene na na sigurnim zaslonima osim ako ``serviceDebug`` [općesustavski parametar #SystemWideParameters] je omogućen.
+
+Kada se pokreće sa sigurnog zaslona, NVDA koristi profil sustava za postavke.
+NVDA korisničke postavke mogu se kopirati [za korištenje na sigurnim zaslonima #GeneralSettingsCopySettings].
+
+Sigurni zasloni uključuju:
+
+- Windows zaslon za prijavu
+- Dijaloški okvir kontrole korisničkog računa, aktivan kada se izvodi akcija kao administrator
+  - Ovo uključuje instalaciju programa
+  -
 
 ++ Opcije naredbenog retka ++[CommandLineOptions]
 Tijekom pokretanja, NVDA može prihvatiti jednu ili više opcija, čime se mijenja ponašanje čitača.
