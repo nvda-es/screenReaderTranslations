@@ -4,34 +4,34 @@ NVDA最新情報
 %!includeconf: ../changes.t2tconf
 
 = 2022.2 =
-This release includes many bug fixes.
-Notably, there are significant improvements for Java based applications, braille displays and Windows features.
+このリリースでは多くのバグ修正を行いました。
+特に Java ベースのアプリ、点字ディスプレイ、Windows の機能への対応を大幅に改善しました。
 
-New table navigation commands have been introduced.
-Unicode CLDR has been updated.
-LibLouis has been updated, which includes a new German braille table.
+新しいテーブルナビゲーションコマンドが導入されました。
+Unicode CLDR が更新されました。
+LibLouis が更新され、新しいドイツ語の点字テーブルが追加されました。
 
-== New Features ==
-- Support for interacting with Microsoft Loop Components in Microsoft Office products. (#13617)
-- New table navigation commands have been added. (#957)
- - ``control+alt+home/end`` to jump to first/last column.
- - ``control+alt+pageUp/pageDown`` to jump to first/last row.
+== 新機能 ==
+- Microsoft Office 製品の Microsoft Loop コンポーネント操作に対応しました。(#13617)
+- 新しいテーブルナビゲーションコマンドが追加されました。 (#957)
+ - ``control+alt+home/end`` 最初または最後の列に移動
+ - ``control+alt+pageUp/pageDown`` 最初または最後の行に移動
  -
-- An unassigned script to cycle through language and dialect switching modes has been added. (#10253)
+- 言語と方言を順番に切り替えるスクリプトが追加されました。初期設定では入力ジェスチャーの割り当てはありません。 (#10253)
 -
 
-== Changes ==
-- NSIS has been updated to version 3.08. (#9134)
-- CLDR has been updated to version 41.0. (#13582)
-- Updated LibLouis braille translator to [3.22.0 https://github.com/liblouis/liblouis/releases/tag/v3.22.0]. (#13775)
-  - New braille table: German grade 2 (detailed)
+== 変更点 ==
+- NSIS をバージョン 3.08 に更新しました。 (#9134)
+- CLDR をバージョン 41.0 に更新しました。 (#13582)
+- LibLouis 点訳エンジンを [3.22.0 https://github.com/liblouis/liblouis/releases/tag/v3.22.0] に更新しました。 (#13775)
+  - 新しい点字テーブル: ドイツ語2級点字(詳細)
   -
-- Added new role for "busy indicator" controls. (#10644)
-- NVDA now announces when an NVDA action cannot be performed. (#13500)
-  - This includes when:
-    - Using the NVDA Windows Store version.
-    - In a secure context.
-    - Waiting for a response to a modal dialog.
+- 「ビジーインジケーター」コントロールのロールが追加されました。(#10644)
+- NVDA のアクションを実行できない場合に報告するようになりました。(#13500)
+  - 例えば以下の場合です:
+    - NVDA の Microsoft Store 版を使用している場合
+    - セキュアモードで実行している場合
+    - モーダルダイアログへの応答を待っている場合
     -
   -
 -
@@ -52,29 +52,29 @@ LibLouis has been updated, which includes a new German braille table.
   - Thunderbird でのメッセージの下書き作成など、Mozilla のリッチエディットコントロールで特定のテキストをナビゲートする際の点字出力を修正しました。 (#12542)
   - 点字表示切り替えを自動に設定し、マウスカーソル位置のテキストの報告を有効にして、マウスを動かすと、
    テキストレビューコマンドは、音声読み上げに合わせて点字表示を更新するようになりました。 (#11519)
-  - テキストレビューコマンドの使用後に、点字表示をスクロールしてコンテンツを確認できるようになりました。It is now possible to pan the braille display through content after use of the text review commands. (#8682)
+  - テキストレビューコマンドの使用後に、点字表示をスクロールしてコンテンツを確認できるようになりました。 (#8682)
   -
-- The NVDA installer can now run from directories with special characters. (#13270)
-- In Firefox, NVDA no longer fails to report items in web pages when aria-rowindex, aria-colindex, aria-rowcount or aria-colcount attributes are invalid. (#13405)
-- The cursor does not switch row or column anymore when using table navigation to navigate through merged cells. (#7278)
-- When reading non-interactive PDFs in Adobe Reader, the type and state of form fields (such as checkboxes and radio buttons) are now reported. (#13285)
-- "Reset configuration to factory defaults" is now accessible in the NVDA menu during secure mode. (#13547)
-- Any locked mouse keys will be unlocked when NVDA exits, previously the mouse button would remain locked. (#13410)
-- Visual Studio now reports line numbers. (#13604)
-  - Note that for line number reporting to work, showing line numbers must be enabled in Visual Studio and NVDA.
+- NVDA インストーラーが、特殊文字を含む名前のディレクトリから実行できるようになりました。 (#13270)
+- Firefox において aria-rowindex, aria-colindex, aria-rowcount または aria-colcount 属性が無効な値である場合に NVDA が Web ページの項目の報告に失敗していた問題を修正しました。 (#13405)
+- テーブルナビゲーションを使用して結合されたセルの間を移動するときに、行または列の移動が不適切になる問題を修正しました。(#7278) 
+- インタラクティブでない PDF を Adobe Reader で読むときに、フォームフィールド(チェックボックスやラジオボタンなど)の種別と状態が報告されるようになりました。 (#13285)
+- セキュアモードにおいて NVDA メニューから「設定のリセット」が利用できるようになりました。(#13547)
+- NVDA が終了すると、ロックされたマウスキーがロック解除されます。これまではマウスボタンはロックされたままでした。(#13410)
+- Visual Studio において行番号を報告するようになりました。(#13604)
+  - 行番号を報告するには Visual Studio と NVDA の両方で行番号の表示や報告を有効にする必要があります。
   -
-- Visual Studio now correctly reports line indentation. (#13574)
-- NVDA will once again announce Start menu search result details in recent Windows 10 and 11 releases. (#13544)
-- In Windows 10 and 11 Calculator version 10.1908 and later,
-NVDA will announce results when more commands are pressed, such as commands from scientific mode. (#13386)
-- In Windows 11, it is again possible to navigate and interact with user interface elements,
-such as Taskbar and Task View using mouse and touch interaction. (#13508)
-- Hidden text is no longer announced in Wordpad and other ``richEdit`` controls. (#13618)
-- NVDA will announce status bar content in Windows 11 Notepad. (#13386)
-- Navigator object highlighting now shows up immediately upon activation of the feature. (#13641)
-- Fix reading single column list view items. (#13659, #13735)
-- Fix eSpeak automatic language switching for English and French falling back to British English and French (France). (#13727)
-- Fix OneCore automatic language switching when trying to switch to a formerly installed language. (#13732)
+- Visual Studio が行インデントを正しく報告するようになりました。(#13574)
+- 最近の Windows 10 と 11 リリースにおいて、スタートメニューの検索結果の詳細を報告していなかった問題を修正しました。(#13544)
+- Windows 10 および 11 の電卓バージョン10.1908 以降において、
+NVDA は科学計算モードなどより多くの場合に、コマンドが押されたときに結果を報告するようになりました。(#13383)
+- Windows 11 のタスクバーやタスクビューなどのユーザーインターフェイス要素において、
+マウスやタッチによるナビゲーションと操作ができない場合があった問題を修正しました。 (#13506)
+- WordPad やその他の RichEdit コントロールにおいて、隠し文字を報告していた問題を修正しました。(#13618)
+- NVDA は Windows 11 のメモ帳でステータスバーの内容を報告するようになりました。 (#13688)
+- ナビゲータオブジェクトのハイライト機能を有効にするとハイライトがすぐに表示されるようになりました。(#13641)
+- 単一列のリストビュー項目の読み上げを修正しました。(#13659, #13735)
+- 英語とフランス語の eSpeak 自動言語切り替えが、それぞれ、英国英語とフランス語(フランス)にフォールバックするように修正されました。 (#13727)
+- OneCore 音声の自動言語切り替えにおいて、以前にインストールされていた言語に切り替える際に起きていた問題を修正しました。 (#13732)
 -
 
 
@@ -82,7 +82,7 @@ such as Taskbar and Task View using mouse and touch interaction. (#13508)
 - NVDA の依存モジュールを Visual Studio 2022 (17.0) でコンパイルできるようになりました。
 開発ビルドおよびリリースビルドでは Visual Studio 2019 をひきつづき使います。 (#13033)
 - accSelection で選択された子要素の個数を取得する場合、
-子要素の ID が負の場合、および IDispatch が ''IAccessible::get_accSelection'' によって返される場合に、正しく処理されるようになりました。 (#13276)
+子要素の ID が負の場合、および IDispatch が ''IAccessible::get_accSelection'' によって返される場合に、正しく処理されるようになりました。 (#13277)
 - 新しい便利な関数 ''registerExecutableWithAppModule'' と ''unregisterExecutable'' が ''appModuleHandler'' モジュールに追加されました。 
 これらは、複数の実行可能ファイルで単一のアプリモジュールを使用するために使用できます。 (#13366)
 -
@@ -94,6 +94,7 @@ such as Taskbar and Task View using mouse and touch interaction. (#13508)
 廃止に関するロードマップは「ベストエフォート」であり、変更される可能性があります。
 新しい API をテストしてフィードバックをお寄せください。
 アドオン作成者の場合、これらの変更によって API がニーズを満たすことができなくなった場合は、GitHub の issue を作成してください。
+
 
 - ``appModuleHandler.NVDAProcessID`` は非推奨です。``globalVars.appPid`` を使います。 (#13646)
 - ``gui.quit`` は非推奨です。``wx.CallAfter(mainFrame.onExitCommand, None)`` を使います。 (#13498)
