@@ -9,6 +9,95 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2022.2</H2>
+<P>
+이번 릴리즈에는 많은 버그 수정이 포함됩니다.
+특히, Java 기반의 응용프로그램과 점자 디스플레이, Windows 기능에 매우 큰 개선이 이루어졌습니다.
+새로운 표 탐색 기능이 추가되으며, 유니코드 CLDR이 업데이트되었습니다.
+Liblouis가 새로운 독일어 점자표를 포함하여 업데이트되었습니다.
+</P>
+<H3>새로운 기능</H3>
+<UL>
+<LI>Microsoft Office 제품군에서 Microsoft Loop Components에 대한 상호작용을 지원합니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13617">#13617</A>)
+<LI>새로운 표 탐색 명령이 추가되었습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/957">#957</A>)
+ <UL>
+ <LI><CODE>control+alt+home/end</CODE> 단축키를 통해 첫 열과 마지막 열에 빠르게 접근할 수 있습니다.
+ <LI><CODE>control+alt+pageUp/pageDown</CODE> 단축키를 통해 첫 행과 마지막 행에 빠르게 접근할 수 있습니다.
+ </UL>
+<LI>언어 및 방언 자동 전환에 대한 모드 순환 단축키가 추가됩니다. 기본적으로 단축키가 할당돼 있지 않습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/10253">#10253</A>)
+</UL>
+
+<P></P>
+<H3>변경사항</H3>
+<UL>
+<LI>NSIS가 3.08버전으로 업데이트되었습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/9134">#9134</A>)
+<LI>CLDR이 41.0버전으로 업데이트되었습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13582">#13582</A>)
+<LI>LibLouis 점역기가 <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.22.0">3.22.0</A>버전으로 업데이트되었습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13775">#13775</A>)
+  <UL>
+  <LI>새로운 점자표: 독일어 2종 (상세)
+  </UL>
+<LI>새로운 컨트롤 역할, "작업대기 표시기"가 추가되었습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/10644">#10644</A>)
+<LI>이제 NVDA가 동작을 수행하지 못할 때 이에 대해 알립니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13500">#13500</A>)
+  <UL>
+  <LI>다음 상황이 포함됩니다:
+    <UL>
+    <LI>Microsoft Stroe 버전의 NVDA를 사용 중일 때.
+    <LI>보안 데스크탑 화면일 때.
+    <LI>모달 대화상자가 응답을 기다릴 때.
+    </UL>
+  </UL>
+</UL>
+
+<P></P>
+<H3>버그 수정</H3>
+<UL>
+<LI>Java 기반의 응용프로그램에 대한 버그 수정:
+  <UL>
+  <LI>NVDA는 이제 읽기전용 상태정보를 알립니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13692">#13692</A>)
+  <LI>NVDA는 이제 "사용할 수 없음"과 사용가능 상태정보를 정확하게 알립니다. (<A HREF="https://github.com/nvaccess/nvda/issues/10993">#10993</A>)
+  <LI>NVDA는 이제 Function키들을 포함한 단축키를 알립니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13643">#13643</A>)
+  <LI>NVDA는 이제 진행률 막대에서 말하기 또는 비프음으로 진행률을 알릴 수 있습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13594">#13594</A>)
+  <LI>NVDA는 사용자에게 표시할 때 더 이상 위젯에서 텍스트를 잘못 제거하지 않습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13102">#13102</A>)
+  <LI>NVDA는 이제 전환 버튼에 대한 상태정보를 알립니다. (<A HREF="https://github.com/nvaccess/nvda/issues/9728">#9728</A>)
+  <LI>NVDA는 이제 여러개의 창이 있는 Java 응용프로그램에서 창을 식별합니다. (<A HREF="https://github.com/nvaccess/nvda/issues/9184">#9184</A>)
+  <LI>NVDA는 이제 탭 컨트롤에 대한 위치 정보를 알립니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13744">#13744</A>)
+  </UL>
+<LI>점자 버그 수정:
+  <UL>
+  <LI>Fix braille output when navigating certain text in Mozilla rich edit controls, such as drafting a message in Thunderbird. (<A HREF="https://github.com/nvaccess/nvda/issues/12542">#12542</A>)
+  <LI>Mozilla ThunderBird에서 초안을 작성하는 것과 같이 특정 텍스트를 Mozilla 리치텍스트 편집창에서 탐색할 때의 점자 출력을 수정합니다. (<A HREF="https://github.com/nvaccess/nvda/issues/12542">#12542</A>)
+  <LI>점자 디스플레이가 자동으로 연결되고 마우스 추적을 활성화한 상태에서 마우스를 움직이면,
+  텍스트 리뷰 커서 명령은 이제 점자 디스플레이에 발화된 콘텐츠로 업데이트합니다. (<A HREF="https://github.com/nvaccess/nvda/issues/11519">#11519</A>)
+  <LI>이제 텍스트 리뷰 명령을 사용한 후 콘텐츠를 점자 디스플레이가 따라갈 수 있습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/8682">#8682</A>)
+  </UL>
+<LI>The NVDA installer can now run from directories with special characters.
+<LI>이제 NVDA 설치관리자를 특별한 문자로 된 디렉토리에서 실행 가능합니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13270">#13270</A>)
+<LI>Firefox에서 aria-rowindex, aria-colindex, aria-rowcount 또는 aria-colcount 속성이 설정됐을 때 NVDA는 더 이상 항목을 알리는 데에 실패하지 않습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13405">#13405</A>)
+<LI>표 탐색을 사용하여 병합된 셀을 탐색할 때 커서가 행 또는 열을 더 이상 전환하지 않습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/7278">#7278</A>)
+<LI>이제 Adobe Reader에서 상호작용할 수 없는 PDF들을 읽을 때, 서식의 유형과 상태(체크상자나 라디오버튼 같은 서식)을 읽습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13285">#13285</A>)
+<LI>이제 "기본 환경설정으로 초기화" 메뉴를 보안 데스크탑에서 접근 가능합니다.. (<A HREF="https://github.com/nvaccess/nvda/issues/13547">#13547</A>)
+<LI>NVDA가 종료되면 잠긴 마우스 키가 해제됩니다. 기존에는 마우스 버튼이 잠긴 상태로 남겨졌었습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13410">#13410</A>)
+<LI>Visual Studio에서 이제 줄 번호를 알립니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13604">#13604</A>)
+  <UL>
+  <LI>줄 번호 안내에 대해 참고로, 줄 번호 표시와 줄 번호 알림이 Visual Studio와 NVDA에서 모두 켜져있어야 합니다.
+  </UL>
+<LI>Visual Studio에서 이제 줄 들여쓰기를 정확하게 안내할 것입니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13574">#13574</A>)
+<LI>Windows 10과 Windows 11 최근 릴리즈에서 NVDA가 다시 시작 메뉴 검색 결과 상세 내용을 다시 한 번 알릴 것입니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13544">#13544</A>)
+<LI>Windows 10과 11의 계산기 10.1908버전 이상에서, NVDA는 공학 모드의 명령 등, 더 많은 명령에 대해 결과를 알립니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13383">#13383</A>)
+<LI>Windows 11에서 작업표시줄이나 작업보기같은 유저 인터페이스 요소와 마우스 또는 터치 상호작용을 통해 탐색 및 상호작용이 다시 가능해 집니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13506">#13506</A>)
+<LI>워드패드와 다른 <CODE>richText</CODE> 컨트롤에서 숨겨진 텍스트를 더이상 알리지 않습니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13618">#13618</A>)
+<LI>Windows 11 메모장에서 상태표시줄 내용을 읽을 것입니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13688">#13688</A>)
+<LI>이제 탐색 객체 표시 기능을 활성화하면 강조 표시가 즉시 나타납니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13641">#13641</A>)
+<LI>단일 열로 된 목록보기 항목의 읽기 문제을 수정합니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13659">#13659</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13735">#13735</A>)
+<LI>영어 및 프랑스어를 영국 영어와 프랑스어(프랑스)로 되돌리는 경우에 대한 eSpeak 자동 언어 전환을 수정합니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13727">#13727</A>)
+<LI>이전에 설치된 언어로 전환하려고 할 경우에 대한 OneCore의 자동 언어 전환을 수정합니다. (<A HREF="https://github.com/nvaccess/nvda/issues/13732">#13732</A>)
+</UL>
+
+<P></P>
+<H3>개발자를 위한 변경사항</H3>
+<P>
+개발자를 위한 내용에 대해서는 영문판 changes.html 문서를 참조하세요.
+</P>
 <H2>2022.1</H2>
 <P>
 이번 릴리즈는 마이크로소프트 Office의 UIA 지원을 포함합니다.
