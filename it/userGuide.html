@@ -28,7 +28,7 @@
     <LI><A HREF="#InstallingNVDA">3.2. Installazione di NVDA</A>
       <UL>
       <LI><A HREF="#InstallWithIncompatibleAddons">3.2.1. Avviso sui componenti aggiuntivi non compatibili</A>
-      <LI><A HREF="#StartAtWindowsLogon">3.2.2. Avvia all'accesso utente</A>
+      <LI><A HREF="#StartAtWindowsLogon">3.2.2. Utilizza NVDA durante l'accesso</A>
       <LI><A HREF="#CreateDesktopShortcut">3.2.3. Crea collegamento per il desktop e il tasto rapido (Control+alt+n)</A>
       <LI><A HREF="#CopyPortableConfigurationToCurrentUserAccount">3.2.4. Copia la configurazione portable nelle impostazioni dell'utente attuale</A>
       </UL>
@@ -222,8 +222,10 @@
     </UL>
   <LI><A HREF="#AdvancedTopics">16. Argomenti avanzati</A>
     <UL>
-    <LI><A HREF="#CommandLineOptions">16.1. Opzioni a riga di comando</A>
-    <LI><A HREF="#SystemWideParameters">16.2. Parametri di sistema</A>
+    <LI><A HREF="#SecureMode">16.1. Modalità protetta</A>
+    <LI><A HREF="#SecureScreens">16.2. Schermate protette</A>
+    <LI><A HREF="#CommandLineOptions">16.3. Opzioni a riga di comando</A>
+    <LI><A HREF="#SystemWideParameters">16.4. Parametri di sistema</A>
     </UL>
   <LI><A HREF="#FurtherInformation">17. Ulteriori Informazioni</A>
   </UL>
@@ -258,7 +260,7 @@ Le caratteristiche principali possono essere riassunte nei seguenti punti:
 <LI>Tradotto in 54 lingue
 <LI>Supporto ai sistemi operativi più moderni, comprese le edizioni a 32 e 64 bit
 <LI>Supporto al prompt dei comandi di Windows e alle applicazioni lanciate da console
-<LI>Gestione delle schermate di accesso utente e quelle relative alla sicurezza
+<LI>Gestione delle schermate di accesso utente e quelle <A HREF="#SecureScreens">relative alla sicurezza</A>
 <LI>Lettura di testo e controlli  mentre si utilizza un touch screen.
 <LI>Supporto alle interfacce più comuni per l'accessibilità, come Microsoft Active Accessibility, Java Access Bridge, IAccessible2 e UI Automation.
 <LI>Capacità di evidenziare il focus di sistema.
@@ -335,7 +337,7 @@ In seguito verrà richiesto se installare NVDA sul disco fisso, se creare una ve
 </P>
 <P>
 Se si desidera utilizzare spesso NVDA sul computer, è consigliabile scegliere di installare NVDA nel sistema.
-L'installazione comporta alcuni vantaggi, come la possibilità di avviarsi automaticamente dopo il login dell'utente, la lettura delle finestre di accesso e le schermate generate dal controllo utente per la sicurezza (UAC), ed inoltre verrà creata  un'icona sul desktop e una voce sul menu avvio, tutte caratteristiche non presenti nella versione portable.
+L'installazione comporta alcuni vantaggi, come la possibilità di avviarsi automaticamente dopo il login dell'utente, la lettura delle finestre di accesso e <A HREF="#SecureScreens">quelle inerenti la sicurezza</A>, ed inoltre verrà creata  un'icona sul desktop e una voce sul menu avvio, tutte caratteristiche non presenti nella versione portable.
 Si ricorda che una volta installato NVDA, sarà sempre possibile creare una copia portable in qualsiasi momento.
 </P>
 <P>
@@ -383,10 +385,10 @@ Prima di poter premere il pulsante continua, è necessario selezionare la casell
 Si veda la <A HREF="#incompatibleAddonsManager">sezione componenti aggiuntivi non compatibili</A> per maggiori informazioni su questo pulsante.
 </P>
 <A NAME="StartAtWindowsLogon"></A>
-<H4>3.2.2. Avvia all'accesso utente</H4>
+<H4>3.2.2. Utilizza NVDA durante l'accesso</H4>
 <P>
 Questa opzione permette di stabilire se NVDA debba automaticamente avviarsi o meno alla finestra di logon di Windows, prima di inserire la password.
-Inoltre, questo permette la lettura delle finestre controllo account utente e di altri controlli sulla sicurezza.
+Inoltre, questo permette la lettura delle finestre controllo account utente e di <A HREF="#SecureScreens">altri controlli sulla sicurezza</A>.
 Questa opzione è abilitata di default per le nuove installazioni.
 </P>
 <A NAME="CreateDesktopShortcut"></A>
@@ -399,7 +401,7 @@ Inoltre, se viene creato tale collegamento, verrà assegnato un tasto rapido cor
 <H4>3.2.4. Copia la configurazione portable nelle impostazioni dell'utente attuale</H4>
 <P>
 Questa opzione permette di selezionare se NVDA debba copiare o meno la configurazione utente, dalla copia in esecuzione di NVDA, nelle impostazioni dell'utente loggato per la copia installata dello screen reader.
-Tali impostazioni non verranno copiate per eventuali altri utenti, e nemmeno per la configurazione di sistema, ossia  tutto ciò che riguarda il logon di Windows e le schermate inerenti la sicurezza.
+Tali impostazioni non verranno copiate per eventuali altri utenti, e nemmeno per la configurazione di sistema, ossia  tutto ciò che riguarda il logon di Windows e le <A HREF="#SecureScreens">schermate inerenti la sicurezza</A>.
 L'opzione è disponibile soltanto quando si installa da una copia portable, non quindi se si installa direttamente dal pacchetto scaricato.
 </P>
 <A NAME="CreatingAPortableCopy"></A>
@@ -832,6 +834,26 @@ Se ci si trova all'interno di una tabella, sono disponibili i seguenti comandi:
 <TD>Spostarsi alla riga successiva</TD>
 <TD>control+alt+Freccia Giù</TD>
 <TD>Sposta il cursore di sistema alla riga successiva (Rimanendo nella stessa colonna)</TD>
+</TR>
+<TR>
+<TD>Spostarsi alla prima colonna</TD>
+<TD>control+alt+inizio</TD>
+<TD>Sposta il cursore di sistema sulla prima colonna (rimanendo nella stessa riga)</TD>
+</TR>
+<TR>
+<TD>Spostarsi all'ultima colonna</TD>
+<TD>control+alt+fine</TD>
+<TD>Sposta il cursore di sistema sull'ultima colonna (rimanendo nella stessa riga)</TD>
+</TR>
+<TR>
+<TD>Spostarsi alla prima riga</TD>
+<TD>control+alt+PaginaSu</TD>
+<TD>Sposta il cursore di sistema alla prima riga (rimanendo nella stessa colonna)</TD>
+</TR>
+<TR>
+<TD>Spostarsi all'ultima riga</TD>
+<TD>control+alt+PaginaGiù</TD>
+<TD>Sposta il cursore di sistema all'ultima riga (rimanendo nella stessa colonna)</TD>
 </TR>
 </TABLE>
 
@@ -1497,8 +1519,11 @@ NVDA supporta la matematica nei seguenti formati:
 <LI>MathML in Mozilla Firefox, Microsoft Internet Explorer e Google Chrome.
 <LI>Le equazioni generate tramite lo strumento apposito di Microsoft Word 365 con UI automation attiva:
 NVDA è in grado di leggere e interagire con le equazioni matematiche in Microsoft Word 365/2016 build 14326 e versioni successive.
-Si noti tuttavia che qualsiasi equazione creata in precedenza con MathType dovrà essere convertita nel formato Office, selezionandola e scegliendo opzioni equazione - converti in matematica Office, dal menu contestuale. è bene assicurarsi di disporre dell'ultima versione di MathType  prima di farlo.
-Microsoft Word ora fornisce anche la navigazione in linea delle formule basata su simboli e supporta l'immissione di matematica utilizzando diverse sintassi, incluso LateX. Per ulteriori informazioni, si veda [Equazioni in formato Lineare che usano UnicodeMath e LaTeX in Word <A HREF="https://support.microsoft.com/it-it/office/equazioni-in-formato-lineare-che-usano-unicodemath-e-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8#">https://support.microsoft.com/it-it/office/equazioni-in-formato-lineare-che-usano-unicodemath-e-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8#</A>:~:text=Equazioni%20in%20formato%20Lineare%20che%20usano%20UnicodeMath%20e%20LaTeX%20in%20Word,-Word%20per%20Microsoft&amp;text=Per%20inserire%20un'equazione%20usando,usando%20Correzione%20automatica%20simboli%20matematici.]
+Si noti tuttavia che qualsiasi equazione creata in precedenza con MathType dovrà essere convertita nel formato Office.
+Ciò può essere effettuato selezionandola e scegliendo opzioni equazione - converti in matematica Office, dal menu contestuale.
+è bene assicurarsi di disporre dell'ultima versione di MathType  prima di farlo.
+Microsoft Word ora fornisce anche la navigazione in linea delle formule basata su simboli e supporta l'immissione di matematica utilizzando diverse sintassi, incluso LateX.
+Per ulteriori informazioni, si veda [Equazioni in formato Lineare che usano UnicodeMath e LaTeX in Word <A HREF="https://support.microsoft.com/it-it/office/equazioni-in-formato-lineare-che-usano-unicodemath-e-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8#">https://support.microsoft.com/it-it/office/equazioni-in-formato-lineare-che-usano-unicodemath-e-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8#</A>:~:text=Equazioni%20in%20formato%20Lineare%20che%20usano%20UnicodeMath%20e%20LaTeX%20in%20Word,-Word%20per%20Microsoft&amp;text=Per%20inserire%20un'equazione%20usando,usando%20Correzione%20automatica%20simboli%20matematici.]
 <LI>Microsoft Powerpoint, e le versioni meno recenti di Microsoft Word: 
 NVDA è in grado di leggere e di navigare tra le equazioni Mathtype sia in Powerpoint che in Microsoft Word.
 Si noti che MathType dev'essere installato affinché il supporto funzioni correttamente.
@@ -1719,6 +1744,10 @@ Per far stare più informazioni possibili su di un display braille, sono state d
 <TR>
 <TD>prgbar</TD>
 <TD>Barra di avanzamento</TD>
+</TR>
+<TR>
+<TD>bsyind</TD>
+<TD>indicatore di occupato</TD>
 </TR>
 <TR>
 <TD>rbtn</TD>
@@ -1956,7 +1985,8 @@ Il driver di ogni display Braille è già dotato di alcune di queste assegnazion
 <P>
 Sebbene questo approccio risulti utile per tasti singoli o comunque premuti di frequente (ad esempio Tab), si potrebbe non voler assegnare un set univoco di tasti a ciascuna scorciatoia da tastiera.
 Per consentire l'emulazione di combinazioni per le quali è necessario tener premuti i tasti modificatori, NVDA fornisce comandi per attivare/disattivare control, alt, shift, windows, eNVDA, oltre ad altri comandi per alcune combinazioni di quei tasti.
-Per utilizzare questi interruttori, innanzitutto è necessario attivare il comando (o la sequenza di comandi) per i tasti modificatori che si desidera rimangano premuti, quindi inserire il carattere che fa parte della scorciatoia da tastiera voluta.
+Per utilizzare questi interruttori, innanzitutto è necessario attivare il comando (o la sequenza di comandi) per i tasti modificatori che si desidera rimangano premuti.
+Quindi, inserire il carattere che fa parte della scorciatoia da tastiera voluta.
 Per esempio, per ottenere control+f, usare il comando "attiva/disattiva tasto control" e poi digitare una f,
 e per inserire control+alt+t, servirsi o dei comandi "attiva/disattiva tasto control" e "Attiva/disattiva tasto alt", nell'ordine che si preferisce, oppure del comando "Attiva/disattiva tasti control e alt", per poi digitare la t.
 </P>
@@ -2490,7 +2520,7 @@ Questa opzione è disponibile soltanto nelle versioni Installer.
 <A NAME="GeneralSettingsCopySettings"></A>
 <H5>Utilizza le impostazioni salvate nella finestra di Accesso</H5>
 <P>
-La pressione di questo tasto copierà le proprie impostazioni utente di NVDA nella cartella delle configurazioni di sistema, di modo che NVDA le possa utilizzare nelle schermate di Accesso utente, nei controlli UAC e così via.
+La pressione di questo tasto copierà le proprie impostazioni utente di NVDA nella cartella delle configurazioni di sistema, di modo che NVDA le possa utilizzare nelle schermate di Accesso utente, nei controlli UAC e nelle altre <A HREF="#SecureScreens">schermate di sicurezza</A>.
 Per precauzione, se si vuole essere certi che le proprie impostazioni vengano copiate correttamente, conviene salvare la configurazione con il comando Control+NVDA+c, oppure andare alla voce Salva Configurazione nel menu di NVDA.
 Questa opzione è disponibile soltanto nelle versioni Installer.
 </P>
@@ -3346,8 +3376,12 @@ Sebbene il buffer virtuale non sia costituito da pagine, questo campo modifica i
 Tasto: NVDA+v
 </P>
 <P>
-Questa opzione consente di specificare se, in modalità navigazione, elementi quali pulsanti, link e campi debbano occupare un'unica riga o se debbano mantenere per quanto possibile il flusso di testo più simile alla visualizzazione reale. Tenere presente che questa opzione non si applica alle app di Microsoft Office come Outlook e Word, che utilizzano sempre il layout dello schermo.
-In sostanza, se la casella di controllo viene attivata, tali elementi vengono presentati all'utente esattamente come essi sono visualizzati sullo schermo, quindi, ad esempio, possono esservi più link in una stessa riga. Se invece la casella di controllo è disattivata, ciascun elemento sarà posto in una riga differente, permettendo una navigazione più comoda ma meno simile alla disposizione reale degli oggetti. 
+Questa opzione consente di specificare se, in modalità navigazione, elementi quali pulsanti, link e campi debbano occupare un'unica riga o se debbano mantenere per quanto possibile il flusso di testo più simile alla visualizzazione reale.
+Tenere presente che questa opzione non si applica alle app di Microsoft Office come Outlook e Word, che utilizzano sempre il layout dello schermo.
+In sostanza, se la casella di controllo viene attivata, tali elementi vengono presentati all'utente esattamente come essi sono visualizzati sullo schermo.
+Ad esempio, una riga che visivamente è formata da più collegamenti verrà presentata in braille o tramite sintesi vocale con tutti i link nella stessa riga.
+Se invece la casella di controllo è disattivata, ciascun elemento sarà posto in una riga differente.
+Questo per alcuni utenti si traduce in una navigazione più comoda ma meno simile alla disposizione reale degli oggetti.
 </P>
 <H5>Attiva modalità navigazione al caricamento della pagina</H5>
 <P>
@@ -7036,8 +7070,48 @@ Di seguito sono riportate le assegnazioni dei tasti per questi display.
 
 <A NAME="AdvancedTopics"></A>
 <H2>16. Argomenti avanzati</H2>
+<A NAME="SecureMode"></A>
+<H3>16.1. Modalità protetta</H3>
+<P>
+NVDA può essere avviato in modalità protetta con <A HREF="#CommandLineOptions">l'opzione a riga di comando</A> <CODE>-s</CODE>. [
+NVDA viene avviato in modalità protetta quando eseguito nelle <A HREF="#SecureScreens">schermate protette</A>, a meno che non sia abilitato il <A HREF="#SystemWideParameters">parametro a livello di sistema</A> <CODE>serviceDebug</CODE>..
+</P>
+<P>
+La modalità protetta disabilita:
+</P>
+<UL>
+<LI>Il salvataggio della configurazione e di altre impostazioni su disco
+<LI>Il salvataggio della mappa dei gesti su disco
+<LI>Le funzionalità dei <A HREF="#ConfigurationProfiles">profili di configurazione</A> come la creazione, l'eliminazione, la ridenominazione dei profili,  etc.
+<LI>L'aggiornamento di NVDA e creazione di copie portable
+<LI>La <A HREF="#PythonConsole">console Python</A>
+<LI>Il <A HREF="#LogViewer">visualizzatore log</A> e le funzionalità di log
+</UL>
+
+<P></P>
+<A NAME="SecureScreens"></A>
+<H3>16.2. Schermate protette</H3>
+<P>
+NVDA viene avviato in modalità protetta quando eseguito nelle <A HREF="#SecureScreens">schermate protette</A>, a meno che non sia abilitato il <A HREF="#SystemWideParameters">parametro a livello di sistema</A> <CODE>serviceDebug</CODE>..
+</P>
+<P>
+Quando NVDA è in modalità protetta, lo screen reader utilizza un particolare profilo di sistema per le preferenze.
+Le preferenze dell'utente possono essere copiate <A HREF="#GeneralSettingsCopySettings">per essere utilizzate nelle schermate protette</A>.
+</P>
+<P>
+Le schermate protette comprendono:
+</P>
+<UL>
+<LI>La schermata di accesso di Windows
+<LI>La finestra di dialogo Controllo accesso utente, attiva quando si esegue un'azione come amministratore
+  <UL>
+  <LI>Ciò comprende l'installazione di programmi
+  </UL>
+</UL>
+
+<P></P>
 <A NAME="CommandLineOptions"></A>
-<H3>16.1. Opzioni a riga di comando</H3>
+<H3>16.3. Opzioni a riga di comando</H3>
 <P>
 NVDA è in grado di accettare alcune opzioni a riga di comando per modificarne il comportamento all'avvio.
 Si possono inserire tutti i parametri che si desiderano.
@@ -7138,7 +7212,7 @@ Ecco l'elenco dei parametri a riga di comando di NVDA:
 <TR>
 <TD>-s</TD>
 <TD>--secure</TD>
-<TD>Modalità protetta (disabilita Python console e qualsiasi log)</TD>
+<TD>Avvia NVDA in <A HREF="#SecureMode">modalità protetta</A></TD>
 </TR>
 <TR>
 <TD>None</TD>
@@ -7198,10 +7272,10 @@ Ecco l'elenco dei parametri a riga di comando di NVDA:
 </TABLE>
 
 <A NAME="SystemWideParameters"></A>
-<H3>16.2. Parametri di sistema</H3>
+<H3>16.4. Parametri di sistema</H3>
 <P>
 NVDA consente di impostare alcuni valori nel registro di sistema che andranno ad influenzare il comportamento dello screen reader.
-Tali valori sono registrati nel registro in una delle seguenti chiavi:
+Tali valori sono salvati nel registro in una delle seguenti chiavi:
 </P>
 <UL>
 <LI>sistemi a 32-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
@@ -7229,7 +7303,7 @@ Di seguito vengono elencati i valori modificabili con queste chiavi di registro:
 <TD>serviceDebug</TD>
 <TD>DWORD</TD>
 <TD>0 (predefinito) per disabilitare, 1 per abilitare</TD>
-<TD>Se attivato, disattiva la modalità protetta di Windows Secure Desktop, permettendo l'utilizzo della console python e la visualizzazione dei log. A causa di alcune importanti implicazioni per la sicurezza, l'uso di questa opzione è fortemente sconsigliata</TD>
+<TD>Se abilitata, disattiva la <A HREF="#SecureMode">Modalità protetta</A> nelle  <A HREF="#SecureScreens">Schermate protette</A>. A causa di diverse importanti implicazioni sulla sicurezza, l'uso di questa opzione è fortemente sconsigliato</TD>
 </TR>
 </TABLE>
 
