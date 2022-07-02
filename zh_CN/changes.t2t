@@ -75,13 +75,13 @@ NVDA 更新日志
 -
 
 
-== Changes for Developers ==
+== 插件以及 NVDA 核心开发者需要了解的变动 ==
 - 支持使用 Visual Studio 2022 (17.0) 编译 NVDA 依赖项。对于开发和发布版本，仍使用 Visual Studio 2019 进行编译。 (#13033)
 - 通过 accSelection 检索选定子项的数量时，可以正确处理由“IAccessible::get accSelection”返回负子 ID 或 IDispatch 的情况。 (#13277)
 - 新的便利函数 “registerExecutableWithAppModule” 和 “unregisterExecutable” 已添加到 “appModuleHandler” 模块中。该特性可用于使用多个可执行文件的单个 App Module。 (#13366)
 -
 
-=== Deprecations ===
+=== 弃用 ===
 这些是提议的重大 API 更改。
 弃用的 API 在指定版本发布前仍然可用。
 如果未明确指定版本，则表明尚未确定移除计划。
@@ -94,11 +94,10 @@ NVDA 更新日志
 - ``gui.quit`` 已弃用，请改用 ``wx.CallAfter(mainFrame.onExitCommand, None)``。 (#13498)
   -
 % Insert new list items here as the alias appModule table should be kept at the bottom of this list
-- Some alias appModules are marked as deprecated.
-Code which imports from one of them, should instead import from the replacement module.  (#13366)
+- 以下 appModules 已被标记为已弃用。要导入其中任意一项请从替代模块中导入。 (#13366)
 -
 
-|| Removed module name | Replacement module |
+|| 弃用模块| 替代模块 |
 | azuredatastudio | code |
 | azuredatastudio-insiders | code |
 | calculatorapp | calculator |
