@@ -10,6 +10,227 @@
 <I>Traduzido pela Equipa portuguesa do NVDA</I><BR>
 </FONT></CENTER>
 
+<H2>2022.2</H2>
+<P>
+Esta versão inclui muitas correcções de bugs.
+Melhorias significativas para aplicações baseadas em Java, dispositivos Braille e funcionalidades do Windows.
+</P>
+<P>
+Introduzidos novos comandos de navegação em tabelas.
+Actualizado o Unicode CLDR.
+Actualizado o LibLouis, que inclui uma nova tabela Braille alemã.
+</P>
+<H3>Novas funcionalidades</H3>
+<UL>
+<LI>Suporte à interacção com Microsoft Loop Components nos produtos Microsoft Office. (<A HREF="https://github.com/nvaccess/nvda/issues/13617">#13617</A>)
+<LI>Foram adicionados novos comandos de navegação de tabela. (<A HREF="https://github.com/nvaccess/nvda/issues/957">#957</A>)
+ <UL>
+ <LI>"control+alt+home/end" para se mover para a primeira/última coluna da tabela;
+ <LI>"control+alt+pageUp/pageDown" para se mover para a primeira/última linha da tabela;.
+ </UL>
+<LI>Foi acrescentado um comando, sem tecla de atalho atribuída, para alternar entre os modos de mudança automática de idioma e dialectos. (<A HREF="https://github.com/nvaccess/nvda/issues/10253">#10253</A>)
+</UL>
+
+<P></P>
+<P>
+== Alterações ===
+</P>
+<UL>
+<LI>NSIS foi actualizado para a versão 3.08. (<A HREF="https://github.com/nvaccess/nvda/issues/9134">#9134</A>)
+<LI>CLDR foi actualizado para a versão 41.0. (<A HREF="https://github.com/nvaccess/nvda/issues/13582">#13582</A>)
+<LI>Conversor LibLouis braille actualizado para <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.22.0">3.22.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/13775">#13775</A>)
+  <UL>
+  <LI>Nova tabela braille: Alemão grau 2 (detalhado)
+  </UL>
+<LI>Adicionado novo "Role" para os controlos de "indicador de ocupado". (<A HREF="https://github.com/nvaccess/nvda/issues/10644">#10644</A>)
+<LI>O NVDA anuncia agora quando uma acção própria não pode ser executada. (<A HREF="https://github.com/nvaccess/nvda/issues/13500">#13500</A>)
+  <UL>
+  <LI>Isto inclui quando:
+    <UL>
+    <LI>Se utiliza a versão NVDA Windows Store.
+    <LI>Num contexto seguro.
+    <LI>está à  espera de uma resposta a um diálogo modal.
+    </UL>
+  </UL>
+</UL>
+
+<P></P>
+<H3>Correcções</H3>
+<UL>
+<LI>Correcções para aplicações baseadas em Java:
+  <UL>
+  <LI>O NVDA já anuncia o estado apenas de leitura. (<A HREF="https://github.com/nvaccess/nvda/issues/13692">#13692</A>)
+  <LI>O NVDA passa a anunciar corretamente o estado desactivado/activado. (<A HREF="https://github.com/nvaccess/nvda/issues/10993">#10993</A>)
+  </UL>
+<LI>O NVDA já anuncia atalhos de teclas de função. (<A HREF="https://github.com/nvaccess/nvda/issues/13643">#13643</A>)
+  <UL>
+  <LI>O NVDA já anuncia as barras de progressão por bips ou voz. (<A HREF="https://github.com/nvaccess/nvda/issues/13594">#13594</A>)
+  <LI>O NVDA já não remove incorrectamente o texto dos widgets quando os apresentar ao utilizador. (<A HREF="https://github.com/nvaccess/nvda/issues/13102">#13102</A>)
+  <LI>O NVDA já anuncia o estado dos botões de alternância. (<A HREF="https://github.com/nvaccess/nvda/issues/9728">#9728</A>)
+  <LI>O NVDA já identifica a janela numa aplicação Java com múltiplas janelas. (<A HREF="https://github.com/nvaccess/nvda/issues/9184">#9184</A>)
+  <LI>O NVDA já anuncia a informação de posição para controlos de tabulação. (<A HREF="https://github.com/nvaccess/nvda/issues/13744">#13744</A>)
+  </UL>
+<LI>Correcções no Braille:
+  <UL>
+  <LI>Corrige a saída em braille ao navegar em textos em controlos rich edit  do Mozilla, tais como a redacção de uma mensagem em Thunderbird. (<A HREF="https://github.com/nvaccess/nvda/issues/12542">#12542</A>)
+  <LI>Quando o Braile segue automaticamente, e o rato é movido com o acompanhamento do rato activado,
+   os comandos de revisão de texto já actualizam o que é mostrado no dispositivo Braille com o conteúdo falado. (<A HREF="https://github.com/nvaccess/nvda/issues/11519">#11519</A>)
+  <LI>Já é possível deslocar o conteúdo da linha Braille através do conteúdo falado pela utilização de comandos de revisão de texto. (<A HREF="https://github.com/nvaccess/nvda/issues/8682">#8682</A>)
+  </UL>
+<LI>O instalador do NVDA já pode funcionar a partir de directórios com caracteres especiais. (<A HREF="https://github.com/nvaccess/nvda/issues/13270">#13270</A>)
+<LI>No Firefox, o NVDA já não falha ao reportar itens em páginas web quando os atributos aria-rowindex, aria-colindex, aria-rowcount ou aria-colcount são inválidos. (<A HREF="https://github.com/nvaccess/nvda/issues/13405">#13405</A>)
+<LI>O cursor já não muda de linha ou coluna quando se utiliza a navegação em tabelas para navegar através de células unidas. (<A HREF="https://github.com/nvaccess/nvda/issues/7278">#7278</A>)
+<LI>Ao ler PDFs não-interactivos no Adobe Reader, o tipo e estado dos campos do formulário (tais como caixas de verificação e botões de rádio) já são reportados. (<A HREF="https://github.com/nvaccess/nvda/issues/13285">#13285</A>)
+<LI>"Restaurar a configuração para o padrão original" está agora acessível no menu da NVDA durante o modo seguro. (<A HREF="https://github.com/nvaccess/nvda/issues/13547">#13547</A>)
+<LI>Qualquer botão do rato bloqueado será desbloqueado quando o NVDA terminar, anteriormente o botão do rato permaneceria bloqueado. (<A HREF="https://github.com/nvaccess/nvda/issues/13410">#13410</A>)
+<LI>No Visual Studio já é anunciado o número das linhas. (<A HREF="https://github.com/nvaccess/nvda/issues/13604">#13604</A>)
+  <UL>
+  <LI>Note-se que para que o anúncio do número das linhas funcione, mostrar os números de linha deve ser activado no Visual Studio e no NVDA.
+  </UL>
+<LI>No Visual Studio já é correctamente anunciada a indentação da linha. (<A HREF="https://github.com/nvaccess/nvda/issues/13574">#13574</A>)
+<LI>O NVDA volta a anunciar os detalhes do resultado da pesquisa do menu Iniciar nas versões recentes do Windows 10 e 11. (<A HREF="https://github.com/nvaccess/nvda/issues/13544">#13544</A>)
+<LI>No Windows 10 e 11, Versão 10.1908 e posteriores da calculadora, o NVDA anunciará os resultados quando mais comandos forem premidos, tais como comandos do modo científico. (<A HREF="https://github.com/nvaccess/nvda/issues/13383">#13383</A>)
+<LI>No Windows 11, é novamente possível navegar e interagir com os elementos da interface do utilizador, tais como Barra de Tarefas e Vista de Tarefas usando o rato e a interacção por toque. (<A HREF="https://github.com/nvaccess/nvda/issues/13506">#13506</A>)
+<LI>O NVDA irá anunciar o conteúdo da barra de estado no Bloco de Notas do Windows 11. (<A HREF="https://github.com/nvaccess/nvda/issues/13688">#13688</A>)
+<LI>O realce visual do objecto de navegação já aparece imediatamente após a activação da funcionalidade. (<A HREF="https://github.com/nvaccess/nvda/issues/13641">#13641</A>)
+<LI>Corrigida a leitura de itens de visualização de lista de uma coluna. (<A HREF="https://github.com/nvaccess/nvda/issues/13659">#13659</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13735">#13735</A>)
+<LI>Corrigida a mudança automática de idioma do eSpeak para inglês e francês voltando para inglês britânico e francês (França). (<A HREF="https://github.com/nvaccess/nvda/issues/13727">#13727</A>)
+<LI>Corrigida a mudança automática de idioma OneCore ao tentar mudar para um idioma anteriormente instalado. (<A HREF="https://github.com/nvaccess/nvda/issues/13732">#13732</A>)
+</UL>
+
+<P></P>
+<H3>Alterações para desenvolvedores</H3>
+<UL>
+<LI>Compiling NVDA dependencies with Visual Studio 2022 (17.0) is now supported.
+For development and release builds, Visual Studio 2019 is still used. (<A HREF="https://github.com/nvaccess/nvda/issues/13033">#13033</A>)
+<LI>When retrieving the count of selected children via accSelection,
+the case where a negative child ID or an IDispatch is returned by <CODE>IAccessible::get_accSelection</CODE> is now handled properly. (<A HREF="https://github.com/nvaccess/nvda/issues/13277">#13277</A>)
+<LI>New convenience functions <CODE>registerExecutableWithAppModule</CODE> and <CODE>unregisterExecutable</CODE> were added to the <CODE>appModuleHandler</CODE> module.
+They can be used to use a single App Module with multiple executables. (<A HREF="https://github.com/nvaccess/nvda/issues/13366">#13366</A>)
+</UL>
+
+<P></P>
+<H4>Futuras remoções</H4>
+<P>
+These are proposed API breaking changes.
+The deprecated part of the API will continue to be available until the specified release.
+If no release is specified, the plan for removal has not been determined.
+Note, the roadmap for removals is 'best effort' and may be subject to change.
+Please test the new API and provide feedback.
+For add-on authors, please open a GitHub issue if these changes stop the API from meeting your needs.
+</P>
+<UL>
+<LI><CODE>appModuleHandler.NVDAProcessID</CODE> is deprecated, use <CODE>globalVars.appPid</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/13646">#13646</A>)
+<LI><CODE>gui.quit</CODE> is deprecated, use <CODE>wx.CallAfter(mainFrame.onExitCommand, None)</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/13498">#13498</A>)
+  -
+<LI>Some alias appModules are marked as deprecated.
+Code which imports from one of them, should instead import from the replacement module.  (<A HREF="https://github.com/nvaccess/nvda/issues/13366">#13366</A>)
+</UL>
+
+<P></P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Removed module name</TH>
+<TH>Replacement module</TH>
+</TR>
+<TR>
+<TD>azuredatastudio</TD>
+<TD>code</TD>
+</TR>
+<TR>
+<TD>azuredatastudio-insiders</TD>
+<TD>code</TD>
+</TR>
+<TR>
+<TD>calculatorapp</TD>
+<TD>calculator</TD>
+</TR>
+<TR>
+<TD>code - insiders</TD>
+<TD>code</TD>
+</TR>
+<TR>
+<TD>commsapps</TD>
+<TD>hxmail</TD>
+</TR>
+<TR>
+<TD>dbeaver</TD>
+<TD>eclipse</TD>
+</TR>
+<TR>
+<TD>digitaleditionspreview</TD>
+<TD>digitaleditions</TD>
+</TR>
+<TR>
+<TD>esybraille</TD>
+<TD>esysuite</TD>
+</TR>
+<TR>
+<TD>hxoutlook</TD>
+<TD>hxmail</TD>
+</TR>
+<TR>
+<TD>miranda64</TD>
+<TD>miranda32</TD>
+</TR>
+<TR>
+<TD>mpc-hc</TD>
+<TD>mplayerc</TD>
+</TR>
+<TR>
+<TD>mpc-hc64</TD>
+<TD>mplayerc</TD>
+</TR>
+<TR>
+<TD>notepad++</TD>
+<TD>notepadPlusPlus</TD>
+</TR>
+<TR>
+<TD>searchapp</TD>
+<TD>searchui</TD>
+</TR>
+<TR>
+<TD>searchhost</TD>
+<TD>searchui</TD>
+</TR>
+<TR>
+<TD>springtoolsuite4</TD>
+<TD>eclipse</TD>
+</TR>
+<TR>
+<TD>sts</TD>
+<TD>eclipse</TD>
+</TR>
+<TR>
+<TD>teamtalk3</TD>
+<TD>teamtalk4classic</TD>
+</TR>
+<TR>
+<TD>textinputhost</TD>
+<TD>windowsinternal_composableshell_experiences_textinput_inputapp</TD>
+</TR>
+<TR>
+<TD>totalcmd64</TD>
+<TD>totalcmd</TD>
+</TR>
+<TR>
+<TD>win32calc</TD>
+<TD>calc</TD>
+</TR>
+<TR>
+<TD>winmail</TD>
+<TD>msimn</TD>
+</TR>
+<TR>
+<TD>zend-eclipse-php</TD>
+<TD>eclipse</TD>
+</TR>
+<TR>
+<TD>zendstudio</TD>
+<TD>eclipse</TD>
+</TR>
+</TABLE>
+
 <H2>2022.1</H2>
 <P>
 Esta versão inclui:
