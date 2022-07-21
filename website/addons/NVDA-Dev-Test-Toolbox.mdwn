@@ -95,6 +95,7 @@ The commands available in log reader mode are described hereafter.
 ### Quick navigation commands
 
 Single letter command similar to browse mode quick navigation keys allow to move to various type of log messages:
+
 * m: any message
 * e: ERROR
 * i: IO
@@ -116,7 +117,8 @@ For more details regarding the configuration, please see the paragraph NVDA Debu
 
 ## Python console extension
 
-In the console, you can call the following function to view the source code that defines the variable `myVar`:  
+In the console, you can call the following function to view the source code that defines the variable `myVar`:
+
 `openCodeFile(myVar)`
 
 For this feature to work, you need to have configured your favorite editor's command.
@@ -128,16 +130,11 @@ It cannot be called on objects whose source code is not available such as python
 
 Below are examples of call in NVDA's code:
 
-* View the definition of the function `speech.speech.speak`:  
-  `openCodeFile(speech.speech.speak)`
-* View the definition of the class `TextInfo`:  
-  `openCodeFile(textInfos.TextInfo)`
-* View the definition of the method `copyToClipboard` of the class `TextInfo`:  
-  `openCodeFile(textInfos.TextInfo.copyToClipboard)`
-* View the class definition of the focused object:  
-  `openCodeFile(focus)`
-* Open the file `api.py` defining the module `api`:  
-  `openCodeFile(api)`
+* View the definition of the function `speech.speech.speak`: `openCodeFile(speech.speech.speak)`
+* View the definition of the class `TextInfo`: `openCodeFile(textInfos.TextInfo)`
+* View the definition of the method `copyToClipboard` of the class `TextInfo`: `openCodeFile(textInfos.TextInfo.copyToClipboard)`
+* View the class definition of the focused object: `openCodeFile(focus)`
+* Open the file `api.py` defining the module `api`: `openCodeFile(api)`
 
 ## Log the stack trace of the speech function
 
@@ -158,22 +155,30 @@ If NVDA's file need to be viewed and if you are not running from source, you als
 
 To use the 'open source code' command or the `openCodeFile` console command, you need first to configure the command that will be called to open the file in your favorite editor.
 For this, open the NVDA console (NVDA+control+Z) and type the following line and then Enter:
+
 `config.conf['ndtt']['sourceFileOpener'] = r'"C:\path\to\my\editor\editor.exe" "{path}":{line}'`
+
 You should of course modify this line according to the real name and location of your editor and the syntax used by it to open files.
+
 `{path}` will be replaced by the full path of the file to open and `{line}` by the line number where you want the cursor to be set.
+
 For Notepad++ for example the command to type in the console would be:
+
 `config.conf['ndtt']['sourceFileOpener'] = r'"C:\Program Files\Notepad++\notepad++.exe" "{path}" -n{line}'`
 
 ### NVDA source code path configuration
 
 When a file belonging to NVDA's core is listed in the traceback, the line is of the following form:
+
 `File "config\profileUpgrader.pyc", line 30, in upgrade`
 
 If you are not running NVDA from source, you may specify an alternate location where the source file will be found, e.g. the place where you have cloned NVDA source files.
 In this case, you have to configure the path where you have NVDA source files located.
 
 For this, open the NVDA console (NVDA+control+Z) and type the following line and then Enter:
+
 `config.conf['ndtt']['nvdaSourcePath'] = r'C:\pathExample\GIT\nvda\source'`
+
 Of course, replace the path of NVDA source with the correct one.
 
 Be sure however that the version of your source file (e.g. GIT commit) is the same as the one of the running instance of NVDA.
