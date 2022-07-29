@@ -1,0 +1,23 @@
+commit 9d25bace377bcc640182eb72da803e0de00e68fe
+Author: Sean Budd <sean@nvaccess.org>
+Date:   Wed Jul 27 15:37:55 2022 +1000
+
+    Revert "Introducing table sayall commands (#13670)"  (#13954)
+    
+    Reverts: #13670, #13901
+    Fixes #13927
+    Re-introduces: #13469
+    
+    Summary of the issue:
+    The fix for #13927 is complex, and will need weeks of testing on alpha.
+    This means that #13469 is blocked until #13670 can be implemented with #13927 fixed.
+    
+    Description of user facing changes
+    Removes table say all commands from 2022.3
+    
+    Description of development approach
+    Revert PRs in the right order, fix up the release blurb
+    
+    Testing strategy:
+    #13670 has been confirmed as the commit which broke #13927 using a git bisect.
+    The build from this code has been tested with bookworm.
