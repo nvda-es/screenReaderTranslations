@@ -1,7 +1,72 @@
 NVDA 변경 이력
 
-
 %!includeconf: ../changes.t2tconf
+
+= 2022.3 =
+
+이 릴리즈의 상당 부분은 NVDA 개발자 커뮤니티로부터 기여됐습니다.
+이번 릴리즈에는 지연된 글자 설명 읽기와 개선된 Windows Console 지원이 포함되었습니다.
+
+이 릴리즈는 여러 버그 수정 또한 포함합니다.
+특히, 업데이트된 Adobe Acrobat 또는 Reader에서 PDF 문서를 읽을 때, 더이상 충돌이 일어나지 않습니다.
+
+eSpeak has been updated, which introduces 3 new languages: Belarusian, Luxembourgish and Totontepec Mixe.
+eSpeak가 업데이트되어, 3개의 새로운 언어가 추가됐습니다: 벨라루스어, 룩셈부르크어, 그리고 토톤테펙 혼합어.
+
+== New Features ==
+- 명령프롬프트, PowerShell, Windows 11 22H2 버전(Sun Valley 2) 이상 리눅스용 Windows 하위시스템으로 사용되는 Windows Console host에서:
+  - 안정성과 성능이 매우 개선되었습니다. (#10964)
+  -``control+f``를 눌러 텍스트를 찾을 때, 리뷰커서의 위치가 찾은 용어 위치로 업데이트됩니다. (#11172)
+  - 입력한 글자가 나타나지 않는 상황(예: 암호 입력)에서 입력 글자 알림이 기본으로 비활성화됩니다. 이 기능은 NVDA 설정의 고급 패널에서 다시 활성화할 수 있습니다.. (#11554)
+  - 스크롤되어 보이지 않는 텍스트를 스크롤하지 않고 리뷰할 수 있습니다. (#12669)
+  - 더 자세한 텍스트 형식([microsoft/terminal PR 10336 https://github.com/microsoft/terminal/pull/10336])을 사용가능합니다.
+  -
+- 일정 시간 후 글자 설명을 읽게 하기 위한 새로운 음성출력 설정이 추가되었습니다. (#13509)
+- 디스플레이를 앞으로/뒤로 스크롤하면 음성이 중단할지 여부를 결정하기 위한 새로운 점자 설정이 추가되었습니다. (#2124)
+-
+
+
+== Changes ==
+- eSpeak NG가 1.52-dev 커밋 ``9de65fcb``로 업데이트 되었습니다.. (#13295)
+  - 추가된 언어:
+    - 벨라루스어
+    - 룩셈부르크어
+    - 토텐테펙 혼합어
+    -
+  -
+- UI 자동화를 사용하여 Microsoft Excel 스프레드시트 컨트롤에 접근할 때, 이제 NVDA가 셀이 병합되었을 때 알릴 수 있습니다. (#12843)
+- Instead of reporting "has details" the purpose of details is included where possible, for example "has comment". (#13649)
+- 가능한 경우 "상세정보 있음"을 보고하는 대신 ""과 같은 세부정보의 목적이 포함됩니다. (#13649)
+- The installation size of NVDA is now shown in Windows Programs and Feature section. (#13909)
+-
+
+
+== Bug Fixes ==
+- Adobe Acrobat / Reader 64 bit will no longer crash when reading a PDF document. (#12920)
+  - Note that the most up to date version of Adobe Acrobat / Reader is also required to avoid the crash.
+  -
+- Font size measurements are now translatable in NVDA. (#13573)
+- Ignore Java Access Bridge events where no window handle can be found for Java applications.
+This will improve performance for some Java applications including IntelliJ IDEA. (#13039)
+- Announcement of selected cells for LibreOffice Calc is more efficient and no longer results in a Calc freeze when many cells are selected. (#13232)
+- When running under a different user, Microsoft Edge is no longer inaccessible. (#13032)
+- When rate boost is off, eSpeak's rate does not drop anymore between rates 99% and 100%. (#13876)
+- Fix bug which allowed 2 Input Gestures dialogs to open. (#13854)
+-
+
+
+== Changes for Developers ==
+- Updated Comtypes to version 1.1.11. (#12953)
+- In builds of Windows Console (``conhost.exe``) with an NVDA API level of 2 (``FORMATTED``) or greater, such as those included with Windows 11 version 22H2 (Sun Valley 2), UI Automation is now used by default. (#10964)
+  - This can be overridden by changing the "Windows Console support" setting in NVDA's advanced settings panel.
+  - To find your Windows Console's NVDA API level, set "Windows Console support" to "UIA when available", then check the NVDA+F1 log opened from a running Windows Console instance.
+  -
+- The Chromium virtual buffer is now loaded even when the document object has the MSAA ``STATE_SYSTEM_BUSY`` exposed via IA2. (#13306)
+- A config spec type ``featureFlag`` has been created for use with experimental features in NVDA. See ``devDocs/featureFlag.md`` for more information. (#13859)
+-
+
+=== Deprecations ===
+There are no deprecations proposed in 2022.3.
 
 = 2022.2 =
 이번 릴리즈에는 많은 버그 수정이 포함됩니다.
