@@ -860,26 +860,6 @@ Quando estiver numa tabela, os seguintes comandos de teclado também estarão di
 <TD>control+alt+pageDown</TD>
 <TD>Move o cursor do sistema para a última linha (permanecendo na mesma coluna)</TD>
 </TR>
-<TR>
-<TD>Leitura contínua em colunas</TD>
-<TD>NVDA+control+alt+seta abaixo</TD>
-<TD>Lê a coluna verticalmente da célula actual até ao fim.</TD>
-</TR>
-<TR>
-<TD>Leitura contínua em linhas</TD>
-<TD>NVDA+control+alt+seta à direita</TD>
-<TD>Lê a linha horizontalmente da célula actual até ao fim.</TD>
-</TR>
-<TR>
-<TD>Lê a coluna toda</TD>
-<TD>NVDA+control+alt+seta acima</TD>
-<TD>Lê a coluna actual de cima a baixo sem deslocar o cursor.</TD>
-</TR>
-<TR>
-<TD>Lê a linha toda</TD>
-<TD><CODE>NVDA+control+alt+leftArrow</CODE></TD>
-<TD>Lê a linha actual da esquerda para a direita sem deslocar o cursor.</TD>
-</TR>
 </TABLE>
 
 <A NAME="ObjectNavigation"></A>
@@ -3691,9 +3671,32 @@ Esta configuração contém as seguintes opções:
 <P></P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
 <H5>Suporte à Consola Windows</H5>
+<DL>
+<DT>Padrão</DT><DD>
+  Automático
+<DT>Opções</DT><DD>
+  Automático, UIA quando disponível, Antigo
+</DL>
+
+<P></P>
 <P>
-Quando esta opção está activa, o NVDA usará a nova, ainda em progresso, versão do suporte para Consolas Windows que aproveita as melhorias na <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">acessibilidade introduzidas pela Microsoft</A>. Esta funcionalidade ainda é altamente experimental e incompleta, por isso o seu uso ainda não é recomendado. Contudo, quando completa, prevemos que este novo suporte venha a ser o padrão, melhorando a performance e estabilidade do NVDA nas consolas de comando do Windows.
+Esta opção selecciona a forma como o NVDA interage com a Consola Windows utilizada pela Linha de comandos, PowerShell, e o Subsistema Windows para Linux.
+Não afecta o Terminal Windows moderno.
+No Windows 10 versão 1709, a Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">adicionou suporte à UI Automation API à consola</A>, trazendo melhorias na performance e estabilidade para os leitores de ecrã que a suportem.
+ Em situações em que a UI Automation  não está disponível ou é conhecida por resultar numa experiência de utilização inferior, o antigo suporte do NVDA  à consola Windows está disponível como último recurso.
+A caixa combinada "Suporte à consola Windows" tem três opções:
 </P>
+<UL>
+<LI>Automático: Utiliza a UI Automation na versão da Consola Windows incluída com o Windows 11 versão 22H2 e posteriores.
+Esta opção é recomendada e definida por padrão.
+<LI>UIA quando disponível: Utiliza a UI Automation em consolas se disponível, mesmo para versões com implementações incompletas ou ainda com erros.
+Embora esta funcionalidade limitada possa ser útil (e mesmo suficiente para a sua utilização), a sua utilização é inteiramente por sua conta e risco e não será fornecido qualquer suporte para a mesma.
+<LI>Antigo: A UI Automation na Consola do Windows será completamente desactivada.
+A utilização do antigo suporte será sempre utilizado mesmo em situações em que a UI Automation proporcionaria uma experiência superior ao utilizador.
+Por isso, a selecção desta opção não é recomendada, a menos que se saiba o que se está a fazer.
+</UL>
+
+<P></P>
 <A NAME="ChromiumUIA"></A>
 <H5>Usar UIA com Microsoft Edge e outros navegadores baseados em chromium quando disponível:</H5>
 <P>
