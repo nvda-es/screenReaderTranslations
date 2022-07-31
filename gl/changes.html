@@ -9,6 +9,84 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2022.3</H2>
+<P>
+A comunidade de desenvolvedores do NVDA contribuíu en grande medida a esta versión.
+Esto inclúe o retraso das descripcións dos caracteres e a mellora do soporte da Consola de Windows.
+</P>
+<P>
+Esta versión tamén inclúe varios arranxos de fallos.
+En particular, as versións actualizadas de Adobe Acrobat/Reader xa non se bloquean ao ler un documento PDF.
+</P>
+<P>
+eSpeak actualizouse, o que introduce tres linguas novas: Bielorruso, Luxemburgués e Totontepec Mixe.
+</P>
+<H3>Novas Características</H3>
+<UL>
+<LI>Na Consola de Windows úsase Host polo Símbolo do Sistema, por PowerShell e polo subsistema de Windows para Linux en Windows 11 versión 22H2 (Sun Valley 2) e posterior:
+  <UL>
+  <LI>Rendemento e estabilidade moi mellorados. (<A HREF="https://github.com/nvaccess/nvda/issues/10964">#10964</A>)
+  <LI>Ao premer <CODE>control+f</CODE> para procurar texto, a posición do cursor de revisión actualízase para seguer ao término atopado. (<A HREF="https://github.com/nvaccess/nvda/issues/11172">#11172</A>)
+  <LI>O anunciado do texto escrebido que non apareza na pantalla (como as contrasinais) deshabilítanse predeterminadamente. 
+Pode voltar a habilitarse no panel Avanzado dos axustes do NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/11554">#11554</A>)
+  <LI>O texto que se desprazara fora da pantalla pódese revisar sen desprazar a ventá da consola. (<A HREF="https://github.com/nvaccess/nvda/issues/12669">#12669</A>)
+  <LI>Está dispoñible máis información detallada de formato de texto. (<A HREF="https://github.com/microsoft/terminal/pull/10336">microsoft/terminal PR 10336</A>)
+  </UL>
+<LI>Engadiuse unha nova opción de Fala para ler as descripcións de caracteres tras un retraso. (<A HREF="https://github.com/nvaccess/nvda/issues/13509">#13509</A>)
+<LI>Engadiuse unha nova opción de Braille para determinar se o desprazamento cara adiante ou cara atrás da pantalla debería interrumpir a fala. (<A HREF="https://github.com/nvaccess/nvda/issues/2124">#2124</A>)
+</UL>
+
+<P></P>
+<H3>Cambios</H3>
+<UL>
+<LI>eSpeak NG actualizouse a 1.52-dev commit <CODE>9de65fcb</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13295">#13295</A>)
+  <UL>
+  <LI>Linguas engadidas:
+    <UL>
+    <LI>Bielorruso
+    <LI>Luxemburgués
+    <LI>Totontepec Mixe
+    </UL>
+  </UL>
+<LI>Ao se usar UI Automation para acesar a controis de folla de cálculo de Microsoft Excel, o NVDA agora pode anunciar cando unha celda está fusionada. (<A HREF="https://github.com/nvaccess/nvda/issues/12843">#12843</A>)
+<LI>A cambio de anunciar "ten detalles" inclúese o propósito dos detalles cando sexa posible, por exemplo "ten comentarios". (<A HREF="https://github.com/nvaccess/nvda/issues/13649">#13649</A>)
+<LI>O tamano de instalación do NVDA agora amósase na seción Programas e Características de Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/13909">#13909</A>)
+</UL>
+
+<P></P>
+<H3>Arranxo de Erros</H3>
+<UL>
+<LI>O Adobe Acrobat / Reader de 64 bits xa non se bloqueará ao ler un documento PDF. (<A HREF="https://github.com/nvaccess/nvda/issues/12920">#12920</A>)
+  <UL>
+  <LI>Ten en conta que é necesaria tamén a versión máis actualizada do Adobe Acrobat / Reader para evitar o bloqueo.
+  </UL>
+<LI>As medidas de tamano de fonte agora son traducibles no NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13573">#13573</A>)
+<LI>Ignóranse os eventos de Java Access Bridge nos que non se poda atopar un manexador de ventá para as aplicacións Java. 
+Esto mellorará o rendemento para algunhas aplicacións Java incluíndo IntelliJ IDEA. (<A HREF="https://github.com/nvaccess/nvda/issues/13039">#13039</A>)
+<LI>O anunciado de celdas selecionadas para LibreOffice Calc é máis eficaz e xa non da lugar á conxelación de Calc cando se selecionen moitas celdas. (<A HREF="https://github.com/nvaccess/nvda/issues/13232">#13232</A>)
+<LI>Cando se execute nun usuario diferente, Microsoft Edge xa non é inaccesible. (<A HREF="https://github.com/nvaccess/nvda/issues/13032">#13032</A>)
+<LI>Cando o aumento brusco de velocidade estea desactivado, a velocidade do eSpeak non descende máis entre velocidades do 99% e 100%. (<A HREF="https://github.com/nvaccess/nvda/issues/13876">#13876</A>)
+<LI>Arranxouse un erro que permitía que se abriran 2 diálogos de xestos de Entrada. (<A HREF="https://github.com/nvaccess/nvda/issues/13854">#13854</A>)
+</UL>
+
+<P></P>
+<H3>Cambios para Desenvolvedores</H3>
+<UL>
+<LI>Actualizado Comtypes á versión 1.1.11. (<A HREF="https://github.com/nvaccess/nvda/issues/12953">#12953</A>)
+<LI>En compilacións da Consola de Windows (<CODE>conhost.exe</CODE>) cun nivel 2 da API de NVDA (<CODE>FORMATTED</CODE>) ou máis grandes, como aqueles incluídos co Windows 11 versión 22H2 (Sun Valley 2), UI Automation agora úsase por defecto. (<A HREF="https://github.com/nvaccess/nvda/issues/10964">#10964</A>)
+  <UL>
+  <LI>Esto pódese anular cambiando a opción "Soporte da Consola de Windows" no panel Avanzado da configuración do NVDA.
+  <LI>Para atopar o teu nivel de API de NVDA para a Consola de Windows, configura "Soporte de Consola de Windows" a "UIA cando estea dispoñible", entón verifica que o rexistro estea aberto con NVDA+F1 dende unha instancia de Consola de Windows en execución.
+  </UL>
+<LI>O Búfer virtual de Chromium agora cárgase incluso cando o obxecto documento teña o MSAA <CODE>STATE_SYSTEM_BUSY</CODE> exposto a través de IA2. (<A HREF="https://github.com/nvaccess/nvda/issues/13306">#13306</A>)
+<LI>Creouse un tipo específico de configuración <CODE>featureFlag</CODE> para utilizar con características experimentais en NVDA. Consulta <CODE>devDocs/featureFlag.md</CODE> para máis información. (<A HREF="https://github.com/nvaccess/nvda/issues/13859">#13859</A>)
+</UL>
+
+<P></P>
+<H4>Obsolescencias</H4>
+<P>
+Non se propoñen obsolescencias en 2022.3.
+</P>
 <H2>2022.2</H2>
 <P>
 Esta versión inclúe moitos arranxos de fallos.

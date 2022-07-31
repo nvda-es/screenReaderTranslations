@@ -2403,8 +2403,9 @@ Cando se estea na táboa de vista de libros engadidos:
 O NVDA proporciona compatibilidade para a consola de ordes de Windows utilizada polo indicativo do sistema, PowerShell, e o subsistema Windows para Linux.
 A ventá da consola é de tamano fixo, normalmente moito máis pequena que o búfer que contén a saída.
 Segundo se escrebe un novo texto, o contido desprázase cara arriba e o texto anterior xa non é visible.
-O texto que non se amosa visiblemente na ventá non é acesible cos comandos de revisión de texto do NVDA.
+En versións de Windows anteriores a Windows 11 22H2, o texto que non se amosa visiblemente na ventá non é acesible cos comandos de revisión de texto do NVDA.
 Polo tanto, é necesario desprazarse pola ventá da consola para ler o texto anterior.
+Nas novas versións da consola e no Terminal de Windows, é posible revisar todo o búfer de texto libremente sen necesidade de desprazar a ventá.
 Os seguintes métodos abreviados de teclado incorporados na Consola de Windows poden seren útiles ao <A HREF="#ReviewingText">revisar texto</A> co NVDA:
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
@@ -2716,6 +2717,26 @@ Esta opción xeralmente debería activarse.
 Nembargantes, algúns sintetizadores Microsoft Speech API non implementan esto correctamente e funciona anómalamente cando se activa.
 Se estás a ter problemas ca pronunciación de carácteres individuais,  proba desactivando esta opción.
 </P>
+<A NAME="delayedCharacterDescriptions"></A>
+<H5>Descripcións retrasadas para caracteres en movementos do cursor</H5>
+<DL>
+<DT>Predeterminado</DT><DD>
+  Deshabilitado
+<DT>Optións</DT><DD>
+  Habilitado, Deshabilitado
+</DL>
+
+<P></P>
+<P>
+Cando esta opción está marcada, o NVDA dirá a descipción do carácter cando te movas por caracteres.
+</P>
+<P>
+Por exemplo, mentres revisas unha liña por caracteres, cando se lea a letra "b" o NVDA dirá "Bravo" tras 1 segundo de retraso.
+Esto pode seren útil se che costa distinguir entre la pronunciación dos símbolos, ou para usuarios con dificultades auditivas.
+</P>
+<P>
+A descripción retrasada de caracteres cancelarase se se fala outro texto durante ese tiempo, ou se ti premes a tecla <CODE>control</CODE>.
+</P>
 <A NAME="SelectSynthesizer"></A>
 <H4>12.1.3. Selecionar Sintetizador (NVDA+control+s)</H4>
 <P>
@@ -2946,6 +2967,27 @@ Polo tanto, para ler o contexto (é dicir, que estás nunha lista e que esta lis
 </P>
 <P>
 Para conmutar a presentación de contexto do foco dende calquera lugar, por favor asigna un xesto personalizado usando o <A HREF="#InputGestures">diálogo Xestos de Entrada</A>.
+</P>
+<A NAME="BrailleSettingsInterruptSpeech"></A>
+<H5>Interrumpir fala  mentres se despraza</H5>
+<DL>
+<DT>Predeterminado</DT><DD>
+  Habilitado
+<DT>Opcións</DT><DD>
+  Predeterminado (Habilitado), Habilitado, Deshabilitado
+</DL>
+
+<P></P>
+<P>
+Esta opción determina se a voz debería interrumpirse cando a pantalla Braille se desprace cara adiante ou cara atrás.
+As ordes de liña anterior e seguinte sempre interrumpen a fala.
+</P>
+<P>
+A voz falando podería seren unha distración mentres se le en Braille.
+Por esta razón a opción está habilitada por defecto, interrumpindo a voz ao desprazar o braille.
+</P>
+<P>
+Deshabilitar esta opción permite que a voz se escoite mentres se le en braille simultáneamente.
 </P>
 <A NAME="SelectBrailleDisplay"></A>
 <H4>12.1.6. Selecionar Pantalla Braille (NVDA+control+a)</H4>
@@ -3629,10 +3671,33 @@ Esta opción contén os seguintes valores:
 
 <P></P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Usar UI Automation para acesar á Consola de Windows cando estea dispoñible</H5>
+<H5>Soporte para Consola de Windows</H5>
+<DL>
+<DT>Predeterminado</DT><DD>
+  Automático
+<DT>Opcións</DT><DD>
+  Automático, UIA cando estea dispoñible, herdado
+</DL>
+
+<P></P>
 <P>
-Cando esta opción estea activada, o NVDA usará unha versión nova en progreso do seu soporte para a Consola de Windows que ten a ventalla da <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">mellora de accesibilidade feita por Microsoft</A>. Esta característica é moi experimental e aínda está incompreta, así que o seu uso aínda non está recomendado. Sen embargo, unha vez compretada, cóidase que este novo soporte se converterá no predeterminado, mellorando o rendemento e a estabilidade do NVDA Nas consolas de ordes de Windows.
+Esta opción seleciona coma o NVDA interactúa coa Consola de Windows usada polo símbolo do sistema, polo PowerShell e polo subsistema de Windows para Linux.
+Non afecta á Terminal moderna de Windows.
+En Windows 10 versión 1709, Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">engadiu soporte para a súa API UI Automation á consola</A>, dando un rendemento e unha estabilidade moi mellorados para lectores de pantalla que o admitan.
+En situacións nas que UI Automation non estea dispoñible ou que se sepa que a experiencia de usuario sexa inferior, o soporte da consola herdada do NVDA está dispoñible como alternativa.
+A caixa combinada Soporte para a Consola de Windows ten tres opcións:
 </P>
+<UL>
+<LI>Automático: usa UI Automation na versión da Consola de Windows incluída con Windows 11 versión 22H2 e posterior.
+Esta opción recoméndase e é a predeterminada.
+<LI>UIA cando estea dispoñible: usa UI Automation en consolas se está dispoñible, incluso para versións con implementacións incompletas ou con erros.
+Aíndaque esta funcionalidade limitada pode seren útil (e incluso suficiente para o teu uso), a utilización desta opción é totalmente baixo o teu proprio resgo e non se proporcionará soporte para ela.
+<LI>Herdado: UI Automation na Consola de Windows deshabilitarase compretamente.
+O sistema herdado usarase sempre incluso en situacións nas que UI Automation proporcionaría unha experiencia de usuario superior.
+Polo tanto, selecionar esta opción non é recomendable ao menos que sepas o que estás a facer.
+</UL>
+
+<P></P>
 <A NAME="ChromiumUIA"></A>
 <H5>Utilizar UIA con Microsoft Edge e outros navegadores baseados en Chromium cando estea dispoñible</H5>
 <P>
