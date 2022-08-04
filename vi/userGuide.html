@@ -796,7 +796,6 @@ Dưới đây là các phím tắt mà NVDA cung cấp cho việc thao tác vớ
 <TD>Thông báo vị trí con trỏ nháy</TD>
 <TD>NVDA+Delete bàn phím số</TD>
 <TD>NVDA+delete</TD>
-<TD>không có</TD>
 <TD>Báo các thông tin về vị trí của văn bản hay đối tượng tại vị trí con trỏ nháy. Ví dụ, có thể bao gồm tỉ lệ phần trăm so với  tài liệu, khoảng cách từ mép của trang hoặc vị trí chính xác trên màn hình. Bấm hai lần có thể cung cấp nhiều thông tin hơn.</TD>
 </TR>
 <TR>
@@ -861,6 +860,26 @@ Khi ở trong bảng thì dùng các phím tắt sau để thao tác:
 <TD>Chuyển đến dòng cuối cùng</TD>
 <TD>control+alt+pageDown</TD>
 <TD>Chuyển dấu nháy hệ thống đến dòng cuối cùng (giữ nguyên vị trí cột)</TD>
+</TR>
+<TR>
+<TD>Say all in column</TD>
+<TD><CODE>NVDA+control+alt+downArrow</CODE></TD>
+<TD>Reads the column vertically from the current cell downwards to the last cell in the column.</TD>
+</TR>
+<TR>
+<TD>Say all in row</TD>
+<TD><CODE>NVDA+control+alt+rightArrow</CODE></TD>
+<TD>Reads the row horizontally from the current cell rightwards to the last cell in the row.</TD>
+</TR>
+<TR>
+<TD>Read entire column</TD>
+<TD><CODE>NVDA+control+alt+upArrow</CODE></TD>
+<TD>Reads the current column vertically from top to bottom without moving the system caret.</TD>
+</TR>
+<TR>
+<TD>Read entire row</TD>
+<TD><CODE>NVDA+control+alt+leftArrow</CODE></TD>
+<TD>Reads the current row horizontally from left to right without moving the system caret.</TD>
 </TR>
 </TABLE>
 
@@ -2404,9 +2423,10 @@ Khi ở trong bảng xem các sách đã thêm vào:
 NVDA cung cấp hỗ trợ cho Windows command console sử dụng bởi Command Prompt, PowerShell và Windows Subsystem for Linux.
 Cửa sổ console có kích thước cố định, thường nhỏ hơn nhiều so với màn hình hiển thị đầu ra nội dung.
 Khi văn bản mới được nhập vào, nội dung sẽ được cuộn lên trên và các văn bản trước đó không hiển thị nữa. 
-văn bản không hiển thị trực quan trên cửa sổ thì không tiếp cận được với các lệnh duyệt văn bản của NVDA.
+Trên các phiên bản Windows trước Windows 11 22H2, văn bản không hiển thị trực quan trên cửa sổ thì không tiếp cận được với các lệnh duyệt văn bản của NVDA.
 Vậy nên, cần phải cuộn cửa sổ console để đọc các nội dung phía trên.
-Các phím tắt có sẵn sau đây của Windows Console  có thể hữu ích khi <A HREF="#ReviewingText">duyệt nội dung</A> với NVDA:
+Trong các phiên bản mới hơn của console và trong Windows Terminal, đã có thể xem lại toàn bộ văn bản hiển thị trước đó mà không cần phải cuộn của sổ.
+Các phím tắt có sẵn sau đây của Windows Console  có thể hữu ích khi <A HREF="#ReviewingText">duyệt nội dung</A> với NVDA trong các phiên bản cũ của Windows Console:
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -2716,6 +2736,26 @@ Thường thì tùy chọn này được bật.
 Tuy nhiên, một số bộ đọc của Microsoft không phát triển tính năng này nên hoạt động không chính xác.
 Nếu bạn gặp trục trặc khi phát âm một số kí tự nhất định, hãy thử tắt nó đi.
 </P>
+<A NAME="delayedCharacterDescriptions"></A>
+<H5>Chờ để mô tả cho kí tự khi di chuyển con trỏ</H5>
+<DL>
+<DT>Mặc định</DT><DD>
+  tắt
+<DT>Tùy chọn</DT><DD>
+  Bật, Tắt
+</DL>
+
+<P></P>
+<P>
+Khi bật tùy chọn này, NVDA sẽ đọc mô tả của kí tự khi di chuyển theo từng kí tự.
+</P>
+<P>
+Ví dụ: nếu xem lại một dòng theo kí tự, khi chữ "b" được đọc lên, NVDA sẽ đọc "Bravo" sau khi chờ một giây.
+Điều này có thể hữu ích nếu khó phân biệt cách phát âm của các kí hiệu, hoặc dành cho người dùng bị khuyết tật thính giác.
+</P>
+<P>
+Việc chờ để đọc mô tả kí tự sẽ bị hủy nếu có một văn bản khác được đọc lên trong thời gian nói trên, hoặc bạn bấm phím <CODE>control</CODE>.
+</P>
 <A NAME="SelectSynthesizer"></A>
 <H4>12.1.3. Chọn bộ đọc (NVDA+control+s)</H4>
 <P>
@@ -2946,6 +2986,27 @@ Vì vậy, nó chỉ hiển thị bạn đang đứng tại mục có focus.
 </P>
 <P>
 Để chuyển đổi giữa các chế độ trình bày ngữ cảnh, bạn có thể gán phím tắt / thao tác tùy chỉnh cho nó trong <A HREF="#InputGestures">hộp thoại quản lý thao tác</A>.
+</P>
+<A NAME="BrailleSettingsInterruptSpeech"></A>
+<H5>Ngừng đọc trong khi cuộn</H5>
+<DL>
+<DT>Mặc định</DT><DD>
+  Bật
+<DT>Tùy chọn</DT><DD>
+  Mặc định (Bật), bật, Tắt
+</DL>
+
+<P></P>
+<P>
+Thiết lập này xác định việc bộ đọc sẽ bị ngừng khi màn hình chữ nổi được cuộn lùi/tới.
+các lệnh di chuyển đến dòng trước / dòng kế đều làm NVDA ngừng đọc.
+</P>
+<P>
+Việc bộ phát âm cứ đọc nội dung có thể gây mất tập trung khi đọc chữ nổi.
+Vì lí do đó, tùy chọn ngừng đọc khi cuộn chữ nổi mặc định được bật.
+</P>
+<P>
+Tắt tùy chọn này cho phép bạn nghe đọc nội dung song song với đọc chữ nổi.
 </P>
 <A NAME="SelectBrailleDisplay"></A>
 <H4>12.1.6. Chọn màn hình nổi (NVDA+control+a)</H4>
@@ -3633,10 +3694,25 @@ Thiết lập này có các giá trị sau:
 
 <P></P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Sử dụng UI Automation để truy cập Windows Console khi có thể</H5>
+<H5>Hỗ trợ Windows Console</H5>
 <P>
-Khi bật tùy chọn này, NVDA sẽ sử dụng một phiên bản mới, đang được hoàn thiện hỗ trợ cho Windows Console, có lợi thế trong việc  <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">cải tiến tính tiếp cận bởi Microsoft</A>. Tính năng này đang được thử nghiệm và vẫn chưa hoàn chỉnh nên việc sử dụng nó chưa được khuyến khích. Tuy nhiên, khi hoàn chỉnh, nó được dự đoán  sẽ là hỗ trợ mặc định, cải thiện hiệu năng và tính ổn định của NVDA trong Windows command consoles.
+Tùy chọn này để thiết lập cách mà NVDA tương tác với Windows Console, được dùng bởi command prompt, PowerShell và Windows Subsystem for Linux.
+nó không ảnh hưởng đến Windows Terminal kiểu mới.
+Trong Windows 10 phiên bản 1709, Microsoft đã <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">thêm hỗ trợ cho UI Automation API của họ vào console</A>, mang lại cải thiện đáng kể về hiệu xuất vận hành  và tính ổn định cho các trình đọc màn hình có hỗ trợ nó.
+Trường họp UI Automation không hoạt động hoặc được biết đến là một trải nghiệm kém hơn cho người dùng, vẫn có hỗ trợ của NVDA cho kiểu console cũ (legacy) như một giải pháp dự phòng.
+Hộp xổ Hỗ Trợ Windows Console có ba tùy chọn:
 </P>
+<UL>
+<LI>Tự động: sử dụng UI Automation với  Windows Console được tích họp trong Windows 11 phiên bản 22H2 và cao hơn.
+Đây là tùy chọn được khuyên dùng và cũng được chọn mặc định.
+<LI>Dùng UIA khi có thể: sử dụng UI Automation trong consoles nếu được, kể cả với các phiên bản chưa hoàn thành hoặc còn bị lỗi.
+Trong khi giới hạn của chức năng này có thể hữu ích (và thậm chí là đủ cho nhu cầu sử dụng của bạn), Việc sử dụng tùy chọn này hoàn toàn có nguy cơ gây rủi ro cho bạn và không có sự hỗ trợ nào cho nó được cung cấp.
+<LI>Kiểu cũ: UI Automation trong Windows Console sẽ bị vô hiệu hoàn toàn.
+Kiểu dự phòng này sẽ luôn được sử dụng, kể cả trong trường hợp UI Automation cung cấp trải nghiệm tốt hơn cho người dùng.
+Vậy nên, việc dùng tùy chọn này không được khuyến khích, trừ khi bạn biết mình đang làm gì.
+</UL>
+
+<P></P>
 <A NAME="ChromiumUIA"></A>
 <H5>Sử dụng UIA với Microsoft Edge và các trình duyệt trên nền Chromium khi có thể</H5>
 <P>
