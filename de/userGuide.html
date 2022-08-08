@@ -792,11 +792,10 @@ Folgende Tastenkombinationen stehen im Zusammenhang mit dem System-Cursor zur Ve
 <TD>Gibt die Text-Formatierungen unter dem System-Cursor aus. Bei zweimal Drücken werden diese Informationen im Lesemodus angezeigt.</TD>
 </TR>
 <TR>
-<TD>System-Cursor-Position mitteilen</TD>
-<TD>NVDA+Nummernblock Komma</TD>
-<TD>NVDA+Entfernen</TD>
-<TD>Keine</TD>
-<TD>Teilt Informationen über die Position des Textes oder des Objekts an der Position des System-Cursors mit. Dies kann z. B. der Prozentsatz im Dokument, der Abstand zum Seitenrand oder die genaue Position auf dem Bildschirm sein. Durch zweimaliges Drücken können weitere Details angezeigt werden.</TD>
+<TD>Position des System-Cursors mitteilen</TD>
+<TD>NVDA+Nummernblock Entfernen</TD>
+<TD>NVDA+Entf</TD>
+<TD>Meldet Informationen über die Position des Textes oder des Objekts an der Position des System-Cursors. Dies kann z. B. der Prozentsatz im Dokument, der Abstand zum Seitenrand oder die genaue Position auf dem Bildschirm sein. Durch zweimaliges Drücken können weitere Details angezeigt werden.</TD>
 </TR>
 <TR>
 <TD>Nächsten Satz lesen</TD>
@@ -2403,9 +2402,10 @@ Wenn Sie sich in der Tabellenansicht der hinzugefügten Bücher befinden:
 NVDA bietet Unterstützung für die Windows-Befehlskonsole, die von der Eingabeaufforderung, PowerShell und dem Windows-Subsystem für Linux verwendet wird.
 Das Konsolenfenster ist von fester Größe und typischerweise viel kleiner als der Puffer, der die Ausgabe enthält.
 Wenn neuer Text geschrieben wird, läuft der Inhalt nach oben und der vorherige Text ist nicht mehr sichtbar.
-Text, der im Fenster nicht sichtbar angezeigt wird, ist mit den Textanzeigebefehlen von NVDA nicht zugänglich.
+Bei Windows-Versionen vor Windows 11 Version 22H2 ist Text in der Konsole, der nicht sichtbar im Fenster angezeigt wird, nicht mit den Textbefehlen von NVDA zugänglich.
 Daher ist es notwendig, im Konsolenfenster zu navigieren, um frühere Texte zu lesen.
-Die folgenden integrierten Tastenkombinationen der Windows-Konsole können nützlich sein, wenn Sie <A HREF="#ReviewingText">Text</A> mit NVDA lesen möchten:
+In neueren Versionen der Konsole und im Windows-Terminal ist es möglich, die gesamte Textansicht auszulesen, ohne dass das Fenster gescrollt werden muss.
+Die folgenden integrierten Tastenkombinationen für die Windows-Konsole können beim <A HREF="#ReviewingText">Textlesen</A> mit NVDA in älteren Versionen der Windows-Konsole nützlich sein:
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -2716,6 +2716,26 @@ Diese Option sollte im Allgemeinen aktiviert sein.
 Es gibt jedoch einige SAPI-Sprachausgaben von Microsoft, bei denen dies nicht korrekt implementiert ist und die sich eigenwillig verhalten, wenn diese Option aktiviert ist.
 Wenn Sie Probleme mit der Aussprache mancher Zeichen haben, versuchen Sie, die Option zu deaktivieren.
 </P>
+<A NAME="delayedCharacterDescriptions"></A>
+<H5>Verzögerte Beschreibungen für Zeichen bei Cursor-Bewegung</H5>
+<DL>
+<DT>Standard</DT><DD>
+  Ausgeschaltet
+<DT>Optionen</DT><DD>
+  Eingeschaltet, Ausgeschaltet
+</DL>
+
+<P></P>
+<P>
+Wenn diese Einstellung aktiviert ist, nennt NVDA die Zeichenbeschreibung, wenn Sie sich zeichenweise bewegen.
+</P>
+<P>
+Wenn zum Beispiel beim Durchsehen einer Zeile nach Zeichen der Buchstabe "b" vorgelesen wird, nennt NVDA nach einer Verzögerung von einer Sekunde "Bertha".
+Dies kann nützlich sein, wenn die Aussprache von Symbolen schwer zu unterscheiden ist, oder auch für hörgeschädigte Benutzer.
+</P>
+<P>
+Die verzögerte Zeichenbeschreibung wird abgebrochen, wenn während dieser Zeit ein anderer Text vorgelesen wird oder die <CODE>Strg</CODE>-Taste gedrückt wird.
+</P>
 <A NAME="SelectSynthesizer"></A>
 <H4>12.1.3. Sprachausgabe auswählen (NVDA+Strg+S)</H4>
 <P>
@@ -2946,6 +2966,27 @@ Wenn Sie dennoch Kontext-Informationen (wie z. B. den Namen der Liste) angezeigt
 </P>
 <P>
 Um die Einstellung von überall aus zu ändern, weisen Sie eine Tastenkombination mit Hilfe des Dialogs <A HREF="#InputGestures">Tastenbefehle</A> zu.
+</P>
+<A NAME="BrailleSettingsInterruptSpeech"></A>
+<H5>Unterbrechen der Sprachausgabe beim Navigieren</H5>
+<DL>
+<DT>Standard</DT><DD>
+  Eingeschaltet
+<DT>Optionen</DT><DD>
+  Eingeschaltet, Ausgeschaltet
+</DL>
+
+<P></P>
+<P>
+Diese Einstellung legt fest, ob die Sprachausgabe unterbrochen werden soll, sobald die Braillezeile vorwärts oder rückwärts gescrollt wird.
+Befehle für die vorherige bzw. nächste Zeile unterbricht immer die Sprachausgabe.
+</P>
+<P>
+Das ständige Vorlesen kann beim Lesen der Braille-Schrift ablenken.
+Aus diesem Grund ist die Option standardmäßig aktiviert und unterbricht die Sprache beim Navigieren in Blindenschrift.
+</P>
+<P>
+Wenn Sie diese Option deaktivieren, können Sie die Sprachausgabe hören und gleichzeitig die Brailleschrift lesen.
 </P>
 <A NAME="SelectBrailleDisplay"></A>
 <H4>12.1.6. Braillezeile auswählen (NVDA+Strg+A)</H4>
@@ -3632,10 +3673,33 @@ Diese Einstellung enthält die folgenden Werte:
 
 <P></P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Für den Zugriff auf die Windows-Konsole UIA verwenden, sofern verfügbar</H5>
+<H5>Unterstützung der Windows-Konsole</H5>
+<DL>
+<DT>Standard</DT><DD>
+  Automatisch
+<DT>Optionen</DT><DD>
+  Automatisch, UIA, wenn verfügbar, Legacy
+</DL>
+
+<P></P>
 <P>
-Wenn diese Option aktiviert ist, verwendet NVDA eine neue, experimentelle Version der Unterstützung für die Windows-Konsole, die die Vorteile von <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">Verbesserungen der Zugänglichkeit durch Microsoft</A> nutzt. Diese Funktion ist sehr experimentell und noch unvollständig, daher wird ihre Verwendung noch nicht empfohlen. Es wird jedoch erwartet, dass diese neue Unterstützung nach ihrer Fertigstellung zur Standardeinstellung wird und die Leistung und Stabilität von NVDA in Windows-Kommandokonsolen verbessert.
+Diese Option legt fest, wie NVDA mit der Windows-Konsole interagiert, die von der Eingabeaufforderung, der PowerShell und dem Windows-Subsystem für Linux verwendet wird.
+Das moderne Windows-Terminal ist davon nicht betroffen.
+In Windows 10 Version 1709 hat Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">der Konsole</A> Unterstützung für seine UI-Automatisierungs-API hinzugefügt und damit die Leistung und Stabilität für Screenreader, die diese unterstützen, erheblich verbessert.
+In Situationen, in denen die UIA nicht verfügbar ist oder bekanntermaßen zu einem schlechteren Erlebnis für den Benutzer führt, steht die NVDA-Konsolenunterstützung als Ausweichlösung zur Verfügung.
+Das Kombinationsfeld für die Unterstützung der Windows-Konsole enthält drei Optionen:
 </P>
+<UL>
+<LI>Automatisch: Verwendet UIA in der Version der Windows-Konsole, die in Windows 11 Version 22H2 und höher enthalten ist.
+Diese Option wird empfohlen und ist standardmäßig eingestellt.
+<LI>UIA, wenn verfügbar: Verwendet UIA in Konsolen, wenn verfügbar, auch für Versionen mit unvollständigen oder fehlerhaften Implementierungen.
+Diese eingeschränkte Funktionalität kann zwar nützlich (und für Ihre Zwecke sogar ausreichend) sein, aber die Nutzung dieser Option erfolgt auf eigene Gefahr, und es wird kein Support dafür angeboten.
+<LI>Legacy: Die UIA in der Windows-Konsole wird vollständig deaktiviert.
+Der Legacy-Fallback wird immer verwendet, selbst in Situationen, in denen UI Automation eine bessere Benutzererfahrung bieten würde.
+Es wird daher nicht empfohlen, diese Option zu wählen, wenn Sie nicht wissen, was Sie tun.
+</UL>
+
+<P></P>
 <A NAME="ChromiumUIA"></A>
 <H5>UIA mit Microsoft Edge und anderen Chromium-basierten Browsern verwenden, sofern verfügbar</H5>
 <P>
