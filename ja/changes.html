@@ -9,6 +9,84 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2022.3</H2>
+<P>
+このリリースにおける改善の多くは NVDA 開発コミュニティの貢献によるものです。
+「テキストカーソル移動のすこし後で文字を説明」や Windows コンソール対応の改善などが含まれます。
+</P>
+<P>
+このリリースではバグ修正も行われています。
+特に Adobe Acrobat および Reader の最新版で PDF ドキュメントを読むときにクラッシュしていた問題に対応しました。
+</P>
+<P>
+eSpeak が更新され、ベラルーシ語、ルクセンブルク語、トトンテペック・ミヘ語の3つの新しい言語が導入されました。
+</P>
+<H3>新機能</H3>
+<UL>
+<LI>コマンドプロンプト、PowerShell、Windows Sybsystem for Linux などに使われている Windows コンソールホストの Windows 11 バージョン 22H2 (Sun Valley 2) およびそれ以降において:
+  <UL>
+  <LI>性能と安定性を大幅に改善しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10964">#10964</A>)
+  <LI><CODE>Ctrl+f</CODE> を押してテキストを検索すると、見つかった箇所にレビューカーソルを移動します。 (<A HREF="https://github.com/nvaccess/nvda/issues/11172">#11172</A>)
+  <LI>パスワード入力など、入力テキストが画面に表示されない場合に、入力テキストの報告が既定の設定で無効になりました。
+NVDA「高度な設定」パネルで有効化できます。 (<A HREF="https://github.com/nvaccess/nvda/issues/11554">#11554</A>)
+  <LI>スクロールで画面の外になり表示されなくなったテキストをレビューできます。コンソールウィンドウをスクロールする必要はありません。 (<A HREF="https://github.com/nvaccess/nvda/issues/12669">#12669</A>)
+  <LI>テキストの書式に関する詳細な情報はこちらです (<A HREF="https://github.com/microsoft/terminal/pull/10336">microsoft/terminal PR 10336</A>)
+  </UL>
+<LI>テキストカーソル移動のすこし後で文字を説明するかどうかを NVDA 設定「音声」カテゴリで選択できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13509">#13509</A>)
+<LI>点字表示をスクロールして進む（または戻る）ときに読み上げを中断するかどうかを NVDA 設定「点字」カテゴリで選択できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/2124">#2124</A>)
+</UL>
+
+<P></P>
+<H3>変更点</H3>
+<UL>
+<LI>eSpeak NG を 1.52-dev commit <CODE>9de65fcb</CODE> に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13295">#13295</A>)
+  <UL>
+  <LI>追加された言語:
+    <UL>
+    <LI>ベラルーシ語
+    <LI>ルクセンブルク語
+    <LI>トトンテペック・ミヘ語
+    </UL>
+  </UL>
+<LI>Microsoft Excel スプレッドシートコントロールを UI オートメーションで操作するときに NVDA が結合されたセルを報告できるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12843">#12843</A>)
+<LI>詳細情報の目的が利用可能な場合に「詳細あり」ではなく（例えば「コメント付き」など）より具体的に報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13649">#13649</A>)
+<LI>Windows の「アプリと機能」にインストールされた NVDA の容量を表示するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13909">#13909</A>)
+</UL>
+
+<P></P>
+<H3>バグ修正</H3>
+<UL>
+<LI>Adobe Acrobat / Reader 64 ビットで PDF ドキュメントを読むときにクラッシュしていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12920">#12920</A>)
+  <UL>
+  <LI>この不具合を解決するには NVDA に加えて Adobe Acrobat または Reader も最新版に更新する必要があります。
+  </UL>
+<LI>NVDA がフォントの大きさの値をローカライズできるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13573">#13573</A>)
+<LI>Java アプリのウィンドウハンドルが見つからない場合に Java Access Bridge イベントを無視するようになりました。
+これにより IntelliJ IDEA など一部のアプリにおいて性能が改善されます。 (<A HREF="https://github.com/nvaccess/nvda/issues/13039">#13039</A>)
+<LI>LibreOffice Calc でセルの選択を報告する処理の性能が改善され、数多くのセルが選択されたときに Calc がフリーズしていた問題が修正されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13232">#13232</A>)
+<LI>Microsoft Edge でユーザーを切り替えるとアクセシブルでなくなっていた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13032">#13032</A>)
+<LI>eSpeak で高速読み上げを無効にすると速さ 99 と 100 の間で値が不適切に変化していた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13876">#13876</A>)
+<LI>入力ジェスチャーダイアログを2個同時に開くことができる不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13854">#13854</A>)
+</UL>
+
+<P></P>
+<H3>開発者向けの変更</H3>
+<UL>
+<LI>Comtypes をバージョン 1.1.11 に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12953">#12953</A>)
+<LI>Windows コンソール (<CODE>conhost.exe</CODE>) の特定のバージョン(例えば Windows 11 バージョン 22H2 (Sun Valley 2) に含まれるもの)と NVDA の対応 API レベル 2 (<CODE>FORMATTED</CODE>) およびそれ以上の組み合わせで、UI オートメーションの有効化が既定の設定になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/10964">#10964</A>)
+  <UL>
+  <LI>この設定は NVDA の設定「高度な設定」パネル「Windows コンソール対応」で変更できます。
+  <LI>現在の Windows コンソールに対応する NVDA の API レベルを調べるには、「Windows コンソール対応」を「可能な場合にUIオートメーションを使用」にして、実行中の Windows コンソールから NVDA+F1 でログを確認します。
+  </UL>
+<LI>Chromium においてドキュメントオブジェクトが IA2 経由で MSAA の <CODE>STATE_SYSTEM_BUSY</CODE> を公開していても、仮想バッファーを読み込むようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13306">#13306</A>)
+<LI>config spec に <CODE>featureFlag</CODE> という型が追加されました。これは NVDA の実験的な機能で使用します。詳細は <CODE>devDocs/featureFlag.md</CODE> を参照してください。 (<A HREF="https://github.com/nvaccess/nvda/issues/13859">#13859</A>)
+</UL>
+
+<P></P>
+<H4>非推奨となったAPI</H4>
+<P>
+バージョン 2022.3 において API の廃止や破壊的変更は提案されていません。
+</P>
 <H2>2022.2</H2>
 <P>
 このリリースでは多くのバグ修正を行いました。
