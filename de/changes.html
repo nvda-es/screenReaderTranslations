@@ -87,6 +87,32 @@ Dies verbessert die Leistung für einige Java-Anwendungen, einschließlich Intel
 <P>
 Für 2022.3 wurden keine Änderungen an der API vorgenommen.
 </P>
+<H2>2022.2.1</H2>
+<P>
+Dies ist eine kleinere Version zur Behebung einer Sicherheitslücke.
+Bitte melden Sie Sicherheitsprobleme umgehend  an <A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>.
+</P>
+<H3>Sicherheitskorrekturen</H3>
+<UL>
+<LI>Es wurde ein Exploit behoben, durch den es möglich war, die Python-Konsole über den Sperrbildschirm zu starten. (GHSA-rmq3-vvhq-gp32)
+<LI>Es wurde ein Exploit behoben, bei dem es möglich war, den Sperrbildschirm durch die Objekt-Navigation zu umgehen. (GHSA-rmq3-vvhq-gp32)
+</UL>
+
+<P></P>
+<H3>Änderungen für Entwickler</H3>
+<H4>Veraltete Funktionen</H4>
+<P>
+Die veralteten Funktionen sind derzeit nicht zur Entfernung  vorgesehen.
+Die veralteten Aliasnamen werden bis auf weiteres beibehalten.
+Bitte testen Sie die neue API und teilen Sie uns Ihr Feedback mit.
+Autoren von NVDA-Erweiterungen sollten bitte einen Ticket bei GitHub einreichen, wenn diese Änderungen dazu führen, dass die API nicht mehr Ihren Anforderungen entspricht.
+</P>
+<UL>
+<LI><CODE>appModules.lockapp.LockAppObject</CODE> sollte durch <CODE>NVDAObjects.lockscreen.LockScreenObject</CODE> ersetzt werden. (GHSA-rmq3-vvhq-gp32)
+<LI><CODE>appModules.lockapp.AppModule.SAFE_SCRIPTS</CODE> sollte durch <CODE>utils.security.getSafeScripts()</CODE> ersetzt werden. (GHSA-rmq3-vvhq-gp32)
+</UL>
+
+<P></P>
 <H2>2022.2</H2>
 <P>
 Diese Version enthält viele Fehlerbehebungen.
@@ -505,7 +531,7 @@ Hinweis:
 +Please responsibly disclose security issues to <A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>.
 +
 </P>
-<H3>Sicherheitsbehebungen</H3>
+<H3>Sicherheitskorrekturen</H3>
 <UL>
 <LI>Behoben wurde der Sicherheitshinweis <CODE>GHSA-xc5m-v23f-pgr7</CODE>.
   <UL>
@@ -4409,7 +4435,7 @@ Die wichtigsten Neuerungen dieser Version sind u. a. die Unterstützung von 64-B
  <LI>-m, --minimal: Spielt weder Klänge beim Starten und beenden ab, noch wird ein Willkommensbildschirm angezeigt.
  <LI>-q, --quit: Beendet jegliche laufende NVDA-Instanzen.
  <LI>-s, --stderr-file Dateiname: Gibt eine Datei an, in der nicht abgefangene Fehler und ausnahmen protokolliert werden sollen.
- <LI>-d, --debug-file Dateiname: Gibt eine Datei an, in der Meldungen zur Fehlerkorrektur festgehalten werden sollen.
+ <LI>-d, --debug-file Dateiname: Gibt eine Datei an, in der Meldungen zur Fehlerbehebung festgehalten werden sollen.
  <LI>-c, --config-file: Gibt eine alternative Konfigurationsdatei an.
  <LI>-h, -help: Zeigt ein Hilfefenster an, das die Kommandozeilenparameter auflistet.
  </UL>
