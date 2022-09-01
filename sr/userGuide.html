@@ -2405,9 +2405,10 @@ Kada ste u prikazu tabele dodatih knjiga:
 NVDA pruža podršku za Windows komandne konzole koje koristi Windows komandna linija, PowerShell, i Windows podsistem za Linux.
 Prozor konzole je fiksne veličine, obično mnogo manji od dela koji sadrži izlaz.
 Dok se novi tekst piše, sadržaj se pomera i prethodni tekst postaje nevidljiv. 
-Tekst koji nije vidljiv u prozoru nije dostupan kada se koriste komande NVDA pregleda.
+Na Windows verzijama starijim od Windowsa 11 22H2, tekst koji nije vidljiv u prozoru nije dostupan kada se koriste komande NVDA pregleda.
 Zbog toga, neophodno je da pomerite prozor konzole kako biste videli raniji tekst.
-Sledeće ugrađene prečice u Windows konzoli mogu biti korisne kada se  <A HREF="#ReviewingText">pregleda tekst</A> uz NVDA:
+U novijim verzijama konzole i Windows terminala, moguće je u potpunosti pregledati tekst bez potrebe za pomeranjem prozora.
+Sledeće ugrađene prečice u Windows konzoli mogu biti korisne kada se  <A HREF="#ReviewingText">pregleda tekst</A> uz NVDA u starijim verzijama Windows konzole:
 </P>
 <TABLE ALIGN="center" BORDER="1" CELLPADDING="4">
 <TR>
@@ -2718,6 +2719,26 @@ Ova opcija bi obično trebala da bude omogućena.
 Ali, neki Microsoft Speech API sintetizatori ne podržavaju ovo i čudno se ponašaju kada je opcija omogućena.
 Ako imate probleme sa izgovorom pojedinačnih slova, pokušajte da onemogućite ovu opciju.
 </P>
+<A NAME="delayedCharacterDescriptions"></A>
+<H5>Odloženi opisi znakova pri pomeranju kursora</H5>
+<DL>
+<DT>Podrazumevano</DT><DD>
+  Onemogućeno
+<DT>Opcije</DT><DD>
+  Omogućeno, onemogućeno
+</DL>
+
+<P></P>
+<P>
+Kada je ovo podešavanje označeno, NVDA će izgovarati opise znakova kada se krećete znak po znak.
+</P>
+<P>
+Na primer, kada se red čita znak po znak, kada se slovo "b" pročita NVDA će izgovoriti "Beograd" nakon odlaganja od jedne sekunde.
+Ovo može biti korisno ako je teško razlikovati izgovor određenih simbola, ili za korisnike oštećenog sluha.
+</P>
+<P>
+Odloženi opisi znakova će biti otkazani ako je drugi tekst izgovoren u toku ovog vremena, ili ako pritisnete taster <CODE>kontrol</CODE>.
+</P>
 <A NAME="SelectSynthesizer"></A>
 <H4>12.1.3. Izbor sintetizatora (NVDA+kontrol+s)</H4>
 <P>
@@ -2948,6 +2969,27 @@ Ali, da biste pročitali sadržaj (npr. da ste u listi i da je lista deo dijalog
 </P>
 <P>
 Da biste menjali opcije predstavljanja sadržaja fokusa bilo gde, molimo podesite komandu koristeći <A HREF="#InputGestures">dijalog ulazne komande</A>.
+</P>
+<A NAME="BrailleSettingsInterruptSpeech"></A>
+<H5>Prekini izgovor u toku pomeranja</H5>
+<DL>
+<DT>Podrazumevano</DT><DD>
+  Omogućeno
+<DT>Opcije</DT><DD>
+  Podrazumevano (omogućeno), omogućeno, onemogućeno
+</DL>
+
+<P></P>
+<P>
+Ovo podešavanje određuje da li treba prekinuti govor kada se brajev red pomera napred ili nazad.
+Komande pomeranja na prethodni ili sledeći red uvek prekidaju govor.
+</P>
+<P>
+Dolazni govor može predstavljati ometanje pri čitanju brajevog pisma.
+Zbog toga je opcija podrazumevano omogućena, što će prekinuti govor pri pomeranju brajevog reda.
+</P>
+<P>
+Kada se ova opcija onemogući moguće je čuti govor i u isto vreme čitati brajevo pismo.
 </P>
 <A NAME="SelectBrailleDisplay"></A>
 <H4>12.1.6. Izaberi brajev red (NVDA+kontrol+a)</H4>
@@ -3652,10 +3694,33 @@ Ovo podešavanje sadrži sledeće vrednosti:
 
 <P></P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Koristi UI Automation za pristup Windows konzolama kada je dostupan</H5>
+<H5>Podrška za Windows konzolu</H5>
+<DL>
+<DT>Podrazumevano</DT><DD>
+  Automatski
+<DT>Opcije</DT><DD>
+  Automatski, UIA kada je dostupan, zastarela
+</DL>
+
+<P></P>
 <P>
-Kada je ova opcija omogućena, NVDA će koristiti novu, eksperimentalnu podršku za Windows konzole koja koristi nova <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">poboljšanja u pristupačnosti od strane Microsofta</A>. Ova opcija je još uvek eksperimentalna i nije kompletna, tako da njeno korišćenje još nije preporučeno. Ali, kada se završi, ova podrška će verovatno postati podrazumevana, što će poboljšati stabilnost i brzinu programa NVDA u Windows konzoli.
+Ova opcija određuje kako će NVDA vršiti interakciju sa Windows konzolom koju koriste komandna linija, PowerShell, i Windows podsistem za Linux.
+Ne utiče na moderni Windows terminal.
+U Windowsu 10 verziji 1709, Microsoft je <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">dodao podršku za svoj UI Automation API u konzolu</A>, što je donelo ogromna poboljšanja u brzini i stabilnosti za čitače ekrana koji ga podržavaju.
+U situacijama u kojima UI Automation nije dostupan ili je poznato da pruža lošije iskustvo, starija NVDA podrška za konzole je dostupna.
+Izborni okvir za podršku za Windows konzole ima tri opcije:
 </P>
+<UL>
+<LI>Automatski: Koristi UI Automation u verziji Windows konzole koja je uključena u Windows 11 verziju 22H2 i novije.
+Ova opcija je preporučena i podrazumevano je podešena.
+<LI>UIA kada je dostupan: Koristi UI Automation u konzolama ako je dostupan, čak i za verzije sa nepotpunom podrškom ili sa greškama.
+Iako ova ograničena podrška može biti korisna (čak i dovoljna za vaš način korišćenja), ovu opciju koristite u potpunosti na sopstveni rizik i podrška za nju neće biti pružana.
+<LI>Zastarela: UI Automation u Windows konzoli će u potpunosti biti onemogućen.
+Zastarela podrška će se uvek koristiti čak i u situacijama u kojima bi UI Automation pružao bolje korisničko iskustvo.
+Zbog toga, izbor ove opcije se ne preporučuje osim ako znate šta radite.
+</UL>
+
+<P></P>
 <A NAME="ChromiumUIA"></A>
 <H5>Koristi UIA podršku za Microsoft Edge i druge Chromium pretraživače  kada je dostupna</H5>
 <P>
