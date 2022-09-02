@@ -53,6 +53,75 @@ Può essere riattivata nel pannello delle impostazioni avanzate di NVDA. (<A HRE
 <LI>La dimensione dell'installazione di NVDA è ora mostrata nella sezione Programmi e funzionalità di Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/13909">#13909</A>)
 </UL>
 
+<H3>Bug Fixes</H3>
+<UL>
+<LI>Adobe Acrobat / Reader 64 bit non si arresta più in modo anomalo durante la lettura di un documento PDF. (<A HREF="https://github.com/nvaccess/nvda/issues/12920">#12920</A>)
+  <UL>
+  <LI>Si noti che è necessaria anche la versione più aggiornata di Adobe Acrobat/Reader per evitare il crash.
+  </UL>
+<LI>Le misure della grandezza caratteri sono ora traducibili in NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13573">#13573</A>)
+<LI>Vengono ignorati gli eventi Java Access Bridge laddove non sia possibile trovare alcun handle di finestra per le applicazioni Java.
+Ciò migliorerà le prestazioni per alcune applicazioni Java, tra cui IntelliJ IDEA. (<A HREF="https://github.com/nvaccess/nvda/issues/13039">#13039</A>)
+<LI>La lettura delle celle selezionate per LibreOffice Calc risulta più efficiente e non provoca più un blocco del programma quando vengono selezionate molte celle. (<A HREF="https://github.com/nvaccess/nvda/issues/13232">#13232</A>)
+<LI>Microsoft Edge non risulta più inaccessibile se eseguito da un utente diverso. (<A HREF="https://github.com/nvaccess/nvda/issues/13032">#13032</A>)
+<LI>quando l'aumento di velocità è disattivato, la velocità di Espeak non rallenta quando ci si trova tra  99% e 100%. (<A HREF="https://github.com/nvaccess/nvda/issues/13876">#13876</A>)
+<LI>Risolto un bug che consentiva l'apertura di 2 finestre di dialogo dei gesti di immissione. (<A HREF="https://github.com/nvaccess/nvda/issues/13854">#13854</A>)
+</UL>
+
+<P></P>
+<H3>Cambiamenti per sviluppatori, in inglese</H3>
+<UL>
+<LI>Updated Comtypes to version 1.1.11. (<A HREF="https://github.com/nvaccess/nvda/issues/12953">#12953</A>)
+<LI>In builds of Windows Console (<CODE>conhost.exe</CODE>) with an NVDA API level of 2 (<CODE>FORMATTED</CODE>) or greater, such as those included with Windows 11 version 22H2 (Sun Valley 2), UI Automation is now used by default. (<A HREF="https://github.com/nvaccess/nvda/issues/10964">#10964</A>)
+  <UL>
+  <LI>This can be overridden by changing the "Windows Console support" setting in NVDA's advanced settings panel.
+  <LI>To find your Windows Console's NVDA API level, set "Windows Console support" to "UIA when available", then check the NVDA+F1 log opened from a running Windows Console instance.
+  </UL>
+<LI>The Chromium virtual buffer is now loaded even when the document object has the MSAA <CODE>STATE_SYSTEM_BUSY</CODE> exposed via IA2. (<A HREF="https://github.com/nvaccess/nvda/issues/13306">#13306</A>)
+<LI>A config spec type <CODE>featureFlag</CODE> has been created for use with experimental features in NVDA. See <CODE>devDocs/featureFlag.md</CODE> for more information. (<A HREF="https://github.com/nvaccess/nvda/issues/13859">#13859</A>)
+</UL>
+
+<P></P>
+<H4>Deprecations</H4>
+<P>
+There are no deprecations proposed in 2022.3.
+</P>
+<H2>2022.2.2</H2>
+<P>
+This is a patch release to fix a bug introduced in 2022.2.1 with input gestures.
+</P>
+<H3>Bug Fixes</H3>
+<UL>
+<LI>Fixed a bug where input gestures didn't always work. (<A HREF="https://github.com/nvaccess/nvda/issues/14065">#14065</A>)
+</UL>
+
+<P></P>
+<H2>2022.2.1</H2>
+<P>
+This is a minor release to fix a security issue.
+Please responsibly disclose security issues to <A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>.
+</P>
+<H3>Security Fixes</H3>
+<UL>
+<LI>Fixed exploit where it was possible to run a python console from the lockscreen. (GHSA-rmq3-vvhq-gp32)
+<LI>Fixed exploit where it was possible to escape the lockscreen using object navigation. (GHSA-rmq3-vvhq-gp32)
+</UL>
+
+<P></P>
+<H3>Changes for Developers</H3>
+<H4>Deprecations</H4>
+<P>
+These deprecations are currently not scheduled for removal.
+The deprecated aliases will remain until further notice.
+Please test the new API and provide feedback.
+For add-on authors, please open a GitHub issue if these changes stop the API from meeting your needs.
+</P>
+<UL>
+<LI><CODE>appModules.lockapp.LockAppObject</CODE> should be replaced with <CODE>NVDAObjects.lockscreen.LockScreenObject</CODE>. (GHSA-rmq3-vvhq-gp32)
+<LI><CODE>appModules.lockapp.AppModule.SAFE_SCRIPTS</CODE> should be replaced with <CODE>utils.security.getSafeScripts()</CODE>. (GHSA-rmq3-vvhq-gp32)
+</UL>
+
+<P></P>
 <H2>2022.2</H2>
 <P>
 Questa versione si è focalizzata nel risolvere un gran numero di bug.
