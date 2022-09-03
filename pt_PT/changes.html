@@ -10,6 +10,118 @@
 <I>Traduzido pela Equipa portuguesa do NVDA</I><BR>
 </FONT></CENTER>
 
+<H2>2022.3</H2>
+<P>
+A comunidade de desenvolvimento do NVDA contribuiu para parte significativa desta versão, incluindo a descrição desfasada dos caracteres e suporte melhorado da consola do Windows.
+</P>
+<P>
+Esta versão também inclui várias correcções de bugs.
+Nomeadamente, as versões actualizadas do Adobe Acrobat/Reader já não crasham ao ler um documento PDF.
+O eSpeak foi actualizado, o que introduz 3 novas línguas: Bielorrusso, Luxemburguês e Totontepec Mixe.
+</P>
+<H3>Novas funcionalidades</H3>
+<UL>
+<LI>Na Consola Windows, utilizada pelo Command Prompt, PowerShell, e o Subsistema Windows para Linux no Windows 11 versão 22H2 (Sun Valley 2) e posteriores:
+  <UL>
+  <LI>O desempenho e a estabilidade foram amplamente melhorados. (<A HREF="https://github.com/nvaccess/nvda/issues/10964">#10964</A>)
+  <LI>Ao pressionar "control+f" para localizar texto, a posição do cursor de revisão é actualizada para ir para o termo encontrado. (<A HREF="https://github.com/nvaccess/nvda/issues/11172">#11172</A>)
+  <LI>A comunicação de texto escrito que não aparece no ecrã (tais como palavras-passe) é desactivada por defeito.
+Pode ser reactivada nas configurações do NVDA, secção Avançadas, do NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/11554">#11554</A>)
+  <LI>O texto que foi deslocado do ecrã pode ser revisto sem deslocar a janela da consola. (<A HREF="https://github.com/nvaccess/nvda/issues/12669">#12669</A>)
+  <LI>Está disponível informação mais detalhada sobre a formatação do texto. (<A HREF="https://github.com/microsoft/terminal/pull/10336">microsoft/PR 10336 terminal</A>)
+  </UL>
+<LI>Uma nova opção nas configurações do NVDA, secção   voz foi adicionada para ler as descrições dos caracteres após um atraso. (<A HREF="https://github.com/nvaccess/nvda/issues/13509">#13509</A>)
+<LI>Uma nova opção nas configurações do NVDA, secção Braille foi adicionada para determinar se a rolagem da linha Braille para a frente/ou para trás deve interromper a fala. (<A HREF="https://github.com/nvaccess/nvda/issues/2124">#2124</A>)
+</UL>
+
+<P></P>
+<P>
+== Alterações ===
+</P>
+<UL>
+<LI>O eSpeak NG foi actualizado para a versão 1.52-dev commit <CODE>9de65fcb`</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13295">#13295</A>)
+  <UL>
+  <LI>Idiomas adicionados:
+    <UL>
+    <LI>Bielorrusso
+    <LI>Luxemburguês
+    <LI>Totontepec Mixe
+    </UL>
+  </UL>
+<LI>Ao utilizar a UI Automation para aceder aos controlos de folha de cálculo do Microsoft Excel, 
+o NVDA já anuncia quando uma célula é mesclada. (<A HREF="https://github.com/nvaccess/nvda/issues/12843">#12843</A>)
+<LI>Em vez de anunciar apenas "tem detalhes", o objectivo dos detalhes é, sempre que possível, também anunciado, por exemplo, "tem comentários". (<A HREF="https://github.com/nvaccess/nvda/issues/13649">#13649</A>)
+<LI>O tamanho da instalação do NVDA é agora mostrado na secção Programas e Funcionalidades do Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/13909">#13909</A>)
+</UL>
+
+<P></P>
+<H3>Correcção de erros</H3>
+<UL>
+<LI>O Adobe Acrobat/Reader 64 bit já não provoca erros ao ler um documento PDF. (<A HREF="https://github.com/nvaccess/nvda/issues/12920">#12920</A>)
+  <UL>
+  <LI>Note que também é necessária a versão mais actualizada do Adobe Acrobat/Reader para evitar os erros.
+  </UL>
+<LI>As medidas do tamanho da fonte já podem ser traduzidas no NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13573">#13573</A>)
+<LI>Ignorar eventos de Java Access Bridge onde não for possível encontrar nenhum "window handle" para aplicações Java.
+Isto irá melhorar o desempenho de algumas aplicações Java, incluindo o IntelliJ IDEA. (<A HREF="https://github.com/nvaccess/nvda/issues/13039">#13039</A>)
+<LI>O anúncio de células seleccionadas para o LibreOffice Calc é mais eficiente e já não resulta num congelamento do Calc quando muitas células são seleccionadas. (<A HREF="https://github.com/nvaccess/nvda/issues/13232">#13232</A>)
+<LI>Quando executado sob um utilizador diferente, o Microsoft Edge já não é inacessível. (<A HREF="https://github.com/nvaccess/nvda/issues/13032">#13032</A>)
+<LI>Quando a opção "Aumento da taxa" está desligada, a velocidade da voz do eSpeak já não desce entre 99% e 100%. (<A HREF="https://github.com/nvaccess/nvda/issues/13876">#13876</A>)
+<LI>Corrigido o erro que permitia a abertura de 2 janelas "Definir comandos". (<A HREF="https://github.com/nvaccess/nvda/issues/13854">#13854</A>)
+</UL>
+
+<P></P>
+<H3>Alterações para Desenvolvedores</H3>
+<UL>
+<LI>In builds of Windows Console (<CODE>conhost.exe</CODE>) with an NVDA API level of 2 (<CODE>FORMATTED</CODE>) or greater, such as those included with Windows 11 version 22H2 (Sun Valley 2), UI Automation is now used by default. (<A HREF="https://github.com/nvaccess/nvda/issues/10964">#10964</A>)
+  <UL>
+  <LI>This can be overridden by changing the "Windows Console support" setting in NVDA's advanced settings panel.
+  <LI>To find your Windows Console's NVDA API level, set "Windows Console support" to "UIA when available", then check the NVDA+F1 log opened from a running Windows Console instance.
+  </UL>
+<LI>The Chromium virtual buffer is now loaded even when the document object has the MSAA <CODE>STATE_SYSTEM_BUSY</CODE> exposed via IA2. (<A HREF="https://github.com/nvaccess/nvda/issues/13306">#13306</A>)
+<LI>A config spec type <CODE>featureFlag</CODE> has been created for use with experimental features in NVDA. See <CODE>devDocs/featureFlag.md</CODE> for more information. (<A HREF="https://github.com/nvaccess/nvda/issues/13859">#13859</A>)
+</UL>
+
+<P></P>
+<H4>Deprecations</H4>
+<P>
+There are no deprecations proposed in 2022.3.
+</P>
+<H2>2022.2.2</H2>
+<P>
+Esta é uma versão de correção de um erro introduzido na versão 2022.2.1.
+</P>
+<H3>Correcção de erros</H3>
+<UL>
+<LI>Corrigido um erro que permitia que um comando nem sempre funcionasse. (<A HREF="https://github.com/nvaccess/nvda/issues/14065">#14065</A>)
+</UL>
+
+<P></P>
+<H2>2022.2.1</H2>
+<P>
+Este é um pequeno lançamento para resolver um problema de segurança.
+Por favor, revele responsavelmente as questões de segurança a <A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>.
+</P>
+<H3>Correcções de segurança</H3>
+<UL>
+<LI>Exploração fixa onde era possível executar uma consola python a partir do ecrã de fechadura. (GHSA-rmq3-vvhq-gp32)
+<LI>Exploração fixa onde era possível escapar ao serralheiro utilizando a navegação por objectos. (GHSA-rmq3-vvhq-gp32)
+</UL>
+
+<P></P>
+<H3>Alterações para os Desenvolvedores</H3>
+<P>
+Estas depreciações não estão actualmente agendadas para remoção.
+Os pseudónimos depreciados permanecerão até nova ordem.
+Por favor, testar o novo API e fornecer feedback.
+Para autores de add-on, por favor abrir um número GitHub se estas alterações impedirem o API de satisfazer as suas necessidades.
+</P>
+<UL>
+<LI>"appModules.lockapp.LockAppObject"" deve ser substituído por "NVDAObjects.lockscreen.LockScreenObject"". (GHSA-rmq3-vvhq-gp32)
+<LI><CODE>appModules.lockapp.AppModule.SAFE_SCRIPTS`</CODE> deve ser substituído por <CODE>utils.security.getSafeScripts()</CODE>. (GHSA-rmq3-vvhq-gp32)
+</UL>
+
+<P></P>
 <H2>2022.2</H2>
 <P>
 Esta versão inclui muitas correcções de bugs.
@@ -55,7 +167,7 @@ Actualizado o LibLouis, que inclui uma nova tabela Braille alemã.
 </UL>
 
 <P></P>
-<H3>Correcções</H3>
+<H3>Correcção de erros</H3>
 <UL>
 <LI>Correcções para aplicações baseadas em Java:
   <UL>
@@ -298,7 +410,7 @@ Esta versão quebra a compatibilidade com os add-ons existentes.
 </UL>
 
 <P></P>
-<H3>Correcções</H3>
+<H3>Correcção de erros</H3>
 <UL>
 <LI>O painel de gestão da da Área de transferência já não deve roubar incorrectamente o foco ao abrir alguns programas do Office. (<A HREF="https://github.com/nvaccess/nvda/issues/12736">#12736</A>)
 <LI>Num sistema em que o utilizador optou por trocar o botão primário do rato da esquerda para a direita, o NVDA deixará de abrir acidentalmente um menu de contexto em vez de activar um item, em aplicações tais como navegadores web. (<A HREF="https://github.com/nvaccess/nvda/issues/12642">#12642</A>)
@@ -561,7 +673,7 @@ Se necessitar desta funcionalidade, associe um comando ao script na secção Nav
 </UL>
 
 <P></P>
-<H3>Correcções</H3>
+<H3>Correcção de erros</H3>
 <UL>
 <LI>Registar as teclas modificadoras, como Control, ou Insert) está mais robusto, quando o watchdog está a tentar recuperar o NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/12609">#12609</A>)
 <LI>É novamente possível verificar por actualizações do NVDA em certos sistemas, por exemplo em  novas instalações de raíz do Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/12729">#12729</A>)
