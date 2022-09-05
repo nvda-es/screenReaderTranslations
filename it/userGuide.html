@@ -789,7 +789,6 @@ NVDA fornisce i seguenti comandi quando si lavora con il cursore di sistema:
 <TD>Legge posizione cursore</TD>
 <TD>NVDA+Canc tastierino numerico</TD>
 <TD>NVDA+canc</TD>
-<TD>none</TD>
 <TD>Fornisce informazioni inerenti il testo o l'oggetto su cui è situato il cursore di sistema. Ad esempio, ciò potrebbe includere la percentuale in un documento, la distanza dal bordo della pagina o la posizione esatta dello schermo. Premendo due volte si possono ottenere ulteriori dettagli.</TD>
 </TR>
 <TR>
@@ -2386,9 +2385,10 @@ Quando ci si trova nella visualizzazione della tabella dei libri aggiunti:
 NVDA fornisce supporto per la console di Windows utilizzata da Prompt dei comandi, PowerShell e il sottosistema Windows per Linux.
 La finestra della console ha dimensioni fisse, in genere molto più piccole del buffer che contiene l'output.
 Man mano che viene aggiunto del testo, il contenuto scorre verso l'alto e il testo precedente non è più visibile.
-NVDA non può più quindi leggere del testo che non risulta più visibile nella finestra con i comandi standard di revisione.
+Nelle versioni di Windows precedenti a Windows11 22H2, NVDA non è in grado di leggere il testo che non risulta più visibile nella finestra con i comandi standard di revisione.
 Pertanto, è necessario scorrere la finestra della console per rileggere del testo precedente.
-Le seguenti scorciatoie da tastiera integrate nella Console di Windows possono essere utili quando si <A HREF="#ReviewingText">esplora del testo</A> con NVDA:
+Nelle versioni più recenti della console e nel terminale di Windows, è possibile riesaminare l'intero buffer di testo liberamente senza la necessità di scorrere la finestra.
+Le seguenti scorciatoie da tastiera integrate nella Console possono essere utili quando si <A HREF="#ReviewingText">esplora del testo</A> con NVDA nelle versioni precedenti della console di Windows:
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -2698,6 +2698,25 @@ Generalmente, si consiglia di abilitare questa impostazione.
 Talvolta, può succedere che alcune sintesi Microsoft Speech Api si comportino in modo strano nell'eseguire lo spelling.
 In caso ciò avvenga, consigliamo di disattivare questa caratteristica.
 </P>
+<H5>Descrizione ritardata dei caratteri al movimento del cursore</H5>
+<DL>
+<DT>Default</DT><DD>
+  Disabilitata
+<DT>Opzioni</DT><DD>
+  Abilitata, disabilitata
+</DL>
+
+<P></P>
+<P>
+Quando questa impostazione viene attivata, NVDA pronuncerà una descrizione del carattere man mano che ci si sposta lettera per lettera.
+</P>
+<P>
+Per esempio, se si sta esaminando una riga carattere per carattere, e ci troviamo sulla lettera b, NVDA pronuncerà "Bologna" dopo un secondo di ritardo.
+Questo può essere utile nel caso in cui si incontrino difficoltà nella comprensione dei simboli, o per le persone con problemi di udito..
+</P>
+<P>
+Tale funzione verrà inibita nel caso in cui venga letto del testo durante il secondo di ritardo, oppure se viene premuto il tasto control..
+</P>
 <A NAME="SelectSynthesizer"></A>
 <H4>12.1.3. Seleziona sintetizzatore (NVDA+control+s)</H4>
 <P>
@@ -2928,6 +2947,27 @@ Comunque, se si desidera leggere il contesto (ossia che ci si trova in un elenco
 </P>
 <P>
 Per modificare la presentazione delle informazioni di contesto da qualsiasi punto ci si trovi, è necessario assegnare un nuovo gesto o tasto rapido utilizzando la <A HREF="#InputGestures">finestra di dialogo tasti e gesti di immissione</A>.
+</P>
+<A NAME="BrailleSettingsInterruptSpeech"></A>
+<H5>Interrompi la voce durante lo scorrimento</H5>
+<DL>
+<DT>Default</DT><DD>
+  Abilitato
+<DT>Opzioni</DT><DD>
+  Default (Abilitato), Abilitato, Disabilitato
+</DL>
+
+<P></P>
+<P>
+Questa impostazione determina se la sintesi vocale debba interrompersi quando si scorre il display braille indietro o avanti..
+I comandi riga precedente/successiva interrompono sempre la sintesi.
+</P>
+<P>
+Per alcune persone la voce che legge di continuo potrebbe essere fonte di distrazione se si è concentrati sul braille.
+Per questo motivo l'opzione è abilitata di default, interrompendo il parlato durante lo scorrimento del braille.
+</P>
+<P>
+La disattivazione di questa opzione consente di ascoltare la sintesi indipendentemente dallo scorrimento del  display braille.
 </P>
 <A NAME="SelectBrailleDisplay"></A>
 <H4>12.1.6. Selezione display braille (NVDA+control+a)</H4>
