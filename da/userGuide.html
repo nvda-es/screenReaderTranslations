@@ -796,7 +796,6 @@ Følgende NVDA-kommandoer kan bruges i forbindelse med systemmarkøren:
 <TD>Oplys systemmarkørens position</TD>
 <TD>NVDA+NumpadDelete</TD>
 <TD>NVDA+Delete</TD>
-<TD>Ingen</TD>
 <TD>Giver information om placeringen af teksten eller objektet ved systemmarkøren. Fx. procentdel af dokumentet, afstand fra kanten af siden eller den præcise position på skærmen. To tryk kan give flere detaljer.</TD>
 </TR>
 <TR>
@@ -2406,9 +2405,10 @@ Når du befinder dig i tabelvisningen for tilføjede bøger:
 NVDA har understøttelse for Windows-kommandokonsollen brugt af Kommandoprompt, PowerShell, og Windows Subsystem for Linux.
 Kommandokonsollens vindue har en forudbestemt størrelse, der typisk er meget mindre end den beholder, der indeholder den tekst, der kommer frem på skærmen.
 Efterhånden som nyere linjer af tekst skrives, vil teksten rulle opad og forrige linjer af tekst vil ikke forblive synlige.
-Tekst, der ikke er synlig, kan ikke læses ved brug af NVDAs læsekommandoer.
+Tekst, der ikke er synlig, kan ikke læses ved brug af NVDAs læsekommandoer, hvis du bruger en Windows version ældre end Windows 11 22H2.
 Derfor er det nødvendigt at bruge kommandoer til at rulle konsolvinduet.
-Følgende indbyggede kommandoer til manipulering af konsolvinduet kan være nyttige, når du skal <A HREF="#ReviewingText">læse teksten</A> med NVDA:
+I Windows-konsollen og terminaler er det nu muligt at læse alt tekst uden at rulle konsolvinduet.
+Følgende indbyggede kommandoer til manipulering af konsolvinduet kan være nyttige, når du skal <A HREF="#ReviewingText">læse teksten</A> med NVDA i ældre versioner af Windows-konsollen:
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -2719,6 +2719,26 @@ Denne indstilling bør generelt være slået til.
 Nogle Microsoft Speech API synteser anvender dog ikke denne funktion korrekt og opfører sig mærkeligt når indstillingen er slået til.
 Hvis du har problemer med udtalen af diverse bogstaver kan du prøve at deaktivere denne indstilling.
 </P>
+<A NAME="delayedCharacterDescriptions"></A>
+<H5>Forsinkede beskrivelser af tegn ved markørbevægelser</H5>
+<DL>
+<DT>Standard</DT><DD>
+  Deaktiveret
+<DT>Muligheder</DT><DD>
+  Aktiveret, deaktiveret
+</DL>
+
+<P></P>
+<P>
+Når denne indstilling er aktiveret, vil NVDA sige tegnbeskrivelsen, når du flytter markøren tegn for tegn.
+</P>
+<P>
+For eksempel, mens du gennemgår en linje med tegn, når bogstavet "b" læses, vil NVDA sige "Bravo" efter ét sekund.
+Dette kan være nyttigt, hvis det er svært at skelne mellem udtale af symboler, eller for hørehæmmede brugere.
+</P>
+<P>
+Tegnets beskrivelse vil ikke blive oplæst, hvis andet tekst udtales, eller hvis du trykker på Ctrl-tasten.
+</P>
 <A NAME="SelectSynthesizer"></A>
 <H4>12.1.3. Vælg talesyntese (NVDA+Ctrl+S)</H4>
 <P>
@@ -2949,6 +2969,27 @@ For at du skal kunne læse konteksten (dvs. at du er på en liste, og at listen 
 </P>
 <P>
 Hvis du vil skifte fokuskontekstpræsentation fra hvor som helst, skal du tildele en brugerdefineret bevægelse eller et tastetryk ved hjælp af <A HREF="#InputGestures">dialogboksen Håndter Kommandoer</A>.
+</P>
+<A NAME="BrailleSettingsInterruptSpeech"></A>
+<H5>Afbryd talen, mens du panorerer</H5>
+<DL>
+<DT>Standard</DT><DD>
+  Aktiveret
+<DT>Muligheder</DT><DD>
+  Aktiveret, deaktiveret
+</DL>
+
+<P></P>
+<P>
+Denne indstilling bestemmer, om talen skal afbrydes, når Braille-displayet rulles tilbage/fremad.
+Forrige/næste linje kommandoer afbryder altid tale.
+</P>
+<P>
+Igangværende tale kan være en distraktion, mens du læser punktskrift.
+Af denne grund er indstillingen aktiveret som standard, hvilket afbryder tale, når du panorerer dit display.
+</P>
+<P>
+Deaktivering af denne indstilling gør det muligt at høre tale, mens du læser punktskrift.
 </P>
 <A NAME="SelectBrailleDisplay"></A>
 <H4>12.1.6. Vælg punktdisplay (NVDA+control+a)</H4>
@@ -3624,10 +3665,33 @@ Indstillingen indeholder følgende muligheder:
 
 <P></P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Benyt UI Automation til at få adgang til Windows-konsollen, når denne er tilgængelig</H5>
+<H5>Understøttelse af Windows-konsol</H5>
+<DL>
+<DT>Standard</DT><DD>
+  Automatisk
+<DT>Muligheder</DT><DD>
+  Automatisk, UIA, når dette er tilgængeligt, Forældet
+</DL>
+
+<P></P>
 <P>
-Når denne indstilling er aktiveret, vil NVDA benytte <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">tilgængelighedsforbedringer fra Microsoft</A>. Denne funktion er dog ikke færdigudviklet, så brug af denne anbefales ikke. Når denne funktion er fuldt udviklet forventer vi at denne indstilling bliver indstillet som standard.
+Denne indstilling bestemmer, hvordan NVDA interagerer med Windows-konsollen, der bruges af kommandoprompt, PowerShell og Windows Subsystem for Linux.
+Dette påvirker ikke den moderne Windows Terminal.
+I Windows 10 version 1709 <A HREF="update/">tilføjede Microsoft understøttelse af sin UI Automation API til konsollen https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-</A>, hvilket betyder en markant forbedret ydeevne og stabilitet med skærmlæsere, der understøtter dette.
+I situationer, hvor UI Automation er utilgængelig eller kendt for at resultere i en dårligere brugeroplevelse, er NVDAs forældede konsolsupport tilgængelig som en reservemetode.
+Boksen har tre muligheder:
 </P>
+<UL>
+<LI>Automatisk: Bruger UI Automation i versionen af Windows-konsollen, der følger med Windows 11 version 22H2 og nyere.
+Denne indstilling anbefales og indstilles som standard.
+<LI>UIA, når dette er tilgængeligt: Bruger UI Automation  i konsoller, hvis det er tilgængeligt, selv for versioner med ufuldstændige eller fejlagtige implementeringer.
+Selvom denne begrænsede funktionalitet kan være nyttig (og endda tilstrækkelig til dit brug), er brugen af denne mulighed helt på egen risiko, og der vil ikke blive ydet support til den.
+<LI>Forældet: UI Automation i Windows-konsollen vil være fuldstændig deaktiveret.
+Den gamle reservemetode  vil altid blive brugt selv i situationer, hvor UI Automation ville give en betydeligt bedre brugeroplevelse.
+Derfor anbefales det ikke at vælge denne mulighed, medmindre du ved, hvad du laver.
+</UL>
+
+<P></P>
 <A NAME="ChromiumUIA"></A>
 <H5>Brug UIA med Microsoft Edge og andre Chromium-baserede browsere, hvis muligt</H5>
 <P>
