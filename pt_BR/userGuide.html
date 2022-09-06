@@ -797,7 +797,6 @@ Este leitor de telas fornece os seguintes comandos em relação ao cursor do sis
 <TD>Anunciar a localização do cursor do sistema</TD>
 <TD>NVDA+del do bloco numérico</TD>
 <TD>NVDA+del</TD>
-<TD>nenhum</TD>
 <TD>Anuncia informações sobre a localização do texto ou objeto na posição do cursor do sistema. Por exemplo, isso pode incluir a percentagem do documento, a distância da borda da página ou a exata posição na tela. Pressionando duas vezes, poderá fornecer detalhes adicionais.</TD>
 </TR>
 <TR>
@@ -2406,9 +2405,10 @@ Quando na visualização da tabela de livros adicionados:
 O NVDA fornece suporte para o Console de comando do Windows usado pelo Prompt de Comando, PowerShell e o Subsistema do Windows para Linux.
 A janela do console é de tamanho fixo, geralmente muito menor que o buffer [armazenamento amortecedor intermediário] que contém a saída.
 À medida que o novo texto é escrito, o conteúdo rola para cima e o texto anterior não é mais visível.
-O texto que não é exibido visivelmente na janela não está acessível com os comandos de exploração de texto do NVDA.
+Nas versões do Windows anteriores ao Windows 11 22H2, texto no console que não é exibido visivelmente na janela não está acessível com os comandos de exploração de texto do NVDA.
 Portanto, é necessário rolar a janela do console para ler o texto anterior.
-Os seguintes atalhos de teclado internos do Console do Windows podem ser úteis ao <A HREF="#ReviewingText">explorar texto</A> com o NVDA:
+Nas versões mais recentes do console e no Windows Terminal, é possível explorar todo o texto da memória temporária livremente sem a necessidade de rolar a janela.
+Os seguintes atalhos de teclado internos do Console do Windows podem ser úteis ao <A HREF="#ReviewingText">explorar texto</A> com o NVDA em versões mais antigas do Console Windows:
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -2719,6 +2719,26 @@ Geralmente recomenda-se que essa opção esteja habilitada.
 Todavia, alguns sintetizadores Microsoft Speech API não o implementam corretamente e comportam-se de forma estranha quando essa opção está habilitada.
 Caso esteja enfrentando problemas com a pronúncia de caracteres individuais, experimente desabilitá-la.
 </P>
+<A NAME="delayedCharacterDescriptions"></A>
+<H5>Descrições de caracteres com atraso ao movimentar cursor</H5>
+<DL>
+<DT>Padrão</DT><DD>
+  Desabilitado
+<DT>Opções</DT><DD>
+  Habilitado, Desabilitado
+</DL>
+
+<P></P>
+<P>
+Quando esta configuração estiver marcada, o NVDA dirá a descrição do caractere quando você se mover por caracteres.
+</P>
+<P>
+Por exemplo, ao explorar uma linha por caracteres, quando a letra "b" for lida, o NVDA dirá "Bravo" após um atraso de 1 segundo.
+Isso pode ser útil se for difícil distinguir entre a pronúncia de símbolos ou para usuários com deficiência auditiva.
+</P>
+<P>
+A descrição de caractere com atraso será cancelada se outro texto for falado durante esse período ou se você pressionar a tecla <CODE>control</CODE>.
+</P>
 <A NAME="SelectSynthesizer"></A>
 <H4>12.1.3. Selecionar Sintetizador (NVDA+control+s)</H4>
 <P>
@@ -2949,6 +2969,27 @@ No entanto, para que você leia o contexto (ou seja, que você está em uma list
 </P>
 <P>
 Para alternar a apresentação de contexto do foco de qualquer lugar, atribua um comando personalizado usando o <A HREF="#InputGestures">diálogo Definir Comandos</A>.
+</P>
+<A NAME="BrailleSettingsInterruptSpeech"></A>
+<H5>Interromper a fala enquanto rola</H5>
+<DL>
+<DT>Padrão</DT><DD>
+  Habilitado
+<DT>Opções</DT><DD>
+  Padrão (Habilitado), Habilitado, Desabilitado
+</DL>
+
+<P></P>
+<P>
+Esta configuração determina se a fala deve ser interrompida quando a linha Braille é rolada para trás/frente.
+Os comandos de linha anterior/seguinte sempre interrompem a fala.
+</P>
+<P>
+A fala contínua pode ser uma distração durante a leitura Braille.
+Por esse motivo, a opção está habilitada por padrão, interrompendo a fala ao rolar em braille.
+</P>
+<P>
+A desativação desta opção permite que a fala seja ouvida ao ler Braille simultaneamente.
 </P>
 <A NAME="SelectBrailleDisplay"></A>
 <H4>12.1.6. Selecionar Linha Braille (NVDA+control+a)</H4>
@@ -3632,10 +3673,33 @@ Essa configuração contém os seguintes valores:
 
 <P></P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
-<H5>Use UI Automation para acessar o Console do Windows quando disponível</H5>
+<H5>Suporte ao Console do Windows</H5>
+<DL>
+<DT>Padrão</DT><DD>
+  Automático
+<DT>Opções</DT><DD>
+  Automático, UIA quando disponível, Legado
+</DL>
+
+<P></P>
 <P>
-Quando essa opção está habilitada, o NVDA utilizará uma nova versão em andamento do seu suporte ao Console do Windows, que tira proveito das <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">melhorias de acessibilidade feitas pela Microsoft</A>. Esse recurso é altamente experimental e ainda está incompleto, por isso seu uso ainda não é recomendado. No entanto, uma vez concluído, espera-se que esse novo suporte se torne o padrão, melhorando o desempenho e a estabilidade do NVDA nos consoles de comando do Windows.
+Esta opção seleciona como o NVDA interage com o Console Windows usado pelo prompt de comando, PowerShell e o Subsistema Windows para Linux.
+Não afeta o Terminal Windows moderno.
+No Windows 10 versão 1709, a Microsoft <A HREF="https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/">adicionou suporte para sua API de UI Automation ao console</A>, trazendo desempenho e estabilidade muito melhorados para leitores de tela que o suportam.
+Em situações em que a UI Automation [Automação de Interface do Usuário] não está disponível ou resulta em uma experiência inferior ao usuário, o suporte de console legado do NVDA está disponível como um retrocesso.
+A caixa de combinação de suporte ao Console do Windows tem três opções:
 </P>
+<UL>
+<LI>Automático: usa a UI Automation na versão do Console Windows incluída no Windows 11 versão 22H2 e posterior.
+Esta opção é recomendada e definida por padrão.
+<LI>UIA quando disponível: Usa UI Automation em consoles, se disponível, mesmo para versões com implementações incompletas ou com falhas.
+Embora essa funcionalidade limitada possa ser útil (e até mesmo suficiente para seu uso), o uso dessa opção é inteiramente por sua conta e risco e nenhum suporte será fornecido.
+<LI>Legado: a UI Automation no console do Windows será completamente desabilitada.
+O retrocesso legado sempre será usado mesmo em situações em que a UI Automation proporcionaria uma experiência superior ao usuário.
+Portanto, selecionar esta opção não é recomendado a menos que você saiba o que está fazendo.
+</UL>
+
+<P></P>
 <A NAME="ChromiumUIA"></A>
 <H5>Use UIA com o Microsoft Edge e outros navegadores baseados em Chromium quando disponível</H5>
 <P>
@@ -7107,7 +7171,7 @@ O NVDA é executado em modo seguro quando executado em <A HREF="#SecureScreens">
 O modo seguro desabilita:
 </P>
 <UL>
-<LI>Salvamento de configuração e outras configurações no disco
+<LI>Salvamento de configuração e outras definições no disco
 <LI>Salvamento do mapa de comandos [gestos] no disco
 <LI>Recursos de <A HREF="#ConfigurationProfiles">perfil de configuração</A>, como criação, exclusão, renomeação de perfis etc.
 <LI>Atualização do NVDA e criação de cópias portáteis
@@ -7330,7 +7394,7 @@ Os seguintes valores podem ser definidos sob essa chave do Registro:
 <TD>serviceDebug</TD>
 <TD>DWORD</TD>
 <TD>0 (padrão) para desabilitar, 1 para habilitar</TD>
-<TD>Se habilitado, desabilita o <A HREF="#SecureMode">Modo Seguro</A> em <A HREF="#SecureScreens">telas seguras</A>. Devido a várias implicações importantes de segurança, o uso desta opção é fortemente desencorajada</TD>
+<TD>Se habilitado, desabilita o <A HREF="#SecureMode">Modo Seguro</A> em <A HREF="#SecureScreens">telas seguras</A>. Devido a várias implicações importantes de segurança, o uso desta opção é fortemente desencorajado</TD>
 </TR>
 </TABLE>
 
