@@ -25,7 +25,7 @@
   <LI>當按 <CODE>Ctrl+F</CODE> 搜尋文字時，檢閱游標會跟隨移動至找到的字串上。 (<A HREF="https://github.com/nvaccess/nvda/issues/11172">#11172</A>)
   <LI>預設情況下停用讀出未出現在螢幕上的輸入文字 (例如密碼)。
 它可以在 NVDA 的進皆設定中重新啟用。 （<A HREF="https://github.com/nvaccess/nvda/issues/11554">#11554</A>）
-  <LI>可以在不捲動主控視窗的情況下查看已捲動到螢幕之外的文字。 (<A HREF="https://github.com/nvaccess/nvda/issues/12669">#12669</A>)
+  <LI>可以在不捲動主控台視窗的情況下查看已捲動到螢幕之外的文字。 (<A HREF="https://github.com/nvaccess/nvda/issues/12669">#12669</A>)
   <LI>提供更詳細的文字格式資訊。 (<A HREF="https://github.com/microsoft/terminal/pull/10336">microsoft/terminal PR 10336</A>)
   </UL>
 <LI>在語音設定中新增可在一段延遲時間後讀出字詞解釋的選項。 (<A HREF="https://github.com/nvaccess/nvda/issues/13509">#13509</A>)
@@ -140,6 +140,38 @@ This will improve performance for some Java applications including IntelliJ IDEA
 <P>
 There are no deprecations proposed in 2022.3.
 </P>
+<H2>2022.2.3</H2>
+<P>
+This is a patch release to fix an accidental API breakage introduced in 2022.2.1.
+</P>
+<H3>Bug Fixes</H3>
+<UL>
+<LI>Fixed a bug where NVDA did not announce "Secure Desktop" when entering a secure desktop.
+This caused NVDA remote to not recognize secure desktops. (<A HREF="https://github.com/nvaccess/nvda/issues/14094">#14094</A>)
+</UL>
+
+<P></P>
+<H3>Changes for Developers</H3>
+<P>
+This release contains a technical breakage in API backwards compatibility.
+It is expected that this change does not affect any add-ons.
+Please open a GitHub issue if your add-on becomes incompatible as a result of this release.
+</P>
+<UL>
+<LI><CODE>SecureDesktopNVDAObject</CODE> is no longer a subclass of <CODE>Desktop</CODE> or <CODE>Window</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14105">#14105</A>)
+</UL>
+
+<P></P>
+<H2>2022.2.2</H2>
+<P>
+This is a patch release to fix a bug introduced in 2022.2.1 with input gestures.
+</P>
+<H3>Bug Fixes</H3>
+<UL>
+<LI>Fixed a bug where input gestures didn't always work. (<A HREF="https://github.com/nvaccess/nvda/issues/14065">#14065</A>)
+</UL>
+
+<P></P>
 <H2>2022.2.1</H2>
 <P>
 This is a minor release to fix a security issue.
