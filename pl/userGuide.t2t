@@ -527,7 +527,6 @@ Dodatkowo możesz wymusić tryb formularza, który pozostanie wówczas aktywny d
 | Znajdź | NVDA+Ctrl+F | Pojawia się okno dialogowe, w którym można wpisać tekst, aby przeszukać aktualny dokument. Więcej informacji w rozdziale [Wyszukiwanie tekstu #SearchingForText]. |
 | Znajdź następny | NVDA+F3 | Znajduje w dokumencie następne wystąpienie wyszukiwanego wcześniej tekstu |
 | Znajdź poprzedni | NVDA+Shift+F3 | Znajduje w dokumencie poprzednie wystąpienie wyszukiwanego wcześniej tekstu |
-| Otwórz długi opis | NVDA+d | Otwiera nowe okno zawierające długi opis elementu, na którym się znajdujesz (jeśli dla tego elementu długi opis został zdefiniowany) | 
 %kc:endInclude
 
 ++ Nawigacja pojedynczymi literami ++[SingleLetterNavigation]
@@ -1709,8 +1708,8 @@ Ustala ilość linii, które zostaną przeskoczone po wciśnięciu Page up lub P
 ==== Użyj układu ekranu ====[BrowseModeSettingsScreenLayout]
 Skrót Klawiszowy: NVDA+v
 
-Ta opcja pozwala określić, czy zawartość oglądana w trybie czytania, taka jak linki i inne pola, powinna trafiać do osobnych linii, czy też powinna zostać utrzymana w układzie zbliżonym do wizualnego rozmieszczenia elementów na ekranie. 
-Jeśli włączona, elementy będą rozmieszczone tak jak są wyświetlane wizualnie, a po jej wyłączeniu, każdy będzie umieszczany w nowej linii.
+Ta opcja umożliwia określenie rozmieszczania elementów klikalnych (linków, przycisków i pól) w osobnych liniach, oraz zachowaniu ich w strumieniu tekstu czyli tak, jak wizualnie wyglądają na ekranie. Trzeba mieć na uwadze, że ta opcja nie stosuje się do programów Microsoft Office takich jak Outlook i Word, które zawsze używają układu ekranu.
+Kiedy układ ekranu jest włączony, elementy strony zostaną pokazanymi w sposób wizualny. Na przykład, jedna wizualna linia linków będzie pokazana w mowie i w brajlu jako wiele linków w jednej linii. Jeżeli jest wyłączona, wtedy elementy strony będą pokazane w oddzielnych liniach, co może być bardziej zrozumiale podczas nawigacji po wierszach na stronie, i może ułatwić interakcje z elementami na stronie dla niektórych użytkowników.
 
 ==== Włącz tryb czytania podczas wczytywania strony ====[BrowseModeSettingsEnableOnPageLoad]
 Ten przełącznik określa, czy tryb czytania powinien być automatycznie włączany podczas ładowania strony.
@@ -1865,12 +1864,15 @@ Powoduje to znaczny spadek wydajności, szczególnie w aplikacjach takich, jak V
 Zatem, gdy opcja ta jest włączona, NVDA rejestruje tylko zdarzenia związane z kursorem.
 Jeżeli doświadczasz znacznych problemów z wydajnością, zalecamy włączenie tego ustawienia.
 
-==== Użyj Microsoft UI automation do interakcji z kontrolkami dokumentów  Word ====[AdvancedSettingsUseUiaForWord]
-Gdy ta opcja jest włączona, NVDA będzie próbowało używać interfejsu Microsoft UI Automation dla pozyskiwania informacji o dokumencie w kontrolkach Microsoft Word.
-Obejmuje to sam edytor Microsoft Word oraz okna przeglądania i tworzenia wiadomości w Microsoft Outlook.
- Dla najnowszych wersji Microsoft Office 2016/365 uruchomionych na systemie windows 10 i nowszych weersjach systemu Windows, obsługa UI Automation jest wystarczająco kompletna aby umożliwić dostęp do Microsoft Word prawie równy z wcześniej istniejącą obsługą dokumentów Word przez NVDA, z dodatkową zaletą zwiększonej responsywności.
-Mogą jednak istnieć informacje, które nie są wcale dostarczane, albo są dostarczane nieprawidłowo  w niektórych wersjach Microsoft Office,  co znaczy, że na obsłudze UI Automation nie zawsze można polegać.
-Wciąż nie zalecamy domyślnego włączania tej funkcji przez większość użytkowników, ale mile widziane będą testy i uwagi od użytkowników Office 2016/365.
+==== Używaj UI automation w celu uzyskania dostępu do kontrolek dokumentów programu Microsoft Word ====[MSWordUIA]
+Reguluje sposób w jaki NVDA będzie używała UI automation api dla dostępu do dokumentów Microsoft WOrd, zamiast modelu obiektowego Microsoft Word.
+To się stosuje do dokumentów Microsoft word, a także wiadomości w programie Microsoft Outlook.
+To ustawienie zawiera następujące wartości:
+- Domyślne: (gdy jest to konieczne)
+- Tylko wtedy, gdy jest to konieczne: Tam gdzie model obiektowy Microsoft word nie jest wcale dostępny
+- w stosownych przypadkach: Microsoft Word wersja 16.0.15000 lub nowsza, oraz tam, gdzie model obiektowy Microsoft Word nie jest dostępny
+- Zawsze: gdziekolwiek dostępne jest UIA w programie Microsoft word (niezależnie od tego, na ile wsparcie jest stabilne i kompletne).
+-
 
 ==== Używaj UIA Api w celu korzystania z konsoli systemu Windows, gdy to możliwe ====[AdvancedSettingsConsoleUIA]
 Gdy ta opcja jest włączona, NVDA będzie korzystać z nowego, eksperymentalnego wsparcia dla konsoli systemu Windows 10 korzystającego z  [poprawek dostępności poczynionych przez Microsoft https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/]. Jak powiedziano powyżej funkcja ta jest nadal bardzo eksperymentalna, toteż jej używanie nie jest jeszcze zalecane. Zakłada się że po ukończeniu prac stanie się ona nową domyślną metodą interakcji z programami konsolowymi.
@@ -1888,9 +1890,13 @@ Pole wyboru zawiera następujące opcje:
 ==== Adnotacje ====[Annotations]
 Ta grupa opcji jest używana do włączania funkcji, które dodają eksperymentalne wsparcie dla adnotacji aria.
 Niektóre z tych funkcji mogą być niedopracowane.
+
+%kc:beginInclude
+Aby "odczytać streszczenie każdej adnotacji pod kursorem systemowym", naciśnij NVDA+d.
+%kc:endInclude
+
 Istnieją następujące opcje: 
 - "Odczytuj 'posiada szczegóły' dla adnotacji strukturalnych": włącza zgłaszanie posiadania więcej szczegułów w tekście lub kontrolce.
-Streszczenie dodatkowych szczegółów może być odczytane naciskając skrót, którego można przydzielić używając "odczytuj streszczenie szczegółów pod kursorem systemowym" używając [okno dialogowe zdarzeń wejścia #InputGestures].
 - "Zawsze odczytuj aria-description":
  Gdy źródłem ``accDescription`` jest aria- description, opis jest odczytywany.
  Jest to użyteczne dla adnotacji na stronach www.
@@ -2855,10 +2861,6 @@ Obsługiwane są następujące monitory:
 -
 
 Te linijki nie są jeszcze obsługiwane przez funkcję NVDA automatycznego wykrywania linijki brajlowskiej.
-
-Jeśli zainstalowany jest BrxCom, NVDA będzie używać BrxCom.
-BrxCom jest to narzędzie, które pozwala używać wprowadzania z klawiatury brajlowskiej niezależnie od używanego programu odczytu ekranu.
-Wprowadzanie z klawiatury jest możliwe na modelach Trio i BRAILLEX Live.
 
 Większość urządzeń posiada pasek łatwego dostępu(EAB) umożliwiający intuicyjną i szybką obsługę.
 EAB może być przesunięty w czterech kierunkach, a każdy kierunek generalnie posiada dwa przełączniki.
