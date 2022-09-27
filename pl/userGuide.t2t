@@ -27,7 +27,7 @@ Najważniejsze właściwości NVDA to:
 - łatwy w użyciu udźwiękowiony instalator,
 - tłumaczenie na 54 języki,
 - wsparcie dla współczesnych systemów operacyjnych Windows, zarówno 32, jak i 64 bitowych,
-- możliwość dostępu do ekranu logowania w systemie oraz innych zabezpieczonych ekranów,
+- możliwość dostępu do ekranu logowania w systemie oraz [innych zabezpieczonych ekranów #SecureScreens].
 - oznajmianie kontrolek i tekstu podczas używania gestów dotykowych
 - wsparcie dla ogólnych interfejsów dostępności takich jak Microsoft Active Accessibility, Java Access Bridge, IAccessible2 i UI Automation
 - wsparcie dla wiersza poleceń systemu Windows i aplikacji konsolowych.
@@ -81,7 +81,7 @@ Uruchomienie pobranego pliku spowoduje start tymczasowej kopii programu.
 Na tym etapie możesz zdecydować, czy chcesz zainstalować program na dysku, utworzyć jego kopię przenośną i umieścić ją np. w pamięci flash, czy kontynuować użycie wersji tymczasowej.
 
 Jeśli na aktualnym komputerze planujesz zawsze używać NVDA, prawdopodobnie najlepszym wyjściem będzie instalacja programu w systemie.
-Zainstalowana wersja umożliwia dostęp do funkcjonalności nieobecnych w kopii tymczasowej, takich jak start wraz z systemem, dostęp do UAC i ekranów logowania. Po instalacji na twoim pulpicie i w menu Start zostaną także utworzone skróty umożliwiające szybkie uruchomienie screenreadera.
+Zainstalowana wersja umożliwia dostęp do funkcjonalności nieobecnych w kopii tymczasowej, takich jak start wraz z systemem, możliwość odczytu ekranu logowania i [bezpiecznych ekranów #SecureScreens]. Po instalacji na twoim pulpicie i w menu Start zostaną także utworzone skróty umożliwiające szybkie uruchomienie screenreadera.
 Przy pomocy zainstalowanej wersji możesz również utworzyć przenośną kopię programu w dowolnym momencie. 
 
 Jeśli chcesz nosić NVDA ze sobą na pendrive lub innym zapisywalnym nośniku, wybierz utworzenie kopii przenośnej.
@@ -118,7 +118,7 @@ Aby uzyskać więcej informacji, zajrzyj do [rozdziału o niezgodnych dodatkach 
 
 +++ Używaj NVDA podczas logowania +++[StartAtWindowsLogon]
 Ta opcja pozwala określić, czy NVDA ma uruchamiać się na ekranie logowania do systemu Windows, zanim jeszcze wprowadzono hasło.
-Dotyczy to również ekranów bezpiecznego pulpitu oraz kontroli konta użytkownika.
+Dotyczy to również ekranów bezpiecznego pulpitu oraz [innych bezpiecznych ekranów #SecureScreens].
 Opcja domyślnie jest włączona dla nowych instalacji.
 
 +++ Utwórz skrót na pulpicie (Ctrl+Alt+d) +++[CreateDesktopShortcut]
@@ -127,7 +127,7 @@ Jeśli tak, to ze skrótem powiązany zostanie klawisz skrótu Ctrl+Alt+D.
 
 +++ Skopiuj konfigurację przenośną do konta aktualnego użytkownika +++[CopyPortableConfigurationToCurrentUserAccount]
 Ta opcja pozwala określić, czy NVDA powinien skopiować aktualnie używaną konfigurację jako ustawienia aktualnie zalogowanego użytkownika dla wykonywanej instalacji.
-Nie spowoduje to skopiowania konfiguracji dla innych użytkowników systemu ani konfiguracji używanej na ekranie logowania i innych bezpiecznych ekranach.
+Nie spowoduje to skopiowania konfiguracji dla innych użytkowników systemu ani konfiguracji używanej na ekranie logowania i [innych bezpiecznych ekranach #SecureScreens].
 Ta opcja jest dostępna tylko podczas instalacji z kopii przenośnej, nie pojawi się przy instalacji z pobranego pakietu.
 
 ++ Tworzenie kopii przenośnej ++[CreatingAPortableCopy]
@@ -342,6 +342,10 @@ Do poruszania się w strukturze tabel służą następujące klawisze poleceń:
 | Przejdź do następnej kolumny | Ctrl+Alt+Strzałka w prawo | Przenosi kursor do następnej kolumny w tej samej linii |
 | Przejdź do poprzedniej linii | Ctrl+Alt+Strzałka w górę | Przenosi kursor do linii poprzedniej |
 | Przejdź do następnej linii | Ctrl+Alt+Strzałka w dół | Przenosi do następnej linii. |
+| Przejdź do pierwszej kolumny | control+alt+home | Przenosi kursor do pierwszej kolumny (pozostając w tym samym wierszu) |
+| Przejdź do ostatniej kolumny | control+alt+end | Przenosi kursor do ostatniej kolumny (pozostajac w tym samym wierszu) |
+| Przejdź do pierwszego wiersza | control+alt+pageUp | Przenosi kursor do pierwszego wiersza (pozostając w tej samej kolumnie) |
+| Przejdź do ostatniego wiersza | control+alt+pageDown | Przenosi kursor do ostatniego wiersza (zostając w tej samej kolumnie) |
 %kc:endInclude
 
 ++ Nawigacja w hierarchii obiektów ++[ObjectNavigation]
@@ -610,14 +614,18 @@ Odpowiednia komenda klawiszowa pozwala na powrót do oryginalnej strony zawieraj
 + Odczyt treści matematycznej +[ReadingMath]
 Przy użyciu MathPlayer 4 od Design Science, NVDA może odczytywać i nawigować interaktywnie po wspieranej treści matematycznej.
 Wymaga to zainstalowania MathPlayer 4 na komputerze.
-MathPlayer jest bezpłatnie dostępny do pobrania z : https://www.dessci.com/en/products/mathplayer/
+MathPlayer jest bezpłatnie dostępny do pobrania z : https://www.dessci.com/en/products/mathplayer/.
+Po zainstalowaniu MathPlayera, trzeba ponownie uruchomić NVDA.
 
 NVDA obsługuje następujące rodzaje treści matematycznej:
 - MathML w Mozilla Firefox, Microsoft Internet Explorer i Google Chrome.
 - Microsoft Word 365 współczesne matematyczne równania używając UI automation:
 NVDA może czytać i wchodzić w interakcje z równaniami matematycznymi w programie Microsoft Word 365/2016 kompilacji 14326 i nowszymi.
-Trzeba jednak mieć na uwadze, że każde już poprzednio stworzone równanie trzeba najpierw przekształcić do matematycznego formatu Office zaznaczając każde równanie i wybierając opcje równania -> konwertuj do matematyki Office w menu kontekstowym. Prosze się upewnić, że uruchamiasz ostatnią wersję MathType przed konwersją równań.
-Microsoft Word teraz także daje możliwość nawigacji linearnej po równaniach, a także wspiera wprowadzanie równań za pomocą kilka składni, włączając w to LateX. Dla więcej szczegułów, proszę przeczytać [Równania w formacie liniowym używając UnicodeMath i LaTeX w programie Word https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8]
+Trzeba jednak mieć na uwadze, że każde już poprzednio stworzone równanie powinniśmy najpierw przekształcić do matematycznego formatu Office.
+Można to zrobić zaznaczając każde równanie i wybierając opcje równania -> konwertuj do matematyki Office w menu kontekstowym.
+Prosze się upewnić, że uruchamiasz ostatnią wersję MathType przed konwersją równań.
+Microsoft Word teraz także daje możliwość nawigacji linearnej po równaniach, a także wspiera wprowadzanie równań za pomocą kilka składni, włączając w to LateX. 
+Dla więcej szczegółów, proszę przeczytać artykuł: [Równania w formacie liniowym używając UnicodeMath i LaTeX w programie Word https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8]
 - Microsoft Powerpoint, i starsze wersje programu Microsoft Word: 
 NVDA może odczytywać i wchodzić w interakcję z równaniami MathType w programach Microsoft Powerpoint i Microsoft word.
 Aby to działało, musi być zainstalowany mathtype.
@@ -703,6 +711,7 @@ Aby zmieścić jak najwięcej informacji na monitorze brajlowskim, zdefiniowano 
 | elmnu | element menu |
 | pnl | panel |
 | PB | pasek postępu |
+| bsyind | okrąg postępu |
 | rbtn | Przycisk opcji |
 | scrlbar | pasek przewijania |
 | sect | sekcja |
@@ -783,7 +792,8 @@ Można zmieniać te skróty lub dodawać nowe klawisze emulowane z poziomu okna 
 
 Chociaż ta metoda jest korzystna dla często naciskanych oraz unikalnych klawiszy (takich jak Tab), może nie chcielibyśmy przydzielić unikatowy set klawiszy dla każdego skrótu klawiszowego.
 Żeby umożliwić emulowanie modyfikatorów z przytrzymywaniem modyfikatorów, NVDA posiada polecenia do emulowania klawiszy control, alt, shift, windows, i NVDA, razem z kombinacjami tych klawiszy.
-Żeby używać tych przełączników, najpierw trzeba nacisnąć polecenie (lub sekwencję poleceń) dla modyfikatorów których chcesz nacisnąć, a potem wprowadź znak, który jest częscią skrótu którego chcesz nacisnąć.
+Żeby używać tych przełączników, najpierw trzeba nacisnąć polecenie (lub sekwencję poleceń) dla modyfikatorów których chcesz nacisnąć.
+Potem wprowadź znak, który jest częscią skrótu którego chcesz nacisnąć.
 Na przykład, aby nacisnąć control+f, użyj "przełącznika do klawisza control" a potem wprowadź f,
 i żeby nacisnąć control+alt+t, albo użyj  "przełacznika do klawisza control" i "przełącznika do klawisza alt", niezależnie od porządku, albo "przełącznik do emulowania control i alt" a potem literka t.
 
@@ -1124,7 +1134,7 @@ Jeśli logujesz się do systemu podając nazwę użytkownika i hasło, to zaznac
 Ta opcja jest dostępna tylko dla zainstalowanych kopii NVDA.
 
 ==== Używaj obecnie zapisanych ustawień na ekranie logowania i innych zabezpieczonych ekranach (wymaga uprawnień administratora) ====[GeneralSettingsCopySettings]
-Naciśnięcie przycisku "Używaj zapisanych ustawień NVDA na ekranie logowania i innych zabezpieczonych ekranach" kopiuje  zapisane wcześniej ustawienia użytkownika do katalogu systemowej konfiguracji NVDA, której NVDA używa na ekranie logowania do Windows, ekranie kontroli konta użytkownika (UAC), oraz innych zabezpieczonych ekranach.
+Naciśnięcie przycisku "Używaj zapisanych ustawień NVDA na ekranie logowania i innych zabezpieczonych ekranach" kopiuje  zapisane wcześniej ustawienia użytkownika do katalogu systemowej konfiguracji NVDA, której NVDA używa na ekranie logowania do Windows, ekranie kontroli konta użytkownika (UAC), oraz innych [zabezpieczonych ekranach #SecureScreens].
 Aby skopiować w ten sposób wszystkie swoje ustawienia, po pierwsze zapisz aktualną konfigurację przy użyciu klawisza skrótu Ctrl+NVDA+c albo polecenia menu NVDA "Zapisz ustawienia".
 Ta opcja jest dostępna tylko dla zainstalowanych kopii NVDA.
 
@@ -1708,8 +1718,12 @@ Ustala ilość linii, które zostaną przeskoczone po wciśnięciu Page up lub P
 ==== Użyj układu ekranu ====[BrowseModeSettingsScreenLayout]
 Skrót Klawiszowy: NVDA+v
 
-Ta opcja umożliwia określenie rozmieszczania elementów klikalnych (linków, przycisków i pól) w osobnych liniach, oraz zachowaniu ich w strumieniu tekstu czyli tak, jak wizualnie wyglądają na ekranie. Trzeba mieć na uwadze, że ta opcja nie stosuje się do programów Microsoft Office takich jak Outlook i Word, które zawsze używają układu ekranu.
-Kiedy układ ekranu jest włączony, elementy strony zostaną pokazanymi w sposób wizualny. Na przykład, jedna wizualna linia linków będzie pokazana w mowie i w brajlu jako wiele linków w jednej linii. Jeżeli jest wyłączona, wtedy elementy strony będą pokazane w oddzielnych liniach, co może być bardziej zrozumiale podczas nawigacji po wierszach na stronie, i może ułatwić interakcje z elementami na stronie dla niektórych użytkowników.
+Ta opcja umożliwia określenie rozmieszczania elementów klikalnych (linków, przycisków i pól) w osobnych liniach, oraz zachowaniu ich w strumieniu tekstu czyli tak, jak wizualnie wyglądają na ekranie.
+Trzeba mieć na uwadze, że ta opcja nie stosuje się do programów Microsoft Office takich jak Outlook i Word, które zawsze używają układu ekranu.
+Kiedy układ ekranu jest włączony, elementy strony zostaną pokazane w sposób wizualny.
+Na przykład, jedna wizualna linia linków będzie pokazana w mowie i w brajlu jako wiele linków w jednej linii.
+Jeżeli jest wyłączona, wtedy elementy strony będą pokazane w oddzielnych liniach.
+To może być bardziej zrozumiale podczas nawigacji po wierszach na stronie, i może ułatwić interakcje z elementami na stronie dla niektórych użytkowników.
 
 ==== Włącz tryb czytania podczas wczytywania strony ====[BrowseModeSettingsEnableOnPageLoad]
 Ten przełącznik określa, czy tryb czytania powinien być automatycznie włączany podczas ładowania strony.
@@ -3307,6 +3321,34 @@ Oto skróty klawiszowe przydzielone dla tego monitora brajlowskiego.
 
 + Dla zaawansowanych +[AdvancedTopics]
 
+++ Tryb bezpieczny ++[SecureMode]
+NVDA może być uruchomiony w bezpiecznym trybie za pomocą parametru ``-s`` [wiersza poleceń #CommandLineOptions].
+NVDA uruchamia się w trybie bezpiecznym gdy jest używany na [ekranach bezpiecznych #SecureScreens], chyba że ``serviceDebug`` [parametr ogólnosystemowy #SystemWideParameters] jest włączony.
+
+Tryb bezpieczny wyłącza:
+
+- Zachowywanie konfiguracji i innych ustawień na dysk
+- zachowywanie zdarzeń wejścia na dysk
+- [Profile konfiguracji #ConfigurationProfiles] funkcje takie jak tworzenie, usuwanie, zmienianie nazwy profili itd.
+- Aktualizowanie NVDA i tworzenie kopii przenośnych
+- [konsolę pythona #PythonConsole]
+- [Podgląd logu #LogViewer] i logowanie
+-
+
+++ Bezpieczne ekrany ++[SecureScreens]
+NVDA jest uruchomiony w [trybie bezpiecznym #SecureMode] gdy jest uruchomiony na bezpiecznym ekranie chyba że parametr ``serviceDebug`` [ogólnosystemowy #SystemWideParameters] jest włączony.
+
+Gdy jest uruchomiony z ekranów bezpiecznych, NVDA używa profilu systemowego dla ustawień.
+Ustawienia użytkownika NVDA mogą być skopiowane [do użytku na bezpiecznych ekranach #GeneralSettingsCopySettings].
+
+Ekrany bezpieczne to:
+
+- Ekran logowania do systemu Windows
+- Okno dialogowe kontroli konta użytkownika, aktywne podczas dokonywania akcji jako administrator
+  - Włączając w to instalowanie programów
+  -
+-
+
 ++ Parametry linii komend ++[CommandLineOptions]
 NVDA  akceptuje jeden lub więcej przełączników startowych, zmieniających jego zachowanie.
 Możesz podać tak wiele opcji, jak to jest potrzebne.
@@ -3340,7 +3382,7 @@ Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 | -c ścieżka | --config-path=ścieżka | Ścieżka folderu, w którym zapisane są wszystkie ustawienia NVDA |
 | Brak | --lang=LANGUAGE | Nadpisuje domyślny język NVDA. Ustawiony na "Windows" dla bieżacego użytkownika, "en" dla angielskiego, itd. |
 | -m | --minimal | Bez dźwięku, interfejsu, informacji początkowej etc |
-| -s | --secure | Tryb bezpieczny: wyłącza elementy takie jak: konsola Pythona, zarządzanie profilami, sprawdzanie aktualizacji, kilka opcji w oknie powitalnym, ustawieniach ogólnych, funkcje logowania zdarzeń oraz zapis konfiguracji. |
+| -s | --secure | Uruchamia NVDA w [Trybie bezpiecznym #SecureMode] |
 | Brak | --disable-addons | Dodatki będą ignorowane |
 | Brak | --debug-logging | Ustaw poziom logowania na informacje debugowania, dla bieżącego uruchomienia. To ustawienie nadpisze jakiekolwiek ustawienie poziomu logowania ( ""--loglevel"", -l) z wyłączeniem zapisywania logów włącznie. |
 | Brak | --no-logging | Wyłącz zapisywanie dziennika podczas używania NVDA. To ustawienie może być nadpisane, gdy poziom logowania ( ""--loglevel"", -l) jest określony w linii komend lub rejestrowanie debugowania jest włączone. |
@@ -3363,7 +3405,7 @@ Wartości te są ustawiane w poniższych kluczach:
 Następujące wartości mogą zostać ustawione w tym kluczu rejestru:
 || Nazwa | Typ | Dozwolone wartości | Opis |
 | configInLocalAppData | DWORD | 0 (domyślnie) aby wyłączyć, 1 aby włączyć | Gdy włączone, przechowuje konfigurację użytkownika NVDA w lokalnym folderze danych aplikacji, zamiast w podfolderze Roaming danych aplikacji |
-| serviceDebug | DWORD | 0 (domyślnie) aby wyłączyć, 1 aby włączyć | Gdy aktywne, wyłącza tryb bezpieczny na ekranach bezpiecznego pulpitu Windows, pozwalając na używanie konsoli Pythona i podglądu logów. W związku z kilkoma poważnymi implikacjami bezpieczeństwa, użycie tej opcji jest mocno niezalecane |
+| serviceDebug | DWORD | 0 (domyślne) żeby wyłączyć, 1 żeby włączyć | jeżeli ten parametr jest włączony, będzie wyłączony [tryb bezpieczny #SecureMode] na [ekranach bezpiecznych #SecureScreens]. Z powodu kilka implikacji bezpieczeństwa, używanie tej opcji jest mocno niezalecane, wręcz odradza się |
 
 + Dodatkowe informacje +[FurtherInformation]
 Jeśli potrzebujesz dodatkowych informacji lub pomocy odnośnie NVDA znajdziesz ją na stronie internetowej NVDA NVDA_URL.
