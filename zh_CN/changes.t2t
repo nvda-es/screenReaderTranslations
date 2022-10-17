@@ -3,6 +3,101 @@ NVDA 更新日志
 
 %!includeconf: ../changes.t2tconf
 
+= 2022.4 =
+本版新增了一些重要的功能命令，涵盖表格的逐行/逐列导航、朗读等快捷键。
+还在用户指南中新增了“快速入门指南”部分。
+其次是一些外部依赖库更新和 Bug 修复。
+
+一如既往的对 eSpeak 和 LibLouis 进行了更新。
+值得一提的是 LibLouis 又更新/新增了中文、瑞典文、卢干达文和基尼亚卢旺达文盲文表，让 NVDA 对盲文点显器的支持再上一层楼。
+译者注： 中文增加了“国家通用盲文”和“现行盲文（不标调）”两份盲文表。
+
+== 新特性 ==
+- 在用户指南中新增了“快速入门指南”部分。 (#13934)
+- 新增了一个命令来读出当前所聚焦对象的快捷键。 (#13960)
+  - 台式机： ``shift+数字键盘2``.
+  - 笔记本： ``NVDA+ctrl+shift+.``.
+  -
+- 新增了一个命令，在应用程序支持的情况下逐页移动浏览光标。 (#14021)
+  - 移动到上一页：
+    - 台式机: ``NVDA+上翻页``.
+    - 笔记本： ``NVDA+shift+上翻页``.
+    -
+  - 移动到下一页：
+    - 台式机： ``NVDA+下翻页``.
+    - 笔记本： ``NVDA+shift+下翻页``.
+    -
+  -
+- 针对表格新增了以下命令。 (#14070)
+  - 从当前单元格开始垂直向下朗读至当前列的最后一个单元格： ``NVDA+control+alt+下光标``
+  - 从当前单元格开始水平向右朗读至当前行的最后一个单元格： ``NVDA+control+alt+右光标``
+  - 在不移动输入焦点的情况下，从上到下垂直朗读当前列： ``NVDA+control+alt+上光标``
+  - 在不移动输入焦点的情况下，从左到右水平朗读当前行： ``NVDA+control+alt+左光标``
+  -
+- NVDA 支持 Excel  在启用了 UIA 的情况下读出“离开表格”。 (#14165)
+- 支持单独开关读出行标题或列标题。 (#14075)
+-
+
+
+== 改进 ==
+- 将 eSpeak NG 更新至 1.52-dev commit ``735ecdb8``. (#14060, #14079, #14118, #14203)
+  - 修正了中文普通话的发音问题。 （#12952、#13572、#14197）
+  -
+- 将 LibLouis 更新至 [3.23.0 https://github.com/liblouis/liblouis/releases/tag/v3.23.0]. (#14112)
+  - 新增了以下盲文表：
+    - 中文中国汉语通用盲文
+    - 卢旺达语文学盲文
+    - 卢干达语文学盲文
+    - 瑞典语非简写盲文
+    - 瑞典语部分简写盲文
+    - 瑞典语简写盲文
+    - 中文中国汉语现行盲文（不标调） (#14138)
+    -
+- NVDA 将操作系统架构信息纳入用户使用情况统计跟踪的一部分。 (#14019)
+  - 译者注： 系统架构信息即 32 位还是 64 位。
+-
+
+
+== 错误修复 ==
+- When updating NVDA using the Windows Package Manager CLI (aka winget), a released version of NVDA is no longer always treated as newer than whatever alpha version is installed. (#12469)
+- NVDA will now correctly announce Group boxes in Java applications. (#13962)
+- Caret properly follows spoken text during "say all" in applications such as Bookworm, WordPad, or the NVDA log viewer. (#13420, #9179)
+- In programs using UI Automation, partially checked checkboxes will be reported correctly. (#13975)
+- Improved performance and stability in Microsoft Visual Studio, Windows Terminal, and other UI Automation based applications. (#11077, #11209)
+  - These fixes apply to Windows 11 Sun Valley 2 (version 22H2) and later.
+  - Selective registration for UI Automation events and property changes now enabled by default.
+  -
+- Text reporting, Braille output, and password suppression now work as expected in the embedded Windows Terminal control in Visual Studio 2022. (#14194)
+- NVDA is now DPI aware when using multiple monitors.
+There are several fixes for using a DPI setting higher than 100% or multiple monitors.
+Issues may still exist with versions of Windows older than Windows 10 1809.
+For these fixes to work, applications which NVDA interacts with also need to be DPI aware.
+Note there are still known issues with Chrome and Edge. (#13254)
+  - Visual highlighting frames should now be correctly placed in most applications. (#13370, #3875, #12070)
+  - Touch screen interaction should now be accurate for most applications. (#7083)
+  - Mouse tracking should now work for most applications. (#6722)
+  -
+- Orientation state (landscape/portrait) changes are now correctly ignored when there is no change (e.g. monitor changes). (#14035)
+- NVDA will announce dragging items on screen in places such as rearranging Windows 10 Start menu tiles and virtual desktops in Windows 11. (#12271, #14081)
+- In advanced settings, "Play a sound for logged errors" option is now correctly restored to its default value when pressing the "Restore defaults" button. (#14149)
+- NVDA can now select text using the ``NVDA+f10`` keyboard shortcut on Java applications. (#14163)
+-
+
+
+== Changes for Developers ==
+Please refer to [the developer guide https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] for information on NVDA's API deprecation and removal process.
+
+- The [NVDA API Announcement mailing list https://groups.google.com/a/nvaccess.org/g/nvda-api/about] was created. (#13999)
+- NVDA no longer processes ``textChange`` events for most UI Automation applications due to their extreme negative performance impact. (#11002, #14067)
+-
+
+
+=== Deprecations ===
+- ``core.post_windowMessageReceipt`` is deprecated, use ``winAPI.messageWindow.pre_handleWindowMessage`` instead.
+- ``winKernel.SYSTEM_POWER_STATUS`` is deprecated and usage is discouraged, this has been moved to ``winAPI._powerTracking.SystemPowerStatus``.
+- ``winUser.SM_*`` constants are deprecated, use ``winAPI.winUser.constants.SystemMetrics`` instead.
+-
+
 = 2022.3 =
 此版本的大部分内容是由 NVDA 社区开发者贡献的。
 这包括光标移动时的延迟字符描述以及对 windows 控制台的增强支持。
