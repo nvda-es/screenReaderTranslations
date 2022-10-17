@@ -59,43 +59,43 @@ NVDA 更新日志
 
 
 == 错误修复 ==
-- When updating NVDA using the Windows Package Manager CLI (aka winget), a released version of NVDA is no longer always treated as newer than whatever alpha version is installed. (#12469)
-- NVDA will now correctly announce Group boxes in Java applications. (#13962)
-- Caret properly follows spoken text during "say all" in applications such as Bookworm, WordPad, or the NVDA log viewer. (#13420, #9179)
-- In programs using UI Automation, partially checked checkboxes will be reported correctly. (#13975)
-- Improved performance and stability in Microsoft Visual Studio, Windows Terminal, and other UI Automation based applications. (#11077, #11209)
-  - These fixes apply to Windows 11 Sun Valley 2 (version 22H2) and later.
-  - Selective registration for UI Automation events and property changes now enabled by default.
+- 使用 Windows 包管理器 CLI（又名 winget）更新 NVDA 时，Alpha 版本不会被误识别低于已发布的正式版。 (#12469)
+- 支持在 Java 应用程序中正确读出分组框。 (#13962)
+- 在 Bookworm、写字板或 NVDA 日志查看器等应用程序中，系统光标在“全文朗读”期间可以正确跟随。 (#13420, #9179)
+- 可以正确读出 UIA 程序中，支持部分选中的复选框选中状态。 (#13975)
+- 改进了 Microsoft Visual Studio、Windows Terminal 和其他基于 UIA 的应用程序的性能和稳定性。 (#11077, #11209)
+  - 这些改进适用于 Windows 11 Sun Valley 2（版本 22H2）及更高版本。
+  - 现在会默认选择性注册 UIA 事件和属性改变。
   -
-- Text reporting, Braille output, and password suppression now work as expected in the embedded Windows Terminal control in Visual Studio 2022. (#14194)
-- NVDA is now DPI aware when using multiple monitors.
-There are several fixes for using a DPI setting higher than 100% or multiple monitors.
-Issues may still exist with versions of Windows older than Windows 10 1809.
-For these fixes to work, applications which NVDA interacts with also need to be DPI aware.
-Note there are still known issues with Chrome and Edge. (#13254)
-  - Visual highlighting frames should now be correctly placed in most applications. (#13370, #3875, #12070)
-  - Touch screen interaction should now be accurate for most applications. (#7083)
-  - Mouse tracking should now work for most applications. (#6722)
+- 文本朗读、盲文输出和密码保护现在可以在 Visual Studio 2022 的嵌入式 Windows 终端控件中正常工作。 (#14194)
+- NVDA 支持在使用多显示器时自动检测 DPI。
+使用高于 100% 的 DPI 设置或使用多显示器时有以下修复。
+系统版本低于 Windows10 1809 可能仍然存在问题。
+这些修复要求与 NVDA 交互的应用程序也需要具有 DPI 感知能力。
+另请注意，Chrome 和 Edge 仍然存在已知的问题。 (#13254)
+  - 可以在大多数应用程序中正确绘制视觉高亮边框。 (#13370, #3875, #12070)
+  - 对于大多数应用程序，触摸屏交互现在会更加准确。 (#7083)
+  - 对于大多数应用程序，鼠标导航现在会更加准确。 (#6722)
   -
-- Orientation state (landscape/portrait) changes are now correctly ignored when there is no change (e.g. monitor changes). (#14035)
-- NVDA will announce dragging items on screen in places such as rearranging Windows 10 Start menu tiles and virtual desktops in Windows 11. (#12271, #14081)
-- In advanced settings, "Play a sound for logged errors" option is now correctly restored to its default value when pressing the "Restore defaults" button. (#14149)
-- NVDA can now select text using the ``NVDA+f10`` keyboard shortcut on Java applications. (#14163)
+- 可以正确忽略没有状态改变（如显示器改变）时读出的方向状态（横向/纵向）。 (#14035)
+- 支持读出在拖动项目过程中的状态变化，例如重新排列 Windows 10 开始菜单磁贴和 Windows 11 中的虚拟桌面。 (#12271, #14081)
+- 修复了在高级设置面板中，“日志记录后播放错误提示音”选项按下“恢复默认值”按钮时未正确恢复为其默认值的错误。 (#14149)
+- 修复了 在 Java 应用程序中无法使用“NVDA+f10”选择文本的错误。 (#14163)
 -
 
 
-== Changes for Developers ==
-Please refer to [the developer guide https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] for information on NVDA's API deprecation and removal process.
+== 插件以及 NVDA 核心开发者需要了解的变动 ==
+请参阅 [开发人员指南 https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] 以了解有关 NVDA 的 API 弃用和删除信息。
 
-- The [NVDA API Announcement mailing list https://groups.google.com/a/nvaccess.org/g/nvda-api/about] was created. (#13999)
-- NVDA no longer processes ``textChange`` events for most UI Automation applications due to their extreme negative performance impact. (#11002, #14067)
+- 创建了 [NVDA API 公告邮件列表 https://groups.google.com/a/nvaccess.org/g/nvda-api/about]。 (#13999)
+- NVDA 不再处理大多数 UIA 应用程序的 ``textChange`` 事件，因为这些事件会对性能产生极大的负面影响。 (#11002, #14067)
 -
 
 
-=== Deprecations ===
-- ``core.post_windowMessageReceipt`` is deprecated, use ``winAPI.messageWindow.pre_handleWindowMessage`` instead.
-- ``winKernel.SYSTEM_POWER_STATUS`` is deprecated and usage is discouraged, this has been moved to ``winAPI._powerTracking.SystemPowerStatus``.
-- ``winUser.SM_*`` constants are deprecated, use ``winAPI.winUser.constants.SystemMetrics`` instead.
+=== 弃用 ===
+- ``core.post_windowMessageReceipt`` 已弃用，请用 ``winAPI.messageWindow.pre_handleWindowMessage`` 来代替。
+- ``winKernel.SYSTEM_POWER_STATUS`` 已弃用并且不鼓励使用，已移动到 ``winAPI._powerTracking.SystemPowerStatus``。
+- ``winUser.SM_*`` 常量已弃用，请用 ``winAPI.winUser.constants.SystemMetrics`` 来代替.
 -
 
 = 2022.3 =
