@@ -14,6 +14,7 @@ This add-on gathers various features for NVDA debugging and testing.
 * An extended script description mode: when enabled input help mode report information on scripts that have no description.
 * Commands to help log reading and analyzing.
 * In the Python console workspace, a function to open the source code of an object.
+* A custom startup script for the Python console
 * A command to log the stack trace of the speech.speak function.
 
 ## Enhanced restart dialog
@@ -108,8 +109,15 @@ Pressing the single letter moves to the next occurrence of this message. Combini
 
 ### Opening a file in your editor
 
-When looking at a traceback, you may want to open one of the source files to understand the cause and the context of the issue.
-Press C to open the source code file corresponding to the current line of the traceback.
+In the log some line may refer to the source code:
+
+* A line belonging to a traceback contains the path and the line in a file, e.g.:  
+  `  File "virtualBuffers\__init__.pyc", line 226, in _getStoryLength`
+* The header line of a logged message contains the function which has logged this message, e.g.:  
+  `INFO - config.ConfigManager._loadConfig (22:45:26.145) - MainThread (16580):`
+
+You may want to open the file containing this code to understand the context of the traceback or the logged message.
+Just press C to open this file.
 
 For this feature to work, you need to have configured your favorite editor's command.
 If you are not running NVDA from source, the location of NVDA source code also should have been configured.
@@ -117,8 +125,9 @@ For more details regarding the configuration, please see the paragraph NVDA Debu
 
 ## Python console extension
 
-In the console, you can call the following function to view the source code that defines the variable `myVar`:
+### `openCodeFile` function
 
+In the console, you can call the following function to view the source code that defines the variable `myVar`:  
 `openCodeFile(myVar)`
 
 For this feature to work, you need to have configured your favorite editor's command.
@@ -128,13 +137,38 @@ For more details regarding the configuration, please see the paragraph NVDA Debu
 The `openCodeFile` functions can be called on objects defined in NVDA's code or on objects defined by add-ons.
 It cannot be called on objects whose source code is not available such as python builtins.
 
+If you have not yet imported the object in the console, you can also pass its name as parameter to the `openCodeFile` function.
+
 Below are examples of call in NVDA's code:
 
-* View the definition of the function `speech.speech.speak`: `openCodeFile(speech.speech.speak)`
-* View the definition of the class `TextInfo`: `openCodeFile(textInfos.TextInfo)`
-* View the definition of the method `copyToClipboard` of the class `TextInfo`: `openCodeFile(textInfos.TextInfo.copyToClipboard)`
-* View the class definition of the focused object: `openCodeFile(focus)`
-* Open the file `api.py` defining the module `api`: `openCodeFile(api)`
+* View the definition of the function `speech.speech.speak`:  
+  `openCodeFile(speech.speech.speak)`  
+  or with the name passed as parameter:  
+  `openCodeFile("speech.speech.speak")`
+* View the definition of the class `TextInfo`:  
+  `openCodeFile(textInfos.TextInfo)`
+* View the definition of the method `copyToClipboard` of the class `TextInfo`:  
+  `openCodeFile(textInfos.TextInfo.copyToClipboard)`
+* View the class definition of the focused object:  
+  `openCodeFile(focus)`
+* Open the file `api.py` defining the module `api`:  
+  `openCodeFile(api)`
+
+### Python console startup script
+
+You can define a custom script which will be executed in the Python console's namespace when it is first opened, or if the add-on is reloaded (NVDA+F3) after the console has already been opened.
+
+For example, the script allows you to execute new imports and define aliases that you will be able to use directly in the console, as shown below:  
+
+    # Various import that I want in the console.
+    import globalVars as gv
+    import core
+    import ui
+    # Aliases
+    ocf = openCodeFile
+
+The Python console script should be placed in the following location: `pathToNVDAConfig\ndtt\consoleStartup.py`  
+For example: `C:\Users\myUserName\AppData\Roaming\nvda\ndtt\consoleStartup.py`
 
 ## Log the stack trace of the speech function
 
@@ -155,36 +189,37 @@ If NVDA's file need to be viewed and if you are not running from source, you als
 
 To use the 'open source code' command or the `openCodeFile` console command, you need first to configure the command that will be called to open the file in your favorite editor.
 For this, open the NVDA console (NVDA+control+Z) and type the following line and then Enter:
-
 `config.conf['ndtt']['sourceFileOpener'] = r'"C:\path\to\my\editor\editor.exe" "{path}":{line}'`
-
 You should of course modify this line according to the real name and location of your editor and the syntax used by it to open files.
-
 `{path}` will be replaced by the full path of the file to open and `{line}` by the line number where you want the cursor to be set.
-
 For Notepad++ for example the command to type in the console would be:
-
 `config.conf['ndtt']['sourceFileOpener'] = r'"C:\Program Files\Notepad++\notepad++.exe" "{path}" -n{line}'`
 
 ### NVDA source code path configuration
 
 When a file belonging to NVDA's core is listed in the traceback, the line is of the following form:
-
 `File "config\profileUpgrader.pyc", line 30, in upgrade`
 
 If you are not running NVDA from source, you may specify an alternate location where the source file will be found, e.g. the place where you have cloned NVDA source files.
 In this case, you have to configure the path where you have NVDA source files located.
 
 For this, open the NVDA console (NVDA+control+Z) and type the following line and then Enter:
-
 `config.conf['ndtt']['nvdaSourcePath'] = r'C:\pathExample\GIT\nvda\source'`
-
 Of course, replace the path of NVDA source with the correct one.
 
 Be sure however that the version of your source file (e.g. GIT commit) is the same as the one of the running instance of NVDA.
 
 
 ## Change log
+
+### Version 3.0
+
+* In a log, you can now press C on a message's header line to open the function/module which has emitted it.
+* In the console, `openCodeFile` function can now receive as parameter the object or a string containing its name.
+* New feature: NVDA console startup file: If it exists, the file YourNVDAConfigFolder\ndtt\consoleStartup.py will be executed when NVDA console is first opened or when add-ons are reloaded.
+* Various minor fixes for `openCodeFile` Python console's function and the command to open the source file corresponding to a line in the log.
+* Fixed an issue when trying to report roles/states for object explorer in older version of NVDA.
+* The add-on does not cause a problem anymore with the tree interceptor when using UIA in Edge.
 
 ### Version 2.1
 
