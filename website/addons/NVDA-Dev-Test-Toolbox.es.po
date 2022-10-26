@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-07-21 15:48+0000\n"
+"POT-Creation-Date: 2022-10-26 21:19+0000\n"
 "PO-Revision-Date: 2022-07-21 18:14+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -83,6 +83,10 @@ msgid ""
 msgstr ""
 "En el espacio de trabajo de la consola Python, una función para abrir el "
 "código fuente de un objeto."
+
+#. type: Bullet: '* '
+msgid "A custom startup script for the Python console"
+msgstr ""
 
 #. type: Bullet: '* '
 msgid "A command to log the stack trace of the speech.speak function."
@@ -430,14 +434,32 @@ msgid "Opening a file in your editor"
 msgstr "Abrir un archivo en tu editor"
 
 #. type: Plain text
-msgid ""
-"When looking at a traceback, you may want to open one of the source files to "
-"understand the cause and the context of the issue.  Press C to open the "
-"source code file corresponding to the current line of the traceback."
+msgid "In the log some line may refer to the source code:"
 msgstr ""
-"Al mirar una traza, puedes querer abrir uno de los archivos de código para "
-"entender la causa y el contexto del problema. Pulsa C para abrir el archivo "
-"de código fuente correspondiente a la línea actual de la traza."
+
+#. type: Bullet: '* '
+msgid ""
+"A line belonging to a traceback contains the path and the line in a file, e."
+"g.:"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"  `  File \"virtualBuffers\\__init__.pyc\", line 226, in _getStoryLength`\n"
+"* The header line of a logged message contains the function which has logged this message, e.g.:  \n"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid "  `INFO - config.ConfigManager._loadConfig (22:45:26.145) - MainThread (16580):`\n"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"You may want to open the file containing this code to understand the context "
+"of the traceback or the logged message.  Just press C to open this file."
+msgstr ""
 
 #. type: Plain text
 msgid ""
@@ -458,13 +480,17 @@ msgstr ""
 msgid "Python console extension"
 msgstr "Extensión de la consola Python"
 
+#. type: Title ###
+#, fuzzy, no-wrap
+#| msgid "`openCodeFile(myVar)`"
+msgid "`openCodeFile` function"
+msgstr "`openCodeFile(myVar)`"
+
 #. type: Plain text
-msgid ""
-"In the console, you can call the following function to view the source code "
-"that defines the variable `myVar`:"
-msgstr ""
-"En la consola, puedes llamar a la siguiente función para ver el código "
-"fuente que define la variable `myVar`:"
+#, fuzzy, no-wrap
+#| msgid "In the console, you can call the following function to view the source code that defines the variable `myVar`:"
+msgid "In the console, you can call the following function to view the source code that defines the variable `myVar`:  \n"
+msgstr "En la consola, puedes llamar a la siguiente función para ver el código fuente que define la variable `myVar`:"
 
 #. type: Plain text
 msgid "`openCodeFile(myVar)`"
@@ -482,41 +508,110 @@ msgstr ""
 "incorporados en Python."
 
 #. type: Plain text
+msgid ""
+"If you have not yet imported the object in the console, you can also pass "
+"its name as parameter to the `openCodeFile` function."
+msgstr ""
+
+#. type: Plain text
 msgid "Below are examples of call in NVDA's code:"
 msgstr "A continuación hay ejemplos de llamadas al código de NVDA:"
 
 #. type: Bullet: '* '
-msgid ""
-"View the definition of the function `speech.speech.speak`: "
-"`openCodeFile(speech.speech.speak)`"
+#, fuzzy
+#| msgid ""
+#| "View the definition of the function `speech.speech.speak`: "
+#| "`openCodeFile(speech.speech.speak)`"
+msgid "View the definition of the function `speech.speech.speak`:"
 msgstr ""
 "Ver la definición de la función `speech.speech.speak`: `openCodeFile(speech."
 "speech.speak)`"
 
-#. type: Bullet: '* '
+#. type: Plain text
+#, no-wrap
+msgid "  `openCodeFile(speech.speech.speak)`  \n"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid "  or with the name passed as parameter:  \n"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
 msgid ""
-"View the definition of the class `TextInfo`: `openCodeFile(textInfos."
-"TextInfo)`"
+"  `openCodeFile(\"speech.speech.speak\")`\n"
+"* View the definition of the class `TextInfo`:  \n"
 msgstr ""
-"Ver la definición de la clase `TextInfo`: `openCodeFile(textInfos.TextInfo)`"
 
-#. type: Bullet: '* '
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "View the definition of the method `copyToClipboard` of the class `TextInfo`: `openCodeFile(textInfos.TextInfo.copyToClipboard)`"
 msgid ""
-"View the definition of the method `copyToClipboard` of the class `TextInfo`: "
-"`openCodeFile(textInfos.TextInfo.copyToClipboard)`"
-msgstr ""
-"Ver la definición del método `copyToClipboard` de la clase `TextInfo`: "
-"`openCodeFile(textInfos.TextInfo.copyToClipboard)`"
+"  `openCodeFile(textInfos.TextInfo)`\n"
+"* View the definition of the method `copyToClipboard` of the class `TextInfo`:  \n"
+msgstr "Ver la definición del método `copyToClipboard` de la clase `TextInfo`: `openCodeFile(textInfos.TextInfo.copyToClipboard)`"
 
-#. type: Bullet: '* '
-msgid "View the class definition of the focused object: `openCodeFile(focus)`"
+#. type: Plain text
+#, no-wrap
+msgid ""
+"  `openCodeFile(textInfos.TextInfo.copyToClipboard)`\n"
+"* View the class definition of the focused object:  \n"
 msgstr ""
-"Ver la definición de clase del objeto con el foco: `openCodeFile(focus)`"
 
-#. type: Bullet: '* '
-msgid "Open the file `api.py` defining the module `api`: `openCodeFile(api)`"
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "Open the file `api.py` defining the module `api`: `openCodeFile(api)`"
+msgid ""
+"  `openCodeFile(focus)`\n"
+"* Open the file `api.py` defining the module `api`:  \n"
+msgstr "Abrir el archivo `api.py` que define el módulo `api`: `openCodeFile(api)`"
+
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "`openCodeFile(myVar)`"
+msgid "  `openCodeFile(api)`\n"
+msgstr "`openCodeFile(myVar)`"
+
+#. type: Title ###
+#, fuzzy, no-wrap
+#| msgid "Python console extension"
+msgid "Python console startup script"
+msgstr "Extensión de la consola Python"
+
+#. type: Plain text
+msgid ""
+"You can define a custom script which will be executed in the Python "
+"console's namespace when it is first opened, or if the add-on is reloaded "
+"(NVDA+F3) after the console has already been opened."
 msgstr ""
-"Abrir el archivo `api.py` que define el módulo `api`: `openCodeFile(api)`"
+
+#. type: Plain text
+#, no-wrap
+msgid "For example, the script allows you to execute new imports and define aliases that you will be able to use directly in the console, as shown below:  \n"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"    # Various import that I want in the console.\n"
+"    import globalVars as gv\n"
+"    import core\n"
+"    import ui\n"
+"    # Aliases\n"
+"    ocf = openCodeFile\n"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid "The Python console script should be placed in the following location: `pathToNVDAConfig\\ndtt\\consoleStartup.py`  \n"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"For example: `C:\\Users\\myUserName\\AppData\\Roaming\\nvda\\ndtt"
+"\\consoleStartup.py`"
+msgstr ""
 
 #. type: Title ##
 #, no-wrap
@@ -573,48 +668,16 @@ msgid ""
 "To use the 'open source code' command or the `openCodeFile` console command, "
 "you need first to configure the command that will be called to open the file "
 "in your favorite editor.  For this, open the NVDA console (NVDA+control+Z) "
-"and type the following line and then Enter:"
+"and type the following line and then Enter: `config.conf['ndtt']"
+"['sourceFileOpener'] = r'\"C:\\path\\to\\my\\editor\\editor.exe\" \"{path}\":"
+"{line}'` You should of course modify this line according to the real name "
+"and location of your editor and the syntax used by it to open files.  `{path}"
+"` will be replaced by the full path of the file to open and `{line}` by the "
+"line number where you want the cursor to be set.  For Notepad++ for example "
+"the command to type in the console would be: `config.conf['ndtt']"
+"['sourceFileOpener'] = r'\"C:\\Program Files\\Notepad++\\notepad++.exe\" "
+"\"{path}\" -n{line}'`"
 msgstr ""
-"Para utilizar la orden 'Abrir código fuente' o la orden de consola "
-"`openCodeFile`, primero es necesario configurar el comando al que se llamará "
-"para abrir el archivo en tu editor favorito. Para ello, abre la consola de "
-"NVDA (NVDA+control+z), teclea la siguiente línea y pulsa intro:"
-
-#. type: Plain text
-msgid ""
-"`config.conf['ndtt']['sourceFileOpener'] = r'\"C:\\path\\to\\my\\editor"
-"\\editor.exe\" \"{path}\":{line}'`"
-msgstr ""
-"`config.conf['ndtt']['sourceFileOpener'] = r'\"C:\\path\\to\\my\\editor"
-"\\editor.exe\" \"{path}\":{line}'`"
-
-#. type: Plain text
-msgid ""
-"You should of course modify this line according to the real name and "
-"location of your editor and the syntax used by it to open files."
-msgstr ""
-"Por supuesto, deberías modificar esta línea con el nombre y ruta reales de "
-"tu editor y la sintaxis que usa para abrir archivos."
-
-#. type: Plain text
-msgid ""
-"`{path}` will be replaced by the full path of the file to open and `{line}` "
-"by the line number where you want the cursor to be set."
-msgstr ""
-"`{path}` será sustituida por la ruta completa del archivo a abrir, y `{line}"
-"` por el número de línea donde quieres que aparezca el cursor."
-
-#. type: Plain text
-msgid "For Notepad++ for example the command to type in the console would be:"
-msgstr "Por ejemplo, para Notepad++, la orden a escribir en la consola sería:"
-
-#. type: Plain text
-msgid ""
-"`config.conf['ndtt']['sourceFileOpener'] = r'\"C:\\Program Files\\Notepad++"
-"\\notepad++.exe\" \"{path}\" -n{line}'`"
-msgstr ""
-"`config.conf['ndtt']['sourceFileOpener'] = r'\"C:\\Program Files\\Notepad++"
-"\\notepad++.exe\" \"{path}\" -n{line}'`"
 
 #. type: Title ###
 #, no-wrap
@@ -622,16 +685,17 @@ msgid "NVDA source code path configuration"
 msgstr "Configuración de la ruta al código fuente de NVDA"
 
 #. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "When a file belonging to NVDA's core is listed in the traceback, the line "
+#| "is of the following form:"
 msgid ""
 "When a file belonging to NVDA's core is listed in the traceback, the line is "
-"of the following form:"
+"of the following form: `File \"config\\profileUpgrader.pyc\", line 30, in "
+"upgrade`"
 msgstr ""
 "Cuando un archivo relacionado con el código fuente de NVDA aparece en una "
 "traza, la línea tiene este formato:"
-
-#. type: Plain text
-msgid "`File \"config\\profileUpgrader.pyc\", line 30, in upgrade`"
-msgstr "`File \"config\\profileUpgrader.pyc\", line 30, in upgrade`"
 
 #. type: Plain text
 msgid ""
@@ -649,23 +713,10 @@ msgstr ""
 #. type: Plain text
 msgid ""
 "For this, open the NVDA console (NVDA+control+Z) and type the following line "
-"and then Enter:"
+"and then Enter: `config.conf['ndtt']['nvdaSourcePath'] = r'C:\\pathExample"
+"\\GIT\\nvda\\source'` Of course, replace the path of NVDA source with the "
+"correct one."
 msgstr ""
-"Para ello, abre la consola de NVDA (NVDA+control+z), teclea la siguiente "
-"línea y pulsa intro:"
-
-#. type: Plain text
-msgid ""
-"`config.conf['ndtt']['nvdaSourcePath'] = r'C:\\pathExample\\GIT\\nvda"
-"\\source'`"
-msgstr ""
-"`config.conf['ndtt']['nvdaSourcePath'] = r'C:\\pathExample\\GIT\\nvda"
-"\\source'`"
-
-#. type: Plain text
-msgid "Of course, replace the path of NVDA source with the correct one."
-msgstr ""
-"Por supuesto, reemplaza la ruta al código fuente de NVDA con la correcta."
 
 #. type: Plain text
 msgid ""
@@ -679,6 +730,49 @@ msgstr ""
 #, no-wrap
 msgid "Change log"
 msgstr "Registro de cambios"
+
+#. type: Title ###
+#, fuzzy, no-wrap
+#| msgid "Version 2.0"
+msgid "Version 3.0"
+msgstr "Versión 2.0"
+
+#. type: Bullet: '* '
+msgid ""
+"In a log, you can now press C on a message's header line to open the "
+"function/module which has emitted it."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"In the console, `openCodeFile` function can now receive as parameter the "
+"object or a string containing its name."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"New feature: NVDA console startup file: If it exists, the file "
+"YourNVDAConfigFolder\\ndtt\\consoleStartup.py will be executed when NVDA "
+"console is first opened or when add-ons are reloaded."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"Various minor fixes for `openCodeFile` Python console's function and the "
+"command to open the source file corresponding to a line in the log."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"Fixed an issue when trying to report roles/states for object explorer in "
+"older version of NVDA."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"The add-on does not cause a problem anymore with the tree interceptor when "
+"using UIA in Edge."
+msgstr ""
 
 #. type: Title ###
 #, no-wrap
@@ -824,3 +918,89 @@ msgid ""
 msgstr ""
 "[5]: https://www.nvaccess.org/files/nvda/documentation/developerGuide."
 "html#toc22"
+
+#~ msgid ""
+#~ "When looking at a traceback, you may want to open one of the source files "
+#~ "to understand the cause and the context of the issue.  Press C to open "
+#~ "the source code file corresponding to the current line of the traceback."
+#~ msgstr ""
+#~ "Al mirar una traza, puedes querer abrir uno de los archivos de código "
+#~ "para entender la causa y el contexto del problema. Pulsa C para abrir el "
+#~ "archivo de código fuente correspondiente a la línea actual de la traza."
+
+#~ msgid ""
+#~ "View the definition of the class `TextInfo`: `openCodeFile(textInfos."
+#~ "TextInfo)`"
+#~ msgstr ""
+#~ "Ver la definición de la clase `TextInfo`: `openCodeFile(textInfos."
+#~ "TextInfo)`"
+
+#~ msgid ""
+#~ "View the class definition of the focused object: `openCodeFile(focus)`"
+#~ msgstr ""
+#~ "Ver la definición de clase del objeto con el foco: `openCodeFile(focus)`"
+
+#~ msgid ""
+#~ "To use the 'open source code' command or the `openCodeFile` console "
+#~ "command, you need first to configure the command that will be called to "
+#~ "open the file in your favorite editor.  For this, open the NVDA console "
+#~ "(NVDA+control+Z) and type the following line and then Enter:"
+#~ msgstr ""
+#~ "Para utilizar la orden 'Abrir código fuente' o la orden de consola "
+#~ "`openCodeFile`, primero es necesario configurar el comando al que se "
+#~ "llamará para abrir el archivo en tu editor favorito. Para ello, abre la "
+#~ "consola de NVDA (NVDA+control+z), teclea la siguiente línea y pulsa intro:"
+
+#~ msgid ""
+#~ "`config.conf['ndtt']['sourceFileOpener'] = r'\"C:\\path\\to\\my\\editor"
+#~ "\\editor.exe\" \"{path}\":{line}'`"
+#~ msgstr ""
+#~ "`config.conf['ndtt']['sourceFileOpener'] = r'\"C:\\path\\to\\my\\editor"
+#~ "\\editor.exe\" \"{path}\":{line}'`"
+
+#~ msgid ""
+#~ "You should of course modify this line according to the real name and "
+#~ "location of your editor and the syntax used by it to open files."
+#~ msgstr ""
+#~ "Por supuesto, deberías modificar esta línea con el nombre y ruta reales "
+#~ "de tu editor y la sintaxis que usa para abrir archivos."
+
+#~ msgid ""
+#~ "`{path}` will be replaced by the full path of the file to open and `{line}"
+#~ "` by the line number where you want the cursor to be set."
+#~ msgstr ""
+#~ "`{path}` será sustituida por la ruta completa del archivo a abrir, y "
+#~ "`{line}` por el número de línea donde quieres que aparezca el cursor."
+
+#~ msgid ""
+#~ "For Notepad++ for example the command to type in the console would be:"
+#~ msgstr ""
+#~ "Por ejemplo, para Notepad++, la orden a escribir en la consola sería:"
+
+#~ msgid ""
+#~ "`config.conf['ndtt']['sourceFileOpener'] = r'\"C:\\Program Files\\Notepad+"
+#~ "+\\notepad++.exe\" \"{path}\" -n{line}'`"
+#~ msgstr ""
+#~ "`config.conf['ndtt']['sourceFileOpener'] = r'\"C:\\Program Files\\Notepad+"
+#~ "+\\notepad++.exe\" \"{path}\" -n{line}'`"
+
+#~ msgid "`File \"config\\profileUpgrader.pyc\", line 30, in upgrade`"
+#~ msgstr "`File \"config\\profileUpgrader.pyc\", line 30, in upgrade`"
+
+#~ msgid ""
+#~ "For this, open the NVDA console (NVDA+control+Z) and type the following "
+#~ "line and then Enter:"
+#~ msgstr ""
+#~ "Para ello, abre la consola de NVDA (NVDA+control+z), teclea la siguiente "
+#~ "línea y pulsa intro:"
+
+#~ msgid ""
+#~ "`config.conf['ndtt']['nvdaSourcePath'] = r'C:\\pathExample\\GIT\\nvda"
+#~ "\\source'`"
+#~ msgstr ""
+#~ "`config.conf['ndtt']['nvdaSourcePath'] = r'C:\\pathExample\\GIT\\nvda"
+#~ "\\source'`"
+
+#~ msgid "Of course, replace the path of NVDA source with the correct one."
+#~ msgstr ""
+#~ "Por supuesto, reemplaza la ruta al código fuente de NVDA con la correcta."
