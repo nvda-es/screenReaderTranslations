@@ -1327,7 +1327,7 @@ Se ci si trova all'interno di una tabella, sono disponibili i seguenti comandi:
 <TD>Legge la riga orizzontalmente dalla cella corrente verso destra fino all'ultima cella della riga.</TD>
 </TR>
 <TR>
-<TD>Leggi colonna intera</TD>
+<TD>Legge colonna intera</TD>
 <TD><CODE>NVDA+control+alt+frecciaSu</CODE></TD>
 <TD>Legge la colonna corrente verticalmente dall'alto verso il basso senza spostare il cursore di sistema.</TD>
 </TR>
@@ -1562,6 +1562,20 @@ Sono disponibili i seguenti tasti caldi per esplorare il testo:
 <TD>NVDA+fine</TD>
 <TD>Nessuno</TD>
 <TD>Sposta il cursore di controllo alla fine della riga di testo corrente</TD>
+</TR>
+<TR>
+<TD>Spostarsi alla pagina precedente, modalità esplorazione</TD>
+<TD><CODE>NVDA+paginaSu</CODE></TD>
+<TD><CODE>NVDA+maiusc+paginaSu</CODE></TD>
+<TD>nessuno</TD>
+<TD>Sposta il cursore di controllo alla pagina precedente contenente testo se supportato dall'applicazione</TD>
+</TR>
+<TR>
+<TD>Spostarsi alla pagina successiva, modalità esplorazione</TD>
+<TD><CODE>NVDA+paginaGiù</CODE></TD>
+<TD><CODE>NVDA+maiusc+paginaGiù</CODE></TD>
+<TD>nessuno</TD>
+<TD>Sposta il cursore di controllo alla pagina successiva contenente testo se supportato dall'applicazione</TD>
 </TR>
 <TR>
 <TD>Dire tutto, modalità esplorazione</TD>
@@ -3976,7 +3990,7 @@ L'abilitazione di questa opzione può migliorare il supporto per alcuni siti Web
 <A NAME="documentFormattingSettings"></A>
 <H4>12.1.15. Formato documento (NVDA+Control+d)</H4>
 <P>
-la maggior parte delle caselle di controllo in questa categoria servono a configurare quali informazioni inerente la formattazione NVDA dovrà pronunciare quando si scorre un documento con le frecce. 
+la maggior parte delle opzioni in questa categoria servono a configurare quali informazioni inerente la formattazione NVDA dovrà pronunciare quando si scorre un documento con le frecce. 
 Ad esempio, se attiviamo la casella di controllo "Leggi il nome del font", NVDA annuncerà tale cambiamento ogni qualvolta se ne incontrerà uno, muovendosi con i tasti cursore in un documento.
 </P>
 <P>
@@ -4014,7 +4028,7 @@ Le opzioni di formattazione documento sono divise in gruppi.
 <LI>Informazioni tabella
  <UL>
  <LI>tabelle
- <LI>intestazioni riga/colonna delle tabelle
+ <LI>intestazioni riga/colonna (disattivato, righe, colonne, righe e colonne)
  <LI>Coordinate delle celle delle tabelle
  <LI>Bordi delle celle [(Disattivo, stili, sia colori che stili)
  </UL>
@@ -4108,14 +4122,29 @@ Questo pulsante apre la cartella all'interno della quale è possibile  inserire 
 Il bottone risulta attivo solo nel caso in cui NVDA sia configurato per caricare codice personalizzato dalla cartella scratchpad dello sviluppatore.
 </P>
 <A NAME="AdvancedSettingsSelectiveUIAEventRegistration"></A>
-<H5>Abilita la registrazione selettiva per eventi UI Automation e cambiamenti di proprietà</H5>
+<H5>Registrazione per eventi UI Automation e cambiamenti di proprietà</H5>
+<DL>
+<DT>Default</DT><DD>
+  Automatica
+<DT>Opzioni</DT><DD>
+  Automatica, Selettiva, Globale
+</DL>
+
+<P></P>
 <P>
 Questa opzione modifica il modo in cui NVDA registra gli eventi attivati dall'API di accessibilità di Microsoft UI Automation.
-Se la funzione è disabilitata, NVDA terrà traccia di molti eventi UIA, che per lo più sono gestiti e scartati da NVDA stesso.
-Questo può risultare molto dispendioso in termini di risorse soprattutto in applicazioni  quali Microsoft Visual Studio.
-Invece, se l'opzione risulta attivata, NVDA si limiterà a tener conto degli eventi UIA che riguardano unicamente il focus.
-Nel caso in cui si riscontrino problemi di stabilità o di prestazioni, si consiglia di attivare la funzione per vedere se il problema può risolversi.
+La casella combinata "Registrazione per eventi UI Automation e cambiamenti di proprietà" contiene tre opzioni:
 </P>
+<UL>
+<LI>Automatica: "selettiva" per Windows 11 Sun Valley 2 (versione 22H2) e successive, altrimenti "globale".
+<LI>Selettiva: NVDA si limiterà a tener conto degli eventi UIA che riguardano unicamente il focus.
+Nel caso in cui si riscontrino problemi di stabilità o di prestazioni, si consiglia di attivare la funzione per vedere se il problema può risolversi.
+Tuttavia, nelle versioni più vecchie di Windows, NVDA potrebbe avere problemi a seguire il focus in alcuni controlli (come il task manager e il pannello emoji).
+<LI>Globale: NVDA terrà traccia di molti eventi UIA, che per lo più sono gestiti e scartati da NVDA stesso.
+Sebbene la gestione del focus risulti più affidabile, questo può risultare molto dispendioso in termini di risorse soprattutto in applicazioni  quali Microsoft Visual Studio.
+</UL>
+
+<P></P>
 <A NAME="MSWordUIA"></A>
 <H5>Utilizza UI Automation per accedere ai controlli dei documenti Microsoft Word</H5>
 <P>
