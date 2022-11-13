@@ -3,6 +3,7 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.sf.net">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<LINK REL="stylesheet" TYPE="text/css" HREF="../styles.css">
 <TITLE>Šta je novo u NVDA</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <P ALIGN="center"><CENTER><H1>Šta je novo u NVDA</H1>
@@ -13,6 +14,141 @@
 <P>
 Da biste pročitali promene koje su bitne za programere, molimo pogledajte <A HREF="../en/changes.html">Englesku verziju ovog dokumenta</A>.
 </P>
+<H2>2022.4</H2>
+<P>
+Ova verzija uključuje nekoliko novih ključnih komandi, uključujući komande za režim izgovori sve u tabelama.
+Sekcija "vodič za brz početak" je dodata u korisničko uputstvo.
+Ispravljeno je takođe nekoliko grešaka.
+</P>
+<P>
+eSpeak i LibLouis su ažurirani.
+Dodate su nove Kineske, Švedske, Luganda i Kinyarwanda brajeve tabele.
+</P>
+<H3>Nove karakteristike</H3>
+<UL>
+<LI>Dodata sekcija "vodič za brz početak" u korisničko uputstvo. (<A HREF="https://github.com/nvaccess/nvda/issues/13934">#13934</A>)
+<LI>Dodata nova komanda za proveru tasterske prečice trenutnog fokusa. (<A HREF="https://github.com/nvaccess/nvda/issues/13960">#13960</A>)
+  <UL>
+  <LI>Desktop: <CODE>šift+numeričko2</CODE>.
+  <LI>Laptop: <CODE>NVDA+ctrl+šift+.</CODE>.
+  </UL>
+<LI>Dodate nove komande za pomeranje preglednog kursora po stranicama kada je podržano od aplikacije. (<A HREF="https://github.com/nvaccess/nvda/issues/14021">#14021</A>)
+  <UL>
+  <LI>Pomeri se na prethodnu stranicu:
+    <UL>
+    <LI>Desktop: <CODE>NVDA+pageUp</CODE>.
+    <LI>Laptop: <CODE>NVDA+šift+pageUp</CODE>.
+    </UL>
+  <LI>Pomeri se na sledeću stranicu:
+    <UL>
+    <LI>Desktop: <CODE>NVDA+pageDown</CODE>.
+    <LI>Laptop: <CODE>NVDA+šift+pageDown</CODE>.
+    </UL>
+  </UL>
+<LI>Dodate sledeće komande za tabele. (<A HREF="https://github.com/nvaccess/nvda/issues/14070">#14070</A>)
+  <UL>
+  <LI>Izgovori sve u koloni: <CODE>NVDA+kontrol+alt+strelicaDole</CODE>
+  <LI>Izgovori sve u redu: <CODE>NVDA+kontrol+alt+strelicaDesno</CODE>
+  <LI>Pročitaj celu kolonu: <CODE>NVDA+kontrol+alt+strelicaGore</CODE>
+  <LI>Pročitaj ceo red: <CODE>NVDA+kontrol+alt+strelicaLevo</CODE>
+  </UL>
+<LI>Microsoft Excel uz UI Automation: NVDA sada izgovara kada izađete iz tabele u okviru radnog lista. (<A HREF="https://github.com/nvaccess/nvda/issues/14165">#14165</A>)
+<LI>Prijavljivanje zaglavlja u tabeli se sada može podesiti odvojeno za redove i kolone. (<A HREF="https://github.com/nvaccess/nvda/issues/14075">#14075</A>)
+</UL>
+
+<P></P>
+<H3>Promene</H3>
+<UL>
+<LI>eSpeak NG je ažuriran na 1.52-dev commit <CODE>735ecdb8</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14060">#14060</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14079">#14079</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14118">#14118</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14203">#14203</A>)
+  <UL>
+  <LI>Ispravljeno prijavljivanje latiničnih znakova kada se koristi Mandarinski. (<A HREF="https://github.com/nvaccess/nvda/issues/12952">#12952</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13572">#13572</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14197">#14197</A>)
+  </UL>
+<LI>Ažuriran LibLouis brajev prevodilac na <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.23.0">3.23.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/14112">#14112</A>)
+  <UL>
+  <LI>Dodate brajeve tabele:
+    <UL>
+    <LI>Kineski zajednički brajev kod (znakovi pojednostavljenog Kineskog)
+    <LI>Kinyarwanda književni brajev kod
+    <LI>Luganda književni brajev kod
+    <LI>Švedski brajev kod
+    <LI>Švedski polovičan kratkopis
+    <LI>Švedski kratkopis
+    <LI>Kineski (Kina, Mandarinski) trenutni brajev sistem (bez tonova) (<A HREF="https://github.com/nvaccess/nvda/issues/14138">#14138</A>)
+    </UL>
+  </UL>
+<LI>NVDA sada uključuje arhitekturu operativnog sistema kao deo praćenja statistika korišćenja. (<A HREF="https://github.com/nvaccess/nvda/issues/14019">#14019</A>)
+</UL>
+
+<P></P>
+<H3>Ispravljene greške</H3>
+<UL>
+<LI>Kada se NVDA ažurira korišćenjem interfejsa komandne linije Windows menadžera paketa (winget), stabilna NVDA verzija neće uvek biti tretirana kao novija od bilo koje alfa verzije koja je instalirana. (<A HREF="https://github.com/nvaccess/nvda/issues/12469">#12469</A>)
+<LI>NVDA će sada ispravno izgovarati grupisana polja u Java aplikacijama. (<A HREF="https://github.com/nvaccess/nvda/issues/13962">#13962</A>)
+<LI>Kursor ispravno prati izgovoreni tekst kada se koristi režim "izgovori sve" u aplikacijama kao što su Bookworm, WordPad, ili u NVDA pregledniku dnevnika. (<A HREF="https://github.com/nvaccess/nvda/issues/13420">#13420</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9179">#9179</A>)
+<LI>U programima koji koriste UI Automation, izborna polja koja su polovično označena biće ispravno prijavljena. (<A HREF="https://github.com/nvaccess/nvda/issues/13975">#13975</A>)
+<LI>Poboljšane performanse i stabilnost u  Microsoft Visual Studiju, Windows Terminalu, i drugim  aplikacijama zasnovanim na UI Automation. (<A HREF="https://github.com/nvaccess/nvda/issues/11077">#11077</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11209">#11209</A>)
+  <UL>
+  <LI>Ove ispravke se primenjuju na Windowsu 11 Sun Valley 2 (verzija 22H2) i novijim.
+  <LI>Selektivna registracija za promene UI Automation  događaja i svojstava je sada podrazumevano omogućena.
+  </UL>
+<LI>Prijavljivanje teksta, brajev izlaz i sprečavanje izgovora lozinki sada rade kako je očekivano u umetnutoj kontroli Windows terminala u Visual Studiju 2022. (<A HREF="https://github.com/nvaccess/nvda/issues/14194">#14194</A>)
+<LI>NVDA sada obraća pažnju na DPI podešavanje kada se koristi na više monitora.
+Ispravljeno je nekoliko grešaka kada se koristi DPI podešavanje veće od 100% ili kada se koristi više monitora.
+Problemi još uvek mogu postojati kada se koriste Windows verzije starije od Windowsa 10 1809.
+Kako bi ove ispravke radile, aplikacije sa kojima NVDA vrši interakciju takođe moraju da obraćaju pažnju na DPI.
+Napomena da još uvek postoje poznati problemi sa Chromeom i Edgeom. (<A HREF="https://github.com/nvaccess/nvda/issues/13254">#13254</A>)
+  <UL>
+  <LI>Vizuelni okviri za označavanje bi  trebali da se postavljaju ispravno u većini aplikacija. (<A HREF="https://github.com/nvaccess/nvda/issues/13370">#13370</A>, <A HREF="https://github.com/nvaccess/nvda/issues/3875">#3875</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12070">#12070</A>)
+  <LI>Interakcija sa ekranom osetljivim na dodir bi trebala da bude precizna u većini aplikacija. (<A HREF="https://github.com/nvaccess/nvda/issues/7083">#7083</A>)
+  <LI>Praćenje miša bi trebalo da radi u većini aplikacija. (<A HREF="https://github.com/nvaccess/nvda/issues/6722">#6722</A>)
+  </UL>
+<LI>Promene orijentacije (horizontalno/uspravno) se sada ispravno ignorišu kada nema promene (na primer prilikom promene monitora). (<A HREF="https://github.com/nvaccess/nvda/issues/14035">#14035</A>)
+<LI>NVDA će izgovarati prevlačenje stavki na ekranu na mestima kao što su premeštanje pločica start menija Windowsa 10 i virtuelnih radnih površina u Windowsu 11. (<A HREF="https://github.com/nvaccess/nvda/issues/12271">#12271</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14081">#14081</A>)
+<LI>U naprednim podešavanjima, podešavanje "Reprodukuj zvuk za evidentirane greške" se sada ispravno vraća na svoju podrazumevanu vrednost kada pritisnete dugme "Vrati na podrazumevana". (<A HREF="https://github.com/nvaccess/nvda/issues/14149">#14149</A>)
+<LI>NVDA sada može da izabere tekst korišćenjem prečice <CODE>NVDA+f10</CODE> u Java aplikacijama. (<A HREF="https://github.com/nvaccess/nvda/issues/14163">#14163</A>)
+</UL>
+
+<P></P>
+<H2>2022.3.2</H2>
+<P>
+Ovo je manje ažuriranje kako bi se ispravila pogoršanja koja je izazvala verzija 2022.3.1 i kako bi se ispravio bezbednosni problem.
+</P>
+<H3>Bezbednosne ispravke</H3>
+<UL>
+<LI>Sprečava mogućnost pristupa na sistemskom nivou za korisnike koji nemaju autentikaciju.
+(<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-3jj9-295f-h69w">GHSA-3jj9-295f-h69w</A>)
+</UL>
+
+<P></P>
+<H3>Ispravljene greške</H3>
+<UL>
+<LI>Ispravljeno pogoršanje iz verzije 2022.3.1 koje je izazvalo onemogućavanje određenih funkcija na bezbednim ekranima. (<A HREF="https://github.com/nvaccess/nvda/issues/14286">#14286</A>)
+<LI>Ispravljeno pogoršanje iz verzije 2022.3.1 koje je izazvalo onemogućavanje određenih funkcija nakon prijave, ako je NVDA pokrenut na zaključanom ekranu. (<A HREF="https://github.com/nvaccess/nvda/issues/14301">#14301</A>)
+ -
+</UL>
+
+<H2>2022.3.1</H2>
+<P>
+Ovo je manje ažuriranje kako bi se ispravilo nekoliko bezbednosnih problema.
+Molimo odgovorno prijavite bezbednosne probleme na <A HREF="mailto:info@nvaccess.org">info@nvaccess.org</A>.
+</P>
+<H3>Bezbednosne ispravke</H3>
+<UL>
+<LI>Ispravljen propust koji je dozvoljavao da dobijete sistemske privilegije umesto korisničkih.
+(<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-q7c2-pgqm-vvw5">GHSA-q7c2-pgqm-vvw5</A>)
+<LI>Ispravljen bezbednosni problem koji je dozvoljavao pristup Python konzoli na zaključanom ekranu uz posebni uslov pri NVDA pokretanju.
+(<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-72mj-mqhj-qh4w">GHSA-72mj-mqhj-qh4w</A>)
+<LI>Ispravljen problem koji je izazvao keširanje teksta preglednika govora kada se zaključa Windows.
+(<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-grvr-j2h8-3qm4">GHSA-grvr-j2h8-3qm4</A>)
+</UL>
+
+<P></P>
+<H3>Ispravljene greške</H3>
+<UL>
+<LI>Sprečavanje korisnika bez autentikacije da ažurira podešavanja za preglednike govora i brajevih redova na zaključanom ekranu. (<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-grvr-j2h8-3qm4">GHSA-grvr-j2h8-3qm4</A>)
+</UL>
+
+<P></P>
 <H2>2022.3</H2>
 <P>
 Ogroman deo ove verzije je doprinela zajednica NVDA programera.
@@ -70,6 +206,17 @@ Ovo će poboljšati brzinu u nekim Java aplikacijama kao što je IntelliJ IDEA. 
 <LI>Kada je pokrenut od strane drugog korisnika, Microsoft Edge više nije nepristupačan. (<A HREF="https://github.com/nvaccess/nvda/issues/13032">#13032</A>)
 <LI>Kada je povećanje brzine isključeno, brzina sintetizatora ESpeak više ne pada između brzina 99% i 100%. (<A HREF="https://github.com/nvaccess/nvda/issues/13876">#13876</A>)
 <LI>Ispravljena greška koja je dozvoljavala otvaranje dva dijaloga ulaznih komandi. (<A HREF="https://github.com/nvaccess/nvda/issues/13854">#13854</A>)
+</UL>
+
+<P></P>
+<H2>2022.2.4</H2>
+<P>
+Ovo je manje ažuriranje kako bi se ispravio bezbednosni problem.
+</P>
+<H3>Ispravljene greške</H3>
+<UL>
+<LI>Ispravljen propust koji je dozvoljavao da otvorite NVDA python konzolu putem preglednika dnevnika na zaključanom ekranu.
+(<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-585m-rpvv-93qg">GHSA-585m-rpvv-93qg</A>)
 </UL>
 
 <P></P>
