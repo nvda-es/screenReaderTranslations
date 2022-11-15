@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="tr_TR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="generator" content="MarkdownForever" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>NVDA için proxy desteği</title>
+	</head>
+	<body>
+		<header id="header-block"><h1 class="title">NVDA için proxy desteği</h1>
+<p class="subtitle"></p></header>
+		<main id="main-content"><ul>
+ <li>
+  Yazar: José Manuel Delicado
+ </li>
+ <li>
+  NVDA uyumluluğu: 2021.3 ve sonrası
+ </li>
+ <li>
+  <a href="https://addons.nvda-project.org/files/get.php?file=nvdaproxy">
+   Kararlı sürümü indirin
+  </a>
+ </li>
+</ul>
+<p>
+ Bu eklenti, NVDA ekran okuyucusunun bir veya daha fazla proxy sunucusu aracılığıyla İnternet'e bağlanmasına olanak tanır. Bunu mümkün kılmak için, standart Python kitaplığına çeşitli yamalar uygular veya seçilen konfigürasyona bağlı olarak belirli ortam değişkenlerini değiştirir. NVDA'yı ve eklentilerini kurumsal ortamınızdan otomatik olarak güncelleyebilecek ve hatta kuruluş proxy sunucunuzun izin vermesi koşuluyla uzak oturumlar gerçekleştirebileceksiniz.
+</p>
+<h2 id="ozellikler">
+ Özellikler:
+</h2>
+<ul>
+ <li>
+  Çeşitli proxy sunucu türleri için destek: http, socks4 ve socks5.
+ </li>
+ <li>
+  Tüm trafiği proxy sunucusu veya yalnızca belirli trafik (http, https, ftp) üzerinden yeniden yönlendirme yeteneği.
+ </li>
+ <li>
+  Tüm trafiği bir proxy sunucusu üzerinden yeniden yönlendirme ve ardından belirli trafiği diğer sunucular (iç içe geçmiş proxy'ler) üzerinden yeniden yönlendirme yeteneği.
+ </li>
+ <li>
+  Profil değiştirme ve yapılandırma sıfırlama farkında: genellikle NVDA'nın taşınabilir bir kopyasıyla çalışıyorsanız, farklı ortamlar (ev, iş, ofis1, ofis2) için çeşitli profiller oluşturabilir ve bunları manuel olarak etkinleştirebilirsiniz.
+ </li>
+</ul>
+<h2 id="kullanm">
+ kullanım:
+</h2>
+<p>
+ Bu eklenti, NVDA ayarları iletişim kutusuna "Proxy" adlı yeni bir kategori ekler. Bu kategoride dört ayar grubu bulacaksınız. İlki, tüm trafik için genel bir proxy yapılandırmanıza izin verir. Diğer gruplar, proxy sunucularını yalnızca belirli protokoller için yapılandırmanıza izin verir. Tüm gruplar aşağıdaki alanlara sahiptir:
+</p>
+<ul>
+ <li>
+  Ana bilgisayar: proxy sunucusunun ana bilgisayar adı veya ip adresi. Söz konusu proxy'yi devre dışı bırakmak için boş bırakın.
+ </li>
+ <li>
+  Bağlantı noktası: sunucu bağlantı noktası.
+ </li>
+ <li>
+  Kullanıcı adı: isteğe bağlı. Sunucu yetkilendirmesi için kullanıcı adı.
+ </li>
+ <li>
+  Şifre: isteğe bağlı. Sunucu yetkilendirmesi için parola. Soock4 sunucuları için şifre gerekmediğini unutmayın.
+ </li>
+</ul>
+<p>
+ Önceki alanlara ek olarak, ilk ayarlar grubunda aşağıdaki seçenekler mevcuttur:
+</p>
+<ul>
+ <li>
+  SOCKS proxy tipi: socks4, socks5 veya http seçilebilir.
+ </li>
+ <li>
+  Mümkünse dns istekleri için proxy kullanın: Bu onay kutusu işaretlendiğinde, ana bilgisayar adları veya alan adları doğrudan proxy sunucusuna gönderilir ve burada çözümlenir. İşareti kaldırıldığında, isimler yerel olarak çözülecek ve sunucu sadece hedef ip adresini alacaktır. Tüm stock4 proxy sunucularının bu seçeneği desteklemediğini unutmayın.
+ </li>
+</ul>
+<p>
+ Tipik olarak, çoğu kullanıcının yalnızca ilk ayar grubunu yapılandırması gerekir. Proxy ayrıntılarınızı bilmiyorsanız, daha fazla bilgi için kuruluşunuzdaki ağ yöneticinize danışın.
+</p>
+<h2 id="snrlamalar">
+ sınırlamalar:
+</h2>
+<ul>
+ <li>
+  Çok sınırlı IPV6 desteği.
+ </li>
+ <li>
+  UDP trafiği tüm proxy sunucularında desteklenmez.
+ </li>
+ <li>
+  Harici DLL kitaplıkları bu eklentide yapılandırılan ayarlara uymaz.
+ </li>
+ <li>
+  http proxy sunucuları için yalnızca temel yetkilendirme desteklenir. Özet yetkilendirme desteklenmiyor.
+ </li>
+ <li>
+  Tüm trafiği (https bağlantıları dahil) bir http proxy üzerinden yeniden yönlendirmek için sunucunun http bağlantı yöntemini desteklemesi gerekir.
+ </li>
+ <li>
+  Bir "doğrudan bağlantı" modu yapılandırılamaz. Belirli bir proxy'yi devre dışı bırakırsanız, bunun yerine sistem varsayılanı kullanılır.
+ </li>
+</ul>
+<h2 id="degisiklik-gunlugu">
+ değişiklik günlüğü
+</h2>
+<h3 id="surum-11">
+ Sürüm 1.1
+</h3>
+<ul>
+ <li>
+  NVDA 2022.1 ile uyumludur.
+ </li>
+ <li>
+  Güvenlik nedeniyle minimum NVDA sürümü 2021.3 olarak ayarlanmıştır.
+ </li>
+ <li>
+  Patch socket.getaddrinfo işlevi, "Mümkünse dns istekleri için proxy kullan" onay kutusu işaretlendiğinde ve genel bir proxy yapılandırıldığında.
+ </li>
+ <li>
+  Çeviriler güncellendi.
+ </li>
+</ul>
+<h3 id="surum-10">
+ Sürüm 1.0
+</h3>
+<ul>
+ <li>
+  İlk sürüm.
+ </li>
+</ul>
+<p>
+ [[!tag dev stable]]
+</p>
+</main>
+	</body>
+</html>
