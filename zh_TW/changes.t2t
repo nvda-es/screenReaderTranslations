@@ -1,7 +1,211 @@
 NVDA 新版資訊
 
-
 %!includeconf: ../changes.t2tconf
+
+= 2022.4 更新中文摘譯 =
+此版本加入幾個新的按鍵指令，包括用於表格中讀出全部的指令，
+在用戶指南中加入「快速入門指南」段落，
+還有幾個錯誤修復。
+
+eSpeak 及 LibLouis 皆已更新，
+有新的中文、瑞典語、盧干達文及金揚萬答文點字表。
+
+== 新功能 ==
+- 在用戶指南中加入「快速入門指南」。(#13934)
+- 加入一個新指令來檢查目前焦點的鍵盤快捷鍵。(#13960)
+  - 桌上型電腦：Shift+數字鍵盤2
+  - 筆記型電腦：NVDA+Ctrl+Shift+.
+  -
+- 加入新的指令，可在應用程式支援情況下，以頁移動檢閱游標。(#14021)
+  - 移到上一頁：
+    - 桌上型電腦：NVDA+PageUp
+    - 筆記型電腦：NVDA+Shift+pageUp
+    -
+  - 移到下一頁：
+    - 桌面： NVDA+PageDown
+    - 筆記型電腦： NVDA+Shift+pageDown
+    -
+  -
+- 加入以下的表格指令。(#14070)
+  - 向下讀出整欄：NVDA+Ctrl+Alt+向下鍵
+  - 向右讀出整列：NVDA+Ctrl+Alt+向右鍵
+  - 讀出整欄：NVDA+Ctrl+Alt+向上鍵
+  - 讀出整列：NVDA+Ctrl+Alt+向左鍵
+  -
+- 在 Microsoft Excel 中使用 UI Automation：NVDA 現在可在離開工作表上的表格時讀出提示。(#14165)
+- 現在可以分開設定讀出表格的列及欄標題。(#14075)
+-
+
+
+== 更新 ==
+- eSpeak NG 更新至 1.52-dev commit 735ecdb8。 (#14060, #14079, #14118, #14203)
+  - 修復使用中文時拉丁字元報讀的錯誤。(#12952, #13572, #14197)
+  -
+- 更新 LibLouis 點字轉譯表至 [3.23.0 https://github.com/liblouis/liblouis/releases/tag/v3.23.0]。 (#14112)
+  - 增加的點字表：
+    - 中國通用盲文 (簡體中文字)
+    - 金揚萬答文書寫點字
+    - 盧干達文書寫點字
+    - 瑞典文未收縮點字
+    - 瑞典文部分收縮點字
+    - 瑞典文收縮點字
+    - 中文 (中國) 現行盲文 (無聲調)(#14138)
+    -
+- NVDA 使用者資料蒐集現在包含作業系統的架構。 (#14019)
+-
+
+
+== 錯誤修正 ==
+- 當使用 Windows 封裝管理員 CLI (又名 winget) 更新 NVDA 時，NVDA 的發布版本不再被視為比安裝的任何 alpha 版本還新。(#12469)
+- NVDA 現在可以正確地在 Java 應用程式中讀出分組方框。(#13962)
+- 在 Bookworm、WordPad 或 NVDA 事件紀錄檢視器等應用程式中使用「讀出全部」期間，游標正確地跟隨唸出的文字。(#13420, #9179)
+- 在使用 UI Automation 的程式中，部分勾選的核取方塊可以正確讀出。(#13975)
+- 改進 Microsoft Visual Studio、Windows 終端程式和其他基於 UI Automation 應用程式的效能及穩定性。(#11077, #11209)
+  - 這些修正適用於 Windows 11 Sun Valley 2 (版本 22H2) 及更高版本。
+  - 針對 UI Automation 事件及屬性變更的選擇性記錄現在預設啟用
+  -
+- 文字報讀、點字輸出及密碼隱藏現在可以在 Visual Studio 2022 的嵌入式 Windows 終端控製項中按預期執行。(#14194)
+- NVDA 現在在使用多台顯示器時具備 DPI感知功能。
+有一些修正針對使用高於 100% 或多個顯示器的 DPI 設定，
+早於 Windows 10 1809 的 Windows 版本可能仍然存在問題。
+為了使這些修正生效，與 NVDA 互動的應用程式也需要具有 DPI 感知功能。
+請注意，Chrome 和 Edge 仍然存在已知問題。(#13254)
+  - 視覺醒目提示外框在大多數應用程式中，應可正確呈現。(#13370, #3875, #12070)  - 觸控螢幕互動對於大多數應用程式，現在應該是準確的。(#7083)
+  - 鼠標跟隨現在應適用於大多數應用程式。(#6722)
+  -
+- 方向狀態變化 (橫向/直向) 現在在沒有改變時 (如更換螢幕) 會被忽略。(#14035)
+- NVDA 將讀出拖移項目，，例如重新排列 Windows 10 開始功能表磚和 Windows 11 中的虛擬桌面。(#12271，#14081)
+- 在進階設定中，「紀錄到錯誤時播放音效」選項現在可以在按下「還原為預設值」按鈕時正確還原為預設值。 (#14149)
+- NVDA 現在可以在 Java 應用程式中使用 NVDA+F10 鍵盤快速鍵選取文字。 (#14163)
+- 在 Microsoft Teams 的對話中使用上下方向鍵移動時，NVDA 將不再卡在功能表。 (#14355)-
+-
+
+
+= 2022.4 =
+This release includes several new key commands, including table say all commands.
+A "Quick Start Guide" section has been added to the User Guide.
+There are also several bug fixes.
+
+eSpeak has been updated and LibLouis has been updated.
+There are new Chinese, Swedish, Luganda and Kinyarwanda braille tables.
+
+== New Features ==
+- Added a "Quick Start Guide" section to the User Guide. (#13934)
+- Introduced a new command to check the keyboard shortcut of the current focus. (#13960)
+  - Desktop: ``shift+numpad2``.
+  - Laptop: ``NVDA+ctrl+shift+.``.
+  -
+- Introduced new commands to move the review cursor by page where supported by the application. (#14021)
+  - Move to previous page:
+    - Desktop: ``NVDA+pageUp``.
+    - Laptop: ``NVDA+shift+pageUp``.
+    -
+  - Move to next page:
+    - Desktop: ``NVDA+pageDown``.
+    - Laptop: ``NVDA+shift+pageDown``.
+    -
+  -
+- Added the following table commands. (#14070)
+  - Say all in column: ``NVDA+control+alt+downArrow``
+  - Say all in row: ``NVDA+control+alt+rightArrow``
+  - Read entire column: ``NVDA+control+alt+upArrow``
+  - Read entire row: ``NVDA+control+alt+leftArrow``
+  -
+- Microsoft Excel via UI Automation: NVDA now announces when moving out of a table within a spreadsheet. (#14165)
+- Reporting table headers can now be configured separately for rows and columns. (#14075)
+-
+
+
+== Changes ==
+- eSpeak NG has been updated to 1.52-dev commit ``735ecdb8``. (#14060, #14079, #14118, #14203)
+  - Fixed reporting of Latin characters when using Mandarin. (#12952, #13572, #14197)
+  -
+- Updated LibLouis braille translator to [3.23.0 https://github.com/liblouis/liblouis/releases/tag/v3.23.0]. (#14112)
+  - Added braille tables:
+    - Chinese common braille (simplified Chinese characters)
+    - Kinyarwanda literary braille
+    - Luganda literary braille
+    - Swedish uncontracted braille
+    - Swedish partially contracted braille
+    - Swedish contracted braille
+    - Chinese (China, Mandarin) Current Braille System (no tones) (#14138)
+    -
+- NVDA now includes the architecture of the operating system as part of user statistics tracking. (#14019)
+-
+
+
+== Bug Fixes ==
+- When updating NVDA using the Windows Package Manager CLI (aka winget), a released version of NVDA is no longer always treated as newer than whatever alpha version is installed. (#12469)
+- NVDA will now correctly announce Group boxes in Java applications. (#13962)
+- Caret properly follows spoken text during "say all" in applications such as Bookworm, WordPad, or the NVDA log viewer. (#13420, #9179)
+- In programs using UI Automation, partially checked checkboxes will be reported correctly. (#13975)
+- Improved performance and stability in Microsoft Visual Studio, Windows Terminal, and other UI Automation based applications. (#11077, #11209)
+  - These fixes apply to Windows 11 Sun Valley 2 (version 22H2) and later.
+  - Selective registration for UI Automation events and property changes now enabled by default.
+  -
+- Text reporting, Braille output, and password suppression now work as expected in the embedded Windows Terminal control in Visual Studio 2022. (#14194)
+- NVDA is now DPI aware when using multiple monitors.
+There are several fixes for using a DPI setting higher than 100% or multiple monitors.
+Issues may still exist with versions of Windows older than Windows 10 1809.
+For these fixes to work, applications which NVDA interacts with also need to be DPI aware.
+Note there are still known issues with Chrome and Edge. (#13254)
+  - Visual highlighting frames should now be correctly placed in most applications. (#13370, #3875, #12070)
+  - Touch screen interaction should now be accurate for most applications. (#7083)
+  - Mouse tracking should now work for most applications. (#6722)
+  -
+- Orientation state (landscape/portrait) changes are now correctly ignored when there is no change (e.g. monitor changes). (#14035)
+- NVDA will announce dragging items on screen in places such as rearranging Windows 10 Start menu tiles and virtual desktops in Windows 11. (#12271, #14081)
+- In advanced settings, "Play a sound for logged errors" option is now correctly restored to its default value when pressing the "Restore defaults" button. (#14149)
+- NVDA can now select text using the ``NVDA+f10`` keyboard shortcut on Java applications. (#14163)
+- NVDA will no longer get stuck in a menu when arrowing up and down threaded conversations in Microsoft Teams. (#14355)
+-
+
+
+== Changes for Developers ==
+Please refer to [the developer guide https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] for information on NVDA's API deprecation and removal process.
+
+- The [NVDA API Announcement mailing list https://groups.google.com/a/nvaccess.org/g/nvda-api/about] was created. (#13999)
+- NVDA no longer processes ``textChange`` events for most UI Automation applications due to their extreme negative performance impact. (#11002, #14067)
+-
+
+
+=== Deprecations ===
+- ``core.post_windowMessageReceipt`` is deprecated, use ``winAPI.messageWindow.pre_handleWindowMessage`` instead.
+- ``winKernel.SYSTEM_POWER_STATUS`` is deprecated and usage is discouraged, this has been moved to ``winAPI._powerTracking.SystemPowerStatus``.
+- ``winUser.SM_*`` constants are deprecated, use ``winAPI.winUser.constants.SystemMetrics`` instead.
+- 
+
+= 2022.3.2 =
+This is a minor release to fix regressions with 2022.3.1 and address a security issue.
+
+== Security Fixes ==
+- Prevents possible system level access for unauthenticated users.
+([GHSA-3jj9-295f-h69w https://github.com/nvaccess/nvda/security/advisories/GHSA-3jj9-295f-h69w])
+-
+
+== Bug Fixes ==
+- Fixes a regression from 2022.3.1 where certain functionality was disabled on secure screens. (#14286)
+- Fixes a regression from 2022.3.1 where certain functionality was disabled after sign-in, if NVDA started on the lock screen. (#14301)
+-
+
+
+= 2022.3.1 =
+This is a minor release to fix several security issues.
+Please responsibly disclose security issues to info@nvaccess.org.
+
+== Security Fixes ==
+- Fixed exploit where it was possible to elevate from user to system privileges.
+([GHSA-q7c2-pgqm-vvw5 https://github.com/nvaccess/nvda/security/advisories/GHSA-q7c2-pgqm-vvw5])
+- Fixed a security issue allowing access to the python console on the lock screen via a race condition for NVDA startup.
+([GHSA-72mj-mqhj-qh4w https://github.com/nvaccess/nvda/security/advisories/GHSA-72mj-mqhj-qh4w])
+- Fixed issue where speech viewer text is cached when locking Windows.
+([GHSA-grvr-j2h8-3qm4 https://github.com/nvaccess/nvda/security/advisories/GHSA-grvr-j2h8-3qm4])
+-
+
+== Bug Fixes ==
+- Prevent an unauthenticated user from updating settings for speech and Braille viewer on the lock screen. ([GHSA-grvr-j2h8-3qm4 https://github.com/nvaccess/nvda/security/advisories/GHSA-grvr-j2h8-3qm4])
+-
+
 
 = 2022.3 更新中文摘譯 =
 此版本的大部分更新內容是由 NVDA 開發社群所貢獻。
