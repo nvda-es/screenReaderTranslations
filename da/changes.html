@@ -10,64 +10,99 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
-<H2>2022.3</H2>
+<H2>2022.4</H2>
 <P>
- En markant del af denne version af NVDA er medtaget bidrag fra fællesskabet.
- Dette omfatter bl.a. en indstilling der forsinker beskrivelser af tegn, samt forbedret understøttelse til Windows konsol.
+Denne udgivelse indeholder flere nye nøglekommandoer, bl.a. tabelkommandoer til kontinuerlig læsning.
+En "Hurtiggstartguide" er blevet tilføjet til brugervejledningen.
+Der er også flere fejlrettelser.
 </P>
 <P>
- Denne version indeholder også nogle fejlrettelser.
-Opdaterede versioner af Adobe Reader vil ikke længere gå ned, når du forsøger at læse et PDF-dokument.
-</P>
-<P>
-eSpeak er blevet opdateret, hvilket introducerer 3 nye sprog: hviderussisk, luxembourgsk og Totontepec Mixe.
+eSpeak er blevet opdateret, og LibLouis er blevet opdateret.
+Der er nye kinesiske, svenske, Luganda og Kinyarwanda punktskriftstabeller.
 </P>
 <H3>Nye funktioner</H3>
 <UL>
-<LI>I Windows-konsollen brugt af kommandoprompt, PowerShell, og Windows Subsystem for Linux i Windows 11 version 22H2 (Sun Valley 2) og nyere:
+<LI>Tilføjede en hurtigstartguide til brugervejledningen. (<A HREF="https://github.com/nvaccess/nvda/issues/13934">#13934</A>)
+<LI>Tilføjede en ny kommando til at få genvejstasten for det aktuelle element i fokus oplyst. (<A HREF="https://github.com/nvaccess/nvda/issues/13960">#13960</A>)
   <UL>
-  <LI>Væsentligt forbedret ydeevne og stabilitet. (<A HREF="https://github.com/nvaccess/nvda/issues/10964">#10964</A>)
-  <LI>Når du bruger Ctrl+F til at søge efter tekst, vil læsemarkøren flytte sig til søgeresultatet. (<A HREF="https://github.com/nvaccess/nvda/issues/11172">#11172</A>)
-  <LI>Annoncering af tekst, der ikke vises på skærmen (eksempelvis adgangskoder) er deaktiveret som standard.
-Dette kan aktiveres ved at gå til NVDAs indstillinger under "Avanceret". (<A HREF="https://github.com/nvaccess/nvda/issues/11554">#11554</A>)
-  <LI>Tekst, der er rullet af skærmen, kan nu læses ved brug af læsemarkøren uden at rulle i konsolvinduet. (<A HREF="https://github.com/nvaccess/nvda/issues/12669">#12669</A>)
-  <LI>Flere detaljerede tekstformateringsoplysninger er nu tilgængelige. (<A HREF="https://github.com/microsoft/terminal/pull/10336">microsoft/terminal PR 10336</A>)
+  <LI>Desktop: <CODE>shift+numpad2</CODE>.
+  <LI>Laptop: <CODE>NVDA+ctrl+shift+.</CODE>.
   </UL>
-<LI>En ny indstilling er nu blevet tilføjet i taleindstillinger, der lader dig få beskrivelser af tegn oplæst efter en forsinkelse. (<A HREF="https://github.com/nvaccess/nvda/issues/13509">#13509</A>)
-<LI>En ny indstilling er blevet tilføjet i punktindstillinger. Denne lader dig bestemme om panorerering af dit punktdisplay skal afbryde talen. (<A HREF="https://github.com/nvaccess/nvda/issues/2124">#2124</A>)
+<LI>Tilføjede en ny kommando, der lader læsemarkøren navigere efter sider, hvis dette understøttes af det aktuelle program. (<A HREF="https://github.com/nvaccess/nvda/issues/14021">#14021</A>)
+  <UL>
+  <LI>Flyt til forrige side:
+    <UL>
+    <LI>Desktop: <CODE>NVDA+side op</CODE>.
+    <LI>Laptop: <CODE>NVDA+shift+Side op</CODE>.
+    </UL>
+  <LI>Flyt til næste side:
+    <UL>
+    <LI>Desktop: <CODE>NVDA+Side ned</CODE>.
+    <LI>Laptop: <CODE>NVDA+shift+Side ned</CODE>.
+    </UL>
+  </UL>
+<LI>Tilføjede følgende kommandoer til brug i tabeller. (<A HREF="https://github.com/nvaccess/nvda/issues/14070">#14070</A>)
+  <UL>
+  <LI>Sig alt i kolonne: <CODE>NVDA+Ctrl+alt+pil ned</CODE>
+  <LI>Sig alt i række: <CODE>NVDA+ctrl+alt+højre pil</CODE>
+  <LI>Læs hel kolonne: <CODE>NVDA+Ctrl+alt+Pil op</CODE>
+  <LI>Læs hel række: <CODE>NVDA+Ctrl+alt+venstre pil</CODE>
+  </UL>
+<LI>Microsoft Excel med UI Automation: NVDA fortæller nu, når du bevæger dig udenfor en tabel i et regneark. (<A HREF="https://github.com/nvaccess/nvda/issues/14165">#14165</A>)
+<LI>Rapportering af overskrifter i tabeller kan nu indstilles særskilt for både rækker og kolonner. (<A HREF="https://github.com/nvaccess/nvda/issues/14075">#14075</A>)
 </UL>
 
 <P></P>
 <H3>Ændringer</H3>
 <UL>
-<LI>eSpeak NG er blevet opdateret til 1.52-dev commit <CODE>9de65fcb</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/13295">#13295</A>)
+<LI>eSpeak NG er blevet opdateret til 1.52-dev commit <CODE>735ecdb8</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14060">#14060</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14079">#14079</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14118">#14118</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14203">#14203</A>)
   <UL>
-  <LI>Tilføjede sprog:
+  <LI>Rettede oplæsning af latinske tegn, når man brugte Mandarin. (<A HREF="https://github.com/nvaccess/nvda/issues/12952">#12952</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13572">#13572</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14197">#14197</A>)
+  </UL>
+<LI>Opdaterede LibLouis-punktoversættelse til <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.23.0">3.23.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/14112">#14112</A>)
+  <UL>
+  <LI>Tilføjede følgende punkttabeller:
     <UL>
-    <LI>Hviderussisk
-    <LI>Luxembourgsk
-    <LI>Totontepec Mixe
+    <LI>Kinesisk almindelig braille (forenklede kinesiske tegn)
+    <LI>Kinyarwanda litterær punktskrift
+    <LI>Luganda litterær punktskrift
+    <LI>Svensk uforkortet puntkskrift
+    <LI>Svensk delvist forkortet punktskrift
+    <LI>Svensk forkortet punktskrift
+    <LI>Kinesisk (Kina, Mandarin) nuværende punktskriftssystem (ingen toner) (<A HREF="https://github.com/nvaccess/nvda/issues/14138">#14138</A>)
     </UL>
   </UL>
-<LI>Når du bruger NVDA med Microsoft Excel og UIA aktiveret, kan NVDA nu oplyse, hvis den valgte celle er flettet. (<A HREF="https://github.com/nvaccess/nvda/issues/12843">#12843</A>)
-<LI>I stedet for altid at oplyse "har detaljer", når dette er tilfældet, vil NVDA forsøge at oplyse den korrekte form for detalje, eksempelvis "har kommentar". (<A HREF="https://github.com/nvaccess/nvda/issues/13649">#13649</A>)
-<LI>NVDAs størrelse efter installation vises nu i Windows Programmer og Funktioner. (<A HREF="https://github.com/nvaccess/nvda/issues/13909">#13909</A>)
+<LI>NVDA inkluderer nu operativsystemets processorarkitektur som en del af sporing af brugerstatistik. (<A HREF="https://github.com/nvaccess/nvda/issues/14019">#14019</A>)
 </UL>
 
 <P></P>
 <H3>Fejlrettelser</H3>
 <UL>
-<LI>Adobe Reader 64 bit vil ikke længere gå ned, når du læser et PDF-dokument. (<A HREF="https://github.com/nvaccess/nvda/issues/12920">#12920</A>)
+<LI>Når du opdaterer NVDA via Windows Pakkemanager fra kommandolinjen (winget), vil en udgivet version af NVDA ikke længere forekomme som en nyere version af NVDA. Dette var før tilfældet, selv hvis du installerede en nyere alpha-version. (<A HREF="https://github.com/nvaccess/nvda/issues/12469">#12469</A>)
+<LI>NVDA vil nu korrekt oplyse gruppebokse i Java-programmer. (<A HREF="https://github.com/nvaccess/nvda/issues/13962">#13962</A>)
+<LI>Markøren følger nu korrekt talen med funktionen "Sig alt" aktiv i programmer som  Bookworm, WordPad, eller logviseren i NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13420">#13420</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9179">#9179</A>)
+<LI>Delvist markerede check bokse vil nu oplyses korrekt i programmer, hvor UI Automation er aktiveret. (<A HREF="https://github.com/nvaccess/nvda/issues/13975">#13975</A>)
+<LI>Forbedrede ydeevne og stabilitet i Microsoft Visual Studio, Windows Terminal, og andre programmer baseret på UI Automation. (<A HREF="https://github.com/nvaccess/nvda/issues/11077">#11077</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11209">#11209</A>)
   <UL>
-  <LI>Bemærk, at du skal sørge for, at Adobe Reader er opdateret.
+  <LI>Disse rettelser gælder Windows 11 Sun Valley 2 (version 22H2) og nyere.
+  <LI>Selektiv registrering af UIA-hændelser og egenskabsændringer er nu aktiveret som standard.
   </UL>
-<LI>Måleenheder for skrifttypens størrelse kan nu oversættes i NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13573">#13573</A>)
-<LI>Ignorer Java Access Bridge events, hvor ingen window handle kan findes for Java-applikationer.
-Dette vil forbedre ydeevnen for nogle Java-applikationer, herunder IntelliJ IDEA. (<A HREF="https://github.com/nvaccess/nvda/issues/13039">#13039</A>)
-<LI>NVDA er bedre i stand til at oplyse informationer om de valgte celler i Libre Calc. Dette vil ikke længere forårsage et nedbrud af Libre Office Calc, hvis mange celler er valgt. (<A HREF="https://github.com/nvaccess/nvda/issues/13232">#13232</A>)
-<LI>Når Microsoft Edge køres under en anden bruger, vil programmet ikke længere være utilgængeligt. (<A HREF="https://github.com/nvaccess/nvda/issues/13032">#13032</A>)
-<LI>Når "Forøg hastighed" er slået fra, vil eSpeaks talehastighed ikke længere skiftevis ændre sig til 99% og 100%. (<A HREF="https://github.com/nvaccess/nvda/issues/13876">#13876</A>)
-<LI>Rettet en fejl, hvor to dialoger til håndtering af kommandoer kunne åbnes samtidigt. (<A HREF="https://github.com/nvaccess/nvda/issues/13854">#13854</A>)
+<LI>Tekstrapportering, punktskriftsoutput og adgangskodeundertrykkelse fungerer nu som forventet i den indlejrede Windows Terminal-kontrol i Visual Studio 2022. (<A HREF="https://github.com/nvaccess/nvda/issues/14194">#14194</A>)
+<LI>NVDA benytter nu DPI, når du bruger flere skærme.
+Der er flere rettelser, når der bruges en DPI-indstilling højere end 100 % eller flere skærme.
+Problemer kan stadig eksistere med versioner af Windows ældre end Windows 10 1809.
+For at disse rettelser skal virke, skal applikationer, som NVDA interagerer med, også være DPI-bevidste.
+Bemærk, at der stadig er kendte problemer med Chrome og Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/13254">#13254</A>)
+  <UL>
+  <LI>Rammer til brug ved visuel fremhævning skulle nu være mere korrekt placerede i de fleste programmer. (<A HREF="https://github.com/nvaccess/nvda/issues/13370">#13370</A>, <A HREF="https://github.com/nvaccess/nvda/issues/3875">#3875</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12070">#12070</A>)
+  <LI>Brugen af en touchskærm bør være mere præcis og pålidelig i de fleste programmer. (<A HREF="https://github.com/nvaccess/nvda/issues/7083">#7083</A>)
+  <LI>Sporing af musen bør nu virke i de fleste programmer. (<A HREF="https://github.com/nvaccess/nvda/issues/6722">#6722</A>)
+  </UL>
+<LI>Ændring af orienteringen (stående/liggende) vil nu blive ignoreret, hvis der er tale om ændringer i forhold til tilkoblede skærme. (<A HREF="https://github.com/nvaccess/nvda/issues/14035">#14035</A>)
+<LI>NVDA vil oplyse, når du trækker elementer rundt på skærmen som omarrangering af Windows 10 Start-menufelter og virtuelle skriveborde i Windows 11. (<A HREF="https://github.com/nvaccess/nvda/issues/12271">#12271</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14081">#14081</A>)
+<LI>Indstillingen "Afspil en lyd, når fejl opstår" i NVDAs avancerede indstillinger gendannes nu korrekt, når knappen "Gendan standarder" aktiveres. (<A HREF="https://github.com/nvaccess/nvda/issues/14149">#14149</A>)
+<LI>NVDA kan nu vælge tekst i Java-programmer, når du bruger <CODE>NVDA+f10</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14163">#14163</A>)
+<LI>NVDA vil ikke længere sidde fast i menuen, når du piler op og ned i en samtaletråd i Microsoft Teams. (<A HREF="https://github.com/nvaccess/nvda/issues/14355">#14355</A>)
 </UL>
 
 <P></P>
