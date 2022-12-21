@@ -105,6 +105,7 @@ Ten en conta que aínda hai fallos coñecidos con Chrome e Edge. (<A HREF="https
 <LI>O NVDA xa non se atascará nun menú ao subir e baixar coas frechas por un fío de conversacións en Microsoft Teams. (<A HREF="https://github.com/nvaccess/nvda/issues/14355">#14355</A>)-
 </UL>
 
+<P></P>
 <H3>Cambios para Desenvolvedores</H3>
 <P>
 Por favor consulta <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">a guía do desenvolvedor</A> para obter información sobre a obsolescencia da API do NVDA e o proceso de eliminación.
@@ -120,6 +121,34 @@ Por favor consulta <A HREF="https://www.nvaccess.org/files/nvda/documentation/de
 <LI><CODE>core.post_windowMessageReceipt</CODE> está obsoleto, usa <CODE>winAPI.messageWindow.pre_handleWindowMessage</CODE> a cambio.
 <LI><CODE>winKernel.SYSTEM_POWER_STATUS</CODE> está obsoleto e desaconséllase o seu uso, esto moveuse a <CODE>winAPI._powerTracking.SystemPowerStatus</CODE>.
 <LI>As constantes <CODE>winUser.SM_*</CODE> están obsoletas, usa <CODE>winAPI.winUser.constants.SystemMetrics</CODE> a cambio.
+</UL>
+
+<P></P>
+<H2>2022.3.3</H2>
+<P>
+Esta é unha versión menor para arranxar problemas con 2022.3.2, 2022.3.1 e 2022.3.
+</P>
+<H3>Arranxo de Erros</H3>
+<UL>
+<LI>Arranxado un erro no que se o NVDA conxélase cando se bloquea, o NVDA permitirá accesar aos usuarios do escritorio mentres se estea na pantalla de bloqueo de Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+<LI>Arranxado un erro no que se o NVDA conxélase cando se bloquea, o NVDA non se comportará correctamente, coma se o dispositivo seguira aínda bloqueado. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+<LI>Arranxados problemas de accesibilidade co proceso de Windows "olvidei o meu PIN" e coa experiencia de actualizar ou instalar Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/14368">#14368</A>)
+<LI>Arranxado un erro ao intentar instalar o NVDA nalgúns ambentes de Windows, por exemplo en Windows Server. (<A HREF="https://github.com/nvaccess/nvda/issues/14379">#14379</A>)
+</UL>
+
+<P></P>
+<H3>Cambios para Desenvolvedores</H3>
+<H4>Obsolescencias</H4>
+<UL>
+<LI><CODE>utils.security.isObjectAboveLockScreen(obj)</CODE> está obsoleto, a cambio usa <CODE>obj.isBelowLockScreen</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+<LI>As seguintes funcións en <CODE>winAPI.sessionTracking</CODE> están obsoletas para a súa eliminación en 2023.1. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+  <UL>
+  <LI><CODE>isWindowsLocked</CODE>
+  <LI><CODE>handleSessionChange</CODE>
+  <LI><CODE>unregister</CODE>
+  <LI><CODE>register</CODE>
+  <LI><CODE>isLockStateSuccessfullyTracked</CODE>
+  </UL>
 </UL>
 
 <P></P>
