@@ -124,6 +124,34 @@ Please refer to <A HREF="https://www.nvaccess.org/files/nvda/documentation/devel
 <LI><CODE>winUser.SM_*</CODE> constants are deprecated, use <CODE>winAPI.winUser.constants.SystemMetrics</CODE> instead.
 </UL>
 
+<H2>2022.3.3</H2>
+<P>
+Esta é uma versão menor para corrigir problemas com 2022.3.2, 2022.3.1 e 2022.3.
+</P>
+<H3>Correcção de erros</H3>
+<UL>
+<LI>Corrigido o bug em que se o NVDA congelar ao bloquear, o NVDA permitirá o acesso ao ambiente de trabalho dos utilizadores enquanto estiver no ecrã de bloqueio do Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+<LI>Corrigido o bug em que se o NVDA congela ao bloquear, o NVDA não se comportará correctamente, como se o dispositivo ainda estivesse bloqueado. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+<LI>Corrigidos problemas de acessibilidade com os processos Windows "esqueci-me do meu PIN" e actualização/experiência de instalação do Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/14368">#14368</A>)
+<LI>Corrigido um erro ao tentar instalar o NVDA em alguns ambientes Windows, por exemplo, Windows Server. (<A HREF="https://github.com/nvaccess/nvda/issues/14379">#14379</A>)
+</UL>
+
+<P></P>
+<H3>Alterações para Desenvolvedores</H3>
+<H4>Deprecations</H4>
+<UL>
+<LI><CODE>utils.security.isObjectAboveLockScreen(obj)</CODE> is deprecated, instead use <CODE>obj.isBelowLockScreen</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+<LI>The following functions in <CODE>winAPI.sessionTracking</CODE> are deprecated for removal in 2023.1. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+  <UL>
+  <LI><CODE>isWindowsLocked``</CODE>
+  <LI>"handleSessionChange
+  <LI><CODE>unregister</CODE>
+  <LI><CODE>register</CODE>
+  <LI>"isLockStateStateSuccessfullyTracked
+  </UL>
+</UL>
+
+<P></P>
 <H2>2022.3.2</H2>
 <P>
 Esta é uma versão lançada para corrigir regressões na versão 2022.3.1 e resolver uma questão de segurança.
