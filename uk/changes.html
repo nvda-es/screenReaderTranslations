@@ -59,7 +59,7 @@
   <UL>
   <LI>Виправлено промовляння латинських символів під час використання мандаринської мови. (<A HREF="https://github.com/nvaccess/nvda/issues/12952">#12952</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13572">#13572</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14197">#14197</A>)
   </UL>
-<LI>бібліотеку брайлівського введення/виведення Updated  оновлено до <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.23.0">3.23.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/14112">#14112</A>)
+<LI>бібліотеку брайлівського введення/виведення LibLouis оновлено до <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.23.0">3.23.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/14112">#14112</A>)
   <UL>
   <LI>Додано брайлівські таблиці:
     <UL>
@@ -121,6 +121,42 @@ Please refer to <A HREF="https://www.nvaccess.org/files/nvda/documentation/devel
 <LI><CODE>core.post_windowMessageReceipt</CODE> is deprecated, use <CODE>winAPI.messageWindow.pre_handleWindowMessage</CODE> instead.
 <LI><CODE>winKernel.SYSTEM_POWER_STATUS</CODE> is deprecated and usage is discouraged, this has been moved to <CODE>winAPI._powerTracking.SystemPowerStatus</CODE>.
 <LI><CODE>winUser.SM_*</CODE> constants are deprecated, use <CODE>winAPI.winUser.constants.SystemMetrics</CODE> instead.
+</UL>
+
+<P></P>
+<H2>2022.3.3</H2>
+<P>
+Це незначний реліз, який виправляє проблеми з 2022.3.2, 2022.3.1 і 2022.3.
+Це також вирішує проблему безпеки.
+</P>
+<H3>Виправлення безпеки</H3>
+<UL>
+<LI>Запобігає можливому доступу до системи (наприклад, до консолі NVDA Python) для неавторизованих користувачів.
+(<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-fpwc-2gxx-j9v7">GHSA-fpwc-2gxx-j9v7</A>)
+</UL>
+
+<P></P>
+<H3>Виправлення</H3>
+<UL>
+<LI>Виправлено помилку, через яку, якщо NVDA зависала під час блокування, NVDA дозволяла доступ до робочого столу користувача, перебуваючи на екрані блокування Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+<LI>Виправлено помилку, за якої, якщо NVDA зависала під час блокування, NVDA поводилася некоректно, так наче  пристрій все ще заблоковано. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+<LI>Виправлено проблему доступності процесу «забув свій PIN-код» у Windows, а також з процесом оновлення/встановлення Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/14368">#14368</A>)
+<LI>Виправлено помилку при спробі встановлення NVDA в деяких середовищах Windows, наприклад, Windows Server. (<A HREF="https://github.com/nvaccess/nvda/issues/14379">#14379</A>)
+</UL>
+
+<P></P>
+<H3>Зміни для розробників (англ)</H3>
+<H4>Deprecations</H4>
+<UL>
+<LI><CODE>utils.security.isObjectAboveLockScreen(obj)</CODE> is deprecated, instead use <CODE>obj.isBelowLockScreen</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+<LI>The following functions in <CODE>winAPI.sessionTracking</CODE> are deprecated for removal in 2023.1. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+  <UL>
+  <LI><CODE>isWindowsLocked</CODE>
+  <LI><CODE>handleSessionChange</CODE>
+  <LI><CODE>unregister</CODE>
+  <LI><CODE>register</CODE>
+  <LI><CODE>isLockStateSuccessfullyTracked</CODE>
+  </UL>
 </UL>
 
 <P></P>
