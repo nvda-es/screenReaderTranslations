@@ -121,10 +121,50 @@ Please refer to <A HREF="https://www.nvaccess.org/files/nvda/documentation/devel
 <LI><CODE>core.post_windowMessageReceipt</CODE> is deprecated, use <CODE>winAPI.messageWindow.pre_handleWindowMessage</CODE> instead.
 <LI><CODE>winKernel.SYSTEM_POWER_STATUS</CODE> is deprecated and usage is discouraged, this has been moved to <CODE>winAPI._powerTracking.SystemPowerStatus</CODE>.
 <LI><CODE>winUser.SM_*</CODE> constants are deprecated, use <CODE>winAPI.winUser.constants.SystemMetrics</CODE> instead.
-= 2022.3.2 =
-Questa è una versione minore per correggere un problema con la 2022.3.1 e risolvere un problema di sicurezza.
+</UL>
+
+<H2>2022.3.3</H2>
+<P>
+Si tratta di una versione minore che risolve alcuni problemi inerenti le versioni 2022.3.2, 2022.3.1 e 2022.3.
+Viene anche sistemato un problema di sicurezza.
+</P>
+<H3>Correzioni di sicurezza</H3>
+<UL>
+<LI>Impedisce ad utenti non autorizzati possibili accessi al sistema (ad esempio la Console Python di NVDA.
+(<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-fpwc-2gxx-j9v7">GHSA-fpwc-2gxx-j9v7</A>)
+</UL>
+
 <P></P>
-== Correzioni di sicurezza ==
+<H3>Bug Corretti</H3>
+<UL>
+<LI>Risolto un bug per cui se NVDA si bloccava quando contestualmente si accedeva alla schermata di lock screen, lo screen reader permetteva l'accesso al desktop dell'utente nonostante ci si trovasse nella schermata di blocco. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+<LI>Risolto un bug per cui se NVDA si bloccava quando contestualmente si accedeva alla lock screen, lo screen reader non reagiva correttamente, nonpermettendo una gestione ideale della schermata di blocco. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+<LI>Risolti i problemi di accessibilità con il processo "Ho dimenticato il PIN" di Windows e l'esperienza di aggiornamento/installazione del sistema operativo. (<A HREF="https://github.com/nvaccess/nvda/issues/14368">#14368</A>)
+<LI>Risolto un bug che si manifestava nel tentare di installare NVDA in alcuni ambienti Windows particolari, ad esempio Windows Server. (<A HREF="https://github.com/nvaccess/nvda/issues/14379">#14379</A>)
+</UL>
+
+<P></P>
+<H3>Cambiamenti per gli sviluppatori</H3>
+<H4>Deprecations</H4>
+<UL>
+<LI><CODE>utils.security.isObjectAboveLockScreen(obj)</CODE> is deprecated, instead use <CODE>obj.isBelowLockScreen</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+<LI>The following functions in <CODE>winAPI.sessionTracking</CODE> are deprecated for removal in 2023.1. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>)
+  <UL>
+  <LI><CODE>isWindowsLocked</CODE>
+  <LI><CODE>handleSessionChange</CODE>
+  <LI><CODE>unregister</CODE>
+  <LI><CODE>register</CODE>
+  <LI><CODE>isLockStateSuccessfullyTracked</CODE>
+  </UL>
+</UL>
+
+<P></P>
+<H2>2022.3.2</H2>
+<P>
+Questa è una versione minore per correggere un problema con la 2022.3.1 e risolvere un problema di sicurezza.
+</P>
+<H3>Correzioni di sicurezza</H3>
+<UL>
 <LI>Impedisce il possibile accesso a livello di sistema per gli utenti non autenticati.
 (<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-3jj9-295f-h69w">GHSA-3jj9-295f-h69w</A>)
 </UL>
