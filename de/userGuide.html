@@ -172,8 +172,9 @@
       <LI><A HREF="#InputCompositionSettings">12.1.13. Eingabemethoden</A>
       <LI><A HREF="#BrowseModeSettings">12.1.14. Lesemodus (NVDA+Strg+B)</A>
       <LI><A HREF="#DocumentFormattingSettings">12.1.15. Dokument-Formatierungen (NVDA+Strg+D)</A>
-      <LI><A HREF="#Win10OcrSettings">12.1.16. Einstellungen der Windows-Texterkennung</A>
-      <LI><A HREF="#AdvancedSettings">12.1.17. Erweiterte Einstellungen</A>
+      <LI><A HREF="#DocumentNavigation">12.1.16. Dokument-Navigation</A>
+      <LI><A HREF="#Win10OcrSettings">12.1.17. Einstellungen der Windows-Texterkennung</A>
+      <LI><A HREF="#AdvancedSettings">12.1.18. Erweiterte Einstellungen</A>
       </UL>
     <LI><A HREF="#MiscSettings">12.2. Verschiedene Optionen</A>
       <UL>
@@ -228,9 +229,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. Humanware Brailliant BI/B-Serie / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc156">15.9.1. Tasten für alle Braillezeilenmodelle</A>
-      <LI><A HREF="#toc157">15.9.2. Tastenzuweisungen für Brailliant BI 32, BI 40 und B 80</A>
-      <LI><A HREF="#toc158">15.9.3. Tastenzuweisungen für Brailliant BI 14</A>
+      <LI><A HREF="#toc157">15.9.1. Tasten für alle Braillezeilenmodelle</A>
+      <LI><A HREF="#toc158">15.9.2. Tastenzuweisungen für Brailliant BI 32, BI 40 und B 80</A>
+      <LI><A HREF="#toc159">15.9.3. Tastenzuweisungen für Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/SyncBraille-Serien</A>
     <LI><A HREF="#Seika">15.11. Seika-Braillezeilen</A>
@@ -305,6 +306,7 @@ Zu den wichtigsten Funktionen gehören:
   <UL>
   <LI>Für NVDA unter Windows 7 wird Service Pack 1 oder höher benötigt.
   <LI>Für NVDA unter Windows Server 2008 R2 wird Service Pack 1 oder höher benötigt.
+  <LI>Es werden sowohl AMD64- als auch ARM64-Varianten von Windows unterstützt.
   </UL>
 <LI>Mindestens 150 MB Speicherplatz.
 </UL>
@@ -4089,16 +4091,49 @@ Mit dieser Option legen Sie fest, wie Zeileneinrückungen durch NVDA wiedergegeb
 Das Kombinationsfeld enthält vier Einträge:
 </P>
 <UL>
-<LI>Aus: NVDA wird Zeileneinrückungen in keiner Weise gesondert ausgeben
+<LI>Ausgeschaltet: NVDA wird Zeileneinrückungen in keiner Weise gesondert ausgeben
 <LI>Sprache: Diese Einstellung bringt NVDA dazu die Anzahl von Zeichen anzusagen, mit denen eine Zeile eingerückt wurde (z. B. 12 Leerzeichen oder 4 Tabulatoren)
 <LI>Signaltöne: Diese Einstellung bringt NVDA dazu, die Einrückung mit Hilfe von Signaltönen anzugeben. Wenn sich die Einrückung ändert, wird der Signalton höher, je stärker eine Zeile eingerückt ist.
 Die Einrückung um einen Tabulator entspricht hierbei der Einrückung um vier Leerzeichen.
-<LI>Beides: Dies ist eine Kombination der beiden obigen Optionen.
+<LI>Sowohl Sprache und Signaltöne: Dies ist eine Kombination der beiden obigen Optionen.
 </UL>
 
 <P></P>
+<A NAME="DocumentNavigation"></A>
+<H4>12.1.16. Dokument-Navigation</H4>
+<P>
+In dieser Kategorie können Sie verschiedene Aspekte der Dokument-Navigation anpassen.
+</P>
+<A NAME="ParagraphStyle"></A>
+<H5>Absatz-Eigenschaften</H5>
+<DL>
+<DT>Standard</DT><DD>
+  Wird von der Anwendung behandelt
+<DT>Optionen</DT><DD>
+  Standard (Wird von der Anwendung behandelt), Wird von der Anwendung behandelt, Einfacher Zeilenumbruch, Mehrfacher Zeilenumbruch
+</DL>
+
+<P></P>
+<P>
+Dieses Kombinationsfeld ermöglicht die Absatz-Eigenschaft auszuwählen, der bei der Navigation durch Absätze mit <CODE>STRG+Pfeiltaste nach oben</CODE> und <CODE>STRG+Pfeiltaste nach unten</CODE> verwendet werden soll.
+Die verfügbaren Absatzformate sind:
+</P>
+<UL>
+<LI>Wird von der Anwendung behandelt: NVDA überlässt es der Anwendung, den vorherigen oder nächsten Absatz zu bestimmen, und NVDA liest den neuen Absatz beim Navigieren.
+Dies funktioniert am besten, wenn die Anwendung die Absatznavigation von Haus aus unterstützt, und ist die Standardeinstellung.
+<LI>Einfacher Zeilenumbruch: NVDA versucht, den vorherigen oder nächsten Absatz anhand eines einzelnen Zeilenumbruchs als Absatz-Indikator zu bestimmen.
+Dies funktioniert am besten, wenn Dokumente in einer Anwendung gelesen werden, die nicht von Haus aus die Absatznavigation unterstützt, und Absätze im Dokument durch einmaliges Drücken der <CODE>Eingabetaste</CODE> markiert werden.
+<LI>Mehrfache Zeilenumbrüche: NVDA versucht, den vorherigen oder nächsten Absatz anhand von mindestens einer Leerzeile (zweimaliges Drücken der <CODE>Eingabetaste</CODE>) als Absatz-Indikator zu bestimmen.
+Dies funktioniert am besten bei Dokumente, die Blockabsätze verwenden.
+Beachten Sie, dass dieses Absatzformat nicht in Microsoft Word oder Microsoft Outlook verwendet werden kann, es sei denn, Sie verwenden UIA für den Zugriff bei Steuerelementen in Microsoft Word.
+</UL>
+
+<P></P>
+<P>
+Sie können von überall aus zwischen den verfügbaren Absatz-Eigenschaften umschalten, indem Sie eine Taste im Dialogfeld für die <A HREF="#InputGestures">Tastenbefehle</A> zuweisen.
+</P>
 <A NAME="Win10OcrSettings"></A>
-<H4>12.1.16. Einstellungen der Windows-Texterkennung</H4>
+<H4>12.1.17. Einstellungen der Windows-Texterkennung</H4>
 <P>
 Mit den Einstellungen in dieser Kategorie können Sie die <A HREF="#Win10Ocr">Windows-Texterkennung</A> konfigurieren.
 Die Optionen in dieser Kategorie ermöglichen die Konfiguration der <A HREF="#Win10Ocr">Optischen Zeichenerkennung für Windows 10 und neuer</A>.
@@ -4110,7 +4145,7 @@ Folgende Optionen sind enthalten:
 In diesem Kombinationsfeld können Sie die Sprache festlegen, die für die Zeichenerkennung verwendet werden soll.
 </P>
 <A NAME="AdvancedSettings"></A>
-<H4>12.1.17. Erweiterte Einstellungen</H4>
+<H4>12.1.18. Erweiterte Einstellungen</H4>
 <P>
 Achtung! Die Einstellungen in dieser Kategorie sind für fortgeschrittene Benutzer und können dazu führen, dass NVDA bei falscher Konfiguration nicht richtig funktioniert.
 Nehmen Sie Änderungen an diesen Einstellungen nur dann vor, wenn Sie sicher sind, dass Sie wissen, was Sie tun oder wenn Sie von einem NVDA-Entwickler ausdrücklich dazu angewiesen wurden.
@@ -4282,6 +4317,32 @@ Bei einigen Anwendungen kann das Lesen von neuem Text jedoch abgehackt oder inko
 Es ist identisch mit dem Verhalten von NVDA in den Versionen 2020.4 und älter.
 Diese Einstellung kann das Lesen von eingehendem Text in einigen Anwendungen stabilisieren.
 In Terminals wird jedoch beim Einfügen oder Löschen eines Zeichens in der Mitte einer Zeile der Text nach dem System-cursor vorgelesen.
+</UL>
+
+<P></P>
+<A NAME="WtStrategy"></A>
+<H5>Neuen Text in Windows-Terminal mitteilen via</H5>
+<DL>
+<DT>Standard</DT><DD>
+  Abweichend
+<DT>Optionen</DT><DD>
+  Abweichend, UIA-Benachrichtigungen
+</DL>
+
+<P></P>
+<P>
+Mit dieser Option wird festgelegt, wie NVDA bestimmt, welcher Text "neu" ist (und somit, was mitgeteilt werden soll, wenn "Änderungen dynamischer Inhalte mitteilen" aktiviert ist) in Windows-Terminal und dem WPF-Windows-Terminal-Steuerelement, das in Visual Studio 2022 verwendet wird.
+Die Windows-Konsole (<CODE>conhost.exe</CODE>) ist davon nicht betroffen.
+Dieses Kombinationsfeld hat drei Optionen:
+</P>
+<UL>
+<LI>Standard: Diese Option ist derzeit gleichwertig mit "diffing", wird sich aber voraussichtlich ändern, sobald die Unterstützung für UIA-Benachrichtigungen weiter entwickelt wurde.
+<LI>Abweichend: Bei dieser Option wird der ausgewählte Diff-Algorithmus verwendet, um die Änderungen jedes Mal zu berechnen, wenn das Terminal neuen Text rendert.
+Dies ist identisch mit dem Verhalten von NVDA in den Versionen 2022.4 und älter.
+<LI>UIA-Benachrichtigungen: Mit dieser Option wird die Entscheidung, welcher Text mitgeteilt werden soll, an das Windows-Terminal übertragen, d. h., NVDA muss nicht mehr feststellen, welcher Text auf dem Bildschirm "neu" ist.
+Dies sollte die Leistung und Stabilität im Windows-Terminal deutlich verbessern, aber diese Funktion ist noch nicht vollständig.
+Insbesondere werden Zeichen während der Eingabe, die nicht auf dem Bildschirm angezeigt werden, wie z. B. Kennwörter, mitgeteilt, wenn diese Option ausgewählt ist.
+Außerdem kann es vorkommen, dass zusammenhängende Abschnitte mit mehr als 1.000 Zeichen nicht korrekt mitgeteilt werden.
 </UL>
 
 <P></P>
@@ -5687,7 +5748,7 @@ Die folgenden zusätzlichen Geräte werden ebenfalls unterstützt (und erfordern
 Folgende Tastenkombinationen sind bei diesen Braillezeilen verfügbar
 Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechenden Tasten zu finden sind.
 </P>
-<A NAME="toc156"></A>
+<A NAME="toc157"></A>
 <H4>15.9.1. Tasten für alle Braillezeilenmodelle</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5776,7 +5837,7 @@ Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechen
 </TR>
 </TABLE>
 
-<A NAME="toc157"></A>
+<A NAME="toc158"></A>
 <H4>15.9.2. Tastenzuweisungen für Brailliant BI 32, BI 40 und B 80</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5797,7 +5858,7 @@ Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechen
 </TR>
 </TABLE>
 
-<A NAME="toc158"></A>
+<A NAME="toc159"></A>
 <H4>15.9.3. Tastenzuweisungen für Brailliant BI 14</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -7781,7 +7842,7 @@ Folgende Kommandozeilenoptionen stehen zur Verfügung:
 <TR>
 <TD>-l &lt;Protokollierungsstufe&gt;</TD>
 <TD>--log-level=&lt;Protokollierungsstufe&gt;</TD>
-<TD>Die niedrigste Stufe der protokollierten Meldungen (10 = Debug, 12 = Ein-/Ausgaben, 15 = Debug-Warnmeldungen, 20 = Informationen, 30 = Warnungen, 40 = Fehlermeldungen, 50 = Kritische Meldungen, 100 = Deaktiviert), Standard ist Warnungen.</TD>
+<TD>Die niedrigste Stufe der protokollierten Meldung (Debug 10, Eingabe/Ausgabe 12, Debug-Warnungen 15, Info 20, Ausgeschaltet 100).</TD>
 </TR>
 <TR>
 <TD>-c &lt;Konfigurationspfad&gt;</TD>
