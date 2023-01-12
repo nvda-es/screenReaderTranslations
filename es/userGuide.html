@@ -4,9 +4,9 @@
 <META NAME="generator" CONTENT="http://txt2tags.sf.net">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <LINK REL="stylesheet" TYPE="text/css" HREF="../styles.css">
-<TITLE>Guía del Usuario de NVDA 2022.4-dev</TITLE>
+<TITLE>Guía del Usuario de NVDA 2023.1-dev</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
-<P ALIGN="center"><CENTER><H1>Guía del Usuario de NVDA 2022.4-dev</H1>
+<P ALIGN="center"><CENTER><H1>Guía del Usuario de NVDA 2023.1-dev</H1>
 <FONT SIZE="4">
 </FONT></CENTER>
 
@@ -176,8 +176,9 @@
       <LI><A HREF="#InputCompositionSettings">13.1.13. Composición de Entrada</A>
       <LI><A HREF="#BrowseModeSettings">13.1.14. Modo Exploración (NVDA+control+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">13.1.15. Formateado de Documento (NVDA+control+d)</A>
-      <LI><A HREF="#Win10OcrSettings">13.1.16. Opciones del OCR de Windows</A>
-      <LI><A HREF="#AdvancedSettings">13.1.17. Opciones Avanzadas</A>
+      <LI><A HREF="#DocumentNavigation">13.1.16. Navegación de Documento</A>
+      <LI><A HREF="#Win10OcrSettings">13.1.17. Opciones del OCR de Windows</A>
+      <LI><A HREF="#AdvancedSettings">13.1.18. Opciones Avanzadas</A>
       </UL>
     <LI><A HREF="#MiscSettings">13.2. Miscelánea de Opciones</A>
       <UL>
@@ -232,9 +233,9 @@
     <LI><A HREF="#HedoMobilLine">16.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">16.9. Series de la HumanWare Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc158">16.9.1. Asignaciones de teclas para todos los modelos</A>
-      <LI><A HREF="#toc159">16.9.2. Asignaciones de teclas para Brailliant BI 32, BI 40 y B 80</A>
-      <LI><A HREF="#toc160">16.9.3. Asignaciones de teclas para Brailliant BI 14</A>
+      <LI><A HREF="#toc159">16.9.1. Asignaciones de teclas para todos los modelos</A>
+      <LI><A HREF="#toc160">16.9.2. Asignaciones de teclas para Brailliant BI 32, BI 40 y B 80</A>
+      <LI><A HREF="#toc161">16.9.3. Asignaciones de teclas para Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">16.10. Series de las HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
     <LI><A HREF="#Seika">16.11. Pantallas Braille Seika</A>
@@ -309,6 +310,7 @@ Lo más reseñable incluye:
  <UL>
  <LI>Para Windows 7, NVDA requiere del Service Pack 1 o superior.
  <LI>Para Windows Server 2008 R2, NVDA requiere del Service Pack 1 o superior.
+ <LI>Las variantes AMD64 y ARM64 de Windows están soportadas.
  </UL>
 <LI>Al menos 150 MB de espacio de almacenamiento.
 </UL>
@@ -4117,8 +4119,41 @@ El tono se incrementará en intensidad para cada espacio, y para el tabulador,se
 </UL>
 
 <P></P>
+<A NAME="DocumentNavigation"></A>
+<H4>13.1.16. Navegación de Documento</H4>
+<P>
+Esta categoría te permite ajustar varios aspectos de la navegación de documento.
+</P>
+<A NAME="ParagraphStyle"></A>
+<H5>Estilo de Párrafo</H5>
+<DL>
+<DT>Predeterminado</DT><DD>
+  Manejado por la aplicación
+<DT>Opciones</DT><DD>
+  Predeterminado (manejado por la aplicación), Manejado por la aplicación, salto de una única línea, salto multilínea
+</DL>
+
+<P></P>
+<P>
+Este cuadro combinado te permite seleccionar el estilo de párrafo a utilizar cuando se navegue por párrafos con <CODE>control+flecha arriba</CODE> y <CODE>control+flecha abajo</CODE>.
+Los estilos de párrafo disponibles son:
+</P>
+<UL>
+<LI>Manejado por la aplicación: NVDA permitirá a la aplicación determinar el párrafo anterior o posterior, y NVDA leerá el párrafo nuevo al navegar.
+Este estilo funciona mejor cuando la aplicación admite la navegación por párrafos nativamente, y es el predeterminado.
+<LI>Salto de una única línea: NVDA intentará determinar el párrafo anterior y posterior utilizando el salto de una única línea como indicador de párrafo.
+Este estilo funciona mejor cuando se lean documentos en una aplicación que no admita la navegación de párrafos nativamente, y los párrafos se marcan en el documento con una única pulsación de la tecla <CODE>intro</CODE>.
+<LI>Salto multilínea: NVDA intentará determinar el párrafo anterior y posterior utilizando al menos una línea en blanco (dos pulsaciones de la tecla <CODE>intro</CODE>) como indicador de párrafo.
+Este estilo funciona mejor cuando se trabaje con documentos que utilicen bloques de párrafos.
+Ten en cuenta que este estilo de párrafo no puede utilizarse en Microsoft Word o Microsoft Outlook, a menos que estés utilizando UIA para acceder a controles de Microsoft Word.
+</UL>
+
+<P></P>
+<P>
+Puedes cambiar entre los estilos de párrafo disponibles desde cualquier lugar asignando una tecla en el <A HREF="#InputGestures">diálogo Gestos de Entrada</A>.
+</P>
 <A NAME="Win10OcrSettings"></A>
-<H4>13.1.16. Opciones del OCR de Windows</H4>
+<H4>13.1.17. Opciones del OCR de Windows</H4>
 <P>
 Las opciones en esta categoría te permiten configurar <A HREF="#Win10Ocr">el OCR de Windows</A>.
 Esta categoría contiene las siguientes opciones:
@@ -4129,7 +4164,7 @@ Esta categoría contiene las siguientes opciones:
 Este cuadro combinado te permite elegir el idioma para utilizar con el reconocimiento de texto.
 </P>
 <A NAME="AdvancedSettings"></A>
-<H4>13.1.17. Opciones Avanzadas</H4>
+<H4>13.1.18. Opciones Avanzadas</H4>
 <P>
 ¡Advertencia! Las opciones en esta categoría son para usuarios avanzados y pueden causar que NVDA no funcione correctamente si se configura de forma incorrecta.
 Realiza cambios en estas opciones únicamente si estás seguro de que sabes lo que estás haciendo o si has recibido las instrucciones específicas de un desarrollador de NVDA.
@@ -4312,6 +4347,32 @@ Sin embargo, en algunas aplicaciones, la lectura de texto nuevo puede ser entrec
 Es idéntico al comportamiento de NVDA en la versión 2020.4 y anteriores.
 Esta opción puede estabilizar la lectura del texto entrante en algunas aplicaciones.
 Sin embargo, en las terminales, al insertar o eliminar un carácter en el medio de una línea, se leerá el texto después del cursor.
+</UL>
+
+<P></P>
+<A NAME="WtStrategy"></A>
+<H5>Verbalizar texto nuevo en la Terminal de Windows</H5>
+<DL>
+<DT>Predeterminado</DT><DD>
+  Difusión
+<DT>Opciones</DT><DD>
+  Difusión, notificaciones UIA
+</DL>
+
+<P></P>
+<P>
+Esta opción selecciona cómo determina NVDA qué texto es "nuevo" (y qué verbalizar cuando "anunciar cambios de contenido dinámico" esté habilitado) en la Terminal de Windows y en el control WPF de la Terminal de Windows utilizado en Visual Studio 2022.
+No afecta a la Consola de Windows (<CODE>conhost.exe</CODE>).
+El cuadro combinado verbalizar texto nuevo en la Terminal de Windows tiene tres opciones:
+</P>
+<UL>
+<LI>Predeterminado: esta opción actualmente equivale a "difusión", pero se prevé que cambie una vez que se desarrolle más la compatibilidad con las notificaciones UIA.
+<LI>Difusión: esta opción utiliza el algoritmo diff seleccionado para calcular los cambios cada vez que la terminal muestre el nuevo texto.
+Esto es idéntico al comportamiento de NVDA en las versiones 2022.4 y anteriores.
+<LI>Notificaciones UIA: esta opción desvía la responsabilidad de determinar qué texto verbalizar a la propia Terminal de Windows, lo que significa que NVDA ya no tiene que determinar qué texto es actualmente "nuevo" en pantalla.
+Esto debería mejorar notablemente el rendimiento y la estabilidad de la Terminal de Windows, pero esta función aún no está completa.
+En particular, los caracteres escritos que no se muestren en pantalla, como las contraseñas, se anuncian cuando esta opción esté seleccionada.
+Además, es posible que los tramos contiguos de salida de más de 1000 caracteres  no se anuncien con exactitud.
 </UL>
 
 <P></P>
@@ -5719,7 +5780,7 @@ También se admiten los siguientes dispositivos extra (y no requieren ningún co
 Seguidamente van las asignaciones de teclas para las pantallas Brailliant BI/B y BrailleNote touch con NVDA.
 Por favor conhsulta la documentación de la pantalla para descripciones de dónde pueden encontrarse estas teclas.
 </P>
-<A NAME="toc158"></A>
+<A NAME="toc159"></A>
 <H4>16.9.1. Asignaciones de teclas para todos los modelos</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5808,7 +5869,7 @@ Por favor conhsulta la documentación de la pantalla para descripciones de dónd
 </TR>
 </TABLE>
 
-<A NAME="toc159"></A>
+<A NAME="toc160"></A>
 <H4>16.9.2. Asignaciones de teclas para Brailliant BI 32, BI 40 y B 80</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5829,7 +5890,7 @@ Por favor conhsulta la documentación de la pantalla para descripciones de dónd
 </TR>
 </TABLE>
 
-<A NAME="toc160"></A>
+<A NAME="toc161"></A>
 <H4>16.9.3. Asignaciones de teclas para Brailliant BI 14</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -7809,7 +7870,7 @@ Seguidamente van las opciones de línea de órdenes para NVDA:
 <TR>
 <TD>-l LOGLEVEL</TD>
 <TD>--log-level=LOGLEVEL</TD>
-<TD>El nivel más bajo de mensaje registrado (debug 10, input/output 12, debug warning 15, info 20, warning 30, error 40, critical 50, disabled 100), default is warning</TD>
+<TD>El nivel más bajo de mensaje registrado (debug 10, input/output 12, debug warning 15, info 20, disabled 100)</TD>
 </TR>
 <TR>
 <TD>-c CONFIGPATH</TD>
