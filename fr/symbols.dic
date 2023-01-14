@@ -25,6 +25,8 @@ dates /	\b(\d\d)\/(\d\d)\/(\d{2}|\d{4})\b
 negative number	(?<!\w)[-−]{1}(?=[$£€¥.]?\d)
 after-number %	(?<=\d)(\s?\%)(?=\W|$)
 n°	\b([nN])(°)
+roman-numbers	\b([CDILMVX]+)(\s?)([CDILMVX])(e)\b
+
 
 symbols:
 # identifier	replacement[[	level][	preserve]][	# display name]
@@ -48,6 +50,7 @@ dates /	\1 barre oblique \2 barre oblique \3	all	norep	# barre oblique de date
 negative number	moins	none	norep	# - devant un nombre
 after-number %	pour cent	none	norep	# % après un nombre
 n°	\1 \2 	most	norep	# numéro
+roman-numbers	\1\3ème	none	norep	# Chiffres romains
 
 # Whitespace
 \0	nul
