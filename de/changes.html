@@ -31,11 +31,18 @@ Dies kann mit Text-Editoren verwendet werden, die die Absatz-Navigation nicht na
 <LI>Das Vorhandensein von mehreren Anmerkungen wird nun mitgeteilt.
 Die Tastenkombination <CODE>NVDA+D</CODE> durchläuft nun die Zusammenfassung jedes Anmerkungsziels für Ursprünge mit mehreren Anmerkungszielen.
 Zum Beispiel, wenn der Text mit einem Kommentar und einer Fußnote versehen ist. (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14480">#14480</A>)
+<LI>Unterstützung für Braillezeilen Tivomatic Caiku Albatross 46/80 hinzugefügt. (<A HREF="https://github.com/nvaccess/nvda/issues/13045">#13045</A>)
 </UL>
 
 <P></P>
 <H3>Änderungen</H3>
 <UL>
+<LI>Der LibLouis-Braille-Übersetzer wurde auf <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.24.0">3.24.0</A> aktualisiert. (<A HREF="https://github.com/nvaccess/nvda/issues/14436">#14436</A>)
+  <UL>
+  <LI>Wichtige Aktualisierungen der ungarischen, UEB- und chinesischen Bopomofo-Schrift.
+  <LI>Unterstützung der dänischen Braille-Schriftnorm 2022.
+  <LI>Neue Braille-Tabellen für die georgische Braille-Schrift, Suaheli (Kenia) und Chichewa (Malawi).
+  </UL>
 <LI>Aktualisierte Sonic-Rate-Boost-Bibliothek auf Commit <CODE>1d70513</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14180">#14180</A>)
 <LI>CLDR wurde auf Version 42.0 aktualisiert. (<A HREF="https://github.com/nvaccess/nvda/issues/14273">#14273</A>)
 <LI>Die Sprachausgabe eSpeak NG wurde auf 1.52-dev Commit <CODE>a51235aa</CODE> aktualisiert. (<A HREF="https://github.com/nvaccess/nvda/issues/14281">#14281</A>)
@@ -53,6 +60,7 @@ Zum Beispiel, wenn der Text mit einem Kommentar und einer Fußnote versehen ist.
   <LI>NVDA zeigt beim Öffnen des Startmenüs die Highlights der Suche an. (<A HREF="https://github.com/nvaccess/nvda/issues/13841">#13841</A>)
   <LI>Auf ARM werden x64-Anwendungen nicht mehr als ARM64-Anwendungen erkannt. (<A HREF="https://github.com/nvaccess/nvda/issues/14403">#14403</A>)
   <LI>Auf Menüpunkte der Zwischenablage wie z. B. "Element anheften" kann zugegriffen werden. (<A HREF="https://github.com/nvaccess/nvda/issues/14508">#14508</A>)
+  <LI>In Windows 11 Version 22H2 und neuer ist es wieder möglich, Maus- und Touch-Interaktion zu nutzen, um mit Bereichen wie dem Überlauf-Fenster der Taskleiste und dem Dialogfeld "Öffnen mit" zu interagieren. (<A HREF="https://github.com/nvaccess/nvda/issues/14538">#14538</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14539">#14539</A>)
   </UL>
 <LI>Vorschläge werden beim Eingeben einer @Erwähnung in Microsoft Excel-Kommentaren gemeldet. (<A HREF="https://github.com/nvaccess/nvda/issues/13764">#13764</A>)
 <LI>In der Standortleiste von Google Chrome werden die Steuerelemente für Vorschläge (zu einer Registerkarte wechseln, Vorschlag entfernen, etc.) nun mitgeteilt, wenn sie ausgewählt werden. (<A HREF="https://github.com/nvaccess/nvda/issues/13522">#13522</A>)
@@ -78,6 +86,10 @@ Zum Beispiel, wenn der Text mit einem Kommentar und einer Fußnote versehen ist.
   </UL>
 <LI>Emojis sollten nun in mehreren Sprachen mitgeteilt werden. (<A HREF="https://github.com/nvaccess/nvda/issues/14433">#14433</A>)
 <LI>Das Vorhandensein einer Anmerkung fehlt auf der braillezeile bei einigen Elementen nicht mehr. (<A HREF="https://github.com/nvaccess/nvda/issues/13815">#13815</A>)
+<LI>Ein Problem wurde behoben, bei dem Änderung in der Konfiguration nicht korrekt gespeichert wurden, wenn zwischen einer "Standard"-Option und dem Wert der "Standard"-Option gewechselt wurde. (<A HREF="https://github.com/nvaccess/nvda/issues/14133">#14133</A>)
+<LI>Bei der Konfiguration von NVDA wird immer mindestens eine Taste als NVDA-Taste definiert. (<A HREF="https://github.com/nvaccess/nvda/issues/14527">#14527</A>)
+<LI>Wenn Sie das NVDA-Menü über den Infobereich aufrufen, schlägt NVDA kein ausstehendes Update mehr vor, wenn kein Update verfügbar ist. (<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>)
+<LI>In Web-Browsern wie Google Chrome und Mozilla Firefox werden Warnmeldungen, z. B. zum Herunterladen von Dateien, nicht nur gesprochen, sondern auch in Braille-Schrift angezeigt. (<A HREF="https://github.com/nvaccess/nvda/issues/14562">#14562</A>)
 </UL>
 
 <P></P>
@@ -107,6 +119,17 @@ Diese Funktionalität ist nun generisch über <CODE>behaviours.EditableText</COD
   <LI>Diese neue Klasse ist nicht als Singleton konzipiert, Entwickler von NVDA-Erweiterungen sind aufgefordert, ihre eigene Instanz zu verwenden, wenn sie Hardware-Eingabe bzw. -Ausgabe verwenden.
   </UL>
 <LI>Die Prozessor-Architektur des Computers kann über das Attribut <CODE>winVersion.WinVersion.processorArchitecture</CODE> abgefragt werden (<A HREF="https://github.com/nvaccess/nvda/issues/14439">#14439</A>)
+<LI>Es wurden neue Skripte hinzugefügt. (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
+  <UL>
+  <LI><CODE>inputCore.decide_executeGesture</CODE>
+  <LI><CODE>tones.decide_beep</CODE>
+  <LI><CODE>nvwave.decide_playWaveFile</CODE>
+  <LI><CODE>braille.pre_writeCells</CODE>
+  <LI><CODE>braille.filter_displaySize</CODE>
+  <LI><CODE>braille.decide_enabled</CODE>
+  <LI><CODE>braille.displayChanged</CODE>
+  <LI><CODE>braille.displaySizeChanged</CODE>
+  </UL>
 </UL>
 
 <P></P>
@@ -116,19 +139,24 @@ Dies sind die neuen API-Änderungen.
 Bitte öffnen Sie ein Ticket auf GitHub, wenn eine NVDA-Erweiterung ein Problem mit der Aktualisierung auf die neue API hat.
 </P>
 <UL>
-<LI>Die Konfigurationsspezifikation wurde geändert, Schlüssel wurden entfernt oder geändert. (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>)
+<LI>Die Konfigurationsspezifikation wurde geändert, Schlüssel wurden entfernt oder geändert:
   <UL>
-  <LI>Im Abschnitt <CODE>[documentFormatting]</CODE>:
+  <LI>Im Abschnitt <CODE>[documentFormatting]</CODE> (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>):
     <UL>
     <LI><CODE>reportLineIndentation</CODE> speichert einen INT-Wert (0 bis 3) anstelle eines booleschen Wertes
     <LI><CODE>reportLineIndentationWithTones</CODE> wurde entfernt.
     <LI><CODE>reportBorderStyle</CODE> und <CODE>reportBorderColor</CODE> wurden entfernt und sind durch <CODE>reportCellBorders</CODE> ersetzt worden.
     </UL>
-  <LI>Im Abschnitt <CODE>[Braille]</CODE>:
+  <LI>Im Abschnitt <CODE>[braille]</CODE> (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>):
     <UL>
     <LI><CODE>noMessageTimeout</CODE> wurde entfernt und durch einen Wert für <CODE>showMessages</CODE> ersetzt.
     <LI><CODE>noMessageTimeout</CODE> wurde entfernt und durch einen Wert für <CODE>showMessages</CODE> ersetzt. a<CODE>messageTimeout</CODE> kann nicht mehr den Wert 0 annehmen und wurde durch einen Wert für <CODE>showMessages</CODE> ersetzt.
     <LI><CODE>autoTether</CODE> wurde entfernt; <CODE>tetherTo</CODE> kann nun stattdessen den Wert "auto" annehmen.
+    </UL>
+  <LI>Im Abschnitt <CODE>[keyboard]</CODE> (<A HREF="https://github.com/nvaccess/nvda/issues/14528">#14528</A>):
+    <UL>
+    <LI><CODE>useCapsLockAsNVDAModifierKey</CODE>, <CODE>useNumpadInsertAsNVDAModifierKey</CODE>, <CODE>useExtendedInsertAsNVDAModifierKey</CODE> wurden entfernt.
+    Sie wurden durch <CODE>NVDAModifierKeys</CODE> ersetzt.
     </UL>
   </UL>
 <LI>Die Klasse <CODE>NVDAHelper.RemoteLoader64</CODE> wurde ersatzlos entfernt. (<A HREF="https://github.com/nvaccess/nvda/issues/14449">#14449</A>)
@@ -139,6 +167,25 @@ Bitte öffnen Sie ein Ticket auf GitHub, wenn eine NVDA-Erweiterung ein Problem 
   <LI><CODE>unregister</CODE>
   <LI><CODE>register</CODE>
   <LI><CODE>isLockStateSuccessfullyTracked</CODE>
+  </UL>
+<LI>Es ist nicht mehr möglich den Braille-Handler durch die Einstellung <CODE>braille.handler.enabled</CODE> einzuschalten.
+Um den Braille-Handler programmatisch zu deaktivieren, registrieren Sie einen Handler für <CODE>braille.handler.decide_enabled</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
+<LI>Es ist nicht mehr möglich, die Anzeigegröße des Handlers durch definieren von <CODE>braille.handler.displaySize</CODE> zu aktualisieren.
+Um <CODE>displaySize</CODE> programmatisch zu aktualisieren, registrieren Sie einen Handler für <CODE>braille.handler.filter_displaySize</CODE>.
+Siehe <CODE>brailleViewer</CODE> für ein Beispiel, wie das erledigt werden kann. (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
+<LI>Es gab Änderungen bei der Verwendung von <CODE>addonHandler.Addon.loadModule</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14481">#14481</A>)
+  <UL>
+  <LI><CODE>loadModule</CODE> erwartet nun einen Punkt als Trennzeichen, statt eines Backslashs.
+  Zum Beispiel "lib.example" anstelle von "lib\example".
+  <LI><CODE>loadModule</CODE> löst nun eine Exception aus, wenn ein Modul nicht geladen werden kann oder Fehler aufweist, anstatt <CODE>None</CODE> zurückzugeben, ohne Informationen über die Ursache zu geben.
+  </UL>
+<LI>Die Folgenden sind keine Singletons mehr - deren get-Methode wurde entfernt.
+Die Verwendung von <CODE>Example.get()</CODE> ist jetzt <CODE>Example()</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14248">#14248</A>)
+  <UL>
+  <LI><CODE>UIAHandler.customAnnotations.CustomAnnotationTypesCommon</CODE>
+  <LI><CODE>UIAHandler.customProps.CustomPropertiesCommon</CODE>
+  <LI><CODE>NVDAObjects.UIA.excel.ExcelCustomProperties</CODE>
+  <LI><CODE>NVDAObjects.UIA.excel.ExcelCustomAnnotationTypes</CODE>
   </UL>
 </UL>
 
@@ -154,6 +201,10 @@ Verwenden Sie stattdessen <CODE>configFlags.TetherTo.*.value</CODE>. (<A HREF="h
 Verwenden Sie stattdessen <CODE>utils.security.post_sessionLockStateChanged</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14486">#14486</A>)
 <LI><CODE>NVDAObject.hasDetails</CODE>, <CODE>NVDAObject.detailsSummary</CODE>, <CODE>NVDAObject.detailsRole</CODE> sind veraltet.
 Verwenden Sie stattdessen <CODE>NVDAObject.annotations</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>)
+<LI><CODE>keyboardHandler.SUPPORTED_NVDA_MODIFIER_KEYS</CODE> ist veraltet und wird nicht direkt ersetzt.
+Verwenden Sie stattdessen die Klasse <CODE>config.configFlags.NVDAKey</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14528">#14528</A>)
+<LI><CODE>gui.MainFrame.evaluateUpdatePendingUpdateMenuItemCommand</CODE> ist veraltet.
+Verwenden Sie stattdessen <CODE>gui.MainFrame.SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>)
 </UL>
 
 <P></P>
