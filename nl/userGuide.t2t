@@ -41,7 +41,8 @@ Belangrijke functies en mogelijkheden:
 - Besturingssystemen: alle 32-bit en 64-bit edities van Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11 alsmede alle Server-besturingssystemen vanaf Windows Server 2008 R2.
 - Voor Windows 7, heeft NVDA Service Pack 1 of hoger nodig.
 - Voor Windows Server 2008 R2, heeft NVDA Service Pack 1 of hoger nodig.
-
+  - zowel AMD64- als ARM64-varianten van Windows worden ondersteund.
+  
 - tenminste 150 mb aan opslagruimte.
 -
 
@@ -2106,8 +2107,31 @@ Het vervolgkeuzemenu voor het melden van regelinspringing heeft 4 keuzemogelijkh
 - Spraak: Als u spraak kiest, hoort u NVDA iets zeggen als "twaalf spatie"of "vier tab" wanneer de afstand van de inspringing verandert."
 - Pieptonen: Als u pieptonen kiest, wordt met behulp van tonen aangegeven in welke mate er verandering optreedt in de ingesprongen afstand.
 De toonhoogte stijgtvoor elke spatie, en voor een tab, gaat de toon evenveel omhoog als voor 4 spaties.
-- Zowel spraak als pieptonen: Deze optie is een combinatie van de twee hiervoor genoemde mogelijkheden.
+t- Zowel spraak als pieptonen: Deze optie is een combinatie van de twee hiervoor genoemde mogelijkheden.
 -
+
++++ Documentnavigatie +++[DocumentNavigation]
+In deze categorie kunt u diverse aspecten  van  documentnavigatie aanpassen.
+
+==== Alineastijl ====[ParagraphStyle]
+: Standaard
+  Door toepassing verwerkt
+: Opties
+  Standaard (Door toepassing verwerkt, nieuwe regel, meervoudigee nieuwe regelactie
+:
+
+Met deze vervolgkeuzelijst kunt u de alineastijl selecteren die gebruikt moet worden bij alineanavigatie met ``control+pijlOmhoog`` en ``control+pijlOmlaag``.
+De beschikbare alineastijlen zijn:
+- Verwerkt door toepassing: NVDA zal de toepassing de vorige en volgende alinea laten bepalen , en NVDA zal bij het navigeren de alinea lezen.
+Deze stijl werkt het best wanneer de toepassing is uitgerust met ingebouwde alineanavigatie, en als deze standaard is ingesteld.
+- Nieuwe regel (enkelvoudig> single line break): NVDA zal vorige of volgende alinea proberen te bepalen op basis van 'single line break' welke dient als markering van de alinea.
+Deze stijl werkt het best wanneer u documenten leest in een toepassing  zonder ingebouwde ondersteuning voor alineanavigatie, en als de alinea's in het document worden aangegeven door de ``enter-toets`` eenmaal in te drukken.
+- Meervoudige nieuwe regel(multi line break): NVDA zal vorige of volgende alinea proberen te bepalen op basis van tenminste 1 blanco regel (tweemaal drukken op de ``enter-toets``)  welke dient om een alinea aan te geven.
+Deze stijl werkt het best wanneer gewerkt wordt met documenten waarin blokalinea's worden gebruikt.
+Merk op dat deze alineastijl niet in Microsoft Word of Microsoft Outlook, gebruikt kan worden tenzij u werkt met UIA zodat u toegang hebt tot de besturingselementen van Microsoft Word.
+-
+
+U kunt door de beschikbare alineastijlen bladeren  vanuit elke willekeurige plek door in het dialoogvenster [Invoerhandelingen #InputGestures] hiervoor een toets toe te kennen.
 
 +++ Windows OCR +++[Win10OcrSettings]
 Aan de hand van de instellingen in deze categorie kunt u[Windows OCR #Win10Ocr] configureren.
@@ -2250,6 +2274,26 @@ In sommige toepassingen kan het (voor)lezen van nieuwe tekst echter onzorgvuldig
 Hiermee zal NVDA zich hetzelfde gedragen als  in versie 2020.4 en in daaraan voorafgaande versies.
 Deze instelling kan meer stabiliteit bieden bij het lezen van nieuw in te voeren tekst in sommige toepassingen.
 Wanneer er echter in terminal-toepassingen  een tekenmidden in een regel wordt ingevoerd of verwijderd wordt de tekst achter de cursor voorgelezen.
+-
+
+==== Nieuwe tekst in Windows Terminal via (voor)lezen ====[WtStrategy]
+: Standaard
+  Diffing
+: Opties
+  Diffing, UIA notificaties
+:
+
+Met deze optie kiest u hoe NVDA bepaalt wat er aan nieuwe tekst is (en dus wat gelezen moet worden als "dynamische inhoudwijzigingen melden" ingeschakeld is) in Windows Terminal en de WPF Windows Terminal control die gebruikt wordt in Visual Studio 2022.
+Dit is niet van invloed op de Windows-console (``conhost.exe``).
+Het vervolgkeuzemenu Nieuwe tekst (voor)lezen in Windows Terminal heeft drie keuzemogelijkheden:
+- Standaard: Deze mogelijkheid is momenteel hetzelfde als "diffing", maar zal naar verwachting anders worden als ondersteuning voor UIA-notificaties verder ontwikkeld wordt.
+- Diffing: Deze mogelijkheid maakt gebruik van het geselecteerde diff algoritme om veranderingen te berekenen telkens wanneer de terminal nieuwe tekst aanbiedt.
+Dit is identiek aan wat NVDA nu doet in versie 2022.4 en daarvoor.
+- UIA-notificaties: Deze mogelijkheid draagt de verantwoordelijkheid om te bepalen wat er aan tekst moet worden (voor)gelezen over aan Windows Terminal zelf, wat inhoudt dat NVDA niet langer hoeft te bepalen wat er nieuw is in de tekst die op dat moment op het scherm staat.
+Dit moet een sterke verbetering in de prestatie en van de stabiliteit opleveren van Windows Terminal, maar deze funtie is nog niet uitontwikkeld.
+Met name getypte karakters die niet op het scherm worden weergegeven zoals wachtwoorden worden uitgesproken wanneer deze optie wordt geselecteerd.
+Verder kan het zijn dat uitvoerclusters die uit meer dan 1,000 karakters bestaan niet accuraat worden weergegeven.
+-
 
 ==== Probeer spraak te annuleren bij verlopen gebeurtenissen met focus ====[CancelExpiredFocusSpeech]
 Met deze optie kunt u ervoor zorgen dat geprobeerd wordt spraak bij verlopen gebeurtenissen met focus uitte zetten.
@@ -3675,7 +3719,7 @@ Hieronder volgen de commandoregelopties voor NVDA:
 | -q | --quit | De reeds actieve kopie van NVDA afsluiten. |
 | -k | --check-running | Melden via afsluitcode of NVDA actief is,; 0 voor actief, 1 voor niet actief. |
 | -f LOGFILENAME | --log-file=LOGFILENAME | Het bestand waar log-berichten naartoe moeten worden geschreven. |
-| -l LOGLEVEL | --log-level=LOGLEVEL | Het laagste niveau gelogd bericht (debug 10, invoer/uitvoer 12, debugmelding 15,info 20, waarschuwing 30, fout 40, kritiek 50, uitgeschakeld 100), standaardinstelling is waarschuwing |
+| -l LOGLEVEL | --log-level=LOGLEVEL | Het laagste niveau gelogd bericht (debug 10, invoer/uitvoer 12, debug-melding 15, info 20, uitgeschakeld 100) |
 | -c CONFIGPATH | --config-path=CONFIGPATH | Het pad waar alle instellingen voor NVDA worden opgeslagen. |
 | Geen | --lang=LANGUAGE | de ingestelde  NVDA-taal overschrijven. Instellen naar "Windows-standaardtaal voor huidige gebruiker, "en" voor het Engels, etc. |
 | -m | --minimal | Geen geluiden, geen interface, geen opstartbericht etc. |
