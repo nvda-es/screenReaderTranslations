@@ -175,8 +175,9 @@
       <LI><A HREF="#InputCompositionSettings">12.1.13. 入力メソッド</A>
       <LI><A HREF="#BrowseModeSettings">12.1.14. ブラウズモード (NVDA+Ctrl+B)</A>
       <LI><A HREF="#DocumentFormattingSettings">12.1.15. 書式とドキュメント情報 (NVDA+Ctrl+D)</A>
-      <LI><A HREF="#Win10OcrSettings">12.1.16. Windows 文字認識</A>
-      <LI><A HREF="#AdvancedSettings">12.1.17. 高度な設定</A>
+      <LI><A HREF="#DocumentNavigation">12.1.16. ドキュメントナビゲーション</A>
+      <LI><A HREF="#Win10OcrSettings">12.1.17. Windows 文字認識</A>
+      <LI><A HREF="#AdvancedSettings">12.1.18. 高度な設定</A>
       </UL>
     <LI><A HREF="#MiscSettings">12.2. その他の設定</A>
       <UL>
@@ -231,9 +232,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare製Brailliant BI/Bシリーズ / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc157">15.9.1. すべてのモデル</A>
-      <LI><A HREF="#toc158">15.9.2. Brailliant BI 32, BI 40 および B 80</A>
-      <LI><A HREF="#toc159">15.9.3. Brailliant BI 14</A>
+      <LI><A HREF="#toc158">15.9.1. すべてのモデル</A>
+      <LI><A HREF="#toc159">15.9.2. Brailliant BI 32, BI 40 および B 80</A>
+      <LI><A HREF="#toc160">15.9.3. Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS製 Braille Sense/Braille EDGE/Smart Beetle/Sync Braille シリーズ</A>
     <LI><A HREF="#Seika">15.11. 清華 点字ディスプレイ</A>
@@ -249,7 +250,8 @@
     <LI><A HREF="#Eurobraille">15.17. Eurobraille Esys/Esytime/Iris ディスプレイ</A>
     <LI><A HREF="#NattiqTechnologies">15.18. Nattiq nBraille ディスプレイ</A>
     <LI><A HREF="#BRLTTY">15.19. BRLTTY</A>
-    <LI><A HREF="#HIDBraille">15.20. 標準 HID 点字ディスプレイ</A>
+    <LI><A HREF="#Albatross">15.20. Tivomatic Caiku Albatross 46/80</A>
+    <LI><A HREF="#HIDBraille">15.21. 標準 HID 点字ディスプレイ</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">16. 高度なトピック</A>
     <UL>
@@ -308,6 +310,7 @@ NVDAの主な特徴は以下の通りです。
  <UL>
  <LI>Windows 7 はサービスパック1以降に対応
  <LI>Windows Server 2008 R2 はサービスパック1以降に対応
+ <LI>AMD64 および ARM64 の Windows に対応
  </UL>
 <LI>150MB以上のディスク空き容量
 </UL>
@@ -4102,8 +4105,41 @@ NVDA設定ダイアログを開かないでこれらの設定を変更したい�
 </UL>
 
 <P></P>
+<A NAME="DocumentNavigation"></A>
+<H4>12.1.16. ドキュメントナビゲーション</H4>
+<P>
+このカテゴリーではドキュメントナビゲーションのスタイルを変更できます。
+</P>
+<A NAME="ParagraphStyle"></A>
+<H5>段落ナビゲーションスタイル</H5>
+<DL>
+<DT>既定の値</DT><DD>
+  アプリによる処理
+<DT>選択肢</DT><DD>
+  既定 (アプリによる処理), アプリによる処理, 改行, 連続改行
+</DL>
+
+<P></P>
+<P>
+このコンボボックスでは <CODE>Ctrl+上矢印</CODE> および <CODE>Ctrl+下矢印</CODE> で段落単位の移動をする場合のスタイルを選択できます。
+以下の選択肢があります。
+</P>
+<UL>
+<LI>アプリによる処理: アプリが前または次の段落を判断します。NVDA はアプリが判断した前後の段落に移動します。
+このスタイルはアプリが段落ナビゲーションを適切に処理できる場合に最適です。これは既定の設定です。
+<LI>改行: NVDA は改行を段落の区切りと解釈して、前または次の段落を判断します。
+このスタイルは、アプリが段落ナビゲーションに対応していない場合のドキュメントの読み上げに最適です。ドキュメントの入力中に新しい段落を始める場合は <CODE>Enter</CODE> を1回押します。
+<LI>連続改行: NVDA は1行以上の連続する空白行 (入力するには <CODE>Enter</CODE> を2回押します) を段落の区切りと解釈して、前または次の段落を判断します。
+このスタイルは、ブロック段落を使用するドキュメントで作業する場合に最適です。
+「Microsoft Word ドキュメントに UI オートメーションを使用」が無効の場合に、このオプションは Microsoft Word および Microsoft Outlook では使用できません。
+</UL>
+
+<P></P>
+<P>
+NVDA設定ダイアログを開かないでこのオプションを切り替えたい場合は、<A HREF="#InputGestures">入力ジェスチャーのダイアログ</A>で操作をカスタマイズしてください。
+</P>
 <A NAME="Win10OcrSettings"></A>
-<H4>12.1.16. Windows 文字認識</H4>
+<H4>12.1.17. Windows 文字認識</H4>
 <P>
 このカテゴリでは <A HREF="#Win10Ocr">Windows 文字認識</A> の設定ができます。
 このカテゴリには以下の項目があります。
@@ -4114,7 +4150,7 @@ NVDA設定ダイアログを開かないでこれらの設定を変更したい�
 このコンボボックスで文字認識に使用する言語を選択します。
 </P>
 <A NAME="AdvancedSettings"></A>
-<H4>12.1.17. 高度な設定</H4>
+<H4>12.1.18. 高度な設定</H4>
 <P>
 警告！このカテゴリの設定は上級ユーザーを対象としています。誤って変更するとNVDAが正しく機能しなくなることがあります。
 これらの設定について理解している場合、またはNVDA開発者によって具体的に指示された場合にのみ変更してください。
@@ -4149,9 +4185,9 @@ NVDA用アドオンの開発者は、コードを書きながらテストがで�
 <A NAME="AdvancedSettingsSelectiveUIAEventRegistration"></A>
 <H5>UIオートメーションのイベントとプロパティ変更の取得</H5>
 <DL>
-<DT>既定</DT><DD>
+<DT>既定の値</DT><DD>
   自動
-<DT>オプション</DT><DD>
+<DT>選択肢</DT><DD>
   自動, 選択的, グローバル
 </DL>
 
@@ -4296,6 +4332,32 @@ Microsoft Excel の UI オートメーションの実装は常に変化してお
 これは NVDA 2020.4 およびそれ以前のバージョンの動作と同じです。
 この設定では一部のアプリでテキストの読み込みが安定する場合があります。
 しかし、ターミナルにおいて、行の途中で文字を挿入または削除すると、テキストカーソル以降のテキストの読み上げが起こります。
+</UL>
+
+<P></P>
+<A NAME="WtStrategy"></A>
+<H5>Windows ターミナルで新しいテキストを読み上げる方法</H5>
+<DL>
+<DT>既定の値</DT><DD>
+  差分アルゴリズム
+<DT>選択肢</DT><DD>
+  差分アルゴリズム, UIオートメーションの通知
+</DL>
+
+<P></P>
+<P>
+Windows ターミナルおよび Visual Studio 2022 で使用される WPF Windows ターミナルコントロールにおいて、NVDA がどのテキストが「新規」であるか (「動的コンテンツの変化の報告」の対象とするか) を判別する方法を選択できます。
+このオプションは Windows コンソール (<CODE>conhost.exe</CODE>) には影響しません。
+このコンボボックスには次の選択肢があります。
+</P>
+<UL>
+<LI>既定の値: 現在は「差分アルゴリズム」と同等です。UIオートメーションの通知に関する開発が進んだ場合には変更される見込みです。
+<LI>差分アルゴリズム: 選択された差分アルゴリズムを使用して、ターミナルが新しいテキストをレンダリングするたびに差分を計算します。
+これは NVDA 2022.4 およびそれ以前のバージョンの動作と同じです。
+<LI>UIオートメーションの通知: どのテキストを読み上げるかの判断を Windows ターミナルが行います。つまり、表示されるテキストが「新しい」かどうかを NVDA が判断する必要がなくなります。
+これにより Windows ターミナル対応の性能と安定性の著しい改善が見込まれます。しかし、この機能はまだ完全ではありません。
+現在、このオプションには、パスワードなどの画面には表示されない文字を不適切に報告する、といった既知の問題があります。
+また、1000文字を超えるテキストが連続して出力されると、正確に報告できない場合があります。
 </UL>
 
 <P></P>
@@ -4935,6 +4997,7 @@ NVDAが自動検出できる点字ディスプレイは以下の通りです。
 <LI>Eurobraille Esys/Esytime/Iris 点字ディスプレイ
 <LI>Nattiq nBraille 点字ディスプレイ
 <LI>清華 点字ディスプレイ: MiniSeika (16, 24 cells), V6 および V6Pro (40セル)
+<LI>Tivomatic Caiku Albatross 46/80 点字ディスプレイ
 <LI>標準 HID 点字ディスプレイ仕様に対応した点字ディスプレイ
 </UL>
 
@@ -5239,11 +5302,11 @@ ALVA Bluetooth ユーティリティーでペアリングした Bluetooth 接続
 <TD>t1+spEnter</TD>
 </TR>
 <TR>
-<TD>レビューの最初の行に移動</TD>
+<TD>レビューで最初の行に移動</TD>
 <TD>t1+t2</TD>
 </TR>
 <TR>
-<TD>レビューの最後の行に移動</TD>
+<TD>レビューで最後の行に移動</TD>
 <TD>t4+t5</TD>
 </TR>
 <TR>
@@ -5703,7 +5766,7 @@ USB接続で HumanWare プロトコルを使用する場合は、事前に製造
 以下は Brailliant BI/B および BrailleNote touch で使用できるNVDA用のキー割り当てです。
 各キーの位置については、ディスプレイの説明書を参照してください。
 </P>
-<A NAME="toc157"></A>
+<A NAME="toc158"></A>
 <H4>15.9.1. すべてのモデル</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5792,7 +5855,7 @@ USB接続で HumanWare プロトコルを使用する場合は、事前に製造
 </TR>
 </TABLE>
 
-<A NAME="toc158"></A>
+<A NAME="toc159"></A>
 <H4>15.9.2. Brailliant BI 32, BI 40 および B 80</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5813,7 +5876,7 @@ USB接続で HumanWare プロトコルを使用する場合は、事前に製造
 </TR>
 </TABLE>
 
-<A NAME="toc159"></A>
+<A NAME="toc160"></A>
 <H4>15.9.3. Brailliant BI 14</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -7572,8 +7635,193 @@ BRLTTY用のコマンドが、ディスプレイのコントロールにどの�
 </TR>
 </TABLE>
 
+<A NAME="Albatross"></A>
+<H3>15.20. Tivomatic Caiku Albatross 46/80</H3>
+<P>
+フィンランドで流通している Tivomatic 社の Caiku Albatross 点字ディスプレイは USB またはシリアルで接続できます。
+これらの点字ディスプレイを使用するために追加のドライバーのインストールは不要です。
+点字ディスプレイを接続して、NVDA を設定してください。
+</P>
+<P>
+注意: 通信速度の設定値は 19200 を強く推奨します。
+必要に応じて点字ディスプレイのメニューを使用し、設定値を 19200 に切り替えてください。
+ドライバーは通信速度 9600 をサポートしていますが、点字ディスプレイの通信速度を設定する方法はありません。
+通信速度 19200 は点字ディスプレイの既定の設定であり、ドライバーは最初にこの設定での接続を試みます。
+設定がこの値でない場合に、ドライバーは予期しない動作をする場合があります。
+</P>
+<P>
+以下は NVDA におけるこの点字ディスプレイのキー割り当てです。
+キーの場所についての詳細は点字ディスプレイのドキュメントを参照してください。
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>キー</TH>
+</TR>
+<TR>
+<TD>レビューで最初の行に移動</TD>
+<TD><CODE>home1</CODE>, <CODE>home2</CODE></TD>
+</TR>
+<TR>
+<TD>レビューで最後の行に移動</TD>
+<TD><CODE>end1</CODE>, <CODE>end2</CODE></TD>
+</TR>
+<TR>
+<TD>ナビゲーターオブジェクトを現在のシステムフォーカスに移動</TD>
+<TD><CODE>eCursor1</CODE>, <CODE>eCursor2</CODE></TD>
+</TR>
+<TR>
+<TD>現在のシステムフォーカスに移動</TD>
+<TD><CODE>cursor1</CODE>, <CODE>cursor2</CODE></TD>
+</TR>
+<TR>
+<TD>マウスカーソルを現在のナビゲーターオブジェクトに移動</TD>
+<TD><CODE>home1+home2</CODE></TD>
+</TR>
+<TR>
+<TD>ナビゲーターオブジェクトをマウスカーソル位置のオブジェクトに移動して読み上げ</TD>
+<TD><CODE>end1+end2</CODE></TD>
+</TR>
+<TR>
+<TD>現在のナビゲーターオブジェクトにシステムフォーカスを移動</TD>
+<TD><CODE>eCursor1+eCursor2</CODE></TD>
+</TR>
+<TR>
+<TD>点字セル移動モードの切り替え</TD>
+<TD><CODE>cursor1+cursor2</CODE></TD>
+</TR>
+<TR>
+<TD>点字表示を前の行に移動</TD>
+<TD><CODE>up1</CODE>, <CODE>up2</CODE>, <CODE>up3</CODE></TD>
+</TR>
+<TR>
+<TD>点字表示を次の行に移動</TD>
+<TD><CODE>down1</CODE>, <CODE>down2</CODE>, <CODE>down3</CODE></TD>
+</TR>
+<TR>
+<TD>点字表示をスクロールして戻す</TD>
+<TD><CODE>left</CODE>, <CODE>lWheelLeft</CODE>, <CODE>rWheelLeft</CODE></TD>
+</TR>
+<TR>
+<TD>点字表示をスクロールして進む</TD>
+<TD><CODE>right</CODE>, <CODE>lWheelRight</CODE>, <CODE>rWheelRight</CODE></TD>
+</TR>
+<TR>
+<TD>点字セルに移動</TD>
+<TD><CODE>routing</CODE></TD>
+</TR>
+<TR>
+<TD>点字セル位置のテキストの書式を報告</TD>
+<TD><CODE>secondary routing</CODE></TD>
+</TR>
+<TR>
+<TD>コンテクスト情報の点字表示の方法の切り替え</TD>
+<TD><CODE>attribute1+attribute3</CODE></TD>
+</TR>
+<TR>
+<TD>読み上げモードの切り替え</TD>
+<TD><CODE>attribute2+attribute4</CODE></TD>
+</TR>
+<TR>
+<TD>前のレビューモード (オブジェクト、ドキュメント、画面)</TD>
+<TD><CODE>f1</CODE></TD>
+</TR>
+<TR>
+<TD>次のレビューモード (オブジェクト、ドキュメント、画面)</TD>
+<TD><CODE>f2</CODE></TD>
+</TR>
+<TR>
+<TD>ナビゲーターオブジェクトを親オブジェクトに移動</TD>
+<TD><CODE>f3</CODE></TD>
+</TR>
+<TR>
+<TD>ナビゲーターオブジェクトを最初の子オブジェクトに移動</TD>
+<TD><CODE>f4</CODE></TD>
+</TR>
+<TR>
+<TD>ナビゲーターオブジェクトを前のオブジェクトに移動</TD>
+<TD><CODE>f5</CODE></TD>
+</TR>
+<TR>
+<TD>ナビゲーターオブジェクトを次のオブジェクトに移動</TD>
+<TD><CODE>f6</CODE></TD>
+</TR>
+<TR>
+<TD>現在のナビゲーターオブジェクトの報告</TD>
+<TD><CODE>f7</CODE></TD>
+</TR>
+<TR>
+<TD>レビュー内の現在の文字の報告</TD>
+<TD><CODE>f8</CODE></TD>
+</TR>
+<TR>
+<TD>ナビゲーターオブジェクトで既定のアクションを実行</TD>
+<TD><CODE>f7+f8</CODE></TD>
+</TR>
+<TR>
+<TD>日付と時刻の報告</TD>
+<TD><CODE>f9</CODE></TD>
+</TR>
+<TR>
+<TD>電源状態の報告</TD>
+<TD><CODE>f10</CODE></TD>
+</TR>
+<TR>
+<TD>ウィンドウのタイトルの報告</TD>
+<TD><CODE>f11</CODE></TD>
+</TR>
+<TR>
+<TD>ステータスバーの報告</TD>
+<TD><CODE>f12</CODE></TD>
+</TR>
+<TR>
+<TD>現在行の読み上げ</TD>
+<TD><CODE>f13</CODE></TD>
+</TR>
+<TR>
+<TD>すべて読み上げ</TD>
+<TD><CODE>f14</CODE></TD>
+</TR>
+<TR>
+<TD>レビュー内の現在の文字の報告</TD>
+<TD><CODE>f15</CODE></TD>
+</TR>
+<TR>
+<TD>レビュー内の現在行の報告</TD>
+<TD><CODE>f16</CODE></TD>
+</TR>
+<TR>
+<TD>レビュー内の現在の単語の報告</TD>
+<TD><CODE>f15+f16</CODE></TD>
+</TR>
+<TR>
+<TD>レビュー内の前の行に移動</TD>
+<TD><CODE>lWheelUp</CODE>, <CODE>rWheelUp</CODE></TD>
+</TR>
+<TR>
+<TD>レビュー内の次の行に移動</TD>
+<TD><CODE>lWheelDown</CODE>, <CODE>rWheelDown</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+d</CODE> キー (すべてのアプリを最小化)</TD>
+<TD><CODE>attribute1</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+e</CODE> キー (このPC)</TD>
+<TD><CODE>attribute2</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+b</CODE> キー (システムトレイにフォーカス移動)</TD>
+<TD><CODE>attribute3</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+i</CODE> キー (Windows 設定)</TD>
+<TD><CODE>attribute4</CODE></TD>
+</TR>
+</TABLE>
+
 <A NAME="HIDBraille"></A>
-<H3>15.20. 標準 HID 点字ディスプレイ</H3>
+<H3>15.21. 標準 HID 点字ディスプレイ</H3>
 <P>
 これは「標準 HID 点字ディスプレイ仕様」に対応する実験的な点字ドライバーです。2018年に Microsoft, Google, Apple および NV Access を含む複数の支援技術ベンダーによって制定されました。
 将来、あらゆる製造元のすべての機種の点字ディスプレイが、この標準仕様に対応することで、製造元ごとに点字ディスプレイドライバーを使い分ける必要性がなくなることが期待されます。
@@ -7795,7 +8043,7 @@ nvda -q
 <TR>
 <TD>-l LOGLEVEL</TD>
 <TD>--log-level=LOGLEVEL</TD>
-<TD>ログに書き込むメッセージのレベルの最低値 (デバッグ 10, 入出力 12, デバッグ警告 15, 情報 20, 警告 30, エラー 40, 致命的 50), 既定値:警告</TD>
+<TD>ログに書き込むメッセージのレベルの最低値 (デバッグ 10, 入出力 12, デバッグ警告 15, 情報 20, 警告 30, 無効 100), 既定値:警告</TD>
 </TR>
 <TR>
 <TD>-c CONFIGPATH</TD>
