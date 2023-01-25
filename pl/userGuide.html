@@ -4327,6 +4327,32 @@ Jednakże, w wierszach poleceń, podczas wstawiania lub usuwania znaku w środku
 </UL>
 
 <P></P>
+<A NAME="WtStrategy"></A>
+<H5>Czytaj nowy tekst w terminalu Windows za pomocą</H5>
+<DL>
+<DT>Domyślnie</DT><DD>
+  Różnicowanie
+<DT>Opcje</DT><DD>
+  różnicowanie, powiadomienia UIA
+</DL>
+
+<P></P>
+<P>
+Ta opcja określa, który tekst jest nowy dla NVDA i jaki tekst ma być wymówiony gdy opcja "informuj o dynamicznych zmianach treści" jest włączona) w Windows Terminalu i oknach wpf używanych w Visual Studio 2022.
+Nie wplynie to na konsolę systemu windows (<CODE>conhost.exe</CODE>).
+Lista rozwijana Czytaj nowy tekst w terminalu Windows za pomocą posiada trzy opcji:
+</P>
+<UL>
+<LI>Domyślnie: ta opcja jest teraz równoznaczna z "różnicowaniem", ale może się zmienić w momencie, gdy wsparcie dla powiadomień UIA będzie jeszcze bardziej rozbudowane.
+<LI>Różnicowanie: Ta opcja używa wybrany algorytm do różnicowania do wyliczania zmian w każdej chwili, w której nowy tekst pokazywany jest w oknie konsoli.
+Jest to identyczne z zachowaniem programu NVDA w wersjach 2022.4 i starszych.
+<LI>Powiadomienia UIA: ta opcja oddaje odpowiedzialność określania wodczytu nowego tekstu do samej konsoli, co oznacza, że NVDA więcej nie musi określać nowy tekst.
+To powinno znacząco polepszyć wydajność i stabilność terminala, ale ta funkcja jeszcze nie jest dokończona.
+Ogólnie, wpisywane znaki, któe nie są widoczne na ekranie, takie jak hasła, są odczytywane, gdy ta opcja jest włączona.
+Dodatkowo, ciągłe wyjście tekstowe, przekraczające ponad 1000 znaków może być nieprawidłowo odczytane.
+</UL>
+
+<P></P>
 <A NAME="CancelExpiredFocusSpeech"></A>
 <H5>Próba zatrzymywania mowy dla przestarzałych zdarzeń fokusu</H5>
 <P>
@@ -7819,9 +7845,9 @@ Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 <TD>Plik, do którego powinny być zapisywane informacje logu</TD>
 </TR>
 <TR>
-<TD>-l poziom</TD>
-<TD>--log-level=poziom</TD>
-<TD>Najniższy poziom zapisywanych informacji logu (debugowanie 10, wejście/wyjście 12, ostrzeżenie debugowania 15, informacje 20, ostrzeżenia 30, błędy 40, krytyczne 50, wyłączone 100), domyślnie ostrzeżenia</TD>
+<TD>-l PożiomLogowania</TD>
+<TD>--log-level=LOGLEVEL</TD>
+<TD>Najniższy poziom zapisywanych zdarzeń do podglądu logu (debugowanie 10, wejście/wyjście 12, debugowanie powiadomienie 15, info 20, wyłączone 100)</TD>
 </TR>
 <TR>
 <TD>-c ścieżka</TD>
