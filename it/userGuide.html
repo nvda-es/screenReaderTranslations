@@ -4,9 +4,9 @@
 <META NAME="generator" CONTENT="http://txt2tags.sf.net">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <LINK REL="stylesheet" TYPE="text/css" HREF="../styles.css">
-<TITLE>NVDA 2022.4-dev Manuale utente</TITLE>
+<TITLE>NVDA 2023.1-dev Manuale utente</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
-<P ALIGN="center"><CENTER><H1>NVDA 2022.4-dev Manuale utente</H1>
+<P ALIGN="center"><CENTER><H1>NVDA 2023.1-dev Manuale utente</H1>
 <FONT SIZE="4">
 </FONT></CENTER>
 
@@ -170,8 +170,9 @@
       <LI><A HREF="#InputCompositionSettings">12.1.13. composizione nell'immissione</A>
       <LI><A HREF="#BrowseModeSettings">12.1.14. Modalità navigazione (NVDA+Control+b)</A>
       <LI><A HREF="#documentFormattingSettings">12.1.15. Formato documento (NVDA+Control+d)</A>
-      <LI><A HREF="#Win10OcrSettings">12.1.16. OCR Windows</A>
-      <LI><A HREF="#toc113">12.1.17. Impostazioni avanzate</A>
+      <LI><A HREF="#DocumentNavigation">12.1.16. Navigazione documento</A>
+      <LI><A HREF="#Win10OcrSettings">12.1.17. OCR Windows</A>
+      <LI><A HREF="#toc114">12.1.18. Impostazioni avanzate</A>
       </UL>
     <LI><A HREF="#MiscSettings">12.2. Impostazioni varie</A>
       <UL>
@@ -200,7 +201,7 @@
     <LI><A HREF="#PythonConsole">13.4. Console Python</A>
     <LI><A HREF="#AddonsManager">13.5. Gestore componenti aggiuntivi</A>
       <UL>
-      <LI><A HREF="#toc134">13.5.1. Gestore componenti aggiuntivi non compatibili</A>
+      <LI><A HREF="#toc135">13.5.1. Gestore componenti aggiuntivi non compatibili</A>
       </UL>
     <LI><A HREF="#CreatePortableCopy">13.6. Crea copia portable</A>
     <LI><A HREF="#RunCOMRegistrationFixingTool">13.7. Esegui Utility risoluzione registrazioni Com di sistema...</A>
@@ -226,9 +227,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Brailliant BI/B Series / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc154">15.9.1. Assegnazione tasti per tutti i modelli</A>
-      <LI><A HREF="#toc155">15.9.2. Assegnazione tasti per Brailliant BI 32, BI 40 e B 80</A>
-      <LI><A HREF="#toc156">15.9.3. Assegnazione tasti per Brailliant BI 14</A>
+      <LI><A HREF="#toc155">15.9.1. Assegnazione tasti per tutti i modelli</A>
+      <LI><A HREF="#toc156">15.9.2. Assegnazione tasti per Brailliant BI 32, BI 40 e B 80</A>
+      <LI><A HREF="#toc157">15.9.3. Assegnazione tasti per Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS serie Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
     <LI><A HREF="#Seika">15.11. Display Braille Seika</A>
@@ -304,6 +305,7 @@ Le caratteristiche principali possono essere riassunte nei seguenti punti:
  <UL>
  <LI>Per Windows 7, NVDA richiede Service Pack 1 o successivo.
  <LI>Per Windows Server 2008 R2, NVDA richiede Service Pack 1 o successivo.
+ <LI>sono supportate entrambe le varianti AMD64 e ARM64 di Windows.
   -
  </UL>
 <LI>Circa 150 Megabytes di spazio disco.
@@ -4077,8 +4079,41 @@ Il segnale acustico aumenterà di altezza ad ogni spazio, mentre per una tabulaz
 </UL>
 
 <P></P>
+<A NAME="DocumentNavigation"></A>
+<H4>12.1.16. Navigazione documento</H4>
+<P>
+Questa categoria consente di regolare vari aspetti della navigazione del documento.
+</P>
+<A NAME="ParagraphStyle"></A>
+<H5>Stile Paragrafo</H5>
+<DL>
+<DT>Predefinito</DT><DD>
+  Gestito dall'applicazione
+<DT>Opzioni</DT><DD>
+  Predefinito (Gestito dall'applicazione), Gestito dall'applicazione, Interruzione riga singola, Interruzione di più righe
+</DL>
+
+<P></P>
+<P>
+Questa casella combinata permette di selezionare lo stile del paragrafo da utilizzare quando si naviga tra gli stessi tramite "control+freccia su" e "control+freccia giù".
+Gli stili di paragrafo disponibili sono:
+</P>
+<UL>
+<LI>Gestito dall'applicazione: NVDA consentirà all'applicazione di determinare il paragrafo precedente o successivo; conseguentemente lo screen reader leggerà il nuovo paragrafo durante la navigazione.
+Questo stile funziona al meglio quando l'applicazione supporta nativamente la navigazione tra paragrafi ed è l'impostazione predefinita.
+<LI>Interruzione riga singola: NVDA tenterà di determinare il paragrafo precedente o successivo utilizzando un'interruzione di una sola riga come indicatore di paragrafo.
+Questo stile funziona meglio quando si leggono documenti in un'applicazione che non supporta nativamente la navigazione tra paragrafi, e i paragrafi nel documento sono contrassegnati da una singola pressione del <CODE>tasto invio</CODE>.
+<LI>Interruzione di più righe: NVDA tenterà di determinare il paragrafo precedente o successivo utilizzando almeno una riga vuota (due pressioni del tasto <CODE>invio</CODE>) come indicatore di paragrafo.
+Questo stile funziona meglio quando si lavora con documenti che utilizzano paragrafi a blocchi.
+Si noti che questo stile di paragrafo non può essere utilizzato in Microsoft Word o Microsoft Outlook, a meno che non si utilizzi UIA per accedere ai controlli di Microsoft Word.
+</UL>
+
+<P></P>
+<P>
+è possibile passare tra gli stili di paragrafo disponibili da qualsiasi luogo assegnando una combinazione di tasti nella finestra <A HREF="#InputGestures">Tasti e gesti di immissione</A>.
+</P>
 <A NAME="Win10OcrSettings"></A>
-<H4>12.1.16. OCR Windows</H4>
+<H4>12.1.17. OCR Windows</H4>
 <P>
 Questa categoria di impostazioni permette di configurare <A HREF="#Win10Ocr">l'OCR di Windows</A>.
 Contiene le seguenti opzioni:
@@ -4088,8 +4123,8 @@ Contiene le seguenti opzioni:
 <P>
 Questa casella combinata permette di scegliere la lingua da utilizzare per il riconoscimento del testo.
 </P>
-<A NAME="toc113"></A>
-<H4>12.1.17. Impostazioni avanzate</H4>
+<A NAME="toc114"></A>
+<H4>12.1.18. Impostazioni avanzate</H4>
 <P>
 Attenzione! Le impostazioni in questa categoria sono per utenti esperti e potrebbero causare il mancato funzionamento di NVDA se configurate in modo errato.
 Si prega di modificare i vari parametri solo nel caso in cui si sono ricevute istruzioni da uno sviluppatore oppure se si è perfettamente consapevoli di ciò che si sta facendo.
@@ -4276,6 +4311,32 @@ Tuttavia, potrebbe essere incompatibile con alcune applicazioni, con la lettura 
 È identico al comportamento di NVDA nelle versioni 2020.4 e precedenti.
 Questa impostazione può rendere più stabile la lettura del testo in arrivo per alcune applicazioni.
 Tuttavia, nei terminali, quando si inserisce o si elimina un carattere nel mezzo di una riga, verrà sempre letto anche il testo situato dopo il cursore.
+</UL>
+
+<P></P>
+<A NAME="WtStrategy"></A>
+<H5>Leggi nuovo testo in Windows Terminal tramite</H5>
+<DL>
+<DT>Predefinito</DT><DD>
+  Diffing
+<DT>Opzioni</DT><DD>
+  Diffing, Notifiche UIA
+</DL>
+
+<P></P>
+<P>
+Questa opzione determina il metodo utilizzato da NVDA per stabilire quale testo risulti "nuovo" (e quindi cosa pronunciare quando l'opzione "Leggi i cambiamenti dei contenuti dinamici" è abilitata) nella finestra del terminale di Windows e nel controllo WPF Windows Terminal utilizzato in Visual Studio 2022.
+Non influisce sulla console di Windows (<CODE>conhost.exe</CODE>).
+La casella combinata Leggi nuovo testo nel terminale di Windows ha tre opzioni:
+</P>
+<UL>
+<LI>Default: Questa opzione è attualmente equivalente a "diffing", ma si prevede che verrà cambiata una volta sviluppato ulteriormente il supporto per le notifiche UIA.
+<LI>Diffing: Questa opzione utilizza l'algoritmo diff selezionato per calcolare le modifiche ogni volta che il terminale esegue il rendering di un nuovo testo.
+Questo risulta identico al comportamento di NVDA nelle versioni 2022.4 e precedenti.
+<LI>Notifiche UIA: Questa opzione lascia il compito di gestire cosa dovrà essere letto al terminale di Windows stesso, il che significa che NVDA non dovrà più controllare e calcolare quale testo risulti "nuovo" sullo schermo.
+Ciò dovrebbe migliorare notevolmente le prestazioni e la stabilità di Windows Terminal, ma questa funzionalità non è ancora completa.
+In particolare, quando questa opzione è selezionata, vengono letti i caratteri digitati che non sono visualizzati sullo schermo, come le password.
+Inoltre, gli intervalli contigui di output di oltre 1.000 caratteri potrebbero non essere segnalati in modo accurato.
 </UL>
 
 <P></P>
@@ -4748,7 +4809,7 @@ Per controllare questi addon, sarà possibile  servirsi del pulsante "visualizza
 <P>
 Per accedere al gestore componenti aggiuntivi da qualsiasi punto ci si trovi, servirsi della finestra <A HREF="#InputGestures">tasti e gesti di immissione</A> ed assegnare un gesto o tasto rapido personalizzato per quella funzione.
 </P>
-<A NAME="toc134"></A>
+<A NAME="toc135"></A>
 <H4>13.5.1. Gestore componenti aggiuntivi non compatibili</H4>
 <P>
 Il Gestore componenti aggiuntivi non compatibili, che si raggiunge tramite l'apposito pulsante presente all'interno del gestore componenti aggiuntivi, consente di controllare tutti gli addon non compatibili e, conseguentemente, conoscere il motivo per il quale essi sono stati ritenuti non utilizzabili.
@@ -5684,7 +5745,7 @@ Sono supportati anche i dispositivi seguenti e non necessitano dell'installazion
 Di seguito, ecco l'elenco dell'assegnazione dei tasti  per queste righe braille con NVDA.
 Si legga la documentazione della propria barra Braille per ottenere informazioni su dove sono situati i vari tasti.
 </P>
-<A NAME="toc154"></A>
+<A NAME="toc155"></A>
 <H4>15.9.1. Assegnazione tasti per tutti i modelli</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5773,7 +5834,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 </TABLE>
 
-<A NAME="toc155"></A>
+<A NAME="toc156"></A>
 <H4>15.9.2. Assegnazione tasti per Brailliant BI 32, BI 40 e B 80</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5794,7 +5855,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 </TABLE>
 
-<A NAME="toc156"></A>
+<A NAME="toc157"></A>
 <H4>15.9.3. Assegnazione tasti per Brailliant BI 14</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -7771,7 +7832,7 @@ Ecco l'elenco dei parametri a riga di comando di NVDA:
 <TR>
 <TD>-l LOGLEVEL</TD>
 <TD>--log-level=LOGLEVEL</TD>
-<TD>Il livello più basso di un messaggio loggato ((debug 10, input/output 12, debug warning 15, info 20, warning 30, error 40, critical 50, disabled 100), default è warning</TD>
+<TD>Il livello più basso di un messaggio loggato (debug 10, input/output 12, debug warning 15, info 20, disabled 100)</TD>
 </TR>
 <TR>
 <TD>-c CONFIGPATH</TD>
