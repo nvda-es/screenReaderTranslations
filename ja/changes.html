@@ -10,6 +10,204 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2023.1</H2>
+<H3>新機能</H3>
+<UL>
+<LI>UI オートメーションで Microsoft Excel を使うときにテーブルの行や列の見出しの自動報告が可能になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14228">#14228</A>)
+  <UL>
+  <LI>注意: リボンの「挿入」「テーブル」ボタンでフォーマットされたテーブルが対象です。
+  「テーブルの書式オプション」の「最初の列」および「先頭行」が行見出しと列見出しにそれぞれ対応します。
+  <LI>「名前の定義」を使うスクリーンリーダー独自の見出し読み上げ機能とは異なります。こちらは UI オートメーションでは未対応です。
+  </UL>
+<LI>「テキストカーソル移動のすこし後で文字を説明」を切り替えるジェスチャー未割り当てのスクリプトが利用可能になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14267">#14267</A>)
+<LI>実験的な機能に「Windows ターミナルで新しいテキストを読み上げる方法」を追加しました。この設定は安定性や性能の改善に役立つ可能性があります。 (<A HREF="https://github.com/nvaccess/nvda/issues/13781">#13781</A>)
+  <UL>
+  <LI>この機能の制約についてはユーザーガイドを参照してください。
+  </UL>
+<LI>Windows 11 ARM64 環境で、Firefox, Google Chrome および 1Password などの AMD64 アプリのブラウズモードが利用可能になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14397">#14397</A>)
+<LI>設定「ドキュメントナビゲーション」の「段落ナビゲーションスタイル」オプションが追加されました。
+段落の区切りと解釈するものを改行または1行以上の連続する空白行に切り替えることができます。
+アプリが段落単位のナビゲーションを独自に実装していないテキストエディター、例えばメモ帳や Notepad++ などで有用です。 (<A HREF="https://github.com/nvaccess/nvda/issues/13797">#13797</A>)
+<LI>複数の注釈の存在を報告できるようになりました。
+<CODE>NVDA+D</CODE> は複数の注釈がつけられた場所で、それぞれの注釈を順番に報告する操作となります。
+例えば、ある1カ所のテキストにコメントと脚注がある場合などです。 (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14480">#14480</A>)
+<LI>Tivomatic Caiku Albatross 46/80 点字ディスプレイに対応しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13045">#13045</A>)
+</UL>
+
+<P></P>
+<H3>変更点</H3>
+<UL>
+<LI>LibLouis 点訳エンジンを <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.24.0">3.24.0</A> に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14436">#14436</A>)
+  <UL>
+  <LI>ハンガリー語、UEB、中国語ボポモフォ注音符号の大幅な更新
+  <LI>デンマーク語点字標準 2022 への対応
+  <LI>ジョージア語非縮約点字、スワヒリ語(ケニア)、チェワ語(マラウイ)の点字テーブルの追加
+  </UL>
+<LI>Sonic 音声速度変換ライブラリを commit <CODE>1d70513</CODE> に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14180">#14180</A>)
+<LI>CLDR をバージョン 42.0 に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14273">#14273</A>)
+<LI>eSpeak NG を 1.52-dev commit <CODE>a51235aa</CODE> に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14281">#14281</A>)
+  <UL>
+  <LI>大きな数の読み上げに関する修正 (<A HREF="https://github.com/nvaccess/nvda/issues/14241">#14241</A>)
+  </UL>
+<LI>選択可能な状態を取り得るコントロールを持つJavaアプリは、項目が選択されたときではなく、選択されていないときに通知するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14336">#14336</A>)
+</UL>
+
+<P></P>
+<H3>バグ修正</H3>
+<UL>
+<LI>Windows 11 対応の改善:
+  <UL>
+  <LI>NVDA は、スタートメニューを開くと、検索のハイライトを報告します。 (<A HREF="https://github.com/nvaccess/nvda/issues/13841">#13841</A>)
+  <LI>ARM 環境において、x64 アプリが ARM64 アプリとして識別されなくなりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14403">#14403</A>)
+  <LI>クリップボード履歴で「アイテムの固定」などにアクセスできるようになりました。(<A HREF="https://github.com/nvaccess/nvda/issues/14508">#14508</A>)
+  <LI>Windows 11 22H2 とそれ以降において、マウスとタッチを使用して、システムトレイのオーバーフローウィンドウや「プログラムから開く」のダイアログボックスなどを操作できなかった問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14538">#14538</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14539">#14539</A>)
+  </UL>
+<LI>Microsoft Excel のコメントで@メンションを入力すると、提案が報告されます。(<A HREF="https://github.com/nvaccess/nvda/issues/13764">#13764</A>) 
+<LI>Google Chrome ロケーションバーで提案コントロール(タブへの切り替え、提案の削除など)を選択したときに報告されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13522">#13522</A>)
+<LI>ワードパッドやログビューアーの書式情報において、色を明示的に報告するようになりました。従来は「既定の色」と報告していました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13959">#13959</A>)
+<LI>Firefox で GitHub issues ページの "Show options" ボタンをアクティブ化するときの動作がより確実になりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14269">#14269</A>)
+<LI>Outlook 2016/365 の詳細検索ダイアログの日付選択コントロールにおいて、ラベルと値を報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12726">#12726</A>)
+<LI>Firefox、Chrome および Edge において、ARIA switch コントロールはチェックボックスではなく、実際にスイッチと報告されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/11310">#11310</A>)
+<LI>NVDA は HTML テーブルの列ヘッダーで内側のボタンを押してソート状態を変更すると、自動的に報告します。 (<A HREF="https://github.com/nvaccess/nvda/issues/10890">#10890</A>)
+<LI>ブラウズモードで1文字ナビゲーションまたはフォーカスを使用してランドマークまたはリージョンの外から中にジャンプすると、その名前が常に自動的に読み上げられます。 (<A HREF="https://github.com/nvaccess/nvda/issues/13307">#13307</A>)
+<LI>「テキストカーソル移動のすこし後で文字を説明」で大文字のビープ音または報告が有効になっている場合、NVDA はビープ音または「大文字」の報告を2回行わなくなりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14239">#14239</A>)
+<LI>NVDA はJavaアプリのテーブル内のコントロールをより正確に報告するようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14347">#14347</A>)
+<LI>複数のプロファイルを使用したときに、一部の設定が予想外に異なることがなくなりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14170">#14170</A>)
+  <UL>
+  <LI>次の設定が修正されました:
+    <UL>
+    <LI>書式とドキュメント情報の「行インデント」
+    <LI>書式とドキュメント情報の「セルの罫線」
+    <LI>点字の「メッセージの表示」
+    <LI>点字の「点字表示切り替え」
+    </UL>
+  <LI>このバージョンのNVDAをインストールすると、プロファイルで使用されているこれらの設定が予期せず変更されることがあります。
+  <LI>NVDAをこのバージョンに更新した後で、プロファイルのこれらのオプションを確認してください。
+  </UL>
+<LI>絵文字がより多くの言語で報告されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14433">#14433</A>)
+<LI>一部の要素で、点字で注釈が表示されなかった不具合を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13815">#13815</A>)
+<LI>設定の変更において「既定」オプションと既定の値を切り替えたときに正しく保存されない問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14133">#14133</A>)
+<LI>NVDAを設定する場合、少なくとも1つのキーが常にNVDAキーとして定義されます。 (<A HREF="https://github.com/nvaccess/nvda/issues/14527">#14527</A>)
+<LI>通知領域からNVDAメニューを開くとき、利用可能な更新がないにも関わらず保留中の更新を提示していた問題を修正しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>)
+<LI>ChromeやFirefoxなどのWebブラウザで、ファイルのダウンロードなどのアラートが、音声だけでなく点字でも表示されるようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14562">#14562</A>)
+</UL>
+
+<P></P>
+<H3>開発者向けの変更</H3>
+<P>
+注意: このリリースでは、既存のアドオンとの互換性が失われています。
+アドオンは再テストとマニフェストの更新を行う必要があります。
+NVDA の API 廃止および削除のプロセスについては <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">the developer guide</A> を参照してください。
+</P>
+<UL>
+<LI>非英語の環境でシステムテストが失敗しないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13362">#13362</A>)
+<LI>Windows 11 on ARM において x64 apps は ARM64 アプリと判定されないようになりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14403">#14403</A>)
+<LI>新しい UI オートメーションのシナリオでは <CODE>SearchField</CODE> および <CODE>SuggestionListItem</CODE> <CODE>UIA</CODE> <CODE>NVDAObjects</CODE> は不要です。検索候補の自動報告と文字入力は <CODE>controllerFor</CODE> パターンで通知されます。
+この機能は現在 <CODE>behaviours.EditableText</CODE> またはそのベースクラス <CODE>NVDAObject</CODE> を介して使用できます。
+<LI>UIA debug logging カテゴリは有効化すると UIA イベントハンドラやユーティリティのログを従来よりも多く出力します。 (<A HREF="https://github.com/nvaccess/nvda/issues/14256">#14256</A>)
+<LI>NVDAHelper ビルドの標準の更新 (<A HREF="https://github.com/nvaccess/nvda/issues/13072">#13072</A>)
+  <UL>
+  <LI>C++17 から C++20 標準に移行しました。
+  <LI>'/permissive-' コンパイラーフラグを指定しています。より厳格に標準に準拠する '/Zc' が設定されます。
+  </UL>
+<LI>ドライバーやアドオンなどのプラグインオブジェクトについて NVDA Python コンソールで得られる情報が改善されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14463">#14463</A>)
+<LI>NVDA は Visual Studio 2022 でコンパイルできるようになりました。 Visual Studio 2019 build tools は不要となりました。
+<LI>NVDA がフリーズした場合に得られるログが詳細になり、デバッグしやすくなりました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14309">#14309</A>)
+<LI>シングルトン <CODE>braille._BgThread</CODE> クラスが <CODE>hwIo.ioThread.IoThread</CODE> に変更されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14130">#14130</A>)
+  <UL>
+  <LI>このクラスの単一のインスタンス <CODE>hwIo.bgThread</CODE> (NVDA core 内) はスレッドセーフな点字ディスプレイドライバーのためのバックグラウンド I/O を提供します。
+  <LI>新しいクラスはシングルトンとして設計されていません。アドオン開発者はハードウェア I/O を行う場合にそれぞれインスタンスを作る必要があります。
+  </UL>
+<LI>PC のプロセッサーアーキテクチャーは <CODE>winVersion.WinVersion.processorArchitecture</CODE> attribute から取得できます。(<A HREF="https://github.com/nvaccess/nvda/issues/14439">#14439</A>)
+<LI>以下の extension point が追加されました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
+  <UL>
+  <LI><CODE>inputCore.decide_executeGesture</CODE>
+  <LI><CODE>tones.decide_beep</CODE>
+  <LI><CODE>nvwave.decide_playWaveFile</CODE>
+  <LI><CODE>braille.pre_writeCells</CODE>
+  <LI><CODE>braille.filter_displaySize</CODE>
+  <LI><CODE>braille.decide_enabled</CODE>
+  <LI><CODE>braille.displayChanged</CODE>
+  <LI><CODE>braille.displaySizeChanged</CODE>
+  </UL>
+</UL>
+
+<P></P>
+<H4>API の重大な変更</H4>
+<P>
+API の重大な変更があります。
+あなたがアドオン開発者で新しいAPIへの移行において問題がある場合は GitHub issue を作成してください。
+</P>
+<UL>
+<LI>設定ファイルの仕様を変更しました。キーの削除や変更があります:
+  <UL>
+  <LI><CODE>[documentFormatting]</CODE> セクション (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>):
+    <UL>
+    <LI><CODE>reportLineIndentation</CODE> の値は boolean から int value (0 to 3) に変更されました。
+    <LI><CODE>reportLineIndentationWithTones</CODE> は削除されました。
+    <LI><CODE>reportBorderStyle</CODE> と <CODE>reportBorderColor</CODE> は削除されました。かわりに <CODE>reportCellBorders</CODE> を使用します。
+    </UL>
+  <LI><CODE>[braille]</CODE> セクション (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>):
+    <UL>
+    <LI><CODE>noMessageTimeout</CODE> は削除されました。かわりに <CODE>showMessages</CODE> を使います。
+    <LI><CODE>messageTimeout</CODE> が 0 の値を取ることはなくなりました。かわりに <CODE>showMessages</CODE> を使います。
+    <LI><CODE>autoTether</CODE> は削除されました。 <CODE>tetherTo</CODE> は "auto" の値を取ることができます。
+    </UL>
+  <LI><CODE>[keyboard]</CODE> セクション (<A HREF="https://github.com/nvaccess/nvda/issues/14528">#14528</A>):
+    <UL>
+    <LI><CODE>useCapsLockAsNVDAModifierKey</CODE>, <CODE>useNumpadInsertAsNVDAModifierKey</CODE>, <CODE>useExtendedInsertAsNVDAModifierKey</CODE> は削除されました。
+    かわりに <CODE>NVDAModifierKeys</CODE> を使います。
+    </UL>
+  </UL>
+<LI><CODE>NVDAHelper.RemoteLoader64</CODE> クラスは削除されました。代替はありません。 (<A HREF="https://github.com/nvaccess/nvda/issues/14449">#14449</A>)
+<LI><CODE>winAPI.sessionTracking</CODE> から以下の関数が削除されました。代替はありません。(<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14490">#14490</A>)
+  <UL>
+  <LI><CODE>isWindowsLocked</CODE>
+  <LI><CODE>handleSessionChange</CODE>
+  <LI><CODE>unregister</CODE>
+  <LI><CODE>register</CODE>
+  <LI><CODE>isLockStateSuccessfullyTracked</CODE>
+  </UL>
+<LI>braille handler を <CODE>braille.handler.enabled</CODE> で有効化／無効化できなくなりました。
+braille handler を無効化したい場合は <CODE>braille.handler.decide_enabled</CODE> にハンドラーを登録します。 (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
+<LI>braille handler の display size を <CODE>braille.handler.displaySize</CODE> で変更できなくなりました。
+displaySize を変更したい場合は <CODE>braille.handler.filter_displaySize</CODE> にハンドラーを登録します。
+実装方法の例は <CODE>brailleViewer</CODE> を参照してください。 (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
+<LI><CODE>addonHandler.Addon.loadModule</CODE> に関する仕様を変更しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/14481">#14481</A>)
+  <UL>
+  <LI><CODE>loadModule</CODE> は backslash ではなく dot を区切り文字として使います。
+  例えば "lib\example" は "lib.example" となります。
+  <LI><CODE>loadModule</CODE> はモジュールの読み込み失敗やエラーで例外を投げます。従来は理由を通知せずに <CODE>None</CODE> を返していました。
+  </UL>
+<LI>以下はシングルトンではなくなりました。これらの get メソッドは削除されました。
+<CODE>Example.get()</CODE> のようなコードは <CODE>Example()</CODE> のように書きます。 (<A HREF="https://github.com/nvaccess/nvda/issues/14248">#14248</A>)
+  <UL>
+  <LI><CODE>UIAHandler.customAnnotations.CustomAnnotationTypesCommon</CODE>
+  <LI><CODE>UIAHandler.customProps.CustomPropertiesCommon</CODE>
+  <LI><CODE>NVDAObjects.UIA.excel.ExcelCustomProperties</CODE>
+  <LI><CODE>NVDAObjects.UIA.excel.ExcelCustomAnnotationTypes</CODE>
+  </UL>
+</UL>
+
+<P></P>
+<H4>非推奨となったAPI</H4>
+<UL>
+<LI><CODE>NVDAObjects.UIA.winConsoleUIA.WinTerminalUIA</CODE> は非推奨です。 (<A HREF="https://github.com/nvaccess/nvda/issues/14047">#14047</A>)
+<LI><CODE>config.addConfigDirsToPythonPackagePath</CODE> は変更されました。
+かわりに <CODE>addonHandler.packaging.addDirsToPythonPackagePath</CODE> を使います。 (<A HREF="https://github.com/nvaccess/nvda/issues/14350">#14350</A>)
+<LI><CODE>braille.BrailleHandler.TETHER_*</CODE> は非推奨です。
+かわりに <CODE>configFlags.TetherTo.*.value</CODE> を使います。 (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>)
+<LI><CODE>utils.security.postSessionLockStateChanged</CODE> は非推奨です。
+かわりに <CODE>utils.security.post_sessionLockStateChanged</CODE> を使います。 (<A HREF="https://github.com/nvaccess/nvda/issues/14486">#14486</A>)
+<LI><CODE>NVDAObject.hasDetails</CODE>, <CODE>NVDAObject.detailsSummary</CODE>, <CODE>NVDAObject.detailsRole</CODE> は非推奨です。
+かわりに <CODE>NVDAObject.annotations</CODE> を使います。 (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>)
+<LI><CODE>keyboardHandler.SUPPORTED_NVDA_MODIFIER_KEYS</CODE> は非推奨です。直接の代替はありません。
+<CODE>config.configFlags.NVDAKey</CODE> に移行してください。 (<A HREF="https://github.com/nvaccess/nvda/issues/14528">#14528</A>)
+<LI><CODE>gui.MainFrame.evaluateUpdatePendingUpdateMenuItemCommand</CODE> は非推奨です。
+かわりに <CODE>gui.MainFrame.SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand</CODE> を使います。 (<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>)
+</UL>
+
+<P></P>
 <H2>2022.4</H2>
 <P>
 このリリースではテーブルの行や列の読み上げなど、新しいコマンドが追加されました。
@@ -566,7 +764,7 @@ Microsoft Office 16.0.15000 およびそれ以降と Windows 11 の組み合わ�
 また、電卓、コンソール、ターミナル、メール、絵文字パネルなどのさまざまな Windows 11 のアプリに対応するバグ修正を行いました。
 </P>
 <P>
-eSpeak-NG と LibLouis を更新し、新しい日本語（6点漢点字）、ドイツ語、カタロニア語の点字テーブルを追加しました。
+eSpeak-NG と LibLouis を更新し、新しい日本語（漢点字）、ドイツ語、カタロニア語の点字テーブルを追加しました。
 </P>
 <P>
 注意:
@@ -610,7 +808,7 @@ eSpeak-NG と LibLouis を更新し、新しい日本語（6点漢点字）、�
 <LI>Espeak-ng をバージョン 1.51-dev commit <CODE>7e5457f91e10</CODE> に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/12950">#12950</A>)
 <LI>liblouis 点訳エンジンを <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.21.0">3.21.0</A> に更新しました。 (<A HREF="https://github.com/nvaccess/nvda/issues/13141">#13141</A>, <A HREF="https://github.com/nvaccess/nvda/issues/13438">#13438</A>)
   <UL>
-  <LI>新しいテーブル: 日本語6点漢点字
+  <LI>新しいテーブル: 日本語漢点字
   <LI>新しいテーブル: ドイツ語6点コンピューター点字
   <LI>新しいテーブル: カタロニア語1級点字 (<A HREF="https://github.com/nvaccess/nvda/issues/13408">#13408</A>)
   </UL>
