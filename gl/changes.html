@@ -11,6 +11,36 @@
 </FONT></CENTER>
 
 <H2>2023.1</H2>
+<P>
+Engadiuse unha nova orde "Estilo de Parágrafo" na "navegación de Documento".
+Esto pode usarse con editores de texto que non admitan a navegación por parágrafos nativamente, coma o Bloc de Notas e Notepad++.
+</P>
+<P>
+Hai unha nova orde global para anunciar o destiño dunha ligazón, mapeada a <CODE>NVDA+k</CODE>.
+</P>
+<P>
+O soporte para o contido web anotado (coma os comentarios e as notas ao pe) foi mellorado.
+Preme <CODE>NVDA+d</CODE> para percorrer os resumos cando se anuncien as anotacións (por exemplo, "ten comentario, ten nota ao pe").
+</P>
+<P>
+Agora admítense as pantallas braille Tivomatic Caiku Albatross 46/80.
+</P>
+<P>
+Mellorouse o soporte para versións ARM64 e AMD64 de Windows.
+Hai moitos arranxos de erros, en particular arranxos de Windows 11.
+</P>
+<P>
+Actualizáronse eSpeak, LibLouis, Sonic rate boost e Unicode CLDR.
+Hai novas táboas braille para xeorxiano, Swahili (Kenya) e Chichewa (Malawi).
+</P>
+<P>
+Nota:
+</P>
+<UL>
+<LI>Esta versión rompe a compatibilidade cos complementos existentes.
+</UL>
+
+<P></P>
 <H3>Novas Características</H3>
 <UL>
 <LI>Microsoft Excel a través de UI Automation: anunciado automático de cabeceiras de fila e columna en táboas. (<A HREF="https://github.com/nvaccess/nvda/issues/14228">#14228</A>)
@@ -32,6 +62,11 @@ Esto pode usarse con editores de texto que non admitan a navegación por parágr
 <CODE>nvda+d</CODE> agora percorre o sumario de cada anotación anunciando o obxectivo para os orixes con varios obxectivos de anotacións.
 Por exemplo, cando o texto ten un comentario e unha nota ao pe asociada con ela. (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14480">#14480</A>)
 <LI>Engadiuse o soporte para as pantallas braille Tivomatic Caiku Albatross 46/80. (<A HREF="https://github.com/nvaccess/nvda/issues/13045">#13045</A>)
+<LI>Nova orde global: anunciar destiño da ligazón (<CODE>NVDA+k</CODE>).
+Preméndoa unha vez falará e amosará en braille o destiño da ligazón que estea no navegador de obxectos.
+Preméndoa dúas veces amosaráa nunha ventá para unha revisión máis detallada. (<A HREF="https://github.com/nvaccess/nvda/issues/14583">#14583</A>)
+<LI>Unha nova orde global non mapeada (Categoría Ferramentas): anuncia o destiño da ligazón nunha ventá.
+O mesmo que premer <CODE>NVDA+k</CODE> dúas veces, pero pode ser máis útil para usuarios de braille. (<A HREF="https://github.com/nvaccess/nvda/issues/14583">#14583</A>)
 </UL>
 
 <P></P>
@@ -92,7 +127,10 @@ Actualizouse o transcriptor braille LibLouis a <A HREF="https://github.com/liblo
 <LI>Arranxado un problema onde os cambios de configuración non se gardaban correctamente ao cambiar entre unha opción "Predeterminada" e o valor da opción "predeterminada". (<A HREF="https://github.com/nvaccess/nvda/issues/14133">#14133</A>)
 <LI>Ao se configurar o NVDA sempre haberá ao menos unha tecla que se defina coma tecla NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14527">#14527</A>)
 <LI>Ao acesar ao menú NVDA a través da área de notificacións, o NVDA agora non suxerirá unha actualización pendente cando non haxa xa ningunha dispoñible. (<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>)
+<LI>O tempo restante, transcorrido e total agora anúnciase correctamente para ficheiros de audio de máis dun día en foobar2000. (<A HREF="https://github.com/nvaccess/nvda/issues/14127">#14127</A>)
 <LI>En navegadores web coma Chrome e Firefox, as alertas coma descargas de ficheiros amósanse en braille ademáis de seren faladas. (<A HREF="https://github.com/nvaccess/nvda/issues/14562">#14562</A>)
+<LI>Arranxado un erro ao navegar á primeira e última columna nunha táboa en Firefox (<A HREF="https://github.com/nvaccess/nvda/issues/14554">#14554</A>)
+<LI>Cando o NVDA se lance co parámetro <CODE>--lang=Windows</CODE>, é posible de novo abrir o diálogo Opcións Xerais de NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14407">#14407</A>)
 </UL>
 
 <P></P>
@@ -133,6 +171,7 @@ Esta funcionalidad agora está dispoñible xenéricamente a través de <CODE>beh
   <LI><CODE>braille.displayChanged</CODE>
   <LI><CODE>braille.displaySizeChanged</CODE>
   </UL>
+<LI>É posible axustar useConfig a  False nas opcións soportadas para un controlador de sintetizador. (<A HREF="https://github.com/nvaccess/nvda/issues/14601">#14601</A>)
 </UL>
 
 <P></P>
@@ -181,6 +220,13 @@ Consulta <CODE>brailleViewer</CODE> para ver un exemplo de cómo facelo. (<A HRE
   <LI><CODE>loadModule</CODE> agora espera o punto coma un separador, en lugar da barra inversa.
   Por exemplo "lib.example" a cambio de "lib\example".
   <LI><CODE>loadModule</CODE> agora lanza unha excepción cando un módulo non se poda cargar  ou teña erros, en lugar de devolver silenciosamente <CODE>None</CODE> sen dar información sobre a causa.
+  </UL>
+<LI>Os seguintes símbolos borráronse de <CODE>appModules.foobar2000</CODE> sen un remplazo directo. (<A HREF="https://github.com/nvaccess/nvda/issues/14570">#14570</A>)
+  <UL>
+  <LI><CODE>statusBarTimes</CODE>
+  <LI><CODE>parseIntervalToTimestamp</CODE>
+  <LI><CODE>getOutputFormat</CODE>
+  <LI><CODE>getParsingFormat</CODE>
   </UL>
 <LI>Os seguintes xa non son singletons - o seu método get foi borrado.
 O uso de <CODE>Example.get()</CODE> agora é <CODE>Example()</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14248">#14248</A>)
