@@ -177,75 +177,83 @@ Cette fonctionnalité est désormais disponible de manière générique via <COD
 <H4>Changements avec rupture de l'API</H4>
 <P>
 Ce sont des changements d'API qui cassent.
-+Please open a GitHub issue if your Add-on has an issue with updating to the new API.
-+- The configuration specification has been altered, keys have been removed or modified:
-+  - In <CODE>[documentFormatting]</CODE> section (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>):
-+    - <CODE>reportLineIndentation</CODE> stores an int value (0 to 3) instead of a boolean
-+    - <CODE>reportLineIndentationWithTones</CODE> has been removed.
-+    - <CODE>reportBorderStyle</CODE> and <CODE>reportBorderColor</CODE> have been removed and are replaced by <CODE>reportCellBorders</CODE>.
-+    -
-+  - In <CODE>[braille]</CODE> section (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>):
-+    - <CODE>noMessageTimeout</CODE> has been removed, replaced by a value for <CODE>showMessages</CODE>.
-+    - <CODE>messageTimeout</CODE> cannot take the value 0 anymore, replaced by a value for <CODE>showMessages</CODE>.
-+    - <CODE>autoTether</CODE> has been removed; <CODE>tetherTo</CODE> can now take the value "auto" instead.
-+    -
-+  - In <CODE>[keyboard]</CODE> section  (<A HREF="https://github.com/nvaccess/nvda/issues/14528">#14528</A>):
-+    - <CODE>useCapsLockAsNVDAModifierKey</CODE>, <CODE>useNumpadInsertAsNVDAModifierKey</CODE>, <CODE>useExtendedInsertAsNVDAModifierKey</CODE> has been removed.
-+    They are replaced by <CODE>NVDAModifierKeys</CODE>.
-+    -
-+  -
-+- The <CODE>NVDAHelper.RemoteLoader64</CODE> class has been removed with no replacement. (<A HREF="https://github.com/nvaccess/nvda/issues/14449">#14449</A>)
-+- The following functions in <CODE>winAPI.sessionTracking</CODE> are removed with no replacement. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14490">#14490</A>)
-+  - <CODE>isWindowsLocked</CODE>
-+  - <CODE>handleSessionChange</CODE>
-+  - <CODE>unregister</CODE>
-+  - <CODE>register</CODE>
-+  - <CODE>isLockStateSuccessfullyTracked</CODE>
-+  - 
-+- It is no longer possible to enable/disable the braille handler by setting <CODE>braille.handler.enabled</CODE>.
-+To disable the braille handler programatically, register a handler to <CODE>braille.handler.decide_enabled</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
-+- It is no longer possible to update the display size of the handler by setting <CODE>braille.handler.displaySize</CODE>.
-+To update the displaySize programatically, register a handler to <CODE>braille.handler.filter_displaySize</CODE>.
-+Refer to <CODE>brailleViewer</CODE> for an example on how to do this. (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
-+- There have been changes to the usage of <CODE>addonHandler.Addon.loadModule</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14481">#14481</A>)
-+  - <CODE>loadModule</CODE> now expects dot as a separator, rather than backslash.
-+  For example "lib.example" instead of "lib\example".
-+  - <CODE>loadModule</CODE> now raises an exception when a module can't be loaded or has errors, instead of silently returning <CODE>None</CODE> without giving information about the cause.
-+  -
-+- The following symbols have been removed from <CODE>appModules.foobar2000</CODE> with no direct replacement. (<A HREF="https://github.com/nvaccess/nvda/issues/14570">#14570</A>)
-+  - <CODE>statusBarTimes</CODE>
-+  - <CODE>parseIntervalToTimestamp</CODE>
-+  - <CODE>getOutputFormat</CODE>
-+  - <CODE>getParsingFormat</CODE>
-+  -
-+- The following are no longer singletons - their get method has been removed.
-+Usage of <CODE>Example.get()</CODE> is now <CODE>Example()</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14248">#14248</A>)
-+  - <CODE>UIAHandler.customAnnotations.CustomAnnotationTypesCommon</CODE>
-+  - <CODE>UIAHandler.customProps.CustomPropertiesCommon</CODE>
-+  - <CODE>NVDAObjects.UIA.excel.ExcelCustomProperties</CODE>
-+  - <CODE>NVDAObjects.UIA.excel.ExcelCustomAnnotationTypes</CODE>
-+  - 
-+-
-+
-+
-+=== Deprecations ===
-+- <CODE>NVDAObjects.UIA.winConsoleUIA.WinTerminalUIA</CODE> is deprecated and usage is discouraged. (<A HREF="https://github.com/nvaccess/nvda/issues/14047">#14047</A>)
-+- <CODE>config.addConfigDirsToPythonPackagePath</CODE> has been moved.
-+Use <CODE>addonHandler.packaging.addDirsToPythonPackagePath</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/14350">#14350</A>)
-+- <CODE>braille.BrailleHandler.TETHER_*</CODE> are deprecated.
-+Use <CODE>configFlags.TetherTo.*.value</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>)
-+- <CODE>utils.security.postSessionLockStateChanged</CODE> is deprecated.
-+Use <CODE>utils.security.post_sessionLockStateChanged</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/14486">#14486</A>)
-+- <CODE>NVDAObject.hasDetails</CODE>, <CODE>NVDAObject.detailsSummary</CODE>, <CODE>NVDAObject.detailsRole</CODE> has been deprecated.
-+Use <CODE>NVDAObject.annotations</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>)
-+- <CODE>keyboardHandler.SUPPORTED_NVDA_MODIFIER_KEYS</CODE> is deprecated with no direct replacement.
-+Consider using the class <CODE>config.configFlags.NVDAKey</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/14528">#14528</A>)
-+- <CODE>gui.MainFrame.evaluateUpdatePendingUpdateMenuItemCommand</CODE> has been deprecated.
-+Use <CODE>gui.MainFrame.SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand</CODE> instead. (<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>)
-+-
-+
-+
+Veuillez ouvrir un problème GitHub si votre module complémentaire a un problème avec la mise à jour vers la nouvelle API.
 </P>
+<UL>
+<LI>La spécification de configuration a été altérée, des clés ont été supprimées ou modifiées :
+ <UL>
+ <LI>Dans la section <CODE>[documentFormatting]</CODE> (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>):
+ <LI><CODE>reportLineIndentation</CODE> stocke une valeur int (0 à 3) au lieu d'un booléen
+ <LI><CODE>reportLineIndentationWithTones</CODE> a été supprimé.
+ <LI><CODE>reportBorderStyle</CODE> et <CODE>reportBorderColor</CODE> ont été supprimés et sont remplacés par <CODE>reportCellBorders</CODE>.
+ </UL>
+ <UL>
+ <LI>Dans la section <CODE>[braille]</CODE> (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>):
+ <LI><CODE>noMessageTimeout</CODE> a été supprimé, remplacé par une valeur pour <CODE>showMessages</CODE>.
+ <LI><CODE>messageTimeout</CODE> ne peut plus prendre la valeur 0, remplacée par une valeur pour <CODE>showMessages</CODE>.
+ <LI><CODE>autoTether</CODE> a été supprimé ; <CODE>tetherTo</CODE> peut maintenant prendre la valeur "auto" à la place.
+ </UL>
+ <UL>
+ <LI>Dans la section <CODE>[clavier]</CODE> (<A HREF="https://github.com/nvaccess/nvda/issues/14528">#14528</A>):
+ <LI><CODE>useCapsLockAsNVDAModifierKey</CODE>, <CODE>useNumpadInsertAsNVDAModifierKey</CODE>, <CODE>useExtendedInsertAsNVDAModifierKey</CODE> a été supprimé.
+ Ils sont remplacés par <CODE>NVDAModifierKeys</CODE>.
+ </UL>
+<LI>La classe <CODE>NVDAHelper.RemoteLoader64</CODE> a été supprimée sans remplacement. (<A HREF="https://github.com/nvaccess/nvda/issues/14449">#14449</A>)
+<LI>Les fonctions suivantes dans <CODE>winAPI.sessionTracking</CODE> sont supprimées sans remplacement. (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14490">#14490</A>)
+  <UL>
+  <LI><CODE>isWindowsLocked</CODE>
+  <LI><CODE>handleSessionChange</CODE>
+  <LI><CODE>unregister</CODE>
+  <LI><CODE>register</CODE>
+  <LI><CODE>isLockStateSuccessfullyTracked</CODE>
+  </UL>
+<LI>Il n'est plus possible d'activer/désactiver le gestionnaire de braille en définissant <CODE>braille.handler.enabled</CODE>.
+Pour désactiver le gestionnaire de braille par programmation, enregistrez un gestionnaire sur <CODE>braille.handler.decide_enabled</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
+<LI>Il n'est plus possible de mettre à jour la taille d'affichage du gestionnaire en définissant <CODE>braille.handler.displaySize</CODE>.
+Pour mettre à jour displaySize par programme, enregistrez un gestionnaire sur <CODE>braille.handler.filter_displaySize</CODE>.
+Reportez-vous à <CODE>brailleViewer</CODE> pour un exemple sur la façon de procéder. (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
+<LI>Il y a eu des changements dans l'utilisation de <CODE>addonHandler.Addon.loadModule</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14481">#14481</A>)
+ <UL>
+ <LI><CODE>loadModule</CODE> attend maintenant un point comme séparateur, plutôt qu'une barre oblique inverse.
+ Par exemple "lib.example" au lieu de "lib\example".
+ <LI><CODE>loadModule</CODE> renvoie maintenant une exception lorsqu'un module ne peut pas être chargé ou a des erreurs, au lieu de retourner silencieusement <CODE>None</CODE> sans donner d'informations sur la cause.
+ </UL>
+<LI>Les symboles suivants ont été supprimés de <CODE>appModules.foobar2000</CODE> sans remplacement direct. (<A HREF="https://github.com/nvaccess/nvda/issues/14570">#14570</A>)
+  <UL>
+  <LI><CODE>statusBarTimes</CODE>
+  <LI><CODE>parseIntervalToTimestamp</CODE>
+  <LI><CODE>getOutputFormat</CODE>
+  <LI><CODE>getParsingFormat</CODE>
+  </UL>
+<LI>Les éléments suivants ne sont plus des singletons - leur méthode get a été supprimée.
+L'utilisation de <CODE>Example.get()</CODE> est maintenant <CODE>Example()</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14248">#14248</A>)
+  <UL>
+  <LI><CODE>UIAHandler.customAnnotations.CustomAnnotationTypesCommon</CODE>
+  <LI><CODE>UIAHandler.customProps.CustomPropertiesCommon</CODE>
+  <LI><CODE>NVDAObjects.UIA.excel.ExcelCustomProperties</CODE>
+  <LI><CODE>NVDAObjects.UIA.excel.ExcelCustomAnnotationTypes</CODE>
+  </UL>
+</UL>
+
+<P></P>
+<H4>Dépréciations</H4>
+<UL>
+<LI><CODE>NVDAObjects.UIA.winConsoleUIA.WinTerminalUIA</CODE> est obsolète et son utilisation est déconseillée. (<A HREF="https://github.com/nvaccess/nvda/issues/14047">#14047</A>)
+<LI><CODE>config.addConfigDirsToPythonPackagePath</CODE> a été déplacé.
+Utilisez <CODE>addonHandler.packaging.addDirsToPythonPackagePath</CODE> en remplacement. (<A HREF="https://github.com/nvaccess/nvda/issues/14350">#14350</A>)
+<LI><CODE>braille.BrailleHandler.TETHER_*</CODE> sont obsolètes.
+Utilisez <CODE>configFlags.TetherTo.*.value</CODE> en remplacement. (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>)
+<LI><CODE>utils.security.postSessionLockStateChanged</CODE> est obsolète.
+Utilisez <CODE>utils.security.post_sessionLockStateChanged</CODE> en remplacement. (<A HREF="https://github.com/nvaccess/nvda/issues/14486">#14486</A>)
+<LI><CODE>NVDAObject.hasDetails</CODE>, <CODE>NVDAObject.detailsSummary</CODE>, <CODE>NVDAObject.detailsRole</CODE> sont obsolètes.
+Utilisez <CODE>NVDAObject.annotations</CODE> en remplacement. (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>)
+<LI><CODE>keyboardHandler.SUPPORTED_NVDA_MODIFIER_KEYS</CODE> est obsolète sans remplacement direct.
+Pensez à utiliser la classe <CODE>config.configFlags.NVDAKey</CODE> en remplacement. (<A HREF="https://github.com/nvaccess/nvda/issues/14528">#14528</A>)
+<LI><CODE>gui.MainFrame.evaluateUpdatePendingUpdateMenuItemCommand</CODE> est obsolète.
+Utilisez <CODE>gui.MainFrame.SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand</CODE> en remplacement. (<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>)
+</UL>
+
+<P></P>
 <H2>2022.4</H2>
 <P>
 Cette version intègre beaucoup de nouvelles touches de commandes, incluant des commandes "Dire tout" dans les tableaux.
