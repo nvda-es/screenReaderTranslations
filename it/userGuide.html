@@ -245,7 +245,8 @@
     <LI><A HREF="#Eurobraille">15.17. Display Eurobraille Esys/Esytime/Iris</A>
     <LI><A HREF="#NattiqTechnologies">15.18. Display Braille Nattiq serie N</A>
     <LI><A HREF="#BRLTTY">15.19. BRLTTY</A>
-    <LI><A HREF="#HIDBraille">15.20. Display Standard HID Braille</A>
+    <LI><A HREF="#Albatross">15.20. Tivomatic Caiku Albatross 46/80</A>
+    <LI><A HREF="#HIDBraille">15.21. Display Standard HID Braille</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">16. Argomenti avanzati</A>
     <UL>
@@ -610,16 +611,22 @@ I comandi effettivi non verranno eseguiti nella modalità di aiuto immissione.
 <TD>Legge la barra di stato nel caso in cui NVDA sia in grado di individuarla. Una doppia pressione provocherà lo spelling delle informazioni. Una tripla pressione copierà il contenuto della barra di stato negli appunti</TD>
 </TR>
 <TR>
-<TD>Annuncia data/Ora</TD>
+<TD>Legge la data e l'Ora</TD>
 <TD><CODE>NVDA+f12</CODE></TD>
 <TD><CODE>NVDA+f12</CODE></TD>
 <TD>Premendo una volta viene annunciato l'orario corrente, mentre premendo due volte verrà annunciata la data</TD>
 </TR>
 <TR>
-<TD>Annuncia formattazione</TD>
+<TD>Legge la formattazione</TD>
 <TD><CODE>NVDA+f</CODE></TD>
 <TD><CODE>NVDA+f</CODE></TD>
 <TD>Legge la formattazione del testo; Una doppia pressione visualizzerà le informazioni in una finestra di dialogo</TD>
+</TR>
+<TR>
+<TD>Legge la destinazione di un link</TD>
+<TD><CODE>NVDA+k</CODE></TD>
+<TD><CODE>NVDA+k</CODE></TD>
+<TD>Una pressione leggerà l'URL di destinazione del collegamento nel <A HREF="#ObjectNavigation">navigatore ad oggetti</A>. Una doppia pressione lo visualizzerà in una finestra per un controllo più dettagliato</TD>
 </TR>
 </TABLE>
 
@@ -4977,6 +4984,7 @@ Segue l'elenco di tutti i display braille che supportano il rilevamento automati
 <LI>Display Esys/Esytime/Iris di Eurobraille
 <LI>Display Braille Nattiq serie N
 <LI>I modelli Notetaker di Seika: MiniSeika (16, 24 celle), V6, e V6Pro (40 celle)
+<LI>I modelli Tivomatic Caiku Albatross 46/80
 <LI>Qualsiasi display che supporti il protocollo Braille standard HID
 </UL>
 
@@ -7609,8 +7617,193 @@ Si legga la <A HREF="http://mielke.cc/brltty/doc/KeyBindings/">tabella dei tasti
 </TR>
 </TABLE>
 
+<A NAME="Albatross"></A>
+<H3>15.20. Tivomatic Caiku Albatross 46/80</H3>
+<P>
+I dispositivi Caiku Albatross, prodotti da Tivomatic e disponibili in Finlandia, possono essere collegati tramite USB o seriale.
+Non è necessario installare alcun driver specifico per utilizzare questi display.
+è sufficiente collegare il display e configurare NVDA per usarli.
+</P>
+<P>
+Nota: la velocità di trasmissione (baudrate) 19200 è fortemente consigliata.
+Se necessario, impostare il valore di velocità baud su 19200 dal menu del dispositivo braille.
+Sebbene il driver supporti una velocità di trasmissione di 9600, non ha modo di controllare la velocità di trasmissione utilizzata dal display.
+Poiché 19200 è il baud rate predefinito dalla barra, il driver utilizzerà quello come valore standard.
+Se le velocità in baud non sono le stesse, il driver potrebbe comportarsi in modo imprevisto.
+</P>
+<P>
+Seguono i tasti che sono stati associati per questi modelli a NVDA.
+Consultare la documentazione della barra braille per informazioni sulla posizione dei tasti.
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tasto</TH>
+</TR>
+<TR>
+<TD>Va alla prima riga in modalità cursore di controllo</TD>
+<TD><CODE>home1</CODE>, <CODE>home2</CODE></TD>
+</TR>
+<TR>
+<TD>Va all'ultima riga in modalità cursore di controllo</TD>
+<TD><CODE>end1</CODE>, <CODE>end2</CODE></TD>
+</TR>
+<TR>
+<TD>Porta il navigatore ad oggetti sul focus attuale</TD>
+<TD><CODE>eCursor1</CODE>, <CODE>eCursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Va al focus attuale</TD>
+<TD><CODE>cursor1</CODE>, <CODE>cursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Sposta il mouse alla posizione del navigatore ad oggetti</TD>
+<TD><CODE>home1+home2</CODE></TD>
+</TR>
+<TR>
+<TD>Sposta il navigatore ad oggetti alla posizione del mouse e la legge</TD>
+<TD><CODE>end1+end2</CODE></TD>
+</TR>
+<TR>
+<TD>Sposta il focus sull'oggetto del navigatore</TD>
+<TD><CODE>eCursor1+eCursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Commuta inseguimento braille</TD>
+<TD><CODE>cursor1+cursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Sposta il display braille alla riga precedente</TD>
+<TD><CODE>up1</CODE>, <CODE>up2</CODE>, <CODE>up3</CODE></TD>
+</TR>
+<TR>
+<TD>Sposta il display braille alla riga successiva</TD>
+<TD><CODE>down1</CODE>, <CODE>down2</CODE>, <CODE>down3</CODE></TD>
+</TR>
+<TR>
+<TD>Scorre display braille indietro</TD>
+<TD><CODE>left</CODE>, <CODE>lWheelLeft</CODE>, <CODE>rWheelLeft</CODE></TD>
+</TR>
+<TR>
+<TD>Scorre display braille avanti</TD>
+<TD><CODE>right</CODE>, <CODE>lWheelRight</CODE>, <CODE>rWheelRight</CODE></TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD><CODE>routing</CODE></TD>
+</TR>
+<TR>
+<TD>Visualizza la formattazione del testo sulla cella braille</TD>
+<TD><CODE>secondary routing</CODE></TD>
+</TR>
+<TR>
+<TD>Cambia il modo in cui le informazioni contestuali sono presentate in braille</TD>
+<TD><CODE>attribute1+attribute3</CODE></TD>
+</TR>
+<TR>
+<TD>Passa tra le modalità parlare, bip e spento</TD>
+<TD><CODE>attribute2+attribute4</CODE></TD>
+</TR>
+<TR>
+<TD>Passa alla modalità di revisione precedente (oggetto, documento o schermo)</TD>
+<TD><CODE>f1</CODE></TD>
+</TR>
+<TR>
+<TD>Passa alla modalità di revisione successiva (oggetto, documento o schermo)</TD>
+<TD><CODE>f2</CODE></TD>
+</TR>
+<TR>
+<TD>Sposta il navigatore ad oggetti sull'oggetto che lo contiene</TD>
+<TD><CODE>f3</CODE></TD>
+</TR>
+<TR>
+<TD>Sposta il navigatore ad oggetti sul primo oggetto al proprio interno</TD>
+<TD><CODE>f4</CODE></TD>
+</TR>
+<TR>
+<TD>Sposta il navigatore ad oggetti sull'oggetto precedente</TD>
+<TD><CODE>f5</CODE></TD>
+</TR>
+<TR>
+<TD>Sposta il navigatore ad oggetti sull'oggetto successivo</TD>
+<TD><CODE>f6</CODE></TD>
+</TR>
+<TR>
+<TD>Legge l'oggetto attuale del navigatore</TD>
+<TD><CODE>f7</CODE></TD>
+</TR>
+<TR>
+<TD>Riporta informazioni sulla posizione del testo o dell'oggetto in corrispondenza del cursore di controllo</TD>
+<TD><CODE>f8</CODE></TD>
+</TR>
+<TR>
+<TD>Esegue l'azione predefinita sull'oggetto attuale del navigatore</TD>
+<TD><CODE>f7+f8</CODE></TD>
+</TR>
+<TR>
+<TD>Legge data/ora</TD>
+<TD><CODE>f9</CODE></TD>
+</TR>
+<TR>
+<TD>Annuncia lo stato della batteria e il tempo rimanente se l'alimentazione non è collegata in</TD>
+<TD><CODE>f10</CODE></TD>
+</TR>
+<TR>
+<TD>Legge il titolo</TD>
+<TD><CODE>f11</CODE></TD>
+</TR>
+<TR>
+<TD>Legge la barra di stato</TD>
+<TD><CODE>f12</CODE></TD>
+</TR>
+<TR>
+<TD>Legge la riga corrente sul cursore dell'applicazione</TD>
+<TD><CODE>f13</CODE></TD>
+</TR>
+<TR>
+<TD>Dire tutto</TD>
+<TD><CODE>f14</CODE></TD>
+</TR>
+<TR>
+<TD>Legge il carattere corrente alla posizione del cursore di controllo</TD>
+<TD><CODE>f15</CODE></TD>
+</TR>
+<TR>
+<TD>Legge la riga del navigatore ad oggetti su cui si trova il cursore di controllo</TD>
+<TD><CODE>f16</CODE></TD>
+</TR>
+<TR>
+<TD>Legge la parola del navigatore ad oggetti su cui si trova il cursore di controllo</TD>
+<TD><CODE>f15+f16</CODE></TD>
+</TR>
+<TR>
+<TD>Sposta il cursore di controllo alla riga precedente del navigatore ad oggetti e la legge</TD>
+<TD><CODE>lWheelUp</CODE>, <CODE>rWheelUp</CODE></TD>
+</TR>
+<TR>
+<TD>Sposta il cursore di controllo alla riga precedente del navigatore ad oggetti e la legge</TD>
+<TD><CODE>lWheelDown</CODE>, <CODE>rWheelDown</CODE></TD>
+</TR>
+<TR>
+<TD>Tasto <CODE>Windows+d</CODE> (riduce a icona tutte le applicazioni)</TD>
+<TD><CODE>attribute1</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Tasto Windows+e</CODE> (questo pc)</TD>
+<TD><CODE>attribute2</CODE></TD>
+</TR>
+<TR>
+<TD>Tasto <CODE>Windows+b</CODE> (Porta il focus sulla system tray)</TD>
+<TD><CODE>attribute3</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Tasto Windows+i</CODE> (Impostazioni Windows)</TD>
+<TD><CODE>attribute4</CODE></TD>
+</TR>
+</TABLE>
+
 <A NAME="HIDBraille"></A>
-<H3>15.20. Display Standard HID Braille</H3>
+<H3>15.21. Display Standard HID Braille</H3>
 <P>
 Questo è un driver sperimentale per la nuova specifica standard HID Braille, concordata nel 2018 da Microsoft, Google, Apple e diverse società di tecnologie assistive, tra cui NV Access.
 La speranza è che tutti i modelli futuri di display Braille creati da qualsiasi produttore utilizzino questo protocollo standard che eliminerà la necessità di driver Braille specifici.
