@@ -45,7 +45,7 @@ Note :
 <P></P>
 <H3>Nouvelles Fonctionnalités</H3>
 <UL>
-<LI>Microsoft Excel via UI Automation : report automatiques des en-têtes de lignes et colonnes dans les tableaux. (<A HREF="https://github.com/nvaccess/nvda/issues/14228">#14228</A>)
+<LI>Microsoft Excel via UI Automation : report automatique des en-têtes de lignes et colonnes dans les tableaux. (<A HREF="https://github.com/nvaccess/nvda/issues/14228">#14228</A>)
   <UL>
   <LI>Note : Ceci se réfère aux tableaux formatés via le bouton "Tableau" dans l'onglet Insertion du ruban.
   "Première colonne" et "En-tête de ligne" dans "Options de style du tableau" correspondent respectivement aux en-têtes de colonne et ligne.
@@ -54,7 +54,7 @@ Note :
 <LI>Un script non assigné a été ajouté pour basculer l'annonce de la description différée des caractères. (<A HREF="https://github.com/nvaccess/nvda/issues/14267">#14267</A>)
 <LI>Ajout d'une option expérimentale pour prendre en charge des notifications UIA dans le terminal Windows pour signaler du texte ajouté ou modifié dans le terminal, ce qui améliore la stabilité et la réactivité. (<A HREF="https://github.com/nvaccess/nvda/issues/13781">#13781</A>)
   <UL>
-  <LI>Consulter le guide utilisateur pour connaître les limitations de cette nouvelle option.
+  <LI>Consultez le guide utilisateur pour connaître les limitations de cette nouvelle option.
   </UL>
 <LI>Sous Windows 11 ARM64, le mode navigation est maintenant disponible dans les applications AMD64 comme Firefox, Google Chrome et 1Password. (<A HREF="https://github.com/nvaccess/nvda/issues/14397">#14397</A>)
 <LI>Une nouvelle option a été ajoutée, "Style de paragraphe" dans "Navigation dans les documents".
@@ -62,7 +62,7 @@ Ceci ajoute le support pour la navigation dans les paragraphes via un saut de li
 Cela peut être utilisé dans les éditeurs de texte ne supportant pas nativement la navigation par paragraphe, tels que le Bloc-Notes ou Notepad++. (<A HREF="https://github.com/nvaccess/nvda/issues/13797">#13797</A>)
 <LI>La présence de plusieurs annotations est maintenant reportée.
 <CODE>NVDA+d</CODE> navigue maintenant entre le résumé de chaque cible d'annotation pour les origines avec plusieurs cibles d'annotation.
-Par exemple, lorsqu'un texte a un commentaire et une note de bas de page associée avec lui. (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14480">#14480</A>)
+Par exemple, lorsqu'un texte a un commentaire et une note de bas de page associés avec lui. (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14480">#14480</A>)
 <LI>Ajout du support des afficheurs Braille Tivomatic Caiku Albatross 46/80. (<A HREF="https://github.com/nvaccess/nvda/issues/13045">#13045</A>)
 <LI>Nouvelle commande globale : annoncer la destination d'un lien (<CODE>NVDA+k</CODE>).
 Presser une fois annoncera et affichera en Braille la destination du lien sous l'objet navigateur courant.
@@ -133,44 +133,50 @@ Revient à presser NVDA+K deux fois, mais pourrait être plus utile pour les uti
 </UL>
 
 <P></P>
+<H3>Changements pour les Développeurs</H3>
 <P>
-+== Changes for Developers ==
-+Note: this is an Add-on API compatibility breaking release.
-+Add-ons will need to be re-tested and have their manifest updated.
-+Please refer to <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">the developer guide</A> for information on NVDA's API deprecation and removal process.
-+
-+- System test should now pass when run locally on non-English systems. (<A HREF="https://github.com/nvaccess/nvda/issues/13362">#13362</A>)
-+- In Windows 11 on ARM, x64 apps are no longer identified as ARM64 applications. (<A HREF="https://github.com/nvaccess/nvda/issues/14403">#14403</A>)
-+- It is no longer necessary to use <CODE>SearchField</CODE> and <CODE>SuggestionListItem</CODE> <CODE>UIA</CODE> <CODE>NVDAObjects</CODE> in new UI Automation scenarios, where automatic reporting of search suggestions, and where typing has been exposed via UI Automation with the <CODE>controllerFor</CODE> pattern.
-+This functionality is now available generically via <CODE>behaviours.EditableText</CODE> and the base <CODE>NVDAObject</CODE> respectively. (<A HREF="https://github.com/nvaccess/nvda/issues/14222">#14222</A>)
-+- The UIA debug logging category when enabled now produces significantly more logging for UIA event handlers and utilities. (<A HREF="https://github.com/nvaccess/nvda/issues/14256">#14256</A>)
-+- NVDAHelper build standards updated. (<A HREF="https://github.com/nvaccess/nvda/issues/13072">#13072</A>)
-+  - Now uses the C++20 standard, was C++17.
-+  - Now uses the <CODE>/permissive-</CODE> compiler flag which disables permissive behaviors, and sets the <CODE>/Zc</CODE> compiler options for strict conformance.
-+  -
-+- Some plugin objects (e.g. drivers and add-ons) now have a more informative description in the NVDA python console. (<A HREF="https://github.com/nvaccess/nvda/issues/14463">#14463</A>)
-+- NVDA can now be fully compiled with Visual Studio 2022, no longer requiring the Visual Studio 2019 build tools. (<A HREF="https://github.com/nvaccess/nvda/issues/14326">#14326</A>)
-+- More detailed logging for NVDA freezes to aid debugging. (<A HREF="https://github.com/nvaccess/nvda/issues/14309">#14309</A>)
-+- The singleton <CODE>braille._BgThread</CODE> class has been replaced with <CODE>hwIo.ioThread.IoThread</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14130">#14130</A>)
-+  - A single instance <CODE>hwIo.bgThread</CODE> (in NVDA core) of this class provides background i/o for thread safe braille display drivers.
-+  - This new class is not a singleton by design, add-on authors are encouraged to use their own instance when doing hardware i/o.
-+  -
-+- The processor architecture for the computer can be queried from <CODE>winVersion.WinVersion.processorArchitecture attribute.</CODE> (<A HREF="https://github.com/nvaccess/nvda/issues/14439">#14439</A>)
-+- New extension points have been added. (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
-+  - <CODE>inputCore.decide_executeGesture</CODE>
-+  - <CODE>tones.decide_beep</CODE>
-+  - <CODE>nvwave.decide_playWaveFile</CODE>
-+  - <CODE>braille.pre_writeCells</CODE>
-+  - <CODE>braille.filter_displaySize</CODE>
-+  - <CODE>braille.decide_enabled</CODE>
-+  - <CODE>braille.displayChanged</CODE>
-+  - <CODE>braille.displaySizeChanged</CODE>
-+  - 
-+- It is possible to set useConfig to False on supported settings for a synthesizer driver. (<A HREF="https://github.com/nvaccess/nvda/issues/14601">#14601</A>)
-+-
-+
-+=== API Breaking Changes ===
-+These are breaking API changes.
+Note : il s'agit d'une version de rupture de compatibilité de l'API des extensions.
+Les extensions devront être testées à nouveau et leur manifeste mis à jour.
+Veuillez vous référer au <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">guide de développement</A> pour plus d'informations sur le processus de dépréciation et de suppression de l'API de NVDA.
+</P>
+<UL>
+<LI>Le test système devrait maintenant réussir lorsqu'il est exécuté localement sur des systèmes non anglais. (<A HREF="https://github.com/nvaccess/nvda/issues/13362">#13362</A>)
+<LI>Dans Windows 11 sur ARM, les applications x64 ne sont plus identifiées comme des applications ARM64. (<A HREF="https://github.com/nvaccess/nvda/issues/14403">#14403</A>)
+<LI>Il n'est plus nécessaire d'utiliser <CODE>SearchField</CODE> et <CODE>SuggestionListItem</CODE> <CODE>UIA</CODE> <CODE>NVDAObjects</CODE> dans les nouveaux scénarios d'automatisation de l'interface utilisateur, où le rapport automatique des suggestions de recherche et où la saisie a été exposée via l'interface utilisateur Automatisation avec le motif <CODE>controllerFor</CODE>.
+Cette fonctionnalité est désormais disponible de manière générique via <CODE>behaviours.EditableText</CODE> et la base <CODE>NVDAObject</CODE> respectivement. (<A HREF="https://github.com/nvaccess/nvda/issues/14222">#14222</A>)
+<LI>La catégorie de journalisation de débogage UIA, lorsqu'elle est activée, produit désormais beaucoup plus de journalisation pour les gestionnaires d'événements et les utilitaires UIA. (<A HREF="https://github.com/nvaccess/nvda/issues/14256">#14256</A>)
+<LI>Mise à jour des normes de construction de NVDAHelper. (<A HREF="https://github.com/nvaccess/nvda/issues/13072">#13072</A>)
+  <UL>
+  <LI>Utilise maintenant la norme C++20, au lieu de C++17.
+  <LI>Utilise maintenant le drapeau de compilateur <CODE>/permissive-</CODE> qui désactive les comportements permissifs et définit les options de compilateur <CODE>/Zc</CODE> pour une conformité stricte.
+  </UL>
+<LI>Certains objets de plugin (par exemple, les pilotes et les extensions) ont maintenant une description plus informative dans la console python NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14463">#14463</A>)
+<LI>NVDA peut maintenant être entièrement compilé avec Visual Studio 2022, ne nécessitant plus les outils de construction de Visual Studio 2019. (<A HREF="https://github.com/nvaccess/nvda/issues/14326">#14326</A>)
+<LI>Une journalisation plus détaillée pour NVDA se fige pour faciliter le débogage. (<A HREF="https://github.com/nvaccess/nvda/issues/14309">#14309</A>)
+<LI>La classe singleton <CODE>braille._BgThread</CODE> a été remplacée par <CODE>hwIo.ioThread.IoThread</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14130">#14130</A>)
+  <UL>
+  <LI>Une seule instance <CODE>hwIo.bgThread</CODE> (dans le noyau NVDA) de cette classe fournit des entrées/sorties en arrière-plan pour les pilotes d'affichage braille thread-safe.
+  <LI>Cette nouvelle classe n'est pas un singleton de par sa conception, les auteurs d'extensions sont encouragés à utiliser leur propre instance lors des E/S matérielles.
+  </UL>
+<LI>L'architecture du processeur de l'ordinateur peut être interrogée à partir de l'attribut <CODE>winVersion.WinVersion.processorArchitecture.</CODE> (<A HREF="https://github.com/nvaccess/nvda/issues/14439">#14439</A>)
+<LI>De nouveaux points d'extension ont été ajoutés. (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
+  <UL>
+  <LI><CODE>inputCore.decide_executeGesture</CODE>
+  <LI><CODE>tones.decide_beep</CODE>
+  <LI><CODE>nvwave.decide_playWaveFile</CODE>
+  <LI><CODE>braille.pre_writeCells</CODE>
+  <LI><CODE>braille.filter_displaySize</CODE>
+  <LI><CODE>braille.decide_enabled</CODE>
+  <LI><CODE>braille.displayChanged</CODE>
+  <LI><CODE>braille.displaySizeChanged</CODE>
+  </UL>
+<LI>Il est possible de définir useConfig sur False sur les paramètres pris en charge pour un pilote de synthétiseur. (<A HREF="https://github.com/nvaccess/nvda/issues/14601">#14601</A>)
+</UL>
+
+<P></P>
+<H4>Changements avec rupture de l'API</H4>
+<P>
+Ce sont des changements d'API qui cassent.
 +Please open a GitHub issue if your Add-on has an issue with updating to the new API.
 +- The configuration specification has been altered, keys have been removed or modified:
 +  - In <CODE>[documentFormatting]</CODE> section (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>):
