@@ -11,6 +11,36 @@
 </FONT></CENTER>
 
 <H2>2023.1</H2>
+<P>
+Eine neue Option wurde hinzugefügt, "Absatzstil" in "Dokument-Navigation".
+Dies kann mit Text-Editoren verwendet werden, die die Absatznavigation nicht von Haus aus unterstützen, wie Notepad und Notepad++.
+</P>
+<P>
+Es gibt einen neuen globalen Befehl, um das Ziel eines Links mitzuteilen, der über <CODE>NVDA+K</CODE> abgerufen werden kann.
+</P>
+<P>
+Die Unterstützung für kommentierte Webinhalte (wie Kommentare und Fußnoten) wurde verbessert.
+Drücken Sie <CODE>NVDA+D</CODE>, um durch die Zusammenfassungen zu navigieren, wenn Anmerkungen mitgeteilt werden (z. B. "enthält Kommentar, enthält Fußnote").
+</P>
+<P>
+Die Braillezeilen Tivomatic Caiku Albatross 46 und 80 werden nun unterstützt.
+</P>
+<P>
+Die Unterstützung für ARM64- und AMD64-Versionen von Windows wurde verbessert.
+Es gibt viele Fehlerkorrekturen, vor allem für Windows 11.
+</P>
+<P>
+eSpeak, LibLouis, Sonic Rate Boost und Unicode CLDR wurden aktualisiert.
+Es gibt neue Braille-Tabellen für Georgisch, Swahili (Kenia) und Chichewa (Malawi).
+</P>
+<P>
+Hinweis:
+</P>
+<UL>
+<LI>In dieser Version müssen die Kompatibilitätsanforderungen mit bestehenden NVDA-Erweiterungen überprüft werden.
+</UL>
+
+<P></P>
 <H3>Neue Features</H3>
 <UL>
 <LI>Microsoft Excel über UIA: Automatische Mitteilung von Spalten- und Zeilenüberschriften in Tabellen. (<A HREF="https://github.com/nvaccess/nvda/issues/14228">#14228</A>)
@@ -32,6 +62,11 @@ Dies kann mit Text-Editoren verwendet werden, die die Absatz-Navigation nicht na
 Die Tastenkombination <CODE>NVDA+D</CODE> durchläuft nun die Zusammenfassung jedes Anmerkungsziels für Ursprünge mit mehreren Anmerkungszielen.
 Zum Beispiel, wenn der Text mit einem Kommentar und einer Fußnote versehen ist. (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14480">#14480</A>)
 <LI>Unterstützung für Braillezeilen Tivomatic Caiku Albatross 46/80 hinzugefügt. (<A HREF="https://github.com/nvaccess/nvda/issues/13045">#13045</A>)
+<LI>Neuer globaler Befehl: Link-Ziel mitteilen (<CODE>NVDA+K</CODE>).
+Einmaliges Drücken wird das Ziel des Links im Navigator-Objekt mitgeteilt.
+Zweimaliges Drücken zeigt die Information in einem Fenster an, welches eine genauere Überprüfung ermöglicht. (<A HREF="https://github.com/nvaccess/nvda/issues/14583">#14583</A>)
+<LI>Neuer, nicht zugeordneter globaler Befehl (Kategorie Werkzeuge): Link-Ziel in einem Fenster mitteilen.
+Entspricht dem zweimaligen Drücken von <CODE>NVDA+K</CODE>, kann aber für Braille-Nutzer nützlicher sein. (<A HREF="https://github.com/nvaccess/nvda/issues/14583">#14583</A>)
 </UL>
 
 <P></P>
@@ -89,7 +124,10 @@ Zum Beispiel, wenn der Text mit einem Kommentar und einer Fußnote versehen ist.
 <LI>Ein Problem wurde behoben, bei dem Änderung in der Konfiguration nicht korrekt gespeichert wurden, wenn zwischen einer "Standard"-Option und dem Wert der "Standard"-Option gewechselt wurde. (<A HREF="https://github.com/nvaccess/nvda/issues/14133">#14133</A>)
 <LI>Bei der Konfiguration von NVDA wird immer mindestens eine Taste als NVDA-Taste definiert. (<A HREF="https://github.com/nvaccess/nvda/issues/14527">#14527</A>)
 <LI>Wenn Sie das NVDA-Menü über den Infobereich aufrufen, schlägt NVDA kein ausstehendes Update mehr vor, wenn kein Update verfügbar ist. (<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>)
+<LI>Die verbleibende, verstrichene und gesamte Zeit wird nun für Audiodateien, die mehr als einen Tag lang sind, in Foobar2000 korrekt angezeigt. (<A HREF="https://github.com/nvaccess/nvda/issues/14127">#14127</A>)
 <LI>In Web-Browsern wie Google Chrome und Mozilla Firefox werden Warnmeldungen, z. B. zum Herunterladen von Dateien, nicht nur gesprochen, sondern auch in Braille-Schrift angezeigt. (<A HREF="https://github.com/nvaccess/nvda/issues/14562">#14562</A>)
+<LI>Fehler beim Navigieren zur ersten und letzten Spalte in einer Tabelle in Firefox behoben. (<A HREF="https://github.com/nvaccess/nvda/issues/14554">#14554</A>)
+<LI>Wenn NVDA mit dem Parameter <CODE>--lang=Windows</CODE> gestartet wird, ist es wieder möglich, den Dialog Allgemeine Einstellungen von NVDA zu öffnen. (<A HREF="https://github.com/nvaccess/nvda/issues/14407">#14407</A>)
 </UL>
 
 <P></P>
@@ -103,15 +141,15 @@ Bitte lesen Sie das <A HREF="https://www.nvaccess.org/files/nvda/documentation/d
 <LI>Der Systemtest sollte nun erfolgreich sein, wenn er lokal auf nicht-englischen Systemen ausgeführt wird. (<A HREF="https://github.com/nvaccess/nvda/issues/13362">#13362</A>)
 <LI>In Windows 11 auf ARM werden x64-Anwendungen nicht mehr als ARM64-Anwendungen erkannt. (<A HREF="https://github.com/nvaccess/nvda/issues/14403">#14403</A>)
 <LI>Es ist nicht mehr notwendig, <CODE>SearchField</CODE> und <CODE>SuggestionListItem</CODE> <CODE>UIA</CODE> <CODE>NVDAObjects</CODE> in neuen UIA-Szenarien zu verwenden, in denen automatisch Suchvorschläge mitgeteilt werden und in denen die Eingabe über UIA mit dem Muster <CODE>ControllerFor</CODE> ausgesetzt wurde.
-Diese Funktionalität ist nun generisch über <CODE>behaviours.EditableText</CODE> bzw. die Basis <CODE>NVDAObject</CODE> verfügbar.
-<LI>Die UIA-Debug-Protokollierungskategorie, wenn sie aktiviert ist, erzeugt nun deutlich mehr Details in der Protokollierung für UIA-Ereignishandler und -Hilfsprogramme. (<A HREF="https://github.com/nvaccess/nvda/issues/14256">#14256</A>)
+Diese Funktionalität ist nun generisch über <CODE>behaviours.EditableText</CODE> bzw. die Basis <CODE>NVDAObject</CODE> verfügbar. (<A HREF="https://github.com/nvaccess/nvda/issues/14222">#14222</A>)
+<LI>Wenn die UIA-Debug-Protokollierungskategorie aktiviert ist, wird jetzt deutlich mehr Protokollierung für UIA-Ereignishandler und Dienstprogramme erzeugt. (<A HREF="https://github.com/nvaccess/nvda/issues/14256">#14256</A>)
 <LI>Die NVDAHelper-Build-Standards wurden aktualisiert. (<A HREF="https://github.com/nvaccess/nvda/issues/13072">#13072</A>)
   <UL>
   <LI>Verwendet nun den C++20-Standard, vorher war es C++17.
-  <LI>Nun wird der Compiler-Flag "/permissive-" verwendet, das das permissive Verhalten deaktiviert und die Compiler-Optionen "/Zc" für strikte Konformität gesetzt.
+  <LI>Nun wird der Compiler-Flag <CODE>/permissive-</CODE> verwendet, das das permissive Verhalten deaktiviert und die Compiler-Optionen "/Zc" für strikte Konformität gesetzt.
   </UL>
 <LI>Einige Plugin-Objekte (z. B. Treiber und NVDA-Erweiterungen) haben nun eine informativere Beschreibung in der NVDA-Python-Konsole. (<A HREF="https://github.com/nvaccess/nvda/issues/14463">#14463</A>)
-<LI>NVDA kann nun vollständig mit Visual Studio 2022 kompiliert werden und benötigt keine Visual Studio 2019 Build-Tools.
+<LI>NVDA kann nun vollständig mit Visual Studio 2022 kompiliert werden und benötigt keine Visual Studio 2019 Build-Tools mehr.  (<A HREF="https://github.com/nvaccess/nvda/issues/14326">#14326</A>)
 <LI>Detailliertere Protokollierung für Einfrierungen von NVDA zur Unterstützung der Fehlersuche. (<A HREF="https://github.com/nvaccess/nvda/issues/14309">#14309</A>)
 <LI>Die Singleton-Klasse <CODE>braille._BgThread</CODE> wurde durch <CODE>hwIo.ioThread.IoThread</CODE> ersetzt. (<A HREF="https://github.com/nvaccess/nvda/issues/14130">#14130</A>)
   <UL>
@@ -130,6 +168,7 @@ Diese Funktionalität ist nun generisch über <CODE>behaviours.EditableText</COD
   <LI><CODE>braille.displayChanged</CODE>
   <LI><CODE>braille.displaySizeChanged</CODE>
   </UL>
+<LI>Es ist möglich, useConfig bei unterstützten Einstellungen für einen Synthesizer-Treiber auf False zu setzen. (<A HREF="https://github.com/nvaccess/nvda/issues/14601">#14601</A>)
 </UL>
 
 <P></P>
@@ -178,6 +217,13 @@ Siehe <CODE>brailleViewer</CODE> für ein Beispiel, wie das erledigt werden kann
   <LI><CODE>loadModule</CODE> erwartet nun einen Punkt als Trennzeichen, statt eines Backslashs.
   Zum Beispiel "lib.example" anstelle von "lib\example".
   <LI><CODE>loadModule</CODE> löst nun eine Exception aus, wenn ein Modul nicht geladen werden kann oder Fehler aufweist, anstatt <CODE>None</CODE> zurückzugeben, ohne Informationen über die Ursache zu geben.
+  </UL>
+<LI>Die folgenden Symbole wurden aus der Datei <CODE>appModules.foobar2000</CODE> entfernt und nicht direkt ersetzt. (<A HREF="https://github.com/nvaccess/nvda/issues/14570">#14570</A>)
+  <UL>
+  <LI><CODE>statusBarTimes</CODE>
+  <LI><CODE>parseIntervalToTimestamp</CODE>
+  <LI><CODE>getOutputFormat</CODE>
+  <LI><CODE>getParsingFormat</CODE>
   </UL>
 <LI>Die Folgenden sind keine Singletons mehr - deren get-Methode wurde entfernt.
 Die Verwendung von <CODE>Example.get()</CODE> ist jetzt <CODE>Example()</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14248">#14248</A>)
