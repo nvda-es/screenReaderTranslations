@@ -250,7 +250,8 @@
     <LI><A HREF="#Eurobraille">15.17. Eurobraille Esys/Esytime/Iris displays</A>
     <LI><A HREF="#NattiqTechnologies">15.18. Nattiq nBraille Displays</A>
     <LI><A HREF="#BRLTTY">15.19. BRLTTY</A>
-    <LI><A HREF="#HIDBraille">15.20. Standard HID Braille displays</A>
+    <LI><A HREF="#Albatross">15.20. Tivomatic Caiku Albatross 46/80</A>
+    <LI><A HREF="#HIDBraille">15.21. Standard HID Braille displays</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">16. Avancerede emner</A>
     <UL>
@@ -623,6 +624,12 @@ De faktiske kommandoer vil ikke udføres, når tastaturhjælpen er slået til. T
 <TD><CODE>NVDA+f</CODE></TD>
 <TD><CODE>NVDA+f</CODE></TD>
 <TD>Denne kommando oplyser formatteringsoplysninger for den aktuelle tekst. Ved to tryk vises disse informationer i et vindue</TD>
+</TR>
+<TR>
+<TD>Oplys adresse for link</TD>
+<TD><CODE>NVDA+k</CODE></TD>
+<TD><CODE>NVDA+k</CODE></TD>
+<TD>Oplyser webadressen for linket ved navigatorobjektet. Hvis der trykkes to gange, vises linket i et vindue for lettere gennemgang.</TD>
 </TR>
 </TABLE>
 
@@ -4348,10 +4355,10 @@ Der er tre muligheder:
 <LI>Standard: Denne indstilling er i øjeblikket det samme som "diffing", men dette formodes at blive ændret, når udviklingen af UIA-meddelelser er skredet længere frem.
 <LI>Diffing: Denne indstilling benytter den valgte diff-algoritme til at kalkulere ændringerne, hver gang terminalen gengiver den nye tekst.
 Dette er identisk med NVDAs adfærd i 2022.4 og ældre.
-<LI>UIA-meddelelser: Denne mulighed udskyder ansvaret for at bestemme, hvilken tekst der skal tale til selve Windows Terminal, hvilket betyder, at NVDA ikke længere skal bestemme, hvilken tekst på skærmen, der i øjeblikket er "ny".
+<LI>UIA-meddelelser: Denne mulighed gør, at Windows-terminalen bestemmer, hvilken tekst der anses som "ny".
 Dette skulle markant forbedre ydeevnen og stabiliteten af Windows Terminal, men denne funktion er endnu ikke færdig.
-Især indskrevne tegn, der ikke vises på skærmen, såsom adgangskoder, rapporteres, når denne indstilling er valgt.
-Derudover rapporteres sammenhængende outputspænd på over 1.000 tegn muligvis ikke nøjagtigt.
+Især indskrevne tegn, der ikke vises på skærmen (såsom adgangskoder) rapporteres, når denne indstilling er valgt.
+Dette kan dog medføre, at lange output af tekst på over 1.000 tegn muligvis ikke oplæses nøjagtigt.
 </UL>
 
 <P></P>
@@ -4990,6 +4997,7 @@ Følgende displays understøtter denne funktionalitet:
 <LI>Eurobraille Esys/Esytime/Iris displays
 <LI>Nattiq nBraille displays
 <LI>Seika Notetaker: MiniSeika (16, 24 celler), V6, og V6Pro (40 celler)
+<LI>Tivomatic Caiku Albatross 46/80 displays
 <LI>Ethvert punktdisplay, der understøtter HID Braille-protokollen.
 </UL>
 
@@ -7629,8 +7637,193 @@ Se venligst <A HREF="http://mielke.cc/brltty/doc/KeyBindings/">BRLTTY dokumentat
 </TR>
 </TABLE>
 
+<A NAME="Albatross"></A>
+<H3>15.20. Tivomatic Caiku Albatross 46/80</H3>
+<P>
+Caiku Albatross-enhederne, som fremstilles af Tivomatic og er tilgængelige i Finland, kan tilsluttes enten via USB eller seriel.
+Det er ikke nødvendigt at installere en særlig enhedsdriver, før du kan bruge disse displays.
+Du skal blot koble displayet til din enhed og herefter konfigurere NVDA til at bruge punktdisplayet.
+</P>
+<P>
+Bemærk: Baud rate 19200 anbefales på det kraftigste.
+Skift om nødvendigt indstillingsværdien for Baud-hastighed til 19200 fra punktdisplayets menu.
+Selvom driveren understøtter 9600 baud rate, har den ingen måde at kontrollere, hvilken baud rate displayet bruger.
+Fordi 19200 er displayets standard baudhastighed, vil driveren automatisk benytte denne hastighed.
+Hvis baud-hastighederne ikke er de samme, kan driveren opføre sig uhensigtsmæssigt.
+</P>
+<P>
+Følgende er tastekombinationerne til disse displays ved brug af NVDA.
+Læs venligst dokumentationen for det pågældende display der beskriver, hvor disse taster findes.
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Navn</TH>
+<TH>Tast</TH>
+</TR>
+<TR>
+<TD>Flyt til øverste linje med læsemarkøren</TD>
+<TD><CODE>home1</CODE>, <CODE>home2</CODE></TD>
+</TR>
+<TR>
+<TD>Flyt til nederste linje med læsemarkøren</TD>
+<TD><CODE>end1</CODE>, <CODE>end2</CODE></TD>
+</TR>
+<TR>
+<TD>Flytter navigatorobjektet til det aktuelle fokus</TD>
+<TD><CODE>eCursor1</CODE>, <CODE>eCursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Flyt til aktuelle fokus</TD>
+<TD><CODE>cursor1</CODE>, <CODE>cursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Flytter musemarkøren til det aktuelle navigatorobjekt</TD>
+<TD><CODE>home1+home2</CODE></TD>
+</TR>
+<TR>
+<TD>Flytter musemarkøren til det aktuelle navigatorobjekt og læser det op</TD>
+<TD><CODE>end1+end2</CODE></TD>
+</TR>
+<TR>
+<TD>Flytter fokus til det aktuelle navigatorobjekt</TD>
+<TD><CODE>eCursor1+eCursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Skifter indstillingen for "punkt følger"</TD>
+<TD><CODE>cursor1+cursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Flyt punktdisplay til forrige linje</TD>
+<TD><CODE>up1</CODE>, <CODE>up2</CODE>, <CODE>up3</CODE></TD>
+</TR>
+<TR>
+<TD>Flyt punktdisplay til næste linje</TD>
+<TD><CODE>down1</CODE>, <CODE>down2</CODE>, <CODE>down3</CODE></TD>
+</TR>
+<TR>
+<TD>Panorer punktdisplay tilbage</TD>
+<TD><CODE>left</CODE>, <CODE>lWheelLeft</CODE>, <CODE>rWheelLeft</CODE></TD>
+</TR>
+<TR>
+<TD>Panorer punktdisplay fremad</TD>
+<TD><CODE>right</CODE>, <CODE>lWheelRight</CODE>, <CODE>rWheelRight</CODE></TD>
+</TR>
+<TR>
+<TD>Flyt til punktcelle</TD>
+<TD><CODE>markørknapper</CODE></TD>
+</TR>
+<TR>
+<TD>Oplys tekstformattering under den aktuelle punktcelle</TD>
+<TD><CODE>sekundære markørknapper</CODE></TD>
+</TR>
+<TR>
+<TD>Skift måden kontekstoplysninger vises på punkt</TD>
+<TD><CODE>attribute1+attribute3</CODE></TD>
+</TR>
+<TR>
+<TD>Skift mellem de forskellige taleindstillinger bip, fra og tal</TD>
+<TD><CODE>attribute2+attribute4</CODE></TD>
+</TR>
+<TR>
+<TD>Skift til forrige læsetilstand (f.eks. objekt, dokument eller skærm)</TD>
+<TD><CODE>f1</CODE></TD>
+</TR>
+<TR>
+<TD>Skift til næste læsetilstand</TD>
+<TD><CODE>f2</CODE></TD>
+</TR>
+<TR>
+<TD>Flyt navigatorojektet til det objekt, der indeholder det</TD>
+<TD><CODE>f3</CODE></TD>
+</TR>
+<TR>
+<TD>Flytter navigatorobjektet til det første objekt inde i det</TD>
+<TD><CODE>f4</CODE></TD>
+</TR>
+<TR>
+<TD>Flytter navigatorobjektet til det forrige objekt</TD>
+<TD><CODE>f5</CODE></TD>
+</TR>
+<TR>
+<TD>Flytter navigatorobjektet til det næste objekt</TD>
+<TD><CODE>f6</CODE></TD>
+</TR>
+<TR>
+<TD>Oplyser det aktuelle navigatorobjekt</TD>
+<TD><CODE>f7</CODE></TD>
+</TR>
+<TR>
+<TD>Oplyser oplysninger om placeringen af teksten eller objektet ved læsemarkøren</TD>
+<TD><CODE>f8</CODE></TD>
+</TR>
+<TR>
+<TD>Udfører standardhandlingen for det aktuelle navigatorobjekt</TD>
+<TD><CODE>f7+f8</CODE></TD>
+</TR>
+<TR>
+<TD>Få dato/tid oplyst</TD>
+<TD><CODE>f9</CODE></TD>
+</TR>
+<TR>
+<TD>Få batteriet oplyst</TD>
+<TD><CODE>f10</CODE></TD>
+</TR>
+<TR>
+<TD>Få titlen oplyst</TD>
+<TD><CODE>f11</CODE></TD>
+</TR>
+<TR>
+<TD>Oplys statuslinje</TD>
+<TD><CODE>f12</CODE></TD>
+</TR>
+<TR>
+<TD>Oplys den aktuele linje under markøren</TD>
+<TD><CODE>f13</CODE></TD>
+</TR>
+<TR>
+<TD>Sig alt</TD>
+<TD><CODE>f14</CODE></TD>
+</TR>
+<TR>
+<TD>Oplys det aktuelle tegn under læsemarkøren</TD>
+<TD><CODE>f15</CODE></TD>
+</TR>
+<TR>
+<TD>Oplys den aktuelle linje for det navigatorobjekt, hvor læsemarkøren befinder sig</TD>
+<TD><CODE>f16</CODE></TD>
+</TR>
+<TR>
+<TD>Oplys det aktuelle ord for det navigatorobjekt, hvor læsemarkøren befinder sig</TD>
+<TD><CODE>f15+f16</CODE></TD>
+</TR>
+<TR>
+<TD>Flytter læsemarkøren til den forrige linje i det aktuelle navigatorobjekt og læser det op</TD>
+<TD><CODE>lWheelUp</CODE>, <CODE>rWheelUp</CODE></TD>
+</TR>
+<TR>
+<TD>Flytter læsemarkøren til den næste linje i det aktuelle navigatorobjekt og læser det op</TD>
+<TD><CODE>lWheelDown</CODE>, <CODE>rWheelDown</CODE></TD>
+</TR>
+<TR>
+<TD>Tasterne <CODE>Windows+d</CODE> (minimér alle programmer)</TD>
+<TD><CODE>attribute1</CODE></TD>
+</TR>
+<TR>
+<TD>Tasterne <CODE>Windows+e</CODE> (Denne PC)</TD>
+<TD><CODE>attribute2</CODE></TD>
+</TR>
+<TR>
+<TD>Tasterne <CODE>Windows+b</CODE> (flyt fokus til systembakken)</TD>
+<TD><CODE>attribute3</CODE></TD>
+</TR>
+<TR>
+<TD>Tasterne <CODE>Windows+i</CODE> (Windows-indstillinger)</TD>
+<TD><CODE>attribute4</CODE></TD>
+</TR>
+</TABLE>
+
 <A NAME="HIDBraille"></A>
-<H3>15.20. Standard HID Braille displays</H3>
+<H3>15.21. Standard HID Braille displays</H3>
 <P>
 Dette er en eksperimentel driver for den nye HID Braille standard, som firmaerne Microsoft, Google, Apple samt flere virksomheder bag hjælpeteknologier nåede til enighed om, herunder NV Access.
 Håbet er, at denne standard vil blive vedtaget og benyttet af fremtidige fabrikanter af punktdisplays, hvilket vil fjerne behovet for særskilte drivere.
@@ -7852,7 +8045,7 @@ De mulige kommandolinjeparametre til NVDA er følgende:
 <TR>
 <TD>-l LOGLEVEL</TD>
 <TD>--log-level=LOGNINGSNIVEAU</TD>
-<TD>Det laveste niveau af meddelelser, som skal logges (fejlfinding 10, input/output 12, fejlfinding og advarsler 15, info 20, advarsler 30, fejl 40, kritiske fejl 50, deaktiveret 100). Standard er advarsler.</TD>
+<TD>Det laveste niveau af meddelelser, som skal logges (fejlfinding 10, input/output 12, fejlfinding og advarsler 15, info 20, deaktiveret 100)</TD>
 </TR>
 <TR>
 <TD>-c CONFIGPATH</TD>
