@@ -10,6 +10,126 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2023.1</H2>
+<P>
+Pridané nové nastavenie, ktoré umožňuje určiť, ako sú definované odseky. Pozrite Nastavenia, časť navigácia v dokumente.
+Aktuálne je teda možné používať navigáciu po odsekoch aj v aplikáciách, ktoré ju natívne nepodporujú, ako napríklad Notepad and Notepad++.
+</P>
+<P>
+Pridaná nová klávesová skratka, ktorá umožňuje zisťiť URL adresu odkazu, na ktorom je kurzor. Skratka je predvolene <CODE>NVDA+k</CODE>.
+</P>
+<P>
+Vylepšená podpora pre anotácie vo webových dokumentoch (komentáre a poznámky).
+Ak NVDA ohlási, že prvok má komentár alebo poznámku, je možné si prečítať podrobnosti skratkou <CODE>NVDA+d</CODE>.
+</P>
+<P>
+Pridaná podpora pre braillové riadky Tivomatic Caiku Albatross 46/80.
+</P>
+<P>
+Vylepšená podpora pre operačné systémy Windows vo variantoch ARM64 a AMD64.
+Mnohé opravy sa týkajú hlavne systému Windows 11.
+</P>
+<P>
+Aktualizované knižnice eSpeak, LibLouis, funkcionalita dvojnásobnej rýchlosti a databáza Unicode CLDR.
+Pridané nové braillové tabuľky pre jazyky Gruzínčina, Svahilčina (Keňa) a Chichewa (Malawi).
+</P>
+<P>
+Upozornenie:
+</P>
+<UL>
+<LI>Táto verzia nie je kompatibilná so staršími doplnkami.
+</UL>
+
+<P></P>
+<H3>Nové vlastnosti</H3>
+<UL>
+<LI>Podpora pre MS Excel cez rozhranie UIA: Pridané automatické oznamovanie hlavičiek riadkov a stĺpcov tabuľky. (<A HREF="https://github.com/nvaccess/nvda/issues/14228">#14228</A>)
+  <UL>
+  <LI>Upozorňujeme, že toto sa týka len tabuliek, ktoré sú formátované cez panel tabuľka v rybbon menu.
+  Je potrebné správne nastaviť "Prvý stĺpec" a "riadok hlavičky" v časti "Možnosti štýlu tabuľky".
+  <LI>Toto sa netýka možnosti definovať hlavičky pre čítače obrazovky. Toto v súčasnosti cez UIA nie je podporované.
+  </UL>
+<LI>Automatické fonetické hláskovanie je aktuálne možné zapínať a vypínať aj pomocou klávesovej skratky. Skratka nie je predvolene definovaná a je ju možné nastaviť v dialógu klávesové skratky. (<A HREF="https://github.com/nvaccess/nvda/issues/14267">#14267</A>)
+<LI>Pridaná možnosť automatického oznamovania nového textu v konzolách Windows terminálu cez rozhranie UIA, čo zlepšuje odozvu a stabilitu. (<A HREF="https://github.com/nvaccess/nvda/issues/13781">#13781</A>)
+  <UL>
+  <LI>Podrobnosti a nedostatky sú vysvetlené v používateľskej príručke NVDA.
+  </UL>
+<LI>V systéme Windows 11 vo variante ARM64 je možné používať režim prehliadania v aplikáciách AMD64, ako Firefox, Google Chrome a 1Password. (<A HREF="https://github.com/nvaccess/nvda/issues/14397">#14397</A>)
+<LI>Pridaná nová sekcia Navigácia v dokumentoch a aktuálne jedno nové nastavenie: Za odsek považovať.
+umožňuje nastaviť, čo je považované za odseky. Možnosti sú jeden alebo viacero zlomov riadka.
+Takto je možné prechádzať po odsekoch aj v aplikáciách, ktoré to predvolene nepodporujú, ako napríklad Poznámkový blok a Notepad++. (<A HREF="https://github.com/nvaccess/nvda/issues/13797">#13797</A>)
+<LI>Ak je dostupných viacero anotácií, NVDA na túto skutočnosť upozorní.
+Skratkou <CODE>NVDA+d</CODE> je možné postupne prečítať všetky dostupné anotácie pre zameraný prvok. Napríklad ak text obsahuje komentár a poznámku pod čiarou. (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14480">#14480</A>)
+<LI>Pridaná podpora pre brailový riadok Tivomatic Caiku Albatross 46/80. (<A HREF="https://github.com/nvaccess/nvda/issues/13045">#13045</A>)
+<LI>Nová klávesová skratka: Oznámiť URL adresu zameraného odkazu (<CODE>NVDA+k</CODE>).
+Oznámi resp. zobrazí na braillovom riadku URL adresu odkazu, na ktorom je navigačný objekt.
+Stlačené dvakrát zobrazí URL adresu v samostatnom okne, v ktorom je možné adresu podrobne prezerať.
+<LI>Pribudla tiež možnosť definovať klávesovú skratku, ktorá zobrazí URL adresu hneď v samostatnom okne. Skratku je potrebné definovať v dialógu klávesové skratky.
+Funkcia je rovnaká, ako keď stlačíte NVDA+K dvakrát za sebou, ale definovanie novej skratky môže byť užitočné pre používateľov braillových riadkov. (<A HREF="https://github.com/nvaccess/nvda/issues/14583">#14583</A>)
+</UL>
+
+<P></P>
+<H3>Zmeny</H3>
+<UL>
+<LI>Braillová prekladová tabuľka LibLouis aktualizovaná na verziu <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.24.0">3.24.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/14436">#14436</A>)
+  <UL>
+  <LI>Aktualizované tabuľky pre Maďarčinu, UEB a tiež čínske znaky bopomofo.
+  <LI>Pridaná podpora pre dánsky Braillový štandard 2022.
+  <LI>Pridané nové braillové tabuľky pre Gruzínsky kodifikovaný braill, Svahilčinu (Keňa) a Chichewa (Malawi).
+  </UL>
+<LI>Aktualizovaná knižnica Sonic rate boost na zdvojnásobenie rýchlosti na commit <CODE>1d70513</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14180">#14180</A>)
+<LI>Databáza Unicode znakov CLDR aktualizovaná na 42.0. (<A HREF="https://github.com/nvaccess/nvda/issues/14273">#14273</A>)
+<LI>Hlasový výstup eSpeak NG aktualizovaný na 1.52-dev commit <CODE>a51235aa</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14281">#14281</A>)
+  <UL>
+  <LI>Opravené oznamovanie veľkých čísel. (<A HREF="https://github.com/nvaccess/nvda/issues/14241">#14241</A>)
+  </UL>
+<LI>V Java aplikáciách s prvkami, ktoré majú možnosť výberu oznamuje NVDA stav, keď položka nie je vybratá a nie, keď je položka vybratá. (<A HREF="https://github.com/nvaccess/nvda/issues/14336">#14336</A>)
+</UL>
+
+<P></P>
+<H3>Opravy</H3>
+<UL>
+<LI>Opravy pre Windows 11:
+  <UL>
+  <LI>NVDA oznamuje návrhy vyhľadávania po otvorení menu štart. (<A HREF="https://github.com/nvaccess/nvda/issues/13841">#13841</A>)
+  <LI>V architektúre ARM nie sú viac 64-bitové aplikácie identifikované ako aplikácie ARM64. (<A HREF="https://github.com/nvaccess/nvda/issues/14403">#14403</A>)
+  <LI>Odteraz je možné dostať sa k funkciám v menu histórie schránky, ako napríklad pripnúť položku. (<A HREF="https://github.com/nvaccess/nvda/issues/14508">#14508</A>)
+  <LI>Vo Windows 11 od verzie 22H2 je možné používať ovládanie myšy a dotykové ovládanie aj v oknách systémového panela a dialógu otvoriť v programe. (<A HREF="https://github.com/nvaccess/nvda/issues/14538">#14538</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14539">#14539</A>)
+  </UL>
+<LI>V MS Excely sú zobrazované návrhy mien používateľov na spomenutie, ak do poľa s komentárom napíšete znak @. (<A HREF="https://github.com/nvaccess/nvda/issues/13764">#13764</A>)
+<LI>V panely s adresou Google Chrome sú oznamované po zameraní dostupné prvky (napríklad prechod na záložku, odstrániť návrh a podobne). (<A HREF="https://github.com/nvaccess/nvda/issues/13522">#13522</A>)
+<LI>Pri oznamovaní formátovania sú farby správne oznamované aj v aplikáciách Wordpad alebo zobrazovač logu. (<A HREF="https://github.com/nvaccess/nvda/issues/13959">#13959</A>)
+<LI>V prehliadači Firefox na stránke Gidhub, správne funguje aktivovanie tlačidla Show options (zobraziť možnosti). (<A HREF="https://github.com/nvaccess/nvda/issues/14269">#14269</A>)
+<LI>Prvky na výber dátumu v MS Outlooku 2016/365 v pokročilých možnostiach hľadania správne oznamujú popis a hodnoty. (<A HREF="https://github.com/nvaccess/nvda/issues/12726">#12726</A>)
+<LI>Aria začiarkávacie tlačidlá sú v prehliadačoch Edge, Chrome a Firefox oznamované ako začiarkávacie tlačidlá a nie začiarkávacie políčka. (<A HREF="https://github.com/nvaccess/nvda/issues/11310">#11310</A>)
+<LI>NVDA odteraz automaticky oznamuje zoradenie v hlavičkách v HTML tabuľkách, ak zmeníte spôsob zoradenia stlačením príslušného tlačidla. (<A HREF="https://github.com/nvaccess/nvda/issues/10890">#10890</A>)
+<LI>Oblasť stránky alebo orientačný bod je oznámený, ak pomocou rýchlej navigácie alebo fokusu prejdete do vnútra oblasti alebo orientačného bodu. (<A HREF="https://github.com/nvaccess/nvda/issues/13307">#13307</A>)
+<LI>Ak je zapnuté oznamovanie veľkých písmen slovom "veľké" alebo pípnutím, NVDA viac nepípa a neoznamuje "veľké" aj pri automatickom fonetickom hláskovaní. (<A HREF="https://github.com/nvaccess/nvda/issues/14239">#14239</A>)
+<LI>Prvky v tabuľkách v Java aplikáciách sú odteraz oznamované presnejšie. (<A HREF="https://github.com/nvaccess/nvda/issues/14347">#14347</A>)
+<LI>Niektoré nastavenia viac nie sú rôzne pri používaní viacerých profilov. (<A HREF="https://github.com/nvaccess/nvda/issues/14170">#14170</A>)
+  <UL>
+  <LI>Týka sa to konkrétne týchto nastavení:
+    <UL>
+    <LI>Oznamovanie zarovnania riadka v nastaveniach čítania textu.
+    <LI>Oznamovanie orámovania buniek tabuľky v nastaveniach čítania textu.
+    <LI>Interval zobrazovania správ v nastaveniach braillu.
+    <LI>Braillový kurzor zviazaný s v nastaveniach braillu.
+    </UL>
+  <LI>Môže sa stať, že tieto nastavenia budú zmenené po inštalácii tejto verzie NVDA.
+  <LI>Po aktualizácii NVDA odporúčame skontrolovať vyššie spomenuté nastavenia.
+  </UL>
+<LI>Oznamovanie symbolov Emoji je odteraz podporované v ďalších jazykoch. (<A HREF="https://github.com/nvaccess/nvda/issues/14433">#14433</A>)
+<LI>Informácia o dostupných anotáciách je dostupná vždy aj na braillovom riadku. (<A HREF="https://github.com/nvaccess/nvda/issues/13815">#13815</A>)
+<LI>Opravené problémy s ukladaním nastavení, ak bola vybratá predvolená možnosť a následne bola vybratá tá istá možnosť priamo. (<A HREF="https://github.com/nvaccess/nvda/issues/14133">#14133</A>)
+<LI>Pri nastavovaní je zaručené, že bude vždy aktívny aspoň jeden kláves NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14527">#14527</A>)
+<LI>Ak otvoríte menu NVDA zo systémového panela, NVDA viac nehlási, že je dostupná aktualizácia v prípadoch, že skutočne nie je dostupná aktualizácia. (<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>)
+<LI>V prehrávači Foobar 2000 sú správne oznamované časy súborov dlhších ako deň. (<A HREF="https://github.com/nvaccess/nvda/issues/14127">#14127</A>)
+<LI>Upozornenia prehliadačov Chrome a Firefox (napríklad o stiahnutom súbore) sú tiež zobrazované na braillovom riadku. (<A HREF="https://github.com/nvaccess/nvda/issues/14562">#14562</A>)
+<LI>Opravená chyba, ktorá nastávala pri prechode na prvý a posledný stĺpec v tabuľke v prehliadači Mozilla Firefox. (<A HREF="https://github.com/nvaccess/nvda/issues/14554">#14554</A>)
+<LI>Ak je NVDA spustené s parametrom <CODE>--lang=Windows</CODE>, je opäť možné otvoriť aj v tomto prípade nastavenia NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14407">#14407</A>)
+</UL>
+
+<P></P>
 <H2>2022.4</H2>
 <P>
 Táto verzia obsahuje viacero nových klávesových skratiek, napríklad na plynulé čítanie riadkov a stĺpcov v tabuľkách.
