@@ -4,9 +4,9 @@
 <META NAME="generator" CONTENT="http://txt2tags.sf.net">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <LINK REL="stylesheet" TYPE="text/css" HREF="../styles.css">
-<TITLE>NVDA 2022.4-dev Používateľská príručka</TITLE>
+<TITLE>NVDA 2023.1-dev Používateľská príručka</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
-<P ALIGN="center"><CENTER><H1>NVDA 2022.4-dev Používateľská príručka</H1>
+<P ALIGN="center"><CENTER><H1>NVDA 2023.1-dev Používateľská príručka</H1>
 <FONT SIZE="4">
 </FONT></CENTER>
 
@@ -175,8 +175,9 @@
       <LI><A HREF="#InputCompositionSettings">12.1.13. Nastavenia vstupu</A>
       <LI><A HREF="#BrowseModeSettings">12.1.14. Režim prehliadania (NVDA+CTRL+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">12.1.15. Čítanie textu (NVDA+ctrl+d)</A>
-      <LI><A HREF="#WinOcrSettings">12.1.16. Rozpoznávanie textu windows</A>
-      <LI><A HREF="#AdvancedSettings">12.1.17. Pokročilé</A>
+      <LI><A HREF="#DocumentNavigation">12.1.16. Navigácia v dokumente</A>
+      <LI><A HREF="#WinOcrSettings">12.1.17. Rozpoznávanie textu windows</A>
+      <LI><A HREF="#AdvancedSettings">12.1.18. Pokročilé</A>
       </UL>
     <LI><A HREF="#MiscSettings">12.2. Ďalšie nastavenia</A>
       <UL>
@@ -231,9 +232,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc157">15.9.1. Klávesové skratky spoločné pre všetky modely</A>
-      <LI><A HREF="#toc158">15.9.2. Klávesové skratky pre riadky Brailliant BI 32, BI 40 a B 80</A>
-      <LI><A HREF="#toc159">15.9.3. Klávesové skratky pre Brailliant BI 14</A>
+      <LI><A HREF="#toc158">15.9.1. Klávesové skratky spoločné pre všetky modely</A>
+      <LI><A HREF="#toc159">15.9.2. Klávesové skratky pre riadky Brailliant BI 32, BI 40 a B 80</A>
+      <LI><A HREF="#toc160">15.9.3. Klávesové skratky pre Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
     <LI><A HREF="#Seika">15.11. brailové riadky od spoločnosti Seika</A>
@@ -249,7 +250,8 @@
     <LI><A HREF="#Eurobraille">15.17. Eurobraille Esys/Esytime/Iris</A>
     <LI><A HREF="#NattiqTechnologies">15.18. Riadky Nattiq nBraille</A>
     <LI><A HREF="#BRLTTY">15.19. BRLTTY</A>
-    <LI><A HREF="#HIDBraille">15.20. Riadky podporujúce HID štandard</A>
+    <LI><A HREF="#Albatross">15.20. Tivomatic Caiku Albatross 46/80</A>
+    <LI><A HREF="#HIDBraille">15.21. Riadky podporujúce HID štandard</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">16. Pre pokročilých</A>
     <UL>
@@ -309,6 +311,8 @@ Najvýznamnejšie prednosti programu:
   <LI>Vo Windows 7 musí byť nainštalovaný Service Pack 2 alebo novší.
   <LI>V systémoch Windows Server 2008 R2 musí byť nainštalovaný Service Pack 1 alebo novší.
   </UL>
+<LI>Podporované sú AMD64 a ARM64 varianty operačného systému Windows.
+  -
 <LI>Mali by ste mať aspoň 150 MB voľného miesta úložného priestoru
 </UL>
 
@@ -621,6 +625,12 @@ Priradené príkazy sa pri zapnutej nápovede vstupu nebudú spúšťať.
 <TD><CODE>NVDA+f</CODE></TD>
 <TD><CODE>NVDA+f</CODE></TD>
 <TD>Oznámi formátovanie pod textovým kurzorom. Stlačené dvakrát za sebou zobrazí informáciu v režime prehliadania</TD>
+</TR>
+<TR>
+<TD>Oznámiť URL adresu odkazu</TD>
+<TD><CODE>NVDA+k</CODE></TD>
+<TD><CODE>NVDA+k</CODE></TD>
+<TD>Oznámi URL adresu odkazu, na ktorom je <A HREF="#ObjectNavigation">navigačný objekt</A>. Stlačené dvakrát za sebou zobrazí URL adresu v samostatnom okne, aby bolo možné ju podrobnejšie prezerať</TD>
 </TR>
 </TABLE>
 
@@ -4100,8 +4110,41 @@ Tón sa zvyšuje pri každej medzere, pri každom tabulátore sa zvyšuje štvor
 </UL>
 
 <P></P>
+<A NAME="DocumentNavigation"></A>
+<H4>12.1.16. Navigácia v dokumente</H4>
+<P>
+Táto kategória nastavení umožňuje upraviť rôzne možnosti navigácie v dokumentoch.
+</P>
+<A NAME="ParagraphStyle"></A>
+<H5>Za odsek považovať</H5>
+<DL>
+<DT>Predvolené</DT><DD>
+  Podľa aplikácie
+<DT>Možnosti</DT><DD>
+  Predvolené (podľa aplikácie), Podľa aplikácie, jeden zlom riadka, viacero zlomov riadka
+</DL>
+
+<P></P>
+<P>
+Toto nastavenie určuje, čo bude považované za odseky, pri pohybe pomocou skratiek <CODE>ctrl+šípka hore</CODE> a <CODE>ctrl+šípka dole</CODE>.
+Dostupné sú tieto možnosti:
+</P>
+<UL>
+<LI>Podľa aplikácie: NVDA požiada aplikáciu o prechod na predchádzajúci alebo nasledujúci odsek a prejde naň podľa nastavení aplikácie.
+Toto najlepšie funguje v prípadoch, ak samotná aplikácia podporuje navigáciu medzi odsekmi. Toto nastavenie sa používa ako predvolené.
+<LI>Jeden zlom riadka: Nvda bude za oddeľovač odsekov považovať jeden zlom riadka.
+Toto najlepšie funguje v aplikáciách, ktoré predvolene neumožňujú navigáciu po odsekoch a odseky sú oddeľované jedným stlačením klávesu <CODE>enter</CODE>.
+<LI>Viacero zlomov riadka: NVDA bude za oddeľovač odsekov považovať jeden prázdny riadok, teda dvojité stlačenie klávesu <CODE>enter</CODE>.
+Toto nastavenie najlepšie funguje v prípadoch, ak sa používajú blokové odseky.
+Upozorňujeme, že toto nastavenie nefunguje v aplikáciách Microsoft Word alebo Microsoft Outlook, ak nepoužívate rozhranie UIA na prácu s prvkami MS Word.
+</UL>
+
+<P></P>
+<P>
+Toto nastavenie je možné kdekoľvek meniť aj pomocou klávesových skratiek. Tieto je potrebné definovať v dialógu <A HREF="#InputGestures">Klávesové skratky</A>.
+</P>
 <A NAME="WinOcrSettings"></A>
-<H4>12.1.16. Rozpoznávanie textu windows</H4>
+<H4>12.1.17. Rozpoznávanie textu windows</H4>
 <P>
 Môžete tu  nastaviť parametre pre rozpoznávanie textu pomocou rozhrania <A HREF="#WinOcr">Windows OCR</A>.
 Kategória obsahuje nasledujúce možnosti:
@@ -4112,7 +4155,7 @@ Kategória obsahuje nasledujúce možnosti:
 V tomto zozname môžete vybrať jazyk, ktorý sa bude používať na rozpoznávanie textu.
 </P>
 <A NAME="AdvancedSettings"></A>
-<H4>12.1.17. Pokročilé</H4>
+<H4>12.1.18. Pokročilé</H4>
 <P>
 Pozor! Tieto nastavenia sú určené pre pokročilých používateľov. Nesprávnou konfiguráciou môžete spôsobiť, že NVDA nebude pracovať správne.
 Upravujte tieto nastavenia v prípade, že viete, čo máte robiť alebo ste dostali inštrukcie od vývojára NVDA.
@@ -4282,6 +4325,32 @@ V niektorých prípadoch však môže byť čítanie textu trhané a nekonzisten
 Takto sa správalo NVDA do verzie 2020.4.
 Tento spôsob môže zlepšiť čítanie textu v niektorých prípadoch.
 Ak však v terminály použijete túto metódu a súčasne odstránite text uprostred riadka, automaticky bude dočítaný text do konca riadka.
+</UL>
+
+<P></P>
+<A NAME="WtStrategy"></A>
+<H5>Oznamovať nový text vo Windows termináloch cez</H5>
+<DL>
+<DT>Predvolené</DT><DD>
+  Diffing
+<DT>Možnosti</DT><DD>
+  Diffing, Upozornenia rozhrania UIA
+</DL>
+
+<P></P>
+<P>
+Toto nastavenie určuje, ako NVDA identifikuje nový text vo Windows konzole a WPF Windows Termináloch používaných vo Visual Studio 2022. Nový text je potom automaticky oznamovaný, ak je zapnuté oznamovanie dynamicky meneného obsahu.
+Toto nemá vplyv na Windows konzolu(<CODE>conhost.exe</CODE>).
+Dostupné sú tieto možnosti:
+</P>
+<UL>
+<LI>Predvolené: Aktuálne sa používa "diffing", keď sa zlepší podpora pre UIA, môže byť nahradené upozorneniami z UIA rozhrania.
+<LI>Diffing: Používa zvolený algoritmus na určovanie rozdielov na výpočet vždy, keď terminál zobrazí nový text.
+Toto je správanie identické do verzie NVDA 2022.4.
+<LI>Upozornenia rozhrania UIA: V tomto prípade rozhoduje priamo Windows konzola, čo je považované za nový text a NVDA len preberá obsah.
+Toto zlepšuje odozvu a stabilitu Windows terminálov, ale funkcionalita v súčasnosti nie je dokončená.
+Aktuálne sú pri tejto metóde oznamované napísané znaky vrátane hesiel.
+Navyše, výstup dlhší ako 1000 znakov nemusí byť oznamovaný správne.
 </UL>
 
 <P></P>
@@ -4922,6 +4991,7 @@ Funkcia aktuálne funguje s týmito riadkami:
 <LI>Eurobraille Esys/Esytime/Iris
 <LI>Brailové riadky Nattiq nBraille
 <LI>Zápisníky Seika: MiniSeika (16, 24 buniek), V6, a V6Pro (40 buniek)
+<LI>Riadky Tivomatic Caiku Albatross 46/80
 <LI>Všetky brailové riadky podporujúce štandard HID
 </UL>
 
@@ -5690,7 +5760,7 @@ Takisto môžete používať bez nutnosťi inštalovať ovládače aj nasledujú
 Nasleduje zoznam klávesových príkazov pre tieto typy riadkov.
 Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie rozmiestnenia klávesov.
 </P>
-<A NAME="toc157"></A>
+<A NAME="toc158"></A>
 <H4>15.9.1. Klávesové skratky spoločné pre všetky modely</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5779,7 +5849,7 @@ Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie 
 </TR>
 </TABLE>
 
-<A NAME="toc158"></A>
+<A NAME="toc159"></A>
 <H4>15.9.2. Klávesové skratky pre riadky Brailliant BI 32, BI 40 a B 80</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5800,7 +5870,7 @@ Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie 
 </TR>
 </TABLE>
 
-<A NAME="toc159"></A>
+<A NAME="toc160"></A>
 <H4>15.9.3. Klávesové skratky pre Brailliant BI 14</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -7563,8 +7633,193 @@ Prosím prečítajte si <A HREF="http://mielke.cc/brltty/doc/KeyBindings/">dokum
 </TR>
 </TABLE>
 
+<A NAME="Albatross"></A>
+<H3>15.20. Tivomatic Caiku Albatross 46/80</H3>
+<P>
+Zariadenia Caiku Albatross, ktoré vyrábala spoločnosť Tivomatic a boli dostupné hlavne vo Fínsku, môžete pripojiť cez sériový port alebo usb.
+Pre správne fungovanie tohto zariadenia nie je potrebné inštalovať ovládače.
+Jednoducho pripojte riadok a zvoľte ho v nastaveniach NVDA.
+</P>
+<P>
+Pozor: Odporúčame nastaviť prenosovú rýchlosť (Baud rate) na hodnotu 19200.
+Zmenu prenosovej rýchlosti vykonajte v interných nastaveniach riadka.
+Samotný ovládač podporuje aj rýchlosť 9600, avšak nedokáže zistiť, akú rýchlosť používa samotný riadok.
+Nakoľko rýchlosť 19200 je predvolená, používa sa ako prvá možnosť.
+Ak je prenosová rýchlosť odlišná, môže dochádzať k chybám.
+</P>
+<P>
+Nasledujú klávesové skratky dostupné pre tento riadok.
+Popis umiestnenia tlačidiel je možné nájsť v dokumentácii k riadku.
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Názov</TH>
+<TH>Klávesová skratka</TH>
+</TR>
+<TR>
+<TD>Presunúť prezerací kurzor na začiatok</TD>
+<TD><CODE>home1</CODE>, <CODE>home2</CODE></TD>
+</TR>
+<TR>
+<TD>Presunúť prezerací kurzor na koniec</TD>
+<TD><CODE>end1</CODE>, <CODE>end2</CODE></TD>
+</TR>
+<TR>
+<TD>Presunúť navigačný objekt na fokus</TD>
+<TD><CODE>eCursor1</CODE>, <CODE>eCursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Presunúť kurzor na fokus</TD>
+<TD><CODE>cursor1</CODE>, <CODE>cursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Presunúť myš na navigačný objekt</TD>
+<TD><CODE>home1+home2</CODE></TD>
+</TR>
+<TR>
+<TD>Nastaviť navigačný objekt na objekt pod kurzorom myši a oznámiť ho</TD>
+<TD><CODE>end1+end2</CODE></TD>
+</TR>
+<TR>
+<TD>Presunúť fokus na navigačný objekt</TD>
+<TD><CODE>eCursor1+eCursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Prepínať nastavenie brailový riadok zviazaný s</TD>
+<TD><CODE>cursor1+cursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Predchádzajúci riadok</TD>
+<TD><CODE>up1</CODE>, <CODE>up2</CODE>, <CODE>up3</CODE></TD>
+</TR>
+<TR>
+<TD>Nasledujúci riadok</TD>
+<TD><CODE>down1</CODE>, <CODE>down2</CODE>, <CODE>down3</CODE></TD>
+</TR>
+<TR>
+<TD>Posunúť riadok späť</TD>
+<TD><CODE>left</CODE>, <CODE>lWheelLeft</CODE>, <CODE>rWheelLeft</CODE></TD>
+</TR>
+<TR>
+<TD>Posunúť riadok vpred</TD>
+<TD><CODE>right</CODE>, <CODE>lWheelRight</CODE>, <CODE>rWheelRight</CODE></TD>
+</TR>
+<TR>
+<TD>Prejsť na znak v brailly</TD>
+<TD><CODE>routing</CODE></TD>
+</TR>
+<TR>
+<TD>Oznámiť informácie o formátovaní pod aktuálnou braillovou bunkou</TD>
+<TD><CODE>secondary routing</CODE></TD>
+</TR>
+<TR>
+<TD>Nastaviť prezentovanie kontextu</TD>
+<TD><CODE>attribute1+attribute3</CODE></TD>
+</TR>
+<TR>
+<TD>Prepínať režim reči medzi rečou, pípaním a tichom</TD>
+<TD><CODE>attribute2+attribute4</CODE></TD>
+</TR>
+<TR>
+<TD>Prejsť na predchádzajúci režim prezerania (objekt, dokument, obrazovka)</TD>
+<TD><CODE>f1</CODE></TD>
+</TR>
+<TR>
+<TD>Prejsť na nasledujúci režim prezerania (objekt, dokument, obrazovka)</TD>
+<TD><CODE>f2</CODE></TD>
+</TR>
+<TR>
+<TD>Presunúť navigačný objekt na prvý nadradený objekt</TD>
+<TD><CODE>f3</CODE></TD>
+</TR>
+<TR>
+<TD>Presunúť navigačný objekt na prvý podradený objekt</TD>
+<TD><CODE>f4</CODE></TD>
+</TR>
+<TR>
+<TD>Presunúť navigačný objekt na predchádzajúci objekt</TD>
+<TD><CODE>f5</CODE></TD>
+</TR>
+<TR>
+<TD>Presunúť navigačný objekt na nasledujúci objekt</TD>
+<TD><CODE>f6</CODE></TD>
+</TR>
+<TR>
+<TD>Oznámiť aktuálny navigačný objekt</TD>
+<TD><CODE>f7</CODE></TD>
+</TR>
+<TR>
+<TD>Oznámiť súradnice objektu pod prezeracím kurzorom</TD>
+<TD><CODE>f8</CODE></TD>
+</TR>
+<TR>
+<TD>Vykonať predvolenú akciu na navigačnom objekte</TD>
+<TD><CODE>f7+f8</CODE></TD>
+</TR>
+<TR>
+<TD>Oznámiť čas a dátum</TD>
+<TD><CODE>f9</CODE></TD>
+</TR>
+<TR>
+<TD>Oznámiť stav batérie, zostávajúci čas a stav nabíjania</TD>
+<TD><CODE>f10</CODE></TD>
+</TR>
+<TR>
+<TD>Oznámiť názov okna</TD>
+<TD><CODE>f11</CODE></TD>
+</TR>
+<TR>
+<TD>Oznámiť stavový riadok</TD>
+<TD><CODE>f12</CODE></TD>
+</TR>
+<TR>
+<TD>Oznámiť aktuálny riadok pod kurzorom</TD>
+<TD><CODE>f13</CODE></TD>
+</TR>
+<TR>
+<TD>Plynulé čítanie</TD>
+<TD><CODE>f14</CODE></TD>
+</TR>
+<TR>
+<TD>Oznámiť aktuálny znak pod prezeracím kurzorom</TD>
+<TD><CODE>f15</CODE></TD>
+</TR>
+<TR>
+<TD>Oznámiť riadok, na ktorom sa nachádza kurzor v navigačnom objekte</TD>
+<TD><CODE>f16</CODE></TD>
+</TR>
+<TR>
+<TD>Oznámiť slovo, na ktorom sa nachádza prezerací kurzor v navigačnom objekte</TD>
+<TD><CODE>f15+f16</CODE></TD>
+</TR>
+<TR>
+<TD>Presunúť kurzor na predchádzajúci riadok v navigačnom objekte a oznámiť ho</TD>
+<TD><CODE>lWheelUp</CODE>, <CODE>rWheelUp</CODE></TD>
+</TR>
+<TR>
+<TD>Presunúť kurzor na nasledujúci riadok v navigačnom objekte a oznámiť ho</TD>
+<TD><CODE>lWheelDown</CODE>, <CODE>rWheelDown</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+d</CODE> (minimalizovať všetky aplikácie)</TD>
+<TD><CODE>attribute1</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+e</CODE> (tento počítač)</TD>
+<TD><CODE>attribute2</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+b</CODE> (prejsť na systémový panel)</TD>
+<TD><CODE>attribute3</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+i</CODE> (Nastavenia Windows)</TD>
+<TD><CODE>attribute4</CODE></TD>
+</TR>
+</TABLE>
+
 <A NAME="HIDBraille"></A>
-<H3>15.20. Riadky podporujúce HID štandard</H3>
+<H3>15.21. Riadky podporujúce HID štandard</H3>
 <P>
 Toto je experimentálny ovládač pre riadky podporujúce nový HID štandard, na ktorom sa v roku 2018 dohodli Microsoft, Google, Apple a viaceré spoločnosti dodávajúce asistívne technológie vrátane NV Access. 
 Cieľom je, aby všetky budúce brailové riadky podporovali tento štandard čím sa odstráni nutnosť mať pre každý riadok samostatný ovládač.
@@ -7784,9 +8039,9 @@ NVDA v súčasnosti podporuje tieto parametre:
 <TD>Cesta k súboru, kde sa má zapisovať log</TD>
 </TR>
 <TR>
-<TD>-l N</TD>
-<TD>--log-level=n</TD>
-<TD>Určuje úroveň záznamu (debug 10, Vstup a výstup 12, debug 15, info 20, upozornenia 30, chyby 40, kritické chyby 50, vypnuté 100), predvolene je úroveň nastavená na upozornenia</TD>
+<TD>-l loglevel</TD>
+<TD>--log-level=loglevel</TD>
+<TD>Určuje úroveň záznamu (debug 10, Vstup a výstup 12, debug 15, info 20, vypnuté 100), predvolene je úroveň nastavená na upozornenia</TD>
 </TR>
 <TR>
 <TD>-c C:\esta\k\profilu</TD>
