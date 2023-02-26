@@ -10,6 +10,131 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2023.1</H2>
+<P>
+在“文档导航”中添加了一个新选项“段落导航模式”。
+可用于不支持原生段落导航的文本编辑器，例如记事本和 Notepad++。
+</P>
+<P>
+添加了一个新的快捷键，用于读出当前导航对象所在链接指向的网址，设为“NVDA + k”。
+</P>
+<P>
+针对带注释的网页内容（例如批注和脚注）进行了改进。 
+当按“NVDA + d”朗读注释时，可循环浏览摘要（例如“有批注，有脚注”）。
+</P>
+<P>
+支持了 Tivomatic Caiku Albatross 46/80 盲文点显器。
+</P>
+<P>
+改进了对 ARM64 和 AMD64 版 Windows 的支持。
+还有很多错误修复，尤其是针对 Windows 11。
+</P>
+<P>
+更新了 eSpeak、LibLouis、Sonic rate boost 和 Unicode CLDR 等依赖库。
+新增了格鲁吉亚语、斯瓦希里语（肯尼亚）和奇切瓦语（马拉维）盲文表。
+</P>
+<P>
+注意：
+-此版本不兼容现有的插件。
+-
+</P>
+<H3>新特性</H3>
+<UL>
+<LI>Microsoft Excel 通过 UIA 支持自动读出行 / 列标题。（<A HREF="https://github.com/nvaccess/nvda/issues/14228">#14228</A>）
+  <UL>
+  <LI>注意：这是指通过“Ribbon”的“插入”选项卡上的“表格”按钮格式化的表格。
+  “表格样式选项”中的“第一列”和“标题行”分别对应列和行标题。
+  <LI>这不是指通过命名范围实现的屏幕阅读器行列标题朗读，目前 UIA 不支持该特性。
+  </UL>
+<LI>添加了一个未分配的命令，用于切换光标移动时延迟字符描述。（<A HREF="https://github.com/nvaccess/nvda/issues/14267">#14267</A>）
+-添加了一个实验性选项，利用 Windows Terminal 中的 UIA 通知读出终端中的新文本或文本改变，从而提高稳定性和响应速度。（<A HREF="https://github.com/nvaccess/nvda/issues/13781">#13781</A>）
+  <UL>
+  <LI>请查阅用户指南，了解有关此实验性选项的限制。
+  </UL>
+<LI>Windows 11 ARM64 中的 AMD64 应用程序（如 Firefox、Google Chrome 和 1Password等）现在支持使用浏览模式。（<A HREF="https://github.com/nvaccess/nvda/issues/14397">#14397</A>）
+<LI>在“文档导航”中添加了一个新选项“段落导航模式”。
+这个选项添加了对单行分段（正常）和多行分段（块）导航的支持。
+可用于不支持原生段落导航的文本编辑器，例如记事本和 Notepad++。（<A HREF="https://github.com/nvaccess/nvda/issues/13797">#13797</A>）
+<LI>支持读出存在多个注释。
+当按<CODE>NVDA+d</CODE>朗读注释时，可循环浏览摘要。
+例如文档中包含批注、脚注。（<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>、<A HREF="https://github.com/nvaccess/nvda/issues/14480">#14480</A>）
+<LI>添加了对 Tivomatic Caiku Albatross 46/80 盲文点显器的支持。（<A HREF="https://github.com/nvaccess/nvda/issues/13045">#13045</A>）
+<LI>添加了一个新的快捷键，用于读出当前导航对象所在链接指向的网址（<CODE>NVDA+k</CODE>）。
+按一次会用语音/盲文提示当前导航对象所在链接指向的网址。
+连按两次则会在独立窗口中显示，以便进行更详细的查看。（<A HREF="https://github.com/nvaccess/nvda/issues/14583">#14583</A>）
+<LI>在“按键与手势”下的“工具”类别中包含一个“在对话框中显示当前导航对象所在链接指向的 URL”（默认未分配快捷键）。
+与连按两次<CODE>NVDA+k</CODE>的功能相同，但可能对使用盲文点显器的用户更有用。（<A HREF="https://github.com/nvaccess/nvda/issues/14583">#14583</A>）
+</UL>
+
+<P></P>
+<H3>改进</H3>
+<UL>
+<LI>将 LibLouis 盲文翻译器更新到 <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.24.0">3.24.0</A>。（<A HREF="https://github.com/nvaccess/nvda/issues/14436">#14436</A>）
+  <UL>
+  <LI>匈牙利语、UEB 和中文盲文表（台湾）的重大更新。
+  <LI>支持丹麦盲文 2022 标准。
+  <LI>新盲文表：格鲁吉亚文学盲文、斯瓦希里语（肯尼亚）和奇切瓦语（马拉维）。
+  </UL>
+<LI>更新了 Sonic 速率增强库到 commit <CODE>1d70513</CODE>。（<A HREF="https://github.com/nvaccess/nvda/issues/14180">#14180</A>）
+<LI>更新了 CLDR 到 42.0 版。（<A HREF="https://github.com/nvaccess/nvda/issues/14273">#14273</A>）
+<LI>更新了 eSpeak NG 到 1.52-dev commit <CODE>a51235aa</CODE>。（<A HREF="https://github.com/nvaccess/nvda/issues/14281">#14281</A>）
+  <UL>
+  <LI>修复了大数的朗读问题。（<A HREF="https://github.com/nvaccess/nvda/issues/14241">#14241</A>）
+  </UL>
+<LI>针对于使用了可选择状态控件的 Java 应用程序现在会读出未选中项目而不是已选中项目。（<A HREF="https://github.com/nvaccess/nvda/issues/14336">#14336</A>）
+</UL>
+
+<P></P>
+<H3>错误修复</H3>
+<UL>
+<LI>Windows 11 修复：
+  <UL>
+  <LI>支持在打开“开始”菜单时读出搜索高亮。（<A HREF="https://github.com/nvaccess/nvda/issues/13841">#13841</A>）
+  <LI>修复了在 ARM 平台上， x64 应用程序会被识别为 ARM64 应用程序的错误。（<A HREF="https://github.com/nvaccess/nvda/issues/14403">#14403</A>）
+  <LI>支持浏览剪贴板历史的菜单项，例如“固定”。（<A HREF="https://github.com/nvaccess/nvda/issues/14508">#14508</A>）
+  <LI>在 Windows 11 22H2 及更高版本中，可以在使用鼠标和/或触摸交互时正确识别新版的系统托盘溢出区域。（<A HREF="https://github.com/nvaccess/nvda/issues/14538">#14538</A>、<A HREF="https://github.com/nvaccess/nvda/issues/14539">#14539</A>）
+  </UL>
+<LI>支持在 Microsoft Excel 批注中使用 @ 提及时读出建议。（<A HREF="https://github.com/nvaccess/nvda/issues/13764">#13764</A>）
+<LI>支持读出 Google Chrome 地址栏中选中的建议控件（切换到标签、删除建议等）。（<A HREF="https://github.com/nvaccess/nvda/issues/13522">#13522</A>）
+<LI>获取格式信息时，能够明确读出在写字板或日志查看器等控件中的颜色信息，而不仅仅是朗读为“默认颜色”。（<A HREF="https://github.com/nvaccess/nvda/issues/13959">#13959</A>）
+<LI>修复了在 Firefox 中，点击 GitHub Issue 页面上的“显示选项”按钮不稳定的问题。（<A HREF="https://github.com/nvaccess/nvda/issues/14269">#14269</A>）
+<LI>支持读出 Outlook 2016 / 365 高级搜索对话框中的日期选择控件的标签和值。（<A HREF="https://github.com/nvaccess/nvda/issues/12726">#12726</A>）
+<LI>在 Firefox、Chrome 和 Edge 中， ARIA Switch 控件会被朗读为“开关”，而不是“复选框”。（<A HREF="https://github.com/nvaccess/nvda/issues/11310">#11310</A>）
+<LI>按下排序切换按钮时，NVDA 会自动读出 HTML 表格列标题上的排序状态。（<A HREF="https://github.com/nvaccess/nvda/issues/10890">#10890</A>）
+<LI>使用单键导航或在浏览模式下，当焦点从外部跳入内部时，始终会自动读出路标或区域的名称。（<A HREF="https://github.com/nvaccess/nvda/issues/13307">#13307</A>）
+<LI>启用了“光标移动时延迟字符描述”，且同时启用了“遇到大写字母时发出提示音”或“遇到大写字母时先提示大写”选项，NVDA 不会重复发出提示音或提示大写。（<A HREF="https://github.com/nvaccess/nvda/issues/14239">#14239</A>）
+<LI>提高了 Java 应用程序中表格控件的朗读准确性。（<A HREF="https://github.com/nvaccess/nvda/issues/14347">#14347</A>）
+<LI>修复了使用多个独立配置时，某些设置会意外改变的错误。（<A HREF="https://github.com/nvaccess/nvda/issues/14170">#14170</A>）
+  <UL>
+  <LI>处理了以下设置：
+    <UL>
+    <LI>文档格式设置中的行缩进提示
+    <LI>文档格式设置中的单元格边框
+    <LI>盲文设置中的显示消息
+    <LI>盲文设置中的盲文显示跟随
+    </UL>
+  <LI>在极少数情况下，安装此版本的 NVDA 时，配置文件中的这些设置可能会被意外修改。
+  <LI>升级到此版本后请检查您配置文件中的这些选项。
+  <LI>译者注： 如果您经常在不同版本的 NVDA 之间切换（尤其是降级后升级），需注意，升级此版本可能会导致配置文件被重置，建议升级前备份配置。
+  </UL>
+<LI>支持在更多的语言下读出表情符号。（<A HREF="https://github.com/nvaccess/nvda/issues/14433">#14433</A>）
+<LI>修复了某些元素在盲文下缺失注释的问题。（<A HREF="https://github.com/nvaccess/nvda/issues/13815">#13815</A>）
+<LI>修复了在“默认”选项和“默认”选项的值之间更改时配置更改无法正确保存的问题。（<A HREF="https://github.com/nvaccess/nvda/issues/14133">#14133</A>）
+<LI>在配置 NVDA 时，确保至少有一个键被定义为 NVDA 键。（<A HREF="https://github.com/nvaccess/nvda/issues/14527">#14527</A>）
+<LI>当从通知区域打开 NVDA 菜单时，若没有等待被安装的更新，不会再显示“安装之前推迟的更新”选项。（<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>）
+<LI>修复了在 foobar2000 中无法正确读出时长超过一天的音频文件的剩余时间、已播放时间和总时间的问题。（<A HREF="https://github.com/nvaccess/nvda/issues/14127">#14127</A>）
+<LI>在 Chrome 和 Firefox 等浏览器中，文件下载等通知除了以语音朗读外，还支持以盲文显示。（<A HREF="https://github.com/nvaccess/nvda/issues/14562">#14562</A>）
+<LI>修复了在 Firefox 中导航到表格的第一列和最后一列时的错误。（*<A HREF="https://github.com/nvaccess/nvda/issues/14554">#14554</A>）
+<LI>修复了使用 <CODE>--lang=Windows</CODE> 参数启动 NVDA 时，无法打开常规设置对话框的错误。（<A HREF="https://github.com/nvaccess/nvda/issues/14407">#14407</A>）
+</UL>
+
+<P></P>
+<H3>插件以及 NVDA 核心开发者需要了解的变动</H3>
+<P>
+注意：这是一个打破插件 API 兼容性的版本。
+插件需要重新测试并更新其清单。
+请参阅 <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">开发人员指南</A> 了解有关 NVDA API 的弃用和移除信息。
+</P>
 <H2>2022.4</H2>
 <P>
 本版新增了一些重要的功能命令，涵盖表格的逐行/逐列导航、朗读等快捷键。
