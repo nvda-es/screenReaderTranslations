@@ -41,7 +41,7 @@
       <LI><A HREF="#StartingAndStoppingNVDA">2.3.3. 启动和退出 NVDA</A>
       <LI><A HREF="#ReadingText">2.3.4. 朗读文本</A>
       <LI><A HREF="#ReportingLocation">2.3.5. 朗读位置和其它信息</A>
-      <LI><A HREF="#ToggleWhichInformationNVDAReads">2.3.6. 切换哪些信息需要 NVDA 读出</A>
+      <LI><A HREF="#ToggleWhichInformationNVDAReads">2.3.6. 切换需要 NVDA 读出哪些信息</A>
       <LI><A HREF="#TheSynthSettingsRing">2.3.7. 合成器设置</A>
       <LI><A HREF="#WebNavigation">2.3.8. 网页导航</A>
       </UL>
@@ -250,7 +250,8 @@
     <LI><A HREF="#Eurobraille">15.17. Eurobraille Esys/Esytime/Iris displays</A>
     <LI><A HREF="#NattiqTechnologies">15.18. Nattiq nBraille Displays</A>
     <LI><A HREF="#BRLTTY">15.19. BRLTTY</A>
-    <LI><A HREF="#HIDBraille">15.20. HID 标准盲文点显器</A>
+    <LI><A HREF="#Albatross">15.20. Tivomatic Caiku Albatross 46/80</A>
+    <LI><A HREF="#HIDBraille">15.21. HID 标准盲文点显器</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">16. 进阶内容</A>
     <UL>
@@ -628,10 +629,16 @@ NVDA 键也可以设定为<CODE>大小写锁定</CODE>键。
 <TD><CODE>NVDA+f</CODE></TD>
 <TD>朗读文本的格式信息。连按两次在一个窗口中显示此信息。</TD>
 </TR>
+<TR>
+<TD>读出链接对象网址</TD>
+<TD><CODE>NVDA+k</CODE></TD>
+<TD><CODE>NVDA+k</CODE></TD>
+<TD>读出当前<A HREF="#ObjectNavigation">导航对象</A>所在链接指向的网址。连按两次在一个窗口中显示此信息，以便进行更详细的查看。</TD>
+</TR>
 </TABLE>
 
 <A NAME="ToggleWhichInformationNVDAReads"></A>
-<H4>2.3.6. 切换哪些信息需要 NVDA 读出</H4>
+<H4>2.3.6. 切换需要 NVDA 读出哪些信息</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TH>名称</TH>
@@ -4996,6 +5003,7 @@ NVDA能够通过USB或蓝牙自动检测连接许多点显器。
 <LI>Eurobraille Esys/Esytime/Iris displays
 <LI>Nattiq nBraille displays
 <LI>Seika Notetaker（清华点显器） Mini （16 / 24方） V6/V6Pro（40方）
+<LI>Tivomatic Caiku Albatross 46/80 displays
 <LI>任何支持 HID 协议的点显器
 </UL>
 
@@ -7633,8 +7641,193 @@ Please see the <A HREF="https://mielke.cc/brltty/doc/KeyBindings/">BRLTTY key bi
 </TR>
 </TABLE>
 
+<A NAME="Albatross"></A>
+<H3>15.20. Tivomatic Caiku Albatross 46/80</H3>
+<P>
+The Caiku Albatross devices, which were manufactured by Tivomatic and available in Finland, can be connected to by either USB or serial.
+You do not need any specific drivers to be installed to use these displays.
+Just plug in the display and configure NVDA to use it.
+</P>
+<P>
+Note: Baud rate 19200 is strongly recommended.
+If required, switch Baud rate setting value to 19200 from the braille device's menu.
+Although the driver supports 9600 baud rate, it has no way to control what baud rate the display uses.
+Because 19200 is the display default baud rate, the driver tries it at first.
+If baud rates are not the same, the driver may behave unexpectedly.
+</P>
+<P>
+Following are key assignments for these displays with NVDA.
+Please see the display's documentation for descriptions of where these keys can be found.
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Key</TH>
+</TR>
+<TR>
+<TD>Move to top line in review</TD>
+<TD><CODE>home1</CODE>, <CODE>home2</CODE></TD>
+</TR>
+<TR>
+<TD>Move to bottom line in review</TD>
+<TD><CODE>end1</CODE>, <CODE>end2</CODE></TD>
+</TR>
+<TR>
+<TD>Sets the navigator object to the current focus</TD>
+<TD><CODE>eCursor1</CODE>, <CODE>eCursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Move to current focus</TD>
+<TD><CODE>cursor1</CODE>, <CODE>cursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Moves the mouse pointer to the current navigator object</TD>
+<TD><CODE>home1+home2</CODE></TD>
+</TR>
+<TR>
+<TD>Sets the navigator object to the current object under the mouse pointer and speaks it</TD>
+<TD><CODE>end1+end2</CODE></TD>
+</TR>
+<TR>
+<TD>Moves focus to current navigator object</TD>
+<TD><CODE>eCursor1+eCursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD><CODE>cursor1+cursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD><CODE>up1</CODE>, <CODE>up2</CODE>, <CODE>up3</CODE></TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD><CODE>down1</CODE>, <CODE>down2</CODE>, <CODE>down3</CODE></TD>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD><CODE>left</CODE>, <CODE>lWheelLeft</CODE>, <CODE>rWheelLeft</CODE></TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD><CODE>right</CODE>, <CODE>lWheelRight</CODE>, <CODE>rWheelRight</CODE></TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD><CODE>routing</CODE></TD>
+</TR>
+<TR>
+<TD>Report text formatting under braille cell</TD>
+<TD><CODE>secondary routing</CODE></TD>
+</TR>
+<TR>
+<TD>Toggle the way context information is presented in braille</TD>
+<TD><CODE>attribute1+attribute3</CODE></TD>
+</TR>
+<TR>
+<TD>Toggles between the speech modes of off, beep and talk</TD>
+<TD><CODE>attribute2+attribute4</CODE></TD>
+</TR>
+<TR>
+<TD>Switches to the previous review mode (e.g. object, document or screen)</TD>
+<TD><CODE>f1</CODE></TD>
+</TR>
+<TR>
+<TD>Switches to the next review mode (e.g. object, document or screen)</TD>
+<TD><CODE>f2</CODE></TD>
+</TR>
+<TR>
+<TD>Moves the navigator object to the object containing it</TD>
+<TD><CODE>f3</CODE></TD>
+</TR>
+<TR>
+<TD>Moves the navigator object to the first object inside it</TD>
+<TD><CODE>f4</CODE></TD>
+</TR>
+<TR>
+<TD>Moves the navigator object to the previous object</TD>
+<TD><CODE>f5</CODE></TD>
+</TR>
+<TR>
+<TD>Moves the navigator object to the next object</TD>
+<TD><CODE>f6</CODE></TD>
+</TR>
+<TR>
+<TD>Reports the current navigator object</TD>
+<TD><CODE>f7</CODE></TD>
+</TR>
+<TR>
+<TD>Reports information about the location of the text or object at the review cursor</TD>
+<TD><CODE>f8</CODE></TD>
+</TR>
+<TR>
+<TD>Performs the default action on the current navigator object</TD>
+<TD><CODE>f7+f8</CODE></TD>
+</TR>
+<TR>
+<TD>Reports date/time</TD>
+<TD><CODE>f9</CODE></TD>
+</TR>
+<TR>
+<TD>Reports battery status and time remaining if AC is not plugged in</TD>
+<TD><CODE>f10</CODE></TD>
+</TR>
+<TR>
+<TD>Reports title</TD>
+<TD><CODE>f11</CODE></TD>
+</TR>
+<TR>
+<TD>Reports status bar</TD>
+<TD><CODE>f12</CODE></TD>
+</TR>
+<TR>
+<TD>Reports the current line under the application cursor</TD>
+<TD><CODE>f13</CODE></TD>
+</TR>
+<TR>
+<TD>Say all</TD>
+<TD><CODE>f14</CODE></TD>
+</TR>
+<TR>
+<TD>Reports current character under review cursor</TD>
+<TD><CODE>f15</CODE></TD>
+</TR>
+<TR>
+<TD>Reports the line of the current navigator object where the review cursor is situated</TD>
+<TD><CODE>f16</CODE></TD>
+</TR>
+<TR>
+<TD>Speaks the word of the current navigator object where the review cursor is situated</TD>
+<TD><CODE>f15+f16</CODE></TD>
+</TR>
+<TR>
+<TD>Moves the review cursor to the previous line of the current navigator object and speaks it</TD>
+<TD><CODE>lWheelUp</CODE>, <CODE>rWheelUp</CODE></TD>
+</TR>
+<TR>
+<TD>Moves the review cursor to the next line of the current navigator object and speaks it</TD>
+<TD><CODE>lWheelDown</CODE>, <CODE>rWheelDown</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+d</CODE> key (minimize all applications)</TD>
+<TD><CODE>attribute1</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+e</CODE> key (this computer)</TD>
+<TD><CODE>attribute2</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+b</CODE> key (focus system tray)</TD>
+<TD><CODE>attribute3</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+i</CODE> key (Windows settings)</TD>
+<TD><CODE>attribute4</CODE></TD>
+</TR>
+</TABLE>
+
 <A NAME="HIDBraille"></A>
-<H3>15.20. HID 标准盲文点显器</H3>
+<H3>15.21. HID 标准盲文点显器</H3>
 <P>
 这是新标准 HID 盲文规范的实验性驱动，由 Microsoft、Google、Apple 和包括 NV Access 在内的几家辅助技术公司于 2018 年达成一致。
 希望未来所有制造商推出的盲文点显器设备都可以使用此标准协议，以消除设备驱动之间的差异性。
