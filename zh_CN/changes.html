@@ -135,6 +135,127 @@
 插件需要重新测试并更新其清单。
 请参阅 <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">开发人员指南</A> 了解有关 NVDA API 的弃用和移除信息。
 </P>
+<UL>
+<LI>在非英语系统环境下，本地运行的系统测试，现在可顺利通过。 (<A HREF="https://github.com/nvaccess/nvda/issues/13362">#13362</A>)
+<LI>在 ARM 架构的 Windows 11 系统中， x64 的应用将不再被识别为 ARM64应用程序。 (<A HREF="https://github.com/nvaccess/nvda/issues/14403">#14403</A>)
+<LI>在新的 UIA scenarios 中，不必使用  <CODE>SearchField</CODE> 和 <CODE>SuggestionListItem</CODE> <CODE>UIA</CODE> <CODE>NVDAObjects</CODE>， 因为将通过 UIA 的 <CODE>controllerFor</CODE> 样式暴露键入的内容和搜索建议。
+此特性现可通过  <CODE>behaviours.EditableText</CODE> 和 基于 <CODE>NVDAObject</CODE> 分别调用。 (<A HREF="https://github.com/nvaccess/nvda/issues/14222">#14222</A>)
+<LI>UIA 调试日志类启用后，将为 UIA event handlers 和 utilies 生成更多重要日志。  (<A HREF="https://github.com/nvaccess/nvda/issues/14256">#14256</A>)
+<LI>NVDAHelper build standards 已更新。 (<A HREF="https://github.com/nvaccess/nvda/issues/13072">#13072</A>)
+  <UL>
+  <LI>现在使用 C++20标准（过去是C++17）。
+    <UL>
+    <LI>现在使用 <CODE>/permissive-</CODE> 编译器标志禁用宽容行为，并设置 <CODE>/Zc</CODE> 编译器选项以实现严格一致性。
+    <P></P>
+  -
+    </UL>
+  </UL>
+<LI>某些插件对象（如驱动或者附加组件）可在 NVDA Python 控制台获取更多详细信息。  (<A HREF="https://github.com/nvaccess/nvda/issues/14463">#14463</A>)
+<LI>现在，NVDA 可完全使用 Visual Studio 2022进行编译，不再请求 Visual Studio 2019 build tools。 (<A HREF="https://github.com/nvaccess/nvda/issues/14326">#14326</A>)
+<LI>NVDA 冻结后，将产生更详尽的调试日志以方便救援。 (<A HREF="https://github.com/nvaccess/nvda/issues/14309">#14309</A>)
+<LI>单例的  <CODE>braille._BgThread</CODE> 类 已被 <CODE>hwIo.ioThread.IoThread</CODE> 代替。 (<A HREF="https://github.com/nvaccess/nvda/issues/14130">#14130</A>)
+  <UL>
+  <LI>此类 <CODE>hwIo.bgThread</CODE> 的一个单独的实例(在 NVDA 核心)为后台 I/O 的点显器驱动提供安全的线程。 
+  <LI>此类并不为单利而设计，其他驱动程序可以用自己的实例来进行 I/O。
+  </UL>
+<LI>可以从 <CODE>winVersion.WinVersion.processorArchitecture</CODE> 属性查询计算机的处理器架构。 (<A HREF="https://github.com/nvaccess/nvda/issues/14439">#14439</A>)
+<P></P>
+<LI>添加了新的扩展点。 (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
+  <UL>
+  <LI><CODE>inputCore.decide_executeGesture</CODE>
+  <LI><CODE>tones.decide_beep</CODE>
+  <LI><CODE>nvwave.decide_playWaveFile</CODE>
+  <LI><CODE>braille.pre_writeCells</CODE>
+  <LI><CODE>braille.filter_displaySize</CODE>
+  <LI><CODE>braille.decide_enabled</CODE>
+  <LI><CODE>braille.displayChanged</CODE>
+  <LI><CODE>braille.displaySizeChanged</CODE>
+  </UL>
+<LI>现在，可通过设置 useconfig  来欺骗合成器驱动已经支持此设置。 (<A HREF="https://github.com/nvaccess/nvda/issues/14601">#14601</A>)
+</UL>
+
+<P></P>
+<H4>API 的破坏性修改</H4>
+<P>
+这里是所有的 API 破坏性修改。
+如您的附加组件使用新的 API 更新后遇到问题，请在 github 开新的issue。
+</P>
+<UL>
+<LI>配置详述已被改变，关键字已经被移除或修改为：
+  -  <CODE>[documentFormatting]</CODE> 部分 (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>):
+    <UL>
+    <LI><CODE>reportLineIndentation</CODE> 存储着一个整数 （0 到 3） 而不是一个布尔值。
+    <LI><CODE>reportLineIndentationWithTones</CODE> 已经被移除。
+    <LI><CODE>reportBorderStyle</CODE> 和 <CODE>reportBorderColor</CODE> 已经被移除 并被替换为 <CODE>reportCellBorders</CODE>。
+    </UL>
+  -  <CODE>[braille]</CODE> 部分 (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>):
+    <UL>
+    <LI><CODE>noMessageTimeout</CODE> 已经被移除， 代替他的是一个 <CODE>showMessages</CODE> 的值。
+    <LI><CODE>messageTimeout</CODE> 再也不能为  0， 代替以 <CODE>showMessages</CODE> 的值。
+    <LI><CODE>autoTether</CODE> 已经被移除，； <CODE>tetherTo</CODE> 的值可用 "auto" 来代替。
+    </UL>
+  -  <CODE>[keyboard]</CODE> 部分  (<A HREF="https://github.com/nvaccess/nvda/issues/14528">#14528</A>):
+    <UL>
+    <LI><CODE>useCapsLockAsNVDAModifierKey</CODE>、 <CODE>useNumpadInsertAsNVDAModifierKey</CODE>、 <CODE>useExtendedInsertAsNVDAModifierKey</CODE> 已经被移除。
+    他们被 <CODE>NVDAModifierKeys</CODE> 代替。
+    </UL>
+  -
+-  <CODE>NVDAHelper.RemoteLoader64</CODE> 已经被移除且没有可替代的方案。 (<A HREF="https://github.com/nvaccess/nvda/issues/14449">#14449</A>)
+-  <CODE>winAPI.sessionTracking</CODE> 的下列函数在未有替换的情况下被移除。 (<A HREF="https://github.com/nvaccess/nvda/issues/14416">#14416</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14490">#14490</A>)
+  <UL>
+  <LI><CODE>isWindowsLocked</CODE>
+  <LI><CODE>handleSessionChange</CODE>
+  <LI><CODE>unregister</CODE>
+  <LI><CODE>register</CODE>
+  <LI><CODE>isLockStateSuccessfullyTracked</CODE>
+  </UL>
+<LI>不再允许设置  <CODE>braille.handler.enabled</CODE> 与否来判断点显器句柄的启用/禁用状态。
+要想禁用点显器句柄，请 注册一个句柄到 <CODE>braille.handler.decide_enabled</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
+<LI>不再允许设置  <CODE>braille.handler.displaySize</CODE>来改变句柄的显示大小。
+要想更新 显示大小，请注册一个句柄 到 <CODE>braille.handler.filter_displaySize</CODE>。
+参看 <CODE>brailleViewer</CODE>以获取如何进行的例子。 (<A HREF="https://github.com/nvaccess/nvda/issues/14503">#14503</A>)
+<LI>下面的情况需要使用  <CODE>addonHandler.Addon.loadModule</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/14481">#14481</A>)
+  <UL>
+  <LI><CODE>loadModule</CODE> 现在用点分割，而不是反斜杠。
+  如用 "lib.example" 代替 "lib\example".
+  <LI>当使用 <CODE>loadModule</CODE> 加载 module 时，遇到无法加载或抛出错误时，将抛出一个异常 而不会在不包含任何产生原因的情况下，仅仅静默的返回一个 <CODE>None</CODE>。
+  </UL>
+<LI>下面的标志已经在没有任何直接替代的前提下从 <CODE>appModules.foobar2000</CODE> 中移除。 (<A HREF="https://github.com/nvaccess/nvda/issues/14570">#14570</A>)
+  <UL>
+  <LI><CODE>statusBarTimes</CODE>
+  <LI><CODE>parseIntervalToTimestamp</CODE>
+  <LI><CODE>getOutputFormat</CODE>
+  <LI><CODE>getParsingFormat</CODE>
+  </UL>
+<LI>下面的，都不是单例了，且其对应的获取函数也已经被移除。
+ <CODE>Example.get()</CODE> 已经变为  <CODE>Example()</CODE>。 (<A HREF="https://github.com/nvaccess/nvda/issues/14248">#14248</A>)
+  <UL>
+  <LI><CODE>UIAHandler.customAnnotations.CustomAnnotationTypesCommon</CODE>
+  <LI><CODE>UIAHandler.customProps.CustomPropertiesCommon</CODE>
+  <LI><CODE>NVDAObjects.UIA.excel.ExcelCustomProperties</CODE>
+  <LI><CODE>NVDAObjects.UIA.excel.ExcelCustomAnnotationTypes</CODE>
+  </UL>
+</UL>
+
+<P></P>
+<H4>即将弃用</H4>
+<UL>
+<LI><CODE>NVDAObjects.UIA.winConsoleUIA.WinTerminalUIA</CODE> 不推荐使用，将弃用。 (<A HREF="https://github.com/nvaccess/nvda/issues/14047">#14047</A>)
+<LI><CODE>config.addConfigDirsToPythonPackagePath</CODE> 已经被移动。
+请用 <CODE>addonHandler.packaging.addDirsToPythonPackagePath</CODE> 代替。 (<A HREF="https://github.com/nvaccess/nvda/issues/14350">#14350</A>)
+<LI><CODE>braille.BrailleHandler.TETHER_*</CODE> 均不推荐使用。
+请使用 <CODE>configFlags.TetherTo.*.value</CODE> 代替 (<A HREF="https://github.com/nvaccess/nvda/issues/14233">#14233</A>)
+<LI><CODE>utils.security.postSessionLockStateChanged</CODE> 不推荐使用。
+请用 <CODE>utils.security.post_sessionLockStateChanged</CODE> 代替。 (<A HREF="https://github.com/nvaccess/nvda/issues/14486">#14486</A>)
+<LI><CODE>NVDAObject.hasDetails</CODE>, <CODE>NVDAObject.detailsSummary</CODE>, <CODE>NVDAObject.detailsRole</CODE> 不推荐使用。
+请用 <CODE>NVDAObject.annotations</CODE> 代替。 (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>)
+<LI><CODE>keyboardHandler.SUPPORTED_NVDA_MODIFIER_KEYS</CODE> 不推荐使用，且无直接替代方案。
+请考虑使用 class <CODE>config.configFlags.NVDAKey</CODE> 代替。 (<A HREF="https://github.com/nvaccess/nvda/issues/14528">#14528</A>)
+<LI><CODE>gui.MainFrame.evaluateUpdatePendingUpdateMenuItemCommand</CODE> 不推荐使用。
+请使用 <CODE>gui.MainFrame.SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand</CODE> 代替。 (<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>)
+</UL>
+
+<P></P>
 <H2>2022.4</H2>
 <P>
 本版新增了一些重要的功能命令，涵盖表格的逐行/逐列导航、朗读等快捷键。
