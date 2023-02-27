@@ -175,8 +175,9 @@
       <LI><A HREF="#InputCompositionSettings">12.1.13. 输入法设置</A>
       <LI><A HREF="#BrowseModeSettings">12.1.14. 浏览模式设置 (NVDA+control+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">12.1.15. 文档格式设置 (NVDA+control+d)</A>
-      <LI><A HREF="#Win10OcrSettings">12.1.16. Windows 10 光学字符识别 设置</A>
-      <LI><A HREF="#toc116">12.1.17. 高级设置</A>
+      <LI><A HREF="#DocumentNavigation">12.1.16. 文档导航</A>
+      <LI><A HREF="#Win10OcrSettings">12.1.17. Windows OCR 设置</A>
+      <LI><A HREF="#toc117">12.1.18. 高级设置</A>
       </UL>
     <LI><A HREF="#MiscSettings">12.2. 杂项设置</A>
       <UL>
@@ -231,9 +232,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Brailliant BI/B Series / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc157">15.9.1. Key assignments for All models</A>
-      <LI><A HREF="#toc158">15.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</A>
-      <LI><A HREF="#toc159">15.9.3. Key assignments for Brailliant BI 14</A>
+      <LI><A HREF="#toc158">15.9.1. Key assignments for All models</A>
+      <LI><A HREF="#toc159">15.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</A>
+      <LI><A HREF="#toc160">15.9.3. Key assignments for Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</A>
     <LI><A HREF="#Seika">15.11. Seika 点显器</A>
@@ -4089,19 +4090,52 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 <H5>行缩进的提示方式</H5>
 <P>
 此选项允许您定义如何提示行首位置的缩进。
-“行缩进的提示方式为”组合框包含四个选项：
+“行缩进的提示方式为”组合框，包含四个选项：
 </P>
 <UL>
-<LI>关闭： NVDA不会特别提示行首缩进情况。
-<LI>语音： 如果语音选项选中，当缩进个数发生变化时，NVDA 就会读出形如“12个空格”或“4个制表符”这样的内容。
-<LI>声音： 若“声音”选项选中，当缩进数量发生了改变时声音会反馈缩进变化的量。
-每增加一个空格或一个制表符，音调升高一个半音，也会为四个连续空格而升高伴音。
-<LI>语音和声音：此选项将使用上述两种方式来提示缩进。
+<LI>关闭： NVDA不提示行首缩进。
+<LI>仅语音： 如果选中该选项，当缩进个数发生变化时，NVDA 就会读出如“12个空格”或“4个制表符”这样的提示。
+<LI>仅声音： 若选中该选项，当缩进数量发生改变时，会以声音反馈缩进变化的量。
+每增加一个空格或一个制表符，音调升高一个半音，也会为四个连续的空格升高伴音。
+<LI>语音和声音：此选项将同时使用上述两种方式来提示缩进。
 </UL>
 
 <P></P>
+<A NAME="DocumentNavigation"></A>
+<H4>12.1.16. 文档导航</H4>
+<P>
+该类别可以让您调整有关文档导航的各项设置。
+</P>
+<A NAME="ParagraphStyle"></A>
+<H5>段落导航模式</H5>
+<DL>
+<DT>默认</DT><DD>
+  由应用程序处理
+<DT>选项</DT><DD>
+  默认 (由应用程序处理)、由应用程序处理、单行分段、多行分段
+</DL>
+
+<P></P>
+<P>
+此组合框用于选择当您使用“control+上光标”和“control+下光标”进行段落导航时要使用的段落导航模式。
+可用的导航模式包括：
+</P>
+<UL>
+<LI>由应用程序处理：交给应用程序来确定上一段或下一段，在执行段落导航时 NVDA 会读出相应的段落。
+当应用程序本身支持段落导航时，此默认模式效果最佳。
+<LI>单行分段：尝试使用单行分段（换行）作为段落指示符来确定上一段或下一段。
+在本身不支持段落导航的应用程序中阅读文档时，使用该模式效果最佳，书写时通过按一次“回车”键来标记文档中的各个段落。
+<LI>多行分段：尝试使用至少一个空行（书写时，按两次 <CODE>enter</CODE> 键）作为段落指示符来确定上一段或下一段。
+该模式在处理那些使用了块段落（block paragraphs）的文档时效果最佳。
+请注意，不能在 Microsoft Word 或 Microsoft Outlook 中使用该模式，除非您在Word 中启用了 UIA 接口支持。
+</UL>
+
+<P></P>
+<P>
+您可以在<A HREF="#InputGestures">按键与手势对话框</A>的“系统输入焦点”类别下分配一个快捷键，用于在段落导航模式之间循环切换。
+</P>
 <A NAME="Win10OcrSettings"></A>
-<H4>12.1.16. Windows 10 光学字符识别 设置</H4>
+<H4>12.1.17. Windows OCR 设置</H4>
 <P>
 这个部分允许你设置 <A HREF="#Win10Ocr">Windows 光学字符识别</A>。
 这个分类包含以下选项
@@ -4111,8 +4145,8 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 <P>
 此组合框允许您选择用于光学字符识别的语言。
 </P>
-<A NAME="toc116"></A>
-<H4>12.1.17. 高级设置</H4>
+<A NAME="toc117"></A>
+<H4>12.1.18. 高级设置</H4>
 <P>
 请注意！ 此类别中的设置适用于高级用户，如果随意修改，可能会导致NVDA无法正常运行。
 只有在您确定知道自己在做什么，或者NVDA开发人员明确指示您修改时，才应该对这些设置进行更改。
@@ -4296,6 +4330,32 @@ Diff 算法组合框内有三个选项：
 这与 NVDA 2020.4 及更早版本中的行为相同。
 此设置可能会使某些应用程序中对传入文本的读取更加稳定。
 但是，当在一行中间插入或删除一个字符时，会读出插入符后的文本。
+</UL>
+
+<P></P>
+<A NAME="WtStrategy"></A>
+<H5>在 Windows 终端内使用以下方式朗读新文本</H5>
+<DL>
+<DT>默认</DT><DD>
+  Diffing
+<DT>选项</DT><DD>
+  Diffing、UIA通知
+</DL>
+
+<P></P>
+<P>
+该选项决定 NVDA 如何确定 Windows 终端和 Visual Studio 2022 中使用的 WPF Windows Terminal 控件中的“新”文本（以及启用“读出动态内容更新”时要朗读的内容）。
+这不会影响 Windows 控制台（<CODE>conhost.exe</CODE>）。
+有三个选项可选：
+</P>
+<UL>
+<LI>默认：该选项目前等价于“diffing”，但如果 UIA 通知的支持得到进一步改进，该选项可能会被改变。
+<LI>Diffing：此选项使用 diff 算法来计算每次终端内提供的新文本的差异。
+与 NVDA 在 2022.4 及之前版本中的行为一致。
+<LI>UIA 通知：此选项决定把如何用语音输出文本的职责转让给 windows 终端自身，这意味着， NVDA 不必判断屏幕上的文本是不是新文本。
+这可以明显提高 Windows 终端的性能和稳定性，但该功能尚未开发完成。
+尤其是当选择了这个选项时，未在屏幕上显示的输入字符（如密码）也会被读出来。
+此外，可能无法准确读出连续输出超过1000个字符的文本。
 </UL>
 
 <P></P>
@@ -5704,7 +5764,7 @@ The following extra devices are also supported (and do not require any special d
 Following are the key assignments for  the Brailliant BI/B and BrailleNote touch displays with NVDA.
 Please see the display's documentation for descriptions of where these keys can be found.
 </P>
-<A NAME="toc157"></A>
+<A NAME="toc158"></A>
 <H4>15.9.1. Key assignments for All models</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5793,7 +5853,7 @@ Please see the display's documentation for descriptions of where these keys can 
 </TR>
 </TABLE>
 
-<A NAME="toc158"></A>
+<A NAME="toc159"></A>
 <H4>15.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5814,7 +5874,7 @@ Please see the display's documentation for descriptions of where these keys can 
 </TR>
 </TABLE>
 
-<A NAME="toc159"></A>
+<A NAME="toc160"></A>
 <H4>15.9.3. Key assignments for Brailliant BI 14</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -7796,7 +7856,7 @@ nvda -q
 <TR>
 <TD>-l LOGLEVEL</TD>
 <TD>--log-level=LOGLEVEL</TD>
-<TD>日志消息记录的最低级别(调试 10， 信息 20， 警告 30， 错误 40， 严重 50，停用 100 默认为“警告”。</TD>
+<TD>日志消息记录的最低级别（调试 10， 输入/输出 12， 调试警告 15， 信息 20， 停用 100</TD>
 </TR>
 <TR>
 <TD>-c CONFIGPATH</TD>
