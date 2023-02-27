@@ -2,6 +2,301 @@ NVDA 新版資訊
 
 %!includeconf: ../changes.t2tconf
 
+= 2023.1 更新中文摘譯 =
+- 在設定中加入「文件導覽」類別，其中包含一個新選項「段落樣式」，這可用於本身不支援段落導覽的文件編輯器，例如記事本或 Notepad++。
+- 按下 NVDA+K 可讀出連結的目標網址。
+- 許多錯誤修正，尤其是針對 Windows 11。
+- 更新 eSpeak, LibLouis, Sonic rate boost and Unicode CLDR 等。
+-
+
+注意：
+- 此更新會導致現有的附加元件不相容，需要重新安裝新版本。
+-
+
+
+== 新功能 ==
+- 在 Microsoft Excel 使用 UI Automation 能夠自動讀出表格中的列及欄標題。 (#14228)
+  - 注意：這是指透過「插入」功能表中的「表格」按鈕所建立的表格。
+  在「表格樣式」選項中的「首欄」和「標題列」分別對應欄與列標題。
+  -
+- 加入未指派的指令，用來切換延遲讀出字元的字詞解釋。 (#14267)
+- 加入一個實驗性功能，利用 Windows 終端機中的 UIA 通知支援來讀出終端機中的新文字或變更的文字，藉此提高穩定性和反應。 (#13781)
+  - 有關此實驗性功能的限制，請參閱用戶指南。  - 
+- 在 ARM64 架構的 Windows 11 上，瀏覽模式現在可用於 AMD64 應用程式，例如 Firefox、Google Chrome 及 1Password。 (#14397)
+- 在「文件導覽」中加入一個新選項「段落樣式」。
+這支援包括單一換行 (一般) 和多個換行 (區塊) 等段落導覽方式。
+這可用於本身不支援段落導覽的文件編輯器，例如記事本或 Notepad++。 (#13797)
+- 現在能夠讀出多個註釋。
+按 NVDA+D 循環讀出具有多個註釋來源中每個註釋的摘要。
+例如，當文字具有相關的註釋及註腳時。 (#14507, #14480)
+- 支援 Tivomatic Caiku Albatross 46/80 點字顯示器。 (#13045)
+- 新的全域指令用來讀出連結目標 (NVDA+K)。
+按一下會以語音/點字讀出導覽物件所在的連結目標 URL。
+按兩下會將它顯示在一個視窗中，便於詳細瀏覽。 (#14583)
+- 新增未指派的指令 (工具類別)：在視窗中讀出連結目標
+與按兩下 NVDA+K 相同，但可能對點字使用者更方便。 (#14583)
+-
+
+
+== 變更 ==
+- 更新 LibLouis 點字轉譯表至 [3.24.0 https://github.com/liblouis/liblouis/releases/tag/v3.24.0]。 (#14436)
+  - 主要更新包括匈牙利文、UEB 及中文注音點字。
+  - 支援丹麥點字標準 2022。
+  - 新的點字表，包括喬治亞文書寫點字、史瓦西里文 (肯亞) 及齊切瓦文 (馬拉威)。
+  -
+- 更新Sonic rate boost library 至 commit 1d70513。 (#14180)
+- 更新 CLDR 至版本 42.0。 (#14273)
+- 更新 eSpeak NG 至 1.52-dev commit f520fecb。 (#14281, #14675)
+  - 修正對於大數的報讀。 (#14241)
+  -
+- 在 Java 應用程式中，具有切換選取狀態的控制項，將在未選取項目時也讀出，而非僅在選取項目時。 (#14336)
+-
+
+
+== 錯誤修正 ==
+- Windows 11 修正：
+  - 在啟動「開始」功能表時，NVDA 會讀出搜尋。 (#13841)  
+  - 在 ARM 系統架構上，x64 應用程式不再被視為 ARM64 應用程式。 (#14403)
+  - 可以操作剪貼簿歷程紀錄，例如「釘選項目」。 (#14508)
+  - 在 Windows 11 22H2 及更新版本中，再次可以使用滑鼠及觸控方式來與系統匣浮動視窗或「開啟檔案」對話框等進行互動。 (#14538, #14539)
+  -
+- 在 Microsoft Excel 的註釋中輸入 @mention 時能夠讀出建議。 (#13764)
+- 在 Google Chrome 網址列中，建議控制項 (切換至分頁、移除建議等) 能夠在選取時正確讀出。 (#13522)
+- 讀出文字格式資訊時，在 Wordpad 或事件紀錄檢視器中的顏色能夠被明確讀出，而非只有「預設色彩」。 (#13959)
+- 使用 Firefox，GitHub issue 頁面上的 "Show options" 按鈕現在能夠正確操作。 (#14269)
+- 在 Outlook 2016/365 進皆搜尋對話框中的日期選擇器控制項，其中的標籤和數值能夠讀出來。 (#12726)
+- 在 Firefox、Chrome 及 Edge 中，ARIA 切換按鈕控制項，能夠被正確讀出，而非核取方塊。 (#11310)
+- 當按下 HTML 表格內的按鈕來更改針對欄標題的排序，NVDA 會自動讀出排序狀態。 (#10890)
+- 瀏覽網頁時，當焦點跳入地標區域範圍時，其名稱總是能夠被自動讀出。 (#13307)
+- 當啟用大寫字母發出嗶嗶聲或讀出大寫，並啟用延遲讀出字詞解釋時，NVDA 不會再重覆發出嗶聲或說出大寫。 (#14239)
+- NVDA 能夠更準確讀出 Java 應用程式中表格內的控製項。 (#14347)
+- 使用多個設定檔時，一些設定不會再發生不一致的情況。 (#14170)
+  - 修正了以下的設定：
+    - 文件格式中的行縮排。
+    - 文件格式中的儲存格框線。
+    - 點字設定中的顯示訊息。
+    - 點字設定中的點字游標跟隨。
+    -
+  - 在極少數情況下，安裝此版本的 NVDA 後，組態設定檔中使用的這些設定可能會被非預期修改。
+  - 將 NVDA 升級到此版本後請檢查您設定檔中的這些選項。
+  -
+- 更多語言能夠讀出表情符號。 (#14433)
+- 修正一些元素點字標記會漏掉的錯誤。 (#13815)
+- 在設定 NVDA 時，總會有至少一個按鍵被設為 NVDA 鍵。 (#14527)
+- 透過通知區域啟用 NVDA 功能表，當沒有更新可用時，NVDA 將不會再提示有擱置的更新。 (#14523)
+- 在 foobar2000 中能夠正確讀出長度超過一天音檔的剩餘時間、經過時間及總時間。 (#14127)
+- 在 Chrome 與 Firefox 等網頁瀏覽器中，檔案下載等通知訊息除了以語音提示外，也能夠以點字呈現。 (#14562)
+- 修正在 Firefox 中導覽到表格的第一列或最後一列時的錯誤。 (#14554)- When NVDA is launched with ``--lang=Windows`` parameter, it is again possible to open NVDA's General settings dialog. (#14407)
+-
+
+
+= 2023.1 =
+A new option has been added, "Paragraph Style" in "Document Navigation".
+This can be used with text editors that do not support paragraph navigation natively, such as Notepad and Notepad++.
+
+There is a new global command to report the destination of a link, mapped to ``NVDA+k``.
+
+Support for annotated web content (such as comments and footnotes) has improved.
+Press ``NVDA+d`` to cycle through summaries when annotations are reported (e.g. "has comment, has footnote").
+
+Tivomatic Caiku Albatross 46/80 braille displays are now supported.
+
+Support for ARM64 and AMD64 versions of Windows has improved.
+
+There are many bug fixes, notably Windows 11 fixes.
+
+eSpeak, LibLouis, Sonic rate boost and Unicode CLDR have been updated.
+There are new Georgian, Swahili (Kenya) and Chichewa (Malawi) braille tables.
+
+Note:
+- This release breaks compatibility with existing add-ons.
+-
+
+== New Features ==
+- Microsoft Excel via UI Automation: Automatic reporting of column and row headers in tables. (#14228)
+  - Note: This is referring to tables formatted via the "Table" button on the Insert pane of the Ribbon.
+  "First Column" and "Header Row" in "Table Style Options" correspond to column and row headers respectively.
+  - This is not referring to screen reader specific headers via named ranges, which is currently not supported via UI Automation.
+  -
+- An unassigned script has been added to toggle delayed character descriptions. (#14267)
+- Added an experimental option to leverage the UIA notification support in Windows Terminal to report new or changed text in the terminal, resulting in improved stability and responsivity. (#13781)
+  - Consult the user guide for limitations of this experimental option.
+  - 
+- On Windows 11 ARM64, browse mode is now available in AMD64 apps such as Firefox, Google Chrome and 1Password. (#14397)
+- A new option has been added, "Paragraph Style" in "Document Navigation".
+This adds support for single line break (normal) and multi line break (block) paragraph navigation.
+This can be used with text editors that do not support paragraph navigation natively, such as Notepad and Notepad++. (#13797)
+- The presence of multiple annotations are now reported.
+``NVDA+d`` now cycles through reporting the summary of each annotation target for origins with multiple annotation targets.
+For example, when text has a comment and a footnote associated with it. (#14507, #14480)
+- Added support for Tivomatic Caiku Albatross 46/80 braille displays. (#13045)
+- New global command: Report link destination (``NVDA+k``).
+Pressed once will speak/braille the destination of the link that is in the navigator object.
+Pressing twice will show it in a window, for more detailed review. (#14583)
+- New unmapped global command (Tools category): Report link destination in a window.
+Same as pressing ``NVDA+k`` twice, but may be more useful for braille users. (#14583)
+-
+
+
+== Changes ==
+- Updated LibLouis braille translator to [3.24.0 https://github.com/liblouis/liblouis/releases/tag/v3.24.0]. (#14436)
+  - Major updates to Hungarian, UEB, and Chinese bopomofo braille.
+  - Support for the Danish braille standard 2022.
+  - New braille tables for Georgian literary braille, Swahili (Kenya) and Chichewa (Malawi).
+  -
+- Updated Sonic rate boost library to commit ``1d70513``. (#14180)
+- CLDR has been updated to version 42.0. (#14273)
+- eSpeak NG has been updated to 1.52-dev commit ``f520fecb``. (#14281, #14675)
+  - Fixed reporting of large numbers. (#14241)
+  -
+- Java applications with controls using the selectable state will now announce when an item is not selected rather than when the item is selected. (#14336)
+-
+
+
+== Bug Fixes ==
+- Windows 11 fixes:
+  - NVDA will announce search highlights when opening Start menu. (#13841)
+  - On ARM, x64 apps are no longer identified as ARM64 applications. (#14403)
+  - Clipboard history menu items such as "pin item" can be accessed. (#14508)
+  - In Windows 11 22H2 and newer, it is again possible to use mouse and touch interaction to interact with areas such as the system tray overflow window and "Open With" dialog. (#14538, #14539)
+  -
+- Suggestions are reported when typing an @mention in in Microsoft Excel comments. (#13764)
+- In the Google Chrome location bar, suggestion controls (switch to tab, remove suggestion etc) are now reported when selected. (#13522)
+- When requesting formatting information, colors are now explicitly reported in Wordpad or log viewer, rather than only "Default color". (#13959)
+- In Firefox, activating the "Show options" button on GitHub issue pages now works reliably. (#14269)
+- The date picker controls in Outlook 2016 / 365 Advanced search dialog now report their label and value. (#12726)
+- ARIA switch controls are now actually reported as switches in Firefox, Chrome and Edge, rather than checkboxes. (#11310)
+- NVDA will automatically announce the sort state on an HTML table column header when changed by pressing an inner button. (#10890)
+- A landmark or region's name is always automatically spoken when jumping inside from outside using quick navigation or focus in browse mode. (#13307)
+- When beep or announce 'cap' for capitals is enabled with delayed character descriptions, NVDA no longer beeps or announces 'cap' twice. (#14239)
+- Controls in tables in Java applications will now be announced more accurately by NVDA. (#14347)
+- Some settings will no longer be unexpectedly different when used with multiple profiles. (#14170)
+  - The following settings have been addressed:
+    - Line indentation in Document formatting settings.
+    - Cell borders in doc formatting settings
+    - Show messages in braille settings
+    - Tether Braille in braille settings
+    -
+  - In some rare cases, these settings used in profiles may be unexpectedly modified when installing this version of NVDA.
+  - Please check these options in your profiles after upgrading NVDA to this version.
+  -
+- Emojis should now be reported in more languages. (#14433)
+- The presence of an annotation is no longer missing in braille for some elements. (#13815)
+- Fixed an issue where config changes not save correctly when changing between a "Default" option and the value of the "Default" option. (#14133)
+- When configuring NVDA there will always be at least one key defined as an NVDA key. (#14527)
+- When accessing the NVDA menu via the notification area, NVDA will not suggest a pending update anymore when no update is available. (#14523)
+- Remaining, elapsed and total time is now reported correctly for audio files over a day long in foobar2000. (#14127)
+- In web browsers such as Chrome and Firefox, alerts such as file downloads are shown in braille in addition to being spoken. (#14562)
+- Bug fixed when navigating to the first and last column in a table in Firefox (#14554)
+- When NVDA is launched with ``--lang=Windows`` parameter, it is again possible to open NVDA's General settings dialog. (#14407)
+-
+
+
+== Changes for Developers ==
+Note: this is an Add-on API compatibility breaking release.
+Add-ons will need to be re-tested and have their manifest updated.
+Please refer to [the developer guide https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] for information on NVDA's API deprecation and removal process.
+
+- System tests should now pass when run locally on non-English systems. (#13362)
+- In Windows 11 on ARM, x64 apps are no longer identified as ARM64 applications. (#14403)
+- It is no longer necessary to use ``SearchField`` and ``SuggestionListItem`` ``UIA`` ``NVDAObjects`` in new UI Automation scenarios, where automatic reporting of search suggestions, and where typing has been exposed via UI Automation with the ``controllerFor`` pattern.
+This functionality is now available generically via ``behaviours.EditableText`` and the base ``NVDAObject`` respectively. (#14222)
+- The UIA debug logging category when enabled now produces significantly more logging for UIA event handlers and utilities. (#14256)
+- NVDAHelper build standards updated. (#13072)
+  - Now uses the C++20 standard, was C++17.
+  - Now uses the ``/permissive-`` compiler flag which disables permissive behaviors, and sets the ``/Zc`` compiler options for strict conformance.
+  -
+- Some plugin objects (e.g. drivers and add-ons) now have a more informative description in the NVDA python console. (#14463)
+- NVDA can now be fully compiled with Visual Studio 2022, no longer requiring the Visual Studio 2019 build tools. (#14326)
+- More detailed logging for NVDA freezes to aid debugging. (#14309)
+- The singleton ``braille._BgThread`` class has been replaced with ``hwIo.ioThread.IoThread``. (#14130)
+  - A single instance ``hwIo.bgThread`` (in NVDA core) of this class provides background i/o for thread safe braille display drivers.
+  - This new class is not a singleton by design, add-on authors are encouraged to use their own instance when doing hardware i/o.
+  -
+- The processor architecture for the computer can be queried from ``winVersion.WinVersion.processorArchitecture attribute.`` (#14439)
+- New extension points have been added. (#14503)
+  - ``inputCore.decide_executeGesture``
+  - ``tones.decide_beep``
+  - ``nvwave.decide_playWaveFile``
+  - ``braille.pre_writeCells``
+  - ``braille.filter_displaySize``
+  - ``braille.decide_enabled``
+  - ``braille.displayChanged``
+  - ``braille.displaySizeChanged``
+  - 
+- It is possible to set useConfig to False on supported settings for a synthesizer driver. (#14601)
+-
+
+=== API Breaking Changes ===
+These are breaking API changes.
+Please open a GitHub issue if your Add-on has an issue with updating to the new API.
+- The configuration specification has been altered, keys have been removed or modified:
+  - In ``[documentFormatting]`` section (#14233):
+    - ``reportLineIndentation`` stores an int value (0 to 3) instead of a boolean
+    - ``reportLineIndentationWithTones`` has been removed.
+    - ``reportBorderStyle`` and ``reportBorderColor`` have been removed and are replaced by ``reportCellBorders``.
+    -
+  - In ``[braille]`` section (#14233):
+    - ``noMessageTimeout`` has been removed, replaced by a value for ``showMessages``.
+    - ``messageTimeout`` cannot take the value 0 anymore, replaced by a value for ``showMessages``.
+    - ``autoTether`` has been removed; ``tetherTo`` can now take the value "auto" instead.
+    -
+  - In ``[keyboard]`` section  (#14528):
+    - ``useCapsLockAsNVDAModifierKey``, ``useNumpadInsertAsNVDAModifierKey``, ``useExtendedInsertAsNVDAModifierKey`` have been removed.
+    They are replaced by ``NVDAModifierKeys``.
+    -
+  -
+- The ``NVDAHelper.RemoteLoader64`` class has been removed with no replacement. (#14449)
+- The following functions in ``winAPI.sessionTracking`` are removed with no replacement. (#14416, #14490)
+  - ``isWindowsLocked``
+  - ``handleSessionChange``
+  - ``unregister``
+  - ``register``
+  - ``isLockStateSuccessfullyTracked``
+  - 
+- It is no longer possible to enable/disable the braille handler by setting ``braille.handler.enabled``.
+To disable the braille handler programatically, register a handler to ``braille.handler.decide_enabled``. (#14503)
+- It is no longer possible to update the display size of the handler by setting ``braille.handler.displaySize``.
+To update the displaySize programatically, register a handler to ``braille.handler.filter_displaySize``.
+Refer to ``brailleViewer`` for an example on how to do this. (#14503)
+- There have been changes to the usage of ``addonHandler.Addon.loadModule``. (#14481)
+  - ``loadModule`` now expects dot as a separator, rather than backslash.
+  For example "lib.example" instead of "lib\example".
+  - ``loadModule`` now raises an exception when a module can't be loaded or has errors, instead of silently returning ``None`` without giving information about the cause.
+  -
+- The following symbols have been removed from ``appModules.foobar2000`` with no direct replacement. (#14570)
+  - ``statusBarTimes``
+  - ``parseIntervalToTimestamp``
+  - ``getOutputFormat``
+  - ``getParsingFormat``
+  -
+- The following are no longer singletons - their get method has been removed.
+Usage of ``Example.get()`` is now ``Example()``. (#14248)
+  - ``UIAHandler.customAnnotations.CustomAnnotationTypesCommon``
+  - ``UIAHandler.customProps.CustomPropertiesCommon``
+  - ``NVDAObjects.UIA.excel.ExcelCustomProperties``
+  - ``NVDAObjects.UIA.excel.ExcelCustomAnnotationTypes``
+  - 
+-
+
+
+=== Deprecations ===
+- ``NVDAObjects.UIA.winConsoleUIA.WinTerminalUIA`` is deprecated and usage is discouraged. (#14047)
+- ``config.addConfigDirsToPythonPackagePath`` has been moved.
+Use ``addonHandler.packaging.addDirsToPythonPackagePath`` instead. (#14350)
+- ``braille.BrailleHandler.TETHER_*`` are deprecated.
+Use ``configFlags.TetherTo.*.value`` instead. (#14233)
+- ``utils.security.postSessionLockStateChanged`` is deprecated.
+Use ``utils.security.post_sessionLockStateChanged`` instead. (#14486)
+- ``NVDAObject.hasDetails``, ``NVDAObject.detailsSummary``, ``NVDAObject.detailsRole`` has been deprecated.
+Use ``NVDAObject.annotations`` instead. (#14507)
+- ``keyboardHandler.SUPPORTED_NVDA_MODIFIER_KEYS`` is deprecated with no direct replacement.
+Consider using the class ``config.configFlags.NVDAKey`` instead. (#14528)
+- ``gui.MainFrame.evaluateUpdatePendingUpdateMenuItemCommand`` has been deprecated.
+Use ``gui.MainFrame.SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand`` instead. (#14523)
+-
+
+
 = 2022.4 更新中文摘譯 =
 此版本加入幾個新的按鍵指令，包括用於表格中讀出全部的指令，
 在用戶指南中加入「快速入門指南」段落，
