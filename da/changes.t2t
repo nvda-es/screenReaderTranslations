@@ -3,38 +3,51 @@ Nyheder i NVDA
 
 %!includeconf: ../changes.t2tconf
 
-= 2022.4 =
-Denne udgivelse indeholder flere nye nøglekommandoer, bl.a. tabelkommandoer til kontinuerlig læsning.
-En "Hurtigstartguide" er blevet tilføjet til brugervejledningen.
-Der er også flere fejlrettelser.
+= 2023.1 =
+Der er tilføjet en ny kategori, der hedder "Dokumentnavigation" i NVDAs indstillinger. Her findes indstillingen "Navigering af afsnit".
+Dette kan bruges til at indstille, hvordan du vil navigere rundt mellem afsnit i tekstredigeringsprogrammer, hvor denne type af navigation ikke normalt understøttes, såsom Notesblok og Notepad++.
 
-eSpeak er blevet opdateret, og LibLouis er blevet opdateret.
-Der er nye kinesiske, svenske, Luganda og Kinyarwanda punktskriftstabeller.
+Der er en ny kommando, der oplyser webadressen for det aktuelle link (``NVDA+k``).
+
+Understøttelse af annoteret webindhold, såsom kommentarer og fodnoter, er forbedret.
+Tryk NVDA+D for at skifte mellem de tilgængelig sammendrag af annoteringsdetaljer, når du eksempelvis får oplyst "har kommentarer" eller "har fodnoter".
+
+Tivomatic Caiku Albatross 46/80 punktdisplays er nu understøttet.
+
+Understøttelsen af ARM64 og AMD64-versioner af Windows er forbedret.
+
+Der er en del fejlrettelser, hvor mange omfatter Windows 11.
+
+eSpeak, LibLouis, Sonic rate boost and Unicode CLDR er blevet opdateret.
+Der er nye punkttabeller for georgiske, swahili (Kenya) og Chichewa (Malawi).
+
+Bemærk:
+- Denne version af NVDA er inkompatibel med eksisterende tilføjelsesprogrammer. Hvis du har tilføjelser til NVDA installeret, skal du sørge for, at de er opdateret, før du opdaterer.
+-
 
 == Nye funktioner ==
-- Tilføjede en hurtigstartguide til brugervejledningen. (#13934)
-- Tilføjede en ny kommando til at få genvejstasten for det aktuelle element i fokus oplyst. (#13960)
-  - Desktop: ``shift+numpad2``.
-  - Laptop: ``NVDA+ctrl+shift+.``.
+- Microsoft Excel via UI Automation: Automatisk oplæsning af række- og kolonneoverskrifter i tabeller. (#14228)
+  - Note: Dette refererer til tabeller, der er formateret via knappen "Tabel" under "Indsæt" på båndet.
+  "Første kolonne" og "Overskriftsrække" i "Tabelstilindstillinger" svarer til henholdsvis kolonne- og rækkeoverskrifter.
+  - Dette refererer ikke til skærmlæserspecifikke overskrifter via navngivne områder, som i øjeblikket ikke understøttes via UI Automation.
   -
-- Tilføjede en ny kommando, der lader læsemarkøren navigere efter sider, hvis dette understøttes af det aktuelle program. (#14021)
-  - Flyt til forrige side:
-    - Desktop: ``NVDA+side op``.
-    - Laptop: ``NVDA+shift+Side op``.
-    -
-  - Flyt til næste side:
-    - Desktop: ``NVDA+Side ned``.
-    - Laptop: ``NVDA+shift+Side ned``.
-    -
-  -
-- Tilføjede følgende kommandoer til brug i tabeller. (#14070)
-  - Sig alt i kolonne: ``NVDA+Ctrl+alt+pil ned``
-  - Sig alt i række: ``NVDA+ctrl+alt+højre pil``
-  - Læs hel kolonne: ``NVDA+Ctrl+alt+Pil op``
-  - Læs hel række: ``NVDA+Ctrl+alt+venstre pil``
-  -
-- Microsoft Excel med UI Automation: NVDA fortæller nu, når du bevæger dig udenfor en tabel i et regneark. (#14165)
-- Rapportering af overskrifter i tabeller kan nu indstilles særskilt for både rækker og kolonner. (#14075)
+- Et script uden tildelt tastetryk er blevet tilføjet, der lader dig slå forsinkede beskrivelser af tegn til og fra. (#14267)
+- Added an experimental option to leverage the UIA notification support in Windows Terminal to report new or changed text in the terminal, resulting in improved stability and responsivity. (#13781)
+  - Consult the user guide for limitations of this experimental option.
+  - 
+- On Windows 11 ARM64, browse mode is now available in AMD64 apps such as Firefox, Google Chrome and 1Password. (#14397)
+- A new option has been added, "Paragraph Style" in "Document Navigation".
+This adds support for single line break (normal) and multi line break (block) paragraph navigation.
+This can be used with text editors that do not support paragraph navigation natively, such as Notepad and Notepad++. (#13797)
+- The presence of multiple annotations are now reported.
+``NVDA+d`` now cycles through reporting the summary of each annotation target for origins with multiple annotation targets.
+For example, when text has a comment and a footnote associated with it. (#14507, #14480)
+- Added support for Tivomatic Caiku Albatross 46/80 braille displays. (#13045)
+- New global command: Report link destination (``NVDA+k``).
+Pressed once will speak/braille the destination of the link that is in the navigator object.
+Pressing twice will show it in a window, for more detailed review. (#14583)
+- New unmapped global command (Tools category): Report link destination in a window.
+Same as pressing ``NVDA+k`` twice, but may be more useful for braille users. (#14583)
 -
 
 
