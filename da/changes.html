@@ -10,46 +10,65 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
-<H2>2022.4</H2>
+<H2>2023.1</H2>
 <P>
-Denne udgivelse indeholder flere nye nøglekommandoer, bl.a. tabelkommandoer til kontinuerlig læsning.
-En "Hurtigstartguide" er blevet tilføjet til brugervejledningen.
-Der er også flere fejlrettelser.
+Der er tilføjet en ny kategori, der hedder "Dokumentnavigation" i NVDAs indstillinger. Her findes indstillingen "Navigering af afsnit".
+Dette kan bruges til at indstille, hvordan du vil navigere rundt mellem afsnit i tekstredigeringsprogrammer, hvor denne type af navigation ikke normalt understøttes, såsom Notesblok og Notepad++.
 </P>
 <P>
-eSpeak er blevet opdateret, og LibLouis er blevet opdateret.
-Der er nye kinesiske, svenske, Luganda og Kinyarwanda punktskriftstabeller.
+Der er en ny kommando, der oplyser webadressen for det aktuelle link (<CODE>NVDA+k</CODE>).
 </P>
+<P>
+Understøttelse af annoteret webindhold, såsom kommentarer og fodnoter, er forbedret.
+Tryk NVDA+D for at skifte mellem de tilgængelig sammendrag af annoteringsdetaljer, når du eksempelvis får oplyst "har kommentarer" eller "har fodnoter".
+</P>
+<P>
+Tivomatic Caiku Albatross 46/80 punktdisplays er nu understøttet.
+</P>
+<P>
+Understøttelsen af ARM64 og AMD64-versioner af Windows er forbedret.
+</P>
+<P>
+Der er en del fejlrettelser, hvor mange omfatter Windows 11.
+</P>
+<P>
+eSpeak, LibLouis, Sonic rate boost and Unicode CLDR er blevet opdateret.
+Der er nye punkttabeller for georgiske, swahili (Kenya) og Chichewa (Malawi).
+</P>
+<P>
+Bemærk:
+</P>
+<UL>
+<LI>Denne version af NVDA er inkompatibel med eksisterende tilføjelsesprogrammer. Hvis du har tilføjelser til NVDA installeret, skal du sørge for, at de er opdateret, før du opdaterer.
+</UL>
+
+<P></P>
 <H3>Nye funktioner</H3>
 <UL>
-<LI>Tilføjede en hurtigstartguide til brugervejledningen. (<A HREF="https://github.com/nvaccess/nvda/issues/13934">#13934</A>)
-<LI>Tilføjede en ny kommando til at få genvejstasten for det aktuelle element i fokus oplyst. (<A HREF="https://github.com/nvaccess/nvda/issues/13960">#13960</A>)
+<LI>Microsoft Excel via UI Automation: Automatisk oplæsning af række- og kolonneoverskrifter i tabeller. (<A HREF="https://github.com/nvaccess/nvda/issues/14228">#14228</A>)
   <UL>
-  <LI>Desktop: <CODE>shift+numpad2</CODE>.
-  <LI>Laptop: <CODE>NVDA+ctrl+shift+.</CODE>.
+  <LI>Note: Dette refererer til tabeller, der er formateret via knappen "Tabel" under "Indsæt" på båndet.
+  "Første kolonne" og "Overskriftsrække" i "Tabelstilindstillinger" svarer til henholdsvis kolonne- og rækkeoverskrifter.
+  <LI>Dette refererer ikke til skærmlæserspecifikke overskrifter via navngivne områder, som i øjeblikket ikke understøttes via UI Automation.
   </UL>
-<LI>Tilføjede en ny kommando, der lader læsemarkøren navigere efter sider, hvis dette understøttes af det aktuelle program. (<A HREF="https://github.com/nvaccess/nvda/issues/14021">#14021</A>)
+<LI>Et script uden tildelt tastetryk er blevet tilføjet, der lader dig slå forsinkede beskrivelser af tegn til og fra. (<A HREF="https://github.com/nvaccess/nvda/issues/14267">#14267</A>)
+<LI>Added an experimental option to leverage the UIA notification support in Windows Terminal to report new or changed text in the terminal, resulting in improved stability and responsivity. (<A HREF="https://github.com/nvaccess/nvda/issues/13781">#13781</A>)
   <UL>
-  <LI>Flyt til forrige side:
-    <UL>
-    <LI>Desktop: <CODE>NVDA+side op</CODE>.
-    <LI>Laptop: <CODE>NVDA+shift+Side op</CODE>.
-    </UL>
-  <LI>Flyt til næste side:
-    <UL>
-    <LI>Desktop: <CODE>NVDA+Side ned</CODE>.
-    <LI>Laptop: <CODE>NVDA+shift+Side ned</CODE>.
-    </UL>
+  <LI>Consult the user guide for limitations of this experimental option.
   </UL>
-<LI>Tilføjede følgende kommandoer til brug i tabeller. (<A HREF="https://github.com/nvaccess/nvda/issues/14070">#14070</A>)
-  <UL>
-  <LI>Sig alt i kolonne: <CODE>NVDA+Ctrl+alt+pil ned</CODE>
-  <LI>Sig alt i række: <CODE>NVDA+ctrl+alt+højre pil</CODE>
-  <LI>Læs hel kolonne: <CODE>NVDA+Ctrl+alt+Pil op</CODE>
-  <LI>Læs hel række: <CODE>NVDA+Ctrl+alt+venstre pil</CODE>
-  </UL>
-<LI>Microsoft Excel med UI Automation: NVDA fortæller nu, når du bevæger dig udenfor en tabel i et regneark. (<A HREF="https://github.com/nvaccess/nvda/issues/14165">#14165</A>)
-<LI>Rapportering af overskrifter i tabeller kan nu indstilles særskilt for både rækker og kolonner. (<A HREF="https://github.com/nvaccess/nvda/issues/14075">#14075</A>)
+<LI>On Windows 11 ARM64, browse mode is now available in AMD64 apps such as Firefox, Google Chrome and 1Password. (<A HREF="https://github.com/nvaccess/nvda/issues/14397">#14397</A>)
+<LI>A new option has been added, "Paragraph Style" in "Document Navigation".
+This adds support for single line break (normal) and multi line break (block) paragraph navigation.
+This can be used with text editors that do not support paragraph navigation natively, such as Notepad and Notepad++. (<A HREF="https://github.com/nvaccess/nvda/issues/13797">#13797</A>)
+<LI>The presence of multiple annotations are now reported.
+<CODE>NVDA+d</CODE> now cycles through reporting the summary of each annotation target for origins with multiple annotation targets.
+For example, when text has a comment and a footnote associated with it. (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14480">#14480</A>)
+<LI>Added support for Tivomatic Caiku Albatross 46/80 braille displays. (<A HREF="https://github.com/nvaccess/nvda/issues/13045">#13045</A>)
+<LI>New global command: Report link destination (<CODE>NVDA+k</CODE>).
+Pressed once will speak/braille the destination of the link that is in the navigator object.
+Pressing twice will show it in a window, for more detailed review. (<A HREF="https://github.com/nvaccess/nvda/issues/14583">#14583</A>)
+<LI>New unmapped global command (Tools category): Report link destination in a window.
+Same as pressing <CODE>NVDA+k</CODE> twice, but may be more useful for braille users. (<A HREF="https://github.com/nvaccess/nvda/issues/14583">#14583</A>)
 </UL>
 
 <P></P>
