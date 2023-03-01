@@ -27,45 +27,42 @@ Bemærk:
 
 == Nye funktioner ==
 - Microsoft Excel via UI Automation: Automatisk oplæsning af række- og kolonneoverskrifter i tabeller. (#14228)
-  - Note: Dette refererer til tabeller, der er formateret via knappen "Tabel" under "Indsæt" på båndet.
+  - Bemærk: Dette refererer til tabeller, der er formateret via knappen "Tabel" under "Indsæt" på båndet.
   "Første kolonne" og "Overskriftsrække" i "Tabelstilindstillinger" svarer til henholdsvis kolonne- og rækkeoverskrifter.
   - Dette refererer ikke til skærmlæserspecifikke overskrifter via navngivne områder, som i øjeblikket ikke understøttes via UI Automation.
   -
 - Et script uden tildelt tastetryk er blevet tilføjet, der lader dig slå forsinkede beskrivelser af tegn til og fra. (#14267)
-- Added an experimental option to leverage the UIA notification support in Windows Terminal to report new or changed text in the terminal, resulting in improved stability and responsivity. (#13781)
-  - Consult the user guide for limitations of this experimental option.
+- Tilføjet eksperimentel funktionalitet for UIA-meddelelser, hvilket bør øge ydeevnen og stabiliteten i Windows Terminal, når der er ny eller ændret tekst. (#13781)
+  - Læs brugervejledningen for informationer om begrænsningerne, når du bruger denne indstilling.
   - 
-- On Windows 11 ARM64, browse mode is now available in AMD64 apps such as Firefox, Google Chrome and 1Password. (#14397)
-- A new option has been added, "Paragraph Style" in "Document Navigation".
-This adds support for single line break (normal) and multi line break (block) paragraph navigation.
-This can be used with text editors that do not support paragraph navigation natively, such as Notepad and Notepad++. (#13797)
-- The presence of multiple annotations are now reported.
-``NVDA+d`` now cycles through reporting the summary of each annotation target for origins with multiple annotation targets.
-For example, when text has a comment and a footnote associated with it. (#14507, #14480)
-- Added support for Tivomatic Caiku Albatross 46/80 braille displays. (#13045)
-- New global command: Report link destination (``NVDA+k``).
-Pressed once will speak/braille the destination of the link that is in the navigator object.
-Pressing twice will show it in a window, for more detailed review. (#14583)
-- New unmapped global command (Tools category): Report link destination in a window.
-Same as pressing ``NVDA+k`` twice, but may be more useful for braille users. (#14583)
+- Gennemsynstilstand er nu tilgængelig i Windows 11 ARM64, når du bruger AMD64-apps som Firefox, Google Chrome og 1Password. (#14397)
+- En ny indstilling kaldet "Navigering af afsnit" er blevet tilføjet til en ny kategori i NVDAs indstillinger ved navn "Dokumentnavigation".
+Dette muliggør navigation efter enkelte linjeskift (normal) eller flere linjeskift (mere end ét).
+Dette kan bruges til at indstille, hvordan du vil navigere rundt mellem afsnit i tekstredigeringsprogrammer, hvor denne type af navigation ikke normalt understøttes, såsom Notesblok og Notepad++. (#13797)
+- Hvis mere end én annotering er at finde i det læste indhold, vil dette nu blive oplyst.
+``NVDA+d`` vil nu skifte mellem de tilgængelig sammendrag af annoteringsoplysninger, når der findes mere end én annotering.
+Dette kan eksempelvis forekomme, når et stykke tekst både har en kommentar og en fodnote. (#14507, #14480)
+- Tilføjet understøttelse af Tivomatic Caiku Albatross 46/80 punktdisplays. (#13045)
+- Ny global kommando: Oplys linkets webadresse (``NVDA+k``).
+Hvis du trykker én gang, vil adressen for det aktuelle link ved navigatorobjektet blive oplæst og vist på punkt.
+Hvis du trykker to gange, vil denne information blive vist i et vindue. (#14583)
+- Ny global kommando uden et tildelt tastetryk til at få adressen for et link vist i et vindue.
+Det er det samme som at trykke ``NVDA+k`` to gange, men er muligvis mere nyttigt for punktbrugere. (#14583)
 -
 
 
 == Ændringer ==
-- eSpeak NG er blevet opdateret til 1.52-dev commit ``735ecdb8``. (#14060, #14079, #14118, #14203)
-  - Rettede oplæsning af latinske tegn, når man brugte Mandarin. (#12952, #13572, #14197)
+- Opdateret LibLouis punktoversættelse til [3.24.0 https://github.com/liblouis/liblouis/releases/tag/v3.24.0]. (#14436)
+  - Major updates to Hungarian, UEB, and Chinese bopomofo braille.
+  - Support for the Danish braille standard 2022.
+  - New braille tables for Georgian literary braille, Swahili (Kenya) and Chichewa (Malawi).
   -
-- Opdaterede LibLouis-punktoversættelse til [3.23.0 https://github.com/liblouis/liblouis/releases/tag/v3.23.0]. (#14112)
-  - Tilføjede følgende punkttabeller:
-    - Kinesisk almindelig braille (forenklede kinesiske tegn)
-    - Kinyarwanda litterær punktskrift
-    - Luganda litterær punktskrift
-    - Svensk uforkortet puntkskrift
-    - Svensk delvist forkortet punktskrift
-    - Svensk forkortet punktskrift
-    - Kinesisk (Kina, Mandarin) nuværende punktskriftssystem (ingen toner) (#14138)
-    -
-- NVDA inkluderer nu operativsystemets processorarkitektur som en del af sporing af brugerstatistik. (#14019)
+- Updated Sonic rate boost library to commit ``1d70513``. (#14180)
+- CLDR has been updated to version 42.0. (#14273)
+- eSpeak NG has been updated to 1.52-dev commit ``f520fecb``. (#14281, #14675)
+  - Fixed reporting of large numbers. (#14241)
+  -
+- Java applications with controls using the selectable state will now announce when an item is not selected rather than when the item is selected. (#14336)
 -
 
 
