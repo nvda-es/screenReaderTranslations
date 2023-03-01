@@ -4,9 +4,9 @@
 <META NAME="generator" CONTENT="http://txt2tags.sf.net">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <LINK REL="stylesheet" TYPE="text/css" HREF="../styles.css">
-<TITLE> NVDA 2022.4-dev korisničko uputstvo</TITLE>
+<TITLE> NVDA 2023.1-dev korisničko uputstvo</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
-<P ALIGN="center"><CENTER><H1> NVDA 2022.4-dev korisničko uputstvo</H1>
+<P ALIGN="center"><CENTER><H1> NVDA 2023.1-dev korisničko uputstvo</H1>
 <FONT SIZE="4">
 </FONT></CENTER>
 
@@ -174,8 +174,9 @@
       <LI><A HREF="#InputCompositionSettings">12.1.12. Ulazni sastav</A>
       <LI><A HREF="#BrowseModeSettings">12.1.13. Režim pretraživanja (NVDA+kontrol+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">12.1.14. Formatiranje dokumenta (NVDA+kontrol+d)</A>
-      <LI><A HREF="#Win10OcrSettings">12.1.15. Windows OCR podešavanja</A>
-      <LI><A HREF="#AdvancedSettings">12.1.16. Napredna podešavanja</A>
+      <LI><A HREF="#DocumentNavigation">12.1.15. Navigacija kroz dokument</A>
+      <LI><A HREF="#Win10OcrSettings">12.1.16. Windows OCR podešavanja</A>
+      <LI><A HREF="#AdvancedSettings">12.1.17. Napredna podešavanja</A>
       </UL>
     <LI><A HREF="#MiscSettings">12.2. Razna podešavanja</A>
       <UL>
@@ -199,7 +200,7 @@
   <LI><A HREF="#ExtraTools">13. Dodatni alati</A>
     <UL>
     <LI><A HREF="#LogViewer">13.1. Pregled dnevnika</A>
-    <LI><A HREF="#SpeechViewer">13.2. Pregled govora</A>
+    <LI><A HREF="#SpeechViewer">13.2. Preglednik govora</A>
     <LI><A HREF="#BrailleViewer">13.3. Preglednik brajevog reda</A>
     <LI><A HREF="#PythonConsole">13.4. Python konzola</A>
     <LI><A HREF="#AddonsManager">13.5. Upravljanje dodacima</A>
@@ -230,9 +231,9 @@
     <LI><A HREF="#HedoMobilLine">15.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">15.9. HumanWare Brailliant BI/B serije / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc156">15.9.1. Komande za sve modele</A>
-      <LI><A HREF="#toc157">15.9.2. Komande za Brailliant BI 32, BI 40 i B 80</A>
-      <LI><A HREF="#toc158">15.9.3. Komande za Brailliant BI 14</A>
+      <LI><A HREF="#toc157">15.9.1. Komande za sve modele</A>
+      <LI><A HREF="#toc158">15.9.2. Komande za Brailliant BI 32, BI 40 i B 80</A>
+      <LI><A HREF="#toc159">15.9.3. Komande za Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">15.10. HIMS Braille Sense/Braille EDGE / smart beetle /Sync BrailleSerije</A>
     <LI><A HREF="#Seika">15.11. Seika brajevi redovi</A>
@@ -248,7 +249,8 @@
     <LI><A HREF="#Eurobraille">15.17. Eurobraille Esys/Esytime/Iris redovi</A>
     <LI><A HREF="#NattiqTechnologies">15.18. Nattiq nBraille redovi</A>
     <LI><A HREF="#BRLTTY">15.19. BRLTTY</A>
-    <LI><A HREF="#HIDBraille">15.20. Standardni HID brajevi redovi</A>
+    <LI><A HREF="#Albatross">15.20. Tivomatic Caiku Albatross 46/80</A>
+    <LI><A HREF="#HIDBraille">15.21. Standardni HID brajevi redovi</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">16. Napredne teme</A>
     <UL>
@@ -307,6 +309,10 @@ Glavne karakteristike su:
   <UL>
   <LI>za Windows 7, NVDA zahteva servisni paket 1 ili noviji.
   <LI>za Windows Server 2008 R2, NVDA zahteva servisni paket 1 ili noviji.
+    <UL>
+    <LI>AMD64 i ARM64 Windows verzije su podržane.
+-
+    </UL>
   </UL>
 <LI>Barem 150 MB memorijskog prostora.
 </UL>
@@ -618,6 +624,12 @@ Same komande neće biti izvršene dok ste u režimu pomoći za unos.
 <TD><CODE>NVDA+f</CODE></TD>
 <TD><CODE>NVDA+f</CODE></TD>
 <TD>Prijavljuje formatiranje teksta. Ako se pritisne dva puta innformacija se prikazuje u prozoru</TD>
+</TR>
+<TR>
+<TD>Prijavi odredište linka</TD>
+<TD><CODE>NVDA+k</CODE></TD>
+<TD><CODE>NVDA+k</CODE></TD>
+<TD>Ako se pritisne jednom, prijavljuje odredišnu adresu linka u <A HREF="#ObjectNavigation">navigacionom objektu</A>. Ako se pritisne dva puta, prikazuje se u prozoru radi pažljivijeg pregleda</TD>
 </TR>
 </TABLE>
 
@@ -4098,8 +4110,41 @@ Ton će povećati visinu za svaki razmak, a za tabulator, povećaće visinu jedn
 </UL>
 
 <P></P>
+<A NAME="DocumentNavigation"></A>
+<H4>12.1.15. Navigacija kroz dokument</H4>
+<P>
+Ova kategorija vam dozvoljava da promenite različite aspekte navigacije kroz dokument.
+</P>
+<A NAME="ParagraphStyle"></A>
+<H5>Stil pasusa</H5>
+<DL>
+<DT>Podrazumevani</DT><DD>
+  Kontrolisan od strane aplikacije
+<DT>Opcije</DT><DD>
+  Podrazumevani (kontrolisan od strane aplikacije), kontrolisan od strane aplikacije, jedan novi red, više novih redova
+</DL>
+
+<P></P>
+<P>
+Ovaj izborni okvir vam dozvoljava da izaberete stil pasusa koji će se koristiti kada se krećete po pasusima prečicama <CODE>kontrol+strelicaGore</CODE> i <CODE>kontrol+strelicaDole</CODE>.
+Dostupni stilovi pasusa su:
+</P>
+<UL>
+<LI>Kontrolisan od strane aplikacije: NVDA će dozvoliti aplikaciji da odredi prethodni i sledeći pasus, i pročitaće novi pasus u toku navigacije.
+Ovaj stil najbolje radi kada aplikacija podržava ugrađenu navigaciju po pasusima, i ovo je podrazumevana opcija.
+<LI>Jedan novi red: NVDA će pokušati da odredi prethodni ili sledeći pasus korišćenjem jednog novog reda kao pokazivača pasusa.
+Ovaj stil najbolje radi kada se čitaju dokumenti u aplikaciji koja ne podržava ugrađenu navigaciju po pasusima, a pasusi u dokumentu su označeni jednim pritiskom tastera <CODE>enter</CODE>.
+<LI>Više novih redova: NVDA će pokušati da odredi prethodni ili sledeći pasus korišćenjem bar jednog praznog reda (dva puta pritisnut taster <CODE>enter</CODE>) kao pokazivača pasusa.
+Ovaj stil najbolje radi sa dokumentima koji koriste blok pasuse.
+Napomena da se ovaj stil pasusa ne može koristiti u Microsoft Wordu ili Microsoft Outlooku, osim ako koristite UIA za pristup Microsoft Word kontrolama.
+</UL>
+
+<P></P>
+<P>
+Možete se prebacivati između različitih stilova pasusa bilo gde tako što ćete podesiti prečicu u <A HREF="#InputGestures">dijalogu ulaznih komandi</A>.
+</P>
 <A NAME="Win10OcrSettings"></A>
-<H4>12.1.15. Windows OCR podešavanja</H4>
+<H4>12.1.16. Windows OCR podešavanja</H4>
 <P>
 Podešavanja u ovoj kategoriji vam dozvoljavaju da podesite <A HREF="#Win10Ocr">Windows OCR</A>.
 Ova kategorija sadrži sledeće opcije:
@@ -4110,7 +4155,7 @@ Ova kategorija sadrži sledeće opcije:
 Ovaj izborni okvir vam dozvoljava da izaberete jezik za prepoznavanje teksta.
 </P>
 <A NAME="AdvancedSettings"></A>
-<H4>12.1.16. Napredna podešavanja</H4>
+<H4>12.1.17. Napredna podešavanja</H4>
 <P>
 Upozorenje! Ova podešavanja su samo za napredne korisnike i mogu izazvati neispravno funkcionisanje programa NVDA ako se pogrešno podese.
 Menjajte ova podešavanja samo ako znate šta radite ili ako vam je neko od NVDA programera dao određena uputstva.
@@ -4292,6 +4337,32 @@ Ali, u nekim aplikacijama, čitanje novog teksta može postati isprekidano ili n
 Identična je ponašanju programa NVDA u verziji 2020.4 i starijim.
 Ovo podešavanje može stabilizovati čitanje teksta u nekim aplikacijama.
 Ali, u terminalima, kada se znakovi ubacuju ili brišu u sredini reda, tekst nakon kursora će se pročitati.
+</UL>
+
+<P></P>
+<A NAME="WtStrategy"></A>
+<H5>Izgovaraj novi tekst u Windows terminalu koristeći</H5>
+<DL>
+<DT>Podrazumevano</DT><DD>
+  Prepoznavanje razlika
+<DT>Opcije</DT><DD>
+  Prepoznavanje razlika, UIA obaveštenja
+</DL>
+
+<P></P>
+<P>
+Ova opcija kontroliše kako NVDA određuje koji tekst je "nov" (i samim tim šta da izgovara kada je "Prijavljivanje dinamičkih promena sadržaja" omogućeno) u Windows terminalu i WPF Windows terminal kontroli koja se koristi u Visual Studiju 2022.
+Ne utiče na Windows konzolu (<CODE>conhost.exe</CODE>).
+Izborni okvir izgovor teksta u Windows terminalu ima tri opcije:
+</P>
+<UL>
+<LI>Podrazumevano: ova opcija je trenutno ekvivalentna opciji "Prepoznavanje razlika", ali se očekuje promena nakon što se podrška za UIA obaveštenja dodatno razvije.
+<LI>Prepoznavanje razlika: ova opcija koristi izabrani algoritam prepoznavanja razlika da izračuna promene svaki put kada terminal obradi novi tekst.
+Ovo je identično ponašanju programa NVDA u verziji 2022.4 i starijim.
+<LI>UIA obaveštenja: ova opcija prenosi odgovornost određivanja koji tekst treba izgovoriti samom Windows terminalu, što znači da NVDA ne mora da odredi koji tekst trenutno na ekranu je "novi".
+Ovo će značajno poboljšati stabilnost i brzinu Windows terminala, ali ova opcija još uvek nije potpuna.
+Od posebne važnosti, upisani znakovi koji se ne prikazuju na ekranu, kao što su lozinke, biće prijavljeni kada se izabere ova opcija.
+Takođe, neprekidni redovi izlaznog teksta dužeg od 1,000 znakova možda neće biti ispravno prijavljeni.
 </UL>
 
 <P></P>
@@ -4651,25 +4722,25 @@ Pored čitanja sadržaja, možete takođe sačuvati kopiju datoteke dnevnika, il
 Ove radnje su dostupne iz menija dnevnika.
 </P>
 <A NAME="SpeechViewer"></A>
-<H3>13.2. Pregled govora</H3>
+<H3>13.2. Preglednik govora</H3>
 <P>
 Za programere bez oštećenja vida ili osobe koje pokazuju program NVDA ovakvim osobama, plutajući prozor je dostupan koji vam dozvoljava da vidite sav tekst koji NVDA izgovara.
 </P>
 <P>
-Da omogućite pregled govora, označite stavku"Pregled govora" u alatima u NVDA meniju.
+Da omogućite preglednik govora, označite stavku"Preglednik govora" u alatima u NVDA meniju.
 Kada stavka nije označena biće onemogućena.
 </P>
 <P>
-Prozor pregled govora takođe sadrži izborno polje"Prikaži pregled govora pri pokretanju".
-Ako je označeno, pregled govora će se pokrenuti kada se NVDA pokrene.
+Prozor preglednika govora takođe sadrži izborno polje"Prikaži preglednik govora pri pokretanju".
+Ako je označeno, preglednik govora će se pokrenuti kada se NVDA pokrene.
 Ovaj prozor će pokušati da se otvori na istoj lokaciji kao i kada je zatvoren poslednji put.
 </P>
 <P>
-Dok je pregled govora omogućen, stalno se ažurira da prikaže tekst koji je izgovoren.
-Ali, ako kliknete ili se fokusirate na pregled govora, NVDA će privremeno zaustaviti ažuriranje teksta, kako biste lakše mogli da kopirate postojeći sadržaj.
+Dok je preglednik govora omogućen, stalno se ažurira da prikaže tekst koji je izgovoren.
+Ali, ako kliknete ili se fokusirate na preglednik govora, NVDA će privremeno zaustaviti ažuriranje teksta, kako biste lakše mogli da kopirate postojeći sadržaj.
 </P>
 <P>
-Da uključite i isključite pregled govora bilo gde, dodajte prilagođenu komandu koristeći <A HREF="#InputGestures">dijalog za ulazne komande</A>.
+Da uključite i isključite preglednik govora bilo gde, dodajte prilagođenu komandu koristeći <A HREF="#InputGestures">dijalog za ulazne komande</A>.
 </P>
 <A NAME="BrailleViewer"></A>
 <H3>13.3. Preglednik brajevog reda</H3>
@@ -4932,6 +5003,7 @@ Sledeći redovi podržavaju ovu funkciju automatskog prepoznavanja.
 <LI>Eurobraille Esys/Esytime/Iris redovi
 <LI>Nattiq nBraille redovi
 <LI>Seika beležnica: MiniSeika (16, 24 ćelije), V6, i V6Pro (40 ćelija)
+<LI>Tivomatic Caiku Albatross 46/80 redovi
 <LI>Bilo koji red koji podržava standardni HID brajev protokol
 </UL>
 
@@ -5696,7 +5768,7 @@ Sledeći dodatni uređaji su takođe podržani (i nije neophodno da instalirate 
 Slede komande za Brailliant BI/B i BrailleNote touch redove sa programom NVDA.
 Molimo pogledajte uputstvo za upotrebu ovih brajevih redova kako biste saznali opise tastera i njihov raspored.
 </P>
-<A NAME="toc156"></A>
+<A NAME="toc157"></A>
 <H4>15.9.1. Komande za sve modele</H4>
 <TABLE ALIGN="center" BORDER="1" CELLPADDING="4">
 <TR>
@@ -5785,7 +5857,7 @@ Molimo pogledajte uputstvo za upotrebu ovih brajevih redova kako biste saznali o
 </TR>
 </TABLE>
 
-<A NAME="toc157"></A>
+<A NAME="toc158"></A>
 <H4>15.9.2. Komande za Brailliant BI 32, BI 40 i B 80</H4>
 <TABLE ALIGN="center" BORDER="1" CELLPADDING="4">
 <TR>
@@ -5806,7 +5878,7 @@ Molimo pogledajte uputstvo za upotrebu ovih brajevih redova kako biste saznali o
 </TR>
 </TABLE>
 
-<A NAME="toc158"></A>
+<A NAME="toc159"></A>
 <H4>15.9.3. Komande za Brailliant BI 14</H4>
 <TABLE ALIGN="center" BORDER="1" CELLPADDING="4">
 <TR>
@@ -7565,8 +7637,193 @@ Molimo pogledajte <A HREF="http://mielke.cc/brltty/doc/KeyBindings/">BRLTTY tabe
 </TR>
 </TABLE>
 
+<A NAME="Albatross"></A>
+<H3>15.20. Tivomatic Caiku Albatross 46/80</H3>
+<P>
+Caiku Albatross uređaji, koje je proizvela kompanija Tivomatic i koji su dostupni u Finskoj, mogu se povezati putem USB ili serijske veze.
+Ne morate da instalirate određene drajvere da biste koristili ove redove.
+Jednostavno povežite red i podesite NVDA da ga koristi.
+</P>
+<P>
+Napomena: Baud rate 19200 se posebno preporučuje.
+Ako je neophodno, promenite vrednost podešavanja Baud rate na 19200 iz menija brajevog uređaja.
+Iako drajver podržava 9600 baud rate, nema način da kontroliše koji baud rate red koristi.
+Zato što je 19200 podrazumevani baud rate za red, drajver će ovo prvo pokušati.
+Ako baud rate nisu iste, drajver će se možda ponašati neočekivano.
+</P>
+<P>
+Slede dodeljene tasterske prečice za ovaj brajev red uz NVDA.
+Molimo pogledajte dokumentaciju brajevog reda za opis gde se ovi tasteri nalaze.
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Ime</TH>
+<TH>Prečica</TH>
+</TR>
+<TR>
+<TD>Prebaci se na prvi red pregleda</TD>
+<TD><CODE>home1</CODE>, <CODE>home2</CODE></TD>
+</TR>
+<TR>
+<TD>Prebaci se na poslednji red pregleda</TD>
+<TD><CODE>end1</CODE>, <CODE>end2</CODE></TD>
+</TR>
+<TR>
+<TD>Prebaci navigacioni objekat na trenutni fokus</TD>
+<TD><CODE>eKursor1</CODE>, <CODE>eKursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Prebaci se na trenutni fokus</TD>
+<TD><CODE>kursor1</CODE>, <CODE>kursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Pomera miš na trenutni navigacioni objekat</TD>
+<TD><CODE>home1+home2</CODE></TD>
+</TR>
+<TR>
+<TD>Postavlja navigacioni objekat na trenutni objekat ispod pokazivača miša i izgovara ga</TD>
+<TD><CODE>end1+end2</CODE></TD>
+</TR>
+<TR>
+<TD>Pomera fokus na trenutni navigacioni objekat</TD>
+<TD><CODE>eKursor1+eKursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Menja vezivanje brajevog reda</TD>
+<TD><CODE>kursor1+kursor2</CODE></TD>
+</TR>
+<TR>
+<TD>Pomera brajev red na prethodni red</TD>
+<TD><CODE>gore1</CODE>, <CODE>gore2</CODE>, <CODE>gore3</CODE></TD>
+</TR>
+<TR>
+<TD>Pomera brajev red na sledeći red</TD>
+<TD><CODE>dole1</CODE>, <CODE>dole2</CODE>, <CODE>dole3</CODE></TD>
+</TR>
+<TR>
+<TD>Pomera brajev red nazad</TD>
+<TD><CODE>levo</CODE>, <CODE>lTočakLevo</CODE>, <CODE>DTočakLevo</CODE></TD>
+</TR>
+<TR>
+<TD>Pomera brajev red napred</TD>
+<TD><CODE>desno</CODE>, <CODE>lTočakDesno</CODE>, <CODE>DTočakDesno</CODE></TD>
+</TR>
+<TR>
+<TD>Prebaci na brajevu ćeliju</TD>
+<TD><CODE>Prebacivanje</CODE></TD>
+</TR>
+<TR>
+<TD>Prijavi formatiranje teksta ispod brajeve ćelije</TD>
+<TD><CODE>Sekundarno prebacivanje</CODE></TD>
+</TR>
+<TR>
+<TD>Prebacuje načine predstavljanja sadržaja na brajevom redu</TD>
+<TD><CODE>atribut1+atribut3</CODE></TD>
+</TR>
+<TR>
+<TD>Naizmenično uključuje režime govora isključeno, pištanje i priča</TD>
+<TD><CODE>atribut2+atribut4</CODE></TD>
+</TR>
+<TR>
+<TD>Prelazi na prethodni režim pregleda (npr. objekat, dokument ili ekran)</TD>
+<TD><CODE>f1</CODE></TD>
+</TR>
+<TR>
+<TD>Prelazi na sledeći režim pregleda (npr. objekat, dokument ili ekran)</TD>
+<TD><CODE>f2</CODE></TD>
+</TR>
+<TR>
+<TD>Pomera navigacioni objekat na objekat koji ga sadrži</TD>
+<TD><CODE>f3</CODE></TD>
+</TR>
+<TR>
+<TD>Pomera navigacioni objekat na prvi objekat unutar njega</TD>
+<TD><CODE>f4</CODE></TD>
+</TR>
+<TR>
+<TD>Pomera navigacioni objekat na prethodni objekat</TD>
+<TD><CODE>f5</CODE></TD>
+</TR>
+<TR>
+<TD>Pomera navigacioni objekat na sledeći objekat</TD>
+<TD><CODE>f6</CODE></TD>
+</TR>
+<TR>
+<TD>Prijavljuje trenutni navigacioni objekat</TD>
+<TD><CODE>f7</CODE></TD>
+</TR>
+<TR>
+<TD>Daje informacije o lokaciji teksta ili objekta na poziciji sistemskog kursora</TD>
+<TD><CODE>f8</CODE></TD>
+</TR>
+<TR>
+<TD>Izvršava podrazumevanu radnju na trenutnom navigacionom objektu</TD>
+<TD><CODE>f7+f8</CODE></TD>
+</TR>
+<TR>
+<TD>Prijavljuje datum/vreme</TD>
+<TD><CODE>f9</CODE></TD>
+</TR>
+<TR>
+<TD>obaveštava o statusu baterije i preostalom vremenu ako punjač nije uključen</TD>
+<TD><CODE>f10</CODE></TD>
+</TR>
+<TR>
+<TD>Prijavljuje naslov</TD>
+<TD><CODE>f11</CODE></TD>
+</TR>
+<TR>
+<TD>Prijavljuje statusnu traku</TD>
+<TD><CODE>f12</CODE></TD>
+</TR>
+<TR>
+<TD>Prijavljuje trenutni red ispod kursora za aplikacije</TD>
+<TD><CODE>f13</CODE></TD>
+</TR>
+<TR>
+<TD>Izgovori sve</TD>
+<TD><CODE>f14</CODE></TD>
+</TR>
+<TR>
+<TD>Prijavljuje trenutni znak preglednog kursora</TD>
+<TD><CODE>f15</CODE></TD>
+</TR>
+<TR>
+<TD>Prijavljuje red trenutnog navigacionog objekta gde se nalazi pregledni kursor</TD>
+<TD><CODE>f16</CODE></TD>
+</TR>
+<TR>
+<TD>Izgovara reč trenutnog navigacionog objekta gde se nalazi pregledni kursor</TD>
+<TD><CODE>f15+f16</CODE></TD>
+</TR>
+<TR>
+<TD>Pomera pregledni kursor na prethodni red trenutnog navigacionog objekta i izgovara ga</TD>
+<TD><CODE>lTočakGore</CODE>, <CODE>dTočakGore</CODE></TD>
+</TR>
+<TR>
+<TD>Pomera pregledni kursor na naredni red trenutnog navigacionog objekta i izgovara ga</TD>
+<TD><CODE>lTočakDole</CODE>, <CODE>dTočakDole</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+d</CODE> prečica (prebaci se na radnu površinu)</TD>
+<TD><CODE>atribut1</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+e</CODE> prečica (ovaj računar)</TD>
+<TD><CODE>atribut2</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+b</CODE> prečica (fokusiranje na sistemsku traku)</TD>
+<TD><CODE>atribut3</CODE></TD>
+</TR>
+<TR>
+<TD><CODE>Windows+i</CODE> prečica (Windows podešavanja)</TD>
+<TD><CODE>atribut4</CODE></TD>
+</TR>
+</TABLE>
+
 <A NAME="HIDBraille"></A>
-<H3>15.20. Standardni HID brajevi redovi</H3>
+<H3>15.21. Standardni HID brajevi redovi</H3>
 <P>
 Ovo je eksperimentalan brajev drajver za novi HID brajev standard, na koji su se 2018 složile različite kompanije kao što su Microsoft, Google, Apple i različiti proizvođači asistivnih tehnologija uključujući i NV Access. 
 Cilj je da svi budući brajevi redovi od bilo kog proizvođača, zajedno koriste ovaj protokol što će ukloniti potrebu za posebne drajvere svakog proizvođača.
@@ -7759,7 +8016,7 @@ Ovi parametri se postavljaju nakon opcije odvojeni razmakom, kada se koristi kra
 <P>
 Slede opcije komandne linije za NVDA:
 </P>
-<TABLE ALIGN="center" BORDER="1" CELLPADDING="4">
+<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TH>Kratka</TH>
 <TH>Duga</TH>
@@ -7788,7 +8045,7 @@ Slede opcije komandne linije za NVDA:
 <TR>
 <TD>-l LOGLEVEL</TD>
 <TD>--log-level=LOGLEVEL</TD>
-<TD>Najniži nivo evidencije poruka(otklanjanje grešaka 10, ulaz/izlaz 12, upozorenje o otklanjanju grešaka 15, info 20, upozorenje 30, greška 40, kritično 50, onemogućeno 100), podrazumevano je upozorenje</TD>
+<TD>Najniži nivo evidencije poruka(otklanjanje grešaka 10, ulaz/izlaz 12, upozorenje o otklanjanju grešaka 15, info 20, onemogućeno 100)</TD>
 </TR>
 <TR>
 <TD>-c CONFIGPATH</TD>
