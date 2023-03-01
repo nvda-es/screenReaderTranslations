@@ -14,6 +14,126 @@
 <P>
 Informacije za programere nisu prevedene, molimo ’pogledajte <A HREF="../en/changes.html">englesku inačicu ovog dokumenta</A>.
 </P>
+<H2>2023.1</H2>
+<P>
+Dodana je nova opcija, "stil odlomka" u kategoriji "kretanje po dokumentu".
+Ona se može koristiti u tekstualnim editorima koji ne podržavaju nativno kretanje po odlomcima, kao što su to Notepad i Notepad++.
+</P>
+<P>
+Dodan je novi prečac za čitanje odredišta na koje vodi poveznica, određen kao <CODE>NVDA+k</CODE>.
+</P>
+<P>
+Podrška za anotiran web sadržaj (poput komentara i rubnih bilježaka) je unaprijeđena.
+Pritišćite <CODE>NVDA+d</CODE> kako biste se kretali po sadržajima (na primjer "ima komentar, ima rubnu bilješku").
+</P>
+<P>
+Tivomatic Caiku Albatross 46/80 brajični redci su sada podržani.
+</P>
+<P>
+Podrška za ARM64 i AMD64 inačica sustava Windows je unapređena.
+</P>
+<P>
+Ispravljeno je mnoštvo grešaka, među kojima ispravke za Windows 11 čine većinu.
+</P>
+<P>
+eSpeak, LibLouis, Sonic povećivač brzine i Unicode su ažurirani.
+Dodane su nove brajične tablice za gruzijski, Swahili (Kenija) i Chichewa (Malawi).
+</P>
+<P>
+Upozorenje:
+U ovoj inačici narušena je kompatibilnost s postojećim dodacima.
+-
+</P>
+<H3>Nove značajke</H3>
+<UL>
+<LI>Microsoft Excel s sučeljem UI automation: automatsko čitanje zaglavlja i stupaca tablica. (<A HREF="https://github.com/nvaccess/nvda/issues/14228">#14228</A>)
+  <UL>
+  <LI>Upozorenje: ovo se odnosi na tablice oblikovane uz pomoć gumba "tablica" na kratici umetanje na ribbonu.
+  "prvi stupac" i "zaglavlje redka" u "opcijama stila tablice" odnose se na zaglavlja redaka i stupaca.
+  <LI>Ovo se ne odnosi na specifična zaglavlja čitača zaslona  uz pomoć imenovanih raspona, koje se ne podržavaju uz pomoć UI automation.
+  </UL>
+<LI>Dodan je nedodijeljen prečac za uključivanje i isključivanje opisa znakova poslije kursora. (<A HREF="https://github.com/nvaccess/nvda/issues/14267">#14267</A>)
+<LI>Dodana je podrška za čitanje sadržaja naredbenog redka uz pomoć UIA obavijesti, što ima za cilj unađređenje stabilnosti i responsivnosti. (<A HREF="https://github.com/nvaccess/nvda/issues/13781">#13781</A>)
+  <UL>
+  <LI>Kako biste saznali koja su ograničenja ove opcije, molimo pogledajte korisnički vodič za više informacija.
+  </UL>
+<LI>U Windowsima 11 ARM64, modus pregleda je sada dostupan u AMD64 aplikacijama poput Firefoxa, Google Chromea i 1Passworda. (<A HREF="https://github.com/nvaccess/nvda/issues/14397">#14397</A>)
+<LI>Nova opcija je dodana, "Stil odlomaka" u kategoriji "kretanje po dokumentu".
+Ovo dodaje podršku za kretanje po pojedinačnim prijelomima redka (normalnim) i višerednim prijelomima redka (blokovnim). 
+Ovo se može koristiti sa editorima teksta koji ne podržavaju kretanje po odlomcima nativno, kao što su to Notepad i Notepad++. (<A HREF="https://github.com/nvaccess/nvda/issues/13797">#13797</A>)
+<LI>Izgovarana je prisutnost više anotacija.
+<CODE>NVDA+d</CODE> sada prebacuje između izgovora sadržaja svake ciljne anotacije za izvore sa višestrukim ciljnim anotacijama.
+Na primjer, kada tekst sadrži komentar i fusnotu. (<A HREF="https://github.com/nvaccess/nvda/issues/14507">#14507</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14480">#14480</A>)
+<LI>Dodana je podrška za Tivomatic Caiku Albatross 46/80 brajične redke. (<A HREF="https://github.com/nvaccess/nvda/issues/13045">#13045</A>)
+<LI>Novi globalni prečac: Čitaj odredište poveznice (<CODE>NVDA+k</CODE>).
+Kada se pritisne jednom odredište linka koje se nalazi u objektu navigatora će biti izgovoreno i i prikazano na brajičnom redku.
+Kada se pritisne dvaput, poveznica će biti prikazana u prozoru u svrhu detaljnijeg pregleda. (<A HREF="https://github.com/nvaccess/nvda/issues/14583">#14583</A>)
+<LI>Nova nedodijeljena gesta (u kategoriji alati): je dodana prikaži odredište poveznice u prozoru.
+Isto kao pritisak <CODE>NVDA+k</CODE> dvaput, ali može biti korisnije za korisnike brajice. (<A HREF="https://github.com/nvaccess/nvda/issues/14583">#14583</A>)
+</UL>
+
+<P></P>
+<H3>Izmjene</H3>
+<UL>
+<LI>nadograđen LibLouis brajični prevoditelj na  inačicu <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.24.0">3.24.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/14436">#14436</A>)
+  <UL>
+  <LI>Drastično su osvježene Mađarska, univerzalna engleska, i kineska bopomofo brajična tablica.
+  <LI>Podržan je danski brajični standard, koji se promijenio u  2022 godini.
+  <LI>Nove brajične tablice za gruzijsku literarnu brajicu, Swahili (Kenija) i Chichewa (Malawi).
+  </UL>
+<LI>Nadograđena biblioteka Sonic za ubrzanje govora na inačicu <CODE>1d70513</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14180">#14180</A>)
+<LI>CLDR je nadograđen na inačicu 42.0. (<A HREF="https://github.com/nvaccess/nvda/issues/14273">#14273</A>)
+<LI>eSpeak NG je nadograđen na inačicu 1.52-dev commit <CODE>f520fecb</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14281">#14281</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14675">#14675</A>)
+  <UL>
+  <LI>Ispravljeno čitanje velikih brojeva. (<A HREF="https://github.com/nvaccess/nvda/issues/14241">#14241</A>)
+  </UL>
+<LI>Java aplikacije sa kontrolama koje koriste status označenosti će izgovarati kada stavka nije označena umjesto obrnutog. (<A HREF="https://github.com/nvaccess/nvda/issues/14336">#14336</A>)
+</UL>
+
+<P></P>
+<H3>Ispravke grešaka</H3>
+<UL>
+<LI>Ispravke koje se primjenjuju u Windowsima 11:
+  <UL>
+  <LI>NVDA će izgovarati rezultate pretrage prilikom otvaranja izbornika start. (<A HREF="https://github.com/nvaccess/nvda/issues/13841">#13841</A>)
+  <LI>Na arhitekturi ARM, x64 aplikacije više nisu pogrešno identificirane kao ARM64 aplikacije. (<A HREF="https://github.com/nvaccess/nvda/issues/14403">#14403</A>)
+  <LI>Stavkama izbornika povijesti međuspremnika poput "prikvači stavku" može se ponovno pristupiti. (<A HREF="https://github.com/nvaccess/nvda/issues/14508">#14508</A>)
+  <LI>U Windowsima 11 22H2 i novijima, moguće je opet koristiti miš i interakciju dodirom kako bi se moglo koristiti područje obavijesti i dijaloški okvir "otvori sa". (<A HREF="https://github.com/nvaccess/nvda/issues/14538">#14538</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14539">#14539</A>)
+  </UL>
+<LI>Izgovaraju se prijedlozi prilikom upisivanja znaka @osvrta u Microsoft Excel komentarima. (<A HREF="https://github.com/nvaccess/nvda/issues/13764">#13764</A>)
+<LI>U Google Chrome adresnoj traci, kontrole prijedloga (prebaci se na karticu, ukloni prijedlog itd) sada se izgovaraju kada su označene. (<A HREF="https://github.com/nvaccess/nvda/issues/13522">#13522</A>)
+<LI>Prilikom dohvaćanja informacija o oblikovanju, boje su sada eksplicitno čitane u Wordpadu ili pregledniku zapisnika, umjesto  "podrazumjevana boja". (<A HREF="https://github.com/nvaccess/nvda/issues/13959">#13959</A>)
+<LI>U  Firefoxu, aktiviranje opcije "Show options" na stranici za github probleme sada pouzdano radi. (<A HREF="https://github.com/nvaccess/nvda/issues/14269">#14269</A>)
+<LI>Kontroke za odabir datuma u Outlooku 2016 / 365 dijaloškom okviru napredne pretrage sada se izgovaraju zajedno sa svojim vrijednostima. (<A HREF="https://github.com/nvaccess/nvda/issues/12726">#12726</A>)
+<LI>ARIA switch kontrole sada se točnije izgovaraju kao preklopnici u Firefoxu, Chromeu i Edgeu, umjesto potvrdnih okvira. (<A HREF="https://github.com/nvaccess/nvda/issues/11310">#11310</A>)
+<LI>NVDA će automatski izgovoriti status razvrstavanja na HTML zaglavlju stupca tablice kada se promjeni, prilikom pritiska unutrašnjeg gumba. (<A HREF="https://github.com/nvaccess/nvda/issues/10890">#10890</A>)
+<LI>Naziv Orijentira i regije sada će se automatski čitati prilikom skananja u kontrolu ili fokusiranjem kontrole u modusu pregleda. (<A HREF="https://github.com/nvaccess/nvda/issues/13307">#13307</A>)
+<LI>Kada je uključena opcija reproduciraj zvučni signal ili izgovori  'veliko' za velika slova, sa uključenim opisima znakova poslije kursora, NVDA više ne reproducira zvučni signal, niti ne izgovara  'veliko' dvaput. (<A HREF="https://github.com/nvaccess/nvda/issues/14239">#14239</A>)
+<LI>Kontrole u tablicama u Java aplikacijama biti će pročitane točnije. (<A HREF="https://github.com/nvaccess/nvda/issues/14347">#14347</A>)
+<LI>Neke postavke više neće biti neočekivano drugaćije kada se koristi više konfiguracijskih profila. (<A HREF="https://github.com/nvaccess/nvda/issues/14170">#14170</A>)
+  <UL>
+  <LI>Slijedeće postavke su ispravljene:
+    <UL>
+    <LI>Uvlačenje redka u postavkama oblikovanja dokumenta.
+    <LI>Rubovi ćelija u postavkama oblikovanja dokumenta
+    <LI>Prikaz poruka u postavkama brajice
+    <LI>Povezivanje brajice u postavkama brajice
+    </UL>
+  <LI>U nekim rijedkim slučajevima, ove postavke korištene u profilima mogu biti neočekivano izmijenjene kada se instalira iva inačica NVDA.
+  <LI>Molimo provjerite ove postavke u vašem profilu poslije nadogradnje na ovu inačicu.
+  </UL>
+<LI>Emoji će se moći čitati na više jezika. (<A HREF="https://github.com/nvaccess/nvda/issues/14433">#14433</A>)
+<LI>Prisutnost anotacija više ne nedostaje kada se prikazuju na brajičnom redku za neke elemente. (<A HREF="https://github.com/nvaccess/nvda/issues/13815">#13815</A>)
+<LI>Ispravljena je pogreška u kojoj se izmjene ne spremaju ispravno prilikom izmjene "podrazumjevane" opcije i i vrijednosti "podrazumjevane" opcije. (<A HREF="https://github.com/nvaccess/nvda/issues/14133">#14133</A>)
+<LI>Prilikom konfiguriranja NVDA uvijek će biti definirana barem jedna tipka kao NVDA modifikacijaka tipka. (<A HREF="https://github.com/nvaccess/nvda/issues/14527">#14527</A>)
+<LI>Prilikom pristupanja NVDA izborniku preko popisa obavijesti, NVDA neće predložiti nadogradnju koja se očekuje kada isto nije dostupno. (<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>)
+<LI>Preostalo, proteklo i ukupno vrijeme sada se točno izgovara za audio datoteke čije trajanje prekoračuje jedan dan u foobar2000 programu. (<A HREF="https://github.com/nvaccess/nvda/issues/14127">#14127</A>)
+<LI>U preglednicima poput Chromea i Firefoxa, upozorenja kao što su to preuzimanja biti će prikazana i na brajičnom redku. (<A HREF="https://github.com/nvaccess/nvda/issues/14562">#14562</A>)
+<LI>Ispravljena je greška prilikom kretanja između prvog i zadnjeg stupca u tablici u Firefoxu (<A HREF="https://github.com/nvaccess/nvda/issues/14554">#14554</A>)
+<LI>Kada je NVDA pokrenut sa parametrom naredbenog redka <CODE>--lang=Windows</CODE>, sada je ponovo moguće otvoriti prozor općenitih postavki.. (<A HREF="https://github.com/nvaccess/nvda/issues/14407">#14407</A>)
+</UL>
+
+<P></P>
 <H2>2022.4</H2>
 <P>
 U ovoj je inačici dodano nekoliko novih tipkovničkih prečaca, uključujući i prečace za čitanje cijele tablice.
