@@ -76,47 +76,60 @@ Det er det samme som at trykke <CODE>NVDA+k</CODE> to gange, men er muligvis mer
 <UL>
 <LI>Opdateret LibLouis punktoversættelse til <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.24.0">3.24.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/14436">#14436</A>)
   <UL>
-  <LI>Major updates to Hungarian, UEB, and Chinese bopomofo braille.
-  <LI>Support for the Danish braille standard 2022.
-  <LI>New braille tables for Georgian literary braille, Swahili (Kenya) and Chichewa (Malawi).
+  <LI>Større opdateringer til ungarsk, UEB og kinesisk bopomofo-braille.
+  <LI>Understøttelse for den nye danske standard for punktskrift i 2022.
+  <LI>Nye punktskriftstabeller til georgisk litterær braille, Swahili (Kenya) og Chichewa (Malawi).
   </UL>
-<LI>Updated Sonic rate boost library to commit <CODE>1d70513</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14180">#14180</A>)
-<LI>CLDR has been updated to version 42.0. (<A HREF="https://github.com/nvaccess/nvda/issues/14273">#14273</A>)
-<LI>eSpeak NG has been updated to 1.52-dev commit <CODE>f520fecb</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14281">#14281</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14675">#14675</A>)
+<LI>Opdateret Sonic rate boost library til commit <CODE>1d70513</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14180">#14180</A>)
+<LI>CLDR er blevet opdateret til version 42.0. (<A HREF="https://github.com/nvaccess/nvda/issues/14273">#14273</A>)
+<LI>eSpeak NG er blevet opdateret til 1.52-dev commit <CODE>f520fecb</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14281">#14281</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14675">#14675</A>)
   <UL>
-  <LI>Fixed reporting of large numbers. (<A HREF="https://github.com/nvaccess/nvda/issues/14241">#14241</A>)
+  <LI>Rettet fejl med oplæsning af store numre. (<A HREF="https://github.com/nvaccess/nvda/issues/14241">#14241</A>)
   </UL>
-<LI>Java applications with controls using the selectable state will now announce when an item is not selected rather than when the item is selected. (<A HREF="https://github.com/nvaccess/nvda/issues/14336">#14336</A>)
+<LI>Java-applikationer, der bruger selectable state på et kontrolelement, vil nu oplyse, når et emne ikke er valgt i stedet for valgt. (<A HREF="https://github.com/nvaccess/nvda/issues/14336">#14336</A>)
 </UL>
 
 <P></P>
 <H3>Fejlrettelser</H3>
 <UL>
-<LI>Når du opdaterer NVDA via Windows Pakkemanager fra kommandolinjen (winget), vil en udgivet version af NVDA ikke længere forekomme som en nyere version af NVDA. Dette var før tilfældet, selv hvis du installerede en nyere alpha-version. (<A HREF="https://github.com/nvaccess/nvda/issues/12469">#12469</A>)
-<LI>NVDA vil nu korrekt oplyse gruppebokse i Java-programmer. (<A HREF="https://github.com/nvaccess/nvda/issues/13962">#13962</A>)
-<LI>Markøren følger nu korrekt talen med funktionen "Sig alt" aktiv i programmer som  Bookworm, WordPad, eller logviseren i NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13420">#13420</A>, <A HREF="https://github.com/nvaccess/nvda/issues/9179">#9179</A>)
-<LI>Delvist markerede check bokse vil nu oplyses korrekt i programmer, hvor UI Automation er aktiveret. (<A HREF="https://github.com/nvaccess/nvda/issues/13975">#13975</A>)
-<LI>Forbedrede ydeevne og stabilitet i Microsoft Visual Studio, Windows Terminal, og andre programmer baseret på UI Automation. (<A HREF="https://github.com/nvaccess/nvda/issues/11077">#11077</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11209">#11209</A>)
+<LI>Rettelser for Windows 11:
   <UL>
-  <LI>Disse rettelser gælder Windows 11 Sun Valley 2 (version 22H2) og nyere.
-  <LI>Selektiv registrering af UIA-hændelser og egenskabsændringer er nu aktiveret som standard.
+  <LI>NVDA vil oplyse fremhævede søgninger, når du åbner start-menuen. (<A HREF="https://github.com/nvaccess/nvda/issues/13841">#13841</A>)
+  <LI>Når du kører på ARM, vil X64-programmer ikke længere identificeres som ARM64-applikationer. (<A HREF="https://github.com/nvaccess/nvda/issues/14403">#14403</A>)
+  <LI>Du kan nu bruge elementer i udklipshistorikken som f.eks. "Fastgør element". (<A HREF="https://github.com/nvaccess/nvda/issues/14508">#14508</A>)
+  <LI>Det er nu igen muligt at bruge områder som overløbet fra systembakken, der viser flere ikoner, samt dialogen "Åbn med", når du bruger musen eller berøringsinteraktion i Windows 11 22H2 og nyere. (<A HREF="https://github.com/nvaccess/nvda/issues/14538">#14538</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14539">#14539</A>)
   </UL>
-<LI>Tekstrapportering, punktskriftsoutput og adgangskodeundertrykkelse fungerer nu som forventet i den indlejrede Windows Terminal-kontrol i Visual Studio 2022. (<A HREF="https://github.com/nvaccess/nvda/issues/14194">#14194</A>)
-<LI>NVDA benytter nu DPI, når du bruger flere skærme.
-Der er flere rettelser, når der bruges en DPI-indstilling højere end 100 % eller flere skærme.
-Problemer kan stadig eksistere med versioner af Windows ældre end Windows 10 1809.
-For at disse rettelser skal virke, skal applikationer, som NVDA interagerer med, også være DPI-bevidste.
-Bemærk, at der stadig er kendte problemer med Chrome og Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/13254">#13254</A>)
+<LI>Forslag bliver nu oplyst, når du bruger @navn for at nævne en person i en kommentar. (<A HREF="https://github.com/nvaccess/nvda/issues/13764">#13764</A>)
+<LI>Kontrolelementer til forslag i adresselinjen i Google Chrome (skift til fane, fjern forslag, osv) bliver nu oplyst. (<A HREF="https://github.com/nvaccess/nvda/issues/13522">#13522</A>)
+<LI>Når du anmoder om formateringsoplysninger, rapporteres farver nu eksplicit i Wordpad eller logviseren i stedet for kun "Standardfarve". (<A HREF="https://github.com/nvaccess/nvda/issues/13959">#13959</A>)
+<LI>Aktivering af knappen "Show options" på GitHub issue-sider virker nu korrekt i Firefox. (<A HREF="https://github.com/nvaccess/nvda/issues/14269">#14269</A>)
+<LI>Datovælgeren i dialogen for Outlook 2016 / 365 Avanceret Søgning oplyser nu deres navn og værdi. (<A HREF="https://github.com/nvaccess/nvda/issues/12726">#12726</A>)
+<LI>ARIA switch-kontrolelementer rapporteres nu som switch i Firefox, Chrome og Edge i stedet for check box. (<A HREF="https://github.com/nvaccess/nvda/issues/11310">#11310</A>)
+<LI>NVDA vil nu automatisk oplyse, når sorteringen af elementer i en HTML-tabel ændres via en knap, der befinder sig i samme tabel. (<A HREF="https://github.com/nvaccess/nvda/issues/10890">#10890</A>)
+<LI>Et landmærke eller en regions navn bliver altid automatisk læst op, når du hopper til sådanne elementer udefra, hvis dette sker ved hjælp af bogstavnavigation eller en fokusændring i gennemsynstilstand. (<A HREF="https://github.com/nvaccess/nvda/issues/13307">#13307</A>)
+<LI>Når indstillingerne "Sig stort før store bogstaver" og "bip ved store bogstaver" er slået til, vil NVDA ikke bippe eller sige "stort" to gange, når forsinkede beskrivelser af tegn er slået til. (<A HREF="https://github.com/nvaccess/nvda/issues/14239">#14239</A>)
+<LI>Kontrolelementer i tabeller i Java-applikationer vil nu blive annonceret mere præcist af NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14347">#14347</A>)
+<LI>Nogle indstillinger vil ikke længere fejlagtigt ændres uventet, når der bruges flere indstillingsprofiler. (<A HREF="https://github.com/nvaccess/nvda/issues/14170">#14170</A>)
   <UL>
-  <LI>Rammer til brug ved visuel fremhævning skulle nu være mere korrekt placerede i de fleste programmer. (<A HREF="https://github.com/nvaccess/nvda/issues/13370">#13370</A>, <A HREF="https://github.com/nvaccess/nvda/issues/3875">#3875</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12070">#12070</A>)
-  <LI>Brugen af en touchskærm bør være mere præcis og pålidelig i de fleste programmer. (<A HREF="https://github.com/nvaccess/nvda/issues/7083">#7083</A>)
-  <LI>Sporing af musen bør nu virke i de fleste programmer. (<A HREF="https://github.com/nvaccess/nvda/issues/6722">#6722</A>)
+  <LI>Dette omfatter følgende indstillinger:
+    <UL>
+    <LI>"Linjeindrykning" i indstillingerne for dokumentformatering.
+    <LI>"Cellekanter" i indstillingerne for dokumentformatering.
+    <LI>"Vis beskeder" i indstillingerne for punkt.
+    <LI>"Punkt følger" i indstillingerne for punkt.
+    </UL>
+  <LI>I nogle sjældne tilfælde kan disse indstillinger, der bruges i profiler, forekomme uventet ændret, når denne version af NVDA installeres.
+  <LI>Gennemgå venligst ovenstående indstillinger for dine profiler, når du har opdateret til denne version, hvis dette er aktuelt for dig.
   </UL>
-<LI>Ændring af orienteringen (stående/liggende) vil nu blive ignoreret, hvis der er tale om ændringer i forhold til tilkoblede skærme. (<A HREF="https://github.com/nvaccess/nvda/issues/14035">#14035</A>)
-<LI>NVDA vil oplyse, når du trækker elementer rundt på skærmen som omarrangering af Windows 10 Start-menufelter og virtuelle skriveborde i Windows 11. (<A HREF="https://github.com/nvaccess/nvda/issues/12271">#12271</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14081">#14081</A>)
-<LI>Indstillingen "Afspil en lyd, når fejl opstår" i NVDAs avancerede indstillinger gendannes nu korrekt, når knappen "Gendan standarder" aktiveres. (<A HREF="https://github.com/nvaccess/nvda/issues/14149">#14149</A>)
-<LI>NVDA kan nu vælge tekst i Java-programmer, når du bruger <CODE>NVDA+f10</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14163">#14163</A>)
-<LI>NVDA vil ikke længere sidde fast i menuen, når du piler op og ned i en samtaletråd i Microsoft Teams. (<A HREF="https://github.com/nvaccess/nvda/issues/14355">#14355</A>)
+<LI>Emoji bør blive oplæst på flere sprog. (<A HREF="https://github.com/nvaccess/nvda/issues/14433">#14433</A>)
+<LI>Når annotationer fremkommer, vil dette nu altid korrekt vises, når du benytter et punktdisplay. (<A HREF="https://github.com/nvaccess/nvda/issues/13815">#13815</A>)
+<LI>Rettet en fejl, hvor konfigurationen ikke blev gemt, hvis en indstilling  blev ændret mellem "standard" som indstillingsmulighed og den aktuelle værdi, der ville blive benyttet, når "standard" var valgt. (<A HREF="https://github.com/nvaccess/nvda/issues/14133">#14133</A>)
+<LI>Når NVDA konfigureres, vil én tast altid fungere som NVDA-tasten. (<A HREF="https://github.com/nvaccess/nvda/issues/14527">#14527</A>)
+<LI>Når du åbner NVDA-menuen fra systembakken, vil NVDA ikke længere meddele om en ventende opdatering, hvis dette ikke er tilfældet. (<A HREF="https://github.com/nvaccess/nvda/issues/14523">#14523</A>)
+<LI>Resterende, forløbet og total tid er nu korrekt oplyst i Foobar2000, hvis filen er længere end én dag. (<A HREF="https://github.com/nvaccess/nvda/issues/14127">#14127</A>)
+<LI>I webbrowsere som Chrome og Firefox vises advarsler som f.eks. downloads på punkt samtidigt med, at de også oplæses. (<A HREF="https://github.com/nvaccess/nvda/issues/14562">#14562</A>)
+<LI>Fejl rettet, når der navigeres til første eller sidste kolonne i Firefox (<A HREF="https://github.com/nvaccess/nvda/issues/14554">#14554</A>)
+<LI>Når NVDA startes med systemparametret <CODE>--lang=Windows</CODE> kan man nu igen åbne NVDAs generelle indstillinger. (<A HREF="https://github.com/nvaccess/nvda/issues/14407">#14407</A>)
 </UL>
 
 <P></P>
