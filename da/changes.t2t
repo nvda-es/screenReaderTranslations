@@ -53,43 +53,55 @@ Det er det samme som at trykke ``NVDA+k`` to gange, men er muligvis mere nyttigt
 
 == Ændringer ==
 - Opdateret LibLouis punktoversættelse til [3.24.0 https://github.com/liblouis/liblouis/releases/tag/v3.24.0]. (#14436)
-  - Major updates to Hungarian, UEB, and Chinese bopomofo braille.
-  - Support for the Danish braille standard 2022.
-  - New braille tables for Georgian literary braille, Swahili (Kenya) and Chichewa (Malawi).
+  - Større opdateringer til ungarsk, UEB og kinesisk bopomofo-braille.
+  - Understøttelse for den nye danske standard for punktskrift i 2022.
+  - Nye punktskriftstabeller til georgisk litterær braille, Swahili (Kenya) og Chichewa (Malawi).
   -
-- Updated Sonic rate boost library to commit ``1d70513``. (#14180)
-- CLDR has been updated to version 42.0. (#14273)
-- eSpeak NG has been updated to 1.52-dev commit ``f520fecb``. (#14281, #14675)
-  - Fixed reporting of large numbers. (#14241)
+- Opdateret Sonic rate boost library til commit ``1d70513``. (#14180)
+- CLDR er blevet opdateret til version 42.0. (#14273)
+- eSpeak NG er blevet opdateret til 1.52-dev commit ``f520fecb``. (#14281, #14675)
+  - Rettet fejl med oplæsning af store numre. (#14241)
   -
-- Java applications with controls using the selectable state will now announce when an item is not selected rather than when the item is selected. (#14336)
+- Java-applikationer, der bruger selectable state på et kontrolelement, vil nu oplyse, når et emne ikke er valgt i stedet for valgt. (#14336)
 -
 
 
 == Fejlrettelser ==
-- Når du opdaterer NVDA via Windows Pakkemanager fra kommandolinjen (winget), vil en udgivet version af NVDA ikke længere forekomme som en nyere version af NVDA. Dette var før tilfældet, selv hvis du installerede en nyere alpha-version. (#12469)
-- NVDA vil nu korrekt oplyse gruppebokse i Java-programmer. (#13962)
-- Markøren følger nu korrekt talen med funktionen "Sig alt" aktiv i programmer som  Bookworm, WordPad, eller logviseren i NVDA. (#13420, #9179)
-- Delvist markerede check bokse vil nu oplyses korrekt i programmer, hvor UI Automation er aktiveret. (#13975)
-- Forbedrede ydeevne og stabilitet i Microsoft Visual Studio, Windows Terminal, og andre programmer baseret på UI Automation. (#11077, #11209)
-  - Disse rettelser gælder Windows 11 Sun Valley 2 (version 22H2) og nyere.
-  - Selektiv registrering af UIA-hændelser og egenskabsændringer er nu aktiveret som standard.
+- Rettelser for Windows 11:
+  - NVDA vil oplyse fremhævede søgninger, når du åbner start-menuen. (#13841)
+  - Når du kører på ARM, vil X64-programmer ikke længere identificeres som ARM64-applikationer. (#14403)
+  - Du kan nu bruge elementer i udklipshistorikken som f.eks. "Fastgør element". (#14508)
+  - Det er nu igen muligt at bruge områder som overløbet fra systembakken, der viser flere ikoner, samt dialogen "Åbn med", når du bruger musen eller berøringsinteraktion i Windows 11 22H2 og nyere. (#14538, #14539)
   -
-- Tekstrapportering, punktskriftsoutput og adgangskodeundertrykkelse fungerer nu som forventet i den indlejrede Windows Terminal-kontrol i Visual Studio 2022. (#14194)
-- NVDA benytter nu DPI, når du bruger flere skærme.
-Der er flere rettelser, når der bruges en DPI-indstilling højere end 100 % eller flere skærme.
-Problemer kan stadig eksistere med versioner af Windows ældre end Windows 10 1809.
-For at disse rettelser skal virke, skal applikationer, som NVDA interagerer med, også være DPI-bevidste.
-Bemærk, at der stadig er kendte problemer med Chrome og Edge. (#13254)
-  - Rammer til brug ved visuel fremhævning skulle nu være mere korrekt placerede i de fleste programmer. (#13370, #3875, #12070)
-  - Brugen af en touchskærm bør være mere præcis og pålidelig i de fleste programmer. (#7083)
-  - Sporing af musen bør nu virke i de fleste programmer. (#6722)
+- Forslag bliver nu oplyst, når du bruger @navn for at nævne en person i en kommentar. (#13764)
+- Kontrolelementer til forslag i adresselinjen i Google Chrome (skift til fane, fjern forslag, osv) bliver nu oplyst. (#13522)
+- Når du anmoder om formateringsoplysninger, rapporteres farver nu eksplicit i Wordpad eller logviseren i stedet for kun "Standardfarve". (#13959)
+- Aktivering af knappen "Show options" på GitHub issue-sider virker nu korrekt i Firefox. (#14269)
+- Datovælgeren i dialogen for Outlook 2016 / 365 Avanceret Søgning oplyser nu deres navn og værdi. (#12726)
+- ARIA switch-kontrolelementer rapporteres nu som switch i Firefox, Chrome og Edge i stedet for check box. (#11310)
+- NVDA vil nu automatisk oplyse, når sorteringen af elementer i en HTML-tabel ændres via en knap, der befinder sig i samme tabel. (#10890)
+- Et landmærke eller en regions navn bliver altid automatisk læst op, når du hopper til sådanne elementer udefra, hvis dette sker ved hjælp af bogstavnavigation eller en fokusændring i gennemsynstilstand. (#13307)
+- Når indstillingerne "Sig stort før store bogstaver" og "bip ved store bogstaver" er slået til, vil NVDA ikke bippe eller sige "stort" to gange, når forsinkede beskrivelser af tegn er slået til. (#14239)
+- Kontrolelementer i tabeller i Java-applikationer vil nu blive annonceret mere præcist af NVDA. (#14347)
+- Nogle indstillinger vil ikke længere fejlagtigt ændres uventet, når der bruges flere indstillingsprofiler. (#14170)
+  - Dette omfatter følgende indstillinger:
+    - "Linjeindrykning" i indstillingerne for dokumentformatering.
+    - "Cellekanter" i indstillingerne for dokumentformatering.
+    - "Vis beskeder" i indstillingerne for punkt.
+    - "Punkt følger" i indstillingerne for punkt.
+    -
+  - I nogle sjældne tilfælde kan disse indstillinger, der bruges i profiler, forekomme uventet ændret, når denne version af NVDA installeres.
+  - Gennemgå venligst ovenstående indstillinger for dine profiler, når du har opdateret til denne version, hvis dette er aktuelt for dig.
   -
-- Ændring af orienteringen (stående/liggende) vil nu blive ignoreret, hvis der er tale om ændringer i forhold til tilkoblede skærme. (#14035)
-- NVDA vil oplyse, når du trækker elementer rundt på skærmen som omarrangering af Windows 10 Start-menufelter og virtuelle skriveborde i Windows 11. (#12271, #14081)
-- Indstillingen "Afspil en lyd, når fejl opstår" i NVDAs avancerede indstillinger gendannes nu korrekt, når knappen "Gendan standarder" aktiveres. (#14149)
-- NVDA kan nu vælge tekst i Java-programmer, når du bruger ``NVDA+f10``. (#14163)
-- NVDA vil ikke længere sidde fast i menuen, når du piler op og ned i en samtaletråd i Microsoft Teams. (#14355)
+- Emoji bør blive oplæst på flere sprog. (#14433)
+- Når annotationer fremkommer, vil dette nu altid korrekt vises, når du benytter et punktdisplay. (#13815)
+- Rettet en fejl, hvor konfigurationen ikke blev gemt, hvis en indstilling  blev ændret mellem "standard" som indstillingsmulighed og den aktuelle værdi, der ville blive benyttet, når "standard" var valgt. (#14133)
+- Når NVDA konfigureres, vil én tast altid fungere som NVDA-tasten. (#14527)
+- Når du åbner NVDA-menuen fra systembakken, vil NVDA ikke længere meddele om en ventende opdatering, hvis dette ikke er tilfældet. (#14523)
+- Resterende, forløbet og total tid er nu korrekt oplyst i Foobar2000, hvis filen er længere end én dag. (#14127)
+- I webbrowsere som Chrome og Firefox vises advarsler som f.eks. downloads på punkt samtidigt med, at de også oplæses. (#14562)
+- Fejl rettet, når der navigeres til første eller sidste kolonne i Firefox (#14554)
+- Når NVDA startes med systemparametret ``--lang=Windows`` kan man nu igen åbne NVDAs generelle indstillinger. (#14407)
 -
 
 
