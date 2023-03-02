@@ -177,8 +177,9 @@
       <LI><A HREF="#InputCompositionSettings">13.1.13. Unos sastavljenih znakova</A>
       <LI><A HREF="#BrowseModeSettings">13.1.14. Modus čitanja (NVDA+kontrol+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">13.1.15. Oblikovanje dokumenta (NVDA+kontrol+d)</A>
-      <LI><A HREF="#Win10OcrSettings">13.1.16. Windows OCR postavke</A>
-      <LI><A HREF="#AdvancedSettings">13.1.17. Napredne postavke</A>
+      <LI><A HREF="#DocumentNavigation">13.1.16. Kretanje po dokumentu</A>
+      <LI><A HREF="#Win10OcrSettings">13.1.17. Windows OCR postavke</A>
+      <LI><A HREF="#AdvancedSettings">13.1.18. Napredne postavke</A>
       </UL>
     <LI><A HREF="#MiscSettings">13.2. Razne postavke</A>
       <UL>
@@ -233,9 +234,9 @@
     <LI><A HREF="#HedoMobilLine">16.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">16.9. HumanWare Brailliant BI/B Serije / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc157">16.9.1. Dodijeljeni prečaci za sve modele</A>
-      <LI><A HREF="#toc158">16.9.2. Dodijeljeni prečaci za Brailliant BI 32, BI 40 and B 80</A>
-      <LI><A HREF="#toc159">16.9.3. Dodijeljeni prečaci za Brailliant BI 14</A>
+      <LI><A HREF="#toc158">16.9.1. Dodijeljeni prečaci za sve modele</A>
+      <LI><A HREF="#toc159">16.9.2. Dodijeljeni prečaci za Brailliant BI 32, BI 40 and B 80</A>
+      <LI><A HREF="#toc160">16.9.3. Dodijeljeni prečaci za Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">16.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille serije</A>
     <LI><A HREF="#Seika">16.11. Seika brajični redci</A>
@@ -308,6 +309,9 @@ Glavne značajke uključuju:
  <UL>
  <LI>Za Windows 7, NVDA treba servisni paket 1 ili noviji.
  <LI>Za Windows Server 2008 R2, NVDA treba servisni paket 1 ili noviji.
+  <UL>
+  <LI>Obje inačice,  AMD64 kao i ARM64 operacijskog sustava Windows su podržane.
+  </UL>
  </UL>
 <LI>Najmanje 150 MB prostora na tvrdom disku.
 </UL>
@@ -4098,8 +4102,42 @@ Zvuk se povećava u visini za svaki razmak, a za tabulator, povećavat će se ek
 </UL>
 
 <P></P>
+<A NAME="DocumentNavigation"></A>
+<H4>13.1.16. Kretanje po dokumentu</H4>
+<P>
+Ova vam kategorija omogućuje podešavanje raznih opcija vezanih uz kretanje po dokumentu.
+</P>
+<P>
++==== Stil odlomka ====[ParagraphStyle]
+</P>
+<DL>
+<DT>Podrazumjevani</DT><DD>
+  neka rukuje aplikacija
+<DT>Opcije</DT><DD>
+  Podrazumjevano (neka rukuje aplikacija), neka rukuje aplikacija, jednostruki pritisak entera, dvostruki pritisak entera
+</DL>
+
+<P></P>
+<P>
+Ovaj odabirni okvir omogućuje odabir stila odlomka koji bi se trebao koristiti prilikom kretanja po odlomcima uz pomoć tipkovničkih prečaca <CODE>control+Strelica gore</CODE> i <CODE>control+strelica dolje</CODE>.
+Slijedeći stilovi odlomaka su dostupni:
+</P>
+<UL>
+<LI>Neka rukuje aplikacija: NVDA će omogućiti aplikaciji određivanje sljedećeg ili prethodnog odlomka, i NVDA će pročitati slijedeći odlomak pri kretanju.
+Ovaj stil radi najbolje kada aplikacija podržava nativno kretanje po odlomcima, i postavljen je podrazumijevano.
+<LI>Jednostruki pritisak entera: NVDA će pokušati odrediti prethodni ili slijedeći odlomak koristeći jednostruki prijelom redka kao indikator odlomka.
+Ovaj stil radi najbolje u aplikacijama koje ne podržavaju kretanje po odlomcima nativno, a odlomci su označeni jednim pritiskom tipke <CODE>enter</CODE>.
+<LI>dva pritiska entera: NVDA će pokušati odrediti prethodni ili slijedeći odlomak koristeći najmanje jedan prazan redak (dva pritiska tipke <CODE>enter</CODE>) kao oznake odlomka.
+Ovaj stil radi najbolje u dokumentima koji koriste blokovne odlomke.
+Imajte na umuu da se ovaj stil odlomka ne može koristiti u Microsoft Wordu ili Microsoft Outlooku, osim ako koristite UIA za pristup Microsoft Word kontrolama.
+</UL>
+
+<P></P>
+<P>
+Možete se prebacivati između dostupnih stilova odlomaka tako da pridijelite tipkovnički prečac u <A HREF="#InputGestures">dijaloškom okviru ulazne geste</A>.
+</P>
 <A NAME="Win10OcrSettings"></A>
-<H4>13.1.16. Windows OCR postavke</H4>
+<H4>13.1.17. Windows OCR postavke</H4>
 <P>
 Postavke u ovoj kategoriji omogućuju podešavanje <A HREF="#Win10Ocr">Windows OCR</A>.
 Ova kategorija sadrži sljedeće opcije:
@@ -4110,7 +4148,7 @@ Ova kategorija sadrži sljedeće opcije:
 Ovaj odabirni okvir omogućuje izbor jezika koji će se koristiti za prepoznavanje sadržaja.
 </P>
 <A NAME="AdvancedSettings"></A>
-<H4>13.1.17. Napredne postavke</H4>
+<H4>13.1.18. Napredne postavke</H4>
 <P>
 Upozorenje! Ove postavke mogu prouzroćiti nepravilno funkcionireanje NVDA, ako su konfigurirane nepravilno.
 Radite ove izmjene ako znate što radite, ili vas je na to uputio NVDA razvojni programer.
@@ -4255,7 +4293,7 @@ Implementacija UIA u Microsoft excelu se mijenja od verzije do verzije, te  verz
 ==== Izgovori lozinke u svim unapređenim naredbenim redcima ====[AdvancedSettingsWinConsoleSpeakPasswords]
 Ova opcija regulira mogućnost izgovora znakova kada su uključene opcije  <A HREF="#KeyboardSettingsSpeakTypedCharacters">izgovor upisanih znakova</A> ili <A HREF="#KeyboardSettingsSpeakTypedWords">izgovor upisanih riječi</A> kada se zaslon ne obnavlja (kao što je to slučaj kod upisa lozinke) u nekim programima naredbenog redka, poput Windows naredbenog redka sa uključenom podrškom za UI automation i Mintty.
 Iz sigurnosnih razloga, ova opcija treba biti isključena.
-However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting in consoles, or work in trusted environments and prefer password announcement.
+Međutim, možete ju isključiti ako uočavate nestabilnosti ili nestabilnost sa čitanjem upisanih znakova u naredbenim redcima, ili radite u povjerljivom okruženju i preferirate čitanje lozinki.
 <P></P>
 ==== Koristi podršku naprednog upisivanja znakova u starijim naredbenim redcima sustava Windows kada je to moguće ====[AdvancedSettingsKeyboardSupportInLegacy]
 Ova opcija pruža alternativnu metodu otkrivanja upisanih znakova u starijim naredbenim redcima sustava Windows.
@@ -4288,9 +4326,35 @@ Ova je funkcija podrazumjevano uključena od  NVDA verzije 2021.1.
 <A NAME="AdvancedSettingsCaretMoveTimeout"></A>
 <H5>Brzina micanja kursora sustava (u milisekundama)</H5>
 <P>
-Ova opcija omogućuje povećanje ogranićenja čekanja, u kojem NVDA čeka da se pojavi pokazivač u polju za uređivanje.
+Ova opcija omogućuje povećanje ograničenja čekanja, u kojem NVDA čeka da se pojavi pokazivač u polju za uređivanje.
 Ako mislite da NVDA uvijek kasni jedan znak iza ili ponavlja retke, tada biste trebali povećati ovu vrijednost.
 </P>
+<A NAME="WtStrategy"></A>
+<H5>Izgovori novi tekst u Windows terminalu uz pomoć</H5>
+<DL>
+<DT>podrazumjevano</DT><DD>
+  difovanje
+<DT>opcije</DT><DD>
+  Difovanje, obavijesti UIA
+</DL>
+
+<P></P>
+<P>
+Ova opcija regulira način na koji NVDA otkriva "novi" tekst, i stoga što treba izgovoriti kada je opcija  "izgovori promjene dinamičkog sadržaja" uključena u Windows Terminalu i WPF Windows Terminalu kontroli koja se koristi u  Visual studio 2022.
+Ovo ne utjeće na naredbeni redak sustava windows (<CODE>conhost.exe</CODE>).
+Odabirni okvir izgovori novi tekst u naredbenom redku sadrži tri opcije:
+</P>
+<UL>
+<LI>Podrazumjevano: Ova je opcija trenutno istobinta opciji "difovanje", ali se to planira promijeniti kada će UIA podrška biti dorađenija.
+<LI>Difovanje: Ova opcija koristi označeni algoritam difovanja za računanje novih izmjena kada terminal prikazuje novi tekst.
+Ovo je istovjetno ponašanju NVDA u inačicama 2022.4 i ranijim.
+<LI>UIA obavijesti: Ova opcija prebacuje odgovornost određivanja novog teksta na Windows terminal, što znači da NVDA više ne mora motriti novi tekst.
+Ovo unapređuje performanse i stabilnost Windows terminala, ali ova funkcija nije još usavršena.
+Točnije, znakovi koji se ne vide na zaslonu poput lozinki, se čitaju kada je ova opcija uključena.
+Dodatno, izlaz teksta koji prekoračuje 1000 znakova može biti neispravno pročitan.
+</UL>
+
+<P></P>
 <A NAME="ReportTransparentColors"></A>
 <H5>Izgovaraj transparentnost boja</H5>
 <P>
@@ -5681,7 +5745,7 @@ Podržani su također slijedeći dodatni uređaji, i za njih nisu potrebni dodat
 Slijede prečaci za Brailliant BI/B i BrailleNote brajične retke s NVDA čitačem.
 Smještaj ovih tipki potražite u dokumentaciji brajičnog retka.
 </P>
-<A NAME="toc157"></A>
+<A NAME="toc158"></A>
 <H4>16.9.1. Dodijeljeni prečaci za sve modele</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5770,7 +5834,7 @@ Smještaj ovih tipki potražite u dokumentaciji brajičnog retka.
 </TR>
 </TABLE>
 
-<A NAME="toc158"></A>
+<A NAME="toc159"></A>
 <H4>16.9.2. Dodijeljeni prečaci za Brailliant BI 32, BI 40 and B 80</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -5791,7 +5855,7 @@ Smještaj ovih tipki potražite u dokumentaciji brajičnog retka.
 </TR>
 </TABLE>
 
-<A NAME="toc159"></A>
+<A NAME="toc160"></A>
 <H4>16.9.3. Dodijeljeni prečaci za Brailliant BI 14</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -7768,7 +7832,7 @@ Slijede opcije naredbenog retka za NVDA:
 <TR>
 <TD>-l LOGLEVEL</TD>
 <TD>--log-level=LOGLEVEL</TD>
-<TD>Najniža razina poruka zapisivana (debug 10, input/output 12, debug warning 15, info 20, warning 30, error 40, critical 50, disabled 100), standardno je warning</TD>
+<TD>Najniža razina zapisivanih poruak u zapisniku (debug 10, ulaz/izlaz 12, debug upozorenje 15, info 20, onemogućeno 100)</TD>
 </TR>
 <TR>
 <TD>-c CONFIGPATH</TD>
