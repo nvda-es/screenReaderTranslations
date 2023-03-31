@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
+<HTML LANG="hr">
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.sf.net">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
@@ -14,6 +14,54 @@
 <P>
 Informacije za programere nisu prevedene, molimo ’pogledajte <A HREF="../en/changes.html">englesku inačicu ovog dokumenta</A>.
 </P>
+<H2>2023.2</H2>
+<H3>New Features</H3>
+<UL>
+<LI>Added pronunciation of Unicode symbols:
+  <UL>
+  <LI>braille symbols such as "⠐⠣⠃⠗⠇⠐⠜". (<A HREF="https://github.com/nvaccess/nvda/issues/14548">#14548</A>)
+  <LI>Mac Option key symbol "⌥". (<A HREF="https://github.com/nvaccess/nvda/issues/14682">#14682</A>)
+  </UL>
+<LI>In Mozilla Firefox and Google Chrome, NVDA now reports when a control opens a dialog, grid, list or tree if the author has specified this using aria-haspopup. (<A HREF="https://github.com/nvaccess/nvda/issues/14709">#14709</A>)
+</UL>
+
+<P></P>
+<H3>Changes</H3>
+<UL>
+<LI>Updated LibLouis braille translator to <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.25.0">3.25.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/14719">#14719</A>)
+<LI>Dash and em-dash symbols will always be sent to the synthesizer. (<A HREF="https://github.com/nvaccess/nvda/issues/13830">#13830</A>)
+<LI>Distance reported in Microsoft Word will now honour the unit defined in Word's advanced options even when using UIA to access Word documents. (<A HREF="https://github.com/nvaccess/nvda/issues/14542">#14542</A>)
+<LI>When reporting the review cursor location, the current cursor/caret location is now reported relative to the current page in LibreOffice Writer for LibreOffice versions &gt;= 7.6, similar to what is done for Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/11696">#11696</A>)
+<LI>NVDA now responds slightly faster to commands and focus changes. (<A HREF="https://github.com/nvaccess/nvda/issues/14701">#14701</A>)
+<LI>NVDA responds faster when moving the cursor in edit controls. (<A HREF="https://github.com/nvaccess/nvda/issues/14708">#14708</A>)
+<LI>Baum Braille driver: addes several Braille chord gestures for performing common keyboard commands such as windows+d, alt+tab etc. Please refer to the NVDA user guide for a full list. (<A HREF="https://github.com/nvaccess/nvda/issues/14714">#14714</A>)
+<LI>When using a Braille Display via the Standard HID braille driver, the dpad can be used to emulate the arrow keys and enter. Also space+dot1 and space+dot4 now map to up and down arrow respectively. (<A HREF="https://github.com/nvaccess/nvda/issues/14713">#14713</A>)
+<LI>Script for reporting the destination of a link now reports from the caret / focus position rather than the navigator object. (<A HREF="https://github.com/nvaccess/nvda/issues/14659">#14659</A>)
+</UL>
+
+<P></P>
+<H3>Bug Fixes</H3>
+<UL>
+<LI>NVDA will no longer unnecessarily switch to no braille multiple times during auto detection, resulting in a cleaner log and less overhead. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
+<LI>NVDA will now switch back to USB if a HID Bluetooth device (such as the HumanWare Brailliant or APH Mantis) is automatically detected and an USB connection becomes available.
+This only worked for Bluetooth Serial ports before. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
+<LI>It is now possible to use the backslash character in the replacement field of a dictionaries entry, when the type is not set to regular expression. (<A HREF="https://github.com/nvaccess/nvda/issues/14556">#14556</A>)
+<LI>In Browse mode, NVDA will no longer incorrectly ignore focus moving to a parent or child control e.g. moving from a control to its parent list item or gridcell. (<A HREF="https://github.com/nvaccess/nvda/issues/14611">#14611</A>)
+  <UL>
+  <LI>Note however that this fix only applies when the Automatically set focus to focusable elements" option in Browse Mode settings is turned off (which is the default).
+  </UL>
+<LI>NVDA no longer occasionally causes Mozilla Firefox to crash or stop responding. (<A HREF="https://github.com/nvaccess/nvda/issues/14647">#14647</A>)
+<LI>In Mozilla Firefox and Google Chrome, typed characters are no longer reported in some text boxes even when speak typed characters is disabled. (<A HREF="https://github.com/nvaccess/nvda/issues/14666">#14666</A>)
+<LI>You can now use browse mode in Chromium Embedded Controls where it was not possible previously. (<A HREF="https://github.com/nvaccess/nvda/issues/13493">#13493</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8553">#8553</A>)
+<LI>For symbols which do not have a symbol description in the current locale, the default English symbol level will be used. (<A HREF="https://github.com/nvaccess/nvda/issues/14558">#14558</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14417">#14417</A>)
+<LI>In newer releases of Windows 11 Notepad, NVDA can once again announce status bar contents. (<A HREF="https://github.com/nvaccess/nvda/issues/14573">#14573</A>)
+<LI>In Mozilla Firefox, moving the mouse over text after a link now reliably reports the text. (<A HREF="https://github.com/nvaccess/nvda/issues/9235">#9235</A>)
+<LI>In Windows 10 and 11 Calculator, a portable copy of NVDA will no longer do nothing or play error tones when entering expressions in standard calculator in compact overlay mode. (<A HREF="https://github.com/nvaccess/nvda/issues/14679">#14679</A>)
+<LI>When trying to report the URL for a link without a href attribute NVDA is no longer silent.
+Instead NVDA reports that the link has no destination. (<A HREF="https://github.com/nvaccess/nvda/issues/14723">#14723</A>)
+</UL>
+
+<P></P>
 <H2>2023.1</H2>
 <P>
 Dodana je nova opcija, "stil odlomka" u kategoriji "kretanje po dokumentu".
