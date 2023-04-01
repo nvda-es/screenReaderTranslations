@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
+<HTML LANG="de-DE">
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.sf.net">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
@@ -10,6 +10,70 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2023.2</H2>
+<H3>Neue Features</H3>
+<UL>
+<LI>Die Aussprache von Unicode-Symbolen wurde hinzugefügt:
+  <UL>
+  <LI>Braille-Zeichen (wie z. B. "⠐⠣⠃⠗⠇⠐⠜". (<A HREF="https://github.com/nvaccess/nvda/issues/14548">#14548</A>)
+  <LI>Mac-Optionstaste "⌥". (<A HREF="https://github.com/nvaccess/nvda/issues/14682">#14682</A>)
+  </UL>
+<LI>In Mozilla Firefox und Google Chrome teilt NVDA nun mit, wenn ein Steuerelement ein Dialogfeld, ein Gitter, eine Liste oder einen Baum öffnet, wenn der Autor dies mit "aria-haspopup" angegeben hat. (<A HREF="https://github.com/nvaccess/nvda/issues/14709">#14709</A>)
+</UL>
+
+<P></P>
+<H3>Änderungen</H3>
+<UL>
+<LI>Der LibLouis-Braille-Übersetzer wurde auf <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.25.0">3.25.0</A> aktualisiert. (<A HREF="https://github.com/nvaccess/nvda/issues/14719">#14719</A>)
+<LI>Bindestrich- und Strich-Symbole werden immer an den Synthesizer gesendet. (<A HREF="https://github.com/nvaccess/nvda/issues/13830">#13830</A>)
+<LI>Bei Entfernungsangaben in Microsoft Word wird nun die in den erweiterten Optionen von Word definierte Einheit berücksichtigt, auch wenn UIA für den Zugriff auf Word-Dokumente verwendet wird. (<A HREF="https://github.com/nvaccess/nvda/issues/14542">#14542</A>)
+<LI>Bei der Meldung der Position des NVDA-Cursors wird in LibreOffice Writer für LibreOffice-Versionen &gt;= 7.6 nun die aktuelle Position des normalen Cursor und System-Cursors relativ zur aktuellen Seite mitgeteilt, ähnlich wie bei Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/11696">#11696</A>)
+<LI>NVDA reagiert nun etwas schneller auf Befehle und bei Fokus-Änderungen. (<A HREF="https://github.com/nvaccess/nvda/issues/14701">#14701</A>)
+<LI>NVDA reagiert schneller beim Bewegen des Cursors in den Bearbeitungsfunktionen. (<A HREF="https://github.com/nvaccess/nvda/issues/14708">#14708</A>)
+<LI>Braillezeilen-Treiber von der ehemaligen Firma Baum: Mehrere Braille-Tastenkombinationen für gängige Tastaturbefehle wie Windows+D, Alt+Tab, etc. hinzugefügt. Eine vollständige Liste finden Sie in der NVDA-Bedienungsanleitung. (<A HREF="https://github.com/nvaccess/nvda/issues/14714">#14714</A>)
+<LI>Bei Verwendung einer Braillezeile über den Standard-HID-Braille-Treiber kann das D-Pad zur Emulation der Pfeiltasten und der Eingabetaste verwendet werden. Auch die Tasten Leertaste+Punkt1 und Leertaste+Punkt4 sind nun den Pfeiltasten nach oben und nach unten zugeordnet. (<A HREF="https://github.com/nvaccess/nvda/issues/14713">#14713</A>)
+<LI>Das Skript für die Meldung der Link-Zieladresse geht nun von der Position des normalen Cursors und des System-Cursors aus und nicht mehr vom Navigator-Objekt. (<A HREF="https://github.com/nvaccess/nvda/issues/14659">#14659</A>)
+</UL>
+
+<P></P>
+<H3>Fehlerbehebungen</H3>
+<UL>
+<LI>NVDA schaltet bei der automatischen Erkennung nicht mehr unnötigerweise mehrmals auf "Keine Braillezeile" um, was zu einem saubereren Protokoll und weniger Overhead führt. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
+<LI>NVDA schaltet nun wieder auf USB um, wenn ein HID-Bluetooth-Gerät (z. B. HumanWare Brailliant oder APH Mantis) automatisch erkannt wird und eine USB-Verbindung verfügbar ist.
+Dies funktionierte bisher nur bei seriellen Bluetooth-Schnittstellen. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
+<LI>Es ist nun möglich, das Backslash-Zeichen im Feld Ersetzen eines Wörterbucheintrags zu verwenden, wenn der Typ nicht auf regulären Ausdruck eingestellt ist. (<A HREF="https://github.com/nvaccess/nvda/issues/14556">#14556</A>)
+<LI>Im Lesemodus ignoriert NVDA nicht mehr fälschlicherweise den Fokus, wenn er zu einem über- oder untergeordneten Steuerelement wechselt, z. B. wenn er von einem Steuerelement zu einem übergeordneten Listenelement oder einer Gitterzelle wechselt. (<A HREF="https://github.com/nvaccess/nvda/issues/14611">#14611</A>)
+  <UL>
+  <LI>Beachten Sie jedoch, dass diese Korrektur nur gilt, wenn die Option Fokus automatisch auf fokussierbare Elemente setzen" in den Einstellungen für den Lesemodus deaktiviert ist (was die Standardeinstellung ist).
+  </UL>
+<LI>NVDA führt nicht mehr gelegentlich dazu, dass Mozilla Firefox abstürzt oder nicht mehr reagiert. (<A HREF="https://github.com/nvaccess/nvda/issues/14647">#14647</A>)
+<LI>In Mozilla Firefox und Google Chrome werden Zeichen während der Eingabe in einigen Textfeldern nicht mehr angezeigt, auch wenn die Funktion "Zeichen während der Eingabe ansagen" deaktiviert ist. (<A HREF="https://github.com/nvaccess/nvda/issues/14666">#14666</A>)
+<LI>Sie können jetzt den Fokusmodus in Chromium Embedded Controls verwenden, wo dies vorher nicht möglich war. (<A HREF="https://github.com/nvaccess/nvda/issues/13493">#13493</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8553">#8553</A>)
+<LI>Für Symbole, die keine Symbolbeschreibung im aktuellen Gebietsschema haben, wird die standardmäßige englische Symbolstufe verwendet. (<A HREF="https://github.com/nvaccess/nvda/issues/14558">#14558</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14417">#14417</A>)
+<LI>In neueren Notepad-Versionen von Windows 11 kann NVDA wieder Inhalte der Statusleiste anzeigen. (<A HREF="https://github.com/nvaccess/nvda/issues/14573">#14573</A>)
+<LI>In Mozilla Firefox wird der Text nach einem Link nun zuverlässig angezeigt, wenn man die Maus über den Text bewegt. (<A HREF="https://github.com/nvaccess/nvda/issues/9235">#9235</A>)
+<LI>Im Rechner von Windows 10 und 11 gibt eine portable NVDA-Version bei der Eingabe von Ausdrücken in den Standard-Taschenrechner im kompakten Überlagerungsmodus keine Fehlermeldungen mehr aus oder spielt Fehlertöne ab. (<A HREF="https://github.com/nvaccess/nvda/issues/14679">#14679</A>)
+<LI>Beim Versuch, die URL für einen Link ohne Attribut "href" mitzuteilen, schweigt NVDA nicht mehr.
+Stattdessen meldet NVDA, dass der Link keine Zieladresse hat. (<A HREF="https://github.com/nvaccess/nvda/issues/14723">#14723</A>)
+</UL>
+
+<P></P>
+<H3>Änderungen für Entwickler</H3>
+<P>
+Bitte lesen Sie <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">das Entwicklerhandbuch</A> für Informationen über den Prozess bei API-Änderungen in NVDA.
+</P>
+<UL>
+<LI>Es wurde ein neuer Erweiterungspunkttyp namens <CODE>Chain</CODE> hinzugefügt, der verwendet werden kann, um über Iterables zu iterieren, die von registrierten Handlern zurückgegeben werden. (<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>)
+<LI>Der Erweiterungspunkt <CODE>bdDetect.scanForDevices</CODE> wurde hinzugefügt.
+Es können Handler registriert werden, die Paare <CODE>BrailleDisplayDriver/DeviceMatch</CODE> liefern, die nicht in die bestehenden Kategorien passen, wie USB oder Bluetooth. (<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>)
+<LI>Erweiterungspunkt hinzugefügt: <CODE>synthDriverHandler.synthChanged</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14618">#14618</A>)
+<LI>Der Einstellungsring für die Sprachausgabe von NVDA speichert jetzt die verfügbaren Einstellungswerte, wenn sie zum ersten Mal benötigt werden, und nicht mehr beim Laden der Sprachausgabe. (<A HREF="https://github.com/nvaccess/nvda/issues/14704">#14704</A>)
+<LI>Sie können jetzt die Exportmethode für eine Zusammenstellung der Tastenbefehlen aufrufen, um sie in ein Wörterbuch zu exportieren.
+Dieses Wörterbuch kann in einen anderen Tastenbefehl importiert werden, indem es entweder an den Konstruktor von <CODE>GlobalGestureMap</CODE> oder an die Update-Methode einer bestehenden Zusammenstellung übergeben wird. (<A HREF="https://github.com/nvaccess/nvda/issues/14582">#14582</A>)
+</UL>
+
+<P></P>
+<H4>Veraltete Funktionen</H4>
 <H2>2023.1</H2>
 <P>
 Eine neue Option wurde hinzugefügt, "Absatzstil" in "Dokument-Navigation".
