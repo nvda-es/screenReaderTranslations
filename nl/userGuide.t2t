@@ -2,7 +2,9 @@ NVDA NVDA_VERSION Gebruikershandleiding
 
 
 %!includeconf: ../userGuide.t2tconf
+%!includeconf: ./locale.t2tconf
 %kc:title: NVDA NVDA_VERSION overzicht commando's
+%kc:includeconf: ./locale.t2tconf
 
 = Inhoudsopgave=[toc]
 %%toc
@@ -92,7 +94,6 @@ Iedereen kan NVDA gratis gebruiken.
 Geen zorgen over de aanschaf van een licentie of duur abonnement.
 Gemiddeld krijgt NVDA vier keer per jaar een update.
 De laatste versie van NVDA is altijd beschikbaar op de "Download"-pagina van de [NV Access website NVDA_URL].
-
 NVDA is geschikt voor alle recente versies van Microsoft Windows.
 Raadpleeg [Systeemvereisten #SystemRequirements] voor alle bijzonderheden.
 
@@ -225,7 +226,7 @@ Het eigenlijke commando wordt niet uitgevoerd wanneer u in de Invoerhulpmodus be
 | Statusbalk lezen | ``NVDA+end`` | ``NVDA+shift+end`` | Melden van  de Statusbalk als NVDA er 1 vindte. Druk 2maal de informatie te laten spellen. Pressing three times will copy it to the clipboard |
 | Tijd melden | ``NVDA+f12`` | ``NVDA+f12`` | Eenmaal drukken meldt de huidige tjd, tweemaal drukken meldt datum |
 | Textopmaak melden | ``NVDA+f`` | ``NVDA+f`` | Tekstopmaak wordt gemeld. Pressing twice shows the information in a window |
-| Koppelingsbestemming melden | ``NVDA+k`` | ``NVDA+k`` | Bij 1 keer drukken hoort u naar welke url de koppeling in het [navigatorobject #ObjectNavigation] verwijst. Tweemaal drukken laat deze zien in een venster voor meer duidelijkheid |
+| Koppelingsbestemming melden | ``NVDA+k`` | ``NVDA+k`` | Bij 1 keer drukken hoort u naar welke url de koppeling bij huidige positie van de muisaanwijzer of focus verwijst. Tweemaal drukken laat deze zien in een venster voor meer duidelijkheid |
 
 +++ Instellen welke informatie NVDA voorleest +++[ToggleWhichInformationNVDAReads]
 || Naam | Desktop-toets | Laptop-toets | Omschrijving |
@@ -2369,7 +2370,11 @@ U kunt de symbolen filteren door het symbool of een deel van de vervanging van h
 
 - In het veld "Vervangen door" kunt u de aangepaste tekst invoeren die uitgesproken moet
 worden in plaats van dit symbool.
-- In het keuzevak Niveau kunt u het laagste niveau opgeven waarop dit symbool moet worden uitgesproken
+- In het keuzevak Niveau kunt u het laagste niveau opgeven waarop dit symbool moet worden uitgesproken (geen, enkele, meeste of allemaal).
+U kunt het niveau ook instellen op karakter; in dit geval wordt het  symbool niet gemeld, ongeacht  ingestelde symboolniveau, waarbij  de volgende twee uitzonderingen gelden:
+ - Bij het  navigeren  op  karakterniveau.
+ - Wanneer NVDA  tekst spelt waarin dat  symbool voorkomt.
+ 
 - Het veld "Het eigenlijke symbool naar synthesizer sturen" specificeert wanneer het symbool zelf (in tegenstelling tot de vervanging ervan naar de synthesizer moet worden gestuurd.
 Dit is nuttig alss het symbool de synthesizer even laat stoppen of als het de buiging van de stem verandert.
 Een komma, bij voorbeeld, zorgt ervoor dat er een kort pauzemoment is in de spraakuitvoer
@@ -2959,7 +2964,16 @@ Waar de toetsen zich bevinden, leest u in de documentatie bij de leesregels.
 | Brailleregel naar vorige regel verplaatsen | d1 |
 | Brailleregel naar volgende regel verplaatsen | d3 |
 | Cursor naar braillecel verplaatsen | routing |
-
+| shift+tab-toetsen | spatie+punt1+punt3 |
+| tab-toets | spatie+punt4+punt6 |
+| alt-toets | spatie+punt1+punt3+punt4 (spatie+m) |
+| escape-toets | spatie+punt1+punt5 (spatie+e) |
+| windows-toets | spatie+puntt3+punt4 |
+| alt+tab-toetsen | spatie+punt2+punt3+punt4+punt5 (spatie+t) |
+| NVDA-menu | spatie+punt1+punt3+punt4+punt5 (spatie+n) |
+| windows+d-toetsen (minimaliseer alle applicaties) | space+dot1+dot4+dot5 (space+d) |
+| Alles lezen | spatie+punt1+punt2+punt3+punt4+punt5+punt6 |
+ 
 Voor leesregels die een Joystick hebben, geldt:
 || Naam | Toets |
 | Toets "pijl omhoog" | omhoog |
@@ -3699,19 +3713,17 @@ Hieronder volgen de momenteel geldende toetsen met hun funftie voor deze leesreg
 || Naam | Toets |
 | Brailleleesregel terugscrollen | naar  links pannen of rocker omhoog |
 | Brailleleesregel vooruitscrollen  | naar rechts pannen of rocker omlaag |
-| Brailleleesregel naar  vorige regel verplaatsen | spatie + punt1 |
-| Brailleleesregel naar  volgende regel verplaatsen | spatie + punt4 |
 | Naar braillecel routeren | routing-set 1|
 | Braille volgen aan/uit | Omhoog+Omlaag |
-| Pijltjestoets-omhoog | joystick omhoog |
-| Pijltjestoets-omlaag | joystick omlaag |
-| Pijltjestoets-links | spatie+punt3 of joystick naar links |
-| Pijltjestoets-rechts | spatie+punt6 of joystick naar rechts |
+| pijlOmhoog | joystick van je af, dpad omhoog of spatie+punt1 |
+| pijlOmlaag | joystick naar je toe, dpad omlaag of spatie+punt4 |
+| pijlLinks | spatie+punt3, joystick llinks  of dpad links |
+| pijlRechts | spatie+punt6, joystick recht of dpad rechts |
 | shift+tab-toets  | spatie+punt1+punt3 |
 | tab-toets | spatie+punt4+punt6 |
 | alt-toetsy | spatie+punt1+punt3+punt4 (spatie+m) |
 | escapetoets | spatie+punt1+punt5 (spatie+e) |
-| enter-toets | punt8 of joystick centraal |
+| enter-toets | punt8, joystick centraal of dpad centraal |
 | windows-toets | spatie+punt3+punt4 |
 | alt+tab-toets | spatie+punt2+punt3+punt4+punt5 (spatie+t) |
 | NVDA-menu | spatie+punt1+punt3+punt4+punt5 (spatie+n) |
