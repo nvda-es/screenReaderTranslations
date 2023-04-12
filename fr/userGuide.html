@@ -446,7 +446,7 @@ Cela ne peut pas être fait avec des copies portables ou temporaires.
 Pour plus de détails sur les limitations lors de l'exécution d'une copie portable ou temporaire de NVDA, veuillez consulter les <A HREF="#PortableAndTemporaryCopyRestrictions">Restrictions relatives aux copies portables et temporaires</A>.
 </P>
 <P>
-L'installation propose également de créer un menu Démarrer et des raccourcis sur le bureau, et permet à NVDA d'être démarré avec <CODE>contrôle+alt+n</CODE>.
+L'installation propose également de créer des raccourcis dans le menu Démarrer et sur le bureau, et permet à NVDA d'être démarré avec <CODE>contrôle+alt+n</CODE>.
 </P>
 <A NAME="StepsForInstallingNVDAFromTheLauncher"></A>
 <H4>2.2.2. Étapes pour installer NVDA depuis le lanceur</H4>
@@ -628,7 +628,7 @@ Les commandes réelles ne s'exécuteront pas en mode d'aide à la saisie.
 <TD>Annoncer le lien de destination</TD>
 <TD><CODE>NVDA+k</CODE></TD>
 <TD><CODE>NVDA+k</CODE></TD>
-<TD>Un appui annonce l'URL de destination du lien dans <A HREF="#ObjectNavigation">l'objet navigateur</A>. Deux appuis l'affichent dans une fenêtre pour une revue plus attentive</TD>
+<TD>Un appui annonce l'URL de destination du lien à la position courante du curseur ou du focus. Deux appuis l'affichent dans une fenêtre pour une revue plus attentive</TD>
 </TR>
 </TABLE>
 
@@ -4137,7 +4137,6 @@ Notez que ce style de paragraphe ne peut pas être utilisé dans Microsoft Word 
 
 <P></P>
 <P>
-You may toggle through the available paragraph styles from anywhere by assigning a key in the <A HREF="#InputGestures">Input Gestures dialog</A>.
 Vous pouvez basculer entre les styles de paragraphe disponibles de n'importe où en attribuant une touche dans la <A HREF="#InputGestures">boîte de dialogue Gestes de commandes</A>.
 </P>
 <A NAME="Win10OcrSettings"></A>
@@ -4466,7 +4465,12 @@ Vous pouvez filtrer les symboles en entrant le symbole ou une partie du remplace
 </P>
 <UL>
 <LI>Le champ "Remplacement" vous permet de modifier le texte qui doit être prononcé à la place de ce symbole.
-<LI>En utilisant le champ "Niveau", vous pouvez ajuster le niveau minimum auquel ce symbole doit être annoncé.
+<LI>En utilisant le champ "Niveau", vous pouvez ajuster le niveau minimum auquel ce symbole doit être annoncé (aucun, quelques-uns, la plupart ou tous).
+Vous pouvez également définir le niveau sur caractère ; dans ce cas, le symbole ne sera pas prononcé quel que soit le niveau de symbole utilisé, avec les deux exceptions suivantes :
+ <UL>
+ <LI>Quand vous naviguez caractère par caractère.
+ <LI>Quand NVDA épelle un texte contenant ce symbole.
+ </UL>
 <LI>Le champ "Envoyer le symbole réel au synthétiseur" spécifie quand le symbole lui-même (au lieu de son remplacement) devrait être envoyé au synthétiseur.
 Ceci est utile si le symbole force le synthétiseur à marquer une pause ou modifie l'inflexion de la voix. 
 Par exemple, une virgule force le synthétiseur à marquer une pause.
@@ -5618,6 +5622,42 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 <TR>
 <TD>Aller à la cellule braille</TD>
 <TD>routage</TD>
+</TR>
+<TR>
+<TD>touche Maj+tab</TD>
+<TD>espace+point1+point3</TD>
+</TR>
+<TR>
+<TD>touche tab</TD>
+<TD>espace+point4+point6</TD>
+</TR>
+<TR>
+<TD>touche alt</TD>
+<TD>espace+point1+point3+point4 (espace+m)</TD>
+</TR>
+<TR>
+<TD>touche échap</TD>
+<TD>espace+point1+point5 (espace+e)</TD>
+</TR>
+<TR>
+<TD>touche windows</TD>
+<TD>espace+point3+point4</TD>
+</TR>
+<TR>
+<TD>touche alt+tab</TD>
+<TD>espace+point2+point3+point4+point5 (espace+t)</TD>
+</TR>
+<TR>
+<TD>Menu NVDA</TD>
+<TD>espace+point1+point3+point4+point5 (espace+n)</TD>
+</TR>
+<TR>
+<TD>touche windows+d (minimiser toutes les applications)</TD>
+<TD>espace+point1+point4+point5 (espace+d)</TD>
+</TR>
+<TR>
+<TD>Dire tout</TD>
+<TD>espace+point1+point2+point3+point4+point5+point6</TD>
 </TR>
 </TABLE>
 
@@ -7851,14 +7891,6 @@ Voici les affectations de touches actuelles pour ces affichages.
 <TD>panoramique à droite ou rocker vers le bas</TD>
 </TR>
 <TR>
-<TD>Déplacer l'affichage braille à la ligne précédente</TD>
-<TD>espace+point1</TD>
-</TR>
-<TR>
-<TD>Déplacer l'affichage braille à la ligne suivante</TD>
-<TD>espace+point4</TD>
-</TR>
-<TR>
 <TD>Aller à la cellule braille</TD>
 <TD>ensemble de routage 1|</TD>
 </TR>
@@ -7867,20 +7899,20 @@ Voici les affectations de touches actuelles pour ces affichages.
 <TD>haut+bas</TD>
 </TR>
 <TR>
-<TD>Touche FlècheHaut</TD>
-<TD>joystick vers le haut</TD>
+<TD>touche flècheHaut</TD>
+<TD>joystick vers le haut, dpad ver le haut ou espace+point1</TD>
 </TR>
 <TR>
-<TD>Touche FlècheBas</TD>
-<TD>joystick vers le bas</TD>
+<TD>touche flècheBas</TD>
+<TD>joystick vers le bas, dpad ver le bas ou espace+point4</TD>
 </TR>
 <TR>
-<TD>Touche FlècheGauche</TD>
-<TD>espace+point3 ou joystick vers la gauche</TD>
+<TD>touche flècheGauche</TD>
+<TD>espace+point3, joystick vers la gauche ou dpad ver la gauche</TD>
 </TR>
 <TR>
-<TD>Touche FlècheDroite</TD>
-<TD>espace+point6 ou joystick vers la droite</TD>
+<TD>touche flècheDroite</TD>
+<TD>espace+point6, joystick vers la droite ou dpad ver la droite</TD>
 </TR>
 <TR>
 <TD>Touche maj+tab</TD>
@@ -7900,7 +7932,7 @@ Voici les affectations de touches actuelles pour ces affichages.
 </TR>
 <TR>
 <TD>touche entrer</TD>
-<TD>poin8 ou joystick centre</TD>
+<TD>poin8, joystick centre ou dpad centre</TD>
 </TR>
 <TR>
 <TD>Touche Windows</TD>
