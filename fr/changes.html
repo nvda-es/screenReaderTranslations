@@ -32,7 +32,7 @@
 <LI>NVDA répond plus rapidement lors du déplacement du focus dans un champ d'édition. (<A HREF="https://github.com/nvaccess/nvda/issues/14708">#14708</A>)
 <LI>Pilote Braille Baum : ajout de plusieurs gestes Braille pour réaliser les actions clavier courrantes telles que windows+d, alt+tab etc. Veuillez vous référer au guide utilisateur de NVDA pour la liste complète. (<A HREF="https://github.com/nvaccess/nvda/issues/14714">#14714</A>)
 <LI>Lors de l'utilisation d'un afficheur Braille via le pilote Braille HID standard, le pavé directionnel peut maintenant être utilisé pour émuler les touches fléchées ainsi que entrée. Espace+Point 1 et Espace+Point4 sont également désormais assignées respectivement à flèche haute et flèche basse. (<A HREF="https://github.com/nvaccess/nvda/issues/14713">#14713</A>)
-<LI>Le script pour annoncer la destination d'un lien se base désormais sur la position actuelle du curseur plutôt que depuis la position de l'objet navigateur. (<A HREF="https://github.com/nvaccess/nvda/issues/14659">#14659</A>)
+<LI>Le script pour annoncer la destination d'un lien se base désormais sur la position du curseur / focus plutôt que sur la position de l'objet navigateur. (<A HREF="https://github.com/nvaccess/nvda/issues/14659">#14659</A>)
 </UL>
 
 <P></P>
@@ -40,7 +40,7 @@
 <UL>
 <LI>NVDA ne basculera plus inutilement plusieurs fois sur pas de Braille pendant la détection automatique, permettant un journal plus propre et moins de surcharge. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
 <LI>NVDA basculera désormais vers l'USB si un afficheur Braille HID Bluetooth (comme le HumanWare Brailliant ou l'APH Mantis) est détecté automatiquement et qu'une connexion USB devient disponible.
-Cela fonctionne uniquement pour les ports série Bluetooth. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
+Cela fonctionnait uniquement pour les ports série Bluetooth auparavant. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
 <LI>Il est désormais possible d'utiliser le symbole barre oblique inversée dans le champ de remplacement d'une entrée de dictionaire, si le type n'est pas défini sur expression régulière. (<A HREF="https://github.com/nvaccess/nvda/issues/14556">#14556</A>)
 <LI>En mode navigation, NVDA n'ignorera plus de manière incorrecte le passage du focus vers un contrôle parent ou enfant, par exemple le passage d'un contrôle vers son élément de liste ou sa cellule de grille parent. (<A HREF="https://github.com/nvaccess/nvda/issues/14611">#14611</A>)
   <UL>
@@ -60,18 +60,20 @@ Cela fonctionne uniquement pour les ports série Bluetooth. (<A HREF="https://gi
 <P></P>
 <H3>Changements pour les Développeurs</H3>
 <P>
-+Please refer to <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">the developer guide</A> for information on NVDA's API deprecation and removal process.
-+- Added a new extension point type called <CODE>Chain</CODE>, which can be used to iterate over iterables returned by registered handlers. (<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>)
-+- Added the <CODE>bdDetect.scanForDevices</CODE> extension point.
-+Handlers can be registered that yield <CODE>BrailleDisplayDriver/DeviceMatch</CODE> pairs that don't fit in existing categories, like USB or Bluetooth. (<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>)
-+- Added extension point: <CODE>synthDriverHandler.synthChanged</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14618">#14618</A>)
-+- The NVDA Synth Settings Ring now caches available setting values the first time they're needed, rather than when loading the synthesizer. (<A HREF="https://github.com/nvaccess/nvda/issues/14704">#14704</A>)
-+- You can now call the export method on a gesture map to export it to a dictionary.
-+This dictionary can be imported in another gesture by passing it either to the constructor of <CODE>GlobalGestureMap</CODE> or to the update method on an existing map. (<A HREF="https://github.com/nvaccess/nvda/issues/14582">#14582</A>)
-+-
-+
+Veuillez vous référer au <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">guide de développement</A> pour plus d'informations sur le processus de dépréciation et de suppression de l'API de NVDA.
 </P>
-<H4>Deprecations</H4>
+<UL>
+<LI>Ajout d'un nouveau type de point d'extension appelé <CODE>Chain</CODE>, qui peut être utilisé pour parcourir les itérables renvoyés par les gestionnaires enregistrés. (<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>)
+<LI>Ajout du point d'extension <CODE>bdDetect.scanForDevices</CODE>.
+Des gestionnaires peuvent être enregistrés qui produisent des paires <CODE>BrailleDisplayDriver/DeviceMatch</CODE> qui ne rentrent pas dans les catégories existantes, comme USB ou Bluetooth. (<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>)
+<LI>Ajout d'un point d'extension : <CODE>synthDriverHandler.synthChanged</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14618">#14618</A>)
+<LI>La boucle des paramètres synthétiseur NVDA met désormais en cache les valeurs de paramètres disponibles la première fois qu'elles sont nécessaires, plutôt que lors du chargement du synthétiseur. (<A HREF="https://github.com/nvaccess/nvda/issues/14704">#14704</A>)
+<LI>Vous pouvez maintenant appeler la méthode d'exportation sur un mapping de gestes pour l'exporter vers un dictionnaire.
+Ce dictionnaire peut être importé dans un autre mapping de gestes en le passant soit au constructeur de <CODE>GlobalGestureMap</CODE> soit à la méthode update sur un mapping existant. (<A HREF="https://github.com/nvaccess/nvda/issues/14582">#14582</A>)
+</UL>
+
+<P></P>
+<H4>Dépréciations</H4>
 <H2>2023.1</H2>
 <P>
 Une nouvelle option a été ajoutée, "Style de paragraphe" dans "Navigation dans les documents".
