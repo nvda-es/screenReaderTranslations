@@ -2,7 +2,9 @@
 
 
 %!includeconf: ../userGuide.t2tconf
+%!includeconf: ./locale.t2tconf
 %kc:title: Danh sách các phím tắt trong NVDA NVDA_VERSION 
+%kc:includeconf: ./locale.t2tconf
 
 = Mục lục=[toc]
 %%toc
@@ -222,7 +224,7 @@ Chức năng thật sự của thao tác sẽ không được thực thi khi ở
 | Đọc thanh trạng thái | ``NVDA+end`` | ``NVDA+shift+end`` | Đọc thông tin thanh trạng thái nếu NVDA tìm thấy. Bấm hai lần để đánh vần thông tin. Bấm ba lần để chép nó vào bộ nhớ tạm |
 | Đọc giờ | ``NVDA+f12`` | ``NVDA+f12`` | Bấm một lần để đọc giờ hiện tại, bấm hai lần để đọc ngày |
 | Thông báo định dạng văn bản | ``NVDA+f`` | ``NVDA+f`` | Thông báo định dạng văn bản. Bấm hai lần để hiển thị thông tin trên một cửa sổ |
-| Thông báo đường dẫn liên kết | ``NVDA+k`` | ``NVDA+k`` | Bấm một lần để đọc đường dẫn URL của liên kết trong [đối tượng điều hướng #ObjectNavigation]. Bấm hai lần sẽ hiển thị nó trên một cửa sổ để dễ xem lại hơn |
+| Thông báo đường dẫn liên kết | ``NVDA+k`` | ``NVDA+k`` | Bấm một lần để đọc đường dẫn URL của liên kết tại dấu nháy hoặc vị trí con trỏ. Bấm hai lần sẽ hiển thị nó trên một cửa sổ để dễ xem lại hơn |
 
 +++ Bật / tắt các thông tin được NVDA đọc +++[ToggleWhichInformationNVDAReads]
 || Tên | Phím máy bàn | Phím máy xách tay | Mô tả |
@@ -2348,7 +2350,11 @@ Lưu ý, thiết lập trong hộp thoại này dựa vào thiết lập của t
 Bạn có thể lọc các kí hiệu bằng cách nhập kí hiệu hay một phần kí hiệu thay thế vào ô nhập liệu tên Lọc theo.
 .
 - Mục Thay thế cho phép bạn thay đổi nội dung sẽ được đọc tại vị trí của kí hiệu này.
-- Sử dụng mục Cấp độ, bạn có thể điều chỉnh cấp độ kí hiệu thấp nhất mà kí hiệu này phải được đọc.
+- Sử dụng mục Cấp độ, bạn có thể điều chỉnh cấp độ kí hiệu thấp nhất mà kí hiệu này phải được đọc (không, một vài, hầu hết hoặc tất cả).
+Bạn cũng có thể chọn cấp độ là kí tự. Trường hợp này, kí hiệu sẽ không được đọc lên, bất kể bạn dùng cấp độ đọc kí hiệu nào, trừ hai ngoại lệ sau:
+ - Khi điều hướng theo kí tự.
+ - Khi NVDA đang đánh vần một đoạn văn bản có kí hiệu đó.
+ -
 - Mục Gửi ký hiệu gốc đến bộ đọc quy định khi nào thì tự kí hiệu đó (tương ứng với sự thay thế của nó) sẽ được gửi đến bộ đọc.
 Điều này sẽ hữu ích khi ký hiệu có nhiệm vụ làm bộ đọc ngưng nghỉ hoặc thay đổi ngữ điệu.
 Ví dụ, bộ đọc sẽ ngưng khi gặp dấu phảy.
@@ -2937,6 +2943,15 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 | Chuyển về dòng trước | d1 |
 | Chuyển đến dòng kế | d3 |
 | Rút về ô chữ nổi | routing |
+| phím shift+tab | khoảng trắng+chấm 1+chấm 3 |
+| phím tab | khoảng trắng+chấm 4+chấm 6 |
+| phím alt | khoảng trắng+chấm 1+chấm 3+chấm 4 (khoảng trắng+m) |
+| phím escape | khoảng trắng+chấm 1+chấm 5 (khoảng trắng+e) |
+| Phím windows | khoảng trắng+chấm 3+chấm 4 |
+| phím alt+tab | khoảng trắng+chấm 2+chấm 3+chấm 4+chấm 5 (khoảng trắng+t) |
+| Trình Đơn NVDA | khoảng trắng+chấm 1+chấm 3+chấm 4+chấm 5 (khoảng trắng+n) |
+| phím windows+d (thu nhỏ tất cả các ứng dụng) | khoảng trắng+chấm 1+chấm 4+chấm 5 (khoảng trắng+d) |
+| Đọc tất cả | khoảng trắng+chấm 1+chấm 2+chấm 3+chấm 4+chấm 5+chấm 6 |
 
 Dành cho các màn hình có cần điều khiển:
 || Tên | Phím |
@@ -3661,7 +3676,7 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 | Đọc từ của đối tượng điều hướng hiện tại ở vị trí con trỏ duyệt | ``f15+f16`` |
 | Chuyển con trỏ duyệt đến dòng trước của đối tượng điều hướng hiện tại và đọc nó lên | ``lWheelUp``, ``rWheelUp`` |
 | Chuyển con trỏ duyệt đến dòng kế của đối tượng điều hướng hiện tại và đọc nó lên | ``lWheelDown``, ``rWheelDown`` |
-| Phím ``Windows+d`` (minimize all applications) | ``attribute1`` |
+| Phím ``Windows+d`` (thu nhỏ tất cả các ứng dụng) | ``attribute1`` |
 | Phím ``Windows+e`` (this computer) | ``attribute2`` |
 | Phím ``Windows+b`` (đi đến khay hệ thống) | ``attribute3`` |
 | Phím ``Windows+i`` (Windows settings) | ``attribute4`` |
@@ -3678,19 +3693,17 @@ Sau đây là các phím hiện được gán cho những màn hình nổi nói 
 || Tên | Phím |
 | Cuộn màn hình nổi về trước | pan left hoặc rocker up |
 | Cuộn màn hình nổi về sau | pan right hoặc rocker down |
-| Di chuyển màn hình về dòng trước | khoảng trắng + chấm 1 |
-| Di chuyển màn hình về dòng trước | khoảng trắng + chấm 4 |
 | Đưa về ô chữ nổi | routing set 1|
 | Bật / tắt chữ nổi đi theo | lên+xuống |
-| phím mũi tên lên | joystick up |
-| phím mũi tên xuống | joystick down |
-| phím mũi tên trái | khoảng trắng+chấm 3 hoặc joystick left |
-| phím mũi tên phải | khoảng trắng+chấm 6 hoặc joystick right |
+| phím mũi tên lên | joystick up, dpad up or space+dot1 |
+| phím mũi tên xuống | joystick down, dpad down or space+dot4 |
+| phím mũi tên trái | space+dot3, joystick left  or dpad left |
+| phím mũi tên phải | space+dot6, joystick right or dpad right |
 | phím shift+tab | khoảng trắng+chấm 1+chấm 3 |
 | phím tab | khoảng trắng+chấm 4+chấm 6 |
 | phím alt | khoảng trắng+chấm 1+chấm 3+chấm 4 (khoảng trắng+m) |
 | phím escape | khoảng trắng+chấm 1+chấm 5 (khoảng trắng+e) |
-| phím enter | chấm 8 hoặc joystick center |
+| phím enter | dot8, joystick center or dpad center |
 | phím windows | khoảng trắng+chấm 3+chấm 4 |
 | phím alt+tab | khoảng trắng+chấm 2+chấm 3+chấm 4+chấm 5 (khoảng trắng+t) |
 | Trình đơn NVDA | khoảng trắng+chấm 1+chấm 3+chấm 4+chấm 5 (khoảng trắng+n) |
