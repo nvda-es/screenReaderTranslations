@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NVDA source-master-55932c3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-28 00:01+0000\n"
+"POT-Creation-Date: 2023-05-05 00:01+0000\n"
 "PO-Revision-Date: 2022-01-20 18:42-0800\n"
 "Last-Translator: \n"
 "Language-Team: Bermet\n"
@@ -4640,6 +4640,11 @@ msgstr "Windows 10 OCR жеткиликтүү эмес"
 msgid "Please disable screen curtain before using Windows OCR."
 msgstr ""
 
+#. Translators: Describes a command.
+#, fuzzy
+msgid "Cycles through the available languages for Windows OCR"
+msgstr "Брайль курсордун көлөмүнүнүн которулушу"
+
 #. Translators: Input help mode message for toggle report CLDR command.
 #, fuzzy
 msgid "Toggles on and off the reporting of CLDR characters, such as emojis"
@@ -6488,9 +6493,10 @@ msgstr "Жаңылоонун текшерүүсүнөн ката."
 #. Translators: The title of an error message dialog.
 #. Translators: An title for an error displayed when saving user defined input gestures fails.
 #. Translators: The title of a dialog presented when an error occurs.
-#. Translators: The message title displayed
-#. when the user has not specified an absolute destination directory
-#. in the Create Portable NVDA dialog.
+#. Translators: the title of an error dialog.
+#. Translators: The message title displayed when the user has not specified an absolute
+#. destination directory in the Create Portable NVDA dialog.
+#. Translators: Title of an error dialog shown when an error occurs while creating a portable copy of NVDA.
 #. Translators: The title of an error message dialog.
 #. Translators: The title of the message box
 #. Translators: The title of the error dialog displayed when there is an error showing the GUI
@@ -9701,6 +9707,7 @@ msgid "Please press OK to start the installed copy."
 msgstr "Көчүрмөнү жүктөп башташ үчүн макул баскычын басыңыз."
 
 #. Translators: The title of a dialog presented to indicate a successful operation.
+#. Translators: Title of a dialog shown when a portable copy of NVDA is created.
 msgid "Success"
 msgstr "Ийгилик"
 
@@ -9813,23 +9820,16 @@ msgstr "Көчмө көчүрмөсү түзүү үчүн бир каталог�
 
 #. Translators: The message displayed when the user has not specified an absolute destination directory
 #. in the Create Portable NVDA dialog.
-#, fuzzy
 msgid ""
-"Please specify an absolute path (including drive letter)  in which to create "
-"the portable copy."
-msgstr "Көчмө көчүрмөсү түзүү үчүн бир каталогду көрсөтүү зарыл."
+"Please specify the absolute path where the portable copy should be created. "
+"It may include system variables (%temp%, %homepath%, etc.)."
+msgstr ""
 
-#. Translators: The message displayed when the user specifies an invalid destination drive
-#. in the Create Portable NVDA dialog.
-#, python-format
-msgid "Invalid drive %s"
-msgstr "Жараксыз диск%s"
-
-#. Translators: The title of the dialog presented while a portable copy of NVDA is bieng created.
+#. Translators: The title of the dialog presented while a portable copy of NVDA is being created.
 msgid "Creating Portable Copy"
 msgstr "Портативдик көчүрмөнү түзүү"
 
-#. Translators: The message displayed while a portable copy of NVDA is bieng created.
+#. Translators: The message displayed while a portable copy of NVDA is being created.
 msgid "Please wait while a portable copy of NVDA is created."
 msgstr "NVDA портативдик көчүрмөсү түзүлгүчө күтө туруңуз."
 
@@ -9838,15 +9838,15 @@ msgid "NVDA is unable to remove or overwrite a file."
 msgstr "NVDA файлды жылдырып же жаза албайт."
 
 #. Translators: The message displayed when an error occurs while creating a portable copy of NVDA.
-#. %s will be replaced with the specific error message.
-#, python-format
-msgid "Failed to create portable copy: %s"
+#. {error} will be replaced with the specific error message.
+#, fuzzy, python-brace-format
+msgid "Failed to create portable copy: {error}."
 msgstr "Көчмө көчүрмөсүн түзүү кыйрады: %s"
 
 #. Translators: The message displayed when a portable copy of NVDA has been successfully created.
-#. %s will be replaced with the destination directory.
-#, python-format
-msgid "Successfully created a portable copy of NVDA at %s"
+#. {dir} will be replaced with the destination directory.
+#, fuzzy, python-brace-format
+msgid "Successfully created a portable copy of NVDA at {dir}"
 msgstr "NVDAнын    көчмө көчүрмөсү ийгиликтүү түзүлдү %s"
 
 #. Translators: The title of the NVDA log viewer window.
@@ -11671,6 +11671,16 @@ msgstr "белгиленген"
 msgid "not marked"
 msgstr "белгиленген эмес"
 
+#. Translators: Reported when text is color-highlighted
+#, fuzzy, python-brace-format
+msgid "highlighted in {color}"
+msgstr "ачык-кубарган {color}"
+
+#. Translators: Reported when text is no longer marked
+#, fuzzy
+msgid "not highlighted"
+msgstr "белгилөө жок"
+
 #. Translators: Reported when text is marked as strong (e.g. bold)
 msgid "strong"
 msgstr "күчтүү"
@@ -12044,12 +12054,13 @@ msgstr "Системдик батарейка жок"
 
 #. Translators: Reported when the battery is plugged in, and now is charging.
 #, fuzzy
-msgid "Charging battery"
-msgstr "Батарея кубатын алууда. %d алууда"
+msgid "Plugged in"
+msgstr "Сунуштар"
 
 #. Translators: Reported when the battery is no longer plugged in, and now is not charging.
-msgid "AC disconnected"
-msgstr ""
+#, fuzzy
+msgid "Unplugged"
+msgstr "белгиленген"
 
 #. Translators: This is the estimated remaining runtime of the laptop battery.
 #, python-brace-format
@@ -13740,6 +13751,19 @@ msgid ""
 "To use Albatross with NVDA: change number of status cells in Albatross "
 "internal menu at most "
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "Please specify an absolute path (including drive letter)  in which to "
+#~ "create the portable copy."
+#~ msgstr "Көчмө көчүрмөсү түзүү үчүн бир каталогду көрсөтүү зарыл."
+
+#~ msgid "Invalid drive %s"
+#~ msgstr "Жараксыз диск%s"
+
+#, fuzzy
+#~ msgid "Charging battery"
+#~ msgstr "Батарея кубатын алууда. %d алууда"
 
 #~ msgid "through %s"
 #~ msgstr "% s аркылуу"
