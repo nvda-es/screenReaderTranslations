@@ -12,6 +12,14 @@
   - Kí hiệu phím Option trên Mac symbol "⌥". (#14682)
   -
 - Trong Mozilla Firefox và Google Chrome, NVDA giờ đây sẽ thông báo khi một điều khiển mở ra một hộp thoại (dialog), lưới (grid), danh sách (list) hoặc cây thư mục (tree) nếu tác giả có  dùng aria-haspopup để quy định. (#14709)
+- Giờ đây, đã có thể dùng các biến của hệ thống (chẳng hạn: ``%temp%`` hoặc ``%homepath%``) trong phần thiết lập đường dẫn để tạo bản chạy trực tiếp cho NVDA. (#14680)
+- Đã thêm hỗ trợ cho thuộc tính ``aria-brailleroledescription`` ARIA 1.3, cho phép người tạo trang web ghi đè loại của một thành phần hiện trên màn hình chữ nổi. (#14748)
+- Khi bật chế độ đọc các văn bản được làm nổi trong cài đặt định dạng tài liệu, các màu được làm nổi giờ đây đã được đọc trong Microsoft Word. (#7396, #12101, #5866)
+- Khi chế độ đọc màu được bật trong cài đặt định dạng tài liệu, màu nền giờ đây đã được đọc trong Microsoft Word. (#5866)
+- Thêm một lệnh mới để chuyển qua lại giữa các ngôn ngữ đang có cho Windows OCR. (#13036)
+- Khi bấm ``numpad2`` ba lần để đọc giá trị số của kí tự tại vị trí con trỏ duyệt, thông tin đó giờ đây cũng được cung cấp bằng chữ nổi. (#14826)
+- Thêm các thao tác cho màn hình chữ nổi Tivomatic Caiku Albatross.
+Hiện tại, có các thao tác để hiển thị hộp thoại cài đặt chữ nổi, truy cập thanh trạng thái, chuyển giữa các hình dạng con trỏ nổi và bật / tắt con trỏ nổi. (#14844)
 - 
 
 
@@ -25,6 +33,7 @@
 - Trình điều khiển cho Baum Braille: đã thêm vài thao tác chữ nổi kết hợp để thực hiện vài lệnh bàn phím phổ biến như windows+d, alt+tab, v...v... Vui lòng xem tài liệu hướng dẫn sử dụng NVDA để biết toàn bộ danh sách phím lệnh. (#14714)
 - Khi dùng một màn hình chữ nổi thông qua trình điều khiển chữ nổi HID tiêu chuẩn, có thể dùng dpad để mô phỏng các phím mũi tên và enter. Lệnh khoảng trắng+chấm 1 và khoảng trắng+chấm 4 giờ đây cũng được gán cho mũi tên lên và xuống. (#14713)
 - Kịch bản thông báo đường dẫn của liên kết giờ đây sẽ thông báo từ vị trí dấu nháy hoặc focus thay vì từ đối tượng điều hướng. (#14659)
+- Việc tạo bản chạy trực tiếp không còn bắt buộc phải nhập kí tự ổ đĩa như là một phần của đường dẫn cụ thể. (#14681)
 -
 
 +
@@ -40,11 +49,21 @@ Cái này chỉ hoạt động với cổng Bluetooth Serial trước đây. (#1
 - Trong Mozilla Firefox và Google Chrome, các kí tự gõ vào không còn bị đọc lên trong vài hộp nhập văn bản, kể cả  chế độ đọc kí tự khi nhập đã bị tắt. (#14666)
 - Giờ bạn có thể dùng chế độ duyệt trong Chromium Embedded Controls khi mà trước đây thì không thể. (#13493, #8553)
 - Với các kí hiệu không có phần mô tả ở ngôn ngữ hiện hành, mô tả mặc định bằng tiếng Anh sẽ được dùng. (#14558, #14417)
-- Trong các bản phát hành mới hơn của Notepad trên Windows 11, NVDA giờ đây lại có thể thông báo nội dung của thanh trạng thái. (#14573)
+- Sửa các lỗi trên Windows 11:
+  - NVDA lại có thể đọc nội dung thanh trạng thái của Notepad. (#14573)
+  - Việc chuyển giữa các thẻ sẽ thông báo tên và vị trí thẻ mới cho Notepad và File Explorer. (#14587, #14388)
+  - NVDA sẽ lại thông báo tên các thành phần khi nhập văn bản trong các ngôn ngữ như tiếng Trung và tiếng Nhật chẳng hạn. (#14509)
++  -
 - Trong Mozilla Firefox, việc di chuyển chuột qua những văn bản kế sau một liên kết giờ đây đã thông báo nội dung văn bản một cách đáng tin cậy. (#9235)
 - Trong Windows 10 và 11 Calculator, Bản chạy trực tiếp của NVDA sẽ không còn tình trạng không làm gì hoặc phát âm báo lỗi khi nhập phép tính trong chế độ standard calculator trong compact overlay. (#14679)
 - Khi nỗ lực để NVDA thông báo URL cho một liên kết mà không có thuộc tính href, NVDA không còn tình trạng im lặng.
 Thay vào đó, NVDA sẽ thông báo là liên kết này không có đường dẫn. (#14723)
+- Sửa vài lỗi về tính ổn định cho đầu ra / đầu vào của màn hình chữ nổi, kết quả là ít xảy ra chuyện NVDA bị lỗi hoặc treo. (#14627)
+- Phục hồi được NVDA từ nhiều tình huống hơn, như là ứng dụng không phản hồi, vốn trước đây  làm cho nó bị đóng băng hoàn toàn. (#14759) 
+- Đường dẫn của các liên kết hình ảnh giờ đây được thông báo chính xác trong Chrome và Edge. (#14779)
+- Trong Windows 11, lại có thể mở   phần giấy phép sử dụng hay danh sách người đóng góp trong trình đơn trợ giúp của NVDA. (#14725)
+- Khi buộc dùng hỗ trợ UIA với một số cửa sổ terminal và consoles nhất định, đã sửa một lỗi gây đóng băng và tập tin  bản ghi dò lỗi bị xem là tập tin rác. (#14689)
+- NVDA không còn bị lỗi thông báo ô nhập mật khẩu tại vị trí con trỏ trong Microsoft Excel và Outlook. (#14839)
 -
 
 
