@@ -12,6 +12,14 @@ Quoi de Neuf dans NVDA
   - symbole de la touche Option Mac "⌥". (#14682)
   -
 - Dans Mozilla Firefox et Google Chrome, NVDA annonce maintenant lorsqu'un bouton ouvre un dialogue, une grille, une liste ou une arborescence si le développeur l'a indiqué avec aria-haspopup. (#14709)
+- Il est désormais possible d'utiliser des variables systèmes (comme ``%temp%`` ou ``%homepath%``) dans le chemin de création des copies portables de NVDA. (#14680)
+- Ajout du support de l'attribut ARIA 1.3 ``aria-brailleroledescription``, permettant aux développeurs web a surcharger le type d'un élément affiché sur l'afficheur Braille. (#14748)
+- Lorsque le texte surligné est activé dans les paramètres de mise en forme des documents, les couleurs surlignées sont désormais annoncées dans Microsoft Word. (#7396, #12101, #5866)
+- Lorsque l'annonce des couleurs est annoncée dans les paramètres de mise en forme des documents, les couleurs d'arrière-plan sont désormais annoncées dans Microsoft Word. (#5866)
+- Ajout d'une nouvelle commande pour naviguer entre les langues disponibles pour l'OCR de Windows. (#13036)
+- Lors d'un triple appui sur ``pavnum2`` pour annoncer la représentation numérique du caracttère à la position du curseur de revue, l'information est maintenant également fournie en Braille. (#14826)
+- Ajout de gestes pour les afficheurs Braille Tivomatic Caiku Albatross.
+Il existe désormais des gestes pour afficher le dialogue des paramètres Braille, accéder à la barre d'état, basculer entre les formes du curseur Braille et activer/désactiver le curseur Braille. (#14844)
 - 
 
 
@@ -25,6 +33,7 @@ Quoi de Neuf dans NVDA
 - Pilote Braille Baum : ajout de plusieurs gestes Braille pour réaliser les actions clavier courrantes telles que windows+d, alt+tab etc. Veuillez vous référer au guide utilisateur de NVDA pour la liste complète. (#14714)
 - Lors de l'utilisation d'un afficheur Braille via le pilote Braille HID standard, le pavé directionnel peut maintenant être utilisé pour émuler les touches fléchées ainsi que entrée. Espace+Point 1 et Espace+Point4 sont également désormais assignées respectivement à flèche haute et flèche basse. (#14713)
 - Le script pour annoncer la destination d'un lien se base désormais sur la position du curseur / focus plutôt que sur la position de l'objet navigateur. (#14659)
+- La création d'une copie portable ne nécessite plus qu'une lettre de lecteur soit incluse dans un chemin absolu. (#14681)
 -
 
 
@@ -40,16 +49,34 @@ Cela fonctionnait uniquement pour les ports série Bluetooth auparavant. (#14524
 - Dans Mozilla Firefox et Google Chrome, les caractères saisis dans certains champs d'édition ne sont plus annoncés alors que l'annonce des caractères saisis est désactivée. (#14666)
 - Vous pouvez désormais utiliser le mode navigation dans les contrôles Web Chromium embarqués, ce qui n'était pas possible précédemment. (#13493, #8553)
 - Pour les symboles qui n'ont pas de description dans la langue actuelle, le niveau de symbole anglais par défaut sera utilisé. (#14558, #14417)
-- Dans les nouvelles versions du bloc-notes de Windows 11, NVDA peut à nouveau annoncer le contenu de la barre d'état. (#14573)
+- Correctifs pour Windows 11 :
+  - NVDA peut de nouveau annoncer le contenu de la barre d'état du bloc-notes. (#14573)
+  - Basculer entre les onglets annoncera le nom et la position de l'onglet pour le bloc-notes et l'explorateur de fichiers. (#14587, #14388)
+  - NVDA annoncera à nouveau les éléments candidats lors de la saisie de texte dans des langues telles que le chinois et le japonais. (#14509)
+  -
 - Dans Mozilla Firefox, déplacer la souris sur un texte après un lien rapporte désormais correctement le texte. (#9235)
 - Dans la calculatrice de Windows 10 et 11, une copie portable de NVDA ne sera plus silencieuse ou ne jouera plus de son d'erreur lors de la saisie d'expression dans le mode de calculatrice standard en mode d'affichage compact. (#14679)
 - Lors de la tentative d'annonce de la destination d'un lien sans attribut href, NVDA n'est plus silencieux.
 À la place, NVDA annonce que le lien n'a pas de destination. (#14723)
+- Nombreux correctifs de stabilité pour les entrées/sorties pour les afficheurs Braille, résultants à moins d'erreurs et de plantages fréquents de NVDA. (#14627)
+- NVDA refonctionne à nouveau après des situations telles que des plantages d'applications, ce qui le gelait auparavant totalement. (#14759) 
+- La destination des liens graphiques est maintenant correctement annoncée dans Chrome et Edge. (#14779)
+- Sous Windows 11, il est à nouveau possible d'ouvrir les éléments Contributeurs et Licence depuis le menu Aide de NVDA. (#14725)
+- Lorsque le support d'UIA est forcé avec certains terminaux et consoles, un bug qui causait un gel et le spam du fichier de log a été corrigé. (#14689)
+- NVDA n'échoue plus à annoncer les champs de mots de passe sélectionnés dans Microsoft Excel et Outlook. (#14839)
 -
 
 
 == Changements pour les Développeurs ==
 Veuillez vous référer au [guide de développement https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] pour plus d'informations sur le processus de dépréciation et de suppression de l'API de NVDA.
++
++- Suggested conventions have been added to the add-on manifest specification.
++These are optional for NVDA compatibility, but are encouraged or required for submitting to the add-on store.
++The new suggested conventions are:
++  - Using ``lowerCamelCase`` for the name field.
++  - Using ``<major>.<minor>.<patch>`` format for the version field (required for add-on datastore).
++  - Using ``https://`` as the schema for the url field (required for add-on datastore).
++  -
 - Ajout d'un nouveau type de point d'extension appelé ``Chain``, qui peut être utilisé pour parcourir les itérables renvoyés par les gestionnaires enregistrés. (#14531)
 - Ajout du point d'extension ``bdDetect.scanForDevices``.
 Des gestionnaires peuvent être enregistrés qui produisent des paires ``BrailleDisplayDriver/DeviceMatch`` qui ne rentrent pas dans les catégories existantes, comme USB ou Bluetooth. (#14531)
@@ -57,9 +84,24 @@ Des gestionnaires peuvent être enregistrés qui produisent des paires ``Braille
 - La boucle des paramètres synthétiseur NVDA met désormais en cache les valeurs de paramètres disponibles la première fois qu'elles sont nécessaires, plutôt que lors du chargement du synthétiseur. (#14704)
 - Vous pouvez maintenant appeler la méthode d'exportation sur un mapping de gestes pour l'exporter vers un dictionnaire.
 Ce dictionnaire peut être importé dans un autre mapping de gestes en le passant soit au constructeur de ``GlobalGestureMap`` soit à la méthode update sur un mapping existant. (#14582)
++- ``hwIo.base.IoBase`` and its derivatives now have a new constructor parameter to take a ``hwIo.ioThread.IoThread``.
++If not provided, the default thread is used. (#14627)
++- ``hwIo.ioThread.IoThread`` now has a ``setWaitableTimer`` method to set a waitable timer using a python function.
++Similarly, the new ``getCompletionRoutine`` method allows you to convert a python method into a completion routine safely. (#14627)
++- ``offsets.OffsetsTextInfo._get_boundingRects`` should now always return ``List[locationHelper.rectLTWH]`` as expected for a subclass of ``textInfos.TextInfo``. (#12424)
++- ``highlight-color`` is now a format field attribute. (#14610)
++- NVDA should more accurately determine if a logged message is coming from NVDA core. (#14812)
++- NVDA will no longer log inaccurate warnings or errors about deprecated appModules. (#14806)
++- All NVDA extension points are now briefly described in a new, dedicated chapter in the Developer Guide. (#14648)
++- ``scons checkpot`` will no longer check the ``userConfig`` subfolder anymore. (#14820)
 -
 
 === Dépréciations ===
++- Passing lambda functions to ``hwIo.ioThread.IoThread.queueAsApc`` is deprecated.
++Instead, functions should be weakly referenceable. (#14627)
++- Importing ``LPOVERLAPPED_COMPLETION_ROUTINE`` from ``hwIo.base`` is deprecated.
++Instead import from ``hwIo.ioThread``. (#14627)
++-
 
 = 2023.1 =
 Une nouvelle option a été ajoutée, "Style de paragraphe" dans "Navigation dans les documents".
