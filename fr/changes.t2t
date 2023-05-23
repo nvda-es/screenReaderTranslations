@@ -69,14 +69,14 @@ Cela fonctionnait uniquement pour les ports série Bluetooth auparavant. (#14524
 
 == Changements pour les Développeurs ==
 Veuillez vous référer au [guide de développement https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] pour plus d'informations sur le processus de dépréciation et de suppression de l'API de NVDA.
-+
-+- Suggested conventions have been added to the add-on manifest specification.
-+These are optional for NVDA compatibility, but are encouraged or required for submitting to the add-on store.
-+The new suggested conventions are:
-+  - Using ``lowerCamelCase`` for the name field.
-+  - Using ``<major>.<minor>.<patch>`` format for the version field (required for add-on datastore).
-+  - Using ``https://`` as the schema for the url field (required for add-on datastore).
-+  -
+
+- Des conventions suggérées ont été ajoutées à la spécification du manifeste des extensions.
+Celles-ci sont facultatives pour la compatibilité avec NVDA, mais sont recommandées ou requises pour la submission à l'add-on store.
+Les nouvelles conventions suggérées sont :
+  - Utilisation de la ``lowerCamelCase`` pour le champ name.
+  - Utilisation du format ``<majeure>.<mineure>.<patch>`` pour le champ version (requis pour le add-on datastore).
+  - Utilisation de ``https://`` comme schéma pour le champ URL (requis pour le add-on datastore).
+  -
 - Ajout d'un nouveau type de point d'extension appelé ``Chain``, qui peut être utilisé pour parcourir les itérables renvoyés par les gestionnaires enregistrés. (#14531)
 - Ajout du point d'extension ``bdDetect.scanForDevices``.
 Des gestionnaires peuvent être enregistrés qui produisent des paires ``BrailleDisplayDriver/DeviceMatch`` qui ne rentrent pas dans les catégories existantes, comme USB ou Bluetooth. (#14531)
@@ -84,24 +84,24 @@ Des gestionnaires peuvent être enregistrés qui produisent des paires ``Braille
 - La boucle des paramètres synthétiseur NVDA met désormais en cache les valeurs de paramètres disponibles la première fois qu'elles sont nécessaires, plutôt que lors du chargement du synthétiseur. (#14704)
 - Vous pouvez maintenant appeler la méthode d'exportation sur un mapping de gestes pour l'exporter vers un dictionnaire.
 Ce dictionnaire peut être importé dans un autre mapping de gestes en le passant soit au constructeur de ``GlobalGestureMap`` soit à la méthode update sur un mapping existant. (#14582)
-+- ``hwIo.base.IoBase`` and its derivatives now have a new constructor parameter to take a ``hwIo.ioThread.IoThread``.
-+If not provided, the default thread is used. (#14627)
-+- ``hwIo.ioThread.IoThread`` now has a ``setWaitableTimer`` method to set a waitable timer using a python function.
-+Similarly, the new ``getCompletionRoutine`` method allows you to convert a python method into a completion routine safely. (#14627)
-+- ``offsets.OffsetsTextInfo._get_boundingRects`` should now always return ``List[locationHelper.rectLTWH]`` as expected for a subclass of ``textInfos.TextInfo``. (#12424)
-+- ``highlight-color`` is now a format field attribute. (#14610)
-+- NVDA should more accurately determine if a logged message is coming from NVDA core. (#14812)
-+- NVDA will no longer log inaccurate warnings or errors about deprecated appModules. (#14806)
-+- All NVDA extension points are now briefly described in a new, dedicated chapter in the Developer Guide. (#14648)
-+- ``scons checkpot`` will no longer check the ``userConfig`` subfolder anymore. (#14820)
+- ``hwIo.base.IoBase`` et ses dérivés ont maintenant un nouveau paramètre constructeur pour prendre un ``hwIo.ioThread.IoThread``.
+Si ce paramètre n'est pas fourni, le thread par défaut est utilisé. (#14627)
+- ``hwIo.ioThread.IoThread`` a maintenant une méthode ``setWaitableTimer`` pour définir un timer d'attente à l'aide d'une fonction python.
+De même, la nouvelle méthode ``getCompletionRoutine`` vous permet de convertir une méthode python en une routine de complétion en toute sécurité. (#14627)
+- ``offsets.OffsetsTextInfo._get_boundingRects`` devrait maintenant toujours retourner une ``List[locationHelper.rectLTWH]`` comme prévu pour une sous-classe de ``textInfos.TextInfo``. (#12424)
+- ``highlight-color`` est maintenant un attribut de champ format. (#14610)
+- NVDA devrait déterminer plus précisément si un message enregistré provient du noyau NVDA. (#14812)
+- NVDA n'enregistrera plus d'avertissements ou d'erreurs inexacts concernant les appModules obsolètes. (#14806)
+- Tous les points d'extension de NVDA sont maintenant brièvement décrits dans un nouveau chapitre dédié dans le Guide du développeur. (#14648)
+- ``scons checkpot`` ne vérifiera plus le sous-dossier ``userConfig``. (#14820)
 -
 
 === Dépréciations ===
-+- Passing lambda functions to ``hwIo.ioThread.IoThread.queueAsApc`` is deprecated.
-+Instead, functions should be weakly referenceable. (#14627)
-+- Importing ``LPOVERLAPPED_COMPLETION_ROUTINE`` from ``hwIo.base`` is deprecated.
-+Instead import from ``hwIo.ioThread``. (#14627)
-+-
+- Le passage de fonctions lambda à ``hwIo.ioThread.IoThread.queueAsApc`` est obsolète.
+Au lieu de cela, les fonctions doivent être des weakrefs. (#14627)
+- L'importation de ``LPOVERLAPPED_COMPLETION_ROUTINE`` depuis ``hwIo.base`` est obsolète.
+A la place, importer depuis ``hwIo.ioThread``. (#14627)
+-
 
 = 2023.1 =
 Une nouvelle option a été ajoutée, "Style de paragraphe" dans "Navigation dans les documents".
