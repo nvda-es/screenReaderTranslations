@@ -81,16 +81,16 @@ Cela fonctionnait uniquement pour les ports série Bluetooth auparavant. (<A HRE
 <H3>Changements pour les Développeurs</H3>
 <P>
 Veuillez vous référer au <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">guide de développement</A> pour plus d'informations sur le processus de dépréciation et de suppression de l'API de NVDA.
-+
-+- Suggested conventions have been added to the add-on manifest specification.
-+These are optional for NVDA compatibility, but are encouraged or required for submitting to the add-on store.
-+The new suggested conventions are:
-+  - Using <CODE>lowerCamelCase</CODE> for the name field.
-+  - Using <CODE>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</CODE> format for the version field (required for add-on datastore).
-+  - Using <CODE>https://</CODE> as the schema for the url field (required for add-on datastore).
-+  -
 </P>
 <UL>
+<LI>Des conventions suggérées ont été ajoutées à la spécification du manifeste des extensions.
+Celles-ci sont facultatives pour la compatibilité avec NVDA, mais sont recommandées ou requises pour la submission à l'add-on store.
+Les nouvelles conventions suggérées sont :
+  <UL>
+  <LI>Utilisation de la <CODE>lowerCamelCase</CODE> pour le champ name.
+  <LI>Utilisation du format <CODE>&lt;majeure&gt;.&lt;mineure&gt;.&lt;patch&gt;</CODE> pour le champ version (requis pour le add-on datastore).
+  <LI>Utilisation de <CODE>https://</CODE> comme schéma pour le champ URL (requis pour le add-on datastore).
+  </UL>
 <LI>Ajout d'un nouveau type de point d'extension appelé <CODE>Chain</CODE>, qui peut être utilisé pour parcourir les itérables renvoyés par les gestionnaires enregistrés. (<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>)
 <LI>Ajout du point d'extension <CODE>bdDetect.scanForDevices</CODE>.
 Des gestionnaires peuvent être enregistrés qui produisent des paires <CODE>BrailleDisplayDriver/DeviceMatch</CODE> qui ne rentrent pas dans les catégories existantes, comme USB ou Bluetooth. (<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>)
@@ -98,27 +98,28 @@ Des gestionnaires peuvent être enregistrés qui produisent des paires <CODE>Bra
 <LI>La boucle des paramètres synthétiseur NVDA met désormais en cache les valeurs de paramètres disponibles la première fois qu'elles sont nécessaires, plutôt que lors du chargement du synthétiseur. (<A HREF="https://github.com/nvaccess/nvda/issues/14704">#14704</A>)
 <LI>Vous pouvez maintenant appeler la méthode d'exportation sur un mapping de gestes pour l'exporter vers un dictionnaire.
 Ce dictionnaire peut être importé dans un autre mapping de gestes en le passant soit au constructeur de <CODE>GlobalGestureMap</CODE> soit à la méthode update sur un mapping existant. (<A HREF="https://github.com/nvaccess/nvda/issues/14582">#14582</A>)
-+- <CODE>hwIo.base.IoBase</CODE> and its derivatives now have a new constructor parameter to take a <CODE>hwIo.ioThread.IoThread</CODE>.
-+If not provided, the default thread is used. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
-+- <CODE>hwIo.ioThread.IoThread</CODE> now has a <CODE>setWaitableTimer</CODE> method to set a waitable timer using a python function.
-+Similarly, the new <CODE>getCompletionRoutine</CODE> method allows you to convert a python method into a completion routine safely. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
-+- <CODE>offsets.OffsetsTextInfo._get_boundingRects</CODE> should now always return <CODE>List[locationHelper.rectLTWH]</CODE> as expected for a subclass of <CODE>textInfos.TextInfo</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12424">#12424</A>)
-+- <CODE>highlight-color</CODE> is now a format field attribute. (<A HREF="https://github.com/nvaccess/nvda/issues/14610">#14610</A>)
-+- NVDA should more accurately determine if a logged message is coming from NVDA core. (<A HREF="https://github.com/nvaccess/nvda/issues/14812">#14812</A>)
-+- NVDA will no longer log inaccurate warnings or errors about deprecated appModules. (<A HREF="https://github.com/nvaccess/nvda/issues/14806">#14806</A>)
-+- All NVDA extension points are now briefly described in a new, dedicated chapter in the Developer Guide. (<A HREF="https://github.com/nvaccess/nvda/issues/14648">#14648</A>)
-+- <CODE>scons checkpot</CODE> will no longer check the <CODE>userConfig</CODE> subfolder anymore. (<A HREF="https://github.com/nvaccess/nvda/issues/14820">#14820</A>)
+<LI><CODE>hwIo.base.IoBase</CODE> et ses dérivés ont maintenant un nouveau paramètre constructeur pour prendre un <CODE>hwIo.ioThread.IoThread</CODE>.
+Si ce paramètre n'est pas fourni, le thread par défaut est utilisé. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
+<LI><CODE>hwIo.ioThread.IoThread</CODE> a maintenant une méthode <CODE>setWaitableTimer</CODE> pour définir un timer d'attente à l'aide d'une fonction python.
+De même, la nouvelle méthode <CODE>getCompletionRoutine</CODE> vous permet de convertir une méthode python en une routine de complétion en toute sécurité. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
+<LI><CODE>offsets.OffsetsTextInfo._get_boundingRects</CODE> devrait maintenant toujours retourner une <CODE>List[locationHelper.rectLTWH]</CODE> comme prévu pour une sous-classe de <CODE>textInfos.TextInfo</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12424">#12424</A>)
+<LI><CODE>highlight-color</CODE> est maintenant un attribut de champ format. (<A HREF="https://github.com/nvaccess/nvda/issues/14610">#14610</A>)
+<LI>NVDA devrait déterminer plus précisément si un message enregistré provient du noyau NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14812">#14812</A>)
+<LI>NVDA n'enregistrera plus d'avertissements ou d'erreurs inexacts concernant les appModules obsolètes. (<A HREF="https://github.com/nvaccess/nvda/issues/14806">#14806</A>)
+<LI>Tous les points d'extension de NVDA sont maintenant brièvement décrits dans un nouveau chapitre dédié dans le Guide du développeur. (<A HREF="https://github.com/nvaccess/nvda/issues/14648">#14648</A>)
+<LI><CODE>scons checkpot</CODE> ne vérifiera plus le sous-dossier <CODE>userConfig</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14820">#14820</A>)
 </UL>
 
 <P></P>
 <H4>Dépréciations</H4>
-<P>
-+- Passing lambda functions to <CODE>hwIo.ioThread.IoThread.queueAsApc</CODE> is deprecated.
-+Instead, functions should be weakly referenceable. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
-+- Importing <CODE>LPOVERLAPPED_COMPLETION_ROUTINE</CODE> from <CODE>hwIo.base</CODE> is deprecated.
-+Instead import from <CODE>hwIo.ioThread</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
-+-
-</P>
+<UL>
+<LI>Le passage de fonctions lambda à <CODE>hwIo.ioThread.IoThread.queueAsApc</CODE> est obsolète.
+Au lieu de cela, les fonctions doivent être des weakrefs. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
+<LI>L'importation de <CODE>LPOVERLAPPED_COMPLETION_ROUTINE</CODE> depuis <CODE>hwIo.base</CODE> est obsolète.
+A la place, importer depuis <CODE>hwIo.ioThread</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
+</UL>
+
+<P></P>
 <H2>2023.1</H2>
 <P>
 Une nouvelle option a été ajoutée, "Style de paragraphe" dans "Navigation dans les documents".
