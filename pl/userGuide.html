@@ -10,6 +10,10 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<P>
++%!includeconf: ./locale.t2tconf
++%kc:includeconf: ./locale.t2tconf
+</P>
 <A NAME="toc"></A>
 <H2>Spis treści</H2>
   <UL>
@@ -628,7 +632,7 @@ Polecenia nie będą wykonywane, gdy pomoc klawiatury jest aktywna.
 <TD>Odczytaj lokalizacje linku</TD>
 <TD><CODE>NVDA+k</CODE></TD>
 <TD><CODE>NVDA+k</CODE></TD>
-<TD>Gdy jest naciśnięte jeden raz, wymawia lokalizację, adres  URL linku w  <A HREF="#ObjectNavigation">obiekcie nawigatora</A>. Gdy jest naciśnięte dwukrotnie, pokazuje w oknie w celu bardziej rzetelnego przeglądu</TD>
+<TD>Gdy jest naciśnięte jeden raz, odczytuje adres URL linku pod kursorem systemowym. Gdy jest naciśnięte dwukrotnie, pokazuje w oknie w celu bardziej rzetelnego przeglądu</TD>
 </TR>
 </TABLE>
 
@@ -4463,7 +4467,12 @@ Możesz filtrować symbole wprowadzając symbol lub część zastępującego tek
 </P>
 <UL>
 <LI>Pole zamień określa tekst, który powinien być wypowiadany zamiast tego znaku. 
-<LI>Używając listy poziom, można regulować najniższy poziom interpunkcji, na którym dany znak będzie wypowiadany. 
+<LI>Używając listy poziom, można regulować najniższy poziom interpunkcji, na którym dany znak będzie wypowiadany: brak, niektóre, większość, wszystko. 
+Można także ustawić poziom symbolu na znak; w tym przypadku, symbol nie będzie wymawiany, niezależnie od ustawionego poziomu interpunkcji, z następującymi dwoma wyjątkami:
+ <UL>
+ <LI>podczas nawigacji po znakach.
+ <LI>Gdy NVDA wymawia tekst, zawierający ten symbol.
+ </UL>
 <LI>Pole wyślij rzeczywisty symbol do syntezatora określa, czy sam symbol (w przeciwieństwie do jego zastępnika) powinien zostać wysłany do syntezatora.
 Jest to przydatne, jeśli symbol powoduje pauzę w odczycie albo zmianę intonacji głosu.
 Dla przykładu przecinek powoduje krótką pauzę syntezatora.
@@ -5615,6 +5624,42 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 <TR>
 <TD>Przywołaj do komórki brajla</TD>
 <TD>Routing</TD>
+</TR>
+<TR>
+<TD>shift+tab</TD>
+<TD>spacja+punkt1+punkt3</TD>
+</TR>
+<TR>
+<TD>tab</TD>
+<TD>spacja+punkt4+punkt6</TD>
+</TR>
+<TR>
+<TD>alt</TD>
+<TD>spacja+punkt1+punkt3+punkt4 (spacja+m)</TD>
+</TR>
+<TR>
+<TD>escape</TD>
+<TD>spacja+punkt1+punkt5 (spacja+e)</TD>
+</TR>
+<TR>
+<TD>windows</TD>
+<TD>spacja+punkt3+punkt4</TD>
+</TR>
+<TR>
+<TD>alt+tab</TD>
+<TD>spacja+punkt2+punkt3+punkt4+punkt5 (spacja+t)</TD>
+</TR>
+<TR>
+<TD>NVDA Menu</TD>
+<TD>spacja+punkt1+punkt3+punkt4+punkt5 (spacja+n)</TD>
+</TR>
+<TR>
+<TD>Klawisz windows+d (minimalizuje wszystkie aplikacje)</TD>
+<TD>spacja+punkt1+punkt4+punkt5 (spacja+d)</TD>
+</TR>
+<TR>
+<TD>Czytaj wszystko</TD>
+<TD>spacja+punkt1+punkt2+punkt3+punkt4+punkt5+punkt6</TD>
 </TR>
 </TABLE>
 
@@ -7843,14 +7888,6 @@ Oto skróty klawiszowe przydzielone dla tego monitora brajlowskiego.
 <TD>pan right lub rocker down|</TD>
 </TR>
 <TR>
-<TD>przemieszczanie monitoru brajlowskiego do poprzedniego wiersza</TD>
-<TD>spacja + kropka1</TD>
-</TR>
-<TR>
-<TD>przenieś monitor brajlowski do następnego wiersza</TD>
-<TD>spacja + kropka4</TD>
-</TR>
-<TR>
 <TD>przemieszczenie do brajlowskiej komórki</TD>
 <TD>routing set 1|</TD>
 </TR>
@@ -7860,19 +7897,19 @@ Oto skróty klawiszowe przydzielone dla tego monitora brajlowskiego.
 </TR>
 <TR>
 <TD>strzałka w górę</TD>
-<TD>joystick up</TD>
+<TD>joystick w górę, dpad w górę lub spacja+punkt1</TD>
 </TR>
 <TR>
 <TD>strzałka w dół</TD>
-<TD>joystick down</TD>
+<TD>joystick w dół, dpad w dół lub spacja+punkt4</TD>
 </TR>
 <TR>
-<TD>strzałka w lewo</TD>
-<TD>space+dot3 or joystick left</TD>
+<TD>Strzałka w lewo</TD>
+<TD>spacja+punkt3, joystick w lewo  lub dpad w lewo</TD>
 </TR>
 <TR>
 <TD>strzałka w prawo</TD>
-<TD>space+dot6 or joystick right</TD>
+<TD>spacja+punkt6, joystick w prawo lub dpad w prawo</TD>
 </TR>
 <TR>
 <TD>shift+tab</TD>
@@ -7892,7 +7929,7 @@ Oto skróty klawiszowe przydzielone dla tego monitora brajlowskiego.
 </TR>
 <TR>
 <TD>enter</TD>
-<TD>kropka8 lub joystick center</TD>
+<TD>punkt8, joystick przyciśnięty środkowo lub dpad środkowy</TD>
 </TR>
 <TR>
 <TD>window</TD>
