@@ -2,7 +2,9 @@
 
 
 %!includeconf: ../userGuide.t2tconf
+%!includeconf: ./locale.t2tconf
 %kc:title: NVDA NVDA_VERSION 指令快速參考
+%kc:includeconf: ./locale.t2tconf
 
 = 目錄 =[toc]
 %%toc
@@ -222,7 +224,7 @@ capsLock 鍵也可以設定為 NVDA 組合鍵。
 | 讀出狀態列 | NVDA+end | NVDA+shift+end | 如果 NVDA 找到狀態列則讀出，連按兩下拼讀資訊，連按三下複製內容到剪貼簿。 |
 | 讀出時間 | NVDA+F12 | 按一下讀出目前時間，連按兩下讀出日期。 |
 | 讀出文字格式 | NVDA+F | NVDA+F | 讀出游標所在的文字格式，按兩下以視窗顯示資訊 |
-| 讀出連結目標 | NVDA+K | NVDA+K | 按一下讀出[導覽物件 #ObjectNavigation]所在連結的目標 URL，連按兩下將它顯示在一個視窗中便於仔細瀏覽。 |
+| 讀出連結目標 | NVDA+K | NVDA+K | 按一下讀出目前游標或焦點位置所在連結的目標 URL，連按兩下將它顯示在一個視窗中便於仔細瀏覽。 |
 
 +++ 切換 NVDA 讀出的資訊 +++[ToggleWhichInformationNVDAReads]
 || 名稱 | 桌電快速鍵 | 筆電快速鍵 | 說明 |
@@ -2120,6 +2122,7 @@ NVDA 設定對話框中的「瀏覽模式」類別用於設定當您閱讀和導
 
 ==== 辨識語言 ====[Win10OcrSettingsRecognitionLanguage]
 此下拉式方塊允許您選擇要用來辨識的語言。
+要在任何地方循環切換可用語言，請使用[輸入手勢對話框 #InputGestures]來指派手勢。
 
 +++ 進階設定 +++[AdvancedSettings]
 警告！此類別的設定乃針對進階使用者，若進行錯誤的設定可能導致 NVDA 無法正常運作，
@@ -2135,8 +2138,8 @@ NVDA 設定對話框中的「瀏覽模式」類別用於設定當您閱讀和導
 
 ==== 啟用從開發者 Scratchpad 目錄載入自訂程式碼 ====[AdvancedSettingsEnableScratchpad]
 在開發 NVDA 附加元件時若能夠測試所撰寫的程式碼將是很有用的，
-啟用此選項允許 NVDA 從您的 NVDA 使用者組態目錄中的特殊開發者 scratchpad 目錄載入自訂應用程式模組、全域外掛程式、點顯器驅動程式與合成器驅動程式，
-以往 NVDA 會從使用者組態目錄中直接載入自訂程式碼而無法禁用。
+啟用此選項允許 NVDA 從您的 NVDA 使用者組態目錄中的特殊開發者 scratchpad 目錄載入自訂應用程式模組、全域外掛程式、點顯器驅動程式、合成器驅動程式與視覺加強器，
+就如同附加元件，這些模組會在啟動 NVDA 時載入，或者應用程式模組與全域外掛程式可在[重新載入外掛程式 #ReloadPlugins]時載入。
 此選項預設關閉，以確保 NVDA 不會在使用者不知情的情況下執行未經測試的程式碼。
 如果您希望將自訂的程式碼散發給他人，您應將它封裝成 NVDA 附加元件。
 
@@ -2349,7 +2352,11 @@ NVDA 預設忽略大小寫。
 您可以在「篩選」編輯區輸入符號或讀音替代文字的部分內容以篩選出想要編輯的符號。
 
 - 替代文字：允許您更改選取符號的讀音文字
-- 等級：您可調整符號要被讀出的最低等級設定
+- 等級：您可調整符號要被讀出的最低等級設定 (沒有、一些、多數、全部)
+您也可以將等級設為字元，在這種情況下無論使用的符號等級為何都不會說出該符號，除了以下兩種情況：
+ - 按字元導覽時。
+ - 當 NVDA 正在拼讀含有該符號的文字時。
+ -
 - 送出實際的符號到合成器：指定何時要將符號本身或其讀音替代文字送出到合成器。
 一個符號引發合成器產生朗讀停頓或語音的語調改變的效果相當有用，
 例如一個逗點 (或逗號) 引發朗讀的停頓，
@@ -2938,6 +2945,15 @@ Orbit Reader 20 的 USB 串列模式目前僅能在 Windows 10 及之後的版�
 | Move braille display to previous line | d1 |
 | Move braille display to next line | d3 |
 | Route to braille cell | routing |
+| shift+tab key | space+dot1+dot3 |
+| tab key | space+dot4+dot6 |
+| alt key | space+dot1+dot3+dot4 (space+m) |
+| escape key | space+dot1+dot5 (space+e) |
+| windows key | space+dot3+dot4 |
+| alt+tab key | space+dot2+dot3+dot4+dot5 (space+t) |
+| NVDA Menu | space+dot1+dot3+dot4+dot5 (space+n) |
+| windows+d key (minimize all applications) | space+dot1+dot4+dot5 (space+d) |
+| Say all | space+dot1+dot2+dot3+dot4+dot5+dot6 |
 
 對於具有搖桿的點顯器:
 || 名稱 | 按鍵 |
@@ -3650,6 +3666,10 @@ BRLTTY 不支援 NVDA 點顯器背景自動偵側的功能。
 | Moves the navigator object to the next object | ``f6`` |
 | Reports the current navigator object | ``f7`` |
 | Reports information about the location of the text or object at the review cursor | ``f8`` |
+| Shows braille settings | ``f1+home1``, ``f9+home2`` |
+| Reads status bar and moves navigator object into it | ``f1+end1``, ``f9+end2`` |
+| Cycle the braille cursor shape | ``f1+eCursor1``, ``f9+eCursor2`` |
+| Toggle the braille cursor | ``f1+cursor1``, ``f9+cursor2`` |
 | Performs the default action on the current navigator object | ``f7+f8`` |
 | Reports date/time | ``f9`` |
 | Reports battery status and time remaining if AC is not plugged in | ``f10`` |
@@ -3679,19 +3699,17 @@ NVDA 的自動點顯器偵測也會辨識支援此通訊協定的任何點顯器
 || 名稱 | 按鍵 |
 | Scroll braille display back | pan left or rocker up |
 | Scroll braille display forward | pan right or rocker down |
-| Move braille display to previous line | space + dot1 |
-| Move braille display to next line | space + dot4 |
 | Route to braille cell | routing set 1|
 | Toggle braille tethered to | up+down |
-| upArrow key | joystick up |
-| downArrow key | joystick down |
-| leftArrow key | space+dot3 or joystick left |
-| rightArrow key | space+dot6 or joystick right |
+| upArrow key | joystick up, dpad up or space+dot1 |
+| downArrow key | joystick down, dpad down or space+dot4 |
+| leftArrow key | space+dot3, joystick left  or dpad left |
+| rightArrow key | space+dot6, joystick right or dpad right |
 | shift+tab key | space+dot1+dot3 |
 | tab key | space+dot4+dot6 |
 | alt key | space+dot1+dot3+dot4 (space+m) |
 | escape key | space+dot1+dot5 (space+e) |
-| enter key | dot8 or joystick center |
+| enter key | dot8, joystick center or dpad center |
 | windows key | space+dot3+dot4 |
 | alt+tab key | space+dot2+dot3+dot4+dot5 (space+t) |
 | NVDA Menu | space+dot1+dot3+dot4+dot5 (space+n) |
