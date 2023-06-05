@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-04-15 19:14+0000\n"
+"POT-Creation-Date: 2023-06-05 12:04+0000\n"
 "PO-Revision-Date: 2022-11-13 09:01+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -70,6 +70,10 @@ msgstr ""
 #. type: Bullet: '* '
 msgid "Commands to help log reading and analyzing."
 msgstr "ログリーディングと解析を助けるコマンド。"
+
+#. type: Bullet: '* '
+msgid "Backups of old logs"
+msgstr ""
 
 #. type: Bullet: '* '
 msgid ""
@@ -405,9 +409,15 @@ msgstr ""
 "1文字を押すと、このメッセージの次の発生個所に移動します。shiftキーとこの文字"
 "の組み合わせでは、このメッセージの前の発生場所に移動します。"
 
-#. type: Title ###
+#. type: Plain text
 #, no-wrap
-msgid "Opening a file in your editor"
+msgid "<a id=\"logReaderOpenSourceFile\"></a>\n"
+msgstr ""
+
+#. type: Title ###
+#, fuzzy, no-wrap
+#| msgid "Opening a file in your editor"
+msgid "Open the file of the source code in your editor"
 msgstr "エディタでファイルを開く"
 
 #. type: Plain text
@@ -443,22 +453,62 @@ msgstr ""
 "を開きたいかもしれません。このファイルを開くにはCを押して下さい。"
 
 #. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "For this feature to work, you need to have configured your favorite "
+#| "editor's command.  If you are not running NVDA from source, the location "
+#| "of NVDA source code also should have been configured.  For more details "
+#| "regarding the configuration, please see the paragraph NVDA Debug & Test "
+#| "Tools configuration."
 msgid ""
-"For this feature to work, you need to have configured your favorite editor's "
-"command.  If you are not running NVDA from source, the location of NVDA "
-"source code also should have been configured.  For more details regarding "
-"the configuration, please see the paragraph NVDA Debug & Test Tools "
-"configuration."
+"For this feature to work, you need to have configured your [favorite "
+"editor's command](#settingsOpenCommand) in the add-on's settings.  If you "
+"are not running NVDA from source, the [location of NVDA source code]"
+"(#settingsNvdaSourcePath) should also have been configured."
 msgstr ""
 "この機能が働くようにするには、お好みのエディタのコマンドを設定しておく必要が"
 "あります。NVDAをソースから実行しているのではない場合、NVDAのソースコードの場"
 "所もまた、設定してある必要があります。設定についてより詳しくは、NVDA Debug & "
 "Test Tools設定の段落を参照して下さい。"
 
+#. type: Plain text
+#, no-wrap
+msgid "<a id=\"oldLogsBackup\"></a>\n"
+msgstr ""
+
+#. type: Title ###
+#, no-wrap
+msgid "Backup of old logs"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"NVDA already provides a backup of the log of the previous session of NVDA; "
+"the file is called `nvda-old.log`.  Sometimes however you may want to access "
+"older logs, e.g. because you have had to restart NVDA again before looking "
+"at `nvda-old.log`.  This add-on allows you to configure if you want to "
+"backup old logs and how many of them; this is done in the [add-on's settings]"
+"(#settingsLogsBackup)."
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"A log manager dialog allows to view the backed up logs.\n"
+"It can be opened going to NVDA menu -> Tools -> Logs manager\n"
+"In this dialog, you can see the list of all the backup logs, open or delete them.\n"
+"To be able to open a log, you should first have configured the [Command to open a file in your favorite editor](#settingsOpenCommand).\n"
+msgstr ""
+
 #. type: Title ##
 #, no-wrap
 msgid "Python console extension"
 msgstr "Pythonコンソール拡張"
+
+#. type: Plain text
+#, no-wrap
+msgid "<a id=\"pythonConsoleOpenCodeFile\"></a>\n"
+msgstr ""
 
 #. type: Title ###
 #, no-wrap
@@ -626,94 +676,101 @@ msgstr ""
 "ます。使用方法の詳細については、ファイル内の全てのインストラクションを見て下"
 "さい。"
 
+#. type: Plain text
+#, no-wrap
+msgid "<a id=\"settings\"></a>\n"
+msgstr ""
+
 #. type: Title ##
 #, no-wrap
-msgid "NVDA Debug & Test Tools configuration"
-msgstr "NVDA Debug & Test Tools 設定"
+msgid "Settings"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"Some features of the add-on may require a specific configuration.\n"
+"A settings panel allows to enable them or to control how they work.\n"
+"To view and modify these settings, go to NVDA menu -> Preferences and select the category NVDA Dev & Test Toolbox.\n"
+"This settings dialog can also be accessed directly from the Logs Manager dialog.\n"
+msgstr ""
+
+#. type: Plain text
+msgid "These settings are global and are not affected by profile switching."
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid "<a id=\"settingsOpenCommand\"></a>\n"
+msgstr ""
+
+#. type: Title ###
+#, fuzzy, no-wrap
+#| msgid "Opening a file in your editor"
+msgid "Command to open a file in your favorite editor"
+msgstr "エディタでファイルを開く"
 
 #. type: Plain text
 msgid ""
-"The log reader commands and the python console extension feature may require "
-"a specific configuration.  To use functions that allow to view source code "
-"in your editor, you should first configure your editor's command line.  If "
-"NVDA's file need to be viewed and if you are not running from source, you "
-"also need to configure NVDA's source code path."
+"Some features allow to see content in your favorite editor.  This includes "
+"the commands to view the source file [from a log](#logReaderOpenSourceFile) "
+"or [from an object in the console](#pythonConsoleOpenCodeFile) as well as "
+"the [log manager](#oldLogsBackup)'s Open button."
 msgstr ""
-"ログリーダーコマンドとpythonコンソール拡張機能は、特定の設定を要することがあ"
-"ります。ソースコードをエディタで閲覧出来る機能を使用するには、最初に、エディ"
-"タのコマンドラインを設定する必要があります。もしNVDAのファイルを閲覧する必要"
-"があり、ソースから実行していない場合、NVDAのソースコードのパスも設定する必要"
-"があります。"
-
-#. type: Title ###
-#, no-wrap
-msgid "Editor's command line configuration"
-msgstr "エディタのコマンドライン設定"
 
 #. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "To use the 'open source code' command or the `openCodeFile` console command, you need first to configure the command that will be called to open the file in your favorite editor.  For this, open the NVDA console (NVDA+control+Z) and type the following line and then Enter:"
 msgid ""
-"To use the 'open source code' command or the `openCodeFile` console command, "
-"you need first to configure the command that will be called to open the file "
-"in your favorite editor.  For this, open the NVDA console (NVDA+control+Z) "
-"and type the following line and then Enter: `config.conf['ndtt']"
-"['sourceFileOpener'] = r'\"C:\\path\\to\\my\\editor\\editor.exe\" \"{path}\":"
-"{line}'` You should of course modify this line according to the real name "
-"and location of your editor and the syntax used by it to open files.  `{path}"
-"` will be replaced by the full path of the file to open and `{line}` by the "
-"line number where you want the cursor to be set.  For Notepad++ for example "
-"the command to type in the console would be: `config.conf['ndtt']"
-"['sourceFileOpener'] = r'\"C:\\Program Files\\Notepad++\\notepad++.exe\" "
-"\"{path}\" -n{line}'`"
+"To use them, you first need to configure the command that will be called to open the file in your favorite editor.\n"
+"The command should be of the form:  \n"
+msgstr "「ソースコードを開く」コマンド、または、openCodeFileコンソールコマンドを使用するには、最初にファイルをお好みのエディタで開くのに呼び出されるコマンドを設定する必要があります。そのためには、NVDAコンソールを開き（NVDA+control+Z)、次の行を入力して、Enterします："
+
+#. type: Plain text
+#, no-wrap
+msgid "`\"C:\\path\\to\\my\\editor\\editor.exe\" \"{path}\":{line}`  \n"
 msgstr ""
-"'open source code'コマンドまたは `openCodeFile` コンソールコマンドを使用する"
-"には、 好きなエディタでファイルを開くために呼び出されるコマンドを最初に設定す"
-"る必要があります。そのためには、NVDAコンソールを開き (NVDA+control+Z)、次の行"
-"を入力してエンターを押して下さい: `config.conf['ndtt']['sourceFileOpener'] = "
-"r'\"C:\\path\\to\\my\\editor\\editor.exe\" \"{path}\":{line}'` もちろんこの行"
-"は、実際の名前、エディタの場所、ファイルを開くのに使用されるsyntaxに従って修"
-"正する必要があります。 `{path}` はファイルを開くフルパスに、`{line}`はカーソ"
-"ルを合わせたい行番号に置き換えられます。 例えば、Notepad++では、コンソールに"
-"て入力されるコマンドは次のようになります: `config.conf['ndtt']"
-"['sourceFileOpener'] = r'\"C:\\Program Files\\Notepad++\\notepad++.exe\" "
-"\"{path}\" -n{line}'`"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"You should of course modify this line according to the real name and location of your editor and the syntax used by it to open files.\n"
+"`{path}` will be replaced by the full path of the file to open and `{line}` by the line number where you want the cursor to be set.\n"
+"For Notepad++ for example the command to type in the console would be:  \n"
+msgstr ""
+
+#. type: Plain text
+msgid "`\"C:\\Program Files\\Notepad++\\notepad++.exe\" \"{path}\" -n{line}`"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid "<a id=\"settingsNvdaSourcePath\"></a>\n"
+msgstr ""
 
 #. type: Title ###
-#, no-wrap
-msgid "NVDA source code path configuration"
+#, fuzzy, no-wrap
+#| msgid "NVDA source code path configuration"
+msgid "NVDA source code path"
 msgstr "NVDAソースコードのパスの設定"
 
 #. type: Plain text
+#, no-wrap
 msgid ""
-"When a file belonging to NVDA's core is listed in the traceback, the line is "
-"of the following form: `File \"config\\profileUpgrader.pyc\", line 30, in "
-"upgrade`"
+"When using a command to [view the source file from a log](#logReaderOpenSourceFile) or [from an object in the console](#pythonConsoleOpenCodeFile), the file may belong to NVDA itself.\n"
+"If you are not running NVDA from source, your NVDA only contains compiled files.\n"
+"Thus you may specify here an alternate location where the corresponding source file will be found, e.g. the place where you have cloned NVDA source files, so that a source file can be opened anyway.\n"
+"The path should be such as:  \n"
 msgstr ""
-"NVDAの核に属するファイルがtracebackにリストされている場合、その行は次のような"
-"形をしています: `File \"config\\profileUpgrader.pyc\", line 30, in upgrade`"
 
 #. type: Plain text
-msgid ""
-"If you are not running NVDA from source, you may specify an alternate "
-"location where the source file will be found, e.g. the place where you have "
-"cloned NVDA source files.  In this case, you have to configure the path "
-"where you have NVDA source files located."
+#, no-wrap
+msgid "`C:\\pathExample\\GIT\\nvda\\source`  \n"
 msgstr ""
-"もしNVDAをソースから実行していない場合、ソースファイルが見つかる、例えばNVDA"
-"のソースファイルをクローンした場所のような、代わりの場所を特定することが出来"
-"ます。この場合、NVDAのソースファイルがある場所のパスを設定しなければなりませ"
-"ん。"
 
 #. type: Plain text
-msgid ""
-"For this, open the NVDA console (NVDA+control+Z) and type the following line "
-"and then Enter: `config.conf['ndtt']['nvdaSourcePath'] = r'C:\\pathExample"
-"\\GIT\\nvda\\source'` Of course, replace the path of NVDA source with the "
-"correct one."
-msgstr ""
-"そのためには、NVDAコンソールを開き (NVDA+control+Z) 、次の行を入力してエン"
-"ターを押します:`config.conf['ndtt']['nvdaSourcePath'] = r'C:\\pathExample"
-"\\GIT\\nvda\\source'` もちろん、NVDAソースのパスは実際の物に置き換えて下さ"
-"い。"
+msgid "Of course, replace the path of NVDA source with the correct one."
+msgstr "もちろん、NVDAのソースのパスは、正しいものに置き換えて下さい。"
 
 #. type: Plain text
 msgid ""
@@ -723,10 +780,71 @@ msgstr ""
 "しかしながら、ソースファイル（例えばGITコミット）のバージョンが、NVDAの実行イ"
 "ンスタンスと同じものであるようにして下さい。"
 
+#. type: Plain text
+#, no-wrap
+msgid "<a id=\"settingsLogsBackup\"></a>\n"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"The combobox Backup of old logs allows to enable or disable the [feature]"
+"(#oldLogsBackup).  If it is enabled, you can also specify below in \"Limit "
+"the number of backups\" the maximum number of backups you want to keep.  "
+"These settings only take effect at next NVDA startup when the backup takes "
+"place."
+msgstr ""
+
 #. type: Title ##
 #, no-wrap
 msgid "Change log"
 msgstr "変更履歴"
+
+#. type: Title ###
+#, fuzzy, no-wrap
+#| msgid "Version 3.0"
+msgid "Version 4.0"
+msgstr "バージョン3.0"
+
+#. type: Bullet: '* '
+msgid "Possibility to back up old logs and introduction of a logs manager."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "Added a script to report the last logged error."
+msgstr ""
+
+#. type: Bullet: '* '
+#, fuzzy
+#| msgid ""
+#| "Fixed an issue when trying to report roles/states for object explorer in "
+#| "older version of NVDA."
+msgid ""
+"Fixed a bug preventing last log message to be read in older NVDA versions."
+msgstr ""
+"NVDAの古いバージョンのオブジェクトエクスプローラにroles/statesを報告しようと"
+"する場合の問題の修正。"
+
+#. type: Title ###
+#, fuzzy, no-wrap
+#| msgid "Version 3.0"
+msgid "Version 3.2"
+msgstr "バージョン3.0"
+
+#. type: Bullet: '* '
+msgid "Compatibility with NVDA 2023.1."
+msgstr ""
+
+#. type: Title ###
+#, fuzzy, no-wrap
+#| msgid "Version 3.0"
+msgid "Version 3.1"
+msgstr "バージョン3.0"
+
+#. type: Bullet: '* '
+msgid ""
+"Fixed an error occurring when requesting unavailable information on an "
+"object."
+msgstr ""
 
 #. type: Title ###
 #, no-wrap
@@ -918,6 +1036,82 @@ msgid ""
 "html#toc22"
 msgstr ""
 
+#~ msgid "NVDA Debug & Test Tools configuration"
+#~ msgstr "NVDA Debug & Test Tools 設定"
+
+#~ msgid ""
+#~ "The log reader commands and the python console extension feature may "
+#~ "require a specific configuration.  To use functions that allow to view "
+#~ "source code in your editor, you should first configure your editor's "
+#~ "command line.  If NVDA's file need to be viewed and if you are not "
+#~ "running from source, you also need to configure NVDA's source code path."
+#~ msgstr ""
+#~ "ログリーダーコマンドとpythonコンソール拡張機能は、特定の設定を要することが"
+#~ "あります。ソースコードをエディタで閲覧出来る機能を使用するには、最初に、エ"
+#~ "ディタのコマンドラインを設定する必要があります。もしNVDAのファイルを閲覧す"
+#~ "る必要があり、ソースから実行していない場合、NVDAのソースコードのパスも設定"
+#~ "する必要があります。"
+
+#~ msgid "Editor's command line configuration"
+#~ msgstr "エディタのコマンドライン設定"
+
+#~ msgid ""
+#~ "To use the 'open source code' command or the `openCodeFile` console "
+#~ "command, you need first to configure the command that will be called to "
+#~ "open the file in your favorite editor.  For this, open the NVDA console "
+#~ "(NVDA+control+Z) and type the following line and then Enter: `config."
+#~ "conf['ndtt']['sourceFileOpener'] = r'\"C:\\path\\to\\my\\editor\\editor."
+#~ "exe\" \"{path}\":{line}'` You should of course modify this line according "
+#~ "to the real name and location of your editor and the syntax used by it to "
+#~ "open files.  `{path}` will be replaced by the full path of the file to "
+#~ "open and `{line}` by the line number where you want the cursor to be "
+#~ "set.  For Notepad++ for example the command to type in the console would "
+#~ "be: `config.conf['ndtt']['sourceFileOpener'] = r'\"C:\\Program Files"
+#~ "\\Notepad++\\notepad++.exe\" \"{path}\" -n{line}'`"
+#~ msgstr ""
+#~ "'open source code'コマンドまたは `openCodeFile` コンソールコマンドを使用す"
+#~ "るには、 好きなエディタでファイルを開くために呼び出されるコマンドを最初に"
+#~ "設定する必要があります。そのためには、NVDAコンソールを開き (NVDA+control"
+#~ "+Z)、次の行を入力してエンターを押して下さい: `config.conf['ndtt']"
+#~ "['sourceFileOpener'] = r'\"C:\\path\\to\\my\\editor\\editor.exe\" "
+#~ "\"{path}\":{line}'` もちろんこの行は、実際の名前、エディタの場所、ファイル"
+#~ "を開くのに使用されるsyntaxに従って修正する必要があります。 `{path}` はファ"
+#~ "イルを開くフルパスに、`{line}`はカーソルを合わせたい行番号に置き換えられま"
+#~ "す。 例えば、Notepad++では、コンソールにて入力されるコマンドは次のようにな"
+#~ "ります: `config.conf['ndtt']['sourceFileOpener'] = r'\"C:\\Program Files"
+#~ "\\Notepad++\\notepad++.exe\" \"{path}\" -n{line}'`"
+
+#~ msgid ""
+#~ "When a file belonging to NVDA's core is listed in the traceback, the line "
+#~ "is of the following form: `File \"config\\profileUpgrader.pyc\", line 30, "
+#~ "in upgrade`"
+#~ msgstr ""
+#~ "NVDAの核に属するファイルがtracebackにリストされている場合、その行は次のよ"
+#~ "うな形をしています: `File \"config\\profileUpgrader.pyc\", line 30, in "
+#~ "upgrade`"
+
+#~ msgid ""
+#~ "If you are not running NVDA from source, you may specify an alternate "
+#~ "location where the source file will be found, e.g. the place where you "
+#~ "have cloned NVDA source files.  In this case, you have to configure the "
+#~ "path where you have NVDA source files located."
+#~ msgstr ""
+#~ "もしNVDAをソースから実行していない場合、ソースファイルが見つかる、例えば"
+#~ "NVDAのソースファイルをクローンした場所のような、代わりの場所を特定すること"
+#~ "が出来ます。この場合、NVDAのソースファイルがある場所のパスを設定しなければ"
+#~ "なりません。"
+
+#~ msgid ""
+#~ "For this, open the NVDA console (NVDA+control+Z) and type the following "
+#~ "line and then Enter: `config.conf['ndtt']['nvdaSourcePath'] = r'C:"
+#~ "\\pathExample\\GIT\\nvda\\source'` Of course, replace the path of NVDA "
+#~ "source with the correct one."
+#~ msgstr ""
+#~ "そのためには、NVDAコンソールを開き (NVDA+control+Z) 、次の行を入力してエン"
+#~ "ターを押します:`config.conf['ndtt']['nvdaSourcePath'] = r'C:\\pathExample"
+#~ "\\GIT\\nvda\\source'` もちろん、NVDAソースのパスは実際の物に置き換えて下さ"
+#~ "い。"
+
 #~ msgid ""
 #~ "When looking at a traceback, you may want to open one of the source files "
 #~ "to understand the cause and the context of the issue.  Press C to open "
@@ -936,17 +1130,6 @@ msgstr ""
 #~ "View the class definition of the focused object: `openCodeFile(focus)`"
 #~ msgstr ""
 #~ "フォーカスされたオブジェクトのクラス定義を閲覧: `openCodeFile(focus)`"
-
-#~ msgid ""
-#~ "To use the 'open source code' command or the `openCodeFile` console "
-#~ "command, you need first to configure the command that will be called to "
-#~ "open the file in your favorite editor.  For this, open the NVDA console "
-#~ "(NVDA+control+Z) and type the following line and then Enter:"
-#~ msgstr ""
-#~ "「ソースコードを開く」コマンド、または、openCodeFileコンソールコマンドを使"
-#~ "用するには、最初にファイルをお好みのエディタで開くのに呼び出されるコマンド"
-#~ "を設定する必要があります。そのためには、NVDAコンソールを開き（NVDA+control"
-#~ "+Z)、次の行を入力して、Enterします："
 
 #~ msgid ""
 #~ "You should of course modify this line according to the real name and "
@@ -973,6 +1156,3 @@ msgstr ""
 #~ msgstr ""
 #~ "そのためには、NVDAコンソールを開き（NVDA+control+Z）、次の行を入力して"
 #~ "Enterします:"
-
-#~ msgid "Of course, replace the path of NVDA source with the correct one."
-#~ msgstr "もちろん、NVDAのソースのパスは、正しいものに置き換えて下さい。"
