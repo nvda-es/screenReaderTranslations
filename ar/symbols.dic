@@ -3,18 +3,28 @@
 #Copyright (c) 2011-2012 NV Access Inc
 #This file is covered by the GNU General Public License.
 complexSymbols:
+# identifier	regexp
+# Sentence endings.
+. sentence ending	(?<=[^\s.])\.(?=[\"'”’)\s]|$)
 ؟ sentence ending	(?<=[^\s!])\!(?=[\"'”’)\s]|$)
+! نهاية الجملة	(?<=[^\s!])\!(?=[\"'”’)\s]|$)
+# Phrase endings.
+; phrase ending	(?<=[^\s;]);(?=\s|$)
+: phrase ending	(?<=[^\s:]):(?=\s|$)
+# Others
+decimal point	(?<![^\d -])\.(?=\d)
+
 symbols:
 # identifier	replacement[[	level][	preserve]][	# display name]
 
 # Complex symbols
-. sentence ending	نقطة
-! sentence ending	تعجب
+. sentence ending	نقطة	الكل	دائما
+! sentence ending	تعجب	all	always
 ? sentence ending	استفهام
 ؟ sentence ending	استفهام
 ; phrase ending	فاصلة منقوطة
-: phrase ending	نقطتين فوقيتين
-decimal point		none
+: phrase ending	نقطتان رأسيتان
+decimal point		لا شيء
 in-word '	apostrophe
 negative number	ناقص
 
@@ -38,7 +48,7 @@ $	دولار
 &	وا
 '	apostrophe
 (	فَتْحُ قَوْسْ	most
-)	غَلْقْ قَوْسْ	most
+)	غَلْقُ قَوْسْ	most
 *	نجمة	some
 +	زائد	some
 ,	فاصلة	all	always
