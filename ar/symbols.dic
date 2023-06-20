@@ -22,20 +22,20 @@ symbols:
 ! sentence ending	تعجب	all	always
 ? sentence ending	استفهام	all	always
 ؟  sentence ending	استفهام	all	always
-; phrase ending	فاصلة منقوطة
-: phrase ending	نقطتان رأسيَّتان
-decimal point		لا شيء
-in-word '	apostrophe
-negative number	ناقص
+; phrase ending	فاصلة منقوطة	most	always
+: phrase ending	نقطتان رأسيَّتان	most	always
+decimal point		none	always
+in-word '	apostrophe	all	norep
+negative number	ناقص	none	norep
 
 # Whitespace
-\0	خالي
+\0	خالٍ	char	# null
 \t	انتقال
-\n	السطر التالي
-\f	فاصل الصفحة	لا شيء
+\n	السطر التالي	char
+\f	فاصل الصفحة		none
 \r	حد السطر	char
  	مسافة	char
- 	مسافة
+ 	مسافة	char	# no-break space
 
 # Standard punctuation/symbols
 !	تعجُّب	all
@@ -57,7 +57,6 @@ $	دولار	all	norep
 )	إغلاقُ قَوْسٍ هلالي	most	always
 *	نجمة	some
 ,	فاصلة	all	always
-+	زائد	some
 ،	فاصلة	all	always
 -	شَرطة	most	always
 .	نقطة	some
@@ -65,9 +64,6 @@ $	دولار	all	norep
 :	نقطتان رأسيَّتان	most	norep
 ;	فاصلة منقوطة	most
 ؛	فاصلة منقوطة	most
-<	أصغر من	most
->	أكبر من	most
-=	يساوي	some
 ?	استفهام	all
 ؟	استفهام	all
 @	at	some
@@ -82,13 +78,14 @@ _	خط سُفْلِي	most
 |	شريط	most
 ~	tilda	most
 ¡	علامة تعجُّب مقلوبة	some
+¿	علامة استفهام مقلوبة mark	some
 ·	نقطة في الوسط	most
 ‚	علامة اقتباس منخفضة منفردة	most
 „	علامة اقتباس منخفضة مزدوجة	most
 
 # Other characters
 •	نقطة تعداد	some
-…	علامة الحذف	all	always
+…	نقطة نقطة نقطة	all	always
 ...	نقطة نقطة نقطة	all	always
 	bullet	some
 “	فتح تنصيص	most
@@ -108,8 +105,11 @@ _	خط سُفْلِي	most
 ■	مربع أَسود
 ▪	مربَّع صغير أَسود	some
 □	مربَّع أبيض	some
+◦	رمز نقطي مفَرَّغ	some
 ♦	ألماسة سوداء	some
 ◆	مُعيَّن ممتلئ	some
+⇨	سهم مفرَّغ إلى اليمين	some
+➔	سهم يُشير لليمين	some
 §	قسم
 °	درجات
 «	علامة تنصيص مزدوجة للفتح	none
@@ -146,10 +146,24 @@ _	خط سُفْلِي	most
 #Arithmetic operators
 +	زائد	some
 −	ناقص	some
-×	ضر
+×	ضرب
+∕	شَرْطة القسمة المائلة	some
+⁄	شرطة مائلة في كسر	some
 ÷	قسمة
 ∓	ناقص أو زائد	some
 ±	زائد أو ناقص	some
+
+#Equality signs
+=	يساوي	some
+≃	يساوي تقاربيا	none
+≄	لا يساوي بشكل متقارب	none
+≅	يساوي تقريبا	none
+≆	تقريبا ولكن لا يساويه في الحقيقة equal to	none
+≠	لا يساوي	none
+<	أصغر من	most
+>	أكبر من	most
+
+
 
 # arabic symbols
 ،	فاصلة	all	always
