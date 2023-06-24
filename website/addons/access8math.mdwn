@@ -3,6 +3,33 @@
 * Authors: Woody Tseng
 * Download [stable version][1]
 
+# Access8Math feature
+
+This NVDA addon enhances the mathematical content reading and writing experience.
+
+The reading feature includes improved language translation in the ability to segment long math content into smaller parts using interactive navigation.
+
+The writing feature includes a command menu for easier LaTeX/AsciiMath/Nemeth input and the ability to export to a visually readable HTML document for better collaboration.
+
+## reading feature
+
+* Reads entire lines including text and mathematical content
+* Provides interactive navigation to move, read, and zoom in or out on mathematical content snippets
+* Allows for reviewing text while interactive navigation
+* Uses simplified speech rules
+* Breaks speech between items in mathematical content
+
+## writing feature
+
+* Allows writing of mathematical content using LaTeX/AsciiMath/Nemeth
+* Provides a command menu for inputting LaTeX
+* Offers shortcut gestures for inputting LaTeX
+* Allows for more efficient cursor movement during editing
+* Allows reads documents containing LaTeX/AsciiMath/Nemeth data in real-time while editing the document
+* Provides  converting text files into HTML files for preview and export.
+
+# Access8Math feature
+
 This NVDA add-on enhances speech and braille output for mathematical content. Although the NVDA already integrating MathPlayer, certain aspects require improvement, such as the lack or incompleteness of language-specific translation, language-specific interactive navigation.
 
 Interactive navigation dissects mathematical content into smaller portions for speech or braille output, allowing for the selection of the desired fragment and mode of delivery through keyboard commands. This enhances one's understanding of the structure and elements of lengthy mathematical content, and the hierarchical relationships between items.
@@ -22,10 +49,10 @@ By pressing the space bar or enter key on a MathML math object, you can enter na
 
 The following commands are available in navigation interactive mode:
 
-* "Down Arrow": Zoom in on a smaller subpart of the math content.
-* "Up Arrow": Zoom out to  a larger subpartthe of the math content .
-* "Left Arrow": Move to the previous math content.
-* "Right Arrow": Move to the next math content.
+* "Down Arrow": shrink the reading snippet(zoom in)
+* "Up Arrow": enlarge the reading snippet(zoom out)
+* "Left Arrow": Moves to the previous math content.
+* "Right Arrow": Moves to the next math content.
 * "home": Moves back to the top of the entire math content.
 * "ctrl+C": Copies the MathML source code of the object.
 * "numpad 1~9": Reads the math content as serialized text using NVDA Reviewing Text.
@@ -37,19 +64,21 @@ Comprehensive content: Incorporating Both Text and Mathematical Content
 
 For Windows 11, the Access8Math editor must be used, while for Windows 10 or earlier versions, either Access8Math editor or Notepad can be used. It is recommended to use the built-in Access8Math editor for writing comprehensive content.
 
-To differentiate between text content and mathematical content, LaTeX/AsciiMath separate markers should be used to frame the mathematical area. In other words, the data within the math marker area represents the mathematical content writen by LaTeX/AsciiMath and the text content outside of the math marker area represents regular text.
+To distinguish between text content and mathematical content, you can use delimiters to enclose the mathematical notation area. This means that any data within the mathematical notation area will be considered mathematical content according to the specified delimiter, while data outside of the mathematical notation area will be treated as text content.
 
 | category | start delimiter | end delimiter |
 | --- | --- | --- |
 | LaTeX(bracket) | \( | \) |
 | LaTeX(money) | $ | $ |
 | AsciiMath | ` | ` |
+| Nemeth(UEB) | _% | _: |
+| Nemeth(at) | @ | @ |
 
-You can choose to use brackets or money  for LaTeX delimiter in the writing setting.
+You can choose what delimiter use for LaTeX/Nemeth in the writing setting.
 
 ### Command gesture (toggle: NVDA+alt+c)
 
-alt+m: The mark command window pops up, select LaTeX/AsciiMath and press enter to add LaTeX/AsciiMath marks before and after the currently selected text (the current cursor when no text is selected) and automatically move the cursor into it. Enter content quickly.
+alt+m: The mark command window pops up, select LaTeX/AsciiMath/Nemeth and press enter to add LaTeX/AsciiMath marks before and after the currently selected text (the current cursor when no text is selected) and automatically move the cursor into it. Enter content quickly.
 
 alt+l: Pop up the LaTeX command window, select the LaTeX command item to be added and press the enter key to add the corresponding LaTeX syntax at the current cursor and automatically move the cursor to the appropriate input point for quick input.
 
@@ -146,6 +175,7 @@ For the following keys, if you only press the single key, the editing cursor wil
 
 * l: Move to the next LaTeX data block and read it out
 * a: Move to the next AsciiMath data block and read it out
+* n: Move to the next Nemeth data block and read it out
 * m: move to the next MathML data block and read
 * t: move to the next text block and read it
 * tab: move to the next interactive block (math block) and read it out
@@ -171,9 +201,11 @@ In File Explorer, you can press the NVDA+application, if the selected path is tx
 
 ### content example:
 
-* LaTeX(by bracket separator): The solution of the quadratic equation in one variable \(ax^2+bx+c=0\) is \(\frac{-b\pm\sqrt{b^2-4ac}}{2a}\) .
-* LaTeX(by dollar separator): The solution of the quadratic equation in one variable $ax^2+bx+c=0$ is $\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ .
+* LaTeX(bracket): The solution of the quadratic equation in one variable \(ax^2+bx+c=0\) is \(\frac{-b\pm\sqrt{b^2-4ac}}{2a}\) .
+* LaTeX(dollar): The solution of the quadratic equation in one variable $ax^2+bx+c=0$ is $\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ .
 * AsciiMath: The solution of the quadratic equation in one variable `ax^2+bx+c=0` is `x=(-b+- \sqrt(b^2-4ac))/(2a)` .
+* Nemeth(UEB): The solution of the quadratic equation in one variable _%⠁⠭⠘⠆⠐⠬⠃⠭⠬⠉⠀⠨⠅⠀⠴_: is _%⠭⠀⠨⠅⠀⠹⠤⠃⠬⠤⠜⠃⠘⠆⠐⠤⠲⠁⠉⠻⠌⠆⠁⠼_: .
+* Nemeth(at): The solution of the quadratic equation in one variable @⠁⠭⠘⠆⠐⠬⠃⠭⠬⠉⠀⠨⠅⠀⠴@ is @⠭⠀⠨⠅⠀⠹⠤⠃⠬⠤⠜⠃⠘⠆⠐⠤⠲⠁⠉⠻⠌⠆⠁⠼@ .
 * MathML: The solution of the quadratic equation in one variable <math display="inline"><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi><mo>=</mo><mn>0</mn></math> is <math display="inline"><mfrac><mrow><mo>−</mo><mi>b</mi><mi>±</mi><msqrt><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></math> .
 
 ## settings
@@ -204,9 +236,9 @@ All Access8Math settings are centralized in tools -> Access8Math->Settings
 
 ### Math reader
 
-*	Speech source:
-*	Braille source:
-*	Interact source:
+* Speech source:
+* Braille source:
+* Interact source:
 
 ## localization
 
@@ -218,7 +250,7 @@ The "Unicode Dictionary" enables you to customize speech or braille output for s
 
 ### Math Rules
 
-Access8Math establishes 46 mathematical rules according to the mathematical type and logic to decide the reading math method and order. According to different local math reading logic, the math reading text and order can be changed. The method is as follows:
+Access8Math establishes mathematical rules according to the mathematical type and logic to decide the reading math method and order. According to different local math reading logic, the math reading text and order can be changed. The method is as follows:
 
 Edit: After entering the "math rule", the window lists 46 math rules. Choose any math rule and select the "Edit" to enter the editing entry.
 
@@ -245,7 +277,8 @@ Math contents in Wiki are all written by MathML.
 
 Quadratic equation
 
-* LaTeX: \(ax^2+bx+c=0\)
+* LaTeX: \(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\)
+* AsciiMath: `x=(-b+- \sqrt(b^2-4ac))/(2a)`
 * MathML: <math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mo>-</mo><mi>b</mi><mo>&#xB1;</mo><msqrt><msup><mi>b</mi><mn>2</mn></msup><mo>-</mo><mn>4</mn><mi>a</mi><mi>c</mi></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></math>
 
 github: https://github.com/tsengwoody/Access8Math
@@ -253,6 +286,14 @@ github: https://github.com/tsengwoody/Access8Math
 Please report any bugs or comments, thank you!
 
 # Access8Math update log
+
+## Access8Math v3.6 Update
+
+* new feature: Nemeth Braille Input, with the same functionality as LaTeX input. Allows for real-time interactive navigation (Alt+I) during editing and supports outputting HTML+MathML documents.
+* new feature: Added Nemeth delimiter UEB/at(@@) for distinguish Nemeth content.
+* new feature: You can convert and copy LaTeX from Math object in interactive navigation mode.
+* Added the NVDA+Shift+F10 shortcut to open  virtual context menu in the file explorer.
+* Fixed and optimized localized UI issues and cleaned localized file format.
 
 ## Access8Math v3.5 Update
 
