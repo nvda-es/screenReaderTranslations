@@ -2,7 +2,9 @@ NVDA NVDA_VERSION brugervejledning
 
 
 %!includeconf: ../userGuide.t2tconf
+%!includeconf: ./locale.t2tconf
 %kc:title: NVDA NVDA_VERSION Kommandooversigt
+%kc:includeconf: ./locale.t2tconf
 
 = Indholdsfortegnelse =[toc]
 %%toc
@@ -222,7 +224,7 @@ De faktiske kommandoer vil ikke udføres, når tastaturhjælpen er slået til. T
 | Læs statuslinjen | ``NVDA+end`` | ``NVDA+shift+end`` | Læser statuslinjen, såfremt NVDA kan finde den. To tryk staver informationen. Ved et tredje tryk kopieres informationen til udklipsholderen |
 | Læs tid | ``NVDA+f12`` | ``NVDA+f12`` | Ved ét tryk oplyses tiden. Hvis du trykker to gange, vil du få datoen oplyst |
 | Oplys tekstformattering | ``NVDA+f`` | ``NVDA+f`` | Denne kommando oplyser formatteringsoplysninger for den aktuelle tekst. Ved to tryk vises disse informationer i et vindue |
-| Oplys adresse for link | ``NVDA+k`` | ``NVDA+k`` | Oplyser webadressen for linket ved navigatorobjektet. Hvis der trykkes to gange, vises linket i et vindue for lettere gennemgang. |
+| Oplys adresse for link | ``NVDA+k`` | ``NVDA+k`` | Oplyser webadressen for linket ved markøren eller fokuspositionen. Hvis der trykkes to gange, vises linket i et vindue for lettere gennemgang. |
 
 +++ Vælg, hvilke informationer NVDA skal læse +++[ToggleWhichInformationNVDAReads]
 || Navn | Desktop tast | Laptop tast | Beskrivelse |
@@ -2349,7 +2351,11 @@ For at ændre et symbol, skal du først vælge det i listen med symboler.
 Du kan filtrere listen ved at indtaste symbolet eller en del af symbolets erstatning i det tilsvarende felt.
 
 - I feltet erstatning, kan du skrive den tekst du vil have læst i stedet for det oprindelige symbol.
-- I feltet niveau, kan du justere det laveste symbolniveau dette symbol skal udtales ved.
+- I feltet niveau, kan du justere det laveste symbolniveau dette symbol skal udtales ved (ingen, nogle, flere eller alle).
+Du kan også indstille niveauet til "tegn". I dette tilfælde bliver symbolet ikke oplæst uanset symbolniveau, medmindre følgende er aktuelt:
+ - Når du navigerer tegn for tegn
+ - Når NVDA staver tekst, hvor symbolet fremkommer
+ - 
 - Med feltet "Send selve symbolet til talesyntese" kan du specificere, hvornår symbolet selv, i modsætning til erstatningsteksten, skal sendes til talesyntesen.
 Dette kan være nyttigt, hvis tegnet får talesyntesen til at holde en pause eller ændre på tonehøjden.
 F.eks., et komma kan få talesyntesen til at holde en pause.
@@ -2938,6 +2944,15 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 | Flyt punktdisplay to forrige linje | d1 |
 | Flyt punktdisplay til næste linje | d3 |
 | Flyt til punktcelle | markørsammenføringsknapper |
+| shift+tab | mellemrum+punkt1+punkt3 |
+| tab | mellemrum+punkt4+punkt6 |
+| alt | mellemrum+punkt1+punkt3+punkt4 (mellemrum+m) |
+| escape | mellemrum+punkt1+punkt5 (mellemrum+e) |
+| windows | mellemrum+punkt3+punkt4 |
+| alt+tab | mellemrum+punkt2+punkt3+punkt4+punkt5 (mellemrum+t) |
+| NVDA-menu | mellemrum+punkt1+punkt3+punkt4+punkt5 (mellemrum+n) |
+| windows+d (minimer alle applikationer) | mellemrum+punkt1+punkt4+punkt5 (mellemrum+d) |
+| Sig alt | mellemrum+punkt1+punkt2+punkt3+punkt4+punkt5+punkt6 |
 
 For displays der har et joystick:
 || Navn | Tast |
@@ -3679,19 +3694,17 @@ Følgende er tastekombinationerne ved brug af displays, der bruger denne standar
 || Navn | Tast |
 | Rul punktdisplay tilbage | panorer til venstre eller vippeknap op|
 | Rul punktdisplay fremad | panorer til højre eller vippeknap ned |
-| Flyt punktdisplay til forrige linje | mellemrum + punkt1 |
-| Flyt punktdisplay til næste linje | mellemrum + punkt4 |
 | Flyt til punktcelle | markørflytteknap|
 | Skift indstillingen Punkt følger | op+ned |
-| Pil op | joystick op |
-| Pil ned | joystick ned |
-| Venstre pil | mellemrum+punkt3 eller joystick venstre |
-| Højre pil | mellemrum+punkt6 eller joystick højre |
+| Pil op | joystick op , dpad op eller mellemrum+punkt1 |
+| Pil ned | joystick ned , dpad ned eller mellemrum+punkt4 |
+| Venstre pil | mellemrum+punkt3, joystick venstre eller dpad venstre |
+| Højre pil | mellemrum+punkt6, joystick højre eller dpad højre |
 | shift+tab | mellemrum+punkt1+punkt3 |
 | tab | mellemrum+punkt4+punkt6 |
 | alt | mellemrum+punkt1+punkt3+punkt4 (mellemrum+m) |
 | escape | mellemrum+punkt1+punkt5 (mellemrum+e) |
-| Enter | punkt8 eller tryk på midten af joystick|
+| Enter | punkt8, tryk på midten af joystick eller dpad |
 | windows | mellemrum+punkt3+punkt4 |
 | alt+tab | mellemrum+punkt2+punkt3+punkt4+punkt5 (mellemrum+t) |
 | NVDA-menu | mellemrum+punkt1+punkt3+punkt4+punkt5 (mellemrum+n) |
