@@ -2,7 +2,9 @@ NVDA NVDA_VERSION Manuale utente
 
 
 %!includeconf: ../userGuide.t2tconf
+%!includeconf: ./locale.t2tconf
 %kc:title: NVDA NVDA_VERSION Guida rapida ai comandi 
+%kc:includeconf: ./locale.t2tconf
 
 = Indice =[toc]
 %%toc
@@ -222,7 +224,7 @@ I comandi effettivi non verranno eseguiti nella modalità di aiuto immissione.
 | Legge la barra di stato | ``NVDA+fine`` | ``NVDA+maiusc+fine`` | Legge la barra di stato nel caso in cui NVDA sia in grado di individuarla. Una doppia pressione provocherà lo spelling delle informazioni. Una tripla pressione copierà il contenuto della barra di stato negli appunti |
 | Legge la data e l'Ora | ``NVDA+f12`` | ``NVDA+f12`` | Premendo una volta viene annunciato l'orario corrente, mentre premendo due volte verrà annunciata la data |
 | Legge la formattazione | ``NVDA+f`` | ``NVDA+f`` | Legge la formattazione del testo; Una doppia pressione visualizzerà le informazioni in una finestra di dialogo |
-| Legge la destinazione di un link | ``NVDA+k`` | ``NVDA+k`` | Una pressione leggerà l'URL di destinazione del collegamento nel [navigatore ad oggetti #ObjectNavigation]. Una doppia pressione lo visualizzerà in una finestra per un controllo più dettagliato |
+| Legge la destinazione di un link | ``NVDA+k`` | ``NVDA+k`` | Una pressione leggerà l'URL di destinazione del collegamento alla posizione del focus. Una doppia pressione lo visualizzerà in una finestra per un controllo più dettagliato |
 
 +++ Stabilire quali informazioni NVDA debba leggere +++[ToggleWhichInformationNVDAReads]
 || Nome | Tasto Desktop | Tasto Laptop | Descrizione |
@@ -2118,6 +2120,7 @@ Contiene le seguenti opzioni:
 
 ==== Lingua di riconoscimento ====[Win10OcrSettingsRecognitionLanguage]
 Questa casella combinata permette di scegliere la lingua da utilizzare per il riconoscimento del testo.
+Per scorrere tra le lingue disponibili ovunque ci si trovi, assegnare un gesto personalizzato utilizzando la [finestra di dialogo Gesti e tasti di immissione #InputGestures].
 
 +++ Impostazioni avanzate +++
 Attenzione! Le impostazioni in questa categoria sono per utenti esperti e potrebbero causare il mancato funzionamento di NVDA se configurate in modo errato.
@@ -2133,8 +2136,8 @@ Ciò può anche essere utile nel caso in cui non si è sicuri se si siano effett
 
 ==== Consenti il caricamento di moduli in sviluppo dalla cartella Scratchpad ====[AdvancedSettingsEnableScratchpad]
 Quando si sviluppano componenti aggiuntivi per NVDA, è utile poter testare il codice man mano che lo si scrive.
-Se la funzione è attivata, NVDA sarà in grado di caricare app module personalizzati, globalPlugins, brailleDisplayDrivers e synthDrivers da una cartella speciale di sviluppo chiamata scratchpad, situata all'interno della cartella impostazioni utente di NVDA.
-In precedenza, NVDA eseguiva il codice personalizzato direttamente dalla cartella configurazione dell'utente, senza possibilità di disabilitare questa caratteristica.
+Se la funzione è attivata, NVDA sarà in grado di caricare app module personalizzati, globalPlugins, brailleDisplayDrivers, servizi di miglioramento visivo e synthDrivers da una cartella speciale di sviluppo chiamata scratchpad, situata all'interno della cartella impostazioni utente di NVDA.
+Come accade per gli addon, questi moduli vengono caricati all'avvio di NVDA oppure, nel caso di appModules e globalPlugins, al [ricaricamento dei plugin #ReloadPlugins].
 La funzionalità risulta disattivata di default, di modo che NVDA non eseguirà mai codice personalizzato senza che l'utente ne sia consapevole.
 Se si desidera  distribuire codice personalizzato ad altri, è necessario creare un pacchetto in formato nvda-addon ed utilizzare le funzioni messe a disposizione per i componenti aggiuntivi.
 
@@ -2350,7 +2353,11 @@ Per modificare un simbolo, dapprima selezionarlo nell'elenco simboli.
 è possibile filtrare i risultati inserendo il nome del simbolo o parte di esso all'interno del campo editazione filtra per.
 
 - Il campo "voce in sostituzione" permette di cambiare il testo che deve essere pronunciato in corrispondenza di quel simbolo.
-- Utilizzando il campo "livello", è possibile stabilire il livello più basso dal quale il simbolo dovrà essere annunciato.
+- Utilizzando il campo "livello", è possibile stabilire il livello più basso dal quale il simbolo dovrà essere annunciato (nessuno, qualcosa, molta o tutta)..
+è anche possibile impostare il livello su carattere; in quel caso il simbolo non sarà mai annunciato indipendentemente dal livello simboli in uso, con le seguenti due eccezioni:
+ - Durante la navigazione carattere per carattere.
+ - Quando NVDA effettua lo spelling di un testo contenente quel simbolo.
+ -
 - Il campo invia questo simbolo al sintetizzatore specifica le condizioni per cui  lo stesso simbolo debba essere processato dalla sintesi vocale, non tenendo conto quindi del testo in sostituzione.
 Ciò risulta utile nel caso in cui il simbolo provochi una pausa o un'inflessione nella voce del sintetizzatore.
 Ad esempio, una virgola provoca una pausa nel sintetizzatore.
@@ -2939,7 +2946,16 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 | Sposta il display braille alla riga precedente  | d1 |
 | Sposta il display braille alla riga successiva | d3 |
 | Route to braille cell | routing |
-
+| tasti shift+tab | spazio+punto1+punto3 |
+| tasto tab | spazio+punto4+punto6 |
+| tasti alt | spazio+punto1+punto3+punto4 (spazio+m) |
+| tasto escape | spazio+punto1+punto5 (spazio+e) |
+| tasto windows | spazio+punto3+punto4 |
+| tasti alt+tab | spazio+punto2+punto3+punto4+punto5 (spazio+t) |
+| Menu NVDA | spazio+punto1+punto3+punto4+punto5 (spazio+n) |
+| tasti windows+d (ridurre ad icona tutte le applicazioni) | spazio+punto1+punto4+punto5 (spazio+d) |
+| Dire tutto | spazio+punto1+punto2+punto3+punto4+punto5+punto6 |
+ 
 Per i modelli che possiedono un Joystick:
 || Nome | Tasto |
 | FrecciaSu | up |
@@ -3648,6 +3664,10 @@ Consultare la documentazione della barra braille per informazioni sulla posizion
 | Sposta il navigatore ad oggetti sull'oggetto successivo | ``f6`` |
 | Legge l'oggetto attuale del navigatore | ``f7`` |
 | Riporta informazioni sulla posizione del testo o dell'oggetto in corrispondenza del cursore di controllo | ``f8`` |
+| Mostra impostazioni braille | ``f1+home1``, ``f9+home2`` |
+| Legge la barra di stato e vi sposta il navigatore ad oggetti | ``f1+end1``, ``f9+end2`` |
+| Scorre tra le forme del cursore braille | ``f1+eCursor1``, ``f9+eCursor2`` |
+| Attiva o disattiva il cursore braille | ``f1+cursor1``, ``f9+cursor2`` |
 | Esegue l'azione predefinita sull'oggetto attuale del navigatore | ``f7+f8`` |
 | Legge data/ora | ``f9`` |
 | Annuncia lo stato della batteria e il tempo rimanente se l'alimentazione non è collegata in | ``f10`` |
@@ -3677,19 +3697,17 @@ Di seguito sono riportate le assegnazioni dei tasti per questi display.
 || Nome | Tasto |
 | Scorri il display braille indietro | pan left or rocker up |
 | Scorri il display braille avanti | pan right or rocker down |
-| Sposta il display braille alla riga precedente | spazio + punto1 |
-| Sposta il display braille alla riga successiva | spazio + punto4 |
 | Route to braille cell | routing set 1|
 | Attiva/disattiva inseguimento braille | su+giù |
-| Tasto freccia su | joystick su |
-| Tasto freccia giù | joystick giù |
-| Tasto freccia sinistra | spazio+punto3 o joystick sinistra |
-| Tasto freccia destra | spazio+punto6 o joystick destra |
+| Tasto freccia su | joystick su, dpad up o spazio+punto1 |
+| Tasto freccia giù | joystick giù, dpad down o spazio+punto4 | 
+| Tasto freccia sinistra | spazio+punto3, joystick sinistra o dpad left |
+| Tasto freccia destra | spazio+punto6, joystick destra o dpad right |
 | tasto MAIUSC+TAB | spazio+punto1+punto3 |
 | Tasto tab | spazio+punto4+punto6 |
 | tasto alt | spazio+punto1+punto3+punto4 (spazio+m) |
 | tasto esc | spazio+punto1+punto5 (spazio+e) |
-| tasto invio | punto8 o centro del joystick |
+| tasto invio | punto8, centro del joystick o dpad center |
 | tasto windows | spazio+punto3+punto4 |
 | tasto alt+tab | spazio+punto2+punto3+punto4+punto5 (spazio+t) |
 | Menu NVDA | spazio+punto1+punto3+punto4+punto5 (spazio+n) |
