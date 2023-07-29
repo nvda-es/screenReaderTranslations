@@ -1083,7 +1083,7 @@ Da biste ušli u NVDA meni bilo gde u Windowsu dok je NVDA pokrenut, možete izv
 <LI>Dvostruki dodir sa dva prsta na ekranu osetljivom na dodir.
 <LI>Pristup sistemskoj traci pritiskanjem prečice <CODE>Windows+b</CODE>, kretanje <CODE>strelicomDole</CODE> do NVDA ikonice, a zatim pritiskanje tastera <CODE>enter</CODE>.
 <LI>Kao alternativa, pristupite sistemskoj traci prečicom <CODE>Windows+b</CODE>, krećite se <CODE>strelicomDole</CODE> do NVDA ikonice, i otvorite kontekstni meni pritiskanjem <CODE>aplikacionog</CODE> tastera koji se nalazi pored desnog kontrol tastera na većem broju tastatura.
-Na tastaturi bez <CODE>aplikacionog</CODE> tastera, umesto toga pritisnite <CODE>šift+F10</CODE>.
+Na tastaturi bez <CODE>aplikacionog</CODE> tastera, umesto toga pritisnite <CODE>šift+f10</CODE>.
 <LI>Desni klik na NVDA ikonici na Windows sistemskoj traci
 </UL>
 
@@ -1412,6 +1412,13 @@ Nakon toga se možete kretati dalje od liste da biste pristupili drugim objektim
 Slično tome, alatna traka sadrži kontrole, pa morate ući u alatnu traku da pristupite kontrolama.
 </P>
 <P>
+Ako ipak želite da se krećete između svakog pojedinačnog objekta na sistemu, možete koristiti komande da se pomerite na prethodni ili sledeći objekat u  ravnom prikazu.
+Na primer, ako se krećete do sledećeg objekta u ovom ravnom prikazu a trenutni objekat u sebi sadrži druge objekte, NVDA će se automatski prebaciti na prvij unutrašnji objekat.
+U suprotnom, ako trenutni objekat ne sadrži objekte, NVDA će se prebaciti na sledeći objekat u trenutnom nivou hierarhije.
+Ako nema takvog sledećeg objekta, NVDA će pokušati da pronađe sledeći objekat u hierarhiji u zavisnosti od unutrašnjih objekata dok više nema objekata na koje se možete prebaciti.
+Ista pravila se primenjuju i kada se krećete nazad u hierarhiji.
+</P>
+<P>
 Objekat koji se trenutno pregleda se zove navigacioni objekat.
 Kada stignete do nekog objekta, možete pregledati njegov sadržaj koristeći <A HREF="#ReviewingText">komande za pregled teksta</A> dok ste u <A HREF="#ObjectReview">režimu pregleda objekata</A>.
 Kada je <A HREF="#VisionFocusHighlight">Vizuelno označavanje</A> omogućeno, lokacija trenutnog navigacionog objekta je takođe vizuelno označena.
@@ -1449,15 +1456,29 @@ Za navigaciju između objekata, koristite sledeće komande:
 <TD>Premesti se na prethodni objekat</TD>
 <TD>NVDA+numeričko4</TD>
 <TD>NVDA+šift+strelica levo</TD>
-<TD>prevlačenje levo(režim objekata)</TD>
+<TD>nema</TD>
 <TD>pomera se na objekat pre trenutnog navigacionog objekta</TD>
 </TR>
 <TR>
-<TD>Premesti na sledeći objekat</TD>
+<TD>Premesti se na prethodni objekat u ravnom prikazu</TD>
+<TD>NVDA+numeričko9</TD>
+<TD>NVDA+šift+[</TD>
+<TD>prevlačenje levo (režim objekata)</TD>
+<TD>Premešta se na prethodni objekat u ravnom prikazu hierarhije navigacije objekata</TD>
+</TR>
+<TR>
+<TD>Premesti se na sledeći objekat</TD>
 <TD>NVDA+numeričko6</TD>
 <TD>NVDA+šift+strelica desno</TD>
-<TD>prevlačenje desno(režim objekata)</TD>
+<TD>nema</TD>
 <TD>premešta se na objekat posle trenutnog navigacionog objekta</TD>
+</TR>
+<TR>
+<TD>Premesti se na sledeći objekat u ravnom prikazu</TD>
+<TD>NVDA+numeričko3</TD>
+<TD>NVDA+šift+]</TD>
+<TD>prevlačenje desno (režim objekata)</TD>
+<TD>Premešta se na sledeći objekat u ravnom prikazu hierarhije navigacije objekata</TD>
 </TR>
 <TR>
 <TD>Premesti se na prvi sadržan objekat</TD>
@@ -1710,7 +1731,6 @@ Izgled je ovako ilustrovan:
 <H3>5.6. Režimi pregleda</H3>
 <P>
 Komande programa NVDA <A HREF="#ReviewingText">za pregled teksta</A> mogu pregledati sadržaj trenutnog navigacionog objekta, trenutnog dokumenta ili ekrana, u zavisnosti od toga koji je režim pregleda odabran.
-Režimi pregleda su zamena za stari način pregleda programa NVDA.
 </P>
 <P>
 Sledeće komande menjaju režime pregleda:
@@ -3459,6 +3479,36 @@ U tom slučaju, brajev red neće pratiti NVDA pregledni kursor u toku objektne n
 Ako želite da umesto toga brajev red prati objektnu navigaciju i pregled teksta, morate da podesite brajev red da bude vezan za pregled.
 U ovom slučaju, brajev red neće pratiti sistemski fokus i kursor.
 </P>
+<A NAME="BrailleSettingsReviewRoutingMovesSystemCaret"></A>
+<H5>Pomeranje sistemskog kursora kada se prebacuje pregledni kursor</H5>
+<DL>
+<DT>Podrazumevano</DT><DD>
+  Nikada
+<DT>Opcije</DT><DD>
+  Podrazumevano (nikada), nikada, samo pri automatskom vezivanju, uvek
+</DL>
+
+<P></P>
+<P>
+Ovo podešavanje određuje da li sistemski kursor takođe treba da se pomera pritiskanjem tastera za prebacivanje.
+Ova opcija je podrazumevano podešena na nikada, što znači da prebacivanje nikada neće pomerati kursor kada se prebacuje pregledni kursor.
+</P>
+<P>
+Kada je ova opcija podešena na uvek, i <A HREF="#BrailleTether">vezivanje brajevog reda</A> je podešeno na "automatski" ili "za pregled", pritiskanje tastera za prebacivanje kursora će takođe pomeriti sistemski kursor ili fokus kada je podržano.
+Kada je trenutni režim pregleda <A HREF="#ScreenReview">pregled ekrana</A>, nema fizičkog kursora.
+U tom slučaju, NVDA pokušava da se fokusira na objekat ispod teksta na koji se prebacujete.
+Isto se primenjuje i na <A HREF="#ObjectReview">pregled objekata</A>.
+</P>
+<P>
+Takođe možete da podesite ovu opciju da pomera kursor pri automatskom vezivanju.
+U tom slučaju, pritiskanje tastera za prebacivanje kursora će pomeriti sistemski kursor ili fokus kada je NVDA vezan za pregledni kursor automatski, a do pomeranja neće doći kada je ručno vezan za pregledni kursor.
+</P>
+<P>
+Ova opcija se prikazuje samo ako je "<A HREF="#BrailleTether">Brajev red vezan</A>" "Automatski" ili "za pregled".
+</P>
+<P>
+Da biste uključili pomeranje sistemskog kursora kada se prebacuje pregledni kursor bilo gde da se nalazite, molimo podesite prilagođenu komandu korišćenjem <A HREF="#InputGestures">dijaloga ulaznih komandi</A>.
+</P>
 <A NAME="BrailleSettingsReadByParagraph"></A>
 <H5>Čitaj po pasusima</H5>
 <P>
@@ -4366,6 +4416,20 @@ Ali, za osnovnu navigaciju i uređivanje ćelija, ova opcija će možda doneti z
 Mi još uvek ne preporučujemo da većina korisnika ovaj način koristi kao podrazumevani, ali korisnici programa Microsoft Excel verzije 16.0.13522.10000 ili novijih su dobrodošli da testiraju ovu opciju i pruže svoje povratne informacije.
 Microsoft Excel UI automation podrška se uvek menja, i starije Microsoft Office verzije od 16.0.13522.10000 možda ne pružaju dovoljno informacija da ova opcija bude uopšte korisna.
 </P>
+<A NAME="BrailleLiveRegions"></A>
+<H5>Prijavi žive regione</H5>
+ <DL>
+ <DT>Podrazumevano</DT><DD>
+   Omogućeno
+ <DT>Opcije</DT><DD>
+  Podrazumevano (omogućeno), onemogućeno, omogućeno
+ </DL>
+
+<P></P>
+<P>
+Ova opcija bira da li će NVDA prijaviti promene u određenom dinamičkom Web sadržaju na brajevom redu.
+Onemogućavanje ove opcije je jednako ponašanju programa NVDA u verziji 2023.1 i starijim, koja je ove promene prijavljivala samo govorom.
+</P>
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
 <H5>Izgovaraj lozinke u svim poboljšanim terminalima</H5>
 <P>
@@ -4406,7 +4470,7 @@ Ali, u terminalima, kada se znakovi ubacuju ili brišu u sredini reda, tekst nak
 <DT>Podrazumevano</DT><DD>
   Prepoznavanje razlika
 <DT>Opcije</DT><DD>
-  Prepoznavanje razlika, UIA obaveštenja
+  Podrazumevano (prepoznavanje razlika), prepoznavanje razlika, UIA obaveštenja
 </DL>
 
 <P></P>
@@ -4449,20 +4513,40 @@ Uz nekoliko istorijski popularnih API-a za interfejse, tekst može biti sa trans
 </P>
 <A NAME="WASAPI"></A>
 <H5>Koristi WASAPI za zvučni izlaz</H5>
+<DL>
+<DT>Podrazumevano</DT><DD>
+  Onemogućeno
+<DT>Opcije</DT><DD>
+  Podrazumevano (onemogućeno), omogućeno, onemogućeno
+</DL>
+
+<P></P>
 <P>
 Ova opcija će omogućiti reprodukciju zvukova korišćenjem standarda Windows Audio Session API (WASAPI).
 WASAPI je moderniji standard zvuka koji može poboljšati brzinu, performanse i stabilnost NVDA zvukova, što uključuje govor i NVDA zvukove.
-Ova opcija je podrazumevano omogućena.
 Nakon što promenite ovu opciju, moraćete ponovo da pokrenete NVDA kako bi se promene primenile.
 </P>
 <A NAME="SoundVolumeFollowsVoice"></A>
 <H5>Jačina NVDA zvukova prati jačinu glasa</H5>
+<DL>
+<DT>Podrazumevano</DT><DD>
+  Onemogućeno
+<DT>Opcije</DT><DD>
+  Onemogućeno, omogućeno
+</DL>
+
+<P></P>
 <P>
 Kada se ova opcija omogući, jačina NVDA zvukova i pištanja će pratiti podešavanje jačine glasa kojeg koristite.
 Ako utišate jačinu glasa kojeg koristite, jačina NVDA zvukova će se takođe utišati.
 Slično tome, ako pojačate glas, jačina zvukova će se pojačati.
 Ova opcija se primenjuje samo kada je opcija "Koristi WASAPI za zvučni izlaz" omogućena.
-Ova opcija je podrazumevano onemogućena.
+</P>
+<A NAME="SoundVolume"></A>
+<H5>Jačina NVDA zvukova</H5>
+<P>
+Ovaj klizač vam dozvoljava da podesite jačinu NVDA zvukova i  pištanja.
+Ovo podešavanje se primenjuje samo kada je opcija "Koristi WASAPI za zvučni izlaz" omogućena i opcija "Jačina NVDA zvukova prati jačinu glasa" onemogućena.
 </P>
 <A NAME="AdvancedSettingsDebugLoggingCategories"></A>
 <H5>Kategorije za evidentiranje otklanjanja grešaka</H5>
@@ -4548,10 +4632,10 @@ Da promenite znak, prvo ga izaberite u listi simbola.
 <LI>Polje zamene vam dozvoljava da promenite tekst koji se izgovara za ovaj znak.
 <LI>Koristeći polje nivoa, možete promeniti najniži nivo na kojem se ovaj simbol izgovara (Nijedan, neki, većina ili svi).
 Možete takođe da podesite nivo na znak; u tom slučaju simbol se neće izgovarati bez obzira na nivo simbola koji se koristi, uz sledeća dva izuzetka:
- <UL>
- <LI>Kada se krećete znak po znak.
- <LI>Kada NVDA sriče bilo koji tekst koji sadrži taj simbol.
- </UL>
+  <UL>
+  <LI>Kada se krećete znak po znak.
+  <LI>Kada NVDA sriče bilo koji tekst koji sadrži taj simbol.
+  </UL>
 <LI>Polje za slanje simbola sintetizatoru podešava kada treba poslati simbol(umesto zamenskog teksta) sintetizatoru.
 Ovo je korisno ako simbol izaziva pauzu u čitanju ili menjanje intonacije.
 Na primer, zarez izaziva pauzu u čitanju.
@@ -4820,7 +4904,6 @@ Da pristupite prodavnici bilo gde da se nalazite, podesite prilagođenu prečicu
 <H3>13.1. Istraživanje dodataka</H3>
 <P>
 Kada se otvori, prodavnica dodataka prikazuje listu dodataka.
-Možete se vratiti na listu prečicom  <CODE>alt+l</CODE> bilo gde da se nalazite u prodavnici.
 Ako prethodno niste instalirai nijedan dodatak, prodavnica dodataka će se otvoriti sa listom dodataka koji su dostupni za instalaciju.
 Ako imate instalirane dodatke, lista će prikazati trenutno instalirane dodatke.
 </P>
@@ -4877,16 +4960,16 @@ Da pogledate dodatke određenog kanala, promenite izdvajanje "kanal".
 <H4>13.1.5. Pretraga dodataka</H4>
 <P>
 Da pretražite dodatke, koristite tekstualno polje pretrage.
-Možete doći do njega pritiskanjem prečice <CODE>šift+tab</CODE> iz liste dodataka, ili prečicom <CODE>alt+s</CODE> bilo gde iz interfejsa prodavnice dodataka.
+Možete doći do njega pritiskanjem prečice <CODE>šift+tab</CODE> iz liste dodataka.
 Upišite ključnu reč ili nekoliko reči vrste dodatka koju tražite, a zatim se tasterom <CODE>tab</CODE> vratite na listu dodataka.
-Dodaci će biti prikazani ako tekst pretrage bude pronađen u imenu, autoru ili opisu.
+Dodaci će biti prikazani ako tekst pretrage bude pronađen u ID-u dodatka, prikazanom imenu, izdavaču, autoru ili opisu.
 </P>
 <A NAME="AddonStoreActions"></A>
 <H3>13.2. Radnje dodatka</H3>
 <P>
 Dodaci imaju određene radnje, kao što su instaliraj, pomoć, onemogući i ukloni.
-Meniju radnji za dodatak u listi dodataka se može pristupiti  pritiskanjem <CODE>aplikacionog</CODE> tastera, <CODE>enterom</CODE>, desnim klikom ili dvostrukim klikom na ime dodatka.
-Dugme za radnje je takođe dostupno u detaljima izabranog dodatka, koje se može aktivirati na standardan način ili prečicom <CODE>alt+a</CODE>.
+Za dodatak u  listi dodataka, ovim radnjama se može pristupiti kroz meni koji  se otvara pritiskanjem <CODE>aplikacionog</CODE> tastera, tastera <CODE>enter</CODE>, desnim klikom ili duplim klikom na dodatak.
+Ovom meniju se takođe može pristupiti pritiskanjem dugmeta radnje u detaljima izabranog dodatka.
 </P>
 <A NAME="AddonStoreInstalling"></A>
 <H4>13.2.1. Instaliranje dodataka</H4>
@@ -5028,7 +5111,7 @@ Za više informacija, pročitajte uputstvo za programere dostupno u<A HREF="http
 <H3>14.5. Prodavnica dodataka</H3>
 <P>
 Ovo će otvoriti <A HREF="#AddonsManager">prodavnicu NVDA dodataka</A>.
-Za više informacija, pročitajte obimno poglavlje: <A HREF="#AddonsManager">Dodaci i prodavnica dodataka</A>.
+Za više informacija, pročitajte obimnu sekciju: <A HREF="#AddonsManager">Dodaci i prodavnica dodataka</A>.
 </P>
 <A NAME="CreatePortableCopy"></A>
 <H3>14.6. Napravi prenosivu kopiju</H3>
@@ -5776,65 +5859,59 @@ Molimo pogledajte uputstvo za upotrebu brajevog reda kako biste saznali listu i 
 </TR>
 <TR>
 <TD>Pomeri brajev red unazad</TD>
-<TD>d2</TD>
+<TD><CODE>d2</CODE></TD>
 </TR>
 <TR>
 <TD>Pomeri brajev red napred</TD>
-<TD>d5</TD>
+<TD><CODE>d5</CODE></TD>
 </TR>
 <TR>
 <TD>Pomeri brajev red na prethodni red</TD>
-<TD>d1</TD>
+<TD><CODE>d1</CODE></TD>
 </TR>
 <TR>
 <TD>Pomeri brajev red na sledeći red</TD>
-<TD>d3</TD>
+<TD><CODE>d3</CODE></TD>
 </TR>
 <TR>
 <TD>Pomeri se na brajevu ćeliju</TD>
-<TD>routing</TD>
+<TD><CODE>routing</CODE></TD>
 </TR>
 <TR>
-<TD>šift+tab</TD>
-<TD>Razmak+tačkica1+tačkica3</TD>
+<TD><CODE>šift+tab</CODE></TD>
+<TD><CODE>Razmak+tačkica1+tačkica3</CODE></TD>
 </TR>
 <TR>
-<TD>tab</TD>
-<TD>Razmak+tačkica4+tačkica6</TD>
+<TD><CODE>tab</CODE></TD>
+<TD><CODE>Razmak+tačkica4+tačkica6</CODE></TD>
 </TR>
 <TR>
-<TD>alt</TD>
-<TD>Razmak+tačkica1+tačkica3+tačkica4 (razmak+M)</TD>
+<TD><CODE>alt</CODE></TD>
+<TD><CODE>Razmak+tačkica1+tačkica3+tačkica4</CODE> (razmak+M)</TD>
 </TR>
 <TR>
-<TD>escape</TD>
-<TD>Razmak+tačkica1+tačkica5 (razmak+e)</TD>
+<TD><CODE>escape</CODE></TD>
+<TD><CODE>Razmak+tačkica1+tačkica5 (razmak+e)</CODE></TD>
 </TR>
 <TR>
-<TD>windows</TD>
-<TD>Razmak+tačkica3+tačkica4</TD>
+<TD><CODE>windows</CODE></TD>
+<TD><CODE>Razmak+tačkica3+tačkica4</CODE></TD>
 </TR>
 <TR>
-<TD>alt+tab</TD>
-<TD>Razmak+tačkica2+tačkica3+tačkica4+</TD>
+<TD><CODE>alt+tab</CODE></TD>
+<TD><CODE>Razmak+tačkica2+tačkica3+tačkica4+tačkica5 (razmak+t)</CODE></TD>
 </TR>
-</TABLE>
-
-<P>
-tačkica5 (razmak+t) |
-</P>
-<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>NVDA meni</TD>
-<TD>razmak+tačkica1+tačkica3+tačkica4+tačkica5 (razmak+n)</TD>
+<TD><CODE>razmak+tačkica1+tačkica3+tačkica4+tačkica5 (razmak+n)</CODE></TD>
 </TR>
 <TR>
-<TD>windows+d (umanji sve aplikacije)</TD>
-<TD>Razmak+tačkica1+tačkica4+tačkica5 (razmak+d)</TD>
+<TD><CODE>windows+d</CODE> (umanji sve aplikacije)</TD>
+<TD><CODE>Razmak+tačkica1+tačkica4+tačkica5 (razmak+d)</CODE></TD>
 </TR>
 <TR>
 <TD>Izgovori sve</TD>
-<TD>Razmak+tačkica1+tačkica2+tačkica3+tačkica4+tačkica5+tačkica6</TD>
+<TD><CODE>Razmak+tačkica1+tačkica2+tačkica3+tačkica4+tačkica5+tačkica6</CODE></TD>
 </TR>
 </TABLE>
 
@@ -7480,12 +7557,13 @@ Zbog ovoga, i zbog zadržavanja kompatibilnosti sa drugim čitačima ekrana u Ta
 <P>
 b.book, b.note, Esys, Esytime i Iris brajevi redovi kompanije Eurobraille su podržani od strane NVDA.  
 Ovi uređaji imaju brajevu tastaturu sa 10 tastera. 
+Molimo pogledajte dokumentaciju brajevog reda za opis ovih tastera.
 Od dva tastera koji izgledaju slično razmaku, levi taster je backspace i desni je razmak.
-Ako se povežu putem USB veze, imaju jednu samostalnu USB tastaturu. 
-Moguće je omogućiti ili onemogućiti ovu tastaturu izbornim poljem "HID simulacija tastature" u panelu brajevih podešavanja. 
-Brajeva tastatura opisana ispod je tastatura kada ovo izborno polje nije označeno.
-Slede komande za ove brajeve redove uz NVDA. 
-Molimo pogledajte dokumentaciju brajevog reda za opis i raspored ovih tastera.
+</P>
+<P>
+Ovi uređaji se povezuju putem USB veze i imaju jednu samostalnu USB tastaturu. 
+Moguće je omogućiti ili onemogućiti ovu tastaturu menjanjem opcije "HID simulacija tastature" korišćenjem ulazne komande.
+Funkcije brajeve tastature koje su opisane ispod važe kada je "HID simulacija tastature" onemogućena.
 </P>
 <A NAME="EurobrailleBraille"></A>
 <H4>16.17.1. Funkcije brajeve tastature</H4>
@@ -7716,6 +7794,10 @@ Molimo pogledajte dokumentaciju brajevog reda za opis i raspored ovih tastera.
 <TR>
 <TD>Uključi ili isključi taster <CODE>alt</CODE></TD>
 <TD><CODE>tačkica1+tačkica8+razmak</CODE>, <CODE>tačkica4+tačkica8+razmak</CODE></TD>
+</TR>
+<TR>
+<TD>Uključi ili isključi HID simulaciju tastature</TD>
+<TD><CODE>Prekidač1Levo+Džojstik1Dole</CODE>, <CODE>Prekidač1Desno+džojstik1Dole</CODE></TD>
 </TR>
 </TABLE>
 
@@ -8017,6 +8099,10 @@ Molimo pogledajte dokumentaciju brajevog reda za opis i raspored ovih tastera.
 <TD><CODE>kontrol+end</CODE></TD>
 <TD><CODE>l6+l7+l8</CODE>, <CODE>l5+l6+l7</CODE></TD>
 </TR>
+<TR>
+<TD>Uključi ili isključi HID simulaciju tastature</TD>
+<TD><CODE>l1+džojstik1Dole</CODE>, <CODE>l8+džojstik1Dole</CODE></TD>
+</TR>
 </TABLE>
 
 <A NAME="NattiqTechnologies"></A>
@@ -8247,6 +8333,10 @@ Molimo pogledajte dokumentaciju brajevog reda za opis gde se ovi tasteri nalaze.
 <TD><CODE>f1+f5</CODE>, <CODE>f9+f14</CODE></TD>
 </TR>
 <TR>
+<TD>Kruži kroz stanja opcije "Brajevo pomeranje sistemskog kursora kada se prebacuje pregledni kursor"</TD>
+<TD><CODE>f1+f3</CODE>, <CODE>f9+f11</CODE></TD>
+</TR>
+<TR>
 <TD>Izvršava podrazumevanu radnju na trenutnom navigacionom objektu</TD>
 <TD><CODE>f7+f8</CODE></TD>
 </TR>
@@ -8408,8 +8498,15 @@ Slede trenutne tasterske prečice za ove redove.
 <A NAME="SecureMode"></A>
 <H3>17.1. Bezbedan način rada</H3>
 <P>
-NVDA se može pokrenuti u bezbednom načinu rada korišćenjem <CODE>-s</CODE> <A HREF="#CommandLineOptions">opcije komandne linije</A>.
+Administratori sistema će možda želeti da podese NVDA tako da mu se ograniči neovlašćen pristup sistemu.
+NVDA dozvoljava instalaciju prilagođenih dodataka, koji mogu da izvrše i pokrenu kod, što uključuje kada NVDA ima administratorske privilegije.
+NVDA takođe dozvoljava korisnicima da pokrenu kod kroz NVDA Python konzolu.
+NVDA bezbedan režim sprečava da korisnici menjaju njihova NVDA podešavanja, i na druge načine ograničava pristup sistemu.
+</P>
+<P>
 NVDA se pokreće u bezbednom načinu rada na <A HREF="#SecureScreens">bezbednim ekranima</A>, osim ako se ne omogući <CODE>serviceDebug</CODE> <A HREF="#SystemWideParameters">sistemski parametar</A>.
+Da naterate NVDA da se uvek pokrene u bezbednom režimu, podesite <CODE>forceSecureMode</CODE> <A HREF="#SystemWideParameters">sistemski parameta</A>.
+NVDA se takođe može pokrenuti u bezbednom režimu uz <CODE>-s</CODE> <A HREF="#CommandLineOptions">opciju komandne linije</A>.
 </P>
 <P>
 Bezbedan način rada će onemogućiti:
@@ -8419,11 +8516,22 @@ Bezbedan način rada će onemogućiti:
 <LI>Čuvanje mape komandi na disku
 <LI>Opcije <A HREF="#ConfigurationProfiles">profila podešavanja</A> kao što su pravljenje, brisanje, preimenovanje profila i slično.
 <LI>Ažuriranje programa NVDA i pravljenje prenosivih kopija
-<LI><A HREF="#PythonConsole">Python konzolu</A>
+<LI><A HREF="#AddonsManager">Prodavnicu dodataka</A>
+<LI><A HREF="#PythonConsole">NVDA Python konzolu</A>
 <LI><A HREF="#LogViewer">Preglednik dnevnika</A> i evidentiranje u dnevniku
+<LI>Otvaranje eksternih dokumenata iz NVDA menija, kao što su korisničko uputstvo ili datoteku saradnika.
 </UL>
 
 <P></P>
+<P>
+Instalirane kopije programa NVDA čuvaju podešavanja uključujući dodatke u <CODE>%APPDATA%\nvda</CODE>.
+Da biste sprečili NVDA korisnike da direktno izmene podešavanja ili dodatke, korisnički pristup ovom folderu se takođe mora ograničiti.
+</P>
+<P>
+NVDA korisnici često zavise od podešavanja njihovog NVDA profila kako bi zadovoljio njihove potrebe.
+Ovo može uključiti instalaciju i podešavanje prilagođenih dodataka, koje treba pregledati nezavisno od programa NVDA.
+Bezbedni režim će onemogućiti promene podešavanja, tako da prvo treba osigurati da je NVDA podešen pre nego što prisilite bezbedan režim.
+</P>
 <A NAME="SecureScreens"></A>
 <H3>17.2. Bezbedni ekrani</H3>
 <P>
@@ -8629,16 +8737,22 @@ Sledeće vrednosti se mogu podesiti u ovom registry ključu:
 <TH>Opis</TH>
 </TR>
 <TR>
-<TD>configInLocalAppData</TD>
+<TD><CODE>configInLocalAppData</CODE></TD>
 <TD>DWORD</TD>
 <TD>0 (Podrazumevano) da onemogućite, 1 da omogućite</TD>
-<TD>Ako je omogućeno, Čuva NVDA podešavanja u local folderu foldera app data umesto roaming foldera</TD>
+<TD>Ako je omogućeno, Čuva NVDA podešavanja u lokalnim podacima aplikacija umesto roming podataka</TD>
 </TR>
 <TR>
-<TD>serviceDebug</TD>
+<TD><CODE>serviceDebug</CODE></TD>
 <TD>DWORD</TD>
 <TD>0 (podrazumevano) da onemogućite, 1 da omogućite</TD>
 <TD>Ako je omogućen, biće onemogućen <A HREF="#SecureMode">bezbedan način rada</A> na <A HREF="#SecureScreens">bezbednim ekranima</A>. Zbog nekoliko ogromnih bezbednosnih rizika, korišćenje ove opcije se ne preporučuje</TD>
+</TR>
+<TR>
+<TD><CODE>forceSecureMode</CODE></TD>
+<TD>DWORD</TD>
+<TD>0 (podrazumevano) da onemogućite, 1 da omogućite</TD>
+<TD>Ako je omogućeno, nateraće NVDA da koristi <A HREF="#SecureMode">bezbedan režim</A> pri pokretanju.</TD>
 </TR>
 </TABLE>
 

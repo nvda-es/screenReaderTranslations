@@ -15,6 +15,22 @@
 Da biste pročitali promene koje su bitne za programere, molimo pogledajte <A HREF="../en/changes.html">Englesku verziju ovog dokumenta</A>.
 </P>
 <H2>2023.2</H2>
+<P>
+Ova verzija dodaje prodavnicu dodataka koja menja upravljača dodacima.
+U  prodavnici dodataka možete da istražujete, pretražujete, instalirate i ažurirate dodatke zajednice.
+Sada možete ručno da ignorišete probleme kompatibilnosti sa zastarelim dodacima na sopstvenu odgovornost.
+</P>
+<P>
+Dodate su nove funkcije za brajeve redove, komande i novi podržani brajevi redovi.
+Takođe su dodate nove prečice za OCR i ravnu navigaciju kroz objekte.
+Navigacija i prijavljivanje formatiranja u Microsoft Office paketu je poboljšana.
+</P>
+<P>
+Puno grešaka je ispravljeno, posebno za brajeve redove, Microsoft Office, web pretraživače i Windows 11.
+</P>
+<P>
+eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
+</P>
 <H3>Nove karakteristike</H3>
 <UL>
 <LI>Prodavnica dodataka je dodata u NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/13985">#13985</A>)
@@ -24,16 +40,32 @@ Da biste pročitali promene koje su bitne za programere, molimo pogledajte <A HR
   <LI>Upravljač dodataka je uklonjen i zamenjen prodavnicom dodataka.
   <LI>za više informacija molimo pročitajte ažurirano korisničko uputstvo.
   </UL>
-<LI>Dodat izgovor unikodnih simbola:
-  <UL>
-  <LI>brajevi simboli kao što su "⠐⠣⠃⠗⠇⠐⠜". (<A HREF="https://github.com/nvaccess/nvda/issues/14548">#14548</A>)
-  <LI>Simbol za Mac taster opcije "⌥". (<A HREF="https://github.com/nvaccess/nvda/issues/14682">#14682</A>)
-  </UL>
 <LI>Nove ulazne komande:
   <UL>
   <LI>Komanda bez dodeljene prečice kako biste kružili kroz dostupne jezike za Windows OCR. (<A HREF="https://github.com/nvaccess/nvda/issues/13036">#13036</A>)
   <LI>Komanda bez dodeljene prečice kako biste kružili kroz režime prikazivanja poruka na brajevom redu. (<A HREF="https://github.com/nvaccess/nvda/issues/14864">#14864</A>)
   <LI>Komanda bez dodeljene prečice kako biste uključili ili isključili pokazivač izbora na brajevom redu. (<A HREF="https://github.com/nvaccess/nvda/issues/14948">#14948</A>)
+    <UL>
+    <LI>Dodate podrazumevane prečice na tastaturi za pomeranje na sledeći ili prethodni objekat u ravnom prikazu hierarhije objekata. (<A HREF="https://github.com/nvaccess/nvda/issues/15053">#15053</A>)
+    <LI>Desktop: <CODE>NVDA+numeričko9</CODE> i <CODE>NVDA+numeričko3</CODE> da se pomerite na sledeći ili prethodni objekat.
+    <LI>Laptop: <CODE>šift+NVDA+[</CODE> i <CODE>šift+NVDA+]</CODE> da se pomerite na prethodni i sledeći objekat.
+    </UL>
+  </UL>
+<LI>Nove funkcije za brajeve redove:
+  <UL>
+  <LI>Dodata podrška za Help Tech Activator brajev red. (<A HREF="https://github.com/nvaccess/nvda/issues/14917">#14917</A>)
+  <LI>Nova opcija za uključivanje ili isključivanje prikazivanja pokazivača izbora (tačkice 7 i 8). (<A HREF="https://github.com/nvaccess/nvda/issues/14948">#14948</A>)
+  <LI>Nova opcija za pomeranje sistemskog kursora ili fokusa kada se menja pozicija preglednog kursora brajevim tasterima. (<A HREF="https://github.com/nvaccess/nvda/issues/14885">#14885</A>, <A HREF="https://github.com/nvaccess/nvda/issues/3166">#3166</A>)
+  <LI>Kada se pritisne <CODE>numeričko2</CODE> tri puta da bi se prijavila brojčana vrednost znaka na poziciji preglednog kursora, informacija se takođe pruža na brajevom redu. (<A HREF="https://github.com/nvaccess/nvda/issues/14826">#14826</A>)
+  <LI>Dodata podrška za <CODE>aria-brailleroledescription</CODE> ARIA 1.3 atribut, koji će dozvoliti autorima sajtova da zamene vrstu elementa koja će se prikazati na brajevom redu. (<A HREF="https://github.com/nvaccess/nvda/issues/14748">#14748</A>)
+  <LI>Baum brajev drajver: Dodato nekoliko vezanih brajevih komandi za izvršavanje čestih prečica na tastaturi kao što su <CODE>windows+d</CODE> i <CODE>alt+tab</CODE>.
+  Molimo pogledajte NVDA korisničko uputstvo za potpunu listu. (<A HREF="https://github.com/nvaccess/nvda/issues/14714">#14714</A>)
+  </UL>
+<LI>Dodat izgovor unikodnih simbola:
+  <UL>
+  <LI>Brajevi simboli kao što su <CODE>⠐⠣⠃⠗⠇⠐⠜</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14548">#14548</A>)
+  <LI>Simbol za Mac taster opcije <CODE>⌥</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14682">#14682</A>)
+-
   </UL>
 <LI>Dodate komande za Tivomatic Caiku Albatross brajeve redove. (<A HREF="https://github.com/nvaccess/nvda/issues/14844">#14844</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15002">#15002</A>)
   <UL>
@@ -43,82 +75,123 @@ Da biste pročitali promene koje su bitne za programere, molimo pogledajte <A HR
   <LI>Menjanje režima prikazivanja poruka
   <LI>Uključivanje i isključivanje brajevog kursora
   <LI>Uključivanje i isključivanje pokazivača izbora na brajevom redu
+    <UL>
+    <LI>Menjanje opcije "Brajevo pomeranje kursora kada se prebacuje pregledni kursor". (<A HREF="https://github.com/nvaccess/nvda/issues/15122">#15122</A>)
+  -
+    </UL>
   </UL>
-<LI>Nova brajeva opcija koja vam omogućava da uključite ili isključite pokazivač izbora (tačkice 7 i 8). (<A HREF="https://github.com/nvaccess/nvda/issues/14948">#14948</A>)
-<LI>U pretraživačima Mozilla Firefox i Google Chrome, NVDA sada prijavljuje ako kontrola otvara dijalog, mrežu, listu ili stablo ako je autor ovo označio korišćenjem aria-haspopup. (<A HREF="https://github.com/nvaccess/nvda/issues/14709">#14709</A>)
+<LI>Microsoft Office funkcije:
+  <UL>
+  <LI>Kada se omogući prijavljivanje obeleženog teksta u opcijama formatiranja dokumenta, obeležene boje se sada prijavljuju u Microsoft Wordu. (<A HREF="https://github.com/nvaccess/nvda/issues/7396">#7396</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12101">#12101</A>, <A HREF="https://github.com/nvaccess/nvda/issues/5866">#5866</A>)
+  <LI>Kada se omoguće boje u opcijama formatiranja dokumenta, boje pozadine se sada prijavljuju u Microsoft Wordu. (<A HREF="https://github.com/nvaccess/nvda/issues/5866">#5866</A>)
+  <LI>Kada se koriste Excel prečice da uključite ili isključite opcije formatiranja kao što su podebljano, iskošeno, podvučeno i precrtano za ćeliju u Excelu, rezultat se sada prijavljuje. (<A HREF="https://github.com/nvaccess/nvda/issues/14923">#14923</A>)
+-
+  </UL>
+<LI>Eksperimentalno poboljšano upravljanje zvukovima:
+  <UL>
+  <LI>NVDA sada može da reprodukuje zvukove korišćenjem standarda Windows Audio Session API (WASAPI), što može poboljšati brzinu, performanse i stabilnost NVDA govora i zvukova.
+  <LI>WASAPI korišćenje se može omogućiti u naprednim podešavanjima.
+  Takođe, ako je WASAPI omogućen, sledeća napredna podešavanja se mogu podesiti.
+    <UL>
+    <LI>Opcija koja će izazvati da jačina NVDA zvukova i pištanja prati podešavanje jačine glasa kojeg koristite. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>)
+    <LI>Opcija da odvojeno podesite jačinu NVDA zvukova. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038">#15038</A>)
+    </UL>
+  <LI>Postoji poznat problem sa povremenim rušenjem kada je WASAPI omogućen. (<A HREF="https://github.com/nvaccess/nvda/issues/15150">#15150</A>)
+  </UL>
+<LI>U pretraživačima Mozilla Firefox i Google Chrome, NVDA sada prijavljuje ako kontrola otvara dijalog, mrežu, listu ili stablo ako je autor ovo označio korišćenjem <CODE>aria-haspopup</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14709">#14709</A>)
 <LI>Sada je moguće koristiti sistemske varijable  (kao što su  <CODE>%temp%</CODE> ili  <CODE>%homepath%</CODE>) pri određivanju putanje kada se pravi NVDA prenosna kopija. (<A HREF="https://github.com/nvaccess/nvda/issues/14680">#14680</A>)
-<LI>Dodata podrška za <CODE>aria-brailleroledescription</CODE> ARIA 1.3 atribut, koji će dozvoliti web autorima da zamene vrstu elementa koja će se prikazati na brajevom redu. (<A HREF="https://github.com/nvaccess/nvda/issues/14748">#14748</A>)
-<LI>Kada je omogućeno prijavljivanje obeleženog teksta u formatiranju dokumenta, obeležene boje se sada prijavljuju u programu Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/7396">#7396</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12101">#12101</A>, <A HREF="https://github.com/nvaccess/nvda/issues/5866">#5866</A>)
-<LI>Kada je omogućeno prijavljivanje boja u formatiranju dokumenta, boje pozadine se sada prijavljuju u programu  Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/5866">#5866</A>)
-<LI>Kada pritisnete <CODE>numeričko2</CODE> tri  puta da biste dobili brojčanu vrednost znaka na poziciji preglednog kursora, informacija se takođe prikazuje na brajevom redu. (<A HREF="https://github.com/nvaccess/nvda/issues/14826">#14826</A>)
-<LI>NVDA sada reprodukuje zvukove korišćenjem standarda Windows Audio Session API (WASAPI), što može poboljšati brzinu, performanse i stabilnost NVDA govora i zvukova.
-Ovo se može onemogućiti u naprednim podešavanjima ukoliko se primete problemi sa zvukom. (<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>)
-<LI>Kada se koriste Excel prečice da se menjaju stanja formatiranja kao što su podebljanje, iskošenost, podvlačenje i precrtavanje ćelije u Excelu, rezultat se sada prijavljuje. (<A HREF="https://github.com/nvaccess/nvda/issues/14923">#14923</A>)
 <LI>Dodata podrška za brajev red Help Tech Activator. (<A HREF="https://github.com/nvaccess/nvda/issues/14917">#14917</A>)
 <LI>u ažuriranju Windowsa 10 iz maja 2019 i novijim, NVDA može izgovarati imena virtuelnih radnih površina kada se otvaraju, menjaju ili zatvaraju. (<A HREF="https://github.com/nvaccess/nvda/issues/5641">#5641</A>)
-<LI>Sada je moguće da jačina NVDA zvukova i pištanja prati podešavanje jačine glasa kojeg koristite.
-Ova opcija se može omogućiti u naprednim podešavanjima. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>)
-<LI>Sada možete posebno kontrolisati jačinu NVDA zvukova.
-Ovo se može uraditi iz Windows miksera jačine. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>)
+<LI>Sistemski parametar je dodat koji će dozvoliti korisnicima i administratorima sistema da nateraju NVDA da se pokrene u bezbednom režimu. (<A HREF="https://github.com/nvaccess/nvda/issues/10018">#10018</A>)
 </UL>
 
 <P></P>
 <H3>Promene</H3>
 <UL>
-<LI>Ažuriran LibLouis brajev prevodilac na <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.26.0">3.26.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/14970">#14970</A>)
-<LI>CLDR je ažuriran na verziju 43.0. (<A HREF="https://github.com/nvaccess/nvda/issues/14918">#14918</A>)
-<LI>Simboli crtica i em- će uvek biti poslati sintetizatoru. (<A HREF="https://github.com/nvaccess/nvda/issues/13830">#13830</A>)
+<LI>Ažurirane komponente:
+  <UL>
+  <LI>eSpeak NG je ažuriran na 1.52-dev commit <CODE>ed9a7bcf</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/15036">#15036</A>)
+  <LI>Ažuriran LibLouis brajev prevodilac na <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.26.0">3.26.0</A>. (<A HREF="https://github.com/nvaccess/nvda/issues/14970">#14970</A>)
+  <LI>CLDR je ažuriran na verziju 43.0. (<A HREF="https://github.com/nvaccess/nvda/issues/14918">#14918</A>)
+  </UL>
 <LI>LibreOffice promene:
   <UL>
-  <LI>Kada se prijavljuje lokacija preglednog kursora, trenutna lokacija kursora se sada prijavljuje u odnosu na trenutnu stranicu u programu LibreOffice Writer za LibreOffice verzije novije od 7.6, slično prijavljivanju u programu Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/11696">#11696</A>)
+  <LI>Kada se prijavljuje lokacija preglednog kursora, trenutna lokacija kursora se sada prijavljuje u odnosu na trenutnu stranicu u programu LibreOffice Writer za LibreOffice verzije 7.6 i novije, slično prijavljivanju u programu Microsoft Word. (<A HREF="https://github.com/nvaccess/nvda/issues/11696">#11696</A>)
+  <LI>Kada se prebacite na neku drugu ćeliju u programu LibreOffice Calc, NVDA više neće neispravno izgovarati koordinate prethodno fokusirane ćelije kada se izgovor koordinata ćelija onemogući u NVDA podešavanjima. (<A HREF="https://github.com/nvaccess/nvda/issues/15098">#15098</A>)
   <LI>Izgovor statusne trake (na primer kada se pritisne <CODE>NVDA+end</CODE>) radi u paketu LibreOffice. (<A HREF="https://github.com/nvaccess/nvda/issues/11698">#11698</A>)
   </UL>
+<LI>Brajeve promene:
+  <UL>
+  <LI>Kada se koristi brajev red uz drajver za HID brajev standard, strelice se sada mogu koristiti za emuliranje strelica tastature i entera.
+Takođe,  <CODE>razmak+tačkica1</CODE> i <CODE>razmak+tačkica4</CODE> su sada podešene kao strelice dole i gore. (<A HREF="https://github.com/nvaccess/nvda/issues/14713">#14713</A>)
+  <LI>Ažuriranja dinamičkog sadržaja na Webu (ARIA živi regioni) se sada prikazuju na brajevom redu.
+Ovo se može onemogućiti u panelu naprednih podešavanja. (<A HREF="https://github.com/nvaccess/nvda/issues/7756">#7756</A>)
+-
+  </UL>
+<LI>Simboli crtica i em- će uvek biti poslati sintetizatoru. (<A HREF="https://github.com/nvaccess/nvda/issues/13830">#13830</A>)
 <LI>Distanca koju Microsoft Word prijavljuje će sada poštovati mernu jedinicu koja je podešena u naprednim podešavanjima Worda čak i kada se koristi UIA za pristup Word dokumentima. (<A HREF="https://github.com/nvaccess/nvda/issues/14542">#14542</A>)
 <LI>NVDA brže reaguje kada se pomera kursor u kontrolama za uređivanje. (<A HREF="https://github.com/nvaccess/nvda/issues/14708">#14708</A>)
-<LI>Baum brajev drajver: Dodato nekoliko vezanih brajevih prečica za izvršavanje čestih radnji kao što su <CODE>windows+d</CODE>, <CODE>alt+tab</CODE> i tako dalje.
-Molimo pogledajte NVDA korisničko uputstvo za potpunu listu. (<A HREF="https://github.com/nvaccess/nvda/issues/14714">#14714</A>)
-<LI>Kada se koristi brajev red uz drajver za HID brajev standard, strelice se sada mogu koristiti za emuliranje strelica tastature i entera. Takođe,  razmak+tačka1 i razmak+tačka4 su sada podešene kao strelice dole i gore. (<A HREF="https://github.com/nvaccess/nvda/issues/14713">#14713</A>)
 <LI>Skripta za prijavljivanje odredišta linka sada prijavljuje sa pozicije kursora ili fokusa umesto navigacionog objekta. (<A HREF="https://github.com/nvaccess/nvda/issues/14659">#14659</A>)
-<LI>Pravljenje prenosne kopije više ne zahteva da upišete slovo diska kao deo apsolutne putanje. (<A HREF="https://github.com/nvaccess/nvda/issues/14681">#14681</A>)
+<LI>Pravljenje prenosne kopije više ne zahteva da upišete slovo diska kao deo apsolutne putanje. (<A HREF="https://github.com/nvaccess/nvda/issues/14680">#14680</A>)
 <LI>Ako je Windows podešen da prijavljuje sekunde na satu sistemske trake, korišćenje prečice <CODE>NVDA+f12</CODE> za prijavljivanje vremena sada prati ovo podešavanje. (<A HREF="https://github.com/nvaccess/nvda/issues/14742">#14742</A>)
 <LI>NVDA će sada prijavljivati grupe bez oznake koje imaju korisne informacijje o poziciji, kakve se mogu pronaći u novijim  verzijama Microsoft Office 365 menija. (<A HREF="https://github.com/nvaccess/nvda/issues/14878">#14878</A>) 
 </UL>
 
 <P></P>
 <H3>Ispravljene greške</H3>
-<UL>
-<LI>NVDA se više neće prebacivati na opciju nema brajevog reda više puta u toku automatskog prepoznavanja, što daje jasnije dnevnike i manje opterećenja. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
-<LI>NVDA će se sada vratiti na USB ako se HID Bluetooth uređaj  (kao što je HumanWare Brailliant ili APH Mantis) automatski prepozna i USB veza postane dostupna.
-Ovo je ranije radilo samo za Bluetooth serijske portove. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
-<LI>Sada je moguće koristiti obrnutu kosu crtu u polju zamene unosa rečnika, kada tip nije podešen na regularni izraz. (<A HREF="https://github.com/nvaccess/nvda/issues/14556">#14556</A>)
-<LI>U režimu pretraživanja, NVDA više neće neispravno zanemariti prebacivanje fokusa na glavnu ili unutrašnju kontrolu, na primer prebacivanje sa kontrole na  stavku liste ili ćeliju mreže. (<A HREF="https://github.com/nvaccess/nvda/issues/14611">#14611</A>)
   <UL>
-  <LI>Imajte na umu da ova ispravka važi samo kada je opcija "Automatski postavi sistemski fokus na elemente koji se mogu fokusirati" u podešavanjima režima pretraživanja isključena (što je podrazumevano podešavanje).
+  <LI>Brajevi redovi:
+  <LI>Nekoliko poboljšanja u stabilnosti unosa/izlaza na brajevom redu, što će smanjiti učestalost grešaka i rušenja programa NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
+  <LI>NVDA se više neće bespotrebno prebacivati na opciju bez brajevog reda više puta u toku automatskog prepoznavanja, što donosi čistije dnevnike evidencije i manje opterećenje. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
+  <LI>NVDA će se sada vratiti na USB ako HID Bluetooth uređaj (kao što je HumanWare Brailliant ili APH Mantis) automatski bude prepoznat i USB veza postane dostupna.
+  Ovo je ranije radilo samo za Bluetooth serijske portove. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
   </UL>
-<LI>NVDA više neće ponekad izazvati da se  Mozilla Firefox sruši ili prestane da reaguje. (<A HREF="https://github.com/nvaccess/nvda/issues/14647">#14647</A>)
-<LI>U pretraživačima Mozilla Firefox i Google Chrome, ukucani znakovi se više ne prijavljuju u određenim tekstualnim poljima čak i kada je izgovor ukucanih znakova isključen. (<A HREF="https://github.com/nvaccess/nvda/issues/14666">#14666</A>)
-<LI>Sada možete koristiti režim pretraživanja u Chromium umetnutim kontrolama u kojima to ranije nije bilo moguće. (<A HREF="https://github.com/nvaccess/nvda/issues/13493">#13493</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8553">#8553</A>)
-<LI>Za simbole koji nemaju opis na trenutnom jeziku, koristiće se podrazumevani Engleski nivo. (<A HREF="https://github.com/nvaccess/nvda/issues/14558">#14558</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14417">#14417</A>)
+
+<UL>
+<LI>Web pretraživači:
+  <UL>
+  <LI>NVDA više neće ponekad izazivati rušenje ili prestanak rada programa Mozilla Firefox. (<A HREF="https://github.com/nvaccess/nvda/issues/14647">#14647</A>)
+  <LI>U pretraživačima Mozilla Firefox i Google Chrome, ukucani znakovi se više ne prijavljuju u nekim poljima za unos teksta čak i kada je izgovor ukucanih znakova onemogućen. (<A HREF="https://github.com/nvaccess/nvda/issues/8442">#8442</A>)
+  <LI>Sada možete da koristite režim pretraživanja u Chromium umetnutim kontrolama u kojima to ranije nije bilo moguće. (<A HREF="https://github.com/nvaccess/nvda/issues/13493">#13493</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8553">#8553</A>)
+  <LI>U Mozilli Firefox, pomeranje miša do teksta nakon linka sada ispravno prijavljuje tekst. (<A HREF="https://github.com/nvaccess/nvda/issues/9235">#9235</A>)
+  <LI>Odredište linkova na slikama se sada preciznije ispravno prijavljuje u većini slučajeva u programima Chrome i Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/14779">#14779</A>)
+  <LI>Kada pokušavate da čitate adresu linka bez href atributa NVDA više neće biti bez govora.
+  Umesto togag NVDA će prijaviti da link  nema odredište. (<A HREF="https://github.com/nvaccess/nvda/issues/14723">#14723</A>)
+  <LI>U režimu pretraživanja, NVDA neće neispravno ignorisati pomeranje fokusa na glavnu kontrolu ili kontrolu unutar nje na primer pomeranje sa kontrole na njenu unutrašnju stavku liste ili ćeliju mreže. (<A HREF="https://github.com/nvaccess/nvda/issues/14611">#14611</A>)
+    <UL>
+    <LI>Napomena međutim da se ova ispravka primenjuje samo kada je opcija "Automatsko postavljanje fokusa na elemente koji se mogu fokusirati" u podešavanjima režima pretraživanja isključena (što je podrazumevano podešavanje).
+    </UL>
+-
+  </UL>
 <LI>Ispravke za Windows 11:
   <UL>
   <LI>NVDA ponovo može da izgovara sadržaj statusne trake u beležnici. (<A HREF="https://github.com/nvaccess/nvda/issues/14573">#14573</A>)
   <LI>Prebacivanje između kartica će izgovoriti ime i poziciju nove kartice u beležnici i istraživaču datoteka. (<A HREF="https://github.com/nvaccess/nvda/issues/14587">#14587</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14388">#14388</A>)
   <LI>NVDA će ponovo izgovarati dostupne unose kada se tekst piše na jezicima kao što su Kineski i Japanski. (<A HREF="https://github.com/nvaccess/nvda/issues/14509">#14509</A>)
+    <UL>
+    <LI>Ponovo je moguće otvoriti listu saradnika ili licencu iz menija NVDA pomoći. (<A HREF="https://github.com/nvaccess/nvda/issues/14725">#14725</A>)
+  -
+    </UL>
   </UL>
-<LI>U programu Mozilla Firefox, pomeranje miša iznad teksta nakon linka sada ispravno prijavljuje tekst. (<A HREF="https://github.com/nvaccess/nvda/issues/9235">#9235</A>)
-<LI>In Windows 10 and 11 Calculator, a portable copy of NVDA will no longer do nothing or play error tones when entering expressions in standard calculator in compact overlay mode. (<A HREF="https://github.com/nvaccess/nvda/issues/14679">#14679</A>)
-<LI>Kada pokušate da dobijete odredište linka bez href atributa NVDA sada izgovara da link nema odredište.
-<LI>Nekoliko ispravljenih grešaka u stabilnosti unosa i izlaza brajevih redova, što će smanjiti učestalost grešaka kao i NVDA rušenja. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
-<LI>NVDA se ponovo oporavlja u brojnim slučajevima kao što su aplikacije koje više ne reaguju, što je ranije izazivalo da NVDA u potpunosti prestane da radi. (<A HREF="https://github.com/nvaccess/nvda/issues/14759">#14759</A>) 
-<LI>Odredište linkova u slikama se sada ispravno prijavljuje u programima Chrome i Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/14779">#14779</A>)
-<LI>Na Windowsu 11, ponovo je moguće otvoriti listu saradnika kao i licencu iz NVDA menija pomoći. (<A HREF="https://github.com/nvaccess/nvda/issues/14725">#14725</A>)
-<LI>Kada naterate korišćenje UIA podrške u određenim Terminalima i konzolama, ispravljena je greška koja je izazivala rušenje i neprestano pisanje podataka  u dnevniku. (<A HREF="https://github.com/nvaccess/nvda/issues/14689">#14689</A>)
+<LI>Microsoft Office ispravke:
+  <UL>
+  <LI>Kada se brzo krećete kroz ćelije u Excelu, manja je verovatnoća da će NVDA prijaviti pogrešnu ćeliju ili pogrešan izbor. (<A HREF="https://github.com/nvaccess/nvda/issues/14983">#14983</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12200">#12200</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12108">#12108</A>)
+  <LI>Kada stanete na Excel ćeliju van radnog lista, brajev red i označavanje fokusa se više neće bespotrebno ažurirati na objekat koji je ranije bio fokusiran. (<A HREF="https://github.com/nvaccess/nvda/issues/15136">#15136</A>)
+  </UL>
 <LI>NVDA sada uspešno izgovara fokusiranje na polja za lozinke u programima Microsoft Excel i Outlook. (<A HREF="https://github.com/nvaccess/nvda/issues/14839">#14839</A>)
+   -
+<LI>Za simbole koji nemaju opis na trenutnom jeziku, podrazumevani Engleski nivo simbola će se koristiti. (<A HREF="https://github.com/nvaccess/nvda/issues/14558">#14558</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14417">#14417</A>)
+<LI>Sada je moguće koristiti znak obrnuta kosa crta u polju zamene unosa rečnika, kada vrsta nije podešena kao regularni izraz. (<A HREF="https://github.com/nvaccess/nvda/issues/14556">#14556</A>)
+<LI>In Windows 10 and 11 Calculator, a portable copy of NVDA will no longer do nothing or play error tones when entering expressions in standard calculator in compact overlay mode. (<A HREF="https://github.com/nvaccess/nvda/issues/14679">#14679</A>)
+<LI>NVDA se ponovo oporavlja u brojnim slučajevima kao što su aplikacije koje više ne reaguju, što je ranije izazivalo da NVDA u potpunosti prestane da radi. (<A HREF="https://github.com/nvaccess/nvda/issues/14759">#14759</A>) 
+<LI>Kada naterate korišćenje UIA podrške u određenim Terminalima i konzolama, ispravljena je greška koja je izazivala rušenje i neprestano pisanje podataka  u dnevniku. (<A HREF="https://github.com/nvaccess/nvda/issues/14689">#14689</A>)
 <LI>NVDA više neće odbijati da sačuva podešavanja nakon vraćanja podešavanja na podrazumevana. (<A HREF="https://github.com/nvaccess/nvda/issues/13187">#13187</A>)
 <LI>Kada se pokreće privremena verzija iz instalacije, NVDA neće korisnicima davati pogrešne informacije da podešavanja mogu biti sačuvana. (<A HREF="https://github.com/nvaccess/nvda/issues/14914">#14914</A>)
 <LI>Prijavljivanje tasterskih prečica za objekte je poboljšano. (<A HREF="https://github.com/nvaccess/nvda/issues/10807">#10807</A>)
-<LI>Kada se brzo krećete kroz ćelije u Excelu, manja je verovatnoća da će NVDA prijaviti pogrešnu ćeliju ili pogrešan izbor. (<A HREF="https://github.com/nvaccess/nvda/issues/14983">#14983</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12200">#12200</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12108">#12108</A>)
 <LI>NVDA sada nešto brže reaguje na komande i promene fokusa. (<A HREF="https://github.com/nvaccess/nvda/issues/14928">#14928</A>)
+<LI>Prikazivanje OCR podešavanja više neće biti neuspešno na nekim sistemima. (<A HREF="https://github.com/nvaccess/nvda/issues/15017">#15017</A>)
+<LI>Ispravljena greška vezana za čuvanje i učitavanje NVDA podešavanja, uključujući menjanje sintetizatora. (<A HREF="https://github.com/nvaccess/nvda/issues/14760">#14760</A>)
+<LI>Ispravljena greška koja je izazvala da u pregledu teksta pokret "Povlačenje gore" pomera stranice umesto da pređe na prethodni red. (<A HREF="https://github.com/nvaccess/nvda/issues/15127">#15127</A>)
 </UL>
 
 <P></P>
