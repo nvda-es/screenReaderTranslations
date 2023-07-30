@@ -1406,7 +1406,14 @@ Luettelo esimerkiksi sisältää kohteita, joten niihin pääsemiseksi on siirry
 Jos on siirrytty luettelokohteeseen, saman luettelon muihin kohteisiin päästään siirtymällä seuraavaan tai edelliseen objektiin.
 Takaisin luetteloon pääsee siirtymällä luettelokohteen säilöobjektiin.
 Tämän jälkeen voidaan siirtyä luettelosta pois, mikäli halutaan päästä muihin objekteihin.
-Myös työkalurivi sisältää säätimiä, joten niihin pääsemiseksi on siirryttävä kyseisen työkalurivin sisään.
+Myös työkalupalkki sisältää säätimiä, joten niihin pääsemiseksi on siirryttävä kyseisen työkalupalkin sisään.
+</P>
+<P>
+Mikäli haluat mieluummin liikkua järjestelmässä jokaisen yksittäisen objektin välillä, voit käyttää edelliseen tai seuraavaan objektiinn tasatussa näkymässä siirtäviä komentoja.
+Jos esimerkiksi siirryt tasatussa näkymässä seuraavaan objektiin ja nykyinen objekti sisältää muita objekteja, NVDA siirtyy automaattisesti ensimmäiseen objektiin, joka sisältää sen.
+Vaihtoehtoisesti, jos nykyinen objekti ei sisällä muita objekteja, NVDA siirtyy seuraavaan objektiin nykyisellä hierarkiatasolla.
+Mikäli tällaista objektia ei ole, NVDA yrittää löytää seuraavan objektinn hierarkiassa sen sisältämien objektien perusteella, kunnes ei ole enää objekteja, joihin siirtyä.
+Samat säännöt pätevät myös hierarkiassa taaksepäin liikkumiseen.
 </P>
 <P>
 Nykyistä tarkasteltavaa objektia kutsutaan navigointiobjektiksi.
@@ -1446,15 +1453,29 @@ Seuraavia komentoja käytetään objekteittain liikkumiseen:
 <TD>Siirrä edelliseen objektiin</TD>
 <TD>NVDA+laskinnäppäimistön 4</TD>
 <TD>NVDA+Vaihto+Nuoli vasemmalle</TD>
-<TD>Pyyhkäisy vasemmalle (objektitila)</TD>
+<TD>Ei mitään</TD>
 <TD>Siirtää nykyistä navigointiobjektia edeltävään objektiin.</TD>
+</TR>
+<TR>
+<TD>Siirrä edelliseen objektiin tasatussa näkymässä</TD>
+<TD>NVDA+laskinnäppäimistön 9</TD>
+<TD>NVDA+Vaihto+[</TD>
+<TD>Pyyhkäisy vasemmalle (objektitila)</TD>
+<TD>Siirtää edelliseen objektiin objektinavigointihierarkian tasatussa näkymässä.</TD>
 </TR>
 <TR>
 <TD>Siirrä seuraavaan objektiin</TD>
 <TD>NVDA+laskinnäppäimistön 6</TD>
 <TD>NVDA+Vaihto+Nuoli oikealle</TD>
-<TD>Pyyhkäisy oikealle (objektitila)</TD>
+<TD>Ei mitään</TD>
 <TD>Siirtää nykyisen navigointiobjektin jälkeiseen objektiin.</TD>
+</TR>
+<TR>
+<TD>Siirrä seuraavaan objektiin tasatussa näkymässä</TD>
+<TD>NVDA+laskinnäppäimistön 3</TD>
+<TD>NVDA+Vaihto+]</TD>
+<TD>Pyyhkäisy oikealle (objektitila)</TD>
+<TD>Siirtää seuraavaan objektiin objektinavigointihierarkian tasatussa näkymässä.</TD>
 </TR>
 <TR>
 <TD>Siirrä ensimmäiseen sisältöobjektiin</TD>
@@ -1707,7 +1728,6 @@ Asettelua kuvataan seuraavasti:
 <H3>5.6. Tarkastelutilat</H3>
 <P>
 NVDA:n <A HREF="#ReviewingText">tekstintarkastelukomennot</A> lukevat tekstiä valitusta tarkastelutilasta riippuen joko nykyisessä navigointiobjektissa, asiakirjassa tai ruudussa.
-Tarkastelutilat korvaavat aiemman kokonaistarkastelutoiminnon.
 </P>
 <P>
 Seuraavat komennot vaihtavat tarkastelutilojen välillä:
@@ -3456,6 +3476,36 @@ Tällöin näyttö ei seuraa navigointiobjektia objektinavigointia käytettäess
 Jos sen sijaan haluat pistenäytön seuraavan objektinavigointia ja tarkastelukohdistinta, näyttö on määritettävä seuraamaan tarkastelukohdistinta.
 Tällöin pistenäyttö ei seuraa järjestelmän kohdistusta eikä kohdistinta.
 </P>
+<A NAME="BrailleSettingsReviewRoutingMovesSystemCaret"></A>
+<H5>Siirrä järjestelmäkohdistin tarkastelukohdistimen kohdalle pistenäytön kosketuskohdistinnäppäimillä</H5>
+<DL>
+<DT>Oletus</DT><DD>
+  Ei koskaan
+<DT>Asetukset</DT><DD>
+  Oletus (Ei koskaan), Ei koskaan, Vain, kun pistenäyttö seuraa automaattisesti, Aina
+</DL>
+
+<P></P>
+<P>
+Tämä asetus määrittää, siirretäänkö järjestelmäkohdistinta kosketuskohdistinnäppäimen painalluksella.
+Asetuksen oletusarvo on Ei koskaan, mikä tarkoittaa, että kosketuskohdistinnäppäimen painaminen ei siirrä järjestelmäkohdistinta tarkastelukohdistimen kohdalle.
+</P>
+<P>
+Kun asetukseksi on määritetty Aina ja <A HREF="#BrailleTether">pistenäyttö seuraa</A> -asetuksena on "automaattinen" tai "tarkastelukohdistinta", kosketuskohdistinnäppäimen painaminen siirtää myös järjestelmäkohdistinta tai kohdistusta, kun se on mahdollista.
+Fyysistä kohdistinta ei ole, kun nykyisenä tarkastelutilana on <A HREF="#ScreenReview">ruudun tarkastelu</A>.
+Tässä tapauksessa NVDA yrittää siirtää kohdistuksen objektiin, joka on sen tekstin alla, johon olet siirtymässä.
+Sama pätee myös <A HREF="#ObjectReview">objektin tarkasteluun</A>.
+</P>
+<P>
+Voit myös määrittää tämän asetuksen siirtämään järjestelmäkohdistinta vain, kun Pistenäyttö seuraa -asetuksena on "automaattinen".
+Tällöin kosketuskohdistinnäppäimen painallus siirtää järjestelmäkohdistinta tai kohdistusta vain, kun NVDA seuraa tarkastelukohdistinta automaattisesti, kun taas manuaalisesti tarkastelukohdistinta seurattaessa siirtämistä ei tapahdu.
+</P>
+<P>
+Tämä asetus näytetään vain, jos <A HREF="#BrailleTether">pistenäyttö seuraa</A> -asetukseksi on määritetty "automaattinen" tai "tarkastelukohdistinta".
+</P>
+<P>
+Muuta Siirrä järjestelmäkohdistin tarkastelukohdistimen kohdalle pistenäytön kosketuskohdistinnäppäimillä -asetusta mistä tahansa määrittämällä sille oma näppäinkomento <A HREF="#InputGestures">Näppäinkomennot-valintaikkunaa</A> käyttäen.
+</P>
 <A NAME="BrailleSettingsReadByParagraph"></A>
 <H5>Lue kappaleittain</H5>
 <P>
@@ -3546,8 +3596,8 @@ Tämän asetuksen poistaminen käytöstä sallii puheen kuulumisen samalla, kun 
 <P></P>
 <P>
 Tämä asetus määrittää, näytetäänkö valinnan ilmaisin (pisteet 7 ja 8) pistenäytöllä.
-Asetus on oletusarvoisesti käytössä, joten ilmaisin näytetään.
-Valinnan näyttäminen saattaa häiritä lukemista.
+Asetus on oletusarvoisesti käytössä, jolloin ilmaisin näytetään.
+Valinnanilmaisin saattaa häiritä lukemista.
 Tämän asetuksen käytöstä poistaminen saattaa parantaa luettavuutta.
 </P>
 <P>
@@ -4363,6 +4413,20 @@ Alkeelliseen laskentataulukossa liikkumiseen/muokkaamiseen tämä asetus voi kui
 Emme vielä suosittele tämän asetuksen oletusarvoista käyttöön ottoa suurimmalle osalle käyttäjistä, mutta Excel 16.0.13522.10000 tai uudemman käyttäjiltä palaute on tervetullutta.
 Excelin UI automation -rajapinnan toteutus muuttuu jatkuvasti, eikä Microsoft Officen vanhemmat versiot kuin 16.0.13522.10000 anna välttämättä tarpeeksi tietoja, jotta tästä asetuksesta olisi mitään hyötyä.
 </P>
+<A NAME="BrailleLiveRegions"></A>
+<H5>Ilmaise aktiiviset alueet</H5>
+<DL>
+<DT>Oletus</DT><DD>
+  Käytössä
+<DT>Asetukset</DT><DD>
+  Oletus (Käytössä), Ei käytössä, Käytössä
+</DL>
+
+<P></P>
+<P>
+Tällä asetuksella voidaan valita, näyttääkö NVDA tietyt verkkosivulla tapahtuvat dynaamiset muutokset pistenäytöllä.
+Asetuksen käytöstä poistaminen vastaa NVDA:n toiminnallisuutta versiossa 2023.1 ja sitä vanhemmissa, joissa nämä sisällön muutokset ilmooitettiin vain puheena.
+</P>
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
 <H5>Puhu salasanat kaikissa laajennetuissa päätteissä</H5>
 <P>
@@ -4403,7 +4467,7 @@ Kohdistimen jälkeinen teksti kuitenkin luetaan päätteissä, kun rivin keskell
 <DT>Oletus</DT><DD>
   Muutosten havaitseminen
 <DT>Vaihtoehdot</DT><DD>
-  Muutosten havaitseminen, UIA-ilmoitukset
+  Oletus (Muutosten havaitseminen), Muutosten havaitseminen, UIA-ilmoitukset
 </DL>
 
 <P></P>
@@ -4446,20 +4510,40 @@ Useiden historiallisesti suosittujen käyttöliittymärajapintojen avulla teksti
 </P>
 <A NAME="WASAPI"></A>
 <H5>Käytä WASAPIa äänen toistamiseen</H5>
+<DL>
+<DT>Oletus</DT><DD>
+  Ei käytössä
+<DT>Asetukset</DT><DD>
+  Oletus (Ei käytössä), Käytössä, Ei käytössä
+</DL>
+
+<P></P>
 <P>
 Tämä asetus mahdollistaa äänen toistamisen Windowsin äänentoistorajapinnan (WASAPI) kautta.
 WASAPI on nykyaikaisempi äänikehys, joka saattaa parantaa NVDA:n ääniulostulon reagointia, suorituskykyä ja vakautta sekä puheen että äänien toiston osalta.
-Tämä asetus on oletusarvoisesti käytössä.
-Kun tätä asetusta on muutettu, NVDA on käynnistettävä uudelleen, jotta muutos tulee voimaan.
+Kun asetusta on muutettu, NVDA on käynnistettävä uudelleen, jotta muutos tulee voimaan.
 </P>
 <A NAME="SoundVolumeFollowsVoice"></A>
 <H5>NVDA-äänien voimakkuus mukautuu puheäänen voimakkuuteen</H5>
+<DL>
+<DT>Oletus</DT><DD>
+  Ei käytössä
+<DT>Asetukset</DT><DD>
+  Ei käytössä, Käytössä
+</DL>
+
+<P></P>
 <P>
 Kun tämä asetus on käytössä, NVDA:n äänien ja piippausten voimakkuus mukautuu käyttämäsi puheäänen voimakkuusasetukseen.
 Jos vähennät puheäänen voimakkuutta, äänien voimakkuus vähenee.
 Jos vastaavasti lisäät puheäänen voimakkuutta, äänien voimakkuus kasvaa.
 Tällä on vaikutusta vain, kun "Käytä WASAPIa äänen toistamiseen" on otettu käyttöön.
-Tämä asetus on oletusarvoisesti poissa käytöstä.
+</P>
+<A NAME="SoundVolume"></A>
+<H5>NVDA-äänien voimakkuus</H5>
+<P>
+Tällä liukusäätimellä voit määrittää NVDA:n äänien ja piippausten äänenvoimakkuuden.
+Tämä asetus on käytettävissä vain, kun "Käytä WASAPIa äänen toistamiseen" on käytössä ja "NVDA-äänien voimakkuus mukautuu puheäänen voimakkuuteen" ei ole käytössä.
 </P>
 <A NAME="AdvancedSettingsDebugLoggingCategories"></A>
 <H5>Virheenkorjauslokin kategoriat</H5>
@@ -4545,10 +4629,10 @@ Symboleita voidaan suodattaa kirjoittamalla Suodata-muokkauskenttään haluttu s
 <LI>Korvaava teksti -muokkauskentässä voidaan muuttaa tekstiä, joka puhutaan kyseisen symbolin asemesta.
 <LI>Taso-yhdistelmäruudusta valitaan alin taso, jolla symboli puhutaan (ei mitään, jotain, useimmat tai kaikki).
 Tasoksi voidaan määrittää myös merkki, jolloin symbolia ei puhuta käytössä olevasta symbolitasosta riippumatta kahta seuraavaa poikkeusta lukuun ottamatta:
- <UL>
- <LI>Merkeittäin liikuttaessa.
- <LI>Kun NVDA tavaa tekstiä, joka sisältää kyseisen symbolin.
- </UL>
+  <UL>
+  <LI>Merkeittäin liikuttaessa.
+  <LI>Kun NVDA tavaa tekstiä, joka sisältää kyseisen symbolin.
+  </UL>
 <LI>Lähetä todellinen merkki syntetisaattorille -yhdistelmäruudusta voit määrittää, milloin itse symboli (vastakohtana sen korvaavalle tekstille) lähetetään syntetisaattorille.
 Tästä on hyötyä, jos symboli saa syntetisaattorin pitämään tauon tai muuttamaan äänensävyä.
 Esimerkiksi pilkku saa syntetisaattorin pitämään tauon.
@@ -4817,7 +4901,6 @@ Sen voi myös avata mistä tahansa määrittämällä sille oman näppäinkomenn
 <H3>13.1. Lisäosien selaaminen</H3>
 <P>
 Lisäosakauppa näyttää avautuessaan lisäosien luettelon.
-Voit siirtyä takaisin tähän luetteloon mistä tahansa lisäosakaupan osiosta painamalla <CODE>Alt+L</CODE>.
 Jos et ole aiemmin asentanut lisäosia, lisäosakauppa näyttää luettelon asennettavissa olevista lisäosista.
 Mikäli olet asentanut lisäosia, luettelo näyttää tällä hetkellä asennettuina olevat lisäosat.
 </P>
@@ -4874,16 +4957,16 @@ Saat luettelon johonkin tiettyyn kanavaan kuuluvista lisäosista muuttamalla "Ka
 <H4>13.1.5. Lisäosien etsiminen</H4>
 <P>
 Voit etsiä lisäosia käyttämällä "Etsi"-tekstikenttää.
-Pääset siihen painamalla lisäosaluettelossa <CODE>Vaihto+Sarkain</CODE> tai <CODE>Alt+S</CODE> lisäosakaupan missä tahansa osiossa.
+Pääset siihen painamalla lisäosaluettelossa <CODE>Vaihto+Sarkain</CODE>.
 Kirjoita avainsana tai pari etsimästäsi lisäosasta ja siirry sitten takaisin lisäosaluetteloon painamalla <CODE>Sarkain</CODE>-näppäintä.
-Lisäosat näytetään, jos etsittävä teksti löytyy näyttönimestä, julkaisijasta tai kuvauksesta.
+Lisäosat näytetään, jos etsittävä teksti löytyy lisäosan tunnuksesta, näyttönimestä, julkaisijasta, tekijästä tai kuvauksesta.
 </P>
 <A NAME="AddonStoreActions"></A>
 <H3>13.2. Lisäosien toiminnot</H3>
 <P>
 Lisäosilla on niihin liittyviä toimintoja, kuten asenna, ohje, poista käytöstä ja poista.
-Saat lisäosan toimintovalikon näkyviin painamalla <CODE>Sovellus-</CODE> tai <CODE>Enter-näppäintä</CODE>, napsauttamalla hiiren oikealla painikkeella tai kaksoisnapsauttamalla.
-Valittujen lisäosien tietojen kohdassa on myös Toiminnot-painike, joka voidaan aktivoida normaalisti tai painamalla <CODE>Alt+O</CODE>.
+Saat toimintovalikon näkyviin painamalla <CODE>Sovellus</CODE>- tai <CODE>Enter</CODE>-näppäintä, napsauttamalla hiiren oikealla painikkeella tai kaksoisnapsauttamalla lisäosaa.
+Tämä valikko voidaan avata myös Valitun lisäosan tietojen kohdassa olevalla Toiminnot-painikkeella.
 </P>
 <A NAME="AddonStoreInstalling"></A>
 <H4>13.2.1. Lisäosien asentaminen</H4>
@@ -5025,7 +5108,7 @@ Lisätietoja on <A HREF="https://www.nvaccess.org/files/nvda/documentation/devel
 <H3>14.5. Lisäosakauppa</H3>
 <P>
 Tämä avaa <A HREF="#AddonsManager">NVDA:n lisäosakaupan</A>.
-Lisätietoja saat lukemalla perusteellisen <A HREF="#AddonsManager">Lisäosat ja lisäosakauppa</A> -luvun.
+Lisätietoja saat lukemalla yksityiskohtaisen <A HREF="#AddonsManager">Lisäosat ja lisäosakauppa</A> -luvun.
 </P>
 <A NAME="CreatePortableCopy"></A>
 <H3>14.6. Luo massamuistiversio</H3>
@@ -5077,7 +5160,7 @@ Tällä voidaan ladata uudelleen sovellusmoduulit ja yleisliitännäiset ilman N
 <H2>15. Tuetut puhesyntetisaattorit</H2>
 <P>
 Tässä kappaleessa on tietoja NVDA:n tukemista puhesyntetisaattoreista.
-Vielä kattavampi luettelo ilmaisista ja kaupallisista syntetisaattoreista, joita on mahdollista ostaa ja ladata NVDA:lla käytettäväksi, on <A HREF="https://github.com/nvaccess/nvda/wiki/ExtraVoices">lisä-äänien sivulla.</A>
+Kattavampi luettelo ilmaisista ja kaupallisista syntetisaattoreista, joita on mahdollista ostaa ja ladata NVDA:lla käytettäväksi, on <A HREF="https://github.com/nvaccess/nvda/wiki/ExtraVoices">lisä-äänien sivulla.</A>
 </P>
 <A NAME="eSpeakNG"></A>
 <H3>15.1. eSpeak NG</H3>
@@ -5777,59 +5860,59 @@ Katso näytön käyttöohjeesta kuvaukset näppäinten paikoista.
 </TR>
 <TR>
 <TD>Vieritä taaksepäin</TD>
-<TD>d2</TD>
+<TD><CODE>d2</CODE></TD>
 </TR>
 <TR>
 <TD>Vieritä eteenpäin</TD>
-<TD>d5</TD>
+<TD><CODE>d5</CODE></TD>
 </TR>
 <TR>
 <TD>Siirrä edelliselle riville</TD>
-<TD>d1</TD>
+<TD><CODE>d1</CODE></TD>
 </TR>
 <TR>
 <TD>Siirrä seuraavalle riville</TD>
-<TD>d3</TD>
+<TD><CODE>d3</CODE></TD>
 </TR>
 <TR>
 <TD>Siirrä pistesoluun</TD>
-<TD>kosketuskohdistinnäppäin</TD>
+<TD><CODE>kosketuskohdistinnäppäin</CODE></TD>
 </TR>
 <TR>
-<TD>Vaihto+Sarkain-näppäinyhdistelmä</TD>
-<TD>väli+pisteet 1 ja 3</TD>
+<TD><CODE>Vaihto+Sarkain</CODE>-näppäinyhdistelmä</TD>
+<TD><CODE>väli+pisteet 1 ja 3</CODE></TD>
 </TR>
 <TR>
-<TD>Sarkain-näppäin</TD>
-<TD>väli+pisteet 4 ja 6</TD>
+<TD><CODE>Sarkain</CODE>-näppäin</TD>
+<TD><CODE>väli+pisteet 4 ja 6</CODE></TD>
 </TR>
 <TR>
-<TD>Alt-näppäin</TD>
-<TD>väli+pisteet 1, 3 ja 4 (väli+m)</TD>
+<TD><CODE>Alt</CODE>-näppäin</TD>
+<TD><CODE>väli+pisteet 1, 3 ja 4 (väli+m)</CODE></TD>
 </TR>
 <TR>
-<TD>Esc-näppäin</TD>
-<TD>väli+pisteet 1 ja 5 (väli+e)</TD>
+<TD><CODE>Esc</CODE>-näppäin</TD>
+<TD><CODE>väli+pisteet 1 ja 5 (väli+e)</CODE></TD>
 </TR>
 <TR>
-<TD>Windows-näppäin</TD>
-<TD>väli+pisteet 3 ja 4</TD>
+<TD><CODE>Windows</CODE>-näppäin</TD>
+<TD><CODE>väli+pisteet 3 ja 4</CODE></TD>
 </TR>
 <TR>
-<TD>Alt+Sarkain-näppäinyhdistelmä</TD>
-<TD>väli+pisteet 2, 3, 4 ja 5 (väli+t)</TD>
+<TD><CODE>Alt+Sarkain</CODE>-näppäinyhdistelmä</TD>
+<TD><CODE>väli+pisteet 2, 3, 4 ja 5 (väli+t)</CODE></TD>
 </TR>
 <TR>
 <TD>NVDA-valikko</TD>
-<TD>väli+pisteet 1, 3, 4 ja 5 (väli+n)</TD>
+<TD><CODE>väli+pisteet 1, 3, 4 ja 5 (väli+n)</CODE></TD>
 </TR>
 <TR>
-<TD>Windows+D-näppäinyhdistelmä (pienennä kaikki sovellukset)</TD>
-<TD>väli+pisteet 1, 4 ja 5 (väli+d)</TD>
+<TD><CODE>Windows+D</CODE>-näppäinyhdistelmä (pienennä kaikki sovellukset)</TD>
+<TD><CODE>väli+pisteet 1, 4 ja 5 (väli+d)</CODE></TD>
 </TR>
 <TR>
 <TD>Jatkuva luku</TD>
-<TD>väli+pisteet 1, 2, 3, 4, 5 ja 6</TD>
+<TD><CODE>väli+pisteet 1, 2, 3, 4, 5 ja 6</CODE></TD>
 </TR>
 </TABLE>
 
@@ -7478,12 +7561,13 @@ Tämän takia, ja jotta säilytetään yhteensopivuus muiden taiwanilaisten ruud
 <P>
 NVDA tukee Eurobraillen b.book-, b.note-, Esys-, Esytime- ja Iris-pistenäyttöjä.
 Näissä laitteissa on 10-näppäiminen pistekirjoitusnäppäimistö.
+Katso näppäinten kuvaukset laitteen käyttöohjeesta.
 Kahdesta Väli-näppäimen tavoin sijoitellusta näppäimestä vasemmanpuoleinen vastaa Askelpalautinta ja oikea Väli-näppäintä.
-USB-liitäntään kytkettyinä näillä laitteilla on yksi itsenäinen USB-näppäimistö.
-Se voidaan ottaa käyttöön tai poistaa käytöstä "HID-näppäimistösyötteen emulointi" -valintaruudulla, joka löytyy pistekirjoituksen asetuspaneelista.
-Alla kuvailtu pistekirjoitusnäppäimistö on käytössä, kun edellämainittu valintaruutu ei ole valittuna.
-Seuraavassa ovat näiden näyttöjen näppäinkomennot NVDA:ta käytettäessä.
-Katso kuvaukset näppäinten paikoista laitteen käyttöohjeesta.
+</P>
+<P>
+Nämä laitteet kytketään USB-liitäntään, janiissä on itsenäinen USB-näppäimistö.
+Se voidaan ottaa käyttöön tai poistaa käytöstä vaihtamalla "HID-näppäimistösyötteen emulointi" -asetusta näppäinkomentoa käyttäen.
+Alla kuvaillut pistekirjoitusnäppäimistön toiminnot ovat käytettävissä vain, kun "HID-näppäimistösyötteen emulointi" on poistettu käytöstä.
 </P>
 <A NAME="EurobrailleBraille"></A>
 <H4>16.17.1. Pistekirjoitusnäppäimistön toiminnot</H4>
@@ -7720,6 +7804,10 @@ Katso kuvaukset näppäinten paikoista laitteen käyttöohjeesta.
 <TD>Vaihda <CODE>Alt</CODE>-näppäimen tilaa</TD>
 <TD><CODE>pisteet 1 ja 8+väli</CODE>, <CODE>pisteet 4 ja 8+väli</CODE></TD>
 </TR>
+<TR>
+<TD>Vaihda HID-näppäimistösyötteen emuloinnin asetusta</TD>
+<TD><CODE>switch1Left+joystick1Down</CODE>, <CODE>switch1Right+joystick1Down</CODE></TD>
+</TR>
 </TABLE>
 
 <A NAME="Eurobraillebbook"></A>
@@ -7796,6 +7884,10 @@ Katso kuvaukset näppäinten paikoista laitteen käyttöohjeesta.
 <TR>
 <TD><CODE>Ctrl+End</CODE>-näppäinyhdistelmä</TD>
 <TD><CODE>c4+c5+c6</CODE></TD>
+</TR>
+<TR>
+<TD>Vaihda HID-näppäimistösyötteen emuloinnin asetusta</TD>
+<TD><CODE>l1+joystick1Down</CODE>, <CODE>l8+joystick1Down</CODE></TD>
 </TR>
 </TABLE>
 
@@ -8250,6 +8342,10 @@ Katso laitteen käyttöohjeesta kuvaukset näppäinten paikoista.
 <TD><CODE>f1+f5</CODE>, <CODE>f9+f14</CODE></TD>
 </TR>
 <TR>
+<TD>Vaihda "Siirrä järjestelmäkohdistin tarkastelukohdistimen kohdalle pistenäytön kosketuskohdistinnäppäimillä" -asetuksen tilaa</TD>
+<TD><CODE>f1+f3</CODE>, <CODE>f9+f11</CODE></TD>
+</TR>
+<TR>
 <TD>Aktivoi nykyinen navigointiobjekti</TD>
 <TD><CODE>f7+f8</CODE></TD>
 </TR>
@@ -8411,8 +8507,15 @@ Seuraavassa ovat näiden näyttöjen näppäinkomennot NVDA:ta käytettäessä.
 <A NAME="SecureMode"></A>
 <H3>17.1. Suojattu tila</H3>
 <P>
-NVDA voidaan käynnistää suojatussa tilassa <CODE>-s</CODE>-<A HREF="#CommandLineOptions">komentorivivalitsimella</A>.
+Järjestelmänvalvojat voivat halutessaan määrittää NVDA:n rajoittamaan luvatonta järjestelmän käyttöä.
+NVDA sallii mukautettujen lisäosien asentamisen, jotka voivat suorittaa mielivaltaista koodia, mukaan lukien silloin kun NVDA:lla on järjestelmänvalvojan oikeudet.
+NVDA sallii myös käyttäjien suorittaa mielivaltaista koodia Python-konsolin kautta.
+Suojattu tila estää käyttäjiä muokkaamasta NVDA:n asetuksia ja rajoittaa muutenkin luvatonta järjestelmän käyttöä.
+</P>
+<P>
 NVDA on käynnissä suojatussa tilassa, kun se suoritetaan <A HREF="#SecureScreens">suojatuissa ruuduissa</A>, ellei <A HREF="#SystemWideParameters">järjestelmänlaajuista parametria</A> <CODE>serviceDebug</CODE> ole otettu käyttöön.
+Käynnistä NVDA aina suojatussa tilassa määrittämällä <A HREF="#SystemWideParameters">järjestelmänlaajuinen parametri</A> <CODE>forceSecureMode</CODE>.
+NVDA voidaan käynnistää suojatussa tilassa myös <CODE>-s</CODE>-<A HREF="#CommandLineOptions">komentorivivalitsimella</A>.
 </P>
 <P>
 Suojattu tila poistaa käytöstä:
@@ -8420,13 +8523,24 @@ Suojattu tila poistaa käytöstä:
 <UL>
 <LI>NVDA:n omien ja muiden asetusten tallentamisen levylle
 <LI>Näppäinkomentokartan tallentamisen levylle
-<LI><A HREF="#ConfigurationProfiles">Asetusprofiilien</A> ominaisuudet, kuten luonnin, poiston, profiilin uudelleennimeämisen jne.
+<LI><A HREF="#ConfigurationProfiles">Asetusprofiilien</A> ominaisuudet, kuten luonnin, poiston, uudelleennimeämisen jne.
 <LI>NVDA:n päivittämisen ja massamuistiversion luonnin
+<LI><A HREF="#AddonsManager">Lisäosakaupan</A>
 <LI><A HREF="#PythonConsole">Python-konsolin</A>
 <LI><A HREF="#LogViewer">Lokintarkastelun</A> ja lokiin tallentamisen
+<LI>Ulkoisten asiakirjojen, kuten käyttöoppaan tai tekijät-tiedoston avaamisen NVDA-valikosta
 </UL>
 
 <P></P>
+<P>
+NVDA:n asennetut versiot tallentavat asetuksensa, lisäosat mukaan lukien, hakemistoon <CODE>%APPDATA%\nvda</CODE>.
+Estä NVDA-käyttäjiä muokkaamasta asetuksiaan tai lisäosiaan rajoittamalla heidän käyttöoikeuksiaan tähän kansioon.
+</P>
+<P>
+NVDA-käyttäjät luottavat usein siihen, että voivat mukauttaa NVDA-profiiliaan omiin tarpeisiinsa sopivaksi.
+Tähän saattaa sisältyä mukautettujen lisäosien asentaminen ja asetusten määritys, jotka tulisi tarkistaa erikseen NVDA:sta.
+Suojattu tila jäädyttää NVDA:n asetuksiin tehdyt muutokset, joten varmista, että NVDA on määritetty asianmukaisesti ennen suojatun tilan käyttöönottoa.
+</P>
 <A NAME="SecureScreens"></A>
 <H3>17.2. Suojatut ruudut</H3>
 <P>
@@ -8632,16 +8746,22 @@ Seuraavien rekisteriavainten määrittäminen on mahdollista:
 <TH>Kuvaus</TH>
 </TR>
 <TR>
-<TD>configInLocalAppData</TD>
+<TD><CODE>configInLocalAppData</CODE></TD>
 <TD>DWORD</TD>
-<TD>0 (oletus) poistaa käytöstä, 1 ottaa käyttöön</TD>
-<TD>Jos tämä asetus otetaan käyttöön, NVDA:n asetukset tallennetaan paikallisten sovellustietojen kansioon.</TD>
+<TD>0 = ei käytössä (oletus), 1 = käytössä</TD>
+<TD>Jos tämä otetaan käyttöön, NVDA:n asetukset tallennetaan paikallisen sovellusdatan hakemistoon roaming-hakemistossa sijaitsevan sovellusdatakansion asemesta.</TD>
 </TR>
 <TR>
-<TD>serviceDebug</TD>
+<TD><CODE>serviceDebug</CODE></TD>
 <TD>DWORD</TD>
-<TD>0 (oletus) poistaa käytöstä, 1 ottaa käyttöön</TD>
-<TD>Jos tämä asetus otetaan käyttöön, <A HREF="#SecureMode">suojattu tila</A> poistetaan käytöstä <A HREF="#SecureScreens">suojatuissa ruuduissa</A>. Tämän asetuksen käyttöä ei suositella tietoturvan merkittävän heikkenemisen takia.</TD>
+<TD>0 = ei käytössä (oletus), 1 = käytössä</TD>
+<TD>Jos tämä asetus otetaan käyttöön, <A HREF="#SecureMode">suojattu tila</A> poistetaan käytöstä <A HREF="#SecureScreens">suojatuissa ruuduissa</A>. Tämän asetuksen käyttöä ei suositella tietoturvan merkittävän heikkenemisen vuoksi.</TD>
+</TR>
+<TR>
+<TD><CODE>forceSecureMode</CODE></TD>
+<TD>DWORD</TD>
+<TD>0 = ei käytössä (oletus), 1 = käytössä</TD>
+<TD>Jos tämä otetaan käyttöön, <A HREF="#SecureMode">suojattu tila</A> pakotetaan käyttöön NVDA:ta käytettäessä.</TD>
 </TR>
 </TABLE>
 
