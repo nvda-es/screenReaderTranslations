@@ -13,7 +13,7 @@ Sont présents de nouvelles fonctionnalités Braille, commandes et supports d'af
 Il existe également de nouveaux gestes de commandes pour l'OCR et la navigation par objets à plat.
 La navigation et l'annonce du formatage dans Microsoft Office sont améliorés.
 
-Sont présents de nombreux correctifs, essentiellement pour le Braille, Microsoft Office, les navigateurs Web et WIndows 11.
+Sont présents de nombreux correctifs, essentiellement pour le Braille, Microsoft Office, les navigateurs Web et Windows 11.
 
 eSpeak-NG, le transcripteur Braille LibLouis, et le référentiel Unicode CLDR ont été mis à jour.
 
@@ -29,8 +29,8 @@ eSpeak-NG, le transcripteur Braille LibLouis, et le référentiel Unicode CLDR o
   - Un geste non assigné pour parcourir les modes d'affichage des messages en Braille. (#14864)
   - Un geste non assigné pour basculer l'affichage de l'indicateur de sélection en Braille. (#14948)
   - Ajout de gestes clavier par défaut pour aller à l'objet suivant ou précédent dans une vue à plat de la hierarchie des objets. (#15053)
-    - Bureau : ``NVDA+numpad9`` et ``NVDA+numpad3`` pour se déplacer vers l'objet précédent ou suivant respectivement.
-    - Portable : ``shift+NVDA+[`` et ``shift+NVDA+]`` pour se déplacer vers l'objet précédent ou suivant respectivement.
+    - Bureau : ``NVDA+pavNum9`` et ``NVDA+pavNum3`` pour se déplacer vers l'objet précédent ou suivant respectivement.
+    - Portable : ``NVDA+maj+ù`` et ``NVDA+maj+*`` pour se déplacer vers l'objet précédent ou suivant respectivement.
     -
   -
 - Nouvelles fonctionnalités Braille :
@@ -78,8 +78,8 @@ eSpeak-NG, le transcripteur Braille LibLouis, et le référentiel Unicode CLDR o
 
 == Changements ==
 - Mises à jour de composants :
-  - eSpeak NG a été mis à jour en version 1.52-dev révision ``ed9a7bcf``. (#15036)
-  - Mise à jour du transcripteur Braille Liblouis en versio [3.26.0 https://github.com/liblouis/liblouis/releases/tag/v3.26.0]. (#14970)
+  - eSpeak NG a été mis à jour à la version 1.52-dev révision ``ed9a7bcf``. (#15036)
+  - Mise à jour du transcripteur Braille Liblouis à la version [3.26.0 https://github.com/liblouis/liblouis/releases/tag/v3.26.0]. (#14970)
   - Le référentiel Unicode CLDR a été mis à jour à la version 43.0. (#14918)
   -
 - Changements pour LibreOffice :
@@ -115,9 +115,9 @@ eSpeak-NG, le transcripteur Braille LibLouis, et le référentiel Unicode CLDR o
   - NVDA ne provoque plus occasionnellement le crash ou l'absence de réponse de Mozilla Firefox. (#14647)
   - Sous Mozilla Firefox et Google Chrome, les caractères entrés dans certains champs d'édition ne sont plus annoncés même si l'annonce des caractères saisis est désactivée. (#8442)
   - Vous pouvez maintenant utiliser le mode navigation dans les contrôles Chromium embarqués où cela n'était pas possible auparavant. (#13493, #8553)
-  - Sous Mozilla Firefox, déplacer la soruis au-dessus d'un texte après un lien annonce désormais correctement le texte. (#9235)
+  - Sous Mozilla Firefox, déplacer la souris au-dessus d'un texte après un lien annonce désormais correctement le texte. (#9235)
   - La destination des liens graphiques est maintenant annoncée correctement dans de plus nombreux cas sous Chrome et Edge. (#14783)
-  - NVDA n'est plus silencieux lors de la tentative de report de la destination d'un lien sans attribut href.
+  - NVDA n'est plus silencieux lors d'une tentative d'annonce de la destination d'un lien sans attribut href.
   À la place, NVDA annonce que le lien n'a pas de destination. (#14723)
   - En mode navigation, NVDA n'ignorera plus incorrectement le passage d'un contrôle à son élément parent ou enfant, par exemple le passage d'un élément à sa liste ou cellule de tableau parente. (#14611)
     - Notez cependant que ce correctif fonctionne uniquement si l'option "Positionnement automatique du focus système sur les éléments susceptibles d'être mis en focus" est désactivée (ce qui est le comportement par défaut)
@@ -152,10 +152,10 @@ eSpeak-NG, le transcripteur Braille LibLouis, et le référentiel Unicode CLDR o
 Veuillez vous référer au [guide de développement https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] pour plus d'informations sur le processus de dépréciation et de suppression de l'API de NVDA.
 
 - Des conventions suggérées ont été ajoutées à la spécification du manifeste des extensions.
-+These are optional for NVDA compatibility, but are encouraged or required for submitting to the Add-on Store. (#14754)
-+  - Use ``lowerCamelCase`` for the name field.
-+  - Use ``<major>.<minor>.<patch>`` format for the version field (required for add-on datastore).
-+  - Use ``https://`` as the schema for the url field (required for add-on datastore).
+Celles-ci sont facultatives pour la compatibilité avec NVDA, mais sont recommandées ou requises pour la soumission à l'add-on store. (#14754)
+  - Utilisation de la ``lowerCamelCase`` pour le champ name.
+  - Utilisation du format ``<majeure>.<mineure>.<patch>`` pour le champ version (requis pour le add-on datastore).
+  - Utilisation de ``https://`` comme schéma pour le champ URL (requis pour le add-on datastore).
   -
 - Ajout d'un nouveau type de point d'extension appelé ``Chain``, qui peut être utilisé pour parcourir les itérables renvoyés par les gestionnaires enregistrés. (#14531)
 - Ajout du point d'extension ``bdDetect.scanForDevices``.
@@ -186,11 +186,11 @@ A la place, importer depuis ``hwIo.ioThread``. (#14627)
 Il a été introduit dans NVDA 2023.1 et n'a jamais été destiné à faire partie de l'API publique.
 Jusqu'à ce qu'il soit supprimé, il se comportera comme un no-op, c'est-à-dire un gestionnaire de contexte ne donnant rien. (#14924)
 - ``gui.MainFrame.onAddonsManagerCommand`` est obsolète, utilisez ``gui.MainFrame.onAddonStoreCommand`` à la place. (#13985)
-+- ``speechDictHandler.speechDictVars.speechDictsPath`` is deprecated, use ``NVDAState.WritePaths.speechDictsDir`` instead. (#15021)
-+- Importing ``voiceDictsPath`` and ``voiceDictsBackupPath`` from ``speechDictHandler.dictFormatUpgrade`` is deprecated.
-+Instead use ``WritePaths.voiceDictsDir`` and ``WritePaths.voiceDictsBackupDir`` from ``NVDAState``. (#15048)
-+- ``config.CONFIG_IN_LOCAL_APPDATA_SUBKEY`` is deprecated.
-+Instead use ``config.RegistryKey.CONFIG_IN_LOCAL_APPDATA_SUBKEY``. (#15049)
+- ``speechDictHandler.speechDictVars.speechDictsPath`` est obsolète, utilisez ``NVDAState.WritePaths.speechDictsDir`` à la place. (#15021)
+- L'importation de ``voiceDictsPath`` et ``voiceDictsBackupPath`` à partir de ``speechDictHandler.dictFormatUpgrade`` est obsolète.
+Utilisez ``WritePaths.voiceDictsDir`` et ``WritePaths.voiceDictsBackupDir`` de ``NVDAState`` à la place. (#15048)
+- ``config.CONFIG_IN_LOCAL_APPDATA_SUBKEY`` est obsolète.
+Utilisez ``config.RegistryKey.CONFIG_IN_LOCAL_APPDATA_SUBKEY`` à la place. (#15049)
 -
 
 = 2023.1 =
