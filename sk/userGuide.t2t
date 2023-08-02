@@ -3609,88 +3609,162 @@ Aby bolo možné zaisťiť prácu s riadkom a tiež kompatibilitu s inými čít
 | Posunúť zobrazenie vpred | plus na numerickej klávesnici | 
 %kc:endInclude
 
-++ Eurobraille Esys/Esytime/Iris ++[Eurobraille]
-NVDA podporuje riadky Esys, Esytime a Iris od spoločnosti [Eurobraille https://www.eurobraille.fr/].
-Zariadenia Esys a Esytime-Evo sú podporované cez rozhranie USB a Bluetooth.
-Staršie riadky Esytime je možné používať len cez rozhranie USB.
-Riadky Iris môžete používať len cez sériový port.
-V týchto prípadoch je potrebné určiť ovládač a potom konkrétny port, do ktorého je riadok zapojený. Všetko nastavíte v nastaveniach braillu.
+++ Zobrazovače Eurobraille ++[Eurobraille]
+Podporované sú riadky b.book, b.note, Esys, Esytime a Iris od spoločnosti Eurobraille.
+Tieto zariadenia majú brailovú klávesnicu s desiatimi tlačidlami.
+Ľavá časť tlačidla, ktoré vyzerá ako medzera, funguje ako kláves backspace, pravá ako medzera.
 
-Riadky Iris a Esys majú klávesnicu s desiatimi tlačidlami.
-Tlačidlo, ktoré vyzerá ako medzera, funguje nasledovne: Ľavá časť tlačidla funguje ako kláves backspace, pravá ako medzera.
-
+Keď sú tieto zariadenia pripojené, aktívna je aj USB klávesnica.
+Túto klávesnicu je možné vypnúť alebo zapnúť začiarknutím alebo odčiarknutím možnosti ‘simulácia HID klávesnice’ v nastaveniach riadka.
+Nižšie popísané skratky fungujú, ak je táto možnosť vypnutá.
 Nasleduje zoznam klávesových príkazov.
 Pre popis a umiestnenie tlačidiel si prosím pozrite návod k vášmu riadku.
++++  Funkcie brailovej klávesnice +++[EurobrailleBraille]
 %kc:beginInclude
 || názov | Klávesová skratka |
-| Posunúť zobrazenie dozadu | switch1-6left, l1 |
-| Posunúť zobrazenie vpred | switch1-6Right, l8 |
-| Presunúť zobrazenie na fokus | switch1-6Left+switch1-6Right, l1+l8 |
-| Presunúť na znak v brailly | routing, |
-| Oznámiť formátovanie pod aktuálnym brailovým znakom | doubleRouting |
-| Presunúť prezerací kurzor na predchádzajúci riadok | joystick1Up |
-| Presunúť prezerací kurzor na nasledujúci riadok | joystick1Down |
-| Presunúť prezerací kurzor na predchádzajúci znak | joystick1Left |
-| Presunúť prezerací kurzor na nasledujúci znak | joystick1Right |
-| Prepnúť na predchádzajúci režim prezerania | joystick1Left+joystick1Up |
-| Prepnúť na nasledujúci režim prezerania | joystick1Right+joystick1Down |
-| Vymazať naposledy napísaný znak | backSpace |
-| Preložiť aktuálne zadaný brailový reťazec a odoslať kláves enter | backSpace+space |
-| insert | body 35+medzera, l7 |
-| delete | body 36+medzera |
-| home  | body 123+medzera, joystick2Left+joystick2Up |
-| end | body 456+medzera, joystick2Right+joystick2Down |
-| šípka v ľavo | bod 2+medzera, joystick2Left, leftArrow |
-| šípka vpravo | bod 5+medzera, joystick2Right, rightArrow |
-| šípka hore | bod 1+medzera, joystick2Up, upArrow |
-| šípka dole | bod 6+medzera, joystick2Down, downArrow |
-| enter | joystick2Center |
-| pageUp | body 13+medzera |
-| pageDown | body 46+medzera |
-| numerická 1 | body 16+backspace |
-| numerická 2 | body 126+backspace |
-| numerická 3 | body 146+backspace |
-| numerická 4 | body 1456+backspace |
-| nnumerická 5 | body 156+backspace |
-| numerická 6 | body 1245+backspace |
-| numerická 7 | body 12456+backspace |
-| numerická 8 | body 1256+backspace |
-| numerická 9 | body 246+backspace |
-| numerický insert | body 3456+backspace |
-| numerická desatinná čiarka | bod 2+backspace |
-| numerické deleno | body 34+backspace |
-| numerické krát | body 35+backspace |
-| numerické mínus | body 36+backspace |
-| numerické plus | body 235+backspace |
-| numerický enter | body 345+backspace |
-| escape | body 1245+medzera, l2 |
-| tab | body 256+medzera, l3 |
-| shift+tab | body 235+medzera |
-| printScreen | body 1346+medzera |
-| pauza | body 14+medzera |
-| kontextové menu | body 56+backspace |
-| f1 | bod 1+backspace |
-| f2 | body 12+backspace |
-| f3 | body 14+backspace |
-| f4 | body 145+backspace |
-| f5 | body 15+backspace |
-| f6 | body 124+backspace |
-| f7 | body 1245+backspace |
-| f8 | body 125+backspace |
-| f9 | body 24+backspace |
-| f10 | body 245+backspace |
-| f11 | body 13+backspace |
-| f12 | body 123+backspace |
-| windows | body 1234+backspace |
-| CapsLock | bod 7+backspace, bod 8+backspace |
-| NumLock | bod 3+backspace, bod 6+backspace |
-| shift | bod 7+medzera, l4 |
-| Prepnúť kláves shift | body 17+medzera, body 47+medzra |
-| ctrl | body 7+8+medzera, l5 |
-| prepnúť kláves ctrl | body 178+medzera, body 478+medzera |
-| kláves alt | bod 8+medzera, l6 |
-| prepnúť kláves alt | body 18+medzera, body 48+medzera |
-| Prepnúť simuláciu HID klávesnice | esytime):l1+joystick1Down, esytime):l8+joystick1Down |
+| Vymazať naposledy zadaný znak | ``backspace`` |
+| Preložiť aktuálny brailový vstup a odoslať kláves Enter |``backspace+medzera`` |
+| Prepnúť kláves ``NVDA`` | ``bod3+bod5+medzera`` |
+| ``insert`` | ``bod1+bod3+bod5+medzera``, ``bod3+bod4+bod5+medzera`` |
+| ``delete`` | ``bod3+bod6+medzera`` |
+| ``home`` | ``bod1+bod2+bod3+medzera`` |
+| ``end`` | ``bod4+bod5+bod6+medzera`` |
+| ``šípka vľavo`` | ``bod2+medzera`` |
+| ``šípka vpravo`` | ``bod5+medzera`` |
+| ``šípka hore`` | ``bod1+medzera`` |
+| ``šípka dole`` key | ``bod6+medzera`` |
+| ``page up`` | ``bod1+bod3+medzera`` |
+| ``pageDown`` | ``bod4+bod6+medzera`` |
+| ``numerická 1`` | ``bod1+bod6+backspace`` |
+| ``numerická 2`` | ``bod1+bod2+bod6+backspace`` |
+| ``numerická 3`` | ``bod1+bod4+bod6+backspace`` |
+| ``numerická 4`` | ``bod1+bod4+bod5+bod6+backspace`` |
+| ``numerická 5`` | ``bod1+bod5+bod6+backspace`` |
+| ``numerická 6`` | ``bod1+bod2+bod4+bod6+backspace`` |
+| ``numerická 7`` | ``bod1+bod2+bod4+bod5+bod6+backspace`` |
+| ``numerická 8`` | ``bod1+bod2+bod5+bod6+backspace`` |
+| ``numerická 9`` | ``bod2+bod4+bod6+backspace`` |
+| ``numerický Insert`` | ``bod3+bod4+bod5+bod6+backspace`` |
+| ``numerická čiarka`` | ``bod2+backspace`` |
+| ``numerické lomeno`` | ``bod3+bod4+backspace`` |
+| ``numerický krát`` | ``bod3+bod5+backspace`` |
+| ``numerické mínus`` | ``bod3+bod6+backspace`` |
+| ``numerické plus`` | ``bod2+bod3+bod5+backspace`` |
+| ``numerický enter`` | ``bod3+bod4+bod5+backspace`` |
+| ``escape`` | ``bod1+bod2+bod4+bod5+medzera``, ``l2`` |
+| ``tab`` | ``bod2+bod5+bod6+medzera``, ``l3`` |
+| ``shift+tab`` | ``bod2+bod3+bod5+medzera`` |
+| ``printScreen`` | ``bod1+bod3+bod4+bod6+medzera`` |
+| ``pause`` | ``bod1+bod4+medzera`` |
+| ``aplikácie`` | ``bod5+bod6+backspace`` |
+| ``f1`` | ``bod1+backspace`` |
+| ``f2`` | ``bod1+bod2+backspace`` |
+| ``f3`` | ``bod1+bod4+backspace`` |
+| ``f4`` | ``bod1+bod4+bod5+backspace`` |
+| ``f5`` | ``bod1+bod5+backspace`` |
+| ``f6`` | ``bod1+bod2+bod4+backspace`` |
+| ``f7`` | ``bod1+bod2+bod4+bod5+backspace`` |
+| ``f8`` | ``bod1+bod2+bod5+backspace`` |
+| ``f9`` | ``bod2+bod4+backspace`` |
+| ``f10`` | ``bod2+bod4+bod5+backspace`` |
+| ``f11`` | ``bod1+bod3+backspace`` |
+| ``f12`` | ``bod1+bod2+bod3+backspace`` |
+| ``windows`` | ``bod1+bod2+bod4+bod5+bod6+medzera`` |
+| Prepnúť kláves ``windows`` | ``bod1+bod2+bod3+bod4+backspace``, ``bod2+bod4+bod5+bod6+medzera`` |
+| ``capsLock`` | ``bod7+backspace``, ``bod8+backspace`` |
+| ``numLock`` | ``bod3+backspace``, ``bod6+backspace`` |
+| ``shift`` | ``bod7+medzera`` |
+| Prepnúť kláves ``shift`` | ``bod1+bod7+medzera``, ``bod4+bod7+medzera`` |
+| ``ctrl`` | ``bod7+bod8+medzera`` |
+| Prepnúť kláves ``ctrl`` | ``bod1+bod7+bod8+medzera``, ``bod4+bod7+bod8+medzera`` |
+| ``alt`` | ``bod8+medzera`` |
+| Prepnúť kláves ``alt`` | ``bod1+bod8+medzera``, ``bod4+bod8+medzera`` |
+%kc:endInclude
+
++++ Klávesové skratky pre riadok b.book +++[Eurobraillebbook]
+%kc:beginInclude
+|| Názov | Klávesová skratka |
+| Posunúť riadok späť | ``backward`` |
+| Posunúť riadok vpred | ``forward`` |
+| Presunúť na fokus | ``backward+forward`` | 
+| Prejsť na znak v brailly | ``smerové tlačidlá`` |
+| ``šípka vľavo`` | ``joystick2Left`` |
+| ``šípka vpravo`` | ``joystick2Right`` |
+| ``šípka hore`` | ``joystick2Up`` |
+| ``šípka dole`` | ``joystick2Down`` |
+| ``enter`` | ``joystick2Center`` |
+| ``escape`` | ``c1`` |
+| ``tab`` | ``c2`` |
+| Prepnúť kláves ``shift`` | ``c3`` |
+| Prepnúť kláves ``ctrl`` | ``c4`` |
+| Prepnúť kláves ``alt`` | ``c5`` |
+| Prepnúť kláves ``NVDA`` | ``c6`` |
+| ``ctrl+Home`` | ``c1+c2+c3`` |
+| ``ctrl+End`` | ``c4+c5+c6`` |
+%kc:endInclude
+
++++ Klávesové skratky pre riadky b.note +++[Eurobraillebnote]
+%kc:beginInclude
+|| Názov | Klávesová skratka |
+| Posunúť riadok späť | ``leftKeypadLeft`` |
+| Posunúť riadok vpred | ``leftKeypadRight`` |
+| Prejsť na znak v braily | ``smerové tlačidlá`` |
+| Oznámiť formátovanie pod brailovou bunkou | ``doubleRouting`` |
+| Presunúť prezerací kurzor na nasledujúci riadok | ``leftKeypadDown`` |
+| Prepnúť na predchádzajúci režim prezerania | ``leftKeypadLeft+leftKeypadUp`` |
+| Prepnúť na nasledujúci režim prezerania | ``leftKeypadRight+leftKeypadDown`` |
+| ``šípka vľavo`` | ``rightKeypadLeft`` |
+| ``šípka vpravo`` | ``rightKeypadRight`` |
+| ``šípka hore`` | ``rightKeypadUp`` |
+| ``šípka dole`` | ``rightKeypadDown`` |
+| ``ctrl+home`` | ``rightKeypadLeft+rightKeypadUp`` |
+| ``ctrl+end`` | ``rightKeypadLeft+rightKeypadUp`` |
+%kc:endInclude
+
++++ Klávesové skratky pre riadky Esys +++[Eurobrailleesys]
+%kc:beginInclude
+|| Názov | Klávesová skratka |
+| Posunúť riadok späť | ``switch1Left`` |
+| POsunúť riadok vpred | ``switch1Right`` |
+| Presunúť na fokus | ``switch1Center`` |
+| Prejsť na znak v braily | ``smerové tlačidlá`` |
+| Oznámiť formátovanie pod brailovou bunkou | ``doubleRouting`` |
+| Presunúť prezerací kurzor na predchádzajúci riadok | ``joystick1Up`` |
+| Presunúť prezerací kurzor na nasledujúci riadok | ``joystick1Down`` |
+| Presunúť prezerací kurzor na predchádzajúci znak | ``joystick1Left`` |
+| Presunúť prezerací kurzor na nasledujúci riadok | ``joystick1Right`` |
+| ``šípka vľavo`` | ``joystick2Left`` |
+| ``šípka vpravo`` | ``joystick2Right`` |
+| ``šípka hore`` | ``joystick2Up`` |
+| ``šípka dole`` | ``joystick2Down`` |
+| ``enter`` | ``joystick2Center`` |
+%kc:endInclude
+
++++ Klávesové skratky pre riadky Esytime +++[EurobrailleEsytime]
+%kc:beginInclude
+|| Názov | Klávesová skratka |
+| Posunúť riadok späť | ``l1`` |
+| Posunúť riadok vpred | ``l8`` |
+| Presunúť na fokus | ``l1+l8`` |
+| Prejsť na znak v braily | ``smerové tlačidlá`` |
+| Oznámiť formátovanie pod bunkov v braily | ``doubleRouting`` |
+| Prezerací kurzor na predchádzajúci riadok | ``joystick1Up`` |
+| Prezerací kurzor na nasledujúci riadok | ``joystick1Down`` |
+| Prezerací kurzor na predchádzajúci znak | ``joystick1Left`` |
+| Prezerací kurzor na Nasledujúci znak | ``joystick1Right`` |
+| ``šípka vľavo`` | ``joystick2Left`` |
+| ``šípka vpravo`` | ``joystick2Right`` |
+| ``šípka hore`` | ``joystick2Up`` |
+| ``šípka dole`` | ``joystick2Down`` |
+| ``enter`` | ``joystick2Center`` |
+| ``escape`` | ``l2`` |
+| ``tab`` | ``l3`` |
+| Prepnúť kláves ``shift`` | ``l4`` |
+| Prepnúť kláves ``ctrl`` | ``l5`` |
+| Prepnúť kláves ``alt`` | ``l6`` |
+| Prepnúť kláves ``NVDA`` | ``l7`` |
+| ``ctrl+home`` | ``l1+l2+l3``, ``l2+l3+l4`` |
+| ``ctrl+end`` | ``l6+l7+l8``, ``l5+l6+l7`` |
 %kc:endInclude
 
 ++ Riadky Nattiq nBraille ++[NattiqTechnologies]
@@ -3774,6 +3848,8 @@ Popis umiestnenia tlačidiel je možné nájsť v dokumentácii k riadku.
 | Prečíta stavový riadok a presunie naň navigačný objekt | ``f1+end1``, ``f9+end2`` |
 | Prepína tvar kurzora | ``f1+eCursor1``, ``f9+eCursor2`` |
 | Prepína brailový kurzor | ``f1+cursor1``, ``f9+cursor2`` |
+| Prepína režimi zobrazovania správ na brailovom riadku | ``f1+f2``, ``f9+f10`` |
+| Prepína režimi ukazovania výberu | ``f1+f5``, ``f9+f14`` |
 | Vykonať predvolenú akciu na navigačnom objekte | ``f7+f8`` |
 | Oznámiť čas a dátum | ``f9`` |
 | Oznámiť stav batérie, zostávajúci čas a stav nabíjania | ``f10`` |
