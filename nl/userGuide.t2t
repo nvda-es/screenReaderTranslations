@@ -599,6 +599,12 @@ Als u zich op een lijstitem bevind, kunt u terug naar het bovenliggend object om
 Nu kunt u verder gaan naar een ander object (op hetzelfde niveau).
 Iets dergelijks geldt voor bv. een werkbalk. U gaat de werkbalk in, (navigeert naar het eerste subniveau (first child) om toegang te krijgen tot de bijbehorende besturingselementen.
 
+Als u toch liever vooruit en terug gaat  naar elk afzonderlijk object in het systeem, kunt u via commando's navigeren naar vorig/volgend  object door gebruik te maken van een plattere weergavehirargie.
+Als u bijvoorbeeld naar het volgende  object in deze afgeplatte weergave navigeert en als dan het huidige  object andere objecten bevat zal NVDA automatisch naar het eerste object daarbinnen gaan.
+In het geval dat het huidige object geen objecten bevat, zal NVDA naar het volgende object gaan van het huidige hirarchische niveau.
+Als er een dergelijk volgend object niet is, zal NVDA het volgende  object in de hierarchie op basis van ingesloten objecten proberen te vinden tot er geen in aanmerking komende objecten meer zijn.
+Dezelfde regels gelden als binnen de hierarchie in omgekeerde richting (achterwaarts) wordt genavigeerd.
+
 Het object dat op een gegeven moment bekeken wordt in objectnavigatie wordt het navigator object genoemd.
 Wanneer u naar een object navigeert, kuntu de inhoud ervan bekijken met de [commando's voorhet Nalezen van Tekst #ReviewingText] terwijl u zich in de [objectoverzichtmodus #ObjectReview] bevindt.
 Wanneer  [Visuele Uitlichting  #VisionFocusHighlight] geactiveerd is, wordt de plaats waar het huidige navigator Object zich bevindt ook zichtbaar weergegeven.
@@ -612,9 +618,11 @@ Voor objectnavigatie zijn de volgende toetscombinaties beschikbaar:
 || Naam | Desktoptoets | Laptoptoets | Aanraken | Beschrijving |
 | Informatie over huidig object | NVDA+numeriek5 | NVDA+shift+o | geen | Geeft informatie over huidig navigator object. Bij tweemaal snel drukken wordt informatie gespeld. |
 | Naar hoger niveau navigeren | NVDA+numeriek8 | NVDA+shift+Pijl Omhoog | Veeg omhoog (objectmodus) | Hiermee gaat u naar een hoger niveau (de map) waartoe het huidige navigator object behoort |
-| Naar vorig object gaan | NVDA+numeriek4 | NVDA+shift+Pijl links | Veeg links(objectmodus) | Hiermee navigeert u naar het object dat direct voorafgaat aan het huidige navigator object|
-| Naar het volgende object gaan | NVDA+numeriek6 | NVDA+shift+Pijl rechts | Veeg rechts (objectmodus) | Hiermee navigeert u naar het object dat volgt op het huidige navigator object |
-| Naar een lager niveau gaan | NVDA+numeriek2 | NVDA+shift+Pijl omlaag | Veeg omlaag (objectmodus) | Hiermee navigeert u vanuit het huidige navigator object (hoofdmap) naar het niveau eronder waar u bij de bijbehorende objecten komt |
+| Naar vorig object gaan | NVDA+numeriek4 | NVDA+shift+Pijl links | geen | Hiermee navigeert u naar het object dat direct voorafgaat aan het huidige navigator object|
+| Naar vorig object gaan in platte weergave | NVDA+numeriek9 | NVDA+shift+[ | veegbeweging naar links (objectmodus) | hiermee gaat u naar het vorige object  in een platte  weergave van  the objectnavigatie-hierarchie |
+| Naar het volgende object gaan | NVDA+numeriek6 | NVDA+shift+Pijl rechts | geen | Hiermee navigeert u naar het object dat volgt op het huidige navigator object |
+| Naar het volgende object gaan in platte weergave | NVDA+numeriek3 | NVDA+shift+] | veegbeweging naar rechts (objectmodus) | hiermee gaat u naar het volgende object  in een platte  weergave van  the objectnavigatie-hierarchie |
+| Naar het eerstvolgende ingesloten object (een lager niveau) gaan | NVDA+numeriek2 | NVDA+shift+Pijl omlaag | Veeg omlaag (objectmodus) | Hiermee navigeert u vanuit het huidige navigator object (hoofdmap) naar het niveau eronder waar u bij de bijbehorende objecten komt |
 | Naar object met de focus gaan | NVDA+numeriek minteken | NVDA+backspace | geen | Hiermee navigeert u naar het object waar de systeemfocus zich momenteel bevindt, en verplaatst u de leescursor (review cursor) naar de positie van de tekstcursor als deze zichtbaar is |
 | Huidige navigator object activeren | NVDA+numeriek entertoets | NVDA+enter | dubbel tikken | Hiermee wordt het huidige navigator object geactiveerd(hetzelfde effect als klikken met de muis of het indrukken van de spatiebalk bij gefocusseerd object) |
 | Verplaats de systeem focus of cursor naar de huidige review positie | NVDA+shift+numeriek minteken | NVDA+shift+backspace | geen | Een maal drukken verplaatst de focus naar het huidige navigator object, twee maal drukken verplaatst de systeem cursor naar de review cursor |
@@ -671,7 +679,6 @@ Dit ziet er dan als volgt uit:
 
 ++ Leesoverzichtmodi (Review Modes) ++[ReviewModes]
 Met behulp van de [leesoverzichtcommando's #ReviewingText] van NVDA kan, afhankelijk van de geselecteerde leesoverzichtmodus, de inhoud van het huidige navigatorobject, het huidige document, of scherm worden nagelezen.
-De Leesoverzichtmodi komen in de plaats van wat eerder in NVDA "Flat Review" (platte overzichtsmodus) heette.
 
 U kunt de volgende commando’s gebruiken om van leesoverzichtmodus te wisselen:
 %kc:beginInclude
@@ -1623,6 +1630,28 @@ In dit geval zal braille de NVDA navigator tijdens objectnavigatie of de leescur
 Als u wilt dat braille in plaats daarvan objectnavigatie en tekst-review volgt, moet u een braillekoppeling met  review instellen.
 In dit geval  zal Braille  de systeemfocus en systeemaanwijzer niet volgen.
 
+==== Invoercursor verplaatsen bij routering van leescursor ====[BrailleSettingsReviewRoutingMovesSystemCaret]
+: Standaard
+  Nooit
+: Opties
+  Standaard (Nooit), Nooit, Alleen wanneer automatisch gekoppeld (tethered), Altijd
+:
+
+Deze instelling bepaalt of de invoercursor ook verplaatst moet worden  bij het indrukken van de routing-knop.
+Deze optie staat standaard ingesteld op Nooit, wat inhoudt dat met routing de invoercursor nooit wordt verplaatst bij routing van de leescursor.
+
+Als deze optie op  Altijd staat ingesteld, en [braille-koppeling #BrailleTether] op "automatisch" of op review" staat, zal het indrukken van een cursor routing-toets de invoercursor of de focus eveneens verplaatsen indien ondersteund.
+Wanneer de geldende overzichtsmodus [Schermoverzicht is #ScreenReview], is er geen fysieke aanwijzer.
+In dit geval probeert NVDA de focus op het object onder de tekst te plaatsen war je naar routeert.
+Hetzelfde geldt voor [objectoverzicht #ObjectReview].
+
+U kunt deze optie ook zo instellen dat de aanwijzer alleen wordt verplaatst indien automatisch gekoppeld (tethered) is ingesteld.
+In dat geval zal bij het indrukken van een cursor routing-toets alleen de systeemcursor of de focus worden verplaatst als NVDA automatisch aan de leescursor is gekoppeld (tethered), terwijl er van verplaatsing geen sprake is bij een handmatige koppeling met de leescursor.
+
+Deze optie wordt alleen getoond indien  "[braille koppelen #BrailleTether]" op 'Automatisch" of "op review" is ingesteld.
+
+Om de wijze waarop het verplaatsen van de systeemcursor moet verlopen aan te passen bij routering van de leescursor van af een willekeurige plaats, kunt u een aangepaste invoerhandeling toekennen met behulp van het dialoogvenster [Invoerhandelingen #InputGestures].
+
 ==== Lezen per alinea ====[BrailleSettingsReadByParagraph]
 Als deze optie is ingeschakeld, zal braille per alinea in plaats van per regel worden weergegeven.
 Ook de vorige/volgende regel commando's zullen van alinea naar alinea springen.
@@ -2278,6 +2307,16 @@ Voor zover het gaat om navigeren in / werken met spreadsheets op een meer elemen
 Vooralsnog raden we de meeste gebruikers NIET aan dit standaard aan te zetten, al juichen we het toe dat gebruikers van Microsoft Excel  build 16.0.13522.10000  of hoger de optie activeren om uit te proberen en ons  feedback te geven over hun ervaringen.
 De implementatie van Microsoft Excel's UI automation is aan voortdurende verandering onderhevig, en  versies van Microsoft Office die ouder zijn dan 16.0.13522.10000 geven mogelijk niet genoeg informatie prijs, wat deze optie vokomen onbruikbaar maakt.
 
+==== Dynamische zones met wisselende inhoud melden ====[BrailleLiveRegions]
+: Standaard
+  Ingeschakeld
+: Opties
+  Uitgeschakeld, Ingeschakeld
+:
+
+Met deze optie kunt u ervoor kiezen om NVDA bepaalde dynamische web-content in braille te laten melden.
+Als deze optie uitgeschakeld wordt, reageert NVDA zoals  dat het geval was in versiess 2023.1 en eerder, toen alleen wijzigingen van de inhoud in gesproken vorm werden gemeld.
+
 ==== Wachtwoorden uitspreken in alle terminal-toepassingen ====[AdvancedSettingsWinConsoleSpeakPasswords]
 Met deze instelling kunt u bepalen of tekens in spraak worden weergegeven [via getypte tekens uitspreken #KeyboardSettingsSpeakTypedCharacters] of [met getypte woorden uitspreken #KeyboardSettingsSpeakTypedWords] in situaties waar het scherm niet wordt ververst, zoals bij het invoeren van wachwoorden in sommige terminal-programma's, zoals  het Windows Console wanneer ondersteuning voor UI automation ingeschakeld is alsmede Mintty.
 Om veiligheidsredenen dient u deze instelling uitgeschakeld te laten.
@@ -2349,6 +2388,10 @@ Als u het volume van  de stem verlaagt, gaat het volume van geluiden mee naar be
 Evenzo zal bij verhoging van het stemvolume het volume van geluiden mee omhoog gaan.
 Deze optie heeft alleen dan effect wanneer WASAPI voor audiouitvoer" is ingeschakeld.
 Deze optie staat standaard uit.
+
+==== Volume van NVDA-geluiden ====[SoundVolume]
+Met deze schuifregelaar stelt u het volume in van  geluiden en pieptonen van NVDA.
+Deze instelling werkt alleen als "Gebruik WASAPI voor audiouitvoer" ingeschakeld is en "Volume van NVDA-geluid volgt stemvolume" UIT staat.
 
 ==== categorieën Debug logging ====[AdvancedSettingsDebugLoggingCategories]
 Het selectievakje in deze lijst biedt u de mogelijkheid specifieke categorieën debug-meldingen in NVDA's log te activeren.
@@ -2599,7 +2642,7 @@ Om de Add-on-store vanuit een willekeurige plaats te bereiken kunt u een eigen i
 
 ++ Zoeken in add-ons ++[AddonStoreBrowsing]
 Wanneer de Add-on-store eenmaal geopend is, ziet u de lijst met add-ons.
-U kunt terugspringen naar de lijst met ``alt+l`` vanuit elke andere plaats in de store.
+
 Als u eerder geen add-on hebt geïnstalleerd  komt u in de add-on-store terecht bij een lijst met  add-ons die voor installatie beschikbaar zijn.
 Als u al eerder add-ons hebt geïnstalleerd, wordt de lijst met de momenteel geïnstalleerde add-ons getoond.
 
@@ -2642,12 +2685,12 @@ Om add-ons te sorteren uitsluitend op basis van een specifiek kanaal kunt u het 
 Om add-ons, te zoeken gebruikt u het invoervak 'zoeken'.
 U komt bij het zoekvak door op ``shift+tab`` te drukken vanuit de lijst met add-ons, of door op ``alt+s`` te drukken  vanuit een willekeurige plaats in de  interface vam deAdd-on-store.
 Typ een paar sleutelwoorden voor het soort add-on waar u naar op zoek bent waarna u terug ``tabt`` naar de lijst met add-ons.
-Er verschijnt een lijst met gevonden add-ons als de opgegeven zoektermen overeenkomen met de weergegeven naam, uitgever of de beschrijving.
+Er verschijnt een lijst met gevonden add-ons als de opgegeven zoektermen overeenkomen met de add-on ID, de weergegeven naam, uitgever of de beschrijving.
 
 ++ Add-on-acties ++[AddonStoreActions]
 +Add-ons kennen bijbehorende acties, zoals installeren, help, uitschakelen, en verwijderen.
 Hetmenu voor acties  mbt een add-on in de lijst met add-ons kan worden bereikt  door op de ``Toepassingstoets te drukken, ``enter``  in te drukken, rechts te klikken of dubbel te klikken op de add-on.
-Er is ook een knop Acties  in het geselecteerde  deelvenster details van een add-on, die op de normale manier geactiveerd kan worden  of door op ``alt+a`` te drukken.
+Dit menu is ook te bereiken   in het geselecteerde  deelvenster details van een add-on.
 
 +++ Add-ons installeren +++[AddonStoreInstalling]
 Louter en alleen omdat een add-on beschikbaar is in de Add-ons-store, mag hier niet uit worden opgemaakt deze goedgekeurd of gecontroleerd is door  NV Access of door wie dan ook.
@@ -3870,6 +3913,7 @@ U kunt in de documentatie bij deze leesregels nalezen waar deze toetsen zich pre
 | Van braillecursor wisselen | ``f1+cursor1``, ``f9+cursor2`` |
 | Doorloop de braille toon meldingen modus | ``f1+f2``, ``f9+f10`` |
 | Doorloop de braille toon selectiestatus | ``f1+f5``, ``f9+f14`` |
+|Doorloop de stadia "braille systeemcursor verplaatsen bij routering leescursor"  | ``f1+f3``, ``f9+f11`` |
 | Voert de standaardactie uit mbt het huidige navigatorobject | ``f7+f8`` |
 | Geeft datum/tijdweer  | ``f9`` |
 | Geeft batterij-status en resterende tijd aan  als netvoeding niet is aangesloten | ``f10`` |
@@ -3920,18 +3964,32 @@ Hieronder volgen de momenteel geldende toetsen met hun funftie voor deze leesreg
 + Geavanceerde Onderwerpen +[AdvancedTopics]
 
 ++ Veilige Modus ++[SecureMode]
-U kunt NVDA in veilige modus starten met de ``-s`` [commandoregel-optie #CommandLineOptions].
+Mogelijk willen systeembeheerders NVDA zodanig configureren dat  ongeoorloofde toegang tot het systeem verhinderd wordt. 
+Met NVDA kunnen aangepaste add-ons worden  geïnstalleerd, waarmee willekeurige code, kan worden uitgevoerd ook wanneer NVDA wordt gedraaid met beheerdersrechten.
+Met NVDA kunnen gebruikers eveneens willekeurige code uitvoeren door middel van de NVDA Python Console.
+Met de veilige modus van NVDA wordt voorkomen dat gebruikers hun NVDA-configuratie wijzigen, en tevens wordt ongeoorloofde toegang tot het systeem beperkt.
+
 NVDA draait in veilige modus wanneer u de opdracht uitvoert met betrekking tot  [beveiligde schermen #SecureScreens], tenzij de ``serviceDebug`` [systeem-brede parameter #SystemWideParameters] gebruikt is.
+Om NVDA te dwingen altijd in veilige modus op te starten stelt u de ``forceSecureMode`` in [als systeembrede parameter #SystemWideParameters].
+NVDA kan ook worden  opgestart in veilige modus met  de ``-s`` [commandoregel-optie #CommandLineOptions].
 
 In veilige modus is het niet mogelijk om:
 
 - De configuratie en andere instellingen op schijf op te slaan
 - De map Invoerhandelingen op schijf op te slaan
-- aanpassingen t.a.v. het [Configuratieprofiel #ConfigurationProfiles] aan te brengen zoals het aanmaken, verwijderen, hernoemen van profielen e.t.c.
+- aanpassingen t.a.v. het [Configuratieprofiel #ConfigurationProfiles] aan te brengen zoals het aanmaken, verwijderen, hernoemen van profielen etc.
 - NVDA bij te werken en draagbare versies aan te maken
-- te werken met de[Python console #PythonConsole]
+- The [Add-on Store #AddonsManager]
+- te werken met de[NVDA Python console #PythonConsole]
 - te werken met de [Log Viewer #LogViewer] en om te loggen
+- externe documenten zoals de gebruikershandleiding of de lijst met medewerkers, vanuit het NVDA-menu te openen.
 
+Geïnstalleerde kopieën van  NVDA slaan hun configuraten inclusief add-ons op in ``%APPDATA%\nvda``.
+Om  te voorkomen dat NVDA-gebruikers rechtstreeks wijzigingen aanbrengen in de configuratie of eventuele add-ons moet toegang van de gebruiker tot deze map ook worden beperkt.
+
+NVDA-gebruikers zullen meestal uitgaan van een  NVDA-configuratieprofiel dat het beste aansluit bij hun behoeften.
+Hieronder kan het installeren en configureren van aangepaste add-ons begrepen zijndie los van NVDA op hun geschiktheid beoordeeld moeten worden.
+Veilige modus neutraliseert wijzigingen in de configuratie van NVDA, vergewis u er dan ook van dat NVDA naar behoren is geconfigureerd voordat  u  in veilige modus gaat.
 
 ++ Beveiligde Schermen ++[SecureScreens]
 NVDA draait in [veilige modus #SecureMode] wanneer het programma wordt uitgevoerd met betrekking tot beveiligde schermen tenzij de ``serviceDebug`` [systeem-brede parameter #SystemWideParameters] gebruikt is.
@@ -4001,8 +4059,8 @@ Deze waarden worden in het register onder een van de volgende sleutels opgeslage
 
 De volgende waarden kunnen onder deze registersleutel worden ingesteld:
 || Naam | Type | Mogelijke waarden | Beschrijving |
-| configInLocalAppData | DWORD | 0 (default) to disable, 1 to enable | Indien ingeschakeld (enabled), wordt de NVDA gebruikersconfiguratie in de lokale application data opgeslagen in plaats van de roaming application data |
-| serviceDebug | DWORD | 0 (default) to disable, 1 to enable | Indien ingeschakeld (enabled), wordt [Veilige Modus #SecureMode] mbt [beveilige schermen #SecureScreens] buiten werking gesteld. Aangezien dit een aantal belangrijke veiligheidsrisico's met zich meebrent,wordt gebruik van deze optie ten zeerste afgeraden |
+| ``configInLocalAppData`` | DWORD | 0 (default) to disable, 1 to enable | Indien ingeschakeld (enabled), wordt de NVDA gebruikersconfiguratie in de lokale application data opgeslagen in plaats van de roaming application data |
+| ``serviceDebug`` | DWORD | 0 (default) to disable, 1 to enable | Indien ingeschakeld (enabled), wordt [Veilige Modus #SecureMode] mbt [beveilige schermen #SecureScreens] buiten werking gesteld. Aangezien dit een aantal belangrijke veiligheidsrisico's met zich meebrent,wordt gebruik van deze optie ten zeerste afgeraden |
 
 + Verdere informatie +[FurtherInformation]
 Voor nadere informatie over NVDA of voor hulp kunt u terecht op de website NVDA_URL.
