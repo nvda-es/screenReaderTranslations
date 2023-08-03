@@ -1406,6 +1406,13 @@ Vous pourrez alors la quitter si vous désirez accéder à d'autres objets.
 De la même manière, une barre d'outils contient des contrôles, vous devrez donc entrer dans la barre d'outils pour accéder aux contrôles qu'elle contient.
 </P>
 <P>
+Si vous préférez encore vous déplacer entre chaque objet du système, vous pouvez utiliser des commandes pour passer à l'objet précédent/suivant dans une vue à plat.
+Par exemple, si vous vous déplacez vers l'objet suivant dans cette vue à plat et que l'objet actuel contient d'autres objets, NVDA se déplacera automatiquement vers le premier objet qui le contient.
+Alternativement, si l'objet courant ne contient aucun objet, NVDA passera à l'objet suivant au niveau courant de la hiérarchie.
+S'il n'y a pas d'objet suivant de ce type, NVDA essaiera de trouver l'objet suivant dans la hiérarchie en fonction des objets contenants jusqu'à ce qu'il n'y ait plus d'objets vers lesquels se déplacer.
+Les mêmes règles s'appliquent pour reculer dans la hiérarchie.
+</P>
+<P>
 L'objet en cours de revue s'appelle l'objet navigateur.
 Quand vous atteignez un objet, vous pouvez examiner son contenu en utilisant les <A HREF="#ReviewingText">commandes de revue de texte</A> en étant en <A HREF="#ObjectReview">mode Revue d'objet</A>.
 Quand la <A HREF="#VisionFocusHighlight">Mise en Évidence Visuelle</A> est activée, la position de l'objet navigateur courant est également présentée visuellement.
@@ -1442,16 +1449,30 @@ Pour naviguer par objet, utilisez les commandes suivantes :
 <TR>
 <TD>Aller à l'objet précédent</TD>
 <TD>NVDA+pavnum4</TD>
-<TD>NVDA+maj+flèche gauche</TD>
-<TD>Glisser vers la gauche (mode objet)</TD>
-<TD>Va à l'objet précédent de l'objet navigateur courant</TD>
+<TD>NVDA+maj+flèchegauche</TD>
+<TD>aucun</TD>
+<TD>Se déplace vers l'objet avant l'objet navigateur courant</TD>
 </TR>
 <TR>
-<TD>Aller à l'objet suivant</TD>
+<TD>Aller à l'objet précédent en vue à plat</TD>
+<TD>NVDA+pavnum9</TD>
+<TD>NVDA+maj+[</TD>
+<TD>feuilleter vers la gauche (mode objet)</TD>
+<TD>Passe à l'objet précédent dans une vue à plat de la hiérarchie de navigation d'objets</TD>
+</TR>
+<TR>
+<TD>Passer à l'objet suivant</TD>
 <TD>NVDA+pavnum6</TD>
-<TD>maj+NVDA+flèche droite</TD>
-<TD>Glisser vers la droite (mode objet)</TD>
-<TD>Va à l'objet suivant de l'objet navigateur courant</TD>
+<TD>NVDA+maj+flècheDroite</TD>
+<TD>aucun</TD>
+<TD>Se déplace vers l'objet après l'objet navigateur courant</TD>
+</TR>
+<TR>
+<TD>Passer à l'objet suivant dans la vue à plat</TD>
+<TD>NVDA+pavnum3</TD>
+<TD>NVDA+maj+]</TD>
+<TD>feuilleter vers la droite (mode objet)</TD>
+<TD>Passe à l'objet suivant dans une vue à plat de la hiérarchie de navigation d'objets</TD>
 </TR>
 <TR>
 <TD>Aller au premier objet inclus</TD>
@@ -1704,7 +1725,6 @@ La disposition se présente ainsi :
 <H3>5.6. Modes de Revue</H3>
 <P>
 Les commandes de <A HREF="#ReviewingText">revue</A> de NVDA permettent de lire le contenu de l'objet courant du navigateur, le document courant ou l'écran, selon le mode de revue sélectionné.
-Les modes de revue remplacent le concept de revue à plat que l'on connaissait dans NVDA.
 </P>
 <P>
 Les commandes suivantes basculent entre les modes de revue :
@@ -3453,66 +3473,78 @@ Dans ce cas, le braille ne suivra pas le navigateur NVDA durant la navigation pa
 Si vous voulez que le braille suive la navigation par objet et la revue de texte, vous devez configurer le braille pour qu'il suive la revue.
 Dans ce cas, le braille ne suivra pas le focus système et le curseur système.
 </P>
-<A NAME="BrailleSettingsReadByParagraph"></A>
-<H5>Lecture par paragraphe</H5>
-<P>
+<A NAME="BrailleSettingsReviewRoutingMovesSystemCaret"></A>
+<H5>Déplacer le curseur système lors du routage du curseur de révision</H5>
+<DL>
+<DT>Par défaut</DT><DD>
+ Jamais
+ <DL>
+ <DT>Options</DT><DD>
+ Par défaut (Jamais), Jamais, Uniquement en cas de suivi automatique, Toujours
+:
+ <P></P>
+Ce paramètre détermine si le curseur système doit également être déplacé en appuyant sur un bouton de routage.
+Cette option est définie sur Jamais par défaut, ce qui signifie que le routage ne déplacera jamais le signe d'insertion lors du routage du curseur de révision.
+ <P></P>
+Lorsque cette option est définie sur Toujours et que <A HREF="#BrailleTether">Braille suit</A> est défini sur "automatiquement" ou "revue", le fait d'appuyer sur une touche de routage du curseur déplacera également le curseur système ou le focus lorsqu'il est pris en charge.
+Lorsque le mode de revue actuel est <A HREF="#ScreenReview">Revue d'Écran</A>, il n'y a pas de curseur physique.
+Dans ce cas, NVDA essaie de focaliser l'objet sous le texte vers lequel vous vous dirigez.
+Il en va de même pour <A HREF="#ObjectReview">Revue par objet</A>.
+ <P></P>
+Vous pouvez également définir cette option pour ne déplacer le curseur qu'en cas de suivi automatique.
+Dans ce cas, appuyer sur une touche de routage du curseur ne déplacera le curseur système ou le focus que lorsque NVDA est automatiquement attaché au curseur de revue, alors qu'aucun mouvement ne se produira lorsqu'il sera manuellement attaché au curseur de revue.
+ <P></P>
+Cette option s'affiche uniquement si "<A HREF="#BrailleTether">Braille suit</A>" est défini sur "Automatiquement" ou "Revue".
+ <P></P>
+Pour basculer le déplacement du curseur système lors du routage du curseur de révision depuis n'importe où, veuillez attribuer un geste personnalisé à l'aide de la <A HREF="#InputGestures">boîte de dialogue Gestes de commandes</A>.
+ <P></P>
+==== Lecture par paragraphe ====[BrailleSettingsReadByParagraph]
 Si cette option est activée, le braille sera affiché par paragraphe au lieu d'être affiché par ligne.
 De la même manière, les commandes de ligne précédente et ligne suivante navigueront par paragraphe.
 Cela signifie que vous n'aurez pas besoin de faire défiler l'afficheur à la fin de chaque ligne même si plus de texte peut entrer sur l'afficheur.
 Cela permet une lecture plus fluide des textes volumineux.
 Par défaut, cette option est désactivée.
-</P>
-<A NAME="BrailleSettingsWordWrap"></A>
-<H5>Ne pas couper les mots quand c'est possible</H5>
-<P>
+ <P></P>
+==== Ne pas couper les mots quand c'est possible ====[BrailleSettingsWordWrap]
 Si cette option est activée, un mot trop long pour entrer à la fin de l'afficheur braille ne sera pas coupé.
 À la place, il y aura des espaces à la fin de l'affichage.
 En faisant défiler l'affichage, vous pourrez lire le mot entier.
 Ceci est parfois appelé retour automatique à la ligne.
 Notez que si le mot est trop long pour entrer sur l'afficheur, il devra quand-même être coupé.
-</P>
-<P>
+ <P></P>
 Si cette option est désactivée, le plus possible du mot sera affiché sur la ligne, mais le reste sera coupé.
 En faisant défiler l'affichage, vous pourrez lire le reste du mot.
-</P>
-<P>
+ <P></P>
 Activer cette option peut rendre la lecture plus fluide mais vous obligera à faire défiler plus souvent.
-</P>
-<A NAME="BrailleSettingsFocusContextPresentation"></A>
-<H5>Afficher le contexte du focus</H5>
-<P>
+ <P></P>
+==== Afficher le contexte du focus ====[BrailleSettingsFocusContextPresentation]
 Cette option vous permet de choisir quelles informations contextuelles NVDA affiche en braille quand un objet prend le focus.
 Les informations contextuelles font référence à la hiérarchie d'objets contenant le focus.
 Par exemple, quand vous focalisez un élément de liste, celui-ci fait partie d'une liste.
 Cette liste pourrait être contenue dans un dialogue, etc.
 Veuillez consulter la section <A HREF="#ObjectNavigation">navigation par objets</A> pour plus d'informations sur la hiérarchie qui s'applique aux objets dans NVDA.
-</P>
-<P>
+ <P></P>
 Quand l'option est sur "Seulement lors d'un changement de contexte", NVDA essaie d'afficher autant d'informations contextuelles que possible sur le terminal braille, mais seulement pour les parties du contexte qui ont changé.
 Dans l'exemple ci-dessus, cela signifie que quand le focus est sur la liste, NVDA affiche l'élément de liste sur le terminal braille.
 De plus, s'il y a assez de place libre sur le terminal braille, NVDA essaie de montrer que l'élément de liste fait partie d'une liste.
 Si vous commencer à vous déplacer dans la liste avec les flèches, on suppose que vous savez que vous êtes toujours dans la liste
 Ainsi, pour les autres éléments de la liste que vous focalisez, NVDA affiche seulement l'élément de liste focalisé sur le terminal.
 Si vous voulez lire à nouveau le contexte (ex : si vous êtes dans une liste et que la liste fait partie d'un dialogue), vous devrez activer le défilement arrière de votre terminal braille.
-</P>
-<P>
+ <P></P>
 Quand l'option est sur "Toujours", NVDA essaie d'afficher autant d'informations contextuelles que possible sur le terminal braille, même si vous avez déjà vu les mêmes informations précédemment.
 L'avantage est que NVDA essaie de mettre autant d'informations que possible sur le terminal.
 Cependant, l'inconvénient est que le focus ne démarre pas toujours à la même position sur l'afficheur braille.
 Cela peut rendre difficile le parcours d'une longue liste d'éléments, car vous devrez en permanence déplacer vos doigts pour trouver le début de chaque élément.
 C'était le comportement par défaut jusqu'à NVDA 2017.2.
-</P>
-<P>
+ <P></P>
 Quand l'option est sur "Seulement lors du défilement arrière", NVDA ne montre jamais les informations contextuelles sur le terminal.
 Ainsi, dans l'exemple ci-dessus, NVDA affiche l'élément de liste que vous avez focalisé.
 Cependant, si vous voulez lire le contexte (ex : que vous êtes dans une liste et que la liste fait partie d'un dialogue), vous devrez activer le défilement arrière de votre terminal.
-</P>
-<P>
+ <P></P>
 Pour modifier l'option "Afficher le contexte du focus" de n'importe où, veuillez assigner un geste de commande personnalisé en utilisant <A HREF="#InputGestures">le dialogue Gestes de Commandes</A>.
-</P>
-<A NAME="BrailleSettingsInterruptSpeech"></A>
-<H5>Interrompre la parole pendant le défilement</H5>
-<DL>
+ <P></P>
+==== Interrompre la parole pendant le défilement ====[BrailleSettingsInterruptSpeech]
+ </DL>
 <DT>Défaut</DT><DD>
   Activé
 <DT>Options</DT><DD>
@@ -4341,6 +4373,20 @@ Cependant, pour la navigation/édition de feuilles de calcul basiques, cette opt
 Nous ne recommandons toujours pas que la majorité des utilisateurs active cette option par défaut, mais nous encourageons les utilisateurs de Microsoft Excel version 16.0.13522.10000 ou ultérieures à tester cette fonctionnalité et à nous faire part de leurs commentaires.
 L'implémentation d'UI Automation dans Microsoft Excel évolue fréquemment, et les versions de Microsoft Office antérieures à 16.0.13522.10000 n'exposent peut-être pas assez d'informations pour que cette option soit d'une quelconque utilité.
 </P>
+<A NAME="BrailleLiveRegions"></A>
+<H5>Annoncer les régions Actives</H5>
+<DL>
+<DT>Par défaut</DT><DD>
+  Activé
+<DT>Options</DT><DD>
+  Désactivé, Activé
+</DL>
+
+<P></P>
+<P>
+Cette option définit si NVDA signale les changements dans certains contenus Web dynamiques en Braille.
+Désactiver cette option équivaut au comportement de NVDA dans les versions 2023.1 et antérieures, qui ne signalaient ces changements de contenu que verbalement.
+</P>
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
 <H5>Énoncer les mots de passe dans tous les terminaux améliorés</H5>
 <P>
@@ -4438,6 +4484,12 @@ Si vous diminuez le volume de la voix, le volume des sons diminuera.
  De même, si vous augmentez le volume de la voix, le volume des sons augmentera.
 Cette option ne prend effet que lorsque "Utiliser WASAPI pour la sortie audio" est activé.
 Cette option est désactivée par défaut.
+</P>
+<A NAME="SoundVolume"></A>
+<H5>Volume des sons NVDA</H5>
+<P>
+Ce potentiomètre vous permet de régler le volume des sons et des bips de NVDA.
+Ce paramètre ne prend effet que lorsque "Utiliser WASAPI pour la sortie audio" est activé et que "Le volume des sons NVDA suit le volume de la voix" est désactivé.
 </P>
 <A NAME="AdvancedSettingsDebugLoggingCategories"></A>
 <H5>Catégories de journalisation de débogage</H5>
@@ -4795,7 +4847,6 @@ Pour accéder à l'add-on store de n'importe où, attribuez un geste personnalis
 <H3>12.6. Compléments de navigation</H3>
 <P>
 Lorsqu'il est ouvert, l'add-on store affiche une liste d'extensions.
-Vous pouvez revenir à la liste avec <CODE>alt+l</CODE> de n'importe où ailleurs dans le magasin.
  Si vous n'avez pas encore installé d'extension, l'add-on store s'ouvrira sur une liste d'extensions disponibles à installer.
 Si vous avez installé des extensions, la liste affichera les extensions actuellement installées.
 </P>
@@ -4854,14 +4905,14 @@ Pour répertorier les extensions uniquement pour des chaînes spécifiques, modi
 Pour rechercher des extensions, utilisez la zone de texte "Rechercher".
 Vous pouvez y accéder en appuyant sur <CODE>maj+tab</CODE> dans la liste des add-ons, ou en appuyant sur <CODE>alt+s</CODE> depuis n'importe où dans l'interface Add-on Store.
 Tapez un ou deux mots-clés pour le type d'extension que vous recherchez, puis <CODE>tabulation</CODE> pour revenir à la liste des extensions.
-Les extensions seront répertoriées si le texte de recherche peut être trouvé dans le nom d'affichage, l'éditeur ou la description.
+Les extensions seront répertoriées si le texte de recherche peut être trouvé dans l'ID de l'extension, l'éditeur ou la description.
 </P>
 <A NAME="AddonStoreActions"></A>
 <H3>12.7. Actions complémentaires</H3>
 <P>
 Les extensions ont des actions associées, telles que l'installation, l'aide, la désactivation et la suppression.
-Le menu des actions est accessible pour une extension dans la liste des extensions en appuyant sur la touche <CODE>applications</CODE>, <CODE>enter</CODE>, en cliquant avec le bouton droit ou en double-cliquant sur l'extension.
-Il y a aussi un bouton Actions dans les détails de l'extension sélectionnée, qui peut être activé normalement ou en appuyant sur <CODE>alt+a</CODE>.
+Pour une extension de la liste des extensions, ces actions sont accessibles via un menu ouvert en appuyant sur la touche <CODE>applications</CODE>, <CODE>enter</CODE>, clic droit ou double-clic sur l'extension.
+Ce menu est également accessible via un bouton Actions dans les détails de l'extension sélectionnée.
 </P>
 <A NAME="AddonStoreInstalling"></A>
 <H4>12.7.1. Installation d'extensions</H4>
@@ -8228,6 +8279,10 @@ Veuillez consulter la documentation de l'afficheur pour savoir où trouver ces t
 <TD><CODE>f1+f5</CODE>, <CODE>f9+f14</CODE></TD>
 </TR>
 <TR>
+<TD>Faire défiler les états "braille déplacer le curseur système lors du routage du curseur de révision"</TD>
+<TD><CODE>f1+f3</CODE>, <CODE>f9+f11</CODE></TD>
+</TR>
+<TR>
 <TD>Exécuter l'action par défaut sur l'objet navigateur courant</TD>
 <TD><CODE>f7+f8</CODE></TD>
 </TR>
@@ -8389,8 +8444,15 @@ Voici les affectations de touches actuelles pour ces affichages.
 <A NAME="SecureMode"></A>
 <H3>16.1. Mode Sécurisé</H3>
 <P>
-NVDA peut être démarré en mode sécurisé avec l'<A HREF="#CommandLineOptions">option de ligne de commande</A> <CODE>-s</CODE>.
+Les administrateurs système peuvent souhaiter configurer NVDA pour restreindre l'accès non autorisé au système.
+NVDA permet l'installation d'extensions personnalisées, qui peuvent exécuter du code arbitraire, y compris lorsque NVDA est élevé aux privilèges d'administrateur.
+NVDA permet également aux utilisateurs d'exécuter du code arbitraire via la console NVDA Python.
+Le mode sécurisé de NVDA empêche les utilisateurs de modifier leur configuration NVDA et limite par ailleurs l'accès non autorisé au système.
+</P>
+<P>
 NVDA s'exécute en mode sécurisé lorsqu'il est exécuté sur les <A HREF="#SecureScreens">écrans sécurisés</A>, à moins que le <A HREF="#SystemWideParameters">paramètre à l'échelle du système</A> <CODE>serviceDebug</CODE> soit activé.
+Pour forcer NVDA à toujours démarrer en mode sécurisé, définissez le <A HREF="#SystemWideParameters">paramètre système</A> <CODE>forceSecureMode</CODE>.
+NVDA peut également être démarré en mode sécurisé avec  <A HREF="#CommandLineOptions">l'option de ligne de commande</A> <CODE>-s</CODE>.
 </P>
 <P>
 Le mode sécurisé désactive :
@@ -8400,11 +8462,22 @@ Le mode sécurisé désactive :
 <LI>La sauvegarde des gestes de commande sur disque
 <LI>Les fonctionnalités de <A HREF="#ConfigurationProfiles">Profil de Configuration</A> Telles que créer, supprimer, renommer les profils etc.
 <LI>Mettre à jour NVDA et créer des copies portables
-<LI>La <A HREF="#PythonConsole">console Python</A>
+<LI><A HREF="#AddonsManager">L'add-on Store</A>
+<LI>La <A HREF="#PythonConsole">console Python NVDA</A>
 <LI>La <A HREF="#LogViewer">Visionneuse du journal</A> et la journalisation
+<LI>L'ouverture de documents externes depuis le menu NVDA, comme le guide de l'utilisateur ou le fichier des contributeurs.
 </UL>
 
 <P></P>
+<P>
+Les copies installées de NVDA stockent leur configuration, y compris les add-ons, dans <CODE>%APPDATA%\nvda</CODE>.
+Pour empêcher les utilisateurs de NVDA de modifier directement leur configuration ou leurs extensions, l'accès des utilisateurs à ce dossier doit également être restreint.
+</P>
+<P>
+Les utilisateurs de NVDA comptent souvent sur la configuration de leur profil NVDA pour répondre à leurs besoins.
+Cela peut inclure l'installation et la configuration d'extensions personnalisées, qui doivent être approuvés indépendamment par NVDA.
+Le mode sécurisé gèle les modifications apportées à la configuration de NVDA, veuillez donc vous assurer que NVDA est correctement configuré avant de forcer le mode sécurisé.
+</P>
 <A NAME="SecureScreens"></A>
 <H3>16.2. Écrans Sécurisés</H3>
 <P>
@@ -8610,16 +8683,22 @@ Les valeurs suivantes peuvent être définies dans ces clés de registre :
 <TH>Description</TH>
 </TR>
 <TR>
-<TD>configInLocalAppData</TD>
+<TD><CODE>configInLocalAppData</CODE></TD>
 <TD>DWORD</TD>
-<TD>0 (défaut) pour désactiver, 1 pour activer</TD>
-<TD>si activé, enregistre la configuration utilisateur NVDA dans le dossier applicatif local au lieu de Roaming</TD>
+<TD>0 (par défaut) pour désactiver, 1 pour activer</TD>
+<TD>Si activé, stocke la configuration de l'utilisateur NVDA dans les données d'application locales au lieu des données d'application itinérantes</TD>
 </TR>
 <TR>
-<TD>serviceDebug</TD>
+<TD><CODE>serviceDebug</CODE></TD>
 <TD>DWORD</TD>
-<TD>0 (défaut) pour désactiver, 1 pour activer</TD>
-<TD>si activé, désactive le <A HREF="#SecureMode">Mode Sécurisé</A> sur les <A HREF="#SecureScreens">écrans sécurisés</A>. En raison d'implications majeures de sécurité, l'utilisation de cette option est fortement déconseillée</TD>
+<TD>0 (par défaut) pour désactiver, 1 pour activer</TD>
+<TD>S'il est activé, désactive <A HREF="#SecureMode">Secure Mode</A> sur <A HREF="#SecureScreens">secure screens</A>. En raison de plusieurs implications majeures en matière de sécurité, l'utilisation de cette option est fortement déconseillée</TD>
+</TR>
+<TR>
+<TD><CODE>forceSecureMode</CODE></TD>
+<TD>DWORD</TD>
+<TD>0 (par défaut) pour désactiver, 1 pour activer</TD>
+<TD>Si activé, force <A HREF="#SecureMode">Secure Mode</A> à être activé lors de l'exécution de NVDA.</TD>
 </TR>
 </TABLE>
 
