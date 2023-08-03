@@ -592,6 +592,12 @@ Si vous allez sur l'objet contenant les éléments de la liste, vous serez ramen
 Vous pourrez alors la quitter si vous désirez accéder à d'autres objets.
 De la même manière, une barre d'outils contient des contrôles, vous devrez donc entrer dans la barre d'outils pour accéder aux contrôles qu'elle contient.
 
+Si vous préférez encore vous déplacer entre chaque objet du système, vous pouvez utiliser des commandes pour passer à l'objet précédent/suivant dans une vue à plat.
+Par exemple, si vous vous déplacez vers l'objet suivant dans cette vue à plat et que l'objet actuel contient d'autres objets, NVDA se déplacera automatiquement vers le premier objet qui le contient.
+Alternativement, si l'objet courant ne contient aucun objet, NVDA passera à l'objet suivant au niveau courant de la hiérarchie.
+S'il n'y a pas d'objet suivant de ce type, NVDA essaiera de trouver l'objet suivant dans la hiérarchie en fonction des objets contenants jusqu'à ce qu'il n'y ait plus d'objets vers lesquels se déplacer.
+Les mêmes règles s'appliquent pour reculer dans la hiérarchie.
+
 L'objet en cours de revue s'appelle l'objet navigateur.
 Quand vous atteignez un objet, vous pouvez examiner son contenu en utilisant les [commandes de revue de texte #ReviewingText] en étant en [mode Revue d'objet #ObjectReview].
 Quand la [Mise en Évidence Visuelle #VisionFocusHighlight] est activée, la position de l'objet navigateur courant est également présentée visuellement.
@@ -605,8 +611,10 @@ Pour naviguer par objet, utilisez les commandes suivantes :
 || Nom | Ordinateur de bureau | Ordinateur portable | Tactile | Description |
 | Annonce de l'objet courant | NVDA+pavnum5 | NVDA+Maj+o | Aucun | Annonce l'objet navigateur courant, deux appuis épellent l'information, trois appuis copient le nom et le contenu de l'objet dans le presse-papiers |
 | Aller à l'objet parent | NVDA+pavnum8 | NVDA+maj+flèche haut | Glisser vers le haut (mode objet) | Va à l'objet parent (qui contient l'objet navigateur courant) |
-| Aller à l'objet précédent | NVDA+pavnum4 | NVDA+maj+flèche gauche | Glisser vers la gauche (mode objet) | Va à l'objet précédent de l'objet navigateur courant |
-| Aller à l'objet suivant | NVDA+pavnum6 | maj+NVDA+flèche droite | Glisser vers la droite (mode objet) | Va à l'objet suivant de l'objet navigateur courant |
+| Aller à l'objet précédent | NVDA+pavnum4 | NVDA+maj+flèchegauche | aucun | Se déplace vers l'objet avant l'objet navigateur courant |
+| Aller à l'objet précédent en vue à plat | NVDA+pavnum9 | NVDA+maj+[ | feuilleter vers la gauche (mode objet) | Passe à l'objet précédent dans une vue à plat de la hiérarchie de navigation d'objets |
+| Passer à l'objet suivant | NVDA+pavnum6 | NVDA+maj+flècheDroite | aucun | Se déplace vers l'objet après l'objet navigateur courant |
+| Passer à l'objet suivant dans la vue à plat | NVDA+pavnum3 | NVDA+maj+] | feuilleter vers la droite (mode objet) | Passe à l'objet suivant dans une vue à plat de la hiérarchie de navigation d'objets |
 | Aller au premier objet inclus | NVDA+pavnum2 | NVDA+maj+flèche bas | Glisser vers le bas (mode objet) | Va au premier objet inclus dans l'objet navigateur courant |
 | Aller à l'objet en focus | NVDA+pavnumMoins | NVDA+retour arrière | Aucun | Va à l'objet ayant le focus système, et place le curseur de revue sur le curseur système s'il est présent |
 | Activer l'objet navigateur courant | NVDA+pavnumEntrer | NVDA+entrer | Double tape | Active l'objet navigateur courant (similaire à un clic de souris ou à appuyer la barre d'espace quand l'objet a le focus système) |
@@ -664,7 +672,6 @@ La disposition se présente ainsi :
 
 ++ Modes de Revue ++[ReviewMode]
 Les commandes de [revue #ReviewingText] de NVDA permettent de lire le contenu de l'objet courant du navigateur, le document courant ou l'écran, selon le mode de revue sélectionné.
-Les modes de revue remplacent le concept de revue à plat que l'on connaissait dans NVDA.
 
 Les commandes suivantes basculent entre les modes de revue :
 %kc:beginInclude
@@ -1613,6 +1620,28 @@ Dans ce cas, le braille ne suivra pas le navigateur NVDA durant la navigation pa
 Si vous voulez que le braille suive la navigation par objet et la revue de texte, vous devez configurer le braille pour qu'il suive la revue.
 Dans ce cas, le braille ne suivra pas le focus système et le curseur système.
 
+==== Déplacer le curseur système lors du routage du curseur de révision ====[BrailleSettingsReviewRoutingMovesSystemCaret]
+: Par défaut
+ Jamais
+ : Options
+ Par défaut (Jamais), Jamais, Uniquement en cas de suivi automatique, Toujours
+:
+
+Ce paramètre détermine si le curseur système doit également être déplacé en appuyant sur un bouton de routage.
+Cette option est définie sur Jamais par défaut, ce qui signifie que le routage ne déplacera jamais le signe d'insertion lors du routage du curseur de révision.
+
+Lorsque cette option est définie sur Toujours et que [Braille suit #BrailleTether] est défini sur "automatiquement" ou "revue", le fait d'appuyer sur une touche de routage du curseur déplacera également le curseur système ou le focus lorsqu'il est pris en charge.
+Lorsque le mode de revue actuel est [Revue d'Écran #ScreenReview], il n'y a pas de curseur physique.
+Dans ce cas, NVDA essaie de focaliser l'objet sous le texte vers lequel vous vous dirigez.
+Il en va de même pour [Revue par objet #ObjectReview].
+
+Vous pouvez également définir cette option pour ne déplacer le curseur qu'en cas de suivi automatique.
+Dans ce cas, appuyer sur une touche de routage du curseur ne déplacera le curseur système ou le focus que lorsque NVDA est automatiquement attaché au curseur de revue, alors qu'aucun mouvement ne se produira lorsqu'il sera manuellement attaché au curseur de revue.
+
+Cette option s'affiche uniquement si "[Braille suit #BrailleTether]" est défini sur "Automatiquement" ou "Revue".
+
+Pour basculer le déplacement du curseur système lors du routage du curseur de révision depuis n'importe où, veuillez attribuer un geste personnalisé à l'aide de la [boîte de dialogue Gestes de commandes #InputGestures].
+
 ==== Lecture par paragraphe ====[BrailleSettingsReadByParagraph]
 Si cette option est activée, le braille sera affiché par paragraphe au lieu d'être affiché par ligne.
 De la même manière, les commandes de ligne précédente et ligne suivante navigueront par paragraphe.
@@ -2259,6 +2288,16 @@ Cependant, pour la navigation/édition de feuilles de calcul basiques, cette opt
 Nous ne recommandons toujours pas que la majorité des utilisateurs active cette option par défaut, mais nous encourageons les utilisateurs de Microsoft Excel version 16.0.13522.10000 ou ultérieures à tester cette fonctionnalité et à nous faire part de leurs commentaires.
 L'implémentation d'UI Automation dans Microsoft Excel évolue fréquemment, et les versions de Microsoft Office antérieures à 16.0.13522.10000 n'exposent peut-être pas assez d'informations pour que cette option soit d'une quelconque utilité.
 
+==== Annoncer les régions Actives ====[BrailleLiveRegions]
+: Par défaut
+  Activé
+: Options
+  Désactivé, Activé
+:
+
+Cette option définit si NVDA signale les changements dans certains contenus Web dynamiques en Braille.
+Désactiver cette option équivaut au comportement de NVDA dans les versions 2023.1 et antérieures, qui ne signalaient ces changements de contenu que verbalement.
+
 ==== Énoncer les mots de passe dans tous les terminaux améliorés ====[AdvancedSettingsWinConsoleSpeakPasswords]
 Ce paramètre définit si les caractères sont prononcés en [écho clavier par caractère #KeyboardSettingsSpeakTypedCharacters] ou [écho clavier par mot #KeyboardSettingsSpeakTypedWords] dans les situations où l'écran ne se met pas à jour (comme la saisie du mot de passe) dans certains programmes de terminal, tels que la console Windows avec l'automatisation de l'interface utilisateur support activé et Mintty.
 Pour des raisons de sécurité, ce paramètre devrait être laissé désactivé.
@@ -2330,6 +2369,10 @@ Si vous diminuez le volume de la voix, le volume des sons diminuera.
  De même, si vous augmentez le volume de la voix, le volume des sons augmentera.
 Cette option ne prend effet que lorsque "Utiliser WASAPI pour la sortie audio" est activé.
 Cette option est désactivée par défaut.
+
+==== Volume des sons NVDA ====[SoundVolume]
+Ce potentiomètre vous permet de régler le volume des sons et des bips de NVDA.
+Ce paramètre ne prend effet que lorsque "Utiliser WASAPI pour la sortie audio" est activé et que "Le volume des sons NVDA suit le volume de la voix" est désactivé.
 
 ==== Catégories de journalisation de débogage ====[AdvancedSettingsDebugLoggingCategories]
 Les cases à cocher dans cette liste vous permettent d'activer des catégories spécifiques de messages de débogage dans le journal de NVDA.
@@ -2580,7 +2623,6 @@ Pour accéder à l'add-on store de n'importe où, attribuez un geste personnalis
 
 ++ Compléments de navigation ++[AddonStoreBrowsing]
 Lorsqu'il est ouvert, l'add-on store affiche une liste d'extensions.
-Vous pouvez revenir à la liste avec ``alt+l`` de n'importe où ailleurs dans le magasin.
  Si vous n'avez pas encore installé d'extension, l'add-on store s'ouvrira sur une liste d'extensions disponibles à installer.
 Si vous avez installé des extensions, la liste affichera les extensions actuellement installées.
 
@@ -2623,12 +2665,12 @@ Pour répertorier les extensions uniquement pour des chaînes spécifiques, modi
 Pour rechercher des extensions, utilisez la zone de texte "Rechercher".
 Vous pouvez y accéder en appuyant sur ``maj+tab`` dans la liste des add-ons, ou en appuyant sur ``alt+s`` depuis n'importe où dans l'interface Add-on Store.
 Tapez un ou deux mots-clés pour le type d'extension que vous recherchez, puis ``tabulation`` pour revenir à la liste des extensions.
-Les extensions seront répertoriées si le texte de recherche peut être trouvé dans le nom d'affichage, l'éditeur ou la description.
+Les extensions seront répertoriées si le texte de recherche peut être trouvé dans l'ID de l'extension, l'éditeur ou la description.
 
 ++ Actions complémentaires ++[AddonStoreActions]
 Les extensions ont des actions associées, telles que l'installation, l'aide, la désactivation et la suppression.
-Le menu des actions est accessible pour une extension dans la liste des extensions en appuyant sur la touche ``applications``, ``enter``, en cliquant avec le bouton droit ou en double-cliquant sur l'extension.
-Il y a aussi un bouton Actions dans les détails de l'extension sélectionnée, qui peut être activé normalement ou en appuyant sur ``alt+a``.
+Pour une extension de la liste des extensions, ces actions sont accessibles via un menu ouvert en appuyant sur la touche ``applications``, ``enter``, clic droit ou double-clic sur l'extension.
+Ce menu est également accessible via un bouton Actions dans les détails de l'extension sélectionnée.
 
 +++ Installation d'extensions +++[AddonStoreInstalling]
 Ce n'est pas parce qu'une extension est disponible dans l'add-on store de NVDA qu'elle a été approuvée ou vérifiée par NV Access ou qui que ce soit d'autre.
@@ -3851,6 +3893,7 @@ Veuillez consulter la documentation de l'afficheur pour savoir où trouver ces t
 | Faire défiler les formes de curseur braille | ``f1+eCursor1``, ``f9+eCursor2`` |
 | Faire défiler le mode d'affichage des messages en braille | ``f1+f2``, ``f9+f10`` |
 | Faire défiler l'état de sélection de l'émission braille | ``f1+f5``, ``f9+f14`` |
+| Faire défiler les états "braille déplacer le curseur système lors du routage du curseur de révision" | ``f1+f3``, ``f9+f11`` |
 | Exécuter l'action par défaut sur l'objet navigateur courant | ``f7+f8`` |
 | Annoncer date/heure | ``f9`` |
 | Annoncer le niveau de batterie et le temps restant si l'alimentation n'est pas branchée | ``f10`` |
@@ -3901,8 +3944,14 @@ Voici les affectations de touches actuelles pour ces affichages.
 + Fonctions Avancées +[AdvancedTopics]
 
 ++ Mode Sécurisé ++[SecureMode]
-NVDA peut être démarré en mode sécurisé avec l'[option de ligne de commande #CommandLineOptions] ``-s``.
+Les administrateurs système peuvent souhaiter configurer NVDA pour restreindre l'accès non autorisé au système.
+NVDA permet l'installation d'extensions personnalisées, qui peuvent exécuter du code arbitraire, y compris lorsque NVDA est élevé aux privilèges d'administrateur.
+NVDA permet également aux utilisateurs d'exécuter du code arbitraire via la console NVDA Python.
+Le mode sécurisé de NVDA empêche les utilisateurs de modifier leur configuration NVDA et limite par ailleurs l'accès non autorisé au système.
+
 NVDA s'exécute en mode sécurisé lorsqu'il est exécuté sur les [écrans sécurisés #SecureScreens], à moins que le [paramètre à l'échelle du système #SystemWideParameters] ``serviceDebug`` soit activé.
+Pour forcer NVDA à toujours démarrer en mode sécurisé, définissez le [paramètre système #SystemWideParameters] ``forceSecureMode``.
+NVDA peut également être démarré en mode sécurisé avec  [l'option de ligne de commande #CommandLineOptions] ``-s``.
 
 Le mode sécurisé désactive :
 
@@ -3910,9 +3959,18 @@ Le mode sécurisé désactive :
 - La sauvegarde des gestes de commande sur disque
 - Les fonctionnalités de [Profil de Configuration #ConfigurationProfiles] Telles que créer, supprimer, renommer les profils etc.
 - Mettre à jour NVDA et créer des copies portables
-- La [console Python #PythonConsole]
+- [L'add-on Store #AddonsManager]
+- La [console Python NVDA #PythonConsole]
 - La [Visionneuse du journal #LogViewer] et la journalisation
+- L'ouverture de documents externes depuis le menu NVDA, comme le guide de l'utilisateur ou le fichier des contributeurs.
 -
+
+Les copies installées de NVDA stockent leur configuration, y compris les add-ons, dans ``%APPDATA%\nvda``.
+Pour empêcher les utilisateurs de NVDA de modifier directement leur configuration ou leurs extensions, l'accès des utilisateurs à ce dossier doit également être restreint.
+
+Les utilisateurs de NVDA comptent souvent sur la configuration de leur profil NVDA pour répondre à leurs besoins.
+Cela peut inclure l'installation et la configuration d'extensions personnalisées, qui doivent être approuvés indépendamment par NVDA.
+Le mode sécurisé gèle les modifications apportées à la configuration de NVDA, veuillez donc vous assurer que NVDA est correctement configuré avant de forcer le mode sécurisé.
 
 ++ Écrans Sécurisés ++[SecureScreens]
 NVDA s'exécute en mode sécurisé lorsqu'il est exécuté sur les [écrans sécurisés #SecureScreens], à moins que le [paramètre à l'échelle du système #SystemWideParameters] ``serviceDebug`` soit activé.
@@ -3983,8 +4041,9 @@ Ces valeurs sont stockées dans la base de registres sous l'une des clés suivan
 
 Les valeurs suivantes peuvent être définies dans ces clés de registre :
 || Nom | Type | valeurs Possibles | Description |
-| configInLocalAppData | DWORD | 0 (défaut) pour désactiver, 1 pour activer | si activé, enregistre la configuration utilisateur NVDA dans le dossier applicatif local au lieu de Roaming |
-| serviceDebug | DWORD | 0 (défaut) pour désactiver, 1 pour activer | si activé, désactive le [Mode Sécurisé #SecureMode] sur les [écrans sécurisés #SecureScreens]. En raison d'implications majeures de sécurité, l'utilisation de cette option est fortement déconseillée |
+| ``configInLocalAppData`` | DWORD | 0 (par défaut) pour désactiver, 1 pour activer | Si activé, stocke la configuration de l'utilisateur NVDA dans les données d'application locales au lieu des données d'application itinérantes |
+| ``serviceDebug`` | DWORD | 0 (par défaut) pour désactiver, 1 pour activer | S'il est activé, désactive [Secure Mode #SecureMode] sur [secure screens #SecureScreens]. En raison de plusieurs implications majeures en matière de sécurité, l'utilisation de cette option est fortement déconseillée |
+| ``forceSecureMode`` | DWORD | 0 (par défaut) pour désactiver, 1 pour activer | Si activé, force [Secure Mode #SecureMode] à être activé lors de l'exécution de NVDA. |
 
 + Informations Complémentaires +[FurtherInformation]
 Si vous avez besoin d'informations complémentaires ou d'aide concernant l'utilisation de NVDA, veuillez visiter le site NVDA à NVDA_URL.
