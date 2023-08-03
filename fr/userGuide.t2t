@@ -2292,7 +2292,7 @@ L'implémentation d'UI Automation dans Microsoft Excel évolue fréquemment, et 
 : Par défaut
   Activé
 : Options
-  Désactivé, Activé
+  Défaut (Activé), Désactivé, Activé
 :
 
 Cette option définit si NVDA signale les changements dans certains contenus Web dynamiques en Braille.
@@ -2327,7 +2327,7 @@ Cependant, dans les terminaux, lors de l'insertion ou de la suppression d'un car
 : Défaut
   Différence
 : Options
-  Différence, notifications UIA
+  Défaut (Différence), Différence, notifications UIA
 :
 
 Cette option sélectionne la façon dont NVDA détermine quel texte est "nouveau" (et donc ce qu'il faut prononcer lorsque "signaler les changements de contenu dynamique" est activé) dans Windows Terminal et le contrôle WPF Windows Terminal utilisé dans Visual Studio 2022.
@@ -2358,17 +2358,28 @@ Dans certaines situations, l'arrière-plan du texte peut être entièrement tran
 Pour plusieurs API GUI historiquement populaires, le texte peut être rendu avec un arrière-plan transparent, mais visuellement, la couleur d'arrière-plan est précise.
 
 ==== Utiliser WASAPI pour la sortie audio ====[WASAPI]
+: Défaut
+  Désactivé
+: Options
+  Défaut (Désactivé), Désactivé, Activé
+:
+
 Cette option active la sortie audio via l'API Windows Audio Session (WASAPI).
 WASAPI est une architecture audio plus moderne qui peut améliorer la réactivité, les performances et la stabilité de la sortie audio NVDA, y compris la parole et les sons.
 Cette option est activée par défaut.
 Après avoir modifié cette option, vous devrez redémarrer NVDA pour que la modification prenne effet.
 
 ==== Le volume des sons NVDA suit le volume de la voix ====[SoundVolumeFollowsVoice]
+: Default
+  Disabled
+: Options
+  Désactivé, Activé
+:
+
 Lorsque cette option est activée, le volume des sons et des bips de NVDA suivra le réglage du volume de la voix que vous utilisez.
 Si vous diminuez le volume de la voix, le volume des sons diminuera.
  De même, si vous augmentez le volume de la voix, le volume des sons augmentera.
 Cette option ne prend effet que lorsque "Utiliser WASAPI pour la sortie audio" est activé.
-Cette option est désactivée par défaut.
 
 ==== Volume des sons NVDA ====[SoundVolume]
 Ce potentiomètre vous permet de régler le volume des sons et des bips de NVDA.
@@ -2435,9 +2446,9 @@ Vous pouvez filtrer les symboles en entrant le symbole ou une partie du remplace
 - Le champ "Remplacement" vous permet de modifier le texte qui doit être prononcé à la place de ce symbole.
 - En utilisant le champ "Niveau", vous pouvez ajuster le niveau minimum auquel ce symbole doit être annoncé (aucun, quelques-uns, la plupart ou tous).
 Vous pouvez également définir le niveau sur caractère ; dans ce cas, le symbole ne sera pas prononcé quel que soit le niveau de symbole utilisé, avec les deux exceptions suivantes :
- - Quand vous naviguez caractère par caractère.
- - Quand NVDA épelle un texte contenant ce symbole.
- -
+  - Quand vous naviguez caractère par caractère.
+  - Quand NVDA épelle un texte contenant ce symbole.
+  -
 - Le champ "Envoyer le symbole réel au synthétiseur" spécifie quand le symbole lui-même (au lieu de son remplacement) devrait être envoyé au synthétiseur.
 Ceci est utile si le symbole force le synthétiseur à marquer une pause ou modifie l'inflexion de la voix. 
 Par exemple, une virgule force le synthétiseur à marquer une pause.
@@ -2663,7 +2674,7 @@ Pour répertorier les extensions uniquement pour des chaînes spécifiques, modi
 
 +++ Recherche d'extensions +++[AddonStoreFilterSearch]
 Pour rechercher des extensions, utilisez la zone de texte "Rechercher".
-Vous pouvez y accéder en appuyant sur ``maj+tab`` dans la liste des add-ons, ou en appuyant sur ``alt+s`` depuis n'importe où dans l'interface Add-on Store.
+Vous pouvez y accéder en appuyant sur ``maj+tab`` dans la liste des extensions.
 Tapez un ou deux mots-clés pour le type d'extension que vous recherchez, puis ``tabulation`` pour revenir à la liste des extensions.
 Les extensions seront répertoriées si le texte de recherche peut être trouvé dans l'ID de l'extension, l'éditeur ou la description.
 
@@ -2777,7 +2788,7 @@ Pour plus d'informations, veuillez consulter le [Guide de développement NVDA ht
 
 ++ Add-on store ++
 Cela ouvrira l'add-on store de NVDA #AddonsManager].
-Pour plus d'informations, lisez le chapitre détaillé : [Add-ons et Add-on Store #AddonsManager].
+Pour plus d'informations, lisez la section détaillée : [Add-ons et Add-on Store #AddonsManager].
 
 ++ Créer une copie portable ++[CreatePortableCopy]
 Ceci ouvrira un dialogue vous permettant de créer une copie portable de NVDA à partir de la version installée.
@@ -3655,12 +3666,12 @@ Pour cette raison, et pour maintenir la compatibilité avec d'autres revues d'é
 ++ Afficheurs Eurobraille ++[Eurobraille]
 Les afficheurs b.book, b.note, Esys, Esytime et Iris d'Eurobraille sont supportés par NVDA.
 Ces appareils disposent d'un clavier braille à 10 touches.
+Veuillez consulter la documentation de l'afficheur pour une description de ces touches.
 Des deux touches placées comme une barre d'espace, la touche gauche correspond à la touche retour arrière et la touche droite à la touche espace.
-Connectés via USB, ces appareils disposent d'un clavier USB autonome.
-Il est possible d'activer/désactiver ce clavier en cochant la case « simulation de clavier HID » dans le panneau de configuration du braille.
-Le clavier braille décrit ci-dessous est le clavier braille lorsque cette case n'est pas cochée.
-Voici les affectations de touches pour ces affichages avec NVDA.
-Veuillez consulter la documentation de l'afficheur pour savoir où trouver ces touches.
+
+Ces appareils sont connectés via USB et disposent d'un clavier USB autonome.
+Il est possible d'activer/désactiver ce clavier en basculant "simulation de clavier HID" à l'aide d'un geste de commande.
+Les fonctions du clavier braille décrites directement ci-dessous sont lorsque la "simulation du clavier HID" est désactivée.
 
 +++ Fonctions du clavier Braille +++[EurobrailleBraille]
 %kc:beginInclude
@@ -3722,6 +3733,7 @@ Veuillez consulter la documentation de l'afficheur pour savoir où trouver ces t
 | Basculer la touche ``contrôle`` | ``point1+point7+point8+espace``, ``point4+point7+point8+espace`` |
 | touche ``alt`` | ``point8+espace`` |
 | Basculer la touche ``alt`` | ``point1+point8+espace``, ``point4+point8+espace`` |
+| Basculer la simulation du clavier HID | ``switch1Gauche+joystick1Bas``, ``switch1Droit+joystick1Bas`` |
 %kc:endInclude
 
 +++ commandes clavier b.book +++[Eurobraillebbook]
@@ -3808,6 +3820,7 @@ Veuillez consulter la documentation de l'afficheur pour savoir où trouver ces t
 | Basculer la touche ``NVDA`` | ``l7`` |
 | Touche ``contrôle+début`` | ``l1+l2+l3``, ``l2+l3+l4`` |
 | Touche ``contrôle+fin`` | ``l6+l7+l8``, ``l5+l6+l7`` |
+| Basculer la simulation du clavier HID | ``l1+joystick1Bas``, ``l8+joystick1Bas`` |
 %kc:endInclude
 
 ++ Afficheurs Nattiq nBraille ++[NattiqTechnologies]
