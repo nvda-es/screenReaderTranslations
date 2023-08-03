@@ -488,7 +488,7 @@ Pour accéder au menu NVDA depuis n'importe où dans Windows pendant que NVDA es
 - Effectuez une double-tape à 2 doigts sur l'écran tactile.
 - Accédez à la barre d'état système en appuyant sur ``Windows+b``, ``flècheBas`` jusqu'à l'icône NVDA, et appuyez sur ``entrer``.
 - Alternativement, accédez à la barre d'état système en appuyant sur ``Windows+b``, ``flècheBas`` jusqu'à l'icône NVDA, et ouvrez le menu contextuel en appuyant sur la touche ``applications`` située à côté de la touche de contrôle droite sur la plupart des claviers.
-Sur un clavier sans touche ``applications``, appuyez plutôt sur ``maj+F10``.
+Sur un clavier sans touche ``applications``, appuyez sur ``maj+f10`` à la place.
 - Faites un clic droit sur l'icône NVDA située dans la barre d'état système de Windows
 -
 Lorsque le menu apparaît, vous pouvez utiliser les touches fléchées pour naviguer dans le menu et la touche ``entrer`` pour activer un élément.
@@ -1638,7 +1638,7 @@ Il en va de même pour le mode de [Revue par objet #ObjectReview].
 Vous pouvez également définir cette option pour ne déplacer le curseur que lorsque "Le braille suit" est défini sur "automatiquement".
 Dans ce cas, un appui sur une touche de routage du curseur ne déplacera le curseur système ou le focus que lorsque NVDA est automatiquement attaché au curseur de revue, alors qu'aucun mouvement ne se produira lorsqu'il sera manuellement attaché au curseur de revue.
 
-Cette option est uniquement disponible si "[Le braille suit #BrailleTether]" est défini sur "Automatiquement" ou sur "La revue".
+Cette option est uniquement active si "[Le braille suit #BrailleTether]" est défini sur "automatiquement" ou sur "la revue".
 
 Pour parcourir les modes de déplacement du curseur système lors du routage du curseur de revue depuis n'importe où, veuillez attribuer un geste personnalisé à l'aide de la [boîte de dialogue Gestes de commandes #InputGestures].
 
@@ -2310,9 +2310,9 @@ Cette fonctionnalité est disponible et activée par défaut sous Windows 10 ver
 Avertissement : quand cette option est activée, les caractères tapés qui n'apparaissent pas à l'écran comme les mots de passe, ne seront pas supprimés.
 Dans les environnement non sûrs, vous pouvez désactiver temporairement [Écho clavier par caractère #KeyboardSettingsSpeakTypedCharacters] et [Écho clavier par mot #KeyboardSettingsSpeakTypedWords] quand vous entrez un mot de passe.
 
-==== Algorithme de diff ====[DiffAlgo]
+==== Algorithme de comparaison du texte ====[DiffAlgo]
 Ce paramètre définit comment NVDA détermine le nouveau texte à annoncer dans les terminaux.
-La liste déroulante algorithme de diff a trois options :
+La liste déroulante Algorithme de comparaison du texte a trois options :
 - Automatique : Cette option fait que NVDA préfère Diff Match Patch dans la plupart des situations, mais se rabat sur Difflib dans les applications problématiques, telles que les anciennes versions de la console Windows et de Mintty.
 - Diff Match Patch : Cette option permet à NVDA de calculer les modifications apportées au texte du terminal par caractère, même dans les situations où cela n'est pas recommandé.
 Cela peut améliorer les performances quand de grandes quantités de texte sont écrites à la console et permet l'annonce plus précises des changements intervenant en milieu de ligne.
@@ -2325,9 +2325,9 @@ Cependant, dans les terminaux, lors de l'insertion ou de la suppression d'un car
 
 ==== Annoncez un nouveau texte dans le terminal Windows via ====[WtStrategy]
 : Défaut
-  Différence
+  Comparaison du texte
 : Options
-  Défaut (Différence), Différence, notifications UIA
+  Défaut (Comparaison du texte), Comparaison du texte, Notifications UIA
 :
 
 Cette option sélectionne la façon dont NVDA détermine quel texte est "nouveau" (et donc ce qu'il faut prononcer lorsque "signaler les changements de contenu dynamique" est activé) dans Windows Terminal et le contrôle WPF Windows Terminal utilisé dans Visual Studio 2022.
@@ -2614,7 +2614,7 @@ Les paramètres qu'utilise NVDA quand il s'exécute sur l'écran de connexion ou
 En général, cette configuration n'a pas à être modifiée.
 Pour modifier cette configuration, configurez NVDA à votre convenance, sauvegardez la configuration puis cliquez sur le bouton "Utiliser les paramètres NVDA actuellement sauvegardés pour l'écran de connexion à Windows (nécessite des privilèges administrateur)" dans la catégorie Général du dialogue [Paramètres #NVDASettings].
 
-+ Extensions et magasin d'extensions + [AddonsManager]
++ Extensions et Add-on Store + [AddonsManager]
 Les extensions sont des packages logiciels qui fournissent des fonctionnalités nouvelles ou modifiées pour NVDA.
 Elles sont développées par la communauté NVDA et des organisations externes telles que des fournisseurs commerciaux.
 Les extensions peuvent effectuer l'une des opérations suivantes :
@@ -2634,7 +2634,7 @@ Pour accéder à l'add-on store de n'importe où, attribuez un geste personnalis
 
 ++ Parcourir les extensions ++[AddonStoreBrowsing]
 Lorsqu'il est ouvert, l'Add-on Store affiche une liste d'extensions.
- Si vous n'avez pas encore installé d'extension, l'add-on store s'ouvrira sur une liste d'extensions disponibles à installer.
+ Si vous n'avez pas encore installé d'extension, l'Add-on Store s'ouvrira sur une liste d'extensions disponibles à installer.
 Si vous avez installé des extensions, la liste affichera les extensions actuellement installées.
 
 Sélectionner une extension, en vous déplaçant dessus avec les touches fléchées haut et bas, affichera les détails de l'extension.
@@ -2667,10 +2667,10 @@ Les extensions peuvent être distribuées via quatre canaux :
 Suggéré pour les premiers utilisateurs.
 - Dev : ce canal est suggéré pour être utilisé par les développeurs d'extensions pour tester les modifications d'API non publiées.
 Les testeurs alpha de NVDA peuvent avoir besoin d'utiliser une version "Dev" de leurs extensions.
-- Externe : extensions installées à partir de sources externes, en dehors de l'add-on store.
+- Externe : extensions installées à partir de sources externes, en dehors de l'Add-on Store.
 -
 
-Pour répertorier les extensions uniquement pour des chaînes spécifiques, modifiez la sélection du filtre "Chaîne".
+Pour lister les extensions uniquement pour des canaux spécifiques, modifiez la sélection du filtre "Canal".
 
 +++ Recherche d'extensions +++[AddonStoreFilterSearch]
 Pour rechercher des extensions, utilisez la zone de texte "Rechercher".
@@ -2788,7 +2788,7 @@ Pour plus d'informations, veuillez consulter le [Guide de développement NVDA ht
 
 ++ Add-on store ++
 Cela ouvrira l'add-on store de NVDA #AddonsManager].
-Pour plus d'informations, lisez la section détaillée : [Add-ons et Add-on Store #AddonsManager].
+Pour plus d'informations, lisez la section détaillée : [Extensions et Add-on Store #AddonsManager].
 
 ++ Créer une copie portable ++[CreatePortableCopy]
 Ceci ouvrira un dialogue vous permettant de créer une copie portable de NVDA à partir de la version installée.
@@ -3098,20 +3098,20 @@ Voici les assignations de touches pour ces terminaux avec NVDA.
 Veuillez consulter la documentation du terminal pour savoir où se situent ces touches.
 %kc:beginInclude
 || Nom | Touche |
-| Défilement arrière affichage braille | d2 |
-| Défilement avant affichage braille | d5 |
-| Amener l'affichage sur la ligne précédente | d1 |
-| Amener l'affichage sur la ligne suivante | d3 |
-| Aller à la cellule braille | routage |
-| touche Maj+tab | espace+point1+point3 |
-| touche tab | espace+point4+point6 |
-| touche alt | espace+point1+point3+point4 (espace+m) |
-| touche échap | espace+point1+point5 (espace+e) |
-| touche windows | espace+point3+point4 |
-| touche alt+tab | espace+point2+point3+point4+point5 (espace+t) |
-| Menu NVDA | espace+point1+point3+point4+point5 (espace+n) |
-| touche windows+d (minimiser toutes les applications) | espace+point1+point4+point5 (espace+d) |
-| Dire tout | espace+point1+point2+point3+point4+point5+point6 |
+| Défilement arrière affichage braille | ``d2`` |
+| Défilement avant affichage braille | ``d5`` |
+| Amener l'affichage sur la ligne précédente | ``d1`` |
+| Amener l'affichage sur la ligne suivante | ``d3`` |
+| Aller à la cellule braille | ``routage`` |
+| touche ``Maj+tab`` | ``espace+point1+point3`` |
+| touche ``tab`` | ``espace+point4+point6`` |
+| touche ``alt`` | ``espace+point1+point3+point4`` (``espace+m``) |
+| touche ``échap`` | ``espace+point1+point5`` (``espace+e``) |
+| touche ``windows`` | ``espace+point3+point4`` |
+| touche ``alt+tab`` | ``espace+point2+point3+point4+point5`` (``espace+t``) |
+| Menu NVDA | ``espace+point1+point3+point4+point5`` (``espace+n``) |
+| touche ``windows+d`` (minimiser toutes les applications) | ``espace+point1+point4+point5`` (``espace+d``) |
+| Dire tout | ``espace+point1+point2+point3+point4+point5+point6`` |
 
 Pour les terminaux possédant un joystick:
 || Nom | Touche |
@@ -3876,7 +3876,7 @@ Voici les affectations de touches pour ces afficheurs avec NVDA.
 Veuillez consulter la documentation de l'afficheur pour savoir où trouver ces touches.
 %kc:beginInclude
 || Nom | Touche |
-| Aller à la première lige en mode revue | ``home1``, ``home2`` |
+| Aller à la première ligne en mode revue | ``home1``, ``home2`` |
 | Aller à la dernière ligne en mode revue | ``end1``, ``end2`` |
 | Amener l'objet navigateur au focus courant | ``eCursor1``, ``eCursor2`` |
 | Aller au focus courant | ``cursor1``, ``cursor2`` |
