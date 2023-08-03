@@ -4379,7 +4379,7 @@ L'implémentation d'UI Automation dans Microsoft Excel évolue fréquemment, et 
 <DT>Par défaut</DT><DD>
   Activé
 <DT>Options</DT><DD>
-  Désactivé, Activé
+  Défaut (Activé), Désactivé, Activé
 </DL>
 
 <P></P>
@@ -4427,7 +4427,7 @@ Cependant, dans les terminaux, lors de l'insertion ou de la suppression d'un car
 <DT>Défaut</DT><DD>
   Différence
 <DT>Options</DT><DD>
-  Différence, notifications UIA
+  Défaut (Différence), Différence, notifications UIA
 </DL>
 
 <P></P>
@@ -4470,6 +4470,14 @@ Pour plusieurs API GUI historiquement populaires, le texte peut être rendu avec
 </P>
 <A NAME="WASAPI"></A>
 <H5>Utiliser WASAPI pour la sortie audio</H5>
+<DL>
+<DT>Défaut</DT><DD>
+  Désactivé
+<DT>Options</DT><DD>
+  Défaut (Désactivé), Désactivé, Activé
+</DL>
+
+<P></P>
 <P>
 Cette option active la sortie audio via l'API Windows Audio Session (WASAPI).
 WASAPI est une architecture audio plus moderne qui peut améliorer la réactivité, les performances et la stabilité de la sortie audio NVDA, y compris la parole et les sons.
@@ -4478,12 +4486,19 @@ Après avoir modifié cette option, vous devrez redémarrer NVDA pour que la mod
 </P>
 <A NAME="SoundVolumeFollowsVoice"></A>
 <H5>Le volume des sons NVDA suit le volume de la voix</H5>
+<DL>
+<DT>Default</DT><DD>
+  Disabled
+<DT>Options</DT><DD>
+  Désactivé, Activé
+</DL>
+
+<P></P>
 <P>
 Lorsque cette option est activée, le volume des sons et des bips de NVDA suivra le réglage du volume de la voix que vous utilisez.
 Si vous diminuez le volume de la voix, le volume des sons diminuera.
  De même, si vous augmentez le volume de la voix, le volume des sons augmentera.
 Cette option ne prend effet que lorsque "Utiliser WASAPI pour la sortie audio" est activé.
-Cette option est désactivée par défaut.
 </P>
 <A NAME="SoundVolume"></A>
 <H5>Volume des sons NVDA</H5>
@@ -4575,10 +4590,10 @@ Vous pouvez filtrer les symboles en entrant le symbole ou une partie du remplace
 <LI>Le champ "Remplacement" vous permet de modifier le texte qui doit être prononcé à la place de ce symbole.
 <LI>En utilisant le champ "Niveau", vous pouvez ajuster le niveau minimum auquel ce symbole doit être annoncé (aucun, quelques-uns, la plupart ou tous).
 Vous pouvez également définir le niveau sur caractère ; dans ce cas, le symbole ne sera pas prononcé quel que soit le niveau de symbole utilisé, avec les deux exceptions suivantes :
- <UL>
- <LI>Quand vous naviguez caractère par caractère.
- <LI>Quand NVDA épelle un texte contenant ce symbole.
- </UL>
+  <UL>
+  <LI>Quand vous naviguez caractère par caractère.
+  <LI>Quand NVDA épelle un texte contenant ce symbole.
+  </UL>
 <LI>Le champ "Envoyer le symbole réel au synthétiseur" spécifie quand le symbole lui-même (au lieu de son remplacement) devrait être envoyé au synthétiseur.
 Ceci est utile si le symbole force le synthétiseur à marquer une pause ou modifie l'inflexion de la voix. 
 Par exemple, une virgule force le synthétiseur à marquer une pause.
@@ -4903,7 +4918,7 @@ Pour répertorier les extensions uniquement pour des chaînes spécifiques, modi
 <H4>12.6.5. Recherche d'extensions</H4>
 <P>
 Pour rechercher des extensions, utilisez la zone de texte "Rechercher".
-Vous pouvez y accéder en appuyant sur <CODE>maj+tab</CODE> dans la liste des add-ons, ou en appuyant sur <CODE>alt+s</CODE> depuis n'importe où dans l'interface Add-on Store.
+Vous pouvez y accéder en appuyant sur <CODE>maj+tab</CODE> dans la liste des extensions.
 Tapez un ou deux mots-clés pour le type d'extension que vous recherchez, puis <CODE>tabulation</CODE> pour revenir à la liste des extensions.
 Les extensions seront répertoriées si le texte de recherche peut être trouvé dans l'ID de l'extension, l'éditeur ou la description.
 </P>
@@ -5056,7 +5071,7 @@ Pour plus d'informations, veuillez consulter le <A HREF="https://www.nvaccess.or
 <H3>13.5. Add-on store</H3>
 <P>
 Cela ouvrira l'add-on store de NVDA #AddonsManager].
-Pour plus d'informations, lisez le chapitre détaillé : <A HREF="#AddonsManager">Add-ons et Add-on Store</A>.
+Pour plus d'informations, lisez la section détaillée : <A HREF="#AddonsManager">Add-ons et Add-on Store</A>.
 </P>
 <A NAME="CreatePortableCopy"></A>
 <H3>13.6. Créer une copie portable</H3>
@@ -7508,12 +7523,13 @@ Pour cette raison, et pour maintenir la compatibilité avec d'autres revues d'é
 <P>
 Les afficheurs b.book, b.note, Esys, Esytime et Iris d'Eurobraille sont supportés par NVDA.
 Ces appareils disposent d'un clavier braille à 10 touches.
+Veuillez consulter la documentation de l'afficheur pour une description de ces touches.
 Des deux touches placées comme une barre d'espace, la touche gauche correspond à la touche retour arrière et la touche droite à la touche espace.
-Connectés via USB, ces appareils disposent d'un clavier USB autonome.
-Il est possible d'activer/désactiver ce clavier en cochant la case « simulation de clavier HID » dans le panneau de configuration du braille.
-Le clavier braille décrit ci-dessous est le clavier braille lorsque cette case n'est pas cochée.
-Voici les affectations de touches pour ces affichages avec NVDA.
-Veuillez consulter la documentation de l'afficheur pour savoir où trouver ces touches.
+</P>
+<P>
+Ces appareils sont connectés via USB et disposent d'un clavier USB autonome.
+Il est possible d'activer/désactiver ce clavier en basculant "simulation de clavier HID" à l'aide d'un geste de commande.
+Les fonctions du clavier braille décrites directement ci-dessous sont lorsque la "simulation du clavier HID" est désactivée.
 </P>
 <A NAME="EurobrailleBraille"></A>
 <H4>15.17.1. Fonctions du clavier Braille</H4>
@@ -7748,6 +7764,10 @@ Veuillez consulter la documentation de l'afficheur pour savoir où trouver ces t
 <TR>
 <TD>Basculer la touche <CODE>alt</CODE></TD>
 <TD><CODE>point1+point8+espace</CODE>, <CODE>point4+point8+espace</CODE></TD>
+</TR>
+<TR>
+<TD>Basculer la simulation du clavier HID</TD>
+<TD><CODE>switch1Gauche+joystick1Bas</CODE>, <CODE>switch1Droit+joystick1Bas</CODE></TD>
 </TR>
 </TABLE>
 
@@ -8048,6 +8068,10 @@ Veuillez consulter la documentation de l'afficheur pour savoir où trouver ces t
 <TR>
 <TD>Touche <CODE>contrôle+fin</CODE></TD>
 <TD><CODE>l6+l7+l8</CODE>, <CODE>l5+l6+l7</CODE></TD>
+</TR>
+<TR>
+<TD>Basculer la simulation du clavier HID</TD>
+<TD><CODE>l1+joystick1Bas</CODE>, <CODE>l8+joystick1Bas</CODE></TD>
 </TR>
 </TABLE>
 
