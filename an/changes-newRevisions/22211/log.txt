@@ -1,0 +1,19 @@
+commit e15fe8ab11d6583c3e8d82809305170b2eb3790b
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Tue Aug 1 13:16:29 2023 +1000
+
+    Revert "Improve shortcut key reporting (#14900)" (#15237)
+    
+    Fixes #15233
+    
+    Summary of the issue:
+    Unfortunately pr #14900 causes Code Factory Eloquence to spell out menu items with shortcut keys, such as in the NVDA menu.
+    
+    Description of user facing changes
+    Menu items are no longer spelled out when focusing menu items when using the Code Factory Eloquence driver.
+    
+    Description of development approach
+    Although the bug is technically in the Code Factory driver I think - not handlin character mode command correctly when embedded in other speech,
+    PR 14900 is the first known case that exercises the bug directly.
+    Because 2023.2 is not an add-on breaking release, we are reverting pr #14900.
+    A replacement pr for 2023.3 can be opened that avoids affecting Code Factory Eloquence if at all possible, or a new copy of the reverted pr can be opened for NVDA 2024.1.
