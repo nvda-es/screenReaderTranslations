@@ -344,9 +344,13 @@ W każdej chwili instalator może stworzyć kopię przenośną.
 Instalacja NVDA także może być wykonana z kopii przenośnej w każdej chwili.
 Jednakże, jeżeli chcesz skopiować NVDA na użądzenie tylko do odczytu takie jak CD, powinieneś skopiować tylko pobrany pakiet.
 W tej chwili, uruchamianie wersji przenośnej nie jest wspierane z urządzeń tylko do odczytu.
-Używanie tymczasowej kopii NVDA jest także możliwą opcją (na przykład w celach demonstracyjnych), choć uruchamianie w ten sposób za każdym razem może być bardzo czasochłonne.
 
-Oprócz niemożliwego autostartu podczas i po logowaniu do systemu Windows, przenośne i tymczasowe kopie NVDA posiadają następujące ograniczenia:
+[Instalator programu NVDA #StepsForRunningTheDownloadLauncher] może być używany jako kopia tymczasowa NVDA.
+Te kopie uniemożliwiają zapisywania konfiguracji NVDA.
+To także zakłada wyłączenie [Add-on Store #AddonsManager].
+
+Przenośne i tymczasowe kopie posiadają następujące ograniczenia:
+- Niemożliwość automatycznego uruchamiania podczas i po logowaniu.
 - Niemożliwość uruchamiania programów wymagających prawa administratora, do póki, oczywiście NVDA nie jest uruchomiony z tymi prawami (niezalecane).
 - Niemożliwość odczytu ekranów kontroli konta użytkownika (UAC) podczas próby uruchomienia aplikacji z prawami administratora.
 - Windows 8 i nowsze: niemożliwość wsparcia ekranów dotykowych.
@@ -1635,7 +1639,7 @@ To także stosuje się do [przeglądu obiektu #ObjectReview].
 Możesz także ustawić tą opcje żeby kursor się przemieszczał podczas automatycznego przywiązania.
 W takim przypadku, naciśnięcie klawisza routing spowoduje przeniesienie kursora systemowego lub do fokusu, gdy NVDA jest przywołana do kursora przeglądu automatycznie. Nie będzie żadnego przemieszczania gdy gdy fokus jest ręcznie przywiązany do do kursoru przeglądu.
 
-Ta opcja pokazuje się tylko jeżeli "[przywiązywania brajla #BrailleTether]" jest ustawione na "automatycznie" lub "do przeglądu".
+Ta opcja pokazuje się tylko jeżeli "[przywiązanie brajla #BrailleTether]" jest ustawione na "automatyczne" lub "do przeglądu".
 
 Aby ustawić opcję "Przenoś kursor systemowy podczas przywoływania kursoru przeglądu" z jakiegokolwiek miejsca, przydziel gest użytkownika używając okna dialogowego [zdarzenia wejścia dialog #InputGestures].
 
@@ -2289,7 +2293,7 @@ Implementacja UIA w programie Microsoft Excel UI automation zmienia się z wersj
 : Domyślnie
  Włączone
 : Opcje
- Wyłączone, Włączone
+   Domyślnie (włączone), wyłączone, włączone
 :
 
 Ta opcja reguluje odczyt zmian w niektórych treściach dynamicznych na stronach internetowych na monitorach brajlowskich.
@@ -2324,7 +2328,7 @@ Jednakże, w wierszach poleceń, podczas wstawiania lub usuwania znaku w środku
 : Domyślnie
   Różnicowanie
 : Opcje
-  różnicowanie, powiadomienia UIA
+    Domyślnie (Różnicowanie), różnicowanie, powiadomienia UIA
 :
 
 Ta opcja określa, który tekst jest nowy dla NVDA i jaki tekst ma być wymówiony gdy opcja "informuj o dynamicznych zmianach treści" jest włączona) w Windows Terminalu i oknach wpf używanych w Visual Studio 2022.
@@ -2358,7 +2362,7 @@ Z niektórymi historycznie popularnymi API do wyświetlania okien, tekst może b
 : Domyślnie
   Wyłączone
 : Opcje
-  Wyłączone, Włączone
+    Domyślnie (wyłączone), włączone, wyłączone
 :
 
 Ta opcja włącza wsparcie wyjścia dźwięku za pomocą interfejsu windows audio session (WASAPI).
@@ -2366,11 +2370,16 @@ WASAPI to bardziej nowoczesny interfejs audio który może przyśpieszyć odzew,
 Po zmianie tej opcji, do zastosowania zmian wymagane jest ponowne uruchomienie.
 
 ==== Głośność dźwięków NVDA jest spójna z głośnością  NVDA ====[SoundVolumeFollowsVoice]
+: Domyślnie
+  Wyłączone
+: opcje
+  Wyłączone, Włączone
+:
+
 Gdy ta opcja jest włączona, Głośność dźwięków NVDA będzie śledzić głośność używanego syntezatora mowy.
 Jeżeli zmniejszysz głośność syntezatora mowy, głośność dźwięków także będzie zmniejszona.
 Podobnie, jeżeli powiększysz głośność syntezatora, głośność dźwięku się zwiększy.
 Ta opcja odnosi skutek gdy opcja "Używaj wasapi do wyjścia audio" jest włączona.
-Domyślnie ta opcja jest wyłączona.
 
 ==== Głośność dźwięków NVDA ====[SoundVolume]
 Ten suwak umożliwia ustawienie głośności dźwięków NVDA razem z sygnałami dźwiękowymi.
@@ -2436,7 +2445,7 @@ Możesz filtrować symbole wprowadzając symbol lub część zastępującego tek
 
 - Pole zamień określa tekst, który powinien być wypowiadany zamiast tego znaku. 
 - Używając listy poziom, można regulować najniższy poziom interpunkcji, na którym dany znak będzie wypowiadany: brak, niektóre, większość, wszystko. 
-Można także ustawić poziom symbolu na znak; w tym przypadku, symbol nie będzie wymawiany, niezależnie od ustawionego poziomu interpunkcji, z następującymi dwoma wyjątkami:
+Można także ustawić poziom symbolu na znak. W tym przypadku, symbol nie będzie wymawiany, niezależnie od ustawionego poziomu interpunkcji, z następującymi dwoma wyjątkami:
  - podczas nawigacji po znakach.
  - Gdy NVDA wymawia tekst, zawierający ten symbol.
  -
@@ -2658,14 +2667,14 @@ Dodatki mogą być dystrybuowane w czterech kanałach:
 Kanał polecany ludziom zainteresowanym wersjami beta.
 - Dev - Ten kanał jest rekomendowany do użytku przez programistów dodatków do testowania zmian w Api.
 Kanał skierowany do testerów wersji alpha NVDA.
-- Z pliku: dodatki instalowane z zewnętrznych źródeł, czyli spoza add-on store.
+- Z pliku: dodatki instalowane z zewnętrznych źródeł, czyli spoza Add-on Store.
 -
 
 Aby pokazywać dodatki tylko z określonych kanałów, zmień wybór w filtrze "kanał".
 
 +++ Wyszukiwanie dodatków +++[AddonStoreFilterSearch]
 Aby wyszukiwać dodatki, używaj pola edycji  "szukaj".
-Możesz przejść do niego naciskając ``shift+tab`` z listy dodatków, lub naciskając skrót ``alt+s`` z jakiegokolwiek miejsca w interfejsie Add-on store.
+Możesz przejść do niego naciskając ``shift+tab`` z listy dodatków.
 Napisz jedno lub dwa kluczowe słowa, żeby znaleźć żądany typ dodatku którego szukasz, potem `` wróć przyciskiem ``tab`` do listy dodatków.
 Wyszukiwane dodatki pojawią się na liście, jeżeli wpisany przez ciebie tekst zostanie znaleziony w polach identyfikatora dodatku, nazwy wyświetlanej, wydawcy lub  opisu.
 
@@ -3089,20 +3098,20 @@ Poniżej skróty klawiszowe dla tych monitorów, które działają w NVDA.
 Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 %kc:beginInclude
 || Działanie | Klawisz skrótu |
-| Przewiń wyświetlacz brajla wstecz | D2 |
-| Przewiń wyświetlacz brajla w przód | D5 |
-| Przenieś wyświetlacz brajla do poprzedniej linii | D1 |
-| Przenieś wyświetlacz brajla do następnej linii | D3 |
-| Przywołaj do komórki brajla | Routing |
-| shift+tab | spacja+punkt1+punkt3 |
-| tab | spacja+punkt4+punkt6 |
-| alt | spacja+punkt1+punkt3+punkt4 (spacja+m) |
-| escape | spacja+punkt1+punkt5 (spacja+e) |
-| windows | spacja+punkt3+punkt4 |
-| alt+tab | spacja+punkt2+punkt3+punkt4+punkt5 (spacja+t) |
-| NVDA Menu | spacja+punkt1+punkt3+punkt4+punkt5 (spacja+n) |
-| Klawisz windows+d (minimalizuje wszystkie aplikacje) | spacja+punkt1+punkt4+punkt5 (spacja+d) |
-| Czytaj wszystko | spacja+punkt1+punkt2+punkt3+punkt4+punkt5+punkt6 |
+| Przewiń monitor brajlowski wstecz | ``d2`` |
+| Przewiń monitor brajlowski w przód | ``d5`` |
+| Przewiń monitor brajlowski do poprzedniej linii | ``d1`` |
+| Przewiń monitor brajlowski do następnej linii | ``d3`` |
+| Przywołaj do komórki brajlowskiej | ``routing`` |
+| ``shift+tab`` | ``spacja+punkt1+punkt3`` |
+| ``tab`` | ``spacja+punkt4+punkt6`` |
+| ``alt`` | ``spacja+punkt1+punkt3+punkt4 (spacja+m)`` |
+| ``escape`` | ``spacja+punkt1+punkt5 (spacja+e)`` |
+| ``windows`` | ``spacja+punkt3+punkt4`` |
+| ``alt+tab`` | ``spacja+punkt2+punkt3+punkt4+punkt5 (spacja+t)`` |
+| Menu NVDA | ``spacja+punkt1+punkt3+punkt4+punkt5 (spacja+n)`` |
+| ``windows+d`` (minimalizuj wszystkie aplikacje) | ``spacja+punkt1+punkt4+punkt5 (spacja+d)`` |
+| Czytaj wszystko | ``spacja+punkt1+punkt2+punkt3+punkt4+[punkt5+punkt6`` |
 
 Dla monitorów z joystickiem:
 || Działanie | Klawisz skrótu |
