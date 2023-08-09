@@ -898,12 +898,17 @@ W każdej chwili instalator może stworzyć kopię przenośną.
 Instalacja NVDA także może być wykonana z kopii przenośnej w każdej chwili.
 Jednakże, jeżeli chcesz skopiować NVDA na użądzenie tylko do odczytu takie jak CD, powinieneś skopiować tylko pobrany pakiet.
 W tej chwili, uruchamianie wersji przenośnej nie jest wspierane z urządzeń tylko do odczytu.
-Używanie tymczasowej kopii NVDA jest także możliwą opcją (na przykład w celach demonstracyjnych), choć uruchamianie w ten sposób za każdym razem może być bardzo czasochłonne.
 </P>
 <P>
-Oprócz niemożliwego autostartu podczas i po logowaniu do systemu Windows, przenośne i tymczasowe kopie NVDA posiadają następujące ograniczenia:
+<A HREF="#StepsForRunningTheDownloadLauncher">Instalator programu NVDA</A> może być używany jako kopia tymczasowa NVDA.
+Te kopie uniemożliwiają zapisywania konfiguracji NVDA.
+To także zakłada wyłączenie <A HREF="#AddonsManager">Add-on Store</A>.
+</P>
+<P>
+Przenośne i tymczasowe kopie posiadają następujące ograniczenia:
 </P>
 <UL>
+<LI>Niemożliwość automatycznego uruchamiania podczas i po logowaniu.
 <LI>Niemożliwość uruchamiania programów wymagających prawa administratora, do póki, oczywiście NVDA nie jest uruchomiony z tymi prawami (niezalecane).
 <LI>Niemożliwość odczytu ekranów kontroli konta użytkownika (UAC) podczas próby uruchomienia aplikacji z prawami administratora.
 <LI>Windows 8 i nowsze: niemożliwość wsparcia ekranów dotykowych.
@@ -3500,7 +3505,7 @@ Możesz także ustawić tą opcje żeby kursor się przemieszczał podczas autom
 W takim przypadku, naciśnięcie klawisza routing spowoduje przeniesienie kursora systemowego lub do fokusu, gdy NVDA jest przywołana do kursora przeglądu automatycznie. Nie będzie żadnego przemieszczania gdy gdy fokus jest ręcznie przywiązany do do kursoru przeglądu.
 </P>
 <P>
-Ta opcja pokazuje się tylko jeżeli "<A HREF="#BrailleTether">przywiązywania brajla</A>" jest ustawione na "automatycznie" lub "do przeglądu".
+Ta opcja pokazuje się tylko jeżeli "<A HREF="#BrailleTether">przywiązanie brajla</A>" jest ustawione na "automatyczne" lub "do przeglądu".
 </P>
 <P>
 Aby ustawić opcję "Przenoś kursor systemowy podczas przywoływania kursoru przeglądu" z jakiegokolwiek miejsca, przydziel gest użytkownika używając okna dialogowego <A HREF="#InputGestures">zdarzenia wejścia dialog</A>.
@@ -4417,7 +4422,7 @@ Implementacja UIA w programie Microsoft Excel UI automation zmienia się z wersj
 <DT>Domyślnie</DT><DD>
  Włączone
 <DT>Opcje</DT><DD>
- Wyłączone, Włączone
+   Domyślnie (włączone), wyłączone, włączone
 </DL>
 
 <P></P>
@@ -4465,7 +4470,7 @@ Jednakże, w wierszach poleceń, podczas wstawiania lub usuwania znaku w środku
 <DT>Domyślnie</DT><DD>
   Różnicowanie
 <DT>Opcje</DT><DD>
-  różnicowanie, powiadomienia UIA
+    Domyślnie (Różnicowanie), różnicowanie, powiadomienia UIA
 </DL>
 
 <P></P>
@@ -4512,7 +4517,7 @@ Z niektórymi historycznie popularnymi API do wyświetlania okien, tekst może b
 <DT>Domyślnie</DT><DD>
   Wyłączone
 <DT>Opcje</DT><DD>
-  Wyłączone, Włączone
+    Domyślnie (wyłączone), włączone, wyłączone
 </DL>
 
 <P></P>
@@ -4523,12 +4528,19 @@ Po zmianie tej opcji, do zastosowania zmian wymagane jest ponowne uruchomienie.
 </P>
 <A NAME="SoundVolumeFollowsVoice"></A>
 <H5>Głośność dźwięków NVDA jest spójna z głośnością  NVDA</H5>
+<DL>
+<DT>Domyślnie</DT><DD>
+  Wyłączone
+<DT>opcje</DT><DD>
+  Wyłączone, Włączone
+</DL>
+
+<P></P>
 <P>
 Gdy ta opcja jest włączona, Głośność dźwięków NVDA będzie śledzić głośność używanego syntezatora mowy.
 Jeżeli zmniejszysz głośność syntezatora mowy, głośność dźwięków także będzie zmniejszona.
 Podobnie, jeżeli powiększysz głośność syntezatora, głośność dźwięku się zwiększy.
 Ta opcja odnosi skutek gdy opcja "Używaj wasapi do wyjścia audio" jest włączona.
-Domyślnie ta opcja jest wyłączona.
 </P>
 <A NAME="SoundVolume"></A>
 <H5>Głośność dźwięków NVDA</H5>
@@ -4619,7 +4631,7 @@ Możesz filtrować symbole wprowadzając symbol lub część zastępującego tek
 <UL>
 <LI>Pole zamień określa tekst, który powinien być wypowiadany zamiast tego znaku. 
 <LI>Używając listy poziom, można regulować najniższy poziom interpunkcji, na którym dany znak będzie wypowiadany: brak, niektóre, większość, wszystko. 
-Można także ustawić poziom symbolu na znak; w tym przypadku, symbol nie będzie wymawiany, niezależnie od ustawionego poziomu interpunkcji, z następującymi dwoma wyjątkami:
+Można także ustawić poziom symbolu na znak. W tym przypadku, symbol nie będzie wymawiany, niezależnie od ustawionego poziomu interpunkcji, z następującymi dwoma wyjątkami:
  <UL>
  <LI>podczas nawigacji po znakach.
  <LI>Gdy NVDA wymawia tekst, zawierający ten symbol.
@@ -4937,7 +4949,7 @@ Dodatki mogą być dystrybuowane w czterech kanałach:
 Kanał polecany ludziom zainteresowanym wersjami beta.
 <LI>Dev - Ten kanał jest rekomendowany do użytku przez programistów dodatków do testowania zmian w Api.
 Kanał skierowany do testerów wersji alpha NVDA.
-<LI>Z pliku: dodatki instalowane z zewnętrznych źródeł, czyli spoza add-on store.
+<LI>Z pliku: dodatki instalowane z zewnętrznych źródeł, czyli spoza Add-on Store.
 </UL>
 
 <P></P>
@@ -4948,7 +4960,7 @@ Aby pokazywać dodatki tylko z określonych kanałów, zmień wybór w filtrze "
 <H4>13.1.5. Wyszukiwanie dodatków</H4>
 <P>
 Aby wyszukiwać dodatki, używaj pola edycji  "szukaj".
-Możesz przejść do niego naciskając <CODE>shift+tab</CODE> z listy dodatków, lub naciskając skrót <CODE>alt+s</CODE> z jakiegokolwiek miejsca w interfejsie Add-on store.
+Możesz przejść do niego naciskając <CODE>shift+tab</CODE> z listy dodatków.
 Napisz jedno lub dwa kluczowe słowa, żeby znaleźć żądany typ dodatku którego szukasz, potem `` wróć przyciskiem <CODE>tab</CODE> do listy dodatków.
 Wyszukiwane dodatki pojawią się na liście, jeżeli wpisany przez ciebie tekst zostanie znaleziony w polach identyfikatora dodatku, nazwy wyświetlanej, wydawcy lub  opisu.
 </P>
@@ -5850,60 +5862,60 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 <TH>Klawisz skrótu</TH>
 </TR>
 <TR>
-<TD>Przewiń wyświetlacz brajla wstecz</TD>
-<TD>D2</TD>
+<TD>Przewiń monitor brajlowski wstecz</TD>
+<TD><CODE>d2</CODE></TD>
 </TR>
 <TR>
-<TD>Przewiń wyświetlacz brajla w przód</TD>
-<TD>D5</TD>
+<TD>Przewiń monitor brajlowski w przód</TD>
+<TD><CODE>d5</CODE></TD>
 </TR>
 <TR>
-<TD>Przenieś wyświetlacz brajla do poprzedniej linii</TD>
-<TD>D1</TD>
+<TD>Przewiń monitor brajlowski do poprzedniej linii</TD>
+<TD><CODE>d1</CODE></TD>
 </TR>
 <TR>
-<TD>Przenieś wyświetlacz brajla do następnej linii</TD>
-<TD>D3</TD>
+<TD>Przewiń monitor brajlowski do następnej linii</TD>
+<TD><CODE>d3</CODE></TD>
 </TR>
 <TR>
-<TD>Przywołaj do komórki brajla</TD>
-<TD>Routing</TD>
+<TD>Przywołaj do komórki brajlowskiej</TD>
+<TD><CODE>routing</CODE></TD>
 </TR>
 <TR>
-<TD>shift+tab</TD>
-<TD>spacja+punkt1+punkt3</TD>
+<TD><CODE>shift+tab</CODE></TD>
+<TD><CODE>spacja+punkt1+punkt3</CODE></TD>
 </TR>
 <TR>
-<TD>tab</TD>
-<TD>spacja+punkt4+punkt6</TD>
+<TD><CODE>tab</CODE></TD>
+<TD><CODE>spacja+punkt4+punkt6</CODE></TD>
 </TR>
 <TR>
-<TD>alt</TD>
-<TD>spacja+punkt1+punkt3+punkt4 (spacja+m)</TD>
+<TD><CODE>alt</CODE></TD>
+<TD><CODE>spacja+punkt1+punkt3+punkt4 (spacja+m)</CODE></TD>
 </TR>
 <TR>
-<TD>escape</TD>
-<TD>spacja+punkt1+punkt5 (spacja+e)</TD>
+<TD><CODE>escape</CODE></TD>
+<TD><CODE>spacja+punkt1+punkt5 (spacja+e)</CODE></TD>
 </TR>
 <TR>
-<TD>windows</TD>
-<TD>spacja+punkt3+punkt4</TD>
+<TD><CODE>windows</CODE></TD>
+<TD><CODE>spacja+punkt3+punkt4</CODE></TD>
 </TR>
 <TR>
-<TD>alt+tab</TD>
-<TD>spacja+punkt2+punkt3+punkt4+punkt5 (spacja+t)</TD>
+<TD><CODE>alt+tab</CODE></TD>
+<TD><CODE>spacja+punkt2+punkt3+punkt4+punkt5 (spacja+t)</CODE></TD>
 </TR>
 <TR>
-<TD>NVDA Menu</TD>
-<TD>spacja+punkt1+punkt3+punkt4+punkt5 (spacja+n)</TD>
+<TD>Menu NVDA</TD>
+<TD><CODE>spacja+punkt1+punkt3+punkt4+punkt5 (spacja+n)</CODE></TD>
 </TR>
 <TR>
-<TD>Klawisz windows+d (minimalizuje wszystkie aplikacje)</TD>
-<TD>spacja+punkt1+punkt4+punkt5 (spacja+d)</TD>
+<TD><CODE>windows+d</CODE> (minimalizuj wszystkie aplikacje)</TD>
+<TD><CODE>spacja+punkt1+punkt4+punkt5 (spacja+d)</CODE></TD>
 </TR>
 <TR>
 <TD>Czytaj wszystko</TD>
-<TD>spacja+punkt1+punkt2+punkt3+punkt4+punkt5+punkt6</TD>
+<TD><CODE>spacja+punkt1+punkt2+punkt3+punkt4+[punkt5+punkt6</CODE></TD>
 </TR>
 </TABLE>
 
