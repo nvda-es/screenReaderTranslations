@@ -1403,7 +1403,7 @@ Allo stesso modo, se si incontra una barra degli strumenti, bisogna entrare all'
 </P>
 <P>
 Tuttavia, se si desidera spostarsi avanti e indietro tra i vari oggetti del sistema, è sempre possibile andare all'oggetto successivo/precedente servendosi dei comandi messi a disposizione dalla modalità in linea, che presenterà gli oggetti senza alcun tipo di gerarchia.
-Ad esempio, se ci si sposta sull'oggetto successivo in modalità in linea e l'oggetto corrente contiene altri oggetti, NVDA si sposterà automaticamente sul primo oggetto che lo contiene.
+Ad esempio, se ci si sposta sull'oggetto successivo in modalità in linea e l'oggetto corrente contiene altri oggetti, NVDA si sposterà automaticamente sul primo oggetto figlio.
 In alternativa, se l'oggetto corrente non contiene alcun oggetto, NVDA passerà all'oggetto successivo allo stesso livello della gerarchia.
 Nel caso in cui non esista un oggetto successivo, NVDA cercherà di trovare altri oggetti seguendo la gerarchia fino a quando non ci saranno più oggetti verso cui spostarsi.
 Le stesse regole si applicano per la navigazione all'indietro nella gerarchia.
@@ -4314,6 +4314,16 @@ Questa impostazione contiene i seguenti valori:
 </UL>
 
 <P></P>
+<A NAME="UseUiaForExcel"></A>
+<H5>Utilizza UI Automation per accedere ai controlli dei fogli di calcolo di Microsoft Excel quando disponibile</H5>
+<P>
+Quando questa opzione è abilitata, NVDA proverà ad utilizzare le API di accessibilità di Microsoft UI Automation per recuperare le informazioni dai controlli del foglio di calcolo di Microsoft Excel.
+Si tratta di una funzionalità sperimentale e alcune caratteristiche di Microsoft Excel potrebbero non essere disponibili in questa modalità.
+Per esempio, non si potrà usare l'elenco elementi di formule e commenti, oltre alla capacità di saltare rapidamente nei campi modulo in modalità navigazione.
+Tuttavia, per l'esplorazione e la modifica di base del foglio di calcolo, questa opzione può fornire un notevole miglioramento delle prestazioni.
+Al momento è consigliabile per la maggior parte degli utenti di non attivare questa funzione sperimentale, tuttavia sono ben accetti i feedback di quelle persone che dispongono della versione di Microsoft Excel build 16.0.13522.10000 o superiore.
+L'implementazione di Ui automation in Excel è in costante fase di modifica, perciò le versioni di Office inferiori alla 16.0.13522.10000 potrebbero non fornire informazioni sufficienti.
+</P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
 <H5>Utilizza UI Automation per accedere alla console di Windows quando disponibile</H5>
 <P>
@@ -4389,16 +4399,6 @@ Sono disponibili le seguenti opzioni:
 </UL>
 
 <P></P>
-<A NAME="UseUiaForExcel"></A>
-<H5>Utilizza UI Automation per accedere ai controlli dei fogli di calcolo di Microsoft Excel quando disponibile</H5>
-<P>
-Quando questa opzione è abilitata, NVDA proverà ad utilizzare le API di accessibilità di Microsoft UI Automation per recuperare le informazioni dai controlli del foglio di calcolo di Microsoft Excel.
-Si tratta di una funzionalità sperimentale e alcune caratteristiche di Microsoft Excel potrebbero non essere disponibili in questa modalità.
-Per esempio, non si potrà usare l'elenco elementi di formule e commenti, oltre alla capacità di saltare rapidamente nei campi modulo in modalità navigazione.
-Tuttavia, per l'esplorazione e la modifica di base del foglio di calcolo, questa opzione può fornire un notevole miglioramento delle prestazioni.
-Al momento è consigliabile per la maggior parte degli utenti di non attivare questa funzione sperimentale, tuttavia sono ben accetti i feedback di quelle persone che dispongono della versione di Microsoft Excel build 16.0.13522.10000 o superiore.
-L'implementazione di Ui automation in Excel è in costante fase di modifica, perciò le versioni di Office inferiori alla 16.0.13522.10000 potrebbero non fornire informazioni sufficienti.
-</P>
 <A NAME="BrailleLiveRegions"></A>
 <H5>Segnala regioni live</H5>
 <DL>
@@ -4934,7 +4934,7 @@ Per elencare i componenti aggiuntivi solo per canali specifici, modificare la se
 <P>
 Per cercare componenti aggiuntivi, utilizzare la casella di testo "Cerca".
 è possibile raggiungerla premendo <CODE>shift+tab</CODE> dall'elenco dei componenti aggiuntivi.
-Digitare una o due parole chiave per il tipo di componente aggiuntivo che si sta cercando, quindi un colpo di ``tab'` per tornare agli add-on.
+Digitare una o due parole chiave per il tipo di componente aggiuntivo che si sta cercando, quindi un colpo di <CODE>tab</CODE> per andare agli add-on.
 NVDA cercherà il testo appena inserito in vari campi, quali ID, Nome visualizzato, publisher, autore o descrizione, dopodiché mostrerà un elenco di add-on relativi alla ricerca effettuata.
 </P>
 <A NAME="AddonStoreActions"></A>
@@ -5864,11 +5864,11 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 <TR>
 <TD>tasti alt</TD>
-<TD><CODE>spazio+punto1+punto3+punto4 (spazio+m</CODE>)</TD>
+<TD><CODE>spazio+punto1+punto3+punto4</CODE> (<CODE>spazio+m</CODE>)</TD>
 </TR>
 <TR>
 <TD>tasto escape</TD>
-<TD><CODE>spazio+punto1+punto5 (spazio+e</CODE>)</TD>
+<TD><CODE>spazio+punto1+punto5</CODE> (<CODE>spazio+e</CODE>)</TD>
 </TR>
 <TR>
 <TD>tasto windows</TD>
@@ -5876,15 +5876,15 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 <TR>
 <TD>tasti alt+tab</TD>
-<TD><CODE>spazio+punto2+punto3+punto4+punto5 (spazio+t</CODE>)</TD>
+<TD><CODE>spazio+punto2+punto3+punto4+punto5</CODE> (<CODE>spazio+t</CODE>)</TD>
 </TR>
 <TR>
 <TD>Menu NVDA</TD>
-<TD><CODE>spazio+punto1+punto3+punto4+punto5 (spazio+n</CODE>)</TD>
+<TD><CODE>spazio+punto1+punto3+punto4+punto5</CODE> (<CODE>spazio+n</CODE>)</TD>
 </TR>
 <TR>
 <TD>tasti windows+d (ridurre ad icona tutte le applicazioni)</TD>
-<TD><CODE>spazio+punto1+punto4+punto5 (spazio+d</CODE>)</TD>
+<TD><CODE>spazio+punto1+punto4+punto5</CODE> (<CODE>spazio+d</CODE>)</TD>
 </TR>
 <TR>
 <TD>Dire tutto</TD>
