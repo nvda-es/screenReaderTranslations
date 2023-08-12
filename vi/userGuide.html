@@ -4511,10 +4511,17 @@ Với vài GUI APIs phổ biến trong lịch sử, văn bản có thể hiển 
 </P>
 <A NAME="WASAPI"></A>
 <H5>Dùng WASAPI cho đầu ra âm thanh</H5>
+<DL>
+<DT>Mặc định</DT><DD>
+  Tắt
+<DT>Tùy chọn</DT><DD>
+  Bật, tắt
+</DL>
+
+<P></P>
 <P>
 Tùy chọn này cho phép phát ra âm thanh thông qua Windows Audio Session API (WASAPI).
 WASAPI là một hệ thống âm thanh hiện đại hơn, có thể cải thiện khả năng phản hồi, hiệu suất và tính ổn định trong việc phát âm thanh của NVDA, bao gồm cả âm thanh và giọng đọc.
-Mặc định, tùy chọn này được bật.
 Sau khi thay đổi thiết lập, bạn sẽ phải khởi động lại NVDA để nó có hiệu lực.
 </P>
 <A NAME="SoundVolumeFollowsVoice"></A>
@@ -7547,12 +7554,13 @@ Màn hình SuperBraille không có bàn phím nhập liệu và nút cuộn. Vì
 <P>
 Các màn hình b.book, b.note, Esys, Esytime và Iris từ Eurobraille đã được hỗ trợ bởi NVDA.  
 Đây là những thiết bị có bàn phím chữ nổi với 10 phím. 
+Vui lòng xem tài liệu của màn hình để biết vị trí các phím..
 Có hai phím giống như khoảng trắng, phím bên trái tương ứng với phím xóa và phím bên phải là khoảng trắng.
-Được kết nối qua USB, những thiết bị này có một bàn phím USB độc lập. 
-Có thể bật / tắt bàn phím này với hộp kiểm ‘Mô phỏng bàn phím HID’ trong bảng cài đặt chữ nổi. 
-Bàn phím chữ nổi được mô tả dưới đây là bàn phím khi không chọn hộp kiểm nói trên.
-Sau đây là các lệnh của màn hình nổi này được gán cho NVDA.
-Vui lòng xem Tài Liệu của màn hình cho phần mô tả vị trí các phím. 
+</P>
+<P>
+Các thiết bị này được kết nối thông qua USB và có một bạn phím USB độc lập. 
+Có thể bật hoặc tắt bàn phím này bằng cách bật / tắt "mô phỏng bàn phím HID" sử dụng một thao tác / phím tắt.
+Các chức năng của bàn phím chữ nổi được mô tả dưới đây là để dùng khi tắt "mô phỏng bàn phím HID".
 </P>
 <A NAME="EurobrailleBraille"></A>
 <H4>16.17.1. Các chức năng bàn phím chữ nổi</H4>
@@ -7787,6 +7795,10 @@ Vui lòng xem Tài Liệu của màn hình cho phần mô tả vị trí các ph
 <TR>
 <TD>Bật / tắt phím <CODE>alt</CODE></TD>
 <TD><CODE>chấm 1+chấm 8+khoảng trắng</CODE>, <CODE>chấm 4+chấm 8+khoảng trắng</CODE></TD>
+</TR>
+<TR>
+<TD>Bật / tắt mô phỏng bàn phím HID</TD>
+<TD><CODE>switch1Left+joystick1Down</CODE>, <CODE>switch1Right+joystick1Down</CODE></TD>
 </TR>
 </TABLE>
 
@@ -8087,6 +8099,10 @@ Vui lòng xem Tài Liệu của màn hình cho phần mô tả vị trí các ph
 <TR>
 <TD>Phím <CODE>control+end</CODE></TD>
 <TD><CODE>l6+l7+l8</CODE>, <CODE>l5+l6+l7</CODE></TD>
+</TR>
+<TR>
+<TD>bật / tắt mô phỏng bàn phím HID</TD>
+<TD><CODE>l1+joystick1Down</CODE>, <CODE>l8+joystick1Down</CODE></TD>
 </TR>
 </TABLE>
 
@@ -8740,7 +8756,13 @@ Sau đây là những giá trị có thể thiết lập cho khóa nói trên:
 <TD><CODE>serviceDebug</CODE></TD>
 <TD>DWORD</TD>
 <TD>0 (mặc định) để tắt, 1 để bật</TD>
-<TD>Nếu bật, sẽ tắt <A HREF="#SecureMode">Chế Độ An Toàn</A> của <A HREF="#SecureScreens">các màn hình bảo vệ</A>. Windows. Vì một số lý do an toàn cho máy tính, chức năng này không được khuyến khích sử dụng.</TD>
+<TD>Nếu bật, sẽ tắt <A HREF="#SecureMode">Chế Độ An Toàn</A> của <A HREF="#SecureScreens">các màn hình bảo vệ</A>. Windows. Vì một số lý do an toàn cho máy tính, chức năng này không được khuyến khích sử dụng</TD>
+</TR>
+<TR>
+<TD><CODE>forceSecureMode</CODE></TD>
+<TD>DWORD</TD>
+<TD>0 (mặc định) để tắt, 1 để bật</TD>
+<TD>nếu được bật, sẽ buộc chạy ở <A HREF="#SecureMode">chế độ bảo vệ</A> to be enabled when running NVDA.</TD>
 </TR>
 </TABLE>
 
