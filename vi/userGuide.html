@@ -1407,6 +1407,13 @@ Bạn có thể bỏ qua danh sách để chuyển qua các đối tượng khá
 Tương tự như vậy, một thanh công cụ chứa các mục con và bạn phải di chuyển vào trong thanh công cụ thì mới tìm được các mục con đó.
 </P>
 <P>
+Nếu bạn vẫn thích di chuyển đến thành phần kế và thành phần trước giữa các đối tượng trên hệ thống, bạn có thể dùng các phím lệnh để di chuyển đến đối tượng trước / đối tượng kế ở dạng xem phẳng.
+Ví dụ, nếu bạn di chuyển đến đối tượng kế trong kiểu xem phẳng này và đối tượng hiện tại có chứa những đối tượng khác, NVDA sẽ tự di chuyển tới đối tượng đầu tiên chứa nó.
+Ngoài ra, nếu đối tượng hiện tại không chứa đối tượng nào, NVDA sẽ di chuyển đến đối tượng kế ở cấp hiện tại của hệ thống phân cấp.
+Nếu không có đối tượng kế, NVDA sẽ nỗ lực tìm đối tượng kế trong hệ thống phân cấp dựa trên đối tượng chứa cho đến khi không còn đối tượng nào để chuyển đến.
+Điều này cũng được áp dụng khi di chuyển đến đối tượng trước trong hệ thống phân cấp.
+</P>
+<P>
 Đối tượng đang duyệt được gọi là đối tượng điều hướng.
 Khi duyệt đến một đối tượng, bạn có thể xem nội dung của nó bằng  <A HREF="#ReviewingText">các lệnh duyệt nội dung</A> trong <A HREF="#ObjectReview">chế độ duyệt đối tượng</A>.
 Khi bật chức năng <A HREF="#VisionFocusHighlight">Làm Nổi Trực Quan</A>, vị trí hiện tại của focus hệ thống cũng sẽ được thể hiện một cách trực quan.
@@ -1441,18 +1448,32 @@ Sử dụng các phím tắt sau để duyệt qua các đối tượng:
 <TD>Chuyển đến đối tượng cha đang chứa đối tượng hiện tại</TD>
 </TR>
 <TR>
-<TD>Chuyển về đối tượng trước cùng cấp</TD>
+<TD>Chuyển về đối tượng trước</TD>
 <TD>NVDA+4 bàn phím số</TD>
 <TD>NVDA+shift+mũi tên trái</TD>
-<TD>Vuốt trái (chế độ đối tượng)</TD>
+<TD>không có</TD>
 <TD>Chuyển về đối tượng trước đối tượng hiện tại</TD>
 </TR>
 <TR>
-<TD>Chuyển sang đối tượng kế tiếp cùng cấp</TD>
+<TD>Chuyển về đối tượng trước ở dạng xem phẳng</TD>
+<TD>NVDA+9 bàn phím số</TD>
+<TD>NVDA+shift+[</TD>
+<TD>vuốt trái (chế độ đối tượng)</TD>
+<TD>Chuyển đến đối tượng trước ở dạng xem phẳng của hệ thống phân cấp đối tượng điều hướng</TD>
+</TR>
+<TR>
+<TD>Chuyển đến đối tượng kế</TD>
 <TD>NVDA+6 bàn phím số</TD>
 <TD>NVDA+shift+mũi tên phải</TD>
-<TD>Vuốt phải (chế độ đối tượng)</TD>
-<TD>Chuyển sang đối tượng kế tiếp</TD>
+<TD>không có</TD>
+<TD>Chuyển đến đối tượng kế sau đối tượng điều hướng hiện tại</TD>
+</TR>
+<TR>
+<TD>Chuyển đến đối tượng kế ở dạng xem phẳng</TD>
+<TD>NVDA+3 bàn phím số</TD>
+<TD>NVDA+shift+]</TD>
+<TD>vuốt phải (chế độ đối tượng)</TD>
+<TD>Chuyển đến đối tượng kế ở dạng xem phẳng của hệ thống phân cấp đối tượng điều hướng</TD>
 </TR>
 <TR>
 <TD>Chuyển đến đối tượng con đầu tiên</TD>
@@ -1705,7 +1726,6 @@ Bố cục đó được minh họa như dưới đây:
 <H3>5.6. Các chế độ duyệt</H3>
 <P>
 <A HREF="#ReviewingText">Các phím duyệt văn bản</A> có thể dùng để duyệt nội dung trong đối tượng điều hướng, trong tài liệu hay trên màn hình, phụ thuộc vào chế độ duyệt được chọn.
-Khái niệm duyệt Flat trước đây của NVDA được thay thế bằng các chế độ duyệt (review mode)
 </P>
 <P>
 Các phím lệnh sau đây dùng để chuyển qua lại giữa các chế độ duyệt:
@@ -3452,6 +3472,36 @@ Trường hợp này, con trỏ nổi sẽ không đi theo con trỏ NVDA trong 
 Nếu muốn con trỏ nổi đi theo khi duyệt đối tượng  và nội dung, bạn cần cấu hình con trỏ nổi đi theo con trỏ duyệt.
 Trường hợp này, con trỏ nổi sẽ không đi theo focus và dấu nháy hệ thống.
 </P>
+<A NAME="BrailleSettingsReviewRoutingMovesSystemCaret"></A>
+<H5>Di chuyển dấu nháy hệ thống khi định tuyến con trỏ duyệt</H5>
+<DL>
+<DT>Mặc định</DT><DD>
+  Không bao giờ
+<DT>Tùy chọn</DT><DD>
+  Mặc định (Không bao giờ), Không bao giờ, Chỉ khi tự đi theo, Luôn luôn
+</DL>
+
+<P></P>
+<P>
+Thiết lập này xác định việc dấu nháy hệ thống bị di chuyển khi nút định tuyến được bấm.
+Mặc định, tùy chọn này được thiết lập là không bao giờ, nghĩa là nút định tuyến sẽ không di chuyển dấu nháy hệ thống khi định tuyến con trỏ duyệt.
+</P>
+<P>
+Khi thiết lập tùy chọn này là luôn luôn, và <A HREF="#BrailleTether">chế độ con trỏ nổi đi theo</A> được thiết lập là "tự động" hoặc "đến con trỏ duyệt", việc bấm phím định tuyến con trỏ cũng sẽ di chuyển dấu nháy hệ thống hoặc focus khi được hỗ trợ.
+Khi chế độ duyệt hiện tại là <A HREF="#ScreenReview">Duyệt màn hình</A>, sẽ không có dấu nháy trên màn hình.
+Trường họp này, NVDA sẽ nỗ lực lấy tiêu điểm là đối tượng dưới văn bản mà bạn đang định tuyến.
+Điều này cũng được áp dụng cho <A HREF="#ObjectReview">duyệt đối tượng</A>.
+</P>
+<P>
+Bạn cũng có thể thiết lập tùy chọn này là chỉ di chuyển dấu nháy khi tự đi theo.
+Trường họp đó, bấm phím định tuyến con trỏ sẽ chỉ di chuyển dấu nháy hệ thống hoặc focus khi NVDA tự đi theo con trỏ duyệt, tức là không có việc di chuyển con trỏ khi đi theo con trỏ duyệt bằng cách thủ công.
+</P>
+<P>
+Tùy chọn này chỉ hiển thị khi "<A HREF="#BrailleTether">chữ nổi đi theo</A>" được thiết lập là "Tự động" hoặc "Đến con trỏ duyệt".
+</P>
+<P>
+Để bật / tắt di chuyển dấu nháy hệ thống khi định tuyến con trỏ duyệt ở bất cứ đâu, vui lòng gán thao tác / phím tắt thông qua [hộp thoại Quản lý các thao tác#InputGestures].
+</P>
 <A NAME="BrailleSettingsReadByParagraph"></A>
 <H5>Đọc Theo Đoạn</H5>
 <P>
@@ -4364,6 +4414,20 @@ Tuy nhiên, với việc di chuyển / chỉnh sửa căn bản trong bảng tí
 Chúng tôi vẫn không khuyến khích đại đa số người dùng bật tùy chọn này làm mặc định, dù rằng vẫn hoan nghênh người dùng Microsoft Excel  bản dựng 16.0.13522.10000 trở lên dùng thử và cung cấp phản hồi cho tính năng này.
 Việc triển khai UI automation của Microsoft Excel đang thay đổi, và các phiên bản của Microsoft Office cũ hơn 16.0.13522.10000 có thể không đủ thông tin để dùng cho tùy chọn này.
 </P>
+<A NAME="BrailleLiveRegions"></A>
+<H5>Thông báo nội dung động</H5>
+<DL>
+<DT>Mặc định</DT><DD>
+  Bật
+<DT>Tùy chọn</DT><DD>
+  Bật, tắt
+</DL>
+
+<P></P>
+<P>
+Tùy chọn này cho phép NVDA thông báo các thay đổi trong một số nội dung động trên web ở chữ nổi.
+Việc tắt tùy chọn này sẽ làm cho NVDA vận hành giống như ở các phiên bản 2023.1 trở về trước, tức là chỉ thông báo các thay đổi nội dung thông qua giọng đọc.
+</P>
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
 <H5>Nói mật khẩu trong tất cả terminal nâng cao</H5>
 <P>
@@ -4461,6 +4525,12 @@ Nếu bạn giảm âm lượng giọng đọc thì âm lượng của âm thanh
 Tương tự, nếu bạn tăng âm lượng của âm thanh thì âm lượng của giọng đọc cũng sẽ tăng.
 Tùy chọn này chỉ phát huy tác dụng khi  bật "Dùng WASAPI cho đầu ra âm thanh".
 Mặc định thì tùy chọn này không được bật.
+</P>
+<A NAME="SoundVolume"></A>
+<H5>Âm lượng âm thanh NVDA</H5>
+<P>
+Thanh trượt này cho phép bạn điều chỉnh âm lượng cho âm thanh và  tiếng beep của NVDA.
+Thiết lập này chỉ co tác dụng khi bật "Dùng WASAPI cho đầu ra âm thanh" và tắt "Âm lượng âm thanh NVDA đi theo âm lượng giọng đọc".
 </P>
 <A NAME="AdvancedSettingsDebugLoggingCategories"></A>
 <H5>Kiểu bản ghi dò lỗi</H5>
@@ -4818,7 +4888,6 @@ Bạn truy cập Cửa Hàng Add-On từ trình đơn công cụ trong trình đ
 <H3>13.1. Duyệt qua các add-on</H3>
 <P>
 Khi được mở lên, Cửa Hàng Add-On sẽ hiển thị danh sách các add-on.
-Bạn có thể trở về danh sách này với phím lệnh <CODE>alt+l</CODE> khi đang ở bất cứ đâu trong cửa hàng.
 Nếu trước đó, bạn chưa cài đặt add-on nào, cửa hàng add-on sẽ mở ra danh sách các add-on có thể cài đặt.
 Ngược lại, danh sách này sẽ là những add-on đang được cài đặt.
 </P>
@@ -4877,14 +4946,14 @@ Những người dùng NVDA alpha có thể cần sử dụng phiên bản "Dev"
 Để tìm kiếm các add-on, hãy sử dụng ô nhập liệu "Tìm kiếm".
 Bạn có thể đi đến nó bằng cách bấm <CODE>shift+tab</CODE> từ danh sách các add-on, hoặc bấm <CODE>alt+s</CODE> từ bất cứ đâu trong Cửa Hàng Add-On .
 Nhập từ khóa cho loại add-on bạn đang tìm kiếm, rồi bấm <CODE>tab</CODE> đến danh sách các add-on.
-Các add-on sẽ được liệt kê nếu nội dung tìm kiếm được tìm thấy trong tên hiển thị, nhà xuất bản (tác giả) hoặc mô tả.
+Các add-on sẽ được liệt kê nếu nội dung tìm kiếm được tìm thấy trong add-on ID, tên hiển thị, nhà xuất bản (tác giả) hoặc mô tả.
 </P>
 <A NAME="AddonStoreActions"></A>
 <H3>13.2. Các hành động cho add-on</H3>
 <P>
 Các add-on đều có các hành động như cài đặt, trợ giúp, tắt, và gỡ.
-Có thể tiếp cận trình đơn hành động  cho một add-on trong danh sách bằng cách bấm phím <CODE>applications</CODE>, <CODE>enter</CODE>, chuột phải hoặc chuột trái hai lần lên add-on.
-Cũng có một nút Hành động cho add-on, có thể kích hoạt theo cách thông thường hoặc bấm phím <CODE>alt+a</CODE>.
+Với một add-on trong danh sách, có thể mở các hành động này thông qua một trình đơn bằng cách bấm phím <CODE>applications</CODE>, <CODE>enter</CODE>, nhấp chuột phải hoặc nhấp đôi lên add-on.
+Cũng có thể mở trình đơn này qua nút Hành động trong phần chi tiết của add-on được chọn.
 </P>
 <A NAME="AddonStoreInstalling"></A>
 <H4>13.2.1. Cài đặt add-on</H4>
@@ -8251,6 +8320,10 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 <TD><CODE>f1+f5</CODE>, <CODE>f9+f14</CODE></TD>
 </TR>
 <TR>
+<TD>Chuyển đến các chế độ "di chuyển dấu nháy hệ thống chữ nổi khi định tuyến con trỏ duyệt" states</TD>
+<TD><CODE>f1+f3</CODE>, <CODE>f9+f11</CODE></TD>
+</TR>
+<TR>
 <TD>Thực hiện hành động mặc định trên đối tượng điều hướng hiện tại</TD>
 <TD><CODE>f7+f8</CODE></TD>
 </TR>
@@ -8418,8 +8491,15 @@ Sau đây là các phím hiện được gán cho những màn hình nổi nói 
 <A NAME="SecureMode"></A>
 <H3>17.1. Chế độ bảo vệ</H3>
 <P>
-Có thể chạy NVDA ở chế độ bảo vệ với <A HREF="#CommandLineOptions">tùy chọn dòng lệnh</A> <CODE>-s</CODE>.
+Có thể, người quản trị hệ thống sẽ cấu hình để NVDA hạn chế truy cập trái phép vào hệ thống.
+NVDA cho phép cài các add-on tùy chỉnh, vốn có thể gọi chạy các đoạn mã tùy ý, bao gồm cả khi NVDA được nâng lên đặc quyền của quản trị viên.
+NVDA cũng cho phép người dùng chạy các đoạn mã tùy ý thông qua Python Console của nó.
+Chế độ bảo vệ của NVDA ngăn chặn người dùng thay đổi cấu hình NVDA của họ, và hạn chế việc truy cập hệ thống trái phép.
+</P>
+<P>
 NVDA chạy ở chế độ bảo vệ khi được gọi chạy ở <A HREF="#SecureScreens">các màn hình bảo vệ</A>, cho đến khi <A HREF="#SystemWideParameters">tham số hệ thống mở rộng</A> <CODE>serviceDebug</CODE> được bật.
+Để buộc NVDA luôn được gọi chạy ở chế độ bảo vệ, hãy thiết lập <CODE>forceSecureMode</CODE> cho <A HREF="#SystemWideParameters">tham số hệ thống mở rộng</A>.
+Có thể chạy NVDA ở chế độ bảo vệ với <A HREF="#CommandLineOptions">tùy chọn dòng lệnh</A> <CODE>-s</CODE>.
 </P>
 <P>
 Chế độ bảo vệ sẽ vô hiệu:
@@ -8427,13 +8507,25 @@ Chế độ bảo vệ sẽ vô hiệu:
 <UL>
 <LI>Lưu cấu hình và các thiết lập khác xuống đĩa
 <LI>Lưu gesture map xuống đĩa
-<LI>Các tính năng của <A HREF="#ConfigurationProfiles">Hồ Sơ Cấu Hình</A> như tạo, xóa, đổi tên hồ sơ.
+<LI>Các tính năng của <A HREF="#ConfigurationProfiles">Hồ Sơ Cấu Hình</A> như tạo, xóa, đổi tên hồ sơ, v...v....
 <LI>Cập nhật NVDA và tạo bản chạy trực tiếp
-<LI><A HREF="#PythonConsole">Python console</A>
+<LI><A HREF="#AddonsManager">Cửa Hàng Add-on</A>
+<LI><A HREF="#PythonConsole">NVDA Python console</A>
 <LI><A HREF="#LogViewer">Trình xem log</A> và ghi log
+<LI>Mở các tài liệu bên ngoài từ trình đơn NVDA, ví dụ như hướng dẫn sử dụng hay tập tin ghi tên những nguio72 đã đóng góp.
 </UL>
 
 <P></P>
+<P>
+Bản NVDA được cài đặt sẽ lưu cấu hình, bao gồm add-on tại <CODE>%APPDATA%\nvda</CODE>.
+Để ngăn không cho người dùng NVDA trực tiếp thay đổi cấu hình hay add-on, phải giới hạn quyền truy cập đến thư mục này của người dùng.
+</P>
+<P>
+Người dùng NVDA thường dựa vào việc cấu hình hồ sơ cho phù hợp với nhu cầu của họ.
+Điều này có thể bao gồm cả việc cài đặt và cấu hình các add-on tùy chỉnh, vốn không liên quan đến NVDA.
+Chế độ bảo vệ sẽ không cho phép thay đổi cấu hình NVDA, vậy nên hãy chắc chắn NVDA đã được tùy chỉnh thỏa đáng trước khi buộc dùng chế độ này.
++
+</P>
 <A NAME="SecureScreens"></A>
 <H3>17.2. Các Màn Hình Bảo Vệ</H3>
 <P>
@@ -8639,13 +8731,13 @@ Sau đây là những giá trị có thể thiết lập cho khóa nói trên:
 <TH>Mô tả</TH>
 </TR>
 <TR>
-<TD>configInLocalAppData</TD>
+<TD><CODE>configInLocalAppData</CODE></TD>
 <TD>DWORD</TD>
 <TD>0 (mặc định) để tắt, 1 để bật</TD>
 <TD>Nếu bật, sẽ lưu cấu hình người dùng trong thư mục local application data, thay vì roaming application data</TD>
 </TR>
 <TR>
-<TD>serviceDebug</TD>
+<TD><CODE>serviceDebug</CODE></TD>
 <TD>DWORD</TD>
 <TD>0 (mặc định) để tắt, 1 để bật</TD>
 <TD>Nếu bật, sẽ tắt <A HREF="#SecureMode">Chế Độ An Toàn</A> của <A HREF="#SecureScreens">các màn hình bảo vệ</A>. Windows. Vì một số lý do an toàn cho máy tính, chức năng này không được khuyến khích sử dụng.</TD>
