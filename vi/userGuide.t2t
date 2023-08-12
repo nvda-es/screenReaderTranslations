@@ -2357,9 +2357,14 @@ Trong vài tình huống, văn bản nền có thể hoàn toàn trong suốt, v
 Với vài GUI APIs phổ biến trong lịch sử, văn bản có thể hiển thị với nền trong suốt, nhưng một cách trực quan thì màu nền vẫn chính xác.
 
 ==== Dùng WASAPI cho đầu ra âm thanh ====[WASAPI]
+: Mặc định
+  Tắt
+: Tùy chọn
+  Bật, tắt
+:
+
 Tùy chọn này cho phép phát ra âm thanh thông qua Windows Audio Session API (WASAPI).
 WASAPI là một hệ thống âm thanh hiện đại hơn, có thể cải thiện khả năng phản hồi, hiệu suất và tính ổn định trong việc phát âm thanh của NVDA, bao gồm cả âm thanh và giọng đọc.
-Mặc định, tùy chọn này được bật.
 Sau khi thay đổi thiết lập, bạn sẽ phải khởi động lại NVDA để nó có hiệu lực.
 
 ==== Âm lượng âm thanh NVDA đi theo âm lượng giọng đọc ====[SoundVolumeFollowsVoice]
@@ -3654,12 +3659,12 @@ Màn hình SuperBraille không có bàn phím nhập liệu và nút cuộn. Vì
 ++ Các màn hình Eurobraille ++[Eurobraille]
 Các màn hình b.book, b.note, Esys, Esytime và Iris từ Eurobraille đã được hỗ trợ bởi NVDA.  
 Đây là những thiết bị có bàn phím chữ nổi với 10 phím. 
+Vui lòng xem tài liệu của màn hình để biết vị trí các phím..
 Có hai phím giống như khoảng trắng, phím bên trái tương ứng với phím xóa và phím bên phải là khoảng trắng.
-Được kết nối qua USB, những thiết bị này có một bàn phím USB độc lập. 
-Có thể bật / tắt bàn phím này với hộp kiểm ‘Mô phỏng bàn phím HID’ trong bảng cài đặt chữ nổi. 
-Bàn phím chữ nổi được mô tả dưới đây là bàn phím khi không chọn hộp kiểm nói trên.
-Sau đây là các lệnh của màn hình nổi này được gán cho NVDA.
-Vui lòng xem Tài Liệu của màn hình cho phần mô tả vị trí các phím. 
+
+Các thiết bị này được kết nối thông qua USB và có một bạn phím USB độc lập. 
+Có thể bật hoặc tắt bàn phím này bằng cách bật / tắt "mô phỏng bàn phím HID" sử dụng một thao tác / phím tắt.
+Các chức năng của bàn phím chữ nổi được mô tả dưới đây là để dùng khi tắt "mô phỏng bàn phím HID".
 
 +++  Các chức năng bàn phím chữ nổi +++[EurobrailleBraille]
 %kc:beginInclude
@@ -3721,6 +3726,7 @@ Vui lòng xem Tài Liệu của màn hình cho phần mô tả vị trí các ph
 | Bật / tắt phím ``control`` | ``chấm 1+chấm 7+chấm 8+khoảng trắng``, ``chấm 4+chấm 7+chấm 8+khoảng trắng`` |
 | Phím ``alt`` | ``chấm 8+khoảng trắng`` |
 | Bật / tắt phím ``alt`` | ``chấm 1+chấm 8+khoảng trắng``, ``chấm 4+chấm 8+khoảng trắng`` |
+| Bật / tắt mô phỏng bàn phím HID | ``switch1Left+joystick1Down``, ``switch1Right+joystick1Down`` |
 %kc:endInclude
 
 +++ Phím lệnh cho b.book +++[Eurobraillebbook]
@@ -3807,6 +3813,7 @@ Vui lòng xem Tài Liệu của màn hình cho phần mô tả vị trí các ph
 | Bật / tắt phím ``NVDA`` | ``l7`` |
 | Phím ``control+home`` | ``l1+l2+l3``, ``l2+l3+l4`` |
 | Phím ``control+end`` | ``l6+l7+l8``, ``l5+l6+l7`` |
+| bật / tắt mô phỏng bàn phím HID | ``l1+joystick1Down``, ``l8+joystick1Down`` |
 %kc:endInclude
 
 ++ Các màn hình của Nattiq nBraille ++[NattiqTechnologies]
@@ -4041,7 +4048,8 @@ Những khóa chứa các giá trị này trong registry bao gồm:
 Sau đây là những giá trị có thể thiết lập cho khóa nói trên:
 || Tên | Kiểu | Giá trị có thể dùng | Mô tả |
 | ``configInLocalAppData`` | DWORD | 0 (mặc định) để tắt, 1 để bật | Nếu bật, sẽ lưu cấu hình người dùng trong thư mục local application data, thay vì roaming application data |
-| ``serviceDebug`` | DWORD | 0 (mặc định) để tắt, 1 để bật | Nếu bật, sẽ tắt [Chế Độ An Toàn #SecureMode] của [các màn hình bảo vệ #SecureScreens]. Windows. Vì một số lý do an toàn cho máy tính, chức năng này không được khuyến khích sử dụng. |
+| ``serviceDebug`` | DWORD | 0 (mặc định) để tắt, 1 để bật | Nếu bật, sẽ tắt [Chế Độ An Toàn #SecureMode] của [các màn hình bảo vệ #SecureScreens]. Windows. Vì một số lý do an toàn cho máy tính, chức năng này không được khuyến khích sử dụng |
+| ``forceSecureMode`` | DWORD | 0 (mặc định) để tắt, 1 để bật | nếu được bật, sẽ buộc chạy ở [chế độ bảo vệ #SecureMode] to be enabled when running NVDA. |
 
 + Thông Tin Thêm +[FurtherInformation]
 Nếu bạn cần thêm thông tin hoặc trợ giúp liên quan đến NVDA, vui lòng xem trang web của NVDA tại NVDA_URL.
