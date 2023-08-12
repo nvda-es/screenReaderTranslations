@@ -347,9 +347,13 @@ Bản đang cài trên máy cũng có khả năng tự tạo bản chạy trực
 Bản chạy trực tiếp cũng có khả năng tự cài vào máy bất cứ lúc nào.
 Tuy nhiên, nếu muốn tạo bản chạy trực tiếp trên ổ CD (phương tiện lưu trữ có thuộc tính chỉ đọc) thì bạn chỉ nên chép gói cài đặt đã tải về.
 Hiện tại, NVDA chưa hỗ trợ dùng bản chạy trực tiếp trên các phương tiện lưu trữ có thuộc tính chỉ đọc (read-only).
-Việc sử dụng bản NVDA tạm thời cũng là một lựa chọn cho các mục đích chạy thử nghiệm (demonstration), vì mỗi lần khởi động NVDA theo cách này thì mất khá nhiều thời gian.
 
-Bên cạnh việc không thể tự khởi động  trong và sau khi đăng nhập vào hệ thống thì bản chạy trực tiếp và bản tạm thời có các hạn chế sau:
+[Trình cài đặt NVDA #StepsForRunningTheDownloadLauncher] có thể được dùng như một bản chạy tạm thời của NVDA.
+Bản chạy tạm thời ngăn không cho lưu các thiết lập của NVDA.
+Điều này cũng bao gồm vô hiệu hóa việc sử dụng [Cửa Hàng Add-on #AddonsManager].
+
+Bản chạy tạm thời và bản chạy trực tiếp của NVDA có những hạn chế sau:
+- Khả năng tự khởi động sau khi đăng nhập.
 - Không có khả năng tương tác với các ứng dụng yêu cầu quyền quản trị, trừ trường hợp NVDA đang được chạy với quyền quản trị (không khuyến khích).
 - Không có khả năng đọc các thông tin tài khoản người dùng(UAC) khi khởi động một ứng dụng được yêu cầu quyền quản trị.
 - Windows 8 trở lên: Không có khả năng tương tác trên màn hình cảm ứng.
@@ -488,7 +492,7 @@ Bạn có thể mở trình đơn của NVDA ở bất cứ đâu khi nó đang 
 - Chạm hai lần bằng hai ngón tay trên màn hình cảm ứng.
 - Truy cập khay hệ thống (system tray) bằng phím lệnh ``Windows+b``, ``mũi tên xuống`` đến biểu tượng NVDA và bấm ``enter``.
 - Ngoài ra, hãy truy cập khay hệ thống (system tray) bằng phím lệnh ``Windows+b``, ``mũi tên xuống`` đến biểu tượng NVDA, và mở trình đơn ngữ cảnh bằng cách bấm phím ``applications`` ở cạnh phím  control bên tay phải trên hầu hết bàn phím.
-Với những bàn phím không có phím ``applications``, hãy bấm ``shift+F10``.
+Với những bàn phím không có phím ``applications``, hãy bấm ``shift+F10`` để thay thế.
 - Bấm chuột phải trên biểu tượng NVDA trong khay hệ thống.
 -
 Khi trình đơn mở ra, bạn có thể dùng các phím mũi tên để di chuyển đến các mục, và bấm ``enter`` để kích hoạt chúng.
@@ -1709,9 +1713,9 @@ Tắt tùy chọn này cho phép bạn nghe đọc nội dung song song với đ
   Mặc định (Bật), Bật, Tắt
 :
 
-Thiết lập này giúp nhận biết khi việc thông báo vùng chọn (các chấm 7 và 8) hiện trên màn hình nổi.
-Mặc định thì tùy chọn này được bật nên việc thông báo vùng chọn sẽ được hiển thị.
-Việc thông báo vùng chọn có thể gây mất tập trung trong khi đọc.
+Thiết lập này giúp nhận biết khi chỉ báo vùng chọn (các chấm 7 và 8) hiện trên màn hình nổi.
+Mặc định thì tùy chọn này được bật nên chỉ báo vùng chọn sẽ được hiển thị.
+Việc hiẹn chỉ báo vùng chọn có thể gây mất tập trung trong khi đọc.
 Tắt tùy chọn này có thể cải thiện khả năng đọc.
 
 Để bật / tắt việc  hiện vùng chọn ở bất cứ đâu, hãy gán một thao tác / phím tắt thông qua [Hộp thoại quản lý thao tác #InputGestures].
@@ -2227,6 +2231,14 @@ Thiết lập này có các giá trị sau:
 - Luôn luôn: bất cứ đâu mà  UI automation hoạt động trong Microsoft word (không quan tâm đến tính hoàn hảo).
 -
  
+==== Sử dụng UI Automation để truy cập các điều khiển của bảng tính trong Microsoft Excel khi có thể ====[UseUiaForExcel]
+Khi bật tùy chọn này, NVDA sẽ nỗ lực sử dụng Microsoft UI Automation accessibility API để lấy thông tin từ các điều khiển của bảng tính trong Microsoft Excel.
+Đây là một tính năng thử nghiệm, và vài tính năng của Microsoft Excel có thể không dùng được trong chế độ này.
+Ví dụ, danh sách các thành phần của NVDA để liệt kê các công thức và chú thích, cũng như  lệnh di chuyển nhanh trong chế độ duyệt để đi đến biểu mẫu trên một bảng tính sẽ không khả dụng.
+Tuy nhiên, với việc di chuyển / chỉnh sửa căn bản trong bảng tính, tùy chọn này có thể cung cấp cải thiện giúp vận hành nhanh hơn.
+Chúng tôi vẫn không khuyến khích đại đa số người dùng bật tùy chọn này làm mặc định, dù rằng vẫn hoan nghênh người dùng Microsoft Excel  bản dựng 16.0.13522.10000 trở lên dùng thử và cung cấp phản hồi cho tính năng này.
+Việc triển khai UI automation của Microsoft Excel đang thay đổi, và các phiên bản của Microsoft Office cũ hơn 16.0.13522.10000 có thể không đủ thông tin để dùng cho tùy chọn này.
+
 ==== Hỗ trợ Windows Console ====[AdvancedSettingsConsoleUIA]
 : Mặc định
   Tự động
@@ -2279,19 +2291,13 @@ Hiện có các tùy chọn sau:
   -
 -
 
-==== Sử dụng UI Automation để truy cập các điều khiển của bảng tính trong Microsoft Excel khi có thể ====[UseUiaForExcel]
-Khi bật tùy chọn này, NVDA sẽ nỗ lực sử dụng Microsoft UI Automation accessibility API để lấy thông tin từ các điều khiển của bảng tính trong Microsoft Excel.
-Đây là một tính năng thử nghiệm, và vài tính năng của Microsoft Excel có thể không dùng được trong chế độ này.
-Ví dụ, danh sách các thành phần của NVDA để liệt kê các công thức và chú thích, cũng như  lệnh di chuyển nhanh trong chế độ duyệt để đi đến biểu mẫu trên một bảng tính sẽ không khả dụng.
-Tuy nhiên, với việc di chuyển / chỉnh sửa căn bản trong bảng tính, tùy chọn này có thể cung cấp cải thiện giúp vận hành nhanh hơn.
-Chúng tôi vẫn không khuyến khích đại đa số người dùng bật tùy chọn này làm mặc định, dù rằng vẫn hoan nghênh người dùng Microsoft Excel  bản dựng 16.0.13522.10000 trở lên dùng thử và cung cấp phản hồi cho tính năng này.
-Việc triển khai UI automation của Microsoft Excel đang thay đổi, và các phiên bản của Microsoft Office cũ hơn 16.0.13522.10000 có thể không đủ thông tin để dùng cho tùy chọn này.
 
 ==== Thông báo nội dung động ====[BrailleLiveRegions]
 : Mặc định
   Bật
 : Tùy chọn
   Bật, tắt
+  Mặc định (Bật), Tắt, Bật
 :
 
 Tùy chọn này cho phép NVDA thông báo các thay đổi trong một số nội dung động trên web ở chữ nổi.
@@ -2327,6 +2333,7 @@ Tuy nhiên, trong terminal, khi chèn hay xóa một kí tự ở giữa một d
   Diffing
 : Các tùy chọn
   Diffing, Các thông báo UIA
+  Mặc định (Diffing), Diffing, Các thông báo UIA
 :
 
 Tùy chọn này là để NVDA xác định những văn bản "mới" (và như vậy thì sẽ nói cái gì khi "thông báo thay đổi nội dung động" được bật) trong Windows Terminal và WPF các điều khiển Windows Terminal được dùng trong Visual Studio 2022.
@@ -2361,6 +2368,7 @@ Với vài GUI APIs phổ biến trong lịch sử, văn bản có thể hiển 
   Tắt
 : Tùy chọn
   Bật, tắt
+  Mặc định (Tắt), Bật, Tắt
 :
 
 Tùy chọn này cho phép phát ra âm thanh thông qua Windows Audio Session API (WASAPI).
@@ -2368,11 +2376,16 @@ WASAPI là một hệ thống âm thanh hiện đại hơn, có thể cải thi�
 Sau khi thay đổi thiết lập, bạn sẽ phải khởi động lại NVDA để nó có hiệu lực.
 
 ==== Âm lượng âm thanh NVDA đi theo âm lượng giọng đọc ====[SoundVolumeFollowsVoice]
+: Mặc định
+  Tắt
+: Tùy chọn
+  Bật, tắt
+:
+
 Khi bật tùy chọn này, âm lượng của âm thanh và tiếng beep của NVDA sẽ đi theo thiết lập âm lượng  của giọng đọc bạn đang dùng.
 Nếu bạn giảm âm lượng giọng đọc thì âm lượng của âm thanh cũng sẽ giảm.
 Tương tự, nếu bạn tăng âm lượng của âm thanh thì âm lượng của giọng đọc cũng sẽ tăng.
 Tùy chọn này chỉ phát huy tác dụng khi  bật "Dùng WASAPI cho đầu ra âm thanh".
-Mặc định thì tùy chọn này không được bật.
 
 ==== Âm lượng âm thanh NVDA ====[SoundVolume]
 Thanh trượt này cho phép bạn điều chỉnh âm lượng cho âm thanh và  tiếng beep của NVDA.
@@ -2439,8 +2452,9 @@ Bạn có thể lọc các kí hiệu bằng cách nhập kí hiệu hay một p
 - Mục Thay thế cho phép bạn thay đổi nội dung sẽ được đọc tại vị trí của kí hiệu này.
 - Sử dụng mục Cấp độ, bạn có thể điều chỉnh cấp độ kí hiệu thấp nhất mà kí hiệu này phải được đọc (không, một vài, hầu hết hoặc tất cả).
 Bạn cũng có thể chọn cấp độ là kí tự. Trường hợp này, kí hiệu sẽ không được đọc lên, bất kể bạn dùng cấp độ đọc kí hiệu nào, trừ hai ngoại lệ sau:
- - Khi điều hướng theo kí tự.
- - Khi NVDA đang đánh vần một đoạn văn bản có kí hiệu đó.
+  - Khi điều hướng theo kí tự.
+  - Khi NVDA đang đánh vần một đoạn văn bản có kí hiệu đó.
+  -
  -
 - Mục Gửi ký hiệu gốc đến bộ đọc quy định khi nào thì tự kí hiệu đó (tương ứng với sự thay thế của nó) sẽ được gửi đến bộ đọc.
 Điều này sẽ hữu ích khi ký hiệu có nhiệm vụ làm bộ đọc ngưng nghỉ hoặc thay đổi ngữ điệu.
@@ -2667,8 +2681,8 @@ Những người dùng NVDA alpha có thể cần sử dụng phiên bản "Dev"
 
 +++ Tìm kiếm add-on +++[AddonStoreFilterSearch]
 Để tìm kiếm các add-on, hãy sử dụng ô nhập liệu "Tìm kiếm".
-Bạn có thể đi đến nó bằng cách bấm ``shift+tab`` từ danh sách các add-on, hoặc bấm ``alt+s`` từ bất cứ đâu trong Cửa Hàng Add-On .
-Nhập từ khóa cho loại add-on bạn đang tìm kiếm, rồi bấm ``tab`` đến danh sách các add-on.
+Bạn có thể đi đến nó bằng cách bấm ``shift+tab`` từ danh sách các add-on.
+Nhập vài từ khóa cho loại add-on bạn đang tìm kiếm, rồi bấm ``tab`` đến danh sách các add-on.
 Các add-on sẽ được liệt kê nếu nội dung tìm kiếm được tìm thấy trong add-on ID, tên hiển thị, nhà xuất bản (tác giả) hoặc mô tả.
 
 ++ Các hành động cho add-on ++[AddonStoreActions]
@@ -3091,20 +3105,20 @@ Sau đây là danh sách các phím được gán của mẫu màn hình nổi n
 Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết các phím tương ứng.
 %kc:beginInclude
 || Tên | Phím |
-| Cuộn về trước | d2 |
-| Cuộn tới | d5 |
-| Chuyển về dòng trước | d1 |
-| Chuyển đến dòng kế | d3 |
-| Rút về ô chữ nổi | routing |
-| phím shift+tab | khoảng trắng+chấm 1+chấm 3 |
-| phím tab | khoảng trắng+chấm 4+chấm 6 |
-| phím alt | khoảng trắng+chấm 1+chấm 3+chấm 4 (khoảng trắng+m) |
-| phím escape | khoảng trắng+chấm 1+chấm 5 (khoảng trắng+e) |
-| Phím windows | khoảng trắng+chấm 3+chấm 4 |
-| phím alt+tab | khoảng trắng+chấm 2+chấm 3+chấm 4+chấm 5 (khoảng trắng+t) |
-| Trình Đơn NVDA | khoảng trắng+chấm 1+chấm 3+chấm 4+chấm 5 (khoảng trắng+n) |
-| phím windows+d (thu nhỏ tất cả các ứng dụng) | khoảng trắng+chấm 1+chấm 4+chấm 5 (khoảng trắng+d) |
-| Đọc tất cả | khoảng trắng+chấm 1+chấm 2+chấm 3+chấm 4+chấm 5+chấm 6 |
+| Cuộn màn hình nổi về trước | ``d2`` |
+| Cuộn màn hình nổi về sau | ``d5`` |
+| Chuyển màn hình nổi về dòng trước | ``d1`` |
+| Chuyển màn hình nổi đến dòng kế | ``d3`` |
+| Đưa đến ô chữ nổi | ``routing`` |
+| Phím ``shift+tab`` | ``space+dot1+dot3`` |
+| Phím ``tab`` | ``space+dot4+dot6`` |
+| Phím ``alt`` | ``space+dot1+dot3+dot4`` (``space+m``) |
+| Phím ``escape`` | ``space+dot1+dot5`` (``space+e``) |
+| Phím ``windows`` | ``space+dot3+dot4`` |
+| Phím ``alt+tab`` | ``space+dot2+dot3+dot4+dot5`` (``space+t``) |
+| Trình đơn NVDA | ``space+dot1+dot3+dot4+dot5`` (``space+n``) |
+| Phím ``windows+d`` (thu nhỏ toàn bộ ứng dụng) | ``space+dot1+dot4+dot5`` (``space+d``) |
+| Đọc tất cả | ``space+dot1+dot2+dot3+dot4+dot5+dot6`` |
 
 Dành cho các màn hình có cần điều khiển:
 || Tên | Phím |
@@ -4049,7 +4063,7 @@ Sau đây là những giá trị có thể thiết lập cho khóa nói trên:
 || Tên | Kiểu | Giá trị có thể dùng | Mô tả |
 | ``configInLocalAppData`` | DWORD | 0 (mặc định) để tắt, 1 để bật | Nếu bật, sẽ lưu cấu hình người dùng trong thư mục local application data, thay vì roaming application data |
 | ``serviceDebug`` | DWORD | 0 (mặc định) để tắt, 1 để bật | Nếu bật, sẽ tắt [Chế Độ An Toàn #SecureMode] của [các màn hình bảo vệ #SecureScreens]. Windows. Vì một số lý do an toàn cho máy tính, chức năng này không được khuyến khích sử dụng |
-| ``forceSecureMode`` | DWORD | 0 (mặc định) để tắt, 1 để bật | nếu được bật, sẽ buộc chạy ở [chế độ bảo vệ #SecureMode] to be enabled when running NVDA. |
+| ``forceSecureMode`` | DWORD | 0 (mặc định) để tắt, 1 để bật | nếu được bật, sẽ buộc [chế độ bảo vệ #SecureMode] phải bật khi gọi chạy NVDA. |
 
 + Thông Tin Thêm +[FurtherInformation]
 Nếu bạn cần thêm thông tin hoặc trợ giúp liên quan đến NVDA, vui lòng xem trang web của NVDA tại NVDA_URL.
