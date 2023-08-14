@@ -1,3 +1,4 @@
+
 NVDA NVDA_VERSION Kullanıcı Rehberi
 
 
@@ -220,7 +221,7 @@ Girdi yardımı açıkken komutlar farklı uygulamalara gönderilmez.
 | Odağı bildir | ``NVDA+tab`` | ``NVDA+tab`` | Odaklanan mevcut kontrolü bildirir. İki kez basılırsa bilgiler hecelenerek okunur |
 | Pencereyi oku | ``NVDA+b`` | ``NVDA+b`` | Etkin penceredeki tüm kontrolleri okur (iletişim kutularında kullanışlı olabilir) |
 | Durum çubuğunu oku | ``NVDA+end`` | ``NVDA+şift+end`` | Eğer saptanırsa, NVDA durum çubuğu bilgisini bildirir. İki kez basıldığında, bilgi hecelenerek okunur. Üç kere basıldığında metin panoya kopyalanır |
-| Saati oku | ``NVDA+f12`` | ``NVDA+f12`` | Bir kez basmak geçerli saati, iki kez basmak tarihi bildirir |
+| Saati oku | ``NVDA+f12`` | ``NVDA+f12`` | Bir kez basmak geçerli saati, iki kez basmak tarihi bildirir Saat ve tarih bilgisi, sistem ayarlarında sistem tepsisi ayar formatlarına göre bildirilir.|
 | Metin biçimini oku | ``NVDA+f`` | ``NVDA+f`` | Metin biçimlendirmesini bildirir. İki kez basıldığında bilgileri bir pencerede gösterir |
 | Link hedefini bildir | ``NVDA+k`` | ``NVDA+k`` | NESNE Sunucusu üzerinde bulunduğu linkin yönlendirdiği web adresini okur. İki kez basıldığında daha kolay incelenebilmesi için web adresini bir pencerede gösterir |
 
@@ -310,6 +311,7 @@ Zaten yüklü olan eklentileriniz varsa, uyumsuz eklentilerin devre dışı bır
 Devam düğmesine basmadan önce, bu eklentilerin devre dışı bırakılacağını anladığınızı doğrulamak için onay kutusunu kullanmanız gerekir.
 Devre dışı bırakılacak eklentileri incelemek için bir düğme de bulunacaktır.
 Bu düğme hakkında daha fazla yardım için [uyumsuz eklentiler iletişim kutusu bölümüne #incompatibleAddonsManager] bakın.
+Kurulum sonrası, [Eklenti Mağazası #AddonsManager] bölümünden uyumsuz eklentileri kendi sorumluluğunuzda etkinleştirebilirsiniz.
 
 +++ Windows Giriş Ekranında NVDA'yı Kullan +++[StartAtWindowsLogon]
 Bu seçenek NVDA'nın Windows giriş ekranında, parolanızı girmeden önce otomatik olarak başlayıp başlamayacağını belirlemenizi sağlar.
@@ -479,12 +481,18 @@ Girdi yardım kipi açıkken, bir tuş ya da tuş kombinasyonuna bastığınızd
 Girdi Yardım kipindeyken, tuşlar gerçek işlevlerini yerine getirmeyeceği için, istediğiniz tuş veya tuşlara basabilirsiniz.
 
 ++ NVDA Menüsü ++[TheNVDAMenu]
+
 NVDA menüsü altında, çeşitli ayarları değiştirmenizi, Yardıma erişimi, ayarlarınızı kalıcı olarak kaydetmenizi veya geri almanızı, konuşma sözlüğünü değiştirmenizi, NVDA'yla ilgili diğer ek araçlara erişiminizi ve NVDA'yı kapatmanızı sağlayacak menü ögelerine ulaşabilirsiniz.
 
-NVDA çalışırken, herhangi bir noktada NVDA menüsüne ulaşmak için NVDA+N tuşlarına basabilirsiniz ya da dokunmatik ekranda iki parmakla iki kez dokunabilirsiniz.
-veya Sistem tepsisi penceresinden buraya ulaşabilirsiniz.
-Sistem tepsisindeki NVDA simgesi üzerinde sağ tıklayın veya sistem tepsisine ulaşmak için windows tuşu+B harfine basın, aşağı oka basarak NVDA ikonunu bulun ve birçok klavyede sağdaki kontrol tuşunun hemen solunda bulunan uygulama tuşuna basın.
-Menü açıldığında, menü ögeleri arasında yön tuşlarınızla dolaşabilir ve bir ögeyi etkinleştirmek için giriş tuşuna basabilirsiniz.
+NVDA çalışırken Windows'ta herhangi bir yerden NVDA menüsüne gitmek için aşağıdakilerden birini yapabilirsiniz:
+- klavyede ``NVDA+n`` tuşlarına basmak.
++- Dokunmatik ekrana 2 parmakla çift dokunmak.
+``Windows+b`` tuşlarına basarak sistem tepsisine gitmek, ardından ``AşağıOk`` tuşuyla NVDA simgesini bulmak
+Ayrıca ``Windows+b`` tuşlarına basarak sistem tepsisine gidip ``AşağıOk`` tuşuyla NVDA simgesini bulduktan sonra, çoğu klavyede sağ kontrol tuşunun yanındaki ``uygulama`` tuşuna basarak içerik menüsüne ulaşabilirsiniz.
+ ``Uygulama`` tuşu olmayan bir klavyede ``shift+F10" tuşlarına  da basabilirsiniz.
+- Windows sistem tepsisinde bulunan NVDA simgesine sağ tıklamak
+-
+Menü açıldığında, menüde gezinmek için ok tuşlarını, bir öğeyi etkinleştirmek için ``enter`` tuşunu kullanabilirsiniz.
 
 ++ Temel NVDA Komutları ++[BasicNVDACommands]
 %kc:beginInclude
@@ -1292,9 +1300,12 @@ Bazı ayarlar kısayol tuşlarıyla da değiştirilebilmektedir. bu tuşlar ilgi
 
 ++ NVDA Ayarları ++[NVDASettings]
 %kc:settingsSection: || Ad | Masaüstü Kısayol tuşu | Dizüstü Kısayol tuşu | Tarif |
-NVDA Ayarlar iletişim kutusu değiştirilebilir birçok yapılandırma parametresi içerir.
-Bu iletişim kutusunda parametreler çeşitli kategoriler altında toplanmıştır.
-Bir kategori seçtiğinizde, bu kategori ile ilgili çeşitli ayarlar bu iletişim kutusunda gösterilecektir.
+NVDA, ayarlar iletişim kutusundan değiştirilebilen birçok yapılandırma seçeneği sunar.
+Değiştirmek istediğiniz ayarları bulmayı kolaylaştırmak için, iletişim kutusu değiştirilecek  kategorilerin bir listesini gösterir.
+Bir kategori seçtiğinizde, kategori ile ilgili ayarlar bu iletişim kutusunda gösterilecektir.
+Kategoriler arasında geçiş yapmak için önce "tab" ve "shift+tab" tuşlarıyla kategori listesini bulun, ardından yukarı ve aşağı okları kullanarak kategoriler arasında gezinin.
+Ayrıca ayarlar iletişim kutusunun herhangi bir yerinde kategoriler arasında hızlı bir şekilde geçiş yapmak için ``kontrol+tab`` ile ileri, ``kontrol+shift+tab`` tuşlarıyla ise geri gidebilirsiniz.
+
 Ayarlarla ilgili değişiklikleri iletişim kutusunu kapatmadan kaydetmek için uygula düğmesine basın.
 Değişiklikleri kaydedip iletişim kutusunu kapatmak içinse tamam düğmesine basabilirsiniz.
 
@@ -1580,6 +1591,7 @@ Seçim belirteci bu tercihten etkilenmez, her zaman 7 ve 8 nokta yukarıdadır.
 
 ==== Mesajları Göster ====[BrailleSettingsShowMessages]
 Bu, NVDA'nın braille mesajlarını gösterip göstermeyeceğini ve bunların ne zaman otomatik olarak kaybolacağını seçmenize olanak tanıyan bir seçim kutusudur.
+Mesajları Göster ayarını hızlıca değiştirmek için [Girdi Hareketleri iletişim kutusu #InputGestures] üzerinden bir girdi ataması yapabilirsiniz.
 
 ==== Mesaj Zaman Aşımı Saniyesi ====[BrailleSettingsMessageTimeout]
 Bu seçenek, sistem mesajlarının braille ekranda ne kadar uzun süre gösterileceğini kontrol eden bir rakamsal alandır.
@@ -1650,16 +1662,29 @@ Herhangi bir yerdeyken odak bağlam sunumunu değiştirmek için, [Girdi Hareket
   Varsayılan (Etkin), Etkin, Devre Dışı
 :
 
-Bu ayar, Braille ekranı geri/ileri kaydırıldığında konuşmanın durdurulup durdurulmayacağını ayarlamanızıs sağlar.
+Bu ayar, Braille ekranı geri/ileri kaydırıldığında konuşmanın durdurulup durdurulmayacağını ayarlamanızı sağlar.
 Önceki/sonraki satır komutları her zaman konuşmayı durdurur.
 
 Braille okurken ekran okuyucunun konuşması dikkati dağıtabilir.
 Bu nedenle seçenek varsayılan olarak etkindir ve braille kaydırılırken konuşma durdurulur.
-
+	
 Bu seçeneğin devre dışı bırakılması, aynı anda Braille okunurken konuşmanın duyulmasını sağlar.
 
-+++ Braille Ekran Seçimi (NVDA+kontrol+a) +++[SelectBrailleDisplay]
-NVDA Ayarları iletişim kutusundan Braille kategorisinde Değiştir... düğmesini etkinleştirerek açılan braille ekran seçimi iletişim kutusu, NVDA'nın braille çıkışı için hangi braille ekranı kullanacağını seçmenizi sağlar.
+==== Seçimi göster ====[BrailleSettingsShowSelection]
+: Varsayılan
+ Etkin
+: Seçenekler
+ Varsayılan (Etkin), Etkin, Devre Dışı
+:
+
+Bu seçenek, braille ekranda seçim göstergesinin (nokta 7 ve 8) gösterilip gösterilmeyeceğini belirler.
+Bu seçenek varsayılan olarak etkindir ve seçim göstergesi gösterilir.
+Okuma sırasında seçim göstergesi dikkat dağıtıcı olabilir.
+Bu seçeneğin devre dışı bırakılması okunabilirliği artırabilir.
+Seçimi göster seçeneğini herhangi bir yerden değiştirebilmek için [Girdi hareketleri iletişim kutusu #InputGestures] üzerinden bir girdi atayabilirsiniz.
+
+	+++ Braille Ekran Seçimi (NVDA+kontrol+a) +++[SelectBrailleDisplay]
+	NVDA Ayarları iletişim kutusundan Braille kategorisinde Değiştir... düğmesini etkinleştirerek açılan braille ekran seçimi iletişim kutusu, NVDA'nın braille çıkışı için hangi braille ekranı kullanacağını seçmenizi sağlar.
 Braile ekranı seçip tamam düğmesine bastığınızda NVDA ilgili braille ekranı yükler.
 Braille ekran sürücülerinin yüklenmesi ile ilgili sorun oluşursa NVDA bildirimde bulunur ve önceki braille ekran kullanılmaya devam edilir.
 
@@ -2118,6 +2143,7 @@ Kategori aşağıdaki seçenekleri içerir:
 
 ==== Tanıma dili ====[Win10OcrSettingsRecognitionLanguage]
 Bu seçim kutusu metin tanıma için kullanılacak dili seçmek içindir.
+Mevcut diller arası hızlıca geçiş  yapabilmek için [Girdi hareketleri iletişim kutusu dialog #InputGestures] üzerinden bir tuş atayabilirsiniz.
 
 +++ Gelişmiş Ayarlar +++
 Uyarı! Bu kategorideki ayarlar ileri seviye kullanıcılar içindir ve yanlış şekilde yapılandırılmışsa NVDA'nın düzgün çalışmamasına neden olabilir.
@@ -2289,6 +2315,19 @@ Bu seçenek, renkler saydam olduğunda bildirime  olanak tanır ve 3. taraf bir 
 Bazı GDI uygulamaları metni arka plan rengiyle vurgulayacaktır, NVDA (görüntüleme modeli aracılığıyla) bu rengi bildirmeye çalışır.
 Bazı durumlarda, metin arka planı tamamen saydam olabilir ve metin başka bir GUI öğesinde katmanlanır.
 Tarihsel olarak popüler olan birkaç GUI API'si ile metin saydam bir arka planla oluşturulabilir, ancak görsel olarak arka plan rengi doğrudur.
+
+==== Ses çıkışı için WASAPI kullan ====[WASAPI]
+Bu seçenek, ses çıktısı için Windows Ses Oturumu API'si (WASAPI) kullanmanızı sağlar.
+WASAPI, hem konuşma hem de sesler olmak üzere NVDA ses çıkışının hızını, performansını ve kararlılığını artırabilen bir ses çerçevesidir.
+Bu seçenek varsayılan olarak etkindir.
+Bu seçeneği değiştirdikten sonra, değişikliğin etkin olabilmesi için NVDA'yı yeniden başlatmanız gerekir.
+
+==== NVDA seslerinin seviyesi konuşma ses seviyesini takip eder ====[SoundVolumeFollowsVoice]
+Bu seçenek etkinleştirildiğinde, NVDA seslerinin ve bip seslerinin düzeyi, kullandığınız sesin ses seviyesine göre belirlenir.
+Eğer konuşma ses seviyesini azaltırsanız, NVDA seslerinin seviyesi de azalır.
+Aynı şekilde konuşma ses seviyesini artırırsanız NVDA seslerinin seviyesi de artar.
+Bu seçenek yalnızca "Ses çıkışı için WASAPI kullan" etkinleştirildiğinde kullanılabillir.
+Bu seçenek varsayılan olarak devre dışıdır.
 
 ==== Hata ayıklama kategorileri ====[AdvancedSettingsDebugLoggingCategories]
 Bu listedeki onay kutuları, NVDA günlüğünde belirli hata ayıklama mesajı kategorilerini etkinleştirmenize izin verir.
@@ -2519,7 +2558,130 @@ Logon ve Kullanıcı hesapları (UAC) gibi NVDA çalışırken kullanılan nokta
 Genellikle bu ayarlara dokunulmamalıdır.
 NVDA'nın logon ve kullanıcı hesapları ekranlarındaki ayarlarını değiştirmek için, önce NVDA ile Windows'da oturum açarken kullanılacak ayarları yapın, AYARLARI KAYDEDİP daha sonra [NVDA ayarları #NVDASettings] iletişim kutusunda genel kategorisi  altında bulunan düğmeyi kullanarak NVDA'ya bu mevcut konfigürasyonu sistem konfigürasyonuna kopyalamasını söyleyin.
 
-+ Ekstra Araçlar +[ExtraTools]
++ Eklentiler ve Eklenti Mağazası +[AddonsManager]
+Eklentiler, NVDA için yeni veya değiştirilmiş işlevsellik sağlayan yazılım paketleridir.
+NVDA topluluğu ve ticari satıcılar gibi harici kuruluşlar tarafından geliştirilirler.
+Eklentiler aşağıdakilerden herhangi birini yapabilir:
+- Bazı uygulamalar için ek destek veya geliştirme sunma.
+- Ekstra Braille ekranları veya konuşma sentezleyicileri için destek sağlama.
+- NVDA'ya yeni özellikler ekleme veya değiştirme.
+-
+
+NVDA Eklenti Mağazası, eklenti paketlerine göz atmanıza ve yüklü eklentileri yönetmenize yarar.
+Eklenti Mağazasında bulunan tüm eklentiler ücretsiz olarak indirilebilir.
+Ancak bazı eklentiler kullanılmadan önce kullanıcıların bir lisans veya ek yazılım için ödeme yapmasını gerektirebilir.
+Ücretli konuşma sentezleyicileri, bu tür eklentilere bir örnektir.
+Ücretli bileşenler içeren bir eklenti yüklerseniz ve onu kullanma konusundaki fikrinizi değiştirirseniz, eklentiyi kolayca kaldırılabilir.
+
+Eklenti Mağazasına gitmek için, NVDA menüsüne, ardından Araçlar alt menüsüne gidin.
+Eklenti Mağazasına istediğiniz yerden ulaşmak için [Girdi hareketleri iletişim kutusu #InputGestures] üzerinden bir girdi atayın.
+
+
+++ Eklentilere göz atma ++[AddonStoreBrowsing]
++Açıldığında, Eklenti Mağazası bir eklenti listesi görüntüler.
++Mağazanın herhangi bir yerinden ``alt+l`` ile listeye geri dönebilirsiniz.
+Daha önce bir eklenti kurmadıysanız, eklenti mağazası kurulabilir eklentilerin bir listesini gösterir.
+Eğer bir eklenti yüklediyseniz, liste mevcut kurulu eklentileri gösterir.
+
+Yukarı ve aşağı ok tuşlarıyla bir eklenti seçildiğinde, eklentinin ayrıntıları görüntülenir.
+Eklentiler, [Eylemler menüsü #AddonStoreActions] aracılığıyla erişilebilen 'Kur', 'Yardım', 'Devre Dışı Bırak' ve 'Kaldır' gibi seçeneklere sahiptir.
+Kullanılabilir eylemler, eklentinin kurulu olup olmadığına ve etkin veya devre dışı olmasına bağlı olarak değişiklik gösterir.
+
++++ Eklenti liste görünümleri +++[AddonStoreFilterStatus]
+Kurulu, güncellenebilir, kullanılabilir ve uyumsuz eklentiler için farklı liste görünümleri mevcuttur.
+Eklenti görünümünü değiştirmek için, ``ctrl+tab`` tuşlarını kullanarak eklentiler listesinin etkin sekmesini değiştirin.
+Ayrıca, görünümler listesinde gezinmek için ``tab`` tuşunu kullanarak ve ardından ``solOK`` ve ``sağOk`` tuşlarıyla seçimi değiştirebilirsiniz.
+
++++ Etkin veya devre dışı eklentileri filtreleme +++[AddonStoreFilterEnabled]
+Genellikle, kurulu bir eklanti 'etkin' olarak kabul edilir, yani NVDA'da çalışır ve kullanılabilir durumdadır.
+Ancak, kurulu eklentilerinizden bazılarını  devre dışı bırakmış olabilirsiniz.
+Bu, eklentilerin mevcut NVDA oturumunuz sırasında işlevlerinin kullanılamayacağı anlamına gelir.
+Bir eklentiyi, başka bir eklentiyle veya belirli bir uygulamayla çakıştığı için devre dışı bırakmış olabilirsiniz.
+Ayrıca, NVDA güncelleme sırasında belirli eklentilerin uyumsuz olduğunu tespit ederse bunları devre dışı bırakabilir. Ancak, bu durumda sizi uyaracaktır.
+Eklentiler, sadece uzun bir süreliğine ihtiyaç duyulmadığında, ancak gelecekte tekrar kullanmak istendiğinde kaldırmak istemediğiniz durumlar için de devre dışı bırakılabilir.
+
+Kurulu ve uyumsuz eklentilerin listeleri, etkin veya devre dışı durumlarına göre filtrelenebilir.
+Varsayılan olarak, hem etkin hem de devre dışı eklentiler gösterilir.
+
+
++++ Uyumsuz eklentileri dahil etme +++[AddonStoreFilterIn uyumsuz]
+Mevcut ve güncellenebilir eklentiler, kurulabilecek [uyumsuz eklentiler #incompatibleAddonsManager]'i içerecek şekilde filtrelenebilir.
+
++++ Eklentileri kategoriye göre filtrele +++[AddonStoreFilterChannel]
+Eklentiler dört kategoride dağıtılabilir:
+- Kararlı: Geliştirici, bu eklentiyi test edilmiş bir eklenti olarak NVDA'nın yayınlanmış bir sürümüyle yayınlar.
+- Beta: Bu eklentinin daha fazla test edilmesi gerekebilir, ancak kullanıcı geri bildirimi için yayınlanmıştır.
+Öncelikli test etmek isteyenler için önerilir.
+- Dev: Bu kategorini, eklenti geliştiricileri tarafından yayınlanmamış API değişikliklerini test etmek için kullanılması önerilir.
+NVDA alfa sürümüyle test yapanların eklentilerinin bir "Dev" sürümünü kullanmaları gerekebilir.
+- Harici: Eklenti mağazası dışından farklı kaynaklardan yüklenen eklentiler.
+-
+
+
+
+Eklentileri yalnızca belirli kategorilerde listelemek için kategori filtresi seçimini değiştirin.
+
+
++++ Eklenti arama +++[AddonStoreFilterSearch]
+Eklentileri aramak için "Ara" metin kutusunu kullanın.
+Arama kutusuna Eklentiler listesinden ``shift+tab`` veya Eklenti Mağazası arayüzünde herhangi bir yerden ``alt+s`` tuşlarına basarak ulaşabilirsiniz.
+Aradığınız eklenti türü için bir veya iki anahtar kelime yazın, ardından ``tab`` tuşuyla geri dönüp sonuçları kontrol edin.
+Eğer aradığınız anahtar kelimeler eklenti adında, yayıncıda veya açıklamada bulunursa listelenecektir.
+
+++ Eklenti eylemleri ++[AddonStoreActions]
+Eklentilerin kur, yardım, devre dışı bırak ve kaldır gibi eylemleri vardır.
+Odaklanılmış bir eklenti üzerinde eylem menüsünü açmak için ``uygulama`` tuşuna veya ``enter`` tuşuna basabilirsiniz. Alternatif olarak, eklentiye sağ tıklayarak veya çift tıklayarak da erişebilirsiniz.
+Ayrıca, seçilen eklentinin ayrıntılarında, normal şekilde veya ``alt+a`` tuşlarına basarak etkinleştirilebilen bir Eylemler düğmesi vardır.
+
++++ Eklentileri kurma +++[AddonStoreInstalling]
+Bir eklentinin NVDA Eklenti Mağazasında mevcut olması, NV Access veya başka biri tarafından onaylandığı veya incelendiği anlamına gelmez.
+Yalnızca güvendiğiniz kaynaklardan eklentiler kurmanız çok önemlidir.
+Eklentiler, NVDA içinde kısıtlamalara tabi değildir.
+Bu, eklentinin kişisel verilerinize veya hatta tüm sisteme erişimini içerebilir.
+
+Eklentileri [Kullanılabilir eklentilere #AddonStoreBrowsing] giderek yükleyebilir ve güncelleyebilirsiniz.
+"Kullanılabilir eklentiler" veya "Güncellenebilir eklentiler" sekmesinden bir eklenti seçin.
+Ardından, kurulumu başlatmak için güncelleme, kurulum veya değiştirme eylemini kullanın."
+
+Eklenti Mağazası dışından edindiğiniz bir eklentiyi kurmak için "Dış kaynaktan kur" düğmesine basın.
+Bu, bilgisayarınızda veya bir ağ klasöründe (``.nvda-addon`` dosyası) uzantılı eklenti paketlerini seçmenize olanak tanır.
+Eklenti dosyasını açtıktan sonra kurulum işlemi başlayacaktır.
+NVDA sisteminizde kurulu ve çalışıyorsa, kurulum sürecini başlatmak için doğrudan tarayıcıdan veya dosya sisteminden bir eklenti dosyası da açabilirsiniz.
+
+Dış kaynaktan bir eklenti kurulurken, NVDA sizden kurulumu onaylamanızı isteyecektir.
+Eklenti kurulduktan sonra, eklentinin çalışmaya başlaması için NVDA'nın yeniden başlatılması gerekir, ancak yüklemeniz veya güncellemeniz gereken başka eklentileriniz varsa NVDA'nın yeniden başlatılmasını erteleyebilirsiniz.
+
+++++ Eklentileri Kaldırma +++[AddonStoreRemoving]
+Bir eklentiyi kaldırmak için listeden eklentiyi seçin ve Kaldır eylemini kullanın.
+NVDA, kaldırma işlemini onaylamanızı isteyecektir.
+Kurulumda olduğu gibi, eklentinin sisteminizden kaldırılması için NVDA'nın yeniden başlatılması gerekir.
+NVDA yeniden başlatılana kadar ilgili eklenti için liste üzerinde "yedinden başlatıldıktan sonra Kaldırılacak" ibaresiü görüntülenecektir.
+
++++ Eklentileri Devre Dışı Bırakma ve Etkinleştirme +++[AddonStoreDisablingEnabling]
+Bir eklentiyi devre dışı bırakmak için "devre dışı bırak" eylemini kullanın.
+Önceden devre dışı bırakılmış bir eklentiyi etkinleştirmek için "etkinleştir" eylemini kullanın.
+Etkinleştirme/devre dışı bırakma eyleminin her kullanımında, eklenti durumu NVDA yeniden başladığında ne olacağını gösterecek şekilde değişir.
+Eğer eklenti önceden "etkin" durumdaysa, yeniden başlatma sonrasında durumu "devre dışı" olarak görüntülenir.
+Eklentileri yüklediğiniz veya kaldırdığınız gibi, bu değişikliklerin etkili olması için NVDA'yı yeniden başlatmanız gerekecektir.
+
+++ Uyumsuz Eklentiler ++[incompatibleAddonsManager]
+Bazı eski eklentiler artık kullandığınız NVDA sürümüyle uyumlu olmayabilir.
+NVDA'nın daha eski bir sürümünü kullanıyorsanız, bazı yeni eklentiler de uyumlu olmayabilir.
+Uyumsuz bir eklentiyi kurmaya çalışmak, eklentinin neden uyumsuz olarak değerlendirildiğini açıklayan bir hata mesajı görüntüler.
+
+Eski eklentiler için, uyumsuzluk uyarısını sorumluluk size ait olmak üzere devre dışı bırakabilirsiniz.
+Uyumsuz eklentiler, NVDA sürümünüzle çalışmayabilir ve çökme de dahil olmak üzere dengesiz veya beklenmeyen davranışlara neden olabilir.
+Bir eklentiyi etkinleştirirken veya kurarken uyumluluk uyarısını devre dışı bırakabilirsiniz.
+Uyumsuz eklenti daha sonra sorunlara neden olursa, devre dışı bırakabilir veya kaldırabilirsiniz.
+
+NVDA'yı çalıştırırken sorun yaşıyorsanız ve yakın zamanda bir eklentiyi güncellediyseniz veya kurduysanız ve eklenti uyumsuz ise, NVDA'yı tüm eklentiler devre dışı bırakılmış şekilde geçici olarak çalıştırmayı deneyebilirsiniz.
+NVDA'yı tüm eklentiler devre dışı bırakılmış olarak yeniden başlatmak için, NVDA'dan çıkarken uygun seçeneği seçin.
+Alternatif olarak, [komut satırı seçeneği #CommandLineOptions] ``--disable-addons`` seçeneğini kullanın.
+
+[Kullanılabilir ve güncellenebilir eklentiler sekmeleri #AddonStoreFilterStatus]'u kullanarak mevcut uyumsuz eklentilere göz atabilirsiniz.
+Kurulu uyumsuz eklentilere [uyumsuz eklentiler sekmesi #AddonStoreFilterStatus] kullanarak göz atabilirsiniz.
+
+++ Ekstra Araçlar +[ExtraTools]
 
 ++ Log Görüntüleyicisi ++[LogViewer]
 Araçlar menüsü altında bulunan Log dosyasını göster öğesi, NVDA'yı en son başlattığınızdan şimdiye kadar gerçekleşen tüm NVDA oturum açma çıktılarını görmenizi sağlar.
@@ -2571,63 +2733,9 @@ Braille görüntüleyiciyi herhangi bir yerden açıp kapatmak  için, lütfen [
 NVDA menüsündeki Araçlar altında bulunan NVDA Python konsolu, hata ayıklama, NVDA dahili bileşenlerinin genel denetimi veya bir uygulamanın erişilebilirlik hiyerarşisinin denetimi için yararlı olan bir geliştirme aracıdır.
 Daha fazla bilgi için lütfen [NVDA Geliştirici Kılavuzuna https://www.nvaccess.org/files/nvda/documentation/developerGuide.html] bakın.
 
-++ Eklenti Yöneticisi ++[AddonsManager]
-NVDA Araçlar menüsü altında, Eklentileri Yönet ögesini seçerek ulaşacağınız Eklenti Yöneticisi, NVDA için geliştirilmiş eklenti paketlerini kurmanıza, etkinleştirip devre dışı bırakmanıza ve kaldırmanıza olanak tanır.
-BU paketler camia tarafından sağlanırlar ve NVDA'nın özelliklerini geliştiren ya da değiştiren kodlar barındırırlar. Hatta extra kabartma ekran ya da sentezleyici için destek sağlayabilirler.
-
-Eklenti yöneticisi, mevcut kullanıcı konfigürasyon dizininde kurulu olan tüm eklentileri listeler. 
-Her bir eklenti için, Paket adı, sürüm ve yazar bilgisi gösterilir, Eklenti Hakkında düğmesine basılarak seçili eklentiye dair daha fazla bilgi alınabilir.
-Seçili eklenti için yardım mevcutsa, buna yardım düğmesine basarak ulaşabilirsiniz.
-
-Mevcut eklentileri online olarak inceleyip indirmek için, Eklenti edin düğmesine basın.
-Bu düğme [NVDA Eklenti sayfasını https://addons.nvda-project.org/] açar.
-Eğer NVDA sisteminizde kuruluysa, NVDA'nın o anda çalışıyor olması şartıyla eklenti kurulum sürecini aşağıdaki tarife uyarak doğrudan tarayıcınızda başlatabilirsiniz.
-Aksi halde, eklenti paketini bilgisayarınıza kaydedip aşağıdaki yönergeyi takip edin.
-
-Daha önce temin ettiğiniz bir eklentiyi kurmak için Eklenti Kur düğmesini kullanın.
-Bu, bilgisayarınızda ya da bağlı olduğunuz ağda kayıtlı olan bir NVDA eklenti paketini (.nvda-addon dosyası) bulmanız için bir iletişim kutusunu açacaktır.
-Aç dediğinizde kurulum süreci başlar.
-
-Süreç başladıktan sonra, NVDA bu eklentiyi kurmak istediğinize emin olup olmadığınızı sorar.
-NVDA eklentilerinin işlevleri sınırlanmadığı için, sistemde kurulu olan NVDA kopyasıyla birlikte çalışan eklentilerin, en azından teoride kişisel bilgilerinize ya da tüm sisteminize ulaşması mümkün olduğundan, yalnızca güvendiğiniz kaynaklardan edindiğiniz eklentileri kurmanız çok önemlidir.
-Eklenti kurulduktan sonra, etkin olabilmesi için NVDA'nın yeniden başlatılması gerekir. 
-Bu yapılana kadar eklenti durumu kur olarak gösterilir.
-
-Seçili bir eklentiyi silmek için, Kaldır düğmesine basın.
-NVDA bunu gerçekten yapmak isteyip istemediğinizi soracaktır.
-Kurarken olduğu gibi, eklentinin tamamen kaldırılması için NVDA yeniden başlatılmalıdır.
-Bu yapılana kadar, eklenti durumu Kaldır olarak gösterilecektir.
-
-Bir eklentiyi devre dışı bırakmak için "eklentiyi devre dışı bırak" düğmesine basın.
-Daha önce devre dışı bırakılmış olan eklentiyi etkinleştirmek için "eklentiyi etkinleştir" düğmesine basın.
-Eklenti durumu etkin olarak gösteriliyorsa devre dışı bırakabilir; devre dışı ise tekrar etkinleştirebilirsiniz.
-Etkinleştir / devre dışı bırak düğmesine her basıldığında, NVDA yeniden başladığında ne olacağını belirtmek için eklenti statüsü değişir.
- Bu düğğmeye bastığınızda eklenti önceden devre dışı bırakılmışsa, durumu "yeniden başlatıldıktan sonra Etkin" olarak gösterilir.
-Eğer eklenti halihazırda etkinse, durumu "yeniden başlatıldıktan sonra devre dışı" olarak gösterilecektir.
-Eklenti kurduğunuzda ya da kaldırdığınızdaki gibi, değişikliklerin etkili olması için NVDA'yı yeniden başlatmanız gerekecektir.
-
-Yönetici, iletişim kutusunu kapatmak için kullanacağınız Kapat düğmesini de içerir.
-Bir eklenti kurduysanız, kaldırdıysanız ya da statüsünü değiştirdiyseniz, NVDA değişikliklerin etkili olması için yeniden başlatmak isteyip istemediğinizi soracaktır.
-
-Bazı eski eklentiler artık sahip olduğunuz NVDA sürümüyle uyumlu olmayabilir.
-NVDA'nın eski bir sürümünü kullanıyorsanız, bazı yeni eklentiler de uyumlu olmayabilir.
-Uyumsuz bir eklenti yüklemeye çalışmak, eklentinin neden uyumsuz olarak değerlendirildiğini açıklayan bir hataya neden olacaktır.
-Bu uyumsuz eklentileri incelemek için, Uyumsuz eklenti yöneticisini başlatmak için "Uyumsuz eklentileri görüntüle" düğmesini kullanabilirsiniz.
- 
-Eklenti yöneticisine herhangi bir yerden ulaşmak için, lütfen [Girdi Hareketleri iletişim kutusunu #InputGestures] kullanarak özel bir kısayol belirleyin.
-
-+++ Uyumsuz Eklenti Yöneticisi +++[incompatibleAddonsManager]
-Eklenti yöneticisindeki "uyumsuz eklentileri görüntüle" düğmeleriyle erişilebilen Uyumsuz Eklenti Yöneticisi, uyumsuz eklentileri ve bunların uyumsuz olarak değerlendirilmelerinin nedenini incelemenizi sağlar.
-Eklentiler, NVDA'da önemli değişikliklerle çalışmak üzere güncellenmediklerinde veya kullandığınız NVDA sürümünde bulunmayan bir özelliğe dayandıklarında uyumsuz olarak kabul edilir.
-Uyumsuz eklenti yöneticisi, amacını ve NVDA sürümünü açıklayan  kısa bir mesaj sunar.
-Uyumsuz eklentiler aşağıdaki sütunları içeren bir listede sunulur:
-+ paket, eklentinin adı
-+ sürüm, eklentinin sürümü
-+ Uyumsuzluk sebebi, eklentinin neden uyumsuz olarak kabul edildiğinin bir açıklaması
-+
-
-Uyumsuz eklenti yöneticisinde ayrıca "Eklentiler hakkında..." düğmesi bulunur.
-Bu iletişim kutusu, eklentinin yazarı ile iletişime geçerken yardımcı olacak tüm ayrıntıları size sunacaktır.
+++ Eklenti Mağazası ++
+Bu, [NVDA Eklenti Mağazası #AddonsManager]'ı açar.
+Daha fazla bilgi için [Eklentiler ve Eklenti Mağazası #AddonsManager] bölümüne göz atın.
 
 ++ Taşınabilir kopya oluştur ++[CreatePortableCopy]
 Bu, kurulu sürümden NVDA'nın taşınabilir bir kopyasını oluşturmanıza izin veren bir iletişim kutusu açar.
@@ -3769,7 +3877,7 @@ Aşağıdakiler NVDA komut satırı seçenekleridir:
 | -q | --quit | Halihazırda çalışan NVDA kopyasını kapat |
 | -k | --check-running | Çıkış kodu aracılığıyla NVDA'nın çalışıp çalışmadığını bildirir; çalışıyorsa 0, çalışmıyorsa 1 |
 | -f LOGFILENAME | --log-file=LOGFILENAME | Günlük mesajlarının tutulacağı dosya |
-| -l LOGLEVEL | --log-level=LOGLEVEL | Günlüğü tutulacak en düşük seviye (debug 10, giriş çıkış 12, hata ayıklama uyarısı 15, bilgi 20, uyarı 30, hata 40, kritik 50, devre dışı 100), varsayılan, uyarı'dır |
+| -l LOGLEVEL | --log-level=LOGLEVEL | Günlüğü tutulacak en düşük seviye (debug 10, giriş çıkış 12, hata ayıklama uyarısı 15, bilgi 20, uyarı 30, devre dışı 100), varsayılan, uyarı'dır |
 | -c CONFIGPATH | --config-path=CONFIGPATH | NVDA ile ilgili tüm ayarların kaydedileceği adres |
 | None | --lang=LANGUAGE | Yapılandırılmış NVDA dilini geçersiz kılın. Geçerli kullanıcı varsayılanı için "Windows", İngilizce için "en" vb. olarak ayarlayın. |
 | -m | --minimal | Ses, arayüz, başlangıç mesajı vb olmaz |
