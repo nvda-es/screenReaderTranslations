@@ -836,6 +836,8 @@ As <A HREF="https://github.com/nvaccess/nvda-community/wiki/Connect">listas de e
 <P>
 Se estiver a instalar o NVDA pelo instalador descarregado, pressione o botão "Instalar o NVDA neste computador".
 Se já fechou esse diálogo ou quer instalar a partir duma cópia portátil, por favor, seleccione "instalar o NVDA", que se encontra no submenu "ferramentas", do menu do NVDA.
+</P>
+<P>
 O diálogo de instalação que aparece confirmará se deseja instalar o NVDA e dir-lhe-á igualmente se esta instalação actualizará uma instalação anterior.
 Pressionando o botão "Continuar" iniciará a instalação do NVDA.
 Existem também algumas opções, neste diálogo, que serão seguidamente explicadas.
@@ -894,17 +896,22 @@ A cópia instalada terá a possibilidade de criar uma cópia portátil, em qualq
 A cópia portátil é igualmente capaz de se instalar a si mesma, em qualquer computador, mais tarde.
 Porém, se deseja copiar o NVDA para um suporte apenas de leitura, como um CD, deverá copiar somente o pacote descarregado.
 A execução automática da versão portátil, a partir de dispositivos apenas de leitura, actualmente não é suportada.
-Usar a cópia temporária do NVDA é também uma opção (por exemplo, com a finalidade de demonstração); contudo, iniciar sempre o NVDA deste modo poderá consumir bastante tempo.
 </P>
 <P>
-Para além da impossibilidade de arrancar automaticamente com o Windows, as cópias portáteis e temporárias do NVDA têm também as seguintes restrições:
+O <A HREF="#StepsForRunningTheDownloadLauncher">instalador do NVDA</A> pode ser utilizado como uma cópia temporária do NVDA.
+As cópias temporárias impedem a gravação das configurações do NVDA.
+Isto inclui a desactivação da utilização do <A HREF="#AddonsManager">Add-on Store</A>.
+</P>
+<P>
+As cópias portáteis e temporárias do NVDA têm as seguintes restrições:
 </P>
 <UL>
-<LI>Impossibilidade de interagir com aplicações executadas com privilégios de administrador, a menos que o NVDA esteja também a ser executado com os mesmos privilégios, (o que não é recomendado);
-<LI>Impossibilidade de ler as janelas do Controlo de Conta de Utilizador (UAC), ao tentar iniciar uma aplicação com privilégios de administrador;
-<LI>Windows 8 e seguintes: Impossibilidade de suportar introdução de texto pelo ecrã táctil;
-<LI>Windows 8 e seguintes: Impossibilidade de usar as funcionalidades de modo de navegação e de anunciar os caracteres escritos nas aplicações Windows Store.
-<LI>Windows 8 e seguintes: O Modo de diminuição do volume não é suportado.
+<LI>A incapacidade de iniciar automaticamente durante e/ou após o início de sessão;
+<LI>A incapacidade de interagir com aplicações executadas com privilégios administrativos, a menos que o próprio NVDA tenha sido executado também com esses privilégios (não recomendado);
+<LI>A incapacidade de ler os ecrãs do Controlo de Conta de Utilizador (UAC) ao tentar iniciar uma aplicação com privilégios administrativos;
+<LI>Windows 8 e posterior: incapacidade de suportar a introdução de dados a partir de um ecrã tátil;
+<LI>Windows 8 e posteriores: incapacidade de fornecer funcionalidades como o modo de navegação e a reprodução de caracteres digitados em aplicações da Microsoft Store;
+<LI>Windows 8 e posterior: não é suportada a redução de áudio;
 </UL>
 
 <P></P>
@@ -1407,13 +1414,20 @@ Pode então mover-se para fora da lista, se pretender aceder a outros objectos.
 De forma similar, uma barra de ferramentas contém controlos; portanto deve mover-se para dentro da mesma, para aceder aos controlos da barra de ferramentas.
 </P>
 <P>
+Se preferir mover-se para a frente e para trás entre cada objecto no sistema, pode utilizar comandos para mover para o objecto anterior/seguinte numa vista plana.
+Por exemplo, se se deslocar para o objecto seguinte nesta vista plana e o objeto actual contiver outros objectos, o NVDA deslocar-se-á automaticamente para o primeiro objecto que contém.
+Como alternativa, se o objecto actual não contiver nenhum objecto, o NVDA passará para o próximo objecto no nível actual da hierarquia.
+Se não existir um objecto seguinte, o NVDA tentará encontrar o objecto seguinte na hierarquia com base nos objectos que contém, até não existirem mais objectos para onde se deslocar.
+As mesmas regras se aplicam à movimentação para trás na hierarquia.
+</P>
+<P>
 O objecto que está a ser revisto actualmente denomina-se "objecto de navegação".
-Após navegar para um objecto, pode rever o seu conteúdo com os comandos de <A HREF="#ReviewingText">revisão de texto</A>.
+Após navegar para um objecto, pode rever o seu conteúdo com os comandos de <A HREF="#ReviewingText">revisão de texto</A> enquanto estiver no <A HREF="#ObjectReview">modo de revisão de objectos</A>.
 Quando a funcionalidade <A HREF="#VisionFocusHighlight">"Realce visual"</A> estiver ativada, a localização actual do foco do sistema também será anunciada visualmente.
 Por padrão, a navegação de objectos acompanha o foco do sistema, embora este comportamento possa ser activado e desactivado.
 </P>
 <P>
-Nota:  O Braille seguir o objecto de navegação pode ser configurado na opção Braille segue #BrailleTether].
+Nota:  A ligação do Braille ao objecto de navegação pode ser configurada na opção Braille ligado #BrailleTether].
 </P>
 <P>
 Para navegar pelos objectos, utilize os seguintes comandos:
@@ -1444,15 +1458,29 @@ Para navegar pelos objectos, utilize os seguintes comandos:
 <TD>Mover para o objecto anterior</TD>
 <TD>NVDA4 do bloco numérico</TD>
 <TD>NVDA+shift+Seta Esquerda</TD>
-<TD>Varrer para a esquerda (modo de objectos)</TD>
+<TD>nenhum</TD>
 <TD>Move para o objecto anterior ao objecto de navegação actual</TD>
+</TR>
+<TR>
+<TD>Mover para o objecto anterior em revisão plana</TD>
+<TD>NVDA+9 do teclado numérico</TD>
+<TD>NVDA+shift+Sinal de mais</TD>
+<TD>Varrer para a esquerda (em modo de objecto)</TD>
+<TD>Move para o objecto anterior em revisão plana</TD>
 </TR>
 <TR>
 <TD>Mover para o objecto seguinte</TD>
 <TD>NVDA+6 do bloco numérico</TD>
 <TD>NVDA+shift+Seta Direita</TD>
-<TD>Varrer para a direita (modo de objectos)</TD>
+<TD>Nenhum</TD>
 <TD>Move para o objecto seguinte ao objecto de navegação actual</TD>
+</TR>
+<TR>
+<TD>Mover para o objecto seguinte em revisão plana</TD>
+<TD>NVDA+3 do teclado numérico</TD>
+<TD>NVDA+shift+agudo</TD>
+<TD>Varrer para a esquerda (em modo de objecto)</TD>
+<TD>Move para o objecto seguinte em revisão plana</TD>
 </TR>
 <TR>
 <TD>Mover para o primeiro objecto descendente</TD>
@@ -1514,7 +1542,7 @@ No entanto, por padrão, quando se move o cursor do Sistema, o cursor de revisã
 Isto pode ser activado e desactivado.
 </P>
 <P>
-Nota:  O Braille seguir o cursor de revisão pode ser configurado na opção Braille segue #BrailleTether].
+Nota:  A ligação do Braille ao cursor de revisão pode ser configurada na opção Braille ligado #BrailleTether].
 </P>
 <P>
 Os comandos seguintes estão disponíveis para a revisão de texto:
@@ -1705,7 +1733,6 @@ A disposição é ilustrada como se segue:
 <H3>5.6. Modos de Revisão</H3>
 <P>
 Os <A HREF="#ReviewingText">comandos de revisão de texto</A> do NVDA possibilitam-lhe rever o conteúdo presente no objecto de navegação actual, documento actual, ou do ecrã, dependendo do modo de revisão seleccionado.
-Os modos de revisão são um substituto do conceito de revisão plana, existente anteriormente no NVDA.
 </P>
 <P>
 Os comandos seguintes alternam entre os modos de revisão:
@@ -3440,18 +3467,48 @@ A mensagem do NVDA é imediatamente descartada ao pressionar um cursor de toque 
 Esta opção só é mostrada se a opção "Mostrar Mensagens" estiver definida para "Usar tempo de permanência".
 </P>
 <A NAME="BrailleTether"></A>
-<H5>Braille Segue</H5>
+<H5>Ligação Braill</H5>
 <P>
 Comando: NVDA+Ctrl+T
 </P>
 <P>
-Esta opção permite-lhe escolher se a linha Braille seguirá o foco do sistema,/cursor de inserção, o objecto de navegação / cursor de revisão ou ambos.
-Se seleccionar Automaticamente, o NVDA, por padrão, seguirá o foco do sistema.
-Mas, quando a posição da navegação por objectos ou da revisão é alterada, por acção directa do utilizador, o NVDA seguirá temporariamente o cursor de revisão, até que o foco do sistema seja alterado.
-Se pretender que o Braille siga sempre o cursor e o foco do sistema, deve definir o <A HREF="#BrailleTether">Braille segue:</A> para "Cursor do sistema".
+Esta opção permite-lhe escolher se o Braille seguirá o foco do sistema,/cursor de inserção, o objecto de navegação / cursor de revisão ou ambos.
+Se seleccionar Automaticamente, por padrão, o Braille seguirá o foco do sistema.
+Mas, quando a posição da navegação por objectos ou da revisão é alterada, por acção directa do utilizador, o Braille seguirá temporariamente o cursor de revisão, até que o foco do sistema seja alterado.
+Se pretender que o Braille siga sempre o cursor e o foco do sistema, deve definir a <A HREF="#BrailleTether">Ligação Braille:</A> para "Cursor do sistema".
 Assim, o Braille não seguirá a navegação por objectos e a revisão de texto.
-Se pretender que o Braille siga apenas a navegação por objectos e a revisão de texto, deve definir o <A HREF="#BrailleTether">Braille segue:</A> para "Cursor de revisão".
+Se pretender que o Braille siga apenas a navegação por objectos e a revisão de texto, deve definir a <A HREF="#BrailleTether">ligação Braille:</A> para "Cursor de revisão".
 Assim, o Braille não seguirá o foco e o cursor do sistema,.
+</P>
+<A NAME="BrailleSettingsReviewRoutingMovesSystemCaret"></A>
+<H5>Mover o cursor de revisão do sistema ao encaminhar o cursor de revisão</H5>
+<DL>
+<DT>Predefinição</DT><DD>
+  Nunca
+<DT>Opções</DT><DD>
+  Predefinição (Nunca), Nunca, Apenas quando ligado automaticamente, Sempre
+</DL>
+
+<P></P>
+<P>
+Esta opção determina se o cursor do sistema também deve ser movido com o premir de um botão de encaminhamento.
+Esta opção está definida para Nunca por predefinição, o que significa que o encaminhamento nunca moverá o cursor de revisão.
+</P>
+<P>
+Quando esta opção está definida para Sempre e <A HREF="#BrailleTether">ligação Braille</A> está definido para "automaticamente" ou "para revisão", pressionar uma tecla de encaminhamento também moverá o cursor do sistema ou o foco quando suportado.
+Quando o modo de revisão actual é <A HREF="#ScreenReview">Revisão de ecrã</A>, não existe um cursor físico.
+Neste caso, o NVDA tenta focar o objeto sob o texto para o qual está a encaminhar.
+O mesmo se aplica a <A HREF="#ObjectReview">revisão de objectos</A>.
+</P>
+<P>
+Também pode definir esta opção para mover o cursor apenas quando ligado automaticamente.
+Nesse caso, pressionar uma tecla de encaminhamento apenas moverá o cursor do sistema ou o foco quando a ligação Braille estiver configurada para automaticamente, ao passo que não ocorrerá qualquer movimento quando ligado manualmente ao cursor de revisão.
+</P>
+<P>
+Esta opção só é mostrada se "<A HREF="#BrailleTether">Ligação Braille</A>" estiver configurada para "automaticamente" ou "para revisão".
+</P>
+<P>
+Para alternar entre as várias opções de mover o cursor do sistema ao encaminhar o cursor de revisão a partir de qualquer lugar, atribua um comando personalizado utilizando o <A HREF="#InputGestures">diálogo Definir comandos</A>.
 </P>
 <A NAME="BrailleSettingsReadByParagraph"></A>
 <H5>Ler por Parágrafo</H5>
@@ -3522,8 +3579,6 @@ Se quiser alterara Apresentação do contexto do Foco, rapidamente e em qualquer
 <P></P>
 <P>
 Esta configuração determina se a voz deve ser interrompida quando o texto do dispositivo Braille é movido para trás ou para a frente.
-</P>
-<P>
 Os comandos de mover para a linha anterior ou seguinte interrompem sempre a voz.
 </P>
 <P>
@@ -4282,6 +4337,16 @@ Esta configuração contém as seguintes opções:
 </UL>
 
 <P></P>
+<A NAME="UseUiaForExcel"></A>
+<H5>Usar UI Automation para aceder às folhas do Microsoft Excel se disponível</H5>
+<P>
+Quando esta opção está activada, o NVDA tentará utilizar a API de acessibilidade de automatização da interface do utilizador da Microsoft para obter informações dos controlos da folha de cálculo do Microsoft Excel.
+Esta é uma funcionalidade experimental e algumas funcionalidades do Microsoft Excel poderão não estar disponíveis neste modo.
+Por exemplo, a Lista de Elementos do NVDA para listar fórmulas e comentários e a navegação rápida no modo Procurar para saltar para campos de formulário numa folha de cálculo não estão disponíveis.
+No entanto, para a navegação/edição básica de folhas de cálculo, esta opção pode proporcionar uma grande melhoria de desempenho.
+Continuamos a não recomendar que a maioria dos utilizadores ative esta opção por predefinição, embora seja desejável que os utilizadores do Microsoft Excel build 16.0.13522.10000 ou superior testem esta funcionalidade e forneçam comentários.
+A implementação da automação da interface do usuário do Microsoft Excel está sempre mudando, e as versões do Microsoft Office anteriores à 16.0.13522.10000 podem não expor informações suficientes para que essa opção seja útil.
+</P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
 <H5>Suporte à Consola Windows</H5>
 <DL>
@@ -4358,16 +4423,22 @@ Existem as seguintes opções:
   <LI>Espera-se que funcione com o Chromium 92.0.4479.0+.
   </UL>
 
-<P></P>
-<A NAME="UseUiaForExcel"></A>
-<H5>Usar UI Automation para aceder às folhas do Microsoft Excel se disponível</H5>
 <P>
-Quando esta opção está activada o NVDA tentará usar a Microsoft UI Automation accessibility API para recolher informação dos controlos das folhas do Microsoft Excel.
-Esta é uma funcionalidade experimental e algumas funcionalidades do Microsoft Excel podem não estar acessíveis neste modo.
-Por exemplo, a lista de elementos, para listar fórmulas e comentários,, e o modo de navegação, para activar as teclas rápidas para saltar para um elemento de formulário, não estão disponíveis.
-No entanto, para um uso básico do Excel, este método permite uma melhoria na performance.
-Ainda não recomendamos que a maioria dos utilizadores active esta opção, mas agradecemos que utilizadores do Microsoft Excel  build 16.0.13522.10000 ou superior testem esta funcionalidade e nos dêem retorno.
-A implementação do UI automation no Microsoft Excel's está em constante alteração e as versões do Microsoft Office anteriores à 16.0.13522.10000 podem não expor informações suficientes para que esta funcionalidade tenha algum uso.
+-
+</P>
+<A NAME="BrailleLiveRegions"></A>
+<H5>Anunciar live regions</H5>
+<DL>
+<DT>Predefinição</DT><DD>
+  Activado
+<DT>Opções</DT><DD>
+  Predefinição (Activado), Desactivado, Activado
+</DL>
+
+<P></P>
+<P>
+Esta opção selecciona se o NVDA comunica alterações em alguns conteúdos dinâmicos da Web em Braille.
+A desactivação desta opção é equivalente ao comportamento do NVDA nas versões 2023.1 e anteriores, que apenas comunicava estas alterações de conteúdo em voz.
 </P>
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
 <H5>Falar palavras-passe em todos os terminais melhorados</H5>
@@ -4452,20 +4523,40 @@ Com várias API's de GUI, historicamente populares, o texto pode ser apresentado
 </P>
 <A NAME="WASAPI"></A>
 <H5>Usar WASAPI para saída de áudio</H5>
+<DL>
+<DT>Predefinição</DT><DD>
+  Desactivada
+<DT>Opções</DT><DD>
+  Predefinição (Desactivada), Activada, Desactivada
+</DL>
+
+<P></P>
 <P>
 Esta opção activa a saída de áudio através da API de sessão de áudio do Windows (WASAPI).
 WASAPI é uma estrutura de áudio mais moderna que pode melhorar a capacidade de resposta, o desempenho e a estabilidade da saída de áudio do NVDA, incluindo a voz e os sons.
-Esta opção está activada por predefinição.
 Depois de alterar esta opção, terá de reiniciar o NVDA para que a alteração tenha efeito.
 </P>
 <A NAME="SoundVolumeFollowsVoice"></A>
 <H5>O volume dos sons do NVDA segue o volume da voz</H5>
+<DL>
+<DT>Predefinição</DT><DD>
+  Desactivado
+<DT>Opções</DT><DD>
+  Desactivado, Activado
+</DL>
+
+<P></P>
 <P>
 Quando esta opção está activada, o volume dos sons e dos bipes do NVDA segue a definição de volume da voz que está a utilizar.
 Se diminuir o volume da voz, o volume dos sons diminui.
 Da mesma forma, se aumentar o volume da voz, o volume dos sons aumenta.
 Esta opção só tem efeito quando "Usar WASAPI para saída de áudio" está activado.
-Esta opção está desactivada por predefinição.
+</P>
+<A NAME="SoundVolume"></A>
+<H5>Volume dos sons do NVDA</H5>
+<P>
+Esta barra deslizante permite-lhe definir o volume dos sons e dos bips do NVDA.
+Esta definição só tem efeito quando "Usar WASAPI para saída de áudio" está activado e "O volume dos sons do NVDA segue o volume da voz" está desactivado.
 </P>
 <A NAME="AdvancedSettingsDebugLoggingCategories"></A>
 <H5>Categorias do registo em modo de depuração</H5>
@@ -4823,7 +4914,6 @@ Para aceder à Loja de Extras a partir de qualquer local, atribua um comando per
 <H3>13.1. Navegar pelos extras</H3>
 <P>
 Ao abrir a Loja de Extras, é apresentada uma lista de extras.
-Pode regressar à lista pressionando "Alt+L" a partir de qualquer outra secção da loja.
 Se nunca tiver instalado um extra antes, a loja de extras irá abrir para uma lista de extras disponíveis para instalar.
 Se já tiver instalado extras, a lista irá mostrar os extras instalados actualmente.
 </P>
@@ -4908,6 +4998,9 @@ Em seguida, utilize a acção de actualizar, instalar ou substituir para iniciar
 Para instalar um extra que tenha obtido fora da Loja de Extras, pressione o botão "Instalar a partir de uma fonte externa".
 Isso permitirá procurar um pacote de extras (ficheiro ".nvda-addon") em algum lugar do seu computador ou em uma rede.
 Depois de abrir o pacote do extra, o processo de instalação será iniciado.
+</P>
+<P>
+Se o NVDA estiver instalado e a funcionar no seu sistema, também pode abrir um ficheiro de extra directamente a partir do navegador web ou do explorador de ficheiros para iniciar o processo de instalação.
 </P>
 <P>
 Quando um extra está a ser instalado a partir de uma fonte externa, o NVDA irá solicitar a confirmação da instalação.
@@ -5224,7 +5317,7 @@ Por favor, consulte a documentação desta linha braille para obter a descriçã
 <TD>rightAdvanceBar</TD>
 </TR>
 <TR>
-<TD>Alternar "Braille segue:"</TD>
+<TD>Alternar "Ligação Braille:"</TD>
 <TD>leftGDFButton+rightGDFButton</TD>
 </TR>
 <TR>
@@ -5492,7 +5585,7 @@ Por favor, consulte a documentação da sua linha braille para obter a descriç�
 <TD>t4+t5</TD>
 </TR>
 <TR>
-<TD>Alternar "Braille segue:"</TD>
+<TD>Alternar "Ligação Braille:"</TD>
 <TD>t1+t3</TD>
 </TR>
 <TR>
@@ -7717,6 +7810,10 @@ Por favor, consulte a documentação destes dispositivos Braille para obter a de
 <TD>Toggle <CODE>alt</CODE> key</TD>
 <TD><CODE>dot1+dot8+space</CODE>, <CODE>dot4+dot8+space</CODE></TD>
 </TR>
+<TR>
+<TD>Toggle HID Keyboard simulation</TD>
+<TD><CODE>switch1Left+joystick1Down</CODE>, <CODE>switch1Right+joystick1Down</CODE></TD>
+</TR>
 </TABLE>
 
 <A NAME="Eurobraillebbook"></A>
@@ -8017,6 +8114,10 @@ Por favor, consulte a documentação destes dispositivos Braille para obter a de
 <TD><CODE>control+end</CODE> key</TD>
 <TD><CODE>l6+l7+l8</CODE>, <CODE>l5+l6+l7</CODE></TD>
 </TR>
+<TR>
+<TD>Toggle HID Keyboard simulation</TD>
+<TD><CODE>l1+joystick1Down</CODE>, <CODE>l8+joystick1Down</CODE></TD>
+</TR>
 </TABLE>
 
 <P>
@@ -8252,6 +8353,10 @@ Por favor, consulte a documentação destas linhas Braille para obter a descriç
 <TD><CODE>f1+f5</CODE>, <CODE>f9+f14</CODE></TD>
 </TR>
 <TR>
+<TD>Cycle the "braille move system caret when routing review cursor" states</TD>
+<TD><CODE>f1+f3</CODE>, <CODE>f9+f11</CODE></TD>
+</TR>
+<TR>
 <TD>Activar o objecto de navegação actual</TD>
 <TD><CODE>f7+f8</CODE></TD>
 </TR>
@@ -8300,19 +8405,19 @@ Por favor, consulte a documentação destas linhas Braille para obter a descriç
 <TD><CODE>lWheelDown</CODE>, <CODE>rWheelDown</CODE></TD>
 </TR>
 <TR>
-<TD>Teclas windows+d (minimizar todas as aplicações)</TD>
+<TD>Tecla windows+d (minimizar todas as aplicações)</TD>
 <TD><CODE>attribute1</CODE></TD>
 </TR>
 <TR>
-<TD>Teclas Windows+e (Este PC)</TD>
+<TD>Tecla Windows+e (Este PC)</TD>
 <TD><CODE>attribute2</CODE></TD>
 </TR>
 <TR>
-<TD>Teclas windows+b (Mover para a Área de notificações)</TD>
+<TD>Tecla windows+b (Mover para a Área de notificações)</TD>
 <TD><CODE>attribute3</CODE></TD>
 </TR>
 <TR>
-<TD>Teclas Windows+i (Definições do Windows)</TD>
+<TD>Tecla Windows+i (Definições do Windows)</TD>
 <TD><CODE>attribute4</CODE></TD>
 </TR>
 </TABLE>
@@ -8341,10 +8446,6 @@ Seguem-se as associações de teclas para este protocolo.
 <TR>
 <TD>Deslocar a linha Braille para a frente</TD>
 <TD>pan right or rocker down</TD>
-</TR>
-<TR>
-<TD>Move a linha braille para a linha seguinte</TD>
-<TD>space + ponto 4</TD>
 </TR>
 <TR>
 <TD>Encaminhar para a célula</TD>
@@ -8416,22 +8517,40 @@ Seguem-se as associações de teclas para este protocolo.
 <A NAME="SecureMode"></A>
 <H3>17.1. Modo Seguro</H3>
 <P>
-O NVDA pode ser iniciado em modo seguro com a opção "-s" <A HREF="#CommandLineOptions">opção de linha de comando</A>.
-O NVDA corre em modo seguro quando executado em <A HREF="#SecureScreens">ecrãs seguros</A>, a menos que o "serviceDebug" <A HREF="#SystemWideParameters">parâmetro largo do sistema</A> esteja activado.
+Os administradores de sistema podem querer configurar o NVDA para restringir o acesso não autorizado ao sistema.
+O NVDA permite a instalação de extras personalizados, que podem executar código arbitrário, incluindo quando o NVDA é elevado a privilégios de administrador.
+O NVDA também permite que os utilizadores executem código arbitrário através da Consola Python do NVDA.
+O modo seguro do NVDA impede que os utilizadores modifiquem a sua configuração do NVDA e limita o acesso não autorizado ao sistema.
 </P>
 <P>
-Modo de segurança desactiva:
+O NVDA corre em modo seguro quando executado em <A HREF="#SecureScreens">ecrãs seguros</A>, a menos que o "serviceDebug" <A HREF="#SystemWideParameters">parâmetros do sistema</A> esteja activado.
+Para forçar o NVDA a iniciar sempre em modo seguro, defina o <CODE>forceSecureMode</CODE> <A HREF="#SystemWideParameters">parâmetros do sistema</A>.
+O NVDA também pode ser iniciado em modo seguro com o <CODE>-s</CODE> <A HREF="#CommandLineOptions">opção de linha de comando</A>.
+</P>
+<P>
+O modo de segurança desactiva:
 </P>
 <UL>
 <LI>Guardar configuração e outras definições no disco
-<LI>Guardar o mapa de gestos no disco
+<LI>Guardar o mapa de comandos no disco
 <LI><A HREF="#ConfigurationProfiles">Perfil de Configuração</A> características tais como criação, eliminação, renomear perfis e.t.c.
 <LI>Actualização de NVDA e criação de cópias portáteis
+<LI>A <A HREF="#AddonsManager">loja de extras</A>
 <LI>A <A HREF="#PythonConsole">consola Python</A>
 <LI>O <A HREF="#LogViewer">Visualizador de Registo</A> e o registo
+<LI>A abertura pelo menu do NVDA de documentos externos como o Manual do utilizador e Contribuidores
 </UL>
 
 <P></P>
+<P>
+As cópias instaladas do NVDA armazenam as suas configurações, incluindo extras, em <CODE>%APPDATA%\nvda</CODE>.
+Para evitar que os utilizadores do NVDA modifiquem as suas configurações ou extras diretamente, o acesso do utilizador a essa pasta também deve ser restrito.
+</P>
+<P>
+Os utilizadores do NVDA geralmente dependem da configuração de seu perfil do NVDA para atender às suas necessidades.
+Isso pode incluir a instalação e configuração de extras personalizados, que devem ser verificados independentemente do NVDA.
+O modo seguro congela as alterações na configuração do NVDA, portanto, certifique-se de que o NVDA esteja configurado adequadamente antes de forçar o modo seguro.
+</P>
 <A NAME="SecureScreens"></A>
 <H3>17.2. ecrãs seguros</H3>
 <P>
@@ -8645,7 +8764,13 @@ Os seguintes valores podem ser configurados nestas chaves:
 <TD>serviceDebug</TD>
 <TD>DWORD</TD>
 <TD>0 (padrão) para desactivar, 1 para activar</TD>
-<TD>Se activo, desactiva o <A HREF="#SecureMode">modo seguro</A> em janelas de <A HREF="#SecureScreens">Ambiente seguro</A> do windows, permitindo o uso da Consola de Python e Visualizador de registo. Devido às graves implicações de segurança, o uso desta opção é fortemente desaconselhado!</TD>
+<TD>Se activo, desactiva o <A HREF="#SecureMode">modo seguro</A> em janelas de <A HREF="#SecureScreens">Ambiente seguro</A> do windows. Devido às graves implicações de segurança, o uso desta opção é fortemente desaconselhado!</TD>
+</TR>
+<TR>
+<TD><CODE>forceSecureMode</CODE></TD>
+<TD>DWORD</TD>
+<TD>0 (padrão) para desactivar, 1 para activar</TD>
+<TD>Se activado, força o <A HREF="#SecureMode">Secure Mode</A> a ser ativado ao executar o NVDA.</TD>
 </TR>
 </TABLE>
 
