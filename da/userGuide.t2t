@@ -592,6 +592,12 @@ Du kan komme tilbage til selve listen ved at gå til det overordnede objekt for 
 Derefter kan du bevæge dig forbi listen, hvis du ønsker, at udforske andre objekter.
 På samme måde er der kontroller (fx. knapper) inde i en værktøjslinje. Så du skal gå ind i værktøjslinjen for at komme til kontrollerne i værktøjslinjen.
 
+Hvis du stadig ønsker at navigere mellem hvert enkelt objekt i systemet, kan du bruge kommandoer til at skifte mellem forrige og næste objekt i en flad visning.
+For eksempel, hvis du skifter til det næste objekt i denne visning og det aktuelle objekt indeholder underobjekter, vil NVDA automatisk skifte til det første underobjekt.
+Men hvis det aktuelle objekt ikke har nogle underobjekter, vil NVDA navigere til det næste objekt på samme hierarkiske niveau.
+Hvis der ikke findes et sådant objekt, søger NVDA videre op i hierarkiet, indtil der ikke er flere objekter at skifte til.
+Samme princip gælder, når man navigerer bagud i hierarkiet.
+
 Det objekt, du er i gang med at gennemse, kaldes for navigatorobjektet.
 Når du navigerer til et objekt, kan du gennemse det ved at benytte [ kommandoerne til gennemsyn af tekst #ReviewingText] når du befinder dig i [objektlæsetilstand #ObjectReview].
 Når [Visuel Fremhæving #VisionFocusHighlight] er aktiveret, vil det aktuelle navigatorobjekt blive fremhævet på skærmen.
@@ -605,8 +611,10 @@ For at navigere imellem objekter, skal du benytte følgende kommandoer:
 || Navn | Desktop tast | Laptop tast | Touchbevægelse | Beskrivelse |
 | Sig aktuelle objekt | NVDA+Numpad5 | NVDA+Shift+o | Ingen | Annoncerer det aktuelle navigatorobjekt. Tryk to gange for at få stavet oplysningerne, og tryk tre gange for at kopiere objektets navn og værdi til udklipsholderen. |
 | Flyt til det overordnede objekt | NVDA+Numpad8 | NVDA+Shift+Pil-op | Svirp op (objekttilstand) | Navigerer til det overordnede objekt i forhold til det aktuelle navigatorobjekt |
-| Gå til forrige objekt | NVDA+Numpad4 | NVDA+Shift+Venstre-pil | Svirp til venstre (objekttilstand) | Flytter til objektet før det aktuelle navigatorobjekt |
+| Gå til forrige objekt | NVDA+Numpad4 | NVDA+Shift+Venstre-pil | ingen | Flytter til objektet før det aktuelle navigatorobjekt |
+| Gå til forrige objekt i flad visning | NVDA+numpad9 | NVDA+shift+[ | Svirp til venstre (objekttilstand) | Flytter til det forrige objekt i en flad visning af objektnavigationshierarkiet |
 | Gå til næste objekt | NVDA+Numpad6 | NVDA+Shift+Højre-pil | Svirp til højre (objekttilstand) | Flytter til objektet efter det aktuelle navigatorobjekt |
+| Gå til næste objekt i flad visning | NVDA+numpad3 | NVDA+shift+] | Svirp til højre (objekttilstand) | Flytter til det næste objekt i en flad visning af objektnavigationshierarkiet |
 | Gå til første underordnede objekt | NVDA+Numpad2 | NVDA+Shift+Pil-ned | Svirp ned (objekttilstand) | Flytter til det første objekt, som er indeholdt i det aktuelle navigatorobjekt.
 | Gå til objektet i fokus | NVDA+Numpad-Minus | NVDA+Backmellemrum | Ingen | Flytter til det objekt, som er i fokus. Placerer også læsemarkøren ved systemmarkøren, hvis den er synlig. |
 | Aktivér aktuelle navigatorobjekt | NVDA+Numpad-Enter | NVDA+Enter | Dobbelttryk | Aktiverer det nuværende navigatorobjekt (svarende til at klikke med musen eller trykke på mellemrums tasten, når det er i fokus) |
@@ -664,7 +672,6 @@ Layoutet kan illustreres på følgende måde:
 
 ++ Læsetilstande ++[ReviewModes]
 med NVDAs [kommandoer til tekstlæsning #ReviewingText] kan du læse indhold i det aktuelle navigatorobjekt, det aktuelle dokument eller skærmen, afhængigt af hvilken læsetilstand der benyttes.
-Læsetilstand er en erstatning for det ældre koncept Flad Visning.
 
 Du skifter mellem læsetilstandene med følgende kommandoer:
 %kc:beginInclude
@@ -1606,12 +1613,34 @@ Denne indstilling vises kun, hvis "Vis beskeder" er indstillet til "Brug timeout
 Tast: NVDA+Ctrl+t
 
 Med denne indstilling kan du vælge, om punktdisplayet skal følge systemfokus/systemmarkøren, om det skal følge navigatorobjektet /læsemarkøren eller begge dele.
-Når "automatisk" er valgt, vil NVDA følge systemmarkøren og læsemarkøren som standard.
-I dette tilfæld vil NVDA følge læsemarkøren midlertidigt, når brugeren ændre positionen af læsemarkøren, eller når navigatorobjektet ændres. Denne tilstand ophører, når systemmarkøren flyttes eller fokus ændres.
-Hvis punkt kun skal følge systemfokus og systemmarkøren, skal indstillingen ændres til "Fokus".
-I dette tilfælde vil punkt ikke følge navigatorobjektet eller læsemarkøren.
-Hvis du derimod vil have at punkt følger læsemarkøren, skal du vælge "Læsemarkør".
-I dette tilfælde vil punkt ikke følge systemfokus og systemmarkøren.
+Med "automatisk" valgt, vil NVDA som standard følge systemmarkøren og læsemarkøren.
+Med denne indstilling vil NVDA midlertidigt følge læsemarkøren ved ændringer, men stopper ved ændring af systemfokus.
+For kun at følge systemfokus og systemmarkøren, skift til "Fokus".
+Her vil punkt ikke følge navigatorobjektet eller læsemarkøren.
+Ønsker du at punkt skal følge læsemarkøren, vælg "Læsemarkør".
+Med denne indstilling ignorerer punkt systemfokus og systemmarkøren.
+
+==== Flyt systemmarkør, når læsemarkøren flyttes med markørknapperne ====[BrailleSettingsReviewRoutingMovesSystemCaret]
+: Standard
+  Aldrig
+: Muligheder
+  Standard (aldrig), Aldrig, Kun når tøjring er indstillet til automatisk, Altid
+:
+
+Denne indstilling afgør, om systemmarkøren også skal flyttes med markørknapperne.
+Denne indstilling er sat til Aldrig som standard, hvilket betyder, at markørknapperne aldrig vil flytte systemmarkøren, når du flytter gennemsynsmarkøren.
+
+Når denne indstilling er sat til Altid, og [ punkt følger #BrailleTether] er indstillet til automatisk eller læsemarkøren, vil et tryk på en markørknap også flytte systemmarkøren eller systemfokus, når det understøttes.
+Når den aktuelle læsetilstand er [Skærmtilstand #ScreenReview], er der ingen systemmarkør.
+I dette tilfælde forsøger NVDA at fokusere på objektet under den tekst, du flytter til.
+Det samme gælder for [objekttilstand #ObjectReview].
+
+Du kan også indstille denne mulighed til kun at flytte systemmarkøren, når den følger automatisk.
+I så fald vil et tryk på en markørknap kun flytte systemets systemmarkør eller fokus, når NVDA automatisk følger læsemarkøren, mens der ikke vil ske nogen bevægelse, når den manuelt er forbundet til læsemarkøren.
+
+Denne mulighed vises kun, hvis "[punkt følger #BrailleTether]" er sat til "Automatisk" eller "Til læsemarkør".
+
+For at ændre denne indstilling fra hvor som helst, kan du tildele et tastetryk fra [dialogen "Håndter kommandoer..." #InputGestures]
 
 ==== Læs i afsnit ====[BrailleSettingsReadByParagraph]
 Hvis du slår denne indstilling til, vil du få vist punkt et afsnit ad gangen i stedet for en linje ad gangen.
@@ -2260,6 +2289,16 @@ Denne funktion kan dog forbedre ydeevnen, når du navigere og redigere celler.
 Vi anbefaler dog ikke at størstedelen af brugere benytter denne indstilling, men vi ønsker feedback fra brugere med Microsoft Excel  build 16.0.13522.10000 eller nyere.
 Implementeringen af UIA i Microsoft Excel er under konstant revidering, og ældre versioner af Office end 16.0.13522.10000 vil muligvis ikke vise nok information til at være brugbart.
 
+==== Report live regions ====[BrailleLiveRegions]
+: Standard
+  Aktiveret
+: Muligheder
+  Deaktiveret, aktiveret
+:
+
+Denne indstilling bestemmer om NVDA skal vise opdateringer af dynamisk webindhold på punkt.
+Denne indstilling svarer til adfærden i NVDA 2023.1 og tidligere, hvor disse opdateringer kun blev oplyst via tale.
+
 ==== Udtal adgangskoder i alle forbedrede konsoller ====[AdvancedSettingsWinConsoleSpeakPasswords]
 Denne funktion bestemmer om tegn udtales ved brug af indstillingen [sig indtastede tegn #KeyboardSettingsSpeakTypedCharacters] eller [sig indtastede ord #KeyboardSettingsSpeakTypedWords]. Dette kan evt. være nyttigt i situationer hvor skærmen ikke opdateres (som ved indtastning af adgangskoder i konsolvinduer), i nogle terminalprogrammer som Windows-konsollen med understøttelse for UIA aktiveret og Mintty.
 På grund af sikkerhedsårsager bør denne indstilling forblive deaktiveret.
@@ -2330,6 +2369,10 @@ Hvis du sænker stemmelydstyrken, vil lydstyrken af lydeffekter også blive sæn
 På samme måde vil lydstyrken af lydeffekter blive øget, hvis du øger volumen for stemmen.
 Denne indstilling træder kun i kraft, når "Brug WASAPI til lydoutput" er aktiveret.
 Denne indstilling er som standard deaktiveret.
+
+==== Lydstyrke for NVDA-lyde ====[SoundVolume]
+Denne skyder lader dig indstille lydstyrken for NVDAs lyde og bip.
+Denne indstilling træder kun i kraft, hvis "Brug WASAPI for lydoutput" er aktiveret og "Lydstyrken af NVDA-lyde følger stemmelydstyrken" er deaktiveret.
 
 ==== Aktiverede logningskategorier ====
 Check boxene i denne liste lader dig vælge, hvilke logningskategorier der skal benyttes under skrivning af NVDAs logfil.
@@ -2580,7 +2623,6 @@ For at åbne tilføjelsescenteret fra ethvert sted kan du tildele en brugerdefin
 
 ++ Gennemse tilføjelser ++[AddonStoreBrowsing]
 Når tilføjelsescenteret åbnes, vises en liste over tilføjelser.
-Du kan hoppe tilbage til listen med ``alt+l`` fra enhver anden del af centeret.
 Hvis du ikke har installeret en tilføjelse før, viser centeret  en liste over tilgængelige tilføjelser til installation.
 Hvis du har installeret tilføjelser, vises listen over aktuelt installeret tilføjelser.
 
@@ -2623,12 +2665,12 @@ For at vise tilføjelser kun for specifikke kanaler skal du ændre filtervalget 
 For at søge efter tilføjelser skal du bruge tekstfeltet "Søg".
 Du kan nå det ved at trykke på ``shift+tab`` fra listen over tilføjelser eller ved at trykke på ``alt+s`` fra ethvert sted i Tilføjelsescenter-grænsefladen.
 Indtast ét eller to nøgleord, der beskriver den type tilføjelse, du leder efter, og naviger derefter tilbage til listen over tilføjelser ved at trykke på ``tab``.
-Tilføjelserne vil blive vist, hvis søgeteksten kan findes i displaynavnet, udgiveren eller beskrivelsen.
+Tilføjelserne vil blive vist, hvis søgeteksten kan findes i ID, displaynavnet, udgiveren, forfatter eller beskrivelsen.
 
 ++ Tilføjelseshandlinger ++[AddonStoreActions]
 Tilføjelser har tilknyttede handlinger, såsom Installér, Hjælp, Deaktivér eller Fjern.
 Du kan få adgang til handlingsmenuen i listen over tilføjelser ved at trykke på ``applications``-tasten, ``enter``, højreklikke eller dobbeltklikke på tilføjelsen.
-Knappen "Handlinger" er også tilgængelig i detaljerne for den valgte tilføjelse, som kan aktiveres ved at trykke på ``alt+h``.
+Denne menu kan også tilgås via knappen "Handlinger" tilgængelig i detaljerne for den valgte tilføjelse.
 
 +++ Installation af tilføjelser +++[AddonStoreInstalling]
 Bare fordi en tilføjelse er tilgængelig i NVDAs Tilføjelsescenter, betyder det ikke, at den er blevet godkendt eller kontrolleret af NV Access eller andre.
