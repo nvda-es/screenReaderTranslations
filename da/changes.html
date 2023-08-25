@@ -128,6 +128,56 @@ eSpeak-NG, LibLouis punktskriftsoversætter og Unicode CLDR er blevet opdateret.
 
 <P></P>
 <H3>Fejlrettelser</H3>
+<UL>
+<LI>Punkt:
+  <UL>
+  <LI>Flere stabilitetsrettelser ang. input og output for punktdisplays, hvilket resulterer i mindre hyppige fejl og nedbrud af NVDA: (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
+  <LI>NVDA vil ikke længere unødigt skifte til "ingen punkt" flere gange under automatisk detektering af punktdisplays, hvilket resulterer i en renere log og et mindre unødvendigt ressourceforbrug. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
+  <LI>NVDA vil nu skifte tilbage til USB, hvis en HID Bluetooth-enhed (såsom HumanWare Brailliant eller APH Mantis) automatisk detekteres, og en USB-forbindelse bliver tilgængelig.
+  Dette fungerede kun for Bluetooth-serielle porte tidligere. (<A HREF="https://github.com/nvaccess/nvda/issues/14524">#14524</A>)
+  <LI>Når intet punktdisplay er forbundet og punktviseren lukkes med <CODE>alt+f4</CODE> eller ved at klikke knappen "Luk", vil displaystørrelsen for punktsystemet korrekt blive nulstillet til "ingen celler". (<A HREF="https://github.com/nvaccess/nvda/issues/15214">#15214</A>)
+  </UL>
+<LI>Webbrowsere:
+  <UL>
+  <LI>NVDA får ikke længere lejlighedsvis Mozilla Firefox til at gå ned eller stoppe med at svare. (<A HREF="https://github.com/nvaccess/nvda/issues/14647">#14647</A>)
+  <LI>I Mozilla Firefox og Google Chrome rapporteres indtastede tegn ikke længere i nogle tekstbokse, selv når tale indtastede tegn er deaktiveret. (<A HREF="https://github.com/nvaccess/nvda/issues/14666">#14666</A>)
+  <LI>Du kan nu bruge gennemsynstilstand i Chromium Embedded Controls, hvor det ikke tidligere var muligt. (<A HREF="https://github.com/nvaccess/nvda/issues/13493">#13493</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8553">#8553</A>)
+  <LI>I Mozilla Firefox rapporteres teksten nu pålideligt, når musen bevæges over tekst efter et link. (<A HREF="https://github.com/nvaccess/nvda/issues/9235">#9235</A>)
+  <LI>Destinationen for grafiske links rapporteres nu mere præcist i flere tilfælde i Chrome og Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/14779">#14779</A>)
+  <LI>Når du forsøger at rapportere URL'en for et link uden en href-attribut, er NVDA ikke længere stille.
+  I stedet rapporter NVDA, at linket ikke har nogen destination. (<A HREF="https://github.com/nvaccess/nvda/issues/14723">#14723</A>)
+  <LI>I gennemsynstilstand vil NVDA ikke længere fejlagtigt ignorere fokus, der flytter til en overordnet eller underordnet kontrol, f.eks. flytning fra en kontrol til dens overordnede listeemne eller gittercelle. (<A HREF="https://github.com/nvaccess/nvda/issues/14611">#14611</A>)
+    <UL>
+    <LI>Bemærk dog, at denne rettelse kun gælder, når indstillingen "Automatisk fokustilstand ved ændring af fokus" i indstillingerne for gennemsynstilstand er slået fra (som er standard).
+    </UL>
+  </UL>
+<LI>Fixes for Windows 11:
+  <UL>
+  <LI>NVDA can once again announce Notepad status bar contents. (<A HREF="https://github.com/nvaccess/nvda/issues/14573">#14573</A>)
+  <LI>Switching between tabs will announce the new tab name and position for Notepad and File Explorer. (<A HREF="https://github.com/nvaccess/nvda/issues/14587">#14587</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14388">#14388</A>)
+  <LI>NVDA will once again announce candidate items when entering text in languages such as Chinese and Japanese. (<A HREF="https://github.com/nvaccess/nvda/issues/14509">#14509</A>)
+  <LI>It is once again possible to open the Contributors and License items on the NVDA Help menu. (<A HREF="https://github.com/nvaccess/nvda/issues/14725">#14725</A>)
+  </UL>
+<LI>Microsoft Office fixes:
+  <UL>
+  <LI>When rapidly moving through cells in Excel, NVDA is now less likely to report the wrong cell or selection. (<A HREF="https://github.com/nvaccess/nvda/issues/14983">#14983</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12200">#12200</A>, <A HREF="https://github.com/nvaccess/nvda/issues/12108">#12108</A>)
+  <LI>When landing on an Excel cell from outside a work sheet, braille and focus highlighter are no longer needlessly updated to the object that had focus previously. (<A HREF="https://github.com/nvaccess/nvda/issues/15136">#15136</A>)
+  <LI>NVDA no longer fails to announce focusing password fields in Microsoft Excel and Outlook. (<A HREF="https://github.com/nvaccess/nvda/issues/14839">#14839</A>)
+  </UL>
+<LI>For symbols which do not have a symbol description in the current locale, the default English symbol level will be used. (<A HREF="https://github.com/nvaccess/nvda/issues/14558">#14558</A>, <A HREF="https://github.com/nvaccess/nvda/issues/14417">#14417</A>)
+<LI>It is now possible to use the backslash character in the replacement field of a dictionaries entry, when the type is not set to regular expression. (<A HREF="https://github.com/nvaccess/nvda/issues/14556">#14556</A>)
+<LI>In Windows 10 and 11 Calculator, a portable copy of NVDA will no longer do nothing or play error tones when entering expressions in standard calculator in compact overlay mode. (<A HREF="https://github.com/nvaccess/nvda/issues/14679">#14679</A>)
+<LI>NVDA again recovers from many more situations such as applications that stop responding which previously caused it to freeze completely. (<A HREF="https://github.com/nvaccess/nvda/issues/14759">#14759</A>) 
+<LI>When forcing UIA support with certain terminal and consoles, a bug is fixed which caused a freeze and the log file to be spammed. (<A HREF="https://github.com/nvaccess/nvda/issues/14689">#14689</A>)
+<LI>NVDA will no longer refuse to save the configuration after a configuration reset. (<A HREF="https://github.com/nvaccess/nvda/issues/13187">#13187</A>)
+<LI>When running a temporary version from the launcher, NVDA will not mislead users into thinking they can save the configuration. (<A HREF="https://github.com/nvaccess/nvda/issues/14914">#14914</A>)
+<LI>NVDA now generally responds slightly faster to commands and focus changes. (<A HREF="https://github.com/nvaccess/nvda/issues/14928">#14928</A>)
+<LI>Displaying the OCR settings will not fail on some systems anymore. (<A HREF="https://github.com/nvaccess/nvda/issues/15017">#15017</A>)
+<LI>Fix bug related to saving and loading the NVDA configuration, including switching synthesizers. (<A HREF="https://github.com/nvaccess/nvda/issues/14760">#14760</A>)
+<LI>Fix bug causing text review "flick up" touch gesture to move pages rather than move to previous line. (<A HREF="https://github.com/nvaccess/nvda/issues/15127">#15127</A>)
+</UL>
+
+<P></P>
 <H3>Ændringer for udviklere</H3>
 <P>
 For nyheder relateret til udvikling se venligst det engelske "What's New"-dokument.
