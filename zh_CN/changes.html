@@ -22,7 +22,7 @@
 改进了在 Microsoft Office 中的导航体验和格式朗读。
 </P>
 <P>
-修复了若干错误，尤其在盲文点显器、Microsoft Office、Web 浏览器和 Windows 11等方面。
+修复了若干错误，尤其在盲文点显器、Microsoft Office、Web 浏览器和 Windows 11 等方面。
 一如既往的对 eSpeak-NG、LibLouis 盲文翻译器和 Unicode CLDR 等第三方组件进行了常规更新。
 </P>
 <H3>新特性</H3>
@@ -78,7 +78,7 @@
   </UL>
 <LI>声音管理增强（实验性）：
   <UL>
-  <LI>- NVDA 目前支持使用 Windows 音频会话 API (WASAPI) 输出音频，该特性可以提高 NVDA 语音和声音的响应能力、性能和稳定性。（<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>）
+  <LI>NVDA 目前支持使用 Windows 音频会话 API (WASAPI) 输出音频，该特性可以提高 NVDA 语音和声音的响应能力、性能和稳定性。（<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>）
   <LI>可以在高级设置中启用 WASAPI 支持。
   此外，如果启用了 WASAPI，还可以配置以下高级设置。
     <UL>
@@ -143,9 +143,9 @@
   <LI>修复了 NVDA 偶发导致 Mozilla Firefox 崩溃或停止响应的错误。（<A HREF="https://github.com/nvaccess/nvda/issues/14647">#14647</A>）
   <LI>修复了在 Mozilla Firefox 和 Google Chrome 中，关闭“读出输入字符”后在某些文本框中仍会朗读已输入字符的错误。（<A HREF="https://github.com/nvaccess/nvda/issues/8442">#8442</A>）
   <LI>修复了在嵌入式 Chromium 控件中无法使用浏览模式的错误。（<A HREF="https://github.com/nvaccess/nvda/issues/13493">#13493</A>、<A HREF="https://github.com/nvaccess/nvda/issues/8553">#8553</A>）
-  <LI>- 修复了在 Mozilla Firefox 中，将鼠标移到链接后的文本上，个别情况下不能读出所指向文本的错误。（<A HREF="https://github.com/nvaccess/nvda/issues/9235">#9235</A>）
+  <LI>修复了在 Mozilla Firefox 中，将鼠标移到链接后的文本上，个别情况下不能读出所指向文本的错误。（<A HREF="https://github.com/nvaccess/nvda/issues/9235">#9235</A>）
   <LI>修复了在 Chrome 和 Edge 中，无法读出个别图形链接所指向的网址的错误。（<A HREF="https://github.com/nvaccess/nvda/issues/14783">#14783</A>）
-  <LI>- 修复了当尝试读出没有 href 属性的链接所指向的网址时，NVDA 无声的错误。
+  <LI>修复了当尝试读出没有 href 属性的链接所指向的网址时，NVDA 无声的错误。
   现在会提示“链接未指向确切的网址”。（<A HREF="https://github.com/nvaccess/nvda/issues/14723">#14723</A>）
   <LI>修复了在浏览模式下，NVDA 忽略了移动到父控件或子控件的焦点事件的错误，例如从列表项控件移动到其父列表或网格单元。（<A HREF="https://github.com/nvaccess/nvda/issues/14611">#14611</A>）
     <UL>
@@ -187,17 +187,17 @@
 <LI>在插件清单规范中添加了建议的约定。
 对于 NVDA 兼容性而言，目前这些是可选的，但鼓励或要求提交到插件商店时遵循这些约定。（<A HREF="https://github.com/nvaccess/nvda/issues/14754">#14754</A>）
   <UL>
-  <LI>对名称字段使用“lowerCamelCase”（驼峰命名法）。
+  <LI>对名称字段使用 <CODE>lowerCamelCase</CODE>（驼峰命名法）。
   <LI>版本字段使用 <CODE>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</CODE> 的格式（插件商店元数据需要）。
   <LI>URL 字段使用 <CODE>https://</CODE> 协议（插件商店元数据需要）。
   </UL>
-<LI>添加了一个名为<CODE>Chain</CODE>的新扩展点类型，可用于迭代注册处理器返回的可迭代对象。（<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>）
+<LI>添加了一个名为 <CODE>Chain</CODE> 的新扩展点类型，可用于迭代注册处理器返回的可迭代对象。（<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>）
 <LI>添加了 <CODE>bdDetect.scanForDevices</CODE> 扩展点。
 注册处理器可以来生成不适合现有类别（例如 USB 或蓝牙）的 <CODE>BrailleDisplayDriver/DeviceMatch</CODE> 对。（<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>）
 <LI>添加了 <CODE>synthDriverHandler.synthChanged</CODE> 扩展点。（<A HREF="https://github.com/nvaccess/nvda/issues/14618">#14618</A>）
 <LI>NVDA 语音合成器设置选项现在会在第一次需要时缓存可用的设置值，而不是在加载合成器时。（<A HREF="https://github.com/nvaccess/nvda/issues/14704">#14704</A>）
 <LI>支持在手势映射上调用 <CODE>export</CODE> 方法，将其导出到字典中。
-该字典可以通过将其传递给<CODE>GlobalGestureMap</CODE>的构造函数或现有映射上的<CODE>update</CODE>方法来以另一个手势导入。（<A HREF="https://github.com/nvaccess/nvda/issues/14582">#14582</A>）
+该字典可以通过将其传递给 <CODE>GlobalGestureMap</CODE> 的构造函数或现有映射上的 <CODE>update</CODE> 方法来以另一个手势导入。（<A HREF="https://github.com/nvaccess/nvda/issues/14582">#14582</A>）
 <LI><CODE>hwIo.base.IoBase</CODE> 及其派生类现在有一个新的构造函数参数来获取 <CODE>hwIo.ioThread.IoThread</CODE>。
 如果未提供，则使用默认线程。（<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>）
 <LI>为 <CODE>hwIo.ioThread.IoThread</CODE> 添加了一个 <CODE>setWaitableTimer</CODE> 方法，可以使用 python 函数设置可等待计时器。
@@ -214,16 +214,16 @@
 <P></P>
 <H4>弃用</H4>
 <UL>
-<LI>不推荐将 lambda 函数传递给 <CODE>hwIo.ioThread.IoThread.queueAsApc</CODE>。 
+<LI>不推荐将 lambda 函数传递给 <CODE>hwIo.ioThread.IoThread.queueAsApc</CODE>。
 相反，应该是弱引用函数。（<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>）
 <LI>不推荐从 <CODE>hwIo.base</CODE> 导入 <CODE>LPOVERLAPPED_COMPLETION_ROUTINE</CODE>。
 而应该从 <CODE>hwIo.ioThread</CODE> 导入。（<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>）
 <LI><CODE>IoThread.autoDeleteApcReference</CODE> 已被弃用。
 这是在 NVDA 2023.1 中引入的，不属于公开 API 的一部分。
 在删除之前，它表现为无操作，即上下文管理器不产生任何结果。（<A HREF="https://github.com/nvaccess/nvda/issues/14924">#14924</A>）
-<LI><CODE>gui.MainFrame.onAddonsManagerCommand</CODE> 已弃用。请使用 <CODE>gui.MainFrame.onAddonStoreCommand</CODE>代替。（<A HREF="https://github.com/nvaccess/nvda/issues/13985">#13985</A>）
+<LI><CODE>gui.MainFrame.onAddonsManagerCommand</CODE> 已弃用。请使用 <CODE>gui.MainFrame.onAddonStoreCommand</CODE> 代替。（<A HREF="https://github.com/nvaccess/nvda/issues/13985">#13985</A>）
 <LI><CODE>speechDictHandler.speechDictVars.speechDictsPath</CODE> 已弃用。请使用 <CODE>NVDAState.WritePaths.speechDictsDir</CODE> 代替。（<A HREF="https://github.com/nvaccess/nvda/issues/15021">#15021</A>）
-<LI>不推荐从 <CODE>speechDictHandler.dictFormatUpgrade</CODE> 导入 <CODE>voiceDictsPath</CODE> 和 <CODE>voiceDictsBackupPath</CODE>
+<LI>不推荐从 <CODE>speechDictHandler.dictFormatUpgrade</CODE> 导入 <CODE>voiceDictsPath</CODE> 和 <CODE>voiceDictsBackupPath</CODE>。
 而应该使用 <CODE>NVDAState</CODE> 中的 <CODE>WritePaths.voiceDictsDir</CODE> 和 <CODE>WritePaths.voiceDictsBackupDir</CODE>。（<A HREF="https://github.com/nvaccess/nvda/issues/15048">#15048</A>）
 <LI><CODE>config.CONFIG_IN_LOCAL_APPDATA_SUBKEY</CODE> 已弃用。
 而应该使用 <CODE>config.RegistryKey.CONFIG_IN_LOCAL_APPDATA_SUBKEY</CODE>。（<A HREF="https://github.com/nvaccess/nvda/issues/15049">#15049</A>）
