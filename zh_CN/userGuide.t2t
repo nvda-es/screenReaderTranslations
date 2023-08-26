@@ -223,9 +223,9 @@ NVDA 键也可以设定为``大小写锁定``键。
 | 朗读窗口 | ``NVDA+b`` | ``NVDA+b`` | 朗读整个当前窗口（用于对话框）。 |
 | 朗读状态栏 | ``NVDA+end`` | ``NVDA+shift+end`` | 如果 NVDA 能找到状态栏则朗读它。连按两次会拼读此信息。连按三次会复制此信息到剪贴板。 |
 | 读出当前所聚焦对象的快捷键 | ``shift+数字键盘2`` | ``NVDA+control+shift+.`` | 读出当前所聚焦对象的快捷键（或加速键） |
-| 朗读时间 | ``NVDA+f12`` | ``NVDA+f12`` | 按一次读出当前时间。连按两次读出日期。 |
+| 朗读时间 | ``NVDA+f12`` | ``NVDA+f12`` | 按一次读出当前时间。连按两次读出日期。时间与日期将以 Windows 设置中为系统托盘时钟设置的格式读出。 |
 | 朗读文本格式 | ``NVDA+f`` | ``NVDA+f`` | 朗读文本的格式信息。连按两次在一个窗口中显示此信息。 |
-| 读出链接对象网址 | ``NVDA+k`` | ``NVDA+k`` | 读出当前[导航对象 #ObjectNavigation]所在链接指向的网址。连按两次在一个窗口中显示此信息，以便进行更详细的查看。 |
+| 读出链接网址 | ``NVDA+k`` | ``NVDA+k`` | 朗读当前编辑光标下或焦点处所指向的网址。连按两次会在单独窗口中显示，以便于更仔细浏览。 |
 
 +++ 切换需要 NVDA 读出哪些信息 +++[ToggleWhichInformationNVDAReads]
 || 名称 | 台式机键盘 | 笔记本键盘 | 描述 |
@@ -310,6 +310,7 @@ NV Access 还出售[电话支持 https://www.nvaccess.org/product/nvda-telephone
 您必须使用复选框确认您了解这些插件将被禁用之后才可以点击继续按钮。
 还会显示一个按钮来查看将被禁用的插件。
 请参阅[不兼容的插件对话框 #incompatibleAddonsManager]以了解关于这个按钮的详细帮助。
+安装后, 您可以在 [插件商店 #AddonsManager]重新启用不兼容的插件。但这需要由您自行承担潜在的风险。。
 
 +++ 进入 Windows 欢迎界面时启用 NVDA +++[StartAtWindowsLogon]
 此选项允许您选择是否在 Windows 欢迎界面，即在输入密码之前自动启动 NVDA。
@@ -479,10 +480,15 @@ NVDA 目前共有两套被称为键盘布局的快捷键配置：一套是台式
 ++ NVDA 菜单 ++[TheNVDAMenu]
 NVDA 菜单允许您控制 NVDA 设置、访问帮助、保存或者恢复您的配置、定义语音字典、访问额外的工具和退出 NVDA。
 
-当 NVDA 正在运行的时候，如果您想访问 NVDA 菜单，在 Windows 的任何地方都可以通过在键盘上按下“NVDA+N”或者在触摸屏上执行双指双击的动作。
-您也可以通过 Windows 的托盘图标访问 NVDA 菜单。
-您可以在右键单击系统托盘上的 NVDA 图标和按下“Windows 键 + B”访问系统托盘，然后按下光标找到 NVDA 图标后按下右 control 键附近的“应用建（Applications）”（大多数键盘可用）两种方式之间进行选择。
-当菜单显示后，您可以使用方向键进行菜单导航，然后按“Enter”执行当前项目。
+当， NVDA 正在运行的时候，要想在 Windows 的任何地方，弹出 NVDA 菜单，您可执行下面任一操作：
+- 按下键盘上的 ``NVDA+N``。
+- 用双指双击触摸屏。
+- 按下 ``Windows+b`` 访问系统托盘, 按 ``下光标键`` 导航到 NVDA 图标， a接着按下 ``回车键``。
+- 又或者，按下 ``Windows+b`` 访问系统托盘, 按 ``下光标键`` 导航到 NVDA 图标, 接着通过 按下 ``应用（applications）`` 键打开上下文菜单， 该键通常位于键盘上右侧 control 键旁边。
+在没有``应用（applications）``键的键盘上，可按下 ```shift+F10` 替代。
+- 用右键单机位于系统托盘上的 NVDA 图标。
+-
+当弹出了 NVDA 菜单, 您可以使用光标键浏览菜单项，使用回车键激活。
 
 ++ 基本的 NVDA 命令 ++[BasicNVDACommands]
 %kc:beginInclude
@@ -1295,16 +1301,19 @@ NVDA支持命令提示符，PowerShell 以及 Linux 子系统的 Windows 控制�
 
 ++ NVDA设置对话框 ++[NVDASettings]
 %kc:settingsSection: || 名称 | 台式机键盘 | 笔记本键盘 | 描述 |
-[NVDA设置对话框 #NVDASettings]里面有很多设置选项。
-这个对话框有一个列表，里面有设置选项的分类。
-选中一个分类，这一类的设置就在对话框里显示出来。
-按”应用“按钮，立即应用设置而不用关闭对话框。
+NVDA 的许多配置参数位于设置对话框，在该对话框中可以方便地调整它们。
+为了易于使用，对话框中有一个包含配置分类的列表，使得所有设置项分门别类、仅仅有条。
+选中一个分类，该类对应的设置项就在对话框里显示出来。
+要想在分类之间切换，请按 ``tab`` 或者 ``shift+tab`` 移动到分类列表，然后使用上下光标键浏览。
+在对话框中的任何位置，还可以使用 ``ctrl+tab`` 切换到下一个分类，又或者使用 ``ctrl+shift+tab`` 切换到上一个分类。
+
+当修改一个或者多个设置后，使用“应用”按钮，立即应用设置，而对话框不会关闭，您可继续调整其他设置。
 点击“确认”按钮，保存所有您作过的更改，并且关闭对话框。
 
-有的分类有快捷键。
+有的分类具有特定的快捷键。
 按下对应快捷键可以打开NVDA设置对话框，并显示对应分类的设置。
 请注意：默认情况下不是所有的选项都可以使用按键或手势进行访问
-如果您想访问的选项没有专用的快捷键，使用[按键与手势对话框 #InputGestures] 可给该选项添加自定义手势或快捷键。
+如果您经常访问的选项没有专门的快捷键，使用[按键与手势对话框 #InputGestures] 可给该选项添加自定义手势或快捷键。
 
 下面列出NVDA设置对话框里面的各个分类
 
@@ -1584,6 +1593,9 @@ NVDA 正在运行的时候，如果您想在不进入“语音设置”对话框
 ==== 显示消息 ====[BrailleSettingsShowMessages]
 这是一个组合框，可让您选择 NVDA 是否应显示盲文消息，如果显示，那么在多长时间后消失。
 
+要在任何地方切换显示消息, 请在[按键与手势对话框 #InputGestures]中分配一个自定义按键或手势.
+
+
 ==== 消息显示时间(以秒为单位) ====[BrailleSettingsMessageTimeout]
 这是一个数字区域，允许您控制 NVDA 的消息将在点显器上显示多长时间。
 当按下盲文显示器上的光标定位键时，NVDA消息立即被消除，但是当按下触发消息的键时，NVDA消息再次出现。
@@ -1660,6 +1672,22 @@ NVDA 正在运行的时候，如果您想在不进入“语音设置”对话框
 出于此目的，该选项默认设置为启用，即在盲文滚动时会打断语音朗读。
 
 反之，禁用该选项则可以在阅读盲文的同时听到语音朗读。
+
+==== 盲文选中指示光标 ====[BrailleSettingsShowSelection]
+: 默认
+  启用
+: 可选
+  默认 (启用), 启用, 禁用
+:
+
+该选项确定盲文选中指示光标（第7点和第8点）是否显示。
+
+默认情况下，该选项处于启用状态，因此会显示选中指示光标。
+阅读时选中指示器可能会分散注意力。
+禁用该选项可以增加阅读时专注力。
+
+要想在任何地方切换盲文选中指示光标，请在[按键与手势对话框 #InputGestures]中分配一个自定义按键或手势。
+
 
 +++ 选择点显器(NVDA+control+a) +++[SelectBrailleDisplay]
 在盲文分类里面点击“更改...”按钮，会打开一个对话框。您可以在这里更改 NVDA 使用的点显器。
@@ -2120,6 +2148,7 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 
 ==== 识别用语言 ====[Win10OcrSettingsRecognitionLanguage]
 此组合框允许您选择用于光学字符识别的语言。
+要在任何地方循环切换可用的语言，请在[按键与手势对话框 #InputGestures]分配一个自定义手势或快捷键。
 
 +++ 高级设置 +++
 请注意！ 此类别中的设置适用于高级用户，如果随意修改，可能会导致NVDA无法正常运行。
@@ -2135,9 +2164,9 @@ NVDA设置对话框中的“鼠标设置”分类允许NVDA跟踪鼠标，用嘟
 
 ==== 允许从开发者实验目录加载代码 ====[AdvancedSettingsEnableScratchpad]
 在为NVDA开发插件时，能够边写边测试会给开发者带来很大便利。
-启用此选项后，NVDA允许从NVDA用户配置目录中特殊的开发者实验目录目录加载自定义appModules，globalPlugins，brailleDisplayDrivers和synthDrivers。
-以前NVDA会直接从用户配置目录加载自定义代码而且不提供关闭加载的选项，这种做法不太安全。
-默认情况下，此选项处于关闭状态，可以确保用户仅仅在明确了解的情况下，用NVDA运行未经测试的代码。
+启用此选项后，NVDA 允许从 NVDA 用户配置目录中特殊的开发者实验目录加载自定义 appModules、globalPlugins、brailleDisplayDrivers、synthDrivers 和 vision enhancement。
+作为插件的等效模块，这些插件在 NVDA 启动时加载。对于 appModules 和 globalPlugins，[重新加载插件 #ReloadPlugins] 时也会被加载。。
+默认情况下，此选项处于关闭状态，可以确保用户仅仅在明确了解的情况下，NVDA 才会运行未经测试的代码。
 如果您希望将代码分发给其他人，则应将其打包为NVDA插件。
 
 ==== 打开开发者实验目录 ====[AdvancedSettingsOpenScratchpadDir]
@@ -2294,6 +2323,19 @@ Diff 算法组合框内有三个选项：
 在某些情况下，文本背景可能是完全透明的，文本分层在其他一些 GUI 元素上。
 使用几个历史上流行的 GUI API，文本可能会以透明背景渲染，但在视觉上背景颜色是准确的。
 
+== 音频输出使用 WASAPI == ====[WASAPI]
+此选项通过 Windows 音频会话 API （WASAPI） 进行音频输出。
+WASAPI 是一个更现代的音频框架，可以提高 NVDA 音频输出的响应性、性能和稳定性，包括语音和声音。
+此选项在默认情况下处于启用状态。
+更改此选项后，您需要重新启动NVDA才能使更改生效。
+
+==== NVDA 音效音量跟随语音音量 ====[SoundVolumeFollowsVoice]
+启用此选项后，NVDA 音效和 Beep 蜂鸣声的音量会跟随您正在使用的语音音量设置。
+如果降低语音音量，音效的音量也会降低。
+同样，若增大语音的音量，音效的音量也会增大。
+此选项仅在启用了“音频输出使用 WASAPI”的情况下生效。
+默认情况下此选项处于禁用状态。
+
 ==== 调试日志 ====[AdvancedSettingsDebugLoggingCategories]
 此列表中的复选框允许您在NVDA日志中启用特定类别的调试信息。
 记录这些信息可能会影响性能而且会增大日志文件的体积。
@@ -2353,7 +2395,11 @@ NVDA 的语音字典比之单词替换更为强大。
 您可以通过在“查找”编辑框中输入符号或符号替换的一部分来寻找符号。
 
 - “替换文本”编辑区域允许您定义用来替换此标点的文本。
-- 使用“标点符号级别”区域，您可以为希望读出的标点指定更低的级别。
+- 使用“标点符号级别”区域，您可以为希望读出的标点指定更低的级别（无、少数、多数或全部）。
+您也可以将级别设置为逐字移动；在这种情况下，无论使用的符号级别如何，都不会读出该符号，以下两种情况除外：
+ - 逐字服浏览时。
+ - 当 NVDA 拼读包含该符号的文本时。
+ -
 - “发送实际标点到合成器”区域定义核实把标点自身而不是替换文本传送到合成器。
 这对于让合成器读取该标点时的语调或停顿发生改变非常有用。
 例如，一个逗号可以让合成器暂停。
@@ -2519,6 +2565,126 @@ NVDA 的语音字典比之单词替换更为强大。
 通常情况下，不要接触这些配置文件。
 要想更改 NVDA 在欢迎屏幕和 UAC 屏幕时的配置，在登录 Windows 之后修改您的 NVDA 配置，保存您的配置，然后按下“常规设置”对话框的“应用以保存的配置到欢迎界面和其他安全界面”按钮。
 
++ 插件和插件商店 +[AddonsManager]
+插件是为 NVDA 提供新功能或更改现有功能的软件包。
+这些插件往往由 NVDA 社区以及外部商业供应商等组织开发。
+插件可以执行以下任一操作：
+- 增加或增强对某些应用程序的支持能力。
+- 提供对三方盲文点显器或语音合成器的支持。
+- 添加或更改 NVDA 的功能。
+-
+
+NVDA 的插件商店可以让您浏览和管理插件。
+插件商店中提供的所有插件都可免费下载。
+然而，其中个别插件可能要求用户在使用前购买许可证或额外付费。
+一个典型的例子是个别商业版语音合成器。
+如果您在安装了需要付费的插件后不想使用了，您可以轻松移除该插件。
+
+您可以从 NVDA 菜单的“工具”子菜单打开插件商店。
+若需要从任意位置打开插件商店，请在[按键与手势对话框 #InputGestures]内分配一个自定义手势。
+
+++ 浏览插件 ++[AddonStoreBrowsing]
+打开插件商店后，会显示一个插件列表。
+在插件商店内您可以随时按下 ``alt+a`` 跳转到列表。
+如果您尚未安装插件，插件商店会停留在可安装的插件列表。
+如果您已经安装了插件，列表内将显示当前安装的插件。
+
+按向上和向下箭头键移动到对应插件来选中某个插件，选中后将显示该插件的详细信息。
+对于已选中的插件有与之关联的操作，您可以通过[操作菜单 #AddonStoreActions]访问这些操作，例如安装、帮助、禁用和移除。
+可用的操作会根据是否安装插件以及是否启用或禁用而有所差异。
+
++++ 插件选项卡组 +++[AddonStoreFilterStatus]
+对于已安装的、可更新的、可用的和不兼容的插件有不同的选项卡。
+可以使用 ``ctrl+tab`` 切换不同的选项卡。
+您还可以按 ``tab`` 到选项卡组，用左右箭头进行切换。
+
++++ 过滤已启用或已禁用的插件 +++[AddonStoreFilterEnabled]
+通常，已安装的插件处于“启用”状态，这意味着该插件正在 NVDA 中运行且可用。
+但是，您安装的某些插件可能会被设置为“禁用”状态。
+这意味着，这些插件不可用，其功能在您当前 NVDA 会话中无效。
+您也可能会因为插件与插件或与应用程序之间存在冲突而选择禁用某个插件。
+如果在 NVDA 升级过程中发现某些插件不兼容，NVDA 也可能会禁用这些插件；但在这种情况下，您会收到警告。
+如果您长时间用不到某些插件，又想保留他们以备不时之需，您也可以选择禁用插件。
+
+已安装和不兼容的插件列表可以按其启用​​或禁用状态进行过滤。
+默认会显示已启用和已禁用的插件。
+
++++ 包含不兼容插件 +++[AddonStoreFilterIncompatible]
+在“可更新的插件”和“可安装的插件”中可以选择包含[不兼容的插件 #incompatibleAddonsManager]进行安装。
+
++++ 按通道过滤插件 +++[AddonStoreFilterChannel]
+插件最多可以通过四个通道发布：
+- 稳定版： 开发者使用 NVDA 的稳定版对其进行了测试后发布。
+- 测试版： 插件可能需要进一步测试，公开发布以便收集用户反馈。
+建议尝鲜用户选用。
+- 开发板： 建议插件开发者使用此通道来测试未发布的 API 变更。
+使用 NVDA alpha 版的测试用户可能需要使用此开发板插件。
+- 外部： 从插件商店的外部源安装的插件。
+-
+
+如需仅列出来自特定通道的插件，请在“通道”组合框内选择相应的通道。
+
++++ 搜索插件 +++[AddonStoreFilterSearch]
+要搜索插件，请使用“搜索”编辑框。
+您可以从插件列表按 ``shift+tab`` 找到该编辑框。
+输入一两个有关您要搜索的插件类型的关键词，然后按 ``tab`` 键进入插件列表。
+如果可以在插件 ID、显示名称、发布者、作者或说明等字段中找到搜索的关键词，则会列出插件。
+
+++ 插件操作 ++[AddonStoreActions]
+插件具有与之关联的操作，例如安装、帮助、禁用和移除
+对于插件列表中的插件，可以通过按``applications``、``回车``、右键单击或双击该插件打开的菜单来访问这些操作。
+还可以通过选中插件详细信息中的“操作”按钮访问该菜单。
+
++++ 安装插件 +++[AddonStoreInstalling]
+尽管 NVDA 插件商店中提供了某款插件，并不意味着该插件已获得 NV Access 或其他任何人的批准或审查。
+仅安装您信任的来源的插件非常重要。
+插件的功能在 NVDA 中不受限。
+插件可以访问您的个人数据甚至整个系统。
+
+您可以[浏览可用的插件 #AddonStoreBrowsing]来安装和更新插件。
+从“可安装的插件”或“可更新的插件”选项卡中选择一个插件。
+然后使用更新、安装或替换操作开始安装。
+
+要安装从插件商店外部获取的插件，请按“从外部源安装”按钮。
+这可以让您在计算机或网络上的某个位置浏览插件包（``.nvda-addon``文件）。
+打开插件包后，安装过程将开始。
+
+如果您在系统上已安装并运行了 NVDA，您还可以直接从浏览器或文件资源管理器打开插件文件以开始安装过程。
+从外部源安装插件时，NVDA 会要求您确认安装。
+安装插件后，必须重新启动 NVDA 才能使插件生效，但如果您还有其他插件需要安装或更新，则可以推迟重新启动 NVDA。
+
++++ 移除插件 +++[AddonStoreRemoving]
+要移除特定插件，请从列表中选择该插件并使用“移除”操作。
+NVDA 将询问您是否确认移除。
+与安装一样，必须重新启动 NVDA 才能完全删除该插件。
+在重启之前，列表中该插件的状态会显示为“待删除”。
+
++++ 禁用和启用插件 +++[AddonStoreDisablingEnabling]
+要禁用特定插件，请使用“禁用”操作。
+要启用先前禁用的插件，请使用“启用”操作。
+如果插件状态显示“已启用”，您可以禁用该插件；反之，如果插件“已禁用”，则可以启用。
+每次使用启用/禁用操作时，插件状态都会发生变化，以指示 NVDA 重新启动时会发生什么情况。
+如果该插件之前被“禁用”，则状态将显示“已启用，重启后生效”。
+如果该插件之前已“启用”，则状态将显示“已禁用，重启后生效”。
+就像安装或删除插件时一样，您需要重新启动 NVDA 才能使更改生效。
+
+++ 不兼容的插件 ++[incompatibleAddonsManager]
+某些较旧的插件可能已经不兼容您当前版本的 NVDA 了。
+反之，若您使用的是旧版本的 NVDA，某些较新的插件可能也无法向下兼容。
+若您尝试安装不兼容的插件会显示错误，提示为什么该插件被视为不兼容。
+
+对于较旧的插件，您可以自行承担可能的风险，忽略兼容性以强行安装不兼容的插件。
+不兼容的插件可能无法在您当前版本的 NVDA 中使用，尤其可能导致 NVDA 不稳定或意外行为，包括崩溃。
+您可以在启用或安装插件时忽略兼容性。
+如果不兼容的插件导致问题，您可以选择禁用或移除相应插件。
+
+如果您在使用 NVDA 过程中遇到问题，并且最近更新或安装了某个插件，尤其安装或更新了不兼容的插件，您可能需要在禁用所有插件的情况下暂时运行 NVDA 以移除可能导致问题的插件。
+要在禁用所有插件的情况下重新启动 NVDA，请在退出 NVDA 时选择相应选项。
+或者，使用[命令行选项 #CommandLineOptions]`` --disable-addons``。
+
+您可以在[可用和可更新的插件选项卡 #AddonStoreFilterStatus]浏览可用的不兼容插件。
+您可以在[不兼容的插件选项卡 #AddonStoreFilterStatus]浏览已安装的不兼容插件。
+
 + 附加工具 +[ExtraTools]
 
 ++ 日志查看器 ++[LogViewer]
@@ -2569,75 +2735,21 @@ NVDA 的语音字典比之单词替换更为强大。
 
 ++ Python 控制台 ++[PythonConsole]
 NVDA工具菜单下面的 NVDA Python 控制台是调试NVDA、了解NVDA内部原理、以及查看其他软件无障碍支持情况的工具
-想详细了解请查看下面链接里的英文文档 [NVDA开发文档 https://www.nvaccess.org/files/nvda/documentation/developerGuide.html]。
+想了解更多信息请查看 [NVDA开发文档 https://www.nvaccess.org/files/nvda/documentation/developerGuide.html]。
 
-++ 插件管理器 ++[AddonsManager]
-您可以通过 NVDA 的“工具”菜单的“插件管理器”访问插件管理器，插件管理器允许您安装、移除、启用或停用 NVDA 的插件。
-您可以在社区找到这些插件包，它们包含定制的代码，为您添加或更改 NVDA 甚至是额外的点显器和语音合成器的特性。
-
-插件管理器包含 NVDA 当前用户配置中安装的所有插件的列表。
-每个插件都显示了她的包名称、版本和作者，可以通过选中插件后点击“关于”插件的按钮来查看更详细的描述或 URL(地址)。
-如果选择的插件拥有可用的帮助，您可以通过点击“插件帮助”按钮访问。
-
-要想浏览并下载在线的可用插件包，点击“获取插件”按钮。
-此按钮会打开[NVDA 插件页面 https://addons.nvda-project.org/]。
-如果 NVDA 已经安装并运行在了您的系统上，您可以使用浏览器直接打开插件，开始下面将要叙述的安装进程。
-否则，保存插件并按照下面的教程进行。
-
-要想安装您以前获取的插件，请点击“安装”按钮。
-插件管理器允许您浏览插件文件。(.nvda-addon 文件)会在您的电脑或互联网的某处。
-当您点击打开时，安装进程将随之开始。
-
-当一个插件正在被安装的时候，NVDA 首先会向您确认是否真的要安装。
-这些附加的插件可以执行的操作理论上是没有限制的，如果您正在使用安装版本，从来源可靠的地方获取插件是非常重要的，它们可以访问您的用户数据甚至整个系统。
-插件安装完成之后， NVDA 必须重新启动已使得插件可以开始运行。
-待这些都完成之后，插件的“安装”状态就会显示在列表内。
-
-要想删除插件，可以在列表中选中插件之后点击“移除”按钮。
-NVDA 会询问您是否真的要这样做。
-当卸载完成之后，NVDA 必须重新启动以使插件能够完全地被移除。
-待这些都完成之后，那个插件的“移除”状态就会显示在列表内。
-
-要想停用插件，点击“停用”按钮
-要想启用先前停用的插件，点击“启用”按钮。
-当插件状态显示为“正在运行”或“已启用”时，您可以停用该插件；当状态显示为“挂起”或“已停用”时，您可以启用该插件。
-每次点击“启用”和“停用”按钮后，插件状态栏都能实时地显示在下次 NVDA 重新启动时会发生什么变化。
-如果之前停用了插件，状态一栏会显示“重启后启用”。
-如果之前插件是启用的，状态一栏会显示“重启后禁用”。
-就像是添加或删除插件一样，您必须重新启动 NVDA 才能使之生效。
-
-管理器也包含“关闭”按钮，使用它可以关闭对话框。
-如果您已经安装卸载插件或修改了插件的状态，NVDA 会首先询问您是否要重新启动以使修改生效。
-
-旧插件可能不兼容新版NVDA。
-为新版NVDA编写的插件也可能不兼容旧版NVDA。
-安装这些插件时，NVDA会报错并提示原因。
-您可以在插件管理器内找到“查看不兼容的插件”这个按钮，点击这个按钮就可以查看这些插件。
-
-要想在任何地方访问插件管理器，请在[按键与手势对话框 #InputGestures]定义一个自定义手势或快捷键。
-
-+++ 管理不兼容的插件 +++[incompatibleAddonsManager]
-可以通过插件管理器中的“查看不兼容的插件”按钮访问不兼容的加插件管理器，允许您检查任何不兼容的插件以及不兼容的原因。
-如果NVDA进行重大更改之后插件尚未更新，或者它们依赖于您正在使用的NVDA版本中未提供的功能，NVDA则会认为插件不兼容。
-不兼容的插件管理器有一条简短的消息来解释它的用途以及兼容的 NVDA 版本。
-不兼容的插件显示在列表中，其中包含以下条目：
-+ 名称， 插件名称
-+ 版本， 插件版本
-+ 不兼容的原因， 解释为什么插件不兼容
-+
-
-不兼容插件管理器里面也有关于插件按钮
-点击这个按钮会打开一个对话框，里面有这个插件的详细信息，可以帮你找到开发者的联系方式。
+++ 插件商店 ++
+访问该菜单会打开 [NVDA 插件商店 #AddonsManager]。
+想了解更多信息请查看：[插件和插件商店 #AddonsManager]。
 
 ++ 创建便携版 ++[CreatePortableCopy]
-打开一个对话框，在里面可以从安装的NVDA创建便携版。
-如果运行的是是便携版，这个选项会变成安装NVDA。
+打开一个对话框，在此对话框中可以使用已安装的 NVDA 创建便携版。
+如果当前运行的是便携版，这个选项会变成安装NVDA。
 
-在该PC上创建NVDA便携版或安装NVDA的对话框将提示您选择一个文件夹路径，NVDA应在其中创建便携版或在其中安装NVDA。
+在该 PC 上创建 NVDA 便携版或安装 NVDA 的对话框将提示您选择一个目录，NVDA 应在其中创建便携版或安装 NVDA 到该目录下。
 
-In this dialog you can enable or disable the following:
-- Copy current user configuration (this includes the files in %appdata%\roaming\NVDA or in the user configuration of your portable copy and includes also addons and other modules)
-- Start the new portable copy after creation or start NVDA after installation (starts NVDA automatically after the portable copy creation or the installation)
+在此对话框中，您可以启用或禁用以下功能：
+- 拷贝当前用户配置（包括 %appdata%\NVDA 中的文件或便携版用户配置，目录中的文件，还包括插件和其他模块）
+- 创建并自动启动便携版或安装后启动 NVDA（在便携版创建完成或安装完成后自动启动 NVDA）
 -
 
 ++ 运行 COM 注册修复工具 ++[RunCOMRegistrationFixingTool]
@@ -2943,6 +3055,15 @@ Please see your display's documentation for descriptions of where these keys can
 | Move braille display to previous line | d1 |
 | Move braille display to next line | d3 |
 | Route to braille cell | routing |
+| shift+tab key | space+dot1+dot3 |
+| tab key | space+dot4+dot6 |
+| alt key | space+dot1+dot3+dot4 (space+m) |
+| escape key | space+dot1+dot5 (space+e) |
+| windows key | space+dot3+dot4 |
+| alt+tab key | space+dot2+dot3+dot4+dot5 (space+t) |
+| NVDA Menu | space+dot1+dot3+dot4+dot5 (space+n) |
+| windows+d key (minimize all applications) | space+dot1+dot4+dot5 (space+d) |
+| Say all | space+dot1+dot2+dot3+dot4+dot5+dot6 |
 
 For displays which have a joystick:
 || Name | Key |
@@ -3658,6 +3779,10 @@ Please see the display's documentation for descriptions of where these keys can 
 | Moves the navigator object to the next object | ``f6`` |
 | Reports the current navigator object | ``f7`` |
 | Reports information about the location of the text or object at the review cursor | ``f8`` |
+| Shows braille settings | ``f1+home1``, ``f9+home2`` |
+| Reads status bar and moves navigator object into it | ``f1+end1``, ``f9+end2`` |
+| Cycle the braille cursor shape | ``f1+eCursor1``, ``f9+eCursor2`` |
+| Toggle the braille cursor | ``f1+cursor1``, ``f9+cursor2`` |
 | Performs the default action on the current navigator object | ``f7+f8`` |
 | Reports date/time | ``f9`` |
 | Reports battery status and time remaining if AC is not plugged in | ``f10`` |
@@ -3687,19 +3812,17 @@ NVDA 的点显器自动检测功能也可以识别任何使用该协议的点显
 || Name | Key |
 | Scroll braille display back | pan left or rocker up |
 | Scroll braille display forward | pan right or rocker down |
-| Move braille display to previous line | space + dot1 |
-| Move braille display to next line | space + dot4 |
 | Route to braille cell | routing set 1 |
 | Toggle braille tethered to | up+down |
-| upArrow key | joystick up |
-| downArrow key | joystick down |
-| leftArrow key | space+dot3 or joystick left |
-| rightArrow key | space+dot6 or joystick right |
+| upArrow key | joystick up, dpad up or space+dot1 |
+| downArrow key | joystick down, dpad down or space+dot4 |
+| leftArrow key | space+dot3, joystick left  or dpad left |
+| rightArrow key | space+dot6, joystick right or dpad right |
 | shift+tab key | space+dot1+dot3 |
 | tab key | space+dot4+dot6 |
 | alt key | space+dot1+dot3+dot4 (space+m) |
 | escape key | space+dot1+dot5 (space+e) |
-| enter key | dot8 or joystick center |
+| enter key | dot8, joystick center or dpad center |
 | windows key | space+dot3+dot4 |
 | alt+tab key | space+dot2+dot3+dot4+dot5 (space+t) |
 | NVDA Menu | space+dot1+dot3+dot4+dot5 (space+n) |
