@@ -179,40 +179,40 @@
 </UL>
 
 <P></P>
-<H3>Changes for Developers</H3>
+<H3>开发者需要了解的变化</H3>
 <P>
-Please refer to <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">the developer guide</A> for information on NVDA's API deprecation and removal process.
+有关 NVDA API 弃用和删除流程的相关信息请参阅 <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">开发者文档</A>.
 </P>
 <UL>
-<LI>Suggested conventions have been added to the add-on manifest specification.
-These are optional for NVDA compatibility, but are encouraged or required for submitting to the Add-on Store. (<A HREF="https://github.com/nvaccess/nvda/issues/14754">#14754</A>)
+<LI>在插件清单规范中添加了建议的约定。
+对于 NVDA 兼容性而言，目前这些是可选的，但鼓励或要求提交到插件商店时遵循这些约定。（<A HREF="https://github.com/nvaccess/nvda/issues/14754">#14754</A>）
   <UL>
-  <LI>Use <CODE>lowerCamelCase</CODE> for the name field.
-  <LI>Use <CODE>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</CODE> format for the version field (required for add-on datastore).
-  <LI>Use <CODE>https://</CODE> as the schema for the url field (required for add-on datastore).
+  <LI>对名称字段使用“lowerCamelCase”（驼峰命名法）。
+  <LI>版本字段使用 <CODE>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</CODE> 的格式（插件商店元数据需要）。
+  <LI>URL 字段使用 <CODE>https://</CODE> 协议（插件商店元数据需要）。
   </UL>
-<LI>Added a new extension point type called <CODE>Chain</CODE>, which can be used to iterate over iterables returned by registered handlers. (<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>)
-<LI>Added the <CODE>bdDetect.scanForDevices</CODE> extension point.
-Handlers can be registered that yield <CODE>BrailleDisplayDriver/DeviceMatch</CODE> pairs that don't fit in existing categories, like USB or Bluetooth. (<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>)
-<LI>Added extension point: <CODE>synthDriverHandler.synthChanged</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/14618">#14618</A>)
-<LI>The NVDA Synth Settings Ring now caches available setting values the first time they're needed, rather than when loading the synthesizer. (<A HREF="https://github.com/nvaccess/nvda/issues/14704">#14704</A>)
-<LI>You can now call the export method on a gesture map to export it to a dictionary.
-This dictionary can be imported in another gesture by passing it either to the constructor of <CODE>GlobalGestureMap</CODE> or to the update method on an existing map. (<A HREF="https://github.com/nvaccess/nvda/issues/14582">#14582</A>)
-<LI><CODE>hwIo.base.IoBase</CODE> and its derivatives now have a new constructor parameter to take a <CODE>hwIo.ioThread.IoThread</CODE>.
-If not provided, the default thread is used. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
-<LI><CODE>hwIo.ioThread.IoThread</CODE> now has a <CODE>setWaitableTimer</CODE> method to set a waitable timer using a python function.
-Similarly, the new <CODE>getCompletionRoutine</CODE> method allows you to convert a python method into a completion routine safely. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
-<LI><CODE>offsets.OffsetsTextInfo._get_boundingRects</CODE> should now always return <CODE>List[locationHelper.rectLTWH]</CODE> as expected for a subclass of <CODE>textInfos.TextInfo</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12424">#12424</A>)
-<LI><CODE>highlight-color</CODE> is now a format field attribute. (<A HREF="https://github.com/nvaccess/nvda/issues/14610">#14610</A>)
-<LI>NVDA should more accurately determine if a logged message is coming from NVDA core. (<A HREF="https://github.com/nvaccess/nvda/issues/14812">#14812</A>)
-<LI>NVDA will no longer log inaccurate warnings or errors about deprecated appModules. (<A HREF="https://github.com/nvaccess/nvda/issues/14806">#14806</A>)
-<LI>All NVDA extension points are now briefly described in a new, dedicated chapter in the Developer Guide. (<A HREF="https://github.com/nvaccess/nvda/issues/14648">#14648</A>)
-<LI><CODE>scons checkpot</CODE> will no longer check the <CODE>userConfig</CODE> subfolder anymore. (<A HREF="https://github.com/nvaccess/nvda/issues/14820">#14820</A>)
-<LI>Translatable strings can now be defined with a singular and a plural form using <CODE>ngettext</CODE> and <CODE>npgettext</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/12445">#12445</A>)
+<LI>添加了一个名为<CODE>Chain</CODE>的新扩展点类型，可用于迭代注册处理器返回的可迭代对象。（<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>）
+<LI>添加了 <CODE>bdDetect.scanForDevices</CODE> 扩展点。
+注册处理器可以来生成不适合现有类别（例如 USB 或蓝牙）的 <CODE>BrailleDisplayDriver/DeviceMatch</CODE> 对。（<A HREF="https://github.com/nvaccess/nvda/issues/14531">#14531</A>）
+<LI>添加了 <CODE>synthDriverHandler.synthChanged</CODE> 扩展点。（<A HREF="https://github.com/nvaccess/nvda/issues/14618">#14618</A>）
+<LI>NVDA 语音合成器设置选项现在会在第一次需要时缓存可用的设置值，而不是在加载合成器时。（<A HREF="https://github.com/nvaccess/nvda/issues/14704">#14704</A>）
+<LI>支持在手势映射上调用 <CODE>export</CODE> 方法，将其导出到字典中。
+该字典可以通过将其传递给<CODE>GlobalGestureMap</CODE>的构造函数或现有映射上的<CODE>update</CODE>方法来以另一个手势导入。（<A HREF="https://github.com/nvaccess/nvda/issues/14582">#14582</A>）
+<LI><CODE>hwIo.base.IoBase</CODE> 及其派生类现在有一个新的构造函数参数来获取 <CODE>hwIo.ioThread.IoThread</CODE>。
+如果未提供，则使用默认线程。（<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>）
+<LI>为 <CODE>hwIo.ioThread.IoThread</CODE> 添加了一个 <CODE>setWaitableTimer</CODE> 方法，可以使用 python 函数设置可等待计时器。
+类似地，新的 <CODE>getCompletionRoutine</CODE> 方法可以让您安全地将 python 方法转换为完成例程。（<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>）
+<LI><CODE>offsets.OffsetsTextInfo._get_boundingRects</CODE> 始终返回 <CODE>List[locationHelper.rectLTWH]</CODE>，这与 <CODE>textInfos.TextInfo</CODE> 的子类的预期一致。（<A HREF="https://github.com/nvaccess/nvda/issues/12424">#12424</A>）
+<LI>现在 <CODE>highlight-color</CODE> 是格式字段的一个属性。（<A HREF="https://github.com/nvaccess/nvda/issues/14610">#14610</A>）
+<LI>NVDA 现在可以更准确地判断日志记录的消息是否来自 NVDA 核心。（<A HREF="https://github.com/nvaccess/nvda/issues/14812">#14812</A>）
+<LI>NVDA 现在不会再记录有关已弃用的 appModule 的不准确警告或错误。（<A HREF="https://github.com/nvaccess/nvda/issues/14806">#14806</A>）
+<LI>所有 NVDA 扩展点都在开发者指南的新专用章节中进行了简要描述。（<A HREF="https://github.com/nvaccess/nvda/issues/14648">#14648</A>）
+<LI>现在 <CODE>scons checkpot</CODE> 不会检查 <CODE>userConfig</CODE> 子目录。（<A HREF="https://github.com/nvaccess/nvda/issues/14820">#14820</A>）
+<LI>支持使用 <CODE>ngettext</CODE> 和 <CODE>npgettext</CODE> 以单数和复数形式定义可翻译字符串。（<A HREF="https://github.com/nvaccess/nvda/issues/12445">#12445</A>）
 </UL>
 
 <P></P>
-<H4>Deprecations</H4>
+<H4>弃用</H4>
 <UL>
 <LI>Passing lambda functions to <CODE>hwIo.ioThread.IoThread.queueAsApc</CODE> is deprecated.
 Instead, functions should be weakly referenceable. (<A HREF="https://github.com/nvaccess/nvda/issues/14627">#14627</A>)
