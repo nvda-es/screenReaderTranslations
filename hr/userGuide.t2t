@@ -589,6 +589,12 @@ Premještanjem na objekt popisa koji sadrži stavku, vratit će vas na popis.
 Tada se možete premjestiti izvan popisa, ako želite pristupiti drugim objektima.
 Slično tome, alatna traka sadrži kontrole, dakle, morate ući u alatnu traku, da biste pristupili kontrolama na alatnoj traci.
 
+Ako ipak želite da se krećete između svakog pojedinačnog objekta na sistemu, možete koristiti komande da se pomerite na prethodni ili sledeći objekat u  ravnom prikazu.
+Na primer, ako se krećete do sledećeg objekta u ovom ravnom prikazu a trenutni objekat u sebi sadrži druge objekte, NVDA će se automatski prebaciti na prvij unutrašnji objekat.
+U suprotnom, ako trenutni objekat ne sadrži objekte, NVDA će se prebaciti na sledeći objekat u trenutnom nivou hierarhije.
+Ako nema takvog sledećeg objekta, NVDA će pokušati da pronađe sledeći objekat u hierarhiji u zavisnosti od unutrašnjih objekata dok više nema objekata na koje se možete prebaciti.
+Ista pravila se primenjuju i kada se krećete nazad u hierarhiji.
+
 Objekt koji se trenutačno pregledava se zove navigacijski objekt.
 Kad se pomaknete na određeni objekt, možete pregledati njegov sadržaj pomoću prečaca za [Pregledavanje teksta #ReviewingText], dok ste u modusu [Pregled objekta #ObjectReview].
 Kad je [Vizualno praćenje #VisionFocusHighlight] aktivirano, pozicija navigacijskog objekta se prikazuje na ekranu.
@@ -602,9 +608,11 @@ Da biste se kretali po objektima, koristite sljedeće prečace:
 || Naziv | Tipka za stolna računala | Tipka za prijenosna računala | Dodir | Opis |
 | Izvijesti o trenutačnom objektu | NVDA+num5 | NVDA+šift+o | nema | Izvještava o trenutačnom navigacijskom objektu. Kad se dvaput pritisne, slovka objekt. Kad se triput pritisne, kopira ime i vrijednost tog objekta u međuspremnik. |
 | Premjesti se na sadržavajući objekt | NVDA+num8 | NVDA+šift+strelicaGore | klizni gore (objektni modus) | Premješta se na objekt koji sadrži trenutačni navigacijski objekt |
-| Premjesti se na prethodni objekt | NVDA+num4 | NVDA+šift+strelicaLijevo | klizni lijevo (objektni modus) | Premješta se na objekt ispred trenutačnog navigacijskog objekta |
-| Premjesti se na sljedeći objekt | NVDA+num6 | NVDA+šift+strelicaDesno | klizni desno (objektni modus) | Premješta se na objekt iza trenutačnog navigacijskog objekta |
-| Premjesti se na sljedeći sadržavajući objekt | NVDA+num2 | NVDA+šift+strelicaDolje | klizni dolje (objektni modus) | Premješta se na prvi objekt sadržan u navigacijskom objektu |
+| Premesti se na prethodni objekat | NVDA+numeričko4 | NVDA+šift+strelica levo | nema | pomera se na objekat pre trenutnog navigacionog objekta |
+| Premesti se na prethodni objekat u ravnom prikazu | NVDA+numeričko9 | NVDA+šift+[ | prevlačenje levo (režim objekata) | Premešta se na prethodni objekat u ravnom prikazu hierarhije navigacije objekata |
+| Premesti se na sledeći objekat | NVDA+numeričko6 | NVDA+šift+strelica desno | nema | premešta se na objekat posle trenutnog navigacionog objekta |
+| Premesti se na sledeći objekat u ravnom prikazu | NVDA+numeričko3 | NVDA+šift+] | prevlačenje desno (režim objekata) | Premešta se na sledeći objekat u ravnom prikazu hierarhije navigacije objekata |
+|| Premjesti se na sljedeći sadržavajući objekt | NVDA+num2 | NVDA+šift+strelicaDolje | klizni dolje (objektni modus) | Premješta se na prvi objekt sadržan u navigacijskom objektu |
 | Premjesti se na objekt fokusa | NVDA+numMinus | NVDA+backspace | nema | Premješta se na objekt koji je trenutačno u fokusu sustava te premješta kursor pregleda na poziciju kursora sustava, ako se prikazuje |
 | Aktiviraj trenutačni navigacijski objekt | NVDA+numEnter | NVDA+enter | dvostruki dodir | Aktivira trenutačni navigacijski objekt (slično pritiskanjem miša ili razmaknice kad postoji fokus sustava) |
 | Premjesti fokus sustava ili kursor na trenutačnu poziciju | NVDA+šift+numMinus | NVDA+šift+backspace | nema | Kad se pritisne jedanput, premješta fokus sustava na trenutačni navigacijski objekt. Kad se pritisne dvaput, premješta kursor sustava na trenutačnu poziciju preglednog kursora |
@@ -661,7 +669,6 @@ Raspored je opisan kako slijedi:
 
 ++ Modusi pregleda ++[ReviewModes]
 NVDA [prečaci za pregledavanje teksta #ReviewingText] mogu služiti za pregled sadržaja u trenutačnom navigacijskom objektu, trenutačnom dokumentu ili ekranu, ovisno o odabranom modusu pregleda.
-Modusi pregleda zamijenjuju stariji koncept pregleda ekrana koji se koristio u starijim verzijama NVDA čitača.
 
 Sljedeći prečaci se koriste za prebacivanje između modusa pregleda:
 %kc:beginInclude
@@ -1610,6 +1617,28 @@ U tom slučaju, NVDA neće pratiti pregledni kursor tijekom objektne navigacije 
 Ako želite da NVDA prati pregled objekta i kursor pregleda umjesto toga, Morate postaviti brajicu povezanu na pregled.
 U tom slučaju, brajica neće pratiti kursor sustava i fokus.
 
+==== Pomeranje sistemskog kursora kada se prebacuje pregledni kursor ====[BrailleSettingsReviewRoutingMovesSystemCaret]
+: Podrazumevano
+  Nikada
+: Opcije
+  Podrazumevano (nikada), nikada, samo pri automatskom vezivanju, uvek
+:
+
+Ovo podešavanje određuje da li sistemski kursor takođe treba da se pomera pritiskanjem tastera za prebacivanje.
+Ova opcija je podrazumevano podešena na nikada, što znači da prebacivanje nikada neće pomerati kursor kada se prebacuje pregledni kursor.
+
+Kada je ova opcija podešena na uvek, i [vezivanje brajevog reda #BrailleTether] je podešeno na "automatski" ili "za pregled", pritiskanje tastera za prebacivanje kursora će takođe pomeriti sistemski kursor ili fokus kada je podržano.
+Kada je trenutni režim pregleda [pregled ekrana #ScreenReview], nema fizičkog kursora.
+U tom slučaju, NVDA pokušava da se fokusira na objekat ispod teksta na koji se prebacujete.
+Isto se primenjuje i na [pregled objekata #ObjectReview].
+
+Takođe možete da podesite ovu opciju da pomera kursor pri automatskom vezivanju.
+U tom slučaju, pritiskanje tastera za prebacivanje kursora će pomeriti sistemski kursor ili fokus kada je NVDA vezan za pregledni kursor automatski, a do pomeranja neće doći kada je ručno vezan za pregledni kursor.
+
+Ova opcija se prikazuje samo ako je "[Brajev red vezan #BrailleTether]" "Automatski" ili "za pregled".
+
+Da biste uključili pomeranje sistemskog kursora kada se prebacuje pregledni kursor bilo gde da se nalazite, molimo podesite prilagođenu komandu korišćenjem [dijaloga ulaznih komandi #InputGestures].
+
 ==== Čitaj po odlomku ====[BrailleSettingsReadByParagraph]
 Ako je ova opcija aktivirana, tekst na brajičnom retku bit će prikazan odlomak po odlomak umjesto redak po redak.
 Također, naredbe za sljedeći i prethodni redak će također pomicati po odlomcima.
@@ -2246,6 +2275,16 @@ Postoje sljedeće opcije:
   - Očekuje se da će ova opcija raditi sa Chromium verzija 92.0.4479.0 i novijim
   -
  -
+
+==== Prijavi žive regione ====[BrailleLiveRegions]
+ : Podrazumevano
+   Omogućeno
+ : Opcije
+  Podrazumevano (omogućeno), onemogućeno, omogućeno
+ :
+
+Ova opcija bira da li će NVDA prijaviti promene u određenom dinamičkom Web sadržaju na brajevom redu.
+Onemogućavanje ove opcije je jednako ponašanju programa NVDA u verziji 2023.1 i starijim, koja je ove promene prijavljivala samo govorom.
 
 ==== Koristi UI automation za pristup Excel proračunskim tablicama kada je to moguće ====[UseUiaForExcel]
 Kada je ova opcija omogućena, NVDA će probati koristiti Microsoft UI Automation API za pristupačnost kako bi izvlačio informacije iz kontrola proračunskih tablica Microsoft Excela.
@@ -3910,32 +3949,48 @@ Slijede dodjeljeni prečaci za te brajične retke.
 
 + Teme za napredne korisnike +[AdvancedTopics]
 
-++ Siguran način ++[SecureMode]
-NVDA može biti pokrenut u sigurnom načinu uz pomoć ``-s`` [paremetra naredbenog redka #CommandLineOptions].
-NVDA se pokreće u sigurnom načinu kada je pozvan iz [sigurnih zaslona #SecureScreens], osima ako ``serviceDebug`` [općesustavski parametar #SystemWideParameters] je uključen.
+++ Bezbedan način rada ++[SecureMode]
+Administratori sistema će možda želeti da podese NVDA tako da mu se ograniči neovlašćen pristup sistemu.
+NVDA dozvoljava instalaciju prilagođenih dodataka, koji mogu da izvrše i pokrenu kod, što uključuje kada NVDA ima administratorske privilegije.
+NVDA takođe dozvoljava korisnicima da pokrenu kod kroz NVDA Python konzolu.
+NVDA bezbedan režim sprečava da korisnici menjaju njihova NVDA podešavanja, i na druge načine ograničava pristup sistemu.
 
-Siguran način onemogućuje:
+NVDA se pokreće u bezbednom načinu rada na [bezbednim ekranima #SecureScreens], osim ako se ne omogući ``serviceDebug`` [sistemski parametar #SystemWideParameters].
+Da naterate NVDA da se uvek pokrene u bezbednom režimu, podesite ``forceSecureMode`` [sistemski parameta #SystemWideParameters].
+NVDA se takođe može pokrenuti u bezbednom režimu uz ``-s`` [opciju komandne linije #CommandLineOptions].
 
-- spremanje konfiguracije i ostalih postavki na disk
-- spremanje mape gesti i prečaca na disk
-- [Značajke konfiguracjskih profila #ConfigurationProfiles] poput stvaranja, brisanja, preimenovanja profila, itd.
-- nadogradnja NVDA ili stvaranja prijenosnih kopija
-- [Python konzola #PythonConsole]
-- [preglednik zapisnika #LogViewer] i zapisivanje
+Bezbedan način rada će onemogućiti:
+
+- Čuvanje konfiguracije i drugih podešavanja na disku
+- Čuvanje mape komandi na disku
+- Opcije [profila podešavanja #ConfigurationProfiles] kao što su pravljenje, brisanje, preimenovanje profila i slično.
+- Ažuriranje programa NVDA i pravljenje prenosnih kopija
+- [Prodavnicu dodataka #AddonsManager]
+- [NVDA Python konzolu #PythonConsole]
+- [Preglednik dnevnika #LogViewer] i evidentiranje u dnevniku
+- Otvaranje eksternih dokumenata iz NVDA menija, kao što su korisničko uputstvo ili datoteku saradnika.
 -
 
-++ Sigurni zasloni ++[SecureScreens]
-NVDA se pokreće u [sigurnom načinu #SecureMode] kada se pokrene na na sigurnim zaslonima osim ako ``serviceDebug`` [općesustavski parametar #SystemWideParameters] je omogućen.
+Instalirane kopije programa NVDA čuvaju podešavanja uključujući dodatke u ``%APPDATA%\nvda``.
+Da biste sprečili NVDA korisnike da direktno izmene podešavanja ili dodatke, korisnički pristup ovom folderu se takođe mora ograničiti.
 
-Kada se pokreće sa sigurnog zaslona, NVDA koristi profil sustava za postavke.
-NVDA korisničke postavke mogu se kopirati [za korištenje na sigurnim zaslonima #GeneralSettingsCopySettings].
+NVDA korisnici često zavise od podešavanja njihovog NVDA profila kako bi zadovoljio njihove potrebe.
+Ovo može uključiti instalaciju i podešavanje prilagođenih dodataka, koje treba pregledati nezavisno od programa NVDA.
+Bezbedni režim će onemogućiti promene podešavanja, tako da prvo treba osigurati da je NVDA podešen pre nego što prisilite bezbedan režim.
 
-Sigurni zasloni uključuju:
+++ Bezbedni ekrani ++[SecureScreens]
+NVDA se pokreće u [bezbednom načinu rada #SecureMode] kada je pokrenut na bezbednim ekranima osim ako je omogućen ``serviceDebug`` [sistemski parametar #SystemWideParameters].
 
-- Windows zaslon za prijavu
-- Dijaloški okvir kontrole korisničkog računa, aktivan kada se izvodi akcija kao administrator
+Kada je pokrenut sa bezbednog ekrana, NVDA koristi sistemski profil za podešavanja.
+NVDA korisnička podešavanja se mogu kopirati [za korišćenje na bezbednim ekranima #GeneralSettingsCopySettings].
+
+Bezbedni ekrani uključuju:
+
+- Windows ekran za prijavljivanje
+- Dijalog kontrole korisničkog naloga, koji je aktivan kada se izvršava neka radnja kao administrator
   - Ovo uključuje instalaciju programa
   -
+-
 
 ++ Opcije naredbenog retka ++[CommandLineOptions]
 Tijekom pokretanja, NVDA može prihvatiti jednu ili više opcija, čime se mijenja ponašanje čitača.
@@ -3992,8 +4047,9 @@ Te su vrijednosti spremljene u registru pod sljedećim ključevima:
 
 Sljedeće vrijednosti se mogu postaviti pod ovim ključem:
 || Naziv | Vrijednost | Moguće vrijednosti | Opis |
-| configInLocalAppData | DWORD | 0 (standardno) za deaktivirano, 1 za aktivirano | Ako je aktivirano, posprema konfiguraciju u mapu local application data umjesto u mapu roaming application data |
-| serviceDebug | DWORD | 0 (standardno) za deaktivirano, 1 za aktivirano | Ako je aktivirano, time se deaktivira sigurni modus na sigurnoj radnoj površini, što omogućuje korištenje Python konzole i preglednika zapisnika. Zbog velikih sigurnosnih implikacija, ne preporučujemo korištenje ove opcije |
+| ``configInLocalAppData`` | DWORD | 0 (Podrazumevano) da onemogućite, 1 da omogućite | Ako je omogućeno, Čuva NVDA podešavanja u lokalnim podacima aplikacija umesto roming podataka |
+| ``serviceDebug`` | DWORD | 0 (podrazumevano) da onemogućite, 1 da omogućite | Ako je omogućen, biće onemogućen [bezbedan način rada #SecureMode] na [bezbednim ekranima #SecureScreens]. Zbog nekoliko ogromnih bezbednosnih rizika, korišćenje ove opcije se ne preporučuje |
+| ``forceSecureMode`` | DWORD | 0 (podrazumevano) da onemogućite, 1 da omogućite | Ako je omogućeno, nateraće NVDA da koristi [bezbedan režim #SecureMode] pri pokretanju. |
 
 + Dodatne Informacije +[FurtherInformation]
 Ako trebate više informacija ili pomoć za NVDA, posjetite NVDA web stranicu na adresi NVDA_URL.
