@@ -179,7 +179,6 @@
       <LI><A HREF="#Win10OcrSettings">12.1.17. Windows OCR 设置</A>
       <LI><A HREF="#toc117">12.1.18. 高级设置</A>
       </UL>
-    <LI><A HREF="#WASAPI">音频输出使用 WASAPI</A>
     <LI><A HREF="#MiscSettings">12.2. 杂项设置</A>
       <UL>
       <LI><A HREF="#SpeechDictionaries">12.2.1. 语音字典</A>
@@ -223,10 +222,10 @@
     <LI><A HREF="#SpeechViewer">14.2. 朗读查看器</A>
     <LI><A HREF="#BrailleViewer">14.3. 盲文查看器</A>
     <LI><A HREF="#PythonConsole">14.4. Python 控制台</A>
-    <LI><A HREF="#toc150">14.5. 插件商店</A>
+    <LI><A HREF="#toc149">14.5. 插件商店</A>
     <LI><A HREF="#CreatePortableCopy">14.6. 创建便携版</A>
     <LI><A HREF="#RunCOMRegistrationFixingTool">14.7. 运行 COM 注册修复工具</A>
-    <LI><A HREF="#ReloadPlugins">14.8. 重新加载插件</A>
+    <LI><A HREF="#ReloadPlugins">14.8. 重载插件</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">15. 支持的语音合成器</A>
     <UL>
@@ -248,9 +247,9 @@
     <LI><A HREF="#HedoMobilLine">16.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">16.9. HumanWare Brailliant BI/B Series / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc170">16.9.1. Key assignments for All models</A>
-      <LI><A HREF="#toc171">16.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</A>
-      <LI><A HREF="#toc172">16.9.3. Key assignments for Brailliant BI 14</A>
+      <LI><A HREF="#toc169">16.9.1. Key assignments for All models</A>
+      <LI><A HREF="#toc170">16.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</A>
+      <LI><A HREF="#toc171">16.9.3. Key assignments for Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">16.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</A>
     <LI><A HREF="#Seika">16.11. Seika 点显器</A>
@@ -1395,23 +1394,30 @@ NVDA 提供下列与系统输入焦点相关的快捷命令：
 </P>
 <P>
 对象导航允许您在<A HREF="#Objects">对象</A>之间进行浏览并获取每个对象的信息。
-当您移动到一个对象时，NVDA 将用语系统焦点相类似的方式进行朗读。
+当您移动到一个对象时，NVDA 将用语系统焦点相似的方式进行朗读。
 浏览出现在屏幕上的所有文本的方法就是使用<A HREF="#ScreenReview">屏幕浏览</A>。
 </P>
 <P>
-为了避免在系统创建的海量对象之间移动，对象被分成不同层级。
-这样就意味着，有些对象内包含着其他对象，您必须先进入它们才能访问这些包含在此父对象的子对象。
+为了避免在系统创建的众多对象之间移动，对象被分成不同层级。
+这就意味着，有些对象内可以包含其他对象，您必须先进入它们才能访问这些包含在其父对象内的子对象。
 例如，一个列表包含列表项目，您必须先移动到列表的内部才能访问列表项目。
-如果您已经移动到了列表项目，上一个和下一个的命令将带领您在相同列表的其他项目之间移动。
-移动到包含这个列表项目的父对象将带领您返回列表。
-您可以越过这个列表来访问其他您所希望访问的对象。
-同样的，工具栏包含控件，所以您必须进入工具栏才能访问包含在这个工具栏的控件。
+如果您已经移动到了列表内的列表项，使用移动到此层级的上一个对象/下一个对象可以让您在此列表内的其他列表项之间移动。
+使用移动到父对象可以让您退出这个列表。
+您也可以越过这个列表来访问其他您所希望访问的对象。
+同样的，又比如工具栏包含控件，所以您必须进入工具栏才能访问包含在这个工具栏的控件。
 </P>
 <P>
-当前查看的对象被称为浏览对象。
-一旦您浏览到了一个对象，您可以使用<A HREF="#ObjectReview">对象浏览模式</A>的<A HREF="#ReviewingText">文本查看命令</A>进行查看。
+如果您希望在系统上的每一个对象之间来回移动，则可以使用基于线性浏览的移动到上一个/下一个对象命令。
+例如，如果您使用移动到下一个对象命令移动到了某个对象，并且该对象包含子对象，则 NVDA 将自动移动到该对象的第一个子对象。
+或者，如果该对象不包含任何子对象，NVDA 会移动到此层级的下一个对象。
+如果此层级没有更多对象，NVDA 将尝试基于其父对象查找下一个对象，直到没有更多的对象可以移动为止。
+相同的规则同样也适用于移动到上一个对象的操作。
+</P>
+<P>
+当前移动到的对象被称为浏览对象。
+一旦您浏览到了一个对象，您可以使用<A HREF="#ObjectReview">对象浏览模式</A>的<A HREF="#ReviewingText">文本查看命令</A>查看该对象的文本。
 当<A HREF="#VisionFocusHighlight">高亮显示导航对象</A>开启时，当前浏览对象的位置也将以视觉方式显示。
-默认情况下，浏览对象会随着系统焦点而移动，此行为可以在设置里开关。
+默认情况下，浏览对象会随着系统焦点移动，此行为可以在设置里开关。
 </P>
 <P>
 请注意，想要盲文光标跟随浏览对象可以在<A HREF="#BrailleTether">盲文光标跟随</A>设置里修改。
@@ -1449,11 +1455,25 @@ NVDA 提供下列与系统输入焦点相关的快捷命令：
 <TD>移动到当前对象的前一个对象。</TD>
 </TR>
 <TR>
+<TD>线性导航移动到上一个对象</TD>
+<TD>NVDA+numpad9</TD>
+<TD>NVDA+shift+[</TD>
+<TD>向右滑动（对象模式）</TD>
+<TD>移动到对象导航的上一个对象，忽略层级。</TD>
+</TR>
+<TR>
 <TD>移动到下一个对象</TD>
 <TD>NVDA+数字键盘6</TD>
 <TD>NVDA+shift+右光标</TD>
 <TD>向右滑动(对象模式)</TD>
 <TD>移动到当前对象的后一个对象。</TD>
+</TR>
+<TR>
+<TD>线性导航移动到下一个对象</TD>
+<TD>NVDA+小键盘3</TD>
+<TD>NVDA+shift+]</TD>
+<TD>向右滑动（对象模式）</TD>
+<TD>移动到对象导航的下一个对象，忽略层级。</TD>
 </TR>
 <TR>
 <TD>移动到第一个被包含的对象</TD>
@@ -1706,7 +1726,6 @@ NVDA 允许您按照字、词、行的方式朗读<A HREF="#ScreenReview">屏幕
 <H3>5.6. 浏览模式</H3>
 <P>
 NVDA 的<A HREF="#ReviewingText">文本查看命令</A> 可以查看当前导航对象的内容，即当前的文档或者屏幕，依照您当前选择的模式而定。
-浏览模式取代了 NVDA 以前的平面浏览。
 </P>
 <P>
 下面的命令，可以在浏览模式之间切换：
@@ -3449,12 +3468,40 @@ NVDA 正在运行的时候，如果您想在不进入“语音设置”对话框
 </P>
 <P>
 此选项允许您选择是否希望点显器跟随系统焦点或浏览对象(即浏览光标)。
-如果选中了“自动”盲文光标会跟随系统焦点或浏览对象(即浏览光标)
+如果选中了“自动”盲文光标会跟随系统焦点或浏览对象（即浏览光标）
 此时，如果用户操作改变了浏览对象， NVDA 会让盲文光标暂时跟随浏览对象，直到系统焦点或者输入焦点改变为止。
 如果您想让盲文光标只跟随系统焦点或系统输入焦点，需要把这个设置改成焦点
 此时，盲文光标不会跟随文本浏览或导航对象。
 如果您想让盲文光标只跟随文本浏览或对象浏览，需要把这个设置改成浏览光标。
 此时盲文光标不再跟随系统焦点或导航对象。
+</P>
+<A NAME="BrailleSettingsReviewRoutingMovesSystemCaret"></A>
+<H5>移动浏览光标时移动系统输入光标</H5>
+<DL>
+<DT>默认</DT><DD>
+  从不
+<DT>选项</DT><DD>
+  默认 （从不）, 从不, 仅当盲文光标设为自动跟随时, 总是
+</DL>
+
+<P></P>
+<P>
+此设置决定是否应该在按下盲文点显器上的定位按键后移动系统光标。
+在默认情况下，此选项设置为“从不”，这意味着在点显器上按下定位按键移动浏览光标时从不移动系统光标。
+</P>
+<P>
+当此选项设置为“始终”，且<A HREF="#BrailleTether">盲文光标跟随</A>设置为“自动”或“浏览光标”时，按盲文点显器上的定位按键也将在支持时移动系统光标或系统焦点。
+若当前浏览模式为<A HREF="#ScreenReview">屏幕浏览</A>时，没有物理光标。
+在这种情况下，NVDA 尝试将对象聚焦在您要定位到的文本上。
+这同样适用于 <A HREF="#ObjectReview">对象浏览</A>。
+</P>
+<P>
+您还可以将该选项设置为“仅当盲文光标设为自动跟随时”移动系统光标。
+在这种情况下，当 NVDA 自动跟随浏览光标时，按光标定位键只会移动系统光标或系统焦点，而手动跟随到浏览光标时不会发生任何移动。
+仅当“<A HREF="#BrailleTether">盲文光标跟随</A>”设置为“自动”或“浏览光标”时，才会显示此选项。
+</P>
+<P>
+如需在任意位置随意切换“移动浏览光标时移动系统输入光标”模式，请在[按键与首饰#InputGestures]中分配一个快捷键。
 </P>
 <A NAME="BrailleSettingsReadByParagraph"></A>
 <H5>按段落阅读</H5>
@@ -3464,7 +3511,7 @@ NVDA 正在运行的时候，如果您想在不进入“语音设置”对话框
 这样的意思就是您不必在每一行的末尾进行点显器滚动
 实际上，更多的文本将会显示在点显器上面。
 这样做将提高在阅读更大数量的文本时的效率。
-默认情况下，它是禁用的。
+默认情况下，该选项是禁用的。
 </P>
 <A NAME="BrailleSettingsWordWrap"></A>
 <H5>避免拆分单词(如果可能)</H5>
@@ -4364,6 +4411,20 @@ Microsoft Excel 的 UI Automation 接口实现不断变化，早于 16.0.13522.1
   -
 -
 </P>
+<A NAME="BrailleLiveRegions"></A>
+<H5>盲文显示动态内容更新</H5>
+<DL>
+<DT>默认</DT><DD>
+  启用
+<DT>选项</DT><DD>
+  禁用, 启用
+</DL>
+
+<P></P>
+<P>
+此选项选择 NVDA 是否用盲文显示某些 Web 动态内容更新。
+禁用此选项则意味着与 NVDA2023.1 及更早版本中的行为一致，仅用语音提示这些动态内容更新。
+</P>
 <A NAME="AdvancedSettingsWinConsoleSpeakPasswords"></A>
 <H5>在所有的增强终端读出密码</H5>
 <P>
@@ -4394,9 +4455,9 @@ Diff 算法组合框内有三个选项：
 当控制台中包含大量文本时，该选项可以提高性能，并能够更加准确的报告行中间的字符变化。
 但是，在某些终端程序中，可能会导致文本的读取断断续续或不一致。
 <LI>Difflib：此选项让 NVDA 强制逐行计算终端文本的变化。
-这与 NVDA 2020.4 及更早版本中的行为相同。
+这与 NVDA 2020.4 及更早版本中的行为一致。
 此设置可能会使某些应用程序中对传入文本的读取更加稳定。
-但是，当在一行中间插入或删除一个字符时，会读出插入符后的文本。
+但是，当在一行中间插入或删除一个字符时，会读出光标后的文本。
 </UL>
 
 <P></P>
@@ -4448,11 +4509,11 @@ Diff 算法组合框内有三个选项：
 使用几个历史上流行的 GUI API，文本可能会以透明背景渲染，但在视觉上背景颜色是准确的。
 </P>
 <A NAME="WASAPI"></A>
-<H3>音频输出使用 WASAPI</H3>
+<H5>音频输出使用 WASAPI</H5>
 <P>
 此选项通过 Windows 音频会话 API （WASAPI） 进行音频输出。
 WASAPI 是一个更现代的音频框架，可以提高 NVDA 音频输出的响应性、性能和稳定性，包括语音和声音。
-此选项在默认情况下处于启用状态。
+此选项在默认情况下处于禁用状态。
 更改此选项后，您需要重新启动NVDA才能使更改生效。
 </P>
 <A NAME="SoundVolumeFollowsVoice"></A>
@@ -4463,6 +4524,12 @@ WASAPI 是一个更现代的音频框架，可以提高 NVDA 音频输出的响�
 同样，若增大语音的音量，音效的音量也会增大。
 此选项仅在启用了“音频输出使用 WASAPI”的情况下生效。
 默认情况下此选项处于禁用状态。
+</P>
+<A NAME="SoundVolume"></A>
+<H5>NVDA 音效音量</H5>
+<P>
+此滑块可以让您设置NVDA 音效和 Beep 蜂鸣声的音量
+仅当启用“音频输出使用 WASAPI”且禁用“NVDA 音效音量跟随语音音量”时，此设置才会生效。
 </P>
 <A NAME="AdvancedSettingsDebugLoggingCategories"></A>
 <H5>调试日志</H5>
@@ -4820,7 +4887,6 @@ NVDA 的插件商店可以让您浏览和管理插件。
 <H3>13.1. 浏览插件</H3>
 <P>
 打开插件商店后，会显示一个插件列表。
-在插件商店内您可以随时按下 <CODE>alt+a</CODE> 跳转到列表。
 如果您尚未安装插件，插件商店会停留在可安装的插件列表。
 如果您已经安装了插件，列表内将显示当前安装的插件。
 </P>
@@ -4879,12 +4945,12 @@ NVDA 的插件商店可以让您浏览和管理插件。
 要搜索插件，请使用“搜索”编辑框。
 您可以从插件列表按 <CODE>shift+tab</CODE> 找到该编辑框。
 输入一两个有关您要搜索的插件类型的关键词，然后按 <CODE>tab</CODE> 键进入插件列表。
-如果可以在插件 ID、显示名称、发布者、作者或说明等字段中找到搜索的关键词，则会列出插件。
+如果可以在插件 ID、显示名称、发布者、作者或描述等字段中找到所键入的关键词，则会列出插件。
 </P>
 <A NAME="AddonStoreActions"></A>
 <H3>13.2. 插件操作</H3>
 <P>
-插件具有与之关联的操作，例如安装、帮助、禁用和移除
+插件具有与之关联的操作，例如安装、帮助、禁用和移除。
 对于插件列表中的插件，可以通过按<CODE>applications</CODE>、<CODE>回车</CODE>、右键单击或双击该插件打开的菜单来访问这些操作。
 还可以通过选中插件详细信息中的“操作”按钮访问该菜单。
 </P>
@@ -5022,7 +5088,7 @@ NVDA 将询问您是否确认移除。
 NVDA工具菜单下面的 NVDA Python 控制台是调试NVDA、了解NVDA内部原理、以及查看其他软件无障碍支持情况的工具
 想了解更多信息请查看 <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html">NVDA开发文档</A>。
 </P>
-<A NAME="toc150"></A>
+<A NAME="toc149"></A>
 <H3>14.5. 插件商店</H3>
 <P>
 访问该菜单会打开 <A HREF="#AddonsManager">NVDA 插件商店</A>。
@@ -5070,7 +5136,7 @@ NVDA工具菜单下面的 NVDA Python 控制台是调试NVDA、了解NVDA内部�
 
 <P></P>
 <A NAME="ReloadPlugins"></A>
-<H3>14.8. 重新加载插件</H3>
+<H3>14.8. 重载插件</H3>
 <P>
 一旦此项目被激活，即可在不重新启动 NVDA 的情况下重新加载程序模块和全局插件，此功能对于开发者非常有用。
 </P>
@@ -5982,7 +6048,7 @@ The following extra devices are also supported (and do not require any special d
 Following are the key assignments for  the Brailliant BI/B and BrailleNote touch displays with NVDA.
 Please see the display's documentation for descriptions of where these keys can be found.
 </P>
-<A NAME="toc170"></A>
+<A NAME="toc169"></A>
 <H4>16.9.1. Key assignments for All models</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -6071,7 +6137,7 @@ Please see the display's documentation for descriptions of where these keys can 
 </TR>
 </TABLE>
 
-<A NAME="toc171"></A>
+<A NAME="toc170"></A>
 <H4>16.9.2. Key assignments for Brailliant BI 32, BI 40 and B 80</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -6092,7 +6158,7 @@ Please see the display's documentation for descriptions of where these keys can 
 </TR>
 </TABLE>
 
-<A NAME="toc172"></A>
+<A NAME="toc171"></A>
 <H4>16.9.3. Key assignments for Brailliant BI 14</H4>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -8148,8 +8214,15 @@ NVDA 的点显器自动检测功能也可以识别任何使用该协议的点显
 <A NAME="SecureMode"></A>
 <H3>17.1. 安全模式</H3>
 <P>
-NVDA 可以使用<A HREF="#CommandLineOptions">命令行选项</A> <CODE>-s</CODE> 以安全模式运行。
+系统管理员可能需要配置 NVDA 以限制其对系统的访问权限。
+NVDA 可以安装自定义插件，这些插件可以执行任意代码，包括在 NVDA 获得管理员权限时。
+NVDA 还可以让用户在 NVDA Python 控制台中执行任意代码。
+NVDA 安全模式可防止用户修改 NVDA 设置，并用其他方式限制其对系统的访问权限。
+</P>
+<P>
 在<A HREF="#SecureScreens">安全界面</A> 时，除非启用了<CODE>serviceDebug</CODE> <A HREF="#SystemWideParameters">系统范围参数</A>，否则 NVDA 默认将以安全模式运行，。
+要强制 NVDA 始终以安全模式运行，请设置<CODE>forceSecureMode</CODE><A HREF="#SystemWideParameters">系统范围参数</A>。
+NVDA 还可以使用“-s”[命令行选项#CommandLineOptions] 在安全模式下启动。
 </P>
 <P>
 在安全模式下禁用以下功能：
@@ -8157,13 +8230,24 @@ NVDA 可以使用<A HREF="#CommandLineOptions">命令行选项</A> <CODE>-s</COD
 <UL>
 <LI>将配置和其他设置信息保存到磁盘。
 <LI>将按键与手势设置保存到磁盘。
--<A HREF="#ConfigurationProfiles">配置文件</A>功能，例如创建、删除、重命名配置文件等。
+<LI><A HREF="#ConfigurationProfiles">配置文件</A> 创建、删除、重命名配置文件等功能。
 <LI>更新 NVDA 以及创建便携版。
--  <A HREF="#PythonConsole">NVDA Python 控制台</A>。
+<LI><A HREF="#AddonsManager">插件商店</A>
+<LI><A HREF="#PythonConsole">NVDA Python 控制台</A>
 <LI><A HREF="#LogViewer">日志查看器</A> 和日志记录。
+<LI>从 NVDA 菜单中打开外部文档，例如用户指南或贡献者名单。
 </UL>
 
 <P></P>
+<P>
+NVDA 安装版将其配置（包括插件）存储在<CODE>%APPDATA%\nvda</CODE> 中。
+为了防止 NVDA 用户直接修改其配置或插件，还必须限制用户对此文件夹的访问。
+</P>
+<P>
+NVDA 用户通常依赖设置 NVDA 配置文件来满足个性化需求。
+这可能包括安装和设置自定义插件，这些插件应独立于 NVDA 进行单独审查。
+安全模式会禁止对 NVDA 配置的更改，因此请确保在强制使用安全模式之前正确配置好 NVDA。
+</P>
 <A NAME="SecureScreens"></A>
 <H3>17.2. 安全界面</H3>
 <P>
@@ -8369,16 +8453,22 @@ nvda -q
 <TH>描述</TH>
 </TR>
 <TR>
-<TD>configInLocalAppData</TD>
+<TD><CODE>configInLocalAppData</CODE></TD>
 <TD>DWORD</TD>
 <TD>0（默认）禁用，1 启用</TD>
-<TD>启用这个选项会让NVDA把配置保存到“本地”应用程序配置文件夹(比如 "C:\Users\&lt;用户名&gt;\AppData\Local")</TD>
+<TD>如果启用，则将 NVDA 用户配置存储在本地应用程序数据目录，而不是漫游应用程序数据目录。</TD>
 </TR>
 <TR>
-<TD>serviceDebug</TD>
+<TD><CODE>serviceDebug</CODE></TD>
 <TD>DWORD</TD>
 <TD>0（默认）禁用，1 启用</TD>
-<TD>启用这个选项，会让 NVDA 在<A HREF="#SecureScreens">安全界面</A>禁用<A HREF="#SecureMode">安全模式</A>。由于存在一些严重的安全隐患，强烈建议不要使用该选项。</TD>
+<TD>如果启用，会让 NVDA 在<A HREF="#SecureScreens">安全界面</A>禁用<A HREF="#SecureMode">安全模式</A>。由于存在一些严重的安全隐患，强烈建议不要使用该选项。</TD>
+</TR>
+<TR>
+<TD><CODE>forceSecureMode</CODE></TD>
+<TD>DWORD</TD>
+<TD>0（默认）禁用，1 启用</TD>
+<TD>如果启用，则在运行 NVDA 时强制启用<A HREF="#SecureMode">安全模式</A>。</TD>
 </TR>
 </TABLE>
 
