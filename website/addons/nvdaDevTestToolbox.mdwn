@@ -91,7 +91,19 @@ To have the control+shift+I result reported by NVDA as control+I, you should per
 
 Known bug: A script added for a specific class is visible even if gesture manager is opened in another context.
 
-## Log reading and analyzing commands
+## Log reading and analyzing features
+
+<a id="logPlaceMarkers"></a>
+### Place markers in the log
+
+While testing or working, you may want to mark a specific moment in the log, so that you can turn to it easily later when reading the log.
+To add a marker message in the log, press NVDA+control+K.
+A message as follows will be logged at INFO level:  
+`-- NDTT marker 0 --`  
+You can add as many markers as you want in the log.
+The marker's number will be incremented each time you place a marker in the log; it will only be reset when NVDA is restarted.
+
+### Log reader mode
 
 A log reader mode provides commands to ease log reading and analyzing.
 In the log viewer window the log reader is enabled by default, thus log reading commands are available immediately.
@@ -100,22 +112,40 @@ When you are done with log reading and analyzing tasks, you can disable again NV
 
 The commands available in log reader mode are described hereafter.
 
-### Quick navigation commands
+<a id="logReaderQuickNavigationCommands"></a>
+#### Quick navigation commands
 
 Single letter command similar to browse mode quick navigation keys allow to move to various type of log messages:
 
 * m: any message
-* e: ERROR
-* i: IO
-* d: DEBUG
-* f: INFO
-* g: DEBUGWARNING
-* w: WARNING
+* e: error messages (`ERROR` and `CRITICAL`)
+* w: warning messages (`WARNING`)
+* f: info messages (`INFO`)
+* k: markers previously [placed in the log](#logPlaceMarkers)
+* g: debug warning messages (`DEBUGWARNING`)
+* i: input/output messages (`IO`)
+* n: input messages
+* s: speech messages
+* d: debug messages (`DEBUG`)
 
 Pressing the single letter moves to the next occurrence of this message. Combining the letter with the shift key moves to the previous occurrence of this message.
 
+#### Translation of speech message
+
+Sometimes, you may have to look at a log taken on a system in a foreignh language that you do not understand. E.g. the log was taken on a Chinese system / NVDA, whereas you only understand French.
+If you have [Instant Translate][3] add-on installed, you may use it in conjonction with [quick log navigation commands](#logReaderQuickNavigationCommands) to have speech messages translated.
+
+* First configure Instant Translate's languages. The source language should be the language of the system where the log has been taken (e.g. Chinese). The target language should be your language (e.g. French).
+* Open the log
+* Press T to enable automatic speech translation in the log
+* Use Quick navigation commands in the log, e.g. S, I, etc. Whenever a speech message is encountered, it will be spoken in your language (French in our previous example)
+
+If you want to disable speech translation, press T again.
+
+
+
 <a id="logReaderOpenSourceFile"></a>
-### Open the file of the source code in your editor
+#### Open the file of the source code in your editor
 
 In the log some line may refer to the source code:
 
@@ -243,6 +273,30 @@ These settings only take effect at next NVDA startup when the backup takes place
 
 ## Change log
 
+### Version 5.0
+
+* If Instant Translate add-on is installed, it is now possible to have speech messages translated on the fly when using log reading commands.
+* While in log reading mode, pressing E or shift+E now jumps to CRITICAL erorr messages as well as normal ERROR messages.
+* New log quick navigation commands have been added to jump to input and to speech messages.
+* A new command allow to place a marker in the log; and specific quick navigation commands allow to jump to markers in the log.
+  Credit: the initial idea for this feature comes from Debug Helper add-on by Luke Davis.
+
+
+Bugfix: memorization of last error do not fail anymore when the parameter of log.error is not a string
+Fixed add-on initialization with NVDA 2019.2.1.
+Fix log saving (82d73cf59844f96d56877becb3ead40cf858e62c)
+
+### Version 4.2
+
+* Fixed an error with NVDA version below 2021.3.
+* Fixed the stack trace log formatting.
+* First localizations.
+
+### Version 4.1
+
+* Fixed a bug occurring in some situations while logging an error.
+* The add-on's settings can now be modified only when the default profile is active to avoid config issues.
+
 ### Version 4.0
 
 * Possibility to back up old logs and introduction of a logs manager.
@@ -268,8 +322,8 @@ These settings only take effect at next NVDA startup when the backup takes place
 
 ### Version 2.1
 
-* Various bugfixes and code refactoring/cleaning to address all use cases: all supported versions, installed vs. run from source, etc. (contribution from Łukasz Golonka)
-* Rewriting of the compa module (contribution from Łukasz Golonka)
+* Various bugfixes and code refactoring/cleaning to address all use cases: all supported versions, installed vs. run from source, etc. (contribution from Åukasz Golonka)
+* Rewriting of the compa module (contribution from Åukasz Golonka)
 * The restart dialog can now be opened only once.
 * The object explorer shortcuts are now unassigned by default and need to be mapped by the user.
 * With the object explorer, a double-press to call the script to report the current object's property now displays the reported information in a browseable message.
@@ -294,6 +348,8 @@ These settings only take effect at next NVDA startup when the backup takes place
 [1]: https://www.nvaccess.org/addonStore/legacy?file=nvdaDevTestToolbox
 
 [2]: https://www.nvaccess.org/files/nvda/documentation/userGuide.html#CommandLineOptions
+
+[3]: https://addons.nvda-project.org/addons/instantTranslate.en.html
 
 [4]: https://www.nvaccess.org/files/nvda/documentation/userGuide.html#PlayErrorSound
 
