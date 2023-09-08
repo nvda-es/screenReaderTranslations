@@ -1,0 +1,17 @@
+commit f7049fd90bc4c855bf1234483853a5d7eedc0b3c
+Author: Łukasz Golonka <lukasz.golonka@mailbox.org>
+Date:   Thu Sep 7 01:47:31 2023 +0200
+
+    When announcing calculation result in Win32 calculator rely on name change events (#15377)
+    
+    Fixes #15230
+    
+    Summary of the issue:
+    NVDA's calculation announcements for Win32 calculator relies on a list of predefined keyboard commands, which, when pressed, causes the new value of the display to be announced. This assumes that at the time when gesture is sent the calculator had enough time to process it, and display the result of the calculation. While this worked before prior to #14708, after this PR NVDA no longer sleeps after sending gestures, therefore the value on calculator's display had not enough time to be updated. For users this means that after performing calculations the outdated value was read.
+    
+    Description of user facing changes
+    NVDA once again announces correct results of the calculation.
+    
+    Description of development approach
+    Rather than announcing the display value immediately after user pressed a key, NVDA now sets a flag signaling that the given command causes result of a calculation to appear. This flag is checked in the name change event for the display. If it is set the result is announced and the flag is restored to its default value.
+    While at it I have also updated the copyright header of the module based on its log in VCS.

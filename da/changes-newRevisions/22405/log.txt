@@ -1,0 +1,26 @@
+commit 47314013f1a8979866f3de50b4c97974285f7a5f
+Author: Leonard de Ruijter <leonardder@users.noreply.github.com>
+Date:   Thu Sep 7 01:43:47 2023 +0200
+
+    Revert no longer classify (rich) edit classes as bad for UIA (#15381)
+    
+    Reintroduces #14285
+    Fixes #15375
+    Fixes #15330
+    Reverts #15314
+    
+    Summary of the issue:
+    In #15314, edit and rich edit classes were no longer classified as bad for UIA. This caused the following issues:
+    
+    Read only edit fields in Explorer no longer read correctly, as they inherrit from both UIA and IAccessible
+    UIA adds a redundant name of RichEdit Control to RichEdit controls.
+    Generally spoken, removing these classes from the bad UIA classes list meant an API breaking change because Edit objects using UIA instead of legacy Edit support behave differently with regard to overriding and filtering texts, including LTR and RTL marks.
+    
+    Description of user facing changes
+    Reverted #15314. Most notably, the lag as reported in #14285 will unfortunately be reintroduced for now.
+    
+    Description of development approach
+    Re-add the bad UIA class names again.
+    Addressed issues in the explorer appmodule as pointed out in Edit controls in explorer fail when they have a native UIA implementation #15375.
+    Most notably, changed class inheritance from IAccessible to Edit
+    Added some small checks to overlay selection to ensure SysListView overlays won't be added on SysListView objects that don't use MSAA
