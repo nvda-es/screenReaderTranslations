@@ -1,0 +1,20 @@
+commit c40903ca026a320734962ae3f19e14b1b9559950
+Author: Sean Budd <sean@nvaccess.org>
+Date:   Thu Sep 7 14:16:44 2023 +1000
+
+    Don't hide installed add-ons in available add-ons list (#15380)
+    
+    Fixes #15374
+    
+    Summary of the issue:
+    At present, if you use the available add-ons category, add-ons already installed are not shown in the list.
+    This is causing confusion, where users expect add-ons to listed in the available add-ons tab, regardless if installed.
+    
+    The main use case is the following user story:
+    I am a user who has installed VeryCoolAddon. I want to recommend a friend to use it. I check in the add-on store via the "Add-on catalog" tab (formerly "Available add-ons" tab) that the add-on is still in the store and its version. Note: add-ons may be removed from the store for various reasons, so you cannot be certain if the add-on is still available in the add-on store if it is already installed.
+    
+    Description of user facing changes
+    add-ons which are already installed will no longer be hidden in the available add-ons list
+    
+    Description of development approach
+    Include all the same statuses in the installed add-ons tab in the available add-ons tab. (#15374)

@@ -1,0 +1,33 @@
+commit d550048caec439653e48705d7b67108293a8ca4a
+Author: Cyrille Bougot <cyrille.bougot2@laposte.net>
+Date:   Thu Sep 7 01:42:11 2023 +0200
+
+    NVDA menu: add explicit shortcut keys and avoid collisions (#15364)
+    
+    Closes #15362
+    
+    Summary of the issue:
+    "Add-on store" item has been added with "S" as a shortcut key in NVDA tools menu in NVDA 2023.2.
+    Unfortunately "S" was already used for "Speech viewer" (as its first letter), even if it was not defined explicitly. Now that there is an explicit mapping for "Add-on store", implicit shortcut key definition for "Speech viewer" becomes masked and does not work anymore.
+    
+    In case the add-ons add new items in the menus with explicit definition of shortcut keys, other menu item that only use implicit definition of the shortcut key may be masked as well.
+    
+    Description of user facing changes
+    Explicitly define shortcut keys in main NVDA menu and avoid collisions (i.e. two times the same letter in the same menu).
+    
+    Description of development approach
+    In main NVDA menu:
+    
+    "Tools: add explicitly "T"
+    "Reset configuration to factory defaults")": Change "R" to "F" because was already used by "Revert to saved configuration"
+    "Donate": add explicitly "D"
+    In "Tools" submenu:
+    
+    "Reload plugins e": change "R" to "E" since "R" already taken by "Run COM Registration Fixing tool..."
+    "Add-on store": "A" instead of "S", as discussed in Speech viewer no longer has a shortcut key in the tools menu in 2023.2 #15362 (comment), to avoid collision with "Speech viewer"
+    "View log": "L" instead of "V" to be more intuitive, as discussed in NVDA menu: add explicit shortcut keys and avoid collisions #15364 (comment)
+    For all other items, explicitly mark the accelerator
+    Help menu:
+    
+    "About": Explicitly set "A"
+    All other items are already explicitly marked.
