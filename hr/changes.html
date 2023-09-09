@@ -14,6 +14,76 @@
 <P>
 Informacije za programere nisu prevedene, molimo ’pogledajte <A HREF="../en/changes.html">englesku inačicu ovog dokumenta</A>.
 </P>
+<H2>2023.3</H2>
+<H3>Nove značajke</H3>
+<UL>
+<LI>Napredno upravljanje zvukom:
+  <UL>
+  <LI>NVDA će sada reproducirati zvuk uz pomoć Windows Audio Session API (WASAPI), Što može unaprijediti brzinu odziva, performanse i stabilnost NVDA zvukova i govora. (<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>)
+  <LI>Korištenje Wasapi može se isključiti u naprednim postavkama.
+  Ako je Wasapi uključen, sljedeće napredne postavke mogu biti uključene.
+    <UL>
+    <LI>Opcija koja omogućuje izjednačavanje glasnoće zvukova i govora NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>)
+    <LI>Opcija za odvojenu konfiguraciju glasnoće NVDA zvukova. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038">#15038</A>)
+    </UL>
+  </UL>
+<LI>NVDA je sada u mogućnosti kontinuirano ažurirati tekst čim se pojavi novi prilikom prepoznavanja teksta čim se pojavi. (<A HREF="https://github.com/nvaccess/nvda/issues/2797">#2797</A>)
+  <UL>
+  <LI>Kako biste uključili ovu mogućnost, uključite opciju "s vremena na vrijeme ažuriraj tekst kada se pojavi" u kategoriji Windows 10 OCR u NVDA postavkama.
+  <LI>Kada je opcija uključena, možete uključiti ili isključiti izgovor novog teksta koristeći opciju uključi izgovor dinamičkog sadržaja (tako da pritisnete <CODE>NVDA+5</CODE>).
+  </UL>
+<LI>Prilikom korištenja automatskog otkrivanja brajičnih redaka, sada je moguće odrediti koji se brajični redci neće automatski otkrivati. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+<LI>Nova opcija u opcijama oblikovanja dokumenta, "ignoriraj prazne redke prilikom čitanja poravnanja". (<A HREF="https://github.com/nvaccess/nvda/issues/13394">#13394</A>)
+<LI>Dodana je nedodijeljena gesta za kretanje po grupama kartica u modusu pregleda. (<A HREF="https://github.com/nvaccess/nvda/issues/15046">#15046</A>)
+</UL>
+
+<P></P>
+<H3>Izmjene</H3>
+<UL>
+<LI>Brajica:
+  <UL>
+  <LI>Kada se promijeni tekst u naredbenom redku bez promjene kursora sustava, tekst na brajičnom redku će se pravilno osvježiti kada i pozicija u promijenjenom redku.
+  Ovo uključuje situacije kada je brajični redak povezan na pregled. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
+  <LI>Više BRLTTY tipkovničkih prečaca su povezani na NVDA prečace (<A HREF="https://github.com/nvaccess/nvda/issues/6483">#6483</A>):
+    <UL>
+    <LI>learn: uključivanje i isključivanje pomoći pri unosu
+    <LI>prefmenu: otvaranje NVDA izbornika
+    <LI>prefload/prefsave: učitavanje ili spremanje NVDA konfiguracije
+    <LI>time: pokazuj vrijeme
+    <LI>say_line: izgovori trenutni redak u kojem se nalazi pregledni kursor
+    <LI>say_below: čitaj sve uz pomoć preglednog kursora
+    </UL>
+  <LI>Upravljački program BRLTTY je dostupan samo kada kada je pokrenut primjerak BRLTTY sa pokrenutim BrlAPI. (<A HREF="https://github.com/nvaccess/nvda/issues/15335">#15335</A>)
+  <LI>Napredna postavka za uključivanje HID brajice je uklonjena i zamijenjena novom opcijom.
+  Sada možete isključiti određene upravljačke programe iz automatskog ptkrivanja brajičnih redaka u dijaloškom okviru oddabira brajičnog redka. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+  </UL>
+<LI>Add-on Store: Instalirani dodaci će se prikazati na kartici dostupni dodaci, ako su još uvijek dostupni u Add-on storeu. (<A HREF="https://github.com/nvaccess/nvda/issues/15374">#15374</A>)
+<LI>Neki su prečaci NVDA ažurirani. (<A HREF="https://github.com/nvaccess/nvda/issues/15364">#15364</A>)
+</UL>
+
+<P></P>
+<H3>Ispravke grešaka</H3>
+<UL>
+<LI>Microsoft Office:
+  <UL>
+  <LI>Ispravljeno rušenje u Microsoft Wordu kada su opcije oblikovanja dokumenta "izvjesti o naslovima" i "izvjesti o komentarima i bilješkama" isključene. (<A HREF="https://github.com/nvaccess/nvda/issues/15019">#15019</A>)
+  <LI>U Wordu i Excelu, poravnanje teksta biti će ispravno čitano u više situacija. (<A HREF="https://github.com/nvaccess/nvda/issues/15206">#15206</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15220">#15220</A>)
+  </UL>
+<LI>Microsoft Edge:
+  <UL>
+  <LI>NVDA više neće preskakati nazad na zadnju poziciju u načinu čitanja pri otvaranju kontekstnog izbornika u Microsoft Edgeu. (<A HREF="https://github.com/nvaccess/nvda/issues/15309">#15309</A>)
+  <LI>NVDA sada ponovno može čitati kontekstne izbornike preuzimanja u Microsoft Edgeu. (<A HREF="https://github.com/nvaccess/nvda/issues/14916">#14916</A>)
+  </UL>
+<LI>Brajica:
+  <UL>
+  <LI>Brajični kursor i indikatori označavanja biti će uvijek ažurirane ispravno poslije njihovog uključivanja ili isključivanja prečacem. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
+  <LI>Ispravljena pogreška prilikom koje Albatross brajični redci se pokušavaju inicijalizirati čak iako je drugi brajični redak spojen. (<A HREF="https://github.com/nvaccess/nvda/issues/15226">#15226</A>)
+  </UL>
+<LI>Ispravljena podrška popisa sustava (<CODE>SysListView32</CODE>) u Windows Forms aplikacijama. (<A HREF="https://github.com/nvaccess/nvda/issues/15283">#15283</A>)
+<LI>NVDA ponovno može čitati rezultate u Windows 32bitnom kalkulatoru u Server, LTSC and LTSB inačicama operacijskog sustava Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/15284">#15284</A>)
+</UL>
+
+<P></P>
 <H2>2023.2</H2>
 <P>
 Ova verzija dodaje add-on store koja Zamjenjuje upravljanje dodacima.
