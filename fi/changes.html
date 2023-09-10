@@ -10,6 +10,80 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2023.3</H2>
+<H3>Uudet ominaisuudet</H3>
+<UL>
+<LI>Paranneltu äänenhallinta:
+  <UL>
+  <LI>NVDA toistaa nyt ääntä Windows Audio Session APIn (WASAPI) kautta, mikä saattaa parantaa puheen ja äänien reagointi- ja suorituskykyä sekä vakautta. (<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>)
+  <LI>WASAPI voidaan poistaa käytöstä lisäasetuksista.
+  Jos WASAPI on otettu käyttöön, myös seuraavat lisäasetukset on mahdollista määrittää.
+    <UL>
+    <LI>Asetus, joka saa NVDA:n äänet ja piippaukset mukautumaan käyttämäsi puheäänen voimakkuuteen. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>)
+    <LI>Asetus, jonka avulla NVDA-äänien voimakkuutta on mahdollista säätää erikseen. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038">#15038</A>)
+    </UL>
+  </UL>
+<LI>NVDA pystyy nyt päivittämään jatkuvasti tunnistuksen tulosta suorittaessaan tekstintunnistusta ja puhumaan uuden tekstin sitä mukaa, kun se ilmestyy. (<A HREF="https://github.com/nvaccess/nvda/issues/2797">#2797</A>)
+  <UL>
+  <LI>Ota tämä toiminto käyttöön "Päivitä tunnistuksen tulos automaattisesti" -asetuksella, joka löytyy NVDA:n asetusvalintaikkunan Windowsin tekstintunnistus -kategoriasta.
+  <LI>Kun toiminto on käytössä, voit ottaa käyttöön tai poistaa käytöstä uuden tekstin puhumisen muuttamalla Puhu dynaamisen sisällön muutokset -asetusta (painamalla <CODE>NVDA+5</CODE>).
+  </UL>
+<LI>Pistenäyttöjen automaattista tunnistusta käytettäessä on nyt mahdollista jättää ajureita tunnistuksen ulkopuolelle Valitse pistenäyttö -valintaikkunasta. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+<LI>Lisätty asetusvalintaikkunan Asiakirjojen muotoilu -kategoriaan "Ohita tyhjät rivit rivien sisennystä ilmoitettaessa" -asetus. (<A HREF="https://github.com/nvaccess/nvda/issues/13394">#13394</A>)
+<LI>Lisätty komento välilehtien välillä liikkumiseen selaustilassa. Pikanavigointinäppäintä ei ole määritetty. (<A HREF="https://github.com/nvaccess/nvda/issues/15046">#15046</A>)
+</UL>
+
+<P></P>
+<H3>Muutokset</H3>
+<UL>
+<LI>Pistekirjoitus:
+  <UL>
+  <LI>Pistenäytöllä näkyvä teksti päivittyy nyt oikein oltaessa muuttuneella rivillä, kun Teksti muuttuu päätteessä ilman, että kohdistinta päivitetään.
+  Näihin sisältyvät tilanteet, joissa pistenäyttö seuraa tarkastelukohdistinta. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
+  <LI>Määritetty NVDA-komennot useampiin BRLTTYn näppäinsidoksiin (<A HREF="https://github.com/nvaccess/nvda/issues/6483">#6483</A>):
+    <UL>
+    <LI>learn: NVDA:n näppäinohje
+    <LI>prefmenu: Avaa NVDA-valikko
+    <LI>prefload/prefsave: Lataa/tallenna NVDA:n asetukset
+    <LI>time: Näytä kellonaika
+    <LI>say_line: Puhu tarkastelukohdistimen kohdalla oleva rivi
+    <LI>say_below: Jatkuva luku
+    </UL>
+  <LI>BRLTTY-ajuri on käytettävissä vain, kun käynnissä on BRLTTY-kopio, jossa BrlAPI on käytössä. (<A HREF="https://github.com/nvaccess/nvda/issues/15335">#15335</A>)
+  <LI>HID Braille -protokollan käyttöönottava lisäasetus on korvattu uudella asetuksella.
+  Automaattinen tunnistus on nyt mahdollista poistaa käytöstä määrätyiltä pistenäyttöajureilta Valitse pistenäyttö -valintaikkunassa. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+  </UL>
+<LI>Asennetut lisäosat näytetään nyt lisäosakaupan Saatavilla-välilehdellä, mikäli ne ovat edelleen saatavilla. (<A HREF="https://github.com/nvaccess/nvda/issues/15374">#15374</A>)
+<LI>Jotkut NVDA-valikossa olevien kohteiden pikanäppäimistä on päivitetty. Tämä koskee vain käyttäjiä, joilla NVDA:n kielenä on englanti. (<A HREF="https://github.com/nvaccess/nvda/issues/15364">#15364</A>)
+</UL>
+
+<P></P>
+<H3>Bugikorjaukset</H3>
+<UL>
+<LI>Microsoft Office:
+  <UL>
+  <LI>Korjattu kaatuminen Microsoft Wordissa, kun otsikoiden sekä kommenttien ja muistiinpanojen ilmoittaminen eivät olleet käytössä. (<A HREF="https://github.com/nvaccess/nvda/issues/15019">#15019</A>)
+  <LI>Tekstin tasaus ilmoitetaan oikein useammissa tilanteissa Wordissa ja Excelissä. (<A HREF="https://github.com/nvaccess/nvda/issues/15206">#15206</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15220">#15220</A>)
+  </UL>
+<LI>Microsoft Edge:
+  <UL>
+  <LI>NVDA ei enää siirry takaisin edelliseen selaustilasijaintiin Microsoft Edgessä pikavalikkoa avattaessa. (<A HREF="https://github.com/nvaccess/nvda/issues/15309">#15309</A>)
+  <LI>NVDA pystyy taas lukemaan latausten pikavalikon Microsoft Edgessä. (<A HREF="https://github.com/nvaccess/nvda/issues/14916">#14916</A>)
+  </UL>
+<LI>Pistekirjoitus:
+  <UL>
+  <LI>Pistekohdistin ja valinnanilmaisin päivittyvät nyt oikein aina, kun ne näytetään tai piilotetaan näppäinkomentoa käyttäen. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
+  <LI>Korjattu bugi, jossa Albatross-pistenäytöt yrittävät alustaa itsensä, vaikka toinen pistenäyttö on kytkettynä. (<A HREF="https://github.com/nvaccess/nvda/issues/15226">#15226</A>)
+  </UL>
+<LI>Korjattu järjestelmän luettelonäkymä (<CODE>SysListView32</CODE>) -säädinten tuki Windows Forms -sovelluksissa. (<A HREF="https://github.com/nvaccess/nvda/issues/15283">#15283</A>)
+<LI>NVDA ilmoittaa jälleen laskutoimitusten tulokset 32-bittisessä laskimessa Windowsin Server-, LTSC- ja LTSB-versioissa. (<A HREF="https://github.com/nvaccess/nvda/issues/15284">#15284</A>)
+</UL>
+
+<P></P>
+<H3>Muutokset kehittäjille</H3>
+<P>
+Katso muutokset tämän dokumentin <A HREF="../en/changes.html">englanninkielisestä versiosta</A>.
+</P>
 <H2>2023.2</H2>
 <P>
 Tässä versiossa esitellään lisäosakauppa, joka korvaa lisäosien hallinnan.
