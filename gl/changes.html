@@ -10,6 +10,107 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2023.3</H2>
+<H3>Novas Características</H3>
+<UL>
+<LI>Mellorada a xestión do son:
+  <UL>
+  <LI>O NVDA agora sacará o audio a través da Windows Audio Session API (WASAPI), o que pode mellorar a resposta, o rendemento e a estabilidade da voz e dos sons do NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>)
+  <LI>O uso de WASAPI pode deshabilitarse nas opcións Avanzadas.
+  Se WASAPI está habilitado, tamén poden configurarse as seguintes opcións avanzadas.
+    <UL>
+    <LI>Unha opción para facer que o volume dos sons e pitidos do NVDA siga á configuración do volúme da voz que esteas a usar. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>)
+    <LI>Unha opción para configurar por separado o volume dos sons do NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038">#15038</A>)
+    </UL>
+  </UL>
+<LI>O NVDA agora pode actualizar continuamente o resultado ao realizar o recoñecemento óptico de caracteres (OCR), falando o texto novo según apareza. (<A HREF="https://github.com/nvaccess/nvda/issues/2797">#2797</A>)
+  <UL>
+  <LI>Para habilitar esta funcionalidade, activa a opción "Refrescar periódicamente ol contido recoñecido" na categoría OCR de Windows do diálogo de opcións do NVDA.
+  <LI>Unha vez habilitado, podes conmutar a fala de texto novo activando anunciar cambios de contido dinámico (premendo <CODE>NVDA+5</CODE>).
+  </UL>
+<LI>Ao usar a deteción automática de pantallas braille, agora é posible excluir os controladores da detección do diálogo de seleción de pantalla braille. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+<LI>Unha nova opción nas opcións de Formateado de Documentos, "Ignorar liñas en branco para o anunciado de sangría de liña". (<A HREF="https://github.com/nvaccess/nvda/issues/13394">#13394</A>)
+<LI>Engadiuse un xesto sin asignar para navegar por grupos de pestanas en modo exploración. (<A HREF="https://github.com/nvaccess/nvda/issues/15046">#15046</A>)
+</UL>
+
+<P></P>
+<H3>Cambios</H3>
+<UL>
+<LI>Braille:
+  <UL>
+  <LI>Cando o texto nunha terminal cambia sen actualizar o cursor do sistema, o texto nunha pantalla braille agora actualizarase correctamente ao situarse sobre unha liña que cambiara.
+  Esto inclúe situacións onde o braille estea seguindo á revisión. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
+  <LI>Máis combinacións de teclas para BRLTTY están asignadas agora a ordes do NVDA (<A HREF="https://github.com/nvaccess/nvda/issues/6483">#6483</A>):
+    <UL>
+    <LI>learn: conmuta a axuda de entrada do NVDA
+    <LI>prefmenu: abre o menú do NVDA
+    <LI>prefload e prefsave: carga e garda a configuración do NVDA
+    <LI>time: amosa a hora
+    <LI>say_line: fala a liña actual onde estea colocado o cursor de revisión
+    <LI>say_below: le todo usando o cursor de revisión
+    </UL>
+  <LI>O controlador BRLTTY só está dispoñible cando estea en execución unha instancia BRLTTY con BrlAPI habilitado. (<A HREF="https://github.com/nvaccess/nvda/issues/15335">#15335</A>)
+  <LI>Borrouse a configuración avanzada para habilitar a compatibilidade con HID braille en favor dunha nova opción.
+  Agora podes desactivar a auto detección de controladores específicos para pantallas braille no diálogo de seleción de pantalla braille. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+  </UL>
+<LI>Tenda de complementos: os complementos instalados agora enumeraranse na pestana Complementos Dispoñibles, se aínda están dispoñibles na tenda. (<A HREF="https://github.com/nvaccess/nvda/issues/15374">#15374</A>)
+<LI>Algúns atallos de teclado actualizáronse no menú NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/15364">#15364</A>)
+</UL>
+
+<P></P>
+<H3>Arranxo de Erros</H3>
+<UL>
+<LI>Microsoft Office:
+  <UL>
+  <LI>Arranxo dun fallo en Microsoft Word cando as opcións de formateado de documentos "anunciar cabeceiras" e "anunciar comentarios e notas" non estaban activadas. (<A HREF="https://github.com/nvaccess/nvda/issues/15019">#15019</A>)
+  <LI>En Word e Excel, a aliñación de texto anunciarase correctamente en máis situacións. (<A HREF="https://github.com/nvaccess/nvda/issues/15206">#15206</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15220">#15220</A>)
+  </UL>
+<LI>Microsoft Edge:
+  <UL>
+  <LI>O NVDA xa non voltará á última posición do modo exploración ao se abrir o menú de contexto en Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/15309">#15309</A>)
+  <LI>O NVDA volta a ser capaz de ler menús de contexto de descargas en Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/14916">#14916</A>)
+  </UL>
+<LI>Braille:
+  <UL>
+  <LI>O cursor braille e os indicadores de seleción agora sempre se actualizan correctamente despois de amosar ou agochar os indicadores respectivos cun xesto. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
+  <LI>Arranxado un fallo onde as pantallas braille Albatross tentan inicializarse aíndaque outro dispositivo braille fora conectado. (<A HREF="https://github.com/nvaccess/nvda/issues/15226">#15226</A>)
+  </UL>
+<LI>Arranxado o soporte para controis System List view (<CODE>SysListView32</CODE>) en aplicacións Windows Forms. (<A HREF="https://github.com/nvaccess/nvda/issues/15283">#15283</A>)
+<LI>O NVDA volta a anunciar os resultados de cálculo na calculadora de Windows 32bit nas versións Server, LTSC e LTSB de Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/15284">#15284</A>)
+</UL>
+
+<P></P>
+<H3>Cambios para Desenvolvedores</H3>
+<P>
+Por favor consulta <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">a guía do desenvolvedor</A> para información sobre o proceso de obsolescencia e eliminación da API do NVDA.
+</P>
+<UL>
+<LI><CODE>braille.handler.handleUpdate</CODE> e <CODE>braille.handler.handleReviewMove</CODE> foron cambiadas para non actualizar instantáneamente.
+Antes deste cambio, cando se chamaba a calquera destos métodos con moita frecuencia, esto consumiría moitos recursos.
+Estos métodos agora poñen en cola unha actualización ao remate de cada ciclo do núcleo a cambio.
+Tamén deberían seren seguros para os fíos, facendo posible chamalos dende fíos en segundo plano. (<A HREF="https://github.com/nvaccess/nvda/issues/15163">#15163</A>)
+<LI>Engadiuse o soporte oficial para rexistrar controladores persoalizados de pantallas braille no proceso de deteción automática de pantallas braille.
+Consulta a documentación da clase <CODE>braille.BrailleDisplayDriver</CODE> para máis detalles.
+En particular, o atributo <CODE>supportsAutomaticDetection</CODE> debe ter o valor <CODE>True</CODE> e debe implementarse o método <CODE>registerAutomaticDetection</CODE> <CODE>classmethod</CODE>.  (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+</UL>
+
+<P></P>
+<H4>Obsolescencias</H4>
+<UL>
+<LI><CODE>braille.BrailleHandler.handlePendingCaretUpdate</CODE> está obsoleto e non ten substituto público.
+Borrarase en 2024.1. (<A HREF="https://github.com/nvaccess/nvda/issues/15163">#15163</A>)
+<LI>Importar as constantes <CODE>xlCenter</CODE>, <CODE>xlJustify</CODE>, <CODE>xlLeft</CODE>, <CODE>xlRight</CODE>, <CODE>xlDistributed</CODE>, <CODE>xlBottom</CODE>, <CODE>xlTop</CODE> dende <CODE>NVDAObjects.window.excel</CODE> está obsoleto.
+Usa as enumeracións <CODE>XlHAlign</CODE> ou <CODE>XlVAlign</CODE> a cambio. (<A HREF="https://github.com/nvaccess/nvda/issues/15205">#15205</A>)
+<LI>A asignación <CODE>NVDAObjects.window.excel.alignmentLabels</CODE> está obsoleta.
+Usa os métodos <CODE>displayString</CODE> das enumeracións <CODE>XlHAlign</CODE> ou <CODE>XlVAlign</CODE> a cambio. (<A HREF="https://github.com/nvaccess/nvda/issues/15205">#15205</A>)
+<LI><CODE>bdDetect.addUsbDevices</CODE> e <CODE>bdDetect.addBluetoothDevices</CODE> están obsoletas.
+Os controladores de pantallas Braille deberían implementar o método de clase <CODE>registerAutomaticDetection</CODE> a cambio.
+Ese método recibe un obxecto <CODE>DriverRegistrar</CODE> en cuxos métodos <CODE>addUsbDevices</CODE> e<CODE>addBluetoothDevices</CODE> poden usarse. (<A HREF="https://github.com/nvaccess/nvda/issues/15200">#15200</A>)
+<LI>A implementación predeterminada do método de comprobación en <CODE>BrailleDisplayDriver</CODE> usa <CODE>bdDetect.driverHasPossibleDevices</CODE> para os dispositivos que están marcados como fío seguro.
+A partir de NVDA 2024.1, para que o método base use <CODE>bdDetect.driverHasPossibleDevices</CODE>, o atributo <CODE>supportsAutomaticDetection</CODE> tamén debe ter o valor <CODE>True</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/15200">#15200</A>)
+</UL>
+
+<P></P>
 <H2>2023.2</H2>
 <P>
 Esta versión introduce a Tenda de Complementos para remprazar o Administrador de Complementos.
