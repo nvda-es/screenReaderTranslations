@@ -23,7 +23,7 @@
     <LI>Une option pour séparément configurer le volume des sons de NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038">#15038</A>)
     </UL>
   </UL>
-<LI>NVDA est maintenant capable d'actualiser continuellement le résultat lors de l'exécution de la reconnaissance optique des caractères (OCR), annonce du texte lorsqu'il apparaît. (<A HREF="https://github.com/nvaccess/nvda/issues/2797">#2797</A>)
+<LI>NVDA est maintenant capable d'actualiser continuellement le résultat lors de l'exécution de la reconnaissance optique des caractères (OCR), en annonçant le texte lorsqu'il apparaît. (<A HREF="https://github.com/nvaccess/nvda/issues/2797">#2797</A>)
   <UL>
   <LI>Pour activer cette fonctionnalité, activez l'option "Actualiser périodiquement le contenu reconnu" dans la catégorie Reconnaissance Optique de Caractères de Windows du dialogue des paramètres de NVDA.
   <LI>Une fois activé, vous pouvez basculer l'annonce du nouveau texte en basculant l'annonce des changements dynamiques de contenu (en pressant <CODE>NVDA+5</CODE>).
@@ -62,7 +62,7 @@
 <UL>
 <LI>Microsoft Office :
   <UL>
-  <LI>Correction d'un crash dans Microsoft Word quand les options de mise en forme des documents "annoncer les en-têtes" et "annoncer les commentaires et notes" ne sont pas activées. (<A HREF="https://github.com/nvaccess/nvda/issues/15019">#15019</A>)
+  <LI>Correction d'un crash dans Microsoft Word quand les options de mise en forme des documents "annoncer les titres" et "annoncer les notes et commentaires" ne sont pas activées. (<A HREF="https://github.com/nvaccess/nvda/issues/15019">#15019</A>)
   <LI>Dans Word et Excel, l'alignement du texte sera correctement annoncé dans d'avantage de situations. (<A HREF="https://github.com/nvaccess/nvda/issues/15206">#15206</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15220">#15220</A>)
   </UL>
 <LI>Microsoft Edge :
@@ -73,7 +73,7 @@
 <LI>Braille :
   <UL>
   <LI>Le curseur et l'indicateur de sélection Braille seront désormais toujours correctement actualisés après avoir affiché ou masqué leurs indicateurs respectifs via un geste de commande. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
-  <LI>Correction d'un problème où les afficheurs Braille Albatross essayaient de s'initialiser alors qu'un autre afficheur Braille était connecté.. (<A HREF="https://github.com/nvaccess/nvda/issues/15226">#15226</A>)
+  <LI>Correction d'un problème où les afficheurs Braille Albatross essayaient de s'initialiser alors qu'un autre afficheur Braille était connecté. (<A HREF="https://github.com/nvaccess/nvda/issues/15226">#15226</A>)
   </UL>
 <LI>Correction du support pour les contrôles des listes système (<CODE>SysListView32</CODE>) dans les applications Windows Forms. (<A HREF="https://github.com/nvaccess/nvda/issues/15283">#15283</A>)
 <LI>NVDA annonce à nouveau les résultats des calculs dans la calculatrice 32 bits de Windows Server, versions de Windows LTSC et LTSB. (<A HREF="https://github.com/nvaccess/nvda/issues/15284">#15284</A>)
@@ -82,32 +82,35 @@
 <P></P>
 <H3>Changements pour les Développeurs</H3>
 <P>
-+Please refer to <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">the developer guide</A> for information on NVDA's API deprecation and removal process.
-+- <CODE>braille.handler.handleUpdate</CODE> and <CODE>braille.handler.handleReviewMove</CODE> have been changed in order not to update instantly.
-+Before this change, when either of these methods was called very often, this would drain many resources.
-+These methods now queue an update at the end of every core cycle instead.
-+They should also be thread safe, making it possible to call them from background threads. (<A HREF="https://github.com/nvaccess/nvda/issues/15163">#15163</A>)
-+- Added official support to register custom braille display drivers in the automatic braille display detection process.
-+Consult the <CODE>braille.BrailleDisplayDriver</CODE> class documentation for more details.
-+Most notably, the <CODE>supportsAutomaticDetection</CODE> attribute must be set to <CODE>True</CODE> and the <CODE>registerAutomaticDetection</CODE> <CODE>classmethod</CODE> must be implemented.  (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
-+-
-+
-+=== Deprecations ===
-+- <CODE>braille.BrailleHandler.handlePendingCaretUpdate</CODE> is now deprecated with no public replacement.
-+It will be removed in 2024.1. (<A HREF="https://github.com/nvaccess/nvda/issues/15163">#15163</A>)
-+- Importing the constants <CODE>xlCenter</CODE>, <CODE>xlJustify</CODE>, <CODE>xlLeft</CODE>, <CODE>xlRight</CODE>, <CODE>xlDistributed</CODE>, <CODE>xlBottom</CODE>, <CODE>xlTop</CODE> from <CODE>NVDAObjects.window.excel</CODE> is deprecated.
-+Use <CODE>XlHAlign</CODE> or <CODE>XlVAlign</CODE> enumerations instead. (<A HREF="https://github.com/nvaccess/nvda/issues/15205">#15205</A>)
-+- The mapping <CODE>NVDAObjects.window.excel.alignmentLabels</CODE> is deprecated.
-+Use the <CODE>displayString</CODE> methods of <CODE>XlHAlign</CODE> or <CODE>XlVAlign</CODE> enumerations instead. (<A HREF="https://github.com/nvaccess/nvda/issues/15205">#15205</A>)
-+- <CODE>bdDetect.addUsbDevices</CODE> and <CODE>bdDetect.addBluetoothDevices</CODE> have been deprecated.
-+Braille display drivers should implement the <CODE>registerAutomaticDetection</CODE> classmethod instead.
-+That method receives a <CODE>DriverRegistrar</CODE> object on which the <CODE>addUsbDevices</CODE> and <CODE>addBluetoothDevices</CODE> methods can be used. (<A HREF="https://github.com/nvaccess/nvda/issues/15200">#15200</A>)
-+- The default implementation of the check method on <CODE>BrailleDisplayDriver</CODE> uses <CODE>bdDetect.driverHasPossibleDevices</CODE> for devices that are marked as thread safe.
-+Starting from NVDA 2024.1, in order for the base method to use <CODE>bdDetect.driverHasPossibleDevices</CODE>, the <CODE>supportsAutomaticDetection</CODE> attribute must be set to <CODE>True</CODE> as well. (<A HREF="https://github.com/nvaccess/nvda/issues/15200">#15200</A>)
-+-
-+
-+
+Veuillez vous référer au <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">guide de développement</A> pour plus d'informations sur le processus de dépréciation et de suppression de l'API de NVDA.
 </P>
+<UL>
+<LI><CODE>braille.handler.handleUpdate</CODE> et <CODE>braille.handler.handleReviewMove</CODE> ont été modifiés afin de ne pas effectuer de mise à jour instantanée.
+Avant ce changement, lorsque l’une ou l’autre de ces méthodes était appelée très souvent, cela consommait beaucoup de ressources.
+Ces méthodes mettent désormais en file d’attente une mise à jour à la fin de chaque cycle principal.
+Elles doivent également être thread-safe, ce qui permet de les appeler à partir de threads en arrière-plan. (<A HREF="https://github.com/nvaccess/nvda/issues/15163">#15163</A>)
+<LI>Ajout d'un support officiel pour enregistrer les pilotes d'afficheur braille personnalisés dans le processus de détection automatique de l'afficheur braille.
+Veuillez consulter la documentation de la classe <CODE>braille.BrailleDisplayDriver</CODE> pour plus de détails.
+Plus particulièrement, l'attribut <CODE>supportsAutomaticDetection</CODE> doit être défini sur <CODE>True</CODE> et la <CODE>classmethod</CODE> <CODE>registerAutomaticDetection</CODE> doit être implémentée. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+</UL>
+
+<P></P>
+<H4>Dépréciations</H4>
+<UL>
+<LI><CODE>braille.BrailleHandler.handlePendingCaretUpdate</CODE> est désormais obsolète sans remplacement public.
+Elle sera supprimé en 2024.1. (<A HREF="https://github.com/nvaccess/nvda/issues/15163">#15163</A>)
+<LI>Importer les constantes <CODE>xlCenter</CODE>, <CODE>xlJustify</CODE>, <CODE>xlLeft</CODE>, <CODE>xlRight</CODE>, <CODE>xlDistributed</CODE>, <CODE>xlBottom</CODE>, <CODE>xlTop</CODE> depuis <CODE>NVDAObjects.window .excel</CODE> est obsolète.
+Utilisez les énumérations <CODE>XlHAlign</CODE> ou <CODE>XlVAlign</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/15205">#15205</A>)
+<LI>Le mapping <CODE>NVDAObjects.window.excel.alignmentLabels</CODE> est obsolète.
+Utilisez les méthodes <CODE>displayString</CODE> des énumérations <CODE>XlHAlign</CODE> ou <CODE>XlVAlign</CODE> à la place. (<A HREF="https://github.com/nvaccess/nvda/issues/15205">#15205</A>)
+<LI><CODE>bdDetect.addUsbDevices</CODE> et <CODE>bdDetect.addBluetoothDevices</CODE> sont obsolètes.
+Les pilotes d'afficheurs braille doivent implémenter la méthode de classe <CODE>registerAutomaticDetection</CODE> à la place.
+Cette méthode reçoit un objet <CODE>DriverRegistrar</CODE> sur lequel les méthodes <CODE>addUsbDevices</CODE> et <CODE>addBluetoothDevices</CODE> peuvent être utilisées. (<A HREF="https://github.com/nvaccess/nvda/issues/15200">#15200</A>)
+<LI>L'implémentation par défaut de la méthode check sur <CODE>BrailleDisplayDriver</CODE> utilise <CODE>bdDetect.driverHasPossibleDevices</CODE> pour les périphériques marqués comme thread-safe.
+À partir de NVDA 2024.1, pour que la méthode de base utilise <CODE>bdDetect.driverHasPossibleDevices</CODE>, l'attribut <CODE>supportsAutomaticDetection</CODE> doit également être défini sur <CODE>True</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/15200">#15200</A>)
+</UL>
+
+<P></P>
 <H2>2023.2</H2>
 <P>
 Cette version introduit l'Add-on Store pour remplacer le gestionnaire d'extensions.
