@@ -15,7 +15,7 @@ Quoi de Neuf dans NVDA
     - Une option pour séparément configurer le volume des sons de NVDA. (#1409, #15038)
     -
   -
-- NVDA est maintenant capable d'actualiser continuellement le résultat lors de l'exécution de la reconnaissance optique des caractères (OCR), annonce du texte lorsqu'il apparaît. (#2797)
+- NVDA est maintenant capable d'actualiser continuellement le résultat lors de l'exécution de la reconnaissance optique des caractères (OCR), en annonçant le texte lorsqu'il apparaît. (#2797)
   - Pour activer cette fonctionnalité, activez l'option "Actualiser périodiquement le contenu reconnu" dans la catégorie Reconnaissance Optique de Caractères de Windows du dialogue des paramètres de NVDA.
   - Une fois activé, vous pouvez basculer l'annonce du nouveau texte en basculant l'annonce des changements dynamiques de contenu (en pressant ``NVDA+5``).
   -
@@ -46,7 +46,7 @@ Quoi de Neuf dans NVDA
 
 == Corrections de Bogues ==
 - Microsoft Office :
-  - Correction d'un crash dans Microsoft Word quand les options de mise en forme des documents "annoncer les en-têtes" et "annoncer les commentaires et notes" ne sont pas activées. (#15019)
+  - Correction d'un crash dans Microsoft Word quand les options de mise en forme des documents "annoncer les titres" et "annoncer les notes et commentaires" ne sont pas activées. (#15019)
   - Dans Word et Excel, l'alignement du texte sera correctement annoncé dans d'avantage de situations. (#15206, #15220)
   -
 - Microsoft Edge :
@@ -55,38 +55,38 @@ Quoi de Neuf dans NVDA
   -
 - Braille :
   - Le curseur et l'indicateur de sélection Braille seront désormais toujours correctement actualisés après avoir affiché ou masqué leurs indicateurs respectifs via un geste de commande. (#15115)
-  - Correction d'un problème où les afficheurs Braille Albatross essayaient de s'initialiser alors qu'un autre afficheur Braille était connecté.. (#15226)
+  - Correction d'un problème où les afficheurs Braille Albatross essayaient de s'initialiser alors qu'un autre afficheur Braille était connecté. (#15226)
   -
 - Correction du support pour les contrôles des listes système (``SysListView32``) dans les applications Windows Forms. (#15283)
 - NVDA annonce à nouveau les résultats des calculs dans la calculatrice 32 bits de Windows Server, versions de Windows LTSC et LTSB. (#15284)
 -
 
 == Changements pour les Développeurs ==
-+Please refer to [the developer guide https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] for information on NVDA's API deprecation and removal process.
-+- ``braille.handler.handleUpdate`` and ``braille.handler.handleReviewMove`` have been changed in order not to update instantly.
-+Before this change, when either of these methods was called very often, this would drain many resources.
-+These methods now queue an update at the end of every core cycle instead.
-+They should also be thread safe, making it possible to call them from background threads. (#15163)
-+- Added official support to register custom braille display drivers in the automatic braille display detection process.
-+Consult the ``braille.BrailleDisplayDriver`` class documentation for more details.
-+Most notably, the ``supportsAutomaticDetection`` attribute must be set to ``True`` and the ``registerAutomaticDetection`` ``classmethod`` must be implemented.  (#15196)
-+-
-+
-+=== Deprecations ===
-+- ``braille.BrailleHandler.handlePendingCaretUpdate`` is now deprecated with no public replacement.
-+It will be removed in 2024.1. (#15163)
-+- Importing the constants ``xlCenter``, ``xlJustify``, ``xlLeft``, ``xlRight``, ``xlDistributed``, ``xlBottom``, ``xlTop`` from ``NVDAObjects.window.excel`` is deprecated.
-+Use ``XlHAlign`` or ``XlVAlign`` enumerations instead. (#15205)
-+- The mapping ``NVDAObjects.window.excel.alignmentLabels`` is deprecated.
-+Use the ``displayString`` methods of ``XlHAlign`` or ``XlVAlign`` enumerations instead. (#15205)
-+- ``bdDetect.addUsbDevices`` and ``bdDetect.addBluetoothDevices`` have been deprecated.
-+Braille display drivers should implement the ``registerAutomaticDetection`` classmethod instead.
-+That method receives a ``DriverRegistrar`` object on which the ``addUsbDevices`` and ``addBluetoothDevices`` methods can be used. (#15200)
-+- The default implementation of the check method on ``BrailleDisplayDriver`` uses ``bdDetect.driverHasPossibleDevices`` for devices that are marked as thread safe.
-+Starting from NVDA 2024.1, in order for the base method to use ``bdDetect.driverHasPossibleDevices``, the ``supportsAutomaticDetection`` attribute must be set to ``True`` as well. (#15200)
-+-
-+
-+
+Veuillez vous référer au [guide de développement https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] pour plus d'informations sur le processus de dépréciation et de suppression de l'API de NVDA.
+- ``braille.handler.handleUpdate`` et ``braille.handler.handleReviewMove`` ont été modifiés afin de ne pas effectuer de mise à jour instantanée.
+Avant ce changement, lorsque l’une ou l’autre de ces méthodes était appelée très souvent, cela consommait beaucoup de ressources.
+Ces méthodes mettent désormais en file d’attente une mise à jour à la fin de chaque cycle principal.
+Elles doivent également être thread-safe, ce qui permet de les appeler à partir de threads en arrière-plan. (#15163)
+- Ajout d'un support officiel pour enregistrer les pilotes d'afficheur braille personnalisés dans le processus de détection automatique de l'afficheur braille.
+Veuillez consulter la documentation de la classe ``braille.BrailleDisplayDriver`` pour plus de détails.
+Plus particulièrement, l'attribut ``supportsAutomaticDetection`` doit être défini sur ``True`` et la ``classmethod`` ``registerAutomaticDetection`` doit être implémentée. (#15196)
+-
+
+=== Dépréciations ===
+- ``braille.BrailleHandler.handlePendingCaretUpdate`` est désormais obsolète sans remplacement public.
+Elle sera supprimé en 2024.1. (#15163)
+- Importer les constantes ``xlCenter``, ``xlJustify``, ``xlLeft``, ``xlRight``, ``xlDistributed``, ``xlBottom``, ``xlTop`` depuis ``NVDAObjects.window .excel`` est obsolète.
+Utilisez les énumérations ``XlHAlign`` ou ``XlVAlign`` à la place. (#15205)
+- Le mapping ``NVDAObjects.window.excel.alignmentLabels`` est obsolète.
+Utilisez les méthodes ``displayString`` des énumérations ``XlHAlign`` ou ``XlVAlign`` à la place. (#15205)
+- ``bdDetect.addUsbDevices`` et ``bdDetect.addBluetoothDevices`` sont obsolètes.
+Les pilotes d'afficheurs braille doivent implémenter la méthode de classe ``registerAutomaticDetection`` à la place.
+Cette méthode reçoit un objet ``DriverRegistrar`` sur lequel les méthodes ``addUsbDevices`` et ``addBluetoothDevices`` peuvent être utilisées. (#15200)
+- L'implémentation par défaut de la méthode check sur ``BrailleDisplayDriver`` utilise ``bdDetect.driverHasPossibleDevices`` pour les périphériques marqués comme thread-safe.
+À partir de NVDA 2024.1, pour que la méthode de base utilise ``bdDetect.driverHasPossibleDevices``, l'attribut ``supportsAutomaticDetection`` doit également être défini sur ``True``. (#15200)
+-
+
+
 = 2023.2 =
 Cette version introduit l'Add-on Store pour remplacer le gestionnaire d'extensions.
 Dans l'Add-on Store vous pouvez parcourir, rechercher, installer et mettre à jour les extensions de la communauté.
