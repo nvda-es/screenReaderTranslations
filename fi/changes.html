@@ -11,16 +11,38 @@
 </FONT></CENTER>
 
 <H2>2023.3</H2>
+<P>
+Tämä versio sisältää suoritus- ja reagointikyvyn sekä äänentoiston vakauden parannuksia.
+</P>
+<P>
+NVDA voi nyt päivittää tekstintunnistuksen tulokset automaattisesti ja puhua uuden tekstin sen ilmestyessä.
+Tämä voidaan määrittää NVDA:n asetusvalintaikkunan Windowsin tekstintunnistus -kategoriasta.
+</P>
+<P>
+Useita pistenäyttöjen korjauksia, jotka parantavat laitteiden tunnistusta ja kohdistimen siirtämistä.
+Pistenäyttöajureita on nyt mahdollista jättää pois automaattisesta tunnistuksesta, mikä parantaa sen suorituskykyä.
+Uusia BRLTTY-komentoja on myös lisätty.
+</P>
+<P>
+Bugikorjauksia lisäosakauppaan, Microsoft Officeen, Edgen pikavalikoihin sekä Windowsin laskimeen.
+</P>
 <H3>Uudet ominaisuudet</H3>
 <UL>
 <LI>Paranneltu äänenhallinta:
   <UL>
-  <LI>NVDA toistaa nyt ääntä Windows Audio Session APIn (WASAPI) kautta, mikä saattaa parantaa puheen ja äänien reagointi- ja suorituskykyä sekä vakautta. (<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>)
+  <LI>NVDA toistaa nyt ääntä Windows Audio Session APIn (WASAPI) kautta, mikä saattaa parantaa puheen ja äänien reagointi- ja suorituskykyä sekä vakautta. (<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11169">#11169</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11615">#11615</A>, <A HREF="https://github.com/nvaccess/nvda/issues/5096">#5096</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10185">#10185</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11061">#11061</A>)
   <LI>WASAPI voidaan poistaa käytöstä lisäasetuksista.
   Jos WASAPI on otettu käyttöön, myös seuraavat lisäasetukset on mahdollista määrittää.
     <UL>
     <LI>Asetus, joka saa NVDA:n äänet ja piippaukset mukautumaan käyttämäsi puheäänen voimakkuuteen. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>)
     <LI>Asetus, jonka avulla NVDA-äänien voimakkuutta on mahdollista säätää erikseen. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038">#15038</A>)
+    </UL>
+  <LI>Huom: WASAPI ei ole yhteensopiva joidenkin lisäosien kanssa.
+  Näille lisäosille on saatavilla yhteensopivat päivitykset. Asenna ne ennen NVDA:n päivittämistä.
+  Näiden lisäosien yhteensopimattomat versiot poistetaan käytöstä NVDA:ta päivitettäessä:
+    <UL>
+    <LI>Tony's Enhancements 1.15 tai vanhempi. (<A HREF="https://github.com/nvaccess/nvda/issues/15402">#15402</A>)
+    <LI>NVDA global commands extension 12.0.8 tai vanhempi. (<A HREF="https://github.com/nvaccess/nvda/issues/15443">#15443</A>)
     </UL>
   </UL>
 <LI>NVDA pystyy nyt päivittämään jatkuvasti tunnistuksen tulosta suorittaessaan tekstintunnistusta ja puhumaan uuden tekstin sitä mukaa, kun se ilmestyy. (<A HREF="https://github.com/nvaccess/nvda/issues/2797">#2797</A>)
@@ -42,18 +64,18 @@
   Näihin sisältyvät tilanteet, joissa pistenäyttö seuraa tarkastelukohdistinta. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
   <LI>Määritetty NVDA-komennot useampiin BRLTTYn näppäinsidoksiin (<A HREF="https://github.com/nvaccess/nvda/issues/6483">#6483</A>):
     <UL>
-    <LI>learn: NVDA:n näppäinohje
-    <LI>prefmenu: Avaa NVDA-valikko
-    <LI>prefload/prefsave: Lataa/tallenna NVDA:n asetukset
-    <LI>time: Näytä kellonaika
-    <LI>say_line: Puhu tarkastelukohdistimen kohdalla oleva rivi
-    <LI>say_below: Jatkuva luku
+    <LI><CODE>learn</CODE>: NVDA:n näppäinohje
+    <LI><CODE>prefmenu</CODE>: Avaa NVDA-valikko
+    <LI><CODE>prefload</CODE>/<CODE>prefsave</CODE>: Lataa/tallenna NVDA:n asetukset
+    <LI><CODE>time</CODE>: Näytä kellonaika
+    <LI><CODE>say_line</CODE>: Puhu tarkastelukohdistimen kohdalla oleva rivi
+    <LI><CODE>say_below</CODE>: Jatkuva luku
     </UL>
   <LI>BRLTTY-ajuri on käytettävissä vain, kun käynnissä on BRLTTY-kopio, jossa BrlAPI on käytössä. (<A HREF="https://github.com/nvaccess/nvda/issues/15335">#15335</A>)
   <LI>HID Braille -protokollan käyttöönottava lisäasetus on korvattu uudella asetuksella.
   Automaattinen tunnistus on nyt mahdollista poistaa käytöstä määrätyiltä pistenäyttöajureilta Valitse pistenäyttö -valintaikkunassa. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
   </UL>
-<LI>Asennetut lisäosat näytetään nyt lisäosakaupan Saatavilla-välilehdellä, mikäli ne ovat edelleen saatavilla. (<A HREF="https://github.com/nvaccess/nvda/issues/15374">#15374</A>)
+<LI>Asennetut lisäosat näytetään nyt lisäosakaupan Saatavilla-välilehdellä, mikäli ne ovat saatavilla. (<A HREF="https://github.com/nvaccess/nvda/issues/15374">#15374</A>)
 <LI>Jotkut NVDA-valikossa olevien kohteiden pikanäppäimistä on päivitetty. Tämä koskee vain käyttäjiä, joilla NVDA:n kielenä on englanti. (<A HREF="https://github.com/nvaccess/nvda/issues/15364">#15364</A>)
 </UL>
 
@@ -75,8 +97,14 @@
   <LI>Pistekohdistin ja valinnanilmaisin päivittyvät nyt oikein aina, kun ne näytetään tai piilotetaan näppäinkomentoa käyttäen. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
   <LI>Korjattu bugi, jossa Albatross-pistenäytöt yrittävät alustaa itsensä, vaikka toinen pistenäyttö on kytkettynä. (<A HREF="https://github.com/nvaccess/nvda/issues/15226">#15226</A>)
   </UL>
+<LI>Lisäosakauppa:
+  <UL>
+  <LI>Korjattu bugi, joka aiheutti sen, että yhteensopimattomat lisäosat näytettiin, vaikka "Näytä yhteensopimattomat lisäosat" -valintaruudun valinta oli poistettu. (<A HREF="https://github.com/nvaccess/nvda/issues/15411">#15411</A>)
+  <LI>Yhteensopivuussyistä estetyt lisäosat suodatetaan nyt asianmukaisesti, kun Käytössä/ei käytössä -suodattimen tilaa vaihdetaan. (<A HREF="https://github.com/nvaccess/nvda/issues/15416">#15416</A>)
+  <LI>Korjattu bugi, joka esti asennetut ja käyttöön otetut yhteensopimattomat lisäosat, jotka päivitettiin tai korvattiin ulkoisesta lähteestä asennetulla versiolla. (<A HREF="https://github.com/nvaccess/nvda/issues/15417">#15417</A>)
+  </UL>
 <LI>Korjattu järjestelmän luettelonäkymä (<CODE>SysListView32</CODE>) -säädinten tuki Windows Forms -sovelluksissa. (<A HREF="https://github.com/nvaccess/nvda/issues/15283">#15283</A>)
-<LI>NVDA ilmoittaa jälleen laskutoimitusten tulokset 32-bittisessä laskimessa Windowsin Server-, LTSC- ja LTSB-versioissa. (<A HREF="https://github.com/nvaccess/nvda/issues/15284">#15284</A>)
+<LI>NVDA ilmoittaa jälleen laskutoimitusten tulokset 32-bittisessä laskimessa Windowsin Server-, LTSC- ja LTSB-versioissa. (<A HREF="https://github.com/nvaccess/nvda/issues/15230">#15230</A>)
 </UL>
 
 <P></P>
