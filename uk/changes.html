@@ -10,6 +10,135 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2023.3</H2>
+<P>
+Цей випуск включає поліпшення продуктивності, швидкодії та стабільності аудіовиводу.
+</P>
+<P>
+NVDA тепер може періодично оновлювати результати оптичного розпізнавання символів, промовляючи новий текст, коли він з’являється.
+Це можна налаштувати у категорії Windows OCR діалогу налаштувань NVDA.
+</P>
+<P>
+Було зроблено кілька виправлень у брайлі, які покращили розпізнавання пристроїв і переміщення каретки.
+З’явилася можливість вимкнути небажані драйвери з автоматичного виявлення, щоб покращити його продуктивність.
+Крім того, з’явилися нові команди BRLTTY.
+</P>
+<P>
+Також виправлено помилки в Магазині додатків, контекстному меню Microsoft Office, Microsoft Edge й Калькуляторі Windows.
+</P>
+<H3>Нові можливості</H3>
+<UL>
+<LI>Розширене керування звуком:
+  <UL>
+  <LI>NVDA тепер виводить аудіо через Windows Audio Session API (WASAPI), що може поліпшити швидкодію, продуктивність та стабільність мовлення та звуків NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11169">#11169</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11615">#11615</A>, <A HREF="https://github.com/nvaccess/nvda/issues/5096">#5096</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10185">#10185</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11061">#11061</A>)
+  <LI>Використання WASAPI можна вимкнути в додаткових налаштуваннях.
+  Якщо WASAPI увімкнено, то можна налаштувати нижченаведені параметри.
+    <UL>
+    <LI>Можна налаштувати гучність звуків і сигналів NVDA відповідно до гучності голосу, який ви використовуєте. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>)
+    <LI>Можливість окремо налаштувати гучність звуків NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038">#15038</A>)
+    </UL>
+  <LI>Примітка: WASAPI несумісний з деякими додатками.
+  Для цих додатків доступні сумісні оновлення, будь ласка, оновіть їх перед оновленням NVDA.
+  Несумісні версії цих додатків буде вимкнено під час оновлення NVDA:
+    <UL>
+    <LI>Tony's Enhancements версії 1.15 чи старіша. (<A HREF="https://github.com/nvaccess/nvda/issues/15402">#15402</A>)
+    <LI>Глобальне розширення команд NVDA 12.0.8 чи старіша. (<A HREF="https://github.com/nvaccess/nvda/issues/15443">#15443</A>)
+    </UL>
+  </UL>
+<LI>NVDA тепер може постійно оновлювати результат при виконанні оптичного розпізнавання символів (OCR), вимовляючи новий текст у міру його появи. (<A HREF="https://github.com/nvaccess/nvda/issues/2797">#2797</A>)
+  <UL>
+  <LI>Щоб увімкнути цей функціонал, увімкніть параметр «Періодично оновлювати розпізнаний вміст» у категорії Windows OCR діалогу налаштувань NVDA.
+  <LI>Після увімкнення ви можете увімкнути озвучення нового тексту, перемкнувши читання змін динамічного вмісту (натиснувши <CODE>NVDA+5</CODE>).
+  </UL>
+<LI>Якщо використовується автоматичне виявлення брайлівських дисплеїв, тепер у діалозі вибору брайлівського дисплея можна відключити від автоматичного виявлення небажані драйвери. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+<LI>Новий параметр у налаштуваннях форматування документа — «Ігнорувати порожні рядки під час повідомлень про відступ рядка». (<A HREF="https://github.com/nvaccess/nvda/issues/13394">#13394</A>)
+<LI>Додано непризначений жест для переміщення між вкладками та групуваннями в режимі огляду. (<A HREF="https://github.com/nvaccess/nvda/issues/15046">#15046</A>)
+</UL>
+
+<P></P>
+<H3>Зміни</H3>
+<UL>
+<LI>Брайль:
+  <UL>
+  <LI>Коли текст у терміналі змінюється без оновлення каретки, текст на брайлівському дисплеї тепер буде належним чином оновлюватися, коли він буде розміщений на зміненому рядку.
+  Це включає ситуації, де брайль прив’язаний до перегляду. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
+  <LI>Додано більше прив'язок клавіш BRLTTY до команд NVDA (<A HREF="https://github.com/nvaccess/nvda/issues/6483">#6483</A>):
+    <UL>
+    <LI><CODE>learn</CODE>: перемкнути режим допомоги при введенні
+    <LI><CODE>prefmenu</CODE>: відкрити меню NVDA
+    <LI><CODE>prefload</CODE>/<CODE>prefsave</CODE>: завантажити/зберегти конфігурацію NVDA
+    <LI><CODE>time</CODE>: показати час
+    <LI><CODE>say_line</CODE>: промовити поточний рядок, де розташований переглядовий курсор
+    <LI><CODE>say_below</CODE>: читати все з використанням переглядового курсора
+    </UL>
+  <LI>Драйвер BRLTTY доступний лише тоді, коли запущена копія BRLTTY увімкнена через BrlAPI. (<A HREF="https://github.com/nvaccess/nvda/issues/15335">#15335</A>)
+  <LI>Додаткове налаштування, яке вмикає підтримку HID Braille, було вилучено на користь нового параметра.
+  Тепер ви можете вимкнути певні драйвери для автоматичного виявлення брайлівського дисплея в діалозі вибору брайлівського дисплея. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+  </UL>
+<LI>Магазин додатків: Встановлені додатки тепер будуть перераховані на вкладці Доступні додатки, якщо вони доступні в магазині. (<A HREF="https://github.com/nvaccess/nvda/issues/15374">#15374</A>)
+<LI>В меню оновлення NVDA оновлено низку гарячих клавіш. (<A HREF="https://github.com/nvaccess/nvda/issues/15364">#15364</A>)
+</UL>
+
+<P></P>
+<H3>Виправлення</H3>
+<UL>
+<LI>Microsoft Office:
+  <UL>
+  <LI>Виправлено збій у Microsoft Word, коли параметри «Повідомляти заголовки» та «Повідомляти нотатки й коментарі» були вимкнені. (<A HREF="https://github.com/nvaccess/nvda/issues/15019">#15019</A>)
+  <LI>У Word і Excel вирівнювання тексту буде коректно повідомлятися в більшій кількості ситуацій. (<A HREF="https://github.com/nvaccess/nvda/issues/15206">#15206</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15220">#15220</A>)
+  </UL>
+<LI>Microsoft Edge:
+  <UL>
+  <LI>NVDA більше не буде повертатися до останньої позиції режиму огляду при відкритті контекстного меню в Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/15309">#15309</A>)
+  <LI>NVDA знову може читати контекстні меню завантажень у Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/14916">#14916</A>)
+  </UL>
+<LI>Брайль:
+  <UL>
+  <LI>Тепер брайлівський курсор та індикатори виділення завжди будуть коректно оновлюватися після показу або приховування відповідних індикаторів за допомогою жесту. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
+  <LI>Виправлено помилку, коли брайлівські дисплеї Albatross намагаються ініціалізуватися, хоча підключено інший брайлівський пристрій. (<A HREF="https://github.com/nvaccess/nvda/issues/15226">#15226</A>)
+  </UL>
+<LI>Магазин додатків:
+  <UL>
+  <LI>Виправлено помилку, коли зняття прапорця «Включити несумісні додатки» призводило до того, що несумісні додатки все ще залишалися у магазині. (<A HREF="https://github.com/nvaccess/nvda/issues/15411">#15411</A>)
+  <LI>Додатки, заблоковані з причин сумісності, тепер повинні коректно фільтруватися при перемиканні фільтра для увімкненого/вимкненого стану. (<A HREF="https://github.com/nvaccess/nvda/issues/15416">#15416</A>)
+  <LI>Виправлено помилку, яка перешкоджала оновленню або заміні несумісних додатків, встановлених та увімкнених за допомогою зовнішнього інструменту встановлення. (<A HREF="https://github.com/nvaccess/nvda/issues/15417">#15417</A>)
+  </UL>
+<LI>Виправлено підтримку System List view (<CODE>SysListView32</CODE>) у програмах Windows Forms. (<A HREF="https://github.com/nvaccess/nvda/issues/15283">#15283</A>)
+<LI>NVDA знову оголошує результати розрахунків у калькуляторі Windows 32bit на версіях Windows Server, LTSC і LTSB. (<A HREF="https://github.com/nvaccess/nvda/issues/15230">#15230</A>)
+</UL>
+
+<P></P>
+<H3>Зміни для розробників (англ)</H3>
+<P>
+Please refer to <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">the developer guide</A> for information on NVDA's API deprecation and removal process.
+</P>
+<UL>
+<LI><CODE>braille.handler.handleUpdate</CODE> and <CODE>braille.handler.handleReviewMove</CODE> have been changed in order not to update instantly.
+Before this change, when either of these methods was called very often, this would drain many resources.
+These methods now queue an update at the end of every core cycle instead.
+They should also be thread safe, making it possible to call them from background threads. (<A HREF="https://github.com/nvaccess/nvda/issues/15163">#15163</A>)
+<LI>Added official support to register custom braille display drivers in the automatic braille display detection process.
+Consult the <CODE>braille.BrailleDisplayDriver</CODE> class documentation for more details.
+Most notably, the <CODE>supportsAutomaticDetection</CODE> attribute must be set to <CODE>True</CODE> and the <CODE>registerAutomaticDetection</CODE> <CODE>classmethod</CODE> must be implemented.  (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+</UL>
+
+<P></P>
+<H4>Deprecations</H4>
+<UL>
+<LI><CODE>braille.BrailleHandler.handlePendingCaretUpdate</CODE> is now deprecated with no public replacement.
+It will be removed in 2024.1. (<A HREF="https://github.com/nvaccess/nvda/issues/15163">#15163</A>)
+<LI>Importing the constants <CODE>xlCenter</CODE>, <CODE>xlJustify</CODE>, <CODE>xlLeft</CODE>, <CODE>xlRight</CODE>, <CODE>xlDistributed</CODE>, <CODE>xlBottom</CODE>, <CODE>xlTop</CODE> from <CODE>NVDAObjects.window.excel</CODE> is deprecated.
+Use <CODE>XlHAlign</CODE> or <CODE>XlVAlign</CODE> enumerations instead. (<A HREF="https://github.com/nvaccess/nvda/issues/15205">#15205</A>)
+<LI>The mapping <CODE>NVDAObjects.window.excel.alignmentLabels</CODE> is deprecated.
+Use the <CODE>displayString</CODE> methods of <CODE>XlHAlign</CODE> or <CODE>XlVAlign</CODE> enumerations instead. (<A HREF="https://github.com/nvaccess/nvda/issues/15205">#15205</A>)
+<LI><CODE>bdDetect.addUsbDevices</CODE> and <CODE>bdDetect.addBluetoothDevices</CODE> have been deprecated.
+Braille display drivers should implement the <CODE>registerAutomaticDetection</CODE> classmethod instead.
+That method receives a <CODE>DriverRegistrar</CODE> object on which the <CODE>addUsbDevices</CODE> and <CODE>addBluetoothDevices</CODE> methods can be used. (<A HREF="https://github.com/nvaccess/nvda/issues/15200">#15200</A>)
+<LI>The default implementation of the check method on <CODE>BrailleDisplayDriver</CODE> uses <CODE>bdDetect.driverHasPossibleDevices</CODE> for devices that are marked as thread safe.
+Starting from NVDA 2024.1, in order for the base method to use <CODE>bdDetect.driverHasPossibleDevices</CODE>, the <CODE>supportsAutomaticDetection</CODE> attribute must be set to <CODE>True</CODE> as well. (<A HREF="https://github.com/nvaccess/nvda/issues/15200">#15200</A>)
+</UL>
+
+<P></P>
 <H2>2023.2</H2>
 <P>
 У цій версії на заміну менеджеру додатків представлено Магазин додатків.
