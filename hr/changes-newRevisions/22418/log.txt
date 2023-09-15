@@ -1,0 +1,16 @@
+commit 397fe1125c110a318266b0a25264a1ce51419ace
+Author: Sean Budd <sean@nvaccess.org>
+Date:   Mon Sep 11 16:35:41 2023 +1000
+
+    Force disable older versions of tony's enhancements add-on with 2023.3 (#15402)
+    
+    Tony's enhancements version 1.51 and older prevents any speech from happening when WASAPI is enabled.
+    This is due to the add-on relying on private API functions.
+    Now that WASAPI is enabled by default, upgrading to 2023.3 resulting in silence should be avoided if possible.
+    
+    Description of user facing changes
+    When updating to NVDA 2023.3, if tony's enhancement add-on is installed it will trigger the typical UX warning for upgrading to an API breaking release, where incompatible add-ons are force disabled.
+    
+    Description of development approach
+    Force known versions of problematic add-ons to be considered disabled with 2023.3.
+    This code should be cleaned up in 2024.1.
