@@ -263,7 +263,8 @@ De nombreux écrans de paramètres ont des touches pour les ouvrir directement, 
 
 ++ Communauté ++[Community]
 
-NVDA a une communauté d'utilisateurs dynamique. Il existe une [liste de diffusion en anglais principale https://nvda.groups.io/g/nvda] et une page complète de [groupes de langues locales https://github.com/nvaccess/nvda-community/wiki/Connect] .
+NVDA a une communauté d'utilisateurs dynamique.
+Il existe une [liste de diffusion  principale en anglais https://nvda.groups.io/g/nvda] et une page complète de [groupes de langues locales https://github.com/nvaccess/nvda-community/wiki/Connect] .
 NV Access, développeur de NVDA, est actif sur Twitter [Twitter https://twitter.com/nvaccess] et [Facebook https://www.facebook.com/NVAccess].
 NV Access a également un [blog In-Process https://www.nvaccess.org/category/in-process/] régulier.
 
@@ -290,7 +291,7 @@ D'autres modules, et le [Pack de productivité NVDA https://www.nvaccess.org/pro
 NV Access vend également une [assistance téléphonique https://www.nvaccess.org/product/nvda-telephone-support/], soit en blocs, soit dans le cadre du [Pack de Productivité NVDA https://www.nvaccess.org/product/nvda-productivity-bundle/].
 L'assistance téléphonique est disponible pour les numéros situés en Australie et aux États-Unis.
  
-Les [groupes d'utilisateurs par e-mail https://github.com/nvaccess/nvda-community/wiki/Connect] sont une excellente source d'aide communautaire, tout comme les [experts NVDA certifiés https://certification.nvaccess.org/].
+Les [groupes d'utilisateurs par e-mail https://github.com/nvaccess/nvda/wiki/Connect] sont une excellente source d'aide communautaire, tout comme les [experts NVDA certifiés https://certification.nvaccess.org/].
 
 
 + Plus d'Options de Configuration +[MoreSetupOptions]
@@ -814,6 +815,26 @@ Si vous voulez les utiliser tout en restant capable d'utiliser vos touches curse
 Pour activer ou désactiver la navigation rapide pour le document courant, pressez NVDA+maj+espace.
 %kc:endInclude
 
++++ Autres commandes de navigation +++[OtherNavigationCommands]
+
+En plus des commandes de navigation rapide répertoriées ci-dessus, NVDA dispose de commandes auxquelles aucune touche par défaut n'est attribuée.
+Pour utiliser ces commandes, vous devez d'abord leur attribuer des gestes à l'aide de la [boîte de dialogue Gestes de commandes #InputGestures].
+Voici une liste des commandes disponibles
+- Article
+- Regroupement
+- Onglet
+-
+Gardez à l'esprit qu'il existe deux commandes pour chaque type d'élément, pour avancer et reculer dans le document, et vous devez attribuer des gestes aux deux commandes afin de pouvoir naviguer rapidement dans les deux sens.
+
+Par exemple, si vous souhaitez utiliser les touches ``y`` / ``maj+y`` pour naviguer rapidement dans les onglets, procédez comme suit
+
++ Ouvrez la boîte de dialogue des gestes de commandes à partir du mode navigation.
++ Recherchez l'élément "Aller à l'onglet suivant" dans la section Mode navigation.
++ Attribuez la touche `` y`` pour le geste trouvé.
++ Recherchez l'élément "Aller à l'onglet précédent".
++ Attribuez ``maj+y`` pour le geste trouvé.
++
+
 ++ La Liste d'Éléments ++[ElementsList]
 La liste d'éléments donne accès à une liste de différents types d'éléments dans le document, de manière appropriée à l'application.
 Par exemple, dans les navigateurs web, la liste d'éléments peut afficher les liens, les titres, les champs de formulaire, les boutons ou les régions.
@@ -1095,6 +1116,9 @@ NVDA peut l'utiliser pour extraire le texte d'images ou d'applications inaccessi
 
 Vous pouvez définir la langue à utiliser pour la reconnaissance de texte dans la catégorie [Reconnaissance Optique De Caractères de Windows #Win10OcrSettings] du dialogue [Paramètres #NVDASettings].
 Des langues additionnelles peuvent être installées en ouvrant le menu Démarrer, choisir Paramètres, Sélectionner Heure et Langue -> Région & Langue puis choisir Ajouter une langue.
+
+Lorsque vous souhaitez surveiller un contenu en constante évolution, par exemple lorsque vous regardez une vidéo avec sous-titres, vous pouvez éventuellement activer l'actualisation automatique du contenu reconnu.
+Cela peut également être fait dans la [Catégorie Reconnaissance optique de caractères de Windows #Win10OcrSettings] de la boîte de dialogue [Paramètres NVDA #NVDASettings].
 
 La reconnaissance optique de caractères de Windows peut être partiellement ou totalement incompatible avec [les améliorations visuelles de NVDA #Vision] ou autres aides visuelles externes. Vous devrez désactiver ces aides avant de procéder à une reconnaissance.
 
@@ -1736,6 +1760,16 @@ Pas de braille signifie que vous n'utilisez pas le braille.
 
 Reportez-vous à la section [Terminaux braille pris en charge #SupportedbrailleDisplays] pour les informations concernant les terminaux braille et ceux qui supportent la détection automatique en arrière-plan.
 
+==== Afficheurs à détecter automatiquement ====[SelectBrailleDisplayAutoDetect]
+Lorsque l'afficheur braille est réglé sur "Automatique", les cases à cocher de ce contrôle de liste vous permettent d'activer et de désactiver les pilotes d'affichage qui seront impliqués dans le processus de détection automatique.
+Cela vous permet d'exclure les pilotes d'afficheur braille que vous n'utilisez pas régulièrement.
+Par exemple, si vous possédez uniquement un terminal qui nécessite le pilote Baum pour fonctionner, vous pouvez laisser le pilote Baum activé tandis que les autres pilotes peuvent être désactivés.
+
+Par défaut, tous les pilotes prenant en charge la détection automatique sont activés.
+Tout pilote ajouté, par exemple dans une future version de NVDA ou dans une extension, sera également activé par défaut.
+
+Veuillez consulter la documentation de votre plage braille dans la section [Afficheurs braille supportés #SupportedBrailleDisplays] pour vérifier si le pilote prend en charge la détection automatique des afficheurs.
+
 ==== Port ====[SelectBrailleDisplayPort]
 Cette option, si disponible, vous permet de choisir quel port ou type de connexion sera utilisé pour communiquer avec l'afficheur braille sélectionné.
 C'est une liste déroulante contenant les choix possibles pour votre afficheur braille.
@@ -2109,6 +2143,7 @@ On peut configurer les annonces suivantes :
  - Numéros de page
  - Numéros de ligne
  - Annonce du retrait de ligne [(Désactivé, Parole, Sons, Parole et Sons) #DocumentFormattingSettingsLineIndentation]
+ - Ignorer les lignes vides lors de l'annonce du retrait de ligne
  - Retrait des paragraphes (ex. retrait négatif, retrait de première ligne)
  - interligne (simple, double etc.)
  - Alignement
@@ -2151,7 +2186,10 @@ La hauteur du son montera pour chaque espace, et pour une tabulation, la hauteur
 - Parole et sons : Cette option indique les retraits en utilisant les deux méthodes ci-dessus.
 -
 
-+++ Navigation dans les Documents +++[DocumentNavigation]
+Si vous cochez la case « Ignorer les lignes vides pour l'annonce de retrait de ligne », les modifications d'indentation ne seront pas signalées pour les lignes vides.
+Cela peut être utile lors de la lecture d'un document dans lequel des lignes vides sont utilisées pour séparer des blocs de texte en retrait, comme dans le code source de programmation.
+
+++++ Navigation dans les Documents +++[DocumentNavigation]
 Cette catégorie vous permet d'ajuster divers aspects de la navigation dans les documents.
 
 ==== Style des paragraphes ====[ParagraphStyle]
@@ -2181,6 +2219,12 @@ Elle contient les options suivantes :
 ==== Langue de Reconnaissance ====[Win10OcrSettingsRecognitionLanguage]
 Cette liste déroulante vous permet de choisir la langue à utiliser pour la reconnaissance de texte.
 Pour faire défiler les langues disponibles à partir de n'importe quel endroit, veuillez assigner un geste de commande personnalisé en utilisant [le dialogue Gestes de Commandes #InputGestures].
+
+==== Actualiser périodiquement le contenu reconnu ====[Win10OcrSettingsAutoRefresh]
+Lorsque cette case est cochée, NVDA actualisera automatiquement le contenu reconnu lorsqu'un résultat de reconnaissance aura le focus.
+Cela peut être très utile lorsque vous souhaitez surveiller un contenu en constante évolution, par exemple lorsque vous regardez une vidéo avec sous-titres.
+Le rafraîchissement a lieu toutes les secondes et demie.
+Cette option est désactivée par défaut.
 
 +++ Paramètres Avancés +++[AdvancedSettings]
 Avertissement ! Les paramètres dans cette catégorie sont pour les utilisateurs avancés et peuvent provoquer un mauvais fonctionnement de NVDA si mal configurés.
@@ -2363,9 +2407,9 @@ Pour plusieurs API GUI historiquement populaires, le texte peut être rendu avec
 
 ==== Utiliser WASAPI pour la sortie audio ====[WASAPI]
 : Défaut
-  Désactivé
+  Activé
 : Options
-  Défaut (Désactivé), Désactivé, Activé
+  Défaut (Activé), Désactivé, Activé
 :
 
 Cette option active la sortie audio via l'API Windows Audio Session (WASAPI).
@@ -3844,8 +3888,8 @@ Veuillez consulter la documentation de l'afficheur pour connaître la position d
 %kc:endInclude
 
 ++ BRLTTY ++[BRLTTY]
-[BRLTTY https://www.brltty.com/] est un programme séparé qui permet de prendre en charge beaucoup plus de terminaux braille.
-Pour l'utiliser, il vous faut installer [BRLTTY pour Windows https://www.brltty.com/download.html].
+[BRLTTY https://www.brltty.app/] est un programme séparé qui permet de prendre en charge beaucoup plus de terminaux braille.
+Pour l'utiliser, il vous faut installer [BRLTTY pour Windows https://www.brltty.app/download.html].
 Vous devez télécharger et installer la version la plus récente avec installateur qui s'appellera, par exemple, brltty-win-4.2-2.exe.
 Quand vous configurerez le terminal et le port à utiliser, portez une attention particulière aux instructions, en particulier si vous utilisez un terminal USB et que le pilote du constructeur est déjà installé.
 
@@ -3855,7 +3899,7 @@ L'option table d'entrée n'est donc pas applicable.
 BRLTTY n'est pas concerné par la détection automatique en arrière-plan.
 
 Voici les assignations de commandes BRLTTY pour NVDA.
-Veuillez consulter les [listes des assignations des touches de BRLTTY http://mielke.cc/brltty/doc/KeyBindings/] pour des informations sur la manière dont BRLTTY lie ses commandes aux touches sur les terminaux braille.
+Veuillez consulter les [listes des assignations des touches de BRLTTY https://brltty.app/doc/KeyBindings/] pour des informations sur la manière dont BRLTTY lie ses commandes aux touches sur les terminaux braille.
 %kc:beginInclude
 || Nom | commande BRLTTY |
 | Défilement arrière de l'affichage braille | fwinlt (se déplacer à gauche d'une fenêtre) |
@@ -3863,6 +3907,13 @@ Veuillez consulter les [listes des assignations des touches de BRLTTY http://mie
 | Amener l'affichage à la ligne précédente | lnup (monter d'une ligne) |
 | Amener l'affichage à la ligne suivante | lndn (descendre d'une ligne) |
 | Aller à la cellule braille | route (amener le curseur au caractère) |
+| Basculer l'aide à la saisie | apprendre (entrer/sortir du mode d'apprentissage des commandes) |
+| Ouvrir le menu NVDA | prefmenu (ouvrir/quitter le menu des préférences) |
+| Rétablir la configuration | prefload (restaurer les préférences à partir du disque) |
+| Enregistrer la configuration | prefsave (enregistrer les préférences sur le disque) |
+| Heure du rapport | heure (afficher la date et l'heure actuelles) |
+| Prononcer la ligne où se trouve le curseur de révision | say_line (prononcer la ligne actuelle) |
+| Dire tout en utilisant le curseur de révision | say_below (parler de la ligne actuelle jusqu'au bas de l'écran) |
 %kc:endInclude
 
 ++ Tivomatic Caiku Albatross 46/80 ++[Albatross]
@@ -4013,47 +4064,49 @@ Cela vous permet de déterminer si un problème est causé par une extension et 
 
 Par exemple, vous pouvez quitter la copie en cours de NVDA en entrant ce qui suit dans le dialogue Exécuter :
 
+```
 nvda -q
+```
 
 Certaines options de ligne de commande ont une version courte et une version longue, tandis que d'autres n'ont qu'une version longue.
 Pour celles qui ont une version courte, vous pouvez les combiner ainsi :
-| nvda -mc CONFIGPATH | Ceci démarrera NVDA avec le son et le message de démarrage  désactivé, et la configuration spécifiée. |
-| nvda -mc CONFIGPATH --disable-addons | Même chose, mais avec les extensions désactivées |
+| ``nvda -mc CONFIGPATH`` | Ceci démarrera NVDA avec le son et le message de démarrage  désactivé, et la configuration spécifiée. |
+| ``nvda -mc CONFIGPATH --disable-addons`` | Même chose, mais avec les extensions désactivées |
 
 Certaines options de ligne de commande acceptent des paramètres additionnels ; ex : le niveau de détail du journal ou le chemin du répertoire de configuration utilisateur.
 Ces paramètres doivent être placés après l'option, séparés de l'option par un espace quand il s'agit d'une option en version courte ou par un signe égal quand il s'agit d'une option en version longue; ex :
-| nvda -l 10 | Dit à NVDA de démarrer avec le niveau de journalisation sur débogage |
-| nvda --log-file=c:\nvda.log | Dit à NVDA d'écrire le fichier journal dans c:\nvda.log |
-| nvda --log-level=20 -f c:\nvda.log | Dit à NVDA de démarrer avec le niveau de journalisation sur info et d'écrire son journal dans c:\nvda.log |
+| ``nvda -l 10`` | Dit à NVDA de démarrer avec le niveau de journalisation sur débogage |
+| ``nvda --log-file=c:\nvda.log`` | Dit à NVDA d'écrire le fichier journal dans ``c:\nvda.log`` |
+| ``nvda --log-level=20 -f c:\nvda.log`` | Dit à NVDA de démarrer avec le niveau de journalisation sur info et d'écrire son journal dans ``c:\nvda.log`` |
 
 Voici les options de ligne de commande de NVDA :
 || Courte | Longue | Description |
-| -h | --help | affiche l'aide de la ligne de commande et s'arrête |
-| -q | --quit | Quitte la copie en cours d'exécution de NVDA |
-| -k | --check-running | Indique si NVDA est en cours d'exécution via le code retour; 0 si oui, 1 si non |
-| -f NOMDUFICHIERJOURNAL | --log-file=NOMDUFICHIERJOURNAL | Le fichier où les messages du journal doivent être écrits |
-| -l NIVEAUDEJOURNALISATION | --log-level=NIVEAUDEJOURNALISATION | Le niveau minimal de messages journalisés (débogage 10, entrées/sorties 12, avertissements de débogage 15, info 20, désactivé 100) |
-| -c CHEMINDECONFIG | --config-path=CHEMINDECONFIG | Le chemin vers lequel tous les paramètres de NVDA sont stockés |
-| Aucun | --lang=LANGUAGE | Remplacer la langue NVDA configurée. Choisissez "Windows" pour la langue en cours par défaut, "en" pour Anglais, etc. |
-| -m | --minimal | Pas de sons, pas d'interface, pas de message de démarrage etc. |
-| -s | --secure | Démarre NVDA en [Mode Sécurisé #SecureMode] |
-| Aucune | --disable-addons | Les extensions n'auront pas d'effet |
-| Aucune | --no-logging | Désactive complètement la journalisation durant l'utilisation de NVDA. Ce paramètre peut être ignoré si un niveau de journalisation ( ""--loglevel"", -l) est spécifié dans la ligne de commande ou si la journalisation de débogage est activée. |
-| Aucune | --debug-logging | Active le niveau de journalisation débogage seulement pour cette session. Ce paramètre remplacera tout autre niveau de journalisation ( ""--loglevel"", -l) argument donné, incluant l'option pas de journalisation. |
-| Aucune | --no-sr-flag | Ne change pas l'indicateur système global de revue d'écran |
-| Aucune | --install | Installe NVDA (en démarrant la copie nouvellement installée) |
-| Aucune | --install-silent | Installe NVDA silencieusement (sans démarrer la copie nouvellement installée) |
-| Aucune | --enable-start-on-logon=True|False | Durant l'installation, active le [démarrage sur l'écran de connexion #StartAtWindowsLogon] de NVDA |
-| Aucune | --copy-portable-config | À l'installation, copie la configuration portable depuis le chemin indiqué (--config-path, -c) vers le compte utilisateur courant |
-| Aucune | --create-portable | Crée une copie portable de NVDA (puis démarre la copie nouvellement créée). --portable-path doit être spécifié |
-| Aucune | --create-portable-silent | Crée une copie portable de NVDA (sans démarrer la copie nouvellement créée). --portable-path doit être spécifié |
-| Aucune | --portable-path=PORTABLEPATH | L'emplacement où la copie portable sera créée |
+| ``-h`` | ``--help`` | affiche l'aide de la ligne de commande et s'arrête |
+| ``-q`` | ``--quit`` | Quitte la copie en cours d'exécution de NVDA |
+| ``-k`` | ``--check-running`` | Indique si NVDA est en cours d'exécution via le code retour; 0 si oui, 1 si non |
+| ``-f NOMDUFICHIERJOURNAL`` | ``--log-file=NOMDUFICHIERJOURNAL`` | Le fichier où les messages du journal doivent être écrits |
+| ``-l NIVEAUDEJOURNALISATION`` | ``--log-level=NIVEAUDEJOURNALISATION`` | Le niveau minimal de messages journalisés (débogage 10, entrées/sorties 12, avertissements de débogage 15, info 20, désactivé 100) |
+| ``-c CHEMINDECONFIG`` | ``--config-path=CHEMINDECONFIG`` | Le chemin vers lequel tous les paramètres de NVDA sont stockés |
+| Aucun | ``--lang=LANGUAGE`` | Remplacer la langue NVDA configurée. Choisissez "Windows" pour la langue en cours par défaut, "en" pour Anglais, etc. |
+| ``-m`` | ``--minimal`` | Pas de sons, pas d'interface, pas de message de démarrage etc. |
+| ``-s`` | ``--secure`` | Démarre NVDA en [Mode Sécurisé #SecureMode] |
+| Aucune | ``--disable-addons`` | Les extensions n'auront pas d'effet |
+| Aucune | ``--no-logging`` | Désactive complètement la journalisation durant l'utilisation de NVDA. Ce paramètre peut être ignoré si un niveau de journalisation ( ""--loglevel"", -l) est spécifié dans la ligne de commande ou si la journalisation de débogage est activée. |
+| Aucune | ``--debug-logging`` | Active le niveau de journalisation débogage seulement pour cette session. Ce paramètre remplacera tout autre niveau de journalisation ( ""--loglevel"", -l) argument donné, incluant l'option pas de journalisation. |
+| Aucune | ``--no-sr-flag`` | Ne change pas l'indicateur système global de revue d'écran |
+| Aucune | ``--install`` | Installe NVDA (en démarrant la copie nouvellement installée) |
+| Aucune | ``--install-silent`` | Installe NVDA silencieusement (sans démarrer la copie nouvellement installée) |
+| Aucune | ``--enable-start-on-logon=True|False`` | Durant l'installation, active le [démarrage sur l'écran de connexion #StartAtWindowsLogon] de NVDA |
+| Aucune | ``--copy-portable-config`` | À l'installation, copie la configuration portable depuis le chemin indiqué (--config-path, -c) vers le compte utilisateur courant |
+| Aucune | ``--create-portable`` | Crée une copie portable de NVDA (puis démarre la copie nouvellement créée). --portable-path doit être spécifié |
+| Aucune | ``--create-portable-silent`` | Crée une copie portable de NVDA (sans démarrer la copie nouvellement créée). --portable-path doit être spécifié |
+| Aucune | ``--portable-path=PORTABLEPATH`` | L'emplacement où la copie portable sera créée |
 
 ++Paramètres Système++[SystemWideParameters]
 NVDA permet de définir certaines valeurs dans la base de registre du système ce qui modifie le comportement général de NVDA.
 Ces valeurs sont stockées dans la base de registres sous l'une des clés suivantes :
-- Systèmes 32-bits : "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
-- Systèmes 64-bits : "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+- Systèmes 32-bits : ``HKEY_LOCAL_MACHINE\SOFTWARE\nvda``
+- Systèmes 64-bits : ``HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda``
 -
 
 Les valeurs suivantes peuvent être définies dans ces clés de registre :
