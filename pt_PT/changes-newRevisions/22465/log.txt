@@ -1,0 +1,21 @@
+commit 0c00f6c445b9e081862b15b5564acd3681f762cc
+Author: Sean Budd <sean@nvaccess.org>
+Date:   Wed Sep 20 11:55:11 2023 +1000
+
+    Add-on store: Clear download cache where appropriate (#15471)
+    
+    Fixes #15469
+    
+    Summary of the issue:
+    Cancelled/failed downloads from the add-on store are not cleared.
+    This prevents future attempts at installation.
+    
+    Description of user facing changes
+    Users should now be able to install add-ons after cancelling or if the download fails
+    
+    Description of development approach
+    Clear the download cache:
+    
+    when an add-on download fails/cancels
+    when exiting the store
+    when opening the store
