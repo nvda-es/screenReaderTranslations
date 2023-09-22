@@ -1,0 +1,18 @@
+commit dd1713a018db4d8b24abdacf49b20e260eed4203
+Author: Cyrille Bougot <cyrille.bougot2@laposte.net>
+Date:   Thu Sep 21 00:49:32 2023 +0200
+
+    UX fixes for WASAPI GUI and doc (#15478)
+    
+    Follow-up of #15472.
+    
+    Summary of the issue:
+    If NVDA is started with WASAPI disabled in config and if you enable WASAPI, the new audio options to control NVDA sounds along with voice and volume of NVDA sound are available. That's confusing because modifying them will not have any effect until NVDA is restarted.
+    
+    Description of user facing changes
+    Enabling or disabling audio options linked to WASAPI will be done looking at current state of WASAPI usage rather than looking at the state configured for next restart.
+    
+    Also added an indication in the User Guide that these options can be unavailable so that the user does not look for them when they are greyed out.
+    
+    Description of development approach
+    Rather than checking the config, check the player currently used to determine if the WASAPI related options need to be disabled or not.
