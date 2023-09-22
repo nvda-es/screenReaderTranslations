@@ -1,0 +1,27 @@
+commit 8fd56cb9376ea7e63f545111e110bd181c30328b
+Author: Sean Budd <sean@nvaccess.org>
+Date:   Wed Sep 20 12:06:01 2023 +1000
+
+    Handle incompatible add-ons when upgrading/downgrading NVDA API versions (#15439)
+    
+    Fixes #15437
+    Fixes #15412
+    Fixes #15414
+    
+    Summary of the issue:
+    There are several scenarios which need to be supported when updating/downgrading NVDA with incompatible add-ons
+    
+    Test Name       Upgrade from    Upgrade to      Test notes
+    Upgrade to different NVDA version in the same API breaking release cycle        X.1     X.1     Add-ons which remain incompatible are listed as incompatible on upgrading. Preserves state of enabled incompatible add-ons
+    Upgrade to a different but compatible API version       X.1     X.2     Add-ons which remain incompatible are listed as incompatible on upgrading. Preserves state of enabled incompatible add-ons
+    Downgrade to a different but compatible API version     X.2     X.1     Add-ons which remain incompatible are listed as incompatible on downgrading. Preserves state of enabled incompatible add-ons
+    Upgrade to an API breaking version      X.1     (X+1).1 All incompatible add-ons are listed as incompatible on upgrading, overridden compatibility is reset.
+    Downgrade to an API breaking version    (X+1).1 X.1     Add-ons which remain incompatible listed as incompatible on downgrading. Preserves state of enabled incompatible add-ons. Blocked add-ons which are now compatible are re-enabled.
+    
+    Description of user facing changes
+    NVDA will reset compatibility overrides when updating to a different API breaking release, this means incompatible add-ons will be blocked again.
+    If an add-on is blocked due to compatibility and becomes compatible, e.g. via downgrading, it will be re-enabled.
+    
+    Description of development approach
+    Store the BACK_COMPAT_TO version in the addon state pickle.
+    When updating the BACK_COMPAT_TO version, reset the incompatibility override state.
