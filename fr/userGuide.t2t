@@ -1553,22 +1553,6 @@ Pour une liste des synthétiseurs de parole pris en charge par NVDA, reportez-vo
 L'élément particulier "Pas de parole" apparaîtra toujours dans cette liste.
 Cela peut être utile pour quelqu'un qui veut utiliser NVDA seulement avec le braille, ou peut-être pour un développeur voyant qui ne veut utiliser que la visionneuse de parole.
 
-==== Sortie audio ====[SelectSynthesizerOutputDevice]
-Cette option vous permet de choisir le périphérique audio par lequel NVDA doit indiquer au synthétiseur sélectionné de parler.
-
-%kc:setting
-==== Mode d'Atténuation Audio ====[SelectSynthesizerDuckingMode]
-Raccourci : NVDA+maj+d
-
-Sous Windows 8 et au-delà, cette option vous permet de choisir si NVDA doit baisser le volume des autres applications quand il parle, ou tout le temps quand il est en cours d'exécution.
-- Ne jamais atténuer : NVDA ne baissera jamais le volume des autres applications.
-- Atténuer les autres sources quand NVDA parle : NVDA ne baissera le son des autres applications que quand il parle ou émet un son. Ceci peut ne pas fonctionner avec tous les synthétiseurs.
-- Toujours atténuer : NVDA réduira le son des autres applications tout le long de son exécution.
--
-
-Cette option n'est disponible que si NVDA a été installé.
-Il n'est pas possible de supporter l'atténuation audio pour les versions portables et temporaires de NVDA.
-
 +++ Boucle des Paramètres Synthétiseur +++[SynthSettingsRing]
 Si vous voulez changer rapidement les paramètres vocaux sans passer par la catégorie Voix du dialogue Paramètres, il y a quelques touches de commandes qui vous permettent de le faire de n'importe où quand NVDA est en fonction.
 %kc:beginInclude
@@ -1784,6 +1768,41 @@ Vous devrez consulter la documentation de votre afficheur braille dans la sectio
 Note : Si vous connectez plusieurs Afficheurs Braille utilisant le même pilote en même temps à votre machine  (Ex. connexion de deux afficheurs Seika),
 il est actuellement impossible de dire à NVDA quel afficheur utiliser.
 Par conséquent, il est recommandé de ne connecter qu'un seul afficheur braille d'un type/fabricant donné à votre machine à la fois.
+
++++ Audio +++[AudioSettings]
+La catégorie Audio dans le dialogue Paramètres NVDA contient des options qui vous permettent de modifier plusieurs aspects de la sortie audio.
+
+==== Périphérique de sortie ====[SelectSynthesizerOutputDevice]
+Cette option vous permet de choisir le périphérique audio à travers lequel NVDA doit demander au synthétiseur sélectionné de parler.
+
+%kc:paramètre
+==== Mode d'Atténuation Audio ====[SelectSynthesizerDuckingMode]
+Raccourci : ``NVDA+maj+d``
+
+Sous Windows 8 et supérieur, cette option vous permet de choisir si NVDA doit baisser le volume des autres applications pendant que NVDA parle, ou tout le temps pendant que NVDA est en cours d'exécution.
+- Pas d'atténuation : NVDA ne baissera jamais le volume des autres fichiers audio.
+- Atténuation lors de la sortie de paroles et de sons : NVDA baissera le volume des autres fichiers audio uniquement lorsque NVDA parle ou joue des sons. Cela peut ne pas fonctionner pour tous les synthétiseurs.
+- Toujours atténuer : NVDA maintiendra le volume des autres fichiers audio à un niveau bas pendant tout le temps que NVDA est en cours d'exécution.
+-
+
+Cette option n'est disponible que si NVDA a été installé.
+Il n'est pas possible de prendre en charge l'atténuation audio pour les copies portables et temporaires de NVDA.
+
+==== Le volume des sons NVDA suit le volume de la voix ====[SoundVolumeFollowsVoice]
+: Défaut
+   Désactivé
+:Options
+   Désactivé activé
+:
+
+Lorsque cette option est activée, le volume des sons et bips de NVDA suivra le réglage du volume de la voix que vous utilisez.
+Si vous diminuez le volume de la voix, le volume des sons diminuera.
+De même, si vous augmentez le volume de la voix, le volume des sons augmentera.
+Cette option n'est pas disponible si vous avez démarré NVDA avec [WASAPI désactivé pour la sortie audio #WASAPI] dans les Paramètres avancés.
+
+==== Volume des sons NVDA ====[SoundVolume]
+Ce curseur vous permet de régler le volume des sons et bips NVDA.
+Ce paramètre ne prend effet que lorsque « Le volume des sons NVDA suit le volume de la voix » est désactivé.
 
 +++ Vision +++[VisionSettings]
 La catégorie Vision du dialogue des paramètres NVDA vous permet d'activer, désactiver et configurer les [aides visuelles #Vision].
@@ -2416,22 +2435,11 @@ WASAPI est une architecture audio plus moderne qui peut améliorer la réactivit
 Cette option est activée par défaut.
 Après avoir modifié cette option, vous devrez redémarrer NVDA pour que la modification prenne effet.
 
-==== Le volume des sons NVDA suit le volume de la voix ====[SoundVolumeFollowsVoice]
-: Default
-  Disabled
-: Options
-  Désactivé, Activé
-:
-
-Lorsque cette option est activée, le volume des sons et des bips de NVDA suivra le réglage du volume de la voix que vous utilisez.
-Si vous diminuez le volume de la voix, le volume des sons diminuera.
- De même, si vous augmentez le volume de la voix, le volume des sons augmentera.
-Cette option ne prend effet que lorsque "Utiliser WASAPI pour la sortie audio" est activé.
-
-==== Volume des sons NVDA ====[SoundVolume]
-Ce potentiomètre vous permet de régler le volume des sons et des bips de NVDA.
-Ce paramètre ne prend effet que lorsque "Utiliser WASAPI pour la sortie audio" est activé et que "Le volume des sons NVDA suit le volume de la voix" est désactivé.
-
+La désactivation de WASAPI désactivera les options suivantes :
+- [Le volume des sons NVDA suit le volume de la voix #SoundVolumeFollowsVoice]
+- [Volume des sons NVDA #SoundVolume]
+-
+ 
 ==== Catégories de journalisation de débogage ====[AdvancedSettingsDebugLoggingCategories]
 Les cases à cocher dans cette liste vous permettent d'activer des catégories spécifiques de messages de débogage dans le journal de NVDA.
 La journalisation de ces messages peut dégrader la performance et produire de gros fichiers de journal.
