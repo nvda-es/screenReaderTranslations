@@ -1,0 +1,18 @@
+commit be9065a456a3be1a3023752a9516315ab38992ba
+Author: Cyrille Bougot <cyrille.bougot2@laposte.net>
+Date:   Tue Sep 26 23:33:10 2023 +0200
+
+    Fixes the announcement of cell formatting commands in Excel (#15527)
+    
+    Fixes #15506
+    Fix-up of #14923
+    
+    Summary of the issue:
+    When peforming tests for #14923, I have wrongly assumed that Excel cell formatting shortcuts were control+shift+2/3/4/5. This assumption was based on my tests with Excel's interface changed to English on my system. However, it seems that the keyboard layout when Excel is started has also an impact on the shortcuts containing digits (see discussion in #14923).
+    The actual shortcuts are control+2/3/4/5, as described in Microsoft documentation and as confirmed starting Excel with English GUI and English keyboard layout.
+    
+    Description of user facing changes
+    On English systems (and probably many others), Excel cell formatting shortcuts control+2/3/4/5 will have their effect reported correctly. shift+control+2/3/4/5 will not report inappropriately formatting information on English systems.
+    
+    Description of development approach
+    Modified the gesture definition.
