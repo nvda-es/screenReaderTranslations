@@ -1,0 +1,20 @@
+commit cc316ba575ffc7288a9d0c41043145d658f680f5
+Author: Leonard de Ruijter <leonardder@users.noreply.github.com>
+Date:   Tue Sep 26 04:01:40 2023 +0200
+
+    Fixup of #13542: Do not call IA2 install and uninstall code from NVDA itself (#15517)
+    
+    Fixup of #13542
+    
+    Summary of the issue:
+    In #13542, we introduced support for multi thread IA2 initialization. As part of that, the signature of the install- and uninstallIA2Support functions were changed. Somehow, it was an oversight from my end that these functions were also called from NVDAHelper.py. This causes:
+    
+    NVDA to always log a debug warning on exit, saying that it was unable to unregister IA2 support.
+    NVDA to call installIA2Initialize without a thread Id. It is actually a miracle that the segfault we're now seeing in preliminary PY3.11 work didn't hurt us earlyer. That said, I think I've seen cases were NVDA played the startup sound and then silently crashed. I think this should be the case.
+    As per point 2, given the risk of NVDA calling a code path that results in undefined behavior and possible segfaults, I strongly recommend to merge this into beta.
+    
+    Description of user facing changes
+    No crashes during NVDA startup.
+    
+    Description of development approach
+    Removed the calls from NVDAHelper.py and no longer export the functions from NVDAHelper. The calls in NVDA core were actually obsolete, as IA2 support is registered by injection_initialize and injection_terminate. Note that the install and uninstall IA2 functions aren't called in de 64 bit loader of NVDAHelper, yet IA2 works as expected in X64 applications. Also, installIA2Support is no longer C friendly anyway. Note that an add-on author should never call these functions, therefore I don't consider this as an API breaking change.
