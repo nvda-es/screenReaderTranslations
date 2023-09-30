@@ -10,6 +10,143 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2023.3</H2>
+<P>
+Bu sürümde ses çıkışının performansı, tepki hızı ve kararlılığı geliştirildi.
+NVDA seslerinin ve bip seslerinin ses seviyesini ayarlamak veya ses seviyesinin konuşma ses seviyesine eşitlenmesini sağlamak için seçenekler eklendi.
+</P>
+<P>
+NVDA OCR sonucunu düzenli olarak yenileyerek değişen metni okuyabiliyor.
+Bu özellik NVDA ayarları iletişim kutusunun Windows OCR kategorisinden ayarlanabilir.
+</P>
+<P>
+Braille ile ilgili ekran algılamasını ve imleç hareketini iyileştiren çeşitli düzeltmeler yapıldı.
+Otomatik algılama performansını iyileştirmek için istenmeyen sürücüler otomatik algılamadan dışlanabiliyor. 
+Ayrıca yeni BRLTTY komutları eklendi.
+</P>
+<P>
+Eklenti mağazası, Microsoft Office, Microsoft Edge içerik menüleri ve Windows hesap makinesi için de hata düzeltmeleri yapıldı.
+</P>
+<H3>Yeni özellikler</H3>
+<UL>
+<LI>Ses yönetimi geliştirildi:
+  <UL>
+  <LI>Yeni ses ayarları kategorisi:
+    <UL>
+    <LI><CODE>NVDA+kontrol+u</CODE> tuşuyla açılabilir. (<A HREF="https://github.com/nvaccess/nvda/issues/15497">#15497</A>)
+    <LI>Ses ayarlarına, NVDA seslerinin ve bip seslerinin ses seviyesini kullandığınız sentezleyici sesinin ses seviyesine eşitlemek için bir seçenek eklendi. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>)
+    <LI>Ses ayarlarına NVDA seslerinin ses seviyesini ayrıca ayarlamak için bir seçenek eklendi. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038">#15038</A>)
+    <LI>Ses aygıtı ve ses zayıflamasını değiştirme ayarları, sentezleyici seçimi iletişim kutusundan yeni ses ayarları kategorisine taşındı. 
+    2024.1 sürümünde bu seçenekler sentezleyici seçimi iletişim kutusundan kaldırılacak. (<A HREF="https://github.com/nvaccess/nvda/issues/15486">#15486</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8711">#8711</A>)
+    </UL>
+  <LI>NVDA artık ses çıkışını Windows Audio Session API (WASAPI) aracılığıyla sağlayacak. NVDA konuşmasının ve seslerinin tepki hızı, performansı ve kararlılığı iyileşebilir. (<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11169">#11169</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11615">#11615</A>, <A HREF="https://github.com/nvaccess/nvda/issues/5096">#5096</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10185">#10185</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11061">#11061</A>)
+  <LI>Not: WASAPI bazı eklentilerle uyumsuzdur. Bu eklentiler için uyumlu güncellemeler mevcuttur, lütfen NVDA'yı güncellemeden önce bu eklentileri güncelleyin.
+NVDA güncellenirken şu eklentilerin uyumsuz sürümleri devre dışı bırakılacaktır:
+    <UL>
+    <LI>Tony's Enhancements 1.15 veya daha eski sürümler. (<A HREF="https://github.com/nvaccess/nvda/issues/15402">#15402</A>)
+    <LI>NVDA global commands extension 12.0.8 veya daha eski sürümler. (<A HREF="https://github.com/nvaccess/nvda/issues/15443">#15443</A>)
+    </UL>
+  </UL>
+<LI>NVDA artık optik karakter tanıma (OCR) yaparken sonucu sürekli olarak güncelleyerek görünen yeni metni okuyabiliyor. (<A HREF="https://github.com/nvaccess/nvda/issues/2797">#2797</A>)
+  <UL>
+  <LI>Bu işlevi etkinleştirmek için NVDA'nın ayarlar iletişim kutusunun Windows OCR kategorisinden "Tanınan içeriği düzenli olarak yenile" seçeneğini etkinleştirin.
+  <LI>Etkinleştirildiğinde, yeni metnin okunmasını dinamik içerik değişikliklerini bildir seçeneğini açıp kapayarak (<CODE>NVDA+5</CODE>'e basarak) kontrol edebilirsiniz.
+  </UL>
+ <UL>
+ <LI>Braille ekranlar otomatik olarak algılanırken, braille ekran seçimi iletişim kutusundan sürücüler otomatik algılamadan dışlanabiliyor. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+ <LI>Belge formatları ayarlarına yeni seçenek: "Satır girintilerini bildirirken boş satırları yok say" (<A HREF="https://github.com/nvaccess/nvda/issues/13394">#13394</A>)
+ </UL>
+<LI>Tarama kipinde sekme grupları arasında dolaşmak için kısayolu atanmamış olan yeni bir hareket eklendi. (<A HREF="https://github.com/nvaccess/nvda/issues/15046">#15046</A>)
+</UL>
+
+<H3>Değişiklikler</H3>
+<UL>
+<LI>Braille:
+  <UL>
+  <LI>Uçbirimdeki metin imleci güncellemeden değiştiğinde, braille ekran değişen satıra konumlandığında metin doğru şekilde güncellenecek.
+  Bu durum braille hareketinin inceleme imlecine göre olduğu zamanlarda da geçerlidir. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
+  <LI>Daha fazla BRLTTY komutu NVDA komutlarıyla eşleştirildi:
+    <UL>
+    <LI><CODE>learn</CODE>: Girdi yardımını açma/kapatma
+    <LI><CODE>prefmenu</CODE>: NVDA menüsünü açma
+    <LI><CODE>prefload</CODE>/<CODE>prefsave</CODE>: NVDA konfigürasyonunu yükleme/kaydetme
+    <LI><CODE>time</CODE>: Zamanı gösterme
+    <LI><CODE>say_line</CODE>: İnceleme imlecinin bulunduğu satırı okuma
+    <LI><CODE>say_below</CODE>: İnceleme imlecini kullanarak tümünü okuma
+    </UL>
+  <LI>BRLTTY sürücüsü, sadece BrlAPI enabled çalışan BRLTTY oturumunda kullanılabilir. (<A HREF="https://github.com/nvaccess/nvda/issues/15335">#15335</A>)
+  <LI>HID braille desteğini etkinleştirmek için kullanılan gelişmiş ayar kaldırıldı ve yerini yeni bir seçenek aldı.
+  Braille ekran seçimi iletişim kutusundan, istediğiniz sürücüleri otomatik braille ekran algılamasından dışlayabilirsiniz. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+  </UL>
+<LI>Eklenti mağazası: Kurulu eklentiler eklenti mağazasında mevcutsa mağazadaki eklentiler sekmesinde de gösterilecek. (<A HREF="https://github.com/nvaccess/nvda/issues/15374">#15374</A>)
+<LI>NVDA menüsündeki bazı kısayol tuşları güncellendi (Türkçe sürüm için geçerli değildir). (<A HREF="https://github.com/nvaccess/nvda/issues/15364">#15364</A>)
+</UL>
+
+<H3>Hata düzeltmeleri</H3>
+<UL>
+<LI>Microsoft Office:
+  <UL>
+  <LI>Belge formatları iletişim kutusundaki "başlıklar" ve "notlar ve açıklamalar" ayarları devre dışı bırakıldığında Microsoft Word'de meydana gelen çökme düzeltildi. (<A HREF="https://github.com/nvaccess/nvda/issues/15019">#15019</A>)
+  <LI>Word ve Excel'de, metin hizalaması daha fazla durumda doğru bir şekilde okunacak. (<A HREF="https://github.com/nvaccess/nvda/issues/15206">#15206</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15220">#15220</A>)
+  <LI>Bazı hücre biçimlendirme kısayollarının seslendirmesi düzeltildi. (<A HREF="https://github.com/nvaccess/nvda/issues/15527">#15527</A>)
+  </UL>
+<LI>Microsoft Edge:
+  <UL>
+  <LI>İçerik menüsü açıldığında NVDA tarama kipinde bulunulan son konuma atlamayacak. (<A HREF="https://github.com/nvaccess/nvda/issues/15309">#15309</A>)
+  <LI>NVDA yeniden Microsoft Edge indirmeler penceresinin içerik menülerini okuyabiliyor. (<A HREF="https://github.com/nvaccess/nvda/issues/14916">#14916</A>)
+  </UL>
+<LI>Braille:
+  <UL>
+  <LI>Braille imleç ve seçim belirteçleri, kısayolla gizlendikten veya gösterildikten sonra her zaman doğru bir şekilde güncellenecek. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
+  <LI>Başka bir braille ekranın bağlı olmasına rağmen Albatross braille ekranının yüklenmeye çalışmasına neden olan bir hata düzeltildi. (<A HREF="https://github.com/nvaccess/nvda/issues/15226">#15226</A>)
+  </UL>
+<LI>Eklenti mağazası:
+  <UL>
+  <LI>Uyumsuz eklentileri göster seçeneğinin işaretinin kaldırılmasına rağmen mağazada uyumsuz eklentilerin hâlâ gösterilmesine neden olan bir hata düzeltildi. (<A HREF="https://github.com/nvaccess/nvda/issues/15411">#15411</A>)
+  <LI>Etkin/devre dışı filtresi değiştirildiğinde, uyumsuz olduğu için devre dışı bırakılan eklentiler doğru bir şekilde filtrelenecek. (<A HREF="https://github.com/nvaccess/nvda/issues/15416">#15416</A>)
+  <LI>Dış kaynaktan kurulum aracı kullanılarak uyumsuzluğa rağmen etkinleştirilen eklentilerin güncellenmesini veya değiştirilmesini önleyen bir hata düzeltildi. (<A HREF="https://github.com/nvaccess/nvda/issues/15417">#15417</A>)
+  <LI>Eklenti kurulumundan sonra NVDA'nın yeniden başlatılana kadar konuşmamasına neden olan bir hata düzeltildi. (<A HREF="https://github.com/nvaccess/nvda/issues/14525">#14525</A>)
+  <LI>Önceden yapılan bir indirmenin başarısız olması veya iptal edilmesi durumunda eklentilerin kurulamamasına neden olan bir hata düzeltildi. (<A HREF="https://github.com/nvaccess/nvda/issues/15469">#15469</A>)
+  <LI>NVDA güncellenirken uyumsuz eklentilerin ele alınma sorunları giderildi. (<A HREF="https://github.com/nvaccess/nvda/issues/15414">#15414</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15412">#15412</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15437">#15437</A>)
+  </UL>
+<LI>Windows'un Server, LTSC ve LTSB sürümlerinin Windows 32bit hesap makinesinde NVDA sonuçları yeniden okuyabiliyor. (<A HREF="https://github.com/nvaccess/nvda/issues/15230">#15230</A>)
+ <UL>
+ <LI>Pencere içindeki pencereye (alt pencerenin alt penceresine) odaklanıldığında NVDA odak değişimini yok saymıyor. (<A HREF="https://github.com/nvaccess/nvda/issues/15432">#15432</A>)
+ </UL>
+<LI>Görev yöneticisinin bazı Windows sürümlerindeki sorunu düzeltildi. (<A HREF="https://github.com/nvaccess/nvda/issues/6245">#6245</A>)
+ <UL>
+ <LI>NVDA başlarken potansiyel bir çökme nedeni giderildi. (<A HREF="https://github.com/nvaccess/nvda/issues/15517">#15517</A>)
+-
+ <P></P>
+== Changes for Developers ==
+Please refer to <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">the developer guide</A> for information on NVDA's API deprecation and removal process.
+ </UL>
+<LI><CODE>braille.handler.handleUpdate</CODE> and <CODE>braille.handler.handleReviewMove</CODE> have been changed in order not to update instantly.
+Before this change, when either of these methods was called very often, this would drain many resources.
+These methods now queue an update at the end of every core cycle instead.
+They should also be thread safe, making it possible to call them from background threads. (<A HREF="https://github.com/nvaccess/nvda/issues/15163">#15163</A>)
+<LI>Added official support to register custom braille display drivers in the automatic braille display detection process.
+Consult the <CODE>braille.BrailleDisplayDriver</CODE> class documentation for more details.
+Most notably, the <CODE>supportsAutomaticDetection</CODE> attribute must be set to <CODE>True</CODE> and the <CODE>registerAutomaticDetection</CODE> <CODE>classmethod</CODE> must be implemented.  (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+</UL>
+
+<P></P>
+<H4>Deprecations</H4>
+<UL>
+<LI><CODE>braille.BrailleHandler.handlePendingCaretUpdate</CODE> is now deprecated with no public replacement.
+It will be removed in 2024.1. (<A HREF="https://github.com/nvaccess/nvda/issues/15163">#15163</A>)
+<LI>Importing the constants <CODE>xlCenter</CODE>, <CODE>xlJustify</CODE>, <CODE>xlLeft</CODE>, <CODE>xlRight</CODE>, <CODE>xlDistributed</CODE>, <CODE>xlBottom</CODE>, <CODE>xlTop</CODE> from <CODE>NVDAObjects.window.excel</CODE> is deprecated.
+Use <CODE>XlHAlign</CODE> or <CODE>XlVAlign</CODE> enumerations instead. (<A HREF="https://github.com/nvaccess/nvda/issues/15205">#15205</A>)
+<LI>The mapping <CODE>NVDAObjects.window.excel.alignmentLabels</CODE> is deprecated.
+Use the <CODE>displayString</CODE> methods of <CODE>XlHAlign</CODE> or <CODE>XlVAlign</CODE> enumerations instead. (<A HREF="https://github.com/nvaccess/nvda/issues/15205">#15205</A>)
+<LI><CODE>bdDetect.addUsbDevices</CODE> and <CODE>bdDetect.addBluetoothDevices</CODE> have been deprecated.
+Braille display drivers should implement the <CODE>registerAutomaticDetection</CODE> classmethod instead.
+That method receives a <CODE>DriverRegistrar</CODE> object on which the <CODE>addUsbDevices</CODE> and <CODE>addBluetoothDevices</CODE> methods can be used. (<A HREF="https://github.com/nvaccess/nvda/issues/15200">#15200</A>)
+<LI>The default implementation of the check method on <CODE>BrailleDisplayDriver</CODE> uses <CODE>bdDetect.driverHasPossibleDevices</CODE> for devices that are marked as thread safe.
+Starting from NVDA 2024.1, in order for the base method to use <CODE>bdDetect.driverHasPossibleDevices</CODE>, the <CODE>supportsAutomaticDetection</CODE> attribute must be set to <CODE>True</CODE> as well. (<A HREF="https://github.com/nvaccess/nvda/issues/15200">#15200</A>)
+</UL>
+
+<P></P>
 <H2>2023.2</H2>
 <P>
 Bu sürümde eklenti yöneticisinin yerini alan eklenti mağazası eklendi.
