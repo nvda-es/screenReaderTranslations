@@ -13,6 +13,7 @@
 <H2>2023.3</H2>
 <P>
 Esta versión incluye mejoras en el rendimiento, la respuesta y la estabilidad de la salida de audio.
+Se han añadido opciones para controlar el volumen de los sonidos y pitidos de NVDA, o para tenerlos siguiendo el volumen de la voz que estés usando.
 </P>
 <P>
 NVDA ahora puede refrescar periódicamente los resultados del OCR, verbalizando el texto nuevo según aparezca.
@@ -30,12 +31,14 @@ También se han corregido errores en la tienda de complementos, en Microsoft Off
 <UL>
 <LI>Mejorada la gestión del sonido:
   <UL>
-  <LI>NVDA ahora sacará el audio a través de la Windows Audio Session API (WASAPI), lo que puede mejorar la respuesta, el rendimiento y la estabilidad de la voz y de los sonidos de NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>)
-  <LI>El uso de WASAPI puede deshabilitarse en las opciones Avanzadas.
-  Si WASAPI está habilitado, también pueden configurarse las siguientes opciones avanzadas.
+  <LI>Un nuevo panel de opciones de Audio:
     <UL>
+    <LI>Esto puede abrirse con <CODE>NVDA+control+u</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/15497">#15497</A>)
     <LI>Una opción para hacer que el volumen de los sonidos y pitidos de NVDA siga a la configuración de volúmen de la voz que estés utilizando. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>)
     <LI>Una opción para configurar por separado el volumen de los sonidos de NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038">#15038</A>)
+    <LI>NVDA ahora sacará el audio a través de la Windows Audio Session API (WASAPI), lo que puede mejorar la respuesta, el rendimiento y la estabilidad de la voz y de los sonidos de NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>)
+    <LI>Las opciones para cambiar el dispositivo de salida de audio y conmutar la atenuación de audio se han movido al nuevo diálogo Opciones de audio del diálogo Seleccionar Sintetizador.
+    Estas opciones se eliminarán del diálogo "seleccionar Sintetizador" en 2024.1. (<A HREF="https://github.com/nvaccess/nvda/issues/15486">#15486</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8711">#8711</A>)
     </UL>
   <LI>Nota: WASAPI es incompatible con algunos complementos.
   Hay actualizaciones compatibles disponibles para estos complementos, por favor actualízalos antes de actualizar NVDA.
@@ -87,6 +90,7 @@ También se han corregido errores en la tienda de complementos, en Microsoft Off
   <UL>
   <LI>Corrección de un fallo en Microsoft Word cuando las opciones de formateado de documentos "anunciar encabezados" y "anunciar comentarios y notas" no estaban activadas. (<A HREF="https://github.com/nvaccess/nvda/issues/15019">#15019</A>)
   <LI>En Word y Excel, la alineación de texto se anunciará correctamente en más situaciones. (<A HREF="https://github.com/nvaccess/nvda/issues/15206">#15206</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15220">#15220</A>)
+  <LI>Corrección del anunciado de algunos atajos de formato de celda en Excel. (<A HREF="https://github.com/nvaccess/nvda/issues/15527">#15527</A>)
   </UL>
 <LI>Microsoft Edge:
   <UL>
@@ -103,9 +107,13 @@ También se han corregido errores en la tienda de complementos, en Microsoft Off
   <LI>Corregido un fallo donde al desmarcar "incluir complementos incompatibles" provocaría que los complementos incompatibles siguieran apareciendo en la tienda. (<A HREF="https://github.com/nvaccess/nvda/issues/15411">#15411</A>)
   <LI>Los complementos bloqueados debido a razones de compatibilidad ahora deberían filtrarse correctamente al conmutar el filtro por estado habilitado y deshabilitado. (<A HREF="https://github.com/nvaccess/nvda/issues/15416">#15416</A>)
   <LI>Corregido un fallo que evita que se actualicen o substituyan complementos incompatibles instalados y habilitados mediante la herramienta de instalación externa. (<A HREF="https://github.com/nvaccess/nvda/issues/15417">#15417</A>)
+  <LI>Corregido un fallo donde los complementos no pueden instalarse si falló o se canceló una descarga anterior. (<A HREF="https://github.com/nvaccess/nvda/issues/15469">#15469</A>)
+  <LI>Corregidos problemas con el manejo de complementos imcompatibles al actualizar NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/15414">#15414</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15412">#15412</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15437">#15437</A>)
   </UL>
-<LI>Corregido el soporte para controles System List view (<CODE>SysListView32</CODE>) en aplicaciones Windows Forms. (<A HREF="https://github.com/nvaccess/nvda/issues/15283">#15283</A>)
 <LI>NVDA vuelvbe a anunciar los resultados de cálculo en la calculadora de Windows 32bit en las versiones Server, LTSC y LTSB de Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/15284">#15284</A>)
+<LI>NVDA ya no ignora los cambios del foco cuando una ventana anidada (ventana hija) obtiene el foco. (<A HREF="https://github.com/nvaccess/nvda/issues/15432">#15432</A>)
+<LI>Corregidos problemas de rendimiento con el Administrador de Tareas y algunas versiones de Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/6245">#6245</A>)
+<LI>Se corrigió una posible causa de bloqueo durante el arranque de NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/15517">#15517</A>)
 </UL>
 
 <P></P>
