@@ -1550,23 +1550,8 @@ Listę Syntezatorów, które obsługuje NVDA zobaczysz w rozdziale [Obsługiwane
 
 Jeden specjalny element, który zawsze pojawi się na tej liście, to "bez mowy", który pozwala używać NVDA całkowicie bez komunikatów głosowych.
 Może to być przydatne dla kogoś chcącego używać NVDA tylko z monitorem brajlowskim albo dla widzących twórców oprogramowania, którzy chcą używać wyłącznie funkcji "Podgląd mowy".
+
  
-==== Urządzenie wyjściowe ====[SelectSynthesizerOutputDevice]
-Ta opcja pozwala na wybór urządzenia dźwiękowego, przez które będzie słychać wybrany syntezator NVDA.
-
-%kc:setting
-==== Tryb przyciszania audio ====[SelectSynthesizerDuckingMode]
-Skrót klawiszowy: NVDA+Shift+D
-
-W Windows 8 i nowszych, ta opcja pozwala wybrać, czy NVDA powinien obniżać głośność innych aplikacji, gdy NVDA mówi albo przez cały czas, gdy NVDA jest uruchomione.
-- Bez przyciszania: NVDA nie będzie nigdy obniżać głośności innych dźwięków. 
-- Przycisz podczas generowania mowy i dźwięku: NVDA obniży głośność innych dźwięków tylko wtedy, gdy NVDA mówi albo generuje dźwięk. Może to nie działać dla wszystkich syntezatorów. 
-- Zawsze przyciszaj: NVDA będzie obniżał głośność innych dźwięków przez cały czas, gdy NVDA jest uruchomione.
--
-
-Ta opcja jest dostępna tylko, jeśli NVDA został zainstalowany.
-Nie jest możliwe obsługiwanie przyciszania audio w przenośnych i tymczasowych kopiach NVDA.
-
 +++ Szybka zmiana ustawień syntezatora +++[SynthSettingsRing]
 Jeśli chcesz szybko zmienić ustawienia mowy bez wchodzenia do kategorii Mowa okna preferencji NVDA, istnieją klawisze poleceń, które pozwalają w każdej chwili ustawiać najczęściej zmieniane ustawienia mowy:
 %kc:beginInclude
@@ -1782,6 +1767,43 @@ Możesz zajrzeć do sekcji omawiającej twój monitor brajlowski w rozdziale [Ob
 Miej na uwadze, że jeżeli podłączasz więcej monitorów brajlowskich w tym samym momencie używających tego samego sterownika Np. podłączenie tych samych monitorów brajlowskich seika,
 że teraz jest niemożliwie dokładnie ustawić w NVDA, który monitor brajlowski ma być używany.
 Czyli zaleca się podłączać monitor brajlowski określonego typu/producenta na raz.
+
++++ Dźwięk +++[AudioSettings]
+Kategoria dźwięk w oknie dialogowym ustawień NVDA pozwala zmieniać niektóre opcje związane z odtwarzaniem dźwięków NVDA.
+
+==== Urządzenie wyjściowe ====[SelectSynthesizerOutputDevice]
+Ta opcja pozwala na wybór urządzenia dźwiękowego, przez które będzie słychać wybrany syntezator NVDA.
+
+%kc:setting
+==== Tryb przyciszania audio ====[SelectSynthesizerDuckingMode]
+Skrót klawiszowy: NVDA+Shift+D
+
+W Windows 8 i nowszych, ta opcja pozwala wybrać, czy NVDA powinien obniżać głośność innych aplikacji, gdy NVDA mówi albo przez cały czas, gdy NVDA jest uruchomione.
+- Bez przyciszania: NVDA nie będzie nigdy obniżać głośności innych dźwięków. 
+- Przycisz podczas generowania mowy i dźwięku: NVDA obniży głośność innych dźwięków tylko wtedy, gdy NVDA mówi albo generuje dźwięk. Może to nie działać dla wszystkich syntezatorów. 
+- Zawsze przyciszaj: NVDA będzie obniżał głośność innych dźwięków przez cały czas, gdy NVDA jest uruchomione.
+-
+
+Ta opcja jest dostępna tylko, jeśli NVDA został zainstalowany.
+Nie jest możliwe obsługiwanie przyciszania audio w przenośnych i tymczasowych kopiach NVDA.+
+
+==== Głośność dźwięków NVDA jest spójna z głośnością  NVDA ====[SoundVolumeFollowsVoice]
+: Domyślnie
+  Wyłączone
+: opcje
+  Wyłączone, Włączone
+:
+
+Gdy ta opcja jest włączona, Głośność dźwięków NVDA będzie śledzić głośność używanego syntezatora mowy.
+Jeżeli zmniejszysz głośność syntezatora mowy, głośność dźwięków także będzie zmniejszona.
+Podobnie, jeżeli powiększysz głośność syntezatora, głośność dźwięku się zwiększy.
+Ta opcja odnosi skutek gdy opcja "Używaj wasapi do wyjścia audio" jest włączona.
+Ta opcja nie jest dostępna jeżeli uruchomiłeś NVDA z wyłączonym [WASAPI do wyjścia audio #WASAPI] z poziomu ustawień zaawansowanych.
+
+==== Głośność dźwięków NVDA ====[SoundVolume]
+Ten suwak umożliwia ustawienie głośności dźwięków NVDA razem z sygnałami dźwiękowymi.
+To ustawienie odnosi skutek gdy opcja "Używaj WASAPI do wyjścia audio" jest włączona, a opcja "Głośność dźwięków NVDA jest spójna z głośnością  NVDA" jest wyłączona.
+Ta opcja nie jest dostępna jeżeli uruchomiłeś NVDA z wyłączonym [WASAPI do wyjścia audio #WASAPI] z poziomu ustawień zaawansowanych.
 
 +++ Ustawienia widoczności +++[VisionSettings]
 ustawienia widoczności programu NVDA pozwalają na włączanie, wyłączanie i konfigurowanie poszczególnych [ustawień pomocy wizualnych #Vision].
@@ -2412,22 +2434,10 @@ Z niektórymi historycznie popularnymi API do wyświetlania okien, tekst może b
 Ta opcja włącza wsparcie wyjścia dźwięku za pomocą interfejsu windows audio session (WASAPI).
 WASAPI to bardziej nowoczesny interfejs audio który może przyśpieszyć odzew, wydajność i stabilność wydawanego dźwięku przez NVDA, włączając w to dźwięki i mowe.
 Po zmianie tej opcji, do zastosowania zmian wymagane jest ponowne uruchomienie.
-
-==== Głośność dźwięków NVDA jest spójna z głośnością  NVDA ====[SoundVolumeFollowsVoice]
-: Domyślnie
-  Wyłączone
-: opcje
-  Wyłączone, Włączone
-:
-
-Gdy ta opcja jest włączona, Głośność dźwięków NVDA będzie śledzić głośność używanego syntezatora mowy.
-Jeżeli zmniejszysz głośność syntezatora mowy, głośność dźwięków także będzie zmniejszona.
-Podobnie, jeżeli powiększysz głośność syntezatora, głośność dźwięku się zwiększy.
-Ta opcja odnosi skutek gdy opcja "Używaj wasapi do wyjścia audio" jest włączona.
-
-==== Głośność dźwięków NVDA ====[SoundVolume]
-Ten suwak umożliwia ustawienie głośności dźwięków NVDA razem z sygnałami dźwiękowymi.
-To ustawienie odnosi skutek gdy opcja "Używaj WASAPI do wyjścia audio" jest włączona, a opcja "Głośność dźwięków NVDA jest spójna z głośnością  NVDA" jest wyłączona.
+Gdy Wasapi jest wyłączone, zostaną wyłączone następujące opcje:
+- [Głośność dźwięków NVDA jest spójna z głośnością  NVDA #SoundVolumeFollowsVoice]
+- [Głośność dźwięków NVDA #SoundVolume]
+-
 
 ==== Włączone kategorie debugowania ====[AdvancedSettingsDebugLoggingCategories]
 Pola wyboru na tej liście pozwalają włączyć konkretne kategorie informacji debugowania w dzienniku NVDA.
