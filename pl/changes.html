@@ -16,99 +16,108 @@ Informacje techniczne nie zostały przetłumaczone, proszę zajrzeć do <A HREF=
 </P>
 <H2>2023.3</H2>
 <P>
-This release includes improvements to performance, responsiveness and stability of audio output.
+Ta wersja zawiera ulepszenia wydajności, responsywności i stabilności dźwięku.
+Dodano opcje do kontrolowania głośności dźwięków NVDA, oraz do ich ujednolicania z głośnością mowy.
 </P>
 <P>
-NVDA can now periodically refresh OCR results, speaking new text as it appears.
-This can be configured in the Windows OCR category of NVDA's settings dialog.
+NVDA potrafi od czasu do czasu odświeżać test rozpoznany za pomocą Ocr, wymawiając go po jego natychmiastowym pojawieniu się.
+Tą opcję można włączyć w kategorii Windows OCR w oknie dialogowym ustawień NVDA.
 </P>
 <P>
-There's been several braille fixes, improving device detection and caret movement.
-It is now possible to opt-out unwanted drivers from automatic detection, to improve autodetection performance.
-There are also new BRLTTY commands.
+Naprawiono kilka problemów z brajlem, naprawiając jednocześnie wykrywanie ruchów kursora i automatyczne wykrywanie monitoró brajlowskich.
+W celu ulepszenia wydajności automatycznego wykrywania monitorów brajlowskich, od teraz istnieje możliwość wyłączenia niektórych sterowników z tego procesu.
+Dodano także nowe polecenia BRLTTY.
 </P>
 <P>
-There's also been bug fixes for the Add-on Store, Microsoft Office, Microsoft Edge context menus, and Windows Calculator.
+Naprawiono blędy w Add-on Store, pakiecie Microsoft Office, menu kontekstowych Microsoft Edge, i kalkulatorze Windows.
 </P>
-<H3>New Features</H3>
+<H3>Nowe funkcje</H3>
 <UL>
-<LI>Enhanced sound management:
+<LI>Ulepszone zarządzanie dźwiękiem:
   <UL>
-  <LI>NVDA will now output audio via the Windows Audio Session API (WASAPI), which may improve the responsiveness, performance and stability of NVDA speech and sounds. (<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11169">#11169</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11615">#11615</A>, <A HREF="https://github.com/nvaccess/nvda/issues/5096">#5096</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10185">#10185</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11061">#11061</A>)
-  <LI>WASAPI usage can be disabled in Advanced settings.
-  If WASAPI is enabled, the following Advanced settings can also be configured.
+  <LI>Nowy panel ustawień dźwięku:
     <UL>
-    <LI>An option to have the volume of NVDA sounds and beeps follow the volume setting of the voice you are using. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>)
-    <LI>An option to separately configure the volume of NVDA sounds. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038">#15038</A>)
+    <LI>Można go otworzyć używając skrótu <CODE>NVDA+control+u</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/15497">#15497</A>)
+    <LI>Dodano opcje, która umożliwia ustawienie spójności głośności dźwięków NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>)
+    <LI>Dodano opcję do oddzielnej konfiguracji glośności dźwięków NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/1409">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038">#15038</A>)
+    <LI>Opcje do wyboru karty dźwiękowej i przełączania przyciszania dźwięku zostały przeniesione do nowej kategorii dźwięk w ustawieniach NVDA z okna dialogowego "wybór syntezatora".
+    Te opcje będą usunięte z okna dialogowego "wybór syntezatora" w wersji 2024.1. (<A HREF="https://github.com/nvaccess/nvda/issues/15486">#15486</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8711">#8711</A>)
     </UL>
-  <LI>Note: WASAPI is incompatible with some add-ons.
-  Compatible updates are available for these add-ons, please update them before updating NVDA.
-  Incompatible versions of these add-ons will be disabled when updating NVDA:
+  <LI>NVDA od teraz będzie dosyłal dźwięk za pomocą interfejsu Windows Audio Session API (WASAPI), co może wpłynąć na stabilność responsywność i wydajność mowy i dźwięków NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14697">#14697</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11169">#11169</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11615">#11615</A>, <A HREF="https://github.com/nvaccess/nvda/issues/5096">#5096</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10185">#10185</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11061">#11061</A>)
+  <LI>Uwaga: WASAPI jest iezgodny z niektórymi dodatkami.
+  Zgodne aktualizacje dostępne są dla tych dodatków. Zanim zaktualizujesz NVDA, prosimy zaktualizować te dodatki.
+  Niezgodne wersje tych dodatków będą wyłączone podczas aktualizacji NVDA:
     <UL>
-    <LI>Tony's Enhancements version 1.15 or older. (<A HREF="https://github.com/nvaccess/nvda/issues/15402">#15402</A>)
-    <LI>NVDA global commands extension 12.0.8 or older. (<A HREF="https://github.com/nvaccess/nvda/issues/15443">#15443</A>)
+    <LI>Tony's Enhancements wersja 1.15 lub starsza. (<A HREF="https://github.com/nvaccess/nvda/issues/15402">#15402</A>)
+    <LI>NVDA global commands extension 12.0.8 lub starsza. (<A HREF="https://github.com/nvaccess/nvda/issues/15443">#15443</A>)
     </UL>
   </UL>
-<LI>NVDA is now able to continually update the result when performing optical character recognition (OCR), speaking new text as it appears. (<A HREF="https://github.com/nvaccess/nvda/issues/2797">#2797</A>)
+<LI>od teraz potrafi aktualizować wynik OCR, wymawiając nowy tekst gdy się pojawi. (<A HREF="https://github.com/nvaccess/nvda/issues/2797">#2797</A>)
   <UL>
-  <LI>To enable this functionality, enable the option "Periodically refresh recognized content" in the Windows OCR category of NVDA's settings dialog.
-  <LI>Once enabled, you can toggle speaking new text by toggling report dynamic content changes (pressing <CODE>NVDA+5</CODE>).
+  <LI>Aby włączyć tę funkcję, włącz opcję "Od czasu do czasu odświeżaj  treść rozpoznawaną" w kategorii windows Ocr w ustawieniach NVDA.
+  <LI>Kiedy ta opcja jest włączona, możesz regulować wymawianie nowego tekstu za pomocą opcji informuj o zmianach treści dynamicznych  (naciskając <CODE>NVDA+5</CODE>).
   </UL>
-<LI>When using automatic detection of braille displays, it is now possible to opt-out drivers from detection from the braille display selection dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
-<LI>A new option in Document Formatting settings, "Ignore blank lines for line indentation reporting". (<A HREF="https://github.com/nvaccess/nvda/issues/13394">#13394</A>)
-<LI>Added an unassigned gesture to navigate by tab groupings in browse mode. (<A HREF="https://github.com/nvaccess/nvda/issues/15046">#15046</A>)
+<LI>Podczas używania automatycznego wykrywania monitorów brajlowskich, możliwe jest wykluczenie monitorów brajlowskich z procesu automatycznego wykrywania z poziomu okna dialogowego wybór monitora brajlowskiego. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+<LI>Nowa opcja zostałą dodana do ustawień formatowania dokumentów: "Ignoruj puste linie podczas odczytu wcięć". (<A HREF="https://github.com/nvaccess/nvda/issues/13394">#13394</A>)
+<LI>Dodano noeprzydzielone zdarzenie wejścia do poruszania się po kartach właściwości w trybie czytania. (<A HREF="https://github.com/nvaccess/nvda/issues/15046">#15046</A>)
 </UL>
 
 <P></P>
-<H3>Changes</H3>
+<H3>Zmiany</H3>
 <UL>
-<LI>Braille:
+<LI>Brajl:
   <UL>
-  <LI>When the text in a terminal changes without updating the caret, the text on a braille display will now properly update when positioned on a changed line.
-  This includes situations where braille is tethered to review. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
-  <LI>More BRLTTY key bindings are now mapped to NVDA commands (<A HREF="https://github.com/nvaccess/nvda/issues/6483">#6483</A>):
+  <LI>Gdy tekst w terminalu zmieni się bez aktualizacji kursora systemowego, monitor brajlowski zostanie poprawnie odświeżony, gdy znajduje się na tej linii.
+  To obejmuje sytuacje, podczas któych brajl jest przywiązany do przeglądu. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
+  <LI>Więcej poleceń BRLTTY dostało zdarzenia wejścia nVDA (<A HREF="https://github.com/nvaccess/nvda/issues/6483">#6483</A>):
     <UL>
-    <LI><CODE>learn</CODE>: toggle NVDA input help
-    <LI><CODE>prefmenu</CODE>: open the NVDA menu
-    <LI><CODE>prefload</CODE>/<CODE>prefsave</CODE>: Load/save NVDA configuration
-    <LI><CODE>time</CODE>: Show time
-    <LI><CODE>say_line</CODE>: Speak the current line where the review cursor is located
-    <LI><CODE>say_below</CODE>: Say all using review cursor
+    <LI><CODE>learn</CODE>: włącza i wylącza pomoc klawiatury
+    <LI><CODE>prefmenu</CODE>: otwiera NVDA menu
+    <LI><CODE>prefload</CODE>/<CODE>prefsave</CODE>: przywracanie i zapisywanie konfiguracji NVDA
+    <LI><CODE>time</CODE>: pokaż czas
+    <LI><CODE>say_line</CODE>: Wymawia bieżącą linię pod kursorem przeglądu
+    <LI><CODE>say_below</CODE>: Czyta wszystko za pomocąkorsora przeglądu
     </UL>
-  <LI>The BRLTTY driver is only available when a BRLTTY instance with BrlAPI enabled is running. (<A HREF="https://github.com/nvaccess/nvda/issues/15335">#15335</A>)
-  <LI>The advanced setting to enable support for HID braille has been removed in favor of a new option.
-  You can now disable specific drivers for braille display auto detection in the braille display selection dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
+  <LI>Sterownik BRLTTY jest dostępny tylko gdy kopia BRLTY jest uruchomiona z uruchomionym BRLAPI. (<A HREF="https://github.com/nvaccess/nvda/issues/15335">#15335</A>)
+  <LI>Usunięto ustawienie do wyłączenia wsparcia monitorów brajlowskich HID, zastępując je nową opcją.
+  Możesz wyłączyć określone sterowniki monitorów brajlowskich z porocesu automatycznego wykrywania z okna dialogowego wybó monitora brajlowskiego. (<A HREF="https://github.com/nvaccess/nvda/issues/15196">#15196</A>)
   </UL>
-<LI>Add-on Store: Installed add-ons will now be listed in the Available Add-ons tab, if they are available in the store. (<A HREF="https://github.com/nvaccess/nvda/issues/15374">#15374</A>)
-<LI>Some shortcut keys have been updated in the NVDA menu. (<A HREF="https://github.com/nvaccess/nvda/issues/15364">#15364</A>)
+<LI>Add-on Store: zainstalowane dodatki będą pokazane na karcie wlaściwości zainstalowane, jeżeli są dostępne w Add-ion store. (<A HREF="https://github.com/nvaccess/nvda/issues/15374">#15374</A>)
+<LI>Niektóre skróty klawiszowe w NVDA menu zostały zaktualizowane. (<A HREF="https://github.com/nvaccess/nvda/issues/15364">#15364</A>)
 </UL>
 
 <P></P>
-<H3>Bug Fixes</H3>
+<H3>Poprawki błędów</H3>
 <UL>
 <LI>Microsoft Office:
   <UL>
-  <LI>Fix crash in Microsoft Word when Document formatting options "report headings" and "report comments and notes" were not enabled. (<A HREF="https://github.com/nvaccess/nvda/issues/15019">#15019</A>)
-  <LI>In Word and Excel, text alignment will be correctly reported in more situations. (<A HREF="https://github.com/nvaccess/nvda/issues/15206">#15206</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15220">#15220</A>)
+  <LI>Naprawiono sytuacje, w których Microsoft word zawieszał się  gdy opcje "odczytuj nagłówki" i "odczytuj komentarze i notatki" w opcjach formatowania dokumentów nie były włączone. (<A HREF="https://github.com/nvaccess/nvda/issues/15019">#15019</A>)
+  <LI>W programach Word i Excel, wyrównanie tekstu będzie poprawnie odczytywane w więcej przypadkach. (<A HREF="https://github.com/nvaccess/nvda/issues/15206">#15206</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15220">#15220</A>)
+  <LI>Naprawiono odczyt niektórych skrótów do formatowania komórek w programie Excel. (<A HREF="https://github.com/nvaccess/nvda/issues/15527">#15527</A>)
   </UL>
 <LI>Microsoft Edge:
   <UL>
-  <LI>NVDA will no longer jump back to the last browse mode position when opening the context menu in Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/15309">#15309</A>)
-  <LI>NVDA is once again able to read context menus of downloads in Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/14916">#14916</A>)
+  <LI>NVDA już nie będzie skakała z powrotem do poprzedniej pozycji w trybie czytania podczas otwierania menu kontekstowego w Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/15309">#15309</A>)
+  <LI>NVDA znowu potrafi czytać menu kontekstowe pobierania w przeglądarce Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/14916">#14916</A>)
   </UL>
-<LI>Braille:
+<LI>Brajl:
   <UL>
-  <LI>The braille cursor and selection indicators will now always be updated correctly after showing or hiding respective indicators with a gesture. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
-  <LI>Fixed bug where Albatross braille displays try to initialize although another braille device has been connected. (<A HREF="https://github.com/nvaccess/nvda/issues/15226">#15226</A>)
+  <LI>Kursory brajlowskie i komórki pokazujące zaznaczenie będą zawsze aktualizowane poprawnie podczas ich włączania lub wyłączania skrótem klawiszowym. (<A HREF="https://github.com/nvaccess/nvda/issues/15115">#15115</A>)
+  <LI>Naprawiono błąd próby inicjalizacji monitorów brajlowskich Albatross, gdy inny monitor brajlowski jest podłączony. (<A HREF="https://github.com/nvaccess/nvda/issues/15226">#15226</A>)
   </UL>
 <LI>Add-on Store:
   <UL>
-  <LI>Fix bug where unchecking "include incompatible add-ons" would result in incompatible add-ons still being listed in the store. (<A HREF="https://github.com/nvaccess/nvda/issues/15411">#15411</A>)
-  <LI>Add-ons blocked due to compatibility reasons should now be filtered correctly when toggling the filter for enabled/disabled status. (<A HREF="https://github.com/nvaccess/nvda/issues/15416">#15416</A>)
-  <LI>Fix bug preventing incompatible add-ons which are installed and enabled being upgraded or replaced using the external install tool. (<A HREF="https://github.com/nvaccess/nvda/issues/15417">#15417</A>)
+  <LI>Naprawiono błąd, który skutkował pokazywaniem niezgodnych dodatków w Add-on store, nawet gdy opcja"Uwzględnij dodatki niezgodne" była wyłączona. (<A HREF="https://github.com/nvaccess/nvda/issues/15411">#15411</A>)
+  <LI>Dodatki zablokowane z powodów niezgodności powinni być filtrowane poprawnie podczas przełączania  stanu włączonych lub wyłączonych dodatków. (<A HREF="https://github.com/nvaccess/nvda/issues/15416">#15416</A>)
+  <LI>Naprawiono błąd, który zapobiegał aktualizacjom nadpisanych lub zamienionych dodatków używając narzędzia do zewnętrznej instalacji. (<A HREF="https://github.com/nvaccess/nvda/issues/15417">#15417</A>)
+  <LI>Naprawiono błąd, podczas którego NVDA nie mówiła do póki nie będzie ponownie uruchomiona po instalacji dodatków. (<A HREF="https://github.com/nvaccess/nvda/issues/14525">#14525</A>)
+  <LI>Naprawiono błąd, poczas którego dodatki nie mogły być instalowane jeżeli poprzednie pobiranie zostało anulowane, lub instalacja nie powiodła się. (<A HREF="https://github.com/nvaccess/nvda/issues/15469">#15469</A>)
+  <LI>Naprawiono błędy zarządzania niezgodnymi dodatkami podczas aktualizacji NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/15414">#15414</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15412">#15412</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15437">#15437</A>)
   </UL>
-<LI>Fixed support for System List view (<CODE>SysListView32</CODE>) controls in Windows Forms applications. (<A HREF="https://github.com/nvaccess/nvda/issues/15283">#15283</A>)
-<LI>NVDA once again announces calculation results in the Windows 32bit calculator on Server, LTSC and LTSB versions of Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/15230">#15230</A>)
+<LI>NVDA znowu potrafi czytać wyniki w kalkulatorze w jego 32-bitowej wersji w następujących wydaniach systemu operacyjnego windows:Server, LTSC and LTSB. (<A HREF="https://github.com/nvaccess/nvda/issues/15230">#15230</A>)
+<LI>NVDA więcej nie ignoruje zmian fokusu gdy okno podrzędne dostaje fokus. (<A HREF="https://github.com/nvaccess/nvda/issues/15432">#15432</A>)
+<LI>Naprawiono błędy wydajności z w nenedżerze zadań w niektórych wersjach systemu Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/6245">#6245</A>)
+<LI>Naprawiono potencjalną wysypkę podczas uruchamiania NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/15517">#15517</A>)
 </UL>
 
 <P></P>
