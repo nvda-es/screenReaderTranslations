@@ -260,7 +260,8 @@ Wielu ekranów ustawień mają skróty do bezpośredniego otwierania, takie jak 
 
 ++ Społeczność ++[Community]
 
-NVDA posiada bardzo aktywną społeczność.  istnieje główna [anglojęzyczna lista mailingowa https://nvda.groups.io/g/nvda] a także   strona listująca [lokalne grupy językowe https://github.com/nvaccess/nvda-community/wiki/Connect].
+NVDA posiada bardzo aktywną społeczność.  
+Istnieje główna [anglojęzyczna lista mailingowa https://nvda.groups.io/g/nvda] a także   strona listująca [lokalne grupy językowe https://github.com/nvaccess/nvda-community/wiki/Connect].
 NV Access, twórcy programu NVDA, są aktywni na [Twitterze https://twitter.com/nvaccess] i [Facebooku https://www.facebook.com/NVAccess].
 Pracownicy organizacji NV Access także prowadzą regularnego [Bloga z aktualnościami https://www.nvaccess.org/category/in-process/].
 
@@ -418,7 +419,7 @@ Jeśli twój laptop nie może tego zrobić albo nie pozwala wyłączyć klawisza
 
 ++ Gesty dotykowe ++[NVDATouchGestures]
 Jeśli korzystasz z NVDA pod kontrolą systemu Windows 8 lub nowszego i posiadasz komputer z ekranem dotykowym, możesz korzystać z gestów dotykowych NVDA.
-Podczas działania programu NVDA, wszystkie gesty dotykowe są przekazywane do niego, miast do systemu operacyjnego.
+Podczas działania programu NVDA, chyba że interakcja dotykiem jest wyłączona, wszystkie gesty dotykowe są przekazywane do niego, miast do systemu operacyjnego.
 Oznacza to, że gesty wykonywane normalnie nie będą działać, jeśli włączony jest NVDA.
 %kc:beginInclude
 W celu przełączania obsługi gestów naciśnij NVDA+CTRL+ALT+T.
@@ -811,6 +812,26 @@ Jeśli chcesz używać tych skrótów i móc jednocześnie posługiwać się kla
 Aby włączyć i wyłączyć nawigację literami dla aktualnego dokumentu, naciśnij NVDA+Shift+Spacja.
 %kc:endInclude
 
++++ Inne polecenia do nawigacji +++[OtherNavigationCommands]
+
+Oprócz poleceń do szybkiej nawigacji zawartych powyżej, NVDA posiada nieskojarzone polecenia.
+Aby je używać, musisz z nimi skojarzyć skrót klawiszowy lub dotykową gestę w [oknie dialogowym zdarzeń wejścia #InputGestures].
+Oto spis dostępnych poleceń
+- Artykuł
+- grupowanie
+- Karta właściwości
+-
+Zauważ, że istnieją dwie akcje dla każdego polecenia, do przemieszczania w przód albo w tyl w dokumencie, i w celu prawidłowej nawigacji w obu kierunkach, muzisz je ustawić.
+
+Na przykład, jeżeli chcesz używać skrótów ``y`` / ``shift+y`` do szybkiego przemieszczania się między kartami właściwości, powinieneś wykonać następujące kroki
+
++ Otwórz okno dialogowe zdarzenia wejścia z któregokolwiek dokumentu HTML.
++ Znajdź element "Przemieszcza do następnej karty właściwości" w rozdziale tryb czytania.
++ Skojarz skrót ``y`` ze znalezionym poleceniem.
++ Znajdź element "przemieszcza do poprzedniej karty właściwości".
++ Skojarz skrót ``shift+y`` ze znalezionym poleceniem.
++
+
 ++ Lista elementów ++[ElementsList]
 Lista elementów umożliwia dostęp do listy różnych elementów, znajdujących się w dokumencie, właściwych dla konkretnej aplikacji.
 Dla przykładu w przeglądarkach www, lista elementów wymienia linki, nagłówki, pola formularzy, przyciski albo punkty orientacyjne.
@@ -1092,6 +1113,9 @@ NVDA może go używać dla rozpoznawania tekstu z obrazków lub okien niedostęp
 
 Możesz ustawić język, który ma być użyty dla rozpoznawania tekstu w kategorii [Windows OCR #Win10OcrSettings] w oknie [Preferencji NVDA #NVDASettings], znajdującym się w podmenu Ustawienia w menu NVDA.
 Dodatkowe języki mogą zostać zainstalowane po otwarciu Menu start, wybraniu Ustawienia, wybór daty i języka -> Region i język, a następnie po wybraniu Dodaj język.
+
+Gdy chcesz śledzić zmieniającą się dynamicznie treść, na przykład napisy w filmie, którego oglądasz, Możesz włączyć automatyczne odświeżanie rozpoznanej treści.
+Możesz to zrobić w kategorii [Windows OCR #Win10OcrSettings] [ustawień NVDA #NVDASettings].
 
 Funkcja Windows OCR może być częsciowo oraz całkowicie niezgodna z [Ulepszeniami wizji NVDA #Vision] oraz z innymi zewnętrznymi pomocami do ulepszenia widzenia. Przed rospoczęciem rozpoznawania tekstu, trzeba wyłączyć takie narzędzia.
 
@@ -1731,7 +1755,17 @@ Gdy ta funkcja jest włączona i podłączysz obsługiwaną linijkę przez USB l
 
 "Bez brajla" oznacza, że nie używasz monitora brajlowskiego.
 
-Więcej na temat obsługiwanych linijek brajlowskich, oraz informacje, które z nich obsługują automatyczne wykrywanie, znajdziesz w rozdziale [Obsługiwane Monitory Brajlowskie #SupportedBrailleDisplays].
+Więcej na temat obsługiwanych monitorów brajlowskich, oraz informacje, które z nich obsługują automatyczne wykrywanie, znajdziesz w rozdziale [Obsługiwane Monitory Brajlowskie #SupportedBrailleDisplays].
+
+==== Monitory brajlowskie do automatycznego wykrywania ====[SelectBrailleDisplayAutoDetect]
+Gdy monitor brajloski jest ustawiony na "automatyczny", pola wyboru na tej liście umożliwią wykluczenie monitorów brajlowskich z procesu automatycznego wykrywania.
+To umożliwia wykluczenie monitorów brajlowskich, których nie używasz często.
+Na przykład, jeżeli używasz tylko monitora brajlowskiego, który wymaga sterownika baum do jego funkcjonowania, możesz zostawić włączony sterownik baum, ap pozostałe wyłączyć.
+
+Domyślnie włączone są wszystkie sterowniki wspierające automatyczne wykrywanie monitorów brajlowskich.
+Każdy nowy sterownik, dodany w nowej wersji NVDA lub dostarczany jako dodatek, będzie domyślnie włączony.
+
+Możesz sprawdzić, czy twój monitor brajlowski wspiera automatyczne wykrywanie monitorów brajlowskich w rozdziale [wspierane monitory brajlowskie #SupportedBrailleDisplays].
 
 ==== port ====[BrailleSettingsPort]
 Ta opcja, jeśli jest dostępna, pozwala określić jaki port lub typ połączenia będzie użyty do komunikacji z monitorem brajlowskim.
@@ -2106,6 +2140,7 @@ Możemy w ten sposób skonfigurować odczytywanie:
  - Numerów stron
  - Numerów linii
  - Wcięć linii [(Wyłączone, Mowa, Dźwięki, Mowa i dźwięki) #DocumentFormattingSettingsLineIndentation]
+ - Ignorowanie pustych linii podczas odczytywania wcięć
  - Wcięć akapitu (np. wysunięcie, wcięcie pierwszej linii)
  - Interlinii (pojedyncza, podwójna etc)
  - Wyrównania tekstu
@@ -2148,6 +2183,9 @@ Wysokość dźwięku będzie wzrastać dla każdej spacji, a dla tabulatora przy
 - Mowa i dźwięki: ta opcja zgłosi wcięcia przy użyciu obu powyższych metod.
 -
 
+Jeżeli zaznaczysz pole wyboru "Ignoruj puste linie podczas odczytu wcięć" zmiany wcięć nie będą odczytywane w pustych liniach.
+To może być użyteczne podczas czytania tekstu z pustymi liniami do rozdzielania bloków tekstu, na przykład w kodzie programu.
+
 +++ Nawigacja po dokumencie +++[DocumentNavigation]
 Ta kategoria umożliwia różne opcje związane z nawigacją po dokumentach.
 
@@ -2178,6 +2216,12 @@ Zawiera następujące ustawienia:
 ==== Język rozpoznawania ====[Win10OcrSettingsRecognitionLanguage]
 Ta lista rozwijana pozwala wybrać język, używany do rozpoznawania tekstu.
 Aby się przemieszczać między dostępnymi językami z każdego miejsca, Przydziel zdarzenie wejścia używając [okno dialogowe zdarzenia wejscia #InputGestures].
+
+==== Od czasu do czasu odświeżaj  treść rozpoznawaną ====[Win10OcrSettingsAutoRefresh]
+Gdy to pole wyboru jest zaznaczone, NVDA będzie automatycznie odświeżała rozpoznaną treść kiedy wynik rozpoznawania jest w fokusie.
+To może być użyteczne gdy chcesz śledzić stale zmieniającą się treść, taką jak napisy w filmach.
+Treść odświeża się co półtora sekundy.
+Ta opcja jest domyślnie wyłączona.
 
 +++ Ustawienia zaawansowane +++[AdvancedSettings]
 Uwaga! Ustawienia w tej kategorii są przeznaczone dla zaawansowanych użytkowników i mogą spowodować nieprawidłowe działanie NVDA jeśli zostaną błędnie zmodyfikowane.
@@ -2360,9 +2404,9 @@ Z niektórymi historycznie popularnymi API do wyświetlania okien, tekst może b
 
 ==== Używaj WASAPI do wyjścia audio ====[WASAPI]
 : Domyślnie
-  Wyłączone
+  Włączone
 : Opcje
-    Domyślnie (wyłączone), włączone, wyłączone
+    Domyślnie (włączone), włączone, wyłączone
 :
 
 Ta opcja włącza wsparcie wyjścia dźwięku za pomocą interfejsu windows audio session (WASAPI).
@@ -3839,8 +3883,8 @@ Informacje na temat rozmieszczenia tych klawiszy, znajdują się w dokumentacji 
 %kc:endInclude
 
 ++ BRLTTY ++[BRLTTY]
-[BRLTTY https://www.brltty.com/] jest osobnym programem, który może być wykorzystany do wsparcia wielu monitorów Brajlowskich.
-Aby skorzystać z takiej możliwości, należy zainstalować [BRLTTY for Windows https://www.brltty.com/download.html].
+[BRLTTY https://www.brltty.app/] jest osobnym programem, który może być wykorzystany do wsparcia wielu monitorów Brajlowskich.
+Aby skorzystać z takiej możliwości, należy zainstalować [BRLTTY for Windows https://www.brltty.app/download.html].
 Należy pobrać i zainstalować najnowszy pakiet instalacyjny, który będzie się nazywać na przykład brltty-win-4.2-2.exe.
 Podczas konfiguracji monitora i używanych portów, należy zwrócić szczególną uwagę na wskazówki w przypadku korzystania z monitora USB i zainstalowania dostarczonych przez producenta sterowników.
 
@@ -3850,7 +3894,7 @@ W związku z tym, ustawienie w NVDA tabeli wprowadzania nie ma zastosowania.
 BRLTTY nie jest obsługiwane przez funkcję NVDA automatycznego wykrywania linijki brajlowskiej.
 
 Poniżej wykaz poleceń brltty dla NVDA. 
-Zobacz [tabele klawiszy w dokumentacji brltty http://mielke.cc/brltty/doc/KeyBindings/] by dowiedzieć się, jak poszczególne komendy programu wywołać za pomocą klawiszy poszczególnych monitorów.
+Zobacz [tabele klawiszy w dokumentacji brltty https://brltty.app/doc/KeyBindings/] by dowiedzieć się, jak poszczególne komendy programu wywołać za pomocą klawiszy poszczególnych monitorów.
 %kc:beginInclude
 || Działanie | Komenda brltty |
 | Przewiń brajla do tyłu | fwinlt (go left one window) |
@@ -3858,6 +3902,13 @@ Zobacz [tabele klawiszy w dokumentacji brltty http://mielke.cc/brltty/doc/KeyBin
 | Przenieś monitor do poprzedniej linii | lnup (go up one line) |
 | Przenieś monitor do następnej linii | lndn (go down one line) |
 | Przywołaj do komórki brajla | route (przenieś kursor do znaku) |
+| Włącz lub wyłącz pomoc klawiatury | learn (włącza lub wyłącza tryb samouczka poleceń) |
+| Otwórz NVDA menu | prefmenu (Otwiera lub zamyka menu ustawień) |
+| Przywróć konfiguracje | prefload (przywraca ustawienia z dysku) |
+| Zapisz ustawienia | prefsave (Zapisuje ustawienia na dysk) |
+| Odczytaj czas | time (pokazuje aktualny czas) |
+| Odczytuje bieżącą linię pod kursorem przeglądu | say_line (Wymawia bieżącą linię) |
+| Czytaj wszystko za pomocą kursora przeglądu | say_below (Czyta wszystko od bieżącej linii do końca ekranu) |
 %kc:endInclude
 
 ++ Monitory brajlowskie Tivomatic Caiku Albatross 46/80 ++[Albatross]
