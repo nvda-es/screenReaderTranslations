@@ -110,14 +110,16 @@ NVDA güncellenirken şu eklentilerin uyumsuz sürümleri devre dışı bırakı
   <LI>NVDA güncellenirken uyumsuz eklentilerin ele alınma sorunları giderildi. (<A HREF="https://github.com/nvaccess/nvda/issues/15414">#15414</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15412">#15412</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15437">#15437</A>)
   </UL>
 <LI>Windows'un Server, LTSC ve LTSB sürümlerinin Windows 32bit hesap makinesinde NVDA sonuçları yeniden okuyabiliyor. (<A HREF="https://github.com/nvaccess/nvda/issues/15230">#15230</A>)
- <UL>
- <LI>Pencere içindeki pencereye (alt pencerenin alt penceresine) odaklanıldığında NVDA odak değişimini yok saymıyor. (<A HREF="https://github.com/nvaccess/nvda/issues/15432">#15432</A>)
- <LI>NVDA başlarken potansiyel bir çökme nedeni giderildi. (<A HREF="https://github.com/nvaccess/nvda/issues/15517">#15517</A>)
--
- <P></P>
-== Changes for Developers ==
+<LI>Pencere içindeki pencereye (alt pencerenin alt penceresine) odaklanıldığında NVDA odak değişimini yok saymıyor. (<A HREF="https://github.com/nvaccess/nvda/issues/15432">#15432</A>)
+<LI>NVDA başlarken potansiyel bir çökme nedeni giderildi. (<A HREF="https://github.com/nvaccess/nvda/issues/15517">#15517</A>)
+</UL>
+
+<P></P>
+<H3>Changes for Developers</H3>
+<P>
 Please refer to <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API">the developer guide</A> for information on NVDA's API deprecation and removal process.
- </UL>
+</P>
+<UL>
 <LI><CODE>braille.handler.handleUpdate</CODE> and <CODE>braille.handler.handleReviewMove</CODE> have been changed in order not to update instantly.
 Before this change, when either of these methods was called very often, this would drain many resources.
 These methods now queue an update at the end of every core cycle instead.
