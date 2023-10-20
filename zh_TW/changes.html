@@ -10,6 +10,244 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2023.3 更新中文摘譯</H2>
+<P>
+此版本包括對音訊輸出的效能、反應速度和穩定性的改進，新增了選項來控制 NVDA 聲音和嗶嗶聲的音量，或讓它們跟隨您正在使用的語音音量。
+</P>
+<P>
+NVDA 現在可以定時更新 OCR 的結果，並說出新出現的文字，這可以在 NVDA 設定對話框中的 Windows OCR 類別中進行設定。
+</P>
+<P>
+多項點字修正，改進了設備偵測和游標移動，現在可以在自動偵測中排除不需要的驅動程式，以提高自動偵測的效能，同時也加入了新的 BRLTTY 指令。
+</P>
+<P>
+附加元件商店、Microsoft Office、Microsoft Edge 快顯功能表和 Windows 小算盤的錯誤也已修正。
+</P>
+<H3>新功能</H3>
+<UL>
+<LI>增強的聲音管理：
+  <UL>
+  <LI>新增音訊設定類別：
+    <UL>
+    <LI>可用 <CODE>NVDA+control+u</CODE> 來開啟。 (<A HREF="https://github.com/nvaccess/nvda/issues/15497" target="_blank">#15497</A>)
+    <LI>可讓 NVDA 音效和嗶嗶聲的音量跟隨您正在使用的語音的音量設定。 (<A HREF="https://github.com/nvaccess/nvda/issues/1409" target="_blank">#1409</A>)
+    <LI>可獨立設定 NVDA 音效的音量。 (<A HREF="https://github.com/nvaccess/nvda/issues/1409" target="_blank">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038" target="_blank">#15038</A>)
+    <LI>更改音訊輸出裝置和切換自動音量調整的設定已從「選擇合成器」對話框移至新的音訊設定類別。
+    這些選項將從 2024.1 中的「選擇合成器」對話方塊中刪除。 (<A HREF="https://github.com/nvaccess/nvda/issues/15486" target="_blank">#15486</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8711" target="_blank">#8711</A>)
+    </UL>
+  <LI>NVDA 現在將透過 Windows Audio Session API (WASAPI) 輸出音訊，這可能會提高 NVDA 語音和音效的反應、效能和穩定性。 
+  <LI>注意：WASAPI 與某些附加元件不相容。
+  這些附加元件有相容的更新版本，請在更新 NVDA 之前更新它們。
+  更新 NVDA 時將停用這些附加元件的不相容版本：
+    <UL>
+    <LI>Tony's Enhancements 1.15 或更早版本。 (<A HREF="https://github.com/nvaccess/nvda/issues/15402" target="_blank">#15402</A>)
+    <LI>NVDA global commands extension 12.0.8 或更早版本。 (<A HREF="https://github.com/nvaccess/nvda/issues/15443" target="_blank">#15443</A>)
+    </UL>
+  </UL>
+<LI>NVDA 現在能夠在執行光學字元辨識 (OCR) 時不斷更新結果，說出出現的新文字。 (<A HREF="https://github.com/nvaccess/nvda/issues/2797" target="_blank">#2797</A>)
+  <UL>
+  <LI>若要啟用此功能，請在 NVDA 設定對話框的 Windows OCR 類別中啟用「定時更新辨識內容」選項。
+  <LI>啟用後，您可以透過切換讀出動態內容變化 (按 NVDA+5)來切換朗讀新文字。
+  </UL>
+<LI>當使用點顯器的自動偵測時，現在可以在選擇點顯器對話框中選擇要排除偵測的驅動程式。 (<A HREF="https://github.com/nvaccess/nvda/issues/15196" target="_blank">#15196</A>)
+<LI>文件格式設定中的新選項「讀出行縮排時忽略空白行」。 (<A HREF="https://github.com/nvaccess/nvda/issues/13394" target="_blank">#13394</A>)
+<LI>新增了未指派的手勢，可在瀏覽模式下按索引標籤群組進行導覽。 (<A HREF="https://github.com/nvaccess/nvda/issues/15046" target="_blank">#15046</A>)
+</UL>
+
+<P></P>
+<H3>更新</H3>
+<UL>
+<LI>點字:
+  <UL>
+  <LI>當終端程式中的文字發生變更而沒有移動插入點位置時，  點顯器上的文字將能夠正確顯示。
+  這包括點字跟隨檢閱游標的情況。 (<A HREF="https://github.com/nvaccess/nvda/issues/15115" target="_blank">#15115</A>)
+  <LI>更多 BRLTTY 按鍵組合對應到 NVDA 指令 (<A HREF="https://github.com/nvaccess/nvda/issues/6483" target="_blank">#6483</A>):
+    <UL>
+    <LI><CODE>learn</CODE>: 切換 NVDA 輸入說明
+    <LI><CODE>prefmenu</CODE>: 開啟 NVDA 功能表
+    <LI><CODE>prefload</CODE>/<CODE>prefsave</CODE>: 載入/儲存 NVDA 組態
+    <LI><CODE>time</CODE>: 顯示時間
+    <LI><CODE>say_line</CODE>: 讀出檢閱遊標所在行
+    <LI><CODE>say_below</CODE>: 使用檢閱游標讀出全部
+    </UL>
+  <LI>僅當啟用了 BrlAPI 的 BRLTTY 個體正在執行時，BRLTTY 驅動程式才可用。 (<A HREF="https://github.com/nvaccess/nvda/issues/15335" target="_blank">#15335</A>)
+  <LI>進皆設定中的「啟用 HID 點字支援」已被刪除，取而代之的是新選項，
+  現在您可以在選擇點顯器對話框中停用特定的點顯器驅動程式。 (<A HREF="https://github.com/nvaccess/nvda/issues/15196" target="_blank">#15196</A>)
+  </UL>
+<LI>附加元件商店：如果商店中提供了已安裝的附加元件，現在將在「可用附加元件」索引標籤中列出。 (<A HREF="https://github.com/nvaccess/nvda/issues/15374" target="_blank">#15374</A>)
+<LI>NVDA 功能表中的一些快捷鍵已更新。 (<A HREF="https://github.com/nvaccess/nvda/issues/15364" target="_blank">#15364</A>)
+</UL>
+
+<P></P>
+<H3>錯誤修正</H3>
+<UL>
+<LI>Microsoft Office：
+  <UL>
+  <LI>修正了未啟用文件格式設定中「讀出標題」和「讀出附註及註解」時 Microsoft Word 中的當機問題。 (<A HREF="https://github.com/nvaccess/nvda/issues/15019" target="_blank">#15019</A>)
+  <LI>在 Word 和 Excel 中，能夠更正確讀出文字對齊方式。 (<A HREF="https://github.com/nvaccess/nvda/issues/15206" target="_blank">#15206</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15220" target="_blank">#15220</A>)
+  <LI>修正了 Excel 中某些儲存格格式捷徑的報讀。 (<A HREF="https://github.com/nvaccess/nvda/issues/15527" target="_blank">#15527</A>)
+  </UL>
+<LI>Microsoft Edge：
+  <UL>
+  <LI>在 Microsoft Edge 中開啟快顯功能表時，NVDA 將不再跳回先前瀏覽模式的位置。 (<A HREF="https://github.com/nvaccess/nvda/issues/15309" target="_blank">#15309</A>)
+  <LI>NVDA 再次能夠讀出 Microsoft Edge 中下載的快顯功能表。 (<A HREF="https://github.com/nvaccess/nvda/issues/14916" target="_blank">#14916</A>)
+  </UL>
+<LI>點字：
+  <UL>
+  <LI>使用手勢切換顯示或隱藏點字遊標和選取範圍指示器時，將能夠正確切換。 (<A HREF="https://github.com/nvaccess/nvda/issues/15115" target="_blank">#15115</A>)
+  <LI>修正了儘管已連接另一個點字設備，但 Albatross 點字顯示器仍嘗試初始化的錯誤。 (<A HREF="https://github.com/nvaccess/nvda/issues/15226" target="_blank">#15226</A>)
+  </UL>
+<LI>附加元件商店：
+  <UL>
+  <LI>修正了未勾選「包含不相容附加元件」時，不相容的附加元件仍列在商店中的錯誤。 (<A HREF="https://github.com/nvaccess/nvda/issues/15411" target="_blank">#15411</A>)
+  <LI>當切換啟用或停用狀態篩選器時，因相容性原因而被阻擋的附加元件能夠被正確篩選出來。 (<A HREF="https://github.com/nvaccess/nvda/issues/15416" target="_blank">#15416</A>)
+  <LI>修正了阻止使用外部安裝工具升級或取代已啟用的不相容附加元件的錯誤。 (<A HREF="https://github.com/nvaccess/nvda/issues/15417" target="_blank">#15417</A>)
+  <LI>修正了安裝附加元件後需重新啟動 NVDA 才會說話的錯誤。 (<A HREF="https://github.com/nvaccess/nvda/issues/14525" target="_blank">#14525</A>)
+  <LI>修正瞭如果先前的下載失敗或被取消則無法安裝附加元件的錯誤。 (<A HREF="https://github.com/nvaccess/nvda/issues/15469" target="_blank">#15469</A>)
+  <LI>修正了更新 NVDA 時處理不相容附加元件的問題。 (<A HREF="https://github.com/nvaccess/nvda/issues/15414" target="_blank">#15414</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15412" target="_blank">#15412</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15437" target="_blank">#15437</A>)
+  </UL>
+<LI>NVDA 再次能夠讀出 Windows Server、LTSC 和 LTSB 版本 Windows 32 位元小算盤的計算結果。 (<A HREF="https://github.com/nvaccess/nvda/issues/15230" target="_blank">#15230</A>)
+<LI>修正了 NVDA 啟動過程中當機的潛在原因。 (<A HREF="https://github.com/nvaccess/nvda/issues/15517" target="_blank">#15517</A>)
+</UL>
+
+<P></P>
+<H2>2023.3</H2>
+<P>
+This release includes improvements to performance, responsiveness and stability of audio output.
+Options have been added to control the volume of NVDA sounds and beeps, or to have them follow the volume of the voice you are using.
+</P>
+<P>
+NVDA can now periodically refresh OCR results, speaking new text as it appears.
+This can be configured in the Windows OCR category of NVDA's settings dialog.
+</P>
+<P>
+There's been several braille fixes, improving device detection and caret movement.
+It is now possible to opt-out unwanted drivers from automatic detection, to improve autodetection performance.
+There are also new BRLTTY commands.
+</P>
+<P>
+There's also been bug fixes for the Add-on Store, Microsoft Office, Microsoft Edge context menus, and Windows Calculator.
+</P>
+<H3>New Features</H3>
+<UL>
+<LI>Enhanced sound management:
+  <UL>
+  <LI>A new Audio Settings panel:
+    <UL>
+    <LI>This can be opened with <CODE>NVDA+control+u</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/15497" target="_blank">#15497</A>)
+    <LI>An option in Audio settings to have the volume of NVDA sounds and beeps follow the volume setting of the voice you are using. (<A HREF="https://github.com/nvaccess/nvda/issues/1409" target="_blank">#1409</A>)
+    <LI>An option in Audio settings to separately configure the volume of NVDA sounds. (<A HREF="https://github.com/nvaccess/nvda/issues/1409" target="_blank">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038" target="_blank">#15038</A>)
+    <LI>The settings to change audio output device and toggle audio ducking have been moved to the new Audio settings panel from the Select Synthesizer dialog.
+    These options will be removed from the "select synthesizer" dialog in 2024.1. (<A HREF="https://github.com/nvaccess/nvda/issues/15486" target="_blank">#15486</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8711" target="_blank">#8711</A>)
+    </UL>
+  <LI>NVDA will now output audio via the Windows Audio Session API (WASAPI), which may improve the responsiveness, performance and stability of NVDA speech and sounds. (<A HREF="https://github.com/nvaccess/nvda/issues/14697" target="_blank">#14697</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11169" target="_blank">#11169</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11615" target="_blank">#11615</A>, <A HREF="https://github.com/nvaccess/nvda/issues/5096" target="_blank">#5096</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10185" target="_blank">#10185</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11061" target="_blank">#11061</A>)
+  <LI>Note: WASAPI is incompatible with some add-ons.
+  Compatible updates are available for these add-ons, please update them before updating NVDA.
+  Incompatible versions of these add-ons will be disabled when updating NVDA:
+    <UL>
+    <LI>Tony's Enhancements version 1.15 or older. (<A HREF="https://github.com/nvaccess/nvda/issues/15402" target="_blank">#15402</A>)
+    <LI>NVDA global commands extension 12.0.8 or older. (<A HREF="https://github.com/nvaccess/nvda/issues/15443" target="_blank">#15443</A>)
+    </UL>
+  </UL>
+<LI>NVDA is now able to continually update the result when performing optical character recognition (OCR), speaking new text as it appears. (<A HREF="https://github.com/nvaccess/nvda/issues/2797" target="_blank">#2797</A>)
+  <UL>
+  <LI>To enable this functionality, enable the option "Periodically refresh recognized content" in the Windows OCR category of NVDA's settings dialog.
+  <LI>Once enabled, you can toggle speaking new text by toggling report dynamic content changes (pressing <CODE>NVDA+5</CODE>).
+  </UL>
+<LI>When using automatic detection of braille displays, it is now possible to opt-out drivers from detection from the braille display selection dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/15196" target="_blank">#15196</A>)
+<LI>A new option in Document Formatting settings, "Ignore blank lines for line indentation reporting". (<A HREF="https://github.com/nvaccess/nvda/issues/13394" target="_blank">#13394</A>)
+<LI>Added an unassigned gesture to navigate by tab groupings in browse mode. (<A HREF="https://github.com/nvaccess/nvda/issues/15046" target="_blank">#15046</A>)
+</UL>
+
+<P></P>
+<H3>Changes</H3>
+<UL>
+<LI>Braille:
+  <UL>
+  <LI>When the text in a terminal changes without updating the caret, the text on a braille display will now properly update when positioned on a changed line.
+  This includes situations where braille is tethered to review. (<A HREF="https://github.com/nvaccess/nvda/issues/15115" target="_blank">#15115</A>)
+  <LI>More BRLTTY key bindings are now mapped to NVDA commands (<A HREF="https://github.com/nvaccess/nvda/issues/6483" target="_blank">#6483</A>):
+    <UL>
+    <LI><CODE>learn</CODE>: toggle NVDA input help
+    <LI><CODE>prefmenu</CODE>: open the NVDA menu
+    <LI><CODE>prefload</CODE>/<CODE>prefsave</CODE>: Load/save NVDA configuration
+    <LI><CODE>time</CODE>: Show time
+    <LI><CODE>say_line</CODE>: Speak the current line where the review cursor is located
+    <LI><CODE>say_below</CODE>: Say all using review cursor
+    </UL>
+  <LI>The BRLTTY driver is only available when a BRLTTY instance with BrlAPI enabled is running. (<A HREF="https://github.com/nvaccess/nvda/issues/15335" target="_blank">#15335</A>)
+  <LI>The advanced setting to enable support for HID braille has been removed in favor of a new option.
+  You can now disable specific drivers for braille display auto detection in the braille display selection dialog. (<A HREF="https://github.com/nvaccess/nvda/issues/15196" target="_blank">#15196</A>)
+  </UL>
+<LI>Add-on Store: Installed add-ons will now be listed in the Available Add-ons tab, if they are available in the store. (<A HREF="https://github.com/nvaccess/nvda/issues/15374" target="_blank">#15374</A>)
+<LI>Some shortcut keys have been updated in the NVDA menu. (<A HREF="https://github.com/nvaccess/nvda/issues/15364" target="_blank">#15364</A>)
+</UL>
+
+<P></P>
+<H3>Bug Fixes</H3>
+<UL>
+<LI>Microsoft Office:
+  <UL>
+  <LI>Fixed crash in Microsoft Word when Document formatting options "report headings" and "report comments and notes" were not enabled. (<A HREF="https://github.com/nvaccess/nvda/issues/15019" target="_blank">#15019</A>)
+  <LI>In Word and Excel, text alignment will be correctly reported in more situations. (<A HREF="https://github.com/nvaccess/nvda/issues/15206" target="_blank">#15206</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15220" target="_blank">#15220</A>)
+  <LI>Fixes the announcement of some cell formatting shortcuts in Excel. (<A HREF="https://github.com/nvaccess/nvda/issues/15527" target="_blank">#15527</A>)
+  </UL>
+<LI>Microsoft Edge:
+  <UL>
+  <LI>NVDA will no longer jump back to the last browse mode position when opening the context menu in Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/15309" target="_blank">#15309</A>)
+  <LI>NVDA is once again able to read context menus of downloads in Microsoft Edge. (<A HREF="https://github.com/nvaccess/nvda/issues/14916" target="_blank">#14916</A>)
+  </UL>
+<LI>Braille:
+  <UL>
+  <LI>The braille cursor and selection indicators will now always be updated correctly after showing or hiding respective indicators with a gesture. (<A HREF="https://github.com/nvaccess/nvda/issues/15115" target="_blank">#15115</A>)
+  <LI>Fixed bug where Albatross braille displays try to initialize although another braille device has been connected. (<A HREF="https://github.com/nvaccess/nvda/issues/15226" target="_blank">#15226</A>)
+  </UL>
+<LI>Add-on Store:
+  <UL>
+  <LI>Fixed bug where unchecking "include incompatible add-ons" would result in incompatible add-ons still being listed in the store. (<A HREF="https://github.com/nvaccess/nvda/issues/15411" target="_blank">#15411</A>)
+  <LI>Add-ons blocked due to compatibility reasons should now be filtered correctly when toggling the filter for enabled/disabled status. (<A HREF="https://github.com/nvaccess/nvda/issues/15416" target="_blank">#15416</A>)
+  <LI>Fixed bug preventing overridden enabled incompatible add-ons being upgraded or replaced using the external install tool. (<A HREF="https://github.com/nvaccess/nvda/issues/15417" target="_blank">#15417</A>)
+  <LI>Fixed bug where NVDA would not speak until restarted after add-on installation. (<A HREF="https://github.com/nvaccess/nvda/issues/14525" target="_blank">#14525</A>)
+  <LI>Fixed bug where add-ons cannot be installed if a previous download failed or was cancelled. (<A HREF="https://github.com/nvaccess/nvda/issues/15469" target="_blank">#15469</A>)
+  <LI>Fixed issues with handling incompatible add-ons when upgrading NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/15414" target="_blank">#15414</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15412" target="_blank">#15412</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15437" target="_blank">#15437</A>)
+  </UL>
+<LI>NVDA once again announces calculation results in the Windows 32bit calculator on Server, LTSC and LTSB versions of Windows. (<A HREF="https://github.com/nvaccess/nvda/issues/15230" target="_blank">#15230</A>)
+<LI>NVDA no longer ignores focus changes when a nested window (grand child window) gets focus. (<A HREF="https://github.com/nvaccess/nvda/issues/15432" target="_blank">#15432</A>)
+<LI>Fixed a potential cause of crashing during NVDA startup. (<A HREF="https://github.com/nvaccess/nvda/issues/15517" target="_blank">#15517</A>)
+</UL>
+
+<P></P>
+<H3>Changes for Developers</H3>
+<P>
+Please refer to <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API" target="_blank">the developer guide</A> for information on NVDA's API deprecation and removal process.
+</P>
+<UL>
+<LI><CODE>braille.handler.handleUpdate</CODE> and <CODE>braille.handler.handleReviewMove</CODE> have been changed in order not to update instantly.
+Before this change, when either of these methods was called very often, this would drain many resources.
+These methods now queue an update at the end of every core cycle instead.
+They should also be thread safe, making it possible to call them from background threads. (<A HREF="https://github.com/nvaccess/nvda/issues/15163" target="_blank">#15163</A>)
+<LI>Added official support to register custom braille display drivers in the automatic braille display detection process.
+Consult the <CODE>braille.BrailleDisplayDriver</CODE> class documentation for more details.
+Most notably, the <CODE>supportsAutomaticDetection</CODE> attribute must be set to <CODE>True</CODE> and the <CODE>registerAutomaticDetection</CODE> <CODE>classmethod</CODE> must be implemented.  (<A HREF="https://github.com/nvaccess/nvda/issues/15196" target="_blank">#15196</A>)
+</UL>
+
+<P></P>
+<H4>Deprecations</H4>
+<UL>
+<LI><CODE>braille.BrailleHandler.handlePendingCaretUpdate</CODE> is now deprecated with no public replacement.
+It will be removed in 2024.1. (<A HREF="https://github.com/nvaccess/nvda/issues/15163" target="_blank">#15163</A>)
+<LI>Importing the constants <CODE>xlCenter</CODE>, <CODE>xlJustify</CODE>, <CODE>xlLeft</CODE>, <CODE>xlRight</CODE>, <CODE>xlDistributed</CODE>, <CODE>xlBottom</CODE>, <CODE>xlTop</CODE> from <CODE>NVDAObjects.window.excel</CODE> is deprecated.
+Use <CODE>XlHAlign</CODE> or <CODE>XlVAlign</CODE> enumerations instead. (<A HREF="https://github.com/nvaccess/nvda/issues/15205" target="_blank">#15205</A>)
+<LI>The mapping <CODE>NVDAObjects.window.excel.alignmentLabels</CODE> is deprecated.
+Use the <CODE>displayString</CODE> methods of <CODE>XlHAlign</CODE> or <CODE>XlVAlign</CODE> enumerations instead. (<A HREF="https://github.com/nvaccess/nvda/issues/15205" target="_blank">#15205</A>)
+<LI><CODE>bdDetect.addUsbDevices</CODE> and <CODE>bdDetect.addBluetoothDevices</CODE> have been deprecated.
+Braille display drivers should implement the <CODE>registerAutomaticDetection</CODE> classmethod instead.
+That method receives a <CODE>DriverRegistrar</CODE> object on which the <CODE>addUsbDevices</CODE> and <CODE>addBluetoothDevices</CODE> methods can be used. (<A HREF="https://github.com/nvaccess/nvda/issues/15200" target="_blank">#15200</A>)
+<LI>The default implementation of the check method on <CODE>BrailleDisplayDriver</CODE> uses <CODE>bdDetect.driverHasPossibleDevices</CODE> for devices that are marked as thread safe.
+Starting from NVDA 2024.1, in order for the base method to use <CODE>bdDetect.driverHasPossibleDevices</CODE>, the <CODE>supportsAutomaticDetection</CODE> attribute must be set to <CODE>True</CODE> as well. (<A HREF="https://github.com/nvaccess/nvda/issues/15200" target="_blank">#15200</A>)
+</UL>
+
+<P></P>
 <H2>2023.2 更新中文摘譯</H2>
 <P>
 此版本引入附加元件商店來取代原有的附加元件管理員，在附加元件商店中，您可以瀏覽、搜尋、安裝及更新社群附加元件，您現在也可在自行承擔風險的情況下手動忽略附加元件不相容的問題。
