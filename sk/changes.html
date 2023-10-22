@@ -10,6 +10,112 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
+<H2>2023.3</H2>
+<P>
+Táto verzia obsahuje vylepšenie stability a rýchlosti hlasového výstupu a zvukov NVDA.
+Pridali sme možnosti samostatne regulovať hlasitosť hlasového výstupu a zvukov NVDA, alebo prispôsobenie hlasitosti zvukov NVDA podľa hlasitosti hlasového výstupu.
+</P>
+<P>
+NVDA odteraz dokáže automaticky obnovovať okno s rozpoznaným textom OCR a čítať nový text.
+Toto je možné nastaviť v nastaveniach NVDA, v kategórii rozpoznávanie textu Windows.
+</P>
+<P>
+Došlo k opravám chýb týkajúcich sa spracovania braillovho písma, konkrétne bola vylepšená detekcia brailových riadkov a detekcia pohybu systémového kurzora.
+Odteraz je možné vylúčiť ovládače z automatického detegovania brailových riadkov, čo môže zrýchlyť odozvu.
+Pribudli tiež nové príkazy pre ovládač BRLTTY.
+</P>
+<P>
+Opravili sme chyby v katalógu s doplnkami, aplikáciách Microsoft Office, kontextových ponukách Microsoft Edge, a v kalkulačke.
+</P>
+<H3>Nové vlastnosti</H3>
+<UL>
+<LI>Vylepšená správa zvuku:
+  <UL>
+  <LI>V nastaveniach pribudla nová kategória s označením zvuk:
+    <UL>
+    <LI>Klávesová skratka je <CODE>NVDA+ctrl+u</CODE>. (<A HREF="https://github.com/nvaccess/nvda/issues/15497" target="_blank">#15497</A>)
+    <LI>Odteraz je možné určiť, že hlasitosť reči a hlasitosť zvukov NVDA bude rovnaká (<A HREF="https://github.com/nvaccess/nvda/issues/1409" target="_blank">#1409</A>)
+    <LI>Tiež je možné oddeliť hlasitosť zvukov NVDA a hlasitosť hlasového výstupu. (<A HREF="https://github.com/nvaccess/nvda/issues/1409" target="_blank">#1409</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15038" target="_blank">#15038</A>)
+    <LI>Nastavenia výstupného zariadenia a automatického stišovania boli presunuté do kategórie zvuk.
+    Možnosti odstránime z dialógu Nastavenia hlasového výstupu vo verzii 2024.1. (<A HREF="https://github.com/nvaccess/nvda/issues/15486" target="_blank">#15486</A>, <A HREF="https://github.com/nvaccess/nvda/issues/8711" target="_blank">#8711</A>)
+    </UL>
+  <LI>NVDA odteraz predvolene používa zvukové rozhranie Windows Audio Session API (WASAPI), čo zrýchľuje stabilitu a odozvu výstupu reči a zvukov NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/14697" target="_blank">#14697</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11169" target="_blank">#11169</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11615" target="_blank">#11615</A>, <A HREF="https://github.com/nvaccess/nvda/issues/5096" target="_blank">#5096</A>, <A HREF="https://github.com/nvaccess/nvda/issues/10185" target="_blank">#10185</A>, <A HREF="https://github.com/nvaccess/nvda/issues/11061" target="_blank">#11061</A>)
+  <LI>Upozorňujeme, že WASAPI nie je kompatibilné s niektorými doplnkami.
+  Sú však dostupné aktualizácie, preto prosím najprv aktualizujte doplnky a následne aktualizujte NVDA.
+  Nekompatibilné doplnky budú po aktualizácii zakázané. Ide o doplnky:
+    <UL>
+    <LI>Tony's Enhancements do verzie 1.15. (<A HREF="https://github.com/nvaccess/nvda/issues/15402" target="_blank">#15402</A>)
+    <LI>NVDA global commands extension do verzie 12.0.8. (<A HREF="https://github.com/nvaccess/nvda/issues/15443" target="_blank">#15443</A>)
+    </UL>
+  </UL>
+<LI>NVDA odteraz dokáže pri používaní rozpoznávania textu Windows automaticky aktualizovať rozpoznaný text a prečítať zmeny. (<A HREF="https://github.com/nvaccess/nvda/issues/2797" target="_blank">#2797</A>)
+  <UL>
+  <LI>Ak chcete túto možnosť využívať, začiarknite v nastaveniach Rozpoznávania textu Windows možnosť Pravidelne obnovovať rozpoznaný text.
+  <LI>Keď je táto možnosť zapnutá, oznamovanie zmien v rozpoznanom texte je možné ovplyvniť nastavením oznamovať dynamicky menený obsah (<CODE>nvda+5</CODE>).
+  </UL>
+<LI>Ak používate automatickú detekciu brailových riadkov, môžete určiť riadky, ktoré nebudú pri detekcii zohľadnené. (<A HREF="https://github.com/nvaccess/nvda/issues/15196" target="_blank">#15196</A>)
+<LI>V nastaveniach čítania textu pribudla nová možnosť "Ignorovať prázdne riadky pre oznamovanie odsadenia". (<A HREF="https://github.com/nvaccess/nvda/issues/13394" target="_blank">#13394</A>)
+<LI>Do režimu prehliadania pribudol nový príkaz na prechod medzi záložkami. (<A HREF="https://github.com/nvaccess/nvda/issues/15046" target="_blank">#15046</A>)
+</UL>
+
+<P></P>
+<H3>Zmeny</H3>
+<UL>
+<LI>Braille:
+  <UL>
+  <LI>Ak sa v terminály zmení text a zároveň sa nezmení pozícia systémového kurzora, zmení sa aj text na brailovom riadku.
+  Toto sa dialo v situáciách, keď bol brailový riadok zviazaný s prezeracím kurzorom. (<A HREF="https://github.com/nvaccess/nvda/issues/15115" target="_blank">#15115</A>)
+  <LI>Pridané nové príkazy BRLTTY. (<A HREF="https://github.com/nvaccess/nvda/issues/6483" target="_blank">#6483</A>):
+    <UL>
+    <LI><CODE>learn</CODE>: Zapína a vypína nápovedu vstupu
+    <LI><CODE>prefmenu</CODE>: Otvorí ponuku NVDA
+    <LI><CODE>prefload</CODE>/<CODE>prefsave</CODE>: Načítať / uložiť nastavenia NVDA
+    <LI><CODE>time</CODE>: Zobraziť čas
+    <LI><CODE>say_line</CODE>: Prečíta riadok pod kurzorom
+    <LI><CODE>say_below</CODE>: Plynulé čítanie
+    </UL>
+  <LI>Ovládač BRLTTY je dostupný len ak je spustená inštancia BRLTTY s povoleným BrlAPI (<A HREF="https://github.com/nvaccess/nvda/issues/15335" target="_blank">#15335</A>)
+  <LI>Odstránená možnosť zapnúť a vypnúť podporu pre štandard HID, zároveň bola pridaná nová možnosť.
+  Odteraz je možné vylúčiť ovládače, ktoré nemajú byť detegované pri automatickej detekcii brailových riadkov. (<A HREF="https://github.com/nvaccess/nvda/issues/15196" target="_blank">#15196</A>)
+  </UL>
+<LI>Katalóg s doplnkami: Nainštalované doplnky sú zobrazované aj v časti dostupné doplnky, ak pochádzajú z katalógu. (<A HREF="https://github.com/nvaccess/nvda/issues/15374" target="_blank">#15374</A>)
+<LI>Aktualizované niektoré klávesové skratky v ponuke NVDA (týka sa len anglickej lokalizácie). (<A HREF="https://github.com/nvaccess/nvda/issues/15364" target="_blank">#15364</A>)
+</UL>
+
+<P></P>
+<H3>Opravy</H3>
+<UL>
+<LI>Microsoft Office:
+  <UL>
+  <LI>MS Word viac nespadne, ak sú v nastaveniach čítania textu vypnuté možnosti oznamovať nadpisy a oznamovať anotácie. (<A HREF="https://github.com/nvaccess/nvda/issues/15019" target="_blank">#15019</A>)
+  <LI>V aplikáciách Word a Excel je správne oznamované zarovnanie vo viacerých situáciách. (<A HREF="https://github.com/nvaccess/nvda/issues/15206" target="_blank">#15206</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15220" target="_blank">#15220</A>)
+  <LI>Opravené oznamovanie formátovania pri použití skratiek v Excely. (<A HREF="https://github.com/nvaccess/nvda/issues/15527" target="_blank">#15527</A>)
+  </UL>
+<LI>Microsoft Edge:
+  <UL>
+  <LI>NVDA viac neskočí na predošlú pozíciu v režime prehliadania po zatvorení kontextovej ponuky. (<A HREF="https://github.com/nvaccess/nvda/issues/15309" target="_blank">#15309</A>)
+  <LI>NVDA opäť správne dokáže čítať kontextovú ponuku pri stiahnutých položkách. (<A HREF="https://github.com/nvaccess/nvda/issues/14916" target="_blank">#14916</A>)
+  </UL>
+<LI>Braille:
+  <UL>
+  <LI>Brailový kurzor a vyznačenie vybratého textu sa správne zobrazuje aj vtedy, ak skratkami prepínate zobrazenie kurzora a vybratého textu. (<A HREF="https://github.com/nvaccess/nvda/issues/15115" target="_blank">#15115</A>)
+  <LI>Opravená chyba, ktorá spôsobovala, že riadky Albatross sa pokúšali inicializovať, hoci už bol pripojený iný riadok. (<A HREF="https://github.com/nvaccess/nvda/issues/15226" target="_blank">#15226</A>)
+  </UL>
+<LI>Katalóg s doplnkami:
+  <UL>
+  <LI>Ak odčiarknete možnosť nekompatibilné doplnky, nezobrazia sa nekompatibilné doplnky ani v katalógu. (<A HREF="https://github.com/nvaccess/nvda/issues/15411" target="_blank">#15411</A>)
+  <LI>Filtrovanie zakázaných a povolených doplnkov správne zobrazuje alebo vylučuje nekompatibilné doplnky. (<A HREF="https://github.com/nvaccess/nvda/issues/15416" target="_blank">#15416</A>)
+  <LI>Odteraz je možné aktualizovať z externého zdroja doplnok, ktorý je nekompatibilný. (<A HREF="https://github.com/nvaccess/nvda/issues/15417" target="_blank">#15417</A>)
+  <LI>NVDA viac neprestane hovoriť po inštalácii doplnkov. (<A HREF="https://github.com/nvaccess/nvda/issues/14525" target="_blank">#14525</A>)
+  <LI>Odteraz je možné inštalovať doplnky aj v prípade, že predošlé sťahovanie zlyhalo alebo bolo prerušené. (<A HREF="https://github.com/nvaccess/nvda/issues/15469" target="_blank">#15469</A>)
+  <LI>Opravené problémy so spracovaním nekompatibilných doplnkov počas aktualizácie NVDA. (<A HREF="https://github.com/nvaccess/nvda/issues/15414" target="_blank">#15414</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15412" target="_blank">#15412</A>, <A HREF="https://github.com/nvaccess/nvda/issues/15437" target="_blank">#15437</A>)
+  </UL>
+<LI>NVDA opäť oznamuje výsledky výpočtov v kalkulačke v 32-bitových verziách Windows Server, LTSC a LTSB. (<A HREF="https://github.com/nvaccess/nvda/issues/15230" target="_blank">#15230</A>)
+<LI>NVDA viac neignoruje zmenu fokusu, ak získa fokus včlenené okno. (<A HREF="https://github.com/nvaccess/nvda/issues/15432" target="_blank">#15432</A>)
+<LI>Odstránené potenciálne problémy, ktoré mohli spôsobiť pád NVDA pri štarte. (<A HREF="https://github.com/nvaccess/nvda/issues/15517" target="_blank">#15517</A>)
+</UL>
+
+<P></P>
 <H2>2023.2</H2>
 <P>
 V tejto verzii je predstavený katalóg s doplnkami, ktorý nahrádza pôvodného správcu doplnkov.
