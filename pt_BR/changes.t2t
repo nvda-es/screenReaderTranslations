@@ -26,7 +26,7 @@ Também houve correções de falhas para a Loja de Complementos, Microsoft Offic
     - As configurações para alterar o dispositivo de saída de áudio e alternar o áudio prioritário ""[redução de áudio]"" foram movidas para o novo painel Configurações de áudio no diálogo Selecionar Sintetizador.
     Essas opções serão removidas da caixa de diálogo "selecionar sintetizador" em 2024.1. (#15486, #8711)
     -
-  - O NVDA agora emitirá áudio através da API de Sessão de Áudio do Windows (WASAPI), o que pode melhorar a capacidade de resposta, o desempenho e a estabilidade da fala e dos sons do NVDA. (#14697, #11169, #11615, #5096, #10185, #11061)
+  - O NVDA agora emitirá áudio através da API de Sessão de Áudio do Windows (WASAPI), o que pode melhorar a responsividade, o desempenho e a estabilidade da fala e dos sons do NVDA. (#14697, #11169, #11615, #5096, #10185, #11061)
   - Nota: WASAPI é incompatível com alguns complementos.
   Atualizações compatíveis estão disponíveis para esses complementos, atualize-os antes de atualizar o NVDA.
   Versões incompatíveis destes complementos serão desabilitadas ao atualizar o NVDA:
@@ -98,21 +98,21 @@ Esses métodos agora enfileiram uma atualização no final de cada ciclo princip
 Eles também devem ser thread-safe, possibilitando chamá-los de threads em segundo plano. (#15163)
 - Adicionado suporte oficial para registrar drivers de linhas braille personalizados no processo de detecção automática de linha braille.
 Consulte a documentação da classe ``braille.BrailleDisplayDriver`` para mais detalhes.
-Mais notavelmente, o atributo ``supportsAutomaticDetection`` deve ser definido como ``True`` e ``registerAutomaticDetection`` ``classmethod`` deve ser implementado. (#15196)
+Mais notavelmente, o atributo ``supportsAutomaticDetection`` deve ser definido como ``True`` e deve ser implementado ``registerAutomaticDetection`` ``classmethod``. (#15196)
 -
 
 === Obsolescências ===
 - ``braille.BrailleHandler.handlePendingCaretUpdate`` agora está obsoleto sem substituição pública.
 Ele será removido em 2024.1. (#15163)
 - A importação das constantes ``xlCenter``, ``xlJustify``, ``xlLeft``, ``xlRight``, ``xlDistributed``, ``xlBottom``, ``xlTop`` de ``NVDAObjects.window.excel`` está obsoleta.
-Use ``XlHAlign`` ou ``XlVAlign`` enumerações. (#15205)
+Use enumerações ``XlHAlign`` ou ``XlVAlign``. (#15205)
 - O mapeamento ``NVDAObjects.window.excel.alignmentLabels`` está obsoleto.
-Use os métodos ``displayString`` de ``XlHAlign`` ou ``XlVAlign`` enumerações. (#15205)
+Use os métodos ``displayString`` de enumerações ``XlHAlign`` ou ``XlVAlign``. (#15205)
 - ``bdDetect.addUsbDevices`` e ``bdDetect.addBluetoothDevices`` foram descontinuados.
 Os drivers de linhas Braille devem implementar o método de classe ``registerAutomaticDetection``.
 Esse método recebe um objeto ``DriverRegistrar`` no qual os métodos ``addUsbDevices`` e ``addBluetoothDevices`` podem ser usados. (#15200)
-- A implementação padrão do método ``check`` é ``BrailleDisplayDriver`` usada ``bdDetect.driverHasPossibleDevices`` para dispositivos marcados como thread-safe.
-A partir do NVDA 2024.1, para que o método base possa ser usado ``bdDetect.driverHasPossibleDevices``, o atributo também supportsAutomaticDetectiondeve ser definido ``True``. (#15200)
+- A implementação padrão do método check ""[de verificação]"" em ``BrailleDisplayDriver`` usa ``bdDetect.driverHasPossibleDevices`` para dispositivos marcados como thread-safe.
+A partir do NVDA 2024.1, para que o método base use ``bdDetect.driverHasPossibleDevices``, o atributo ``supportsAutomaticDetection`` também deve ser definido como ``True``. (#15200)
 -
 
 
