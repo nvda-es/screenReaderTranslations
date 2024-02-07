@@ -1,0 +1,22 @@
+commit 7e21e3a4e8a6fd4459d37340eeb0b73ab0e6c6de
+Author: Sean Budd <sean@nvaccess.org>
+Date:   Fri Dec 22 10:02:08 2023 +1100
+
+    Fix up bad syntax for documentation (#15939)
+    
+    Closes #13333
+    
+    Summary of the issue:
+    To aid with converting to markdown, fixing txt2tags syntax issues will ensure the conversion works as expected.
+    Note that not all syntax issues are fixed, however this PR intends to catch easy fixes that can be fixed with regex.
+    This may result in bad syntax in the markdown files, however these are syntax issues in the current documentation so conversion is unlikely to be a step in a worse direction.
+    
+    Description of user facing changes
+    None
+    
+    Description of development approach
+    Regex groups:
+    
+    ([^`])`([^`]) replaced with $1``$2
+    ^ (  )*- to detect lists indented by an odd number of spaces
+    Unmaintained files in user_docs have been removed
