@@ -1,0 +1,16 @@
+commit 0c8b023012be439279b132f389d88272c189d2ac
+Author: burmancomp <93915659+burmancomp@users.noreply.github.com>
+Date:   Mon Dec 18 00:47:33 2023 +0200
+
+    Esp32 microcontroller is not handled as Albatross display (#15928)
+    
+    fixes #15671
+    
+    Summary of the issue:
+    Albatross driver handled Esp32 microcontroller as Albatross display if controller send valid init packet. This is problem especially when displays are detected automatically.
+    
+    Description of user facing changes
+    When using usb connection, driver can check that bus reported device description is "Albatross Braille Display". Esp32 is not detected automatically as Albatross.
+    
+    Description of development approach
+    _searchPorts function blocks port if VID and PID are correct but bus reported bus reported device description is not "Albatross Braille Display", in other cases port is valid to try to connect.
