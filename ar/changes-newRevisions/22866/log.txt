@@ -1,0 +1,24 @@
+commit 29c0d7222774a47ddce2652e8ebc15353fc52d00
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Tue Feb 6 10:24:51 2024 +1000
+
+    Several fixes to native selection mode (#16129)
+    
+    Fixes #16064
+    Fixes #16097
+    
+    Summary of the issue:
+    Native selection mode can be enabled in unsupported Gecko, such as Thunderbird 115.x #16064: turning on native selection mode in thunderbird 115 would cause errors when moving with the arrow keys as IAccessibleTextSelectionContainer is unavailable.
+    Wrong message reported when toggling native selection in Word #16097: NVDA is misleading in MS Word browse mode when it says that native selection mode is not supported when trying to toggle it on, as MS word Browse mode does move the caret / selection, thus it has always used native selection mode.. It is just you can't toggle it off.
+    Description of user facing changes
+    In firefox, If NVDA fails to update the native selection when turning on native selection mode, it is now left off, and the user is
+    notified that native selection mode is not supported. this stops errors when moving with the arrow keys in Thunderbird after turning on native selection mode.
+    NVDA no longer incorrectly alerts the user that native selection mode is not supported in Microsoft Word. Rather, the message state that it canot be turned off.
+    when copying text with control+c in Microsoft Word with Browse mode on, formatting is now also copied, fulfilling the expectation of a native selection mode.
+    Description of development approach
+    Gecko virtualBuffer's updateAppSelection method: if the selection is collapsed, don't try fetching information for the selection, instead just clear the app selection. This error was previously silently ignored.
+    In UIA Browse mode documents, _nativeAppSelectionMode is now set to True, as this correctly reflects that UIA browse mode documents move the native selection.
+    BrowseMode document's toggleNativeSelectionMode script:
+    Tailor the message reported if native selection mode is not supported (by looking at _nativeSelectionMode). If _nativeSelectionMode is True, then the message is changed to state it can't be turned off.
+    If updateappSelection fails when turning on native selection mode, log the error, turn it off, and alert the user that it is not supported.
+    In MS word, suppress the "copy" UIA notification, if in MS word Browse mode. Otherwise there would be double speaking along with the message in cursorManager's copyToclipboard script when doing a native copy.
