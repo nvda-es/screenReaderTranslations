@@ -1,0 +1,20 @@
+commit c7b3eadbf6423595050882d5c622f293e19011f0
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Wed Jan 10 10:06:07 2024 +1000
+
+    i15653: better handle opening combo boxes in browse mode with automatically focus focusable elements disabled (#16016)
+    
+    Fixes #15653
+    
+    Summary of the issue:
+    Two bugs are seen if automatically focus focus elements in browse mode is disabled. Possibly introduced when that setting was introduced, and made worse when browse mode focus code was further refacted in #14611.
+    
+    In iTunes, arrowing up and down inside a combo box incorrectly switches back to browse mode.
+    In Firefox / Chrome, closing a combo box does not automatically switch back to browse mode.
+    Description of user facing changes
+    NVDA will again switch back to browse mode when closing combo boxes with escape or alt+upArrow in Firefox or Chrome. (Action Items in iTunes not accessible #15653)
+    Arrowing up and down in combo boxes in iTunes will no longer inappropriately switch back to browse mode. (Action Items in iTunes not accessible #15653)
+    Description of development approach
+    BrowseModeDocument's collapseOrExpandControl script: if automatic focus focusable elements is disabled, delay the rest of the script to give time for the control to actually get focus.
+    
+    Webkit (iTunes) virtualBuffer: do not treat the list items of a combo box as being part of the virtualBuffer.
