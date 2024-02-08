@@ -1,0 +1,21 @@
+commit 4c2d7c36e2b12e19de067845d50a386d8e7be003
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Fri Feb 2 13:15:42 2024 +1000
+
+    Address issues in userGuide and keyCommands found when researching markdown translation string extraction (#16119)
+    
+    Several issues were discovered with the rendering of the user guide and key commands document in HTML after conversion to markdown.
+    
+    Key commands document:
+    
+    Previous headings for single settings are inappropriately being included in the document before the start of a settings table. E.g. Browse Mode -> Maximum line length (which has no keyboard shortcut, is being included before Use Screen layout). This therefore also breaks the Browse Mode table in to smaller tables.
+    Tables are not being correctly ended with a blank line as markdown requires, so sometimes subsequent headings were being shown as raw markdown as part of the previous table. e.g. The Synth settings ring heading was being shown as raw markdown within the Synthesizer Selection table.
+    The "Introduction" heading is incorrectly appearing at the top of the Key commands document.
+    There is also a small syntax error in the userGuide, causing the table listing the New Papenmire model braile keys to break in the key commands document. Specifically, the kc beginInclude command appears after the table header rather than before.
+    
+    Description of user facing changes
+    the key commands document now renders correctly in HTML.
+    
+    Description of development approach
+    Refactored _handleSetting in keyCommandsDoc.py to address the above issues.
+    this also involved correcting level calculation in the _heading method. The first heading symbol in t2t is of length 1, but in markdown it is of length 2.
