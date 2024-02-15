@@ -896,6 +896,22 @@ Se risulterà accessibile, premere il tasto tab o comunque muoversi all'interno 
 | Ritornare alla modalità navigazione | NVDA+control+spazio | Sposta il focus dall'oggetto incorporato alla modalità navigazione |
 %kc:endInclude
 
+++ Modalità di selezione nativa ++[NativeSelectionMode]
+Per impostazione predefinita, quando si seleziona il testo con i tasti ``shift+freccia`` in modalità Navigazione, la selezione viene effettuata solo all'interno della rappresentazione virtuale del documento di NVDA e non all'interno dell'applicazione stessa.
+Ciò significa che la selezione non è visibile sullo schermo e la copia del testo con ``control+c`` copierà solo la rappresentazione in testo semplice del contenuto di NVDA. Significa che non sarà copiata la formattazione del testo, o quella delle tabelle, o gli attributi che compongono un link , ma soltanto il testo semplice.
+Tuttavia, NVDA dispone di una modalità di selezione nativa che può essere attivata in documenti particolari in modalità navigazione (finora solo Mozilla Firefox) che fa sì che la selezione nativa del documento segua la selezione della modalità navigazione di NVDA.
+
+%kc:beginInclude
+|| Nome | Tasto | Descrizione |
+| Attiva e disattiva la modalità di selezione nativa | ``NVDA+shift+f10`` | Attiva e disattiva la modalità di selezione nativa |
+%kc:endInclude
+
+Quando la modalità di selezione nativa è attivata, la copia della selezione con ``control+c`` utilizzerà anche la funzionalità di copia propria dell'applicazione, il che significa che tutto il contenuto compresa la formattazione verrà copiato negli appunti, anziché solo il testo semplice.
+Ciò significa che se incolleremo il contenuto in programmi come Word o Excel, riusciremo ad ottenere non soltanto il testo semplice,ma anche la formattazione di tabelle o collegamenti..
+Si tenga presente, tuttavia, che nella modalità di selezione nativa, alcune etichette accessibili o altre informazioni generate da NVDA nella modalità di navigazione non verranno incluse.
+Inoltre, anche se l'applicazione farà del suo meglio per far corrispondere la selezione nativa alla selezione della modalità di navigazione di NVDA, potrebbe non essere sempre completamente accurata.
+Tuttavia, per scenari in cui si desidera copiare un'intera tabella o un paragrafo ricco di contenuti e formattazione, questa funzionalità dovrebbe rivelarsi utile.
+ 
 + Lettura della matematica +[ReadingMath]
 NVDA è in grado di leggere ed interagire con la matematica nei contenuti che fanno uso del software MathPlayer4, prodotto da Design Science.
 Ciò richiede che MathPlayer4 sia installato sul computer.
@@ -1430,9 +1446,9 @@ I livelli di log disponibili sono i seguenti:
 - info: NVDA loggherà informazioni di base quali messaggi di avvio e informazioni utili agli sviluppatori.
 - Debug warning: Verranno loggati i messaggi di avviso che non sono causati da errori gravi.
 - Input/output: verranno loggati i tasti premuti, sia della tastiera che del display braille, nonché i messaggi provenienti dalla sintesi vocale e dalla barra braille. 
- - Se vi sono problemi con la privacy, non abilitare mai questa funzione.
+Se vi sono problemi con la privacy, non abilitare mai questa funzione.
 - Debug: Oltre alle informazioni, agli avvisi e ai messaggi di input / output, verranno loggati ulteriori messaggi di debug. 
- - Proprio come input / output, Se vi sono problemi con la privacy, non abilitare mai questa funzione.
+Proprio come input / output, Se vi sono problemi con la privacy, non abilitare mai questa funzione.
  -
 - 
 
@@ -2235,45 +2251,45 @@ Ad esempio, se attiviamo la casella di controllo "Leggi il nome del font", NVDA 
 
 Le opzioni di formattazione documento sono divise in gruppi.
 è possibile configurare la lettura automatica dei seguenti elementi:
-- Carattere
- - nome carattere
- - dimensione carattere
- - attributi carattere
- - Testo enfatizzato
- - Evidenziato (testo contrassegnato)
- - Stile
- - Colori
+- Carattere 
+  - nome carattere
+  - dimensione carattere
+  - attributi carattere
+  - Testo enfatizzato
+  - Evidenziato (testo contrassegnato)
+  - Stile
+  - Colori
 - Informazioni documento
- - Commenti
- - Segnalibri
- - Revisioni
- - Errori ortografici
- - Apici e pedici
+  - Commenti
+  - Segnalibri
+  - Revisioni
+  - Errori ortografici
+  - Apici e pedici
 - Pagine e spaziatura
- - Numeri di pagina
- - Numeri di riga
- - Annuncio rientro righe (disattivo, voce, toni, voce e toni) #DocumentFormattingSettingsLineIndentation]
- - Ignora righe vuote nel segnalare i rientri
- - Rientro paragrafi (ad esempio rientro prima riga)
- - Spaziatura righe (singola, doppia etc)
- - Allineamento
+  - Numeri di pagina
+  - Numeri di riga
+  - Annuncio rientro righe (disattivo, voce, toni, voce e toni) #DocumentFormattingSettingsLineIndentation]
+  - Ignora righe vuote nel segnalare i rientri
+  - Rientro paragrafi (ad esempio rientro prima riga)
+  - Spaziatura righe (singola, doppia etc)
+  - Allineamento
 - Informazioni tabella
- - tabelle
- - intestazioni riga/colonna (disattivato, righe, colonne, righe e colonne)
- - Coordinate delle celle delle tabelle
- - Bordi delle celle [(Disattivo, stili, sia colori che stili)
+  - tabelle
+  - intestazioni riga/colonna (disattivato, righe, colonne, righe e colonne)
+  - Coordinate delle celle delle tabelle
+  - Bordi delle celle [(Disattivo, stili, sia colori che stili)
 - Elementi
- - collegamenti
- - intestazioni
- - Grafici
- - elenchi
- - Blocchi tra virgolette
- - Punti di riferimento
- - Gruppi
- - Articoli
- - Frame
- - Quando qualcosa è cliccabile
- -
+  - collegamenti
+  - intestazioni
+  - Grafici
+  - elenchi
+  - Blocchi tra virgolette
+  - Punti di riferimento
+  - Gruppi
+  - Articoli
+  - Frame
+  - Quando qualcosa è cliccabile
+  -
 -
    
 Per modificare queste impostazioni da qualsiasi luogo ci si trovi, servirsi della finestra [tasti e gesti di immissione #InputGestures] ed assegnare un gesto o tasto rapido personalizzato per quella funzione.
@@ -2603,11 +2619,11 @@ Per modificare un simbolo, dapprima selezionarlo nell'elenco simboli.
 Ciò risulta utile nel caso in cui il simbolo provochi una pausa o un'inflessione nella voce del sintetizzatore.
 Ad esempio, una virgola provoca una pausa nel sintetizzatore.
 Ci sono tre opzioni:
- - Mai: il simbolo non sarà mai inviato al sintetizzatore.
- - Sempre: il simbolo verrà sempre inviato al sintetizzatore.
- - Soltanto al di sotto del livello simboli: invia il simbolo solo se il livello configurato per i simboli è al di sotto di quello settato per il simbolo attuale.
- Ad esempio, si potrebbe fare in modo che il simbolo venga gestito con la propria sostituzione, quindi senza pause, per i livelli più alti, mentre verranno effettuate pause per i livelli inferiori.
- -
+  - Mai: il simbolo non sarà mai inviato al sintetizzatore.
+  - Sempre: il simbolo verrà sempre inviato al sintetizzatore.
+  - Soltanto al di sotto del livello simboli: invia il simbolo solo se il livello configurato per i simboli è al di sotto di quello settato per il simbolo attuale.
+  Ad esempio, si potrebbe fare in modo che il simbolo venga gestito con la propria sostituzione, quindi senza pause, per i livelli più alti, mentre verranno effettuate pause per i livelli inferiori.
+  -
 -
 
 è possibile aggiungere un nuovo simbolo servendosi del pulsante Aggiungi.
@@ -2646,11 +2662,11 @@ Quindi, premere il tasto sulla tastiera che si desidera emulare.
 Dopodiché, il tasto sarà disponibile nella categoria emulazione tasti di sistema e si potrà assegnargli un gesto di input come descritto sopra.
 
 Nota:
- - Ai tasti simulati deve essere assegnato un gesto , altrimenti andranno persi nella finestra di salvataggio/chiusura.
- - Potrebbe non essere possibile mappare un gesto di immissione con tasto modificatore ad un tasto emulato senza modificatore. 
- Per esempio, se vogliamo mappare al tasto "a" la combinazione emulata "ctrl-m", 
- il risultato finale potrebbe essere "ctrl-a".
- -
+- Ai tasti simulati deve essere assegnato un gesto , altrimenti andranno persi nella finestra di salvataggio/chiusura.
+- Potrebbe non essere possibile mappare un gesto di immissione con tasto modificatore ad un tasto emulato senza modificatore. 
+Per esempio, se vogliamo mappare al tasto "a" la combinazione emulata "ctrl-m", 
+il risultato finale potrebbe essere "ctrl-a".
+-
 
 Al termine delle modifiche, premere il pulsante OK per salvarle, o il tasto Annulla per non modificare alcunché.
 
@@ -3032,10 +3048,10 @@ Queste voci possono essere utilizzate anche con NVDA.
 Per usare queste voci, è necessaria l'installazione di due componenti:
 - [Microsoft Speech Platform - Runtime (Version 11), x86 https://www.microsoft.com/download/en/details.aspx?id=27225]
 - [Microsoft Speech Platform - Runtime Languages (Version 11) https://www.microsoft.com/download/en/details.aspx?id=27224]
- - Questa pagina contiene diversi file sia per il riconoscimento vocale sia per la sintesi vocale stessa.
- Selezionare i file che si desiderano, a seconda del TTS e della lingua che si vuole utilizzare.
- Ad esempio, il file MSSpeech_TTS_en-US_ZiraPro.msi è una voce inglese Stati Uniti.
- -
+  - Questa pagina contiene diversi file sia per il riconoscimento vocale sia per la sintesi vocale stessa.
+  Selezionare i file che si desiderano, a seconda del TTS e della lingua che si vuole utilizzare.
+  Ad esempio, il file MSSpeech_TTS_en-US_ZiraPro.msi è una voce inglese Stati Uniti.
+  -
 -
 
 ++ Voci Windows OneCore ++[OneCore]
@@ -3553,7 +3569,7 @@ Questi modelli non supportano ancora la funzione di rilevazione automatica in ba
 
 C'è un'opzione nel driver USB del display che può causare problemi con il caricamento della barra braille.
 Provare quanto segue:
-+ Assicurarsi di aver installato il [driver più recente](https://www.papenmeier-rehatechnik.de/en/service/downloadcenter/software/articles/software-braille-devices.html).
++ Assicurarsi di aver installato [il driver più recente https://www.papenmeier-rehatechnik.de/en/service/downloadcenter/software/articles/software-braille-devices.html].
 + Aprire gestione dispositivi di Windows.
 + Scorrere l'elenco fino a "Controller USB" o "Dispositivi USB".
 + Selezionare "Dispositivo USB Papenmeier Braillex".
