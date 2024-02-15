@@ -369,7 +369,7 @@ In alternativa è possibile digitare NVDA dalla finestra di dialogo  esegui e pr
 Se NVDA è già in esecuzione, verrà riavviato.
 Inoltre risulta possibile servirsi di alcuni [parametri a riga di comando #CommandLineOptions] che permettono di uscire (-q), disattivare i componenti aggiuntivi (--disable-addons) etc.
 
-Nelle versioni installate, NVDA salva i file di configurazione nella cartella roaming application data del profilo utente (ad esempio "C:\Users\<user>\AppData\Roaming").
+Nelle versioni installate, NVDA salva i file di configurazione nella cartella roaming application data del profilo utente (ad esempio "``C:\Users\<user>\AppData\Roaming``").
 è possibile modificare questo parametro in modo tale che NVDA carichi la configurazione dalla cartella local application data.
 Vedere la sezione inerente [parametri di sistema #SystemWideParameters] per maggiori dettagli.
 
@@ -913,12 +913,14 @@ Inoltre, anche se l'applicazione farà del suo meglio per far corrispondere la s
 Tuttavia, per scenari in cui si desidera copiare un'intera tabella o un paragrafo ricco di contenuti e formattazione, questa funzionalità dovrebbe rivelarsi utile.
  
 + Lettura della matematica +[ReadingMath]
-NVDA è in grado di leggere ed interagire con la matematica nei contenuti che fanno uso del software MathPlayer4, prodotto da Design Science.
-Ciò richiede che MathPlayer4 sia installato sul computer.
-MathPlayer può essere scaricato gratuitamente dalla [pagina informativa su MathPlayer https://info.wiris.com/mathplayer-info].
-Dopo aver installato MathPlayer, riavviare NVDA.
+NVDA è in grado di leggere ed interagire con la matematica sia sul web che in altre applicazioni, consentendo di fornire accesso alle informazioni tramite braille e sintesi vocale..
+Affinché ciò sia possibile, è necessario installare un add-on relativo alla matematica per NVDA.
+Sono disponibili diversi componenti aggiuntivi nello store di NVDA che forniscono supporto per la matematica, come l'add-on[MathCAT NVDA https://nsoiffer.github.io/MathCAT/] e [Access8Math https://github .com/tsengwoody/Access8Math].
+Fare riferimento alla [sezione Add-on Store #AddonsManager] per sapere come sfogliare e installare i componenti aggiuntivi in NVDA.
+NVDA può anche utilizzare il vecchio software [MathPlayer https://info.wiris.com/mathplayer-info] di Wiris se presente sul sistema, sebbene questo programma non sia più sviluppato.
 
-NVDA supporta la matematica nei seguenti formati:
+++ Formati di matematica supportati ++[SupportedMathContent]
+Dopo aver installato un add-on appropriato allo scopo, NVDA sarà in grado di supportare la matematica nei seguenti formati:
 - MathML in Mozilla Firefox, Microsoft Internet Explorer e Google Chrome.
 - Le equazioni generate tramite lo strumento apposito di Microsoft Word 365 con UI automation attiva:
 NVDA è in grado di leggere e interagire con le equazioni matematiche in Microsoft Word 365/2016 build 14326 e versioni successive.
@@ -957,14 +959,28 @@ Da impostazioni predefinite, il cursore di controllo segue il cursore di sistema
 | Interagire con matematica | NVDA+alt+m | Inizia l'interazione con contenuto di tipo matematico. |
 %kc:endInclude
 
-A questo punto, è possibile utilizzare i comandi MathPlayer come i tasti freccia per esplorare l'espressione.
+A questo punto, è possibile utilizzare i tasti freccia per esplorare l'espressione.
 Ad esempio, ci si potrà spostare attraverso l'espressione con i tasti freccia sinistra e destra, per poi evidenziare una parte dell'espressione, come una frazione utilizzando il tasto freccia verso il basso.
-Si prega di consultare il [manuale di MathPlayer https://docs.wiris.com/mathplayer/en/mathplayer-user-manual.html] per ulteriori informazioni.
 
 Quando si desidera tornare al documento, è sufficiente premere il tasto Esc.
 
+Per ulteriori informazioni sui comandi disponibili e sulle preferenze per la lettura e la navigazione all'interno dei contenuti matematici, fare riferimento alla documentazione del componente matematico specifico installato.
+- [Documentazione MathCAT https://nsoiffer.github.io/MathCAT/users.html]
+- [Documentazione Access8Math https://github.com/tsengwoody/Access8Math]
+- [Documentazione MathPlayer https://docs.wiris.com/mathplayer/en/mathplayer-user-manual.html]
+-
+
 A volte il contenuto matematico può essere visualizzato come un pulsante o altri tipi di elementi che, se attivati, possono visualizzare una finestra di dialogo o ulteriori informazioni relative alla formula.
 Per attivare il pulsante o l'elemento contenente la formula, premere ctrl + invio.
+
+++ Installazione di MathPlayer ++[InstallingMathPlayer]
+Sebbene sia generalmente consigliato utilizzare uno dei componenti aggiuntivi più recenti per gestire la matematica in NVDA, in alcuni scenari particolari MathPlayer potrebbe comunque risultare una scelta più adatta.
+Per esempio, MathPlayer potrebbe supportare una lingua o un codice Braille che non è ancora presente negli add-on più recenti.
+MathPlayer è disponibile gratuitamente dal sito Web Wiris.
+[Scarica MathPlayer https://downloads.wiris.com/mathplayer/MathPlayerSetup.exe].
+Dopo aver installato MathPlayer, è necessario riavviare NVDA.
+Tenere presente che le informazioni su MathPlayer potrebbero indicare che il supporto esiste solo per browser meno recenti come Internet Explorer 8.
+Ciò si riferisce solo quando si utilizza MathPlayer per mostrare visivamente il contenuto matematico, gli utenti di NVDA possono ignorare questa informazione.
 
 + Braille +[Braille]
 Se si possiede un Display Braille, NVDA sarà in grado di mostrare le informazioni sulla riga braille.
@@ -1595,8 +1611,8 @@ In caso ciò avvenga, consigliamo di disattivare questa caratteristica.
 ==== Descrizione ritardata dei caratteri al movimento del cursore ====
 
 || . {.hideHeaderRow} | . |
-| Opzioni | Abilitata, disabilitata |
-| Default | Disabilitata |
+| Predefinita | Disattivata |
+| Opzioni | Attivata, Disattivata |
 
 
 Quando questa impostazione viene attivata, NVDA pronuncerà una descrizione del carattere man mano che ci si sposta lettera per lettera.
@@ -1617,7 +1633,7 @@ Una volta scelto il sintetizzatore desiderato, premere OK affinché NVDA lo cari
 Se durante il caricamento della nuova sintesi vocale apparisse un messaggio d'errore, NVDA provvederà a ripristinare il vecchio sintetizzatore e l'utente verrà avvisato con un messaggio.
 
 ==== Opzioni disponibili per il comando passa tra le modalità di voce ====[SpeechModesDisabling]
-Questo elenco di caselle di controllo consente di selezionare le modalità vocali da includere, quando si passa da una all'altra utilizzando "NVDA+s".
+Questo elenco di caselle di controllo consente di selezionare le [modalità di voce #SpeechModes] da includere quando si passa da una all'altra utilizzando la combinazione di tasti ``NVDA+s``.
 Le modalità che saranno deselezionate verranno escluse dalle scelte possibili.
 Per impostazione predefinita sono incluse tutte le modalità.
 
@@ -1713,7 +1729,7 @@ Così facendo, il braille non seguirà mai il focus / cursore di sistema.
 
 || . {.hideHeaderRow} | . |
 | Opzioni | Default (Mai), Mai, Solo quando l'inseguimento è su automatico, Sempre |
-| Default | Mai |
+| Predefinito | Mai |
 
 
 Questa impostazione determina se anche il cursore di sistema debba essere spostato con la pressione di un cursor routing.
@@ -1779,8 +1795,8 @@ Per modificare la presentazione delle informazioni di contesto da qualsiasi punt
 ==== Interrompi la voce durante lo scorrimento ====[BrailleSettingsInterruptSpeech]
 
 || . {.hideHeaderRow} | . |
-| Opzioni | Default (Abilitato), Abilitato, Disabilitato |
-| Default | Abilitato |
+| Opzioni | Predefinito (Attivato), Attivato, Disattivato |
+| Predefinito | Attivato |
 
 
 Questa impostazione determina se la sintesi vocale debba interrompersi quando si scorre il display braille indietro o avanti..
@@ -2942,7 +2958,7 @@ Se selezionata, il visualizzatore sintesi vocale si aprirà all'avvio di NVDA.
 La finestra tenterà di aprirsi con le medesime dimensioni e conservando l'esatta posizione dell'ultima volta in cui è stata chiusa.
 
 Mentre il visualizzatore sintesi vocale è attivo, il contenuto della finestra si aggiornerà in tempo reale per mostrare di continuo le informazioni che NVDA invia al sintetizzatore.
-Comunque, se si clicca o si focalizza la finestra, NVDA fermerà temporaneamente l'aggiornamento di modo da permettere la selezione del testo e l'eventuale copia dello stesso.
+Comunque, se si fa passare il mouse sulla finestra o la si evidenzia, NVDA fermerà temporaneamente l'aggiornamento di modo da permettere la selezione del testo e l'eventuale copia dello stesso.
 
 Per abilitare/disabilitare il visualizzatore sintesi vocale da qualsiasi punto ci si trovi, servirsi della finestra [tasti e gesti di immissione #InputGestures] ed assegnare un gesto o tasto rapido personalizzato per quella funzione.
 
