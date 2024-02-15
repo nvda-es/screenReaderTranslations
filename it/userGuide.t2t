@@ -1367,6 +1367,10 @@ Tali impostazioni sono situate nella [finestra di dialogo multipagina impostazio
 In tutte le finestre di dialogo di NVDA, premere il tasto OK per accettare i cambiamenti effettuati.
 Per annullare invece premere il bottone Annulla o il tasto Esc.
 Per alcune finestre di dialogo, è possibile premere il pulsante "Applica" affinché le impostazioni abbiano effetto immediatamente senza dover chiudere la finestra.
+La maggior parte delle finestre di dialogo di NVDA supporta l'aiuto contestuale.
+%kc:beginInclude
+All'interno di una finestra di dialogo, premendo ``f1`` si aprirà la Guida utente al paragrafo relativo all'impostazione in cui si trova il focus o alla finestra di dialogo corrente.
+%kc:endInclude
 Alcune impostazioni possono anche essere cambiate utilizzando dei tasti rapidi, che verranno elencati nelle sezioni successive.
 
 ++ Impostazioni di NVDA ++[NVDASettings]
@@ -1595,6 +1599,14 @@ Tasto: ``NVDA+control+s``
 La finestra Sintetizzatore, che si apre premendo il pulsante cambia... dalla categoria voce della finestra impostazioni di NVDA, consente di selezionare con quale sintesi vocale NVDA debba parlare.
 Una volta scelto il sintetizzatore desiderato, premere OK affinché NVDA lo carichi ed inizi ad utilizzarlo.
 Se durante il caricamento della nuova sintesi vocale apparisse un messaggio d'errore, NVDA provvederà a ripristinare il vecchio sintetizzatore e l'utente verrà avvisato con un messaggio.
+
+==== Opzioni disponibili per il comando passa tra le modalità di voce ====[SpeechModesDisabling]
+Questo elenco di caselle di controllo consente di selezionare le modalità vocali da includere, quando si passa da una all'altra utilizzando "NVDA+s".
+Le modalità che saranno deselezionate verranno escluse dalle scelte possibili.
+Per impostazione predefinita sono incluse tutte le modalità.
+
+Ad esempio, se non si desidera utilizzare le modalità "beep" e "spenta", sarà sufficiente deselezionarle, mantenendo selezionati sia "parla" che "su richiesta".
+Si noti che è necessario mantenere attivate almeno due modalità.
 
 ==== Sintetizzatore ====[SelectSynthesizerSynthesizer]
 Questa opzione permette di selezionare il sintetizzatore che NVDA utilizzerà per parlare. 
@@ -1837,7 +1849,7 @@ Questa opzione permette di selezionare la scheda audio che NVDA utilizzerà per 
 ==== Modalità attenuazione audio ====[SelectSynthesizerDuckingMode]
 Tasto: ``NVDA+shift+d``
 
-Questa funzione, disponibile a partire da Windows8 in poi, consente di decidere se NVDA debba abbassare il volume delle altre applicazioni quando NVDA sta parlando, o per tutto il tempo in cui NVDA è in esecuzione.
+Questa funzione consente di decidere se NVDA debba abbassare il volume delle altre applicazioni quando NVDA sta parlando, o per tutto il tempo in cui NVDA è in esecuzione.
 - Nessuna attenuazione: NVDA non abbasserà mai il volume di altre applicazioni.
 - Attenua quando vengono riprodotti altri suoni: NVDA abbasserà il volume di altri flussi audio soltanto quando la sintesi vocale sta parlando. Si noti che potrebbe non funzionare per tutti i sintetizzatori.
 - Attenua sempre: NVDA manterrà gli altri flussi audio sempre con un volume più basso per tutto il tempo in cui NVDA è in esecuzione.
@@ -1891,8 +1903,6 @@ Se si è sicuri, scegliere il pulsante Sì per abilitare la tenda schermo.
 Nel caso in cui non si desideri essere avvisati con questo messaggio tutte le volte, è possibile modificare questo comportamento nella stessa finestra di dialogo.
 Se invece si volesse ripristinare la visualizzazione del messaggio, attivare la casella di controllo che si trova vicina all'opzione "Rendi lo schermo nero (effetto immediato".
 
-Per modificare lo stato della tenda schermo da qualsiasi punto ci si trovi, si prega di assegnare una combinazione di tasti o un gesto personalizzato servendosi della [Finestra Tasti e Gesti di immissione #InputGestures].
-
 Per impostazioni predefinite, viene emesso un segnale acustico all'attivazione o disattivazione della tenda schermo.
 Se si desidera modificare questo comportamento, è sufficiente deselezionare la casella di controllo "Riproduci un suono quando si attiva o disattiva la tenda schermo".
 
@@ -1920,9 +1930,7 @@ Le caselle di controllo presenti in questo elenco consentono di stabilire quali 
 - Il tasto insert della tastiera estesa (in genere situato nel gruppo di sei tasti vicino a inizio e fine)
 -
 
-Se non viene selezionato alcun tasto che agisca come tasto NVDA, potrebbe risultare impossibile accedere ad alcuni comandi dello screen reader.
-Pertanto, verrà visualizzato un messaggio d'errore nell'eventualità tutti i tasti siano deselezionati.
-Una volta chiusa la finestra d'errore, è obbligatorio selezionare un tasto funzione di NVDA per proseguire.
+Se non viene selezionato alcun tasto che agisca come tasto NVDA, potrebbe risultare impossibile accedere ad alcuni comandi dello screen reader, perciò è necessario impostarne almeno uno.
 
 %kc:setting
 ==== Leggi i caratteri digitati ====[KeyboardSettingsSpeakTypedCharacters]
@@ -1989,9 +1997,10 @@ Le scelte disponibili sono Carattere, Parola, riga e Paragrafo.
 
 Per modificare la quantità di testo letta da qualsiasi punto ci si trovi, si prega di assegnare un gesto personalizzato usando la [finestra di dialogo Tasti e gesti di immissione #InputGestures].  
 
-==== Leggi il tipo dell'oggetto sotto il mouse ====[MouseSettingsRole]
-Se questa casella di controllo è attivata, NVDA leggerà il tipo di oggetto sul quale è posizionato il mouse, man mano che viene spostato.
-
+==== Leggi l'oggetto sotto il mouse ====[MouseSettingsRole]
+Se questa casella di controllo è attivata, NVDA leggerà le informazioni sugli oggetti man mano che il mouse si sposta al loro interno.
+Ciò comprende il ruolo (tipo) dell'oggetto nonché gli stati (selezionato/premuto), le coordinate delle celle nelle tabelle, ecc.
+Tenere presente che la lettura di alcuni dettagli dell'oggetto potrebbe dipendere da come sono regolate  altre impostazioni, ad esempio nelle categorie [presentazione oggetti #ObjectPresentationSettings] o [Formattazione documento #DocumentFormattingSettings].
 ==== Coordinate audio quando il mouse si sposta ====[MouseSettingsAudio]
 Attivando questa casella di controllo si farà in modo che NVDA emetta dei segnali acustici man mano che il mouse si sposta, in modo che l'utente possa farsi un'idea della sua posizione in relazione allo schermo.
 Più in alto è la posizione del mouse sullo schermo, più acuti saranno i toni dei beep emessi.
@@ -2006,8 +2015,8 @@ Questa funzione permette all'utente di non tener conto dei movimenti del mouse (
 La caratteristica viene disattivata di default.
 Se si attiva questa opzione e  la funzione "abilita tracciamento del mouse" risulta attivata, NVDA non leggerà più ciò che si trova alla posizione del mouse quando esso viene spostato da altre applicazioni.
 
-+++ Impostazioni interazione al tocco +++[TouchInteraction]
-Questa categoria, disponibile soltanto  nei computer che montano Windows8 e successivi con un touch screen a bordo, consente di stabilire come NVDA debba interagire con tale touch screen.
++++ Impostazioni per il tocco +++[TouchInteraction]
+Questa categoria, disponibile soltanto  nei computer con un touch screen a bordo, consente di stabilire come NVDA debba interagire con tale touch screen.
 Contiene le seguenti opzioni:
 
 ==== Attiva supporto al tocco ====[TouchSupportEnable]
@@ -2384,8 +2393,15 @@ Tuttavia, per l'esplorazione e la modifica di base del foglio di calcolo, questa
 Al momento è consigliabile per la maggior parte degli utenti di non attivare questa funzione sperimentale, tuttavia sono ben accetti i feedback di quelle persone che dispongono della versione di Microsoft Excel build 16.0.13522.10000 o superiore.
 L'implementazione di Ui automation in Excel è in costante fase di modifica, perciò le versioni di Office inferiori alla 16.0.13522.10000 potrebbero non fornire informazioni sufficienti.
 
-==== Utilizza UI Automation per accedere alla console di Windows quando disponibile ====[AdvancedSettingsConsoleUIA]
-Quando questa opzione è abilitata, NVDA utilizzerà una nuova versione ancora in sviluppo del suo supporto per il prompt dei comandi e la console di Windows che sfrutta i [miglioramenti dell'accessibilità apportati da Microsoft https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/]. Questa funzione è altamente sperimentale ed è ancora incompleta, quindi il suo uso non è ancora raccomandato. Tuttavia, una volta completato, si prevede che questo nuovo supporto diventerà quello predefinito, migliorando le prestazioni e la stabilità di NVDA nel prompt dei comandi e nelle console di Windows.
+==== Utilizza l'elaborazione avanzata degli eventi ====[UIAEnhancedEventProcessing]
+
+|| . {.hideHeaderRow} | . |
+| Opzioni | Predefinito (Attivato), Disattivato, Attivato |
+| Predefinito | Attivato |
+
+
+Quando questa opzione è abilitata, NVDA dovrebbe rimanere reattivo anche quando viene letteralmente sommerso da molti eventi di UI Automation, ad es. grandi quantità di testo in un terminale.
+Dopo aver modificato questa opzione, sarà necessario riavviare NVDA affinché la modifica abbia effetto.
 
 ==== Supporto alla Console di Windows ====[AdvancedSettingsConsoleUIA]
 
@@ -2566,7 +2582,7 @@ Per tornare all'esempio precedente, se scrivessimo UccelloMarino, e abbiamo sele
 
 Le espressioni regolari sono strumenti molto potenti per manipolare porzioni di testo.
 Esse non verranno trattate in questo manuale a causa della loro complessità.
-Per un tutorial introduttivo fare riferimento al seguente indirizzo: [https://docs.python.org/3.7/howto/regex.html].
+Per un tutorial introduttivo, fare riferimento alla [Guida alle espressioni regolari di Python https://docs.python.org/3.11/howto/regex.html].
 
 +++ Livello di punteggiatura/simboli +++[SymbolPronunciation]
 Questa finestra di dialogo permette di modificare il modo ed il livello in cui i segni di punteggiatura e altri simboli vengono annunciati.
@@ -2827,6 +2843,9 @@ Ciò potrebbe includere l'accesso ai propri dati personali o persino all'intero 
 Selezionare un componente aggiuntivo dalla scheda "add-on disponibili" o "add-on aggiornabili".
 Dopodiché servirsi delle azioni Aggiorna, installa, o sostituisci per iniziare l'installazione.
 
+è anche possibile installare più componenti aggiuntivi contemporaneamente.
+Ciò può essere effettuato selezionando più componenti aggiuntivi nella scheda degli add-on disponibili, quindi attivare il menu contestuale e scegliere l'azione "Installa componenti aggiuntivi selezionati".
+
 Per installare un componente aggiuntivo ottenuto al di fuori dell'Add-on Store, premere il pulsante "Installa da una fonte esterna".
 Ciò consentirà di cercare un (file con estensione ``.nvda-addon``) da qualche parte sul computer o su una rete.
 Una volta aperto il pacchetto aggiuntivo, inizierà il processo di installazione.
@@ -2841,6 +2860,7 @@ Per rimuovere un componente aggiuntivo, selezionare l'add-on dall'elenco e utili
 NVDA chiederà di confermare la rimozione.
 Come per l'installazione, NVDA necessita di un riavvio per rimuovere completamente l'add-on.
 Fino a quando non si effettua tale operazione, all'interno dell'elenco add-on lo stato del componente sarà marcato come "In attesa di rimozione".
+Come per l'installazione, è possibile anche rimuovere più componenti aggiuntivi contemporaneamente.
 
 +++ Disattivazione e Attivazione dei componenti aggiuntivi +++[AddonStoreDisablingEnabling]
 Per disabilitare un componente aggiuntivo, utilizzare l'azione "disabilita".
@@ -2849,8 +2869,17 @@ Per abilitare un componente aggiuntivo precedentemente disabilitato, utilizzare 
 Per ogni utilizzo dell'azione abilita/disabilita, lo stato del componente aggiuntivo cambia per indicare cosa accadrà al riavvio di NVDA.
 Se il componente aggiuntivo è stato precedentemente "disabilitato", lo stato mostrerà "abilitato dopo il riavvio".
 Se l'add-on era precedentemente "abilitato", lo stato mostrerà "disabilitato dopo il riavvio".
-Esattamente come accade per l'installazioneo la rimozione i componenti aggiuntivi, è necessario riavviare NVDA affinché le modifiche abbiano effetto.
+Esattamente come accade per l'installazioneo la rimozione dei componenti aggiuntivi, è necessario riavviare NVDA affinché le modifiche abbiano effetto.
+è possibile anche abilitare o disabilitare più componenti aggiuntivi contemporaneamente selezionando più add-on nella scheda dei componenti aggiuntivi disponibili, quindi attivare il menu contestuale e scegliendo l'azione appropriata.
 
++++ Il sistema di recensione degli add-on +++[AddonStoreReviews]
+Prima di installare un componente aggiuntivo, potrebbe essere interessante leggere le recensioni lasciate da altri utenti..
+Oppure, esiste la possibilità di lasciare recensioni dopo aver provato un add-on, in modo da facilitare altre persone.
+Per leggere le recensioni riguardo un componente aggiuntivo, selezionarne uno dall'elenco degli add-on disponibili o aggiornabili, dopodiché usare l'azione "Recensioni dalla Community".
+Ciò aprirà un collegamento ad una pagina Web di discussione GitHub, dove si potrà leggere e scrivere recensioni per il componente aggiuntivo.
+Si tenga presente che ciò non sostituisce la comunicazione diretta con gli sviluppatori degli add-on.
+Lo scopo di questa funzionalità è invece quello di condividere feedback per aiutare gli utenti a decidere se un componente aggiuntivo può essere utile per loro.
+ 
 ++ Add-on incompatibili ++[incompatibleAddonsManager]
 Alcuni componenti aggiuntivi meno recenti potrebbero non essere più compatibili con la versione di NVDA in uso.
 Vale anche il contrario, quindi nel caso in cui si stia utilizzando una vecchia versione dello screen reader, alcuni nuovi add-on potrebbero non funzionare.
@@ -2870,11 +2899,21 @@ Inoltre, si può navigare tra gli add-on installati non compatibili tramite la [
 
 + Strumenti aggiuntivi +[ExtraTools]
 ++ Visualizzatore log ++[LogViewer]
-Il visualizzatore log, situato alla voce strumenti del menu di NVDA, permette di mostrare tutte le informazioni di log dal momento in cui NVDA è stato avviato.
-è possibile servirsi della combinazione di tasti NVDA+f1 per aprire una finestra dove verranno visualizzate  tutte le informazioni di log, comprese quelle per sviluppatori e sul navigatore ad oggetti.
+Il visualizzatore log, situato alla voce strumenti del menu di NVDA, permette di mostrare tutte le informazioni di log dell'ultima sessione di NVDA.
 
-Oltre a poter leggere il contenuto, è anche possibile salvare una copia del file di log, o aggiornare il visualizzatore di modo da poter controllare le ultime informazioni.
+Oltre a leggere il contenuto, è possibile anche salvare una copia del file di log, o aggiornare il visualizzatore in modo da caricare le ultime informazioni che NVDA ha fornito dall'ultima volta che è stato aperto lo strumento.
 Queste azioni sono disponibili dal menu Log del visualizzatore.
+
+Il file mostrato quando si apre il visualizzatore log viene salvato sul computer alla posizione ``%temp%\nvda.log``.
+Ogni qualvolta NVDA viene eseguito, sarà creato un nuovo file di log.
+Quando ciò accade, il vecchio file di log della sessione precedente di NVDA viene spostato in ``%temp%\nvda-old.log``.
+
+è anche possibile copiare negli appunti un frammento del file di log senza aprire il visualizzatore..
+%kc:beginInclude
+|| Nome | Tasto | Descrizione |
+| Apri visualizzatore log | ``NVDA+f1`` | Apre il visualizzatore log e mostra informazioni utile agli sviluppatori sull'oggetto corrente del navigatore. |
+| Copia un frammento di log negli appunti | ``NVDA+control+shift+f1`` | Alla prima pressione, viene impostato un punto di inizio per il contenuto del log che deve essere catturato. La seconda pressione copierà negli appunti il contenuto del log, partendo naturalmente dal punto di inizio impostato poco prima. |
+%kc:endInclude
 
 ++ Visualizzatore sintesi vocale ++[SpeechViewer]
 Per sviluppatori vedenti di programmi o persone che stanno dimostrando le funzionalità di NVDA ad un'utenza vedente, è disponibile una finestra che mostra tutto il testo che NVDA manda alla sintesi vocale.
@@ -2951,14 +2990,22 @@ In particolare, i seguenti problemi possono essere risolti eseguendo questo stru
 
 ++ Ricarica componenti aggiuntivi ++[ReloadPlugins]
 Questa voce, una volta attivata, ricarica tutti i plugin e i moduli specifici per le applicazioni senza riavviare NVDA. Risulta utile per gli sviluppatori.
+I plugin globali gestiscono il modo in cui NVDA interagisce con tutte le applicazioni.
 
+Potrebbero essere utili anche i seguenti comandi da tastiera di NVDA:
+%kc:beginInclude
+|| Nome | Tasto | Descrizione |
+| Ricarica plugin | ``NVDA+control+f3`` | Ricarica i plugin globali e gli appModule di NVDA. |
+| Annuncia il modulo dell'app caricato e l'eseguibile | ``NVDA+control+f1`` | Annuncia il nome del modulo dell'app, se presente, e il nome dell'eseguibile associato all'applicazione su cui è attivo il focus della tastiera. |
+%kc:endInclude
+ 
 + Sintesi vocali supportate +[SupportedSpeechSynths]
 Questa sezione contiene informazioni sui sintetizzatori vocali supportati da NVDA.
 Per una panoramica esaustiva dei sintetizzatori compatibili, sia gratuiti che a pagamento, si veda la [pagina sulle voci aggiuntive in inglese https://github.com/nvaccess/nvda/wiki/ExtraVoices].
 
 ++ Espeak NG ++[eSpeakNG]
 La sintesi vocale [eSpeak NG https://github.com/espeak-ng/espeak-ng] è incorporata direttamente in NVDA, per cui non è necessario alcun driver o componente per farla funzionare. 
-In Windows7, windows 8 e 8.1, da impostazioni predefinite NVDA si avvia utilizzando Espeak NG, mentre su Windows10 e successive la sintesi vocale di default è [Windows OneCore #OneCore].
+In Windows 8.1, da impostazioni predefinite NVDA si avvia utilizzando Espeak NG, mentre su Windows10 e successive la sintesi vocale di default è [Windows OneCore #OneCore].
 Poiché questa sintesi è incorporata in NVDA, risulta molto comoda per utilizzare il prodotto da una chiavetta USB o in altri sistemi.
 
 Ciascuna voce presente in Espeak NG parla una lingua diversa.
@@ -2983,8 +3030,8 @@ La piattaforma Microsoft Speech fornisce supporto per diverse lingue, e generalm
 Queste voci possono essere utilizzate anche con NVDA.
 
 Per usare queste voci, è necessaria l'installazione di due componenti:
-- Microsoft Speech Platform - Runtime (Versione 11) , x86: https://www.microsoft.com/download/en/details.aspx?id=27225
-- Microsoft Speech Platform - Runtime Languages (Versione 11): https://www.microsoft.com/download/en/details.aspx?id=27224
+- [Microsoft Speech Platform - Runtime (Version 11), x86 https://www.microsoft.com/download/en/details.aspx?id=27225]
+- [Microsoft Speech Platform - Runtime Languages (Version 11) https://www.microsoft.com/download/en/details.aspx?id=27224]
  - Questa pagina contiene diversi file sia per il riconoscimento vocale sia per la sintesi vocale stessa.
  Selezionare i file che si desiderano, a seconda del TTS e della lingua che si vuole utilizzare.
  Ad esempio, il file MSSpeech_TTS_en-US_ZiraPro.msi è una voce inglese Stati Uniti.
@@ -3005,7 +3052,8 @@ Cercare la lingua più conosciuta (come l'inglese o il francese), quindi individ
 Selezionare le lingue desiderate e utilizzare il pulsante "aggiungi".
 Una volta aggiunte, riavviare NVDA.
 
-Consultare questo articolo di Microsoft per un elenco delle voci disponibili: https://support.microsoft.com/en-us/windows/appendix-a-supported-languages-and-voices-4486e345-7730-53da-fcfe-55cc64300f01
+Consultare l'articolo [Lingue e voci supportate https://support.microsoft.com/en-us/windows/appendix-a-supported-linguals-and-voices-4486e345-7730-53da-fcfe-55cc64300f01] per un elenco delle voci disponibili voci.
+
  
 + Display braille supportati +[SupportedBrailleDisplays]
 Questa sezione contiene informazioni sulle barre braille supportate da NVDA.
@@ -3033,7 +3081,7 @@ Segue l'elenco di tutti i display braille che supportano il rilevamento automati
 ++ Freedom Scientific Serie Focus/PAC Mate ++[FreedomScientificFocus]
 Sono supportati Tutti i Display Braille Focus e Pac Mate prodotti da [Freedom Scientific https://www.freedomscientific.com/], sia USB che Bluetooth.
 per un corretto funzionamento è necessario avere installati nel proprio sistema i driver per display Braille Freedom Scientific.
-Nel caso non si sia in possesso di tali driver, è possibile scaricarli dall'indirizzo https://support.freedomscientific.com/Downloads/Focus/FocusBlueBrailleDisplayDriver.
+Nel caso non si sia in possesso di tali driver, è possibile ottenerli dalla [pagina Driver Braille Focus Blue https://support.freedomscientific.com/Downloads/Focus/FocusBlueBrailleDisplayDriver].
 Sebbene nella pagina sia nominata solo la barra Focus Blue, il driver funzionerà per tutti i modelli Freedom.
 
 Per impostazioni predefinite, NVDA è in grado di individuare e connettersi automaticamente a questi display via USB o Bluetooth.
@@ -3352,8 +3400,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 
 ++ HIMS serie Braille Sense/Braille EDGE/Smart Beetle/Sync Braille ++[Hims]
 NVDA supporta i modelli Braille Sense, Braille EDGE,  SmartBeetle e SyncBraille prodotti dalla [Hims https://www.hims-inc.com/] quando connessi tramite USB o bluetooth.
-In caso di connessione tramite USB, è necessario prima installare i driver sviluppati dal produttore.
-Si possono scaricare da qui all'indirizzo: http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip
+In caso di connessione tramite USB, è necessario installare i [driver USB da HIMS http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip] sul sistema.
 
 Di seguito, ecco l'elenco dell'assegnazione dei tasti per queste righe braille con NVDA.
 Si legga la documentazione della propria barra Braille per ottenere informazioni su dove sono situati i vari tasti.
@@ -3427,7 +3474,7 @@ Sono supportati i seguenti display Braille Seika prodotti da Nippon Telesoft in 
 - [Seika Versione 3, 4, e 5 (40 celle), Seika80 (80 celle), conosciuti in Italia come Touchme #SeikaBrailleDisplays]
 - [MiniSeika (16, 24 celle), V6, e V6Pro (40 celle), conosciuti in Italia come Luce e ArgoBraille #SeikaNotetaker]
 
-Si possono reperire maggiori informazioni su https://en.seika-braille.com/down/index.html.
+Si possono reperire maggiori informazioni sui display nella loro [pagina di download di demo e driver https://en.seika-braille.com/down/index.html].
 
 
 +++ Seika Versione 3, 4, e 5 (40 celle), Seika80 (80 celle) +++[SeikaBrailleDisplays]
@@ -3504,6 +3551,20 @@ Sono supportati i seguenti display braille:
 
 Questi modelli non supportano ancora la funzione di rilevazione automatica in background.
 
+C'è un'opzione nel driver USB del display che può causare problemi con il caricamento della barra braille.
+Provare quanto segue:
++ Assicurarsi di aver installato il [driver più recente](https://www.papenmeier-rehatechnik.de/en/service/downloadcenter/software/articles/software-braille-devices.html).
++ Aprire gestione dispositivi di Windows.
++ Scorrere l'elenco fino a "Controller USB" o "Dispositivi USB".
++ Selezionare "Dispositivo USB Papenmeier Braillex".
++ Aprire le proprietà e passare alla scheda "Avanzate".
+A volte la scheda "Avanzate" non viene visualizzata.
+In questo caso, scollegare la barra Braille dal computer, uscire da NVDA, attendere qualche istante e ricollegare il display Braille.
+Se necessario, ripetere l'operazione 4-5 volte.
+Se la scheda "Avanzate" ancora non viene visualizzata, riavviare il computer.
++ Disabilitare l'opzione "Carica VCP".
++
+ 
 La maggior parte dei dispositivi è dotata di una barra di navigazione facilitata (EAB) che permette di svolgere le operazioni in una modalità molto più rapida ed intuitiva..
 Questa barra può essere spostata in quattro direzioni e ciascuna direzione ha due posizioni.
 la serie C e la serie Live sono le uniche eccezioni a questa regola.
@@ -4021,7 +4082,7 @@ Consultare la documentazione della barra braille per informazioni sulla posizion
 | Route to braille cell | ``routing`` |
 | Visualizza la formattazione del testo sulla cella braille | ``secondary routing`` |
 | Cambia il modo in cui le informazioni contestuali sono presentate in braille | ``attribute1+attribute3`` |
-| Passa tra le modalità parlare, bip e spento | ``attribute2+attribute4`` |
+| Passa tra le modalità parlare | ``attribute2+attribute4`` |
 | Passa alla modalità di revisione precedente (oggetto, documento o schermo) | ``f1`` |
 | Passa alla modalità di revisione successiva (oggetto, documento o schermo) | ``f2`` |
 | Sposta il navigatore ad oggetti sull'oggetto che lo contiene | ``f3`` |
@@ -4105,6 +4166,7 @@ La modalità protetta disabilita:
 - l'[Add-on Store #AddonsManager]
 - La [console Python di NVDA #PythonConsole]
 - Il [visualizzatore log #LogViewer] e le funzionalità di log
+- Il [Visualizzatore braille #BrailleViewer] e [visualizzatore sintesi vocale #SpeechViewer]
 - L'apertura di documenti esterni dal menu di NVDA, come la guida per l'utente o il file dei collaboratori.
 -
 
@@ -4189,6 +4251,6 @@ Di seguito vengono elencati i valori modificabili con queste chiavi di registro:
 | ``forceSecureMode`` | DWORD | 0 (predefinito) per disabilitare, 1 per abilitare | Se attivata, forza l'attivazione della [Modalità protetta #SecureMode] all'avvio di NVDA. |
 
 + Ulteriori Informazioni +[FurtherInformation]
-Se si vogliono trovare maggiori informazioni o richiedere assistenza riguardo NVDA, si prega di visitare o il sito internazionale in lingua inglese su NVDA_URL, oppure quello relativo alla comunità italiana all'indirizzo www.nvda.it.
+Se si vogliono trovare maggiori informazioni o richiedere assistenza riguardo NVDA, si prega di il [Sito internazionale di NVDA in lingua inglese NVDA_URL], oppure quello relativo alla comunità italiana all'indirizzo www.nvda.it.
 In entrambe i siti web sarà possibile reperire documentazione aggiuntiva, supporto tecnico e risorse varie come forum o mailing list. In particolare, per quanto concerne il sito italiano, esiste una lista di discussione alla quale chiunque può iscriversi mandando un messaggio a: nvda-request@groups.io e nell'oggetto del messaggio scrivere la parola "subscribe" senza le virgolette. Rispondere poi al messaggio di conferma.
 I messaggi che transitano nella mailing list sono tutti consultabili anche dal sito nvda.it, nel riquadro ultime notizie dal forum. Non esitate a contattarci in caso di problemi.
