@@ -1,0 +1,19 @@
+commit 1c783d2abb3da584a404fa1cf41f9a5bcf97fc81
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Tue Feb 13 13:01:16 2024 +1000
+
+    Revert diff_match_patch upgrade (#16168)
+    
+    Fixes #16027
+    Reverts #15514
+    This reverts commit 69a16cc.
+    
+    Summary of the issue:
+    PR #15514 upgraded diff_match_patch from 1.0.2 to fast_diff_match_patch 2.0.1.
+    However, the newer version cannot handle particular unicode characters such as 🍰. The diff_match_patch process dies, NvDA can no longer report text changes, and NvDA hangs on exit.
+    
+    Description of user facing changes
+    Printing unicode characters such as 🍰 in a terminal withn using diff_match_patch for speaking changes no longer causes NvDA to no longer report text changes and lock up on exit.
+    
+    Description of development approach
+    Downgrade back to diff_match_patch 1.0.2.
