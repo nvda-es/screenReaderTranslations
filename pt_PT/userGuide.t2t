@@ -3260,8 +3260,8 @@ Para modelos USB mais antigos, precisará de instalar os drivers USB da HandyTec
 Os seguintes modelos não são automaticamente suportados, mas podem ser usados com o [Handy Tech universal driver https://handytech.de/en/service/downloads-and-manuals/handy-tech-software/braille-display-drivers] e o extra do NVDA:
 - Braillino
 - Bookworm
+- Linhas Modular com versão de firmware 1.13 ou inferior. Note que o firmware destas linhas pode ser actualizado.
 -
-
 Seguem-se as associações de teclas para estes dispositivos braille com o NVDA.
 Por favor, consulte a documentação do seu dispositivo braille para obter a descrição de onde estas teclas podem ser encontradas.
 %kc:beginInclude
@@ -3909,13 +3909,13 @@ Por isso, e para manter a compatibilidade com outros leitores de ecrã em Taiwan
 
 ++ Dispositivos Eurobraille ++[Eurobraille]
 Os dispositivos Braille b.book, b.note, Esys, Esytime e Iris da [Eurobraille https://www.eurobraille.fr/] são suportados pelo NVDA.
-Estes dispositivos possuem um teclado Braille com 10 teclas. 
- das duas teclas colocadas como uma barra de Espaço, a tecla esquerda corresponde ao backspace e a tecla direita ao Espaço.
+Estes dispositivos possuem um teclado Braille com 10 teclas.
+Por favor, consulte a documentação destes dispositivos Braille para obter a descrição destas teclas.
+Das duas teclas colocadas como uma barra de Espaço, a tecla esquerda corresponde ao backspace e a tecla direita ao Espaço.
+
 Ligados via USB, estes dispositivos têm um teclado USB autónomo.
 É possível activar/desactivar este teclado usando a caixa de verificação "Simulação de introdução pelo teclado HID" das configurações Braille.
 O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificação está desmarcada.
-Seguem-se as associações de comandos dos dispositivos EuroBraille com o NVDA.
-Por favor, consulte a documentação destes dispositivos Braille para obter a descrição de onde estas teclas podem ser encontradas.
 
 +++  Funções do teclado Braille +++[EurobrailleBraille]
 %kc:beginInclude
@@ -4065,7 +4065,7 @@ Por favor, consulte a documentação destes dispositivos Braille para obter a de
 | "control+home" key | "l1+l2+l3", "l2+l3+l4" |
 | "control+end" key | "l6+l7+l8", "l5+l6+l7" |
 | Toggle HID Keyboard simulation | "l1+joystick1Down", "l8+joystick1Down" |
- %kc:endInclude
+%kc:endInclude
 
 ++ Linhas Nattiq nBraille ++[NattiqTechnologies]
 O NVDA suporta as linhas Braille da [Nattiq Technologies https://www.nattiq.com/] quando ligadas por USB.
@@ -4155,9 +4155,9 @@ Por favor, consulte a documentação destas linhas Braille para obter a descriç
 | Lê a barra de estado e move o objeto de navegação para ela | "f1+end1", "f9+end2" |
 | Alternar entre as formas do cursor Braile | "f1+eCursor1", "f9+eCursor2" | +| Alterna a forma do cursor braile
 | Alternar o cursor Braille | "f1+cursor1", "f9+cursor2"
-***| Cycle the braille show messages mode | "f1+f2", "f9+f10" |
-| Cycle the braille show selection state | "f1+f5", "f9+f14" |
-| Cycle the "braille move system caret when routing review cursor" states | "f1+f3", "f9+f11" |
+| Cycle the braille show messages mode | "f1+f2", "f9+f10" |
+| Alternart o estado do Braille mostrar a selecção | "f1+f5", "f9+f14" |
+| Alterna entre as opções do "Braille move o cursor do sistema quando o cursor de revisão é encaminhado" | "f1+f3", "f9+f11" |
 | Activar o objecto de navegação actual | "f7+f8" |
 | Anunciar hora/data | "f9" |
 | Anunciar o estado da bateria e tempo restante se não ligada à corrente | "f10" |
@@ -4254,37 +4254,37 @@ Os ecrãs Seguro incluem:
 ++ Opções de linha de comandos ++[CommandLineOptions]
 O NVDA pode aceitar uma ou mais opções adicionais, quando inicia, que alteram o seu comportamento.
 Pode passar todas as opções que necessitar.
-Estas opções podem ser passadas ao iniciar a partir de um atalho (nas propriedades do atalho), a partir do diálogo Executar (Menu Iniciar -> Executar ou Windows+r) ou a partir da linha de comandos.
+Estas opções podem ser passadas ao iniciar a partir de um atalho (nas propriedades do atalho), a partir do diálogo Executar (Menu Iniciar -> Executar ou Windows+r) ou da linha de comandos.
 As opções devem ser separadas do nome do ficheiro executável do NVDA e de outras opções por um espaço.
 Por exemplo, uma opção útil é "--disable-addons", que indica ao NVDA para suspender todos os extras.
 Isto permite determinar se um problema é provocado por algum extra e para recuperar de um problema grave provocado por um extra.
 
 Como exemplo, pode sair da cópia em execução do NVDA escrevendo o seguinte na janela Executar::
 
-"""
+```
 nvda -q
-"""
+```
 
 Algumas das opções têm uma versão curta e uma longa, enquanto algumas só têm a longa.
 Para as que têm uma versão curta, pode combiná-las como se segue:
-| "nvda -mc CONFIGPATH" | Isto iniciará o NVDA com os sons e mensagens de início desactivadas e a configuração especificada |
-| "nvda -mc CONFIGPATH --disable-addons" | Igual à anterior mas também com os extras desactivados |
+|`` nvda -mc CONFIGPATH`` | Isto iniciará o NVDA com os sons e mensagens de início desactivadas e a configuração especificada |
+| ``nvda -mc CONFIGPATH --disable-addons`` | Igual à anterior mas também com os extras desactivados |
 
 Algumas das opções da linha de comando aceitam parâmetros adicionais, por exemplo quão detalhado o ficheiro de log deve ser ou o caminho para as configurações do utilizador.
 Esses parâmetros devem ser colocados depois da opção, separados da opção por um espaço, se estivermos a usar a versão curta ou um sinal de igual (=), se usarmos a versão longa. Por exemplo:
-| "nvda -l 10" | Informa o NVDA para iniciar com o nível de registo definido para depuração |
-| "nvda --log-file=c:\nvda.log" | Informa o NVDA para escrever o ficheiro de log em c:\nvda.log |
-| "nvda --log-level=20 -f c:\nvda.log" | Informa o NVDA para iniciar com o nível de registo definido para info e para guardar o ficheiro em c:\nvda.log |
+| ``nvda -l 10`` | Informa o NVDA para iniciar com o nível de registo definido para depuração |
+| ``nvda --log-file=c:\nvda.log`` | Informa o NVDA para escrever o ficheiro de log em c:\nvda.log |
+| ``nvda --log-level=20 -f c:\nvda.log`` | Informa o NVDA para iniciar com o nível de registo definido para info e para guardar o ficheiro em c:\nvda.log |
 
 Seguidamente, apresentam-se as opções para a linha de comando para o NVDA
 || Curta | Longa | Descrição |
 | "-h" | "--help" | Mostra a ajuda da linha de comandos e sai |
 | "-q" | "--quit" | Sai da cópia em execução do NVDA |
 | "-k" | "--check-running" | Anuncia se o NVDA está em execução via código de saída; 0 se em execução, 1 se não em execução |
-| "-f NomeDoFicheiroDeRegisto" | "--log-file=NomeDoFicheiroDeRegisto" | Especifica em que ficheiro devem ser escritas as informações de registo |
+| "-f NomeDoFicheiroDeRegisto" | "--log-file=NomeDoFicheiroDeRegisto" | Especifica em que ficheiro escrever as informações de registo |
 | "-l LOGLEVEL" | "--log-level=LOGLEVEL" | O nível mais baixo de mensagens registadas (depuração 10, input/output 12, aviso de depuração 15, info 20, desactivado 100) |
-| "-c CAMINHO" | "--config-path=CAMINHO" | O caminho para onde estão as configurações do NVDA |
-| None | "--lang=LANGUAGE" | Sobreõe-se ao idioma  configurado no NVDA. "Windows" para o padrão do utilizador actual, "pt_PT" para português, etc. |
+| "-c CAMINHO" | "--config-path=CAMINHO" | O caminho onde estão as configurações do NVDA |
+| None | "--lang=LANGUAGE" | Sobrepõe-se ao idioma  configurado no NVDA. "Windows" para o padrão do utilizador actual, "pt_PT" para português, etc. |
 | "-m" | "--minimal" | Sem sons, sem interface, sem mensagem de início, etc |
 | "-s" | "--secure" | Inicia o NVDA em [modo seguro #SecureMode] |
 | None | "--disable-addons" | Os extras serão desacttivados |
