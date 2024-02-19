@@ -807,6 +807,65 @@ Drücken Sie den Punkt 7, um das letzte Zeichen zu löschen.
 Drücken Sie den Punkt 8, um einen Zeilenvorschub einzufügen.
 Drücken Sie Punkte 7 und 8, um die eingegebenen Braillezeichen zu übersetzen, ohne einen Zeilenvorschub oder ein Leerzeichen einzufügen.
 </P>
+<A NAME="Vision"></A>
+<H1>Visuelle Darstellungen</H1>
+<A NAME="VisionScreenCurtain"></A>
+<H2>Der Bildschirmvorhang</H2>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Tastenkombination</TH>
+<TH>Beschreibung</TH>
+</TR>
+<TR>
+<TD>Bildschirmvorhang ein- oder ausschalten</TD>
+<TD><CODE>NVDA+Strg+Escape</CODE></TD>
+<TD>Aktivieren Sie diesen, um den Bildschirm zu schwärzen oder deaktivieren Sie diesen, um den Bildschirminhalt anzuzeigen. Durch einmaliges Drücken wird der Bildschirmvorhang aktiviert, bis Sie NVDA neu starten. Durch zweimaliges Drücken bleibt der Bildschirmvorhang aktiviert, bis Sie ihn deaktivieren.</TD>
+</TR>
+</TABLE>
+
+<P>
++%kc:endInclude
+</P>
+<P>
+Wenn der Bildschirmvorhang aktiv ist, können einige Aufgaben, die direkt auf der Bildschirmanzeige basieren, wie das Ausführen der <A HREF="#Win10Ocr">Texterkennung</A> oder das Erstellen eines Screenshots, nicht ausgeführt werden.
+</P>
+<P>
+Auf Grund einer Änderung in der API für die Windows-Lupe musste die Funktion des Bildschirmvorhangs aktualisiert werden, um die neuesten Versionen von Windows zu unterstützen.
+Verwenden Sie NVDA 2021.2, um den Bildschirmvorhang mit Windows 10 21H2 (10.0.19044) oder neuer zu aktivieren.
+Wenn Sie eine neue Windows-Version verwenden, erhalten Sie aus Sicherheitsgründen eine visuelle Bestätigung, dass der Bildschirmvorhang den Bildschirm vollständig verdunkelt.
+</P>
+<P>
+Wenn Entwickler von Anwendungen unzureichende Informationen zur Zugänglichkeit bereitstellen, können Sie zahlreiche Tools verwenden, um z. B. Text aus einem Bild auszulesen.
+NVDA unterstützt die in Windows 10 und neuer enthaltene Texterkennung, um Text aus Bildern auszulesen.
+Über NVDA-Erweiterungen können zusätzliche Tools zur Erkennung von Inhalten bereitgestellt werden.
+</P>
+<P>
+Wenn Sie ein Tool zur Erkennung von Inhalten verwenden, bezieht sich die Erkennung grundsätzlich auf das aktuelle <A HREF="#ObjectNavigation">Navigator-Objekt</A>.
+Da der Navigator standardmäßig an den Fokus bzw. den Lesemodus gekoppelt ist, können Sie normalerweise einfach den Fokus an die gewünschte Stelle innerhalb der Anwendung oder im Dokument ziehen.
+Wenn Sie den Cursor im Lesemodus auf eine Grafik bewegen, wird die Erkennung von Inhalten diese Grafik erkennen.
+Sie können jedoch trotzdem die Objektnavigation verwenden, um z. B. den Inhalt eines ganzen Anwendungsfensters zu erkennen.
+</P>
+<P>
+Wenn die Erkennung abgeschlossen ist, wird das Erkennungsergebnis in einem Dokument ähnlich dem Lesemodus angezeigt, in dem Sie das Erkennungsergebnis mit den Pfeiltasten lesen können.
+Drücken Sie die Leertaste oder die Eingabetaste, um den Text (üblicherweise durch Klicken) zu aktivieren.
+Drücken Sie die Escape-Taste, um das Fenster mit dem Ergebnis zu schließen.
+</P>
+<P>
+Windows 10 und neuer enthält eine optische Zeichenerkennung für viele Sprachen.
+Sie können diese Zeichenerkennung verwenden, um Text aus Grafiken oder unzugänglichen Anwendungen auszulesen.
+</P>
+<P>
+Sie können die Sprache für die Texterkennung in der Kategorie "<A HREF="#Win10OcrSettings">Windows-Texterkennung</A>" in den <A HREF="#NVDASettings">NVDA-Einstellungen</A> festlegen.
+Zusätzliche Sprachen können Sie in den Einstellungen von Windows unter Zeit und Sprache -&gt; Region und Sprache -&gt; Sprache hinzufügen installieren.
+</P>
+<P>
+Wenn Sie ständig wechselnde Inhalte überwachen möchten, wie z. B. beim Ansehen eines Videos mit Untertiteln, können Sie optional die automatische Aktualisierung erkannter Inhalte aktivieren.
+Dies kann auch in der <A HREF="#Win10OcrSettings">Kategorie "Windows-Texterkennung"</A> in den <A HREF="#NVDASettings">NVDA-Einstellungen</A> erfolgen.
+</P>
+<P>
+Die integrierte Texterkennung in Windows kann teilweise oder ganz inkompatibel mit <A HREF="#Vision">NVDA-Sehhilfen</A> oder anderen externen Sehhilfen sein. Sie müssen diese Hilfen deaktivieren, bevor Sie mit einer Erkennung fortfahren.
+</P>
 <A NAME="ContentRecognition"></A>
 <H1>Erkennung von Inhalten</H1>
 <A NAME="Win10Ocr"></A>
@@ -958,14 +1017,24 @@ Um auf gesperrte Zellen zuzugreifen, wechseln Sie zunächst mit NVDA+Leertaste i
 <TH>Beschreibung</TH>
 </TR>
 <TR>
-<TD>Kommentare ausgeben</TD>
-<TD>Strg+Umschalt+C</TD>
-<TD>Gibt alle Kommentare aus.</TD>
+<TD>Anmerkungen für Übersetzer ausgeben</TD>
+<TD><CODE>Strg+Umschalt+A</CODE></TD>
+<TD>Gibt alle Anmerkungen für Übersetzer aus. Bei zweimaligem Drücken werden die Anmerkungen im Lesemodus angezeigt.</TD>
 </TR>
 <TR>
-<TD>Anmerkungen für Übersetzer ausgeben</TD>
-<TD>Strg+Umschalt+A</TD>
-<TD>Gibt alle Anmerkungen für Übersetzer aus.</TD>
+<TD>Kommentare ausgeben</TD>
+<TD>Strg+Umschalt+C</TD>
+<TD>Gibt alle Kommentare im Kommmentarbereich aus. Zweimaliges Drücken zeigt die Kommentare im Lesemodus.</TD>
+</TR>
+<TR>
+<TD>Alten Quelltext ausgeben</TD>
+<TD><CODE>Strg+Umschalt+o</CODE></TD>
+<TD>Gibt den alten Quelltext aus, falls vorhanden. Bei zweimaligem Drücken wird der Text im Lesemodus angezeigt.</TD>
+</TR>
+<TR>
+<TD>Übersetzungswarnung ausgeben</TD>
+<TD><CODE>Strg+Umschalt+W</CODE></TD>
+<TD>Gibt evtl. vorhandene Übersetzungswarnung aus. Bei zweimaligem Drücken wird die Warnung im Lesemodus angezeigt</TD>
 </TR>
 </TABLE>
 
@@ -1037,6 +1106,9 @@ Die folgenden integrierten Tastenkombinationen für die Windows-Konsole können 
 
 <A NAME="ConfiguringNVDA"></A>
 <H1>NVDA konfigurieren</H1>
+<P>
+Wenn Sie in einem Dialog "f1" drücken, wird das Benutzerhandbuch in dem Absatz geöffnet, der sich auf die fokussierte Einstellung oder den aktuellen Dialog bezieht.
+</P>
 <A NAME="NVDASettings"></A>
 <H2>Die NVDA-Einstellungen</H2>
 <A NAME="GeneralSettings"></A>
@@ -1184,7 +1256,7 @@ Die folgenden integrierten Tastenkombinationen für die Windows-Konsole können 
 <TD ALIGN="center">Verringern anderer Audio-Quellen</TD>
 <TD><CODE>NVDA+Umschalt+D</CODE></TD>
 <TD><CODE>NVDA+Umschalt+D</CODE></TD>
-<TD>Unter Windows 8 und neuer können Sie mit dieser Option festlegen, wie NVDA bei Verwendung der Sprachausgabe die Lautstärke anderer Anwendungen verringern soll oder die ganze Zeit, während NVDA läuft.</TD>
+<TD>Mit dieser Option legen Sie fest, ob NVDA bei Verwendung der Sprachausgabe die Lautstärke anderer Anwendungen verringern soll oder ständig während NVDA läuft.</TD>
 </TR>
 </TABLE>
 
@@ -4108,7 +4180,7 @@ Die folgenden Befehle können mit dem Scrollrad ausgeführt werden:
 <TD><CODE>attribute1+attribute3</CODE></TD>
 </TR>
 <TR>
-<TD>Zwischen den Sprachmodi Aus, Signaltöne und Sprechen umschalten</TD>
+<TD>Zwischen den Sprachmodi umschalten</TD>
 <TD><CODE>attribute2+attribute4</CODE></TD>
 </TR>
 <TR>
