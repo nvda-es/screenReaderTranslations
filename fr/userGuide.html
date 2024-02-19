@@ -659,7 +659,7 @@ Si NVDA est déjà en cours d'exécution, il sera redémarré.
 Vous pouvez aussi ajouter quelques <A HREF="#CommandLineOptions">options de ligne de commande</A> vous permettant de quitter (-q), désactiver les extensions (--disable-addons), etc.
 </P>
 <P>
-Pour les copies installées, NVDA enregistre la configuration dans le dossier de données applicatives roaming de l'utilisateur courant par défaut (ex : "C:\Users\&lt;user&gt;\AppData\Roaming").
+Pour les copies installées, NVDA enregistre la configuration dans le dossier de données applicatives roaming de l'utilisateur courant par défaut (ex : "<CODE>C:\Users\&lt;user&gt;\AppData\Roaming</CODE>").
 Il est possible de modifier cela de manière à ce que NVDA charge sa configuration depuis le dossier de données applicatives local.
 Consultez la section concernant les <A HREF="#SystemWideParameters">paramètres système</A> pour plus de détails.
 </P>
@@ -1920,13 +1920,16 @@ Cependant, pour les scénarios dans lesquels vous souhaitez copier un tableau ou
 <A NAME="ReadingMath"></A>
 <H1>7. Lecture de Contenu Mathématique</H1>
 <P>
-En utilisant MathPlayer 4 de Design Science, NVDA peut lire et naviguer interactivement dans le contenu mathématique supporté.
-Cela nécessite que MathPlayer 4 soit installé sur l'ordinateur.
-MathPlayer est disponible en téléchargement gratuit sur la <A HREF="https://info.wiris.com/mathplayer-info">page d'information de MathPlayer</A>.
-Après avoir installé MathPlayer, redémarrez NVDA.
+NVDA peut lire et naviguer dans du contenu mathématique sur le Web et dans d'autres applications, offrant un accès à la fois en parole et en braille. 
+Cependant, pour que NVDA puisse lire et interagir avec le contenu mathématique, vous devrez d'abord installer un composant mathématique pour NVDA.
+Il existe plusieures extensions NVDA disponibles dans l'Add-on Store de NVDA qui prennent en charge les mathématiques, notamment l'<A HREF="https://nsoiffer.github.io/MathCAT/">extension MathCAT NVDA</A> et <A HREF=".com/tsengwoody/Access8Math">Access8Math https://github</A>.
+Veuillez vous référer à la <A HREF="#AddonsManager">section Add-on Store</A> pour savoir comment découvrir et installer les extensions disponibles dans NVDA.
+NVDA peut également utiliser l'ancien logiciel <A HREF="https://info.wiris.com/mathplayer-info">MathPlayer</A> de Wiris s'il se trouve sur votre système, bien que ce logiciel ne soit plus maintenu.
 </P>
+<A NAME="SupportedMathContent"></A>
+<H2>7.1. Contenu mathématique pris en charge</H2>
 <P>
-NVDA supporte les types de contenu mathématiques suivants :
+Avec un composant mathématique approprié installé, NVDA supporte les types de contenu mathématiques suivants :
 </P>
 <UL>
 <LI>MathML sous Mozilla Firefox, Microsoft Internet Explorer et Google Chrome.
@@ -1954,7 +1957,7 @@ Durant la lecture d'un document, NVDA annoncera tout contenu mathématique suppo
 Si vous utilisez un afficheur braille, ce contenu sera aussi affiché en braille.
 </P>
 <A NAME="InteractiveNavigation"></A>
-<H2>7.1. Navigation Interactive</H2>
+<H2>7.2. Navigation Interactive</H2>
 <P>
 Si vous travaillez principalement à la synthèse vocale, dans la plupart des cas, vous souhaiterez probablement examiner l'expression en plus petits segments plutôt qu'entendre toute l'expression en une seule fois.
 </P>
@@ -1985,16 +1988,35 @@ Par défaut, le curseur de revue suit le curseur système, vous pouvez donc gén
 </TABLE>
 
 <P>
-Arrivé là, vous pouvez utiliser les commandes MathPlayer telles que les flèches pour explorer l'expression.
+A ce stade, NVDA entrera en mode mathématiques, dans lequel vous pouvez utiliser les commandes telles que les flèches pour explorer l'expression.
 Par exemple, vous pouvez vous déplacer dans l'expression avec les flèches gauche et droite puis zoomer sur une partie de l'expression telle qu'une fraction en utilisant la flèche basse.
-Veuillez consulter <A HREF="https://docs.wiris.com/mathplayer/en/mathplayer-user-manual.html">la documentation de MathPlayer</A> pour plus d'informations.
 </P>
 <P>
-Quand vous voulez retourner au document, pressez simplement la touche échap.
+Quand vous voulez retourner au document, appuyez simplement sur la touche échap.
 </P>
+<P>
+Pour plus d'informations sur les commandes disponibles et les préférences pour la lecture et la navigation dans le contenu mathématique, veuillez vous référer à la documentation du composant mathématique particulier que vous avez installé.
+</P>
+<UL>
+<LI><A HREF="https://nsoiffer.github.io/MathCAT/users.html">Documentation MathCAT</A>
+<LI><A HREF="https://github.com/tsengwoody/Access8Math">Documentation Access8Math</A>
+<LI><A HREF="https://docs.wiris.com/mathplayer/en/mathplayer-user-manual.html">Documentation MathPlayer</A>
+</UL>
+
+<P></P>
 <P>
 Parfois le contenu mathématique peut être affiché comme un bouton ou autre type d'élément qui, quand activé, peut afficher un dialogue ou plus d'informations relatives à la formule.
-Pour activer le bouton ou l'élément contenant la formule, pressez ctrl+entrer.
+Pour activer le bouton ou l'élément contenant la formule, appuyez sur ctrl+entrer.
+</P>
+<P>
+++ Installation de MathPlayer ++<A HREF="MathPlayer">Installation de</A>
+Bien qu'il soit généralement recommandé d'utiliser l'une des extensions NVDA les plus récentes pour prendre en charge les mathématiques dans NVDA, dans certains scénarios limités, MathPlayer peut toujours être un choix plus approprié.
+Par exemple. MathPlayer peut prendre en charge une langue particulière ou un code braille qui n'est pas pris en charge dans les extensions plus récentes.
+MathPlayer est disponible gratuitement sur le site Wiris.
+<A HREF="https://downloads.wiris.com/mathplayer/MathPlayerSetup.exe">Télécharger MathPlayer</A>.
+Après avoir installé MathPlayer, vous devrez redémarrer NVDA.
+Veuillez noter que les informations sur MathPlayer peuvent indiquer qu'il est uniquement destiné aux navigateurs plus anciens tels qu'Internet Explorer 8.
+Cela fait uniquement référence à l'utilisation de MathPlayer pour afficher visuellement du contenu mathématique et peut être ignoré par ceux qui l'utilisent pour lire ou naviguer dans les mathématiques avec NVDA.
 </P>
 <A NAME="Braille"></A>
 <H1>8. Braille</H1>
@@ -3184,7 +3206,7 @@ La description différée du caractère sera annulée si un autre texte est pron
 <A NAME="SpeechModesDisabling"></A>
 <H4>Modes disponibles dans la commande Faire défiler les modes de parole</H4>
 <P>
-Les cases à cocher dans cette liste vous permettent de choisir quels modes de parole sont inclus lors du passage de l'un à l'autre en utilisant <CODE>NVDA+s</CODE>.
+Les cases à cocher dans cette liste vous permettent de choisir quels <A HREF="#SpeechModes">modes de parole</A> sont inclus lors du passage de l'un à l'autre en utilisant <CODE>NVDA+s</CODE>.
 Les modes non cochés sont exclus.
 Par défaut, tous les modes sont inclus.
 </P>
@@ -5151,7 +5173,7 @@ La fenêtre de la visionneuse de parole essaiera toujours de s'ouvrir à la mêm
 </P>
 <P>
 Pendant que la visionneuse de parole est active, elle se met constamment à jour, vous permettant de voir les dernières paroles prononcées par NVDA.
-Cependant, si vous cliquez ou mettez le focus sur la visionneuse, NVDA arrêtera momentanément de mettre à jour le texte, vous pourrez ainsi sélectionner ou copier le contenu.
+Cependant, si vous déplacez la souris ou mettez le focus sur la visionneuse, NVDA arrêtera momentanément de mettre à jour le texte, vous pourrez ainsi sélectionner ou copier le contenu.
 </P>
 <P>
 Pour activer la visionneuse de parole de n'importe où, Veuillez assigner un geste personnalisé en utilisant le <A HREF="#InputGestures">dialogue Gestes de Commandes</A>.
