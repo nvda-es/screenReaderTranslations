@@ -6106,9 +6106,9 @@ Os seguintes modelos não são automaticamente suportados, mas podem ser usados 
 <UL>
 <LI>Braillino
 <LI>Bookworm
+<LI>Linhas Modular com versão de firmware 1.13 ou inferior. Note que o firmware destas linhas pode ser actualizado.
 </UL>
 
-<P></P>
 <P>
 Seguem-se as associações de teclas para estes dispositivos braille com o NVDA.
 Por favor, consulte a documentação do seu dispositivo braille para obter a descrição de onde estas teclas podem ser encontradas.
@@ -7999,13 +7999,14 @@ Por isso, e para manter a compatibilidade com outros leitores de ecrã em Taiwan
 <H2>16.17. Dispositivos Eurobraille</H2>
 <P>
 Os dispositivos Braille b.book, b.note, Esys, Esytime e Iris da <A HREF="https://www.eurobraille.fr/">Eurobraille</A> são suportados pelo NVDA.
-Estes dispositivos possuem um teclado Braille com 10 teclas. 
- das duas teclas colocadas como uma barra de Espaço, a tecla esquerda corresponde ao backspace e a tecla direita ao Espaço.
+Estes dispositivos possuem um teclado Braille com 10 teclas.
+Por favor, consulte a documentação destes dispositivos Braille para obter a descrição destas teclas.
+Das duas teclas colocadas como uma barra de Espaço, a tecla esquerda corresponde ao backspace e a tecla direita ao Espaço.
+</P>
+<P>
 Ligados via USB, estes dispositivos têm um teclado USB autónomo.
 É possível activar/desactivar este teclado usando a caixa de verificação "Simulação de introdução pelo teclado HID" das configurações Braille.
 O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificação está desmarcada.
-Seguem-se as associações de comandos dos dispositivos EuroBraille com o NVDA.
-Por favor, consulte a documentação destes dispositivos Braille para obter a descrição de onde estas teclas podem ser encontradas.
 </P>
 <A NAME="EurobrailleBraille"></A>
 <H3>16.17.1. Funções do teclado Braille</H3>
@@ -8551,9 +8552,6 @@ Por favor, consulte a documentação destes dispositivos Braille para obter a de
 </TR>
 </TABLE>
 
-<P>
- %kc:endInclude
-</P>
 <A NAME="NattiqTechnologies"></A>
 <H2>16.18. Linhas Nattiq nBraille</H2>
 <P>
@@ -8801,18 +8799,16 @@ Por favor, consulte a documentação destas linhas Braille para obter a descriç
 <TD>Alternar o cursor Braille</TD>
 <TD>"f1+cursor1", "f9+cursor2"</TD>
 </TR>
-</TABLE>
-
-<P>
-***| Cycle the braille show messages mode | "f1+f2", "f9+f10" |
-</P>
-<TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>Cycle the braille show selection state</TD>
+<TD>Cycle the braille show messages mode</TD>
+<TD>"f1+f2", "f9+f10"</TD>
+</TR>
+<TR>
+<TD>Alternart o estado do Braille mostrar a selecção</TD>
 <TD>"f1+f5", "f9+f14"</TD>
 </TR>
 <TR>
-<TD>Cycle the "braille move system caret when routing review cursor" states</TD>
+<TD>Alterna entre as opções do "Braille move o cursor do sistema quando o cursor de revisão é encaminhado"</TD>
 <TD>"f1+f3", "f9+f11"</TD>
 </TR>
 <TR>
@@ -9037,7 +9033,7 @@ Os ecrãs Seguro incluem:
 <P>
 O NVDA pode aceitar uma ou mais opções adicionais, quando inicia, que alteram o seu comportamento.
 Pode passar todas as opções que necessitar.
-Estas opções podem ser passadas ao iniciar a partir de um atalho (nas propriedades do atalho), a partir do diálogo Executar (Menu Iniciar -&gt; Executar ou Windows+r) ou a partir da linha de comandos.
+Estas opções podem ser passadas ao iniciar a partir de um atalho (nas propriedades do atalho), a partir do diálogo Executar (Menu Iniciar -&gt; Executar ou Windows+r) ou da linha de comandos.
 As opções devem ser separadas do nome do ficheiro executável do NVDA e de outras opções por um espaço.
 Por exemplo, uma opção útil é "--disable-addons", que indica ao NVDA para suspender todos os extras.
 Isto permite determinar se um problema é provocado por algum extra e para recuperar de um problema grave provocado por um extra.
@@ -9045,18 +9041,18 @@ Isto permite determinar se um problema é provocado por algum extra e para recup
 <P>
 Como exemplo, pode sair da cópia em execução do NVDA escrevendo o seguinte na janela Executar::
 </P>
-nvda -q
+<PRE>
+  nvda -q
+</PRE>
+<P></P>
 <P>
 Algumas das opções têm uma versão curta e uma longa, enquanto algumas só têm a longa.
 Para as que têm uma versão curta, pode combiná-las como se segue:
+|`` nvda -mc CONFIGPATH`` | Isto iniciará o NVDA com os sons e mensagens de início desactivadas e a configuração especificada |
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>"nvda -mc CONFIGPATH"</TD>
-<TD>Isto iniciará o NVDA com os sons e mensagens de início desactivadas e a configuração especificada</TD>
-</TR>
-<TR>
-<TD>"nvda -mc CONFIGPATH --disable-addons"</TD>
+<TD><CODE>nvda -mc CONFIGPATH --disable-addons</CODE></TD>
 <TD>Igual à anterior mas também com os extras desactivados</TD>
 </TR>
 </TABLE>
@@ -9067,15 +9063,15 @@ Esses parâmetros devem ser colocados depois da opção, separados da opção po
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>"nvda -l 10"</TD>
+<TD><CODE>nvda -l 10</CODE></TD>
 <TD>Informa o NVDA para iniciar com o nível de registo definido para depuração</TD>
 </TR>
 <TR>
-<TD>"nvda --log-file=c:\nvda.log"</TD>
+<TD><CODE>nvda --log-file=c:\nvda.log</CODE></TD>
 <TD>Informa o NVDA para escrever o ficheiro de log em c:\nvda.log</TD>
 </TR>
 <TR>
-<TD>"nvda --log-level=20 -f c:\nvda.log"</TD>
+<TD><CODE>nvda --log-level=20 -f c:\nvda.log</CODE></TD>
 <TD>Informa o NVDA para iniciar com o nível de registo definido para info e para guardar o ficheiro em c:\nvda.log</TD>
 </TR>
 </TABLE>
@@ -9107,7 +9103,7 @@ Seguidamente, apresentam-se as opções para a linha de comando para o NVDA
 <TR>
 <TD>"-f NomeDoFicheiroDeRegisto"</TD>
 <TD>"--log-file=NomeDoFicheiroDeRegisto"</TD>
-<TD>Especifica em que ficheiro devem ser escritas as informações de registo</TD>
+<TD>Especifica em que ficheiro escrever as informações de registo</TD>
 </TR>
 <TR>
 <TD>"-l LOGLEVEL"</TD>
@@ -9117,12 +9113,12 @@ Seguidamente, apresentam-se as opções para a linha de comando para o NVDA
 <TR>
 <TD>"-c CAMINHO"</TD>
 <TD>"--config-path=CAMINHO"</TD>
-<TD>O caminho para onde estão as configurações do NVDA</TD>
+<TD>O caminho onde estão as configurações do NVDA</TD>
 </TR>
 <TR>
 <TD>None</TD>
 <TD>"--lang=LANGUAGE"</TD>
-<TD>Sobreõe-se ao idioma  configurado no NVDA. "Windows" para o padrão do utilizador actual, "pt_PT" para português, etc.</TD>
+<TD>Sobrepõe-se ao idioma  configurado no NVDA. "Windows" para o padrão do utilizador actual, "pt_PT" para português, etc.</TD>
 </TR>
 <TR>
 <TD>"-m"</TD>
