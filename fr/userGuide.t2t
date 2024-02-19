@@ -1,7 +1,6 @@
 Guide de l'utilisateur de NVDA NVDA_VERSION
 
 
-%!includeconf: ../userGuide.t2tconf
 %kc:title: NVDA NVDA_VERSION Résumé des commandes
 
 
@@ -900,6 +899,22 @@ Une touche de commande permet de retourner à la page contenant l'objet embarqu�
 | Aller au document contenant l'objet | NVDA+contrôle+espace | Retire le focus à l'objet embarqué en cours et le rend au document contenant l'objet |
 %kc:endInclude
 
+++ Mode sélection native ++[NativeSelectionMode]
+Par défaut lors de la sélection de texte avec les touches ``maj+flèche`` en mode navigation, la sélection est seulement effectuée dans la représentation du document en mode navigation de NVDA, et non dans l'application elle-même.
+Cela signifie que la sélection n'est pas visible à l'écran, et la copie du texte avec ``contrôle+c`` copiera seulement la représentation du contenu en texte brut par NVDA. C'est-à-dire que le formatage des tableaux ou comme lien ne sera pas copié.
+Cependant, NVDA dispose d'un mode de sélection native qui peut être activé dans certains documents en mode navigation (pour l'instant seulement dans Mozilla Firefox), ce qui fait que la sélection native dans le document suit la sélection du mode navigation de NVDA.
+
+kc:beginInclude
+|| Nom | Touche | Description |
+| Activer ou désactiver le mode de sélection native | ``NVDA+maj+f10`` | Active ou désactive le mode de sélection native |
+%kc:endInclude
+
+Lorsque le mode de sélection native est activé, la copie de la sélection avec ``contrôle+c`` utilisera également la fonctionnalité de copie de l'application elle-même, ce qui signifie que le contenu riche sera copié dans le presse-papiers, au lieu du texte brut.
+Cela signifie que le collage de ce contenu dans un programme tel que Microsoft Word ou Excel, le formatage tel que des tableaux ou le fait qu'un élément soit un lien seront inclus.
+Veuillez noter cependant qu'en mode de sélection natif, certains labels accessibles ou autres informations générées par NVDA en mode Navigation ne seront pas inclus.
+De plus, bien que l'application fasse de son mieux pour faire correspondre la sélection native à la sélection du mode navigation de NVDA, elle peut ne pas toujours être complètement exacte.
+Cependant, pour les scénarios dans lesquels vous souhaitez copier un tableau ou un paragraphe entier de contenu riche, cette fonctionnalité devrait s'avérer utile.
+ 
 + Lecture de Contenu Mathématique +[ReadingMath]
 En utilisant MathPlayer 4 de Design Science, NVDA peut lire et naviguer interactivement dans le contenu mathématique supporté.
 Cela nécessite que MathPlayer 4 soit installé sur l'ordinateur.
@@ -1436,10 +1451,9 @@ Les niveaux de journalisation disponibles sont :
 - Info : NVDA journalisera des informations de base telles que les messages de démarrage et des informations utiles pour les développeurs.
 - Avertissements de débogage : Les messages d'avertissement qui ne sont pas causés par des erreurs graves seront journalisés.
 - Entrées/sorties : Les entrées du clavier et des terminaux braille, ainsi que les sorties en parole et en braille seront journalisées.
- - Si la confidentialité vous préoccupe, ne définissez pas le niveau de journalisation sur cette option.
+Si la confidentialité vous préoccupe, ne définissez pas le niveau de journalisation sur cette option.
 - Débogage : En plus des messages d'info, avertissements et entrées/sorties, des messages additionnels de débogage seront journalisés.
- - Tout comme pour entrées/sorties, si la confidentialité vous préoccupe, vous ne devez pas définir le niveau de journalisation sur cette option.
- -
+Tout comme pour entrées/sorties, si la confidentialité vous préoccupe, vous ne devez pas définir le niveau de journalisation sur cette option.
 -
 
 ==== Démarrer NVDA automatiquement après ma connexion à Windows ====[GeneralSettingsStartAfterLogOn]
@@ -2247,44 +2261,48 @@ Par exemple, si on coche la case "Annoncer le nom de la police", à chaque fois 
 Les options de mise en forme des document sont organisées par groupes ;
 On peut configurer les annonces suivantes :
 - Police,
- - Nom de la police
- - Taille de la police,
- - Attributs de la police,
- - Exposants et indices
- - Emphase
- - Texte surligné (marqué)
- - Style
- - Couleurs
+  - Nom de la police
+  - Taille de la police,
+  - Attributs de la police,
+  - Exposants et indices
+  - Emphase
+  - Texte surligné (marqué)
+  - Style
+  - Couleurs
+  -
 - Informations sur le document
- - Commentaires
- - Signets
- - Modifications de l'éditeur
- - Fautes d'orthographe
+  - Commentaires
+  - Signets
+  - Modifications de l'éditeur
+  - Fautes d'orthographe
+  -
 - Pages et espacement
- - Numéros de page
- - Numéros de ligne
- - Annonce du retrait de ligne [(Désactivé, Parole, Sons, Parole et Sons) #DocumentFormattingSettingsLineIndentation]
- - Ignorer les lignes vides pour l'annonce du retrait de ligne
- - Retrait des paragraphes (ex. retrait négatif, retrait de première ligne)
- - interligne (simple, double etc.)
- - Alignement
+  - Numéros de page
+  - Numéros de ligne
+  - Annonce du retrait de ligne [(Désactivé, Parole, Sons, Parole et Sons) #DocumentFormattingSettingsLineIndentation]
+  - Ignorer les lignes vides pour l'annonce du retrait de ligne
+  - Retrait des paragraphes (ex. retrait négatif, retrait de première ligne)
+  - interligne (simple, double etc.)
+  - Alignement
+  -
 - Informations sur les tableaux
- - Tableaux
- - En-têtes des lignes et colonnes (désactivé, lignes, colonnes, lignes et colonnes)
- - Coordonnées des cellules
- - Bordure des cellules (désactivé, Styles, Couleurs et Styles)
+  - Tableaux
+  - En-têtes des lignes et colonnes (désactivé, lignes, colonnes, lignes et colonnes)
+  - Coordonnées des cellules
+  - Bordure des cellules (désactivé, Styles, Couleurs et Styles)
+  -
 - Éléments
- - Titres
- - Liens
- - Graphiques
- - Listes
- - Citations
- - Groupes
- - Régions
- - Articles
- - Cadres
- - Cliquable
- -
+  - Titres
+  - Liens
+  - Graphiques
+  - Listes
+  - Citations
+  - Groupes
+  - Régions
+  - Articles
+  - Cadres
+  - Cliquable
+  -
 -
 
 Pour modifier ces paramètres de n'importe où, veuillez assigner un geste personnalisé en utilisant le [dialogue Gestes de Commandes #InputGestures].
@@ -2406,11 +2424,10 @@ Nous ne recommandons toujours pas que la majorité des utilisateurs l'activent p
 L'implémentation de UI Automation dans Microsoft Excel est en constante évolution et les versions de Microsoft Office antérieures à 16.0.13522.10000 peuvent ne pas exposer suffisamment d'informations pour que cette option soit d'une quelconque utilité.
 
 ==== Utiliser le traitement des événements amélioré ====[UIAEnhancedEventProcessing]
-: Défaut
-  Activé
-: Options
-  Défaut (Activé), Désactivé, Activé
-:
+
+|| . {.hideHeaderRow} | . |
+| Options | Défaut (Activé), Désactivé, Activé |
+| Défaut | Activé |
 
 Lorsque cette option est activée, NVDA devrait rester réactif lorsqu'il est submergé de nombreux événements UI Automation, par ex. de grandes quantités de texte dans un terminal.
 Après avoir modifié cette option, vous devrez redémarrer NVDA pour que la modification prenne effet.
@@ -2616,11 +2633,11 @@ Vous pouvez également définir le niveau sur caractère ; dans ce cas, le symbo
 Ceci est utile si le symbole force le synthétiseur à marquer une pause ou modifie l'inflexion de la voix.
 Par exemple, une virgule force le synthétiseur à marquer une pause.
 Il y a trois options :
- - jamais : Ne jamais envoyer le symbole réel au synthétiseur.
- - toujours : Toujours envoyer le symbole réel au synthétiseur.
- - seulement au-dessous du niveau du symbole : N'envoyer le symbole réel que si le niveau de symboles configuré est inférieur au niveau assigné à ce symbole.
- Par exemple, vous pourriez utiliser cela pour qu'un symbole ait son remplacement annoncés à hauts niveaux sans marquer de pause, tout en étant indiqué par une pause aux niveaux inférieurs.
- -
+  - jamais : Ne jamais envoyer le symbole réel au synthétiseur.
+  - toujours : Toujours envoyer le symbole réel au synthétiseur.
+  - seulement au-dessous du niveau du symbole : N'envoyer le symbole réel que si le niveau de symboles configuré est inférieur au niveau assigné à ce symbole.
+  Par exemple, vous pourriez utiliser cela pour qu'un symbole ait son remplacement annoncés à hauts niveaux sans marquer de pause, tout en étant indiqué par une pause aux niveaux inférieurs.
+  -
 -
 
 Vous pouvez ajouter de nouveaux symboles en pressant le bouton Ajouter.
@@ -2659,11 +2676,11 @@ Puis, pressez sur le clavier la touche que vous voulez émuler.
 Après ça, la touche sera disponible dans la catégorie Touche émulées du clavier système et vous pourrez lui assigner un geste de commande comme décrit plus haut.
 
 Note :
- - Les touches émulées doivent avoir un geste assigné pour persister lors de la sauvegarde ou de la fermeture du dialogue.
- - Un geste de commande avec modificateur peut ne pas pouvoir êttre assigné à un geste émulé sans modificateur
- Par exemple, définir le 'a' comme touche émulée et configurer un geste de commande 'ctrl+m', peut avoir comme résultat
- que l'application reçoit 'ctrl+a'.
- -
+- Les touches émulées doivent avoir un geste assigné pour persister lors de la sauvegarde ou de la fermeture du dialogue.
+- Un geste de commande avec modificateur peut ne pas pouvoir êttre assigné à un geste émulé sans modificateur
+Par exemple, définir le 'a' comme touche émulée et configurer un geste de commande 'ctrl+m', peut avoir comme résultat
+que l'application reçoit 'ctrl+a'.
+-
 
 Lorsque vous avez terminé vos modifications, appuyez sur le bouton "OK" pour les sauvegarder ou sur le bouton "Annuler" pour les ignorer.
 
@@ -3048,10 +3065,10 @@ Ces voix peuvent également être utilisées avec NVDA.
 Pour utiliser ces voix, vous devrez installer deux composants :
 - [Microsoft Speech Platform - Runtime (Version 11), x86 https://www.microsoft.com/download/en/details.aspx?id=27225]
 - [Microsoft Speech Platform - Runtime Languages (Version 11) https://www.microsoft.com/download/en/details.aspx?id=27224]
- - Cette page contient beaucoup de fichiers tant pour la reconnaissance de parole que pour la synthèse vocale.
+  - Cette page contient beaucoup de fichiers aussi bien pour la reconnaissance de parole que pour la synthèse vocale.
  Choisissez les fichiers contenant la synthèse vocale pour la langue désirée.
  Par exemple, le fichier MSSpeech_TTS_fr-FR_Hortense.msi est une voix francophone française.
- -
+  -
 -
 
 ++ Voix Windows OneCore ++[OneCore]
@@ -3570,7 +3587,7 @@ Ces terminaux ne supporte pas la détection automatique en arrière-plan.
 
 Il existe une option dans le pilote USB de l'afficheur qui peut entraîner un problème de chargement de l'afficheur.
 Veuillez essayez ce qui suit:
-+ Veuillez vous assurer que vous avez installé le [dernier pilote](https://www.papenmeier-rehatechnik.de/en/service/downloadcenter/software/articles/software-braille-devices.html).
++ Veuillez vous assurer que vous avez installé le [dernier pilote https://www.papenmeier-rehatechnik.de/en/service/downloadcenter/software/articles/software-braille-devices.html].
 + Ouvrez le Gestionnaire de périphériques Windows.
 + Faites défiler la liste jusqu'à "Contrôleurs USB" ou "Périphériques USB".
 + Sélectionnez "Périphérique USB Papenmeier Braillex".
