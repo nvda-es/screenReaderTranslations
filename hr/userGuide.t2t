@@ -372,7 +372,7 @@ NVDA se može pokrenuti i u dijaloškom okviru Pokreni. Upišite NVDA i pritisni
 Ako je NVDA već pokrenut, pokrenut će se ponovo.
 Možete koristiti i neke [opcije naredbenog retka #CommandLineOptions] za izlazak iz NVDA čitača (-q), za deaktiviranje dodataka (--disable-addons) itd.
 
-U instaliranim kopijama, NVDA standardno posprema konfiguraciju u mapu aplikacijskih podataka Roaming trenutačnog korisnika (npr. "C:\Users\<user>\AppData\Roaming").
+Podrazumjevano, NVDA sprema svoju konfiguraciju u roaming application data mapi trenutnog korisnika (npr: "``C:\Users\<user>\AppData\Roaming``").
 To je moguće promijeniti, tako da NVDA učitava svoje postavke iz lokalne mape aplikacijskih podataka.
 Za više detalja, pročitajte poglavlje o [cjelosustavnim parametrima #SystemWideParameters].
 
@@ -915,12 +915,14 @@ Također, iako će NVDA učiniti sve da preslika oblikovanje u modus čitanja, m
 Međutim, za scenarije kada želite kopirati cijelu tablicu ili odlomak sa oblikovanjem, ova se funkcija pokazala korisnom.
  
 + Čitanje matematičkog sadržaja +[ReadingMath]
-Koristeći MathPlayer4 tvrtke Design Science, NVDA može čitati i istovremeno biti u interakciji s podržanim matematičkim sadržajem.
-Ovo zahtjeva instaliranu kopiju MathPlayera na vašem računalu.
-MathPlayer je dostupan za besplatno preuzimanje sa [stranice informacija o MathPlayeru https://info.wiris.com/mathplayer-info].
-Poslije instalacije MathPlayer-a, ponovno pokrenite NVDA.
+Uz pomoć NVDA se možete kretati po matematičkom sadržaju na web stranicama i u drugim aplikacijama, koristeći govor i brajicu. 
+Međutim, kako bi NVDA mogao čitati matematički sadržaj, najprije trebate instalirati matematički komponentu za NVDA.
+Postoji nekoliko NVDA dodataka u add-on storeu koji omogućuju pristup matematičkom sadržaju, uključujući [MathCAT NVDA add-on https://nsoiffer.github.io/MathCAT/] i [Access8Math https://github.com/tsengwoody/Access8Math]. 
+Molimo pogledajte poglavlje [Add-on Store  #AddonsManager] kako biste saznali kako pregledavati i instaliravati dostupne dodatke unutar NVDA.
+NVDA također može koristiti stariji [MathPlayer https://info.wiris.com/mathplayer-info] softver tvrtke Wiris ako se pronađe u vašem sustavu, iako ovaj softver se više ne razvija.
 
-NVDA podržava sljedeće vrste matematičkog sadržaja:
+++ Podržani matematički sadržaj ++[SupportedMathContent]
+Sa odgovarajućom komponentom instaliranom u NVDA, NVDA podržava sljedeće tipove matematičkog sadržaja:
 - MathML u Mozilla Firefoxu, Google Chromeu i Microsoft Internet Exploreru.
 - Microsoft Word 365 suvremene matematičke jednadžbe uz pomoć UI automation:
 NVDA može čitati i ulaziti u interakciju sa matematičkim jednadžbama u Microsoft Word 365/2016 međuverziji 14326 i novijim.
@@ -959,13 +961,27 @@ Pregledni kursor standardno prati kursor sustava, tako da je obično moguće kor
 | Uđi u interakciju s matematičkim sadržajem | NVDA+alt+m | Započinje interakciju s matematičkim sadržajem. |
 %kc:endInclude
 
-U tom trenutku, možete koristiti tipkovničke prečace MathPlayer-a da biste se kretali po sadržaju.
+U tom trenutku, NVDA će aktivirati način matematike, u kojem možete koristiti prečace poput strelica kako biste istražili izraz.
 Na primjer, možete se pomicati po izrazu uz pomoć lijeve i desne strelice ili dublje zaroniti u izraz kao što je razlomak, koristeći strelicu dolje.
-Za više informacija, molimo pogledajte [Dokumentaciju MathPlayera https://docs.wiris.com/mathplayer/en/mathplayer-user-manual.html].
+
 Kad se želite vratiti u dokument, pritisnite tipku escape.
+
+Za više informacija o postavkama i načinima kretanja po matematičkom sadržaju, Molimo pogledajte dokumentaciju vaše određene komponente za čitanje matematike koju ste instalirali.
+- [Dokumentacija za MathCat https://nsoiffer.github.io/MathCAT/users.html]
+- [Access8Math dokumentacija https://github.com/tsengwoody/Access8Math]
+- [MathPlayer dokumentacija https://docs.wiris.com/mathplayer/en/mathplayer-user-manual.html]
 
 Ponekada se matematički sadržaj može prikazivati kao gumb ili drugi tip elementa koji kada je aktiviran može prikazati dijaloški okvir sa više informacija o formuli.
 Kako biste aktivirali gumb ili element koji sadrži formulu, Pritisnite ctrl+enter.
+
+++ Instaliranje MathPlayera ++[InstallingMathPlayer]
+Iako je uobičajeno preporučeno korištenje jednog od novijih NVDA dodataka za podršku matematike u NVDA, u nekim ograničenim scenarijima MathPlayer može još uvijek biti prihvatljiva opcija.
+Na primjer MathPlayer može podržavati određeni jezik ili standard brajice koji nisu podržani u novijim dodacima.
+MathPlayer je besplatno dostupan na web stranici Wiris.
+[Preuzmite MathPlayer https://downloads.wiris.com/mathplayer/MathPlayerSetup.exe].
+Poslije instalacije MathPlayera, trebat ćete ponovno pokrenuti NVDA. 
+Imajte na umu da u informacijama može biti naznačeno da je MathPlayer samo za starije preglednike poput Internet Explorera 8.
+Ovo se odnosi na vizualni prikaz matematike, i oni koji koriste MathPlayer za čitanje matematike sa NVDA, slobodno mogu ovo ignorirati.
 
 + Brajica +[Braille]
 Ako posjedujete brajični redak, NVDA može prikazivati informacije koristeći brajicu.
@@ -1609,7 +1625,7 @@ Ovo može biti korisno ako je teško razaznati razliku između izgovorenih znako
 Opis znakova koji kasni biti će obustavljen ako je drugi tekst izgovoren u tom vremenskom intervalu, ili ako pritisnete tipku ``ctrl``.
 
 ==== Dostupni modusi prilikom prebacivanja modusa govora ====[SpeechModesDisabling]
-Ovaj popis sa odabirnim okvirima omogućuje vam odabir modusa govora koji će se moći odabrati prilikom korištenja prečaca ``NVDA+s``.
+Ovaj popis sa potvrdnim okvirima omogućuje odabir [modusa govora #SpeechModes] između kojih se možete prebacivati koristeći prečac ``NVDA+s``.
 Modusi koji nisu označeni su izuzeti.
 Podrazumjevano, svi su modusi uključeni.
 
@@ -2948,10 +2964,10 @@ Maknite kvačicu sa stavke izbornika pomoću tipke enter da biste je onemogučil
 
 Prozor preglednika govora sadrži odabirni okvir "Prikaži preglednik govora pri pokretanju".
 Ako je ova opcija označena, preglednik govora će se otvoriti kad se NVDA pokrene.
-Preglednik govora su uvijek pokušava otvoriti s istim dimenzijama i pozicijom kao pri zadnjoj upotrebi.
+Preglednik govora se uvijek pokušava otvoriti s istim dimenzijama i pozicijom kao pri zadnjoj upotrebi.
 
 Dok je preglednik govora aktiviran, on se stalno osvježava kako bi prikazao tekst koji se trenutačno izgovara.
-Međutim, ako kliknete ili fokusirate unutar preglednika, NVDA će privremeno zaustaviti osvježavanje teksta, tako da možete označiti ili kopirati postojeći sadržaj.
+Međutim, ako prelazite mišem ili kursorom unutar preglednika, NVDA će privremeno zaustaviti osvježavanje teksta, tako da možete označiti ili kopirati postojeći sadržaj.
 
 Da biste uključili ili isključili preglednika govora s bilo kojeg mjesta, dodijelite prilagođenu gestu, koristeći [dijaloški okvir Ulazne geste #InputGestures].
 
