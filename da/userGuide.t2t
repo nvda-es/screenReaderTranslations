@@ -360,9 +360,9 @@ Midlertidige kopier tillader ikke, at du gemmer NVDA-indstillinger.
 - Manglende evne til at start ved eller after logon
 - manglende evne til at interagere med programmer der kører med administratorrettigheder, med mindre NVDA ligeledes kører med administratorrettigheder (anbefales ikke).
 - Manglende evne til at læse Kontrol af Brugerkonti (UAC) skærme når du forsøger at starte et program med administratorrettigheder.
-- Windows 8 og senere: Understøtter ikke input for berøringsfølsomme skærme.
-- Windows 8: NVDA er ikke i stand til at benytte funktioner såsom gennemsynstilstand, samt evnen til at udtale indtastede tegn i Windows Store apps.
-- Windows 8 og senere: Lyddæmpning er ikke understøttet.
+- Understøtter ikke input for berøringsfølsomme skærme.
+- NVDA er ikke i stand til at benytte funktioner såsom gennemsynstilstand, samt evnen til at udtale indtastede tegn i Windows Store apps.
+- Lyddæmpning er ikke understøttet.
 -
 
 
@@ -424,7 +424,7 @@ Selvom de fleste bærbare computere ikke har et fysisk numerisk tastatur, kan no
 Hvis din bærbare computer ikke kan gøre brug af dette, eller ikke tillader dig at slå Num Lock fra, kan du skifte til det bærbare layout i stedet.
 
 ++ NVDA Berøringsbevægelser ++[NVDATouchGestures]
-Hvis du kører NVDA på en enhed med touchskærm og Windows 8 eller nyere, kan du kontrollere NVDA direkte ved hjælp af den berøringsfølsomme skærm.
+Hvis du kører NVDA på en enhed med touchskærm, kan du kontrollere NVDA direkte ved hjælp af den berøringsfølsomme skærm.
 Når NVDA er i gang, vil alle bevægelser registreret af skærmen blive indfanget af NVDA, medmindre berøringsinteraktion er deaktiveret.
 Dette betyder, at handlinger der kan udføres normalt uden NVDA ikke vil virke.
 %kc:beginInclude
@@ -508,7 +508,6 @@ Når menuen vises, kan du bruge piletasterne til at navigere i menuen og enter f
 | Stop tale | Kontrol | Kontrol | enkelt tryk med to fingre | stopper talen med det samme |
 | Pause Tale | Shift | Shift | Ingen | Sætter talen på pause. Når du trykker igen, fortsætter talen, hvor den slap (hvis pause er understøttet af den aktuelle talesyntese) |
 | NVDA-menu | NVDA+n | NVDA+n | Dobbelttryk med to fingre | Fremkalder NVDA-menuen, så du får adgang til indstillinger, værktøjer og hjælp osv. |
-| Skift Taletilstand | NVDA+s | NVDA+s | Ingen | Skifter tale tilstand mellem tale, bip og slået fra. |
 | Skift Tastaturhjælp tilstand | NVDA+1 | NVDA+1 | Ingen | Hvis du trykker på en tast i denne tilstand vil tasten blive oplæst, sammen med den eventuelle NVDA kommando der er tilknyttet tasten |
 | Afslut NVDA | NVDA+q | NVDA+q | Ingen | Afslutter NVDA |
 | Slip næste tast igennem | NVDA+f2 | NVDA+f2 | Ingen | Fortæller NVDA at den næste tast slippes lige igennem til den aktive applikation, selv om det normalt er en NVDA kommando |
@@ -522,6 +521,32 @@ Når menuen vises, kan du bruge piletasterne til at navigere i menuen og enter f
 | Sig batteristatus | NVDA+Shift+b | Rapporterer batteristatus fx. om AC strømforsyning er tilsluttet eller om batteriet aflader. |
 | Sig tekst i udklipsholderen | NVDA+c | Rapporterer tekst i udklipsholderen hvis der er nogen. |
 %kc:endInclude
+
+++ Taletilstande ++[SpeechModes]
+
+Taletilstande i NVDA bestemmer, hvordan indhold på skærmen, notifikationer og tale som følge af en kommando udtales.
+Standardindstillingen er "tale", som aktiveres under almindelig brug af en skærmlæser.
+Der er situationer eller specifikke programmer, hvor alternative taletilstande kan være fordelagtige.
+
+De fire tilgængelige taletilstande er:
+- Tale (Standard): Reagerer normalt på skærmændringer og notifikationer, samt andre situationer, der kræver tale. Dette inkludere også, når fokus flyttes, eller brug af kommandoer.
+- Efter behov: Tal kun ved brug af specifikke kommandoer til oplæsning af tekst eller information (f.eks. kommandoen til at få vinduets titel oplæst). NVDA vil ikke sige noget, hvis du eksempelvis flytter fokus eller markøren.
+- Fra: Ingen taleoutput, men reagerer stadig på kommandoer uden lyd, i modsætning til dvaletilstand.
+- Bip: Erstatter tale med korte bip.
+-
+
+Biptilstand er nyttig ved kontinuerlig aktivitet, hvor detaljerne er mindre vigtige end selve aktiviteten. Dette kan eksempelvis være, når output ruller forbi i et terminalvindue, hvor det ikke nødvendigvis er relevant at noget står på skærmen, så længe noget aktivitet faktisk forekommer.
+
+Tilstanden "Efter behov" er god, når du kun sporadisk behøver oplysninger om skærmaktiviteter.
+Dette kan være ved lydoptagelse, brug af skærmforstørrelse, møder eller opkald.
+
+En kommando lader dig skifte mellem taletilstande:
+%kc:beginInclude
+|| Navn | Tast | beskrivelse |
+| Skift taletilstand | ``NVDA+s`` | Skifter mellem taletilstande. |
+%kc:endInclude
+
+For at begrænse valgene af taletilstande, læs afsnittet [tilgængelige taletilstande ved brug af kommandoen til at skifte mellem disse #SpeechModesDisabling].
 
 + Navigering med NVDA +[NavigatingWithNVDA]
 Med NVDA kan du udforske og navigerer i systemet på flere forskellige måder, både med normal brug og med gennemlæsning af skærmen.
@@ -562,6 +587,7 @@ Følgende NVDA-kommandoer kan bruges i forbindelse med systemmarkøren:
 | Læs aktuelle linje | NVDA+Pil-op | NVDA+l | Læser den linje, hvor markøren for øjeblikket befinder sig. Tryk to gange for at få linjen stavet. Tryk tre gange for at stave linjen ved brug af tegnbeskrivelser. |
 | Læs den valgte tekst | NVDA+Shift+Pil-op | NVDA+Shift+s | Læser den tekst, som er blevet markeret |
 | Rapportér tekstformatering | NVDA+f | NVDA+f | Oplyser formateringsinformation for systemmarkørens aktuelle position i et dokument. Ved et dobbelttryk vil denne information blive vist i gennemsynstilstand |
+| Oplys linkets destination | ``NVDA+k`` | ``NVDA+k`` | Oplyser webadressen for linket ved systemmarkøren eller ved fokus. Hvis der trykkes to gange, vises linket i et vindue for lettere gennemgang |
 | Oplys systemmarkørens position | NVDA+NumpadDelete | NVDA+Delete | Giver information om placeringen af teksten eller objektet ved systemmarkøren. Fx. procentdel af dokumentet, afstand fra kanten af siden eller den præcise position på skærmen. To tryk kan give flere detaljer. |
 | Næste sætning | Alt+Pil-ned | Alt+Pil-ned | Flytter markøren til den næste sætning og læser den (kun understøttet i Microsoft Word og Outlook). |
 | Forrige sætning | Alt+Pil-op | Alt+Pil-op | Flytter markøren til den forrige sætning og læser den (kun understøttet i Microsoft Word og Outlook). |
@@ -877,7 +903,7 @@ du kan med et tastetryk vende tilbage til den oprindelige side, der indeholder d
 + Læsning af matematisk materiale +[ReadingMath]
 Ved hjælp af MathPlayer 4 fra Design Science kan du med NVDA læse og navigere interaktivt i matematisk materiale.
 Dette kræver, at MathPlayer 4 er installeret på computeren.
-MathPlayer kan hentes gratis fra: https://www.dessci.com/en/products/mathplayer/.
+MathPlayer kan hentes gratis fra [MathPlayer information page https://info.wiris.com/mathplayer-info].
 Efter du har installeret MathPlayer, skal du genstarte NVDA.
 
 NVDA understøtter følgende typer af matematisk indhold:
@@ -893,7 +919,7 @@ For yderligere oplysninger, læs [Ligninger i lineært format ved hjælp af Unic
 NVDA kan læse og navigere i MathType-ligninger i Microsoft Powerpoint og Microsoft word.
 MathType skal være installeret, for at dette kan virke.
 Prøveversionen er tilstrækkelig.
-Programmet kan hentes fra https://www.dessci.com/en/products/mathtype/
+Programmet kan hentes fra [MathPlayer information page https://info.wiris.com/mathplayer-info].
 - Adobe Reader.
 Bemærk, at dette endnu ikke er en officiel standard, så der er i øjeblikket ingen offentligt tilgængelige programmer, som kan producere dette indhold.
 - Kindle Reader for PC:
@@ -921,7 +947,7 @@ Som udgangspunkt følger læsemarkøren systemmarkøren, så som regel kan du ba
 
 På dette tidspunkt kan du bruge MathPlayer-kommandoer, såsom piletasterne, til at udforske udtrykket.
 For eksempel kan du flytte gennem udtrykket med Venstre- og Højre-pil og zoome ind på en del af udtrykket, f.eks. en brøk, med Pil-ned.
-Læs venligst [dokumentationen om navigationskommandoer til MathPlayer https://www.dessci.com/en/products/mathplayer/navigation_commands.htm] for flere oplysninger.
+Læs venligst [dokumentationen om navigationskommandoer til MathPlayer https://docs.wiris.com/mathplayer/en/mathplayer-user-manual.html] for flere oplysninger.
 
 Når du vil tilbage til dokumentet, skal du blot trykke på Escape-tasten.
 
@@ -1092,6 +1118,11 @@ Derudover kan det være svært at sikre, at der ikke er nogen, der kigger dig ov
 I denne situation indeholder NVDA en funktion kaldet "Skærmtæppe", der kan aktiveres for at gøre skærmen sort.
 
 Du kan aktivere funktionen ved at gå til [indstillingskategorien "Syn" #VisionSettings] i [NVDAs indstillinger #NVDASettings].
+
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Skifter indstillingen for skærmtæppet | ``NVDA+control+escape`` | Hvis dette er aktiveret, er skærmen sort, og indhold vises ikke på skærmen. Hvis der trykkes én gang, vil denne funktion kun forblive aktiv, indtil du genstarter NVDA. Trykker du to gange, forbliver funktionen aktiv, indtil du slår den fra med ét tryk igen. |
+%kc:endInclude
 
 Vær opmærksom på at du ikke kan udføre nogle handlinger, der tager udgangspunkt i noget visuelt på skærmen såsom at tage et skærmbillede eller benytte [Windows 10 tekstgenkendelse #Win10Ocr], hvis denne funktion er aktiveret.
 
