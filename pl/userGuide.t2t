@@ -915,12 +915,14 @@ Także, choć aplikacja się postara zachować zgodność formatowania z zaznacz
 Jednakże, w przypadkach, w których musisz skopiować calą tabele lub akapit z formatowaniem, ta funkcja będzie użyteczna.
 
 + Odczyt treści matematycznej +[ReadingMath]
-Przy użyciu MathPlayer 4 od Design Science, NVDA może odczytywać i nawigować interaktywnie po wspieranej treści matematycznej.
-Wymaga to zainstalowania MathPlayer 4 na komputerze.
-MathPlayer jest dostępny do pobrania za darmo z [MathPlayer strony informacyjnej https://info.wiris.com/mathplayer-info].
-Po zainstalowaniu MathPlayera, trzeba ponownie uruchomić NVDA.
+NVDA może czytać treść matematyczną w internecie i w innych aplikacjach, umożliwiając jej odczyt zarówno mową, jak i brajlem. 
+Jednakże, aby NVDA mogła czytać treść matematyczna, musisz zainstalować komponent matematyczny.
+Istneje kilka dostępnych dodatków dla NVDA v NVDA addon store, które umożliwiają odczyt treści matematycznej, włączając w to [MathCAT NVDA add-on https://nsoiffer.github.io/MathCAT/] i [Access8Math https://github.com/tsengwoody/Access8Math]. 
+Prosimy przeczytać [rozdział add-on store #AddonsManager] aby się dowiedzieć, jak instalować i przeglądac dodatki dla  NVDA.
+NVDA także może używać starszego program [MathPlayer https://info.wiris.com/mathplayer-info] firmy Wiris jeżeli jest zainstalowany w systemie, choć ten program już nie jest wspieranyd.
 
-NVDA obsługuje następujące rodzaje treści matematycznej:
+++ Wspierana treść matematyczna ++[SupportedMathContent]
+Z odpowiednio zainstalowanym komponentem matematycznym, NVDA wspeira następujące typy treści matematycznej:
 - MathML w Mozilla Firefox, Microsoft Internet Explorer i Google Chrome.
 - Microsoft Word 365 współczesne matematyczne równania używając UI automation:
 NVDA może czytać i wchodzić w interakcje z równaniami matematycznymi w programie Microsoft Word 365/2016 kompilacji 14326 i nowszymi.
@@ -959,14 +961,28 @@ Domyślnie, punkt przeglądu podąża za kursorem systemowym, więc można uży�
 | Interakcja z treścią matematyczną | NVDA+Alt+M | Rozpoczyna interakcję z treścią matematyczną. |
 %kc:endInclude
 
-W tym momencie możesz używać poleceń programu MathPlayer np. klawiszy strzałek, do eksploracji wyrażenia.
+W tym momencie, aktywujesz tryb matematyczny w programie NVDA, w którym możesz używać poleceń takich jak strzałki do chodzeniu po wyrazie.
 Dla przykładu: możesz przechodzić po wyrażeniu strzałkami lewo i prawo,  i wejść w głąb fragmentu wyrażenia, np. ułamka,  przy użyciu strzałki w dół.
-Przeczytaj [Dokumentację MathPlayera https://docs.wiris.com/mathplayer/en/mathplayer-user-manual.html] dla więcej informacji.
 
 Aby powrócić do dokumentu, naciśnij klawisz Esc.
 
+Po więcej informacji o nawigacji i interakcji z treścią matematyczną, przeczytaj dokumentację określonego komponentu matematycznego, którego zainstalowałęś.
+- [Dokumentacj MathCAT https://nsoiffer.github.io/MathCAT/users.html]
+- [Dokumentacja Access8Math https://github.com/tsengwoody/Access8Math]
+- [Dokumentacja MathPlayer https://docs.wiris.com/mathplayer/en/mathplayer-user-manual.html]
+-
+
 Czasem treść matematyczna może być wyświetlana jako przycisk lub inny typ elementu który po aktywacji może być wyświetlany w dialogu w którym wyświetlone zostają informacje związane z formułą.
 Aby aktywować przycisk lub element zawierający formułę, naciśnij ctrl+enter.
+
+++ Instalowanie MathPlayera ++[InstallingMathPlayer]
+Chociaż jest rekomendowane używanie nowszych dodatkó dla NVDA do wsparcia treści matematycznej, w niektóych ograniczonych przypadkach MathPlayer może być najbardziej odpowiednią opcja.
+Na przykłąd MathPlayer może wspierać określony język lub standart brajla niewspieranego w nowszych dodatkach.
+MathPlayer jest dostępny za darmo ze strony firmy Wiris.
+[Pobierz MathPlayer https://downloads.wiris.com/mathplayer/MathPlayerSetup.exe].
+Po instalacji MathPlayera, musisz ponownie uruchomić NVDA. 
+Miewaj na uwadze, że w informacjach o MathPlayerze jest napisane,  że jest to program dla starszych przeglądarek takich jak Internet Explorer 8.
+Odnosi się to do wizualnego wyświetlania matetreści matematycznej za pomocą MathPlayea, i może być ignorowane przez używających MathPlayera z NVDA.
 
 + Brajl +[Braille]
 Jeśli posiadasz monitor brajlowski, NVDA może wyświetlać informacje w brajlu.
@@ -1597,8 +1613,9 @@ Jeśli napotykasz na problemy z wymową pojedynczych znaków, spróbuj wyłączy
 
 ==== Opisy po nazwie liter podczas ruchu kursora ====[delayedCharacterDescriptions]
 
-|| Default | Disabled |
-|| Options | Enabled, Disabled |
+|| . {.hideHeaderRow} | . |
+| Opcje | Włączone, Wyłączone |
+| Domyślnie | Wyłączone |
 
 
 Gdy ta opcja jest włączona, NVDA wypowie opis znaku podczas poruszania się po znakach.
@@ -1714,8 +1731,9 @@ W takim przypadku brajl nie będzie śledził kursora i fokusu systemowego.
 
 ==== Przenoś kursor systemowy podczas przywoływania kursoru przeglądu ====[BrailleSettingsReviewRoutingMovesSystemCaret]
 
-|| Domyślnie | Nigdy |
-|| Opcje | Domyślnie (nigdy), nigdy, tylko podczas przywoływania automatycznego, zawsze |
++|| . {.hideHeaderRow} | . |
+| Opcje | Domyślnie (nigdy), nigdy, tylko podczas przywoływania automatycznego, zawsze |
+| Domyślnie | Nigdy |
 
 
 To ustawienie służy do regulowania przemieszczania kursora systemowego za pomocą przycisku routing.
@@ -1780,8 +1798,9 @@ Aby w dowolnym miejscu przełączyć kontekstową prezentację fokusa, można pr
 
 ==== Przerwij mowę podczas przewijania ====[BrailleSettingsInterruptSpeech]
 
-|| Domyślnie | włączone |
-|| Opcje | Domyślnie (włączone), włączone, Wyłączone |
+|| . {.hideHeaderRow} | . |
+| Opcje | Domyślnie (włączone), włączone, wyłączone |
+| Domyślnie | włączone |
 
 
 Ta opcja reguluje przerwanie mowy podczas przewijania tekstu na monitorze brajlowskim wstecz albo wprzód.
@@ -1792,10 +1811,11 @@ Z tego powodu opcja jest domyślnie włączona, przerywając mowę podczas przew
 
 Wyłączenie tej opcji umożliwia słyszenie mowy podczas symultanicznego odczytu tekstu.
 
-==== Show selection ====[BrailleSettingsShowSelection]
+==== Pokaż zaznaczenie ====[BrailleSettingsShowSelection]
 
-|| Domyślnie | włączone |
-|| Opcje | domyślnie (włączone), włączone, wyłączone |
++|| . {.hideHeaderRow} | . |
+| Opcje | domyślnie (włączone), włączone, wyłączone |
+| Domyślnie | włączone |
 
 
 Ta opcja reguluje pokazywanie indykatora zaznaczenia na monitorze brajlowskim.
@@ -1878,8 +1898,9 @@ Nie jest możliwe obsługiwanie przyciszania audio w przenośnych i tymczasowych
 
 ==== Głośność dźwięków NVDA jest spójna z głośnością  NVDA ====[SoundVolumeFollowsVoice]
 
-|| Domyślnie | wyłączone |
-|| Opcje | wyłączone, włączone |
++|| . {.hideHeaderRow} | . |
+| Opcje | Wyłączoneisabled, włączone |
+| Domyślnie | wyłączone |
 
 
 Gdy ta opcja jest włączona, Głośność dźwięków NVDA będzie śledzić głośność używanego syntezatora mowy.
@@ -2327,8 +2348,9 @@ Ta kategoria umożliwia różne opcje związane z nawigacją po dokumentach.
 
 ==== Styl akapitu ====[ParagraphStyle]
 
-|| Domyślne | zarządzane przez aplikacje |
-|| Opcje | Domyślne (zarządzane przez aplikacje), zarządzane przez aplikacje, jeden podział wiersza, podział wielowierszowy |
+|| . {.hideHeaderRow} | . |
+| Opcje | domyślnie (zarządzane przez aplikacje), zarządzane przez aplikacje, pjjedyńczy podzial wiersza, podział wielowierszowy |
+| Domyślnie | zarządzane przez aplikacje |
 
 
 To pole wyboru umożliwia wybór stylu akapitu, który ma być użyty podczas nawigacji używając skrótów ``control+strzałka w górę`` i ``control+strzałka w dół``.
@@ -2383,8 +2405,9 @@ Przycisk jest aktywny tylko, gdy NVDA jest ustawione na wczytywanie własnego ko
 
 ==== rejestracja zdarzeń i zmian właściwości UIA ====[AdvancedSettingsSelectiveUIAEventRegistration]
 
-|| Domyślnie | automatycznie |
-|| Opcje | Automatycznie, selektywnie, globalnie |
+|| . {.hideHeaderRow} | . |
+| Opcje | automatycznie, selektywna, globalna |
+| domyślnie | automatyczne |
 
 
 Ustawienie to kontroluje, w jaki sposób NVDA rejestruje zdarzenia wysyłane przez API Microsoft UI Automation.
@@ -2417,8 +2440,9 @@ Implementacja UIA w programie Microsoft Excel UI automation zmienia się z wersj
 
 ==== Używaj ulepszonego przetwarzania zdarzeń ====[UIAEnhancedEventProcessing]
 
-|| Domyślnie | Właczone |
-|| Opcje | Domyślnie (włączone), wyłączone, włączone |
+|| . {.hideHeaderRow} | . |
+| Opcje | Domyślnie (włączone), wyłączone, włączone |
+| Domyślnie | włączone |
 
  
 Gdy ta opcja jest włączona, NVDA zostanie responsywna podczas dostawania dużej ilości zdarzeń Uia, na przykład, dużej ilości tekstu w konsoli.
@@ -2426,8 +2450,9 @@ Po zmianie tej opcji, musisz ponownie uruchomić NVDA, aby zmiany zadziałały.
 
 ==== Obsługa konsoli systemu Windows ====[AdvancedSettingsConsoleUIA]
 
-|| Domyślnie | automatycznie |
-|| Opcje | automatycznie, UIA gdy jest to możliwe, przestarzałe |
+|| . {.hideHeaderRow} | . |
+| Opcje | automatycznie, UIA gdy jest to możliwe, przestarzałe |
+| Domyślnie | automatycznie |
 
 
 Ta opcja reguluje interakcję z konsolą używaną przez wiersza poleceń, PowerShell, i podsystem Linux dla systemu WIndows.
@@ -2477,8 +2502,9 @@ Istnieją następujące opcje:
 
 ==== Odczytuj żywe regiony ====[BrailleLiveRegions]
 
-|| Domyślnie | włączone |
-|| Opcje | Domyślnie (włączone), wyłączone, włączone |
+|| . {.hideHeaderRow} | . |
+| Opcje | Domyślnie (włączone), wyłaczone, włączone |
+| Domyślnie | włączone |
 
 
 Ta opcja reguluje odczyt zmian w niektórych treściach dynamicznych na stronach internetowych na monitorach brajlowskich.
@@ -2511,8 +2537,9 @@ Jednakże, w wierszach poleceń, podczas wstawiania lub usuwania znaku w środku
 
 ==== Czytaj nowy tekst w terminalu Windows za pomocą ====[WtStrategy]
 
-|| Domyślnie | Różnicowanie |
-|| Opcje | domyślnie (różnicowanie), różnicowanie, powiadomienia UIA |
+|| . {.hideHeaderRow} | . |
+| Opcje | Domyślnie (różnicowanie), różnicowanie, Powiadomienia UIA |
+| Domyślnie | różnicowanie |
 
 
 Ta opcja określa, który tekst jest nowy dla NVDA i jaki tekst ma być wymówiony gdy opcja "informuj o dynamicznych zmianach treści" jest włączona) w Windows Terminalu i oknach wpf używanych w Visual Studio 2022.
@@ -2544,8 +2571,9 @@ Z niektórymi historycznie popularnymi API do wyświetlania okien, tekst może b
 
 ==== Używaj WASAPI do wyjścia audio ====[WASAPI]
 
-|| Domyślnie | włączone |
-|| Opcje | domyślnie (włączone), wyłączone, włączone |
+|| . {.hideHeaderRow} | . |
+| Opcje | Domyślnie (włączone), Wyłączone, Włączone |
+| Domyślnie | Włączone |
 
 
 Ta opcja włącza wsparcie wyjścia dźwięku za pomocą interfejsu windows audio session (WASAPI).
@@ -3644,8 +3672,8 @@ Są to (w kolejności od lewej do prawej):
 Aktualnie klawisz prawego kciuka nie jest używany.
 Obydwa wewnętrzne klawisze to Spacja.
 
-|| Działanie | Klawisz skrótu |
 %kc:beginInclude
+|| Działanie | Klawisz skrótu |
 | Klawisz Escape | Spacja+Punkt 7 |
 | Klawisz Strzałka w górę | Spacja+Punkt 2 |
 | Klawisz Strzałka w lewo | Spacja+Punkt 1 |
