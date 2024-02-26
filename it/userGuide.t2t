@@ -1708,6 +1708,7 @@ L'indicatore della selezione non è affetto da questa funzione.
 Si tratta di una casella combinata che stabilisce se NVDA debba visualizzare o meno messaggi in braille e la loro durata in secondi sul display, prima che essi scompaiano automaticamente.
 
 Per attivare o disattivare la visualizzazione dei messaggi da qualsiasi posto, assegnare un gesto personalizzato utilizzando la [finestra di dialogo Gesti e tasti di immissione #InputGestures].
+
 ==== Timeout dei messaggi(sec) ====[BrailleSettingsMessageTimeout]
 Si tratta di un campo numerico che controlla per quanto tempo i messaggi di NVDA saranno mostrati sul Display Braille.
 Il messaggio sparirà immediatamente non appena si preme un cursor routing sulla barra braille, ma lo si potrà rileggere se si preme una combinazione di tasti che attivano il messaggio.
@@ -1826,6 +1827,8 @@ La disattivazione di questa opzione può migliorare la leggibilità.
 Per attivare o disattivare i punti 7 e 8 per la selezione da qualsiasi posto, si prega di assegnare un gesto personalizzato utilizzando la [finestra di dialogo tasti e gesti di immissione #InputGestures].
 
 +++ Selezione display braille +++[SelectBrailleDisplay]
+
+%kc:setting
 ==== Apri la finestra di dialogo Seleziona display Braille ====
 Tasto: ``NVDA+control+a``
 
@@ -1860,7 +1863,7 @@ Si tratta di una casella combinata che contiene le scelte possibili riferite al 
 
 Per impostazioni predefinite, NVDA supporta il riconoscimento automatico della porta, il che significa che la connessione con il dispositivo braille sarà stabilita automaticamente tramite la scansione dei dispositivi presenti nel sistema via USB e Bluetooth.
 Comunque, per alcuni display braille, sarà anche possibile stabilire manualmente la porta da utilizzare.
-Le opzioni più comuni sono "automatica" per far sì che NVDA stabilisca da solo la porta esatta da utilizzare, "USB", "bluetooth", e seriale, se il display braille supporta questo tipo di comunicazione.
+Le opzioni più comuni sono "automatica", per far sì che NVDA stabilisca da solo la porta esatta da utilizzare, "USB", "bluetooth", e seriale, se il display braille supporta questo tipo di comunicazione.
 
 Quest'ultima opzione non sarà disponibile se il display braille supporta soltanto il riconoscimento automatico delle porte.
 
@@ -1876,7 +1879,7 @@ Pertanto si consiglia di collegare al pc un solo Display Braille di un determina
 ==== Apri impostazioni audio ====
 Tasto: ``NVDA+control+u``
 
-La categoria Audio nella finestra di dialogo Impostazioni NVDA contiene opzioni che consentono di modificare diversi aspetti della periferica audio di uscit.
+La categoria Audio nella finestra di dialogo Impostazioni NVDA contiene opzioni che consentono di modificare diversi aspetti della periferica audio di uscita.
 
 ==== Periferica audio da utilizzare ====[SelectSynthesizerOutputDevice]
 Questa opzione permette di selezionare la scheda audio che NVDA utilizzerà per mandare i messaggi al sintetizzatore.
@@ -1896,11 +1899,10 @@ Non è possibile supportare l'attenuazione audio in versioni portable o temporan
 
 ==== Il volume dei suoni di NVDA segue il volume della voce ====[SoundVolumeFollowsVoice]
 
-|| Default | Disattivato |
- Opzioni
-  Disattivato, Attivato
-+:
-+
+|| . {.hideHeaderRow} | . |
+| Opzioni | Disattivato, Attivato |
+| Predefinito | Disattivato |
+
 
 Quando questa opzione è abilitata, il volume dei suoni e dei segnali acustici di NVDA seguirà l'impostazione del volume della voce in uso.
 Se si riduce il volume della voce, anche il volume dei suoni diminuirà.
@@ -1908,8 +1910,9 @@ Allo stesso modo, se si aumenta il volume della voce, aumenterà anche quello de
 Inoltre, ha effetto solo quando l'impostazione "Usa WASAPI per l'output audio" è abilitata.
 
 ==== Volume dei suoni di NVDA ====[SoundVolume]
-Questo cursore di avanzamento consente di impostare il volume dei suoni e dei beep di NVDA.
-L'impostazione ha effetto solo quando "Usa WASAPI per l'output audio" è abilitato e "Il volume dei suoni di NVDA segue il volume della voce" è disabilitato.
+Questo cursore di avanzamento consente di impostare il volume dei suoni e dei segnali acustici di NVDA.
+L'impostazione ha effetto solo quando l'opzione "Il volume dei suoni di NVDA segue il volume della voce" è disabilitata.
+La funzione non risulta disponibile se NVDA è stato avviato con l'impostazione [WASAPI disattivato per l'uscita audio #WASAPI] nelle Impostazioni avanzate.
 
 +++ Visione +++[VisionSettings]
 La categoria visione nelle impostazioni di NVDA consente di attivare, disattivare e configurare i [miglioramenti visivi #Vision].
