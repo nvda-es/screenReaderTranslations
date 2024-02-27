@@ -4093,6 +4093,7 @@ Per i display che possiedono già una tastiera braille, Brltty gestisce autonoma
 Pertanto, le impostazioni tabella braille di immissione non sono rilevanti.
 
 BRLTTY non è coinvolto nelle funzioni di rilevamento automatico display braille di NVDA.
+
 Seguono i tasti che sono stati assegnati con NVDA a Brltty.
 Si legga la [tabella dei tasti di Brltty http://mielke.cc/brltty/doc/KeyBindings/] per comprendere come i comandi di Brltty sono mappati sul Display Braille.
 %kc:beginInclude
@@ -4100,8 +4101,15 @@ Si legga la [tabella dei tasti di Brltty http://mielke.cc/brltty/doc/KeyBindings
 | Scorre Display Braille indietro | fwinlt (va indietro di una finestra) |
 | Scorre Display Braille avanti | fwinrt (va avanti di una finestra) |
 | Sposta il Display Braille alla riga precedente | lnup (va su di una riga) |
-| Sposta il Display Braille alla riga successiva | lndn (va già di una riga) |
+| Sposta il Display Braille alla riga successiva | lndn (va giù di una riga) |
 | Route to braille cell | route (porta il cursore al carattere) |
+| Attiva / disattiva aiuto tastiera | ``learn`` (entra/esce dalla modalità apprendimento comandi) |
+| Apre il menu di NVDA | ``prefmenu`` (Entra/esce dal menu preferenze) |
+| Ripristina la configurazione | ``prefload`` (ripristina le preferenze dal disco) |
+| Salva configurazione | ``prefsave`` (salva le preferenze su disco) |
+| Annuncio orario | ``time`` (mostra la data e l'ora correnti) |
+| Legge la riga alla posizione del cursore di controllo | ``say_line`` (Legge la riga corrente) |
+| Dire tutto usando il cursore di controllo | ``say_below`` (Legge dalla posizione della riga corrente fino a fine schermo) |
 %kc:endInclude
 
 ++ Tivomatic Caiku Albatross 46/80 ++[Albatross]
@@ -4111,7 +4119,7 @@ Non è necessario installare alcun driver specifico per utilizzare questi displa
 
 Nota: la velocità di trasmissione (baudrate) 19200 è fortemente consigliata.
 Se necessario, impostare il valore di velocità baud su 19200 dal menu del dispositivo braille.
-Sebbene il driver supporti una velocità di trasmissione di 9600, non ha modo di controllare la velocità di trasmissione utilizzata dal display.
+Sebbene il driver supporti una velocità di trasmissione di 9600, non vi è modo modo di controllare la velocità di trasmissione utilizzata dal display.
 Poiché 19200 è il baud rate predefinito dalla barra, il driver utilizzerà quello come valore standard.
 Se le velocità in baud non sono le stesse, il driver potrebbe comportarsi in modo imprevisto.
 
@@ -4142,7 +4150,7 @@ Consultare la documentazione della barra braille per informazioni sulla posizion
 | Sposta il navigatore ad oggetti sull'oggetto precedente | ``f5`` |
 | Sposta il navigatore ad oggetti sull'oggetto successivo | ``f6`` |
 | Legge l'oggetto attuale del navigatore | ``f7`` |
-| Riporta informazioni sulla posizione del testo o dell'oggetto in corrispondenza del cursore di controllo | ``f8`` |
+| Legge informazioni sulla posizione del testo o dell'oggetto in corrispondenza del cursore di controllo | ``f8`` |
 | Mostra impostazioni braille | ``f1+home1``, ``f9+home2`` |
 | Legge la barra di stato e vi sposta il navigatore ad oggetti | ``f1+end1``, ``f9+end2`` |
 | Scorre tra le forme del cursore braille | ``f1+eCursor1``, ``f9+eCursor2`` |
@@ -4253,7 +4261,9 @@ Ciò permette di stabilire se un determinato problema è causato da un component
 
 Per fare un esempio, è possibile uscire da NVDA digitando la stringa seguente nella finestra esegui di Windows:
 
+```
 NVDA -q
+```
 
 Alcuni parametri possiedono una versione breve e lunga, altri invece soltanto una lunga.
 Per quelli che possiedono solo la versione breve, si possono unire nel modo seguente:
