@@ -2580,8 +2580,12 @@ Con diverse API GUI storicamente popolari, il testo può essere visualizzato con
 Questa opzione attiva la gestione dell'audio attraverso un sistema chiamato Windows Audio Session API (WASAPI).
 WASAPI è un framework audio più moderno che può migliorare la reattività, le prestazioni e la stabilità dell'audio di NVDA, compresi sia il parlato che i suoni.
 Dopo aver modificato questa opzione, sarà necessario riavviare NVDA affinché i cambiamenti abbiano effetto.
+Se si disattiva il supporto a Wasapi, anche le seguenti opzioni verranno disabilitate:
+- [Il volume dei suoni di NVDA segue il volume della voce #SoundVolumeFollowsVoice]
+- [Volume dei suoni di NVDA #SoundVolume]
+-
 
-==== Categorie Debug Logging ====[AdvancedSettingsDebugLoggingCategories]
+	==== Categorie Debug Logging ====[AdvancedSettingsDebugLoggingCategories]
 Le caselle di controllo presenti in questo elenco consentono di abilitare categorie specifiche di messaggi log di NVDA.
 Si tenga presente che il log di questi messaggi può comportare un calo delle prestazioni e file di registro di grandi dimensioni.
 Attivare quindi le caselle di controllo soltanto se viene richiesto da uno sviluppatore.
@@ -2944,6 +2948,7 @@ Si può navigare tra gli add-on non compatibili tramite le [schede add-on dispon
 Inoltre, si può navigare tra gli add-on installati non compatibili tramite la [scheda add-on incompatibili #AddonStoreFilterStatus].
 
 + Strumenti aggiuntivi +[ExtraTools]
+
 ++ Visualizzatore log ++[LogViewer]
 Il visualizzatore log, situato alla voce strumenti del menu di NVDA, permette di mostrare tutte le informazioni di log dell'ultima sessione di NVDA.
 
@@ -3036,7 +3041,8 @@ In particolare, i seguenti problemi possono essere risolti eseguendo questo stru
 
 ++ Ricarica componenti aggiuntivi ++[ReloadPlugins]
 Questa voce, una volta attivata, ricarica tutti i plugin e i moduli specifici per le applicazioni senza riavviare NVDA. Risulta utile per gli sviluppatori.
-I plugin globali gestiscono il modo in cui NVDA interagisce con tutte le applicazioni.
+Gli appModule gestiscono il modo in cui NVDA interagisce con applicazioni specifiche.
+Invece, i plugin globali gestiscono il modo in cui NVDA interagisce con tutte le applicazioni.
 
 Potrebbero essere utili anche i seguenti comandi da tastiera di NVDA:
 %kc:beginInclude
@@ -3525,7 +3531,7 @@ Si possono reperire maggiori informazioni sui display nella loro [pagina di down
 
 +++ Seika Versione 3, 4, e 5 (40 celle), Seika80 (80 celle) +++[SeikaBrailleDisplays]
 - Questi display non supportano ancora la funzionalità di rilevamento automatico del display braille in background di NVDA.
-- Selezionare "Seika Braille Displays" per configurare manualmente
+- Quindi, bisogna selezionare "Seika Braille Displays" per configurarli manualmente
 - È necessario installare un driver per il dispositivo prima di utilizzare Seika v3/4/5/80.
 I driver sono [forniti dal produttore https://en.seika-braille.com/down/index.html].
 -
@@ -3549,7 +3555,7 @@ Si prega di consultare la documentazione del display per le descrizioni di dove 
 
 +++ MiniSeika (16, 24 celle), V6, e V6Pro (40 celle) +++[SeikaNotetaker]
 - La funzionalità di rilevamento automatico del display braille in background di NVDA è supportata tramite USB e Bluetooth.
-- Selezionare "Seika Notetaker" o "automatico" per configurare.
+- Selezionare "Seika Notetaker" o "automatico" per configurare questi display braille.
 - Non sono richiesti driver aggiuntivi quando si utilizza un display braille Seika Notetaker.
 -
 
@@ -3587,6 +3593,7 @@ Si prega di consultare la documentazione del display per le descrizioni di dove 
 | control+home | backspace+LJ up |
 | control+end | backspace+LJ down |
 
+
 ++ Nuovi modelli Papenmeier BRAILLEX ++[Papenmeier]
 Sono supportati i seguenti display braille: 
 - BRAILLEX EL 40c, EL 80c, EL 20c, EL 60c (USB)
@@ -3595,8 +3602,7 @@ Sono supportati i seguenti display braille:
 - BRAILLEX Live 20, BRAILLEX Live e BRAILLEX Live Plus (USB e bluetooth)
 -
 
-Questi modelli non supportano ancora la funzione di rilevazione automatica in background.
-
+Questi modelli non supportano ancora la funzione di rilevamento automatica in background.
 C'è un'opzione nel driver USB del display che può causare problemi con il caricamento della barra braille.
 Provare quanto segue:
 + Assicurarsi di aver installato [il driver più recente https://www.papenmeier-rehatechnik.de/en/service/downloadcenter/software/articles/software-braille-devices.html].
@@ -3686,7 +3692,7 @@ Sono supportati i seguenti display braille:
 -
 
 Si noti che questi display braille si possono connettere solo tramite porta seriale.
-Per questo motivo, questi modelli non supportano la funzione di rilevazione automatica in background.
+Per questo motivo, questi modelli non supportano la funzione di rilevamento automatica in background.
 è quindi necessario selezionare la porta esatta alla quale la barra braille è connessa, dopo aver scelto il driver dalla finestra [Selezione Display Braille #SelectBrailleDisplay]. 
 
 La maggior parte dei dispositivi è dotata di una barra di navigazione facilitata (EAB) che permette di svolgere le operazioni in una modalità molto più rapida ed intuitiva..
