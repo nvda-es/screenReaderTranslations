@@ -1167,8 +1167,11 @@ NVDA har sine egne ekstra kommandoer for nogle programmer. Dette er for at gøre
 
 +++ Automatisk læsning af kolonne- og rækkeoverskrifter +++[WordAutomaticColumnAndRowHeaderReading]
 NVDA kan læse de passende overskrifter på rækker og kolonner automatisk, mens du bevæger dig rundt i tabeller i Microsoft Word.
-Dette kræver for det første, at "Oplæs kolonne- og rækkeoverskrifter" er slået til i NVDAs dokumentformateringsindstillinger, fundet i indstillingskategorien dokumentformatering under [NVDAs indstillingsdialog #NVDASettings].
-For det andet skal NVDA have at vide, hvilken række eller kolonne der indeholder overskrifterne i en given tabel.
+Dette kræver, at indstillingen "Overskrifter" er indstillet til "Rækker og kolonner" i NVDAs dokumentformateringsindstillinger, fundet i indstillingskategorien dokumentformatering under [NVDAs indstillingsdialog #NVDASettings].
+
+Hvis du bruger [UIA for at få adgang til Word-dokumenter #MSWordUIA], hvilket er standardadfærd i nylige versioner af Word og Windows, vil celerne i den første række automatisk blive indstillet som kolonneoverskriften. Det samme er tilfældet for den første kolonneoverskrift, der automatisk vil blive indstillet som rækkeoverskriften.
+
+Bruger du derimod ikke [UIA til at få adgang til Word-dokumenter #MSWordUIA], skal du selv indstille kolonne- og rækkeoverskrifterne.
 Når du er placeret i den første celle i den række eller kolonne, som indeholder overskrifterne, kan du bruge følgende kommandoer:
 %kc:beginInclude
 || Navn | Tast | Beskrivelse |
@@ -1292,10 +1295,14 @@ Bemærk: Ovenstående genveje virker kun, når statuslinjen i Foobar er formater
 %kc:endInclude
 
 ++ Poedit ++[Poedit]
+NVDA har følgende kommandoer til brug af Poedit 3.4 eller nyere.
+
 %kc:beginInclude
 || Navn | Tast | Beskrivelse |
-| Læs kommentarvindue | Ctrl+Shift+c | Læser en kommentar i kommentarvinduet. |
-| Læs oversætternoter | Ctrl+Shift+a | Læser oversætternoter. |
+| Læs oversætternoter | ``Ctrl+Shift+a`` | Læser oversætternoter. Hvis der trykkes to gange, vises noterne i gennemsynstilstand |
+| Læs kommentarvindue | ``Ctrl+Shift+c`` | Læser en kommentar i kommentarvinduet. Hvis der trykkes to gange, vises teksten i gennemsynstilstand |
+|  Læs gammel kildetekst | ``control+shift+o`` | Oplæser den gamle kildetekst, hvis den findes. Hvis der trykkes to gange, vises teksten i gennemsynstilstand |
+| Oplæs oversættelsesadvarsel | ``control+shift+w`` | Oplæser oversættelsesadvarsel, hvis den findes. Hvis der trykkes to gange, vises advarslen i gennemsynstilstand |
 %kc:endInclude
 
 ++ Kindle for PC ++[Kindle]
@@ -1367,6 +1374,10 @@ Mange af disse indstillinger kan findes ved brug af kategorierne i [NVDAs indsti
 I alle NVDAs indstillingsdialoger skal du trykke på knappen OK for at godkende de ændringer, du har foretaget.
 Tryk på Annuller-knappen eller Escape-tasten for at annullere dine ændringer.
 For bestemte dialoger kan du trykke på knappen "Anvend" for at anvende dine ændringer med det samme.
+I de fleste NVDA-dialoger, kan du nemt finde hjælp for den pågældende indstilling.
+%kc:beginInclude
+Når du befinder dig i en dialog, vil et tryk på ``f1`` åbne brugervejledningen til det relevante kapitel, der omfatter den aktuelle indstilling eller dialog.
+%kc:endInclude
 Nogle indstillinger kan ligeledes ændres ved hjælp af genvejstaster, der anføres i de enkelte afsnit nedenfor, hvor det er relevant.
 
 ++ NVDA-indstillinger ++[NVDASettings]
@@ -1572,18 +1583,26 @@ Nogle Microsoft Speech API synteser anvender dog ikke denne funktion korrekt og 
 Hvis du har problemer med udtalen af diverse bogstaver kan du prøve at deaktivere denne indstilling.
 
 ==== Forsinkede beskrivelser af tegn ved markørbevægelser ====[delayedCharacterDescriptions]
-
-|| . {.hideHeaderRow} | . |
-| Muligheder | Aktiveret, deaktiveret |
-| Standard | Deaktiveret |
-
+: Standard
+  Deaktiveret
+: Muligheder
+  Aktiveret, Deaktiveret
+:
 
 Når denne indstilling er aktiveret, vil NVDA sige tegnbeskrivelsen, når du flytter markøren tegn for tegn.
 
 For eksempel, mens du gennemgår en linje med tegn, når bogstavet "b" læses, vil NVDA sige "Bravo" efter ét sekund.
 Dette kan være nyttigt, hvis det er svært at skelne mellem udtale af symboler, eller for hørehæmmede brugere.
 
-Tegnets beskrivelse vil ikke blive oplæst, hvis andet tekst udtales, eller hvis du trykker på Ctrl-tasten.
+Tegnets beskrivelse vil ikke blive oplæst, hvis andet tekst udtales, eller hvis du trykker på ``Ctrl-tasten``.
+
+==== Taletilstande ====[SpeechModesDisabling]
+Denne liste af muligheder lader dig bestemme, hvilke taletilstande, der er tilgængelige, når du bruger kommandoen ``NVDA+s`` til at skifte mellem dem.
+Tilstande, der ikke er markerede, vil ikke fremkomme.
+Som standard er alle tilstande inkluderede.
+
+Har du f.eks. ikke brug for at benytte "bip" og "fra", skal du fjerne markeringen ved dem og lade "tale" og "efter behhov" være markerede.
+Bemærk, at du skal vælge mindst to tilstande.
 
 +++ Vælg talesyntese +++[SelectSynthesizer]
 
@@ -1839,8 +1858,8 @@ Denne valgmulighed bruges til at bestemme, hvilket lydkort den aktuelt valgte ta
 ==== Lyddæmpningstilstand ====[SelectSynthesizerDuckingMode]
 Tast: NVDA+shift+D
 
-Hvis du bruger Windows 8 eller nyere, lader denne indstilling dig vælge, om NVDA skal sænke lydstyrken af andre applikationer, når NVDA taler, eller om NVDA konstant skal sænke lydstyrken imens NVDA kører.
-- Ingen dæmpning: NVDA vil aldrig dæmpe lydstyrken af andre lydkilder. 
+Med denne  indstilling kan du vælge, om NVDA skal sænke lydstyrken af andre applikationer, når NVDA taler, eller om NVDA konstant skal sænke lydstyrken imens NVDA kører.
+- Ingen lyddæmpning: NVDA vil aldrig dæmpe lydstyrken af andre lydkilder. 
 - Dæmp, når der udsendes tale og lyde: NVDA vil kun dæmpe lyden, hvis NVDA afspiller lyde eller taler. Dette virker muligvis ikke for alle talesynteser.
 - Altid dæmp: NVDA vil sænke lyden fra alle andre lydkilder, så længe NVDA kører.
 -
@@ -1893,8 +1912,6 @@ Hvis du er sikker, kan du aktivere funktionen ved at vælge "Ja"..
 Hvis du ikke vil se denne advarsel, hver gang du aktivererer funktionen, kan du ændre dette i dialogen.
 Du kan altid få advarslen til at komme frem igen, hvis du markerer "Vis altid en advarsel, når Skærmtæppe indlæses".
 
-Hvis du vil slå funktionen til og fra ved hjælp af en tastaturkommando eller bevægelse, kan du tildele et tastetryk eller en bevægelse ved at bruge [dialogen "Håndter Kommandoer" #InputGestures].
-
 Som standard vil en lyd blive afspillet, når NVDA starter og NVDA aktiverer skærmtæppet automatisk.
 Du kan ændre denne adfærd ved at fjerne markeringen fra den pågældende boks i indstillingerne.
 
@@ -1922,9 +1939,7 @@ Check boxe i denne liste lader dig vælge, hvilke taster du ønsker at benytte s
 - Den udvidede insert-tast (findes sædvanligvis over piletasterne ved hjem og end-tasterne).
 -
 
-Hvis der ikke er valgt nogen tast som NVDA-tast, kan det være umuligt at nå visse NVDA-funktioner.
-Derfor vil du få en fejlmeddelelse i indstillingsdialogen.
-Når du har svaret OK til fejlmeddelelsen, skal du vælge mindst én tast for at kunne trykk OK eller Anvend og lukke dialogen ordentligt.
+Hvis der ikke er valgt nogen tast som NVDA-tast, kan det være umuligt at nå visse NVDA-funktioner. Du skal vælge mindst én af disse taster.
 
 %kc:setting
 ==== Sig indtastede tegn ====[KeyboardSettingsSpeakTypedCharacters]
@@ -1991,8 +2006,10 @@ Indstillingsmulighederne er tegn, ord, linje og afsnit.
 
 For at ændre opløsning for tekstenhed fra hvor som helst, kan du tildele en kommando via [dialogen Håndter Kommandoer #InputGestures].
 
-==== Oplæs rolle når musen flyttes ind over et objekt ====[MouseSettingsRole]
-Hvis denne check box er markeret, oplæser NVDA rollen (typen) på objektet, når musen bevæger sig ind i det pågældende objekt.
+==== Oplys object, når musen flyttes ind i det ====[MouseSettingsRole]
+Hvis denne check box er markeret, oplæser NVDA objektet, når musen bevæger sig ind i objektet.
+Dette omfatter typen af objekt, samt om det eksempelvis er markeret eller ej, cellekoordinater i tabeller, osv.
+Bemærk, at nogle af detaljerne, der oplyses om det pågældende objekt, kan afhænge af andre indstillinger. Informationsniveauet påvirkes typisk af indstillingerne i [objektpræsentation #ObjectPresentationSettings] eller [dokumentformatering #DocumentFormattingSettings].
 
 ==== Afspil lydkoordinater under flytning af mus ====[MouseSettingsAudio]
 Hvis denne check box er slået til, bipper NVDA under flytning af musen. På den måde kan du følge med i, hvor musen netop nu befinder sig på skærmen.
@@ -2009,7 +2026,7 @@ Denne indstilling er slået fra som standard.
 Hvis du vælger denne indstilling og du har slået "følg musen" til, vil NVDA ikke annoncere hvad der befinder sig under musen, når musen flyttes af andre applikationer.
 
 +++ Berøringsinteraktion +++[TouchInteraction]
-Denne indstillingskategori vil kun være tilgængelig på computere, der kører Windows 8 og nyere, samt har mulighed for touch-funktionalitet. Disse indstillinger lader dig konfigurere, hvordan NVDA håndtere berøring af touchskærme.
+Denne indstillingskategori vil kun være tilgængelig på computere, der har mulighed for touch-funktionalitet. Disse indstillinger lader dig konfigurere, hvordan NVDA håndtere berøring af touchskærme.
 Denne kategori indeholder følgende indstillinger:
 
 ==== Aktivér berøringsinteraktion ====[TouchSupportEnable]
