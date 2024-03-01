@@ -83,6 +83,7 @@
     <LI><A HREF="#TheNVDAMenu">4.5. NVDAメニュー</A>
     <LI><A HREF="#BasicNVDACommands">4.6. 基本的なNVDAコマンド</A>
     <LI><A HREF="#ReportingSystemInformation">4.7. システム情報の報告</A>
+    <LI><A HREF="#SpeechModes">4.8. 読み上げモード</A>
     </UL>
   <LI><A HREF="#NavigatingWithNVDA">5. NVDAの移動コマンド</A>
     <UL>
@@ -108,10 +109,13 @@
     <LI><A HREF="#ElementsList">6.2. 要素リスト</A>
     <LI><A HREF="#SearchingForText">6.3. テキストの検索</A>
     <LI><A HREF="#ImbeddedObjects">6.4. 埋め込みオブジェクト</A>
+    <LI><A HREF="#NativeSelectionMode">6.5. ネイティブ選択モード</A>
     </UL>
   <LI><A HREF="#ReadingMath">7. 数式の読み上げ</A>
     <UL>
-    <LI><A HREF="#InteractiveNavigation">7.1. 対話的なナビゲーション</A>
+    <LI><A HREF="#SupportedMathContent">7.1. サポートされている数式コンテンツ</A>
+    <LI><A HREF="#InteractiveNavigation">7.2. 対話的なナビゲーション</A>
+    <LI><A HREF="#InstallingMathPlayer">7.3. MathPlayer のインストール</A>
     </UL>
   <LI><A HREF="#Braille">8. 点字ディスプレイ</A>
     <UL>
@@ -216,6 +220,7 @@
       <LI><A HREF="#AddonStoreInstalling">13.2.1. アドオンのインストール</A>
       <LI><A HREF="#AddonStoreRemoving">13.2.2. アドオンの削除</A>
       <LI><A HREF="#AddonStoreDisablingEnabling">13.2.3. アドオンの無効化と有効化</A>
+      <LI><A HREF="#AddonStoreReviews">13.2.4. アドオンストアのレビュー</A>
       </UL>
     <LI><A HREF="#incompatibleAddonsManager">13.3. 非互換のアドオン</A>
     </UL>
@@ -225,7 +230,7 @@
     <LI><A HREF="#SpeechViewer">14.2. スピーチビューアー</A>
     <LI><A HREF="#BrailleViewer">14.3. 点字ビューアー</A>
     <LI><A HREF="#PythonConsole">14.4. Pythonコンソール</A>
-    <LI><A HREF="#toc151">14.5. アドオンストア</A>
+    <LI><A HREF="#toc156">14.5. アドオンストア</A>
     <LI><A HREF="#CreatePortableCopy">14.6. ポータブル版の作成</A>
     <LI><A HREF="#RunCOMRegistrationFixingTool">14.7. COM 登録修復ツール</A>
     <LI><A HREF="#ReloadPlugins">14.8. プラグインの再読み込み</A>
@@ -250,9 +255,9 @@
     <LI><A HREF="#HedoMobilLine">16.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">16.9. HumanWare Brailliant BI/Bシリーズ / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc171">16.9.1. すべてのモデル</A>
-      <LI><A HREF="#toc172">16.9.2. Brailliant BI 32, BI 40 および B 80</A>
-      <LI><A HREF="#toc173">16.9.3. Brailliant BI 14</A>
+      <LI><A HREF="#toc176">16.9.1. すべてのモデル</A>
+      <LI><A HREF="#toc177">16.9.2. Brailliant BI 32, BI 40 および B 80</A>
+      <LI><A HREF="#toc178">16.9.3. Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">16.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille シリーズ</A>
     <LI><A HREF="#Seika">16.11. 清華 点字ディスプレイ</A>
@@ -331,10 +336,8 @@ NVDAの主な特徴は以下の通りです。
 <A NAME="SystemRequirements"></A>
 <H2>1.2. システム要件</H2>
 <UL>
-<LI>オペレーティングシステム: 32ビット版と64ビット版の Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11 および Windows Server 2008 R2 以降のサーバー用オペレーティングシステム
+<LI>オペレーティングシステム: 32ビット版と64ビット版の Windows 8.1, Windows 10, Windows 11 および Windows Server 2012 R2 以降のサーバー用オペレーティングシステム
  <UL>
- <LI>Windows 7 はサービスパック1以降に対応
- <LI>Windows Server 2008 R2 はサービスパック1以降に対応
  <LI>AMD64 および ARM64 の Windows に対応
  </UL>
 <LI>150MB以上のディスク空き容量
@@ -362,6 +365,7 @@ NVDAでサポートしているその他の音声エンジンについては<A H
 <H2>1.5. 点字ディスプレイサポート</H2>
 <P>
 点字ディスプレイがあれば、NVDAは情報を点字で出力することができます。
+NVDAはオープンソースの点訳エンジン <A HREF="https://liblouis.io/">LibLouis</A> を使用しています。
 点字ディスプレイからの1級点字および2級点字の文字入力にも対応しています。
 多くの機種について、NVDAは点字ディスプレイの接続を自動的に検出します。
 詳細は<A HREF="#SupportedBrailleDisplays">サポートされている点字ディスプレイ</A>を参照してください。
@@ -837,6 +841,10 @@ NV Access は <A HREF="https://www.nvaccess.org/product/nvda-telephone-support/"
 <P>
 <A HREF="https://github.com/nvaccess/nvda/wiki/Connect">メーリングリストのユーザーグループ</A> はコミュニティの支援を得る情報源です。 <A HREF="https://certification.nvaccess.org/">NVDA Certified Experts</A> のリストもご活用ください。
 </P>
+<P>
+NVDA 本家版に対するバグ報告や機能要望は <A HREF="https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/readme.md">GitHub</A> を通じて行うことができます。
+<A HREF="https://github.com/nvaccess/nvda/blob/master/.github/CONTRIBUTING.md">貢献ガイドライン</A> ではNVDA本家コミュニティへの貢献の方法を説明しています。
+</P>
 <A NAME="MoreSetupOptions"></A>
 <H1>3. NVDAのインストーラーとポータブル版のオプション</H1>
 <A NAME="InstallingNVDA"></A>
@@ -1138,13 +1146,6 @@ Windows で NVDA が実行されている間に NVDA メニューを開くには
 <TD>NVDAメニューを表示します。NVDAの設定、ツール、ヘルプなどがあります。</TD>
 </TR>
 <TR>
-<TD>読み上げモード切り替え</TD>
-<TD>NVDA+S</TD>
-<TD>NVDA+S</TD>
-<TD>なし</TD>
-<TD>読み上げモードを読み上げ、ビープ、オフの間で切り替えます。</TD>
-</TR>
-<TR>
 <TD>入力ヘルプモードの切り替え</TD>
 <TD>NVDA+1</TD>
 <TD>NVDA+1</TD>
@@ -1199,6 +1200,50 @@ Windows で NVDA が実行されている間に NVDA メニューを開くには
 </TR>
 </TABLE>
 
+<A NAME="SpeechModes"></A>
+<H2>4.8. 読み上げモード</H2>
+<P>
+読み上げモードは、NVDAの操作中に画面の内容、報告、コマンドへの応答、およびその他の出力をどのように読み上げるかを制御します。
+既定のモードは「声」です。スクリーンリーダーとして一般的な読み上げ方を行います。
+ただし、特定の状況下や特定のアプリを実行しているときには、他の読み上げモードが役立つことがあります。
+</P>
+<P>
+以下の4種類の読み上げモードが利用できます:
+</P>
+<UL>
+<LI>声 (既定のモード): 画面の変更、通知、フォーカスの移動やコマンドの実行などのアクションに対して、NVDAは通常どおりに読み上げます。
+<LI>オンデマンド: NVDAは何かを報告するコマンド（例えばウィンドウのタイトルの報告）を実行したときに読み上げを行います。フォーカスやテキストカーソルの移動などの操作では読み上げを行いません。
+<LI>なし: NVDAは読み上げを行いませんが、スリープモードとは異なり、コマンドは実行されます。
+<LI>ビープ音: NVDAは読み上げを行わず、かわりに短いビープ音を鳴らします。 
+</UL>
+
+<P></P>
+<P>
+ビープ音のモードは、例えばターミナルウィンドウで非常に詳細な出力がスクロールしており、出力の内容は気にせず、スクロールが続いていることだけが重要な場合に便利かもしれません。他にも、出力があるという事実が出力自体よりも重要な状況で役立つかもしれません。
+</P>
+<P>
+オンデマンドのモードは、画面やPCで起こっていることについて常時のフィードバックは必要としないが、レビューコマンドなどを使用して特定のことを定期的に確認したい場合に有用かもしれません。
+例として、オーディオを録音しているとき、画面拡大を使用しているとき、会議や通話中、などがあります。またはビープ音のモードの代わりとしても使えるでしょう。
+</P>
+<P>
+読み上げモードは以下の操作で切り替えできます:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>キー</TH>
+<TH>説明</TH>
+</TR>
+<TR>
+<TD>読み上げモードの切り替え:</TD>
+<TD><CODE>NVDA+s</CODE></TD>
+<TD>次の読み上げモードに切り替えます。</TD>
+</TR>
+</TABLE>
+
+<P>
+切り替えの対象にしたくない読み上げモードがある場合は <A HREF="#SpeechModesDisabling">読み上げモード切り替えコマンドで使用できるモード</A> で切り替え対象から外すことができます。
+</P>
 <A NAME="NavigatingWithNVDA"></A>
 <H1>5. NVDAの移動コマンド</H1>
 <P>
@@ -1306,6 +1351,12 @@ NVDAには、以下のテキストカーソルに関するコマンドがあり�
 <TD>NVDA+F</TD>
 <TD>NVDA+F</TD>
 <TD>現在のテキストカーソル位置のテキストの書式とドキュメント情報を報告します。2回押すとウィンドウを開いて情報を表示します。</TD>
+</TR>
+<TR>
+<TD>リンク先URLの報告</TD>
+<TD><CODE>NVDA+k</CODE></TD>
+<TD><CODE>NVDA+k</CODE></TD>
+<TD>1回押すとテキストカーソルまたはシステムフォーカスの位置のリンク先URLを報告します。2回押すとウィンドウを開いて表示します。</TD>
 </TR>
 <TR>
 <TD>テキストカーソルの位置情報の報告</TD>
@@ -1720,6 +1771,11 @@ NVDAでは、<A HREF="#ScreenReview">画面</A>の内容、現在の<A HREF="#Do
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
+<TH>. {.hideHeaderRow}</TH>
+<TH>.</TH>
+<TH>.</TH>
+</TR>
+<TR>
 <TD>前の行</TD>
 <TD>現在行</TD>
 <TD>次の行</TD>
@@ -2117,44 +2173,74 @@ NVDAの「検索」ダイアログを使うと、現在のドキュメントに�
 </TR>
 </TABLE>
 
+<A NAME="NativeSelectionMode"></A>
+<H2>6.5. ネイティブ選択モード</H2>
+<P>
+デフォルトでは、ブラウズモードで<CODE>shift+矢印</CODE>キーを使ってテキストを選択すると、選択はNVDAのブラウズモードでのドキュメント表現の中でのみ行われ、アプリ自体では行われません。
+このとき、選択範囲は画面に表示されません。また、<CODE>control+c</CODE>でテキストをコピーすると、NVDAのドキュメント表現におけるテキストの内容のみがコピーされます。つまり、テーブルの書式やリンクなどのドキュメント情報はコピーされません。
+NVDAのネイティブ選択モードを特定のアプリ(現在はMozilla Firefoxのみ)のブラウズモードドキュメントで使用すると、NVDAのブラウズモードの選択にアプリのネイティブなドキュメント選択が追従します。
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>キー</TH>
+<TH>説明</TH>
+</TR>
+<TR>
+<TD>ネイティブ選択モードの切り替え</TD>
+<TD><CODE>NVDA+shift+f10</CODE></TD>
+<TD>ネイティブ選択モードを有効または無効に切り替えます。</TD>
+</TR>
+</TABLE>
+
+<P>
+ネイティブ選択モードがオンの場合、<CODE>control+c</CODE>で選択範囲をコピーすると、アプリ自身でコピーを行うため、プレーンテキストではなくリッチコンテンツがクリップボードにコピーされます。
+Microsoft WordやExcelなどのアプリにこのコンテンツを貼り付けると、テーブルの書式やリンクなどのドキュメント情報が含まれます。
+ただし、ネイティブ選択モードでは、NVDAがブラウズモードで生成するアクセシビリティ関連ラベルなどの情報は対象になりません。
+また、アプリはNVDAのブラウズモードの選択範囲にできるだけ合わせてネイティブ選択を試みますが、常に正確であるとは限りません。
+テーブルの全体やリッチコンテンツの段落をコピーしたい場合などには、この機能が役立つはずです。
+</P>
 <A NAME="ReadingMath"></A>
 <H1>7. 数式の読み上げ</H1>
 <P>
-Design Science の MathPlayer 4 を使うと NVDA で数式の読み上げと対話的なナビゲーションが可能です。
-この機能を使うためにはコンピューターに MathPlayer 4 をインストールしてください。
-MathPlayer は以下から無料でダウンロードできます: <A HREF="https://www.dessci.com/en/products/mathplayer/">https://www.dessci.com/en/products/mathplayer/</A>
-MathPlayer をインストールしたら NVDA を再起動してください。
+NVDAは、ウェブや他のアプリの数式コンテンツの読み上げとナビゲーションに対応しており、音声および点字で利用できます。
+しかし、NVDAが数式コンテンツを読み取り、操作するためには、まずNVDAが対応している数式コンポーネントをインストールする必要があります。
+NVDAアドオンストアには、<A HREF="https://nsoiffer.github.io/MathCAT/">MathCAT NVDAアドオン</A> や <A HREF="https://github.com/tsengwoody/Access8Math">Access8Math</A> を含む、数式をサポートするいくつかのNVDAアドオンがあります。
+利用可能なアドオンをNVDAで閲覧およびインストールする方法については、<A HREF="#AddonsManager">アドオンストア</A>を参照してください。
+また、NVDAはシステム上で見つかった場合、Wirisの旧バージョンの<A HREF="https://info.wiris.com/mathplayer-info">MathPlayer</A>も利用できますが、このアプリは現在はメンテナンスされていません。
 </P>
+<A NAME="SupportedMathContent"></A>
+<H2>7.1. サポートされている数式コンテンツ</H2>
 <P>
-NVDA は次の種類の数式コンテンツに対応します:
+適切な数式コンポーネントがインストールされている場合、NVDAは以下の形式の数式コンテンツをサポートします：
 </P>
 <UL>
-<LI>Mozilla Firefox, Microsoft Internet Explorer および Google Chrome における MathML
-<LI>Microsoft Word 365 の「数式」 (UI オートメーションを使用):
-Microsoft Word 365/2016 ビルド 14326 およびそれ以降で利用できるようになった新しい「Microsoft Office 数式」を NVDA で閲覧・操作できます。
-以前に作成された MathType 数式は、まず Office 数式に変換する必要があります。
-この操作はコンテキストメニュー「数式オプション」→「Office 数式に変換」で行えます。
-この作業を行う前に最新バージョンの MathType をお使いであることを確認してください。
-Microsoft Word は線形形式での入力、UnicodeMath や LaTeX 数式による編集をサポートしています。
-詳細は <A HREF="https://support.microsoft.com/ja-jp/office/word-%E3%81%A7-unicodemath-%E3%81%8A%E3%82%88%E3%81%B3-latex-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E8%A1%8C%E5%BD%A2%E5%BC%8F%E3%81%AE%E6%95%B0%E5%BC%8F%E3%82%92%E5%85%A5%E5%8A%9B%E3%81%99%E3%82%8B-2e00618d-b1fd-49d8-8cb4-8d17f25754f8">Word で UnicodeMath および LaTeX を使用して行形式の数式を入力する</A> を参照してください。
-<LI>Microsoft Powerpoint および以前のバージョンの Microsoft Word: 
-NVDA は  Microsoft Powerpoint and Microsoft word での MathType 数式の閲覧と編集に対応しています。
-ただし MathType をインストールしておく必要があります。
-評価版でもかまいません。
-以下からダウンロードできます: <A HREF="https://www.dessci.com/en/products/mathtype/">https://www.dessci.com/en/products/mathtype/</A>
-<LI>Adobe Reader:
-ただし、まだ公式な規格ではないため、この形式のファイルを作成できるソフトは公開されていません。
-<LI>Kindle Reader for PC:
-NVDA は Kindle for PC で数式を含むアクセシブルな電子書籍を閲覧できます。
+<LI>Mozilla Firefox, Microsoft Internet Explorer および Google Chrome の MathML
+<LI>UIオートメーションを介した Microsoft Word 365 の新しい仕様の数式：
+NVDAは、Microsoft Word 365/2016 ビルド 14326 以降の数式を読み取り、操作できます。
+ただし、以前に作成されたMathTypeの数式は、最初にOffice Math形式に変換する必要があります。
+これは、数式を選択し、「数式オプション」を選んでから、コンテキストメニューで「Office Mathに変換」を選択します。
+この作業の前に、MathTypeのバージョンが最新であることを確認してください。
+Microsoft Wordは、数式自体を通じて記号ベースの線形のナビゲーションを提供します。またLateXを含む複数の方法での数式の入力をサポートしています。
+詳細については、<A HREF="https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8">Linear format equations using UnicodeMath and LaTeX in Word</A>を参照してください。
+<LI>Microsoft PowerpointおよびMicrosoft Wordの古いバージョン：
+NVDAは、Microsoft PowerpointおよびMicrosoft Wordの両方でMathTypeの数式の読み取りとナビゲーションができます。
+これを使うためには、MathTypeがインストールされている必要があります。
+試用版でも可能です。
+<A HREF="https://www.wiris.com/en/mathtype/">MathTypeプレゼンテーションページ</A> からダウンロードできます。
+<LI>Adobe Reader：
+現在はまだ公式の標準ではないため、コンテンツを生成できる公開のソフトウェアはありません。
+<LI>Kindle Reader for PC：
+NVDAは、Kindle Reader for PC を使い、アクセシブルな数式の読み取りとナビゲーションができます。
 </UL>
 
 <P></P>
 <P>
-NVDAはドキュメントの読み上げにおいて、これらの対応している数式コンテンツがあれば数式の読み上げを行います。
-点字ディスプレイを使用している場合は、点字での数式の出力を行います。
+ドキュメントを読むときに、NVDAはサポートされている数式コンテンツをその場所で読み上げます。
+点字ディスプレイを使用している場合は、点字でも表示されます。
 </P>
 <A NAME="InteractiveNavigation"></A>
-<H2>7.1. 対話的なナビゲーション</H2>
+<H2>7.2. 対話的なナビゲーション</H2>
 <P>
 音声を主要な手段として使っている場合は、数式全体をまとめて一度に聞くよりも、数式を細かい部分に分けて、それぞれの部分ごとに確認をするほうがよいでしょう。
 </P>
@@ -2187,14 +2273,34 @@ NVDAはドキュメントの読み上げにおいて、これらの対応して�
 <P>
 このコマンドを実行すると MathPlayer のコマンド、例えば矢印キーで数式を部分ごとに確認する、といった操作が可能になります。
 例えば、左矢印キーと右矢印キーで数式の中を移動して、分数の分子や分母などの部分に下矢印キーで移動する、といったことができます。
-ナビゲーション操作の詳細は<A HREF="https://www.dessci.com/en/products/mathplayer/navigation_commands.htm">MathPlayer のドキュメント</A>を参照してください。
 </P>
 <P>
 通常のドキュメントの操作に戻るには Esc キーを押してください。
 </P>
 <P>
-数式コンテンツは、ボタンまたはその他の種類の要素として表示される場合があります。これらの要素に対してアクションを実行すると、その数式に関連するダイアログや詳細情報を表示します。
-ボタンまたは数式を含む要素でアクションを実行するには、 Ctrl+Enter キーを押します。
+数式コンテンツ内での読み取りやナビゲーションのコマンドや設定の詳細については、インストールした数式コンポーネントのドキュメントを参照してください。
+</P>
+<UL>
+<LI><A HREF="https://nsoiffer.github.io/MathCAT/users.html">MathCAT ドキュメント</A>
+<LI><A HREF="https://github.com/tsengwoody/Access8Math">Access8Math ドキュメント</A>
+<LI><A HREF="https://docs.wiris.com/mathplayer/en/mathplayer-user-manual.html">MathPlayer ドキュメント</A>
+</UL>
+
+<P></P>
+<P>
+数式コンテンツがボタンや他の種別の要素として表示され、それをアクティブ化すると、数式に関連するダイアログやさらなる情報が表示されることもあります。
+数式を含むボタンや要素をアクティブにするには、ctrl+enterを押します。
+</P>
+<A NAME="InstallingMathPlayer"></A>
+<H2>7.3. MathPlayer のインストール</H2>
+<P>
+NVDAで数式をサポートするために新しいNVDAアドオンの使用を推奨します。しかし、特定の限定されたシナリオではMathPlayerが適切な選択肢となる場合があります。
+例えば、MathPlayerは新しいアドオンではサポートされていない特定の言語や点字コードをサポートしているかもしれません。
+MathPlayerはWirisのウェブサイトから無料で入手できます。
+<A HREF="https://downloads.wiris.com/mathplayer/MathPlayerSetup.exe">Download MathPlayer</A>。
+MathPlayerをインストールしたら、NVDAを再起動する必要があります。
+MathPlayerに関する情報には Internet Explorer 8 のような古いブラウザ専用であると記載されている場合があります。
+これはMathPlayerを使用して数式コンテンツを視覚的に表示する場合にのみ該当します。NVDAを使用した数式の読み取りとナビゲーションにおいては無視してかまいません。
 </P>
 <A NAME="Braille"></A>
 <H1>8. 点字ディスプレイ</H1>
@@ -2652,6 +2758,19 @@ NVDA のビジョンの設定は、<A HREF="#NVDASettings">NVDA 設定</A> ダ�
 <P>
 スクリーンカーテンを有効にする設定は <A HREF="#NVDASettings">NVDA 設定</A> ダイアログの <A HREF="#VisionSettings">ビジョン</A> カテゴリにあります。
 </P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>キー</TH>
+<TH>説明</TH>
+</TR>
+<TR>
+<TD>スクリーンカーテンの切り替え</TD>
+<TD><CODE>NVDA+ctrl+esc</CODE></TD>
+<TD>画面を黒にしてコンテンツを表示しません。1回押すとNVDAを再起動するまで有効です。2回押すと手動で無効にするまで有効になります。</TD>
+</TR>
+</TABLE>
+
 <P>
 スクリーンカーテンを有効にすると、<A HREF="#Win10Ocr">文字認識</A>の実行やスクリーンショットの撮影など、画面に表示される内容を直接扱う作業は行えません。
 </P>
@@ -2710,7 +2829,12 @@ NVDAは、特定のタスクを簡単に実行するために、あるいは、�
 <P>
 Microsoft Word でテーブルの中を移動する場合に、NVDA は行や列の見出しを必要に応じて自動的に報告することができます。
 この機能を使うためには、まず<A HREF="#NVDASettings">NVDA設定ダイアログ</A> → 書式とドキュメント情報カテゴリ「テーブル情報」で「テーブル」および「行と列の見出し」にチェックをします。
-次に、テーブルのどの行または列が見出しなのかを NVDA に指示します。
+</P>
+<P>
+<A HREF="#MSWordUIA">Microsoft Word ドキュメントに UI オートメーションを使用</A>が有効な場合（最近のバージョンのWordおよびWindowsで既定の設定です）、最初の行のセルは自動的に列の見出しとみなされます。同様に、最初の列のセルは自動的に行の見出しとみなされます。
+</P>
+<P>
+<A HREF="#MSWordUIA">Microsoft Word ドキュメントに UI オートメーションを使用</A>しない場合、テーブルのどの行または列が見出しを含んでいるかをNVDAに指示する必要があります。
 見出しを含む行または列の最初のセルに移動して、以下のコマンドを実行してください:
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
@@ -2910,6 +3034,9 @@ Excel のワークシートにはフォームフィールドが含まれる場�
 
 <A NAME="Poedit"></A>
 <H2>11.6. Poedit</H2>
+<P>
+Poedit 3.4 またはそれ以降では以下の機能が利用できます。
+</P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TH>名称</TH>
@@ -2917,14 +3044,24 @@ Excel のワークシートにはフォームフィールドが含まれる場�
 <TH>説明</TH>
 </TR>
 <TR>
-<TD>コメントウィンドウの報告</TD>
-<TD>Ctrl+Shift+C</TD>
-<TD>コメントウィンドウ内のすべてのコメントを報告します。</TD>
-</TR>
-<TR>
 <TD>翻訳者への注記の報告</TD>
 <TD>Ctrl+Shift+A</TD>
-<TD>翻訳者への注記を報告します。</TD>
+<TD>翻訳者への注記を報告します。2回押すとウィンドウを開いて情報を表示します。</TD>
+</TR>
+<TR>
+<TD>コメントウィンドウの報告</TD>
+<TD>Ctrl+Shift+C</TD>
+<TD>コメントウィンドウ内のすべてのコメントを報告します。2回押すとウィンドウを開いて情報を表示します。</TD>
+</TR>
+<TR>
+<TD>過去のソーステキストの報告</TD>
+<TD><CODE>ctrl+shift+o</CODE></TD>
+<TD>過去のソーステキストを報告します。2回押すとウィンドウを開いて情報を表示します。</TD>
+</TR>
+<TR>
+<TD>翻訳の警告の報告</TD>
+<TD><CODE>ctrl+shift+w</CODE></TD>
+<TD>翻訳の警告を報告します。2回押すとウィンドウを開いて情報を表示します。</TD>
 </TR>
 </TABLE>
 
@@ -3046,6 +3183,8 @@ NVDAメニューの設定サブメニューからダイアログを開くこと�
 すべてのダイアログでは、OKボタンを押すことで変更が確定されます。
 変更をキャンセルするにはキャンセルボタンを押すか Esc キーを押します。
 ダイアログを閉じなくても「適用」ボタンを押すことで変更が確定する場合もあります。
+NVDAのダイアログは多くの場合コンテキストヘルプをサポートしています。
+ダイアログで<CODE>f1</CODE>キーを押すと、フォーカス位置の設定または現在のダイアログに応じて、ユーザーガイドの関連する箇所が開きます。
 いくつかの設定は、ショートカットキーを用いて変更することもできます。ショートカットキーの操作は以下のそれぞれの項目で説明します。
 </P>
 <A NAME="NVDASettings"></A>
@@ -3123,13 +3262,9 @@ NVDAのユーザーインターフェイスやメッセージをどの言語で�
 <LI>情報: NVDAは起動時のメッセージや開発者に役立つ情報など、基本的な情報を記録します。
 <LI>デバッグ警告: 重大なエラーによるものではない警告を記録します。
 <LI>入出力: キーボードや点字ディスプレイからの入力、および音声と点字の出力を記録します。
- <UL>
- <LI>プライバシーが心配な場合は、ログ記録レベルをこのレベルに設定しないでください。
- </UL>
+プライバシーが心配な場合は、ログ記録レベルをこのレベルに設定しないでください。
 <LI>デバッグ: 情報、デバッグ警告、入出力に加えて、デバッグのためのメッセージを記録します。
- <UL>
- <LI>入出力と同じように、プライバシーが心配な場合は、ログ記録レベルをこのレベルに設定しないでください。
- </UL>
+入出力と同じように、プライバシーが心配な場合は、ログ記録レベルをこのレベルに設定しないでください。
 </UL>
 
 <P></P>
@@ -3357,6 +3492,17 @@ NVDA設定ダイアログを開かないでこのオプションを切り替え�
 </P>
 <P>
 この文字説明は、途中で他の文字の読み上げが始まった場合や、Ctrl キーを押したときには、キャンセルされます。
+</P>
+<A NAME="SpeechModesDisabling"></A>
+<H4>読み上げモード切り替えコマンドで使用できるモード</H4>
+<P>
+チェックボックスつきリストを使って、どの <A HREF="#SpeechModes">読み上げモード</A> を <CODE>NVDA+s</CODE> による読み上げモード切り替えの対象にするかを選択できます。
+チェックのないモードは切り替えの対象に含まれません。
+既定の設定ではすべての読み上げモードがチェックされています。
+</P>
+<P>
+例えば「ビープ音」と「オフ」のモードが必要ない場合は、これら2個のチェックを外し、「声」と「オンデマンド」の2個をチェックします。
+少なくとも2個のモードをチェックする必要があります。
 </P>
 <A NAME="SelectSynthesizer"></A>
 <H3>12.1.3. 音声エンジンの選択</H3>
@@ -3828,9 +3974,6 @@ NVDA 設定ダイアログのビジョンカテゴリでは <A HREF="#Vision">�
 この設定は「画面を黒にする」チェックボックスの次にあります。これをチェックすると再び警告を表示できます。
 </P>
 <P>
-NVDA設定ダイアログを開かないでスクリーンカーテンを切り替えたい場合は、<A HREF="#InputGestures">入力ジェスチャーのダイアログ</A>でこの操作にショートカットを割り当ててください。
-</P>
-<P>
 既定の設定では、スクリーンカーテンの開始と終了で効果音が再生されます。
 チェックボックス「スクリーンカーテンの開始と終了の音」をチェックなしにすると、この設定を変更できます。
 </P>
@@ -3869,9 +4012,7 @@ NVDA設定ダイアログのキーボードカテゴリでは、NVDAでのキー
 
 <P></P>
 <P>
-NVDA制御キーがどのキーにも割り当てられていないと、NVDAの機能を呼び出すことができなくなります。
-そこで、どのキーもNVDA制御キーに選択されないまま、NVDA設定ダイアログで OK または適用ボタンを押すと、エラーメッセージを表示します。
-エラーメッセージを閉じて、少なくとも1個のキーをNVDA制御キーに割り当ててください。そうしないとこのダイアログを適切に閉じることができません。
+NVDAキーとして選択されたキーがない場合、多くのNVDAコマンドが利用できなくなります。そのため、少なくとも1個の修飾キーをチェックする必要があります。
 </P>
 <A NAME="KeyboardSettingsSpeakTypedCharacters"></A>
 <H4>入力文字の読み上げ</H4>
@@ -3967,7 +4108,9 @@ NVDA設定ダイアログを開かないでテキストの読み上げ範囲を�
 <A NAME="MouseSettingsRole"></A>
 <H4>マウスカーソル位置の要素の種類の報告</H4>
 <P>
-チェックされている場合、NVDAはマウスカーソルが重なったオブジェクトのロール (種類) を報告します。
+このチェックボックスがチェックされている場合、マウスカーソルがオブジェクトの内側で移動すると、NVDAはオブジェクトに関する情報を報告します。
+これには、オブジェクトの役割（タイプ）や状態（チェック/押されている）、テーブル内のセル座標などが含まれます。
+オブジェクトに関する情報の報告は、<A HREF="#ObjectPresentationSettings">オブジェクト表示</A> や <A HREF="#DocumentFormattingSettings">書式とドキュメント情報</A> のカテゴリなど、他の設定に依存する場合があることに注意してください。
 </P>
 <A NAME="MouseSettingsAudio"></A>
 <H4>マウスカーソルの座標をビープ音で報告</H4>
@@ -4530,6 +4673,27 @@ NVDA が Microsoft Word ドキュメントで使用するアクセシビリテ�
 ただし、基本的なスプレッドシートのナビゲーションと編集は、このオプションによって性能が大幅に向上する場合があります。
 通常はこの機能をオンにすることは推奨しませんが、 Microsoft Excel ビルド 16.0.13522.10000 以上をお使いであれば、この機能をテストし、フィードバックを提供していただけることを歓迎します。
 Microsoft Excel の UI オートメーションの実装は常に変化しており、16.0.13522.10000 より古いバージョンの Microsoft Office では、このオプションに必要な API の実装が不完全な場合があります。
+</P>
+<A NAME="UIAEnhancedEventProcessing"></A>
+<H4>新しいイベント処理を使用</H4>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>. {.hideHeaderRow}</TH>
+<TH>.</TH>
+</TR>
+<TR>
+<TD>選択肢</TD>
+<TD>既定の値 (有効), 無効, 有効</TD>
+</TR>
+<TR>
+<TD>既定の値</TD>
+<TD>有効</TD>
+</TR>
+</TABLE>
+
+<P>
+このオプションが有効になっている場合、多くのUIオートメーションイベントが発生している場合、例えばターミナルに大量のテキストが出力されている場合などに、NVDAの応答性が改善されます。
+このオプションを変更した後、変更を有効にするためにNVDAを再起動する必要があります。
 </P>
 <A NAME="AdvancedSettingsConsoleUIA"></A>
 <H4>Windows コンソール対応</H4>
@@ -5182,6 +5346,10 @@ NVDAアルファ版を利用するときにアドオンの「開発版」が必�
 次に、更新、インストール、または置換アクションを使用してインストールを開始します。
 </P>
 <P>
+複数のアドオンをまとめてインストールできます。
+「利用可能なアドオン」のタブで複数のアドオンを選択し、選択した項目でコンテキストメニューから「選択したアドオンをインストール」を実行します。
+</P>
+<P>
 アドオンストアの外部から入手したアドオンをインストールするには、「外部ソースからインストール」ボタンを押してください。
 これにより、コンピューターやネットワーク上のどこかにあるアドオンパッケージ（<CODE>.nvda-addon</CODE>ファイル）を参照できます。
 アドオンパッケージを開くと、インストールプロセスが開始されます。
@@ -5200,6 +5368,7 @@ NVDAがシステムにインストールされて実行されている場合、�
 NVDAは削除の確認を求めます。
 インストールと同様に、アドオンを完全に削除するにはNVDAを再起動する必要があります。
 それまでの間、リスト内のそのアドオンのステータスは「削除保留中」と表示されます。
+インストールと同様に、複数のアドオンをまとめて削除できます。
 </P>
 <A NAME="AddonStoreDisablingEnabling"></A>
 <H3>13.2.3. アドオンの無効化と有効化</H3>
@@ -5211,6 +5380,17 @@ NVDAは削除の確認を求めます。
 アドオンが以前に「無効」であった場合、ステータスは「再起動後に有効」と表示されます。
 アドオンが以前に「有効」であった場合、ステータスは「再起動後に無効」と表示されます。
 アドオンをインストールまたは削除する場合と同様に、変更を有効にするにはNVDAを再起動する必要があります。
+「利用可能なアドオン」タブで複数のアドオンを選択し、選択した項目でコンテキストメニューを起動して適切なアクションを選択することで、複数のアドオンをまとめて有効または無効にできます。
+</P>
+<A NAME="AddonStoreReviews"></A>
+<H3>13.2.4. アドオンストアのレビュー</H3>
+<P>
+アドオンをインストールする前に、他の人のレビューを読みたいかもしれません。
+また、試したアドオンについてのフィードバックを他のユーザーに提供することが役立つ場合があります。
+アドオンのレビューを読むには、「利用可能なアドオン」または「更新可能なアドオン」タブからアドオンを選択し、「コミュニティレビュー」を実行します。
+これはGitHubディスカッションのウェブページにリンクされており、アドオンのレビューを読んだり書いたりできます。
+これはアドオン開発者への連絡を目的とした機能ではありません。
+この機能は、ユーザーがフィードバックを共有し、アドオンが役立つかどうかをユーザーが判断できることを目的としています。
 </P>
 <A NAME="incompatibleAddonsManager"></A>
 <H2>13.3. 非互換のアドオン</H2>
@@ -5240,12 +5420,37 @@ NVDAを終了する際に、すべてのアドオンを無効にして再起動�
 <H2>14.1. ログビューアー</H2>
 <P>
 NVDAメニュー内のツール内にあるログビューアーでは、最後にNVDAを起動したときから現在までに記録されたすべてのログを閲覧できます。
-NVDA+F1 を押すと、ログビューアーを開いて、さらに現在のナビゲーターオブジェクトの開発者向け情報を表示します。
 </P>
 <P>
 コンテンツを読むだけでなく、ログファイルを保存したり、ビューアーを更新することができるので、ログビューアーを開いた後からも最新の出力を得ることができます。
 これらのオプションは、ビューアーのログメニューから利用できます。
 </P>
+<P>
+ログビューアを開いたときに表示されるファイルは、PCの <CODE>%temp%\nvda.log</CODE> に保存されます。
+NVDAが起動されるたびに新しいログファイルが作成されます。
+新しいログファイルが作成されると、以前のNVDAセッションのログファイルは <CODE>%temp%\nvda-old.log</CODE> に移動します。
+</P>
+<P>
+ログビューアを開かずに、現在のログファイルの一部をクリップボードにコピーすることもできます。
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>キー</TH>
+<TH>説明</TH>
+</TR>
+<TR>
+<TD>ログビューアを開く</TD>
+<TD><CODE>NVDA+f1</CODE></TD>
+<TD>ログビューアを開き、現在のナビゲーターオブジェクトに関する開発者情報を表示します。</TD>
+</TR>
+<TR>
+<TD>ログの一部をクリップボードにコピー</TD>
+<TD><CODE>NVDA+ctrl+shift+f1</CODE></TD>
+<TD>1回目に押すと、キャプチャするべきログ内容の開始点を設定します。2回目に押すと、開始点からのログ内容をクリップボードにコピーします。</TD>
+</TR>
+</TABLE>
+
 <A NAME="SpeechViewer"></A>
 <H2>14.2. スピーチビューアー</H2>
 <P>
@@ -5304,7 +5509,7 @@ NVDA設定ダイアログを開かないで点字ビューアーの有効、無�
 NVDAメニュー内のツールにあるPythonコンソールは開発用のツールで、デバッグや一般的なNVDA内部の動作検証、アプリのアクセシビリティ階層構造の検査などに使用できます。
 詳細は、<A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html">NVDA 開発者ガイド</A>を参照してください。
 </P>
-<A NAME="toc151"></A>
+<A NAME="toc156"></A>
 <H2>14.5. アドオンストア</H2>
 <P>
 <A HREF="#AddonsManager">NVDAアドオンストア</A>が開きます。
@@ -5355,7 +5560,30 @@ COM の登録が解除されると、ブラウザー、デスクトップアプ�
 <H2>14.8. プラグインの再読み込み</H2>
 <P>
 この項目を実行すると、アプリモジュールとグローバルプラグインをNVDAを再起動することなく再読み込みできます。これは開発者にとって便利です。
+アプリモジュールは、NVDAが特定のアプリとどのように対話するかを管理します。
+グローバルプラグインは、NVDAがすべてのアプリとどのように対話するかを管理します。
 </P>
+<P>
+以下のNVDAキーコマンドも役立つかもしれません:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>キー</TH>
+<TH>説明</TH>
+</TR>
+<TR>
+<TD>プラグインを再読み込み</TD>
+<TD><CODE>NVDA+ctrl+f3</CODE></TD>
+<TD>NVDAのグローバルプラグインとアプリモジュールを再読み込みします。</TD>
+</TR>
+<TR>
+<TD>アプリモジュールと実行ファイルを報告</TD>
+<TD><CODE>NVDA+ctrl+f1</CODE></TD>
+<TD>現在キーボードフォーカスを持つアプリに関連付けられたアプリモジュール（存在する場合）と実行ファイルの名前を報告します。</TD>
+</TR>
+</TABLE>
+
 <A NAME="SupportedSpeechSynths"></A>
 <H1>15. サポートされている音声エンジン</H1>
 <P>
@@ -6264,7 +6492,7 @@ USB接続で HumanWare プロトコルを使用する場合は、事前に製造
 以下は Brailliant BI/B および BrailleNote touch で使用できるNVDA用のキー割り当てです。
 各キーの位置については、ディスプレイの説明書を参照してください。
 </P>
-<A NAME="toc171"></A>
+<A NAME="toc176"></A>
 <H3>16.9.1. すべてのモデル</H3>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -6353,7 +6581,7 @@ USB接続で HumanWare プロトコルを使用する場合は、事前に製造
 </TR>
 </TABLE>
 
-<A NAME="toc172"></A>
+<A NAME="toc177"></A>
 <H3>16.9.2. Brailliant BI 32, BI 40 および B 80</H3>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -6374,7 +6602,7 @@ USB接続で HumanWare プロトコルを使用する場合は、事前に製造
 </TR>
 </TABLE>
 
-<A NAME="toc173"></A>
+<A NAME="toc178"></A>
 <H3>16.9.3. Brailliant BI 14</H3>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -6407,8 +6635,7 @@ USB接続で HumanWare プロトコルを使用する場合は、事前に製造
 <H2>16.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille シリーズ</H2>
 <P>
 <A HREF="https://www.hims-inc.com/">HIMS</A> 社の Braille Sense, Braille EDGE, Smart Beetle および Sync Braille ディスプレイを USB または Bluetooth で接続すれば NVDA で利用できます。
-USB 接続のときは HIMS 社が提供する USB ドライバーをインストールしておく必要があります。
-USB ドライバーのダウンロード: <A HREF="http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip</A>
+USB 接続のときは <A HREF="http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">HIMS 社が提供する USB ドライバー</A>をインストールしておく必要があります。
 </P>
 <P>
 NVDA で利用するときのキー割り当ては以下のとおりです。
@@ -6893,8 +7120,24 @@ NVDA で利用するときのキー割り当ては以下のとおりです。
 
 <P></P>
 <P>
-これらの機種では点字ディスプレイの自動検出は利用できません。
+これらのディスプレイは、NVDAの点字ディスプレイ自動検出機能をサポートしていません。
+ディスプレイのUSBドライバーには、ディスプレイの読み込みに問題を引き起こす可能性のあるオプションがあります。
+次の手順を試してください：
 </P>
+<OL>
+<LI><A HREF="https://www.papenmeier-rehatechnik.de/en/service/downloadcenter/software/articles/software-braille-devices.html">最新のドライバー</A> をインストールしていることを確認してください。
+<LI>Windowsデバイスマネージャーを開きます。
+<LI>リストを下にスクロールして、「USBコントローラー」または「USBデバイス」を探します。
+<LI>「Papenmeier Braillex USB Device」を選択します。
+<LI>プロパティを開き、「詳細設定」タブに切り替えます。
+「詳細設定」タブが表示されないことがあります。
+その場合は、点字ディスプレイをコンピューターから切断し、NVDAを終了してから少し待ってから、点字ディスプレイを再接続してください。
+必要であれば、この操作を4回から5回繰り返してください。
+「詳細設定」タブがまだ表示されない場合は、コンピューターを再起動してください。
+<LI>「Load VCP」オプションを無効にします。
+</OL>
+
+<P></P>
 <P>
 多くの機種に Easy Access Bar (EAB) があり、直感的ですばやい操作ができます。
 この EAB は4方向に動かせて、各方向ごとに2個のスイッチがあります。
@@ -8082,10 +8325,6 @@ Eurobrailleのb.book、b.note、Esys、Esytime、およびIrisディスプレイ
 <TD><CODE>control+End</CODE> キー</TD>
 <TD><CODE>c4+c5+c6</CODE></TD>
 </TR>
-<TR>
-<TD>HID キーボード シミュレーションの切り替え</TD>
-<TD><CODE>l1+joystick1Down</CODE>, <CODE>l8+joystick1Down</CODE></TD>
-</TR>
 </TABLE>
 
 <A NAME="Eurobraillebnote"></A>
@@ -8753,6 +8992,7 @@ NVDA のセキュアモードは、ユーザーが NVDA の設定を変更する
 <LI><A HREF="#AddonsManager">アドオンストア</A>
 <LI><A HREF="#PythonConsole">NVDA Python コンソール</A>
 <LI><A HREF="#LogViewer">ログビューアー</A> およびログ出力
+<LI><A HREF="#BrailleViewer">点字ビューアー</A> および <A HREF="#SpeechViewer">スピーチビューアー</A>
 <LI>NVDA メニューからの外部ドキュメント (ユーザーガイドや貢献者ファイルなど) の閲覧
 </UL>
 
@@ -8810,6 +9050,10 @@ NVDAの実行ファイル名とオプション、およびオプション同士�
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
+<TH>. {.hideHeaderRow}</TH>
+<TH>.</TH>
+</TR>
+<TR>
 <TD><CODE>nvda -mc CONFIGPATH</CODE></TD>
 <TD>サウンド、インターフェイス、開始メッセージなどを出さないでNVDAを実行し、そのときに CONFIGPATH の場所をNVDA設定フォルダーとして使用</TD>
 </TR>
@@ -8824,6 +9068,10 @@ NVDAの実行ファイル名とオプション、およびオプション同士�
 パラメーターはオプションの後に指定します。ただし短い書き方のオプションとそのパラメーターは空白で区切り、長い書き方のオプションとそのパラメーターは等号(=)で区切ります。例えば:
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>. {.hideHeaderRow}</TH>
+<TH>.</TH>
+</TR>
 <TR>
 <TD><CODE>nvda -l 10</CODE></TD>
 <TD>ログ記録レベルを「デバッグ」に指定してNVDAを起動</TD>
