@@ -38,8 +38,10 @@ Windows 8.1 on vanhin tuettava versio.
 - Lisätty tuki Bluetooth Low Energy -yhteyttä hyödyntäville HID-pistenäytöille. (#15470)
 - Uusi alkuperäinen valintatila (otetaan käyttöön ja poistetaan käytöstä näppäinkomennolla ``NVDA+Vaihto+F10``) on nyt käytettävissä  NVDA:n selaustilassa Mozilla Firefoxissa
 Kun se on käytössä, tekstin valitseminen selaustilassa vaikuttaa myös Firefoxin omaan, alkuperäiseen valintaan.
-Tekstinkopiointikomento ``Ctrl+C`` välitetään suoraan Firefoxille, jolloin muotoilutkin kopioidaan pelkän NVDA:n tekstiesityksen sijaan. (#15830)
-- Muotoilut säilyvät nyt kopioitaessa tekstiä Microsoft Wordissa NVDA:n selaustilassa. (#16129)
+Tekstinkopiointikomento ``Ctrl+C`` välitetään suoraan Firefoxille, jolloin muotoilutkin kopioidaan pelkän NVDA:n tekstiesityksen sijaan.
+Huomaa kuitenkin, että koska Firefox käsittelee varsinaisen kopioinnin, NVDA ei sano tässä tilassa "kopioitu leikepöydälle". (#15830)
+- Muotoilut säilyvät nyt kopioitaessa tekstiä Microsoft Wordissa NVDA:n selaustilassa.
+Sivuvaikutuksena on, että NVDA ei enää sano "kopioitu leikepöydälle" painettaessa ``Ctrl+C`` Microsoft Wordin/Outlookin selaustilassa, koska kopioinnin käsittelee nyt sovellus eikä NVDA. (#16129)
 - Lisätty uusi "pyydettäessä"-puhetila.
 Kun se on käytössä, NVDA ei puhu automaattisesti (esim. kohdistinta siirrettäessä), mutta puhuu kuitenkin käytettäessä komentoja, joiden tarkoituksena on nimenomaan puhua jotain (esim. ikkunan nimen). (#481, @CyrilleB79)
 - NVDA:n asetusten Puhe-kategoriassa on nyt mahdollista jättää pois tarpeettomat puhetilat Vaihda puhetilaa -komennosta (``NVDA+S``). (#15806, @lukaszgo1)
@@ -139,7 +141,13 @@ Katso muutokset tämän dokumentin [englanninkielisestä versiosta ../en/changes
 
 
 = 2023.3.4 =
-Tämä versio korjaa asennusohjelmassa ilmenneen ongelman.
+Tämä versio korjaa tietoturva- ja asennusohjelmassa ilmenneen ongelman.
+Ilmoita tietoturvaongelmista vastuullisesti noudattaen NVDA:n [tietoturvakäytäntöä https://github.com/nvaccess/nvda/blob/master/security.md].
+
+== Tietoturvakorjaukset ==
+- Estetty mukautettujen asetusten lataaminen suojatun tilan ollessa pakotettuna käyttöön.
+([GHSA-727q-h8j2-6p45 https://github.com/nvaccess/nvda/security/advisories/GHSA-727q-h8j2-6p45])
+-
 
 == Bugikorjaukset ==
 - Korjattu ongelma, joka aiheutti sen, ettei NVDA-prosessi sulkeutunut oikein. (#16123)
