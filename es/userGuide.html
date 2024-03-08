@@ -8993,6 +8993,7 @@ El modo seguro deshabilita:
 <LI>El guardado de la configuración y otras opciones en disco
 <LI>El guardado del mapa de gestos en disco
 <LI>Características de los <A HREF="#ConfigurationProfiles">perfiles de configuración</A> tales como la creación, la eliminación, el renombrado de perfiles etc.
+<LI>La carga de carpetas de la configuración personalizada utilizando <A HREF="#CommandLineOptions">la opción de línea de órdenes <CODE>-c</CODE></A>
 <LI>La actualización de NVDA y la creación de copias portables
 <LI>La <A HREF="#AddonsManager">Tienda de Complementos</A>
 <LI>La <A HREF="#PythonConsole">consola de Python de NVDA</A>
@@ -9101,103 +9102,104 @@ Seguidamente van las opciones de línea de órdenes para NVDA:
 <TH>Descripción</TH>
 </TR>
 <TR>
-<TD>-h</TD>
-<TD>--help</TD>
+<TD><CODE>-h</CODE></TD>
+<TD><CODE>--help</CODE></TD>
 <TD>muestra la ayuda en línea de órdenes y sale</TD>
 </TR>
 <TR>
-<TD>-q</TD>
-<TD>--quit</TD>
+<TD><CODE>-q</CODE></TD>
+<TD><CODE>--quit</CODE></TD>
 <TD>Sale de la copia que ya se esté ejecutando de NVDA</TD>
 </TR>
 <TR>
-<TD>-k</TD>
-<TD>--check-running</TD>
+<TD><CODE>-k</CODE></TD>
+<TD><CODE>--check-running</CODE></TD>
 <TD>Informa si NVDA está en ejecución a través del código de salida; 0 si está en ejecución, 1 si no está en ejecución</TD>
 </TR>
 <TR>
-<TD>-f LOGFILENAME</TD>
-<TD>--log-file=LOGFILENAME</TD>
-<TD>El fichero donde deberían escribirse los mensajes de registro</TD>
+<TD><CODE>-f LOGFILENAME</CODE></TD>
+<TD><CODE>--log-file=LOGFILENAME</CODE></TD>
+<TD>El fichero donde se deberían escribir los mensajes del registro.  El registro siempre está desactivado si el modo seguro está habilitado.</TD>
 </TR>
 <TR>
-<TD>-l LOGLEVEL</TD>
-<TD>--log-level=LOGLEVEL</TD>
-<TD>El nivel más bajo de mensaje registrado (debug 10, input/output 12, debug warning 15, info 20, disabled 100)</TD>
+<TD><CODE>-l LOGLEVEL</CODE></TD>
+<TD><CODE>--log-level=LOGLEVEL</CODE></TD>
+<TD>El nivel más bajo del mensaje registrado (debug 10, input/output 12, debug warning 15, info 20, disabled 100). El registro está siempre deshabilitado si el modo seguro está habilitado.</TD>
 </TR>
 <TR>
-<TD>-c CONFIGPATH</TD>
-<TD>--config-path=CONFIGPATH</TD>
-<TD>La ruta donde se almacenan todos los ajustes para NVDA</TD>
+<TD><CODE>-c CONFIGPATH</CODE></TD>
+<TD><CODE>--config-path=CONFIGPATH</CODE></TD>
+<TD>La ruta donde se almacenan todas las opciones de NVDA. El valor predeterminado se fuerza si el modo seguro está habilitado.</TD>
 </TR>
 <TR>
-<TD>No</TD>
-<TD>--lang=LANGUAGE</TD>
+<TD><CODE>No</CODE></TD>
+<TD><CODE>--lang=LANGUAGE</CODE></TD>
 <TD>Sobrescribe el idioma configurado de NVDA. Establece "Windows" para el usuario actual por defecto, "en" para Inglés, etc.</TD>
 </TR>
 <TR>
-<TD>-m</TD>
-<TD>--minimal</TD>
+<TD><CODE>-m</CODE></TD>
+<TD><CODE>--minimal</CODE></TD>
 <TD>Sin sonidos, sin interface, sin mensaje de inicio etc</TD>
 </TR>
 <TR>
-<TD>-s</TD>
-<TD>--secure</TD>
+<TD><CODE>-s</CODE></TD>
+<TD><CODE>--secure</CODE></TD>
 <TD>Inicia NVDA en <A HREF="#SecureMode">Modo Seguro</A></TD>
 </TR>
 <TR>
-<TD>None</TD>
-<TD>--disable-addons</TD>
+<TD><CODE>No</CODE></TD>
+<TD><CODE>--disable-addons</CODE></TD>
 <TD>Los complementos no tendrán efecto</TD>
 </TR>
 <TR>
-<TD>None</TD>
-<TD>--debug-logging</TD>
+<TD><CODE>No</CODE></TD>
+<TD><CODE>--debug-logging</CODE></TD>
 <TD>Habilita el nivel de registro de depuración sólo para esta ejecución. Esta configuración sobreescribirá cualquier otro nivel de registro ( --loglevel, -l) argumento dado, incluyendo la opción no registro.</TD>
 </TR>
 <TR>
-<TD>None</TD>
-<TD>--no-logging</TD>
+<TD><CODE>No</CODE></TD>
+<TD><CODE>--no-logging</CODE></TD>
 <TD>Deshabilita el registro durante el uso de NVDA. Esta opción puede sobreescribirse si se especifica un nivel de registro ( --loglevel, -l) desde la línea de órdenes o si el registro de depuración está activado.</TD>
 </TR>
 <TR>
-<TD>None</TD>
-<TD>--no-sr-flag</TD>
+<TD><CODE>No</CODE></TD>
+<TD><CODE>--no-sr-flag</CODE></TD>
 <TD>No cambia la bandera global de sistema del lector de pantalla</TD>
 </TR>
 <TR>
-<TD>None</TD>
-<TD>--install</TD>
+<TD><CODE>No</CODE></TD>
+<TD><CODE>--install</CODE></TD>
 <TD>Se instala NVDA iniciando la nueva copia instalada</TD>
 </TR>
 <TR>
-<TD>None</TD>
-<TD>--install-silent</TD>
+<TD><CODE>No</CODE></TD>
+<TD><CODE>--install-silent</CODE></TD>
 <TD>Instala en silencio NVDA (No inicia la nueva copia instalada)</TD>
 </TR>
 <TR>
-<TD>None</TD>
-<TD>--enable-start-on-logon=True|False</TD>
+<TD><CODE>No</CODE></TD>
+<TD><CODE>--enable-start-on-logon=True</CODE></TD>
+<TD>False</TD>
 <TD>Al instalar, habilita <A HREF="#StartAtWindowsLogon">arrancar en la pantalla de inicio</A> de NVDA</TD>
 </TR>
 <TR>
-<TD>None</TD>
-<TD><S>copy-portable-config</TD>
-<TD>Al instalar, copia la configuración portable desde la ruta proporcionada (</S>config-path, -c) a la actual cuenta de usuario</TD>
+<TD><CODE>No</CODE></TD>
+<TD><CODE>--copy-portable-config</CODE></TD>
+<TD>Al instalar, copia la configuración portable desde la ruta proporcionada (--config-path, -c) a la actual cuenta de usuario</TD>
 </TR>
 <TR>
-<TD>None</TD>
-<TD>--create-portable</TD>
+<TD><CODE>No</CODE></TD>
+<TD><CODE>--create-portable</CODE></TD>
 <TD>Crea una copia portable de NVDA (iniciando la copia recientemente creada). Requiere especificarse --portable-path</TD>
 </TR>
 <TR>
-<TD>None</TD>
-<TD>--create-portable-silent</TD>
+<TD><CODE>No</CODE></TD>
+<TD><CODE>--create-portable-silent</CODE></TD>
 <TD>Crea una copia portable de NVDA (no inicia la copia recientemente instalada). Requiere expecificarse --portable-path</TD>
 </TR>
 <TR>
-<TD>None</TD>
-<TD>--portable-path=PORTABLEPATH</TD>
+<TD><CODE>No</CODE></TD>
+<TD><CODE>--portable-path=PORTABLEPATH</CODE></TD>
 <TD>La ruta donde se creará una copia portable</TD>
 </TR>
 </TABLE>
