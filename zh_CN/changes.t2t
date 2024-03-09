@@ -6,46 +6,46 @@ NVDA 更新日志
 = 2024.1 =
 
 在本版新增了一种手动朗读模式：
-开启此模式后，NVDA 将不会自动朗读信息（例如在光标移动时），但仍会响应明确朗读信息的指令（例如读出窗口标题）。
+开启此模式后，NVDA 不会自动朗读信息（例如在光标移动时），但仍会响应明确朗读信息的指令（例如读出窗口标题）。
 您可以在 NVDA 设置的「语音」类别中，从「循环语音模式中可用的模式」(NVDA+s) 排除不需要的语音模式。
 
-我们还新增了适用于火狐浏览器的应用原生选择模式（NVDA+shift+f10）：
+我们还支持了 Firefox 的应用原生选择模式（NVDA+shift+f10）：
 开启此模式后，在浏览模式下选择文本会同时操控 Firefox 的原生选择功能。
 通过「control+c」复制文本将直接传递给 Firefox，从而复制富文本内容，而非 NVDA 复制的纯文本形式。
 
-自本版起，插件商店支持批量操作：现在可以批量选择插件进行安装、启用等操作。
+关于插件商店，一个显著的变化是，插件商店支持了批量操作：现在可以批量选择插件进行安装、启用等操作。
 同时新增了打开所选插件的网页评论功能。
 
-从「选择合成器」对话框中将‘音频输出设备’和‘音频闪避模式’选项移动到了新增的“音频”设置面板。
+另外，自本版起，我们从「选择合成器」对话框中将‘音频输出设备’和‘音频闪避模式’选项移动到了新增的“音频”设置面板。
 您可以通过 NVDA+control+u 打开此设置面板。
 
-此外，我们一如既往的对eSpeak-NG 语音合成器、LibLouis 盲文翻译器和 Unicode CLDR 进行了更新。
+如你所知，我们一如既往的对eSpeak-NG 语音合成器、LibLouis 盲文翻译器和 Unicode CLDR 进行了更新。
 同时新增了泰语、菲律宾语和罗马尼亚语盲文表。
 
 本版的其他修复主要集中于插件商店、盲文、Libre Office、Microsoft Office 和音频方面。
 
-== Important notes == 
-- This release breaks compatibility with existing add-ons.
-- Windows 7, and Windows 8 are no longer supported.
-Windows 8.1 is the minimum Windows version supported.
+== 重要提示 ==
+- 这是一个打破插件 API 兼容性的版本。
+- 不再支持 Windows 7 和 Windows 8。
+支持的最低 Windows 版本是 Windows 8.1。
 -
 
-== New Features ==
-- Add-on Store:
-  - The Add-on Store now supports bulk actions (e.g. installing, enabling add-ons) by selecting multiple add-ons. (#15350, #15623, @CyrilleB79)
-  - A new action has been added to open a dedicated webpage to see or provide feedback about the selected add-on. (#15576, @nvdaes)
+== 新特性 ==
+- 插件商店：
+  - 插件商店支持选中多个插件进行批量操作：例如批量安装、启用等。 (#15350, #15623, @CyrilleB79)
+  - 新增了打开所选插件的网页评论功能，可以在该网页内提交相关插件的反馈。 (#15576, @nvdaes)
   -
-- Added support for Bluetooth Low Energy HID Braille displays. (#15470)
-- A new Native Selection mode (toggled by ``NVDA+shift+f10``) is now available in NVDA's browse mode for Mozilla Firefox.
-When turned on, selecting text in browse mode will also manipulate Firefox's own native selection.
-Copying text with ``control+c`` will pass straight through to Firefox, thus copying the rich content, rather than NVDA's plain text representation.
-Note however that as Firefox is handling the actual copy, NVDA will not report a "copy to clipboard" message in this mode. (#15830)
-- When copying text in Microsoft Word with NVDA's browse mode enabled, formatting is now also included.
-A side affect of this is that NVDA will no longer report a "copy to clipboard" message when pressing ``control+c`` in Microsoft Word / Outlook browse mode, as the application is now handling the copy, not NVDA. (#16129)
-- A new "on-demand" speech mode has been added.
-When speech is on-demand, NVDA does not speak automatically (e.g. when moving the cursor) but still speaks when calling commands whose goal is explicitly to report something (e.g. report window title). (#481, @CyrilleB79)
-- In the Speech category of NVDA's settings, it is now possible to exclude unwanted speech modes from the Cycle speech modes command (``NVDA+s``). (#15806, @lukaszgo1)
-  - If you are currently using the NoBeepsSpeechMode add-on consider uninstalling it, and disabling "beeps" and "on-demand" modes in the settings.
+- 添加了对低功耗蓝牙 HID 盲文点显器的支持。 (#15470)
+- 新增了适用于 Mozilla Firefox 的应用原生选择模式， NVDA+shift+f10切换。
+开启此模式后，在浏览模式下选择文本会同时操控 Firefox 的原生选择功能。
+通过「control+c」复制文本将直接传递给 Firefox，从而复制富文本内容，而非 NVDA 复制的纯文本形式。
+但请注意，由于实际的复制操作是由 Firefox 处理的，因此 NVDA 在此模式下不会提示“XXX 已复制到剪贴板”。 (#15830)
+- 在 Microsoft Word/Outlook 中， NVDA 在浏览模式下复制文本时，也会复制格式信息。
+由于实际的复制操作是由应用程序处理的，因此，当您在此模式下按 Ctrl+C 不会提示“XXX 已复制到剪贴板”。 (#16129)
+- 新增了手动朗读模式。
+开启此模式后，NVDA 不会自动朗读信息（例如在光标移动时），但仍会响应明确朗读信息的指令（例如读出窗口标题）。 (#481, @CyrilleB79)
+- 支持在 NVDA 设置的「语音」类别中，从「循环语音模式中可用的模式」(NVDA+s) 排除不需要的语音模式。 (#15806, @lukaszgo1)
+  - 如果您当前正在使用 NoBeepsSpeechMode 插件，建议考虑将其卸载，在设置中禁用“提示音”和“手动朗读”模式，即可恢复到旧行为。
   -
 -
 
