@@ -5411,7 +5411,7 @@ Um NVDA mit deaktivierten NVDA-Erweiterungen neu zu starten, wählen Sie die ent
 Alternativ können Sie auch die <A HREF="#CommandLineOptions">Kommandozeilenoption</A> <CODE>--disable-addons</CODE> verwenden.
 </P>
 <P>
-Sie können die verfügbaren inkompatiblen NVDA-Erweiterungen mit Hilfe der Registerkarte <A HREF="#AddonStoreFilterStatus">verfügbaren und zu aktualisierende NVDA-Erweiterungen</A> durchsuchen.
+Sie können die verfügbaren inkompatiblen NVDA-Erweiterungen mit Hilfe der Registerkarte <A HREF="#AddonStoreFilterStatus">verfügbare und zu aktualisierende NVDA-Erweiterungen</A> durchsuchen.
 Sie können die installierten inkompatiblen NVDA-Erweiterungen über die Registerkarte <A HREF="#AddonStoreFilterStatus">Inkompatible NVDA-Erweiterungen</A> durchsuchen.
 </P>
 <A NAME="ExtraTools"></A>
@@ -8982,8 +8982,8 @@ Der geschützte Modus in NVDA verhindert, dass Benutzer ihre NVDA-Konfiguration 
 </P>
 <P>
 NVDA läuft im geschützten Modus, wenn es bei <A HREF="#SecureScreens">geschützten Sicherheitsmeldungen</A> ausgeführt wird, es sei denn, der <A HREF="#SystemWideParameters">System-Parameter</A> <CODE>serviceDebug</CODE> ist aktiviert.
-Um NVDA zu zwingen, immer im sicheren Modus zu starten, setzen Sie den <CODE>forceSecureMode</CODE> <A HREF="#SystemWideParameters">systemweiter Parameter</A>.
-NVDA kann auch im sicheren Modus mit der <A HREF="#CommandLineOptions">Kommandozeilenoption</A> <CODE>-s</CODE> gestartet werden.
+Um NVDA zu zwingen, immer im geschützten Modus zu starten, setzen Sie den <CODE>forceSecureMode</CODE> <A HREF="#SystemWideParameters">systemweiter Parameter</A>.
+NVDA kann auch im geschützten Modus mit der <A HREF="#CommandLineOptions">Kommandozeilenoption</A> <CODE>-s</CODE> gestartet werden.
 </P>
 <P>
 Im geschützten Modus sind folgende Dinge deaktiviert:
@@ -8992,6 +8992,7 @@ Im geschützten Modus sind folgende Dinge deaktiviert:
 <LI>Speichern der Konfiguration und anderer Einstellungen auf dem Speichermedium
 <LI>Speichern der Tastenbefehle auf dem Speichermedium
 <LI>Aktionen im Dialogfeld für die <A HREF="#ConfigurationProfiles">Konfigurationsprofile</A> wie z. B. Erstellen, Löschen, Profile umbenennen, etc.
+<LI>Verwenden benutzerdefinierter Einstellungspfade mittels <A HREF="#CommandLineOptions">des <CODE>-c</CODE>-Kommandozeilenbefehls</A>
 <LI>Aktualisieren von NVDA und Erstellen portabler Versionen
 <LI>Der <A HREF="#AddonsManager">Store für NVDA-Erweiterungen</A>
 <LI>Die <A HREF="#PythonConsole">Python-Konsole in NVDA</A>
@@ -9117,17 +9118,17 @@ Folgende Kommandozeilenoptionen stehen zur Verfügung:
 <TR>
 <TD><CODE>-f &lt;Protokolldateiname&gt;</CODE></TD>
 <TD><CODE>--log-file=&lt;Protokolldateiname&gt;</CODE></TD>
-<TD>Legt die Datei fest, in der die Protokollierung stattfinden soll.</TD>
+<TD>Legt die Datei fest, in der die Protokollierung stattfinden soll. Die Protokollierung ist im geschützten Modus immer deaktiviert.</TD>
 </TR>
 <TR>
 <TD><CODE>-l &lt;Protokollierungsstufe&gt;</CODE></TD>
 <TD><CODE>--log-level=&lt;Protokollierungsstufe&gt;</CODE></TD>
-<TD>Die niedrigste Stufe der protokollierten Meldung (Debug 10, Eingabe/Ausgabe 12, Debug-Warnungen 15, Info 20, Ausgeschaltet 100).</TD>
+<TD>Die niedrigste Stufe der protokollierten Meldung (Debug 10, Eingabe/Ausgabe 12, Debug-Warnungen 15, Info 20, Ausgeschaltet 100). Die Protokollierung ist im geschützten Modus immer deaktiviert.</TD>
 </TR>
 <TR>
 <TD><CODE>-c &lt;Konfigurationspfad&gt;</CODE></TD>
 <TD><CODE>--config-path=&lt;KonfigurationsPfad&gt;</CODE></TD>
-<TD>Gibt den Ordner an, in dem alle NVDA-Einstellungen gespeichert werden sollen.</TD>
+<TD>Gibt den Ordner an, in dem alle NVDA-Einstellungen gespeichert werden sollen. Der Standardwert wird erzwungen, wenn der geschützte Modus aktiviert ist.</TD>
 </TR>
 <TR>
 <TD>Keine</TD>
