@@ -5,7 +5,7 @@ Quoi de Neuf dans NVDA
 
 = 2024.1 =
 
-Un nouveau mode de parole « à la demande » a été ajouté.
+Un nouveau mode de parole "à la demande" a été ajouté.
 Lorsqu'il est activé, NVDA ne parle pas automatiquement (par exemple lors du déplacement du curseur) mais parle quand même lors de l'appel de commandes dont le but est explicitement d'annoncer quelque chose (par exemple l'annonce du titre de la fenêtre).
 Dans la catégorie Parole des paramètres de NVDA, il est désormais possible d'exclure les modes de parole non souhaités de la commande de défilement entre les modes de parole (``NVDA+s``).
 
@@ -39,13 +39,13 @@ Windows 8.1 devient la version minimale de Windows prise en charge.
 - Un nouveau mode de sélection native (activé par ``NVDA+maj+f10``) est désormais disponible dans le mode navigation de NVDA pour Mozilla Firefox.
 Lorsqu'il est activé, la sélection de texte en mode navigation manipulera également la sélection native de Firefox.
 Copier du texte avec ``contrôle+c`` sera transmis directement à Firefox, copiant ainsi le contenu riche, plutôt que la représentation en texte brut de NVDA.
-Notez cependant que comme Firefox gère la copie lui-même, NVDA n'annoncera pas de message « copié dans le presse-papiers » dans ce mode. (#15830)
+Notez cependant que comme Firefox gère la copie lui-même, NVDA n'annoncera pas de message "copié dans le presse-papiers" dans ce mode. (#15830)
 - Lors de la copie de texte dans Microsoft Word avec le mode navigation de NVDA activé, le formatage est désormais également inclus.
 En revanche, NVDA n'annoncera plus de message "copié dans le presse-papiers" lorsque vous appuyez sur ``contrôle+c`` en mode navigation dans Microsoft Word ou Outlook, car l'application gère désormais la copie à la place de NVDA. (#16129)
 - Un nouveau mode de parole "à la demande" a été ajouté.
 Lorsqu'il est activé, NVDA ne parle pas automatiquement (par exemple lors du déplacement du curseur) mais parle quand même lors de l'appel de commandes dont le but est explicitement d'annoncer quelque chose (par exemple l'annonce du titre de la fenêtre). (#481, @CyrilleB79)
 - Dans la catégorie Parole des paramètres de NVDA, il est désormais possible d'exclure les modes de parole non souhaités de la commande de défilement entre les modes de parole (``NVDA+s``). (#15806, @lukaszgo1)
-  - Si vous utilisez actuellement l'extension NoBeepsSpeechMode, pensez à la désinstaller et à désactiver les modes « bips » et « à la demande » dans les paramètres.
+  - Si vous utilisez actuellement l'extension NoBeepsSpeechMode, pensez à la désinstaller et à désactiver les modes de parole "remplacée par des bips" et "à la demande" dans les paramètres.
   -
 -
 
@@ -137,118 +137,119 @@ Les utilisateurs de Poedit 1 sont encouragés à mettre à jour vers Poedit 3 s'
 -
 
 == Changements pour les développeurs ==
-Please refer to [the developer guide https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] for information on NVDA's API deprecation and removal process.
+Veuillez consulter le [guide du développeur https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] pour plus d'informations sur le processus de dépréciation et de suppression de l'API de NVDA.
 
-- Note: this is an Add-on API compatibility breaking release.
-Add-ons will need to be re-tested and have their manifest updated.
-- Building NVDA now requires Visual Studio 2022.
-Please refer to the [NVDA docs https://github.com/nvaccess/nvda/blob/release-2024.1/projectDocs/dev/createDevEnvironment.md] for the specific list of Visual Studio components. (#14313)
-- Added the following extension points:
+- Note: Cette version rompt la compatibilité avec les extensions existantes.
+Les extensions devront être testées à nouveau et leur manifeste mis à jour.
+- La compilation de NVDA nécessite désormais Visual Studio 2022.
+Veuillez consulter les [documents NVDA https://github.com/nvaccess/nvda/blob/release-2024.1/projectDocs/dev/createDevEnvironment.md] pour la liste spécifique des composants Visual Studio. (#14313)
+- Ajout des points d'extension suivants :
   - ``treeInterceptorHandler.post_browseModeStateChange``. (#14969, @nvdaes)
   - ``speech.speechCanceled``. (#15700, @LeonarddeR)
-  - ``_onErrorSoundRequested`` (should be retrieved calling ``logHandler.getOnErrorSoundRequested()``) (#15691, @CyrilleB79)
+  - ``_onErrorSoundRequested`` (doit être récupéré en appelant ``logHandler.getOnErrorSoundRequested()``) (#15691, @CyrilleB79)
   -
-- It is now possible to use plural forms in an add-on's translations. (#15661, @beqabeqa473)
-- Included python3.dll in the binary distribution for use by add-ons with external libraries utilizing the [stable ABI https://docs.python.org/3.11/c-api/stable.html]. (#15674, @mzanm)
-- The ``BrailleDisplayDriver`` base class now has ``numRows`` and ``numCols`` properties to provide information about multi line braille displays.
-Setting ``numCells`` is still supported for single line braille displays and ``numCells`` will return the total number of cells for multi line braille displays. (#15386)
-- Updated BrlAPI for BRLTTY to version 0.8.5, and its corresponding python module to a Python 3.11 compatible build. (#15652, @LeonarddeR)
-- Added the ``speech.speakSsml`` function, which allows you to write NVDA speech sequences using [SSML https://www.w3.org/TR/speech-synthesis11/]. (#15699, @LeonarddeR)
-  - The following tags are currently supported and translated to appropriate NVDA speech commands:
-    - ``Prosody`` (``pitch``, ``rate`` and ``volume``). Only multiplication (e.g. ``200%`` are supported.
-    - ``say-as`` with the ``interpret`` attribute set to ``characters``
-    - ``voice`` with the ``xml:lang`` set to an XML language
-    - ``break`` with the ``time`` attribute set to a value in milliseconds, e.g. ``200ms``
-    - ``mark`` with the ``name`` attribute set to a mark name, e.g. ``mark1``, requires providing a callback
+- Il est désormais possible d'utiliser des formes plurielles dans les traductions d'une extension. (#15661, @beqabeqa473)
+- python3.dll est inclus dans la distribution binaire pour une utilisation par des extensions avec des bibliothèques externes utilisant l'[ABI stable https://docs.python.org/3.11/c-api/stable.html]. (#15674, @mzanm)
+- La classe de base ``BrailleDisplayDriver`` possède désormais les propriétés ``numRows`` et ``numCols`` pour fournir des informations sur les afficheurs braille multilignes.
+Il est toujours possible de définir ``numCells`` pour les afficheurs braille à une seule ligne et ``numCells`` renverra le nombre total de cellules pour les afficheurs braille à plusieurs lignes. (#15386)
+- Mise à jour de BrlAPI pour BRLTTY vers la version 0.8.5 et de son module python correspondant vers une version compatible Python 3.11. (#15652, @LeonarddeR)
+- Ajout de la fonction ``speech.speakSsml``, qui vous permet d'écrire des séquences vocales NVDA en utilisant [SSML https://www.w3.org/TR/speech-synthesis11/]. (#15699, @LeonarddeR)
+  - Les balises suivantes sont actuellement prises en charge et traduites en commandes vocales NVDA appropriées :
+    - ``Prosody`` (``pitch``, ``rate`` et ``volume``). Seules les multiplications (par exemple ``200%`` sont prises en charge.
+    - ``say-as`` avec l'attribut ``interpret`` défini à ``characters``
+    - ``voice`` avec ``xml:lang`` défini sur à langage XML
+    - ``break`` avec l'attribut ``time`` défini à une valeur en millisecondes, par ex. ``200ms``
+    - ``mark`` avec l'attribut ``name`` défini à un nom de marque, par ex. ``mark1``, nécessite de fournir une fonction de rappel
     -
-  - Example: ``speech.speakSsml('<speak><prosody pitch="200%">hello</prosody><break time="500ms" /><prosody rate="50%">John</prosody></speak>')``
-  - The SSML parsing capabilities are backed by the ``SsmlParser`` class in the ``speechXml`` module.
+  - Example : ``speech.speakSsml('<speak><prosody pitch="200%">hello</prosody><break time="500ms" /><prosody rate="50%">John</prosody></speak>')``
+  - Les capacités d'analyse SSML sont soutenues par la classe ``SsmlParser`` dans le module ``speechXml``.
   -
-- Changes to the NVDA Controller Client library:
-  - The file names of the library no longer contain a suffix denoting the architecture, i.e. ``nvdaControllerClient32/64.dll`` are now called ``nvdaControllerClient.dll``. (#15718, #15717, @LeonarddeR)
-  - Added an example to demonstrate using nvdaControllerClient.dll from Rust. (#15771, @LeonarddeR)
-  - Added the following functions to the controller client: (#15734, #11028, #5638, @LeonarddeR)
-    - ``nvdaController_getProcessId``: To get the process id (PID) of the current instance of NVDA the controller client is using.
-    - ``nvdaController_speakSsml``: To instruct NVDA to speak according to the given SSML. This function also supports:
-      - Providing the symbol level.
-      - Providing the priority of speech to be spoken.
-      - Speaking both synchronously (blocking) and asynchronously (instant return).
+- Modifications apportées à la bibliothèque Client Contrôleur de NVDA :
+  - Les noms de fichiers de la bibliothèque ne contiennent plus de suffixe désignant l'architecture, c'est-à-dire que ``nvdaControllerClient32/64.dll`` sont désormais appelés ``nvdaControllerClient.dll``. (#15718, #15717, @LeonarddeR)
+  - Ajout d'un exemple pour montrer l'utilisation de nvdaControllerClient.dll en Rust. (#15771, @LeonarddeR)
+  - Ajout des fonctions suivantes au client contrôleur : (#15734, #11028, #5638, @LeonarddeR)
+    - ``nvdaController_getProcessId`` : Pour obtenir l'identifiant de processus (PID) de l'instance actuelle de NVDA que le client contrôleur utilise.
+    - ``nvdaController_speakSsml`` : Pour demander à NVDA de parler selon le SSML fourni. Cette fonction prend également en charge :
+      - Fournir le niveau de symbole.
+      - Fournir la priorité de la parole à prononcer.
+      - Parler de manière synchrone (blocage) ou de manière asynchrone (retour instantané).
       -
-    - ``nvdaController_setOnSsmlMarkReachedCallback``: To register a callback of type ``onSsmlMarkReachedFuncType`` that is called in synchronous mode for every ``<mark />`` tag encountered in the SSML sequence provided to ``nvdaController_speakSsml``.
+    - ``nvdaController_setOnSsmlMarkReachedCallback`` : pour enregistrer une fonction de rappel de type ``onSsmlMarkReachedFuncType`` qui est appelé en mode synchrone pour chaque balise ``<mark />`` rencontrée dans la séquence SSML fournie à ``nvdaController_speakSsml``.
     -
-  - Note: the new functions in the controller client only support NVDA 2024.1 and above.
+  - Remarque : les nouvelles fonctions du client contrôleur ne prennent en charge que NVDA 2024.1 et supérieur.
   -
-- Updated ``include`` dependencies:
-  - detours to ``4b8c659f549b0ab21cf649377c7a84eb708f5e68``. (#15695)
-  - ia2 to ``3d8c7f0b833453f761ded6b12d8be431507bfe0b``. (#15695)
-  - sonic to ``8694c596378c24e340c09ff2cd47c065494233f1``. (#15695)
-  - w3c-aria-practices to ``9a5e55ccbeb0f1bf92b6127c9865da8426d1c864``. (#15695)
-  - wil to ``5e9be7b2d2fe3834a7107f430f7d4c0631f69833``. (#15695)
+- Dépendances dans ``include`` mises à jour :
+  - detours à ``4b8c659f549b0ab21cf649377c7a84eb708f5e68``. (#15695)
+  - ia2 à ``3d8c7f0b833453f761ded6b12d8be431507bfe0b``. (#15695)
+  - sonic à ``8694c596378c24e340c09ff2cd47c065494233f1``. (#15695)
+  - w3c-aria-practices à ``9a5e55ccbeb0f1bf92b6127c9865da8426d1c864``. (#15695)
+  - wil à ``5e9be7b2d2fe3834a7107f430f7d4c0631f69833``. (#15695)
   -
-- Device info yielded by ``hwPortUtils.listUsbDevices`` now contain the bus reported description of the USB device (key ``busReportedDeviceDescription``). (#15764, @LeonarddeR)
-- For USB serial devices, ``bdDetect.getConnectedUsbDevicesForDriver`` and ``bdDetect.getDriversForConnectedUsbDevices`` now yield device matches containing a ``deviceInfo`` dictionary enriched with data about the USB device, such as ``busReportedDeviceDescription``. (#15764, @LeonarddeR)
-- When the configuration file ``nvda.ini`` is corrupted, a backup copy is saved before it is reinitialized. (#15779, @CyrilleB79)
-- When defining a script with the script decorator, the ``speakOnDemand`` boolean argument can be specified to control if a script should speak while in "on-demand" speech mode. (#481, @CyrilleB79)
-  - Scripts that provide information (e.g. say window title, report time/date) should speak in the "on-demand" mode.
-  - Scripts that perform an action (e.g. move the cursor, change a parameter) should not speak in the "on-demand" mode.
+- Les informations sur le périphérique générées par ``hwPortUtils.listUsbDevices`` contiennent désormais la description rapportée par le bus du périphérique USB (clé ``busReportedDeviceDescription``). (#15764, @LeonarddeR)
+- Pour les périphériques série USB, ``bdDetect.getConnectedUsbDevicesForDriver`` et ``bdDetect.getDriversForConnectedUsbDevices`` génèrent désormais des correspondances de périphériques contenant un dictionnaire ``deviceInfo`` enrichi de données sur le périphérique USB, tel que ``busReportedDeviceDescription``. (#15764, @LeonarddeR)
+- Lorsque le fichier de configuration ``nvda.ini`` est corrompu, une copie de sauvegarde est enregistrée avant qu'il soit réinitialisé. (#15779, @CyrilleB79)
+- Lors de la définition d'un script avec le décorateur de script, l'argument booléen ``speakOnDemand`` peut être spécifié pour contrôler si un script doit parler en mode de parole "à la demande". (#481, @CyrilleB79)
+  - Les scripts qui fournissent une information (par exemple annoncer le titre de la fenêtre, annoncer l'heure/la date) doivent parler en mode "à la demande".
+  - Les scripts qui effectuent une action (par exemple déplacer le curseur, modifier un paramètre) ne doivent pas parler en mode "à la demande".
   -
-- Fixed bug where deleting git-tracked files during ``scons -c`` resulted in missing UIA COM interfaces on rebuild. (#7070, #10833, @hwf1324)
-- Fix a bug where some code changes were not detected when building ``dist``, that prevented a new build from being triggered.
-Now ``dist`` always rebuilds. (#13372, @hwf1324)
-- A ``gui.nvdaControls.MessageDialog`` with default type of standard, no longer throws a None conversion exception because no sound is assigned. (#16223, @XLTechie)
+- Correction d'un bug où la suppression des fichiers suivis par git lors de l'appel à ``scons -c`` entraînait des interfaces UIA COM manquantes lors de la recompilation. (#7070, #10833, @hwf1324)
+- Correction d'un bug où certaines modifications de code n'étaient pas détectées lors de la compilation de ``dist``, ce qui empêchait le déclenchement d'une nouvelle compilation.
+Maintenant, ``dist`` est toujours recompilé. (#13372, @hwf1324)
+- Un ``gui.nvdaControls.MessageDialog`` avec un type standard par défaut ne lève plus d'exception de conversion de None car aucun son n'est attribué. (#16223, @XLTechie)
 -
 
 
-=== API Breaking Changes ===
-These are breaking API changes.
-Please open a GitHub issue if your Add-on has an issue with updating to the new API.
+=== Changements avec rupture de l'API ===
+Ces changements modifient l'API des extensions.
+Veuillez ouvrir un problème GitHub si votre extension a un problème avec la mise à jour vers la nouvelle API.
 
-- NVDA is now built with Python 3.11. (#12064)
-- Updated pip dependencies:
-  - configobj to 5.1.0dev commit ``e2ba4457c4651fa54f8d59d8dcdd3da950e956b8``. (#15544)
-  - Comtypes to 1.2.0. (#15513, @codeofdusk)
-  - Flake8 to 4.0.1. (#15636, @lukaszgo1)
-  - py2exe to 0.13.0.1dev commit ``4e7b2b2c60face592e67cb1bc935172a20fa371d``. (#15544) 
-  - robotframework to 6.1.1. (#15544)
-  - SCons to 4.5.2. (#15529, @LeonarddeR)
-  - sphinx to 7.2.6. (#15544)
-  - wxPython to 4.2.2a commit ``0205c7c1b9022a5de3e3543f9304cfe53a32b488``. (#12551, #16257)
+- NVDA est désormais compilé avec Python 3.11. (#12064)
+- Dépendances pip mises à jour :
+  - configobj à 5.1.0dev commit ``e2ba4457c4651fa54f8d59d8dcdd3da950e956b8``. (#15544)
+  - Comtypes à 1.2.0. (#15513, @codeofdusk)
+  - Flake8 à 4.0.1. (#15636, @lukaszgo1)
+  - py2exe à 0.13.0.1dev commit ``4e7b2b2c60face592e67cb1bc935172a20fa371d``. (#15544) 
+  - robotframework à 6.1.1. (#15544)
+  - SCons à 4.5.2. (#15529, @LeonarddeR)
+  - sphinx à 7.2.6. (#15544)
+  - wxPython à 4.2.2a commit ``0205c7c1b9022a5de3e3543f9304cfe53a32b488``. (#12551, #16257)
   -
-- Removed pip dependencies:
-  - typing_extensions, these should be supported natively in Python 3.11 (#15544)
-  - nose, instead unittest-xml-reporting is used to generate XML reports. (#15544)
+- Dépendances pip supprimées :
+  - typing_extensions, celles-ci devraient être prises en charge nativement dans Python 3.11 (#15544)
+  - nose, à la place, unittest-xml-reporting est utilisé pour générer des rapports XML. (#15544)
   -
-- ``IAccessibleHandler.SecureDesktopNVDAObject`` has been removed.
-Instead, when NVDA is running on the user profile, track the existence of the secure desktop with the extension point: ``winAPI.secureDesktop.post_secureDesktopStateChange``. (#14488)
-- ``braille.BrailleHandler.handlePendingCaretUpdate`` has been removed with no public replacement. (#15163, @LeonarddeR)
-- ``bdDetect.addUsbDevices and bdDetect.addBluetoothDevices`` have been removed.
-Braille display drivers should implement the ``registerAutomaticDetection`` class method instead.
-That method receives a ``DriverRegistrar`` object on which the ``addUsbDevices`` and ``addBluetoothDevices`` methods can be used. (#15200, @LeonarddeR)
-- The default implementation of the check method on ``BrailleDisplayDriver`` now requires both the ``threadSafe`` and ``supportsAutomaticDetection`` attributes to be set to ``True``. (#15200, @LeonarddeR)
-- Passing lambda functions to ``hwIo.ioThread.IoThread.queueAsApc`` is no longer possible, as functions should be weakly referenceable. (#14627, @LeonarddeR)
-- ``IoThread.autoDeleteApcReference`` has been removed. (#14924, @LeonarddeR)
-- To support capital pitch changes, synthesizers must now explicitly declare their support for the ``PitchCommand`` in the ``supportedCommands`` attribute on the driver. (#15433, @LeonarddeR)
-- ``speechDictHandler.speechDictVars`` has been removed. Use ``NVDAState.WritePaths.speechDictsDir`` instead of ``speechDictHandler.speechDictVars.speechDictsPath``. (#15614, @lukaszgo1)
-- ``languageHandler.makeNpgettext`` and ``languageHandler.makePgettext`` have been removed.
-``npgettext`` and ``pgettext`` are supported natively now. (#15546)
-- The app module for [Poedit https://poedit.net] has been changed significantly. The ``fetchObject`` function has been removed. (#15313, #7303, @LeonarddeR)
-- The following redundant types and constants have been removed from ``hwPortUtils``: (#15764, @LeonarddeR)
+- ``IAccessibleHandler.SecureDesktopNVDAObject`` a été supprimé.
+Au lieu de cela, lorsque NVDA s'exécute sur le profil utilisateur, suivez la présence du bureau sécurisé avec le point d'extension : ``winAPI.secureDesktop.post_secureDesktopStateChange``. (#14488)
+- ``braille.BrailleHandler.handlePendingCaretUpdate`` a été supprimé sans remplacement public. (#15163, @LeonarddeR)
+- ``bdDetect.addUsbDevices`` et ``bdDetect.addBluetoothDevices`` ont été supprimés.
+Les pilotes d'afficheur braille doivent implémenter la méthode de classe ``registerAutomaticDetection`` à la place.
+Cette méthode reçoit un objet ``DriverRegistrar`` sur lequel les méthodes ``addUsbDevices`` et ``addBluetoothDevices`` peuvent être utilisées. (#15200, @LeonarddeR)
+- L'implémentation par défaut de la méthode de vérification sur un ``BrailleDisplayDriver`` nécessite désormais que les attributs ``threadSafe`` et ``supportsAutomaticDetection`` soient définis sur ``True``. (#15200, @LeonarddeR)
+- Passer des fonctions lambda à ``hwIo.ioThread.IoThread.queueAsApc`` n'est plus possible, car les fonctions doivent être faiblement référençables (weakref). (#14627, @LeonarddeR)
+- ``IoThread.autoDeleteApcReference`` a été supprimé. (#14924, @LeonarddeR)
+- Pour prendre en charge les changements de hauteur  pour les majuscules, les synthétiseurs doivent désormais déclarer explicitement qu'ils supportent les ``PitchCommand`` dans l'attribut ``supportedCommands`` du pilote. (#15433, @LeonarddeR)
+- ``speechDictHandler.speechDictVars`` a été supprimé. Utilisez ``NVDAState.WritePaths.speechDictsDir`` au lieu de ``speechDictHandler.speechDictVars.speechDictsPath``. (#15614, @lukaszgo1)
+- `` LanguageHandler.makeNpgettext`` et `` LanguageHandler.makePgettext`` ont été supprimés.
+``npgettext`` et ``pgettext`` sont désormais supportés nativement. (#15546)
+- Le module d'application pour [Poedit https://poedit.net] a été considérablement modifié. La fonction ``fetchObject`` a été supprimée. (#15313, #7303, @LeonarddeR)
+- Les types et constantes redondants suivants ont été supprimés de ``hwPortUtils`` : (#15764, @LeonarddeR)
   - ``PCWSTR``
-  - ``HWND`` (replaced by ``ctypes.wintypes.HWND``)
+  - ``HWND`` (remplacé par ``ctypes.wintypes.HWND``)
   - ``ULONG_PTR``
   - ``ULONGLONG``
   - ``NULL``
-  - ``GUID`` (replaced by ``comtypes.GUID``)
+  - ``GUID`` (remplacé par ``comtypes.GUID``)
   -
-- ``gui.addonGui.AddonsDialog`` has been removed. (#15834)
-- ``touchHandler.TouchInputGesture.multiFingerActionLabel`` has been removed with no replacement. (#15864, @CyrilleB79)
-- ``NVDAObjects.IAccessible.winword.WordDocument.script_reportCurrentHeaders`` has been removed with no replacement. (#15904, @CyrilleB79)
+- ``gui.addonGui.AddonsDialog`` a été supprimé. (#15834)
+- ``touchHandler.TouchInputGesture.multiFingerActionLabel`` a été supprimé sans remplacement. (#15864, @CyrilleB79)
+- ``NVDAObjects.IAccessible.winword.WordDocument.script_reportCurrentHeaders`` a été supprimé sans remplacement. (#15904, @CyrilleB79)
 % Insert new list items here as the alias appModule table should be kept at the bottom of this list
-- The following app modules are removed.
+- Les modules d'application suivants sont supprimés.
 Code which imports from one of them, should instead import from the replacement module. (#15618, @lukaszgo1)
+Si du code importait depuis ces modules, il doit maintenant importer depuis le module de remplacement. (#15618, @lukaszgo1)
 -
 
-|| Removed module name | Replacement module |
+|| Nom du module supprimé | Module de remplacement |
 | ``azardi-2.0`` | ``azardi20`` |
 | ``azuredatastudio`` | ``code`` |
 | ``azuredatastudio-insiders`` | ``code`` |
@@ -275,20 +276,20 @@ Code which imports from one of them, should instead import from the replacement 
 | ``zend-eclipse-php`` | ``eclipse`` |
 | ``zendstudio`` | ``eclipse`` |
 
-=== Deprecations ===
+=== Dépréciations ===
 
-- Using ``watchdog.getFormattedStacksForAllThreads`` is deprecated - please use ``logHandler.getFormattedStacksForAllThreads`` instead. (#15616, @lukaszgo1)
-- ``easeOfAccess.canConfigTerminateOnDesktopSwitch`` has been deprecated, as it became obsolete since Windows 7 is no longer supported. (#15644, @LeonarddeR)
-- ``winVersion.isFullScreenMagnificationAvailable`` has been deprecated - use ``visionEnhancementProviders.screenCurtain.ScreenCurtainProvider.canStart`` instead. (#15664, @josephsl)
-- The following Windows release constants has been deprecated from winVersion module (#15647, @josephsl):
+- L'utilisation de ``watchdog.getFormattedStacksForAllThreads`` est obsolète - veuillez utiliser ``logHandler.getFormattedStacksForAllThreads`` à la place. (#15616, @lukaszgo1)
+- ``easeOfAccess.canConfigTerminateOnDesktopSwitch`` devient obsolète, puisque Windows 7 n'est plus pris en charge. (#15644, @LeonarddeR)
+- ``winVersion.isFullScreenMagnificationAvailable`` est obsolète - utilisez ``visionEnhancementProviders.screenCurtain.ScreenCurtainProvider.canStart`` à la place. (#15664, @josephsl)
+- Les constantes de version Windows suivantes sont obsolètes du module winVersion (#15647, @josephsl) :
   - ``winVersion.WIN7``
   - ``winVersion.WIN7_SP1``
   - ``winVersion.WIN8``
   -
-- The ``bdDetect.KEY_*`` constants have been deprecated.
-Use ``bdDetect.DeviceType.*`` instead. (#15772, @LeonarddeR).
-- The ``bdDetect.DETECT_USB`` and ``bdDetect.DETECT_BLUETOOTH`` constants have been deprecated with no public replacement. (#15772, @LeonarddeR).
-- Using ``gui.ExecAndPump`` is deprecated - please use ``systemUtils.ExecAndPump`` instead. (#15852, @lukaszgo1)
+- Les constantes ``bdDetect.KEY_*`` sont obsolètes.
+Utilisez ``bdDetect.DeviceType.*`` à la place. (#15772, @LeonarddeR).
+- Les constantes ``bdDetect.DETECT_USB`` et ``bdDetect.DETECT_BLUETOOTH`` sont obsolètes sans remplacement public. (#15772, @LeonarddeR).
+- L'utilisation de ``gui.ExecAndPump`` est obsolète - veuillez utiliser ``systemUtils.ExecAndPump`` à la place. (#15852, @lukaszgo1)
 -
 
 
