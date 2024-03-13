@@ -33,13 +33,13 @@ Windows 8.1 è la versione minima di Windows supportata.
 == Novità ==
 - Add-on Store:
   - L'Add-on Store ora supporta le azioni di massa (ad esempio installazione o attivazione di più add-on).  (#15350, #15623, @CyrilleB79)
-  - È stata aggiunta una nuova azione per aprire una pagina Web dedicata per visualizzare o fornire feedback sul componente aggiuntivo selezionato. (#15576, @nvdaes)
+  - È stata aggiunta una nuova azione per aprire una pagina Web dedicata, allo scopo di visualizzare o fornire feedback sul componente aggiuntivo selezionato. (#15576, @nvdaes)
   -
 - Aggiunto il supporto per i display Braille HID Bluetooth a bassa energia. (#15470)
 - è ora disponibile una nuova modalità di selezione nativa (che si attiva con ``NVDA+shift+f10``) durante la navigazione con Mozilla Firefox.
 Quando è attivata, la selezione del testo in modalità navigazione funzionerà come se si stesse evidenziando del testo direttamente con Firefox stesso..
 La copia del testo con ``control+c`` verrà gestita da Firefox, il che consente di copiare tutto il contenuto comprensivo di formattazione, tabelle, elementi grafici, piuttosto che soltanto il testo semplice.
-Si noti tuttavia che poiché Firefox gestisce la copia effettiva, non potremo ascoltare il messaggio "copiato negli appunti" fornito da NVDA. (#15830)
+Si noti tuttavia che poiché Firefox gestisce la copia effettiva, non potremo ascoltare il classico messaggio: "copiato negli appunti", fornito da NVDA. (#15830)
 - Quando si copia testo in Microsoft Word con la modalità navigazione di NVDA abilitata, ora è inclusa anche la formattazione.
 Un effetto collaterale di ciò è che NVDA non annuncerà più il messaggio "copia negli appunti" quando si preme ``control+c`` nella modalità di navigazione di Microsoft Word / Outlook, poiché ora è l'applicazione a gestire la copia, non NVDA. (#16129)
 - Aggiunta una nuova modalità per la sintesi vocale, chiamata su richiesta.
@@ -63,7 +63,7 @@ Windows 8.1 è la versione minima di Windows supportata. (#15544)
 - Comandi da tastiera:
   - I seguenti comandi supportano la doppia e tripla pressione per effettuare lo spelling delle informazioni annunciate e della descrizione dei caratteri: Leggi selezione, Annuncia testo negli appunti e Leggi l'oggetto focalizzato. (#15449, @CyrilleB79)
   - Il comando per attivare/disattivare la tenda schermo ha un gesto predefinito associato: ``NVDA+control+escape``. (#10560, @CyrilleB79)
-  - Se premuto quattro volte, il comando di leggi selezione ora mostra la selezione in una finestra navigabile. (#15858, @Emil-18)
+  - Se premuto quattro volte, il comando "leggi selezione" ora mostra la selezione in una finestra navigabile. (#15858, @Emil-18)
   - 
 - Microsoft Office:
   - Quando si richiedono informazioni sulla formattazione delle celle di Excel, i bordi e lo sfondo verranno annunciati solo se è presente tale formattazione. (#15560, @CyrilleB79)
@@ -75,7 +75,7 @@ Si trovano nel pannello delle impostazioni audio che può essere aperto con ``NV
 Questa opzione ora fornisce ulteriori informazioni rilevanti su un oggetto quando il mouse vi entra, come lo stato (selezionato/premuto) o le coordinate della cella in una tabella. (#15420, @LeonarddeR)
 - Sono stati aggiunti nuovi elementi al menu Aiuto per la pagina "Ottieni aiuto" e il negozio di NV Access. (#14631)
 - Il supporto per [Poedit https://poedit.net] è stato adeguato per Poedit versione 3 e successive.
-Gli utenti di Poedit 1 sono fortemente pregati ad aggiornare a Poedit 3 se desiderano godere dell'accessibilità migliorata, come le scorciatoie per leggere le note e i commenti del traduttore. (#15313, #7303, @LeonarddeR)
+Gli utenti di Poedit 1 sono fortemente pregati ad aggiornare a Poedit 3 se desiderano godere dell'accessibilità migliorata, come le scorciatoie per leggere le note e i commenti dei traduttori. (#15313, #7303, @LeonarddeR)
 - Il visualizzatore Braille e il visualizzatore sintesi vocale sono ora disabilitati in modalità protetta. (#15680)
 - Nella navigazione ad oggetti, gli oggetti disabilitati (non disponibili) non saranno più ignorati. (#15477, @CyrilleB79)
 - Aggiunto il sommario al documento dei comandi da tastiera. (#16106)
@@ -92,23 +92,23 @@ Gli utenti di Poedit 1 sono fortemente pregati ad aggiornare a Poedit 3 se desid
   -
 - Audio:
   - NVDA non si blocca più brevemente quando vengono riprodotti più suoni in rapida successione. (#15311, #15757, @jcsteh)
-  - If the audio output device is set to something other than the default and that device becomes available again after being unavailable, NVDA will now switch back to the configured device instead of continuing to use the default device. (#15759, @jcsteh)
-  - NVDA now resumes audio if the configuration of the output device changes or another application releases exclusive control of the device. (#15758, #15775, @jcsteh)
+  - se un dispositivo audio diverso da quello predefinito, dopo  essere stato disconnesso, diventa nuovamente disponibile,  NVDA riprenderà ad utilizzarlo. (#15759, @jcsteh)
+  - NVDA ora è in grado di ripristinare l'audio nel caso in cui la configurazione del dispositivo d'uscita viene modificata, o un'altra applicazione ne rilascia il controllo esclusivo. (#15758, #15775, @jcsteh)
   -
 - Braille:
-  - Multi line braille displays will no longer crash the BRLTTY driver and are treated as one continuous display. (#15386)
-  - More objects which contain useful text are detected, and text content is displayed in braille. (#15605)
-  - Contracted braille input works properly again. (#15773, @aaclause)
-  - Braille is now updated when moving the navigator object between table cells in more situations (#15755, @Emil-18)
-  - The result of reporting current focus, current navigator object, and current selection commands is now shown in braille. (#15844, @Emil-18)
-  - The Albatross braille driver no longer handles a Esp32 microcontroller as an Albatross display. (#15671)
+  - I display Braille con più righe non bloccano più il driver BRLTTY e vengono trattati come un display continuo. (#15386)
+  - Vengono rilevati più oggetti che contengono testo utile, inoltre il contenuto del testo viene visualizzato in Braille. (#15605)
+  - L'input Braille contratto funziona di nuovo correttamente. (#15773, @aaclause)
+  - Quando si sposta il navigatore ad oggetti tra le celle di una tabella, il contenuto in braille viene aggiornato in maniera migliore. (#15755, @Emil-18)
+  - Viene ora mostrato in braille il risultato dei comandi "legge l'oggetto che ha il focus", legge l'oggetto su cui è il navigatore e  leggi selezione corrente. (#15844, @Emil-18)
+  - Il driver braille Albatross non gestisce più un microcontrollore Esp32 come un display Albatross. (#15671)
   -
 - LibreOffice:
-  - Words deleted using the ``control+backspace`` keyboard shortcut are now also properly announced when the deleted word is followed by whitespace (like spaces and tabs). (#15436, @michaelweghorn)
-  - Announcement of the status bar using the ``NVDA+end`` keyboard shortcut now also works for dialogs in LibreOffice version 24.2 and newer. (#15591, @michaelweghorn)
-  - All expected text attributes are now supported in LibreOffice versions 24.2 and above.
-  This makes the announcement of spelling errors work when announcing a line in Writer. (#15648, @michaelweghorn)
-  - Announcement of heading levels now also works for LibreOffice versions 24.2 and newer. (#15881, @michaelweghorn)
+  - Vengono annunciate correttamente le parole cancellate con  ``control+backspace``, anche quando la parola cancellata è seguita da spazi bianchi (come spazi e tabulazioni). (#15436, @michaelweghorn)
+  - La lettura della barra di stato tramite ``NVDA+fine`` adesso funziona anche per le finestre di dialogo in LibreOffice versione 24.2 e successive. (#15591, @michaelweghorn)
+  - Tutti gli attributi di testo previsti sono ora supportati nelle versioni LibreOffice 24.2 e successive.
+  Ciò fa sì che l'annuncio degli errori di ortografia funzioni quando viene letta una riga in Writer. (#15648, @michaelweghorn)
+  - L'annuncio dei livelli di intestazione ora funziona anche per le versioni di LibreOffice 24.2 e successive. (#15881, @michaelweghorn)
   -
 - Microsoft Office:
   - In Excel with UIA disabled, braille is updated, and the active cell content is spoken, when ``control+y``, ``control+z`` or ``alt+backspace`` is pressed. (#15547)
