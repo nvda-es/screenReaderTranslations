@@ -397,7 +397,7 @@ ikincisi, NVDA'nın Windows başladıktan sonra otomatik olarak devreye girmesiy
 +++ Veri kullanım istatistikleri iletişim kutusu +++[UsageStatsDialog]
 2018.3 sürümünden itibaren, kullanıcılara NVDA'yı iyileştirmek için kullanım verilerinin NV Access'e gönderilmesine izin vermek isteyip istemedikleri sorulur. 
 NVDA'yı ilk kez başlatırken, NVDA'yı kullanırken NV Access'e veri göndermeyi kabul etmek isteyip istemediğinizi soran bir iletişim kutusu açılacaktır.
-NV Access tarafından toplanan veriler hakkında daha fazla bilgiyi genel ayarlar bölümünde, [NVDA projesinin NVDA kullanım istatistiklerini toplamasına izin verin #GeneralSettingsGatherUsageStats] diyerek okuyabilirsiniz.
+NV Access tarafından toplanan veriler hakkında daha fazla bilgiyi genel ayarlar bölümünde, [NV Access'in NVDA kullanım istatistiklerini toplamasına izin verin #GeneralSettingsGatherUsageStats] diyerek okuyabilirsiniz.
 Not: "evet" veya "hayır" a basmak bu ayarı kaydeder ve NVDA'yı yeniden yüklemediğiniz sürece iletişim kutusu bir daha asla gösterilmez.
 Ancak NVDA'nın genel ayarlar panelinde veri toplama işlemini manuel olarak etkinleştirip devre dışı bırakabilirsiniz. Bu ayarı manuel olarak değiştirmek için, [NVDA kullanım verilerini toplaması için NVDA projesine izin ver #GeneralSettingsGatherUsageStats] adlı onay kutusunu işaretleyebilir veya işaretini kaldırabilirsiniz.
 
@@ -694,9 +694,10 @@ Not: Numaratördeki tuşların düzgün çalışabilmesi için, numara kilidi ka
 
 Eğer masaüstü klavye düzenini kullanıyorsanız, tuş komutlarını hatırlamanıza yardımcı olması için, temel metin inceleme komutlarının üçlü bir parmaklık biçiminde organize edildiğini lütfen not edin. yukarıdan aşağıya üçlü satır, sözcük ve karakter anlamına gelirken, soldan sağa üçlü önceki, üzerinde bulunulan ve sonraki anlamına gelmektedir.
 Düzen aşağıdaki biçimde gösterilmiştir:
-| Önceki satır | Üzerinde bulunulan satır | Sonraki satır |
-| Önceki sözcük | üzerinde bulunulan sözcük | Sonraki sözcük |
-| Önceki karakter | Üzerinde bulunulan karakter | Sonraki karakter |
+|| . {.hideHeaderRow} | . | . |
+ | Önceki satır | Üzerinde bulunulan satır | Sonraki satır |
+ | Önceki sözcük | üzerinde bulunulan sözcük | Sonraki sözcük |
+ | Önceki karakter | Üzerinde bulunulan karakter | Sonraki karakter |
 
 ++ İnceleme Kipleri ++[ReviewModes]
 NVDA'nın inceleme komutları, seçilen kipe bağlı olarak, mevcut nesne, aktif belge, ya da ekrandaki içeriği incelemenizi sağlar.
@@ -1490,7 +1491,7 @@ Aşağıdaki bilgiler, her zaman gönderilir:
 - İşletim Sisteminin 64 veya 32 bit mi olduğu bilgisi
 -
 
-==== NVDA projesine NVDA kullanım istatistiklerini toplamak için izin ver ====[GeneralSettingsGatherUsageStats]
+==== NV Access'in NVDA kullanım istatistiklerini toplamasına izin ver ====[GeneralSettingsGatherUsageStats]
 Etkinleştirilmişse, NV Access NVDA kullanıcı sayısını takip etmek için güncelleme kontrollerinden topladığı işletim sistemi, ülke gibi bazı demografik bilgileri kullanır.
 Ülkenizi belirlemek için IP adresi kullanılıyor olsa da, bu bilginin hiçbir suretle kaydedilmediğini not edin.
 Güncellemeleri kontrol etmek için zorunlu olan bilgilerin yanında, aşağıdaki ek bilgiler de gönderilir:
@@ -4207,6 +4208,7 @@ Güvenli mod şu özellikleri devre dışı bırakır:
 - Konfigurasyonu ve diğer ayarları diske kaydetme
 - Girdi hareketlerini diske kaydetme
 - [Konfigürasyon profilleri  #ConfigurationProfiles] özellikleri örneğin; oluşturma, silme vb.
+- ``-c``  komut satır seçeneğini kullanarak #CommandLineOptions] konfigurasyonları yükleme
 - NVDA'yı güncelleme ve taşınabilir kopyalar oluşturma
 -  [Python konsolu #PythonConsole]
 - [Eklenti Mağazası #AddonsManager]
@@ -4249,11 +4251,13 @@ nvda -q
 
 Komut satırı seçeneklerinin bazılarının uzun ve kısa versiyonları bulunurken; bazılarının yalnızca uzun versiyonları vardır.
 Kısa versiyonu olanlar için, aşağıdaki gibi onları birleştirebilirsiniz:
+|| . {.hideHeaderRow} | . |
 | nvda -mc CONFIGPATH | Bu NVDA'yı başlangıç sesleri ve mesajlar devre dışı bırakılarak ve belirtilen yapılandırma ile başlatır |
 | nvda -mc CONFIGPATH --disable-addons | Yukarıdakiyle aynı, ancak eklentiler devre dışı bırakılır |
 
 Bazı komut satırı seçenekleri ek parametrelerle kullanılabilir; Örneğin, günlük seviyesi ya da kullanıcı konfigürasyon dizini.
 Bu parametreler seçenekten sonra kullanılmalıdır, kısa versiyon için seçenek sonrası bir aralık ile ayrılarak ya da uzun versiyon için eşittir işareti ile (=); Örneğin:
+|| . {.hideHeaderRow} | . |
 | nvda -l 10 | NVDA'ya günlük seviyesi debug olarak başlamasını söyler |
 | nvda --log-file=c:\nvda.log | NVDA'ya günlüğü c:\nvda.log dosyasına kaydetmesini söyler |
 | nvda --log-level=20 -f c:\nvda.log | NVDA'nın bilgi seviyesinde günlük tutarak başlamasını ve günlüğü c:\nvda.log dosyasına kaydetmesini söyler |
@@ -4263,9 +4267,9 @@ Aşağıdakiler NVDA komut satırı seçenekleridir:
 | -h | --help | Komut satırı yardımını göster ve çık |
 | -q | --quit | Halihazırda çalışan NVDA kopyasını kapat |
 | -k | --check-running | Çıkış kodu aracılığıyla NVDA'nın çalışıp çalışmadığını bildirir; çalışıyorsa 0, çalışmıyorsa 1 |
-| -f LOGFILENAME | --log-file=LOGFILENAME | Günlük mesajlarının tutulacağı dosya |
-| -l LOGLEVEL | --log-level=LOGLEVEL | Günlüğü tutulacak en düşük seviye (debug 10, giriş çıkış 12, hata ayıklama uyarısı 15, bilgi 20, uyarı 30, devre dışı 100), varsayılan, uyarı'dır |
-| -c CONFIGPATH | --config-path=CONFIGPATH | NVDA ile ilgili tüm ayarların kaydedileceği adres |
++| ``-f LOGFILENAME`` | ``--log-file=LOGFILENAME`` | Log mesajlarının yazılması gereken dosya. Güvenli mod etkinse günlük kaydı her zaman devre dışı bırakılır. |
++| ``-l LOGLEVEL`` | ``--log-level=LOGLEVEL`` | Günlüğe kaydedilen en düşük mesaj düzeyi (hata ayıklama 10, giriş/çıkış 12, hata ayıklama uyarısı 15, bilgi 20, devre dışı 100). Güvenli mod etkinse günlük kaydı her zaman devre dışı bırakılır. |
++| ``-c Konfigurasyon YOLU`` | ``--config-path=CONFIGPATH`` | NVDA'ya ilişkin tüm ayarların saklandığı yol. Güvenli mod etkinleştirilirse varsayılan değer zorlanır. |
 | None | --lang=LANGUAGE | Yapılandırılmış NVDA dilini geçersiz kılın. Geçerli kullanıcı varsayılanı için "Windows", İngilizce için "en" vb. olarak ayarlayın. |
 | -m | --minimal | Ses, arayüz, başlangıç mesajı vb olmaz |
 | -s | --secure | NVDA'yı [Güvenli Mod #GüvenliMod]'da başlatır |
