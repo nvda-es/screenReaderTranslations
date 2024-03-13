@@ -973,7 +973,7 @@ ikincisi, NVDA'nın Windows başladıktan sonra otomatik olarak devreye girmesiy
 <P>
 2018.3 sürümünden itibaren, kullanıcılara NVDA'yı iyileştirmek için kullanım verilerinin NV Access'e gönderilmesine izin vermek isteyip istemedikleri sorulur. 
 NVDA'yı ilk kez başlatırken, NVDA'yı kullanırken NV Access'e veri göndermeyi kabul etmek isteyip istemediğinizi soran bir iletişim kutusu açılacaktır.
-NV Access tarafından toplanan veriler hakkında daha fazla bilgiyi genel ayarlar bölümünde, <A HREF="#GeneralSettingsGatherUsageStats">NVDA projesinin NVDA kullanım istatistiklerini toplamasına izin verin</A> diyerek okuyabilirsiniz.
+NV Access tarafından toplanan veriler hakkında daha fazla bilgiyi genel ayarlar bölümünde, <A HREF="#GeneralSettingsGatherUsageStats">NV Access'in NVDA kullanım istatistiklerini toplamasına izin verin</A> diyerek okuyabilirsiniz.
 Not: "evet" veya "hayır" a basmak bu ayarı kaydeder ve NVDA'yı yeniden yüklemediğiniz sürece iletişim kutusu bir daha asla gösterilmez.
 Ancak NVDA'nın genel ayarlar panelinde veri toplama işlemini manuel olarak etkinleştirip devre dışı bırakabilirsiniz. Bu ayarı manuel olarak değiştirmek için, <A HREF="#GeneralSettingsGatherUsageStats">NVDA kullanım verilerini toplaması için NVDA projesine izin ver</A> adlı onay kutusunu işaretleyebilir veya işaretini kaldırabilirsiniz.
 </P>
@@ -1734,6 +1734,11 @@ Eğer masaüstü klavye düzenini kullanıyorsanız, tuş komutlarını hatırla
 Düzen aşağıdaki biçimde gösterilmiştir:
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>. {.hideHeaderRow}</TH>
+<TH>.</TH>
+<TH>.</TH>
+</TR>
 <TR>
 <TD>Önceki satır</TD>
 <TD>Üzerinde bulunulan satır</TD>
@@ -3258,7 +3263,7 @@ Aşağıdaki bilgiler, her zaman gönderilir:
 
 <P></P>
 <A NAME="GeneralSettingsGatherUsageStats"></A>
-<H4>NVDA projesine NVDA kullanım istatistiklerini toplamak için izin ver</H4>
+<H4>NV Access'in NVDA kullanım istatistiklerini toplamasına izin ver</H4>
 <P>
 Etkinleştirilmişse, NV Access NVDA kullanıcı sayısını takip etmek için güncelleme kontrollerinden topladığı işletim sistemi, ülke gibi bazı demografik bilgileri kullanır.
 Ülkenizi belirlemek için IP adresi kullanılıyor olsa da, bu bilginin hiçbir suretle kaydedilmediğini not edin.
@@ -8869,6 +8874,7 @@ Güvenli mod şu özellikleri devre dışı bırakır:
 <LI>Konfigurasyonu ve diğer ayarları diske kaydetme
 <LI>Girdi hareketlerini diske kaydetme
 <LI><A HREF="#ConfigurationProfiles">Konfigürasyon profilleri</A> özellikleri örneğin; oluşturma, silme vb.
+<LI><CODE>-c</CODE>  komut satır seçeneğini kullanarak #CommandLineOptions] konfigurasyonları yükleme
 <LI>NVDA'yı güncelleme ve taşınabilir kopyalar oluşturma
 -  <A HREF="#PythonConsole">Python konsolu</A>
 <LI><A HREF="#AddonsManager">Eklenti Mağazası</A>
@@ -8929,6 +8935,10 @@ Kısa versiyonu olanlar için, aşağıdaki gibi onları birleştirebilirsiniz:
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
+<TH>. {.hideHeaderRow}</TH>
+<TH>.</TH>
+</TR>
+<TR>
 <TD>nvda -mc CONFIGPATH</TD>
 <TD>Bu NVDA'yı başlangıç sesleri ve mesajlar devre dışı bırakılarak ve belirtilen yapılandırma ile başlatır</TD>
 </TR>
@@ -8943,6 +8953,10 @@ Bazı komut satırı seçenekleri ek parametrelerle kullanılabilir; Örneğin, 
 Bu parametreler seçenekten sonra kullanılmalıdır, kısa versiyon için seçenek sonrası bir aralık ile ayrılarak ya da uzun versiyon için eşittir işareti ile (=); Örneğin:
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>. {.hideHeaderRow}</TH>
+<TH>.</TH>
+</TR>
 <TR>
 <TD>nvda -l 10</TD>
 <TD>NVDA'ya günlük seviyesi debug olarak başlamasını söyler</TD>
@@ -8981,21 +8995,14 @@ Aşağıdakiler NVDA komut satırı seçenekleridir:
 <TD>--check-running</TD>
 <TD>Çıkış kodu aracılığıyla NVDA'nın çalışıp çalışmadığını bildirir; çalışıyorsa 0, çalışmıyorsa 1</TD>
 </TR>
-<TR>
-<TD>-f LOGFILENAME</TD>
-<TD>--log-file=LOGFILENAME</TD>
-<TD>Günlük mesajlarının tutulacağı dosya</TD>
-</TR>
-<TR>
-<TD>-l LOGLEVEL</TD>
-<TD>--log-level=LOGLEVEL</TD>
-<TD>Günlüğü tutulacak en düşük seviye (debug 10, giriş çıkış 12, hata ayıklama uyarısı 15, bilgi 20, uyarı 30, devre dışı 100), varsayılan, uyarı'dır</TD>
-</TR>
-<TR>
-<TD>-c CONFIGPATH</TD>
-<TD>--config-path=CONFIGPATH</TD>
-<TD>NVDA ile ilgili tüm ayarların kaydedileceği adres</TD>
-</TR>
+</TABLE>
+
+<P>
++| <CODE>-f LOGFILENAME</CODE> | <CODE>--log-file=LOGFILENAME</CODE> | Log mesajlarının yazılması gereken dosya. Güvenli mod etkinse günlük kaydı her zaman devre dışı bırakılır. |
++| <CODE>-l LOGLEVEL</CODE> | <CODE>--log-level=LOGLEVEL</CODE> | Günlüğe kaydedilen en düşük mesaj düzeyi (hata ayıklama 10, giriş/çıkış 12, hata ayıklama uyarısı 15, bilgi 20, devre dışı 100). Güvenli mod etkinse günlük kaydı her zaman devre dışı bırakılır. |
++| <CODE>-c Konfigurasyon YOLU</CODE> | <CODE>--config-path=CONFIGPATH</CODE> | NVDA'ya ilişkin tüm ayarların saklandığı yol. Güvenli mod etkinleştirilirse varsayılan değer zorlanır. |
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>None</TD>
 <TD>--lang=LANGUAGE</TD>
