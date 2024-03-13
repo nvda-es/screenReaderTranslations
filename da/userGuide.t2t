@@ -372,7 +372,7 @@ Derudover kan du skrive NVDA i dialogboksen Kør og trykke på Enter.
 Hvis NVDA allerede kører, vil programmet blive genstartet.
 Du kan også skrive nogle [kommandolinjeparametre #CommandLineOptions], som du kan bruge til følgende: Genstarte NVDA (-r), afslut (-q) deaktivere tilføjelsesprogrammer fra (--disable-addons) osv.
 
-For installerede kopier, vil konfigurationen af NVDA blive gemt i mappen roaming application data for den aktuelle bruger som standard (f.eks. "C:\Users\<user>\AppData\Roaming").
+For installerede kopier, vil konfigurationen af NVDA blive gemt i mappen roaming application data for den aktuelle bruger som standard (f.eks. "``C:\Users\<user>\AppData\Roaming``").
 Det er muligt at ændre dette således NVDA indlæser konfigurationen fra den lokale application data mappe i stedet.
 Læs afsnittet [systemspecifikke parametre #SystemWideParameters] for flere detaljer.
 
@@ -915,11 +915,13 @@ Bemærk også, at programmet vil forsøge at markere det samme indhold som i gen
 Funktionaliteten er dog nyttig i situationer, hvor du skal kopiere hele tabeller.
 
 + Læsning af matematisk materiale +[ReadingMath]
-Ved hjælp af MathPlayer 4 fra Design Science kan du med NVDA læse og navigere interaktivt i matematisk materiale.
-Dette kræver, at MathPlayer 4 er installeret på computeren.
-MathPlayer kan hentes gratis fra [MathPlayer information page https://info.wiris.com/mathplayer-info].
-Efter du har installeret MathPlayer, skal du genstarte NVDA.
+NVDA er i stand til både at læse og navigere i forskelligt matematikindhold på internettet og andre programmer, og gengive indholdet på punkt eller via tale.
+Før du kan læse og benytte matematisk indhold med NVDA, skal du først installere en komponent, der kan bearbejde indholdet.
+Der er adskillige tilføjelser tilgængelige, der kan arbejde sammen med matematisk indhold, herunder [MathCAT NVDA add-on https://nsoiffer.github.io/MathCAT/] og [Access8Math https://github.com/tsengwoody/Access8Math]. Disse kan hentes i tilføjelsescenteret.
+Læs venligst afsnittet om [Tilføjelsescenteret #AddonsManager] for at finde ud af, hvordan du installerer tilføjelser.
+NVDA kan også benytte den gamle [MathPlayer https://info.wiris.com/mathplayer-info] software fra Wiris. Bemærk dog, at softwaren ikke længere vedligeholdes.
 
+++ Understøttet matematikindhold ++[SupportedMathContent]
 NVDA understøtter følgende typer af matematisk indhold:
 - MathML i Mozilla Firefox, Microsoft Internet Explorer og Google Chrome.
 - Microsoft Word 365 moderne matematikligninger via UI automation:
@@ -959,14 +961,28 @@ Som udgangspunkt følger læsemarkøren systemmarkøren, så som regel kan du ba
 | Interager med matematikindhold | NVDA+Alt+m | Starter interaktion med matematikindhold |
 %kc:endInclude
 
-På dette tidspunkt kan du bruge MathPlayer-kommandoer, såsom piletasterne, til at udforske udtrykket.
+På dette tidspunkt vil NVDA gå ind i matematiktilstand, hvor du eksempelvis kan bruge piletasterne, til at udforske udtrykket.
 For eksempel kan du flytte gennem udtrykket med Venstre- og Højre-pil og zoome ind på en del af udtrykket, f.eks. en brøk, med Pil-ned.
-Læs venligst [dokumentationen om navigationskommandoer til MathPlayer https://docs.wiris.com/mathplayer/en/mathplayer-user-manual.html] for flere oplysninger.
 
 Når du vil tilbage til dokumentet, skal du blot trykke på Escape-tasten.
 
+For flere informationer om, hvordan du læser og navigere i matematisk indhold, skal du læse afsnittet for den pågældende tilføjelse, som du har installeret.
+- [MathCAT documentation https://nsoiffer.github.io/MathCAT/users.html]
+- [Access8Math documentation https://github.com/tsengwoody/Access8Math]
+- [MathPlayer documentation https://docs.wiris.com/mathplayer/en/mathplayer-user-manual.html]
+-
+
 Nogle gange kan matematisk indhold blive præsenteret som en knap eller en anden type element, hvilket evt. viser en dialog eller yderligere informationer om formeln, når denne aktiveres.
 For at aktivere knappen eller elementet, der indeholder formlen, tryk Ctrl+enter.
+
+++ Installation af MathPlayer ++[InstallingMathPlayer]
+Selvom det generelt anbefales, at du benytter én af de nyere tilføjelser til at læse matematisk indhold i NVDA, kan der stadig være situationer, hvor MathPlayer er et mere passende valg.
+F.eks. kan det være, at MathPlayer understøtter matematik på punktskrift for et sprog, som én af de nyere tilføjelser ikke understøtter endnu.
+MathPlayer er gratis tilgængelig fra Wiris-websiden.
+[Download MathPlayer https://downloads.wiris.com/mathplayer/MathPlayerSetup.exe].
+Efdter installationen af MathPlayer, skal du genstarte NVDA.
+Bemærk, at informationerne på siden antyder, at dette kun er for ældre browsere, som Internet Explorer 8.
+Dette er kun, hvis det matematiske indhold skal læses med øjnene, men kan ignoreres for dem, der skal læse indholdet med NVDA.
 
 + Punktskrift +
 Hvis du ejer et punktdisplay, kan NVDA vise information på punkt.
@@ -1596,11 +1612,10 @@ Nogle Microsoft Speech API synteser anvender dog ikke denne funktion korrekt og 
 Hvis du har problemer med udtalen af diverse bogstaver kan du prøve at deaktivere denne indstilling.
 
 ==== Forsinkede beskrivelser af tegn ved markørbevægelser ====[delayedCharacterDescriptions]
-: Standard
-  Deaktiveret
-: Muligheder
-  Aktiveret, Deaktiveret
-:
+
+|| Standard | Deaktiveret |
+|| Muligheder | Aktiveret, deaktiveret |
+
 
 Når denne indstilling er aktiveret, vil NVDA sige tegnbeskrivelsen, når du flytter markøren tegn for tegn.
 
@@ -1610,7 +1625,7 @@ Dette kan være nyttigt, hvis det er svært at skelne mellem udtale af symboler,
 Tegnets beskrivelse vil ikke blive oplæst, hvis andet tekst udtales, eller hvis du trykker på ``Ctrl-tasten``.
 
 ==== Taletilstande ====[SpeechModesDisabling]
-Denne liste af muligheder lader dig bestemme, hvilke taletilstande, der er tilgængelige, når du bruger kommandoen ``NVDA+s`` til at skifte mellem dem.
+Denne liste af muligheder lader dig bestemme, hvilke [taletilstande #SpeechModes], der er tilgængelige, når du bruger kommandoen ``NVDA+s`` til at skifte mellem dem.
 Tilstande, der ikke er markerede, vil ikke fremkomme.
 Som standard er alle tilstande inkluderede.
 
@@ -1715,9 +1730,8 @@ Med denne indstilling ignorerer punkt systemfokus og systemmarkøren.
 
 ==== Flyt systemmarkør, når læsemarkøren flyttes med markørknapperne ====[BrailleSettingsReviewRoutingMovesSystemCaret]
 
-|| . {.hideHeaderRow} | . |
-| Muligheder | Standard (aldrig), Aldrig, Kun når tøjring er indstillet til automatisk, Altid |
-| Standard | Aldrig |
+|| Standard | Aldrig |
+|| Muligheder | Standard (aldrig), Aldrig, Kun når tøjring er indstillet til automatisk, Altid |
 
 
 Denne indstilling afgør, om systemmarkøren også skal flyttes med markørknapperne.
@@ -1782,9 +1796,8 @@ Hvis du vil skifte fokuskontekstpræsentation fra hvor som helst, skal du tildel
 
 ==== Afbryd talen, mens du panorerer ====[BrailleSettingsInterruptSpeech]
 
-|| . {.hideHeaderRow} | . |
-| Muligheder | Aktiveret, deaktiveret |
-| Standard | Aktiveret |
+|| Standard | Aktiveret |
+|| Muligheder | Aktiveret, deaktiveret |
 
 
 Denne indstilling bestemmer, om talen skal afbrydes, når Braille-displayet rulles tilbage/fremad.
@@ -1797,9 +1810,8 @@ Deaktivering af denne indstilling gør det muligt at høre tale, mens du læser 
 
 ==== Vis valgmarkør ====[BrailleSettingsShowSelection]
 
-|| . {.hideHeaderRow} | . |
-| Muligheder | Standard (Aktiveret), Aktiveret, deaktiveret |
-| Standard | Aktiveret |
+|| Standard | Aktiveret |
+|| Muligheder | Standard (Aktiveret), Aktiveret, deaktiveret |
 
 
 Denne indstilling bestemmer, om valgmarkøren (punkter 7 og 8) skal vises på punktdisplayet.
@@ -1857,10 +1869,10 @@ vil det ikke i øjeblikket være muligt at fortælle NVDA, hvilket display, der 
 Derfor anbefales det, at du kun forbinder ét display af en bestemt type og af et bestemt mærke til din maskine ad gangen.
 
 +++ Lyd +++[AudioSettings]
+
 %kc:setting
 ==== Åbn lydindstillinger ====
 Tast: ``NVDA+control+u``
-
 
 Denne kategori i NVDAs indstillinger lader dig ændre nogle indstillinger i forhold til lydoutput.
 
@@ -1882,9 +1894,8 @@ Det er ikke muligt at understøtte lyddæmpning for midlertidige og flytbare kop
 
 ==== Lydstyrken af NVDA-lyde følger stemmelydstyrken ====[SoundVolumeFollowsVoice]
 
-|| . {.hideHeaderRow} | . |
-| Muligheder | Deaktiveret, Aktiveret |
-| Standard | Aktiveret |
+|| Standard | Deaktiveret |
+|| Muligheder | Deaktiveret, Aktiveret |
 
 
 Når denne indstilling er aktiveret, vil lydstyrken af NVDA-lyde og bip-lyde følge stemmens lydstyrke for den stemme, du bruger.
@@ -2332,9 +2343,8 @@ Denne kategori lader dig justere forskellige indstillinger der anvendes, når du
 
 ==== Navigering af afsnit ====[ParagraphStyle]
 
-|| . {.hideHeaderRow} | . |
-| Indstillinger | Standard (Håndteret af det aktuelle program), Håndteret af det aktuelle program, Enkelt linjeskift, Flere linjeskift |
-| Standard | Håndteret af det aktuelle program |
+|| Standard | Håndteret af det aktuelle program |
+|| Muligheder | Standard (Håndteret af det aktuelle program), Håndteret af det aktuelle program, Enkelt linjeskift, Flere linjeskift |
 
 
 Disse indstillinger lader dig bestemme, hvordan du vil navigere gennem afsnit, når du bruger Ctrl+pil op og ned.
@@ -2389,9 +2399,8 @@ Denne knap vil kun være tilgængelig, hvis NVDA tillader indlæsning af tilpass
 
 ==== Registrer hændelser fra UI Automation samt egenskabsændringer ====[AdvancedSettingsSelectiveUIAEventRegistration]
 
-|| . {.hideHeaderRow} | . |
-| Indstillinger | Automatisk, selektivt, globalt |
-| Standard | Automatisk |
+|| Standard | Automatisk |
+|| Muligheder | Automatisk, selektivt, globalt |
 
 
 Denne indstilling ændre, hvordan NVDA registrere og behandler hændelser fra UI Automation Accessibility API.
@@ -2423,20 +2432,18 @@ Vi anbefaler stadig ikke, at flertallet af brugere aktiverer dette som standard,
 Microsoft Excels UI-automatiseringsimplementering ændres konstant, og versioner af Microsoft Office ældre end 16.0.13522.10000 eksponerer muligvis ikke nok information til, at denne mulighed er af nogen nytte.
 
 ==== Brug forbedret hændelsesbehandling ====[UIAEnhancedEventProcessing]
-: Standard
-  Aktiveret
-: Muligheder
-  Standard (Aktiveret), Deaktiveret, aktiveret
-:
+
+|| Standard | Aktiveret |
+|| Muligheder | Standard (Aktiveret), Deaktiveret, Aktiveret |
+
 
 Når dette er aktiveret, burde NVDA blive ved med at reagere, selv når der modtages mange hændelser fra UI Automation, som f.eks. i terminalvinduer.
 Når du ændre denne indstilling, skal du genstarte NVDA.
 
 ==== Understøttelse af Windows-konsol ====[AdvancedSettingsConsoleUIA]
 
-|| . {.hideHeaderRow} | . |
-| Muligheder | Automatisk, UIA, når dette er tilgængeligt, Forældet |
-| Standard | Automatisk |
+|| Standard | Automatisk |
+|| Muligheder | Automatisk, UIA, når dette er tilgængeligt, Forældet |
 
 
 Denne indstilling bestemmer, hvordan NVDA interagerer med Windows-konsollen, der bruges af kommandoprompt, PowerShell og Windows Subsystem for Linux.
@@ -2486,9 +2493,8 @@ Følgende indstillinger er tilgængelige:
 
 ==== Oplys live-områder ====[BrailleLiveRegions]
 
-|| . {.hideHeaderRow} | . |
-| Muligheder | Standard (Aktiveret) Deaktiveret, aktiveret |
-| Standard | Aktiveret |
+|| Standard | Aktiveret |
+|| Muligheder | Standard (Aktiveret) Deaktiveret, aktiveret |
 
 
 Denne indstilling bestemmer om NVDA skal vise opdateringer af dynamisk webindhold på punkt.
@@ -2521,9 +2527,8 @@ Dette vil dog gøre, at teksten foran systemmarkøren vil blive læst, når du i
 
 ==== Sig ny tekst i Windows-terminaler via ====[WtStrategy]
 
-|| . {.hideHeaderRow} | . |
+|| Standard | Diffing |
 | Muligheder | Standard (Diffing), UIA-meddelelser |
-| Standard | Diffing |
 
 
 Denne indstilling bestemmer, hvordan NVDA skal opfatte teksten i et terminalvindue som "ny" (og henholdsvis, hvad der skal læses op, når indstillingen "Dynamisk indhold" er slået til) i Windows Terminal og WPF Windows Terminal brugt i Visual Studio 2022.
@@ -2555,9 +2560,8 @@ Med flere historisk populære GUI API'er kan teksten gengives med en gennemsigti
 
 ==== Brug WASAPI til lydoutput ====[WASAPI]
 
-|| . {.hideHeaderRow} | . |
-| Muligheder | Standard (Aktiveret) Deaktiveret, Aktiveret |
-| Standard | Aktiveret |
+|| Standard | Aktiveret |
+|| Muligheder | Standard (Aktiveret) Deaktiveret, Aktiveret |
 
 
 Denne indstilling muliggør lydoutput via Windows Audio Session API (WASAPI).
@@ -2680,8 +2684,7 @@ Den emulerede tast vil herefter vises i kategorien "Emulerede tastaturtryk" og d
 
 Bemærk:
 - Emulerede tastaturtryk skal have en kommando tildelt, før du kan gemme dine indstillinger.
-- En kommando der benytter en funktionstast kan ikke tildeles et emuleret tastaturtryk uden
- funktionstast.
+- En kommando der benytter en funktionstast kan ikke tildeles et emuleret tastaturtryk uden funktionstast.
 F.eks. hvis man indstiller det emulerede tastaturtryk ``A`` til kommandoen ``Control+M``, ville dette forårsage at
 programmet kun modtager ``Control+A``.
 -
@@ -2961,7 +2964,7 @@ Hvis denne er valgt, vil talevisning automatisk åbnes når NVDA startes.
 Dette vindue vil altid forsøge at åbne med samme dimensioner og samme placering, som de var, da vinduet blev lukket.
 
 Så længe talevisning er slået til, opdateres den konstant med den tekst, der netop nu læses op.
-Hvis du klikker i viseren, eller hvis den får fokus, stoppes opdateringen dog midlertidigt, så det er muligt at markere eller kopiere det aktuelle indhold.
+Hvis du holder musen over viseren, eller hvis den får fokus, stoppes opdateringen dog midlertidigt, så det er muligt at markere eller kopiere det aktuelle indhold.
 
 Hvis du gerne vil kunne slå talevisning til og fra, uanset hvor du befinder dig på computeren, kan du tilknytte en bestemt bevægelse eller et tastetryk med [dialogen "Håndter kommandoer" #InputGestures].
 
