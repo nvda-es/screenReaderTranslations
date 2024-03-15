@@ -9,122 +9,173 @@
 <FONT SIZE="4">
 </FONT></CENTER>
 
-<H1>2023.3</H1>
+<H1>2024.1</H1>
 <P>
-Denne udgivelse inkluderer forbedringer til ydeevne, responsivitet og stabilitet af lydoutput.
-Der er blevet tilføjet indstillinger til at kontrollere lydstyrken af NVDA-lyde og bip, eller til at have dem følge lydstyrken af den stemme, du bruger.
+En ny taletilstand (efter behov) er blevet tilføjet.
+Når tale er efter behov, taler NVDA ikke automatisk (f.eks. når man flytter markøren), men taler stadig, når man benytter kommandoer, hvis mål udtrykkeligt er at rapportere noget (f.eks. oplyse vinduets titel).
+I talekategorien af NVDAs indstillinger er det nu muligt at fjerne uønskede taletilstande fra kommandoen til at skifte taletilstande (<CODE>NVDA+s</CODE>).
 </P>
 <P>
-NVDA kan nu regelmæssigt opdatere vinduet, hvor tekstgenkendelse vises, og sige den nye tekst, når den vises.
-Dette kan konfigureres i kategorien Windows Tekstgenkendelse i NVDA's indstillingsdialog.
+En ny "Oprindelig markeringstilstand" (aktiveret med <CODE>NVDA+shift+f10</CODE>) er nu tilgængelig i NVDAs gennemsynstilstand for Mozilla Firefox.
+Når aktiveret, vil valg af tekst i gennemsynstilstand også manipulere Firefox's egen markering.
+Kopiering af tekst med <CODE>control+c</CODE> vil gå direkte igennem til Firefox, og dermed kopiere det oprindelige indhold, i stedet for NVDAs almindelige tekstrepræsentation.
 </P>
 <P>
-Der er flere rettelser til punktdisplays, der forbedrer enhedsdetektering og bevægelse af markøren.
-Det er nu muligt at fravælge uønskede drivere fra automatisk detektion for at forbedre ydeevnen for denne funktionalitet.
-Der er også nye BRLTTY-kommandoer.
+Tilføjelsescenteret understøtter nu massehandlinger (f.eks. installering, aktivering af tilføjelser) ved at vælge flere tilføjelser.
+Der er en ny handling for at åbne en anmeldelseswebside for den valgte tilføjelse.
 </P>
 <P>
-Der er også fejlrettelser for Tilføjelsescenteret, Microsoft Office, kontekstmenuer i Microsoft Edge og lommeregneren i Windows.
+Valgmulighederne for lydudgangsenhed og lyddæmpningstilstand er fjernet fra dialogboksen "Vælg Talesyntese".
+De kan findes i lydindstillingspanelet, som kan åbnes med <CODE>NVDA+control+u</CODE>.
 </P>
-<H2>Nye funktioner</H2>
+<P>
+eSpeak-NG, LibLouis punktskriftsoversætter, og Unicode CLDR er blevet opdateret.
+Nye Thai, Filippinske og Rumænske punktskriftstabeller er tilgængelige.
+</P>
+<P>
+Der er mange fejlrettelser, især for Tilføjelsescenteret, punktskrift, Libre Office, Microsoft Office og lyd.
+</P>
+<H2>Vigtige bemærkninger</H2>
 <UL>
-<LI>Forbedret lydstyring:
+<LI>Denne version bryder kompatibilitet med eksisterende tilføjelser.
+<LI>Windows 7 og Windows 8 understøttes ikke længere.
+Windows 8.1 er den tidligst understøttede Windows-version.
+</UL>
+
+<P></P>
+<H2>Nye Funktioner</H2>
+<UL>
+<LI>Tilføjelsescenter:
   <UL>
-  <LI>Et nyt lydindstillingspanel:
-    <UL>
-    <LI>Dette kan åbnes med <CODE>NVDA+control+u</CODE>. (#15497)
-    <LI>En mulighed i Lydindstillinger til at have lydstyrken af NVDA-lyde og bip følge lydstyrkeindstillingen for den stemme, du bruger. (#1409)
-    <LI>En mulighed i Lydindstillinger til separat at konfigurere lydstyrken af NVDA-lyde. (#1409, #15038)
-    <LI>Indstillingerne for at skifte lydudgangsenhed og skifte lyddækning er blevet flyttet til det nye lydindstillingspanel fra dialogboksen Vælg Talesyntese.
-    Disse indstillinger vil blive fjernet fra dialogboksen "vælg Talesyntese" i 2024.1. (#15486, #8711)
-    </UL>
-  <LI>NVDA vil nu udsende lyd via Windows Audio Session API (WASAPI), hvilket kan forbedre respons, ydeevne og stabilitet for NVDA-tale og -lyde. (#14697, #11169, #11615, #5096, #10185, #11061)
-  <LI>Bemærk: WASAPI er inkompatibel med nogle tilføjelsesprogrammer.
-    Kompatible opdateringer er tilgængelige for disse tilføjelsesprogrammer. Opdater dem venligst, før du opdaterer NVDA.
-    Inkompatible versioner af disse tilføjelsesprogrammer vil blive deaktiveret, når du opdaterer NVDA:
-      <UL>
-      <LI>Tony's Enhancements version 1.15 eller ældre. (#15402)
-      <LI>NVDA global commands extension 12.0.8 eller ældre. (#15443)
-    -
-  -
-      </UL>
+  <LI>Tilføjelsescenteret understøtter nu massehandlinger (f.eks. installering, aktivering af tilføjelser) ved at vælge flere tilføjelser. (#15350, #15623, @CyrilleB79)
+  <LI>En ny handling er blevet tilføjet for at åbne en dedikeret webside for at se eller give feedback om den valgte tilføjelse. (#15576, @nvdaes)
   </UL>
-<LI>NVDA kan nu automatisk opdatere resultatet, når der udføres tekstgenkendelse (OCR), og NVDA vil oplæse den nye tekst, når den vises. (#2797)
+<LI>Tilføjet support for Bluetooth Low Energy HID punktdisplays. (#15470)
+<LI>En ny "Oprindelig markeringstilstand" (aktiveret med <CODE>NVDA+shift+f10</CODE>) er nu tilgængelig i NVDAs gennemsynstilstand for Mozilla Firefox.
+Når aktiveret, vil valg af tekst i gennemsynstilstand også manipulere Firefoxs egen markering.
+Kopiering af tekst med <CODE>control+c</CODE> vil gå direkte igennem til Firefox, og dermed kopiere det oprindelige indhold, i stedet for NVDAs almindelige tekstrepræsentation.
+Bemærk dog, at da Firefox håndterer den faktiske kopiering, vil NVDA ikke give besked om, at indholdet er kopieret til udklipsholderen i denne tilstand. (#15830)
+<LI>Når man kopierer tekst i Microsoft Word med NVDAs gennemsynstilstand aktiveret, inkluderes formateringen nu også.
+En bivirkning af dette er, at NVDA ikke længere vil fortælle, når indhold kopieres til udklipsholderen, når man trykker <CODE>control+c</CODE> i Microsoft Word / Outlook gennemsynstilstand, da applikationen nu håndterer kopieringen, ikke NVDA. (#16129)
+<LI>En ny taletilstand "Efter behov" er blevet tilføjet.
+Når tale er efter behov, taler NVDA ikke automatisk (f.eks. når man flytter markøren), men taler stadig, når man benytter kommandoer, hvis mål udtrykkeligt er at rapportere noget (f.eks. oplyse vinduets titel). (#481, @CyrilleB79)
+<LI>I talekategorien af NVDAs indstillinger er det nu muligt at fjerne uønskede taletilstande fra kommandoen til at skifte taletilstand (<CODE>NVDA+s</CODE>). (#15806, @lukaszgo1)
   <UL>
-  <LI>For at aktivere denne funktionalitet, aktivér indstillingen "Opdater regelmæssigt genkendt indhold" i kategorien Windows Tekstgenkendelse i NVDAs indstillingsdialog.
-  <LI>Når dette er aktiveret, kan du bestemme om ny tekst skal oplæses ved at slå oplæsning af dynamisk indhold til og fra med <CODE>NVDA+5</CODE>.
+  <LI>Hvis du i øjeblikket bruger tilføjelsen NoBeepsSpeechMode, overvej at afinstallere den, og deaktivere "bip" og "efter behov" i indstillingerne.
   </UL>
-<LI>Når du bruger automatisk detektion af punktdisplay, er det nu muligt at fravælge drivere fra detektion fra dialogboksen til valg af display. (#15196)
-<LI>En ny indstilling i Dokumentformateringsindstillinger, "Ignorer blanke linjer ved rapportering af linjeindrykning". (#13394)
-<LI>Tilføjet en uanvendt kommando til at navigere efter faner i gennemsynstilstand. (#15046)
 </UL>
 
 <P></P>
 <H2>Ændringer</H2>
 <UL>
-<LI>Punktdisplays:
+<LI>NVDA understøtter ikke længere Windows 7 og Windows 8.
+Windows 8.1 er den tidligst understøttede Windows-version. (#15544)
+<LI>Komponentopdateringer:
   <UL>
-  <LI>Når teksten i en terminal ændres uden opdatering af systemmarkøren, vil teksten på et punktdisplay nu korrekt opdatere, når den er placeret på en ændret linje.
-  Dette inkluderer situationer, hvor punktskrift er tøjret til læsemarkøren. (#15115)
-  <LI>Flere BRLTTY-tastetryk er nu tildelt NVDA-kommandoer (#6483):
+  <LI>Opdateret LibLouis punktskriftsoversætter til <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.28.0">3.28.0</A>. (#15435, #15876, @codeofdusk)
     <UL>
-    <LI><CODE>learn</CODE>: Slå tastaturhjælp til og fra
-    <LI><CODE>prefmenu</CODE>: åbn NVDA-menuen
-    <LI><CODE>prefload</CODE>/<CODE>prefsave</CODE>: Genindlæs/gem NVDA-konfiguration
-    <LI><CODE>time</CODE>: Vis tid
-    <LI><CODE>say_line</CODE>: Sig den aktuelle linje, hvor læsemarkøren er placeret
-    <LI><CODE>say_below</CODE>: Sig alt ved hjælp af læsemarkøren
+    <LI>Tilføjet nye Thai, Rumænske, og Filippinske punktskriftstabeller.
     </UL>
-  <LI>BRLTTY-driveren er kun tilgængelig, når en BRLTTY-instans med BrlAPI aktiveret kører. (#15335)
-  <LI>Den avancerede indstilling til at aktivere support til HID-punktdisplay er blevet fjernet til fordel for en ny indstilling.
-  Du kan nu deaktivere specifikke drivere for automatisk detektion af punktdisplay i dialogboksen til valg af punktdisplay. (#15196)
+  <LI>eSpeak NG er blevet opdateret til 1.52-dev commit <CODE>530bf0abf</CODE>. (#15036)
+  <LI>CLDR emoji og symbolannotationer er blevet opdateret til version 44.0. (#15712, @OzancanKaratas)
+  <LI>Opdateret Java Access Bridge til 17.0.9+8Zulu (17.46.19). (#15744)
   </UL>
-<LI>Tilføjelsescenter: Installerede tilføjelsesprogrammer vil nu blive vist i fanen Tilgængelige tilføjelser, hvis de er tilgængelige i Tilføjelsescenteret. (#15374)
-<LI>Nogle genvejstaster er blevet opdateret i NVDA-menuen. (#15364)
+<LI>Tastaturkommandoer:
+  <UL>
+  <LI>Følgende kommandoer understøtter nu to og tre tryk for at stave den oplyste information og stave med tegnbeskrivelser: Oplys markering, oplys tekst i udklipsholderen og oplys fokuseret objekt. (#15449, @CyrilleB79)
+  <LI>Kommandoen til at skifte indstillingen for skærmtæppet har nu en standardkommando tilknyttet: <CODE>NVDA+control+escape</CODE>. (#10560, @CyrilleB79)
+  <LI>Når kommandoen til at få den aktuelle markering oplyst trykkes fire gange, vil indholdet blive vist i gennemsynstilstand. (#15858, @Emil-18)
+  </UL>
+<LI>Microsoft Office:
+  <UL>
+  <LI>Når man anmoder om formateringsoplysninger på Excel-celler, vil kanter og baggrund kun blive oplyst, hvis  formateringen er aktuel. (#15560, @CyrilleB79)
+  <LI>NVDA vil igen ikke rapportere grupperinger uden navn som i nyere versioner af Microsoft Office 365-menuer. (#15638)
+  </UL>
+<LI>Valgmulighederne for lydudgangsenhed og lyddæmpningstilstand er fjernet fra dialogboksen "Vælg talesyntese".
+De kan findes i lydindstillingspanelet, som kan åbnes med <CODE>NVDA+control+u</CODE>. (#15512, @codeofdusk)
+<LI>Indstillingen "Oplys rolle, når musen går ind i et objekt" i NVDAs museindstillingskategori er blevet omdøbt til "Oplys objekt, når musen går ind i det".
+Denne indstilling annoncerer nu yderligere relevant information om et objekt, når musen går ind i det, såsom tilstande (markeret/trykket) eller cellekoordinater i en tabel. (#15420, @LeonarddeR)
+<LI>Nye punkter er blevet tilføjet til hjælpemenuen: "Få Hjælp" og "Butik", drevet af NV Access. (#14631)
+<LI>NVDAs understøttelse for <A HREF="https://poedit.net">Poedit</A> er blevet opdateret for Poedit version 3 og nyere.
+Brugere af Poedit 1 opfordres til at opdatere til Poedit 3, hvis de ønsker at benytte den forbedrede tilgængelighed i Poedit, såsom tastaturgenveje til at læse oversætternoter og kommentarer. (#15313, #7303, @LeonarddeR)
+<LI>Punktskriftsviser og taleviser er nu deaktiveret i sikker tilstand. (#15680)
+<LI>Under objektnavigation vil deaktiverede (utilgængelige) objekter ikke længere blive ignoreret. (#15477, @CyrilleB79)
+<LI>Tilføjet indholdsfortegnelse til dokumentet "Kommandooversigt". (#16106)
 </UL>
 
 <P></P>
 <H2>Fejlrettelser</H2>
 <UL>
-<LI>Microsoft Office:
-  <UL>
-  <LI>Rettet nedbrud i Microsoft Word, når dokumentformateringsindstillingerne "overskrifter" og "kommentarer og noter" ikke var aktiveret. (#15019)
-  <LI>I Word og Excel vil tekstjustering nu blive korrekt rapporteret i flere situationer. (#15206, #15220)
-  <LI>Rettet annonceringen af nogle celleformateringsgenveje i Excel. (#15527)
-  </UL>
-<LI>Microsoft Edge:
-  <UL>
-  <LI>NVDA vil ikke længere hoppe tilbage til den sidste position i gennemsynstilstand, når kontekstmenuen åbnes i Microsoft Edge. (#15309)
-  <LI>NVDA kan igen læse kontekstmenuer for downloads i Microsoft Edge. (#14916)
-  </UL>
-<LI>Punktdisplay:
-  <UL>
-  <LI>Punktdisplaymarkøren og valgmarkøren vil nu altid blive opdateret korrekt, efter at have vist eller skjult respektive indikatorer med et tastetryk. (#15115)
-  <LI>Rettet fejl, hvor Albatross punktdisplays forsøger at initialisere, selvom et andet punktdisplayenhed er blevet tilsluttet. (#15226)
-  </UL>
 <LI>Tilføjelsescenter:
   <UL>
-  <LI>Rettet fejl, hvor fjernelse af markeringen for boksen "inkluder inkompatible tilføjelser" ville resultere i, at inkompatible tilføjelsesprogrammer stadig blev vist i tilføjelsescenteret. (#15411)
-  <LI>Tilføjelser, der er blokeret på grund af kompatibilitetsproblemer, burde nu filtreres korrekt, når filteret for aktiveret/deaktiveret status ændres. (#15416)
-  <LI>Rettet fejl, der forhindrede, at tilsidesatte aktiverede inkompatible tilføjelser kunne blive opdateret eller erstattet ved hjælp af det eksterne installationsværktøj. (#15417)
-  <LI>Rettet fejl, hvor NVDA ikke ville tale, indtil den blev genstartet efter installation af tilføjelser. (#14525)
-  <LI>Rettet fejl, hvor tilføjelser ikke kunne installeres, hvis en tidligere download mislykkedes eller blev annulleret. (#15469)
-  <LI>Rettet problemer med håndtering af inkompatible tilføjelser, når NVDA nlev opdateret. (#15414, #15412, #15437)
+  <LI>Når status for en tilføjelse ændres, mens den har fokus, f.eks. en ændring fra "henter" til "hentet", annonceres det opdaterede emne nu korrekt. (#15859, @LeonarddeR)
+  <LI>Når man installerer tilføjelser, overlapper installationsprompterne ikke længere genstartsdialogen. (#15613, @lukaszgo1)
+  <LI>Når man geninstallerer en inkompatibel tilføjelse, bliver den ikke længere tvangsdeaktiveret. (#15584, @lukaszgo1)
+  <LI>Deaktiverede og inkompatible tilføjelser kan nu opdateres. (#15568, #15029)
+  <LI>NVDA gendanner nu og viser en fejl i det tilfælde, hvor en tilføjelse ikke hentes korrekt. (#15796)
+  <LI>NVDA mislykkes ikke længere lejlighedsvis med at genstarte efter at have åbnet og lukket Tilføjelsescenteret. (#16019, @lukaszgo1)
+  <P></P>
   </UL>
-<LI>NVDA annoncerer igen regneresultater for lommeregneren i Windows 32bitpå Server, LTSC og LTSB-versioner af Windows. (#15230)
-<LI>NVDA ignorerer ikke længere fokusændringer, når et indlejret vindue får fokus. (#15432)
-<LI>Rettet en potentiel årsag til nedbrud under NVDA-opstart. (#15517)
+<LI>Lyd:
+  <UL>
+  <LI>NVDA fryser ikke længere kortvarigt, når flere lyde afspilles hurtigt efter hinanden. (#15311, #15757, @jcsteh)
+  <LI>Hvis lydudgangsenheden er sat til noget andet end standard, og den enhed bliver tilgængelig igen efter at have været utilgængelig, skifter NVDA nu tilbage til den konfigurerede enhed i stedet for at fortsætte med at bruge standardenheden. (#15759, @jcsteh)
+  <LI>NVDA genoptager nu lydafspilning, hvis konfigurationen af udgangsenheden ændres, eller en anden applikation frigiver eksklusiv kontrol over enheden. (#15758, #15775, @jcsteh)
+  <P></P>
+  </UL>
+<LI>Punktskrift:
+  <UL>
+  <LI>Punktdisplays med mere end én linje til visning af punkt får ikke længere BRLTTY-driveren til at gå ned og behandles som ét sammenhængende displays. (#15386)
+  <LI>Flere objekter, som indeholder nyttig tekst detekteres, og tekstindholdet vises på punktskrift. (#15605)
+  <LI>Indtastning af forkortet punktskrift fungerer nu korrekt igen. (#15773, @aaclause)
+  <LI>Punktskrift opdateres nu, når navigatorobjektet flyttes mellem tabelceller i flere situationer. (#15755, @Emil-18)
+  <LI>Resultatet af kommandoerne til at oplyse det aktuelle fokus, aktuelle navigatorobjekt og den aktuelle markering vises nu på punktskrift. (#15844, @Emil-18)
+  <LI>Albatross punktskriftdriveren behandler ikke længere en Esp32 mikrocontroller som et Albatross-display. (#15671)
+  <P></P>
+  </UL>
+<LI>LibreOffice:
+  <UL>
+  <LI>Ord, der slettes ved hjælp af <CODE>control+backspace</CODE> tastaturgenvejen, annonceres nu også korrekt, når det slettede ord efterfølges af blanke tegn (som mellemrum og tab). (#15436, @michaelweghorn)
+  <LI>Annoncering af statuslinjen ved hjælp af <CODE>NVDA+end</CODE> tastaturgenvejen fungerer nu også for dialoger i LibreOffice version 24.2 og nyere. (#15591, @michaelweghorn)
+  <LI>Alle forventede tekstattributter understøttes nu i LibreOffice versioner 24.2 og nyere.
+  Dette gør, at annoncering af stavefejl fungerer, når man får oplæst en linje i Writer. (#15648, @michaelweghorn)
+  <LI>Annoncering af overskriftsniveauer fungerer nu også for LibreOffice versioner 24.2 og nyere. (#15881, @michaelweghorn)
+  <P></P>
+  </UL>
+<LI>Microsoft Office:
+  <UL>
+  <LI>I Excel med UIA deaktiveret opdateres punktskrift, og det aktive celleindhold udtales, når <CODE>control+y</CODE>, <CODE>control+z</CODE> eller <CODE>alt+backspace</CODE> trykkes. (#15547)
+  <LI>I Word med UIA deaktiveret opdateres punktskrift, når <CODE>control+v</CODE>, <CODE>control+x</CODE>, <CODE>control+y</CODE>, <CODE>control+z</CODE>, <CODE>alt+backspace</CODE>, <CODE>backspace</CODE> eller <CODE>control+backspace</CODE> trykkes.
+  Det opdateres også med UIA aktiveret, når der indtastes tekst, og punktskrift er tøjret til læsemarkøren og følger systemmarkøren. (#3276)
+  <LI>I Word oplyses cellen, der flyttes til nu korrekt, når man bruger Word-kommandoerne til tabelnavigation <CODE>alt+home</CODE>, <CODE>alt+end</CODE>, <CODE>alt+pageUp</CODE> og <CODE>alt+pageDown</CODE>. (#15805, @CyrilleB79)
+  </UL>
+<LI>Rapportering af objektgenvejstaster er forbedret. (#10807, #15816, @CyrilleB79)
+<LI>SAPI4-talesyntese understøtter nu korrekt ændringer i lydstyrke, hastighed og tonehøjde indlejret i tale. (#15271, @LeonarddeR)
+<LI>Når noget omfatter flere rækker, oplyses dette nu korrekt i programmer, der bruger Java Access Bridge. (#14609)
+<LI>NVDA vil annoncere dialogindhold for flere Windows 10 og 11-dialoger. (#15729, @josephsl)
+<LI>NVDA vil ikke længere fejle med at læse en nyindlæst side i Microsoft Edge, når man bruger UI Automation. (#15736)
+<LI>Når man bruger sige alt eller kommandoer, som staver tekst, forkotes pauserne mellem sætninger eller tegn ikke længere gradvist over tid. (#15739, @jcsteh)
+<LI>NVDA fryser ikke længere nogle gange, når der siges en stor mængde tekst. (#15752, @jcsteh)
+<LI>Når man tilgår Microsoft Edge ved hjælp af UI Automation, kan NVDA aktivere flere kontrolelementer i gennemsynstilstand. (#14612)
+<LI>NVDA vil ikke længere fejle med at starte, når konfigurationsfilen er beskadiget, men vil gendanne konfigurationen til standard, som det gjorde tidligere. (#15690, @CyrilleB79)
+<LI>Fast understøttelse for System List view (<CODE>SysListView32</CODE>) kontrolelementer i Windows Forms-applikationer. (#15283, @LeonarddeR)
+<LI>Det er ikke længere muligt at overskrive NVDA's Python konsolhistorik. (#15792, @CyrilleB79)
+<LI>NVDA forbliver responsiv, når den oversvømmes med mange UI Automation-hændelser, f.eks. når store tekststykker udskrives til en terminal eller når man lytter til talebeskeder i WhatsApp messenger. (#14888, #15169)
+  <UL>
+  <LI>Denne nye adfærd kan deaktiveres ved hjælp af den nye indstilling "Brug forbedret begivenhedsbehandling" i NVDA's avancerede indstillinger.
+  </UL>
+<LI>NVDA er igen i stand til at spore fokus i applikationer, der kører inden for Windows Defender Application Guard (WDAG). (#15164)
+<LI>Taleteksten opdateres ikke længere, når musen bevæger sig i Taleviseren. (#15952, @hwf1324)
+<LI>NVDA skifter igen tilbage til gennemsynstilstand, når combo boxe lukkes med <CODE>escape</CODE> eller <CODE>alt+upArrow</CODE> i Firefox eller Chrome. (#15653)
+<LI>At bevæge sig op og ned i combo boxe i iTunes vil ikke længere uretmæssigt skifte tilbage til gennemsynstilstand. (#15653)
+<P></P>
+== Ændringer for udviklere ==
+For nyheder relateret til udvikling se venligst det engelske "What's New"-dokument.
+<P></P>
+= Tidligere versioner =
+For nyheder i ældre versioner se venligst det engelske "What's New"-dokument.
 </UL>
 
-<P></P>
-<H2>Ændringer for udviklere</H2>
-<P>
-For nyheder relateret til udvikling se venligst det engelske "What's New"-dokument.
-</P>
-<H1>Tidligere versioner</H1>
-<P>
-For nyheder i ældre versioner se venligst det engelske "What's New"-dokument.
-</P>
 
 <!-- html code generated by txt2tags 2.5 (http://txt2tags.sf.net) -->
 <!-- cmdline: txt2tags -q -t html changes.t2t -->
