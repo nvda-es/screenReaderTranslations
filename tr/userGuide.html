@@ -4887,10 +4887,12 @@ WASAPI, hem konuşma hem de sesler olmak üzere NVDA ses çıkışının hızın
 Bu seçeneği değiştirdikten sonra, değişikliğin etkin olabilmesi için NVDA'yı yeniden başlatmanız gerekir.
 WASAPI'nin devre dışı bırakılması aşağıdaki seçenekleri devre dışı bırakır:
 </P>
-<A NAME="SoundVolumeFollowsVoice"></A>
-<H4>NVDA seslerinin ses seviyesi konuşma ses seviyesine eşit olsun</H4>
-<A NAME="SoundVolume"></A>
-<H4>NVDA ses düzeyi</H4>
+<UL>
+<LI><A HREF="#SoundVolumeFollowsVoice">NVDA seslerinin ses seviyesi konuşma ses seviyesine eşit olsun volume</A>
+<LI><A HREF="#SoundVolume">NVDA ses düzeyi</A>
+</UL>
+
+<P></P>
 <A NAME="AdvancedSettingsDebugLoggingCategories"></A>
 <H4>Hata ayıklama kategorileri</H4>
 <P>
@@ -5335,6 +5337,8 @@ Birden fazla eklenti kurmak için mevcut eklentiler sekmesinde birden fazla ekle
 Eklenti Mağazası dışından edindiğiniz bir eklentiyi kurmak için "Dış kaynaktan kur" düğmesine basın.
 Bu, bilgisayarınızda veya bir ağ klasöründe (<CODE>.nvda-addon</CODE> dosyası) uzantılı eklenti paketlerini seçmenize olanak tanır.
 Eklenti dosyasını açtıktan sonra kurulum işlemi başlayacaktır.
+</P>
+<P>
 NVDA sisteminizde kurulu ve çalışıyorsa, kurulum sürecini başlatmak için doğrudan tarayıcıdan veya dosya sisteminden bir eklenti dosyası da açabilirsiniz.
 </P>
 <P>
@@ -5354,8 +5358,10 @@ Aynı anda birden fazla eklenti kurabildiğiniz gibi, birden fazla eklentiyi de 
 <P>
 Bir eklentiyi devre dışı bırakmak için "devre dışı bırak" eylemini kullanın.
 Önceden devre dışı bırakılmış bir eklentiyi etkinleştirmek için "etkinleştir" eylemini kullanın.
+Eklenti durumu "etkin" ise eklentiyi devre dışı bırakabilir veya eklenti durumu "devre dışı" ise etkinleştirebilirsiniz.
 Etkinleştirme/devre dışı bırakma eyleminin her kullanımında, eklenti durumu NVDA yeniden başladığında ne olacağını gösterecek şekilde değişir.
 Eğer eklenti önceden "etkin" durumdaysa, yeniden başlatma sonrasında durumu "devre dışı" olarak görüntülenir.
+Eğer eklenti önceden "devre dışı" durumdaysa, yeniden başlatma sonrasında durumu "etkin" olarak görüntülenir.
 Eklentileri yüklediğiniz veya kaldırdığınız gibi, bu değişikliklerin etkili olması için NVDA'yı yeniden başlatmanız gerekecektir.
 Ayrıca, mevcut eklentiler sekmesinde birden fazla eklenti seçip ardından bağlam menüsü üzerinden uygun eylemi seçerek birden fazla eklentiyi aynı anda etkinleştirebilir veya devre dışı bırakabilirsiniz.
 </P>
@@ -6621,8 +6627,7 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 <H2>16.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Serileri</H2>
 <P>
 USB ya da bluetooth üzerinden bağlandıklarında, NVDA <A HREF="https://www.hims-inc.com/">Hims</A> tarafından üretilen Braille Sense, Braille EDGE, Smart Beetle ve Sync Braille kabartma ekranları destekler. 
-USB üzerinden bağlıyorsanız, sisteminize HIMS tarafından dağıtılan USB sürücülerini kurmanız gerekir.
-sürücüleri <A HREF="http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">USB drivers from HIMS</A> sayfasından indirebilirsiniz.
+USB üzerinden bağlıyorsanız, sisteminize <A HREF="http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">HIMS tarafından dağıtılan USB sürücülerini</A> sayfasından indirip kurmanız gerekir.
 </P>
 <P>
 Aşağıda braille ekranı NVDA ile hangi tuşlarla kullanabileceğinizi bulabilirsiniz.
@@ -7108,8 +7113,6 @@ Aşağıdaki Braille ekranlar desteklenmektedir:
 <P></P>
 <P>
 Bu ekranlar henüz NVDA'nın otomatik arka plan braille görüntü algılama işlevini desteklememektedir.
-</P>
-<P>
 There is an option in the display's USB driver which can cause an issue with loading the display.
 Please try the following:
 </P>
@@ -7992,6 +7995,8 @@ The b.book, b.note, Esys, Esytime and Iris displays from Eurobraille are support
 These devices have a braille keyboard with 10 keys. 
 Please refer to the display's documentation for descriptions of these keys.
 Of the two keys placed like a space bar, the left key is corresponding to the backspace key and the right key to the space key.
+</P>
+<P>
 These devices are connected via USB and have one stand-alone USB keyboard. 
 It is possible to enable/disable this keyboard by toggling "HID Keyboard simulation" using an input gesture.
 The braille keyboard functions described directly below is when "HID Keyboard simulation" is disabled. 
@@ -8536,6 +8541,10 @@ The braille keyboard functions described directly below is when "HID Keyboard si
 <TD><CODE>control+end</CODE> key</TD>
 <TD><CODE>l6+l7+l8</CODE>, <CODE>l5+l6+l7</CODE></TD>
 </TR>
+<TR>
+<TD>Toggle HID Keyboard simulation</TD>
+<TD><CODE>l1+joystick1Down</CODE>, <CODE>l8+joystick1Down</CODE></TD>
+</TR>
 </TABLE>
 
 <A NAME="NattiqTechnologies"></A>
@@ -8702,6 +8711,18 @@ Eğer baud hızları eşit olmazsa, sürücü beklenmedik şekilde davranabilir.
 <TR>
 <TD>Reports information about the location of the text or object at the review cursor</TD>
 <TD><CODE>f8</CODE></TD>
+</TR>
+<TR>
+<TD>Shows braille settings</TD>
+<TD><CODE>f1+home1</CODE>, <CODE>f9+home2</CODE></TD>
+</TR>
+<TR>
+<TD>Reads status bar and moves navigator object into it</TD>
+<TD><CODE>f1+end1</CODE>, <CODE>f9+end2</CODE></TD>
+</TR>
+<TR>
+<TD>Cycle the braille cursor shape</TD>
+<TD><CODE>f1+eCursor1</CODE>, <CODE>f9+eCursor2</CODE></TD>
 </TR>
 <TR>
 <TD>Toggle the braille cursor</TD>
@@ -8902,8 +8923,9 @@ Güvenli mod şu özellikleri devre dışı bırakır:
 <LI>NVDA'yı güncelleme ve taşınabilir kopyalar oluşturma
 -  <A HREF="#PythonConsole">Python konsolu</A>
 <LI><A HREF="#AddonsManager">Eklenti Mağazası</A>
-<LI>The <A HREF="#BrailleViewer">Braille Görüntüleyici</A> ve <A HREF="#SpeechViewer">Konuşma Görüntüleyici</A>
 -  <A HREF="#LogViewer">Log dosyasını göster</A> ve günlük tutma
+<LI>The <A HREF="#BrailleViewer">Braille Görüntüleyici</A> ve <A HREF="#SpeechViewer">Konuşma Görüntüleyici</A>
+<LI>Kullanım kılavuzu veya katkıda bulunanlar dosyası gibi harici belgeleri NVDA menüsünden açma.
 </UL>
 
 <P></P>
@@ -8950,9 +8972,10 @@ Bu, bir eklentinin herhangi bir probleme neden olup olmadığını anlamanıza y
 <P>
 Bir örnek olarak, çalıştır iletişim kutusuna aşağıdaki komutu girerek NVDA'yı kapatabilirsiniz:
 </P>
-<P>
-nvda -q
-</P>
+<PRE>
+  nvda -q
+</PRE>
+<P></P>
 <P>
 Komut satırı seçeneklerinin bazılarının uzun ve kısa versiyonları bulunurken; bazılarının yalnızca uzun versiyonları vardır.
 Kısa versiyonu olanlar için, aşağıdaki gibi onları birleştirebilirsiniz:
