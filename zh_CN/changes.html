@@ -241,64 +241,64 @@
 </UL>
 
 <P></P>
-<H3>API Breaking Changes</H3>
+<H3>API 重大变更</H3>
 <P>
-These are breaking API changes.
-Please open a GitHub issue if your Add-on has an issue with updating to the new API.
+以下是一些会破坏现有插件兼容性的 API 改动。
+如果您的插件在更新到新 API 后出现问题，请随时在 GitHub 上提交 issue 报告。
 </P>
 <UL>
-<LI>NVDA is now built with Python 3.11. (#12064)
-<LI>Updated pip dependencies:
+<LI>NVDA 现在使用 Python 3.11 进行构建。(#12064)
+<LI>更新了以下 pip 依赖：
   <UL>
-  <LI>configobj to 5.1.0dev commit <CODE>e2ba4457c4651fa54f8d59d8dcdd3da950e956b8</CODE>. (#15544)
-  <LI>Comtypes to 1.2.0. (#15513, @codeofdusk)
-  <LI>Flake8 to 4.0.1. (#15636, @lukaszgo1)
-  <LI>py2exe to 0.13.0.1dev commit <CODE>4e7b2b2c60face592e67cb1bc935172a20fa371d</CODE>. (#15544)
-  <LI>robotframework to 6.1.1. (#15544)
-  <LI>SCons to 4.5.2. (#15529, @LeonarddeR)
-  <LI>sphinx to 7.2.6. (#15544)
-  <LI>wxPython to 4.2.2a commit <CODE>0205c7c1b9022a5de3e3543f9304cfe53a32b488</CODE>. (#12551, #16257)
+  <LI>configobj 更新到 5.1.0dev 版本 (commit: e2ba4457c4651fa54f8d59d8dcdd3da950e956b8)。(#15544)
+  <LI>Comtypes 更新到 1.2.0 版本。(#15513, @codeofdusk)
+  <LI>Flake8 更新到 4.0.1 版本。(#15636, @lukaszgo1)
+  <LI>py2exe 更新到 0.13.0.dev 提交版本 (commit: 4e7b2b2c60face592e67cb1bc935172a20fa371d)。 (#15544)
+  <LI>robotframework 更新到 6.1.1 版本。(#15544)
+  <LI>SCons 更新到 4.5.2 版本。(#15529, @LeonarddeR)
+  <LI>sphinx 更新到 7.2.6 版本。(#15544)
+  <LI>wxPython 更新到 4.2.2a 提交版本 (commit: 0205c7c1b9022a5de3e3543f9304cfe53a32b488)。 (#12551, #16257)
   </UL>
-<LI>Removed pip dependencies:
+<LI>删除了以下 pip 依赖：
   <UL>
-  <LI>typing_extensions, these should be supported natively in Python 3.11 (#15544)
-  <LI>nose, instead unittest-xml-reporting is used to generate XML reports. (#15544)
+  <LI>typing_extensions：Python 3.11 原生支持此功能，无需单独安装。(#15544)
+  <LI>nose：不再使用 nose，而是使用 unittest-xml-reporting 生成 XML 报告。(#15544)
   </UL>
-<LI><CODE>IAccessibleHandler.SecureDesktopNVDAObject</CODE> has been removed.
-Instead, when NVDA is running on the user profile, track the existence of the secure desktop with the extension point: <CODE>winAPI.secureDesktop.post_secureDesktopStateChange</CODE>. (#14488)
-<LI><CODE>braille.BrailleHandler.handlePendingCaretUpdate</CODE> has been removed with no public replacement. (#15163, @LeonarddeR)
-<LI><CODE>bdDetect.addUsbDevices and bdDetect.addBluetoothDevices</CODE> have been removed.
-Braille display drivers should implement the <CODE>registerAutomaticDetection</CODE> class method instead.
-That method receives a <CODE>DriverRegistrar</CODE> object on which the <CODE>addUsbDevices</CODE> and <CODE>addBluetoothDevices</CODE> methods can be used. (#15200, @LeonarddeR)
-<LI>The default implementation of the check method on <CODE>BrailleDisplayDriver</CODE> now requires both the <CODE>threadSafe</CODE> and <CODE>supportsAutomaticDetection</CODE> attributes to be set to <CODE>True</CODE>. (#15200, @LeonarddeR)
-<LI>Passing lambda functions to <CODE>hwIo.ioThread.IoThread.queueAsApc</CODE> is no longer possible, as functions should be weakly referenceable. (#14627, @LeonarddeR)
-<LI><CODE>IoThread.autoDeleteApcReference</CODE> has been removed. (#14924, @LeonarddeR)
-<LI>To support capital pitch changes, synthesizers must now explicitly declare their support for the <CODE>PitchCommand</CODE> in the <CODE>supportedCommands</CODE> attribute on the driver. (#15433, @LeonarddeR)
-<LI><CODE>speechDictHandler.speechDictVars</CODE> has been removed. Use <CODE>NVDAState.WritePaths.speechDictsDir</CODE> instead of <CODE>speechDictHandler.speechDictVars.speechDictsPath</CODE>. (#15614, @lukaszgo1)
-<LI><CODE>languageHandler.makeNpgettext</CODE> and <CODE>languageHandler.makePgettext</CODE> have been removed.
-<CODE>npgettext</CODE> and <CODE>pgettext</CODE> are supported natively now. (#15546)
-<LI>The app module for <A HREF="https://poedit.net">Poedit</A> has been changed significantly. The <CODE>fetchObject</CODE> function has been removed. (#15313, #7303, @LeonarddeR)
-<LI>The following redundant types and constants have been removed from <CODE>hwPortUtils</CODE>: (#15764, @LeonarddeR)
+<LI>删除了 <CODE>IAccessibleHandler.SecureDesktopNVDAObject</CODE>。 
+当 NVDA 运行在用户配置文件上时，可以使用扩展点 <CODE>winAPI.secureDesktop.post_secureDesktopStateChange</CODE> 来跟踪安全桌面的存在。(#14488)
+<LI>删除了 <CODE>braille.BrailleHandler.handlePendingCaretUpdate</CODE>，没有公开替代方案。(#15163, @LeonarddeR)
+<LI>删除了 <CODE>bdDetect.addUsbDevices</CODE> 和 <CODE>bdDetect.addBluetoothDevices</CODE>。
+盲文点显器驱动应实现 <CODE>registerAutomaticDetection</CODE> 类方法。 
+  该方法接收一个 <CODE>DriverRegistrar</CODE> 对象，可在其上使用 <CODE>addUsbDevices</CODE> 和 <CODE>addBluetoothDevices</CODE> 方法。(#15200, @LeonarddeR)
+<LI><CODE>BrailleDisplayDriver</CODE> 上的检查方法的默认实现现在要求同时设置 <CODE>threadSafe</CODE> 和 <CODE>supportsAutomaticDetection</CODE> 属性为 <CODE>True</CODE>。(#15200, @LeonarddeR)
+<LI>不允许传递 lambda 函数给 <CODE>hwIo.ioThread.IoThread.queueAsApc</CODE>，因为函数应该是弱引用的。(#14627, @LeonarddeR)
+<LI>删除了 <CODE>IoThread.autoDeleteApcReference</CODE>。(#14924, @LeonarddeR)
+<LI>为了支持遇到大写字母时音高变化，语音合成器现在必须在其驱动的 <CODE>supportedCommands</CODE> 属性中明确声明它们对 <CODE>PitchCommand</CODE> 的支持。(#15433, @LeonarddeR)
+<LI>删除了 <CODE>speechDictHandler.speechDictVars</CODE>。使用 <CODE>NVDAState.WritePaths.speechDictsDir</CODE> 代替 <CODE>speechDictHandler.speechDictVars.speechDictsPath</CODE>。(#15614, @lukaszgo1)
+<LI>删除了 <CODE>languageHandler.makeNpgettext</CODE> 和 <CODE>languageHandler.makePgettext</CODE>。
+  现在原生支持 <CODE>npgettext</CODE> 和 <CODE>pgettext</CODE>。(#15546)
+<LI>针对 <A HREF="https://poedit.net">Poedit</A> 的应用模块进行了重大更改。删除了 <CODE>fetchObject</CODE> 函数。(#15313, #7303, @LeonarddeR)
+<LI>从 <CODE>hwPortUtils</CODE> 中删除了以下冗余类型和常量: (#15764)
   <UL>
   <LI><CODE>PCWSTR</CODE>
-  <LI><CODE>HWND</CODE> (replaced by <CODE>ctypes.wintypes.HWND</CODE>)
+  <LI><CODE>HWND</CODE> （替换为 <CODE>ctypes.wintypes.HWND</CODE>）
   <LI><CODE>ULONG_PTR</CODE>
   <LI><CODE>ULONGLONG</CODE>
   <LI><CODE>NULL</CODE>
-  <LI><CODE>GUID</CODE> (replaced by <CODE>comtypes.GUID</CODE>)
+  <LI><CODE>GUID</CODE> （替换为 <CODE>comtypes.GUID</CODE>）
   </UL>
-<LI><CODE>gui.addonGui.AddonsDialog</CODE> has been removed. (#15834)
-<LI><CODE>touchHandler.TouchInputGesture.multiFingerActionLabel</CODE> has been removed with no replacement. (#15864, @CyrilleB79)
-<LI><CODE>NVDAObjects.IAccessible.winword.WordDocument.script_reportCurrentHeaders</CODE> has been removed with no replacement. (#15904, @CyrilleB79)
-<LI>The following app modules are removed.
-Code which imports from one of them, should instead import from the replacement module. (#15618, @lukaszgo1)
+<LI>删除了 <CODE>gui.addonGui.AddonsDialog</CODE>。 (#15834)
+<LI>删除了 <CODE>touchHandler.TouchInputGesture.multiFingerActionLabel</CODE> 没有公开替代方案。 (#15864, @CyrilleB79)
+<LI><CODE>NVDAObjects.IAccessible.winword.WordDocument.script reportCurrentHeaders</CODE> 已被删除，没有公开替代方案。 (#15904， @CyrilleB79)
+<LI>以下应用模块已被删除。
+请从其相应替换模块中导入。 (#15618, @lukaszgo1)
 </UL>
 
 <P></P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TH>Removed module name</TH>
-<TH>Replacement module</TH>
+<TH>已删除的模块</TH>
+<TH>用于替换的模块</TH>
 </TR>
 <TR>
 <TD><CODE>azardi-2.0</CODE></TD>
