@@ -194,56 +194,55 @@ NVDA 更新日志
 - 默认类型为标准的 ``gui.nvdaControls.MessageDialog`` 不再抛出 None 转换异常，因为没有指定提示音。 (#16223, @XLTechie)
 -
 
-=== API Breaking Changes ===
-These are breaking API changes.
-Please open a GitHub issue if your Add-on has an issue with updating to the new API.
+=== API 重大变更 ===
+以下是一些会破坏现有插件兼容性的 API 改动。
+如果您的插件在更新到新 API 后出现问题，请随时在 GitHub 上提交 issue 报告。
 
-- NVDA is now built with Python 3.11. (#12064)
-- Updated pip dependencies:
-  - configobj to 5.1.0dev commit ``e2ba4457c4651fa54f8d59d8dcdd3da950e956b8``. (#15544)
-  - Comtypes to 1.2.0. (#15513, @codeofdusk)
-  - Flake8 to 4.0.1. (#15636, @lukaszgo1)
-  - py2exe to 0.13.0.1dev commit ``4e7b2b2c60face592e67cb1bc935172a20fa371d``. (#15544)
-  - robotframework to 6.1.1. (#15544)
-  - SCons to 4.5.2. (#15529, @LeonarddeR)
-  - sphinx to 7.2.6. (#15544)
-  - wxPython to 4.2.2a commit ``0205c7c1b9022a5de3e3543f9304cfe53a32b488``. (#12551, #16257)
+- NVDA 现在使用 Python 3.11 进行构建。(#12064)
+- 更新了以下 pip 依赖：
+  - configobj 更新到 5.1.0dev 版本 (commit: e2ba4457c4651fa54f8d59d8dcdd3da950e956b8)。(#15544)
+  - Comtypes 更新到 1.2.0 版本。(#15513, @codeofdusk)
+  - Flake8 更新到 4.0.1 版本。(#15636, @lukaszgo1)
+  - py2exe 更新到 0.13.0.dev 提交版本 (commit: 4e7b2b2c60face592e67cb1bc935172a20fa371d)。 (#15544)
+  - robotframework 更新到 6.1.1 版本。(#15544)
+  - SCons 更新到 4.5.2 版本。(#15529, @LeonarddeR)
+  - sphinx 更新到 7.2.6 版本。(#15544)
+  - wxPython 更新到 4.2.2a 提交版本 (commit: 0205c7c1b9022a5de3e3543f9304cfe53a32b488)。 (#12551, #16257)
+- 删除了以下 pip 依赖：
+  - typing_extensions：Python 3.11 原生支持此功能，无需单独安装。(#15544)
+  - nose：不再使用 nose，而是使用 unittest-xml-reporting 生成 XML 报告。(#15544)
   -
-- Removed pip dependencies:
-  - typing_extensions, these should be supported natively in Python 3.11 (#15544)
-  - nose, instead unittest-xml-reporting is used to generate XML reports. (#15544)
-  -
-- ``IAccessibleHandler.SecureDesktopNVDAObject`` has been removed.
-Instead, when NVDA is running on the user profile, track the existence of the secure desktop with the extension point: ``winAPI.secureDesktop.post_secureDesktopStateChange``. (#14488)
-- ``braille.BrailleHandler.handlePendingCaretUpdate`` has been removed with no public replacement. (#15163, @LeonarddeR)
-- ``bdDetect.addUsbDevices and bdDetect.addBluetoothDevices`` have been removed.
-Braille display drivers should implement the ``registerAutomaticDetection`` class method instead.
-That method receives a ``DriverRegistrar`` object on which the ``addUsbDevices`` and ``addBluetoothDevices`` methods can be used. (#15200, @LeonarddeR)
-- The default implementation of the check method on ``BrailleDisplayDriver`` now requires both the ``threadSafe`` and ``supportsAutomaticDetection`` attributes to be set to ``True``. (#15200, @LeonarddeR)
-- Passing lambda functions to ``hwIo.ioThread.IoThread.queueAsApc`` is no longer possible, as functions should be weakly referenceable. (#14627, @LeonarddeR)
-- ``IoThread.autoDeleteApcReference`` has been removed. (#14924, @LeonarddeR)
-- To support capital pitch changes, synthesizers must now explicitly declare their support for the ``PitchCommand`` in the ``supportedCommands`` attribute on the driver. (#15433, @LeonarddeR)
-- ``speechDictHandler.speechDictVars`` has been removed. Use ``NVDAState.WritePaths.speechDictsDir`` instead of ``speechDictHandler.speechDictVars.speechDictsPath``. (#15614, @lukaszgo1)
-- ``languageHandler.makeNpgettext`` and ``languageHandler.makePgettext`` have been removed.
-``npgettext`` and ``pgettext`` are supported natively now. (#15546)
-- The app module for [Poedit https://poedit.net] has been changed significantly. The ``fetchObject`` function has been removed. (#15313, #7303, @LeonarddeR)
-- The following redundant types and constants have been removed from ``hwPortUtils``: (#15764, @LeonarddeR)
+- 删除了 ``IAccessibleHandler.SecureDesktopNVDAObject``。 
+当 NVDA 运行在用户配置文件上时，可以使用扩展点 ``winAPI.secureDesktop.post_secureDesktopStateChange`` 来跟踪安全桌面的存在。(#14488)
+- 删除了 ``braille.BrailleHandler.handlePendingCaretUpdate``，没有公开替代方案。(#15163, @LeonarddeR)
+- 删除了 ``bdDetect.addUsbDevices`` 和 ``bdDetect.addBluetoothDevices``。
+盲文点显器驱动应实现 ``registerAutomaticDetection`` 类方法。 
+  该方法接收一个 ``DriverRegistrar`` 对象，可在其上使用 ``addUsbDevices`` 和 ``addBluetoothDevices`` 方法。(#15200, @LeonarddeR)
+- ``BrailleDisplayDriver`` 上的检查方法的默认实现现在要求同时设置 ``threadSafe`` 和 ``supportsAutomaticDetection`` 属性为 ``True``。(#15200, @LeonarddeR)
+- 不允许传递 lambda 函数给 ``hwIo.ioThread.IoThread.queueAsApc``，因为函数应该是弱引用的。(#14627, @LeonarddeR)
+- 删除了 ``IoThread.autoDeleteApcReference``。(#14924, @LeonarddeR)
+- 为了支持遇到大写字母时音高变化，语音合成器现在必须在其驱动的 ``supportedCommands`` 属性中明确声明它们对 ``PitchCommand`` 的支持。(#15433, @LeonarddeR)
+- 删除了 ``speechDictHandler.speechDictVars``。使用 ``NVDAState.WritePaths.speechDictsDir`` 代替 ``speechDictHandler.speechDictVars.speechDictsPath``。(#15614, @lukaszgo1)
+- 删除了 ``languageHandler.makeNpgettext`` 和 ``languageHandler.makePgettext``。
+  现在原生支持 ``npgettext`` 和 ``pgettext``。(#15546)
+- 针对 [Poedit https://poedit.net] 的应用模块进行了重大更改。删除了 ``fetchObject`` 函数。(#15313, #7303, @LeonarddeR)
+- 从 ``hwPortUtils`` 中删除了以下冗余类型和常量: (#15764)
   - ``PCWSTR``
-  - ``HWND`` (replaced by ``ctypes.wintypes.HWND``)
+  - ``HWND`` （替换为 ``ctypes.wintypes.HWND``）
   - ``ULONG_PTR``
   - ``ULONGLONG``
   - ``NULL``
-  - ``GUID`` (replaced by ``comtypes.GUID``)
+  - ``GUID`` （替换为 ``comtypes.GUID``）
   -
-- ``gui.addonGui.AddonsDialog`` has been removed. (#15834)
-- ``touchHandler.TouchInputGesture.multiFingerActionLabel`` has been removed with no replacement. (#15864, @CyrilleB79)
-- ``NVDAObjects.IAccessible.winword.WordDocument.script_reportCurrentHeaders`` has been removed with no replacement. (#15904, @CyrilleB79)
+- 删除了 ``gui.addonGui.AddonsDialog``。 (#15834)
+- 删除了 ``touchHandler.TouchInputGesture.multiFingerActionLabel`` 没有公开替代方案。 (#15864, @CyrilleB79)
+- ``NVDAObjects.IAccessible.winword.WordDocument.script reportCurrentHeaders`` 已被删除，没有公开替代方案。 (#15904， @CyrilleB79)
 % Insert new list items here as the alias appModule table should be kept at the bottom of this list
-- The following app modules are removed.
-Code which imports from one of them, should instead import from the replacement module. (#15618, @lukaszgo1)
+- 以下应用模块已被删除。
+请从其相应替换模块中导入。 (#15618, @lukaszgo1)
 -
 
-|| Removed module name | Replacement module |
+|| 已删除的模块 | 用于替换的模块 |
 | ``azardi-2.0`` | ``azardi20`` |
 | ``azuredatastudio`` | ``code`` |
 | ``azuredatastudio-insiders`` | ``code`` |
