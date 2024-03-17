@@ -175,23 +175,23 @@
 <LI>注意：此版本会影响插件的 API 兼容性。
 需要重新测试插件并更新其清单文件。
 <LI>构建 NVDA 现在需要 Visual Studio 2022。
-    有关 Visual Studio 依赖组件的详细列表，请参阅 <A HREF="https://github.com/nvaccess/nvda/blob/release-2024.1/projectDocs/dev/createDevEnvironment.md">NVDA 文档</A>。 (#14313)
+有关 Visual Studio 依赖组件的详细列表，请参阅 <A HREF="https://github.com/nvaccess/nvda/blob/release-2024.1/projectDocs/dev/createDevEnvironment.md">NVDA 文档</A>。(#14313)
 <LI>添加了以下扩展点：
   <UL>
   <LI><CODE>treeInterceptorHandler.post_browseModeStateChange</CODE> (#14969, @nvdaes)
   <LI><CODE>speech.speechCanceled</CODE> (#15700, @LeonarddeR)
   <LI><CODE>_onErrorSoundRequested</CODE>（应该通过调用 <CODE>logHandler.getOnErrorSoundRequested()</CODE> 获取）(#15691, @CyrilleB79)
   </UL>
-<LI>在插件的翻译中现在可以使用复数形式。 (#15661, @beqabeqa473)
-<LI>在二进制包中包含了 python3.dll，供插件使用外部库（利用<A HREF="https://docs.python.org/3.11/c-api/stable.html">稳定 API</A>。 (#15674, @mzanm)
+<LI>在插件的翻译中现在可以使用复数形式。(#15661, @beqabeqa473)
+<LI>在二进制包中包含了 python3.dll，供插件使用外部库（利用<A HREF="https://docs.python.org/3.11/c-api/stable.html">稳定 API</A>。(#15674, @mzanm)
 <LI><CODE>BrailleDisplayDriver</CODE> 基类现在具有 <CODE>numRows</CODE> 和 <CODE>numCols</CODE> 属性，用于提供有关多行盲文显示器的信息。
-  对于单行盲文显示器，仍然支持设置 <CODE>numCells</CODE>，对于多行盲文显示器，<CODE>numCells</CODE> 将返回单元格总数。 (#15386)
-<LI>将 BRLTTY 的 BrlAPI 更新到 0.8.5 版本，并将其对应的 Python 模块更新到兼容 Python 3.11 的版本。 (#15652, @LeonarddeR)
-<LI>添加了 <CODE>speech.speakSsml</CODE> 函数，您可以使用 <A HREF="https://www.w3.org/TR/speech-synthesis11/">SSML</A> 编写 NVDA 语音序列。 (#15699, @LeonarddeR)
+对于单行盲文显示器，仍然支持设置 <CODE>numCells</CODE>，对于多行盲文显示器，<CODE>numCells</CODE> 将返回单元格总数。(#15386)
+<LI>将 BRLTTY 的 BrlAPI 更新到 0.8.5 版本，并将其对应的 Python 模块更新到兼容 Python 3.11 的版本。(#15652, @LeonarddeR)
+<LI>添加了 <CODE>speech.speakSsml</CODE> 函数，您可以使用 <A HREF="https://www.w3.org/TR/speech-synthesis11/">SSML</A> 编写 NVDA 语音序列。(#15699, @LeonarddeR)
   <UL>
   <LI>当前支持将以下标签转换为相应的 NVDA 语音命令：
     <UL>
-    <LI><CODE>Prosody</CODE>（<CODE>pitch</CODE>, <CODE>rate</CODE> 和 <CODE>volume</CODE>）。仅支持倍数的形式调节（例如 <CODE>200%</CODE>）。
+    <LI><CODE>Prosody</CODE>（<CODE>pitch</CODE>，<CODE>rate</CODE> 和 <CODE>volume</CODE>）。仅支持倍数的形式调节（例如 <CODE>200%</CODE>）。
     <LI>将 <CODE>say-as</CODE> 的 <CODE>interpret</CODE> 属性设置为 <CODE>characters</CODE>
     <LI>将 <CODE>voice</CODE> 的 <CODE>xml:lang</CODE> 设置为 XML 的语言
     <LI>将 <CODE>break</CODE> 的 <CODE>time</CODE> 属性设置为毫秒值，例如 <CODE>200ms</CODE>
@@ -202,42 +202,41 @@
   </UL>
 <LI>对 NVDA Controller Client  库的改进：
   <UL>
-  <LI>库的文件名不再包含表示架构的后缀，即 <CODE>nvdaControllerClient32/64.dll</CODE> 现在称为 <CODE>nvdaControllerClient.dll</CODE>。 (#15718, #15717, @LeonarddeR)
-  <LI>添加了一个示例，演示如何使用 Rust 语言调用 nvdaControllerClient.dll。 (#15771, @LeonarddeR)
-  <LI>添加了以下函数到 NVDA Controller Client： (#15734, #11028, #5638, @LeonarddeR)
+  <LI>库的文件名不再包含表示架构的后缀，即 <CODE>nvdaControllerClient32/64.dll</CODE> 现在称为 <CODE>nvdaControllerClient.dll</CODE>。(#15718, #15717, @LeonarddeR)
+  <LI>添加了一个示例，演示如何使用 Rust 语言调用 nvdaControllerClient.dll。(#15771, @LeonarddeR)
+  <LI>添加了以下函数到 NVDA Controller Client：(#15734, #11028, #5638, @LeonarddeR)
     <UL>
     <LI><CODE>nvdaController_getProcessId</CODE>：获取 Controller Client 使用的当前 NVDA 实例的进程 ID (PID)。
-    <LI><CODE>nvdaController_speakSsml</CODE>：指示 NVDA 根据给定的 SSML 进行朗读。 此函数还支持：
+    <LI><CODE>nvdaController_speakSsml</CODE>：指示 NVDA 根据给定的 SSML 进行朗读。此函数还支持：
       <UL>
       <LI>提供符号级别。
       <LI>提供要朗读的语音优先级。
       <LI>同步（阻塞）和异步（立即返回）朗读。
       </UL>
-    <LI><CODE>nvdaController_setOnSsmlMarkReachedCallback</CODE>： 注册一个类型为 <CODE>onSsmlMarkReachedFuncType</CODE> 的回调函数，以便在使用  <CODE>nvdaController_speakSsml</CODE> 处理同步 SSML 过程时，遇到每个 <CODE>&lt;mark /&gt;</CODE> 标签时都会调用该回调函数。 (#15734, #11028, #5638, @LeonarddeR)
+    <LI><CODE>nvdaController_setOnSsmlMarkReachedCallback</CODE>：注册一个类型为 <CODE>onSsmlMarkReachedFuncType</CODE> 的回调函数，以便在使用 <CODE>nvdaController_speakSsml</CODE> 处理同步 SSML 过程时，遇到每个 <CODE>&lt;mark /&gt;</CODE> 标签时都会调用该回调函数。(#15734, #11028, #5638, @LeonarddeR)
     </UL>
-  <LI>注意： NVDA Controller Client 中的新功能仅支持 NVDA 2024.1 及以上。
-    -
+  <LI>注意：NVDA Controller Client 中的新功能仅支持 NVDA 2024.1 及以上。
   </UL>
 <LI>更新了 <CODE>include</CODE> 依赖：
   <UL>
-  <LI>detours 更新到 <CODE>4b8c659f549b0ab21cf649377c7a84eb708f5e68</CODE>。 (#15695)
-  <LI>ia2 更新到 <CODE>3d8c7f0b833453f761ded6b12d8be431507bfe0b</CODE>。 (#15695)
-  <LI>sonic 更新到 <CODE>8694c596378c24e340c09ff2cd47c065494233f1</CODE>。 (#15695)
-  <LI>w3c-aria-practices 更新到 <CODE>9a5e55ccbeb0f1bf92b6127c9865da8426d1c864</CODE>。 (#15695)
-  <LI>wil 更新到 <CODE>5e9be7b2d2fe3834a7107f430f7d4c0631f69833</CODE>。 (#15695)
+  <LI>detours 更新到 <CODE>4b8c659f549b0ab21cf649377c7a84eb708f5e68</CODE>。(#15695)
+  <LI>ia2 更新到 <CODE>3d8c7f0b833453f761ded6b12d8be431507bfe0b</CODE>。(#15695)
+  <LI>sonic 更新到 <CODE>8694c596378c24e340c09ff2cd47c065494233f1</CODE>。(#15695)
+  <LI>w3c-aria-practices 更新到 <CODE>9a5e55ccbeb0f1bf92b6127c9865da8426d1c864</CODE>。(#15695)
+  <LI>wil 更新到 <CODE>5e9be7b2d2fe3834a7107f430f7d4c0631f69833</CODE>。(#15695)
   </UL>
-<LI>由 <CODE>hwPortUtils.listUsbDevices</CODE> 提供的设备信息现在包含 USB 设备的总线报告描述（键 <CODE>busReportedDeviceDescription</CODE>）。 (#15764, @LeonarddeR)
-<LI>对于 USB 串行设备，<CODE>bdDetect.getConnectedUsbDevicesForDriver</CODE> 和 <CODE>bdDetect.getDriversForConnectedUsbDevices</CODE> 现在返回包含 <CODE>deviceInfo</CODE> 字典的键值对，该字典包含有关 USB 设备的数据，例如 <CODE>busReportedDeviceDescription</CODE>。 (#15764, @LeonarddeR)
-<LI>当配置文件 <CODE>nvda.ini</CODE> 被破坏时，会在重新初始化配置之前保存备份副本。 (#15779, @CyrilleB79)
-<LI>当使用装饰器定义手势时，可以指定 <CODE>speakOnDemand</CODE> 布尔参数来控制脚本是否应在“手动”语音模式下朗读。 (#481, @CyrilleB79)
+<LI>由 <CODE>hwPortUtils.listUsbDevices</CODE> 提供的设备信息现在包含 USB 设备的总线报告描述（键 <CODE>busReportedDeviceDescription</CODE>）。(#15764, @LeonarddeR)
+<LI>对于 USB 串行设备，<CODE>bdDetect.getConnectedUsbDevicesForDriver</CODE> 和 <CODE>bdDetect.getDriversForConnectedUsbDevices</CODE> 现在返回包含 <CODE>deviceInfo</CODE> 字典的键值对，该字典包含有关 USB 设备的数据，例如 <CODE>busReportedDeviceDescription</CODE>。(#15764, @LeonarddeR)
+<LI>当配置文件 <CODE>nvda.ini</CODE> 被破坏时，会在重新初始化配置之前保存备份副本。(#15779, @CyrilleB79)
+<LI>当使用装饰器定义手势时，可以指定 <CODE>speakOnDemand</CODE> 布尔参数来控制脚本是否应在“手动”语音模式下朗读。(#481, @CyrilleB79)
   <UL>
-  <LI>用于提供信息的手势 （例如，读出窗口标题、读出时间/日期）应该在“手动”模式下朗读。
-  <LI>用于执行操作的手势 （例如，移动光标、更改参数）不应该在“手动”模式下朗读。
+  <LI>用于提供信息的手势（例如，读出窗口标题、读出时间/日期）应该在“手动”模式下朗读。
+  <LI>用于执行操作的手势（例如，移动光标、更改参数）不应该在“手动”模式下朗读。
   </UL>
-<LI>修复了在 <CODE>scons -c</CODE> 期间删除 git 跟踪文件会导致重建时缺少 UIA COM 接口的错误。 (#7070, #10833, @hwf1324)
+<LI>修复了在 <CODE>scons -c</CODE> 期间删除 git 跟踪文件会导致重建时缺少 UIA COM 接口的错误。(#7070, #10833, @hwf1324)
 <LI>修复了在构建 <CODE>dist</CODE> 时未检测到某些代码更改的错误，该错误导致无法触发新的构建。
-现在 <CODE>dist</CODE> 始终会被重建。 (#13372, @hwf1324)
-<LI>默认类型为标准的 <CODE>gui.nvdaControls.MessageDialog</CODE> 不再抛出 None 转换异常，因为没有指定提示音。 (#16223, @XLTechie)
+现在 <CODE>dist</CODE> 始终会被重建。(#13372, @hwf1324)
+<LI>默认类型为标准的 <CODE>gui.nvdaControls.MessageDialog</CODE> 不再抛出 None 转换异常，因为没有指定提示音。(#16223, @XLTechie)
 </UL>
 
 <P></P>
@@ -250,35 +249,35 @@
 <LI>NVDA 现在使用 Python 3.11 进行构建。(#12064)
 <LI>更新了以下 pip 依赖：
   <UL>
-  <LI>configobj 更新到 5.1.0dev 版本 (commit: e2ba4457c4651fa54f8d59d8dcdd3da950e956b8)。(#15544)
+  <LI>configobj 更新到 5.1.0dev 版本 (commit: <CODE>e2ba4457c4651fa54f8d59d8dcdd3da950e956b8</CODE>)。(#15544)
   <LI>Comtypes 更新到 1.2.0 版本。(#15513, @codeofdusk)
   <LI>Flake8 更新到 4.0.1 版本。(#15636, @lukaszgo1)
-  <LI>py2exe 更新到 0.13.0.dev 提交版本 (commit: 4e7b2b2c60face592e67cb1bc935172a20fa371d)。 (#15544)
+  <LI>py2exe 更新到 0.13.0.dev 提交版本 (commit: <CODE>4e7b2b2c60face592e67cb1bc935172a20fa371d</CODE>)。(#15544)
   <LI>robotframework 更新到 6.1.1 版本。(#15544)
   <LI>SCons 更新到 4.5.2 版本。(#15529, @LeonarddeR)
   <LI>sphinx 更新到 7.2.6 版本。(#15544)
-  <LI>wxPython 更新到 4.2.2a 提交版本 (commit: 0205c7c1b9022a5de3e3543f9304cfe53a32b488)。 (#12551, #16257)
+  <LI>wxPython 更新到 4.2.2a 提交版本 (commit: <CODE>0205c7c1b9022a5de3e3543f9304cfe53a32b488</CODE>)。(#12551, #16257)
   </UL>
 <LI>删除了以下 pip 依赖：
   <UL>
   <LI>typing_extensions：Python 3.11 原生支持此功能，无需单独安装。(#15544)
   <LI>nose：不再使用 nose，而是使用 unittest-xml-reporting 生成 XML 报告。(#15544)
   </UL>
-<LI>删除了 <CODE>IAccessibleHandler.SecureDesktopNVDAObject</CODE>。 
+<LI>删除了 <CODE>IAccessibleHandler.SecureDesktopNVDAObject</CODE>。
 当 NVDA 运行在用户配置文件上时，可以使用扩展点 <CODE>winAPI.secureDesktop.post_secureDesktopStateChange</CODE> 来跟踪安全桌面的存在。(#14488)
 <LI>删除了 <CODE>braille.BrailleHandler.handlePendingCaretUpdate</CODE>，没有公开替代方案。(#15163, @LeonarddeR)
 <LI>删除了 <CODE>bdDetect.addUsbDevices</CODE> 和 <CODE>bdDetect.addBluetoothDevices</CODE>。
-盲文点显器驱动应实现 <CODE>registerAutomaticDetection</CODE> 类方法。 
-  该方法接收一个 <CODE>DriverRegistrar</CODE> 对象，可在其上使用 <CODE>addUsbDevices</CODE> 和 <CODE>addBluetoothDevices</CODE> 方法。(#15200, @LeonarddeR)
+盲文点显器驱动应实现 <CODE>registerAutomaticDetection</CODE> 类方法。
+该方法接收一个 <CODE>DriverRegistrar</CODE> 对象，可在其上使用 <CODE>addUsbDevices</CODE> 和 <CODE>addBluetoothDevices</CODE> 方法。(#15200, @LeonarddeR)
 <LI><CODE>BrailleDisplayDriver</CODE> 上的检查方法的默认实现现在要求同时设置 <CODE>threadSafe</CODE> 和 <CODE>supportsAutomaticDetection</CODE> 属性为 <CODE>True</CODE>。(#15200, @LeonarddeR)
 <LI>不允许传递 lambda 函数给 <CODE>hwIo.ioThread.IoThread.queueAsApc</CODE>，因为函数应该是弱引用的。(#14627, @LeonarddeR)
 <LI>删除了 <CODE>IoThread.autoDeleteApcReference</CODE>。(#14924, @LeonarddeR)
 <LI>为了支持遇到大写字母时音高变化，语音合成器现在必须在其驱动的 <CODE>supportedCommands</CODE> 属性中明确声明它们对 <CODE>PitchCommand</CODE> 的支持。(#15433, @LeonarddeR)
 <LI>删除了 <CODE>speechDictHandler.speechDictVars</CODE>。使用 <CODE>NVDAState.WritePaths.speechDictsDir</CODE> 代替 <CODE>speechDictHandler.speechDictVars.speechDictsPath</CODE>。(#15614, @lukaszgo1)
 <LI>删除了 <CODE>languageHandler.makeNpgettext</CODE> 和 <CODE>languageHandler.makePgettext</CODE>。
-  现在原生支持 <CODE>npgettext</CODE> 和 <CODE>pgettext</CODE>。(#15546)
+现在原生支持 <CODE>npgettext</CODE> 和 <CODE>pgettext</CODE>。(#15546)
 <LI>针对 <A HREF="https://poedit.net">Poedit</A> 的应用模块进行了重大更改。删除了 <CODE>fetchObject</CODE> 函数。(#15313, #7303, @LeonarddeR)
-<LI>从 <CODE>hwPortUtils</CODE> 中删除了以下冗余类型和常量: (#15764)
+<LI>从 <CODE>hwPortUtils</CODE> 中删除了以下冗余类型和常量：(#15764)
   <UL>
   <LI><CODE>PCWSTR</CODE>
   <LI><CODE>HWND</CODE> （替换为 <CODE>ctypes.wintypes.HWND</CODE>）
@@ -288,8 +287,8 @@
   <LI><CODE>GUID</CODE> （替换为 <CODE>comtypes.GUID</CODE>）
   </UL>
 <LI>删除了 <CODE>gui.addonGui.AddonsDialog</CODE>。 (#15834)
-<LI>删除了 <CODE>touchHandler.TouchInputGesture.multiFingerActionLabel</CODE> 没有公开替代方案。 (#15864, @CyrilleB79)
-<LI><CODE>NVDAObjects.IAccessible.winword.WordDocument.script reportCurrentHeaders</CODE> 已被删除，没有公开替代方案。 (#15904， @CyrilleB79)
+<LI>删除了 <CODE>touchHandler.TouchInputGesture.multiFingerActionLabel</CODE> 没有公开替代方案。(#15864, @CyrilleB79)
+<LI><CODE>NVDAObjects.IAccessible.winword.WordDocument.script_reportCurrentHeaders</CODE> 已被删除，没有公开替代方案。(#15904， @CyrilleB79)
 <LI>以下应用模块已被删除。
 请从其相应替换模块中导入。 (#15618, @lukaszgo1)
 </UL>
@@ -404,25 +403,26 @@
 
 <H3>弃用</H3>
 <UL>
-<LI>不再推荐使用 <CODE>watchdog.getFormattedStacksForAllThreads</CODE>，请改用 <CODE>logHandler.getFormattedStacksForAllThreads</CODE>。 (#15616, @lukaszgo1)
-<LI><CODE>easeOfAccess.canConfigTerminateOnDesktopSwitch</CODE> 已被弃用，因为自 Windows 7 不再受支持后，此功能已失效。 (#15644, @LeonarddeR)
-<LI><CODE>winVersion.isFullScreenMagnificationAvailable</CODE> 已被弃用，请改用 <CODE>visionEnhancementProviders.screenCurtain.ScreenCurtainProvider.canStart</CODE>。 (#15664, @josephsl)
+<LI>不再推荐使用 <CODE>watchdog.getFormattedStacksForAllThreads</CODE>，请改用 <CODE>logHandler.getFormattedStacksForAllThreads</CODE>。(#15616, @lukaszgo1)
+<LI><CODE>easeOfAccess.canConfigTerminateOnDesktopSwitch</CODE> 已被弃用，因为自 Windows 7 不再受支持后，此功能已失效。(#15644, @LeonarddeR)
+<LI><CODE>winVersion.isFullScreenMagnificationAvailable</CODE> 已被弃用，请改用 <CODE>visionEnhancementProviders.screenCurtain.ScreenCurtainProvider.canStart</CODE>。(#15664, @josephsl)
 <LI><CODE>winVersion</CODE> 模块中的以下 Windows 版本常量已被弃用 (#15647, @josephsl)：
   <UL>
   <LI><CODE>winVersion.WIN7</CODE>
   <LI><CODE>winVersion.WIN7_SP1</CODE>
   <LI><CODE>winVersion.WIN8</CODE>
   </UL>
-<LI><CODE>bdDetect.KEY_*</CODE> 常量已被弃用，请改用 <CODE>bdDetect.DeviceType.*</CODE>。 (#15772, @LeonarddeR)
+<LI><CODE>bdDetect.KEY_*</CODE> 常量已被弃用，
+请改用 <CODE>bdDetect.DeviceType.*</CODE>。(#15772, @LeonarddeR)
 <LI><CODE>bdDetect.DETECT_USB</CODE> 和 <CODE>bdDetect.DETECT_BLUETOOTH</CODE> 常量已被弃用，没有公开替代方案。 (#15772, @LeonarddeR)
-<LI>不再推荐使用 <CODE>gui.ExecAndPump</CODE>，请改用 <CODE>systemUtils.ExecAndPump</CODE>。 (#15852, @lukaszgo1)
+<LI>不再推荐使用 <CODE>gui.ExecAndPump</CODE>，请改用 <CODE>systemUtils.ExecAndPump</CODE>。(#15852, @lukaszgo1)
 </UL>
 
 <P></P>
 <H1>2023.3.4</H1>
 <P>
 这是一个修复安全问题和安装程序问题的补丁版本。
-请遵循 <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">NVDA 的 安全政策</A> 负责任地披露安全问题。
+请遵循 <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">NVDA 的 安全政策</A>负责任地披露安全问题。
 </P>
 <H2>安全修复</H2>
 <UL>
@@ -433,15 +433,15 @@
 <P></P>
 <H2>错误修复</H2>
 <UL>
-<LI>修复了导致 NVDA 进程无法正常退出的错误。 (#16123)
-<LI>修复了如果之前的 NVDA 进程无法正常退出，NVDA 安装可能会失败甚至无法恢复的错误。( #16122)
+<LI>修复了导致 NVDA 进程无法正常退出的错误。(#16123)
+<LI>修复了如果之前的 NVDA 进程无法正常退出，NVDA 安装可能会失败甚至无法恢复的错误。(#16122)
 </UL>
 
 <P></P>
 <H1>2023.3.3</H1>
 <P>
 这是一个修复安全问题的补丁版本。
-请遵循 <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">NVDA 的 安全政策</A> 负责任地披露安全问题。
+请遵循 <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">NVDA 的 安全政策</A>负责任地披露安全问题。
 </P>
 <H2>安全修复</H2>
 <UL>
@@ -454,7 +454,7 @@
 <P>
 这是一个修复安全问题的补丁版本。
 2023.3.1 中的安全补丁未正确解决问题。
-请遵循 <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">NVDA 的 安全政策</A> 负责任地披露安全问题。
+请遵循 <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">NVDA 的 安全政策</A>负责任地披露安全问题。
 </P>
 <H2>安全修复</H2>
 <UL>
@@ -467,7 +467,7 @@
 <H1>2023.3.1</H1>
 <P>
 这是一个修复安全问题的补丁版本。
-请遵循 <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">NVDA 的 安全政策</A> 负责任地披露安全问题。
+请遵循 <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">NVDA 的 安全政策</A>负责任地披露安全问题。
 </P>
 <H2>安全修复</H2>
 <UL>
