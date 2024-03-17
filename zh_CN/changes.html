@@ -213,7 +213,7 @@
       <LI>提供要朗读的语音优先级。
       <LI>同步（阻塞）和异步（立即返回）朗读。
       </UL>
-    <LI><CODE>nvdaController_setOnSsmlMarkReachedCallback ``： 注册一个类型为 ``onSsmlMarkReachedFuncType</CODE> 的回调函数，以便在使用  <CODE>nvdaController_speakSsml</CODE> 处理同步 SSML 过程时，遇到每个 <CODE>&lt;mark /&gt;</CODE> 标签时都会调用该回调函数。 (#15734, #11028, #5638, @LeonarddeR)
+    <LI><CODE>nvdaController_setOnSsmlMarkReachedCallback</CODE>： 注册一个类型为 <CODE>onSsmlMarkReachedFuncType</CODE> 的回调函数，以便在使用  <CODE>nvdaController_speakSsml</CODE> 处理同步 SSML 过程时，遇到每个 <CODE>&lt;mark /&gt;</CODE> 标签时都会调用该回调函数。 (#15734, #11028, #5638, @LeonarddeR)
     </UL>
   <LI>注意： NVDA Controller Client 中的新功能仅支持 NVDA 2024.1 及以上。
     -
@@ -402,21 +402,23 @@
 </TR>
 </TABLE>
 
-<H3>Deprecations</H3>
+<H3>弃用</H3>
+<P>
+以下是一些即将弃用的功能，建议您尽快迁移到替代方案。
+</P>
 <UL>
-<LI>Using <CODE>watchdog.getFormattedStacksForAllThreads</CODE> is deprecated - please use <CODE>logHandler.getFormattedStacksForAllThreads</CODE> instead. (#15616, @lukaszgo1)
-<LI><CODE>easeOfAccess.canConfigTerminateOnDesktopSwitch</CODE> has been deprecated, as it became obsolete since Windows 7 is no longer supported. (#15644, @LeonarddeR)
-<LI><CODE>winVersion.isFullScreenMagnificationAvailable</CODE> has been deprecated - use <CODE>visionEnhancementProviders.screenCurtain.ScreenCurtainProvider.canStart</CODE> instead. (#15664, @josephsl)
-<LI>The following Windows release constants has been deprecated from winVersion module (#15647, @josephsl):
+<LI>不再推荐使用 <CODE>watchdog.getFormattedStacksForAllThreads</CODE>，请改用 <CODE>logHandler.getFormattedStacksForAllThreads</CODE>。 (#15616, @lukaszgo1)
+<LI><CODE>easeOfAccess.canConfigTerminateOnDesktopSwitch</CODE> 已被弃用，因为自 Windows 7 不再受支持后，此功能已失效。 (#15644, @LeonarddeR)
+<LI><CODE>winVersion.isFullScreenMagnificationAvailable</CODE> 已被弃用，请改用 <CODE>visionEnhancementProviders.screenCurtain.ScreenCurtainProvider.canStart</CODE>。 (#15664, @josephsl)
+<LI><CODE>winVersion</CODE> 模块中的以下 Windows 版本常量已被弃用 (#15647, @josephsl)：
   <UL>
   <LI><CODE>winVersion.WIN7</CODE>
   <LI><CODE>winVersion.WIN7_SP1</CODE>
   <LI><CODE>winVersion.WIN8</CODE>
   </UL>
-<LI>The <CODE>bdDetect.KEY_*</CODE> constants have been deprecated.
-Use <CODE>bdDetect.DeviceType.*</CODE> instead. (#15772, @LeonarddeR).
-<LI>The <CODE>bdDetect.DETECT_USB</CODE> and <CODE>bdDetect.DETECT_BLUETOOTH</CODE> constants have been deprecated with no public replacement. (#15772, @LeonarddeR).
-<LI>Using <CODE>gui.ExecAndPump</CODE> is deprecated - please use <CODE>systemUtils.ExecAndPump</CODE> instead. (#15852, @lukaszgo1)
+<LI><CODE>bdDetect.KEY_*</CODE> 常量已被弃用，请改用 <CODE>bdDetect.DeviceType.*</CODE>。 (#15772, @LeonarddeR)
+<LI><CODE>bdDetect.DETECT_USB</CODE> 和 <CODE>bdDetect.DETECT_BLUETOOTH</CODE> 常量已被弃用，没有公开替代方案。 (#15772, @LeonarddeR)
+<LI>不再推荐使用 <CODE>gui.ExecAndPump</CODE>，请改用 <CODE>systemUtils.ExecAndPump</CODE>。 (#15852, @lukaszgo1)
 </UL>
 
 <P></P>
@@ -1002,10 +1004,10 @@ Please responsibly disclose security issues following NVDA's <A HREF="https://gi
 </UL>
 
 <P></P>
-<H3>API 的破坏性修改</H3>
+<H3>API 重大变更</H3>
 <P>
-这里是所有的 API 破坏性修改。
-如您的插件在使用新 API 后遇到问题，请在 GitHub 打开一个 issue。
+以下是一些会破坏现有插件兼容性的 API 改动。
+如果您的插件在更新到新 API 后出现问题，请随时在 GitHub 上提交 issue 报告。
 </P>
 <UL>
 <LI>更改了配置规范，相关的配置键已被删除或修改：
