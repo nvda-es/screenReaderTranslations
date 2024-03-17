@@ -82,8 +82,8 @@
   </UL>
 <LI>快捷键：
   <UL>
-  <LI>以下命令现在支持连按两次逐字朗读，连按三次用短字符描述逐字解释：朗读选择的文本、朗读剪贴板文本和朗读焦点对象。(#15449, @CyrilleB79)
-  <LI>为切换黑屏功能分配了一个默认快捷键：<CODE>NVDA+control+escape</CODE>。(#10560, @CyrilleB79)
+  <LI>读出已选择的文本、读出剪贴板中的文本和读出焦点对象命令现在支持连按两次逐字朗读，连按三次用短字符描述逐字解释。(#15449, @CyrilleB79)
+  <LI>分配了切换黑屏功能的默认快捷键——NVDA+control+escape。(#10560, @CyrilleB79)
   <LI>朗读选择的文本命令支持连按四次在可浏览对话框中显示所选择的文本。(#15858, @Emil-18)
   </UL>
 <LI>Microsoft Office：
@@ -191,7 +191,7 @@
   <UL>
   <LI>当前支持将以下标签转换为相应的 NVDA 语音命令：
     <UL>
-    <LI><CODE>Prosody</CODE>（<CODE>pitch</CODE>, <CODE>rate</CODE> 和 <CODE>volume</CODE>）。仅支持乘法（例如 <CODE>200%</CODE>）。
+    <LI><CODE>Prosody</CODE>（<CODE>pitch</CODE>, <CODE>rate</CODE> 和 <CODE>volume</CODE>）。仅支持倍数的形式调节（例如 <CODE>200%</CODE>）。
     <LI>将 <CODE>say-as</CODE> 的 <CODE>interpret</CODE> 属性设置为 <CODE>characters</CODE>
     <LI>将 <CODE>voice</CODE> 的 <CODE>xml:lang</CODE> 设置为 XML 的语言
     <LI>将 <CODE>break</CODE> 的 <CODE>time</CODE> 属性设置为毫秒值，例如 <CODE>200ms</CODE>
@@ -403,9 +403,6 @@
 </TABLE>
 
 <H3>弃用</H3>
-<P>
-以下是一些即将弃用的功能，建议您尽快迁移到替代方案。
-</P>
 <UL>
 <LI>不再推荐使用 <CODE>watchdog.getFormattedStacksForAllThreads</CODE>，请改用 <CODE>logHandler.getFormattedStacksForAllThreads</CODE>。 (#15616, @lukaszgo1)
 <LI><CODE>easeOfAccess.canConfigTerminateOnDesktopSwitch</CODE> 已被弃用，因为自 Windows 7 不再受支持后，此功能已失效。 (#15644, @LeonarddeR)
@@ -424,57 +421,57 @@
 <P></P>
 <H1>2023.3.4</H1>
 <P>
-This is a patch release to fix a security issue and installer issue.
-Please responsibly disclose security issues following NVDA's <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">security policy</A>.
+这是一个修复安全问题和安装程序问题的补丁版本。
+请遵循 <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">NVDA 的 安全政策</A> 负责任地披露安全问题。
 </P>
-<H2>Security Fixes</H2>
+<H2>安全修复</H2>
 <UL>
-<LI>Prevents loading custom configuration while secure mode is forced.
+<LI>修复了在强制安全模式时加载自定义配置的问题。
 (<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-727q-h8j2-6p45">GHSA-727q-h8j2-6p45</A>)
 </UL>
 
 <P></P>
-<H2>Bug Fixes</H2>
+<H2>错误修复</H2>
 <UL>
-<LI>Fixed bug which caused the NVDA process to fail to exit correctly. (#16123)
-<LI>Fixed bug where if the previous NVDA process failed to exit correctly, an NVDA installation could fail to an unrecoverable state. (#16122)
+<LI>修复了导致 NVDA 进程无法正常退出的错误。 (#16123)
+<LI>修复了如果之前的 NVDA 进程无法正常退出，NVDA 安装可能会失败甚至无法恢复的错误。( #16122)
 </UL>
 
 <P></P>
 <H1>2023.3.3</H1>
 <P>
-This is a patch release to fix a security issue.
-Please responsibly disclose security issues following NVDA's <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">security policy</A>.
+这是一个修复安全问题的补丁版本。
+请遵循 <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">NVDA 的 安全政策</A> 负责任地披露安全问题。
 </P>
-<H2>Security Fixes</H2>
+<H2>安全修复</H2>
 <UL>
-<LI>Prevents possible reflected XSS attack from crafted content to cause arbitrary code execution.
+<LI>修复了精心设计的恶意内容可能导致反射式 XSS 攻击并执行任意代码的问题。
 (<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-xg6w-23rw-39r8">GHSA-xg6w-23rw-39r8</A>)
 </UL>
 
 <P></P>
 <H1>2023.3.2</H1>
 <P>
-This is a patch release to fix a security issue.
-The security patch in 2023.3.1 was not resolved correctly.
-Please responsibly disclose security issues following NVDA's <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">security policy</A>.
+这是一个修复安全问题的补丁版本。
+2023.3.1 中的安全补丁未正确解决问题。
+请遵循 <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">NVDA 的 安全政策</A> 负责任地披露安全问题。
 </P>
-<H2>Security Fixes</H2>
+<H2>安全修复</H2>
 <UL>
-<LI>The security patch in 2023.3.1 was not resolved correctly.
-Prevents possible system access and arbitrary code execution with system privileges for unauthenticated users.
+<LI>2023.3.1 中的安全补丁未正确解决问题。
+<LI>修复了未经身份验证的用户可能存在的系统访问和任意代码执行权限的问题。
 (<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-h7pp-6jqw-g3pj">GHSA-h7pp-6jqw-g3pj</A>)
 </UL>
 
 <P></P>
 <H1>2023.3.1</H1>
 <P>
-This is a patch release to fix a security issue.
-Please responsibly disclose security issues following NVDA's <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">security policy</A>.
+这是一个修复安全问题的补丁版本。
+请遵循 <A HREF="https://github.com/nvaccess/nvda/blob/master/security.md">NVDA 的 安全政策</A> 负责任地披露安全问题。
 </P>
-<H2>Security Fixes</H2>
+<H2>安全修复</H2>
 <UL>
-<LI>Prevents possible system access and arbitrary code execution with system privileges for unauthenticated users.
+<LI>修复了未经身份验证的用户可能存在的系统访问和任意代码执行权限的问题。
 (<A HREF="https://github.com/nvaccess/nvda/security/advisories/GHSA-h7pp-6jqw-g3pj">GHSA-h7pp-6jqw-g3pj</A>)
 </UL>
 
