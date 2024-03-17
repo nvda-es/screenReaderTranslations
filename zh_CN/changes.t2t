@@ -172,7 +172,7 @@ NVDA 更新日志
       - 提供要朗读的语音优先级。
       - 同步（阻塞）和异步（立即返回）朗读。
       -
-    - ``nvdaController_setOnSsmlMarkReachedCallback ``： 注册一个类型为 ``onSsmlMarkReachedFuncType`` 的回调函数，以便在使用  ``nvdaController_speakSsml`` 处理同步 SSML 过程时，遇到每个 ``<mark />`` 标签时都会调用该回调函数。 (#15734, #11028, #5638, @LeonarddeR)
+    - ``nvdaController_setOnSsmlMarkReachedCallback``： 注册一个类型为 ``onSsmlMarkReachedFuncType`` 的回调函数，以便在使用  ``nvdaController_speakSsml`` 处理同步 SSML 过程时，遇到每个 ``<mark />`` 标签时都会调用该回调函数。 (#15734, #11028, #5638, @LeonarddeR)
     -
   - 注意： NVDA Controller Client 中的新功能仅支持 NVDA 2024.1 及以上。
     -
@@ -269,22 +269,20 @@ NVDA 更新日志
 | ``zend-eclipse-php`` | ``eclipse`` |
 | ``zendstudio`` | ``eclipse`` |
 
-=== Deprecations ===
+=== 弃用 ===
+以下是一些即将弃用的功能，建议您尽快迁移到替代方案。
 
-- Using ``watchdog.getFormattedStacksForAllThreads`` is deprecated - please use ``logHandler.getFormattedStacksForAllThreads`` instead. (#15616, @lukaszgo1)
-- ``easeOfAccess.canConfigTerminateOnDesktopSwitch`` has been deprecated, as it became obsolete since Windows 7 is no longer supported. (#15644, @LeonarddeR)
-- ``winVersion.isFullScreenMagnificationAvailable`` has been deprecated - use ``visionEnhancementProviders.screenCurtain.ScreenCurtainProvider.canStart`` instead. (#15664, @josephsl)
-- The following Windows release constants has been deprecated from winVersion module (#15647, @josephsl):
+- 不再推荐使用 ``watchdog.getFormattedStacksForAllThreads``，请改用 ``logHandler.getFormattedStacksForAllThreads``。 (#15616, @lukaszgo1)
+- ``easeOfAccess.canConfigTerminateOnDesktopSwitch`` 已被弃用，因为自 Windows 7 不再受支持后，此功能已失效。 (#15644, @LeonarddeR)
+- ``winVersion.isFullScreenMagnificationAvailable`` 已被弃用，请改用 ``visionEnhancementProviders.screenCurtain.ScreenCurtainProvider.canStart``。 (#15664, @josephsl)
+- ``winVersion`` 模块中的以下 Windows 版本常量已被弃用 (#15647, @josephsl)：
   - ``winVersion.WIN7``
   - ``winVersion.WIN7_SP1``
   - ``winVersion.WIN8``
-  -
-- The ``bdDetect.KEY_*`` constants have been deprecated.
-Use ``bdDetect.DeviceType.*`` instead. (#15772, @LeonarddeR).
-- The ``bdDetect.DETECT_USB`` and ``bdDetect.DETECT_BLUETOOTH`` constants have been deprecated with no public replacement. (#15772, @LeonarddeR).
-- Using ``gui.ExecAndPump`` is deprecated - please use ``systemUtils.ExecAndPump`` instead. (#15852, @lukaszgo1)
+- ``bdDetect.KEY_*`` 常量已被弃用，请改用 ``bdDetect.DeviceType.*``。 (#15772, @LeonarddeR)
+- ``bdDetect.DETECT_USB`` 和 ``bdDetect.DETECT_BLUETOOTH`` 常量已被弃用，没有公开替代方案。 (#15772, @LeonarddeR)
+- 不再推荐使用 ``gui.ExecAndPump``，请改用 ``systemUtils.ExecAndPump``。 (#15852, @lukaszgo1)
 -
-
 
 = 2023.3.4 =
 This is a patch release to fix a security issue and installer issue.
@@ -770,9 +768,9 @@ Please responsibly disclose security issues following NVDA's [security policy ht
 - 可以在合成器驱动支持的设置上将 useConfig 设置为 False。(#14601)
 -
 
-=== API 的破坏性修改 ===
-这里是所有的 API 破坏性修改。
-如您的插件在使用新 API 后遇到问题，请在 GitHub 打开一个 issue。
+=== API 重大变更 ===
+以下是一些会破坏现有插件兼容性的 API 改动。
+如果您的插件在更新到新 API 后出现问题，请随时在 GitHub 上提交 issue 报告。
 - 更改了配置规范，相关的配置键已被删除或修改：
   -  ``[documentFormatting]`` 部分 (#14233)：
     - ``reportLineIndentation`` 是一个整数（0 到 3）而不是一个布尔值。
