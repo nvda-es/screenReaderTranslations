@@ -61,8 +61,8 @@ NVDA 更新日志
   - 将 Java Access Bridge 更新到 17.0.9+8Zulu (17.46.19)。(#15744)
   -
 - 快捷键：
-  - 以下命令现在支持连按两次逐字朗读，连按三次用短字符描述逐字解释：朗读选择的文本、朗读剪贴板文本和朗读焦点对象。(#15449, @CyrilleB79)
-  - 为切换黑屏功能分配了一个默认快捷键：``NVDA+control+escape``。(#10560, @CyrilleB79)
+  - 读出已选择的文本、读出剪贴板中的文本和读出焦点对象命令现在支持连按两次逐字朗读，连按三次用短字符描述逐字解释。(#15449, @CyrilleB79)
+  - 分配了切换黑屏功能的默认快捷键——NVDA+control+escape。(#10560, @CyrilleB79)
   - 朗读选择的文本命令支持连按四次在可浏览对话框中显示所选择的文本。(#15858, @Emil-18)
   -
 - Microsoft Office：
@@ -154,7 +154,7 @@ NVDA 更新日志
 - 将 BRLTTY 的 BrlAPI 更新到 0.8.5 版本，并将其对应的 Python 模块更新到兼容 Python 3.11 的版本。 (#15652, @LeonarddeR)
 - 添加了 ``speech.speakSsml`` 函数，您可以使用 [SSML https://www.w3.org/TR/speech-synthesis11/] 编写 NVDA 语音序列。 (#15699, @LeonarddeR)
   - 当前支持将以下标签转换为相应的 NVDA 语音命令：
-    - ``Prosody``（``pitch``, ``rate`` 和 ``volume``）。仅支持乘法（例如 ``200%``）。
+    - ``Prosody``（``pitch``, ``rate`` 和 ``volume``）。仅支持倍数的形式调节（例如 ``200%``）。
     - 将 ``say-as`` 的 ``interpret`` 属性设置为 ``characters``
     - 将 ``voice`` 的 ``xml:lang`` 设置为 XML 的语言
     - 将 ``break`` 的 ``time`` 属性设置为毫秒值，例如 ``200ms``
@@ -270,7 +270,6 @@ NVDA 更新日志
 | ``zendstudio`` | ``eclipse`` |
 
 === 弃用 ===
-以下是一些即将弃用的功能，建议您尽快迁移到替代方案。
 
 - 不再推荐使用 ``watchdog.getFormattedStacksForAllThreads``，请改用 ``logHandler.getFormattedStacksForAllThreads``。 (#15616, @lukaszgo1)
 - ``easeOfAccess.canConfigTerminateOnDesktopSwitch`` 已被弃用，因为自 Windows 7 不再受支持后，此功能已失效。 (#15644, @LeonarddeR)
@@ -285,46 +284,50 @@ NVDA 更新日志
 -
 
 = 2023.3.4 =
-This is a patch release to fix a security issue and installer issue.
-Please responsibly disclose security issues following NVDA's [security policy https://github.com/nvaccess/nvda/blob/master/security.md].
+这是一个修复安全问题和安装程序问题的补丁版本。
+请遵循 [NVDA 的 安全政策 https://github.com/nvaccess/nvda/blob/master/security.md] 负责任地披露安全问题。
 
-== Security Fixes ==
-- Prevents loading custom configuration while secure mode is forced.
+== 安全修复 ==
+
+- 修复了在强制安全模式时加载自定义配置的问题。
 ([GHSA-727q-h8j2-6p45 https://github.com/nvaccess/nvda/security/advisories/GHSA-727q-h8j2-6p45])
 -
 
-== Bug Fixes ==
-- Fixed bug which caused the NVDA process to fail to exit correctly. (#16123)
-- Fixed bug where if the previous NVDA process failed to exit correctly, an NVDA installation could fail to an unrecoverable state. (#16122)
+== 错误修复 ==
+
+- 修复了导致 NVDA 进程无法正常退出的错误。 (#16123)
+- 修复了如果之前的 NVDA 进程无法正常退出，NVDA 安装可能会失败甚至无法恢复的错误。( #16122)
 -
 
 = 2023.3.3 =
-This is a patch release to fix a security issue.
-Please responsibly disclose security issues following NVDA's [security policy https://github.com/nvaccess/nvda/blob/master/security.md].
+这是一个修复安全问题的补丁版本。
+请遵循 [NVDA 的 安全政策 https://github.com/nvaccess/nvda/blob/master/security.md] 负责任地披露安全问题。
 
-== Security Fixes ==
-- Prevents possible reflected XSS attack from crafted content to cause arbitrary code execution.
+== 安全修复 ==
+
+- 修复了精心设计的恶意内容可能导致反射式 XSS 攻击并执行任意代码的问题。
 ([GHSA-xg6w-23rw-39r8 https://github.com/nvaccess/nvda/security/advisories/GHSA-xg6w-23rw-39r8])
 -
 
 = 2023.3.2 =
-This is a patch release to fix a security issue.
-The security patch in 2023.3.1 was not resolved correctly.
-Please responsibly disclose security issues following NVDA's [security policy https://github.com/nvaccess/nvda/blob/master/security.md].
+这是一个修复安全问题的补丁版本。
+2023.3.1 中的安全补丁未正确解决问题。
+请遵循 [NVDA 的 安全政策 https://github.com/nvaccess/nvda/blob/master/security.md] 负责任地披露安全问题。
 
-== Security Fixes ==
-- The security patch in 2023.3.1 was not resolved correctly.
-Prevents possible system access and arbitrary code execution with system privileges for unauthenticated users.
+== 安全修复 ==
+
+- 2023.3.1 中的安全补丁未正确解决问题。
+- 修复了未经身份验证的用户可能存在的系统访问和任意代码执行权限的问题。
 ([GHSA-h7pp-6jqw-g3pj https://github.com/nvaccess/nvda/security/advisories/GHSA-h7pp-6jqw-g3pj])
 -
 
-
 = 2023.3.1 =
-This is a patch release to fix a security issue.
-Please responsibly disclose security issues following NVDA's [security policy https://github.com/nvaccess/nvda/blob/master/security.md].
+这是一个修复安全问题的补丁版本。
+请遵循 [NVDA 的 安全政策 https://github.com/nvaccess/nvda/blob/master/security.md] 负责任地披露安全问题。
 
-== Security Fixes ==
-- Prevents possible system access and arbitrary code execution with system privileges for unauthenticated users.
+== 安全修复 ==
+
+- 修复了未经身份验证的用户可能存在的系统访问和任意代码执行权限的问题。
 ([GHSA-h7pp-6jqw-g3pj https://github.com/nvaccess/nvda/security/advisories/GHSA-h7pp-6jqw-g3pj])
 -
 
