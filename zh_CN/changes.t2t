@@ -136,68 +136,63 @@ NVDA 更新日志
 - 修复了在 iTunes 中按上下键选择组合框中的选项时会被切换回浏览模式的错误。(#15653)
 -
 
-== Changes for Developers ==
-Please refer to [the developer guide https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API] for information on NVDA's API deprecation and removal process.
+== 开发者需要了解的变化 ==
+有关 NVDA 的 API 弃用和删除流程的信息，请参阅[开发人员指南 https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API]。
 
-- Note: this is an Add-on API compatibility breaking release.
-Add-ons will need to be re-tested and have their manifest updated.
-- Building NVDA now requires Visual Studio 2022.
-Please refer to the [NVDA docs https://github.com/nvaccess/nvda/blob/release-2024.1/projectDocs/dev/createDevEnvironment.md] for the specific list of Visual Studio components. (#14313)
-- Added the following extension points:
-  - ``treeInterceptorHandler.post_browseModeStateChange``. (#14969, @nvdaes)
-  - ``speech.speechCanceled``. (#15700, @LeonarddeR)
-  - ``_onErrorSoundRequested`` (should be retrieved calling ``logHandler.getOnErrorSoundRequested()``) (#15691, @CyrilleB79)
-  -
-- It is now possible to use plural forms in an add-on's translations. (#15661, @beqabeqa473)
-- Included python3.dll in the binary distribution for use by add-ons with external libraries utilizing the [stable ABI https://docs.python.org/3.11/c-api/stable.html]. (#15674, @mzanm)
-- The ``BrailleDisplayDriver`` base class now has ``numRows`` and ``numCols`` properties to provide information about multi line braille displays.
-Setting ``numCells`` is still supported for single line braille displays and ``numCells`` will return the total number of cells for multi line braille displays. (#15386)
-- Updated BrlAPI for BRLTTY to version 0.8.5, and its corresponding python module to a Python 3.11 compatible build. (#15652, @LeonarddeR)
-- Added the ``speech.speakSsml`` function, which allows you to write NVDA speech sequences using [SSML https://www.w3.org/TR/speech-synthesis11/]. (#15699, @LeonarddeR)
-  - The following tags are currently supported and translated to appropriate NVDA speech commands:
-    - ``Prosody`` (``pitch``, ``rate`` and ``volume``). Only multiplication (e.g. ``200%`` are supported.
-    - ``say-as`` with the ``interpret`` attribute set to ``characters``
-    - ``voice`` with the ``xml:lang`` set to an XML language
-    - ``break`` with the ``time`` attribute set to a value in milliseconds, e.g. ``200ms``
-    - ``mark`` with the ``name`` attribute set to a mark name, e.g. ``mark1``, requires providing a callback
+- 注意：此版本会影响插件的 API 兼容性。
+需要重新测试插件并更新其清单文件。
+- 构建 NVDA 现在需要 Visual Studio 2022。
+    有关 Visual Studio 依赖组件的详细列表，请参阅 [NVDA 文档 https://github.com/nvaccess/nvda/blob/release-2024.1/projectDocs/dev/createDevEnvironment.md]。 (#14313)
+- 添加了以下扩展点：
+  - ``treeInterceptorHandler.post_browseModeStateChange`` (#14969, @nvdaes)
+  - ``speech.speechCanceled`` (#15700, @LeonarddeR)
+  - ``_onErrorSoundRequested``（应该通过调用 ``logHandler.getOnErrorSoundRequested()`` 获取）(#15691, @CyrilleB79)
+- 在插件的翻译中现在可以使用复数形式。 (#15661, @beqabeqa473)
+- 在二进制包中包含了 python3.dll，供插件使用外部库（利用[稳定 API https://docs.python.org/3.11/c-api/stable.html]。 (#15674, @mzanm)
+- ``BrailleDisplayDriver`` 基类现在具有 ``numRows`` 和 ``numCols`` 属性，用于提供有关多行盲文显示器的信息。
+  对于单行盲文显示器，仍然支持设置 ``numCells``，对于多行盲文显示器，``numCells`` 将返回单元格总数。 (#15386)
+- 将 BRLTTY 的 BrlAPI 更新到 0.8.5 版本，并将其对应的 Python 模块更新到兼容 Python 3.11 的版本。 (#15652, @LeonarddeR)
+- 添加了 ``speech.speakSsml`` 函数，您可以使用 [SSML https://www.w3.org/TR/speech-synthesis11/] 编写 NVDA 语音序列。 (#15699, @LeonarddeR)
+  - 当前支持将以下标签转换为相应的 NVDA 语音命令：
+    - ``Prosody``（``pitch``, ``rate`` 和 ``volume``）。仅支持乘法（例如 ``200%``）。
+    - 将 ``say-as`` 的 ``interpret`` 属性设置为 ``characters``
+    - 将 ``voice`` 的 ``xml:lang`` 设置为 XML 的语言
+    - 将 ``break`` 的 ``time`` 属性设置为毫秒值，例如 ``200ms``
+    - 将 ``mark`` 的 ``name`` 属性设置为标记的名称，例如 ``mark1``，需要提供回调函数
     -
-  - Example: ``speech.speakSsml('<speak><prosody pitch="200%">hello</prosody><break time="500ms" /><prosody rate="50%">John</prosody></speak>')``
-  - The SSML parsing capabilities are backed by the ``SsmlParser`` class in the ``speechXml`` module.
-  -
-- Changes to the NVDA Controller Client library:
-  - The file names of the library no longer contain a suffix denoting the architecture, i.e. ``nvdaControllerClient32/64.dll`` are now called ``nvdaControllerClient.dll``. (#15718, #15717, @LeonarddeR)
-  - Added an example to demonstrate using nvdaControllerClient.dll from Rust. (#15771, @LeonarddeR)
-  - Added the following functions to the controller client: (#15734, #11028, #5638, @LeonarddeR)
-    - ``nvdaController_getProcessId``: To get the process id (PID) of the current instance of NVDA the controller client is using.
-    - ``nvdaController_speakSsml``: To instruct NVDA to speak according to the given SSML. This function also supports:
-      - Providing the symbol level.
-      - Providing the priority of speech to be spoken.
-      - Speaking both synchronously (blocking) and asynchronously (instant return).
+  - 示例： ``speech.speakSsml('<speak><prosody pitch="200%">hello</prosody><break time="500ms" /><prosody rate="50%">John</prosody></speak>')``
+  - SSML 解析功能由 ``speechXml`` 模块中的 ``SsmlParser`` 类提供支持。
+- 对 NVDA Controller Client  库的改进：
+  - 库的文件名不再包含表示架构的后缀，即 ``nvdaControllerClient32/64.dll`` 现在称为 ``nvdaControllerClient.dll``。 (#15718, #15717, @LeonarddeR)
+  - 添加了一个示例，演示如何使用 Rust 语言调用 nvdaControllerClient.dll。 (#15771, @LeonarddeR)
+  - 添加了以下函数到 NVDA Controller Client： (#15734, #11028, #5638, @LeonarddeR)
+    - ``nvdaController_getProcessId``：获取 Controller Client 使用的当前 NVDA 实例的进程 ID (PID)。
+    - ``nvdaController_speakSsml``：指示 NVDA 根据给定的 SSML 进行朗读。 此函数还支持：
+      - 提供符号级别。
+      - 提供要朗读的语音优先级。
+      - 同步（阻塞）和异步（立即返回）朗读。
       -
-    - ``nvdaController_setOnSsmlMarkReachedCallback``: To register a callback of type ``onSsmlMarkReachedFuncType`` that is called in synchronous mode for every ``<mark />`` tag encountered in the SSML sequence provided to ``nvdaController_speakSsml``.
+    - ``nvdaController_setOnSsmlMarkReachedCallback ``： 注册一个类型为 ``onSsmlMarkReachedFuncType`` 的回调函数，以便在使用  ``nvdaController_speakSsml`` 处理同步 SSML 过程时，遇到每个 ``<mark />`` 标签时都会调用该回调函数。 (#15734, #11028, #5638, @LeonarddeR)
     -
-  - Note: the new functions in the controller client only support NVDA 2024.1 and above.
-  -
-- Updated ``include`` dependencies:
-  - detours to ``4b8c659f549b0ab21cf649377c7a84eb708f5e68``. (#15695)
-  - ia2 to ``3d8c7f0b833453f761ded6b12d8be431507bfe0b``. (#15695)
-  - sonic to ``8694c596378c24e340c09ff2cd47c065494233f1``. (#15695)
-  - w3c-aria-practices to ``9a5e55ccbeb0f1bf92b6127c9865da8426d1c864``. (#15695)
-  - wil to ``5e9be7b2d2fe3834a7107f430f7d4c0631f69833``. (#15695)
-  -
-- Device info yielded by ``hwPortUtils.listUsbDevices`` now contain the bus reported description of the USB device (key ``busReportedDeviceDescription``). (#15764, @LeonarddeR)
-- For USB serial devices, ``bdDetect.getConnectedUsbDevicesForDriver`` and ``bdDetect.getDriversForConnectedUsbDevices`` now yield device matches containing a ``deviceInfo`` dictionary enriched with data about the USB device, such as ``busReportedDeviceDescription``. (#15764, @LeonarddeR)
-- When the configuration file ``nvda.ini`` is corrupted, a backup copy is saved before it is reinitialized. (#15779, @CyrilleB79)
-- When defining a script with the script decorator, the ``speakOnDemand`` boolean argument can be specified to control if a script should speak while in "on-demand" speech mode. (#481, @CyrilleB79)
-  - Scripts that provide information (e.g. say window title, report time/date) should speak in the "on-demand" mode.
-  - Scripts that perform an action (e.g. move the cursor, change a parameter) should not speak in the "on-demand" mode.
-  -
-- Fixed bug where deleting git-tracked files during ``scons -c`` resulted in missing UIA COM interfaces on rebuild. (#7070, #10833, @hwf1324)
-- Fix a bug where some code changes were not detected when building ``dist``, that prevented a new build from being triggered.
-Now ``dist`` always rebuilds. (#13372, @hwf1324)
-- A ``gui.nvdaControls.MessageDialog`` with default type of standard, no longer throws a None conversion exception because no sound is assigned. (#16223, @XLTechie)
+  - 注意： NVDA Controller Client 中的新功能仅支持 NVDA 2024.1 及以上。
+    -
+- 更新了 ``include`` 依赖：
+  - detours 更新到 ``4b8c659f549b0ab21cf649377c7a84eb708f5e68``。 (#15695)
+  - ia2 更新到 ``3d8c7f0b833453f761ded6b12d8be431507bfe0b``。 (#15695)
+  - sonic 更新到 ``8694c596378c24e340c09ff2cd47c065494233f1``。 (#15695)
+  - w3c-aria-practices 更新到 ``9a5e55ccbeb0f1bf92b6127c9865da8426d1c864``。 (#15695)
+  - wil 更新到 ``5e9be7b2d2fe3834a7107f430f7d4c0631f69833``。 (#15695)
+- 由 ``hwPortUtils.listUsbDevices`` 提供的设备信息现在包含 USB 设备的总线报告描述（键 ``busReportedDeviceDescription``）。 (#15764, @LeonarddeR)
+- 对于 USB 串行设备，``bdDetect.getConnectedUsbDevicesForDriver`` 和 ``bdDetect.getDriversForConnectedUsbDevices`` 现在返回包含 ``deviceInfo`` 字典的键值对，该字典包含有关 USB 设备的数据，例如 ``busReportedDeviceDescription``。 (#15764, @LeonarddeR)
+- 当配置文件 ``nvda.ini`` 被破坏时，会在重新初始化配置之前保存备份副本。 (#15779, @CyrilleB79)
+- 当使用装饰器定义手势时，可以指定 ``speakOnDemand`` 布尔参数来控制脚本是否应在“手动”语音模式下朗读。 (#481, @CyrilleB79)
+  - 用于提供信息的手势 （例如，读出窗口标题、读出时间/日期）应该在“手动”模式下朗读。
+  - 用于执行操作的手势 （例如，移动光标、更改参数）不应该在“手动”模式下朗读。
+- 修复了在 ``scons -c`` 期间删除 git 跟踪文件会导致重建时缺少 UIA COM 接口的错误。 (#7070, #10833, @hwf1324)
+- 修复了在构建 ``dist`` 时未检测到某些代码更改的错误，该错误导致无法触发新的构建。
+现在 ``dist`` 始终会被重建。 (#13372, @hwf1324)
+- 默认类型为标准的 ``gui.nvdaControls.MessageDialog`` 不再抛出 None 转换异常，因为没有指定提示音。 (#16223, @XLTechie)
 -
-
 
 === API Breaking Changes ===
 These are breaking API changes.
