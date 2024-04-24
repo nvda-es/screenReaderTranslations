@@ -236,8 +236,15 @@ Varsinaisia komentoja ei suoriteta.
 || Nimi | Näppäinkomento pöytäkoneissa | Näppäinkomento kannettavissa | Kuvaus |
 | Siirrä seuraavaan syntetisaattorin asetukseen | ``NVDA+Ctrl+Nuoli oikealle`` | ``NVDA+Vaihto+Ctrl+Nuoli oikealle`` | Siirtää seuraavaan käytettävissä olevaan nykyisen jälkeiseen puheasetukseen palaten viimeisen jälkeen takaisin ensimmäiseen. |
 | Siirrä edelliseen syntetisaattorin asetukseen | ``NVDA+Ctrl+Nuoli vasemmalle`` | ``NVDA+Vaihto+Ctrl+Nuoli vasemmalle`` | Siirtää seuraavaan käytettävissä olevaan nykyistä edeltävään puheasetukseen palaten ensimmäisen jälkeen takaisin viimeiseen. |
-| Suurenna nykyistä syntetisaattorin asetusta | ``NVDA+Ctrl+Nuoli ylös`` | ``NVDA+Vaihto+Ctrl+Nuoli ylös`` | Suurentaa valittua puheasetusta, esim. lisää nopeutta, valitsee seuraavan puheäänen tai lisää äänenvoimakkuutta. |
-| Pienennä nykyistä syntetisaattorin asetusta | ``NVDA+Ctrl+Nuoli alas`` | ``NVDA+Vaihto+Ctrl+Nuoli alas`` | Pienentää valittua puheasetusta, esim. vähentää nopeutta, valitsee edellisen puheäänen tai vähentää äänenvoimakkuutta. |
+| Suurenna aktiivista syntetisaattorin asetusta | ``NVDA+Ctrl+Nuoli ylös`` | ``NVDA+Vaihto+Ctrl+Nuoli ylös`` | Suurentaa valittua puheasetusta, esim. lisää nopeutta, valitsee seuraavan puheäänen tai lisää äänenvoimakkuutta. |
+| Suurenna aktiivista syntetisaattorin asetusta enemmän | ``NVDA+Ctrl+Page up`` | ``NVDA+Vaihto+Ctrl+Page up`` | Suurentaa nykyisen puheasetuksen arvoa enemmän kerrallaan. Kun esim. puheääniasetus on valittuna, tämä komento siirtää kerralla eteenpäin 20 äänen yli. Liukusäädinasetusten kohdalla (nopeus, korkeus jne.) se suurentaa arvoa jopa 20 %. |
+
+| Pienennä aktiivista syntetisaattorin asetusta | ``NVDA+Ctrl+Nuoli alas`` | ``NVDA+Vaihto+Ctrl+Nuoli alas`` | Pienentää valittua puheasetusta, esim. vähentää nopeutta, valitsee edellisen puheäänen tai vähentää äänenvoimakkuutta. |
+| Pienennä aktiivista syntetisaattorin asetusta enemmän | ``NVDA+Ctrl+Page down`` | ``NVDA+Vaihto+Ctrl+Page down`` | Pienentää aktiivisen puheasetuksen arvoa enemmän kerrallaan. Kun esim. puheääniasetus on valittuna, tämä komento siirtää kerralla taaksepäin 20 äänen yli. Liukusäädinasetusten kohdalla se pienentää arvoa jopa 20 %. |
+
+Aktiivisen syntetisaattoriasetuksen ensimmäiseen tai viimeiseen arvoon on myös mahdollista siirtyä määrittämällä kyseisille toiminnoille mukautetut näppäinkomennot  [Näppäinkomennot-valintaikkunan #InputGestures] Puhe-kategoriassa.
+Tämä tarkoittaa esimerkiksi sitä, että kun nopeusasetus on valittuna, nopeudeksi määritetään joko 0 tai 100.
+Kun puheääniasetus on aktiivisena, ääneksi määritetään ensimmäinen tai viimeinen vaihtoehto.
 
 +++ Verkon selaaminen +++[WebNavigation]
 Täydellinen luettelo pikanavigointinäppäimistä on käyttöoppaan [Selaustila #BrowseMode]-luvussa.
@@ -807,29 +814,30 @@ HUOM: Kaikkia komentoja ei tueta joissakin asiakirjatyypeissä.
 
 %kc:beginInclude
 Sellaisinaan nämä komennot siirtävät seuraavan ja ``Vaihto``-näppäimen kanssa painettuna edellisen elementin kohdalle:
-- H: otsikko
-- L: luettelo
-- I: luettelokohde
-- T: taulukko
-- K: linkki
-- N: teksti, joka ei ole linkki
-- F: lomakekenttä
-- U: vierailematon linkki
-- V: vierailtu linkki
-- E: muokkauskenttä
-- B: painike
-- X: valintaruutu
-- C: yhdistelmäruutu
-- R: valintapainike
-- Q: sisennetty lainaus
-- S: erotin
-- M: kehys
-- G: grafiikka
-- D: kiintopiste
-- O: upotettu objekti (ääni- ja videosoitin, sovellus, valintaikkuna jne.)
-- Numerot 1–6: otsikot tasoilla 1–6
-- A: merkintä (kommentti, muokkaajan muutokset jne.)
-- W: kirjoitusvirhe
+- ``H``: otsikko
+- ``L``: luettelo
+- ``I``: luettelokohde
+- ``T``: taulukko
+- ``K``: linkki
+- ``N``: teksti, joka ei ole linkki
+- ``F``: lomakekenttä
+- ``U``: vierailematon linkki
+- ``V``: vierailtu linkki
+- ``E``: muokkauskenttä
+- ``B``: painike
+- ``X``: valintaruutu
+- ``C``: yhdistelmäruutu
+- ``R``: valintapainike
+- ``Q``: sisennetty lainaus
+- ``S``: erotin
+- ``M``: kehys
+- ``G``: grafiikka
+- ``D``: kiintopiste
+- ``O``: upotettu objekti (ääni- ja videosoitin, sovellus, valintaikkuna jne.)
+- Numerot ``1–6``: otsikot tasoilla 1–6
+- ``A``: merkintä (kommentti, muokkaajan muutokset jne.)
+- ``P``: kappale
+- ``W``: kirjoitusvirhe
 -
 Säilöelementtien, kuten luetteloiden ja taulukoiden alkuun tai loppuun siirtymiseen:
 || Nimi | Näppäinkomento | Kuvaus |
@@ -843,14 +851,42 @@ Mikäli halutaan samaan aikaan käyttää sekä niitä että nuolinäppäimiä s
 Ota käyttöön tai poista käytöstä pikanavigointinäppäimet nykyisessä asiakirjassa painamalla ``NVDA+Vaihto+Väli``.
 %kc:endInclude
 
++++ Tekstikappaleiden navigointikomento +++[TextNavigationCommand]
+
+Voit siirtyä seuraavaan tai edelliseen tekstikappaleeseen painamalla ``P`` tai ``Vaihto+P``.
+Tekstikappaleet määritellään tekstiryhmiksi, jotka näyttävät kokonaisin lausein kirjoitetuilta.
+Tästä voi olla hyötyä luettavan sisällön alun löytämisessä erilaisilla verkkosivuilla, kuten:
+- Uutissivustot
+- Foorumit
+- Blogikirjoitukset
+- 
+
+Nämä komennot voivat myös auttaa ohittamaan tiettyjä häiriötekijöitä, kuten:
+- Mainokset
+- Valikot
+- Otsikot
+- 
+
+Huomaa kuitenkin, että vaikka NVDA pyrkii parhaansa mukaan tunnistamaan tekstikappaleet, algoritmi ei ole täydellinen ja saattaa joskus tehdä virheitä.
+Lisäksi tämä komento eroaa kappalenavigointikomennoista ``Ctrl+Nuoli alas/ylös``.
+Tekstikappalenavigointi siirtää vain tekstikappaleiden välillä, kun taas kappalenavigointikomennot siirtävät kohdistimen edelliseen/seuraavaan kappaleeseen riippumatta siitä, sisältävätkö ne tekstiä vai ei.
+
 +++ Muut navigointikomennot +++[OtherNavigationCommands]
 
 NVDA:ssa on yllä lueteltujen pikanavigointikomentojen lisäksi komentoja, joille ei ole määritetty oletusnäppäimiä.
 Käytä näitä komentoja määrittämällä niille ensin näppäimet [Näppäinkomennot-valintaikkunan #InputGestures] avulla.
 Tässä on luettelo käytettävissä olevista komennoista:
 - Artikkeli
+- Kuva
 - Ryhmä
 - Välilehti
+- Menu item
+- Toggle button
+- Progress bar
+- Math formula
+- Vertically aligned paragraph
+- Same style text
+- Different style text
 -
 
 Muista, että kullekin elementtityypille on komennot eteen- ja taaksepäin siirtymistä varten, ja sinun on määritettävä näppäimet molemmille, jotta voit siirtyä nopeasti molempiin suuntiin.
