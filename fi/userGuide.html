@@ -104,7 +104,8 @@
     <UL>
     <LI><A HREF="#SingleLetterNavigation">6.1. Pikanavigointinäppäimet</A>
       <UL>
-      <LI><A HREF="#OtherNavigationCommands">6.1.1. Muut navigointikomennot</A>
+      <LI><A HREF="#TextNavigationCommand">6.1.1. Tekstikappaleiden navigointikomento</A>
+      <LI><A HREF="#OtherNavigationCommands">6.1.2. Muut navigointikomennot</A>
       </UL>
     <LI><A HREF="#ElementsList">6.2. Elementtilista</A>
     <LI><A HREF="#SearchingForText">6.3. Tekstin etsiminen</A>
@@ -230,7 +231,7 @@
     <LI><A HREF="#SpeechViewer">14.2. Puheen tarkastelu</A>
     <LI><A HREF="#BrailleViewer">14.3. Pistekirjoituksen tarkastelu</A>
     <LI><A HREF="#PythonConsole">14.4. Python-konsoli</A>
-    <LI><A HREF="#toc156">14.5. Lisäosakauppa</A>
+    <LI><A HREF="#toc157">14.5. Lisäosakauppa</A>
     <LI><A HREF="#CreatePortableCopy">14.6. Luo massamuistiversio</A>
     <LI><A HREF="#RunCOMRegistrationFixingTool">14.7. Suorita COM-rekisteröintien korjaustyökalu...</A>
     <LI><A HREF="#ReloadPlugins">14.8. Lataa liitännäiset uudelleen</A>
@@ -255,9 +256,9 @@
     <LI><A HREF="#HedoMobilLine">16.8. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">16.9. HumanWare Brailliant BI/B / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc176">16.9.1. Kaikki mallit</A>
-      <LI><A HREF="#toc177">16.9.2. Brailliant BI 32, BI 40 ja B 80</A>
-      <LI><A HREF="#toc178">16.9.3. Brailliant BI 14</A>
+      <LI><A HREF="#toc177">16.9.1. Kaikki mallit</A>
+      <LI><A HREF="#toc178">16.9.2. Brailliant BI 32, BI 40 ja B 80</A>
+      <LI><A HREF="#toc179">16.9.3. Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">16.10. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
     <LI><A HREF="#Seika">16.11. Seika</A>
@@ -719,19 +720,39 @@ Varsinaisia komentoja ei suoriteta.
 <TD>Siirtää seuraavaan käytettävissä olevaan nykyistä edeltävään puheasetukseen palaten ensimmäisen jälkeen takaisin viimeiseen.</TD>
 </TR>
 <TR>
-<TD>Suurenna nykyistä syntetisaattorin asetusta</TD>
+<TD>Suurenna aktiivista syntetisaattorin asetusta</TD>
 <TD><CODE>NVDA+Ctrl+Nuoli ylös</CODE></TD>
 <TD><CODE>NVDA+Vaihto+Ctrl+Nuoli ylös</CODE></TD>
 <TD>Suurentaa valittua puheasetusta, esim. lisää nopeutta, valitsee seuraavan puheäänen tai lisää äänenvoimakkuutta.</TD>
 </TR>
 <TR>
-<TD>Pienennä nykyistä syntetisaattorin asetusta</TD>
+<TD>Suurenna aktiivista syntetisaattorin asetusta enemmän</TD>
+<TD><CODE>NVDA+Ctrl+Page up</CODE></TD>
+<TD><CODE>NVDA+Vaihto+Ctrl+Page up</CODE></TD>
+<TD>Suurentaa nykyisen puheasetuksen arvoa enemmän kerrallaan. Kun esim. puheääniasetus on valittuna, tämä komento siirtää kerralla eteenpäin 20 äänen yli. Liukusäädinasetusten kohdalla (nopeus, korkeus jne.) se suurentaa arvoa jopa 20 %.</TD>
+</TR>
+</TABLE>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>Pienennä aktiivista syntetisaattorin asetusta</TD>
 <TD><CODE>NVDA+Ctrl+Nuoli alas</CODE></TD>
 <TD><CODE>NVDA+Vaihto+Ctrl+Nuoli alas</CODE></TD>
 <TD>Pienentää valittua puheasetusta, esim. vähentää nopeutta, valitsee edellisen puheäänen tai vähentää äänenvoimakkuutta.</TD>
 </TR>
+<TR>
+<TD>Pienennä aktiivista syntetisaattorin asetusta enemmän</TD>
+<TD><CODE>NVDA+Ctrl+Page down</CODE></TD>
+<TD><CODE>NVDA+Vaihto+Ctrl+Page down</CODE></TD>
+<TD>Pienentää aktiivisen puheasetuksen arvoa enemmän kerrallaan. Kun esim. puheääniasetus on valittuna, tämä komento siirtää kerralla taaksepäin 20 äänen yli. Liukusäädinasetusten kohdalla se pienentää arvoa jopa 20 %.</TD>
+</TR>
 </TABLE>
 
+<P>
+Aktiivisen syntetisaattoriasetuksen ensimmäiseen tai viimeiseen arvoon on myös mahdollista siirtyä määrittämällä kyseisille toiminnoille mukautetut näppäinkomennot  <A HREF="#InputGestures">Näppäinkomennot-valintaikkunan</A> Puhe-kategoriassa.
+Tämä tarkoittaa esimerkiksi sitä, että kun nopeusasetus on valittuna, nopeudeksi määritetään joko 0 tai 100.
+Kun puheääniasetus on aktiivisena, ääneksi määritetään ensimmäinen tai viimeinen vaihtoehto.
+</P>
 <A NAME="WebNavigation"></A>
 <H3>2.3.8. Verkon selaaminen</H3>
 <P>
@@ -2017,29 +2038,30 @@ HUOM: Kaikkia komentoja ei tueta joissakin asiakirjatyypeissä.
 Sellaisinaan nämä komennot siirtävät seuraavan ja <CODE>Vaihto</CODE>-näppäimen kanssa painettuna edellisen elementin kohdalle:
 </P>
 <UL>
-<LI>H: otsikko
-<LI>L: luettelo
-<LI>I: luettelokohde
-<LI>T: taulukko
-<LI>K: linkki
-<LI>N: teksti, joka ei ole linkki
-<LI>F: lomakekenttä
-<LI>U: vierailematon linkki
-<LI>V: vierailtu linkki
-<LI>E: muokkauskenttä
-<LI>B: painike
-<LI>X: valintaruutu
-<LI>C: yhdistelmäruutu
-<LI>R: valintapainike
-<LI>Q: sisennetty lainaus
-<LI>S: erotin
-<LI>M: kehys
-<LI>G: grafiikka
-<LI>D: kiintopiste
-<LI>O: upotettu objekti (ääni- ja videosoitin, sovellus, valintaikkuna jne.)
-<LI>Numerot 1–6: otsikot tasoilla 1–6
-<LI>A: merkintä (kommentti, muokkaajan muutokset jne.)
-<LI>W: kirjoitusvirhe
+<LI><CODE>H</CODE>: otsikko
+<LI><CODE>L</CODE>: luettelo
+<LI><CODE>I</CODE>: luettelokohde
+<LI><CODE>T</CODE>: taulukko
+<LI><CODE>K</CODE>: linkki
+<LI><CODE>N</CODE>: teksti, joka ei ole linkki
+<LI><CODE>F</CODE>: lomakekenttä
+<LI><CODE>U</CODE>: vierailematon linkki
+<LI><CODE>V</CODE>: vierailtu linkki
+<LI><CODE>E</CODE>: muokkauskenttä
+<LI><CODE>B</CODE>: painike
+<LI><CODE>X</CODE>: valintaruutu
+<LI><CODE>C</CODE>: yhdistelmäruutu
+<LI><CODE>R</CODE>: valintapainike
+<LI><CODE>Q</CODE>: sisennetty lainaus
+<LI><CODE>S</CODE>: erotin
+<LI><CODE>M</CODE>: kehys
+<LI><CODE>G</CODE>: grafiikka
+<LI><CODE>D</CODE>: kiintopiste
+<LI><CODE>O</CODE>: upotettu objekti (ääni- ja videosoitin, sovellus, valintaikkuna jne.)
+<LI>Numerot <CODE>1–6</CODE>: otsikot tasoilla 1–6
+<LI><CODE>A</CODE>: merkintä (kommentti, muokkaajan muutokset jne.)
+<LI><CODE>P</CODE>: kappale
+<LI><CODE>W</CODE>: kirjoitusvirhe
 </UL>
 
 <P>
@@ -2068,8 +2090,37 @@ Joissakin uusissa verkkopohjaisissa sovelluksissa, kuten Gmail, Twitter ja Faceb
 Mikäli halutaan samaan aikaan käyttää sekä niitä että nuolinäppäimiä selaustilassa lukemiseen, NVDA:n pikanavigointinäppäimet voidaan poistaa tilapäisesti käytöstä.
 Ota käyttöön tai poista käytöstä pikanavigointinäppäimet nykyisessä asiakirjassa painamalla <CODE>NVDA+Vaihto+Väli</CODE>.
 </P>
+<A NAME="TextNavigationCommand"></A>
+<H3>6.1.1. Tekstikappaleiden navigointikomento</H3>
+<P>
+Voit siirtyä seuraavaan tai edelliseen tekstikappaleeseen painamalla <CODE>P</CODE> tai <CODE>Vaihto+P</CODE>.
+Tekstikappaleet määritellään tekstiryhmiksi, jotka näyttävät kokonaisin lausein kirjoitetuilta.
+Tästä voi olla hyötyä luettavan sisällön alun löytämisessä erilaisilla verkkosivuilla, kuten:
+</P>
+<UL>
+<LI>Uutissivustot
+<LI>Foorumit
+<LI>Blogikirjoitukset
+</UL>
+
+<P></P>
+<P>
+Nämä komennot voivat myös auttaa ohittamaan tiettyjä häiriötekijöitä, kuten:
+</P>
+<UL>
+<LI>Mainokset
+<LI>Valikot
+<LI>Otsikot
+</UL>
+
+<P></P>
+<P>
+Huomaa kuitenkin, että vaikka NVDA pyrkii parhaansa mukaan tunnistamaan tekstikappaleet, algoritmi ei ole täydellinen ja saattaa joskus tehdä virheitä.
+Lisäksi tämä komento eroaa kappalenavigointikomennoista <CODE>Ctrl+Nuoli alas/ylös</CODE>.
+Tekstikappalenavigointi siirtää vain tekstikappaleiden välillä, kun taas kappalenavigointikomennot siirtävät kohdistimen edelliseen/seuraavaan kappaleeseen riippumatta siitä, sisältävätkö ne tekstiä vai ei.
+</P>
 <A NAME="OtherNavigationCommands"></A>
-<H3>6.1.1. Muut navigointikomennot</H3>
+<H3>6.1.2. Muut navigointikomennot</H3>
 <P>
 NVDA:ssa on yllä lueteltujen pikanavigointikomentojen lisäksi komentoja, joille ei ole määritetty oletusnäppäimiä.
 Käytä näitä komentoja määrittämällä niille ensin näppäimet <A HREF="#InputGestures">Näppäinkomennot-valintaikkunan</A> avulla.
@@ -2077,8 +2128,16 @@ Tässä on luettelo käytettävissä olevista komennoista:
 </P>
 <UL>
 <LI>Artikkeli
+<LI>Kuva
 <LI>Ryhmä
 <LI>Välilehti
+<LI>Menu item
+<LI>Toggle button
+<LI>Progress bar
+<LI>Math formula
+<LI>Vertically aligned paragraph
+<LI>Same style text
+<LI>Different style text
 </UL>
 
 <P></P>
@@ -5509,7 +5568,7 @@ Ota pistekirjoituksen tarkastelu käyttöön tai poista se käytöstä mistä ta
 NVDA:n Python-konsoli, joka löytyy NVDA-valikon Työkalut-alivalikosta, on kehitystyökalu, joka on hyödyllinen virheiden etsinnässä, yleisessä NVDA:n sisäisen toiminnan tai sovelluksen saavutettavuushierarkian tutkimisessa.
 Lisätietoja on <A HREF="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html">NVDA-kehittäjän oppaassa.</A>
 </P>
-<A NAME="toc156"></A>
+<A NAME="toc157"></A>
 <H2>14.5. Lisäosakauppa</H2>
 <P>
 Tämä avaa <A HREF="#AddonsManager">NVDA:n lisäosakaupan</A>.
@@ -6492,7 +6551,7 @@ Myös seuraavia laitteita tuetaan, eikä niitä varten tarvitse asentaa ajureita
 Seuraavassa on Brailliant BI/B- ja BrailleNote Touch -näyttöjen näppäinkomennot NVDA:ta käytettäessä.
 Katso laitteiden käyttöohjeista kuvaukset näppäinten paikoista.
 </P>
-<A NAME="toc176"></A>
+<A NAME="toc177"></A>
 <H3>16.9.1. Kaikki mallit</H3>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -6581,7 +6640,7 @@ Katso laitteiden käyttöohjeista kuvaukset näppäinten paikoista.
 </TR>
 </TABLE>
 
-<A NAME="toc177"></A>
+<A NAME="toc178"></A>
 <H3>16.9.2. Brailliant BI 32, BI 40 ja B 80</H3>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -6602,7 +6661,7 @@ Katso laitteiden käyttöohjeista kuvaukset näppäinten paikoista.
 </TR>
 </TABLE>
 
-<A NAME="toc178"></A>
+<A NAME="toc179"></A>
 <H3>16.9.3. Brailliant BI 14</H3>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
