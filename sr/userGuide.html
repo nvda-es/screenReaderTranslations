@@ -104,7 +104,8 @@
     <UL>
     <LI><A HREF="#SingleLetterNavigation">6.1. Navigacija jednim slovom</A>
       <UL>
-      <LI><A HREF="#OtherNavigationCommands">6.1.1. Druge komande navigacije</A>
+      <LI><A HREF="#TextNavigationCommand">6.1.1. Komanda za navigaciju po pasusima teksta</A>
+      <LI><A HREF="#OtherNavigationCommands">6.1.2. Druge komande navigacije</A>
       </UL>
     <LI><A HREF="#ElementsList">6.2. Lista elemenata</A>
     <LI><A HREF="#SearchingForText">6.3. Pretraga teksta</A>
@@ -230,7 +231,7 @@
     <LI><A HREF="#SpeechViewer">14.2. Preglednik govora</A>
     <LI><A HREF="#BrailleViewer">14.3. Preglednik brajevog reda</A>
     <LI><A HREF="#PythonConsole">14.4. Python konzola</A>
-    <LI><A HREF="#toc156">14.5. Prodavnica dodataka</A>
+    <LI><A HREF="#toc157">14.5. Prodavnica dodataka</A>
     <LI><A HREF="#CreatePortableCopy">14.6. Napravi prenosnu kopiju</A>
     <LI><A HREF="#RunCOMRegistrationFixingTool">14.7. Pokreni COM Registration Fixing alatku...</A>
     <LI><A HREF="#ReloadPlugins">14.8. Ponovo učitaj dodatke</A>
@@ -255,9 +256,9 @@
     <LI><A HREF="#HedoMobilLine">16.8. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">16.9. HumanWare Brailliant BI/B serije / BrailleNote Touch</A>
       <UL>
-      <LI><A HREF="#toc176">16.9.1. Komande za sve modele</A>
-      <LI><A HREF="#toc177">16.9.2. Komande za Brailliant BI 32, BI 40 i B 80</A>
-      <LI><A HREF="#toc178">16.9.3. Komande za Brailliant BI 14</A>
+      <LI><A HREF="#toc177">16.9.1. Komande za sve modele</A>
+      <LI><A HREF="#toc178">16.9.2. Komande za Brailliant BI 32, BI 40 i B 80</A>
+      <LI><A HREF="#toc179">16.9.3. Komande za Brailliant BI 14</A>
       </UL>
     <LI><A HREF="#Hims">16.10. HIMS Braille Sense/Braille EDGE / smart beetle /Sync BrailleSerije</A>
     <LI><A HREF="#Seika">16.11. Seika brajevi redovi</A>
@@ -726,13 +727,33 @@ Same komande neće biti izvršene dok ste u režimu pomoći za unos.
 <TD>Povećava podešavanje sintetizatora na kojem se trenutno nalazite. Na primer povećava brzinu, bira sledeći glas, pojačava jačinu</TD>
 </TR>
 <TR>
+<TD>Povećaj trenutno podešavanje govora većim skokom</TD>
+<TD><CODE>NVDA+kontrol+pageUp</CODE></TD>
+<TD><CODE>NVDA+šift+kontrol+pageUp</CODE></TD>
+<TD>Povećava vrednost trenutnog podešavanja govora na kojem se nalazite većim skokom. Na primer kada ste na podešavanju glasa, skočiće napred za dvadeset glasova; kada ste na podešavanjima klizača (brzina, visina, i tako dalje) povećaće vrednost za 20%.</TD>
+</TR>
+</TABLE>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
 <TD>Smanji trenutno podešavanje sintetizatora</TD>
 <TD><CODE>NVDA+kontrol+strelicaDole</CODE></TD>
 <TD><CODE>NVDA+šift+kontrol+strelicaDole</CODE></TD>
 <TD>Smanjuje podešavanje sintetizatora na kojem se trenutno nalazite. Na primer smanjuje brzinu, bira prethodni glas, smanjuje jačinu</TD>
 </TR>
+<TR>
+<TD>Smanji trenutno podešavanje govora većim skokom</TD>
+<TD><CODE>NVDA+kontrol+pageDown</CODE></TD>
+<TD><CODE>NVDA+šift+kontrol+pageDown</CODE></TD>
+<TD>Smanjuje vrednost trenutnog podešavanja govora na kojem se nalazite većim skokom. Na primer kada ste na podešavanju glasa, skočiće nazad za dvadeset glasova; kada ste na podešavanjima klizača (brzina, visina, i tako dalje) smanjiće vrednost za 20%.</TD>
+</TR>
 </TABLE>
 
+<P>
+Takođe je moguće podesiti vrednost na prvu ili poslednju u krugu govornih podešavanja tako što ćete dodati prilagođene prečice u <A HREF="#InputGestures">dialogu ulaznih komandi</A>, u kategoriji govor.
+Ovo znači, na primer, kada ste na podešavanju brzine, podesiće brzinu na 0 ili 100.
++When you're on a voice setting, it will set the first or last voice.
+</P>
 <A NAME="WebNavigation"></A>
 <H3>2.3.8. Web navigacija</H3>
 <P>
@@ -2040,6 +2061,7 @@ Sledeći tasteri skaču na sledeći dostupan element, dok dodavanje šift taster
 <LI>o: Umetnuti objekat (audio i video playeri, aplikacije, dijalozi, etc.)
 <LI>1 do 6: Naslovi nivoa 1 do 6
 <LI>a: Napomena (komentar, revizija autora, i tako dalje.)
+<LI><CODE>p</CODE>: Pasus teksta
 <LI>w: Greška u pravopisu
 </UL>
 
@@ -2069,8 +2091,37 @@ Neke Web aplikacije kao što su Gmail, Twitter i Facebook koriste slova kao pre�
 Ako želite da ih koristite i da u isto vreme koristite vaš kursor da čitate sadržaj u režimu pretraživanja, možete privremeno onemogućiti navigaciju slovima programa NVDA.
 Da isključite i uključite navigaciju slovima za trenutni dokument, pritisnite NVDA+šift+razmak.
 </P>
+<A NAME="TextNavigationCommand"></A>
+<H3>6.1.1. Komanda za navigaciju po pasusima teksta</H3>
+<P>
+Možete skočiti na naredni ili prethodni pasus teksta pritiskanjem slova <CODE>p</CODE> ili <CODE>šift+p</CODE>.
+Pasusi teksta se definišu skupom teksta koji izgleda kao da je cela rečenica.
+Ovo može biti korisno kako biste pronašli početak sadržaja koji se može pročitati na raznim Web stranicama, kao što su:
+</P>
+<UL>
+<LI>Sajtovi novina
+<LI>Forumi
+<LI>Članci na blogovima
+</UL>
+
+<P></P>
+<P>
+Ove komande vam takođe mogu pomoći da preskočite neke vrste suvišnog sadržaja, kao što su:
+</P>
+<UL>
+<LI>Oglasi
+<LI>Meniji
+<LI>zaglavlja
+</UL>
+
+<P></P>
+<P>
+Molimo imajte na umu da iako NVDA pokušava da prepozna pasuse teksta što je bolje moguće, algoritam nije savršen i s vremena na vreme može da pogreši.
+Slično tome, ova komanda se razlikuje u odnosu na komande za navigaciju po pasusima <CODE>kontrol+strelicaDole ili strelicaGore</CODE>.
+Navigacija po pasusima teksta skače po pasusima teksta, dok komande za navigaciju po pasusima pomeraju kursor na prethodne ili sledeće pasuse bez obzira na to da li oni sadrže tekst ili ne.
+</P>
 <A NAME="OtherNavigationCommands"></A>
-<H3>6.1.1. Druge komande navigacije</H3>
+<H3>6.1.2. Druge komande navigacije</H3>
 <P>
 Uz komande brze navigacije koje su prikazane iznad, NVDA takođe ima komande koje nemaju podrazumevane podešene prečice.
 Da biste koristili ove komande, prvo morate da podesite prečice za njih korišćenjem <A HREF="#InputGestures">dijaloga ulaznih komandi</A>.
@@ -2078,8 +2129,16 @@ Ovo je lista dostupnih komandi:
 </P>
 <UL>
 <LI>Članci
+<LI>Figure
 <LI>Grupisanja
 <LI>Kartice
+<LI>Stavke menija
+<LI>Dugmadi prekidača
+<LI>Trake napredovanja
+<LI>Matematičke formule
+<LI>Vertikalno poravnati pasusi
+<LI>Tekst istog stila
+<LI>Tekst različitog stila
 </UL>
 
 <P></P>
@@ -2778,6 +2837,9 @@ Kada je zatamnjivanje ekrana omogućeno neki zadaci koji zavise od sadržaja vid
 Zbog promene u API-u za Windows lupu, zatamnjivanje ekrana je ažurirano kako bi podržavalo najnovije Windows verzije.
 Koristite NVDA 2021.2 da aktivirate zatamnjivanje ekrana na Windowsu 10 21H2 (10.0.19044) ili novijim.
 Kako biste se uverili u vašu privatnost, kada koristite novu verziju Windowsa, vizuelno potvrdite da zatamnjivanje ekrana čini ekran potpuno crnim.
+</P>
+<P>
+Imajte na umu da dok god je pokrenuta Windows lupa i koriste se obrnute boje ekrana, zatamnjivanje ekrana se ne može omogućiti.
 </P>
 <A NAME="ContentRecognition"></A>
 <H1>10. Prepoznavanje sadržaja</H1>
@@ -3540,13 +3602,13 @@ Ako želite brzo da menjate podešavanja govora bez ulaza u kategoriju govor pod
 <TH>Opis</TH>
 </TR>
 <TR>
-<TD>Prebaci se na sledeće podešavanje govora</TD>
+<TD>Premesti se na naredno podešavanje govora</TD>
 <TD>NVDA+kontrol+strelica desno</TD>
 <TD>NVDA+šift+kontrol+strelica desno</TD>
-<TD>Premešta se na sledeće dostupno podešavanje govora, vraćajući se na prvo podešavanje nakon poslednjeg</TD>
+<TD>Premešta se na naredno dostupno podešavanje govora, vraćajući se na prvo podešavanje nakon poslednjeg</TD>
 </TR>
 <TR>
-<TD>Premešta se na prethodno podešavanje govora</TD>
+<TD>Premesti se na prethodno podešavanje govora</TD>
 <TD>NVDA+kontrol+strelica levo</TD>
 <TD>NVDA+šift+kontrol+strelica levo</TD>
 <TD>Premešta se na prethodno podešavanje govora, vraćajući se na poslednje podešavanje nakon prvog</TD>
@@ -3558,10 +3620,22 @@ Ako želite brzo da menjate podešavanja govora bez ulaza u kategoriju govor pod
 <TD>Povećava trenutno podešavanje govora na kojem se nalazite. Na primer povećava brzinu, bira sledeći glas, pojačava ton</TD>
 </TR>
 <TR>
-<TD>Smanjuje trenutno podešavanje govora</TD>
+<TD>Povećaj trenutno podešavanje govora većim skokom</TD>
+<TD><CODE>NVDA+kontrol+pageUp</CODE></TD>
+<TD><CODE>NVDA+šift+kontrol+pageUp</CODE></TD>
+<TD>Povećava vrednost trenutnog podešavanja govora na kojem se nalazite većim skokom. Na primer kada ste na podešavanju glasa, skočiće napred za dvadeset glasova; kada ste na podešavanjima klizača (brzina, visina, i tako dalje) povećaće vrednost za 20%.</TD>
+</TR>
+<TR>
+<TD>Smanji trenutno podešavanje govora</TD>
 <TD>NVDA+kontrol+strelica dole</TD>
 <TD>NVDA+šift+kontrol+strelica dole</TD>
 <TD>Smanjuje trenutno podešavanje govora na kojem se nalazite. Na primer smanjuje brzinu, bira prethodni glas, smanjuje ton</TD>
+</TR>
+<TR>
+<TD>Smanji trenutno podešavanje govora većim skokom</TD>
+<TD><CODE>NVDA+kontrol+pageDown</CODE></TD>
+<TD><CODE>NVDA+šift+kontrol+pageDown</CODE></TD>
+<TD>Smanjuje vrednost trenutnog podešavanja govora na kojem se nalazite većim skokom. Na primer kada ste na podešavanju glasa, skočiće nazad za dvadeset glasova; kada ste na podešavanjima klizača (brzina, visina, i tako dalje) smanjiće vrednost za 20%.</TD>
 </TR>
 </TABLE>
 
@@ -3596,6 +3670,23 @@ Možete se pomerati kroz tabele sa strelicama.
 <P>
 Napomena da je ova opcija korisna samo ako vaš brajev red ima brajevu tastaturu i ako je ona podržana od strane odgovarajućeg drajvera.
 Ako unos nije podržan na brajevom redu koji ima tastaturu, ovo će biti napomenuto u <A HREF="#SupportedBrailleDisplays">delu podržani brajevi redovi</A>.
+</P>
+<A NAME="BrailleMode"></A>
+<H4>Brajev režim</H4>
+<P>
+Prečica: <CODE>NVDA+alt+t</CODE>
+</P>
+<P>
+Ova opcija vam dozvoljava da izaberete brajev režim.
+</P>
+<P>
+Trenutno, dostupna su dva brajeva režima, "Prati kursore" i "Prikaži govor".
+</P>
+<P>
+Kada izaberete da brajev red prati kursore, brajev red će pratiti ili sistemski fokus/kursor ili navigacioni objekat/pregledni kursor, u zavisnosti od toga za šta je brajev red vezan.
+</P>
+<P>
+Kada se izabere da brajev red prikazuje govor, brajev red će prikazati šta NVDA govori, ili šta bi govorio da je režim govora podešen na "Sa pričom"
 </P>
 <A NAME="BrailleSettingsExpandToComputerBraille"></A>
 <H4>Proširi na kompjuterski brajev kod za reč na poziciji kursora</H4>
@@ -3934,6 +4025,134 @@ Ova opcija nije dostupna ako je NVDA pokrenut sa onemogućenom <A HREF="#WASAPI"
 Ovaj klizač vam dozvoljava da podesite jačinu NVDA zvukova i  pištanja.
 Ovo podešavanje se primenjuje samo kada je opcija "Jačina NVDA zvukova prati jačinu glasa" onemogućena.
 Ova opcija nije dostupna ako je NVDA pokrenut sa onemogućenom <A HREF="#WASAPI">WASAPI opcijom za zvučni izlaz</A> u naprednim podešavanjima.
+</P>
+<A NAME="AudioAwakeTime"></A>
+<H4>Vreme tokom kojeg treba održavati zvučnu kartu budnom nakon govora</H4>
+<P>
+Ovo polje za uređivanje određuje koliko dugo će NVDA održavati zvučnu kartu budnom nakon što se govor završi.
+Ovo vam dozvoljava da NVDA izbegne određene greške u govoru kao što su odsečeni delovi reči.
+Ovo se može desiti usled toga što zvučne karte (posebno Bluetooth i bežični uređaji) ulaze u stendbaj režim.
+Ovo takođe može pomoći u drugim situacijama, kao što su korišćenje programa NVDA u virtuelnoj mašini (nna primer Citrix Virtual Desktop), ili na nekim laptop računarima.
+</P>
+<P>
+Niske vrednosti će možda izazvati da se početak zvuka iseče češće, budući da će uređaj možda prebrzo ući u stendbaj režim, što će izazvati da se početak sledećeg izgovorenog teksta iseče.
+Podešavanje previsoke vrednosti će možda izazvati da se baterija zvučne karte brže potroši, budući da uređaj ostaje aktivan duže a ne reprodukuje nikakve zvukove.
+</P>
+<P>
+Možete podesiti vreme na nula kako biste onemogućili ovu funkciju.
+</P>
+<A NAME="SelectSoundSplitMode"></A>
+<H4>Razdvajanje zvuka</H4>
+<P>
+Funkcija razdvajanja zvuka dozvoljava korisnicima da iskoriste stereo mogućnosti zvučnih uređaja, kao što su slušalice ili zvučnici.
+Razdvajanje zvuka dozvoljava da NVDA zvukovi pređu na jedan kanal (na primer levi) a sve druge aplikacije reprodukuju zvukove na drugom kanalu (na primer desnom).
+Razdvajanje zvukova je podrazumevano onemogućeno, što znači da će sve aplikacije uključujući NVDA reprodukovati zvukove na levom i desnom kanalu.
+Prečica dozvoljava da kružite kroz različite režime razdvajanja zvuka:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Ime</TH>
+<TH>Prečica</TH>
+<TH>Opis</TH>
+</TR>
+<TR>
+<TD>Kruži kroz režime razdvajanja zvuka</TD>
+<TD><CODE>NVDA+alt+s</CODE></TD>
+<TD>Kruži kroz režime razdvajanja zvuka.</TD>
+</TR>
+</TABLE>
+
+<P>
+Podrazumevano, ova komanda će kružiti kroz sledeće režime:
+</P>
+<UL>
+<LI>Razdvajanje zvuka onemogućeno: NVDA i druge aplikacije reprodukuju zvukove na oba kanala.
+<LI>NVDA na levoj strani a aplikacije na desnoj: NVDA će govoriti na levom kanalu, dok će druge aplikacije reprodukovati zvukove na desnom.
+<LI>NVDA na desnoj strani a aplikacije na levoj: NVDA će govoriti na desnom kanalu, dok će druge aplikacije reprodukovati zvukove na levom.
+</UL>
+
+<P></P>
+<P>
+Napredniji režimi razdvajanja zvuka su dostupni u izbornom okviru podešavanja razdvajanja zvuka.
+Ako želite da promenite jačinu svih aplikacija osim programa NVDA, razmotrite korišćenje <A HREF="#OtherAppVolume">navedenih komandi</A>.
+Imajte na umu da razdvajanje zvukova ne funkcioniše kao mikser.
+</P>
+<P>
+Na primer, ako aplikacija reprodukuje stereo zvučni zapis dok je razdvajanje zvukova podešeno na "NVDA na levoj strani a aplikacije na desnoj", čućete samo desni kanal zvučnog zapisa, dok će levi kanal zvučnog zapisa biti utišan.
+Ova opcija nije dostupna ako je NVDA pokrenut uz <A HREF="#WASAPI">WASAPI onemogućen za zvučni izlaz</A> u naprednim podešavanjima.
+</P>
+<P>
+Imajte na umu da ako se NVDA sruši, neće biti u stanju da vrati jačinu aplikacija, a te aplikacije će možda još uvek reprodukovati zvuk samo na jednom kanalu nakon rušenja programa NVDA.
+Kako biste ovo rešili, molimo ponovo pokrenite NVDA.
+</P>
+<A NAME="CustomizeSoundSplitModes"></A>
+<H4>Prilagođavanje režima razdvajanja zvuka</H4>
+<P>
+Ova lista sa kontrolama koje se mogu označiti dozvoljava da izaberete koji će režimi razdvajanja zvuka biti uključeni kada kružite kroz njih prečicom <CODE>NVDA+alt+s</CODE>.
+Režimi koji nisu označeni neće biti uključeni.
+Podrazumevano, omogućena su samo tri režima.
+</P>
+<UL>
+<LI>Razdvajanje zvukova onemogućeno: I NVDA i aplikacije reprodukuju zvukove i na levom i na desnom kanalu.
+<LI>NVDA na levom kanalu a sve druge aplikacije na desnom kanalu.
+<LI>NVDA na desnom  a sve druge aplikacije na levom kanalu.
+</UL>
+
+<P></P>
+<P>
+Imajte na umu da je neophodno označiti bar jedan režim.
+Ova opcija nije dostupna ako je NVDA pokrenut uz <A HREF="#WASAPI">WASAPI onemogućen za zvučni izlaz</A> u naprednim podešavanjima.
+</P>
+<A NAME="OtherAppVolume"></A>
+<H4>Jačina drugih aplikacija</H4>
+<P>
+Ovaj klizač vam dozvoljava da promenite jačinu svih pokrenutih aplikacija osim programa NVDA.
+Ovo podešavanje jačine će se primeniti na zvukove za sve druge aplikacije, čak i kada se pokrenu nakon što se ovo podešavanje promeni.
+Ova jačina se takođe može promeniti sledećim prečicama sa tastature bilo gde da se nalazite:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Ime</TH>
+<TH>Prečica</TH>
+<TH>Opis</TH>
+</TR>
+<TR>
+<TD>Pojačaj aplikacije</TD>
+<TD><CODE>NVDA+alt+pageUp</CODE></TD>
+<TD>Pojačava sve aplikacije osim programa NVDA.</TD>
+</TR>
+<TR>
+<TD>Smanji aplikacije</TD>
+<TD><CODE>NVDA+alt+pageDown</CODE></TD>
+<TD>Smanjuje jačinu svih aplikacija osim programa NVDA.</TD>
+</TR>
+</TABLE>
+
+<P>
+Ova opcija nije dostupna ako je NVDA pokrenut uz <A HREF="#WASAPI">WASAPI onemogućen za zvučni izlaz</A> u naprednim podešavanjima.
+</P>
+<A NAME="MuteApplications"></A>
+<H4>Utišaj druge aplikacije</H4>
+<P>
+Ovo izborno polje vam dozvoljava da utišate sve druge aplikacije osim programa NVDA.
+Ovo podešavanje utišavanja će se primeniti na sve druge aplikacije koje reprodukuju zvukove, čak i kada se pokrenu nakon što se ovo podešavanje promeni.
+Sledeća prečica na tastaturi se takođe može koristiti bilo gde da se nalazite:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Ime</TH>
+<TH>Prečica</TH>
+<TH>Opis</TH>
+</TR>
+<TR>
+<TD>Utišaj druge aplikacije</TD>
+<TD><CODE>NVDA+alt+delete</CODE></TD>
+<TD>Utišava ili ponovo vraća zvuk svih aplikacija osim programa NVDA.</TD>
+</TR>
+</TABLE>
+
+<P>
+Ova opcija nije dostupna ako je NVDA pokrenut uz <A HREF="#WASAPI">WASAPI onemogućen za zvučni izlaz</A> u naprednim podešavanjima.
 </P>
 <A NAME="VisionSettings"></A>
 <H3>12.1.8. Vid</H3>
@@ -4487,8 +4706,12 @@ Možete podesiti prijavljivanje sledećih elemenata:
   <LI>Orjentiri
   <LI>članci
   <LI>Okviri
-  <LI>Klikabilnost
+    <UL>
+    <LI>Figure i naslovi slika
+    </UL>
   </UL>
+<LI>Klikabilnost
+  -
 </UL>
 
 <P></P>
@@ -4923,6 +5146,12 @@ Omogućite ih samo ako ste dobili uputstva od NVDA programera, na primer za otkl
 Ova opcija vam dozvoljava da odredite da li će NVDA reprodukovati zvuk kada se evidentira greška.
 Izborom opcije samo u verzijama za testiranje (koja je podrazumevana) NVDA će reprodukovati zvukove za greške samo ako je trenutna verzija za testiranje (alpha, beta ili pokrenuta iz izvornog koda).
 Opcija da će omogućiti zvukove za greške bez obzira na to koja je verzija.
+</P>
+<A NAME="TextParagraphRegexEdit"></A>
+<H4>Regularni izraz za navigaciju po pasusima teksta</H4>
+<P>
+Ovo polje dozvoljava korisnicima da promene regularni izraz za prepoznavanje pasusa teksta u režimu pretraživanja.
+Komanda <A HREF="#TextNavigationCommand">navigacije po pasusima teksta</A> traži pasuse koji odgovaraju ovom izrazu.
 </P>
 <A NAME="MiscSettings"></A>
 <H2>12.2. Razna podešavanja</H2>
@@ -5386,9 +5615,9 @@ Možete takođe omogućiti ili onemogućiti više dodataka odjednom tako što ć
 <A NAME="AddonStoreReviews"></A>
 <H3>13.2.4. Recenzije za dodatke i čitanje recenzija</H3>
 <P>
-Pre nego što instalirate dodatak, možda ćete želeti da pročitate recenzije drugih korisnika.
-Takođe, možda će biti od pomoći drugim korisnicima ako pružite povratne informacije o dodacima koje ste probali.
-Da biste pročitali recenzije za dodatak, izaberite dodatak iz kartice sa dostupnim dodacima ili dodacima koji se mogu ažurirati i koristite radnju "Recenzije zajednice".
+Možda ćete želeti da pročitate recenzije drugih korisnika za dodatak, na primer pre nego što ga instalirate, ili dok učite kako da ga koristite.
+Takođe, može biti od pomoći drugim korisnicima ako pružite povratne informacije o dodacima koje ste probali.
+Da biste pročitali recenzije za dodatak, izaberite ga, i koristite radnju "Recenzije zajednice".
 Ovo je link ka Web stranici GitHub diskusije, gde možete da čitate i pišete recenzije za dodatak.
 Molimo imajte na umu da ovo ne menja direktnu komunikaciju sa programerima dodataka.
 Umesto toga, svrha ove funkcije je da podelite povratne informacije koje će pomoći da drugi korisnici odluče da li je određeni dodatak koristan za njih.
@@ -5510,7 +5739,7 @@ Kako biste isključili ili uključili preglednik brajevog reda bilo gde, molimo 
 NVDA python konzola, koja se nalazi u alatima u NVDA meniju, je alat za programere koji je koristan za otklanjanje grešaka, opšti pristup programu NVDA ili pristup elementima pristupačnosti neke aplikacije.
 Za više informacija, pročitajte uputstvo za programere dostupno u<A HREF="https://community.nvda-project.org/wiki/Development">delu za programere NVDA Web stranice</A>.
 </P>
-<A NAME="toc156"></A>
+<A NAME="toc157"></A>
 <H2>14.5. Prodavnica dodataka</H2>
 <P>
 Ovo će otvoriti <A HREF="#AddonsManager">prodavnicu NVDA dodataka</A>.
@@ -6489,7 +6718,7 @@ Sledeći dodatni uređaji su takođe podržani (i nije neophodno da instalirate 
 Slede komande za Brailliant BI/B i BrailleNote touch redove sa programom NVDA.
 Molimo pogledajte uputstvo za upotrebu ovih brajevih redova kako biste saznali opise tastera i njihov raspored.
 </P>
-<A NAME="toc176"></A>
+<A NAME="toc177"></A>
 <H3>16.9.1. Komande za sve modele</H3>
 <TABLE ALIGN="center" BORDER="1" CELLPADDING="4">
 <TR>
@@ -6578,7 +6807,7 @@ Molimo pogledajte uputstvo za upotrebu ovih brajevih redova kako biste saznali o
 </TR>
 </TABLE>
 
-<A NAME="toc177"></A>
+<A NAME="toc178"></A>
 <H3>16.9.2. Komande za Brailliant BI 32, BI 40 i B 80</H3>
 <TABLE ALIGN="center" BORDER="1" CELLPADDING="4">
 <TR>
@@ -6599,7 +6828,7 @@ Molimo pogledajte uputstvo za upotrebu ovih brajevih redova kako biste saznali o
 </TR>
 </TABLE>
 
-<A NAME="toc178"></A>
+<A NAME="toc179"></A>
 <H3>16.9.3. Komande za Brailliant BI 14</H3>
 <TABLE ALIGN="center" BORDER="1" CELLPADDING="4">
 <TR>
@@ -6638,7 +6867,7 @@ Ako brajev red povezujete putem USB, morate instalirati <A HREF="http://www.hims
 Slede dodeljene prečice za ove brajeve redove za NVDA.
 Molimo pogledajte uputstva za upotrebu brajevih redova kako biste saznali raspored i opis tastera na brajevom redu.
 </P>
-<TABLE ALIGN="center" BORDER="1" CELLPADDING="4">
+<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TH>Ime</TH>
 <TH>Komanda</TH>
@@ -6764,8 +6993,8 @@ Molimo pogledajte uputstva za upotrebu brajevih redova kako biste saznali raspor
 <TD>tačka2+tačka7+f1</TD>
 </TR>
 <TR>
-<TD>alt+strelicaLevo</TD>
-<TD>Tačka2+tačka7</TD>
+<TD><CODE>alt+strelicaLevo</CODE></TD>
+<TD><CODE>tačka2+tačka7+razmak</CODE></TD>
 </TR>
 <TR>
 <TD>StrelicaDesno taster</TD>
@@ -6784,8 +7013,8 @@ Molimo pogledajte uputstva za upotrebu brajevih redova kako biste saznali raspor
 <TD>tačka5+tačka7+f1</TD>
 </TR>
 <TR>
-<TD>alt+strelicaDesno</TD>
-<TD>Tačka5+tačka7</TD>
+<TD><CODE>alt+strelicaDesno</CODE></TD>
+<TD><CODE>tačka5+tačka7+razmak</CODE></TD>
 </TR>
 <TR>
 <TD>pageUp</TD>
@@ -6812,8 +7041,8 @@ Molimo pogledajte uputstva za upotrebu brajevih redova kako biste saznali raspor
 <TD>tačka2+tačka3+tačka7+f1</TD>
 </TR>
 <TR>
-<TD>alt+strelicaGore</TD>
-<TD>Tačka2+tačka3+tačka7</TD>
+<TD><CODE>alt+strelicaGore</CODE></TD>
+<TD><CODE>tačka2+tačka3+tačka7+razmak</CODE></TD>
 </TR>
 <TR>
 <TD>šift+StrelicaGore taster</TD>
@@ -6844,8 +7073,8 @@ Molimo pogledajte uputstva za upotrebu brajevih redova kako biste saznali raspor
 <TD>tačka5+tačka6+tačka7+f1</TD>
 </TR>
 <TR>
-<TD>alt+strelicaDole</TD>
-<TD>Tačka5+tačka6+tačka7</TD>
+<TD><CODE>alt+strelicaDole</CODE></TD>
+<TD><CODE>tačka5+tačka6+tačka7+razmak</CODE></TD>
 </TR>
 <TR>
 <TD>šift+strelicaDole taster</TD>
@@ -9001,6 +9230,12 @@ Bezbedan način rada će onemogućiti:
 <P>
 Instalirane kopije programa NVDA čuvaju podešavanja uključujući dodatke u <CODE>%APPDATA%\nvda</CODE>.
 Da biste sprečili NVDA korisnike da direktno izmene podešavanja ili dodatke, korisnički pristup ovom folderu se takođe mora ograničiti.
+</P>
+<P>
+Bezbedan režim nema efekta u prenosnim NVDA kopijama.
+Ovo ograničenje takođe važi za privremenu kopiju programa NVDA koja se pokreće pri pokretanju instalacije.
+U bezbednim okruženjima, korisnik koji može da pokrene prenosivu izvršnu datoteku predstavlja isti bezbednosni rizik bez obzira na bezbedni režim.
+Očekuje se od administratora sistema da ograniče pokretanje neautorizovanog softvera na sistemu, što uključuje prenosne NVDA kopije.
 </P>
 <P>
 NVDA korisnici često zavise od podešavanja njihovog NVDA profila kako bi zadovoljio njihove potrebe.
