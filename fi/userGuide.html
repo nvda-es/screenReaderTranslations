@@ -2131,13 +2131,13 @@ Tässä on luettelo käytettävissä olevista komennoista:
 <LI>Kuva
 <LI>Ryhmä
 <LI>Välilehti
-<LI>Menu item
-<LI>Toggle button
-<LI>Progress bar
-<LI>Math formula
-<LI>Vertically aligned paragraph
-<LI>Same style text
-<LI>Different style text
+<LI>Valikkokohde
+<LI>Vaihtopainike
+<LI>Edistymispalkki
+<LI>Matemaattinen kaava
+<LI>Pystysuunnassa tasattu kappale
+<LI>Samantyylinen teksti
+<LI>Eri tyylinen teksti
 </UL>
 
 <P></P>
@@ -2834,8 +2834,11 @@ Kun näyttöverho on aktiivisena, jotkin näytöllä näkyvään tietoon perustu
 </P>
 <P>
 Windowsin suurennusrajapintaan tehdyn muutoksen takia näyttöverho oli päivitettävä tukemaan uusimpia Windows-versioita.
-Käytä NVDA 2021.2:ta aktivoidaksesi näyttöverhon Windows 10:n versiossa 21H2 (10.0.19044) tai uudemmissa.
-Turvallisuussyistä uutta Windows-versiota käytettäessä näytetään vahvistusviesti siitä, että näyttöverho pimentää ruudun kokonaan.
+Käytä NVDA 2021.2:ta ottaaksesi näyttöverhon käyttöön Windows 10:n versiossa 21H2 (10.0.19044) tai sitä uudemmissa.
+Varmista turvallisuussyistä visuaalisesti uutta Windows-versiota käytettäessä, että näyttöverho pimentää ruudun kokonaan.
+</P>
+<P>
+Huom: Näyttöverhoa ei voida ottaa käyttöön, jos Windowsin suurennuslasia ja käänteisiä värejä käytetään samaan aikaan.
 </P>
 <A NAME="ContentRecognition"></A>
 <H1>10. Sisällöntunnistus</H1>
@@ -3463,7 +3466,7 @@ Asetus ei ole oletusarvoisesti käytössä.
 <A NAME="SpeechSettingsSymbolLevel"></A>
 <H4>Välimerkki- ja symbolitaso</H4>
 <P>
-Pikanäppäin: NVDA+P
+Pikanäppäin: <CODE>NVDA+P</CODE>
 </P>
 <P>
 Tästä valitaan sanoina luettavien välimerkkien ja muiden symbolien määrä.
@@ -3616,10 +3619,22 @@ NVDA:ssa on joitakin näppäinkomentoja, joiden avulla voidaan siirtyä missä t
 <TD>Suurentaa valittua puheasetusta, esim. lisää nopeutta, valitsee seuraavan puheäänen tai lisää äänenvoimakkuutta.</TD>
 </TR>
 <TR>
+<TD>Suurenna aktiivista syntetisaattorin asetusta enemmän</TD>
+<TD><CODE>NVDA+Ctrl+Page up</CODE></TD>
+<TD><CODE>NVDA+Vaihto+Ctrl+Page up</CODE></TD>
+<TD>Suurentaa nykyisen puheasetuksen arvoa enemmän kerrallaan. Kun esim. puheääniasetus on valittuna, tämä komento siirtää kerralla eteenpäin 20 äänen yli. Liukusäädinasetusten kohdalla (nopeus, korkeus jne.) se suurentaa arvoa jopa 20 %.</TD>
+</TR>
+<TR>
 <TD>Pienennä nykyistä syntetisaattorin asetusta</TD>
 <TD>NVDA+Ctrl+Nuoli alas</TD>
 <TD>NVDA+Vaihto+Ctrl+Nuoli alas</TD>
 <TD>Pienentää valittua puheasetusta, esim. vähentää nopeutta, valitsee edellisen puheäänen tai vähentää äänenvoimakkuutta.</TD>
+</TR>
+<TR>
+<TD>Pienennä aktiivista syntetisaattorin asetusta enemmän</TD>
+<TD><CODE>NVDA+Ctrl+Page down</CODE></TD>
+<TD><CODE>NVDA+Vaihto+Ctrl+Page down</CODE></TD>
+<TD>Pienentää aktiivisen puheasetuksen arvoa enemmän kerrallaan. Kun esim. puheääniasetus on valittuna, tämä komento siirtää kerralla taaksepäin 20 äänen yli. Liukusäädinasetusten kohdalla se pienentää arvoa jopa 20 %.</TD>
 </TR>
 </TABLE>
 
@@ -3654,6 +3669,23 @@ Vaihtoehtojen välillä liikutaan nuolinäppäimillä.
 <P>
 Huom: Tästä vaihtoehdosta on hyötyä vain, jos pistenäytössä on Perkins-tyylinen -näppäimistö ja mikäli näytön ajuri tukee tätä ominaisuutta.
 Jos pistenäppäimistön sisältävä pistenäyttö ei tue syöttöä, siitä huomautetaan <A HREF="#SupportedBrailleDisplays">Tuetut pistenäytöt</A> -osiossa.
+</P>
+<A NAME="BrailleMode"></A>
+<H4>Pistekirjoitustila</H4>
+<P>
+Pikanäppäin: <CODE>NVDA+Alt+T</CODE>
+</P>
+<P>
+Tällä asetuksella voit valita käytettävän pistekirjoitustilan.
+</P>
+<P>
+Tuetut pistekirjoitustilat ovat tällä hetkellä "seuraa kohdistimia" ja "näytä puhetuloste".
+</P>
+<P>
+Kun valittuna on "seuraa kohdistimia", pistenäyttö seuraa joko järjestelmän kohdistusta/kohdistinta tai navigointiobjektia/tarkastelukohdistinta riippuen siitä, mitä pistenäyttö on määritetty seuraamaan.
+</P>
+<P>
+Kun valittuna on "näytä puhetuloste", pistenäytöllä näytetään, mitä NVDA puhuu tai olisi puhunut, jos puhetilana olisi ollut "puhe käytössä".
 </P>
 <A NAME="BrailleSettingsExpandToComputerBraille"></A>
 <H4>Laajenna kohdistimen kohdalla oleva sana</H4>
@@ -3708,7 +3740,7 @@ Tämä asetus näytetään vain, jos "Näytä ilmoitukset" -asetukseksi on mää
 <A NAME="BrailleTether"></A>
 <H4>Pistenäyttö seuraa</H4>
 <P>
-Pikanäppäin: NVDA+Ctrl+T
+Pikanäppäin: <CODE>NVDA+Ctrl+T</CODE>
 </P>
 <P>
 Tällä asetuksella voit valita, seuraako pistenäyttö järjestelmän kohdistusta/kohdistinta, navigointiobjektia/tarkastelukohdistinta vai molempia.
@@ -3991,7 +4023,135 @@ Tämä asetus ei ole käytettävissä, jos <A HREF="#WASAPI">Käytä WASAPIa ä�
 <P>
 Tällä liukusäätimellä voidaan määrittää NVDA:n äänien ja piippausten äänenvoimakkuus.
 Tämä asetus on käytettävissä vain, kun "NVDA-äänien voimakkuus mukautuu puheäänen voimakkuuteen" ei ole käytössä.
-Tämä asetus ei ole käytettävissä, jos <A HREF="#WASAPI">Käytä WASAPIa äänen toistamiseen</A> on poistettu käytöstä lisäasetuksista.
+Tämä asetus ei ole käytettävissä, jos <A HREF="#WASAPI">Käytä WASAPIa äänen toistamiseen</A> on poistettu käytöstä lisäasetuksissa.
+</P>
+<A NAME="AudioAwakeTime"></A>
+<H4>Äänilaitteen hereilläpitoaika puheen jälkeen</H4>
+<P>
+Tässä muokkausruudussa määritetään, kuinka kauan NVDA pitää äänilaitteen hereillä puheen loputtua.
+Se mahdollistaa tiettyjen puheen häiriöiden, kuten puuttuvien sanojen osien, välttämisen.
+Tämä voi johtua äänilaitteiden (erityisesti Bluetooth- ja muiden langattomien laitteiden) valmiustilaan siirtymisestä.
+Tästä voi olla hyötyä myös muissa käyttötarkoituksissa, kuten käytettäessä NVDA:ta virtuaalikoneessa (esim. Citrix Virtual Desktopissa) tai tietyissä kannettavissa tietokoneissa.
+</P>
+<P>
+Pienempien arvojen käyttö voi aiheuttaa useammin äänen katkeamista, koska laite saattaa siirtyä valmiustilaan liian aikaisin, mistä on seurauksena seuraavan puhuttavan asian alun katkeaminen.
+Liian suuren arvon käyttö saattaa tyhjentää äänilaitteen akun nopeammin, koska laite pysyy aktiivisena pidempään, vaikka ääntä ei lähetetä.
+</P>
+<P>
+Poista tämä toiminto käytöstä määrittämällä ajaksi 0.
+</P>
+<A NAME="SelectSoundSplitMode"></A>
+<H4>Äänijako</H4>
+<P>
+Äänijakotoiminto mahdollistaa stereoäänilaitteiden, kuten kuulokkeiden ja kaiuttimien, hyödyntämisen.
+Sen avulla on mahdollista saada NVDA:n puhe toiseen kanavaan (esim. vasempaan) ja muiden sovellusten äänet toiseen (esim. oikeaan).
+Oletuksena äänijako ei ole käytössä, mikä tarkoittaa, että kaikki sovellukset, NVDA mukaan lukien, toistavat ääntä sekä vasemmassa että oikeassa kanavassa.
+Näppäinkomento mahdollistaa vaihtamisen eri äänijakotilojen välillä:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nimi</TH>
+<TH>Näppäinkomento</TH>
+<TH>Kuvaus</TH>
+</TR>
+<TR>
+<TD>Vaihda äänijakotilaa</TD>
+<TD><CODE>NVDA+Alt+S</CODE></TD>
+<TD>Vaihtaa äänijakotilojen välillä.</TD>
+</TR>
+</TABLE>
+
+<P>
+Oletuksena tämä komento vaihtaa seuraavien tilojen välillä:
+</P>
+<UL>
+<LI>Ei käytössä: NVDA ja muut sovellukset toistavat ääntä sekä vasemmassa että oikeassa kanavassa.
+<LI>NVDA vasemmalla ja sovellukset oikealla: NVDA puhuu vasemmassa kanavassa, kun taas muut sovellukset toistavat ääntä oikeassa.
+<LI>NVDA oikealla ja sovellukset vasemmalla: NVDA puhuu oikeassa kanavassa, kun taas muut sovellukset toistavat ääntä vasemmassa.
+</UL>
+
+<P></P>
+<P>
+NVDA:n asetusyhdistelmäruudussa on käytettävissä myös edistyneempiä äänijakotiloja.
+Jos haluat säätää muiden sovellusten paitsi NVDA:n äänenvoimakkuutta, harkitse <A HREF="#OtherAppVolume">siihen tarkoitettujen komentojen</A> käyttöä.
+Huom: Äänijako ei toimi mikserinä.
+Jos esimerkiksi sovellus toistaa stereoääniraitaa, kun äänijaon tilaksi on määritetty "NVDA vasemmalla ja sovellukset oikealla", kuulet vain ääniraidan oikean kanavan, kun taas raidan vasen kanava mykistetään.
+</P>
+<P>
+Tämä asetus ei ole käytettävissä, jos olet <A HREF="#WASAPI">poistanut WASAPIn käytöstä</A> NVDA:n lisäasetuksissa.
+</P>
+<P>
+Huom: Jos NVDA kaatuu, se ei pysty palauttamaan sovellusten äänenvoimakkuutta, jolloin ne saattavat edelleen toistaa ääntä vain yhdessä kanavassa.
+Käynnistä NVDA uudelleen tämän vähentämiseksi.
+</P>
+<A NAME="CustomizeSoundSplitModes"></A>
+<H4>Äänijakotilojen mukauttaminen</H4>
+<P>
+Tästä valintaruutuluettelosta voit valita äänijakotilat, jotka ovat käytettävissä vaihdettaessa eri tilojen välillä näppäinkomentoa <CODE>NVDA+Alt+S</CODE> käyttäen.
+Valitsemattomat tilat eivät ole käytettävissä.
+Oletuksena vain kolme tilaa on valittuna.
+</P>
+<UL>
+<LI>Ei käytössä: NVDA ja muut sovellukset toistavat ääntä sekä vasemmassa että oikeasssa kanavassa.
+<LI>NVDA vasemmalla ja muut sovellukset oikealla.
+<LI>NVDA oikealla ja muut sovellukset vasemmalla.
+</UL>
+
+<P></P>
+<P>
+Huom: Vähintään yksi tila on oltava valittuna.
+Tämä asetus ei ole käytettävissä, jos olet <A HREF="#WASAPI">poistanut WASAPIn käytöstä</A> NVDA:n lisäasetuksissa.
+</P>
+<A NAME="OtherAppVolume"></A>
+<H4>Muiden sovellusten äänenvoimakkuus</H4>
+<P>
+Tämä liukusäädin mahdollistaa kaikkien tällä hetkellä käynnissä olevien sovellusten paitsi NVDA:n äänenvoimakkuuden säätämisen.
+Asetus vaikuttaa kaikkien muiden sovellusten äänentoistoon, vaikka ne käynnistettäisiin tämän asetuksen muuttamisen jälkeen.
+Tätä äänenvoimakkuutta voi lisäksi säätää mistä tahansa seuraavia näppäinkomentoja käyttäen:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nimi</TH>
+<TH>Näppäinkomento</TH>
+<TH>Kuvaus</TH>
+</TR>
+<TR>
+<TD>Lisää sovellusten äänenvoimakkuutta</TD>
+<TD><CODE>NVDA+Alt+Page up</CODE></TD>
+<TD>Lisää kaikkien sovellusten paitsi NVDA:n äänenvoimakkuutta.</TD>
+</TR>
+<TR>
+<TD>Vähennä sovellusten äänenvoimakkuutta</TD>
+<TD><CODE>NVDA+Alt+Page down</CODE></TD>
+<TD>Vähentää kaikkien sovellusten paitsi NVDA:n äänenvoimakkuutta.</TD>
+</TR>
+</TABLE>
+
+<P>
+Tämä asetus ei ole käytettävissä, jos olet <A HREF="#WASAPI">poistanut WASAPIn käytöstä</A> NVDA:n lisäasetuksissa.
+</P>
+<A NAME="MuteApplications"></A>
+<H4>Mykistä muut sovellukset</H4>
+<P>
+Tämä valintaruutu mahdollistaa kaikkien muiden sovellusten paitsi NVDA:n mykistämisen.
+Asetus vaikuttaa kaikkien muiden sovellusten äänentoistoon, vaikka ne käynnistettäisiin tämän asetuksen muuttamisen jälkeen.
+Lisäksi seuraavaa näppäinkomentoa voidaan käyttää mistä tahansa:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nimi</TH>
+<TH>Näppäinkomento</TH>
+<TH>Kuvaus</TH>
+</TR>
+<TR>
+<TD>Vaihda muiden sovellusten mykistyksen tilaa</TD>
+<TD><CODE>NVDA+Alt+Delete</CODE></TD>
+<TD>Mykistää tai poistaa mykistyksen kaikista muista sovelluksista paitsi NVDA:sta.</TD>
+</TR>
+</TABLE>
+
+<P>
+Tämä asetus ei ole käytettävissä, jos olet <A HREF="#WASAPI">poistanut WASAPIn käytöstä</A> NVDA:n lisäasetuksissa.
 </P>
 <A NAME="VisionSettings"></A>
 <H3>12.1.8. Näkö</H3>
@@ -4075,7 +4235,7 @@ Jos mitään näppäintä ei ole valittu, monien NVDA-komentojen käyttäminen v
 <A NAME="KeyboardSettingsSpeakTypedCharacters"></A>
 <H4>Puhu kirjoitetut merkit</H4>
 <P>
-Pikanäppäin: NVDA+2
+Pikanäppäin: <CODE>NVDA+2</CODE>
 </P>
 <P>
 Kun tämä valintaruutu on valittuna, NVDA lukee kaikki kirjoitetut merkit.
@@ -4083,7 +4243,7 @@ Kun tämä valintaruutu on valittuna, NVDA lukee kaikki kirjoitetut merkit.
 <A NAME="KeyboardSettingsSpeakTypedWords"></A>
 <H4>Puhu kirjoitetut sanat</H4>
 <P>
-Pikanäppäin: NVDA+3
+Pikanäppäin: <CODE>NVDA+3</CODE>
 </P>
 <P>
 Kun tämä valintaruutu on valittuna, NVDA lukee kaikki kirjoitetut sanat.
@@ -4113,7 +4273,7 @@ Tämän vuoksi siitä varoittaminen voi olla varsin hyödyllistä.
 <A NAME="KeyboardSettingsSpeakCommandKeys"></A>
 <H4>Puhu komentonäppäimet</H4>
 <P>
-Pikanäppäin: NVDA+4
+Pikanäppäin: <CODE>NVDA+4</CODE>
 </P>
 <P>
 Kun tämä valintaruutu on valittuna, NVDA puhuu kaikki painetut näppäimet, jotka eivät ole merkkejä. Näitä ovat sellaiset näppäinyhdistelmät kuin Ctrl+jokin muu kirjain.
@@ -4228,7 +4388,7 @@ Kun tämä asetus on käytössä, tarkastelukohdistin sijoitetaan aina samaan ob
 <A NAME="ReviewCursorFollowCaret"></A>
 <H4>Seuraa kohdistinta</H4>
 <P>
-Pikanäppäin: NVDA+6
+Pikanäppäin: <CODE>NVDA+6</CODE>
 </P>
 <P>
 Kun tämä asetus on käytössä, tarkastelukohdistin siirretään automaattisesti kohdistimen kohdalle aina sen liikkuessa.
@@ -4326,7 +4486,7 @@ Jos edistymispalkin sisältävä ikkuna pienennetään tai siirrytään pois sel
 <A NAME="ObjectPresentationReportDynamicContent"></A>
 <H4>Puhu dynaamisen sisällön muutokset</H4>
 <P>
-Pikanäppäin: NVDA+5
+Pikanäppäin: <CODE>NVDA+5</CODE>
 </P>
 <P>
 Ottaa käyttöön tai poistaa käytöstä uuden sisällön puhumisen tietyissä objekteissa, kuten pääteohjelmissa ja pikaviestiohjelmien historiasäätimissä.
@@ -4405,7 +4565,7 @@ Tämä asettaa rivimäärän, joka selaustilassa siirrytään painettaessa Page 
 <A NAME="BrowseModeSettingsScreenLayout"></A>
 <H4>Käytä ruutuasettelua</H4>
 <P>
-Pikanäppäin: NVDA+V
+Pikanäppäin: <CODE>NVDA+V</CODE>
 </P>
 <P>
 Tällä asetuksella voidaan määrittää, sijoitetaanko napsautettava sisältö (linkit, painikkeet ja kentät) selaustilassa omille riveilleen vai säilytetäänkö ne sellaisina kuin ne ruudulla näytetään.
@@ -4545,6 +4705,7 @@ Seuraavien tietojen lukeminen voidaan määrittää:
   <LI>Kiintopisteet
   <LI>Artikkelit
   <LI>Kehykset
+  <LI>Kuvat ja kuvatekstit
   <LI>Napsautettavat kohteet
   </UL>
 </UL>
@@ -4981,6 +5142,12 @@ Ota jokin näistä käyttöön vain, jos NVDA:n kehittäjä on neuvonut tekemä�
 Tämän asetuksen avulla voit määrittää, toistaako NVDA äänen, jos lokiin tallentuu virhe.
 Jos valitset "Vain testiversioissa (oletus) virheääniä toistetaan vain, mikäli käytössä on NVDA:n testiversio (alfa, beeta tai lähdekoodista suoritettava).
 Jos valitset Kyllä, virheäänet otetaan käyttöön nykyisestä NVDA-versiostasi riippumatta.
+</P>
+<A NAME="TextParagraphRegexEdit"></A>
+<H4>Tekstikappalenavigoinnin sääntölauseke</H4>
+<P>
+Tämä kenttä mahdollistaa sääntölausekkeen mukauttamisen tekstikappaleiden tunnistamiseksi selaustilassa.
+<A HREF="#TextNavigationCommand">Tekstikappaleiden navigointikomento</A> etsii tämän sääntölausekkeen mukaisia kappaleita.
 </P>
 <A NAME="MiscSettings"></A>
 <H2>12.2. Sekalaiset asetukset</H2>
@@ -5444,9 +5611,9 @@ Voit myös ottaa käyttöön tai poistaa käytöstä useita lisäosia kerralla v
 <A NAME="AddonStoreReviews"></A>
 <H3>13.2.4. Lisäosien arvosteleminen ja arvostelujen lukeminen</H3>
 <P>
-Ennen lisäosan asentamista saatat haluta lukea siitä muiden kirjoittamia arvosteluja.
-Lisäksi muille käyttäjille voi olla hyötyä, jos annat palautetta kokeilemistasi lisäosista.
-Lue lisäosan arvosteluja valitsemalla lisäosa saatavilla tai päivitettävissä olevien lisäosien välilehdeltä ja käyttämällä "Yhteisön arvostelut" -toimintoa.
+Saatat haluta lukea muiden käyttäjien arvosteluja lisäosasta, esimerkiksi ennen sen asentamista tai kun opettelet käyttämään sitä.
+On myös hyödyllistä antaa palautetta kokeilemistasi lisäosista.
+Lue arvosteluja valitsemalla lisäosa ja käyttämällä "Yhteisön arvostelut" -toimintoa.
 Toiminnon avaama linkki johtaa GitHub-keskustelusivulle, jossa voit lukea ja kirjoittaa  lisäosan arvosteluja.
 On syytä pitää mielessä, että tämä ei korvaa suoraa kommunikointia lisäosakehittäjien kanssa.
 Sen sijaan tämän ominaisuuden tarkoituksena on jakaa palautetta, joka auttaa  käyttäjiä päättämään, onko lisäosa  heille hyödyllinen.
@@ -6827,7 +6994,7 @@ Katso laitteen käyttöohjeesta kuvaukset näppäinten paikoista.
 </TR>
 <TR>
 <TD>Alt+Nuoli vasemmalle -näppäinyhdistelmä</TD>
-<TD>pisteet 2 ja 7</TD>
+<TD>pisteet 2 ja 7+väli</TD>
 </TR>
 <TR>
 <TD>Nuoli oikealle -näppäin</TD>
@@ -6847,7 +7014,7 @@ Katso laitteen käyttöohjeesta kuvaukset näppäinten paikoista.
 </TR>
 <TR>
 <TD>Alt+Nuoli oikealle -näppäinyhdistelmä</TD>
-<TD>pisteet 5 ja 7</TD>
+<TD>pisteet 5 ja 7+väli</TD>
 </TR>
 <TR>
 <TD>Page up -näppäin</TD>
@@ -6875,7 +7042,7 @@ Katso laitteen käyttöohjeesta kuvaukset näppäinten paikoista.
 </TR>
 <TR>
 <TD>Alt+Nuoli ylös -näppäinyhdistelmä</TD>
-<TD>pisteet 2, 3 ja 7</TD>
+<TD>pisteet 2, 3 ja 7+väli</TD>
 </TR>
 <TR>
 <TD>Vaihto+Nuoli ylös -näppäinyhdistelmä</TD>
@@ -6907,7 +7074,7 @@ Katso laitteen käyttöohjeesta kuvaukset näppäinten paikoista.
 </TR>
 <TR>
 <TD>Alt+Nuoli alas -näppäinyhdistelmä</TD>
-<TD>pisteet 5, 6 ja 7</TD>
+<TD>pisteet 5, 6 ja 7+väli</TD>
 </TR>
 <TR>
 <TD>Vaihto+Nuoli alas -näppäinyhdistelmä</TD>
@@ -9067,6 +9234,12 @@ Suojattu tila poistaa käytöstä:
 <P>
 NVDA:n asennetut versiot tallentavat asetuksensa, lisäosat mukaan lukien, hakemistoon <CODE>%APPDATA%\nvda</CODE>.
 Estä NVDA-käyttäjiä muokkaamasta asetuksiaan tai lisäosiaan rajoittamalla heidän käyttöoikeuksiaan tähän kansioon.
+</P>
+<P>
+Suojattu tila ei ole tehokas NVDA:n massamuistiversioissa.
+Tämä rajoitus koskee myös tilapäisversiota, joka käynnistyy NVDA:n asennusohjelman käynnistyessä.
+Käyttäjän mahdollisuus käynnistää siirrettävä ohjelmatiedosto turvallisissa ympäristöissä muodostaa saman turvallisuusriskin riippumatta siitä, onko suojattu tila käytössä.
+Järjestelmänvalvojien odotetaan rajoittavan luvattomien ohjelmien suorittamista järjestelmissään, NVDA:n massamuistiversiot mukaan lukien.
 </P>
 <P>
 NVDA-käyttäjät luottavat usein siihen, että voivat mukauttaa NVDA-profiiliaan omiin tarpeisiinsa sopivaksi.
