@@ -6,6 +6,108 @@
 == Obavijest za programere ==
 Informacije za programere nisu prevedene, molimo ’pogledajte [englesku inačicu ovog dokumenta ../en/changes.html].
 
+= 2024.2 =
+Dodana nova značajka način podjeljenog zvuka.
+Ta značajka omogućuje postavljanje zvuka NVDA u jedan kanal (npr. lijevi) dok su zvukovi drugih programa u drugom kanalu (na primjer desnom).
+
+Dodane su nove prečice za promjenu postavki prstena govorne jedinice, koje omogućuju premještanje od prve do zadnje postavke, te njihovo mijenjanje u većim koracima.
+Dodane su novi prečaci brze navigacije, koji omogućuju korisnicima kretanje po: odlomcima, okomito poravnatim odlomcima, tekstu istog stila, tekstu različitog stila, stavkama izbornika, preklopnim gumbima, trakama napredovanja, figurama, te matematičkim formulama.
+
+Dodano je puno novih značajki vezanih uz brajicu, te je ispravljeno puno pogrešaka.
+Dodan je novi modus brajice "prikaz govora".
+Kada je aktivan, na gbrajičnom se redku prikazuje točno ono što NVDA izgovara.
+Također je dodana podrška za brajične redke BrailleEdgeS2, BrailleEdgeS3.
+LibLouis je nadograđen, sa dodanim novim brajičnim tablicama sa označavanjem velikih slova za bjeloruski i ukrajinski jezik, te brajična tablica za španjolski jezik, predviđena za čitanje starogrčkog teksta.
+
+eSpeak je nadograđensa dodanim novim jezikom Tigrinja.
+
+Ispravljeno je puno pogrešaka u programima, poput Thunderbirda, Adobe Readera, web preglednika, Nudija te Geekbench-a.
+
+== Nove značajke ==
+- Novi tipkovnički prečaci:
+  - Novi prečac za brzo kretanje ``p`` za premještanje na sljedeći/prethodni odlomak teksta u modusu čitanja. (#15998, @mltony)
+  - Novi nedodijelneni prečaci, koji se mogu koristiti za kretanje po slijedećim/prethodnim:
+    - figurama (#10826)
+    - okomito poravnatim odlomcima (#15999, @mltony)
+    - stavkama izbornika (#16001, @mltony)
+    - preklopnim gumbima (#16001, @mltony)
+    - trakama napredka (#16001, @mltony)
+    - matematičkim formulama (#16001, @mltony)
+    - tekstovima istog stila (#16000, @mltony)
+    - tekstovima različitog stila (#16000, @mltony)
+    -
+    - Dodan prečac za premještanje između prve postavke, posljednje postavke, za kretanje u naprijed te za kretanje u nazad unutar postavki prstena govorne jedinice. (#13768, #16095, @rmcpantoja)
+    - Postavljanje prve ili posljednje postavke prstena govorne jedinice nema dodijeljen prečac. (#13768)
+    - Povećavanje ili smanjivanje postavki govorne jedinice u većim koracima (#13768):
+      - Prečac za stolna računala: ``NVDA+control+pageUp`` odnosno ``NVDA+control+pageDown``.
+      - prečac za prijenosna računala: ``NVDA+control+shift+pageUp`` ili ``NVDA+control+shift+pageDown``.
+      -
+    -
+  - Dodan novi nedodijeljeni prečac za uključivanje ili isključivanje izgovora figura i potpisa. (#10826, #14349)
+  -
+- brajica:
+  - Dodana podrška za brajični redak BrailleEdgeS2, BrailleEdgeS3. (#16033, #16279, @EdKweon)
+  - Novi modus brajice "prikaz govora" je dodan. (#15898, @Emil-18)
+    - Kada je aktivan, na brajičnom se redku prikazuje točno ono što NVDA izgovara.
+    - Može se uključiti pritiskom ``NVDA+alt+t``, ili u dijaloškom okviru postavki brajice.
+    -
+  -
+- Način podijeljenog zvuka: (#12985, @mltony)
+  - Omogućuje postavljanje NVDA u jednom kanalu (na primjer lijevom) dok su zvukovi drugih progama u drugom kanalu (na primjer desnom).
+  - Regulira se uz pomoć prečaca ``NVDA+alt+s``.
+  - Glasnoća drugih programa može se podešavati prečacima ``NVDA+alt+pageUp`` i ``NVDA+alt+pageDown``. (#16052, @mltony)
+  - Zvukovi drugih programa mogu se utišati uz pomoć prečaca ``NVDA+alt+delete``. (#16052, @mltony)
+  -
+- Izgovaranje zaglavlja redaka i stupaca u ContentEditable html elementima. (#14113)
+- Dodana opcija za isključivanje čitanja figura i potpisa u postavkama oblikovanja dokumenata. (#10826, #14349)
+- U Windowsima 11, NVDA će izgovarati upozorenja glasovnog upisivanja i preporučene radnje uključujući glavnu preporučenu radnju prilikom kopiranja podataka poput telefonskih brojeva u međuspremnik (Windows 11 nadogradnja 2022 i novije inačice). (#16009, @josephsl)
+- NVDA će držati audiouređaj budnim poslije zaustavljanja govora, kako bi se izbjeglo rezanje sljedeće izgovorene fraze na nekim audiouređajima poput Bluetooth slušalica. (#14386, @jcsteh, @mltony)
+- HP Secure Browser je sada podržan. (#16377)
+-
+
+
+== Changes ==
+- Add-on Store:
+  - The minimum and the last tested NVDA version for an add-on are now displayed in the "other details" area. (#15776, @Nael-Sayegh)
+  - The community reviews action will be available, and the reviews webpage will be shown in the details panel, in all tabs of the store. (#16179, @nvdaes)
+  -
+- Component updates:
+  - Updated LibLouis Braille translator to [3.29.0 https://github.com/liblouis/liblouis/releases/tag/v3.29.0]. (#16259, @codeofdusk)
+    - Added new detailed (with capital letters indicated) Belarusian and Ukrainian Braille tables, along with a Spanish table for reading Greek texts.
+    -
+  - eSpeak NG has been updated to 1.52-dev commit ``cb62d93fd7``. (#15913)
+    - Added new language Tigrinya. 
+    -
+  -
+- Changed several gestures for BrailleSense devices to avoid conflicts with characters of the French braille table. (#15306)
+  - ``alt+leftArrow`` is now mapped to ``dot2+dot7+space``
+  - ``alt+rightArrow`` is now mapped to ``dot5+dot7+space``
+  - ``alt+upArrow`` is now mapped to ``dot2+dot3+dot7+space``
+  - ``alt+downArrow`` is now mapped to ``dot5+dot6+dot7+space``
+  -
+- Padding dots commonly used in tables of contents are not reported anymore at low punctuation levels. (#15845, @CyrilleB79)
+-
+
+== Bug Fixes ==
+- Windows 11 fixes:
+  - NVDA will once again announce hardware keyboard input suggestions. (#16283, @josephsl)
+  - In Version 24H2 (2024 Update and Windows Server 2025), mouse and touch interaction can be used in quick settings. (#16348, @josephsl)
+  -
+- Add-on Store:
+  - When pressing ``ctrl+tab``, focus properly moves to the new current tab title. (#14986, @ABuffEr)
+  -
+- Fixes for Chromium-based browsers when used with UIA:
+  - Fixed bugs causing NVDA to hang. (#16393, #16394)
+  - Backspace key is now working correctly in Gmail sign-in fields. (#16395)
+  -
+- Backspace now works correctly when using Nudi 6.1 with NVDA's "Handle keys from other applications" setting enabled. (#15822, @jcsteh)
+- Fixed a bug where audio coordinates would be played while the application is in sleep mode when "Play audio coordinates when mouse moves" is enabled. (#8059, @hwf1324)
+- In Adobe Reader, NVDA no longer ignores alternative text set on formulas in PDFs. (#12715)
+- Fixed a bug causing NVDA to fail to read the ribbon and options within Geekbench. (#16251, @mzanm)
+- Fixed a rare case when saving the configuration may fail to save all profiles. (#16343, @CyrilleB79)
+- In Firefox and Chromium-based browsers, NVDA will correctly enter focus mode when pressing enter when positioned within a presentational list (ul / ol) inside editable content. (#16325)
+- Column state change is automatically reported when selecting columns to display in Thunderbird message list. (#16323)
+-
 
 = 2024.1 =
 
