@@ -13,6 +13,134 @@
 <P>
 Informacje techniczne nie zostały przetłumaczone, proszę zajrzeć do <A HREF="../en/changes.html">Angielskiej listy zmian</A>, aby je przeczytać.
 </P>
+<H1>2024.2</H1>
+<P>
+There is a new feature called sound split.
+This allows splitting NVDA sounds into one channel (e.g. left) while sounds from all other applications are placed in the other channel (e.g. right).
+</P>
+<P>
+There are new commands for modifying the synth settings ring, allowing users to jump to the first or last setting, and to increase or decrease the current setting in a larger step.
+There are also new quick navigation commands, allowing userts to bind gestures to quickly jump between: paragraph, vertically aligned paragraph, same style text, different style text, menu item, toggle button, progress bar, figure, and math formula.
+</P>
+<P>
+There are many new braille features and bug fixes.
+A new braille mode called "display speech output" has been added.
+When active, the braille display shows exactly what NVDA prepares to speak.
+Support was also added for the BrailleEdgeS2, BrailleEdgeS3 braille devices.
+LibLouis was updated, adding new detailed (with capital letters indicated) Belarusian and Ukrainian Braille tables, along with a Spanish table for reading Greek texts.
+</P>
+<P>
+eSpeak was updated, adding new language Tigrinya.
+</P>
+<P>
+There are many minor bug fixes for applications, such as Thunderbird, Adobe Reader, web browsers, Nudi and Geekbench.
+</P>
+<H2>New Features</H2>
+<UL>
+<LI>New key commands:
+  <UL>
+  <LI>New Quick Navigation command <CODE>p</CODE> for jumping to next/previous text paragraph in browse mode. (#15998, @mltony)
+  <LI>New unassigned Quick Navigation commands, which can be used to jump to the next/previous:
+    <UL>
+    <LI>figure (#10826)
+    <LI>vertically aligned paragraph (#15999, @mltony)
+    <LI>menu item (#16001, @mltony)
+    <LI>toggle button (#16001, @mltony)
+    <LI>progress bar (#16001, @mltony)
+    <LI>math formula (#16001, @mltony)
+    <LI>same style text (#16000, @mltony)
+    <LI>different style text (#16000, @mltony)
+    </UL>
+    <UL>
+    <LI>Added commands to jump first, last, forward and backward through the synth settings ring. (#13768, #16095, @rmcpantoja)
+    <LI>Setting the first/last setting in the synth settings ring has no assigned gesture. (#13768)
+    <LI>Decrease and increase the current setting of the synth settings ring in a larger step (#13768):
+      <UL>
+      <LI>Desktop: <CODE>NVDA+control+pageUp</CODE> or <CODE>NVDA+control+pageDown</CODE>.
+      <LI>Laptop: <CODE>NVDA+control+shift+pageUp</CODE> or <CODE>NVDA+control+shift+pageDown</CODE>.
+      </UL>
+    </UL>
+  <LI>Added a new unassigned input gesture to toggle the reporting of figures and captions. (#10826, #14349)
+  </UL>
+<LI>Braille:
+  <UL>
+  <LI>Added support for the BrailleEdgeS2, BrailleEdgeS3 braille device. (#16033, #16279, @EdKweon)
+  <LI>A new braille mode called "display speech output" has been added. (#15898, @Emil-18)
+    <UL>
+    <LI>When active, the braille display shows exactly what NVDA prepares to speak.
+    <LI>It can be toggled by pressing <CODE>NVDA+alt+t</CODE>, or from the braille settings dialog.
+    </UL>
+  </UL>
+<LI>Sound split: (#12985, @mltony)
+  <UL>
+  <LI>Allows splitting NVDA sounds into one channel (e.g. left) while sounds from all other applications are placed in the other channel (e.g. right).
+  <LI>Toggled by <CODE>NVDA+alt+s</CODE>.
+  <LI>The volume of the other applications can be adjusted by <CODE>NVDA+alt+pageUp</CODE> and <CODE>NVDA+alt+pageDown</CODE>. (#16052, @mltony)
+  <LI>The sound of the other applications can be muted with <CODE>NVDA+alt+delete</CODE>. (#16052, @mltony)
+  </UL>
+<LI>Reporting row and column headers is now supported in contenteditable HTML elements. (#14113)
+<LI>Added the option to disable the reporting of figures and captions in Document Formatting settings. (#10826, #14349)
+<LI>In Windows 11, NVDA will announce alerts from voice typing and suggested actions including the top suggestion when copying data such as phone numbers to the clipboard (Windows 11 2022 Update and later). (#16009, @josephsl)
+<LI>NVDA will keep the audio device awake after speech stops, in order to prevent the start of the next speech being clipped with some audio devices such as Bluetooth headphones. (#14386, @jcsteh, @mltony)
+<LI>HP Secure Browser is now supported. (#16377)
+</UL>
+
+<P></P>
+<H2>Changes</H2>
+<UL>
+<LI>Add-on Store:
+  <UL>
+  <LI>The minimum and the last tested NVDA version for an add-on are now displayed in the "other details" area. (#15776, @Nael-Sayegh)
+  <LI>The community reviews action will be available, and the reviews webpage will be shown in the details panel, in all tabs of the store. (#16179, @nvdaes)
+  </UL>
+<LI>Component updates:
+  <UL>
+  <LI>Updated LibLouis Braille translator to <A HREF="https://github.com/liblouis/liblouis/releases/tag/v3.29.0">3.29.0</A>. (#16259, @codeofdusk)
+    <UL>
+    <LI>Added new detailed (with capital letters indicated) Belarusian and Ukrainian Braille tables, along with a Spanish table for reading Greek texts.
+    </UL>
+  <LI>eSpeak NG has been updated to 1.52-dev commit <CODE>cb62d93fd7</CODE>. (#15913)
+    <UL>
+    <LI>Added new language Tigrinya. 
+    </UL>
+  </UL>
+<LI>Changed several gestures for BrailleSense devices to avoid conflicts with characters of the French braille table. (#15306)
+  <UL>
+  <LI><CODE>alt+leftArrow</CODE> is now mapped to <CODE>dot2+dot7+space</CODE>
+  <LI><CODE>alt+rightArrow</CODE> is now mapped to <CODE>dot5+dot7+space</CODE>
+  <LI><CODE>alt+upArrow</CODE> is now mapped to <CODE>dot2+dot3+dot7+space</CODE>
+  <LI><CODE>alt+downArrow</CODE> is now mapped to <CODE>dot5+dot6+dot7+space</CODE>
+  </UL>
+<LI>Padding dots commonly used in tables of contents are not reported anymore at low punctuation levels. (#15845, @CyrilleB79)
+</UL>
+
+<P></P>
+<H2>Bug Fixes</H2>
+<UL>
+<LI>Windows 11 fixes:
+  <UL>
+  <LI>NVDA will once again announce hardware keyboard input suggestions. (#16283, @josephsl)
+  <LI>In Version 24H2 (2024 Update and Windows Server 2025), mouse and touch interaction can be used in quick settings. (#16348, @josephsl)
+  </UL>
+<LI>Add-on Store:
+  <UL>
+  <LI>When pressing <CODE>ctrl+tab</CODE>, focus properly moves to the new current tab title. (#14986, @ABuffEr)
+  </UL>
+<LI>Fixes for Chromium-based browsers when used with UIA:
+  <UL>
+  <LI>Fixed bugs causing NVDA to hang. (#16393, #16394)
+  <LI>Backspace key is now working correctly in Gmail sign-in fields. (#16395)
+  </UL>
+<LI>Backspace now works correctly when using Nudi 6.1 with NVDA's "Handle keys from other applications" setting enabled. (#15822, @jcsteh)
+<LI>Fixed a bug where audio coordinates would be played while the application is in sleep mode when "Play audio coordinates when mouse moves" is enabled. (#8059, @hwf1324)
+<LI>In Adobe Reader, NVDA no longer ignores alternative text set on formulas in PDFs. (#12715)
+<LI>Fixed a bug causing NVDA to fail to read the ribbon and options within Geekbench. (#16251, @mzanm)
+<LI>Fixed a rare case when saving the configuration may fail to save all profiles. (#16343, @CyrilleB79)
+<LI>In Firefox and Chromium-based browsers, NVDA will correctly enter focus mode when pressing enter when positioned within a presentational list (ul / ol) inside editable content. (#16325)
+<LI>Column state change is automatically reported when selecting columns to display in Thunderbird message list. (#16323)
+</UL>
+
+<P></P>
 <H1>2024.1</H1>
 <P>
 Dodano nowy tryb mowy "na żądanie".
