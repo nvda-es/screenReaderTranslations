@@ -4021,7 +4021,7 @@ L'impostazione ha effetto solo quando l'opzione "Il volume dei suoni di NVDA seg
 La funzione non risulta disponibile se NVDA è stato avviato con l'impostazione <A HREF="#WASAPI">WASAPI disattivato per l'uscita audio</A> nelle Impostazioni avanzate.
 </P>
 <A NAME="AudioAwakeTime"></A>
-<H4>Tempo per cui il dispositivo audio rimane in funzione dopo la sintesi</H4>
+<H4>Tempo di funzionamento del dispositivo audio dopo la sintesi</H4>
 <P>
 Questo campo editazione specifica per quanto tempo NVDA mantiene attivo il dispositivo audio dopo che la sintesi ha parlato.
 Ciò consente a NVDA di evitare alcuni problemi con la sintesi vocale, come la perdita di parti di parole.
@@ -4040,7 +4040,7 @@ Invece, impostare un valore troppo alto potrebbe portare allo scaricamento più 
 </P>
 <P>
 La funzione di bilanciamento audio consente agli utenti di utilizzare i propri dispositivi di uscita stereo, come cuffie e altoparlanti.
-In questo modo, si potrà portare la voce di NVDA in un canale (ad esempio sinistro) e tutte le atre applicazioni nell'altro canale (ad esempio destro).
+In questo modo, si potrà portare la voce di NVDA in un canale (ad esempio sinistro) e tutte le altre applicazioni nell'altro canale (ad esempio destro).
 Per impostazione predefinita la funzione di bilanciamento audio è disabilitata, il che significa che tutte le applicazioni, incluso NVDA, riprodurranno i suoni sia sul canale sinistro che su quello destro.
 Un gesto consente di passare tra le varie modalità di bilanciamento audio:
 </P>
@@ -4069,55 +4069,85 @@ Per impostazione predefinita, questo comando passerà tra le seguenti modalità:
 <P></P>
 <P>
 Sono disponibili modalità di bilanciamento audio più avanzate nella casella combinata delle impostazioni NVDA.
-If you wish to adjust volume of all applications except for NVDA, consider using <A HREF="#OtherAppVolume">the dedicated commands</A>.
-+Please note, that sound split doesn't work as a mixer.
-+For example, if an application is playing a stereo sound track while sound split is set to "NVDA on the left and applications on the right", then you will only hear the right channel of the sound track, while the left channel of the sound track will be muted.
-+
-+This option is not available if you have started NVDA with <A HREF="#WASAPI">WASAPI disabled for audio output</A> in Advanced Settings.
-+
-+Please note, that if NVDA crashes, then it won't be able to restore application sounds volume, and those applications might still output sound only in one channel after NVDA crash.
-+In order to mitigate this, please restart NVDA.
-+
-+==== Customizing Sound split modes====[CustomizeSoundSplitModes]
-+This checkable list allows selecting which sound split modes are included when cycling between them using <CODE>NVDA+alt+s</CODE>.
-+Modes which are unchecked are excluded.
-+By default only three modes are included.
-+- Sound split disabled: both NVDA and applications play sounds in both left and right channels.
-+- NVDA on the left and all other applications on the right channel.
-+- NVDA on the right and all other applications on the left channel.
-+-
-+
-+Note that it is necessary to check at least one mode.
-+This option is not available if you have started NVDA with <A HREF="#WASAPI">WASAPI disabled for audio output</A> in Advanced Settings.
-+
-+==== Volume of other applications ====[OtherAppVolume]
-+
-+This slider allows you to adjust the volume of all currently running applications other than NVDA.
-+This volume setting will apply to all other applications sound output, even if they start after this setting is changed.
-+This volume can also be controlled via the following keyboard commands from anywhere:
-+
-+%kc:beginInclude
-+|| Name | Key | Description |
-+| Increase applications volume | <CODE>NVDA+alt+pageUp</CODE> | Increases volume of all applications except NVDA. |
-+| Decrease applications volume | <CODE>NVDA+alt+pageDown</CODE> | Decreases volume of all applications except NVDA. |
-+
-+%kc:endInclude
-+
-+This option is not available if you have started NVDA with <A HREF="#WASAPI">WASAPI disabled for audio output</A> in Advanced Settings.
-+
-+==== Mute other applications ====[MuteApplications]
-+
-+This checkbox allows you to mute all applications other than NVDA.
-+This mute setting will apply to all other applications outputting sound, even if they start after this setting is changed.
-+The following keyboard command can also be used from anywhere:
-+
-+%kc:beginInclude
-+|| Name | Key | Description |
-+| Toggle mute other applications | <CODE>NVDA+alt+delete</CODE> | Mutes or unmutes all applications other than NVDA. |
-+
-+%kc:endInclude
-+
-+This option is not available if you have started NVDA with <A HREF="#WASAPI">WASAPI disabled for audio output</A> in Advanced Settings.
+Se si desidera modificare il volume di tutte le applicazioni ad eccezione di NVDA, si consiglia di servirsi dei <A HREF="#OtherAppVolume">comandi dedicati</A>.
+Tenere sempre presente che la modalità bilanciamento audio di NVDA non è un mixer..
+Ad esempio, se un'applicazione riproduce una traccia stereo, e il bilanciamento è configurato con "NVDA a sinistra e applicazioni a destra", si ascolterà solo il canale destro della traccia audio, mentre il canale sinistro rimarrà dedicato a NVDA..
+</P>
+<P>
+Questa opzione non risulta disponibile se NVDA è stato avviato con <A HREF="#WASAPI">Usa Wasapi per l'output audio</A> disabilitato nelle impostazioni avanzate.
+</P>
+<P>
+Inoltre, prestare attenzione al fatto che se NVDA si arresta in modo anomalo, non sarà in grado di ripristinare il volume dei suoni dell'applicazione, per cui l'audio continuerebbe ad essere riprodotto in un solo canale.
+Per mitigare questo problema, riavviare NVDA.
+</P>
+<A NAME="CustomizeSoundSplitModes"></A>
+<H4>Personalizzazione delle modalità di bilanciamento audio</H4>
+<P>
+Questo elenco di caselle di controllo permette di selezionare quali modalità di bilanciamento audio saranno disponibili tramite il comando <CODE>NVDA+alt+s</CODE>.
+Le modalità deselezionate saranno escluse.
+Per impostazioni predefinite, sono incluse solo tre modalità.
+</P>
+<UL>
+<LI>Bilanciamento audio disabilitato: NVDA e le applicazioni riproducono suoni sia nei canali sinistro che destro.
+<LI>NVDA sul canale sinistro e tutte le altre applicazioni sul canale destro.
+<LI>NVDA sul canale destro e tutte le altre applicazioni sul canale sinistro.
+</UL>
+
+<P></P>
+<P>
+Tenere presente che è necessario selezionare almeno una modalità.
+Questa opzione non risulta disponibile se NVDA è stato avviato con <A HREF="#WASAPI">Usa Wasapi per l'output audio</A> disabilitato nelle impostazioni avanzate.
+</P>
+<A NAME="OtherAppVolume"></A>
+<H4>Volume di altre applicazioni</H4>
+<P>
+Questo controllo consente di regolare il volume di tutte le applicazioni attualmente in esecuzione diverse da NVDA.
+L'impostazione viene applicata per tutti i programmi, anche quelli che saranno eseguiti dopo aver regolato questo parametro.
+Il volume può anche essere controllato da qualsiasi luogo tramite i seguenti comandi da tastiera:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tasto</TH>
+<TH>Descrizione</TH>
+</TR>
+<TR>
+<TD>Alza volume applicazioni</TD>
+<TD><CODE>NVDA+alt+paginaSu</CODE></TD>
+<TD>Alza il volume di tutte le applicazioni ad eccezione di NVDA.</TD>
+</TR>
+<TR>
+<TD>Abbassa volume applicazioni</TD>
+<TD><CODE>NVDA+alt+paginaGiù</CODE></TD>
+<TD>Abbassa il volume di tutte le applicazioni ad eccezione di NVDA.</TD>
+</TR>
+</TABLE>
+
+<P>
+Questa opzione non risulta disponibile se NVDA è stato avviato con <A HREF="#WASAPI">Usa Wasapi per l'output audio</A> disabilitato nelle impostazioni avanzate.
+</P>
+<A NAME="MuteApplications"></A>
+<H4>Disattiva l'audio delle altre applicazioni</H4>
+<P>
+Questa casella di controllo consente di disattivare l'audio di tutte le applicazioni diverse da NVDA.
+L'impostazione viene applicata per tutti i programmi, anche quelli che saranno eseguiti dopo aver regolato questo parametro.
+Esiste un comando da tastiera che può essere richiamato da qualsiasi luogo:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tasto</TH>
+<TH>Descrizione</TH>
+</TR>
+<TR>
+<TD>Disattiva l'audio delle altre applicazioni</TD>
+<TD><CODE>NVDA+alt+canc</CODE></TD>
+<TD>Disattiva o riattiva tutte le applicazioni diverse da NVDA.</TD>
+</TR>
+</TABLE>
+
+<P>
+Questa opzione non risulta disponibile se NVDA è stato avviato con <A HREF="#WASAPI">Usa Wasapi per l'output audio</A> disabilitato nelle impostazioni avanzate.
 </P>
 <A NAME="VisionSettings"></A>
 <H3>12.1.8. Visione</H3>
@@ -4670,6 +4700,7 @@ Le opzioni di formattazione documento sono divise in gruppi.
   <LI>Gruppi
   <LI>Articoli
   <LI>Frame
+  <LI>Figure e didascalie
   <LI>Quando qualcosa è cliccabile
   </UL>
 </UL>
@@ -5107,6 +5138,12 @@ Attivare quindi le caselle di controllo soltanto se viene richiesto da uno svilu
 Questa opzione consente di specificare se NVDA riprodurrà un suono di errore nel caso in cui venga registrato un errore.
 Scegliendo Solo nelle versioni di prova (impostazione predefinita) viene emesso un suono di errore solo se la versione corrente di NVDA è una versione di prova (alpha, beta o eseguita dai sorgenti).
 Scegliendo Sì, è possibile abilitare i suoni di errore qualunque sia la versione attuale di NVDA.
+</P>
+<A NAME="TextParagraphRegexEdit"></A>
+<H4>Espressione regolare per il rilevamento dei paragrafi di testo in modalità navigazione</H4>
+<P>
+Questo campo consente agli utenti di personalizzare l'espressione regolare per rilevare i paragrafi di testo in modalità navigazione.
+Il <A HREF="#TextNavigationCommand">comando di navigazione tra paragrafi di testo</A> cerca i paragrafi corrispondenti a questa espressione regolare.
 </P>
 <A NAME="MiscSettings"></A>
 <H2>12.2. Impostazioni varie</H2>
@@ -6953,7 +6990,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 <TR>
 <TD>tasto alt+frecciaSinistra</TD>
-<TD>punto2+punto7</TD>
+<TD>punto2+punto7+spazio</TD>
 </TR>
 <TR>
 <TD>tasto frecciaDestra</TD>
@@ -6973,7 +7010,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 <TR>
 <TD>tasto alt+frecciaDestra</TD>
-<TD>punto5+punto7</TD>
+<TD>punto5+punto7+spazio</TD>
 </TR>
 <TR>
 <TD>tasto paginaSu</TD>
@@ -7001,7 +7038,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 <TR>
 <TD>tasto alt+frecciaSu</TD>
-<TD>punto2+punto3+punto7</TD>
+<TD>punto2+punto3+punto7+spazio</TD>
 </TR>
 <TR>
 <TD>tasto shift+frecciaSu</TD>
@@ -7033,7 +7070,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 <TR>
 <TD>tasto alt+frecciaGiù</TD>
-<TD>punto5+punto6+punto7</TD>
+<TD>punto5+punto6+punto7+spazio</TD>
 </TR>
 <TR>
 <TD>tasto shift+frecciaGiù</TD>
@@ -9185,6 +9222,12 @@ La modalità protetta disabilita:
 <P>
 Le copie installate di NVDA salvano la loro configurazione, inclusi i componenti aggiuntivi, in <CODE>%APPDATA%\nvda</CODE>.
 Per impedire agli utenti di modificare direttamente la propria configurazione o i componenti aggiuntivi, dev'essere limitato anche l'accesso a questa cartella.
+</P>
+<P>
+La modalità protetta non si può applicare per le copie portable di NVDA.
+Questo vale anche per la copia temporanea di NVDA che viene eseguita all'avvio del programma di installazione.
+Negli ambienti protetti, un utente in grado di lanciare un eseguibile portable comporta lo stesso rischio per la sicurezza indipendentemente dalla modalità protetta.
+Si lascia agli amministratori di sistema il compito di limitare l'esecuzione di software non autorizzato sui propri sistemi, comprese le copie portable di NVDA.
 </P>
 <P>
 Si tenga presente che ogni utente tende a configurare lo screen reader in modo diverso, cercando di creare un profilo il più adatto possibile alle proprie esigenze..
