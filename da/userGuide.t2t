@@ -237,7 +237,14 @@ De faktiske kommandoer vil ikke udføres, når tastaturhjælpen er slået til. T
 | Flyt til næste indstilling | ``NVDA+ctrl+højre pil`` | ``NVDA+shift+ctrl+højre pil`` | Flytter til næste mulige indstilling efter den indstilling du er på i øjeblikket. Bemærk, at dette vil bevæge dig rundt i ring mellem de tilgængelige indstillinger, når du er på den sidste indstilling |
 | Flyt til forrige indstilling | ``NVDA+ctrl+venstre pil`` | ``NVDA+shift+ctrl+venstre pil`` | Flytter til næste mulige indstilling før den, du er på i øjeblikket. Bemærk, at dette vil bevæge dig rundt i ring mellem de tilgængelige indstillinger, når du er på den sidste indstilling |
 | Forøg den aktuelle indstilling | ``NVDA+ctrl+pil op`` | ``NVDA+shift+ctrl+pil op`` | øger den aktuelle taleindstilling, du er på. F.eks. øger hastigheden, vælger den næste stemme, øger lydstyrken |
+| Forøg den aktuelle indstilling med en større værdi | ``NVDA+Ctrl+sideOp`` | ``NVDA+shift+Ctrl+sideOp`` | Forøger den indstilling, du er på i øjeblikket, med en større værdi. Hvis du befinder dig på stemmeindstillingen, vil den springe 20 stemmer fremad, og ved brug af indstillinger som toneleje og hastighed, vil der springes fremad med 20% |
+
 | Formindsk den aktuelle indstilling | ``NVDA+ctrl+pil ned`` | ``NVDA+shift+ctrl+pil ned`` | Formindsker den aktuelle taleindstilling, du er på. F.eks. formindsker talehastigheden, vælger den forrige stemme, formindsker lydstyrken |
+| Formindsk den aktuelle indstilling med en større værdi | ``NVDA+Ctrl+sideNed`` | ``NVDA+shift+Ctrl+sideNed`` | Forøger den indstilling, du er på i øjeblikket, med en større værdi. Hvis du befinder dig på stemmeindstillingen, vil den springe 20 stemmer fremad, og ved brug af indstillinger som toneleje og hastighed, vil der springes fremad med 20% |
+
+Det er også muligt hurtigt at springe til den første og sidste mulighed for den aktuelle indstilling, hvis du tildeler en kommando til dette via dialogen [Håndter kommandoer #InputGestures] under talekategorien.
+Dette betyder, at der eksempelvis springes til 0 eller 100%, hvis du står på hastighedsindstillingen.
+Hvis du står på stemme i ringen af synteseindstillinger, vil dette springe til første og sidste stemme.
 
 +++ Navigér på internettet +++[WebNavigation]
 Den samlede liste over tastaturkommandoer for bogstavnavigation kan du læse ved at gå til afsnittet [Gennemsynstilstand #BrowseMode] i brugervejledningen.
@@ -829,6 +836,7 @@ Hvis du trykker en af de følgende taster ned alene, hopper du til den næste fo
 - o: indlejret objekt (lyd- og videoafspiller, apllikation, dialog, osv.)
 - 1-6: overskrifter på niveauer fra 1 til 6.
 - a: Annotation (kommentar, revision o.s.v.)
+- ``p``: Tekstafsnit
 - w: Stavefejl
 -
 For at flytte til begyndelsen eller slutningen af overordnede elementer, fx. lister eller tabeller:
@@ -843,14 +851,42 @@ Hvis du gerne vil kunne bruge disse genvejstaster og stadig være i stand til at
 Du kan slå bogstavnavigering til og fra i det aktuelle dokument ved at trykke på NVDA+Shift+Mellemrum.
 %kc:endInclude
 
++++ Navigationskommando til tekstafsnit +++[TextNavigationCommand]
+
+Du kan hoppe til det næste eller forrige tekstafsnit ved at trykke ``p`` eller ``shift+p``.
+Tekstafsnit defineres som en gruppe tekst, der synes at være skrevet i fuldstændige sætninger.
+Dette kan være nyttigt for at finde begyndelsen på læsbart indhold på forskellige websteder, såsom:
+- Nyhedshjemmesider
+- Fora
+- Blogindlæg
+-
+
+Disse kommandoer kan også være nyttige til at springe visse former for rod over, såsom:
+- Annoncer
+- Menuer
+- Overskrifter
+-
+
+Bemærk dog, at selvom NVDA gør sit bedste for at identificere tekstafsnit, er algoritmen ikke perfekt og kan til tider lave fejl.
+Desuden er denne kommando ikke den samme som kommandoer til navigation mellem afsnit ``controll+pil op og ned``.
+Navigation mellem tekstafsnit springer kun mellem tekstafsnit, mens kommandoer til navigation mellem afsnit tager markøren til det forrige/næste afsnit uanset om de indeholder tekst eller ej.
+
 +++ Andre navigationskommandoer +++[OtherNavigationCommands]
 
 Udover kommandoerne til bogstavnavigering nævnt ovenfor, har NVDA desuden også yderligere kommandoer, der ikke er tildelt et tastetryk.
 Før du kan bruge disse kommandoer, skal du tildele et tastetryk til dem ved brug af [dialogen "Håndter kommandoer" #InputGestures].
 Her er en liste over tilgængelige kommandoer:
 - Artikel
+- Figur
 - Gruppering
 - Fane
+- Menupunkt
+- Skifteknap
+- Behandlingslinje
+- Matematikformel
+- Lodret justeret afsnit
+- Tekst med den samme typografi
+- Tekst med en anden typografi
 -
 
 Bemærk, at to kommandoer eksisterer for hver enkelt element. Du skal derfor huske at tildele et tastetryk til kommandoerne, der flytter til forrige og næste element.
@@ -1160,6 +1196,8 @@ Vær opmærksom på at du ikke kan udføre nogle handlinger, der tager udgangspu
 Pga. ændringer i Windows Magnification API, var det nødvendigt at opdatere skærmtæppefunktionen for at understøtte de nyeste versioner af Windows.
 Benyt NVDA 2021.2 til at aktivere skærmtæppet med Windows 10 21H2 (10.0.19044) eller nyere.
 Af sikkerhedsmæssige årsager kan det være en god idé at få bekræftet af en seende person, hvorvidt skærmtæppefunktionen er aktiv og gør skærmen fuldstændigt sort, når denne benyttes med nyere versioner af Windows.
+
+Bemærk: Såfremt Windows forstørrelse er aktiv og inverterede farver er slået til, kan skærmtæppet ikke benyttes.
 
 + Indholdsgenkendelse +[ContentRecognition]
 Når forfattere ikke giver tilstrækkelig information til en skærmlæserbruger til at bestemme indholdet af noget, kan forskellige værktøjer bruges til at forsøge at genkende indholdet på et billede.
