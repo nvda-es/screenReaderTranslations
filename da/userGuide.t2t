@@ -1966,6 +1966,88 @@ Denne skyder lader dig indstille lydstyrken for NVDAs lyde og bip.
 Denne indstilling træder kun i kraft, hvis "Brug WASAPI for lydoutput" er aktiveret og "Lydstyrken af NVDA-lyde følger stemmelydstyrken" er deaktiveret.
 Denne indstilling er ikke tilgængelig, hvis du slår [WASAPI fra som lydoutput #WASAPI] i NVDAs avancerede indstillinger.
 
+==== Tid til at holde lydenheden vågen efter tale ====[AudioAwakeTime]
+
+Denne combo box bestemmer, hvor længe NVDA holder lydenheden aktiv, efter at talen er stoppet.
+Dette giver NVDA mulighed for at undgå visse talefejl som udeladte dele af ord.
+Dette kan ske på grund af lydenheder (især Bluetooth- og trådløse enheder) der går i dvaletilstand.
+Dette kan også være nyttigt i andre tilfælde, såsom når NVDA kører inden i en virtuel maskine (f.eks. Citrix Virtual Desktop), eller på visse bærbare computere.
+
+Lavere værdier vil gøre, at lyd oftere bliver afbrudt, da enheden kan gå i dvaletilstand for tidligt, hvilket får begyndelsen af den efterfølgende tale til at blive afkortet.
+At indstille værdien for høj kan forårsage, at batteriet på lydudgangsenheden aflades hurtigere, da den forbliver aktiv længere, mens der ikke sendes lyd.
+
+
+Du kan indstille tiden til 0 for at deaktivere denne funktion.
+
+==== Lydopdeling ====[SelectSoundSplitMode]
+
+Lydopdelingsfunktionen giver brugere mulighed for at udnytte deres stereo-udgangsenheder, såsom hovedtelefoner og højttalere.
+Lydopdeling gør det muligt at have NVDA-tale i den ene kanal (f.eks. venstre) og have alle andre programmer afspille deres lyde i den anden kanal (f.eks. højre).
+Som standard er lydopdeling deaktiveret, hvilket betyder, at alle programmer, herunder NVDA, vil afspille lyde i både venstre og højre kanal.
+En kommando lader dig skifte mellem de forskellige lydopdelingstilstande:
+%kc:beginInclude
+|| Navn | Tawst | Beskrivelse |
+| Skift Lydopdelingstilstand | ``NVDA+alt+s`` | Skifter mellem lydopdelingstilstandene. |
+
+%kc:endInclude
+
+Som standard vil denne kommando skifte mellem følgende tilstande:
+- Deaktiveret lydopdeling: både NVDA og andre applikationer udsender lyde til både venstre og højre kanaler.
+- NVDA i venstre og programmer i højre: NVDA vil tale i venstre kanal, mens andre programmer vil afspille lyde i højre kanal.
+- NVDA i højre og programmer i venstre: NVDA vil tale i højre kanal, mens andre programmer vil afspille lyde i venstre kanal.
+-
+
+Der er flere avancerede lydopdelingstilstande tilgængelige i NVDA-indstillingerne.
+Hvis du ønsker at justere lydstyrken for alle programmer undtagen NVDA, overvej at bruge [de dedikerede kommandoer #OtherAppVolume].
+Bemærk venligst, at lydopdeling ikke fungerer som en mixer.
+For eksempel, hvis et program afspiller et stereo-lydspor, mens lydopdelingen er sat til "NVDA i venstre og programmer i højre", vil du kun høre højre kanal af lydsporet, mens venstre kanal af lydsporet vil være slået fra.
+
+Denne indstilling er ikke tilgængelig, hvis du har startet NVDA med [WASAPI deaktiveret for lydudgang #WASAPI] i avancerede indstillinger.
+
+Bemærk venligst, at hvis NVDA går ned, vil den ikke være i stand til at genoprette applikationslydstyrken, og disse applikationer kan stadig udsende lyd kun i én kanal efter NVDA-nedbrud.
+For at afhjælpe dette, genstart NVDA.
+
+==== Tilpasning af Lydopdelingstilstande ====[CustomizeSoundSplitModes]
+Denne liste lader dig vælge, hvilke lydopdelingstilstande der er inkluderet, når der skiftes mellem dem ved hjælp af ``NVDA+alt+s``.
+Tilstande, som ikke er afkrydset, fremkommer ikke.
+Som standard er kun tre tilstande inkluderet.
+- Lydopdeling deaktiveret: både NVDA og programmer afspiller lyde i både venstre og højre kanaler.
+- NVDA i venstre og alle andre programmer i højre kanal.
+- NVDA i højre og alle andre programmer i venstre kanal.
+-
+
+Bemærk, at det er nødvendigt at afkrydse mindst én tilstand.
+Denne mulighed er ikke tilgængelig, hvis du har startet NVDA med [WASAPI deaktiveret for lydudgang #WASAPI] i avancerede indstillinger.
+
+==== Lydstyrken for andre programmer ====[OtherAppVolume]
+
+Denne skyder gør det muligt at justere lydstyrken for alle aktuelt kørende programmer undtagen NVDA.
+Denne lydstyrkeindstilling vil gælde for alle programmernes lydstyrke, selvom de starter efter at denne indstilling er ændret.
+Denne lydstyrke kan også styres via følgende tastaturkommandoer fra hvor som helst:
+
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Forøg programmers lydstyrke | ``NVDA+alt+sideOp`` | Øger lydstyrken for alle programmer undtagen NVDA. |
+| Formindsk programmers lydstyrke | ``NVDA+alt+sideNed`` | Formindsker lydstyrken for alle programmer undtagen NVDA. |
+
+%kc:endInclude
+
+Denne mulighed er ikke tilgængelig, hvis du har startet NVDA med [WASAPI deaktiveret for lydudgang #WASAPI] i avancerede indstillinger.
+
+==== Slå lyden fra andre programmer fra ====[MuteApplications]
+
+Denne check box giver dig mulighed for at slå lyden fra alle programmer undtagen NVDA.
+Denne lydindstilling vil gælde for alle andre programmer, der udsender lyd, selvom de starter efter at denne indstilling er ændret.
+Følgende tastaturkommando kan også bruges fra hvor som helst:
+
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Slå lyden fra andre programmer fra eller til | ``NVDA+alt+delete`` | Slår lyden fra eller til for alle programmer undtagen NVDA. |
+
+%kc:endInclude
+
+Denne mulighed er ikke tilgængelig, hvis du har startet NVDA med [WASAPI deaktiveret for lydudgang #WASAPI] i avancerede indstillinger.
+
 +++ Syn +++[VisionSettings]
 Indstillingskategorien "Syn" lader dig aktivere, deaktivere samt konfigurere diverse [synshjælpemidler #Vision].
 
@@ -2369,6 +2451,7 @@ Du kan tilpasse annoncering af:
   - Landmærker
   - Artikler
   - Rammer
+  - Figurer og billedtekster
   - Klikbart
   -
 -
@@ -2646,6 +2729,11 @@ Slå kun dette til, hvis du er blevet bedt om det af en NVDA-udvikler (f.eks. fo
 Denne indstilling lader dig vælge om NVDA skal afspille en lyd, når fejl logføres.
 Ved at vælge "Kun i testversioner af NVDA", vil NVDA kun afspille lyden, hvis din version er en testversion (alpha, beta eller NVDA køres fra kildekoden). Denne indstilling er standard.
 Ved at vælge "Ja" vil en lyd afspilles, uanset din version af NVDA.
+
+==== Regulært udtryk, der bruges, når kommandoerne til at springe mellem tekstafsnit benyttes i gennemsynstilstand ====[TextParagraphRegexEdit]
+
+Dette tekstfelt lader brugere bestemme, hvilket regulære udtryk, der skal anvendes, når der søges efter tekstafsnit i gennemsynstilstand ved brug af de tilsvarende kommandoer.
+[Kommandoen til at navigere mellem tekstafsnit#TextNavigationCommand] vil benytte dette udtryk.
 
 ++ Yderligere indstillinger ++[MiscSettings]
 Udover [NVDAs indstillingsdialog #NVDASettings], indeholder menuen "Opsætning" under NVDA-menuen yderligere indstillinger, der beskrives nedenfor.
@@ -3540,19 +3628,19 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 | tasterne ctrl+skift+venstre pil | punkt2+punkt8+mellemrum+f1 |
 | tasterne ctrl+venstre pil | punkt2+mellemrum |
 | skift+alt+pil venstre | punkt2+punkt7+f1 |
-| alt+pil venstre | punkt2+punkt7 |
+| ``alt+pil venstre`` | ``punkt2+punkt7`` |
 | højre piletast | punkt6+mellemrum, venstre side pil højre |
 | ctrl+skift+pil højre | punkt5+punkt8+mellemrum+f1 |
 | ctrl+pil højre | punkt5+mellemrum |
 | skift+alt+pil højre | punkt5+punkt7+f1 |
-| alt+højre pil | punkt5+punkt7 |
+| ``alt+højre pil`` | ``punkt5+punkt7`` |
 | tasten side op | punkt1+punkt2+punkt6+mellemrum |
 | tasterne ctrl+side op | punkt1+punkt2+punkt6+punkt8+mellemrum |
 | pil op | punkt1+mellemrum, venstre side pil op |
 | ctrl+skift+pil op | punkt2+punkt3+punkt8+mellemrum+f1 |
 | ctrl+pil op | punkt2+punkt3+mellemrum |
 | skift+alt+pil op | punkt2+punkt3+punkt7+f1 |
-| alt+pil op | punkt2+punkt3+punkt7 |
+| ``alt+pil op`` | ``punkt2+punkt3+punkt7`` |
 | skift+pil op | venstre side rul ned+mellemrum |
 | tasten side ned | punkt3+punkt4+punkt5+mellemrum |
 | tasterne ctrl+side ned | punkt3+punkt4+punkt5+punkt8+mellemrum |
@@ -3560,7 +3648,7 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 | ctrl+skift+pil ned | punkt5+punkt6+punkt8+mellemrum+f1 |
 | ctrl+pil ned | punkt5+punkt6+mellemrum |
 | skift+alt+pil ned | punkt5+punkt6+punkt7+f1 |
-| alt+pil ned | punkt5+punkt6+punkt7 |
+| ``alt+pil ned`` | ``punkt5+punkt6+punkt7`` |
 | skift+pil ned | mellemrum+højre side rul ned |
 | esc+tast | punkt1+punkt5+mellemrum, f4, brailleedge:f1 |
 | tasten slet | punkt1+punkt3+punkt5+mellemrum, punkt1+punkt4+punkt5+mellemrum |
@@ -4286,6 +4374,11 @@ Sikker tilstand deaktiverer:
 
 Installerede versioner af NVDA lagrer deres opsætning, herunder tilføjelsesprogrammer, i ``%APPDATA%\nvda``.
 For at sikre, at NVDA-brugere ikke direkte kan ændre på opsætningen eller tilføjelserne, bør adgangen til denne mappe begrænses.
+
+Sikker tilstand er ineffektiv for bærbare kopier af NVDA.
+Denne begrænsning gælder også for den midlertidige kopi af NVDA, der kører, når installationsprogrammet startes.
+I sikre miljøer udgør en brugers mulighed for at køre en flytbar eksekverbar fil den samme sikkerhedsrisiko uanset sikker tilstand.
+Det forventes, at systemadministratorer begrænser uautoriseret software fra at køre på deres systemer, herunder flytbare kopier af NVDA.
 
 Mange NVDA-brugere tilpasser deres NVDA-profil for at få den til at passe til deres specifikke behov.
 Dette kan indebære at installere og indstille specielle tilføjelsesprogrammer, som bør gennemgås uafhængigt af selve NVDA.
