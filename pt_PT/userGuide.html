@@ -105,7 +105,8 @@ Traduzido pela equipa portuguesa do NVDA.
     <UL>
     <LI><A HREF="#SingleLetterNavigation">6.1. Navegação por Caracter</A>
       <UL>
-      <LI><A HREF="#OtherNavigationCommands">6.1.1. Other navigation commands</A>
+      <LI><A HREF="#TextNavigationCommand">6.1.1. Comando de navegação de parágrafos de texto</A>
+      <LI><A HREF="#OtherNavigationCommands">6.1.2. Outros comandos de navegação</A>
       </UL>
     <LI><A HREF="#ElementsList">6.2. A Lista de Elementos</A>
     <LI><A HREF="#SearchingForText">6.3. Localizar texto</A>
@@ -174,18 +175,17 @@ Traduzido pela equipa portuguesa do NVDA.
       <LI><A HREF="#BrailleSettings">12.1.5. Braille</A>
       <LI><A HREF="#SelectBrailleDisplay">12.1.6. Seleccionar dispositivo Braille</A>
       <LI><A HREF="#AudioSettings">12.1.7. Configurações de áudio</A>
-      <LI><A HREF="#VisionSettings">12.1.8. Visão</A>
-      <LI><A HREF="#KeyboardSettings">12.1.9. Configurações de teclado</A>
-      <LI><A HREF="#toc114">12.1.10. Configurações do rato</A>
-      <LI><A HREF="#TouchInteraction">12.1.11. Interacção táctil</A>
-      <LI><A HREF="#ReviewCursorSettings">12.1.12. Cursor de Revisão</A>
-      <LI><A HREF="#ObjectPresentationSettings">12.1.13. Apresentação de Objectos</A>
-      <LI><A HREF="#InputCompositionSettings">12.1.14. Composição de Entrada</A>
-      <LI><A HREF="#BrowseModeSettings">12.1.15. Modo de Navegação</A>
-      <LI><A HREF="#DocumentFormattingSettings">12.1.16. Formatação de Documentos</A>
-      <LI><A HREF="#DocumentNavigation">12.1.17. Navegação em documentos</A>
-      <LI><A HREF="#Win10OcrSettings">12.1.18. configurações do OCR do Windows</A>
-      <LI><A HREF="#AdvancedSettings">12.1.19. Configurações Avançadas</A>
+      <LI><A HREF="#KeyboardSettings">12.1.8. Configurações de teclado</A>
+      <LI><A HREF="#toc114">12.1.9. Configurações do rato</A>
+      <LI><A HREF="#TouchInteraction">12.1.10. Interacção táctil</A>
+      <LI><A HREF="#ReviewCursorSettings">12.1.11. Cursor de Revisão</A>
+      <LI><A HREF="#ObjectPresentationSettings">12.1.12. Apresentação de Objectos</A>
+      <LI><A HREF="#InputCompositionSettings">12.1.13. Composição de Entrada</A>
+      <LI><A HREF="#BrowseModeSettings">12.1.14. Modo de Navegação</A>
+      <LI><A HREF="#DocumentFormattingSettings">12.1.15. Formatação de Documentos</A>
+      <LI><A HREF="#DocumentNavigation">12.1.16. Navegação em documentos</A>
+      <LI><A HREF="#Win10OcrSettings">12.1.17. configurações do OCR do Windows</A>
+      <LI><A HREF="#AdvancedSettings">12.1.18. Configurações Avançadas</A>
       </UL>
     <LI><A HREF="#MiscSettings">12.2. Outras Opções</A>
       <UL>
@@ -725,13 +725,29 @@ Os comandos reais não serão executados enquanto estiver no modo de ajuda de co
 <TD>aumenta a definição de voz actual. Por exemplo: aumenta a velocidade, escolhe a voz seguinte, aumenta o volume</TD>
 </TR>
 <TR>
+<TD>Aumentar a definição de voz actual por um valor maior</TD>
+<TD><CODE>NVDA+control+pageUp</CODE></TD>
+<TD><CODE>NVDA+shift+control+pageUp</CODE></TD>
+<TD>aumenta a definição de voz actual por um valor maior. Por exemplo: aumenta a velocidade em 20%, escolhe a voz 20 posições acima, aumenta o volume 20%.</TD>
+</TR>
+<TR>
 <TD>Diminuir a definição de voz actual</TD>
 <TD>"NVDA+control+Seta Abaixo"</TD>
 <TD>"NVDA+shift+control+Seta Abaixo"</TD>
 <TD>Diminui a definição de voz actual. Ex: diminui a velocidade, escolhe a voz anterior, diminui o volume</TD>
 </TR>
+<TR>
+<TD>Diminuir a definição de voz actual por um valor maior</TD>
+<TD><CODE>NVDA+control+pageUp</CODE></TD>
+<TD><CODE>NVDA+shift+control+pageUp</CODE></TD>
+<TD>Diminui a definição de voz actual por um valor maior. Por exemplo: diminui a velocidade em 20%, escolhe a voz 20 posições abaixo, diminui o volume 20%.</TD>
+</TR>
 </TABLE>
 
+<P>
+Também é possível definir o primeiro ou o último valor da definição da voz actual atribuindo comandos personalizados em  <A HREF="#InputGestures">Definir comandos</A>, na categoria de voz.
+Isto significa que, por exemplo, quando estiver numa definição de taxa, esta será definida para 0 ou 100. Quando estiver numa definição de voz, esta definirá a primeira ou a última voz.
+</P>
 <A NAME="WebNavigation"></A>
 <H3>2.3.8. Navegação Web</H3>
 <P>
@@ -2036,6 +2052,7 @@ As teclas seguintes, por si mesmas, saltam para o próximo elemento disponível.
 <LI>O: Objecto embutido (reprodutores de áudio e vídeo, diálogos, aplicações, etc)
 <LI>1 até 6: títulos de 1 até 6 respectivamente
 <LI>a: anotação (comentário, revisão do editor, etc.)
+<LI><CODE>p</CODE>: parágrafo de texto
 <LI>w: erro ortográfico
 </UL>
 
@@ -2065,17 +2082,54 @@ Algumas aplicações web como GMail, Twitter e Facebook usam letras como atalhos
 Se quiser usar esses atalhos, mantendo a possibilidade de usar as teclas de cursor para ler em modo de navegação, pode, temporariamente, desactivar a navegação por caracter do NVDA.
 Para activar e desactivar a navegação por caracter para o documento actual, pressione NVDA+shift+espaço.
 </P>
+<A NAME="TextNavigationCommand"></A>
+<H3>6.1.1. Comando de navegação de parágrafos de texto</H3>
+<P>
+Pode saltar para o parágrafo de texto seguinte ou anterior pressionando <CODE>p</CODE> ou <CODE>shift+p</CODE>.
+Os parágrafos de texto são definidos por um grupo de texto que parece estar escrito em frases completas.
+Isso pode ser útil para encontrar o início de conteúdo legível em várias páginas da Web, como:
+</P>
+<UL>
+<LI>Sites de notícias;
+<LI>Fóruns;
+<LI>Postagens em blogs.
+</UL>
+
+<P></P>
+<P>
+Esses comandos também podem ser úteis para pular certos tipos de blocos que não são texto, como:
+</P>
+<UL>
+<LI>Anúncios;
+<LI>Menus;
+<LI>Cabeçalhos
+</UL>
+
+<P></P>
+<P>
+Note, no entanto, que embora o NVDA tente o melhor possível identificar parágrafos de texto, o algoritmo não é perfeito e, às vezes, pode cometer erros.
+Além disso, esse comando é diferente dos comandos de navegação de parágrafo <CODE>control+seta abaixo/seta acima</CODE>.
+A navegação de parágrafos de texto só salta entre parágrafos de texto, enquanto os comandos de navegação de parágrafos levam o cursor para o parágrafo anterior/seguinte, independentemente de conterem ou não texto.
+</P>
 <A NAME="OtherNavigationCommands"></A>
-<H3>6.1.1. Other navigation commands</H3>
+<H3>6.1.2. Outros comandos de navegação</H3>
 <P>
 Para além dos comandos de navegação por caracter listados acima, o NVDA tem comandos que não têm nenhuma tecla associada.
 Para usar esses comandos, primeiro tem que associar uma tecla usando o <A HREF="#InputGestures">diálogo Definir comandos</A>.
 Eis a lista dos comandos disponíveis:
 </P>
 <UL>
-<LI>Artigo
-<LI>Agrupamento
-<LI>Separador
+<LI>Figura;
+<LI>Artigo;
+<LI>Agrupamento;
+<LI>Separador;
+<LI>Item de menu;
+<LI>Botão de alternância;
+<LI>Barra de progress;
+<LI>Fórmula matemática;
+<LI>Parágrafos alinhados verticalmente;
+<LI>Texto com o mesmo estilo;
+<LI>Texto com estilo diferente.
 </UL>
 
 <P></P>
@@ -2775,6 +2829,9 @@ Devido a alterações na API do Windows Magnification, a  "Cortina de ecrã" tev
 Use o NVDA 2021.2 para activar a Cortina de ecrã com o Windows 10 21H2 (10.0.19044) ou mais recentes.
 Para garantir a sua segurança, obtenha confirmação visual de que a Cortina de ecrã funciona corretamente com novas versões do Windows.
 </P>
+<P>
+Tenha em atenção que enquanto o Windows Magnifier estiver a ser executado e as cores do ecrã invertidas estiverem a ser utilizadas, a cortina de ecrã não pode ser activada.
+</P>
 <A NAME="ContentRecognition"></A>
 <H1>10. Reconhecimento de Conteúdo</H1>
 <P>
@@ -3185,6 +3242,15 @@ Algumas configurações podem ser feitas por atalhos, que serão indicados quand
 </P>
 <A NAME="NVDASettings"></A>
 <H2>12.1. Configurações</H2>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tecla de Atalho de Desktop</TH>
+<TH>Tecla de Atalho de Laptop</TH>
+<TH>Descrição</TH>
+</TR>
+</TABLE>
+
 <P>
 O NVDA fornece muitos parâmetros de configuração que podem ser alterados através da janela de configurações.
 Para facilitar a procura do tipo de configurações que pretende alterar, a janela apresenta uma lista de secções de configurações à escolha.
@@ -3554,10 +3620,22 @@ Se pretender alterar, rapidamente, as configurações de voz, sem ir à secção
 <TD>aumenta a definição de voz actual. Por exemplo: aumenta a velocidade, escolhe a voz seguinte, aumenta o volume</TD>
 </TR>
 <TR>
+<TD>Aumentar a definição de voz actual por um valor maior</TD>
+<TD><CODE>NVDA+control+pageUp</CODE></TD>
+<TD><CODE>NVDA+shift+control+pageUp</CODE></TD>
+<TD>aumenta a definição de voz actual por um valor maior. Por exemplo: aumenta a velocidade em 20%, escolhe a voz 20 posições acima, aumenta o volume 20%.</TD>
+</TR>
+<TR>
 <TD>Diminuir a definição de voz actual</TD>
 <TD>NVDA+control+Seta Abaixo</TD>
 <TD>NVDA+shift+control+Seta Abaixo</TD>
 <TD>Diminui a definição de voz actual. Ex: diminui a velocidade, escolhe a voz anterior, diminui o volume</TD>
+</TR>
+<TR>
+<TD>Diminuir a definição de voz actual por um valor maior</TD>
+<TD><CODE>NVDA+control+pageUp</CODE></TD>
+<TD><CODE>NVDA+shift+control+pageUp</CODE></TD>
+<TD>Diminui a definição de voz actual por um valor maior. Por exemplo: diminui a velocidade em 20%, escolhe a voz 20 posições abaixo, diminui o volume 20%.</TD>
 </TR>
 </TABLE>
 
@@ -3592,6 +3670,23 @@ Pode mover-se de tabela Braille em tabela Braille, na lista, utilizando as Setas
 <P>
 Note que esta opção só é útil se o dispositivo Braille tiver um teclado Braille e esta funcionalidade for suportada pelo respectivo driver.
 Se, apesar de ter teclado Braille, a escrita Braille não for suportada pelo dispositivo, isto será declarado na secção <A HREF="#SupportedBrailleDisplays">Dispositivos Braille Suportados</A>.
+</P>
+<A NAME="BrailleMode"></A>
+<H4>Modo Braille</H4>
+<P>
+Comando: <CODE>NVDA+alt+t</CODE>
+</P>
+<P>
+Esta opção permite-lhe alternar entre os modos Braille disponíveis.
+</P>
+<P>
+Actualmente, são suportados dois modos braille, "Seguir cursores" e "Apresentar saída de voz".
+</P>
+<P>
+Quando se selecciona Seguir cursores, o Braille seguirá o foco do sistema ou o cursor de revisão, dependendo do modo de ligação do cursor Braille.
+</P>
+<P>
+Quando está seleccionada Saída de voz, será mostrado em Braille o que o NVDA fala, ou teria falado se o modo de voz estivesse definido para "falar".
 </P>
 <A NAME="BrailleSettingsExpandToComputerBraille"></A>
 <H4>Expandir Para Braille De Computador Palavras Sobre O Cursor</H4>
@@ -3931,9 +4026,137 @@ Esta barra deslizante permite-lhe definir o volume dos sons e dos bips do NVDA.
 Esta definição só tem efeito quando "O volume dos sons do NVDA segue o volume da voz" está desactivado.
 Esta opção não está disponível se tiver iniciado o NVDA com <A HREF="#WASAPI">WASAPI desactivado para saída de áudio</A> nas configurações Avançadas.
 </P>
-<A NAME="VisionSettings"></A>
-<H3>12.1.8. Visão</H3>
+<A NAME="AudioAwakeTime"></A>
+<H4>Tempo para manter o dispositivo de áudio acordado depois de falar</H4>
 <P>
+Esta caixa de edição especifica durante quanto tempo o NVDA mantém o dispositivo de áudio acordado após o fim da fala.
+Esta configuração permite ao NVDA evitar certas falhas na fala, como partes de palavras perdidas.
+Isto pode acontecer devido ao facto de os dispositivos de áudio (especialmente Bluetooth e dispositivos sem fios) entrarem em modo de espera.
+Também é útil noutros casos, como ao executar o NVDA dentro de uma máquina virtual (por exemplo, Citrix Virtual Desktop) ou em determinados portáteis.
+</P>
+<P>
+Os valores mais baixos podem permitir que o áudio seja cortado com mais frequência, uma vez que um dispositivo pode entrar no modo de espera demasiado cedo, fazendo com que o início da fala seguinte seja cortado.
+Definir um valor demasiado elevado pode fazer com que a bateria do dispositivo de saída de som se descarregue mais rapidamente, uma vez que ele permanece activo durante mais tempo sem ser enviado qualquer som.
+</P>
+<P>
+Para desactivar esta função, é possível colocar o tempo a zero.
+</P>
+<A NAME="SelectSoundSplitMode"></A>
+<H4>Divisão de som</H4>
+<P>
+A funcionalidade de divisão de som permite aos utilizadores utilizar os seus dispositivos de saída estéreo, como auscultadores e altifalantes.
+A divisão de som permite que o discurso do NVDA seja reproduzido num canal (por exemplo, esquerdo) e que todas as outras aplicações reproduzam os seus sons no outro canal (por exemplo, direito).
+Por predefinição, a divisão de som está desactivada, o que significa que todas as aplicações, incluindo o NVDA, reproduzem sons nos canais esquerdo e direito.
+Um comando permite percorrer os vários modos de divisão de som:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Comando</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD>Alterna entre os modos de divisão de som</TD>
+<TD><CODE>NVDA+alt+s</CODE></TD>
+<TD>Alterna entre os modos de divisão de som</TD>
+</TR>
+</TABLE>
+
+<P>
+Por predefinição, este comando alterna entre os seguintes modos:
+</P>
+<UL>
+<LI>Divisão de som desactivada: tanto o NVDA como as outras aplicações emitem sons para os canais esquerdo e direito;
+<LI>NVDA à esquerda e aplicações à direita: O NVDA falará no canal esquerdo, enquanto outras aplicações reproduzirão sons no canal direito;
+<LI>NVDA à direita e aplicações à esquerda: O NVDA falará no canal direito, enquanto outras aplicações reproduzirão sons no canal esquerdo;
+</UL>
+
+<P></P>
+<P>
+Existem modos de divisão de som mais avançados disponíveis na caixa de combinação de definições do NVDA.
+Se pretender ajustar o volume de todas as aplicações, exceto do NVDA, considere a utilização <A HREF="#OtherAppVolume">dos comandos dedicados</A>.
+Tenha em atenção que a divisão de som não funciona como um misturador.
+Por exemplo, se uma aplicação estiver a reproduzir uma faixa de som estéreo e a divisão de som estiver definida para "NVDA à esquerda e aplicações à direita", apenas ouvirá o canal direito da faixa de som, enquanto o canal esquerdo da faixa de som será silenciado.
+</P>
+<P>
+Esta opção não está disponível se tiver iniciado o NVDA com <A HREF="#WASAPI">WASAPI desativado para a saída de áudio</A> nas Definições Avançadas.
+</P>
+<P>
+Por favor, tenha em atenção que, se o NVDA falhar, não conseguirá restaurar o volume dos sons da aplicação e essas aplicações poderão continuar a emitir som apenas num canal após a falha do NVDA.
+Para atenuar esta situação, reinicie o NVDA.
+</P>
+<A NAME="CustomizeSoundSplitModes"></A>
+<H4>Personalizar modos de divisão de som</H4>
+<P>
+Esta lista permite selecionar quais os modos de divisão de som que são incluídos quando se alterna entre eles usando <CODE>NVDA+alt+s</CODE>.
+Os modos que não estão seleccionados são excluídos.
+Por padrão, apenas três modos são incluídos.
+</P>
+<UL>
+<LI>Divisão de som desactivada: tanto o NVDA como as aplicações reproduzem sons nos canais esquerdo e direito.
+<LI>NVDA à esquerda e todas as outras aplicações no canal direito.
+<LI>NVDA à direita e todas as outras aplicações no canal esquerdo.
+</UL>
+
+<P></P>
+<P>
+Note que é necessário selecionar pelo menos um modo.
+Esta opção não está disponível se tiver iniciado o NVDA com <A HREF="#WASAPI">WASAPI desactivado para saída de áudio</A> nas definições avançadas.
+</P>
+<A NAME="OtherAppVolume"></A>
+<H4>Volume de outras aplicações</H4>
+<P>
+Este selector permite-lhe ajustar o volume de todas as aplicações actualmente em execução que não o NVDA.
+Esta definição de volume aplica-se à saída de som de todas as outras aplicações, mesmo que sejam iniciadas depois de esta definição ter sido alterada.
+Este volume também pode ser controlado através dos seguintes comandos de teclado a partir de qualquer lugar:
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Comando</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD>Aumentar volume das aplicações</TD>
+<TD><CODE>NVDA+alt+pageUp</CODE></TD>
+<TD>Aumenta o volume de todas as aplicaçõess, excepto NVDA.</TD>
+</TR>
+<TR>
+<TD>Diminuir volume das aplicações</TD>
+<TD><CODE>NVDA+alt+pageDown</CODE></TD>
+<TD>Diminui o volume de todas as aplicaçõess, excepto NVDA.</TD>
+</TR>
+</TABLE>
+
+<P>
+Esta opção não está disponível se tiver iniciado o NVDA com <A HREF="#WASAPI">WASAPI desativado para saída de áudio</A> nas Definições Avançadas.
+</P>
+<P>
++==== Silenciar outras aplicações ====[MuteApplications]
+</P>
+<P>
+Esta caixa de verificação permite-lhe silenciar todas as aplicações para além do NVDA.
+Esta definição de silenciamento aplicar-se-á a todas as outras aplicações que emitam som, mesmo que iniciem depois de esta definição ser alterada.
+O seguinte comando de teclado também pode ser utilizado a partir de qualquer lugar
+</P>
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Comando</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD>Alterna entre silenciar ou não as outras aplicações</TD>
+<TD><CODE>NVDA+alt+delete</CODE></TD>
+<TD>Silencia, ou remove o silenciamento, das aplicaçõess excepto o NVDA.</TD>
+</TR>
+</TABLE>
+
+<P>
+Esta opção não está disponível se tiver iniciado o NVDA com <A HREF="#WASAPI">WASAPI desativado para saída de áudio</A> nas Definições Avançadas.
+</P>
+<P>
+++++ Visão +++[VisionSettings]
 A secção "Visão" das configurações do NVDA permite activar, desactivar e configurar as <A HREF="#Vision">Ajudas visuais</A>.
 </P>
 <P>
@@ -3981,7 +4204,7 @@ Se esses sistemas tiverem configurações ajustáveis, elas aparecerão nesta se
 Para mais informações sobre as opções suportadas por cada um desses sistemas, consulte a sua documentação específica.
 </P>
 <A NAME="KeyboardSettings"></A>
-<H3>12.1.9. Configurações de teclado</H3>
+<H3>12.1.8. Configurações de teclado</H3>
 <H4>Abrir configurações de teclado</H4>
 <P>
 Comando: <CODE>NVDA+control+k</CODE>
@@ -4069,7 +4292,7 @@ Esta opção permite controlar se o pressionar de teclas gerado por outras aplic
 Esta opção está activada por padrão, embora alguns utilizadores possam preferir desactivá-la, como os utilizadores do "Unikey typing software", pois causará incorrecções.
 </P>
 <A NAME="toc114"></A>
-<H3>12.1.10. Configurações do rato</H3>
+<H3>12.1.9. Configurações do rato</H3>
 <H4>Abrir configurações do rato</H4>
 <P>
 Comando: <CODE>NVDA+control+m</CODE>
@@ -4129,7 +4352,7 @@ Esta opção está desmarcada por padrão.
 Se marcar esta opção, e tiver activada a opção "Activar seguimento do rato, o NVDA não anunciará o que está por baixo do rato se o rato for movido por outra aplicação.
 </P>
 <A NAME="TouchInteraction"></A>
-<H3>12.1.11. Interacção táctil</H3>
+<H3>12.1.10. Interacção táctil</H3>
 <P>
 Esta secção, apenas disponível em computadores com ecrã táctil, permite configurar como o NVDA interage com os ecrãs tácteis.
 Actualmente, esta secção contém as seguintes opções:
@@ -4150,7 +4373,7 @@ Se a marcar, quando localiza a tecla que quer pressionar, basta levantar o dedo 
 Se a deixar desmarcada, terá de dar dois toques para pressionar a tecla.
 </P>
 <A NAME="ReviewCursorSettings"></A>
-<H3>12.1.12. Cursor de Revisão</H3>
+<H3>12.1.11. Cursor de Revisão</H3>
 <P>
 Esta secção é utilizada para configurar o comportamento do cursor de revisão do NVDA.
 Esta secção contém as seguintes opções:
@@ -4185,7 +4408,7 @@ Quando activada, o NVDA filtrará a hierarquia dos objectos que podem ser navega
 Para activar ou desactivar o Modo de revisão simples, em qualquer local, por favor associe-lhe um comando através da opção <A HREF="#InputGestures">Definir comandos</A>.
 </P>
 <A NAME="ObjectPresentationSettings"></A>
-<H3>12.1.13. Apresentação de Objectos</H3>
+<H3>12.1.12. Apresentação de Objectos</H3>
 <H4>Abrir configurações da apresentação de objectos</H4>
 <P>
 Comando: <CODE>NVDA+control+o</CODE>
@@ -4279,7 +4502,7 @@ Em alguns campos de edição, como alguns campos de pesquisa em aplicações do 
 A lista de sugestões automáticas é fechada assim que se move para fora do campo de edição, em em alguns casos o NVDA pode avisar, com um outro som, deste acontecimento.
 </P>
 <A NAME="InputCompositionSettings"></A>
-<H3>12.1.14. Composição de Entrada</H3>
+<H3>12.1.13. Composição de Entrada</H3>
 <P>
 A secção "Composição de entrada" permite configurar a introdução de caracteres asiáticos.
 Note que, devido ao facto dos métodos de entrada variarem substancialmente em funcionalidades disponíveis, e na forma em que fornecem informação, será provavelmente necessário configurar estas opções, de modo diferente para cada método de entrada, para conseguir a experiência de escrita mais eficiente.
@@ -4321,7 +4544,7 @@ Esta opção permite-lhe escolher se o NVDA deve anunciar, ou não, novos símbo
 Esta opção está activada, por padrão.
 </P>
 <A NAME="BrowseModeSettings"></A>
-<H3>12.1.15. Modo de Navegação</H3>
+<H3>12.1.14. Modo de Navegação</H3>
 <H4>Abrir configurações do modo de navegação</H4>
 <P>
 Comando: <CODE>NVDA+control+b</CODE>
@@ -4423,7 +4646,7 @@ O foco será na mesma definido para o elemento ao interagir com ele (e.g. pressi
 Activar esta opção pode melhorar o suporte em algumas páginas, com o contra de prejudicar a performance e a estabilidade.
 </P>
 <A NAME="DocumentFormattingSettings"></A>
-<H3>12.1.16. Formatação de Documentos</H3>
+<H3>12.1.15. Formatação de Documentos</H3>
 <H4>Abrir configurações da formatação de documentos</H4>
 <P>
 Comando: <CODE>NVDA+control+d</CODE>
@@ -4482,6 +4705,7 @@ Pode configurar o anúncio de:
   <LI>Agrupamentos
   <LI>Marcas
   <LI>Artigos
+  <LI>Figuras e legendas
   <LI>Frames
   <LI>Se clicável
   </UL>
@@ -4522,7 +4746,7 @@ O som aumentará a tonalidade cada espaço e para cada Tab aumentará o equivale
 Isto pode ser útil ao ler um documento onde linhas em branco são usadas para separar blocos de texto indentados, como em linguagem de programação.
 </P>
 <A NAME="DocumentNavigation"></A>
-<H3>12.1.17. Navegação em documentos</H3>
+<H3>12.1.16. Navegação em documentos</H3>
 <P>
 Esta secção permite ajustar vários aspectos da navegação em documentos.
 </P>
@@ -4562,7 +4786,7 @@ Note que este estilo não pode ser usado no Microsoft Word ou Microsoft Outlook,
 Pode alternar entre os estilos de parágrafo disponíveis associando um comando através do <A HREF="#InputGestures">diálogo "Definir comandos"</A>.
 </P>
 <A NAME="Win10OcrSettings"></A>
-<H3>12.1.18. configurações do OCR do Windows</H3>
+<H3>12.1.17. configurações do OCR do Windows</H3>
 <P>
 Esta secção permite configurar o <A HREF="#Win10Ocr">OCR do Windows</A>.
 Actualmente, só contém uma opção:
@@ -4582,7 +4806,7 @@ A actualização é feita a cada segundo e meio.
 Esta opção está desactivada por padrão.
 </P>
 <A NAME="AdvancedSettings"></A>
-<H3>12.1.19. Configurações Avançadas</H3>
+<H3>12.1.18. Configurações Avançadas</H3>
 <P>
 Aviso! As configurações desta secção são para utilizadores avançados e podem fazer com que o NVDA não funcione correctamente se configurado de maneira errada.
 Apenas faça alterações nestas configurações se tiver a certeza de que sabe o que está a fazer ou se foi especificamente instruído por um desenvolvedor do NVDA ou por alguém com conhecimentos bastantes e em quem confie.
@@ -4919,6 +5143,12 @@ Apenas active uma destas categorias se isso for solicitado por um desenvolvedor 
 Esta opção permite especificar se o NVDA reproduz um som de erro quando um erro é registado.
 Seleccionar "Apenas em versões de teste" (padrão)" faz com que o som de erro seja reproduzido pelo NVDA apenas se a versão do NVDA actual for uma versão de teste (alfa, beta ou executada a partir da fonte).
 Seleccionar "Sim" permite activar sons de erro, seja qual for a sua versão actual do NVDA.
+</P>
+<A NAME="TextParagraphRegexEdit"></A>
+<H4>Expressão regular para comandos de navegação rápida de parágrafos de texto</H4>
+<P>
+Este campo permite aos utilizadores personalizar a expressão regular para detetar parágrafos de texto no modo de navegação.
+O <A HREF="#TextNavigationCommand">comando de navegação de parágrafos de texto</A> procura parágrafos que correspondam a esta expressão regular.
 </P>
 <A NAME="MiscSettings"></A>
 <H2>12.2. Outras Opções</H2>
@@ -6764,7 +6994,7 @@ Por favor, consulte a documentação do seu dispositivo braille para obter a des
 </TR>
 <TR>
 <TD>Teclas Alt+Seta à esquerda</TD>
-<TD>Ponto2+ponto7</TD>
+<TD>Ponto2+ponto7+espaço</TD>
 </TR>
 <TR>
 <TD>Tecla Seta à direita</TD>
@@ -6783,7 +7013,7 @@ Por favor, consulte a documentação do seu dispositivo braille para obter a des
 </TR>
 <TR>
 <TD>Teclas Alt+Seta à direita</TD>
-<TD>Ponto5+ponto7</TD>
+<TD>Ponto5+ponto7+espaço</TD>
 </TR>
 <TR>
 <TD>Tecla pageUp</TD>
@@ -6811,7 +7041,7 @@ Por favor, consulte a documentação do seu dispositivo braille para obter a des
 </TR>
 <TR>
 <TD>Teclas Alt+Seta acima</TD>
-<TD>Ponto2+ponto3+ponto7</TD>
+<TD>Ponto2+ponto3+ponto7+espaço</TD>
 </TR>
 <TR>
 <TD>Teclas Shift+Seta acima</TD>
@@ -6843,7 +7073,7 @@ Por favor, consulte a documentação do seu dispositivo braille para obter a des
 </TR>
 <TR>
 <TD>Teclas Alt+Seta abaixo</TD>
-<TD>Ponto5+ponto6+ponto7</TD>
+<TD>Ponto5+ponto6+ponto7+espaço</TD>
 </TR>
 <TR>
 <TD>Teclas Shift+Seta abaixo</TD>
@@ -8976,7 +9206,7 @@ O modo seguro do NVDA impede que os utilizadores modifiquem a sua configuração
 <P>
 O NVDA corre em modo seguro quando executado em <A HREF="#SecureScreens">ecrãs seguros</A>, a menos que o "serviceDebug" <A HREF="#SystemWideParameters">parâmetros do sistema</A> esteja activado.
 Para forçar o NVDA a iniciar sempre em modo seguro, defina o "forceSecureMode" <A HREF="#SystemWideParameters">parâmetros do sistema</A>.
-O NVDA também pode ser iniciado em modo seguro com o "-s" <A HREF="#CommandLineOptions">opção de linha de comando</A>.
+O NVDA também pode ser iniciado em modo seguro com o parâmetro "-s" <A HREF="#CommandLineOptions">de linha de comando</A>.
 </P>
 <P>
 O modo de segurança desactiva:
@@ -8998,6 +9228,12 @@ O modo de segurança desactiva:
 <P>
 As cópias instaladas do NVDA armazenam as suas configurações, incluindo extras, em "%APPDATA%\nvda".
 Para evitar que os utilizadores do NVDA modifiquem as suas configurações ou extras diretamente, o acesso do utilizador a essa pasta também deve ser restrito.
+</P>
+<P>
+O modo seguro é ineficaz para cópias portáteis do NVDA.
+Esta limitação também se aplica à cópia temporária do NVDA que é executada ao iniciar o instalador.
+Em ambientes seguros, a possibilidade de um utilizador executar um executável portátil representa o mesmo risco de segurança, independentemente do modo seguro.
+Espera-se que os administradores de sistemas restrinjam a execução de software não autorizado nos seus sistemas, incluindo cópias portáteis do NVDA.
 </P>
 <P>
 Os utilizadores do NVDA geralmente dependem da configuração de seu perfil do NVDA para atender às suas necessidades.
