@@ -1,6 +1,5 @@
-Vad är nytt i NVDA
+# Vad är nytt i NVDA
 
 
-%!includeconf: ../changes.t2tconf
+## 2014.3
 
-= 2014.3 =
