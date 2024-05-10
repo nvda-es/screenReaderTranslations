@@ -2218,7 +2218,7 @@ O recurso de divisão de som permite que os usuários façam uso de seus disposi
 A divisão de som torna possível ter a fala do NVDA em um canal (por exemplo, à esquerda) e fazer com que todos os outros aplicativos reproduzam seus sons no outro canal (por exemplo, à direita).
 Por padrão, a divisão de som está desativada, o que significa que todos os aplicativos, incluindo o NVDA, reproduzirão sons nos canais esquerdo e direito.
 Um comando — gesto — permite percorrer os vários modos de divisão de som:
-<!-- KC:beginIncludecc -->
+<!-- KC:beginInclude -->
 
 | Nome |Tecla |Descrição|
 |---|---|---|
