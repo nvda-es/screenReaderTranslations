@@ -2261,7 +2261,7 @@ Este controle deslizante permite que você ajuste o volume de todos os aplicativ
 Esta configuração de volume será aplicada a todos os outros aplicativos de saída de som, mesmo que eles sejam iniciados após a alteração dessa configuração.
 Este volume também pode ser controlado através dos seguintes comandos de teclado de qualquer lugar:
 
-<!-- KC:beginIncludecc -->
+<!-- KC:beginInclude -->
 
 | Nome |Tecla |Descrição|
 |---|---|---|
@@ -2278,7 +2278,7 @@ Esta caixa de seleção permite silenciar todos os aplicativos, exceto o NVDA.
 Esta configuração de silêncio será aplicada a todos os outros aplicativos que emitem som, mesmo que sejam iniciados após a alteração dessa configuração.
 O seguinte comando de teclado também pode ser usado em qualquer lugar:
 
-<!-- KC:beginIncludecc -->
+<!-- KC:beginInclude -->
 
 | Nome |Tecla |Descrição|
 |---|---|---|
