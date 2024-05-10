@@ -100,7 +100,7 @@ Katso tarkemmat tiedot kohdasta [Järjestelmävaatimukset](#SystemRequirements).
 
 Nämä vaiheet edellyttävät jonkin verran perehtymistä verkkosivulla liikkumiseen.
 
-* Avaa verkkoselain (paina ``Windows``-näppäintä, kirjoita sana "internet" ilman lainausmerkkejä ja paina ``Enter``)
+* Avaa verkkoselain (paina ``Windows``-näppäintä, kirjoita "internet" ilman lainausmerkkejä ja paina ``Enter``)
 * Avaa NV Accessin lataussivu (paina ``Alt+D``, kirjoita seuraava osoite ja paina ``Enter``):
 https://www.nvaccess.org/download
 * Paina "Download"-painiketta
@@ -3757,7 +3757,7 @@ Katso laitteen käyttöohjeesta kuvaukset näppäinten paikoista.
 NVDA tukee useimpia [Handy Techin](https://www.handytech.de/) pistenäyttöjä, joissa on USB/sarjaporttiliitäntä tai Bluetooth-yhteys.
 Vanhempia USB-malleja varten tietokoneelle on asennettava Handy Techin USB-ajurit.
 
-Seuraavia näyttöjä ei tueta oletusarvoisesti, mutta niitä voidaan käyttää [Handy Techin yleisajurin](https://handytech.de/en/service/downloads-and-manuals/handy-tech-software/braille-display-drivers) ja NVDA-lisäosan avulla:
+Seuraavia näyttöjä ei oletusarvoisesti tueta, mutta niitä voidaan käyttää [Handy Techin yleisajurin](https://handytech.de/en/service/downloads-and-manuals/handy-tech-software/braille-display-drivers) ja NVDA-lisäosan avulla:
 
 * Braillino
 * Bookworm
@@ -3769,25 +3769,25 @@ Katso näytön käyttöohjeesta kuvaukset näppäinten paikoista.
 
 || Nimi | Näppäinkomento |
 |---|---|
-| Vieritä taaksepäin | vasen, ylös, b3 |
-| Vieritä eteenpäin | oikea, alas, b6 |
-| Siirrä edelliselle riville | b4 |
-| Siirrä seuraavalle riville | b5 |
-| Siirrä pistesoluun | kosketuskohdistinnäppäin |
-| Vaihto+Sarkain-näppäinyhdistelmä | esc, vasen kolmitoimintonäppäin ylös+alas |
-| Alt-näppäin | b2+b4+b5 |
-| Esc-näppäin | b4+b6 |
-| Sarkain-näppäin | enter, oikea kolmitoimintonäppäin ylös+alas |
-| Enter-näppäin | esc+enter, vasen+oikea kolmitoimintonäppäin ylös+alas, ohjaussauvatoiminto |
-| Nuoli ylös -näppäin | ohjaussauva ylös |
-| Nuoli alas -näppäin | ohjaussauva alas |
-| Nuoli vasemmalle -näppäin | ohjaussauva vasemmalle |
-| Nuoli oikealle -näppäin | ohjaussauva oikealle |
-| NVDA-valikko | b2+b4+b5+b6 |
-| Vaihda Pistenäyttö seuraa -asetusta | b2 |
-| Vaihda pistekohdistinta | b1 |
-| Vaihda kohdistuskontekstin näyttämisen asetusta | b7 |
-| Ota pistekirjoituksen syöttö käyttöön tai poista se käytöstä | väli+b1+b3+b4 (väli+iso b) |
+| Vieritä taaksepäin | ``vasen``, ``ylös``, ``b3`` |
+| Vieritä eteenpäin | ``oikea``, ``alas``, ``b6`` |
+| Siirrä edelliselle riville | ``b4`` |
+| Siirrä seuraavalle riville | ``b5`` |
+| Siirrä pistesoluun | ``kosketuskohdistinnäppäin`` |
+| Vaihto+Sarkain-näppäinyhdistelmä | ``esc``, ``vasen kolmitoimintonäppäin ylös+alas`` |
+| Alt-näppäin | ``b2+b4+b5`` |
+| Esc-näppäin | ``b4+b6`` |
+| Sarkain-näppäin | ``enter``, ``oikea kolmitoimintonäppäin ylös+alas`` |
+| Enter-näppäin | ``esc+enter``, ``vasen+oikea kolmitoimintonäppäin ylös+alas``, ``ohjaussauvatoiminto`` |
+| Nuoli ylös -näppäin | ``ohjaussauva ylös`` |
+| Nuoli alas -näppäin | ``ohjaussauva alas`` |
+| Nuoli vasemmalle -näppäin | ``ohjaussauva vasemmalle`` |
+| Nuoli oikealle -näppäin | ``ohjaussauva oikealle`` |
+| NVDA-valikko | ``b2+b4+b5+b6`` |
+| Vaihda Pistenäyttö seuraa -asetusta | ``b2`` |
+| Ota pistekohdistin käyttöön tai poista se käytöstä | ``b1`` |
+| Vaihda kohdistuskontekstin näyttämisen asetusta | ``b7`` |
+| Ota pistekirjoituksen syöttö käyttöön tai poista se käytöstä | ``väli+b1+b3+b4`` (``väli+iso b``) |
 
 <!-- KC:endInclude -->
 
@@ -3805,15 +3805,15 @@ Katso näytön käyttöohjeesta kuvaukset näppäinten paikoista.
 
 || Nimi | Näppäinkomento |
 |---|---|
-| Vieritä taaksepäin | LF |
-| Vieritä eteenpäin | RG |
-| Siirrä edelliselle riville | UP |
-| Siirrä seuraavalle riville | DN |
-| Siirrä pistesoluun | kosketuskohdistinnäppäin |
-| Vaihto+Sarkain-näppäinyhdistelmä | SLF |
-| Sarkain-näppäin | SRG |
-| Alt+Sarkain-näppäinyhdistelmä | SDN |
-| Alt+Vaihto+Sarkain-näppäinyhdistelmä | SUP |
+| Vieritä taaksepäin | ``LF`` |
+| Vieritä eteenpäin | ``RG`` |
+| Siirrä edelliselle riville | ``UP`` |
+| Siirrä seuraavalle riville | ``DN`` |
+| Siirrä pistesoluun | ``kosketuskohdistinnäppäin`` |
+| Vaihto+Sarkain-näppäinyhdistelmä | ``SLF`` |
+| Sarkain-näppäin | ``SRG`` |
+| Alt+Sarkain-näppäinyhdistelmä | ``SDN`` |
+| Alt+Vaihto+Sarkain-näppäinyhdistelmä | ``SUP`` |
 
 <!-- KC:endInclude -->
 
@@ -3861,11 +3861,11 @@ Malleissa, joissa on ohjaustappi:
 
 || Nimi | Näppäinkomento |
 |---|---|
-| Nuoli ylös -näppäin | ylös |
-| Nuoli alas -näppäin | alas |
-| Nuoli vasemmalle -näppäin | vasen |
-| Nuoli oikealle -näppäin | oikea |
-| Enter-näppäin | valitse |
+| Nuoli ylös -näppäin | ``ylös`` |
+| Nuoli alas -näppäin | ``alas`` |
+| Nuoli vasemmalle -näppäin | ``vasen`` |
+| Nuoli oikealle -näppäin | ``oikea`` |
+| Enter-näppäin | ``valitse`` |
 
 <!-- KC:endInclude -->
 
@@ -3882,13 +3882,13 @@ Katso näytön käyttöohjeesta kuvaukset näppäinten paikoista.
 
 || Nimi | Näppäinkomento |
 |---|---|
-| Vieritä taaksepäin | K1 |
-| Vieritä eteenpäin | K3 |
-| Siirrä edelliselle riville | B2 |
-| Siirrä seuraavalle riville | B5 |
-| Siirrä pistesoluun | kosketuskohdistinnäppäin |
-| Vaihda Pistenäyttö seuraa -asetusta | K2 |
-| Jatkuva luku | B6 |
+| Vieritä taaksepäin | ``K1`` |
+| Vieritä eteenpäin | ``K3`` |
+| Siirrä edelliselle riville | ``B2`` |
+| Siirrä seuraavalle riville | ``B5`` |
+| Siirrä pistesoluun | ``kosketuskohdistinnäppäin`` |
+| Vaihda Pistenäyttö seuraa -asetusta | ``K2`` |
+| Jatkuva luku | ``B6`` |
 
 <!-- KC:endInclude -->
 
@@ -3905,13 +3905,13 @@ Katso näytön käyttöohjeesta kuvaukset näppäinten paikoista.
 
 || Nimi | Näppäinkomento |
 |---|---|
-| Vieritä taaksepäin | K1 |
-| Vieritä eteenpäin | K3 |
-| Siirrä edelliselle riville | B2 |
-| Siirrä seuraavalle riville | B5 |
-| Siirrä pistesoluun | kosketuskohdistinnäppäin |
-| Vaihda Pistenäyttö seuraa -asetusta | K2 |
-| Jatkuva luku | B6 |
+| Vieritä taaksepäin | ``K1`` |
+| Vieritä eteenpäin | ``K3`` |
+| Siirrä edelliselle riville | ``B2`` |
+| Siirrä seuraavalle riville | ``B5`` |
+| Siirrä pistesoluun | ``kosketuskohdistinnäppäin`` |
+| Vaihda Pistenäyttö seuraa -asetusta | ``K2`` |
+| Jatkuva luku | ``B6`` |
 
 <!-- KC:endInclude -->
 
@@ -3937,26 +3937,26 @@ Katso laitteiden käyttöohjeista kuvaukset näppäinten paikoista.
 
 || Nimi | Näppäinkomento |
 |---|---|
-| Vieritä taaksepäin | vasen |
-| Vieritä eteenpäin | oikea |
-| Siirrä edelliselle riville | ylös |
-| Siirrä seuraavalle riville | alas |
-| Siirrä pistesoluun | kosketuskohdistinnäppäin |
-| Vaihda Pistenäyttö seuraa -asetusta | ylös+alas |
-| Nuoli ylös -näppäin | väli+piste 1 |
-| Nuoli alas -näppäin | väli+piste 4 |
-| Nuoli vasemmalle -näppäin | väli+piste 3 |
-| Nuoli oikealle -näppäin | väli+piste 6 |
-| Vaihto+Sarkain-näppäinyhdistelmä | väli+pisteet 1 ja 3 |
-| Sarkain-näppäin | väli+pisteet 4 ja 6 |
-| Alt-näppäin | väli+pisteet 1, 3 ja 4 (väli+m) |
-| Esc-näppäin | väli+pisteet 1 ja 5 (väli+e) |
-| Enter-näppäin | piste 8 |
-| Windows-näppäin | väli+pisteet 3 ja 4 |
-| Alt+Sarkain-näppäinyhdistelmä | väli+pisteet 2, 3, 4 ja 5 (väli+t) |
-| NVDA-valikko | väli+pisteet 1, 3, 4 ja 5 (väli+n) |
-| Windows+D-näppäinyhdistelmä (pienennä kaikki sovellukset) | väli+pisteet 1, 4 ja 5 (väli+d) |
-| Jatkuva luku | väli+pisteet 1, 2, 3, 4, 5 ja 6 |
+| Vieritä taaksepäin | ``vasen`` |
+| Vieritä eteenpäin | ``oikea`` |
+| Siirrä edelliselle riville | ``ylös`` |
+| Siirrä seuraavalle riville | ``alas`` |
+| Siirrä pistesoluun | ``kosketuskohdistinnäppäin`` |
+| Vaihda Pistenäyttö seuraa -asetusta | ``ylös+alas`` |
+| Nuoli ylös -näppäin | ``väli+piste 1`` |
+| Nuoli alas -näppäin | ``väli+piste 4`` |
+| Nuoli vasemmalle -näppäin | ``väli+piste 3`` |
+| Nuoli oikealle -näppäin | ``väli+piste 6`` |
+| Vaihto+Sarkain-näppäinyhdistelmä | ``väli+pisteet 1 ja 3`` |
+| Sarkain-näppäin | ``väli+pisteet 4 ja 6`` |
+| Alt-näppäin | ``väli+pisteet 1, 3 ja 4`` (``väli+m``) |
+| Esc-näppäin | ``väli+pisteet 1 ja 5`` (``väli+e``) |
+| Enter-näppäin | ``piste 8`` |
+| Windows-näppäin | ``väli+pisteet 3 ja 4`` |
+| Alt+Sarkain-näppäinyhdistelmä | ``väli+pisteet 2, 3, 4 ja 5`` (``väli+t``) |
+| NVDA-valikko | ``väli+pisteet 1, 3, 4 ja 5`` (``väli+n``) |
+| Windows+D-näppäinyhdistelmä (pienennä kaikki sovellukset) | ``väli+pisteet 1, 4 ja 5`` (``väli+d``) |
+| Jatkuva luku | ``väli+pisteet 1, 2, 3, 4, 5 ja 6`` |
 
 <!-- KC:endInclude -->
 
@@ -3966,9 +3966,9 @@ Katso laitteiden käyttöohjeista kuvaukset näppäinten paikoista.
 
 || Nimi | Näppäinkomento |
 |---|---|
-| NVDA-valikko | c1, c3, c4 ja c5 (komento n) |
-| Windows+D-näppäinyhdistelmä (pienennä kaikki sovellukset) | c1, c4 ja c5 (komento d) |
-| Jatkuva luku | c1, c2, c3, c4, c5 ja c6 |
+| NVDA-valikko | ``c1``, ``c3``, ``c4`` ja ``c5`` (komento n) |
+| Windows+D-näppäinyhdistelmä (pienennä kaikki sovellukset) | ``c1``, ``c4`` ja ``c5`` (komento d) |
+| Jatkuva luku | ``c1``, ``c2``, ``c3``, ``c4``, ``c5`` ja ``c6`` |
 
 <!-- KC:endInclude -->
 
@@ -3978,11 +3978,11 @@ Katso laitteiden käyttöohjeista kuvaukset näppäinten paikoista.
 
 || Nimi | Näppäinkomento |
 |---|---|
-| Nuoli ylös -näppäin | ohjaussauva ylös |
-| Nuoli alas -näppäin | ohjaussauva alas |
-| Vasen nuoli -näppäin | ohjaussauva vasemmalle |
-| Oikea nuoli -näppäin | ohjaussauva oikealle |
-| Enter-näppäin | ohjaussauvan toiminto |
+| Nuoli ylös -näppäin | ``ohjaussauva ylös`` |
+| Nuoli alas -näppäin | ``ohjaussauva alas`` |
+| Vasen nuoli -näppäin | ``ohjaussauva vasemmalle`` |
+| Oikea nuoli -näppäin | ``ohjaussauva oikealle`` |
+| Enter-näppäin | ``ohjaussauvan toiminto`` |
 
 <!-- KC:endInclude -->
 
