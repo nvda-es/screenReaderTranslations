@@ -252,8 +252,6 @@
 <li><a href="#AudioAwakeTime" title="Vreme tokom kojeg treba održavati zvučnu kartu budnom nakon govora">Vreme tokom kojeg treba održavati zvučnu kartu budnom nakon govora</a></li>
 <li><a href="#SelectSoundSplitMode" title="Razdvajanje zvuka">Razdvajanje zvuka</a></li>
 <li><a href="#CustomizeSoundSplitModes" title="Prilagođavanje režima razdvajanja zvuka">Prilagođavanje režima razdvajanja zvuka</a></li>
-<li><a href="#OtherAppVolume" title="Jačina drugih aplikacija">Jačina drugih aplikacija</a></li>
-<li><a href="#MuteApplications" title="Utišaj druge aplikacije">Utišaj druge aplikacije</a></li>
 </ul>
 </li>
 <li><a href="#VisionSettings" title="Vid">Vid</a><ul>
@@ -852,10 +850,20 @@ Same komande neće biti izvršene dok ste u režimu pomoći za unos. </p>
 <td><code>NVDA+šift+kontrol+pageUp</code></td>
 <td>Povećava vrednost trenutnog podešavanja govora na kojem se nalazite većim skokom. Na primer kada ste na podešavanju glasa, skočiće napred za dvadeset glasova; kada ste na podešavanjima klizača (brzina, visina, i tako dalje) povećaće vrednost za 20%.</td>
 </tr>
+<tr>
+<td>Smanji trenutno podešavanje sintetizatora</td>
+<td><code>NVDA+kontrol+strelicaDole</code></td>
+<td><code>NVDA+šift+kontrol+strelicaDole</code></td>
+<td>Smanjuje podešavanje sintetizatora na kojem se trenutno nalazite. Na primer smanjuje brzinu, bira prethodni glas, smanjuje jačinu</td>
+</tr>
+<tr>
+<td>Smanji trenutno podešavanje govora većim skokom</td>
+<td><code>NVDA+kontrol+pageDown</code></td>
+<td><code>NVDA+šift+kontrol+pageDown</code></td>
+<td>Smanjuje vrednost trenutnog podešavanja govora na kojem se nalazite većim skokom. Na primer kada ste na podešavanju glasa, skočiće nazad za dvadeset glasova; kada ste na podešavanjima klizača (brzina, visina, i tako dalje) smanjiće vrednost za 20%.</td>
+</tr>
 </tbody>
 </table>
-<p>|Smanji trenutno podešavanje sintetizatora |<code>NVDA+kontrol+strelicaDole</code> |<code>NVDA+šift+kontrol+strelicaDole</code> |Smanjuje podešavanje sintetizatora na kojem se trenutno nalazite. Na primer smanjuje brzinu, bira prethodni glas, smanjuje jačinu|
-|Smanji trenutno podešavanje govora većim skokom |<code>NVDA+kontrol+pageDown</code> |<code>NVDA+šift+kontrol+pageDown</code> |Smanjuje vrednost trenutnog podešavanja govora na kojem se nalazite većim skokom. Na primer kada ste na podešavanju glasa, skočiće nazad za dvadeset glasova; kada ste na podešavanjima klizača (brzina, visina, i tako dalje) smanjiće vrednost za 20%.|</p>
 <p>Takođe je moguće podesiti vrednost na prvu ili poslednju u krugu govornih podešavanja tako što ćete dodati prilagođene prečice u <a href="#InputGestures" title="dialogu ulaznih komandi">dialogu ulaznih komandi</a>, u kategoriji govor.
 Ovo znači, na primer, kada ste na podešavanju brzine, podesiće brzinu na 0 ili 100.
 +When you're on a voice setting, it will set the first or last voice.</p>
@@ -3380,7 +3388,7 @@ Ako unos nije podržan na brajevom redu koji ima tastaturu, ovo će biti napomen
 <p>Ova opcija vam dozvoljava da izaberete brajev režim.</p>
 <p>Trenutno, dostupna su dva brajeva režima, "Prati kursore" i "Prikaži govor".</p>
 <p>Kada izaberete da brajev red prati kursore, brajev red će pratiti ili sistemski fokus/kursor ili navigacioni objekat/pregledni kursor, u zavisnosti od toga za šta je brajev red vezan.</p>
-<p>Kada se izabere da brajev red prikazuje govor, brajev red će prikazati šta NVDA govori, ili šta bi govorio da je režim govora podešen na "Sa pričom"</p>
+<p>Kada se izabere da brajev red prikazuje govor, brajev red će prikazati šta NVDA govori, ili šta bi govorio da je režim govora podešen na "Sa pričom".</p>
 <h5 id="BrailleSettingsExpandToComputerBraille">Proširi na kompjuterski brajev kod za reč na poziciji kursora</h5>
 <p>Ova opcija dozvoljava da reč na poziciji kursora bude prikazana na kompjuterskom brajevom kodu.</p>
 <h5 id="BrailleSettingsShowCursor">Prikaži kursor</h5>
@@ -3649,7 +3657,6 @@ Prečica dozvoljava da kružite kroz različite režime razdvajanja zvuka:</p>
 <li>NVDA na desnoj strani a aplikacije na levoj: NVDA će govoriti na desnom kanalu, dok će druge aplikacije reprodukovati zvukove na levom.</li>
 </ul>
 <p>Napredniji režimi razdvajanja zvuka su dostupni u izbornom okviru podešavanja razdvajanja zvuka.
-Ako želite da promenite jačinu svih aplikacija osim programa NVDA, razmotrite korišćenje <a href="#OtherAppVolume" title="navedenih komandi">navedenih komandi</a>.
 Imajte na umu da razdvajanje zvukova ne funkcioniše kao mikser.</p>
 <p>Na primer, ako aplikacija reprodukuje stereo zvučni zapis dok je razdvajanje zvukova podešeno na "NVDA na levoj strani a aplikacije na desnoj", čućete samo desni kanal zvučnog zapisa, dok će levi kanal zvučnog zapisa biti utišan.
 Ova opcija nije dostupna ako je NVDA pokrenut uz <a href="#WASAPI" title="WASAPI onemogućen za zvučni izlaz">WASAPI onemogućen za zvučni izlaz</a> u naprednim podešavanjima.</p>
@@ -3666,61 +3673,6 @@ Podrazumevano, omogućena su samo tri režima.</p>
 </ul>
 <p>Imajte na umu da je neophodno označiti bar jedan režim.
 Ova opcija nije dostupna ako je NVDA pokrenut uz <a href="#WASAPI" title="WASAPI onemogućen za zvučni izlaz">WASAPI onemogućen za zvučni izlaz</a> u naprednim podešavanjima.</p>
-<h5 id="OtherAppVolume">Jačina drugih aplikacija</h5>
-<p>Ovaj klizač vam dozvoljava da promenite jačinu svih pokrenutih aplikacija osim programa NVDA.
-Ovo podešavanje jačine će se primeniti na zvukove za sve druge aplikacije, čak i kada se pokrenu nakon što se ovo podešavanje promeni.
-Ova jačina se takođe može promeniti sledećim prečicama sa tastature bilo gde da se nalazite:</p>
-<!-- KC:beginInclude -->
-
-<table>
-<thead>
-<tr>
-<th>Ime</th>
-<th>Prečica</th>
-<th>Opis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Pojačaj aplikacije</td>
-<td><code>NVDA+alt+pageUp</code></td>
-<td>Pojačava sve aplikacije osim programa NVDA.</td>
-</tr>
-<tr>
-<td>Smanji aplikacije</td>
-<td><code>NVDA+alt+pageDown</code></td>
-<td>Smanjuje jačinu svih aplikacija osim programa NVDA.</td>
-</tr>
-</tbody>
-</table>
-<!-- KC:endInclude -->
-
-<p>Ova opcija nije dostupna ako je NVDA pokrenut uz <a href="#WASAPI" title="WASAPI onemogućen za zvučni izlaz">WASAPI onemogućen za zvučni izlaz</a> u naprednim podešavanjima.</p>
-<h5 id="MuteApplications">Utišaj druge aplikacije</h5>
-<p>Ovo izborno polje vam dozvoljava da utišate sve druge aplikacije osim programa NVDA.
-Ovo podešavanje utišavanja će se primeniti na sve druge aplikacije koje reprodukuju zvukove, čak i kada se pokrenu nakon što se ovo podešavanje promeni.
-Sledeća prečica na tastaturi se takođe može koristiti bilo gde da se nalazite:</p>
-<!-- KC:beginInclude -->
-
-<table>
-<thead>
-<tr>
-<th>Ime</th>
-<th>Prečica</th>
-<th>Opis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Utišaj druge aplikacije</td>
-<td><code>NVDA+alt+delete</code></td>
-<td>Utišava ili ponovo vraća zvuk svih aplikacija osim programa NVDA.</td>
-</tr>
-</tbody>
-</table>
-<!-- KC:endInclude -->
-
-<p>Ova opcija nije dostupna ako je NVDA pokrenut uz <a href="#WASAPI" title="WASAPI onemogućen za zvučni izlaz">WASAPI onemogućen za zvučni izlaz</a> u naprednim podešavanjima.</p>
 <h4 id="VisionSettings">Vid</h4>
 <p>Kategorija vid u NVDA podešavanjima vam dozvoljava da omogućite, onemogućite i podesite <a href="#Vision" title="vizuelne pomoćnike">vizuelne pomoćnike</a>.</p>
 <p>Napomena da se dostupne opcije u ovom dijalogu mogu proširiti <a href="#AddonsManager" title="NVDA dodacima">NVDA dodacima</a>.
