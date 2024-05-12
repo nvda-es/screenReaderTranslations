@@ -1961,7 +1961,7 @@ https://www.nvaccess.org/download
 
 இவ்விருப்பத் தேர்வு, பிரெயில் சுட்டியின் இமைத்தலை அனுமதிக்கிறது. 
 இமைக்கும் வசதி நிறுத்தப்பட்டால், எப்பொழுதும் பிரெயில் சுட்டி நிற்கும் நிலையில் நிலையாக இருக்கும். 
-இவ்விருப்பத் தேர்வு, தெரிவு நிலைக்காட்டியின் மீது தாக்கத்தை ஏற்படுத்துவதில்லை. இது எப்பொழுதும் இமைக்காத நிலையில் புள்ளிகள் ஏழு, எட்டு என்றே இருக்கும். 
+தெரிவு நிலைக்காட்டியின் மீது இவ்விருப்பத் தேர்வு தாக்கத்தை ஏற்படுத்துவதில்லை. இது எப்பொழுதும் இமைக்காத நிலையில் புள்ளிகள் ஏழு, எட்டு என்றே இருக்கும். 
 
 ##### சுட்டி இமைக்கும் விகிதம் (நுண்ணொடிகளில்) {#BrailleSettingsBlinkRate}
 
@@ -2008,9 +2008,7 @@ https://www.nvaccess.org/download
 | . {.hideHeaderRow} |.|
 |---|---|
 | விருப்பத் தேர்வுகள் |இயல்பிருப்பு (ஒருபோதும் இல்லை), ஒருபோதும் இல்லை, தானாகக் கட்டப்படும்பொழுது மட்டும், எப்பொழுதும்|
-|---|---|
 | இயல்பிருப்பு |ஒருபோதும் இல்லை|
-|---|---|
 
 வழியமைத்திடும் பொத்தானை அழுத்தும்பொழுது கணினிச் சுட்டியும் நகர்த்தப்பட வேண்டுமா என்பதை வரையறுக்க இவ்வமைப்பு பயன்படுகிறது.
 'ஒருபோதும் இல்லை' என்பதே இவ்விருப்பத் தேர்வின் இயல்பாக அமைக்கப்பட்டிருப்பதால்,  சீராய்வுச் சுட்டியை வழியமைத்திடும்பொழுது கணினிச் சுட்டி நகர்த்தப்பட மாட்டாது.
@@ -2080,9 +2078,7 @@ https://www.nvaccess.org/download
 | . {.hideHeaderRow} |.|
 |---|---|
 | விருப்பத் தேர்வுகள் |இயல்பிருப்பு (முடுக்கப்பட்டது), முடுக்கப்பட்டது, முடக்கப்பட்டது|
-|---|---|
 | இயல்பிருப்பு |முடுக்கப்பட்டது|
-|---|---|
 
 பிரெயில் காட்சியமைவு முன்னுருட்டப்படும்பொழுது, அல்லது பின்னுருட்டப்படும்பொழுது பேச்சு குறுக்கிடப்பட வேண்டுமா என்பதை இத்தேர்வுப் பெட்டி தீர்மானிக்கிறது.
 அடுத்த/முந்தைய வரிக்கு நகர்த்தும் கட்டளைகள் எப்பொழுதும் பேச்சைக் குறுக்கிடும்.
@@ -2097,9 +2093,7 @@ https://www.nvaccess.org/download
 | . {.hideHeaderRow} |.|
 |---|---|
 | விருப்பத் தேர்வுகள் |இயல்பிருப்பு (முடுக்கப்பட்டது), முடுக்கப்பட்டது, முடக்கப்பட்டது|
-|---|---|
 | இயல்பிருப்பு |முடுக்கப்பட்டது|
-|---|---|
 
 பிரெயில் காட்சியமைவில் தெரிவுக் காட்டி (புள்ளிகல் 7, 8) காட்டப்படுவதை இவ்வமைப்பு வரையறுக்கிறது.
 இயல்பில் இவ்வமைப்பு முடுக்கப்பட்டிருப்பதால், தெரிவுக் காட்டி காட்டப்படும்.
@@ -2194,9 +2188,7 @@ https://www.nvaccess.org/download
 | . {.hideHeaderRow} |.|
 |---|---|
 | விருப்பத் தேர்வுகள் |முடக்கப்பட்டது, முடுக்கப்பட்டது|
-|---|---|
 | இயல்பிருப்பு |முடக்கப்பட்டது|
-|---|---|
 
 இத்தேர்வுப் பெட்டி தேர்வாகியிருந்தால், தாங்கள் பயன்படுத்தும் குரல் அமைப்பின் ஒலியளவை, என்விடிஏவின் ஒலிகள் மற்றும் சிற்றொலிகளுக்கான ஒலியளவு பின்தொடரும்.
 குரல் ஒலியளவைத் தாங்கள் தாழ்த்தினால், ஒலிகளின் ஒலியளவும் தாழ்த்தப்படும்.
@@ -2209,6 +2201,94 @@ https://www.nvaccess.org/download
 'குரல் ஒலியளவை என்விடிஏவின் ஒலிகள் பின்தொடரும்' விருப்பத் தேர்வு முடக்கப்பட்டிருந்தால் மட்டுமே இவ்வமைப்பு செயலிற்கு வரும்.
 மேம்பட்ட அமைப்புகளில், [ஒலி வெளியீட்டிற்கு வாஸாப்பி முடுக்கப்பட்ட  நிலையில்](#WASAPI) என்விடிஏவைத் தாங்கள் துவக்கியிருந்தால், இவ்விருப்பத் தேர்வு கிடைப்பிலிருக்காது. 
 
+##### Time to keep audio device awake after speech {#AudioAwakeTime}
+
+This edit box specifies how long NVDA keeps the audio device awake after speech ends.
+This allows NVDA to avoid certain speech glitches like dropped parts of words.
+This can happen due to audio devices (especially Bluetooth and wireless devices) entering standby mode.
+This might also be helpful in other use cases, such as when running NVDA inside a virtual machine (e.g. Citrix Virtual Desktop), or on certain laptops.
+
+Lower values may allow audio to be cut-off more often, as a device may enter standby mode too soon, causing the start of the following speech to be clipped.
+Setting the value too high may cause the battery of the sound output device to discharge faster, as it stays active for longer while no sound is being sent.
+
+You can set the time to zero in order to disable this feature.
+
+##### Sound split {#SelectSoundSplitMode}
+
+The sound split feature allows users to make use of their stereo output devices, such as headphones and speakers.
+Sound split makes it possible to have NVDA speech in one channel (e.g. left) and have all other applications play their sounds in the other channel (e.g. right).
+By default sound split is disabled, which means that all applications including NVDA will play sounds in both left and right channels.
+A gesture allows cycling through the various sound split modes:
+<!-- KC:beginInclude -->
+
+| Name |Key |Description|
+|---|---|---|
+|Cycle Sound Split Mode |`NVDA+alt+s` |Cycles between sound split modes.|
+
+<!-- KC:endInclude -->
+
+By default this command will cycle between the following modes:
+
+* Disabled sound split: both NVDA and other applications output sounds to both left and right channels.
+* NVDA on the left and applications on the right: NVDA will speak in the left channel, while other applications will play sounds in the right channel.
+* NVDA on the right and applications on the left: NVDA will speak in the right channel, while other applications will play sounds in the left channel.
+
+There are more advanced sound split modes available in NVDA setting combo box.
+If you wish to adjust volume of all applications except for NVDA, consider using [the dedicated commands](#OtherAppVolume).
+Please note, that sound split doesn't work as a mixer.
+For example, if an application is playing a stereo sound track while sound split is set to "NVDA on the left and applications on the right", then you will only hear the right channel of the sound track, while the left channel of the sound track will be muted.
+
+This option is not available if you have started NVDA with [WASAPI disabled for audio output](#WASAPI) in Advanced Settings.
+
+Please note, that if NVDA crashes, then it won't be able to restore application sounds volume, and those applications might still output sound only in one channel after NVDA crash.
+In order to mitigate this, please restart NVDA.
+
+##### Customizing Sound split modes {#CustomizeSoundSplitModes}
+
+This checkable list allows selecting which sound split modes are included when cycling between them using `NVDA+alt+s`.
+Modes which are unchecked are excluded.
+By default only three modes are included.
+
+* Sound split disabled: both NVDA and applications play sounds in both left and right channels.
+* NVDA on the left and all other applications on the right channel.
+* NVDA on the right and all other applications on the left channel.
+
+Note that it is necessary to check at least one mode.
+This option is not available if you have started NVDA with [WASAPI disabled for audio output](#WASAPI) in Advanced Settings.
+
+##### Volume of other applications {#OtherAppVolume}
+
+This slider allows you to adjust the volume of all currently running applications other than NVDA.
+This volume setting will apply to all other applications sound output, even if they start after this setting is changed.
+This volume can also be controlled via the following keyboard commands from anywhere:
+
+<!-- KC:beginInclude -->
+
+| Name |Key |Description|
+|---|---|---|
+|Increase applications volume |`NVDA+alt+pageUp` |Increases volume of all applications except NVDA.|
+|Decrease applications volume |`NVDA+alt+pageDown` |Decreases volume of all applications except NVDA.|
+
+<!-- KC:endInclude -->
+
+This option is not available if you have started NVDA with [WASAPI disabled for audio output](#WASAPI) in Advanced Settings.
+
+##### Mute other applications {#MuteApplications}
+
+This checkbox allows you to mute all applications other than NVDA.
+This mute setting will apply to all other applications outputting sound, even if they start after this setting is changed.
+The following keyboard command can also be used from anywhere:
+
+<!-- KC:beginInclude -->
+
+| Name |Key |Description|
+|---|---|---|
+|Toggle mute other applications |`NVDA+alt+delete` |Mutes or unmutes all applications other than NVDA.|
+
+<!-- KC:endInclude -->
+
+This option is not available if you have started NVDA with [WASAPI disabled for audio output](#WASAPI) in Advanced Settings.
+
 #### பார்வை {#VisionSettings}
 
 [என்விடிஏ அமைப்புகள்](#NVDASettings) உரையாடலில் காணப்படும் [பார்வை வகைமையில்](#VisionSettings) [பார்வைக்கான துணைக் கருவிகளை](#Vision) முடுக்கலாம், முடக்கலாம், மற்றும் அமைவடிவமாக்கலாம்.
@@ -2220,8 +2300,7 @@ https://www.nvaccess.org/download
 
 பார்வைத் துலக்கம் குழுவாக்கத்தில் காணப்படும் பின்வரும் தேர்வுப் பெட்டிகள், [பார்வைத் துலக்கத்தின்](#VisionFocusHighlight) தன்மையைக் கட்டுப்படுத்துகிறது:
 
--,துலக்கமாக்குக: பார்வைத் துலக்கத்தை முடுக்குகிறது, அல்லது முடக்குகிறது.
-
+* துலக்கமாக்குக: பார்வைத் துலக்கத்தை முடுக்குகிறது, அல்லது முடக்குகிறது.
 * கணினிக் குவிமையத்தைத் துலக்கமாக்குக: [கணினிக் குவிமையத்தின்](#SystemFocus) துலக்கத்தை முடுக்குகிறது, அல்லது முடக்குகிறது.
 * வழிசெலுத்திப் பொருளைத் துலக்கமாக்குக: [வழிசெலுத்திப் பொருளின்](#ObjectNavigation) துலக்கத்தை முடுக்குகிறது, அல்லது முடக்குகிறது.
 * உலாவும் நிலைச் சுட்டியைத் துலக்கமாக்குக: [உலாவும் நிகர்நிலைச் சுட்டியின்](#BrowseMode) துலக்கத்தை முடுக்குகிறது, அல்லது முடக்குகிறது.
@@ -2471,6 +2550,7 @@ https://www.nvaccess.org/download
 ##### பொருள் விளக்கங்களை அறிவித்திடுக {#ObjectPresentationReportDescriptions}
 
 பொருட்களின் மீது என்விடிஏ நகரும்பொழுது, அப்பொருட்களின் விளக்கத்தை என்விடிஏ அறிவிக்கவேண்டாமென்று தாங்கள் கருதினால், இத்தேர்வுப் பெட்டியின் தேர்வை நீக்கிவிடவும். தேடு களத்தில் தட்டச்சிட்டவுடன் தோன்றும் பரிந்துரைகள், தோன்றும் உரையாடல் பெட்டியின் உள்ளடக்கங்கள் ஆகியவை படிக்கப்படத் தேவையில்லை எனக் கருதும் தருணங்களை எடுத்துக்காட்டுகளாக கூறலாம்.
+
 <!-- KC:setting -->
 
 ##### முன்னேற்றப் பட்டையின் வெளியீடு {#ObjectPresentationProgressBarOutput}
@@ -2658,13 +2738,11 @@ https://www.nvaccess.org/download
 * துலக்கமாக்கப்பட்ட (குறியிடப்பட்ட) உரை
 * பாங்கு
 * நிறங்கள்
-
 * ஆவணத் தகவல்
 * கருத்துரைகள்
 * நூற்குறிகள்
 * திருத்துநர் திருத்தங்கள்
 * எழுத்துப் பிழைகள்
-
 * பக்கங்களும் வரி இடைவெளியும்
 * பக்க எண்கள்
 * வரி எண்கள்
@@ -2673,13 +2751,11 @@ https://www.nvaccess.org/download
 * பத்தியோரச் சீர்மை (எ.கா. தொங்கு ஓரச் சீர்மை, முதல் வரியோரச் சீர்மை)
 * வரி இடைவெளி (ஒற்றை, இரட்டை போன்றவை)
 * ஒழுங்கமைப்பு
-
 * அட்டவணைத் தகவல்
 * அட்டவணைகள்
 * கிடைவரிசை/நெடுவரிசைகளின் தலைப்புரைகள் (அறிவித்திடாது, கிடைவரிசைகள், நெடுவரிசைகள், கிடைவரிசைகளும் நெடுவரிசைகளும்)
 * பணிக்களத்தின் சந்தி நிலை
 * பணிக்களத்தின் எல்லைகள் (அறிவிக்காது, பாங்குகள், நிறங்களும் பாங்குகளும்)
-
 * கூறுகள்
 * தலைப்புகள்
 * தொடுப்புகள்
@@ -2690,9 +2766,9 @@ https://www.nvaccess.org/download
 * நிலக்குறிகள்
 * பிரிவுக்கூறுகள்
 * சட்டகங்கள்
+* உருவங்கள் மற்றும் தலைப்புகள்
 * சொடுக்கப்படக்கூடியவைகள்
- -
-
+ 
 இவ்வமைப்புகளை எங்கிருந்தாயினும் மாற்றியமைக்க, [உள்ளீட்டுச் சைகைகள்](#InputGestures) உரையாடலைப் பயன்படுத்தி, தனிப்பயனாக்கப்பட்ட சைகைகளை இணைக்கவும். 
 
 ##### சுட்டிக்குப் பிறகு ஏற்படும் வடிவூட்ட மாற்றங்களை அறிவித்திடுக {#DocumentFormattingDetectFormatAfterCursor}
@@ -2726,9 +2802,7 @@ https://www.nvaccess.org/download
 | . {.hideHeaderRow} |.|
 |---|---|
 | விருப்பத் தேர்வுகள் |இயல்பிருப்பு (பயன்பாட்டினால் கையாளப்படும்), பயன்பாட்டினால் கையாளப்படும், ஒற்றை வரி முறிவு, பல வரி முறிவு|
-|---|---|
 | \இயல்பிருப்பு |பயன்பாட்டினால் கையாளப்படும்|
-|---|---|
 
 "கட்டுப்பாடு+மேலம்பு", "கட்டுப்பாடு+கீழம்பு" ஆகிய விசைகளைப் பயன்படுத்தி பத்திகளாக நகரும்பொழுது பயன்படுத்தப்பட வேண்டிய பத்திப் பாங்கினைத் தெரிவுச் செய்ய இச்சேர்க்கைப் பெட்டி தங்களை அனுமதிக்கிறது.
 பின்வருவன கிடைப்பிலிருக்கும் பத்திப் பாங்குகளாகும்:
@@ -2793,9 +2867,7 @@ https://www.nvaccess.org/download
 | . {.hideHeaderRow} |.|
 |---|---|
 | விருப்பத் தேர்வுகள் |தன்னியக்கம், தெரிவு, முழுதளாவிய|
-|---|---|
 | இயல்பிருப்பு |தன்னியக்கம்|
-|---|---|
 
 இத்தேர்வுப் பெட்டி, மைக்ரோசாஃப் தன்னியக்கமாக்கல் அணுகல் ஏபிஐ தூண்டும் நிகழ்வுகளை என்விடிஏ எவ்வாறு பதிந்திட வேண்டுமென்பதை தீர்மானிக்க உதவுகிறது.
 பயனர் இடைமுகப்பு தன்னியக்கமாக்கல் நிகழ்வுகளுக்கும், பண்பு மாற்றங்களுக்குமான பதிவுச் சேர்க்கைப் பெட்டி, கீழ்க்காணும் மூன்று விருப்பத் தேர்வுகளைக் கொண்டுள்ளது:
@@ -2832,9 +2904,7 @@ https://www.nvaccess.org/download
 | . {.hideHeaderRow} |.|
 |---|---|
 | விருப்பத் தேர்வுகள் |இயல்பிருப்பு (முடுக்கப்பட்டது), முடக்கப்பட்டது, முடுக்கப்பட்டது|
-|---|---|
 | இயல்பிருப்பு |முடுக்கப்பட்டது|
-|---|---|
 
 இவ்விருப்பத் தேர்வு முடுக்கப்பட்டிருக்கும் நிலையில், ஒரு முனையத்தில் பெருமளவிளான உரை போன்ற பல பயனர் இடைமுகப்பு தன்னியக்கமாக்கல் நிகழ்வுகளினால் நிரம்பிவழியும்பொழுது, என்விடிஏ தொடர்ந்து வினையாற்றிக் கொண்டிருக்கும்.
 இவ்விருப்பத் தேர்வினை மாற்றியமைத்த பிறகு, மாற்றத்தை செயலிற்கு கொண்டுவர, என்விடிஏவை மறுதுவக்க வேண்டும்.
@@ -2844,9 +2914,7 @@ https://www.nvaccess.org/download
 | . {.hideHeaderRow} |.|
 |---|---|
 | விருப்பத் தேர்வுகள் |தன்னியக்கம், கிடைப்பிலிருக்கும்பொழுது பயனர் இடைமுகப்பு தன்னியக்கமாக்கல், மரபு|
-|---|---|
 | இயல்பிருப்பு |தன்னியக்கம்|
-|---|---|
 
 கட்டளைத் தூண்டி, பவர் ஷெல், லினக்ஸிற்கான விண்டோஸ் துணை அமைப்பு ஆகியவை பயன்படுத்தும் விண்டோஸ் கட்டுப்பாட்டகத்துடன் என்விடிஏ எவ்வாறு அளவளாவவேண்டுமென்று தீர்மானிக்க இவ்விருப்பத் தேர்வு அனுமதிக்கிறது.
 நவீன விண்டோஸ் முனையத்துக்கு இது ஊறு விளைவிப்பதில்லை.
@@ -2902,7 +2970,6 @@ https://www.nvaccess.org/download
 |---|---|
 |விருப்பத் தேர்வுகள் |இயல்பிருப்பு (முடுக்கப்பட்டது), முடக்கப்பட்டது, முடுக்கப்பட்டது|
 | இயல்பிருப்பு |முடுக்கப்பட்டது|
-|---|---|
 
 இணையத்திலிருக்கும் சில இயங்குநிலை உள்ளடக்கங்களை என்விடிஏ பிரெயிலில் காட்டுவதை இவ்விருப்பத் தேர்வு அனுமதிக்கிறது.
 இவ்விருப்பத் தேர்வினை முடக்குவது, 2023.1, அல்லது அதற்கும் முந்தைய பதிப்புகளில் காணப்படும் என்விடிஏவின் தன்மைக்கு ஒத்ததாகும். அதாவது, உள்ளடக்க மாற்றங்களை என்விடிஏ பிரெயிலில் காட்டாமல், வெறும் பேச்சில் மட்டும் அறிவிக்கும்.
@@ -2940,9 +3007,7 @@ https://www.nvaccess.org/download
 | . {.hideHeaderRow} |.|
 |---|---|
 | விருப்பத் தேர்வுகள் |இயல்பிருப்பு (தெரிவுச் செய்யப்பட்டிருக்கும் படிமுறைத் தீர்வினைப் பயன்படுத்துக), தெரிவுச் செய்யப்பட்டிருக்கும் படிமுறைத் தீர்வினைப் பயன்படுத்துக, பயனர் இடைமுகப்பு தன்னியக்கமாக்கல் அறிவிக்கைகள்|
-|---|---|
 | இயல்பிருப்பு |தெரிவுச் செய்யப்பட்டிருக்கும் படிமுறைத் தீர்வினைப் பயன்படுத்துக|
-|---|---|
 
 விண்டோஸ் முனையத்திலும், விஷுவல் ஸ்டூடியோ 2022ல் பயன்படுத்தப்படும் WPF விண்டோஸ் முனையக் கட்டுப்பாட்டிலும் இயங்குநிலை மாற்றங்களை அறிவிக்கும் வசதி முடுக்கப்பட்டிருந்தால்,  எந்த உரை புதிது, எதைப் பேச வேண்டுமென்று என்விடிஏ தீர்மானிக்க  இவ்விருப்பத் தேர்வு வரையறுக்கிறது.
 விண்டோஸ் கட்டுப்பாட்டகத்தின்் மீது (conhost.exe) இது தாக்கத்தை ஏற்படுத்துவதில்லை.
@@ -2979,9 +3044,7 @@ https://www.nvaccess.org/download
 | . {.hideHeaderRow} |.|
 |---|---|
 | விருப்பத் தேர்வுகள் |இயல்பிருப்பு (முடுக்கப்பட்டது), முடக்கப்பட்டது, முடுக்கப்பட்டது|
-|---|---|
 | இயல்பிருப்பு |முடுக்கப்பட்டது|
-|---|---|
 
 விண்டோஸ் ஆடியோ செஷன் ஏபிஐ (WASAPI) வழியிலான ஒலி வெளியீட்டை இத்தேர்வுப் பெட்டி வழங்குகிறது.
 வாஸாப்பி என்பது மிக நவீன ஒலிக் கட்டமைப்பாகும். பேச்சு மற்றும் ஒலிகள் உட்பட என்விடிஏ ஒலி வெளியீட்டின் வினைத்திறன், செயல்திறன் மற்றும் நிலைத்தன்மையை இது மேம்படுத்தலாம்.
