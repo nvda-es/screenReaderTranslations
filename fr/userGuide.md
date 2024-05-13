@@ -2237,7 +2237,6 @@ Par défaut, cette commande alternera entre les modes suivants :
 * NVDA à droite et applications à gauche : NVDA parlera dans le canal de droite, tandis que les autres applications diffuseront leur son dans le canal de gauche.
 
 Il existe des modes de séparation du son plus avancés disponibles dans la liste déroulante des paramètres NVDA.
-Si vous souhaitez régler le volume de toutes les applications à l'exception de NVDA, pensez à utiliser [les commandes dédiées](#OtherAppVolume).
 Veuillez noter que le séparateur de son ne fonctionne pas comme un mélangeur audio.
 Par exemple, si une application joue une piste audio stéréo alors que la séparation du son est définie sur "NVDA à gauche et applications à droite", alors vous n'entendrez que le canal droit de la piste audio, tandis que le canal gauche de la piste sera mis en sourdine.
 
@@ -2258,38 +2257,6 @@ Par défaut, seuls trois modes sont inclus.
 
 Veuillez noter qu'il est nécessaire de cocher au moins un mode.
 Cette option n'est pas disponible si vous avez démarré NVDA avec [WASAPI désactivé pour la sortie audio](#WASAPI) dans les Paramètres avancés.
-
-##### Volume of other applications {#OtherAppVolume}
-
-+
-+This slider allows you to adjust the volume of all currently running applications other than NVDA.
-+This volume setting will apply to all other applications sound output, even if they start after this setting is changed.
-+This volume can also be controlled via the following keyboard commands from anywhere:
-+
-+<!-- KC:beginInclude -->
-+|| Name | Key | Description |
-+| Increase applications volume | `NVDA+alt+pageUp` | Increases volume of all applications except NVDA. |
-+| Decrease applications volume | `NVDA+alt+pageDown` | Decreases volume of all applications except NVDA. |
-+
-+<!-- KC:endInclude -->
-+
-+This option is not available if you have started NVDA with [WASAPI disabled for audio output](#WASAPI) in Advanced Settings.
-+
-
-##### Mute other applications {#MuteApplications}
-
-+
-+This checkbox allows you to mute all applications other than NVDA.
-+This mute setting will apply to all other applications outputting sound, even if they start after this setting is changed.
-+The following keyboard command can also be used from anywhere:
-+
-+<!-- KC:beginInclude -->
-+|| Name | Key | Description |
-+| Toggle mute other applications | `NVDA+alt+delete` | Mutes or unmutes all applications other than NVDA. |
-+
-+<!-- KC:endInclude -->
-+
-+This option is not available if you have started NVDA with [WASAPI disabled for audio output](#WASAPI) in Advanced Settings.
 
 #### Vision {#VisionSettings}
 
@@ -4983,4 +4950,3 @@ Les valeurs suivantes peuvent être définies dans ces clés de registre :
 Si vous avez besoin d'informations complémentaires ou d'aide concernant l'utilisation de NVDA, veuillez visiter le [site web de NVDA](NVDA_URL).
 Sur ce site, vous pourrez trouver des informations complémentaires telles que des listes de discussion spécialisées et d'autres ressources communautaires pour vous aider à utiliser NVDA.
 Ce site fournit également des informations concernant le développement de NVDA.
-
