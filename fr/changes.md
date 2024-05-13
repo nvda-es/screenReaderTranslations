@@ -6,22 +6,22 @@
 Il existe une nouvelle fonctionnalité nommée séparation du son.
 Cela permet de séparer les sons de NVDA d'un côté (par exemple à gauche) tandis que les sons de toutes les autres applications arriveront de l'autre côté (par exemple à droite).
 
-Il existe de nouvelles commandes pour modifier la boucle des paramètres synthétiseur, permettant aux utilisateurs de passer au premier ou au dernier paramètre et d'augmenter ou de diminuer le paramètre actuel par pas plus importants.
-Il existe également de nouvelles commandes de navigation rapide, permettant aux utilisateurs d'assigner des gestes pour naviguer rapidement entre : paragraphe, paragraphe aligné verticalement, style de texte identique, texte de style différent, élément de menu, bouton bascule, barre de progression, figure, et formule mathématique.
+Il existe de nouvelles commandes pour modifier la boucle des paramètres synthétiseur, permettant aux utilisateurs de passer au premier ou au dernier paramètre et d'augmenter ou de diminuer le paramètre courant par pas plus importants.
+Il existe également de nouvelles commandes de navigation rapide, permettant aux utilisateurs d'assigner des gestes pour naviguer rapidement entre : paragraphe, paragraphe aligné verticalement, texte de style identique, texte de style différent, élément de menu, bouton bascule, barre de progression, figure, et formule mathématique.
 
 De nombreuses nouvelles fonctionnalités Braille et corrections sont présentes.
 Un nouveau mode Braille appelé "afficher la parole" a été ajouté.
-Lorsqu'activé, l'affichage Braille affiche exactement ce que NVDA prononce.
+Lorsque ce mode est activé, l'affichage Braille affiche exactement ce que NVDA prononce.
 Le support des afficheurs Braille BrailleEdgeS2 et BrailleEdgeS3 a également été ajouté.
-LibLouis a été mis à jour, ajoutant de nouvelles tables Braille détaillées (avec lettres majuscules indiquées) Biélorusse et Ukrainien, une table Laotienne, et une table Espagnole pour lire le textes grecs.
+LibLouis a été mis à jour, avec l'ajout des nouvelles tables Braille Biélorusse et Ukrainien détaillés (avec lettres majuscules indiquées), une table Laotien, et une table Espagnole pour lire le textes grecs.
 
-eSpeak a été mis à jour, ajoutant le langage Tigrinya.
+eSpeak a été mis à jour, avec l'ajout du langage Tigrigna.
 
 Sont présents de nombreux correctifs de bogues mineures pour des applications, telles que Thunderbird, Adobe Reader, les navigateurs Web, Nudi et Geekbench.
 
 ### Nouvelles Fonctionnalités
 
-* Nouvelles commandes de base :
+* Nouvelles commandes clavier :
   * Nouvelle commande de navigation rapide `p` pour sauter au paragraphe suivant/précédent en mode navigation. (#15998, @mltony)
   * Nouvelles commandes de navigation rapides non assignées, pouvant être utilisées pour sauter à ces types d'élément suivants/précédents :
     * figure (#10826)
@@ -30,25 +30,25 @@ Sont présents de nombreux correctifs de bogues mineures pour des applications, 
     * bouton bascule (#16001, @mltony)
     * barre de progression (#16001, @mltony)
     * formule mathématique (#16001, @mltony)
-    * style de texte identique (#16000, @mltony)
-    * style de texte différent (#16000, @mltony)
+    * texte de style identique (#16000, @mltony)
+    * texte de style différent (#16000, @mltony)
     * Ajout de commandes pour sauter au premier, au dernier, en avant et en arrière dans la boucle des paramètres synthétiseur. (#13768, #16095, @rmcpantoja)
     * Aller à la première/dernière valeur du paramètre courant dans la boucle des paramètres synthétiseur n'a pas de geste assigné. (#13768)
-    * Diminuer et augmenter le paramètre actuel de la boucle des paramètres synthétiseur d'un interval plus important (#13768):
-      * Bureau : `NVDA+control+pageUp` ou `NVDA+control+pageDown`.
-      * Portable : `NVDA+control+shift+pageUp` ou `NVDA+control+shift+pageDown`.
+    * Diminuer et augmenter le paramètre courant de la boucle des paramètres synthétiseur d'un intervalle plus important (#13768) :
+      * Ordinateur de Bureau : `NVDA+contrôle+pagePrec` ou `NVDA+contrôle+pageSuiv`.
+      * Ordinateur portable : `NVDA+contrôle+maj+pagePrec` ou `NVDA+contrôle+maj+pageSuiv`.
   * Ajout d'un nouveau geste de commande non assigné pour basculer l'annonce des figures et légendes. (#10826, #14349)
 * Braille :
   * Ajout du support des afficheurs BrailleEdgeS2 et BrailleEdgeS3. (#16033, #16279, @EdKweon)
   * Un nouveau mode Braille appelé "afficher la parole" a été ajouté. (#15898, @Emil-18)
-    * Lorsqu'activé, l'affichage Braille affiche exactement ce que NVDA prononce.
-    * Il peut être activé/désactivé en pressant `NVDA+alt+t`, ou depuis le dialogue des paramètres Braille.
+    * Lorsque ce mode est activé, l'affichage Braille affiche exactement ce que NVDA prononce.
+    * Il peut être activé/désactivé en appuyant sur `NVDA+alt+t`, ou depuis le dialogue des paramètres Braille.
 * Séparation du son : (#12985, @mltony)
   * Permet de séparer les sons de NVDA d'un côté (par exemple à gauche) tandis que les sons de toutes les autres applications arriveront de l'autre côté (par exemple à droite).
   * Activé/désactivé par `NVDA+alt+s`.
 * L'annonce des en-têtes de lignes et colonnes est maintenant supporté dans les éléments HTML au contenu éditable. (#14113)
 * Ajout d'une option pour désactivé l'annonce des figures et légendes dans les paramètres de mise en forme des documents. (#10826, #14349)
-* Sous Windows 11, NVDA annoncera les alertes de saisie vocale et les suggestions, y compris les suggestions lors de la copie de données telles que des numéros de téléphone dans le presse-papiers (mise à jour Windows 11 2022 et versions ultérieures). (#16009, @josephsl)
+* Sous Windows 11, NVDA annoncera les alertes de saisie vocale et les actions suggérées lors de la copie de données telles que des numéros de téléphone dans le presse-papiers (mise à jour Windows 11 2022 et versions ultérieures). (#16009, @josephsl)
 * NVDA maintiendra le périphérique audio éveillé après l'arrêt de la parole, afin d'éviter que le début de la parole suivante ne soit tronqué avec certains périphériques audio tels que les casques Bluetooth. (#14386, @jcsteh, @mltony)
 * HP Secure Browser est maintenant supporté. (#16377)
 
@@ -56,19 +56,19 @@ Sont présents de nombreux correctifs de bogues mineures pour des applications, 
 
 * Add-on Store :
   * La version minimale et la dernière version testées d'une extension sont maintenant affichées dans la zone "autres détails". (#15776, @Nael-Sayegh)
-  * Les actions d'avis de la communauté, et la page Web des avis, seront affichées dans la zone de détails dans tout les onglets du store. (#16179, @nvdaes)
+  * L'action avis de la communauté sera disponible, et l'URL des avis sera affichée dans la zone de détails, dans tous les onglets du store. (#16179, @nvdaes)
 * Mises à jour de composants :
   * Mise à jour du transcripteur Braille LibLouis à la version [3.29.0](https://github.com/liblouis/liblouis/releases/tag/v3.29.0). (#16259, @codeofdusk)
-    * Neouvelles tables Braille détaillées (avec lettres majuscules indiquées) Biélorusse et Ukrainien.
+    * Nouvelles tables Braille Biélorusse et Ukrainien détaillés (avec lettres majuscules indiquées).
     * Nouvelle table Espagnole pour le texte Grec.
-    * Nouvelle table laotienne intégral. (#16470)
+    * Nouvelle table Laotien intégral. (#16470)
   * eSpeak NG a été mis à jour à la version 1.52-dev révision `cb62d93fd7`. (#15913)
-    * Ajout du langage Tigrinya. 
+    * Ajout du langage Tigrigna. 
 * Changements de plusieurs gestes pour les périphériques BrailleSense pour éviter des conflits avec les caractères de la table Braille française. (#15306)
-  * `alt+Flèche Gauche` est maintenant assigné à `point2+point7+espace`
-  * `alt+Flèche Droite` est maintenant assigné à `point5+point7+espace`
-  * `alt+Flèche Haut` est maintenant assigné à `point2+point3+point7+espace`
-  * `alt+Flèche Bas` est maintenant assigné à `point5+point6+point7+espace`
+  * `alt+flècheGauche` est maintenant assigné à `point2+point7+espace`
+  * `alt+flècheDroite` est maintenant assigné à `point5+point7+espace`
+  * `alt+flècheHaut` est maintenant assigné à `point2+point3+point7+espace`
+  * `alt+flècheBas` est maintenant assigné à `point5+point6+point7+espace`
 * Les points de remplissage couramment utilisés dans les tables des matières ne sont plus signalés aux faibles niveaux de ponctuation. (#15845, @CyrilleB79)
 
 ### Corrections de Bogues
@@ -79,22 +79,22 @@ Sont présents de nombreux correctifs de bogues mineures pour des applications, 
 * Add-on Store :
   * Lors de l'appui sur `ctrl+tab`, le focus se déplace correctement vers le titre du nouvel onglet. (#14986, @ABuffEr)
   * Si les fichiers mis en cache sont incorrects, NVDA ne redémarrera plus. (#16362, @nvdaes)
-* Correctifs pour les navigateurs basés sur Chromium lorsqu'utilisés avec UIA :
-  * Correction de bugs provoquant le plantage de NVDA. (#16393, #16394)
+* Correctifs pour les navigateurs basés sur Chromium lorsqu'ils sont utilisés avec UIA :
+  * Correction de bugs provoquant le blocage de NVDA. (#16393, #16394)
   * Retour arrière fonctionne désormais correctement dans les champs de connexion de Gmail. (#16395)
 * Retour arrière fonctionne désormais correctement lors de l'utilisation de Nudi 6.1 avec le paramètre "Exécuter les touches d'autres applications" de NVDA activé. (#15822, @jcsteh)
 * Correction d'un bug où les coordonnées audio étaient joués alors que l'application était en veille lorsque "Sonoriser les coordonnées quand la souris se déplace" est activé. (#8059, @hwf1324)
 * Dans Adobe Reader, NVDA n'ignore plus le texte alternatif défini dans les formulaires PDF. (#12715)
 * Correction d'un bug causant l'échec de NVDA à lire les rubans et options dans Geekbench. (#16251, @mzanm)
-* Correction d'un rare cas où l'enregistrement de la configuration pouvait échouer à enregistrer tout les profils. (#16343, @CyrilleB79)
-* Dans Firefox et les navigateurs basés sur Chromium, NVDA entrera correctement en mode formulaire lors de l'appui sur entrée lorsque positionné dans une liste de présentation (ul / ol) dans un contenu éditable. (#16325)
-* Le changement d'état d'une colonne est automatiquement annoncé lors de la sélection des colonnes à afficher dans la liste de messages de Thunderbird. (#16323)
+* Correction d'un rare cas où l'enregistrement de la configuration pouvait échouer à enregistrer tous les profils. (#16343, @CyrilleB79)
+* Dans Firefox et les navigateurs basés sur Chromium, NVDA entrera correctement en mode formulaire lors de l'appui sur entrée lorsque vous êtes positionné dans une liste de présentation (ul / ol) dans un contenu éditable. (#16325)
+* Le changement d'état d'une colonne est automatiquement annoncé lors du choix des colonnes à afficher dans la liste de messages de Thunderbird. (#16323)
 
 ### Changements pour les Développeurs
 
 Veuillez consulter le [guide du développeur](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API) pour plus d'informations sur le processus de dépréciation et de suppression de l'API de NVDA.
 
-* Instantier les objets `winVersion.WinVersion` avec des versions de Windows inconnues supérieures à 10.0.22000 tel que 10.0.25398 renvoi "Windows 11 unknown" au lieu de "Windows 10 unknown" comme nom de version. (#15992, @josephsl)
+* Instancier les objets `winVersion.WinVersion` avec des versions de Windows inconnues supérieures à 10.0.22000 tel que 10.0.25398 renvoi "Windows 11 unknown" au lieu de "Windows 10 unknown" comme nom de version. (#15992, @josephsl)
 * Le processus de compilation AppVeyor est plus simple pour les forks de NVDA, grâce à l'ajout de variables configurables dans appveyor.yml pour désactiver ou modifier les portions des scripts de compilation propres à NV Access. (#16216, @XLTechie)
 * Ajout d'un document how-to, expliquant le processus de compilation pour les forks de NVDA avec AppVeyor. (#16293, @XLTechie)
 
