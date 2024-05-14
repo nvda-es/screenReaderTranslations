@@ -1462,7 +1462,7 @@ NVDA annonce le déplacement par caractère, mot ou ligne, et annonce aussi la s
 
 <h3 id="ObjectNavigation">Naviguer par Objet</h3>
 <p>La plupart du temps, vous travaillerez avec les applications en utilisant des commandes qui déplacent le <a href="#SystemFocus" title="focus">focus</a> et le <a href="#SystemCaret" title="curseur">curseur</a>.
-Cependant, vous pouvez parfois avoir besoin d'explorer l'application en cours ou le système sans déplacer le <a href="#SystemFocus" title="focus">focus</a>.
+Cependant, vous pouvez parfois avoir besoin d'explorer l'application en cours ou le système sans déplacer le focus ou le curseur.
 Vous pouvez aussi avoir besoin d'accéder à des <a href="#Objects" title="objets">objets</a> inaccessibles par les commandes clavier habituelles.
 Dans ces cas, vous pouvez utiliser la navigation par objet.</p>
 <p>La navigation par objet vous permet de vous déplacer parmi les différents <a href="#Objects" title="objets">objets</a> et d'obtenir des informations à leur sujet.
@@ -1843,7 +1843,7 @@ En se déplaçant sur l'écran avec le curseur de revue, le navigateur d'objet e
 <h3 id="NavigatingWithTheMouse">Naviguer avec la Souris</h3>
 <p>Lorsqu'on déplace la souris, NVDA annonce par défaut le texte se trouvant directement sous le pointeur de la souris.
 Quand c'est possible, NVDA lira un paragraphe, cependant certains contrôles ne peuvent être lus que par ligne.</p>
-<p>NVDA peut également être configuré de manière à annoncer aussi le type de contrôle ou l'objet sur lequel se trouve la souris (ex&nbsp;: liste, bouton etc.).
+<p>NVDA peut être configuré pour annoncer également le type d'<a href="#Objects" title="objet">objet</a> sous la souris lors de son déplacement (par exemple liste, bouton, etc.).
 Cela peut être utile pour les personnes complètement aveugles car le texte n'est pas toujours suffisant.</p>
 <p>NVDA offre à l'utilisateur un moyen d'évaluer la position de la souris sur l'écran en émettant des bips audio représentant les coordonnées de la souris.
 Plus la souris est haut sur l'écran, plus les bips sont aigus.
@@ -2684,7 +2684,7 @@ Cela signifie que, pour taper alt+2 avec un code braille qui utilise un signe di
 <p>Bien que NVDA soit en premier lieu destiné à des personnes aveugles ou malvoyantes qui utilisent principalement la parole ou le braille pour accéder à un ordinateur, il offre aussi des facilités internes pour changer le contenu de l'écran.
 Sous NVDA, une telle aide visuelle est appelée un service d'amélioration visuelle.</p>
 <p>NVDA offre plusieurs services d'amélioration visuelle décrits ci-dessous.
-Des services d'amélioration visuelle additionnels peuvent être apportés dans des <a href="NVDA#AddonsManager" title="Extensions">Extensions</a>.</p>
+Des services d'amélioration visuelle additionnels peuvent être apportés dans des <a href="#AddonsManager" title="Extensions NVDA">Extensions NVDA</a>.</p>
 <p>Les paramètres de vision de NVDA peuvent être modifiés dans la <a href="#VisionSettings" title="catégorie vision">catégorie vision</a> du dialogue <a href="#NVDASettings" title="Paramètres NVDA">Paramètres NVDA</a>.</p>
 <h3 id="VisionFocusHighlight">Mise en Évidence Visuelle</h3>
 <p>La mise en évidence Visuelle peut aider à identifier la position du <a href="#SystemFocus" title="focus système">focus système</a>, de <a href="#ObjectNavigation" title="l'objet navigateur">l'objet navigateur</a> et du <a href="#BrowseMode" title="mode navigation">mode navigation</a>.
@@ -3922,14 +3922,14 @@ Cette option est activée par défaut.</p>
 <p>Cette case à cocher active ou désactive la lecture automatique des pages après leur chargement en mode navigation.
 Cette option est activée par défaut.</p>
 <h5 id="BrowseModeSettingsIncludeLayoutTables">Annoncer les tables de disposition</h5>
-<p>Cette option définit ce que NVDA doit faire des tableaux qui ne servent qu'à la présentation.
-Si désactivée, NVDA ne rapporte que les tableaux contenant des données tabulaires (quand il tombe sous le sens qu'il s'agit d'un tableau).
-Les autres tableaux sont affichés sous forme de texte normal.
-Si activée, NVDA annonce vraiment tous les tableaux, y compris ceux servant uniquement à la présentation.
+<p>Cette option affecte la façon dont NVDA gère les tableaux utilisées uniquement à des fins de mise en page.
+Lorsqu'elle est activée, NVDA les traitera comme des tableaux normaux en les annonçant en fonction des <a href="#DocumentFormattingSettings" title="Paramètres de Mise en forme des documents">Paramètres de Mise en forme des documents</a> et en les localisant par les commandes de navigation rapides.
+Lorsqu'elle est désactivée, ces tableaux ne seront ni annoncés ni trouvés par la navigation rapide.
+Cependant, le contenu des tableaux sera toujours inclus sous forme de texte normal.
 Cette option est désactivée par défaut.</p>
 <p>Pour activer/désactiver l'inclusion des tables de disposition de n'importe où, veuillez assigner un geste personnalisé en utilisant <a href="#InputGestures" title="le dialogue Gestes de commandes">le dialogue Gestes de commandes</a>.</p>
 <h5 id="BrowseModeLinksAndHeadings">Configurer l'annonce de champs tels que liens et titres</h5>
-<p>Veuillez consulter les options dans <a href="#DocumentFormattingSettings" title="Mise en forme des Documents">Mise en forme des Documents</a> du dialogue Paramètres pour configurer les champs qui sont annoncés durant la navigation tels que les liens, les titres et les tableaux.</p>
+<p>Veuillez consulter les options dans <a href="#DocumentFormattingSettings" title="Mise en forme des Documents">Mise en forme des Documents</a> du dialogue <a href="#NVDASettings" title="Paramètres de NVDA">Paramètres de NVDA</a> pour configurer les champs qui sont annoncés durant la navigation tels que les liens, les titres et les tableaux.</p>
 <h5 id="BrowseModeSettingsAutoPassThroughOnFocusChange">Mode formulaire automatique au changement de focus</h5>
 <p>Cette option permet au mode formulaire d'être invoqué au changement de focus.
 Par exemple, dans une page web, si vous tabulez et arrivez sur un formulaire&nbsp;: si cette option est cochée, le mode formulaire sera automatiquement activé.</p>
@@ -4381,7 +4381,7 @@ Pour un tutoriel d'introduction, veuillez consulter le <a href="https://docs.pyt
 <h4 id="SymbolPronunciation">Prononciation des ponctuations et symboles</h4>
 <p>Ce dialogue vous permet de modifier la façon dont les ponctuations et autres symboles sont prononcés ainsi que le niveau de symbole auquel ils sont annoncés.</p>
 <p>La langue pour laquelle la prononciation des symboles est en cours d'édition sera indiquée dans le titre du dialogue.
-Notez que ce dialogue tient compte de l'option "Se baser sur la langue de la voix pour le traitement des caractères et symboles" qui se trouve dans la catégorie <a href="#SpeechSettings" title="Parole">Parole</a> du dialogue Paramètres. Il utilise la langue de la voix plutôt que les paramètres vocaux globaux de NVDA quand cette option est activée.</p>
+Notez que ce dialogue tient compte de l'option "Se baser sur la langue de la voix pour le traitement des caractères et symboles" qui se trouve dans la catégorie <a href="#SpeechSettings" title="Parole">Parole</a> du dialogue <a href="#NVDASettings" title="Paramètres de NVDA">Paramètres de NVDA</a>. Il utilise la langue de la voix plutôt que le paramètre global langue de NVDA quand cette option est activée.</p>
 <p>Pour modifier un symbole, sélectionnez-le d'abord dans la liste de symboles.
 Vous pouvez filtrer les symboles en entrant le symbole ou une partie du remplacement du symbole dans le champ d'édition Filtrer par.</p>
 <ul>
@@ -4433,7 +4433,7 @@ Après ça, la touche sera disponible dans la catégorie Touche émulées du cla
 <li>Les touches émulées doivent avoir un geste assigné pour persister lors de la sauvegarde ou de la fermeture du dialogue.</li>
 <li>Un geste de commande avec modificateur peut ne pas pouvoir êttre assigné à un geste émulé sans modificateur
 Par exemple, définir le 'a' comme touche émulée et configurer un geste de commande 'ctrl+m', peut avoir comme résultat
-que l'application reçoit 'ctrl+a'.</li>
+que l'application reçoit <code>ctrl+a</code>.</li>
 </ul>
 <p>Lorsque vous avez terminé vos modifications, appuyez sur le bouton "OK" pour les sauvegarder ou sur le bouton "Annuler" pour les ignorer.</p>
 <h3 id="SavingAndReloading">Sauvegarder et recharger la configuration</h3>
@@ -8137,7 +8137,7 @@ L'espoir est que tous les futurs modèles d'afficheurs Braille créés par n'imp
 NVDA permet l'installation d'extensions personnalisées, qui peuvent exécuter du code arbitraire, y compris lorsque NVDA est élevé aux privilèges d'administrateur.
 NVDA permet également aux utilisateurs d'exécuter du code arbitraire via la console NVDA Python.
 Le mode sécurisé de NVDA empêche les utilisateurs de modifier leur configuration NVDA et limite par ailleurs l'accès non autorisé au système.</p>
-<p>NVDA s'exécute en mode sécurisé lorsqu'il est exécuté sur les <a href="#SecureScreens" title="écrans sécurisés">écrans sécurisés</a>, à moins que le <a href="#SystemWideParameters" title="paramètre à l'échelle du système">paramètre à l'échelle du système</a> <code>serviceDebug</code> soit activé.
+<p>NVDA s'exécute en mode sécurisé lorsqu'il est exécuté sur les <a href="#SecureScreens" title="écrans sécurisés">écrans sécurisés</a> à moins que le <a href="#SystemWideParameters" title="paramètre à l'échelle du système">paramètre à l'échelle du système</a> <code>serviceDebug</code> soit activé.
 Pour forcer NVDA à toujours démarrer en mode sécurisé, définissez le <a href="#SystemWideParameters" title="paramètre système">paramètre système</a> <code>forceSecureMode</code>.
 NVDA peut également être démarré en mode sécurisé avec  <a href="#CommandLineOptions" title="l'option de ligne de commande">l'option de ligne de commande</a> <code>-s</code>.</p>
 <p>Le mode sécurisé désactive&nbsp;:</p>
@@ -8163,7 +8163,7 @@ Il est attendu que les administrateurs système empêchent l'exécution de logic
 Cela peut inclure l'installation et la configuration d'extensions personnalisées, qui doivent être approuvés indépendamment de NVDA.
 Le mode sécurisé gèle les modifications apportées à la configuration de NVDA, veuillez donc vous assurer que NVDA est correctement configuré avant de forcer le mode sécurisé.</p>
 <h3 id="SecureScreens">Écrans Sécurisés</h3>
-<p>NVDA s'exécute en mode sécurisé lorsqu'il est exécuté sur les <a href="#SecureScreens" title="écrans sécurisés">écrans sécurisés</a>, à moins que le <a href="#SystemWideParameters" title="paramètre à l'échelle du système">paramètre à l'échelle du système</a> <code>serviceDebug</code> soit activé.</p>
+<p>NVDA s'exécute en <a href="#SecureMode" title="mode sécurisé">mode sécurisé</a> lorsqu'il est exécuté sur les écrans sécurisés à moins que le <a href="#SystemWideParameters" title="paramètre à l'échelle du système">paramètre à l'échelle du système</a> <code>serviceDebug</code> soit activé.</p>
 <p>Lorsqu'il s'exécute sur un écran sécurisé, NVDA utilise un profil système pour les préférences.
 Les préférences utilisateur de NVDA peuvent être copiées <a href="#GeneralSettingsCopySettings" title="pour une utilisation dans les écrans sécurisés">pour une utilisation dans les écrans sécurisés</a>.</p>
 <p>Les écrans sécurisés incluent&nbsp;:</p>
@@ -8291,7 +8291,7 @@ Ces paramètres doivent être placés après l'option, séparés de l'option par
 <tr>
 <td>Aucune</td>
 <td><code>--no-logging</code></td>
-<td>Désactive complètement la journalisation durant l'utilisation de NVDA. Ce paramètre peut être ignoré si un niveau de journalisation ( --loglevel, -l) est spécifié dans la ligne de commande ou si la journalisation de débogage est activée.</td>
+<td>Désactive complètement la journalisation durant l'utilisation de NVDA. Ce paramètre peut être ignoré si un niveau de journalisation (<code>--loglevel</code>, <code>-l</code>) est spécifié dans la ligne de commande ou si la journalisation de débogage est activée.</td>
 </tr>
 <tr>
 <td>Aucune</td>
