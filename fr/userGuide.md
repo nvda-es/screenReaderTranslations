@@ -193,7 +193,7 @@ Toutes les commandes sont configurables, ce sont donc les frappes par défaut po
 
 #### La Touche de Modification NVDA {#NVDAModifierKey}
 
-La touche de modification NVDA par défaut est soit `pavnumZéro`, (avec `verrouillage numérique` désactivé), soit la touche `insert`, près des touches `effacement`, `début` et ``fin ``.
+La touche de modification NVDA par défaut est soit `pavnumZéro`, (avec `verrouillage numérique` désactivé), soit la touche `insert`, près des touches `effacement`, `début` et `fin`.
 La touche de modification NVDA peut également être définie sur la touche `verrouillage majuscule`.
 
 #### Aide à la Saisie {#InputHelp}
@@ -976,7 +976,7 @@ Par exemple, si vous souhaitez utiliser les touches `y` / `maj+y` pour naviguer 
 
 1. Ouvrez la boîte de dialogue des gestes de commandes à partir du mode navigation.
 1. Recherchez l'élément "Aller à l'onglet suivant" dans la section Mode navigation.
-1. Attribuez la touche `` y`` pour le geste trouvé.
+1. Attribuez la touche `y` pour le geste trouvé.
 1. Recherchez l'élément "Aller à l'onglet précédent".
 1. Attribuez `maj+y` pour le geste trouvé.
 
@@ -1520,8 +1520,8 @@ NVDA offre un support amélioré pour Poedit 3.4 ou plus récent.
 |---|---|---|
 |Annonce des notes pour les traducteurs |`contrôle+maj+a` |Annonce les notes pour les traducteurs. Deux appuis présente les notes en mode navigation|
 |Annonce de la fenêtre de commentaires |`contrôle+maj+c` |Annonce tout commentaire dans la fenêtre de commentaires. Deux appuis présente le commentaire en mode navigation|
-|Annonce de l'ancien texte source |`contrôle+shift+o` |Annonce l'ancien texte source s'il y en a un. Deux appuis présente le texte en mode navigation|
-|Annonce l'avertissement de traduction |`contrôle+shift+w` |Annonce l'avertissement de traduction, s'il y en a un. Deux appuis présente l'avertissement en mode navigation|
+|Annonce de l'ancien texte source |`contrôle+maj+o` |Annonce l'ancien texte source s'il y en a un. Deux appuis présente le texte en mode navigation|
+|Annonce l'avertissement de traduction |`contrôle+maj+w` |Annonce l'avertissement de traduction, s'il y en a un. Deux appuis présente l'avertissement en mode navigation|
 
 <!-- KC:endInclude -->
 
@@ -3139,7 +3139,7 @@ Note :
 
 * Les touches émulées doivent avoir un geste assigné pour persister lors de la sauvegarde ou de la fermeture du dialogue.
 * Un geste de commande avec modificateur peut ne pas pouvoir êttre assigné à un geste émulé sans modificateur
-Par exemple, définir le 'a' comme touche émulée et configurer un geste de commande 'ctrl+m', peut avoir comme résultat
+Par exemple, définir le `a` comme touche émulée et configurer un geste de commande `ctrl+m`, peut avoir comme résultat
 que l'application reçoit `ctrl+a`.
 
 Lorsque vous avez terminé vos modifications, appuyez sur le bouton "OK" pour les sauvegarder ou sur le bouton "Annuler" pour les ignorer.
