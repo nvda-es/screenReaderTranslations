@@ -2741,6 +2741,152 @@ However, in terminals, when inserting or deleting a character in the middle of a
 Обычно, эту конфигурацию не следует трогать.
 Для изменения настроек, используемых на экране входа в Windows или на экранах контроля учётных записей (UAC), сконфигурируйте NVDA, как вы пожелаете, затем сохраните конфигурацию и нажмите кнопку «Использовать последнюю сохранённую конфигурацию на экране входа в систему и на других защищённых экранах» в категории Общие [диалога настроек NVDA](#NVDASettings).
 
+## Дополнения и магазин дополнений {#AddonsManager}
+
+Дополнения — это програмные пакеты, которые предоставляют новые или измененные функции NVDA.
+Они разрабатываются сообществом NVDA и внешними организациями, такими как коммерческие поставщики.
+Дополнения могут выполнять любое из следующих действий:
+
+* Добавлять или улучшать поддержку определенных приложений.
+* Обеспечивать поддержку дополнительных брайлевских дисплеев или речевых синтезаторов.
+* Добавлять или изменять возможности в NVDA.
+
+Магазин дополнений NVDA позволяет вам просматривать пакеты дополнений и управлять ими.
+Все дополнения, доступные в Магазине дополнений, можно скачать бесплатно.
+Однако некоторые из них могут потребовать от пользователей оплаты лицензии или дополнительного программного обеспечения, прежде чем их можно будет использовать.
+Коммерческие синтезаторы речи являются примером дополнений такого типа.
+Если вы установите дополнение с платными компонентами и передумаете его использовать, дополнение можно легко удалить.
+
+Доступ к магазину дополнений осуществляется из подменю Сервис меню NVDA.
+Чтобы быстро открывать магазин дополнений в любом месте, назначьте пользовательский жест на это действие, используя [диалог жестов ввода](#InputGestures).
+
+### Просмотр дополнений {#AddonStoreBrowsing}
+
+При открытии магазина дополнений отображается список дополнений.
+Если вы ранее не устанавливали ни каких дополнений, в магазине дополнений откроется список доступных дополнений.
+Если вы установили дополнения, в списке будут отображены установленные в данный момент дополнения.
+
+Selecting an add-on, by moving to it with the up and down arrow keys, will display the details for the add-on.
+Add-ons have associated actions that you can access through an [actions menu](#AddonStoreActions), such as install, help, disable, and remove.
+Available actions will change based on whether the add-on is installed or not, and whether it is enabled or disabled.
+
+#### Списки дополнений {#AddonStoreFilterStatus}
+
+There are different views for installed, updatable, available and incompatible add-ons.
+To change the view of add-ons, change the active tab of the add-ons list using `ctrl+tab`.
+You can also `tab` to the list of views, and move through them with the `leftArrow` and `rightArrow` keys.
+
+#### Фильтрация включенных или отключенных дополнений {#AddonStoreFilterEnabled}
+
+Normally, an installed add-on is "enabled", meaning that it is running and available within NVDA.
+However, some of your installed add-ons may be set to the "disabled" state.
+This means that they will not be used, and their functions won't be available during your current NVDA session.
+You may have disabled an add-on because it conflicted with another add-on, or with a certain application.
+NVDA may also disable certain add-ons, if they are found to be incompatible during an NVDA upgrade; though you will be warned if this is going to happen.
+Add-ons can also be disabled if you simply don't need them for a prolonged period, but don't want to uninstall them because you expect to want them again in the future.
+
+The lists of installed and incompatible add-ons can be filtered by their enabled or disabled state.
+The default shows both enabled and disabled add-ons.
+
+#### Include incompatible add-ons {#AddonStoreFilterIncompatible}
+
+Available and updatable add-ons can be filtered to include [incompatible add-ons](#incompatibleAddonsManager) that are available to install.
+
+#### Фильтрация дополнений по каналу {#AddonStoreFilterChannel}
+
+Add-ons can be distributed through up to four channels:
+
+* Stable: The developer has released this as a tested add-on with a released version of NVDA.
+* Beta: This add-on may need further testing, but is released for user feedback.
+Suggested for early adopters.
+* Dev: This channel is suggested to be used by add-on developers to test unreleased API changes.
+NVDA alpha testers may need to use a "Dev" version of their add-ons.
+* External: Add-ons installed from external sources, outside of the Add-on Store.
+
+To list add-ons only for specific channels, change the "Channel" filter selection.
+
+#### Ищем дополнения {#AddonStoreFilterSearch}
+
+To search add-ons, use the "Search" text box.
+You can reach it by pressing `shift+tab` from the list of add-ons.
+Type a keyword or two for the kind of add-on you're looking for, then `tab` to the list of add-ons.
+Add-ons will be listed if the search text can be found in the add-on ID, display name, publisher, author or description.
+
+### Действия с дополнениями {#AddonStoreActions}
+
+Add-ons have associated actions, such as install, help, disable, and remove.
+For an add-on in the add-on list, these actions can be accessed through a menu opened by pressing the `applications` key, `enter`, right clicking or double clicking the add-on.
+This menu can also be accessed through an Actions button in the selected add-on's details.
+
+#### Установка дополнений {#AddonStoreInstalling}
+
+Just because an add-on is available in the NVDA Add-on Store, does not mean that it has been approved or vetted by NV Access or anyone else.
+It is very important to only install add-ons from sources you trust.
+The functionality of add-ons is unrestricted inside NVDA.
+This could include accessing your personal data or even the entire system.
+
+You can install and update add-ons by [browsing Available add-ons](#AddonStoreBrowsing).
+Select an add-on from the "Available add-ons" or "Updatable add-ons" tab.
+Then use the update, install, or replace action to start the installation.
+
+You can also install multiple add-ons at once.
+This can be done by selecting multiple add-ons in the available add-ons tab, then activating the context menu on the selection and choosing the "Install selected add-ons" action.
+
+To install an add-on you have obtained outside of the Add-on Store, press the "Install from external source" button.
+This will allow you to browse for an add-on package (`.nvda-addon` file) somewhere on your computer or on a network.
+Once you open the add-on package, the installation process will begin.
+
+If NVDA is installed and running on your system, you can also open an add-on file directly from the browser or file system to begin the installation process.
+
+When an add-on is being installed from an external source, NVDA will ask you to confirm the installation.
+Once the add-on is installed, NVDA must be restarted for the add-on to start running, although you may postpone restarting NVDA if you have other add-ons to install or update.
+
+#### Удаление дополнений {#AddonStoreRemoving}
+
+Для удаления дополнения, выберите его из списка и выполните действие Удалить.
+NVDA попросит вас подтвердить удаление.
+Как и при установке, для полного удаления дополнения необходимо перезапустить NVDA.
+Пока вы этого не сделаете, для этого дополнения в списке будет отображаться состояние "Ожидает удаления".
+Как и при установке, вы также можете удалить сразу несколько дополнений.
+
+#### Выключение и включение дополнений {#AddonStoreDisablingEnabling}
+
+Чтобы отключить дополнение, воспользуйтесь действием "отключить".
+Чтобы включить ранее отключенное дополнение, воспользуйтесь действием "включить".
+Вы можете отключить дополнение, если его состояние указывает на то, что оно "включено", или включить его, если дополнение "отключено".
+При каждом использовании действия включения/выключения состояние дополнения меняется, указывая, что оно произойдет при перезапуске NVDA.
+Если ранее дополнение было "отключено", то после переключения действия состояние будет отображаться "включено, ожидает перезагрузки".
+Если ранее дополнение было "включено", то после переключения действия состояние будет отображаться "отключеноключено, ожидает перезагрузки".
+Как и при установке или удалении дополнений, вам необходимо перезапустить NVDA, чтобы изменения вступили в силу.
+Вы также можете включить или отключить несколько дополнений одновременно, выбрав несколько дополнений на вкладке доступных дополнений, затем активировав контекстное меню выделенного и нажав соответствующее действие.
+
+#### Обзор дополнений и чтение отзывов {#AddonStoreReviews}
+
+Возможно, вам захочется прочитать отзывы других пользователей, которые пользовались дополнением, например, перед его установкой или в процессе обучения его использованию.
+Кроме того, другим пользователям будет полезно оставить отзыв о дополнениях, которые вы пробовали.
+Чтобы прочитать отзывы о дополнении, выберите его и воспользуйтесь действием «Отзывы сообщества».
+Это ссылка на веб-страницу обсуждения в  GitHub, где вы сможете читать и писать отзывы о дополнении.
+Имейте в виду, что это не заменяет прямое общение с разработчиками дополнений.
+Цель этой функции — поделиться отзывами, чтобы помочь пользователям решить, может ли дополнение быть для них полезным.
+
+### Несовместимые Дополнения {#incompatibleAddonsManager}
+
+Некоторые старые дополнения могут быть несовместимы с вашей версией NVDA.
+Если вы используете более старую версию NVDA, некоторые новые дополнения также могут быть несовместимы.
+Попытка установить несовместимое дополнение приведет к ошибке, объясняющей, почему дополнение считается несовместимым.
+
+Для более старых дополнений вы можете устранить несовместимость на свой страх и риск.
+Несовместимые дополнения могут не работать с вашей версией NVDA и вызывать нестабильное или неожиданное поведение, включая сбои.
+Вы можете переопределить совместимость при включении или установке дополнения.
+Если несовместимое дополнение впоследствии вызовет проблемы, вы можете отключить или удалить его.
+
+Если у вас возникли проблемы с запуском NVDA и вы недавно обновили или установили дополнение, особенно если оно несовместима, вы можете попробовать временно запустить NVDA со всеми отключенными дополнениями.
+Чтобы перезапустить NVDA со всеми отключенными дополнениями, выберите соответствующий вариант при выходе из NVDA.
+Как альтернативу используйте [ключ командной строки](#CommandLineOptions) `--disable-addons`.
+
+Вы можете просмотреть доступные несовместимые дополнения, используя [вкладки доступных и обновлённых дополнений](#AddonStoreFilterStatus).
+Вы можете просмотреть установленные несовместимые дополнения, используя [вкладку установленных несовместимых дополнений](#AddonStoreFilterStatus).
+
 ## Сервис {#ExtraTools}
 ### Просмотрщик журнала NVDA {#LogViewer}
 
@@ -2795,66 +2941,6 @@ However, in terminals, when inserting or deleting a character in the middle of a
 
 Python консоль NVDA, которая может быть вызвана из подменю «Сервис» главного меню NVDA, это инструмент разработки, предназначенный для отладки, взаимодействия с внутренностями NVDA, или изучения иерархии доступности в том или ином приложении.
 Для получения более подробной информации, пожалуйста, обратитесь к [руководству разработчика NVDA](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html).
-
-### Менеджер дополнений {#AddonsManager}
-
-Менеджер дополнений, открываемый из меню NVDA → Сервис → Менеджер дополнений, позволяет вам устанавливать, удалять, включать и отключать различные пакеты дополнений для NVDA.
-Эти пакеты предоставляются сообществом и содержат пользовательский код, способный добавлять или изменять функциональность NVDA, и даже обеспечивать поддержку сторонних брайлевских дисплеев и синтезаторов речи.
-
-Менеджер дополнений содержит список, в котором отображаются все дополнения, установленные в настоящее время в вашей пользовательской конфигурации NVDA.
-Для каждого дополнения указано название пакета, состояние, версия и имя автора. Более полную информацию, такую как описание и URL можно получить, выбрав из списка желаемое дополнение и нажав кнопку «О дополнении».
-Если для выбранного дополнения имеется справочная документация, то получить её можно нажатием кнопки «Справка по дополнению».
-
-Для просмотра и загрузки доступных дополнений из сети интернет, нажмите кнопку «Получить больше дополнений».
-Этой кнопкой вы откроете [web-сайт дополнений сообщества NVDA](https://addons.nvda-project.org/).
-Если NVDA установлена и запущена на вашем компьютере, то вы можете открыть дополнение прямо из браузера, чтобы сразу начать процесс установки, как это описано ниже.
-В противном случае, сохраните пакет дополнения у себя на компьютере и следуйте дальнейшим инструкциям.
-
-Для установки ранее полученного дополнения нажмите кнопку «Установить».
-Это позволит вам найти и выбрать пакет дополнения (файл с расширением .nvda-addon) на вашем компьютере или из сети.
-Как только вы нажмёте кнопку «Открыть», начнётся процесс установки.
-
-Сначала NVDA попросит подтвердить, что вы действительно хотите установить это дополнение.
-Поскольку возможности дополнений не ограничиваются рамками программы NVDA, и теоретически могут включать в себя доступ к вашим личным данным или даже ко всей системе, если используется установленная копия NVDA, то очень важно устанавливать дополнения только из источников, которым вы доверяете.
-После того как дополнение будет установлено, для того чтобы оно начало работать, NVDA должна быть перезагружена.
-Пока вы этого не сделаете, в списке дополнений для него будет отображаться состояние «будет установлено».
-
-Чтобы удалить желаемое дополнение, выберите его из списка и нажмите кнопку «Удалить».
-NVDA спросит, действительно ли вы хотите удалить выбранное дополнение.
-Как и при установке, для полного удаления дополнения NVDA должна быть перезагружена.
-Пока вы этого не сделаете, в списке дополнений для него будет отображаться состояние «будет удалено».
-
-Для отключения выбранного дополнения, нажмите кнопку «Отключить».
-Чтобы включить ранее отключенное дополнение, нажмите кнопку «Включить».
-Вы можете отключить дополнение, если состояние указывает, что оно включено, или включить его, если дополнение отключено.
-После каждого нажатия на кнопки Включить/Отключить, состояние дополнения изменяется, указывая, что произойдёт с ним после перезагрузки NVDA.
-Если дополнение было отключено, то после его включения, состояние изменится на «будет включено после перезагрузки».
-Если дополнение было включено, то после его отключения, состояние изменится на «будет отключено после перезагрузки».
-Так же как при установке или удалении дополнений, для вступления в силу сделанных изменений требуется перезагрузка NVDA.
-
-Менеджер дополнений также имеет кнопку «Закрыть», предназначенную для закрытия его диалогового окна.
-Если вы установили, удалили или изменили состояние дополнения, то перед закрытием окна менеджера, NVDA спросит вас, хотите ли вы перезагрузить программу, для того, чтобы сделанные изменения вступили в силу.
-
-Некоторые старые дополнения могут быть несовместимы с используемой вами версией NVDA.
-Так же как и при использовании старой версии NVDA, некоторые новые дополнения могут быть с ней несовместимы.
-Попытка установки несовместимого дополнения приведёт к ошибке, объясняющей, почему дополнение считается несовместимым.
-Для просмотра списка несовместимых дополнений, в окне менеджера дополнений нажмите кнопку «Просмотреть несовместимые дополнения».
-
-Чтобы быстро открывать менеджер дополнений в любом месте, пожалуйста, назначьте пользовательский жест на это действие, используя диалог [Жесты ввода](#InputGestures).
-
-#### Менеджер несовместимых дополнений {#incompatibleAddonsManager}
-
-Менеджер несовместимых дополнений, открываемый кнопкой «Просмотреть несовместимые дополнения» в менеджере дополнений, позволяет просмотреть все установленные несовместимые дополнения и узнать причины их несовместимости.
-Дополнения считаются несовместимыми, если они не были обновлены для работы с новыми версиями NVDA, или когда они полагаются на функции более не доступные в используемой версии программы.
-Окно менеджера содержит краткое сообщение о том, с какой версией NVDA несовместимы имеющиеся дополнения.
-Несовместимые дополнения представлены в списке со следующими столбцами:
-
-1. Пакет: Название дополнения
-1. Версия: Версия дополнения
-1. Причина несовместимости: Объяснение того, почему дополнение является несовместимым
-
-В окне менеджера несовместимых дополнений также имеется кнопка «О дополнении».
-Нажатие этой кнопки позволит вам узнать полную информацию о дополнении, что может быть полезно при обращении за помощью к его разработчику.
 
 ### Создание переносной копии {#CreatePortableCopy}
 
