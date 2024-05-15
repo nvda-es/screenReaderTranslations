@@ -709,8 +709,7 @@ Da biste se kretali po objektima, koristite sljedeće prečace:
 |Premesti se na prethodni objekat u ravnom prikazu |NVDA+numeričko9 |NVDA+šift+[ |prevlačenje levo (režim objekata) |Premešta se na prethodni objekat u ravnom prikazu hierarhije navigacije objekata|
 |Premesti se na sledeći objekat |NVDA+numeričko6 |NVDA+šift+strelica desno |nema |premešta se na objekat posle trenutnog navigacionog objekta|
 |Premesti se na sledeći objekat u ravnom prikazu |NVDA+numeričko3 |NVDA+šift+] |prevlačenje desno (režim objekata) |Premešta se na sledeći objekat u ravnom prikazu hierarhije navigacije objekata|
-| Premjesti se na sljedeći sadržavajući objekt |NVDA+num2 |NVDA+šift+strelicaDolje |klizni dolje (objektni modus) |Premješta se na prvi objekt sadržan u navigacijskom objektu|
-|---|---|---|---|---|
+|Premjesti se na sljedeći sadržavajući objekt |NVDA+num2 |NVDA+šift+strelicaDolje |klizni dolje (objektni modus) |Premješta se na prvi objekt sadržan u navigacijskom objektu|
 |Premjesti se na objekt fokusa |NVDA+numMinus |NVDA+backspace |nema |Premješta se na objekt koji je trenutačno u fokusu sustava te premješta kursor pregleda na poziciju kursora sustava, ako se prikazuje|
 |Aktiviraj trenutačni navigacijski objekt |NVDA+numEnter |NVDA+enter |dvostruki dodir |Aktivira trenutačni navigacijski objekt (slično pritiskanjem miša ili razmaknice kad postoji fokus sustava)|
 |Premjesti fokus sustava ili kursor na trenutačnu poziciju |NVDA+šift+numMinus |NVDA+šift+backspace |nema |Kad se pritisne jedanput, premješta fokus sustava na trenutačni navigacijski objekt. Kad se pritisne dvaput, premješta kursor sustava na trenutačnu poziciju preglednog kursora|
