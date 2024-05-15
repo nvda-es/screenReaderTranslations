@@ -4801,7 +4801,7 @@ Slijede dodjeljeni prečaci za te brajične retke.
 |---|---|
 |premještanje brajičnog retka u natrag |pan left ili rocker up|
 |Premještanje brajičnog redka u naprijed |pan right ili rocker down|
-|premjesti se na brajičnu ćeliju |routing set 1||
+|premjesti se na brajičnu ćeliju |routing set 1|
 |prebacuje prikazivanje fokusa |up+down|
 |Strelica gore |joystick up, dpad up ili razmaknica+točkica1|
 |strelica dolje |joystick down, dpad down ili razmaknica+točkica4|
@@ -4876,7 +4876,7 @@ Tijekom pokretanja, NVDA može prihvatiti jednu ili više opcija, čime se mijen
 Možete proslijediti onoliko opcija koliko trebate.
 Ove se opcije mogu proslijediti kad se NVDA pokreće putem prečaca na radnoj površini (u postavkama prečaca), iz dijaloškog okvira "Pokreni" (izbornik Start>Pokreni ili prečac Windows+r) ili iz Windowsovog naredbenog retka.
 Opcije moraju biti odvojene od imena NVDA izvršne datoteke i od drugih opcija razmacima.
-Na primjer, korisna opcija je --disable-addons, koja govori NVDA čitaču da se pokrene bez dodataka.
+Na primjer, korisna opcija je `--disable-addons`, koja govori NVDA čitaču da se pokrene bez dodataka.
 Ovo vam pomaže otkriti je li problem nastao zbog dodatka i omogućuje oporavljanje od ozbiljnih problema koje dodaci mogu prouzročiti.
 
 Na primjer, iz trenutačno pokrenute kopije NVDA čitača možete izaći upisom sljedeće opcije u dijaloški okvir "Pokreni":
@@ -4889,11 +4889,12 @@ Za opcije koje imaju kratku verziju, možete ih kombinirati na sljedeće načine
 | . {.hideHeaderRow} |.|
 |---|---|
 |`nvda -mc CONFIGPATH` |Ovo će pokrenuti NVDA sa zvukom za pokretanje i isključenim porukama, i sa određenom konfiguracijom|
-|nvda -mc CONFIGPATH --disable-addons |Ista opcija kao i prethodna, ali s deaktiviranim dodacima|
+|`nvda -mc CONFIGPATH --disable-addons` |Ista opcija kao i prethodna, ali s deaktiviranim dodacima|
 
 Neke opcije naredbenog retka prihvaćaju dodatne parametre; npr. koliko će zapisivanje u zapisnik biti detaljno ili staza do korisničke konfiguracijske mape.
-Ovi parametri trebaju biti smješteni poslije opcije, odvojene razmakom ako se koristi kratka verzija ili znakom jednakosti (=) kad se koristi duga verzija; npr:
-+|| . {.hideHeaderRow} | . |
+Ovi parametri trebaju biti smješteni poslije opcije, odvojene razmakom ako se koristi kratka verzija ili znakom jednakosti `(=)` kad se koristi duga verzija; npr:
+
+|| . {.hideHeaderRow} | . |
 
 |nvda -l 10 |proslijeđuje NVDA informaciju da se mora pokrenuti s razinom loga postavljenom kao debug|
 |nvda --log-file=c:\nvda.log |određuje put do NVDA datoteke zapisnika na sljedeću vrijednost c:\nvda.log|
