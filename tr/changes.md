@@ -10,7 +10,7 @@ Sentezleyici ayar zincirini değiştirmeye yarayan kısayollar eklendi. Bu kısa
 Yeni hızlı dolaşım komutları da eklendi. Bu sayede şunlar arasında dolaşmak için kısayollar atanabiliyor: Paragraf, dik hizalanmış paragraf, aynı biçimde metin, farklı biçimde metin, menü öğesi, geçiş düğmesi, aşama çubuğu, figür ve matematik formülü.
 
 Braille ile ilgili birçok özellik eklendi ve hata düzeltmesi yapıldı.
-"Konuşmayı görüntüleme" braille kipi eklendi.
+"Konuşmayı görüntüle" braille kipi eklendi.
 Etkinleştirildiğinde braille ekran tam olarak NVDA'nın konuşacağı metni gösterir.
 BrailleEdgeS2, BrailleEdgeS3 braille ekranları için destek eklendi.
 LibLouis güncellendi, bu güncellemeyle detaylı (büyük harflerin belirtildiği) yeni Belarusça ve Ukraynaca braille tabloları eklendi. Bununla birlikte Laoca braille tablosu ve Yunanca metinlerin okunması için İspanyolca braille tablosu da eklendi.
