@@ -4894,7 +4894,7 @@ Za opcije koje imaju kratku verziju, možete ih kombinirati na sljedeće načine
 Neke opcije naredbenog retka prihvaćaju dodatne parametre; npr. koliko će zapisivanje u zapisnik biti detaljno ili staza do korisničke konfiguracijske mape.
 Ovi parametri trebaju biti smješteni poslije opcije, odvojene razmakom ako se koristi kratka verzija ili znakom jednakosti `(=)` kad se koristi duga verzija; npr:
 
-|| . {.hideHeaderRow} | . |
+| . {.hideHeaderRow} |.|
 
 |nvda -l 10 |proslijeđuje NVDA informaciju da se mora pokrenuti s razinom loga postavljenom kao debug|
 |nvda --log-file=c:\nvda.log |određuje put do NVDA datoteke zapisnika na sljedeću vrijednost c:\nvda.log|
