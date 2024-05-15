@@ -48,8 +48,6 @@ Thunderbird, Adobe Reader, web tarayıcıları, Nudi ve Geekbench gibi uygulamal
 * Ses ayırma: (#12985, @mltony)
   * Bu özellik, örneğin NVDA sesinin sol kanaldan gelirken diğer seslerin sağ kanaldan gelmesini sağlar.
   * `NVDA+alt+s` tuşlarıyla ayarlanabilir.
-  * Diğer uygulamaların ses seviyesi `NVDA+alt+sayfa yukarı` ve `NVDA+alt+sayfa aşağı` tuşlarıyla ayarlanabilir. (#16052, @mltony)
-  * Diğer uygulamaların sesi `NVDA+alt+sil` tuşu ile kapatılabilir. (#16052, @mltony)
 * Contenteditable HTML öğelerinde satır ve sütun başlıklarının seslendirilmesi desteklenmektedir. (#14113)
 * Belge formatları ayarlarına figürlerin ve alt yazıların seslendirilmesini devre dışı bırakma seçeneği eklendi. (#10826 ,#14349)
 * Windows 11'de, NVDA panoya telefon numaraları gibi bilgiler kopyalandığında sesli yazmadan ve en üstteki öneri dahil olmak üzere önerilen eylemlerden gelen uyarıları seslendirecek. Bu özellik Windows 11 2022 güncellemesi ve üzeri sürümler için geçerlidir. (#16009, @josephsl)
