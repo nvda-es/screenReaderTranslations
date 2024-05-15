@@ -4238,7 +4238,7 @@ Obje srednje tipke su mapirane na razmaknicu.
 |Tipka kontrol+escape |razmaknica s točkicama 1 2 3 4 5 6|
 |Tipka tabulator |razmaknica s točkicama 3 7|
 
-<!-- KC:endInclude  -->
+<!-- KC:endInclude -->
 
 ### Papenmeier Braille BRAILLEX stariji modeli {#PapenmeierOld}
 
