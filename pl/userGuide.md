@@ -545,7 +545,7 @@ Gdy menu się pojawy, możesz użyć strzałek do nawigacji po nim, i klawisza `
 |Zatrzymuje mowę |Ctrl |Ctrl |Stuknięcie dwoma palcami |Natychmiast przestaje czytać|
 |Pauza mowy |Shift |Shift |Brak |Natychmiast zatrzymuje mowę. Naciskając ponownie, będzie mówić od momentu, w którym zostało przerwane (jeśli wstrzymywanie jest obsługiwane przez syntezator)|
 |Menu NVDA |NVDA+n |NVDA+N |Podwójne stuknięcie dwoma palcami |Pojawia się menu NVDA, aby umożliwić dostęp do ustawień, narzędzi, pomocy itp.|
-|Przełączanie trybu pomocy |NVDA+1 |Brak |Naciśnięcie dowolnego klawisza w tym trybie zostanie odczytany klawisz i opis wszelkich poleceń NVDA z nim związanych|
+|Przełączanie trybu pomocy |NVDA+1 |NVDA+1|Brak |Naciśnięcie dowolnego klawisza w tym trybie zostanie odczytany klawisz i opis wszelkich poleceń NVDA z nim związanych|
 |Zakończ NVDA |NVDA+q |NVDA+q |Brak |Kończy działanie NVDA|
 |Przepuść następny klawisz |NVDA+F2 |NVDA+F2 |Brak |Jednorazowo przepuszcza następny naciśnięty klawisz wprost do systemu bez przetwarzania go w NVDA. Nawet jeżeli przepuszczony klawisz posiada w NVDA swoją funkcję, nie zostanie ona wykonana.|
 |Włącz/Wyłącz tryb uśpienia dla aktywnej aplikacji |NVDA+Shift+S |NVDA+Shift+Z |Brak |Ustawienie trybu uśpienia dla konkretnej aplikacji sprawia, że NVDA przestaje mówić w jej oknie, nie reaguje na wciskane skróty klawiszowe oraz przestaje wyświetlać tekst na monitorze brajlowskim. Może być to użyteczne w przypadku programów posiadających wbudowane funkcje odczytu interfejsu. Aby wyłączyć tryb uśpienia, w oknie takiej aplikacji należy wcisnąć skrót ponownie.|
@@ -624,7 +624,7 @@ Przydatne skróty klawiszowe do nawigacji za pomocą fokusa:
 
 <!-- KC:endInclude -->
 
-### Nawigacja kursorem systemowym {#toc57}
+### Nawigacja kursorem systemowym {#SystemCaret}
 
 Gdy [obiekt](#Objects), który umożliwia nawigację i/lub edycję tekstu, otrzymuje [fokus](#SystemFocus), możesz przemieszczać się po tekście, używając kursora systemowego, nazywanego także kursorem edycji.
 
