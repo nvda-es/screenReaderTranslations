@@ -4910,16 +4910,16 @@ Slijede opcije naredbenog retka za NVDA:
 |`-f LOGFILENAME` |`--log-file=LOGFILENAME` |datoteka u kojoj poruke zapisnika trebaju biti zapisane. Zapisivanje dnevnika je uvijek isključeno kada je sigurni način uključen.|
 |`-l LOGLEVEL` |`--log-level=LOGLEVEL` |Najniža razina zapisivanih poruka u zapisniku (debug 10, ulaz/izlaz 12, debug upozorenje 15, info 20, onemogućeno 100). Zapisivanje dnevnika je uvijek isključeno kada je sigurni način uključen.|
 |`-c CONFIGPATH` |`--config-path=CONFIGPATH` |određuje mapu u kojoj su pospremljene sve postavke Podrazumjevana vrijednost je prisilno ako je uključen sigurni način.|
-|Nema |--lang=LANGUAGE |Nadpisuje konfigurirani NVDA jezik. Postavljen na "korisnički zadan" za trenutnog korisnika podrazumjevano, "en" za engleski, itd.|
-|-m |--minimal |bez zvuka, bez sučelja, bez poruke dobrodošlice itd|
-|-s |--secure |sigurni modus: onemogućuje Python konzolu značajke profila poput stvaranja, brisanja, preimenovanja profila itd., provjeru nadogradnji, neke potvrdne okvire u dijaloškom okviru dobrodošlice i u kategoriji općenitih postavki (npr. koristi NVDA prilikom prijave, spremi konfiguraciju poslje izlaza itd.), kao i zapisnik dnevnika i funkcije zapisa  (koristi se često na sigurnim ekranima). Imajte na umu da se postavke neće odavde spremati u mapu konfiguracije sustava te isto tako neće se spremati definirani prečaci.|
-|nema |--disable-addons |dodaci neće imati utjecaja|
-|nema |--debug-logging |Omogućuje dijagnostiku samo pri trenutačno pokrenutoj kopiji. Ova postavka natpisuje bilo koju drugu razinu vođenja zapisnika ( --loglevel, -l) specificirani argument uključujući i opciju bez logiranja.|
-|nema |--no-logging |Potpuno isključuje vođenje zapisnika. OVa postavka može biti nadpisana ako razina loga ( --loglevel, -l) je specificiran iz naredbenog retka, ili je uključeno vođenje zapisnika.|
-|nema |--no-sr-flag |Ne mijenjaj glavnu zastavicu čitača ekrana u sustavu|
-|nema |--install |Instalira NVDA, pritom pokrečući novoinstaliranu kopiju|
-|nema |--install-silent |Tiho instalira NVDA (ne pokreće novu instaliranu kopiju)|
-|nema |--enable-start-on-logon=True|False |Tijekom instaliranja, aktivirajte [opciju pokretanja NVDA čitača na ekranu za prijavu](#StartAtWindowsLogon)|
+|Nema |`--lang=LANGUAGE` |Nadpisuje konfigurirani NVDA jezik. Postavljen na "korisnički zadan" za trenutnog korisnika podrazumjevano, "en" za engleski, itd.|
+|`-m` |`--minimal` |bez zvuka, bez sučelja, bez poruke dobrodošlice itd|
+|`-s` |`--secure` |Pokreće NVDA u [sigurnom načinu](#SecureMode)|
+|nema |`--disable-addons` |dodaci neće imati utjecaja|
+|nema |`--debug-logging` |Omogućuje dijagnostiku samo pri trenutačno pokrenutoj kopiji. Ova postavka natpisuje bilo koju drugu razinu vođenja zapisnika ( `--loglevel`, `-l`) specificirani argument uključujući i opciju bez logiranja.|
+|nema |`--no-logging` |Potpuno isključuje vođenje zapisnika. Ova postavka može biti nadpisana ako razina loga ( `--loglevel`, `-l`) je specificiran iz naredbenog retka, ili je uključeno vođenje zapisnika.|
+|nema |`--no-sr-flag` |Ne mijenjaj glavnu zastavicu čitača ekrana u sustavu|
+|nema |`--install` |Instalira NVDA, pritom pokrečući novoinstaliranu kopiju|
+|nema |`--install-silent` |Tiho instalira NVDA (ne pokreće novu instaliranu kopiju)|
+|nema |`--enable-start-on-logon=True|False` |Tijekom instaliranja, aktivirajte [opciju pokretanja NVDA čitača na ekranu za prijavu](#StartAtWindowsLogon)|
 |Nema |~~copy-portable-config |Prilikom instalacije, kopira se prijenosna kopija sa zadane lokacije (~~config-path, -c) u trenutnu korisničku mapu|
 |nema |--create-portable |Stvara prijenosnu kopiju NVDA čitača (pri tome ponovo pokrečući novostvorenu kopiju). Zahtijeva određenu funkciju --portable-path|
 |nema |--create-portable-silent |Stvara prijenosnu kopiju NVDA čitača (ne pokreće novostvorenu kopiju). zahtjeva određen parametar --portable-path|
