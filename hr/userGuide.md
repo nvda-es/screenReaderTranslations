@@ -2171,7 +2171,7 @@ Ovaj odabirni okvir omogućuje odabir zvučnog uređaja kojeg će govorna jedini
 
 ##### Modus stišavanja zvuka {#SelectSynthesizerDuckingMode}
 
-Tipkovnički prečac: NVDA+šift+d
+'Tipkovnički prečac: `NVDA+šift+d`\n'
 
 Ova opcija omogućuje odabir hoće li NVDA stišati glasnoću drugih aplikacija dok NVDA govori ili će to raditi cijelo vrijeme dok je NVDA pokrenut.
 
