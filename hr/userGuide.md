@@ -1189,14 +1189,14 @@ Kako bi stalo što više informacija na brajični redak, definirane su sljedeće
 |sp |stablasti prikaz|
 |gbsp |gumb za stablasti prikaz|
 |ssp |stavka stablastog prikaza|
-|raz x |stavka stabla na razini x u hierarhiji|
+|raz x |stavka stabla na razini x u hierarhiji||
 |pr |prozor|
 |⠤⠤⠤⠤⠤ |rastavljač|
 |⠕⠃⠣⠮ |obilježen sadržaj|
 
 Definirane kratice za indikatore stanja:
 
-| Kratica |Stanje kontrole|
+|Kratica |Stanje kontrole|
 |---|---|
 |... |prikazuje se kad objekt podržava automatsko dovršavanje|
 |⢎⣿⡱ |prikazuje se kad je objekt pritisnut (npr. preklopni gumb)|
@@ -1223,7 +1223,7 @@ Definirane kratice za indikatore stanja:
 
 Definirane kratice za orijentire:
 
-| Kratica |Orijentir|
+|Kratica |Orijentir|
 |---|---|
 |nslv |naslov|
 |ios |informacije o sadržaju|
