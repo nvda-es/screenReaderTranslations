@@ -4895,8 +4895,8 @@ Neke opcije naredbenog retka prihvaćaju dodatne parametre; npr. koliko će zapi
 Ovi parametri trebaju biti smješteni poslije opcije, odvojene razmakom ako se koristi kratka verzija ili znakom jednakosti `(=)` kad se koristi duga verzija; npr:
 
 | . {.hideHeaderRow} |.|
-
-|nvda -l 10 |proslijeđuje NVDA informaciju da se mora pokrenuti s razinom loga postavljenom kao debug|
+|---|---|
+|`nvda -l 10` |proslijeđuje NVDA informaciju da se mora pokrenuti s razinom loga postavljenom kao debug|
 |nvda --log-file=c:\nvda.log |određuje put do NVDA datoteke zapisnika na sljedeću vrijednost c:\nvda.log|
 |nvda --log-level=20 -f c:\nvda.log |proslijeđuje naredbu da se NVDA pokreće s razinom loga info i da zapisuje svoj log u c:\nvda.log|
 
