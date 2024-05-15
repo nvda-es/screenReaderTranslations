@@ -1605,11 +1605,11 @@ Mnoge od tih postavki je moguće pronaći u višestraničnom dijaloškom okviru 
 Za prihvaćanje učinjenih promjena, pritisnite gumb U redu. To vrijedi za sve dijaloške okvire.
 Za odustajanje od promjena, pritisnite gumb Odustani ili tipku escape.
 U nekim dijaloškim okvirima je moguće pritisnuti gumb Primijeni, kako bi postavke odmah stupile na snagu.
-Neke postavke se mogu promijeniti pomoću tipkovničkih prečaca, koji su navedeni u sljedećim poglavljima.
 Većina NVDA dijaloških okvira podržava kontekstualnu pomoć.
 <!-- KC:beginInclude -->
 Kada se nalazite u dijaloškom okviru, pritisak prečaca `f1` otvara Vodić za korisnike u odlomku koji je vezan za tu određenu postavku ili trenutni dijaloški okvir.
 <!-- KC:endInclude -->
+Većina postavki može se promijenitiuz pomoć tipkovničkih prečaca koji su popisani ispod.
 
 ### NVDA Postavke {#NVDASettings}
 
