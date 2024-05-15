@@ -4401,7 +4401,7 @@ Slijede prečaci za BrailleNote QT kad nije u modusu brajičnog unosa.
 |NVDA izbornik |read+n|
 |Tipka strelica gore |strelica gore|
 |Tipka strelica dolje |strelica dolje|
-|Tipka strelica lijevo |strelica lijevo||
+|Tipka strelica lijevo |strelica lijevo|
 |Tipka strelica desno |strelica desno|
 |Tipka pejdž ap |funkcija+strelica gore|
 |Tipka pejdž daun |funkcija+strelica dolje|
@@ -4704,18 +4704,18 @@ Pogledajte [BRLTTY tablice tipkovničkih prečaca](https://brltty.app/doc/KeyBin
 
 | Naziv |BRLTTY naredba|
 |---|---|
-|Kliži po brajičnom retku natrag |fwinlt (idi jedan prozor u lijevo)|
-|Kliži po brajičnom retku naprijed |fwinrt (idi jedan prozor u desno)|
-|Premjesti brajični redak na prethodni redak |lnup (idi jedan redak gore)|
-|Premjesti brajični redak na sljedeći redak |lndn (idi jedan redak dolje)|
-|Premjesti se na brajičnu ćeliju |route (dovedi kursor na znak)|
-|Uključi pomoć tipkovnice |learn (uključuje način učenja tipkovnice)|
-|Otvori NVDA izbornik |prefmenu (otvara izlazi iz izbornika postavki)|
-|Vrati konfiguraciju |prefload (vraća postavke s diska)|
-|Spremi konfiguraciju |prefsave (sprema postavke na disk)|
-|Čitaj vrijeme |time (pokazuje trenutni datum i vrijeme)|
-|Čitaj redaj gdje se nalazi pregledni kursor |say_line (izgovara trenutni redak)|
-|Čitaj sve koristeći pregledni kursor |say_below (izgovara od trenutnog redka do kraja)|
+|Kliži po brajičnom retku natrag |`fwinlt` (idi jedan prozor u lijevo)|
+|Kliži po brajičnom retku naprijed |`fwinrt` (idi jedan prozor u desno)|
+|Premjesti brajični redak na prethodni redak |`lnup` (idi jedan redak gore)|
+|Premjesti brajični redak na sljedeći redak |`lndn` (idi jedan redak dolje)|
+|Premjesti se na brajičnu ćeliju |`route` (dovedi kursor na znak)|
+|Uključi pomoć tipkovnice |`learn` (uključuje način učenja tipkovnice)|
+|Otvori NVDA izbornik |`prefmenu` (otvara izlazi iz izbornika postavki)|
+|Vrati konfiguraciju |`prefload` (vraća postavke s diska)|
+|Spremi konfiguraciju |`prefsave` (sprema postavke na disk)|
+|Čitaj vrijeme |`time` (pokazuje trenutni datum i vrijeme)|
+|Čitaj redak gdje se nalazi pregledni kursor |`say_line` (izgovara trenutni redak)|
+|Čitaj sve koristeći pregledni kursor |`say_below` (izgovara od trenutnog redka do kraja)|
 
 <!-- KC:endInclude -->
 
