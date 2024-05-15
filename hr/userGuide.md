@@ -4920,10 +4920,10 @@ Slijede opcije naredbenog retka za NVDA:
 |nema |`--install` |Instalira NVDA, pritom pokrečući novoinstaliranu kopiju|
 |nema |`--install-silent` |Tiho instalira NVDA (ne pokreće novu instaliranu kopiju)|
 |nema |`--enable-start-on-logon=True|False` |Tijekom instaliranja, aktivirajte [opciju pokretanja NVDA čitača na ekranu za prijavu](#StartAtWindowsLogon)|
-|Nema |~~copy-portable-config |Prilikom instalacije, kopira se prijenosna kopija sa zadane lokacije (~~config-path, -c) u trenutnu korisničku mapu|
-|nema |--create-portable |Stvara prijenosnu kopiju NVDA čitača (pri tome ponovo pokrečući novostvorenu kopiju). Zahtijeva određenu funkciju --portable-path|
-|nema |--create-portable-silent |Stvara prijenosnu kopiju NVDA čitača (ne pokreće novostvorenu kopiju). zahtjeva određen parametar --portable-path|
-|nema |--portable-path=PORTABLEPATH |Putanja za stvorenu prijenosnu kopiju|
+|Nema |`copy-portable-config` |Prilikom instalacije, kopira se prijenosna kopija sa zadane lokacije (`config-path`, `-c`) u trenutnu korisničku mapu|
+|nema |`--create-portable` |Stvara prijenosnu kopiju NVDA čitača (pri tome ponovo pokrečući novostvorenu kopiju). Zahtijeva određenu funkciju `--portable-path`|
+|nema |`--create-portable-silent` |Stvara prijenosnu kopiju NVDA čitača (ne pokreće novostvorenu kopiju). zahtjeva određen parametar `--portable-path`|
+|nema |`--portable-path=PORTABLEPATH` |Putanja za stvorenu prijenosnu kopiju|
 
 ### Cijelosustavski parametri {#SystemWideParameters}
 
