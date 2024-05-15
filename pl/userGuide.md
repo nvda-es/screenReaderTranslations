@@ -2,7 +2,7 @@
 
 [TOC]
 
-<!-- KC:title: Skróty poleceń klawiszowych NVDA NVDA_VERSION -->
+<!-- KC:title: NVDA NVDA_VERSION Skróty poleceń klawiszowych -->
 
 
 
