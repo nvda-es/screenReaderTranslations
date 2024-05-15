@@ -4930,8 +4930,8 @@ Slijede opcije naredbenog retka za NVDA:
 NVDA omogućuje izmjenu nekih postavki u registru sustava, čime se mijenja ponašanje NVDA čitača u tom sustavu.
 Te su vrijednosti spremljene u registru pod sljedećim ključevima:
 
-* 32-bitni sustav: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
-* 64-bitni sustav: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+* 32-bitni sustav: `"HKEY_LOCAL_MACHINE\SOFTWARE\nvda"`
+* 64-bitni sustav: `"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"`
 
 Sljedeće vrijednosti se mogu postaviti pod ovim ključem:
 
