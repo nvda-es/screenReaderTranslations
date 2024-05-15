@@ -2731,7 +2731,7 @@ Možete podesiti izvještavanje o sljedećim elementima:
   * orijentiri
   * članci
   * okviri
-    * figure i potpisi
+  * figure i potpisi
   * klikajući elementi
 
 Da biste ove postavke mogli uključiti ili isključiti s bilo kojeg mjesta, dodijelite prilagođene tipkovničke prečace, koristeći [dijaloški okvir ulazne geste](#InputGestures).
@@ -3088,8 +3088,8 @@ Možete filtrirati simbol, upisujući cijelu zamjenu ili dio zamjene simbola u p
 * Polje zamjena omogućuje izmjenu teksta koji će biti izgovoren na mjestu tog simbola.
 * Koristeći polje razina, možete prilagoditi najnižu razinu simbola na kojoj taj simbol treba biti izgovoren (ništa, neki, većina ili sve).
 Također možete postaviti razinu na znak; u tom slučaju simbol neće biti izgovoren, neovisno o razini koja se koristi, uz slijedeće dve iznimke:
- * prilikom kretanja po znakovima.
- * Kada NVDA slovka tekst koji sadrži taj simbol.
+  * prilikom kretanja po znakovima.
+  * Kada NVDA slovka tekst koji sadrži taj simbol.
 * Polje "Pošalji trenutačni simbol govornoj jedinici", kad će sam simbol (u sprezi s njegovom zamjenom) biti poslan govornoj jedinici.
 To je korisno kad govorna jedinica reagira na simbol pauzom ili povisivanjem modulacije glasa.
 Na primjer, zarez prouzrokuje pauzu kod govorne jedinice.
@@ -3139,8 +3139,8 @@ Upozorenje:
 
 * Emulirani prečaci moraju imati pridjeljene geste kako bi se zadržali prilikom spremanja /zatvaranja dijaloškog okvira.
 * Geste sa modifikatorima možda neće moći biti pridjeljene emuliranoj gesti bez modifikatora
-Na primjer, postavljanjem emuliranog unosa 'a' i podešavanje ulazne geste 'ctrl+m', prouzrokovat će 
-da će program primiti 'ctrl+a'.
+Na primjer, postavljanjem emuliranog unosa `a` i podešavanje ulazne geste `ctrl+m`, prouzrokovat će 
+da će program primiti `ctrl+a`.
 
 Kad ste gotovi s promjenama, pritisnite gumb U redu da biste ih sačuvali ili gumb Odustani da biste ih poništili.
 
@@ -3833,7 +3833,7 @@ Ako spajate brajične redke koji ne koriste hid preko usb veze, morate instalira
 VarioUltra i Pronto! brajični redci koriste HID.
 Refreshabraille i Orbit Reader 20 mogu koristiti HID ako su konfigurirani na određeni način.
 
- USB serijski način u Orbit Reader 20 brajičnom redku, trenutačno je podržan samo u Windows 10 i novijim inačicama operacijskog sustava.
+USB serijski način u Orbit Reader 20 brajičnom redku, trenutačno je podržan samo u Windows 10 i novijim inačicama operacijskog sustava.
 Umjesto toga, trebali biste koristiti USB HID.
 
 Slijede prečaci za ove brajične retke s NVDA čitačem.
@@ -4032,7 +4032,7 @@ Smještaj ovih tipki potražite u dokumentaciji brajičnog retka.
 |Tipka kontrol+šift+strelica lijevo |točkica5+točkica8+razmaknica+f1|
 |Tipka kontrol+strelica desno |točkica5+razmaknica|
 |Tipka šift+alt+strelica desno |točkica5+točkica7+f1|
-|`Tipka alt+strelica desno` |točkica5+točkica7+razmak|
+|`Tipka alt+strelica desno` |`točkica5+točkica7+razmak`|
 |Tipka pejdž ap |točkica1+točkica2+točkica6+razmaknica|
 |Tipka kontrol+pejdž ap key |točkica1+točkica2+točkica6+točkica8+razmaknica|
 |Tipka strelica gore |točkica1+razmaknica, lijevaStranaStrelicaGore|
@@ -4047,7 +4047,7 @@ Smještaj ovih tipki potražite u dokumentaciji brajičnog retka.
 |Tipka kontrol+šift+strelica dolje |točkica5+točkica6+točkica8+razmaknica+f1|
 |Tipka kontrol+strelica dolje |točkica5+točkica6+razmaknica|
 |Tipka šift+alt+strelica dolje |točkica5+točkica6+točkica7+f1|
-|++Tipka alt+strelica dolje++ |točkica5+točkica6+točkica7+razmak|
+|`Tipka alt+strelica dolje`|`točkica5+točkica6+točkica7+razmak`|
 |Tipka šift+strelica dolje |razmaknica+desnaStranaKlizačDolje|
 |Tipka escape |točkica1+točkica5+razmaknica, f4, brailleedge:f1|
 |Tipka dilit |točkica1+točkica3+točkica5+razmaknica, točkica1+točkica4+točkica5+razmaknica|
@@ -4343,7 +4343,7 @@ Sljedeći modeli su podržani:
 * BrailleNote MPower (Serijska i Bluetooth veza)
 * BrailleNote Apex (USB i bluetooth veza)
 
-Za BrailleNote Touch, pogledajte poglavlje [Brailliant BI serije / BrailleNote Touch](HumanWareBrailliant).
+Za BrailleNote Touch, pogledajte poglavlje [Brailliant BI serije / BrailleNote Touch](#HumanWareBrailliant).
 
 Izuzimajući BrailleNote PK, braille (BT) i QWERTY (QT) tipkovnice su podržane.
 Za BrailleNote QT, emulacija tipkovnice osobnog računala nije podržana.
