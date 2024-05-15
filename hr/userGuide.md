@@ -4907,7 +4907,7 @@ Slijede opcije naredbenog retka za NVDA:
 |`-h` |`--help` |Prikazuje pomoć u naredbenom retku i izlazi|
 |`-q` |`--quit` |Zaustavlja trenutačno pokrenutu kopiju NVDA čitača|
 |`-k` |`--check-running` |Izvještava o pokrenutosti NVDA putem izlaznog koda; 0 ako je pokrenut, 1 ako nije pokrenut|
-|`-f LOGFILENAME |`--log-file=LOGFILENAME` |datoteka u kojoj poruke zapisnika trebaju biti zapisane. Zapisivanje dnevnika je uvijek isključeno kada je sigurni način uključen.|
+|`-f LOGFILENAME` |`--log-file=LOGFILENAME` |datoteka u kojoj poruke zapisnika trebaju biti zapisane. Zapisivanje dnevnika je uvijek isključeno kada je sigurni način uključen.|
 |`-l LOGLEVEL` |`--log-level=LOGLEVEL` |Najniža razina zapisivanih poruka u zapisniku (debug 10, ulaz/izlaz 12, debug upozorenje 15, info 20, onemogućeno 100). Zapisivanje dnevnika je uvijek isključeno kada je sigurni način uključen.|
 |`-c CONFIGPATH` |`--config-path=CONFIGPATH` |određuje mapu u kojoj su pospremljene sve postavke Podrazumjevana vrijednost je prisilno ako je uključen sigurni način.|
 |Nema |--lang=LANGUAGE |Nadpisuje konfigurirani NVDA jezik. Postavljen na "korisnički zadan" za trenutnog korisnika podrazumjevano, "en" za engleski, itd.|
