@@ -345,7 +345,7 @@ Opcja domyślnie jest włączona dla nowych instalacji.
 #### Utwórz skrót na pulpicie (Ctrl+Alt+d) {#CreateDesktopShortcut}
 
 Ta opcja pozwala określić, czy NVDA ma utworzyć na pulpicie skrót uruchamiający program.
-Jeśli tak, to ze skrótem powiązany zostanie klawisz skrótu Ctrl+Alt+D.
+Jeśli tak, to ze skrótem powiązany zostanie klawisz skrótu `Ctrl+Alt+D`.
 
 #### Skopiuj konfigurację przenośną do konta aktualnego użytkownika {#CopyPortableConfigurationToCurrentUserAccount}
 
@@ -455,7 +455,7 @@ Oznacza to, że gesty wykonywane normalnie nie będą działać, jeśli włączo
 <!-- KC:beginInclude -->
 W celu przełączania obsługi gestów naciśnij NVDA+CTRL+ALT+T.
 <!-- KC:endInclude -->
-Możesz też przełączyć obsługę gestów  #TouchSupportEnable] z odpowiedniej kategorii w ustawieniach programu.
+Możesz też przełączyć [obsługę gestów]#(TouchSupportEnable) z odpowiedniej kategorii w ustawieniach programu.
 
 #### Eksploracja ekranu {#ExploringTheScreen}
 
@@ -509,7 +509,7 @@ Na tabletach takich jak Microsoft Surface Pro, klawiatura ekranowa jest dostępn
 Aby wyłączyć klawiaturę ekranową, stuknij dwukrotnie jej ikonę lub wyjdź z pola edycji.
 
 Gdy klawiatura ekranowa jest aktywna, aby zlokalizować jakiś znajdujący się na niej klawisz, przesuń palec do miejsca, gdzie znajduje się ta klawiatura (zwykle na dole ekranu), a następnie przesuwaj palec po klawiaturze.
-Gdy znajdziesz poszukiwany klawisz, który chcesz nacisnąć, stuknij go dwukrotnie lub unieś palec, zależnie od opcji wybranej w kategorii interakcji dotykowej w oknie [Preferencji NVDA](#NVDASettings), znajdującym się w podmenu Ustawienia w menu NVDA.
+Gdy znajdziesz poszukiwany klawisz, który chcesz nacisnąć, stuknij go dwukrotnie lub unieś palec, zależnie od opcji wybranej w kategorii interakcji dotykowej w oknie [Preferencji NVDA](#TouchInteraction), znajdującym się w podmenu Ustawienia w menu NVDA.
 
 ### Tryb pomocy {#InputHelpMode}
 
