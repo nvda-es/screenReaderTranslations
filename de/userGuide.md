@@ -1030,7 +1030,7 @@ Es gibt eine Tastenkombination, um in die Originalansicht der Seite zurückzukeh
 
 ### Native Auswahl {#NativeSelectionMode}
 
-Wenn Sie im Lesemodus Text mit der Umschalttaste und den Pfeiltasten auswählen, wird die Auswahl standardmäßig nur in der Darstellung des Dokuments im Lesemodus von NVDA und nicht in der Anwendung selbst vorgenommen.
+Wenn Sie im Lesemodus Text mit `Umschalt+Pfeiltasten` auswählen, wird die Auswahl standardmäßig nur in der Darstellung des Dokuments im Lesemodus von NVDA und nicht in der Anwendung selbst vorgenommen.
 Das bedeutet, dass die Auswahl auf dem Bildschirm nicht sichtbar ist und beim Kopieren von Text mit `Strg+C` nur der reine Text des Inhalts von NVDA kopiert wird, d. h., die Formatierung von Tabellen oder Links, wird nicht kopiert.
 Allerdings verfügt NVDA über eine native Auswahl, welche in bestimmten Dokumenten im Lesemodus aktiviert werden kann. Hiermit folgt die native Auswahl des Dokuments der Auswahl im Lesemodus von NVDA. Dies gilt bisher nur für Mozilla Firefox.
 
@@ -1863,11 +1863,11 @@ Die verzögerte Zeichenbeschreibung wird abgebrochen, wenn während dieser Zeit 
 ##### Verfügbare Modi im Befehl Sprachmodus wechseln {#SpeechModesDisabling}
 
 Mit dieser aktivierbare Liste können Sie auswählen, welche [Sprachmodi](#SpeechModes) enthalten sind, wenn mit der Tastenkombination `NVDA+S` zwischen ihnen gewechselt wird.
+Modi, die nicht markiert sind, sind ausgeschlossen.
 Standardmäßig sind alle Modi enthalten.
+
 Wenn Sie beispielsweise die Modi Signaltöne und Aus nicht benötigen, sollten Sie diese beiden deaktivieren und sowohl Sprechen als auch bei Bedarf aktiviert lassen.
-
 Beachten Sie, dass mindestens zwei Modi aktiviert sein müssen.
-
 
 #### Sprachausgabe auswählen {#SelectSynthesizer}
 
@@ -2105,7 +2105,7 @@ Um die Auswahl von einer beliebigen Stelle aus umzuschalten, weisen Sie bitte ei
 
 <!-- KC:setting -->
 
-##### Dialogfeld zum Auswählen der Braillezeile öffnen {#toc167}
+##### Dialogfeld zum Auswählen der Braillezeile öffnen {#toc168}
 
 Tastenkombination: `NVDA+Strg+A`
 
@@ -2157,7 +2157,7 @@ Es wird daher empfohlen, immer nur eine Braillezeile eines bestimmten Typs / Her
 
 <!-- KC:setting -->
 
-##### Audio-Einstellungen öffnen {#toc172}
+##### Audio-Einstellungen öffnen {#toc173}
 
 Tastenkombination: `NVDA+Strg+U`
 
@@ -2266,7 +2266,7 @@ Standardmäßig enthält diese Einstellungskathegorie die folgenden Optionen:
 Die Kontrollkästchen in der Gruppierung "Visuell hervorheben" steuern das Verhalten der in NVDA integrierten Funktion [Visuell hervorheben](#VisionFocusHighlight).
 
 * Hervorhebung aktivieren: Schaltet die visuelle Hervorhebung ein und aus.
-* System-Fokus hervorheben: Schaltet um, ob der [System-Fokus](#Systemfokus) hervorgehoben wird.
+* System-Fokus hervorheben: Schaltet um, ob der [System-Fokus](#SystemFocus) hervorgehoben wird.
 * Hervorheben des Navigator-Objekts: Schaltet um, ob das [Navigator-Objekt](#ObjectNavigation) hervorgehoben wird.
 * Cursor im Lesemodus hervorheben: Schaltet um, ob der [virtuelle Cursor im Lesemodus](#BrowseMode) hervorgehoben wird.
 
@@ -2297,7 +2297,7 @@ Die unterstützten Einstellungen pro Quelle finden Sie in der Dokumentation der 
 
 <!-- KC:setting -->
 
-##### Tastatur-Einstellungen öffnen {#toc187}
+##### Tastatur-Einstellungen öffnen {#toc188}
 
 Tastenkombination: `NVDA+Strg+K`
 
@@ -2374,7 +2374,7 @@ Diese Option ist standardmäßig aktiviert, obwohl manche Benutzer dies bestimmt
 
 <!-- KC:setting -->
 
-##### Maus-Einstellungen öffnen {#toc200}
+##### Maus-Einstellungen öffnen {#toc201}
 
 Tastenkombination: `NVDA+Strg+M`
 
@@ -2477,7 +2477,7 @@ Um den einfachen Darstellungsmodus per Tastenkombination ein- und auszuschalten,
 
 <!-- KC:setting -->
 
-##### Einstellungen zur Objekt-Darstellung öffnen {#toc217}
+##### Einstellungen zur Objekt-Darstellung öffnen {#toc218}
 
 Tastenkombination: `NVDA+Strg+O`
 
@@ -2592,7 +2592,7 @@ Diese Option ist standardmäßig aktiviert.
 
 <!-- KC:setting -->
 
-##### Einstellungen zum Lesemodus öffnen {#toc235}
+##### Einstellungen zum Lesemodus öffnen {#toc236}
 
 Tastenkombination: `NVDA+Strg+B`
 
@@ -2645,7 +2645,7 @@ Um die Ausgabe von Layout-Tabellen schnell ein- oder auszuschalten, müssen Sie 
 
 ##### Mitteilungen zu Elementen konfigurieren {#BrowseModeLinksAndHeadings}
 
-Bitte beachten Sie die Optionen in der Kategorie [Dokumentformatierungen](#DocumentFormattingSettings), um festzulegen, welche Elemente wie Links, Überschriften und Tabellen beim Navigieren angesagt werden sollen.
+Bitte beachten Sie die Optionen in der Kategorie [Dokument-Formatierungen](#DocumentFormattingSettings) in den [NVDA-Einstellungen](#NVDASettings), um festzulegen, welche Elemente wie z. B. Links, Überschriften und Tabellen beim Navigieren mitgeteilt werden sollen.
 
 ##### Automatisch bei Änderungen im Fokus den Fokusmodus einschalten {#BrowseModeSettingsAutoPassThroughOnFocusChange}
 
@@ -2684,7 +2684,7 @@ Die Aktivierung dieser Option kann die Unterstützung für einige Websites auf K
 
 <!-- KC:setting -->
 
-##### Einstellungen zur Dokument-formatierung öffnen {#toc249}
+##### Einstellungen zur Dokument-formatierung öffnen {#toc250}
 
 Tastenkombination: `NVDA+Strg+D`
 
@@ -3139,8 +3139,8 @@ Hinweis:
 
 * Emulierte Tasten müssen Tastenbefehlen zugewiesen sein, damit sie beim Speichern und Schließen des Dialogfeldes bestehen bleiben.
 * Ein Tastenbefehl mit NVDA-Tasten kann möglicherweise nicht auf einen emulierten Tastenbefehl ohne NVDA-Tasten abgebildet werden.
-Zum Beispiel kann das definieren der emulierten Eingabe "a" und das Konfigurieren des Tastenbefehls von "Strg+M" dazu führen,
-dass die Anwendung "Strg+A" interpretieren könnte.
+
+Zum Beispiel kann das definieren der emulierten Eingabe `A` und das Konfigurieren des Tastenbefehls `Strg+M` dazu führen, dass die Anwendung `Strg+A` interpretieren könnte.
 
 Um die Änderungen zu übernehmen, klicken Sie auf den Schalter "OK" oder auf "Abbrechen", um die Änderungen zu verwerfen.
 
@@ -3422,9 +3422,9 @@ Den Protokoll-Betrachter finden Sie im NVDA-Menü unter "Werkzeuge". Dieses Werk
 Neben dem Lesen des Inhalts können Sie auch eine Kopie der Protokolldatei speichern oder den Betrachter aktualisieren, um neue Protokollausgaben zu laden, die nach dem Öffnen des Protokollbetrachters generiert wurden.
 Diese Aktionen sind im Menü Protokoll im Protokoll-Betrachter verfügbar.
 
-Beim öffnen des Protokollbetrachters wird die angezeigte Datei am Dateispeicherort "%temp%\nvda.log" gespeichert.
+Beim öffnen des Protokoll-Betrachters wird die angezeigte Datei am Dateispeicherort `%temp%\nvda.log` gespeichert.
 Bei jedem Start von NVDA wird eine neue Protokolldatei erstellt.
-In diesem Fall wird die Protokolldatei der vorherigen NVDA-Sitzung nach „%temp%\nvda-old.log“ verschoben.
+In diesem Fall wird die Protokolldatei der vorherigen NVDA-Sitzung nach `%temp%\nvda-old.log` verschoben.
 
 Sie können auch nur einen Teil der aktuellen Protokolldatei in die Zwischenablage kopieren, ohne den Protokoll-Betrachter zu öffnen.
 <!-- KC:beginInclude -->
@@ -3482,7 +3482,7 @@ Um den Braille-Betrachter von einer beliebigen Stelle aus umzuschalten, weisen S
 Die Python-Konsole in NVDA, zu finden im Menü "Werkzeuge" im NVDA-Menü, ist ein Entwicklungswerkzeug, das für das Debugging, die allgemeine Inspektion von NVDA-Interna oder die Inspektion der Zugänglichkeitshierarchie einer Anwendung nützlich ist.
 Weitere Informationen finden Sie im [NVDA-Entwicklerhandbuch](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html).
 
-### Der Store für NVDA-Erweiterungen {#toc312}
+### Der Store für NVDA-Erweiterungen {#toc314}
 
 Dadurch wird der [Store für NVDA-Erweiterungen](#AddonsManager) geöffnet.
 Für weitere Informationen lesen Sie bitte den ausführlichen Abschnitt: [NVDA-Erweiterungen und der Store für NVDA-Erweiterungen](#AddonsManager).
@@ -3553,13 +3553,13 @@ SAPI 4 ist ein älterer Microsoft-Standard für SoftwareSprachausgaben.
 NVDA unterstützt noch die alte Schnittstelle, für all jene, die bereits SAPI 4 Sprachausgaben installiert haben.
 Die Treiber hierfür werden von Microsoft schon lange nicht mehr zum Download angeboten.
 
-Wenn diese Sprachausgabe mit NVDA verwendet wird, finden Sie die Stimmen aller SAPI 4 Engines in der Kategorie [Stimme und Sprachausgabe](#SpeechSettings) oder im [Sprachausgaben-Einstellungsring](#SynthSettingsRing).
+Wenn Sie diese Sprachausgabe in NVDA verwenden, enthalten die verfügbaren Stimmen (erreichbar über die Kategorie [Sprachausgabe](#SpeechSettings) der [NVDA-Einstellungen](#NVDASettings) oder über den [Sprachausgaben-Einstellungsring](#SynthSettingsRing)) alle Stimmen aller installierten SAPI 4 Engines auf dem Computer.
 
 ### Microsoft Speech API Version 5 (SAPI 5) {#SAPI5}
 
 SAPI 5 ist ein Microsoft-Standard für SoftwareSprachausgaben.
 Viele Sprachausgaben, die diesem Standard entsprechen, können von verschiedenen Firmen käuflich erworben oder von Internetseiten kostenlos heruntergeladen werden. Ihr System wird wahrscheinlich bereits mindestens eine SAPI5-Stimme vorinstalliert haben.
-Wenn Sie diese Sprachausgaben mit NVDA benutzen möchten, werden in der Kategorie [Stimme und Sprachausgabe](#SpeechSettings) oder dem [Einstellungsring der Sprachausgaben](#SynthSettingsRing) alle Stimmen von der SAPI5-Engine aufgelistet, die auf Ihrem System gefunden werden können.
+Wenn Sie diese Sprachausgabe in NVDA verwenden, enthalten die verfügbaren Stimmen (zugänglich über die Kategorie [Sprachausgabe](#SpeechSettings) der [NVDA-Einstellungen](#NVDASettings) oder über den [Sprachausgaben-Einstellungsring](#SynthSettingsRing)) alle Stimmen aller installierten SAPI 4 Engines auf dem Computer.
 
 ### Microsoft Speech Platform {#MicrosoftSpeechPlatform}
 
@@ -3571,8 +3571,8 @@ Um diese Stimmen verwenden zu können, müssen Sie folgende zwei Komponenten ins
 * [Microsoft Speech Platform - Runtime (Version 11), x86](https://www.microsoft.com/download/en/details.aspx?id=27225)
 * [Microsoft Speech Platform - Runtime Languages (Version 11)](https://www.microsoft.com/download/en/details.aspx?id=27224)
   * Diese Internetseite enthält viele Dateien für Sprachein- und -ausgabe.
-  Suchen Sie sich die TTS-Dateien passend zu der von Ihnen gewünschten Sprache heraus.
-  Beispiel: Die Datei MSSpeech_TTS_de-DE_Hedda.msi ist eine deutsche Stimme.
+ Suchen Sie sich die TTS-Dateien passend zu der von Ihnen gewünschten Sprache heraus.
+ Beispiel: Die Datei MSSpeech_TTS_de-DE_Hedda.msi ist eine deutsche Stimme.
 
 ### Die Windows-OneCore-Stimmen {#OneCore}
 
@@ -3706,12 +3706,12 @@ Sie müssen die Zeile lediglich anschließen und in NVDA konfigurieren.
 Hinweis! Die Bluetooth-Verbindung einer ALVA BC6-Braillezeile mit Hilfe des ALVA Bluetooth-Werkzeugs könnte unter NVDA fehlschlagen.
 Wenn Sie eine entsprechende Fehlermeldung erhalten, verbinden Sie die Braillezeile über die Bluetooth-Einstellungen von Windows.
 
-Hinweis! Da diese Braillezeilen eine eigene Braille-Tastatur besitzen (HID-Tastatur),arbeiten sie eingegebene Braillezeichen selbstständig ab. Die eigene Eingabeschnittstelle ist standardmäßig aktiv.
-In diesem Fall haben die Einstellungen der Eingabetabelle aus den Braille-Einstellungen keine Wirkung.
-Bei ALVA-Breillezeilen mit aktueller Firmware kann die HID-Tastatur über eine Tastenkombination deaktiviert werden.
-Bitte lesen Sie in der Dokumentation der Braillezeilen für weitere Details nach.
+Hinweis: Einige dieser Braillezeilen verfügen zwar über eine Braille-Tastatur, übersetzen aber standardmäßig selbst von Braille in Text.
+Dies bedeutet, dass das Braille-Eingabesystem von NVDA in der Standardsituation nicht verwendet wird (d. h., die Einstellung für die Braille-Tabelle hat keine Auswirkungen).
+Bei ALVA-Braillezeilen mit aktueller Firmware ist es möglich, diese HID-Tastatursimulation mit einem Tastenbefehl zu deaktivieren.
 
 Folgende Tastenkombinationen für diese Braillezeilen sind in NVDA zugeordnet.
+Bitte lesen Sie in der Dokumentation der Braillezeilen für weitere Details nach.
 <!-- KC:beginInclude -->
 
 | Name |Taste|
@@ -3931,7 +3931,7 @@ Die folgenden zusätzlichen Geräte werden ebenfalls unterstützt (und erfordern
 Folgende Tastenkombinationen sind bei diesen Braillezeilen verfügbar
 Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechenden Tasten zu finden sind.
 
-#### Tastenzuweisungen für alle Braillezeilenmodelle {#toc332}
+#### Tastenzuweisungen für alle Braillezeilenmodelle {#toc334}
 
 <!-- KC:beginInclude -->
 
@@ -3960,7 +3960,7 @@ Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechen
 
 <!-- KC:endInclude -->
 
-#### Tastenzuweisungen für Brailliant BI 32/40 und B 80 {#toc333}
+#### Tastenzuweisungen für Brailliant BI 32/40 und B 80 {#toc335}
 
 <!-- KC:beginInclude -->
 
@@ -3972,7 +3972,7 @@ Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechen
 
 <!-- KC:endInclude -->
 
-#### Tastenzuweisungen für Brailliant BI 14 {#toc334}
+#### Tastenzuweisungen für Brailliant BI 14 {#toc336}
 
 <!-- KC:beginInclude -->
 
@@ -4352,7 +4352,7 @@ Weitere Informationen finden Sie im Abschnitt Braille-terminal des Handbuchs Ihr
 
 Wenn Ihre Braillezeile mehr als eine Verbindungsmethode unterstützt, müssen Sie den verwendeten Anschluss in den Braille-Terminal-Einstellungen festlegen.
 Bitte sehen Sie in die Dokumentation Ihrer Braillezeile nach für weitere Informationen.
-Zudem müssen Sie den verwendeten Anschluss in den Braille-Einstellungen von NVDA festlegen.
+Zudem müssen Sie den verwendeten Anschluss in den [Braille-Einstellungen](#SelectBrailleDisplay) in NVDA festlegen.
 Wenn die Braillezeile über USB oder Bluetooth verbunden wird, können Sie "automatisch", "USB" oder "Bluetooth" einstellen.
 Wenn Sie einen seriellen Anschluss (oder einen USB-Zu-Seriell-Konverter) verwenden, müssen Sie den verwendeten Anschluss ausdrücklich auswählen.
 
@@ -4399,23 +4399,23 @@ Die folgenden Befehle sind im Braillenote QT verfügbar, wenn die Brailleeingabe
 | Name |Taste|
 |---|---|
 |NVDA-Menü |Lesen+N|
-|Pfeil nach oben |Pfeil auf|
-|Pfeil nach unten |Pfeil ab|
-|Pfeil nach links |Pfeil links||
-|Pfeil nach rechts |Pfeil rechts|
-|Seite auf |Funktion+Pfeil auf|
-|Seite ab |Funktion+Pfeil ab|
-|Pos1 |Funktion+Pfeil links|
-|Ende |Funktion+Pfeil rechts|
+|Pfeiltaste nach oben |Pfeiltaste nach oben|
+|Pfeiltaste nach unten |Pfeiltaste nach unten|
+|Pfeiltaste nach links |Pfeiltaste nach links|
+|Pfeiltaste nach rechts |Pfeiltaste nach rechts|
+|Seite auf |Funktion+Pfeiltaste nach oben|
+|Seite ab |Funktion+Pfeiltaste nach unten|
+|Pos1 |Funktion+Pfeiltaste nach links|
+|Ende |Funktion+Pfeiltaste nach rechts|
 |Strg+Pos1 |Lesen+T|
 |Strg+Ende |Lesen+B|
-|Eingabetaste |Eingabe|
+|Eingabetaste |Eingabetaste|
 |Rücktaste |Rücktaste|
-|Tab-Taste |Tab|
-|Umschalt+Tab-Taste |Umschalt+Tab|
+|Tab-Taste |Tab-Taste|
+|Umschalt+Tab-Taste |Umschalt+Tab-Taste|
 |Windows-Taste |Lesen+W|
 |Alt-Taste |Lesen+M|
-|Eingabehilfe ein/ausschalten |Lesen+1|
+|Eingabehilfe ein-/ausschalten |Lesen+1|
 
 Die folgenden Befehle können mit dem Scrollrad ausgeführt werden:
 
@@ -4876,8 +4876,8 @@ Mit Hilfe von Befehlszeilenoptionen können Sie das Verhalten von NVDA beeinflus
 Sie können beliebig viele Optionen angeben.
 Sie können die Befehlszeilenoptionen entweder in den Eigenschaften einer Verknüpfung, im Dialogfeld "Ausführen" oder in einer Eingabeaufforderung eingeben.
 Kommandozeilenoptionen müssen vom Namen der ausführbaren Datei von NVDA sovie voneinander durch Leerzeichen getrennt werden.
-Eine nützliche Option ist beispielsweise "-disable-addons", die NVDA anweist, alle laufenden NVDA-Erweiterungen auszusetzen.
-So können Sie beispielsweise feststellen, ob ein Problem durch eine bestimmte Erweiterung verursacht wird.
+Eine nützliche Option ist beispielsweise `--disable-addons`, die NVDA anweist, alle laufenden NVDA-Erweiterungen auszusetzen.
+So können Sie beispielsweise feststellen, ob ein Problem durch eine bestimmte NVDA-Erweiterung verursacht wird.
 
 Mit dem folgenden Befehl können Sie über das Dialogfeld "Ausführen" eine laufende NVDA-Instanz beenden:
 
@@ -4892,13 +4892,13 @@ Die Kurzformen mehrerer Optionen können beispielsweise wie folgt kombiniert wer
 |`nvda -mc <Konfigurationspfad> --disable-addons` |Wie zuvor, jedoch mit deaktivierten NVDA-Erweiterungen.|
 
 Einige Optionen akzeptieren zusätzliche Parameter, mit denen Sie z. B. den Umfang der Protokollierung oder den Namen einer Konfigurationsdatei angeben können.
-Die Parameter müssen durch ein Leerzeichen von der Option getrennt angegeben werden, wenn Sie die Kurzform verwenden. Wenn Sie die Langform benutzen, müssen Sie den Parameter mit einem Gleichheitszeichen von der Option trennen. Beispiele:
+Die Parameter müssen durch ein Leerzeichen von der Option getrennt angegeben werden, wenn Sie die Kurzform verwenden. Wenn Sie die Langform benutzen, müssen Sie den Parameter mit einem Gleichheitszeichen (`=`) von der Option trennen, zum Beispiel:
 
 | . {.hideHeaderRow} |.|
 |---|---|
 |`nvda -l 10` |Startet NVDA mit der Protokollierungsstufe "Debug".|
-|`nvda --log-file=C:\NVDA.log` |Speichert das Protokoll in der Datei "C:\NVDA.log".|
-|`nvda --log-level=20 -f C:\NVDA.log` |Legt die Protokollierungsstufe "Informationen" fest und speichert das Protokoll in der Datei C:\nvda.log.|
+|`nvda --log-file=C:\\NVDA.log` |Speichert das Protokoll in der Datei `C:\\NVDA.log`.|
+|`nvda --log-level=20 -f C:\\NVDA.log` |Legt die Protokollierungsstufe `Informationen` fest und speichert das Protokoll in der Datei `C:\\NVDA.log`.|
 
 Folgende Kommandozeilenoptionen stehen zur Verfügung:
 
@@ -4913,16 +4913,16 @@ Folgende Kommandozeilenoptionen stehen zur Verfügung:
 |Keine |`--lang=<Sprache>` |Setzen Sie die konfigurierte NVDA-Sprache außer Kraft. Setzen Sie "Windows" als Standard für den aktuellen Benutzer, "de" für Deutsch, etc.|
 |`-m` |`--minimal` |Startet NVDA minimalistisch (keine Klänge, keine Benutzeroberfläche).|
 |`-s` |`--secure` |Startet NVDA im [geschützten Modus](#SecureMode)|
-|Keine |--disable-addons |Deaktiviert alle NVDA-Erweiterungen.|
-|Keine |`--debug-logging` |Aktivieren Sie die Protokollierung nur für diesen `Sitzung. Diese Einstellung überschreibt alle anderen Argumente der Protokollebene ( --loglevel, -l), einschließlich der Option keine Protokollierung.|
-|Keine |`--no-logging` |Deaktivieren Sie die Protokollierung vollständig, während Sie NVDA verwenden. Diese Einstellung kann überschrieben werden, wenn eine Protokollebene ("--loglevel"", -l) von der Kommandozeile aus angegeben wird oder wenn die Debug-Protokollierung eingeschaltet ist.|
+|Keine |`--disable-addons` |Deaktiviert alle NVDA-Erweiterungen.|
+|Keine |`--debug-logging` |Aktivieren Sie die Protokollierung nur für diese Sitzung. Diese Einstellung überschreibt alle anderen Argumente der Protokollierungsstufe (`--loglevel`, `-l`), einschließlich der Option für Keine Protokollierung.|
+|Keine |`--no-logging` |Deaktivieren Sie die Protokollierung vollständig, während Sie NVDA verwenden. Diese Einstellung kann überschrieben werden, wenn eine Protokollierungsstufe (`--loglevel`, `-l`) von der Kommandozeile aus angegeben wird oder wenn die Debug-Protokollierung eingeschaltet ist.|
 |Keine |`--no-sr-flag` |Keine Mitteilung in Windows über einen installierten Screenreader.|
 |Keine |`--install` |Installiert NVDA ohne Ausgabe von Rückmeldungen und startet die neu installierte Version.|
 |Keine |`--install-silent` |Installiert NVDA ohne Ausgabe von Rückmeldungen, startet die Version aber nicht.|
 |Keine |`--enable-start-on-logon=True/False` |Aktivieren Sie bei der Installation [NVDA bei der Windows-Anmeldung starten](#StartAtWindowsLogon).|
-|Keine |`--copy-portable-config` |Kopieren Sie bei der Installation die portable Konfiguration vom angegebenen Pfad (-c, --config-path) in das aktuelle Benutzerkonto.|
-|Keine |`--create-portable` |Erstellt und startet eine neue portable NVDA-Version. Hierfür müssen Sie außerdem den Parameter --portable-path angeben.|
-|Keine |`--create-portable-silent` |Erstellt eine neue portable NVDA-Version, ohne diese zu starten. Hierfür müssen Sie außerdem den Parameter --portable-path angeben.|
+|Keine |`--copy-portable-config` |Kopieren Sie bei der Installation die portable Konfiguration vom angegebenen Pfad (`--config-path`, `-c`) im aktuellen Benutzerkonto.|
+|Keine |`--create-portable` |Erstellt und startet eine neue portable NVDA-Version. Hierfür müssen Sie außerdem den Parameter `--portable-path` angeben.|
+|Keine |`--create-portable-silent` |Erstellt eine neue portable NVDA-Version, ohne diese zu starten. Hierfür müssen Sie außerdem den Parameter `--portable-path` angeben.|
 |Keine |`--portable-path=Ordner` |Gibt den Ordner an, in dem die portable Version erstellt werden soll.|
 
 ### Systemweite Parameter {#SystemWideParameters}
