@@ -713,7 +713,7 @@ Poniżej znajdują się skróty klawiszowe do nawigacji w hierarchii obiektów:
 |Przechodzi do fokusu |NVDA+Numeryczny minus |NVDA+Backspace |Brak |Przechodzi do obiektu, który aktualnie posiada fokus, oraz umieszcza kursor przeglądu na pozycji kursora systemu|
 |Aktywuje aktualny obiekt |NVDA+Numeryczny enter |NVDA+Enter |Podwójne stuknięcie |Aktywuje bieżący obiekt (podobnie jak kliknięcie myszą lub naciśnięcie klawisza spacji, gdy ma fokus)|
 |Przenosi fokus lub kursor na aktualną pozycję przeglądania |NVDA+Shift+Numeryczny minus |NVDA+Shift+Backspace |Brak |Naciśnięty raz przenosi fokus do aktualnego obiektu nawigatora, naciśnięty dwukrotnie przenosi kursor systemowy do aktualnej pozycji kursora przeglądania|
-|Odczytuje położenie kursora przeglądu |NVDA+shift+Numeryczne delete |NVDA+shift+delete |brak |Brak |Zgłasza położenie tekstu lub obiektu pod kursorem przeglądu. Może to być wyrażone w procentach w obrębie dokumentu, jako odległość od krawędzi strony lub jako dokładna pozycja na ekranie. Dwukrotne naciśnięcie odczyta dalsze informacje.||
+|Odczytuje położenie kursora przeglądu |NVDA+shift+Numeryczne delete |NVDA+shift+delete |brak |Zgłasza położenie tekstu lub obiektu pod kursorem przeglądu. Może to być wyrażone w procentach w obrębie dokumentu, jako odległość od krawędzi strony lub jako dokładna pozycja na ekranie. Dwukrotne naciśnięcie odczyta dalsze informacje.|
 |Przenieś kursor przeglądu do paska stanu |brak |brak |brak |Odczytuje pasek stanu, jeżeli NVDA go znajdzie. Objekt nawigatora będzie przeniesiony do tej lokalizacji.|
 
 <!-- KC:endInclude -->
