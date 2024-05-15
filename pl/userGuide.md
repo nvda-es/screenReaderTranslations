@@ -455,7 +455,7 @@ Oznacza to, że gesty wykonywane normalnie nie będą działać, jeśli włączo
 <!-- KC:beginInclude -->
 W celu przełączania obsługi gestów naciśnij NVDA+CTRL+ALT+T.
 <!-- KC:endInclude -->
-Możesz też przełączyć [obsługę gestów]#(TouchSupportEnable) z odpowiedniej kategorii w ustawieniach programu.
+Możesz też przełączyć [obsługę gestów](#TouchSupportEnable) z odpowiedniej kategorii w ustawieniach programu.
 
 #### Eksploracja ekranu {#ExploringTheScreen}
 
