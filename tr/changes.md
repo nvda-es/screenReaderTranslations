@@ -40,7 +40,7 @@ Thunderbird, Adobe Reader, web tarayıcıları, Nudi ve Geekbench gibi uygulamal
   * Figürlerin ve resim yazılarının seslendirilmesini açıp kapatmak için kısayolu atanmamış bir girdi hareketi eklendi. (#10826, #14349)
 * Braille:
   * BrailleEdgeS2, BrailleEdgeS3 ekranları için destek eklendi. (#16033, #16279, @EdKweon)
-  * "Konuşmayı görüntüle" braille modu eklendi. (#15898, @Emil-18)
+  * "Konuşmayı görüntüle" braille kipi eklendi. (#15898, @Emil-18)
     * Etkinleştirildiğinde braille ekran tam olarak NVDA'nın konuşacağı metni gösterir.
     * Bu özellik `NVDA+alt+t` tuşlarına basarak veya braille ayarları iletişim kutusundan açılıp kapatılabilir.
 * Ses ayırma: (#12985, @mltony)
@@ -87,7 +87,7 @@ Thunderbird, Adobe Reader, web tarayıcıları, Nudi ve Geekbench gibi uygulamal
 * Adobe Reader'da, NVDA PDF'lerdeki formüllerin alternatif metinlerini göz ardı etmiyor. (#12715)
 * NVDA'nın Geekbench'teki şeridi ve seçenekleri okuyamamasına neden olan bir hata düzeltildi. (#16251, @mzanm)
 * Konfigürasyon kaydedildiiğinde tüm profillerin kaydedilememesi gibi nadir bir durum düzeltildi. (# 16343, @CyrilleB79)
-* Firefox ve Chromium tabanlı tarayıcılarda, NVDA, düzenlenebilir içeriğin içinde bir sunum listesinde (ul / ol) Enter tuşuna basıldığında odak moduna doğru bir şekilde girecek. (#16325)
+* Firefox ve Chromium tabanlı tarayıcılarda, NVDA, düzenlenebilir içeriğin içinde bir sunum listesinde (ul / ol) Enter tuşuna basıldığında odak kipine doğru bir şekilde girecek. (#16325)
 * Thunderbird mesaj listesinde görüntülenecek sütunları seçerken sütun durumu değişikliği otomatik olarak bildiriliyor. (#16323)
 
 ### Changes for Developers
@@ -98,7 +98,7 @@ Please refer to [the developer guide](https://www.nvaccess.org/files/nvda/docume
 * Make the AppVeyor build process easier for NVDA forks, by adding configurable variables in appveyor.yml to disable or modify NV Access specific portions of the build scripts. (#16216, @XLTechie)
 * Added a how-to document, explaining the process of building NVDA forks on AppVeyor. (#16293, @XLTechie)
 
-= 2024.1 =
+## 2024.1
 
 Yeni "isteğe bağlı" konuşma modu eklendi.
 Konuşma modu isteğe bağlı olarak ayarlandığında, NVDA imlecin hareket ettirilmesi gibi durumlarda olduğu gibi otomatik olarak konuşmaz, sadece pencere başlığının seslendirilmesi gibi işlevi özellikle bir şeyin seslendirilmesi olan komutlar uygulandığında konuşur.
@@ -119,7 +119,7 @@ Yeni Tayca, Filipin dili ve Rumence braille tabloları eklendi.
 
 Özellikle eklenti mağazası, braille, Libre Office, Microsoft Office ve ses için birçok hata düzeltmesi yapıldı.
 
-== Önemli notlar == 
+### Önemli notlar
 * Bu sürüm mevcut eklentilerle uyumluluğu bozar
 * Windows 7 ve Windows 8 artık desteklenmiyor.
 Desteklenen asgari Windows sürümü Windows 8.1'dir.
