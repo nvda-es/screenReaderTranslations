@@ -4898,7 +4898,7 @@ Die Parameter müssen durch ein Leerzeichen von der Option getrennt angegeben we
 |---|---|
 |`nvda -l 10` |Startet NVDA mit der Protokollierungsstufe "Debug".|
 |`nvda --log-file=C:\\NVDA.log` |Speichert das Protokoll in der Datei `C:\\NVDA.log`.|
-|`nvda --log-level=20 -f C:\\NVDA.log` |Legt die Protokollierungsstufe `Informationen` fest und speichert das Protokoll in der Datei `C:\\NVDA.log`.|
+|`nvda --log-level=20 -f C:\\NVDA.log` |Legt die Protokollierungsstufe für Informationen fest und speichert das Protokoll in der Datei `C:\\NVDA.log`.|
 
 Folgende Kommandozeilenoptionen stehen zur Verfügung:
 
