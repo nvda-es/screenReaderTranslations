@@ -713,7 +713,7 @@ Poniżej znajdują się skróty klawiszowe do nawigacji w hierarchii obiektów:
 |Przechodzi do fokusu |NVDA+Numeryczny minus |NVDA+Backspace |Brak |Przechodzi do obiektu, który aktualnie posiada fokus, oraz umieszcza kursor przeglądu na pozycji kursora systemu|
 |Aktywuje aktualny obiekt |NVDA+Numeryczny enter |NVDA+Enter |Podwójne stuknięcie |Aktywuje bieżący obiekt (podobnie jak kliknięcie myszą lub naciśnięcie klawisza spacji, gdy ma fokus)|
 |Przenosi fokus lub kursor na aktualną pozycję przeglądania |NVDA+Shift+Numeryczny minus |NVDA+Shift+Backspace |Brak |Naciśnięty raz przenosi fokus do aktualnego obiektu nawigatora, naciśnięty dwukrotnie przenosi kursor systemowy do aktualnej pozycji kursora przeglądania|
-|Odczytuje położenie kursora przeglądu |NVDA+shift+Numeryczne delete |NVDA+shift+delete |Brak |Zgłasza położenie tekstu lub obiektu pod kursorem przeglądu. Może to być wyrażone w procentach w obrębie dokumentu, jako odległość od krawędzi strony lub jako dokładna pozycja na ekranie. Dwukrotne naciśnięcie odczyta dalsze informacje.||
+|Odczytuje położenie kursora przeglądu |NVDA+shift+Numeryczne delete |NVDA+shift+delete |brak |Brak |Zgłasza położenie tekstu lub obiektu pod kursorem przeglądu. Może to być wyrażone w procentach w obrębie dokumentu, jako odległość od krawędzi strony lub jako dokładna pozycja na ekranie. Dwukrotne naciśnięcie odczyta dalsze informacje.||
 |Przenieś kursor przeglądu do paska stanu |brak |brak |brak |Odczytuje pasek stanu, jeżeli NVDA go znajdzie. Objekt nawigatora będzie przeniesiony do tej lokalizacji.|
 
 <!-- KC:endInclude -->
@@ -1213,7 +1213,7 @@ Zdefiniowano także poniższe oznaczenia stanu:
 |<--> |wyświetlane, gdy wprowadzono nieprawidłową wartość|
 |ldesc |wyświetlane, gdy obiekt (na ogół grafika) ma długi opis|
 |mled |wyświetlane, gdy pole edycyjne jest wieloliniowe (np. komentarze na stronach)|
-|<|> |wyświetlane dla wymaganych pól formularzy|
+|req |wyświetlane dla wymaganych pól formularzy|
 |ro |Wyświetlane, gdy obiekt (np. pole edycji) jest tylko do odczytu|
 |chk |Wyświetlane, gdy obiekt jest wybrany|
 |nchk |wyświetlane, gdy obiekt jest niewybrany|
@@ -1278,13 +1278,14 @@ NVDA jest programem tworzonym głównie z myślą o osobach niewidomych które k
 Takie ulepszenia nazywane są przez NVDA "dostawcą ulepszenia widoczności".
 
 Czytnik ekranu  posiada kilka takich funkcji. Opis każdej z nich znajduje się poniżej.
-Dodatkowi dostawcy natomiast mogą być instalowani w sposób taki sam, jak pozostałe dodatki do NVDA.
+Dodatkowi dostawcy mogą być dostarczone w formie [Dodatków dla NVDA](#AddonsManager).
 
 Ustawienia widoczności mogą być zmienione w [kategorii "widoczność"](#VisionSettings) znajdującej się w [ustawieniach głównych programu](#NVDASettings) dialog.
 
 ### Podświetlacz fokusu {#VisionFocusHighlight}
 
 Podświetlacz fokusu może pomóc w identyfikacji pozycji [kursora systemowego](#SystemFocus), [aktualnej pozycji nawigatora](#ObjectNavigation) i [pozycji trybu przeglądania](#BrowseMode).
+Pozycje te są wyróżnione kolorowym prostokątnym konturem.
 
 * Kolorem niebieskim zaznaczana jest pozycja kursora systemowego połączonego z obiektem nawigatora, na przykład jeżeli kursor systemowy [podąża za nawigatorem](#ReviewCursorFollowFocus)
 * Niebieskimi kreskami oznaczana jest pozycja kursora systemowego.
