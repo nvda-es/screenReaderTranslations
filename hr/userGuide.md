@@ -4897,8 +4897,8 @@ Ovi parametri trebaju biti smješteni poslije opcije, odvojene razmakom ako se k
 | . {.hideHeaderRow} |.|
 |---|---|
 |`nvda -l 10` |proslijeđuje NVDA informaciju da se mora pokrenuti s razinom loga postavljenom kao debug|
-|nvda --log-file=c:\nvda.log |određuje put do NVDA datoteke zapisnika na sljedeću vrijednost c:\nvda.log|
-|nvda --log-level=20 -f c:\nvda.log |proslijeđuje naredbu da se NVDA pokreće s razinom loga info i da zapisuje svoj log u c:\nvda.log|
+|`nvda --log-file=c:\nvda.log` |određuje put do NVDA datoteke zapisnika na sljedeću vrijednost `c:\nvda.log`|
+|`nvda --log-level=20 -f c:\nvda.log` |proslijeđuje naredbu da se NVDA pokreće s razinom loga info i da zapisuje svoj log u `c:\nvda.log`|
 
 Slijede opcije naredbenog retka za NVDA:
 
