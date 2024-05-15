@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-05-10 21:28+0000\n"
+"POT-Creation-Date: 2024-05-15 11:45+0000\n"
 "PO-Revision-Date: 2023-05-07 07:13+0200\n"
 "Last-Translator: René Linke <rene.linke@hamburg.de>\n"
 "Language-Team: \n"
@@ -34,9 +34,14 @@ msgid "NVDA compatibility: 2019.3 and later"
 msgstr "NVDA-Kompatibilität: 2019.3 und neuer"
 
 #. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "WordNav NVDA add-on improves built-in navigation by word, as well as adds "
+#| "extra word navigation commands with different definition for the word."
 msgid ""
 "WordNav NVDA add-on improves built-in navigation by word, as well as adds "
-"extra word navigation commands with different definition for the word."
+"extra word navigation commands with different definition for the word. It "
+"also provides word selection commands."
 msgstr ""
 "Die NVDA-Erweiterung \"WordNav\" verbessert die integrierte Navigation nach "
 "Wörtern und fügt zusätzliche Wortnavigationsbefehle mit unterschiedlichen "
@@ -74,24 +79,18 @@ msgstr ""
 "links/rechts wird nicht einmal an das Programm gesendet, so dass die "
 "Konsistenz der Sprache gewährleistet ist."
 
-#. type: Plain text
-msgid ""
-"Please note that a prototype of WordNav was formerly a part of [Tony's "
-"enhancements](https://github.com/mltony/nvda-tonys-enhancements/) add-on. "
-"Please either uninstall it or upgrade to [Tony's enhancements latest stable "
-"version](https://github.com/mltony/nvda-tonys-enhancements/releases/latest/"
-"download/tonysEnhancements.nvda-addon) to avoid conflicts."
+#. type: Title ##
+#, no-wrap
+msgid "Word navigation and word definitions"
 msgstr ""
-"Bitte beachten Sie, dass ein Prototyp von WordNav früher Teil von [Tony's "
-"enhancements](https://github.com/mltony/nvda-tonys-enhancements/) add-on "
-"war. Bitte deinstallieren Sie es oder aktualisieren Sie auf [Tonys "
-"Verbesserungen der letzten stabilen Version](https://github.com/mltony/nvda-"
-"tonys-enhancements/releases/latest/download/tonysEnhancements.nvda-addon), "
-"um Konflikte zu vermeiden."
 
 #. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "Currently WordNav supports four definitions of the word, assigned to "
+#| "different gestures:"
 msgid ""
-"Currently WordNav supports four definitions of the word, assigned to "
+"Currently WordNav supports five definitions of the word, assigned to "
 "different gestures:"
 msgstr ""
 "Derzeit unterstützt WordNav vier Definitionen des Wortes, die verschiedenen "
@@ -120,16 +119,23 @@ msgstr ""
 "Cursor in lange Bezeichner gehen kann."
 
 #. type: Bullet: '* '
+#, fuzzy
+#| msgid ""
+#| "`LeftControl+Windows+Arrows`: Bulky word definition treats almost all "
+#| "punctuation symbols adjacent to text as part of a single word, therefore "
+#| "it would treat paths like `C:\\directory\\subdirectory\\file.txt` as a "
+#| "single word."
 msgid ""
-"`LeftControl+Windows+Arrows`: Bulky word definition treats almost all "
+"`LeftControl+Windows+Arros`: Bulky word definition treats almost all "
 "punctuation symbols adjacent to text as part of a single word, therefore it "
 "would treat paths like `C:\\directory\\subdirectory\\file.txt` as a single "
 "word."
 msgstr ""
 "`Linke-Strg+Windows+Pfeiltasten`: Bei der Definition von sperrigen Wörtern "
 "werden fast alle Satzzeichen, die an Text angrenzen, als Teil eines einzigen "
-"Worts behandelt, so dass Pfade wie \"C:\\Verzeichnis\\Unterverzeichnis"
-"\\Datei.txt\" als ein einziges Wort behandelt werden würden."
+"Worts behandelt, so dass Pfade wie \"C:"
+"\\Verzeichnis\\Unterverzeichnis\\Datei.txt\" als ein einziges Wort behandelt "
+"werden würden."
 
 #. type: Bullet: '* '
 msgid ""
@@ -139,6 +145,12 @@ msgstr ""
 "`Rechte-Strg+Windows+Pfeiltasten`: Mehrwortdefinition, die mehrere Wörter "
 "zusammenfasst. Die Anzahl der Wörter ist konfigurierbar."
 
+#. type: Bullet: '* '
+msgid ""
+"Unassigned: custom regular expression word definition: allows user to define "
+"a custom regular expression for word boundaries."
+msgstr ""
+
 #. type: Plain text
 msgid "Gestures can be customized in WordNav settings panel."
 msgstr ""
@@ -146,18 +158,81 @@ msgstr ""
 
 #. type: Title ##
 #, no-wrap
-msgid "Notes"
-msgstr "Anmerkungen"
+msgid "Word selection"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"Word selection is supported starting with WordNav v2.0. Just add `shift` "
+"modifier to any word navigation gestures to select words. There is also one "
+"extra gesture for word selection:"
+msgstr ""
 
 #. type: Bullet: '* '
 msgid ""
-"At this time WordNav doesn't modify `Control+Shift+LeftArrow/RightArrow` "
-"gestures to select words, since implementation of such commands are "
-"significantly more complicated."
+"`control+shift+numpad1` and `control+windows+shift+numpad1` select word to "
+"the right similar to their `rightArrow` counterparts, but they also include "
+"trailing spaces into selection."
 msgstr ""
-"Zur Zeit verändert WordNav nicht die Tastenbefehle \"Strg+Umschalt"
-"+Pfeiltaste nach links/rechts\", um Wörter auszuwählen, da die "
-"Implementierung solcher Befehle wesentlich komplizierter ist."
+
+#. type: Plain text
+msgid ""
+"Please note, however, that currently used accessibility APIs have multiple "
+"issues related to word selection. Please get yourself familiar with the "
+"following list of issues and workarounds:"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"UIA applications (e.g. Notepad, Visual Studio, Microsoft Word) don't support "
+"setting caret at the beginning of selection. In those applications caret "
+"location is stored on WordNav side. As an adverse side effect, word "
+"navigation commands might not play well with line and paragraph selection "
+"commands (`shift+up/downArrow`, `control+shift+up/downArrow`) and results "
+"might be unpredictable. For convenience, character selection commands "
+"(`shift+left/rightArrow`) have been updated in WordNav for UIA applications "
+"and should work well."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"Basic single line Windows edit controls also don't allow to set the caret in "
+"front of selection, so the previous point also applies to them. This affects "
+"all single line edit boxes within NVDA."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"IAccessible2 doesn't provide a way to set selection spanning across multiple "
+"paragraphs. There is no known workaround for this issue. This affects rich "
+"multiline edit boxes in Chrome and Firefox, such as compose email text area "
+"in GMail and compose email window in Thunderbird."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"In notepad++ selection update messages come unreasonably slow. As a "
+"workaround, WordNav announces selection on NVDA side for word selection "
+"commands and silences late notifications for the following 0.5 seconds. As a "
+"result, if you press word selection command followed by another (e.g. "
+"character) selection command in quick succession, you might miss selection "
+"notification for the latter one if it came within 0.5 seconds from the last "
+"word selection command."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"In multiline edit boxes supporting TOM interface NVDA incorrectly identifies "
+"cursor location when selection is present. This has been fixed in nvaccess/"
+"nvda#16455, which is scheduled to be included in NVDA v2024.2 release. "
+"Before that release word selection commands won't work correctly in TOM edit "
+"boxes, such as NVDA log viewer."
+msgstr ""
+
+#. type: Title ##
+#, no-wrap
+msgid "Notes"
+msgstr "Anmerkungen"
 
 #. type: Bullet: '* '
 msgid ""
@@ -172,15 +247,20 @@ msgstr ""
 
 #. type: Bullet: '* '
 msgid ""
-"WordNav doesn't work reliably in VSCode, since due to its internal "
-"optimizations, VSCode presents only a few lines of file contents at a time, "
-"that change dynamically, and this occasionally interferes with WordNav "
-"algorithm."
+"Compatibility with VSCode requires NVDA add-on IndentNav v2.0 or later to be "
+"installed. Additionally, VSCode extension [Accessibility for NVDA IndentNav]"
+"(https://marketplace.visualstudio.com/items?itemName=TonyMalykh.nvda-indent-"
+"nav-accessibility) must be installed in VSCode."
 msgstr ""
-"WordNav funktioniert in VS Code nicht zuverlässig, da VSCode aufgrund seiner "
-"internen Optimierungen nur wenige Zeilen des Dateiinhalts auf einmal "
-"darstellt, die sich dynamisch ändern, was gelegentlich den WordNav-"
-"Algorithmus stört."
+
+#. type: Title ##
+#, no-wrap
+msgid "Downloads"
+msgstr ""
+
+#. type: Plain text
+msgid "Please install the latest version from NVDA add-on store."
+msgstr ""
 
 #. type: Plain text
 #, no-wrap
@@ -190,3 +270,37 @@ msgstr "[[!tag dev stable]]\n"
 #. type: Plain text
 msgid "[1]: https://www.nvaccess.org/addonStore/legacy?file=wordnav"
 msgstr "[1]: https://www.nvaccess.org/addonStore/legacy?file=wordnav"
+
+#~ msgid ""
+#~ "Please note that a prototype of WordNav was formerly a part of [Tony's "
+#~ "enhancements](https://github.com/mltony/nvda-tonys-enhancements/) add-on. "
+#~ "Please either uninstall it or upgrade to [Tony's enhancements latest "
+#~ "stable version](https://github.com/mltony/nvda-tonys-enhancements/"
+#~ "releases/latest/download/tonysEnhancements.nvda-addon) to avoid conflicts."
+#~ msgstr ""
+#~ "Bitte beachten Sie, dass ein Prototyp von WordNav früher Teil von [Tony's "
+#~ "enhancements](https://github.com/mltony/nvda-tonys-enhancements/) add-on "
+#~ "war. Bitte deinstallieren Sie es oder aktualisieren Sie auf [Tonys "
+#~ "Verbesserungen der letzten stabilen Version](https://github.com/mltony/"
+#~ "nvda-tonys-enhancements/releases/latest/download/tonysEnhancements.nvda-"
+#~ "addon), um Konflikte zu vermeiden."
+
+#~ msgid ""
+#~ "At this time WordNav doesn't modify `Control+Shift+LeftArrow/RightArrow` "
+#~ "gestures to select words, since implementation of such commands are "
+#~ "significantly more complicated."
+#~ msgstr ""
+#~ "Zur Zeit verändert WordNav nicht die Tastenbefehle "
+#~ "\"Strg+Umschalt+Pfeiltaste nach links/rechts\", um Wörter auszuwählen, da "
+#~ "die Implementierung solcher Befehle wesentlich komplizierter ist."
+
+#~ msgid ""
+#~ "WordNav doesn't work reliably in VSCode, since due to its internal "
+#~ "optimizations, VSCode presents only a few lines of file contents at a "
+#~ "time, that change dynamically, and this occasionally interferes with "
+#~ "WordNav algorithm."
+#~ msgstr ""
+#~ "WordNav funktioniert in VS Code nicht zuverlässig, da VSCode aufgrund "
+#~ "seiner internen Optimierungen nur wenige Zeilen des Dateiinhalts auf "
+#~ "einmal darstellt, die sich dynamisch ändern, was gelegentlich den WordNav-"
+#~ "Algorithmus stört."
