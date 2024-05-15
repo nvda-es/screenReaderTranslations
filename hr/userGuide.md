@@ -345,7 +345,7 @@ Ova je opcija standardno aktivirana za nove instalacije.
 #### Izradi prečac na radnoj površini (kontrol+alt+F5) {#CreateDesktopShortcut}
 
 Ova opcija omogućuje izradu prečaca na radnoj površini za pokretanje NVDA čitača. 
-Ako je izrađen, prečacu na radnoj površini bit će dodijeljen tipkovnički prečac kontrol+alt+F5, pomoću kojeg je moguće pokrenuti NVDA čitača u bilo kojem trenutku.
+Ako je izrađen, prečacu na radnoj površini bit će dodijeljen tipkovnički prečac `kontrol+alt+F5`, pomoću kojeg je moguće pokrenuti NVDA čitača u bilo kojem trenutku.
 
 #### Kopiraj prijenosnu konfiguraciju na ovaj korisnički račun {#CopyPortableConfigurationToCurrentUserAccount}
 
