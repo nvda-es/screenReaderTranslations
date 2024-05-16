@@ -3140,7 +3140,7 @@ Uwaga:
 * W celu zachowania emulowanych skrótów klawiszowych, należy najpierw przypisać do nich polecenie NVDA.
 * Przypisanie polecenia NVDA korzystającego z klawiszy modyfikujących do emulowanego skrótu pozbawionego  modyfikatorów. 
 Na przykład, przypisanie emulowanego polecenia `a` do polecenia `CTRL+M` może skończyć się 
-błędną interpretacją skrótu przez aplikację.
+W aplikacji która dostaje `ctrl+a`.
 
 Po zakończeniu wprowadzania zmian, naciśnij przycisk OK aby je zachować albo przycisk Anuluj, aby odrzucić.
 
@@ -3148,7 +3148,7 @@ Po zakończeniu wprowadzania zmian, naciśnij przycisk OK aby je zachować albo 
 
 NVDA domyślnie zapisuje ustawienia automatycznie przy wyjściu z programu.
 To zachowanie może zostać wyłączone w okienku "Ustawienia ogólne".
- Aby ręcznie zapisać ustawienia w każdej chwili, użyj polecenia "Zapisz ustawienia" w menu NVDA.
+Aby ręcznie zapisać ustawienia w każdej chwili, użyj polecenia "Zapisz ustawienia" w menu NVDA.
 
 Jeśli przez pomyłkę zmienisz ustawienia programu, możesz skorzystać z opcji "Przywróć zapisane ustawienia" dostępnej z menu NVDA.
 Możesz również przywrócić konfigurację do ustawień fabrycznych, wybierając w menu NVDA polecenie "Zresetuj konfigurację do ustawień fabrycznych".
@@ -3781,7 +3781,7 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 |Klawisz Enter |esc+enter, lewo+prawy klawisz potrójnej akcji góra +dół, joystickAction|
 |Strzałka w górę |joystick góra|
 |Strzałka w dół |joystick dół|
-|Strzałka w lewo |joystick lewo||
+|Strzałka w lewo |joystick lewo|
 |Strzałka w prawo |joystick prawo|
 |Menu NVDA |B2+B4+B5+B6|
 |Przełącz brajl związany z |b2|
@@ -3794,7 +3794,7 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 ### MDV Lilli {#MDVLilli}
 
 Monitor Lilli Braille firmy [MDV](https://www.mdvbologna.it/) jest obsługiwany przez NVDA.
- Nie wymaga instalacji żadnych specjalnych sterowników.
+Nie wymaga instalacji żadnych specjalnych sterowników.
 Wystarczy podłączyć monitor i skonfigurować NVDA aby go używał.
 
 Ta linijka nie jest obsługiwana przez funkcję NVDA automatycznego wykrywania linijki brajlowskiej.
