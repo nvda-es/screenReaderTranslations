@@ -4224,11 +4224,10 @@ These are (ordered from left to right):
 Currently, the right thumb key is not in use.
 The inner keys are both mapped to space.
 
-| Name |Key|
-|---|---|
-
 <!-- KC:beginInclude -->
 
+| Name |Key|
+|---|---|
 |escape key |space with dot 7|
 |upArrow key |space with dot 2|
 |leftArrow key |space with dot 1|
@@ -4710,6 +4709,13 @@ Please see the [BRLTTY key binding lists](http://mielke.cc/brltty/doc/KeyBinding
 |Move braille display to previous line |lnup (go up one line)|
 |Move braille display to next line |lndn (go down one line)|
 |Route to braille cell |route (bring cursor to character)|
+|Toggle input help |`learn` (enter/leave command learn mode)|
+|Open the NVDA menu |`prefmenu` (enter/leave preferences menu)|
+|Revert configuration |`prefload` (restore preferences from disk)|
+|Save configuration |`prefsave` (save preferences to disk)|
+|Report time |`time` (show current date and time)|
+|Speak the line where the review cursor is located |`say_line` (speak current line)|
+|Say all using review cursor |`say_below` (speak from current line through bottom of screen)|
 
 <!-- KC:endInclude -->
 
@@ -4795,8 +4801,6 @@ Following are the current key assignments for these displays.
 |---|---|
 |Scroll braille display back |pan left or rocker up|
 |Scroll braille display forward |pan right or rocker down|
-|Move braille display to previous line |space + dot1|
-|Move braille display to next line |space + dot4|
 |Route to braille cell |routing set 1||
 |Toggle braille tethered to |up+down|
 |upArrow key |joystick up|
@@ -4819,17 +4823,39 @@ Following are the current key assignments for these displays.
 ## Дополнительные темы {#AdvancedTopics}
 ### Безопасный режим {#SecureMode}
 
-NVDA может быть запущена в безопасном режиме с помощью [параметра командной строки](#CommandLineOptions) `-s`.
+Системные администраторы могут захотеть настроить NVDA для ограничения несанкционированного доступа к системе.
+NVDA позволяет устанавливать пользовательские дополнения, которые могут выполнять произвольный код, в том числе при повышении прав администратора NVDA.
+NVDA также позволяет пользователям выполнять произвольный код через консоль Python.
+Безопасный режим NVDA не позволяет пользователям изменять конфигурацию NVDA и иным образом ограничивает несанкционированный доступ к системе.
+
 NVDA запускается в безопасном режиме при выполнении на [защищённых экранах](#SecureScreens), если только не включён [общесистемный параметр](#SystemWideParameters) `serviceDebug`.
+Чтобы заставить NVDA всегда запускаться в безопасном режиме, установите параметр `forceSecureMode` в [общесистемных параметрах](#SystemWideParameters).
+Также NVDA может быть запущена в безопасном режиме с помощью [параметра командной строки](#CommandLineOptions) `-s`.
 
 Безопасный режим отключает:
 
 * Сохранение конфигурации и других настроек на диск
 * Сохранение карты жестов на диск
 * Операции над [Профилем конфигурации](#ConfigurationProfiles), такие как создание, удаление, переименование профилей и т.д.
+* Loading custom configuration folders using [the `-c` command line option](#CommandLineOptions)
 * Обновление NVDA и создание переносных копий
+* The [Add-on Store](#AddonsManager)
 * [Консоль Python](#PythonConsole)
 * [Просмотр журнала](#LogViewer) и ведение журнала.
+* The [Braille Viewer](#BrailleViewer) and [Speech Viewer](#SpeechViewer)
+* Opening external documents from the NVDA menu, such as the user guide or contributors file.
+
+Installed copies of NVDA store their configuration including add-ons in `%APPDATA%\nvda`.
+To prevent NVDA users from modifying their configuration or add-ons directly, user access to this folder must also be restricted.
+
+Secure mode is ineffective for portable copies of NVDA.
+This limitation also applies to the temporary copy of NVDA which runs when launching the installer.
+In secure environments, a user being able to run a portable executable is the same security risk regardless of secure mode.
+It is expected that system administrators restrict unauthorized software from running on their systems, including portable copies of NVDA.
+
+NVDA users often rely on configuring their NVDA profile to suit their needs.
+This may include installing and configuring custom add-ons, which should be vetted independently to NVDA.
+Secure mode freezes changes to NVDA configuration, so please ensure that NVDA is configured appropriately before forcing secure mode.
 
 ### Защищённые экраны {#SecureScreens}
 
