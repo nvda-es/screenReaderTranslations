@@ -4876,7 +4876,7 @@ NVDA  akceptuje jeden lub więcej przełączników startowych, zmieniających je
 Możesz podać tak wiele opcji, jak to jest potrzebne.
 Te opcje mogą być wpisane podczas uruchamiania ze skrótu  (we właściwościach skrótu), w oknie dialogowym "Uruchom"  (Menu start-> Uruchom lub Windows+R) lub w konsoli wiersza poleceń Windows.
 Opcje powinny być oddzielone spacjami od nazwy pliku wykonywalnego NVDA, oraz od innych opcji.
-Dla przykładu, przełącznik --disable-addons pozwala uruchomić NVDA z wyłączonymi dodatkami.
+Dla przykładu, przełącznik `--disable-addons` pozwala uruchomić NVDA z wyłączonymi dodatkami.
 Pozwala to ustalić, czy jakiś problem jest powodowany przez dodatek i szybko go naprawić.
 
 Inny przykład, to zamknięcie aktualnie uruchomionej kopii NVDA poprzez wpisanie:
@@ -4888,31 +4888,31 @@ opcje posiadające krótką wersję, możesz łączyć np.:
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|nvda -mc CONFIGPATH |Ta komenda uruchomi NVDA bez dźwięków oraz wiadomości startowej, oraz z użyciem niestandardowego katalogu konfiguracji.|
-|nvda -mc CONFIGPATH --disable-addons |Jak powyżej, z wyłączonymi dodatkami.|
+|`nvda -mc CONFIGPATH` |Ta komenda uruchomi NVDA bez dźwięków oraz wiadomości startowej, oraz z użyciem niestandardowego katalogu konfiguracji.|
+|`nvda -mc CONFIGPATH --disable-addons` |Jak powyżej, z wyłączonymi dodatkami.|
 
 Niektóre przełączniki akceptują dodatkowe ustawienia; np. jak szczegółowy powinien być tworzony log albo ścieżkę do katalogu konfiguracyjnego użytkownika.
-Te ustawienia powinny być umieszczane po odpowiedniej opcji oddzielone spacją od krótkiej wersji przełącznika lub znakiem równości (=) od długiej wersji, np.:
+Te ustawienia powinny być umieszczane po odpowiedniej opcji oddzielone spacją od krótkiej wersji przełącznika lub znakiem równości `(=)` od długiej wersji, np.:
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|nvda -l 10 |Wywołuje NVDA z poziomem logowania ustawionym na Debugowanie|
-|nvda --log-file=c:\nvda.log |Nakazuje NVDA zapisywać log do pliku c:\nvda.log|
-|nvda --log-level=20 -f c:\nvda.log |Uruchamia NVDA z poziomem logowania ustawionym na info i plikiem logu zapisywanym w c:\nvda.log|
+|`nvda -l 10` |Wywołuje NVDA z poziomem logowania ustawionym na Debugowanie|
+|`nvda --log-file=c:\nvda.log` |Nakazuje NVDA zapisywać log do pliku `c:\nvda.log`|
+|`nvda --log-level=20 -f c:\nvda.log` |Uruchamia NVDA z poziomem logowania ustawionym na info i plikiem logu zapisywanym w `c:\nvda.log`|
 
 Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 
 | Krótka |Długa |Opis|
 |---|---|---|
-|-h |--help |Pokaż pomoc wiersza poleceń i wyjdź|
-|-q |--quit |Zakończ aktualnie uruchomioną kopię NVDA|
-|-k |--check-running |Poinformuj kodem wyjścia, czy NVDA jest uruchomiony; 0 jeśli uruchomiony, 1 jeśli nie uruchomiony|
-|-f LOGFILENAME |--log-file=LOGFILENAME |Plik, do którego powinny być zapisywane informacje logu. Logowanie jest zawsze wyłączone gdy tryb bezpieczny jest włączony.|
-|-l PożiomLogowania |--log-level=LOGLEVEL |Najniższy poziom zapisywanych zdarzeń do podglądu logu (debugowanie 10, wejście/wyjście 12, debugowanie powiadomienie 15, info 20, wyłączone 100). Logowanie jest zawsze wyłączone gdy tryb bezpieczny jest włączony.|
-|-c ścieżka |--config-path=ścieżka |Ścieżka folderu, w którym zapisane są wszystkie ustawienia NVDA. Domyślna wartość to wyłączone gdy tryb bezpieczny jest włączony.|
-|Brak |--lang=LANGUAGE |Nadpisuje domyślny język NVDA. Ustawiony na "Windows" dla bieżacego użytkownika, "en" dla angielskiego, itd.|
-|-m |--minimal |Bez dźwięku, interfejsu, informacji początkowej etc|
-|-s |--secure |Uruchamia NVDA w [Trybie bezpiecznym](#SecureMode)|
+|`-h` |`--help` |Pokaż pomoc wiersza poleceń i wyjdź|
+|`-q` |`--quit` |Zakończ aktualnie uruchomioną kopię NVDA|
+|`-k` |`--check-running` |Poinformuj kodem wyjścia, czy NVDA jest uruchomiony; 0 jeśli uruchomiony, 1 jeśli nie uruchomiony|
+|`-f LOGFILENAME` |`--log-file=LOGFILENAME` |Plik, do którego powinny być zapisywane informacje logu. Logowanie jest zawsze wyłączone gdy tryb bezpieczny jest włączony.|
+|`-l PożiomLogowania` |--log-level=LOGLEVEL |Najniższy poziom zapisywanych zdarzeń do podglądu logu (debugowanie 10, wejście/wyjście 12, debugowanie powiadomienie 15, info 20, wyłączone 100). Logowanie jest zawsze wyłączone gdy tryb bezpieczny jest włączony.|
+|`-c ścieżka` |`--config-path=ścieżka` |Ścieżka folderu, w którym zapisane są wszystkie ustawienia NVDA. Domyślna wartość to wyłączone gdy tryb bezpieczny jest włączony.|
+|Brak |`--lang=LANGUAGE` |Nadpisuje domyślny język NVDA. Ustawiony na "Windows" dla bieżacego użytkownika, "en" dla angielskiego, itd.|
+|`-m` |`--minimal` |Bez dźwięku, interfejsu, informacji początkowej etc|
+|`-s` |`--secure` |Uruchamia NVDA w [Trybie bezpiecznym](#SecureMode)|
 |Brak |--disable-addons |Dodatki będą ignorowane|
 |Brak |--debug-logging |Ustaw poziom logowania na informacje debugowania, dla bieżącego uruchomienia. To ustawienie nadpisze jakiekolwiek ustawienie poziomu logowania ( --loglevel, -l) z wyłączeniem zapisywania logów włącznie.|
 |Brak |--no-logging |Wyłącz zapisywanie dziennika podczas używania NVDA. To ustawienie może być nadpisane, gdy poziom logowania ( --loglevel, -l) jest określony w linii komend lub rejestrowanie debugowania jest włączone.|
