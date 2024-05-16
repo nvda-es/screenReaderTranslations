@@ -4917,10 +4917,10 @@ Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 |Brak |`--debug-logging` |Ustaw poziom logowania na informacje debugowania, dla bieżącego uruchomienia. To ustawienie nadpisze jakiekolwiek ustawienie poziomu logowania ( `--loglevel`, `-l`) z wyłączeniem zapisywania logów włącznie.|
 |Brak |`--no-logging` |Wyłącz zapisywanie dziennika podczas używania NVDA. To ustawienie może być nadpisane, gdy poziom logowania ( `--loglevel`, `-l`) jest określony w linii komend lub rejestrowanie debugowania jest włączone.|
 |Brak |`--no-sr-flag` |Nie zmieniaj globalnej flagi systemowej czytnika ekranu|
-|Brak |--install |Po cichu instaluje NVDA i uruchamia zainstalowaną kopię|
-|Brak |--install-silent |Po cichu instaluje NVDA (nie uruchamia zainstalowanej kopii)|
-|Brak |~~copy-portable-config |Podczas instalacji kopiuję konfigurację wersji przenośnej z określonej ścieżki (~~config-path, -c) do aktualnego konta użytkownika|
-|Brak |--enable-start-on-logon=True|False |Przy instalacji włącz funkcję NVDA [Uruchamiaj na ekranie logowania](#StartAtWindowsLogon)|
+|Brak |`--install` |Po cichu instaluje NVDA i uruchamia zainstalowaną kopię|
+|Brak |`--install-silent` |Po cichu instaluje NVDA (nie uruchamia zainstalowanej kopii)|
+|Brak |`copy-portable-config` |Podczas instalacji kopiuję konfigurację wersji przenośnej z określonej ścieżki (`config-path, -c`) do aktualnego konta użytkownika|
+|Brak |`--enable-start-on-logon=True/False |Przy instalacji włącz funkcję NVDA [Uruchamiaj na ekranie logowania](#StartAtWindowsLogon)|
 |Brak |--create-portable |Tworzy przenośną kopię NVDA (uruchamiając nowo utworzoną kopię). Wymaga określenia parametru --portable-path|
 |Brak |--create-portable-silent |Tworzy przenośną kopię NVDA (nie uruchamiając nowo utworzonej kopii). Wymaga określenia parametru --portable-path|
 |Brak |--portable-path=SCIEZKA |Ścieżka, w której zostanie utworzona przenośna kopia|
