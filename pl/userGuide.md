@@ -1395,7 +1395,7 @@ Lista elementów wyświetla nagłówki, linki, adnotacje (zawierające komentarz
 <!-- KC:beginInclude -->
 Aby odczytać komentarz na pozycji kursora, naciśnij NVDA+Alt+C.
 <!-- KC:endInclude -->
- Wszystkie komentarze dokumentu oraz inne zmiany, mogą być wymienione na liście elementów NVDA po wybraniu adnotacji jako typu.
+Wszystkie komentarze dokumentu oraz inne zmiany, mogą być wymienione na liście elementów NVDA po wybraniu adnotacji jako typu.
 
 ### Microsoft Excel {#MicrosoftExcel}
 #### Automatyczny odczyt nagłówków kolumn i wierszy {#ExcelAutomaticColumnAndRowHeaderReading}
@@ -1413,7 +1413,7 @@ Po przejściu do pierwszej komórki wiersza lub kolumny zawierającej nagłówki
 
 <!-- KC:endInclude -->
 Te ustawienia zostaną zapisane w skoroszycie jako nazwane zakresy, kompatybilne z innymi programami czytającymi takimi jak Jaws.
- Oznacza to, że inni użytkownicy oprogramowania czytającego ekran, którzy później otworzą ten skoroszyt, będą mieli te nagłówki już ustawione. 
+Oznacza to, że inni użytkownicy oprogramowania czytającego ekran, którzy później otworzą ten skoroszyt, będą mieli te nagłówki już ustawione. 
 
 #### Lista elementów {#ExcelElementsList}
 
@@ -2136,7 +2136,7 @@ Każdy nowy sterownik, dodany w nowej wersji NVDA lub dostarczany jako dodatek, 
 
 Możesz sprawdzić, czy twój monitor brajlowski wspiera automatyczne wykrywanie monitorów brajlowskich w rozdziale [wspierane monitory brajlowskie](#SupportedBrailleDisplays).
 
-##### port {#BrailleSettingsPort}
+##### port {#SelectBrailleDisplayPort}
 
 Ta opcja, jeśli jest dostępna, pozwala określić jaki port lub typ połączenia będzie użyty do komunikacji z monitorem brajlowskim.
 Jest to lista rozwijana, zawierająca elementy zależne od wybranego urządzenia.
