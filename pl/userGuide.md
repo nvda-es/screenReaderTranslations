@@ -4914,9 +4914,9 @@ Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 |`-m` |`--minimal` |Bez dźwięku, interfejsu, informacji początkowej etc|
 |`-s` |`--secure` |Uruchamia NVDA w [Trybie bezpiecznym](#SecureMode)|
 |Brak |`--disable-addons` |Dodatki będą ignorowane|
-|Brak |`--debug-logging` |Ustaw poziom logowania na informacje debugowania, dla bieżącego uruchomienia. To ustawienie nadpisze jakiekolwiek ustawienie poziomu logowania ( `--loglevel, -l`) z wyłączeniem zapisywania logów włącznie.|
-|Brak |`--no-logging` |Wyłącz zapisywanie dziennika podczas używania NVDA. To ustawienie może być nadpisane, gdy poziom logowania ( `--loglevel, -l`) jest określony w linii komend lub rejestrowanie debugowania jest włączone.|
-|Brak |--no-sr-flag |Nie zmieniaj globalnej flagi systemowej czytnika ekranu|
+|Brak |`--debug-logging` |Ustaw poziom logowania na informacje debugowania, dla bieżącego uruchomienia. To ustawienie nadpisze jakiekolwiek ustawienie poziomu logowania ( `--loglevel`, `-l`) z wyłączeniem zapisywania logów włącznie.|
+|Brak |`--no-logging` |Wyłącz zapisywanie dziennika podczas używania NVDA. To ustawienie może być nadpisane, gdy poziom logowania ( `--loglevel`, `-l`) jest określony w linii komend lub rejestrowanie debugowania jest włączone.|
+|Brak |`--no-sr-flag` |Nie zmieniaj globalnej flagi systemowej czytnika ekranu|
 |Brak |--install |Po cichu instaluje NVDA i uruchamia zainstalowaną kopię|
 |Brak |--install-silent |Po cichu instaluje NVDA (nie uruchamia zainstalowanej kopii)|
 |Brak |~~copy-portable-config |Podczas instalacji kopiuję konfigurację wersji przenośnej z określonej ścieżki (~~config-path, -c) do aktualnego konta użytkownika|
