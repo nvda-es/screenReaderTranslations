@@ -3137,10 +3137,10 @@ You can also set the level to character; in this case the symbol will not be spo
 
 Примечания:
 
- * Эмулируемые комбинации клавиш должны иметь назначенные пользовательские жесты, чтобы они могли быть сохранены при закрытии этого диалога.
- * Пользовательский жест ввода с клавишами-модификаторами не может быть сопоставлен с эмулируемым жестом без
- клавиш-модификаторов. Например эмуляция клавиши 'A' с помощью пользовательского жеста 'Control+M' может привести к тому, что
- приложение получит нажатие 'Control+A'.
+* Эмулируемые комбинации клавиш должны иметь назначенные пользовательские жесты, чтобы они могли быть сохранены при закрытии этого диалога.
+* Пользовательский жест ввода с клавишами-модификаторами не может быть сопоставлен с эмулируемым жестом без
+клавиш-модификаторов. Например эмуляция клавиши 'A' с помощью пользовательского жеста 'Control+M' может привести к тому, что
+приложение получит нажатие 'Control+A'.
 
 Когда вы закончите, нажмите кнопку OK, чтобы сохранить сделанные изменения или «Отмена», чтобы выйти из диалогового окна без сохранения.
 
@@ -3613,13 +3613,14 @@ NVDA имеет возможность автоматического опред
 * Дисплеи Eurobraille Esys/Esytime/Iris
 * Дисплеи Nattiq nBraille
 * Seika Notetaker: MiniSeika (16, 24 cells), V6, and V6Pro (40 cells)
+* Tivomatic Caiku Albatross 46/80 displays
 * Любой дисплей поддерживающий стандарт USB HID для брайлевских дисплеев
 
 ### Freedom Scientific Focus/PAC Mate {#FreedomScientificFocus}
 
 Все брайлевские дисплеи Focus и PAC Mate от компании [Freedom Scientific](https://www.freedomscientific.com/) поддерживаются посредством USB или Bluetooth-подключения.
 В вашей системе должны быть установлены драйвера брайлевских дисплеев от Freedom Scientific.
-Если у вас ещё нет этих драйверов, то вы можете скачать их на странице https://support.freedomscientific.com/Downloads/Focus/FocusBlueBrailleDisplayDriver.
+Если у вас ещё нет этих драйверов, то вы можете скачать их на [странице Focus Blue Braille Display Driver](https://support.freedomscientific.com/Downloads/Focus/FocusBlueBrailleDisplayDriver).
 Несмотря на то, что на этой странице упоминается только брайлевский дисплей Focus Blue, драйвера поддерживают все дисплеи Focus и Pacmate компании Freedom Scientific.
 
 По умолчанию, NVDA автоматически определяет и устанавливает соединение с этими дисплеями как через USB, так и через Bluetooth-подключение.
@@ -3631,7 +3632,7 @@ NVDA имеет возможность автоматического опред
 Для описания расположения клавиш, пожалуйста, обратитесь к документации по брайлевскому дисплею.
 <!-- KC:beginInclude -->
 
-| Имя |клавишная комбинация|
+| Имя |Комбинация клавиш|
 |---|---|
 |Прокручивает фрагмент текста на брайлевском дисплее назад |topRouting1 (первая клетка на брайлевском дисплее)|
 |Прокручивает фрагмент текста на брайлевском дисплее вперёд |topRouting20/40/80 (последняя клетка на брайлевском дисплее)|
@@ -3846,6 +3847,15 @@ VarioUltra и Pronto! используют HID протокол.
 |Перемещение брайлевского дисплея к предыдущей строке |d1|
 |Перемещение брайлевского дисплея к следующей строке |d3|
 |Перемещение к брайлевской клетке |routing|
+|`shift+tab` key |`space+dot1+dot3`|
+|`tab` key |`space+dot4+dot6`|
+|`alt` key |`space+dot1+dot3+dot4` (`space+m`)|
+|`escape` key |`space+dot1+dot5` (`space+e`)|
+|`windows` key |`space+dot3+dot4`|
+|`alt+tab` key |`space+dot2+dot3+dot4+dot5` (`space+t`)|
+|NVDA Menu |`space+dot1+dot3+dot4+dot5` (`space+n`)|
+|`windows+d` key (minimize all applications) |`space+dot1+dot4+dot5` (`space+d`)|
+|Say all |`space+dot1+dot2+dot3+dot4+dot5+dot6`|
 
 Для брайлевских дисплеев с джойстиком:
 
@@ -3921,7 +3931,7 @@ USB-драйверы не нужны, если выбран протокол Ope
 В NVDA используются следующие клавишные комбинации для брайлевских дисплеев Brailliant BI/B и BrailleNote touch.
 Для описания расположения клавиш, пожалуйста, обратитесь к документации по брайлевскому дисплею.
 
-#### Комбинации клавиш для всех моделей {#toc265}
+#### Комбинации клавиш для всех моделей {#toc334}
 
 <!-- KC:beginInclude -->
 
@@ -3950,7 +3960,7 @@ USB-драйверы не нужны, если выбран протокол Ope
 
 <!-- KC:endInclude -->
 
-#### Комбинации клавиш для Brailliant BI 32, BI 40 и B 80 {#toc266}
+#### Комбинации клавиш для Brailliant BI 32, BI 40 и B 80 {#toc335}
 
 <!-- KC:beginInclude -->
 
@@ -3962,7 +3972,7 @@ USB-драйверы не нужны, если выбран протокол Ope
 
 <!-- KC:endInclude -->
 
-#### Комбинации клавиш для Brailliant BI 14 {#toc267}
+#### Комбинации клавиш для Brailliant BI 14 {#toc336}
 
 <!-- KC:beginInclude -->
 
@@ -3979,8 +3989,7 @@ USB-драйверы не нужны, если выбран протокол Ope
 ### Брайлевские дисплеи HIMS Braille/Braille EDGE/Smart Beetle/Sync Braille {#Hims}
 
 NVDA поддерживает брайлевские дисплеи Braille Sense, Braille EDGE, Smart Beetle и Sync Braille компании [Hims](https://www.hims-inc.com/) при подключении через USB или Bluetooth. 
-Если вы подключаете брайлевский дисплей к порту USB, Вам придётся установить драйвера компании Hims в вашу систему.
-Их можно скачать здесь: https://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip
+Если вы подключаете брайлевский дисплей к порту USB, Вам придётся установить в вашу систему [драйвера компании Hims](http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip).
 
 В NVDA используются следующие комбинации клавиш для этого дисплея.
 Для описания расположения клавиш, пожалуйста, обратитесь к документации по брайлевскому дисплею.
@@ -4140,6 +4149,19 @@ The following Braille displays are supported:
 * BRAILLEX Live 20, BRAILLEX Live and BRAILLEX Live Plus (USB and bluetooth)
 
 These displays do not support NVDA's automatic background braille display detection functionality.
+There is an option in the display's USB driver which can cause an issue with loading the display.
+Please try the following:
+
+1. Please make sure that you have installed the [latest driver](https://www.papenmeier-rehatechnik.de/en/service/downloadcenter/software/articles/software-braille-devices.html).
+1. Open the Windows Device Manager.
+1. Scroll down the list to "USB Controllers" or "USB Devices".
+1. Select "Papenmeier Braillex USB Device".
+1. Open the properties and switch to the "Advanced" tab.
+Sometimes the "Advanced" tab doesn't appear.
+If this is the case, disconnect the braille display from the computer, exit NVDA, wait a moment and reconnect the braille display.
+Repeat this 4 to 5 times if necessary.
+If the "Advanced" tab is still not displayed, please restart the computer.
+1. Disable the "Load VCP" option.
 
 Most devices have an Easy Access Bar (EAB) that allows intuitive and fast operation.
 The EAB can be moved in four directions where generally each direction has two switches.
