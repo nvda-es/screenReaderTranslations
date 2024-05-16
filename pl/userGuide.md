@@ -4401,7 +4401,7 @@ Poniżej komendy przypisane do BrailleNote QT, gdy nie jest on w trybie wprowadz
 |Menu NVDA |read+n|
 |Klawisz strzałka w górę |strzałka w górę|
 |Klawisz strzałka w dół |strzałka w dół|
-|Klawisz strzałka w lewo |strzałka w lewo||
+|Klawisz strzałka w lewo |strzałka w lewo|
 |Klawisz strzałka w prawo |strzałka w prawo|
 |Klawisz Page up |function+strzałka w górę|
 |Klawisz Page down |function+strzałka w dół|
@@ -4704,18 +4704,18 @@ Zobacz [tabele klawiszy w dokumentacji brltty](https://brltty.app/doc/KeyBinding
 
 | Działanie |Komenda brltty|
 |---|---|
-|Przewiń brajla do tyłu |fwinlt (go left one window)|
-|Przewiń brajla do przodu |fwinrt (go right one window)|
-|Przenieś monitor do poprzedniej linii |lnup (go up one line)|
-|Przenieś monitor do następnej linii |lndn (go down one line)|
-|Przywołaj do komórki brajla |route (przenieś kursor do znaku)|
-|Włącz lub wyłącz pomoc klawiatury |learn (włącza lub wyłącza tryb samouczka poleceń)|
-|Otwórz NVDA menu |prefmenu (Otwiera lub zamyka menu ustawień)|
-|Przywróć konfiguracje |prefload (przywraca ustawienia z dysku)|
-|Zapisz ustawienia |prefsave (Zapisuje ustawienia na dysk)|
-|Odczytaj czas |time (pokazuje aktualny czas)|
-|Odczytuje bieżącą linię pod kursorem przeglądu |say_line (Wymawia bieżącą linię)|
-|Czytaj wszystko za pomocą kursora przeglądu |say_below (Czyta wszystko od bieżącej linii do końca ekranu)|
+|Przewiń brajla do tyłu |`fwinlt` (jedno okno w lewo)|
+|Przewiń brajla do przodu |`fwinrt` (jedno okno w prawo)|
+|Przenieś monitor do poprzedniej linii |`lnup` (jedna linia do góry)|
+|Przenieś monitor do następnej linii |`lndn` (jedna linia w dół)|
+|Przywołaj do komórki brajla |`route` (przenieś kursor do znaku)|
+|Włącz lub wyłącz pomoc klawiatury |`learn` (włącza lub wyłącza tryb samouczka poleceń)|
+|Otwórz NVDA menu |`prefmenu` (Otwiera lub zamyka menu ustawień)|
+|Przywróć konfiguracje |`prefload` (przywraca ustawienia z dysku)|
+|Zapisz ustawienia |`prefsave` (Zapisuje ustawienia na dysk)|
+|Odczytaj czas |`time` (pokazuje aktualny czas)|
+|Odczytuje bieżącą linię pod kursorem przeglądu |`say_line` (Wymawia bieżącą linię)|
+|Czytaj wszystko za pomocą kursora przeglądu |`say_below` (Czyta wszystko od bieżącej linii do końca ekranu)|
 
 <!-- KC:endInclude -->
 
