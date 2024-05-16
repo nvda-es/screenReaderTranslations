@@ -4604,32 +4604,32 @@ Following are the current key assignments for these displays.
 <!-- KC:endInclude -->
 
 ## Дополнительные темы {#AdvancedTopics}
-### Secure Mode {#SecureMode}
+### Безопасный режим {#SecureMode}
 
-NVDA can be started in secure mode with the `-s` [command line option](#CommandLineOptions).
-NVDA runs in secure mode when executed on [secure screens](#SecureScreens), unless the `serviceDebug` [system wide parameter](#SystemWideParameters) is enabled.
+NVDA может быть запущена в безопасном режиме с помощью [параметра командной строки](#CommandLineOptions) `-s`.
+NVDA запускается в безопасном режиме при выполнении на [защищённых экранах](#SecureScreens), если только не включён [общесистемный параметр](#SystemWideParameters) `serviceDebug`.
 
-Secure mode disables:
+Безопасный режим отключает:
 
-* Saving configuration and other settings to disk
-* Saving the gesture map to disk
-* [Configuration Profile](#ConfigurationProfiles) features such as creation, deletion, renaming profiles e.t.c.
-* Updating NVDA and creating portable copies
-* The [Python console](#PythonConsole)
-* The [Log Viewer](#LogViewer) and logging
+* Сохранение конфигурации и других настроек на диск
+* Сохранение карты жестов на диск
+* Операции над [Профилем конфигурации](#ConfigurationProfiles), такие как создание, удаление, переименование профилей и т.д.
+* Обновление NVDA и создание переносных копий
+* [Консоль Python](#PythonConsole)
+* [Просмотр журнала](#LogViewer) и ведение журнала.
 
-### Secure Screens {#SecureScreens}
+### Защищённые экраны {#SecureScreens}
 
-NVDA runs in [secure mode](#SecureMode) when executed on secure screens unless the `serviceDebug` [system wide parameter](#SystemWideParameters) is enabled.
+NVDA работает в [безопасном режиме](#SecureMode) при выполнении на защищённых экранах, если не включён [общесистемный параметр](#SystemWideParameters) `serviceDebug`.
 
-When running from a secure screen, NVDA uses a system profile for preferences.
-NVDA user preferences can be copied [for use in secure screens](#GeneralSettingsCopySettings).
+При запуске с защищённого экрана NVDA использует профиль конфигурации операционной системы.
+Пользовательские настройки NVDA могут быть скопированы для использования на [защищённых экранах](#GeneralSettingsCopySettings).
 
-Secure screens include:
+К защищённым экранам относятся:
 
-* The Windows sign-in screen
-* The User Access Control dialog, active when performing an action as an administrator
-  * This includes installing programs
+* экран входа в Windows
+* диалог управления доступом пользователя, активный при выполнении действий от имени администратора.
+  * В том числе при установке программ
 
 ### Ключи командной строки {#CommandLineOptions}
 
