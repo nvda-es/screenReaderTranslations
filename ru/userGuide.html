@@ -423,6 +423,7 @@
 <li><a href="#SpeechViewer" title="Просмотрщик речи">Просмотрщик речи</a></li>
 <li><a href="#BrailleViewer" title="Просмотрщик брайля">Просмотрщик брайля</a></li>
 <li><a href="#PythonConsole" title="Консоль Python">Консоль Python</a></li>
+<li><a href="#toc314" title="Магазин Дополнений">Магазин Дополнений</a></li>
 <li><a href="#CreatePortableCopy" title="Создание переносной копии">Создание переносной копии</a></li>
 <li><a href="#RunCOMRegistrationFixingTool" title="Средство восстановления COM-объектов">Средство восстановления COM-объектов</a></li>
 <li><a href="#ReloadPlugins" title="Перезагрузить плагины">Перезагрузить плагины</a></li>
@@ -4655,10 +4656,38 @@ NVDA попросит вас подтвердить удаление.
 Вы можете просмотреть установленные несовместимые дополнения, используя <a href="#AddonStoreFilterStatus" title="вкладку установленных несовместимых дополнений">вкладку установленных несовместимых дополнений</a>.</p>
 <h2 id="ExtraTools">Сервис</h2>
 <h3 id="LogViewer">Просмотрщик журнала NVDA</h3>
-<p>С помощью просмотрщика журнала, который можно открыть из меню NVDA → Сервис → Просмотр журнала, вы можете просматривать весь записываемый вывод журнала NVDA, происходивший с момента её запуска.
-Нажатие NVDA+F1 откроет окно просмотрщика, добавив для разработчиков в конец журнала информацию о текущем объекте навигатора.</p>
-<p>Помимо чтения журнала, вы можете сохранять его копию в файл, а также обновлять отображаемый вывод просмотрщика для получения более новых записей.
-Эти опции доступны в меню просмотрщика журнала.</p>
+<p>С помощью просмотрщика журнала, который можно открыть из меню NVDA → Сервис → Просмотр журнала, вы можете просматривать весь записываемый вывод журнала NVDA, происходивший с момента её запуска.</p>
+<p>Помимо чтения содержимого, вы также можете сохранить копию файла журнала или обновить просмотрщик, чтобы он загружал новые выходные данные журнала, сгенерированные после открытия просмотрщика журнала.
+Эти действия доступны в меню Журнал в просмотрщике журнала.</p>
+<p>The file which is displayed when you open the log viewer is saved on your computer at the file location <code>%temp%\nvda.log</code>.
+A new log file is created each time NVDA is started.
+When this happens, the previous NVDA session's log file is moved to <code>%temp%\nvda-old.log</code>.</p>
+<p>You can also copy a fragment of the current log file to the clipboard without opening the log viewer.</p>
+<!-- KC:beginInclude -->
+
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Комбинация клавиш</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Открыть просмотрщик журнала</td>
+<td><code>NVDA+f1</code></td>
+<td>Opens the log viewer and displays developer information about the current navigator object.</td>
+</tr>
+<tr>
+<td>Копировать фрагмент журнала в буфер обмена</td>
+<td><code>NVDA+control+shift+f1</code></td>
+<td>When this command is pressed once, it sets a starting point for the log content that should be captured. When pressed a second time, it copies the log content since the start point to your clipboard.</td>
+</tr>
+</tbody>
+</table>
+<!-- KC:endInclude -->
+
 <h3 id="SpeechViewer">Просмотрщик речи</h3>
 <p>Для зрячих разработчиков или для людей, демонстрирующих работу NVDA зрячей аудитории, доступно всплывающее окно, в котором они могут просматривать весь текст, проговариваемый NVDA в текущий момент времени.</p>
 <p>Чтобы активировать просмотрщик речи, установите отметку на пункте меню NVDA → Сервис → Просмотрщик речи.
@@ -4690,6 +4719,9 @@ NVDA попросит вас подтвердить удаление.
 <h3 id="PythonConsole">Консоль Python</h3>
 <p>Python консоль NVDA, которая может быть вызвана из подменю «Сервис» главного меню NVDA, это инструмент разработки, предназначенный для отладки, взаимодействия с внутренностями NVDA, или изучения иерархии доступности в том или ином приложении.
 Для получения более подробной информации, пожалуйста, обратитесь к <a href="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html" rel="noopener" target="_blank" title="руководству разработчика NVDA">руководству разработчика NVDA</a>.</p>
+<h3 id="toc314">Магазин Дополнений</h3>
+<p>Будет открыт <a href="#AddonsManager" title="Магазин дополнений NVDA">Магазин дополнений NVDA</a>.
+Для получения дополнительной информации ознакомьтесь с подробным разделом: <a href="#AddonsManager" title="Дополнения и магазин дополнений">Дополнения и магазин дополнений</a>.</p>
 <h3 id="CreatePortableCopy">Создание переносной копии</h3>
 <p>Этот пункт меню вызывает диалоговое окно, позволяющее вам из установленной версии NVDA создать её переносную копию.
 Обратите внимание, что при работе с переносной копией NVDA, этот элемент из подменю «Сервис» будет называться «Установить NVDA», вместо «Создать переносную копию».</p>
@@ -4712,13 +4744,41 @@ NVDA попросит вас подтвердить удаление.
 <li>И возможно другие проблемы.</li>
 </ul>
 <h3 id="ReloadPlugins">Перезагрузить плагины</h3>
-<p>При помощи этого пункта меню вы можете перезагрузить глобальные плагины и модули приложений, не перезагружая саму NVDA. Это может быть удобно для разработчиков.</p>
+<p>При помощи этого пункта меню вы можете перезагрузить глобальные плагины и модули приложений, не перезагружая саму NVDA. Это может быть удобно для разработчиков.
+App modules manage how NVDA interacts with specific applications.
+Global plugins manage how NVDA interacts with all applications.</p>
+<p>Также могут быть полезны следующие клавишные команды NVDA:</p>
+<!-- KC:beginInclude -->
+
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Комбинация клавиш</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reload plugins</td>
+<td><code>NVDA+control+f3</code></td>
+<td>Reloads NVDA's global plugins and app modules.</td>
+</tr>
+<tr>
+<td>Report loaded app module and executable</td>
+<td><code>NVDA+control+f1</code></td>
+<td>Report the name of the app module, if any, and the name of the executable associated with the application which has the keyboard focus.</td>
+</tr>
+</tbody>
+</table>
+<!-- KC:endInclude -->
+
 <h2 id="SupportedSpeechSynths">Поддерживаемые синтезаторы речи</h2>
 <p>Этот раздел содержит информацию о синтезаторах речи, поддерживаемых в NVDA.
 Более обширный список свободных и коммерческих синтезаторов речи, которые вы можете купить и загрузить для использования в NVDA, смотрите на <a href="https://github.com/nvaccess/nvda/wiki/ExtraVoices" rel="noopener" target="_blank" title="странице дополнительных голосов">странице дополнительных голосов</a>.</p>
 <h3 id="eSpeakNG">eSpeak NG</h3>
 <p>Синтезатор <a href="https://github.com/espeak-ng/espeak-ng" rel="noopener" target="_blank" title="eSpeak NG">eSpeak NG</a> встроен непосредственно в NVDA и не требует установки каких-либо сторонних драйверов или компонентов.
-NVDA на Windows 7, 8 и 8.1 по умолчанию использует eSpeak NG (на Windows 10, и более поздних версиях, по умолчанию используется <a href="#OneCore" title="Windows OneCore">Windows OneCore</a>).
+NVDA на Windows 8.1 по умолчанию использует eSpeak NG (на Windows 10, и более поздних версиях, по умолчанию используется <a href="#OneCore" title="Windows OneCore">Windows OneCore</a>).
 Поскольку этот синтезатор встроен в NVDA, это отличный выбор для работы NVDA с USB-флэш-накопителей на других системах.</p>
 <p>Каждый голос, который поставляется с eSpeak NG, говорит на множестве различных языков.
 В настоящее время eSpeak NG поддерживает более 43 различных языков.</p>
@@ -4737,11 +4797,13 @@ NVDA по-прежнему поддерживает этот драйвер дл
 Эти голоса могут также использоваться в NVDA.</p>
 <p>Для использования этих голосов вы должны установить следующие два компонента:</p>
 <ul>
-<li>Microsoft Speech Platform - Runtime (Version 11), x86: https://www.microsoft.com/download/en/details.aspx?id=27225</li>
-<li>Microsoft Speech Platform - Runtime Languages (Version 11): https://www.microsoft.com/download/en/details.aspx?id=27224</li>
+<li><a href="https://www.microsoft.com/download/en/details.aspx?id=27225" rel="noopener" target="_blank" title="Microsoft Speech Platform - Runtime (Version 11), x86">Microsoft Speech Platform - Runtime (Version 11), x86</a></li>
+<li><a href="https://www.microsoft.com/download/en/details.aspx?id=27224" rel="noopener" target="_blank" title="Microsoft Speech Platform - Runtime Languages (Version 11)">Microsoft Speech Platform - Runtime Languages (Version 11)</a><ul>
 <li>Эта страница содержит множество файлов относящихся как к распознаванию речи, так и к преобразованию текста в речь.
  Выберите файлы, содержащие данные TTS для желаемых языков/голосов.
  Например, файл MSSpeech_TTS_ru-RU_Elena.msi для голоса русского языка.</li>
+</ul>
+</li>
 </ul>
 <h3 id="OneCore">Windows OneCore Voices</h3>
 <p>Windows 10, и более поздние версии, включают в себя новые голоса, известные как «OneCore» или «мобильные» голоса.
@@ -4755,7 +4817,7 @@ NVDA на Windows 10, и более поздних версиях, по умол
 Сначала найдите общий язык (например, английский или французский), а затем выберите его вариант из списка.
 Выберите любые нужные языки и нажмите кнопку «Добавить», чтобы добавить их.
 После добавления перезагрузите NVDA.</p>
-<p>Для получения списка всех доступных голосов, пожалуйста, обратитесь к следующей статье Microsoft: https://support.microsoft.com/en-us/windows/appendix-a-supported-languages-and-voices-4486e345-7730-53da-fcfe-55cc64300f01</p>
+<p>Пожалуйста, обратитесь к <a href="https://support.microsoft.com/en-us/windows/appendix-a-supported-languages-and-voices-4486e345-7730-53da-fcfe-55cc64300f01" rel="noopener" target="_blank" title="статье Microsoft Для получения списка всех доступных голосов">статье Microsoft Для получения списка всех доступных голосов</a>.</p>
 <h2 id="SupportedBrailleDisplays">Поддерживаемые брайлевские дисплеи</h2>
 <p>Этот раздел содержит информацию о брайлевских дисплеях, поддерживаемых в NVDA.</p>
 <h3 id="AutomaticDetection">Автоматически определяемые брайлевские дисплеи</h3>
