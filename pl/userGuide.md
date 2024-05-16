@@ -4343,7 +4343,7 @@ Następujące modele są obsługiwane:
 * BrailleNote MPower (połączenie szeregowe i bluetooth)
 * BrailleNote Apex (połączenie USB i bluetooth)
 
-Dla informacji o BrailleNote Touch, proszę sprawdzić rozdział [Brailliant serii BI/ BrailleNote Touch](HumanWareBrailliant).
+Dla informacji o BrailleNote Touch, proszę sprawdzić rozdział [Brailliant serii BI/ BrailleNote Touch](#HumanWareBrailliant).
 
 Z wyjątkiem BrailleNote PK, zarówno klawiatury brajlowskie (BT) i QWERTY (QT) są obsługiwane.
 Dla BrailleNote QT, nie jest obsługiwana emulacja klawiatury PC.
