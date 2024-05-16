@@ -3632,7 +3632,7 @@ NVDA имеет возможность автоматического опред
 Для описания расположения клавиш, пожалуйста, обратитесь к документации по брайлевскому дисплею.
 <!-- KC:beginInclude -->
 
-| Имя |Комбинация клавиш|
+| Название |Комбинация клавиш|
 |---|---|
 |Прокручивает фрагмент текста на брайлевском дисплее назад |topRouting1 (первая клетка на брайлевском дисплее)|
 |Прокручивает фрагмент текста на брайлевском дисплее вперёд |topRouting20/40/80 (последняя клетка на брайлевском дисплее)|
@@ -3682,14 +3682,14 @@ NVDA имеет возможность автоматического опред
 
 Для новых моделей брайлевских дисплеев Focus с клавишами rocker bar (focus 40, focus 80 и focus blue):
 
-| Имя |Клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |Прокрутка брайлевского дисплея к предыдущей строке |leftRockerBarUp, rightRockerBarUp|
 |Прокрутка брайлевского дисплея к следующей строке |leftRockerBarDown, rightRockerBarDown|
 
 Только для Focus 80:
 
-| Имя |Клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |Прокрутка брайлевского дисплея назад |leftBumperBarUp, rightBumperBarUp|
 |Прокрутка брайлевского дисплея вперёд |leftBumperBarDown, rightBumperBarDown|
@@ -3714,7 +3714,7 @@ NVDA имеет возможность автоматического опред
 Для описания расположения клавиш, пожалуйста, обратитесь к документации по брайлевскому дисплею.
 <!-- KC:beginInclude -->
 
-| Имя |Клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |Прокрутка брайлевского дисплея назад |t1, etouch1|
 |Прокрутка брайлевского дисплея к предыдущей строке |t2|
@@ -3767,7 +3767,7 @@ NVDA поддерживает большинство брайлевских ди
 Для описания расположения клавиш, пожалуйста, обратитесь к документации по брайлевскому дисплею..
 <!-- KC:beginInclude -->
 
-| Имя |Клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |прокрутка текста на барайлевском дисплее назад |left, up, b3|
 |Прокрутка брайлевского дисплея вперёд |right, down, b6|
@@ -3803,7 +3803,7 @@ NVDA поддерживает Брайлевский дисплей Lilli ком
 Для описания расположения клавиш, пожалуйста, обратитесь к документации по брайлевскому дисплею.
 <!-- KC:beginInclude -->
 
-| Имя |Клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |Прокрутка брайлевского дисплея назад |LF|
 |Прокрутка брайлевского дисплея вперёд |RG|
@@ -3840,7 +3840,7 @@ VarioUltra и Pronto! используют HID протокол.
 Пожалуйста, обратитесь к документации, чтобы узнать разположение клавиш вашего дисплея.
 <!-- KC:beginInclude -->
 
-| Имя |Клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |Прокрутка брайлевского дисплея назад |`d2`|
 |Прокрутка брайлевского дисплея вперёд |`d5`|
@@ -3859,7 +3859,7 @@ VarioUltra и Pronto! используют HID протокол.
 
 Для брайлевских дисплеев с джойстиком:
 
-| Имя |Клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |СтрелкавВерх |вверх|
 |СтрелкаВниз |вниз|
@@ -3880,7 +3880,7 @@ Hedo ProfiLine USB компании [hedo Reha-Technik](https://www.hedo.de/) п
 Для описания расположения клавиш, пожалуйста, обратитесь к документации по брайлевскому дисплею.
 <!-- KC:beginInclude -->
 
-| Имя |Клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |Прокрутка брайлевского дисплея назад |K1|
 |Прокрутка брайлевского дисплея вперёд |K3|
@@ -3903,7 +3903,7 @@ Hedo MobilLine USB компании [hedo Reha-Technik](https://www.hedo.de/) п
 Для описания расположения клавиш, пожалуйста, обратитесь к документации по брайлевскому дисплею.
 <!-- KC:beginInclude -->
 
-| Имя |Клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |Прокрутка брайлевского дисплея назад |K1|
 |Прокрутка брайлевского дисплея вперёд |K3|
@@ -3935,7 +3935,7 @@ USB-драйверы не нужны, если выбран протокол Ope
 
 <!-- KC:beginInclude -->
 
-| Имя |Клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |Прокрутка брайлевского дисплея назад |left|
 |Прокрутка брайлевского диспллея вперёд |right|
@@ -3964,7 +3964,7 @@ USB-драйверы не нужны, если выбран протокол Ope
 
 <!-- KC:beginInclude -->
 
-| Имя |Комбинация клавиш|
+| Название |Комбинация клавиш|
 |---|---|
 |NVDA Меню |c1+c3+c4+c5 (command n)|
 |windows+d (свернуть все приложения) |c1+c4+c5 (command d)|
@@ -3976,7 +3976,7 @@ USB-драйверы не нужны, если выбран протокол Ope
 
 <!-- KC:beginInclude -->
 
-| Имя |Комбинация клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |СтрелкавВерх |джойстик вверх|
 |Стрелка вниз |джойстик вниз|
@@ -3995,7 +3995,7 @@ NVDA поддерживает брайлевские дисплеи Braille Sens
 Для описания расположения клавиш, пожалуйста, обратитесь к документации по брайлевскому дисплею.
 <!-- KC:beginInclude -->
 
-| Название |Клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |Перемещение к брайлевской клетке |routing|
 |Прокрутка брайлевского дисплея назад |leftSideScrollUp, rightSideScrollUp, leftSideScroll|
@@ -4081,7 +4081,7 @@ The Seika Braille Display key assignments follow.
 Please see the display's documentation for descriptions of where these keys can be found.
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Scroll braille display back |left|
 |Scroll braille display forward |right|
@@ -4107,7 +4107,7 @@ The Seika Notetaker key assignments follow.
 Please see the display's documentation for descriptions of where these keys can be found.
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Scroll braille display back |left|
 |Scroll braille display forward |right|
@@ -4175,7 +4175,7 @@ Pressing and holding the up, down, right and left keys (or EAB) causes the corre
 
 Generally, the following keys are available on these braille displays:
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |l1 |Left front key|
 |l2 |Left rear key|
@@ -4193,7 +4193,7 @@ Generally, the following keys are available on these braille displays:
 Following are the Papenmeier command assignments for NVDA:
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Scroll braille display back |left|
 |Scroll braille display forward |right|
@@ -4226,7 +4226,7 @@ The inner keys are both mapped to space.
 
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |escape key |space with dot 7|
 |upArrow key |space with dot 2|
@@ -4258,7 +4258,7 @@ Older devices do not have an EAB; front keys are used instead.
 
 Generally, the following keys are available on braille displays:
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |l1 |Left front key|
 |l2 |Left rear key|
@@ -4278,7 +4278,7 @@ Following are the Papenmeier command assignments for NVDA:
 <!-- KC:beginInclude -->
 Devices with EAB:
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Scroll braille display back |left|
 |Scroll braille display forward |right|
@@ -4297,7 +4297,7 @@ Devices with EAB:
 
 BRAILLEX Tiny:
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Report current character in review |l1|
 |Activate current navigator object |l2|
@@ -4316,7 +4316,7 @@ BRAILLEX Tiny:
 
 BRAILLEX 2D Screen:
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Report current character in review |l1|
 |Activate current navigator object |l2|
@@ -4366,7 +4366,7 @@ Please check your BrailleNote's documentation to find where these keys are locat
 
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Scroll braille display back |back|
 |Scroll braille display forward |advance|
@@ -4396,7 +4396,7 @@ Please check your BrailleNote's documentation to find where these keys are locat
 
 Following are commands assigned to BrailleNote QT when it is not in braille input mode.
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |NVDA menu |read+n|
 |Up arrow key |upArrow|
@@ -4419,7 +4419,7 @@ Following are commands assigned to BrailleNote QT when it is not in braille inpu
 
 Following are commands assigned to the scroll wheel:
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Up arrow key |upArrow|
 |Down arrow key |downArrow|
@@ -4449,7 +4449,7 @@ Please see the [EcoBraille documentation](ftp://ftp.once.es/pub/utt/bibliotecnia
 
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Scroll braille display back |T2|
 |Scroll braille display forward |T4|
@@ -4478,7 +4478,7 @@ As the SuperBraille does not have any physical typing keys or scrolling buttons,
 Due to this, and to maintain compatibility with other screen readers in Taiwan, two key bindings for scrolling the braille display have been provided:
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Scroll braille display back |numpadMinus|
 |Scroll braille display forward |numpadPlus|
@@ -4500,7 +4500,7 @@ The braille keyboard functions described directly below is when "HID Keyboard si
 
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Erase the last entered braille cell or character |`backspace`|
 |Translate any braille input and press the enter key |`backspace+space`|
@@ -4567,7 +4567,7 @@ The braille keyboard functions described directly below is when "HID Keyboard si
 
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Scroll braille display back |`backward`|
 |Scroll braille display forward |`forward`|
@@ -4593,7 +4593,7 @@ The braille keyboard functions described directly below is when "HID Keyboard si
 
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Scroll braille display back |`leftKeypadLeft`|
 |Scroll braille display forward |`leftKeypadRight`|
@@ -4615,7 +4615,7 @@ The braille keyboard functions described directly below is when "HID Keyboard si
 
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Scroll braille display back |`switch1Left`|
 |Scroll braille display forward |`switch1Right`|
@@ -4638,7 +4638,7 @@ The braille keyboard functions described directly below is when "HID Keyboard si
 
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Scroll braille display back |`l1`|
 |Scroll braille display forward |`l8`|
@@ -4676,7 +4676,7 @@ Windows 10 и более поздние версии обнаруживают э
 Для описания расположения клавиш, пожалуйста, обратитесь к документации по брайлевскому дисплею.
 <!-- KC:beginInclude -->
 
-| Название |Клавишная комбинация|
+| Название |Комбинация клавиш|
 |---|---|
 |Перемещение брайлевского дисплея назад |up|
 |Перемещение брайлевского дисплея вперёд |down|
@@ -4702,7 +4702,7 @@ Following are the BRLTTY command assignments for NVDA.
 Please see the [BRLTTY key binding lists](http://mielke.cc/brltty/doc/KeyBindings/) for information about how BRLTTY commands are mapped to controls on braille displays.
 <!-- KC:beginInclude -->
 
-| Name |BRLTTY command|
+| Название |Команда BRLTTY|
 |---|---|
 |Scroll braille display back |`fwinlt` (go left one window)|
 |Scroll braille display forward |`fwinrt` (go right one window)|
@@ -4735,7 +4735,7 @@ Following are key assignments for these displays with NVDA.
 Please see the display's documentation for descriptions of where these keys can be found.
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Move to top line in review |`home1`, `home2`|
 |Move to bottom line in review |`end1`, `end2`|
@@ -4797,7 +4797,7 @@ NVDA's automatic braille display detection will also recognize any display that 
 Following are the current key assignments for these displays.
 <!-- KC:beginInclude -->
 
-| Name |Key|
+| Название |Комбинация клавиш|
 |---|---|
 |Scroll braille display back |pan left or rocker up|
 |Scroll braille display forward |pan right or rocker down|
