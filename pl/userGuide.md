@@ -2171,7 +2171,7 @@ Ta opcja pozwala na wybór urządzenia dźwiękowego, przez które będzie słyc
 
 ##### Tryb przyciszania audio {#SelectSynthesizerDuckingMode}
 
-Skrót klawiszowy: NVDA+Shift+D
+Skrót klawiszowy: `NVDA+Shift+D`
 
 Ta opcja pozwala wybrać, czy NVDA powinien obniżać głośność innych aplikacji, gdy NVDA mówi albo przez cały czas, gdy NVDA jest uruchomione.
 
@@ -2702,8 +2702,8 @@ Możemy w ten sposób skonfigurować odczytywanie:
   * Podkreślonego, (zaznaczonego tekstu)
   * Stylu tekstu
   * Kolorów
-* Informacji o dokumencie
-  * Komentarzy
+  * Informacji o dokumencie
+* Komentarzy
   * Zakłądki
   * Indeksy górne i dolne
   * Zmian edycyjnych
@@ -2919,13 +2919,13 @@ Istnieją następujące opcje:
 
 * "Odczytuj 'posiada szczegóły' dla adnotacji strukturalnych": włącza zgłaszanie posiadania więcej szczegułów w tekście lub kontrolce.
 * "Zawsze odczytuj aria-description":
- Gdy źródłem `accDescription` jest aria- description, opis jest odczytywany.
- Jest to użyteczne dla adnotacji na stronach www.
+  Gdy źródłem `accDescription` jest aria- description, opis jest odczytywany.
+  Jest to użyteczne dla adnotacji na stronach www.
   Uwaga:
- * Istnieje wielu źródeł dla `accDescription` niektóe z nich posiadają mieszaną lub nieprzewidywalną semantykę.
-  Historycznie, technologie wspomagające nie mogły to rozróźniać źródła `accDescription`i typowo nie były one wymawiane z powodu mieszanej  semantyki.
- * Ta opcja jest w bardzo wczesnym stadium rozwoju, i polega na opcjach przeglądarek, które nie są szeroko dostępne.
- * Oczekiwane jest, że ta funkcja będzie działać z Chromium 92.0.4479.0 i nowszymi wersjami.
+  * Istnieje wielu źródeł dla `accDescription` niektóre z nich posiadają mieszaną lub nieprzewidywalną semantykę.
+    Historycznie, technologie wspomagające nie mogły to rozróźniać źródła `accDescription`i typowo nie były one wymawiane z powodu mieszanej  semantyki.
+  * Ta opcja jest w bardzo wczesnym stadium rozwoju, i polega na opcjach przeglądarek, które nie są szeroko dostępne.
+  * Oczekiwane jest, że ta funkcja będzie działać z Chromium 92.0.4479.0 i nowszymi wersjami.
 
 ##### Odczytuj żywe regiony {#BrailleLiveRegions}
 
@@ -3055,7 +3055,7 @@ Znajdują się tam również przyciski Dodaj, Edytuj, Usuń i usuń wszystkie.
 
 Aby dodać nową regułę do słownika, naciśnij przycisk Dodaj, a następnie wypełnij pola w wyświetlonym oknie dodawania reguły, i naciśnij przycisk OK.
 Nową regułę zobaczysz na liście reguł.
- aby jednak upewnić się, że reguła została zapisana naciśnij przycisk OK, aby zamknąć okno słownika po zakończeniu edycji.
+Aby jednak upewnić się, że reguła została zapisana naciśnij przycisk OK, aby zamknąć okno słownika po zakończeniu edycji.
 
 Reguły słowników mowy NVDA pozwalają zamienić jeden ciąg znaków na inny.
 Prosty przykład: chcemy, aby zamiast słowa "ptak", NVDA czytał słowo "żaba".
@@ -3088,8 +3088,8 @@ Możesz filtrować symbole wprowadzając symbol lub część zastępującego tek
 * Pole zamień określa tekst, który powinien być wypowiadany zamiast tego znaku. 
 * Używając listy poziom, można regulować najniższy poziom interpunkcji, na którym dany znak będzie wypowiadany: brak, niektóre, większość, wszystko. 
 Można także ustawić poziom symbolu na znak. W tym przypadku, symbol nie będzie wymawiany, niezależnie od ustawionego poziomu interpunkcji, z następującymi dwoma wyjątkami:
- * podczas nawigacji po znakach.
- * Gdy NVDA wymawia tekst, zawierający ten symbol.
+  * podczas nawigacji po znakach.
+  * Gdy NVDA wymawia tekst, zawierający ten symbol.
 * Pole wyślij rzeczywisty symbol do syntezatora określa, czy sam symbol (w przeciwieństwie do jego zastępnika) powinien zostać wysłany do syntezatora.
 Jest to przydatne, jeśli symbol powoduje pauzę w odczycie albo zmianę intonacji głosu.
 Dla przykładu przecinek powoduje krótką pauzę syntezatora.
@@ -3139,7 +3139,7 @@ Uwaga:
 
 * W celu zachowania emulowanych skrótów klawiszowych, należy najpierw przypisać do nich polecenie NVDA.
 * Przypisanie polecenia NVDA korzystającego z klawiszy modyfikujących do emulowanego skrótu pozbawionego  modyfikatorów. 
-Na przykład, przypisanie emulowanego polecenia 'a' do polecenia 'CTRL+M' może skończyć się 
+Na przykład, przypisanie emulowanego polecenia `a` do polecenia `CTRL+M` może skończyć się 
 błędną interpretacją skrótu przez aplikację.
 
 Po zakończeniu wprowadzania zmian, naciśnij przycisk OK aby je zachować albo przycisk Anuluj, aby odrzucić.
