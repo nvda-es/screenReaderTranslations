@@ -4930,8 +4930,8 @@ Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 NVDA pozwala ustawić pewne wartości w rejestrze Windows, zmieniające zachowanie NVDA dla całego systemu.
 Wartości te są ustawiane w poniższych kluczach:
 
-* systemy 32-bitowe: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
-* systemy 64-bitowe: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+* systemy 32-bitowe: `"HKEY_LOCAL_MACHINE\SOFTWARE\nvda"`
+* systemy 64-bitowe: `"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"`
 
 Następujące wartości mogą zostać ustawione w tym kluczu rejestru:
 
