@@ -4908,14 +4908,14 @@ Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 |`-q` |`--quit` |Zakończ aktualnie uruchomioną kopię NVDA|
 |`-k` |`--check-running` |Poinformuj kodem wyjścia, czy NVDA jest uruchomiony; 0 jeśli uruchomiony, 1 jeśli nie uruchomiony|
 |`-f LOGFILENAME` |`--log-file=LOGFILENAME` |Plik, do którego powinny być zapisywane informacje logu. Logowanie jest zawsze wyłączone gdy tryb bezpieczny jest włączony.|
-|`-l PożiomLogowania` |--log-level=LOGLEVEL |Najniższy poziom zapisywanych zdarzeń do podglądu logu (debugowanie 10, wejście/wyjście 12, debugowanie powiadomienie 15, info 20, wyłączone 100). Logowanie jest zawsze wyłączone gdy tryb bezpieczny jest włączony.|
+|`-l PożiomLogowania` |`--log-level=LOGLEVEL` |Najniższy poziom zapisywanych zdarzeń do podglądu logu (debugowanie 10, wejście/wyjście 12, debugowanie powiadomienie 15, info 20, wyłączone 100). Logowanie jest zawsze wyłączone gdy tryb bezpieczny jest włączony.|
 |`-c ścieżka` |`--config-path=ścieżka` |Ścieżka folderu, w którym zapisane są wszystkie ustawienia NVDA. Domyślna wartość to wyłączone gdy tryb bezpieczny jest włączony.|
 |Brak |`--lang=LANGUAGE` |Nadpisuje domyślny język NVDA. Ustawiony na "Windows" dla bieżacego użytkownika, "en" dla angielskiego, itd.|
 |`-m` |`--minimal` |Bez dźwięku, interfejsu, informacji początkowej etc|
 |`-s` |`--secure` |Uruchamia NVDA w [Trybie bezpiecznym](#SecureMode)|
-|Brak |--disable-addons |Dodatki będą ignorowane|
-|Brak |--debug-logging |Ustaw poziom logowania na informacje debugowania, dla bieżącego uruchomienia. To ustawienie nadpisze jakiekolwiek ustawienie poziomu logowania ( --loglevel, -l) z wyłączeniem zapisywania logów włącznie.|
-|Brak |--no-logging |Wyłącz zapisywanie dziennika podczas używania NVDA. To ustawienie może być nadpisane, gdy poziom logowania ( --loglevel, -l) jest określony w linii komend lub rejestrowanie debugowania jest włączone.|
+|Brak |`--disable-addons` |Dodatki będą ignorowane|
+|Brak |`--debug-logging` |Ustaw poziom logowania na informacje debugowania, dla bieżącego uruchomienia. To ustawienie nadpisze jakiekolwiek ustawienie poziomu logowania ( `--loglevel, -l`) z wyłączeniem zapisywania logów włącznie.|
+|Brak |`--no-logging` |Wyłącz zapisywanie dziennika podczas używania NVDA. To ustawienie może być nadpisane, gdy poziom logowania ( `--loglevel, -l`) jest określony w linii komend lub rejestrowanie debugowania jest włączone.|
 |Brak |--no-sr-flag |Nie zmieniaj globalnej flagi systemowej czytnika ekranu|
 |Brak |--install |Po cichu instaluje NVDA i uruchamia zainstalowaną kopię|
 |Brak |--install-silent |Po cichu instaluje NVDA (nie uruchamia zainstalowanej kopii)|
