@@ -4799,9 +4799,9 @@ Oto skróty klawiszowe przydzielone dla tego monitora brajlowskiego.
 
 | nazwanie |klawisz|
 |---|---|
-|przejście brajlowskiego monitoru wstecz |pan left lub rocker up||
-|przejście brajlowskiego monitoru w przód |pan right lub rocker down||
-|przemieszczenie do brajlowskiej komórki |routing set 1||
+|przejście brajlowskiego monitoru wstecz |pan left lub rocker up|
+|przejście brajlowskiego monitoru w przód |pan right lub rocker down|
+|przemieszczenie do brajlowskiej komórki |routing set 1|
 |przełączanie przywiązania brajla do |up+down|
 |strzałka w górę |joystick w górę, dpad w górę lub spacja+punkt1|
 |strzałka w dół |joystick w dół, dpad w dół lub spacja+punkt4|
@@ -4809,7 +4809,7 @@ Oto skróty klawiszowe przydzielone dla tego monitora brajlowskiego.
 |strzałka w prawo |spacja+punkt6, joystick w prawo lub dpad w prawo|
 |shift+tab |spacja+kropka1+kropka3|
 |tab |spacja+kropka4+kropka6|
-|alt |spacja+kropka1+kropka3+kropka4 (spaja+m)|
+|alt |spacja+kropka1+kropka3+kropka4 (spacja+m)|
 |escape |spacja+kropka1+kropka5 (spacja+e)|
 |enter |punkt8, joystick przyciśnięty środkowo lub dpad środkowy|
 |window |spacja+kropka3+kropka4|
