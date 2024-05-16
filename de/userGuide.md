@@ -103,7 +103,7 @@ Diese Schritte setzen einen gewissen Umgang mit dem Navigieren auf Webseiten vor
 * Öffnen Sie einen Web-Browser (drücken Sie die `Windows`-Taste, geben Sie den Namen des gewünschten Web-Browsers ein und drücken Sie dann die `Eingabetaste`).
 * Öffnen Sie die Download-Seite von NV Access (Drücken Sie `Alt+D`, geben Sie die folgende Adresse ein und drücken dann die `Eingabetaste`):
 https://www.nvaccess.org/download
-* Klicken Sie auf die Schaltfläche "Download".
+* Klicken Sie auf den Schalter "Download".
 * Es kann sein, dass der Browser nach dem Herunterladen zu einer Aktion auffordert und dann das Herunterladen startet.
 * Je nach Browser kann die Datei nach dem Herunterladen automatisch ausgeführt werden.
 * Wenn die Datei manuell gestartet werden muss, drücken Sie `Alt+N`, um in den Infobereich zu gelangen, dann `alt+r`, um die Datei zu starten (oder die Schritte für Ihren Browser).
@@ -155,7 +155,7 @@ Diese Schritte führen Sie durch die gängigsten Setup-Optionen.
 Weitere Einzelheiten zu den verfügbaren Optionen finden Sie unter [Installations-Optionen](#InstallingNVDA).
 
 1. Vergewissern Sie sich im Launcher, dass das Kontrollkästchen zum Akzeptieren der Lizenz aktiviert ist.
-1. Drücken Sie die `Tab`-Taste und aktivieren Sie die Schaltfläche "NVDA auf diesem Computer installieren".
+1. Drücken Sie die `Tab`-Taste und klicken Sie auf den Schalter "NVDA auf diesem Computer installieren".
 1. Als Nächstes folgen Optionen zur Verwendung von NVDA bei der Windows-Anmeldung und zum Erstellen einer Desktop-Verknüpfung.
 Diese sind standardmäßig aktiviert.
 Wenn Sie möchten, können Sie mit den Tasten `Tab` und `Leertaste` eine dieser Optionen ändern oder die Standard-Einstellungen beibehalten.
@@ -264,7 +264,7 @@ Die vollständige Liste der Navigationstasten finden Sie im Abschnitt [Lesemodus
 |---|---|---|
 |Überschrift |`H` |Weiter zur nächsten Überschrift.|
 |Überschriftebene 1, 2, oder 3 |`1`, `2`, `3` |Zur nächsten Überschrift auf der angegebenen Ebene wechseln.|
-|Formularfeld |`F` |Wechselt zum nächsten Formularfeld (Eingabefeld, Schaltfläche, etc.).|
+|Formularfeld |`F` |Wechselt zum nächsten Formularfeld (Eingabefeld, Schalter, etc.).|
 |Link |`K` |Wechselt zum nächsten Link.|
 |Sprungmarke |`D` |Wechselt zur nächsten Sprungmarke.|
 |Liste |`L` |Wechselt zur nächsten Liste.|
@@ -319,8 +319,8 @@ Die [Beitragsrichtlinien](https://github.com/nvaccess/nvda/blob/master/.github/C
 ## Weitere Setup-Optionen {#MoreSetupOptions}
 ### Installations-Optionen {#InstallingNVDA}
 
-Wenn Sie NVDA direkt aus dem heruntergeladenen NVDA-Startprogramm installieren, klicken Sie auf die Schaltfläche NVDA installieren.
-Falls Sie den Eingangsdialog bereits geschlossen haben oder NVDA von einer portablen Version aus installieren wollen, wählen Sie den Menüpunkt "NVDA installieren" aus dem Untermenü "Werkzeuge".
+Wenn Sie NVDA direkt aus dem heruntergeladenen NVDA-Startprogramm installieren, klicken Sie auf den Schalter "NVDA installieren".
+Falls Sie das Willkommensfenster bereits geschlossen haben oder NVDA von einer portablen Version aus installieren wollen, wählen Sie den Menüpunkt "NVDA installieren" aus dem Untermenü "Werkzeuge".
 
 In dem daraufhin angezeigten Dialogfeld der Installation wird bestätigt, dass Sie NVDA installieren möchten, und es wird auch angegeben, ob diese Installation eine frühere Installation aktualisieren soll.
 Wenn Sie auf den Schalter "Fortfahren" klicken, wird die Installation gestartet.
@@ -331,9 +331,9 @@ Wenn Sie hier "OK" auswählen, wird die soeben installierte NVDA-Version gestart
 #### Warnung bei inkompatiblen NVDA-Erweiterungen {#InstallWithIncompatibleAddons}
 
 Wenn Sie NVDA-Erweiterungen bereits installiert haben, kann möglicherweise eine Warnung erscheinen, dass inkompatible NVDA-Erweiterungen deaktiviert werden.
-Bevor Sie auf die Schaltfläche "Fortfahren" klicken können, müssen Sie zuerst über das Kontrollkästchen bestätigen, dass Sie mit der Deaktivierung inkompatibler NVDA-Erweiterungen einverstanden sind.
-Es ist auch eine Schaltfläche zur Überprüfung inkompatibler NVDA-Erweiterungen, welche nach der Installation deaktiviert werden, vorhanden.
-Weitere Informationen zu dieser Schaltfläche finden Sie im Abschnitt [Inkompatible NVDA-Erweiterungen](#incompatibleAddonsManager).
+Bevor Sie auf den Schalter "Fortfahren" klicken können, müssen Sie zuerst über das Kontrollkästchen bestätigen, dass Sie mit der Deaktivierung inkompatibler NVDA-Erweiterungen einverstanden sind.
+Es ist auch ein Schalter zur Überprüfung inkompatibler NVDA-Erweiterungen, welche nach der Installation deaktiviert werden, vorhanden.
+Weitere Informationen zu diesem Schalter finden Sie im Abschnitt [Inkompatible NVDA-Erweiterungen](#incompatibleAddonsManager).
 Nach der Installation können Sie inkompatible NVDA-Erweiterungen auf eigene Gefahr über den [Store für NVDA-Erweiterungen](#AddonsManager) wieder aktivieren.
 
 #### NVDA bei der Windows-Anmeldung verwenden {#StartAtWindowsLogon}
@@ -355,8 +355,8 @@ Diese Option ist nur verfügbar, wenn NVDA aus einer portablen Version heraus in
 
 ### Erstellen einer portablen Version {#CreatingAPortableCopy}
 
-Wenn Sie eine portable Version direkt aus dem NVDA-Downloadpaket erstellen möchten, klicken Sie auf die Schaltfläche "Portable Version erstellen".
-Wenn Sie den Willkommensdialog bereits geschlossen haben oder gerade eine installierte NVDA-Version ausführen, können Sie über den Menüpunkt "Portable Version erstellen" aus dem Untermenü "Werkzeuge" eine portable Version anlegen.
+Wenn Sie eine portable Version direkt aus dem NVDA-Downloadpaket erstellen möchten, klicken Sie auf den Schalter "Portable Version erstellen".
+Wenn Sie das Willkommensfenster bereits geschlossen haben oder gerade eine installierte NVDA-Version ausführen, können Sie über den Menüpunkt "Portable Version erstellen" aus dem Untermenü "Werkzeuge" eine portable Version anlegen.
 
 Im folgenden Dialogfeld können Sie das Verzeichnis angeben, in dem die portable Version erstellt werden soll.
 Dies kann ein Ordner auf einem Speichermedium sein.
@@ -409,7 +409,7 @@ Sollte der Vorgang dennoch sehr lange dauern, sollte NVDA sagen: "NVDA wird gela
 Wenn Sie entweder nichts hören oder von Windows oder NVDA einen Fehlerton oder eine absteigende Melodie hören, bedeutet das, dass eventuell ein Fehler aufgetreten ist.
 Bitte lesen Sie erst auf der Homepage nach, ob gegebenenfalls etwas darüber bekannt ist oder wie das Problem zu beheben ist. Ansonsten melden Sie den Fehler bitte den Entwicklern.
 
-#### Willkommensdialog {#WelcomeDialog}
+#### Das Willkommensfenster {#WelcomeDialog}
 
 Beim ersten Starten von NVDA wird Ihnen eine Dialogbox mit einigen grundlegenden Informationen über die NVDA-Taste und das NVDA-Menü angezeigt.
 (Bitte beachten Sie weitere Themenabschnitte.)
@@ -417,7 +417,7 @@ Das Dialogfeld enthält zudem ein Kombinationsfeld und drei Kontrollfelder.
 Mit dem Kombinationsfeld wählen Sie das Tastaturschema aus.
 Mit dem ersten Kontrollkästchen können Sie steuern, ob NVDA die Dauergroßschreibtaste als NVDA-Taste verwenden soll.
 Mit dem zweiten Kontrollkästchen können Sie bestimmen, ob NVDA nach der Anmeldung automatisch gestartet werden soll. Diese Option steht nur bei installierten NVDA-Versionen zur Verfügung.
-Mit dem dritten Kontrollkästchen legen Sie fest, ob bei jedem Start der Willkommensdialog angezeigt werden soll.
+Mit dem dritten Kontrollkästchen legen Sie fest, ob bei jedem Start das Willkommensfenster angezeigt werden soll.
 
 #### Dialogfeld zur Datennutzungsstatistik {#UsageStatsDialog}
 
@@ -986,7 +986,7 @@ Mit Hilfe der Elementliste können Sie - abhängig von der aktiven Anwendung - a
 In Web-Browsern können Sie hierbei auf links, Überschriften, Formularfelder, Schalter oder Sprungmarken zugreifen.
 Mit dem Auswahlschalter können Sie zwischen den unterschiedlichen Elementtypen umschalten.
 Mit dem Eingabefeld können Sie auch die Einträge filtern, um sich die Suche auf der Seite zu erleichtern.
-Wenn Sie einmal einen Eintrag ausgewählt haben, können Sie mit den Schaltflächen im Dialogfeld entweder den Eintrag aktivieren oder zu diesem gelangen.
+Wenn Sie einmal einen Eintrag ausgewählt haben, können Sie mit den Schaltern im Dialogfeld entweder den Eintrag aktivieren oder zu diesem gelangen.
 <!-- KC:beginInclude -->
 
 | Name |Tastenkombination |Beschreibung|
@@ -1620,7 +1620,7 @@ Wenn Sie eine Kategorie auswählen, werden alle zugehörigen Einstellungen im Di
 Um sich zwischen den Kategorien zu bewegen, benutzen Sie `Tab` oder `Umschalt+Tab`, um die Liste der Kategorien zu erreichen und dann die Pfeiltasten nach oben oder unten, um in der Liste zu navigieren.
 Von überall in diesem Dialogfeld aus können Sie auch mit der Tastenkombination `Strg+Tab` eine Kategorie vorwärts oder mit `Umschalt+Strg+Tab` eine Kategorie zurück gehen.
 
-Sobald Sie eine oder mehrere Einstellungen geändert haben, können Sie die Einstellungen mit der Schaltfläche "Übernehmen" speichern. In diesem Fall bleibt das Dialogfeld geöffnet, so dass Sie weitere Einstellungen ändern oder eine andere Kategorie auswählen können.
+Sobald Sie eine oder mehrere Einstellungen geändert haben, können Sie die Einstellungen mit dem Schalter "Übernehmen" speichern. In diesem Fall bleibt das Dialogfeld geöffnet, so dass Sie weitere Einstellungen ändern oder eine andere Kategorie auswählen können.
 Wenn Sie die Einstellungen speichern und das Dialogfeld schließen möchten, verwenden Sie stattdessen den Schalter "OK".
 
 Einige Kategorien besitzen eine Kurztaste für den direkten Aufruf.
@@ -1692,7 +1692,7 @@ Diese Option ist nur in der installierten Version verfügbar!
 
 ##### Aktuell gespeicherte Einstellungen  für die Windows-Anmeldung und bei Sicherheitsmeldungen verwenden (erfordert Administrationsberechtigungen!) {#GeneralSettingsCopySettings}
 
-Mit dieser Schaltfläche wird die aktuell gespeicherte NVDA-Benutzerkonfiguration in das Systemkonfigurationsverzeichnis von NVDA kopiert, sodass NVDA sie bei der Anmeldung und bei der Benutzerkontensteuerung und [anderen Sicherheitsmeldungen](#SecureScreens) verwendet.
+Mit diesem Schalter wird die aktuell gespeicherte NVDA-Benutzerkonfiguration in das Systemkonfigurationsverzeichnis von NVDA kopiert, sodass NVDA sie bei der Anmeldung und bei der Benutzerkontensteuerung und [anderen Sicherheitsmeldungen](#SecureScreens) verwendet.
 Speichern Sie zuvor Ihre Konfiguration, um sicherzustellen, dass auch tatsächlich all Ihre Einstellungen übernommen wurden. Sie können dies im NVDA-Menü oder mit der Tastenkombination NVDA+Strg+C vornehmen.
 Diese Option ist nur in der installierten Version verfügbar!
 
@@ -2280,7 +2280,7 @@ Sie können den [Bildschirmvorhang](#VisionScreenCurtain) aktivieren, indem Sie 
 Es wird eine Warnung angezeigt, wonach Ihr Bildschirm nach der Aktivierung sich verdunkelt.
 Bevor Sie fortfahren (Auswahl von "Ja"), stellen Sie sicher, dass Sie eine Sprachausgabe oder eine Braillezeile verwenden und den Computer ohne Verwendung des Bildschirms steuern können.
 Wählen Sie "Nein", wenn Sie den Bildschirmvorhang nicht mehr aktivieren möchten.
-Wenn Sie sicher sind, können Sie die Schaltfläche "Ja" auswählen, um den Bildschirmvorhang zu aktivieren.
+Wenn Sie sicher sind, können Sie den Schalter "Ja" auswählen, um den Bildschirmvorhang zu aktivieren.
 Wenn Sie diese Warnmeldung nicht länger erhalten möchten, können Sie dieses Verhalten in dem Dialogfeld, der die Meldung anzeigt, ändern.
 Sie können die Warnung jederzeit zurücksetzen, indem Sie das Kontrollkästchen "Beim Laden des Bildschirmvorhangs immer eine Warnung anzeigen" unter dem Kontrollkästchen "Bildschirm verdunkeln" aktivieren.
 
@@ -2613,7 +2613,7 @@ Wenn gleich der Lesemodus keine wirklichen Seiten hat, können Sie jedoch hier f
 
 Tastenkombination: NVDA+V
 
-Mit dieser Option können Sie festlegen, ob der Lesemodus anklickbare Inhalte (Links, Schaltflächen und Felder) in einer eigenen Zeile darstellen soll oder ob sie innerhalb des Textes bleiben sollen, wie sie visuell angezeigt werden.
+Mit dieser Option können Sie festlegen, ob der Lesemodus anklickbare Inhalte (Links, Schalter und Felder) in einer eigenen Zeile darstellen soll oder ob sie innerhalb des Textes bleiben sollen, wie sie visuell angezeigt werden.
 Beachten Sie, dass diese Option nicht für Microsoft Office-Anwendungen wie Outlook und Word gilt, die immer das Bildschirm-Layout verwenden.
 Wenn das Bildschirm-Layout aktiviert ist, bleiben die Seitenelemente so, wie sie visuell dargestellt werden.
 Zum Beispiel wird eine visuelle Zeile mit mehreren Links in Sprache und Braille als mehrere Links auf derselben Zeile dargestellt.
@@ -2810,7 +2810,7 @@ Um Änderungen in den erweiterten Einstellungen vornehmen zu können, müssen di
 
 ##### Die Standard-Einstellungen wiederherstellen {#AdvancedSettingsRestoringDefaults}
 
-Die Schaltfläche stellt die Standardwerte für die Einstellungen wieder her, auch wenn das Kontrollkästchen zur Bestätigung nicht aktiviert ist.
+Der Schalter stellt die Standardwerte für die Einstellungen wieder her, auch wenn das Kontrollkästchen zur Bestätigung nicht aktiviert ist.
 Nach dem Ändern der Einstellungen können Sie zu den Standardwerten zurückkehren.
 Dies kann auch der Fall sein, wenn Sie sich nicht sicher sind, ob die Einstellungen geändert wurden.
 
@@ -2824,8 +2824,8 @@ Wenn Sie benutzerdefinierten Code an andere weitergeben möchten, sollten Sie ih
 
 ##### Scratchpad-Verzeichnis für Entwickler öffnen {#AdvancedSettingsOpenScratchpadDir}
 
-Diese Schaltfläche öffnet das Verzeichnis, in dem Sie während der Entwicklung benutzerdefinierten Code ablegen  können.
-Diese Schaltfläche ist nur aktiv, wenn NVDA so konfiguriert ist, dass benutzerdefinierter Code aus dem Developer Scratchpad-Verzeichnis geladen werden kann.
+Dieser Schalter öffnet das Verzeichnis, in dem Sie während der Entwicklung benutzerdefinierten Code ablegen  können.
+Dieser Schalter ist nur aktiv, wenn NVDA so konfiguriert ist, dass benutzerdefinierter Code aus dem Developer Scratchpad-Verzeichnis geladen werden kann.
 
 ##### Registrierung zu UIA-Ereignissen und Änderungen der eigenschaften {#AdvancedSettingsSelectiveUIAEventRegistration}
 
@@ -3051,11 +3051,11 @@ Diese sind:
 Sie müssen den Dialogfeldern eigene Tastenkombinationen zuweisen, falls Sie die Wörterbücher per Tastenkürzel aufrufen wollen. Verwenden Sie hierzu das Dialogfeld für die [Tastenbefehle](#InputGestures).
 
 Alle Wörterbücher enthalten eine Liste von Sprachregeln, welche verwendet werden, um die Sprache zu verbessern.
-Die Dialogfelder enthalten die folgenden Schaltflächen: "Hinzufügen", "Bearbeiten", "Entfernen" und "Alles entfernen".
+Die Dialogfelder enthalten die folgenden Schalter: "Hinzufügen", "Bearbeiten", "Entfernen" und "Alle entfernen".
 
-Mit der Schaltfläche "Hinzufügen" erstellen Sie eine neue Regel im Wörterbuch. Anschließend füllen Sie die entsprechenden Felder aus und klicken danach auf "OK".
+Mit dem Schalter "Hinzufügen" erstellen Sie eine neue Regel im Wörterbuch. Anschließend füllen Sie die entsprechenden Felder aus und klicken danach auf "OK".
 Sie sehen nun die neu hinzugefügte Regel in der Regelliste.
-Um sicherzustellen, dass die neu hinzugefügten oder bearbeiteten Regeln auch tatsächlich gespeichert bleiben, klicken Sie einmal auf die "OK"-Schaltfläche, um damit auch das Dialogfeld der Wörterbücher zu schließen.
+Um sicherzustellen, dass die neu hinzugefügten oder bearbeiteten Regeln auch tatsächlich gespeichert bleiben, klicken Sie auf den Schalter "OK", um damit auch das Dialogfeld der Wörterbücher zu schließen.
 
 Mit den Regeln für die Aussprache-Wörterbücher von NVDA können Sie eine Zeichenkette in eine andere ändern.
 Ein einfaches Beispiel wäre, wenn Sie möchten, dass NVDA bei dem Wort "Frosch" jedes Mal "Vogel" sagt.
@@ -3131,7 +3131,7 @@ Um eine Tastenkombination von einer Funktion zu entfernen, wählen Sie diese aus
 
 Die Kategorie "Tasten der emulierten Systemtastatur" enthält NVDA-Befehle, die Tasten auf der Systemtastatur emulieren.
 Diese Tasten der emulierten Systemtastatur können zur Steuerung einer Systemtastatur direkt von Ihrer Braillezeile aus verwendet werden.
-Um einen emulierten Tastenbefehl hinzuzufügen, wählen Sie in der Kategorie "Tasten der emulierten Systemtastatur" und klicken Sie auf die Schaltfläche "Hinzufügen".
+Um einen emulierten Tastenbefehl hinzuzufügen, wählen Sie in der Kategorie "Tasten der emulierten Systemtastatur" aus und klicken Sie auf den Schalter "Hinzufügen".
 Anschließend drücken Sie die gewünschte, zu emulierende Taste auf der Tastatur.
 Danach ist die Taste in der Kategorie "Tasten der emulierten Systemtastatur" verfügbar und Sie können ihr einen Tastenbefehl wie oben beschrieben zuweisen.
 
@@ -3343,7 +3343,7 @@ Die NVDA-Erweiterungen werden aufgelistet, wenn der Suchtext im Anzeigenamen, im
 
 Für NVDA-Erweiterungen stehen Aktionen wie Installieren, Hilfe, Deaktivieren und Entfernen zur Verfügung.
 Für eine NVDA-Erweiterung in der Liste der NVDA-Erweiterungen können diese Aktionen über ein Menü aufgerufen werden, das durch Drücken der `Kontextmenü`-Taste, `Eingabetaste`, Rechtsklick oder Doppelklick auf die NVDA-Erweiterung geöffnet wird.
-Dieses Menü kann auch über eine Schaltfläche "Aktionen" in den Details der ausgewählten NVDA-Erweiterung aufgerufen werden.
+Dieses Menü kann auch über den Schalter "Aktionen" in den Details der ausgewählten NVDA-Erweiterung aufgerufen werden.
 
 #### NVDA-Erweiterungen installieren {#AddonStoreInstalling}
 
@@ -3359,7 +3359,7 @@ Starten Sie dann die Installation mit der Aktion "Aktualisieren", "Installieren"
 Sie können auch mehrere Erweiterungen gleichzeitig installieren.
 Dies kann erreicht werden, indem Sie auf der Registerkarte "Verfügbare Erweiterungen" mehrere Erweiterungen auswählen, dann das Kontextmenü der Auswahl aktivieren und die Aktion "Ausgewählte Erweiterungen installieren" auswählen.
 
-Um eine NVDA-Erweiterung zu installieren, die Sie außerhalb des Store geladen haben, klicken Sie auf die Schaltfläche "Aus externer Quelle installieren".
+Um eine NVDA-Erweiterung zu installieren, die Sie außerhalb des Store geladen haben, klicken Sie auf den Schalter "Aus externer Quelle installieren".
 Damit können Sie nach einem Erweiterungspaket (`.nvda-addon`-Datei) irgendwo auf Ihrem Computer oder in einem Netzwerk suchen.
 Sobald Sie das Erweiterungspaket angeklickt haben, beginnt der Installationsprozess.
 
@@ -3586,7 +3586,7 @@ Viele Sprachen enthalten mehrere Varianten.
 Zwei der englischen Varianten sind "Großbritannien" und "Australien".
 In französischer Variante sind "Frankreich", "Kanada" und "Schweiz" erhältlich.
 Suchen Sie nach der breiteren Sprache (z. B. Englisch oder Französisch) und wählen Sie die entsprechende Variante in der Liste aus.
-Anschließend wählen Sie die gewünschte Sprache aus und fügen Sie sie über die Schaltfläche "Hinzufügen" dem Betriebssystem hinzu.
+Anschließend wählen Sie die gewünschte Sprache aus und fügen Sie sie über den Schalter "Hinzufügen" dem Betriebssystem hinzu.
 Starten Sie NVDA nach dem Hinzufügen neu.
 
 In Artikel [Unterstützte Sprachen und Stimmen](https://support.microsoft.com/en-us/windows/appendix-a-supported-languages-and-voices-4486e345-7730-53da-fcfe-55cc64300f01) finden Sie eine Liste aller verfügbaren Stimmen.
