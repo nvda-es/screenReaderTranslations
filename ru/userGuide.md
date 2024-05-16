@@ -2,7 +2,7 @@
 
 [TOC]
 
-<!-- KC:title: Краткий Справочник Команд NVDA NVDA_VERSION -->
+<!-- KC:title: NVDA NVDA_VERSION краткий справочник команд -->
 
 
 
