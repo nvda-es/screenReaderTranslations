@@ -4238,7 +4238,7 @@ Obydwa wewnętrzne klawisze to Spacja.
 |Klawisz Ctrl+Escape |Spacja+Punkt 1 2 3 4 5 6|
 |Klawisz Tab |Spacja+Punkt 3 7|
 
-'<!-- KC:endInclude -->
+<!-- KC:endInclude -->
 
 ### Starsze modele Papenmeier Braille BRAILLEX {#PapenmeierOld}
 
