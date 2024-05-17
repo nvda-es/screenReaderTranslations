@@ -3861,11 +3861,11 @@ Malleissa, joissa on ohjaustappi:
 
 | Nimi | Näppäinkomento |
 |---|---|
-| Nuoli ylös -näppäin | `ylös` |
-| Nuoli alas -näppäin | `alas` |
-| Nuoli vasemmalle -näppäin | `vasen` |
-| Nuoli oikealle -näppäin | `oikea` |
-| Enter-näppäin | `valitse` |
+| Nuoli ylös -näppäin | ylös |
+| Nuoli alas -näppäin | alas |
+| Nuoli vasemmalle -näppäin | vasen |
+| Nuoli oikealle -näppäin | oikea |
+| Enter-näppäin | valitse |
 
 <!-- KC:endInclude -->
 
@@ -4028,9 +4028,9 @@ Katso laitteen käyttöohjeesta kuvaukset näppäinten paikoista.
 | Ctrl+Nuoli vasemmalle -näppäinyhdistelmä | ``piste 2+väli`` |
 | Vaihto+Alt+Nuoli vasemmalle -näppäinyhdistelmä | ``pisteet 2 ja 7+f1`` |
 | `Alt+Nuoli vasemmalle` -näppäinyhdistelmä | `pisteet 2 ja 7+väli` |
-| `Nuoli oikealle` -näppäin | `piste 6+väli`, `vasemmanpuoleinen nuoli oikealle` |
-| Ctrl+Vaihto+Nuoli oikealle -näppäinyhdistelmä | `pisteet 5 ja 8+väli+f1` |
-| Ctrl+Nuoli oikealle -näppäinyhdistelmä | ``piste 5+väli`` |
+| Nuoli oikealle -näppäin | piste 6+väli, vasemmanpuoleinen nuoli oikealle |
+| Ctrl+Vaihto+Nuoli oikealle -näppäinyhdistelmä | pisteet 5 ja 8+väli+f1 |
+| Ctrl+Nuoli oikealle -näppäinyhdistelmä | `piste 5+väli` |
 | Vaihto+Alt+Nuoli oikealle -näppäinyhdistelmä | ``pisteet 5 ja 7+f1`` |
 | `Alt+Nuoli oikealle` -näppäinyhdistelmä | `pisteet 5 ja 7+väli` |
 | Page up -näppäin | ``pisteet 1, 2 ja 6+väli`` |
@@ -4504,7 +4504,7 @@ Alla kuvaillut pistekirjoitusnäppäimistön toiminnot ovat käytettävissä vai
 |---|---|
 | Poista viimeksi syötetty pistesolu tai merkki | `askelpalautin` |
 | Käännä mikä tahansa pistekirjoitussyöte ja paina Enter-näppäintä | `askelpalautin+väli` |
-| Vaihda ``NVDA``-näppäimen tilaa | `pisteet 3 ja 5+väli` |
+| Vaihda `NVDA`-näppäimen tilaa | `pisteet 3 ja 5+väli` |
 | `Insert`-näppäin | `pisteet 1, 3 ja 5+väli`, `pisteet 3, 4 ja 5+väli` |
 | `Delete`-näppäin | `pisteet 3 ja 6+väli` |
 | `Home`-näppäin | `pisteet 1, 2, 3+väli` |
@@ -4892,13 +4892,13 @@ Voit yhdistellä lyhyitä valitsimia näin:
 | `nvda -mc ASETUSPOLKU --disable-addons` | Muuten sama kuin edellä, mutta poistaa myös lisäosat käytöstä. |
 
 Jotkin valitsimet hyväksyvät lisäparametreja, esim. miten yksityiskohtaisia tietoja lokiin tallennetaan tai käyttäjän asetushakemiston polkumäärityksen.
-Parametrit annetaan valitsimen jälkeen ja erotetaan sen lyhyestä muodosta välilyönnillä tai pitkää muotoa käytettäessä yhtä suuri kuin -merkillä (``=``), esim.:
+Parametrit annetaan valitsimen jälkeen ja erotetaan sen lyhyestä muodosta välilyönnillä tai pitkää muotoa käytettäessä yhtä suuri kuin -merkillä (`=`), esim.:
 
 | . {.hideHeaderRow} | . |
 |---|---|
 | `nvda -l 10` | Käynnistää NVDA:n virheenkorjaus-lokitasolla. |
-| `nvda --log-file=c:\nvda.log` | NVDA tallentaa lokin tiedostoon c:\nvda.log. |
-| `nvda --log-level=20 -f c:\nvda.log` | Käynnistää NVDA:n tiedot-lokitasolla ja tallentaa lokin tiedostoon c:\nvda.log. |
+| `nvda --log-file=c:\nvda.log` | NVDA tallentaa lokin tiedostoon `c:\nvda.log`. |
+| `nvda --log-level=20 -f c:\nvda.log` | Käynnistää NVDA:n tiedot-lokitasolla ja tallentaa lokin tiedostoon `c:\nvda.log`. |
 
 Seuraavassa on luettelo NVDA:n komentorivivalitsimista:
 
