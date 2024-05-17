@@ -1022,7 +1022,7 @@ Jos objekti on saavutettava, siinä voidaan liikkua ``Sarkain-näppäimellä`` j
 Seuraavalla näppäinkomennolla voidaan palata alkuperäiselle upotetun objektin sisältävälle sivulle:
 <!-- KC:beginInclude -->
 
-| Nimi | Näppäinkomento | Kuvaus |
+	| Nimi | Näppäinkomento | Kuvaus |
 |---|---|---|
 | Siirrä upotetun objektin sisältävään selaustila-asiakirjaan | ``NVDA+Ctrl+Väli`` | Siirtää kohdistuksen pois nykyisestä upotetusta objektista asiakirjaan, jossa se on. |
 
@@ -2649,9 +2649,8 @@ Ilmoitettavat elementit, kuten linkit, otsikot ja taulukot, määritetään [Ase
 
 ##### Automaattinen vuorovaikutustila kohdistuksen muuttuessa {#BrowseModeSettingsAutoPassThroughOnFocusChange}
 
-Kun tämä valintaruutu on valittuna, vuorovaikutustila otetaan käyttöön, jos kohdistus muuttuu.
+Kun tämä valintaruutu on valittuna, vuorovaikutustila otetaan käyttöön kohdistuksen muuttuessa.
 Kun esim. verkkosivulla siirryt sarkaimella lomakkeen kohdalle tämän asetuksen ollessa käytössä, vuorovaikutustila otetaan käyttöön automaattisesti.
-Mikäli siirryt nuolinäppäimillä pois muokkauskentästä, NVDA vaihtaa takaisin selaustilaan.
 
 ##### Automaattinen vuorovaikutustila kohdistinta siirrettäessä {#BrowseModeSettingsAutoPassThroughOnCaretMove}
 
