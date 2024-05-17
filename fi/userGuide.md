@@ -2,7 +2,7 @@
 
 [TOC]
 
-<!-- KC:title: NVDA NVDA_VERSION - komentojen pikaopas -->
+<!-- KC:title: NVDA NVDA_VERSION:n komentojen pikaopas -->
 
 
 
