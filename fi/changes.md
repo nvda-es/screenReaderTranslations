@@ -89,6 +89,7 @@ Tehty useita pieniä bugikorjauksia sovelluksille, kuten Thunderbirdille, Adobe 
 * Korjattu harvinainen tilanne, jossa asetusten tallentaminen ei saattanut tallentaa kaikkia profiileja. (#16343, @CyrilleB79)
 * NVDA siirtyy Firefoxissa ja Chromium-pohjaisissa selaimissa asianmukaisesti vuorovaikutustilaan painettaessa Enteriä oltaessa esitysmuotoisen luettelon kohdalla (ul / ol) muokattavassa sisällössä. (#16325)
 * Sarakkeen tilanmuutos puhutaan automaattisesti valittaessa näytettäviä sarakkeita Thunderbirdin viestiluettelossa. (#16323)
+* Komentorivivalitsin `-h`/`--help` toimii taas oikein. (#16522, @XLTechie)
 
 ### Muutokset kehittäjille
 
