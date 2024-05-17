@@ -1022,7 +1022,7 @@ Jos objekti on saavutettava, siinä voidaan liikkua ``Sarkain-näppäimellä`` j
 Seuraavalla näppäinkomennolla voidaan palata alkuperäiselle upotetun objektin sisältävälle sivulle:
 <!-- KC:beginInclude -->
 
-	| Nimi | Näppäinkomento | Kuvaus |
+| Nimi | Näppäinkomento | Kuvaus |
 |---|---|---|
 | Siirrä upotetun objektin sisältävään selaustila-asiakirjaan | ``NVDA+Ctrl+Väli`` | Siirtää kohdistuksen pois nykyisestä upotetusta objektista asiakirjaan, jossa se on. |
 
@@ -2656,6 +2656,7 @@ Kun esim. verkkosivulla siirryt sarkaimella lomakkeen kohdalle tämän asetuksen
 
 Kun tämä asetus on käytössä, NVDA siirtyy automaattisesti vuorovaikutustilaan ja siitä pois nuolinäppäimillä liikuttaessa.
 Jos esim. verkkosivua nuolinäppäimillä selattaessa tullaan muokkauskentän kohdalle, NVDA ottaa vuorovaikutustilan käyttöön automaattisesti. Jos kentästä siirrytään pois nuolinäppäimillä, palataan takaisin selaustilaan.
+Mikäli siirryt nuolinäppäimillä pois muokkauskentästä, NVDA vaihtaa takaisin selaustilaan.
 
 ##### Ilmaise vuorovaikutus- ja selaustilat äänimerkillä {#BrowseModeSettingsPassThroughAudioIndication}
 
