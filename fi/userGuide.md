@@ -4030,7 +4030,7 @@ Katso laitteen käyttöohjeesta kuvaukset näppäinten paikoista.
 | `Alt+Nuoli vasemmalle` -näppäinyhdistelmä | `pisteet 2 ja 7+väli` |
 | Nuoli oikealle -näppäin | piste 6+väli, vasemmanpuoleinen nuoli oikealle |
 | Ctrl+Vaihto+Nuoli oikealle -näppäinyhdistelmä | pisteet 5 ja 8+väli+f1 |
-| Ctrl+Nuoli oikealle -näppäinyhdistelmä | `piste 5+väli` |
+| Ctrl+Nuoli oikealle -näppäinyhdistelmä | piste 5+väli |
 | Vaihto+Alt+Nuoli oikealle -näppäinyhdistelmä | ``pisteet 5 ja 7+f1`` |
 | `Alt+Nuoli oikealle` -näppäinyhdistelmä | `pisteet 5 ja 7+väli` |
 | Page up -näppäin | ``pisteet 1, 2 ja 6+väli`` |
