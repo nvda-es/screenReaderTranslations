@@ -101,7 +101,7 @@ Katso tarkemmat tiedot kohdasta [Järjestelmävaatimukset](#SystemRequirements).
 Nämä vaiheet edellyttävät jonkin verran perehtymistä verkkosivulla liikkumiseen.
 
 * Avaa verkkoselain (paina `Windows`-näppäintä, kirjoita "internet" ilman lainausmerkkejä ja paina `Enter`)
-* Avaa NV Accessin lataussivu (paina `Alt+D`, kirjoita seuraava osoite ja paina ``Enter``):
+* Avaa NV Accessin lataussivu (paina `Alt+D`, kirjoita seuraava osoite ja paina `Enter`):
 https://www.nvaccess.org/download
 * Paina "Download"-painiketta
 * Selain saattaa kysyä suoritettavaa toimintoa lataamisen jälkeen ja käynnistää sitten ladatun tiedoston
@@ -172,14 +172,14 @@ Käynnistä asennettu versio painamalla `Enter`.
 Kohdistus on "Näppäinasettelu"-alasvetovalikossa.
 "Pöytäkone"-näppäinasettelussa käytetään oletusarvoisesti laskinnäppäimistöä joihinkin toimintoihin.
 Voit halutessasi määrittää laskinnäppäimistön toiminnot muille näppäimille painamalla `Nuoli alas`, joka valitsee "kannettava"-näppäinasettelun.
-1. Siirry kohtaan "Käytä ``Caps Lockia`` NVDA-näppäimenä" painamalla `Sarkainta`.
+1. Siirry kohtaan "Käytä `Caps Lockia` NVDA-näppäimenä" painamalla `Sarkainta`.
 Oletusnäppäimenä käytetään `Insertiä`.
 Valitse `Caps Lock` vaihtoehtoiseksi painamalla `Välilyöntiä`.
 Huom: Näppäinasettelu määritetään erillään NVDA-näppäimestä.
 NVDA-näppäin ja näppäinasettelu voidaan vaihtaa myöhemmin NVDA:n asetusten Näppäimistö-kategoriasta.
 1. Käytä `Sarkainta` ja `Välilyöntiä` muiden tässä näytössä olevien asetusten muuttamiseen.
 Niiden avulla määritetään, käynnistyykö NVDA automaattisesti.
-2. Sulje valintaikkuna painamalla `Enter`.
+1. Sulje valintaikkuna painamalla `Enter`.
 
 ### NVDA:n käyttäminen {#RunningNVDA}
 
@@ -243,7 +243,7 @@ Varsinaisia komentoja ei suoriteta.
 
 #### Syntetisaattorin asetusrengas {#TheSynthSettingsRing}
 
-|| Nimi | Näppäinkomento pöytäkoneissa | Näppäinkomento kannettavissa | Kuvaus |
+| Nimi | Näppäinkomento pöytäkoneissa | Näppäinkomento kannettavissa | Kuvaus |
 |---|---|---|---|
 | Siirrä seuraavaan syntetisaattorin asetukseen | `NVDA+Ctrl+Nuoli oikealle` | `NVDA+Vaihto+Ctrl+Nuoli oikealle` | Siirtää seuraavaan käytettävissä olevaan nykyisen jälkeiseen puheasetukseen palaten viimeisen jälkeen takaisin ensimmäiseen. |
 | Siirrä edelliseen syntetisaattorin asetukseen | `NVDA+Ctrl+Nuoli vasemmalle` | `NVDA+Vaihto+Ctrl+Nuoli vasemmalle` | Siirtää seuraavaan käytettävissä olevaan nykyistä edeltävään puheasetukseen palaten ensimmäisen jälkeen takaisin viimeiseen. |
@@ -556,7 +556,7 @@ Kun valikko tulee näkyviin, voit käyttää nuolinäppäimiä siinä liikkumise
 
 <!-- KC:beginInclude -->
 
-|| Nimi | Näppäinkomento | Kuvaus |
+| Nimi | Näppäinkomento | Kuvaus |
 |---|---|---|
 | Puhu päivämäärä/kellonaika | ``NVDA+F12`` | Puhuu kerran painettaessa kellonajan ja kahdesti painettaessa päivämäärän. |
 | Puhu akun tila | ``NVDA+Vaihto+B`` | Puhuu akun tilan, ts. onko verkkovirta käytössä, tai kertoo nykyisen varauksen tason prosentteina. |
@@ -585,7 +585,7 @@ Esimerkkeinä tällaisista voisivat olla äänen nauhoittaminen, näytön suuren
 Näppäinkomento mahdollistaa puhetilan vaihtamisen:
 <!-- KC:beginInclude -->
 
-|| Nimi | Näppäinkomento | Kuvaus |
+| Nimi | Näppäinkomento | Kuvaus |
 |---|---|---|
 | Vaihda puhetilaa | `NVDA+S` | Vaihtaa puhetilojen välillä. |
 
