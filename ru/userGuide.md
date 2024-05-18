@@ -215,31 +215,31 @@ https://www.nvaccess.org/download
 
 | Название |Настольная |Ноутбук |Описание|
 |---|---|---|---|
-|Читать всё |`NVDA+downArrow` |`NVDA+a` |Начинает читать с текущей позиции каретки, перемещая её при чтении|
-|Читать текущую строку |`NVDA+upArrow` |`NVDA+l` |Читает строку на которой находится системная каретка. При двойном нажатии строка читается посимвольно. При тройном нажатии читается фонетическое описание каждого символа (Анна, Борис, Василий и т.д.)|
-|Читать выделенный текст |`NVDA+shift+upArrow` |`NVDA+shift+s` |Читает любой выделенный текст. При двойном нажатии выделенное читается по символьно. При тройном нажатии читается фонетическое описание каждого символа|
+|Читать всё |`NVDA+стрелка вниз` |`NVDA+a` |Начинает читать с текущей позиции каретки, перемещая её при чтении|
+|Читать текущую строку |`NVDA+стрелка вверх` |`NVDA+l` |Читает строку на которой находится системная каретка. При двойном нажатии строка читается посимвольно. При тройном нажатии читается фонетическое описание каждого символа (Анна, Борис, Василий и т.д.)|
+|Читать выделенный текст |`NVDA+shift+стрелка вверх` |`NVDA+shift+s` |Читает любой выделенный текст. При двойном нажатии выделенное читается по символьно. При тройном нажатии читается фонетическое описание каждого символа|
 |Читать текст в буфере обмена |`NVDA+c` |`NVDA+c` |Читает любой текст в буфере обмена. При двойном нажатии читается по символьно. При тройном нажатии читается фонетическое описание каждого символа|
 
 #### Сообщение о местоположении и другой информации {#ReportingLocation}
 
 |Название |Настольная |Ноутбук |Описание|
 |---|---|---|---|
-|Window title |`NVDA+t` |`NVDA+t` |Reports the title of the currently active window. Pressing twice will spell the information. Pressing three times will copy it to the clipboard|
-|Report focus |`NVDA+tab` |`NVDA+tab` |Reports the current control which has focus.  Pressing twice will spell the information. Pressing three times will spell it using character description|
-|Read window |`NVDA+b` |`NVDA+b` |Reads the entire current window (useful for dialogs)|
-|Read status bar |`NVDA+end` |`NVDA+shift+end` |Reports the Status Bar if NVDA finds one. Pressing twice will spell the information. Pressing three times will copy it to the clipboard|
-|Read time |`NVDA+f12` |`NVDA+f12` |Pressing once reports the current time, pressing twice reports the date. The time and date are reported in the format specified in Windows settings for the system tray clock.|
-|Report text formatting |`NVDA+f` |`NVDA+f` |Reports text formatting. Pressing twice shows the information in a window|
-|Report link destination |`NVDA+k` |`NVDA+k` |Pressing once speaks the destination URL of the link at the current caret or focus position. Pressing twice shows it in a window for more careful review|
+|Читать заголовок окна |`NVDA+t` |`NVDA+t` |читает заголовок активного окна. Двойное нажатие произнесет эту информацию посимвольно. Тройное нажатие скопирует эту информацию в буфер обмена|
+|Читать текущий фокус |`NVDA+tab` |`NVDA+tab` |Читает текущий объект или элемент управления в системном фокусе. При быстром двойном нажатии произнесет эту информацию посимвольно. При тройном нажатии читается фонетическое описание каждого символа|
+|Читать активное окно |`NVDA+b` |`NVDA+b` |Читает все элементы управления в активном окне (полезно для диалоговых окон)|
+|Читать строку состояния |`NVDA+end` |`NVDA+shift+end` |Читает строку состояния при её обнаружении. При двойном быстром нажатии, информация будет прочитана по символам. Тройное нажатие скопирует эту информацию в буфер обмена|
+|читать время |`NVDA+f12` |`NVDA+f12` |одиночное нажатие читает текущее время, быстрое двойное нажатие читает дату. Время и дата отображаются в формате, указанном в настройках Windows для часов системного лотка.|
+|Сообщить форматирование текста |`NVDA+f` |`NVDA+f` |Сообщает информацию о форматировании текста в текущей позиции системной каретки. При двойном нажатии открывает её в отдельном окне с режимом обзора|
+|Сообщить расположение ссылки |`NVDA+k` |`NVDA+k` |При однократном нажатии озвучивается целевой URL-адрес ссылки в текущей позиции каретки или фокуса. Двойное нажатие отобразит его в окне для более тщательного просмотра.|
 
 #### Переключать читаемую информацию NVDA {#ToggleWhichInformationNVDAReads}
 
 | Название |Настольная |Ноутбук |Описание|
 |---|---|---|---|
-|Speak typed characters |`NVDA+2` |`NVDA+2` |When enabled, NVDA will announce all characters you type on the keyboard.|
-|Speak typed words |`NVDA+3` |`NVDA+3` |When enabled, NVDA will announce word you type on the keyboard.|
-|Speak command keys |`NVDA+4` |`NVDA+4` |When enabled, NVDA will announce all non-character keys you type on the keyboard. This includes key combinations such as control plus another letter.|
-|Enable mouse tracking |`NVDA+m` |`NVDA+m` |When enabled, NVDA will announce the text currently under the mouse pointer, as you move it around the screen. This allows you to find things on the screen, by physically moving the mouse, rather than trying to find them through object navigation.|
+|Читать символы при вводе |`NVDA+2` |`NVDA+2` |Если включить этот режим, то NVDA будет озвучивать все набираемые с клавиатуры символы.|
+|Читать слова при вводе |`NVDA+3` |`NVDA+3` |Если включить этот режим, то NVDA будет озвучивать все набираемые с клавиатуры слова.|
+|Читать командные клавиши |`NVDA+4` |`NVDA+4` |Если включить этот режим, NVDA будет объявлять все несимвольные клавиши, которые вы вводите на клавиатуре. Сюда входят комбинации клавиш, такие как `control` и ещё одна буква.|
+|Включить отслеживание мыши |`NVDA+m` |`NVDA+m` |Если включить этот режим, то NVDA будет читать текст, расположенный в данный момент под указателем мыши. Это позволит вам находить нужную информацию физически перемещая мышь, вместо использования объектной навигации.|
 
 #### Кольцо настроек синтезатора {#TheSynthSettingsRing}
 
@@ -641,7 +641,7 @@ NVDA озвучивает ваши перемещения по символам,
 |Читать текущую строку |NVDA+↑ |NVDA+L |Читает строку на которой находится системная каретка. При двойном нажатии строка читается посимвольно. При тройном нажатии читается фонетическое описание каждого символа.|
 |Читать выделенный текст |NVDA+Shift+↑ |NVDA+Shift+S |Читает выделенный текст|
 |Сообщить форматирование текста |NVDA+F |NVDA+F |Сообщает информацию о форматировании текста в текущей позиции системной каретки. При двойном нажатии открывает её в отдельном окне с режимом обзора|
-|Соодщить расположение ссылки |`NVDA+k` |`NVDA+k` |Pressing once speaks the destination URL of the link at the current caret or focus position. Pressing twice shows it in a window for more careful review|
+|Сообщить расположение ссылки |`NVDA+k` |`NVDA+k` |При однократном нажатии озвучивается целевой URL-адрес ссылки в текущей позиции каретки или фокуса. Двойное нажатие отобразит его в окне для более тщательного просмотра.|
 |Сообщить расположение системной каретки |NVDA+NumpadDelete |NVDA+Delete |Сообщает информацию о расположении текста или объекта в позиции системной каретки. Например, это может быть процентное значение от начала документа, расстояние до краёв страницы или точное расположение на экране. Двойное нажатие может предоставить дополнительные подробности.|
 |Следующее предложение |Alt+↓ |Alt+↓ |Перемещает каретку на следующее предложение и объявляет его. (поддерживается только в Microsoft Word и Outlook)|
 |Предыдущее предложение |Alt+↑ |Alt+↑ |Перемещает каретку на предыдущее предложение и объявляет его. (поддерживается только в Microsoft Word и Outlook)|
@@ -2243,7 +2243,7 @@ You may consult the documentation for your braille display in the section [Suppo
 
 ##### Настройка режимов разделения звука {#CustomizeSoundSplitModes}
 
-Список с флажками доступных режимов разделения звука позволяет выбрать, какие из них будут включены при переключении между ними с помощью NVDA+alt+s.
+Список с флажками доступных режимов разделения звука позволяет выбрать, какие из них будут включены при переключении между ними с помощью `NVDA+alt+s`.
 Режимы, не отмеченые флажком, исключаются.
 По умолчанию включены только три режима.
 
