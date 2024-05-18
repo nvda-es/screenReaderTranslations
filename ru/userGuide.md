@@ -2217,7 +2217,7 @@ You may consult the documentation for your braille display in the section [Suppo
 Возможность разделения звука позволяет использовать стереовыходные устройства, такие как наушники и динамики.
 Разделение звука позволяет передавать речь NVDA в одном канале (например, левом), а все остальные приложения воспроизводить свои звуки в другом канале (например, правом).
 По умолчанию разделение звука отключено, а это означает, что все приложения, включая NVDA, будут воспроизводить звуки в обоих каналах.
-A gesture allows cycling through the various sound split modes:
+Жест, переключающий различные режимы разделения звука:
 <!-- KC:beginInclude -->
 
 | Название |Комбинация клавиш |Описание|
@@ -2228,31 +2228,31 @@ A gesture allows cycling through the various sound split modes:
 
 По умолчанию эта команда переключает следующие режимы:
 
-* Disabled sound split: both NVDA and other applications output sounds to both left and right channels.
-* NVDA on the left and applications on the right: NVDA will speak in the left channel, while other applications will play sounds in the right channel.
-* NVDA on the right and applications on the left: NVDA will speak in the right channel, while other applications will play sounds in the left channel.
+* Разделение звука выключено: NVDA и другие приложения выводят звук в оба канала.
+* NVDA слева и приложения справа: NVDA будет говорить в левом канале, а другие приложения будут звучать в правом.
+* NVDA справа и приложения слева: NVDA будет говорить в правом канале, а другие приложения будут звучать в левом.
 
-There are more advanced sound split modes available in NVDA setting combo box.
-Please note, that sound split doesn't work as a mixer.
-For example, if an application is playing a stereo sound track while sound split is set to "NVDA on the left and applications on the right", then you will only hear the right channel of the sound track, while the left channel of the sound track will be muted.
+В поле со списком настроек NVDA доступны более сложные режимы разделения звука.
+Обратите внимание: разделение звука не работает в режиме микшера.
+Например, если приложение воспроизводит стереофоническую звуковую дорожку, а для разделения звука установлено значение "NVDA слева и приложения справа", то вы будете слышать только правый канал звуковой дорожки, а левый канал дорожки будет отключён.
 
-This option is not available if you have started NVDA with [WASAPI disabled for audio output](#WASAPI) in Advanced Settings.
+Эта опция недоступна, если вы запустили NVDA с параметром [WASAPI отключен для вывода звука](#WASAPI) в дополнительных настройках.
 
-Please note, that if NVDA crashes, then it won't be able to restore application sounds volume, and those applications might still output sound only in one channel after NVDA crash.
-In order to mitigate this, please restart NVDA.
+Обратите внимание, что в случае сбоя NVDA не удастся восстановить громкость звуков приложений, и эти приложения могут по-прежнему выводить звук только в одном канале после сбоя NVDA.
+Чтобы устранить эту проблему, перезапустите NVDA.
 
-##### Customizing Sound split modes {#CustomizeSoundSplitModes}
+##### Настройка режимов разделения звука {#CustomizeSoundSplitModes}
 
-This checkable list allows selecting which sound split modes are included when cycling between them using `NVDA+alt+s`.
-Modes which are unchecked are excluded.
-By default only three modes are included.
+Список с флажками доступных режимов разделения звука позволяет выбрать, какие из них будут включены при переключении между ними с помощью NVDA+alt+s.
+Режимы, не отмеченые флажком, исключаются.
+По умолчанию включены только три режима.
 
-* Sound split disabled: both NVDA and applications play sounds in both left and right channels.
-* NVDA on the left and all other applications on the right channel.
-* NVDA on the right and all other applications on the left channel.
+* Разделение звука выключено: NVDA и другие приложения выводят звук в оба канала.
+* NVDA слева и приложения справа: NVDA будет говорить в левом канале, а другие приложения будут звучать в правом.
+* NVDA справа и приложения слева: NVDA будет говорить в правом канале, а другие приложения будут звучать в левом.
 
-Note that it is necessary to check at least one mode.
-This option is not available if you have started NVDA with [WASAPI disabled for audio output](#WASAPI) in Advanced Settings.
+Обратите внимание, что необходимо отметить хотя бы один режим.
+Эта опция недоступна, если вы запустили NVDA с параметром [WASAPI отключен для вывода звука](#WASAPI) в дополнительных настройках.
 
 #### Зрение {#VisionSettings}
 
