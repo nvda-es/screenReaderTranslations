@@ -2680,7 +2680,7 @@ This may be easier to understand during line by line page navigation and make it
 Однако системный фокус всё равно будет устанавливаться на фокусируемые элементы при взаимодействии с ними. Например, при нажатии кнопки или установке флажка.
 Установка этого флажка может улучшить поддержку некоторых web-сайтов за счёт понижения производительности и стабильности.
 
-#### Форматирование документа (NVDA+Control+D) {#DocumentFormattingSettings}
+#### Форматирование документа {#DocumentFormattingSettings}
 
 <!-- KC:setting -->
 
@@ -2792,12 +2792,12 @@ You may toggle through the available paragraph styles from anywhere by assigning
 Этот комбинированный список позволяет выбрать язык для распознавания текста.
 Чтобы переключаться между доступными языками из любого места, назначьте свой жест с помощью [диалога жестов ввода](#InputGestures).
 
-##### Periodically refresh recognized content {#Win10OcrSettingsAutoRefresh}
+##### Периодическое обновление распознанного содержимого {#Win10OcrSettingsAutoRefresh}
 
-When this checkbox is enabled, NVDA will automatically refresh the recognized content when a recognition result has focus.
-This can be very useful when you want to monitor constantly changing content, such as when watching a video with subtitles.
-The refresh takes place every one and a half seconds.
-This option is disabled by default.
+Если этот флажок установлен, NVDA автоматически обновит распознанное содержимое, когда результат распознавания окажется в фокусе.
+Это может быть очень полезно, когда вы хотите отслеживать постоянно меняющееся содержимое, например, при просмотре видео с субтитрами.
+Обновление происходит каждые полторы секунды.
+По умолчанию эта опция отключена.
 
 #### Дополнительно {#AdvancedSettings}
 
