@@ -2,15 +2,15 @@
 <html lang="" dir="ltr">
 <head>
 <meta charset="utf-8">
-<title>﻿Guía del Usuario de NVDA NVDA_VERSION</title>
+<title>Guía del Usuario de NVDA NVDA_VERSION</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="styles.css">
 
 </head>
-<body><h1 id="guia-del-usuario-de-nvda-nvda_version">﻿Guía del Usuario de NVDA NVDA_VERSION</h1>
+<body><h1 id="guia-del-usuario-de-nvda-nvda_version">Guía del Usuario de NVDA NVDA_VERSION</h1>
 <div class="toc">
 <ul>
-<li><a href="#guia-del-usuario-de-nvda-nvda_version" title="﻿Guía del Usuario de NVDA NVDA_VERSION">﻿Guía del Usuario de NVDA NVDA_VERSION</a><ul>
+<li><a href="#guia-del-usuario-de-nvda-nvda_version" title="Guía del Usuario de NVDA NVDA_VERSION">Guía del Usuario de NVDA NVDA_VERSION</a><ul>
 <li><a href="#Introduction" title="Introducción">Introducción</a><ul>
 <li><a href="#GeneralFeatures" title="Características generales">Características generales</a></li>
 <li><a href="#SystemRequirements" title="Requerimientos del Sistema">Requerimientos del Sistema</a></li>
@@ -104,6 +104,7 @@
 </li>
 <li><a href="#BrowseMode" title="Modo Exploración">Modo Exploración</a><ul>
 <li><a href="#SingleLetterNavigation" title="Navegación con una Sola Letra">Navegación con una Sola Letra</a><ul>
+<li><a href="#TextNavigationCommand" title="Orden de navegación de párrafos de texto">Orden de navegación de párrafos de texto</a></li>
 <li><a href="#OtherNavigationCommands" title="Otras órdenes de navegación">Otras órdenes de navegación</a></li>
 </ul>
 </li>
@@ -217,6 +218,7 @@
 <li><a href="#BrailleSettingsChange" title="Cambiar pantalla braille">Cambiar pantalla braille</a></li>
 <li><a href="#BrailleSettingsOutputTable" title="Tabla de Salida">Tabla de Salida</a></li>
 <li><a href="#BrailleSettingsInputTable" title="Tabla de Entrada">Tabla de Entrada</a></li>
+<li><a href="#BrailleMode" title="Modo Braille">Modo Braille</a></li>
 <li><a href="#BrailleSettingsExpandToComputerBraille" title="Expandir a braille de ordenador para la palabra en el cursor">Expandir a braille de ordenador para la palabra en el cursor</a></li>
 <li><a href="#BrailleSettingsShowCursor" title="Mostrar Cursor">Mostrar Cursor</a></li>
 <li><a href="#BrailleSettingsBlinkCursor" title="Parpadeo de Cursor">Parpadeo de Cursor</a></li>
@@ -247,6 +249,9 @@
 <li><a href="#SelectSynthesizerDuckingMode" title="Modo Atenuación de Audio">Modo Atenuación de Audio</a></li>
 <li><a href="#SoundVolumeFollowsVoice" title="El volumen de los sonidos de NVDA sigue al volumen de la voz">El volumen de los sonidos de NVDA sigue al volumen de la voz</a></li>
 <li><a href="#SoundVolume" title="Volumen de los sonidos de NVDA">Volumen de los sonidos de NVDA</a></li>
+<li><a href="#AudioAwakeTime" title="Tiempo para mantener el dispositivo de audio despierto tras el habla">Tiempo para mantener el dispositivo de audio despierto tras el habla</a></li>
+<li><a href="#SelectSoundSplitMode" title="Separación de sonido">Separación de sonido</a></li>
+<li><a href="#CustomizeSoundSplitModes" title="Personalizar modos de Separación de Sonido">Personalizar modos de Separación de Sonido</a></li>
 </ul>
 </li>
 <li><a href="#VisionSettings" title="Visión">Visión</a><ul>
@@ -369,6 +374,7 @@
 <li><a href="#WASAPI" title="Utilizar WASAPI para la salida de audio">Utilizar WASAPI para la salida de audio</a></li>
 <li><a href="#AdvancedSettingsDebugLoggingCategories" title="Categorías de registro de depuración">Categorías de registro de depuración</a></li>
 <li><a href="#PlayErrorSound" title="Reproducir un sonido para los errores registrados">Reproducir un sonido para los errores registrados</a></li>
+<li><a href="#TextParagraphRegexEdit" title="Expresión regular para órdenes de navegación rápida de párrafos de texto">Expresión regular para órdenes de navegación rápida de párrafos de texto</a></li>
 </ul>
 </li>
 </ul>
@@ -528,11 +534,9 @@ Actualmente NVDA ha sido traducido a 54idiomas además del idioma inglés incluy
 <h3 id="BrailleSupport">Soporte Braille</h3>
 <p>Para usuarios que posean una pantalla de braille efímero, NVDA puede mostrar su información en braille. 
 NVDA utiliza el transcriptor braille de código abierto <a href="https://liblouis.io/" rel="noopener" target="_blank" title="LibLouis">LibLouis</a> para generar secuencias braille de texto.
-También se soporta tanto la entrada de braille sin contraer como contraída a través de un teclado braille.</p>
-<blockquote>
-<p>Además, NVDA detectará muchas pantallas braille automáticamente por defecto.</p>
-</blockquote>
-<p>Por favor consulta la sección <a href="#SupportedBrailleDisplays" title="Pantallas Braille Soportadas">Pantallas Braille Soportadas</a> para información acerca de las pantallas braille soportadas.</p>
+También se soporta tanto la entrada de braille sin contraer como contraída a través de un teclado braille.
+Además, NVDA detectará muchas pantallas braille automáticamente por defecto.
+Por favor consulta la sección <a href="#SupportedBrailleDisplays" title="Pantallas Braille Soportadas">Pantallas Braille Soportadas</a> para información acerca de las pantallas braille soportadas.</p>
 <p>NVDA soporta códigos braille para muchos idiomas, incluyendo códigos braille contraído, no contraído y computerizado.</p>
 <h3 id="LicenseAndCopyright">Licencia y Copyright</h3>
 <p>NVDA es propiedad intelectual de NVDA_COPYRIGHT_YEARS por los colaboradores de NVDA.</p>
@@ -842,13 +846,28 @@ Las órdenes reales no se ejecutarán mientras se esté en modo ayuda de entrada
 <td>Aumenta la opción de voz actual en la que estés. Ej.: aumenta la velocidad, elige la siguiente voz, aumenta el volumen</td>
 </tr>
 <tr>
+<td>Aumentar la opción actual del sintetizador en un paso largo</td>
+<td><code>NVDA+control+rePág</code></td>
+<td><code>NVDA+shift+control+rePág</code></td>
+<td>aumenta el valor de la actual opción de voz sobre la que estés en pasos más largos. EJ.: cuando estés sobre una opción de voz, saltarás hacia adelante cada 20 voces; cuando estés en opciones de un deslizador (velocidad, tono, etc) saltará adelante el valor de 20%</td>
+</tr>
+<tr>
 <td>Disminuir la opción actual del sintetizador</td>
 <td><code>NVDA+control+flecha abajo</code></td>
 <td><code>NVDA+shift+control+flecha abajo</code></td>
 <td>Disminuye la opción de voz actual en la que estés. Ej.: disminuye la velocidad, elige la voz anterior, disminuye el volumen</td>
 </tr>
+<tr>
+<td>Disminuir la actual opción del sintetizador en un paso largo</td>
+<td><code>NVDA+control+avPág</code></td>
+<td><code>NVDA+shift+control+avPág</code></td>
+<td>Disminuye el valor de la actual opción de voz sobre la que estés en pasos más largos. ej.: cuando estés sobre una opción de voz, saltará hacia atrás cada 20 voces; cuando estés sobre una opción de deslizador, saltará atrás el valor de 20%.</td>
+</tr>
 </tbody>
 </table>
+<p>También es posible establecer el primer o el último valor de la actual opción del sintetizador asignando gestos personalizados en el [diálogo Gestos de Entrada #InputGestures], en la categoría voz.
+Esto significa, por ejemplo, que cuando estés sobre una opción de velocidad, la establecerá a 0 o a 100.
+Cuando estés sobre una opción de voz, establecerá la primera o la última voz.</p>
 <h4 id="WebNavigation">Navegación Web</h4>
 <p>La lista completa de las teclas de navegación con una sola letra está en la sección <a href="#BrowseMode" title="Modo Navegación">Modo Navegación</a> de la guía del usuario.</p>
 <table>
@@ -1819,7 +1838,7 @@ Al moverte por el documento con las órdenes de revisión, el navegador de objet
 <p>El modo revisión de pantalla te permite revisar el texto tal y como aparezca visualmente en la pantalla dentro de la aplicación actual.
 Esto es similar a la funcionalidad de revisión de pantalla o cursor del ratón en muchos otros lectores de pantalla para Windows.</p>
 <p>Cuando se cambia al modo revisión de pantalla, el cursor de revisión se coloca en la posición de pantalla del actual <a href="#ObjectNavigation" title="navegador de objetos">navegador de objetos</a>.
- Cuando nos movamos por la pantalla con las órdenes de revisión, el navegador de objetos se actualiza automáticamente al objeto encontrado en la posición de la pantalla del cursor de revisión.</p>
+Cuando nos movamos por la pantalla con las órdenes de revisión, el navegador de objetos se actualiza automáticamente al objeto encontrado en la posición de la pantalla del cursor de revisión.</p>
 <p>Ten en cuenta que en algunas aplicaciones modernas, NVDA podría no ver alguno o todo el texto disponible en la pantalla, debido al uso de las recientes tecnologías de dibujo en pantalla que son imposibles de soportar en estos momentos.</p>
 <h3 id="NavigatingWithTheMouse">Navegar con el Ratón</h3>
 <p>Cuando mueves el ratón, NVDA informa de forma predeterminada del texto que esté directamente bajo el puntero del mismo, según se mueva sobre él. 
@@ -1991,6 +2010,7 @@ Ten en cuenta que no todas estas órdenes se soportan en cada tipo de documento.
 <li>o: objeto integrado (reproductor de audio y vídeo, aplicación, diálogo, etc.)</li>
 <li>1 a 6: encabezados de 1 a 6 respectivamente</li>
 <li>a: anotación (comentario, revisión del editor, etc.)</li>
+<li><code>p</code>: párrafo de texto</li>
 <li>w: error de ortografía</li>
 </ul>
 <p>Para moverte al comienzo o final de elementos contenedores tales como listas y tablas:</p>
@@ -2023,14 +2043,40 @@ Si quieres utilizar éstas aún podrás usar las teclas de cursor para leer en m
 <p>Para activar o desactivar la navegación con una sola letra para el documento actual, pulsa NVDA+shift+espacio.</p>
 <!-- KC:endInclude -->
 
+<h4 id="TextNavigationCommand">Orden de navegación de párrafos de texto</h4>
+<p>Puedes saltar al siguiente o al anterior párrafo de texto pulsando <code>p</code> o <code>shift+p</code>.
+Los párrafos de texto se definen por un grupo de texto que parece estar escrito con frases completas.
+Esto puede ser útil para encontrar el comienzo de contenido legible en varias páginas web, como:</p>
+<ul>
+<li>Sitios web de noticias</li>
+<li>Foros</li>
+<li>Publicaciones de Blog</li>
+</ul>
+<p>Estas órdenes también pueden ser útiles para saltarse ciertos tipos de desórdenes, como:</p>
+<ul>
+<li>Anuncios</li>
+<li>Menús</li>
+<li>Cabeceras</li>
+</ul>
+<p>Ten en cuenta, sin embargo, que mientras NVDA hace todo lo posible por identificar los párrafos de texto, el algoritmo no es perfecto y a veces puede cometer errores.
+Además, esta orden es diferente de las órdenes de navegación por párrafos <code>control+flecha abajo o flecha arriba</code>.
+La navegación de párrafos de texto sólo salta entre párrafos de texto, mientras que las órdenes de navegación por párrafos llevan el cursor a los párrafos anterior y posterior independientemente de si contienen texto o no.</p>
 <h4 id="OtherNavigationCommands">Otras órdenes de navegación</h4>
 <p>Además de las órdenes enumeradas arriba, NVDA tiene órdenes que no tienen teclas predeterminadas asignadas.
 Para utilizar estas órdenes, primero necesitas asignarles gestos usando el <a href="#InputGestures" title="diálogo Gestos de Entrada">diálogo Gestos de Entrada</a>.
 Aquí tienes una lista de las órdenes disponibles</p>
 <ul>
 <li>Artículo</li>
+<li>Figura</li>
 <li>Grupo</li>
 <li>Pestaña</li>
+<li>Elemento de menú</li>
+<li>Botón conmutable</li>
+<li>Barra de progreso</li>
+<li>Fórmula matemática</li>
+<li>Párrafo alineado verticalmente</li>
+<li>Mismo estilo de texto</li>
+<li>Diferente estilo de texto</li>
 </ul>
 <p>Ten en cuenta que hay dos órdenes para cada tipo de elemento, para avanzar y para retroceder en el documento, y debes asignar gestos para ambas órdenes para poder navegar rápidamente en ambas direcciones.
 Por ejemplo, si quieres utilizar las teclas <code>y</code> / <code>shift+y</code> para navegar rápidamente por las pestañas, harías lo siguiente</p>
@@ -2679,6 +2725,7 @@ Para esta situación, NVDA contiene una característica llamada "Cortina de Pant
 <p>Debido a un cambio en la API Windows Magnification, la Cortina de Pantalla tuvo que actualizarse para admitir las versiones más nuevas de Windows.
 Utiliza NVDA 2021.2 para activar la Cortina de Pantalla con Windows 10 21H2 (10.0.19044) o posteriores.
 Por razones de seguridad, al utilizar una versión nueva de Windows, obtén una confirmación visual de que la Cortina de Pantalla haga a ésta totalmente negra.</p>
+<p>Por favor ten en cuenta que mientras el magnificador de Windows esté en ejecución y estén utilizándose los colores invertidos de la pantalla,  la cortina de pantalla no puede habilitarse.</p>
 <h2 id="ContentRecognition">Reconocimiento de Contenidos</h2>
 <p>Cuando los autores no proporcionan suficiente información para que un usuario de lector de pantalla determine el contenido de algo, pueden utilizarse varias herramientas para intentar reconocer el contenido desde una imagen.
 NVDA es compatible con la funcionalidad de reconocimiento óptico de caracteres (OCR) integrada en Windows 10 y posteriores para reconocer texto desde imágenes.
@@ -3330,6 +3377,14 @@ La tabla elegida se utilizará para transcribir a texto el braille introducido e
 Puedes moverte entre las tablas braille en la lista utilizando las teclas de cursor.</p>
 <p>Ten en cuenta que esta opción sólo es útil si tu pantalla braille tiene un teclado tipo Perkins y si esta característica está admitida por el controlador de la pantalla braille.
 Si la entrada no es compatible en una pantalla que tenga un teclado braille, esto se notificará en la sección <a href="#SupportedBrailleDisplays" title="Pantallas Braille Admitidas">Pantallas Braille Admitidas</a>.</p>
+<!-- KC:setting -->
+
+<h5 id="BrailleMode">Modo Braille</h5>
+<p>Tecla: <code>NVDA+alt+t</code></p>
+<p>Esta opción te permite seleccionar entre los modos braille disponibles.</p>
+<p>Actualmente se admiten dos modos braille, "seguir cursores" y "mostrar salida de voz".</p>
+<p>Cuando esté seleccionado seguir cursores, la pantalla braille seguirá o al foco y al cursor del sistema o al navegador de objetos y al cursor de revisión, dependiendo a qué siga el braille.</p>
+<p>Cuando esté seleccionado mostrar salida de voz, la pantalla braille mostrará lo que hable NVDA, o lo que habría hablado si el modo de voz estuviera en "hablar".</p>
 <h5 id="BrailleSettingsExpandToComputerBraille">Expandir a braille de ordenador para la palabra en el cursor</h5>
 <p>Esta opción permite a la palabra que está bajo el cursor ser mostrada en braille de ordenador no contraído.</p>
 <h5 id="BrailleSettingsShowCursor">Mostrar Cursor</h5>
@@ -3375,20 +3430,12 @@ En este caso, el Braille no seguirá al foco del sistema y al cursor.</p>
 </thead>
 <tbody>
 <tr>
-<td>Predeterminada</td>
-<td>Nunca</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Opciones</td>
 <td>Predeterminada (Nunca), Nunca, sólo cuando sigue automáticamente, Siempre</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
+<td>Predeterminada</td>
+<td>Nunca</td>
 </tr>
 </tbody>
 </table>
@@ -3448,20 +3495,12 @@ Por lo tanto, para  leer el contexto (es decir, que estás en una lista y que es
 </thead>
 <tbody>
 <tr>
-<td>Predeterminada</td>
-<td>Habilitada</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Opciones</td>
 <td>Predeterminada (Habilitada), Habilitada, Deshabilitada</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
+<td>Predeterminada</td>
+<td>Habilitada</td>
 </tr>
 </tbody>
 </table>
@@ -3480,20 +3519,12 @@ Por esta razón la opción está habilitada por defecto, interrumpiendo la voz a
 </thead>
 <tbody>
 <tr>
-<td>Predeterminada</td>
-<td>Habilitada</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Opciones</td>
 <td>Predeterminada (Habilitada), Habilitada, Deshabilitada</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
+<td>Predeterminada</td>
+<td>Habilitada</td>
 </tr>
 </tbody>
 </table>
@@ -3565,20 +3596,12 @@ No es posible el soporte de la atenuación de audio para las copias portable y t
 </thead>
 <tbody>
 <tr>
-<td>Predeterminada</td>
-<td>Deshabilitada</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Opciones</td>
 <td>Deshabilitada, Habilitada</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
+<td>Predeterminada</td>
+<td>Deshabilitada</td>
 </tr>
 </tbody>
 </table>
@@ -3590,6 +3613,62 @@ Esta opción no está disponible si has arrancado NVDA con <a href="#WASAPI" tit
 <p>Este deslizador te permite configurar el volumen de los sonidos y los pitidos de NVDA.
 Esta opción sólo tiene efecto  cuando "Utilizar WASAPI para la salida de audio" esté activado y "el Volumen de los sonidos de NVDA sigue al volumen de la voz" esté desactivado.
 Esta opción no está disponible si has arrancado NVDA con <a href="#WASAPI" title="WASAPI deshabilitado para la salida de audio">WASAPI deshabilitado para la salida de audio</a> en las Opciones Avanzadas.</p>
+<h5 id="AudioAwakeTime">Tiempo para mantener el dispositivo de audio despierto tras el habla</h5>
+<p>Este cuadro de edición especifica cuánto tiempo mantiene NVDA el dispositivo de audio despierto después de que deje de hablar.
+Esto permite a NVDA evitar ciertos fallos del habla como partes de palabras sueltas.
+Esto puede ocurrir debido a que los dispositivos de audio (especialmente dispositivos Bluetooth y wireless) entren en modo de espera.
+Esto también podría ser útil en otros casos de uso, como cuando se ejecuta NVDA dentro de una máquina virtual (ej.: Citrix Virtual Desktop), o en ciertos portátiles.</p>
+<p>Los valores más bajos pueden permitir que el audio se corte más a menudo, ya que un dispositivo puede entrar en modo de espera demasiado pronto, haciendo que  el inicio de la siguiente verbalización se corte.
+Un valor demasiado alto puede hacer que la batería del dispositivo de salida de sonido se descargue más rápidamente, ya que permanece activo durante más tiempo mientras no se envía sonido.</p>
+<p>Puedes establecer el tiempo a cero para deshabilitar esta característica.</p>
+<h5 id="SelectSoundSplitMode">Separación de sonido</h5>
+<p>La característica separación de sonido permite a los usuarios utilizar sus dispositivos de salida en estéreo, como auriculares y altavoces.
+La separación de sonido hace posible que NVDA hable en un canal (ej.: el izquierdo) y tener las otras aplicaciones reproduciendo su sonido en el otro canal (ej.: el derecho).
+Por defecto la separación de sonido está deshabilitada, lo que significa que todas las aplicaciones incluyendo a NVDA reproducirán el sonido en ambos canales.
+Un gesto permite recorrer los distintos modos de separación de sonido:</p>
+<!-- KC:beginInclude -->
+
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Tecla</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modo Cíclico de Separación de Sonido</td>
+<td><code>NVDA+alt+s</code></td>
+<td>Recorre los modos de separación de sonido.</td>
+</tr>
+</tbody>
+</table>
+<!-- KC:endInclude -->
+
+<p>Por defecto esta orden recorrerá los siguientes modos:</p>
+<ul>
+<li>Separación de sonido deshabilitada: NVDA y las demás aplicaciones sacan los sonidos por ambos canales.</li>
+<li>NVDA en la izquierda y las aplicaciones en la derecha: NVDA hablará por el canal izquierdo, mientras las otras aplicaciones reproducirán el sonido por el canal de la derecha.</li>
+<li>NVDA en la derecha y las aplicaciones en la izquierda: NVDA hablará por el canal de la derecha, mientras las otras aplicaciones reproducirán el sonido por el canal de la izquierda.</li>
+</ul>
+<p>Hay más modos avanzados de separación de sonido disponibles en el cuadro combinado en las opciones de NVDA.
+Ten en cuenta que la separación de sonido no funciona como un mezclador.
+Por ejemplo, si una aplicación está reproduciendo una pista de sonido estéreo mientras la división de sonido está configurada a "NVDA en la izquierda y las aplicaciones en la derecha", entonces sólo oirás el canal derecho de la pista de sonido, mientras el canal izquierdo de la pista de sonido estará silenciado.</p>
+<p>Esta opción no está disponible si has arrancado NVDA con <a href="#WASAPI" title="WASAPI deshabilitado para la salida de audio">WASAPI deshabilitado para la salida de audio</a> en las opciones avanzadas.</p>
+<p>Ten en cuenta que si NVDA se bloquea, entonces no podrás restaurar el volumen de los sonidos de la aplicación, y esas aplicaciones podrían seguir emitiendo el sonido sólo en un canal tras el bloqueo de NVDA.
+Para mitigar esto, por favor reinicia NVDA.</p>
+<h5 id="CustomizeSoundSplitModes">Personalizar modos de Separación de Sonido</h5>
+<p>Esta lista marcable permite seleccionar qué modos de separación de sonido se incluyen al recorrer entre ellos utilizando <code>NVDA+alt+s</code>.
+Los modos que estén desmarcados se excluyen.
+Por defecto sólo se incluyen tres modos.</p>
+<ul>
+<li>Separación de sonido deshabilitada: NVDA y las aplicaciones reproducen el sonido en ambos canales.</li>
+<li>NVDA en el canal izquierdo y las otras aplicaciones en el derecho.</li>
+<li>NVDA en el canal derecho y las otras aplicaciones en el izquierdo.</li>
+</ul>
+<p>Ten en cuenta que es necesario marcar al menos un modo.
+Esta opción no está disponible si has iniciado NVDA con <a href="#WASAPI" title="WASAPI deshabilitado para la salida de audio">WASAPI deshabilitado para la salida de audio</a> en las opciones avanzadas.</p>
 <h4 id="VisionSettings">Visión</h4>
 <p>La categoría Visión en el diálogo opciones de NVDA te permite habilitar, deshabilitar y configurar <a href="#Vision" title="ayudas visuales">ayudas visuales</a>.</p>
 <p>Ten en cuenta que las opciones disponibles en esta categoría podrían ampliarse con <a href="#AddonsManager" title="complementos de NVDA">complementos de NVDA</a>.
@@ -3901,8 +3980,8 @@ Puedes configurar el anunciado de:</p>
 <li>Números de página</li>
 <li>Números de línea</li>
 <li>Anunciado de sangría de línea <a href="#DocumentFormattingSettingsLineIndentation" title="(Desactivado, voz, Tonos, voz y tonos)">(Desactivado, voz, Tonos, voz y tonos)</a></li>
-<li>Sangría de párrafo (por ejemplo: sangría, sangría de primera línea)</li>
 <li>Ignorar líneas en blanco para anunciado de sangría de línea</li>
+<li>Sangrado de párrafo (ej.: sangría francesa, sangría de primera línea)</li>
 <li>Espaciado de línea (simple, doble etc)</li>
 <li>Alineación</li>
 </ul>
@@ -3924,6 +4003,7 @@ Puedes configurar el anunciado de:</p>
 <li>Regiones</li>
 <li>Artículos</li>
 <li>Marcos</li>
+<li>Figuras y pies de foto</li>
 <li>Cliqueable</li>
 </ul>
 </li>
@@ -3957,20 +4037,12 @@ Esto puede ser útil al leer un documento en el que las líneas en blanco se uti
 </thead>
 <tbody>
 <tr>
-<td>Predeterminado</td>
-<td>Manejado por la aplicación</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Opciones</td>
 <td>Predeterminado (manejado por la aplicación), Manejado por la aplicación, salto de una única línea, salto multilínea</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
+<td>Predeterminado</td>
+<td>Manejado por la aplicación</td>
 </tr>
 </tbody>
 </table>
@@ -4025,20 +4097,12 @@ Este botón sólo está habilitado si NVDA está configurado para permitir la ca
 </thead>
 <tbody>
 <tr>
-<td>Por defecto</td>
-<td>Automático</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Opciones</td>
 <td>Automático, Selectivo, Global</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
+<td>Predeterminado</td>
+<td>Automático</td>
 </tr>
 </tbody>
 </table>
@@ -4079,20 +4143,12 @@ La implementación de UI automation de Microsoft Excel cambia constantemente y e
 </thead>
 <tbody>
 <tr>
-<td>Predeterminada</td>
-<td>Habilitada</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Opciones</td>
 <td>Predeterminada (Habilitada), Deshabilitada, Habilitada</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
+<td>Predeterminada</td>
+<td>Habilitada</td>
 </tr>
 </tbody>
 </table>
@@ -4174,16 +4230,8 @@ Algunas de estas características pueden estar incompletas.</p>
 <td>Habilitado</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Opciones</td>
 <td>Deshabilitado, Habilitado</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -4222,20 +4270,12 @@ Sin embargo, en las terminales, al insertar o eliminar un carácter en el medio 
 </thead>
 <tbody>
 <tr>
-<td>Predeterminado</td>
-<td>Difusión</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Opciones</td>
 <td>Difusión, notificaciones UIA</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
+<td>Predeterminado</td>
+<td>Difusión</td>
 </tr>
 </tbody>
 </table>
@@ -4273,20 +4313,12 @@ Con varias APIs de GUI históricamente populares, el texto puede ser renderizado
 </thead>
 <tbody>
 <tr>
-<td>predeterminada</td>
-<td>Habilitada</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Opciones</td>
 <td>Predeterminada (habilitada),Deshabilitada, Habilitada</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
+<td>predeterminada</td>
+<td>Habilitada</td>
 </tr>
 </tbody>
 </table>
@@ -4306,6 +4338,9 @@ Activa sólo uno de ellos si un desarrollador de NVDA te ha dado instrucciones e
 <p>Esta opción permite especificar si NVDA reproducirá un sonido de error en caso de que se registre un error.
 Eligiendo Sólo en versiones de prueba (por defecto) hace que NVDA reproduzca sonidos de error sólo si la versión actual de NVDA es una versión de prueba (alfa, beta o ejecutada desde el código fuente).
 Eligiendo Sí permite habilitar los sonidos de error cualquiera que sea la versión actual de NVDA.</p>
+<h5 id="TextParagraphRegexEdit">Expresión regular para órdenes de navegación rápida de párrafos de texto</h5>
+<p>Este campo permite a los usuarios personalizar la expresión regular para detectar párrafos de texto en modo exploración.
+La <a href="#TextNavigationCommand" title="orden de navegación de párrafos de texto">orden de navegación de párrafos de texto</a> busca párrafos emparejados por esta expresión regular.</p>
 <h3 id="MiscSettings">Miscelánea de Opciones</h3>
 <p>Además del cuadro de diálogo <a href="#NVDASettings" title="Opciones de NVDA">Opciones de NVDA</a>, el submenú Preferencias del menú NVDA contiene otros elementos que se describen a continuación.</p>
 <h4 id="SpeechDictionaries">Diccionarios del Habla</h4>
@@ -7100,65 +7135,248 @@ Las funciones del teclado braille que se describen a continuación se realizan c
 <h4 id="EurobrailleBraille">Funciones de Teclado Braille</h4>
 <!-- KC:beginInclude -->
 
-<p>|Nombre |Tecla|
-|Borrar la última celda braille introducida o carácter |<code>retroceso</code>|
-|Transcribir cualquier entrada braille y pulsar intro |<code>retroceso+espacio</code>|
-|Conmutar tecla <code>NVDA</code> |<code>punto3+punto5+espacio</code>|
-|<code>insert</code> |<code>punto1+punto3+punto5+espacio</code>, <code>punto3+punto4+punto5+espacio</code>|
-|<code>suprimir</code> |<code>punto3+punto6+espacio</code>|
-|<code>inicio</code> |<code>punto1+punto2+punto3+espacio</code>|
-|<code>fin</code> |<code>punto4+punto5+punto6+espacio</code>|
-|<code>flecha izquierda</code> |<code>punto2+espacio</code>|
-|<code>flecha derecha</code> |<code>punto5+espacio</code>|
-|<code>flecha arriba</code> |<code>punto1+espacio</code>|
-|<code>flecha abajo</code> |<code>punto6+espacio</code>|
-|<code>rePág</code> |<code>punto1+punto3+espacio</code>|
-|<code>avPág</code> |<code>punto4+punto6+espacio</code>|
-|<code>1 teclado numérico</code> |<code>punto1+punto6+retroceso</code>|
-|<code>2 teclado numérico</code> |<code>punto1+punto2+punto6+retroceso</code>|
-|<code>3 teclado numérico</code> |<code>punto1+punto4+punto6+retroceso</code>|
-|<code>4 teclado numérico</code> |<code>punto1+punto4+punto5+punto6+retroceso</code>|
-|<code>5 teclado numérico</code> |<code>punto1+punto5+punto6+retroceso</code>|
-|<code>6 teclado numérico</code> |<code>punto1+punto2+punto4+punto6+retroceso</code>|
-|<code>7 teclado numérico</code> |<code>punto1+punto2+punto4+punto5+punto6+retroceso</code>|
-|<code>8 teclado numérico</code> |<code>punto1+punto2+punto5+punto6+retroceso</code>|
-|<code>9 teclado numérico</code> |<code>punto2+punto4+punto6+retroceso</code>|
-|<code>Insert teclado numérico</code> |<code>punto3+punto4+punto5+punto6+retroceso</code>|
-|<code>Punto Decimal teclado numérico</code> |<code>punto2+retroceso</code>|
-|<code>dividir teclado numérico</code> |<code>punto3+punto4+retroceso</code>|
-|<code>multiplicar teclado numérico</code> |<code>punto3+punto5+retroceso</code>|
-|<code>menos teclado numérico</code> |<code>punto3+punto6+retroceso</code>|
-|<code>más teclado numérico</code> |<code>punto2+punto+punto+retroceso</code>|
-|<code>intro teclado numérico</code> |<code>punto3+punto4+punto5+retroceso</code>|
-|<code>escape</code> |<code>punto1+punto2+punto4+punto5+espacio</code>, <code>l2</code>|
-|<code>tab</code> |<code>punto2+punto5+punto6+espacio</code>, <code>l3</code>|
-|<code>shift+tab</code> |<code>punto2+punto3+punto5+espacio</code>|
-|<code>imprimir pantalla</code> |<code>punto1+punto3+punto4+punto6+espacio</code>|
-|<code>pausa</code> |<code>punto1+punto4+espacio</code>|
-|<code>aplicaciones</code> |<code>punto5+punto6+retroceso</code>|
-|<code>f1</code> |<code>punto1+retroceso</code>|
-|<code>f2</code> |<code>punto1+punto2+retroceso</code>|
-|<code>f3</code> |<code>punto1+punto4+retroceso</code>|
-|<code>f4</code> |<code>punto1+punto4+punto5+retroceso</code>|
-|<code>f5</code> |<code>punto1+punto5+retroceso</code>|
-|<code>f6</code> |<code>punto1+punto2+punto4+retroceso</code>|
-|<code>f7</code> |<code>punto1+punto2+punto4+punto5+retroceso</code>|
-|<code>f8</code> |<code>punto1+punto2+punto5+retroceso</code>|
-|<code>f9</code> |<code>punto2+punto4+retroceso</code>|
-|<code>f10</code> |<code>punto2+punto4+punto5+retroceso</code>|
-|<code>f11</code> |<code>punto1+punto3+retroceso</code>|
-|<code>f12</code> |<code>punto1+punto2+punto3+retroceso</code>|
-|<code>windows</code> |<code>punto1+punto2+punto4+punto5+punto6+espacio</code>|
-|Conmutar tecla <code>windows</code> |<code>punto1+punto2+punto3+punto4+retroceso</code>, <code>punto2+punto4+punto5+punto6+espacio</code>|
-|<code>bloq mayus</code> |<code>punto7+retroceso</code>, <code>punto8+retroceso</code>|
-|<code>bloq num</code> |<code>punto3+retroceso</code>, <code>punto6+retroceso</code>|
-|<code>shift</code> |<code>punto7+espacio</code>|
-|Conmutar <code>shift</code> |<code>punto1+punto7+espacio</code>, <code>punto4+punto7+espacio</code>|
-|<code>control</code> |<code>punto7+punto8+espacio</code>|
-|Conmutar <code>control</code> |<code>punto1+punto7+punto8+espacio</code>, <code>punto4+punto7+punto8+espacio</code>|
-|<code>alt</code> |<code>punto8+espacio</code>|
-|Conmutar <code>alt</code> |<code>punto1+punto8+espacio</code>, <code>punto4+punto8+espacio</code>|
-|Conmutar simulación de teclado HID |<code>switch1Izquierda+joystick1Abajo</code>, <code>switch1Derecha+joystick1Abajo</code>|</p>
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Tecla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Borrar la última celda braille introducida o carácter</td>
+<td><code>retroceso</code></td>
+</tr>
+<tr>
+<td>Transcribir cualquier entrada braille y pulsar intro</td>
+<td><code>retroceso+espacio</code></td>
+</tr>
+<tr>
+<td>Conmutar tecla <code>NVDA</code></td>
+<td><code>punto3+punto5+espacio</code></td>
+</tr>
+<tr>
+<td><code>insert</code></td>
+<td><code>punto1+punto3+punto5+espacio</code>, <code>punto3+punto4+punto5+espacio</code></td>
+</tr>
+<tr>
+<td><code>suprimir</code></td>
+<td><code>punto3+punto6+espacio</code></td>
+</tr>
+<tr>
+<td><code>inicio</code></td>
+<td><code>punto1+punto2+punto3+espacio</code></td>
+</tr>
+<tr>
+<td><code>fin</code></td>
+<td><code>punto4+punto5+punto6+espacio</code></td>
+</tr>
+<tr>
+<td><code>flecha izquierda</code></td>
+<td><code>punto2+espacio</code></td>
+</tr>
+<tr>
+<td><code>flecha derecha</code></td>
+<td><code>punto5+espacio</code></td>
+</tr>
+<tr>
+<td><code>flecha arriba</code></td>
+<td><code>punto1+espacio</code></td>
+</tr>
+<tr>
+<td><code>flecha abajo</code></td>
+<td><code>punto6+espacio</code></td>
+</tr>
+<tr>
+<td><code>rePág</code></td>
+<td><code>punto1+punto3+espacio</code></td>
+</tr>
+<tr>
+<td><code>avPág</code></td>
+<td><code>punto4+punto6+espacio</code></td>
+</tr>
+<tr>
+<td><code>1 teclado numérico</code></td>
+<td><code>punto1+punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>2 teclado numérico</code></td>
+<td><code>punto1+punto2+punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>3 teclado numérico</code></td>
+<td><code>punto1+punto4+punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>4 teclado numérico</code></td>
+<td><code>punto1+punto4+punto5+punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>5 teclado numérico</code></td>
+<td><code>punto1+punto5+punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>6 teclado numérico</code></td>
+<td><code>punto1+punto2+punto4+punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>7 teclado numérico</code></td>
+<td><code>punto1+punto2+punto4+punto5+punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>8 teclado numérico</code></td>
+<td><code>punto1+punto2+punto5+punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>9 teclado numérico</code></td>
+<td><code>punto2+punto4+punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>Insert teclado numérico</code></td>
+<td><code>punto3+punto4+punto5+punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>Punto Decimal teclado numérico</code></td>
+<td><code>punto2+retroceso</code></td>
+</tr>
+<tr>
+<td><code>dividir teclado numérico</code></td>
+<td><code>punto3+punto4+retroceso</code></td>
+</tr>
+<tr>
+<td><code>multiplicar teclado numérico</code></td>
+<td><code>punto3+punto5+retroceso</code></td>
+</tr>
+<tr>
+<td><code>menos teclado numérico</code></td>
+<td><code>punto3+punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>más teclado numérico</code></td>
+<td><code>punto2+punto+punto+retroceso</code></td>
+</tr>
+<tr>
+<td><code>intro teclado numérico</code></td>
+<td><code>punto3+punto4+punto5+retroceso</code></td>
+</tr>
+<tr>
+<td><code>escape</code></td>
+<td><code>punto1+punto2+punto4+punto5+espacio</code>, <code>l2</code></td>
+</tr>
+<tr>
+<td><code>tab</code></td>
+<td><code>punto2+punto5+punto6+espacio</code>, <code>l3</code></td>
+</tr>
+<tr>
+<td><code>shift+tab</code></td>
+<td><code>punto2+punto3+punto5+espacio</code></td>
+</tr>
+<tr>
+<td><code>imprimir pantalla</code></td>
+<td><code>punto1+punto3+punto4+punto6+espacio</code></td>
+</tr>
+<tr>
+<td><code>pausa</code></td>
+<td><code>punto1+punto4+espacio</code></td>
+</tr>
+<tr>
+<td><code>aplicaciones</code></td>
+<td><code>punto5+punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>f1</code></td>
+<td><code>punto1+retroceso</code></td>
+</tr>
+<tr>
+<td><code>f2</code></td>
+<td><code>punto1+punto2+retroceso</code></td>
+</tr>
+<tr>
+<td><code>f3</code></td>
+<td><code>punto1+punto4+retroceso</code></td>
+</tr>
+<tr>
+<td><code>f4</code></td>
+<td><code>punto1+punto4+punto5+retroceso</code></td>
+</tr>
+<tr>
+<td><code>f5</code></td>
+<td><code>punto1+punto5+retroceso</code></td>
+</tr>
+<tr>
+<td><code>f6</code></td>
+<td><code>punto1+punto2+punto4+retroceso</code></td>
+</tr>
+<tr>
+<td><code>f7</code></td>
+<td><code>punto1+punto2+punto4+punto5+retroceso</code></td>
+</tr>
+<tr>
+<td><code>f8</code></td>
+<td><code>punto1+punto2+punto5+retroceso</code></td>
+</tr>
+<tr>
+<td><code>f9</code></td>
+<td><code>punto2+punto4+retroceso</code></td>
+</tr>
+<tr>
+<td><code>f10</code></td>
+<td><code>punto2+punto4+punto5+retroceso</code></td>
+</tr>
+<tr>
+<td><code>f11</code></td>
+<td><code>punto1+punto3+retroceso</code></td>
+</tr>
+<tr>
+<td><code>f12</code></td>
+<td><code>punto1+punto2+punto3+retroceso</code></td>
+</tr>
+<tr>
+<td><code>windows</code></td>
+<td><code>punto1+punto2+punto4+punto5+punto6+espacio</code></td>
+</tr>
+<tr>
+<td>Conmutar tecla <code>windows</code></td>
+<td><code>punto1+punto2+punto3+punto4+retroceso</code>, <code>punto2+punto4+punto5+punto6+espacio</code></td>
+</tr>
+<tr>
+<td><code>bloq mayus</code></td>
+<td><code>punto7+retroceso</code>, <code>punto8+retroceso</code></td>
+</tr>
+<tr>
+<td><code>bloq num</code></td>
+<td><code>punto3+retroceso</code>, <code>punto6+retroceso</code></td>
+</tr>
+<tr>
+<td><code>shift</code></td>
+<td><code>punto7+espacio</code></td>
+</tr>
+<tr>
+<td>Conmutar <code>shift</code></td>
+<td><code>punto1+punto7+espacio</code>, <code>punto4+punto7+espacio</code></td>
+</tr>
+<tr>
+<td><code>control</code></td>
+<td><code>punto7+punto8+espacio</code></td>
+</tr>
+<tr>
+<td>Conmutar <code>control</code></td>
+<td><code>punto1+punto7+punto8+espacio</code>, <code>punto4+punto7+punto8+espacio</code></td>
+</tr>
+<tr>
+<td><code>alt</code></td>
+<td><code>punto8+espacio</code></td>
+</tr>
+<tr>
+<td>Conmutar <code>alt</code></td>
+<td><code>punto1+punto8+espacio</code>, <code>punto4+punto8+espacio</code></td>
+</tr>
+<tr>
+<td>Conmutar simulación de teclado HID</td>
+<td><code>switch1Izquierda+joystick1Abajo</code>, <code>switch1Derecha+joystick1Abajo</code></td>
+</tr>
+</tbody>
+</table>
 <!-- KC:endInclude -->
 
 <h4 id="Eurobraillebbook">Órdenes de teclado b.book</h4>
@@ -7929,6 +8147,10 @@ NVDA también puede iniciarse en modo seguro con la <a href="#CommandLineOptions
 </ul>
 <p>Las copias instaladas de NVDA almacenan su configuración incluyendo los complementos en <code>%APPDATA%\nvda</code>.
 Para evitar que los usuarios de NVDA modifiquen su configuración o complementos directamente, su acceso a esta carpeta también debe estar restringido.</p>
+<p>El modo seguro no es efectivo para copias portables de NVDA.
+Esta limitación también se aplica a la copia temporal de NVDA que se ejecuta al lanzar el instalador.
+En ambientes seguros, que un usuario pueda correr un ejecutable portable es el mismo riesgo de seguridad independientemente del modo seguro.
+Se espera que los administradores de sistemas restrinjan la ejecución de software no autorizado en sus sistemas, incluidas las copias portables de NVDA.</p>
 <p>Los usuarios de NVDA a menudo confían en configurar su perfil de NVDA para adaptarlo a sus necesidades.
 Esto puede incluir la instalación y configuración de complementos personalizados, que deberían ser examinados independientemente  de NVDA.
 El modo seguro congela los cambios en la configuración de NVDA, así que por favor asegúrate de que NVDA esté configurado adecuadamente antes de forzar el modo seguro.</p>
@@ -8039,7 +8261,7 @@ Esos parámetros deberían colocarse después de la opción, separados de la opc
 <td>La ruta donde se almacenan todas las opciones de NVDA. El valor predeterminado se fuerza si el modo seguro está habilitado.</td>
 </tr>
 <tr>
-<td><code>No</code></td>
+<td><code>None</code></td>
 <td><code>--lang=LANGUAGE</code></td>
 <td>Sobrescribe el idioma configurado de NVDA. Establece "Windows" para el usuario actual por defecto, "en" para Inglés, etc.</td>
 </tr>
@@ -8054,57 +8276,57 @@ Esos parámetros deberían colocarse después de la opción, separados de la opc
 <td>Inicia NVDA en <a href="#SecureMode" title="Modo Seguro">Modo Seguro</a></td>
 </tr>
 <tr>
-<td><code>No</code></td>
+<td><code>None</code></td>
 <td><code>--disable-addons</code></td>
 <td>Los complementos no tendrán efecto</td>
 </tr>
 <tr>
-<td><code>No</code></td>
+<td><code>None</code></td>
 <td><code>--debug-logging</code></td>
 <td>Habilita el nivel de registro de depuración sólo para esta ejecución. Esta configuración sobreescribirá cualquier otro nivel de registro ( --loglevel, -l) argumento dado, incluyendo la opción no registro.</td>
 </tr>
 <tr>
-<td><code>No</code></td>
+<td><code>None</code></td>
 <td><code>--no-logging</code></td>
 <td>Deshabilita el registro durante el uso de NVDA. Esta opción puede sobreescribirse si se especifica un nivel de registro ( --loglevel, -l) desde la línea de órdenes o si el registro de depuración está activado.</td>
 </tr>
 <tr>
-<td><code>No</code></td>
+<td><code>None</code></td>
 <td><code>--no-sr-flag</code></td>
 <td>No cambia la bandera global de sistema del lector de pantalla</td>
 </tr>
 <tr>
-<td><code>No</code></td>
+<td><code>None</code></td>
 <td><code>--install</code></td>
 <td>Se instala NVDA iniciando la nueva copia instalada</td>
 </tr>
 <tr>
-<td><code>No</code></td>
+<td><code>None</code></td>
 <td><code>--install-silent</code></td>
 <td>Instala en silencio NVDA (No inicia la nueva copia instalada)</td>
 </tr>
 <tr>
-<td><code>No</code></td>
+<td><code>None</code></td>
 <td><code>--enable-start-on-logon=True</code></td>
 <td>False</td>
 </tr>
 <tr>
-<td><code>No</code></td>
+<td><code>None</code></td>
 <td><code>--copy-portable-config</code></td>
 <td>Al instalar, copia la configuración portable desde la ruta proporcionada (--config-path, -c) a la actual cuenta de usuario</td>
 </tr>
 <tr>
-<td><code>No</code></td>
+<td><code>Noneº</code></td>
 <td><code>--create-portable</code></td>
 <td>Crea una copia portable de NVDA (iniciando la copia recientemente creada). Requiere especificarse --portable-path</td>
 </tr>
 <tr>
-<td><code>No</code></td>
+<td><code>None</code></td>
 <td><code>--create-portable-silent</code></td>
 <td>Crea una copia portable de NVDA (no inicia la copia recientemente instalada). Requiere expecificarse --portable-path</td>
 </tr>
 <tr>
-<td><code>No</code></td>
+<td><code>None</code></td>
 <td><code>--portable-path=PORTABLEPATH</code></td>
 <td>La ruta donde se creará una copia portable</td>
 </tr>
