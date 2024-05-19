@@ -4837,25 +4837,25 @@ NVDA запускается в безопасном режиме при выпо
 * Сохранение конфигурации и других настроек на диск
 * Сохранение карты жестов на диск
 * Операции над [Профилем конфигурации](#ConfigurationProfiles), такие как создание, удаление, переименование профилей и т.д.
-* Loading custom configuration folders using [the `-c` command line option](#CommandLineOptions)
+* Загрузку пользовательских папок конфигурации с помощью [параметра командной строки `-c`](#CommandLineOptions)
 * Обновление NVDA и создание переносных копий
-* The [Add-on Store](#AddonsManager)
+* [Магазин дополнений](#AddonsManager)
 * [Консоль Python](#PythonConsole)
 * [Просмотр журнала](#LogViewer) и ведение журнала.
-* The [Braille Viewer](#BrailleViewer) and [Speech Viewer](#SpeechViewer)
-* Opening external documents from the NVDA menu, such as the user guide or contributors file.
+* [Просмотрщик брайля](#BrailleViewer) и [Просмотрщик речи](#SpeechViewer)
+* Открытие внешних документов из меню NVDA, таких как руководство пользователя или список разработчиков.
 
-Installed copies of NVDA store their configuration including add-ons in `%APPDATA%\nvda`.
-To prevent NVDA users from modifying their configuration or add-ons directly, user access to this folder must also be restricted.
+Установленные копии NVDA хранят свою конфигурацию, включая дополнения, по пути `%APPDATA%\nvda`.
+Чтобы пользователи NVDA не могли напрямую изменять свою конфигурацию или дополнения, доступ пользователей к этой папке также должен быть ограничен.
 
-Secure mode is ineffective for portable copies of NVDA.
-This limitation also applies to the temporary copy of NVDA which runs when launching the installer.
-In secure environments, a user being able to run a portable executable is the same security risk regardless of secure mode.
-It is expected that system administrators restrict unauthorized software from running on their systems, including portable copies of NVDA.
+Безопасный режим неэффективен для переносных копий NVDA.
+Это ограничение также распространяется на временную копию NVDA, которая запускается при запуске пакета установки.
+В защищённых средах возможность пользователя запускать переносной исполняемый файл представляет собой ту же угрозу безопасности, что и в защищённом режиме.
+Ожидается, что системные администраторы ограничат запуск несанкционированного программного обеспечения в своих системах, включая переносные копии NVDA.
 
-NVDA users often rely on configuring their NVDA profile to suit their needs.
-This may include installing and configuring custom add-ons, which should be vetted independently to NVDA.
-Secure mode freezes changes to NVDA configuration, so please ensure that NVDA is configured appropriately before forcing secure mode.
+Пользователи NVDA часто полагаются на настройку своего профиля NVDA в соответствии со своими потребностями.
+Это может включать установку и настройку пользовательских дополнений, которые должны быть независимо проверены NVDA.
+Безопасный режим блокирует внесение изменений в конфигурацию NVDA, поэтому, перед активацией безопасного режима, убедитесь, что NVDA настроена надлежащим образом.
 
 ### Защищённые экраны {#SecureScreens}
 
