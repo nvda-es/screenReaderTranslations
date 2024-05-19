@@ -933,52 +933,52 @@ NVDA также может быть настроена таким образом
 Для включения и выключения быстрой навигации в текущем документе, используйте комбинацию клавиш NVDA+Shift+Пробел.
 <!-- KC:endInclude -->
 
-#### Text paragraph navigation command {#TextNavigationCommand}
+#### Команда навигации по текстовым абзацам {#TextNavigationCommand}
 
-You can jump to the next or previous text paragraph by pressing `p` or `shift+p`.
-Text paragraphs are defined by a group of text that appears to be written in complete sentences.
-This can be useful to find the beginning of readable content on various webpages, such as:
+Вы можете перейти к следующему или предыдущему абзацу текста, нажав клавишу `p` или `shift+p`.
+Под абзацем понимают часть текста из одного или нескольких предложений, которые объединяет законченная мысль.
+Это может быть полезно для поиска начала читаемого контента на различных веб-страницах, таких как:
 
-* News websites
-* Forums
-* Blog posts
+* Новостные сайты
+* Форумы
+* Сообщения в блогах
 
-These commands can also be helpful for skipping certain kinds of clutter, such as:
+Эти команды также могут быть полезны для пропуска элементов, таких как:
 
-* Ads
-* Menus
-* Headers
+* Объявления
+* Меню
+* Заголовки
 
-Please note, however, that while NVDA tries its best to identify text paragraphs, the algorithm is not perfect and at times can make mistakes.
-Additionally, this command is different from paragraph navigation commands `control+downArrow/upArrow`.
-Text paragraph navigation only jumps between text paragraphs, while paragraph navigation commands take the cursor to the previous/next paragraphs regardless of whether they contain text or not.
+Пожалуйста, обратите внимание, что хотя NVDA старается изо всех сил распознавать абзацы текста, алгоритм не совершенен и иногда может ошибаться.
+Кроме того, эта команда отличается от команд навигации по абзацам `control+Стрелка вниз/Стрелка вверх`.
+Навигация по абзацам текста позволяет переходить только между абзацами текста, в то время как команды навигации по абзацам переводят курсор на предыдущий/следующий абзацы независимо от того, содержат они текст или нет.
 
-#### Other navigation commands {#OtherNavigationCommands}
+#### Другие команды навигации {#OtherNavigationCommands}
 
-In addition to the quick navigation commands listed above, NVDA has commands that have no default keys assigned.
-To use these commands, you first need to assign gestures to them using the [Input Gestures dialog](#InputGestures).
-Here is a list of available commands:
+В дополнение к командам быстрой навигации, перечисленным выше, в NVDA есть команды, для которых не назначены клавиши по умолчанию.
+Чтобы использовать эти команды, сначала нужно назначить им жесты с помощью диалога [Жесты ввода](#InputGestures).
+Вот список доступных для перехода элементов:
 
-* Article
-* Figure
-* Grouping
-* Tab
-* Menu item
-* Toggle button
-* Progress bar
-* Math formula
-* Vertically aligned paragraph
-* Same style text
-* Different style text
+* Статья
+* Рисунок
+* Группировка
+* Вкладка
+* Пункт меню
+* Кнопка переключения
+* Индекатор выполнения
+* Математическая формула
+* Вертикально выровненный абзац
+* Текст одного стиля
+* Текст другого стиля
 
-Keep in mind that there are two commands for each type of element, for moving forward in the document and backward in the document, and you must assign gestures to both commands in order to be able to quickly navigate in both directions.
-For example, if you want to use the `y` / `shift+y` keys to quickly navigate through tabs, you would do the following:
+Помните, что для каждого типа элементов есть две команды - переход к следующему или к предыдущему элементу, вы должны назначить жесты для обеих команд, чтобы иметь возможность быстро перемещаться в обоих направлениях.
+Например, если вы хотите использовать клавиши `y` / `shift+y` для быстрой навигации по вкладкам, вы должны сделать следующее:
 
-1. Open input gestures dialog from browse mode.
-1. Find "moves to the next tab" item in the Browse mode section.
-1. Assign `y` key for found gesture.
-1. Find "moves to the previous tab" item.
-1. Assign `shift+y` for found gesture.
+1. Откройте диалог жестов ввода, перейдите в раздел режим обзора.
+1. Найдите пункт "Переход на следующую вкладку" в разделе Режим обзора.
+1. Назначьте клавишу `y` для найденного жеста.
+1. Найдите элемент "переход на предыдущую вкладку".
+1. Назначьте клавиши `shift+y` для найденного жеста.
 
 ### Диалоговое окно со списком элементов {#ElementsList}
 
@@ -1063,11 +1063,11 @@ NVDA также может использовать старую версию п
 * MathML в Mozilla Firefox, Microsoft Internet Explorer и Google Chrome.
 * Современные математические выражения в Microsoft Word 365 через UI automation:
 NVDA может читать и взаимодействовать с математическими выражениями в версии Microsoft Word 365/2016 сборка 14326 и выше.
-Note however that any previously created MathType equations must be first converted to Office Math.
-This can be done by selecting each and choosing "Equation Options", then "Convert to Office Math" in the context menu.
-Ensure your version of MathType is the latest version before doing this.
-Microsoft Word provides linear symbol-based navigation through the equations itself and supports inputting math using several syntaxes, including LateX.
-For further details, please see [Linear format equations using UnicodeMath and LaTeX in Word](https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8)
+Однако обратите внимание, что все ранее созданные уравнения MathType должны быть сначала преобразованы в Office Math.
+Это можно сделать, выделив каждое из них и выбрав "Параметры уравнения", а затем "Преобразовать в Office Math" в контекстном меню.
+Перед этим убедитесь, что у вас установлена последняя версия MathType.
+Microsoft Word обеспечивает линейную навигацию по уравнениям на основе символов и поддерживает ввод математических данных с использованием нескольких синтаксисов, включая LateX.
+Дополнительные сведения см. в статье [Уравнения в линейном формате с использованием UnicodeMath и LaTeX в Word](https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8).
 * Microsoft Powerpoint и более старые версии Microsoft Word:
 NVDA может читать выражения MathType и перемещаться по ним как в Microsoft Powerpoint, так и в Microsoft Word.
 Для этого необходимо установить MathType.
@@ -1117,13 +1117,13 @@ NVDA может читать и выполнять навигацию по ма�
 
 ### Установка MathPlayer {#InstallingMathPlayer}
 
-Although it is generally recommended to use one of the newer NVDA add-ons to support math in NVDA, in certain limited scenarios MathPlayer may still be a more suitable choice.
-E.g. MathPlayer may support a particular language or Braille code that is unsupported in newer add-ons.
-MathPlayer is available for free from the Wiris website.
-[Download MathPlayer](https://downloads.wiris.com/mathplayer/MathPlayerSetup.exe).
-After installing MathPlayer, you will need to restart NVDA. 
-Please note that information about MathPlayer may state that it is only for older browsers such as Internet Explorer 8.
-This is only referring to using MathPlayer to display mathematical content visually, and can be ignored by those using it to read or navigate math with NVDA.
+Хотя обычно рекомендуется использовать одно из новых дополнений NVDA для поддержки математики в NVDA, в некоторых ограниченных сценариях MathPlayer может быть более подходящим выбором.
+Например, MathPlayer может поддерживать определённый язык или код Брайля, который не поддерживается более новыми дополнениями.
+MathPlayer можно бесплатно скачать с сайта Wiris.
+[Скачать MathPlayer](https://downloads.wiris.com/mathplayer/MathPlayerSetup.exe).
+После установки MathPlayer необходимо перезапустить NVDA. 
+Обратите внимание, что в информации о MathPlayer может быть указано, что он предназначен только для старых браузеров, таких как Internet Explorer 8.
+Это относится только к использованию MathPlayer для визуального отображения математического контента, и может быть проигнорировано теми, кто использует его для чтения или навигации по математическому содержимому с помощью NVDA.
 
 ## Шрифт брайля {#Braille}
 
