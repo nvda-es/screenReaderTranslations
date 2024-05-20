@@ -2792,12 +2792,12 @@ Kategoria sisältää seuraavat asetukset:
 Tästä yhdistelmäruudusta voit valita tekstintunnistuksen käyttämän kielen.
 Voit vaihtaa käytettävissä olevien kielten välillä mistä tahansa määrittämällä kyseiselle komennolle oman pikanäppäimen [Näppäinkomennot-valintaikkunaa](#InputGestures) käyttäen.
 
-##### Päivitä tunnistettu sisältö automaattisesti {#Win10OcrSettingsAutoRefresh}
+##### Päivitä tunnistettu sisältö ajoittain {#Win10OcrSettingsAutoRefresh}
 
-Kun tämä valintaruutu on valittuna, NVDA päivittää tunnistetun sisällön automaattisesti, kun tunnistuksen tulos on aktiivisena.
-Tämä voi olla erittäin hyödyllistä silloin, kun haluat seurata jatkuvasti muuttuvaa sisältöä, kuten esim. katsoessasi videota tekstitysten kanssa.
+Kun tämä valintaruutu on valittuna, NVDA päivittää tunnistetun sisällön automaattisesti kohdistuksen ollessa tunnistuksen tuloksessa.
+Tämä voi olla erittäin hyödyllistä, kun haluat seurata jatkuvasti muuttuvaa sisältöä, kuten esim. katsoessasi tekstityksellä varustettua videota.
 Sisältöä päivitetään puolentoista sekunnin välein.
-Tämä asetus on oletusarvoisesti poissa käytöstä.
+Tämä asetus on oletuksena poissa käytöstä.
 
 #### Lisäasetukset {#AdvancedSettings}
 

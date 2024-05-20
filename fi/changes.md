@@ -272,7 +272,7 @@ Ilmoita tietoturvaongelmista vastuullisesti noudattaen NVDA:n [tietoturvakäytä
 Tämä versio sisältää suoritus- ja reagointikyvyn sekä äänentoiston vakauden parannuksia.
 Lisätty asetukset NVDA-äänien ja piippausten voimakkuuden säätämiseen tai käytettävän puheäänen voimakkuuteen mukautumiseen.
 
-NVDA voi nyt päivittää tekstintunnistuksen tulokset automaattisesti ja puhua uuden tekstin sen ilmestyessä.
+NVDA voi nyt päivittää tekstintunnistuksen tulokset ajoittain ja puhua uuden tekstin sen ilmestyessä.
 Tämä voidaan määrittää NVDA:n asetusvalintaikkunan Windowsin tekstintunnistus -kategoriasta.
 
 Useita pistenäyttöjen korjauksia, jotka parantavat laitteiden tunnistusta ja kohdistimen siirtämistä.
