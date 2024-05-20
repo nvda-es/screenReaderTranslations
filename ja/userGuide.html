@@ -252,8 +252,6 @@
 <li><a href="#AudioAwakeTime" title="音声出力後にオーディオデバイスを有効化する時間">音声出力後にオーディオデバイスを有効化する時間</a></li>
 <li><a href="#SelectSoundSplitMode" title="オーディオ分割">オーディオ分割</a></li>
 <li><a href="#CustomizeSoundSplitModes" title="オーディオ分割モードのカスタマイズ">オーディオ分割モードのカスタマイズ</a></li>
-<li><a href="#OtherAppVolume" title="他のアプリの音量">他のアプリの音量</a></li>
-<li><a href="#MuteApplications" title="他のアプリのミュート">他のアプリのミュート</a></li>
 </ul>
 </li>
 <li><a href="#VisionSettings" title="ビジョン">ビジョン</a><ul>
@@ -851,10 +849,20 @@ NVDA 制御キーは「変換キー」「Escapeキー」に割り当てること
 <td><code>NVDA+Shift+Ctrl+pageUp</code></td>
 <td>現在の音声設定の値を大きく増加します。例えば、音声を選択する場合、20項目ずつ進みます。スライダー設定（速さ、高さなど）の場合、値を20％ずつ増加します。</td>
 </tr>
+<tr>
+<td>現在の音声設定を減少</td>
+<td><code>NVDA+Ctrl+下矢印</code></td>
+<td><code>NVDA+Shift+Ctrl+下矢印</code></td>
+<td>現在の音声設定の値を減少します。例えば、速度を減少したり、前の音声を選択したり、音量を下げたりします。</td>
+</tr>
+<tr>
+<td>現在の音声設定を大きく減少</td>
+<td><code>NVDA+Ctrl+pageDown</code></td>
+<td><code>NVDA+Shift+Ctrl+pageDown</code></td>
+<td>現在の音声設定の値を大きく減少します。例えば、音声を選択する場合、20項目ずつ戻ります。スライダー設定（速さ、高さなど）の場合、値を20％ずつ減少します。</td>
+</tr>
 </tbody>
 </table>
-<p>|現在の音声設定を減少 |<code>NVDA+Ctrl+下矢印</code> |<code>NVDA+Shift+Ctrl+下矢印</code> |現在の音声設定の値を減少します。例えば、速度を減少したり、前の音声を選択したり、音量を下げたりします。|
-|現在の音声設定を大きく減少 |<code>NVDA+Ctrl+pageDown</code> |<code>NVDA+Shift+Ctrl+pageDown</code> |現在の音声設定の値を大きく減少します。例えば、音声を選択する場合、20項目ずつ戻ります。スライダー設定（速さ、高さなど）の場合、値を20％ずつ減少します。|</p>
 <p>また<a href="#InputGestures" title="入力ジェスチャー">入力ジェスチャー</a> でカスタムジェスチャーを割り当てることにより、「現在の設定項目を最初の値に設定」「現在の設定項目を最後の値に設定」が使えます。
 例えば設定項目が速さの場合は、0または100に設定します。
 設定項目が音声の場合は、最初または最後の音声に設定します。</p>
@@ -3647,7 +3655,6 @@ NVDA のポータブル版やインストーラーではオーディオのダッ
 <li>右チャンネルでNVDA、左チャンネルでアプリ：NVDAは右チャンネルで音声を出力し、他のアプリは左チャンネルで音を出力します。</li>
 </ul>
 <p>NVDAの設定には、より多くのオーディオ分割モードを選択できるコンボボックスがあります。
-NVDAを除くすべてのアプリの音量を調整したい場合は、<a href="#OtherAppVolume" title="専用のコマンド">専用のコマンド</a>の使用を検討してください。
 オーディオ分割はミキサーとして機能しないことに注意してください。
 例えば、オーディオ分割が「左チャンネルでNVDA、右チャンネルでアプリ」に設定されている状態で、あるアプリがステレオサウンドトラックを再生している場合、サウンドトラックの右チャンネルのみが聞こえ、左チャンネルはミュートされます。</p>
 <p>この機能は、高度な設定で<a href="#WASAPI" title="オーディオ出力にWASAPIを使用しない">オーディオ出力にWASAPIを使用しない</a>状態でNVDAを起動した場合は利用できません。</p>
@@ -3664,61 +3671,6 @@ NVDAを除くすべてのアプリの音量を調整したい場合は、<a href
 </ul>
 <p>少なくとも1つのモードをチェックする必要があることに注意してください。
 この機能は、高度な設定で<a href="#WASAPI" title="オーディオ出力にWASAPIを使用しない">オーディオ出力にWASAPIを使用しない</a>状態でNVDAを起動した場合は利用できません。</p>
-<h5 id="OtherAppVolume">他のアプリの音量</h5>
-<p>このスライダーを使用すると、NVDA以外の現在実行中のすべてのアプリの音量を調整できます。
-この音量設定は、この設定が変更された後に起動した場合でも、他のすべてのアプリのオーディオ出力に適用されます。
-この音量は、以下のキーボードコマンドを使用して、どこからでも制御することもできます。</p>
-<!-- KC:beginInclude -->
-
-<table>
-<thead>
-<tr>
-<th>名前</th>
-<th>キー</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>アプリの音量を上げる</td>
-<td><code>NVDA+alt+pageUp</code></td>
-<td>NVDA以外のすべてのアプリの音量を上げます。</td>
-</tr>
-<tr>
-<td>アプリの音量を下げる</td>
-<td><code>NVDA+alt+pageDown</code></td>
-<td>NVDA以外のすべてのアプリの音量を下げます。</td>
-</tr>
-</tbody>
-</table>
-<!-- KC:endInclude -->
-
-<p>この機能は、高度な設定で<a href="#WASAPI" title="オーディオ出力にWASAPIを使用しない">オーディオ出力にWASAPIを使用しない</a>状態でNVDAを起動した場合は利用できません。</p>
-<h5 id="MuteApplications">他のアプリのミュート</h5>
-<p>このチェックボックスを使用すると、NVDA以外のすべてのアプリをミュートできます。
-このミュート設定は、この設定が変更された後に起動した場合でも、音を出力する他のすべてのアプリに適用されます。
-以下のキーボードコマンドを使用して、どこからでもミュートの切り替えができます。</p>
-<!-- KC:beginInclude -->
-
-<table>
-<thead>
-<tr>
-<th>名前</th>
-<th>キー</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>他のアプリのミュートの切り替え</td>
-<td><code>NVDA+alt+delete</code></td>
-<td>NVDA以外のすべてのアプリをミュートまたはミュート解除します。</td>
-</tr>
-</tbody>
-</table>
-<!-- KC:endInclude -->
-
-<p>この機能は、高度な設定で<a href="#WASAPI" title="オーディオ出力にWASAPIを使用しない">オーディオ出力にWASAPIを使用しない</a>状態でNVDAを起動した場合は利用できません。</p>
 <h4 id="VisionSettings">ビジョン</h4>
 <p>NVDA 設定ダイアログのビジョンカテゴリでは <a href="#Vision" title="視覚的な補助の機能">視覚的な補助の機能</a> の有効化や無効化、その他の設定の変更ができます。</p>
 <p>このカテゴリに含まれるオプションは、<a href="#AddonsManager" title="NVDA のアドオン">NVDA のアドオン</a> によって追加される場合があります。
@@ -4387,7 +4339,8 @@ NVDA開発者から指示された場合に、指定されたカテゴリを有�
 <p>NVDAメニューの設定サブメニューには、<a href="#NVDASettings" title="NVDA設定ダイアログ">NVDA設定ダイアログ</a>以外に以下の設定があります。</p>
 <h4 id="SpeechDictionaries">読み上げ辞書</h4>
 <p>設定メニューの中の読み上げ辞書メニューには、NVDAが特定の単語やフレーズをどのように読み上げるかを設定できるダイアログがあります。
-現在のところ、以下の3種類の読み上げ辞書が用意されています：</p>
+現在のところ、
+以下の3種類の読み上げ辞書が用意されています：</p>
 <ul>
 <li>既定の辞書： この辞書の読み方は、NVDAのすべての読み上げに適用されます。</li>
 <li>音声： この辞書の読み方は、現在使用中の特定の読み上げ音声に適用されます。</li>
@@ -6289,7 +6242,6 @@ USB 接続のときは <a href="http://www.himsintl.com/upload/HIMS_USB_Driver_v
 </tbody>
 </table>
 <!-- KC:endInclude -->
-
 <h3 id="Papenmeier">Papenmeier BRAILLEX 新型機種</h3>
 <p>次の点字ディスプレイをサポートしています：</p>
 <ul>
