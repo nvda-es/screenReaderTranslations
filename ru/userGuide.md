@@ -3518,16 +3518,16 @@ Python консоль NVDA, которая может быть вызвана и
 ### Перезагрузить плагины {#ReloadPlugins}
 
 При помощи этого пункта меню вы можете перезагрузить глобальные плагины и модули приложений, не перезагружая саму NVDA. Это может быть удобно для разработчиков.
-App modules manage how NVDA interacts with specific applications.
-Global plugins manage how NVDA interacts with all applications.
+Модули приложений (App modules)управляют тем, как NVDA взаимодействует с конкретными приложениями.
+Глобальные плагины (Global plugins) управляют взаимодействием NVDA со всеми приложениями.
 
-Также могут быть полезны следующие клавишные команды NVDA:
+Также будут полезны следующие клавишные команды NVDA:
 <!-- KC:beginInclude -->
 
 | Название |Комбинация клавиш |Описание|
 |---|---|---|
-|Reload plugins |`NVDA+control+f3` |Reloads NVDA's global plugins and app modules.|
-|Report loaded app module and executable |`NVDA+control+f1` |Report the name of the app module, if any, and the name of the executable associated with the application which has the keyboard focus.|
+|Перезагрузить плагины |`NVDA+control+f3` |Перезагружает глобальные плагины и модули приложений NVDA.|
+|Сообщить о загруженном модуле приложения и исполняемом файле |`NVDA+control+f1` |Объявляет название модуля приложения, если таковой имеется, и имя исполняемого файла, связанного с приложением на переднем плане.|
 
 <!-- KC:endInclude -->
 
