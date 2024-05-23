@@ -2758,7 +2758,6 @@ You may consult the documentation for your braille display in the section [Suppo
 Если установить флажок "Игнорировать пустые строки при  чтении отступов строк", то изменения отступов не будут сообщаться для пустых строк.
 Это может быть полезно при чтении документа, в котором пустые строки используются для разделения блоков текста с отступами, например в исходном коде программы.
 
-
 #### Document Navigation {#DocumentNavigation}
 
 This category allows you to adjust various aspects of document navigation.
