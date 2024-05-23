@@ -2613,12 +2613,12 @@ You may consult the documentation for your braille display in the section [Suppo
 
 Комбинация клавиш: NVDA+V
 
-This option allows you to specify whether browse mode should place clickable content (links, buttons and fields) on its own line, or if it should keep it in the flow of text as it is visually shown.
-Note that this option doesn't apply to Microsoft Office apps such as Outlook and Word, which always use screen layout.
-When screen layout is enabled, page elements will stay as they are visually shown.
-For example, a visual line of multiple links will be presented in speech and braille as multiple links on the same line.
-If it is disabled, then page elements will be placed on their own lines.
-This may be easier to understand during line by line page navigation and make items easier to interact with for some users.
+Этот параметр позволяет указать, должен ли режим просмотра размещать кликабельное содержимое (ссылки, кнопки и поля) на отдельной строке, или же он должен сохранять его в потоке текста, как это происходит при визуальном отображении.
+Обратите внимание, что этот параметр не применяется к приложениям Microsoft Office, таким как Outlook и Word, которые всегда используют экраннное представление.
+Если экранное представление включено, элементы страницы будут оставаться в том виде, в котором они визуально отображаются.
+Например, визуальная строка из нескольких ссылок будет представлена в речи и шрифте Брайля как несколько ссылок в одной строке.
+Если эта функция отключена, то элементы страницы будут располагаться на своих собственных строках.
+Это может быть проще для понимания при построчной навигации по странице и облегчает взаимодействие с элементами для некоторых пользователей.
 
 ##### Активировать режим обзора при загрузке страницы {#BrowseModeSettingsEnableOnPageLoad}
 
@@ -2628,7 +2628,7 @@ This may be easier to understand during line by line page navigation and make it
 Обратите внимание, что этот параметр не применяется в тех случаях, когда режим обзора является опциональным, например в документах Microsoft Word.
 По умолчанию этот флажок установлен.
 
-##### Автоматическое чтение страницы при ее загрузке {#BrowseModeSettingsAutoSayAll}
+##### Автоматическое чтение страницы при её загрузке {#BrowseModeSettingsAutoSayAll}
 
 Этот флажок определяет автоматическое чтение страницы в режиме обзора после её загрузки.
 По умолчанию этот флажок установлен.
@@ -2755,8 +2755,9 @@ This may be easier to understand during line by line page navigation and make it
 Высота сигнала зависит от количества пробелов и символов табуляции. Высота для одного символа табуляции эквивалентна четырём пробелам.
 * Речь и звуковые сигналы: Этот вариант использует для чтения отступов оба предыдущих способа.
 
-If you tick the "Ignore blank lines for line indentation reporting" checkbox, then indentation changes won't be reported for blank lines.
-This may be useful when reading a document where blank lines are used to separate indented bloks of text, such as in programming source code.
+Если установить флажок "Игнорировать пустые строки при  чтении отступов строк", то изменения отступов не будут сообщаться для пустых строк.
+Это может быть полезно при чтении документа, в котором пустые строки используются для разделения блоков текста с отступами, например в исходном коде программы.
+
 
 #### Document Navigation {#DocumentNavigation}
 
