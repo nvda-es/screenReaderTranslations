@@ -250,6 +250,8 @@
 <li><a href="#SoundVolumeFollowsVoice" title="NVDA seslerinin ses seviyesi konuşma ses seviyesine eşit olsun">NVDA seslerinin ses seviyesi konuşma ses seviyesine eşit olsun</a></li>
 <li><a href="#SoundVolume" title="NVDA ses düzeyi">NVDA ses düzeyi</a></li>
 <li><a href="#AudioAwakeTime" title="Konuşmadan sonra ses cihazını uyanık tutma zamanı">Konuşmadan sonra ses cihazını uyanık tutma zamanı</a></li>
+<li><a href="#SelectSoundSplitMode" title="Ses Ayırma">Ses Ayırma</a></li>
+<li><a href="#CustomizeSoundSplitModes" title="Ses ayırma modlarını özelleştirme">Ses ayırma modlarını özelleştirme</a></li>
 </ul>
 </li>
 <li><a href="#VisionSettings" title="Görsellik">Görsellik</a><ul>
@@ -360,7 +362,7 @@
 <li><a href="#UIAEnhancedEventProcessing" title="Gelişmiş etkinlik izleme kullan">Gelişmiş etkinlik izleme kullan</a></li>
 <li><a href="#AdvancedSettingsConsoleUIA" title="Windows Konsol desteği">Windows Konsol desteği</a></li>
 <li><a href="#ChromiumUIA" title="Microsoft Edge ve diğer Chromium tabanlı tarayıcılar'la uygun olduğunda UIA kullan">Microsoft Edge ve diğer Chromium tabanlı tarayıcılar'la uygun olduğunda UIA kullan</a></li>
-<li><a href="#Annotations" title="Bİlgi notları">Bİlgi notları</a></li>
+<li><a href="#Annotations" title="Bilgi notları">Bilgi notları</a></li>
 <li><a href="#BrailleLiveRegions" title="Canlı bölgeleri bildir">Canlı bölgeleri bildir</a></li>
 <li><a href="#AdvancedSettingsWinConsoleSpeakPasswords" title="Tüm gelişmiş terminallerde parolaları söyle">Tüm gelişmiş terminallerde parolaları söyle</a></li>
 <li><a href="#AdvancedSettingsKeyboardSupportInLegacy" title="Mevcut olduğunda eski Windows Konsolunda geliştirilmiş yazılı karakter desteğini kullan">Mevcut olduğunda eski Windows Konsolunda geliştirilmiş yazılı karakter desteğini kullan</a></li>
@@ -372,6 +374,7 @@
 <li><a href="#WASAPI" title="Ses çıkışı için WASAPI kullan">Ses çıkışı için WASAPI kullan</a></li>
 <li><a href="#AdvancedSettingsDebugLoggingCategories" title="Hata ayıklama kategorileri">Hata ayıklama kategorileri</a></li>
 <li><a href="#PlayErrorSound" title="Günlüğe kaydedilen hatalar için ses çal">Günlüğe kaydedilen hatalar için ses çal</a></li>
+<li><a href="#TextParagraphRegexEdit" title="hızlı gezinme Metin paragrafı için normal ifade komutları">hızlı gezinme Metin paragrafı için normal ifade komutları</a></li>
 </ul>
 </li>
 </ul>
@@ -475,7 +478,7 @@
 </ul>
 </li>
 <li><a href="#AdvancedTopics" title="İleri Düzey Konular">İleri Düzey Konular</a><ul>
-<li><a href="#SecureMode" title="Güvenli Mod">Güvenli Mod</a></li>
+<li><a href="#SecureMode" title="Güvenli Mcod">Güvenli Mcod</a></li>
 <li><a href="#SecureScreens" title="Güvenli Ekranlar">Güvenli Ekranlar</a></li>
 <li><a href="#CommandLineOptions" title="Komut Satırı Seçenekleri">Komut Satırı Seçenekleri</a></li>
 <li><a href="#SystemWideParameters" title="Sistem Çapında Geçerli Parametreler">Sistem Çapında Geçerli Parametreler</a></li>
@@ -514,10 +517,11 @@ NVDA <a href="https://www.nvaccess.org/" rel="noopener" target="_blank" title="N
 <li>Sistem odağını görsel olarak vurgulama özelliği</li>
 </ul>
 <h3 id="SystemRequirements">sistem gereksinimleri</h3>
-<p>+- İşletim Sistemleri: Windows 8.1, Windows 10, Windows 11'in tüm 32 bit ve 64 bit sürümleri ve Windows Server 2012 R2'den başlayarak tüm server İşletim Sistemleri. </p>
 <ul>
-<li>.Windows'un AMD64 ve ARM64 olmak üzere iki sürümü de desteklenir.
-  -</li>
+<li>İşletim Sistemleri: Windows 8.1, Windows 10, Windows 11'in tüm 32 bit ve 64 bit sürümleri ve Windows Server 2012 R2'den başlayarak tüm server İşletim Sistemleri. <ul>
+<li>.Windows'un AMD64 ve ARM64 olmak üzere iki sürümü de desteklenir.</li>
+</ul>
+</li>
 <li>en az 150 MB depolama alanı.</li>
 </ul>
 <h3 id="Internationalization">Yerel Dil Desteği</h3>
@@ -847,10 +851,20 @@ Girdi yardımı açıkken komutlar farklı uygulamalara gönderilmez. </p>
 <td><code>NVDA+shift+kontrol+pageUp</code></td>
 <td>üzerinde bulunduğunuz geçerli sentezleyici ayarını  daha geniş bir ölçekte artırır. Örneğin. konuşma ayarındayken 20 ses ileri gider veya ses seviyesi veya ses perdesi gibi sürgülü alanlarda değeri 20 arttırır</td>
 </tr>
+<tr>
+<td>Seçili sentezleyici ayarını azalt</td>
+<td><code>NVDA+kontrol+AşağıOk</code></td>
+<td><code>`NVDA+şift+kontrol+</code>AşağıOk`</td>
+<td>üzerinde bulunduğunuz geçerli sentezleyici ayarını azaltır. Örneğin. hızı azaltır, bir önceki sesi seçer, ses seviyesini azaltır</td>
+</tr>
+<tr>
+<td>Seçili sentezleyici ayarını geniş ölçekte azalt</td>
+<td><code>NVDA+kontrol+pageDown</code></td>
+<td><code>NVDA+shift+kontrol+pageDown</code></td>
+<td>üzerinde bulunduğunuz geçerli sentezleyici ayarını  daha geniş bir ölçekte azaltır Örneğin. konuşma ayarındayken 20 ses geri gider veya ses seviyesi veya ses perdesi gibi sürgülü alanlarda değeri 20 azaltır</td>
+</tr>
 </tbody>
 </table>
-<p>|Seçili sentezleyici ayarını azalt |<code>NVDA+kontrol+AşağıOk</code> |<code>`NVDA+şift+kontrol+</code>AşağıOk<code>|üzerinde bulunduğunuz geçerli sentezleyici ayarını azaltır. Örneğin. hızı azaltır, bir önceki sesi seçer, ses seviyesini azaltır|
-|Seçili sentezleyici ayarını geniş ölçekte azalt |</code>NVDA+kontrol+pageDown<code>|</code>NVDA+shift+kontrol+pageDown` |üzerinde bulunduğunuz geçerli sentezleyici ayarını  daha geniş bir ölçekte azaltır Örneğin. konuşma ayarındayken 20 ses geri gider veya ses seviyesi veya ses perdesi gibi sürgülü alanlarda değeri 20 azaltır|</p>
 <p>Ayrıca, <a href="#InputGestures" title="Girdi hareketleri iletişim kutusu">Girdi hareketleri iletişim kutusu</a>'nda bulunan konuşma kategorisinden özel girdiler atayarak Seçili sentezleyici ayarının ilk veya son değerini ayarlayabilirsiniz.
 Örneğin hız ayarında olduğunuzda hızı 0 veya 100a ayarlamanıza yarar.
 Konuşma ayarındayken ilk ve son konuşucuyu ayarlar.</p>
@@ -1994,9 +2008,9 @@ Bu komutların her belge için geçerli olmayabileceğini unutmadan aşağıdaki
 <li>g: grafik</li>
 <li>d: ARIA sınır imi</li>
 <li>o: gömülü nesne (ses ve video oynatıcı, uygulama, iletişim kutusu, vb.)</li>
-<li><code>p</code>: metin paragraf</li>
 <li>1'den 6'ya kadar: sırayla başlık birden altıya</li>
 <li>a: açıklama (yorum, editör düzenlemeleri, dipnot vs.)</li>
+<li><code>p</code>: metin paragraf</li>
 <li>w: yazım hatası</li>
 </ul>
 <p>Tablolar, listeler vb öge bloklarının başına ve sonuna gitmek için:</p>
@@ -2022,6 +2036,7 @@ Bu komutların her belge için geçerli olmayabileceğini unutmadan aşağıdaki
 </tbody>
 </table>
 <!-- KC:endInclude -->
+
 <p>Bazı web uygulamaları mesela Gmail, Twitter and Facebook bazı tuşları kısayol olarak kullanmaktadır.
 Tarama kipinde kalarak tuşları o anda kullandığınız web uygulamasının kısayolları olarak kullanmak istiyorsanız tek tuşla dolaşımı geçici olarak kapatabilirsiniz.</p>
 <!-- KC:beginInclude -->
@@ -2052,8 +2067,6 @@ Bu komutları kullanmak için öncelikle <a href="#InputGestures" title="girdi h
 Komut listesi</p>
 <ul>
 <li>Makale</li>
-</ul>
-<ul>
 <li>Şekil</li>
 <li>Gruplama</li>
 <li>Sekme</li>
@@ -2065,8 +2078,8 @@ Komut listesi</p>
 <li>Aynı stilde metin</li>
 <li>Farklı stilde metin</li>
 </ul>
-<p>Hızlıca ileri geri gidebilmek için her komut için iki komut bulunduğunu ve her iki yönde de hızlıca gezinebilmek için her iki komuta da girdi hareketi atamanız gerektiğini unutmayın.</p>
-<p>Örneğin, sekmeler arasında hızlı bir şekilde gezinmek için <code>y</code> / <code>shift+y</code> tuşlarını kullanmak istiyorsanız aşağıdakileri yapmanız gerekir:</p>
+<p>Hızlıca ileri geri gidebilmek için her komut için iki komut bulunduğunu ve her iki yönde de hızlıca gezinebilmek için her iki komuta da girdi hareketi atamanız gerektiğini unutmayın.
+Örneğin, sekmeler arasında hızlı bir şekilde gezinmek için <code>y</code> / <code>shift+y</code> tuşlarını kullanmak istiyorsanız aşağıdakileri yapmanız gerekir:</p>
 <ol>
 <li>Tarama kipinden girdi hareketleri iletişim kutusunu açın.</li>
 <li>Tarama kipi bölümünden "sonraki sekmeye geçer" öğesini bulun.</li>
@@ -3532,10 +3545,10 @@ Bu seçeneğin devre dışı bırakılması okunabilirliği artırabilir.</p>
 <h5 id="toc168">Braille Ekran Seçimi iletişim kutusunu aç</h5>
 <p>Kısayol tuşu: <code>NVDA+kontrol+a</code></p>
 <blockquote>
-<p>NVDA Ayarları iletişim kutusundan Braille kategorisinde Değiştir... düğmesini etkinleştirerek açılan braille ekran seçimi iletişim kutusu, NVDA'nın braille çıkışı için hangi braille ekranı kullanacağını seçmenizi sağlar.</p>
-</blockquote>
-<p>Braile ekranı seçip tamam düğmesine bastığınızda NVDA ilgili braille ekranı yükler.
+<p>NVDA Ayarları iletişim kutusundan Braille kategorisinde Değiştir... düğmesini etkinleştirerek açılan braille ekran seçimi iletişim kutusu, NVDA'nın braille çıkışı için hangi braille ekranı kullanacağını seçmenizi sağlar.
+Braile ekranı seçip tamam düğmesine bastığınızda NVDA ilgili braille ekranı yükler.
 Braille ekran sürücülerinin yüklenmesi ile ilgili sorun oluşursa NVDA bildirimde bulunur ve önceki braille ekran kullanılmaya devam edilir.</p>
+</blockquote>
 <h5 id="SelectBrailleDisplayDisplay">Braille Ekran</h5>
 <p>Bu seçim kutusunda, sisteminizde hangi braille sürücülerin yüklü olduğuna bağlı olarak, size çeşitli seçenekler sunulacaktır.
 Bu seçenekler arasında yön tuşlarını kullanarak dolaşın.</p>
@@ -3591,20 +3604,12 @@ NVDA taşınabilir ve geçici kopyaları için ses zayıflamasının desteği m�
 </thead>
 <tbody>
 <tr>
+<td>Seçenekler</td>
+<td>devre dışı, etkin</td>
+</tr>
+<tr>
 <td>Varsayılan</td>
 <td>Etkin</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>Seçenekler</td>
-<td>Devre Dışı, Etkin</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -3624,6 +3629,54 @@ Aynı zamanda NVDA'nın bir sanal makinede (örn. Citrix Virtual Desktop) veya b
 <p>Düşük değerler sesin daha sık kesilmesine neden olabilir. Çünkü cihaz çok erken bekleme moduna girerek, sonraki konuşmanın başlangıcının kesilmesine yol açabilir.
 Değer çok yüksek ayarlanırsa, ses çıkış cihazının pili daha hızlı bitebilir. Çünkü cihaz, ses gönderilmediği zamanlarda bile daha uzun süre aktif kalır.</p>
 <p>Bu özelliği devre dışı bırakmak için süreyi sıfıra ayarlayabilirsiniz.</p>
+<h5 id="SelectSoundSplitMode">Ses Ayırma</h5>
+<p>Ses ayırma özelliği, kullanıcıların kulaklık ve hoparlör gibi stereo çıkış cihazlarını kullanmalarına olanak tanır.
+Bu özellik, NVDA konuşmasının bir kanalda (örneğin sol) taraftan gelmesini ve diğer tüm uygulamaların seslerini sağ kanalda çalmasını mümkün kılar.
+Varsayılan olarak ses ayırma özelliği devre dışıdır. Bu, NVDA dahil tüm uygulamaların sesleri hem sol hem de sağ kanallardan çalacağı anlamına gelir.
+Çeşitli ses ayırma modları arasında geçiş yapmak için bir girdi ahreketi bulunmaktadır.</p>
+<!-- KC:beginInclude -->
+
+<table>
+<thead>
+<tr>
+<th>Ad</th>
+<th>Kısayol</th>
+<th>Açıklama</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ses Ayırma Modları Arasında Geçiş Yap</td>
+<td><code>NVDA+alt+s</code></td>
+<td>Ses ayırma modları arasında geçiş yapar.</td>
+</tr>
+</tbody>
+</table>
+<!-- KC:endInclude -->
+
+<p>Varsayılan olarak bu komut aşağıdaki modlar arasında geçiş yapacaktır:</p>
+<ul>
+<li>Ses ayırma devre dışı: hem NVDA hem de diğer uygulamalar, sesleri hem sol hem de sağ kanallara gönderir.</li>
+<li>Solda NVDA ve sağda uygulamalar: NVDA sol kanalda konuşacak, diğer uygulamalar ise sesleri sağ kanalda çalacaktır.</li>
+<li>Sağda NVDA ve solda uygulamalar: NVDA sağ kanalda konuşacak, diğer uygulamalar ise sesleri sol kanalda çalacaktır.</li>
+</ul>
+<p>NVDA ayarlarında daha gelişmiş ses ayırma modları mevcuttur.
+Lütfen ses ayırmanın mikser olarak çalışmadığını unutmayın.
+Örneğin, ses ayırma ayarı "NVDA solda, uygulamalar sağda" olarak ayarlanmışken bir uygulama stereo bir ses parçası çalıyorsa, yalnızca ses parçasının sağ kanalını duyarsınız. Sol kanal ise sessize çıkmaz.</p>
+<p>NVDA'yı Gelişmiş Ayarlar'da Ses çıkışı için WASAPI kullan (#WASAPI) ayarını devre dışı bırakarak çalıştırıyorsanız bu seçenek kullanılamaz.</p>
+<p>Dikkat: NVDA çöktüğünde, uygulamalar ses seviyesini geri yükleyemez. Bu durum, NVDA çökmesinden sonra bazı uygulamaların yalnızca tek kanaldan duyulmaya devam etmesine neden olabilir.
+Sorunu düzeltmek için lütfen NVDA'yı yeniden başlatın.</p>
+<h5 id="CustomizeSoundSplitModes">Ses ayırma modlarını özelleştirme</h5>
+<p>Bu liste, 'NVDA+alt+s' kullanılarak aralarında geçiş yapılırken hangi ses ayırma modlarının dahil edileceğini ayarlayacak onay kutularını barındırır.
+Onay kutusu işaretli olmayan modlar dahil edilmez.
+Varsayılan olarak yalnızca üç mod dahildir.</p>
+<ul>
+<li>Ses ayırma devre dışı: Hem NVDA hem de uygulamalar, sesleri hem sol hem de sağ kanallarda çalar.</li>
+<li>Solda NVDA ve sağ kanalda diğer tüm uygulamalar.</li>
+<li>Sağda NVDA ve sol kanalda diğer tüm uygulamalar.</li>
+</ul>
+<p>En az bir modun işaretli olması gerektiğini unutmayın.
+NVDA'yı Gelişmiş Ayarlar'da Ses çıkışı için WASAPI kullan (#WASAPI) ayarını devre dışı bırakarak çalıştırıyorsanız bu seçenek kullanılamaz.</p>
 <h4 id="VisionSettings">Görsellik</h4>
 <p>NVDA Ayarları iletişim kutusundaki görsellik kategorisi <a href="#Vision" title="görsel yardımları">görsel yardımları</a> etkinleştirmenizi, devre dışı bırakmanızı ve yapılandırmanızı sağlar.</p>
 <p>Bu kategori altında mevcut olan seçeneklerin <a href="#AddonsManager" title="NVDA eklentileri">NVDA eklentileri</a> ile genişletilebileceğini unutmayın.
@@ -3934,12 +3987,9 @@ Bu seçeneğin etkinleştirilmesi, performans ve istikrar pahasına bazı web si
 <li>Satır Numaraları</li>
 <li>Satır girintilerinin bildirimi <a href="#DocumentFormattingSettingsLineIndentation" title="(Kapalı, Konuşma, Ses çalarak, Konuşarak ve Ses çalarak)">(Kapalı, Konuşma, Ses çalarak, Konuşarak ve Ses çalarak)</a></li>
 <li>Satır girinti bildirimi için boş satırları yoksay</li>
-</ul>
-<ul>
 <li>Paragraf girintisi (Örneğin, asılı girinti, ilk satır girintisi)</li>
 <li>Satır aralığı (tek, çift vs)</li>
-<li>Hizzalama
-  -</li>
+<li>Hizzalama</li>
 <li>Tablo bilgileri<ul>
 <li>Tablolar</li>
 <li>Satır/sütun başlıkları (Kapalı, Satırlar, Sütunlar, Satırlar ve sütunlar)</li>
@@ -3957,6 +4007,7 @@ Bu seçeneğin etkinleştirilmesi, performans ve istikrar pahasına bazı web si
 <li>Sınır imleri</li>
 <li>Makaleler</li>
 <li>Çerçeveler</li>
+<li>Şekiller ve başlıklar</li>
 <li>Bir ögenin tıklanabilir olup olmadığı</li>
 </ul>
 </li>
@@ -4150,7 +4201,7 @@ Seçim kutusunda aşağıdaki seçenekler vardır:</p>
 <li>Evet: Tarayıcı UIA'yı kullanılabilir hale getirirse, NVDA onu kullanır.</li>
 <li>Hayır: NVDA işlem sırasında enjekte edemese bile UIA'yı kullanmaz. Bu, geliştiriciler için IA2 ile ilgili sorunları gidermek için yararlı olabilir ve NVDA'nın UIA'ya geri dönmediğinden emin olmak isteyebilirler.</li>
 </ul>
-<h5 id="Annotations">Bİlgi notları</h5>
+<h5 id="Annotations">Bilgi notları</h5>
 <p>Bu seçenek grubu, ARIA bilgi notları için deneysel destek ekleyen özellikleri etkinleştirmek için kullanılır.
 Bu özelliklerden bazıları eksik sunuluyor olabilir.</p>
 <!-- KC:beginInclude -->
@@ -4181,20 +4232,12 @@ Bu özelliklerden bazıları eksik sunuluyor olabilir.</p>
 </thead>
 <tbody>
 <tr>
-<td>Varsayılan</td>
-<td>Etkin</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Seçenekler</td>
 <td>Varsayılan (Etkin), Devre Dışı, Etkin</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
+<td>Varsayılan</td>
+<td>Etkin</td>
 </tr>
 </tbody>
 </table>
@@ -4233,20 +4276,12 @@ Ancak, terminallerde, bir satırın ortasına bir karakter eklerken veya silerke
 </thead>
 <tbody>
 <tr>
+<td>Seçenekler</td>
+<td>Varsayılan (Fark bulma), Fark Bulma, UIA bildirimleri</td>
+</tr>
+<tr>
 <td>Varsayılan</td>
 <td>Fark bulma</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>Seçenekler</td>
-<td>Varsayılan (fark bulma), fark bulma, UIA bildirimleri</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -4284,20 +4319,12 @@ Tarihsel olarak popüler olan birkaç GUI API'si ile metin saydam bir arka planl
 </thead>
 <tbody>
 <tr>
-<td>Varsayılan</td>
-<td>Etkin</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Seçenekler</td>
 <td>Varsayılan (Etkin), Devre Dışı, Etkin</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
+<td>Varsayılan</td>
+<td>Etkin</td>
 </tr>
 </tbody>
 </table>
@@ -4317,6 +4344,9 @@ Bunları yalnızca, bir NVDA geliştiricisi tarafından özellikle talimat veril
 <p>Bu seçenek, bir hatanın kaydedilmesi durumunda NVDA'nın ses çalıp çalmayacağını belirlemenizi sağlar.
 Yalnızca test sürümlerinde (varsayılan) seçilmesi, NVDA'nın yalnızca mevcut NVDA sürümü bir test sürümü (alfa, beta veya kaynaktan çalıştırma) olması durumunda hata seslerini çalmasına neden olur.
 Evet'i seçmek, mevcut NVDA sürümünüz ne olursa olsun hata seslerini etkinleştirmenizi sağlar.</p>
+<h5 id="TextParagraphRegexEdit">hızlı gezinme  Metin paragrafı için normal ifade komutları</h5>
+<p>Bu alan, kullanıcıların tarama kipinde metin paragraflarını algılamak için normal ifadeyi özelleştirmesine olanak tanır.
+<a href="#TextNavigationCommand" title="Metin paragrafında gezinme komutu">Metin paragrafında gezinme komutu</a>, bu normal ifadeyle eşleşen paragrafları arar.</p>
 <h3 id="MiscSettings">çeşitli Ayarlar</h3>
 <p><a href="#NVDASettings" title="NVDA ayarları">NVDA ayarları</a> iletişim kutusunun yanında, NVDA Menüsündeki Tercihler altmenüsü aşağıda verilen çeşitli diğer öğeleri de içerir.</p>
 <h4 id="SpeechDictionaries">Konuşma Sözlükleri</h4>
@@ -4347,8 +4377,7 @@ Yani NVDA sözcüğün büyük ya da küçük yazılışına bakabilir. Varsayı
 Öyleyse, yukarıdaki "kuş" ifadesini "kurbağa" ile değiştirme örneğini kullanırsak, ifadenin tamamı seçeneği tercih edildiyse, "kuşlar" ifadesi "kurbağalar" olarak seslendirilmez.</p>
 <p>Bir kurallı ifade, içinde bir seferde birden fazla karakterle eşleştirme yapmanızı sağlayan özel karakterler barındıran bir öbektir. Bu eşleşme yalnızca rakamlar veya yalnızca harfler de olabilir. 
 Kurallı ifadeler konusu bu kullanıcı rehberinde kapsanmamıştır.
-Genel bilgi ve tanıtım için lütfen <a href="https://docs.python.org/3.11/howto/regex.html" rel="noopener" target="_blank" title="Python'un Normal İfade Kılavuzuna">Python'un Normal İfade Kılavuzuna</a>  bakın.
-f</p>
+Genel bilgi ve tanıtım için lütfen <a href="https://docs.python.org/3.11/howto/regex.html" rel="noopener" target="_blank" title="Python'un Normal İfade Kılavuzuna">Python'un Normal İfade Kılavuzuna</a>  bakın.</p>
 <h4 id="SymbolPronunciation">Noktalama/imla sözlüğü</h4>
 <p>Bu iletişim kutusu, noktalama ve imla işaretlerinin nasıl seslendirileceğini belirlemenizin yanısıra bu işaretlerin seslendirilme düzeylerini ayarlamanızı sağlar.</p>
 <p>Noktalama/imla telaffuzu iletişim kutusunun başlığında, düzenlemenin hangi dil için yapılacağı gösterilir.
@@ -4360,16 +4389,17 @@ Sembolü veya sembolün  bir bölümünü, Filtreye göre düzenle kutusuna gire
 <li>Düzey alanı ise, işaretin seslendirilmesini istediğiniz en düşük imla seslendirme düzeyini belirlemenize imkan verir (hiç biri, bağzıları, çoğu veya tümü).
 Ayrıca düzeyi karakter olarak ayarlayabilirsiniz. Bu durumda, aşağıdaki iki durum harici semboller seslendirilmez:</li>
 <li>Karakter karakter gezinirken.</li>
-<li>NVDA bu sembolü içeren herhangi bir metni HARF HARF OKURKEN.
- -</li>
+<li>NVDA bu sembolü içeren herhangi bir metni HARF HARF OKURKEN.</li>
 <li>Sentezleyiciye asıl sembolü gönder alanı sembol için belirlenen seslendirme değeri yerine sentezleyiciye sembolün kendisinin gönderilmesini sağlar.
 Bu, sembolün sentezleyicinin duraksamasına ya da tonlamayı değiştirmesine neden olan bir sembol olması halinde faydalı olabilir.
 Örneğin, virgül işareti sentezleyicinin duraksamasına yol açar.
-Üç seçenek bulunmaktadır:</li>
+Üç seçenek bulunmaktadır:<ul>
 <li>hiçbir zaman: Asıl sembolü hiçbir zaman sentezleyiciye gönderme.</li>
 <li>her zaman: Asıl sembolü her zaman sentezleyiciye gönder.</li>
 <li>Yalnızca noktalama / imla seslendirme düzeyinin altındaysa: Asıl sembolü sentezleyiciye, noktalama / imla seslendirme seviyesi buradakinden daha düşük seviyede ayarlanmışsa gönder.
- Örneğin, noktalama / imla seslendirme düzeyinden yüksek olarak ayarlanması halinde sembolün olarak değiştir alanındaki ifade kullanılarak seslendirilmesini, aksi halde bu sembolün sentezleyicinin konuşmasında duraksamaya neden olması sonucunda bu sembolün varlığının belirtilmesini sağlayabilirsiniz.</li>
+Örneğin, noktalama / imla seslendirme düzeyinden yüksek olarak ayarlanması halinde sembolün olarak değiştir alanındaki ifade kullanılarak seslendirilmesini, aksi halde bu sembolün sentezleyicinin konuşmasında duraksamaya neden olması sonucunda bu sembolün varlığının belirtilmesini sağlayabilirsiniz.</li>
+</ul>
+</li>
 </ul>
 <p>Ekle düğmesine basarak yeni işaretler ekleyebilirsiniz.
 Açılacak iletişim kutusunda, işareti girin ve tamam düğmesine basın.
@@ -4771,8 +4801,7 @@ Bu sesler NVDA tarafından da kullanılabilmektedir.</p>
 <li><a href="https://www.microsoft.com/download/en/details.aspx?id=27224" rel="noopener" target="_blank" title="Microsoft Speech Platform - Runtime Languages (Version 11)">Microsoft Speech Platform - Runtime Languages (Version 11)</a></li>
 <li>Bu sayfa, konuşma tanıma ve konuşma sentezlemeyle ilgili birçok dosyayı içermektedir.
  İstediğiniz dil ve seslerle ilgili konuşma sentezleme (TTS) verilerini içeren dosyaları seçin.
- Örneğin, MSSpeech_TTS_en-US_ZiraPro.msi adlı dosya, ABD İngilizcesi konuşan bir sestir.
- -</li>
+ Örneğin, MSSpeech_TTS_en-US_ZiraPro.msi adlı dosya, ABD İngilizcesi konuşan bir sestir.</li>
 </ul>
 <h3 id="OneCore">Windows OneCore Sesleri</h3>
 <p>Windows 10 ve sonraki windows sürümleri "OneCore" ya da "mobile" sesler olarak bilinen yeni sesler içerir.
@@ -8098,7 +8127,7 @@ The hope is that all future Braille Display models created by any manufacturer, 
 <!-- KC:endInclude -->
 
 <h2 id="AdvancedTopics">İleri Düzey Konular</h2>
-<h3 id="SecureMode">Güvenli Mod</h3>
+<h3 id="SecureMode">Güvenli Mcod</h3>
 <p>Sistem yöneticileri, yetkisiz sistem erişimini kısıtlamak için NVDA'yı yapılandırmak isteyebilir.
 NVDA, yönetici ayrıcalıklarına yükseltildiği durumlar da dahil olmak üzere isteğe bağlı kod çalıştırabilen özel eklentilerin yüklenmesine izin verir.
 Bununla birlikte, kullanıcılar NVDA Python Konsolu aracılığıyla isteğe bağlı kod yürütebilr.
@@ -8121,6 +8150,10 @@ Ayrıca NVDA, <code>-s</code> <a href="#CommandLineOptions" title="komut satır�
 </ul>
 <p>NVDA'nın kurulu kopyaları, eklentiler dahil yapılandırmalarını <code>%APPDATA%\nvda</code> klasöründe saklar.
 NVDA kullanıcılarının yapılandırmalarını veya eklentilerini doğrudan değiştirmelerini önlemek için, bu klasöre kullanıcı erişimi de kısıtlanmalıdır.</p>
+<p>Güvenli mod, NVDA'nın taşınabilir kopyalarında geçerli değildir.
+Bu sınırlama aynı zamanda kurulumu başlatırken çalışan NVDA'nın geçici kopyası için de geçerlidir.
+Güvenli ortamlarda, bir kullanıcının taşınabilir bir yürütülebilir dosyayı çalıştırabilmesi, güvenli moddan bağımsız olarak aynı güvenlik riskidir.
+Sistem yöneticilerinin, NVDA'nın taşınabilir kopyaları da dahil olmak üzere yetkisiz yazılımların sistemlerinde çalışmasını kısıtlaması beklenmektedir.</p>
 <p>NVDA kullanıcıları genellikle NVDA profilini ihtiyaçlarına göre yapılandırmayı tercih ederler.
 Bu, NVDA'dan bağımsız olarak incelenmesi gereken özel eklentilerin yüklenmesini ve yapılandırılmasını gerektirebilir.
 Güvenli mod, NVDA yapılandırmasındaki değişiklikleri dondurur, bu yüzden lütfen güvenli modu etkinleştirmeden önce NVDA'nın uygun şekilde yapılandırıldığından emin olun.</p>
