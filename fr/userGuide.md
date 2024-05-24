@@ -3139,8 +3139,7 @@ Note :
 
 * Les touches émulées doivent avoir un geste assigné pour persister lors de la sauvegarde ou de la fermeture du dialogue.
 * Un geste de commande avec modificateur peut ne pas pouvoir êttre assigné à un geste émulé sans modificateur
-Par exemple, définir le `a` comme touche émulée et configurer un geste de commande `ctrl+m`, peut avoir comme résultat
-que l'application reçoit `ctrl+a`.
+Par exemple, définir le `a` comme touche émulée et configurer un geste de commande `ctrl+m`, peut avoir comme résultat que l'application reçoit `ctrl+a`.
 
 Lorsque vous avez terminé vos modifications, appuyez sur le bouton "OK" pour les sauvegarder ou sur le bouton "Annuler" pour les ignorer.
 
