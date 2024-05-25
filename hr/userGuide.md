@@ -1051,9 +1051,9 @@ Međutim, za scenarije kada želite kopirati cijelu tablicu ili odlomak sa oblik
 ## Čitanje matematičkog sadržaja {#ReadingMath}
 
 NVDA može čitati matematički sadržaj na web stranicama te u ostalim programima, čineći tako pristup takvom sadržaju uz pomoć govora i brajice mogućim.
- Međutim, kako bi NVDA mogao čitati matematički sadržaj, najprije trebate instalirati matematičku komponentu za NVDA.
-Postoji nekoliko dodataka, koji e mogu preuzeti u NVDA add-on storeu za pristup matamatičkom sadržaju, uključujući [MathCAT NVDA dodatak](https://nsoiffer.github.io/MathCAT/) te [Access8Math](https://github.com/tsengwoody/Access8Math).
-Molimo pogledajte poglavlje [Add-on Store](#AddonsManager) kako biste saznali kako pregledavati i instaliravati dostupne dodatke unutar NVDA.
+Međutim, kako bi NVDA mogao čitati matematički sadržaj, najprije trebate instalirati matematičku komponentu za NVDA.
+Postoji nekoliko dodataka, koji se mogu preuzeti u NVDA add-on storeu za pristup matamatičkom sadržaju, uključujući [MathCAT NVDA dodatak](https://nsoiffer.github.io/MathCAT/) te [Access8Math](https://github.com/tsengwoody/Access8Math).
+Molimo pogledajte poglavlje [Add-on Store](#AddonsManager) kako biste saznali kako pregledavati i instalirati dostupne dodatke unutar NVDA.
 NVDA također može koristiti stariji [MathPlayer](https://info.wiris.com/mathplayer-info) softver tvrtke Wiris ako se pronađe u vašem sustavu, iako ovaj softver se više ne razvija.
 
 ### Podržani matematički sadržaj {#SupportedMathContent}
