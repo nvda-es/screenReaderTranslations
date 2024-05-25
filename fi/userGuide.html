@@ -249,9 +249,9 @@
 <li><a href="#SelectSynthesizerDuckingMode" title="Äänenvaimennus">Äänenvaimennus</a></li>
 <li><a href="#SoundVolumeFollowsVoice" title="NVDA-äänien voimakkuus mukautuu puheäänen voimakkuuteen">NVDA-äänien voimakkuus mukautuu puheäänen voimakkuuteen</a></li>
 <li><a href="#SoundVolume" title="NVDA-äänien voimakkuus">NVDA-äänien voimakkuus</a></li>
-<li><a href="#AudioAwakeTime" title="Äänilaitteen hereilläpitoaika puheen jälkeen">Äänilaitteen hereilläpitoaika puheen jälkeen</a></li>
 <li><a href="#SelectSoundSplitMode" title="Äänijako">Äänijako</a></li>
 <li><a href="#CustomizeSoundSplitModes" title="Äänijakotilojen mukauttaminen">Äänijakotilojen mukauttaminen</a></li>
+<li><a href="#AudioAwakeTime" title="Äänilaitteen hereilläpitoaika puheen jälkeen">Äänilaitteen hereilläpitoaika puheen jälkeen</a></li>
 </ul>
 </li>
 <li><a href="#VisionSettings" title="Näkö">Näkö</a><ul>
@@ -3617,14 +3617,6 @@ Tämä asetus ei ole käytettävissä, jos <a href="#WASAPI" title="Käytä WASA
 <p>Tällä liukusäätimellä voidaan määrittää NVDA:n äänien ja piippausten äänenvoimakkuus.
 Tämä asetus on käytettävissä vain, kun "NVDA-äänien voimakkuus mukautuu puheäänen voimakkuuteen" ei ole käytössä.
 Tämä asetus ei ole käytettävissä, jos <a href="#WASAPI" title="Käytä WASAPIa äänen toistamiseen">Käytä WASAPIa äänen toistamiseen</a> on poistettu käytöstä lisäasetuksissa.</p>
-<h5 id="AudioAwakeTime">Äänilaitteen hereilläpitoaika puheen jälkeen</h5>
-<p>Tässä muokkausruudussa määritetään, kuinka kauan NVDA pitää äänilaitteen hereillä puheen loputtua.
-Se mahdollistaa tiettyjen puheen häiriöiden, kuten puuttuvien sanojen osien, välttämisen.
-Tämä voi johtua äänilaitteiden (erityisesti Bluetooth- ja muiden langattomien laitteiden) valmiustilaan siirtymisestä.
-Tästä voi olla hyötyä myös muissa käyttötarkoituksissa, kuten käytettäessä NVDA:ta virtuaalikoneessa (esim. Citrix Virtual Desktopissa) tai tietyissä kannettavissa tietokoneissa.</p>
-<p>Pienempien arvojen käyttö voi aiheuttaa useammin äänen katkeamista, koska laite saattaa siirtyä valmiustilaan liian aikaisin, mistä on seurauksena seuraavan puhuttavan asian alun katkeaminen.
-Liian suuren arvon käyttö saattaa tyhjentää äänilaitteen akun nopeammin, koska laite pysyy aktiivisena pidempään, vaikka ääntä ei lähetetä.</p>
-<p>Poista tämä toiminto käytöstä määrittämällä ajaksi 0.</p>
 <h5 id="SelectSoundSplitMode">Äänijako</h5>
 <p>Äänijako-toiminto mahdollistaa stereoäänilaitteiden, kuten kuulokkeiden ja kaiuttimien, hyödyntämisen.
 Sen avulla on mahdollista saada NVDA:n puhe toiseen kanavaan (esim. vasempaan) ja muiden sovellusten äänet toiseen (esim. oikeaan).
@@ -3654,7 +3646,7 @@ Näppäinkomento mahdollistaa vaihtamisen eri äänijakotilojen välillä:</p>
 <ul>
 <li>Ei käytössä: NVDA ja muut sovellukset toistavat ääntä sekä vasemmassa että oikeassa kanavassa.</li>
 <li>NVDA vasemmalla ja sovellukset oikealla: NVDA puhuu vasemmassa kanavassa, kun taas muut sovellukset toistavat ääntä oikeassa.</li>
-<li>NVDA oikealla ja sovellukset vasemmalla: NVDA puhuu oikeassa kanavassa, kun taas muut sovellukset toistavat ääntä vasemmassa.</li>
+<li>NVDA vasemmalla ja sovellukset molemmissa kanavissa: NVDA puhuu vasemmassa kanavassa, kun taas muut sovellukset toistavat ääntä sekä vasemmassa että oikeassa.</li>
 </ul>
 <p>NVDA:n asetusyhdistelmäruudussa on käytettävissä myös edistyneempiä äänijakotiloja.
 Huom: Äänijako ei toimi mikserinä.
@@ -3667,12 +3659,20 @@ Käynnistä NVDA uudelleen tämän vähentämiseksi.</p>
 Valitsemattomat tilat eivät ole käytettävissä.
 Oletuksena vain kolme tilaa on valittuna.</p>
 <ul>
-<li>Ei käytössä: NVDA ja muut sovellukset toistavat ääntä sekä vasemmassa että oikeasssa kanavassa.</li>
+<li>Ei käytössä.</li>
 <li>NVDA vasemmalla ja muut sovellukset oikealla.</li>
-<li>NVDA oikealla ja muut sovellukset vasemmalla.</li>
+<li>NVDA vasemmalla ja sovellukset molemmissa kanavissa.</li>
 </ul>
 <p>Huom: Vähintään yksi tila on oltava valittuna.
 Tämä asetus ei ole käytettävissä, jos olet <a href="#WASAPI" title="poistanut WASAPIn käytöstä">poistanut WASAPIn käytöstä</a> NVDA:n lisäasetuksissa.</p>
+<h5 id="AudioAwakeTime">Äänilaitteen hereilläpitoaika puheen jälkeen</h5>
+<p>Tässä muokkausruudussa määritetään, kuinka kauan NVDA pitää äänilaitteen hereillä puheen loputtua.
+Se mahdollistaa tiettyjen puheen häiriöiden, kuten puuttuvien sanojen osien, välttämisen.
+Tämä voi johtua äänilaitteiden (erityisesti Bluetooth- ja muiden langattomien laitteiden) valmiustilaan siirtymisestä.
+Tästä voi olla hyötyä myös muissa käyttötarkoituksissa, kuten käytettäessä NVDA:ta virtuaalikoneessa (esim. Citrix Virtual Desktopissa) tai tietyissä kannettavissa tietokoneissa.</p>
+<p>Pienempien arvojen käyttö voi aiheuttaa useammin äänen katkeamista, koska laite saattaa siirtyä valmiustilaan liian aikaisin, mistä on seurauksena seuraavan puhuttavan asian alun katkeaminen.
+Liian suuren arvon käyttö saattaa tyhjentää äänilaitteen akun nopeammin, koska laite pysyy aktiivisena pidempään, vaikka ääntä ei lähetetä.</p>
+<p>Poista tämä toiminto käytöstä määrittämällä ajaksi 0.</p>
 <h4 id="VisionSettings">Näkö</h4>
 <p>NVDA:n asetusvalintaikkunan Näkö-kategoriassa voit ottaa käyttöön ja poistaa käytöstä <a href="#Vision" title="näköapuja.">näköapuja.</a> sekä muuttaa niiden asetuksia.</p>
 <p>Huom: Käytettävissä olevia vaihtoehtoja voidaan laajentaa <a href="#AddonsManager" title="lisäosien">lisäosien</a> avulla.
@@ -4431,9 +4431,8 @@ Tämän jälkeen näppäin näkyy Jäljiteltävät järjestelmänäppäimistön 
 <p>Huom:</p>
 <ul>
 <li>Jäljiteltävillä näppäimillä täytyy olla näppäinkomennot määritettyinä, jotta ne säilyvät tallennettaessa/valintaikkunaa suljettaessa.</li>
-<li>Näppäinkomentoa, jossa käytetään muokkausnäppäimiä, ei välttämättä voi liittää jäljiteltävään näppäinkomentoon, jossa ei muokkaus
-näppäimiä ole. Kun esim. jäljiteltäväksi syötteeksi määritetään <code>a</code> ja näppäinkomennoksi <code>Ctrl+M</code>, saattaa siitä seurata,
-että sovellus vastaanottaa näppäinyhdistelmän <code>Ctrl+A</code>.</li>
+<li>Näppäinkomentoa, jossa käytetään muokkausnäppäimiä, ei välttämättä voi liittää jäljiteltävään näppäinkomentoon, jossa ei muokkausnäppäimiä ole.
+Kun jäljiteltäväksi syötteeksi määritetään esim. <code>a</code> ja näppäinkomennoksi <code>Ctrl+M</code>, saattaa siitä seurata, että sovellus vastaanottaa näppäinyhdistelmän <code>Ctrl+A</code>.</li>
 </ul>
 <p>Tehdyt muutokset tallennetaan painamalla OK-painiketta tai hylätään painamalla Peruuta.</p>
 <h3 id="SavingAndReloading">Asetusten tallentaminen ja palauttaminen</h3>
