@@ -3139,8 +3139,7 @@ Upozorenje:
 
 * Emulirani prečaci moraju imati pridjeljene geste kako bi se zadržali prilikom spremanja /zatvaranja dijaloškog okvira.
 * Geste sa modifikatorima možda neće moći biti pridjeljene emuliranoj gesti bez modifikatora
-Na primjer, postavljanjem emuliranog unosa `a` i podešavanje ulazne geste `ctrl+m`, prouzrokovat će 
-da će program primiti `ctrl+a`.
+Na primjer, postavljanjem emuliranog unosa `a` i podešavanje ulazne geste `ctrl+m`, prouzrokovat će da će program primiti `ctrl+a`.
 
 Kad ste gotovi s promjenama, pritisnite gumb U redu da biste ih sačuvali ili gumb Odustani da biste ih poništili.
 
