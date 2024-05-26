@@ -19,7 +19,7 @@ LibLouis 更新后，增加了新的详细（以大写字母表示）白俄罗�
 
 • 修复了 Thunderbird、Adobe Reader、浏览器、Nudi 和 Geekbench 等应用程序的许多小错误。
 
-### New Features
+### 新特性
 
 * 新增快捷键：
   * 新增单键导航命令`p`，用于在浏览模式下跳转到下一个/上一个文本段落。 (#15998, @mltony)
