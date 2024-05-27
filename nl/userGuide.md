@@ -3163,8 +3163,7 @@ Merk op:
 
 * Aan geëmuleerde toetsen moeten handelingen zijn toegewezen om ze van kracht telaten blijven wanneer het dialoogvenster wordt opgeslagen / gesloten.
 * Een invoerhandeling met  zogenaamde 'modifier'-toetsen kan mogelijk niet ingesteld (mapped) worden als geëmuleerde invoerhandeling zonder 'modifier' toetsen.
-Het instellen van de geëmuleerde invoer `a` bij voorbeeld en het configureren van een ivoerhandeling `ctrl+m`, kan tot gevolg hebben dat
-de toepassing `ctrl+a` krijgt.
+Het instellen van de geëmuleerde invoer `a` bij voorbeeld en het configureren van een ivoerhandeling `ctrl+m`, kan tot gevolg hebben dat de toepassing `ctrl+a` krijgt.
 
 Als u klaar bent met het aanbrengen van de wijzigingen drukt u op de knop OK om de wijzigingen op te slaan of op de knop Annuleren als u geen wijzigingen wilt doorvoeren.
 
