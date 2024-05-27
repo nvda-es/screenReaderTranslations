@@ -22,7 +22,7 @@ LibLouis 更新后，增加了新的详细（以大写字母表示）白俄罗�
 ### 新特性
 
 * 新增快捷键：
-  * 新增单键导航命令`p`，用于在浏览模式下跳转到下一个/上一个文本段落。 (#15998, @mltony)
+  * 新增单键导航命令 `p`，用于在浏览模式下跳转到下一个/上一个文本段落。(#15998, @mltony)
   * 新增了以下未分配的单键导航命令，可用于跳转到下一个/上一个：
     * 插图 (#10826)
     * 垂直对齐的段落 (#15999, @mltony)
@@ -32,73 +32,73 @@ LibLouis 更新后，增加了新的详细（以大写字母表示）白俄罗�
     * 数学公式 (#16001, @mltony)
     * 相同样式的文本 (#16000, @mltony)
     * 不同样式的文本 (#16000, @mltony)
-  * 增加了用于在语音合成设置选项中设置为第一个、最后一个，以及以较大步长增加和减少设置值的命令。 (#13768, #16095, @rmcpantoja)
-    * 在语音合成选项中设置为第一个/最后一个的命令没有分配默认手势。 (#13768)
-    * 以较大步长减少和增加当前语音设置值的命令 (#13768)：
-      * 台式机：`NVDA+control+pageUp` 和 `NVDA+control+pageDown`
-      * 笔记本：`NVDA+control+shift+pageUp` 和 `NVDA+control+shift+pageDown`
-  * 增加了用于切换插图和说明文本开关的命令，没有分配默认手势。 (#10826, #14349)
+  * 增加了用于在语音合成设置选项中设置为第一个、最后一个，以及以较大步长增加和减少设置值的命令。(#13768, #16095, @rmcpantoja)
+    * 在语音合成选项中设置为第一个/最后一个的命令没有分配默认手势。(#13768)
+    * 以较大步长减少和增加当前语音设置值的命令(#13768)：
+      * 台式机：`NVDA+control+上翻页` 和 `NVDA+control+下翻页`
+      * 笔记本：`NVDA+control+shift+上翻页` 和 `NVDA+control+shift+下翻页`
+  * 增加了用于切换插图和说明文本开关的命令，没有分配默认手势。(#10826, #14349)
 * 盲文：
-  * 增加对 BrailleEdgeS2 和 BrailleEdgeS3 点显器的支持。 (#16033, #16279, @EdKweon)
-  * 新增了一种名为“显示语音输出”的盲文模式。 (#15898, @Emil-18)
+  * 增加对 BrailleEdgeS2 和 BrailleEdgeS3 点显器的支持。(#16033, #16279, @EdKweon)
+  * 新增了一种名为“显示语音输出”的盲文模式。(#15898, @Emil-18)
     * 启用后，盲文点显器将完全显示 NVDA 朗读的内容。
     * 可以通过按 `NVDA+alt+t` 或从盲文设置对话框中切换该模式。
-* 声音拆分： (#12985, @mltony)
+* 声音拆分：(#12985, @mltony)
   * 可以将 NVDA 的声音拆分到一个声道（例如左侧），而其他所有应用程序的声音则放在另一个声道（例如右侧）。
   * 通过 `NVDA+alt+s` 切换。
-* 支持了在 contenteditable HTML 元素中报告行和列标题。 (#14113)
-* 在文档格式设置中添加了切换是否读出插图和说明文本的选项。 (#10826, #14349)
-* 在 Windows 11 22H2 及更高版本中，当电话号码等兼容的数据复制到剪贴板时，NVDA 会读出建议的操作（Windows 11 2022 Update 及以后）。 (#16009, @josephsl)
-* NVDA 在语音朗读停止后可以保持音频设备唤醒，以防止某些音频设备（如蓝牙耳机）在下一次开始朗读时出现漏读的现象。 (#14386, @jcsteh, @mltony)
-* 支持了 HP Secure Browser。 (#16377)
+* 支持了在 contenteditable HTML 元素中报告行和列标题。(#14113)
+* 在文档格式设置中添加了切换是否读出插图和说明文本的选项。(#10826, #14349)
+* 在 Windows 11 22H2 及更高版本中，当电话号码等兼容的数据复制到剪贴板时，NVDA 会读出建议的操作（Windows 11 2022 Update 及以后）。(#16009, @josephsl)
+* NVDA 在语音朗读停止后可以保持音频设备唤醒，以防止某些音频设备（如蓝牙耳机）在下一次开始朗读时出现漏读的现象。(#14386, @jcsteh, @mltony)
+* 支持了 HP Secure Browser。(#16377)
 
 ### 改进
 
 * 插件商店：
-  * 在“其他详情”区域支持显示插件的 NVDA 版本最低要求和最后测试的 NVDA 版本。 (#15776, @Nael-Sayegh)
-  * 在商店的所有选项卡中都可以显示插件的社区评论。 (#16179, @nvdaes)
+  * 在“其他详情”区域支持显示插件的 NVDA 版本最低要求和最后测试的 NVDA 版本。(#15776, @Nael-Sayegh)
+  * 在商店的所有选项卡中都可以显示插件的社区评论。(#16179, @nvdaes)
 * 组件更新：
-  * 将 LibLouis 盲文翻译器更新到 [3.29.0](https://github.com/liblouis/liblouis/releases/tag/v3.29.0)。 (#16259, @codeofdusk)
+  * 将 LibLouis 盲文翻译器更新到 [3.29.0](https://github.com/liblouis/liblouis/releases/tag/v3.29.0)。(#16259, @codeofdusk)
     * 新增详细（用大写字母指示）的白俄罗斯语和乌克兰语盲文表。
     * 新增用于阅读希腊语文本的新西班牙语盲文表。
-    * 老挝语一级盲文表。 (#16470)
-  * eSpeak NG 更新到 1.52-dev 提交 `cb62d93fd7`。 (#15913)
+    * 老挝语一级盲文表。(#16470)
+  * eSpeak NG 更新到 1.52-dev 提交 `cb62d93fd7`。(#15913)
     * 增加了提格里尼亚语语音。
 * 为避免与法语盲文表字符冲突，更改了 BrailleSense 设备的几个手势。
-  * `alt+左箭头` 现在映射到 `dot2+dot7+space`(#15306)
+  * `alt+左箭头` 现在映射到 `dot2+dot7+space` (#15306)
   * `alt+右箭头` 现在映射到 `dot5+dot7+space`
   * `alt+上箭头` 现在映射到 `dot2+dot3+dot7+space`
   * `alt+下箭头` 现在映射到 `dot5+dot6+dot7+space`
-* 在低语音符号级别时，不再朗读目录表中的填充点。 (#15845, @CyrilleB79)
+* 在低语音符号级别时，不再朗读目录表中的填充点。(#15845, @CyrilleB79)
 
 ### 错误修复
 
 * Windows 11 修复：
-  * 修复了无法朗读硬件键盘输入建议的错误。 (#16283, @josephsl)
-  * 在版本 24H2（2024 Update 和 Windows Server 2025）中，支持在快速设置中使用鼠标和触摸屏交互。 (#16348, @josephsl)
+  * 修复了无法朗读硬件键盘输入建议的错误。(#16283, @josephsl)
+  * 在版本 24H2（2024 Update 和 Windows Server 2025）中，支持在快速设置中使用鼠标和触摸屏交互。(#16348, @josephsl)
 * 插件商店：
-  * 修复了按 `ctrl+tab` 时，焦点无法移动到当前选项卡标题的错误。 (#14986, @ABuffEr)
-  * 修复了商店缓存文件无效会导致 NVDA 无限重启的错误。 (#16362, @nvdaes)
+  * 修复了按 `ctrl+tab` 时，焦点无法移动到当前选项卡标题的错误。(#14986, @ABuffEr)
+  * 修复了商店缓存文件无效会导致 NVDA 无限重启的错误。(#16362, @nvdaes)
 * 针对使用 UIA 的 Chromium 系浏览器的修复：
-  * 修复了导致 NVDA 挂起的错误。 (#16393, #16394)
-  * 修复了在 Gmail 登录页面的输入控件中退格键无法正常使用的错误。 (#16395)
-* 修复了启用“从其他应用程序获取键盘控制权”会导致退格键在 Nudi 6.1 中无法正常使用的错误。 (#15822, @jcsteh)
-* 修复了在启用“鼠标移动时播放音频坐标”且应用程序处于睡眠模式的情况下仍然播放音频坐标的错误。 (#8059, @hwf1324)
-* 修复了在 Adobe Reader 中，NVDA 会忽略 PDF 中公式对象的替代文本的错误。 (#12715)
-* 修复了 NVDA 无法朗读 Geekbench 中的功能区和选项的错误。 (#16251, @mzanm)
-* 修复了保存配置时可能导致无法保存所有配置文件的罕见情况。 (#16343, @CyrilleB79)
-* 修复了在 Firefox 和基于 Chromium 的浏览器中，当定位在可编辑内容内的展示列表（ul / ol）中时，按 Enter 无法正确进入焦点模式的错误。 (#16325)
-* 修复了在 Thunderbird 消息列表中选择列显示时，无法正确朗读列状态变化的错误。 (#16323)
-* 修复了命令行参数 `-h`/`--help` 无法使用的问题。 (#16522, @XLTechie)
-* 修复了在 Poedit 版本 3.4 或更高版本的增强中无法处理具有一个或多个复数形式的语言（例如中文、波兰语）的错误。 (#16318)
+  * 修复了导致 NVDA 挂起的错误。(#16393, #16394)
+  * 修复了在 Gmail 登录页面的输入控件中退格键无法正常使用的错误。(#16395)
+* 修复了启用“从其他应用程序获取键盘控制权”会导致退格键在 Nudi 6.1 中无法正常使用的错误。(#15822, @jcsteh)
+* 修复了在启用“鼠标移动时播放音频坐标”且应用程序处于睡眠模式的情况下仍然播放音频坐标的错误。(#8059, @hwf1324)
+* 修复了在 Adobe Reader 中，NVDA 会忽略 PDF 中公式对象的替代文本的错误。(#12715)
+* 修复了 NVDA 无法朗读 Geekbench 中的功能区和选项的错误。(#16251, @mzanm)
+* 修复了保存配置时可能导致无法保存所有配置文件的罕见情况。(#16343, @CyrilleB79)
+* 修复了在 Firefox 和基于 Chromium 的浏览器中，当定位在可编辑内容内的展示列表（ul / ol）中时，按 Enter 无法正确进入焦点模式的错误。(#16325)
+* 修复了在 Thunderbird 消息列表中选择列显示时，无法正确朗读列状态变化的错误。(#16323)
+* 修复了命令行参数 `-h`/`--help` 无法使用的问题。(#16522, @XLTechie)
+* 修复了在 Poedit 版本 3.4 或更高版本的增强中无法处理具有一个或多个复数形式的语言（例如中文、波兰语）的错误。(#16318)
 
 ### 开发者需要了解的变化
 
-请参考 [开发者指南](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API) 了解有关 NVDA API 弃用和移除流程的信息。
+请参考[开发者指南](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API)了解有关 NVDA API 弃用和移除流程的信息。
 
-* 为未知 Windows 版本（高于 10.0.22000，例如 10.0.25398）实例化 `winVersion.WinVersion` 对象时，返回“Windows 11 未知”而不是“Windows 10 未知”。 (#15992, @josephsl)
-* 通过在 appveyor.yml 中添加可配置变量以禁用或修改构建脚本的 NV Access 特定部分，使 AppVeyor 构建过程更容易用于 NVDA Fork。 (#16216, @XLTechie)
-* 添加了一份文档，解释了在 AppVeyor 上构建 NVDA Fork 的过程。 (#16293, @XLTechie)
+* 为未知 Windows 版本（高于 10.0.22000，例如 10.0.25398）实例化 `winVersion.WinVersion` 对象时，返回“Windows 11 未知”而不是“Windows 10 未知”。(#15992, @josephsl)
+* 通过在 appveyor.yml 中添加可配置变量以禁用或修改构建脚本的 NV Access 特定部分，使 AppVeyor 构建过程更容易用于 NVDA Fork。(#16216, @XLTechie)
+* 添加了一份文档，解释了在 AppVeyor 上构建 NVDA Fork 的过程。(#16293, @XLTechie)
 
 ## 2024.1
 
@@ -4939,4 +4939,3 @@ Major highlights of this release include support for 64 bit editions of Windows;
 * NVDA now asks if it should save configuration and restart if the user has just changed the language in the User Interface Settings Dialog. NVDA must be restarted for the language change to fully take effect.
 * If a synthesizer can not be loaded, when choosing it from the synthesizer dialog, a message box alerts the user to the fact.
 * When loading a synthesizer for the first time, NVDA lets the synthesizer choose the most suitable voice, rate and pitch parameters, rather than forcing it to defaults it thinks are ok. This fixes a problem where Eloquence and Viavoice sapi4 synths start speaking way too fast for the first time.
-
