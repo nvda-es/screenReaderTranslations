@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-02-13 14:35+0000\n"
+"POT-Creation-Date: 2024-05-27 16:26+0000\n"
 "PO-Revision-Date: 2021-05-13 21:07+0200\n"
 "Last-Translator: Iván Novegil Cancelas <ivan.novegil.cancelas@gmail.com>\n"
 "Language-Team: \n"
@@ -20,18 +20,6 @@ msgstr ""
 #, no-wrap
 msgid "[[!meta title=\"Console Toolkit\"]]\n"
 msgstr "[[!meta title=\"Console Toolkit\"]]\n"
-
-#. type: Bullet: '* '
-msgid "Author: Tony Malykh"
-msgstr "Autor: Tony Malykh"
-
-#. type: Bullet: '* '
-msgid "Download [stable version][1]"
-msgstr "Descargar [versión estable][1]"
-
-#. type: Bullet: '* '
-msgid "NVDA compatibility: 2019.3 and later"
-msgstr "Compatibilidade co NVDA: 2019.3 en diante"
 
 #. type: Plain text
 msgid ""
@@ -63,12 +51,21 @@ msgid "Downloads"
 msgstr "Descargas"
 
 #. type: Plain text
-msgid ""
-"[Console toolkit](https://github.com/mltony/nvda-console-toolkit/releases/"
-"latest/download/consoleToolkit.nvda-addon)"
+msgid "Install from add-on store."
 msgstr ""
-"[Console toolkit](https://github.com/mltony/nvda-console-toolkit/releases/"
-"latest/download/consoleToolkit.nvda-addon)"
+
+#. type: Title ##
+#, no-wrap
+msgid "Jump to the first visible line"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"Console toolkit overrides ``shift+numpad7` command in UIA consoles: instead "
+"of reading the first line in the entire buffer it now reads the first "
+"visible line at the top of the window. Press `shift+numpad7` twice to revert "
+"to the old behavior and read the first line of the buffer."
+msgstr ""
 
 #. type: Title ##
 #, no-wrap
@@ -151,139 +148,31 @@ msgstr ""
 "podería funcionar en shells de unix alternativas, mais non se probou."
 
 #. type: Plain text
-msgid "Here is how add-on extracts current command."
-msgstr "Aquí está como o complemento extrae a orde actual."
-
-#. type: Bullet: '1. '
+#, no-wrap
 msgid ""
-"It presses `End` key and then sends a control character, that is a rare "
-"Unicodecharacter not likely to be used anywhere."
+"Here is how add-on extracts current command.\n"
+"1. It presses `End` key and then sends a control character, that is a rare Unicodecharacter not likely to be used anywhere.\n"
+"2. Then it presses `home` key and sends another control character.\n"
+"3. Then it waits for control characters to appear on the screen, which might take some time on slow SSH connections.\n"
+"4. Command is what appears between two control characters.\n"
+"5. When \"Use UI Automation to access the Windows Console when available\" option is enabled in NVDA settings, it sends one more control character in the beginning of the string. This is needed to parse multiline commands correctly: UIA implementation trims whitespaces in the end of each line, so in order to deduce whether there is a space between two lines, we need to shift them by one character. Please note, however, that this way we don't preserve the number of spaces between words, we only guarantee to preserve the presence of spaces.\n"
+"6. Before editing add-on makes sure to remove control characters by placing cursor in the beginning and end and simulating `Delete` and `Backspace` key presses.\n"
+"7. It presents command in \"Edit prompt\" window for user to view or edit.\n"
+"8. After user presses `Enter` or `Escape`,it first erases current line in the console.  This is achieved via one of four methods, the choice of the method is configurable. Currently four methods are supported:\n"
+"    - `Control+C`: works in both `cmd.exe` and `bash`, but leaves previous prompt visible on the screen; doesn't work in emacs; sometimes unreliable on slow SSH connections\n"
+"    - `Escape`: works only in `cmd.exe`\"),\n"
+"    - `Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd.exe`\n"
+"    - `Backspace` (recommended): works in all environments; however slower and may cause corruption if the length of the line has changed\n"
+"9. Then add-on simulates keystrokes to type the updated command and optionally simulates `Enter` key press.\n"
 msgstr ""
-"Preme a tecla `fin` e envía un carácter de control, que é un carácterUnicode "
-"raro que probablemente non se utilice en ningures."
-
-#. type: Bullet: '2. '
-msgid "Then it presses `home` key and sends another control character."
-msgstr "Despois preme a tecla `inicio` e envía outro carácter de control."
-
-#. type: Bullet: '3. '
-msgid ""
-"Then it waits for control characters to appear on the screen, which might "
-"take some time on slow SSH connections."
-msgstr ""
-"Despois agarda a que o carácter de control apareza na pantalla, que podería "
-"levar algún tempo en conexións SSH lentas."
-
-#. type: Bullet: '4. '
-msgid "Command is what appears between two control characters."
-msgstr "A orde é o que aparece entre os dous caracteres de control."
-
-#. type: Bullet: '5. '
-msgid ""
-"When \"Use UI Automation to access the Windows Console when available\" "
-"option is enabled in NVDA settings, it sends one more control character in "
-"the beginning of the string. This is needed to parse multiline commands "
-"correctly: UIA implementation trims whitespaces in the end of each line, so "
-"in order to deduce whether there is a space between two lines, we need to "
-"shift them by one character. Please note, however, that this way we don't "
-"preserve the number of spaces between words, we only guarantee to preserve "
-"the presence of spaces."
-msgstr ""
-"Cando está habilitada a opción \"Usar UI Automation para acesar á Consola de "
-"Windows cando estea dispoñible\" nas opcións do NVDA, envía outro carácter "
-"de control máis ao comezo da cadea. Isto requírese para codificar "
-"correctamente ordes multiliña: a implementación de UIA recorta espazos en "
-"branco ó final de cada liña, de xeito que para deducir se hai un espazo "
-"entre dúas liñas, neceistamos velo mediante un carácter. Ten en conta, non "
-"obstante, que deste xeito non preservamos o número de espazos entre "
-"palabras, só garantimos a presenza de espazos."
-
-#. type: Bullet: '6. '
-msgid ""
-"Before editing add-on makes sure to remove control characters by placing "
-"cursor in the beginning and end and simulating `Delete` and `Backspace` key "
-"presses."
-msgstr ""
-"Antes de editar o complemento asegúrase de eliminar os caracteres de control "
-"colocando o cursor no comezo e final e simulando a pulsación das teclas "
-"`suprimir` e `retroceso`."
-
-#. type: Bullet: '7. '
-msgid "It presents command in \"Edit prompt\" window for user to view or edit."
-msgstr ""
-"Presenta a orde na ventá \"edit prompt\" para que o usuario o vexa ou edite."
-
-#. type: Bullet: '8. '
-msgid ""
-"After user presses `Enter` or `Escape`,it first erases current line in the "
-"console.  This is achieved via one of four methods, the choice of the method "
-"is configurable. Currently four methods are supported:"
-msgstr ""
-"Unha vez o usuario prema `Intro` ou `Escape`, primeiro borra a liña actual "
-"na consola. Isto conséguese mediante un método dos catro dispoñibles, a "
-"escolla é configurable. Actualmente sopórtanse catro métodos:"
-
-#. type: Bullet: '    * '
-msgid ""
-"`Control+C`: works in both `cmd.exe` and `bash`, but leaves previous prompt "
-"visible on the screen; doesn't work in emacs; sometimes unreliable on slow "
-"SSH connections"
-msgstr ""
-"`Control+C`: funciona tanto en `cmd.exe` como en `bash`, pero deixa a "
-"instrución anterior visible na pantalla; non funciona en emacs; pouco "
-"confiable en ocasións en conexións SSH lentas"
-
-#. type: Bullet: '    * '
-msgid "`Escape`: works only in `cmd.exe`\"),"
-msgstr "`Escape`: só funciona en `cmd.exe`\"),"
-
-#. type: Bullet: '    * '
-msgid ""
-"`Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd.exe`"
-msgstr ""
-"`Control+A Control+K`: funciona en `bash` e `emacs`; non funciona en `cmd."
-"exe`"
-
-#. type: Bullet: '    * '
-msgid ""
-"`Backspace` (recommended): works in all environments; however slower and may "
-"cause corruption if the length of the line has changed"
-msgstr ""
-"`Retroceso` (recomendado): funciona en todos os entornos; pero é máis lento "
-"e podería causar corrupción se cambia a lonxitude da liña"
-
-#. type: Bullet: '9. '
-msgid ""
-"Then add-on simulates keystrokes to type the updated command and optionally "
-"simulates `Enter` key press."
-msgstr ""
-"Despois o complemento simula pulsacións de teclas para introducir a orde "
-"actualizada e opcionalmente simula a pulsación da tecla `Intro`."
 
 #. type: Plain text
-msgid "Troubleshooting:"
-msgstr "Solución de erros:"
-
-#. type: Bullet: '* '
 msgid ""
-"Verify that 'Home', 'End', 'Delete' and 'Backspace' keys work as expected in "
-"your console."
+"Troubleshooting: - Verify that 'Home', 'End', 'Delete' and 'Backspace' keys "
+"work as expected in your console.  - Verify that your console supports "
+"Unicode characters. Some ssh connections don't support Unicode.  - Verify "
+"that selected deleting method works in your console."
 msgstr ""
-"Verifica que as teclas 'Inicio', 'Fin', 'suprimir' e 'Retroceso' funcionan "
-"como se espera na túa consola."
-
-#. type: Bullet: '* '
-msgid ""
-"Verify that your console supports Unicode characters. Some ssh connections "
-"don't support Unicode."
-msgstr ""
-"Verifica que a túa consola soporte caracteres Unicode. Algunhas conexións "
-"ssh non soportan Unicode."
-
-#. type: Bullet: '* '
-msgid "Verify that selected deleting method works in your console."
-msgstr ""
-"Verifica que o método de eliminación seleccionado funciona na túa consola."
 
 #. type: Title ##
 #, no-wrap
@@ -373,23 +262,19 @@ msgid "to get rid of status line, or modify your `tmux.conf` file."
 msgstr ""
 "para librarte da liña de estado, ou modifica o teu arquivo `tmux.conf`."
 
-#. type: Bullet: '* '
+#. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "After a failed output capturing attempt, press `UpArrow` in the console "
+#| "to check what command has actually been executed."
 msgid ""
-"After a failed output capturing attempt, press `UpArrow` in the console to "
-"check what command has actually been executed."
+"Troubleshooting: - After a failed output capturing attempt, press `UpArrow` "
+"in the console to check what command has actually been executed.  - Revert "
+"back to default capturing suffix, mentioned above.  - Try troubleshooting "
+"steps from \"command prompt editing\" section."
 msgstr ""
 "Tras un intento de captura fallido, preme `frecha arriba` na consola para "
 "comprobar que orde se executou realmente."
-
-#. type: Bullet: '* '
-msgid "Revert back to default capturing suffix, mentioned above."
-msgstr "Revirte ao sufixo de captura por defecto, mencionado arriba."
-
-#. type: Bullet: '* '
-msgid "Try troubleshooting steps from \"command prompt editing\" section."
-msgstr ""
-"Proba cos pasos de solución de problemas da sección \"edición da liña de "
-"ordes\"."
 
 #. type: Plain text
 #, no-wrap
@@ -402,3 +287,148 @@ msgstr "[[!tag dev stable]]\n"
 #| "[1]: https://addons.nvda-project.org/files/get.php?file=consoletoolkit"
 msgid "[1]: https://www.nvaccess.org/addonStore/legacy?file=consoletoolkit"
 msgstr "[1]: https://addons.nvda-project.org/files/get.php?file=consoletoolkit"
+
+#~ msgid "Author: Tony Malykh"
+#~ msgstr "Autor: Tony Malykh"
+
+#~ msgid "Download [stable version][1]"
+#~ msgstr "Descargar [versión estable][1]"
+
+#~ msgid "NVDA compatibility: 2019.3 and later"
+#~ msgstr "Compatibilidade co NVDA: 2019.3 en diante"
+
+#~ msgid ""
+#~ "[Console toolkit](https://github.com/mltony/nvda-console-toolkit/releases/"
+#~ "latest/download/consoleToolkit.nvda-addon)"
+#~ msgstr ""
+#~ "[Console toolkit](https://github.com/mltony/nvda-console-toolkit/releases/"
+#~ "latest/download/consoleToolkit.nvda-addon)"
+
+#~ msgid "Here is how add-on extracts current command."
+#~ msgstr "Aquí está como o complemento extrae a orde actual."
+
+#~ msgid ""
+#~ "It presses `End` key and then sends a control character, that is a rare "
+#~ "Unicodecharacter not likely to be used anywhere."
+#~ msgstr ""
+#~ "Preme a tecla `fin` e envía un carácter de control, que é un "
+#~ "carácterUnicode raro que probablemente non se utilice en ningures."
+
+#~ msgid "Then it presses `home` key and sends another control character."
+#~ msgstr "Despois preme a tecla `inicio` e envía outro carácter de control."
+
+#~ msgid ""
+#~ "Then it waits for control characters to appear on the screen, which might "
+#~ "take some time on slow SSH connections."
+#~ msgstr ""
+#~ "Despois agarda a que o carácter de control apareza na pantalla, que "
+#~ "podería levar algún tempo en conexións SSH lentas."
+
+#~ msgid "Command is what appears between two control characters."
+#~ msgstr "A orde é o que aparece entre os dous caracteres de control."
+
+#~ msgid ""
+#~ "When \"Use UI Automation to access the Windows Console when available\" "
+#~ "option is enabled in NVDA settings, it sends one more control character "
+#~ "in the beginning of the string. This is needed to parse multiline "
+#~ "commands correctly: UIA implementation trims whitespaces in the end of "
+#~ "each line, so in order to deduce whether there is a space between two "
+#~ "lines, we need to shift them by one character. Please note, however, that "
+#~ "this way we don't preserve the number of spaces between words, we only "
+#~ "guarantee to preserve the presence of spaces."
+#~ msgstr ""
+#~ "Cando está habilitada a opción \"Usar UI Automation para acesar á Consola "
+#~ "de Windows cando estea dispoñible\" nas opcións do NVDA, envía outro "
+#~ "carácter de control máis ao comezo da cadea. Isto requírese para "
+#~ "codificar correctamente ordes multiliña: a implementación de UIA recorta "
+#~ "espazos en branco ó final de cada liña, de xeito que para deducir se hai "
+#~ "un espazo entre dúas liñas, neceistamos velo mediante un carácter. Ten en "
+#~ "conta, non obstante, que deste xeito non preservamos o número de espazos "
+#~ "entre palabras, só garantimos a presenza de espazos."
+
+#~ msgid ""
+#~ "Before editing add-on makes sure to remove control characters by placing "
+#~ "cursor in the beginning and end and simulating `Delete` and `Backspace` "
+#~ "key presses."
+#~ msgstr ""
+#~ "Antes de editar o complemento asegúrase de eliminar os caracteres de "
+#~ "control colocando o cursor no comezo e final e simulando a pulsación das "
+#~ "teclas `suprimir` e `retroceso`."
+
+#~ msgid ""
+#~ "It presents command in \"Edit prompt\" window for user to view or edit."
+#~ msgstr ""
+#~ "Presenta a orde na ventá \"edit prompt\" para que o usuario o vexa ou "
+#~ "edite."
+
+#~ msgid ""
+#~ "After user presses `Enter` or `Escape`,it first erases current line in "
+#~ "the console.  This is achieved via one of four methods, the choice of the "
+#~ "method is configurable. Currently four methods are supported:"
+#~ msgstr ""
+#~ "Unha vez o usuario prema `Intro` ou `Escape`, primeiro borra a liña "
+#~ "actual na consola. Isto conséguese mediante un método dos catro "
+#~ "dispoñibles, a escolla é configurable. Actualmente sopórtanse catro "
+#~ "métodos:"
+
+#~ msgid ""
+#~ "`Control+C`: works in both `cmd.exe` and `bash`, but leaves previous "
+#~ "prompt visible on the screen; doesn't work in emacs; sometimes unreliable "
+#~ "on slow SSH connections"
+#~ msgstr ""
+#~ "`Control+C`: funciona tanto en `cmd.exe` como en `bash`, pero deixa a "
+#~ "instrución anterior visible na pantalla; non funciona en emacs; pouco "
+#~ "confiable en ocasións en conexións SSH lentas"
+
+#~ msgid "`Escape`: works only in `cmd.exe`\"),"
+#~ msgstr "`Escape`: só funciona en `cmd.exe`\"),"
+
+#~ msgid ""
+#~ "`Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd."
+#~ "exe`"
+#~ msgstr ""
+#~ "`Control+A Control+K`: funciona en `bash` e `emacs`; non funciona en `cmd."
+#~ "exe`"
+
+#~ msgid ""
+#~ "`Backspace` (recommended): works in all environments; however slower and "
+#~ "may cause corruption if the length of the line has changed"
+#~ msgstr ""
+#~ "`Retroceso` (recomendado): funciona en todos os entornos; pero é máis "
+#~ "lento e podería causar corrupción se cambia a lonxitude da liña"
+
+#~ msgid ""
+#~ "Then add-on simulates keystrokes to type the updated command and "
+#~ "optionally simulates `Enter` key press."
+#~ msgstr ""
+#~ "Despois o complemento simula pulsacións de teclas para introducir a orde "
+#~ "actualizada e opcionalmente simula a pulsación da tecla `Intro`."
+
+#~ msgid "Troubleshooting:"
+#~ msgstr "Solución de erros:"
+
+#~ msgid ""
+#~ "Verify that 'Home', 'End', 'Delete' and 'Backspace' keys work as expected "
+#~ "in your console."
+#~ msgstr ""
+#~ "Verifica que as teclas 'Inicio', 'Fin', 'suprimir' e 'Retroceso' "
+#~ "funcionan como se espera na túa consola."
+
+#~ msgid ""
+#~ "Verify that your console supports Unicode characters. Some ssh "
+#~ "connections don't support Unicode."
+#~ msgstr ""
+#~ "Verifica que a túa consola soporte caracteres Unicode. Algunhas conexións "
+#~ "ssh non soportan Unicode."
+
+#~ msgid "Verify that selected deleting method works in your console."
+#~ msgstr ""
+#~ "Verifica que o método de eliminación seleccionado funciona na túa consola."
+
+#~ msgid "Revert back to default capturing suffix, mentioned above."
+#~ msgstr "Revirte ao sufixo de captura por defecto, mencionado arriba."
+
+#~ msgid "Try troubleshooting steps from \"command prompt editing\" section."
+#~ msgstr ""
+#~ "Proba cos pasos de solución de problemas da sección \"edición da liña de "
+#~ "ordes\"."

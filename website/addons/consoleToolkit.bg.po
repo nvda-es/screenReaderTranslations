@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-02-13 14:35+0000\n"
+"POT-Creation-Date: 2024-05-27 16:26+0000\n"
 "PO-Revision-Date: 2024-05-24 15:49+0300\n"
 "Last-Translator: Kostadin Kolev <k.kolev1985@gmail.com>\n"
 "Language-Team: \n"
@@ -20,18 +20,6 @@ msgstr ""
 #, no-wrap
 msgid "[[!meta title=\"Console Toolkit\"]]\n"
 msgstr "[[!meta title=\"Инструментариум за конзоли (Console Toolkit)\"]]\n"
-
-#. type: Bullet: '* '
-msgid "Author: Tony Malykh"
-msgstr "Автор: Tony Malykh"
-
-#. type: Bullet: '* '
-msgid "Download [stable version][1]"
-msgstr "Изтегляне на [стабилна версия][1]"
-
-#. type: Bullet: '* '
-msgid "NVDA compatibility: 2019.3 and later"
-msgstr "Съвместимост с NVDA: от 2019.3 и по-нови"
 
 #. type: Plain text
 msgid ""
@@ -63,12 +51,21 @@ msgid "Downloads"
 msgstr "Изтегляния"
 
 #. type: Plain text
-msgid ""
-"[Console toolkit](https://github.com/mltony/nvda-console-toolkit/releases/"
-"latest/download/consoleToolkit.nvda-addon)"
+msgid "Install from add-on store."
 msgstr ""
-"[Инструментариум за конзоли](https://github.com/mltony/nvda-console-toolkit/"
-"releases/latest/download/consoleToolkit.nvda-addon)"
+
+#. type: Title ##
+#, no-wrap
+msgid "Jump to the first visible line"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"Console toolkit overrides ``shift+numpad7` command in UIA consoles: instead "
+"of reading the first line in the entire buffer it now reads the first "
+"visible line at the top of the window. Press `shift+numpad7` twice to revert "
+"to the old behavior and read the first line of the buffer."
+msgstr ""
 
 #. type: Title ##
 #, no-wrap
@@ -153,142 +150,31 @@ msgstr ""
 "алтернативни среди на Unix, но не е тествано."
 
 #. type: Plain text
-msgid "Here is how add-on extracts current command."
-msgstr "Ето как добавката извлича текущата команда."
-
-#. type: Bullet: '1. '
+#, no-wrap
 msgid ""
-"It presses `End` key and then sends a control character, that is a rare "
-"Unicodecharacter not likely to be used anywhere."
+"Here is how add-on extracts current command.\n"
+"1. It presses `End` key and then sends a control character, that is a rare Unicodecharacter not likely to be used anywhere.\n"
+"2. Then it presses `home` key and sends another control character.\n"
+"3. Then it waits for control characters to appear on the screen, which might take some time on slow SSH connections.\n"
+"4. Command is what appears between two control characters.\n"
+"5. When \"Use UI Automation to access the Windows Console when available\" option is enabled in NVDA settings, it sends one more control character in the beginning of the string. This is needed to parse multiline commands correctly: UIA implementation trims whitespaces in the end of each line, so in order to deduce whether there is a space between two lines, we need to shift them by one character. Please note, however, that this way we don't preserve the number of spaces between words, we only guarantee to preserve the presence of spaces.\n"
+"6. Before editing add-on makes sure to remove control characters by placing cursor in the beginning and end and simulating `Delete` and `Backspace` key presses.\n"
+"7. It presents command in \"Edit prompt\" window for user to view or edit.\n"
+"8. After user presses `Enter` or `Escape`,it first erases current line in the console.  This is achieved via one of four methods, the choice of the method is configurable. Currently four methods are supported:\n"
+"    - `Control+C`: works in both `cmd.exe` and `bash`, but leaves previous prompt visible on the screen; doesn't work in emacs; sometimes unreliable on slow SSH connections\n"
+"    - `Escape`: works only in `cmd.exe`\"),\n"
+"    - `Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd.exe`\n"
+"    - `Backspace` (recommended): works in all environments; however slower and may cause corruption if the length of the line has changed\n"
+"9. Then add-on simulates keystrokes to type the updated command and optionally simulates `Enter` key press.\n"
 msgstr ""
-"Симулира натискане на клавиша End и след това подава контролен знак, който е "
-"рядък Уникод знак, който е слабо вероятно да се използва някъде."
-
-#. type: Bullet: '2. '
-msgid "Then it presses `home` key and sends another control character."
-msgstr ""
-"След това симулира натискане на клавиша Home и подава друг контролен знак."
-
-#. type: Bullet: '3. '
-msgid ""
-"Then it waits for control characters to appear on the screen, which might "
-"take some time on slow SSH connections."
-msgstr ""
-"След това изчаква контролните символи да се появят на екрана, което при "
-"бавни SSH връзки може да отнеме известно време."
-
-#. type: Bullet: '4. '
-msgid "Command is what appears between two control characters."
-msgstr "Командата е това, което се появява между двата контролни знака."
-
-#. type: Bullet: '5. '
-msgid ""
-"When \"Use UI Automation to access the Windows Console when available\" "
-"option is enabled in NVDA settings, it sends one more control character in "
-"the beginning of the string. This is needed to parse multiline commands "
-"correctly: UIA implementation trims whitespaces in the end of each line, so "
-"in order to deduce whether there is a space between two lines, we need to "
-"shift them by one character. Please note, however, that this way we don't "
-"preserve the number of spaces between words, we only guarantee to preserve "
-"the presence of spaces."
-msgstr ""
-"Когато опцията \"Използвай UI Automation за получаване на достъп до "
-"конзолата на Windows, когато е налично\" е включена в настройките на NVDA, "
-"добавката изпраща още един контролен знак в началото на низа. Това е "
-"необходимо, за да се анализират правилно многоредовите команди: внедряването "
-"на UIA премахва интервалите в края на всеки ред, така че за да се установи "
-"дали има интервал между два реда, трябва да бъдат изместени с един символ. "
-"Моля, имайте предвид обаче, че по този начин не се запазва броя на "
-"интервалите между думите – само се гарантира, че се запазва наличието на "
-"интервали."
-
-#. type: Bullet: '6. '
-msgid ""
-"Before editing add-on makes sure to remove control characters by placing "
-"cursor in the beginning and end and simulating `Delete` and `Backspace` key "
-"presses."
-msgstr ""
-"Преди редактирането, добавката се уверява, че са премахнати контролните "
-"знаци, като поставя курсора в началото и края и симурира натискане на "
-"клавишите Delete и Backspace."
-
-#. type: Bullet: '7. '
-msgid "It presents command in \"Edit prompt\" window for user to view or edit."
-msgstr ""
-"Добавката извежда командата в прозореца \"Редактиране на ред\", от където "
-"потребителят може да я прегледа и редактира."
-
-#. type: Bullet: '8. '
-msgid ""
-"After user presses `Enter` or `Escape`,it first erases current line in the "
-"console.  This is achieved via one of four methods, the choice of the method "
-"is configurable. Currently four methods are supported:"
-msgstr ""
-"След като потребителят натисне Enter или Escape, добавката първо изтрива "
-"текущия ред в конзолата. Това се постига чрез един от четири метода, от "
-"които потребителят може да избира желаният от него. В Към момента се "
-"поддържат следните методи:"
-
-#. type: Bullet: '    * '
-msgid ""
-"`Control+C`: works in both `cmd.exe` and `bash`, but leaves previous prompt "
-"visible on the screen; doesn't work in emacs; sometimes unreliable on slow "
-"SSH connections"
-msgstr ""
-"Control+C: Работи и в \"cmd.exe\", и в \"BASH\", но оставя предишния ред да "
-"се вижда на екрана. Не работи в emacs. Понякога е ненадежден при бавни SSH "
-"връзки"
-
-#. type: Bullet: '    * '
-msgid "`Escape`: works only in `cmd.exe`\"),"
-msgstr "Escape: Работи само в \"cmd.exe\"\"),"
-
-#. type: Bullet: '    * '
-msgid ""
-"`Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd.exe`"
-msgstr ""
-"Control+A, Control+K: Работи в \"BASH\" и \"emacs\". Не работи в \"cmd.exe\""
-
-#. type: Bullet: '    * '
-msgid ""
-"`Backspace` (recommended): works in all environments; however slower and may "
-"cause corruption if the length of the line has changed"
-msgstr ""
-"Backspace (препоръчително): Работи във всякаква среда. Но е по-бавно и може "
-"да причини повреда, ако дължината на реда се промени"
-
-#. type: Bullet: '9. '
-msgid ""
-"Then add-on simulates keystrokes to type the updated command and optionally "
-"simulates `Enter` key press."
-msgstr ""
-"След това добавката симулира натискания на клавиши за въвеждане на "
-"актуализираната команда и по избор симулира натискане на клавиша Enter."
 
 #. type: Plain text
-msgid "Troubleshooting:"
-msgstr "Отстраняване на неизправности:"
-
-#. type: Bullet: '* '
 msgid ""
-"Verify that 'Home', 'End', 'Delete' and 'Backspace' keys work as expected in "
-"your console."
+"Troubleshooting: - Verify that 'Home', 'End', 'Delete' and 'Backspace' keys "
+"work as expected in your console.  - Verify that your console supports "
+"Unicode characters. Some ssh connections don't support Unicode.  - Verify "
+"that selected deleting method works in your console."
 msgstr ""
-"Уверете се, че при вас клавишите Home, End, Delete и Backspace работят както "
-"се очаква в конзолата."
-
-#. type: Bullet: '* '
-msgid ""
-"Verify that your console supports Unicode characters. Some ssh connections "
-"don't support Unicode."
-msgstr ""
-"Уверете се, че при вас конзолата поддържа Уникод символи. Някои SSH връзки "
-"не поддържат Уникод."
-
-#. type: Bullet: '* '
-msgid "Verify that selected deleting method works in your console."
-msgstr ""
-"Уверете се, че при вас избраният метод за изтриване работи в конзолата."
 
 #. type: Title ##
 #, no-wrap
@@ -383,24 +269,19 @@ msgstr ""
 "за да премахнете лентата на състоянието. Или редактирайте файла \"tmux."
 "conf\"."
 
-#. type: Bullet: '* '
+#. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "After a failed output capturing attempt, press `UpArrow` in the console "
+#| "to check what command has actually been executed."
 msgid ""
-"After a failed output capturing attempt, press `UpArrow` in the console to "
-"check what command has actually been executed."
+"Troubleshooting: - After a failed output capturing attempt, press `UpArrow` "
+"in the console to check what command has actually been executed.  - Revert "
+"back to default capturing suffix, mentioned above.  - Try troubleshooting "
+"steps from \"command prompt editing\" section."
 msgstr ""
 "След неуспешен опит за прихващане на изходната информация, натиснете стрелка "
 "нагоре в конзолата, за да проверите каква команда е изпълнена всъщност."
-
-#. type: Bullet: '* '
-msgid "Revert back to default capturing suffix, mentioned above."
-msgstr ""
-"Връщане към наставката по подразбиране за прихващане, спомената по-горе."
-
-#. type: Bullet: '* '
-msgid "Try troubleshooting steps from \"command prompt editing\" section."
-msgstr ""
-"Опитайте стъпките за отстраняване на неизправности от раздела \"Редактиране "
-"на команден ред\"."
 
 #. type: Plain text
 #, no-wrap
@@ -408,7 +289,153 @@ msgid "[[!tag dev stable]]\n"
 msgstr "[[!tag dev stable]]\n"
 
 #. type: Plain text
-#| msgid ""
-#| "[1]: https://addons.nvda-project.org/files/get.php?file=consoletoolkit"
 msgid "[1]: https://www.nvaccess.org/addonStore/legacy?file=consoletoolkit"
 msgstr "[1]: https://www.nvaccess.org/addonStore/legacy?file=consoletoolkit"
+
+#~ msgid "Author: Tony Malykh"
+#~ msgstr "Автор: Tony Malykh"
+
+#~ msgid "Download [stable version][1]"
+#~ msgstr "Изтегляне на [стабилна версия][1]"
+
+#~ msgid "NVDA compatibility: 2019.3 and later"
+#~ msgstr "Съвместимост с NVDA: от 2019.3 и по-нови"
+
+#~ msgid ""
+#~ "[Console toolkit](https://github.com/mltony/nvda-console-toolkit/releases/"
+#~ "latest/download/consoleToolkit.nvda-addon)"
+#~ msgstr ""
+#~ "[Инструментариум за конзоли](https://github.com/mltony/nvda-console-"
+#~ "toolkit/releases/latest/download/consoleToolkit.nvda-addon)"
+
+#~ msgid "Here is how add-on extracts current command."
+#~ msgstr "Ето как добавката извлича текущата команда."
+
+#~ msgid ""
+#~ "It presses `End` key and then sends a control character, that is a rare "
+#~ "Unicodecharacter not likely to be used anywhere."
+#~ msgstr ""
+#~ "Симулира натискане на клавиша End и след това подава контролен знак, "
+#~ "който е рядък Уникод знак, който е слабо вероятно да се използва някъде."
+
+#~ msgid "Then it presses `home` key and sends another control character."
+#~ msgstr ""
+#~ "След това симулира натискане на клавиша Home и подава друг контролен знак."
+
+#~ msgid ""
+#~ "Then it waits for control characters to appear on the screen, which might "
+#~ "take some time on slow SSH connections."
+#~ msgstr ""
+#~ "След това изчаква контролните символи да се появят на екрана, което при "
+#~ "бавни SSH връзки може да отнеме известно време."
+
+#~ msgid "Command is what appears between two control characters."
+#~ msgstr "Командата е това, което се появява между двата контролни знака."
+
+#~ msgid ""
+#~ "When \"Use UI Automation to access the Windows Console when available\" "
+#~ "option is enabled in NVDA settings, it sends one more control character "
+#~ "in the beginning of the string. This is needed to parse multiline "
+#~ "commands correctly: UIA implementation trims whitespaces in the end of "
+#~ "each line, so in order to deduce whether there is a space between two "
+#~ "lines, we need to shift them by one character. Please note, however, that "
+#~ "this way we don't preserve the number of spaces between words, we only "
+#~ "guarantee to preserve the presence of spaces."
+#~ msgstr ""
+#~ "Когато опцията \"Използвай UI Automation за получаване на достъп до "
+#~ "конзолата на Windows, когато е налично\" е включена в настройките на "
+#~ "NVDA, добавката изпраща още един контролен знак в началото на низа. Това "
+#~ "е необходимо, за да се анализират правилно многоредовите команди: "
+#~ "внедряването на UIA премахва интервалите в края на всеки ред, така че за "
+#~ "да се установи дали има интервал между два реда, трябва да бъдат "
+#~ "изместени с един символ. Моля, имайте предвид обаче, че по този начин не "
+#~ "се запазва броя на интервалите между думите – само се гарантира, че се "
+#~ "запазва наличието на интервали."
+
+#~ msgid ""
+#~ "Before editing add-on makes sure to remove control characters by placing "
+#~ "cursor in the beginning and end and simulating `Delete` and `Backspace` "
+#~ "key presses."
+#~ msgstr ""
+#~ "Преди редактирането, добавката се уверява, че са премахнати контролните "
+#~ "знаци, като поставя курсора в началото и края и симурира натискане на "
+#~ "клавишите Delete и Backspace."
+
+#~ msgid ""
+#~ "It presents command in \"Edit prompt\" window for user to view or edit."
+#~ msgstr ""
+#~ "Добавката извежда командата в прозореца \"Редактиране на ред\", от където "
+#~ "потребителят може да я прегледа и редактира."
+
+#~ msgid ""
+#~ "After user presses `Enter` or `Escape`,it first erases current line in "
+#~ "the console.  This is achieved via one of four methods, the choice of the "
+#~ "method is configurable. Currently four methods are supported:"
+#~ msgstr ""
+#~ "След като потребителят натисне Enter или Escape, добавката първо изтрива "
+#~ "текущия ред в конзолата. Това се постига чрез един от четири метода, от "
+#~ "които потребителят може да избира желаният от него. В Към момента се "
+#~ "поддържат следните методи:"
+
+#~ msgid ""
+#~ "`Control+C`: works in both `cmd.exe` and `bash`, but leaves previous "
+#~ "prompt visible on the screen; doesn't work in emacs; sometimes unreliable "
+#~ "on slow SSH connections"
+#~ msgstr ""
+#~ "Control+C: Работи и в \"cmd.exe\", и в \"BASH\", но оставя предишния ред "
+#~ "да се вижда на екрана. Не работи в emacs. Понякога е ненадежден при бавни "
+#~ "SSH връзки"
+
+#~ msgid "`Escape`: works only in `cmd.exe`\"),"
+#~ msgstr "Escape: Работи само в \"cmd.exe\"\"),"
+
+#~ msgid ""
+#~ "`Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd."
+#~ "exe`"
+#~ msgstr ""
+#~ "Control+A, Control+K: Работи в \"BASH\" и \"emacs\". Не работи в \"cmd."
+#~ "exe\""
+
+#~ msgid ""
+#~ "`Backspace` (recommended): works in all environments; however slower and "
+#~ "may cause corruption if the length of the line has changed"
+#~ msgstr ""
+#~ "Backspace (препоръчително): Работи във всякаква среда. Но е по-бавно и "
+#~ "може да причини повреда, ако дължината на реда се промени"
+
+#~ msgid ""
+#~ "Then add-on simulates keystrokes to type the updated command and "
+#~ "optionally simulates `Enter` key press."
+#~ msgstr ""
+#~ "След това добавката симулира натискания на клавиши за въвеждане на "
+#~ "актуализираната команда и по избор симулира натискане на клавиша Enter."
+
+#~ msgid "Troubleshooting:"
+#~ msgstr "Отстраняване на неизправности:"
+
+#~ msgid ""
+#~ "Verify that 'Home', 'End', 'Delete' and 'Backspace' keys work as expected "
+#~ "in your console."
+#~ msgstr ""
+#~ "Уверете се, че при вас клавишите Home, End, Delete и Backspace работят "
+#~ "както се очаква в конзолата."
+
+#~ msgid ""
+#~ "Verify that your console supports Unicode characters. Some ssh "
+#~ "connections don't support Unicode."
+#~ msgstr ""
+#~ "Уверете се, че при вас конзолата поддържа Уникод символи. Някои SSH "
+#~ "връзки не поддържат Уникод."
+
+#~ msgid "Verify that selected deleting method works in your console."
+#~ msgstr ""
+#~ "Уверете се, че при вас избраният метод за изтриване работи в конзолата."
+
+#~ msgid "Revert back to default capturing suffix, mentioned above."
+#~ msgstr ""
+#~ "Връщане към наставката по подразбиране за прихващане, спомената по-горе."
+
+#~ msgid "Try troubleshooting steps from \"command prompt editing\" section."
+#~ msgstr ""
+#~ "Опитайте стъпките за отстраняване на неизправности от раздела "
+#~ "\"Редактиране на команден ред\"."

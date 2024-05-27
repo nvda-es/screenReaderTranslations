@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-02-13 14:35+0000\n"
+"POT-Creation-Date: 2024-05-27 16:26+0000\n"
 "PO-Revision-Date: 2022-07-25 15:49+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,18 +20,6 @@ msgstr ""
 #, no-wrap
 msgid "[[!meta title=\"Console Toolkit\"]]\n"
 msgstr ""
-
-#. type: Bullet: '* '
-msgid "Author: Tony Malykh"
-msgstr "作者: Tony Malykh"
-
-#. type: Bullet: '* '
-msgid "Download [stable version][1]"
-msgstr "ダウンロード [安定版][1]"
-
-#. type: Bullet: '* '
-msgid "NVDA compatibility: 2019.3 and later"
-msgstr "NVDA 互換性: 2019.3 以降"
 
 #. type: Plain text
 msgid ""
@@ -63,9 +51,20 @@ msgid "Downloads"
 msgstr "ダウンロード"
 
 #. type: Plain text
+msgid "Install from add-on store."
+msgstr ""
+
+#. type: Title ##
+#, no-wrap
+msgid "Jump to the first visible line"
+msgstr ""
+
+#. type: Plain text
 msgid ""
-"[Console toolkit](https://github.com/mltony/nvda-console-toolkit/releases/"
-"latest/download/consoleToolkit.nvda-addon)"
+"Console toolkit overrides ``shift+numpad7` command in UIA consoles: instead "
+"of reading the first line in the entire buffer it now reads the first "
+"visible line at the top of the window. Press `shift+numpad7` twice to revert "
+"to the old behavior and read the first line of the buffer."
 msgstr ""
 
 #. type: Title ##
@@ -147,137 +146,31 @@ msgstr ""
 "が、テストはしていません。"
 
 #. type: Plain text
-msgid "Here is how add-on extracts current command."
-msgstr "以下は、アドオンがどのように現在のコマンドを抽出するかです。"
-
-#. type: Bullet: '1. '
+#, no-wrap
 msgid ""
-"It presses `End` key and then sends a control character, that is a rare "
-"Unicodecharacter not likely to be used anywhere."
+"Here is how add-on extracts current command.\n"
+"1. It presses `End` key and then sends a control character, that is a rare Unicodecharacter not likely to be used anywhere.\n"
+"2. Then it presses `home` key and sends another control character.\n"
+"3. Then it waits for control characters to appear on the screen, which might take some time on slow SSH connections.\n"
+"4. Command is what appears between two control characters.\n"
+"5. When \"Use UI Automation to access the Windows Console when available\" option is enabled in NVDA settings, it sends one more control character in the beginning of the string. This is needed to parse multiline commands correctly: UIA implementation trims whitespaces in the end of each line, so in order to deduce whether there is a space between two lines, we need to shift them by one character. Please note, however, that this way we don't preserve the number of spaces between words, we only guarantee to preserve the presence of spaces.\n"
+"6. Before editing add-on makes sure to remove control characters by placing cursor in the beginning and end and simulating `Delete` and `Backspace` key presses.\n"
+"7. It presents command in \"Edit prompt\" window for user to view or edit.\n"
+"8. After user presses `Enter` or `Escape`,it first erases current line in the console.  This is achieved via one of four methods, the choice of the method is configurable. Currently four methods are supported:\n"
+"    - `Control+C`: works in both `cmd.exe` and `bash`, but leaves previous prompt visible on the screen; doesn't work in emacs; sometimes unreliable on slow SSH connections\n"
+"    - `Escape`: works only in `cmd.exe`\"),\n"
+"    - `Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd.exe`\n"
+"    - `Backspace` (recommended): works in all environments; however slower and may cause corruption if the length of the line has changed\n"
+"9. Then add-on simulates keystrokes to type the updated command and optionally simulates `Enter` key press.\n"
 msgstr ""
-"`End`キーを押すとコントロール文字を送信します。使われることがなさそうなまれな"
-"ユニコード文字だからです。"
-
-#. type: Bullet: '2. '
-msgid "Then it presses `home` key and sends another control character."
-msgstr "そして、`home`キーを押して他のコントロール文字を送ります。"
-
-#. type: Bullet: '3. '
-msgid ""
-"Then it waits for control characters to appear on the screen, which might "
-"take some time on slow SSH connections."
-msgstr ""
-"そして画面にコントロール文字が現れるのを待ちます。遅いSSH接続では、少し時間が"
-"かかるかもしれません。"
-
-#. type: Bullet: '4. '
-msgid "Command is what appears between two control characters."
-msgstr "コマンドは、2つのコントロール文字の間に現れた物です。"
-
-#. type: Bullet: '5. '
-msgid ""
-"When \"Use UI Automation to access the Windows Console when available\" "
-"option is enabled in NVDA settings, it sends one more control character in "
-"the beginning of the string. This is needed to parse multiline commands "
-"correctly: UIA implementation trims whitespaces in the end of each line, so "
-"in order to deduce whether there is a space between two lines, we need to "
-"shift them by one character. Please note, however, that this way we don't "
-"preserve the number of spaces between words, we only guarantee to preserve "
-"the presence of spaces."
-msgstr ""
-"NVDA設定で、「可能な時はWindowsコンソールにアクセスするのにUIオートメーション"
-"を使用する」選択肢が有効になっている時に、文字列の先頭にもう一つコントロール"
-"文字を送信します。複数行のコマンドを正確に分けるために必要です。UIA実装は、各"
-"行の終端のスペースを除去するので、2つの行の間にスペースがあったかどうかを推定"
-"するには、それらを1文字シフトする必要があります。このように、単語の間のスペー"
-"スの数を保持出来ず、スペースがあったかどうかを保証するのみであることに留意し"
-"て下さい。"
-
-#. type: Bullet: '6. '
-msgid ""
-"Before editing add-on makes sure to remove control characters by placing "
-"cursor in the beginning and end and simulating `Delete` and `Backspace` key "
-"presses."
-msgstr ""
-"編集前に、アドオンは、カーソルを先頭と終端に置いて、`Delete`と`Backspace`の"
-"キーを押すのをシミュレートすることで、コントロール文字の除去を確認します。"
-
-#. type: Bullet: '7. '
-msgid "It presents command in \"Edit prompt\" window for user to view or edit."
-msgstr ""
-"ユーザーの閲覧、編集のために、「編集プロンプト」ウィンドウに、コマンドを表示"
-"します。"
-
-#. type: Bullet: '8. '
-msgid ""
-"After user presses `Enter` or `Escape`,it first erases current line in the "
-"console.  This is achieved via one of four methods, the choice of the method "
-"is configurable. Currently four methods are supported:"
-msgstr ""
-"ユーザーが、`Enter`または`Escape`を押した後、コンソールの現在の行をまず消しま"
-"す。これは、4つの方法のうちの1つで達成されます。方法の選択は、設定出来ます。"
-"現在は、4つの方法がサポートされています:"
-
-#. type: Bullet: '    * '
-msgid ""
-"`Control+C`: works in both `cmd.exe` and `bash`, but leaves previous prompt "
-"visible on the screen; doesn't work in emacs; sometimes unreliable on slow "
-"SSH connections"
-msgstr ""
-"`Control+C`:  `cmd.exe` と `bash`の両方で動きます。ただし、前のプロンプトは画"
-"面に見えるままです; emacsでは動きません; 遅いSSH接続では、時折信頼性がありま"
-"せん"
-
-#. type: Bullet: '    * '
-msgid "`Escape`: works only in `cmd.exe`\"),"
-msgstr "`Escape`: `cmd.exe`のみで動きます。"
-
-#. type: Bullet: '    * '
-msgid ""
-"`Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd.exe`"
-msgstr ""
-"`Control+A Control+K`: `bash` と `emacs`のみで動きます; `cmd.exe`では動きませ"
-"ん"
-
-#. type: Bullet: '    * '
-msgid ""
-"`Backspace` (recommended): works in all environments; however slower and may "
-"cause corruption if the length of the line has changed"
-msgstr ""
-"`Backspace` (推奨): 全ての環境で動きます; しかしながら、比較的遅く、行の長さ"
-"が変わると、破損の原因となります"
-
-#. type: Bullet: '9. '
-msgid ""
-"Then add-on simulates keystrokes to type the updated command and optionally "
-"simulates `Enter` key press."
-msgstr ""
-"そしてアドオンは、更新されたコマンドを入力するキーストロークをシミュレート"
-"し、選択によっては`エンター`キーを押すのをシミュレートします。"
 
 #. type: Plain text
-msgid "Troubleshooting:"
-msgstr "トラブルシューティング:"
-
-#. type: Bullet: '* '
 msgid ""
-"Verify that 'Home', 'End', 'Delete' and 'Backspace' keys work as expected in "
-"your console."
+"Troubleshooting: - Verify that 'Home', 'End', 'Delete' and 'Backspace' keys "
+"work as expected in your console.  - Verify that your console supports "
+"Unicode characters. Some ssh connections don't support Unicode.  - Verify "
+"that selected deleting method works in your console."
 msgstr ""
-"'Home', 'End', 'Delete' と 'Backspace'キーがコンソールで期待どおりに動くかを"
-"確認して下さい。"
-
-#. type: Bullet: '* '
-msgid ""
-"Verify that your console supports Unicode characters. Some ssh connections "
-"don't support Unicode."
-msgstr ""
-"コンソールがユニコード文字をサポートしているか確認して下さい。いくつかのSSH接"
-"続はユニコードをサポートしていません。"
-
-#. type: Bullet: '* '
-msgid "Verify that selected deleting method works in your console."
-msgstr "コンソールで選択削除メソッドが動くか確認して下さい。"
 
 #. type: Title ##
 #, no-wrap
@@ -364,23 +257,19 @@ msgstr ""
 msgid "to get rid of status line, or modify your `tmux.conf` file."
 msgstr "を実行、または、`tmux.conf`ファイルを変更して下さい。"
 
-#. type: Bullet: '* '
+#. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "After a failed output capturing attempt, press `UpArrow` in the console "
+#| "to check what command has actually been executed."
 msgid ""
-"After a failed output capturing attempt, press `UpArrow` in the console to "
-"check what command has actually been executed."
+"Troubleshooting: - After a failed output capturing attempt, press `UpArrow` "
+"in the console to check what command has actually been executed.  - Revert "
+"back to default capturing suffix, mentioned above.  - Try troubleshooting "
+"steps from \"command prompt editing\" section."
 msgstr ""
 "出力キャプチャをしようとして失敗した後は、コンソールで`上矢印`を押して、何の"
 "コマンドが実際に実行されたか確認して下さい。"
-
-#. type: Bullet: '* '
-msgid "Revert back to default capturing suffix, mentioned above."
-msgstr "上記の初期キャプチャ接尾辞に戻してください。"
-
-#. type: Bullet: '* '
-msgid "Try troubleshooting steps from \"command prompt editing\" section."
-msgstr ""
-"「コマンドプロンプト編集」セクションのトラブルシューティングステップを試して"
-"下さい。"
 
 #. type: Plain text
 #, no-wrap
@@ -390,3 +279,138 @@ msgstr ""
 #. type: Plain text
 msgid "[1]: https://www.nvaccess.org/addonStore/legacy?file=consoletoolkit"
 msgstr ""
+
+#~ msgid "Author: Tony Malykh"
+#~ msgstr "作者: Tony Malykh"
+
+#~ msgid "Download [stable version][1]"
+#~ msgstr "ダウンロード [安定版][1]"
+
+#~ msgid "NVDA compatibility: 2019.3 and later"
+#~ msgstr "NVDA 互換性: 2019.3 以降"
+
+#~ msgid "Here is how add-on extracts current command."
+#~ msgstr "以下は、アドオンがどのように現在のコマンドを抽出するかです。"
+
+#~ msgid ""
+#~ "It presses `End` key and then sends a control character, that is a rare "
+#~ "Unicodecharacter not likely to be used anywhere."
+#~ msgstr ""
+#~ "`End`キーを押すとコントロール文字を送信します。使われることがなさそうなま"
+#~ "れなユニコード文字だからです。"
+
+#~ msgid "Then it presses `home` key and sends another control character."
+#~ msgstr "そして、`home`キーを押して他のコントロール文字を送ります。"
+
+#~ msgid ""
+#~ "Then it waits for control characters to appear on the screen, which might "
+#~ "take some time on slow SSH connections."
+#~ msgstr ""
+#~ "そして画面にコントロール文字が現れるのを待ちます。遅いSSH接続では、少し時"
+#~ "間がかかるかもしれません。"
+
+#~ msgid "Command is what appears between two control characters."
+#~ msgstr "コマンドは、2つのコントロール文字の間に現れた物です。"
+
+#~ msgid ""
+#~ "When \"Use UI Automation to access the Windows Console when available\" "
+#~ "option is enabled in NVDA settings, it sends one more control character "
+#~ "in the beginning of the string. This is needed to parse multiline "
+#~ "commands correctly: UIA implementation trims whitespaces in the end of "
+#~ "each line, so in order to deduce whether there is a space between two "
+#~ "lines, we need to shift them by one character. Please note, however, that "
+#~ "this way we don't preserve the number of spaces between words, we only "
+#~ "guarantee to preserve the presence of spaces."
+#~ msgstr ""
+#~ "NVDA設定で、「可能な時はWindowsコンソールにアクセスするのにUIオートメー"
+#~ "ションを使用する」選択肢が有効になっている時に、文字列の先頭にもう一つコン"
+#~ "トロール文字を送信します。複数行のコマンドを正確に分けるために必要です。"
+#~ "UIA実装は、各行の終端のスペースを除去するので、2つの行の間にスペースがあっ"
+#~ "たかどうかを推定するには、それらを1文字シフトする必要があります。このよう"
+#~ "に、単語の間のスペースの数を保持出来ず、スペースがあったかどうかを保証する"
+#~ "のみであることに留意して下さい。"
+
+#~ msgid ""
+#~ "Before editing add-on makes sure to remove control characters by placing "
+#~ "cursor in the beginning and end and simulating `Delete` and `Backspace` "
+#~ "key presses."
+#~ msgstr ""
+#~ "編集前に、アドオンは、カーソルを先頭と終端に置いて、`Delete`と`Backspace`"
+#~ "のキーを押すのをシミュレートすることで、コントロール文字の除去を確認しま"
+#~ "す。"
+
+#~ msgid ""
+#~ "It presents command in \"Edit prompt\" window for user to view or edit."
+#~ msgstr ""
+#~ "ユーザーの閲覧、編集のために、「編集プロンプト」ウィンドウに、コマンドを表"
+#~ "示します。"
+
+#~ msgid ""
+#~ "After user presses `Enter` or `Escape`,it first erases current line in "
+#~ "the console.  This is achieved via one of four methods, the choice of the "
+#~ "method is configurable. Currently four methods are supported:"
+#~ msgstr ""
+#~ "ユーザーが、`Enter`または`Escape`を押した後、コンソールの現在の行をまず消"
+#~ "します。これは、4つの方法のうちの1つで達成されます。方法の選択は、設定出来"
+#~ "ます。現在は、4つの方法がサポートされています:"
+
+#~ msgid ""
+#~ "`Control+C`: works in both `cmd.exe` and `bash`, but leaves previous "
+#~ "prompt visible on the screen; doesn't work in emacs; sometimes unreliable "
+#~ "on slow SSH connections"
+#~ msgstr ""
+#~ "`Control+C`:  `cmd.exe` と `bash`の両方で動きます。ただし、前のプロンプト"
+#~ "は画面に見えるままです; emacsでは動きません; 遅いSSH接続では、時折信頼性が"
+#~ "ありません"
+
+#~ msgid "`Escape`: works only in `cmd.exe`\"),"
+#~ msgstr "`Escape`: `cmd.exe`のみで動きます。"
+
+#~ msgid ""
+#~ "`Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd."
+#~ "exe`"
+#~ msgstr ""
+#~ "`Control+A Control+K`: `bash` と `emacs`のみで動きます; `cmd.exe`では動き"
+#~ "ません"
+
+#~ msgid ""
+#~ "`Backspace` (recommended): works in all environments; however slower and "
+#~ "may cause corruption if the length of the line has changed"
+#~ msgstr ""
+#~ "`Backspace` (推奨): 全ての環境で動きます; しかしながら、比較的遅く、行の長"
+#~ "さが変わると、破損の原因となります"
+
+#~ msgid ""
+#~ "Then add-on simulates keystrokes to type the updated command and "
+#~ "optionally simulates `Enter` key press."
+#~ msgstr ""
+#~ "そしてアドオンは、更新されたコマンドを入力するキーストロークをシミュレート"
+#~ "し、選択によっては`エンター`キーを押すのをシミュレートします。"
+
+#~ msgid "Troubleshooting:"
+#~ msgstr "トラブルシューティング:"
+
+#~ msgid ""
+#~ "Verify that 'Home', 'End', 'Delete' and 'Backspace' keys work as expected "
+#~ "in your console."
+#~ msgstr ""
+#~ "'Home', 'End', 'Delete' と 'Backspace'キーがコンソールで期待どおりに動くか"
+#~ "を確認して下さい。"
+
+#~ msgid ""
+#~ "Verify that your console supports Unicode characters. Some ssh "
+#~ "connections don't support Unicode."
+#~ msgstr ""
+#~ "コンソールがユニコード文字をサポートしているか確認して下さい。いくつかの"
+#~ "SSH接続はユニコードをサポートしていません。"
+
+#~ msgid "Verify that selected deleting method works in your console."
+#~ msgstr "コンソールで選択削除メソッドが動くか確認して下さい。"
+
+#~ msgid "Revert back to default capturing suffix, mentioned above."
+#~ msgstr "上記の初期キャプチャ接尾辞に戻してください。"
+
+#~ msgid "Try troubleshooting steps from \"command prompt editing\" section."
+#~ msgstr ""
+#~ "「コマンドプロンプト編集」セクションのトラブルシューティングステップを試し"
+#~ "て下さい。"

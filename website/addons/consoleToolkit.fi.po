@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Console Toolkit\n"
-"POT-Creation-Date: 2024-02-13 14:35+0000\n"
+"POT-Creation-Date: 2024-05-27 16:26+0000\n"
 "PO-Revision-Date: 2023-04-16 19:03+0200\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: fi_FI <janikinnunen340@gmail.com>\n"
@@ -21,18 +21,6 @@ msgstr ""
 #, no-wrap
 msgid "[[!meta title=\"Console Toolkit\"]]\n"
 msgstr "[[!meta title=\"Konsolin työkalupakki\"]]\n"
-
-#. type: Bullet: '* '
-msgid "Author: Tony Malykh"
-msgstr "Tekijä: Tony Malykh"
-
-#. type: Bullet: '* '
-msgid "Download [stable version][1]"
-msgstr "Lataa [vakaa versio][1]"
-
-#. type: Bullet: '* '
-msgid "NVDA compatibility: 2019.3 and later"
-msgstr "Yhteensopivuus: NVDA 2019.3 ja uudemmat"
 
 #. type: Plain text
 msgid ""
@@ -64,12 +52,21 @@ msgid "Downloads"
 msgstr "Lataukset"
 
 #. type: Plain text
-msgid ""
-"[Console toolkit](https://github.com/mltony/nvda-console-toolkit/releases/"
-"latest/download/consoleToolkit.nvda-addon)"
+msgid "Install from add-on store."
 msgstr ""
-"[Konsolin työkalupakki](https://github.com/mltony/nvda-console-toolkit/"
-"releases/latest/download/consoleToolkit.nvda-addon)"
+
+#. type: Title ##
+#, no-wrap
+msgid "Jump to the first visible line"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"Console toolkit overrides ``shift+numpad7` command in UIA consoles: instead "
+"of reading the first line in the entire buffer it now reads the first "
+"visible line at the top of the window. Press `shift+numpad7` twice to revert "
+"to the old behavior and read the first line of the buffer."
+msgstr ""
 
 #. type: Title ##
 #, no-wrap
@@ -150,139 +147,31 @@ msgstr ""
 "testattu."
 
 #. type: Plain text
-msgid "Here is how add-on extracts current command."
-msgstr "Näin lisäosa purkaa nykyisen komennon."
-
-#. type: Bullet: '1. '
+#, no-wrap
 msgid ""
-"It presses `End` key and then sends a control character, that is a rare "
-"Unicodecharacter not likely to be used anywhere."
+"Here is how add-on extracts current command.\n"
+"1. It presses `End` key and then sends a control character, that is a rare Unicodecharacter not likely to be used anywhere.\n"
+"2. Then it presses `home` key and sends another control character.\n"
+"3. Then it waits for control characters to appear on the screen, which might take some time on slow SSH connections.\n"
+"4. Command is what appears between two control characters.\n"
+"5. When \"Use UI Automation to access the Windows Console when available\" option is enabled in NVDA settings, it sends one more control character in the beginning of the string. This is needed to parse multiline commands correctly: UIA implementation trims whitespaces in the end of each line, so in order to deduce whether there is a space between two lines, we need to shift them by one character. Please note, however, that this way we don't preserve the number of spaces between words, we only guarantee to preserve the presence of spaces.\n"
+"6. Before editing add-on makes sure to remove control characters by placing cursor in the beginning and end and simulating `Delete` and `Backspace` key presses.\n"
+"7. It presents command in \"Edit prompt\" window for user to view or edit.\n"
+"8. After user presses `Enter` or `Escape`,it first erases current line in the console.  This is achieved via one of four methods, the choice of the method is configurable. Currently four methods are supported:\n"
+"    - `Control+C`: works in both `cmd.exe` and `bash`, but leaves previous prompt visible on the screen; doesn't work in emacs; sometimes unreliable on slow SSH connections\n"
+"    - `Escape`: works only in `cmd.exe`\"),\n"
+"    - `Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd.exe`\n"
+"    - `Backspace` (recommended): works in all environments; however slower and may cause corruption if the length of the line has changed\n"
+"9. Then add-on simulates keystrokes to type the updated command and optionally simulates `Enter` key press.\n"
 msgstr ""
-"Se painaa End-näppäintä ja lähettää sitten ohjausmerkin, joka on harvinainen "
-"Unicode-merkki, jota ei todennäköisesti käytetä missään."
-
-#. type: Bullet: '2. '
-msgid "Then it presses `home` key and sends another control character."
-msgstr "Sitten se painaa `Home`-näppäintä ja lähettää toisen ohjausmerkin."
-
-#. type: Bullet: '3. '
-msgid ""
-"Then it waits for control characters to appear on the screen, which might "
-"take some time on slow SSH connections."
-msgstr ""
-"Tämän jälkeen se odottaa ohjausmerkkien ilmestymistä näytölle, mikä saattaa "
-"kestää jonkin aikaa hitailla SSH-yhteyksillä."
-
-#. type: Bullet: '4. '
-msgid "Command is what appears between two control characters."
-msgstr "Komento näkyy kahden ohjausmerkin välissä."
-
-#. type: Bullet: '5. '
-msgid ""
-"When \"Use UI Automation to access the Windows Console when available\" "
-"option is enabled in NVDA settings, it sends one more control character in "
-"the beginning of the string. This is needed to parse multiline commands "
-"correctly: UIA implementation trims whitespaces in the end of each line, so "
-"in order to deduce whether there is a space between two lines, we need to "
-"shift them by one character. Please note, however, that this way we don't "
-"preserve the number of spaces between words, we only guarantee to preserve "
-"the presence of spaces."
-msgstr ""
-"Kun NVDA:n asetuksista on valittu vaihtoehto \"Käytä UI Automation -"
-"rajapintaa Windows-konsolissa, kun käytettävissä\", se lähettää merkkijonon "
-"alkuun vielä yhden ohjausmerkin. Tämä on tarpeen monirivisten komentojen "
-"jäsentämiseksi oikein: UIA-toteutus poistaa välilyönnit jokaisen rivin "
-"lopusta, joten jotta voimme päätellä, onko kahden rivin välissä välilyönti, "
-"meidän on siirrettävä niitä yhdellä merkillä. Huomaa kuitenkin, että tällä "
-"tavalla sanojen välissä säilyy vain yksi välilyönti, koska niiden tarkkaa "
-"määrää ei voi selvittää."
-
-#. type: Bullet: '6. '
-msgid ""
-"Before editing add-on makes sure to remove control characters by placing "
-"cursor in the beginning and end and simulating `Delete` and `Backspace` key "
-"presses."
-msgstr ""
-"Ennen muokkausta lisäosa varmistaa, että ohjausmerkit poistetaan siirtämällä "
-"kohdistimen alkuun ja loppuun ja simuloimalla `Del`- ja `Askelpalautin`-"
-"näppäinpainalluksia."
-
-#. type: Bullet: '7. '
-msgid "It presents command in \"Edit prompt\" window for user to view or edit."
-msgstr ""
-"Se näyttää komennon \"Muokkaa kehotetta\" -ikkunassa, jossa käyttäjä voi "
-"tarkastella tai muokata sitä."
-
-#. type: Bullet: '8. '
-msgid ""
-"After user presses `Enter` or `Escape`,it first erases current line in the "
-"console.  This is achieved via one of four methods, the choice of the method "
-"is configurable. Currently four methods are supported:"
-msgstr ""
-"Kun käyttäjä painaa `Enter` tai `Esc`, lisäosa pyyhkii ensin nykyisen rivin "
-"konsolista. Tämä saavutetaan yhdellä neljästä menetelmästä, joka on "
-"valittavissa. Tällä hetkellä tuetaan neljää menetelmää:"
-
-#. type: Bullet: '    * '
-msgid ""
-"`Control+C`: works in both `cmd.exe` and `bash`, but leaves previous prompt "
-"visible on the screen; doesn't work in emacs; sometimes unreliable on slow "
-"SSH connections"
-msgstr ""
-"`Ctrl+C`: toimii sekä `cmd.exe`- että `Bash`-konsoleissa, mutta jättää "
-"edellisen kehotteen näkyviin näytölle; ei toimi Emacsissa; joskus "
-"epäluotettava hitailla SSH-yhteyksillä."
-
-#. type: Bullet: '    * '
-msgid "`Escape`: works only in `cmd.exe`\"),"
-msgstr "`Esc`: toimii vain `cmd.exessä`."
-
-#. type: Bullet: '    * '
-msgid ""
-"`Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd.exe`"
-msgstr ""
-"`Ctrl+A Ctrl+K`: toimii `Bashissa` ja `Emacsissa`; ei toimi `cmd.exessä`."
-
-#. type: Bullet: '    * '
-msgid ""
-"`Backspace` (recommended): works in all environments; however slower and may "
-"cause corruption if the length of the line has changed"
-msgstr ""
-"`Askelpalautin` (suositus): toimii kaikissa ympäristöissä; on kuitenkin "
-"hitaampi ja voi aiheuttaa rivin rikkoutumista, mikäli sen pituus on "
-"muuttunut."
-
-#. type: Bullet: '9. '
-msgid ""
-"Then add-on simulates keystrokes to type the updated command and optionally "
-"simulates `Enter` key press."
-msgstr ""
-"Tämän jälkeen lisäosa simuloi näppäinpainalluksia päivitetyn komennon "
-"kirjoittamiseksi sekä vaihtoehtoisesti `Enter`-näppäimen painallusta."
 
 #. type: Plain text
-msgid "Troubleshooting:"
-msgstr "Vianmääritys:"
-
-#. type: Bullet: '* '
 msgid ""
-"Verify that 'Home', 'End', 'Delete' and 'Backspace' keys work as expected in "
-"your console."
+"Troubleshooting: - Verify that 'Home', 'End', 'Delete' and 'Backspace' keys "
+"work as expected in your console.  - Verify that your console supports "
+"Unicode characters. Some ssh connections don't support Unicode.  - Verify "
+"that selected deleting method works in your console."
 msgstr ""
-"Varmista, että Home-, End-, Del- ja Askelpalautin-näppäimet toimivat "
-"odotetulla tavalla konsolissasi."
-
-#. type: Bullet: '* '
-msgid ""
-"Verify that your console supports Unicode characters. Some ssh connections "
-"don't support Unicode."
-msgstr ""
-"Varmista, että konsolisi tukee Unicode-merkkejä. Jotkut SSH-yhteydet eivät "
-"tue Unicodea."
-
-#. type: Bullet: '* '
-msgid "Verify that selected deleting method works in your console."
-msgstr "Varmista, että valittu poistomenetelmä toimii konsolissasi."
 
 #. type: Title ##
 #, no-wrap
@@ -370,21 +259,19 @@ msgstr "tmux set status off\n"
 msgid "to get rid of status line, or modify your `tmux.conf` file."
 msgstr "päästäksesi eroon tilarivistä tai muokkaamalla tmux.conf-tiedostoa."
 
-#. type: Bullet: '* '
+#. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "After a failed output capturing attempt, press `UpArrow` in the console "
+#| "to check what command has actually been executed."
 msgid ""
-"After a failed output capturing attempt, press `UpArrow` in the console to "
-"check what command has actually been executed."
+"Troubleshooting: - After a failed output capturing attempt, press `UpArrow` "
+"in the console to check what command has actually been executed.  - Revert "
+"back to default capturing suffix, mentioned above.  - Try troubleshooting "
+"steps from \"command prompt editing\" section."
 msgstr ""
 "Paina epäonnistuneen tulosteen kaappausyrityksen jälkeen konsolissa `Nuoli "
 "ylös` tarkistaaksesi, mikä komento on suoritettu."
-
-#. type: Bullet: '* '
-msgid "Revert back to default capturing suffix, mentioned above."
-msgstr "Palauta yllä mainittu kaappauksen oletusarvoinen jälkiliite."
-
-#. type: Bullet: '* '
-msgid "Try troubleshooting steps from \"command prompt editing\" section."
-msgstr "Kokeile vianetsintävaiheita \"Komentokehotteen muokkaus\" -osiosta."
 
 #. type: Plain text
 #, no-wrap
@@ -394,3 +281,144 @@ msgstr "[[!tag dev stable]]\n"
 #. type: Plain text
 msgid "[1]: https://www.nvaccess.org/addonStore/legacy?file=consoletoolkit"
 msgstr "[1]: https://www.nvaccess.org/addonStore/legacy?file=consoletoolkit"
+
+#~ msgid "Author: Tony Malykh"
+#~ msgstr "Tekijä: Tony Malykh"
+
+#~ msgid "Download [stable version][1]"
+#~ msgstr "Lataa [vakaa versio][1]"
+
+#~ msgid "NVDA compatibility: 2019.3 and later"
+#~ msgstr "Yhteensopivuus: NVDA 2019.3 ja uudemmat"
+
+#~ msgid ""
+#~ "[Console toolkit](https://github.com/mltony/nvda-console-toolkit/releases/"
+#~ "latest/download/consoleToolkit.nvda-addon)"
+#~ msgstr ""
+#~ "[Konsolin työkalupakki](https://github.com/mltony/nvda-console-toolkit/"
+#~ "releases/latest/download/consoleToolkit.nvda-addon)"
+
+#~ msgid "Here is how add-on extracts current command."
+#~ msgstr "Näin lisäosa purkaa nykyisen komennon."
+
+#~ msgid ""
+#~ "It presses `End` key and then sends a control character, that is a rare "
+#~ "Unicodecharacter not likely to be used anywhere."
+#~ msgstr ""
+#~ "Se painaa End-näppäintä ja lähettää sitten ohjausmerkin, joka on "
+#~ "harvinainen Unicode-merkki, jota ei todennäköisesti käytetä missään."
+
+#~ msgid "Then it presses `home` key and sends another control character."
+#~ msgstr "Sitten se painaa `Home`-näppäintä ja lähettää toisen ohjausmerkin."
+
+#~ msgid ""
+#~ "Then it waits for control characters to appear on the screen, which might "
+#~ "take some time on slow SSH connections."
+#~ msgstr ""
+#~ "Tämän jälkeen se odottaa ohjausmerkkien ilmestymistä näytölle, mikä "
+#~ "saattaa kestää jonkin aikaa hitailla SSH-yhteyksillä."
+
+#~ msgid "Command is what appears between two control characters."
+#~ msgstr "Komento näkyy kahden ohjausmerkin välissä."
+
+#~ msgid ""
+#~ "When \"Use UI Automation to access the Windows Console when available\" "
+#~ "option is enabled in NVDA settings, it sends one more control character "
+#~ "in the beginning of the string. This is needed to parse multiline "
+#~ "commands correctly: UIA implementation trims whitespaces in the end of "
+#~ "each line, so in order to deduce whether there is a space between two "
+#~ "lines, we need to shift them by one character. Please note, however, that "
+#~ "this way we don't preserve the number of spaces between words, we only "
+#~ "guarantee to preserve the presence of spaces."
+#~ msgstr ""
+#~ "Kun NVDA:n asetuksista on valittu vaihtoehto \"Käytä UI Automation -"
+#~ "rajapintaa Windows-konsolissa, kun käytettävissä\", se lähettää "
+#~ "merkkijonon alkuun vielä yhden ohjausmerkin. Tämä on tarpeen monirivisten "
+#~ "komentojen jäsentämiseksi oikein: UIA-toteutus poistaa välilyönnit "
+#~ "jokaisen rivin lopusta, joten jotta voimme päätellä, onko kahden rivin "
+#~ "välissä välilyönti, meidän on siirrettävä niitä yhdellä merkillä. Huomaa "
+#~ "kuitenkin, että tällä tavalla sanojen välissä säilyy vain yksi "
+#~ "välilyönti, koska niiden tarkkaa määrää ei voi selvittää."
+
+#~ msgid ""
+#~ "Before editing add-on makes sure to remove control characters by placing "
+#~ "cursor in the beginning and end and simulating `Delete` and `Backspace` "
+#~ "key presses."
+#~ msgstr ""
+#~ "Ennen muokkausta lisäosa varmistaa, että ohjausmerkit poistetaan "
+#~ "siirtämällä kohdistimen alkuun ja loppuun ja simuloimalla `Del`- ja "
+#~ "`Askelpalautin`-näppäinpainalluksia."
+
+#~ msgid ""
+#~ "It presents command in \"Edit prompt\" window for user to view or edit."
+#~ msgstr ""
+#~ "Se näyttää komennon \"Muokkaa kehotetta\" -ikkunassa, jossa käyttäjä voi "
+#~ "tarkastella tai muokata sitä."
+
+#~ msgid ""
+#~ "After user presses `Enter` or `Escape`,it first erases current line in "
+#~ "the console.  This is achieved via one of four methods, the choice of the "
+#~ "method is configurable. Currently four methods are supported:"
+#~ msgstr ""
+#~ "Kun käyttäjä painaa `Enter` tai `Esc`, lisäosa pyyhkii ensin nykyisen "
+#~ "rivin konsolista. Tämä saavutetaan yhdellä neljästä menetelmästä, joka on "
+#~ "valittavissa. Tällä hetkellä tuetaan neljää menetelmää:"
+
+#~ msgid ""
+#~ "`Control+C`: works in both `cmd.exe` and `bash`, but leaves previous "
+#~ "prompt visible on the screen; doesn't work in emacs; sometimes unreliable "
+#~ "on slow SSH connections"
+#~ msgstr ""
+#~ "`Ctrl+C`: toimii sekä `cmd.exe`- että `Bash`-konsoleissa, mutta jättää "
+#~ "edellisen kehotteen näkyviin näytölle; ei toimi Emacsissa; joskus "
+#~ "epäluotettava hitailla SSH-yhteyksillä."
+
+#~ msgid "`Escape`: works only in `cmd.exe`\"),"
+#~ msgstr "`Esc`: toimii vain `cmd.exessä`."
+
+#~ msgid ""
+#~ "`Control+A Control+K`: works in `bash` and `emacs`; doesn't work in `cmd."
+#~ "exe`"
+#~ msgstr ""
+#~ "`Ctrl+A Ctrl+K`: toimii `Bashissa` ja `Emacsissa`; ei toimi `cmd.exessä`."
+
+#~ msgid ""
+#~ "`Backspace` (recommended): works in all environments; however slower and "
+#~ "may cause corruption if the length of the line has changed"
+#~ msgstr ""
+#~ "`Askelpalautin` (suositus): toimii kaikissa ympäristöissä; on kuitenkin "
+#~ "hitaampi ja voi aiheuttaa rivin rikkoutumista, mikäli sen pituus on "
+#~ "muuttunut."
+
+#~ msgid ""
+#~ "Then add-on simulates keystrokes to type the updated command and "
+#~ "optionally simulates `Enter` key press."
+#~ msgstr ""
+#~ "Tämän jälkeen lisäosa simuloi näppäinpainalluksia päivitetyn komennon "
+#~ "kirjoittamiseksi sekä vaihtoehtoisesti `Enter`-näppäimen painallusta."
+
+#~ msgid "Troubleshooting:"
+#~ msgstr "Vianmääritys:"
+
+#~ msgid ""
+#~ "Verify that 'Home', 'End', 'Delete' and 'Backspace' keys work as expected "
+#~ "in your console."
+#~ msgstr ""
+#~ "Varmista, että Home-, End-, Del- ja Askelpalautin-näppäimet toimivat "
+#~ "odotetulla tavalla konsolissasi."
+
+#~ msgid ""
+#~ "Verify that your console supports Unicode characters. Some ssh "
+#~ "connections don't support Unicode."
+#~ msgstr ""
+#~ "Varmista, että konsolisi tukee Unicode-merkkejä. Jotkut SSH-yhteydet "
+#~ "eivät tue Unicodea."
+
+#~ msgid "Verify that selected deleting method works in your console."
+#~ msgstr "Varmista, että valittu poistomenetelmä toimii konsolissasi."
+
+#~ msgid "Revert back to default capturing suffix, mentioned above."
+#~ msgstr "Palauta yllä mainittu kaappauksen oletusarvoinen jälkiliite."
+
+#~ msgid "Try troubleshooting steps from \"command prompt editing\" section."
+#~ msgstr "Kokeile vianetsintävaiheita \"Komentokehotteen muokkaus\" -osiosta."
