@@ -251,7 +251,6 @@ Os comandos reais não serão executados enquanto estiver no modo de ajuda de co
 |Aumentar a definição de voz actual |"NVDA+control+Seta Acima" |"NVDA+shift+control+Seta Acima" |aumenta a definição de voz actual. Por exemplo: aumenta a velocidade, escolhe a voz seguinte, aumenta o volume|
 |Aumentar a definição de voz actual por um valor maior |`NVDA+control+pageUp` |`NVDA+shift+control+pageUp` |aumenta a definição de voz actual por um valor maior. Por exemplo: aumenta a velocidade em 20%, escolhe a voz 20 posições acima, aumenta o volume 20%.|
 |Diminuir a definição de voz actual |"NVDA+control+Seta Abaixo" |"NVDA+shift+control+Seta Abaixo" |Diminui a definição de voz actual. Ex: diminui a velocidade, escolhe a voz anterior, diminui o volume|
-
 |Diminuir a definição de voz actual por um valor maior |`NVDA+control+pageUp` |`NVDA+shift+control+pageUp` |Diminui a definição de voz actual por um valor maior. Por exemplo: diminui a velocidade em 20%, escolhe a voz 20 posições abaixo, diminui o volume 20%.|
 
 Também é possível definir o primeiro ou o último valor da definição da voz actual atribuindo comandos personalizados em  [Definir comandos](#InputGestures), na categoria de voz.
@@ -260,7 +259,7 @@ Isto significa que, por exemplo, quando estiver numa definição de taxa, esta s
 #### Navegação Web {#WebNavigation}
 
 A lista completa das teclas de Navegação com uma única letra está na secção [Modo de Navegação](#BrowseMode) do guia do utilizador.
-+|| Comando | Teclado | Descrição |
+|| Comando | Teclado | Descrição |
 
 |Título |"h" |Avançar para o próximo título|
 |Título nível 1, 2 até 6 |"1", "2" até 6 |Avançar para o próximo título no nível especificado|
@@ -279,6 +278,79 @@ As configurações e outras opções, estão disponíveis através do menu do NV
 Para abrir o menu do NVDA, pressione "NVDA+n".
 Para abrir directamente as configurações gerais do NVDA, pressione "NVDA+control+g".
 Muitas configurações têm teclas para as abrir directamente, tais como "NVDA+control+s" para Seleccionar sintetizador, ou "NVDA+control+v" para outras opções da voz.
+
+### Extras {#Addons}
+Os extras são programas que proporcionam funcionalidades novas ou modificadas para o NVDA.
+Os extras são desenvolvidos pela comunidade NVDA ou por empresas externas e não têm ligação à NV Access.
+Como com qualquer software, é importante confiar no desenvolvedor de um extra antes de o utilizar.
+Consulte Instalar Extras para formas de verificar os extras antes da instalação.
+
+A primeira vez que a Loja de Extras é aberta, o NVDA exibe um aviso sobre os extras.
+Os extras não são verificados pela NV Access e podem ter funcionalidades irrestritas e acesso a informações.
+Pressione a `barra de espaços` se leu o aviso e não precisa vê-lo novamente.
+Pressione `tab` até ao botão "OK" e depois `enter` para aceitar o aviso e prosseguir para a Loja de Extras.
+A secção "Extras e a Loja de Extras" do Guia do Utilizador contém informações sobre todas as funcionalidades da Loja de Extras.
+
+A Loja de Extras está disponível no menu Ferramentas.
+Pressione `NVDA+n` para abrir o menu do NVDA, depois `f` para ferramentas e, em seguida, `l` para Loja de Extras.
+Quando a Loja de Extras é aberta, ela mostra o separador "Extras disponíveis" se nenhum extra estiver instalado.
+Quando existem  extras instalados, a Loja de Extras abre no separador "Extras instalados".
+
+#### Extras disponíveis {#AvailableAddons}
+Quando a janela é aberta pela primeira vez, a lista de extras pode demorar alguns segundos a carregar.
+O NVDA lerá o nome do primeiro extra assim que a lista de extras terminar de carregar.
+Os extras disponíveis são listados alfabeticamente numa grelha.
+Para navegar na lista e obter informações sobre um extra específico:
+
+1. Utilize as `setas` ou pressione a primeira letra do nome de um extra para se mover pela lista;
+1. Pressione `tab` uma vez para mover-se para a descrição do extra actualmente seleccionado;
+1. Utilize as teclas de leitura ou as `setas` para ler a descrição completa;
+1. Pressione `tab` para o botão "Acções", que pode ser usado para instalar o extra, entre outras acções;
+1. Pressione `tab` para "Outros Detalhes", que lista detalhes como o autor, versão e página inicial;
+1. Para retornar à lista de extras, pressione `alt+a` ou `shift+tab` para voltar à lista de "Extras disponíveis".
+
+#### Pesquisar extras {#SearchingForAddons}
+Além de navegar por todos os extras disponíveis, é possível filtrar os extras mostrados.
+Para pesquisar, pressione `alt+p` para se mover para o campo "pesquisar" e digite o texto a pesquisar.
+O campo de pesquisa pode conter informações, incluindo o ID do extra, nome exibido, editor, autor ou descrição.
+A lista muda enquanto escreve os termos de pesquisa.
+Quando terminar, pressione `tab` para ir para a lista filtrada de extras e navegue pelos resultados.
+
+#### Instalar extras {#InstallingAddons}
+
+Para instalar um extra:
+
+1. Com o foco num extra que gostaria de instalar, pressione `enter`;
+1. O menu de acções abre-se com uma lista de acções; a primeira acção é "Instalar";
+1. Para instalar o extra, pressione `i` ou `seta para baixo` para "instalar" e pressione `enter`;
+1. O foco retorna ao extra na lista e o NVDA lerá os detalhes sobre o extra;
+1. A informação "Estado" reportada pelo NVDA muda de "Disponível" para "A transferir";
+1. Uma vez terminado o download do extra, ele mudará para "Transferido. Instalação pendente";
+1. Repita para quaisquer outros extras que gostaria de instalar ao mesmo tempo;
+1. Quando terminar, pressione `tab` até o foco estar no botão "Fechar" e depois pressione `enter`;
+1. Os extras transferidos iniciarão o processo de instalação assim que a Loja de Extras for fechada.
+Os extras podem criar diálogos durante o processo de instalação aos quais precisará responder;
+1. Quando todos os extras estiverem instalados, aparece um diálogo informando que foram feitas alterações e deve reiniciar o NVDA para completar a instalação do extra;
+1. Pressione `enter` para reiniciar o NVDA.
+
+
+#### Gerir extras instalados {#ManagingInstalledAddons}
+Pressione `control+tab` para se mover entre os separadores da Loja de Extras.
+Os separadores incluem: "Extras instalados", "Extras com actualizações", "Extras disponíveis" e "Extras incompatíveis instalados".
+Cada um dos separadores está disposto de forma semelhante, como uma lista de extras, um painel para mais detalhes sobre o extra seleccionado e a capacidade de executar ações para o extra.
+O menu de acções de extras instalados inclui "Desactivar" e "Remover" em vez de "Instalar".
+Desactivar um extra impede o NVDA de o carregar, mas mantém-no instalado.
+Para reactivar um extra desactivado, escolha "Activar" no menu de acções.
+Após activar, desactivar ou remover extras, será solicitado que reinicie o NVDA ao fechar a Loja de Extras.
+Estas alterações só terão efeito depois de reiniciar o NVDA.
+Note que neste diálogo `esc` funciona da mesma forma que o botão Fechar.
+
+#### Actualizar extras {#UpdatingAddons}
+Quando houver uma actualização para um extra que instalou, ele será listado no separador "Extras com actualizações".
+Pressione `control+tab` para chegar a este separador de qualquer lugar na Loja de Extras.
+O estado do extra será listado como "Actualização disponível".
+A tabela listará a versão actualmente instalada e a versão disponível.
+Pressione `enter` no extra para abrir a lista de acções e escolha "Actualizar".
 
 ### Comunidade {#Community}
 
@@ -1050,9 +1122,9 @@ No entanto, para cenários em que pretende copiar uma tabela inteira ou um pará
 
 ## Leitura de conteúdo Matemático {#ReadingMath}
 
-O NVDA pode ler, e navegar por, conteúdo matemático na web e em outras aplicações, proporcionando acesso em voz e Braille.
+O NVDA pode ler e navegar por conteúdo matemático na web e em outras aplicações, proporcionando acesso em voz e Braille.
 Para que o NVDA possa ler e interagir com conteúdo matemático, primeiro tem que instalar um componente Matemático para o NVDA.
-Há vários extras para o NVDA na sua Loja de extras, que fornecem suporte para conteúdo matemático, incluindo o [MathCAT](https://nsoiffer.github.io/MathCAT/) e o [Access8Math](https://github.com/tsengwoody/Access8Math). 
+Há vários extras para o NVDA na sua Loja de extras, que fornecem suporte para conteúdo matemático, incluindo o [MathCAT](https://nsoiffer.github.io/MathCAT/) e [Access8Math](https://github.com/tsengwoody/Access8Math).
 Por favor consulte a secção [Loja de extras](#AddonsManager) para aprender como pesquisar e instalar extras no NVDA.
 O NVDA também pode usar o software [MathPlayer](https://info.wiris.com/mathplayer-info) da Wiris, se o tiver instalado no seu sistema, apesar de já não ter suporte.
 
@@ -1123,7 +1195,7 @@ O MathPlayer está disponível, gratuitamente, na página do Wiris.
 [Download MathPlayer](https://downloads.wiris.com/mathplayer/MathPlayerSetup.exe).
 Após a instalação do  MathPlayer, tem de reiniciar o NVDA.
 Por favor note que a informação sobre o MathPlayer pode indicar que é apenas para navegadores antigos, como o Internet Explorer 8.
-Isto refere-se apenas ao uso do MathPlayer para mostrar conteúdo matemático visualmente, e pode ser ignorado por quem quer ler e navegar matemático com o NVDA.
+Isto refere-se apenas ao uso do MathPlayer para mostrar conteúdo matemático visualmente, e pode ser ignorado por quem quer ler e navegar matemática com o NVDA.
 
 ## Braille {#Braille}
 
@@ -1146,7 +1218,7 @@ Para que caiba o máximo de informaçãon possível na linha Braille, as seguint
 |cit |citação|
 |bto |botão|
 |btoSus |botão suspenso|
-|btoDsl |botão de deslizamento||
+|btoDsl |botão de deslizamento|
 |btoSep |botão de separação|
 |btoCom |botão de comutação|
 |leg |legenda|
@@ -1945,7 +2017,7 @@ Actualmente, são suportados dois modos braille, "Seguir cursores" e "Apresentar
 
 Quando se selecciona Seguir cursores, o Braille seguirá o foco do sistema ou o cursor de revisão, dependendo do modo de ligação do cursor Braille.
 
-Quando está seleccionada Saída de voz, será mostrado em Braille o que o NVDA fala, ou teria falado se o modo de voz estivesse definido para "falar".
+Quando se selecciona Apresentar saída de voz, será mostrado em Braille o que o NVDA fala, ou teria falado se o modo de voz estivesse definido para "falar".
 
 ##### Expandir Para Braille De Computador Palavras Sobre O Cursor {#BrailleSettingsExpandToComputerBraille}
 
@@ -2200,23 +2272,11 @@ Esta barra deslizante permite-lhe definir o volume dos sons e dos bips do NVDA.
 Esta definição só tem efeito quando "O volume dos sons do NVDA segue o volume da voz" está desactivado.
 Esta opção não está disponível se tiver iniciado o NVDA com [WASAPI desactivado para saída de áudio](#WASAPI) nas configurações Avançadas.
 
-##### Tempo para manter o dispositivo de áudio acordado depois de falar {#AudioAwakeTime}
-
-Esta caixa de edição especifica durante quanto tempo o NVDA mantém o dispositivo de áudio acordado após o fim da fala.
-Esta configuração permite ao NVDA evitar certas falhas na fala, como partes de palavras perdidas.
-Isto pode acontecer devido ao facto de os dispositivos de áudio (especialmente Bluetooth e dispositivos sem fios) entrarem em modo de espera.
-Também é útil noutros casos, como ao executar o NVDA dentro de uma máquina virtual (por exemplo, Citrix Virtual Desktop) ou em determinados portáteis.
-
-Os valores mais baixos podem permitir que o áudio seja cortado com mais frequência, uma vez que um dispositivo pode entrar no modo de espera demasiado cedo, fazendo com que o início da fala seguinte seja cortado.
-Definir um valor demasiado elevado pode fazer com que a bateria do dispositivo de saída de som se descarregue mais rapidamente, uma vez que ele permanece activo durante mais tempo sem ser enviado qualquer som.
-
-Para desactivar esta função, é possível colocar o tempo a zero.
-
 ##### Divisão de som {#SelectSoundSplitMode}
 
 A funcionalidade de divisão de som permite aos utilizadores utilizar os seus dispositivos de saída estéreo, como auscultadores e altifalantes.
-A divisão de som permite que o discurso do NVDA seja reproduzido num canal (por exemplo, esquerdo) e que todas as outras aplicações reproduzam os seus sons no outro canal (por exemplo, direito).
-Por predefinição, a divisão de som está desactivada, o que significa que todas as aplicações, incluindo o NVDA, reproduzem sons nos canais esquerdo e direito.
+A divisão de som permite que a fala do NVDA seja reproduzida num canal (por exemplo, esquerdo) e que todas as outras aplicações reproduzam os seus sons no outro canal (por exemplo, direito).
+Por predefinição, a divisão de som está desactivada.
 Um comando permite percorrer os vários modos de divisão de som:
 <!-- KC:beginInclude -->
 
@@ -2228,19 +2288,21 @@ Um comando permite percorrer os vários modos de divisão de som:
 
 Por predefinição, este comando alterna entre os seguintes modos:
 
-* Divisão de som desactivada: tanto o NVDA como as outras aplicações emitem sons para os canais esquerdo e direito;
+* Divisão de som desactivada: o NVDA não aplicará nenhuma divisão de som;
 * NVDA à esquerda e aplicações à direita: O NVDA falará no canal esquerdo, enquanto outras aplicações reproduzirão sons no canal direito;
 * NVDA à direita e aplicações à esquerda: O NVDA falará no canal direito, enquanto outras aplicações reproduzirão sons no canal esquerdo;
 
 Existem modos de divisão de som mais avançados disponíveis na caixa de combinação de definições do NVDA.
-Se pretender ajustar o volume de todas as aplicações, exceto do NVDA, considere a utilização [dos comandos dedicados](#OtherAppVolume).
+Entre esses modos, "NVDA nos dois canais e aplicações nos dois canais" força todos os sons a serem direccionados para ambos os canais.
+Este modo pode ser diferente do modo  "Divisão de som desactivada" no caso em que outras aplicações interfiram com o volume de algum canal.
+
 Tenha em atenção que a divisão de som não funciona como um misturador.
 Por exemplo, se uma aplicação estiver a reproduzir uma faixa de som estéreo e a divisão de som estiver definida para "NVDA à esquerda e aplicações à direita", apenas ouvirá o canal direito da faixa de som, enquanto o canal esquerdo da faixa de som será silenciado.
 
 Esta opção não está disponível se tiver iniciado o NVDA com [WASAPI desativado para a saída de áudio](#WASAPI) nas Definições Avançadas.
 
 Por favor, tenha em atenção que, se o NVDA falhar, não conseguirá restaurar o volume dos sons da aplicação e essas aplicações poderão continuar a emitir som apenas num canal após a falha do NVDA.
-Para atenuar esta situação, reinicie o NVDA.
+Para atenuar esta situação, reinicie o NVDA e configure a divisão de som para "NVDA nos dois canais e aplicações nos dois canais".
 
 ##### Personalizar modos de divisão de som {#CustomizeSoundSplitModes}
 
@@ -2255,38 +2317,17 @@ Por padrão, apenas três modos são incluídos.
 Note que é necessário selecionar pelo menos um modo.
 Esta opção não está disponível se tiver iniciado o NVDA com [WASAPI desactivado para saída de áudio](#WASAPI) nas definições avançadas.
 
-##### Volume de outras aplicações {#OtherAppVolume}
+##### Tempo para manter o dispositivo de áudio acordado depois de falar {#AudioAwakeTime}
 
-Este selector permite-lhe ajustar o volume de todas as aplicações actualmente em execução que não o NVDA.
-Esta definição de volume aplica-se à saída de som de todas as outras aplicações, mesmo que sejam iniciadas depois de esta definição ter sido alterada.
-Este volume também pode ser controlado através dos seguintes comandos de teclado a partir de qualquer lugar:
+Esta caixa de edição especifica durante quanto tempo o NVDA mantém o dispositivo de áudio acordado após o fim da fala.
+Esta configuração permite ao NVDA evitar certas falhas na fala, como partes de palavras perdidas.
+Isto pode acontecer devido ao facto de os dispositivos de áudio (especialmente Bluetooth e dispositivos sem fios) entrarem em modo de espera.
+Também é útil noutros casos, como ao executar o NVDA dentro de uma máquina virtual (por exemplo, Citrix Virtual Desktop) ou em determinados portáteis.
 
-<!-- KC:beginInclude -->
+Os valores mais baixos podem permitir que o áudio seja cortado com mais frequência, uma vez que um dispositivo pode entrar no modo de espera demasiado cedo, fazendo com que o início da fala seguinte seja cortado.
+Definir um valor demasiado elevado pode fazer com que a bateria do dispositivo de saída de som se descarregue mais rapidamente, uma vez que ele permanece activo durante mais tempo sem ser enviado qualquer som.
 
-| Nome |Comando |Descrição|
-|---|---|---|
-|Aumentar volume das aplicações |`NVDA+alt+pageUp` |Aumenta o volume de todas as aplicaçõess, excepto NVDA.|
-|Diminuir volume das aplicações |`NVDA+alt+pageDown` |Diminui o volume de todas as aplicaçõess, excepto NVDA.|
-
-<!-- KC:endInclude -->
-
-Esta opção não está disponível se tiver iniciado o NVDA com [WASAPI desativado para saída de áudio](#WASAPI) nas Definições Avançadas.
-
-##### Silenciar outras aplicações {#MuteApplications}
-
-Esta caixa de verificação permite-lhe silenciar todas as aplicações para além do NVDA.
-Esta definição de silenciamento aplicar-se-á a todas as outras aplicações que emitam som, mesmo que iniciem depois de esta definição ser alterada.
-O seguinte comando de teclado também pode ser utilizado a partir de qualquer lugar
-
-<!-- KC:beginInclude -->
-
-| Nome |Comando |Descrição|
-|---|---|---|
-|Alterna entre silenciar ou não as outras aplicações |`NVDA+alt+delete` |Silencia, ou remove o silenciamento, das aplicaçõess excepto o NVDA.|
-
-<!-- KC:endInclude -->
-
-Esta opção não está disponível se tiver iniciado o NVDA com [WASAPI desativado para saída de áudio](#WASAPI) nas Definições Avançadas.
+Para desactivar esta função, é possível colocar o tempo a zero.
 
 #### Visão {#VisionSettings}
 
@@ -4052,7 +4093,7 @@ Por favor, consulte a documentação do seu dispositivo braille para obter a des
 |Teclas Shift+Alt+Tab |f2+f3+f1|
 |Teclas Alt+Tab |f2+f3|
 |Teclas shift+tab |Ponto1+ponto2+espaço|
-|Tecla End |Ponto4+ponto6+Espaço||
+|Tecla End |Ponto4+ponto6+Espaço|
 |Teclas Control+End |Ponto4+ponto5+ponto6+Espaço|
 |Tecla Home |Ponto1+ponto3+Espaço, smartbeetle: f4|
 |Teclas Control+Home |ponto1+ponto2+ponto3+Espaço|
@@ -4435,7 +4476,7 @@ Seguem-se os comandos para o BrailleNote QT quando não está no modo de digita�
 |Menu do NVDA |read+n|
 |Tecla Seta acima |seta acima|
 |Tecla Seta abaixo |seta abaixo|
-|Tecla seta esquerda |leftArrow||
+|Tecla seta esquerda |leftArrow|
 |Tecla seta direita |rightArrow|
 |Tecla Página acima |function+seta acima|
 |Tecla Página abaixo |function+seta abaixo|
@@ -4835,7 +4876,7 @@ Seguem-se as associações de teclas para este protocolo.
 |---|---|
 |Deslocar a linha Braille para trás |pan left or rocker up|
 |Deslocar a linha Braille para a frente |pan right or rocker down|
-|Encaminhar para a célula |routing set 1||
+|Encaminhar para a célula |routing set 1|
 |Alternar "Braille segue:" |up+down|
 |seta acima |joystick up, dpad up  ou Espaço + ponto 1|
 |seta abaixo |joystick down, dpad down  espaço + ponto 4|
@@ -4980,4 +5021,3 @@ Os seguintes valores podem ser configurados nestas chaves:
 Caso necessite de mais informações ou suporte ao NVDA, por favor, visite a [página Internet do NVDA](NVDA_URL).
 Aqui poderá encontrar documentação adicional, bem como suporte técnico e recursos da comunidade.
 Estas páginas também fornecem informações referentes ao desenvolvimento do NVDA.
-
