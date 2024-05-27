@@ -307,8 +307,8 @@ Pour parcourir la liste et trouver une extension spécifique :
 1. Appuyez une fois sur `tab` pour passer à une description de l'extension actuellement sélectionné.
 1. Utilisez les [touches de lecture](#ReadingText) ou les `touches fléchées` pour lire la description complète.
 1. Appuyez sur `tab` pour atteindre le bouton "Actions", qui peut être utilisé pour installer l'extension entre autres actions.
-Appuyez sur `tab` jusqu'au champ "Autres détails", qui répertorie des détails tels que l'éditeur, la version et la page web.
-Pour revenir à la liste des extensions, appuyez sur `alt+e` ou `maj+tab` pour revenir à la liste "Extensions disponibles".
+1. Appuyez sur `tab` jusqu'au champ "Autres détails", qui répertorie des détails tels que l'éditeur, la version et la page web.
+1. Pour revenir à la liste des extensions, appuyez sur `alt+e` ou `maj+tab` pour revenir à la liste "Extensions disponibles".
 
 #### Rechercher des extensions {#SearchingForAddons}
 En plus de pouvoir parcourir toutes les extensions disponibles, il est possible de filtrer les extensions affichées.
@@ -323,7 +323,7 @@ Pour installer une extension :
 
 1. Lorsque le focus se trouve sur une extension que vous souhaitez installer, appuyez sur `entrée`.
 1. Le menu d'actions s'ouvre avec une liste d'actions ; la première action est "Installer".
-1. Pour installer l'extension, appuyez sur i` ou `flècheBas` pour atteindre "Installer" et appuyez sur `entrée`.
+1. Pour installer l'extension, appuyez sur `i` ou `flècheBas` pour atteindre "Installer" et appuyez sur `entrée`.
 1. Le focus revient sur l'extension dans la liste et NVDA lira les détails de cette extension.
 1. L'information "État" annoncée par NVDA passent de "Disponible" à "Téléchargement en cours".
 1. Une fois le téléchargement de l'extension terminé, elle passe à l'état "Téléchargé, en attente d'installation".
