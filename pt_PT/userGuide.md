@@ -417,7 +417,7 @@ Por padrão, esta opção está activada em novas instalações.
 #### Criar Atalho no Ambiente de Trabalho (control+alt+n) {#CreateDesktopShortcut}
 
 Esta opção permite-lhe escolher se deverá, ou não, ser criado um atalho, no Ambiente de trabalho, para iniciar o NVDA.
-Caso este atalho seja criado, permitirá igualmente iniciar o NVDA, a qualquer momento, através da combinação de teclas "Control+alt+n".
+Caso este atalho seja criado, permitirá igualmente iniciar o NVDA, a qualquer momento, através da combinação de teclas `Control+alt+n`.
 
 #### Copiar a Configuração Portátil para a Conta do Utilizador Actual {#CopyPortableConfigurationToCurrentUserAccount}
 
@@ -467,7 +467,7 @@ Também pode escrever NVDA, no diálogo Executar, e pressionar Enter.
 Se o NVDA estiver em execução será reiniciado.
 Desta maneira pode incluir algumas [opções de linha de comandos](#CommandLineOptions) que permitem sair (-q), desactivar os extras (--disable-addons), etc.
 
-Nas versões instaladas, o NVDA guarda as configurações na pasta appdata\roaming do utilizador actual, normalmente, "C:\Users\<utilizador>\AppData\Roaming".
+Nas versões instaladas, o NVDA guarda as configurações na pasta appdata\roaming do utilizador actual, normalmente, "`C:\Users\<utilizador>\AppData\Roaming`".
 É possível alterar o local onde o NVDA armazena as configurações para a pasta appdata\local.
 Consulte a secção [Parâmetros do sistema](#SystemWideParameters) para mais detalhes.
 
@@ -524,7 +524,7 @@ Se o seu computador portátil não pode fazer isto, ou não lhe permite alternar
 Se está a executar o NVDA num dispositivo com ecrã táctil (touch screen), pode também controlar o NVDA, directamente por comandos no ecrã.
 Enquanto o NVDA estiver em execução, e se a Interacção táctil estiver activada, toda a entrada por toques será interceptada por ele. 
 Portanto, as acções que podem ser realizadas normalmente sem o NVDA não irão funcionar.
-+<!-- KC:beginInclude -->
+<!-- KC:beginInclude -->
 Para alternar o suporte à Interacção táctil pressione NVDA+control+alt+t.
 <!-- KC:endInclude -->
 Também pode activar ou desactivar o [Suporte à Interacção táctil](#TouchSupportEnable) a partir da secção Interacção táctil nas configurações do NVDA.
@@ -561,7 +561,7 @@ Existem 4 gestos de varrimento possíveis, dependendo da direcção: varrer para
 Tal como nos toques, pode ser usado mais que um dedo para realizar o gesto.
 Assim, gestos, como varrer para cima, com dois dedos, ou varrer, com quatro dedos, para a esquerda, são possíveis.
 
-#### Modos de Toque {#TouchGestures}
+#### Modos de Toque {#TouchModes}
 
 Como existem muito mais comandos do NVDA do que gestos de toque possíveis, o NVDA tem vários modos de toque, entre os quais pode alternar, tornando disponíveis certos subconjuntos de comandos.
 Os dois modos que existem, por agora, são o modo de texto e o modo de objectos. 
@@ -600,9 +600,9 @@ Para aceder ao menu do NVDA, de qualquer lugar no Windows, enquanto executa o NV
 
 * Pressionar `NVDA+n` no teclado;
 * Dar um duplo toque com dois dedos, num ecrã táctil;
-* Aceda à barra do sistema pressionando "Windows+b", "seta para baixo" para o ícone do NVDA e pressione `enter`;
-* Em alternativa, aceda à barra do sistema pressionando "Windows+b", "seta para baixo" para o ícone do NVDA e abra o menu de contexto pressionando a tecla "aplicaçõs", localizada à esquerda da tecla Control direita na maioria dos teclados;
-Num teclado sem a tecla "aplicações", pressione "shift+F10".
+* Aceda à barra do sistema pressionando `Windows+b`, `seta abaixo` para o ícone do NVDA e pressione `enter`;
+* Em alternativa, aceda à barra do sistema pressionando `Windows+b`, `seta abaixo` para o ícone do NVDA e abra o menu de contexto pressionando a tecla `aplicações`, localizada à esquerda da tecla Control direita na maioria dos teclados;
+Num teclado sem a tecla `aplicações`, pressione `shift+F10`.
 * Clique com o botão direito do rato no ícone do NVDA localizado na barra do sistema.
 
 Quando o menu for apresentado, pode utilizar as teclas de setas para navegar no menu e a tecla `enter` para ativar um item.
@@ -692,7 +692,7 @@ Existem alguns comandos de teclado úteis quando se move com o foco do sistema:
 |Anunciar o título |NVDA+t |NVDA+t |Anuncia o título da janela actualmente em execução. Ao pressionar duas vezes, soletrará a informação. Se pressionar três vezes, copiará a informação para a área de transferência|
 |Ler a janela activa |NVDA+b |NVDA+b |Lê todos os controlos da janela actualmente em execução (útil para diálogos)|
 |Anunciar a Barra de Estado |NVDA+end |NVDA+shift+end |Lê a Barra de Estado, se for encontrada. Se pressionar duas vezes soletra a informação. Se pressionar três vezes, copiará a informação para a área de transferência|
-|Anunciar tecla de atalho |Shift+2 do numérico |NVDA+control+shift+. |Anuncia a tecla de atalho ou tecla aceleradora do objecto em foco|
+|Anunciar tecla de atalho |`Shift+2 do numérico` |`NVDA+control+shift+.` |Anuncia a tecla de atalho ou tecla aceleradora do objecto em foco|
 
 <!-- KC:endInclude -->
 
@@ -730,10 +730,10 @@ Quando estiver numa tabela, os seguintes comandos de teclado também estarão di
 |Mover para a última coluna |control+alt+end |Move o cursor do sistema para a última coluna (permanecendo na mesma linha)|
 |Mover para a primeira linha |control+alt+pageUp |Move o cursor do sistema para a primeira linha (permanecendo na mesma coluna)|
 |Mover para a última linha |control+alt+pageDown |Move o cursor do sistema para a última linha (permanecendo na mesma coluna)|
-|Leitura contínua em colunas |NVDA+control+alt+seta abaixo |Lê a coluna verticalmente da célula actual até ao fim.|
-|Leitura contínua em linhas |NVDA+control+alt+seta à direita |Lê a linha horizontalmente da célula actual até ao fim.|
-|Lê a coluna toda |NVDA+control+alt+seta acima |Lê a coluna actual de cima a baixo sem deslocar o cursor.|
-|Lê a linha toda |"NVDA+control+alt+leftArrow" |Lê a linha actual da esquerda para a direita sem deslocar o cursor.|
+|Leitura contínua em colunas |`NVDA+control+alt+seta abaixo` |Lê a coluna verticalmente da célula actual até ao fim.|
+|Leitura contínua em linhas |`NVDA+control+alt+seta à direita` |Lê a linha horizontalmente da célula actual até ao fim.|
+|Lê a coluna toda |`NVDA+control+alt+seta acima` |Lê a coluna actual de cima a baixo sem deslocar o cursor.|
+|Lê a linha toda |`NVDA+control+alt+seta à esquerda` |Lê a linha actual da esquerda para a direita sem deslocar o cursor.|
 
 <!-- KC:endInclude -->
 
@@ -767,7 +767,7 @@ Após navegar para um objecto, pode rever o seu conteúdo com os comandos de [re
 Quando a funcionalidade ["Realce visual"](#VisionFocusHighlight) estiver ativada, a localização actual do foco do sistema também será anunciada visualmente.
 Por padrão, a navegação de objectos acompanha o foco do sistema, embora este comportamento possa ser activado e desactivado.
 
-Nota:  A ligação do Braille ao objecto de navegação pode ser configurada na opção Braille ligado #BrailleTether].
+Nota:  A ligação do Braille ao objecto de navegação pode ser configurada na opção [Braille ligado](#BrailleTether).
 
 Para navegar pelos objectos, utilize os seguintes comandos:
 
@@ -802,7 +802,7 @@ Quando move o cursor de revisão, o cursor do sistema não o acompanha. Assim, p
 No entanto, por padrão, quando se move o cursor do Sistema, o cursor de revisão acompanha-o.
 Isto pode ser activado e desactivado.
 
-Nota:  A ligação do Braille ao cursor de revisão pode ser configurada na opção Braille ligado #BrailleTether].
+Nota:  A ligação do Braille ao cursor de revisão pode ser configurada na opção [Braille ligado](#BrailleTether).
 
 Os comandos seguintes estão disponíveis para a revisão de texto:
 <!-- KC:beginInclude -->
@@ -822,8 +822,8 @@ Os comandos seguintes estão disponíveis para a revisão de texto:
 |Anunciar o caracter actual em revisão |2 do bloco numérico |NVDA+ponto |nenhum |Anuncia o caracter actual na linha do texto, onde está posicionado o cursor de revisão. Se pressionar duas vezes, informa-o através da descrição de caracteres ou o respectivo exemplo. Ao pressionar três vezes, informa o valor numérico do caracter em decimal e hexadecimal|
 |Mover para o próximo caracter em revisão |3 do bloco numérico |NVDA+Seta Direita |Varrer para a direita (modo de texto) |Move o cursor de revisão para o caracter seguinte na linha actual do texto|
 |Mover para o fim da linha em revisão |Shift+3 do bloco numérico |NVDA+end |nenhum |Move o cursor de revisão para o fim da linha actual do texto|
-|Mover para a página anterior em revisão |"NVDA+pageUp" |"NVDA+shift+pageUp" |none |Move o cursor de revisão para a página de texto anterior se suportado pela aplicação|
-|Mover para a página seguinte em revisão |"NVDA+pageDown" |"NVDA+shift+pageDown" |none |Move o cursor de revisão para a página de texto seguinte se suportado pela aplicação|
+|Mover para a página anterior em revisão |`NVDA+pageUp` |`NVDA+shift+pageUp` |none |Move o cursor de revisão para a página de texto anterior se suportado pela aplicação|
+|Mover para a página seguinte em revisão |`NVDA+pageDown` |NVDA+shift+pageDown``  |none |Move o cursor de revisão para a página de texto seguinte se suportado pela aplicação|
 |Ler continuamente com a revisão |Mais do bloco numérico |NVDA+shift+a |Varrer para baixo com três dedos (modo de texto) |Lê a partir da posição actual do cursor de revisão e move-o até ao final do texto|
 |Seleccionar e copiar a partir do cursor de revisão |NVDA+F9 |NVDA+F9 |Nenhum |Inicia o Seleccionar e copiar o texto a partir da posição actual do cursor de revisão. A função não será efectuada até que informe o NVDA até onde é que pretende copiar|
 |Seleccionar e copiar até ao cursor de revisão |NVDA+F10 |NVDA+F10 |Nenhum |Ao pressionar a primeira vez o texto, se possível, é seleccionado até à posição do cursor. Se o cursor de inserção puder, será movido para esse local. Ao pressionar segunda vez copia o texto para a área de transferência do Windows|
@@ -872,7 +872,7 @@ O modo de revisão de documento permite-lhe rever todo o conteúdo do documento.
 Ao mudar do modo de revisão de objecto para o modo de revisão de documento, o cursor é colocado na posição do objecto de navegação.
 Ao mover-se pelo documento com os comandos de revisão, o objecto de navegação é automaticamente actualizado para o objecto encontrado na posição actual do cursor de revisão.
 
- Note que o NVDA mudará automaticamente para revisão de documento, a partir de revisão de objecto, quando se move por documentos de um navegador.
+Note que o NVDA mudará automaticamente para revisão de documento, a partir de revisão de objecto, quando se move por documentos de um navegador.
 
 #### Revisão do Ecrã {#ScreenReview}
 
@@ -890,7 +890,7 @@ Quando move o ponteiro do rato, por padrão, o NVDA anuncia o texto directamente
 Quando suportado, o NVDA irá ler o parágrafo que engloba o texto, porém existem alguns controlos que podem apenas ser lidos por linha. 
 
 O NVDA também pode ser configurado para anunciar o tipo de controlo ou o [objecto](#Objects) onde está actualmente o rato, conforme se movimente (ex. lista, botão etc.).
- Tal poderá ser útil para utilizadores totalmente cegos, porque, por vezes, o texto não é suficientemente explícito.
+Tal poderá ser útil para utilizadores totalmente cegos, porque, por vezes, o texto não é suficientemente explícito.
 
 O NVDA fornece um modo para que os utilizadores compreendam onde está o rato, no que respeita às dimensões do ecrã, anunciando as coordenadas actuais do rato como bips sonoros.
 Quanto mais para cima estiver o rato no ecrã, mais aguda será a entoação dos bips.
@@ -1044,13 +1044,13 @@ Eis a lista dos comandos disponíveis:
 * Texto com estilo diferente.
 
 Não se esqueça que há dois comandos para cada tipo de elemento, para mover para a frente no documento e para mover para trás no documento, e deve associar um comando a cada para poder navegar rapidamente nas duas direcções.
-Por exemplo, se quiser usar "y" / "shift+y" para navegar rapidamente entre tabs, deve fazer o seguinte:
+Por exemplo, se quiser usar `y` / `shift+y` para navegar rapidamente entre tabs, deve fazer o seguinte:
 
 1. Abrir o diálogo "Definir Comandos" a partir do modo de navegação;
 1. Encontrar "mover para o próximo tab" item na secção "Modo de navegação";
-1. Associar "y" como comando;
+1. Associar `y` como comando;
 1. Encontrar "mover para o tab anterior" item na secção "Modo de navegação";
-1. + Associar "shift+y" como comando.
+1. + Associar `shift+y` como comando.
 
 ### A Lista de Elementos {#ElementsList}
 
@@ -1142,11 +1142,11 @@ O Microsoft Word também proporciona navegação linear baseada em símbolos  at
 Para mais detalhes, veja [Equações de formato linear usando UnicodeMath e LaTeX no Word](https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8)
 * Microsoft Powerpoint e versões antigas do Microsoft Word: 
 O NVDA pode ler e navegar equaçõess MathType no Microsoft Powerpoint e Microsoft word.
- O "MathType" tem que estar instalado para que isto funcione.
- A versão Trial é suficiente.
- Pode ser descarregado de [MathType presentation page](https://www.wiris.com/en/mathtype/).
+O "MathType" tem que estar instalado para que isto funcione.
+A versão Trial é suficiente.
+Pode ser descarregado de [MathType presentation page](https://www.wiris.com/en/mathtype/).
 * Adobe Reader:
- Note que este ainda não é um padrão oficial, portanto ainda não está disponível nenhum software que produza este conteúdo.
+Note que este ainda não é um padrão oficial, portanto ainda não está disponível nenhum software que produza este conteúdo.
 * Kindle Reader for PC:
 O NVDA pode ler e navegar equações MathType no Kindle for PC em livros com matemática acessível.
 
@@ -1161,9 +1161,9 @@ Se estiver no modo de navegação, pode fazer isso movendo o cursor para o conte
 
 Se não estiver em modo de navegação:
 
-* Mova o cursor de revisão para o conteúdo matemático.
+1. Mova o cursor de revisão para o conteúdo matemático.
 Por padrão, o cursor de revisão segue o cursor de inserção, portanto, normalmente, pode usar o cursor de inserção para se mover para o conteúdo desejado.
-* Depois, active o seguinte comando:
+1. Depois, active o seguinte comando:
 
 <!-- KC:beginInclude -->
 
@@ -1364,7 +1364,7 @@ Essas posições são realçadas por um rectângulo desenhado com as seguintes c
 * Rosa sólido realça apenas o objecto de navegação;
 * Amarelo sólido realça o cursor virtual do modo de navegação (onde não existe um cursor físico, como nos navegadores web).
 
-Quando o "Realce visual" está activado, pode configurar na secção [Visão](#VisionSettings) na janela das [configurações do NVDA](#NVDASettings), se quer, ou não, realçar o foco do sistema, o objecto de navegação ou o cursor virtual do modo de navegação #VisionSettingsFocusHighlight]
+Quando o Realce visual está activado, pode configurar na secção [Visão](#VisionSettings) na janela das [configurações do NVDA](#NVDASettings), se [quer, ou não, realçar o foco do sistema, o objecto de navegação ou o cursor virtual do modo de navegação](#VisionSettingsFocusHighlight)
 
 ### Cortina de ecrã {#VisionScreenCurtain}
 
@@ -1467,7 +1467,7 @@ A Lista de Elementos pode apresentar títulos, links, anotações (que inclui co
 <!-- KC:beginInclude -->
 Para anunciar qualquer comentário na posição actual do cursor de inserção, pressione NVDA+alt+c.
 <!-- KC:endInclude -->
- Todos os comentários ao documento, em conjunto com outros registos de alterações, podem também ser listados na Lista de Elementos do NVDA, seleccionando Anotações como Tipo.
+Todos os comentários ao documento, em conjunto com outros registos de alterações, podem também ser listados na Lista de Elementos do NVDA, seleccionando Anotações como Tipo.
 
 ### Microsoft Excel {#MicrosoftExcel}
 #### Leitura Automática de Títulos de Coluna e Linha {#ExcelAutomaticColumnAndRowHeaderReading}
@@ -1590,8 +1590,8 @@ O NVDA oferece um suporte melhorado para o Poedit 3.4 ou superior.
 
 | Nome |Comando de Teclado |Descrição|
 |---|---|---|
-|Anunciar notas para os tradutores |control+shift+a |Anuncia quaisquer notas para os tradutores. Se pressionado duas vezes mostra as notas numa mensagem em modo de navegação.|
-|Anunciar comentários |control+shift+c |Anuncia quaisquer comentários na janela de comentários. Se pressionado duas vezes mostra o comentário numa mensagem em modo de navegação.|
+|Anunciar notas para os tradutores |`control+shift+a` |Anuncia quaisquer notas para os tradutores. Se pressionado duas vezes mostra as notas numa mensagem em modo de navegação.|
+|Anunciar comentários |`control+shift+c` |Anuncia quaisquer comentários na janela de comentários. Se pressionado duas vezes mostra o comentário numa mensagem em modo de navegação.|
 |Anuncia o antigo Texto fonte |`control+shift+o` |Anuncia o antigo texto fonte. Se pressionado duas vezes mostra o texto numa mensagem em modo de navegação.|
 |Anuncia avisos de tradução |`control+shift+w` |Anuncia qualquer aviso de problemas na tradução  Se pressionado duas vezes mostra o aviso numa mensagem em modo de navegação.|
 
@@ -1689,7 +1689,7 @@ Algumas configurações podem ser feitas por atalhos, que serão indicados quand
 O NVDA fornece muitos parâmetros de configuração que podem ser alterados através da janela de configurações.
 Para facilitar a procura do tipo de configurações que pretende alterar, a janela apresenta uma lista de secções de configurações à escolha.
 Quando selecciona uma secção, todas as definições relacionadas com a mesma serão apresentadas na janela.
-Para se deslocar entre secções, utilize `tab` ou "shift+tab" para aceder à lista de secções e, em seguida, utilize as teclas de seta para cima e para baixo para navegar na lista.
+Para se deslocar entre secções, utilize `tab` ou `shift+tab` para aceder à lista de secções e, em seguida, utilize as teclas de seta para cima e para baixo para navegar na lista.
 A partir de qualquer ponto da janela , pode também avançar uma secção pressionando "ctrl+tab", ou recuar uma seccção pressionando "shift+ctrl+tab".
 
 Depois de alterar uma ou mais configurações, as configurações podem ser aplicadas utilizando o botão aplicar, caso em que a janela permanecerá aberta, permitindo-lhe alterar mais configurações ou escolher outra secção.
@@ -3410,14 +3410,14 @@ Para listar apenas extras de canais específicos, altere a seleção do filtro "
 #### Pesquisar extras {#AddonStoreFilterSearch}
 
 Para pesquisar extras, utilize a caixa de texto "Pesquisar".
-Pode acedê-la pressionando "Shift+Tab" a partir da lista de extras ou pressionando "Alt+P" a partir de qualquer parte da interface da Loja de Extras.
+Pode acedê-la pressionando `shift+tab` a partir da lista de extras ou pressionando "Alt+P" a partir de qualquer parte da interface da Loja de Extras.
 Digite uma palavra-chave ou duas para o tipo de extra que procura e, em seguida, `tab` para voltar à lista de extras.
 Os extras serão listados se o texto de pesquisa puder ser encontrado no nome de exibição, no editor ou na descrição.
 
 ### Acções do extra {#AddonStoreActions}
 
 Os extras têm acções associadas, como instalar, ajuda, desactivar e remover.
-O menu de ações pode ser acedido para um extra na lista de extras pressionando a tecla "Aplicações", `enter`, clicando com o botão direito do rato ou fazendo duplo clique no extra.
+O menu de ações pode ser acedido para um extra na lista de extras pressionando a tecla `aplicações`, `enter`, clicando com o botão direito do rato ou fazendo duplo clique no extra.
 Há também um botão de Acções nos detalhes do extra selecionado, que pode ser ativado normalmente ou pressionando "Alt+A".
 
 #### Instalar extras {#AddonStoreInstalling}
@@ -4608,7 +4608,7 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 |"numpadEnter" key |"dot3+dot4+dot5+backspace"|
 |"escape" key |"dot1+dot2+dot4+dot5+space", "l2"|
 |`tab` key |"dot2+dot5+dot6+space", "l3"|
-|"shift+tab" keys |"dot2+dot3+dot5+space"|
+|`shift+tab` keys |"dot2+dot3+dot5+space"|
 |"printScreen" key |"dot1+dot3+dot4+dot6+space"|
 |"pause" key |"dot1+dot4+space"|
 |"applications" key |"dot5+dot6+backspace"|
