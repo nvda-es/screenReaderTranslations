@@ -82,7 +82,7 @@ Pour les détails concernant les exceptions, veuillez consulter le document de l
 ## Guide de Démarrage Rapide de NVDA {#NVDAQuickStartGuide}
 
 Ce guide de démarrage rapide contient trois sections principales : téléchargement, configuration initiale et exécution de NVDA.
-Celles-ci sont suivies d'informations sur l'ajustement des préférences, la participation à la communauté et l'obtention d'aide.
+Celles-ci sont suivies d'informations sur l'ajustement des préférences, l'utilisation des extensions, la participation à la communauté et l'obtention d'aide.
 Les informations contenues dans ce guide sont condensées à partir d'autres parties du Guide de l'utilisateur NVDA.
 Veuillez vous reporter au Guide de l'utilisateur complet pour obtenir des informations plus détaillées sur chaque sujet.
 
@@ -300,21 +300,21 @@ Lorsque des extensions sont déjà installées, l'Add-on Store s'ouvre sur l'ong
 #### Extensions disponibles {#AvailableAddons}
 Lorsque la fenêtre s'ouvre pour la première fois, le chargement des extensions peut prendre quelques secondes.
 NVDA lira le nom de la première extension une fois que le chargement de la liste des extensions est terminé.
-Les extensions disponibles sont listées par ordre alphabétique dans une grille.
+Les extensions disponibles sont listées par ordre alphabétique dans une liste à plusieurs colonnes.
 Pour parcourir la liste et trouver une extension spécifique :
 
-1. Utilisez les `touches fléchées` ou appuyez sur la première lettre du nom d'une extension pour vous déplacer dans la liste.
+1. Utilisez les touches fléchées ou appuyez sur la première lettre du nom d'une extension pour vous déplacer dans la liste.
 1. Appuyez une fois sur `tab` pour passer à une description de l'extension actuellement sélectionné.
-1. Utilisez les [touches de lecture](#ReadingText) ou les `touches fléchées` pour lire la description complète.
+1. Utilisez les [touches de lecture](#ReadingText) ou les touches fléchées pour lire la description complète.
 1. Appuyez sur `tab` pour atteindre le bouton "Actions", qui peut être utilisé pour installer l'extension entre autres actions.
 1. Appuyez sur `tab` jusqu'au champ "Autres détails", qui répertorie des détails tels que l'éditeur, la version et la page web.
-1. Pour revenir à la liste des extensions, appuyez sur `alt+e` ou `maj+tab` pour revenir à la liste "Extensions disponibles".
+1. Pour revenir à la liste des extensions, appuyez sur `alt+e`, ou `maj+tab` jusqu'à atteindre la liste.
 
 #### Rechercher des extensions {#SearchingForAddons}
 En plus de pouvoir parcourir toutes les extensions disponibles, il est possible de filtrer les extensions affichées.
 Pour effectuer une recherche, appuyez sur `alt+r` pour accéder au champ "Recherche" et tapez le texte à rechercher.
-Le champ de recherche peut contenir des informations telles que l'ID de l'extension, le nom affiché, l'éditeur, l'auteur ou la description.
-La liste change au cours de la saisie des termes de recherche.
+La recherche vérifie les correspondances dans les champs ID, nom affiché, éditeur, auteur ou description de l'extension.
+La liste se met à jour au cours de la saisie des termes de recherche.
 Une fois la saisie terminée, appuyez sur `tab` pour accéder à la liste filtrée des extensions et parcourir les résultats.
 
 #### Installer des extensions {#InstallingAddons}
@@ -330,26 +330,26 @@ Pour installer une extension :
 1. Répétez cette procédure pour toutes les extensions que vous souhaitez également installer.
 1. Une fois que vous avez fini, appuyez sur `tab` jusqu'à ce que le focus soit sur le bouton "Fermer", puis appuyez sur `entrée`.
 1. Les extensions téléchargées démarreront leur processus d'installation dès la fermeture de l'Add-on Store.
-Pendant le processus d'installation, les extensions peuvent ouvrir des boîtes de dialogue auxquelles vous devrez répondre.
+Pendant le processus d'installation, les extensions peuvent afficher des boîtes de dialogue auxquelles vous devrez répondre.
 1. Une fois que les extensions sont installées, une boîte de dialogue apparaît vous informant que des modifications ont été apportées et vous devez redémarrer NVDA pour que l'installation des extensions soit terminée.
 1. Appuyez sur `entrée` pour redémarrer NVDA.
 
 #### Gérer les extensions {#ManagingInstalledAddons}
-Appuyez sur `contrôle+tab` pour vous déplacer entre les onglets ou les sections de l'Add-on Store.
+Appuyez sur `contrôle+tab` pour vous déplacer entre les onglets de l'Add-on Store.
 Les onglets sont : "Extensions installées", "Mises à jour", "Extensions disponibles" et "Extensions incompatibles installés".
-Chacun des onglets est présenté de manière similaire, sous la forme d'une liste d'extensions, d'un panneau pour plus de détails sur l'extension sélectionné et de la possibilité d'effectuer des actions pour l'extension.
-Le menu d'actions des extensions installés inclut les actions "Désactiver" et "Supprimer" au lieu de "Installer".
+Chacun des onglets est présenté de manière similaire, sous la forme d'une liste d'extensions, d'un panneau pour plus de détails sur l'extension sélectionné et d'un bouton pour effectuer des actions pour l'extension sélectionnée.
+Le menu d'actions des extensions installés comprend les actions "Désactiver" et "Supprimer" au lieu de "Installer".
 La désactivation d'une extension empêche NVDA de la charger, mais la garde installée.
 Pour réactiver une extension désactivée, appuyez sur "Activer" dans le menu actions.
 Après avoir activé, désactivé ou supprimé des extensions, vous serez invité à redémarrer NVDA lors de la fermeture de l'Add-on Store.
 Ces modifications ne prendront effet qu'une fois NVDA redémarré.
-Veuillez noter que dans cette boîte de dialogue, `échap` fonctionne de la même manière que le bouton Fermer.
+Veuillez noter que dans la fenêtre de l'Add-on Store, `échap` fonctionne de la même manière que le bouton Fermer.
 
 #### Mettre à jour des extensions {#UpdatingAddons}
-Lorsqu'il y a une mise à jour d'une extension que vous avez installée, elle sera listée dans l'onglet "Mises à jour".
+Lorsqu'une mise à jour pour une extension que vous avez installée est disponible, elle sera listée dans l'onglet "Mises à jour".
 Appuyez sur `contrôle+tab` pour accéder à cet onglet depuis n'importe où dans l'Add-on Store.
 L'état de l'extension sera "Mise à jour disponible".
-Le tableau indique la version actuellement installée et la version disponible.
+La liste indiquera la version actuellement installée et la version disponible.
 Appuyez sur `entrée` sur l'extension pour ouvrir la liste d'actions ; choisissez "Mettre à jour".
 
 ### Communauté {#Community}
