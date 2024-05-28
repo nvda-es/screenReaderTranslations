@@ -82,7 +82,7 @@ Einzelheiten zu Ausnahmen finden Sie im NVDA-Menü unter "Hilfe", "Lizenz".
 ## NVDA-Schnellstartanleitung {#NVDAQuickStartGuide}
 
 Diese Schnellstartanleitung enthält drei Hauptabschnitte: Herunterladen, Ersteinrichtung und Ausführung von NVDA.
-Es folgen Informationen über die Anpassung von Einstellungen, die Teilnahme an der Community und die Inanspruchnahme von Hilfe.
+Es folgen Informationen über die Anpassung der Einstellungen, die Verwendung von NVDA-Erweiterungen, die Teilnahme an der Community und die Hilfe.
 Die Informationen in diesem Handbuch wurden aus anderen Teilen des NVDA-Benutzerhandbuchs zusammengefasst.
 Ausführlichere Informationen zu den einzelnen Themen finden Sie im vollständigen Benutzerhandbuch.
 
@@ -300,21 +300,21 @@ Wenn NVDA-Erweiterungen installiert sind, wird im Store die Registerkarte "Insta
 #### Verfügbare NVDA-Erweiterungen {#AvailableAddons}
 Wenn das Fenster zum ersten Mal geöffnet wird, kann es einige Sekunden dauern, bis die NVDA-Erweiterungen geladen sind.
 NVDA teilt automatisch den Namen der ersten NVDA-Erweiterung mit, sobald die Liste geladen ist.
-Die verfügbaren NVDA-Erweiterungen werden alphabetisch in einer Tabelle aufgelistet.
+Die verfügbaren NVDA-Erweiterungen werden in einer mehrspaltigen Liste alphabetisch aufgelistet.
 Um die Liste zu durchsuchen und sich über eine bestimmte NVDA-Erweiterung zu informieren:
 
-1. Verwenden Sie die `Pfeiltasten` oder drücken Sie den Anfangsbuchstaben des Namens, um in der Liste zu navigieren.
+1. Verwenden Sie die Pfeiltasten oder drücken Sie den Anfangsbuchstaben des Namens, um in der Liste zu navigieren.
 1. Betätigen Sie einmal die `Tab-Taste`, um in das Feld für die Beschreibung zu gelangen.
 1. Verwenden Sie die [Lesetasten](#ReadingText) oder die Pfeiltasten, um den kompletten Text zu lesen.
 1. Betätigen Sie die `Tab-Taste`, um zum Schalter "Aktionen" zu gelangen, mit der Sie unter anderem die NVDA-Erweiterung installieren können.
 1. Betätigen Sie die `Tab-Taste`, um zu "Weitere Details" zu gelangen, in der Details wie der Herausgeber, die Version und die Adresse der Homepage stehen.
-1. Um zur Liste der verfügbaren NVDA-Erweiterungen zurückzukehren, drücken Sie die Tastenkombination `Alt+A` oder `Umschalt+Tab`.
+1. Um zur Liste der NVDA-Erweiterungen zurückzukehren, drücken Sie `Alt+A`" oder `Umschalt+Tab`, bis Sie die Liste erreichen.
 
 #### Nach NVDA-Erweiterungen suchen {#SearchingForAddons}
 Neben der Suche nach verfügbaren NVDA-Erweiterungen können Sie auch diese filtern.
-Um die Suche auszuführen, drücken Sie die Tastenkombination `Alt+S`, um zum Feld "Suchen" zu gelangen und geben Sie hier den zu suchenden Begriff ein.
-Das Suchfeld kann Informationen wie die ID, den Anzeigenamen, den Herausgeber, den Autor oder die Beschreibung enthalten.
-Die Liste ändert sich dynamisch während der Eingabe der Suchbegriffe.
+Um zu suchen, drücken Sie `Alt+S`, um zum Feld "Suchen" zu gelangen und geben Sie den zu suchenden Begriff ein.
+Bei der Suche wird nach Übereinstimmungen in den Feldern ID, Anzeigename, Herausgeber, Autor und Beschreibung gesucht.
+Die Liste wird während der Eingabe der Suchbegriffe aktualisiert.
 Betätigen Sie anschließend die `Tab-Taste`, um die gefilterte Liste aufzurufen und die Ergebnisse sich anzeigen zu lassen.
 
 #### NVDA-Erweiterungen installieren {#InstallingAddons}
@@ -323,33 +323,33 @@ Um eine NVDA-Erweiterung zu installieren:
 
 1. Wenn eine zu installierende NVDA-Erweiterung ausgewählt ist, betätigen Sie die `Eingabetaste`.
 1. Es öffnet sich das Aktionsmenü mit einer Liste von Aktionen; die erste Aktion ist "Installieren".
-1. Um eine NVDA-Erweiterung zu installieren, drücken Sie die Taste `I` oder `Pfeiltaste nach unten` bis "Installieren" und betätigen Sie dann die `Eingabetaste`.
+1. Um eine NVDA-Erweiterung zu installieren, drücken Sie den Buchstaben `I` oder die `Pfeiltaste nach unten` bis zum Schalter "Installieren" und betätigen Sie dann die `Eingabetaste`.
 1. Der Fokus kehrt zur Liste zurück und NVDA teilt die Details mit.
 1. Der von NVDA mitgeteilte Status ändert sich von "Verfügbar" zu "Herunterladen".
 1. Sobald der Download abgeschlossen ist, ändert sich der Status in "Heruntergeladen, Installation ausstehend".
 1. Wiederholen Sie diesen Vorgang mit weiteren NVDA-Erweiterungen, die Sie gleichzeitig installieren möchten.
 1. Wenn Sie fertig sind, drücken Sie die `Tab-Taste`, bis zum Schalter "Schließen" und betätigen Sie dann die `Eingabetaste`.
 1. Die heruntergeladenen NVDA-Erweiterungen werden installiert, sobald der Store geschlossen wird.
-Während der Installation können Dialogfelder angezeigt werden, indem Sie entweder weitere Aktionen auswählen oder Fragen beantwortet werden müssen.
+Beim Installationsvorgang könnten Dialogfelder angezeigt werden, indem Sie entweder weitere Aktionen auswählen oder Fragen beantwortet werden müssen.
 1. Nach der Installation wird ein Dialogfeld mit dem Hinweis angezeigt, dass Änderungen vorgenommen wurden und Sie müssen NVDA neu starten, damit die Installation abgeschlossen werden kann.
 1. Betätigen Sie nun die `Eingabetaste`, um NVDA neu zu starten.
 
 #### Installierte NVDA-Erweiterungen verwalten {#ManagingInstalledAddons}
-Drücken Sie die Tastenkombination `Strg+Tab`, um zwischen den Registerkarten oder Abschnitten des Stores zu wechseln.
+Drücken Sie die Tastenkombination `Strg+Tab`, um zwischen den Registerkarten im Store zu wechseln.
 Die Registerkarten umfassen: "Installierte Pakete", "Updates", "Verfügbare Pakete" und "Installierte inkompatible Pakete".
-Die einzelnen Registerkarten sind ähnlich aufgebaut: Sie enthalten eine Liste der NVDA-Erweiterungen, ein Feld für weitere Details und ein Schalter, um Aktionen durchzuführen.
+Jeder dieser Registerkarten ist ähnlich aufgebaut, d. h., sie enthält eine Liste der NVDA-Erweiterungen, ein Feld für weitere Details und ein Schalter für Aktionen, die durchgeführt werden können.
 Das Aktionsmenü der installierten NVDA-Erweiterung enthält die Einträge "Deaktivieren" und "Entfernen" anstatt "Installieren".
 Wenn Sie eine NVDA-Erweiterung deaktivieren, wird es nicht mehr in NVDA geladen, bleibt aber installiert.
 Um eine deaktivierte NVDA-Erweiterung wieder zu aktivieren, wählen Sie im Aktionsmenü den Eintrag "Aktivieren" aus.
 Nach dem Aktivieren, Deaktivieren oder Entfernen werden Sie beim Schließen des Stores aufgefordert, NVDA neu zu starten.
 Diese Änderungen werden erst nach einem Neustart von NVDA wirksam.
-Beachten Sie, dass in diesem Dialogfeld `die `Escape-Taste` gleichermaßen funktioniert wie der Schalter "Schließen".
+Beachten Sie, dass im Store die `Escape-Taste` gleichermaßen funktioniert wie der Schalter "Schließen".
 
 #### NVDA-Erweiterungen aktualisieren {#UpdatingAddons}
-Sollte es ein Update für eine installierte NVDA-Erweiterung geben, wird es auf der Registerkarte "Updates" angezeigt.
+Sollte ein Update von einer installierten NVDA-Erweiterung verfügbar sein, wird dies in der Registerkarte "Updates" aufgeführt.
 Drücken Sie die Tastenkombination `Strg+Tab`, um diese Registerkarte von einer beliebigen Stelle im Store aus aufzurufen.
 Der Status wird als "Update verfügbar" angezeigt.
-In der Tabelle werden die derzeit installierte Version und die verfügbare Version aufgelistet.
+In der Liste werden die derzeit installierte Version und die verfügbare Version angezeigt.
 Drücken Sie die `Eingabetaste`, um die Liste der Aktionen zu öffnen; wählen Sie dann hier "Aktualisieren" aus.
 
 ### Die Community {#Community}
