@@ -2293,6 +2293,7 @@ Podrazumijevano, ovaj će prečac prebacivati između slijedećih modusa:
 Dostupno je više naprednih načina podjele u odabirnom okviru.
 Osim tih modusa, "NVDA u oba kanala i programi u oba kanala" prisiljava sve druge zvukove da budu preusmjereni u oba kanala.
 taj modus može se razlikovati od modusa "podjela zvuka onemogućena" u slučaju da druga obrada zvuka smeta.
+
 Imajte na umu da ova opcija ne radi kao mikser.
 Na primjer, ako program reproducira  glazbu u stereo formatu kada je način podjele zvuka postavljen na "NVDA u lijevom kanalu a programi u desnom", tada ćete čuti desni kanal pjesme, dok će lijevi kanal biti utišan.
 
