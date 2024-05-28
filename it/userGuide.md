@@ -31,8 +31,8 @@ Le caratteristiche principali possono essere riassunte nei seguenti punti:
 * Installazione guidata semplice ed intuitiva tramite sintesi vocale
 * Tradotto in 54 lingue
 * Supporto ai sistemi operativi più moderni, comprese le edizioni a 32 e 64 bit
-* Supporto al prompt dei comandi di Windows e alle applicazioni lanciate da console
 * Gestione delle schermate di accesso utente e quelle [relative alla sicurezza](#SecureScreens)
+* Supporto al prompt dei comandi di Windows e alle applicazioni lanciate da console
 * Lettura di testo e controlli mentre si utilizza un touch screen.
 * Supporto alle interfacce più comuni per l'accessibilità, come Microsoft Active Accessibility, Java Access Bridge, IAccessible2 e UI Automation.
 * Capacità di evidenziare il focus di sistema.
@@ -249,7 +249,6 @@ I comandi effettivi non verranno eseguiti nella modalità di aiuto immissione.
 |Spostarsi al parametro precedente del sintetizzatore |`NVDA+control+FrecciaSinistra` |`NVDA+Maiusc+control+FrecciaSinistra` |Si sposta al parametro precedente disponibile inerente la sintesi vocale e nel caso si sia raggiunto l'ultimo dell'elenco tornerà al primo|
 |Aumentare il parametro corrente del sintetizzatore |`NVDA+Control+Freccia su` |`NVDA+Maiusc+Control+Freccia su` |Aumenta il valore del parametro sul quale si è posizionati. Ad esempio si aumenta la velocità, poi ci si sposta all'impostazione successiva, si aumenta il volume etc|
 |Aumentare il parametro corrente del sintetizzatore con un incremento maggiore |`NVDA+control+pagina su` |`NVDA+shift+control+pagina su` |Aumenta il valore del parametro del sintetizzatore su cui si è posizionati con un incremento maggiore. Ad esempio, se ci si trova nelle impostazioni per scegliere la voce, avanzerà di 20 valori alla volta invece che uno soltanto; oppure, se ci si trova nei cursori di avanzamento (velocità, tono, etc) incrementerà il valore fino al 20%|
-
 |Diminuire il parametro corrente del sintetizzatore |`NVDA+Control+Freccia giù` |`NVDA+Shift+Control+Freccia giù` |Diminuisce il valore del parametro sul quale si è posizionati. Ad esempio si diminuisce la velocità, poi ci si sposta all'impostazione successiva, si diminuisce il volume etc|
 |Diminuire il parametro corrente del sintetizzatore con un decremento maggiore |`NVDA+control+pagina giù` |`NVDA+shift+control+pagina giù` |Diminuisce il valore del parametro del sintetizzatore su cui si è posizionati con un decremento maggiore. Ad esempio, se ci si trova nelle impostazioni per scegliere la voce, tornerà indietro di 20 valori alla volta invece che uno soltanto; oppure, se ci si trova nei cursori di avanzamento (velocità, tono, etc) diminuirà il valore fino al 20%|
 
