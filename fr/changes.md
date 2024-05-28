@@ -35,8 +35,8 @@ Sont présents de nombreux correctifs de bogues mineures pour des applications, 
     * Ajout de commandes pour sauter au premier, au dernier, en avant et en arrière dans la boucle des paramètres synthétiseur. (#13768, #16095, @rmcpantoja)
     * Aller à la première/dernière valeur du paramètre courant dans la boucle des paramètres synthétiseur n'a pas de geste assigné. (#13768)
     * Diminuer et augmenter le paramètre courant de la boucle des paramètres synthétiseur d'un intervalle plus important (#13768) :
-      * Ordinateur de Bureau : `NVDA+contrôle+pagePrec` ou `NVDA+contrôle+pageSuiv`.
-      * Ordinateur portable : `NVDA+contrôle+maj+pagePrec` ou `NVDA+contrôle+maj+pageSuiv`.
+      * Ordinateur de Bureau : `NVDA+contrôle+pagePrec` et `NVDA+contrôle+pageSuiv`.
+      * Ordinateur portable : `NVDA+contrôle+maj+pagePrec` et `NVDA+contrôle+maj+pageSuiv`.
   * Ajout d'un nouveau geste de commande non assigné pour basculer l'annonce des figures et légendes. (#10826, #14349)
 * Braille :
   * Ajout du support des afficheurs BrailleEdgeS2 et BrailleEdgeS3. (#16033, #16279, @EdKweon)
@@ -56,14 +56,14 @@ Sont présents de nombreux correctifs de bogues mineures pour des applications, 
 
 * Add-on Store :
   * La version minimale et la dernière version testées d'une extension sont maintenant affichées dans la zone "autres détails". (#15776, @Nael-Sayegh)
-  * L'action avis de la communauté sera disponible, et l'URL des avis sera affichée dans la zone de détails, dans tous les onglets du store. (#16179, @nvdaes)
+  * L'action avis de la communauté sera disponible dans tous les onglets du store. (#16179, @nvdaes)
 * Mises à jour de composants :
   * Mise à jour du transcripteur Braille LibLouis à la version [3.29.0](https://github.com/liblouis/liblouis/releases/tag/v3.29.0). (#16259, @codeofdusk)
     * Nouvelles tables Braille Biélorusse et Ukrainien détaillés (avec lettres majuscules indiquées).
     * Nouvelle table Espagnole pour le texte Grec.
     * Nouvelle table Laotien intégral. (#16470)
   * eSpeak NG a été mis à jour à la version 1.52-dev révision `cb62d93fd7`. (#15913)
-    * Ajout du langage Tigrigna. 
+    * Ajout du langage Tigrigna.
 * Changements de plusieurs gestes pour les périphériques BrailleSense pour éviter des conflits avec les caractères de la table Braille française. (#15306)
   * `alt+flècheGauche` est maintenant assigné à `point2+point7+espace`
   * `alt+flècheDroite` est maintenant assigné à `point5+point7+espace`
@@ -88,7 +88,9 @@ Sont présents de nombreux correctifs de bogues mineures pour des applications, 
 * Correction d'un bug causant l'échec de NVDA à lire les rubans et options dans Geekbench. (#16251, @mzanm)
 * Correction d'un rare cas où l'enregistrement de la configuration pouvait échouer à enregistrer tous les profils. (#16343, @CyrilleB79)
 * Dans Firefox et les navigateurs basés sur Chromium, NVDA entrera correctement en mode formulaire lors de l'appui sur entrée lorsque vous êtes positionné dans une liste de présentation (ul / ol) dans un contenu éditable. (#16325)
-* Le changement d'état d'une colonne est automatiquement annoncé lors du choix des colonnes à afficher dans la liste de messages de Thunderbird. (#16323)
+* Le changement d'état d'une colonne est maintenant correctement annoncé lors du choix des colonnes à afficher dans la liste de messages de Thunderbird. (#16323)
+* Le paramètre de ligne de commande `-h`/`--help` fonctionne de nouveau correctement. (#16522, @XLTechie)
+* Le support de NVDA pour le logiciel de traduction Poedit version 3.4 ou au-delà fonctionne correctement lors de la traduction de langues avec une ou plus de 2 formes pluriel (par exemple Chinois, Polonais). (#16318)
 
 ### Changements pour les Développeurs
 
