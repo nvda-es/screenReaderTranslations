@@ -82,7 +82,7 @@ Para obter detalles sobre as escepcións, acesa ao documento de licencia dende o
 ## Guía de Inicio Rápido de NVDA {#NVDAQuickStartGuide}
 
 Esta guía de inicio rápido contén tres secións principais: descargar, configuración inicial e executar o NVDA.
-Éstas séguense por información sobre o axuste de preferencias, a participación na comunidade e a obtención de axuda.
+Éstas séguense por información sobre o axuste de preferencias, o uso dos complementos, a participación na comunidade e a obtención de axuda.
 A información nesta guía é un condensado de outras partes da guía do usuario de NVDA.
 Por favor consulta a guía compreta do usuario para información máis detallada sobre cada tema.
 
@@ -300,20 +300,20 @@ Cando haxa complementos instalados, a Tenda de Complementos ábrese na pestana "
 #### Complementos dispoñibles {#AvailableAddons}
 Cando a xanela se abre por primeira vez, os complementos poden tardar uns segundos en cargarse.
 O NVDA lerá o nome do complemento unha vez que a listaxe de complementos remate de se cargar.
-Os complementos dispoñibles lístánse alfabéticamente nunha grella.
+Os complementos dispoñibles lístánse alfabéticamente nunha listaxe de varias columnas.
 Para navegar pola listaxe e atopar información sobre un complemento específico:
 
-1. Usa as `frechas` oo preme a primeira letra dun nome de complemento para moverte pola listaxe.
+1. Usa as frechas ou preme a primeira letra dun nome de complemento para moverte pola listaxe.
 1. Preme `tab` unha vez para moverte a unha descripción do complemento selecionado actualmente.
-1. Usa as [teclas de lectura](#ReadingText) ou `frechas` para ler toda a descripción.
+1. Usa as [teclas de lectura](#ReadingText) ou as frechas para ler toda a descripción.
 1. Preme `tab` hate o botón "Acións", que se pode usar para instalar o complemento, entre outras acións.
 1. Preme `tab` ate "Outros  Detalles", que enumera detalles como o editor, a versión e a páxina de inicio.
-1. Para voltar á listaxe de complementos, preme `alt+d`, ou `shift+tab` retrocedendo ate a listaxe "Complementos dispoñibles".
+1. Para voltar á listaxe de complementos, preme `alt+d`, ou `shift+tab` ate a listaxe "Complementos dispoñibles".
 
 #### Procurar complementos {#SearchingForAddons}
 Ademáis de explorar todos os complementos dispoñibles, é posible filtrar os amosados.
 Para procurar, preme `alt+b` para saltar ao campo "procurar" e escrebe o texto a atopar.
-O campo procurar pode conter información incluíndo o identificador do complemento, o nome amosado, o editor, o autor ou a descripción.
+A procura atopa coincidencias nos campos do identificador do complemento, o nome amosado, o editor, o autor ou a descripción.
 A listaxe cambia segundo se teclean os termos de búsqueda.
 Unha vez feito, preme `tab` para ir á listaxe filtrada de complementos e navega polos resultados.
 
@@ -335,7 +335,7 @@ Os complementos poden crear diálogos durante o proceso de instalación aos que 
 1. Preme `intro` para reiniciar o NVDA.
 
 #### Xestionar complementos instalados {#ManagingInstalledAddons}
-Preme `control+tab` para moverte entre as pestanas ou secións da Tenda de Complementos.
+Preme `control+tab` para moverte entre as pestanas da Tenda de Complementos.
 As pestanas inclúen: "Complementos instalados", "Complementos actualizables", "Complementos dispoñibles" e "Complementos instalados incompatibles".
 Cada unha das pestanas está configurada de xeito semellante, como unha listaxe de complementos, un panel para máis detalles sobre o complemento selecionado e a posibilidade de realizar acións para o complemento.
 O menú acións de complementos instalados inclúe "Deshabilitar" e "Borrar" a cambio de "Instalar".
@@ -343,13 +343,13 @@ Deshabilitar un complemento impide que o NVDA o cargue, pero déixao instalado.
 Para voltar a habilitar un complemento deshabilitado, activa "Habilitar" dende o menú acións.
 Despois de habilitar, deshabilitar ou borrar complementos, pediráseche que reinicies o NVDA ao pechar a Tenda de Complementos.
 Estos cambios só terán efecto unha vez o NVDA se reinicie.
-Ten en conta que neste diálogo `escape` funciona igual que o botón Pechar.
+Ten en conta que na xanela da Tenda de Complementos `escape` funciona igual que o botón Pechar.
 
 #### Actualizar complementos {#UpdatingAddons}
 Cando haxa unha actualización dun complemento que instalaras, aparecerá na pestana "Complementos actualizables".
 Preme `control+tab` para acesar a esta pestana dende calquera lugar na Tenda de Complementos.
 O estado do complemento aparecerá como "Actualización dispoñible".
-A táboa amosará a versión actual instalada e a versión dispoñible.
+A listaxe amosará a versión actual instalada e a versión dispoñible.
 Preme `intro` sobre o complemento para abrir a listaxe de acións; escolle "Actualizar".
 
 ### Comunidade {#Community}

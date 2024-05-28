@@ -82,7 +82,7 @@ Para obtener detalles sobre las escepciones, accede al documento de licencia des
 ## Guía de Inicio Rápido de NVDA {#NVDAQuickStartGuide}
 
 Esta guía de inicio rápido contiene tres secciones principales: descargar, configuración inicial y ejecutar NVDA.
-Éstas se siguen por información sobre el ajuste de preferencias, la participación en la comunidad y la obtención de ayuda.
+Éstas se siguen por información sobre el ajuste de preferencias, la utilización de complementos, la participación en la comunidad y la obtención de ayuda.
 La información en esta guía es un condensado de otras partes de la guía del usuario de NVDA.
 Por favor consulta la guía completa del usuario para información más detallada sobre cada tema.
 
@@ -300,20 +300,20 @@ Cuando haya complementos instalados, la Tienda de Complementos se abre en la pes
 #### Complementos disponibles {#AvailableAddons}
 Cuando la ventana se abre por primera vez, los complementos pueden tardar unos segundos en cargarse.
 NVDA leerá el nombre del complemento una vez que la lista de complementos termine de cargarse.
-Los complementos disponibles se listan alfabéticamente en una cuadrícula.
+Los complementos disponibles se listan alfabéticamente en una lista de varias columnas.
 Para navegar por la lista y encontrar información sobre un complemento específico:
 
-1. Utiliza las `flechas` o pulsa la primera letra de un nombre de complemento para moverte por la lista.
+1. Utiliza las flechas o pulsa la primera letra de un nombre de complemento para moverte por la lista.
 1. Pulsa `tab` una vez para moverte a una descripción del complemento seleccionado actualmente.
-1. Utiliza  las [teclas de lectura](#ReadingText) o `flechas` para leer toda la descripción.
+1. Utiliza las [teclas de lectura](#ReadingText) o las flechas para leer toda la descripción.
 1. Pulsa `tab` hasta el botón "Acciones", que se puede utilizar para instalar el complemento, entre otras acciones.
 1. Pulsa `tab` hasta "Otros  Detalles", que enumera detalles como el editor, la versión y la página de inicio.
-1. Para volver a la lista de complementos, pulsa `alt+d`, o `shift+tab` retrocediendo hasta la lista "Complementos disponibles".
+1. Para volver a la lista de complementos, pulsa `alt+d`, o `shift+tab` hasta la lista "Complementos disponibles".
 
 #### Buscar complementos {#SearchingForAddons}
 Además de explorar todos los complementos disponibles, es posible filtrar los mostrados.
 Para buscar, pulsa `alt+b` para saltar al campo "buscar" y escribe el texto a encontrar.
-El campo buscar puede contener información incluyendo el identificador del complemento, el nombre mostrado, el editor, el autor o la descripción.
+La búsqueda encuentra coincidencias en los campos del identificador del complemento, el nombre mostrado, el editor, el autor o la descripción.
 La lista cambia según se teclean los términos de búsqueda.
 Una vez hecho, pulsa `tab` para ir a la lista filtrada de complementos y navega por los resultados.
 
@@ -335,21 +335,21 @@ Los complementos pueden crear diálogos durante el proceso de instalación a los
 1. Pulsa `intro` para reiniciar NVDA.
 
 #### Gestionar complementos instalados {#ManagingInstalledAddons}
-Pulsa `control+tab` para moverte entre las pestañas o secciones de la Tienda de Complementos.
+Pulsa `control+tab` para moverte entre las pestañas de la Tienda de Complementos.
 Las pestañas incluyen: "Complementos instalados", "Complementos actualizables", "Complementos disponibles" y "Complementos instalados incompatibles".
-Cada una de las pestañas está configurada de forma similar, como una lista de complementos, un panel para más detalles sobre el complemento seleccionado y la posibilidad de realizar acciones para el complemento.
+Cada una de las pestañas está configurada de forma similar a la otra, como una lista de complementos, un panel para obtener más detalles sobre el complemento seleccionado y un botón para realizar acciones para el complemento seleccionado.
 El menú acciones de complementos instalados incluye "Deshabilitar" y "Eliminar" en lugar de "Instalar".
 Deshabilitar un complemento impide que NVDA lo cargue, pero lo deja instalado.
 Para volver a habilitar un complemento deshabilitado, activa "Habilitar" desde el menú acciones.
 Después de habilitar, deshabilitar o eliminar complementos, se te pedirá que reinicies NVDA al cerrar la Tienda de Complementos.
 Estos cambios sólo tendrán efecto una vez NVDA se reinicie.
-Ten en cuenta que en este diálogo `escape` funciona igual que el botón Cerrar.
+Ten en cuenta que en la ventana de la Tienda de Complementos `escape` funciona igual que el botón Cerrar.
 
 #### Actualizar complementos {#UpdatingAddons}
 Cuando haya una actualización de un complemento que hayas instalado, aparecerá en la pestaña "Complementos actualizables".
 Pulsa `control+tab` para acceder a esta pestaña desde cualquier lugar en la Tienda de Complementos.
 El estado del complemento aparecerá como "Actualización disponible".
-La tabla mostrará la versión actual instalada y la versión disponible.
+La lista mostrará la versión actual instalada y la versión disponible.
 Pulsa `intro` sobre el complemento para abrir la lista de acciones; elige "Actualizar".
 
 ### Comunidad {#Community}
