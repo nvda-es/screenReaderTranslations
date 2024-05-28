@@ -284,7 +284,7 @@ Viele Einstellungsbereiche haben Tastenkombinationen, um sie direkt zu öffnen, 
 NVDA-Erweiterungen sind Software-Pakete, die neue oder geänderte Funktionen für NVDA bereitstellen.
 Diese werden von der NVDA-Community oder von externen Unternehmen entwickelt und gehören nicht zu NV Access.
 Wie bei jeder Software ist es wichtig, vor der Verwendung dem Entwickler zu vertrauen.
-Bitte lesen Sie unter [NVDA-Erweiterungen installieren](#AddonStoreInstallieren) nach, wie Sie die NVDA-Erweiterungen vor der Installation überprüfen können.
+Bitte lesen Sie unter [NVDA-Erweiterungen installieren](#AddonStoreInstalling) nach, wie Sie die NVDA-Erweiterungen vor der Installation überprüfen können.
 
 Beim ersten Öffnen des Stores zeigt NVDA eine Warnung zu NVDA-Erweiterungen an.
 Diese NVDA-Erweiterungen werden von NV Access selbst nicht geprüft und können uneingeschränkte Funktionalität und Zugriff auf Informationen haben.
@@ -987,7 +987,7 @@ Folgende Befehle springen ohne Umschalttaste gedrückt zum nächsten Element; zu
 * O: Eingebettetes Objekt (Anwendung, Dialogfeld, Audio- und Video-Player)
 * 1 bis 6: Überschrift der jeweiligen Ordnung
 * A: Anmerkung: Kommentar, Dokumentänderung, etc.
-* P: Absatz
+* `P`: Absatz
 * W: Rechtschreibfehler
 
 Verwenden Sie folgende Tastenkombinationen, um zum Beginn oder zum Ende eines Container-Objektes (Listen, Tabellen, etc.) zu springen:
@@ -4993,7 +4993,7 @@ Folgende Kommandozeilenoptionen stehen zur Verfügung:
 |Keine |`--no-sr-flag` |Keine Mitteilung in Windows über einen installierten Screenreader.|
 |Keine |`--install` |Installiert NVDA ohne Ausgabe von Rückmeldungen und startet die neu installierte Version.|
 |Keine |`--install-silent` |Installiert NVDA ohne Ausgabe von Rückmeldungen, startet die Version aber nicht.|
-|Keine |`--enable-start-on-logon=True/False` |Aktivieren Sie bei der Installation [NVDA bei der Windows-Anmeldung starten](#StartAtWindowsLogon).|
+|Keine |`--enable-start-on-logon=True|False` |Aktivieren Sie bei der Installation [NVDA bei der Windows-Anmeldung starten](#StartAtWindowsLogon).|
 |Keine |`--copy-portable-config` |Kopieren Sie bei der Installation die portable Konfiguration vom angegebenen Pfad (`--config-path`, `-c`) im aktuellen Benutzerkonto.|
 |Keine |`--create-portable` |Erstellt und startet eine neue portable NVDA-Version. Hierfür müssen Sie außerdem den Parameter `--portable-path` angeben.|
 |Keine |`--create-portable-silent` |Erstellt eine neue portable NVDA-Version, ohne diese zu starten. Hierfür müssen Sie außerdem den Parameter `--portable-path` angeben.|
