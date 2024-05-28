@@ -32,7 +32,7 @@ eSpeak был обновлен, добавлен новый язык тигри�
     * math formula (#16001, @mltony)
     * same style text (#16000, @mltony)
     * different style text (#16000, @mltony)
-    * Added commands to jump first, last, forward and backward through the synth settings ring. (#13768, #16095, @rmcpantoja)
+  * Added commands to jump first, last, forward and backward through the synth settings ring. (#13768, #16095, @rmcpantoja)
     * Setting the first/last setting in the synth settings ring has no assigned gesture. (#13768)
     * Decrease and increase the current setting of the synth settings ring in a larger step (#13768):
       * Desktop: `NVDA+control+pageUp` or `NVDA+control+pageDown`.
@@ -136,7 +136,9 @@ Windows 8.1 is the minimum Windows version supported.
 * A new Native Selection mode (toggled by `NVDA+shift+f10`) is now available in NVDA's browse mode for Mozilla Firefox.
 When turned on, selecting text in browse mode will also manipulate Firefox's own native selection.
 Copying text with `control+c` will pass straight through to Firefox, thus copying the rich content, rather than NVDA's plain text representation. (#15830)
+Note however that as Firefox is handling the actual copy, NVDA will not report a "copy to clipboard" message in this mode. (#15830)
 * When copying text in Microsoft Word with NVDA's browse mode enabled, formatting is now also included. (#16129)
+A side affect of this is that NVDA will no longer report a "copy to clipboard" message when pressing `control+c` in Microsoft Word / Outlook browse mode, as the application is now handling the copy, not NVDA. (#16129)
 * A new "on-demand" speech mode has been added.
 When speech is on-demand, NVDA does not speak automatically (e.g. when moving the cursor) but still speaks when calling commands whose goal is explicitly to report something (e.g. report window title). (#481, @CyrilleB79)
 * In the Speech category of NVDA's settings, it is now possible to exclude unwanted speech modes from the Cycle speech modes command (`NVDA+s`). (#15806, @lukaszgo1)
