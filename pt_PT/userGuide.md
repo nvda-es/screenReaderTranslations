@@ -193,7 +193,7 @@ Todos os comandos são configuráveis, pelo que estes são os comandos predefini
 
 #### A tecla modificadora do  NVDA {#NVDAModifierKey}
 
-A tecla modificadora padrão do NVDA é o `0 do numérico`, (com "numLock" desligado), ou a tecla `insert`, perto das teclas `delete`, `home` e `end`.
+A tecla modificadora padrão do NVDA é o `0 do numérico`, (com `numLock` desligado), ou a tecla `insert`, perto das teclas `delete`, `home` e `end`.
 A tecla modificadora do NVDA também pode ser definida para a tecla `capsLock`.
 
 #### Ajuda de entrada {#InputHelp}
@@ -260,9 +260,8 @@ Quando estiver numa definição de voz, esta definirá a primeira ou a última v
 
 A lista completa das teclas de Navegação com uma única letra está na secção [Modo de Navegação](#BrowseMode) do guia do utilizador.
 || Comando | Teclado | Descrição |
-
-|Título |"h" |Avançar para o próximo título|
-|Título nível 1, 2 até 6 |"1", "2" até 6 |Avançar para o próximo título no nível especificado|
+|Título |`h` |Avançar para o próximo título|
+|Título nível 1, 2 até 6 |`1`, `2` até `6` |Avançar para o próximo título no nível especificado|
 |Campo de formulário |"f" |Avançar para o próximo campo de formulário (campo de edição, botão, etc)|
 |Link |"k" |Avançar para o próximo link|
 |Marca |"d" |Avançar para o próximo marco|
@@ -4627,7 +4626,7 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 |"windows" key |"dot1+dot2+dot4+dot5+dot6+space"|
 |Toggle "windows" key |"dot1+dot2+dot3+dot4+backspace", "dot2+dot4+dot5+dot6+space"|
 |`capsLock` key |"dot7+backspace", "dot8+backspace"|
-|"numLock" key |"dot3+backspace", "dot6+backspace"|
+|`numLock` key |"dot3+backspace", "dot6+backspace"|
 |`shift` key |"dot7+space"|
 |Toggle `shift` key |"dot1+dot7+space", "dot4+dot7+space"|
 |`control` key |"dot7+dot8+space"|
