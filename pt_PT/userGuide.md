@@ -260,8 +260,8 @@ Quando estiver numa definição de voz, esta definirá a primeira ou a última v
 
 A lista completa das teclas de Navegação com uma única letra está na secção [Modo de Navegação](#BrowseMode) do guia do utilizador.
 
-|| Comando | Teclado | Descrição |
-
+| Comando | Teclado | Descrição |
+|---|---|---|
 |Título |`h` |Avançar para o próximo título|
 |Título nível 1, 2 até 6 |`1`, `2` até `6` |Avançar para o próximo título no nível especificado|
 |Campo de formulário |`f` |Avançar para o próximo campo de formulário (campo de edição, botão, etc)|
@@ -269,28 +269,28 @@ A lista completa das teclas de Navegação com uma única letra está na secçã
 |Marca |`d` |Avançar para o próximo marco|
 |Lista |`l` |Avançar para a lista seguinte|
 |Tabela |`t` |Avançar para a próxima tabela|
-|Voltar para trás |"shift+letra" |Pressione `shift` e qualquer uma das letras acima para se mover para o elemento anterior desse tipo|
-|Lista de elementos |"NVDA+f7" |Lista vários tipos de elementos, tais como links e cabeçalhos|
+|Voltar para trás |`shift+letra` |Pressione `shift` e qualquer uma das letras acima para se mover para o elemento anterior desse tipo|
+|Lista de elementos |`NVDA+f7` |Lista vários tipos de elementos, tais como links e cabeçalhos|
 
 ### Preferências {#Preferences}
 
 A maioria das funções do NVDA podem ser activadas ou alteradas através das configurações do NVDA.
 As configurações e outras opções, estão disponíveis através do menu do NVDA.
-Para abrir o menu do NVDA, pressione "NVDA+n".
-Para abrir directamente as configurações gerais do NVDA, pressione "NVDA+control+g".
-Muitas configurações têm teclas para as abrir directamente, tais como "NVDA+control+s" para Seleccionar sintetizador, ou "NVDA+control+v" para outras opções da voz.
+Para abrir o menu do NVDA, pressione `NVDA+n`.
+Para abrir directamente as configurações gerais do NVDA, pressione `NVDA+control+g`.
+Muitas configurações têm teclas para as abrir directamente, tais como `NVDA+control+s` para Seleccionar sintetizador, ou `NVDA+control+v` para outras opções da voz.
 
 ### Extras {#Addons}
 Os extras são programas que proporcionam funcionalidades novas ou modificadas para o NVDA.
 Os extras são desenvolvidos pela comunidade NVDA ou por empresas externas e não têm ligação à NV Access.
 Como com qualquer software, é importante confiar no desenvolvedor de um extra antes de o utilizar.
-Consulte Instalar Extras para formas de verificar os extras antes da instalação.
+Consulte [Instalar Extras](#AddonStoreInstalling) para formas de verificar os extras antes da instalação.
 
 A primeira vez que a Loja de Extras é aberta, o NVDA exibe um aviso sobre os extras.
 Os extras não são verificados pela NV Access e podem ter funcionalidades irrestritas e acesso a informações.
 Pressione a `barra de espaços` se leu o aviso e não precisa vê-lo novamente.
 Pressione `tab` até ao botão "OK" e depois `enter` para aceitar o aviso e prosseguir para a Loja de Extras.
-A secção "Extras e a Loja de Extras" do Guia do Utilizador contém informações sobre todas as funcionalidades da Loja de Extras.
+As secções "[Extras e Loja de Extras](#AddonsManager)" do Guia do Utilizador contém informações sobre todas as funcionalidades da Loja de Extras.
 
 A Loja de Extras está disponível no menu Ferramentas.
 Pressione `NVDA+n` para abrir o menu do NVDA, depois `f` para ferramentas e, em seguida, `l` para Loja de Extras.
@@ -303,9 +303,9 @@ O NVDA lerá o nome do primeiro extra assim que a lista de extras terminar de ca
 Os extras disponíveis são listados alfabeticamente numa lista com várias colunas.
 Para navegar na lista e obter informações sobre um extra específico:
 
-1. Utilize as `setas` ou pressione a primeira letra do nome de um extra para se mover pela lista;
+1. Utilize as setas ou pressione a primeira letra do nome de um extra para se mover pela lista;
 1. Pressione `tab` uma vez para mover-se para a descrição do extra actualmente seleccionado;
-1. Utilize as [teclas de leitura](#ReadingText) ou as `setas` para ler a descrição completa;
+1. Utilize as [teclas de leitura](#ReadingText) ou as setas para ler a descrição completa;
 1. Pressione `tab` para o botão "Acções", que pode ser usado para instalar o extra, entre outras acções;
 1. Pressione `tab` para "Outros Detalhes", que lista detalhes como o autor, versão e página inicial;
 1. Para retornar à lista de extras, pressione `alt+a` ou `shift+tab` até voltar à lista.
@@ -333,7 +333,6 @@ Para instalar um extra:
 Durante o processo de instalação Os extras podem criar diálogos aos quais precisará responder;
 1. Quando todos os extras estiverem instalados, aparece um diálogo informando que foram feitas alterações e deve reiniciar o NVDA para completar a instalação do extra;
 1. Pressione `enter` para reiniciar o NVDA.
-
 
 #### Gerir extras instalados {#ManagingInstalledAddons}
 Pressione `control+tab` para se mover entre os separadores da Loja de Extras.
@@ -366,7 +365,7 @@ Pode ver uma lista dos especialistas já certificados na página de  [certifica�
 
 ### Obter ajuda {#GettingHelp}
 
-Para obter ajuda para o NVDA, pressione "NVDA+n" para abrir o menu do NVDA, e depois `a` para abrir o submenu Ajuda.
+Para obter ajuda para o NVDA, pressione `NVDA+n` para abrir o menu do NVDA, e depois `a` para abrir o submenu Ajuda.
 Neste submenu pode aceder ao Manual do Utilizador, à Referência rápida de comandos, ao Que há de novo e mais.
 As três primeiras opções abrem no seu navegador padrão.
 Há também material de formação mais abrangente, em inglês, disponível na [loja da NV Access](https://www.nvaccess.org/shop).
@@ -599,7 +598,7 @@ O Menu do NVDA permite-lhe definir as configurações do leitor de ecrã, aceder
 
 Para aceder ao menu do NVDA, de qualquer lugar no Windows, enquanto executa o NVDA, pode executar uma das seguintes acções:
 
-* Pressionar "NVDA+n" no teclado;
+* Pressionar `NVDA+n` no teclado;
 * Dar um duplo toque com dois dedos, num ecrã táctil;
 * Aceda à barra do sistema pressionando "Windows+b", "seta para baixo" para o ícone do NVDA e pressione `enter`;
 * Em alternativa, aceda à barra do sistema pressionando "Windows+b", "seta para baixo" para o ícone do NVDA e abra o menu de contexto pressionando a tecla "aplicaçõs", localizada à esquerda da tecla Control direita na maioria dos teclados;
