@@ -303,9 +303,9 @@ NVDA will read the name of the first add-on once the list of add-ons finishes lo
 Available add-ons are listed alphabetically in a multi-column list.
 To browse the list and find out about a specific add-on:
 
-1. Use the `arrow keys` or press the first letter of an add-on name to move around the list.
+1. Use the arrow keys or press the first letter of an add-on name to move around the list.
 1. Press `tab` once to move to a description of the currently selected add-on.
-1. Use the [reading keys](#ReadingText) or `arrow keys` to read the full description.
+1. Use the [reading keys](#ReadingText) or arrow keys to read the full description.
 1. Press `tab` to the "Actions" button, which can be used to install the add-on, among other actions.
 1. Press `tab` to "Other Details", which lists details such as the publisher, version and homepage.
 1. To return to the list of add-ons, press `alt+a`, or `shift+tab` until reaching the list.
