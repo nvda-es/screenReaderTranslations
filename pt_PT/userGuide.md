@@ -40,7 +40,7 @@ As características principais são:
 ### Requisitos do sistema {#SystemRequirements}
 
 * Sistemas operativos: Todas as versões, 32-bit ou 64-bit, do Windows 8.1, Windows 10, Windows 11 e todas as versões do Windows Server a partir da 2012 R2.
- * As variantes AMD64 e ARM64 do Windows são suportadas.
+  * As variantes AMD64 e ARM64 do Windows são suportadas.
 * Pelo menos 150 MB de espaço de armazenamento.
 
 ### Internacionalização {#Internationalization}
@@ -100,8 +100,8 @@ Leia os [Requisitos de sistema](#SystemRequirements) para mais detalhes.
 
 Estas etapas assumem alguma familiaridade com a navegação de uma página web.
 
-* Abra o seu navegador (pressione a tecla "Windows", escreva o nome do seu navegador, por exemplo "Chrome", sem aspas, e pressione "Enter");
-* Abra a página de downloads da NV Access (Pressione "alt+d", escreva o seguinte endereço e pressione "Enter"):
+* Abra o seu navegador (pressione a tecla `Windows`, escreva o nome do seu navegador, por exemplo "Chrome", sem aspas, e pressione `Enter`);
+* Abra a página de downloads da NV Access (Pressione `alt+d`, escreva o seguinte endereço e pressione `Enter`):
 https://www.nvaccess.org/download
 * Active o botão "Download";
 * O navegador pode ou não solicitar uma acção após o download, e depois iniciar o download;
@@ -298,21 +298,21 @@ Quando existem  extras instalados, a Loja de Extras abre no separador "Extras in
 #### Extras disponíveis {#AvailableAddons}
 Quando a janela é aberta pela primeira vez, a lista de extras pode demorar alguns segundos a carregar.
 O NVDA lerá o nome do primeiro extra assim que a lista de extras terminar de carregar.
-Os extras disponíveis são listados alfabeticamente numa grelha.
+Os extras disponíveis são listados alfabeticamente numa lista com várias colunas.
 Para navegar na lista e obter informações sobre um extra específico:
 
 1. Utilize as `setas` ou pressione a primeira letra do nome de um extra para se mover pela lista;
 1. Pressione `tab` uma vez para mover-se para a descrição do extra actualmente seleccionado;
-1. Utilize as teclas de leitura ou as `setas` para ler a descrição completa;
+1. Utilize as [teclas de leitura](#ReadingText) ou as `setas` para ler a descrição completa;
 1. Pressione `tab` para o botão "Acções", que pode ser usado para instalar o extra, entre outras acções;
 1. Pressione `tab` para "Outros Detalhes", que lista detalhes como o autor, versão e página inicial;
-1. Para retornar à lista de extras, pressione `alt+a` ou `shift+tab` para voltar à lista de "Extras disponíveis".
+1. Para retornar à lista de extras, pressione `alt+a` ou `shift+tab` até voltar à lista.
 
 #### Pesquisar extras {#SearchingForAddons}
 Além de navegar por todos os extras disponíveis, é possível filtrar os extras mostrados.
 Para pesquisar, pressione `alt+p` para se mover para o campo "pesquisar" e digite o texto a pesquisar.
-O campo de pesquisa pode conter informações, incluindo o ID do extra, nome exibido, editor, autor ou descrição.
-A lista muda enquanto escreve os termos de pesquisa.
+O campo de pesquisa pesquisa ocorrências em ID do extra, nome exibido, editor, autor ou descrição.
+A lista actualiza enquanto escreve os termos de pesquisa.
 Quando terminar, pressione `tab` para ir para a lista filtrada de extras e navegue pelos resultados.
 
 #### Instalar extras {#InstallingAddons}
@@ -321,14 +321,14 @@ Para instalar um extra:
 
 1. Com o foco num extra que gostaria de instalar, pressione `enter`;
 1. O menu de acções abre-se com uma lista de acções; a primeira acção é "Instalar";
-1. Para instalar o extra, pressione `i` ou `seta para baixo` para "instalar" e pressione `enter`;
+1. Para instalar o extra, pressione `i` ou `seta abaixo` para "instalar" e pressione `enter`;
 1. O foco retorna ao extra na lista e o NVDA lerá os detalhes sobre o extra;
 1. A informação "Estado" reportada pelo NVDA muda de "Disponível" para "A transferir";
 1. Uma vez terminado o download do extra, ele mudará para "Transferido. Instalação pendente";
 1. Repita para quaisquer outros extras que gostaria de instalar ao mesmo tempo;
 1. Quando terminar, pressione `tab` até o foco estar no botão "Fechar" e depois pressione `enter`;
 1. Os extras transferidos iniciarão o processo de instalação assim que a Loja de Extras for fechada.
-Os extras podem criar diálogos durante o processo de instalação aos quais precisará responder;
+Durante o processo de instalação Os extras podem criar diálogos aos quais precisará responder;
 1. Quando todos os extras estiverem instalados, aparece um diálogo informando que foram feitas alterações e deve reiniciar o NVDA para completar a instalação do extra;
 1. Pressione `enter` para reiniciar o NVDA.
 
@@ -336,19 +336,19 @@ Os extras podem criar diálogos durante o processo de instalação aos quais pre
 #### Gerir extras instalados {#ManagingInstalledAddons}
 Pressione `control+tab` para se mover entre os separadores da Loja de Extras.
 Os separadores incluem: "Extras instalados", "Extras com actualizações", "Extras disponíveis" e "Extras incompatíveis instalados".
-Cada um dos separadores está disposto de forma semelhante, como uma lista de extras, um painel para mais detalhes sobre o extra seleccionado e a capacidade de executar ações para o extra.
+Cada um dos separadores apresentam-se de forma semelhante, com uma lista de extras, um painel para mais detalhes sobre o extra seleccionado e um botão para executar várias ações para o extra.
 O menu de acções de extras instalados inclui "Desactivar" e "Remover" em vez de "Instalar".
 Desactivar um extra impede o NVDA de o carregar, mas mantém-no instalado.
 Para reactivar um extra desactivado, escolha "Activar" no menu de acções.
 Após activar, desactivar ou remover extras, será solicitado que reinicie o NVDA ao fechar a Loja de Extras.
 Estas alterações só terão efeito depois de reiniciar o NVDA.
-Note que neste diálogo `esc` funciona da mesma forma que o botão Fechar.
+Note que na loja de extras `esc` funciona da mesma forma que o botão Fechar.
 
 #### Actualizar extras {#UpdatingAddons}
 Quando houver uma actualização para um extra que instalou, ele será listado no separador "Extras com actualizações".
 Pressione `control+tab` para chegar a este separador de qualquer lugar na Loja de Extras.
 O estado do extra será listado como "Actualização disponível".
-A tabela listará a versão actualmente instalada e a versão disponível.
+A entrada contém a versão actualmente instalada e a versão disponível.
 Pressione `enter` no extra para abrir a lista de acções e escolha "Actualizar".
 
 ### Comunidade {#Community}
