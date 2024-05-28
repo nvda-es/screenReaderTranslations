@@ -327,7 +327,7 @@ Kako biste instalirali dodatak:
 1. Jednom kada se dodatak preuzme, promijenit će se u "preuzeto. čeka instalaciju".
 1. Ponovite ove korake sa svakim dodatkom koje biste željeli instalirati.
 1. Kada završite, pritisnite `tab` kada se fokus nađe na gumbu "zatvori", i pritisnite `enter`.
-+1. The downloaded add-ons will start the installation process once the Add-on Store is closed.
+1. Preuzeti dodaci će se započeti instalirati kada se zatvori Add-on store.
 Dodaci mogu prikazivati dijaloške okvire na koje trebate odgovarati potvrdno kada se prikažu.
 1. Kada se dodaci instaliraju, pojavljuje se dijaloški okvir koji govori da su učinjene promjene te da trebate ponovno pokrenuti NVDA kako bi se instalacija završila.
 1. Pritisnite `enter` za ponovno pokretanje NVDA.
