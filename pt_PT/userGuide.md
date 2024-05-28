@@ -106,7 +106,7 @@ https://www.nvaccess.org/download
 * Active o botão "Download";
 * O navegador pode ou não solicitar uma acção após o download, e depois iniciar o download;
 * Dependendo do navegador, o ficheiro pode ser executado automaticamente após o seu download;
-* Se o ficheiro precisar de ser executado manualmente, pressione "alt+n" para passar para a área de notificação, depois "alt+r" para executar o ficheiro (ou os passos para o seu browser).
+* Se o ficheiro precisar de ser executado manualmente, pressione `alt+n` para passar para a área de notificação, depois `alt+r` para executar o ficheiro (ou os passos para o seu browser).
 
 ### Configurar o NVDA {#SettingUpNVDA}
 
@@ -120,14 +120,15 @@ Se disponível, uma ligação à Internet permite que o NVDA verifique periodica
 
 O ficheiro de configuração é chamado "nvda_2022.1.exe" ou semelhante.
 O ano e a versão muda entre actualizações para reflectir a versão actual.
-+Execute o ficheiro descarregado.
+
+1. Execute o ficheiro descarregado.
 Será ouvida uma música enquanto uma cópia temporária do NVDA é carregada.
 Após o carregamento, o NVDA falará durante todo o resto do processo.
 
 1. A janela de instalação do NVDA aparece com o acordo de licença.
-Pressione "Seta abaixo" para ler o acordo de licença, se desejar.
-1. Pressione "tab" para passar à caixa de verificação "Aceito" e pressione a "barra de espaços" para a marcar.
-1. Pressione "tab" para se mover através das opções, depois pressione "Enter" na opção desejada.
+Pressione `Seta abaixo` para ler o acordo de licença, se desejar.
+1. Pressione `tab` para passar à caixa de verificação "Aceito" e pressione a `barra de espaços` para a marcar.
+1. Pressione `tab` para se mover através das opções, depois pressione "Enter" na opção desejada.
 
 As opções são: 
 
@@ -155,10 +156,10 @@ Estes passos ilustram as opções de configuração mais comuns.
 Para mais detalhes sobre as opções disponíveis, consulte [Opções de instalação](#InstallingNVDA).
 
 1. Na primeira janela do instalador, certifique-se de que a caixa de verificação para concordar com a licença está marcada;
-1. "Tab" até ao botão "Instalar o  NVDA neste computador" e active-o;
+1. `tab` até ao botão "Instalar o  NVDA neste computador" e active-o;
 1. De seguida aparecem as opções para utilizar o NVDA durante o início de sessão no Windows e para criar um atalho no ambiente de trabalho;
 1. Estas opções estão marcadas por padrão;
-Se desejar, prima "tab" e "barra de espaço" para alterar qualquer uma destas opções, ou deixe-as na predefinição.
+Se desejar, prima `tab` e "barra de espaço" para alterar qualquer uma destas opções, ou deixe-as na predefinição.
 Pressione "enter" para continuar;
 1. Aparece uma janela "Controlo de Conta do Utilizador" (UAC) do Windows a perguntar "Deseja permitir que esta aplicação faça alterações no seu PC?";
 1. Pressione "alt+y" para concordar com a solicitação UAC;
@@ -172,12 +173,12 @@ Pressione "Enter" para iniciar a cópia instalada;
 O foco fica na caixa de combinação "Esquema do teclado:";
 Por padrão, o esquema de teclado "Desktop" utiliza o teclado numérico para algumas funções;
 Se desejar, prima "Seta abaixo" para escolher o esquema de teclado "Laptop" para reatribuir as funções do teclado numérico a outras teclas;
-1. Pressione "tab" para passar para "Utilizar "CapsLock" como tecla modificadora do NVDA";
+1. Pressione `tab` para passar para "Utilizar "CapsLock" como tecla modificadora do NVDA";
 A tecla "Insert" é definida como a tecla modificadora do NVDA por padrão.
 Pressione "barra de espaços" para seleccionar "CapsLock" como uma tecla modificadora alternativa.
 Note que o esquema do teclado é definido separadamente da tecla modificadora do NVDA.
 A tecla modificadora do NVDA e o esquema do teclado podem ser alterados mais tarde nas Configurações de Teclado.
-1. Utilize "tab" e "barra de espaços" para ajustar as outras opções nesta janela.
+1. Utilize `tab` e "barra de espaços" para ajustar as outras opções nesta janela.
 Estas configuram se o NVDA deve iniciar automaticamente.
 1. Pressione "Enter" para fechar a janela com o NVDA já em execução.
 
@@ -1688,7 +1689,7 @@ Algumas configurações podem ser feitas por atalhos, que serão indicados quand
 O NVDA fornece muitos parâmetros de configuração que podem ser alterados através da janela de configurações.
 Para facilitar a procura do tipo de configurações que pretende alterar, a janela apresenta uma lista de secções de configurações à escolha.
 Quando selecciona uma secção, todas as definições relacionadas com a mesma serão apresentadas na janela.
-Para se deslocar entre secções, utilize "tab" ou "shift+tab" para aceder à lista de secções e, em seguida, utilize as teclas de seta para cima e para baixo para navegar na lista.
+Para se deslocar entre secções, utilize `tab` ou "shift+tab" para aceder à lista de secções e, em seguida, utilize as teclas de seta para cima e para baixo para navegar na lista.
 A partir de qualquer ponto da janela , pode também avançar uma secção pressionando "ctrl+tab", ou recuar uma seccção pressionando "shift+ctrl+tab".
 
 Depois de alterar uma ou mais configurações, as configurações podem ser aplicadas utilizando o botão aplicar, caso em que a janela permanecerá aberta, permitindo-lhe alterar mais configurações ou escolher outra secção.
@@ -2198,7 +2199,7 @@ Por favor, consulte a secção [Dispositivos Braille Suportados](#SupportedBrail
 
 ##### Dispositivos com detecção automática {#SelectBrailleDisplayAutoDetect}
 
-Quando o dispositivo Braille estiver configurado para "Automático", podemos dar "Tab" para uma lista onde podemos activar ou desactivar os drivers que serão detectados automaticamente.
+Quando o dispositivo Braille estiver configurado para "Automático", podemos dar `tab` para uma lista onde podemos activar ou desactivar os drivers que serão detectados automaticamente.
 Isto permite excluir os drivers de dispositivos Braille que nunca, ou raramente, usa.
 Por exemplo, se apenas tem um dispositivo Handytech, pode deixar apenas o driver da Handytech activado.
 
@@ -3375,7 +3376,7 @@ As ações disponíveis irão variar consoante o extra esteja instalado ou não,
 
 Existem listas diferentes para extras instalados, atualizáveis, disponíveis e incompatíveis.
 Para alterar a lista dos extras, altere a guia ativa da lista de extras pressionando "Ctrl+Tab".
-Também pode navegar para uma lista com a tecla "Tab" e movimentar-se entre elas com as teclas "Seta Esquerda" e "Seta Direita".
+Também pode navegar para uma lista com a tecla `tab` e movimentar-se entre elas com as teclas "Seta Esquerda" e "Seta Direita".
 
 #### Filtrar por extras activados ou desactivados {#AddonStoreFilterEnabled}
 
@@ -3410,7 +3411,7 @@ Para listar apenas extras de canais específicos, altere a seleção do filtro "
 
 Para pesquisar extras, utilize a caixa de texto "Pesquisar".
 Pode acedê-la pressionando "Shift+Tab" a partir da lista de extras ou pressionando "Alt+P" a partir de qualquer parte da interface da Loja de Extras.
-Digite uma palavra-chave ou duas para o tipo de extra que procura e, em seguida, "Tab" para voltar à lista de extras.
+Digite uma palavra-chave ou duas para o tipo de extra que procura e, em seguida, `tab` para voltar à lista de extras.
 Os extras serão listados se o texto de pesquisa puder ser encontrado no nome de exibição, no editor ou na descrição.
 
 ### Acções do extra {#AddonStoreActions}
@@ -4606,7 +4607,7 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 |"numpadPlus" key |"dot2+dot3+dot5+backspace"|
 |"numpadEnter" key |"dot3+dot4+dot5+backspace"|
 |"escape" key |"dot1+dot2+dot4+dot5+space", "l2"|
-|"tab" key |"dot2+dot5+dot6+space", "l3"|
+|`tab` key |"dot2+dot5+dot6+space", "l3"|
 |"shift+tab" keys |"dot2+dot3+dot5+space"|
 |"printScreen" key |"dot1+dot3+dot4+dot6+space"|
 |"pause" key |"dot1+dot4+space"|
@@ -4653,7 +4654,7 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 |"downArrow" key |"joystick2Down"|
 |"enter" key |"joystick2Center"|
 |"escape" key |"c1"|
-|"tab" key |"c2"|
+|`tab` key |"c2"|
 |Toggle "shift" key |"c3"|
 |Toggle "control" key |"c4"|
 |Toggle "alt" key |"c5"|
@@ -4729,7 +4730,7 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 |"downArrow" key |"joystick2Down"|
 |"enter" key |"joystick2Center"|
 |"escape" key |"l2"|
-|"tab" key |"l3"|
+|`tab` key |"l3"|
 |Toggle "shift" key |"l4"|
 |Toggle "control" key |"l5"|
 |Toggle "alt" key |"l6"|
