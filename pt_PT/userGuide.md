@@ -147,7 +147,7 @@ A instalação do  NVDA permitirá funcionalidades adicionais tais como o arranq
 Estas funcionalidades não estão disponíveis nas cópias portáteis e temporárias.
 Para maiores detalhes das limitações ao executar uma cópia portátil ou temporária do NVDA, consulte [Restrições das versões Portáteis e Temporárias](#PortableAndTemporaryCopyRestrictions).
 
-A instalação também oferece a possibilidade de criar atalhos, no Menu Iniciar e no ambiente de trabalho, e iniciar o NVDA com "control+alt+n".
+A instalação também oferece a possibilidade de criar atalhos, no Menu Iniciar e no ambiente de trabalho, e iniciar o NVDA com `control+alt+n`.
 
 #### Passos para instalar o NVDA pelo instalador {#StepsForInstallingNVDAFromTheLauncher}
 
@@ -157,11 +157,11 @@ Para mais detalhes sobre as opções disponíveis, consulte [Opções de instala
 1. Na primeira janela do instalador, certifique-se de que a caixa de verificação para concordar com a licença está marcada;
 1. `tab` até ao botão "Instalar o  NVDA neste computador" e active-o;
 1. De seguida aparecem as opções para utilizar o NVDA durante o início de sessão no Windows e para criar um atalho no ambiente de trabalho;
-1. Estas opções estão marcadas por padrão;
-Se desejar, prima `tab` e "barra de espaço" para alterar qualquer uma destas opções, ou deixe-as na predefinição.
-Pressione `enter` para continuar;
+Estas opções estão marcadas por padrão;
+Se desejar, pressione `tab` e `barra de espaços` para alterar qualquer uma destas opções, ou deixe-as na predefinição.
+1. Pressione `enter` para continuar;
 1. Aparece uma janela "Controlo de Conta do Utilizador" (UAC) do Windows a perguntar "Deseja permitir que esta aplicação faça alterações no seu PC?";
-1. Pressione "alt+y" para concordar com a solicitação UAC;
+1. Pressione `alt+y` para concordar com a solicitação UAC;
 1. Uma barra de progresso é preenchida à medida que o NVDA se instala;
 Durante este processo, o NVDA emite um sinal sonoro cada vez mais agudo.
 Este processo é frequentemente rápido e pode não ser notado.
@@ -171,13 +171,13 @@ Pressione `enter` para iniciar a cópia instalada;
 1. Aparece a janela "Bem-vindo ao NVDA" e o NVDA lê uma mensagem de boas-vindas;
 O foco fica na caixa de combinação "Esquema do teclado:";
 Por padrão, o esquema de teclado "Desktop" utiliza o teclado numérico para algumas funções;
-Se desejar, prima "Seta abaixo" para escolher o esquema de teclado "Laptop" para reatribuir as funções do teclado numérico a outras teclas;
-1. Pressione `tab` para passar para "Utilizar "CapsLock" como tecla modificadora do NVDA";
-A tecla "Insert" é definida como a tecla modificadora do NVDA por padrão.
-Pressione "barra de espaços" para seleccionar "CapsLock" como uma tecla modificadora alternativa.
+Se desejar, pressione `seta abaixo` para escolher o esquema de teclado "Laptop" para reatribuir as funções do teclado numérico a outras teclas;
+1. Pressione `tab` para passar para "Utilizar `capsLock` como tecla modificadora do NVDA";
+A tecla `insert` é definida como a tecla modificadora do NVDA por padrão.
+Pressione `barra de espaços` para seleccionar `capsLock` como uma tecla modificadora alternativa.
 Note que o esquema do teclado é definido separadamente da tecla modificadora do NVDA.
 A tecla modificadora do NVDA e o esquema do teclado podem ser alterados mais tarde nas Configurações de Teclado.
-1. Utilize `tab` e "barra de espaços" para ajustar as outras opções nesta janela.
+1. Utilize `tab` e `barra de espaços` para ajustar as outras opções nesta janela.
 Estas configuram se o NVDA deve iniciar automaticamente.
 1. Pressione `enter` para fechar a janela com o NVDA já em execução.
 
@@ -193,12 +193,12 @@ Todos os comandos são configuráveis, pelo que estes são os comandos predefini
 
 #### A tecla modificadora do  NVDA {#NVDAModifierKey}
 
-A tecla modificadora padrão do NVDA é o "0 do numérico", (com "numLock" desligado), ou a tecla "insert", perto das teclas "Delete", "Home" e "End".
-A tecla modificadora do NVDA também pode ser definida para a tecla "CapsLock".
+A tecla modificadora padrão do NVDA é o `0 do numérico`, (com "numLock" desligado), ou a tecla `insert`, perto das teclas `delete`, `home` e `end`.
+A tecla modificadora do NVDA também pode ser definida para a tecla `capsLock`.
 
 #### Ajuda de entrada {#InputHelp}
 
-Para aprender e praticar a localização das teclas, prima "NVDA+1" para ligar a ajuda de comandos.
+Para aprender e praticar a localização das teclas, prima `nvda+1` para ligar a ajuda de comandos.
 Enquanto estiver no modo ajuda de comandos, a realização de qualquer comando (como pressionar uma tecla ou realizar um gesto de toque) irá relatar a acção e descrever o que faz (se houver alguma função associada.
 Os comandos reais não serão executados enquanto estiver no modo de ajuda de comandos. 
 
@@ -206,54 +206,55 @@ Os comandos reais não serão executados enquanto estiver no modo de ajuda de co
 
 | Nome |Comando de Teclado Desktop |Comando de Teclado Laptop |Descrição|
 |---|---|---|---|
-|Iniciar NVDA |"control+alt+n" |"control+alt+n" |Inicia ou reinicia o NVDA|
-|Sair do NVDA |"NVDA+q", depois `enter` |"NVDA+q", depois `enter` |Sair do NVDA|
-|Pausa ou retoma da voz |"shift" |"shift" |Pausa instantaneamente a voz. Se pressionar novamente, recomeçará a falar, desde onde parou|
-|Parar a voz |"Control" |"Control" Pára instantaneamente a voz|
+|Iniciar NVDA |`control+alt+n` |`control+alt+n` |Inicia ou reinicia o NVDA|
+|Sair do NVDA |`nvda+q`, depois `enter` |`nvda+q`, depois `enter` |Sair do NVDA|
+|Pausa ou retoma da voz |`shift` |`shift` |Pausa instantaneamente a voz. Se pressionar novamente, recomeçará a falar, desde onde parou|
+|Parar a voz |`control` |`control` |Pára instantaneamente a voz|
 
 #### Leitura de texto {#ReadingText}
 
 | Nome |Comando de Teclado Desktop |Comando de Teclado Laptop |Descrição|
 |---|---|---|---|
-|Leitura Contínua |"NVDA+Seta Abaixo" |"NVDA+a" |Inicia a leitura, a partir da posição actual do cursor do sistema, movendo-o ao longo do texto, enquanto Lê|
-|Ler a linha actual |"NVDA+Seta Acima" |"NVDA+l" |Lê a linha onde o cursor do sistema está posicionado actualmente. Ao pressionar duas vezes, soletra a linha. Ao pressionar três vezes, é soletrado com o alfabeto rádio internacional.|
-|Ler o texto actualmente seleccionado |"NVDA+Shift+Seta Acima" |"NVDA+shift+s" |Lê o texto seleccionado actualmente Ao pressionar duas vezes, soletra a informação. Ao pressionar três vezes, é soletrado com o alfabeto rádio internacional.|
-|Ler texto da área de transferência |"NVDA+c" |"NVDA+c" |Lê o texto que se encontra na área de transferência, caso exista. Ao pressionar duas vezes, soletra a informação. Ao pressionar três vezes, é soletrado com o alfabeto rádio internacional.|
+|Leitura Contínua |`NVDA+Seta Abaixo` |`NVDA+a` |Inicia a leitura, a partir da posição actual do cursor do sistema, movendo-o ao longo do texto, enquanto Lê|
+|Ler a linha actual |`NVDA+Seta Acima` |`NVDA+l` |Lê a linha onde o cursor do sistema está posicionado actualmente. Ao pressionar duas vezes, soletra a linha. Ao pressionar três vezes, é soletrado com o alfabeto rádio internacional.|
+|Ler o texto actualmente seleccionado |`NVDA+Shift+Seta Acima` |`NVDA+shift+s` |Lê o texto seleccionado actualmente Ao pressionar duas vezes, soletra a informação. Ao pressionar três vezes, é soletrado com o alfabeto rádio internacional.|
+|Ler texto da área de transferência |`NVDA+c` |`NVDA+c` |Lê o texto que se encontra na área de transferência, caso exista. Ao pressionar duas vezes, soletra a informação. Ao pressionar três vezes, é soletrado com o alfabeto rádio internacional.|
 
 #### Anunciar localização e outras informações {#ReportingLocation}
 
 | Nome |Comando de Teclado Desktop |Comando de Teclado Laptop |Descrição|
 |---|---|---|---|
-|Anunciar o título da janela |"NVDA+t" |"NVDA+t" |Anuncia o título da janela actualmente em execução. Ao pressionar duas vezes, soletrará a informação. Se pressionar três vezes, copiará a informação para a área de transferência|
-|Anunciar o foco actual |"NVDA+tab" |"NVDA+tab" |Anuncia o objecto actual ou o controlo que tem o cursor do sistema. Ao pressionar duas vezes, soletra a informação. Ao pressionar três vezes, é soletrado com o alfabeto rádio internacional.|
-|Ler a janela activa |"NVDA+b" |"NVDA+b" |Lê todos os controlos da janela actualmente em execução (útil para diálogos)|
-|Anunciar a Barra de Estado |"NVDA+end" |"NVDA+shift+end" |Lê a Barra de Estado, se for encontrada. Se pressionar duas vezes soletra a informação. Se pressionar três vezes, copiará a informação para a área de transferência|
-|Anunciar a hora/data |"NVDA+f12" |"NVDA+f12" |Ao pressionar uma vez, informa a hora actual; se pressionar duas vezes, anuncia a data.  Estes anúncios seguirão o formato definido nas configurações do Windows, na secção Comportamento da barra de tarefas.|
-|Anunciar as informações de formatação do texto |"NVDA+f" |"NVDA+f" |Anuncia as informações de formatação do texto. Se pressionar duas vezes mostra a informação numa janela em modo de navegação|
-|Anunciar o URL de destino do link |"NVDA+k" |"NVDA+k" |Pressionando uma vez anuncia o URL de destino do link na posição do cursor ou foco. Pressionando duas vezes mostra-o numa janela para poder ser revisto com mais atenção|
+|Anunciar o título da janela |`NVDA+t` |`NVDA+t` |Anuncia o título da janela actualmente em execução. Ao pressionar duas vezes, soletrará a informação. Se pressionar três vezes, copiará a informação para a área de transferência|
+|Anunciar o foco actual |`NVDA+tab` |`NVDA+tab` |Anuncia o objecto actual ou o controlo que tem o cursor do sistema. Ao pressionar duas vezes, soletra a informação. Ao pressionar três vezes, é soletrado com o alfabeto rádio internacional.|
+|Ler a janela activa |`NVDA+b` |`NVDA+b` |Lê todos os controlos da janela actualmente em execução (útil para diálogos)|
+|Anunciar a Barra de Estado |`NVDA+end` |`NVDA+shift+end` |Lê a Barra de Estado, se for encontrada. Se pressionar duas vezes soletra a informação. Se pressionar três vezes, copiará a informação para a área de transferência|
+|Anunciar a hora/data |`NVDA+f12` |`NVDA+f12` |Ao pressionar uma vez, informa a hora actual; se pressionar duas vezes, anuncia a data.  Estes anúncios seguirão o formato definido nas configurações do Windows, na secção Comportamento da barra de tarefas.|
+|Anunciar as informações de formatação do texto |`nvda+f` |`nvda+f` |Anuncia as informações de formatação do texto. Se pressionar duas vezes mostra a informação numa janela em modo de navegação|
+|Anunciar o URL de destino do link |`nvda+k` |`nvda+k` |Pressionando uma vez anuncia o URL de destino do link na posição do cursor ou foco. Pressionando duas vezes mostra-o numa janela para poder ser revisto com mais atenção|
 
 #### Alternar que informação o NVDA fala {#ToggleWhichInformationNVDAReads}
 
 | Nome |Comando de Teclado Desktop |Comando de Teclado Laptop |Descrição|
 |---|---|---|---|
-|Anunciar Caracteres Escritos |"NVDA+2" |"NVDA+2" |Quando activado, o NVDA anunciará todos os caracteres que escrever.|
-|Anunciar palavras Escritas |"NVDA+3" |"NVDA+3" |Quando activado, o NVDA anunciará a palavra que escrever.|
-|Anunciar Teclas de Comando |"NVDA+4" |"NVDA+4" |Quando activado, o NVDA anunciará todas as teclas que não sejam caracter ou sinais de pontuação que pressionar. Isto inclui combinações de teclas, tais como controlo mais outra letra.|
-|Activar seguimento do rato |"NVDA+m" |"NVDA+m" |Quando activado, o NVDA anunciará o texto actualmente sob o ponteiro do rato, à medida que o move no ecrã. Isto permite-lhe encontrar coisas no ecrã, ao mover fisicamente o rato, em vez de tentar encontrá-las através da navegação por objectos.|
+|Anunciar Caracteres Escritos |`nvda+2` |`nvda+2` |Quando activado, o NVDA anunciará todos os caracteres que escrever.|
+|Anunciar palavras Escritas |`nvda+3` |`nvda+3` |Quando activado, o NVDA anunciará a palavra que escrever.|
+|Anunciar Teclas de Comando |`nvda+4` |`nvda+4` |Quando activado, o NVDA anunciará todas as teclas que não sejam caracter ou sinais de pontuação que pressionar. Isto inclui combinações de teclas, tais como controlo mais outra letra.|
+|Activar seguimento do rato |`nvda+m` |`nvda+m` |Quando activado, o NVDA anunciará o texto actualmente sob o ponteiro do rato, à medida que o move no ecrã. Isto permite-lhe encontrar coisas no ecrã, ao mover fisicamente o rato, em vez de tentar encontrá-las através da navegação por objectos.|
 
 #### Anel de configurações do sintetizador {#TheSynthSettingsRing}
 
 | Nome |Comando de Teclado de Desktop |Comando de Teclado de Laptop |Descrição|
 |---|---|---|---|
-|Mover para a próxima definição de voz |"NVDA+control+Seta Direita" |"NVDA+shift+control+Seta Direita" |Move para a seguinte definição de voz disponível depois da actual, circulando para a primeira definição de voz, depois de atingir a última|
-|Mover para a definição de voz anterior |"NVDA+control+Seta Esquerda" |"NVDA+shift+control+Seta Esquerda" |Move para a anterior definição de voz disponível depois da actual, circulando para a primeira definição de voz, depois de atingir a última|
-|Aumentar a definição de voz actual |"NVDA+control+Seta Acima" |"NVDA+shift+control+Seta Acima" |aumenta a definição de voz actual. Por exemplo: aumenta a velocidade, escolhe a voz seguinte, aumenta o volume|
+|Mover para a próxima definição de voz |`NVDA+control+Seta Direita` |`NVDA+shift+control+Seta Direita` |Move para a seguinte definição de voz disponível depois da actual, circulando para a primeira definição de voz, depois de atingir a última|
+|Mover para a definição de voz anterior |`NVDA+control+Seta Esquerda` |`NVDA+shift+control+Seta Esquerda` |Move para a anterior definição de voz disponível depois da actual, circulando para a primeira definição de voz, depois de atingir a última|
+|Aumentar a definição de voz actual |`NVDA+control+Seta Acima` |`NVDA+shift+control+Seta Acima` |aumenta a definição de voz actual. Por exemplo: aumenta a velocidade, escolhe a voz seguinte, aumenta o volume|
 |Aumentar a definição de voz actual por um valor maior |`NVDA+control+pageUp` |`NVDA+shift+control+pageUp` |aumenta a definição de voz actual por um valor maior. Por exemplo: aumenta a velocidade em 20%, escolhe a voz 20 posições acima, aumenta o volume 20%.|
-|Diminuir a definição de voz actual |"NVDA+control+Seta Abaixo" |"NVDA+shift+control+Seta Abaixo" |Diminui a definição de voz actual. Ex: diminui a velocidade, escolhe a voz anterior, diminui o volume|
+|Diminuir a definição de voz actual |`NVDA+control+Seta Abaixo` |`NVDA+shift+control+Seta Abaixo` |Diminui a definição de voz actual. Ex: diminui a velocidade, escolhe a voz anterior, diminui o volume|
 |Diminuir a definição de voz actual por um valor maior |`NVDA+control+pageUp` |`NVDA+shift+control+pageUp` |Diminui a definição de voz actual por um valor maior. Por exemplo: diminui a velocidade em 20%, escolhe a voz 20 posições abaixo, diminui o volume 20%.|
 
 Também é possível definir o primeiro ou o último valor da definição da voz actual atribuindo comandos personalizados em  [Definir comandos](#InputGestures), na categoria de voz.
-Isto significa que, por exemplo, quando estiver numa definição de taxa, esta será definida para 0 ou 100. Quando estiver numa definição de voz, esta definirá a primeira ou a última voz.
+Isto significa que, por exemplo, quando estiver numa definição de taxa, esta será definida para 0 ou 100.
+Quando estiver numa definição de voz, esta definirá a primeira ou a última voz.
 
 #### Navegação Web {#WebNavigation}
 
@@ -267,7 +268,7 @@ A lista completa das teclas de Navegação com uma única letra está na secçã
 |Marca |"d" |Avançar para o próximo marco|
 |Lista |"l" |Avançar para a lista seguinte|
 |Tabela |"t" |Avançar para a próxima tabela|
-|Voltar para trás |"shift+letra" |Pressione "shift" e qualquer uma das letras acima para se mover para o elemento anterior desse tipo|
+|Voltar para trás |"shift+letra" |Pressione `shift` e qualquer uma das letras acima para se mover para o elemento anterior desse tipo|
 |Lista de elementos |"NVDA+f7" |Lista vários tipos de elementos, tais como links e cabeçalhos|
 
 ### Preferências {#Preferences}
@@ -4625,12 +4626,12 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 |"f12" key |"dot1+dot2+dot3+backspace"|
 |"windows" key |"dot1+dot2+dot4+dot5+dot6+space"|
 |Toggle "windows" key |"dot1+dot2+dot3+dot4+backspace", "dot2+dot4+dot5+dot6+space"|
-|"capsLock" key |"dot7+backspace", "dot8+backspace"|
+|`capsLock` key |"dot7+backspace", "dot8+backspace"|
 |"numLock" key |"dot3+backspace", "dot6+backspace"|
-|"shift" key |"dot7+space"|
-|Toggle "shift" key |"dot1+dot7+space", "dot4+dot7+space"|
-|"control" key |"dot7+dot8+space"|
-|Toggle "control" key |"dot1+dot7+dot8+space", "dot4+dot7+dot8+space"|
+|`shift` key |"dot7+space"|
+|Toggle `shift` key |"dot1+dot7+space", "dot4+dot7+space"|
+|`control` key |"dot7+dot8+space"|
+|Toggle `control` key |"dot1+dot7+dot8+space", "dot4+dot7+dot8+space"|
 |"alt" key |"dot8+space"|
 |Toggle "alt" key |"dot1+dot8+space", "dot4+dot8+space"|
 |Toggle HID Keyboard simulation |"switch1Left+joystick1Down", "switch1Right+joystick1Down"|
@@ -4654,8 +4655,8 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 |`enter` key |"joystick2Center"|
 |"escape" key |"c1"|
 |`tab` key |"c2"|
-|Toggle "shift" key |"c3"|
-|Toggle "control" key |"c4"|
+|Toggle `shift` key |"c3"|
+|Toggle `control` key |"c4"|
 |Toggle "alt" key |"c5"|
 |Toggle "NVDA" key |"c6"|
 |"control+Home" key |"c1+c2+c3"|
@@ -4730,8 +4731,8 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 |`enter` key |"joystick2Center"|
 |"escape" key |"l2"|
 |`tab` key |"l3"|
-|Toggle "shift" key |"l4"|
-|Toggle "control" key |"l5"|
+|Toggle `shift` key |"l4"|
+|Toggle `control` key |"l5"|
 |Toggle "alt" key |"l6"|
 |Toggle "NVDA" key |"l7"|
 |"control+home" key |"l1+l2+l3", "l2+l3+l4"|
