@@ -124,11 +124,10 @@ O ano e a versão muda entre actualizações para reflectir a versão actual.
 1. Execute o ficheiro descarregado.
 Será ouvida uma música enquanto uma cópia temporária do NVDA é carregada.
 Após o carregamento, o NVDA falará durante todo o resto do processo.
-
 1. A janela de instalação do NVDA aparece com o acordo de licença.
 Pressione `Seta abaixo` para ler o acordo de licença, se desejar.
 1. Pressione `tab` para passar à caixa de verificação "Aceito" e pressione a `barra de espaços` para a marcar.
-1. Pressione `tab` para se mover através das opções, depois pressione "Enter" na opção desejada.
+1. Pressione `tab` para se mover através das opções, depois pressione `enter` na opção desejada.
 
 As opções são: 
 
@@ -160,7 +159,7 @@ Para mais detalhes sobre as opções disponíveis, consulte [Opções de instala
 1. De seguida aparecem as opções para utilizar o NVDA durante o início de sessão no Windows e para criar um atalho no ambiente de trabalho;
 1. Estas opções estão marcadas por padrão;
 Se desejar, prima `tab` e "barra de espaço" para alterar qualquer uma destas opções, ou deixe-as na predefinição.
-Pressione "enter" para continuar;
+Pressione `enter` para continuar;
 1. Aparece uma janela "Controlo de Conta do Utilizador" (UAC) do Windows a perguntar "Deseja permitir que esta aplicação faça alterações no seu PC?";
 1. Pressione "alt+y" para concordar com a solicitação UAC;
 1. Uma barra de progresso é preenchida à medida que o NVDA se instala;
@@ -168,7 +167,7 @@ Durante este processo, o NVDA emite um sinal sonoro cada vez mais agudo.
 Este processo é frequentemente rápido e pode não ser notado.
 1. Aparece uma janela informando que a instalação do NVDA foi bem sucedida;
 A mensagem pede para pressionar OK para iniciar a cópia instalada.
-Pressione "Enter" para iniciar a cópia instalada;
+Pressione `enter` para iniciar a cópia instalada;
 1. Aparece a janela "Bem-vindo ao NVDA" e o NVDA lê uma mensagem de boas-vindas;
 O foco fica na caixa de combinação "Esquema do teclado:";
 Por padrão, o esquema de teclado "Desktop" utiliza o teclado numérico para algumas funções;
@@ -180,7 +179,7 @@ Note que o esquema do teclado é definido separadamente da tecla modificadora do
 A tecla modificadora do NVDA e o esquema do teclado podem ser alterados mais tarde nas Configurações de Teclado.
 1. Utilize `tab` e "barra de espaços" para ajustar as outras opções nesta janela.
 Estas configuram se o NVDA deve iniciar automaticamente.
-1. Pressione "Enter" para fechar a janela com o NVDA já em execução.
+1. Pressione `enter` para fechar a janela com o NVDA já em execução.
 
 ### Utilizar o NVDA {#RunningNVDA}
 
@@ -208,7 +207,7 @@ Os comandos reais não serão executados enquanto estiver no modo de ajuda de co
 | Nome |Comando de Teclado Desktop |Comando de Teclado Laptop |Descrição|
 |---|---|---|---|
 |Iniciar NVDA |"control+alt+n" |"control+alt+n" |Inicia ou reinicia o NVDA|
-|Sair do NVDA |"NVDA+q", depois "Enter" |"NVDA+q", depois "Enter" |Sair do NVDA|
+|Sair do NVDA |"NVDA+q", depois `enter` |"NVDA+q", depois `enter` |Sair do NVDA|
 |Pausa ou retoma da voz |"shift" |"shift" |Pausa instantaneamente a voz. Se pressionar novamente, recomeçará a falar, desde onde parou|
 |Parar a voz |"Control" |"Control" Pára instantaneamente a voz|
 
@@ -600,12 +599,12 @@ Para aceder ao menu do NVDA, de qualquer lugar no Windows, enquanto executa o NV
 
 * Pressionar "NVDA+n" no teclado;
 * Dar um duplo toque com dois dedos, num ecrã táctil;
-* Aceda à barra do sistema pressionando "Windows+b", "seta para baixo" para o ícone do NVDA e pressione "enter";
+* Aceda à barra do sistema pressionando "Windows+b", "seta para baixo" para o ícone do NVDA e pressione `enter`;
 * Em alternativa, aceda à barra do sistema pressionando "Windows+b", "seta para baixo" para o ícone do NVDA e abra o menu de contexto pressionando a tecla "aplicaçõs", localizada à esquerda da tecla Control direita na maioria dos teclados;
 Num teclado sem a tecla "aplicações", pressione "shift+F10".
 * Clique com o botão direito do rato no ícone do NVDA localizado na barra do sistema.
 
-Quando o menu for apresentado, pode utilizar as teclas de setas para navegar no menu e a tecla "enter" para ativar um item.
+Quando o menu for apresentado, pode utilizar as teclas de setas para navegar no menu e a tecla `enter` para ativar um item.
 
 ### Comandos Básicos do NVDA {#BasicNVDACommands}
 
@@ -2851,7 +2850,7 @@ Os estilos de parágrafo disponíveis são:
 Este estilo funciona melhor quando a aplicação suporta a navegação por parágrafo nativamente, e é a predefinição.
 * Quebra de linha única: O NVDA utilizará uma quebra de linha como identificadora do início de um parágrafo.
 Este estilo funciona melhor quando lemos documentos numa aplicação que não suporta nativamente a navegação por parágrafos, e os parágrafos estão marcados apenas por uma quebra de linha.
-* Quebra de várias linhas: O NVDA tentará identificar os parágrafos pela existência de, pelo menos, uma linha em branco (criada por duplo pressionar da tecla "Enter").
+* Quebra de várias linhas: O NVDA tentará identificar os parágrafos pela existência de, pelo menos, uma linha em branco (criada por duplo pressionar da tecla `enter`).
 Este estilo funciona melhor quando lemos documentos com os parágrafos em blocos.
 Note que este estilo não pode ser usado no Microsoft Word ou Microsoft Outlook, a menos que esteja a usar a UIA para aceder aos controlos do Microsoft Word.
 
@@ -3417,7 +3416,7 @@ Os extras serão listados se o texto de pesquisa puder ser encontrado no nome de
 ### Acções do extra {#AddonStoreActions}
 
 Os extras têm acções associadas, como instalar, ajuda, desactivar e remover.
-O menu de ações pode ser acedido para um extra na lista de extras pressionando a tecla "Aplicações", "Enter", clicando com o botão direito do rato ou fazendo duplo clique no extra.
+O menu de ações pode ser acedido para um extra na lista de extras pressionando a tecla "Aplicações", `enter`, clicando com o botão direito do rato ou fazendo duplo clique no extra.
 Há também um botão de Acções nos detalhes do extra selecionado, que pode ser ativado normalmente ou pressionando "Alt+A".
 
 #### Instalar extras {#AddonStoreInstalling}
@@ -4652,7 +4651,7 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 |"rightArrow" key |"joystick2Right"|
 |"upArrow" key |"joystick2Up"|
 |"downArrow" key |"joystick2Down"|
-|"enter" key |"joystick2Center"|
+|`enter` key |"joystick2Center"|
 |"escape" key |"c1"|
 |`tab` key |"c2"|
 |Toggle "shift" key |"c3"|
@@ -4705,7 +4704,7 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 |"rightArrow" key |"joystick2Right"|
 |"upArrow" key |"joystick2Up"|
 |"downArrow" key |"joystick2Down"|
-|"enter" key |"joystick2Center"|
+|`enter` key |"joystick2Center"|
 
 <!-- KC:endInclude -->
 
@@ -4728,7 +4727,7 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 |"rightArrow" key |"joystick2Right"|
 |"upArrow" key |"joystick2Up"|
 |"downArrow" key |"joystick2Down"|
-|"enter" key |"joystick2Center"|
+|`enter` key |"joystick2Center"|
 |"escape" key |"l2"|
 |`tab` key |"l3"|
 |Toggle "shift" key |"l4"|
