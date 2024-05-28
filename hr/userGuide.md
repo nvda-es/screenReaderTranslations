@@ -285,6 +285,7 @@ Dodaci su programi koji dodaju nove ili unapređuju postojeće funkcije NVDA.
 Dodatke razvijaju NVDA zajednica ili vanjske tvrtke te nisu povezani sa organizacijom Nv Access.
 Kao i kod svakog softvera, važno je vjerovati programeru koji je napisao dodatak prije njegovog korištenja.
 Za načine provjere sigurnosti dodataka, molimo pogledajte poglavlje [o instaliranju dodataka](#AddonStoreInstalling).
+
 Prvi put kada se otvori Add-on store, prikazat će se obavijest o dodacima.
 NV Access ne provjerava dodatke, te isti mogu imati neograničen pristup informacijama.
 Pritisnite `razmak` ako ste pročitali upozorenje i ne trebate ga ponovo čuti.
