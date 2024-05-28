@@ -302,6 +302,7 @@ Kada se prozor prvi put otvori, potrebno je nekoliko sekundi kako bi se dodaci u
 NVDA će pročitati naziv prvog dodatka kada se cijeli popis učita.
 Dostupni dodaci su popisani po abecednom redu u obliku popisa.
 Kako biste pregledavali popis i doznali nešto o određenom dodatku:
+
 1. Koristite `strelice` ili pritisnite prvo slovo naziva dodatka kako biste se kretali po popisu.
 1. Jedamput pritisnite `tab` kako biste se premjestili na opis trenutno odabranog dodatka.
 1. Koristite [tipke za čitanje](#ReadingText) ili `strelice` kako biste pročitali puni opis.
@@ -319,6 +320,7 @@ Kada ste završili, pritisnite `tab` kako biste došli do filtriranog popisa dod
 #### Instaliranje dodataka {#InstallingAddons}
 
 Kako biste instalirali dodatak:
+
 1. Kada ste fokusirani na dodatku kojeg želite instalirati, pritisnite `enter`.
 1. Otvara se izbornik radnji sa popisom radnji. Prva je radnja "instaliraj".
 1. Kako biste instalirali dodatak, pritisnite `i` ili `strelicu dolje` kako biste došli do opcije "instaliraj" i pritisnite `enter`.
@@ -343,10 +345,10 @@ Poslije omogućavanja, onemogućavanja, ili uklanjanja dodataka, od vas će se z
 Te će se promjene primijeniti poslije ponovnog pokretanja NVDA.
 Imajte na umu da u ovom dijaloškom okviru tipka `escape` radi na isti način kao gumb "zatvori".
 
-### Nadogradnja dodataka {#UpdatingAddons}
-Prilikom postojanja nadogradnej instaliranog dodatka, ista će biti prikazana u kartici svojstva "dodaci koji se mogu nadograditi".
+#### Nadogradnja dodataka {#UpdatingAddons}
+Prilikom postojanja nadogradnje instaliranog dodatka, ista će biti prikazana u kartici svojstva "dodaci koji se mogu nadograditi".
 Pritisnite `control+tab` kako biste došli do te kartice svojstava sa bilo kojeg mjesta u add-on storeu.
-Status dodatka će biti prikazan kao "nadogradnaj je dostupna".
+Status dodatka će biti prikazan kao "nadogradnja je dostupna".
 Tablica će prikazivati trenutno instaliranu verziju i dostupnu verziju.
 Pritisnite `enter` na dodatku, kako biste otvorili popis radnji a potom izaberite "nadogradi".
 
