@@ -259,14 +259,16 @@ Quando estiver numa definição de voz, esta definirá a primeira ou a última v
 #### Navegação Web {#WebNavigation}
 
 A lista completa das teclas de Navegação com uma única letra está na secção [Modo de Navegação](#BrowseMode) do guia do utilizador.
+
 || Comando | Teclado | Descrição |
+
 |Título |`h` |Avançar para o próximo título|
 |Título nível 1, 2 até 6 |`1`, `2` até `6` |Avançar para o próximo título no nível especificado|
-|Campo de formulário |"f" |Avançar para o próximo campo de formulário (campo de edição, botão, etc)|
-|Link |"k" |Avançar para o próximo link|
-|Marca |"d" |Avançar para o próximo marco|
-|Lista |"l" |Avançar para a lista seguinte|
-|Tabela |"t" |Avançar para a próxima tabela|
+|Campo de formulário |`f` |Avançar para o próximo campo de formulário (campo de edição, botão, etc)|
+|Link |`k` |Avançar para o próximo link|
+|Marca |`d` |Avançar para o próximo marco|
+|Lista |`l` |Avançar para a lista seguinte|
+|Tabela |`t` |Avançar para a próxima tabela|
 |Voltar para trás |"shift+letra" |Pressione `shift` e qualquer uma das letras acima para se mover para o elemento anterior desse tipo|
 |Lista de elementos |"NVDA+f7" |Lista vários tipos de elementos, tais como links e cabeçalhos|
 
@@ -364,7 +366,7 @@ Pode ver uma lista dos especialistas já certificados na página de  [certifica�
 
 ### Obter ajuda {#GettingHelp}
 
-Para obter ajuda para o NVDA, pressione "NVDA+n" para abrir o menu do NVDA, e depois "A" para abrir o submenu Ajuda.
+Para obter ajuda para o NVDA, pressione "NVDA+n" para abrir o menu do NVDA, e depois `a` para abrir o submenu Ajuda.
 Neste submenu pode aceder ao Manual do Utilizador, à Referência rápida de comandos, ao Que há de novo e mais.
 As três primeiras opções abrem no seu navegador padrão.
 Há também material de formação mais abrangente, em inglês, disponível na [loja da NV Access](https://www.nvaccess.org/shop).
@@ -1909,7 +1911,7 @@ Se esta caixa de verificação estiver marcada, o NVDA produzirá um pequeno bip
 ##### Usar Funcionalidade de Soletrar, se Suportado {#SpeechSettingsUseSpelling}
 
 Algumas palavras são constituídas apenas por um caracter, porém a pronúncia é diferente, dependendo se o caracter está a ser falado como um caracter individual (por exemplo, ao soletrar) ou como uma palavra.
-Por exemplo, em português, "a" é tanto uma letra como uma palavra, e é pronunciado de maneira diferente em cada caso.
+Por exemplo, em português, `a` é tanto uma letra como uma palavra, e é pronunciado de maneira diferente em cada caso.
 Esta opção permite que o sintetizador diferencie estes dois casos, se suportar tal funcionalidade.
 A maioria dos sintetizadores tem esse suporte.
 
@@ -1926,7 +1928,7 @@ Se estiver a ter problemas com a pronúncia de alguns caracteres individuais, de
 
 Quando esta opção está marcada o NVDA anunciará a descrição dos caracteres quando se mover por caracteres.
 
-Por exemplo, ao rever uma linha por caracter, quando a letra "b" for lida o NVDA dirá "Bravo" após um 1 segundo.
+Por exemplo, ao rever uma linha por caracter, quando a letra `b` for lida o NVDA dirá "Bravo" após um 1 segundo.
 Isto pode ser útil se for difícil distinguir entre a pronúncia dos símbolos, ou para utilizadores com deficiência auditiva.
 
 A descrição de caracteres desfasada será cancelada se outro texto for falado durante esse tempo, ou se premir a tecla "controlo''.
@@ -3213,7 +3215,7 @@ Nota:
 
 * As teclas emuladas, se não tiverem um comando associado, não serão mantidas ao guardar ou fechar o diálogo "Definir comandos";
 * Um comando para simulação de teclas, que inclua uma tecla modificadora, não deve ser associado a teclas simuladas que não incluam uma tecla modificadora.
-Por exemplo, definir a letra "a" como tecla para simular, e associar-lhe o comando "ctrl+m", pode resultar
+Por exemplo, definir a letra `a` como tecla para simular, e associar-lhe o comando "ctrl+m", pode resultar
 em enviar para a aplicação "ctrl+a".
 
 Quando tiver terminado, pressione o botão "OK", para guardar as suas modificações, ou o botão "Cancelar", para as descartar.
