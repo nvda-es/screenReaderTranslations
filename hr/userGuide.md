@@ -2273,8 +2273,8 @@ Ova postavka nije dostupna ako ste pokrenuli  NVDA sa isključenim [WASAPI za au
 ##### Način podijeljenog zvuka {#SelectSoundSplitMode}
 
 Ova funkcija omogućuje korisnicima korištenje stereouređaja poput zvučnika ili slušalica.
-Ova funkcija omogućuje da zvuk govora NVDA bude na primjer u lijevom kanalu, a drugi zvukove na primjer u desnom.
-Podrazumjevano način podjeljenog zvuka je onemogućen, što znači da će svi programi, uključujući i NVDA reproducirati zvukove u oba audiokanala.
+Ova funkcija omogućuje da zvuk govora NVDA bude na primjer u lijevom kanalu, a drugi zvukovi na primjer u desnom.
+Podrazumijevano način podjeljenog zvuka je onemogućen.
 Tipkovničkim prečacem možete se prebacivati između različitih načina podjele zvuka:
 <!-- KC:beginInclude -->
 
@@ -2286,24 +2286,26 @@ Tipkovničkim prečacem možete se prebacivati između različitih načina podje
 
 Podrazumijevano, ovaj će prečac prebacivati između slijedećih modusa:
 
-* Onemogućena podjela zvuka: Programi i NVDA reproduciraju svoje zvukove u oba kanala.
+* Podjela zvuka onemogućena: NVDA ne razdjeljuje zvuk.
 * NVDA u lijevom kanalu, a programi u desnom: NVDA će govoriti u lijevom kanalu, dok će drugi programi reproducirati svoje zvukove u desnom.
 * NVDA u lijevom kanalu a programi u oba kanala: NVDA će govoriti u lijevom kanalu, dok će se zvukovi reproducirati u oba kanala.
 
 Dostupno je više naprednih načina podjele u odabirnom okviru.
+Osim tih modusa, "NVDA u oba kanala i programi u oba kanala" prisiljava sve druge zvukove da budu preusmjereni u oba kanala.
+taj modus može se razlikovati od modusa "podjela zvuka onemogućena" u slučaju da druga obrada zvuka smeta.
 Imajte na umu da ova opcija ne radi kao mikser.
 Na primjer, ako program reproducira  glazbu u stereo formatu kada je način podjele zvuka postavljen na "NVDA u lijevom kanalu a programi u desnom", tada ćete čuti desni kanal pjesme, dok će lijevi kanal biti utišan.
 
 Ova opcija nije dostupna ako ste pokrenuli NVDA sa [isključenim Wasapi za izlaz zvuka](#WASAPI) in Advanced Settings.
 
 Imajte na umu da ako se NVDA sruši, glasnoća zvuka programa neće se vratiti na zadane vrijednosti, i ti programi će i dalje reproducirati zvuk samo u jednom kanalu.
-Kako biste to spriječili, molimo ponovno pokrenite NVDA.
+Kako biste to spriječili, molimo ponovno pokrenite NVDA i odaberite modus "NVDA u oba kanala i programi u oba kanala".
 
 ##### Prilagođavanje načina podjele zvuka {#CustomizeSoundSplitModes}
 
 Ovaj popis sa odabirnim okvirima omogućuje vam prilagođavanje koji će načini podjele zvuka biti dostupni pri prebacivanju uz pomoć prečaca `NVDA+alt+s`.
 Načini koji nisu odabrani su nedostupni na tom popisu.
-Podrazumjevano su dostupna tri modusa.
+Podrazumijevano su dostupna tri modusa.
 
 * Onemogućena podjela zvuka.
 * NVDA u lijevom kanalu a programi u desnom.
