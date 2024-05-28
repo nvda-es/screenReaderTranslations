@@ -2201,19 +2201,7 @@ Questo cursore di avanzamento consente di impostare il volume dei suoni e dei se
 L'impostazione ha effetto solo quando l'opzione "Il volume dei suoni di NVDA segue il volume della voce" è disabilitata.
 La funzione non risulta disponibile se NVDA è stato avviato con l'impostazione [WASAPI disattivato per l'uscita audio](#WASAPI) nelle Impostazioni avanzate.
 
-##### Tempo di funzionamento del dispositivo audio dopo la sintesi {#AudioAwakeTime}
-
-Questo campo editazione specifica per quanto tempo NVDA mantiene attivo il dispositivo audio dopo che la sintesi ha parlato.
-Ciò consente a NVDA di evitare alcuni problemi con la sintesi vocale, come la perdita di parti di parole.
-Questo può accadere perché i dispositivi audio (in particolare Bluetooth e wireless) entrano in modalità standby.
-La funzione potrebbe essere utile anche in altri casi d'uso, come quando si esegue NVDA all'interno di una macchina virtuale (ad esempio Citrix Virtual Desktop) o su alcuni laptop.
-
-Valori più bassi potrebbero causare interruzioni dell'audio più frequenti, poiché il dispositivo tenderà ad entrare in modalità standby troppo presto, tagliando l'inizio della frase successiva.
-Invece, impostare un valore troppo alto potrebbe portare allo scaricamento più veloce della batteria del dispositivo audio, poiché rimarrà attivo più a lungo anche quando non viene emesso alcun suono.
-
-È possibile impostare il tempo su zero per disabilitare questa funzione.
-
-+==== bilanciamento audio====[SelectSoundSplitMode]
+##### bilanciamento audio====[SelectSoundSplitMode]
 
 La funzione di bilanciamento audio consente agli utenti di utilizzare i propri dispositivi di uscita stereo, come cuffie e altoparlanti.
 In questo modo, si potrà portare la voce di NVDA in un canale (ad esempio sinistro) e tutte le altre applicazioni nell'altro canale (ad esempio destro).
@@ -2231,10 +2219,12 @@ Per impostazione predefinita, questo comando passerà tra le seguenti modalità:
 
 * bilanciamento disattivato: sia NVDA che altre applicazioni trasmettono l'audio ai canali sinistro e destro.
 * NVDA a sinistra e applicazioni a destra: NVDA parlerà nel canale sinistro, mentre le altre applicazioni riprodurranno i suoni nel canale destro.
-* NVDA a destra e applicazioni a sinistra: NVDA parlerà nel canale destro, mentre le altre applicazioni riprodurranno i suoni nel canale sinistro.
+* NVDA a sinistra e applicazioni su entrambe i canali: NVDA parlerà nel canale sinistro, mentre le altre applicazioni riprodurranno i suoni sia nel canale sinistro che destro.
 
 Sono disponibili modalità di bilanciamento audio più avanzate nella casella combinata delle impostazioni NVDA.
-Se si desidera modificare il volume di tutte le applicazioni ad eccezione di NVDA, si consiglia di servirsi dei [comandi dedicati](#OtherAppVolume).
+Tra queste, una menzione particolare merita l'opzione "NVDA in entrambi i canali e applicazioni in entrambi i canali", che impone che tutti i suoni siano diretti su entrambi i canali.
+Tale funzione si comporta in maniera differente rispetto a "bilanciamento disattivato", nel caso in cui altre elaborazioni audio interferiscano con i volumi dei canali.
+
 Tenere sempre presente che la modalità bilanciamento audio di NVDA non è un mixer..
 Ad esempio, se un'applicazione riproduce una traccia stereo, e il bilanciamento è configurato con "NVDA a sinistra e applicazioni a destra", si ascolterà solo il canale destro della traccia audio, mentre il canale sinistro rimarrà dedicato a NVDA..
 
@@ -2251,43 +2241,22 @@ Per impostazioni predefinite, sono incluse solo tre modalità.
 
 * Bilanciamento audio disabilitato: NVDA e le applicazioni riproducono suoni sia nei canali sinistro che destro.
 * NVDA sul canale sinistro e tutte le altre applicazioni sul canale destro.
-* NVDA sul canale destro e tutte le altre applicazioni sul canale sinistro.
+* NVDA sul canale sinistro e tutte le altre applicazioni su entrambe i canali.
 
 Tenere presente che è necessario selezionare almeno una modalità.
 Questa opzione non risulta disponibile se NVDA è stato avviato con [Usa Wasapi per l'output audio](#WASAPI) disabilitato nelle impostazioni avanzate.
 
-##### Volume di altre applicazioni {#OtherAppVolume}
+##### Tempo di funzionamento del dispositivo audio dopo la sintesi {#AudioAwakeTime}
 
-Questo controllo consente di regolare il volume di tutte le applicazioni attualmente in esecuzione diverse da NVDA.
-L'impostazione viene applicata per tutti i programmi, anche quelli che saranno eseguiti dopo aver regolato questo parametro.
-Il volume può anche essere controllato da qualsiasi luogo tramite i seguenti comandi da tastiera:
+Questo campo editazione specifica per quanto tempo NVDA mantiene attivo il dispositivo audio dopo che la sintesi ha parlato.
+Ciò consente a NVDA di evitare alcuni problemi con la sintesi vocale, come la perdita di parti di parole.
+Questo può accadere perché i dispositivi audio (in particolare Bluetooth e wireless) entrano in modalità standby.
+La funzione potrebbe essere utile anche in altri casi d'uso, come quando si esegue NVDA all'interno di una macchina virtuale (ad esempio Citrix Virtual Desktop) o su alcuni laptop.
 
-<!-- KC:beginInclude -->
+Valori più bassi potrebbero causare interruzioni dell'audio più frequenti, poiché il dispositivo tenderà ad entrare in modalità standby troppo presto, tagliando l'inizio della frase successiva.
+Invece, impostare un valore troppo alto potrebbe portare allo scaricamento più veloce della batteria del dispositivo audio, poiché rimarrà attivo più a lungo anche quando non viene emesso alcun suono.
 
-| Nome |Tasto |Descrizione|
-|---|---|---|
-|Alza volume applicazioni |`NVDA+alt+paginaSu` |Alza il volume di tutte le applicazioni ad eccezione di NVDA.|
-|Abbassa volume applicazioni |`NVDA+alt+paginaGiù` |Abbassa il volume di tutte le applicazioni ad eccezione di NVDA.|
-
-<!-- KC:endInclude -->
-
-Questa opzione non risulta disponibile se NVDA è stato avviato con [Usa Wasapi per l'output audio](#WASAPI) disabilitato nelle impostazioni avanzate.
-
-##### Disattiva l'audio delle altre applicazioni {#MuteApplications}
-
-Questa casella di controllo consente di disattivare l'audio di tutte le applicazioni diverse da NVDA.
-L'impostazione viene applicata per tutti i programmi, anche quelli che saranno eseguiti dopo aver regolato questo parametro.
-Esiste un comando da tastiera che può essere richiamato da qualsiasi luogo:
-
-<!-- KC:beginInclude -->
-
-| Nome |Tasto |Descrizione|
-|---|---|---|
-|Disattiva l'audio delle altre applicazioni |`NVDA+alt+canc` |Disattiva o riattiva tutte le applicazioni diverse da NVDA.|
-
-<!-- KC:endInclude -->
-
-Questa opzione non risulta disponibile se NVDA è stato avviato con [Usa Wasapi per l'output audio](#WASAPI) disabilitato nelle impostazioni avanzate.
+È possibile impostare il tempo su zero per disabilitare questa funzione.
 
 #### Visione {#VisionSettings}
 
