@@ -280,6 +280,75 @@ Kako biste otvorili NVDA izbornik, pritisnite `NVDA+n`.
 Kako biste izravno otvorili NVDA opće postavke, pritisnite `NVDA+control+g`.
 Većina NVDA ekrana postavki ima pripadajuće prečace za izravno otvaranje, kao što je to `NVDA+control+s` za postavke govorne jedinice, ili `NVDA+control+v` za ostale glasovne postavke.
 
+### Dodaci {#Addons}
+Dodaci su programi koji dodaju nove ili unapređuju postojeće funkcije NVDA.
+Dodatke razvijaju NVDA zajednica ili vanjske tvrtke te nisu povezani sa organizacijom Nv Access.
+Kao i kod svakog softvera, važno je vjerovati programeru koji je napisao dodatak prije njegovog korištenja.
+Za načine provjere sigurnosti dodataka, molimo pogledajte poglavlje [o instaliranju dodataka](#AddonStoreInstalling).
+Prvi put kada se otvori Add-on store, prikazat će se obavijest o dodacima.
+NV Access ne provjerava dodatke, te isti mogu imati neograničen pristup informacijama.
+Pritisnite `razmak` ako ste pročitali upozorenje i ne trebate ga ponovo čuti.
+Pritisnite `tab` kako biste došli do gumba "U redu" a potom pritisnite `enter` kako biste zatvorili upozorenje i produžili u NVDA add-on store.
+Poglavlje "[Dodaci i add-on store](#AddonsManager)" korisničkog priručnika sadrži detaljne informacije o svakoj funkciji add-on storea.
+
+Add-on store je dostupan iz NVDA izbornika.
+Pritisnite `NVDA+n` kako biste otvorili NVDA izbornik, a potom `a` za alate, a potom `a` za add-on store.
+Kada se otvori Add-on store, pokazat će se  kartica "dostupni dodaci" ako niti jedan dodatak nije instaliran.
+Kada su dodaci instalirani, Add-on store će se otvoriti na kartici "instalirani dodaci".
+
+#### Dostupni dodaci {#AvailableAddons}
+Kada se prozor prvi put otvori, potrebno je nekoliko sekundi kako bi se dodaci učitali.
+NVDA će pročitati naziv prvog dodatka kada se cijeli popis učita.
+Dostupni dodaci su popisani po abecednom redu u obliku popisa.
+Kako biste pregledavali popis i doznali nešto o određenom dodatku:
+1. Koristite `strelice` ili pritisnite prvo slovo naziva dodatka kako biste se kretali po popisu.
+1. Jedamput pritisnite `tab` kako biste se premjestili na opis trenutno odabranog dodatka.
+1. Koristite [tipke za čitanje](#ReadingText) ili `strelice` kako biste pročitali puni opis.
+1. Pritisnite `tab` kako biste došli do gumba "radnje" koji se može koristiti i prilikom instalacije dodataka.
+1. Pritisnite `tab` kako biste došli do "ostalih detalja", gdje su prikazane informacije o verziji i izdavaču.
+1. Kako biste se vratili na popis dodataka, pritisnite `alt+a`, ili `shift+tab`.
+
+#### Pretraživanje dodataka {#SearchingForAddons}
+Kao što se mogu pregledavati, dodaci se mogu i filtrirati.
+Za pretragu, pritisnite `alt+p` da se prebacite na polje za "pretragu" i upišete tekst za pretragu.
+Polje za pretragu može sadržavati informacije koje uključuju identifikator dodatka, naziv dodatka, izdavača, autor ili opis.
+Popis se mijenja prilikom upisivanja pojma za pretragu.
+Kada ste završili, pritisnite `tab` kako biste došli do filtriranog popisa dodataka i pregledavali rezultate.
+
+#### Instaliranje dodataka {#InstallingAddons}
+
+Kako biste instalirali dodatak:
+1. Kada ste fokusirani na dodatku kojeg želite instalirati, pritisnite `enter`.
+1. Otvara se izbornik radnji sa popisom radnji. Prva je radnja "instaliraj".
+1. Kako biste instalirali dodatak, pritisnite `i` ili `strelicu dolje` kako biste došli do opcije "instaliraj" i pritisnite `enter`.
+1. Fokus će se vratiti na popis dodataka a nVDA će pročitati detalje o dodatku.
+1. Informacija "stanje" kuju čita NVDA mijenja se iz "dostupan" u "preuzimanje".
+1. Jednom kada se dodatak preuzme, promijenit će se u "preuzeto. čeka instalaciju".
+1. Ponovite ove korake sa svakim dodatkom koje biste željeli instalirati.
+1. Kada završite, pritisnite `tab` kada se fokus nađe na gumbu "zatvori", i pritisnite `enter`.
++1. The downloaded add-ons will start the installation process once the Add-on Store is closed.
+Dodaci mogu prikazivati dijaloške okvire na koje trebate odgovarati potvrdno kada se prikažu.
+1. Kada se dodaci instaliraju, pojavljuje se dijaloški okvir koji govori da su učinjene promjene te da trebate ponovno pokrenuti NVDA kako bi se instalacija završila.
+1. Pritisnite `enter` za ponovno pokretanje NVDA.
+
+#### Upravljanje instaliranim dodacima {#ManagingInstalledAddons}
+Pritisnite `control+tab` kako biste se kretali između kartica svojstava ili odjeljaka add-on storea.
+Kartice svojstava uključuju: "instalirani dodaci", "dodaci koji se mogu nadograditi", "dostupni dodaci" i "instalirani nekompatibilni dodaci".
+Svaka kartica je konstruirana na sličan način: sa popisom dodataka, sa panelom za više detalja o dodatku, te sa mogućnošću izvršavanja konkretne radne na označenom dodatku.
+Izbornik radnji za dodatke uključuje "onemogućavanje" i "uklanjanje" te suprotne radnje "instalaciju".
+Onemogućavanje dodatka zaustavlja učitavanje istog, ali ga ostavlja instaliranog.
+Kako biste ponovno uključili onemogućeni dodatak, aktivirajte stavku "omogući" u izborniku radnji.
+Poslije omogućavanja, onemogućavanja, ili uklanjanja dodataka, od vas će se zahtijevate da ponovno pokrenete NVDA poslije zatvaranja Add-on store.
+Te će se promjene primijeniti poslije ponovnog pokretanja NVDA.
+Imajte na umu da u ovom dijaloškom okviru tipka `escape` radi na isti način kao gumb "zatvori".
+
+### Nadogradnja dodataka {#UpdatingAddons}
+Prilikom postojanja nadogradnej instaliranog dodatka, ista će biti prikazana u kartici svojstva "dodaci koji se mogu nadograditi".
+Pritisnite `control+tab` kako biste došli do te kartice svojstava sa bilo kojeg mjesta u add-on storeu.
+Status dodatka će biti prikazan kao "nadogradnaj je dostupna".
+Tablica će prikazivati trenutno instaliranu verziju i dostupnu verziju.
+Pritisnite `enter` na dodatku, kako biste otvorili popis radnji a potom izaberite "nadogradi".
+
 ### Zajednica {#Community}
 
 NVDA ima živu zajednicu korisnika. 
