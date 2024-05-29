@@ -4378,7 +4378,7 @@ This release fixes several security and other important issues found in NVDA 201
 * В документах Microsoft Word теперь снова читается текст, написанный слева на право. (#627)
 * Сильно уменьшена задержка, возникающая при озвучивании динамически изменяющегося текста в дос-консолях на 64-битных системах. (#622)
 * Если Skype уже запущен на время загрузки NVDA, больше не нужно перезапускать Skype, чтобы включить поддержку вспомогательных технологий. Это касается и других программ, которые проверяют системный флаг чтеца экрана.
--В приложениях Microsoft Office, NVDA больше не падает при активации функции "читать объект на переднем плане" (NVDA+b) или при перемещении между некоторыми элементами панели инструментов. (#616)
+* В приложениях Microsoft Office, NVDA больше не падает при активации функции "читать объект на переднем плане" (NVDA+b) или при перемещении между некоторыми элементами панели инструментов. (#616)
 * Исправлено некорректное произнесение цифр, которые содержат 0 после разделителя: например 1,023. (#593)
 * Adobe Acrobat Pro и Reader 9 больше не падают при закрытии файла и в некоторых других случаях. (#613)
 * Выделяемый текст теперь произносится при нажатии клавиш control+a в некоторых редакторах, например Microsoft Word. (#761)
@@ -4523,7 +4523,7 @@ This release fixes several security and other important issues found in NVDA 201
 * На Брайлевском дисплее больше не отображается излишняя информация, например, при фокусе на не размеченной области.
 * Больше не озвучивается излишняя информацияпри смене фокуса в "Java" или "Lotus". 	
 * Поддержка поля ввода поискового запроса в справке (Windows Help (CHM) viewer). До устранения бага невозможно было прочитать текущее введенное слово, поскольку оно постоянно менялось.
--  Правильно озвучивается нумерация страниц в Microsoft Word.
+*  Правильно озвучивается нумерация страниц в Microsoft Word.
 * Улучшено взаимодействие с диалоговыми окнами Microsoft Word (диалог выбора шрифта). По контроллерам теперь можно перемещаться клавишами стрелок.
 * Улучшена поддержка консолей DOS. Теперь читается содержимое консолей, которые раньше виделись как пустые. 	 * «NVDA» больше не прерывается при нажатии ctrl+break.
 * В Windows Vista и предыдущих версиях, если, при завершении инсталляции выбрано «Запустить NVDA, она запустится с обычными правами пользователя.
@@ -4803,12 +4803,12 @@ This release fixes several security and other important issues found in NVDA 201
 * Added support for more edit fields in Skype.
 * VirtualBuffers only get loaded when focus is on the window that needs to be loaded. This fixes some problems when the preview pane is turned on in Outlook Express.
 * Added commandline arguments to NVDA:
-* -m, --minimal: do not play startup/exit sounds and do not show the interface on startup if set to do so.
-* -q, --quit: quit any other already running instance of NVDA and then exit
-* -s, --stderr-file fileName: specify where NVDA should place uncaught errors and exceptions
-* -d, --debug-file fileName: specify where NVDA should place debug messages
-* -c, --config-file: specify an alternative configuration file
-* -h, -help: show a help message listing commandline arguments
+ * -m, --minimal: do not play startup/exit sounds and do not show the interface on startup if set to do so.
+ * -q, --quit: quit any other already running instance of NVDA and then exit
+ * -s, --stderr-file fileName: specify where NVDA should place uncaught errors and exceptions
+ * -d, --debug-file fileName: specify where NVDA should place debug messages
+ * -c, --config-file: specify an alternative configuration file
+ * -h, -help: show a help message listing commandline arguments
 * Fixed bug where punctuation symbols would not be translated to the appropriate language, when using a language other than english, and when speak typed characters was turned on.
 * Added Slovak language files thanks to Peter Vagner 
 * Added a Virtual Buffer settings dialog and a Document Formatting settings dialog, from Peter Vagner.
