@@ -56,7 +56,7 @@ Tehty useita pieniä bugikorjauksia sovelluksille, kuten Thunderbirdille, Adobe 
 
 * Lisäosakauppa:
   * Lisäosan tiedot NVDA:n vähimmäis- ja viimeisimmästä testatusta versiosta näytetään nyt "Muita tietoja" -osiossa. (#15776, @Nael-Sayegh)
-  * Yhteisön arvioinnit -toiminto on käytettävissä lisäosakaupan kaikissa välilehdissä. (#16179, @nvdaes)
+  * Yhteisön arvioinnit -toiminto on käytettävissä lisäosakaupan kaikilla välilehdillä. (#16179, @nvdaes)
 * Päivitetyt komponentit:
   * Päivitetty LibLouis-pistekääntäjä versioksi [3.29.0](https://github.com/liblouis/liblouis/releases/tag/v3.29.0). (#16259, @codeofdusk)
     * Uudet yksityiskohtaiset valkovenäläiset ja ukrainalaiset pistetaulukot (isot kirjaimet näytetään).
