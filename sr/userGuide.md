@@ -1213,58 +1213,58 @@ Kako bi što je više informacija moguće stalo na brajev red, sledeće skraćen
 
 | Skraćenica |Vrsta kontrole|
 |---|---|
-|app |Aplikacija|
-|art |članak|
-|bqt |Citat|
-|btn |Dugme|
-|drbtn |Dugme padajućeg menija|
-|spnbtn |Kružno dugme|
-|splbtn |Dugme za razdvajanje|
-|tgbtn |Dugme prekidača|
-|cap |naslov|
-|cbo |Izborni okvir|
-|chk |Izborno polje|
+|apl |Aplikacija|
+|čla |članak|
+|cit |Citat|
+|dgm |Dugme|
+|dgmmen |Dugme padajućeg menija|
+|krdgm |Kružno dugme|
+|dgmrzdv |Dugme za razdvajanje|
+|dgmprek |Dugme prekidača|
+|nassl |naslov slike|
+|izbo |Izborni okvir|
+|izbp |Izborno polje|
 |dlg |dialog|
-|doc |Dokument|
-|edt |Polje za unos teksta|
-|pwdedt |Polje za unos lozinke|
-|Umetnuti |Umetnuti objekat|
-|enote |Završna napomena|
+|dok |Dokument|
+|uređ |Polje za uređivanje|
+|lozuređ |Polje za unos lozinke|
+|umet |Umetnuti objekat|
+|znapom |Završna napomena|
 |fig |Figura|
 |fnote |Fusnote|
-|gra |Slika|
+|sli |Slika|
 |grp |Grupisanje|
-|hN |Naslov na nivou n, na primer h1, h2.|
-|hlp |Pomoćni balon|
-|lmk |Orjentir|
+|nN |Naslov na nivou n, na primer n1, n2.|
+|pom |Pomoćni balon|
+|orj |Orjentir|
 |lnk |link|
 |lst |Lista|
-|vlnk |Posećen link|
-|mnu |Meni|
-|mnubar |Traka menija|
-|mnubtn |Dugme menija|
-|mnuitem |Stavka menija|
+|poslnk |Posećen link|
+|men |Meni|
+|trkmen |Traka menija|
+|dgmmen |Dugme menija|
+|stmen |Stavka menija|
 |pnl |panel|
-|prgbar |Traka napredovanja|
-|bsyind |Zauzet pokazivač|
-|rbtn |radio dugme|
-|scrlbar |Klizna traka|
-|sect |Sekcija|
-|stbar |Statusna traka|
-|tabctl |Kontrola kartice|
+|traknapr |Traka napredovanja|
+|zauzpok |Zauzet pokazivač|
+|rdgm |radio dugme|
+|klitrak |Klizna traka|
+|odelj |Odeljak|
+|sttrak |Statusna traka|
+|kontkart |Kontrola kartice|
 |tbl |Tabela|
-|cN |kolona tabele sa brojem n, na primer c1, c2.|
+|kN |kolona tabele sa brojem n, na primer k1, k2.|
 |rN |Red tabele sa brojem n, na primer r1, r2.|
 |term |terminal|
-|tlbar |Traka sa alatima|
-|tltip |Opis alata|
-|tv |Prikaz stabla|
-|tvbtn |Dugme prikaza stabla|
-|tvitem |Stavka prikaza stabla|
-|lv N |Stavka prikaza stabla na nivou N|
-|wnd |Prozor|
+|altrak |Traka sa alatima|
+|opisal |Opis alata|
+|ps |Prikaz stabla|
+|dgmps |Dugme prikaza stabla|
+|psstav |Stavka prikaza stabla|
+|nv N |Stavka prikaza stabla na nivou N|
+|prz |Prozor|
 |⠤⠤⠤⠤⠤ |separator|
-|mrkd |Obeležen sadržaj|
+|obel |Obeležen sadržaj|
 
 Sledeći pokazivači stanja su takođe definisani:
 
@@ -1279,31 +1279,31 @@ Sledeći pokazivači stanja su takođe definisani:
 |- |Prikazano kada se objekat(na primer stavka prikaza stabla) može skupiti|
 |+ |Prikazano kada se objekat(na primer stavka prikaza stabla) može proširiti|
 |*** |Prikazano kada naiđete na zaštićen dokument ili kontrolu|
-|clk |Prikazano kada se na objekat može kliknuti|
-|cmnt |Prikazano kada postoji komentar za ćeliju u tabeli ili deo teksta u dokumentu|
+|klik |Prikazano kada se na objekat može kliknuti|
+|komt |Prikazano kada postoji komentar za ćeliju u tabeli ili deo teksta u dokumentu|
 |frml |Prikazano kada postoji formula u ćeliji tabele|
 |Neispravan |Prikazano kada dođe do neispravnog unosa|
-|ldesc |Prikazano kada objekat (obično slika) ima dug opis|
-|mln |Prikazano kada polje za unos teksta dozvoljava unos više redova na primer polja za unos komentara na sajtovima|
-|req |Prikazano kada je polje za unos obavezno|
-|ro |Prikazano kada je objekat(na primer polje za unos teksta) samo za čitanje|
-|sel |Prikazano kada je objekat izabran|
-|nsel |Prikazano kada objekat nije izabran|
-|sorted asc |Prikazano kada je objekat sortiran uzlazno|
-|sorted desc |Prikazano kada je objekat sortiran silazno|
-|submnu |Prikazano kada objekat ima dodatni prozor(obično podmeni)|
+|dugop |Prikazano kada objekat (obično slika) ima dug opis|
+|višn |Prikazano kada polje za unos teksta dozvoljava unos više redova na primer polja za unos komentara na sajtovima|
+|zaht |Prikazano kada je polje za unos obavezno|
+|čit |Prikazano kada je objekat(na primer polje za unos teksta) samo za čitanje|
+|izab |Prikazano kada je objekat izabran|
+|nizab |Prikazano kada objekat nije izabran|
+|sortir uz |Prikazano kada je objekat sortiran uzlazno|
+|sortir si |Prikazano kada je objekat sortiran silazno|
+|podmen |Prikazano kada objekat ima dodatni prozor(obično podmeni)|
 
 Takođe, sledeće skraćenice za orjentire su definisane:
 
 | Skraćenica |Orjentir|
 |---|---|
-|bnnr |baner|
-|cinf |Informacije o sadržaju|
-|cmpl |Dodatni|
+|bnr |baner|
+|infs |Informacije o sadržaju|
+|dodtn |Dodatni|
 |form |Formular|
-|main |Glavni|
+|glavn |Glavni|
 |navi |Navigacija|
-|srch |Pretraga|
+|pretr |Pretraga|
 |rgn |region|
 
 ### Brajev unos {#BrailleInput}
