@@ -40,7 +40,7 @@ Glavne karakteristike su:
 ### Sistemski zahtevi {#SystemRequirements}
 
 * Operativni sistemi: Sve 32-bitne i 64-bitne verzije Windowsa 8.1, Windowsa 10, Windowsa 11 i sve serverske operativne sisteme počevši od Windows Servera 2012 R2.
-    * AMD64 i ARM64 Windows verzije su podržane.
+  * AMD64 i ARM64 Windows verzije su podržane.
 * Barem 150 MB memorijskog prostora.
 
 ### Internacionalizacija {#Internationalization}
@@ -82,7 +82,7 @@ Za detalje o izuzecima, pristupite dokumentu licence u NVDA meniju u sekciji "po
 ## NVDA vodič za brz početak {#NVDAQuickStartGuide}
 
 Ovaj vodič za brz početak sadrži tri glavne sekcije: preuzimanje, početna podešavanja i pokretanje NVDA.
-Njih prate informacije o menjanju podešavanja, učestvovanju u zajednici i dobijanju pomoći.
+Njih prate informacije o menjanju podešavanja, korišćenju dodataka, učestvovanju u zajednici i dobijanju pomoći.
 Informacije u ovom vodiču su sažeti delovi ostatka korisničkog uputstva.
 Molimo pogledajte potpuno korisničko uputstvo za detaljnije informacije o svakoj temi.
 
@@ -161,7 +161,7 @@ One su podrazumevano označene.
 Ako želite, pritisnite `tab` i `razmak` da promenite bilo koju od ovih opcija, ili ih ostavite na podrazumevanim vrednostima.
 1. Pritisnite `enter` da nastavite.
 1. Windows dijalog "Kontrole korisničkog naloga (KKN)" će se pojaviti i upitaće vas "Da li želite da dozvolite ovoj aplikaciji da izvrši promene na vašem računaru?".
-1. Pritisnite `alt+D` na Srpskoj ili `Alt+Y` na Engleskoj verziji Windowsa da dozvolite promene.
+1. Pritisnite `alt+Y` da dozvolite promene.
 1. Traka napredovanja će se popunjavati dok se NVDA instalira.
 U toku ovog procesa NVDA će reprodukovati zvučne signale koji povećavaju visinu.
 Ovaj proces je često brz i možda se neće ni primetiti.
@@ -279,6 +279,78 @@ Podešavanja, i druge opcije, dostupne su iz NVDA menija.
 Da otvorite NVDA meni, pritisnite `NVDA+n`.
 Da direktno otvorite NVDA dijalog opštih podešavanja, pritisnite `NVDA+kontrol+g`.
 Mnogi ekrani za podešavanja imaju prečice da ih direktno otvorite, kao što su `NVDA+control+s` za sintetizatore, ili `NVDA+control+v` za druga podešavanja glasa.
+
+### Dodaci {#Addons}
+Dodaci su programi koje nude nove ili promenjene funkcije za NVDA.
+Dodatke razvija NVDA zajednica, ili eksterne kompanije i dodaci nisu povezani sa NVAccess organizacijom.
+Kao i sa bilo kojim softverom, važno je verovati programeru dodatka pre nego što ga koristite.
+Molimo pročitajte sekciju [instaliranje dodataka](#AddonStoreInstalling) kako biste saznali načine da verifikujete dodatak pre nego što ga instalirate.
+
+Prvi put kada se prodavnica dodataka otvori, NVDA će prikazati upozorenje o dodacima.
+Dodatke ne proverava NV Access i oni mogu imati neograničenu funkcionalnost i pristup informacijama.
+Pritisnite `Razmak` ako ste pročitali upozorenje i ne želite da ga vidite sledeći put.
+Pritisnite taster `Tab` kako biste došli do tastera "U redu", a zatim `enter` da biste prihvatili upozorenje i nastavili do prodavnice dodataka.
+Sekcija korisničkog uputstva "[Dodaci i prodavnica dodataka](#AddonsManager)" sadrži informacije o svakoj funkciji prodavnice dodataka.
+
+Prodavnica dodataka je dostupna iz menija alati.
+Pritisnite `NVDA+n` da biste otvorili NVDA meni, a zatim `a` za alate, zatim `p` za prodavnicu dodataka.
+Kada se prodavnica dodataka otvori, prikazuje "Dostupne dodatke" ako nemate instaliranih dodataka.
+Kada imate instaliranih dodataka, prodavnica dodataka će se otvoriti na kartici "Instalirani dodaci".
+
+#### Dostupni dodaci {#AvailableAddons}
+Kada se prozor prvi put otvori, dodaci će se možda učitavati nekoliko sekundi.
+NVDA će pročitati ime prvog dodatka nakon što se završi učitavanje liste dodataka.
+Dostupni dodaci su abecedno poređani u listi sa više kolona.
+Kako biste pregledali listu i pronašli informacije o određenom dodatku:
+
+1. Koristite strelice ili pritisnite prvo slovo imena dodatka kako biste se kretali po listi.
+1. Pritisnite `tab` jednom kako biste se prebacili na opis dodatka koji je trenutno izabran.
+1. Koristite [tastere za čitanje](#ReadingText) ili strelice da biste pročitali ceo opis.
+1. Pritisnite `tab` kako biste došli do tastera "Radnje", koji se može koristiti da instalirate dodatak, pored drugih dostupnih radnji.
+1. Pritisnite `tab` kako biste došli do "Drugih detalja", koji prikazuju detalje kao što su izdavača, verziju i početnu stranicu.
+1. Da biste se vratili na listu dodataka, pritisnite `alt+D`, ili `šift+tab` dok se ne vratite na listu "Dostupnih dodataka".
+
+#### Pretraga dodataka {#SearchingForAddons}
+Pored pregledanja svih dostupnih dodataka, moguće je izdvojiti prikazane dodatke.
+Da biste pretražili, pritisnite `alt+p` da se prebacite na polje "pretrage" i upišite tekst koji želite da pretražite.
+Polje pretrage pretražuje podudaranja u poljima  za ID dodatka, prikazano ime, izdavača, autora ili opis.
+Lista se osvežava dok upisujete termine pretrage.
+Nakon što završite, pritisnite `tab` da pređete na listu izdvojenih dodataka i pregledajte rezultate.
+
+#### Instaliranje dodataka {#InstallingAddons}
+
+Da biste instalirali dodatak:
+
+1. Dok ste fokusirani na dodatak koji želite da instalirate, pritisnite `enter`.
+1. Otvoriće se meni radnji sa dostupnim radnjama; prva radnja je "Instaliraj".
+1. Da biste instalirali dodatak, pritisnite `i` ili se krećite `strelicomDole` do opcije "Instaliraj" i pritisnite `enter`.
+1. Fokus se vraća na dodatak u listi i NVDA će pročitati detalje o dodatku.
+1. Informacije o "statusu" koje NVDA prijavljuje se menjaju iz "Dostupan" u "Preuzimanje".
+1. Nakon što se završi preuzimanje dodatka, status će se promeniti u "Preuzet. Čeka na instalaciju".
+1. Ponovite proces za svaki drugi dodatak koji želite da instalirate u isto vreme.
+1. Nakon što završite, pritisnite `tab` dok se ne fokusirate na dugme "Zatvori", a zatim pritisnite `enter`.
+1. Preuzeti dodaci će se instalirati nakno što se zatvori prodavnica dodataka.
+U toku procesa instalacije, dodaci će možda prikazati dijaloge na koje morate da odgovorite.
+1. Nakon što se dodaci instaliraju, dijalog će se pojaviti koji vas obaveštava da su promene izvršene i da morate ponovo da pokrenete NVDA kako bi se završilo instaliranje dodataka.
+1. Pritisnite `enter` da ponovo pokrenete NVDA.
+
+#### Upravljanje instaliranim dodacima {#ManagingInstalledAddons}
+Pritisnite `kontrol+tab` da biste se kretali kroz kartice prodavnice dodataka.
+Kartice su: "Instalirani dodaci", "Dodaci koji imaju ažuriranja", "Dostupni dodaci" i "Instalirani nekompatibilni dodaci".
+Kartice su poređane slično, sa listom dodataka, panelom koji pruža više detalja o izabranom dodatku i tasterom koji vam omogućava da izvršite radnje za izabrani dodatak.
+Meni radnji instaliranih dodataka uključuje "Onemogući" i "Ukloni" umesto "Instaliraj".
+Onemogućavanje dodatka neće učitavati dodatak kada se NVDA pokrene, ali on ostaje instaliran.
+Da biste ponovo omogućili dodatak koji je onemogućen, aktivirajte "Omogući" iz menija radnji.
+Nakon što omogućite, onemogućite, ili uklonite dodatke, biće zahtevano da ponovo pokrenete NVDA kada zatvorite prodavnicu dodataka.
+Ove promene će se primeniti tek nakon što se NVDA ponovo pokrene.
+Imajte na umu da u prozoru prodavnice dodataka `escape` radi na isti način kao i dugme za zatvaranje.
+
+#### Ažuriranje dodataka {#UpdatingAddons}
+Kada je dostupno ažuriranje za dodatak koji je instaliran, biće prikazano na kartici "Dodaci koji se mogu ažurirati".
+Pritisnite `kontrol+tab` da se prebacite na ovu karticu bilo gde iz prodavnice dodataka.
+Status dodatka će biti prikazan kao "Dostupno ažuriranje".
+Lista će prikazati trenutno instaliranu verziju i dostupnu verziju.
+Pritisnite `enter` na dodatku da otvorite listu radnji; izaberite "Ažuriraj".
 
 ### Zajednica {#Community}
 
@@ -2200,23 +2272,11 @@ Ovaj klizač vam dozvoljava da podesite jačinu NVDA zvukova i  pištanja.
 Ovo podešavanje se primenjuje samo kada je opcija "Jačina NVDA zvukova prati jačinu glasa" onemogućena.
 Ova opcija nije dostupna ako je NVDA pokrenut sa onemogućenom [WASAPI opcijom za zvučni izlaz](#WASAPI) u naprednim podešavanjima.
 
-##### Vreme tokom kojeg treba održavati zvučnu kartu budnom nakon govora {#AudioAwakeTime}
-
-Ovo polje za uređivanje određuje koliko dugo će NVDA održavati zvučnu kartu budnom nakon što se govor završi.
-Ovo vam dozvoljava da NVDA izbegne određene greške u govoru kao što su odsečeni delovi reči.
-Ovo se može desiti usled toga što zvučne karte (posebno Bluetooth i bežični uređaji) ulaze u stendbaj režim.
-Ovo takođe može pomoći u drugim situacijama, kao što su korišćenje programa NVDA u virtuelnoj mašini (nna primer Citrix Virtual Desktop), ili na nekim laptop računarima.
-
-Niske vrednosti će možda izazvati da se početak zvuka iseče češće, budući da će uređaj možda prebrzo ući u stendbaj režim, što će izazvati da se početak sledećeg izgovorenog teksta iseče.
-Podešavanje previsoke vrednosti će možda izazvati da se baterija zvučne karte brže potroši, budući da uređaj ostaje aktivan duže a ne reprodukuje nikakve zvukove.
-
-Možete podesiti vreme na nula kako biste onemogućili ovu funkciju.
-
 ##### Razdvajanje zvuka {#SelectSoundSplitMode}
 
 Funkcija razdvajanja zvuka dozvoljava korisnicima da iskoriste stereo mogućnosti zvučnih uređaja, kao što su slušalice ili zvučnici.
 Razdvajanje zvuka dozvoljava da NVDA zvukovi pređu na jedan kanal (na primer levi) a sve druge aplikacije reprodukuju zvukove na drugom kanalu (na primer desnom).
-Razdvajanje zvukova je podrazumevano onemogućeno, što znači da će sve aplikacije uključujući NVDA reprodukovati zvukove na levom i desnom kanalu.
+Razdvajanje zvukova je podrazumevano onemogućeno.
 Prečica dozvoljava da kružite kroz različite režime razdvajanja zvuka:
 <!-- KC:beginInclude -->
 
@@ -2228,18 +2288,21 @@ Prečica dozvoljava da kružite kroz različite režime razdvajanja zvuka:
 
 Podrazumevano, ova komanda će kružiti kroz sledeće režime:
 
-* Razdvajanje zvuka onemogućeno: NVDA i druge aplikacije reprodukuju zvukove na oba kanala.
+* Razdvajanje zvukova onemogućeno: NVDA ne utiče na razdvajanje zvukova.
 * NVDA na levoj strani a aplikacije na desnoj: NVDA će govoriti na levom kanalu, dok će druge aplikacije reprodukovati zvukove na desnom.
-* NVDA na desnoj strani a aplikacije na levoj: NVDA će govoriti na desnom kanalu, dok će druge aplikacije reprodukovati zvukove na levom.
+* NVDA na levoj strani a aplikacije na oba kanala: NVDA će govoriti na levom kanalu, dok će druge aplikacije reprodukovati zvukove i na levom i na desnom kanalu.
 
 Napredniji režimi razdvajanja zvuka su dostupni u izbornom okviru podešavanja razdvajanja zvuka.
+U dostupnim režimima, "NVDA i aplikacije na oba kanala" prisiljava sve zvukove da budu preusmereni na oba kanala.
+Ovaj režim će se možda razlikovati sa režimom "Razdvajanje zvukova onemogućeno" u slučaju da  drugo obrađivanje zvuka menja jačinu kanala.
+
 Imajte na umu da razdvajanje zvukova ne funkcioniše kao mikser.
 
 Na primer, ako aplikacija reprodukuje stereo zvučni zapis dok je razdvajanje zvukova podešeno na "NVDA na levoj strani a aplikacije na desnoj", čućete samo desni kanal zvučnog zapisa, dok će levi kanal zvučnog zapisa biti utišan.
 Ova opcija nije dostupna ako je NVDA pokrenut uz [WASAPI onemogućen za zvučni izlaz](#WASAPI) u naprednim podešavanjima.
 
 Imajte na umu da ako se NVDA sruši, neće biti u stanju da vrati jačinu aplikacija, a te aplikacije će možda još uvek reprodukovati zvuk samo na jednom kanalu nakon rušenja programa NVDA.
-Kako biste ovo rešili, molimo ponovo pokrenite NVDA.
+Kako biste ovo rešili, molimo ponovo pokrenite NVDA i izaberite režim "NVDA i aplikacije na oba kanala".
 
 ##### Prilagođavanje režima razdvajanja zvuka {#CustomizeSoundSplitModes}
 
@@ -2247,12 +2310,24 @@ Ova lista sa kontrolama koje se mogu označiti dozvoljava da izaberete koji će 
 Režimi koji nisu označeni neće biti uključeni.
 Podrazumevano, omogućena su samo tri režima.
 
-* Razdvajanje zvukova onemogućeno: I NVDA i aplikacije reprodukuju zvukove i na levom i na desnom kanalu.
-* NVDA na levom kanalu a sve druge aplikacije na desnom kanalu.
-* NVDA na desnom  a sve druge aplikacije na levom kanalu.
+* Onemogućeno razdvajanje zvukova.
+* NVDA na levoj strani a aplikacije na desnoj.
+* NVDA na levoj strani a aplikacije u oba kanala.
 
 Imajte na umu da je neophodno označiti bar jedan režim.
 Ova opcija nije dostupna ako je NVDA pokrenut uz [WASAPI onemogućen za zvučni izlaz](#WASAPI) u naprednim podešavanjima.
+
+##### Vreme tokom kojeg treba održavati zvučnu kartu budnom nakon govora {#AudioAwakeTime}
+
+Ovo polje za uređivanje određuje koliko dugo će NVDA održavati zvučnu kartu budnom nakon što se govor završi.
+Ovo vam dozvoljava da NVDA izbegne određene greške u govoru kao što su odsečeni delovi reči.
+Ovo se može desiti usled toga što zvučne karte (posebno Blutut i bežični uređaji) ulaze u stendbaj režim.
+Ovo takođe može pomoći u drugim situacijama, kao što su korišćenje programa NVDA u virtuelnoj mašini (nna primer Citrix Virtual Desktop), ili na nekim laptop računarima.
+
+Niske vrednosti će možda izazvati da se početak zvuka iseče češće, budući da će uređaj možda prebrzo ući u stendbaj režim, što će izazvati da se početak sledećeg izgovorenog teksta iseče.
+Podešavanje previsoke vrednosti će možda izazvati da se baterija zvučne karte brže potroši, budući da uređaj ostaje aktivan duže a ne reprodukuje nikakve zvukove.
+
+Možete podesiti vreme na nula kako biste onemogućili ovu funkciju.
 
 #### Vid {#VisionSettings}
 
@@ -3140,8 +3215,7 @@ Napomena:
 
 * Emulirani tasteri moraju da sadrže komandu kako bi ostali sačuvani kada se dijalog zatvori.
 * Ulazna komanda sa modifikatorskim tasterima možda neće moći da se podesi kao emulirana komanda bez modifikatorskih tastera.
-Na primer, podešavanje emuliranog unosa 'a' i podešavanje komande 'ctrl+m', će možda izazvati
-da aplikacija primi komandu 'ctrl+a'.
+Na primer, podešavanje emuliranog unosa `a` i podešavanje komande `ctrl+m` će možda izazvati da aplikacija primi komandu `ctrl+a`.
 
 Када завршите са променама, притисните дугме у реду да их сачувате или откажи да их одбаците.
 

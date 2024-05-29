@@ -32,7 +32,7 @@ Postoje brojne ispravke za sitne greške u aplikacijama, kao što su Thunderbird
     * Matematičke formule (#16001, @mltony)
     * Tekst istog stila (#16000, @mltony)
     * Tekst različitog stila (#16000, @mltony)
-    * Dodate komande za skakanje na prvu ili poslednju vrednost, ili za veći skok pri menjanju podešavanja u krugu podešavanja govora. (#13768, #16095, @rmcpantoja)
+  * Dodate komande za skakanje na prvu ili poslednju vrednost, ili za veći skok pri menjanju podešavanja u krugu podešavanja govora. (#13768, #16095, @rmcpantoja)
     * Podešavanje prve ili poslednje vrednosti u krugu podešavanja govora nema dodeljenu prečicu. (#13768)
     * Smanji ili povećaj trenutno podešavanje u krugu podešavanja govora većim skokom (#13768):
       * Desktop: `NVDA+kontrol+pageUp` ili `NVDA+kontrol+pageDown`.
@@ -56,7 +56,7 @@ Postoje brojne ispravke za sitne greške u aplikacijama, kao što su Thunderbird
 
 * Prodavnica dodataka:
   * Minimalna i poslednja testirana NVDA verzija za dodatak se sada prikazuju u sekciji "Drugi detalji". (#15776, @Nael-Sayegh)
-  * Radnja za recenzije zajednice će biti dostupna i Web stranica za recenzije će se prikazivati u panelu sa detaljima, na svim karticama prodavnice. (#16179, @nvdaes)
+  * Radnja za recenzije zajednice će biti dostupna na svim karticama prodavnice. (#16179, @nvdaes)
 * Ažurirane komponente:
   * Ažuriran LibLouis brajev prevodilac na [3.29.0](https://github.com/liblouis/liblouis/releases/tag/v3.29.0). (#16259, @codeofdusk)
         * Nove detaljne (uz indikaciju velikih slova) beloruske i ukrajinske brajeve tabele.
@@ -88,7 +88,9 @@ Postoje brojne ispravke za sitne greške u aplikacijama, kao što su Thunderbird
 * Ispravljena greška koja je izazvala da NVDA ne može da pročita traku menija i opcije u programu Geekbench. (#16251, @mzanm)
 * Ispravljena retka situacija u kojoj čuvanje podešavanja ne uspe da sačuva sve profile. (#16343, @CyrilleB79)
 * U Firefoxu i pretraživačima zasnovanim na Chromiumu, NVDA će ispravno ući u režim fokusiranja kada se pritisne enter u prezentacionoj listi (ul / ol) u sadržaju koji se može uređivati. (#16325)
-* Promena stanja kolona se automatski prijavljuje kada se biraju kolone za prikazivanje u listi poruka programa Thunderbird. (#16323)
+* Promena stanja kolona se ispravno prijavljuje kada se biraju kolone za prikazivanje u listi poruka programa Thunderbird. (#16323)
+* Opcija komandne linije `-h`/`--help` ponovo ispravno radi. (#16522, @XLTechie)
+* NVDA podrška za Poedit program za prevođenje u verziji 3.4 ili novijim ispravno funkcioniše kada se prevodi na jezike koji imaju jednu ili više od dve množine (na primer kineski, poljski, srpski). (#16318)
 
 ## 2024.1
 
