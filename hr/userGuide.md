@@ -303,9 +303,9 @@ NVDA će pročitati naziv prvog dodatka kada se cijeli popis učita.
 Dostupni dodaci su popisani po abecednom redu u obliku višestupčastog popisa.
 Kako biste pregledavali popis i doznali nešto o određenom dodatku:
 
-1. Koristite `strelice` ili pritisnite prvo slovo naziva dodatka kako biste se kretali po popisu.
+1. Koristite strelice ili pritisnite prvo slovo naziva dodatka kako biste se kretali po popisu.
 1. Jedamput pritisnite `tab` kako biste se premjestili na opis trenutno odabranog dodatka.
-1. Koristite [tipke za čitanje](#ReadingText) ili `strelice` kako biste pročitali puni opis.
+1. Koristite [tipke za čitanje](#ReadingText) ili strelice kako biste pročitali puni opis.
 1. Pritisnite `tab` kako biste došli do gumba "radnje" koji se može koristiti i prilikom instalacije dodataka.
 1. Pritisnite `tab` kako biste došli do "ostalih detalja", gdje su prikazane informacije o verziji i izdavaču.
 1. Kako biste se vratili na popis dodataka, pritisnite `alt+a`, ili `shift+tab`.
