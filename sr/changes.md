@@ -551,7 +551,6 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
 * Dodat izgovor unikodnih simbola:
   * Brajevi simboli kao što su `⠐⠣⠃⠗⠇⠐⠜`. (#14548)
   * Simbol za Mac taster opcije `⌥`. (#14682)
--
 * Dodate komande za Tivomatic Caiku Albatross brajeve redove. (#14844, #15002)
   * Prikazivanje dijaloga brajevih podešavanja
   * Pristup statusnoj traci
