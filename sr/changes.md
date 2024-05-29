@@ -46,7 +46,7 @@ Postoje brojne ispravke za sitne greške u aplikacijama, kao što su Thunderbird
 * Razdvajanje zvuka: (#12985, @mltony)
   * Dozvoljava da odvojite NVDA zvukove na jednom kanalu (na primer levom) dok su zvukovi drugih aplikacija na drugom kanalu (na primer desnom).
   * Uključuje se ili isključuje prečicom `NVDA+alt+s`.
- * Prijavljivanje zaglavlja redova i kolona je sada podržano u contenteditable HTML elementima. (#14113)
+* Prijavljivanje zaglavlja redova i kolona je sada podržano u contenteditable HTML elementima. (#14113)
 * Dodata opcija kako biste onemogućili prijavljivanje figura i naslova slika u podešavanjima formatiranja dokumenta. (#10826, #14349)
 * U Windowsu 11, NVDA će izgovarati upozorenja glasovnog unosa i predloženih radnji uključujući predlog na vrhu kada kopirate podatke kao što su brojevi telefona u privremenu memoriju (Windows 11 2022 ažuriranje i novija). (#16009, @josephsl)
 * NVDA će održavati zvučni uređaj budnim nakon što se govor zaustavi, kako bi sprečio da početak sledećeg izgovorenog teksta bude isprekidan sa nekim zvučnim uređajima kao što su Bluetooth slušalice. (#14386, @jcsteh, @mltony)
@@ -59,11 +59,11 @@ Postoje brojne ispravke za sitne greške u aplikacijama, kao što su Thunderbird
   * Radnja za recenzije zajednice će biti dostupna na svim karticama prodavnice. (#16179, @nvdaes)
 * Ažurirane komponente:
   * Ažuriran LibLouis brajev prevodilac na [3.29.0](https://github.com/liblouis/liblouis/releases/tag/v3.29.0). (#16259, @codeofdusk)
-        * Nove detaljne (uz indikaciju velikih slova) beloruske i ukrajinske brajeve tabele.
+    * Nove detaljne (uz indikaciju velikih slova) beloruske i ukrajinske brajeve tabele.
     * Nova španska tabela za čitanje grčkih tekstova.
     * Nova tabela za lao stepen 1. (#16470)
-* eSpeak NG je ažuriran na 1.52-dev commit `cb62d93fd7`. (#15913)
-   * Dodat novi tigrinjski jezik. 
+  * eSpeak NG je ažuriran na 1.52-dev commit `cb62d93fd7`. (#15913)
+    * Dodat novi tigrinjski jezik. 
 * Promenjeno nekoliko prečica za BrailleSense uređaje kako bi se sprečili konflikti sa znakovima francuske brajeve tabele. (#15306)
   * `alt+strelicaLevo` je sada  `tačka2+tačka7+razmak`
   * `alt+strelicaDesno` je sada `tačka5+tačka7+razmak`
@@ -432,7 +432,7 @@ Takođe sadrži ispravljene greške za prodavnicu dodataka, Microsoft Office, Mi
     * Opcija u podešavanjima zvuka da odvojeno podesite jačinu NVDA zvukova. (#1409, #15038)
     * Podešavanja da promenite izlazni uređaj zvukova i režim stišavanja pozadinskih zvukova su premeštena u novi panel podešavanja zvuka iz dijaloga za izbor sintetizatora.
     Ove opcije će biti uklonjene iz dijaloga "Izaberi sintetizator" u verziji 2024.1. (#15486, #8711)
-* NVDA će sada reprodukovati zvukove korišćenjem Windows Audio Session API-a (WASAPI), što može poboljšati odziv, performanse i stabilnost NVDA govora i zvukova. (#14697, #11169, #11615, #5096, #10185, #11061)
+  * NVDA će sada reprodukovati zvukove korišćenjem Windows Audio Session API-a (WASAPI), što može poboljšati odziv, performanse i stabilnost NVDA govora i zvukova. (#14697, #11169, #11615, #5096, #10185, #11061)
   * Napomena: WASAPI je nekompatibilan sa nekim dodacima.
   Kompatibilna ažuriranja su dostupna za ove dodatke, molimo ažurirajte ih pre nego što ažurirate NVDA.
   Nekompatibilne verzije ovih dodataka će biti onemogućene kada ažurirate NVDA:
@@ -453,7 +453,7 @@ Takođe sadrži ispravljene greške za prodavnicu dodataka, Microsoft Office, Mi
   * Još BRLTTY tasterskih kombinacija sada imaju dodeljene NVDA komande (#6483):
     * `learn`: Uključuje ili isključuje NVDA pomoć za unos
     * `prefmenu`: Otvara NVDA meni
-    * `prefload/prefsave`: Učitava ili čuva NVDA podešavanja
+    * `prefload`/`prefsave`: Učitava ili čuva NVDA podešavanja
     * `time`: Prikazuje vreme
     * `say_line`: Izgovara trenutni red u kojem se nalazi pregledni kursor
     * `say_below`: Izgovara sve korišćenjem preglednog kursora
@@ -540,8 +540,6 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
   * Dodate podrazumevane prečice na tastaturi za pomeranje na sledeći ili prethodni objekat u ravnom prikazu hierarhije objekata. (#15053)
     * Desktop: `NVDA+numeričko9` i `NVDA+numeričko3` da se pomerite na sledeći ili prethodni objekat.
     * Laptop: `šift+NVDA+[` i `šift+NVDA+]` da se pomerite na prethodni i sledeći objekat.
-  -
-  -
 * Nove funkcije za brajeve redove:
   * Dodata podrška za Help Tech Activator brajev red. (#14917)
   * Nova opcija za uključivanje ili isključivanje prikazivanja pokazivača izbora (tačkice 7 i 8). (#14948)
