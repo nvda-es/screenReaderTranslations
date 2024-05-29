@@ -280,6 +280,77 @@ Per aprire il menu di NVDA, premere `NVDA+n`.
 Per aprire direttamente la finestra di dialogo delle impostazioni generali di NVDA, premere `NVDA+control+g`.
 Molte schermate delle impostazioni hanno sequenze di tasti per aprirle direttamente, come `NVDA+control+s` per sintetizzatore o `NVDA+control+v` per altre opzioni inerenti la voce.
 
+### Gli Add-on {#Addons}
+I componenti aggiuntivi, o add-on, sono pacchetti software che forniscono funzionalità innovative o vanno a modificare alcune caratteristiche di NVDA.
+Vengono sviluppati dalla community di NVDA e da organizzazioni esterne quali fornitori commerciali o programmatori.
+Come con qualsiasi software, è importante avere la massima fiducia nello sviluppatore di un componente aggiuntivo prima di utilizzarlo.
+Fare riferimento a [Installazione degli add-on](#AddonStoreInstalling) per informazioni su come verificare i componenti aggiuntivi prima dell'installazione.
+
+La prima volta che si apre lo store dei componenti aggiuntivi, NVDA visualizzerà un avviso importante.
+Gli add-on non sono di responsabilità della NV Access e potrebbero disporre di funzioni e accesso alle informazioni illimitati.
+Premere la barra spaziatrice se l'avviso risulta chiaro e non si necessita di rileggerlo in futuro.
+La sezione "[Componenti aggiuntivi e add-on store](#AddonsManager)" della Guida utente, come suggerisce il nome,  contiene informazioni su ogni funzionalità dello store e della gestione degli add-on.
+
+Lo si trova dal menu strumenti di NVDA.
+Premere "NVDA+n" per aprire il menu NVDA, quindi "t" per Strumenti, poi "a" per add-on store.
+Una volta aperto l'add-on store, verranno mostrati i componenti aggiuntivi disponibili, nel caso in cui non sia ancora stato installato un add-on.
+Invece, se è stato installato almeno un componente aggiuntivo, allora lo store si aprirà sulla scheda add-on installati.
+
+#### Add-on disponibili {#AvailableAddons}
+Quando la finestra si apre per la prima volta, il caricamento dei componenti aggiuntivi potrebbe richiedere alcuni secondi.
+NVDA leggerà il nome del primo add-on una volta terminato il caricamento dell'elenco.
+I componenti aggiuntivi disponibili vengono visualizzati in ordine alfabetico in un elenco a più colonne.
+Ecco come sfogliare la lista e trovare un-addon specifico:
+
+1. Utilizzare i tasti freccia o premere la prima lettera del nome di un componente aggiuntivo per spostarsi nell'elenco.
+1. Premere "tab" una volta per passare alla descrizione dell'add-on attualmente selezionato.
+1. Utilizzare i [tasti di lettura](#ReadingText) o i tasti freccia per leggere la descrizione completa.
+1. Premere "tab" fino al pulsante "Azioni", che può essere utilizzato, tra le altre cose, per installare l'add-on.
+1. Premere "tab" su "Altri dettagli", per ottenere informazioni quali l'editore, la versione e la home page.
+1. Per tornare all'elenco dei componenti aggiuntivi, premere "alt+a" o "shift+tab" fino a raggiungere l'elenco.
+
+#### Cercare tra gli add-on {#SearchingForAddons}
+Oltre a sfogliare tutti i componenti aggiuntivi disponibili, è anche possibile filtrare gli add-on visualizzati.
+Per effettuare la ricerca, premere "alt+s" per passare al campo "Cerca" e digitare quindi il testo da cercare.
+La ricerca verifica le corrispondenze nei campi ID componente aggiuntivo, nome visualizzato, editore, autore e descrizione.
+L'elenco si aggiorna man mano che si digitano i termini di ricerca.
+Una volta terminato, premere "tab" per accedere all'elenco filtrato dei componenti aggiuntivi e sfogliare i risultati.
+
+#### Installare un add-on {#InstallingAddons}
+
+Per installare un componente aggiuntivo:
+
+1. Con il focus sull'add-on che si desidera installare, premere "invio".
+1. Si aprirà il menu azioni con un elenco di voci; la prima azione è "Installa".
+1. Per installare il componente aggiuntivo, premere la lettera `i`, oppure la `frecciaGiù` per andare su "Installa" e premere `invio`.
+1. Il focus ritornerà sull'add-on nell'elenco e NVDA ne leggerà i dettagli.
+1. Le informazioni sullo "Stato" annunciate da NVDA cambiano da "Disponibile" a "Download in corso".
+1. Una volta terminato il download, lo stato del componente aggiuntivo cambierà in "Scaricato. Installazione in attesa".
+1. Ripetere l'operazione per tutti gli altri componenti aggiuntivi che si desidera installare contemporaneamente.
+1. Una volta terminato, premere `tab` fino a che il focus raggiungerà il pulsante "Chiudi", quindi premere `invio`.
+1. I componenti aggiuntivi scaricati avvieranno il processo di installazione una volta chiuso l'Add-on Store.
+Durante il processo di installazione, i componenti aggiuntivi potrebbero visualizzare finestre di dialogo a cui si dovrà rispondere.
+1. Una volta installati i componenti aggiuntivi, verrà visualizzata una finestra di dialogo che informa che sono state apportate modifiche e sarà necessario riavviare NVDA.
+1. Premere `invio` per riavviare lo screen reader.
+
+#### Gestione dei componenti aggiuntivi installati {#ManagingInstalledAddons}
+Premere `control+tab` per spostarsi tra le schede dell'add-on store.
+Le schede includono: "add-on installati", "Add-on aggiornabili", "Add-on disponibili" e "Add-on incompatibili installati".
+Ciascuna scheda è strutturata in modo simile alle altre, con un elenco di componenti aggiuntivi, un pannello che fornisce maggiori dettagli e un pulsante per eseguire azioni per il componente aggiuntivo selezionato.
+Il menu delle azioni per gli add-on installati contiene le voci "Disabilita" e "Rimuovi" anziché "Installa".
+La disattivazione di un componente aggiuntivo impedisce a NVDA di caricarlo, ma lo lascia installato.
+Per riattivare un add-on disabilitato, utilizzare la voce "Abilita" dal menu azioni.
+Dopo aver abilitato, disabilitato o rimosso gli add-on, verrà richiesto di riavviare NVDA alla chiusura dell-addon store..
+Queste modifiche avranno effetto solo una volta riavviato NVDA.
+Si tenga presente che nella finestra dell'add-on store, il tasto `escape` funziona allo stesso modo del pulsante Chiudi.
+
+#### Aggiornamento dei componenti aggiuntivi {#UpdatingAddons}
+Quando è disponibile un aggiornamento per un componente aggiuntivo installato, verrà mostrato nella scheda "add-on aggiornabili".
+Premere `control+tab` per accedere a questa scheda da qualsiasi punto dell'add-on store.
+Lo stato del componente aggiuntivo verrà visualizzato come "Aggiornamento disponibile".
+L'elenco mostrerà la versione attualmente installata e la versione disponibile.
+Premere `invio` sull'add-on per aprire il menu azioni; scegliere "Aggiorna".
+
 ### Comunità {#Community}
 
 NVDA dispone di una vivace comunità di utenti.
@@ -3265,7 +3336,7 @@ Le versioni portabili di NVDA registrano tutte le impostazioni, i moduli persona
 Le versioni installer di NVDA registrano tutte le impostazioni, i moduli personalizzati per le applicazioni e i driver in una cartella speciale situata nei profili utente di Windows. 
 Ciò significa che ciascun utente del sistema potrà avere le proprie impostazioni. 
 Per accedere a tale cartella da qualsiasi punto ci si trovi, è possibile servirsi della [Finestra di dialogo Tasti e Gesti di immissione](#InputGestures) per aggiungere un gesto personalizzato.
-Inoltre, solo per le versioni di NVDA installato nel sistema, sarà sufficiente aprire il menu avvio, selezionare programmi - NVDA- esplora le impostazioni utente.
+Inoltre, solo per le versioni di NVDA installate nel sistema, sarà sufficiente aprire il menu avvio, selezionare programmi - NVDA- esplora le impostazioni utente.
 
 Le impostazioni di NVDA per quanto riguarda il proprio funzionamento nelle schermate di Logon o UAC sono salvate nella cartella systemConfig situata nella directory di installazione di NVDA.
 In genere questa configurazione non dovrebbe essere modificata.
@@ -3416,6 +3487,7 @@ In alternativa, servirsi dell'[opzione a riga di comando](#CommandLineOptions) `
 
 Si può navigare tra gli add-on non compatibili tramite le [schede add-on disponibili e aggiornabili](#AddonStoreFilterStatus).
 Inoltre, si può navigare tra gli add-on installati non compatibili tramite la [scheda add-on incompatibili](#AddonStoreFilterStatus).
+
 
 ## Strumenti aggiuntivi {#ExtraTools}
 ### Visualizzatore log {#LogViewer}
