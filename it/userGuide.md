@@ -289,11 +289,11 @@ Fare riferimento a [Installazione degli add-on](#AddonStoreInstalling) per infor
 La prima volta che si apre lo store dei componenti aggiuntivi, NVDA visualizzerà un avviso importante.
 Gli add-on non sono di responsabilità della NV Access e potrebbero disporre di funzioni e accesso alle informazioni illimitati.
 Premere la `barra spaziatrice` se l'avviso risulta chiaro e non si necessita di rileggerlo in futuro.
-Premere `tab` per raggiungere il pulsante "OK", poi `invio` per accettare l'avviso e procedere all'Add-on Store.\n'
+Premere `tab` per raggiungere il pulsante "OK", poi `invio` per accettare l'avviso e procedere all'Add-on Store.
 La sezione "[Componenti aggiuntivi e add-on store](#AddonsManager)" della Guida utente, come suggerisce il nome,  contiene informazioni su ogni funzionalità dello store e della gestione degli add-on.
 
 Lo si trova dal menu strumenti di NVDA.
-Premere "NVDA+n" per aprire il menu NVDA, quindi "t" per Strumenti, poi "a" per add-on store.
+Premere `NVDA+n` per aprire il menu NVDA, quindi `t` per Strumenti, poi `a` per add-on store.
 Una volta aperto l'add-on store, verranno mostrati i componenti aggiuntivi disponibili, nel caso in cui non sia ancora stato installato un add-on.
 Invece, se è stato installato almeno un componente aggiuntivo, allora lo store si aprirà sulla scheda add-on installati.
 
@@ -304,24 +304,24 @@ I componenti aggiuntivi disponibili vengono visualizzati in ordine alfabetico in
 Ecco come sfogliare la lista e trovare un-addon specifico:
 
 1. Utilizzare i tasti freccia o premere la prima lettera del nome di un componente aggiuntivo per spostarsi nell'elenco.
-1. Premere "tab" una volta per passare alla descrizione dell'add-on attualmente selezionato.
+1. Premere `tab` una volta per passare alla descrizione dell'add-on attualmente selezionato.
 1. Utilizzare i [tasti di lettura](#ReadingText) o i tasti freccia per leggere la descrizione completa.
-1. Premere "tab" fino al pulsante "Azioni", che può essere utilizzato, tra le altre cose, per installare l'add-on.
-1. Premere "tab" su "Altri dettagli", per ottenere informazioni quali l'editore, la versione e la home page.
-1. Per tornare all'elenco dei componenti aggiuntivi, premere "alt+a" o "shift+tab" fino a raggiungere l'elenco.
+1. Premere `tab` fino al pulsante "Azioni", che può essere utilizzato, tra le altre cose, per installare l'add-on.
+1. Premere `tab` su "Altri dettagli", per ottenere informazioni quali l'editore, la versione e la home page.
+1. Per tornare all'elenco dei componenti aggiuntivi, premere `alt+a` o `shift+tab` fino a raggiungere l'elenco.
 
 #### Cercare tra gli add-on {#SearchingForAddons}
 Oltre a sfogliare tutti i componenti aggiuntivi disponibili, è anche possibile filtrare gli add-on visualizzati.
-Per effettuare la ricerca, premere "alt+s" per passare al campo "Cerca" e digitare quindi il testo da cercare.
+Per effettuare la ricerca, premere `alt+s` per passare al campo "Cerca" e digitare quindi il testo da cercare.
 La ricerca verifica le corrispondenze nei campi ID componente aggiuntivo, nome visualizzato, editore, autore e descrizione.
 L'elenco si aggiorna man mano che si digitano i termini di ricerca.
-Una volta terminato, premere "tab" per accedere all'elenco filtrato dei componenti aggiuntivi e sfogliare i risultati.
+Una volta terminato, premere `tab` per accedere all'elenco filtrato dei componenti aggiuntivi e sfogliare i risultati.
 
 #### Installare un add-on {#InstallingAddons}
 
 Per installare un componente aggiuntivo:
 
-1. Con il focus sull'add-on che si desidera installare, premere "invio".
+1. Con il focus sull'add-on che si desidera installare, premere `invio`.
 1. Si aprirà il menu azioni con un elenco di voci; la prima azione è "Installa".
 1. Per installare il componente aggiuntivo, premere la lettera `i`, oppure la `frecciaGiù` per andare su "Installa" e premere `invio`.
 1. Il focus ritornerà sull'add-on nell'elenco e NVDA ne leggerà i dettagli.
@@ -417,7 +417,7 @@ Questa opzione è abilitata di default per le nuove installazioni.
 #### Crea collegamento per il desktop e il tasto rapido (Control+alt+n) {#CreateDesktopShortcut}
 
 Questa opzione permette di selezionare se NVDA debba creare o meno un collegamento nel desktop per lanciare lo screen reader.
-Inoltre, se viene creato tale collegamento, verrà assegnato un tasto rapido corrispondente alla combinazione Control+alt+n, che permetterà di eseguire NVDA da qualsiasi punto ci si trovi.
+Inoltre, se viene creato tale collegamento, verrà assegnato un tasto rapido corrispondente alla combinazione `Control+alt+n`, che permetterà di eseguire NVDA da qualsiasi punto ci si trovi.
 
 #### Copia la configurazione portable nelle impostazioni dell'utente attuale {#CopyPortableConfigurationToCurrentUserAccount}
 
@@ -504,6 +504,7 @@ Tuttavia, è possibile abilitare o disabilitare manualmente il processo di racco
 
 La maggior parte dei comandi da tastiera di NVDA è costituita dalla combinazione del tasto funzione NVDA più qualsiasi altro tasto o serie di tasti. 
 Fanno eccezione i tasti di revisione del testo che utilizzano i soli tasti del tastierino numerico.
+
 NVDA può essere configurato in modo tale che sia il tasto Insert del tastierino numerico, sia l'Insert della tastiera estesa e il tasto Blocca Maiuscole agiscano contemporaneamente come tasto funzione NVDA.
 
 Da impostazioni predefinite entrambi i tasti Insert, della tastiera estesa e del tastierino, sono configurati come tasti funzione di NVDA.
@@ -598,14 +599,14 @@ Il menu di NVDA consente di controllare le impostazioni dello screen reader, acc
 
 Per accedere al menu di NVDA da qualsiasi punto ci si trovi in Windows mentre NVDA è in esecuzione, eseguire una delle seguenti operazioni:
 
-* Premere la combinazione di tasti NVDA+n sulla tastiera.
+* Premere la combinazione di tasti `NVDA+n` sulla tastiera.
 * effettuare un doppio tap con due dita sul touch screen.
-* premere Windows+B per raggiungere la system tray, scorrere con la freccia giù sino ad arrivare alla voce NVDA e premere invio.
+* premere `Windows+B` per raggiungere la system tray, scorrere con la freccia giù sino ad arrivare alla voce NVDA e premere `invio`.
 * In alternativa, accedere alla system tray premendo `Windows+b`, `freccia giù` sino a giungere sull'icona NVDA e aprire il menu contestuale premendo il tasto `applicazioni` situato accanto al tasto control destro sulla maggior parte delle tastiere.
-Se la tastiera è sprovvista di tasto applicazioni, premere Maiusc+f10.
+Se la tastiera è sprovvista di tasto `applicazioni`, premere `Maiusc+f10`.
 * Fare clic con il tasto destro sull'icona NVDA situata nella system tray di Windows
 
-Una volta che il menu appare, è possibile scorrerlo con le frecce direzionali, mentre per attivare un elemento come sempre è sufficiente premere invio.
+Una volta che il menu appare, è possibile scorrerlo con le frecce direzionali, mentre per attivare un elemento come sempre è sufficiente premere `invio`.
 
 ### Comandi di base da tastiera {#BasicNVDACommands}
 
@@ -615,8 +616,8 @@ Una volta che il menu appare, è possibile scorrerlo con le frecce direzionali, 
 |---|---|---|---|---|
 |Esegue o Riavvia NVDA |Control+alt+n |Control+alt+n |none |Esegue o riavvia NVDA dal desktop, se durante il processo di installazione di NVDA si è scelto di creare un collegamento. Si tratta di un collegamento specifico di Windows e pertanto non può essere riassegnato nella finestra di dialogo dei gesti di immissione.|
 |Interrompe la Sintesi Vocale |Control |Control |tocco con due dita |Ferma immediatamente la Sintesi Vocale|
-|Pausa Sintesi Vocale |Shift |Nessuno |Mette in pausa immediatamente la Sintesi Vocale. Premendo nuovamente il tasto la sintesi vocale riprenderà a parlare dal punto in cui era stata fermata (sempre che questo sia supportato dal sintetizzatore utilizzato, in genere non dovrebbe costituire un problema)|
-|Menu NVDA |NVDA+n |Doppio tocco con due dita |Mostra il Menu di NVDA per permettere di accedere alle Preferenze, agli strumenti, all'Aiuto etc|
+|Pausa Sintesi Vocale |Shift |shift |Nessuno |Mette in pausa immediatamente la Sintesi Vocale. Premendo nuovamente il tasto la sintesi vocale riprenderà a parlare dal punto in cui era stata fermata (sempre che questo sia supportato dal sintetizzatore utilizzato, in genere non dovrebbe costituire un problema)|
+|Menu NVDA |NVDA+n |NVDA+n |Doppio tocco con due dita |Mostra il Menu di NVDA per permettere di accedere alle Preferenze, agli strumenti, all'Aiuto etc|
 |Commuta Modalità Aiuto Immissione |NVDA+1 |NVDA+1 |Nessuno |in questa modalità sarà possibile premere qualsiasi tasto e ne verrà annunciato il nome e la propria funzione in NVDA|
 |Uscire da NVDA |NVDA+q |NVDA+q |Nessuno |Esce da NVDA|
 |Passa Tasto Successivo a |NVDA+f2 |NVDA+f2 |Nessuno |Questo comando istruisce NVDA a passare la combinazione di tasti successiva all'applicazione attiva, anche se si tratta di un comando di NVDA.|
@@ -631,7 +632,7 @@ Una volta che il menu appare, è possibile scorrerlo con le frecce direzionali, 
 | Nome |Tasto |Descrizione|
 |---|---|---|
 |Annuncia data/Ora |NVDA+f12 |Premendo una volta questa combinazione di tasti viene annunciato l'orario corrente, mentre premendola due volte verrà annunciata la data|
-|Annuncia stato batteria |NVDA+shift+b Annuncia elementi come la percentuale di carica della batteria, se il computer è collegato alla corrente, etc.|
+|Annuncia stato batteria |NVDA+shift+b |Annuncia elementi come la percentuale di carica della batteria, se il computer è collegato alla corrente, etc.|
 |Legge testo negli appunti |NVDA+c |Annuncia il testo contenuto negli appunti, se presente.|
 
 <!-- KC:endInclude -->
@@ -710,7 +711,7 @@ NVDA fornisce i seguenti comandi quando si lavora con il cursore di sistema:
 | Nome |Tasto desktop |Tasto laptop |Descrizione|
 |---|---|---|---|
 |Dire Tutto |NVDA+Freccia Giù |NVDA+a |Inizia a leggere dalla posizione del cursore di sistema sino alla fine del documento, spostando il cursore man mano che la lettura continua|
-|Legge Riga Corrente |NVDA+freccia su |NVDA+l |Legge la riga sulla quale si trova il cursore di sistema. Premendo la combinazione due volte viene effettuato lo spelling della riga. La tripla pressione effettuerà lo spelling utilizzando la descrizione dei caratteri (ancona, bari, como, domodossola, etc||
+|Legge Riga Corrente |NVDA+freccia su |NVDA+l |Legge la riga sulla quale si trova il cursore di sistema. Premendo la combinazione due volte viene effettuato lo spelling della riga. La tripla pressione effettuerà lo spelling utilizzando la descrizione dei caratteri (ancona, bari, como, domodossola, etc|
 |Legge Selezione corrente |NVDA+Shift+freccia su |NVDA+shift+s |Legge il testo selezionato ammesso che ve ne sia uno.|
 |Annuncia formattazione testo |NVDA+f |NVDA+f |Legge la formattazione del testo alla posizione del cursore di sistema. Una doppia pressione visualizzerà le informazioni in modalità navigazione|
 |Legge destinazione link |`NVDA+k` |`NVDA+k` |Premendo una volta verrà letto l'URL di destinazione del collegamento alla posizione del cursore o del focus. La doppia pressione mostrerà il contenuto in una finestra per poterlo analizzare più comodamente|
@@ -777,9 +778,9 @@ Per navigare ad oggetti, utilizzare i tasti seguenti:
 |---|---|---|---|---|
 |Legge l'oggetto corrente |NVDA+5 del tastierino numerico |NVDA+shift+o |Nessuno |Annuncia l'oggetto corrente. Premendolo due volte ne fa lo spelling, mentre premendolo tre volte copia il nome dell'oggetto ed il suo valore negli appunti|
 |Spostarsi all'oggetto contenitore |NVDA+8 del tastierino numerico |NVDA+Shift+freccia su |Scorrimento in alto (modo oggetti) |ci si sposta all'oggetto che contiene l'oggetto corrente|
-|Spostarsi all'oggetto precedente |NVDA+4 del tastierino numerico |NVDA+shift+freccia sinistra |nessuno |Scorrimento a sinistra |ci si Sposta all'oggetto precedente rispetto a quello attuale, sullo stesso livello|
+|Spostarsi all'oggetto precedente |NVDA+4 del tastierino numerico |NVDA+shift+freccia sinistra |nessuno |ci si Sposta all'oggetto precedente rispetto a quello attuale, sullo stesso livello|
 |Spostarsi all'oggetto precedente in modalità lineare |NVDA+9 del tastierino numerico |NVDA+shift+à |scorrimento a sinistra (modo oggetti) |Ci si sposta all'oggetto precedente in una modalità lineare che non tiene conto della gerarchia|
-|Spostarsi all'oggetto successivo |NVDA+6 del tastierino numerico |nessuno |NVDA+shift+freccia destra |Scorrimento a destra |ci si Sposta all'oggetto successivo rispetto a quello attuale, sullo stesso livello)|
+|Spostarsi all'oggetto successivo |NVDA+6 del tastierino numerico |nessuno |NVDA+shift+freccia destra |ci si Sposta all'oggetto successivo rispetto a quello attuale, sullo stesso livello)|
 |Spostarsi all'oggetto successivo in modalità lineare |NVDA+3 del tastierino numerico |NVDA+shift+ù |scorrimento a destra (modo oggetti) |Ci si sposta all'oggetto successivo in una modalità lineare che non tiene conto della gerarchia|
 |Spostarsi al primo oggetto contenuto |NVDA+2 del tastierino numerico |NVDA+shift+freccia giù |Scorrimento in basso (modo oggetti) |Ci si sposta al primo oggetto contenuto nell'oggetto attuale|
 |Spostarsi all'oggetto focalizzato |NVDA+Meno del tastierino numerico |NVDA+Backspace |Nessuno |Sposta il navigatore ad oggetti sull'oggetto che attualmente ha il focus di sistema, e porta anche il cursore di controllo in quella posizione, se il cursore di sistema è visualizzato|
@@ -792,7 +793,7 @@ Per navigare ad oggetti, utilizzare i tasti seguenti:
 
 Nota, Per utilizzare il tastierino numerico, il tasto NumLock deve essere impostato su spento.
 
-### Controllare il testo {#toc59}
+### Controllare il testo {#ReviewingText}
 
 NVDA consente di leggere il contenuto dello [schermo/navigazione in linea](#ScreenReview), del [documento corrente](#DocumentReview) o dell'[oggetto](#ObjectReview) per carattere, parola o riga.
 Questo risulta utile principalmente nel prompt dei comandi di Windows o in tutte quelle situazioni dove il [cursore di sistema](#SystemCaret) non esiste o ha funzioni limitate.
@@ -828,7 +829,7 @@ Sono disponibili i seguenti tasti caldi per esplorare il testo:
 |Selezionare e poi copiare dalla posizione del cursore di controllo |NVDA+f9 |NVDA+f9 |Nessuno |Dà inizio al processo di selezione e copia a partire dalla posizione del cursore di controllo. Si noti che NVDA non effettuerà alcuna operazione fino a quando non verrà specificato il punto di fine|
 |Selezionare e copiare fino al cursore di controllo |NVDA+f10 |NVDA+f10 |Nessuno |Una singola pressione seleziona il testo dalla posizione iniziale impostata in precedenza fino alla posizione attuale del cursore di controllo, incluso il carattere in cui si trova. Se possibile, il cursore di sistema si sposterà al testo selezionato. Una seconda pressione copierà il testo negli appunti di Windows|
 |Spostare il cursore di controllo al marcatore iniziale per la copia |NVDA+shift+f9 |NVDA+shift+f9 |nessuno |Sposta il cursore di controllo alla posizione precedentemente impostata come marcatore iniziale per la copia|
-|Annuncia formattazione testo |NVDA+SHIFT+f |NVDA+shift+f |Legge la formattazione del testo alla posizione del cursore di controllo. Una doppia pressione visualizzerà le informazioni in modalità navigazione|
+|Annuncia formattazione testo |NVDA+SHIFT+f |NVDA+shift+f |nessuno |Legge la formattazione del testo alla posizione del cursore di controllo. Una doppia pressione visualizzerà le informazioni in modalità navigazione|
 |Annuncia sostituzione simbolo corrente |Nessuno |Nessuno |nessuno |Legge il simbolo situato alla posizione del cursore di controllo. Una doppia pressione visualizza il simbolo accompagnato dal testo ad esso dedicato in modalità navigazione.|
 
 <!-- KC:endInclude -->
@@ -874,7 +875,7 @@ Quando ci si sposta all'interno del documento con i comandi di esplorazione, la 
 
 Si noti che NVDA passerà automaticamente dalla navigazione ad oggetti all'esplorazione documento quando ci si sposta in modalità navigazione.
 
-#### Esplorazione schermo (modalità in linea) {#toc63}
+#### Esplorazione schermo (modalità in linea) {#ScreenReview}
 
 La modalità di navigazione in linea, o esplorazione schermo, permette di intercettare qualsiasi testo visibile a schermo all'interno dell'applicazione corrente.
 è una funzione molto simile alla navigazione col mouse o con cursori speciali presente in altri screen reader, ad esempio cursore Jaws, cursore WE, etc.
@@ -897,7 +898,7 @@ Più il mouse si troverà in alto sullo schermo, più acuto sarà il segnale acu
 Allo stesso modo, più a destra o sinistra si troverà il puntatore, più verso destra o verso sinistra si sposterà il suono nelle casse, presumendo naturalmente che l'utente si trovi difronte agli altoparlanti in posizione centrale.
 
 Queste caratteristiche aggiuntive riguardanti il mouse non sono attivate di Default.
-Se le si vuole provare sarà sufficiente configurarle dalla categoria [impostazioni mouse](#MouseSettings), raggiungibile dal menu Preferenze di NVDA.
+Se le si vuole provare sarà sufficiente configurarle dalla categoria [impostazioni mouse](#MouseSettings), raggiungibile dalla finestra di dialogo delle [Impostazioni di NVDA](#NVDASettings).
 
 Sebbene un mouse o un trackpad risultino la maniera migliore per esplorare lo schermo in tale modalità, NVDA mette a disposizione qualche comando relativo al mouse:
 <!-- KC:beginInclude -->
@@ -1261,7 +1262,7 @@ Per far stare più informazioni possibili su di un display braille, sono state d
 |tv |visualizzazione ad albero|
 |tvbtn |pulsante visualizzazione ad albero|
 |tvitem |elemento visualizzazione ad albero|
-|lv N |un elemento in visualizzazione ad albero con livello di gerarchia N||
+|lv N |un elemento in visualizzazione ad albero con livello di gerarchia N|
 |wnd |finestra|
 |⠤⠤⠤⠤⠤ |separatore|
 |mrkd |contenuto contrassegnato|
@@ -1359,7 +1360,7 @@ Le impostazioni di visione possono essere modificate nella [categoria visione](#
 L'evidenziazione del focus può risultare molto utile nell'individuare velocemente la posizione del [cursore di sistema](#SystemFocus), del [navigatore ad oggetti](#ObjectNavigation) e della [modalità navigazione](#BrowseMode).
 Queste posizioni sono evidenziate tramite un contorno rettangolare colorato.
 
-* Il blu viene usato per evidenziare il cursore di sistema e il navigatore ad oggetti quando sono insieme e hanno la medesima posizione, cosa che generalmente accade quasi sempre. 
+* Il blu viene usato per evidenziare il cursore di sistema e il navigatore ad oggetti quando sono insieme e hanno la medesima posizione (grazie alla funzione [il navigatore ad oggetti segue il cursore di sistema](#ReviewCursorFollowFocus)), cosa che generalmente accade quasi sempre. 
 * Il blu tratteggiato viene utilizzato per mostrare solo la posizione dell'oggetto su cui si trova il cursore di sistema.
 * Il rosa mostra la posizione del navigatore ad oggetti.
 * Il giallo infine serve a visualizzare la posizione del cursore virtuale, ad esempio durante la navigazione di pagine web.
@@ -1434,7 +1435,7 @@ Per far questo, è necessario che l'opzione "Leggi le intestazioni riga/colonna 
 
 Se si utilizza [UI Automation per accedere ai controlli dei documenti Microsoft Word](#MSWordUIA), che è predefinito nelle ultime versioni di Word e Windows, le celle della prima riga verranno automaticamente considerate come intestazioni di colonna; analogamente, le celle della prima colonna verranno automaticamente considerate come intestazioni di riga.
 
-Di contro, se non si utilizza tale funzione, si dovrà indicare a NVDA quale riga o colonna contiene le intestazioni di una determinata tabella.
+Di contro, se non si utilizza [Tale funzione](#MSWordUIA), si dovrà indicare a NVDA quale riga o colonna contiene le intestazioni di una determinata tabella.
 Dopo essersi spostati nella prima cella della colonna o della riga che contiene le intestazioni, utilizzare uno dei comandi sottostanti:
 <!-- KC:beginInclude -->
 
@@ -1590,7 +1591,7 @@ NVDA offre un supporto avanzato per Poedit 3.4 o versioni successive.
 
 | Nome |Tasto |Descrizione|
 |---|---|---|
-|Legge le note per traduttori |``control+shift+a |Legge ogni nota presente per traduttori. La doppia pressione mostrerà il contenuto in una finestra navigabile.|
+|Legge le note per traduttori |`control+shift+a` |Legge ogni nota presente per traduttori. La doppia pressione mostrerà il contenuto in una finestra navigabile.|
 |Legge commenti |`control+shift+c` |Legge qualsiasi commento all'interno della finestra commenti. La doppia pressione mostrerà il contenuto in una finestra navigabile|
 |Legge il vecchio testo sorgente |`control+shift+o` |Legge il vecchio testo sorgente, se presente. La doppia pressione mostrerà il contenuto in una finestra navigabile|
 |Legge avvisi di traduzione |`control+shift+w` |Segnala un avviso di traduzione, se presente. La doppia pressione mostrerà il contenuto in una finestra navigabile|
@@ -1610,7 +1611,7 @@ Sempre automaticamente verranno girate le pagine sia con lo spostamento del curs
 <!-- KC:endInclude -->
 
 La navigazione veloce con le lettere è supportata per link e grafici, ma soltanto per la pagina corrente.
- La navigazione per link comprende anche le note a piè di pagina.
+La navigazione per link comprende anche le note a piè di pagina.
 
 NVDA fornisce un supporto iniziale per la lettura e la navigazione interattiva di contenuti matematici per i libri accessibili per la matematica.
 Si prega di consultare la sezione [lettura della matematica](#ReadingMath) per ulteriori informazioni.
@@ -1779,7 +1780,7 @@ Verranno sempre inviate le seguenti informazioni:
 * Versione del sistema operativo in uso
 * Se il sistema operativo è a 64 o a 32 bit
 
-##### Consenti a NV Access di raccogliere statistiche sull'utilizzo dello screen reader {#toc120}
+##### Consenti a NV Access di raccogliere statistiche sull'utilizzo dello screen reader {#GeneralSettingsGatherUsageStats}
 
 Se questa funzione è attivata, la Nv Access utilizzerà le informazioni provenienti dal server che gestisce gli aggiornamenti per raccogliere alcune informazioni di carattere demografico sugli utenti di NVDA, ossia sistema operativo e nazione d'origine.
 Si noti comunque che sebbene venga utilizzato l'indirizzo IP per calcolare lo stato di provenienza dell'utente, tale indirizzo IP non verrà mai salvato sui server.
@@ -1817,7 +1818,7 @@ La prima opzione della categoria voce è il pulsante cambia... Premendolo, si at
 Questa finestra si aprirà in cima alla schermata di impostazioni di NVDA.
 Per tornare alla finestra impostazioni di NVDA sarà sufficiente salvare o annullare.
 
-##### Voce {#VoiceSettingsVoice}
+##### Voce {#SpeechSettingsVoice}
 
 Una casella combinata che elenca tutte le voci del sintetizzatore selezionato. 
 è possibile scorrere la lista ed ascoltarla con le frecce.
