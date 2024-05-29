@@ -3907,7 +3907,7 @@ Ako povezujete brajeve redove koji ne koriste hid preko usb veze, morate instali
 VarioUltra i Pronto! brajevi redovi koriste HID.
 Refreshabraille i Orbit Reader 20 mogu koristiti HID ako su podešeni na određeni način.
 
- USB serijski način u Orbit Reader 20 brajevom redu, trenutno je podržan samo na Windows 10 operativnom sistemu i novijim.
+USB serijski način u Orbit Reader 20 brajevom redu, trenutno je podržan samo na Windows 10 operativnom sistemu i novijim.
 Umesto toga, koristite USB HID.
 
 Slede prečice za ovaj brajev red za korišćenje uz pomoć NVDA.
@@ -4547,7 +4547,7 @@ Molimo pogledajte [EcoBraille korisničko uputstvo](ftp://ftp.once.es/pub/utt/bi
 
 ### SuperBraille {#SuperBraille}
 
- SuperBraille uređaj, uglavnom dostupan u Tajvanu, se može povezati putem USB ili serijskog porta.
+SuperBraille uređaj, uglavnom dostupan u Tajvanu, se može povezati putem USB ili serijskog porta.
 Budući da SuperBraille nema fizičke tastere za unos teksta ili pomeranje, sav unos mora se vršiti putem tastature računara.
 Zbog ovoga, i zbog zadržavanja kompatibilnosti sa drugim čitačima ekrana u Tajvanu, dve komande za pomeranje brajevog reda su dodate:
 <!-- KC:beginInclude -->
@@ -4875,7 +4875,7 @@ Slede trenutne tasterske prečice za ove redove.
 |---|---|
 |Pomeri brajev red nazad |pan levo ili rocker gore|
 |Pomeri brajev red napred |pan desno ili rocker dole|
-|Prebaci na brajevu ćeliju |routing set 1||
+|Prebaci na brajevu ćeliju |routing set 1|
 |Promeni vezivanje brajevog reda |Gore+Dole|
 |Strelica gore |Džojstik gore, strelica gore ili razmak+tačka1|
 |Strelica dole |Džojstik dole, strelica dole ili razmak+tačka4|
@@ -4972,7 +4972,7 @@ Ovi parametri se postavljaju nakon opcije odvojeni razmakom, kada se koristi kra
 |---|---|
 |`nvda -l 10` |Govori programu NVDA da se pokrene sa evidencijom u dnevniku podešenom na otklanjanje grešaka|
 |`nvda --log-file=c:\nvda.log` |Govori programiu NVDA da piše svoje dnevnike u `c:\nvda.log`|
-|`nvda --log-level=20 -f c:\nvda.log` |Govori programu NVDA da se pokrene sa evidencijom u dnevniku podešenom na informacije i da piše datoteke sa dnevnikom na lokaciji c:\NVDA.log|
+|`nvda --log-level=20 -f c:\nvda.log` |Govori programu NVDA da se pokrene sa evidencijom u dnevniku podešenom na informacije i da piše datoteke sa dnevnikom na lokaciji `c:\NVDA.log`|
 
 Slede opcije komandne linije za NVDA:
 
@@ -4988,13 +4988,13 @@ Slede opcije komandne linije za NVDA:
 |`-m` |`--minimal` |Nema zvukova, nema interfejsa, nema poruka pokretanja i tako dalje|
 |`-s` |`--secure` |Pokreće NVDA u [bezbednom načinu rada](#SecureMode)|
 |Nema |`--disable-addons` |Dodaci neće imati efekta|
-|Nema |`--debug-logging` |Omogući evidenciju otklanjanja grešaka za ovo pokretanje. Ovo podešavanje će promeniti ostale nivoe evidencije( ``--loglevel``, `-l`) uključujući kada je evidentiranje onemogućeno.|
-|Nema |`--no-logging` |Onemogući evidentiranje dok se NVDA koristi. Ovo podešavanje se može zameniti ako nivo evidentiranja ( ``--loglevel``, `-l`) bude određen iz komandne linije ili se dnevnici za otklanjanje grešaka uključe.|
+|Nema |`--debug-logging` |Omogući evidenciju otklanjanja grešaka za ovo pokretanje. Ovo podešavanje će promeniti ostale nivoe evidencije( `--loglevel`, `-l`) uključujući kada je evidentiranje onemogućeno.|
+|Nema |`--no-logging` |Onemogući evidentiranje dok se NVDA koristi. Ovo podešavanje se može zameniti ako nivo evidentiranja ( `--loglevel`, `-l`) bude određen iz komandne linije ili se dnevnici za otklanjanje grešaka uključe.|
 |Nema |`--no-sr-flag` |Ne menjaj globalnu oznaku čitača ekrana na sistemu|
 |Nema |`--install` |Instalira NVDA(i pokreće novo instaliranu kopiju)|
 |Nema |`--install-silent` |Tiha instalacija programa NVDA(ne pokreće novo instaliranu kopiju)|
-|Nema |`--enable-start-on-logon=True` |`False` |U toku instalacije, omogući podešavanje [pokreni NVDA na Windows ekranu za prijavljivanje](#StartAtWindowsLogon)|
-|Nema |`--copy-portable-config` |Kada instalirate, kopira podešavanja iz označene adrese (`--config-path, -c`) u trenutni korisnički nalog|
+|Nema |`--enable-start-on-logon=True|False` |U toku instalacije, omogući podešavanje [pokreni NVDA na Windows ekranu za prijavljivanje](#StartAtWindowsLogon)|
+|Nema |`--copy-portable-config` |Kada instalirate, kopira podešavanja iz označene adrese (`--config-path`, `-c`) u trenutni korisnički nalog|
 |Nema |`--create-portable` |Pravi prenosnu kopiju programa NVDA (pokreće se automatski nakon pravljenja). Zahteva opciju `--portable-path` koja određuje adresu kopije|
 |Nema |`--create-portable-silent` |Pravi prenosnu kopiju programa NVDA (bez pokretanja nakon završetka). Zahteva opciju `--portable-path` koja određuje adresu kopije|
 |Nema |`--portable-path=AdresaKopije` |Adresa na kojoj će prenosna kopija biti napravljena|
