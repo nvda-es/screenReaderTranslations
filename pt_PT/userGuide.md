@@ -823,7 +823,7 @@ Os comandos seguintes estão disponíveis para a revisão de texto:
 |Mover para o próximo caracter em revisão |3 do bloco numérico |NVDA+Seta Direita |Varrer para a direita (modo de texto) |Move o cursor de revisão para o caracter seguinte na linha actual do texto|
 |Mover para o fim da linha em revisão |Shift+3 do bloco numérico |NVDA+end |nenhum |Move o cursor de revisão para o fim da linha actual do texto|
 |Mover para a página anterior em revisão |`NVDA+pageUp` |`NVDA+shift+pageUp` |none |Move o cursor de revisão para a página de texto anterior se suportado pela aplicação|
-|Mover para a página seguinte em revisão |`NVDA+pageDown` |NVDA+shift+pageDown``  |none |Move o cursor de revisão para a página de texto seguinte se suportado pela aplicação|
+|Mover para a página seguinte em revisão |`NVDA+pageDown` |`NVDA+shift+pageDown` |none |Move o cursor de revisão para a página de texto seguinte se suportado pela aplicação|
 |Ler continuamente com a revisão |Mais do bloco numérico |NVDA+shift+a |Varrer para baixo com três dedos (modo de texto) |Lê a partir da posição actual do cursor de revisão e move-o até ao final do texto|
 |Seleccionar e copiar a partir do cursor de revisão |NVDA+F9 |NVDA+F9 |Nenhum |Inicia o Seleccionar e copiar o texto a partir da posição actual do cursor de revisão. A função não será efectuada até que informe o NVDA até onde é que pretende copiar|
 |Seleccionar e copiar até ao cursor de revisão |NVDA+F10 |NVDA+F10 |Nenhum |Ao pressionar a primeira vez o texto, se possível, é seleccionado até à posição do cursor. Se o cursor de inserção puder, será movido para esse local. Ao pressionar segunda vez copia o texto para a área de transferência do Windows|
@@ -1690,7 +1690,7 @@ O NVDA fornece muitos parâmetros de configuração que podem ser alterados atra
 Para facilitar a procura do tipo de configurações que pretende alterar, a janela apresenta uma lista de secções de configurações à escolha.
 Quando selecciona uma secção, todas as definições relacionadas com a mesma serão apresentadas na janela.
 Para se deslocar entre secções, utilize `tab` ou `shift+tab` para aceder à lista de secções e, em seguida, utilize as teclas de seta para cima e para baixo para navegar na lista.
-A partir de qualquer ponto da janela , pode também avançar uma secção pressionando "ctrl+tab", ou recuar uma seccção pressionando "shift+ctrl+tab".
+A partir de qualquer ponto da janela , pode também avançar uma secção pressionando `control+tab`, ou recuar uma seccção pressionando `shift+control+tab`.
 
 Depois de alterar uma ou mais configurações, as configurações podem ser aplicadas utilizando o botão aplicar, caso em que a janela permanecerá aberta, permitindo-lhe alterar mais configurações ou escolher outra secção.
 Se quiser guardar as suas alterações e fechar a janela de configurações do NVDA, deve pressionar o botão "OK".
@@ -1889,7 +1889,7 @@ Note que descrições adicionadas ou editadas manualmente são guardadas nas sua
 Por isso, se alterar a descrição dum emoji, essa descrição será sempre falada, mesmo com esta opção desactivada.
 Pode adicionar, editar ou remover descrições de símbolos no [diálogo "Pronúncia de pontuação e símbolos" do NVDA](#SymbolPronunciation).
 
-Para alternar entre anunciar ou não os Unicode Consortium data a partir de qualquer local pode atribuir um comando utilizando a janela "Definir comandos" #InputGestures].
+Para alternar entre anunciar ou não os Unicode Consortium data a partir de qualquer local pode atribuir um comando utilizando a janela [Definir comandos](#InputGestures).
 
 ##### Alterar a Percentagem da Entoação para Letras Maiúsculas {#SpeechSettingsCapPitchChange}
 
@@ -1910,7 +1910,7 @@ Se esta caixa de verificação estiver marcada, o NVDA produzirá um pequeno bip
 ##### Usar Funcionalidade de Soletrar, se Suportado {#SpeechSettingsUseSpelling}
 
 Algumas palavras são constituídas apenas por um caracter, porém a pronúncia é diferente, dependendo se o caracter está a ser falado como um caracter individual (por exemplo, ao soletrar) ou como uma palavra.
-Por exemplo, em português, `a` é tanto uma letra como uma palavra, e é pronunciado de maneira diferente em cada caso.
+Por exemplo, em português, "a" é tanto uma letra como uma palavra, e é pronunciado de maneira diferente em cada caso.
 Esta opção permite que o sintetizador diferencie estes dois casos, se suportar tal funcionalidade.
 A maioria dos sintetizadores tem esse suporte.
 
@@ -1927,10 +1927,10 @@ Se estiver a ter problemas com a pronúncia de alguns caracteres individuais, de
 
 Quando esta opção está marcada o NVDA anunciará a descrição dos caracteres quando se mover por caracteres.
 
-Por exemplo, ao rever uma linha por caracter, quando a letra `b` for lida o NVDA dirá "Bravo" após um 1 segundo.
+Por exemplo, ao rever uma linha por caracter, quando a letra "b" for lida o NVDA dirá "Bravo" após um 1 segundo.
 Isto pode ser útil se for difícil distinguir entre a pronúncia dos símbolos, ou para utilizadores com deficiência auditiva.
 
-A descrição de caracteres desfasada será cancelada se outro texto for falado durante esse tempo, ou se premir a tecla "controlo''.
+A descrição de caracteres desfasada será cancelada se outro texto for falado durante esse tempo, ou se premir a tecla `control'.
 
 ##### Modos disponíveis no comando para o ciclo de Modos de voz {#SpeechModesDisabling}
 
@@ -2052,7 +2052,7 @@ A indicação de selecção não é afectada por esta opção, é sempre feita c
 
 Uma caixa de combinação que permite definir se o NVDA deve mostrar as mensagens em Braille e quando elas devem desaparecer automaticamente.
 
-Para alternar entre os vários modos, em qualquer local, pode atribuir um comando utilizando a janela "Definir comandos" #InputGestures].
+Para alternar entre os vários modos, em qualquer local, pode atribuir um comando utilizando a janela [Definir comandos](#InputGestures).
 
 ##### Tempo de Permanência de Mensagens (seg) {#BrailleSettingsMessageTimeout}
 
@@ -2069,9 +2069,9 @@ Comando: NVDA+Ctrl+T
 Esta opção permite-lhe escolher se o Braille seguirá o foco do sistema,/cursor de inserção, o objecto de navegação / cursor de revisão ou ambos.
 Se seleccionar Automaticamente, por padrão, o Braille seguirá o foco do sistema.
 Mas, quando a posição da navegação por objectos ou da revisão é alterada, por acção directa do utilizador, o Braille seguirá temporariamente o cursor de revisão, até que o foco do sistema seja alterado.
-Se pretender que o Braille siga sempre o cursor e o foco do sistema, deve definir a [Ligação Braille:](#BrailleTether) para "Cursor do sistema".
+Se pretender que o Braille siga sempre o cursor e o foco do sistema, deve definir a Ligação Braille para "Cursor do sistema".
 Assim, o Braille não seguirá a navegação por objectos e a revisão de texto.
-Se pretender que o Braille siga apenas a navegação por objectos e a revisão de texto, deve definir a [ligação Braille:](#BrailleTether) para "Cursor de revisão".
+Se pretender que o Braille siga apenas a navegação por objectos e a revisão de texto, deve definir a Ligação Braille para "Cursor de revisão".
 Assim, o Braille não seguirá o foco e o cursor do sistema,.
 
 ##### Mover o cursor de revisão do sistema ao encaminhar o cursor de revisão {#BrailleSettingsReviewRoutingMovesSystemCaret}
@@ -2199,7 +2199,7 @@ Por favor, consulte a secção [Dispositivos Braille Suportados](#SupportedBrail
 
 ##### Dispositivos com detecção automática {#SelectBrailleDisplayAutoDetect}
 
-Quando o dispositivo Braille estiver configurado para "Automático", podemos dar `tab` para uma lista onde podemos activar ou desactivar os drivers que serão detectados automaticamente.
+Quando o dispositivo Braille está configurado para "Automático", as caixas de verificação desta lista permitem marcar os drivers que serão detectados automaticamente.
 Isto permite excluir os drivers de dispositivos Braille que nunca, ou raramente, usa.
 Por exemplo, se apenas tem um dispositivo Handytech, pode deixar apenas o driver da Handytech activado.
 
@@ -2243,7 +2243,7 @@ Esta opção permite-lhe escolher a placa de som que o NVDA indicará ao sinteti
 
 ##### Modo de Diminuição do Volume {#SelectSynthesizerDuckingMode}
 
-Comando: NVDA+shift+d
+Comando: `NVDA+shift+d`
 
 Esta opção permite definir se o NVDA deve diminuir o volume das outras aplicações, enquanto o NVDA está a falar ou sempre que o NVDA está em execução.
 
@@ -2445,7 +2445,7 @@ Esta opção só está disponível se a opção Anunciar erros ortográficos est
 Esta opção permite controlar se o pressionar de teclas gerado por outras aplicações, tais como teclados no ecrã e softwares de reconhecimento de voz, devem ser processados pelo NVDA. 
 Esta opção está activada por padrão, embora alguns utilizadores possam preferir desactivá-la, como os utilizadores do "Unikey typing software", pois causará incorrecções.
 
-#### Configurações do rato {#toc200}
+#### Configurações do rato {#MouseSettings}
 
 <!-- KC:setting -->
 
@@ -2720,7 +2720,7 @@ Para alternar a inclusão das tabelas de apresentação, em qualquer local, por 
 
 ##### Configurar O Anúncio de Campos Tais Como Links E Títulos {#BrowseModeLinksAndHeadings}
 
-Consulte, por favor, as opções na secção "Formatação de documentos" #DocumentFormattingSettings] do diálogo [Configurações [BrowseModeLinksAndHeadings] para configurar os campos que são anunciados enquanto navega, como links, títulos e tabelas.
+Consulte, por favor, as opções na secção [Formatação de documentos](#DocumentFormattingSettings) do diálogo [Configurações](#NVDASettings) para configurar os campos que são anunciados enquanto navega, como links, títulos e tabelas.
 
 ##### Modo de foco automático para alterações no foco {#BrowseModeSettingsAutoPassThroughOnFocusChange}
 
@@ -2844,13 +2844,13 @@ Esta secção permite ajustar vários aspectos da navegação em documentos.
 |Opções |Predifinição (Tratado pela aplicação), Tratado pela aplicação, Quebra de linha única, Quebra de várias linhas|
 |Predefinição |Tratado pela aplicação|
 
-Esta caixa de combinação permite seleccionar o estilo de parágrafo para ser usado ao navegar por parágrafos com "control+seta acima" ou "control+seta abaixo".
+Esta caixa de combinação permite seleccionar o estilo de parágrafo para ser usado ao navegar por parágrafos com `control+seta acima` ou `control+seta abaixo`.
 Os estilos de parágrafo disponíveis são:
 
 * Tratado pela aplicação: O NVDA deixa a aplicação determinar o parágrafo anterior ou seguinte, e o novo parágrafo será lido ao ser atingido.
 Este estilo funciona melhor quando a aplicação suporta a navegação por parágrafo nativamente, e é a predefinição.
 * Quebra de linha única: O NVDA utilizará uma quebra de linha como identificadora do início de um parágrafo.
-Este estilo funciona melhor quando lemos documentos numa aplicação que não suporta nativamente a navegação por parágrafos, e os parágrafos estão marcados apenas por uma quebra de linha.
+Este estilo funciona melhor quando lemos documentos numa aplicação que não suporta nativamente a navegação por parágrafos, e os parágrafos estão marcados apenas por um pressionar da tecla `enter`.
 * Quebra de várias linhas: O NVDA tentará identificar os parágrafos pela existência de, pelo menos, uma linha em branco (criada por duplo pressionar da tecla `enter`).
 Este estilo funciona melhor quando lemos documentos com os parágrafos em blocos.
 Note que este estilo não pode ser usado no Microsoft Word ou Microsoft Outlook, a menos que esteja a usar a UIA para aceder aos controlos do Microsoft Word.
@@ -2865,7 +2865,7 @@ Actualmente, só contém uma opção:
 ##### Idioma de reconhecimento {#Win10OcrSettingsRecognitionLanguage}
 
 Esta caixa de combinação permite seleccionar qual o idioma a ser usado no reconhecimento de texto.
-Para alternar entre os idiomas disponíveis para OCR do Windows, em qualquer local, pode atribuir um comando utilizando a janela "Definir comandos" #InputGestures].
+Para alternar entre os idiomas disponíveis para OCR do Windows, em qualquer local, pode atribuir um comando utilizando a janela [Definir comandos](#InputGestures).
 
 ##### Actualizar periodicamente os conteúdos reconhecidos {#Win10OcrSettingsAutoRefresh}
 
@@ -2994,11 +2994,11 @@ Existem as seguintes opções:
 
 * "Anunciar 'tem detalhes' para anotações estruturadas": permite o anúncio se o controlo tiver mais detalhes.
 * "Anunciar sempre aria-description":
-  Quando a fonte da "descrição" é aria-description, a descrição é anunciada.
+  Quando a fonte da `accDescription` é aria-description, a descrição é anunciada.
   Isto é útil para anotações na web.
   Nota:
-  * Existem muitas fontes de "accDescription", e várias têm uma semântica mista ou não fiável;
-    Historicamente AT não tem sido capaz de diferenciar fontes de "descrição" tipicamente não era falada devido à semântica mista.
+  * Existem muitas fontes de `accDescription`, e várias têm uma semântica mista ou não fiável;
+    Historicamente a tecnologia assistiva não tem sido capaz de diferenciar fontes de `accDescription`. Tipicamente não era falada devido à semântica mista.
   * Esta opção está em desenvolvimento muito precoce, e depende de características dos navegadores  ainda não amplamente disponíveis;
   * Espera-se que funcione com o Chromium 92.0.4479.0+
 
@@ -3048,7 +3048,7 @@ No entanto, em terminais, ao inserir ou apagar um caractere no meio de uma linha
 |Predefinição |Diffing|
 
 Esta opção define como o NVDA determina que texto é "novo" (e portanto o que falar quando a opção "Anunciar alterações de conteúdo dinâmico" está activada) no Terminal Windows e no controlo WPF do Terminal Windows utilizado no Visual Studio 2022.
-Não afecta a Consola do Windows ("conhost.exe").
+Não afecta a Consola do Windows (`conhost.exe`).
 A caixa de combinação "Falar novo texto no Terminal Windows via:" tem três opções:
 
 * Predefinição: Esta opção é actualmente equivalente a "diffing", mas prevê-se que mude assim que o suporte para notificações UIA estiver mais desenvolvido.
@@ -3155,7 +3155,7 @@ Para um tutorial introdutório, pode consultar [Python's Regular Expression Guid
 Este diálogo permite-lhe mudar o modo como a pontuação e outros símbolos são pronunciados, bem como o nível de pontuação em que eles são anunciados.
 
 O idioma, para o qual a pronúncia de símbolos está a ser editada, será mostrado no título do diálogo.
-Note que este diálogo respeita a opção "Usar o idioma da voz ao processar caracteres e símbolos" encontrada na [secção Voz](#SpeechSettings) do diálogo de configurações, ou seja, usa o idioma da voz em vez da definição global do idioma do NVDA, quando esta opção está marcada.
+Note que este diálogo respeita a opção "Usar o idioma da voz ao processar caracteres e símbolos" encontrada na [secção Voz](#SpeechSettings) do diálogo de [configurações do NVDA](#NVDASettings), ou seja, usa o idioma da voz em vez da definição global do idioma do NVDA, quando esta opção está marcada.
 
 Para mudar um símbolo, seleccione-o, primeiro, na lista de símbolos.
 Pode filtrar os símbolos inserindo o símbolo ou uma parte da expressão de substituição do símbolo no campo de edição "Filtrar por".
@@ -3163,8 +3163,8 @@ Pode filtrar os símbolos inserindo o símbolo ou uma parte da expressão de sub
 * O campo "Substituir por" permite-lhe alterar o texto que deve ser falado em vez do símbolo.
 * Usando o campo "Nível" pode definir o nível a partir do qual o símbolo deve ser falado (nenhum, alguns, a maioria ou todos).
 Também pode definir o nível para caracter; neste caso, o símbolo não será falado independentemente do nível de símbolo em uso, com as duas excepções seguintes:
- * Ao navegar caracter a caracter;
- * Quando o NVDA soletra qualquer texto que contenha esse símbolo. -
+* Ao navegar caracter a caracter;
+* Quando o NVDA soletra qualquer texto que contenha esse símbolo. -
 * O campo "Enviar o próprio símbolo ao sintetizador" determina quando o próprio símbolo, em vez do texto substituto, deve ser enviado ao sintetizador.
 Isto é útil, se o símbolo forçar o sintetizador a uma pausa ou a uma mudança de entoação na voz.
 Por exemplo, uma vírgula força o sintetizador a fazer uma pausa.
@@ -3214,8 +3214,7 @@ Nota:
 
 * As teclas emuladas, se não tiverem um comando associado, não serão mantidas ao guardar ou fechar o diálogo "Definir comandos";
 * Um comando para simulação de teclas, que inclua uma tecla modificadora, não deve ser associado a teclas simuladas que não incluam uma tecla modificadora.
-Por exemplo, definir a letra `a` como tecla para simular, e associar-lhe o comando "ctrl+m", pode resultar
-em enviar para a aplicação "ctrl+a".
+Por exemplo, definir a letra `a` como tecla para simular, e associar-lhe o comando `control+m`, pode resultar em enviar para a aplicação `control+a`.
 
 Quando tiver terminado, pressione o botão "OK", para guardar as suas modificações, ou o botão "Cancelar", para as descartar.
 
