@@ -1459,8 +1459,8 @@ Za dodatne informacije o režimu pretraživanja i brzoj navigaciji, pogledajte [
 
 <!-- KC:beginInclude -->
 Dok ste u režimu pretraživanja u programu Microsoft Word, možete pristupiti listi elemenata komandom NVDA+f7.
-Lista elemenata može prikazati naslove, linkove, napomene (što uključuje komentare i praćenje izmena) i greške(trenutno ograničeno na greške u pravopisu).
 <!-- KC:endInclude -->
+Lista elemenata može prikazati naslove, linkove, napomene (što uključuje komentare i praćenje izmena) i greške(trenutno ograničeno na greške u pravopisu).
 
 #### Prijavljivanje komentara {#WordReportingComments}
 
@@ -2297,8 +2297,8 @@ U dostupnim režimima, "NVDA i aplikacije na oba kanala" prisiljava sve zvukove 
 Ovaj režim će se možda razlikovati sa režimom "Razdvajanje zvukova onemogućeno" u slučaju da  drugo obrađivanje zvuka menja jačinu kanala.
 
 Imajte na umu da razdvajanje zvukova ne funkcioniše kao mikser.
-
 Na primer, ako aplikacija reprodukuje stereo zvučni zapis dok je razdvajanje zvukova podešeno na "NVDA na levoj strani a aplikacije na desnoj", čućete samo desni kanal zvučnog zapisa, dok će levi kanal zvučnog zapisa biti utišan.
+
 Ova opcija nije dostupna ako je NVDA pokrenut uz [WASAPI onemogućen za zvučni izlaz](#WASAPI) u naprednim podešavanjima.
 
 Imajte na umu da ako se NVDA sruši, neće biti u stanju da vrati jačinu aplikacija, a te aplikacije će možda još uvek reprodukovati zvuk samo na jednom kanalu nakon rušenja programa NVDA.
@@ -2806,10 +2806,9 @@ Možete podesiti prijavljivanje sledećih elemenata:
   * Orjentiri
   * članci
   * Okviri
-    * Figure i naslovi slika
-* Klikabilnost
-  -
-
+  * Figure i naslovi slika
+  * Klikabilnost
+  
 Da uključite i isključite ova podešavanja bilo gde, podesite prilagođene komande koristeći [dijalog ulazne komande](#InputGestures).
 
 ##### Prijavi promene formatiranja nakon pomeranja kursora {#DocumentFormattingDetectFormatAfterCursor}
