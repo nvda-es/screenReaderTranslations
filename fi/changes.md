@@ -37,7 +37,7 @@ Tehty useita pieniä bugikorjauksia sovelluksille, kuten Thunderbirdille, Adobe 
     * Pienennä ja suurenna syntetisaattorin asetusrenkaan aktiivista asetusta enemmän kerrallaan (#13768):
       * Pöytäkone: `NVDA+Ctrl+Page up` ja `NVDA+Ctrl+Page down`.
       * Kannettava: `NVDA+Ctrl+Vaihto+Page up` ja `NVDA+Ctrl+Vaihto+Page down`.
-* Lisätty uusi määrittämätön näppäinkomento kuvien ja kuvatekstien puhumisen käyttöönottamista tai käytöstä poistamista varten. (#10826, #14349)
+  * Lisätty uusi määrittämätön näppäinkomento kuvien ja kuvatekstien puhumisen käyttöönottamista tai käytöstä poistamista varten. (#10826, #14349)
 * Pistekirjoitus:
   * Lisätty tuki Braille Edge S2- ja Braille Edge S3 -pistenäytöille. (#16033, #16279, @EdKweon)
   * Lisätty uusi "näytä puhetuloste" -pistekirjoitustila. (#15898, @Emil-18)
