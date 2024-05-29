@@ -288,7 +288,8 @@ Fare riferimento a [Installazione degli add-on](#AddonStoreInstalling) per infor
 
 La prima volta che si apre lo store dei componenti aggiuntivi, NVDA visualizzerà un avviso importante.
 Gli add-on non sono di responsabilità della NV Access e potrebbero disporre di funzioni e accesso alle informazioni illimitati.
-Premere la barra spaziatrice se l'avviso risulta chiaro e non si necessita di rileggerlo in futuro.
+Premere la `barra spaziatrice` se l'avviso risulta chiaro e non si necessita di rileggerlo in futuro.
+Premere `tab` per raggiungere il pulsante "OK", poi `invio` per accettare l'avviso e procedere all'Add-on Store.\n'
 La sezione "[Componenti aggiuntivi e add-on store](#AddonsManager)" della Guida utente, come suggerisce il nome,  contiene informazioni su ogni funzionalità dello store e della gestione degli add-on.
 
 Lo si trova dal menu strumenti di NVDA.
