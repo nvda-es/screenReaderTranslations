@@ -2745,7 +2745,7 @@ Les points forts de cette versions incluent le support intégral de l'atténuati
 
 ### Nouvelles Fonctionnalités
 
-* Sous Microsoft Excel, l'information de bordure de cellule peut maintenant être annoncée en utilisant `NVDA+f`. (#3044)
+* Sous Microsoft Excel, l'information de bordure de cellule peut maintenant être annoncée en utilisant NVDA+f. (#3044)
 * Dans les navigateurs web, NVDA indique maintenant quand un élément a été marqué comme courant (spécifiquement, en utilisant l'attribut aria-current). (#6358)
 * Le changement de langue automatique est maintenant supporté sous Microsoft Edge. (#6852)
 * Ajout du support de la Calculatrice Windows sous Windows 10 Enterprise LTSB (Long-Term Servicing Branch) et Server. (#6914)
