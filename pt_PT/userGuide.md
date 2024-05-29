@@ -1930,7 +1930,7 @@ Quando esta opção está marcada o NVDA anunciará a descrição dos caracteres
 Por exemplo, ao rever uma linha por caracter, quando a letra "b" for lida o NVDA dirá "Bravo" após um 1 segundo.
 Isto pode ser útil se for difícil distinguir entre a pronúncia dos símbolos, ou para utilizadores com deficiência auditiva.
 
-A descrição de caracteres desfasada será cancelada se outro texto for falado durante esse tempo, ou se premir a tecla `control'.
+A descrição de caracteres desfasada será cancelada se outro texto for falado durante esse tempo, ou se premir a tecla `control`.
 
 ##### Modos disponíveis no comando para o ciclo de Modos de voz {#SpeechModesDisabling}
 
@@ -3163,8 +3163,8 @@ Pode filtrar os símbolos inserindo o símbolo ou uma parte da expressão de sub
 * O campo "Substituir por" permite-lhe alterar o texto que deve ser falado em vez do símbolo.
 * Usando o campo "Nível" pode definir o nível a partir do qual o símbolo deve ser falado (nenhum, alguns, a maioria ou todos).
 Também pode definir o nível para caracter; neste caso, o símbolo não será falado independentemente do nível de símbolo em uso, com as duas excepções seguintes:
-* Ao navegar caracter a caracter;
-* Quando o NVDA soletra qualquer texto que contenha esse símbolo. -
+  * Ao navegar caracter a caracter;
+  * Quando o NVDA soletra qualquer texto que contenha esse símbolo. -
 * O campo "Enviar o próprio símbolo ao sintetizador" determina quando o próprio símbolo, em vez do texto substituto, deve ser enviado ao sintetizador.
 Isto é útil, se o símbolo forçar o sintetizador a uma pausa ou a uma mudança de entoação na voz.
 Por exemplo, uma vírgula força o sintetizador a fazer uma pausa.
@@ -3244,7 +3244,7 @@ Por exemplo, pode querer que seja anunciada a indentação, enquanto está a edi
 O NVDA permite esta funcionalidade através dos Perfis de Configuração.
 
 Os perfis de configuração contêm apenas as configurações que foram alteradas durante a sua edição.
-Todas as configurações podem ser alteradas, nos perfis de configuração, à excepção das constantes da secção "Gerais" do diálogo de "configurações", as quais se aplicam globalmente ao NVDA.
+Todas as configurações podem ser alteradas, nos perfis de configuração, à excepção das constantes da secção Gerais do diálogo de [configurações do NVDA](#NVDASettings), as quais se aplicam globalmente ao NVDA.
 
 Os perfis de configuração podem ser activados manualmente, através do diálogo "Perfis de Configuração" ou de um comando.
 Também podem ser activados automaticamente, através de Accionadores, tais como mudança para uma aplicação.
@@ -3335,12 +3335,12 @@ As versões portáteis do NVDA armazenam todas as configurações e extras numa 
 
 As versões instaladas do NVDA armazenam todas as configurações e extras numa pasta especial do NVDA, que se localiza no seu perfil de utilizador do Windows.
 Isto quer dizer que cada utilizador do sistema pode ter as suas próprias configurações do NVDA.
+Para o abrir a partir de qualquer local, pode usar o diálogo [Definir comandos](#InputGestures) para associar um comando a esta funcionalidade.
 Para abriro directório das suas configurações de uma versão instalada do NVDA, no Menu Iniciar, pode ir a programas -> NVDA -> Explorar o directório das configurações do NVDA.
-Para o abrir mais rapidamente, e a partir de qualquer local, pode usar o diálogo ["Definir comandos"](#InputGestures) para associar um comando a esta funcionalidade.
 
 As configurações para o NVDA, quando está a ser executado na janela de autenticação ou janelas UAC, são armazenadas no directório systemConfig, que se encontra no directório de instalação do NVDA.
 Por norma, não deverá alterar estas configurações.
-Para alterar a configuração do NVDA, nas janelas de autenticação/UAC, com sessão iniciada no Windows, configure o NVDA como deseja, guarde as configurações e pressione o botão "Utilizar as configurações actualmente guardadas durante o início de sessão e janelas em ambiente seguro (requer privilégios de administrador)" da secção Gerais do diálogo de Configurações.
+Para alterar a configuração do NVDA, nas janelas de autenticação/UAC, com sessão iniciada no Windows, configure o NVDA como deseja, guarde as configurações e pressione o botão "Utilizar as configurações actualmente guardadas durante o início de sessão e janelas em ambiente seguro (requer privilégios de administrador)" da secção Gerais do diálogo de [Configurações do NVDA](#NVDASettings).
 
 ## Extras e a Loja de extras {#AddonsManager}
 
@@ -3374,8 +3374,8 @@ As ações disponíveis irão variar consoante o extra esteja instalado ou não,
 #### Listas de extras {#AddonStoreFilterStatus}
 
 Existem listas diferentes para extras instalados, atualizáveis, disponíveis e incompatíveis.
-Para alterar a lista dos extras, altere a guia ativa da lista de extras pressionando "Ctrl+Tab".
-Também pode navegar para uma lista com a tecla `tab` e movimentar-se entre elas com as teclas "Seta Esquerda" e "Seta Direita".
+Para alterar a lista dos extras, altere a guia ativa da lista de extras pressionando `control+tab`.
+Também pode navegar para uma lista com a tecla `tab` e movimentar-se entre as opções com as teclas `seta à esquerda` e `seta à direita`.
 
 #### Filtrar por extras activados ou desactivados {#AddonStoreFilterEnabled}
 
@@ -3434,7 +3434,7 @@ Também pode instalar vários extras de uma só vez.
 Isto pode ser feito seleccionando múltiplos extras na aba Extras disponíveis, e no menu de acções seleccionar Instalar os extras seleccionados.
 
 Para instalar um extra que tenha obtido fora da Loja de Extras, pressione o botão "Instalar a partir de uma fonte externa".
-Isso permitirá procurar um pacote de extras (ficheiro ".nvda-addon") em algum lugar do seu computador ou em uma rede.
+Isso permitirá procurar um pacote de extras (ficheiro `.nvda-addon´) em algum lugar do seu computador ou em uma rede.
 Depois de abrir o pacote do extra, o processo de instalação será iniciado.
 
 Se o NVDA estiver instalado e a funcionar no seu sistema, também pode abrir um ficheiro de extra directamente a partir do navegador web ou do explorador de ficheiros para iniciar o processo de instalação.
@@ -3483,7 +3483,7 @@ Se o extra incompatível causar problemas mais tarde, pode desativá-lo ou remov
 
 Se estiver com problemas ao executar o NVDA e tiver atualizado ou instalado recentemente um extra, especialmente se for um extra incompatível, pode tentar executar temporariamente o NVDA com todos os extras desativados.
 Para reiniciar o NVDA com todos os extras desativados, escolha a opção adequada ao sair do NVDA.
-Alternativamente, utilize a opção de linha de comando [--disable-addons](#CommandLineOptions).
+Alternativamente, utilize a [opção de linha de comandos](#CommandLineOptions) `--disable-addons`.
 
 Pode navegar pelos extras incompatíveis disponíveis utilizando os [separadores de extras disponíveis e atualizáveis](#AddonStoreFilterStatus).
 Pode navegar pelos extras incompatíveis instalados utilizando o [separador de extras incompatíveis](#AddonStoreFilterStatus).
@@ -3627,13 +3627,13 @@ O SAPI 4 é um padrão antigo da Microsoft para os softwares de síntese de voz.
 O NVDA mantém o suporte para este protocolo, para os utilizadores que ainda tenham sintetizadores SAPI 4 instalados.
 No entanto, a Microsoft já não dá suporte a este protocolo e os componentes necessários já não estão disponíveis na Microsoft.
 
-Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis, (que se podem aceder a partir da [secção Voz](#SpechSettings) do [diálogo de configurações](#NVDASettings) ou pelo Anel de configurações de Voz #SynthSettingsRing]) são todas as vozes de todos os motores SAPI 4 que se encontram instalados no seu sistema.
+Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis, (que se podem aceder a partir da [secção Voz](#SpechSettings) do [diálogo de configurações](#NVDASettings) ou pelo [Anel de configurações de Voz](#SynthSettingsRing)) são todas as vozes de todos os motores SAPI 4 que se encontram instalados no seu sistema.
 
 ### Microsoft Speech API versão 5 (SAPI 5) {#SAPI5}
 
 O SAPI 5 é um padrão da Microsoft para os softwares de síntese de voz.
 Muitos sintetizadores de voz que cumprem com este padrão poderão ser comprados ou descarregados, em várias empresas ou páginas da Internet, ainda que o seu sistema já venha com, pelo menos, uma voz SAPI 5 instalada.
-Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis, (que se podem aceder a partir da [secção Voz](#SpechSettings) do [diálogo de configurações](#NVDASettings) ou pelo Anel de configurações de Voz #SynthSettingsRing]) são todas as vozes de todos os motores SAPI 4 que se encontram instalados no seu sistema.
+Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis, (que se podem aceder a partir da [secção Voz](#SpechSettings) do [diálogo de configurações](#NVDASettings) ou pelo [Anel de configurações de Voz](#SynthSettingsRing)) são todas as vozes de todos os motores SAPI 5 que se encontram instalados no seu sistema.
 
 ### Microsoft Speech Platform {#MicrosoftSpeechPlatform}
 
@@ -3916,20 +3916,20 @@ Por favor, consulte a documentação do seu dispositivo Braille para obter a des
 
 | Nome |Tecla de Atalho|
 |---|---|
-|Deslocar a linha braille para trás |d2|
-|Deslocar a linha braille para a frente |d5|
-|Mover a linha braille para a linha anterior |d1|
-|Mover a linha braille para a linha seguinte |d3|
-|Encaminhar |routing|
-|tecla shift+tab |espaço+ponto 1+ponto 3|
-|tecla tab |espaço+ponto 4+ponto 6|
-|tecla alt |espaço+ponto 1+ponto 3+ponto 4 (espaço+m)|
-|tecla escape |espaço+ponto 1+ponto 5 (espaço+e)|
-|tecla windows |espaço+ponto 3+ponto 4|
-|tecla alt+tab |espaço+ponto 2+ponto 3+ponto 4+ponto 5 (espaço+t)|
-|Menu NVDA |espaço+ponto 1+ponto 3+ponto 4+ponto 5 (espaço+n)|
-|Tecla Windows+d (minimizar todos os aplicativos) Espaço+ponto 1+ponto 4+ponto 5 (espaço+d)|
-|Leitura contínua |espaço+ponto 1+ponto 2+ponto 3+ponto 4+ponto 5+ponto 6|
+|Deslocar a linha braille para trás |`d2` |
+|Deslocar a linha braille para a frente |`d5` |
+|Mover a linha braille para a linha anterior |`d1` |
+|Mover a linha braille para a linha seguinte |`d3` |
+|Encaminhar |`routing` |
+|tecla shift+tab |`espaço+ponto 1+ponto 3` |
+|tecla tab |`espaço+ponto 4+ponto 6` |
+|tecla alt |`espaço+ponto 1+ponto 3+ponto 4` (`espaço+m`)|
+|tecla escape |`espaço+ponto 1+ponto 5` (`espaço+e`)|
+|tecla windows |`espaço+ponto 3+ponto 4` |
+|tecla alt+tab |`espaço+ponto 2+ponto 3+ponto 4+ponto 5` (`espaço+t`)|
+|Menu NVDA |`espaço+ponto 1+ponto 3+ponto 4+ponto 5` (`espaço+n`)|
+|Tecla Windows+d (minimizar todos os aplicativos) |`espaço+ponto 1+ponto 4+ponto 5` (`espaço+d`)|
+|Leitura contínua |espaço+ponto 1+ponto 2+ponto 3+ponto 4+ponto 5+ponto 6``  |
 
 Para dispositivos braille que tenham um joistick:
 
@@ -4312,7 +4312,7 @@ Ambas as teclas interiores estão definidas para Espaço.
 |Teclas control+escape |espaço mais  ponto 1 2 3 4 5 6|
 |Tecla tab |espaço mais  ponto 3 7|
 
-<!-- KC:endInclude  -->
+<!-- KC:endInclude -->
 
 ### Papenmeier BRAILLEX (Modelos antigos) {#PapenmeierOld}
 
