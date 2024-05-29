@@ -81,10 +81,10 @@ Za detalje o iznimkama, molimo pročitajte dokument licence kojeg možete naći 
 
 ## NVDA vodič za brzo pokretanje {#NVDAQuickStartGuide}
 
-Ovaj vodič za brzo pokreanje sadrži tri glavna poglavlja: preuzimanje, početno postavljanje, te pokretanje NVDA.
-Poslje tih poglavlja slijede informacije o prilagođavanju postavki, sudjelovanje u zajednici te kako dobiti pomoć.
+Ovaj vodič za brzo pokretanje sadrži tri glavna poglavlja: preuzimanje, početno postavljanje, te pokretanje NVDA.
+Poslije tih poglavlja slijede informacije o prilagođavanju postavki, korištenju dodataka, sudjelovanju u zajednici te kako dobiti pomoć.
 Informacije u ovom vodiču skupljene su iz drugih djelova priručnika za NVDA.
-ZA više detaljnijih informacija, molimo pogledajte priručnik za korisnike i svaku njegovu rubriku.
+Za više detaljnijih informacija, molimo pogledajte priručnik za korisnike i svaku njegovu rubriku.
 
 ### Preuzimanje NVDA {#GettingAndSettingUpNVDA}
 
@@ -300,7 +300,7 @@ Kada su dodaci instalirani, Add-on store će se otvoriti na kartici "instalirani
 #### Dostupni dodaci {#AvailableAddons}
 Kada se prozor prvi put otvori, potrebno je nekoliko sekundi kako bi se dodaci učitali.
 NVDA će pročitati naziv prvog dodatka kada se cijeli popis učita.
-Dostupni dodaci su popisani po abecednom redu u obliku popisa.
+Dostupni dodaci su popisani po abecednom redu u obliku višestupčastog popisa.
 Kako biste pregledavali popis i doznali nešto o određenom dodatku:
 
 1. Koristite `strelice` ili pritisnite prvo slovo naziva dodatka kako biste se kretali po popisu.
@@ -314,7 +314,7 @@ Kako biste pregledavali popis i doznali nešto o određenom dodatku:
 Kao što se mogu pregledavati, dodaci se mogu i filtrirati.
 Za pretragu, pritisnite `alt+p` da se prebacite na polje za "pretragu" i upišete tekst za pretragu.
 Polje za pretragu može sadržavati informacije koje uključuju identifikator dodatka, naziv dodatka, izdavača, autor ili opis.
-Popis se mijenja prilikom upisivanja pojma za pretragu.
+Popis se osvježava prilikom upisivanja pojma za pretragu.
 Kada ste završili, pritisnite `tab` kako biste došli do filtriranog popisa dodataka i pregledavali rezultate.
 
 #### Instaliranje dodataka {#InstallingAddons}
@@ -343,13 +343,13 @@ Onemogućavanje dodatka zaustavlja učitavanje istog, ali ga ostavlja instaliran
 Kako biste ponovno uključili onemogućeni dodatak, aktivirajte stavku "omogući" u izborniku radnji.
 Poslije omogućavanja, onemogućavanja, ili uklanjanja dodataka, od vas će se zahtijevate da ponovno pokrenete NVDA poslije zatvaranja Add-on store.
 Te će se promjene primijeniti poslije ponovnog pokretanja NVDA.
-Imajte na umu da u ovom dijaloškom okviru tipka `escape` radi na isti način kao gumb "zatvori".
+Imajte na umu da u add-on storeu tipka `escape` funkcionira na isti način kao gumb "zatvori".
 
 #### Nadogradnja dodataka {#UpdatingAddons}
-Prilikom postojanja nadogradnje instaliranog dodatka, ista će biti prikazana u kartici svojstva "dodaci koji se mogu nadograditi".
+Kada nadogradnja dodatka postane dostupna, ista će biti prikazana u kartici svojstva "dodaci koji se mogu nadograditi".
 Pritisnite `control+tab` kako biste došli do te kartice svojstava sa bilo kojeg mjesta u add-on storeu.
 Status dodatka će biti prikazan kao "nadogradnja je dostupna".
-Tablica će prikazivati trenutno instaliranu verziju i dostupnu verziju.
+na popisu će se prikazati trenutno instalirana verzija i dostupna verzija.
 Pritisnite `enter` na dodatku, kako biste otvorili popis radnji a potom izaberite "nadogradi".
 
 ### Zajednica {#Community}
