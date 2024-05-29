@@ -32,7 +32,7 @@ Sont présents de nombreux correctifs de bogues mineures pour des applications, 
     * formule mathématique (#16001, @mltony)
     * texte de style identique (#16000, @mltony)
     * texte de style différent (#16000, @mltony)
-    * Ajout de commandes pour sauter au premier, au dernier, en avant et en arrière dans la boucle des paramètres synthétiseur. (#13768, #16095, @rmcpantoja)
+  * Ajout de commandes pour sauter au premier, au dernier, en avant et en arrière dans la boucle des paramètres synthétiseur. (#13768, #16095, @rmcpantoja)
     * Aller à la première/dernière valeur du paramètre courant dans la boucle des paramètres synthétiseur n'a pas de geste assigné. (#13768)
     * Diminuer et augmenter le paramètre courant de la boucle des paramètres synthétiseur d'un intervalle plus important (#13768) :
       * Ordinateur de Bureau : `NVDA+contrôle+pagePrec` et `NVDA+contrôle+pageSuiv`.
@@ -296,7 +296,7 @@ Veuillez ouvrir un problème GitHub si votre extension a un problème avec la mi
 * `IAccessibleHandler.SecureDesktopNVDAObject` a été supprimé.
 Au lieu de cela, lorsque NVDA s'exécute sur le profil utilisateur, suivez la présence du bureau sécurisé avec le point d'extension : `winAPI.secureDesktop.post_secureDesktopStateChange`. (#14488)
 * `braille.BrailleHandler.handlePendingCaretUpdate` a été supprimé sans remplacement public. (#15163, @LeonarddeR)
-* `bdDetect.addUsbDevices` et `bdDetect.addBluetoothDevices` ont été supprimés.
+* `bdDetect.addUsbDevices et bdDetect.addBluetoothDevices` ont été supprimés.
 Les pilotes d'afficheur braille doivent implémenter la méthode de classe `registerAutomaticDetection` à la place.
 Cette méthode reçoit un objet `DriverRegistrar` sur lequel les méthodes `addUsbDevices` et `addBluetoothDevices` peuvent être utilisées. (#15200, @LeonarddeR)
 * L'implémentation par défaut de la méthode de vérification sur un `BrailleDisplayDriver` nécessite désormais que les attributs `threadSafe` et `supportsAutomaticDetection` soient définis sur `True`. (#15200, @LeonarddeR)
@@ -1694,7 +1694,7 @@ Note :
 * `speech.getSpeechForSpelling` a été supprimé - utilisez `speech.getSpellingSpeech`. (#12145)
 * Les commandes ne peuvent pas être directement importées depuis speech de la façon suivante: `import speech; speech.ExampleCommand ()` ou `import speech.manager; speech.manager.ExampleCommand()` - utilisez `from speech.commands import ExampleCommand` à la place. (#12126)
 * `speakTextInfo` n'enverra plus de parole via `speakWithoutPauses` si la raison est `SAYALL`, vu que `SayAllHandler` le fait maintenant manuellement. (#12150)
-* Le contenu du module `synthDriverHandler` n'est plus importée globalement (`from synthDriverHandler import *`) dans `globalCommands` et `gui.settingsDialogs` - utilisez `from synthDriverHandler import synthFunctionExample` à la place. (#12172)
+* Le contenu du module `synthDriverHandler` n'est plus importée globalement dans `globalCommands` et `gui.settingsDialogs` - utilisez `from synthDriverHandler import synthFunctionExample` à la place. (#12172)
 * `ROLE_EQUATION` a été supprimé de controlTypes - utilisez `ROLE_MATH` à la place. (#12164)
 * Les classes `autoSettingsUtils.driverSetting` sont supprimées de `driverHandler` - veuillez les utiliser depuis `autoSettingsUtils.driverSetting`. (#12168)
 * Les classes `autoSettingsUtils.utils` sont supprimées de `driverHandler` - veuillez les utiliser depuis `autoSettingsUtils.utils`. (#12168)
@@ -4855,4 +4855,3 @@ Les points forts principaux de cette version comprennent le support des édition
 * NVDA demande si la configuration doit être sauvegardée et s'il doit redémarrer lors du changement de langue sous le dialogue Langue de l'interface utilisateur. NVDA doit être relancé pour que les changements prennent effet.
 * Lorsqu'un synthétiseur choisi par l'utilisateur ne peut pas être chargé à l'aide du dialogue Synthétiseur, NVDA affiche une alerte à cet effet.
 * Lors du chargement d'un synthétiseur pour la première fois, NVDA lui permet de choisir les paramètres de voix, de débit et de hauteur les mieux adaptés, plutôt que de le forcer à appliquer des valeurs par défaut qu’il juge correctes. Cela corrige un problème où les synthétiseurs Eloquence et Viavoice sapi4 tendaient à parler trop vite de prime abord.
-
