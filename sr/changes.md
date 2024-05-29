@@ -563,7 +563,6 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
   * Kada se omogući prijavljivanje obeleženog teksta u opcijama formatiranja dokumenta, obeležene boje se sada prijavljuju u Microsoft Wordu. (#7396, #12101, #5866)
   * Kada se omoguće boje u opcijama formatiranja dokumenta, boje pozadine se sada prijavljuju u Microsoft Wordu. (#5866)
   * Kada se koriste Excel prečice da uključite ili isključite opcije formatiranja kao što su podebljano, iskošeno, podvučeno i precrtano za ćeliju u Excelu, rezultat se sada prijavljuje. (#14923)
--
 * Eksperimentalno poboljšano upravljanje zvukovima:
   * NVDA sada može da reprodukuje zvukove korišćenjem standarda Windows Audio Session API (WASAPI), što može poboljšati brzinu, performanse i stabilnost NVDA govora i zvukova.
   * WASAPI korišćenje se može omogućiti u naprednim podešavanjima.
@@ -573,7 +572,6 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
   * Postoji poznat problem sa povremenim rušenjem kada je WASAPI omogućen. (#15150)
 * U pretraživačima Mozilla Firefox i Google Chrome, NVDA sada prijavljuje ako kontrola otvara dijalog, mrežu, listu ili stablo ako je autor ovo označio korišćenjem `aria-haspopup`. (#14709)
 * Sada je moguće koristiti sistemske varijable  (kao što su  `%temp%` ili  `%homepath%`) pri određivanju putanje kada se pravi NVDA prenosna kopija. (#14680)
-* Dodata podrška za brajev red Help Tech Activator. (#14917)
 * u ažuriranju Windowsa 10 iz maja 2019 i novijim, NVDA može izgovarati imena virtuelnih radnih površina kada se otvaraju, menjaju ili zatvaraju. (#5641)
 * Sistemski parametar je dodat koji će dozvoliti korisnicima i administratorima sistema da nateraju NVDA da se pokrene u bezbednom režimu. (#10018)
 
@@ -589,10 +587,9 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
   * Izgovor statusne trake (na primer kada se pritisne `NVDA+end`) radi u paketu LibreOffice. (#11698)
 * Brajeve promene:
   * Kada se koristi brajev red uz drajver za HID brajev standard, strelice se sada mogu koristiti za emuliranje strelica tastature i entera.
-Takođe,  `razmak+tačkica1` i `razmak+tačkica4` su sada podešene kao strelice dole i gore. (#14713)
+  Takođe,  `razmak+tačkica1` i `razmak+tačkica4` su sada podešene kao strelice dole i gore. (#14713)
   * Ažuriranja dinamičkog sadržaja na Webu (ARIA živi regioni) se sada prikazuju na brajevom redu.
-Ovo se može onemogućiti u panelu naprednih podešavanja. (#7756)
--
+  Ovo se može onemogućiti u panelu naprednih podešavanja. (#7756)
 * Simboli crtica i em- će uvek biti poslati sintetizatoru. (#13830)
 * Distanca koju Microsoft Word prijavljuje će sada poštovati mernu jedinicu koja je podešena u naprednim podešavanjima Worda čak i kada se koristi UIA za pristup Word dokumentima. (#14542)
 * NVDA brže reaguje kada se pomera kursor u kontrolama za uređivanje. (#14708)
@@ -641,7 +638,6 @@ Ovo se može onemogućiti u panelu naprednih podešavanja. (#7756)
 * Prikazivanje OCR podešavanja više neće biti neuspešno na nekim sistemima. (#15017)
 * Ispravljena greška vezana za čuvanje i učitavanje NVDA podešavanja, uključujući menjanje sintetizatora. (#14760)
 * Ispravljena greška koja je izazvala da u pregledu teksta pokret "Povlačenje gore" pomera stranice umesto da pređe na prethodni red. (#15127)
- - 
 
 ### Promene za programere (engleski)
 
