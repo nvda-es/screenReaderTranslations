@@ -372,6 +372,21 @@ Please responsibly disclose security issues following NVDA's [security policy](h
 * Prevents possible reflected XSS attack from crafted content to cause arbitrary code execution.
 ([GHSA-xg6w-23rw-39r8](https://github.com/nvaccess/nvda/security/advisories/GHSA-xg6w-23rw-39r8))
 
+### Bug Fixes
+
+* Fixed bug which caused the NVDA process to fail to exit correctly. (#16123)
+* Fixed bug where if the previous NVDA process failed to exit correctly, an NVDA installation could fail to an unrecoverable state. (#16122)
+
+## 2023.3.3
+
+This is a patch release to fix a security issue.
+Please responsibly disclose security issues following NVDA's [security policy](https://github.com/nvaccess/nvda/blob/master/security.md).
+
+### Security Fixes
+
+* Prevents possible reflected XSS attack from crafted content to cause arbitrary code execution.
+([GHSA-xg6w-23rw-39r8](https://github.com/nvaccess/nvda/security/advisories/GHSA-xg6w-23rw-39r8))
+
 ## 2023.3.2
 
 This is a patch release to fix a security issue.
@@ -4842,4 +4857,3 @@ This release fixes several security and other important issues found in NVDA 201
 * NVDA now asks if it should save configuration and restart if the user has just changed the language in the User Interface Settings Dialog. NVDA must be restarted for the language change to fully take effect.
 * If a synthesizer can not be loaded, when choosing it from the synthesizer dialog, a message box alerts the user to the fact.
 * When loading a synthesizer for the first time, NVDA lets the synthesizer choose the most suitable voice, rate and pitch parameters, rather than forcing it to defaults it thinks are ok. This fixes a problem where Eloquence and Viavoice sapi4 synths start speaking way too fast for the first time.
-
