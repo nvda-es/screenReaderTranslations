@@ -433,7 +433,7 @@ Ako ste zatvorili ovaj dijalog ili ste instalirali NVDA, Izaberite opciju naprav
 Dijalog koji se otvori nakon toga vam omogućava izbor gde prenosna kopija treba da bude napravljena.
 Ovo može biti lokacija na hard disku ili nekim drugim prenosnim medijima.
 Tu takođe imate opciju koja bira da li treba kopirati trenutna podešavanja u prenosnu kopiju.
- Ova opcija je dostupna samo kada se pravi prenosna kopija iz instalirane kopije, ne i kada se pravi iz preuzete datoteke.
+Ova opcija je dostupna samo kada se pravi prenosna kopija iz instalirane kopije, ne i kada se pravi iz preuzete datoteke.
 Aktiviranje dugmeta nastavi pravi prenosnu kopiju.
 Nakon što se pravljenje završi, poruka će se pojaviti koja će vas obavestiti da je bilo uspešno.
 Pritisnite u redu da zatvorite ovaj dijalog.
@@ -1430,7 +1430,7 @@ NVDA pruža određene dodatne karakteristike za neke aplikacije koje ili omoguć
 #### Automatsko čitanje zaglavlja kolona i redova {#WordAutomaticColumnAndRowHeaderReading}
 
 NVDA može automatski čitati zaglavlja redova i kolona tabela u programu Microsoft Word.
- Ovo zahteva da opcija prijavi zaglavlja redova/kolona iz kategorije formatiranje dokumenta, koja se nalazi u [NVDA podešavanjima](#NVDASettings) bude uključena.
+Ovo zahteva da opcija prijavi zaglavlja redova/kolona iz kategorije formatiranje dokumenta, koja se nalazi u [NVDA podešavanjima](#NVDASettings) bude uključena.
 
 Ako koristite [UIA za pristup Word dokumentima](#MSWordUIA), što je podrazumevano podešavanje u novijim Word i Windows verzijama, ćelije prvog reda će automatski biti smatrane zaglavljima kolone; slično tome, ćelije prve kolone će automatski biti smatrane zaglavljima redova.
 
@@ -2808,7 +2808,7 @@ Možete podesiti prijavljivanje sledećih elemenata:
   * Okviri
   * Figure i naslovi slika
   * Klikabilnost
-  
+
 Da uključite i isključite ova podešavanja bilo gde, podesite prilagođene komande koristeći [dijalog ulazne komande](#InputGestures).
 
 ##### Prijavi promene formatiranja nakon pomeranja kursora {#DocumentFormattingDetectFormatAfterCursor}
@@ -3859,6 +3859,7 @@ Molimo pogledajte uputstvo za upotrebu brajevog reda da biste znali gde se odre�
 |StrelicaDesno |Džojstik desno|
 |NVDA meni |b2+b4+b5+b6|
 |Menjanje vezivanja brajevog reda |b2|
+|Uključuje ili isključuje brajev kursor  |b1|
 |Menjanje predstavljanja sadržaja fokusa |b7|
 |Uključivanje i isključivanje brajevog unosa |Razmak+b1+b3+b4 (Razmak +veliko B)|
 
