@@ -1907,7 +1907,7 @@ Una casella di controllo che, se attivata, istruisce NVDA a dire la parola "CAP"
 
 Se questa casella di controllo viene attivata, NVDA emetterà un leggero beep ogni qualvolta verrà incontrata una lettera maiuscola. 
 
-##### Utilizza la modalità spelling se supportata ====[SpeechSpellingFunctionality] {#VoiceSpellingFunctionality}
+##### Utilizza la modalità spelling se supportata [#SpeechSpellingFunctionality}
 
 Alcune parole sono costituite soltanto da un singolo carattere, ma talvolta, la pronuncia può risultare diversa se il carattere viene annunciato da solo (come quando viene fatto lo spelling), oppure come una parola.
 Ad esempio, in inglese, "a" è sia una lettera che una parola e viene pronunciata in maniera diversa in entrambe i casi.
@@ -1918,7 +1918,7 @@ Generalmente, si consiglia di abilitare questa impostazione.
 Talvolta, può succedere che alcune sintesi Microsoft Speech Api si comportino in modo strano nell'eseguire lo spelling.
 In caso ciò avvenga, consigliamo di disattivare questa caratteristica.
 
-##### Descrizione ritardata dei caratteri al movimento del cursore {#toc141}
+##### Descrizione ritardata dei caratteri al movimento del cursore {#delayedCharacterDescriptions}
 
 | . {.hideHeaderRow} |.|
 |---|---|
@@ -2272,7 +2272,7 @@ Questo cursore di avanzamento consente di impostare il volume dei suoni e dei se
 L'impostazione ha effetto solo quando l'opzione "Il volume dei suoni di NVDA segue il volume della voce" è disabilitata.
 La funzione non risulta disponibile se NVDA è stato avviato con l'impostazione [WASAPI disattivato per l'uscita audio](#WASAPI) nelle Impostazioni avanzate.
 
-##### bilanciamento audio [SelectSoundSplitMode]
+##### bilanciamento audio {#SelectSoundSplitMode}
 
 La funzione di bilanciamento audio consente agli utenti di utilizzare i propri dispositivi di uscita stereo, come cuffie e altoparlanti.
 In questo modo, si potrà portare la voce di NVDA in un canale (ad esempio sinistro) e tutte le altre applicazioni nell'altro canale (ad esempio destro).
@@ -2786,7 +2786,7 @@ Le opzioni di formattazione documento sono divise in gruppi.
 * Pagine e spaziatura
   * Numeri di pagina
   * Numeri di riga
-  * Annuncio rientro righe (disattivo, voce, toni, voce e toni)(#DocumentFormattingSettingsLineIndentation)
+  * Annuncio rientro righe [(disattivo, voce, toni, voce e toni)](#DocumentFormattingSettingsLineIndentation)
   * Ignora righe vuote nel segnalare i rientri
   * Rientro paragrafi (ad esempio rientro prima riga)
   * Spaziatura righe (singola, doppia etc)
@@ -2874,7 +2874,7 @@ Ciò può essere molto utile quando si desidera monitorare contenuti in continua
 L'aggiornamento avviene ogni secondo e mezzo.
 Questa opzione è disabilitata di default.
 
-#### Impostazioni avanzate {#toc257}
+#### Impostazioni avanzate {#AdvancedSettings}
 
 Attenzione! Le impostazioni in questa categoria sono per utenti esperti e potrebbero causare il mancato funzionamento di NVDA se configurate in modo errato.
 Si prega di modificare i vari parametri solo nel caso in cui si sono ricevute istruzioni da uno sviluppatore oppure se si è perfettamente consapevoli di ciò che si sta facendo.
@@ -3092,7 +3092,7 @@ Se si disattiva il supporto a Wasapi, anche le seguenti opzioni verranno disabil
 * [Il volume dei suoni di NVDA segue il volume della voce](#SoundVolumeFollowsVoice)
 * [Volume dei suoni di NVDA](#SoundVolume)
 
-> ==== Categorie Debug Logging ====[AdvancedSettingsDebugLoggingCategories]
+##### Categorie Debug Logging ====[AdvancedSettingsDebugLoggingCategories]
 
 Le caselle di controllo presenti in questo elenco consentono di abilitare categorie specifiche di messaggi log di NVDA.
 Si tenga presente che il log di questi messaggi può comportare un calo delle prestazioni e file di registro di grandi dimensioni.
@@ -3214,8 +3214,7 @@ Nota:
 
 * Ai tasti simulati deve essere assegnato un gesto , altrimenti andranno persi nella finestra di salvataggio/chiusura.
 * Potrebbe non essere possibile mappare un gesto di immissione con tasto modificatore ad un tasto emulato senza modificatore. 
-Per esempio, se vogliamo mappare al tasto "a" la combinazione emulata "ctrl-m", 
-il risultato finale potrebbe essere "ctrl-a".
+Per esempio, se vogliamo mappare al tasto `a` la combinazione emulata `ctrl-m`, il risultato finale potrebbe essere `ctrl-a`.
 
 Al termine delle modifiche, premere il pulsante OK per salvarle, o il tasto Annulla per non modificare alcunché.
 
