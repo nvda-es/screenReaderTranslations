@@ -600,7 +600,7 @@ Per accedere al menu di NVDA da qualsiasi punto ci si trovi in Windows mentre NV
 
 * Premere la combinazione di tasti `NVDA+n` sulla tastiera.
 * effettuare un doppio tap con due dita sul touch screen.
-* premere `Windows+B` per raggiungere la system tray, scorrere con la freccia giù sino ad arrivare alla voce NVDA e premere `invio`.
+* premere `Windows+B` per raggiungere la system tray, scorrere con la `frecciaGiù` sino ad arrivare alla voce NVDA e premere `invio`.
 * In alternativa, accedere alla system tray premendo `Windows+b`, `freccia giù` sino a giungere sull'icona NVDA e aprire il menu contestuale premendo il tasto `applicazioni` situato accanto al tasto control destro sulla maggior parte delle tastiere.
 Se la tastiera è sprovvista di tasto `applicazioni`, premere `Maiusc+f10`.
 * Fare clic con il tasto destro sull'icona NVDA situata nella system tray di Windows
@@ -1823,14 +1823,14 @@ Una casella combinata che elenca tutte le voci del sintetizzatore selezionato.
 è possibile scorrere la lista ed ascoltarla con le frecce.
 In particolare la freccia giù e la freccia sinistra sposteranno verso il basso dell'elenco, mentre la freccia su e la freccia destra sposteranno verso l'alto.
 
-##### Variante {#VoiceSettingsVariant}
+##### Variante {#SpeechSettingsVariant}
 
 Una casella combinata che permette di selezionare con quale variante il sintetizzatore debba parlare. 
 Al momento, soltanto Espeak NG supporta questa impostazione. 
 Le varianti in Espeak sono simili alle voci, esse modificano i parametri e gli attributi della voce originale, per cui ad esempio potremmo avere voci simili a quelle maschili o femminili.
 Nel caso si utilizzi una sintesi vocale di terze parti, la funzione è disponibile solo se il sintetizzatore supporta le varianti.
 
-##### Velocità {#VoiceSettingsRate}
+##### Velocità {#SpeechSettingsRate}
 
 Questa opzione permette di modificare la velocità della voce. 
 Si tratta di un controllo che va da 0 a 100, (dove 0 indica il limite più lento e 100 il massimo della velocità).
@@ -1839,25 +1839,25 @@ Si tratta di un controllo che va da 0 a 100, (dove 0 indica il limite più lento
 
 Abilitando questa opzione si aumenterà in modo significativo la velocità del parlato, se supportato dal sintetizzatore corrente.
 
-##### Tono {#VoiceSettingsPitch}
+##### Tono {#SpeechSettingsPitch}
 
 Questa opzione permette di modificare l'altezza della voce corrente. 
 Si tratta di un controllo che va da 0 a 100, (0 rappresenta l'altezza minima, 100 la massima).
 
-##### Volume {#VoiceSettingsVolume}
+##### Volume {#SpeechSettingsVolume}
 
 Un controllo che va da 0 a 100, (0 indica il volume più basso, 100 il più alto).
 
-##### Inflessione {#VoiceSettingsInflection}
+##### Inflessione {#SpeechSettingsInflection}
 
 Un controllo che permette di selezionare con quanta inflessione (aumento e decadimento del pitch) la sintesi vocale debba parlare. Al momento soltanto Espeak NG fornisce questa funzionalità.
 
-##### Cambio automatico della lingua {#VoiceSettingsLanguageSwitching}
+##### Cambio automatico della lingua {#SpeechSettingsLanguageSwitching}
 
 Questa casella di controllo permette di stabilire se NVDA debba cambiare al volo la lingua con cui parla, nel caso all'interno del testo che si sta leggendo siano presenti i marcatori appositi.
 Questa opzione risulta abilitata di default.
 
-##### cambiamento automatico dialetti (quando supportato) {#VoiceSettingsDialectSwitching}
+##### cambiamento automatico dialetti (quando supportato) {#SpeechSettingsDialectSwitching}
 
 Se l'impostazione cambio automatico della lingua è attiva, questa casella di controllo farà in modo che NVDA modifichi anche il dialetto della lingua in uso.
 Ad esempio, potrebbe essere possibile passare da un "american English" ad un "british English".
@@ -1865,7 +1865,7 @@ L'impostazione è disabilitata di default.
 
 <!-- KC:setting -->
 
-##### Livello di punteggiatura/simboli {#VoiceSettingsSymbolLevel}
+##### Livello di punteggiatura/simboli {#SpeechSettingsSymbolLevel}
 
 Tasto: NVDA+p
 
@@ -1873,7 +1873,7 @@ Questa opzione permette di stabilire la quantità di punteggiatura e di altri si
 Ad esempio, se impostata su tutto, tutti i simboli verranno annunciati in parole.
 Questa impostazione viene applicata a tutti i sintetizzatori, non soltanto a quello usato al momento.
 
-##### Considera attendibile la lingua della voce corrente nel processare caratteri e simboli {#VoiceSettingsTrust}
+##### Considera attendibile la lingua della voce corrente nel processare caratteri e simboli {#SpeechSettingsTrust}
 
 Da impostazioni predefinite, questa funzione risulta attiva e consente di stabilire se NVDA debba ritenere affidabile la lingua della voce corrente nel processare simboli e caratteri.
 Se per qualche motivo ci si accorge che NVDA sta leggendo la punteggiatura con un sintetizzatore o voce particolare in una lingua sbagliata, si consiglia di disattivare questa opzione, per forzare NVDA ad utilizzare le impostazioni globali per quella lingua.
@@ -1891,7 +1891,7 @@ Perciò, se si modifica la descrizione di un'emoji, essa verrà letta a prescind
 
 Per attivare o disattivare l'inclusione dei dati del consorzio Unicode da qualsiasi punto ci si trovi, assegnare un gesto personalizzato usando la [Finestra di dialogo Tasti e gesti di immissione](#InputGestures).
 
-##### Percentuale di cambio tono per lettere maiuscole {#VoiceSettingsCapPitchChange}
+##### Percentuale di cambio tono per lettere maiuscole {#SpeechSettingsCapPitchChange}
 
 Questo campo editazione permette di digitare un numero che sarà equivalente alla variazione di altezza (pitch) effettuato dalla sintesi vocale in presenza di lettere maiuscole.
 Questo valore lavora in percentuale, perciò un valore negativo abbasserà il pitch, mentre uno positivo lo alzerà.
@@ -1899,15 +1899,15 @@ Per non effettuare alcuna modifica, digitare 0.
 Di solito, NVDA aumenta leggermente il tono per qualsiasi lettera maiuscola, ma alcuni sintetizzatori potrebbero non supportare in maniera ottimale questa funzione.
 Nel caso in cui il cambiamento del tono per le lettere maiuscole non sia ben supportato, si consiglia di servirsi delle opzioni [Leggi "cap" prima delle maiuscole](#SpeechSettingsSayCapBefore) e/o [ Emetti un beep per le maiuscole](#SpeechSettingsBeepForCaps) instead.
 
-##### Leggi Cap prima delle Maiuscole {#VoiceSettingsSayCapBefore}
+##### Leggi Cap prima delle Maiuscole {#SpeechSettingsSayCapBefore}
 
 Una casella di controllo che, se attivata, istruisce NVDA a dire la parola "CAP" in presenza di una lettera maiuscola, se raggiunta scorrendo il testo con le frecce o se digitata a mano. 
 
-##### Emetti un beep per le maiuscole {#VoiceSettingsBeepForCaps}
+##### Emetti un beep per le maiuscole {#SpeechSettingsBeepForCaps}
 
 Se questa casella di controllo viene attivata, NVDA emetterà un leggero beep ogni qualvolta verrà incontrata una lettera maiuscola. 
 
-##### Utilizza la modalità spelling se supportata ====[VoiceSpellingFunctionality] {#VoiceSpellingFunctionality}
+##### Utilizza la modalità spelling se supportata ====[SpeechSpellingFunctionality] {#VoiceSpellingFunctionality}
 
 Alcune parole sono costituite soltanto da un singolo carattere, ma talvolta, la pronuncia può risultare diversa se il carattere viene annunciato da solo (come quando viene fatto lo spelling), oppure come una parola.
 Ad esempio, in inglese, "a" è sia una lettera che una parola e viene pronunciata in maniera diversa in entrambe i casi.
@@ -1930,7 +1930,7 @@ Quando questa impostazione viene attivata, NVDA pronuncerà una descrizione del 
 Per esempio, se si sta esaminando una riga carattere per carattere, e ci troviamo sulla lettera b, NVDA pronuncerà "Bologna" dopo un secondo di ritardo.
 Questo può essere utile nel caso in cui si incontrino difficoltà nella comprensione dei simboli, o per le persone con problemi di udito..
 
-Tale funzione verrà inibita nel caso in cui venga letto del testo durante il secondo di ritardo, oppure se viene premuto il tasto control..
+Tale funzione verrà inibita nel caso in cui venga letto del testo durante il secondo di ritardo, oppure se viene premuto il tasto `control`.
 
 ##### Opzioni disponibili per il comando passa tra le modalità di voce {#SpeechModesDisabling}
 
@@ -2043,6 +2043,11 @@ Si tratta di un campo numerico che permette di modificare la velocità di lampeg
 Questa opzione permette di selezionare la forma, in punti braille, del cursore braille quando il braille segue il focus.
 L'indicatore della selezione non è affetto da questa funzione.
 
+##### Forma del cursore di controllo {#BrailleSettingsCursorShapeForReview}
+
+Questa opzione permette di selezionare la forma, in punti braille, del cursore braille quando il braille segue il cursore di controllo.
+L'indicatore della selezione non è affetto da questa funzione.
+
 ##### Mostra Messaggi {#BrailleSettingsShowMessages}
 
 Si tratta di una casella combinata che stabilisce se NVDA debba visualizzare o meno messaggi in braille e la loro durata in secondi sul display, prima che essi scompaiano automaticamente.
@@ -2054,11 +2059,6 @@ Per attivare o disattivare la visualizzazione dei messaggi da qualsiasi posto, a
 Si tratta di un campo numerico che controlla per quanto tempo i messaggi di NVDA saranno mostrati sul Display Braille.
 Il messaggio sparirà immediatamente non appena si preme un cursor routing sulla barra braille, ma lo si potrà rileggere se si preme una combinazione di tasti che attivano il messaggio.
 L'opzione è visibile soltanto se "mostra messaggi" è impostato su "usa timeout".
-
-##### Forma del cursore di controllo {#BrailleSettingsCursorShapeForReview}
-
-Questa opzione permette di selezionare la forma, in punti braille, del cursore braille quando il braille segue il cursore di controllo.
-L'indicatore della selezione non è affetto da questa funzione.
 
 <!-- KC:setting -->
 
@@ -2264,7 +2264,7 @@ Non è possibile supportare l'attenuazione audio in versioni portable o temporan
 Quando questa opzione è abilitata, il volume dei suoni e dei segnali acustici di NVDA seguirà l'impostazione del volume della voce in uso.
 Se si riduce il volume della voce, anche il volume dei suoni diminuirà.
 Allo stesso modo, se si aumenta il volume della voce, aumenterà anche quello dei suoni..
-Inoltre, ha effetto solo quando l'impostazione "Usa WASAPI per l'output audio" è abilitata.
+Inoltre, ha effetto solo quando l'impostazione [Usa WASAPI per l'output audio](#WASAPI) è abilitata.
 
 ##### Volume dei suoni di NVDA {#SoundVolume}
 
@@ -2272,7 +2272,7 @@ Questo cursore di avanzamento consente di impostare il volume dei suoni e dei se
 L'impostazione ha effetto solo quando l'opzione "Il volume dei suoni di NVDA segue il volume della voce" è disabilitata.
 La funzione non risulta disponibile se NVDA è stato avviato con l'impostazione [WASAPI disattivato per l'uscita audio](#WASAPI) nelle Impostazioni avanzate.
 
-##### bilanciamento audio====[SelectSoundSplitMode]
+##### bilanciamento audio [SelectSoundSplitMode]
 
 La funzione di bilanciamento audio consente agli utenti di utilizzare i propri dispositivi di uscita stereo, come cuffie e altoparlanti.
 In questo modo, si potrà portare la voce di NVDA in un canale (ad esempio sinistro) e tutte le altre applicazioni nell'altro canale (ad esempio destro).
@@ -2341,7 +2341,7 @@ Per impostazione predefinita, questa categoria di impostazioni contiene le segue
 Le caselle di controllo presenti in questo gruppo di opzioni attivano o disattivano le funzionalità interne dell'[Evidenziatore focus](#VisionFocusHighlight).
 
 * Abilita evidenziazione: attiva o disattiva l'evidenziazione del focus.
-* Evidenzia Focus di sistema: attiva o disattiva l'evidenziazione del Focus di Sistema #SystemFocus].
+* Evidenzia Focus di sistema: attiva o disattiva l'evidenziazione del [focus di sistema](#SystemFocus).
 * Evidenzia navigatore ad oggetti: attiva o disattiva l'evidenziazione del [navigatore ad oggetti](#ObjectNavigation).
 * Evidenzia il cursore in modalità navigazione: attiva o disattiva l'evidenziazione del [cursore virtuale in modalità navigazione](#BrowseMode)
 
@@ -2372,7 +2372,7 @@ Fare riferimento alla documentazione del miglioramento visivo in merito alla spi
 
 <!-- KC:setting -->
 
-##### Apri impostazioni tastiera {#toc187}
+##### Apri impostazioni tastiera {#toc188}
 
 Tasto: `NVDA+control+k`
 
@@ -2449,7 +2449,7 @@ L'opzione risulta attiva di default, sebbene alcuni utenti che utilizzano la lin
 
 <!-- KC:setting -->
 
-##### Apri impostazioni mouse {#toc200}
+##### Apri impostazioni mouse {#toc201}
 
 Tasto: `NVDA+control+m`
 
@@ -2552,7 +2552,7 @@ Per abilitare o disabilitare la modalità semplice da qualsiasi punto ci si trov
 
 <!-- KC:setting -->
 
-##### Apri le impostazioni presentazione oggetti {#toc217}
+##### Apri le impostazioni presentazione oggetti {#toc218}
 
 Tasto: `NVDA+control+o`
 
@@ -2667,7 +2667,7 @@ L'opzione è attiva di default.
 
 <!-- KC:setting -->
 
-##### Apri impostazioni modalità navigazione {#toc235}
+##### Apri impostazioni modalità navigazione {#toc236}
 
 Tasto: `NVDA+control+b`
 
@@ -2695,7 +2695,7 @@ Ad esempio, una riga che visivamente è formata da più collegamenti verrà pres
 Se invece la casella di controllo è disattivata, ciascun elemento sarà posto in una riga differente.
 Questo per alcuni utenti si traduce in una navigazione più comoda ma meno simile alla disposizione reale degli oggetti.
 
-##### Attiva modalità navigazione al caricamento della pagina {#toc239}
+##### Attiva modalità navigazione al caricamento della pagina {#BrowseModeSettingsEnableOnPageLoad}
 
 Questa casella abilita o disabilita la modalità navigazione automatica al caricamento di una pagina.
 Quando questa opzione è disabilitata, la modalità di navigazione può ancora essere attivata manualmente sulle pagine o nei documenti in cui essa è supportata.
@@ -2720,7 +2720,7 @@ Per poter cambiare al volo la lettura delle tabelle di layout da qualsiasi parte
 
 ##### Configurare l'annuncio di campi come link e intestazioni {#BrowseModeLinksAndHeadings}
 
-Si vedano le opzioni della sezione [Impostazioni formato documento](#DocumentFormattingSettings) per configurare i campi che verranno annunciati quando si naviga, come link, intestazioni e tabelle
+Si vedano le opzioni della sezione [Impostazioni formato documento](#DocumentFormattingSettings) alla finestra di dialogo [Inpostazioni NVDA](#NVDASettings) per configurare i campi che verranno annunciati quando si naviga, come link, intestazioni e tabelle
 
 ##### Modalità focus automatica per i cambiamenti del focus {#BrowseModeSettingsAutoPassThroughOnFocusChange}
 
@@ -2759,7 +2759,7 @@ L'abilitazione di questa opzione può migliorare il supporto per alcuni siti Web
 
 <!-- KC:setting -->
 
-##### Apri Impostazioni formattazione documento {#toc249}
+##### Apri Impostazioni formattazione documento {#toc250}
 
 Tasto: `NVDA+control+d`
 
@@ -2786,7 +2786,7 @@ Le opzioni di formattazione documento sono divise in gruppi.
 * Pagine e spaziatura
   * Numeri di pagina
   * Numeri di riga
-  * Annuncio rientro righe (disattivo, voce, toni, voce e toni) #DocumentFormattingSettingsLineIndentation]
+  * Annuncio rientro righe (disattivo, voce, toni, voce e toni)(#DocumentFormattingSettingsLineIndentation)
   * Ignora righe vuote nel segnalare i rientri
   * Rientro paragrafi (ad esempio rientro prima riga)
   * Spaziatura righe (singola, doppia etc)
@@ -2844,7 +2844,7 @@ Questa categoria consente di regolare vari aspetti della navigazione del documen
 |Opzioni |Predefinito (Gestito dall'applicazione), Gestito dall'applicazione, Interruzione riga singola, Interruzione di più righe|
 |Predefinito |Gestito dall'applicazione|
 
-Questa casella combinata permette di selezionare lo stile del paragrafo da utilizzare quando si naviga tra gli stessi tramite "control+freccia su" e "control+freccia giù".
+Questa casella combinata permette di selezionare lo stile del paragrafo da utilizzare quando si naviga tra gli stessi tramite `control+freccia su` e `control+freccia giù`.
 Gli stili di paragrafo disponibili sono:
 
 * Gestito dall'applicazione: NVDA consentirà all'applicazione di determinare il paragrafo precedente o successivo; conseguentemente lo screen reader leggerà il nuovo paragrafo durante la navigazione.
