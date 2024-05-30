@@ -3556,7 +3556,7 @@ Per attivare o disattivare il visualizzatore braille da qualsiasi parte, assegna
 La Console Python di NVDA, situata nel menu strumenti, è uno strumento per sviluppatori che risulta utile in fase di debug, di diagnosi delle funzioni interne di NVDA o di analisi della gerarchia degli oggetti accessibili presenti in un'applicazione.
 Per ulteriori informazioni, si veda la [guida agli sviluppatori per NVDA](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html), in lingua inglese.
 
-### Add-on Store {#toc312}
+### Add-on Store {#toc314}
 
 Consente di aprire l'[Add-on Store di NVDA](#AddonsManager).
 Per maggiori informazioni, leggere la sezione di approfondimento: [Componenti aggiuntivi e l'Add-on Store](#AddonsManager).
@@ -3645,8 +3645,8 @@ Per usare queste voci, è necessaria l'installazione di due componenti:
 * [Microsoft Speech Platform - Runtime (Version 11), x86](https://www.microsoft.com/download/en/details.aspx?id=27225)
 * [Microsoft Speech Platform - Runtime Languages (Version 11)](https://www.microsoft.com/download/en/details.aspx?id=27224)
   * Questa pagina contiene diversi file sia per il riconoscimento vocale sia per la sintesi vocale stessa.
-  Selezionare i file che si desiderano, a seconda del TTS e della lingua che si vuole utilizzare.
-  Ad esempio, il file MSSpeech_TTS_en-US_ZiraPro.msi è una voce inglese Stati Uniti.
+ Selezionare i file che si desiderano, a seconda del TTS e della lingua che si vuole utilizzare.
+ Ad esempio, il file MSSpeech_TTS_en-US_ZiraPro.msi è una voce inglese Stati Uniti.
 
 ### Voci Windows OneCore {#OneCore}
 
@@ -3921,14 +3921,14 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 |Sposta il display braille alla riga precedente |`d1`|
 |Sposta il display braille alla riga successiva |`d3`|
 |Route to braille cell |`routing`|
-|tasti shift+tab |`spazio+punto1+punto3`|
-|tasto tab |`spazio+punto4+punto6`|
-|tasti alt |`spazio+punto1+punto3+punto4` (`spazio+m`)|
-|tasto escape |`spazio+punto1+punto5` (`spazio+e`)|
-|tasto windows |`spazio+punto3+punto4`|
-|tasti alt+tab |`spazio+punto2+punto3+punto4+punto5` (`spazio+t`)|
+|tasti `shift+tab` |`spazio+punto1+punto3`|
+|tasto `tab` |`spazio+punto4+punto6`|
+|tasti `alt` |`spazio+punto1+punto3+punto4` (`spazio+m`)|
+|tasto `escape` |`spazio+punto1+punto5` (`spazio+e`)|
+|tasto `windows` |`spazio+punto3+punto4`|
+|tasti `alt+tab` |`spazio+punto2+punto3+punto4+punto5` (`spazio+t`)|
 |Menu NVDA |`spazio+punto1+punto3+punto4+punto5` (`spazio+n`)|
-|tasti windows+d (ridurre ad icona tutte le applicazioni) |`spazio+punto1+punto4+punto5` (`spazio+d`)|
+|tasti `windows+d` (ridurre ad icona tutte le applicazioni) |`spazio+punto1+punto4+punto5` (`spazio+d`)|
 |Dire tutto |`spazio+punto1+punto2+punto3+punto4+punto5+punto6`|
 
 Per i modelli che possiedono un Joystick:
@@ -4005,7 +4005,7 @@ Sono supportati anche i dispositivi seguenti e non necessitano dell'installazion
 Di seguito, ecco l'elenco dell'assegnazione dei tasti per queste righe braille con NVDA.
 Si legga la documentazione della propria barra Braille per ottenere informazioni su dove sono situati i vari tasti.
 
-#### Assegnazione tasti per tutti i modelli {#toc332}
+#### Assegnazione tasti per tutti i modelli {#toc334}
 
 <!-- KC:beginInclude -->
 
@@ -4034,7 +4034,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 
 <!-- KC:endInclude -->
 
-#### Assegnazione tasti per Brailliant BI 32, BI 40 e B 80 {#toc333}
+#### Assegnazione tasti per Brailliant BI 32, BI 40 e B 80 {#toc335}
 
 <!-- KC:beginInclude -->
 
@@ -4046,7 +4046,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 
 <!-- KC:endInclude -->
 
-#### Assegnazione tasti per Brailliant BI 14 {#toc334}
+#### Assegnazione tasti per Brailliant BI 14 {#toc336}
 
 <!-- KC:beginInclude -->
 
@@ -4101,19 +4101,19 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 |tasto control+shift+freccia sinistra |punto2+punto8+spazio+f1|
 |tasto control+frecciaSinistra |punto2+spazio|
 |tasto shift+alt+frecciaSinistra |punto2+punto7+f1|
-|tasto alt+frecciaSinistra |punto2+punto7+spazio|
+|tasto `alt+frecciaSinistra` |`punto2+punto7+spazio`|
 |tasto frecciaDestra |punto6+spazio, frecciaDestraLatoSinistro|
 |tasto control+shift+frecciaDestra |punto5+punto8+spazio+f1|
 |tasto control+frecciaDestra |punto5+spazio|
 |tasto shift+alt+frecciaDestra |punto5+punto7+f1|
-|tasto alt+frecciaDestra |punto5+punto7+spazio|
+|tasto `alt+frecciaDestra` |`punto5+punto7+spazio`|
 |tasto paginaSu |punto1+punto2+punto6+spazio|
 |tasto control+paginaSu |punto1+punto2+punto6+punto8+spazio|
 |tasto frecciaSu |punto1+spazio, frecciaSuLatoSinistro|
 |tasto control+shift+frecciaSu |punto2+punto3+punto8+spazio+f1|
 |tasto control+frecciaSu |punto2+punto3+spazio|
 |tasto shift+alt+frecciaSu |punto2+punto3+punto7+f1|
-|tasto alt+frecciaSu |punto2+punto3+punto7+spazio|
+|tasto `alt+frecciaSu` |`punto2+punto3+punto7+spazio`|
 |tasto shift+frecciaSu |ScorriGiuLatoSinistro+spazio|
 |tasto PaginaGiù |punto3+punto4+punto5+spazio|
 |tasto control+paginaGiù |punto3+punto4+punto5+punto8+spazio|
@@ -4121,7 +4121,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 |tasto control+shift+frecciaGiù |punto5+punto6+punto8+spazio+f1|
 |tasto control+frecciaGiù |punto5+punto6+spazio|
 |tasto shift+alt+frecciaGiù |punto5+punto6+punto7+f1|
-|tasto alt+frecciaGiù |punto5+punto6+punto7+spazio|
+|tasto `alt+frecciaGiù` |`punto5+punto6+punto7+spazio`|
 |tasto shift+frecciaGiù |spazio+ScorriGiùLatoDestro|
 |tasto escape |punto1+punto5+spazio, f4, brailleedge:f1|
 |tasto canc |punto1+punto3+punto5+spazio, punto1+punto4+punto5+spazio|
@@ -4312,7 +4312,7 @@ I tasti più interni svolgono la funzione di barra spaziatrice.
 |control+escape |spazio con punto 1 2 3 4 5 6|
 |tab |spazio con punto 3 7|
 
-<!-- KC:endInclude  -->
+<!-- KC:endInclude -->
 
 ### Papenmeier Braille BRAILLEX vecchi modelli {#PapenmeierOld}
 
@@ -4778,11 +4778,11 @@ Si legga la [tabella dei tasti di Brltty](http://mielke.cc/brltty/doc/KeyBinding
 
 | Nome |comando BRLTTY|
 |---|---|
-|Scorre Display Braille indietro |fwinlt (va indietro di una finestra)|
-|Scorre Display Braille avanti |fwinrt (va avanti di una finestra)|
-|Sposta il Display Braille alla riga precedente |lnup (va su di una riga)|
-|Sposta il Display Braille alla riga successiva |lndn (va giù di una riga)|
-|Route to braille cell |route (porta il cursore al carattere)|
+|Scorre Display Braille indietro |`fwinlt` (va indietro di una finestra)|
+|Scorre Display Braille avanti |`fwinrt` (va avanti di una finestra)|
+|Sposta il Display Braille alla riga precedente |`lnup` (va su di una riga)|
+|Sposta il Display Braille alla riga successiva |`lndn` (va giù di una riga)|
+|Route to braille cell |`route` (porta il cursore al carattere)|
 |Attiva / disattiva aiuto tastiera |`learn` (entra/esce dalla modalità apprendimento comandi)|
 |Apre il menu di NVDA |`prefmenu` (Entra/esce dal menu preferenze)|
 |Ripristina la configurazione |`prefload` (ripristina le preferenze dal disco)|
@@ -4875,7 +4875,7 @@ Di seguito sono riportate le assegnazioni dei tasti per questi display.
 |---|---|
 |Scorri il display braille indietro |pan left or rocker up|
 |Scorri il display braille avanti |pan right or rocker down|
-|Route to braille cell |routing set 1||
+|Route to braille cell |routing set 1|
 |Attiva/disattiva inseguimento braille |su+giù|
 |Tasto freccia su |joystick su, dpad up o spazio+punto1|
 |Tasto freccia giù |joystick giù, dpad down o spazio+punto4|
@@ -4933,7 +4933,7 @@ La modalità protetta blocca le modifiche alla configurazione di NVDA, perciò p
 
 ### Schermate protette {#SecureScreens}
 
-NVDA viene avviato in modalità protetta quando eseguito nelle [schermate protette](#SecureScreens), a meno che non sia abilitato il [parametro a livello di sistema](#SystemWideParameters) `serviceDebug`..
+NVDA viene avviato in [modalità protetta](#SecureMode) quando eseguito nelle schermate protette, a meno che non sia abilitato il [parametro a livello di sistema](#SystemWideParameters) `serviceDebug`..
 
 Quando NVDA è in modalità protetta, lo screen reader utilizza un particolare profilo di sistema per le preferenze.
 Le preferenze dell'utente possono essere copiate [per essere utilizzate nelle schermate protette](#GeneralSettingsCopySettings).
@@ -4950,7 +4950,7 @@ NVDA è in grado di accettare alcune opzioni a riga di comando per modificarne i
 Si possono inserire tutti i parametri che si desiderano.
 Queste opzioni possono essere digitate sia dalla finestra esegui di Windows, sia nelle proprietà di un collegamento sul desktop o semplicemente nella console prompt dei comandi.
 Le opzioni devono essere separate da spazi, come del resto è consuetudine.
-Per esempio, Un parametro molto utile è --disable-addons, che permette di sospendere tutti i componenti aggiuntivi all'avvio di NVDA.
+Per esempio, Un parametro molto utile è `--disable-addons`, che permette di sospendere tutti i componenti aggiuntivi all'avvio di NVDA.
 Ciò permette di stabilire se un determinato problema è causato da un componente aggiuntivo e in quel caso poterlo risolvere senza che gli addon vengano eseguiti.
 
 Per fare un esempio, è possibile uscire da NVDA digitando la stringa seguente nella finestra esegui di Windows:
@@ -4962,50 +4962,50 @@ Per quelli che possiedono solo la versione breve, si possono unire nel modo segu
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|``nvda -mc CONFIGPATH |NVDA si avvierà con il messaggio e il suono iniziale disattivati, e con la configurazione specificata|
-|nvda -mc CONFIGPATH --disable-addons |Come sopra, ma con i componenti aggiuntivi disattivati|
+|`nvda -mc CONFIGPATH |NVDA si avvierà con il messaggio e il suono iniziale disattivati, e con la configurazione specificata|
+|`nvda -mc CONFIGPATH --disable-addons` |Come sopra, ma con i componenti aggiuntivi disattivati|
 
-Alcune delle opzioni della riga di comando accetta parametri aggiuntivi; ad esempio quanto dettagliato debba essere il log oppure la cartella inerente il profilo di configurazione utente.
-Questi parametri devono essere collocati dopo l'opzione, separati da essa da uno spazio in cui si utilizza la versione corta o un segno di uguale (=) quando si utilizza la versione lunga; ad esempio .:
+Alcune delle opzioni della riga di comando accettano parametri aggiuntivi; ad esempio quanto dettagliato debba essere il log oppure la cartella inerente il profilo di configurazione utente.
+Questi parametri devono essere collocati dopo l'opzione, separati da essa da uno spazio in cui si utilizza la versione corta o un segno di uguale (`=`) quando si utilizza la versione lunga; ad esempio .:
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|nvda -l 10 |Dice a NVDA di avviarsi con il log impostato su debug|
-|nvda --log-file=c:\nvda.log |Dice a NVDA di scrivere il log in c:\nvda.log|
-|nvda --log-level=20 -f c:\nvda.log |Dice a NVDA di avviarsi con livello di log impostato su info e di scrivere il log in c:\nvda.log|
+|`nvda -l 10` |Dice a NVDA di avviarsi con il log impostato su debug|
+|`nvda --log-file=c:\nvda.log` |Dice a NVDA di scrivere il log in `c:\nvda.log`|
+|`nvda --log-level=20 -f c:\nvda.log` |Dice a NVDA di avviarsi con livello di log impostato su info e di scrivere il log in `c:\nvda.log`|
 
 Ecco l'elenco dei parametri a riga di comando di NVDA:
 
 | Breve |Lungo |Descrizione|
 |---|---|---|
-|-h |--help |Visualizza l'aiuto sulla riga di comando ed esce|
-|-q |--quit |Chiude eventuali copie in esecuzione di NVDA|
-|-k |--check-running |Notifica se NVDA è in esecuzione tramite exit code; 0 se in esecuzione, 1 se non lo è|
-|-f LOGFILENAME |--log-file=LOGFILENAME |Il file nel quale verrà scritto il log. Le funzioni di log saranno sempre disabilitate se ci si trova in modalità protetta.|
-|-l LOGLEVEL |--log-level=LOGLEVEL |Il livello più basso di un messaggio loggato (debug 10, input/output 12, debug warning 15, info 20, disabled 100). Le funzioni di log saranno sempre disabilitate se ci si trova in modalità protetta.|
-|-c CONFIGPATH |--config-path=CONFIGPATH |Il percorso ove sono salvate tutte le impostazioni di NVDA. Se ci si trova in modalità protetta verrà forzato il valore predefinito.|
-|None |--lang=LANGUAGE |Sovrascrive la lingua configurata per NVDA. Impostarla a "Windows" per la lingua predefinita dell'utente, "en" per Inglese, etc.|
-|-m |--minimal |Niente suoni, niente interfaccia, niente messaggio all'avvio etc|
-|-s |--secure |Avvia NVDA in [modalità protetta](#SecureMode)|
-|None |--disable-addons |I componenti aggiuntivi non avranno alcun effetto|
-|None |--debug-logging |Abilita il debug nei log solo per la presente istanza. Questa impostazione ha la precedenza su qualsiasi altro livello di log ( --loglevel, -l), compresa la funzione no logging|
-|None |--no-logging |Disabilita completamente le funzioni di log durante l'uso di NVDA. Questa impostazione può essere sovrascritta se viene specificato un livello di log ( --loglevel, -l) dalla riga di comando o se la funzione debug logging è attiva.|
-|None |--no-sr-flag |Non modifica il flag Screen Reader per il sistema|
-|None |--install |Installa NVDA (avviando la copia appena installata)|
-|None |--install |Silent Installa NVDA (non avviando la copia appena installata)|
-|None |--enable-start-on-logon=True|False |Durante l'installazione, abilita [l'avvio di NVDA alla schermata di logon](#StartAtWindowsLogon)|
-|None |~~copy-portable-config |Durante l'installazione, copia la configurazione portable dal percorso specificato (~~config-path, -c) all'account utente corrente|
-|None |--create-portable |Crea una copia portable di NVDA (avviando la copia appena creata). Richiede --portable-path da specificare|
-|None |--create-portable-silent |Crea una copia portable di NVDA (non avvia la nuova copia appena creata). Richiede --portable-path da specificare|
-|None |--portable-path=PORTABLEPATH |Il percorso in cui verrà creata la copia portable di NVDA|
+|`-h` |`--help` |Visualizza l'aiuto sulla riga di comando ed esce|
+|`-q` |`--quit` |Chiude eventuali copie in esecuzione di NVDA|
+|`-k` |`--check-running` |Notifica se NVDA è in esecuzione tramite exit code; 0 se in esecuzione, 1 se non lo è|
+|`-f LOGFILENAME` |`--log-file=LOGFILENAME` |Il file nel quale verrà scritto il log. Le funzioni di log saranno sempre disabilitate se ci si trova in modalità protetta.|
+|`-l LOGLEVEL` |`--log-level=LOGLEVEL` |Il livello più basso di un messaggio loggato (debug 10, input/output 12, debug warning 15, info 20, disabled 100). Le funzioni di log saranno sempre disabilitate se ci si trova in modalità protetta.|
+|`-c CONFIGPATH` |`--config-path=CONFIGPATH` |Il percorso ove sono salvate tutte le impostazioni di NVDA. Se ci si trova in modalità protetta verrà forzato il valore predefinito.|
+|None |`--lang=LANGUAGE` |Sovrascrive la lingua configurata per NVDA. Impostarla a "Windows" per la lingua predefinita dell'utente, "en" per Inglese, etc.|
+|`-m` |`--minimal` |Niente suoni, niente interfaccia, niente messaggio all'avvio etc|
+|`-s` |`--secure` |Avvia NVDA in [modalità protetta](#SecureMode)|
+|None |`--disable-addons` |I componenti aggiuntivi non avranno alcun effetto|
+|None |`--debug-logging` |Abilita il debug nei log solo per la presente istanza. Questa impostazione ha la precedenza su qualsiasi altro livello di log ( --loglevel, -l), compresa la funzione no logging|
+|None |`--no-logging` |Disabilita completamente le funzioni di log durante l'uso di NVDA. Questa impostazione può essere sovrascritta se viene specificato un livello di log ( --loglevel, -l) dalla riga di comando o se la funzione debug logging è attiva.|
+|None |`--no-sr-flag` |Non modifica il flag Screen Reader per il sistema|
+|None |`--install` |Installa NVDA (avviando la copia appena installata)|
+|None |`--install-silent` | Installa NVDA (non avviando la copia appena installata)|
+|None |`--enable-start-on-logon=True|False` |Durante l'installazione, abilita [l'avvio di NVDA alla schermata di logon](#StartAtWindowsLogon)|
+|None |`--copy-portable-config` |Durante l'installazione, copia la configurazione portable dal percorso specificato (`--config-path`, `-c`) all'account utente corrente|
+|None |`--create-portable` |Crea una copia portable di NVDA (avviando la copia appena creata). Richiede `--portable-path` da specificare|
+|None |`--create-portable-silent` |Crea una copia portable di NVDA (non avvia la nuova copia appena creata). Richiede `--portable-path` da specificare|
+|None |`--portable-path=PORTABLEPATH` |Il percorso in cui verrà creata la copia portable di NVDA|
 
 ### Parametri di sistema {#SystemWideParameters}
 
 NVDA consente di impostare alcuni valori nel registro di sistema che andranno ad influenzare il comportamento dello screen reader.
 Tali valori sono salvati nel registro in una delle seguenti chiavi:
 
-* sistemi a 32-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
-* Sistemi a 64-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+* sistemi a 32-bit: `HKEY_LOCAL_MACHINE\SOFTWARE\nvda`
+* Sistemi a 64-bit: `HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda`
 
 Di seguito vengono elencati i valori modificabili con queste chiavi di registro:
 
@@ -5018,6 +5018,5 @@ Di seguito vengono elencati i valori modificabili con queste chiavi di registro:
 ## Ulteriori Informazioni {#FurtherInformation}
 
 Se si vogliono trovare maggiori informazioni o richiedere assistenza riguardo NVDA, si prega di consultare il [Sito internazionale di NVDA in lingua inglese](NVDA_URL), oppure quello relativo alla comunità italiana all'indirizzo [www.nvda.it](http://www.nvda.it).
-In entrambe i siti web sarà possibile reperire documentazione aggiuntiva, supporto tecnico e risorse varie come forum o mailing list. In particolare, per quanto concerne il sito italiano, esiste una lista di discussione alla quale chiunque può iscriversi mandando un messaggio a: <nvda-request@groups.io> e nell'oggetto del messaggio scrivere la parola "subscribe" senza le virgolette. Rispondere poi al messaggio di conferma.
-I messaggi che transitano nella mailing list sono tutti consultabili anche dal sito nvda.it, nel riquadro ultime notizie dal forum. Non esitate a contattarci in caso di problemi.
+In entrambe i siti web sarà possibile reperire documentazione aggiuntiva, supporto tecnico e risorse varie come forum o mailing list. In particolare, per quanto concerne il sito italiano, esiste una lista di discussione alla quale chiunque può iscriversi mandando un messaggio a: <nvda-request@groups.io> e nell'oggetto del messaggio scrivere la parola "subscribe" senza le virgolette. Rispondere poi al messaggio di conferma. I messaggi che transitano nella mailing list sono tutti consultabili anche dal sito nvda.it, nel riquadro ultime notizie dal forum. Non esitate a contattarci in caso di problemi.
 
