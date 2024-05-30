@@ -2317,15 +2317,15 @@ Por padrão, apenas três modos são incluídos.
 Note que é necessário selecionar pelo menos um modo.
 Esta opção não está disponível se tiver iniciado o NVDA com [WASAPI desactivado para saída de áudio](#WASAPI) nas definições avançadas.
 
-##### Tempo para manter o dispositivo de áudio acordado depois de falar {#AudioAwakeTime}
+##### Tempo para manter o dispositivo de áudio aberto depois de falar {#AudioAwakeTime}
 
-Esta caixa de edição especifica durante quanto tempo o NVDA mantém o dispositivo de áudio acordado após o fim da fala.
+Esta caixa de edição especifica durante quanto tempo o NVDA mantém o dispositivo de áudio aberto após o fim da fala.
 Esta configuração permite ao NVDA evitar certas falhas na fala, como partes de palavras perdidas.
 Isto pode acontecer devido ao facto de os dispositivos de áudio (especialmente Bluetooth e dispositivos sem fios) entrarem em modo de espera.
 Também é útil noutros casos, como ao executar o NVDA dentro de uma máquina virtual (por exemplo, Citrix Virtual Desktop) ou em determinados portáteis.
 
 Os valores mais baixos podem permitir que o áudio seja cortado com mais frequência, uma vez que um dispositivo pode entrar no modo de espera demasiado cedo, fazendo com que o início da fala seguinte seja cortado.
-Definir um valor demasiado elevado pode fazer com que a bateria do dispositivo de saída de som se descarregue mais rapidamente, uma vez que ele permanece activo durante mais tempo sem ser enviado qualquer som.
+Definir um valor demasiado elevado pode fazer com que a bateria do dispositivo de saída de som se descarregue mais rapidamente, uma vez que ele permanece aberto durante mais tempo sem ser enviado qualquer som.
 
 Para desactivar esta função, é possível colocar o tempo a zero.
 
@@ -3434,7 +3434,7 @@ Também pode instalar vários extras de uma só vez.
 Isto pode ser feito seleccionando múltiplos extras na aba Extras disponíveis, e no menu de acções seleccionar Instalar os extras seleccionados.
 
 Para instalar um extra que tenha obtido fora da Loja de Extras, pressione o botão "Instalar a partir de uma fonte externa".
-Isso permitirá procurar um pacote de extras (ficheiro `.nvda-addon´) em algum lugar do seu computador ou em uma rede.
+Isso permitirá procurar um pacote de extras (ficheiro `.nvda-addon`) em algum lugar do seu computador ou em uma rede.
 Depois de abrir o pacote do extra, o processo de instalação será iniciado.
 
 Se o NVDA estiver instalado e a funcionar no seu sistema, também pode abrir um ficheiro de extra directamente a partir do navegador web ou do explorador de ficheiros para iniciar o processo de instalação.
@@ -3627,13 +3627,13 @@ O SAPI 4 é um padrão antigo da Microsoft para os softwares de síntese de voz.
 O NVDA mantém o suporte para este protocolo, para os utilizadores que ainda tenham sintetizadores SAPI 4 instalados.
 No entanto, a Microsoft já não dá suporte a este protocolo e os componentes necessários já não estão disponíveis na Microsoft.
 
-Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis, (que se podem aceder a partir da [secção Voz](#SpechSettings) do [diálogo de configurações](#NVDASettings) ou pelo [Anel de configurações de Voz](#SynthSettingsRing)) são todas as vozes de todos os motores SAPI 4 que se encontram instalados no seu sistema.
+Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis, (que se podem aceder a partir da [secção Voz](#SpeechSettings) do [diálogo de configurações](#NVDASettings) ou pelo [Anel de configurações de Voz](#SynthSettingsRing)) são todas as vozes de todos os motores SAPI 4 que se encontram instalados no seu sistema.
 
 ### Microsoft Speech API versão 5 (SAPI 5) {#SAPI5}
 
 O SAPI 5 é um padrão da Microsoft para os softwares de síntese de voz.
 Muitos sintetizadores de voz que cumprem com este padrão poderão ser comprados ou descarregados, em várias empresas ou páginas da Internet, ainda que o seu sistema já venha com, pelo menos, uma voz SAPI 5 instalada.
-Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis, (que se podem aceder a partir da [secção Voz](#SpechSettings) do [diálogo de configurações](#NVDASettings) ou pelo [Anel de configurações de Voz](#SynthSettingsRing)) são todas as vozes de todos os motores SAPI 5 que se encontram instalados no seu sistema.
+Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis, (que se podem aceder a partir da [secção Voz](#SpeechSettings) do [diálogo de configurações](#NVDASettings) ou pelo [Anel de configurações de Voz](#SynthSettingsRing)) são todas as vozes de todos os motores SAPI 5 que se encontram instalados no seu sistema.
 
 ### Microsoft Speech Platform {#MicrosoftSpeechPlatform}
 
@@ -3921,15 +3921,15 @@ Por favor, consulte a documentação do seu dispositivo Braille para obter a des
 |Mover a linha braille para a linha anterior |`d1` |
 |Mover a linha braille para a linha seguinte |`d3` |
 |Encaminhar |`routing` |
-|tecla shift+tab |`espaço+ponto 1+ponto 3` |
-|tecla tab |`espaço+ponto 4+ponto 6` |
-|tecla alt |`espaço+ponto 1+ponto 3+ponto 4` (`espaço+m`)|
-|tecla escape |`espaço+ponto 1+ponto 5` (`espaço+e`)|
-|tecla windows |`espaço+ponto 3+ponto 4` |
-|tecla alt+tab |`espaço+ponto 2+ponto 3+ponto 4+ponto 5` (`espaço+t`)|
+|tecla `shift+tab` |`espaço+ponto 1+ponto 3` |
+|tecla `tab` |`espaço+ponto 4+ponto 6` |
+|tecla `alt` |`espaço+ponto 1+ponto 3+ponto 4` (`espaço+m`)|
+|tecla `escape` |`espaço+ponto 1+ponto 5` (`espaço+e`)|
+|tecla `windows` |`espaço+ponto 3+ponto 4` |
+|teclas `alt+tab` |`espaço+ponto 2+ponto 3+ponto 4+ponto 5` (`espaço+t`)|
 |Menu NVDA |`espaço+ponto 1+ponto 3+ponto 4+ponto 5` (`espaço+n`)|
-|Tecla Windows+d (minimizar todos os aplicativos) |`espaço+ponto 1+ponto 4+ponto 5` (`espaço+d`)|
-|Leitura contínua |espaço+ponto 1+ponto 2+ponto 3+ponto 4+ponto 5+ponto 6``  |
+|Teclas `Windows+d` (minimizar todos os aplicativos) |`espaço+ponto 1+ponto 4+ponto 5` (`espaço+d`)|
+|Leitura contínua |`espaço+ponto 1+ponto 2+ponto 3+ponto 4+ponto 5+ponto 6` |
 
 Para dispositivos braille que tenham um joistick:
 
@@ -4101,19 +4101,19 @@ Por favor, consulte a documentação do seu dispositivo braille para obter a des
 |Teclas Control+Shift+Seta à esquerda |Ponto2+ponto8+Espaço+F1|
 |Teclas control+Seta à esquerda |Ponto2+Espaço|
 |Teclas Shift+Alt+Seta à esquerda |Ponto2+ponto7+F1|
-|Teclas Alt+Seta à esquerda |Ponto2+ponto7+espaço|
+|Teclas `Alt+Seta à esquerda` |`Ponto2+ponto7+espaço`|
 |Tecla Seta à direita |Ponto6+Espaço, leftSideRightArrow|
 |Teclas Control+Shift+Seta à direita |Ponto5+ponto8+Espaço+F1|
 |Teclas Control+Seta à direita |Ponto5+Espaço|
 |Teclas Shift+Alt+Seta à direita| Ponto5+ponto7+F1|
-|Teclas Alt+Seta à direita |Ponto5+ponto7+espaço|
+|Teclas `Alt+Seta à direita` |`Ponto5+ponto7+espaço`|
 |Tecla pageUp |Ponto1+ponto2+ponto6+Espaço|
 |Teclas Control+PageUp |Ponto1+ponto2+ponto6+ponto8+Espaço|
 |Tecla Seta acima |Ponto1+Espaço, leftSideseta acima|
 |Teclas Control+Shift+Seta acima |Ponto2+ponto3+ponto8+Espaço+F1|
 |Teclas Control+Seta acima |Ponto2+ponto3+Espaço|
 |Teclas Shift+Alt+Seta acima |Ponto2+ponto3+ponto7+F1|
-|Teclas Alt+Seta acima |Ponto2+ponto3+ponto7+espaço|
+|Teclas `alt+Seta acima` |`Ponto2+ponto3+ponto7+espaço`|
 |Teclas Shift+Seta acima |leftSideScrollDown+Espaço|
 |Tecla pageDown |Ponto3+ponto4+ponto5+Espaço|
 |Teclas Control+pageDown |Ponto3+ponto4+ponto5+ponto8+Espaço|
@@ -4121,7 +4121,7 @@ Por favor, consulte a documentação do seu dispositivo braille para obter a des
 |Teclas Control+Shift+Seta abaixo |Ponto5+ponto6+ponto8+Espaço+F1|
 |Teclas Control+Seta abaixo |Ponto5+ponto6+Espaço|
 |Teclas Shift+Alt+Seta abaixo |ponto5+ponto6+ponto7+F1|
-|Teclas Alt+Seta abaixo |Ponto5+ponto6+ponto7+espaço|
+|Teclas `Alt+Seta abaixo` |`Ponto5+ponto6+ponto7+espaço`|
 |Teclas Shift+Seta abaixo |Espaço+rightSideScrollDown|
 |Tecla Escape |Ponto1+ponto5+Espaço, F4, brailleedge: F1|
 |Tecla Delete |Ponto1+ponto3+ponto5+Espaço, Ponto1+ponto4+ponto5+Espaço|
@@ -4426,7 +4426,7 @@ Por favor, consulte a secção Terminal Braille do manual do BrailleNote para ma
 
 Se o seu dispositivo suporta mais de um tipo de ligação, ao ligar o BrailleNote ao NVDA, deve configurar o braille terminal port nas opções de braille terminal.
 Por favor, consulte os detalhes no manual do BrailleNote.
-No NVDA, também precisa de configurar a porta, nas configurações do Braille.
+No NVDA, pode também precisar de configurar a porta, nas [configurações do Braille](#SelectBrailleDisplay).
 Se estiver a utilizar a ligação USB ou bluetooth, pode configurar a porta para "Automática", "USB" ou "Bluetooth", dependendo das opções disponíveis.
 Se estiver a usar a ligação pela porta série, um conversor USB para serial ou se nenhuma das opções anteriores aparecer, tem de configurar a porta a ser usada da lista de portas de comunicação de hardware.
 
@@ -4515,7 +4515,7 @@ Os modelos seguintes são suportados:
 * EcoBraille 80
 * EcoBraille Plus
 
-No NVDA, pode configurar a que porta série a linha está ligada, no diálogo "configurações de Braille".
+No NVDA, pode configurar a que porta série a linha está ligada, no diálogo [Seleccionar dispositivo Braille](#SelectBrailleDisplay).
 Estas linhas ainda não suportam a detecção automática em segundo plano do NVDA.
 
 Seguem-se as associações de comandos para as linhas EcoBraille com o NVDA.
@@ -4576,64 +4576,64 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 
 | Nome |Comando|
 |---|---|
-|Erase the last entered braille cell or character |"backspace"|
-|Translate any braille input and press the enter key |"backspace+space"|
-|Toggle "NVDA" key |"dot3+dot5+space"|
-|Tecla insert |"dot1+dot3+dot5+space", "dot3+dot4+dot5+space"|
-|Tecla delete |"dot3+dot6+space"|
-|Tecla home |"dot1+dot2+dot3+space"|
-|Tecla end |"dot4+dot5+dot6+space"|
-|Seta à esquerda |"dot2+space"|
-|Seta à direita |"dot5+space"|
-|Seta acima |"dot1+space"|
-|Seta abaixo |"dot6+space"|
-|Página acima |"dot1+dot3+space"|
-|Página abaixo |"dot4+dot6+space"|
-|"numpad1" |"dot1+dot6+backspace"|
-|"numpad2" |"dot1+dot2+dot6+backspace"|
-|"numpad3" |"dot1+dot4+dot6+backspace"|
-|"numpad4" |"dot1+dot4+dot5+dot6+backspace"|
-|"numpad5" |"dot1+dot5+dot6+backspace"|
-|"numpad6" |"dot1+dot2+dot4+dot6+backspace"|
-|"numpad7" |"dot1+dot2+dot4+dot5+dot6+backspace"|
-|"numpad8" |"dot1+dot2+dot5+dot6+backspace"|
-|"numpad9" |"dot2+dot4+dot6+backspace"|
-|"numpadInsert" |"dot3+dot4+dot5+dot6+backspace"|
-|"numpadPonto" |"dot2+backspace"|
-|"numpadDivide" key |"dot3+dot4+backspace"|
-|"numpadMultiply" key |"dot3+dot5+backspace"|
-|"numpadMinus" key |"dot3+dot6+backspace"|
-|"numpadPlus" key |"dot2+dot3+dot5+backspace"|
-|"numpadEnter" key |"dot3+dot4+dot5+backspace"|
-|"escape" key |"dot1+dot2+dot4+dot5+space", "l2"|
-|`tab` key |"dot2+dot5+dot6+space", "l3"|
-|`shift+tab` keys |"dot2+dot3+dot5+space"|
-|"printScreen" key |"dot1+dot3+dot4+dot6+space"|
-|"pause" key |"dot1+dot4+space"|
-|"applications" key |"dot5+dot6+backspace"|
-|"f1" key |"dot1+backspace"|
-|"f2" key |"dot1+dot2+backspace"|
-|"f3" key |"dot1+dot4+backspace"|
-|"f4" key |"dot1+dot4+dot5+backspace"|
-|"f5" key |"dot1+dot5+backspace"|
-|"f6" key |"dot1+dot2+dot4+backspace"|
-|"f7" key |"dot1+dot2+dot4+dot5+backspace"|
-|"f8" key |"dot1+dot2+dot5+backspace"|
-|"f9" key |"dot2+dot4+backspace"|
-|"f10" key |"dot2+dot4+dot5+backspace"|
-|"f11" key |"dot1+dot3+backspace"|
-|"f12" key |"dot1+dot2+dot3+backspace"|
-|"windows" key |"dot1+dot2+dot4+dot5+dot6+space"|
-|Toggle "windows" key |"dot1+dot2+dot3+dot4+backspace", "dot2+dot4+dot5+dot6+space"|
-|`capsLock` key |"dot7+backspace", "dot8+backspace"|
-|`numLock` key |"dot3+backspace", "dot6+backspace"|
-|`shift` key |"dot7+space"|
-|Toggle `shift` key |"dot1+dot7+space", "dot4+dot7+space"|
-|`control` key |"dot7+dot8+space"|
-|Toggle `control` key |"dot1+dot7+dot8+space", "dot4+dot7+dot8+space"|
-|"alt" key |"dot8+space"|
-|Toggle "alt" key |"dot1+dot8+space", "dot4+dot8+space"|
-|Toggle HID Keyboard simulation |"switch1Left+joystick1Down", "switch1Right+joystick1Down"|
+|Erase the last entered braille cell or character |`backspace`|
+|Translate any braille input and press the enter key |`backspace+space`|
+|Toggle "NVDA" key |`dot3+dot5+space`|
+|Tecla `insert` |`dot1+dot3+dot5+space`, `dot3+dot4+dot5+space`|
+|Tecla `delete` |`dot3+dot6+space`|
+|Tecla `home` |`dot1+dot2+dot3+space`|
+|Tecla `end` |`dot4+dot5+dot6+space`|
+|`seta à esquerda` |`dot2+space`|
+|`seta à direita` |`dot5+space`|
+|`seta acima` |`dot1+space`|
+|`seta abaixo` |`dot6+space`|
+|`pageUp` |`dot1+dot3+space`|
+|`pageDown` |`dot4+dot6+space`|
+|`numpad1` key |`dot1+dot6+backspace`|
+|`numpad2` key |`dot1+dot2+dot6+backspace`|
+|`numpad3` key |`dot1+dot4+dot6+backspace`|
+|`numpad4` key |`dot1+dot4+dot5+dot6+backspace`|
+|`numpad5` key |`dot1+dot5+dot6+backspace`|
+|`numpad6` key |`dot1+dot2+dot4+dot6+backspace`|
+|`numpad7` key |`dot1+dot2+dot4+dot5+dot6+backspace`|
+|`numpad8` key |`dot1+dot2+dot5+dot6+backspace`|
+|`numpad9` key |`dot2+dot4+dot6+backspace`|
+|`numpadInsert` key |`dot3+dot4+dot5+dot6+backspace`|
+|`numpadDecimal` key |`dot2+backspace`|
+|`numpadDivide` key |`dot3+dot4+backspace`|
+|`numpadMultiply` key |`dot3+dot5+backspace`|
+|`numpadMinus` key |`dot3+dot6+backspace`|
+|`numpadPlus` key |`dot2+dot3+dot5+backspace`|
+|`numpadEnter` key |`dot3+dot4+dot5+backspace`|
+|`escape` key |`dot1+dot2+dot4+dot5+space`, `l2`|
+|`tab` key |`dot2+dot5+dot6+space`, `l3`|
+|`shift+tab` keys |`dot2+dot3+dot5+space`|
+|`printScreen` key |`dot1+dot3+dot4+dot6+space`|
+|`pause` key |`dot1+dot4+space`|
+|`applications` key |`dot5+dot6+backspace`|
+|`f1` key |`dot1+backspace`|
+|`f2` key |`dot1+dot2+backspace`|
+|`f3` key |`dot1+dot4+backspace`|
+|`f4` key |`dot1+dot4+dot5+backspace`|
+|`f5` key |`dot1+dot5+backspace`|
+|`f6` key |`dot1+dot2+dot4+backspace`|
+|`f7` key |`dot1+dot2+dot4+dot5+backspace`|
+|`f8` key |`dot1+dot2+dot5+backspace`|
+|`f9` key |`dot2+dot4+backspace`|
+|`f10` key |`dot2+dot4+dot5+backspace`|
+|`f11` key |`dot1+dot3+backspace`|
+|`f12` key |`dot1+dot2+dot3+backspace`|
+|`windows` key |`dot1+dot2+dot4+dot5+dot6+space`|
+|Toggle `windows` key |`dot1+dot2+dot3+dot4+backspace`, `dot2+dot4+dot5+dot6+space`|
+|`capsLock` key |`dot7+backspace`, `dot8+backspace`|
+|`numLock` key |`dot3+backspace`, `dot6+backspace`|
+|`shift` key |`dot7+space`|
+|Toggle `shift` key |`dot1+dot7+space`, `dot4+dot7+space`|
+|`control` key |`dot7+dot8+space`|
+|Toggle `control` key |`dot1+dot7+dot8+space`, `dot4+dot7+dot8+space`|
+|`alt` key |`dot8+space`|
+|Toggle `alt` key |`dot1+dot8+space`, `dot4+dot8+space`|
+|Toggle HID Keyboard simulation |`switch1Left+joystick1Down`, `switch1Right+joystick1Down`|
 
 <!-- KC:endInclude -->
 
@@ -4643,23 +4643,23 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 
 | Name |Key|
 |---|---|
-|Scroll braille display back |"backward"|
-|Scroll braille display forward |"forward"|
-|Move to current focus |"backward+forward"|
-|Route to braille cell |"routing"|
-|"leftArrow" key |"joystick2Left"|
-|"rightArrow" key |"joystick2Right"|
-|"upArrow" key |"joystick2Up"|
-|"downArrow" key |"joystick2Down"|
-|`enter` key |"joystick2Center"|
-|"escape" key |"c1"|
-|`tab` key |"c2"|
-|Toggle `shift` key |"c3"|
-|Toggle `control` key |"c4"|
-|Toggle "alt" key |"c5"|
-|Toggle "NVDA" key |"c6"|
-|"control+Home" key |"c1+c2+c3"|
-|"control+End" key |"c4+c5+c6"|
+|Scroll braille display back |`backward`|
+|Scroll braille display forward |`forward`|
+|Move to current focus |`backward+forward`|
+|Route to braille cell |`routing`|
+|`leftArrow` key |`joystick2Left`|
+|`rightArrow` key |`joystick2Right`|
+|`upArrow` key |`joystick2Up`|
+|`downArrow` key |`joystick2Down`|
+|`enter` key |`joystick2Center`|
+|`escape` key |`c1`|
+|`tab` key |`c2`|
+|Toggle `shift` key |`c3`|
+|Toggle `control` key |`c4`|
+|Toggle `alt` key |`c5`|
+|Toggle `NVDA` key |`c6`|
+|`control+Home` key |`c1+c2+c3`|
+|`control+End` key |`c4+c5+c6`|
 
 <!-- KC:endInclude -->
 
@@ -4669,19 +4669,19 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 
 | Name |Key|
 |---|---|
-|Scroll braille display back |"leftKeypadLeft"|
-|Scroll braille display forward |"leftKeypadRight"|
-|Route to braille cell |"routing"|
-|Report text formatting under braille cell |"doubleRouting"|
-|Move to next line in review |"leftKeypadDown"|
-|Switch to previous review mode |"leftKeypadLeft+leftKeypadUp"|
-|Switch to next review mode |"leftKeypadRight+leftKeypadDown"|
-|"leftArrow" key |"rightKeypadLeft"|
-|"rightArrow" key |"rightKeypadRight"|
-|"upArrow" key |"rightKeypadUp"|
-|"downArrow" key |"rightKeypadDown"|
-|"control+home" key |"rightKeypadLeft+rightKeypadUp"|
-|"control+end" key |"rightKeypadLeft+rightKeypadUp"|
+|Scroll braille display back |`leftKeypadLeft`|
+|Scroll braille display forward |`leftKeypadRight`|
+|Route to braille cell |`routing`|
+|Report text formatting under braille cell |`doubleRouting`|
+|Move to next line in review |`leftKeypadDown`|
+|Switch to previous review mode |`leftKeypadLeft+leftKeypadUp`|
+|Switch to next review mode |`leftKeypadRight+leftKeypadDown`|
+|`leftArrow` key |`rightKeypadLeft`|
+|`rightArrow` key |`rightKeypadRight`|
+|`upArrow` key |`rightKeypadUp`|
+|`downArrow` key |`rightKeypadDown`|
+|`control+home` key |`rightKeypadLeft+rightKeypadUp`|
+|`control+end` key |`rightKeypadLeft+rightKeypadUp`|
 
 <!-- KC:endInclude -->
 
@@ -4691,20 +4691,20 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 
 | Name |Key|
 |---|---|
-|Scroll braille display back |"switch1Left"|
-|Scroll braille display forward |"switch1Right"|
-|Move to current focus |"switch1Center"|
-|Route to braille cell |"routing"|
-|Report text formatting under braille cell |"doubleRouting"|
-|Move to previous line in review |"joystick1Up"|
-|Move to next line in review |"joystick1Down"|
-|Move to previous character in review |"joystick1Left"|
-|Move to next character in review |"joystick1Right"|
-|"leftArrow" key |"joystick2Left"|
-|"rightArrow" key |"joystick2Right"|
-|"upArrow" key |"joystick2Up"|
-|"downArrow" key |"joystick2Down"|
-|`enter` key |"joystick2Center"|
+|Scroll braille display back |`switch1Left`|
+|Scroll braille display forward |`switch1Right`|
+|Move to current focus |`switch1Center`|
+|Route to braille cell |`routing`|
+|Report text formatting under braille cell |`doubleRouting`|
+|Move to previous line in review |`joystick1Up`|
+|Move to next line in review |`joystick1Down`|
+|Move to previous character in review |`joystick1Left`|
+|Move to next character in review |`joystick1Right`|
+|`leftArrow` key |`joystick2Left`|
+|`rightArrow` key |`joystick2Right`|
+|`upArrow` key |`joystick2Up`|
+|`downArrow` key |`joystick2Down`|
+|`enter` key |`joystick2Center`|
 
 <!-- KC:endInclude -->
 
@@ -4714,29 +4714,29 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 
 | Name |Key|
 |---|---|
-|Scroll braille display back |"l1"|
-|Scroll braille display forward |"l8"|
-|Move to current focus |"l1+l8"|
-|Route to braille cell |"routing"|
-|Report text formatting under braille cell |"doubleRouting"|
-|Move to previous line in review |"joystick1Up"|
-|Move to next line in review |"joystick1Down"|
-|Move to previous character in review |"joystick1Left"|
-|Move to next character in review |"joystick1Right"|
-|"leftArrow" key |"joystick2Left"|
-|"rightArrow" key |"joystick2Right"|
-|"upArrow" key |"joystick2Up"|
-|"downArrow" key |"joystick2Down"|
-|`enter` key |"joystick2Center"|
-|"escape" key |"l2"|
-|`tab` key |"l3"|
-|Toggle `shift` key |"l4"|
-|Toggle `control` key |"l5"|
-|Toggle "alt" key |"l6"|
-|Toggle "NVDA" key |"l7"|
-|"control+home" key |"l1+l2+l3", "l2+l3+l4"|
-|"control+end" key |"l6+l7+l8", "l5+l6+l7"|
-|Toggle HID Keyboard simulation |"l1+joystick1Down", "l8+joystick1Down"|
+|Scroll braille display back |`l1`|
+|Scroll braille display forward |`l8`|
+|Move to current focus |`l1+l8`|
+|Route to braille cell |`routing`|
+|Report text formatting under braille cell |`doubleRouting`|
+|Move to previous line in review |`joystick1Up`|
+|Move to next line in review |`joystick1Down`|
+|Move to previous character in review |`joystick1Left`|
+|Move to next character in review |`joystick1Right`|
+|`leftArrow` key |`joystick2Left`|
+|`rightArrow` key |`joystick2Right`|
+|`upArrow` key |`joystick2Up`|
+|`downArrow` key |`joystick2Down`|
+|`enter` key |`joystick2Center`|
+|`escape` key |`l2`|
+|`tab` key |`l3`|
+|Toggle `shift` key |`l4`|
+|Toggle `control` key |`l5`|
+|Toggle `alt` key |`l6`|
+|Toggle `NVDA` key |`l7`|
+|`control+home` key |`l1+l2+l3`, `l2+l3+l4`|
+|`control+end` key |`l6+l7+l8`, `l5+l6+l7`|
+|Toggle HID Keyboard simulation |`l1+joystick1Down`, `l8+joystick1Down`|
 
 <!-- KC:endInclude -->
 
@@ -4778,18 +4778,18 @@ Por favor, consulte na documentação do BRLTTY as [tabelas de associação de t
 
 | Nome |Comando BRLTTY|
 |---|---|
-|Mover a linha braille para trás |"fwinlt" (go left one window)|
-|Mover a linha braille para a frennte |"fwinrt" (go right one window)|
-|Mover a linha braille para a linha anterior |"lnup" (go up one line)|
-|Mover a linha braille para a linha seguinte |"lndn" (go down one line)|
-|Encaminhar para a célula braille |"route" (bring cursor to character)|
-|Alternar ajuda de comandos |"learn" (Activar/desactivar a ajuda de comandos)|
-|Abrir menu NVDA |"prefmenu" (Abrir o menu do NVDA)|
-|Reverter para as últimas configurações |"prefload" (restaura as configurações guardadas)|
-|Guardar configurações |"prefsave" (Guarda as configurações)|
-|Anunciar hora e data |"time" (Mostrar data e hora actual)|
-|ler a linha do cursor de revisão |"say_line" (Ler linha actual do cursor de revisão)|
-|Ler tudo com cursor de revisão |"say_below" (Ler da posição actual até ao fim com cursor de revisão)|
+|Mover a linha braille para trás |`fwinlt` (go left one window)|
+|Mover a linha braille para a frennte |`fwinrt` (go right one window)|
+|Mover a linha braille para a linha anterior |`lnup` (go up one line)|
+|Mover a linha braille para a linha seguinte |`lndn` (go down one line)|
+|Encaminhar para a célula braille |`route` (bring cursor to character)|
+|Alternar ajuda de comandos |`learn` (Activar/desactivar a ajuda de comandos)|
+|Abrir menu NVDA |`prefmenu` (Abrir o menu do NVDA)|
+|Reverter para as últimas configurações |`prefload` (restaura as configurações guardadas)|
+|Guardar configurações |`prefsave` (Guarda as configurações) |
+|Anunciar hora e data |`time` (Mostrar data e hora actual)|
+|ler a linha do cursor de revisão |`say_line` (Ler linha actual do cursor de revisão)|
+|Ler tudo com cursor de revisão |`say_below` (Ler da posição actual até ao fim com cursor de revisão)|
 
 <!-- KC:endInclude -->
 
@@ -4811,11 +4811,11 @@ Por favor, consulte a documentação destas linhas Braille para obter a descriç
 
 | Nome |Tecla|
 |---|---|
-|mover para a primeira linha em revisão |"home1", "home2"|
-|mover para a última linha em revisão |"end1", "end2"|
-|Mover para o objecto em foco |"eCursor1", "eCursor2"|
-|Mover a linha Braille para o foco actual |"cursor1", "cursor2"|
-|Mover o rato para o objecto de navegação actual |"home1+home2"|
+|mover para a primeira linha em revisão |`home1`, `home2`|
+|mover para a última linha em revisão |`end1`, `end2`|
+|Mover para o objecto em foco |`eCursor1`, `eCursor2`|
+|Mover a linha Braille para o foco actual |`cursor1`, `cursor2`|
+|Mover o rato para o objecto de navegação actual |`home1+home2`|
 |Navegar para o objecto sob o rato |"end1+end2"|
 |Mover o foco do sistema ou o cursor para o objecto actual da revisão |"eCursor1+eCursor2"|
 |Alternar "Braille segue:" |"cursor1+cursor2"|

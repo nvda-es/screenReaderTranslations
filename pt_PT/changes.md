@@ -14,7 +14,7 @@ Foram adicionadas muitas novas funcionalidades braille e correcções de erros.
 Foi adicionado um novo modo braille denominado "Apresentar saída de voz".
 Quando activo, o dispositivo braille mostra exatamente o que o NVDA anuncia.
 Foi também adicionado suporte para os dispositivos Braille BrailleEdgeS2, BrailleEdgeS3.
-LibLouis foi actualizada, adicionando novas tabelas Braille bielorrussas e ucranianas detalhadas (com indicação de letras maiúsculas), tabela para Lao e uma tabela espanhola para leitura de textos gregos.
+LibLouis foi actualizada, adicionando novas tabelas Braille bielorrussas e ucranianas detalhadas (com indicação de letras maiúsculas), tabela para Laos e uma tabela espanhola para leitura de textos gregos.
 
 O eSpeak foi atualizado, adicionando o novo idioma Tigrinya.
 
@@ -50,7 +50,7 @@ Existem muitas correcções de erros menores para aplicações, tais como o Thun
 * O anúncio de cabeçalhos de linhas e colunas é agora suportado em elementos HTML com conteúdo. (#14113)
 * Adicionada a opção para desactivar o anúncio de figuras e legendas nas definições de formatação do documento. (#10826, #14349)
 * No Windows 11, o NVDA anunciará alertas de digitação por voz e acções sugeridas, incluindo a sugestão principal ao copiar dados como números de telefone para a área de transferência (Windows 11 2022 Update e posterior). (#16009, @josephsl)
-* O NVDA manterá o dispositivo de áudio activo depois de a fala parar, para evitar que o início da fala seguinte seja cortado, em alguns dispositivos de áudio, como auscultadores Bluetooth. (#14386, @jcsteh, @mltony)
+* O NVDA manterá o dispositivo de áudio aberto depois de a fala parar, para evitar que o início da fala seguinte seja cortado, em alguns dispositivos de áudio, como auscultadores Bluetooth. (#14386, @jcsteh, @mltony)
 * O HP Secure Browser é agora suportado. (#16377)
 
 ### Alterações
