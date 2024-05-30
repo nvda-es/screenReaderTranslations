@@ -4962,7 +4962,7 @@ Per quelli che possiedono solo la versione breve, si possono unire nel modo segu
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|`nvda -mc CONFIGPATH |NVDA si avvierà con il messaggio e il suono iniziale disattivati, e con la configurazione specificata|
+|`nvda -mc CONFIGPATH` |NVDA si avvierà con il messaggio e il suono iniziale disattivati, e con la configurazione specificata|
 |`nvda -mc CONFIGPATH --disable-addons` |Come sopra, ma con i componenti aggiuntivi disattivati|
 
 Alcune delle opzioni della riga di comando accettano parametri aggiuntivi; ad esempio quanto dettagliato debba essere il log oppure la cartella inerente il profilo di configurazione utente.
@@ -4988,8 +4988,8 @@ Ecco l'elenco dei parametri a riga di comando di NVDA:
 |`-m` |`--minimal` |Niente suoni, niente interfaccia, niente messaggio all'avvio etc|
 |`-s` |`--secure` |Avvia NVDA in [modalità protetta](#SecureMode)|
 |None |`--disable-addons` |I componenti aggiuntivi non avranno alcun effetto|
-|None |`--debug-logging` |Abilita il debug nei log solo per la presente istanza. Questa impostazione ha la precedenza su qualsiasi altro livello di log ( --loglevel, -l), compresa la funzione no logging|
-|None |`--no-logging` |Disabilita completamente le funzioni di log durante l'uso di NVDA. Questa impostazione può essere sovrascritta se viene specificato un livello di log ( --loglevel, -l) dalla riga di comando o se la funzione debug logging è attiva.|
+|None |`--debug-logging` |Abilita il debug nei log solo per la presente istanza. Questa impostazione ha la precedenza su qualsiasi altro livello di log ( `--loglevel`, `-l`), compresa la funzione no logging|
+|None |`--no-logging` |Disabilita completamente le funzioni di log durante l'uso di NVDA. Questa impostazione può essere sovrascritta se viene specificato un livello di log ( `--loglevel`, `-l`) dalla riga di comando o se la funzione debug logging è attiva.|
 |None |`--no-sr-flag` |Non modifica il flag Screen Reader per il sistema|
 |None |`--install` |Installa NVDA (avviando la copia appena installata)|
 |None |`--install-silent` | Installa NVDA (non avviando la copia appena installata)|
@@ -5018,5 +5018,6 @@ Di seguito vengono elencati i valori modificabili con queste chiavi di registro:
 ## Ulteriori Informazioni {#FurtherInformation}
 
 Se si vogliono trovare maggiori informazioni o richiedere assistenza riguardo NVDA, si prega di consultare il [Sito internazionale di NVDA in lingua inglese](NVDA_URL), oppure quello relativo alla comunità italiana all'indirizzo [www.nvda.it](http://www.nvda.it).
-In entrambe i siti web sarà possibile reperire documentazione aggiuntiva, supporto tecnico e risorse varie come forum o mailing list. In particolare, per quanto concerne il sito italiano, esiste una lista di discussione alla quale chiunque può iscriversi mandando un messaggio a: <nvda-request@groups.io> e nell'oggetto del messaggio scrivere la parola "subscribe" senza le virgolette. Rispondere poi al messaggio di conferma. I messaggi che transitano nella mailing list sono tutti consultabili anche dal sito nvda.it, nel riquadro ultime notizie dal forum. Non esitate a contattarci in caso di problemi.
+In entrambe i siti web sarà possibile reperire documentazione aggiuntiva, supporto tecnico e risorse varie come forum o mailing list.
+In particolare, per quanto concerne il sito italiano, esiste una lista di discussione alla quale chiunque può iscriversi mandando un messaggio a: <nvda-request@groups.io> e nell'oggetto del messaggio scrivere la parola "subscribe" senza le virgolette. Rispondere poi al messaggio di conferma. I messaggi che transitano nella mailing list sono tutti consultabili anche dal sito nvda.it, nel riquadro ultime notizie dal forum. Non esitate a contattarci in caso di problemi.
 
