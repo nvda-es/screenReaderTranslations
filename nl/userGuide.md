@@ -278,7 +278,77 @@ De meeste NVDA-functies kunnen via de NVDA-instellingen worden geactiveerd of aa
 Instellingen, en andere opties, zijn via het NVDA-menu te bereiken.
 Om het NVDA-menu, te openen drukt u op `NVDA+n`.
 Om het dialoogvenster met de algemene instellingen van NVDA rechtstreeks te openen drukt u op `NVDA+control+g`.
-Veel schermen  met instellingen kunnen met toetscombinaties rechtstreeks geopend worden, bijvoorbeeld `NVDA+control+s` voor een synthesizer, of  `NVDA+control+v` for andere stemmen met bijbehorende opties.
+Veel schermen  met instellingen kunnen met toetscombinaties rechtstreeks geopend worden, bijvoorbeeld `NVDA+control+s` voor een synthesizer, of  `NVDA+control+v` voor andere stemmen met bijbehorende opties.
+
+### Add-ons {#Addons}
+Add-ons zijn programmaatjes  die nieuwe of gewijzigde functionaliteit voor NVDA bieden.
+Add-ons worden door de NVDA-gemeenschap ontwikkeld , of door externe bedrijven die niet aan NV Access gelieerd zijn.
+Wat voor alle software geldt, geldt ook hier; je vertrouwen kunnen stellen in de ontwikkelaar van een add-on voordat je die gaat gebruiken is belangrijk.
+Raadpleeg [Add-ons installeren](#AddonStoreInstalling) om na te gaan hoe je de kwaliteit van  add-ons kunt verifiëren voordat je ze installeert.
+
+Bij eerste opening van de Add-on Store zal NVDA een waarschuwing tonen over add-ons.
+Add-ons worden door NV Access niet doorgelicht en hebben mogelijk mbt de functionaliteit en toegang tot informatie geen restricties.
+Druk op de `spatiebalk` als je de waarschuwing hebt gelezen en je deze een volgende keer niet meer wilt zien.
+Druk op `tab` om naar de "OK-knop" te gaan dan `enter` om de waarschuwing te accepteren en verder naar de Add-on Store te gaan.
++In de rubriek   "[Add-ons en de Add-on Store](#AddonsManager)" van de gebruikershandleiding vind je informatie over alle aspecten van de Add-on Store.
+
+Je bereikt de Add-on Store via het menu Extra.
+Druk op `NVDA+n` om het NVDA-menu te openen, dan op `e` voor extra, dan op `a` voor Add-on Store.
+Wanneer de Add-on Store open gaat, worden beschikbare add-ons" getoond als er geen add-ons geïnstalleerd zijn.
+Als er al  add-ons geïnstalleerd zijn, gaat de Add-on Store open op het  tabblad "Geïnstalleerde add-ons".
+
+#### Beschikbare add-ons {#AvailableAddons}
+Bij eerste opening van het venster kan het enkele seconden duren voordat de add-ons geladen zijn.
+NVDA zal de naam van de eerste add-on voorlezen zodra het laden van de  lijst met add-ons voltooid is.
+Beschikbare add-ons worden alfabetisch gerankschikt in de lijstweergave.
+Zo ga je door de lijst om meer te weten te komen over een specifieke add-on:
+1. Gebruik de `pijltjestoetsen` of druk de eerste letter in van de naam van een add-on om de lijst te doorlopen.
+1. Druk eenmaal op `tab` om naar de beschrijving van de op dat moment geselecteerde add-on te gaan.
+1. Gebruik de [Leestoetsen](#ReadingText) of `pijltjestoetsen` om de volledige beschrijving te lezen.
+1. Druk op `tab` om bij de knop "Acties" te komen, waarmee je o.a. de add-on kunt installeren.
+1. Druk op `tab` voor meer Details", zoals naam van de uitgever, versie en homepage.
+1. Om terug te gaan naar de  lijst met add-ons, druk je op  `alt+a`, dan wel op  `shift+tab` terug naar de lijst "Beschikbare add-ons".
++
+#### Naar add-onszoeken  {#SearchingForAddons}
+Naast bladeren door alle beschikbare add-ons, is het ook mogelijk getoonde add-ons te sorteren.
+Om te zoeken druk je op `alt+s` om naar het "zoekveld" te springen en typ daarin dan de tekst waarmee je wilt zoeken.
+In de zoekopdracht kun je verwijzen naar zaken zoals add-on ID, schermnaam, uitgever, auteur of beschrijving.
+Tijdens het typen van de zoektermen past de lijst zich steeds aan.
+Eenmaal gereed, druk je op `tab` om naar de gesorteerde lijst met add-ons te gaan waar je de zoekresultaten kunt bekijken.
+
+#### Add-ons installeren {#InstallingAddons}
+
+Zo installeer je een add-on:
+1. Terwijl de focus op een add-on staat die je wilt installeren druk je op enter`.
+1. Het menu  acties opent zich en er verschijnt een lijst met mogelijke acties; de eerste actie is "Installeren".
+1. Om de add-on te installeren druk je op `i`, of op `pijlOmlaag` en druk je op `enter`.
+1. De focus gaat terug naar de add-on in de lijst en NVDA zal de details over de add-on voorlezen.
+1. Betreffende de  "Status" meldt NVDA dat deze verandert van "Beschikbaar " in "Downloading".
+1. Als het downloaden van de add-on voltooid is, verandert deze in "Gedownload. In afwachting van installatie".
+1. Herhaal het voorafgaande bij elke add-on die je verder tegelijkertijd  wilt installeren.
+1. Als je klaar bent, druk je op `tab` totdat de focus op de knop "Sluiten" staat, waarna je op  `enter` drukt.
+1. Het installeren van de gedownloade add-ons begint zodra de Add-on Store is afgesloten.
+Add-ons kunnen mogelijk dialoogvensters genereren tijdens het installatieproces waarop je dan wel moet reageren.
+1. Als de add-ons eenmaal geïnstalleerd zijn,verschijnt er een dialoogvenster waarin wordt gemeld dat er wijzigingen zijn aangebracht, en dat NVDA opnieuw gestart moet worden om de installatie van de add-on(s) volledig af te ronden.
+1. Druk op `enter` om NVDA te herstarten.
+
+#### Geïnstalleerde add-ons beheren {#ManagingInstalledAddons}
+Druk op `control+tab` om tussen de tabbladen of secties van de Add-on Store te wisselen.
+De tabbladen omvatten "Geïnstalleerde add-ons", "Bij te werken add-ons", "Beschikbare add-ons" en "Geïnstalleerde incompatibele add-ons".
+De verschillende tabbladen zijn hetzelfde ingedeeld als lijst met add-ons, een paneel voor meer details over de geselecteerde add-on, en de mogelijkheid acties uit te voeren mbt dhe add-on.
+Het actiemenu voor geïnstalleerde add-ons omvat "Uitschakelen" en "Verwijderen" ipv "Installeren".
+Het uitschakelen van een add-on zorgt ervoor dat NVDA deze niet meer laadt maar de installatie ervan wordt niet ongedaan gemaakt.
+Om een uitgeschakelde add-on, opnieuw in te schakelen kun je Inschakelen" activeren in het actiemenu.
+Na het in- of uitschakelen dan wel verwijderen van add-ons, word je gevraagd NVDA te herstarten  bij het afsluiten van de Add-on Store.
+Deze wijzigingen worden pas van kracht zodra NVDA herstart is.
+Merk op dat in dit dialoogvemster `escape` hetzelfde werkt als de knop `Sluiten`.
+
+### Add-ons bijwerken {#UpdatingAddons}
+Als er een update is voor een add-on die je geïnstalleerd hebt, tref je die aan in het tabblad met "Bij te werken add-ons".
+Druk op  `control+tab` om naar dit tabblad te gaan vanuit elke willekeurige plaats in de Add-on Store.
+De status van de add-on is voor zien van het predikaat "Update beschikbaar".
+De tabel toont de momenteel geïnstalleerde versie en de beschikbare versie.
+Druk op `enter` op de add-on om de actie lijst te openen; kies "Bijwerken".
 
 ### Community {#Community}
 
