@@ -2286,7 +2286,7 @@ Deze optie is niet beschikbaar als u NVDA gestart hebt  terwijll [WASAPI voor au
 
 tereosplitsing (sound split) stelt gebruikers in staat te werken met stereo geluidsapparatuur zoals koptelefoons en speakers.
 Met stereosplitsing kun je de spraak van NVDA via het ene kanaal horen (bijv llinks) en het geluid van alle overige toepassingen wordt dan afgespeeld via het andere kanaal (rechts).
-Stereosplitsing staat standaard UIT, wat inhoudt dat het geluid van alle toepassingen met inbegrip van NVDA via beide kanalen wordt afgespeeld.
+Stereosplitsing staat standaard UIT.
 Er is een commando waarmee je de modi voor stereosplitsing kunt doorlopen :
 <!-- KC:beginInclude -->
 
@@ -2298,18 +2298,22 @@ Er is een commando waarmee je de modi voor stereosplitsing kunt doorlopen :
 
 Standaard doorloop je met dit commando de volgende modi:
 
-* Uitgeschakeld stereosplitsing: zowel NVDA en andere toepassingen sturen hun geluid over het linker  alsmede  het rechter kanaal.
+* stereosplitsing uitgeschakeld : NVDA past geen stereo-splitsing toe.
 * NVDA via het linker en toepassingen via het rechter: spraak van NVDA komt via linker kanaal, terwijl andere toepassingen te horen zijn via het rechter kanaal.
 * NVDA via het linker en toepassingen via beide kanalen: spraak van NVDA komt via linker kanaal, terwijl andere toepassingen te horen zijn zowel via het linker als rechter kanaal.
 
-Er zijn meer geavanceerde modi voor stereosplitsing beschikbaar in vervolgkeuzemenu instellingen van NVDA.
+Er zijn meer geavanceerde modi voor stereosplitsing beschikbaar in het vervolgkeuzemenu instellingen van NVDA.
+
+een van deze modi, "NVDA in beide kanalen en toepassingen in beide kanalen" zorgt ervoor dat alhet geluid naar beide kanalen wordt geleid.
+Deze modus kan afwijken van de modus "stereo-splitsing uitgeschakeld" in het geval dat andere audio-bewerking interfereert met kanaalvolumes.
+
 Merk op dat stereosplitsing (sound split) niet als mixer te gebruiken is.
 Als een bepaalde toepassing bijv een stereo track afspeelt terwijl stereosplitsing is ingesteld op  "NVDA via het linker  en toepassingen via het rechter kanaal", zul je alleen het rechter kanaal van de sound track horen terwijl het linker kanaal van de sound track onderdrukt wordt.
 
 Deze optie is niet beschikbaar  als bij het opstarten van NVDA  [WASAPI voor audiouitvoer in Geavanceerde Instellingen uitgeschakeld was](#WASAPI).
 
 Merk op dat bij een crash van NVDA het geluidsvolume van de toepassingen niet hersteld kan worden en die toepassingen blijven mogelijk geluid via een enkel kanaall afspelen na een crash van NVDA.
-Om dit te verhelpen is het het beste om NVDA opnieuw te starten.
+Om dit te verhelpen is het het beste om NVDA opnieuw te starten en de modus "NVDA in beide kanalen en toepassingen in beide kanalen" te selecteren.
 
 ##### Stereosplitsingsmodi aanpassen {#CustomizeSoundSplitModes}
 
