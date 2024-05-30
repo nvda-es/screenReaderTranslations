@@ -1907,7 +1907,7 @@ Una casella di controllo che, se attivata, istruisce NVDA a dire la parola "CAP"
 
 Se questa casella di controllo viene attivata, NVDA emetterà un leggero beep ogni qualvolta verrà incontrata una lettera maiuscola. 
 
-##### Utilizza la modalità spelling se supportata [#SpeechSpellingFunctionality}
+##### Utilizza la modalità spelling se supportata {#SpeechSettingsUseSpelling}
 
 Alcune parole sono costituite soltanto da un singolo carattere, ma talvolta, la pronuncia può risultare diversa se il carattere viene annunciato da solo (come quando viene fatto lo spelling), oppure come una parola.
 Ad esempio, in inglese, "a" è sia una lettera che una parola e viene pronunciata in maniera diversa in entrambe i casi.
@@ -3092,7 +3092,7 @@ Se si disattiva il supporto a Wasapi, anche le seguenti opzioni verranno disabil
 * [Il volume dei suoni di NVDA segue il volume della voce](#SoundVolumeFollowsVoice)
 * [Volume dei suoni di NVDA](#SoundVolume)
 
-##### Categorie Debug Logging ====[AdvancedSettingsDebugLoggingCategories]
+##### Categorie Debug Logging {#AdvancedSettingsDebugLoggingCategories}
 
 Le caselle di controllo presenti in questo elenco consentono di abilitare categorie specifiche di messaggi log di NVDA.
 Si tenga presente che il log di questi messaggi può comportare un calo delle prestazioni e file di registro di grandi dimensioni.
@@ -3375,7 +3375,7 @@ Tali azioni cambieranno in base allo stato del componente aggiuntivo, installato
 
 Esistono diverse visualizzazioni per i componenti aggiuntivi: installati, aggiornabili, disponibili e incompatibili.
 è possibile utilizzare `ctrl+tab`.per passare tra le varie visualizzazioni.
-Come previsto dalla maggior parte dei programmi, è anche possibile usare il tasto tab per posizionarsi sulla parte in cui vi sono le schede delle varie voci, e spostarsi quindi tra di esse servendosi della `frecciaSinistra` e della `frecciaDestra`.
+Come previsto dalla maggior parte dei programmi, è anche possibile usare il tasto `tab` per posizionarsi sulla parte in cui vi sono le schede delle varie voci, e spostarsi quindi tra di esse servendosi della `frecciaSinistra` e della `frecciaDestra`.
 
 #### Filtraggio per componenti aggiuntivi abilitati o disabilitati {#AddonStoreFilterEnabled}
 
@@ -3487,7 +3487,6 @@ In alternativa, servirsi dell'[opzione a riga di comando](#CommandLineOptions) `
 
 Si può navigare tra gli add-on non compatibili tramite le [schede add-on disponibili e aggiornabili](#AddonStoreFilterStatus).
 Inoltre, si può navigare tra gli add-on installati non compatibili tramite la [scheda add-on incompatibili](#AddonStoreFilterStatus).
-
 
 ## Strumenti aggiuntivi {#ExtraTools}
 ### Visualizzatore log {#LogViewer}
