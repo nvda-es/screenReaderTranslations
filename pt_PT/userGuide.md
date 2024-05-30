@@ -4578,7 +4578,7 @@ O teclado Braille, descrito abaixo, refere-se a quando esta caixa de verificaç�
 |---|---|
 |Erase the last entered braille cell or character |`backspace`|
 |Translate any braille input and press the enter key |`backspace+space`|
-|Toggle "NVDA" key |`dot3+dot5+space`|
+|Toggle `NVDA` key |`dot3+dot5+space`|
 |Tecla `insert` |`dot1+dot3+dot5+space`, `dot3+dot4+dot5+space`|
 |Tecla `delete` |`dot3+dot6+space`|
 |Tecla `home` |`dot1+dot2+dot3+space`|
@@ -4816,48 +4816,48 @@ Por favor, consulte a documentação destas linhas Braille para obter a descriç
 |Mover para o objecto em foco |`eCursor1`, `eCursor2`|
 |Mover a linha Braille para o foco actual |`cursor1`, `cursor2`|
 |Mover o rato para o objecto de navegação actual |`home1+home2`|
-|Navegar para o objecto sob o rato |"end1+end2"|
-|Mover o foco do sistema ou o cursor para o objecto actual da revisão |"eCursor1+eCursor2"|
-|Alternar "Braille segue:" |"cursor1+cursor2"|
-|Move a linha braille para a linha anterior |"up1", "up2", "up3"|
-|Move a linha braille para a linha seguinte |"down1", "down2", "down3"|
-|Deslocar a linha braille para trás |"left", "lWheelLeft", "rWheelLeft"|
-|Deslocar a linha braille para a frente |"right", "lWheelRight", "rWheelRight"|
-|Encaminhar para a célula braille |"routing"|
-|Anunciar formatação do caracter da célula Braille |secondary routing|
-|Alternar Apresentação do contexto do foco: "attribute1+attribute3"|
-|Alternar entre os Modos de Voz |"attribute2+attribute4"|
-|Muda para o modo de revisão anterior |"f1"|
-|Muda para o modo de revisão seguinte |"f2"|
-|Mover para o objecto ascendente |"f3"|
-|Mover para o primeiro objecto descendente |"f4"|
-|Mover para o objecto anterior |"f5"|
-|Mover para o objecto seguinte |"f6"|
-|Anunciar o objecto de navegação actual |"f7"|
-|Anunciar localização do cursor de revisão |"f8"|
-|Mostra as configurações em braile |"f1+home1", "f9+home2"|
-|Lê a barra de estado e move o objeto de navegação para ela |"f1+end1", "f9+end2"|
-|Alternar entre as formas do cursor Braile |"f1+eCursor1", "f9+eCursor2" |+| Alterna a forma do cursor braile|
-|Alternar o cursor Braille |"f1+cursor1", "f9+cursor2"|
-|Cycle the braille show messages mode |"f1+f2", "f9+f10"|
-|Alternart o estado do Braille mostrar a selecção |"f1+f5", "f9+f14"|
-|Alterna entre as opções do "Braille move o cursor do sistema quando o cursor de revisão é encaminhado" |"f1+f3", "f9+f11"|
-|Activar o objecto de navegação actual |"f7+f8"|
-|Anunciar hora/data |"f9"|
-|Anunciar o estado da bateria e tempo restante se não ligada à corrente |"f10"|
-|Anunciar o título |"f11"|
-|Anunciar a Barra de Estado |"f12"|
-|Anunciar a linha actual |"f13"|
-|Leitura contínua |"f14"|
-|Anunciar o caracter actual em revisão |"f15"|
-|Anunciar a linha actual em revisão |"f16"|
-|Anunciar a palavra actual em revisão |"f15+f16"|
-|Mover para a linha anterior em revisão |"lWheelUp", "rWheelUp"|
-|Mover para a próxima linha em revisão |"lWheelDown", "rWheelDown"|
-|Tecla windows+d (minimizar todas as aplicações) |"attribute1"|
-|Tecla Windows+e (Este PC) |"attribute2"|
-|Tecla windows+b (Mover para a Área de notificações) |"attribute3"|
-|Tecla Windows+i (Definições do Windows) |"attribute4"|
+|Navegar para o objecto sob o rato |`end1+end2`|
+|Mover o foco do sistema ou o cursor para o objecto actual da revisão |`eCursor1+eCursor2`|
+|Alternar Braille segue |`cursor1+cursor2`|
+|Move a linha braille para a linha anterior |`up1`, `up2`, `up3`|
+|Move a linha braille para a linha seguinte |`down1`, `down2`, `down3`|
+|Deslocar a linha braille para trás |`left`, `lWheelLeft`, `rWheelLeft`|
+|Deslocar a linha braille para a frente |`right`, `lWheelRight`, `rWheelRight`|
+|Encaminhar para a célula braille |`routing`|
+|Anunciar formatação do caracter da célula Braille |`secondary routing`|
+|Alternar Apresentação do contexto do foco |`attribute1+attribute3`|
+|Alternar entre os Modos de Voz |`attribute2+attribute4`|
+|Muda para o modo de revisão anterior |`f1`|
+|Muda para o modo de revisão seguinte |`f2`|
+|Mover para o objecto ascendente |`f3`|
+|Mover para o primeiro objecto descendente |`f4`|
+|Mover para o objecto anterior |`f5`|
+|Mover para o objecto seguinte |`f6`|
+|Anunciar o objecto de navegação actual |`f7`|
+|Anunciar localização do cursor de revisão |`f8`|
+|Mostra as configurações em braile |`f1+home1`, `f9+home2`|
+|Lê a barra de estado e move o objeto de navegação para ela |`f1+end1`, `f9+end2`|
+|Alternar entre as formas do cursor Braile |`f1+eCursor1`, `f9+eCursor2` |
+|Alternar o cursor Braille |`f1+cursor1`, `f9+cursor2`|
+|Alternar modo Mostrar mensagens Braille |`f1+f2`, `f9+f10`|
+|Alternar o estado do Braille mostrar selecção |`f1+f5`, `f9+f14`|
+|Alterna entre as opções do "Braille move o cursor do sistema quando o cursor de revisão é encaminhado" |`f1+f3`, `f9+f11`|
+|Activar o objecto de navegação actual |`f7+f8`|
+|Anunciar hora/data |`f9`|
+|Anunciar o estado da bateria e tempo restante se não ligada à corrente |`f10`|
+|Anunciar o título |`f11`|
+|Anunciar a Barra de Estado |`f12`|
+|Anunciar a linha actual |`f13`|
+|Leitura contínua |`f14`|
+|Anunciar o caracter actual em revisão |`f15`|
+|Anunciar a linha actual em revisão |`f16`|
+|Anunciar a palavra actual em revisão |`f15+f16`|
+|Mover para a linha anterior em revisão |`lWheelUp`, `rWheelUp`|
+|Mover para a próxima linha em revisão |`lWheelDown`, `rWheelDown`|
+|Tecla `windows+d` (minimizar todas as aplicações) |`attribute1`|
+|Tecla `Windows+e` (Este PC) |`attribute2`|
+|Tecla `windows+b` (Mover para a Área de notificações) |`attribute3`|
+|Tecla `Windows+i` (Definições do Windows) |`attribute4`|
 
 <!-- KC:endInclude -->
 
@@ -4902,9 +4902,9 @@ O NVDA permite a instalação de extras personalizados, que podem executar códi
 O NVDA também permite que os utilizadores executem código arbitrário através da Consola Python do NVDA.
 O modo seguro do NVDA impede que os utilizadores modifiquem a sua configuração do NVDA e limita o acesso não autorizado ao sistema.
 
-O NVDA corre em modo seguro quando executado em [ecrãs seguros](#SecureScreens), a menos que o "serviceDebug" [parâmetros do sistema](#SystemWideParameters) esteja activado.
-Para forçar o NVDA a iniciar sempre em modo seguro, defina o "forceSecureMode" [parâmetros do sistema](#SystemWideParameters).
-O NVDA também pode ser iniciado em modo seguro com o parâmetro "-s" [de linha de comando](#CommandLineOptions).
+O NVDA corre em modo seguro quando executado em [ecrãs seguros](#SecureScreens), a menos que o `serviceDebug` [parâmetros do sistema](#SystemWideParameters) esteja activado.
+Para forçar o NVDA a iniciar sempre em modo seguro, defina o `forceSecureMode` [parâmetros do sistema](#SystemWideParameters).
+O NVDA também pode ser iniciado em modo seguro com o parâmetro `-s` [de linha de comando](#CommandLineOptions).
 
 O modo de segurança desactiva:
 
@@ -4919,7 +4919,7 @@ O modo de segurança desactiva:
 * O [Visualizador Braille](#BrailleViewer) e o [Visualizador de discurso](#SpeechViewer)
 * A abertura pelo menu do NVDA de documentos externos como o Manual do utilizador e Contribuidores
 
-As cópias instaladas do NVDA armazenam as suas configurações, incluindo extras, em "%APPDATA%\nvda".
+As cópias instaladas do NVDA armazenam as suas configurações, incluindo extras, em `%APPDATA%\nvda`.
 Para evitar que os utilizadores do NVDA modifiquem as suas configurações ou extras diretamente, o acesso do utilizador a essa pasta também deve ser restrito.
 
 O modo seguro é ineficaz para cópias portáteis do NVDA.
@@ -4933,16 +4933,16 @@ O modo seguro congela as alterações na configuração do NVDA, portanto, certi
 
 ### ecrãs seguros {#SecureScreens}
 
-NVDA corre em [modo seguro](#SecureMode) quando executado em ecrãs seguros, a menos que o parâmetro "serviceDebug" [dos Parâmetros do sistema](#SystemWideParameters) esteja activado.
+O NVDA corre em [modo seguro](#SecureMode) quando executado em ecrãs seguros, a menos que o parâmetro `serviceDebug` [dos Parâmetros do sistema](#SystemWideParameters) esteja activado.
 
 Ao correr a partir de um ecrã seguro, o NVDA utiliza o perfil de sistema para as preferências.
 As preferências do utilizador do NVDA podem ser copiadas para [utilização em ecrãs seguros](#GeneralSettingsCopySettings).
 
-Os ecrãs Seguro incluem:
+Os ecrãs Seguros incluem:
 
 * O ecrã de início de sessão do Windows
 * O diálogo Controlo de Acesso do Utilizador, activo quando se executa uma acção como administrador
- * Isto inclui a instalação de programas
+  * Isto inclui a instalação de programas
 
 ### Opções de linha de comandos {#CommandLineOptions}
 
@@ -4950,7 +4950,7 @@ O NVDA pode aceitar uma ou mais opções adicionais, quando inicia, que alteram 
 Pode passar todas as opções que necessitar.
 Estas opções podem ser passadas ao iniciar a partir de um atalho (nas propriedades do atalho), a partir do diálogo Executar (Menu Iniciar -> Executar ou Windows+r) ou da linha de comandos.
 As opções devem ser separadas do nome do ficheiro executável do NVDA e de outras opções por um espaço.
-Por exemplo, uma opção útil é "--disable-addons", que indica ao NVDA para suspender todos os extras.
+Por exemplo, uma opção útil é `--disable-addons`, que indica ao NVDA para suspender todos os extras.
 Isto permite determinar se um problema é provocado por algum extra e para recuperar de um problema grave provocado por um extra.
 
 Como exemplo, pode sair da cópia em execução do NVDA escrevendo o seguinte na janela Executar::
@@ -4960,62 +4960,62 @@ Como exemplo, pode sair da cópia em execução do NVDA escrevendo o seguinte na
 Algumas das opções têm uma versão curta e uma longa, enquanto algumas só têm a longa.
 Para as que têm uma versão curta, pode combiná-las como se segue:
 
-| . {.hideHeaderRow} |. |.|
-|---|---|---|
-|`` nvda -mc CONFIGPATH`` |Isto iniciará o NVDA com os sons e mensagens de início desactivadas e a configuração especificada|
+| . {.hideHeaderRow} |.|
+|---|---|
+|`nvda -mc CONFIGPATH` |Isto iniciará o NVDA com os sons e mensagens de início desactivadas e a configuração especificada|
 |`nvda -mc CONFIGPATH --disable-addons` |Igual à anterior mas também com os extras desactivados|
 
 Algumas das opções da linha de comando aceitam parâmetros adicionais, por exemplo quão detalhado o ficheiro de log deve ser ou o caminho para as configurações do utilizador.
-Esses parâmetros devem ser colocados depois da opção, separados da opção por um espaço, se estivermos a usar a versão curta ou um sinal de igual (=), se usarmos a versão longa. Por exemplo:
+Esses parâmetros devem ser colocados depois da opção, separados da opção por um espaço, se estivermos a usar a versão curta ou um sinal de igual (`=`), se usarmos a versão longa. Por exemplo:
 
-| . {.hideHeaderRow} |. |.|
-|---|---|---|
+| . {.hideHeaderRow} |.|
+|---|---|
 |`nvda -l 10` |Informa o NVDA para iniciar com o nível de registo definido para depuração|
-|`nvda --log-file=c:\nvda.log` |Informa o NVDA para escrever o ficheiro de log em c:\nvda.log|
-|`nvda --log-level=20 -f c:\nvda.log` |Informa o NVDA para iniciar com o nível de registo definido para info e para guardar o ficheiro em c:\nvda.log|
+|`nvda --log-file=c:\nvda.log` |Informa o NVDA para escrever o ficheiro de log em `c:\nvda.log`|
+|`nvda --log-level=20 -f c:\nvda.log` |Informa o NVDA para iniciar com o nível de registo definido para info e para guardar o ficheiro em `c:\nvda.log`|
 
 Seguidamente, apresentam-se as opções para a linha de comando para o NVDA
 
 | Curta |Longa |Descrição|
 |---|---|---|
-|"-h" |"--help" |Mostra a ajuda da linha de comandos e sai|
-|"-q" |"--quit" |Sai da cópia em execução do NVDA|
-|"-k" |"--check-running" |Anuncia se o NVDA está em execução via código de saída; 0 se em execução, 1 se não em execução|
-|"-f NomeDoFicheiroDeRegisto" |"--log-file=NomeDoFicheiroDeRegisto" |Especifica em que ficheiro escrever as informações de registo. O registo é sempre desativado se o modo seguro estiver activo.|
-|"-l LOGLEVEL" |"--log-level=LOGLEVEL" |O nível mais baixo de mensagens registadas (depuração 10, input/output 12, aviso de depuração 15, info 20, desactivado 100). O registo é sempre desativado se o modo seguro estiver activo.|
-|"-c CAMINHO" |"--config-path=CAMINHO" |O caminho onde estão as configurações do NVDA. O caminho padrão é sempre utilizado se o modo seguro estiver activo.|
-|None |"--lang=LANGUAGE" |Sobrepõe-se ao idioma  configurado no NVDA. "Windows" para o padrão do utilizador actual, "pt_PT" para português, etc.|
-|"-m" |"--minimal" |Sem sons, sem interface, sem mensagem de início, etc|
-|"-s" |"--secure" |Inicia o NVDA em [modo seguro](#SecureMode)|
-|None |"--disable-addons" |Os extras serão desacttivados|
-|None |"--debug-logging" |Activa o nível de registo para Depuração apenas para a próxima execução. Esta definição substitui qualquer outra definição para o nível de registo ( --loglevel, -l) argumento dado, incluindo sem registo.|
-|None |"--no-logging" |Desactiva totalmente o registo ao usar o NVDA. Esta configuração pode ser sobreescrita se um nível de registo ( --loglevel, -l) for especificado pela linha de comando ou se o registo em depuração estiver activado.|
-|None |"--no-sr-flag" |Não alterar a flag que sinaliza a presença de um leitor de ecrã no sistema|
-|None |"--install" |Installa o NVDA e inicia a cópia instalada|
-|None |"--install-silent" |Instala o NVDA silenciosamente e não inicia a cópia instalada|
-|None |"--enable-start-on-logon=True/False" |Ao instalar, activa o [Usar o NVDA no início de sessão do Windows](#StartAtWindowsLogon)|
-|None |"~~copy-portable-config" |Ao instalar copiar a configuração portátil (~~config-path, -c) para a conta do utilizador|
-|None |"--create-portable" |Cria uma cópia portátil do NVDA iniciando a cópia criada. Requer que --portable-path seja especificado|
-|None |"--create-portable-silent" |Cria uma cópia portátil do NVDA sem iniciar a cópia criada. Requer que --portable-path seja especificado|
-|None |"--portable-path=PORTABLEPATH" |O caminho da pasta onde a cópia portátil vai ser criada|
+|`-h` |`--help` |Mostra a ajuda da linha de comandos e sai|
+|`-q` |`--quit` |Sai da cópia em execução do NVDA|
+|`-k` |`--check-running` |Anuncia se o NVDA está em execução via código de saída; 0 se em execução, 1 se não em execução|
+|`-f NomeDoFicheiroDeRegisto` |`--log-file=NomeDoFicheiroDeRegisto` |Especifica em que ficheiro escrever as informações de registo. O registo é sempre desactivado se o modo seguro estiver activo.|
+|`-l LOGLEVEL` |`--log-level=LOGLEVEL` |O nível mais baixo de mensagens registadas (depuração 10, input/output 12, aviso de depuração 15, info 20, desactivado 100). O registo é sempre desactivado se o modo seguro estiver activo.|
+|`-c CAMINHO` |`--config-path=CAMINHO` |O caminho onde estão as configurações do NVDA. O caminho padrão é sempre utilizado se o modo seguro estiver activo.|
+|None |`--lang=LANGUAGE` |Sobrepõe-se ao idioma  configurado no NVDA. "Windows" para o padrão do utilizador actual, "pt_PT" para português, etc.|
+|`-m` |`--minimal` |Sem sons, sem interface, sem mensagem de início, etc|
+|`-s` |`--secure` |Inicia o NVDA em [modo seguro](#SecureMode)|
+|None |`--disable-addons` |Os extras serão desacttivados|
+|None |`--debug-logging` |Activa o nível de registo para Depuração apenas para esta execução. Esta definição substitui qualquer outra definição para o argumento especificado para o nível de registo (`--loglevel`, `-l`), incluindo sem registo.|
+|None |`--no-logging` |Desactiva totalmente o registo ao usar o NVDA. Esta configuração pode ser sobreescrita se um nível de registo (`--loglevel`, `-l`) for especificado pela linha de comando ou se o registo em depuração estiver activado.|
+|None |`--no-sr-flag` |Não alterar a flag que sinaliza a presença de um leitor de ecrã no sistema|
+|None |`--install` |Installa o NVDA e inicia a cópia instalada|
+|None |`--install-silent` |Instala o NVDA silenciosamente e não inicia a cópia instalada|
+|None |`--enable-start-on-logon=True|False` |Ao instalar, activa o [Usar o NVDA no início de sessão do Windows](#StartAtWindowsLogon)|
+|None |`--copy-portable-config` |Ao instalar copiar a configuração portátil da pasta especificada (`--config-path`, `-c`) para a conta do utilizador|
+|None |`--create-portable` |Cria uma cópia portátil do NVDA iniciando a cópia criada. Requer que `--portable-path` seja especificado|
+|None |`--create-portable-silent` |Cria uma cópia portátil do NVDA sem iniciar a cópia criada. Requer que `--portable-path` seja especificado|
+|None |`--portable-path=PORTABLEPATH` |O caminho da pasta onde a cópia portátil vai ser criada|
 
 ### Parâmetros do Sistema {#SystemWideParameters}
 
 O NVDA permite que a configuração de alguns valores no registo do sistema , alterem o comportamento do NVDA em relação às variáveis do sistema.
 Esses valores são guardados no registo numa das seguintes chaves:
 
-* Sistema de 32-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
-* Sistema de 64-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+* Sistema de 32-bit: `HKEY_LOCAL_MACHINE\SOFTWARE\nvda`
+* Sistema de 64-bit: `HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda`
 
 Os seguintes valores podem ser configurados nestas chaves:
 
 | Nome |Tipo |Valores possíveis |Descrição|
 |---|---|---|---|
-|configInLocalAppData |DWORD |0 (padrão) para desactivar, 1 para activar |Se activo, guarda as configurações do utilizador do NVDA na pasta appdata\local, em vez de appdata\roaming|
-|serviceDebug |DWORD |0 (padrão) para desactivar, 1 para activar |Se activo, desactiva o [modo seguro](#SecureMode) em janelas de [Ambiente seguro](#SecureScreens) do windows. Devido às graves implicações de segurança, o uso desta opção é fortemente desaconselhado!|
-|"forceSecureMode" |DWORD |0 (padrão) para desactivar, 1 para activar |Se activado, força o [Secure Mode](#SecureMode) a ser ativado ao executar o NVDA.|
+|`configInLocalAppData` |DWORD |0 (padrão) para desactivar, 1 para activar |Se activo, guarda as configurações do utilizador do NVDA na pasta appdata\local, em vez de appdata\roaming|
+|`serviceDebug` |DWORD |0 (padrão) para desactivar, 1 para activar |Se activo, desactiva o [modo seguro](#SecureMode) em janelas de [Ambiente seguro](#SecureScreens) do windows. Devido às graves implicações de segurança, o uso desta opção é fortemente desaconselhado!|
+|`forceSecureMode` |DWORD |0 (padrão) para desactivar, 1 para activar |Se activado, força o [Secure Mode](#SecureMode) a ser ativado ao executar o NVDA.|
 
-## Mais Informações {#toc361}
+## Mais Informações {#FurtherInformation}
 
 Caso necessite de mais informações ou suporte ao NVDA, por favor, visite a [página Internet do NVDA](NVDA_URL).
 Aqui poderá encontrar documentação adicional, bem como suporte técnico e recursos da comunidade.
