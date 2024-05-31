@@ -60,7 +60,7 @@ Naprawiono dużo błędó w aplikacjach, takich jak Thunderbird, Adobe Reader, p
 
 * Add-on Store:
   * Minimalna i ostatnia testowana wersja są wyświetlane w rozdziale dla każdego dodatku "inne szczegóły" . (#15776, @Nael-Sayegh)
-  * Działanie recenzji społeczności  będzie dostępne, a strona internetowa z recenzjami wyświetli się w panelu szczegółów, we wszystkich kartach właściwości add-on store. (#16179, @nvdaes)
+  * Działanie recenzji społeczności  będzie dostępne we wszystkich kartach właściwości add-on store. (#16179, @nvdaes)
 * Aktualizacje komponentów:
   * Zaktualizowano LibLouis Braille translator do wersji [3.29.0](https://github.com/liblouis/liblouis/releases/tag/v3.29.0). (#16259, @codeofdusk)
     * Nowe tablice brajlowskie z możliwością wyświetlania wielkich liter dla języków białoruskiego i ukraińskiego.
@@ -94,6 +94,7 @@ Naprawiono dużo błędó w aplikacjach, takich jak Thunderbird, Adobe Reader, p
 * W Firefoxie i w przeglądarkach opartych na Chromium, NVDA poprawnie wejdzie do trybu fokusu w polach edycyjnych w listach prezentacyjnych (ul / ol). (#16325)
 * Stan kolumn jest automatycznie odczytywany podczas zaznaczania kolumn w liście wiadomości w Thunderbirdzie. (#16323)
 * Opcja wiersza poleceń `-h`/`--help` ponownie działą prawidłowo. (#16522, @XLTechie)
+* Wsparcie dla programu Poedit używanego do tlumaczenia w wersij 3.4 lub nowszej, działa poprawnie podczas tłumaczenia na języki z jedną lub dwie formy liczby mnogiej (na przykład, dla chińskiego i polskiego). (#16318)
 
 ## 2024.1
 
