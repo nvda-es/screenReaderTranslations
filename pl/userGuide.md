@@ -3139,8 +3139,7 @@ Uwaga:
 
 * W celu zachowania emulowanych skrótów klawiszowych, należy najpierw przypisać do nich polecenie NVDA.
 * Przypisanie polecenia NVDA korzystającego z klawiszy modyfikujących do emulowanego skrótu pozbawionego  modyfikatorów. 
-Na przykład, przypisanie emulowanego polecenia `a` do polecenia `CTRL+M` może skończyć się 
-W aplikacji która dostaje `ctrl+a`.
+Na przykład, przypisanie emulowanego polecenia `a` do polecenia `CTRL+M` może skończyć się  W aplikacji która dostaje `ctrl+a`.
 
 Po zakończeniu wprowadzania zmian, naciśnij przycisk OK aby je zachować albo przycisk Anuluj, aby odrzucić.
 
