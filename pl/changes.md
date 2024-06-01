@@ -1,4 +1,4 @@
-# ﻿Co nowego w NVDA?
+# Co nowego w NVDA?
 
 
 ### Zmiany dla programistów
