@@ -302,13 +302,15 @@ Bij eerste opening van het venster kan het enkele seconden duren voordat de add-
 NVDA zal de naam van de eerste add-on voorlezen zodra het laden van de  lijst met add-ons voltooid is.
 Beschikbare add-ons worden alfabetisch gerankschikt in de lijstweergave.
 Zo ga je door de lijst om meer te weten te komen over een specifieke add-on:
+
+
 1. Gebruik de `pijltjestoetsen` of druk de eerste letter in van de naam van een add-on om de lijst te doorlopen.
 1. Druk eenmaal op `tab` om naar de beschrijving van de op dat moment geselecteerde add-on te gaan.
 1. Gebruik de [Leestoetsen](#ReadingText) of `pijltjestoetsen` om de volledige beschrijving te lezen.
 1. Druk op `tab` om bij de knop "Acties" te komen, waarmee je o.a. de add-on kunt installeren.
 1. Druk op `tab` voor meer Details", zoals naam van de uitgever, versie en homepage.
 1. Om terug te gaan naar de  lijst met add-ons, druk je op  `alt+a`, dan wel op  `shift+tab` terug naar de lijst "Beschikbare add-ons".
-+
+
 #### Naar add-onszoeken  {#SearchingForAddons}
 Naast bladeren door alle beschikbare add-ons, is het ook mogelijk getoonde add-ons te sorteren.
 Om te zoeken druk je op `alt+s` om naar het "zoekveld" te springen en typ daarin dan de tekst waarmee je wilt zoeken.
@@ -319,6 +321,7 @@ Eenmaal gereed, druk je op `tab` om naar de gesorteerde lijst met add-ons te gaa
 #### Add-ons installeren {#InstallingAddons}
 
 Zo installeer je een add-on:
+
 1. Terwijl de focus op een add-on staat die je wilt installeren druk je op enter`.
 1. Het menu  acties opent zich en er verschijnt een lijst met mogelijke acties; de eerste actie is "Installeren".
 1. Om de add-on te installeren druk je op `i`, of op `pijlOmlaag` en druk je op `enter`.
@@ -343,7 +346,7 @@ Na het in- of uitschakelen dan wel verwijderen van add-ons, word je gevraagd NVD
 Deze wijzigingen worden pas van kracht zodra NVDA herstart is.
 Merk op dat in dit dialoogvemster `escape` hetzelfde werkt als de knop `Sluiten`.
 
-### Add-ons bijwerken {#UpdatingAddons}
+#### Add-ons bijwerken {#UpdatingAddons}
 Als er een update is voor een add-on die je geïnstalleerd hebt, tref je die aan in het tabblad met "Bij te werken add-ons".
 Druk op  `control+tab` om naar dit tabblad te gaan vanuit elke willekeurige plaats in de Add-on Store.
 De status van de add-on is voor zien van het predikaat "Update beschikbaar".
