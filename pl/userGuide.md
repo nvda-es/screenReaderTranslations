@@ -302,6 +302,7 @@ Gdy okno otworzy się pierwszy raz, potrzebna pare sekund, aby dodatki wczytały
 NVDA przeczyta nazwę pierwszego dodatku po wczytaniu listy dodatków.
 Dostępne dodatki są wylistowane alfabetycznie w wielokolumnowej liście.
 Aby przeglądać listę i znaleźć informacje o określonym dodatku:
+
 1. Używaj `klawiszy strzałek` oraz naciśnij pierwszą literę nazwy dodatku aby się przemieszczać po liście.
 1. Naciśnij jeden raz klawisz `tab` aby dotrzeć do opisu zaznaczonego dodatku.
 1. Używaj [klawiszy do odczytu](#ReadingText) lub `strzałek`, aby przeczytać cały opis.
@@ -319,6 +320,7 @@ Po zakonczeniu, naciśnij `tab` aby przejść do listy filtrowanej dodatków i p
 #### Instalowanie dodatków {#InstallingAddons}
 
 Aby zainstalować dodatek:
+
 1. Gdy zaznaczyłeś dodatek, którego chcesz zainstalować, naciśnij `enter`.
 1. Meni Działania otwiera się z listą działań. Pierwsze działanie to "zainstaluj".
 1. Aby zainstalować dodatek, naciśnij `z` lub `Strzałkę w dół` zaznaczyć opcję "zainstaluj" i naciśnij `enter`.
@@ -343,7 +345,7 @@ Po włączeniu, wyłączeniu, oraz usunięciu dodatków, pokaże się komunikat 
 Te zmiany zostaną wprowadzone tylko po ponownym uruchomieniu NVDA.
 Miewaj na uwadzę, że klawisz `escape` w Add-on store działa w ten sam sposób jak i przycisk zamknij.
 
-### Aktualizacja dodatków {#UpdatingAddons}
+#### Aktualizowanie dodatków {#UpdatingAddons}
 Gdy aktualizacja zainstalowanego dodatku zostanie wydana, ta pojawi się na karcie właściwości "dodatki do zaktualizowania".
 Naciśnij `control+tab` aby się do niej dostać z jakiejkolwiek części Add-on storu.
 Stan dodatku w Add-on store zostanie wyświetlony jako "aktualizacja jest dostępna".
