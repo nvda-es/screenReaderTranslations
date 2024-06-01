@@ -1100,25 +1100,25 @@ NVDA также может быть настроена таким образом
 
 <!-- KC:endInclude -->
 
-### Native Selection Mode {#NativeSelectionMode}
+### Режим исходного выделения {#NativeSelectionMode}
 
-By default when selecting text with the `shift+arrow` keys in Browse Mode, a selection is only made within NVDA's Browse Mode representation of the document, and not within the application itself.
-This means that the selection is not visible on screen, and copying text with `control+c` will only copy NVDA's plain text representation of the content. i.e. formatting of tables, or whether something is a link will not be copied.
-However, NVDA has a Native Selection Mode which can be turned on in particular Browse Mode documents (so far only Mozilla Firefox) which causes the document's native selection to follow NVDA's Browse Mode selection.
+По умолчанию при выделении текста клавишами `shift+клавиши-стрелки` в режиме просмотра, выделение происходит только в представлении документа в режиме просмотра NVDA, а не в самом приложении.
+Это означает, что выделение не видно на экране, а при копировании текста с помощью `control+c` будет скопировано только текстовое представление содержимого в NVDA, т. е. форматирование таблиц или наличие ссылки скопировано не будет .
+Однако в NVDA есть режим Исходного выделения, который можно включить в режиме обзора в определённых документах (пока только в Mozilla Firefox), и тогда исходное выделение документа будет следовать за выделением NVDA.
 
 <!-- KC:beginInclude -->
 
 | Название |Комбинация клавиш |Описание|
 |---|---|---|
-|Toggle Native Selection Mode on and off |`NVDA+shift+f10` |Toggles native selection mode on and off|
+|Переключает  режим исходного выделения |`NVDA+shift+f10` |Включает и выключает режим исходного выделения|
 
 <!-- KC:endInclude -->
 
-When Native Selection Mode is turned on, copying the selection with `control+c` will also use the application's own copy functionality, meaning that rich content will be copied to the clipboard, rather than plain text.
-This means that pasting this content into a program such as Microsoft Word or Excel, formatting such as tables, or whether something is a link will be included.
-Please note however that in native selection mode, some accessible labels or other information that NVDA generates in Browse Mode will not be included.
-Also, although the application will try its best to match the native selection to NVDA's Browse Mode selection, it may not always be completely accurate.
-However, for scenarios where you wish to copy an entire table or paragraph of rich content, this feature should prove useful.
+Когда включен режим "Исходное выделение", при копировании выделения с помощью `control+c` также будет использоваться собственная функция копирования приложения, то есть в буфер обмена будет скопирован не обычный текст, а форматированный контент.
+Это означает, что при вставке этого содержимого в такую программу, как Microsoft Word или Excel, форматирование, например, таблицы, или наличие ссылки будут учтены.
+Однако обратите внимание, что в режиме выделения некоторые метки доступности или другая информация, которую NVDA генерирует в режиме просмотра, не будут включены.
+Кроме того, несмотря на то, что приложение будет стараться максимально точно сопоставить "исходное" выделение с выделением NVDA в режиме просмотра, это не всегда может быть полностью точным.
+Однако для сценариев, в которых требуется скопировать целую таблицу или абзац большого объёма, эта функция может оказаться полезной.
 
 ## Чтение математических выражений {#ReadingMath}
 
@@ -2144,34 +2144,34 @@ NVDA предоставляет поддержку для командной к�
 
 Для быстрого переключения вариантов представления контекстной информации в любом месте, пожалуйста, назначьте желаемый жест на это действие в [диалоге Жесты ввода](#InputGestures).
 
-##### Interrupt speech while scrolling {#BrailleSettingsInterruptSpeech}
+##### Прерывание речи при прокрутке {#BrailleSettingsInterruptSpeech}
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Options |Default (Enabled), Enabled, Disabled|
-|Default |Enabled|
+|Опции |По умолчанию (включено), Включено, отключено|
+|По умолчанию |Включено|
 
-This setting determines if speech should be interrupted when the Braille display is scrolled backwards/forwards.
-Previous/next line commands always interrupt speech.
+Эта настройка определяет, будет ли прерываться речь при прокрутке брайлевского дисплея назад/вперёд.
+Команды предыдущей/следующей строки всегда прерывают речь.
 
-On-going speech might be a distraction while reading Braille.
-For this reason the option is enabled by default, interrupting speech when scrolling braille.
+Продолжающаяся речь может отвлекать во время чтения Брайля.
+По этой причине по умолчанию включена опция, прерывающая речь при прокрутке Брайля.
 
-Disabling this option allows speech to be heard while simultaneously reading Braille.
+Отключение этой опции позволяет слышать речь при одновременном чтении Брайля.
 
-##### Show selection {#BrailleSettingsShowSelection}
+##### Показывать выделение {#BrailleSettingsShowSelection}
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Options |Default (Enabled), Enabled, Disabled|
-|Default |Enabled|
+|Опции |По умолчанию (включено), Включено, отключено|
+|По умолчанию |Включено|
 
-This setting determines if selection indicator (dots 7 and 8) is shown by the braille display.
-The option is enabled by default so the selection indicator is shown.
-The selection indicator might be a distraction while reading.
-Disabling this option may improve readability.
+Эта настройка определяет, будет ли индикатор выделения (точки 7 и 8) отображаться на дисплее Брайля.
+По умолчанию опция включена, поэтому индикатор выделения отображается.
+Индикатор выделения может отвлекать во время чтения.
+Отключение этой опции может улучшить читаемость.
 
-To toggle show selection from anywhere, please assign a custom gesture using the [Input Gestures dialog](#InputGestures).
+Чтобы переключить показ выделения из любого места, назначьте пользовательский жест с помощью диалога [Жесты ввода](#InputGestures).
 
 #### Выбор брайлевского дисплея {#SelectBrailleDisplay}
 
@@ -2197,16 +2197,16 @@ To toggle show selection from anywhere, please assign a custom gesture using the
 
 Для получения более подробной информации о поддерживаемых брайлевских дисплеях и о том, подключение каких из них может определяться автоматически, пожалуйста, обратитесь к разделу [поддерживаемые брайлевские дисплеи](#SupportedBrailleDisplays).
 
-##### Displays to detect automatically {#SelectBrailleDisplayAutoDetect}
+##### Автоматически определяемые дисплеи {#SelectBrailleDisplayAutoDetect}
 
-When braille display is set to "Automatic", the check boxes in this list control allows you to enable and disable display drivers that will be involved in the automatic detection process.
-This allows you to exclude braille display drivers you do not use on a regular basis.
-For example, if you only own a display that requires the Baum driver to function, you may leave the Baum driver enabled whereas the other drivers can be disabled.
+Если для отображения  Брайля установлено значение "Определять автоматически", флажки в этом списке позволяют включать и отключать драйверы дисплеев, которые будут участвовать в процессе автоматического обнаружения.
+Это позволяет исключить драйверы дисплея Брайля, которые вы не используете на регулярной основе.
+Например, если у вас есть только один дисплей, для работы которого требуется драйвер Baum, вы можете оставить включённым драйвер Baum, а остальные драйверы отключить.
 
-By default, all drivers that support automatic detection are enabled.
-Any driver added, for example in a future version of NVDA or in an add-on, will also be enabled by default.
+По умолчанию все драйверы, поддерживающие автоматическое обнаружение, включены.
+Любой драйвер, добавленный, например, в будущей версии NVDA или в дополнении, также будет включён по умолчанию.
 
-You may consult the documentation for your braille display in the section [Supported Braille Displays](#SupportedBrailleDisplays) to check whether the driver supports automatic detection of displays.
+Чтобы проверить, поддерживает ли драйвер автоматическое обнаружение дисплеев, можно обратиться к документации к дисплею Брайля в разделе [Supported Braille Displays](#SupportedBrailleDisplays).
 
 ##### Порт {#SelectBrailleDisplayPort}
 
@@ -2833,29 +2833,29 @@ You may consult the documentation for your braille display in the section [Suppo
 Если установить флажок "Игнорировать пустые строки при  чтении отступов строк", то изменения отступов не будут сообщаться для пустых строк.
 Это может быть полезно при чтении документа, в котором пустые строки используются для разделения блоков текста с отступами, например в исходном коде программы.
 
-#### Document Navigation {#DocumentNavigation}
+#### Навигация по документу {#DocumentNavigation}
 
-This category allows you to adjust various aspects of document navigation.
+Эта категория позволяет настраивать различные аспекты навигации по документу.
 
-##### Paragraph Style {#ParagraphStyle}
+##### Стиль абзаца {#ParagraphStyle}
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Options |Default (Handled by application), Handled by application, Single line break, Multi line break|
-|Default |Handled by application|
+|Опции |По умолчанию (обрабатывается приложением), Обрабатывается приложением, Однострочный разрыв, многострочный разрыв|
+|По умолчанию |Обрабатывается приложением|
 
-This combo box allows you to select the paragraph style to be used when navigating by paragraphs with `control+upArrow` and `control+downArrow`.
-The available paragraph styles are:
+Этот комбинированный список позволяет выбрать стиль абзаца, который будет использоваться при навигации по абзацам с помощью `control+Стрелка вверх` и `control+Стрелка вниз`.
+Доступны следующие стили абзацев:
 
-* Handled by application: NVDA will let the application determine the previous or next paragraph, and NVDA will read the new paragraph when navigating.
-This style works best when the application supports paragraph navigation natively, and is the default.
-* Single line break: NVDA will attempt to determine the previous or next paragraph using a single line break as the paragraph indicator.
-This style works best when reading documents in an application which does not natively support paragraph navigation, and paragraphs in the document are marked by a single press of the `enter` key.
-* Multi line break: NVDA will attempt to determine the previous or next paragraph using at least one blank line (two presses of the `enter` key) as the paragraph indicator.
-This style works best when working with documents which use block paragraphs.
-Note that this paragraph style cannot be used in Microsoft Word or Microsoft Outlook, unless you are using UIA to access Microsoft Word controls.
+* Обрабатывается приложением: NVDA позволяет приложению определить предыдущий или следующий абзац, и NVDA читает новый абзац при навигации.
+Этот стиль лучше всего работает, если приложение изначально поддерживает навигацию по абзацам, и является стилем по умолчанию.
+* Однострочный разрыв строки: NVDA будет пытаться определить предыдущий или следующий абзац, используя в качестве индикатора абзаца разрыв одной строки.
+Этот стиль лучше всего работает при чтении документов в приложении, которое не поддерживает навигацию по абзацам, а абзацы в документе отмечаются одним нажатием клавиши `enter`.
+* Многострочный разрыв: NVDA попытается определить предыдущий или следующий абзац, используя в качестве индикатора абзаца как минимум одну пустую строку (два нажатия клавиши `enter`).
+Этот стиль лучше всего подходит для работы с документами, в которых используются печатные абзацы.
+Обратите внимание, что этот стиль абзаца нельзя использовать в Microsoft Word или Microsoft Outlook, если только вы не используете UIA для доступа к элементам управления Microsoft Word.
 
-You may toggle through the available paragraph styles from anywhere by assigning a key in the [Input Gestures dialog](#InputGestures).
+Вы можете переключать доступные стили абзацев из любого места, назначив клавишу в диалоге [Жесты ввода](#InputGestures).
 
 #### Windows OCR {#Win10OcrSettings}
 
@@ -2919,16 +2919,16 @@ You may toggle through the available paragraph styles from anywhere by assigning
 * Глобальная: NVDA регистрирует множество событий UIA, которые обрабатываются и отбрасываются внутри самой NVDA.
 Хотя в большинстве ситуаций отслеживание фокуса становится более надёжным, производительность значительно снижается, особенно в таких приложениях, как Microsoft Visual Studio.
 
-##### Use UI automation to access Microsoft Word document controls {#MSWordUIA}
+##### Использовать UI Automation для доступа к элементам управления документами Microsoft Word {#MSWordUIA}
 
-Configures whether or not NVDA should use the UI Automation accessibility API to access Microsoft Word documents, rather than the older Microsoft Word object model.
-This applies to documents in Microsoft word itself, plus messages in Microsoft Outlook.
-This setting contains the following values:
+Настраивает, должна ли NVDA использовать API доступности UI Automation для доступа к документам Microsoft Word, а не старую объектную модель Microsoft Word.
+Это относится к документам в самом Microsoft Word, а также к сообщениям в Microsoft Outlook.
+Этот параметр содержит следующие значения:
 
-* Default (where suitable)
-* Only where necessary: where the Microsoft Word object model is not  available at all
-* Where suitable: Microsoft Word version 16.0.15000 or higher, or where the Microsoft Word object model is unavailable
-* Always: where ever UI automation is available in Microsoft word (no matter how complete).
+* По умолчанию (если допустимо)
+* Только при необходимости: когда объектная модель Microsoft Word вообще недоступна.
+* Если допустимо: Microsoft Word версии 16.0.15000 или выше, или там, где объектная модель Microsoft Word недоступна.
+* Всегда: там, где автоматизация пользовательского интерфейса доступна в Microsoft Word (независимо от степени полноты).
 
 ##### Использовать UI Automation для доступа к таблицам Microsoft Excel (если возможно) {#UseUiaForExcel}
 
@@ -2939,36 +2939,36 @@ This setting contains the following values:
 Мы не рекомендуем включать эту настройку по умолчанию для большинства пользователей, хотя и приветствуем тех пользователей Microsoft Excel, использующих сборку 16.0.13522.10000 и выше, которые решили протестировать эту функцию и предоставить по ней обратную связь.
 Реализация UI Automation в Microsoft Excel постоянно изменяется, и версии Microsoft Office ниже, чем 16.0.13522.10000, могут не предоставлять достаточной информации для использования этой опции.
 
-##### Use enhanced event processing {#UIAEnhancedEventProcessing}
+##### Использовать расширенную обработку событий {#UIAEnhancedEventProcessing}
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Options |Default (Enabled), Disabled, Enabled|
-|Default |Enabled|
+|Опции |По умолчанию (включено), Отключено, Включено|
+|По умолчанию |Включено|
 
-When this option is enabled, NVDA should remain responsive when being flooded with many UI Automation events, e.g. large amounts of text in a terminal.
-After changing this option, you will need to restart NVDA for the change to take effect.
+Когда эта опция включена, NVDA должна оставаться отзывчивой при большом количестве событий автоматизации пользовательского интерфейса, например, при большом количестве текста в терминале.
+После изменения этого параметра необходимо перезапустить NVDA, чтобы изменения вступили в силу.
 
-##### Использовать UI Automation для доступа к Windows Console {#AdvancedSettingsConsoleUIA}
+##### Поддержка консоли Windows {#AdvancedSettingsConsoleUIA}
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Options |Automatic, UIA when available, Legacy|
-|Default |Automatic|
+|Опции |Автоматическая, UIA если возможно, устаревшая|
+|По умолчанию |Автоматическая|
 
-This option selects how NVDA interacts with the Windows Console used by command prompt, PowerShell, and the Windows Subsystem for Linux.
-It does not affect the modern Windows Terminal.
-In Windows 10 version 1709, Microsoft [added support for its UI Automation API to the console](https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/), bringing vastly improved performance and stability for screen readers that support it.
-In situations where UI Automation is unavailable or known to result in an inferior user experience, NVDA's legacy console support is available as a fallback.
-The Windows Console support combo box has three options:
+Этот параметр определяет, как NVDA взаимодействует с консолью Windows Console, используемой в командной строке, PowerShell и подсистеме Windows для Linux.
+Он не влияет на современный терминал Windows.
+В Windows 10 версии 1709 компания Microsoft [добавила поддержку своего UI Automation API в консоль](https://devblogs.microsoft.com/commandline/whats-new-in-windows-console-in-windows-10-fall-creators-update/), что значительно повысило производительность и стабильность работы средств чтения с экрана, которые её поддерживают.
+В ситуациях, когда UI Automation недоступен или известно, что она приведёт к ухудшению пользовательского опыта, в качестве запасного варианта доступна поддержка консоли NVDA.
+Комбинированный список поддержки консоли Windows имеет три варианта:
 
-* Automatic: Uses UI Automation in the version of Windows Console included with Windows 11 version 22H2 and later.
-This option is recommended and set by default.
-* UIA when available: Uses UI Automation in consoles if available, even for versions with incomplete or buggy implementations.
-While this limited functionality may be useful (and even sufficient for your usage), use of this option is entirely at your own risk and no support for it will be provided.
-* Legacy: UI Automation in the Windows Console will be completely disabled.
-The legacy fallback will always be used even in situations where UI Automation would provide a superior user experience.
-Therefore, selecting this option is not recommended unless you know what you are doing.
+* Автоматически: Использует UI Automation в версии Windows Console, входящей в состав Windows 11 версии 22H2 и более поздних версий.
+Этот вариант рекомендуется и установлен по умолчанию.
+* UIA при наличии: Использует UI Automation в консолях, если она доступна, даже в версиях с неполной или ошибочной реализацией.
+Хотя эта ограниченная функциональность может быть полезной (и даже достаточной для вашего использования), использование этой опции полностью на ваш страх и риск, и никакой поддержки для неё предоставленоне будет.
+* Устаревшая: Автоматизация пользовательского интерфейса в консоли Windows будет полностью отключена.
+Устаревший запасной вариант будет использоваться всегда, даже в ситуациях, когда автоматизация пользовательского интерфейса обеспечит лучший пользовательский опыт.
+Поэтому выбирать эту опцию не рекомендуется, если вы не знаете, что делаете.
 
 ##### Использовать UI Automation в Microsoft Edge и других web-браузерах на основе Chromium (если возможно) {#ChromiumUIA}
 
@@ -2981,13 +2981,13 @@ Therefore, selecting this option is not recommended unless you know what you are
 * Да: Если браузер поддерживает UIA, то NVDA будет его использовать.
 * Нет: NVDA не будет использовать UIA, даже если не может внедриться в процесс браузера. Это может быть полезно разработчикам, отлаживающим проблемы с IA2 и желающим гарантировать, что NVDA не возвращается к использованию UIA.
 
-##### Рецензии {#Annotations}
+##### Аннотации {#Annotations}
 
 Эта группа параметров используется для включения функций, которые добавляют экспериментальную поддержку ARIA-аннотаций.
 Некоторые из этих функций могут быть реализованы не полностью.
 
 <!-- KC:beginInclude -->
-To "Report summary of any annotation details at the system caret", press NVDA+d.
+Чтобы "Сообщить краткую информацию о любых примечаниях под системной кареткой", нажмите NVDA+d.
 <!-- KC:endInclude -->
 
 Существуют следующие параметры:
@@ -3020,7 +3020,7 @@ However, you may wish to enable it if you experience performance issues or insta
 
 ##### Use enhanced typed character support in legacy Windows Console when available {#AdvancedSettingsKeyboardSupportInLegacy}
 
-This option enables an alternative method for detecting typed characters in legacy Windows consoles.
+Этот параметр позволяет использовать альтернативный метод обнаружения введённых символов в устаревших консолях Windows.
 В то время как этот способ повышает производительность и в некоторых случаях предотвращает посимвольное чтение консольного вывода, он может быть несовместим с некоторыми терминальными программами.
 Эта функция доступна и включена по умолчанию в Windows 10, начиная с версии 1607, если UI Automation недоступен или отключён.
 Внимание: если этот флажок установлен, то вводимые символы, не отображаемые на экране (такие как пароли), всё равно будут проговариваться синтезатором речи.
