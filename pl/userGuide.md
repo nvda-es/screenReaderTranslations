@@ -2274,7 +2274,7 @@ Ta opcja nie jest dostępna jeżeli uruchomiłeś NVDA z wyłączonym [WASAPI do
 
 Funkcja podzielonego dźwięku umożliwia użytkownikom używanie pełnej funkcjonalności ich stereourządzeń.
 Ta funkcja umożliwia  separowanie dźwięku i mowy NVDA w jeden kanał (na przykład lewy) i innych programów w  inny kanał (na przykład prawy).
-Domyślnie funkcja podzielonego dźwięku jest wyłączona, co oznacza, że NVDA i inne programy będą odtwarzały dźwięki w obu kanałach, lweym i prawym.
+Domyślnie funkcja podzielonego dźwięku jest wyłączona.
 Skrótem klawiszowym można przełączać się między brybami mowy:
 <!-- KC:beginInclude -->
 
@@ -2286,18 +2286,21 @@ Skrótem klawiszowym można przełączać się między brybami mowy:
 
 Domyślnie, ty skrótem można przełączać się pomiędzy następujacymi trybami:
 
-* Wyłączony podział dźwiękowy: NVDA i inne programy będą w obu kanałąch.
+* Wyłączony podział dźwięku: NVDA nie dzieli dźwięk na kanały.
 * NVDA w lewym kanale, a inne programy w prawym: NVDA będzie mówiłą w lewym kanale, gdy inne dźwięki będą odtwarzane w prawym kanale.
 * NVDA w lewym a programy w obu kanałach: NVDA będzie mówiła w lewym kanale, gdy programy będą odtwarzały dźwięk w obu kanałąch.
 
 Istnieje więcej dostępnych zaawansowanych trybów podziału dźwięku dostępnych w liście rozwijanej ustawień.
+Wspośród tych trybów, tryby "NVDA w obu kanałach i programy w obu kanałach" wymusza przekierowanie wszystkich dźwięków w obu kanałach.
+Ten tryb różni się od trybu "podział dźwięku wyłączony" w przypadku zakłóceń innych trybów.
+
 Miewaj na uwadze,, że tryb podzielonego dźwięku nie działa jako mikser.
 Na przykład, jeżeli program odtwarza utwór w stereo, a tryb podziału dźwięku jest ustawiony na "NVDA w lewym a aplikacje w prawym", wtedy usłyszysz tylko prawy kanał utworu, a lewy kanał utworu będzie wyciszony.
 
 Ta opcja nie jest dostępna, jeżeli [wasapi](#WASAPI) w zaawansowanych ustawieniach jest wyłączony.
 
 Miewaj na uwadze, jeżeli NVDA się zawiesi, głośność dźwięków dla poszczególnych programów nie będzie można przywrócić, a te programy będa nadal odtwarzały dźwięki w jednym kanale po zawieszeniu się NVDA.
-Aby rozwiązać ten program, uruchom ponownie NVDA.
+Aby rozwiązać ten problem, uruchom ponownie NVDA i wybierz tryb "NVDA w obu kanałąch i programy w obu kanałach".
 
 ##### Dostosowywanie trybów mowy {#CustomizeSoundSplitModes}
 
@@ -2305,7 +2308,7 @@ Ta lista z polami wyboru umożliwia zaznaczenie które tryby mowy są dostępne 
 Tryby, które są odznaczone nie są dostępne do przełączania.
 Domyślnie, tylko trzy tryby są dostępne.
 
-* wyłączony podział dźwięku.
+* Podział dźwięku wyłączony.
 * NVDA w lewym kanale a programy w prawym.
 * NVDA w lewym kanale a programy w obu kanałach.
 
