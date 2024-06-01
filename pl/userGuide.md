@@ -1052,13 +1052,13 @@ Jednakże, w przypadkach, w których musisz skopiować calą tabele lub akapit z
 
 NVDA może czytać treść matematyczną w internecie i w innych aplikacjach, umożliwiając jej odczyt zarówno mową, jak i brajlem. 
 Jednakże, aby NVDA mogła czytać treść matematyczna, musisz zainstalować komponent matematyczny.
-Istneje kilka dostępnych dodatków dla NVDA v NVDA addon store, które umożliwiają odczyt treści matematycznej, włączając w to [MathCAT NVDA add-on](https://nsoiffer.github.io/MathCAT/) i [Access8Math](https://github.com/tsengwoody/Access8Math). 
+Istnieje kilka dostępnych dodatków dla NVDA w NVDA addon store, które umożliwiają odczyt treści matematycznej, włączając w to [MathCAT NVDA add-on](https://nsoiffer.github.io/MathCAT/) i [Access8Math](https://github.com/tsengwoody/Access8Math). 
 Prosimy przeczytać [rozdział add-on store](#AddonsManager) aby się dowiedzieć, jak instalować i przeglądac dodatki dla  NVDA.
 NVDA także może używać starszego program [MathPlayer](https://info.wiris.com/mathplayer-info) firmy Wiris jeżeli jest zainstalowany w systemie, choć ten program już nie jest wspieranyd.
 
 ### Wspierana treść matematyczna {#SupportedMathContent}
 
-Z odpowiednio zainstalowanym komponentem matematycznym, NVDA wspeira następujące typy treści matematycznej:
+Z odpowiednio zainstalowanym komponentem matematycznym, NVDA wspiera następujące typy treści matematycznej:
 
 * MathML w Mozilla Firefox, Microsoft Internet Explorer i Google Chrome.
 * Microsoft Word 365 współczesne matematyczne równania używając UI automation:
@@ -1189,8 +1189,8 @@ Aby zmieścić jak najwięcej informacji na monitorze brajlowskim, zdefiniowano 
 |tv |Widok drzewa|
 |tvbtn |przycisk widoku drzewa|
 |tv |element drzewa|
-|lv N |Widok drzewa ma hierarchiczny poziom N||
-|okn |okno|
+|lv N |Widok drzewa ma hierarchiczny poziom N|
+|wnd |okno|
 |⠤⠤⠤⠤⠤ |separator|
 |mrkd |Treść oznaczona|
 
@@ -2200,18 +2200,6 @@ Ten suwak umożliwia ustawienie głośności dźwięków NVDA razem z sygnałami
 To ustawienie odnosi skutek gdy opcja "Używaj WASAPI do wyjścia audio" jest włączona, a opcja "Głośność dźwięków NVDA jest spójna z głośnością  NVDA" jest wyłączona.
 Ta opcja nie jest dostępna jeżeli uruchomiłeś NVDA z wyłączonym [WASAPI do wyjścia audio](#WASAPI) z poziomu ustawień zaawansowanych.
 
-##### Czas podtrzymywania urządzenia audio podczas nieaktywności {#AudioAwakeTime}
-
-To pole edycji określa, jak długo  NVDA będzie trzymała otwarte urządzenie audio po ostatniej wypowiedzi.
-To umożliwia zapobieganie problemów z mową, takich jak odcięte części słów.
-To jest skutkowane tym, że w większości urządzenia Bluetoot wchodzą do trybu uśpienia.
-Ta opcja także może być pomocna w innych przypadkach, takich jak podczas uruchamiania NVDA w wirtualnej maszynie (na przykład Citrix Virtual Desktop), lub na niektórych komputerach przenośnych.
-
-Mniejsze ustawione wartosci mogą spowodować przycinanie mowy częściej, ponieważ urządzenie wchodzi do trybu uśpienia częściej.
-Ustawienie tej wartości na wyższe wartości może spowodować szybsze rozładowanie baterii urządzenia audio, ponieważ dłużej zostaje aktywne, a żaden dźwięk nie jest wysyłany.
-
-Aby wyłączyć tę funkcję, ustaw wartość na zero.
-
 ##### Tryb podzielonego dźwięku {#SelectSoundSplitMode}
 
 Funkcja podzielonego dźwięku umożliwia użytkownikom używanie pełnej funkcjonalności ich stereourządzeń.
@@ -2230,7 +2218,7 @@ Domyślnie, ty skrótem można przełączać się pomiędzy następujacymi tryba
 
 * Wyłączony podział dźwiękowy: NVDA i inne programy będą w obu kanałąch.
 * NVDA w lewym kanale, a inne programy w prawym: NVDA będzie mówiłą w lewym kanale, gdy inne dźwięki będą odtwarzane w prawym kanale.
-* NVDA NVDA w prawym, a inne programy w lewym: NVDA będzie mówiła w prawym kanale, gdy inne programy będą odtwarzały dźwięki w lewym kanale.
+* NVDA w lewym a programy w obu kanałach: NVDA będzie mówiła w lewym kanale, gdy programy będą odtwarzały dźwięk w obu kanałąch.
 
 Istnieje więcej dostępnych zaawansowanych trybów podziału dźwięku dostępnych w liście rozwijanej ustawień.
 Miewaj na uwadze,, że tryb podzielonego dźwięku nie działa jako mikser.
@@ -2247,12 +2235,24 @@ Ta lista z polami wyboru umożliwia zaznaczenie które tryby mowy są dostępne 
 Tryby, które są odznaczone nie są dostępne do przełączania.
 Domyślnie, tylko trzy tryby są dostępne.
 
-* Tryb podziału mowy wyłączony: Dźwięki innych programów i NVDA będą odtworzone w obu kanałach.
-* NVDA w lewym kanale a programy w prawym  kanale.
-* NVDA w prawym kanale a inne programy w lewym.
+* wyłączony podział dźwięku.
+* NVDA w lewym kanale a programy w prawym.
+* NVDA w lewym kanale a programy w obu kanałach.
 
 Miewaj na uwadze, że musisz zaznaczyć conajmniej jeden tryb.
 Ta opcja nie jest dostępna gdy [Wasapi](#WASAPI) jest wyłączony w ustawieniach zaawansowanych.
+
+##### Czas podtrzymywania urządzenia audio podczas nieaktywności {#AudioAwakeTime}
+
+To pole edycji określa, jak długo  NVDA będzie trzymała otwarte urządzenie audio po ostatniej wypowiedzi.
+To umożliwia zapobieganie problemów z mową, takich jak odcięte części słów.
+To jest skutkowane tym, że w większości urządzenia Bluetoot wchodzą do trybu uśpienia.
+Ta opcja także może być pomocna w innych przypadkach, takich jak podczas uruchamiania NVDA w wirtualnej maszynie (na przykład Citrix Virtual Desktop), lub na niektórych komputerach przenośnych.
+
+Mniejsze ustawione wartosci mogą spowodować przycinanie mowy częściej, ponieważ urządzenie wchodzi do trybu uśpienia częściej.
+Ustawienie tej wartości na wyższe wartości może spowodować szybsze rozładowanie baterii urządzenia audio, ponieważ dłużej zostaje aktywne, a żaden dźwięk nie jest wysyłany.
+
+Aby wyłączyć tę funkcję, ustaw wartość na zero.
 
 #### Ustawienia widoczności {#VisionSettings}
 
