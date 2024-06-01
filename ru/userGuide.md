@@ -3018,7 +3018,7 @@ This setting controls whether characters are spoken by [speak typed characters](
 For security purposes, this setting should be left disabled.
 However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting in consoles, or work in trusted environments and prefer password announcement.
 
-##### Use enhanced typed character support in legacy Windows Console when available {#AdvancedSettingsKeyboardSupportInLegacy}
+##### Использовать современную поддержку ввода символов в консоли Windows (если возможно) {#AdvancedSettingsKeyboardSupportInLegacy}
 
 Этот параметр позволяет использовать альтернативный метод обнаружения введённых символов в устаревших консолях Windows.
 В то время как этот способ повышает производительность и в некоторых случаях предотвращает посимвольное чтение консольного вывода, он может быть несовместим с некоторыми терминальными программами.
