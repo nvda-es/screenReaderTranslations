@@ -278,7 +278,77 @@ Większość funkcji NVDA mogą być włączone lub zmienione za pomocą ustawie
 Ustawienia i inne opcje dostępne są w menu programu NVDA.
 Aby otworzyć menu programu NVDA, naciśnij `NVDA+n`.
 Aby bezpośrednio otworzyć dialog ustawień ogólnych programu NVDA, naciśnij `NVDA+control+g`.
-Wielu ekranów ustawień mają skróty do bezpośredniego otwierania, takie jak na przykład `NVDA+control+s` do zmiany syntezatora, lub `NVDA+control+v` do zmiany innych ustawień głosu.
+Wielu ekranów ustawień posiada skróty do bezpośredniego otwierania, takie jak na przykład `NVDA+control+s` do zmiany syntezatora, lub `NVDA+control+v` do zmiany innych ustawień głosu.
+
+### Dodatki {#Addons}
+Dodatki to programy, dodające nową lub zmienioną funkcjonalność do czytnika ekranu NVDA.
+Dodatki są rozwijane przez społeczność NVDA oraz firmy trzecie i nie są powiązane z NV access.
+Ważne jest zaufanie do dewelopera dodatku przed jego używaniem, tak jak i z innymi programami.
+Prosimy zajrzeć do rozdziału [Instalowanie dodatków](#AddonStoreInstalling) aby się dowiedzieć, o sposobach weryfikacji dodatków.
+
+Po pierwszym otwarciu NVDA add-ons store, komunikat o dodatkach zostanie wyświetlony.
+Dodatki nie są sprawdzane przez NV Access  i mogą posiadać nieograniczony dostęp do informacji i danych.
+Naciśnij `spację`, jeśli przeczytałeś ostrzeżenie i nie chcesz go widzieć następnym razem.
+Naciśnij `tab` aby dotrzeć do przycisku "OK" a potem naciśnij `enter` w celu zaakceptowania ostrzeżenia i kontynuowania do add-on store.
+Rozdział "[Dodatki i Add-ons store](#AddonsManager)" podręcznika użytkownika zawiera informacje o każdej funkcji add-on storu.
+
+Add-on Store jest dostępne w w meni Narzędzia.
+Naciśnij `NVDA+n` aby otworzyć NVDA meni, potem `n` dla narzędzi, a potem `a` dla add-on storu.
+Po ptwarciu Add-on storu, pokazują się karta właściwości "otkryj dodatki" jeżeli nie ma zainstalowanych dodatków.
+Gdy dodatki są zainstalowane, Add-on Store otworzy się na karcie właściwości "zainstalowane dodatki".
+
+#### Otkrywaj dodatki {#AvailableAddons}
+Gdy okno otworzy się pierwszy raz, potrzebna pare sekund, aby dodatki wczytały się.
+NVDA przeczyta nazwę pierwszego dodatku po wczytaniu listy dodatków.
+Dostępne dodatki są wylistowane alfabetycznie w wielokolumnowej liście.
+Aby przeglądać listę i znaleźć informacje o określonym dodatku:
+1. Używaj `klawiszy strzałek` oraz naciśnij pierwszą literę nazwy dodatku aby się przemieszczać po liście.
+1. Naciśnij jeden raz klawisz `tab` aby dotrzeć do opisu zaznaczonego dodatku.
+1. Używaj [klawiszy do odczytu](#ReadingText) lub `strzałek`, aby przeczytać cały opis.
+1. Naciśnij `tab` aby dojść do przycisku "działania", który wspośród innych działań umożliwi instalację dodatku.
+1. Naciśnij `tab` aby dojść do części okna "więcej szczegółów", w którym podane są takie informacje jak wydawca, wersja i strona internetowa.
+1. Aby wrócić do listy dodatków, naciśnij `alt+a`, lub `shift+tab`.
+
+#### Szukanie dodatków {#SearchingForAddons}
+Możliwe jest filtrowanie dodatków w taki sam sposób, jak i ich przeglądanie.
+Aby wyszukiwać dodatki, naciśnij `alt+s` aby przejść do pola "szukaj" i wpisz szukany tekst.
+Pole wyszukiwania może zawierać takie informacje jak: identifikator dodatku, nazwę wyświetlaną, wydawcę, autora lub opis.
+Lista się zmienia podczas wpisywania słów kluczowych.
+Po zakonczeniu, naciśnij `tab` aby przejść do listy filtrowanej dodatków i przeglądaj wyniki.
+
+#### Instalowanie dodatków {#InstallingAddons}
+
+Aby zainstalować dodatek:
+1. Gdy zaznaczyłeś dodatek, którego chcesz zainstalować, naciśnij `enter`.
+1. Meni Działania otwiera się z listą działań. Pierwsze działanie to "zainstaluj".
+1. Aby zainstalować dodatek, naciśnij `z` lub `Strzałkę w dół` zaznaczyć opcję "zainstaluj" i naciśnij `enter`.
+1. Fokus powróci do listy dodatków a NVDA przeczyta szczegóły dodatku.
+1. Informacja o "Stanie" przeczytana przez NVDA zmieni się z "dostępny" na "pobieranie".
+1. Gdy pobieranie dodatku zostanei zakończone, stan zmieni się na "Pobrany, oczekujący na instalację".
+1. Powtórz te kroki z każdym dodatkiem, które chcesz zainstalować.
+1. Gdy zakończysz, naciśnij `tab` gdy przejdziesz do przycisku "zamknij", a potem naciśnij `enter`.
+1. Proces instalacji pobranych dodatków rozpocznie się po zamknięciu Add-on store.
+Podczas instalacji, pokażą się okna dialogowe, które trzeba zatwierdzić.
+1. Po instalacji dodatków, pokaże się okno dialogowe, które informuje o koniecznosci ponownego uruchomienia NVDA po wykonanych zmiana i zakończonej instalacji NVDA.
+1. Naciśnij `enter` aby ponownie uruchomić NVDA.
+
+#### Zarządzanie zainstalowanymi didatkami {#ManagingInstalledAddons}
+Naciśnij `control+tab` aby przemieszczać się pomiędzy kartami właściwości lub częściami Add-on Stora.
+Istnieją następujące karty właściwości: "zainstalowane dodatki", "dodatki do zaktualizowania", "otkryj dodatki" i "zainstalowane niezgodne dodatki".
+Każda z tych kart właściwości ułożona jest w podobny sposób: jako lista z dodatkami, panel zawierający więcej informacji o wybranym dodatku, i z możliwością wykonania działania na konkretnym dodatku.
+Meni "działania umożliwia włączanie i wyłączanie dodatków, a także ich instalację.
+Wyłączanie dodatków uniemożliwia ich wczytywanie przez NVDA, ale je pozostawia zainstalowane.
+Aby ponownie włączyć wyłączony dodatek, trzeba nacisnąć "włącz" z meni działania.
+Po włączeniu, wyłączeniu, oraz usunięciu dodatków, pokaże się komunikat o ponownym uruchomieniu po zamknięciu Add-on store.
+Te zmiany zostaną wprowadzone tylko po ponownym uruchomieniu NVDA.
+Miewaj na uwadzę, że klawisz `escape` w Add-on store działa w ten sam sposób jak i przycisk zamknij.
+
+### Aktualizacja dodatków {#UpdatingAddons}
+Gdy aktualizacja zainstalowanego dodatku zostanie wydana, ta pojawi się na karcie właściwości "dodatki do zaktualizowania".
+Naciśnij `control+tab` aby się do niej dostać z jakiejkolwiek części Add-on storu.
+Stan dodatku w Add-on store zostanie wyświetlony jako "aktualizacja jest dostępna".
+W tabeli pokaże się informacja o bieżącej i dostępnej wersji.
+Naciśnij `enter` na dodatku, aby otworzyć spis działań. Wybierz "Zaktualizuj".
 
 ### Społeczność {#Community}
 
