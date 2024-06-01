@@ -82,7 +82,7 @@ Dla szczegółowych informacji dotyczących wyjątków, skonsultuj się z dokume
 ## NVDA szybki start {#NVDAQuickStartGuide}
 
 Ten szybki start zawiera trzy główne rozdziały: pobieranie, podstawowe konfigurowanie, i uruchamianie NVDA.
-W tych rozdziałach zawarta jest informacja o zmianie ustawień, uczestnictwie w społeczeństwie, a także informacje o tym, jak dostać pomoc.
+W tych rozdziałach zawarta jest informacja o zmianie ustawień, używaniu dodatków, uczestnictwie w społeczeństwie, a także informacje o tym, jak dostać pomoc.
 Informacja w tym szybkim starcie jest zebrana z innych rozdziałów podręcznika użytkownika NVDA.
 Prosimy zajrzeć do kompletnego podręcznika użytkownika po więcej informacji o każdym temacie.
 
@@ -303,12 +303,12 @@ NVDA przeczyta nazwę pierwszego dodatku po wczytaniu listy dodatków.
 Dostępne dodatki są wylistowane alfabetycznie w wielokolumnowej liście.
 Aby przeglądać listę i znaleźć informacje o określonym dodatku:
 
-1. Używaj `klawiszy strzałek` oraz naciśnij pierwszą literę nazwy dodatku aby się przemieszczać po liście.
+1. Używaj klawiszy strzałek oraz naciśnij pierwszą literę nazwy dodatku aby się przemieszczać po liście.
 1. Naciśnij jeden raz klawisz `tab` aby dotrzeć do opisu zaznaczonego dodatku.
-1. Używaj [klawiszy do odczytu](#ReadingText) lub `strzałek`, aby przeczytać cały opis.
+1. Używaj [klawiszy do odczytu](#ReadingText) lub strzałek, aby przeczytać cały opis.
 1. Naciśnij `tab` aby dojść do przycisku "działania", który wspośród innych działań umożliwi instalację dodatku.
 1. Naciśnij `tab` aby dojść do części okna "więcej szczegółów", w którym podane są takie informacje jak wydawca, wersja i strona internetowa.
-1. Aby wrócić do listy dodatków, naciśnij `alt+a`, lub `shift+tab`.
+1. Aby wrócić do listy dodatków, naciśnij `alt+a`, lub `shift+tab`, dopóki nei wrócisz na listę.
 
 #### Szukanie dodatków {#SearchingForAddons}
 Możliwe jest filtrowanie dodatków w taki sam sposób, jak i ich przeglądanie.
@@ -349,7 +349,7 @@ Miewaj na uwadzę, że klawisz `escape` w Add-on store działa w ten sam sposób
 Gdy aktualizacja zainstalowanego dodatku zostanie wydana, ta pojawi się na karcie właściwości "dodatki do zaktualizowania".
 Naciśnij `control+tab` aby się do niej dostać z jakiejkolwiek części Add-on storu.
 Stan dodatku w Add-on store zostanie wyświetlony jako "aktualizacja jest dostępna".
-W tabeli pokaże się informacja o bieżącej i dostępnej wersji.
+Na liście pokaże się informacja o bieżącej i dostępnej wersji.
 Naciśnij `enter` na dodatku, aby otworzyć spis działań. Wybierz "Zaktualizuj".
 
 ### Społeczność {#Community}
