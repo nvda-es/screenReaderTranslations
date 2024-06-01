@@ -3002,21 +3002,21 @@ NVDA предоставляет поддержку для командной к�
   * Этот параметр находится на очень ранней стадии разработки, он основан на функциях браузера, которые пока имеют ограниченную доступность.
   * Ожидается, что это будет работать с Chromium 92.0.4479.0+
 
-##### Report live regions {#BrailleLiveRegions}
+##### Озвучивать интерактивные области {#BrailleLiveRegions}.
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Options |Default (Enabled), Disabled, Enabled|
-|Default |Enabled|
+|Опции |По умолчанию (включено), Отключено, Включено|
+|По умолчанию |Включено|
 
-This option selects whether NVDA reports changes in some dynamic web content in Braille.
-Disabling this option is equivalent to NVDA's behaviour in versions 2023.1 and earlier, which only reported these content changes in speech.
+Этот параметр определяет, будет ли NVDA сообщать по Брайлю об изменениях динамического веб-содержимого .
+Отключение этой опции эквивалентно поведению NVDA 2023.1 и более ранних версиях, которые сообщали об изменениях содержимого только в виде речи.
 
-##### Speak passwords in all enhanced terminals {#AdvancedSettingsWinConsoleSpeakPasswords}
+##### Читать пароли во всех современных терминалах {#AdvancedSettingsWinConsoleSpeakPasswords}
 
-This setting controls whether characters are spoken by [speak typed characters](#KeyboardSettingsSpeakTypedCharacters) or [speak typed words](#KeyboardSettingsSpeakTypedWords) in situations where the screen does not update (such as password entry) in some terminal programs, such as the Windows Console with UI automation support enabled and Mintty.
-For security purposes, this setting should be left disabled.
-However, you may wish to enable it if you experience performance issues or instability with typed character and/or word reporting in consoles, or work in trusted environments and prefer password announcement.
+Эта настройка контролирует, будут ли произноситься [символы](#KeyboardSettingsSpeakTypedCharacters) или [слова](#KeyboardSettingsSpeakTypedWords) в ситуациях, когда экран не обновляется (например, при вводе пароля) в некоторых терминальных программах, таких как Windows Console с включенной поддержкой UI automation и Mintty.
+В целях безопасности этот параметр следует оставить отключённым.
+Однако вы можете включить его, если испытываете проблемы с производительностью или нестабильность при отображении набранных символов и/или слов в консолях, или работаете в доверенных средах и предпочитаете объявление паролей.
 
 ##### Использовать современную поддержку ввода символов в консоли Windows (если возможно) {#AdvancedSettingsKeyboardSupportInLegacy}
 
