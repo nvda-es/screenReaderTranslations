@@ -289,7 +289,7 @@ API の重大な変更があります。
   * robotframeworkを6.1.1に更新 (#15544)
   * SConsを4.5.2に更新 (#15529, @LeonarddeR)
   * sphinxを7.2.6に更新 (#15544)
-  * wxPythonを4.2.1に更新 (#12551)
+  * wxPythonを4.2.2a コミット `0205c7c1b9022a5de3e3543f9304cfe53a32b488`に更新 (#12551, #16257)
 * 削除されたpip依存関係：
   * typing_extensions: Python 3.11でネイティブにサポートされるため不要になりました。 (#15544)
   * nose: unittest-xml-reporting でXMLレポートを生成するようになりました。 (#15544)
@@ -488,7 +488,8 @@ NVDAの文字認識は、新たなテキストが表示されたときにそれ�
 
 ### 開発者向けの変更
 
-* NVDAのAPIの非推奨および削除プロセスに関する情報は、[開発者ガイド](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API)を参照してください。
+NVDAのAPIの非推奨および削除プロセスに関する情報は、[開発者ガイド](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API)を参照してください。
+
 * `braille.handler.handleUpdate`と`braille.handler.handleReviewMove`は、即座に更新しないように変更されました。
 この変更前には、これらのメソッドが非常に頻繁に呼び出されると、多くのリソースが消耗されていました。
 これらのメソッドは、今後は各コアサイクルの終わりに更新をキューに入れます。
