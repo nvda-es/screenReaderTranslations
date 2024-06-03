@@ -40,7 +40,7 @@ NVDAの主な特徴は以下の通りです。
 ### システム要件 {#SystemRequirements}
 
 * オペレーティングシステム: 32ビット版と64ビット版の Windows 8.1, Windows 10, Windows 11 および Windows Server 2012 R2 以降のサーバー用オペレーティングシステム
- * AMD64 および ARM64 の Windows に対応
+  * AMD64 および ARM64 の Windows に対応
 * 150MB以上のディスク空き容量
 
 ### 国際化 {#Internationalization}
@@ -5020,3 +5020,4 @@ NVDAの実行ファイル名とオプション、およびオプション同士�
 NVDAに関して、さらに詳細な情報や助けが必要な場合は [NVDAのサイト](https://www.nvaccess.org/) を参照してください。
 ここには追加のドキュメント、そして技術サポートやコミュニティーのリソースがあります。
 また、NVDA開発に関する情報やリソースも提供しています。
+
