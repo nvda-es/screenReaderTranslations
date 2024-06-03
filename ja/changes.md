@@ -32,7 +32,7 @@ Thunderbird、Adobe Reader、ウェブブラウザ、Nudi、Geekbenchなどの�
     * 数式 (#16001, @mltony)
     * 同じスタイルのテキスト (#16000, @mltony)
     * 異なるスタイルのテキスト (#16000, @mltony)
-    * 簡単音声設定に最初または最後の値に移動したり値を大きく増減するコマンドが追加されました。(#13768, #16095, @rmcpantoja)
+  * 簡単音声設定に最初または最後の値に移動したり値を大きく増減するコマンドが追加されました。(#13768, #16095, @rmcpantoja)
     * 簡単音声設定の最初または最後の値に移動するコマンドにはジェスチャーの割り当てがありません。(#13768)
     * 簡単音声設定の値を大きく増減するコマンドとして以下が追加されました (#13768):
       * デスクトップ: `NVDA+Ctrl+pageUp` と `NVDA+Ctrl+pageDown`
@@ -223,7 +223,7 @@ Poeditで新たに追加されたアクセシビリティ機能（翻訳者ノ�
 
 ### 開発者向けの変更
 
-* NVDAのAPIの非推奨および削除プロセスに関する情報は、[開発者ガイド](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API)を参照してください。
+NVDAのAPIの非推奨および削除プロセスに関する情報は、[開発者ガイド](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API)を参照してください。
 
 * 注意: このリリースでは、既存のアドオンとの互換性が失われています。
 アドオンは再テストとマニフェストの更新を行う必要があります。
@@ -232,8 +232,7 @@ Poeditで新たに追加されたアクセシビリティ機能（翻訳者ノ�
 * 拡張ポイントの追加:
   * `treeInterceptorHandler.post_browseModeStateChange`. (#14969, @nvdaes)
   * `speech.speechCanceled`. (#15700, @LeonarddeR)
-    * `_onErrorSoundRequested`（`logHandler.getOnErrorSoundRequested()`を呼び出して取得する必要があります） (#15691, @CyrilleB79)
-  -
+  * `_onErrorSoundRequested`（`logHandler.getOnErrorSoundRequested()`を呼び出して取得する必要があります） (#15691, @CyrilleB79)
 * アドオンの翻訳で複数形を使用できるようになりました。 (#15661, @beqabeqa473)
 * Python [安定ABI](https://docs.python.org/3.11/c-api/stable.html)を利用する外部ライブラリを含むアドオンのために、バイナリ配布がpython3.dllを含むようになりました。 (#15674, @mzanm)
 * `BrailleDisplayDriver`基底クラスに、複数行の点字ディスプレイに関する情報を提供する`numRows`および`numCols`プロパティが追加されました。
