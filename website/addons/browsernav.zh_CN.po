@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-05-27 16:15+0000\n"
+"POT-Creation-Date: 2024-06-04 19:44+0000\n"
 "PO-Revision-Date: 2021-04-28 08:38+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -471,11 +471,20 @@ msgstr ""
 #. type: Plain text
 msgid ""
 "Starting from BrowserNav v2.5 you can customize your bookmarks with Python "
-"scripting. Scripting can be used for two purposes: 1. To enhance matching "
-"algorithm where existing match options are not enough. This applies to "
-"QuickJump, QuickSpeak, QuickClick, hierarchical and SkipClutter bookmarks.  "
-"2. To execute arbitrary Python code in order to automate certain actions on "
-"the web pages. This can be done via Script or Numeric Script bookmarks."
+"scripting. Scripting can be used for two purposes:"
+msgstr ""
+
+#. type: Bullet: '1. '
+msgid ""
+"To enhance matching algorithm where existing match options are not enough. "
+"This applies to QuickJump, QuickSpeak, QuickClick, hierarchical and "
+"SkipClutter bookmarks."
+msgstr ""
+
+#. type: Bullet: '2. '
+msgid ""
+"To execute arbitrary Python code in order to automate certain actions on the "
+"web pages. This can be done via Script or Numeric Script bookmarks."
 msgstr ""
 
 #. type: Title ####
@@ -484,11 +493,17 @@ msgid "Scripting API"
 msgstr ""
 
 #. type: Plain text
+msgid "In your script you are provided the following variables:"
+msgstr ""
+
+#. type: Bullet: '* '
 msgid ""
-"In your script you are provided the following variables: * `p` - current "
-"paragraph. This is an instance of `Paragraph` class defined in [paragraph.py]"
-"(addon/globalPlugins/browserNav/paragraph.py)  * `t` - current `textInfo` "
-"object."
+"`p` - current paragraph. This is an instance of `Paragraph` class defined in "
+"[paragraph.py](addon/globalPlugins/browserNav/paragraph.py)"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "`t` - current `textInfo` object."
 msgstr ""
 
 #. type: Plain text
@@ -523,10 +538,16 @@ msgid ""
 "point) and have BrowserNav speak message `s`."
 msgstr ""
 
+#. type: Bullet: '* '
+msgid ""
+"Call `match()` function to indicate a match. This function internally raises "
+"an Exception, so that execution of your script will be terminated after "
+"calling match. The function is defined as:"
+msgstr ""
+
 #. type: Plain text
 #, no-wrap
 msgid ""
-"* Call `match()` function to indicate a match. This function internally raises an Exception, so that execution of your script will be terminated after calling match. The function is defined as:\n"
 "    ```\n"
 "    def match(offset: int | TextInfo | Paragraph = None, message: str = None) -> None:\n"
 "    ```\n"
@@ -548,10 +569,15 @@ msgstr ""
 msgid "Example scripts"
 msgstr ""
 
+#. type: Bullet: '1. '
+msgid ""
+"This script checks that current paragraph is a link and that the text of the "
+"previous heading level 5 starts with text of current paragraph:"
+msgstr ""
+
 #. type: Plain text
 #, no-wrap
 msgid ""
-"1. This script checks that current paragraph is a link and that the text of the previous heading level 5 starts with text of current paragraph:\n"
 "    ```\n"
 "    try:\n"
 "        if controlTypes.Role.LINK in p.roles and p.previousHeading5.textInfo.text.startswith(p.text):\n"
@@ -560,11 +586,34 @@ msgid ""
 "    except NotFoundError:\n"
 "        return None\n"
 "    ```\n"
-"2. This script doesn't perform a match, but activates the last edit box on the page:\n"
-"    '''\n"
+msgstr ""
+
+#. type: Bullet: '2. '
+msgid ""
+"This script doesn't perform a match, but activates the last edit box on the "
+"page:"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"    ```\n"
 "    p.end.previous.previousEdit.activate()\n"
-"    '''\n"
-"4. This script finds username, which can be one or two paragraphs ahead; then it finds the beginning of the comment by analyzing font size; then it finds the end of the comment by searching for \"Reply\" text. Then it matches the entire body of the comment and adds username to be spoken prior to matched text:\n"
+"    ```\n"
+msgstr ""
+
+#. type: Bullet: '4. '
+msgid ""
+"This script finds username, which can be one or two paragraphs ahead; then "
+"it finds the beginning of the comment by analyzing font size; then it finds "
+"the end of the comment by searching for \"Reply\" text. Then it matches the "
+"entire body of the comment and adds username to be spoken prior to matched "
+"text:"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
 "    ```\n"
 "    user = p.next\n"
 "    if user.text == \"downvote\":\n"
@@ -589,14 +638,49 @@ msgid ""
 "        end = end.next\n"
 "    match(textInfoRange(begin, end), username)\n"
 "    ```\n"
-"5. This script is a generator, which means whatever it yields will be used as sleep time before the next line is executed. This script will be executed in a background thread in a non-blocking manner.\n"
-"    This script performs a series of actions:\n"
-"    * Finds a button with a given name and presses it.\n"
-"    * Enters dialog that pops up: `p.home.nextEmbeddedObject.activate()`\n"
-"    * Obtains newly focused element within that dialog: `d = getFocusParagraph()`\n"
-"    * Finds and checks checkbox in that dialog.\n"
-"    * Finds another button in that dialog window by name and presses it.\n"
-"    These steps are repeated 20 times via `retry` function. Then after 500 ms pause, it finds \"Run Query\" button and presses it.\n"
+msgstr ""
+
+#. type: Bullet: '5. '
+msgid ""
+"This script is a generator, which means whatever it yields will be used as "
+"sleep time before the next line is executed. This script will be executed in "
+"a background thread in a non-blocking manner."
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid "    This script performs a series of actions:\n"
+msgstr ""
+
+#. type: Bullet: '    * '
+msgid "Finds a button with a given name and presses it."
+msgstr ""
+
+#. type: Bullet: '    * '
+msgid "Enters dialog that pops up: `p.home.nextEmbeddedObject.activate()`"
+msgstr ""
+
+#. type: Bullet: '    * '
+msgid ""
+"Obtains newly focused element within that dialog: `d = getFocusParagraph()`"
+msgstr ""
+
+#. type: Bullet: '    * '
+msgid "Finds and checks checkbox in that dialog."
+msgstr ""
+
+#. type: Bullet: '    * '
+msgid "Finds another button in that dialog window by name and presses it."
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid "    These steps are repeated 20 times via `retry` function. Then after 500 ms pause, it finds \"Run Query\" button and presses it.\n"
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
 "    ```\n"
 "    def waitForDialogAndClickCheckbox():\n"
 "        try:\n"
@@ -618,7 +702,18 @@ msgid ""
 "    yield 500\n"
 "    yield from retry(lambda: p.home.find(\"Run Query\").activate(), count=10)\n"
 "    ```\n"
-"6. This is a numeric script since it takes `level` as input variable. This finds `level`-th edit box from the beginning of the page (or from the end if level is negative) and invokes `script_editJupyter` on it.\n"
+msgstr ""
+
+#. type: Bullet: '6. '
+msgid ""
+"This is a numeric script since it takes `level` as input variable. This "
+"finds `level`-th edit box from the beginning of the page (or from the end if "
+"level is negative) and invokes `script_editJupyter` on it."
+msgstr ""
+
+#. type: Plain text
+#, no-wrap
+msgid ""
 "    ```\n"
 "    if level > 0:\n"
 "        p = p.home\n"
