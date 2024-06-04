@@ -1069,6 +1069,15 @@ Please refer to [the developer guide](https://www.nvaccess.org/files/nvda/docume
 
 There are no deprecations proposed in 2022.3.
 
+## 2022.2.4
+
+Це виправлення випущено для усунення проблеми безпеки.
+
+### Виправлення
+
+* Виправлено експлойт, через який можна було відкрити консоль NVDA python через переглядач журналу на екрані блокування.
+([GHSA-585m-rpvv-93qg](https://github.com/nvaccess/nvda/security/advisories/GHSA-585m-rpvv-93qg))
+
 ## 2022.2.3
 
 Це патч для виправлення випадкової поломки API, яка виникла в 2022.2.1.
