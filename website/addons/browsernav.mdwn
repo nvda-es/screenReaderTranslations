@@ -103,12 +103,14 @@ In site configuration dialog you can specify a number of advanced options:
 ### Scripting
 
 Starting from BrowserNav v2.5 you can customize your bookmarks with Python scripting. Scripting can be used for two purposes:
+
 1. To enhance matching algorithm  where existing match options are not enough. This applies to QuickJump, QuickSpeak, QuickClick, hierarchical and SkipClutter bookmarks.
 2. To execute arbitrary Python code in order to automate certain actions on the web pages. This can be done via Script or Numeric Script bookmarks.
 
 #### Scripting API
 
 In your script you are provided the following variables:
+
 * `p` - current paragraph. This is an instance of `Paragraph` class defined in [paragraph.py](addon/globalPlugins/browserNav/paragraph.py)
 * `t` - current `textInfo` object.
 
@@ -121,6 +123,7 @@ Your script must decide whether current paragraph matches your custom rule or no
 * Return an integer number `i` to indicate that `i`-th following or `i`-th preceding paragraph matches and must be spoken instead of current paragraph.
 * Return tuple `(i: int, s:str)` to indicate match with offset (see previous point) and have BrowserNav speak message `s`.
 * Call `match()` function to indicate a match. This function internally raises an Exception, so that execution of your script will be terminated after calling match. The function is defined as:
+
     ```
     def match(offset: int | TextInfo | Paragraph = None, message: str = None) -> None:
     ```
@@ -132,6 +135,7 @@ You can use `print()` statement to debug your script: the output will be printed
 #### Example scripts
 
 1. This script checks that current paragraph is a link and that the text of the previous heading level 5 starts with text of current paragraph:
+
     ```
     try:
         if controlTypes.Role.LINK in p.roles and p.previousHeading5.textInfo.text.startswith(p.text):
@@ -140,11 +144,15 @@ You can use `print()` statement to debug your script: the output will be printed
     except NotFoundError:
         return None
     ```
+
 2. This script doesn't perform a match, but activates the last edit box on the page:
-    '''
+
+    ```
     p.end.previous.previousEdit.activate()
-    '''
+    ```
+
 4. This script finds username, which can be one or two paragraphs ahead; then it finds the beginning of the comment by analyzing font size; then it finds the end of the comment by searching for "Reply" text. Then it matches the entire body of the comment and adds username to be spoken prior to matched text:
+
     ```
     user = p.next
     if user.text == "downvote":
@@ -169,14 +177,19 @@ You can use `print()` statement to debug your script: the output will be printed
         end = end.next
     match(textInfoRange(begin, end), username)
     ```
+
 5. This script is a generator, which means whatever it yields will be used as sleep time before the next line is executed. This script will be executed in a background thread in a non-blocking manner.
+
     This script performs a series of actions:
+
     * Finds a button with a given name and presses it.
     * Enters dialog that pops up: `p.home.nextEmbeddedObject.activate()`
     * Obtains newly focused element within that dialog: `d = getFocusParagraph()`
     * Finds and checks checkbox in that dialog.
     * Finds another button in that dialog window by name and presses it.
+
     These steps are repeated 20 times via `retry` function. Then after 500 ms pause, it finds "Run Query" button and presses it.
+
     ```
     def waitForDialogAndClickCheckbox():
         try:
@@ -194,7 +207,9 @@ You can use `print()` statement to debug your script: the output will be printed
     yield 500
     yield from retry(lambda: p.home.find("Run Query").activate(), count=10)
     ```
+
 6. This is a numeric script since it takes `level` as input variable. This finds `level`-th edit box from the beginning of the page (or from the end if level is negative) and invokes `script_editJupyter` on it.
+
     ```
     if level > 0:
         p = p.home
@@ -211,6 +226,7 @@ You can use `print()` statement to debug your script: the output will be printed
     p.textInfo.obj.currentFocusableNVDAObject = p.textInfo.focusableNVDAObjectAtStart
     p.textInfo.obj.script_editJupyter(None)
     ```
+
 ### Configuration
 
 Bookmark definitions are stored in NVDA configuration directory in file `browserNavRules.json`. You can edit this file manually or share it with someone.
