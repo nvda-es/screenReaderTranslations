@@ -1376,6 +1376,7 @@ This can dramatically decrease build times on multi core systems. (#13226)
 * `languageHandler.windowsPrimaryLCIDsToLocaleNames` has been removed, instead use `languageHandler.windowsLCIDToLocaleName` or `winKernel.LCIDToLocaleName`. (#13342)
 * `UIAAutomationId` property for UIA objects should be preferred over `cachedAutomationId`. (#13125, #11447)
   * `cachedAutomationId` can be used if obtained directly from the element.
+* `NVDAObjects.window.scintilla.CharacterRangeStruct` has moved to `NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct`. (#13364)
 
 ## 2021.3.1
 
