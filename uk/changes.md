@@ -1778,7 +1778,7 @@ They are still available at the module level but are deprecated and to be remove
 * Використання команд NVDA для пошуку наступного/попереднього фрагмента тексту в документі в режимі огляду більше не зупиняє неперервне читання, якщо в налаштуваннях клавіатури увімкнено параметр «Продовжувати неперервне читання після натискання клавіш швидкої навігації». NVDA продовжить неперервне читання з позиції знайденого тексту. (#11563)
 * Для брайлівських дисплеїв HIMS натискання клавіші F3 було перепризначено на пробіл + крапки 148. (#11710)
 * Підвищено зручність налаштування відображення повідомлень NVDA на брайлівських дисплеях. (#11602)
--  У браузерах та інших додатках, які підтримують режим огляду, діалог зі списком елементів (NVDA+F7), тепер може бути викликаний і в режимі редагування. (#10453)
+* У браузерах та інших додатках, які підтримують режим огляду, діалог зі списком елементів (NVDA+F7), тепер може бути викликаний і в режимі редагування. (#10453)
 * Читання оновлень у «живих» областях ARIA (live regions) тепер керується налаштуванням «Повідомляти про зміни динамічного контенту» (NVDA+5). (#9077)
 * NVDA тепер промовляє фразу «Скопійовано в буфер обміну» перед скопійованим текстом. (#6757)
 * Поліпшено читання таблиці з графічним поданням дисків у вікні стандартного засобу керування дисками Windows. (#10048)
@@ -1818,6 +1818,7 @@ They are still available at the module level but are deprecated and to be remove
 * NVDA більше не завершує аварійно роботу при використанні таблиці English US grade 2 з увімкненим параметром «Розгортати слово під курсором, яке написане скорописом» під час відображення деякого вмісту, такого як URL. (#11754)
 * Команда NVDA+F знову дозволяє отримувати інформацію про форматування комірки у фокусі в Microsoft Excel. (#11914)
 * QWERTY-введення на брайлівських дисплеях Papenmeier тепер знову працює і не викликає випадкових зависань NVDA. (#11944)
+* Вирішено кілька проблем у браузерах на основі Chromium, коли навігація в таблицях не працювала і NVDA не повідомляла номерів рядків/стовпців таблиці. (#12359)
 
 ### Зміни для розробників (англ)
 
@@ -4854,4 +4855,3 @@ Major highlights of this release include support for 64 bit editions of Windows;
 * NVDA now asks if it should save configuration and restart if the user has just changed the language in the User Interface Settings Dialog. NVDA must be restarted for the language change to fully take effect.
 * If a synthesizer can not be loaded, when choosing it from the synthesizer dialog, a message box alerts the user to the fact.
 * When loading a synthesizer for the first time, NVDA lets the synthesizer choose the most suitable voice, rate and pitch parameters, rather than forcing it to defaults it thinks are ok. This fixes a problem where Eloquence and Viavoice sapi4 synths start speaking way too fast for the first time.
-
