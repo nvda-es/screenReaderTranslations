@@ -1377,6 +1377,59 @@ This can dramatically decrease build times on multi core systems. (#13226)
 * `UIAAutomationId` property for UIA objects should be preferred over `cachedAutomationId`. (#13125, #11447)
   * `cachedAutomationId` can be used if obtained directly from the element.
 * `NVDAObjects.window.scintilla.CharacterRangeStruct` has moved to `NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct`. (#13364)
+* Boolean `gui.isInMessageBox` is removed, please use the function `gui.message.isModalMessageBoxActive` instead. (#12984, #13376)
+* `controlTypes` has been split up into various submodules. (#12510, #13588)
+  * `ROLE_*` and `STATE_*` have been replaced with `Role.*` and `State.*`.
+  * Although still available, the following should be considered deprecated:
+    * `ROLE_*` and `STATE_*`, use `Role.*` and `State.*` instead.
+    * `roleLabels`, `stateLabels` and `negativeStateLabels`, usages like `roleLabels[ROLE_*]` should be replaced with their equivalent `Role.*.displayString` or `State.*.negativeDisplayString`.
+    * `processPositiveStates` and `processNegativeStates` should use `processAndLabelStates` instead.
+* Excel cell state constants (`NVSTATE_*`) are now values in the `NvCellState` enum, mirrored in the `NvCellState` enum in `NVDAObjects/window/excel.py` and mapped to `controlTypes.State` via _nvCellStatesToStates. (#13465)
+* `EXCEL_CELLINFO` struct member `state` is now `nvCellStates`.
+* `mathPres.ensureInit` has been removed, MathPlayer is now initialized when NVDA starts. (#13486)
+
+## 2021.3.5
+
+Це дрібний випуск для виправлення проблеми безпеки.
+Будь ласка, відповідально повідомляйте про проблеми безпеки на <info@nvaccess.org>.
+
+### Виправлення безпеки
+
+* Виправлено рекомендацію з безпеки `GHSA-xc5m-v23f-pgr7`.
+  * У безпечному режимі вимкнено діалог вимови символів.
+
+## 2021.3.4
+
+Це незначний випуск, у якому виправлено кілька порушених проблем безпеки.
+Будь ласка, відповідально повідомляйте про проблеми безпеки на <info@nvaccess.org>.
+
+### Виправлення безпеки
+
+* Виправлено рекомендацію з безпеки `GHSA-354r-wr4v-cx28`. (#13488)
+  * Вилучено можливість запуску NVDA з увімкненим журналюванням налагодження, коли NVDA працює у безпечному режимі.
+  * Вилучено можливість оновлення NVDA, коли NVDA працює у безпечному режимі.
+* Виправлено помилку в системі безпеки `GHSA-wg65-7r23-h6p9`. (#13489)
+  * Вилучено можливість відкривати діалог жестів вводу у безпечному режимі.
+  * Вилучено можливість відкривати діалог стандартного, тимчасового й голосового словника у безпечному режимі.
+* Виправлено повідомлення про проблему безпеки `GHSA-mvc8-5rv9-w3hx`. (#13487)
+  * Інструмент перевірки графічного інтерфейсу wx тепер вимкнено у безпечному режимі.
+
+## 2021.3.3
+
+Цей випуск ідентичний випуску 2021.3.2.
+У NVDA 2021.3.2 була помилка, коли він неправильно ідентифікував себе як 2021.3.1.
+Цей випуск правильно ідентифікується як 2021.3.3.
+
+## 2021.3.2
+
+Це незначний випуск, у якому виправлено кілька порушених проблем безпеки.
+Будь ласка, відповідально повідомляйте про проблеми безпеки на <info@nvaccess.org>.
+
+### Виправлення помилок
+
+* Виправлення безпеки: Запобігання навігації по об'єктах за межами екрана блокування у Windows 10 та Windows 11 (#13328).
+* Виправлення безпеки: діалог менеджера додатків тепер вимкнено на захищених екранах. (#13059)
+* Виправлення у безпеці: Контекстна довідка NVDA більше не доступна на захищених екранах. (#13353)
 
 ## 2021.3.1
 
