@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2024-06-04 19:44+0000\n"
-"PO-Revision-Date: 2024-06-03 21:33+0200\n"
+"PO-Revision-Date: 2024-06-05 21:37+0200\n"
 "Last-Translator: José Manuel Delicado <jm.delicado@nvda.es>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -602,6 +602,8 @@ msgid ""
 "Starting from BrowserNav v2.5 you can customize your bookmarks with Python "
 "scripting. Scripting can be used for two purposes:"
 msgstr ""
+"A partir de BrowserNav 2.5, se pueden personalizar los marcadores con "
+"scripts en Python. El scripting se puede usar con dos propósitos:"
 
 #. type: Bullet: '1. '
 msgid ""
@@ -609,12 +611,17 @@ msgid ""
 "This applies to QuickJump, QuickSpeak, QuickClick, hierarchical and "
 "SkipClutter bookmarks."
 msgstr ""
+"Mejorar el algoritmo de coincidencia cuando las opciones de coincidencia "
+"existentes no son suficientes. Esto se aplica a los marcadores de tipo salto "
+"rápido, clic rápido, jerarquía y evitar desorden."
 
 #. type: Bullet: '2. '
 msgid ""
 "To execute arbitrary Python code in order to automate certain actions on the "
 "web pages. This can be done via Script or Numeric Script bookmarks."
 msgstr ""
+"Ejecutar código Python arbitrario para automatizar ciertas acciones en las "
+"páginas web. Esto se puede hacer con marcadores de script o script numérico."
 
 #. type: Title ####
 #, no-wrap
@@ -623,17 +630,19 @@ msgstr "API de scripting"
 
 #. type: Plain text
 msgid "In your script you are provided the following variables:"
-msgstr ""
+msgstr "El el script se proporcionan las siguientes variables:"
 
 #. type: Bullet: '* '
 msgid ""
 "`p` - current paragraph. This is an instance of `Paragraph` class defined in "
 "[paragraph.py](addon/globalPlugins/browserNav/paragraph.py)"
 msgstr ""
+"`p` - párrafo actual. Se trata de una instancia de la clase `Paragraph`, "
+"definida en [paragraph.py](addon/globalPlugins/browserNav/paragraph.py)"
 
 #. type: Bullet: '* '
 msgid "`t` - current `textInfo` object."
-msgstr ""
+msgstr "`t` - objeto `textInfo` actual."
 
 #. type: Plain text
 msgid ""
@@ -685,6 +694,9 @@ msgid ""
 "an Exception, so that execution of your script will be terminated after "
 "calling match. The function is defined as:"
 msgstr ""
+"Llama a la función `match()` para indicar una coincidencia. Esta función "
+"lanza internamente una excepción, por lo que la ejecución del script "
+"finalizará al llamar a match. La función se define como:"
 
 #. type: Plain text
 #, no-wrap
@@ -693,6 +705,9 @@ msgid ""
 "    def match(offset: int | TextInfo | Paragraph = None, message: str = None) -> None:\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    def match(offset: int | TextInfo | Paragraph = None, message: str = None) -> None:\n"
+"    ```\n"
 
 #. type: Plain text
 msgid ""
@@ -719,6 +734,8 @@ msgid ""
 "This script checks that current paragraph is a link and that the text of the "
 "previous heading level 5 starts with text of current paragraph:"
 msgstr ""
+"Este script comprueba que el párrafo actual es un enlace y que el texto del "
+"encabezado anterior de nivel 5 comienza con el texto del párrafo actual:"
 
 #. type: Plain text
 #, no-wrap
@@ -732,12 +749,22 @@ msgid ""
 "        return None\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    try:\n"
+"        if controlTypes.Role.LINK in p.roles and p.previousHeading5.textInfo.text.startswith(p.text):\n"
+"            print(f\"pp5 {p.previousHeading5.textInfo.text}\")\n"
+"            return True\n"
+"    except NotFoundError:\n"
+"        return None\n"
+"    ```\n"
 
 #. type: Bullet: '2. '
 msgid ""
 "This script doesn't perform a match, but activates the last edit box on the "
 "page:"
 msgstr ""
+"Este script no realiza una coincidencia, sólo activa el último cuadro de "
+"edición de la página:"
 
 #. type: Plain text
 #, no-wrap
@@ -746,6 +773,9 @@ msgid ""
 "    p.end.previous.previousEdit.activate()\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    p.end.previous.previousEdit.activate()\n"
+"    ```\n"
 
 #. type: Bullet: '4. '
 msgid ""
@@ -755,6 +785,11 @@ msgid ""
 "entire body of the comment and adds username to be spoken prior to matched "
 "text:"
 msgstr ""
+"Este script busca el nombre de usuario, que puede estar uno o dos párrafos "
+"por delante, busca el comienzo del comentario analizando el tamaño de "
+"fuente, busca el final del comentario localizando el texto \"Reply\", y "
+"entonces hace coincidir el cuerpo entero del comentario añadiendo el usuario "
+"para que se verbalice antes del texto coincidente:"
 
 #. type: Plain text
 #, no-wrap
@@ -784,6 +819,30 @@ msgid ""
 "    match(textInfoRange(begin, end), username)\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    user = p.next\n"
+"    if user.text == \"downvote\":\n"
+"        user = user.next\n"
+"    try:\n"
+"        username = user.text.split()[0]\n"
+"    except IndexError:\n"
+"        username = '?'\n"
+"    pp = p\n"
+"    begin = None\n"
+"    for i in range(5):\n"
+"        fs = pp.attributes.get(ParagraphAttribute.FONT_SIZE, [])\n"
+"        #print(f\"i={i} fs={fs}\")\n"
+"        if '9_pt' in fs:\n"
+"            begin = pp\n"
+"            break\n"
+"        pp = pp.next\n"
+"    else:\n"
+"        return\n"
+"    end = begin\n"
+"    while end.text != 'reply':\n"
+"        end = end.next\n"
+"    match(textInfoRange(begin, end), username)\n"
+"    ```\n"
 
 #. type: Bullet: '5. '
 msgid ""
@@ -791,37 +850,43 @@ msgid ""
 "sleep time before the next line is executed. This script will be executed in "
 "a background thread in a non-blocking manner."
 msgstr ""
+"Este script es un generador, lo que significa que lo que ceda se usará como "
+"tiempo de espera antes de ejecutar la siguiente línea. Este script se "
+"ejecutará en un hilo en segundo plano de forma no bloqueante."
 
 #. type: Plain text
 #, no-wrap
 msgid "    This script performs a series of actions:\n"
-msgstr ""
+msgstr "    Este script realiza una serie de acciones:\n"
 
 #. type: Bullet: '    * '
 msgid "Finds a button with a given name and presses it."
-msgstr ""
+msgstr "Busca un botón con un nombre dado y lo pulsa."
 
 #. type: Bullet: '    * '
 msgid "Enters dialog that pops up: `p.home.nextEmbeddedObject.activate()`"
 msgstr ""
+"Entra en el diálogo que aparece: `p.home.nextEmbeddedObject.activate()`"
 
 #. type: Bullet: '    * '
 msgid ""
 "Obtains newly focused element within that dialog: `d = getFocusParagraph()`"
 msgstr ""
+"Obtiene el nuevo elemento con el foco dentro del diálogo: `d = "
+"getFocusParagraph()`"
 
 #. type: Bullet: '    * '
 msgid "Finds and checks checkbox in that dialog."
-msgstr ""
+msgstr "Busca y marca una casilla de verificación del diálogo."
 
 #. type: Bullet: '    * '
 msgid "Finds another button in that dialog window by name and presses it."
-msgstr ""
+msgstr "Busca otro botón en el diálogo, window by name, y lo pulsa."
 
 #. type: Plain text
 #, no-wrap
 msgid "    These steps are repeated 20 times via `retry` function. Then after 500 ms pause, it finds \"Run Query\" button and presses it.\n"
-msgstr ""
+msgstr "    Estos pasos se repiten 20 veces mediante la función `retry`. Tras una pausa de 500 ms, busca el botón \"Run query\" y lo pulsa.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -839,6 +904,18 @@ msgid ""
 "            c.activate() \n"
 "        d.home.find(\"Link QCPR Project\").activate()\n"
 msgstr ""
+"    ```\n"
+"    def waitForDialogAndClickCheckbox():\n"
+"        try:\n"
+"            p.home.find(\"Link Last Used\").activate()\n"
+"            p.home.nextEmbeddedObject.activate()\n"
+"        except NotFoundError:\n"
+"            pass\n"
+"        d = getFocusParagraph()\n"
+"        c = d.home.nextCheckBox\n"
+"        if controlTypes.State.CHECKED not in c.obj.states:\n"
+"            c.activate() \n"
+"        d.home.find(\"Link QCPR Project\").activate()\n"
 
 #. type: Plain text
 #, no-wrap
@@ -848,6 +925,10 @@ msgid ""
 "    yield from retry(lambda: p.home.find(\"Run Query\").activate(), count=10)\n"
 "    ```\n"
 msgstr ""
+"    yield from retry(waitForDialogAndClickCheckbox, count=20)\n"
+"    yield 500\n"
+"    yield from retry(lambda: p.home.find(\"Run Query\").activate(), count=10)\n"
+"    ```\n"
 
 #. type: Bullet: '6. '
 msgid ""
@@ -855,6 +936,9 @@ msgid ""
 "finds `level`-th edit box from the beginning of the page (or from the end if "
 "level is negative) and invokes `script_editJupyter` on it."
 msgstr ""
+"Este es un script numérico, ya que toma `level` como variable de entrada. "
+"Busca el `level`-ésimo cuadro de edición desde el principio de la página (o "
+"desde el final si el nivel es negativo) y llama a `script_editJupyter` en él."
 
 #. type: Plain text
 #, no-wrap
@@ -876,6 +960,22 @@ msgid ""
 "    p.textInfo.obj.script_editJupyter(None)\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    if level > 0:\n"
+"        p = p.home\n"
+"        for i in range(level):\n"
+"            p = Paragraph(p.nextEdit.textInfo)\n"
+"    elif level <= 0:\n"
+"        level = 1-level\n"
+"        p = p.end.previous\n"
+"        tones.beep(500, 50)\n"
+"        for i in range(level):\n"
+"            p = Paragraph(p.previousEdit.textInfo)\n"
+"        else:\n"
+"            tones.beep(500, 50)\n"
+"    p.textInfo.obj.currentFocusableNVDAObject = p.textInfo.focusableNVDAObjectAtStart\n"
+"    p.textInfo.obj.script_editJupyter(None)\n"
+"    ```\n"
 
 #. type: Title ###
 #, no-wrap
@@ -1040,99 +1140,3 @@ msgstr "[[!tag dev stable]]\n"
 #. type: Plain text
 msgid "[1]: https://www.nvaccess.org/addonStore/legacy?file=browsernav"
 msgstr "[1]: https://www.nvaccess.org/addonStore/legacy?file=browsernav"
-
-#~ msgid "Author: Tony Malykh"
-#~ msgstr "Autor: Tony Malykh"
-
-#~ msgid "NVDA compatibility: from 2019.3 to 2023.1"
-#~ msgstr "Compatibilidad con NVDA: de 2019.3 a 2023.1"
-
-#~ msgid "Download [stable version][1]"
-#~ msgstr "Descargar [versión estable][1]"
-
-#, no-wrap
-#~ msgid "BrowserNav addon for NVDA"
-#~ msgstr "Complemento BrowserNav para NVDA"
-
-#~ msgid ""
-#~ "For example, with BrowserNav you can find vertically aligned paragraphs, "
-#~ "that is paragraphs with the same horizontal offset. This can be used to "
-#~ "read hierarchical trees of comments or malformed HTML tables."
-#~ msgstr ""
-#~ "Por ejemplo, con BrowserNav puedes encontrar párrafos alineados "
-#~ "verticalmente; es decir, párrafos con el mismo desplazamiento horizontal. "
-#~ "Se puede usar para leer árboles jerárquicos de comentarios o tablas HTML "
-#~ "mal formadas. También te permite navegar por párrafos con el mismo tamaño "
-#~ "de fuente o estilo. BrowserNav también proporciona nuevas órdenes de "
-#~ "navegación de una sola letra: p para ir al siguiente párrafo e Y para ir "
-#~ "a la pestaña siguiente."
-
-#~ msgid "You can also find paragraphs written in the same font size or style."
-#~ msgstr ""
-#~ "También puedes encontrar párrafos escritos con el mismo tamaño de fuente "
-#~ "o estilo."
-
-#~ msgid ""
-#~ "BrowserNav also provides new QuickNav commands: P for next paragraph and "
-#~ "Y for next tab."
-#~ msgstr ""
-#~ "BrowserNav también proporciona nuevas órdenes de navegación rápida: p "
-#~ "para el siguiente párrafo e y para la siguiente pestaña."
-
-#~ msgid ""
-#~ "Current stable version: [BrowserNav](https://github.com/mltony/nvda-"
-#~ "browser-nav/releases/latest/download/browsernav.nvda-addon)"
-#~ msgstr ""
-#~ "Versión estable actual: [BrowserNav](https://github.com/mltony/nvda-"
-#~ "browser-nav/releases/latest/download/browsernav.nvda-addon)"
-
-#~ msgid ""
-#~ "Last Python 2 version (compatible with NVDA 2019.2 and prior): "
-#~ "[BrowserNav v1.1](https://github.com/mltony/nvda-browser-nav/releases/"
-#~ "download/v1.1/BrowserNav-1.1.nvda-addon)"
-#~ msgstr ""
-#~ "Última versión en Python 2 (compatible con NVDA 2019.2 y anteriores): "
-#~ "[BrowserNav v1.1](https://github.com/mltony/nvda-browser-nav/releases/"
-#~ "download/v1.1/BrowserNav-1.1.nvda-addon)"
-
-#~ msgid "Y or Shift+Y: Jump to next or previous tab."
-#~ msgstr "Y o shift+y: salta a la pestaña siguiente o anterior."
-
-#~ msgid "P or Shift+P: Jump to next or previous dialog."
-#~ msgstr "P y shift+p: salta al siguiente diálogo o al anterior."
-
-#~ msgid "Z or Shift+Z: Jump to next or previous menu."
-#~ msgstr "Z o shift+Z: salta al menú siguiente o anterior."
-
-#~ msgid ""
-#~ "\\` orShift+\\` (backquote or tilde): Jump to next or previous format "
-#~ "change."
-#~ msgstr ""
-#~ "\\` o Shift+\\` (comilla inversa o tilde): salta al cambio de formato "
-#~ "siguiente o anterior."
-
-#~ msgid "0 or Shift+0: Jump to next or previous tree view."
-#~ msgstr "0 o shift+0: salta a la vista en árbol siguiente o anterior."
-
-#~ msgid "9 or Shift+9: Jump to next or previous tool bar."
-#~ msgstr "9 o shift+9: salta a la barra de herramientas siguiente o anterior."
-
-#~ msgid "BrowserNav 2.0 introduces a new set of bookmark features ."
-#~ msgstr ""
-#~ "BrowserNav 2.0 introduce un nuevo conjunto de características de "
-#~ "marcadores."
-
-#~ msgid ""
-#~ "AutoClick options: when you set up QuickClick bookmark, this allows you "
-#~ "to configure this bookmark to be pressed automatically after a certain "
-#~ "delay once the website is fully loaded. Another option allows BrowserNav "
-#~ "to keep monitoring the website and whenever any more of such QuickClick "
-#~ "bookmarks appear, it would click them automatically still. Please note "
-#~ "that this feature is experimental."
-#~ msgstr ""
-#~ "Opciones de clic automático: al configurar un marcador de clic rápido, se "
-#~ "puede permitir que se haga clic en el marcador tras un cierto tiempo de "
-#~ "espera una vez el sitio web está completamente cargado. Otra opción "
-#~ "permite que BrowserNav se mantenga vigilando el sitio web y siempre que "
-#~ "aparezca cualquier marcador de clic rápido, haga clic en él. Ten en "
-#~ "cuenta que esta función es experimental."
