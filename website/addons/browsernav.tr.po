@@ -597,6 +597,8 @@ msgid ""
 "Starting from BrowserNav v2.5 you can customize your bookmarks with Python "
 "scripting. Scripting can be used for two purposes:"
 msgstr ""
+"Tarayıcı Dolaşımı v2.5'ten başlayarak, yer işaretlerinizi Python komut "
+"dosyasıyla özelleştirebilirsiniz. Komut dosyası iki amaç için kullanılabilir:"
 
 #. type: Bullet: '1. '
 msgid ""
@@ -604,12 +606,18 @@ msgid ""
 "This applies to QuickJump, QuickSpeak, QuickClick, hierarchical and "
 "SkipClutter bookmarks."
 msgstr ""
+"Mevcut eşleştirme seçeneklerinin yeterli olmadığı durumlarda eşleştirme "
+"algoritmasını geliştirmek. Bu, Hızlı Atlama, Hızlı Konuşma, Hızlı Tıklama, "
+"hiyerarşik ve Dağınıklığı Atla yer işaretleri için geçerlidir."
 
 #. type: Bullet: '2. '
 msgid ""
 "To execute arbitrary Python code in order to automate certain actions on the "
 "web pages. This can be done via Script or Numeric Script bookmarks."
 msgstr ""
+"Web sayfalarındaki belirli eylemleri otomatikleştirmek amacıyla rastgele "
+"Python kodunu çalıştırmak. Bu, Komut Dosyası veya Sayısal Komut Dosyası yer "
+"işretleri aracılığıyla yapılabilir."
 
 #. type: Title ####
 #, no-wrap
@@ -618,10 +626,9 @@ msgstr "Komut API'si"
 
 #. type: Plain text
 msgid "In your script you are provided the following variables:"
-msgstr ""
+msgstr "Komut dosyanızda aşağıdaki değişkenler sağlanır:"
 
 #. type: Bullet: '* '
-#, fuzzy
 #| msgid ""
 #| "In your script you are provided the following variables: * `p` - current "
 #| "paragraph. This is an instance of `Paragraph` class defined in [paragraph."
@@ -631,13 +638,12 @@ msgid ""
 "`p` - current paragraph. This is an instance of `Paragraph` class defined in "
 "[paragraph.py](addon/globalPlugins/browserNav/paragraph.py)"
 msgstr ""
-"Komut dosyanızda aşağıdaki değişkenler sağlanır: * `p` - geçerli paragraf. "
-"Bu, [paragraph.py](addon/globalPlugins/browserNav/paragraph.py) * `t` - "
-"geçerli `textInfo` nesnesinde tanımlanan 'Paragraph' sınıfının bir örneğidir."
+"`p` - mevcut paragraf. Bu, [paragraph.py](addon/globalPlugins/browserNav/"
+"paragraph.py) içinde tanımlanan \"Paragraph\" sınıfının bir örneğidir"
 
 #. type: Bullet: '* '
 msgid "`t` - current `textInfo` object."
-msgstr ""
+msgstr "`t` - current `textInfo` object."
 
 #. type: Plain text
 msgid ""
@@ -683,7 +689,6 @@ msgstr ""
 "sağlayın."
 
 #. type: Bullet: '* '
-#, fuzzy
 #| msgid ""
 #| "* Call `match()` function to indicate a match. This function internally "
 #| "raises an Exception, so that execution of your script will be terminated "
@@ -697,13 +702,9 @@ msgid ""
 "an Exception, so that execution of your script will be terminated after "
 "calling match. The function is defined as:"
 msgstr ""
-"* Bir eşleşmeyi belirtmek için `match()` işlevini çağırın. Bu işlev dahili "
-"olarak bir İstisna oluşturur, böylece komutunuzun yürütülmesi, match "
-"çağrıldıktan sonra sonlandırılır. İşlev şu şekilde tanımlanır:\n"
-"    ```\n"
-"    def match(offset: int | TextInfo | Paragraph = None, message: str = "
-"None) -> None:\n"
-"    ```\n"
+"Call `match()` function to indicate a match. This function internally raises "
+"an Exception, so that execution of your script will be terminated after "
+"calling match. The function is defined as:"
 
 #. type: Plain text
 #, no-wrap
@@ -712,6 +713,9 @@ msgid ""
 "    def match(offset: int | TextInfo | Paragraph = None, message: str = None) -> None:\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    def match(offset: int | TextInfo | Paragraph = None, message: str = None) -> None:\n"
+"    ```\n"
 
 #. type: Plain text
 msgid ""
@@ -738,6 +742,9 @@ msgid ""
 "This script checks that current paragraph is a link and that the text of the "
 "previous heading level 5 starts with text of current paragraph:"
 msgstr ""
+"Bu komut dosyası, geçerli paragrafın bir bağlantı olup olmadığını ve önceki "
+"başlık düzeyi 5'in metninin geçerli paragrafın metniyle başlayıp "
+"başlamadığını kontrol eder:"
 
 #. type: Plain text
 #, no-wrap
@@ -751,12 +758,22 @@ msgid ""
 "        return None\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    try:\n"
+"        if controlTypes.Role.LINK in p.roles and p.previousHeading5.textInfo.text.startswith(p.text):\n"
+"            print(f\"pp5 {p.previousHeading5.textInfo.text}\")\n"
+"            return True\n"
+"    except NotFoundError:\n"
+"        return None\n"
+"    ```\n"
 
 #. type: Bullet: '2. '
 msgid ""
 "This script doesn't perform a match, but activates the last edit box on the "
 "page:"
 msgstr ""
+"Bu komut dosyası bir eşleşme gerçekleştirmez ancak sayfadaki son düzenleme "
+"kutusunu etkinleştirir:"
 
 #. type: Plain text
 #, no-wrap
@@ -765,6 +782,9 @@ msgid ""
 "    p.end.previous.previousEdit.activate()\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    p.end.previous.previousEdit.activate()\n"
+"    ```\n"
 
 #. type: Bullet: '4. '
 msgid ""
@@ -774,6 +794,11 @@ msgid ""
 "entire body of the comment and adds username to be spoken prior to matched "
 "text:"
 msgstr ""
+"Bu komut dosyası, bir veya iki paragraf ileride olabilen kullanıcı adını "
+"bulur; daha sonra yazı tipi boyutunu analiz ederek yorumun başlangıcını "
+"bulur; daha sonra \"Yanıtla\" metnini arayarak yorumun sonunu bulur. Daha "
+"sonra yorumun tüm metniyle eşleşir ve eşleşen metinden önce söylenecek "
+"kullanıcı adını ekler:"
 
 #. type: Plain text
 #, no-wrap
@@ -803,6 +828,30 @@ msgid ""
 "    match(textInfoRange(begin, end), username)\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    user = p.next\n"
+"    if user.text == \"downvote\":\n"
+"        user = user.next\n"
+"    try:\n"
+"        username = user.text.split()[0]\n"
+"    except IndexError:\n"
+"        username = '?'\n"
+"    pp = p\n"
+"    begin = None\n"
+"    for i in range(5):\n"
+"        fs = pp.attributes.get(ParagraphAttribute.FONT_SIZE, [])\n"
+"        #print(f\"i={i} fs={fs}\")\n"
+"        if '9_pt' in fs:\n"
+"            begin = pp\n"
+"            break\n"
+"        pp = pp.next\n"
+"    else:\n"
+"        return\n"
+"    end = begin\n"
+"    while end.text != 'reply':\n"
+"        end = end.next\n"
+"    match(textInfoRange(begin, end), username)\n"
+"    ```\n"
 
 #. type: Bullet: '5. '
 msgid ""
@@ -810,37 +859,42 @@ msgid ""
 "sleep time before the next line is executed. This script will be executed in "
 "a background thread in a non-blocking manner."
 msgstr ""
+"Bu komut dosyası bir jeneratördür, yani ürettiği her şey bir sonraki satır "
+"çalıştırılmadan önce uyku zamanı olarak kullanılacaktır. Bu komut dosyası, "
+"arka planda engelleyici olmayan bir iş parçacığında yürütülecektir."
 
 #. type: Plain text
 #, no-wrap
 msgid "    This script performs a series of actions:\n"
-msgstr ""
+msgstr "    Bu komut dosyası bir dizi eylem gerçekleştirir:\n"
 
 #. type: Bullet: '    * '
 msgid "Finds a button with a given name and presses it."
-msgstr ""
+msgstr "Belirli bir ada sahip bir düğme bulur ve ona basar."
 
 #. type: Bullet: '    * '
 msgid "Enters dialog that pops up: `p.home.nextEmbeddedObject.activate()`"
-msgstr ""
+msgstr "Açılan iletişim kutusuna girer: `p.home.nextEmbeddedObject.activate()`"
 
 #. type: Bullet: '    * '
 msgid ""
 "Obtains newly focused element within that dialog: `d = getFocusParagraph()`"
 msgstr ""
+"Bu iletişim kutusunda yeni odaklanılan öğeyi elde eder: `d = "
+"getFocusParagraph()`"
 
 #. type: Bullet: '    * '
 msgid "Finds and checks checkbox in that dialog."
-msgstr ""
+msgstr "Bu iletişim kutusundaki onay kutusunu bulur ve işaretler."
 
 #. type: Bullet: '    * '
 msgid "Finds another button in that dialog window by name and presses it."
-msgstr ""
+msgstr "Bu iletişim penceresinde ada göre başka bir düğme bulur ve ona basar."
 
 #. type: Plain text
 #, no-wrap
 msgid "    These steps are repeated 20 times via `retry` function. Then after 500 ms pause, it finds \"Run Query\" button and presses it.\n"
-msgstr ""
+msgstr "    Bu adımlar 'yeniden dene' fonksiyonu aracılığıyla 20 kez tekrarlanır. Daha sonra 500 ms durakladıktan sonra \"Sorguyu Çalıştır\" butonunu bulur ve ona basar.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -858,6 +912,18 @@ msgid ""
 "            c.activate() \n"
 "        d.home.find(\"Link QCPR Project\").activate()\n"
 msgstr ""
+"    ```\n"
+"    def waitForDialogAndClickCheckbox():\n"
+"        try:\n"
+"            p.home.find(\"Link Last Used\").activate()\n"
+"            p.home.nextEmbeddedObject.activate()\n"
+"        except NotFoundError:\n"
+"            pass\n"
+"        d = getFocusParagraph()\n"
+"        c = d.home.nextCheckBox\n"
+"        if controlTypes.State.CHECKED not in c.obj.states:\n"
+"            c.activate() \n"
+"        d.home.find(\"Link QCPR Project\").activate()\n"
 
 #. type: Plain text
 #, no-wrap
@@ -867,6 +933,10 @@ msgid ""
 "    yield from retry(lambda: p.home.find(\"Run Query\").activate(), count=10)\n"
 "    ```\n"
 msgstr ""
+"    yield from retry(waitForDialogAndClickCheckbox, count=20)\n"
+"    yield 500\n"
+"    yield from retry(lambda: p.home.find(\"Run Query\").activate(), count=10)\n"
+"    ```\n"
 
 #. type: Bullet: '6. '
 msgid ""
@@ -874,9 +944,12 @@ msgid ""
 "finds `level`-th edit box from the beginning of the page (or from the end if "
 "level is negative) and invokes `script_editJupyter` on it."
 msgstr ""
+"Giriş değişkeni olarak 'level'i aldığı için bu sayısal bir komut dosyasıdır. "
+"Bu, sayfanın başından itibaren (veya seviye negatifse sondan itibaren) "
+"'level' düzenleme kutusunu bulur ve üzerinde 'script_editJupyter'ı çağırır."
 
 #. type: Plain text
-#, fuzzy, no-wrap
+#, no-wrap
 #| msgid ""
 #| "    yield from retry(waitForDialogAndClickCheckbox, count=20)\n"
 #| "    yield 500\n"
@@ -917,11 +990,6 @@ msgid ""
 "    p.textInfo.obj.script_editJupyter(None)\n"
 "    ```\n"
 msgstr ""
-"    yield from retry(waitForDialogAndClickCheckbox, count=20)\n"
-"    yield 500\n"
-"    yield from retry(lambda: p.home.find(\"Run Query\").activate(), count=10)\n"
-"    ```\n"
-"6. Giriş değişkeni olarak 'level'i aldığı için bu sayısal bir komut dosyasıdır. Bu, sayfanın başından itibaren (veya seviye negatifse sondan itibaren) 'level' düzenleme kutusunu bulur ve üzerinde 'script_editJupyter'ı çağırır.\n"
 "    ```\n"
 "    if level > 0:\n"
 "        p = p.home\n"
