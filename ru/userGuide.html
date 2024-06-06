@@ -303,7 +303,7 @@
 <li><a href="#ReviewCursorFollowFocus" title="Следовать за системным фокусом">Следовать за системным фокусом</a></li>
 <li><a href="#ReviewCursorFollowCaret" title="Следовать за системной кареткой">Следовать за системной кареткой</a></li>
 <li><a href="#ReviewCursorFollowMouse" title="Следовать за указателем мыши">Следовать за указателем мыши</a></li>
-<li><a href="#ReviewCursorSimple" title="Облегченный режим просмотра">Облегченный режим просмотра</a></li>
+<li><a href="#ReviewCursorSimple" title="Облегчённый режим просмотра">Облегчённый режим просмотра</a></li>
 </ul>
 </li>
 <li><a href="#ObjectPresentationSettings" title="Представление объекта">Представление объекта</a><ul>
@@ -375,7 +375,7 @@
 <li><a href="#AdvancedSettingsWinConsoleSpeakPasswords" title="Читать пароли во всех современных терминалах">Читать пароли во всех современных терминалах</a></li>
 <li><a href="#AdvancedSettingsKeyboardSupportInLegacy" title="Использовать современную поддержку ввода символов в консоли Windows (если возможно)">Использовать современную поддержку ввода символов в консоли Windows (если возможно)</a></li>
 <li><a href="#DiffAlgo" title="Diff-алгоритм">Diff-алгоритм</a></li>
-<li><a href="#WtStrategy" title="Speak new text in Windows Terminal via">Speak new text in Windows Terminal via</a></li>
+<li><a href="#windows-wtstrategy" title="Сообщать новый текст в терминале Windows с помощью {#WtStrategy}.">Сообщать новый текст в терминале Windows с помощью {#WtStrategy}.</a></li>
 <li><a href="#CancelExpiredFocusSpeech" title="Пытаться отменять речевой вывод для устаревших событий фокуса">Пытаться отменять речевой вывод для устаревших событий фокуса</a></li>
 <li><a href="#AdvancedSettingsCaretMoveTimeout" title="Тайм-аут перемещения каретки (в миллисекундах)">Тайм-аут перемещения каретки (в миллисекундах)</a></li>
 <li><a href="#ReportTransparentColors" title="Сообщать прозрачность цвета">Сообщать прозрачность цвета</a></li>
@@ -3886,7 +3886,7 @@ NVDA может использовать её для распознавания 
 <p>Если этот флажок установлен, то просмотровый курсор автоматически будет устанавливаться в позицию системной каретки при перемещении.</p>
 <h5 id="ReviewCursorFollowMouse">Следовать за указателем мыши</h5>
 <p>Если этот флажок установлен, то просмотровый курсор всегда будет устанавливаться в позицию указателя мыши при перемещении.</p>
-<h5 id="ReviewCursorSimple">Облегченный режим просмотра</h5>
+<h5 id="ReviewCursorSimple">Облегчённый режим просмотра</h5>
 <p>Если этот флажок установлен, то NVDA будет фильтровать иерархию объектов, по которым можно перемещаться, и которые не представляют для пользователя никакого интереса; Например, невидимые объекты или объекты, используемые лишь для визуальных целей.</p>
 <p>Для включения и выключения облегчённого режима просмотра в любом месте, пожалуйста, назначьте комбинацию клавиш или другой жест в диалоге настроек <a href="#InputGestures" title="Жесты ввода">Жесты ввода</a>.</p>
 <h4 id="ObjectPresentationSettings">Представление объекта</h4>
@@ -4341,7 +4341,7 @@ NVDA может использовать её для распознавания 
 Эта настройка может стабилизировать чтение текста в некоторых приложениях.
 Однако в терминалах при вставке или удалении символа в середине строки будет читаться текст после каретки.</li>
 </ul>
-<h5 id="WtStrategy">Speak new text in Windows Terminal via</h5>
+<h5 id="windows-wtstrategy">Сообщать новый текст в терминале Windows с помощью {#WtStrategy}.</h5>
 <table>
 <thead>
 <tr>
@@ -4351,26 +4351,26 @@ NVDA может использовать её для распознавания 
 </thead>
 <tbody>
 <tr>
-<td>Options</td>
-<td>Default (Diffing), Diffing, UIA notifications</td>
+<td>Опции</td>
+<td>По умолчанию (Выбранного diff-алгоритма), Выбранного diff-алгоритма, Уведомлений UIA</td>
 </tr>
 <tr>
-<td>Default</td>
-<td>Diffing</td>
+<td>По умолчанию</td>
+<td>Выбранного diff-алгоритма</td>
 </tr>
 </tbody>
 </table>
-<p>This option selects how NVDA determines what text is "new" (and thus what to speak when "report dynamic content changes" is enabled) in Windows Terminal and the WPF Windows Terminal control used in Visual Studio 2022.
-It does not affect the Windows Console (<code>conhost.exe</code>).
-The Speak new text in Windows Terminal combo box has three options:</p>
+<p>Этот параметр определяет, как NVDA определяет, какой текст является "новым" (и, следовательно, что говорить, когда включена опция "сообщать динамические изменения содержимого") в Windows Terminal и WPF Windows Terminal control, используемом в Visual Studio 2022.
+Это не влияет на консоль Windows Console (<code>conhost.exe</code>).
+Комбинированный список имеет три варианта:</p>
 <ul>
-<li>Default: This option is currently equivalent to "diffing", but it is anticipated to change once support for UIA notifications is further developed.</li>
-<li>Diffing: This option uses the selected diff algorithm to calculate changes each time the terminal renders new text.
-This is identical to NVDA's behaviour in versions 2022.4 and earlier.</li>
-<li>UIA notifications: This option defers the responsibility of determining what text to speak to Windows Terminal itself, meanning that NVDA no longer has to determine what text currently on-screen is "new".
-This should markedly improve performance and stability of Windows Terminal, but this feature is not yet complete.
-In particular, typed characters that are not displayed on-screen, such as passwords, are reported when this option is selected.
-Additionally, contiguous spans of output of over 1,000 characters may not be reported accurately.</li>
+<li>По умолчанию: В настоящее время эта опция эквивалентна значению параметра "diff-алгоритм", но ожидается, что она изменится, когда поддержка уведомлений UIA будет доработана.</li>
+<li>Выбранного diff-алгоритма: Эта опция использует выбранный diff-алгоритм для расчёта изменений каждый раз, когда терминал отображает новый текст.
+Это идентично поведению NVDA 2022.4 и более ранних версий.</li>
+<li>Уведомлений UIA: Эта опция перекладывает ответственность за определение текста на сам Windows Terminal, это значит, что NVDA больше не нужно определять, какой текст, отображаемый на экране, является "новым".
+Это должно заметно повысить производительность и стабильность работы Windows Terminal, но работа над данной функцией ещё не завершена.
+В частности, при выборе этой опции сообщается о набранных символах, которые не отображаются на экране, например, о паролях.
+Кроме того, непрерывный вывод длиной более 1000 символов может неточно отображаться.</li>
 </ul>
 <h5 id="CancelExpiredFocusSpeech">Пытаться отменять речевой вывод для устаревших событий фокуса</h5>
 <p>Эта опция позволяет включить поведение, при котором NVDA будет пытаться отменять речевой вывод для устаревших и вероятно более ненужных событий системного фокуса.
