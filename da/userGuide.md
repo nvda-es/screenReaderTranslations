@@ -82,7 +82,7 @@ For oplysninger om, hvilke undtagelser gør sig gældende, læs licensvilkårene
 ## NVDA-hurtigstartguide {#NVDAQuickStartGuide}
 
 Denne hurtigstartguide indeholder tre hovedafsnit: download, opsætning og kørsel af NVDA.
-Disse efterfølges af information om, hvordan man justere indstillinger, deltager i fællesskabet og får hjælp.
+Disse efterfølges af information om, hvordan man justere indstillinger, bruger tilføjelser, deltager i fællesskabet og får hjælp.
 Oplysningerne i denne vejledning er en sammenfatning af andre dele af NVDAs brugervejledning.
 Se venligst den fulde brugervejledning for mere detaljeret information om hvert emne.
 
@@ -300,40 +300,42 @@ Når tilføjelser er installeret, åbner Tilføjelsescentret til fanen "Installe
 #### Tilgængelige tilføjelser {#AvailableAddons}
 Når vinduet først åbnes, kan tilføjelser tage et par sekunder at indlæse.
 NVDA vil læse navnet på den første tilføjelse, når listen over tilføjelser er færdig med at indlæse.
-Tilgængelige tilføjelser er opført alfabetisk i et gitter.
+Tilgængelige tilføjelser er opført alfabetisk i en liste bestående af flere kolonner.
 For at gennemse listen og finde ud af mere om en specifik tilføjelse:
-1. Brug `piletasterne` eller tryk på det første bogstav i en tilføjelses navn for at navigere rundt i listen.
+
+1. Brug piletasterne eller tryk på det første bogstav i navnet på en tilføjelse for at navigere rundt i listen.
 1. Tryk `tab` én gang for at flytte til beskrivelsen af den aktuelt valgte tilføjelse.
-1. Brug [læsetasterne](#ReadingText) eller `piletasterne` for at læse hele beskrivelsen.
+1. Brug [læsetasterne](#ReadingText) eller piletasterne for at læse hele beskrivelsen.
 1. Tryk `tab` til "Handlinger"-knappen, som kan bruges til at installere tilføjelsen, blandt andre handlinger.
 1. Tryk `tab` til "Andre detaljer", som viser detaljer såsom udgiver, version og hjemmeside.
-1. For at vende tilbage til listen over tilgængelige tilføjelser, tryk `alt+t`, eller `shift+tab` tilbage til listen "Tilgængelige tilføjelser".
+1. For at vende tilbage til listen over tilgængelige tilføjelser, tryk `alt+t`, eller `shift+tab`, indtil du kommer tilbage til listen.
 
-#### Søg efter tilføjelser {#SearchingForAddons}
+#### Søgning efter tilføjelser {#SearchingForAddons}
 Udover at gennemse alle tilgængelige tilføjelser, er det muligt at filtrere de viste tilføjelser.
 For at søge, tryk `alt+s` for at springe til søgefeltet og indtast teksten for at søge.
-Søgefeltet kan indeholde informationer som tilføjelses-ID, visningsnavn, udgiver, forfatter eller beskrivelse.
+Når du skriver i feltet, kan du søge efter informationer som tilføjelses-ID, visningsnavn, udgiver, forfatter eller beskrivelse.
 Listen ændrer sig, mens du indtaster din søgning.
 Når du er færdig, tryk `tab` for at gå til den filtrerede liste over tilføjelser og gennemse resultaterne.
 
 #### Installation af tilføjelser {#InstallingAddons}
 
 For at installere en tilføjelse:
+
 1. Med fokus på en tilføjelse, du ønsker at installere, tryk `enter`.
 1. Handlingsmenuen åbnes med en liste over handlinger. Den første handling er "Installér".
-1. For at installere tilføjelsen, tryk `i` eller `nedpil` til "installér" og tryk `enter`.
+1. For at installere tilføjelsen, tryk `i` eller pil ned til "installér" og tryk `enter`.
 1. Fokus vender tilbage til tilføjelsen i listen, og NVDA vil læse detaljerne om tilføjelsen.
 1. "Status"-informationen rapporteret af NVDA ændres fra "Tilgængelig" til "Henter".
 1. Når tilføjelsen er færdig med at hente, ændres status til "Hentet. Afventer installation".
 1. Gentag med eventuelle andre tilføjelser, du ønsker at installere samtidigt.
 1. Når du er færdig, tryk `tab`, indtil fokus er på knappen "Luk", og tryk derefter `enter`.
 1. De hentede tilføjelser starter installationsprocessen, når Tilføjelsescentret lukkes.
-Tilføjelser kan oprette dialogbokse under installationsprocessen, som du skal reagere på.
+Under installationsprocessen kan dialogbokse fremkomme, som du skal reagere på.
 1. Når tilføjelserne er installeret, vises en dialog, der informerer om, at der er foretaget ændringer, og du skal genstarte NVDA for at fuldføre installationen.
 1. Tryk `enter` for at genstarte NVDA.
 
 #### Håndtering af installerede tilføjelser {#ManagingInstalledAddons}
-Tryk `control+tab` for at bevæge dig mellem fanerne eller sektionerne i Tilføjelsescentret.
+Tryk `control+tab` for at bevæge dig mellem fanerne i Tilføjelsescentret.
 Fanerne inkluderer: "Installerede tilføjelser", "Opdaterbare tilføjelser", "Tilgængelige tilføjelser" og "Installerede inkompatible tilføjelser".
 Hver af fanerne er opstillet på samme måde, som en liste over tilføjelser, et panel med flere detaljer om den valgte tilføjelse og muligheden for at udføre handlinger for tilføjelsen.
 Handlingsmenuen for installerede tilføjelser inkluderer "Deaktiver" og "Fjern" i stedet for "Installér".
@@ -343,7 +345,7 @@ Efter aktivering, deaktivering eller fjernelse af tilføjelser vil du blive bedt
 Disse ændringer træder kun i kraft, når NVDA genstartes.
 Bemærk, at i denne dialog fungerer `escape` på samme måde som Luk-knappen.
 
-### Opdatering af tilføjelser {#UpdatingAddons}
+#### Opdatering af tilføjelser {#UpdatingAddons}
 Når der er en opdatering til en tilføjelse, du har installeret, vil den blive vist i fanen "Opdaterbare tilføjelser".
 Tryk `control+tab` for at komme til denne fane fra hvor som helst i Tilføjelsescentret.
 Status for tilføjelsen vil være angivet som "Opdatering tilgængelig".
@@ -2291,13 +2293,16 @@ Som standard vil denne kommando skifte mellem følgende tilstande:
 * NVDA i venstre og alle andre programmer i begge kanaler: NVDA vil tale i venstre kanal, og alle andre programmer vil afspille lyde i begge kanaler.
 
 Der er flere avancerede lydopdelingstilstande tilgængelige i NVDA-indstillingerne.
+Blandt disse tilstande, vil indstillingen "NVDA og programmer i begge kanaler" tvinge lyden til at blive afspillet i begge kanaler.
+Denne indstilling kan virke anderledes end hvis du blot Deaktiverer lydopdeling, såfremt anden lydbehandling påvirker kanalernes lydstyrke.
+
 Bemærk venligst, at lydopdeling ikke fungerer som en mixer.
 For eksempel, hvis et program afspiller et stereo-lydspor, mens lydopdelingen er sat til "NVDA i venstre og programmer i højre", vil du kun høre højre kanal af lydsporet, mens venstre kanal af lydsporet vil være slået fra.
 
 Denne indstilling er ikke tilgængelig, hvis du har startet NVDA med [WASAPI deaktiveret for lydudgang](#WASAPI) i avancerede indstillinger.
 
 Bemærk venligst, at hvis NVDA går ned, vil den ikke være i stand til at genoprette programmernes lydstyrke, og disse kan stadig udsende lyd i én kanal efter NVDA-nedbrud.
-For at afhjælpe dette, genstart NVDA.
+For at afhjælpe dette, genstart NVDA og vælg "NVDA og programmer i begge kanaler".
 
 ##### Tilpasning af lydopdeling {#CustomizeSoundSplitModes}
 
@@ -2311,6 +2316,7 @@ Som standard er kun tre tilstande inkluderet.
 
 Bemærk, at det er nødvendigt at afkrydse mindst én tilstand.
 Denne mulighed er ikke tilgængelig, hvis du har startet NVDA med [WASAPI deaktiveret for lydudgang](#WASAPI) i avancerede indstillinger.
+
 ##### Tid lydenheden skal holdes i gang, når tale er stoppet {#AudioAwakeTime}
 
 Denne combo box bestemmer, hvor længe NVDA holder lydenheden aktiv, efter at talen er stoppet.
@@ -2322,39 +2328,6 @@ Lavere værdier vil gøre, at lyd oftere bliver afbrudt, da enheden kan gå i dv
 At indstille værdien for høj kan forårsage, at batteriet på lydudgangsenheden aflades hurtigere, da den forbliver aktiv længere, mens der ikke sendes lyd.
 
 Du kan indstille tiden til 0 for at deaktivere denne funktion.
-
-##### Lydstyrken for andre programmer {#OtherAppVolume}
-
-Denne skyder gør det muligt at justere lydstyrken for alle aktuelt kørende programmer undtagen NVDA.
-Denne lydstyrkeindstilling vil gælde for alle programmernes lydstyrke, selvom de starter efter at denne indstilling er ændret.
-Denne lydstyrke kan også styres via følgende tastaturkommandoer fra hvor som helst:
-
-<!-- KC:beginInclude -->
-
-| Navn |Tast |Beskrivelse|
-|---|---|---|
-|Forøg programmers lydstyrke |`NVDA+alt+sideOp` |Øger lydstyrken for alle programmer undtagen NVDA.|
-|Formindsk programmers lydstyrke |`NVDA+alt+sideNed` |Formindsker lydstyrken for alle programmer undtagen NVDA.|
-
-<!-- KC:endInclude -->
-
-Denne mulighed er ikke tilgængelig, hvis du har startet NVDA med [WASAPI deaktiveret for lydudgang](#WASAPI) i avancerede indstillinger.
-
-##### Slå lyden fra andre programmer fra {#MuteApplications}
-
-Denne check box giver dig mulighed for at slå lyden fra alle programmer undtagen NVDA.
-Denne lydindstilling vil gælde for alle andre programmer, der udsender lyd, selvom de starter efter at denne indstilling er ændret.
-Følgende tastaturkommando kan også bruges fra hvor som helst:
-
-<!-- KC:beginInclude -->
-
-| Navn |Tast |Beskrivelse|
-|---|---|---|
-|Slå lyden fra andre programmer fra eller til |`NVDA+alt+delete` |Slår lyden fra eller til for alle programmer undtagen NVDA.|
-
-<!-- KC:endInclude -->
-
-Denne mulighed er ikke tilgængelig, hvis du har startet NVDA med [WASAPI deaktiveret for lydudgang](#WASAPI) i avancerede indstillinger.
 
 #### Syn {#VisionSettings}
 
@@ -5047,4 +5020,3 @@ Følgende værdier kan indstilles under denne registreringsdatabasenøgle:
 Hvis du har brug for yderligere information eller hjælp til brugen af NVDA, besøg venligst [NVDAs websted](NVDA_URL).
 Her kan du finde yderligere dokumentation, samt teknisk support og ressourcer.
 Denne side indeholder også information vedrørende udviklingen af NVDA.
-
