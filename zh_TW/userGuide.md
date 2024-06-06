@@ -744,7 +744,7 @@ NVDA 允許您以不同的方式探索及導覽 Windows 系統，包括一般性
 您也會想要使用無法以鍵盤正常操作的[物件](#Objects)，
 此時物件導覽的功能就可以派上用場。
 
-物件導覽可以讓您在個物件之間移動並獲取各物件的相關資訊，
+物件導覽可以讓您在個[物件](#Objects)之間移動並獲取各物件的相關資訊，
 當您導覽到一個物件時，NVDA 會以類似於讀出系統焦點的方式來讀出此物件，
 要檢閱螢幕畫面顯示的文字，則可改使用[畫面檢閱](#ScreenReview)的功能。
 
@@ -1706,7 +1706,7 @@ NVDA 提供了許多可以使用設定對話框來變更的組態參數，
 
 <!-- KC:setting -->
 
-##### 開啟一般設定 {#toc109}
+##### 開啟一般設定 {#toc110}
 
 快速鍵: `NVDA+Ctrl+G`
 
@@ -1802,7 +1802,7 @@ NVDA 設定對話框中的「一般」類別可以設定 NVDA 的整體行為，
 
 <!-- KC:setting -->
 
-##### 開啟語音設定 {#toc122}
+##### 開啟語音設定 {#toc123}
 
 快速鍵: `NVDA+Ctrl+V`
 
@@ -1945,7 +1945,7 @@ ESpeak NG 的變聲聽起來更像語音，因為他們提供的屬性與 ESpeak
 
 <!-- KC:setting -->
 
-##### 開啟選擇合成器對話框 {#toc143}
+##### 開啟選擇合成器對話框 {#toc144}
 
 快速鍵: `NVDA+Ctrl+S`
 
@@ -2177,7 +2177,7 @@ NVDA 設定對話框中「點字」類別的「變更...」按鈕，會開啟[�
 
 <!-- KC:setting -->
 
-##### 開啟選擇點顯器對話框 {#toc166}
+##### 開啟選擇點顯器對話框 {#toc168}
 
 快速鍵: `NVDA+Ctrl+A`
 
@@ -2229,7 +2229,7 @@ NVDA 設定對話框中「點字」類別的「變更...」按鈕，會開啟[�
 
 <!-- KC:setting -->
 
-##### 開啟音訊設定對話框 {#toc171}
+##### 開啟音訊設定對話框 {#toc173}
 
 快速鍵: `NVDA+Ctrl+U`
 
@@ -2372,7 +2372,7 @@ NVDA 音訊設定中的下拉式方塊提供了更進階的聲音分割模式，
 
 <!-- KC:setting -->
 
-##### 開啟鍵盤設定 {#toc181}
+##### 開啟鍵盤設定 {#toc188}
 
 快速鍵: `NVDA+Ctrl+K`
 
@@ -2449,7 +2449,7 @@ NVDA 設定對話框中的「鍵盤」類別包含一些選項用以設定當您
 
 <!-- KC:setting -->
 
-##### 開啟滑鼠設定 {#toc194}
+##### 開啟滑鼠設定 {#toc201}
 
 快速鍵: `NVDA+Ctrl+M`
 
@@ -2552,7 +2552,7 @@ NVDA 設定對話框中的「檢閱游標」類別可以設定 NVDA 的檢閱游
 
 <!-- KC:setting -->
 
-##### 開啟物件呈現設定 {#toc211}
+##### 開啟物件呈現設定 {#toc218}
 
 快速鍵: `NVDA+Ctrl+O`
 
@@ -2667,7 +2667,7 @@ NVDA 設定對話框中的「物件呈現」類別可以設定 NVDA 將呈現多
 
 <!-- KC:setting -->
 
-##### 開啟瀏覽模式設定 {#toc229}
+##### 開啟瀏覽模式設定 {#toc236}
 
 快速鍵: `NVDA+Ctrl+B`
 
@@ -2759,7 +2759,7 @@ NVDA 設定對話框中的「瀏覽模式」類別用於設定當您閱讀和導
 
 <!-- KC:setting -->
 
-##### 開啟文件格式設定 {#toc243}
+##### 開啟文件格式設定 {#toc250}
 
 快速鍵: `NVDA+Ctrl+D`
 
@@ -3163,8 +3163,8 @@ NVDA 預設忽略大小寫。
 * 替代文字：允許您更改選取符號的讀音文字
 * 等級：您可調整符號要被讀出的最低等級設定 (無、一些、多數、全部)
 您也可以將等級設為字元，在這種情況下無論使用的符號等級為何都不會說出該符號，除了以下兩種情況：
- * 按字元導覽時。
- * 當 NVDA 正在拼讀含有該符號的文字時。
+  * 按字元導覽時。
+  * 當 NVDA 正在拼讀含有該符號的文字時。
 * 送出實際的符號到合成器：指定何時要將符號本身或其讀音替代文字送出到合成器。
 一個符號引發合成器產生朗讀停頓或語音的語調改變的效果相當有用，
 例如一個逗點 (或逗號) 引發朗讀的停頓，
@@ -3556,7 +3556,7 @@ NVDA 將要求您確認移除，
 在 NVDA 功能表的「工具」子功能表的「Python 主控台」是一個很有用的開發工具，可作為偵錯、NVDA 內部的一般檢查，或是應用程式的可及性階層架構檢查，
 要了解更多資訊請參見 [NVDA 開發者指南](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html)。
 
-### 附加元件商店 {#toc306}
+### 附加元件商店 {#toc314}
 
 這將開啟 [NVDA 附加元件商店](#AddonsManager)，
 要了解更多資訊請閱讀[附加元件和附加元件商店](#AddonsManager)章節的深入說明。
@@ -3645,8 +3645,8 @@ NVDA 也能使用這些語音。
 * [Microsoft Speech Platform - Runtime (Version 11), x86](https://www.microsoft.com/download/en/details.aspx?id=27225)
 * [Microsoft Speech Platform - Runtime Languages (Version 11)](https://www.microsoft.com/download/en/details.aspx?id=27224)
   * 此頁面包含了許多語音辨識及文字轉語音 (text-to-speech, TTS) 的檔案，
-  請依照所需的語言或語音選擇對應的 TTS 檔案，
-  例如 MSSpeech_TTS_en-US_ZiraPro.msi 是美式英文的語音。
+ 請依照所需的語言或語音選擇對應的 TTS 檔案，
+ 例如 MSSpeech_TTS_en-US_ZiraPro.msi 是美式英文的語音。
 
 ### Windows OneCore 語音 {#OneCore}
 
@@ -4005,7 +4005,7 @@ NVDA 也支援下列點顯器 (且不需安裝任何特殊驅動程式)：
 以下是 Brailliant BI/B 和 BrailleNote touch 點顯器在 NVDA 的按鍵指派，
 這些按鍵的實際位置請參見點顯器的說明文件。
 
-#### 所有型號的按鍵指派 {#toc326}
+#### 所有型號的按鍵指派 {#toc334}
 
 <!-- KC:beginInclude -->
 
@@ -4034,7 +4034,7 @@ NVDA 也支援下列點顯器 (且不需安裝任何特殊驅動程式)：
 
 <!-- KC:endInclude -->
 
-#### Brailliant BI 32、BI 40 和 B 80 的按鍵指派 {#toc327}
+#### Brailliant BI 32、BI 40 和 B 80 的按鍵指派 {#toc335}
 
 <!-- KC:beginInclude -->
 
@@ -4046,7 +4046,7 @@ NVDA 也支援下列點顯器 (且不需安裝任何特殊驅動程式)：
 
 <!-- KC:endInclude -->
 
-#### Brailliant BI 14 的按鍵指派 {#toc328}
+#### Brailliant BI 14 的按鍵指派 {#toc336}
 
 <!-- KC:beginInclude -->
 
@@ -4933,7 +4933,7 @@ NVDA 使用者通常依靠設定他們的 NVDA 設定檔來滿足他們的需求
 
 ### 安全畫面 {#SecureScreens}
 
-當 NVDA 在[安全畫面](#SecureScreens)會以安全模式執行，除非啟用了 `serviceDebug` [全系統參數](#SystemWideParameters)。
+當 NVDA 在[安全畫面](#SecureMode)會以安全模式執行，除非啟用了 `serviceDebug` [全系統參數](#SystemWideParameters)。
 
 當從安全畫面執行時，NVDA 使用系統設定檔作為偏好設定，
 NVDA 使用者偏好設定可以[複製到安全畫面使用](#GeneralSettingsCopySettings)。
