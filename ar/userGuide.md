@@ -4129,6 +4129,7 @@ WASAPI هو نظام صوتي متطوِّر، قد يؤدي لتحسين است
 |مفتاح f3 |dot1+dot4+dot8+space|
 |مفتاح  f4 |dot7+f3|
 |مفتاح windows+b |dot1+dot2+f1|
+|مفتاحا windows+d |dot1+dot4+dot5+f1|
 |مفتاحا control+insert |smartbeetle:f1+rightSideScroll|
 |مفتاحا alt+insert |smartbeetle:f3+rightSideScroll|
 
