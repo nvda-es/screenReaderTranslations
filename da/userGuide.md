@@ -101,7 +101,7 @@ Se [Systemkrav](#SystemRequirements) for alle detaljer.
 Disse trin forudsætter en vis fortrolighed med at navigere på en webside.
 
 * Åbn din webbrowser (Tryk på `Windows`-tasten, skriv ordet "internet" uden anførselstegn, og tryk på `enter`.
-* Indlæs NV Access-downloadsiden (Tryk på `alt+d`, skriv følgende adresse og tryk enter:
+* Indlæs NV Access-downloadsiden (Tryk på `alt+d`, skriv følgende adresse og tryk `enter`):
 https://www.nvaccess.org/download
 * Aktivér "download"-knappen
 * Browseren beder muligvis ikke om en handling efter download, og starter derefter download af filen
@@ -147,7 +147,7 @@ Installation af NVDA giver mulighed for yderligere funktionalitet, såsom automa
 Dette kan ikke gøres med flytbare og midlertidige kopier.
 For flere oplysninger om begrænsninger, når du kører en midlertidig eller flytbar kopi af NVDA, læs afsnittet [Begrænsninger for flytbare og midlertidige kopier af NVDA](#PortableAndTemporaryCopyRestrictions).
 
-Installation af NVDA lader dig også oprette genveje i startmenuen og på skrivebordet. Skrivebordsgenvejen vil få genvejen Alt+Ctrl+N tilknyttet for at starte NVDA.
+Installation af NVDA lader dig også oprette genveje i startmenuen og på skrivebordet. Skrivebordsgenvejen vil få genvejen `Alt+Ctrl+N` tilknyttet for at starte NVDA.
 
 #### Sådan installeres NVDA fra installationsprogrammet {#StepsForInstallingNVDAFromTheLauncher}
 
@@ -193,10 +193,10 @@ Alle kommandoer er konfigurerbare, så disse er standardtastetryk for disse funk
 
 #### NVDA-tasten {#NVDAModifierKey}
 
-Som standard er NVDA-tasten enten `numpad0`, (med `numLock` slået fra), eller `insert`-tasten nær `delete`, `home` og ``end `` taster.
+Som standard er NVDA-tasten enten `numpad0`, (med `numLock` slået fra), eller `insert-tasten` nær `delete`, `home` og `end`-taster.
 NVDA-tasten kan også indstilles til `capsLock`-tasten.
 
-#### Tastaturhjælp {#InputHjlp}
+#### Tastaturhjælp {#InputHelp}
 
 For at lære placeringen af tasterne på tastaturet, tryk på `NVDA+1` for at slå tastaturhjælp til.
 Når du er i tastaturhjælpen, vil et hvilket som helst tastetryk (såsom at trykke på en tast eller udføre en berøring på en touchskærm) oplyse handlingen og beskrive, hvad den gør (hvis der er en handling tilknyttet).
@@ -323,7 +323,7 @@ For at installere en tilføjelse:
 
 1. Med fokus på en tilføjelse, du ønsker at installere, tryk `enter`.
 1. Handlingsmenuen åbnes med en liste over handlinger. Den første handling er "Installér".
-1. For at installere tilføjelsen, tryk `i` eller pil ned til "installér" og tryk `enter`.
+1. For at installere tilføjelsen, tryk `i` eller `pil ned` til "installér" og tryk `enter`.
 1. Fokus vender tilbage til tilføjelsen i listen, og NVDA vil læse detaljerne om tilføjelsen.
 1. "Status"-informationen rapporteret af NVDA ændres fra "Tilgængelig" til "Henter".
 1. Når tilføjelsen er færdig med at hente, ændres status til "Hentet. Afventer installation".
@@ -411,7 +411,7 @@ Efter installationen, kan du genaktivere tilføjelser, der er inkompatible på e
 #### Brug af NVDA på logon-skærmen {#StartAtWindowsLogon}
 
 Med denne indstilling bestemmer du, om du vil starte NVDA på Windows logon-skærmen, før du har indtastet din adgangskode.
-Dette omfanger også kontrol af brugerkonti og [ andre sikre skærme#SecureScreens].
+Dette omfatter også kontrol af brugerkonti og [ andre sikre skærme](#SecureScreens).
 Denne indstilling er aktiveret for nye installationer.
 
 #### Opret Genvej på Skrivebordet (ctrl+alt+n) {#CreateDesktopShortcut}
@@ -540,7 +540,7 @@ Du kan også beholde din finger på skærmen, og derefter bevæge den rundt på 
 Når NVDA-kommandoer er beskrevet senere i denne brugermanual, kan de indeholde information om hvordan man benytter touchskærmen til at udføre den tilsvarende kommando.
 Følgende information beskriver hvordan du kan udføre diverse berøringsbevægelser.
 
-##### Tryk {#toc45}
+##### Tryk {#Taps}
 
 Tryk på skærmen hurtigt med en eller flere fingre.
 
@@ -552,7 +552,7 @@ Et tryk to gange med en finger er et dobbelt tryk
 Tre tryk er et trippel-tryk, osv.
 Disse bevægelser genkender selvfølgelig også hvor mange fingre var benyttet da bevægelsen var udført, så det er muligt at have flere kombinationer der udføre bestemte handlinger som et trippel tryk med to fingre, et tryk med fire fingre, osv.
 
-##### Svirp {#toc46}
+##### Svirp {#Flicks}
 
 Svirp din finger hurtigt over skærmen.
 
@@ -1706,7 +1706,7 @@ De tilgængelige indstillingskategorier i NVDAs indstillingsdialog vil blive bes
 
 <!-- KC:setting -->
 
-##### Åbn generelle indstillinger {#toc110}
+##### Åbn generelle indstillinger {#OpenGeneralSettings}
 
 Tast: `NVDA+control+g`
 
@@ -1802,7 +1802,7 @@ Du kan også manuelt installere de ventende opdateringer fra dialogen "Afslut NV
 
 <!-- KC:setting -->
 
-##### Åbn taleindstillinger {#toc123}
+##### Åbn taleindstillinger {#OpenSpeechSettings}
 
 Tast: `NVDA+control+v`
 
@@ -1945,7 +1945,7 @@ Bemærk, at du skal vælge mindst to tilstande.
 
 <!-- KC:setting -->
 
-##### Åbn dialogen for valg af talesyntese {#toc144}
+##### Åbn dialogen for valg af talesyntese {#OpenSelectSynthesizer}
 
 Tast: `NVDA+control+s`
 
@@ -2177,7 +2177,7 @@ For at ændre denne indstilling fra et hvilket som helst sted, skal du tildele e
 
 <!-- KC:setting -->
 
-##### Åbn dialog til valg af punktdisplay {#toc168}
+##### Åbn dialog til valg af punktdisplay {#OpenSelectBrailleDisplay}
 
 Tast: `NVDA+control+a`
 
@@ -2229,7 +2229,7 @@ Derfor anbefales det, at du kun forbinder ét display af en bestemt type og af e
 
 <!-- KC:setting -->
 
-##### Åbn lydindstillinger {#toc173}
+##### Åbn lydindstillinger {#OpenAudioSettings}
 
 Tast: `NVDA+control+u`
 
@@ -2372,7 +2372,7 @@ For understøttede indstillinger, skal du læse dokumentationen for det aktuelle
 
 <!-- KC:setting -->
 
-##### Åbn tastaturindstillinger {#toc188}
+##### Åbn tastaturindstillinger {#OpenKeyboardSettings}
 
 Tast: `NVDA+control+k`
 
@@ -2449,7 +2449,7 @@ Denne indstilling er slået til som standard, men nogle brugere vil måske foret
 
 <!-- KC:setting -->
 
-##### Åbn museindstillinger {#toc201}
+##### Åbn museindstillinger {#OpenMouseSettings}
 
 Tast: `NVDA+control+m`
 
@@ -2552,7 +2552,7 @@ For at kunne slå simpel læsetilstand til og fra hvor som helst, tildel et tast
 
 <!-- KC:setting -->
 
-##### Åbn indstillinger for objektpræsentation {#toc218}
+##### Åbn indstillinger for objektpræsentation {#OpenObjectPresentationSettings}
 
 Tast: `NVDA+control+o`
 
@@ -2667,7 +2667,7 @@ Denne indstilling er slået til som standard.
 
 <!-- KC:setting -->
 
-##### Åbn indstillinger for gennemsynstilstand {#toc236}
+##### Åbn indstillinger for gennemsynstilstand {#OpenBrowseModeSettings}
 
 Tast: `NVDA+control+b`
 
@@ -2759,7 +2759,7 @@ Aktivering af denne indstilling kan forbedre oplevelsen på nogle sider, men med
 
 <!-- KC:setting -->
 
-##### Åbn indstillinger for dokumentformatering {#toc250}
+##### Åbn indstillinger for dokumentformatering {#OpenDocumentFormattingSettings}
 
 Tast: `NVDA+control+d`
 
@@ -3556,7 +3556,7 @@ For at aktivere og deaktivere punktviseren fra hvor som helst, kan du tildele en
 Python-konsollen, der er at finde i menuen "Værktøjer" i NVDA-menuen fungerer som et udviklingsværktøj. Dette værktøj kan benyttes til generel fejlfinding, undersøgelse af interne komponenter i NVDA eller tilgængeligheden af en applikation.
 For yderligere information, læs [NVDA Developer Guide](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html).
 
-### Tilføjelsescenteret {#toc314}
+### Tilføjelsescenteret {#AddonStoreMenuItem}
 
 Dette åbner [Tilføjelsescenteret](#AddonsManager).
 For flere informationer, læse afnisttet [Tilføjelser og tilføjelsescenteret](#AddonsManager).
@@ -4005,7 +4005,7 @@ Følgende yderligere enheder understøttes også, men kræver ingen driver for a
 Dette er tastekombinationerne til Brailliant BI/B og BrailleNote Touch displays til brug med NVDA.
 Se venligst dokumentationen til dit display for at finde ud af, hvor du kan finde knapperne.
 
-#### Tastekombinationer til alle modeller {#toc334}
+#### Tastekombinationer til alle modeller {#HumanWareBrailliantKeyAssignmentForAllModels}
 
 <!-- KC:beginInclude -->
 
@@ -4034,7 +4034,7 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 
 <!-- KC:endInclude -->
 
-#### Tastekombinationer for Brailliant BI 32, BI 40 og B 80 {#toc335}
+#### Tastekombinationer for Brailliant BI 32, BI 40 og B 80 {#HumanWareBrailliantKeyAssignmentForBI32BI40AndB80}
 
 <!-- KC:beginInclude -->
 
@@ -4046,7 +4046,7 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 
 <!-- KC:endInclude -->
 
-#### Tastekombinationer for Brailliant BI 14 {#toc336}
+#### Tastekombinationer for Brailliant BI 14 {#HumanWareBrailliantKeyAssignmentForBI14}
 
 <!-- KC:beginInclude -->
 
