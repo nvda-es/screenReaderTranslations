@@ -542,7 +542,6 @@ Seuraavassa on ohjeita eri kosketuseleiden suorittamiseen.
 
 ##### Napautukset {#Taps}
 
-
 Napauta näyttöä nopeasti yhdellä tai useammalla sormella.
 
 Kerran napauttamista yhdellä sormella kutsutaan napautukseksi.
