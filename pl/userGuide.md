@@ -540,7 +540,7 @@ Przesuwaj palec po ekranie, by usłyszeć inne kontrolki lub tekst pod nim.
 Ilekroć w tym podręczniku zostanie wymieniona komenda klawiaturowa NVDA, zostanie podany gest dotykowy, który jest jej odpowiednikiem. 
 Poniżej wyjaśnienie, jak wykonywać te gesty.
 
-##### Stuknięcia {#toc45}
+##### Stuknięcia {#Taps}
 
 Stuknij szybko w ekran jednym lub wieloma palcami.
 
@@ -552,7 +552,7 @@ Stuknięcie dwukrotne będzie podwójnym stuknięciem.
 Stuknięcie 3 razy będzie potrójnym stuknięciem. I tak dalej.
 Te wielokrotne gesty również uwzględniają ilość użytych palców, więc możliwe są gesty takie jak potrójne stuknięcie dwoma palcami, pojedyncze stuknięcie czterema palcami itd. 
 
-##### Machnięcia {#toc46}
+##### Machnięcia {#Flicks}
 
 Przesuń szybko palcem po ekranie.
 
@@ -1706,7 +1706,7 @@ Kategorie w oknie ustawień NVDA zostaną opisane poniżej.
 
 <!-- KC:setting -->
 
-##### Otwiera ustawienia ogólne {#toc110}
+##### Otwiera ustawienia ogólne {#OpenGeneralSettings}
 
 Skrót: `NVDA+control+g`
 
@@ -1802,7 +1802,7 @@ Można ręcznie zainstalować oczekującą aktualizację w oknie opcji wyjścia 
 
 <!-- KC:setting -->
 
-##### Otwiera ustawienia mowy {#toc123}
+##### Otwiera ustawienia mowy {#OpenSpeechSettings}
 
 Skrót: `NVDA+control+v`
 
@@ -1945,7 +1945,7 @@ Miewaj na uwadze, że powinieneś zaznaczyć dwa tryby.
 
 <!-- KC:setting -->
 
-##### Otwiera okno dialogowe wybór syntezatora {#toc144}
+##### Otwiera okno dialogowe wybór syntezatora {#OpenSelectSynthesizer}
 
 Skrót: `NVDA+control+s`
 
@@ -2177,7 +2177,7 @@ Aby włączać i wyłączać pokazywanei zaznaczenia z jakiegokolwiek miejsca, s
 
 <!-- KC:setting -->
 
-##### Otwiera okno dialogowe wybor monitora brajlowskiego {#toc168}
+##### Otwiera okno dialogowe wybor monitora brajlowskiego {#OpenSelectBrailleDisplay}
 
 Skrót: `NVDA+control+a`
 
@@ -2229,7 +2229,7 @@ Czyli zaleca się podłączać monitor brajlowski określonego typu/producenta n
 
 <!-- KC:setting -->
 
-##### Otwiera ustawienia dźwięku {#toc173}
+##### Otwiera ustawienia dźwięku {#OpenAudioSettings}
 
 Skrót: `NVDA+control+u`
 
@@ -2372,7 +2372,7 @@ Po więcej informacji prosimy zajrzeć do pomocy danego rozszerzenia.
 
 <!-- KC:setting -->
 
-##### Otwiera ustawienia klawiatury {#toc188}
+##### Otwiera ustawienia klawiatury {#OpenKeyboardSettings}
 
 Skrót: `NVDA+control+k`
 
@@ -2449,7 +2449,7 @@ Opcja jest domyślnie włączona, aczkolwiek niektórzy użytkownicy mogą chcie
 
 <!-- KC:setting -->
 
-##### Otwiera ustawienia myszy {#toc201}
+##### Otwiera ustawienia myszy {#OpenMouseSettings}
 
 skrót: `NVDA+control+m`
 
@@ -2552,7 +2552,7 @@ Aby móc przełączać ten tryb z każdego miejsca, proszę przypisać własne z
 
 <!-- KC:setting -->
 
-##### Otwiera opcje prezentacji obiektów {#toc218}
+##### Otwiera opcje prezentacji obiektów {#OpenObjectPresentationSettings}
 
 Skrót: `NVDA+control+o`
 
@@ -2667,7 +2667,7 @@ Opcja jest domyślnie włączona.
 
 <!-- KC:setting -->
 
-##### Otwiera ustawienia trybu czytania {#toc236}
+##### Otwiera ustawienia trybu czytania {#OpenBrowseModeSettings}
 
 Skrót: `NVDA+control+b`
 
@@ -2759,7 +2759,7 @@ Włączenie tej opcji może spowodować, że wsparcie pewnych stron internetowyc
 
 <!-- KC:setting -->
 
-##### Otwiera ustawienia formatowania dokumentów {#toc250}
+##### Otwiera ustawienia formatowania dokumentów {#OpenDocumentFormattingSettings}
 
 Skrót: `NVDA+control+d`
 
@@ -3556,7 +3556,7 @@ Aby się dostać do przeglądu brajla z każdego miejsca, prosimy przydzielić z
 Konsola Pythona NVDA znajduje się w menu Narzędzia  w NVDA. Jest narzędziem dla programistów i jest używana do debugowania, przeglądania wewnątrz NVDA lub sprawdzania hierarchii dostępności aplikacji.
 Więcej informacji znajduje się w [podręczniku dla twórców](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html).
 
-### Add-on Store {#toc314}
+### Add-on Store {#AddonStoreMenuItem}
 
 Ta opcja otworzy [NVDA Add-on Store](#AddonsManager).
 Aby się dowiedzieć więcej, przeczytaj szczegółowy rozdział: [Dodatki i Add-on Store](#AddonsManager).
@@ -4005,7 +4005,7 @@ Następujące urządzenia również nie wymagają instalacji dodatkowych sterown
 Poniżej skróty klawiszowe dla Brailliant BI/B i BrailleNote touch, które działają w NVDA.
 Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia.
 
-#### Przypisania klawiszy dla wszystkich modeli {#toc334}
+#### Przypisania klawiszy dla wszystkich modeli {#HumanWareBrailliantKeyAssignmentForAllModels}
 
 <!-- KC:beginInclude -->
 
@@ -4034,7 +4034,7 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia.
 
 <!-- KC:endInclude -->
 
-#### Przypisania klawiszy dla Brailliant BI 32, BI 40 and B 80 {#toc335}
+#### Przypisania klawiszy dla Brailliant BI 32, BI 40 and B 80 {#HumanWareBrailliantKeyAssignmentForBI32BI40AndB80}
 
 <!-- KC:beginInclude -->
 
@@ -4046,7 +4046,7 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia.
 
 <!-- KC:endInclude -->
 
-#### Przypisania klawiszowe dla Brailliant BI 14 {#toc336}
+#### Przypisania klawiszy dla Brailliant BI 14 {#HumanWareBrailliantKeyAssignmentForBI14}
 
 <!-- KC:beginInclude -->
 
