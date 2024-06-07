@@ -2076,10 +2076,10 @@ NVDA 中的 COM 注册修复工具现在能够解决更多的系统问题。
   * speakWithoutPauses has been converted into a class, and refactored, but should not break compatibility.
   * getSpeechForSpelling is deprecated (though still available) use getSpellingSpeech instead.
   Private changes that should not affect addon developers:
-  * \_speakPlaceholderIfEmpty is now \_getPlaceholderSpeechIfTextEmpty
-  * \_speakTextInfo_addMath is now \_extendSpeechSequence\_addMathForTextInfo
+  * _speakPlaceholderIfEmpty is now _getPlaceholderSpeechIfTextEmpty
+  * _speakTextInfo_addMath is now _extendSpeechSequence_addMathForTextInfo
 * Speech 'reason' has been converted to an Enum, see controlTypes.OutputReason class. (#10703)
-  * Module level 'REASON\_*' constants are deprecated.
+  * Module level 'REASON_*' constants are deprecated.
 * Compiling NVDA dependencies now requires Visual Studio 2019 (16.2 or newer). (#10169)
 * Updated SCons to version 3.1.1. (#10169)
 * Again allow behaviors._FakeTableCell to have no location defined (#10864)
@@ -2313,8 +2313,8 @@ NVDA 2019.3 是一个非常重要的版本，包含许多幕后更改，包括�
 * Added an example to demonstrate using nvdaControllerClient.dll from C#. (#9600)
 * Added a new isWin10 function to the winVersion module which returns whether or not this copy of NVDA is running on (at least) the supplied release version of Windows 10 (such as 1903). (#9761)
 * The NVDA Python console now  contains more useful modules in its namespace (such as appModules, globalPlugins, config and textInfos). (#9789)
-* The result of the last executed command in the NVDA Python console is now accessible from the \_ (line) variable. (#9782)
-* Note that this shadows the gettext translation function also called "\_". To access the translation function: del \_
+* The result of the last executed command in the NVDA Python console is now accessible from the _ (line) variable. (#9782)
+* Note that this shadows the gettext translation function also called "_". To access the translation function: del _
 
 ## 2019.1.1
 
