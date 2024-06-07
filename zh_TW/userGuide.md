@@ -540,7 +540,7 @@ NVDA 快速鍵目前有兩種鍵盤配置，分別用在桌上型電腦與筆記
 在本用戶指南隨後提及的 NVDA 指令中，可能會列出可在觸控螢幕上執行該指令的觸控手勢，
 以下是有關如何執行各種觸控手勢的一些說明。
 
-##### 輕點 {#toc45}
+##### 輕點 {#Taps}
 
 用一根或多根手指快速輕點螢幕。
 
@@ -552,7 +552,7 @@ NVDA 快速鍵目前有兩種鍵盤配置，分別用在桌上型電腦與筆記
 輕點三次為點三下，以此類推。
 當然這些多次輕點手勢也要看是由多少根手指組成，所以有可能是兩指點三下或四指點一下等等。
 
-##### 滑動 {#toc46}
+##### 滑動 {#Flicks}
 
 在螢幕上快速滑動手指。
 
@@ -1706,7 +1706,7 @@ NVDA 提供了許多可以使用設定對話框來變更的組態參數，
 
 <!-- KC:setting -->
 
-##### 開啟一般設定 {#toc110}
+##### 開啟一般設定 {#OpenGeneralSettings}
 
 快速鍵: `NVDA+Ctrl+G`
 
@@ -1802,7 +1802,7 @@ NVDA 設定對話框中的「一般」類別可以設定 NVDA 的整體行為，
 
 <!-- KC:setting -->
 
-##### 開啟語音設定 {#toc123}
+##### 開啟語音設定 {#OpenSpeechSettings}
 
 快速鍵: `NVDA+Ctrl+V`
 
@@ -1945,7 +1945,7 @@ ESpeak NG 的變聲聽起來更像語音，因為他們提供的屬性與 ESpeak
 
 <!-- KC:setting -->
 
-##### 開啟選擇合成器對話框 {#toc144}
+##### 開啟選擇合成器對話框 {#OpenSelectSynthesizer}
 
 快速鍵: `NVDA+Ctrl+S`
 
@@ -2177,7 +2177,7 @@ NVDA 設定對話框中「點字」類別的「變更...」按鈕，會開啟[�
 
 <!-- KC:setting -->
 
-##### 開啟選擇點顯器對話框 {#toc168}
+##### 開啟選擇點顯器對話框 {#OpenSelectBrailleDisplay}
 
 快速鍵: `NVDA+Ctrl+A`
 
@@ -2229,7 +2229,7 @@ NVDA 設定對話框中「點字」類別的「變更...」按鈕，會開啟[�
 
 <!-- KC:setting -->
 
-##### 開啟音訊設定對話框 {#toc173}
+##### 開啟音訊設定對話框 {#OpenAudioSettings}
 
 快速鍵: `NVDA+Ctrl+U`
 
@@ -2372,7 +2372,7 @@ NVDA 音訊設定中的下拉式方塊提供了更進階的聲音分割模式，
 
 <!-- KC:setting -->
 
-##### 開啟鍵盤設定 {#toc188}
+##### 開啟鍵盤設定 {#OpenKeyboardSettings}
 
 快速鍵: `NVDA+Ctrl+K`
 
@@ -2449,7 +2449,7 @@ NVDA 設定對話框中的「鍵盤」類別包含一些選項用以設定當您
 
 <!-- KC:setting -->
 
-##### 開啟滑鼠設定 {#toc201}
+##### 開啟滑鼠設定 {#OpenMouseSettings}
 
 快速鍵: `NVDA+Ctrl+M`
 
@@ -2552,7 +2552,7 @@ NVDA 設定對話框中的「檢閱游標」類別可以設定 NVDA 的檢閱游
 
 <!-- KC:setting -->
 
-##### 開啟物件呈現設定 {#toc218}
+##### 開啟物件呈現設定 {#OpenObjectPresentationSettings}
 
 快速鍵: `NVDA+Ctrl+O`
 
@@ -2667,7 +2667,7 @@ NVDA 設定對話框中的「物件呈現」類別可以設定 NVDA 將呈現多
 
 <!-- KC:setting -->
 
-##### 開啟瀏覽模式設定 {#toc236}
+##### 開啟瀏覽模式設定 {#OpenBrowseModeSettings}
 
 快速鍵: `NVDA+Ctrl+B`
 
@@ -2759,7 +2759,7 @@ NVDA 設定對話框中的「瀏覽模式」類別用於設定當您閱讀和導
 
 <!-- KC:setting -->
 
-##### 開啟文件格式設定 {#toc250}
+##### 開啟文件格式設定 {#OpenDocumentFormattingSettings}
 
 快速鍵: `NVDA+Ctrl+D`
 
@@ -3556,7 +3556,7 @@ NVDA 將要求您確認移除，
 在 NVDA 功能表的「工具」子功能表的「Python 主控台」是一個很有用的開發工具，可作為偵錯、NVDA 內部的一般檢查，或是應用程式的可及性階層架構檢查，
 要了解更多資訊請參見 [NVDA 開發者指南](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html)。
 
-### 附加元件商店 {#toc314}
+### 附加元件商店 {#AddonStoreMenuItem}
 
 這將開啟 [NVDA 附加元件商店](#AddonsManager)，
 要了解更多資訊請閱讀[附加元件和附加元件商店](#AddonsManager)章節的深入說明。
@@ -4005,7 +4005,7 @@ NVDA 也支援下列點顯器 (且不需安裝任何特殊驅動程式)：
 以下是 Brailliant BI/B 和 BrailleNote touch 點顯器在 NVDA 的按鍵指派，
 這些按鍵的實際位置請參見點顯器的說明文件。
 
-#### 所有型號的按鍵指派 {#toc334}
+#### 所有型號的按鍵指派 {#HumanWareBrailliantKeyAssignmentForAllModels}
 
 <!-- KC:beginInclude -->
 
@@ -4034,7 +4034,7 @@ NVDA 也支援下列點顯器 (且不需安裝任何特殊驅動程式)：
 
 <!-- KC:endInclude -->
 
-#### Brailliant BI 32、BI 40 和 B 80 的按鍵指派 {#toc335}
+#### Brailliant BI 32、BI 40 和 B 80 的按鍵指派 {#HumanWareBrailliantKeyAssignmentForBI32BI40AndB80}
 
 <!-- KC:beginInclude -->
 
@@ -4046,7 +4046,7 @@ NVDA 也支援下列點顯器 (且不需安裝任何特殊驅動程式)：
 
 <!-- KC:endInclude -->
 
-#### Brailliant BI 14 的按鍵指派 {#toc336}
+#### Brailliant BI 14 的按鍵指派 {#HumanWareBrailliantKeyAssignmentForBI14}
 
 <!-- KC:beginInclude -->
 
