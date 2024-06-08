@@ -1705,6 +1705,7 @@ Kategorije koje su dostupne u dijalogu NVDA podešavanja će biti opisane ispod.
 #### Opšta {#GeneralSettings}
 
 <!-- KC:setting -->
+
 ##### Otvori opšta podešavanja {#OpenGeneralSettings}
 
 Prečica: `NVDA+kontrol+g`
