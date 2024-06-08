@@ -540,7 +540,7 @@ https://www.nvda-ar.org/download أو https://www.nvaccess.org/download
 إن الأوامر التي سيرد ذكرها لاحقا ربما تشتمل على اختصار لمس يمكن استخدامه لتنفيذ هذا الأمر مع شاشة اللمس.
 وتلك هي بعض التعليمات التي توضح كيفية تنفيذ اختصارات اللمس المختلفة.
 
-##### اللمسات (taps) {#toc45}
+##### اللمسات (taps) {#Taps}
 
 وهي عبارة عن لمس الشاشة بسرعة بإصبع أو أكثر.
 
@@ -552,7 +552,7 @@ https://www.nvda-ar.org/download أو https://www.nvaccess.org/download
 واللمس ثلاث مرات متعاقبة سينتج عنه لمسة ثلاثية (trible tap) وهكذا.
 بالطبع، إن هذه الاختصارات متعددة اللمسات ستتعرف على عدد الإصابع التي تم استخدامها, لذلك من الممكن أن توجد اختصارات مثل لمسة ثلاثية بإصبعين (2-finger tripple tap), أو لمسة واحدة بأربع أصابع (4-finger tap), إلى آخره.
 
-##### المسح (flicks) {#toc46}
+##### المسح (flicks) {#Flicks}
 
 هو عبارة عن مسح الشاشة بسرعة.
 
@@ -1706,7 +1706,7 @@ MathPlayer متاحٌ مجانا على موقع Wiris.
 
 <!-- KC:setting -->
 
-##### فتح الإعدادات العامة {#toc110}
+##### فتح الإعدادات العامة {#OpenGeneralSettings}
 
 مفتاح الاختصار: `NVDA+control+g`
 
@@ -1802,7 +1802,7 @@ MathPlayer متاحٌ مجانا على موقع Wiris.
 
 <!-- KC:setting -->
 
-##### فتح إعدادات النُطق {#toc123}
+##### فتح إعدادات النُطق {#OpenSpeechSettings}
 
 مفتاح الاختصار: `NVDA+control+v`
 
@@ -1945,7 +1945,7 @@ MathPlayer متاحٌ مجانا على موقع Wiris.
 
 <!-- KC:setting -->
 
-##### فتح مربّع حوار اختيار آلة النُطق {#toc144}
+##### فتح مربّع حوار اختيار آلة النُطق {#OpenSelectSynthesizer}
 
 مفتاح الاختصار: `NVDA+control+s`
 
@@ -2177,7 +2177,7 @@ MathPlayer متاحٌ مجانا على موقع Wiris.
 
 <!-- KC:setting -->
 
-##### فتح مربّع حوار اختيار سطر برايل الإلكتروني {#toc168}
+##### فتح مربّع حوار اختيار سطر برايل الإلكتروني {#OpenSelectBrailleDisplay}
 
 مفتاح الاختصار: `NVDA+control+a`
 
@@ -2229,7 +2229,7 @@ MathPlayer متاحٌ مجانا على موقع Wiris.
 
 <!-- KC:setting -->
 
-##### فتح إعدادات الصوت {#toc173}
+##### فتح إعدادات الصوت {#OpenAudioSettings}
 
 المفتاح: `NVDA+control+u`
 
@@ -2372,7 +2372,7 @@ MathPlayer متاحٌ مجانا على موقع Wiris.
 
 <!-- KC:setting -->
 
-##### فتح إعدادات لوحة المفاتيح {#toc188}
+##### فتح إعدادات لوحة المفاتيح {#OpenKeyboardSettings}
 
 المفتاح: `NVDA+control+k`
 
@@ -2449,7 +2449,7 @@ MathPlayer متاحٌ مجانا على موقع Wiris.
 
 <!-- KC:setting -->
 
-##### فتح إعدادات اللفأرة {#toc201}
+##### فتح إعدادات الفأرة {#OpenMouseSettings}
 
 المفتاح: `NVDA+control+m`
 
@@ -2552,7 +2552,7 @@ MathPlayer متاحٌ مجانا على موقع Wiris.
 
 <!-- KC:setting -->
 
-##### فتح إعدادات عرض الكائن {#toc218}
+##### فتح إعدادات عرض الكائن {#OpenObjectPresentationSettings}
 
 المفتاح: `NVDA+control+o`
 
@@ -2667,7 +2667,7 @@ MathPlayer متاحٌ مجانا على موقع Wiris.
 
 <!-- KC:setting -->
 
-##### فتح إعدادات نمط التصفُّح {#toc236}
+##### فتح إعدادات نمط التصفُّح {#OpenBrowseModeSettings}
 
 المفتاح: `NVDA+control+b`
 
@@ -2759,7 +2759,7 @@ MathPlayer متاحٌ مجانا على موقع Wiris.
 
 <!-- KC:setting -->
 
-##### فتح إعدادات تنسيق المستند {#toc250}
+##### فتح إعدادات تنسيق المستند {#OpenDocumentFormattingSettings}
 
 المفتاح: `NVDA+control+d`
 
@@ -3556,7 +3556,7 @@ WASAPI هو نظام صوتي متطوِّر، قد يؤدي لتحسين است
 يندرج هذا العنصر تحت قائمة أدوات في قائمة البرنامج الرئيسية وهي أداة تطوير تفيد في معالجة الأخطاء البرمجية والفحص الشامل لأجزاء البرنامج الداخلية أو فحص مدى توافق أحد التطبيقات. 
 ولمزيد من المعلومات يرجى زيارة [دليل تطوير NVDA](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html).
 
-### مستودع الإضافات {#toc314}
+### مستودع الإضافات {#AddonStoreMenuItem}
 
 يفتح هذا [مستودع إضافات NVDA](#AddonsManager).
 لمزيد من المعلومات، اقرأ القسم المفصَّل حول [الإضافات البرمجية ومستودع الإضافات](#AddonsManager).
@@ -4005,7 +4005,7 @@ WASAPI هو نظام صوتي متطوِّر، قد يؤدي لتحسين است
 وتلك هي مفاتيح الاختصار التي يستخدمها NVDA مع الأسطر Brailliant BI/B و BrailleNote touch .
 يرجى الاطلاع على ملف المساعدة الخاص بهذا السطر لمعرفة أماكن تلك المفاتيح.
 
-#### اختصارات تتناسب مع كل الأجهزة {#toc334}
+#### اختصارات تتناسب مع كل الأجهزة {#HumanWareBrailliantKeyAssignmentForAllModels}
 
 <!-- KC:beginInclude -->
 
@@ -4034,7 +4034,7 @@ WASAPI هو نظام صوتي متطوِّر، قد يؤدي لتحسين است
 
 <!-- KC:endInclude -->
 
-#### اختصارات الأسطر  Brailliant BI 32, BI 40 و B 80 {#toc335}
+#### اختصارات الأسطر  Brailliant BI 32, BI 40 و B 80 {#HumanWareBrailliantKeyAssignmentForBI32BI40AndB80}
 
 <!-- KC:beginInclude -->
 
@@ -4046,11 +4046,11 @@ WASAPI هو نظام صوتي متطوِّر، قد يؤدي لتحسين است
 
 <!-- KC:endInclude -->
 
-#### اختصارات الأسطر Brailliant BI 14 {#toc336}
+#### اختصارات الأسطر Brailliant BI 14 {#HumanWareBrailliantKeyAssignmentForBI14}
 
 <!-- KC:beginInclude -->
 
-| اسم الوظيفة |المفتاح|
+| الوظيفة |المفتاح|
 |---|---|
 |up arrow |joystick up|
 |down arrow |joystick down|
