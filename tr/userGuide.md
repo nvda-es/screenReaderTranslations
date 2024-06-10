@@ -846,7 +846,7 @@ Düzen aşağıdaki biçimde gösterilmiştir:
 
 ### İnceleme Kipleri {#ReviewModes}
 
-NVDA'nın [inceleme komutları](#ReviewingText), seçilen kipe bağlı olarak, mevcut [nesnenin](#Objects) aktif belge, ya da ekrandaki içeriği incelemenizi sağlar.
+NVDA'nın [inceleme komutları](#ReviewingText), seçilen kipe bağlı olarak, mevcut gezgin nesnesindeki, aktif belgede ya da ekrandaki içeriği incelemenizi sağlar.
 
 Aşağıdaki komutlarla, inceleme kipleri arasında geçiş yapılabilir:
 <!-- KC:beginInclude -->
@@ -5012,7 +5012,7 @@ Bu kayıt defteri anahtarı altında aşağıdaki değerler ayarlanabilir:
 | Ad |Tür |Olası değerler |Açıklama|
 |---|---|---|---|
 |`configInLocalAppData` |DWORD |devre dışı bırakmak için 0 (varsayılan), etkinleştirmek için 1 |etkinleştirilirse, NVDA kullanıcı konfigürasyonunu roaming application data  yerine local application data  altında tutar|
-|`serviceDebug` |DWORD devre dışı bırakmak için 0 (varsayılan), etkinleştirmek için 1 |Etkinse, [güvenlli mod](#SecureMode)'u [güvenli ekranlarda](#SecureScreens) devre dışı bırakır. Güvenlik açısından birkaç önemli sonuç nedeniyle, bu seçeneğin kullanılması kesinlikle önerilmez.|
+|`serviceDebug` |DWORD |devre dışı bırakmak için 0 (varsayılan), etkinleştirmek için 1 |Etkinse, [güvenlli mod](#SecureMode)'u [güvenli ekranlarda](#SecureScreens) devre dışı bırakır. Güvenlik açısından birkaç önemli sonuç nedeniyle, bu seçeneğin kullanılması kesinlikle önerilmez.|
 |`forceSecureMode` |DWORD |Devre dışı bırakmak için 0 (varsayılan), etkinleştirmek için 1 |Etkinleştirilirse, NVDA çalıştırılırken [Güvenli Mod](#SecureMode) öğesinin etkinleştirilmesini zorlar.|
 
 ## Daha Detaylı Bilgi {#FurtherInformation}
