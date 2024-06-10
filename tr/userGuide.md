@@ -82,7 +82,7 @@ Daha fazla detay için [Tam lisansı açıp okuyabilirsiniz.](https://www.gnu.or
 ## NVDA Hızlı Başlangıç Rehberi {#NVDAQuickStartGuide}
 
 Bu rehber,  NVDA'yı indirme, kurma ve ilk çalıştırma olmak üzere üç ana bölümden oluşmaktadır.
-Ayrıca yukarıdaki belirtilen konulara ek olarak, NVDA'yı özelleştirme, NVDA topluluğuna katılma ve yardım alma hakkında da bilgiler içermektedir. 
+Ayrıca yukarıdaki belirtilen konulara ek olarak, NVDA'yı özelleştirme, eklentileri kullanma, NVDA topluluğuna katılma ve yardım alma hakkında da bilgiler içermektedir. 
 Bu rehberdeki bilgiler, NVDA Kullanıcı Rehberinin diğer BÖLÜMLERİNİ ÖZETLER NİTELİKTEDİR.
 Bahsi geçen konular ve pek çok diğer fazlası hakkında daha ayrıntılı bilgi için lütfen Kullanıcı Rehberine bakın.
 
@@ -280,6 +280,78 @@ NVDA menüsünü açmak için `NVDA+n` tuşlarına basın.
 Direkt NVDA genel ayarlar iletişim kutusunu açmak için `NVDA+kontrol+g` tuşlarına basın.
 Çoğu ayar ekranına hızlıca gitmek için atanmış kısayol tuşları bulunmaktadır. Örneğin, sentezleyici iletişim kutusunu açmak için CTRL+NVDA+S tuşlarına, diğer konuşma ayarlarına gitmek için ctrl+NVDA+V tuşları kullanılabilir.
 
+### Eklentiler {#Addons}
+Eklentiler, NVDA için yeni veya değiştirilmiş işlevsellik sağlayan programlardır.
+Eklentiler NVDA topluluğu veya harici şirketler tarafından geliştirilir ve NV Access'e bağlı değildir.
+Her yazılımda olduğu gibi, bir eklentiyi kullanmadan önce geliştiricisine güvenmek önemlidir
+Kurulumdan önce eklentileri doğrulamanın yolları için lütfen [Eklentileri Yükleme](#AddonStoreInstalling) bölümüne bakın.
+
+Eklenti Mağazası ilk açıldığında, NVDA eklentiler hakkında bir uyarı görüntüler.Eklentiler NV Access tarafından incelenmez ve sınırsız işlevselliğe ve bilgiye erişime sahip olabilir.
+Eklentiler NV Access tarafından denetlenmez ve kısıtlanmamış işlevselliğe ve bilgiye erişime sahip olabilir.
+Uyarıyı okuduysanız ve bir daha görmek istemiyorsanız "boşluk" tuşuna basın.
+"Tamam" düğmesine ulaşmak için "sekme" tuşuna, ardından uyarıyı kapatmak ve mağazaya dönmek için "enter" tuşuna basın.
+Kullanıcı Rehberinin  "[Eklentiler ve Eklenti Mağazası](#AddonsManager)" Eklenti Mağazasının her özelliği hakkında bilgi bulunmaktadır.
+
+Eklenti Mağazasına Araçlar alt menüsünden erişilebilir.
+NVDA menüsünü açmak için 'NVDA+n'ye sonra araçlar için `r`ye, ardından Eklenti Mağazası için `m`ye basın.
+Eklenti Mağazası açıldığında, herhangi bir eklenti kurulu değilse "Kullanılabilir eklentiler" penceresi  gösterilir.
+Eklentiler kurulduğunda Eklenti Mağazası "Kurulu eklentiler" sekmesini açar.
+
+#### Kullanılabilir eklentiler {#AvailableAddons}
+Pencere ilk açıldığında eklentilerin yüklenmesi birkaç saniye sürebilir.
+Eklentiler listesi yüklendikten sonra NVDA ilk eklentinin adını okuyacaktır.
+Kullanılabilir eklentiler bir listede alfabetik olarak listelenir.
+Listeye göz atmak ve belirli bir eklenti hakkında bilgi edinmek için:
+
+1. Listede gezinmek için ok tuşlarını kullanın veya bir eklenti adının ilk harfine basın.
+1. Seçili eklentinin açıklamasına gitmek için `tab` tuşuna bir kez basın.
+1. Açıklamanın tamamını okumak için [okuma tuşlarını](#ReadingText) veya ok tuşlarını kullanın.
+1. Diğer eylemlerin yanı sıra eklentiyi kurma için kullanılabilecek "İşlemler" düğmesine gitmek için `sekme` tuşuna basın.
+1. Yayıncı, sürüm ve ana sayfa gibi ayrıntıları listeleyen "Diğer Ayrıntılar"a gitmek için `sekmeye` basın.
+1. Eklentiler listesine dönmek için alt+k veya `Shift` `+sekme tuşlarına` listeye ulaşana kadar basın.
+
+#### Eklentileri Arama {# SearchingForAddons}
+Mevcut tüm eklentilere göz atmanın yanı sıra, gösterilen eklentileri filtrelemek de mümkündür.
+Arama yapmak için `alt+a tuşlarına` basarak "ara" alanına gidin ve aranacak metni yazın.
+Arama eklenti kimliği, görünen ad, yayıncı, yazar veya açıklama gibi bilgileri arar.
+Arama terimleri yazılırken liste otomatik olarak güncellenir.
+İşiniz bittiğinde, filtrelenmiş eklenti listesine gitmek ve sonuçları görüntülemek için `sekme` tuşuna basın.
+
+#### Eklentileri kurma {#InstallingAddons}
+
+Bir eklentiyi kurmak için:
+
+1. Kurmak istediğiniz bir eklentiye odaklanarak entertuşuna `basın`.
+1. Eylemler menüsü, kullanılabilecek eylemlerin bir listesini içeren bir açılır menüdür. Bu menüdeki ilk eylem "kur"dur.
+1. Eklentiyi kurmak için K veya aşağıOk `` tuşlarına basarak `` "kur" ardından `enter` tuşuna basın.
+1. Odak, listedeki eklentiye geri döner ve NVDA eklenti hakkındaki ayrıntıları okuyacaktır.
+1. NVDA tarafından bildirilen "Durum" bilgisi "Kullanılabilir"den "İndiriliyor"a değişir.
+1. Eklentinin indirilmesi tamamlandıktan sonra durum bilgisi "İndirildi" olarak değişecektir. Kurulum bekleniyor ".
+1. Aynı anda yüklemek istediğiniz diğer eklentilerle işlemleri tekrarlayın.
+1. Bitirdikten sonra, odak "Kapat" düğmesine gelene kadar `sekmeye` basın, ardından entertuşuna `basın`.
+1. İndirilen eklentiler, Eklenti Mağazası kapatıldıktan sonra kurulacaktır.
+kurulum sırasında eklentiler yanıtlamanız gereken iletişim kutuları görüntüleyebilir.
+1. Eklentiler kurulduğunda , değişikliklerin tamamlandığını bildiren bir iletişim kutusu görüntülenir ve eklenti kurulumun tamamlanması için NVDA'yı yeniden başlatmanız istenir.
+1. NVDA'yı yeniden başlatmak için `Enter` tuşuna basın.
++ 
+#### Kurulu eklentileri yönetme {#ManagingInstalledAddons}
+Eklenti Mağazasının sekmelerinde gezinmek için `control+tab` tuşlarına basın.
+Sekmeler şunları içerir: "Kurulu eklentiler "," Güncellenebilen eklentiler ", "Mağazadaki eklentiler" ve "Kurulu uyumsuz eklentiler ".
++Sekmelerin her biri, bir eklenti listesi, seçilen eklenti hakkında daha fazla ayrıntı için bir panel ve seçilen eklenti için eylemler gerçekleştirmek için bir düğme olacak şekilde birbirine benzer tasarlanmıştır.
+Kurulu eklentilerin eylemler menüsü, "Kur" yerine "Devre Dışı Bırak" ve "Kaldır" ı içerir.
+Bir eklentinin devre dışı bırakılması, NVDA'nın onu başlatmasını  durdurur, ancak eklenti kurulu kalmaya devam eder.
+Devre dışı bırakılmış bir eklentiyi yeniden etkinleştirmek için, eylemler menüsünden "Etkinleştir"  düğmesine basın.
+Eklentileri etkinleştirdikten, devre dışı bıraktıktan veya kaldırdıktan sonra, Eklenti Mağazasını kapatırken NVDA'yı yeniden başlatmanız istenecektir.
+Bu değişiklikler yalnızca NVDA yeniden başlatıldığında geçerli olacaktır.
+Eklenti mağazasında `escape` tuşunun Kapat düğmesiyle aynı şekilde çalıştığını unutmayın.+
+
+#### Eklentileri Güncelleme {#UpdatingAddons}
+Kurduğunuz bir eklentide güncelleme olduğunda, "Güncellenebilir eklentiler" sekmesinde listelenecektir.
+Eklenti Mağazası'ndaki herhangi bir yerden bu sekmeye ulaşmak için `control+sekme` tuşlarına basın.
+Eklentinin durumu "Güncelleme mevcut" olarak listelenecektir.
+Listede  mevcut kurulu sürüm ve yüklenebilir güncel sürüm görüntülenecektir.
+Eylem listesini açmak için eklentide `enter` tuşuna basın ve "Güncelle" yi seçin.
+
 ### Topluluk {#Community}
 
 NVDA'nın dinamik bir kullanıcı topluluğu bulunmaktadır. 
@@ -468,7 +540,7 @@ Parmağınızı ekranda gezdirerek diğer metin ya da kontrollerin seslendirilme
 Kullanıcı rehberinin geri kalanında NVDA komutları açıklanırken , bir işlemin gerçekleşmesi için yapılması gereken dokunma hareketi de listelenebilir.
 Aşağıda, dokunmatik ekranda çalışan NVDA ile ilgili komutların gerçekleşmesi için yapılabilecek dokunma hareketleri açıklanmaktadır.
 
-##### Dokunmalar {#toc45}
+##### Dokunmalar {#Taps}
 
 Ekrana, bir ya da birkaç parmakla dokunun.
 
@@ -1634,7 +1706,7 @@ NVDA Ayarları iletişim kutusu altındaki ayar kategorileri aşağıda verilmek
 
 <!-- KC:setting -->
 
-##### Genel ayarları aç {#toc110}
+##### Genel ayarları aç {#OpenGeneralSettings}
 
 Kısayol Tuşu: `NVDA+kontrol+g`
 
@@ -1730,7 +1802,7 @@ NVDA kapatılırken çıkış seçenekleri gösteriliyorsa, buradan manuel olara
 
 <!-- KC:setting -->
 
-##### Konuşma ayarlarını aç {#toc123}
+##### Konuşma ayarlarını aç {#OpenSpeechSettings}
 
 Kısayol Tuşu: `NVDA+lpmtrpş+v`
 
@@ -1873,7 +1945,7 @@ En az iki modun işaretli olması gerektiğini unutmayın.
 
 <!-- KC:setting -->
 
-##### Sentezleyici Seç iletişim kutusunu aç {#toc144}
+##### Sentezleyici Seç İletişim Kutusunu Aç {#OpenSelectSynthesizer}
 
 Kısayol Tuşu: `NVDA+kontrol+s`
 
@@ -2105,7 +2177,7 @@ Seçimi göster seçeneğini herhangi bir yerden değiştirebilmek için [Girdi 
 
 <!-- KC:setting -->
 
-##### Braille Ekran Seçimi iletişim kutusunu aç {#toc168}
+##### Braille Ekran Seç iletişim kutusunu aç {#OpenSelectBrailleDisplay}
 
 Kısayol tuşu: `NVDA+kontrol+a`
 
@@ -2157,7 +2229,7 @@ Bu nedenle, makinenize aynı anda yalnızca belirli bir türde / üreticiye ait 
 
 <!-- KC:setting -->
 
-##### Ses ayarlarını aç {#toc173}
+##### Ses ayarlarını aç {#OpenAudioSettings}
 
 Kısayol Tuşu: `NVDA+kontrol+u`
 
@@ -2200,23 +2272,11 @@ Bu kaydırıcı NVDA seslerinin ve bip seslerinin seviyesini ayarlamanıza olana
 Bu seçenek sadece "NVDA seslerinin ses seviyesi konuşma ses seviyesine eşit olsun" seçeneği devre dışı bırakıldığında etkili olur.
 Eğer NVDA'yı Gelişmiş Ayarlar'da [Ses Çıkışı için WASAPI Devre Dışı](#WASAPI) seçeneği ile başlattıysanız, bu seçenek kullanılamaz.
 
-##### Konuşmadan sonra ses cihazını uyanık tutma zamanı {#AudioAwakeTime}
-
-Bu seçenek yazı alanı konuşma bittikten sonra NVDA'nın ses cihazını ne kadar uyanık tutacağını ayarlar.
-Böylece konuşmanın kelimeler arasında kesilmesi veya bozuk gelmesi engellenmiş olur.
-Bu durum ses cihazlarının (özellikle Bluetooth ve kablosuz cihazların) bekleme moduna girmesi nedeniyle meydana gelebilir.
-Aynı zamanda NVDA'nın bir sanal makinede (örn. Citrix Virtual Desktop) veya belirli dizüstü bilgisayarlarda çalıştırılması gibi diğer durumlarda da yararlı olabilir.
-
-Düşük değerler sesin daha sık kesilmesine neden olabilir. Çünkü cihaz çok erken bekleme moduna girerek, sonraki konuşmanın başlangıcının kesilmesine yol açabilir.
-Değer çok yüksek ayarlanırsa, ses çıkış cihazının pili daha hızlı bitebilir. Çünkü cihaz, ses gönderilmediği zamanlarda bile daha uzun süre aktif kalır.
-
-Bu özelliği devre dışı bırakmak için süreyi sıfıra ayarlayabilirsiniz.
-
 ##### Ses Ayırma {#SelectSoundSplitMode}
 
 Ses ayırma özelliği, kullanıcıların kulaklık ve hoparlör gibi stereo çıkış cihazlarını kullanmalarına olanak tanır.
 Bu özellik, NVDA konuşmasının bir kanalda (örneğin sol) taraftan gelmesini ve diğer tüm uygulamaların seslerini sağ kanalda çalmasını mümkün kılar.
-Varsayılan olarak ses ayırma özelliği devre dışıdır. Bu, NVDA dahil tüm uygulamaların sesleri hem sol hem de sağ kanallardan çalacağı anlamına gelir.
++Varsayılan olarak ses ayırma devre dışıdır.
 Çeşitli ses ayırma modları arasında geçiş yapmak için bir girdi ahreketi bulunmaktadır.
 <!-- KC:beginInclude -->
 
@@ -2228,18 +2288,21 @@ Varsayılan olarak ses ayırma özelliği devre dışıdır. Bu, NVDA dahil tüm
 
 Varsayılan olarak bu komut aşağıdaki modlar arasında geçiş yapacaktır:
 
-* Ses ayırma devre dışı: hem NVDA hem de diğer uygulamalar, sesleri hem sol hem de sağ kanallara gönderir.
+* Ses ayırma devre dışı: NVDA sesleri ayırmaz.
 * Solda NVDA ve sağda uygulamalar: NVDA sol kanalda konuşacak, diğer uygulamalar ise sesleri sağ kanalda çalacaktır.
 * Sağda NVDA ve solda uygulamalar: NVDA sağ kanalda konuşacak, diğer uygulamalar ise sesleri sol kanalda çalacaktır.
 
 NVDA ayarlarında daha gelişmiş ses ayırma modları mevcuttur.
+Bu modlar arasında, "Her iki kanalda NVDA ve her iki kanalda uygulamalar" seçeneği tüm seslerin her iki kanala yönlendirilmesini sağlar. 
+Ses ayırma devre dışı" modunda diğer ses işlemeleri ses seviyeleriyle  çakışabilir ancakk bu modda böyle bir sorun yaşanmaz.
+
 Lütfen ses ayırmanın mikser olarak çalışmadığını unutmayın.
 Örneğin, ses ayırma ayarı "NVDA solda, uygulamalar sağda" olarak ayarlanmışken bir uygulama stereo bir ses parçası çalıyorsa, yalnızca ses parçasının sağ kanalını duyarsınız. Sol kanal ise sessize çıkmaz.
 
 NVDA'yı Gelişmiş Ayarlar'da Ses çıkışı için WASAPI kullan (#WASAPI) ayarını devre dışı bırakarak çalıştırıyorsanız bu seçenek kullanılamaz.
 
 Dikkat: NVDA çöktüğünde, uygulamalar ses seviyesini geri yükleyemez. Bu durum, NVDA çökmesinden sonra bazı uygulamaların yalnızca tek kanaldan duyulmaya devam etmesine neden olabilir.
-Sorunu düzeltmek için lütfen NVDA'yı yeniden başlatın.
+Bu sorunu çözmek için lütfen NVDA'yı yeniden başlatın ve "Her iki kanalda NVDA ve her iki kanalda uygulamalar" modunu seçin.
 
 ##### Ses ayırma modlarını özelleştirme {#CustomizeSoundSplitModes}
 
@@ -2253,6 +2316,18 @@ Varsayılan olarak yalnızca üç mod dahildir.
 
 En az bir modun işaretli olması gerektiğini unutmayın.
 NVDA'yı Gelişmiş Ayarlar'da Ses çıkışı için WASAPI kullan (#WASAPI) ayarını devre dışı bırakarak çalıştırıyorsanız bu seçenek kullanılamaz.
+
+##### Konuşmadan sonra ses cihazını uyanık tutma zamanı {#AudioAwakeTime}
+
+Bu seçenek yazı alanı konuşma bittikten sonra NVDA'nın ses cihazını ne kadar uyanık tutacağını ayarlar.
+Böylece konuşmanın kelimeler arasında kesilmesi veya bozuk gelmesi engellenmiş olur.
+Bu durum ses cihazlarının (özellikle Bluetooth ve kablosuz cihazların) bekleme moduna girmesi nedeniyle meydana gelebilir.
+Aynı zamanda NVDA'nın bir sanal makinede (örn. Citrix Virtual Desktop) veya belirli dizüstü bilgisayarlarda çalıştırılması gibi diğer durumlarda da yararlı olabilir.
+
+Düşük değerler sesin daha sık kesilmesine neden olabilir. Çünkü cihaz çok erken bekleme moduna girerek, sonraki konuşmanın başlangıcının kesilmesine yol açabilir.
+Değer çok yüksek ayarlanırsa, ses çıkış cihazının pili daha hızlı bitebilir. Çünkü cihaz, ses gönderilmediği zamanlarda bile daha uzun süre aktif kalır.
+
+Bu özelliği devre dışı bırakmak için süreyi sıfıra ayarlayabilirsiniz.
 
 #### Görsellik {#VisionSettings}
 
@@ -2297,7 +2372,7 @@ Sağlayıcı tarafından desteklenen ayarlar için lütfen söz konusu sağlayı
 
 <!-- KC:setting -->
 
-##### Klavye ayarlarını aç {#toc184}
+##### Klavye ayarlarını aç {#OpenKeyboardSettings}
 
 Kısayol Tuşu: `NVDA+kontrol+k`
 
@@ -2374,7 +2449,7 @@ Seçenek varsayılan olarak etkindir, bazı kullanıcılar bunu kapatmak isteyeb
 
 <!-- KC:setting -->
 
-##### Fare ayarlarını aç {#toc197}
+##### Fare ayarlarını aç {#OpenMouseSettings}
 
 Kısayol Tuşu: `NVDA+kontrol+m`
 
@@ -2388,7 +2463,7 @@ Fare işaretleyicisi pencerelerde bir alanın yazılabilir olduğu veya bir şey
 
 <!-- KC:setting -->
 
-##### Fare İzlemesini Etkinleştir {#MouseSettingsTracking}
+##### Fare İzlemeyi Etkinleştir {#MouseSettingsTracking}
 
 Kısayol tuşu: NVDA+m |
 
@@ -2477,7 +2552,7 @@ Herhangi bir yerde basit inceleme kipini açıp kapatmak için, lütfen [Girdi H
 
 <!-- KC:setting -->
 
-##### Nesne Sunumu ayarlarını aç {#toc214}
+##### Nesne Sunumu ayarlarını aç {#OpenObjectPresentationSettings}
 
 Kısayol Tuşu: `NVDA+kontrol+o`
 
@@ -2592,7 +2667,7 @@ Bu seçenek varsayılan olarak açıktır.
 
 <!-- KC:setting -->
 
-##### Tarama kipi ayarlarını açar {#toc232}
+##### Tarama Kipi Ayarlarını Aç{#OpenBrowseModeSettings}
 
 Kısayoll Tuşu: `NVDA+kontrol+b`
 
@@ -2684,7 +2759,7 @@ Bu seçeneğin etkinleştirilmesi, performans ve istikrar pahasına bazı web si
 
 <!-- KC:setting -->
 
-##### Belge Formatları ayarlarını aç {#toc246}
+##### Belge Formatları Ayarlarını Aç {#OpenDocumentFormattingSettings}
 
 Kısayol Tuşu: `NVDA+kontrol+d`
 
@@ -3481,7 +3556,7 @@ Braille görüntüleyiciyi herhangi bir yerden açıp kapatmak  için, lütfen [
 NVDA menüsündeki Araçlar altında bulunan NVDA Python konsolu, hata ayıklama, NVDA dahili bileşenlerinin genel denetimi veya bir uygulamanın erişilebilirlik hiyerarşisinin denetimi için yararlı olan bir geliştirme aracıdır.
 Daha fazla bilgi için lütfen [NVDA Geliştirici Kılavuzuna](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html) bakın.
 
-### Eklenti Mağazası {#toc309}
+### Eklenti Mağazası {#AddonStoreMenuItem}
 
 Bu, [NVDA Eklenti Mağazası](#AddonsManager)'ı açar.
 Daha fazla bilgi için [Eklentiler ve Eklenti Mağazası](#AddonsManager) bölümüne göz atın.
@@ -3930,7 +4005,7 @@ Ek olarak aşağıdaki aygıtlar da desteklenir (ve herhangi bir özel sürücü
 Aşağıda Brailliant BI/B ve BrailleNote touch braille ekranları NVDA ile hangi tuşlarla kullanabileceğinizi bulabilirsiniz.
 Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 
-#### Tüm modeller için tuş atamaları {#toc329}
+#### Tüm modeller için tuş atamaları {#HumanWareBrailliantKeyAssignmentForAllModels}
 
 <!-- KC:beginInclude -->
 
@@ -3959,7 +4034,7 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 
 <!-- KC:endInclude -->
 
-#### Brailliant BI 32, BI 40 ve  B 80 için Tuş atamaları {#toc330}
+#### Brailliant BI 32, BI 40 ve B 80 için tuş atamaları {#HumanWareBrailliantKeyAssignmentForBI32BI40AndB80}
 
 <!-- KC:beginInclude -->
 
@@ -3971,7 +4046,7 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 
 <!-- KC:endInclude -->
 
-#### Brailliant BI 14 için Tuş atamaları {#toc331}
++#### Brailliant BI 14 için tuş atamalar {#HumanWareBrailliantKeyAssignmentForBI14}
 
 <!-- KC:beginInclude -->
 
