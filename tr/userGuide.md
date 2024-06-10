@@ -744,7 +744,7 @@ Tablolarda aşağıdaki tuşlar da kullanılabilir:
 Aynı zamanda, normal şartlarda klavye ile ulaşamayacağınız [nesnelerle](#Objects) çalışmak isteyebilirsiniz.
 İşte bu tür durumlar için, NVDA'nın nesne dolaşım özelliğini kullanabilirsiniz.
 
-Nesne dolaşımı tek tek [nesneler](#objects) arasında geçiş yapmanızı ve bilgi almanızı sağlar.
+Nesne dolaşımı tek tek [nesneler](#Objects) arasında geçiş yapmanızı ve bilgi almanızı sağlar.
 Nesne dolaşım komutlarını kullanarak bir nesnenin üzerine geldiğinizde, NVDA sistem imlecini hareket ettirdiğinizdekine benzer biçimde sizi bilgilendirecektir.
 Metni ekranda göründüğü şekliyle incelemek isterseniz, nesne sunucusunu kullanmak yerine [ekran inceleme kipine](#ScreenReview) geçebilirsiniz.
 
@@ -846,7 +846,7 @@ Düzen aşağıdaki biçimde gösterilmiştir:
 
 ### İnceleme Kipleri {#ReviewModes}
 
-NVDA'nın inceleme komutları, seçilen kipe bağlı olarak, mevcut [nesnenin](#Objects) aktif belge, ya da ekrandaki içeriği incelemenizi sağlar.
+NVDA'nın [inceleme komutları](#ReviewingText), seçilen kipe bağlı olarak, mevcut [nesnenin](#Objects) aktif belge, ya da ekrandaki içeriği incelemenizi sağlar.
 
 Aşağıdaki komutlarla, inceleme kipleri arasında geçiş yapılabilir:
 <!-- KC:beginInclude -->
@@ -889,7 +889,7 @@ Bazı uygulamalar için, henüz desteklenmeyen ekran çizim teknolojileri kullan
 Fare ile hareket ederken, varsayılan olarak NVDA, fare ile üzerine gelinen kontrolleri okur.
 Destekleniyorsa, NVDA metni paragraf bazında okur. ancak bazı kontroller sadece satır satır okunmasına izin vermektedir.
 
-NVDA ayrıca, fare hareket ettikçe üzerinde bulunduğu [nesnenin](#OBJECTS) liste, düğme gibi türünü de okuyacak biçimde ayarlanabilmektedir.
+NVDA ayrıca, fare hareket ettikçe üzerinde bulunduğu [nesnenin](#Objects) liste, düğme gibi türünü de okuyacak biçimde ayarlanabilmektedir.
 Bu, özellikle tamamen kör olanlar için sadece metnin okunmasının yeterli olmadığı durumlarda çok yararlıdır.
 
 NVDA, kullanıcıların ekran boyutlarına göre farenin tam olarak nerede olduğunu anlayabilmelerini sağlamak için, farenin o anki koordinatlarını bip sesleriyle raporlayabilir.
@@ -4083,7 +4083,7 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 |Move to current focus |leftSideScrollUp+leftSideScrollDown, rightSideScrollUp+rightSideScrollDown, leftSideScroll+rightSideScroll|
 |control key |smartbeetle:f1, brailleedge:f3|
 |windows key |f7, smartbeetle:f2|
-|`alt` key |`dot1+dot3+dot4+space, f2, smartbeetle:f3, brailleedge:f4`|
+|alt key |dot1+dot3+dot4+space, f2, smartbeetle:f3, brailleedge:f4|
 |şift key |f5|
 |insert key |dot2+dot4+space, f6|
 |applications key |dot1+dot2+dot3+dot4+space, f8|
@@ -4971,32 +4971,32 @@ Bu parametreler seçenekten sonra kullanılmalıdır, kısa versiyon için seçe
 | . {.hideHeaderRow} |.|
 |---|---|
 |`nvda -l 10` |NVDA'ya günlük seviyesi debug olarak başlamasını söyler|
-|`nvda --log-file=c:\nvda.log` |NVDA'ya günlüğü c:\nvda.log dosyasına kaydetmesini söyler|
-|`nvda --log-level=20 -f c:\nvda.log` |NVDA'nın bilgi seviyesinde günlük tutarak başlamasını ve günlüğü c:\nvda.log dosyasına kaydetmesini söyler|
+|`nvda --log-file=c:\nvda.log` |NVDA'ya günlüğü `c:\nvda.log` dosyasına kaydetmesini söyler|
+|`nvda --log-level=20 -f c:\nvda.log` |NVDA'nın bilgi seviyesinde günlük tutarak başlamasını ve günlüğü `c:\nvda.log` dosyasına kaydetmesini söyler|
 
 Aşağıdakiler NVDA komut satırı seçenekleridir:
 
 | Kısa |Uzun |Açıklama|
 |---|---|---|
-|`-h` |--help |Komut satırı yardımını göster ve çık|
-|`-q` |--quit |Halihazırda çalışan NVDA kopyasını kapat|
-|`-k` |--check-running |Çıkış kodu aracılığıyla NVDA'nın çalışıp çalışmadığını bildirir; çalışıyorsa 0, çalışmıyorsa 1|
-|`-f` LOGFILENAME` |`--log-file=LOGFILENAME` |Log mesajlarının yazılması gereken dosya. Güvenli mod etkinse günlük kaydı her zaman devre dışı bırakılır.|
+|`-h` |`--help` |Komut satırı yardımını göster ve çık|
+|`-q` |`--quit` |Halihazırda çalışan NVDA kopyasını kapat|
+|`-k` |`--check-running` |Çıkış kodu aracılığıyla NVDA'nın çalışıp çalışmadığını bildirir; çalışıyorsa 0, çalışmıyorsa 1|
+|`-f LOGFILENAME` |`--log-file=LOGFILENAME` |Log mesajlarının yazılması gereken dosya. Güvenli mod etkinse günlük kaydı her zaman devre dışı bırakılır.|
 |`-l LOGLEVEL` |`--log-level=LOGLEVEL` |Günlüğe kaydedilen en düşük mesaj düzeyi (hata ayıklama 10, giriş/çıkış 12, hata ayıklama uyarısı 15, bilgi 20, devre dışı 100). Güvenli mod etkinse günlük kaydı her zaman devre dışı bırakılır.|
 |`-c Konfigurasyon YOLU` |`--config-path=CONFIGPATH` |NVDA'ya ilişkin tüm ayarların saklandığı yol. Güvenli mod etkinleştirilirse varsayılan değer zorlanır.|
 |None |`--lang=LANGUAGE` |Yapılandırılmış NVDA dilini geçersiz kılın. Geçerli kullanıcı varsayılanı için "Windows", İngilizce için "en" vb. olarak ayarlayın.|
 |`-m` |`--minimal` |Ses, arayüz, başlangıç mesajı vb olmaz|
-|`-s` |`--secure` |NVDA'yı [Güvenli Mod #GüvenliMod]'da başlatır|
+|`-s` |`--secure` |NVDA'yı [Güvenli Mod](#SecureMode)'da başlatır|
 |None |`--disable-addons` |Eklentiler etkisizdir|
-|None |`--debug-logging` |Yalnızca bu çalıştırma için hata ayıklama seviyesi günlüğünü etkinleştirin. Bu ayar, herhangi bir kayıt seçeneği de dahil olmak üzere verilen herhangi bir günlük seviyesi ("" --loglevel "", -l) argümanını geçersiz kılar.|
-|None |`--no-logging` |NVDA'yı kullanırken günlüğü tamamen devre dışı bırakın. Komut satırından bir günlük seviyesi ("" --loglevel "", -l) belirtilirse veya hata ayıklama günlüğü açıksa bu ayarın üzerine yazılabilir.|
+|None |`--debug-logging` |Yalnızca bu çalıştırma için hata ayıklama seviyesi günlüğünü etkinleştirin. Bu ayar, herhangi bir kayıt seçeneği de dahil olmak üzere verilen herhangi bir günlük seviyesi (` --loglevel `, `-l`) argümanını geçersiz kılar.|
+|None |`--no-logging` |NVDA'yı kullanırken günlüğü tamamen devre dışı bırakın. Komut satırından bir günlük seviyesi (`--loglevel`, `-l`) belirtilirse veya hata ayıklama günlüğü açıksa bu ayarın üzerine yazılabilir.|
 |None |`--no-sr-flag` |Global ekran okuyucu bayrağını devre dışı bırakmaz|
 |None |`--install` |NVDA'yı kurar (yeni kurulmuş kopyayı çalıştırarak)|
 |None |`--install-silent` |NVDA'yı sessizce kurar (yeni kurulmuş kopyayı başlatmaz)|
 |None |--`enable-start-on-logon=True|False` |Yüklerken, NVDA'nın [oturum açma ekranında başlamasını](#StartAtWindowsLogon) etkinleştirir|
-|None |`--copy-portable-config` |Yüklerken, taşınabilir yapılandırmayı sağlanan yoldan (~~config-path,- c) geçerli kullanıcı hesabına kopyalar|
-|None |`--create-portable` |NVDA'nın taşınabilir bir kopyasını oluşturur (işlem sonunda yeni kopya çalıştırılır). --portable-path belirtilmesi gerekir|
-|None |`--create-portable-silent` |NVDA'nın taşınabilir bir kopyasını oluşturur (işlem sonunda yeni kopya çalıştırılmaz). --portable-path belirtilmesi gerekir|
+|None |`--copy-portable-config` |Yüklerken, taşınabilir yapılandırmayı sağlanan yoldan (`config-path`, `-c`) geçerli kullanıcı hesabına kopyalar|
+|None |`--create-portable` |NVDA'nın taşınabilir bir kopyasını oluşturur (işlem sonunda yeni kopya çalıştırılır). `--portable-path` belirtilmesi gerekir|
+|None |`--create-portable-silent` |NVDA'nın taşınabilir bir kopyasını oluşturur (işlem sonunda yeni kopya çalıştırılmaz). `--portable-path` belirtilmesi gerekir|
 |None |--`portable-path=PORTABLEPATH` |taşınabilir kopyanın oluşturulacağı adres|
 
 ### Sistem Çapında Geçerli Parametreler {#SystemWideParameters}
@@ -5012,7 +5012,7 @@ Bu kayıt defteri anahtarı altında aşağıdaki değerler ayarlanabilir:
 | Ad |Tür |Olası değerler |Açıklama|
 |---|---|---|---|
 |`configInLocalAppData` |DWORD |devre dışı bırakmak için 0 (varsayılan), etkinleştirmek için 1 |etkinleştirilirse, NVDA kullanıcı konfigürasyonunu roaming application data  yerine local application data  altında tutar|
-| `serviceDebug` |DWORD devre dışı bırakmak için 0 (varsayılan), etkinleştirmek için 1 |Etkinse, [güvenlli mod](#SecureMode)'u [güvenli ekranlarda](#SecureScreens) devre dışı bırakır. Güvenlik açısından birkaç önemli sonuç nedeniyle, bu seçeneğin kullanılması kesinlikle önerilmez.|
+|`serviceDebug` |DWORD devre dışı bırakmak için 0 (varsayılan), etkinleştirmek için 1 |Etkinse, [güvenlli mod](#SecureMode)'u [güvenli ekranlarda](#SecureScreens) devre dışı bırakır. Güvenlik açısından birkaç önemli sonuç nedeniyle, bu seçeneğin kullanılması kesinlikle önerilmez.|
 |`forceSecureMode` |DWORD |Devre dışı bırakmak için 0 (varsayılan), etkinleştirmek için 1 |Etkinleştirilirse, NVDA çalıştırılırken [Güvenli Mod](#SecureMode) öğesinin etkinleştirilmesini zorlar.|
 
 ## Daha Detaylı Bilgi {#FurtherInformation}
@@ -5020,4 +5020,3 @@ Bu kayıt defteri anahtarı altında aşağıdaki değerler ayarlanabilir:
 NVDA ile ilgili daha fazla bilgiye veya yardıma ihtiyaç duyarsanız, NVDA_URL adresini ziyaret edebilirsiniz.
 Burada, ek belgeleri, ve teknik destek ile açık kaynak kodlarını bulabilirsiniz.
 Bu sayfa ayrıca NVDA geliştirmesiyle ilgili olarak bilgi ve kaynaklar da sağlamaktadır. 
-
