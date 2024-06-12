@@ -2185,7 +2185,7 @@ Denne dialog, der tilgås vha. knappen "Skift..." i NVDAs indstillingsdialog und
 Når du har valgt dit punktdisplay, kan du trykke på knappen "OK", hvorefter NVDA vil benytte det valgte display.
 Hvis der er en fejl under indlæsning af driveren til det aktuelle display, vil NVDA meddele dette med en besked, og fortsætte med at bruge det tidligere benyttede display, hvis aktuelt.
 
-##### Punktdisplay[SelectBrailleDisplayDisplay] {##SelectBrailleDisplayDisplay}
+##### Punktdisplay[SelectBrailleDisplayDisplay] {#SelectBrailleDisplayDisplay}
 
 Denne kombobox viser dig forskellige muligheder  alt efter, hvilke punktdisplay-drivere der er tilgængelige på dit system.
 Brug piletasterne til at flytte imellem de forskellige valgmuligheder.
@@ -3923,12 +3923,12 @@ Se venligst dokumentationen til dit display for at finde ud af, hvor du kan find
 |Flyt til punktcelle |`markørsammenføringsknapper`|
 |`shift+tab` |`mellemrum+punkt1+punkt3`|
 |`tab` |`mellemrum+punkt4+punkt6`|
-|`alt` |`mellemrum+punkt1+punkt3+punkt4 (`mellemrum+m`)|
-|`escape | `mellemrum+punkt1+punkt5 (`mellemrum+e`)|
+|`alt` |`mellemrum+punkt1+punkt3+punkt4` (`mellemrum+m`)|
+|`escape` |`mellemrum+punkt1+punkt5` (`mellemrum+e`)|
 |`windows` |`mellemrum+punkt3+punkt4`|
-|`alt+tab` |`mellemrum+punkt2+punkt3+punkt4+punkt5 (`mellemrum+t`)|
-|NVDA-menu |`mellemrum+punkt1+punkt3+punkt4+punkt5 (`mellemrum+n`)|
-|`windows+d` (minimer alle applikationer) |`mellemrum+punkt1+punkt4+punkt5 (`mellemrum+d)|
+|`alt+tab` |`mellemrum+punkt2+punkt3+punkt4+punkt5` (`mellemrum+t`)|
+|NVDA-menu |`mellemrum+punkt1+punkt3+punkt4+punkt5` (`mellemrum+n`)|
+|`windows+d` (minimer alle applikationer) |`mellemrum+punkt1+punkt4+punkt5` (`mellemrum+d`)|
 |Sig alt |`mellemrum+punkt1+punkt2+punkt3+punkt4+punkt5+punkt6`|
 
 For displays der har et joystick:
@@ -4933,7 +4933,7 @@ I sikker tilstand bliver ændringer i NVDA's opsætning låst. Det er derfor vig
 
 ### Sikre skærme {#SecureScreens}
 
-NVDA kører i sikker tilstand, når du bruger [beskyttede skærme](#SecureScreens), medmindre `serviceDebug` [systemspecifikke parameter](#SystemWideParameters) er aktiveret.
+NVDA kører i [sikker tilstand](#SecureMode), når du bruger sikre skærme, medmindre `serviceDebug` [systemspecifikke parameter](#SystemWideParameters) er aktiveret.
 
 Når NVDA afvikles i et sikkert miljø, vil NVDA benytte systemprofilen til at anvende indstillinger.
 NVDAs indstillinger kan kopieres for brug på [sikre skærme](#GeneralSettingsCopySettings).
