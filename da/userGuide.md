@@ -4986,7 +4986,7 @@ De mulige kommandolinjeparametre til NVDA er følgende:
 |`-c CONFIGPATH` |`--config-path=KONFIGURATIONSSTI` |Stien, hvor alle indstillinger i NVDA skal gemmes. Standardværdien vil blive brugt, hvis sikker tilstand er aktiv.|
 |None |`--lang=SPROG` |Brug et specifikt sprog uanset NVDAs konfiguration. Skriv "Windows" for standardsprog, "en" for engelsk, osv.|
 |`-m` |`--minimal` |Ingen lyde, ingen brugergrænseflade, ingen opstartsmeddelelser osv.|
-|`-s` |`--secure` |Starter NVDA i [sikker tilstand](#SecureMode)||
+|`-s` |`--secure` |Starter NVDA i [sikker tilstand](#SecureMode)|
 |Ingen |`--disable-addons` |ingen tilføjelsesprogrammer|
 |Ingen |`--debug-logging` |Aktivér logningsniveau til brug ved fejlfinding for kun denne opstart. Denne indstilling vil overstyre alle logningsniveau (`--loglevel`, `-l`) parametre.|
 |Ingen |`--no-logging` |Deaktivér logning fuldstændigt under brugen af NVDA. Denne indstilling kan blive tilsidesat hvis (`--loglevel`, `-l`) angives fra kommandolinjen eller såfremt logning for fejlfinding er slået til.|
