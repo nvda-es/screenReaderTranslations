@@ -158,7 +158,7 @@ Pre viac informácií o dostupných možnostiach si prosím prečítajte časť 
 1. Stláčaním klávesu `Tab` nájdite a aktivujte tlačidlo "Nainštalovať NVDA do počítača".
 1. Nasledujú možnosti súvisiace s používaním NVDA pri prihlasovaní do systému Windows a vytvorením odkazu na pracovnej ploche.
 Tieto sú predvolene začiarknuté.
-1. Ak si to želáte, na zmenu týchto možností použite klávesy `tab` a `medzerník` alebo ich môžete nechať na predvolených hodnotách.
+Ak si to želáte, na zmenu týchto možností použite klávesy `tab` a `medzerník` alebo ich môžete nechať na predvolených hodnotách.
 1. Pokračujte stlačením `enter`.
 1. Zobrazí sa dialógové okno kontroly používateľských účtov Windows s otázkou, či chcete tejto aplikácii povoliť vykonať zmeny v systéme.
 1. Stlačte `alt+a` aby ste akceptovali výzvu.
@@ -600,7 +600,7 @@ Pre vstup do ponuky NVDA odkiaľkoľvek zo systému Windows počas behu NVDA mô
 
 * Stlačte na klávesnici skratku `nvda+n`.
 * Dvakrát poklepte dvoma prstami na obrazovku.
- * Ponuku môžete vyvolať aj zo systémového panelu. Stlačte `windows+b`. `Šípkami` Vyhľadajte tlačidlo  NVDA a aktivujte ho klávesom `Enter`.	
+* Ponuku môžete vyvolať aj zo systémového panelu. Stlačte `windows+b`. `Šípkami` Vyhľadajte tlačidlo  NVDA a aktivujte ho klávesom `Enter`.	
 * Môžete postupovať aj tak, že skratkou `windows+b` prejdete na systémový panel, `šípkami hore a dole` vyhľadáte tlačidlo NVDA a aktivujete kontextovú ponuku klávesom `aplikácie`. Tento sa zvyčajne nachádza vedľa klávesu pravý kontrol.
 Ak sa na klávesnici tlačidlo `aplikácie` nenachádza, môžete ju vyvolať skratkou `shift+f10`.
 * Ponuku NVDA  je možné vyvolať aj kliknutím pravým tlačidlom myši na ikone NVDA na systémovom panely.
@@ -1005,7 +1005,7 @@ ak ich chcete používať a súčasne chcete čítať text pomocou kurzora, mô�
 Na zapnutie a vypnutie rýchlej navigácie v režime prehliadania, použite skratku NVDA+shift+medzera.
 <!-- KC:endInclude -->
 
-### Navigácia po textových odsekoch {TextNavigationCommand}
+#### Navigácia po textových odsekoch {TextNavigationCommand}
 
 Na nasledujúci textový odsek môžete prejsť skratkou `p` a na predchádzajúci odsek skratkou `shift+p`.
 Textové odseky sú definované ako kúsok textu, ktorý zvyčajne tvoria celé vety.
@@ -1014,7 +1014,7 @@ Toto môže byť užitočné pri vyhľadávaní väčších textových celkov na
 * novinové články
 * Fóra
 * Blogy
- 
+
 Tieto príkazy vám môžu pomôcť rýchlo preskakovať rušivé prvky, ako napríklad:
 
 * Reklamy
@@ -1264,7 +1264,7 @@ Aby sa na brailový riadok dostalo čo najviac informácií, pre prvky, oblasti 
 |úro N |položka v stromovom zobrazení, N udáva hierarchickú úroveň|
 |okno |okno|
 |⠤⠤⠤⠤⠤ |oddeľovač|
-|ozn |označený obsah||
+|ozn |označený obsah|
 
 Skratkami sú tiež označené tieto stavy:
 
@@ -1382,7 +1382,7 @@ Tienenie obrazovky môžete aktivovať v [kategórii zrak](#VisionSettings) v [D
 
 <!-- KC:endInclude -->
 
-Kým je tienenie obrazovky aktívne, nie je možné robiť činnosti priamo závislé na obsahu obrazovky ako [rozpoznávanie textu použitím OCR](#WinOcr) alebo zachytenie snímky obrazovky.
+Kým je tienenie obrazovky aktívne, nie je možné robiť činnosti priamo závislé na obsahu obrazovky ako [rozpoznávanie textu použitím OCR](#Win10Ocr) alebo zachytenie snímky obrazovky.
 
 Keďže v najnovších verziách systému Windows došlo k úpravám v API na zväčšovanie, bolo potrebné v NVDA aktualizovať spôsob, akým sa zabezpečuje tienenie obrazovky.
 Použite NVDA od verzie 2021.2 v kombinácii s Windows od verzie 10 21H2 (10.0.19044).
@@ -1405,12 +1405,12 @@ Keď je rozpoznávanie dokončené, text sa zobrazí v režime prehliadania a m�
 objekt pod kurzorom môžete aktivovať (zvyčajne kliknúť naň) medzerou alebo klávesom enter.
 Klávesom ESC zatvoríte okno s rozpoznaným textom.
 
-### Rozpoznávanie textu Windows {#WinOcr}
+### Rozpoznávanie textu Windows {#Win10Ocr}
 
 priamo v systéme windows od verzie 10 je k dispozícii optické rozpoznávanie textu pre mnohé jazyky, vrátane Slovenčiny.
 NVDA môže pomocou OCR rozpoznať text v obrázku alebo v neprístupnom okne aplikácie.
 
-jazyk rozpoznávania nastavíte v kategórii  [Rozpoznávanie textu Windows](#WinOcrSettings) v [Nastaveniach](#NVDASettings).
+jazyk rozpoznávania nastavíte v kategórii  [Rozpoznávanie textu Windows](#Win10OcrSettings) v [Nastaveniach](#NVDASettings).
 Doplnkové jazyky pre rozpoznávanie (Napríklad Češtinu) nainštalujete z menu štart > nastavenia > čas a jazyk > miestne a jazykové nastavenia > Pridanie jazyka.
 
 Ak chcete pravidelne sledovať zmeny v aktuálnom okne, napríklad ak sledujete video s titulkami, môžete zapnúť možnosť pravidelne obnovovať rozpoznaný text.
@@ -1689,7 +1689,7 @@ Na prepínanie niektorých volieb existujú tiež globálne klávesové skratky,
 Mnoho nastavení NVDA nájdete v dialógu nastavenia.
 Aby bolo možné rýchlo vyhľadať požadované nastavenie, nastavenia sú usporiadané do kategórií.
 Po vybratí príslušnej kategórie sa zobrazia len nastavenia vo zvolenej kategórii.
-V zozname kategórií na pohyb použite `šípku hore` a `šípku dole`. Na prechod ku konkrétnym nastaveniam potom použite `tab` a `shift+tab`.
+V zozname kategórií na pohyb použite šípku hore a šípku dole. Na prechod ku konkrétnym nastaveniam potom použite `tab` a `shift+tab`.
 V dialógu nastavení je možné kedykoľvek prepínať kategórie skratkami `ctrl+tab` dopredu a `ctrl+shift+tab` v opačnom smere.
 
 Nastavenia môžete uložiť aktivovaním tlačidla použiť. V tomto prípade ostane dialóg otvorený a vy môžete meniť ďalšie nastavenia a to aj v iných kategóriách.
@@ -1817,20 +1817,20 @@ V tejto kategórii je ako prvé tlačidlo Zmeniť... Po aktivovaní tohto tlači
 Toto okno sa otvorí nad oknom s nastaveniami.
 Potvrdenie alebo zatvorenie tohto dialógu vás preto vráti späť do okna s nastaveniami.
 
-##### Hlas {#speechSettingsVoice}
+##### Hlas {#SpeechSettingsVoice}
 
 Ide o zoznam obsahujúci všetky dostupné hlasy aktuálneho hlasového výstupu.
 Za pomoci šípok môžete tento zoznam prehliadať a vypočuť si všetky hlasy.
 Hornou a ľavou šípkou sa presuniete na predchádzajúci hlas, dolnou a pravou šípkou sa môžete presunúť na nasledujúci hlas.
 
-##### Variant {#speechSettingsVariant}
+##### Variant {#SpeechSettingsVariant}
 
 Ak používate hlasový výstup eSpeak NG, toto je zoznamový rámik, ktorý nastavuje variant hlasu.
 Varianty hlasu výstupu eSpeak NG môžeme chápať takmer ako ďalšie hlasy, pretože dodávajú hlasu úplne iné vlastnosti.
 Niektoré varianty budú znieť ako mužský, iné ako ženský hlas a niektoré dokonca úplne inak.
 Táto možnosť je tiež dostupná aj pre niektoré hlasové výstupy tretích strán a v takom prípade budete môcť upraviť variant hlasu aj pri nich.
 
-##### Tempo {#speechSettingsRate}
+##### Tempo {#SpeechSettingsRate}
 
 Je to posuvník od nula po sto, ktorým nastavíte rýchlosť reči.
 Nula znamená najpomalšie tempo reči a sto najrýchlejšie.
@@ -1839,12 +1839,12 @@ Nula znamená najpomalšie tempo reči a sto najrýchlejšie.
 
 Začiarknutím tejto možnosti docielite značné zrýchlenie reči. Túto funkciu podporujú len niektoré hlasové výstupi.
 
-##### Výška {#speechSettingsPitch}
+##### Výška {#SpeechSettingsPitch}
 
 Posuvník, ktorým nastavíte výšku od nula po sto.
 Nula je najnižší tón a sto najvyšší tón reči.
 
-##### Hlasitosť {#speechSettingsVolume}
+##### Hlasitosť {#SpeechSettingsVolume}
 
 Posuvník, ktorým v rozmedzí od nula po sto nastavíte hlasitosť hlasu od najtichšieho po najhlasnejší.
 
@@ -1852,12 +1852,12 @@ Posuvník, ktorým v rozmedzí od nula po sto nastavíte hlasitosť hlasu od naj
 
 Posuvník, ktorého hodnota hovorí hlasovému výstupu do akej miery má byť intonácia uplatnená smerom na hor i smerom na dol. V súčasnosti intonáciu podporuje len hlasový výstup eSpeak NG.
 
-##### Automaticky prepínať jazyk {#speechSettingsLanguageSwitching}
+##### Automaticky prepínať jazyk {#SpeechSettingsLanguageSwitching}
 
 Ak je začiarknuté, NVDA bude automaticky počas čítania meniť jazyk. Jazyk určí podľa jazykových značiek v texte.
 Predvolene je toto začiarknuté.
 
-##### Automaticky prepínať dialekt {#speechSettingsDialectSwitching}
+##### Automaticky prepínať dialekt {#SpeechSettingsDialectSwitching}
 
 Ak je začiarknuté automaticky prepínať jazyk, toto umožňuje zmeny aj dialektu jazyka hlasového výstupu.
 Napríklad ak budete anglickým hlasom čítať  v jazyku Angličtina - spojené štáty a NVDA narazí na značku pre zmenu dialektu  na  Angličtina - Veľká Británia, hlasový výstup sa prepne na správny dialekt.
@@ -1865,7 +1865,7 @@ Predvolene toto nie je začiarknuté.
 
 <!-- KC:setting -->
 
-##### Úroveň interpunkcie {#speechSettingsSymbolLevel}
+##### Úroveň interpunkcie {#SpeechSettingsSymbolLevel}
 
 Klávesová skratka: NVDA+p
 
@@ -1873,7 +1873,7 @@ Môžete nastaviť, či má NVDA slovne  oznamovať interpunkčné znamienka a s
 Ak je toto napríklad nastavené na všetko, všetky symboly budú vyslovované ako slová.
 Nastavenie interpunkcie ovplyvňuje prejav NVDA pre všetky hlasové výstupy.
 
-##### pri spracovaní textu sa riadiť jazykom hlasového výstupu {#speechSettingsTrust}
+##### pri spracovaní textu sa riadiť jazykom hlasového výstupu {#SpeechSettingsTrust}
 
 táto možnosť je predvolene začiarknutá a hovorí NVDA, že pri spracovaní textu sa má riadiť jazykom konkrétneho hlasu.
 Ak vám NVDA pri použití konkrétneho hlasu alebo hlasového výstupu nesprávne číta interpunkciu, odčiarknite túto možnosť, aby boli uprednostnené globálne nastavenia NVDA.
@@ -1891,7 +1891,7 @@ Výslovnosť špeciálnych symbolov môžete upravovať v dialógu [Výslovnosť
 
 Ak chcete kdekoľvek zapínať a vypínať použitie dát z Unicode konzorcia, nastavte si klávesovú skratku v dialógu [Klávesové skratky](#InputGestures).
 
-##### Zmeniť výšku hlasu pri čítaní veľkých písmen v percentách {#speechSettingsCapPitchChange}
+##### Zmeniť výšku hlasu pri čítaní veľkých písmen v percentách {#SpeechSettingsCapPitchChange}
 
 Do tohto editačného poľa je možné napísať hodnotu v percentách, ako sa zmení výška hlasu pri čítaní veľkých písmen.
 Záporné čísla znižujú a kladné čísla zvyšujú výšku hlasu.
@@ -1899,7 +1899,7 @@ Ak si neželáte pri vyslovovaní veľkých písmen meniť výšku hlasu vložte
 NVDA môže zvyšovať výšku hlasu pri veľkých písmenách, ale nie všetky hlasové výstupy túto funkcionalitu  podporujú.
 Ak oznamovanie veľkých písmen zvýšeným hlasom nefunguje správne, zvážte použitie funkcii [Vysloviť "veľké" pred prečítaním veľkého písmena](#SpeechSettingsSayCapBefore) alebo tiež  [ Pípať pred hláskovaním veľkých písmen](#SpeechSettingsBeepForCaps).
 
-##### Vysloviť "veľké" pred prečítaním veľkého písmena {#speechSettingsSayCapBefore}
+##### Vysloviť "veľké" pred prečítaním veľkého písmena {#SpeechSettingsSayCapBefore}
 
 Začiarkávacie políčko, ktoré nastaví NVDA tak, aby čítal slovo "veľké" vždy pred veľkým písmenom pri čítaní po znakoch.
 
@@ -2278,7 +2278,6 @@ Oddelenie zvuku využíva samostatne ľavý a pravý kanál slúchadiel a reprod
 Môžete nastaviť, že zvuk NVDA budete počuť v jednom kanály (napríklad vľavo) a zvuky aplikácií v druhom kanály (napríklad vpravo).
 Predvolene je táto funkcia vypnutá.
 Režimi oddelenia zvukov je možné prepínať skratkou.
-
 <!-- KC:setting -->
 
 | Názov | Klávesová skratka | popis |
