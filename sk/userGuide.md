@@ -2994,11 +2994,11 @@ Dostupné sú tieto možnosti:
 
 * Oznamovať detaily pre štruktúrované poznámky a komentáre: Ak je začiarknuté, oznamuje, ak text alebo prvok obsahuje anotácie.
 * Vždy oznamovať prítomnosť atribútu aria-description:
-Ak je zdroj `accDescription` určený ako aria-description, nvda tento popis oznámi.
-Toto je užitočné pri oznamovaní zmien na webe.
-Upozornenie:
+  Ak je zdroj `accDescription` určený ako aria-description, nvda tento popis oznámi.
+  Toto je užitočné pri oznamovaní zmien na webe.
+  Upozornenie:
   * Existuje viacero zdrojov pre `accDescription` Mnohé majú viaceré alebo nepresné významy.
-V minulosti asistenčné technológie neoznamovali tieto zdroje, nakoľko nebolo možné rozlíšiť, o ak ý druh zdroja ide.
+    V minulosti asistenčné technológie neoznamovali  zdroje `accDescription`, nakoľko nebolo možné rozlíšiť, o aký druh zdroja ide.
   * Táto funkcia je v ranom štádiu vývoja a jej dostupnosť závisí od použitého prehliadača, pričom mohé ju zatiaľ nepodporujú.
   * Očakávame funkčnosť v Chromium 92.0.4479.0+
 
@@ -3024,7 +3024,7 @@ Toto začiarkávacie pole aktivuje alternatívnu metódu oznamovania napísanýc
 Toto môže zlepšiť odozvu a odstrániť hláskovanie výstupu z konzoly, súčasne však toto nastavenie nie je vhodné pre všetky terminály.
 Táto možnosť je dostupná a predvolene aktivovaná v systémoch od verzie Windows 10 1607 ak je vypnuté alebo nedostupné UI Automation.
 Pozor: Keď aktivujete túto funkciu, NVDA bude čítať napísané znaky a slová aj pri písaní hesiel.
-Ak tomu chcete zabrániť, vypnite dočasne čítanie poznakoch a po slovách.
+Ak tomu chcete zabrániť, vypnite dočasne [čítanie po znakoch](#KeyboardSettingsSpeakTypedCharacters) a [slovách](#KeyboardSettingsSpeakTypedWords) pri písaní hesiel.
 
 ##### Algoritmus počítania rozdielov {#DiffAlgo}
 
@@ -3032,10 +3032,10 @@ Toto nastavenie ovplyvňuje, ako NVDA zisťuje nový text na prečítanie v okne
 V zoznamovom rámiku sú 3 možnosti:
 
 * Automaticky: NVDA v tomto prípade preferuje metódu Diff Match Patch, ale v niektorých prípadoch, napríklad starších Windows konzolách a v Mindty uprednostní Difflib.
--  Diff Match Patch: Táto možnosť spôsobí, že NVDA zisťuje text na prečítanie v okne príkazového riadku po znakoch.
+* Diff Match Patch: Táto možnosť spôsobí, že NVDA zisťuje text na prečítanie v okne príkazového riadku po znakoch.
 Môže to zlepšiť odozvu pri veľkom množstve textu na výstupe a spresniť oznamovanie zmien v strede riadkov.
 V niektorých prípadoch však môže byť čítanie textu trhané a nekonzistentné.
--  Difflib: Pri tomto nastavení NVDA počíta text na prečítanie po riadkoch a to aj v situáciách, kedy toto nemusí byť žiaduce.
+* Difflib: Pri tomto nastavení NVDA počíta text na prečítanie po riadkoch a to aj v situáciách, kedy toto nemusí byť žiaduce.
 Takto sa správalo NVDA do verzie 2020.4.
 Tento spôsob môže zlepšiť čítanie textu v niektorých prípadoch.
 Ak však v terminály použijete túto metódu a súčasne odstránite text uprostred riadka, automaticky bude dočítaný text do konca riadka.
@@ -3104,7 +3104,7 @@ Ak je zapnuté, NVDA bude zvukom oznamovať situácie, keď do logu zapíše chy
 Ak zvolíte Len v testovacích verziách NVDA (predvolené), NVDA bude zvuk prehrávať, len ak je spustená alpha, beta, alebo verzia zo zdroja.
 Ak vyberiete možnosť áno, bude zvuky NVDA prehrávať nezávisle od spustenej verzie.
 
-##### Regulárny výraz pre navigáciu po textových odsekoch
+##### Regulárny výraz pre navigáciu po textových odsekoch {#TextParagraphRegexEdit}
 
 Tu môžete definovať regulárny výraz, ktorý sa používa na detekciu textových odsekov v režime prehliadania.
 Tento regulárny výraz je násedne použitý pri [Navigácii po textových odsekoch](#TextNavigationCommand).
@@ -3155,7 +3155,7 @@ Odporúčame preštudovať [Použitie regulárnych  výrazov v prostredí Python
 V tomto dialógu môžete nastavovať výslovnosť interpunkčných a ostatných špeciálnych symbolov ako aj úroveň interpunkcie, pri ktorom budú tieto vyslovované.
 
 V názve okna sa zobrazuje jazyk, ktorého symboly upravujete.
-Tento dialóg rešpektuje nastavenie "pri spracovaní textu sa riadiť hlasovým výstupom", ktoré je v kategórii  [Nastavenia hlasu](#speechSettings) v dialógu [Nastavenia](#NVDASettings). Ak je toto políčko začiarknuté, upravujete nastavenie pre jazyk hlasu a nie jazyk NVDA.
+Tento dialóg rešpektuje nastavenie "pri spracovaní textu sa riadiť hlasovým výstupom", ktoré je v kategórii  [Nastavenia hlasu](#SpeechSettings) v dialógu [Nastavenia](#NVDASettings). Ak je toto políčko začiarknuté, upravujete nastavenie pre jazyk hlasu a nie jazyk NVDA.
 
 Ak si želáte upraviť symbol, musíte ho najprv vybrať v zozname symbolov.
 Zoznam symbolov môžete filtrovať, ak zadáte symbol alebo jeho nahradenie do políčka filtrovať.
@@ -3163,8 +3163,8 @@ Zoznam symbolov môžete filtrovať, ak zadáte symbol alebo jeho nahradenie do 
 * Do poľa nahradiť s môžete vpísať text, ktorý sa má vysloviť vždy, keď bude NVDA čítať tento symbol.
 * Zmenou výberu v zozname úrovní môžete určiť najnižšiu úroveň, na ktorej bude symbol oznamovaný (žiadne, niektoré, väčšina, všetko).
 Úroveň tiež môžete nastaviť na možnosť znak. V takom prípade bude symbol oznamovaný len v týchto prípadoch:
- * Pri čítaní po znakoch.
- * Pri hláskovaní.
+  * Pri čítaní po znakoch.
+  * Pri hláskovaní.
 * V zozname "ponechať pôvodný symbol na spracovanie hlasovému výstupu" určíte, kedy má NVDA ponechať pôvodný symbol na spracovanie pre hlasový výstup. Toto sa netýka textu, ktorý ste zvolili v editačnom poli Nahradiť s.
 Toto je užitočné vtedy, ak hlasový výstup dokáže pri symbole urobiť prestávku alebo zmeniť intonáciu.
 Mnohé syntézy reči napríklad dokážu urobiť pauzu, ak narazia v texte na čiarku.
@@ -3172,7 +3172,7 @@ Máte tri možnosti:
   * nikdy: Symbol sa neodošle na spracovanie hlasovému výstupu.
   * Vždy: NVDa bude vždy symbol posielať na spracovanie hlasovému výstupu.
   * Od zadanej úrovne: Symbol sa odošle na spracovanie len vtedy, ak je aktuálna úroveň interpunkcie nižšia, ako je nastavená úroveň pre tento symbol.
-Takto môžete rozhodnúť, že symbol nahradíte nejakým textom pri úrovni interpunkcie všetko, ale pri úrovni nič, bude symbol odoslaný na spracovanie hlasovému výstupu. Ten ho nahradí pauzou, takže nestratíte prehľad.
+  Takto môžete rozhodnúť, že symbol nahradíte nejakým textom pri úrovni interpunkcie všetko, ale pri úrovni nič, bude symbol odoslaný na spracovanie hlasovému výstupu. Ten ho nahradí pauzou, takže nestratíte prehľad.
 
 Nový symbol môžete pridať tak, že stlačíte tlačidlo pridať.
 v dialógu, ktorý sa otvorí, vložte nový symbol a stlačte tlačidlo OK.
@@ -3214,7 +3214,7 @@ Upozornenia:
 
 * Ak pridáte kláves, ale nepriradíte zodpovedajúce tlačidlo na brailovom riadku, kláves sa po opustení dialógu neuloží.
 * Skratky s preraďovačmi nemusia fungovať bez preraďovača.
- Ak napríklad na písmeno A  namapujete skratku ctrl+m, vo výsledku môžu aplikácie dostávať príkaz ctrl+a.
+Ak napríklad na písmeno `A`  namapujete skratku `ctrl+m`, vo výsledku môžu aplikácie dostávať príkaz `ctrl+a`.
 
 Keď skončíte, stlačte tlačidlo OK, ktorým nastavenia uložíte, alebo tlačidlo Zrušiť, ktorým dialóg zatvoríte bez uloženia zmien.
 
@@ -3374,7 +3374,7 @@ Dostupné akcie sa môžu meniť v závislosti od toho, či je doplnok už nain�
 #### Možnosti zobrazenia doplnkov {#AddonStoreFilterStatus}
 
 Môžete si zobraziť zoznam nainštalovaných doplnkov, doplnkov, pre ktoré sú dostupné aktualizácie, zoznam dostupných alebo nekompatibilných doplnkov.
-Medzi týmito zobrazeniami sa prepínajte ako medzi záložkami, skratkami `ctrl+tab` prípadne `ctrl+shift+tab` v opačnom smere.
+Medzi týmito zobrazeniami sa prepínajte ako medzi záložkami, skratkou  `ctrl+tab`.
 Môžete tiež klávesom `tab` prejsť na zoznam záložiek a následne medzi nimi prechádzať `ľavou šípkou` a `pravou šípkou`.
 
 #### Filtrovanie povolených a zakázaných doplnkov {#AddonStoreFilterEnabled}
@@ -3627,13 +3627,13 @@ SAPI 4 je starší štandard vyvinutý v spoločnosti Microsoft, ktorý slúži 
 NVDA stále podporuje tento hlasový výstup.
 Spoločnosť Microsoft však už ukončila podporu pre SAPI4 a potrebné komponenty viac neponúka na svojej webovej stránke.
 
-Po použití ovládača hlasových výstupov SAPI 4 bude zoznam hlasov (prístupný z [Kategórii   reč](#speechSettings) alebo v [kruhu nastavení hlasového výstupu](#SynthSettingsRing)) obsahovať všetky SAPI 4 hlasy nainštalované v systéme.
+Po použití ovládača hlasových výstupov SAPI 4 bude zoznam hlasov (prístupný z [Kategórií   reč](#SpeechSettings) [NVDA Settings](#NVDASettings) v [Nastaveniach NVDA](#NVDASettings) alebo v [kruhu nastavení hlasového výstupu](#SynthSettingsRing)) obsahovať všetky SAPI 4 hlasy nainštalované v systéme.
 
 ### Microsoft Speech API verzia 5 (SAPI 5) {#SAPI5}
 
 SAPI 5 je štandard vyvinutý v spoločnosti Microsoft, ktorý slúži na obsluhu softwarových hlasových výstupov v systéme Windows.
 Množstvo hlasových výstupov kompatibilných s týmto štandardom je možné kúpiť alebo stiahnuť zadarmo od rôznych dodávateľov alebo z rôznych webových stránok, ale v systéme už pravdepodobne máte aspoň jeden SAPI 5 kompatibilný hlas nainštalovaný.
-Po použití ovládača hlasových výstupov SAPI 5 bude zoznam hlasov (prístupný v kategórii [ reč](#speechSettings) alebo v [kruhu nastavení hlasového výstupu](#SynthSettingsRing)) obsahovať všetky SAPI 5 hlasy nainštalované v systéme.
+Po použití ovládača hlasových výstupov SAPI 5 bude zoznam hlasov (prístupný z [Kategórií   reč](#SpeechSettings) [NVDA Settings](#NVDASettings) v [Nastaveniach NVDA](#NVDASettings) alebo v [kruhu nastavení hlasového výstupu](#SynthSettingsRing)) obsahovať všetky SAPI 4 hlasy nainštalované v systéme.
 
 ### Microsoft Speech Platform {#MicrosoftSpeechPlatform}
 
@@ -4101,19 +4101,19 @@ Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením  na zistenie
 |ctrl+shift+šípka vľavo |body2+8+medzera+f1|
 |ctrl+ľavá šípka |bod2+medzera|
 |shift+alt+ľavá šípka |bod2+bod7+F1|
-|alt+ľavá šípka |bod2+bod7+medzera |
+|`alt+ľavá šípka` |`bod2+bod7+medzera` |
 |šípka vpravo |bod 6+medzera, leftSideRightArrow|
 |ctrl+shift+šípka vpravo |body 58+medzera+f1|
 |ctrl+pravá šípka |bod5+medzera|
 |shift+alt+pravá šípka |bod5+bod7+F1|
-|alt+pravá šípka |bod5+bod7+medzera|
+|`alt+pravá šípka` |`bod5+bod7+medzera`|
 |page up |bod1+bod2+bod6+medzera|
 |ctrl+page up |bod1+bod2+bod6+bod8+medzera|
 |šípka hore |bod1+medzera, šípka hore na ľavej strane|
 |ctrl+shift+šípka hore |bod2+bod3+bod8+medzera+advance1|
 |ctrl+šípka hore |body 23+medzera|
 |shift+alt+šípka hore |bod2+bod3+bod7+F1|
-|alt+šípka hore |bod2+bod3+bod7+medzera|
+|`alt+šípka hore` |`bod2+bod3+bod7+medzera`|
 |shift+šípka hore |left side scroll down  +medzera|
 |pageDown |bod3+bod4+bod5+medzera|
 |ctrl+pagedown |bod3+bod4+bod5+bod8+medzera|
@@ -4121,12 +4121,12 @@ Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením  na zistenie
 |ctrl+shift+šípka dole |body 5+6+8+medzera+f1|
 |ctrl+šípka dolu |bod5+bod6+medzera|
 |shift+alt+šípka dolu |bod5+bod6+bod7+F11|
-|alt+šípka dolu |bod5+bod6+bod7+medzera|
+|`alt+šípka dolu` |`bod5+bod6+bod7+medzera`|
 |shift+šípka dolu |right side scroll down  +medzera|
 |escape |body 1+5+medzera, f4, brailleedge:f1|
 |delete key |body 135+medzera, body 145+medzera|
 |f1 |bod1+bod2+bod5+medzera|
-|f3 |bod1+bod4+bod8 + medzera||
+|f3 |bod1+bod4+bod8 + medzera|
 |f4 |bod7+f3|
 |windows+b |body 12+f1|
 |windows+d |body 145+f1|
@@ -4438,7 +4438,7 @@ Koliesko pozostáva zo štyroch smerových tlačidiel, jedného potvrdzovacieho 
 Nasleduje zoznam klávesových príkazov pre tento typ riadku.
 Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie rozmiestnenia klávesov.
 
-	<!-- KC:beginInclude -->
+<!-- KC:beginInclude -->
 
 | Názov |Klávesová skratka|
 |---|---|
@@ -4875,7 +4875,7 @@ Nasledujú klávesové skratky pre tieto riadky:
 |---|---|
 |Posunúť riadok späť |pan left alebo rocker up|
 |Posunúť riadok vpred |pan right alebo rocker down|
-|Prejsť na znak v brailly |routing set 1||
+|Prejsť na znak v brailly |routing set 1|
 |Prepnúť nastavenie brailový kurzor zviazaný s |šípka hore + šípka dole|
 |Šípka hore |joystick hore, dpad hore alebo medzera+bod1|
 |Šípka dole |joystick dole, dpad dole alebo  medzera+bod4|
@@ -4915,8 +4915,8 @@ Bezpečný režim vypína:
 * aktualizovať NVDA a vytvárať prenosnú verziu
 * [katalóg s doplnkami](#AddonsManager)
 * [Python konzolu](#PythonConsole)
-* [Zobrazovač brailu](#BrailleViewer) a [Zobrazovač reči](#SpeechViewer)
 * [Zobrazovač logu](#LogViewer) a vytváranie záznamu
+* [Zobrazovač brailu](#BrailleViewer) a [Zobrazovač reči](#SpeechViewer)
 * Otváranie externých dokumentov z ponuky NVDA, akými sú používateľská príručka a Tím NVDA.
 
 Nainštalovaná verzia NVDA ukladá nastavenia a doplnky v adresári `%APPDATA%\nvda`.
@@ -4971,8 +4971,8 @@ Ak použijete krátky zápis parametra, argumenty oddeľte medzerou, ak použije
 | . {.hideHeaderRow} |.|
 |---|---|
 |`NVDA -l 10` |Povie NVDA, že úroveň záznamu je debug|
-|`NVDA --log-file=c:\NVDA.log` |Povie NVDA, aby log zapisoval do súboru c:\NVDA.log|
-|`NVDA --log-level=20 -f c:\NVDA.log` |Povie NVDA, že úroveň záznamu je info a log sa má zapísať do c:\NVDA.log|
+|`NVDA --log-file=c:\NVDA.log` |Povie NVDA, aby log zapisoval do súboru `c:\NVDA.log`|
+|`NVDA --log-level=20 -f c:\NVDA.log` |Povie NVDA, že úroveň záznamu je info a log sa má zapísať do `c:\NVDA.log`|
 
 NVDA v súčasnosti podporuje tieto parametre:
 
@@ -4988,15 +4988,15 @@ NVDA v súčasnosti podporuje tieto parametre:
 |`-m` |`--minimal` |spustí NVDA bez zvukov, bez používateľského rozhrania, bez úvodného dialógu a podobne|
 |`-s` |`--secure` |Spustí NVDA v [bezpečnom režime](#SecureMode)|
 |nie je |`--disable-addons` |Všetky doplnky budú vypnuté|
-|Nie je |`--debug-logging` |nastaví úroveň záznamu pre najbližšie spustenie NVDA na najvyššiu úroveň (debug). Toto nastavenie má prednosť pred ostatnými argumentmi ( --loglevel, -l aj ak bolo zaznamenávanie vypnuté).|
-|Nie je |`--no-logging` |Vypne zaznamenávanie do logu. Toto nastavenie môže byť zmenené ak nastavíte úroveň záznamu cez príkazový riadok (--loglevel -l) alebo ak zapnete zaznamenávanie najvyššej úrovne cez príkaz --debug-logging|
+|Nie je |`--debug-logging` |nastaví úroveň záznamu pre najbližšie spustenie NVDA na najvyššiu úroveň (debug). Toto nastavenie má prednosť pred ostatnými argumentmi ( `--loglevel`, `-l` aj ak bolo zaznamenávanie vypnuté).|
+|Nie je |`--no-logging` |Vypne zaznamenávanie do logu. Toto nastavenie môže byť zmenené ak nastavíte úroveň záznamu cez príkazový riadok (`--loglevel -l`) alebo ak zapnete zaznamenávanie najvyššej úrovne cez príkaz `--debug-logging`|
 |nie je |`--no-sr-flag` |Nezmení predvolené označenie čítača obrazovky v systéme|
 |Nie je |`--install` |Nainštaluje NVDA a spustí nainštalovanú kópiu|
 |nie je |`--install-silent` |Nainštaluje NVDA s predvolenými parametrami bez používateľského rozhrania, ale nespustí nainštalovanú kópiu|
 |Nie je |`--enable-start-on-logon=True` |False |Počas inštalácie povolí [Spustenie na prihlasovacej obrazovke](#StartAtWindowsLogon)|
-|nie je |`--copy-portable-config` |Počas inštalácie skopíruje nastavenia z prenosnej verzie NVDA podľa zadanej cesty (--config-path, -c) do používateľského profilu||
-|Nie je |`--create-portable` |Vytvorí prenosnú verziu NVDA a spustí ju. Je potrebné určiť cestu cez argument --portable-path|
-|Nie je |`--create-portable-silent` |Vytvorí prenosnú verziu NVDA, ale nespustí ju. Je potrebné určiť cestu cez argument --portable-path|
+|nie je |`--copy-portable-config` |Počas inštalácie skopíruje nastavenia z prenosnej verzie NVDA podľa zadanej cesty (`--config-path`, `-c`) do používateľského profilu|
+|Nie je |`--create-portable` |Vytvorí prenosnú verziu NVDA a spustí ju. Je potrebné určiť cestu cez argument `--portable-path`|
+|Nie je |`--create-portable-silent` |Vytvorí prenosnú verziu NVDA, ale nespustí ju. Je potrebné určiť cestu cez argument `--portable-path`|
 |Nie je |`--portable-path=cesta` |určuje, kam sa uloží prenosná verzia NVDA|
 
 ### Systémové parametre {#SystemWideParameters}
