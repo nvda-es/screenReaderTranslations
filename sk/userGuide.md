@@ -4312,7 +4312,7 @@ Obe stredné tlačidlá sa používajú ako medzera.
 |CTRL+escape |medzera s bodmi 1 2 3 4 5 6|
 |tab |medzera s bodmi 3 7|
 
-<!-- KC:endInclude  -->
+<!-- KC:endInclude -->
 
 ### Staršie modely Papenmeier Braille BRAILLEX {#PapenmeierOld}
 
@@ -4430,15 +4430,15 @@ Môžete tiež chcieť nastaviť port v [Dialóg nastavenie brailového riadka](
 Ak sa pripájate cez USb alebo Bluetooth, môžete si vybrať automatickú detekciu portu, "Bluetooth" alebo "USB", v závislosti od vybraného zariadenia.
 Ak sa pripájate cez niektorý zo sériových portov, alebo cez USB / sériový prevodník, alebo ak nie sú dostupné iné možnosti, musíte si vybrať niektorý z hardwarových komunikačných portov.
 
+Pred pripojením BrailleNote Apex cez USB je potrebné nainštalovať ovládače dodávané spoločnosťou HumanWare.
+
 Na riadku BrailleNote Apex BT môžete používať skrolovacie koliesko na ovládanie príkazov NVDA.
 Koliesko pozostáva zo štyroch smerových tlačidiel, jedného potvrdzovacieho tlačidla v strede a kolieska, ktoré možno otočiť v smere alebo protismere hodinových ručičiek.
-
-Pred pripojením BrailleNote Apex cez USb je potrebné nainštalovať ovládač dodávaný od výrobcu.
 
 Nasleduje zoznam klávesových príkazov pre tento typ riadku.
 Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie rozmiestnenia klávesov.
 
-<!-- KC:beginInclude -->
+	<!-- KC:beginInclude -->
 
 | Názov |Klávesová skratka|
 |---|---|
@@ -4921,6 +4921,7 @@ Bezpečný režim vypína:
 
 Nainštalovaná verzia NVDA ukladá nastavenia a doplnky v adresári `%APPDATA%\nvda`.
 Odporúčame zabrániť prístupu k tomuto priečinku aj na používateľskej úrovni, aby nebolo možné ani priamo meniť nastavenia a vkladať doplnky.
+
 Bezpečný režim nie je efektívny pri prenosnej verzii NVDA.
 To isté platí, ak je spustená dočasná kópia NVDA pri inštalácii.
 Používateľ, ktorý má umožnené spúšťať externé aplikácie, predstavuje bezpečnostné riziko.
@@ -5019,4 +5020,3 @@ V súčasnosti je možné upraviť tieto hodnoty:
 Ak hľadáte ďalšie informácie o NVDA, o jeho vývoji, alebo hľadáte pomoc, navštívte [stránku projektu (anglicky)](NVDA_URL).
 Na tejto stránke môžete tiež nájsť e-mailové konferencie a odkazy na ďalšie komunitné projekty a stránky o NVDA.
 Môžete tu tiež nájsť informácie o vývoji, zdrojové kódy a iné súvisiace materiály.
-
