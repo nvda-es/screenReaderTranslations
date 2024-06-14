@@ -1005,7 +1005,7 @@ ak ich chcete používať a súčasne chcete čítať text pomocou kurzora, mô�
 Na zapnutie a vypnutie rýchlej navigácie v režime prehliadania, použite skratku NVDA+shift+medzera.
 <!-- KC:endInclude -->
 
-#### Navigácia po textových odsekoch {TextNavigationCommand}
+#### Navigácia po textových odsekoch {#TextNavigationCommand}
 
 Na nasledujúci textový odsek môžete prejsť skratkou `p` a na predchádzajúci odsek skratkou `shift+p`.
 Textové odseky sú definované ako kúsok textu, ktorý zvyčajne tvoria celé vety.
@@ -1848,7 +1848,7 @@ Nula je najnižší tón a sto najvyšší tón reči.
 
 Posuvník, ktorým v rozmedzí od nula po sto nastavíte hlasitosť hlasu od najtichšieho po najhlasnejší.
 
-##### Intonácia {#speechSettingsInflection}
+##### Intonácia {#SpeechSettingsInflection}
 
 Posuvník, ktorého hodnota hovorí hlasovému výstupu do akej miery má byť intonácia uplatnená smerom na hor i smerom na dol. V súčasnosti intonáciu podporuje len hlasový výstup eSpeak NG.
 
@@ -1903,11 +1903,11 @@ Ak oznamovanie veľkých písmen zvýšeným hlasom nefunguje správne, zvážte
 
 Začiarkávacie políčko, ktoré nastaví NVDA tak, aby čítal slovo "veľké" vždy pred veľkým písmenom pri čítaní po znakoch.
 
-##### Pípať pred hláskovaním veľkých písmen {#speechSettingsBeepForCaps}
+##### Pípať pred hláskovaním veľkých písmen {#SpeechSettingsBeepForCaps}
 
 Ak je toto začiarkavacie políčko začiarknuté, NVDA krátko zapípa vždy, keď sa pri hláskovaní objaví veľké písmeno.
 
-##### Hláskovanie riadi hlasový výstup (ak je podporované) {#speechSettingsUseSpelling}
+##### Hláskovanie riadi hlasový výstup (ak je podporované) {#SpeechSettingsUseSpelling}
 
 Existujú slová pozostávajúce len z jediného znaku. Výslovnosť tohto znaku sa líši od kontextu, napr. pri vyslovovaní jediného znaku sa obyčajne znak hláskuje a pri čítaní slova sa len prečíta.
 V slovenčine je príkladom takéhoto znaku písmeno k, ktoré znie ako "k" ak je použité ako predložka, ale "ká" ak je hláskované samostatne.
@@ -1974,7 +1974,7 @@ Ak chcete zmeniť niektoré vlastnosti reči bez nutnosti otvárať dialóg nast
 |Zvýšiť hodnotu nastavenia hlasového výstupu |NVDA+ctrl+šípka hore |NVDA+ctrl+shift+šípka hore |Zvýši hodnotu aktuálne zameraného nastavenia hlasového výstupu. Napríklad zrýchli tempo, vyberie nasledujúci hlas, zosilní hlasitosť|
 | Zvýšiť hodnotu nastavenia hlasového výstupu po väčších krokoch | `NVDA+ctrl+pageUp` | `NVDA+shift+ctrl+pageUp` | Zvyšuje hodnotu nastavenia, na ktorom sa nachádzate. Napríklad pri nastavení hlasu prejde o dvadsať hlasov dopredu, pri nastavení posuvníkov prejde o dvadsať percent vyššie. |
 |Znížiť hodnotu nastavenia hlasu |NVDA+ctrl+šípka dolu |NVDA+ctrl+shift+šípka dolu |Zníži hodnotu aktuálne zameraného nastavenia hlasového výstupu. Napríklad spomalí tempo, vyberie predchádzajúci hlas, stíši hlasitosť.|
-| znížiť  hodnotu nastavenia hlasového výstupu po väčších krokoch | `NVDA+ctrl+pageDown` | ``NVDA+shift+ctrl+pageDown`` | Znižuje  hodnotu nastavenia, na ktorom sa nachádzate. Napríklad pri nastavení hlasu prejde o dvadsať hlasov späť, pri nastavení posuvníkov prejde o dvadsať percent nižšie. |
+| znížiť  hodnotu nastavenia hlasového výstupu po väčších krokoch | `NVDA+ctrl+pageDown` | `NVDA+shift+ctrl+pageDown` | Znižuje  hodnotu nastavenia, na ktorom sa nachádzate. Napríklad pri nastavení hlasu prejde o dvadsať hlasov späť, pri nastavení posuvníkov prejde o dvadsať percent nižšie. |
 
 <!-- KC:endInclude -->
 
@@ -2421,7 +2421,7 @@ Ak je začiarknuté, NVDA prestane hovoriť hneď, ako stlačíte kláves enter.
 
 Ak je začiarknuté, niektoré príkazy neprerušia plynulé čítanie, ale len presunú kurzor a plynulé čítanie bude pokračovať od daného miesta. Takýmito príkazmi sú napríklad rýchla navigácia v režime prehliadania a pohyb po riadkoch a odsekoch.
 
-##### Pípať pri písaní malých písmen ak je zapnutý capslock {#keyboardSettingsBeepLowercase}
+##### Pípať pri písaní malých písmen ak je zapnutý capslock {#KeyboardSettingsBeepLowercase}
 
 Ak je to zapnuté, pri písaní so zapnutým capslockom budete počuť upozornenie v podobe krátkeho pípnutia, ak je pridržaný aj kláves shift.
 Všeobecne sa písanie s preraďovačom pri zapnutom capslocku nepoužíva a vo väčšine prípadov to znamená, že Ste si neuvedomili, že je kláves capslock zapnutý.
@@ -2474,7 +2474,7 @@ Ak je možnosť povolená, NVDA bude oznamovať text cez ktorý prechádza kurzo
 Ak je začiarknutá voľba Oznamovať text pod kurzorom myši, toto nastavenie určuje aké množstvo textu bude oznamované.
 Je možno vyberať z: znak, slovo, riadok alebo odsek.
 
-Ak potrebujete často meniť jednotku pri zameraní textu, môžete tejto funkcii priradiť klávesovú skratku v dialógu [Klávesové](skratky#InputGestures).
+Ak potrebujete často meniť jednotku pri zameraní textu, môžete tejto funkcii priradiť klávesovú skratku v dialógu [Klávesové skratky](#InputGestures).
 
 ##### Oznamovať prvok   zameraný kurzorom myši {#MouseSettingsRole}
 
@@ -2699,7 +2699,7 @@ Toto mnohým používateľom zjednodušuje navigáciu a interakciu.
 
 Určuje, či sa má po načítaní dokumentu automaticky aktivovať režim prehliadania.
 Ak je táto možnosť vypnutá, stále môžete v podporovaných dokumentoch a prvkoch aktivovať režim prehliadania ručne.
-Podporované aplikácie sú popísané v časti [Režim](prehliadania#BrowseMode).
+Podporované aplikácie sú popísané v časti [Režim prehliadania](#BrowseMode).
 Toto nastavenie neovplyvňuje aplikácie, v ktorých je režim prehliadania voliteľný, napríklad Microsoft Word.
 Predvolene je toto nastavenie začiarknuté.
 
@@ -2778,12 +2778,12 @@ Takto môžete nastaviť:
   * vyznačený text
   * štýl
   * Farby
-  * Informácie o dokumente
+* Informácie o dokumente
   * Komentáre
   * Záložky
   * Zmeny
   * Pravopisné chyby
-  * Riadkovanie a strany
+* Riadkovanie a strany
   * Číslovanie strán
   * Číslovanie riadkov
   * Odsadenie riadka [(vypnuté, reč, pípanie alebo reč a pípanie)](#DocumentFormattingSettingsLineIndentation)
@@ -2791,12 +2791,12 @@ Takto môžete nastaviť:
   * Odsadenie odseku (vysunutý text, odsadenie prvého riadka)
   * Riadkovanie (jednoduché, dvojité, ...)
   * zarovnanie
-  * Informácie o tabuľke
+* Informácie o tabuľke
   * Tabuľky
   * Hlavičky riadkov stĺpcov tabuľky (Vypnuté, Riadky, Stĺpce, Riadky aj stĺpce)
   * súradnice buniek tabuľky
   * orámovanie (vypnuté, štýly, oboje farby a štýly)
-  * Prvky
+* Prvky
   * nadpisy
   * odkazy
   * grafiku
@@ -2857,12 +2857,12 @@ Upozorňujeme, že toto nastavenie nefunguje v aplikáciách Microsoft Word aleb
 
 Toto nastavenie je možné kdekoľvek meniť aj pomocou klávesových skratiek. Tieto je potrebné definovať v dialógu [Klávesové skratky](#InputGestures).
 
-#### Rozpoznávanie textu windows {#WinOcrSettings}
+#### Rozpoznávanie textu windows {#Win10OcrSettings}
 
-Môžete tu  nastaviť parametre pre rozpoznávanie textu pomocou rozhrania [Windows OCR](#WinOcr).
+Môžete tu  nastaviť parametre pre rozpoznávanie textu pomocou rozhrania [Windows OCR](#Win10Ocr).
 Kategória obsahuje nasledujúce možnosti:
 
-##### jazyk rozpoznávania {#WinOcrSettingsRecognitionLanguage}
+##### jazyk rozpoznávania {#Win10OcrSettingsRecognitionLanguage}
 
 V tomto zozname môžete vybrať jazyk, ktorý sa bude používať na rozpoznávanie textu.
 Ak chcete prepínať medzi dostupnými jazykmi odkiaľkoľvek, vytvorte si skratku v [Dialógu klávesové skratky](#InputGestures).
@@ -2919,7 +2919,7 @@ Avšak v starších verziách systému Windows môže mať NVDA problémy sledov
 * Globálne: NVDA sleduje všetky udalosti a zmeny vlastností a sám určuje, ktoré spracovať a ktoré zahodiť.
 Vďaka tomuto môže byť sledovanie zameranej položky omnoho spoľahlivejšie v mnohých prípadoch, ale výkon môže byť výrazne ukrátený najmä v aplikácii Visual Studio.
 
-##### Na sprístupnenie prvkov v dokumentoch Microsoft Word preferovať UI Automation {#AdvancedSettingsUseUiaForWord}
+##### Na sprístupnenie prvkov v dokumentoch Microsoft Word preferovať UI Automation {#MSWordUIA}
 
 Určuje, či sa má na sprístupnenie prvkov v dokumentoch MS Word použiť rozhranie UI Automation, alebo starší objektový model.
 Toto sa týka dokumentov MS Word a tiež správ v programe MS Outlook.
@@ -2985,6 +2985,7 @@ V zoznamovom rámiku sa nachádzajú tieto možnosti:
 
 Táto skupina experimentálnych funkcií určuje, ako bude NVDA oznamovať revízie označované pomocou aria atribútov.
 Niektoré funkcie nemusia byť dokončené.
+
 <!-- KC:beginInclude -->
 Aby ste zobrazili informácie o komentároch a poznámkach pod systémovým kurzorom, stlačte nvda+d.
 <!-- KC:endInclude -->
@@ -2992,8 +2993,7 @@ Aby ste zobrazili informácie o komentároch a poznámkach pod systémovým kurz
 Dostupné sú tieto možnosti:
 
 * Oznamovať detaily pre štruktúrované poznámky a komentáre: Ak je začiarknuté, oznamuje, ak text alebo prvok obsahuje anotácie.
-Súhrn takýchto detailov je možné vyvolať klávesovou skratkou. Skratku je potrebné definovať [v dialógu klávesové skratky](#InputGestures). Hľadajte Položku "zobrazí podrobnosti o komentároch a poznámkach pod systémovým kurzorom.
-Vždy oznamovať prítomnosť atribútu aria-description:
+* Vždy oznamovať prítomnosť atribútu aria-description:
 Ak je zdroj `accDescription` určený ako aria-description, nvda tento popis oznámi.
 Toto je užitočné pri oznamovaní zmien na webe.
 Upozornenie:
