@@ -31,8 +31,8 @@ Najvýznamnejšie prednosti programu:
 * Ozvučený inštalátor
 * Preložený do 54 jazykov
 * Podpora pre moderné operačné systémy Windows, 32 aj 64 bitové verzie
-* Oznamovanie prvkov a textu pri práci s dotykovou obrazovkou
 * Možnosť spúšťania na prihlasovacej obrazovke a [iných zabezpečených obrazovkách](#SecureScreens)
+* Oznamovanie prvkov a textu pri práci s dotykovou obrazovkou
 * Kompatibilita s rôznymi rozhraniami slúžiacimi na sprístupnenie aplikácií: Microsoft Active Accessibility, Java Access Bridge, IAccessible2 a UI Automation
 * Podpora pre prostredie príkazového riadku Windows a konzolové aplikácie
 * Podpora pre zvýraznenie zameraných objektov na obrazovke
@@ -155,9 +155,9 @@ Tento zoznam krokov opisuje najčastejšie možnosti inštalácie.
 Pre viac informácií o dostupných možnostiach si prosím prečítajte časť [Inštalácia NVDA](#InstallingNVDA).
 
 1. Uistite sa, že začiarkavacie políčko Súhlasím s licenčnou dohodou je začiarknuté.
-1. Stláčaním klávesu `Tab` nájdite a stlačením `enter` aktivujte tlačidlo "Nainštalovať NVDA do počítača".
+1. Stláčaním klávesu `Tab` nájdite a aktivujte tlačidlo "Nainštalovať NVDA do počítača".
 1. Nasledujú možnosti súvisiace s používaním NVDA pri prihlasovaní do systému Windows a vytvorením odkazu na pracovnej ploche.
-+Tieto sú predvolene začiarknuté.
+Tieto sú predvolene začiarknuté.
 1. Ak si to želáte, na zmenu týchto možností použite klávesy `tab` a `medzerník` alebo ich môžete nechať na predvolených hodnotách.
 1. Pokračujte stlačením `enter`.
 1. Zobrazí sa dialógové okno kontroly používateľských účtov Windows s otázkou, či chcete tejto aplikácii povoliť vykonať zmeny v systéme.
@@ -172,7 +172,7 @@ Stlačte `enter` a spustí sa nainštalovaná verzia NVDA.
 Zameraný je zoznamový rámik "Rozloženie klávesnice:".
 Rozloženie "Desktop" v predvolenej konfigurácii používa klávesy na numerickom bloku.
 Stlačením klávesu `šípka dolu` môžete vybrať rozloženie "laptop" a namiesto numerického bloku sa použijú iné klávesy.
-1. Stlačte kláves `tab` a prejdite na "Používať Capslock ako kláves NVDA".
+1. Stlačte kláves `tab` a prejdite na "Používať `Capslock` ako kláves NVDA".
 Kláves `Insert` je predvoleným klávesom NVDA.
 Stlačte `medzerník` ak chcete používať `capslock` ako alternatívny kláves NVDA.
 Všimnite si, že rozloženie klávesov je nastavené nezávisle na modifikačných klávesoch NVDA.
@@ -193,7 +193,7 @@ Všetky príkazy sú konfigurovateľné a toto sú predvolené skratky priraden�
 
 #### Modifikačný kláves NVDA {#NVDAModifierKey}
 
-Predvolený modifikačný kláves NVDA je buď `numerická nula` (s vypnutým klávesom numlock) alebo kláves `insert`, neďaleko klávesov `delete`, `home` a `end`.
+Predvolený modifikačný kláves NVDA je buď `numerická nula` (s vypnutým klávesom `numlock`) alebo kláves `insert`, neďaleko klávesov `delete`, `home` a `end`.
 Ako kláves NVDA môžete nastaviť aj kláves `capsLock`.
 
 #### Nápoveda vstupu {#InputHelp}
@@ -252,7 +252,7 @@ Priradené príkazy sa pri zapnutej nápovede vstupu nebudú spúšťať.
 |Znížiť hodnotu nastavenia hlasu |`NVDA+ctrl+šípka dolu` |`NVDA+ctrl+shift+šípka dolu` |Zníži hodnotu aktuálne zameraného nastavenia hlasového výstupu. Napríklad spomalí tempo, vyberie predchádzajúci hlas, stíši hlasitosť.|
 | Znížiť  hodnotu nastavenia hlasu po väčších krokoch | `NVDA+ctrl+pageWown` | `NVDA+shift+ctrl+pageDown` | znižuje  hodnotu nastavenia hlasového výstupu po väčších krokoch. Posuvníky sú posúvané po 20 percentách, výška hlasu napríklad po dvadsiatich krokoch|
 
-Môžete tiež nastaviť klávesové skratky, ktoré budú nastavovať prvú a poslednú hodnotu aktuálneho nastavenia v kruhu nastavení. Nastavenie vykonáte v dialógu Klávesové skratky {#InputGestures}, v kategórii reč.
+Môžete tiež nastaviť klávesové skratky, ktoré budú nastavovať prvú a poslednú hodnotu aktuálneho nastavenia v kruhu nastavení. Nastavenie vykonáte v dialógu [Klávesové skratky](#InputGestures), v kategórii reč.
 Ak napríklad budete na nastavení rýchlosti, budete môcť okamžite nastaviť hodnoty 0 alebo 100.
 Na nastavení hlas budete môcť vybrať prvý alebo posledný hlas.
 
@@ -269,7 +269,7 @@ Kompletný zoznam jednoznakových navigačných príkazov na webe nájdete v ča
 |Oblasť stránky |`d` |Prejde do nasledujúcej oblasti stránky|
 |Zoznam |`l` |Prejde do nasledujúceho zoznamu|
 |Tabuľka |`t` |Prejde do nasledujúcej tabuľky|
-|Pohyb v opačnom smere |`shift+písmeno` |Stlačte shift spolu s niektorým z predchádzajúcich písmen a prejdete na predchádzajúci prvok takého typu.|
+|Pohyb v opačnom smere |`shift+písmeno` |Stlačte `shift` spolu s niektorým z predchádzajúcich písmen a prejdete na predchádzajúci prvok takého typu.|
 |Zoznam prvkov |`NVDA+f7` |Zobrazí zoznamy rôznych prvkov napr. odkazov alebo nadpisov|
 
 ### Nastavenia {#Preferences}
@@ -305,7 +305,7 @@ Ak chcete vyhľadať konkrétny doplnok, postupujte nasledovne:
 
 1. Na pohyb po položkách použite šípky hore a dole, prípadne prvé písmená názvu doplnku.
 1. Popis vybratého doplnku si môžete prečítať po stlačení klávesu `tab`.
-1. Na čítanie textu použite [príkazy na čítanie textu] (#ReadingText) alebo šípky.
+1. Na čítanie textu použite [príkazy na čítanie textu](#ReadingText) alebo šípky.
 1. Klávesom `tab` prejdite na tlačidlo "Akcie". Po aktivovaní tohto tlačidla sa dostanete k inštalácii doplnku a ostatným možnostiam.
 1. Opätovným stlačením klávesu `tab` sa dostanete na pole "ďalšie podrobnosti", kde sú uvedené informácie ako autor, webová stránka a podobne.
 1. Na návrat k zoznamu doplnkov použite `alt+d`, alebo opakovane stláčajte `shift+tab` kým sa opäť nedostanete k zoznamu.
@@ -323,9 +323,9 @@ Doplnok nainštalujete nasledovne:
 
 1. Po zameraní doplnku, ktorý chcete nainštalovať, stlačte kláves `enter`.
 1. Otvorí sa zoznam dostupných akcií, prvá je "Inštalovať doplnok".
-1. Ak chcete doplnok nainštalovať, stlačte písmeno `i` alebo `šípkou dole` nájdite možnosť "nainštalovať".
+1. Ak chcete doplnok nainštalovať, stlačte písmeno `i` alebo `šípkou dole` nájdite možnosť "nainštalovať" a potvrďte klávesom `enter`.
 1. Fokus sa opäť vráti k zoznamu doplnkov a NVDA prečíta práve vybratý doplnok.
-1.Všimnite si, že stav doplnku sa zmení z "dostupný" na "prebieha sťahovanie".
+1. Všimnite si, že stav doplnku sa zmení z "dostupný" na "prebieha sťahovanie".
 1. Po stiahnutí doplnku sa stav zmení na "stiahnuté, bude povolený po reštarte".
 1. V tomto bode môžete nainštalovať rovnakým postupom aj ďalšie doplnky.
 1. Po stiahnutí všetkých požadovaných doplnkov, klávesom `tab` prejdite na tlačidlo "zavrieť" a stlačte `enter`.
@@ -540,7 +540,7 @@ Môžete tiež nechať prst pritlačený k obrazovke a postupným posúvaním po
 V ďalšom texte tejto príručky sa vyskytnú zoznamy príkazov NVDA, ktoré okrem štandardných klávesových skratiek budú obsahovať tzv. dotykové gestá, vykonávané pomocou dotykovej obrazovky.
 Nasledujú jednoduché inštrukcie, ktoré majú za cieľ vysvetliť ako vykonávať dotykové gestá pomocou dotykovej obrazovky tak, aby Ste na základe ich použitia dokázali vyvolať príkazy NVDA k týmto gestám priradené.
 
-##### Klepnutia {#taps}
+##### Klepnutia {#Taps}
 
 Rýchlo poklepte po obrazovke jedným alebo viacerými prstami.
 
@@ -600,9 +600,9 @@ Pre vstup do ponuky NVDA odkiaľkoľvek zo systému Windows počas behu NVDA mô
 
 * Stlačte na klávesnici skratku `nvda+n`.
 * Dvakrát poklepte dvoma prstami na obrazovku.
- Ponuku môžete vyvolať aj zo systémového panelu. Stlačte `windows+b`. Šípkami Vyhľadajte tlačidlo  NVDA a aktivujte ho klávesom `Enter`.
-* Môžete postupovať aj tak, že skratkou `windows+b` prejdete na systémový panel, šípkami vyhľadáte tlačidlo NVDA a aktivujete kontextovú ponuku klávesom kontextovej ponuky. Tento sa zvyčajne nachádza vedľa klávesu pravý kontrol.
- Ak sa na klávesnici tlačidlo kontextovej ponuky nenachádza, môžete ju vyvolať skratkou `shift+f10`.
+ * Ponuku môžete vyvolať aj zo systémového panelu. Stlačte `windows+b`. `Šípkami` Vyhľadajte tlačidlo  NVDA a aktivujte ho klávesom `Enter`.	
+* Môžete postupovať aj tak, že skratkou `windows+b` prejdete na systémový panel, `šípkami hore a dole` vyhľadáte tlačidlo NVDA a aktivujete kontextovú ponuku klávesom `aplikácie`. Tento sa zvyčajne nachádza vedľa klávesu pravý kontrol.
+Ak sa na klávesnici tlačidlo `aplikácie` nenachádza, môžete ju vyvolať skratkou `shift+f10`.
 * Ponuku NVDA  je možné vyvolať aj kliknutím pravým tlačidlom myši na ikone NVDA na systémovom panely.
 
 Po zobrazení ponuky programu môžete použiť šípky na pohyb po položkách, klávesom `enter` aktivujete aktuálnu položku.
@@ -965,30 +965,30 @@ Niektoré príkazy však nemusia byť dostupné vo všetkých typoch dokumentov.
 <!-- KC:beginInclude -->
 Za pomoci nasledujúcich klávesov sa môžete posúvať na nasledujúci prvok v dokumente, v opačnom smere sa môžete pohybovať kombinovaním príkazov s klávesom shift.
 
-* `h`: nadpis
-* `l`: zoznam
-* `i`: položka zoznamu
-* `t`: tabuľka
-* `k`: odkaz
-* `n`: text, ktorý nie je odkazom
-* `f`: prvok formulára
-* `u`: nenavštívený odkaz
-* `v`: navštívený odkaz
-* `e`: editačné pole
-* `b`: tlačidlo
-* `x`: začiarkavacie políčko
-* `c`: zoznamový rámik
-* `r`: prepínač
-* `q`: citácia
-* `s`: oddeľovač
-* `m`: rámik
-* `g`: grafika
-* `d`: oblasť stránky
-* `o`: vnorený objekt (audio a video prehrávač, aplikácia, dialóg...)
-* `1-6`: nadpis príslušnej úrovne
-* `a`: anotácie (komentár, zmena alebo úprava)
+* h: nadpis
+* l: zoznam
+* i: položka zoznamu
+* t: tabuľka
+* k: odkaz
+* n: text, ktorý nie je odkazom
+* f: prvok formulára
+* u: nenavštívený odkaz
+* v: navštívený odkaz
+* e: editačné pole
+* b: tlačidlo
+* x: začiarkavacie políčko
+* c: zoznamový rámik
+* r: prepínač
+* q: citácia
+* s: oddeľovač
+* m: rámik
+* g: grafika
+* d: oblasť stránky
+* o: vnorený objekt (audio a video prehrávač, aplikácia, dialóg...)
+* 1-6: nadpis príslušnej úrovne
+* a: anotácie (komentár, zmena alebo úprava)
 * `p`: textový odsek
-* `w`:  chyba
+* w:  chyba
 
 Rýchly prechod na začiatok alebo koniec skupín prvkov, ako napríklad zoznamov a tabuliek:
 
