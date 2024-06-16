@@ -542,7 +542,7 @@ NVDA 目前共有两套被称为键盘布局的快捷键配置：一套是台式
 当 NVDA 命令在后面的用户指南被讲述的同时，将为每个动作列出其在触摸屏上的触摸手势。
 下面是各种触摸手势执行的简单指导。
 
-##### 点击 {#toc45}
+##### 点击 {#Taps}
 
 用一个或者多个手指点击屏幕。
 
@@ -554,7 +554,7 @@ NVDA 目前共有两套被称为键盘布局的快捷键配置：一套是台式
 点击三次将被识别为一个三击动作。
 当然，多次点击的手势也会判断手指的数目。所以，像两指双击、四指单击这样的动作也是可以识别的。
 
-##### 滑动 {#toc46}
+##### 滑动 {#Flicks}
 
 用您的手指，快速滑动屏幕。
 
@@ -1708,7 +1708,7 @@ NVDA 的许多配置参数位于设置对话框，在该对话框中可以方便
 
 <!-- KC:setting -->
 
-##### 打开常规设置 {#toc109}
+##### 打开常规设置 {#OpenGeneralSettings}
 
 按键：`NVDA+control+g`
 
@@ -1804,7 +1804,7 @@ NVDA 更新服务器只根据您的 IP 地址判断用户所在的国家/地区�
 
 <!-- KC:setting -->
 
-##### 打开语音设置 {#toc122}
+##### 打开语音设置 {#OpenSpeechSettings}
 
 按键：`NVDA+control+v`
 
@@ -1947,7 +1947,7 @@ Espeak NG的“变声”跟“语音”很像，您可以使用此组合框来�
 
 <!-- KC:setting -->
 
-##### 打开选择语音合成器对话框 {#toc143}
+##### 打开选择语音合成器对话框 {#OpenSelectSynthesizer}
 
 按键：`NVDA+control+s`
 
@@ -2174,7 +2174,7 @@ NVDA 正在运行的时候，如果您想在不进入“语音设置”对话框
 
 <!-- KC:setting -->
 
-##### 打开选择盲文点显器对话框 {#toc166}
+##### 打开选择盲文点显器对话框 {#OpenSelectBrailleDisplay}
 
 按键：`NVDA+control+a`
 
@@ -2226,7 +2226,7 @@ NVDA 正在运行的时候，如果您想在不进入“语音设置”对话框
 
 <!-- KC:setting -->
 
-##### 打开音频设置 {#toc171}
+##### 打开音频设置 {#OpenAudioSettings}
 
 按键：`NVDA+control+u`
 
@@ -2369,14 +2369,14 @@ NVDA 将显示警告，提示您的屏幕将在激活这个选项后变黑。
 
 <!-- KC:setting -->
 
-##### 打开键盘设置 {#toc181}
+##### 打开键盘设置 {#OpenKeyboardSettings}
 
 按键：`NVDA+control+k`
 
 NVDA 设置对话框中的“键盘设置”部分包含一些选项，用于设置 NVDA 在您使用键盘时的行为。
 它包含下列选项：
 
-##### 键盘布局 {#toc182}
+##### 键盘布局 {#KeyboardSettingsLayout}
 
 这个组合框允许您选择 NVDA 使用的键盘布局的类型，当前，NVDA 自带着台式机和笔记本两套键盘布局。
 
@@ -2446,7 +2446,7 @@ NVDA 设置对话框中的“键盘设置”部分包含一些选项，用于设
 
 <!-- KC:setting -->
 
-##### 打开鼠标设置 {#toc194}
+##### 打开鼠标设置 {#OpenMouseSettings}
 
 按键：`NVDA+control+m`
 
@@ -2549,7 +2549,7 @@ NVDA 设置对话框中的“鼠标设置”分类允许 NVDA 跟踪鼠标，用
 
 <!-- KC:setting -->
 
-##### 打开对象查看设置 {#toc211}
+##### 打开对象查看设置 {#OpenObjectPresentationSettings}
 
 按键：`NVDA+control+o`
 
@@ -2664,7 +2664,7 @@ NVDA 设置对话框中的“鼠标设置”分类允许 NVDA 跟踪鼠标，用
 
 <!-- KC:setting -->
 
-##### 打开浏览模式设置 {#toc229}
+##### 打开浏览模式设置 {#OpenBrowseModeSettings}
 
 按键：`NVDA+control+b`
 
@@ -2756,7 +2756,7 @@ NVDA 设置对话框中的“鼠标设置”分类允许 NVDA 跟踪鼠标，用
 
 <!-- KC:setting -->
 
-##### 打开文档格式设置 {#toc243}
+##### 打开文档格式设置 {#OpenDocumentFormattingSettings}
 
 按键：`NVDA+control+d`
 
@@ -3553,7 +3553,7 @@ NVDA 将询问您是否确认移除。
 NVDA工具菜单下面的 NVDA Python 控制台是调试 NVDA、了解 NVDA内部原理、以及查看其他软件无障碍支持情况的工具
 想了解更多信息请查看 [NVDA 开发文档](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html)。
 
-### 插件商店 {#toc306}
+### 插件商店 {#AddonStoreMenuItem}
 
 访问该菜单会打开 [NVDA 插件商店](#AddonsManager)。
 想了解更多信息请查看：[插件和插件商店](#AddonsManager)。
