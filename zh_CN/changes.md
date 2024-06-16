@@ -3356,7 +3356,7 @@ Highlights of this release include browse mode for documents in Microsoft Word a
  * These commands can also now be used multiple times per sheet to set different headers for different regions.
 * Support for automatic column and row header reading in Microsoft Word (#3110) including:
  * Support of Microsoft Word bookmarks to identify header cells (compatible with Jaws screen reader).
- * set column header (NVDA+shift+c) and set row header (NVDA+shift+r) commands  while on the first header cell in a table allow you to tell NVDA that these headers should be reported automatically.  Settings are stored in the document so that they are available the next time the document is opened, and will be available to other screen readers that support the bookmark scheme.
+ - set column header (NVDA+shift+c) and set row header (NVDA+shift+r) commands  while on the first header cell in a table allow you to tell NVDA that these headers should be reported automatically.  Settings are stored in the document so that they are available the next time the document is opened, and will be available to other screen readers that support the bookmark scheme.
 * Microsoft Word: Report the distance from the left edge of the page when the tab key is pressed. (#1353)
 * Microsoft Word: provide feedback in speech and braille for most available formatting shortcut keys (bold, italic, underline, alignment, outline level, superscript, subscript and font size). (#1353)
 * Microsoft Excel: If the selected cell contains comments, they can be now reported by pressing NVDA+alt+c. (#2920)
