@@ -247,8 +247,14 @@ NVDA 键也可以设定为`大小写锁定`键。
 |---|---|---|---|
 |移动到下一个合成器设置 |`NVDA+control+右光标` |`NVDA+shift+control+右光标` |移动到当前设置的下一个可用的语音设置，移动到最后一个设置后会再次循环至第一个。|
 |移动到上一个合成器设置 |`NVDA+control+左光标` |`NVDA+shift+control+左光标` |移动到当前设置的上一个可用的语音设置，移动到第一个设置后会再次循环至最后一个。。|
-|增大当前合成器设置的值 |`NVDA+control+上光标` |`NVDA+shift+control+上光标` |增大当前所在语音设置的值，例如加快速度，选择下一个语音，增大音量。|
+|增加当前合成器设置的值 |`NVDA+control+上光标` |`NVDA+shift+control+上光标` |增加当前所在语音设置的值，例如加快速度，选择下一个语音，增大音量。|
+|以更大的步长增加当前语音选项的设置值 |``NVDA+control+上翻页`` |``NVDA+shift+control+上翻页`` | 以更大的步长增加当前语音设置的值。例如当你处于语音设置时，每一次会跳过20个语音角色；当您处于滑块设置（速度、音调等）时，每次会增加 20%。|
 |减小当前合成器设置的值 |`NVDA+control+下光标` |`NVDA+shift+control+下光标` |减小当前所在语音设置的值，例如减慢速度，选择上一个语音，减小音量。|
+|以更小的步长减小当前语音选项的设置值 |``NVDA+control+下翻页`` |``NVDA+shift+control+下翻页`` |以更大的步长减小当前语音设置的值。例如当你处于语音设置时，每一次会跳过20个语音角色；当您处于滑块设置时，每次会减小 20%。 |
+
+还可以在[输入手势对话框 #InputGestures]中的语音类别下为设置当前合成器选项的第一个或最后一个值自定义快捷键。
+例如，当您处于语速设置时，可以一键将语速设置为 0 或 100。
+当您处于语音设置时，可以一键设置第一个或最后一个语音。
 
 #### 网页导航 {#WebNavigation}
 
@@ -909,6 +915,7 @@ NVDA支持以下应用中的文档
 * o: 嵌入式对象
 * 1 到 6: 分别表示1到6级的标题
 * a: 注释 (评论、编辑者修订等)。
+* ``p``: 文本段落
 * w: 拼写错误
 
 要想在如列表、表格等容器控件的开始或者结尾之间切换：
@@ -925,6 +932,27 @@ NVDA支持以下应用中的文档
 要想在当前文档中切换单键导航功能的开关，请使用“NVDA+shift+空格键”。
 <!-- KC:endInclude -->
 
+#### 文本段落导航命令 {#TextNavigationCommand}
+
+您可以按``p``或``shift+p``跳到下一个或上一个文本段落。
+
+文本段落由一组完整句子组成，
+这对于在各种网页上定位正文文本的开头非常有用，例如：
+* 新闻网页
+* 论坛
+* 博客文章
+
+
+该命令还可用于跳过个别冗余内容，例如：
+* 广告
+* 菜单
+* 标题
+
+但请注意，虽然 NVDA 会尽可能识别文本段落，但该算法并不完美，有时可能不准确。
+此外，该命令与段落导航命令``control+下光标/上光标``不同。
+文本段落导航仅在文本段落之间跳转，而段落导航命令可以将光标移动到上一个/下一个段落，无论该段落是否包含文本。
+
+
 #### 其他导航命令 {#OtherNavigationCommands}
 
 除了上面列出的导航命令以外，NVDA 还有一些未分配默认按键的命令。
@@ -932,8 +960,16 @@ NVDA支持以下应用中的文档
 以下是可用命令的列表：
 
 * 文章
+* 插图
 * 分组
 * 选项卡
+* 菜单项
+* 切换按钮
+* 进度条
+* 数学公式
+* 垂直对齐的段落
+* 相同样式的文本
+* 不同样式的文本
 
 请注意，每种类型的元素都有两个命令，用于在文档中向前移动和向后移动，并且您必须为这两个命令分配手势，以便能够在两个方向上实现快速导航。
 例如，若您想使用`y`/`shift+y`键快速导航选项卡，您可以执行以下操作：
@@ -1276,9 +1312,11 @@ NVDA提供了几种内置的视觉增强提供程序。
 
 如果启用黑屏，所有依靠屏幕所显示内容而执行的动作均不可用，如执行 [OCR](#Win10Ocr) 或截屏等。
 
-因 Windows Magnification API 更新的缘故，“黑屏”功能必须更新以支持更新的操作系统。
-请使用 NVDA 2021.2 来在 Windows 10 21H2 (10.0.19044) 或更新的操作系统启用“黑屏”功能。
-出于安全的目的，请在使用黑屏功能让屏幕完全变黑以前，进行视觉确认。
+由于 Windows Magnification API 已更新，“黑屏”功能必须更新以支持新版操作系统。
+您可使用 NVDA 2021.2及以上，在 Windows 10 21H2 (10.0.19044) 或更高版本的操作系统启用“黑屏”功能。
+保险起见，请在启用黑屏功能后，进行视觉确认。
+
+请注意，当启用 Windows 放大镜且使用“反色”功能时，无法启用黑屏。
 
 ## 图像内容识别 {#ContentRecognition}
 
@@ -1891,7 +1929,18 @@ NVDA 正在运行的时候，如果您想在不进入“语音设置”对话框
 您可以使用光标键在盲文表之间移动。
 
 请注意，只有当您的点显器带有 Perkins-style 键盘且点显器驱动支持此特性时，此选项才可用。
-如果某个带有盲文输入键盘的点显器确实不能支持输入，它将被记录在[支持的点显器](#SupportedBrailleDisplays)章节。
+如果某个带有盲文输入键盘的点显器确实不能支持输入，会在[支持的点显器](#SupportedBrailleDisplays)章节中记录。
+
+##### 盲文模式 {#BrailleMode}
+按键： ``NVDA+alt+t``
+
+此选项可以让您在可用的盲文模式之间进行切换。
+
+目前支持两种盲文模式，“跟随光标”和“显示语音输出”。
+
+选择跟随光标后，盲文显示器将跟随系统焦点/系统输入光标或导航对象/浏览光标，具体取决于“盲文显示跟随”设置。
+
+选择显示语音输出后，盲文点显器会完全显示 NVDA 所朗读的内容， 即使将语音模式设置为“正常朗读”以外的其他模式该设置也会生效。
 
 ##### 将光标所在单词转换为计算机盲文 {#BrailleSettingsExpandToComputerBraille}
 
@@ -2145,6 +2194,63 @@ NVDA 设置中的音频类别涵盖了可以让您调节有关音频输出的多
 此滑块可以让您设置 NVDA 音效和 Beep 蜂鸣声的音量，
 仅当启用“音频输出使用 WASAPI”且禁用“NVDA 音效音量跟随语音音量”时，此设置才会生效。
 如果您在“高级设置”中[禁用音频输出使用 WASAPI](#WASAPI)的情况下启动 NVDA，则该选项不可用。
+
+##### 声音拆分 {#SelectSoundSplitMode}
+
+声音拆分功能可以让您充分利用您的立体声输出设备，例如耳机和扬声器。
+您可以使用该功能将NVDA 语音拆分到一个声道（例如左声道），将其他应用程序的声音拆分到另一个声道（例如右声道）。
+默认情况下，声音拆分处于禁用状态。
+使用快捷键可以在各种声音拆分模式之间循环切换：
+<!-- KC:beginInclude -->
+
+|名称 |按键 |描述|
+|---|---|---|
+| 切换声音拆分模式 |`NVDA+alt+s` |在声音拆分模式之间循环切换。|
+
+<!-- KC:endInclude -->
+
+默认情况下，该命令可以切换到以下模式：
+
+* 禁用声音拆分： NVDA 不进行任何声音拆分处理。
+* NVDA 在左、其他应用在右： NVDA 在左声道中朗读，而其他应用程序在右声道中播放声音。
+* NVDA 在左、其他应用双声道： NVDA 只在左声道中朗读，而其他应用程序在左右两侧双声道中播放声音。
+
+NVDA 设置组合框中提供了另外一些更高级的声音分割模式。
+其中“NVDA双声道、其他应用双声道”强制所有声音都在两个通道中播放。
+此模式与“禁用声音拆分”模式不同，可以用于防止其他音频处理程序干扰通道音量。
+
+请注意，声音拆分不能用作混音器。
+例如，如果应用程序正在播放立体声音轨，而声音拆分设置为“NVDA 在左、其他应用在右”，那么您只能听到音轨的右声道，而左声道被静音。
+
+如果您在“高级设置”中禁用了[音频输出使用 WASAPI](#WASAPI)，则声音拆分功能会被禁用。
+
+另请注意，如果 NVDA 崩溃，应用程序的音量则无法恢复，可能出现 NVDA 崩溃后应用程序仍然在一侧声道中输出声音的情况。
+重新启动 NVDA 后选择“NVDA双声道、其他应用双声道”即可解决该问题。
+
+##### 自定义声音拆分模式{#CustomizeSoundSplitModes}
+
+该可选择列表可以让您选择在按 ``NVDA+alt+s`` 循环切换声音拆分模式时应该包含哪些拆分模式。
+未选中的模式则不会出现在循环切换序列中。
+默认情况下仅包含三种模式。
+
+* 禁用声音拆分。
+* NVDA 在左、其他应用在右。
+* NVDA 在左、其他应用双声道。
+
+请注意，要求至少选中一种模式。
+如果您在“高级设置”中禁用了[音频输出使用 WASAPI](#WASAPI)，则声音拆分功能会被禁用。
+
+##### 语音后保持音频设备唤醒的时间 {#AudioAwakeTime}
+
+此编辑框用于设置 NVDA 在语音朗读结束后多长时间内使音频设备保持唤醒状态。
+该功能可以解决 NVDA 的某些语音问题，例如卡顿或“吃字”（朗读的内容被截断）。
+由于个别音频设备（尤其是蓝牙和无线设备）进入了休眠模式，可能就会发生这种情况。
+还有一些可能的用例，比如个别笔记本电脑的声卡也有自动休眠机制，再比如虚拟机（如 Citrix Virtual Desktop）也可能会出现该问题。
+
+此设置值过小可能无法解决上述问题，因为设备依然会进入休眠状态，仍然出现“吃字”的现象。
+此设置值过大可能会导致声音输出设备的电池续航变短，因为即使没有声音输出设备也会长时间处于唤醒状态。
+
+将此值设置为 0 可以禁用该功能。
 
 #### 视觉辅助 {#VisionSettings}
 
@@ -2623,6 +2729,7 @@ NVDA 设置对话框中的“鼠标设置”分类允许 NVDA 跟踪鼠标，用
   * 路标
   * 文章
   * 框架
+* 插图和说明文本
   * 可点击
 
 要想在任何地方切换这些设置，可在[按键与手势对话框](#InputGestures)设置一个自定义手势或快捷键
@@ -2919,6 +3026,11 @@ WASAPI 被禁用后以下选项也会随之禁用：
 此选项允许您选择 NVDA 是否在捕捉到错误时播放错误提示音。
 选择“仅测试版”（默认）仅当 NVDA 版本是测试版本（alpha、beta 或从源代码运行）时 NVDA 会播放错误提示音。
 选择“是”，启用错误声音，无论您当前的 NVDA 是什么版本。
+
+##### 文本段落导航的正则表达式 {#TextParagraphRegexEdit}
+
+此编辑框可以让用户自定义在浏览模式下检测文本段落的正则表达式此编辑框可以让用户自定义在浏览模式下检测文本段落的正则表达式。
+[文本段落导航命令](#TextNavigationCommand) 会查找匹配该正则表达式的文本段落。
 
 ### 杂项设置 {#MiscSettings}
 
@@ -3275,12 +3387,12 @@ NVDA 将询问您是否确认移除。
 
 #### 评论插件和阅读评论 {#AddonStoreReviews}
 
-在安装插件之前，您可能需要阅读其他用户的使用心得。
+在安装插件之前或在学习插件的用法过程中，您可能想看看其他用户的使用心得。
 同样地，如果您使用过某个插件，提供反馈信息也会对其他用户有所帮助。
-要阅读相应插件的评论，可以从“可安装的插件”或“可更新的插件”选项卡中选择一个插件，通过“评论网址”进入插件的评论页面。
+要阅读相应插件的评论，可以选择一个插件，通过“评论网址”进入到插件的评论页面。
 该网址会打开一个 GitHub 讨论页面，您可以在此页面阅读或撰写有关该插件的评论。
 请注意，此评论并不能取代与插件开发者的直接沟通。
-此评论页面的目的是让用户分享的使用心得，帮助其他用户决定某个插件是否对他们有用。
+此评论页面的目的是让用户分享使用心得，帮助其他用户决定某个插件是否对他们有用。
 
 ### 不兼容的插件 {#incompatibleAddonsManager}
 
@@ -3817,7 +3929,7 @@ The following extra devices are also supported (and do not require any special d
 Following are the key assignments for  the Brailliant BI/B and BrailleNote touch displays with NVDA.
 Please see the display's documentation for descriptions of where these keys can be found.
 
-#### Key assignments for All models {#toc326}
+#### Key assignments for All models {#HumanWareBrailliantKeyAssignmentForAllModels}
 
 <!-- KC:beginInclude -->
 
@@ -3846,7 +3958,7 @@ Please see the display's documentation for descriptions of where these keys can 
 
 <!-- KC:endInclude -->
 
-#### Key assignments for Brailliant BI 32, BI 40 and B 80 {#toc327}
+#### Key assignments for Brailliant BI 32, BI 40 and B 80 {#HumanWareBrailliantKeyAssignmentForBI32BI40AndB80}
 
 <!-- KC:beginInclude -->
 
@@ -3858,7 +3970,7 @@ Please see the display's documentation for descriptions of where these keys can 
 
 <!-- KC:endInclude -->
 
-#### Key assignments for Brailliant BI 14 {#toc328}
+#### Key assignments for Brailliant BI 14 {#HumanWareBrailliantKeyAssignmentForBI14}
 
 <!-- KC:beginInclude -->
 
@@ -3913,19 +4025,19 @@ Please see the display's documentation for descriptions of where these keys can 
 |control+shift+leftArrow key |dot2+dot8+space+f1|
 |control+leftArrow key |dot2+space|
 |shift+alt+leftArrow key |dot2+dot7+f1|
-|alt+leftArrow key |dot2+dot7|
+|`alt+leftArrow` |`dot2+dot7+space`|
 |rightArrow key |dot6+space, leftSideRightArrow|
 |control+shift+rightArrow key |dot5+dot8+space+f1|
 |control+rightArrow key |dot5+space|
 |shift+alt+rightArrow key |dot5+dot7+f1|
-|alt+rightArrow key |dot5+dot7|
+|`alt+rightArrow` |`dot5+dot7+space`|
 |pageUp key |dot1+dot2+dot6+space|
 |control+pageUp key |dot1+dot2+dot6+dot8+space|
 |upArrow key |dot1+space, leftSideUpArrow|
 |control+shift+upArrow key |dot2+dot3+dot8+space+f1|
 |control+upArrow key |dot2+dot3+space|
 |shift+alt+upArrow key |dot2+dot3+dot7+f1|
-|alt+upArrow key |dot2+dot3+dot7|
+|`alt+upArrow` |`dot2+dot3+dot7+space`|
 |shift+upArrow key |leftSideScrollDown+space|
 |pageDown key |dot3+dot4+dot5+space|
 |control+pageDown key |dot3+dot4+dot5+dot8+space|
@@ -3933,7 +4045,7 @@ Please see the display's documentation for descriptions of where these keys can 
 |control+shift+downArrow key |dot5+dot6+dot8+space+f1|
 |control+downArrow key |dot5+dot6+space|
 |shift+alt+downArrow key |dot5+dot6+dot7+f1|
-|alt+downArrow key |dot5+dot6+dot7|
+|`alt+downArrow` |`dot5+dot6+dot7+space`|
 |shift+downArrow key |space+rightSideScrollDown|
 |escape key |dot1+dot5+space, f4, brailleedge:f1|
 |delete key |dot1+dot3+dot5+space, dot1+dot4+dot5+space|
@@ -4373,12 +4485,12 @@ Due to this, and to maintain compatibility with other screen readers in Taiwan, 
 
 ### Eurobraille displays {#Eurobraille}
 
-The b.book, b.note, Esys, Esytime and Iris displays from Eurobraille are supported by NVDA.  
-These devices have a braille keyboard with 10 keys. 
+The b.book, b.note, Esys, Esytime and Iris displays from Eurobraille are supported by NVDA.
+These devices have a braille keyboard with 10 keys.
 Please refer to the display's documentation for descriptions of these keys.
 Of the two keys placed like a space bar, the left key is corresponding to the backspace key and the right key to the space key.
 
-These devices are connected via USB and have one stand-alone USB keyboard. 
+These devices are connected via USB and have one stand-alone USB keyboard.
 It is possible to enable/disable this keyboard by toggling "HID Keyboard simulation" using an input gesture.
 The braille keyboard functions described directly below is when "HID Keyboard simulation" is disabled.
 
@@ -4673,14 +4785,14 @@ Please see the display's documentation for descriptions of where these keys can 
 
 <!-- KC:endInclude -->
 
-### HID 标准盲文点显器 {#HIDBraille}
+### Standard HID Braille displays {#HIDBraille}
 
-这是新标准 HID 盲文规范的实验性驱动，由 Microsoft、Google、Apple 和包括 NV Access 在内的几家辅助技术公司于 2018 年达成一致。
-希望未来所有制造商推出的盲文点显器设备都可以使用此标准协议，以消除设备驱动之间的差异性。
+This is an experimental driver for the new Standard HID Braille Specification, agreed upon in 2018 by Microsoft, Google, Apple and several assistive technology companies including NV Access.
+The hope is that all future Braille Display models created by any manufacturer, will use this standard protocol which will remove the need for manufacturer-specific Braille drivers.
 
-NVDA 的点显器自动检测功能也可以识别任何使用该协议的点显器并自动连接。
+NVDA's automatic braille display detection will also recognize any display that supports this protocol.
 
-这些盲文点显器的按键分配如下。
+Following are the current key assignments for these displays.
 <!-- KC:beginInclude -->
 
 | Name |Key|
@@ -4732,7 +4844,12 @@ NVDA 还可以使用 `-s` [命令行选项](#CommandLineOptions)在安全模式�
 * 从 NVDA 菜单中打开外部文档，例如用户指南或贡献者名单。
 
 NVDA 安装版将其配置（包括插件）存储在 `%APPDATA%\nvda` 中。
-为了防止 NVDA 用户直接修改其配置或插件，还必须限制用户对此文件夹的访问。
+为了防止 NVDA 用户直接修改其配置或插件，还必须限制用户对此文件夹的访问权限。
+
+安全模式对于 NVDA 的便携版无效。
+上述限制也适用于 NVDA 的临时版，即临时启动的安装程序。
+在安全环境中，用户能够运行一个便携式可执行文件本身就是一个安全风险。
+系统管理员应当限制未经授权的软件在系统上运行，包括 NVDA 便携版。
 
 NVDA 用户通常依赖设置 NVDA 配置文件来满足个性化需求。
 这可能包括安装和设置自定义插件，这些插件应独立于 NVDA 进行单独审查。
