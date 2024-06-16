@@ -33,7 +33,7 @@ Der er mange mindre fejlrettelser for programmer, såsom Thunderbird, Adobe Read
     * tekst med samme typografi (#16000, @mltony)
     * tekst med en anden typografi (#16000, @mltony)
   * Tilføjede kommandoer til at springe til første, sidste, frem og tilbage gennem indstillingsværdier i ringen for talesynteseindstillinger. (#13768, #16095, @rmcpantoja)
-    * Skift til første og sidste værdi for den aktuelle indstilling i ringen af talesynteseindstillinger har ingen tildelt kommando. (#13768)
+    * Skift til første og sidste værdi for den aktuelle indstilling i ringen af talesynteseindstillinger. Denne har ingen tildelt kommando. (#13768)
     * Formindske og forøge den aktuelle indstilling i ringen af talesynteseindstillinger med i større trin (#13768):
       * Desktop: `NVDA+Ctrl+sideOp` eller `NVDA+Ctrl+sideNed`.
       * Laptop: `NVDA+Ctrl+shift+sideOp` eller `NVDA+Ctrl+Shift+sideNed`.
@@ -65,10 +65,10 @@ Der er mange mindre fejlrettelser for programmer, såsom Thunderbird, Adobe Read
   * eSpeak NG er blevet opdateret til 1.52-dev commit `cb62d93fd7`. (#15913)
     * Tilføjet nyt sprog Tigrinya.
 * Ændret flere kommandoer for BrailleSense-enheder for at undgå konflikter med tegn fra den franske punktskriftstabel. (#15306)
-  * `alt+leftArrow` er nu kortlagt til `dot2+dot7+space`.
-  * `alt+rightArrow` er nu kortlagt til `dot5+dot7+space`
-  * `alt+upArrow` er nu kortlagt til `dot2+dot3+dot7+space`
-  * `alt+downArrow` er nu kortlagt til `dot5+dot6+dot7+space`
+  * `alt+venstre pil` er nu tildelt `punkt2+punkt7+mellemrum`.
+  * `alt+højre pil` er nu tildelt `punkt5+punkt7+mellemrum`
+  * `alt+pil op` er nu tildelt `punkt2+punkt3+punkt7+mellemrum`
+  * `alt+pil ned` er nu tildelt `punkt5+punkt6+punkt7+mellemrum`
 * Prikker, der almindeligvis bruges i indholdsfortegnelser, rapporteres ikke længere på lave tegnsætningsniveauer. (#15845, @CyrilleB79)
 
 ### Fejlrettelser
