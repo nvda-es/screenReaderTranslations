@@ -4862,14 +4862,14 @@ Please see the display's documentation for descriptions of where these keys can 
 
 <!-- KC:endInclude -->
 
-### Standard HID Braille displays {#HIDBraille}
+### HID 标准盲文点显器 {#HIDBraille}
 
-This is an experimental driver for the new Standard HID Braille Specification, agreed upon in 2018 by Microsoft, Google, Apple and several assistive technology companies including NV Access.
-The hope is that all future Braille Display models created by any manufacturer, will use this standard protocol which will remove the need for manufacturer-specific Braille drivers.
+这是新标准 HID 盲文规范的实验性驱动，由 Microsoft、Google、Apple 和包括 NV Access 在内的几家辅助技术公司于 2018 年达成一致。
+希望未来所有制造商推出的盲文点显器设备都可以使用此标准协议，以消除设备驱动之间的差异性。
 
-NVDA's automatic braille display detection will also recognize any display that supports this protocol.
+NVDA 的点显器自动检测功能也可以识别任何使用该协议的点显器并自动连接。
 
-Following are the current key assignments for these displays.
+这些盲文点显器的按键分配如下。
 <!-- KC:beginInclude -->
 
 | Name |Key|
