@@ -1061,7 +1061,7 @@ eSpeak 又一次得到了更新， 新版的 eSpeak 引入了三种新的语言�
 * 升级 Comtypes 版本到 1.1.11。(#12953)
 * 在内置的 Windows 控制台 (`conhost.exe`) 包含 级别  2 或以上版本的 NVDA API (`FORMATTED`) ，或使用 Windows 11 version 22H2 (Sun Valley 2) 时， UIA 默认启用。(#10964)
   * 可在  NVDA “高级”面板中修改“Windows 控制台支持”选项来改变此设置。。
-  * 要想确认当前 Windows 控制台的 NVDA API 级别，可以在选中“启用 UIA 支持（如果可用）”选项的前提下打开 Windows 控制台后按下 `NVDA+f1` 显示的“NVDA 日志查看器”输出的日志里查看。
+  * 要想确认当前 Windows 控制台的 NVDA API 级别，可以在选中“启用 UIA 支持（如果可用）”选项的前提下打开 Windows 控制台后按下 NVDA+f1 显示的“NVDA 日志查看器”输出的日志里查看。
 * 在 Chromium 中，即使 IA2 在 MSAA 为文档对象公开 `STATE_SYSTEM_BUSY`，缓冲区依然照常加载。(#13306)
 * 创建了一个 `featureFlag` 的配置类，用来标志实验性特性。 如需了解详情请看 `devDocs/featureFlag.md`。(#13859)
 
@@ -1130,8 +1130,8 @@ eSpeak 又一次得到了更新， 新版的 eSpeak 引入了三种新的语言�
 
 * 支持与 Microsoft Office 产品中的 Microsoft Loop Components 进行交互。(#13617)
 * 添加了新的表格导航快捷键。(#957)
-  * `control+alt+home/end` 移动到第一列/最后一列。
-  * `control+alt+pageUp/pageDown` 移动到第一行/最后一行。
+ * `control+alt+home/end` 移动到第一列/最后一列。
+ * `control+alt+pageUp/pageDown` 移动到第一行/最后一行。
 * 添加了一个未分配的手势来循环切换语言和方言切换模式开关。(#10253)
 
 ### 改进
@@ -1161,7 +1161,7 @@ eSpeak 又一次得到了更新， 新版的 eSpeak 引入了三种新的语言�
 * 盲文相关修复：
   * 修复了在 Mozilla 富文本编辑控件中导航某些文本时的盲文输出问题，例如在 Thunderbird 中撰写消息。(#12542)
   * 当盲文自动连接并在启用鼠标导航的情况下移动鼠标时，
-  文本导航命令会使用语音朗读的内容更新盲文显示。(#11519)
+   文本导航命令会使用语音朗读的内容更新盲文显示。(#11519)
   * 支持在使用文本查看命令后正常滚动盲文显示。(#8682)
 * NVDA 安装程序支持在包含特殊字符的目录中运行。(#13270)
 * 在 Firefox 中，当 aria-rowindex、aria-colindex、aria-rowcount 或 aria-colcount 属性无效时，NVDA 支持读出网页中的项目。(#13405)
@@ -1203,6 +1203,7 @@ NVDA 会在按下更多命令时读出结果，例如科学计算器模式下的
 
 * `appModuleHandler.NVDAProcessID` 已弃用，请改用 `globalVars.appPid`。(#13646)
 * `gui.quit` 已弃用，请改用 `wx.CallAfter(mainFrame.onExitCommand, None)`。(#13498)
+  -
 * 以下 appModules 已被标记为已弃用。
 要导入其中任意一项请从替代模块中导入。(#13366)
 
