@@ -1384,7 +1384,7 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
     * `ROLE_*` 和 `STATE_*` 应使用 `Role.*` 和 `State.*` 代替。
     * `roleLabels`、`stateLabels` 和 `negativeStateLabels`，如 `roleLabels[ROLE_*]` 应替换为其等价的用法 `Role.*.displayString` 或 `State.*.negativeDisplayString`。
     * `processPositiveStates` 和 `processNegativeStates` 应使用 `processAndLabelStates` 代替。
-* Excel 单元格状态常量 (`NVSTATE_*`) 现为 `NvCellState` 枚举中的值，在 `NVDAObjects/window/excel.py` 中的 `NvCellState` 枚举内作为镜像，并通过 `_nvCellStatesToStates` 映射于 `controlTypes.State`。(#13465)
+* Excel 单元格状态常量 (`NVSTATE_*`) 现为 `NvCellState` 枚举中的值，在 `NVDAObjects/window/excel.py` 中的 `NvCellState` 枚举内作为镜像，并通过 _nvCellStatesToStates 映射于 `controlTypes.State`。(#13465)
 * `EXCEL_CELLINFO` 的结构成员 `state` 现为 `nvCellStates`。
 * 移除 `mathPres.ensureInit`， MathPlayer 将随 NVDA 的启动而初始化。(#13486)
 
@@ -1477,7 +1477,7 @@ NVDA 会请求 Windows 更新安全证书，以避免日后再次出现该错误
 * 将 Espeak-ng 更新至 1.51-dev commit `74068b91bcd578bd7030a7a6cde2085114b79b44`. (#12665)
 * 如果没有符合 NVDA 首选语言的语音，则默认到 eSpeak 语音合成器。(#10451)
 * 如果 OneCore 始终无法朗读，则默认到 eSpeak 语音合成器。(#11544)
-* 使用 NVDA + End 朗读状态栏时，现在不会把对象导航焦点设置到该状态栏。
+* 使用 `NVDA+End` 朗读状态栏时，现在不会把对象导航焦点设置到该状态栏。
 如果您需要在朗读状态栏时同时移动对象导航焦点，请在“按键与手势”对话框中为此功能单独分配手势。(#8600)
 * When opening a settings dialog which is already open, NVDA sets focus on the existing dialog rather than raise an error. (#5383)
 * 将 liblouis 盲文翻译器更新至 [3.19.0](https://github.com/liblouis/liblouis/releases/tag/v3.19.0)。(#12810)
@@ -1575,20 +1575,6 @@ NVDA 中的 COM 注册修复工具现在能够解决更多的系统问题。
 * 对黑屏功能的支持已经得到修复，并对 10.0.22000 之前的 Windows 版本进行了测试。(#12684)
 * 即使在过滤按键或手势时没有显示结果，按键与手势配置对话框将继续按预期工作。(#12673)
 * 修正了在某些情况下，上下文菜单的第一个子菜单菜单项不会被正常朗读的错误。(#12624)
-
-### 简体中文翻译条目更改
-
-为持续优化 NVDA 的简体中文用户体验，我们在本版对相关翻译条目进行了以下更改，现将重要更改条目列举如下：
-
-* 统一了所有盲文表的数字格式（如： 西班牙语 2 级盲文）。
-* 对升级日志中的“插件以及 NVDA 核心开发者需要了解的变动”部分进行了翻译。
-* 添加了以下默认快捷键：
-
-| 名称 | 台式机键盘 | 笔记本键盘 | 描述 |
-| --- | --- | --- | --- |
-| 移动导航对象到上一个对象 | `NVDA+小键盘数字9` | `NVDA+Shift+上翻页` | 移动导航对象到上一个对象（跨越对象层级） |
-| 移动导航对象到下一个对象 | `NVDA+小键盘数字3` | `NVDA+Shift+下翻页` | 移动导航对象到下一个对象（跨越对象层级） |
-| 在键盘上模拟按下 Application 键 | `NVDA+单引号` | `NVDA+单引号` | 用于缺少该按键的个别键盘（“单引号”一般位于分号键右侧） |
 
 ### 插件以及 NVDA 核心开发者需要了解的变动
 
