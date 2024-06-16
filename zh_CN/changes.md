@@ -2117,10 +2117,10 @@ NVDA 2019.3 是一个非常重要的版本，包含许多幕后更改，包括�
  * See the module documentation and textInfos.offsets module for example implementations.
 * Deprecated functionality now removed. (#9548)
  * AppModules removed:
-   * Windows XP sound recorder.
-   * Klango Player, which is abandoned software.
+  * Windows XP sound recorder.
+  * Klango Player, which is abandoned software.
  * configobj.validate wrapper removed.
-   * New code should use from configobj import validate instead of import validate
+  * New code should use from configobj import validate instead of import validate
  * textInfos.Point and textInfos.Rect replaced by locationHelper.Point and locationHelper.RectLTRB respectively.
  * braille.BrailleHandler._get_tether and braille.BrailleHandler.set_tether have been removed.
  * config.getConfigDirs has been removed.
@@ -2132,13 +2132,13 @@ NVDA 2019.3 是一个非常重要的版本，包含许多幕后更改，包括�
    * Previously kept for backwards compatibility (#8214), now considered obsolete.
    * Drivers that used the SynthSetting classes should be updated to use the DriverSetting classes.
  * Some legacy code has been removed, particularly:
-   * Support for the Outlook pre 2003 message list.
-   * An overlay class for the classic start menu, only found in Windows Vista and earlier.
-   * Dropped support for Skype 7, as it is definitely not working any more.
+  * Support for the Outlook pre 2003 message list.
+  * An overlay class for the classic start menu, only found in Windows Vista and earlier.
+  * Dropped support for Skype 7, as it is definitely not working any more.
 * Added a framework to create vision enhancement providers; modules that can change screen contents, optionally based on input from NVDA about object locations. (#9064)
  * Add-ons can bundle their own providers in a visionEnhancementProviders folder.
  * See the vision and visionEnhancementProviders modules for the implementation of the framework and examples, respectively.
-* Vision enhancement providers are enabled and configured via the 'vision' category in NVDA's settings dialog.
+ * Vision enhancement providers are enabled and configured via the 'vision' category in NVDA's settings dialog.
 * Abstract class properties are now supported on objects that inherit from baseObject.AutoPropertyObject (e.g. NVDAObjects and TextInfos). (#10102)
 * Introduced displayModel.UNIT_DISPLAYCHUNK as a textInfos unit constant specific to DisplayModelTextInfo. (#10165)
  * This new constant allows walking over the text in a DisplayModelTextInfo in a way that more closely resembles how the text chunks are saved in the underlying model.
@@ -2641,7 +2641,7 @@ NVDA 2019.3 是一个非常重要的版本，包含许多幕后更改，包括�
 * 当使用 Mozilla Firefox 重新启动 NVDA 时，浏览模式将再次可用，但您需要使用 alt+tab 切换一下窗口才可操作。(#5758)
 * 现在可以在安装了 Mozilla Firefox 的系统上浏览 Google Chrome 中的数学内容。(#7308)
 * 现在在重新启动之前安装 NVDA 后，操作系统和其他应用程序应当更加稳定，与以前的 NVDA 版本的安装相比。(#7563)
-* 使用 OCR 识别命令（例如 `NVDA+r`）时，如果导航器对象消失，NVDA 现在会朗读错误消息而不是其他内容。(#7567)
+* 使用 OCR 识别命令（例如 NVDA+r）时，如果导航器对象消失，NVDA 现在会朗读错误消息而不是其他内容。(#7567)
 * 对于包含左保险杠的 Freedom Scientific 盲文点显器，已经修复了向后滚动功能。(#7713)
 
 ### 插件以及NVDA核心开发者需要了解的变动
