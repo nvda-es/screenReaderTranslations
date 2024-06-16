@@ -250,7 +250,7 @@ NVDA 键也可以设定为`大小写锁定`键。
 |增加当前合成器设置的值 |`NVDA+control+上光标` |`NVDA+shift+control+上光标` |增加当前所在语音设置的值，例如加快速度，选择下一个语音，增大音量。|
 |以更大的步长增加当前语音选项的设置值 |``NVDA+control+上翻页`` |``NVDA+shift+control+上翻页`` | 以更大的步长增加当前语音设置的值。例如当你处于语音设置时，每一次会跳过20个语音角色；当您处于滑块设置（速度、音调等）时，每次会增加 20%。|
 |减小当前合成器设置的值 |`NVDA+control+下光标` |`NVDA+shift+control+下光标` |减小当前所在语音设置的值，例如减慢速度，选择上一个语音，减小音量。|
-|以更小的步长减小当前语音选项的设置值 |``NVDA+control+下翻页`` |``NVDA+shift+control+下翻页`` |以更大的步长减小当前语音设置的值。例如当你处于语音设置时，每一次会跳过20个语音角色；当您处于滑块设置时，每次会减小 20%。 |
+|以更大的步长减小当前语音选项的设置值 |``NVDA+control+下翻页`` |``NVDA+shift+control+下翻页`` |以更大的步长减小当前语音设置的值。例如当你处于语音设置时，每一次会跳过20个语音角色；当您处于滑块设置时，每次会减小 20%。 |
 
 还可以在[输入手势对话框 #InputGestures]中的语音类别下为设置当前合成器选项的第一个或最后一个值自定义快捷键。
 例如，当您处于语速设置时，可以一键将语速设置为 0 或 100。
@@ -1681,7 +1681,7 @@ NVDA支持命令提示符，PowerShell 以及 Linux 子系统的 Windows 控制�
 有的对话框有个应用按钮，点击它可以在不关闭对话框的情况下应用设置。
 大多数 NVDA 对话框支持上下文帮助。
 <!-- KC:beginInclude -->
-When in a dialog, pressing `f1` opens the User Guide at the paragraph related to the focused setting or the current dialog.
+在对话框里，按``f1``可打开与当前交点选项或当前对话框相关的用户指南对应章节。
 <!-- KC:endInclude -->
 有的设置可以用快捷键更改，下面相应章节有说明。
 
@@ -1973,8 +1973,10 @@ NVDA 正在运行的时候，如果您想在不进入“语音设置”对话框
 |---|---|---|---|
 |移动到下一个合成器选项 |NVDA+control+右光标 |NVDA+shift+control+右光标 |移动到当前选项的下一个可用的语音选项。|
 |移动到上一个合成器选项 |NVDA+control+左光标 |NVDA+shift+control+左光标 |移动到当前选项的上一个可用的语音选项。|
-|增大当前合成器选项的值 |NVDA+control+上光标 |NVDA+shift+control+上光标 |增大当前所在选项的值，例如加快速度，选择下一个语音，增大音量。|
+|增加当前合成器选项的值 |NVDA+control+上光标 |NVDA+shift+control+上光标 |增大当前所在选项的值，例如加快速度，选择下一个语音，增大音量。|
+|以更大的步长增加当前语音选项的设置值 |``NVDA+control+上翻页`` |``NVDA+shift+control+上翻页`` | 以更大的步长增加当前语音设置的值。例如当你处于语音设置时，每一次会跳过20个语音角色；当您处于滑块设置（速度、音调等）时，每次会增加 20%。|
 |减小当前合成器选项的值 |NVDA+control+下光标 |NVDA+shift+control+下光标 |减小当前所在选项的值，例如减慢速度，选择上一个语音，减小音量。|
+|以更大的步长减小当前语音选项的设置值 |``NVDA+control+下翻页`` |``NVDA+shift+control+下翻页`` |以更大的步长减小当前语音设置的值。例如当你处于语音设置时，每一次会跳过20个语音角色；当您处于滑块设置时，每次会减小 20%。 |
 
 <!-- KC:endInclude -->
 
@@ -2289,7 +2291,7 @@ NVDA 设置中的音频类别涵盖了可以让您调节有关音频输出的多
 * NVDA 在左、其他应用在右： NVDA 在左声道中朗读，而其他应用程序在右声道中播放声音。
 * NVDA 在左、其他应用双声道： NVDA 只在左声道中朗读，而其他应用程序在左右两侧双声道中播放声音。
 
-NVDA 设置组合框中提供了另外一些更高级的声音分割模式。
+NVDA 设置组合框中提供了更高级的声音拆分模式。
 其中“NVDA双声道、其他应用双声道”强制所有声音都在两个通道中播放。
 此模式与“禁用声音拆分”模式不同，可以用于防止其他音频处理程序干扰通道音量。
 
@@ -2301,7 +2303,7 @@ NVDA 设置组合框中提供了另外一些更高级的声音分割模式。
 另请注意，如果 NVDA 崩溃，应用程序的音量则无法恢复，可能出现 NVDA 崩溃后应用程序仍然在一侧声道中输出声音的情况。
 重新启动 NVDA 后选择“NVDA双声道、其他应用双声道”即可解决该问题。
 
-##### 自定义声音拆分模式{#CustomizeSoundSplitModes}
+##### 自定义声音拆分模式 {#CustomizeSoundSplitModes}
 
 该可选择列表可以让您选择在按 ``NVDA+alt+s`` 循环切换声音拆分模式时应该包含哪些拆分模式。
 未选中的模式则不会出现在循环切换序列中。
@@ -3588,17 +3590,17 @@ NVDA工具菜单下面的 NVDA Python 控制台是调试 NVDA、了解 NVDA内�
 
 ### 重载插件 {#ReloadPlugins}
 
-一旦此项目被激活，即可在不重新启动 NVDA 的情况下重新加载程序模块和全局插件，此功能对于开发者非常有用。
-App modules manage how NVDA interacts with specific applications.
-Global plugins manage how NVDA interacts with all applications.
+该功能可以在不重新启动 NVDA 的情况下重新加载应用程序模块和全局插件，此功能对于开发者非常有用。
+应用程序模块决定 NVDA 如何与特定的应用程序交互。
+全局插件决定 NVDA 如何与所有应用程序交互。
 
-The following NVDA key commands may also be useful:
+以下命令也可能有用：
 <!-- KC:beginInclude -->
 
-| Name |Key |Description|
+|名称 |按键 |描述|
 |---|---|---|
-|Reload plugins |`NVDA+control+f3` |Reloads NVDA's global plugins and app modules.|
-|Report loaded app module and executable |`NVDA+control+f1` |Report the name of the app module, if any, and the name of the executable associated with the application which has the keyboard focus.|
+|重新加载插件 |`NVDA+control+f3` |重新加载 NVDA 的全局插件和应用程序模块。|
+|读出当前加载的应用程序模块和可执行文件名称 |`NVDA+control+f1` |读出应用程序模块的名称（如果有）以及具有键盘焦点的应用程序所关联的可执行文件名。|
 
 <!-- KC:endInclude -->
 
