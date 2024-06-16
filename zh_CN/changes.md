@@ -1247,7 +1247,7 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 
 注：
 
-* 此版本将破坏现有插件的兼容性。
+ * 此版本将破坏现有插件的兼容性。
 
 ### 新特性
 
@@ -1268,7 +1268,7 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 * 增加对于 Windows 11 系统计算器的支持。(#13212)
 * Windows 11 下开启 UIA，能够在 Microsoft Word 中读出行数、区域数与列数。(#13283)
 * 在 Windows 11 下的 Microsoft Office 16.0.15000 及其后版本中，NVDA 将默认通过 UIA 访问 Microsoft Word 文档，相较于传统的对象模型方式性能提升显著。(#13437)
-  * 除了 Word 文档本身， Microsoft Outlook 中的消息阅读器与编辑器也将受益于该特性。
+ * 除了 Word 文档本身， Microsoft Outlook 中的消息阅读器与编辑器也将受益于该特性。
 
 ### 改进
 
@@ -1296,7 +1296,7 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 * 增强对终端程序输出朗读的一致性。(#12974)
   * 请注意，在某些情况下，在一行的中间插入或删除字符时，插入点后面的字符可能会再次被读出。
 * 开启 UIA 后，在 MS Word 中：浏览模式下的标题快速导航将不会卡在文档的最后一个标题上，该标题也不会在 NVDA 的元素列表中显示两次。(#9540)
-* 在 Windows 8 及后续版本中，只需按下快捷键 `NVDA+end`（台式机按键方案）/`NVDA+shift+end`（笔记本键盘方案），即可读出资源管理器状态栏信息。(#12845)
+* 在 Windows 8 及后续版本中，只需按下快捷键 NVDA+end（台式机按键方案） / NVDA+shift+end（笔记本键盘方案），即可读出资源管理器状态栏信息。(#12845)
 * 修复在 Skype 企业版聊天界面不会自动朗读收到的信息。(#9295)
 * 修复 Windows 11 系统下，使用 Sapi 5 语音引擎时的音频闪避功能。(#12913)
 * 在 Windows 10 的计算器中，NVDA 可读出历史及记忆列表的标签。(#11858)
@@ -1316,38 +1316,6 @@ eSpeak-NG 语音合成器以及 LibLouis 盲文翻译模块都得到了升级，
 * 开启 UIA 后，在 MS Word 中：当从空白表格单元格移动到有内容的单元格，或从文档末尾移动到正文区域时，不会错误的读出页码和其他格式信息。(#13458, #13459)
 * 修复了在 Google chrome 100 中页面加载后，无法读出标题且无法自动朗读的错误。(#13571)
 * 修复了启用“读出 NVDA 快捷键”的情况下，重置设置为默认值会导致 NVDA 崩溃的错误。(#13634)
-
-### 简体中文翻译条目更改
-
-* 对“点显器选择”对话框内的 Seika 和 Seika Notetaker 进行改进：体现相应选项具体支持的型号；
-* 对行/列读法进行改进，诸如：“列 a，行 b”现在朗读为“a 列，b 行”；
-* 将 pt 翻译为“磅”；
-* 将 exactly 翻译为“固定值”；
-* 改进“单倍行距”、“1.5 倍行距”、“2 倍行距”的翻译与 Microsoft Word 保持一致；
-* 修复将“粗体”误读作“黑体”；
-* 对部分功能的键盘帮助进行了改进 / 修正；
-* 补充 Unicode 盲文，7-8 点的组合；
-* 对颜色提示进行了改进 / 修正，具体如下：
-  * red-orange = 橘红色
-  * orange-yellow = 橙黄色
-  * yellow-green = 黄绿色
-  * green-aqua = 水绿色
-  * aqua = 青色
-  * aqua-blue = 海蓝色
-  * blue-purple = 蓝紫色
-  * purple-pink = 粉紫色
-  * pink-red = 粉红色
-  * very light grey = 淡灰色
-  * very dark grey = 暗灰色
-  * bright {color} = 亮{color}
-  * dark {color} = 深{color}
-  * very dark {color} = 暗{color}
-  * light pale {color} = 浅灰{color}
-  * pale {color} = 灰{color}
-  * very dark pale {color} = 深灰{color}
-  * very dark pale {color} = 暗灰{color}
-  * dark {color} grey = 深{color}灰色
-  * very dark {color} grey = 暗{color}灰色
 
 ### 插件以及 NVDA 核心开发者需要了解的变动
 
