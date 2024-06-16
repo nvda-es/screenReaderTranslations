@@ -1050,17 +1050,17 @@ NVDA支持以下应用中的文档
 
 ## 阅读数学内容 {#ReadingMath}
 
-NVDA 可以阅读和导航网络和其他应用程序中的数学内容，提供语音和盲文访问。
+NVDA 可以阅读和导航网络和其他应用程序中的数学内容，可以以语音和盲文的形式呈现。
 但是，为了让 NVDA 读取数学内容并与之交互，您首先需要安装 NVDA 的数学组件。
-NVDA 插件商店中有多个插件可提供数学支持，包括 [MathCAT NVDA 插件](https://nsoiffer.github.io/MathCAT/)和 [Access8Math](https://github.com/tsengwoody/Access8Math)。
-请参阅[插件商店](#AddonsManager)部分，了解如何浏览和安装 NVDA 的可用插件。
+NVDA 插件商店中有多个插件可提供数学支持，包括 [MathCAT NVDA 插件](https://nsoiffer.github.io/MathCAT/) 和 [Access8Math](https://github.com/tsengwoody/Access8Math)。
+请参阅[插件商店](#AddonsManager)部分，了解如何浏览和安装 NVDA 可用的插件。
 NVDA 也可以使用较旧的 [MathPlayer](https://info.wiris.com/mathplayer-info)，尽管该软件已不再维护。
 
 ### 支持的数学内容 {#SupportedMathContent}
 
 安装适当的数学组件后，NVDA 支持以下类型的数学内容：
 
-* Mozilla Firefox、Microsoft Internet Explorer 和 Google Chrome 内的 MathML 内容。
+* Mozilla Firefox、Microsoft Internet Explorer 和 Google Chrome 内的 MathML 数学公式。
 * UIA 模式下 Microsoft Word 中的新版数学公式：
 NVDA 能够阅读 Microsoft Word 365 或 2016 build 14326 及更高版本软件中的数学公式并与之交互。
 但请注意，必须将先前创建的 MathType 公式转换为 Office Math。
@@ -3135,10 +3135,9 @@ NVDA 的语音字典比之单词替换更为强大。
 
 注意:
 
-* 要模拟的键需要有快捷键或手势，要不然无法保存。
-* 有辅助键的按键模拟没有辅助键的按键会出问题，
-比如用 `ctrl+m` 模拟 `a` 键，最后效果是和 `ctrl+a` 一样
-因为模拟 `a` 键的时候，`ctrl` 键仍然被按下，故程序收到的是 `Ctrl+a`。
+* 被模拟的键需要分配快捷键或手势，否则无法保存。
+* 有修饰键的按键模拟没有修饰键的按键会出问题，
+比如用 `ctrl+m` 模拟 `a` 键，最后效果是和 `ctrl+a` 一样。因为模拟 `a` 键的时候，`ctrl` 键仍然被按下，故程序收到的是 `Ctrl+a`。
 
 当您完成修改之后，点击“确认”保存设置或点击“取消”按钮放弃。
 
