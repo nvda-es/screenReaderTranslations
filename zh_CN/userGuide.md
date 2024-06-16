@@ -3632,8 +3632,8 @@ SAPI 4 是一个很古老的微软语音合成器标准。
 ### Microsoft Speech API version 5 (SAPI 5) {#SAPI5}
 
 SAPI 5 是一个微软语音合成器标准。
-许多在此标准下编译的语音合成器可以在各种各样的公司或网站购买或免费下载。您的系统可能已经预装有最少一个 SAPI 5 语音。
-当在 NVDA 使用此合成器时，“可用的语音”（访问[语音设置对话框](#VoiceSettings)或者通过[循环切换合成器设置](#SynthSettingsRing)）将包含所有安装在系统的 SAPI5 的语音合成器引擎的所有语音。
+许多支持该标准的语音合成器可以在其公司的网站上购买或免费下载。您的系统内可能已经预装了至少一个 SAPI 5 语音。
+在 NVDA 中使用该语音合成器时，可以在“[NVDA 设置](#NVDASettings)”下的“[语音设置类别](#SpeechSettings)”或通过[循环切换合成器设置](#SynthSettingsRing)找到已安装的所有 SAPI5 语音。
 
 ### Microsoft Speech Platform {#MicrosoftSpeechPlatform}
 
@@ -3645,8 +3645,8 @@ Microsoft Speech Platform（微软语音平台）包含许多语言的声音，�
 * [Microsoft Speech Platform 运行库 - 第 11 版 32 位运行库](https://www.microsoft.com/download/en/details.aspx?id=27225)
 * [Microsoft Speech Platform 语音包 - 第 11 版语音包](https://www.microsoft.com/download/en/details.aspx?id=27224)
   * 此页面包含了许多用于语音识别和文字转语音的文件。
-  为您希望的语言和语音选择包含 TTS 数据的文件。
-  例如，文件 MSSpeech_TTS_en-US_ZiraPro.msi 是一个美国英语的语音包。
+ 选择您需要的语言的对应 TTS 数据文件。
+ 例如，文件 MSSpeech_TTS_en-US_ZiraPro.msi 是一个美国英语的语音包。
 
 ### Windows OneCore 语音 {#OneCore}
 
