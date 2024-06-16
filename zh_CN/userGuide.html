@@ -258,7 +258,7 @@
 <li><a href="#SoundVolumeFollowsVoice" title="NVDA 音效音量跟随语音音量">NVDA 音效音量跟随语音音量</a></li>
 <li><a href="#SoundVolume" title="NVDA 音效音量">NVDA 音效音量</a></li>
 <li><a href="#SelectSoundSplitMode" title="声音拆分">声音拆分</a></li>
-<li><a href="#customizesoundsplitmodes" title="自定义声音拆分模式{#CustomizeSoundSplitModes}">自定义声音拆分模式{#CustomizeSoundSplitModes}</a></li>
+<li><a href="#CustomizeSoundSplitModes" title="自定义声音拆分模式">自定义声音拆分模式</a></li>
 <li><a href="#AudioAwakeTime" title="语音后保持音频设备唤醒的时间">语音后保持音频设备唤醒的时间</a></li>
 </ul>
 </li>
@@ -866,7 +866,7 @@ NVDA 键也可以设定为<code>大小写锁定</code>键。</p>
 <td>减小当前所在语音设置的值，例如减慢速度，选择上一个语音，减小音量。</td>
 </tr>
 <tr>
-<td>以更小的步长减小当前语音选项的设置值</td>
+<td>以更大的步长减小当前语音选项的设置值</td>
 <td><code>NVDA+control+下翻页</code></td>
 <td><code>NVDA+shift+control+下翻页</code></td>
 <td>以更大的步长减小当前语音设置的值。例如当你处于语音设置时，每一次会跳过20个语音角色；当您处于滑块设置时，每次会减小 20%。</td>
@@ -3171,7 +3171,7 @@ NVDA 可以借助该技术来识别图像中或无障碍支持不好的应用程
 有的对话框有个应用按钮，点击它可以在不关闭对话框的情况下应用设置。
 大多数 NVDA 对话框支持上下文帮助。</p>
 <!-- KC:beginInclude -->
-<p>When in a dialog, pressing <code>f1</code> opens the User Guide at the paragraph related to the focused setting or the current dialog.</p>
+<p>在对话框里，按<code>f1</code>可打开与当前交点选项或当前对话框相关的用户指南对应章节。</p>
 <!-- KC:endInclude -->
 <p>有的设置可以用快捷键更改，下面相应章节有说明。</p>
 <h3 id="NVDASettings">NVDA设置对话框</h3>
@@ -3404,16 +3404,28 @@ Espeak NG的“变声”跟“语音”很像，您可以使用此组合框来�
 <td>移动到当前选项的上一个可用的语音选项。</td>
 </tr>
 <tr>
-<td>增大当前合成器选项的值</td>
+<td>增加当前合成器选项的值</td>
 <td>NVDA+control+上光标</td>
 <td>NVDA+shift+control+上光标</td>
 <td>增大当前所在选项的值，例如加快速度，选择下一个语音，增大音量。</td>
+</tr>
+<tr>
+<td>以更大的步长增加当前语音选项的设置值</td>
+<td><code>NVDA+control+上翻页</code></td>
+<td><code>NVDA+shift+control+上翻页</code></td>
+<td>以更大的步长增加当前语音设置的值。例如当你处于语音设置时，每一次会跳过20个语音角色；当您处于滑块设置（速度、音调等）时，每次会增加 20%。</td>
 </tr>
 <tr>
 <td>减小当前合成器选项的值</td>
 <td>NVDA+control+下光标</td>
 <td>NVDA+shift+control+下光标</td>
 <td>减小当前所在选项的值，例如减慢速度，选择上一个语音，减小音量。</td>
+</tr>
+<tr>
+<td>以更大的步长减小当前语音选项的设置值</td>
+<td><code>NVDA+control+下翻页</code></td>
+<td><code>NVDA+shift+control+下翻页</code></td>
+<td>以更大的步长减小当前语音设置的值。例如当你处于语音设置时，每一次会跳过20个语音角色；当您处于滑块设置时，每次会减小 20%。</td>
 </tr>
 </tbody>
 </table>
@@ -3702,7 +3714,7 @@ Espeak NG的“变声”跟“语音”很像，您可以使用此组合框来�
 <li>NVDA 在左、其他应用在右： NVDA 在左声道中朗读，而其他应用程序在右声道中播放声音。</li>
 <li>NVDA 在左、其他应用双声道： NVDA 只在左声道中朗读，而其他应用程序在左右两侧双声道中播放声音。</li>
 </ul>
-<p>NVDA 设置组合框中提供了另外一些更高级的声音分割模式。
+<p>NVDA 设置组合框中提供了更高级的声音拆分模式。
 其中“NVDA双声道、其他应用双声道”强制所有声音都在两个通道中播放。
 此模式与“禁用声音拆分”模式不同，可以用于防止其他音频处理程序干扰通道音量。</p>
 <p>请注意，声音拆分不能用作混音器。
@@ -3710,7 +3722,7 @@ Espeak NG的“变声”跟“语音”很像，您可以使用此组合框来�
 <p>如果您在“高级设置”中禁用了<a href="#WASAPI" title="音频输出使用 WASAPI">音频输出使用 WASAPI</a>，则声音拆分功能会被禁用。</p>
 <p>另请注意，如果 NVDA 崩溃，应用程序的音量则无法恢复，可能出现 NVDA 崩溃后应用程序仍然在一侧声道中输出声音的情况。
 重新启动 NVDA 后选择“NVDA双声道、其他应用双声道”即可解决该问题。</p>
-<h5 id="customizesoundsplitmodes">自定义声音拆分模式{#CustomizeSoundSplitModes}</h5>
+<h5 id="CustomizeSoundSplitModes">自定义声音拆分模式</h5>
 <p>该可选择列表可以让您选择在按 <code>NVDA+alt+s</code> 循环切换声音拆分模式时应该包含哪些拆分模式。
 未选中的模式则不会出现在循环切换序列中。
 默认情况下仅包含三种模式。</p>
@@ -4803,30 +4815,30 @@ NVDA 将询问您是否确认移除。
 <li>还可能出现其他的一些问题</li>
 </ul>
 <h3 id="ReloadPlugins">重载插件</h3>
-<p>一旦此项目被激活，即可在不重新启动 NVDA 的情况下重新加载程序模块和全局插件，此功能对于开发者非常有用。
-App modules manage how NVDA interacts with specific applications.
-Global plugins manage how NVDA interacts with all applications.</p>
-<p>The following NVDA key commands may also be useful:</p>
+<p>该功能可以在不重新启动 NVDA 的情况下重新加载应用程序模块和全局插件，此功能对于开发者非常有用。
+应用程序模块决定 NVDA 如何与特定的应用程序交互。
+全局插件决定 NVDA 如何与所有应用程序交互。</p>
+<p>以下命令也可能有用：</p>
 <!-- KC:beginInclude -->
 
 <table>
 <thead>
 <tr>
-<th>Name</th>
-<th>Key</th>
-<th>Description</th>
+<th>名称</th>
+<th>按键</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Reload plugins</td>
+<td>重新加载插件</td>
 <td><code>NVDA+control+f3</code></td>
-<td>Reloads NVDA's global plugins and app modules.</td>
+<td>重新加载 NVDA 的全局插件和应用程序模块。</td>
 </tr>
 <tr>
-<td>Report loaded app module and executable</td>
+<td>读出当前加载的应用程序模块和可执行文件名称</td>
 <td><code>NVDA+control+f1</code></td>
-<td>Report the name of the app module, if any, and the name of the executable associated with the application which has the keyboard focus.</td>
+<td>读出应用程序模块的名称（如果有）以及具有键盘焦点的应用程序所关联的可执行文件名。</td>
 </tr>
 </tbody>
 </table>
