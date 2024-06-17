@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-03-23 11:29+0000\n"
+"POT-Creation-Date: 2024-06-17 05:39+0000\n"
 "PO-Revision-Date: 2023-08-26 15:00+0200\n"
 "Last-Translator: Nicolai Svendsen <dansk@nvda.dk>\n"
 "Language-Team: \n"
@@ -29,25 +29,13 @@ msgstr "Forfatter: Neil Soiffer"
 msgid "NVDA compatibility: 2018.1 or later (untested in earlier versions)"
 msgstr ""
 
-#. type: Bullet: '* '
-msgid "Download [stable version][1]"
-msgstr "Download [stabil version][1]"
-
 #. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "MathCAT is designed to eventually replace MathPlayer because MathPlayer is no longer supported. MathCAT generates speech and braille from MathML. The speech for math produced by MathCAT is enhanced with prosody so that it sounds more natural. The speech can be navigated in three modes using the same commands as MathPlayer. In addition, the navigation node is indicated on a braille display. Both Nemeth and UEB technical are supported."
 msgid ""
-"MathCAT is designed to eventually replace MathPlayer because MathPlayer is "
-"no longer supported. MathCAT generates speech and braille from MathML. The "
-"speech for math produced by MathCAT is enhanced with prosody so that it "
-"sounds more natural. The speech can be navigated in three modes using the "
-"same commands as MathPlayer. In addition, the navigation node is indicated "
-"on a braille display. Both Nemeth and UEB technical are supported."
-msgstr ""
-"MathCAT er designet til at erstatte MathPlayer, fordi MathPlayer ikke "
-"længere understøttes. MathCAT genererer tale og punkt fra MathML. Talen til "
-"matematik produceret af MathCAT er forbedret med prosodi, så den lyder mere "
-"naturlig. Talen kan navigeres i tre tilstande ved hjælp af de samme "
-"kommandoer som MathPlayer. Derudover er navigationsknuden vist på et "
-"punktdisplay. Både Nemeth og UEB teknisk understøttes."
+"* Download [stable version][1]\n"
+"MathCAT is designed to eventually replace MathPlayer because MathPlayer is no longer supported. MathCAT generates speech and braille from MathML. The speech for math produced by MathCAT is enhanced with prosody so that it sounds more natural. The speech can be navigated in three modes using the same commands as MathPlayer. In addition, the navigation node is indicated on a braille display. Both Nemeth and UEB technical are supported.\n"
+msgstr "MathCAT er designet til at erstatte MathPlayer, fordi MathPlayer ikke længere understøttes. MathCAT genererer tale og punkt fra MathML. Talen til matematik produceret af MathCAT er forbedret med prosodi, så den lyder mere naturlig. Talen kan navigeres i tre tilstande ved hjælp af de samme kommandoer som MathPlayer. Derudover er navigationsknuden vist på et punktdisplay. Både Nemeth og UEB teknisk understøttes."
 
 #. type: Plain text
 msgid ""
@@ -94,8 +82,10 @@ msgstr ""
 "som er teknisk svære at rette)."
 
 #. type: Bullet: '* '
-msgid "Those who need UEB technical braille"
-msgstr "Dem, der har brug for UEB teknisk braille"
+msgid ""
+"Those who need UEB technical braille, CMU (Spanish/Portuguese), German "
+"LaTeX, ASCIIMath, or Vietnamese braille"
+msgstr ""
 
 #. type: Bullet: '* '
 msgid ""
@@ -114,21 +104,20 @@ msgid "Who should NOT use MathCAT:"
 msgstr "Hvem bør IKKE bruge MathCAT:"
 
 #. type: Bullet: '* '
+#, fuzzy
+#| msgid ""
+#| "Anyone who uses MathPlayer with a non-English language (translations "
+#| "exist for Indonesian and Vietnamese; translations will be coming in the "
+#| "future)"
 msgid ""
-"Anyone who uses MathPlayer with a non-English language (translations exist "
-"for Indonesian and Vietnamese; translations will be coming in the future)"
+"Anyone who uses MathPlayer with a language that is not yet supported by "
+"MathCAT (translations exist for Chinese (Traditional), Spanish, Indonesian "
+"and Vietnamese; translations will be coming in the future) and are not "
+"comfortable with speech in one of the supported languages."
 msgstr ""
 "Enhver, der bruger MathPlayer med et andet sprog end engelsk (oversættelser "
 "findes til indonesisk og vietnamesisk; oversættelser er sandsynlige i "
 "fremtiden)"
-
-#. type: Bullet: '* '
-msgid ""
-"Anyone who uses MathPlayer with a non-Nemeth/non-UEB braille output (contact "
-"me if you want to help out with a braille translation)"
-msgstr ""
-"Enhver, der bruger MathPlayer med et ikke-Nemeth/ikke-UEB brailleoutput "
-"(kontakt mig, hvis du vil hjælpe med en brailleoversættelse)"
 
 #. type: Bullet: '* '
 msgid ""
@@ -159,6 +148,83 @@ msgstr ""
 #, no-wrap
 msgid "MathCAT Update Log"
 msgstr "MathCAT Update Log"
+
+#. type: Title ###
+#, fuzzy, no-wrap
+#| msgid "Version 0.3.3"
+msgid "Version 0.6.3"
+msgstr "Version 0.3.3"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"* All the language and braille Rule files are zipped up per directory and unzipped on demand.\n"
+"  * This currently saves ~5mb when Rules.zip is unzipped, and will save even more as more languages and braille codes are added.\n"
+"  * This is in preparation for MathCAT being built into NVDA 2024.3\n"
+"* Added new preference `DecimalSeparator`.\n"
+"  * The default value is `Auto`, with other values being \".\", \",\", and \"Custom\". The first three values set `DecimalSeparators` and `BlockSeparators`.\n"
+"  * `Auto` sets those preferences based on the value of the `Language` pref. For some language such as Spanish, `,` is used in some countries and `.` is used in others. In this case, it is best to set the language to also include the country code (e.g, `es-es` or `es-mx`) to ensure the right value is used.\n"
+"* Added Swedish to supported languages.\n"
+"* Added more Unicode chars to include both all Unicode chars marked as \"Sm\" and those with a mathclass (except Alphabetic and Glyph classes) in the Unicode standard.\n"
+"* After changing how prefs work in a previous version, I forgot to change `MathRate` and `PauseFactor` to be numbers, not strings.\n"
+"* Fixed bug in the braille Rules (missed change from earlier) where a third argument should have been given to say to look in the _Braille_ `definitions.yaml` files and not the speech ones when looking up the value of a definition.\n"
+"* Cleaned up use of `definitions.yaml`.\n"
+"* Fixed some bugs in the MathML cleanup for \",\" decimal separators.\n"
+"* Found a bug in braille highlighting when nothing is highlighted (maybe never happens which is why I didn't see it in practice?)\n"
+"* Fixed \"Describe\" mode so that it works -- it is still very minimal and probably not useful yet\n"
+"* Fixed minimum supported version\n"
+msgstr ""
+
+#. type: Title ###
+#, fuzzy, no-wrap
+#| msgid "Version 0.2.5"
+msgid "Version 0.5.6"
+msgstr "Version 0.2.5"
+
+#. type: Bullet: '* '
+msgid "Added Copy As... to the MathCAT dialog (in the \"Navagation\" pane)."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"Fixed a bug where the language reverted to English when changing speech "
+"styles."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "Fixed a bug with navigation and braille"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "Fixed some Asciimath spacing problems."
+msgstr ""
+
+#. type: Bullet: '* '
+#, fuzzy
+#| msgid "More improvements chemistry"
+msgid "Improved chemistry recognition"
+msgstr "Flere forbedringer kemi"
+
+#. type: Bullet: '* '
+msgid ""
+"Updated MathCAT to new BANA Nemeth chemistry spec (still only single line "
+"and special case style/font changes not handled)"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"Fix a crash when non-ASCII digits (e.g., bold digits) are used in numbers"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid ""
+"Don't use italic indicators in braille codes when the math alphanumeric "
+"italic chars are used"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "Some other smaller bug fixes that weren't reported by users"
+msgstr ""
 
 #. type: Title ###
 #, fuzzy, no-wrap
@@ -301,77 +367,27 @@ msgid "Version 0.3.8"
 msgstr "Version 0.3.3"
 
 #. type: Plain text
-msgid "Braille:"
-msgstr ""
-
-#. type: Bullet: '* '
 msgid ""
-"Dialog has been internationalized for several languages (many thanks to the "
-"translators!)"
+"Braille: * Dialog has been internationalized for several languages (many "
+"thanks to the translators!)  * Initial implementation of CMU -- the braille "
+"code used in Spanish and Portuguese speaking countries * Fix some UEB bugs "
+"and added some characters for UEB * Significant improvements to Vietnamese "
+"braille"
 msgstr ""
-
-#. type: Bullet: '* '
-msgid ""
-"Initial implementation of CMU -- the braille code used in Spanish and "
-"Portuguese speaking countries"
-msgstr ""
-
-#. type: Bullet: '* '
-msgid "Fix some UEB bugs and added some characters for UEB"
-msgstr ""
-
-#. type: Bullet: '* '
-#, fuzzy
-#| msgid "Improvements to speech"
-msgid "Significant improvements to Vietnamese braille"
-msgstr "Forbedringer af tale"
 
 #. type: Plain text
-msgid "Other fixes:"
-msgstr ""
-
-#. type: Bullet: '* '
 msgid ""
-"Change relative rate dialog slider to have a maximum value of 100% (now only "
-"allows setting slower rates). Also, added step sizes so it is easier to "
-"raise/lower the rate significantly."
-msgstr ""
-
-#. type: Bullet: '* '
-msgid ""
-"Fix eSpeak bug that sometimes cut off speech when the relative rate was "
-"changed"
-msgstr ""
-
-#. type: Bullet: '* '
-#, fuzzy
-#| msgid "Improvements to speech"
-msgid "Improvements to Vietnamese speech"
-msgstr "Forbedringer af tale"
-
-#. type: Bullet: '* '
-msgid "Fixed bug with OneCore voices saying \"a\""
-msgstr ""
-
-#. type: Bullet: '* '
-msgid ""
-"Fixed some navigation bugs when `AutoZoomOut` is False (not the default)"
-msgstr ""
-
-#. type: Bullet: '* '
-msgid ""
-"Fix updating around language changes and some other dialog changes so they "
-"take effect immediately upon clicking \"Apply\" or \"OK\"."
-msgstr ""
-
-#. type: Bullet: '* '
-msgid ""
-"Added an \"Use Voice's Language\" option so that out of the box, MathCAT "
-"will speak in the right language (if there is a translation)"
-msgstr ""
-
-#. type: Bullet: '* '
-msgid "Several improvements for cleaning up poor MathML code"
+"Other fixes: * Change relative rate dialog slider to have a maximum value of "
+"100% (now only allows setting slower rates). Also, added step sizes so it is "
+"easier to raise/lower the rate significantly.  * Fix eSpeak bug that "
+"sometimes cut off speech when the relative rate was changed * Improvements "
+"to Vietnamese speech * Fixed bug with OneCore voices saying \"a\" * Fixed "
+"some navigation bugs when `AutoZoomOut` is False (not the default)  * Fix "
+"updating around language changes and some other dialog changes so they take "
+"effect immediately upon clicking \"Apply\" or \"OK\".  * Added an \"Use "
+"Voice's Language\" option so that out of the box, MathCAT will speak in the "
+"right language (if there is a translation)  * Several improvements for "
+"cleaning up poor MathML code"
 msgstr ""
 
 #. type: Title ###
@@ -382,47 +398,15 @@ msgstr "Version 0.3.3"
 #. type: Plain text
 msgid ""
 "This release has a number of bug fixes in it. The major new features and bug "
-"fixes are:"
-msgstr ""
-"Denne udgivelse indeholder en række fejlrettelser. De vigtigste nye "
-"funktioner og fejlrettelser er:"
-
-#. type: Bullet: '* '
-#, fuzzy
-#| msgid ""
-#| "Added Spanish Translation (thanks to Noelia Ruiz and María Allo Roldán)"
-msgid "Added Spanish Translation (thanks to Noelia Ruiz and María Allo Roldán)"
-msgstr ""
-"Tilføjet spansk oversættelse (tak til Noelia Ruiz og María Allo Roldán)"
-
-#. type: Bullet: '* '
-msgid "Modified navigation so that it starts zoomed in one level"
-msgstr "Ændret navigation, så den begynder at zoome i ét niveau"
-
-#. type: Bullet: '* '
-msgid ""
-"Added cntrl+alt+arrow as a way to navigate tabular structures. These keys "
-"should be more memorable because they are used for table navigation in NVDA."
-msgstr ""
-"Tilføjet cntrl+alt+pil som en måde at navigere i tabelstrukturer på. Disse "
-"taster burde være mere mindeværdige, fordi de bruges til tabelnavigation i "
-"NVDA."
-
-#. type: Bullet: '* '
-msgid ""
+"fixes are: * Added Spanish Translation (thanks to Noelia Ruiz and María Allo "
+"Roldán)  * Modified navigation so that it starts zoomed in one level * Added "
+"cntrl+alt+arrow as a way to navigate tabular structures. These keys should "
+"be more memorable because they are used for table navigation in NVDA.  * "
 "Worked around NVDA bug for eSpeak voices that caused them to slow down when "
-"the relative MathRate was set to be slower than the text speech rate."
-msgstr ""
-"Virkede uden om NVDA-fejl for eSpeak-stemmer, der fik dem til at sænke "
-"farten, når den relative MathRate var indstillet til at være langsommere end "
-"teksttalehastigheden."
-
-#. type: Bullet: '* '
-msgid ""
+"the relative MathRate was set to be slower than the text speech rate.  * "
 "Worked around a OneCore voice problem so that they will speak the long 'a' "
 "sound."
 msgstr ""
-"Arbejdet med et OneCore-stemmeproblem, så de vil sige den lange 'a'-lyd."
 
 #. type: Plain text
 msgid ""
@@ -457,28 +441,28 @@ msgstr "Flere forbedringer kemi"
 msgid "Fixes for Nemeth:"
 msgstr "Rettelser til Nemeth:"
 
-#. type: Bullet: '	* '
+#. type: Bullet: '* '
 #, fuzzy
 #| msgid "Added \"omission\" rules"
-msgid "Added \"omission\" rules"
+msgid "* Added \"omission\" rules"
 msgstr "Tilføjet \"udeladelse\" regler"
 
-#. type: Bullet: '	* '
+#. type: Bullet: '* '
 #, fuzzy
 #| msgid "Added some rules for English Language Indicators"
-msgid "Added some rules for English Language Indicators"
+msgid "* Added some rules for English Language Indicators"
 msgstr "Tilføjet nogle regler for engelske sprogindikatorer"
 
-#. type: Bullet: '	* '
+#. type: Bullet: '* '
 #, fuzzy
 #| msgid "Added more cases where the Mulitpurpose indicator is needed"
-msgid "Added more cases where the Mulitpurpose indicator is needed"
+msgid "* Added more cases where the Mulitpurpose indicator is needed"
 msgstr "Tilføjet flere tilfælde, hvor Multipurpose-indikatoren er nødvendig"
 
-#. type: Bullet: '	* '
+#. type: Bullet: '* '
 #, fuzzy
 #| msgid "Fixes related to Nemeth and punctuation"
-msgid "Fixes related to Nemeth and punctuation"
+msgid "* Fixes related to Nemeth and punctuation"
 msgstr "Rettelser relateret til Nemeth og tegnsætning"
 
 #. type: Title ###
@@ -518,6 +502,70 @@ msgstr "[[!tag dev stable]]\n"
 #. type: Plain text
 msgid "[1]: https://www.nvaccess.org/addonStore/legacy?file=mathcat"
 msgstr "[1]: https://www.nvaccess.org/addonStore/legacy?file=mathcat"
+
+#~ msgid "Download [stable version][1]"
+#~ msgstr "Download [stabil version][1]"
+
+#~ msgid "Those who need UEB technical braille"
+#~ msgstr "Dem, der har brug for UEB teknisk braille"
+
+#~ msgid ""
+#~ "Anyone who uses MathPlayer with a non-Nemeth/non-UEB braille output "
+#~ "(contact me if you want to help out with a braille translation)"
+#~ msgstr ""
+#~ "Enhver, der bruger MathPlayer med et ikke-Nemeth/ikke-UEB brailleoutput "
+#~ "(kontakt mig, hvis du vil hjælpe med en brailleoversættelse)"
+
+#, fuzzy
+#~| msgid "Improvements to speech"
+#~ msgid "Significant improvements to Vietnamese braille"
+#~ msgstr "Forbedringer af tale"
+
+#, fuzzy
+#~| msgid "Improvements to speech"
+#~ msgid "Improvements to Vietnamese speech"
+#~ msgstr "Forbedringer af tale"
+
+#~ msgid ""
+#~ "This release has a number of bug fixes in it. The major new features and "
+#~ "bug fixes are:"
+#~ msgstr ""
+#~ "Denne udgivelse indeholder en række fejlrettelser. De vigtigste nye "
+#~ "funktioner og fejlrettelser er:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Added Spanish Translation (thanks to Noelia Ruiz and María Allo Roldán)"
+#~ msgid ""
+#~ "Added Spanish Translation (thanks to Noelia Ruiz and María Allo Roldán)"
+#~ msgstr ""
+#~ "Tilføjet spansk oversættelse (tak til Noelia Ruiz og María Allo Roldán)"
+
+#~ msgid "Modified navigation so that it starts zoomed in one level"
+#~ msgstr "Ændret navigation, så den begynder at zoome i ét niveau"
+
+#~ msgid ""
+#~ "Added cntrl+alt+arrow as a way to navigate tabular structures. These keys "
+#~ "should be more memorable because they are used for table navigation in "
+#~ "NVDA."
+#~ msgstr ""
+#~ "Tilføjet cntrl+alt+pil som en måde at navigere i tabelstrukturer på. "
+#~ "Disse taster burde være mere mindeværdige, fordi de bruges til "
+#~ "tabelnavigation i NVDA."
+
+#~ msgid ""
+#~ "Worked around NVDA bug for eSpeak voices that caused them to slow down "
+#~ "when the relative MathRate was set to be slower than the text speech rate."
+#~ msgstr ""
+#~ "Virkede uden om NVDA-fejl for eSpeak-stemmer, der fik dem til at sænke "
+#~ "farten, når den relative MathRate var indstillet til at være langsommere "
+#~ "end teksttalehastigheden."
+
+#~ msgid ""
+#~ "Worked around a OneCore voice problem so that they will speak the long "
+#~ "'a' sound."
+#~ msgstr ""
+#~ "Arbejdet med et OneCore-stemmeproblem, så de vil sige den lange 'a'-lyd."
 
 #, fuzzy
 #~| msgid "Version 0.3.3"
