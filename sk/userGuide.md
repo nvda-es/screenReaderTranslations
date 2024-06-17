@@ -2278,7 +2278,7 @@ Oddelenie zvuku využíva samostatne ľavý a pravý kanál slúchadiel a reprod
 Môžete nastaviť, že zvuk NVDA budete počuť v jednom kanály (napríklad vľavo) a zvuky aplikácií v druhom kanály (napríklad vpravo).
 Predvolene je táto funkcia vypnutá.
 Režimi oddelenia zvukov je možné prepínať skratkou.
-<!-- KC:setting -->
+<!-- KC:beginInclude -->
 
 | Názov | Klávesová skratka | popis |
 |---|---|---|
