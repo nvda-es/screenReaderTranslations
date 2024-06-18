@@ -794,7 +794,7 @@ Nota: As teclas do bloco numérico requerem que o Num Lock esteja desativado par
 
 ### Revendo — Explorando — Texto {#ReviewingText}
 
-O NVDA permite-lhe ler o conteúdo da [tela](#ScreenReview), do [documento](#DocumentReview) atual ou do [objeto de navegação](#ObjectNavigation) atual por caracteres, palavras ou linhas.
+O NVDA permite-lhe ler o conteúdo da [tela](#ScreenReview), do [documento](#DocumentReview) atual ou do [objeto](#ObjectReview) atual por caracteres, palavras ou linhas.
 Isto é muito útil em ocasiões (incluindo consoles de comando do Windows) onde inexiste um [cursor do sistema](#SystemCaret).
 Por exemplo, você pode usá-lo para rever o texto de uma longa mensagem de informação contida num diálogo.
 
