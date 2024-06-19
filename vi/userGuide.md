@@ -248,7 +248,7 @@ Chức năng thật sự của thao tác sẽ không được thực thi khi ở
 |Đi đến thiết lập kế tiếp |`NVDA+control+mũi tên phải` |`NVDA+shift+control+mũi tên phải` |Đi đến thiết lập bộ đọc tiếp sau thiết lập hiện tại, sau thiết lập cuối cùng thì sẽ quay về thiết lập đầu tiên|
 |Đi đến thiết lập trước |`NVDA+control+mũi tên trái` |`NVDA+shift+control+mũi tên trái` |Đi đến thiết lập bộ đọc trước của thiết lập hiện tại, sau thiết lập đầu tiên thì sẽ quay về thiết lập cuối cùng|
 |Tăng giá trị cho thiết lập hiện tại |`NVDA+control+mũi tên lên` |`NVDA+shift+control+mũi tên lên` |Tăng giá trị cho thiết lập hiện tại của bộ đọc. Ví dụ, tăng tốc độ, chọn giọng đọc kế tiếp, tăng âm lượng|
-|Tăng thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn |``NVDA+control+pageUp`` | ``NVDA+shift+control+pageUp`` | Tăng giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy tới 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy tới 20%|
+|Tăng thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn |``NVDA+control+pageUp` |``NVDA+shift+control+pageUp` |Tăng giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy tới 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy tới 20%|
 
 |Giảm giá trị cho thiết lập hiện tại |`NVDA+control+mũi tên xuống` |`NVDA+shift+control+mũi tên xuống` |giảm giá trị cho thiết lập hiện tại của bộ đọc. Ví dụ, giảm tốc độ, chọn giọng đọc trước, giảm âm lượng|
 |Giảm thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn |`NVDA+control+pageDown` | `NVDA+shift+control+pageDown` | Giảm giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy lùi 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy lùi đến 20%|
@@ -971,7 +971,7 @@ Sau đây là danh sách các lệnh đó:
 * Vertically aligned paragraph (đoạn văn bản đã căn lề)
 * Same style text (kiểu văn bản giống nhau)
 * Different style text (kiểu văn bản khác nhau)
- 
+
 Hãy nhớ rằng sẽ có hai lệnh cho mỗi loại thành phần, để di chuyển tới và lùi trong một tài liệu, và bạn phải gán thao tác / phím tắt cho cả hai lệnh để  di chuyển theo hai hướng.
 Ví dụ, nếu muốn dùng phím lệnh `y` / `shift+y` để nhanh chóng di chuyển qua các thẻ, bạn sẽ làm như sau:
 
@@ -1042,7 +1042,7 @@ Tuy nhiên, NVDA có chế độ   chọn thực tế, có thể bật ở một
 |Bật / tắt chế độ chọn thực tế |`NVDA+shift+f10` |Bật / tắt chế độ chọn thực tế|
 
 <!-- KC:endInclude -->
-+
+
 Khi bật chế độ chọn thực tế, việc sao chép vùng chọn bằng `control+c` sẽ dùng tính năng sao chép của ứng dụng, nghĩa là nội dung đa dạng thức sẽ được chép vào bộ nhớ tạm, thay vì chỉ chép văn bản thô.
 Điều này có nghĩa là mang nội dung đó dán vào các chương trình như Microsoft Word hay Excel, các định dạng như bảng biểu, hay liên kết sẽ được giữ nguyên.
 Tuy nhiên, xin lưu ý là ở chế độ chọn thực tế, một vài nhãn tiếp cận hoặc những thông tin khác mà NVDA tạo ra trong chế độ duyệt sẽ không được bao gồm.
@@ -1134,7 +1134,7 @@ Chữ nổi cũng có thể hiển thị trên màn hình bằng [Trình xem ch�
 
 Vui lòng xem phần [các màn hình nổi được hỗ trợ](#SupportedBrailleDisplays) để biết thêm thông tin về các mẫu màn hình được hỗ trợ.
 Phần này cũng có các thông tin về các màn hình được hỗ trợ tính năng ngầm tự dò tìm của NVDA.
-Bạn có thể cấu hình màn hình nổi với phân loại [Chữ nổi](#BrailleSettings) trong [hộp thoại cấu hình NVDA #NVDASettings.
+Bạn có thể cấu hình màn hình nổi với phân loại [Chữ nổi](#BrailleSettings) trong [hộp thoại cấu hình NVDA](#NVDASettings).
 
 ### Quy ước viết tắt cho loại điều khiển, trạng thái và cột mốc {#BrailleAbbreviations}
 
@@ -1318,7 +1318,7 @@ Hãy dùng NVDA 2021.2 để bật tính năng Che Màn Hình với Windows 10 2
 Vì mục tiêu bảo mật, khi sử dụng một phiên bản mới của Windows, hãy tìm sự xác nhận trực quan rằng tính năng Che Màn Hình có làm cho màn hình đen toàn bộ.
 
 Xin lưu ý rằng trong khi Windows Magnifier đang chạy và đang dùng chế độ đảo màu màn hình, tính năng che màn hình sẽ không thể bật lên được.
-+
+
 ## Nhận Dạng Nội Dung {#ContentRecognition}
 
 Khi tác giả không cung cấp đầy đủ thông tin của ứng dụng cho trình đọc màn hình, sẽ có nhiều công cụ khác nhau hỗ trợ để có thể nhận dạng nội dung của một hình ảnh chẳng hạn.
@@ -1547,7 +1547,7 @@ Kí tự di chuyển đơn được hỗ trợ cho các liên kết và hình �
 #### Chọn văn bản {#KindleTextSelection}
 
 Kindle cho phép bạn thực hiện nhiều thao tác trên văn bản được chọn, bao gồm lấy định nghĩa từ điển, thêm ghi chú và đánh dấu, sao chép văn bản vào bộ nhớ tạm và tìm kiếm trên web.
- Để làm điều đó, trước tiên, hãy chọn văn bản một cách bình thường như bạn vẫn làm ở chế độ duyệt; ví dụ: dùng shift và các phím di chuyển con trỏ.
+Để làm điều đó, trước tiên, hãy chọn văn bản một cách bình thường như bạn vẫn làm ở chế độ duyệt; ví dụ: dùng shift và các phím di chuyển con trỏ.
 <!-- KC:beginInclude -->
 Sau khi chọn nội dung, bấm phím Application hoặc Shift+F10 để xem các tùy chọn hiện có.
 <!-- KC:endInclude -->
@@ -1604,10 +1604,10 @@ Các phím tắt có sẵn sau đây của Windows Console  có thể hữu ích
 Hầu hết các cấu hình có thể thực hiện bằng   các hộp thoại được mở thông qua trình đơn tùy chọn trong trình đơn của NVDA.
 Nhiều thiết lập cũng có thể được  thực hiện  trong [hộp thoại nhiều trang  để cấu hình NVDA](#NVDASettings).
 Trong tất cả các hộp thoại, bấm nút Đồng ý để lưu lại các thay đổi.
- Để hủy bỏ các thay đổi, bấm  nút Hủy bỏ hoặc escape.
- Trong một số hộp thoại, bạn có thể bấm nút Áp dụng để các thiết lập có hiệu lực lập tức mà không đóng hộp thoại.
+Để hủy bỏ các thay đổi, bấm  nút Hủy bỏ hoặc escape.
+Trong một số hộp thoại, bạn có thể bấm nút Áp dụng để các thiết lập có hiệu lực lập tức mà không đóng hộp thoại.
 Hầu hết các hộp thoại của NVDA đều có thông tin giúp đỡ theo ngữ cảnh.
-kc:beginInclude
+<!-- KC:beginInclude -->
 Khi ở trong một hộp thoại, bấm `f1` để mở hướng dẫn sử dụng tại đoạn liên quan đến cài đặt con trỏ hay hộp thoại hiện tại.
 <!-- KC:endInclude -->
 Một số thiết lập có thể thay đổi thông qua phím tắt sẽ được giới thiệu chi tiết ở những phần liên quan bên dưới.
@@ -1677,7 +1677,7 @@ Các mức độ log bao gồm:
 * Thông tin: NVDA sẽ ghi các thông tin cơ bản như thông điệp lúc khởi động và các thông tin hữu ích cho nhà phát triển.
 * cảnh báo gỡ lỗi: các thông điệp cảnh báo không tạo ra từ các lỗi nghiêm trọng sẽ được ghi lại.
 * Đầu vào / đầu ra: đầu vào từ bàn phím, và các màn hình nổi cũng như đầu ra tiếng nói và chữ nổi sẽ được ghi lại.
- Nếu quan ngại về sự riêng tư thì đừng chọn cấp độ log này.
+Nếu quan ngại về sự riêng tư thì đừng chọn cấp độ log này.
 * Gỡ lỗi: ngoài các thông tin, cảnh báo và thông điệp  đầu vào / đầu ra, các thông điệp gỡ lỗi bổ sung cũng sẽ được ghi lại.
 Cũng giống như đầu vào / đầu ra, Nếu quan ngại về sự riêng tư thì đừng nên chọn cấp độ log này.
 
@@ -1746,9 +1746,9 @@ Mục đầu tiên trong phân loại tiếng nói là nút Thay đổi.... Nút
 Hộp thoại này được mở đè lên hộp thoại cấu hình NVDA.
 Việc lưu lại hay hủy bỏ các thiết lập trong hộp thoại này sẽ đưa bạn trở về hộp thoại cấu hình NVDA.
 
-##### Giọng {#VoiceSettingsVoice}
+##### Giọng {#SpeechSettingsVoice}
 
- Đây là hộp xổ liệt kê tất cả các giọng của bộ đọc đang dùng.
+Đây là hộp xổ liệt kê tất cả các giọng của bộ đọc đang dùng.
 Dùng mũi tên để nghe các giọng.
 Mũi tên trái và lên dùng để đi lên và mũi tên phải và xuống dùng để đi xuống trong danh sách.
 
@@ -1796,7 +1796,7 @@ Mặc định, tùy chọn này không được bật.
 
 ##### Mức độ đọc dấu câu và ký hiệu {#SpeechSettingsSymbolLevel}
 
-Phím tắt: `NVDA+p`
+Phím tắt: NVDA+p
 
 Cho phép bạn chọn chế độ đọc dấu câu và ký hiệu.
 Ví dụ, nếu bạn chọn tất cả thì tất cả các dấu và ký hiệu trong văn bản sẽ được đọc.
@@ -1901,9 +1901,10 @@ Ngoài việc thay đổi các tham số cho giọng đọc trong phân loại t
 |Chuyển tới tham số tiếp theo của giọng đọc |NVDA+control+mũi tên phải |NVDA+shift+control+mũi tên phải |Chuyển tới tham số tiếp theo của giọng đọc, nếu hết thì sẽ quay vòng|
 |Chuyển tới tham số trước đó của giọng đọc |NVDA+control+mũi tên trái |NVDA+shift+control+mũi tên trái |Chuyển tới tham số trước đó của giọng đọc, nếu hết thì sẽ quay vòng|
 |Tăng giá trị cho tham số hiện tại |NVDA+control+mũi tên lên |NVDA+shift+control+mũi tên lên |Tăng giá trị cho tham số hiện tại|
-| Tăng thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn | ``NVDA+control+pageUp`` | ``NVDA+shift+control+pageUp`` | Tăng giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy tới 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy tới 20%. |
+|Tăng thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn |`NVDA+control+pageUp` |`NVDA+shift+control+pageUp` |Tăng giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy tới 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy tới 20%.|
 |Giảm giá trị cho tham số hiện tại |NVDA+control+mũi tên xuống |NVDA+shift+control+mũi tên xuống |Giảm giá trị cho tham số hiện tại|
 |Giảm giá trị cho thiết lập hiện tại |`NVDA+control+mũi tên xuống` |`NVDA+shift+control+mũi tên xuống` |giảm giá trị cho thiết lập hiện tại của bộ đọc. Ví dụ, giảm tốc độ, chọn giọng đọc trước, giảm âm lượng|
+
 <!-- KC:endInclude -->
 
 #### Chữ Nổi {#BrailleSettings}
