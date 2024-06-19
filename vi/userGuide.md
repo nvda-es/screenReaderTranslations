@@ -248,7 +248,7 @@ Chức năng thật sự của thao tác sẽ không được thực thi khi ở
 |Đi đến thiết lập kế tiếp |`NVDA+control+mũi tên phải` |`NVDA+shift+control+mũi tên phải` |Đi đến thiết lập bộ đọc tiếp sau thiết lập hiện tại, sau thiết lập cuối cùng thì sẽ quay về thiết lập đầu tiên|
 |Đi đến thiết lập trước |`NVDA+control+mũi tên trái` |`NVDA+shift+control+mũi tên trái` |Đi đến thiết lập bộ đọc trước của thiết lập hiện tại, sau thiết lập đầu tiên thì sẽ quay về thiết lập cuối cùng|
 |Tăng giá trị cho thiết lập hiện tại |`NVDA+control+mũi tên lên` |`NVDA+shift+control+mũi tên lên` |Tăng giá trị cho thiết lập hiện tại của bộ đọc. Ví dụ, tăng tốc độ, chọn giọng đọc kế tiếp, tăng âm lượng|
-||Tăng thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn | ``NVDA+control+pageUp`` | ``NVDA+shift+control+pageUp`` | Tăng giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy tới 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy tới 20%|
+|Tăng thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn |``NVDA+control+pageUp`` | ``NVDA+shift+control+pageUp`` | Tăng giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy tới 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy tới 20%|
 
 |Giảm giá trị cho thiết lập hiện tại |`NVDA+control+mũi tên xuống` |`NVDA+shift+control+mũi tên xuống` |giảm giá trị cho thiết lập hiện tại của bộ đọc. Ví dụ, giảm tốc độ, chọn giọng đọc trước, giảm âm lượng|
 |Giảm thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn |`NVDA+control+pageDown` | `NVDA+shift+control+pageDown` | Giảm giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy lùi 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy lùi đến 20%|
@@ -943,13 +943,12 @@ Bạn có thể di chuyển đến đoạn văn bản kế hoặc đoạn trư�
 * Các trang tin tức
 * Các diễn đàn
 * Các bài viết dạng blog
- 
 
 Các lệnh này cũng có thể hữu ích để bỏ qua một số thứ lộn xộn nhất định, chẳng hạn như:
+
 * Quảng cáo
 * Trình đơn
 * Phần đầu
-* 
 
 Xin lưu ý, dù cho trong khi NVDA nỗ lực hết mình để xác định các đoạn văn bản, thuật toán không hoàn hảo ở hiện tại có thể gây ra lỗi.
 Thêm nữa, lệnh này khác với lệnh di chuyển qua đoạn `control+mũi tên lên / xuống`.
