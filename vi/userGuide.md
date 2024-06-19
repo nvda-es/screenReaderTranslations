@@ -121,10 +121,9 @@ Nếu có, việc kết nối internet chỉ để cho phép NVDA định kì ki
 Tập tin cài đặt thường có tên là "nvda_2022.1.exe" hay đại khái như vậy.
 Việc thay đổi chỉ số về năm và phiên bản giữa những lần cập nhật phản ánh bản phát hành hiện tại.
 
-Hãy chạy tập tin đã tải về.
+1. Chạy tập tin đã tải về.
 Sẽ có tiếng nhạc phát lên trong khi gọi bản chạy tạm thời của NVDA.
 Khi được gọi chạy, NVDA sẽ đọc trong toàn bộ các bước còn lại của tiến trình.
-
 1. Cửa sổ cài đặt NVDA xuất hiện với thỏa thuận về giấy phép sử dụng.
 Bấm `mũi tên xuống` để đọc giấy phép sử dụng, nếu muốn.
 1. Bấm `tab` để chuyển đến hộp kiểm "Tôi đồng ý", rồi bấm khoảng trắng để đánh dấu chọn nó.
