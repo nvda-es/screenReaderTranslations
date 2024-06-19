@@ -2221,7 +2221,7 @@ Theo mặc định, tính năng chia âm thanh bị tắt, có nghĩa là tất 
 Một thao tác cho phép chuyển qua các chế độ chia âm thanh khác nhau:
 <!-- KC:beginInclude -->
 
-|| Tên |Phím |Mô tả|
+| Tên |Phím |Mô tả|
 | Chuyển đổi chế độ chia âm thanh | ``NVDA+alt+s`` | Chuyển giữa các chế độ âm thanh. |
 
 %kc:endInclude
