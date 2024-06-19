@@ -104,7 +104,7 @@ Các bước này xem như người dùng đã có chút kĩ năng trong việc 
 * Mở trang tải phần mềm của NV Access (bấm `alt+d`, gõ vào địa chỉ sau và bấm `enter`): 
 https://www.nvaccess.org/download 
 * Bấm vào nút "download"
- Trình duyệt có thể đưa ra hoặc không đưa ra yêu cầu sau khi tải về, và sẽ bắt đầu tải về
+* Trình duyệt có thể đưa ra hoặc không đưa ra yêu cầu sau khi tải về, và sẽ bắt đầu tải về
 * Tùy vào trình duyệt, tập tin có thể tự chạy sau khi được tải về
 * Nếu tập tin cần được chạy thủ công, bấm `alt+n` để chuyển đến phần thông báo, rồi `alt+r` để chạy nó (hoặc làm các bước theo trình duyệt của bạn)
 
@@ -120,6 +120,7 @@ Nếu có, việc kết nối internet chỉ để cho phép NVDA định kì ki
 
 Tập tin cài đặt thường có tên là "nvda_2022.1.exe" hay đại khái như vậy.
 Việc thay đổi chỉ số về năm và phiên bản giữa những lần cập nhật phản ánh bản phát hành hiện tại.
+
 Hãy chạy tập tin đã tải về.
 Sẽ có tiếng nhạc phát lên trong khi gọi bản chạy tạm thời của NVDA.
 Khi được gọi chạy, NVDA sẽ đọc trong toàn bộ các bước còn lại của tiến trình.
@@ -248,10 +249,10 @@ Chức năng thật sự của thao tác sẽ không được thực thi khi ở
 |Đi đến thiết lập kế tiếp |`NVDA+control+mũi tên phải` |`NVDA+shift+control+mũi tên phải` |Đi đến thiết lập bộ đọc tiếp sau thiết lập hiện tại, sau thiết lập cuối cùng thì sẽ quay về thiết lập đầu tiên|
 |Đi đến thiết lập trước |`NVDA+control+mũi tên trái` |`NVDA+shift+control+mũi tên trái` |Đi đến thiết lập bộ đọc trước của thiết lập hiện tại, sau thiết lập đầu tiên thì sẽ quay về thiết lập cuối cùng|
 |Tăng giá trị cho thiết lập hiện tại |`NVDA+control+mũi tên lên` |`NVDA+shift+control+mũi tên lên` |Tăng giá trị cho thiết lập hiện tại của bộ đọc. Ví dụ, tăng tốc độ, chọn giọng đọc kế tiếp, tăng âm lượng|
-| Tăng thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn | ``NVDA+control+pageUp`` | ``NVDA+shift+control+pageUp`` | Tăng giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy tới 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy tới 20%. |
+|Tăng thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn | ``NVDA+control+pageUp`` | ``NVDA+shift+control+pageUp`` | Tăng giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy tới 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy tới 20%|
 
 |Giảm giá trị cho thiết lập hiện tại |`NVDA+control+mũi tên xuống` |`NVDA+shift+control+mũi tên xuống` |giảm giá trị cho thiết lập hiện tại của bộ đọc. Ví dụ, giảm tốc độ, chọn giọng đọc trước, giảm âm lượng|
-| Giảm thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn | ``NVDA+control+pageDown`` | ``NVDA+shift+control+pageDown`` | Giảm giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy lùi 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy lùi đến 20%. |
+|Giảm thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn | ``NVDA+control+pageDown`` | ``NVDA+shift+control+pageDown`` | Giảm giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy lùi 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy lùi đến 20%|
 
 Cũng có thể đặt giá trị đầu tiên hoặc cuối cùng của thiết lập hiện tại cho bộ đọc bằng cách gán thao tác / phím tắt tùy chỉnh trong [hộp thoại Quản lý các thao tác] (#InputGestures), Trong phân loại tiếng nói.
 Điều này có ý nghĩa, ví dụ, khi bạn đang ở thiết lập tốc độ đọc, nó sẽ được thiết lập là 0 hoặc 100.
@@ -346,7 +347,7 @@ Tùy chọn này mặc định được bật cho các bản cài đặt mới.
 #### Tạo biểu tượng trên Desktop và phím tắt (Ctrl + alt + n) {#CreateDesktopShortcut}
 
 Tùy chọn này cho phép  bạn tạo biểu tượng NVDA trên màn hình Desktop để khởi động chương trình.
-Nếu  được tạo, biểu tượng này cũng được gán phím tắt Ctrl + alt + n, cho phép bạn gọi chạy NVDA bất cứ lúc nào bằng tổ hợp phím đó.
+Nếu  được tạo, biểu tượng này cũng được gán phím tắt `Ctrl + alt + n`, cho phép bạn gọi chạy NVDA bất cứ lúc nào bằng tổ hợp phím đó.
 
 #### Chép thư mục cấu hình bản chạy trực tiếp vào thư mục người dùng hiện tại {#CopyPortableConfigurationToCurrentUserAccount}
 
@@ -361,7 +362,7 @@ Nếu bạn đã đóng hộp thoại này hay đang sử dụng NVDA được c
 
 Một hộp thoại xuất hiện cho phép bạn chọn nơi sẽ tạo bản chạy trực tiếp.
 Đó có thể là một thư mục trên ổ đĩa cứng, trên ổ USB hay một phương tiện lưu trữ bất kỳ.
- Ở đây cũng có tùy chọn chép thư mục cấu hình của người dùng hiện tại sang phiên bản chạy trực tiếp.
+Ở đây cũng có tùy chọn chép thư mục cấu hình của người dùng hiện tại sang phiên bản chạy trực tiếp.
 Tùy chọn này chỉ có khi bạn tạo bản chạy trực tiếp từ bản NVDA đã cài đặt trên máy, không tồn tại khi tạo bản chạy trực tiếp từ gói cài đặt.
 Bấm nút "Tiếp tục" để tiến hành tạo bản NVDA chạy trực tiếp.
 Khi hoàn tất, sẽ có một thông báo xác nhận là việc tạo bản chạy trực tiếp đã thành công.
@@ -711,7 +712,7 @@ Sử dụng các phím tắt sau để duyệt qua các đối tượng:
 |Chuyển đến đối tượng kế |NVDA+6 bàn phím số |NVDA+shift+mũi tên phải |không có |Chuyển đến đối tượng kế sau đối tượng điều hướng hiện tại|
 |Chuyển đến đối tượng kế ở dạng xem phẳng |NVDA+3 bàn phím số |NVDA+shift+] |vuốt phải (chế độ đối tượng) |Chuyển đến đối tượng kế ở dạng xem phẳng của hệ thống phân cấp đối tượng điều hướng|
 |Chuyển đến đối tượng con đầu tiên |NVDA+2 bàn phím số |NVDA+shift+mũi tên xuống |Vuốt xuống (chế độ đối tượng) |Chuyển đến đối tượng con đầu tiên của đối tượng hiện tại|
-|Chuyển đến đối tượng đang có focus |NVDA+dấu trừ bàn phím số |NVDA+xóa lùi |không có |Chuyển đến đối tượng đang có focus và đặt con trỏ duyệt vào vị trí con trỏ nháy (nếu đối tượng có dấu nháy)||
+|Chuyển đến đối tượng đang có focus |NVDA+dấu trừ bàn phím số |NVDA+xóa lùi |không có |Chuyển đến đối tượng đang có focus và đặt con trỏ duyệt vào vị trí con trỏ nháy (nếu đối tượng có dấu nháy)|
 |Kích hoạt đối tượng hiện tại |NVDA+enter bàn phím số |NVDA+enter |Hai-chạm |Kích hoạt đối tượng đang duyệt (giống như kích hoạt một đối tượng đang có focus)|
 |Chuyển focus hoặc dấu nháy hệ thống đến vị trí duyệt hiện tại |NVDA+shift+dấu trừ bàn phím số |NVDA+shift+xóa lùi |không có |Bấm một lần để chuyển focus đến đối tượng điều hướng; bấm nhanh hai lần để chuyển dấu nháy đến vị trí của con trỏ duyệt|
 |Thông báo vị trí con trỏ duyệt |NVDA+Shift+Delete bàn phím số |NVDA+Shift+Delete |không có |Báo thông tin vị trí của văn bản hoặc đối tượng tại con trỏ duyệt. Ví dụ, có thể bao gồm tỉ lệ phần trăm theo tài liệu, khoảng cách đến mép của trang, hoặc vị trí chính xác trên màn hình. Bấm hai lần có thể cung cấp thêm thông tin.|
@@ -916,7 +917,7 @@ Dưới đây là các phím cho phép chuyển nhanh đến các đối tượn
 * o: đối tượng nhúng (như trình phát âm thanh/video, ứng dụng, hộp thoại v...v...)
 * 1 đến 6: tiêu đề tương ứng từ cấp 1 đến cấp 6
 * a: annotation (chú thích, phần chỉnh sửa, v...v..)
-- ``p``: đoạn văn bản
+* `p`: đoạn văn bản
 * w: lỗi chính tả
 
 Còn đây là các phím để chuyển về đầu hoặc cuối các đối tượng chứa như danh sách (list) hay bảng (table):
@@ -936,22 +937,23 @@ Bấm NVDA+shift+khoảng trắng để bật/tắt ký tự di chuyển đơn.
 
 #### Lệnh di chuyển qua đoạn văn bản {#TextNavigationCommand}
 
-Bạn có thể di chuyển đến đoạn văn bản kế hoặc đoạn trước bằng cách bấm  ``p`` hoặc ``shift+p``.
+Bạn có thể di chuyển đến đoạn văn bản kế hoặc đoạn trước bằng cách bấm  `p` hoặc `shift+p`.
 Đoạn văn bản được xác định bởi một nhóm văn bản dường như được viết thành câu hoàn chỉnh.
 Điều này có thể hữu ích để tìm phần đầu của nội dung có thể đọc được trên nhiều trang web khác nhau, chẳng hạn như:
-- Các trang tin tức
-- Các diễn đàn
-- Các bài viết dạng blog
+
+* Các trang tin tức
+* Các diễn đàn
+* Các bài viết dạng blog
 - 
 
 Các lệnh này cũng có thể hữu ích để bỏ qua một số thứ lộn xộn nhất định, chẳng hạn như:
-- Quảng cáo
-- Trình đơn
-- Phần đầu
-- 
+* Quảng cáo
+* Trình đơn
+* Phần đầu
+* 
 
 Xin lưu ý, dù cho trong khi NVDA nỗ lực hết mình để xác định các đoạn văn bản, thuật toán không hoàn hảo ở hiện tại có thể gây ra lỗi.
-Thêm nữa, lệnh này khác với lệnh di chuyển qua đoạn ``control+mũi tên lên / xuống``.
+Thêm nữa, lệnh này khác với lệnh di chuyển qua đoạn `control+mũi tên lên / xuống`.
 Việc di chuyển qua đoạn văn bản chỉ nhảy giữa các đoạn văn bản, trong khi các lệnh di chuyển qua đoạn đưa con trỏ đến các đoạn trước và đoạn kế, bất kể nó có chứa văn bản hay không.
 
 #### Các Lệnh Điều Hướng Khác {#OtherNavigationCommands}
@@ -961,18 +963,17 @@ Bên cạnh những phím lệnh điều hướng đã liệt kê ở trên, NVD
 Sau đây là danh sách các lệnh đó:
 
 * Article (bài viết)
-- Figure (nhóm hình ảnh)
 * Grouping (nhóm)
+* Figure (nhóm hình ảnh)
 * Tab (thẻ)
-- Menu item (mục trên trình đơn)
-- Toggle button (nút bật / tắt)
-- Progress bar (thanh tiến độ)
-- Math formula (công thức toán)
-- Vertically aligned paragraph (đoạn văn bản đã căn lề)
-- Same style text (kiểu văn bản giống nhau)
-- Different style text (kiểu văn bản khác nhau)
- -
-
+* Menu item (mục trên trình đơn)
+* Toggle button (nút bật / tắt)
+* Progress bar (thanh tiến độ)
+* Math formula (công thức toán)
+* Vertically aligned paragraph (đoạn văn bản đã căn lề)
+* Same style text (kiểu văn bản giống nhau)
+* Different style text (kiểu văn bản khác nhau)
+ 
 Hãy nhớ rằng sẽ có hai lệnh cho mỗi loại thành phần, để di chuyển tới và lùi trong một tài liệu, và bạn phải gán thao tác / phím tắt cho cả hai lệnh để  di chuyển theo hai hướng.
 Ví dụ, nếu muốn dùng phím lệnh `y` / `shift+y` để nhanh chóng di chuyển qua các thẻ, bạn sẽ làm như sau:
 
