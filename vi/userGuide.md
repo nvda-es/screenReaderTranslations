@@ -1,4 +1,4 @@
-# ﻿Hướng dẫn sử dụng NVDA NVDA_VERSION 
+# Hướng dẫn sử dụng NVDA NVDA_VERSION 
 
 [TOC]
 
@@ -56,13 +56,13 @@ NVDA tích hợp sẵn  bộ đọc [eSpeak NG](https://github.com/espeak-ng/esp
 
 Có thể xem thêm thông tin về các bộ đọc được NVDA hỗ trợ trong phần [các bộ tổng hợp tiếng nói được hỗ trợ](#SupportedSpeechSynths).
 
-### Hỗ Trợ Màn Hình Nổi {#BrailleSupport}
+### Hỗ Trợ Màn Hình Chữ Nổi {#BrailleSupport}
 
 Nếu người dùng có sử dụng màn hình nổi, NVDA có thể gửi thông tin  ra màn hình dưới dạng chữ nổi.
 NVDA sử dụng thư viện phiên dịch chữ nổi mã nguồn mở [LibLouis](https://liblouis.io/) để tạo ra chữ nổi từ văn bản.
 Hỗ trợ nhập liệu bằng chữ nổi đầy đủ và viết tắt với bàn phím của màn hình nổi.
 Hơn thế nữa, mặc định, NVDA sẽ tự nhận nhiều màn hình nổi.
-Vui lòng xem phần [các màn hình nổi được hỗ trợ](#SupportedBrailleDisplays) để biết thêm thông tin về các màn hình được hỗ trợ.
+Vui lòng xem phần [các màn hình chữ nổi được hỗ trợ](#SupportedBrailleDisplays) để biết thêm thông tin về các màn hình được hỗ trợ.
 
 NVDA hỗ trợ các bảng mã chữ nổi cho nhiều ngôn ngữ khác nhau, bao gồm bảng mã chữ đủ, chữ tắt và chữ nổi máy tính.
 
@@ -248,7 +248,14 @@ Chức năng thật sự của thao tác sẽ không được thực thi khi ở
 |Đi đến thiết lập kế tiếp |`NVDA+control+mũi tên phải` |`NVDA+shift+control+mũi tên phải` |Đi đến thiết lập bộ đọc tiếp sau thiết lập hiện tại, sau thiết lập cuối cùng thì sẽ quay về thiết lập đầu tiên|
 |Đi đến thiết lập trước |`NVDA+control+mũi tên trái` |`NVDA+shift+control+mũi tên trái` |Đi đến thiết lập bộ đọc trước của thiết lập hiện tại, sau thiết lập đầu tiên thì sẽ quay về thiết lập cuối cùng|
 |Tăng giá trị cho thiết lập hiện tại |`NVDA+control+mũi tên lên` |`NVDA+shift+control+mũi tên lên` |Tăng giá trị cho thiết lập hiện tại của bộ đọc. Ví dụ, tăng tốc độ, chọn giọng đọc kế tiếp, tăng âm lượng|
+| Tăng thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn | ``NVDA+control+pageUp`` | ``NVDA+shift+control+pageUp`` | Tăng giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy tới 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy tới 20%. |
+
 |Giảm giá trị cho thiết lập hiện tại |`NVDA+control+mũi tên xuống` |`NVDA+shift+control+mũi tên xuống` |giảm giá trị cho thiết lập hiện tại của bộ đọc. Ví dụ, giảm tốc độ, chọn giọng đọc trước, giảm âm lượng|
+| Giảm thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn | ``NVDA+control+pageDown`` | ``NVDA+shift+control+pageDown`` | Giảm giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy lùi 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy lùi đến 20%. |
+
+Cũng có thể đặt giá trị đầu tiên hoặc cuối cùng của thiết lập hiện tại cho bộ đọc bằng cách gán thao tác / phím tắt tùy chỉnh trong [hộp thoại Quản lý các thao tác] (#InputGestures), Trong phân loại tiếng nói.
+Điều này có ý nghĩa, ví dụ, khi bạn đang ở thiết lập tốc độ đọc, nó sẽ được thiết lập là 0 hoặc 100.
+Khi bạn ở phần thiết lập bộ đọc, nó sẽ chọn giọng đọc đầu tiên hoặc cuối cùng.
 
 #### Điều hướng trên web {#WebNavigation}
 
@@ -907,8 +914,9 @@ Dưới đây là các phím cho phép chuyển nhanh đến các đối tượn
 * g: graphic (hình ảnh)
 * d: landmark (cột mốc)
 * o: đối tượng nhúng (như trình phát âm thanh/video, ứng dụng, hộp thoại v...v...)
-* 1 đến 6: tương ứng từ tiêu đề cấp 1 đến 6
+* 1 đến 6: tiêu đề tương ứng từ cấp 1 đến cấp 6
 * a: annotation (chú thích, phần chỉnh sửa, v...v..)
+- ``p``: đoạn văn bản
 * w: lỗi chính tả
 
 Còn đây là các phím để chuyển về đầu hoặc cuối các đối tượng chứa như danh sách (list) hay bảng (table):
@@ -926,6 +934,26 @@ Nếu bạn muốn dùng các phím tắt này trong khi vẫn muốn sử dụn
 Bấm NVDA+shift+khoảng trắng để bật/tắt ký tự di chuyển đơn.
 <!-- KC:endInclude -->
 
+#### Lệnh di chuyển qua đoạn văn bản {#TextNavigationCommand}
+
+Bạn có thể di chuyển đến đoạn văn bản kế hoặc đoạn trước bằng cách bấm  ``p`` hoặc ``shift+p``.
+Đoạn văn bản được xác định bởi một nhóm văn bản dường như được viết thành câu hoàn chỉnh.
+Điều này có thể hữu ích để tìm phần đầu của nội dung có thể đọc được trên nhiều trang web khác nhau, chẳng hạn như:
+- Các trang tin tức
+- Các diễn đàn
+- Các bài viết dạng blog
+- 
+
+Các lệnh này cũng có thể hữu ích để bỏ qua một số thứ lộn xộn nhất định, chẳng hạn như:
+- Quảng cáo
+- Trình đơn
+- Phần đầu
+- 
+
+Xin lưu ý, dù cho trong khi NVDA nỗ lực hết mình để xác định các đoạn văn bản, thuật toán không hoàn hảo ở hiện tại có thể gây ra lỗi.
+Thêm nữa, lệnh này khác với lệnh di chuyển qua đoạn ``control+mũi tên lên / xuống``.
+Việc di chuyển qua đoạn văn bản chỉ nhảy giữa các đoạn văn bản, trong khi các lệnh di chuyển qua đoạn đưa con trỏ đến các đoạn trước và đoạn kế, bất kể nó có chứa văn bản hay không.
+
 #### Các Lệnh Điều Hướng Khác {#OtherNavigationCommands}
 
 Bên cạnh những phím lệnh điều hướng đã liệt kê ở trên, NVDA còn có những lệnh không được gán  phím tắt mặc định.
@@ -933,8 +961,17 @@ Bên cạnh những phím lệnh điều hướng đã liệt kê ở trên, NVD
 Sau đây là danh sách các lệnh đó:
 
 * Article (bài viết)
+- Figure (nhóm hình ảnh)
 * Grouping (nhóm)
-* Tab
+* Tab (thẻ)
+- Menu item (mục trên trình đơn)
+- Toggle button (nút bật / tắt)
+- Progress bar (thanh tiến độ)
+- Math formula (công thức toán)
+- Vertically aligned paragraph (đoạn văn bản đã căn lề)
+- Same style text (kiểu văn bản giống nhau)
+- Different style text (kiểu văn bản khác nhau)
+ -
 
 Hãy nhớ rằng sẽ có hai lệnh cho mỗi loại thành phần, để di chuyển tới và lùi trong một tài liệu, và bạn phải gán thao tác / phím tắt cho cả hai lệnh để  di chuyển theo hai hướng.
 Ví dụ, nếu muốn dùng phím lệnh `y` / `shift+y` để nhanh chóng di chuyển qua các thẻ, bạn sẽ làm như sau:
@@ -1281,6 +1318,8 @@ Do một thay đổi trong Windows Magnification API, tính năng Che Màn Hình
 Hãy dùng NVDA 2021.2 để bật tính năng Che Màn Hình với Windows 10 21H2 (10.0.19044) trở lên.
 Vì mục tiêu bảo mật, khi sử dụng một phiên bản mới của Windows, hãy tìm sự xác nhận trực quan rằng tính năng Che Màn Hình có làm cho màn hình đen toàn bộ.
 
+Xin lưu ý rằng trong khi Windows Magnifier đang chạy và đang dùng chế độ đảo màu màn hình, tính năng che màn hình sẽ không thể bật lên được.
++
 ## Nhận Dạng Nội Dung {#ContentRecognition}
 
 Khi tác giả không cung cấp đầy đủ thông tin của ứng dụng cho trình đọc màn hình, sẽ có nhiều công cụ khác nhau hỗ trợ để có thể nhận dạng nội dung của một hình ảnh chẳng hạn.
@@ -1597,7 +1636,7 @@ Dưới đây là các phân loại trong hộp thoại cấu hình NVDA:
 
 <!-- KC:setting -->
 
-##### Mở Cài Đặt Chung {#toc109}
+##### Mở Cài Đặt Chung {#toc110}
 
 Phím tắt: `NVDA+control+g`
 
@@ -1693,7 +1732,7 @@ Bạn cũng có thể cài đặt  cập nhật thủ công từ hộp thoại t
 
 <!-- KC:setting -->
 
-##### Mở cài đặt thiết lập bộ đọc {#toc122}
+##### Mở cài đặt thiết lập bộ đọc {#toc123}
 
 Phím tắt: `NVDA+control+v`
 
@@ -1836,7 +1875,7 @@ Lưu ý là cần chọn ít nhất hai chế độ.
 
 <!-- KC:setting -->
 
-##### Mở hộp thoại chọn bộ đọc {#toc143}
+##### Mở hộp thoại chọn bộ đọc {#toc144}
 
 Phím tắt: `NVDA+control+s`
 
@@ -1863,8 +1902,9 @@ Ngoài việc thay đổi các tham số cho giọng đọc trong phân loại t
 |Chuyển tới tham số tiếp theo của giọng đọc |NVDA+control+mũi tên phải |NVDA+shift+control+mũi tên phải |Chuyển tới tham số tiếp theo của giọng đọc, nếu hết thì sẽ quay vòng|
 |Chuyển tới tham số trước đó của giọng đọc |NVDA+control+mũi tên trái |NVDA+shift+control+mũi tên trái |Chuyển tới tham số trước đó của giọng đọc, nếu hết thì sẽ quay vòng|
 |Tăng giá trị cho tham số hiện tại |NVDA+control+mũi tên lên |NVDA+shift+control+mũi tên lên |Tăng giá trị cho tham số hiện tại|
+| Tăng thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn | ``NVDA+control+pageUp`` | ``NVDA+shift+control+pageUp`` | Tăng giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy tới 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy tới 20%. |
 |Giảm giá trị cho tham số hiện tại |NVDA+control+mũi tên xuống |NVDA+shift+control+mũi tên xuống |Giảm giá trị cho tham số hiện tại|
-
+|Giảm giá trị cho thiết lập hiện tại |`NVDA+control+mũi tên xuống` |`NVDA+shift+control+mũi tên xuống` |giảm giá trị cho thiết lập hiện tại của bộ đọc. Ví dụ, giảm tốc độ, chọn giọng đọc trước, giảm âm lượng|
 <!-- KC:endInclude -->
 
 #### Chữ Nổi {#BrailleSettings}
@@ -1891,8 +1931,20 @@ Tiếp theo với tùy chọn trước đó là hộp xổ chọn bảng mã ch�
 Bảng mã được chọn sẽ dùng để chuyển đổi nội dung được nhập bằng kiểu bàn phím Perkins sang dạng văn bản.
 Bạn có thể dùng các phím mũi tên để duyệt qua danh sách các bảng mã..
 
-Lưu ý, tùy chọn này chỉ có ý nghĩa khi màn hình nổi của bạn có bàn phím kiểu Perkins và driver của nó có hỗ trợ tính năng này.
+Lưu ý, tùy chọn này chỉ có ý nghĩa khi màn hình nổi của bạn có bàn phím kiểu Perkins và trình điều khiển của nó có hỗ trợ tính năng này.
 Nếu màn hình nổi có bàn phím Perkins nhưng không hỗ trợ phần nhập liệu, nó sẽ được lưu ý trong phần [Các màn hình nổi được hỗ trợ](#SupportedBrailleDisplays).
+
+%kc:setting
+##### Chế độ chữ nổi {#BrailleMode}
+Phím tắt: ``NVDA+alt+t``
+
+Tùy chọn này cho phép bạn chọn giữa các chế độ chữ nổi.
+
+Hiện tại, có hai chế độ chữ nổi được hỗ trợ, "đi theo con trỏ" và "hiển thị đầu ra giọng đọc".
+
+Khi chọn đi theo con trỏ, màn hình chữ nổi sẽ đi theo con trỏ / dấu nháy hệ thống hoặc đối tượng điều hướng / con trỏ duyệt, tùy vào cái mà chữ nổi đang đi theo.
+
+Khi chọn hiển thị đầu ra giọng đọc, màn hình chữ nổi sẽ hiển thị những gì NVDA đọc, hoặc  sẽ đọc nếu chế độ đọc được thiết lập là "đọc"
 
 ##### Mở rộng từ tại vị trí con trỏ theo bảng chữ nổi máy tính được viết đầy đủ {#BrailleSettingsExpandToComputerBraille}
 
@@ -1969,7 +2021,7 @@ Trường hợp đó, bấm phím định tuyến con trỏ sẽ chỉ di chuy�
 
 Tùy chọn này chỉ hiển thị khi "[chữ nổi đi theo](#BrailleTether)" được thiết lập là "Tự động" hoặc "Đến con trỏ duyệt".
 
-Để bật / tắt di chuyển dấu nháy hệ thống khi định tuyến con trỏ duyệt ở bất cứ đâu, vui lòng gán thao tác / phím tắt thông qua [hộp thoại Quản lý các thao tác#InputGestures].
+Để bật / tắt di chuyển dấu nháy hệ thống khi định tuyến con trỏ duyệt ở bất cứ đâu, vui lòng gán thao tác / phím tắt thông qua [hộp thoại Quản lý các thao tác](#InputGestures).
 
 ##### Đọc Theo Đoạn {#BrailleSettingsReadByParagraph}
 
@@ -2146,6 +2198,88 @@ Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WAS
 Thanh trượt này cho phép bạn điều chỉnh âm lượng cho âm thanh và  tiếng beep của NVDA.
 Thiết lập này chỉ có tác dụng khi tắt "Âm lượng âm thanh NVDA đi theo âm lượng giọng đọc".
 Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
+
+#### Thời gian giữ cho thiết bị âm thanh hoạt động sau khi đọc {#AudioAwakeTime}
+
+Hộp chỉnh sửa này chỉ định thời gian NVDA giữ cho thiết bị âm thanh hoạt động sau khi đã đọc xong.
+Điều này cho phép NVDA ngăn chặn một số lỗi phát âm nhất định như bị mất các phần của từ.
+Điều này có thể xảy ra do các thiết bị âm thanh (đặc biệt là Bluetooth và thiết bị không dây) chuyển sang chế độ chờ.
++Điều này cũng có thể hữu ích trong các trường hợp khác, như là chạy NVDA trên máy ảo (ví dụ như Citrix Virtual Desktop), hoặc trên một số máy tính xách tay nhất định.
+
+Giá trị thấp hơn có thể khiến âm thanh bị ngắt thường xuyên hơn vì thiết bị có thể chuyển sang chế độ chờ quá sớm, khiến phần bắt đầu của phần sẽ đọc tiếp theo bị cắt bớt.
+Việc đặt giá trị quá cao có thể khiến pin của thiết bị đầu ra âm thanh xả nhanh hơn vì thiết bị này vẫn hoạt động lâu hơn trong khi không có âm thanh nào được gửi đi.
+
+
+Bạn có thể đặt thời gian là 0 để tắt tính năng này.
+
+### Chia âm thanh{#SelectSoundSplitMode}
+
+Tính năng chia âm thanh cho phép người dùng sử dụng các thiết bị đầu ra âm thanh nổi của họ, chẳng hạn như tai nghe và loa.
+Tính năng chia âm thanh giúp cho giọng đọc NVDA có thể ở một kênh (ví dụ: bên trái) và để tất cả các ứng dụng khác phát âm thanh của chúng ở kênh kia (ví dụ: bên phải).
+Theo mặc định, tính năng chia âm thanh bị tắt, có nghĩa là tất cả các ứng dụng bao gồm NVDA sẽ phát âm thanh ở cả kênh trái và phải.
+Một thao tác cho phép chuyển qua các chế độ chia âm thanh khác nhau:
+%kc:beginInclude
++|| Tên | Phím | Mô tả |
+| Chuyển đổi chế độ chia âm thanh | ``NVDA+alt+s`` | Chuyển giữa các chế độ âm thanh. |
+
+%kc:endInclude
+
+Theo mặc định, lệnh này sẽ chuyển đổi giữa các chế độ sau:
+- Tắt chia âm thanh: cả NVDA và các ứng dụng khác đều cho âm thanh sang cả kênh trái và phải.
+- NVDA bên trái và các ứng dụng bên phải: NVDA sẽ đọc ở kênh bên trái, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên phải.
+- NVDA bên phải và các ứng dụng bên trái: NVDA sẽ đọc ở kênh bên phải, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên trái.
+-
+
+Có nhiều chế độ chia âm thanh nâng cao hơn trong hộp xổ cài đặt NVDA.
+Nếu bạn muốn điều chỉnh âm lượng của tất cả các ứng dụng ngoại trừ NVDA, hãy cân nhắc sử dụng [các lệnh chuyên dụng] (#OtherAppVolume).
+Xin lưu ý rằng tính năng chia âm thanh không hoạt động như một bộ trộn (mixer).
+Ví dụ, nếu một ứng dụng đang phát một bản âm thanh nổi trong khi phần tách âm thanh được đặt thành "NVDA ở bên trái và các ứng dụng ở bên phải", thì bạn sẽ chỉ nghe thấy kênh bên phải của bản nhạc đó, trong khi kênh bên trái của âm thanh bài hát sẽ bị tắt tiếng.
+
+Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh] (#WASAPI) trong cài đặt nâng cao.
+
+Xin lưu ý rằng nếu NVDA gặp sự cố thì nó sẽ không thể khôi phục âm lượng ứng dụng và các ứng dụng đó có thể vẫn chỉ phát ra âm thanh ở một kênh sau khi NVDA gặp sự cố.
+Để giảm thiểu điều này, vui lòng khởi động lại NVDA.
+
+### Tùy chỉnh các chế độ chia âm thanh{#CustomizeSoundSplitModes}
+Danh sách chọn bằng hộp kiểm này cho phép chọn chế độ phân chia âm thanh nào được đưa vào khi luân chuyển giữa chúng bằng cách sử dụng ``NVDA+alt+s``.
+Các chế độ không được chọn sẽ bị loại bỏ.
+Theo mặc định, chỉ có ba chế độ được bao gồm.
+- Tắt chia âm thanh: cả NVDA và các ứng dụng đều phát âm thanh ở cả kênh trái và phải.
+- NVDA bên trái và tất cả ứng dụng khác ở kênh bên phải.
+- NVDA bên phải và tất cả ứng dụng khác ở kênh bên trái.
+-
+
+Lưu ý rằng cần phải chọn ít nhất một chế độ.
+Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh] (#WASAPI) trong cài đặt nâng cao.
+
+#### Âm lượng các ứng dụng khác {#OtherAppVolume}
+
+Thanh trượt này cho phép bạn điều chỉnh âm lượng của tất cả các ứng dụng hiện đang chạy ngoài NVDA.
+Thiết lập âm lượng này sẽ áp dụng cho tất cả các ứng dụng phát ra âm thanh khác, ngay cả khi chúng khởi động sau khi thiết lập này được thay đổi.
+Âm lượng này cũng có thể được điều khiển thông qua các phím lệnh sau từ mọi nơi:
+
+%kc:beginInclude
+|| Tên | Phím | Mô tả |
+| Tăng âm lượng ứng dụng | ``NVDA+alt+pageUp`` | Tăng âm lượng tất cả ứng dụng trừ NVDA. |
+| Giảm âm lượng ứng dụng | ``NVDA+alt+pageDown`` | Giảm âm lượng tất cả ứng dụng trừ NVDA. |
+
+%kc:endInclude
+
+Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh] (#WASAPI) trong cài đặt nâng cao.
+
+#### Tắt âm thanh ứng dụng khác {#MuteApplications}
+
+Hộp kiểm này cho phép bạn tắt tiếng tất cả các ứng dụng ngoại trừ NVDA.
+Thiết lập tắt tiếng này sẽ áp dụng cho tất cả các ứng dụng khác phát ra âm thanh, ngay cả khi chúng khởi động sau khi thiết lập này được thay đổi.
+Các phím lệnh sau đây cũng có thể được sử dụng từ mọi nơi:
+
+%kc:beginInclude
+|| Tên | Phím | Mô tả |
+| Bật / tắt tiếng ứng dụng khác | ``NVDA+alt+delete`` |  Bật / tắt tiếng tất cả các ứng dụng ngoại trừ NVDA. |
+
+%kc:endInclude
+
+Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh] (#WASAPI) trong cài đặt nâng cao.
 
 #### Hỗ trợ nhìn {#VisionSettings}
 
@@ -2624,6 +2758,7 @@ Bạn có thể chọn các mục sau:
   * cột mốc
   * Bài viết
   * Khung
+  - Nhóm hình ảnh và phụ đề
   * Có thể click
 
 Để bật / tắt thiết lập này ở bất cứ đâu, hãy gán thao tác/phím tắt cho nó trong hộp thoại [Quản lý thao tác](#InputGestures).
@@ -2924,6 +3059,11 @@ Tắt WASAPI sẽ vô hiệu hóa các tùy chọn sau:
 Việc chọn chỉ dùng cho các phiên bản thử nghiệm (mặc định) là để NVDA chỉ phát âm thanh báo lỗi nếu phiên bản NVDA hiện tại là bản thử nghiệm (alpha, beta hoặc chạy từ mã nguồn).
 Chọn Có để cho phép phát âm báo lỗi, bất kể bạn đang dùng phiên bản NVDA nào.
 
+#### Biểu thức phổ thông cho lệnh di chuyển nhanh qua đoạn văn bản {#TextParagraphRegexEdit}
+
+Trường này cho phép người dùng tùy chỉnh biểu thức phổ thông để phát hiện các đoạn văn bản ở chế độ duyệt.
+[lệnh di chuyển qua đoạn văn bản](#TextNavigationCommand) tìm kiếm các đoạn khớp với biểu thức phổ thông này.
++
 ### Các thiết lập khác {#MiscSettings}
 
 Bên cạnh  hộp thoại [cấu hình NVDA](#NVDASettings), trình đơn tùy chọn trong thực đơn của NVDA còn có vài thành phần được liệt kê dưới đây.
@@ -3279,9 +3419,9 @@ Bạn cũng có thể bật hoặc tắt nhiều add-on cùng một lúc bằng 
 
 #### Đánh giá và xem đánh giá add-on {#AddonStoreReviews}
 
-Trước khi cài một add-on, có thể bạn cần xem đánh giá từ những người dùng khác.
+Có thể, bạn cần xem đánh giá từ những người dùng khác đã trải nghiệm một add-on, ví dụ như trước khi dùng hoặc như là bạn đang muốn học sử dụng nó.
 Ngoài ra, việc những người dùng khác cung cấp phản hồi về các add-on mà bạn đã thử cũng có thể hữu ích.
-Để xem đánh giá cho một add-on, chọn nó từ thẻ các add-on hiện hành hoặc các add-on có bản cập nhật, rồi chọn mục "Đánh giá của cộng đồng".
+Để xem đánh giá cho một add-on, chọn nó , rồi chọn mục "Đánh giá của cộng đồng".
 Tùy chọn này gắn với trang thảo luận trên GitHub, nơi bạn có thể đọc và viết đánh giá cho add-on.
 Xin lưu ý rằng điều này không thay thế cho việc liên lạc trực tiếp với các nhà phát triển add-on.
 Thay vào đó, mục đích của tính năng này là chia sẻ phản hồi, giúp người dùng quyết định xem một add-on có hữu ích cho họ hay không.
@@ -3421,9 +3561,9 @@ Các phím lệnh sau đây của NVDA cũng có thể hữu dụng:
 
 <!-- KC:endInclude -->
 
-## Các bộ đọc được hỗ trợ {#SupportedSpeechSynths}
+## Các bộ tổng hợp tiếng nói được hỗ trợ {#SupportedSpeechSynths}
 
-Phần này có các thông tin về các bộ đọc mà NVDA hỗ trợ.
+Phần này có các thông tin về các bộ tổng hợp tiếng nói (bộ đọc) mà NVDA hỗ trợ.
 Để biết thêm thông tin về các bộ đọc miễn phí và thương mại mà bạn có thể mua và tải về dùng với NVDA, vui lòng xem tại trang [Thêm các giọng đọc](https://github.com/nvaccess/nvda/wiki/ExtraVoices).
 
 ### eSpeak NG {#eSpeakNG}
@@ -3443,7 +3583,7 @@ SAPI 4 là một chuẩn cũ của các bộ tổng hợp tiếng nói của Mic
 NVDA vẫn còn hỗ trợ cho bộ tổng hợp âm này.
 Tuy nhiên, Microsoft đã ngưng hỗ trợ cho phiên bản này. Vì vậy, bạn không thể tải bộ cài đặt hoặc những gói dữ liệu liên quan từ trang web của Microsoft.
 
-Khi sử dụng bộ đọc này với NVDA, các giọng đọc hiện hành có thể chọn ở  phân loại [tiếng nói#SpeechSettings] trong [hộp thoại cấu hình NVDA](#NVDASettings) hoặc [vòng thiết lập tham số giọng đọc](#SynthSettingsRing) sẽ thấy tất cả các giọng được cài cho bộ đọc chuẩn SAPI 4 trên máy của bạn. 
+Khi sử dụng bộ đọc này với NVDA, các giọng đọc hiện hành có thể chọn ở  phân loại [tiếng nói](#SpeechSettings) trong [hộp thoại cấu hình NVDA](#NVDASettings) hoặc [vòng thiết lập tham số giọng đọc](#SynthSettingsRing) sẽ thấy tất cả các giọng được cài cho bộ đọc chuẩn SAPI 4 trên máy của bạn. 
 
 ### Microsoft Speech API phiên bản 5 (SAPI 5) {#SAPI5}
 
@@ -3917,27 +4057,27 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 |Phím control+shift+mũi tên trái |dot2+dot8+space+f1|
 |Phím control+mũi tên trái |dot2+space|
 |Phím shift+alt+mũi tên trái |dot2+dot7+f1|
-|Phím alt+mũi tên trái |dot2+dot7|
+|Phím alt+mũi tên trái | ``dot2+dot7+space`` |
 |Phím mũi tên phải |dot6+space, leftSideRightArrow|
 |Phím control+shift+mũi tên phải |dot5+dot8+space+f1|
 |Phím control+mũi tên phải |dot5+space|
 |Phím shift+alt+mũi tên phải |dot5+dot7+f1|
-|Phím alt+mũi tên phải |dot5+dot7|
+|Phím alt+mũi tên phải | ``dot5+dot7+space`` |
 |Phím trang trước |dot1+dot2+dot6+space|
 |Phím control+trang trước |dot1+dot2+dot6+dot8+space|
 |Phím mũi tên lên |dot1+space, leftSideUpArrow|
 |Phím control+mũi tên lên |dot2+dot3+space|
 |Phím control+shift+mũi tên lên |dot2+dot3+dot8+space+f1|
 |Phím shift+alt+mũi tên lên |dot2+dot3+dot7+f1|
-|Phím alt+mũi tên lên |dot2+dot3+dot7|
+|Phím alt+mũi tên lên | ``dot2+dot3+dot7+space`` |
 |Phím shift+mũi tên lên |leftSideScrollDown+space|
 |Phím trang kế |dot3+dot4+dot5+space|
 |Phím control+trang kế |dot3+dot4+dot5+dot8+space|
 |Phím mũi tên xuống |dot4+space, leftSideDownArrow|
-|Phím control+shift+mũi tên xuống |dot5+dot6+dot8+space+f1|
+|Phím control+shift+mũi tên xuống | dot5+dot6+dot8+space+f1|
 |Phím control+mũi tên xuống |dot5+dot6+space|
 |Phím shift+alt+mũi tên xuống |dot5+dot6+dot7+f1|
-|Phím alt+mũi tên xuống |dot5+dot6+dot7|
+|Phím alt+mũi tên xuống | ``dot5+dot6+dot7+space`` |
 |Phím shift+mũi tên xuống |space+rightSideScrollDown|
 |Phím escape |dot1+dot5+space, f4, brailleedge:f1|
 |Phím delete |dot1+dot3+dot5+space|
@@ -4737,6 +4877,11 @@ Chế độ bảo vệ sẽ vô hiệu:
 
 Bản NVDA được cài đặt sẽ lưu cấu hình, bao gồm add-on tại `%APPDATA%\nvda`.
 Để ngăn không cho người dùng NVDA trực tiếp thay đổi cấu hình hay add-on, phải giới hạn quyền truy cập đến thư mục này của người dùng.
+
+Chế độ bảo vệ không có tác dụng đối với các bản chạy trực tiếp của NVDA.
+Hạn chế này cũng áp dụng cho bản tạm thời của NVDA chạy khi khởi chạy trình cài đặt.
+Trong môi trường bảo mật, việc người dùng có thể chạy tệp thực thi di động đều có cùng rủi ro bảo mật bất kể chế độ bảo mật nào.
+Quản trị viên hệ thống nên hạn chế phần mềm trái phép chạy trên hệ thống của họ, bao gồm cả các bản chạy trực tiếp của NVDA.
 
 Người dùng NVDA thường dựa vào việc cấu hình hồ sơ cho phù hợp với nhu cầu của họ.
 Điều này có thể bao gồm cả việc cài đặt và cấu hình các add-on tùy chỉnh, vốn không liên quan đến NVDA.

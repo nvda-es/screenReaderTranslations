@@ -94,7 +94,7 @@ Nhiều bản sửa lỗi nhỏ cho các ứng dụng như Thunderbird, Adobe Re
 
 ### Các thay đổi cho nhà phát triển
 
-Vui lòng tham khảo [hướng dẫn dành cho nhà phát triển](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API) để biết thông tin về quá trình loại bỏ và ngừng sử dụng API của NVDA.
+Phần này không được dịch. Vui lòng xem bản tiếng Anh changes.md để biết thêm thông tin.
 
 ## 2024.1
 
