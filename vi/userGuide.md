@@ -1937,6 +1937,7 @@ Nếu màn hình nổi có bàn phím Perkins nhưng không hỗ trợ phần nh
 <!-- KC:setting -->
 
 ##### Chế độ chữ nổi {#BrailleMode}
+
 Phím tắt: ``NVDA+alt+t``
 
 Tùy chọn này cho phép bạn chọn giữa các chế độ chữ nổi.
