@@ -1934,7 +1934,8 @@ Bạn có thể dùng các phím mũi tên để duyệt qua danh sách các b�
 Lưu ý, tùy chọn này chỉ có ý nghĩa khi màn hình nổi của bạn có bàn phím kiểu Perkins và trình điều khiển của nó có hỗ trợ tính năng này.
 Nếu màn hình nổi có bàn phím Perkins nhưng không hỗ trợ phần nhập liệu, nó sẽ được lưu ý trong phần [Các màn hình nổi được hỗ trợ](#SupportedBrailleDisplays).
 
-%kc:setting
+<!-- KC:setting -->
+
 ##### Chế độ chữ nổi {#BrailleMode}
 Phím tắt: ``NVDA+alt+t``
 
