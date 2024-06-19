@@ -1938,7 +1938,7 @@ Nếu màn hình nổi có bàn phím Perkins nhưng không hỗ trợ phần nh
 
 ##### Chế độ chữ nổi {#BrailleMode}
 
-Phím tắt: `NVDA+alt+t
+Phím tắt: `NVDA+alt+t`
 
 Tùy chọn này cho phép bạn chọn giữa các chế độ chữ nổi.
 
@@ -2213,13 +2213,14 @@ Việc đặt giá trị quá cao có thể khiến pin của thiết bị đầ
 
 Bạn có thể đặt thời gian là 0 để tắt tính năng này.
 
-### Chia âm thanh{#SelectSoundSplitMode}
+##### Chia âm thanh{#SelectSoundSplitMode}
 
 Tính năng chia âm thanh cho phép người dùng sử dụng các thiết bị đầu ra âm thanh nổi của họ, chẳng hạn như tai nghe và loa.
 Tính năng chia âm thanh giúp cho giọng đọc NVDA có thể ở một kênh (ví dụ: bên trái) và để tất cả các ứng dụng khác phát âm thanh của chúng ở kênh kia (ví dụ: bên phải).
 Theo mặc định, tính năng chia âm thanh bị tắt, có nghĩa là tất cả các ứng dụng bao gồm NVDA sẽ phát âm thanh ở cả kênh trái và phải.
 Một thao tác cho phép chuyển qua các chế độ chia âm thanh khác nhau:
-%kc:beginInclude
+<!-- KC:beginInclude -->
+
 +|| Tên | Phím | Mô tả |
 | Chuyển đổi chế độ chia âm thanh | ``NVDA+alt+s`` | Chuyển giữa các chế độ âm thanh. |
 
