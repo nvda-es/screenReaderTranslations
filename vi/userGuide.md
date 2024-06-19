@@ -1938,7 +1938,7 @@ Nếu màn hình nổi có bàn phím Perkins nhưng không hỗ trợ phần nh
 
 ##### Chế độ chữ nổi {#BrailleMode}
 
-Phím tắt: ``NVDA+alt+t``
+Phím tắt: `NVDA+alt+t
 
 Tùy chọn này cho phép bạn chọn giữa các chế độ chữ nổi.
 
@@ -1993,7 +1993,7 @@ Tùy chọn này chỉ xuất hiện khi tùy chọn "Hiện thông điệp" đ�
 
 ##### Đưa Braille Theo {#BrailleTether}
 
-Phím tắt: `NVDA+control+t`
+Phím tắt: NVDA+control+t
 
 Tùy chọn này cho phép bạn chọn con trỏ nổi sẽ đi theo con trỏ / dấu nháy hệ thống, theo con trỏ duyệt / đối tượng điều hướng hay cả hai.
 Khi chọn "tự động", NVDA mặc định sẽ đi theo focus hệ thống và dấu nháy hệ thống.
@@ -2106,7 +2106,7 @@ Tắt tùy chọn này có thể cải thiện khả năng đọc.
 
 <!-- KC:setting -->
 
-##### Mở hộp thoại chọn màn hình nổi {#toc166}
+##### Mở hộp thoại chọn màn hình nổi {#toc168}
 
 Phím tắt: `NVDA+control+a`
 
@@ -2158,7 +2158,7 @@ Vậy nên chúng tôi khuyến khích kết nối một loại màn hình của
 
 <!-- KC:setting -->
 
-##### Mở cài đặt âm thanh {#toc171}
+##### Mở cài đặt âm thanh {#toc173}
 
 Phím tắt: `NVDA+control+u`
 
@@ -2201,7 +2201,7 @@ Thanh trượt này cho phép bạn điều chỉnh âm lượng cho âm thanh v
 Thiết lập này chỉ có tác dụng khi tắt "Âm lượng âm thanh NVDA đi theo âm lượng giọng đọc".
 Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
 
-#### Thời gian giữ cho thiết bị âm thanh hoạt động sau khi đọc {#AudioAwakeTime}
+##### Thời gian giữ cho thiết bị âm thanh hoạt động sau khi đọc {#AudioAwakeTime}
 
 Hộp chỉnh sửa này chỉ định thời gian NVDA giữ cho thiết bị âm thanh hoạt động sau khi đã đọc xong.
 Điều này cho phép NVDA ngăn chặn một số lỗi phát âm nhất định như bị mất các phần của từ.
@@ -2210,7 +2210,6 @@ Hộp chỉnh sửa này chỉ định thời gian NVDA giữ cho thiết bị �
 
 Giá trị thấp hơn có thể khiến âm thanh bị ngắt thường xuyên hơn vì thiết bị có thể chuyển sang chế độ chờ quá sớm, khiến phần bắt đầu của phần sẽ đọc tiếp theo bị cắt bớt.
 Việc đặt giá trị quá cao có thể khiến pin của thiết bị đầu ra âm thanh xả nhanh hơn vì thiết bị này vẫn hoạt động lâu hơn trong khi không có âm thanh nào được gửi đi.
-
 
 Bạn có thể đặt thời gian là 0 để tắt tính năng này.
 
