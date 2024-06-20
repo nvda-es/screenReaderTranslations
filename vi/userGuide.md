@@ -2229,10 +2229,9 @@ Một thao tác cho phép chuyển qua các chế độ chia âm thanh khác nha
 
 Theo mặc định, lệnh này sẽ chuyển đổi giữa các chế độ sau:
 
-- Tắt chia âm thanh: cả NVDA và các ứng dụng khác đều cho âm thanh sang cả kênh trái và phải.
-- NVDA bên trái và các ứng dụng bên phải: NVDA sẽ đọc ở kênh bên trái, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên phải.
-- NVDA bên phải và các ứng dụng bên trái: NVDA sẽ đọc ở kênh bên phải, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên trái.
--
+* Tắt chia âm thanh: cả NVDA và các ứng dụng khác đều cho âm thanh sang cả kênh trái và phải.
+* NVDA bên trái và các ứng dụng bên phải: NVDA sẽ đọc ở kênh bên trái, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên phải.
+* NVDA bên phải và các ứng dụng bên trái: NVDA sẽ đọc ở kênh bên phải, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên trái.
 
 Có nhiều chế độ chia âm thanh nâng cao hơn trong hộp xổ cài đặt NVDA.
 Nếu bạn muốn điều chỉnh âm lượng của tất cả các ứng dụng ngoại trừ NVDA, hãy cân nhắc sử dụng [các lệnh chuyên dụng] (#OtherAppVolume).
