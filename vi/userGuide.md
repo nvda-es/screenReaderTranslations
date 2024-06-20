@@ -3139,8 +3139,7 @@ Lưu ý:
 
 * Các phím mô phỏng phải được gán  thao tác để duy trì khi lưu / đóng hộp thoại.
 * Một thao tác với các phím bổ trợ có thể không gán được vào thao tác mô phỏng mà không có phím bổ trợ.
-Ví dụ: thiết lập đầu vào mô phỏng `a` và chọn thao tác là `ctrl+m`, có thể cho kết quả
-trong ứng dụng nhận lệnh `ctrl+a`.
+Ví dụ: thiết lập đầu vào mô phỏng `a` và chọn thao tác là `ctrl+m`, có thể cho kết quả trong ứng dụng nhận lệnh `ctrl+a`.
 
 Khi bạn hoàn tất, chọn nút Đồng ý để lưu lại các thay đổi hoặc chọn nút Hủy bỏ để bỏ qua các thay đổi đó.
 
