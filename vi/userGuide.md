@@ -2233,7 +2233,6 @@ Theo mặc định, lệnh này sẽ chuyển đổi giữa các chế độ sau
 * NVDA bên phải và các ứng dụng bên trái: NVDA sẽ đọc ở kênh bên phải, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên trái.
 
 Có nhiều chế độ chia âm thanh nâng cao hơn trong hộp xổ cài đặt NVDA.
-Nếu bạn muốn điều chỉnh âm lượng của tất cả các ứng dụng ngoại trừ NVDA, hãy cân nhắc sử dụng [các lệnh chuyên dụng](#OtherAppVolume).
 Xin lưu ý rằng tính năng chia âm thanh không hoạt động như một bộ trộn (mixer).
 Ví dụ, nếu một ứng dụng đang phát một bản âm thanh nổi trong khi phần tách âm thanh được đặt thành "NVDA ở bên trái và các ứng dụng ở bên phải", thì bạn sẽ chỉ nghe thấy kênh bên phải của bản nhạc đó, trong khi kênh bên trái của âm thanh bài hát sẽ bị tắt tiếng.
 
@@ -2252,40 +2251,7 @@ Theo mặc định, chỉ có ba chế độ được bao gồm.
 * NVDA bên trái và tất cả ứng dụng khác ở kênh bên phải.
 * NVDA bên phải và tất cả ứng dụng khác ở kênh bên trái.
 
-Lưu ý rằng cần phải chọn ít nhất một chế độ.
-Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
-
-##### Âm lượng các ứng dụng khác {#OtherAppVolume}
-
-Thanh trượt này cho phép bạn điều chỉnh âm lượng của tất cả các ứng dụng hiện đang chạy ngoài NVDA.
-Thiết lập âm lượng này sẽ áp dụng cho tất cả các ứng dụng phát ra âm thanh khác, ngay cả khi chúng khởi động sau khi thiết lập này được thay đổi.
-Âm lượng này cũng có thể được điều khiển thông qua các phím lệnh sau từ mọi nơi:
-
-<!-- KC:beginInclude -->
-
-| Tên |Phím |Mô tả|
-|---|---|---|
-| Tăng âm lượng ứng dụng | `NVDA+alt+pageUp` | Tăng âm lượng tất cả ứng dụng trừ NVDA. |
-| Giảm âm lượng ứng dụng | `NVDA+alt+pageDown` | Giảm âm lượng tất cả ứng dụng trừ NVDA. |
-
-<!-- KC:endInclude -->
-
-Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
-
-##### Tắt âm thanh ứng dụng khác {#MuteApplications}
-
-Hộp kiểm này cho phép bạn tắt tiếng tất cả các ứng dụng ngoại trừ NVDA.
-Thiết lập tắt tiếng này sẽ áp dụng cho tất cả các ứng dụng khác phát ra âm thanh, ngay cả khi chúng khởi động sau khi thiết lập này được thay đổi.
-Các phím lệnh sau đây cũng có thể được sử dụng từ mọi nơi:
-
-<!-- KC:beginInclude -->
-
-| Tên |Phím |Mô tả|
-|---|---|---|
-| Bật / tắt tiếng ứng dụng khác | `NVDA+alt+delete` |  Bật / tắt tiếng tất cả các ứng dụng ngoại trừ NVDA. |
-
-<!-- KC:endInclude -->
-
+Lưu ý rằng cần phải chọn tối thiểu một chế độ.
 Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
 
 #### Hỗ trợ nhìn {#VisionSettings}
