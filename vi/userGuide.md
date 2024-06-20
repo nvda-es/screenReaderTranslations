@@ -249,9 +249,8 @@ Chức năng thật sự của thao tác sẽ không được thực thi khi ở
 |Đi đến thiết lập trước |`NVDA+control+mũi tên trái` |`NVDA+shift+control+mũi tên trái` |Đi đến thiết lập bộ đọc trước của thiết lập hiện tại, sau thiết lập đầu tiên thì sẽ quay về thiết lập cuối cùng|
 |Tăng giá trị cho thiết lập hiện tại |`NVDA+control+mũi tên lên` |`NVDA+shift+control+mũi tên lên` |Tăng giá trị cho thiết lập hiện tại của bộ đọc. Ví dụ, tăng tốc độ, chọn giọng đọc kế tiếp, tăng âm lượng|
 |Tăng thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn |`NVDA+control+pageUp` |`NVDA+shift+control+pageUp` |Tăng giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy tới 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy tới 20%|
-
 |Giảm giá trị cho thiết lập hiện tại |`NVDA+control+mũi tên xuống` |`NVDA+shift+control+mũi tên xuống` |giảm giá trị cho thiết lập hiện tại của bộ đọc. Ví dụ, giảm tốc độ, chọn giọng đọc trước, giảm âm lượng|
-|Giảm thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn |`NVDA+control+pageDown` | `NVDA+shift+control+pageDown` | Giảm giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy lùi 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy lùi đến 20%|
+|Giảm thiết lập hiện tại cho bộ đọc bằng bước nhảy dài hơn |`NVDA+control+pageDown` | `NVDA+shift+control+pageDown` | Giảm giá trị của thiết lập bộ đọc hiện tại bằng bước nhảy dài hơn. Ví dụ: khi đang ở phần thiết lập giọng đọc, nó sẽ nhảy lùi 20 giọng một lần; khi bạn ở các thiết lập dạng thanh trượt (tốc độ, cao độ, v...v...), nó sẽ nhảy lùi đến 20%.|
 
 Cũng có thể đặt giá trị đầu tiên hoặc cuối cùng của thiết lập hiện tại cho bộ đọc bằng cách gán thao tác / phím tắt tùy chỉnh trong [hộp thoại Quản lý các thao tác](#InputGestures), Trong phân loại tiếng nói.
 Điều này có ý nghĩa, ví dụ, khi bạn đang ở thiết lập tốc độ đọc, nó sẽ được thiết lập là 0 hoặc 100.
@@ -1946,7 +1945,7 @@ Hiện tại, có hai chế độ chữ nổi được hỗ trợ, "đi theo con
 
 Khi chọn đi theo con trỏ, màn hình chữ nổi sẽ đi theo con trỏ / dấu nháy hệ thống hoặc đối tượng điều hướng / con trỏ duyệt, tùy vào cái mà chữ nổi đang đi theo.
 
-Khi chọn hiển thị đầu ra giọng đọc, màn hình chữ nổi sẽ hiển thị những gì NVDA đọc, hoặc  sẽ đọc nếu chế độ đọc được thiết lập là "đọc"
+Khi chọn hiển thị đầu ra giọng đọc, màn hình chữ nổi sẽ hiển thị những gì NVDA đọc, hoặc  sẽ đọc nếu chế độ đọc được thiết lập là "đọc".
 
 ##### Mở rộng từ tại vị trí con trỏ theo bảng chữ nổi máy tính được viết đầy đủ {#BrailleSettingsExpandToComputerBraille}
 
@@ -4981,4 +4980,3 @@ Sau đây là những giá trị có thể thiết lập cho khóa nói trên:
 Nếu bạn cần thêm thông tin hoặc trợ giúp liên quan đến NVDA, vui lòng xem [Trang web của NVDA](NVDA_URL).
 Ở đây, bạn có thể tìm thấy thêm nhiều tài liệu khác, cũng như hỗ trợ kỹ thuật và nhiều nguồn khác từ cộng đồng NVDA.
 Trang web này cũng có những thông tin và các nguồn tài liệu liên quan đến việc phát triển NVDA.
-
