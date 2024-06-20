@@ -2283,9 +2283,9 @@ Các phím lệnh sau đây cũng có thể được sử dụng từ mọi nơi
 
 | Tên |Phím |Mô tả|
 |---|---|---|
-| Bật / tắt tiếng ứng dụng khác | ``NVDA+alt+delete`` |  Bật / tắt tiếng tất cả các ứng dụng ngoại trừ NVDA. |
+| Bật / tắt tiếng ứng dụng khác | `NVDA+alt+delete` |  Bật / tắt tiếng tất cả các ứng dụng ngoại trừ NVDA. |
 
-%kc:endInclude
+<!-- KC:endInclude -->
 
 Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
 
@@ -2332,7 +2332,7 @@ Khi các trình hỗ trợ tồn tại các cài đặt có thể thiết lập,
 
 <!-- KC:setting -->
 
-##### Mở cài đặt bàn phím {#toc181}
+##### Mở cài đặt bàn phím {#toc188}
 
 Phím tắt: `NVDA+control+k`
 
@@ -2409,7 +2409,7 @@ Nó được bật mặc định. Do vậy, một số người dùng nhất đ�
 
 <!-- KC:setting -->
 
-##### Mở  thiết lập chuột {#toc194}
+##### Mở  thiết lập chuột {#toc201}
 
 Phím tắt: `NVDA+control+m`
 
@@ -2512,7 +2512,7 @@ Nếu được chọn thì NVDA sẽ lọc bớt một số đối tượng như
 
 <!-- KC:setting -->
 
-##### Mở cài đặt trình bày đối tượng {#toc211}
+##### Mở cài đặt trình bày đối tượng {#toc218}
 
 Phím tắt: `NVDA+control+o`
 
@@ -2555,7 +2555,7 @@ Bỏ chọn mục này nếu bạn không muốn NVDA đọc phần mô tả m�
 
 ##### Cách thông báo thanh tiến độ {#ObjectPresentationProgressBarOutput}
 
-Phím tắt: `NVDA+u`
+Phím tắt: NVDA+u
 
 Cho phép bạn chọn cách thông báo trạng thái của thanh tiến độ.
 
@@ -2613,7 +2613,7 @@ Tùy chọn này có thể hữu ích cho phương thức nhập của tiếng H
 ##### thông báo những thay đổi cho chuỗi dựng sẵn {#InputCompositionReadingStringChanges}
 
 Một số phương thức nhập như Chinese New Phonetic và New ChangJie có chuỗi dựng sẵn.
- Bạn có thể chọn NVDA đọc các ký tự mới được nhập vào chuỗi dựng sẵn.
+Bạn có thể chọn NVDA đọc các ký tự mới được nhập vào chuỗi dựng sẵn.
 Tùy chọn này mặc định được bật.
 Lưu ý, một số phương thức nhập cũ như Chinese ChangJie có thể không dùng các chuỗi dựng sẵn để chứa các ký tự, thay vì vậy, nó sử dụng trực tiếp các chuỗi tổ hợp. Vui lòng xem tùy chọn kế tiếp để cấu hình thông báo chuỗi tổ hợp.
 
@@ -2627,7 +2627,7 @@ Tùy chọn này mặc định được bật.
 
 <!-- KC:setting -->
 
-##### Mở cài đặt chế độ duyệt {#toc229}
+##### Mở cài đặt chế độ duyệt {#toc236}
 
 Phím tắt: `NVDA+control+b`
 
@@ -2680,7 +2680,7 @@ Mặc định, nó không được chọn.
 
 ##### Cấu hình thông báo các thành phần như liên kết và tiêu đề {#BrowseModeLinksAndHeadings}
 
-Vui lòng xem thông tin cấu hình các tùy chọn trong phân loại [Định dạng tài liệu](#DocumentFormattingSettings) trong hộp thoại cấu hình của NVDA để thiết lập các tùy chọn thông báo cho các thành phần như liên kết, tiêu đề, bảng v...v...
+Vui lòng xem thông tin cấu hình các tùy chọn trong phân loại [Định dạng tài liệu](#DocumentFormattingSettings) trong hộp thoại [Cấu hình NVDA](#NVDASettings) để thiết lập các tùy chọn thông báo cho các thành phần như liên kết, tiêu đề, bảng v...v...
 
 ##### Tự chuyển sang chế độ focus khi focus thay đổi {#BrowseModeSettingsAutoPassThroughOnFocusChange}
 
@@ -2707,7 +2707,7 @@ Trường hợp này, NVDA sẽ yêu cầu Windows phát một âm thanh mặc �
 
 ##### Tự đưa focus hệ thống đến thành phần có thể có focus {#BrowseModeSettingsAutoFocusFocusableElements}
 
-Phím tắt: `NVDA+8`
+Phím tắt: NVDA+8
 
 Mặc định không được bật. Tùy chọn này cho phép bạn chọn việc  focus hệ thống sẽ tự được đưa đến thành phần nào có thể nhận con trỏ này(liên kết, biểu mẫu, v...v...) khi duyệt nội dung với dấu nháy chế độ duyệt.
 Để nguyên trạng thái mặc định của tùy chọn này sẽ không tự đưa focus đến các thành phần có thể có focus khi chúng được chọn với dấu nháy chế độ duyệt.
@@ -2719,7 +2719,7 @@ Bật tùy chọn này có thể cải thiện hỗ trợ cho vài trang web vì
 
 <!-- KC:setting -->
 
-##### Mở cài đặt định dạng tài liệu {#toc243}
+##### Mở cài đặt định dạng tài liệu {#toc250}
 
 Phím tắt: `NVDA+control+d`
 
@@ -2740,7 +2740,7 @@ Bạn có thể chọn các mục sau:
   * Màu chữ
 * Thông tin tài liệu
   * Chú thích
-  -  Dấu trang
+  *  Dấu trang
   * Các thay đổi bản thảo
   * Lỗi chính tả
 * Trang và Phân cách
@@ -2766,7 +2766,7 @@ Bạn có thể chọn các mục sau:
   * cột mốc
   * Bài viết
   * Khung
-  - Nhóm hình ảnh và phụ đề
+  * Nhóm hình ảnh và phụ đề
   * Có thể click
 
 Để bật / tắt thiết lập này ở bất cứ đâu, hãy gán thao tác/phím tắt cho nó trong hộp thoại [Quản lý thao tác](#InputGestures).
@@ -2904,9 +2904,7 @@ Việc triển khai UI automation của Microsoft Excel đang thay đổi, và c
 | . {.hideHeaderRow} |.|
 |---|---|
 | Tùy chọn |Mặc định (Bật), Tắt, Bật|
-|---|---|
 | Mặc định |Bật|
-|---|---|
 
 Khi tùy chọn này được bật, NVDA sẽ vẫn phản hồi khi có quá nhiều sự kiện Tự động hóa giao diện người dùng, ví dụ: số lượng lớn văn bản trong một cửa sổ terminal.
 Sau khi thay đổi tùy chọn, bạn cần phải khởi động lại NVDA để các thay đổi có hiệu lực.
