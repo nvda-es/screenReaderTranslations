@@ -4894,7 +4894,7 @@ Chế độ bảo vệ sẽ không cho phép thay đổi cấu hình NVDA, vậy
 
 ### Các Màn Hình Bảo Vệ {#SecureScreens}
 
-NVDA chạy ở [chế độ bảo vệ](#SecureMode) khi được gọi chạy ở các màn hình bảo vệ, cho đến khi `serviceDebug` [tham số hệ thống mở rộng](#SystemWideParameters) `serviceDebug` được bật.
+NVDA chạy ở [chế độ bảo vệ](#SecureMode) khi được gọi chạy ở các màn hình bảo vệ, cho đến khi [tham số hệ thống mở rộng](#SystemWideParameters) `serviceDebug` được bật.
 
 Khi chạy ở một màn hình bảo vệ, NVDA sử dụng một hồ sơ hệ thống cho các tùy chọn.
 Có thể chép các tùy chọn của người dùng cho NVDA để [dùng trong các màn hình bảo vệ](#GeneralSettingsCopySettings).
@@ -4932,8 +4932,8 @@ Những tham số này sẽ nằm sau phần tùy chọn, phân cách với tùy
 | . {.hideHeaderRow} |.|
 |---|---|
 |`nvda -l 10` |yêu cầu NVDA chạy với cấp độ log là dò lỗi.|
-|`nvda --log-file=c:\nvda.log` |yêu cầu NVDA  ghi log vào tập tin c:\nvda.log|
-|`nvda --log-level=20 -f c:\nvda.log` |Yêu cầu NVDA chạy với cấp độ log là thông tin và ghi log vào c:\nvda.log|
+|`nvda --log-file=c:\nvda.log` |Yêu cầu NVDA  ghi log vào tập tin `c:\nvda.log`|
+|`nvda --log-level=20 -f c:\nvda.log` |Yêu cầu NVDA chạy với cấp độ log là thông tin và ghi log vào `c:\nvda.lo`g|
 
 Sau đây là các tùy chọn dòng lệnh cho NVDA:
 
@@ -4949,16 +4949,16 @@ Sau đây là các tùy chọn dòng lệnh cho NVDA:
 |`-m` |`--minimal` |Không âm thanh, không giao diện, không thông báo bắt đầu, v...v...|
 |`-s` |`--secure` |Khởi động NVDA trong [Chế Độ bảo vệ](#SecureMode)|
 |Không có |`--disable-addons` |Các add-on không có hiệu lực|
-|Không có |`--debug-logging` |Bật cấp độ bản ghi dò lỗi cho lần chạy này. Thiết lập này được ghi đè lên các cấp độ bản ghi khác ( --loglevel, -l) tham số được cung cấp, bao gồm tùy chọn tắt log.|
-|Không có |`--no-logging` |Tắt log hoàn toàn khi dùng NVDA. Thiết lập này có thể bị ghi đè nếu một cấp độ log ( --loglevel, -l) được chỉ định từ dòng lệnh hoặc bản ghi dò lỗi đã được bật.|
+|Không có |`--debug-logging` |Bật cấp độ bản ghi dò lỗi cho lần chạy này. Thiết lập này được ghi đè lên các cấp độ bản ghi khác (`--loglevel`, `-l`) tham số được cung cấp, bao gồm tùy chọn tắt log.|
+|Không có |`--no-logging` |Tắt log hoàn toàn khi dùng NVDA. Thiết lập này có thể bị ghi đè nếu một cấp độ log (`--loglevel`, `-l`) được chỉ định từ dòng lệnh hoặc bản ghi dò lỗi đã được bật.|
 |Không có |`--no-sr-flag` |Không thay đổi flag trình đọc màn hình hệ thống toàn cục|
 |Không có |`--install` |Cài NVDA (cài một bản mới của NVDA)|
 |Không có |`--install-silent` |Cài đặt NVDA ở chế độ im lặng (không chạy lên sau khi cài đặt)|
 |Không có |`--enable-start-on-logon=True|False` |trong khi cài đặt, cho NVDA [chạy trong khi đăng nhập Windows](#StartAtWindowsLogon)|
-|Không có |`--copy-portable-config` |Trong khi cài đặt, chép cấu hình bản chạy trực tiếp từ đường dẫn được cung cấp (~~config-path, -c) vào tài khoản người dùng hiện tại|
+|Không có |`--copy-portable-config` |Trong khi cài đặt, chép cấu hình bản chạy trực tiếp từ đường dẫn được cung cấp (`--config-path`, `-c`) vào tài khoản người dùng hiện tại|
 |Không có |`--create-portable` |Tạo bản NVDA chạy trực tiếp (chạy lên sau khi tạo). yêu cầu khai báo đường dẫn cho bản chạy trực tiếp|
-|Không có |`--copy-portable-config`--create-portable-silent`--copy-portable-config` |Tạo bản NVDA chạy trực tiếp ở chế độ im lặng (không chạy lên sau khi cài). yêu cầu khai báo đường dẫn cho bản chạy trực tiếp|
-|Không có |`--copy-portable-config`--portable-path=PORTABLEPATH`--copy-portable-config` |đường dẫn để tạo bản chạy trực tiếp|
+|Không có |`--create-portable` |Tạo bản NVDA chạy trực tiếp (chạy lên sau khi cài). yêu cầu khai báo đường dẫn `--portable-path` cho bản chạy trực tiếp|
+|Không có |`--portable-path=PORTABLEPATH` |đường dẫn để tạo bản chạy trực tiếp|
 
 ### Các Tham Số Mở Rộng Hệ Thống {#SystemWideParameters}
 
