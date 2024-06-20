@@ -2281,7 +2281,8 @@ Các phím lệnh sau đây cũng có thể được sử dụng từ mọi nơi
 
 <!-- KC:beginInclude -->
 
-|| Tên | Phím | Mô tả |
+| Tên |Phím |Mô tả|
+|---|---|---|
 | Bật / tắt tiếng ứng dụng khác | ``NVDA+alt+delete`` |  Bật / tắt tiếng tất cả các ứng dụng ngoại trừ NVDA. |
 
 %kc:endInclude
