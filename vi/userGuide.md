@@ -2256,13 +2256,14 @@ Theo mặc định, chỉ có ba chế độ được bao gồm.
 Lưu ý rằng cần phải chọn ít nhất một chế độ.
 Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
 
-#### Âm lượng các ứng dụng khác {#OtherAppVolume}
+###### Âm lượng các ứng dụng khác {#OtherAppVolume}
 
 Thanh trượt này cho phép bạn điều chỉnh âm lượng của tất cả các ứng dụng hiện đang chạy ngoài NVDA.
 Thiết lập âm lượng này sẽ áp dụng cho tất cả các ứng dụng phát ra âm thanh khác, ngay cả khi chúng khởi động sau khi thiết lập này được thay đổi.
 Âm lượng này cũng có thể được điều khiển thông qua các phím lệnh sau từ mọi nơi:
 
-%kc:beginInclude
+<!-- KC:beginInclude -->
+
 || Tên | Phím | Mô tả |
 | Tăng âm lượng ứng dụng | ``NVDA+alt+pageUp`` | Tăng âm lượng tất cả ứng dụng trừ NVDA. |
 | Giảm âm lượng ứng dụng | ``NVDA+alt+pageDown`` | Giảm âm lượng tất cả ứng dụng trừ NVDA. |
