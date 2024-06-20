@@ -2958,7 +2958,7 @@ Hiện có các tùy chọn sau:
   Điều này hữu ích cho các chú thích trên web.
   Lưu ý:
   * Có nhiều nguồn cho `accDescription`, một số có ngữ nghĩa hỗn hợp hoặc không đáng tin cậy.
-+    Trong lịch sử, nó không phân biệt được các nguồn của `accDescription`, thường thì nó không được đọc lên do ngữ nghĩa hạn hẹp.
+    Trong lịch sử, nó không phân biệt được các nguồn của `accDescription`, thường thì nó không được đọc lên do ngữ nghĩa hạn hẹp.
   * Tùy chọn này đang được phát triển rất sớm, dựa trên những tính năng chưa có của trình duyệt.
   * Mong đợi nó sẽ hoạt động với Chromium 92.0.4479.0+
 
@@ -3007,8 +3007,7 @@ Tuy nhiên, trong terminal, khi chèn hay xóa một kí tự ở giữa một d
 |Các tùy chọn |Mặc định (Diffing), Diffing, Các thông báo UIA|
 |Mặc định |Diffing|
 
-  :
-Tùy chọn này là để NVDA xác định những văn bản "mới" (và như vậy thì sẽ nói cái gì khi "thông báo thay đổi nội dung động" được bật) trong Windows Terminal và WPF các điều khiển Windows Terminal được dùng trong Visual Studio 2022.
+  Tùy chọn này là để NVDA xác định những văn bản "mới" (và như vậy thì sẽ nói cái gì khi "thông báo thay đổi nội dung động" được bật) trong Windows Terminal và WPF các điều khiển Windows Terminal được dùng trong Visual Studio 2022.
 Nó không ảnh hưởng đến Windows Console (`conhost.exe`).
 Hộp xổ Đọc văn bản mới trong Windows Terminal có ba tùy chọn:
 
