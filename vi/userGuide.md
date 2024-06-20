@@ -4956,7 +4956,7 @@ Sau đây là các tùy chọn dòng lệnh cho NVDA:
 |Không có |`--install-silent` |Cài đặt NVDA ở chế độ im lặng (không chạy lên sau khi cài đặt)|
 |Không có |`--enable-start-on-logon=True|False` |trong khi cài đặt, cho NVDA [chạy trong khi đăng nhập Windows](#StartAtWindowsLogon)|
 |Không có |`--copy-portable-config` |Trong khi cài đặt, chép cấu hình bản chạy trực tiếp từ đường dẫn được cung cấp (`--config-path`, `-c`) vào tài khoản người dùng hiện tại|
-|Không có |`--create-portable` |Tạo bản NVDA chạy trực tiếp (chạy lên sau khi tạo). yêu cầu khai báo đường dẫn cho bản chạy trực tiếp|
+|Không có |`--create-portable` |Tạo bản NVDA chạy trực tiếp (chạy lên sau khi tạo). Yêu cầu khai báo đường dẫn `--portable-path` cho bản chạy trực tiếp|
 |Không có |`--create-portable` |Tạo bản NVDA chạy trực tiếp (chạy lên sau khi cài). yêu cầu khai báo đường dẫn `--portable-path` cho bản chạy trực tiếp|
 |Không có |`--portable-path=PORTABLEPATH` |đường dẫn để tạo bản chạy trực tiếp|
 
