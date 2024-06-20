@@ -1052,7 +1052,7 @@ Tuy nhiên, đối với những trường hợp bạn muốn sao chép toàn b�
 
 NVDA có thể đọc và duyệt các nội dung toán học trên web và trong các ứng dụng khác, cung cấp khả năng truy cập bằng cả tiếng nói và chữ nổi.
 Tuy nhiên, để có thể đọc và tương tác với các nội dung toán học, trước tiên, bạn cần cài một thành phần hỗ trợ toán học cho NVDA.
-Có một vài add-on trên cửa hàng add-on của NVDA cung cấp hỗ trợ cho toán học, bao gồm [MathCAT NVDA add-on](https://nsoiffer.github.io/MathCAT/) và [Access8Math](https://github.com/tsengwoody/Access8Math). 
+Có một vài add-on trên cửa hàng add-on của NVDA cung cấp hỗ trợ cho toán học, bao gồm [MathCAT NVDA add-on](https://nsoiffer.github.io/MathCAT/) và [Access8Math](https://github.com/tsengwoody/Access8Math).
 Vui lòng xem phần [Cửa hàng Add-on](#AddonsManager) để biết cách tìm và cài đặt các add-on hiện hành trong NVDA.
 NVDA cũng có thể sử dụng phiên bản cũ của phần mềm [MathPlayer](https://info.wiris.com/mathplayer-info) từ Wiris nếu có cài trên máy bạn, vì phần mềm này không còn được duy trì nữa.
 
@@ -1121,7 +1121,7 @@ Mặc dù việc dùng một trong những add-on NVDA  mới hơn để đọc 
 Ví dụ, MathPlayer có thể hỗ trợ một ngôn ngữ hay mã chữ nổi cụ thể nào đó chưa được hỗ trợ trong các add-on nói trên.
 MathPlayer được cung cấp miễn phí từ trang web của Wiris.
 [Tải về MathPlayer](https://downloads.wiris.com/mathplayer/MathPlayerSetup.exe).
-Sau khi cài đặt MathPlayer, bạn cần phải khởi động lại NVDA. 
+Sau khi cài đặt MathPlayer, bạn cần phải khởi động lại NVDA.
 Xin lưu ý rằng những thông tin về MathPlayer có thể nói là chỉ dành cho các trình duyệt cũ như Internet Explorer 8.
 Điều này chỉ đề cập việc dùng MathPlayer để hiển thị nội dung toán học một cách trực quan và có thể bị bỏ qua bởi những ai chỉ dùng nó để đọc hoặc di chuyển trong nội dung toán học với NVDA.
 
@@ -1189,7 +1189,7 @@ Bạn có thể cấu hình màn hình nổi với phân loại [Chữ nổi](#B
 |tv |tree view (cây thư mục)|
 |tvbtn |tree view button (nút cây thư mục)|
 |tvitem |tree view item (thành phần trong cây thư mục)|
-|lv N |thành phần trong cây thư mục có cấp độ N||
+|lv N |thành phần trong cây thư mục có cấp độ N|
 |wnd |window (cửa sổ)|
 |⠤⠤⠤⠤⠤ |separator (phân cách)|
 |mrkd |marked content (nội dung được đánh dấu)|
@@ -2200,18 +2200,6 @@ Thanh trượt này cho phép bạn điều chỉnh âm lượng cho âm thanh v
 Thiết lập này chỉ có tác dụng khi tắt "Âm lượng âm thanh NVDA đi theo âm lượng giọng đọc".
 Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
 
-##### Thời gian giữ cho thiết bị âm thanh hoạt động sau khi đọc {#AudioAwakeTime}
-
-Hộp chỉnh sửa này chỉ định thời gian NVDA giữ cho thiết bị âm thanh hoạt động sau khi đã đọc xong.
-Điều này cho phép NVDA ngăn chặn một số lỗi phát âm nhất định như bị mất các phần của từ.
-Điều này có thể xảy ra do các thiết bị âm thanh (đặc biệt là Bluetooth và thiết bị không dây) chuyển sang chế độ chờ.
-+Điều này cũng có thể hữu ích trong các trường hợp khác, như là chạy NVDA trên máy ảo (ví dụ như Citrix Virtual Desktop), hoặc trên một số máy tính xách tay nhất định.
-
-Giá trị thấp hơn có thể khiến âm thanh bị ngắt thường xuyên hơn vì thiết bị có thể chuyển sang chế độ chờ quá sớm, khiến phần bắt đầu của phần sẽ đọc tiếp theo bị cắt bớt.
-Việc đặt giá trị quá cao có thể khiến pin của thiết bị đầu ra âm thanh xả nhanh hơn vì thiết bị này vẫn hoạt động lâu hơn trong khi không có âm thanh nào được gửi đi.
-
-Bạn có thể đặt thời gian là 0 để tắt tính năng này.
-
 ##### Chia âm thanh {#SelectSoundSplitMode}
 
 Tính năng chia âm thanh cho phép người dùng sử dụng các thiết bị đầu ra âm thanh nổi của họ, chẳng hạn như tai nghe và loa.
@@ -2230,7 +2218,7 @@ Theo mặc định, lệnh này sẽ chuyển đổi giữa các chế độ sau
 
 * Tắt chia âm thanh: cả NVDA và các ứng dụng khác đều cho âm thanh sang cả kênh trái và phải.
 * NVDA bên trái và các ứng dụng bên phải: NVDA sẽ đọc ở kênh bên trái, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên phải.
-* NVDA bên phải và các ứng dụng bên trái: NVDA sẽ đọc ở kênh bên phải, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên trái.
+* NVDA bên trái và các ứng dụng ở hai kênh: NVDA sẽ đọc ở kênh trái, trong khi các ứng dụng khác sẽ phát âm thanh ở cả kênh trái và phải.
 
 Có nhiều chế độ chia âm thanh nâng cao hơn trong hộp xổ cài đặt NVDA.
 Xin lưu ý rằng tính năng chia âm thanh không hoạt động như một bộ trộn (mixer).
@@ -2247,12 +2235,24 @@ Danh sách chọn bằng hộp kiểm này cho phép chọn chế độ phân ch
 Các chế độ không được chọn sẽ bị loại bỏ.
 Theo mặc định, chỉ có ba chế độ được bao gồm.
 
-* Tắt chia âm thanh: cả NVDA và các ứng dụng đều phát âm thanh ở cả kênh trái và phải.
-* NVDA bên trái và tất cả ứng dụng khác ở kênh bên phải.
-* NVDA bên phải và tất cả ứng dụng khác ở kênh bên trái.
+* Tắt chia âm thanh.
+* NVDA bên trái và các ứng dụng bên phải.
+* NVDA bên trái và các ứng dụng ở hai kênh.
 
 Lưu ý rằng cần phải chọn tối thiểu một chế độ.
 Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
+
+##### Thời gian giữ cho thiết bị âm thanh hoạt động sau khi đọc {#AudioAwakeTime}
+
+Hộp chỉnh sửa này chỉ định thời gian NVDA giữ cho thiết bị âm thanh hoạt động sau khi ngừng đọc.
+Điều này cho phép NVDA ngăn chặn một số lỗi phát âm nhất định như bị mất các phần của từ.
+Điều này có thể xảy ra do các thiết bị âm thanh (đặc biệt là Bluetooth và thiết bị không dây) chuyển sang chế độ chờ.
+Điều này cũng có thể hữu ích trong các trường hợp khác, như là chạy NVDA trên máy ảo (ví dụ như Citrix Virtual Desktop), hoặc trên một số máy tính xách tay nhất định.
+
+Giá trị thấp hơn có thể khiến âm thanh bị ngắt thường xuyên hơn vì thiết bị có thể chuyển sang chế độ chờ quá sớm, khiến phần bắt đầu của phần sẽ đọc tiếp theo bị cắt bớt.
+Việc đặt giá trị quá cao có thể khiến pin của thiết bị đầu ra âm thanh xả nhanh hơn vì thiết bị này vẫn hoạt động lâu hơn trong khi không có âm thanh nào được gửi đi.
+
+Bạn có thể đặt thời gian là 0 để tắt tính năng này.
 
 #### Hỗ trợ nhìn {#VisionSettings}
 
@@ -4487,12 +4487,12 @@ Màn hình SuperBraille không có bàn phím nhập liệu và nút cuộn. Vì
 
 ### Các màn hình Eurobraille {#Eurobraille}
 
-Các màn hình b.book, b.note, Esys, Esytime và Iris từ Eurobraille đã được hỗ trợ bởi NVDA.  
-Đây là những thiết bị có bàn phím chữ nổi với 10 phím. 
+Các màn hình b.book, b.note, Esys, Esytime và Iris từ Eurobraille đã được hỗ trợ bởi NVDA.
+Đây là những thiết bị có bàn phím chữ nổi với 10 phím.
 Vui lòng xem tài liệu của màn hình để biết vị trí các phím..
 Có hai phím giống như khoảng trắng, phím bên trái tương ứng với phím xóa và phím bên phải là khoảng trắng.
 
-Các thiết bị này được kết nối thông qua USB và có một bàn phím USB độc lập. 
+Các thiết bị này được kết nối thông qua USB và có một bàn phím USB độc lập.
 Có thể bật hoặc tắt bàn phím này bằng cách dùng thao tác / phím tắt để bật / tắt "mô phỏng bàn phím HID".
 Các chức năng của bàn phím chữ nổi được mô tả dưới đây là để dùng khi tắt "mô phỏng bàn phím HID".
 
