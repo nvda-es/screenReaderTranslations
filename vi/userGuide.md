@@ -2266,20 +2266,21 @@ Thiết lập âm lượng này sẽ áp dụng cho tất cả các ứng dụng
 
 | Tên |Phím |Mô tả|
 |---|---|---|
-| Tăng âm lượng ứng dụng | ``NVDA+alt+pageUp`` | Tăng âm lượng tất cả ứng dụng trừ NVDA. |
-| Giảm âm lượng ứng dụng | ``NVDA+alt+pageDown`` | Giảm âm lượng tất cả ứng dụng trừ NVDA. |
+| Tăng âm lượng ứng dụng | `NVDA+alt+pageUp` | Tăng âm lượng tất cả ứng dụng trừ NVDA. |
+| Giảm âm lượng ứng dụng | `NVDA+alt+pageDown` | Giảm âm lượng tất cả ứng dụng trừ NVDA. |
 
-%kc:endInclude
+<!-- KC:endInclude -->
 
 Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
 
-#### Tắt âm thanh ứng dụng khác {#MuteApplications}
+##### Tắt âm thanh ứng dụng khác {#MuteApplications}
 
 Hộp kiểm này cho phép bạn tắt tiếng tất cả các ứng dụng ngoại trừ NVDA.
 Thiết lập tắt tiếng này sẽ áp dụng cho tất cả các ứng dụng khác phát ra âm thanh, ngay cả khi chúng khởi động sau khi thiết lập này được thay đổi.
 Các phím lệnh sau đây cũng có thể được sử dụng từ mọi nơi:
 
-%kc:beginInclude
+<!-- KC:beginInclude -->
+
 || Tên | Phím | Mô tả |
 | Bật / tắt tiếng ứng dụng khác | ``NVDA+alt+delete`` |  Bật / tắt tiếng tất cả các ứng dụng ngoại trừ NVDA. |
 
