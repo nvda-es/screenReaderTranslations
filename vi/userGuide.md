@@ -3007,7 +3007,7 @@ Tuy nhiên, trong terminal, khi chèn hay xóa một kí tự ở giữa một d
 |Các tùy chọn |Mặc định (Diffing), Diffing, Các thông báo UIA|
 |Mặc định |Diffing|
 
-  Tùy chọn này là để NVDA xác định những văn bản "mới" (và như vậy thì sẽ nói cái gì khi "thông báo thay đổi nội dung động" được bật) trong Windows Terminal và WPF các điều khiển Windows Terminal được dùng trong Visual Studio 2022.
+Tùy chọn này là để NVDA xác định những văn bản "mới" (và như vậy thì sẽ nói cái gì khi "thông báo thay đổi nội dung động" được bật) trong Windows Terminal và WPF các điều khiển Windows Terminal được dùng trong Visual Studio 2022.
 Nó không ảnh hưởng đến Windows Console (`conhost.exe`).
 Hộp xổ Đọc văn bản mới trong Windows Terminal có ba tùy chọn:
 
@@ -3027,8 +3027,8 @@ Tính năng này mặc định được bật trên NVDA 2021.1.
 
 ##### Thời gian chờ di chuyển dấu nháy (ms) {#AdvancedSettingsCaretMoveTimeout}
 
- Tùy chọn này cho phép bạn cấu hình thời gian tính bằng mili giây mà NVDA sẽ chờ dấu náy (điểm chèn) di chuyển trong các điều khiển có thể nhập.
- Nếu bạn nhận thấy rằng có vẻ như NVDA theo dõi dấu náy không chính xác, ví dụ: nó có vẻ như luôn đứng ở một kí tự đằng sau hoặc lặp lại các dòng, có thể bạn sẽ phải thử tăng giá trị này.
+Tùy chọn này cho phép bạn cấu hình thời gian tính bằng mili giây mà NVDA sẽ chờ dấu náy (điểm chèn) di chuyển trong các điều khiển có thể nhập.
+Nếu bạn nhận thấy rằng có vẻ như NVDA theo dõi dấu náy không chính xác, ví dụ: nó có vẻ như luôn đứng ở một kí tự đằng sau hoặc lặp lại các dòng, có thể bạn sẽ phải thử tăng giá trị này.
 
 ##### Thông báo độ trong suốt của màu {#ReportTransparentColors}
 
@@ -3054,21 +3054,21 @@ Tắt WASAPI sẽ vô hiệu hóa các tùy chọn sau:
 
 ##### Kiểu bản ghi dò lỗi {#AdvancedSettingsDebugLoggingCategories}
 
- Các hộp kiểm trong danh sách này cho phép bạn bật một số kiểu thông điệp dò lỗi nhất định trong log của NVDA.
- Kết quả của việc ghi các thông điệp này có thể làm giảm hiệu năng vận hành và tạo các tập tin log dung lượng lớn.
- Chỉ nên bật một trong số chúng nếu được  hướng dẫn cụ thể bởi một lập trình viên NVDA. Ví dụ: khi tìm hiểu xem tại sao một màn hình nổi không hoạt động như mong muốn.
+Các hộp kiểm trong danh sách này cho phép bạn bật một số kiểu thông điệp dò lỗi nhất định trong log của NVDA.
+Kết quả của việc ghi các thông điệp này có thể làm giảm hiệu năng vận hành và tạo các tập tin log dung lượng lớn.
+Chỉ nên bật một trong số chúng nếu được  hướng dẫn cụ thể bởi một lập trình viên NVDA. Ví dụ: khi tìm hiểu xem tại sao một màn hình nổi không hoạt động như mong muốn.
 
 ##### Phát âm thanh báo lỗi ghi vào log {#PlayErrorSound}
 
- Tùy chọn này cho phép bạn chỉ định việc NVDA sẽ phát âm báo lỗi trong trường hợp có lỗi được ghi vào log.
+Tùy chọn này cho phép bạn chỉ định việc NVDA sẽ phát âm báo lỗi trong trường hợp có lỗi được ghi vào log.
 Việc chọn chỉ dùng cho các phiên bản thử nghiệm (mặc định) là để NVDA chỉ phát âm thanh báo lỗi nếu phiên bản NVDA hiện tại là bản thử nghiệm (alpha, beta hoặc chạy từ mã nguồn).
 Chọn Có để cho phép phát âm báo lỗi, bất kể bạn đang dùng phiên bản NVDA nào.
 
-#### Biểu thức phổ thông cho lệnh di chuyển nhanh qua đoạn văn bản {#TextParagraphRegexEdit}
+##### Biểu thức phổ thông cho lệnh di chuyển nhanh qua đoạn văn bản {#TextParagraphRegexEdit}
 
 Trường này cho phép người dùng tùy chỉnh biểu thức phổ thông để phát hiện các đoạn văn bản ở chế độ duyệt.
 [lệnh di chuyển qua đoạn văn bản](#TextNavigationCommand) tìm kiếm các đoạn khớp với biểu thức phổ thông này.
-+
+
 ### Các thiết lập khác {#MiscSettings}
 
 Bên cạnh  hộp thoại [cấu hình NVDA](#NVDASettings), trình đơn tùy chọn trong thực đơn của NVDA còn có vài thành phần được liệt kê dưới đây.
@@ -3174,8 +3174,8 @@ Lưu ý:
 
 * Các phím mô phỏng phải được gán  thao tác để duy trì khi lưu / đóng hộp thoại.
 * Một thao tác với các phím bổ trợ có thể không gán được vào thao tác mô phỏng mà không có phím bổ trợ.
-Ví dụ: thiết lập đầu vào mô phỏng 'a' và chọn thao tác là 'ctrl+m', có thể cho kết quả
-trong ứng dụng nhận lệnh 'ctrl+a'.
+Ví dụ: thiết lập đầu vào mô phỏng `a` và chọn thao tác là `ctrl+m`, có thể cho kết quả
+trong ứng dụng nhận lệnh `ctrl+a`.
 
 Khi bạn hoàn tất, chọn nút Đồng ý để lưu lại các thay đổi hoặc chọn nút Hủy bỏ để bỏ qua các thay đổi đó.
 
@@ -3517,7 +3517,7 @@ Phải giữ chuột đến khi ô chữ nổi chuyển sang màu xanh lá.
 Python console được tìm thấy trong trình đơn công cụ của trình đơn NVDA, là một công cụ phát triển, hữu dụng trong việc sửa lỗi, kiểm tra tổng quan cấu trúc lõi của NVDA hay kiểm tra cấp bậc của tính tiếp cận cho một ứng dụng.
 Để biết thêm thông tin chi tiết, xin xem tại phần  [Phát triển NVDA](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html).
 
-### Cửa hàng Add-on {#toc306}
+### Cửa hàng Add-on {#toc314}
 
 Mục này sẽ mở [Cửa Hàng Add-on của NVDA](#AddonsManager).
 Để có thêm thông tin, đọc trong phần chuyên sâu: [Add-on và Cửa Hàng Add-on](#AddonsManager).
@@ -3582,7 +3582,7 @@ eSpeak NG hỗ trợ hơn  43 ngôn ngữ khác nhau.
 
 Cũng có khá nhiều biến thể để bạn lựa chọn.
 
-### Microsoft Speech API phiên bản 4 (SAPI 4) {#toc312}
+### Microsoft Speech API phiên bản 4 (SAPI 4) {#SAPI4}
 
 SAPI 4 là một chuẩn cũ của các bộ tổng hợp tiếng nói của Microsoft.
 NVDA vẫn còn hỗ trợ cho bộ tổng hợp âm này.
@@ -3966,7 +3966,7 @@ Các thiết bị thêm vào sau đây cũng được hỗ trợ, và không yê
 Sau đây là danh sách các phím được gán của mẫu màn hình nổi này trong NVDA.
 Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết các phím tương ứng.
 
-#### Các phím được gán cho tất cả sản phẩm {#toc326}
+#### Các phím được gán cho tất cả sản phẩm {#toc334}
 
 <!-- KC:beginInclude -->
 
@@ -3995,7 +3995,7 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 
 <!-- KC:endInclude -->
 
-#### Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80 {#toc327}
+#### Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80 {#toc335}
 
 <!-- KC:beginInclude -->
 
@@ -4007,7 +4007,7 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 
 <!-- KC:endInclude -->
 
-#### Phím gán cho Brailliant BI 14 {#toc328}
+#### Phím gán cho Brailliant BI 14 {#toc336}
 
 <!-- KC:beginInclude -->
 
@@ -4062,19 +4062,19 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 |Phím control+shift+mũi tên trái |dot2+dot8+space+f1|
 |Phím control+mũi tên trái |dot2+space|
 |Phím shift+alt+mũi tên trái |dot2+dot7+f1|
-|Phím alt+mũi tên trái | ``dot2+dot7+space`` |
+|`Phím alt+mũi tên trái` | `dot2+dot7+space` |
 |Phím mũi tên phải |dot6+space, leftSideRightArrow|
 |Phím control+shift+mũi tên phải |dot5+dot8+space+f1|
 |Phím control+mũi tên phải |dot5+space|
 |Phím shift+alt+mũi tên phải |dot5+dot7+f1|
-|Phím alt+mũi tên phải | ``dot5+dot7+space`` |
+|`Phím alt+mũi tên phải` |`dot5+dot7+space` |
 |Phím trang trước |dot1+dot2+dot6+space|
 |Phím control+trang trước |dot1+dot2+dot6+dot8+space|
 |Phím mũi tên lên |dot1+space, leftSideUpArrow|
 |Phím control+mũi tên lên |dot2+dot3+space|
 |Phím control+shift+mũi tên lên |dot2+dot3+dot8+space+f1|
 |Phím shift+alt+mũi tên lên |dot2+dot3+dot7+f1|
-|Phím alt+mũi tên lên | ``dot2+dot3+dot7+space`` |
+|`Phím alt+mũi tên lên` |`dot2+dot3+dot7+space`|
 |Phím shift+mũi tên lên |leftSideScrollDown+space|
 |Phím trang kế |dot3+dot4+dot5+space|
 |Phím control+trang kế |dot3+dot4+dot5+dot8+space|
@@ -4082,7 +4082,7 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 |Phím control+shift+mũi tên xuống | dot5+dot6+dot8+space+f1|
 |Phím control+mũi tên xuống |dot5+dot6+space|
 |Phím shift+alt+mũi tên xuống |dot5+dot6+dot7+f1|
-|Phím alt+mũi tên xuống | ``dot5+dot6+dot7+space`` |
+|`Phím alt+mũi tên xuống` |`dot5+dot6+dot7+space`|
 |Phím shift+mũi tên xuống |space+rightSideScrollDown|
 |Phím escape |dot1+dot5+space, f4, brailleedge:f1|
 |Phím delete |dot1+dot3+dot5+space|
@@ -4273,7 +4273,7 @@ Cả hai phím bên trong đều được gán cho phím khoảng trắng.
 |Phím control+escape |space with dot 1 2 3 4 5 6|
 |Phím tab |space with dot 3 7|
 
-<!-- KC:endInclude  -->
+<!-- KC:endInclude -->
 
 ### Các Mẫu Papenmeier Braille BRAILLEX Cũ {#PapenmeierOld}
 
@@ -4436,7 +4436,7 @@ Sau đây là các phím được gán cho BrailleNote QT khi không ở trong c
 |Trình đơn NvDA |read+n|
 |Phím mũi tên lên |upArrow|
 |Phím mũi tên xuống |downArrow|
-|Phím mũi tên trái |leftArrow||
+|Phím mũi tên trái |leftArrow|
 |Phím mũi tên phải |rightArrow|
 |Phím trang trước |function+upArrow|
 |Phím trang sau |function+downArrow|
@@ -4739,11 +4739,11 @@ Vui lòng xem [Danh sách phím kết hợp của BRLTTY](http://mielke.cc/brltt
 
 | Tên |Lệnh BRLTTY|
 |---|---|
-|Cuộn về trước |fwinlt (về trái một cửa sổ)|
-|Cuộn tới |fwinrt (qua phải một cửa sổ)|
-|Chuyển về dòng trước |lnup (lên một dòng)|
-|Chuyển đến dòng kế |lndn (đi xuống một dòng)|
-|Rút về ô chữ nổi |route (đưa con trỏ về ký tự hiện tại)|
+|Cuộn về trước |`fwinlt` (về trái một cửa sổ)|
+|Cuộn tới |`fwinrt` (qua phải một cửa sổ)|
+|Chuyển về dòng trước |`lnup` (lên một dòng)|
+|Chuyển đến dòng kế |`lndn` (đi xuống một dòng)|
+|Rút về ô chữ nổi |`route` (đưa con trỏ về ký tự hiện tại)|
 |Bật / tắt trợ giúp nhập |`learn` (bật / tắt chế độ trợ giúp nhập)|
 |Mở trình đơn NVDA |`prefmenu` (tắt / mởtrình đơn tùy chỉnh)|
 |Phục hồi cấu hình |`prefload` (phục hồi tùy chỉnh từ ổ đĩa)|
@@ -4836,7 +4836,7 @@ Sau đây là các phím hiện được gán cho những màn hình nổi nói 
 |---|---|
 |Cuộn màn hình nổi về trước |pan left hoặc rocker up|
 |Cuộn màn hình nổi về sau |pan right hoặc rocker down|
-|Đưa về ô chữ nổi |routing set 1||
+|Đưa về ô chữ nổi |routing set 1|
 |Bật / tắt chữ nổi đi theo |lên+xuống|
 |phím mũi tên lên |joystick up, dpad up or space+dot1|
 |phím mũi tên xuống |joystick down, dpad down or space+dot4|
@@ -4894,7 +4894,7 @@ Chế độ bảo vệ sẽ không cho phép thay đổi cấu hình NVDA, vậy
 
 ### Các Màn Hình Bảo Vệ {#SecureScreens}
 
-NVDA chạy ở chế độ bảo vệ khi được gọi chạy ở các màn hình bảo vệ, cho đến khi [tham số hệ thống mở rộng](#SystemWideParameters) `serviceDebug` được bật.
+NVDA chạy ở [chế độ bảo vệ](#SecureMode) khi được gọi chạy ở các màn hình bảo vệ, cho đến khi `serviceDebug` [tham số hệ thống mở rộng](#SystemWideParameters) `serviceDebug` được bật.
 
 Khi chạy ở một màn hình bảo vệ, NVDA sử dụng một hồ sơ hệ thống cho các tùy chọn.
 Có thể chép các tùy chọn của người dùng cho NVDA để [dùng trong các màn hình bảo vệ](#GeneralSettingsCopySettings).
@@ -4911,7 +4911,7 @@ NVDA có thể nhận một hoặc nhiều các tùy chọn để thay đổi c�
 Bạn có thể đưa vào một cách không giới hạn những tùy chọn mà bạn thấy cần.
 Những tùy chọn này có thể đưa vào từ hộp thoại thuộc tính của biểu tượng, từ hộp thoại Run (mở từ start menu hoặc windows+r) hoặc từ cửa sổ dòng lệnh của Windows.
 Tùy chọn được viết phân cách với tên tập tin thực thi của NVDA và giữa các tùy chọn với nhau bằng khoảng trắng.
-Ví dụ, một tùy chọn hữu ích là --disable-addons, nhằm khai báo với NVDA là vô hiệu tất cả add-on đang chạy.
+Ví dụ, một tùy chọn hữu ích là `--disable-addons`, nhằm khai báo với NVDA là vô hiệu tất cả add-on đang chạy.
 Điều này giúp bạn kiểm tra những vấn đề hoặc lỗi gây ra có phải do các add-on hay không; và từ đó có thể khắc phục lại các lỗi gây ra bởi add-on.
 
 Một ví dụ khác, bạn có thể đóng bản NVDA đang chạy bằng cách gõ dòng lệnh với tùy chọn sau trong hộp thoại Run:
@@ -4924,49 +4924,49 @@ Một số tùy chọn có cả phiên bản viết ngắn và viết dài; tron
 | . {.hideHeaderRow} |.|
 |---|---|
 |`nvda -mc CONFIGPATH` |Sẽ khởi động NVDA với âm thanh và thông điệp khởi động bị vô hiệu, và định sẵn cấu hình|
-|nvda -mc CONFIGPATH --disable-addons |Giống như trên, nhưng vô hiệu hóa các add-on|
+|`nvda -mc CONFIGPATH --disable-addons` |Giống như trên, nhưng vô hiệu hóa các add-on|
 
 Một số tùy chọn chấp nhận thêm các tham số; ví dụ như chỉ định bao nhiêu thông tin sẽ được ghi lại hoặc chỉ định thư mục lưu tập tin cấu hình người dùng.
-Những tham số này sẽ nằm sau phần tùy chọn, phân cách với tùy chọn bằng khoảng trắng nếu tùy chọn được viết tắt; và phân cách bằng dấu bằng (=) nếu tùy chọn được viết đầy đủ. Ví dụ:
+Những tham số này sẽ nằm sau phần tùy chọn, phân cách với tùy chọn bằng khoảng trắng nếu tùy chọn được viết tắt; và phân cách bằng dấu bằng (`=`) nếu tùy chọn được viết đầy đủ. Ví dụ:
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|nvda -l 10 |yêu cầu NVDA chạy với cấp độ log là dò lỗi.|
-|nvda --log-file=c:\nvda.log |yêu cầu NVDA  ghi log vào tập tin c:\nvda.log|
-|nvda --log-level=20 -f c:\nvda.log |Yêu cầu NVDA chạy với cấp độ log là thông tin và ghi log vào c:\nvda.log|
+|`nvda -l 10` |yêu cầu NVDA chạy với cấp độ log là dò lỗi.|
+|`nvda --log-file=c:\nvda.log` |yêu cầu NVDA  ghi log vào tập tin c:\nvda.log|
+|`nvda --log-level=20 -f c:\nvda.log` |Yêu cầu NVDA chạy với cấp độ log là thông tin và ghi log vào c:\nvda.log|
 
 Sau đây là các tùy chọn dòng lệnh cho NVDA:
 
 | Viết ngắn |Viết dài |Mô tả|
 |---|---|---|
-|-h |--help |Hiển thị trợ giúp dòng lệnh và đóng|
-|-q |--quit |Đóng bản NVDA đang chạy|
-|-k |--check-running |Thông báo NVDA đang chạy hay không chạy thông qua mã exit; 0 nếu đang chạy và 1 nếu không chạy|
+|`-h` |`--help` |Hiển thị trợ giúp dòng lệnh và đóng|
+|`-q` |`--quit` |Đóng bản NVDA đang chạy|
+|`-k` |`--check-running` |Thông báo NVDA đang chạy hay không chạy thông qua mã exit; 0 nếu đang chạy và 1 nếu không chạy|
 |`-f LOGFILENAME` |`--log-file=LOGFILENAME` |Tập tin để ghi các thông điệp log vào. Việc ghi log bị vô hiệu khi bật chế độ bảo vệ.|
 |`-l LOGLEVEL` |`--log-level=LOGLEVEL` |Cấp độ thấp nhất của thông điệp log (dò lỗi 10, đầu vào / đầu ra 12, cảnh báo gỡ lỗi 15, thông tin 20, vô hiệu 100). Việc ghi log bị vô hiệu khi bật chế độ bảo vệ.|
 |`-c CONFIGPATH` |`--config-path=CONFIGPATH` |Đường dẫn để lưu tất cả cấu hình của NVDA. Giá trị mặc định là bắt buộc nếu bật chế độ bảo vệ.|
-|Không có |--lang=LANGUAGE |Bỏ qua ngôn ngữ đã cấu hình của NVDA. Thiết lập là "Windows" cho ngôn ngữ mặc định của người dùng hiện tại, "en" là tiếng Anh, v...v....|
-|-m |--minimal |Không âm thanh, không giao diện, không thông báo bắt đầu, v...v...|
-|-s |--secure |Khởi động NVDA trong [Chế Độ bảo vệ](#SecureMode)|
-|Không có |--disable-addons |Các add-on không có hiệu lực|
-|Không có |--debug-logging |Bật cấp độ bản ghi dò lỗi cho lần chạy này. Thiết lập này được ghi đè lên các cấp độ bản ghi khác ( --loglevel, -l) tham số được cung cấp, bao gồm tùy chọn tắt log.|
-|Không có |--no-logging |Tắt log hoàn toàn khi dùng NVDA. Thiết lập này có thể bị ghi đè nếu một cấp độ log ( --loglevel, -l) được chỉ định từ dòng lệnh hoặc bản ghi dò lỗi đã được bật.|
-|Không có |--no-sr-flag |Không thay đổi flag trình đọc màn hình hệ thống toàn cục|
-|Không có |--install |Cài NVDA (cài một bản mới của NVDA)|
-|Không có |--install-silent |Cài đặt NVDA ở chế độ im lặng (không chạy lên sau khi cài đặt)|
-|Không có |--enable-start-on-logon=True|False |trong khi cài đặt, cho NVDA [chạy trong khi đăng nhập Windows](#StartAtWindowsLogon)|
-|Không có |~~copy-portable-config |Trong khi cài đặt, chép cấu hình bản chạy trực tiếp từ đường dẫn được cung cấp (~~config-path, -c) vào tài khoản người dùng hiện tại|
-|Không có |--create-portable |Tạo bản NVDA chạy trực tiếp (chạy lên sau khi tạo). yêu cầu khai báo đường dẫn cho bản chạy trực tiếp|
-|Không có |--create-portable-silent |Tạo bản NVDA chạy trực tiếp ở chế độ im lặng (không chạy lên sau khi cài). yêu cầu khai báo đường dẫn cho bản chạy trực tiếp|
-|Không có |--portable-path=PORTABLEPATH |đường dẫn để tạo bản chạy trực tiếp|
+|Không có |`--lang=LANGUAGE` |Bỏ qua ngôn ngữ đã cấu hình của NVDA. Thiết lập là "Windows" cho ngôn ngữ mặc định của người dùng hiện tại, "en" là tiếng Anh, v...v....|
+|`-m` |`--minimal` |Không âm thanh, không giao diện, không thông báo bắt đầu, v...v...|
+|`-s` |`--secure` |Khởi động NVDA trong [Chế Độ bảo vệ](#SecureMode)|
+|Không có |`--disable-addons` |Các add-on không có hiệu lực|
+|Không có |`--debug-logging` |Bật cấp độ bản ghi dò lỗi cho lần chạy này. Thiết lập này được ghi đè lên các cấp độ bản ghi khác ( --loglevel, -l) tham số được cung cấp, bao gồm tùy chọn tắt log.|
+|Không có |`--no-logging` |Tắt log hoàn toàn khi dùng NVDA. Thiết lập này có thể bị ghi đè nếu một cấp độ log ( --loglevel, -l) được chỉ định từ dòng lệnh hoặc bản ghi dò lỗi đã được bật.|
+|Không có |`--no-sr-flag` |Không thay đổi flag trình đọc màn hình hệ thống toàn cục|
+|Không có |`--install` |Cài NVDA (cài một bản mới của NVDA)|
+|Không có |`--install-silent` |Cài đặt NVDA ở chế độ im lặng (không chạy lên sau khi cài đặt)|
+|Không có |`--enable-start-on-logon=True|False` |trong khi cài đặt, cho NVDA [chạy trong khi đăng nhập Windows](#StartAtWindowsLogon)|
+|Không có |`--copy-portable-config` |Trong khi cài đặt, chép cấu hình bản chạy trực tiếp từ đường dẫn được cung cấp (~~config-path, -c) vào tài khoản người dùng hiện tại|
+|Không có |`--create-portable` |Tạo bản NVDA chạy trực tiếp (chạy lên sau khi tạo). yêu cầu khai báo đường dẫn cho bản chạy trực tiếp|
+|Không có |`--copy-portable-config`--create-portable-silent`--copy-portable-config` |Tạo bản NVDA chạy trực tiếp ở chế độ im lặng (không chạy lên sau khi cài). yêu cầu khai báo đường dẫn cho bản chạy trực tiếp|
+|Không có |`--copy-portable-config`--portable-path=PORTABLEPATH`--copy-portable-config` |đường dẫn để tạo bản chạy trực tiếp|
 
 ### Các Tham Số Mở Rộng Hệ Thống {#SystemWideParameters}
 
 NVDA cho phép thiết lập một số giá trị trong hệ thống registry để thay thế cách hoạt động ở mức hệ thống của NVDA.
 Những khóa chứa các giá trị này trong registry bao gồm:
 
-* Hệ thống 32-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
-* Hệ thống 64-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+* Hệ thống 32-bit: `HKEY_LOCAL_MACHINE\SOFTWARE\nvda`
+* Hệ thống 64-bit: `HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda`
 
 Sau đây là những giá trị có thể thiết lập cho khóa nói trên:
 
