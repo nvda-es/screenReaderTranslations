@@ -2234,16 +2234,17 @@ Theo mặc định, lệnh này sẽ chuyển đổi giữa các chế độ sau
 * NVDA bên phải và các ứng dụng bên trái: NVDA sẽ đọc ở kênh bên phải, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên trái.
 
 Có nhiều chế độ chia âm thanh nâng cao hơn trong hộp xổ cài đặt NVDA.
-Nếu bạn muốn điều chỉnh âm lượng của tất cả các ứng dụng ngoại trừ NVDA, hãy cân nhắc sử dụng [các lệnh chuyên dụng] (#OtherAppVolume).
+Nếu bạn muốn điều chỉnh âm lượng của tất cả các ứng dụng ngoại trừ NVDA, hãy cân nhắc sử dụng [các lệnh chuyên dụng](#OtherAppVolume).
 Xin lưu ý rằng tính năng chia âm thanh không hoạt động như một bộ trộn (mixer).
 Ví dụ, nếu một ứng dụng đang phát một bản âm thanh nổi trong khi phần tách âm thanh được đặt thành "NVDA ở bên trái và các ứng dụng ở bên phải", thì bạn sẽ chỉ nghe thấy kênh bên phải của bản nhạc đó, trong khi kênh bên trái của âm thanh bài hát sẽ bị tắt tiếng.
 
-Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh] (#WASAPI) trong cài đặt nâng cao.
+Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
 
 Xin lưu ý rằng nếu NVDA gặp sự cố thì nó sẽ không thể khôi phục âm lượng ứng dụng và các ứng dụng đó có thể vẫn chỉ phát ra âm thanh ở một kênh sau khi NVDA gặp sự cố.
 Để giảm thiểu điều này, vui lòng khởi động lại NVDA.
 
-### Tùy chỉnh các chế độ chia âm thanh{#CustomizeSoundSplitModes}
+##### Tùy chỉnh các chế độ chia âm thanh{#CustomizeSoundSplitModes}
+
 Danh sách chọn bằng hộp kiểm này cho phép chọn chế độ phân chia âm thanh nào được đưa vào khi luân chuyển giữa chúng bằng cách sử dụng ``NVDA+alt+s``.
 Các chế độ không được chọn sẽ bị loại bỏ.
 Theo mặc định, chỉ có ba chế độ được bao gồm.
@@ -2253,7 +2254,7 @@ Theo mặc định, chỉ có ba chế độ được bao gồm.
 -
 
 Lưu ý rằng cần phải chọn ít nhất một chế độ.
-Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh] (#WASAPI) trong cài đặt nâng cao.
+Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
 
 #### Âm lượng các ứng dụng khác {#OtherAppVolume}
 
@@ -2268,7 +2269,7 @@ Thiết lập âm lượng này sẽ áp dụng cho tất cả các ứng dụng
 
 %kc:endInclude
 
-Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh] (#WASAPI) trong cài đặt nâng cao.
+Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
 
 #### Tắt âm thanh ứng dụng khác {#MuteApplications}
 
@@ -2282,7 +2283,7 @@ Các phím lệnh sau đây cũng có thể được sử dụng từ mọi nơi
 
 %kc:endInclude
 
-Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh] (#WASAPI) trong cài đặt nâng cao.
+Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
 
 #### Hỗ trợ nhìn {#VisionSettings}
 
