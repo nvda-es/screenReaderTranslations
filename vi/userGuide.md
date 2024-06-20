@@ -2223,11 +2223,12 @@ Một thao tác cho phép chuyển qua các chế độ chia âm thanh khác nha
 
 | Tên |Phím |Mô tả|
 |---|---|---|
-| Chuyển đổi chế độ chia âm thanh | ``NVDA+alt+s`` | Chuyển giữa các chế độ âm thanh. |
+|Chuyển đổi chế độ chia âm thanh |`NVDA+alt+s` |Chuyển giữa các chế độ âm thanh.|
 
-%kc:endInclude
+<!-- KC:endInclude -->
 
 Theo mặc định, lệnh này sẽ chuyển đổi giữa các chế độ sau:
+
 - Tắt chia âm thanh: cả NVDA và các ứng dụng khác đều cho âm thanh sang cả kênh trái và phải.
 - NVDA bên trái và các ứng dụng bên phải: NVDA sẽ đọc ở kênh bên trái, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên phải.
 - NVDA bên phải và các ứng dụng bên trái: NVDA sẽ đọc ở kênh bên phải, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên trái.
