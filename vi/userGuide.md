@@ -2243,11 +2243,12 @@ Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WAS
 Xin lưu ý rằng nếu NVDA gặp sự cố thì nó sẽ không thể khôi phục âm lượng ứng dụng và các ứng dụng đó có thể vẫn chỉ phát ra âm thanh ở một kênh sau khi NVDA gặp sự cố.
 Để giảm thiểu điều này, vui lòng khởi động lại NVDA.
 
-##### Tùy chỉnh các chế độ chia âm thanh{#CustomizeSoundSplitModes}
+##### Tùy chỉnh các chế độ chia âm thanh {#CustomizeSoundSplitModes}
 
-Danh sách chọn bằng hộp kiểm này cho phép chọn chế độ phân chia âm thanh nào được đưa vào khi luân chuyển giữa chúng bằng cách sử dụng ``NVDA+alt+s``.
+Danh sách chọn bằng hộp kiểm này cho phép chọn chế độ phân chia âm thanh nào được đưa vào khi luân chuyển giữa chúng bằng cách sử dụng `NVDA+alt+s`.
 Các chế độ không được chọn sẽ bị loại bỏ.
 Theo mặc định, chỉ có ba chế độ được bao gồm.
+
 - Tắt chia âm thanh: cả NVDA và các ứng dụng đều phát âm thanh ở cả kênh trái và phải.
 - NVDA bên trái và tất cả ứng dụng khác ở kênh bên phải.
 - NVDA bên phải và tất cả ứng dụng khác ở kênh bên trái.
