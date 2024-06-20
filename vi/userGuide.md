@@ -2249,10 +2249,9 @@ Danh sách chọn bằng hộp kiểm này cho phép chọn chế độ phân ch
 Các chế độ không được chọn sẽ bị loại bỏ.
 Theo mặc định, chỉ có ba chế độ được bao gồm.
 
-- Tắt chia âm thanh: cả NVDA và các ứng dụng đều phát âm thanh ở cả kênh trái và phải.
-- NVDA bên trái và tất cả ứng dụng khác ở kênh bên phải.
-- NVDA bên phải và tất cả ứng dụng khác ở kênh bên trái.
--
+* Tắt chia âm thanh: cả NVDA và các ứng dụng đều phát âm thanh ở cả kênh trái và phải.
+* NVDA bên trái và tất cả ứng dụng khác ở kênh bên phải.
+* NVDA bên phải và tất cả ứng dụng khác ở kênh bên trái.
 
 Lưu ý rằng cần phải chọn ít nhất một chế độ.
 Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
