@@ -278,7 +278,77 @@ Hầu hết các chức năng của NVDA đều có thể được bật lên ho
 Cấu hình và các tùy chọn khác đều có trong trình đơn NVDA.
 Để mở trình đơn NVDA, bấm `NVDA+n`.
 Để mở trực tiếp hộp thoại cài đặt chung của NVDA, bấm `NVDA+control+g`.
-Còn nhiều hộp thoại cấu hình khác có phím tắt để mở trực tiếp, chẳng hạn như `NVDA+control+s` để chọn bộ đọc, hay `NVDA+control+v` để tùy chỉnh cho giọng đọc.
+Nhiều hộp thoại cấu hình khác có phím tắt để mở trực tiếp, chẳng hạn như `NVDA+control+s` để chọn bộ đọc, hay `NVDA+control+v` để tùy chỉnh cho giọng đọc.
+
+### Add-ons {#Addons}
+Add-on (tiện ích mở rộng) là các gói phần mềm, cung cấp mới hoặc thay đối chức năng của NVDA.
+Các add-on được phát triển bởi cộng đồng NVDA, hoặc các công ty bên ngoài và không liên kết với NV Access.
+Giống như bất kỳ phần mềm nào, điều quan trọng là phải tin tưởng nhà phát triển add-on trước khi sử dụng.
+Vui lòng tham khảo phần [Cài đặt add-on](#AddonStoreInstalling) để biết cách xác minh các add-on trước khi cài đặt.
+
+Ở lần khởi chạy đầu tiên của cửa hàng add-on, NVDA sẽ hiển thị một cảnh báo về các add-on.
+Các add-on không được NV Access kiểm tra và có thể có chức năng cũng như quyền truy cập thông tin không bị hạn chế.
+Bấm `khoảng trắng` nếu bạn đã đọc cảnh báo và không cần xem lại ở lần sau.
+Bấm `tab` để đến nút "Đồng ý", sau đó `enter` để chấp nhận cảnh báo và tiếp tục đến Cửa hàng add-on.
+Phần "[Add-on và cửa hàng Add-on](#AddonsManager)" trong hướng dẫn sử dụng chứa tất cả thông tin về tính năng của cửa hàng add-on.
+
+Có thể mở cửa hàng add-on từ trình đơn Công cụ.
+Bấm `NVDA+n` để mở trình đơn NVDA, rồi `c` mở công cụ, rồi `c` mở cửa hàng Add-on.
+Khi mở cửa hàng add-on, nó hiển thị "các add-on hiện có" nếu chưa cài đặt add-on nào.
+Nếu đã cài đật add-on, cửa hàng add-on sẽ đi đến thẻ  "Các add-on đã cài đặt".
+
+#### Các add-on hiện có {#AvailableAddons}
+Khi cửa sổ lần đầu mở ra, có thể mất vài giây để tải các add-on.
+NVDA sẽ đọc tên của add-on đầu tiên ngay khi hoàn thành việc tải danh sách các add-on.
+Các add-on hiện có được liệt kê theo thứ tự abc trong một lưới.
+Để duyệt qua danh sách và tìm hiểu về một add-on cụ thể:
+1. Dùng `phím mũi tên` hoặc bấm chữ cái đầu tiên của tên add-on để di chuyển trong danh sách.
+1. Bấm `tab` một lần để chuyển đến phần mô tả của add-on đang được chọn.
+1. Dùng [các phím đọc văn bản](#ReadingText) hoặc `các phím mũi tên` để đọc toàn bộ mô tả.
+1. Bấm `tab` đến nút "Hành động", có thể được dùng để cài đặt add-on, cùng với các hành động khác.
+1. Bấm `tab` đến "Các chi tiết khác", trong đó liệt kê các chi tiết như nhà phát triển, phiên bản và trang chủ.
+1. Để trở về danh sách các add-on, bấm `alt+a`, hoặc `shift+tab` trở về mục "Các add-on hiện có".
+
+#### Tìm kiếm add-on {#SearchingForAddons}
+Ngoài việc duyệt qua tất cả các add-on hiện có, bạn còn có thể lọc các add-on được hiển thị.
+Để tìm kiếm, bấm `alt+t` để đi đến trường "tìm kiếm" và nhập văn bản muốn tìm kiếm.
+Trường tìm kiếm có thể chứa thông tin bao gồm ID add-on, tên hiển thị, nhà phát triển, tác giả hoặc mô tả.
+Danh sách sẽ thay đổi trong khi nhập cụm từ tìm kiếm.
+Khi nhập xong, bấm `tab` để đi đến danh sách các add-on đã lọc và duyệt qua kết quả.
+
+#### Cài đặt add-on {#InstallingAddons}
+
+Để cài đặt một add-on:
+1. Đứng tại một add-on bạn muốn cài đặt, bấm `enter`.
+1. Trình đơn tác vụ sẽ mở ra với danh sách tác vụ; hành động đầu tiên là "Cài đặt".
+1. Để cài đặt add-on, bấm `c` hoặc `mũi tên xuống` đến "cài đặt" và bấm `enter`.
+1. Focus quay trở lại add-on trong danh sách và NVDA sẽ đọc chi tiết về add-on đó.
+1. Thông tin "Trạng thái" được NVDA thông báo thay đổi từ "Đang có" thành "Đang tải về".
+1. Khi một add-on được tải về hoàn tất, trạng thái sẽ đổi thành "Đã tải về. Đang chờ cài đặt".
+1. Lặp lại điều này với bất kì add-on nào bạn muốn cài đặt cùng lúc.
+1. Khi hoàn tất, bấm `tab` đến khi focus ở tại nút "Đóng", rồi bấm `enter`.
+1. Các add-on đã tải về sẽ bắt đầu quá trình cài đặt ngay khi Cửa hàng add-onđược đóng lại.
+Trong quá trình cài đặt, các add-on có thể tạo ra các hộp thoại mà bạn cần phải đưa ra phản hồi.
+1. Khi các add-on được cài đặt, một hộp thoại xuất hiện thông báo rằng các thay đổi đã được thực hiện và bạn phải khởi động lại NVDA để hoàn tất quá trình cài đặt add-on.
+1. Bấm `enter` để khởi động lại NVDA.
+
+#### Quản lý các add-on đã cài đặt {#ManagingInstalledAddons}
+Bấm `control+tab` để chuyển giữa các thẻ hoặc các phần của Cửa hàng add-on.
+các thẻ bao gồm: "Các add-on đã cài đặt", "Các add-on có bản cập nhật", "Các add-on hiện có" và "Các add-on không tương thích đã cài đặt".
+Mỗi thẻ đều được thiết kế tương tự nhau, dưới dạng danh sách các add-on, bảng điều khiển để biết thêm chi tiết về add-on đã chọn và khả năng thực hiện các hành động cho add-on.
+Trình đơn hành độntg của các add-on đã cài đặt bao gồm "Tắt" và "Gỡ" thay vì "Cài đặt".
+Việc tắt một add-on làm cho NVDA ngừng gọi nó, nhưng vẫn để nó ở trạng thái đã cài đặt.
+Để bật lại một add-on đã tắt, kích hoạt mục "Bật" từ trình đơn hành động.
+Sau khi bật, tắt, hoặc gỡ bỏ các add-on, bạn sẽ được yêu cầu khởi động lại NVDA khi đóng Cửa hàng Add-on.
+Các thay đổi này chỉ có hiệu lực khi khởi động lại NVDA.
+Lưu ý là trong hộp thoại này, phím `escape` hoạt động giống như nút Đóng.
+
+### Cập nhật add-on {#UpdatingAddons}
+Khi có bản cập nhật cho một add-on bạn đã cài đặt, nó sẽ được liệt kê trong thẻ "Các add-on có bản cập nhật".
+Bấm `control+tab` để đi đến thẻ này từ bất cứ đâu trong Cửa hàng add-on.
+Trạng thái của add-on sẽ được liệt kê là "Có bản cập nhật".
+Bảng sẽ liệt kê phiên bản hiện được cài đặt và bản cập nhật.
+Bấm `enter` trên add-on để mở danh sách hành động; chọn "Cập nhật".
 
 ### Cộng đồng {#Community}
 
