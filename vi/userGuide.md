@@ -302,6 +302,7 @@ Khi cửa sổ lần đầu mở ra, có thể mất vài giây để tải các
 NVDA sẽ đọc tên của add-on đầu tiên ngay khi hoàn thành việc tải danh sách các add-on.
 Các add-on hiện có được liệt kê theo thứ tự abc trong một lưới.
 Để duyệt qua danh sách và tìm hiểu về một add-on cụ thể:
+
 1. Dùng `phím mũi tên` hoặc bấm chữ cái đầu tiên của tên add-on để di chuyển trong danh sách.
 1. Bấm `tab` một lần để chuyển đến phần mô tả của add-on đang được chọn.
 1. Dùng [các phím đọc văn bản](#ReadingText) hoặc `các phím mũi tên` để đọc toàn bộ mô tả.
@@ -319,6 +320,7 @@ Khi nhập xong, bấm `tab` để đi đến danh sách các add-on đã lọc 
 #### Cài đặt add-on {#InstallingAddons}
 
 Để cài đặt một add-on:
+
 1. Đứng tại một add-on bạn muốn cài đặt, bấm `enter`.
 1. Trình đơn tác vụ sẽ mở ra với danh sách tác vụ; hành động đầu tiên là "Cài đặt".
 1. Để cài đặt add-on, bấm `c` hoặc `mũi tên xuống` đến "cài đặt" và bấm `enter`.
@@ -343,7 +345,7 @@ Sau khi bật, tắt, hoặc gỡ bỏ các add-on, bạn sẽ được yêu c�
 Các thay đổi này chỉ có hiệu lực khi khởi động lại NVDA.
 Lưu ý là trong hộp thoại này, phím `escape` hoạt động giống như nút Đóng.
 
-### Cập nhật add-on {#UpdatingAddons}
+#### Cập nhật add-on {#UpdatingAddons}
 Khi có bản cập nhật cho một add-on bạn đã cài đặt, nó sẽ được liệt kê trong thẻ "Các add-on có bản cập nhật".
 Bấm `control+tab` để đi đến thẻ này từ bất cứ đâu trong Cửa hàng add-on.
 Trạng thái của add-on sẽ được liệt kê là "Có bản cập nhật".
@@ -2270,42 +2272,45 @@ Thanh trượt này cho phép bạn điều chỉnh âm lượng cho âm thanh v
 Thiết lập này chỉ có tác dụng khi tắt "Âm lượng âm thanh NVDA đi theo âm lượng giọng đọc".
 Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
 
-##### Chia âm thanh {#SelectSoundSplitMode}
+##### Tách âm thanh {#SelectSoundSplitMode}
 
-Tính năng chia âm thanh cho phép người dùng sử dụng các thiết bị đầu ra âm thanh nổi của họ, chẳng hạn như tai nghe và loa.
-Tính năng chia âm thanh giúp cho giọng đọc NVDA có thể ở một kênh (ví dụ: bên trái) và để tất cả các ứng dụng khác phát âm thanh của chúng ở kênh kia (ví dụ: bên phải).
-Theo mặc định, tính năng chia âm thanh bị tắt, có nghĩa là tất cả các ứng dụng bao gồm NVDA sẽ phát âm thanh ở cả kênh trái và phải.
-Một thao tác cho phép chuyển qua các chế độ chia âm thanh khác nhau:
+Tính năng tách âm thanh cho phép người dùng sử dụng các thiết bị đầu ra âm thanh nổi của họ, chẳng hạn như tai nghe và loa.
+Tính năng tách âm thanh giúp cho giọng đọc NVDA có thể ở một kênh (ví dụ: bên trái) và để tất cả các ứng dụng khác phát âm thanh của chúng ở kênh kia (ví dụ: bên phải).
+Theo mặc định, tính năng tách âm thanh bị tắt.
+Một thao tác cho phép chuyển qua các chế độ tách âm thanh khác nhau:
 <!-- KC:beginInclude -->
 
 | Tên |Phím |Mô tả|
 |---|---|---|
-|Chuyển đổi chế độ chia âm thanh |`NVDA+alt+s` |Chuyển giữa các chế độ âm thanh.|
+|Chuyển đổi chế độ tách âm thanh |`NVDA+alt+s` |Chuyển giữa các chế độ âm thanh.|
 
 <!-- KC:endInclude -->
 
-Theo mặc định, lệnh này sẽ chuyển đổi giữa các chế độ sau:
+Theo mặc định, lệnh này sẽ luân chuyển giữa các chế độ sau:
 
-* Tắt chia âm thanh: cả NVDA và các ứng dụng khác đều cho âm thanh sang cả kênh trái và phải.
+* Tắt tách âm thanh: NVDA không áp dụng kiểu tách âm thanh nào.
 * NVDA bên trái và các ứng dụng bên phải: NVDA sẽ đọc ở kênh bên trái, trong khi các ứng dụng khác sẽ phát âm thanh ở kênh bên phải.
 * NVDA bên trái và các ứng dụng ở hai kênh: NVDA sẽ đọc ở kênh trái, trong khi các ứng dụng khác sẽ phát âm thanh ở cả kênh trái và phải.
 
-Có nhiều chế độ chia âm thanh nâng cao hơn trong hộp xổ cài đặt NVDA.
-Xin lưu ý rằng tính năng chia âm thanh không hoạt động như một bộ trộn (mixer).
+Có nhiều chế độ tách âm thanh nâng cao hơn trong hộp xổ cài đặt NVDA.
+Trong số các chế độ này, "NVDA ở hai kênh và ứng dụng ở hai kênh" buộc tất cả âm thanh phải được định hướng trong cả hai kênh.
+Chế độ này có thể khác với chế độ "Đã tắt tách âm thanh" trong trường hợp quá trình xử lý âm thanh khác cản trở âm lượng kênh.
+
+Xin lưu ý rằng tính năng tách âm thanh không hoạt động như một bộ trộn (mixer).
 Ví dụ, nếu một ứng dụng đang phát một bản âm thanh nổi trong khi phần tách âm thanh được đặt thành "NVDA ở bên trái và các ứng dụng ở bên phải", thì bạn sẽ chỉ nghe thấy kênh bên phải của bản nhạc đó, trong khi kênh bên trái của âm thanh bài hát sẽ bị tắt tiếng.
 
 Tùy chọn này không phát huy tác dụng nếu bạn chạy NVDA với [WASAPI bị vô hiệu cho đầu ra âm thanh](#WASAPI) trong cài đặt nâng cao.
 
 Xin lưu ý rằng nếu NVDA gặp sự cố thì nó sẽ không thể khôi phục âm lượng ứng dụng và các ứng dụng đó có thể vẫn chỉ phát ra âm thanh ở một kênh sau khi NVDA gặp sự cố.
-Để giảm thiểu điều này, vui lòng khởi động lại NVDA.
+Để giảm thiểu điều này, vui lòng khởi động lại NVDA và chọn chế đọ "NVDA ở hai kênh và ứng dụng ở hai kênh".
 
-##### Tùy chỉnh các chế độ chia âm thanh {#CustomizeSoundSplitModes}
+##### Tùy chỉnh các chế độ tách âm thanh {#CustomizeSoundSplitModes}
 
-Danh sách chọn bằng hộp kiểm này cho phép chọn chế độ phân chia âm thanh nào được đưa vào khi luân chuyển giữa chúng bằng cách sử dụng `NVDA+alt+s`.
+Danh sách chọn bằng hộp kiểm này cho phép chọn chế độ tách âm thanh nào được đưa vào khi luân chuyển giữa chúng bằng cách sử dụng `NVDA+alt+s`.
 Các chế độ không được chọn sẽ bị loại bỏ.
 Theo mặc định, chỉ có ba chế độ được bao gồm.
 
-* Tắt chia âm thanh.
+* Đã tắt tách âm thanh.
 * NVDA bên trái và các ứng dụng bên phải.
 * NVDA bên trái và các ứng dụng ở hai kênh.
 
