@@ -4226,7 +4226,7 @@ Diese Braillezeilen unterstützen nicht die automatische Braillezeilenerkennung 
 Es gibt eine Option im USB-Treiber der Braillezeilen, die zu Problemen beim Laden der Braillezeile führen kann.
 Bitte versuchen Sie folgendes:
 
-1. Bitte stellen Sie sicher, dass Sie den [neuesten Treiber https://www.papenmeier-rehatechnik.de/service/downloadcenter/software/artikel/software-braille-geräte.html] installiert haben.
+1. Bitte stellen Sie sicher, dass Sie den [neuesten Treiber](https://www.papenmeier-rehatechnik.de/de/service/downloadcenter/aktuelle-treiber/articles/treiber_braillezeilen.html) installiert haben.
 1. Öffnen Sie den Windows-Geräte-Manager.
 1. Scrollen Sie in der Liste nach unten zu „USB-Controller“ oder „USB-Geräte“.
 1. Wählen Sie „Papenmeier Braillex USB-Gerät“ o. ä..
