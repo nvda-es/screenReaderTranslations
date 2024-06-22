@@ -82,7 +82,7 @@ Bạn có thể chia sẻ hoặc thay đổi phần mềm này theo ý mình, mi
 ## Hướng dẫn sử dụng nhanh NVDA {#NVDAQuickStartGuide}
 
 Hướng dẫn nhanh này gồm ba phần chính: tải phần mềm, bắt đầu cài đặt, và gọi chạy NVDA.
-Các phần này dựa trên thông tin về thiết lập trong tùy chỉnh, tham gia vào cộng đồng và nhận trợ giúp.
+Các phần này dựa trên thông tin về thiết lập trong tùy chỉnh, sử dụng add-on, tham gia vào cộng đồng và nhận trợ giúp.
 Thông tin trong phần này được tổng hợp từ các phần khác của hướng dẫn sử dụng NVDA.
 Vui lòng xem hướng dẫn đầy đủ để biết thêm thông tin chi tiết cho mỗi chủ đề.
 
@@ -300,12 +300,12 @@ Nếu đã cài đật add-on, cửa hàng add-on sẽ đi đến thẻ  "Các a
 #### Các add-on hiện có {#AvailableAddons}
 Khi cửa sổ lần đầu mở ra, có thể mất vài giây để tải các add-on.
 NVDA sẽ đọc tên của add-on đầu tiên ngay khi hoàn thành việc tải danh sách các add-on.
-Các add-on hiện có được liệt kê theo thứ tự abc trong một lưới.
+Các add-on hiện có được liệt kê theo thứ tự abc trong một danh sách nhiều cột.
 Để duyệt qua danh sách và tìm hiểu về một add-on cụ thể:
 
-1. Dùng `phím mũi tên` hoặc bấm chữ cái đầu tiên của tên add-on để di chuyển trong danh sách.
+1. Dùng phím mũi tên hoặc bấm chữ cái đầu tiên của tên add-on để di chuyển trong danh sách.
 1. Bấm `tab` một lần để chuyển đến phần mô tả của add-on đang được chọn.
-1. Dùng [các phím đọc văn bản](#ReadingText) hoặc `các phím mũi tên` để đọc toàn bộ mô tả.
+1. Dùng [các phím đọc văn bản](#ReadingText) hoặc các phím mũi tên để đọc toàn bộ mô tả.
 1. Bấm `tab` đến nút "Hành động", có thể được dùng để cài đặt add-on, cùng với các hành động khác.
 1. Bấm `tab` đến "Các chi tiết khác", trong đó liệt kê các chi tiết như nhà phát triển, phiên bản và trang chủ.
 1. Để trở về danh sách các add-on, bấm `alt+a`, hoặc `shift+tab` trở về mục "Các add-on hiện có".
@@ -313,8 +313,8 @@ Các add-on hiện có được liệt kê theo thứ tự abc trong một lư�
 #### Tìm kiếm add-on {#SearchingForAddons}
 Ngoài việc duyệt qua tất cả các add-on hiện có, bạn còn có thể lọc các add-on được hiển thị.
 Để tìm kiếm, bấm `alt+t` để đi đến trường "tìm kiếm" và nhập văn bản muốn tìm kiếm.
-Trường tìm kiếm có thể chứa thông tin bao gồm ID add-on, tên hiển thị, nhà phát triển, tác giả hoặc mô tả.
-Danh sách sẽ thay đổi trong khi nhập cụm từ tìm kiếm.
+Việc tìm kiếm sẽ kiểm tra các kết quả trùng khớp trong trường Add-on ID, tên hiển thị, nhà phát triển, tác giả hoặc mô tả.
+Danh sách sẽ được cập nhật trong khi nhập cụm từ tìm kiếm.
 Khi nhập xong, bấm `tab` để đi đến danh sách các add-on đã lọc và duyệt qua kết quả.
 
 #### Cài đặt add-on {#InstallingAddons}
@@ -335,21 +335,21 @@ Trong quá trình cài đặt, các add-on có thể tạo ra các hộp thoại
 1. Bấm `enter` để khởi động lại NVDA.
 
 #### Quản lý các add-on đã cài đặt {#ManagingInstalledAddons}
-Bấm `control+tab` để chuyển giữa các thẻ hoặc các phần của Cửa hàng add-on.
+Bấm `control+tab` để chuyển giữa các thẻ của Cửa hàng add-on.
 các thẻ bao gồm: "Các add-on đã cài đặt", "Các add-on có bản cập nhật", "Các add-on hiện có" và "Các add-on không tương thích đã cài đặt".
-Mỗi thẻ đều được thiết kế tương tự nhau, dưới dạng danh sách các add-on, bảng điều khiển để biết thêm chi tiết về add-on đã chọn và khả năng thực hiện các hành động cho add-on.
+Mỗi thẻ đều được thiết kế tương tự nhau, danh sách các add-on, bảng điều khiển để biết thêm chi tiết về add-on đã chọn và khả năng thực hiện các hành động cho add-on.
 Trình đơn hành độntg của các add-on đã cài đặt bao gồm "Tắt" và "Gỡ" thay vì "Cài đặt".
 Việc tắt một add-on làm cho NVDA ngừng gọi nó, nhưng vẫn để nó ở trạng thái đã cài đặt.
 Để bật lại một add-on đã tắt, kích hoạt mục "Bật" từ trình đơn hành động.
 Sau khi bật, tắt, hoặc gỡ bỏ các add-on, bạn sẽ được yêu cầu khởi động lại NVDA khi đóng Cửa hàng Add-on.
 Các thay đổi này chỉ có hiệu lực khi khởi động lại NVDA.
-Lưu ý là trong hộp thoại này, phím `escape` hoạt động giống như nút Đóng.
+Lưu ý là Cửa hàng add-on, phím `escape` hoạt động giống như nút Đóng.
 
 #### Cập nhật add-on {#UpdatingAddons}
 Khi có bản cập nhật cho một add-on bạn đã cài đặt, nó sẽ được liệt kê trong thẻ "Các add-on có bản cập nhật".
 Bấm `control+tab` để đi đến thẻ này từ bất cứ đâu trong Cửa hàng add-on.
 Trạng thái của add-on sẽ được liệt kê là "Có bản cập nhật".
-Bảng sẽ liệt kê phiên bản hiện được cài đặt và bản cập nhật.
+Danh sách sẽ liệt kê phiên bản hiện được cài đặt và bản cập nhật.
 Bấm `enter` trên add-on để mở danh sách hành động; chọn "Cập nhật".
 
 ### Cộng đồng {#Community}
