@@ -540,7 +540,7 @@ Bạn cũng có thể giữ và di chuyển ngón tay trên màn hình để đ�
 Khi các lệnh của NVDA được mô tả ở những phần sau của tài liệu này, chúng có thể sẽ được liệt kê kèm theo một thao tác để kích hoạt lệnh đó với các màn hình cảm ứng.
 Dưới đây là hướng dẫn cho một số thao tác cảm ứng.
 
-##### Hành động chạm {#toc45}
+##### Hành động chạm {#Taps}
 
 Chạm nhẹ và nhanh một hoặc nhiều ngón tay vào màn hình.
 
@@ -552,7 +552,7 @@ Chạm nhanh hai lần liên tiếp gọi là hai chạm (double-tap).
 Chạm nhanh ba lần gọi là ba chạm (triple-tap) và tương tự như vậy.
 Dĩ nhiên, những thao tác đa chạm cũng nhận biết được số ngón tay chạm vào màn hình. Do đó, có thể có những thao tác như 2-ngón ba chạm, chạm 4-ngón, v...v....
 
-##### Hành động vuốt {#toc46}
+##### Hành động vuốt {#Flicks}
 
 Đó là hành động vuốt nhanh ngón tay của bạn trên màn hình.
 
@@ -1706,7 +1706,7 @@ Dưới đây là các phân loại trong hộp thoại cấu hình NVDA:
 
 <!-- KC:setting -->
 
-##### Mở Cài Đặt Chung {#toc110}
+##### Mở Cài Đặt Chung {#OpenGeneralSettings}
 
 Phím tắt: `NVDA+control+g`
 
@@ -1802,7 +1802,7 @@ Bạn cũng có thể cài đặt  cập nhật thủ công từ hộp thoại t
 
 <!-- KC:setting -->
 
-##### Mở cài đặt thiết lập bộ đọc {#toc123}
+##### Mở cài đặt thiết lập bộ đọc {#OpenSpeechSettings}
 
 Phím tắt: `NVDA+control+v`
 
@@ -1945,7 +1945,7 @@ Lưu ý là cần chọn ít nhất hai chế độ.
 
 <!-- KC:setting -->
 
-##### Mở hộp thoại chọn bộ đọc {#toc144}
+##### Mở hộp thoại chọn bộ đọc {#OpenSelectSynthesizer}
 
 Phím tắt: `NVDA+control+s`
 
@@ -2177,7 +2177,7 @@ Tắt tùy chọn này có thể cải thiện khả năng đọc.
 
 <!-- KC:setting -->
 
-##### Mở hộp thoại chọn màn hình nổi {#toc168}
+##### Mở hộp thoại chọn màn hình nổi {#OpenSelectBrailleDisplay}
 
 Phím tắt: `NVDA+control+a`
 
@@ -2229,7 +2229,7 @@ Vậy nên chúng tôi khuyến khích kết nối một loại màn hình của
 
 <!-- KC:setting -->
 
-##### Mở cài đặt âm thanh {#toc173}
+##### Mở cài đặt âm thanh {#OpenAudioSettings}
 
 Phím tắt: `NVDA+control+u`
 
@@ -2372,7 +2372,7 @@ Khi các trình hỗ trợ tồn tại các cài đặt có thể thiết lập,
 
 <!-- KC:setting -->
 
-##### Mở cài đặt bàn phím {#toc188}
+##### Mở cài đặt bàn phím {#OpenKeyboardSettings}
 
 Phím tắt: `NVDA+control+k`
 
@@ -2449,7 +2449,7 @@ Nó được bật mặc định. Do vậy, một số người dùng nhất đ�
 
 <!-- KC:setting -->
 
-##### Mở  thiết lập chuột {#toc201}
+##### Mở  thiết lập chuột {#OpenMouseSettings}
 
 Phím tắt: `NVDA+control+m`
 
@@ -2552,7 +2552,7 @@ Nếu được chọn thì NVDA sẽ lọc bớt một số đối tượng như
 
 <!-- KC:setting -->
 
-##### Mở cài đặt trình bày đối tượng {#toc218}
+##### Mở cài đặt trình bày đối tượng {#OpenObjectPresentationSettings}
 
 Phím tắt: `NVDA+control+o`
 
@@ -2667,7 +2667,7 @@ Tùy chọn này mặc định được bật.
 
 <!-- KC:setting -->
 
-##### Mở cài đặt chế độ duyệt {#toc236}
+##### Mở cài đặt chế độ duyệt {#OpenBrowseModeSettings}
 
 Phím tắt: `NVDA+control+b`
 
@@ -2759,7 +2759,7 @@ Bật tùy chọn này có thể cải thiện hỗ trợ cho vài trang web vì
 
 <!-- KC:setting -->
 
-##### Mở cài đặt định dạng tài liệu {#toc250}
+##### Mở cài đặt định dạng tài liệu {#OpenDocumentFormattingSettings}
 
 Phím tắt: `NVDA+control+d`
 
@@ -3556,7 +3556,7 @@ Phải giữ chuột đến khi ô chữ nổi chuyển sang màu xanh lá.
 Python console được tìm thấy trong trình đơn công cụ của trình đơn NVDA, là một công cụ phát triển, hữu dụng trong việc sửa lỗi, kiểm tra tổng quan cấu trúc lõi của NVDA hay kiểm tra cấp bậc của tính tiếp cận cho một ứng dụng.
 Để biết thêm thông tin chi tiết, xin xem tại phần  [Phát triển NVDA](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html).
 
-### Cửa hàng Add-on {#toc314}
+### Cửa hàng Add-on {#AddonStoreMenuItem}
 
 Mục này sẽ mở [Cửa Hàng Add-on của NVDA](#AddonsManager).
 Để có thêm thông tin, đọc trong phần chuyên sâu: [Add-on và Cửa Hàng Add-on](#AddonsManager).
@@ -4005,7 +4005,7 @@ Các thiết bị thêm vào sau đây cũng được hỗ trợ, và không yê
 Sau đây là danh sách các phím được gán của mẫu màn hình nổi này trong NVDA.
 Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết các phím tương ứng.
 
-#### Các phím được gán cho tất cả sản phẩm {#toc334}
+#### Các phím được gán cho tất cả sản phẩm {#HumanWareBrailliantKeyAssignmentForAllModels}
 
 <!-- KC:beginInclude -->
 
@@ -4034,7 +4034,7 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 
 <!-- KC:endInclude -->
 
-#### Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80 {#toc335}
+#### Các phím gán cho màn hình Brailliant BI 32, BI 40 và B 80 {#HumanWareBrailliantKeyAssignmentForBI32BI40AndB80}
 
 <!-- KC:beginInclude -->
 
@@ -4046,7 +4046,7 @@ Vui lòng xem tài liệu hướng dẫn của màn hình nổi để biết cá
 
 <!-- KC:endInclude -->
 
-#### Phím gán cho Brailliant BI 14 {#toc336}
+#### Phím gán cho Brailliant BI 14 {#HumanWareBrailliantKeyAssignmentForBI14}
 
 <!-- KC:beginInclude -->
 
