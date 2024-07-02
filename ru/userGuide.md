@@ -2925,6 +2925,27 @@ To toggle Unicode normalization from anywhere, please assign a custom gesture us
 
 Вы можете переключать доступные стили абзацев из любого места, назначив клавишу в диалоге [Жесты ввода](#InputGestures).
 
+#### Add-on Store Settings {#AddonStoreSettings}
+
+This category allows you to adjust the behaviour of the Add-on Store.
+
+##### Update Notifications {#AutomaticAddonUpdates}
+
+When this option is set to "Notify", the Add-on Store will notify you after NVDA startup if any add-on updates are available.
+This check is performed every 24 hours.
+Notifications will only occur for add-ons with updates available within the same channel.
+For example, for installed beta add-ons, you will only be notified of updates within the beta channel.
+
+| . {.hideHeaderRow} |.|
+|---|---|
+|Options |Notify (Default), Disabled |
+|Default |Notify |
+
+|Option |Behaviour |
+|---|---|
+|Enabled |Notify when updates are available to add-ons within the same channel |
+|Disabled |Do not automatically check for updates to add-ons |
+
 #### Windows OCR {#Win10OcrSettings}
 
 Параметры в этой категории позволяют вам настраивать [оптическое распознавание символов в Windows](#Win10Ocr).
