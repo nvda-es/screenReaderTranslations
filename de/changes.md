@@ -1085,7 +1085,8 @@ Dies ist eine kleinere Version, die Probleme mit 2022.3.1 behebt und eine Sicher
 
 ### Sicherheitsproblembehebungen
 
-* Verhindert den möglichen Zugriff auf Systemebene für nicht authentifizierte Benutzer. ([GHSA-3jj9-295f-h69w](https://github.com/nvaccess/nvda/security/advisories/GHSA-3jj9-295f-h69w))
+* Verhindert den möglichen Zugriff auf Systemebene für nicht authentifizierte Benutzer.
+([GHSA-3jj9-295f-h69w](https://github.com/nvaccess/nvda/security/advisories/GHSA-3jj9-295f-h69w))
 
 ### Fehlerbehebungen
 
