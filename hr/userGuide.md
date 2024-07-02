@@ -522,8 +522,8 @@ Međutim, možete uključiti ili isključiti proces prikupljanja podataka ručno
 Većina tipkovničkih prečaca koji su specifični za NVDA, koriste se pritiskanjem određene tipke koja se zove NVDA modifikacijska tipka, u kombinaciji s jednom ili više drugih tipki.
 S tim u vezi postoje iznimke, kao što su prečaci za pregled teksta u rasporedu tipkovnice za stolna računala koje koriste numerički dio tipkovnice, kao i neke druge.
 
-NVDA se može konfigurirati tako da se kao NVDA modifikacijska tipka koriste tipke numerički Insert, Insert i-ili capslock.
-Tipke numerički insert i insert su standardno postavljene kao NVDA modifikacijske tipke.
+NVDA se može konfigurirati tako da se kao `NVDA` modifikacijska tipka koriste tipke `numerički Insert`, `Insert` i/ili `capsLock`.
+Tipke `numerički insert` i `insert` su standardno postavljene kao NVDA modifikacijske tipke.
 
 Ako želite da se NVDA modifikacijske tipke ponašaju na način kao da NVDA nije pokrenut (npr. želite uključiti velika slova kad ste velika slova postavili kao modifikacijsku tipku), pritisnite tipku dva puta brzo.
 
