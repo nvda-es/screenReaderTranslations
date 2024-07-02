@@ -4851,7 +4851,7 @@ Windows 10 и более поздние версии обнаруживают э
 
 ### BRLTTY {#BRLTTY}
 
-[BRLTTY](https://www.brltty.com/) is a separate program which can be used to support many more braille displays.
+[BRLTTY](https://www.brltty.com/) - это отдельная программа, которая может использоваться для поддержки многих других брайлевских дисплеев.
 In order to use this, you need to install [BRLTTY for Windows](https://www.brltty.com/download.html).
 You should download and install the latest installer package, which will be named, for example, brltty-win-4.2-2.exe.
 When configuring the display and port to use, be sure to pay close attention to the instructions, especially if you are using a USB display and already have the manufacturer's drivers installed.
