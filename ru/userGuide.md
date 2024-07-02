@@ -1901,6 +1901,39 @@ NVDA предоставляет поддержку для командной к�
 Этот флажок, установленный по умолчанию, заставляет NVDA использовать язык текущего синтезатора/голоса для чтения символов и знаков пунктуации.
 Если вы обнаружите, что NVDA читает пунктуацию на неверном языке для конкретного синтезатора или голоса, то можете снять этот флажок, чтобы заставить NVDA использовать свою глобальную настройку языка.
 
+##### Unicode normalization {#SpeechUnicodeNormalization}
+| . {.hideHeaderRow} |.|
+|---|---|
+|Options |Default (Disabled), Enabled, Disabled|
+|Default |Disabled|
+
+When this option is enabled, unicode normalization is performed on the text that is spoken by NVDA.
+This is beneficial when speaking characters that can be represented in several forms.
+NVDA uses the NFKC (Normalization Form Compatibility Composition) algorithm, which provides the following benefits, among others:
+
+1. The bold and italic versions of characters that are part of the unicode standard and are commonly used on social media are normalized to their most common compatible equivalent.
+For example, the latin letter "h" can also be presented as "𝐡" (bold), "ℎ" (itallic), etc. but will always be spoken as "h" when normalization is enabled.
+This aspect of normalization also aids in reading equations in the Microsoft Word equation editor.
+
+1. Normalization to composed characters.
+For example, the character "ü" (u with umlaut/diaeresis), a common character in languages like German and Turkish can be represented in two forms.
+  1. One stand alone unicode character (ü)
+  1. A decomposition into two characters (ü), namely the normal latin letter u and a diaeresis modifier
+  Unicode normalization ensures that only one form will be used throughout all speech output, which is the one character variant.
+
+1. Decomposition of some ligatures, Including "ĳ" (ligature ij) to their two letter form ("ij").
+
+1. Stable ordering of modifiers in composite characters, for example in ancient Hebrew.
+
+To toggle Unicode normalization from anywhere, please assign a custom gesture using the [Input Gestures dialog](#InputGestures).
+
+##### Report "Normalized" when navigating by character {#SpeechReportNormalizedForCharacterNavigation}
+
+This setting is a checkbox that, when checked, tells NVDA to explicitly report that a character is normalized when spoken as an individual character such as when spelling.
+For example, when this option is enabled, spelling the character "ĳ" will pronounce it as "i j normalized".
+
+Note that this setting is only available when "[Unicode normalization](#SpeechUnicodeNormalization)" is enabled.
+
 ##### Использовать базу данных Консорциума Unicode (включая эмодзи) при чтении знаков и символов пунктуации {#SpeechSettingsCLDR}
 
 Если этот флажок установлен, то NVDA при чтении различных значков и символов пунктуации будет использовать дополнительные словари произношения.
