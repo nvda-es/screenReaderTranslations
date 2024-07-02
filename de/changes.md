@@ -596,7 +596,7 @@ Diese Methoden stellen nun eine Erneuerung am Ende jedes Kernzyklus in die Warte
 Sie sollten auch Thread-sicher sein, so dass sie von Hintergrund-Threads aus aufgerufen werden können. (#15163)
 * Offizielle Unterstützung für die Registrierung von benutzerdefinierten Braillezeilen-Treibern bei der automatischen Erkennung von Braillezeilen wurde hinzugefügt.
 Lesen Sie die Dokumentation der Klasse `braille.BrailleDisplayDriver` für weitere Details.
-Vor allem muss das Attribut `supportsAutomaticDetection` auf `True` gesetzt und die Klassenmethode `registerAutomaticDetection` implementiert sein. (#15196)
+Vor allem muss das Attribut `supportsAutomaticDetection` auf `True` gesetzt und `registerAutomaticDetection` als `classmethod` implementiert sein. (#15196)
 
 #### Veraltete Funktionen
 
@@ -888,7 +888,7 @@ Diese Funktionalität ist nun generisch über `behaviours.EditableText` bzw. die
 * Wenn die UIA-Debug-Protokollierungskategorie aktiviert ist, wird jetzt deutlich mehr Protokollierung für UIA-Ereignishandler und Dienstprogramme erzeugt. (#14256)
 * Die NVDAHelper-Build-Standards wurden aktualisiert. (#13072)
   * Verwendet nun den C++20-Standard, vorher war es C++17.
-  * Nun wird der Compiler-Flag `/permissive-` verwendet, das das permissive Verhalten deaktiviert und die Compiler-Optionen "/Zc" für strikte Konformität gesetzt.
+  * Nun wird der Compiler-Flag `/permissive-` verwendet, das das permissive Verhalten deaktiviert und die Compiler-Optionen `/Zc` für strenge Konformität gesetzt.
 * Einige Plugin-Objekte (z. B. Treiber und NVDA-Erweiterungen) haben nun eine informativere Beschreibung in der NVDA-Python-Konsole. (#14463)
 * NVDA kann nun vollständig mit Visual Studio 2022 kompiliert werden und benötigt keine Visual Studio 2019 Build-Tools mehr.  (#14326)
 * Detailliertere Protokollierung für Einfrierungen von NVDA zur Unterstützung der Fehlersuche. (#14309)
@@ -919,7 +919,7 @@ Bitte öffnen Sie ein Ticket auf GitHub, wenn eine NVDA-Erweiterung ein Problem 
     * `reportBorderStyle` und `reportBorderColor` wurden entfernt und sind durch `reportCellBorders` ersetzt worden.
   * Im Abschnitt `[braille]` (#14233):
     * `noMessageTimeout` wurde entfernt und durch einen Wert für `showMessages` ersetzt.
-    * `noMessageTimeout` wurde entfernt und durch einen Wert für `showMessages` ersetzt. a`messageTimeout` kann nicht mehr den Wert 0 annehmen und wurde durch einen Wert für `showMessages` ersetzt.
+    * `messageTimeout` kann nicht mehr den Wert 0 annehmen und wurde durch einen Wert für `showMessages` ersetzt.
     * `autoTether` wurde entfernt; `tetherTo` kann nun stattdessen den Wert "auto" annehmen.
   * Im Abschnitt `[keyboard]` (#14528):
     * `useCapsLockAsNVDAModifierKey`, `useNumpadInsertAsNVDAModifierKey`, `useExtendedInsertAsNVDAModifierKey` wurden entfernt.
@@ -934,7 +934,7 @@ Bitte öffnen Sie ein Ticket auf GitHub, wenn eine NVDA-Erweiterung ein Problem 
 * Es ist nicht mehr möglich den Braille-Handler durch die Einstellung `braille.handler.enabled` einzuschalten.
 Um den Braille-Handler programmatisch zu deaktivieren, registrieren Sie einen Handler für `braille.handler.decide_enabled`. (#14503)
 * Es ist nicht mehr möglich, die Anzeigegröße des Handlers durch definieren von `braille.handler.displaySize` zu aktualisieren.
-Um `displaySize` programmatisch zu aktualisieren, registrieren Sie einen Handler für `braille.handler.filter_displaySize`.
+Um displaySize programmatisch zu aktualisieren, registrieren Sie einen Handler für `braille.handler.filter_displaySize`.
 Siehe `brailleViewer` für ein Beispiel, wie das erledigt werden kann. (#14503)
 * Es gab Änderungen bei der Verwendung von `addonHandler.Addon.loadModule`. (#14481)
   * `loadModule` erwartet nun einen Punkt als Trennzeichen, statt eines Backslashs.
@@ -1057,7 +1057,8 @@ Damit wird auch ein Sicherheitsproblem gelöst.
 
 ### Sicherheitsproblembehebungen
 
-* Verhindert den möglichen Systemzugang (z. B. durch die Python-Konsole in NVDA) für nicht authentifizierte Benutzer. ([GHSA-fpwc-2gxx-j9v7](https://github.com/nvaccess/nvda/security/advisories/GHSA-fpwc-2gxx-j9v7))
+* Verhindert den möglichen Systemzugang (z. B. durch die Python-Konsole in NVDA) für nicht authentifizierte Benutzer.
+([GHSA-fpwc-2gxx-j9v7](https://github.com/nvaccess/nvda/security/advisories/GHSA-fpwc-2gxx-j9v7))
 
 ### Fehlerbehebungen
 
