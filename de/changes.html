@@ -769,7 +769,7 @@ Diese Methoden stellen nun eine Erneuerung am Ende jedes Kernzyklus in die Warte
 Sie sollten auch Thread-sicher sein, so dass sie von Hintergrund-Threads aus aufgerufen werden können. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15163" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15163">#15163</a>)</li>
 <li>Offizielle Unterstützung für die Registrierung von benutzerdefinierten Braillezeilen-Treibern bei der automatischen Erkennung von Braillezeilen wurde hinzugefügt.
 Lesen Sie die Dokumentation der Klasse <code>braille.BrailleDisplayDriver</code> für weitere Details.
-Vor allem muss das Attribut <code>supportsAutomaticDetection</code> auf <code>True</code> gesetzt und die Klassenmethode <code>registerAutomaticDetection</code> implementiert sein. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15196" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15196">#15196</a>)</li>
+Vor allem muss das Attribut <code>supportsAutomaticDetection</code> auf <code>True</code> gesetzt und <code>registerAutomaticDetection</code> als <code>classmethod</code> implementiert sein. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15196" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15196">#15196</a>)</li>
 </ul>
 <h4 id="veraltete-funktionen">Veraltete Funktionen</h4>
 <ul>
@@ -1096,7 +1096,7 @@ Diese Funktionalität ist nun generisch über <code>behaviours.EditableText</cod
 <li>Wenn die UIA-Debug-Protokollierungskategorie aktiviert ist, wird jetzt deutlich mehr Protokollierung für UIA-Ereignishandler und Dienstprogramme erzeugt. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14256" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14256">#14256</a>)</li>
 <li>Die NVDAHelper-Build-Standards wurden aktualisiert. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13072" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13072">#13072</a>)<ul>
 <li>Verwendet nun den C++20-Standard, vorher war es C++17.</li>
-<li>Nun wird der Compiler-Flag <code>/permissive-</code> verwendet, das das permissive Verhalten deaktiviert und die Compiler-Optionen "/Zc" für strikte Konformität gesetzt.</li>
+<li>Nun wird der Compiler-Flag <code>/permissive-</code> verwendet, das das permissive Verhalten deaktiviert und die Compiler-Optionen <code>/Zc</code> für strenge Konformität gesetzt.</li>
 </ul>
 </li>
 <li>Einige Plugin-Objekte (z. B. Treiber und NVDA-Erweiterungen) haben nun eine informativere Beschreibung in der NVDA-Python-Konsole. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14463" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14463">#14463</a>)</li>
@@ -1134,7 +1134,7 @@ Bitte öffnen Sie ein Ticket auf GitHub, wenn eine NVDA-Erweiterung ein Problem 
 </li>
 <li>Im Abschnitt <code>[braille]</code> (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14233" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14233">#14233</a>):<ul>
 <li><code>noMessageTimeout</code> wurde entfernt und durch einen Wert für <code>showMessages</code> ersetzt.</li>
-<li><code>noMessageTimeout</code> wurde entfernt und durch einen Wert für <code>showMessages</code> ersetzt. a<code>messageTimeout</code> kann nicht mehr den Wert 0 annehmen und wurde durch einen Wert für <code>showMessages</code> ersetzt.</li>
+<li><code>messageTimeout</code> kann nicht mehr den Wert 0 annehmen und wurde durch einen Wert für <code>showMessages</code> ersetzt.</li>
 <li><code>autoTether</code> wurde entfernt; <code>tetherTo</code> kann nun stattdessen den Wert "auto" annehmen.</li>
 </ul>
 </li>
@@ -1157,7 +1157,7 @@ Sie wurden durch <code>NVDAModifierKeys</code> ersetzt.</li>
 <li>Es ist nicht mehr möglich den Braille-Handler durch die Einstellung <code>braille.handler.enabled</code> einzuschalten.
 Um den Braille-Handler programmatisch zu deaktivieren, registrieren Sie einen Handler für <code>braille.handler.decide_enabled</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14503" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14503">#14503</a>)</li>
 <li>Es ist nicht mehr möglich, die Anzeigegröße des Handlers durch definieren von <code>braille.handler.displaySize</code> zu aktualisieren.
-Um <code>displaySize</code> programmatisch zu aktualisieren, registrieren Sie einen Handler für <code>braille.handler.filter_displaySize</code>.
+Um displaySize programmatisch zu aktualisieren, registrieren Sie einen Handler für <code>braille.handler.filter_displaySize</code>.
 Siehe <code>brailleViewer</code> für ein Beispiel, wie das erledigt werden kann. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14503" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14503">#14503</a>)</li>
 <li>Es gab Änderungen bei der Verwendung von <code>addonHandler.Addon.loadModule</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14481" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14481">#14481</a>)<ul>
 <li><code>loadModule</code> erwartet nun einen Punkt als Trennzeichen, statt eines Backslashs.
@@ -1300,7 +1300,8 @@ Beachten Sie, dass es immer noch bekannte Probleme mit Google Chrome und Microso
 Damit wird auch ein Sicherheitsproblem gelöst.</p>
 <h3 id="sicherheitsproblembehebungen">Sicherheitsproblembehebungen</h3>
 <ul>
-<li>Verhindert den möglichen Systemzugang (z. B. durch die Python-Konsole in NVDA) für nicht authentifizierte Benutzer. (<a href="https://github.com/nvaccess/nvda/security/advisories/GHSA-fpwc-2gxx-j9v7" rel="noopener" target="_blank" title="GHSA-fpwc-2gxx-j9v7">GHSA-fpwc-2gxx-j9v7</a>)</li>
+<li>Verhindert den möglichen Systemzugang (z. B. durch die Python-Konsole in NVDA) für nicht authentifizierte Benutzer.
+(<a href="https://github.com/nvaccess/nvda/security/advisories/GHSA-fpwc-2gxx-j9v7" rel="noopener" target="_blank" title="GHSA-fpwc-2gxx-j9v7">GHSA-fpwc-2gxx-j9v7</a>)</li>
 </ul>
 <h3 id="fehlerbehebungen_7">Fehlerbehebungen</h3>
 <ul>
