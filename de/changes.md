@@ -293,8 +293,8 @@ Nutzer von Poedit 1 wird geraten auf die Version 3 zu aktualisieren, falls sie v
   * Befehle ie "fokussiertes Objekt anzeigtn", "aktuelles Navigatorobjekt anzeigen" oder "Markierten Text anzeigen" funktionieren jetzt auch für Braille. (#15844, @Emil-18)
   * Der Treiber für Albatross behandelt einen ESP32 Microcontroller nicht mehr als Albatross Braillezeile. (#15671)
 * LibreOffice:
-  * mit strg+Rücktaste gelöschte Wörter erden auch dann korrekt angezeigt, wenn hinter ihnen Leerzeichen oder Tabs stehen. (#15436, @michaelweghorn)
-  * Das Anzeigen der Statuszeile mit nvda+(Umschalt+)Ende funktioniert jetzt auch in Dialogen in Libreoffice 2024.2 und neuer. (#15591, @michaelweghorn)
+  * Wörter, die mit der Tastenkombination `Strg+Rücktaste` gelöscht werden, werden nun auch dann korrekt angezeigt, wenn auf das gelöschte Wort ein Leerzeichen (wie Leerzeichen und Tabulatoren) folgt. (#15436, @michaelweghorn)
+  * Das Anzeigen der Statuszeile mit `NVDA+Ende` funktioniert jetzt auch in Dialogen in Libreoffice 2024.2 und neuer. (#15591, @michaelweghorn)
   * In Libreoffice 24.2 und neuer werden alle Textattribute erkannt
   Dies erlaubt die Anzeige von Rechtschreibfehlern in Libreoffice Writer. (#15648, @michaelweghorn)
   * Die Anzeige von Überschriftsebenen funktioniert nun auch in Libreoffice 24.2 und neuer. (#15881, @michaelweghorn)
@@ -311,17 +311,17 @@ Nutzer von Poedit 1 wird geraten auf die Version 3 zu aktualisieren, falls sie v
 * Beim Buchstabieren sind die Pausen zwischen Sätzen Bzw. Zeichen jetzt wieder angemessen lang und verkürzen sich nicht im Laufe der Zeit. (#15739, @jcsteh)
 * NVDA stürzt beim Lesen längerer Texte nicht mehr ab. (#15752, @jcsteh)
 * In Microsoft Edge werden jetzt mehr Elemente auf der Webseite angezeigt. (#14612)
-* Sollte(n) die Konfogiruationsdatei(en  beschädigt sein, startet NVDA zukünftig mit den Standardeinstellungen - wie früher. (#15690, @CyrilleB79)
-* Listenansichten werden wieder ordnungsgemäß angezeigt. (#15283, @LeonarddeR)
-* Niemand kann mehr den Eingabeverlauf in der Pyzhon-konsole überschreiben. (#15792, @CyrilleB79)
+* Sollte die Konfogiruationsdatei beschädigt sein, startet NVDA zukünftig mit den Standard-Einstellungen - wie früher. (#15690, @CyrilleB79)
+* Die Unterstützung für die System-Listenansicht (`SysListView32`) in Windows Forms-Anwendungen wurde korrigiert. (#15283, @LeonarddeR)
+* Der Eingabe-Verlauf in der Python-Konsole kann nicht mehr überschrieben werden. (#15792, @CyrilleB79)
 * NVDA sollte nun nicht mehr abstürzen, wenn viel Text über die Eingabeaufforderung (cmd) rollt oder wenn Sprachnachrichten in Whatsapp abgespielt werden.. (#14888, #15169)
   * Dieses Verhalten kann in den Erweiterten Einstellungen über die Option "Erweiterte Ereignisbehandlung verwenden" abgeschaltet werden.
 * NVDA verfolgt den Fokus nun auch in Anwendungen, die unter Windows defender Application Guard ausgeführt werden.. (#15164)
 * Der Sprachbetrachter wird nicht mehr aktualisiert, wenn die Maus in seinem Fenster bewegt wird. (#15952, @hwf1324)
-* Beim Schließen von Kobinationsfeldern in Firefox oder Chrome mit alt+pfeil auf oder Esc kehrt NVDA in den Lesemodus zurück. (#15653)
-* Beim Navigieren in Kombinationsfeldern mit den Pfeiltasten in Itunes schaltet nvda nicht mehr in den Lesemodus. (#15653)
+* NVDA schaltet wieder in den Lesemodus zurück, wenn Kombinationsfelder mit `Escape-Taste` oder `Alt+Pfeiltaste nach oben` in Mozilla Firefox oder Google Chrome geschlossen werden. (#15653)
+* Beim Navigieren in Kombinationsfeldern mit den Pfeiltasten in iTunes schaltet NVDA nicht mehr in den Lesemodus. (#15653)
 
-### Änderungen für Entwiskler
+### Änderungen für Entwickler
 
 Please refer to [the developer guide](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API) for information on NVDA's API deprecation and removal process.
 
@@ -692,12 +692,10 @@ Die Sprachausgabe eSpeak-NG, der Braille-Übersetzer LibLouis, und das vom Unico
   Diese Funktion kann im Bereich für die Erweiterte Einstellungen deaktiviert werden. (#7756)
 * Bindestrich- und Strich-Symbole werden immer an die Sprachausgabe gesendet. (#13830)
 * Bei Entfernungsangaben in Microsoft Word wird nun die in den erweiterten Optionen von Word definierte Einheit berücksichtigt, auch wenn UIA für den Zugriff auf Word-Dokumente verwendet wird. (#14542)
-* Bei der Meldung der Position des NVDA-Cursors wird in LibreOffice Writer für LibreOffice-Versionen >= 7.6 nun die aktuelle Position des normalen Cursor und System-Cursors relativ zur aktuellen Seite mitgeteilt, ähnlich wie bei Microsoft Word. (#11696)
 * NVDA reagiert nun etwas schneller auf Befehle und bei Fokus-Änderungen. (#14701)
-* NVDA reagiert schneller beim Bewegen des Cursors in den Bearbeitungsfunktionen. (#14708)
 * Das Skript für die Meldung der Link-Zieladresse geht nun von der Position des normalen Cursors und des System-Cursors aus und nicht mehr vom Navigator-Objekt. (#14659)
 * Bei der Erstellung portabler NVDA-Versionen ist es nicht mehr erforderlich, dass ein Laufwerksbuchstabe als Teil des absoluten Pfads angegeben werden muss. (#14680)
-* Bei der Sekunden-Anzeige der Uhrzeit in der Taskleiste von Windows, wird diese Einstellung durch die Verwendung von `NVDA+F12` zur Anzeige der Uhrzeit berücksichtigt. (#14742)
+* Bei der Sekunden-Anzeige der Uhrzeit in der Taskleiste von Windows wird diese Einstellung durch die Verwendung von `NVDA+F12` zur Anzeige der Uhrzeit berücksichtigt. (#14742)
 * NVDA teilt jetzt nicht beschriftete Gruppierungen mit, die nützliche Positionsinformationen enthalten, wie z. B. in Menüs aktueller Versionen von Microsoft Office 365. (#14878) 
 
 ### Fehlerbehebungen
