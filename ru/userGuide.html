@@ -211,6 +211,8 @@
 <li><a href="#SpeechSettingsDialectSwitching" title="Автоматическая смена диалектов">Автоматическая смена диалектов</a></li>
 <li><a href="#SpeechSettingsSymbolLevel" title="Уровень пунктуации">Уровень пунктуации</a></li>
 <li><a href="#SpeechSettingsTrust" title="Использовать язык синтезатора для чтения знаков и символов пунктуации">Использовать язык синтезатора для чтения знаков и символов пунктуации</a></li>
+<li><a href="#SpeechUnicodeNormalization" title="Unicode normalization">Unicode normalization</a></li>
+<li><a href="#SpeechReportNormalizedForCharacterNavigation" title="Report &quot;Normalized&quot; when navigating by character">Report "Normalized" when navigating by character</a></li>
 <li><a href="#SpeechSettingsCLDR" title="Использовать базу данных Консорциума Unicode (включая эмодзи) при чтении знаков и символов пунктуации">Использовать базу данных Консорциума Unicode (включая эмодзи) при чтении знаков и символов пунктуации</a></li>
 <li><a href="#SpeechSettingsCapPitchChange" title="Процент смены высоты для заглавных">Процент смены высоты для заглавных</a></li>
 <li><a href="#SpeechSettingsSayCapBefore" title="Говорить «Большая» перед заглавными буквами">Говорить «Большая» перед заглавными буквами</a></li>
@@ -3363,6 +3365,55 @@ NVDA может использовать её для распознавания 
 <h5 id="SpeechSettingsTrust">Использовать язык синтезатора для чтения знаков и символов пунктуации</h5>
 <p>Этот флажок, установленный по умолчанию, заставляет NVDA использовать язык текущего синтезатора/голоса для чтения символов и знаков пунктуации.
 Если вы обнаружите, что NVDA читает пунктуацию на неверном языке для конкретного синтезатора или голоса, то можете снять этот флажок, чтобы заставить NVDA использовать свою глобальную настройку языка.</p>
+<h5 id="SpeechUnicodeNormalization">Unicode normalization</h5>
+<table>
+<thead>
+<tr>
+<th class="hideHeaderRow">.</th>
+<th>.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Options</td>
+<td>Default (Disabled), Enabled, Disabled</td>
+</tr>
+<tr>
+<td>Default</td>
+<td>Disabled</td>
+</tr>
+</tbody>
+</table>
+<p>When this option is enabled, unicode normalization is performed on the text that is spoken by NVDA.
+This is beneficial when speaking characters that can be represented in several forms.
+NVDA uses the NFKC (Normalization Form Compatibility Composition) algorithm, which provides the following benefits, among others:</p>
+<ol>
+<li>
+<p>The bold and italic versions of characters that are part of the unicode standard and are commonly used on social media are normalized to their most common compatible equivalent.
+For example, the latin letter "h" can also be presented as "𝐡" (bold), "ℎ" (itallic), etc. but will always be spoken as "h" when normalization is enabled.
+This aspect of normalization also aids in reading equations in the Microsoft Word equation editor.</p>
+</li>
+<li>
+<p>Normalization to composed characters.
+For example, the character "ü" (u with umlaut/diaeresis), a common character in languages like German and Turkish can be represented in two forms.</p>
+<ol>
+<li>One stand alone unicode character (ü)</li>
+<li>A decomposition into two characters (ü), namely the normal latin letter u and a diaeresis modifier
+Unicode normalization ensures that only one form will be used throughout all speech output, which is the one character variant.</li>
+</ol>
+</li>
+<li>
+<p>Decomposition of some ligatures, Including "ĳ" (ligature ij) to their two letter form ("ij").</p>
+</li>
+<li>
+<p>Stable ordering of modifiers in composite characters, for example in ancient Hebrew.</p>
+</li>
+</ol>
+<p>To toggle Unicode normalization from anywhere, please assign a custom gesture using the <a href="#InputGestures" title="Input Gestures dialog">Input Gestures dialog</a>.</p>
+<h5 id="SpeechReportNormalizedForCharacterNavigation">Report "Normalized" when navigating by character</h5>
+<p>This setting is a checkbox that, when checked, tells NVDA to explicitly report that a character is normalized when spoken as an individual character such as when spelling.
+For example, when this option is enabled, spelling the character "ĳ" will pronounce it as "i j normalized".</p>
+<p>Note that this setting is only available when "<a href="#SpeechUnicodeNormalization" title="Unicode normalization">Unicode normalization</a>" is enabled.</p>
 <h5 id="SpeechSettingsCLDR">Использовать базу данных Консорциума Unicode (включая эмодзи) при чтении знаков и символов пунктуации</h5>
 <p>Если этот флажок установлен, то NVDA при чтении различных значков и символов пунктуации будет использовать дополнительные словари произношения.
 Эти словари содержат описания для символов (преимущественно эмодзи), предоставляемые <a href="https://www.unicode.org/consortium/" rel="noopener" target="_blank" title="Консорциумом Unicode">Консорциумом Unicode</a> как часть <a href="http://cldr.unicode.org/" rel="noopener" target="_blank" title="Общего Репозитория Языковых Данных">Общего Репозитория Языковых Данных</a>.
