@@ -12,7 +12,7 @@ Die Braillezeilen von Help Tech Activator Pro werden nun unterstützt.
 
 Nicht zugewiesene Befehle wurden hinzugefügt, um den Touch-Ball (ähnlich dem Mausrad) vertikal und horizontal zu scrollen.
 
-Es gibt mehrere Fehlerkorrekturen, insbesondere für das Windows 11 Emoji-Panel und den Verlauf der Zwischenablage.
+Es gibt mehrere Fehlerbehebungen, insbesondere für das Windows 11 Emoji-Panel und den Verlauf der Zwischenablage.
 Für die Web-Browser gibt es Korrekturen für Fehlermeldungen, Abbildungen, Beschriftungen, Tabellenbeschriftungen und Menüelemente mit Kontrollkästchen bzw. Auswahlschaltern.
 
 Liblouis wurde aktualisiert und um neue Braille-Tabellen für kyrillisches Serbisch, Jiddisch, mehrere alte Sprachen und Türkisch hinzugefügt.
@@ -57,7 +57,7 @@ Unicode CLDR wurde ebenfalls aktualisiert.
 * Standardmäßig wird beim Erstellen einer portablen Version ein neuer Ordner angelegt.
 Sie erhalten eine Warnmeldung, wenn Sie versuchen, in ein nicht leeres Verzeichnis zu schreiben. (#16684)
 
-### Fehlerkorrekturen
+### Fehlerbehebungen
 
 * Windows 11:
   * NVDA bleibt nicht mehr hängen, sobald der Verlauf der Zwischenablage und das Emoji-Panel geschlossen werden. (#16346, #16347, @josephsl)
@@ -235,10 +235,10 @@ Windows 8.1 ist mindestens erforderlich.
 * Unterstützung für Bluetooth Low Energy HID-Braillezeilen hinzugefügt. (#15470)
 * Ein neuer nativer Auswahlmodus (einzuschalten  via `NVDA+Umschalt+F10`) ist jetzt im Lesemodus von NVDA für Mozilla Firefox verfügbar.
 Wenn diese Funktion aktiviert ist, wird durch das Auswählen von Text im Lesemodus auch die native Auswahl von Firefox manipuliert.
-Das Kopieren von Text mit "Strg+C" wird direkt an Firefox weitergeleitet, wodurch der formatierte Inhalt und nicht die reine Textdarstellung von NVDA kopiert wird.
+Das Kopieren von Text mit `Strg+C` wird direkt an Firefox weitergeleitet, wodurch der formatierte Inhalt und nicht die reine Textdarstellung von NVDA kopiert wird.
 Beachten Sie jedoch, dass NVDA in diesem Modus keine Meldung "In die Zwischenablage kopiert" ausgibt, da Firefox die eigentliche Kopie ausführt. (#15830)
 * Beim Kopieren von Text in Microsoft Word mit aktiviertem Lesemodus ist jetzt auch die Formatierung enthalten.
-Ein Nebeneffekt davon ist, dass NVDA beim Drücken von "Strg+C" im Microsoft Word-/Outlook-Lesemodus nicht mehr die Meldung "In die Zwischenablage kopiert" ausgibt, da die Anwendung nun die Kopie durchführt, nicht NVDA. (#16129)
+Ein Nebeneffekt davon ist, dass NVDA beim Drücken von `Strg+C` im Microsoft Word-/Outlook-Lesemodus nicht mehr die Meldung "In die Zwischenablage kopiert" ausgibt, da die Anwendung nun die Kopie durchführt, nicht NVDA. (#16129)
 * Ein neuer Sprachmodus namens "Nur bei Bedarf" wurde hinzugefügt.
 Bei aktiviertem Modus spricht NVDA beispielsweise beim Bewegen der Schreibmarke nicht automatisch. NVDA spricht nur noch, wenn ein Befehl ausgelößtwird, dessen Ziel es ist, eine Information wie z. B. das Lesen des Fenstertitels vorzulesen. (#481, @CyrilleB79)
 * In der Kategorie "Sprachausgabe" der NVDA-Einstellungen ist es jetzt möglich, unerwünschte Sprachmodi aus dem Befehl "Sprachmodi wechseln" (`NVDA+S`) auszuschließen. (#15806, @lukaszgo1)
@@ -251,7 +251,7 @@ Windows 8.1 ist mindestens erforderlich. (#15544)
 * Komponenten-Updates:
   * LibLouis Braille-Übersetzer auf [3.28.0](https://github.com/liblouis/liblouis/releases/tag/v3.28.0) aktualisiert. (#15435, #15876, @codeofdusk)
     * Neue thailändische, rumänische und philippinische Braille-Tabellen hinzugefügt.
-  * eSpeak NG wurde auf 1.52-dev commit `530bf0abf` aktualisiert. (#15036)
+  * Die Sprachausgabe eSpeak NG wurde auf 1.52-dev commit `530bf0abf` aktualisiert. (#15036)
   * CLDR-Emoji- und Symbolanmerkungen wurden auf Version 44.0 aktualisiert. (#15712, @OzancanKaratas)
   * Java Access Bridge auf 17.0.9+8Zulu aktualisiert (17.46.19). (#15744)
 * Tastenkombinationen:
@@ -261,13 +261,11 @@ Windows 8.1 ist mindestens erforderlich. (#15544)
 * Microsoft Office:
   * Beim Anfordern von Formatierungsinformationen zu Excel-Zellen werden Rahmen und Hintergrund nur ausgegeben, wenn eine solche Formatierung vorhanden ist. (#15560, @CyrilleB79)
   * NVDA gibt keine unbeschrifteten Gruppierungen mehr aus, wie sie beispielsweise in neueren Versionen von Microsoft Office 365-Menüs vorkommen. (#15638)
-
-Die Optionen zur Auswahl des Audioausgabegeräts und die Lautstärkenreduktion anderer Anwendungen wurden aus dem Dialogfeld "Sprachausgabe auswählen" entfernt.
+* Die Optionen zur Auswahl des Audioausgabegeräts und die Lautstärkenreduktion anderer Anwendungen wurden aus dem Dialogfeld "Sprachausgabe auswählen" entfernt.
 Sie finden sie in den Audio-Einstellungen, die mit `NVDA+Strg+U` geöffnet werden können. (#15512, @codeofdusk)
-
 * Die Option "Objekttyp unter dem Mauszeiger ansagen" in den Mauseinstellungen von NVDA wurde in "Objekt ansagen, wenn die Maus hineinbewegt wird" umbenannt.
 Diese Option gibt nun zusätzlich relevante Informationen zu einem Objekt aus, wenn die Maus hineinbewegt wird. Dies sind Informationen wie z. B. Zustände (markiert/gedrückt) oder Zellkoordinaten in einer Tabelle. (#15420, @LeonarddeR)
-* Das Hilfe-Menü hat folgende neuen Einträge zu NV Access-Seiten erhalten: "Support erhalten" und "Shop". (#14631)
+* Das Hilfe-Menü hat folgende neue Einträge zu Seiten bei NV Access erhalten: "Support erhalten" und "Shop". (#14631)
 * Die Unterstützung von [Poedit](https://poedit.net) wurde ab Version 3 und höher komplett überarbeitet.
 Nutzer von Poedit 1 wird geraten auf die Version 3 zu aktualisieren, falls sie verbesserte Bedienbarkeit in Poedit möchten. So funktionieren die Tastenkombinationen zum Lesen von Anmerkungen für Übersetzer sowie Kommentaren wieder. (#15313, #7303, @LeonarddeR)
 * Braille- und Sprachbetrachter sind im geschützten Modus nicht nutzbar. (#15680)
