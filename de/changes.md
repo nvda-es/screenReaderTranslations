@@ -1126,7 +1126,8 @@ ESpeak wurde aktualisiert, wodurch drei neue Sprachen hinzugekommen sind: Belaru
 * Im Windows-Konsolen-Host, der von der Eingabeaufforderung, PowerShell und dem Windows-Subsystem für Linux unter Windows 11 Version 22H2 (Sun Valley 2) und neuer verwendet wird:
   * Deutlich verbesserte Leistung und Stabilität. (#10964)
   * Wenn Sie `Strg+F` drücken, um nach Text zu suchen, wird die Position des NVDA-Cursors aktualisiert, um dem gefundenen Begriff zu folgen. (#11172)
-  * Die Meldung von eingegebenem Text, der nicht auf dem Bildschirm erscheint (z. B. Kennwörter), ist standardmäßig deaktiviert. Dies kann in den erweiterten NVDA-Einstellungen wieder aktiviert werden. (#11554)
+  * Die Meldung von eingegebenem Text, der nicht auf dem Bildschirm erscheint (z. B. Kennwörter), ist standardmäßig deaktiviert.
+Dies kann in den erweiterten NVDA-Einstellungen wieder aktiviert werden. (#11554)
   * Text, der aus dem Bildschirm gescrollt wurde, kann ohne Scrollen des Konsolenfensters nachgelesen werden. (#12669)
   * Ausführlichere Informationen zur Textformatierung sind verfügbar. ([Microsoft Windows-Terminal PR 10336](https://github.com/microsoft/terminal/pull/10336))
 * Eine neue Sprachoption wurde hinzugefügt, um Zeichenbeschreibungen nach einer Verzögerung zu lesen. (#13509)
