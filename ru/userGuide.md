@@ -361,6 +361,9 @@ NVDA прочитает название первого дополнения, к
 В таблице будут перечислены текущая установленная версия и доступная версия.
 Нажмите `enter` на дополнении, чтобы открыть список действий; выберите "Обновить".
 
+By default, after NVDA startup, you will be notified if any add-on updates are available.
+To learn more about and configure this behaviour, refer to ["Update Notifications"](#AutomaticAddonUpdates).
+
 ### Сообщество {#Community}
 
 У NVDA активное сообщество пользователей.
