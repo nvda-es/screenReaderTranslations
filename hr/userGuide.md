@@ -2926,7 +2926,7 @@ Imajte na umuu da se ovaj stil odlomka ne može koristiti u Microsoft Wordu ili 
 Možete se prebacivati između dostupnih stilova odlomaka tako da pridijelite tipkovnički prečac u [dijaloškom okviru ulazne geste](#InputGestures).
 
 #### Add-on Store postavke {#AddonStoreSettings}
-+
+
 Ova kategorija služi za konfiguriranje Add-on storea.
 
 ##### Obavjesti o ažuriranjima {#AutomaticAddonUpdates}
@@ -2939,7 +2939,7 @@ Na primjer, za instalirane beta dodatke, biti ćete obaviješteni samo o Beta ka
 | . {.hideHeaderRow} |.|
 |---|---|
 |opcije |obavijesti (podrazumijevano), onemogućeno |
-+|Podrazumjevano |obavijesti |
+|Podrazumjevano |obavijesti |
 
 |Opcija |ponašanje |
 |---|---|
