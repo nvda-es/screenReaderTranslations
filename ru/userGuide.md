@@ -2173,6 +2173,18 @@ Note that this setting is only available when "[Unicode normalization](#SpeechUn
 
 Включение этой опции может дать более свободное чтение, но в целом требует более частой прокрутки дисплея.
 
+##### Unicode normalization {#BrailleUnicodeNormalization}
+| . {.hideHeaderRow} |.|
+|---|---|
+|Options |Default (Disabled), Enabled, Disabled|
+|Default |Disabled|
+
+When this option is enabled, unicode normalization is performed on the text that is brailled on the braille display.
+This is beneficial when coming across characters in braille that are unknown in a particular braille table and which have a compatible alternative, like the bold and italic characters commonly used on social media.
+Other benefits of unicode normalization are explained in greater detail in the [section for the equivalent speech setting](#SpeechUnicodeNormalization).
+
+To toggle Unicode normalization from anywhere, please assign a custom gesture using the [Input Gestures dialog](#InputGestures).
+
 ##### Представление контекста {#BrailleSettingsFocusContextPresentation}
 
 Этот комбинированный список позволяет вам выбрать, какую контекстную информацию NVDA будет отображать на брайлевском дисплее, когда объект получает фокус.
