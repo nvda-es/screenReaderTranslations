@@ -4089,6 +4089,7 @@ USB-драйверы не нужны, если выбран протокол Ope
 * APH Chameleon 20
 * Humanware BrailleOne
 * NLS eReader
+  * Note that the Zoomax is currently not supported without external drivers
 
 В NVDA используются следующие клавишные комбинации для брайлевских дисплеев Brailliant BI/B и BrailleNote touch.
 Для описания расположения клавиш, пожалуйста, обратитесь к документации по брайлевскому дисплею.
