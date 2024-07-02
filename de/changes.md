@@ -1100,9 +1100,12 @@ Bitte melden Sie Sicherheitsprobleme umgehend an <info@nvaccess.org>.
 
 ### Sicherheitsproblembehebungen
 
-* Ein Exploit wurde behoben, durch den es möglich war, von Benutzer- zu Systemrechten zu gelangen. ([GHSA-q7c2-pgqm-vvw5](https://github.com/nvaccess/nvda/security/advisories/GHSA-q7c2-pgqm-vvw5))
-* Es wurde ein Sicherheitsproblem behoben, das den Zugriff auf die Python-Konsole auf dem Sperrbildschirm über eine Laufbedingung beim NVDA-Start ermöglichte. ([GHSA-72mj-mqhj-qh4w](https://github.com/nvaccess/nvda/security/advisories/GHSA-72mj-mqhj-qh4w))
-* Es wurde ein Problem behoben, bei dem der Text des Sprachausgaben-Betrachters beim Sperren von Windows zwischengespeichert wurde. ([GHSA-grvr-j2h8-3qm4](https://github.com/nvaccess/nvda/security/advisories/GHSA-grvr-j2h8-3qm4))
+* Ein Exploit wurde behoben, durch den es möglich war, von Benutzer- zu Systemrechten zu gelangen.
+([GHSA-q7c2-pgqm-vvw5](https://github.com/nvaccess/nvda/security/advisories/GHSA-q7c2-pgqm-vvw5))
+* Es wurde ein Sicherheitsproblem behoben, das den Zugriff auf die Python-Konsole auf dem Sperrbildschirm über eine Laufbedingung beim NVDA-Start ermöglichte.
+([GHSA-72mj-mqhj-qh4w](https://github.com/nvaccess/nvda/security/advisories/GHSA-72mj-mqhj-qh4w))
+* Es wurde ein Problem behoben, bei dem der Text des Sprachausgaben-Betrachters beim Sperren von Windows zwischengespeichert wurde.
+([GHSA-grvr-j2h8-3qm4](https://github.com/nvaccess/nvda/security/advisories/GHSA-grvr-j2h8-3qm4))
 
 ### Fehlerbehebungen
 
