@@ -522,7 +522,7 @@ Voit kuitenkin ottaa käyttöön tai poistaa käytöstä tiedonkeruun manuaalise
 Useimmat NVDA:n näppäinkomennot koostuvat yleensä tietyn NVDA-näppäimeksi kutsutun näppäimen painamisesta yhdessä yhden tai useamman muun näppäimen kanssa.
 Poikkeuksia ovat pöytäkoneissa käytettävän näppäinasettelun tekstintarkastelukomennot sekä muutamat muut, joissa käytetään pelkkiä laskinnäppäimistön näppäimiä.
 
-NVDA on mahdollista määrittää käyttämään sekä `tavallista` että `laskinnäppäimistön Insertiä` ja/tai `Caps Lockia` NVDA-näppäimenä.
+NVDA on mahdollista määrittää käyttämään sekä `tavallista` että `laskinnäppäimistön Insertiä` ja/tai `Caps Lockia` `NVDA`-näppäimenä.
 Oletusarvoisesti käytetään sekä `tavallista` että `laskinnäppäimistön Insertiä`.
 
 Mikäli haluat jonkin NVDA-näppäimen toimivan samalla tavalla kuin silloin, kun NVDA ei ole käynnissä (haluat esim. ottaa Caps Lockin käyttöön, kun se on määritetty NVDA-näppäimeksi), paina sitä kaksi kertaa nopeasti peräkkäin.
