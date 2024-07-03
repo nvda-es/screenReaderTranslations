@@ -194,19 +194,19 @@ Es gibt viele kleinere Fehlerbehebungen für Anwendungen wie Mozilla Thunderbird
 
 ### Änderungen für Entwickler
 
-Please refer to [the developer guide](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API) for information on NVDA's API deprecation and removal process.
+Bitte lesen Sie [das Entwicklerhandbuch](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API) für Informationen über API-Änderungen in NVDA.
 
-* Instantiating `winVersion.WinVersion` objects with unknown Windows versions above 10.0.22000 such as 10.0.25398 returns "Windows 11 unknown" instead of "Windows 10 unknown" for release name. (#15992, @josephsl)
-* Make the AppVeyor build process easier for NVDA forks, by adding configurable variables in appveyor.yml to disable or modify NV Access specific portions of the build scripts. (#16216, @XLTechie)
+* Die Instanziierung von `winVersion.WinVersion`-Objekten mit unbekannten Windows-Versionen neuer als 10.0.22000 wie 10.0.25398 gibt "Windows 11 Unbekannt" statt "Windows 10 Unbekannt" als Versionsname zurück. (#15992, @josephsl)
+* Erleichtert den AppVeyor-Erstellungsprozess für NVDA-Forks, indem Sie konfigurierbare Variablen in appveyor.yml hinzufügen, um spezifische Teile der Erstellungsskripte von NV Access deaktivieren oder modifizieren können. (#16216, @XLTechie)
 * Es wurde ein Dokument hinzugefügt, welches den Prozess der Erstellung von NVDA-Forks auf AppVeyor erklärt. (#16293, @XLTechie)
 
 ## 2024.1
 
-Ein neuer Sprachmodus namens "Nur bei Bedarf" wurde hinzugefügt.
-Bei aktiviertem Modus spricht NVDA beispielsweise beim Bewegen der Schreibmarke nicht automatisch. NVDA spricht nur noch, wenn ein Befehl ausgelößtwird, dessen Ziel es ist, eine Information wie z. B. das Lesen des Fenstertitels vorzulesen.
+Ein neuer Sprachmodus "Bei Bedarf" wurde hinzugefügt.
+Bei aktiviertem Modus liest NVDA beispielsweise beim Navigieren der Schreibmarke nicht automatisch, sondern nur noch bei Informationen, wenn ein Befehl ausgeführt wird, dessen Ziel es ist, wie z. B. Fenstertitel, vorzulesen.
 In der Kategorie "Sprachausgabe" der NVDA-Einstellungen ist es jetzt möglich, unerwünschte Sprachmodi aus dem Befehl "Sprachmodi wechseln" (`NVDA+S`) auszuschließen.
 
-Ein neuer nativer Auswahlmodus (einzuschalten  mittels `NVDA+Umschalt+F10`) ist jetzt im Lesemodus von NVDA für Mozilla Firefox verfügbar.
+Ein neuer nativer Auswahlmodus (einzuschalten mittels `NVDA+Umschalt+F10`) ist jetzt im Lesemodus von NVDA für Mozilla Firefox verfügbar.
 Wenn diese Funktion aktiviert ist, wird durch das Auswählen von Text im Lesemodus auch die native Auswahl von Firefox einbezogen.
 Das Kopieren von Text mittels `Strg+C` wird direkt an Firefox weitergeleitet, wodurch der formatierte Inhalt und nicht die reine Textdarstellung von NVDA kopiert wird.
 
@@ -284,10 +284,10 @@ Nutzer von Poedit 1 wird geraten auf die Version 3 zu aktualisieren, falls sie v
 * Audio:
   * NVDA friert nun nicht mehr ein, wenn mehrere Klänge in schneller Folge abgespielt werden. (#15311, #15757, @jcsteh)
   * Wenn ein vom Standard abweichendes Audiogerät eingestellt wird und das Gerät wird (wieder) verfügbar, wird NVDA auf das eingestellte Gerät wechseln. (#15759, @jcsteh)
-  * NVDA now resumes audio if the configuration of the output device changes or another application releases exclusive control of the device. (#15758, #15775, @jcsteh)
+  * NVDA setzt nun die Audio-Wiedergabe fort, wenn sich die Konfiguration des Ausgabegeräts ändert oder eine andere Anwendung die exklusive Kontrolle über das Gerät freigibt. (#15758, #15775, @jcsteh)
 * Braille:
-  * Nehrzeilige Brailleanzeigegeräte bringen BRLTTY nicht mehr zum Absturz. (#15386)
-  * Es werde Testinhalte von mehr Objekten in Braille angezeigt (#15605)
+  * Mehrzeilige Braillezeilen bringen BRLTTY nicht mehr zum Absturz. (#15386)
+  * Es werden Testinhalte mehrerer Objekte in Braille angezeigt (#15605)
   * Die Brailleeingabe von Kurzschrift funktioniert wieder. (#15773, @aaclause)
   * Die Brailleanzeige wird nun zuveerlässiger aktualisiert, wenn der Navigator zwischen Tabellenzellen bewegt wird. (#15755, @Emil-18)
   * Befehle ie "fokussiertes Objekt anzeigtn", "aktuelles Navigatorobjekt anzeigen" oder "Markierten Text anzeigen" funktionieren jetzt auch für Braille. (#15844, @Emil-18)
@@ -323,104 +323,104 @@ Nutzer von Poedit 1 wird geraten auf die Version 3 zu aktualisieren, falls sie v
 
 ### Änderungen für Entwickler
 
-Please refer to [the developer guide](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API) for information on NVDA's API deprecation and removal process.
+Bitte lesen Sie [das Entwicklerhandbuch](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API) für Informationen über API-Änderungen in NVDA.
 
-* Note: this is an Add-on API compatibility breaking release.
-Add-ons will need to be re-tested and have their manifest updated.
-* Building NVDA now requires Visual Studio 2022.
-Please refer to the [NVDA docs](https://github.com/nvaccess/nvda/blob/release-2024.1/projectDocs/dev/createDevEnvironment.md) for the specific list of Visual Studio components. (#14313)
-* Added the following extension points:
+* Hinweis: Dies ist eine Version, die die Kompatibilität der API für NVDA-Erweiterungen beeinträchtigt.
+NVDA-Erweiterungen müssen erneut getestet werden und die Manifest-Datei muss angepasst werden.
+* Die Erstellung von NVDA benötigt jetzt Visual Studio 2022.
+Eine spezifische Liste der Visual Studio-Komponenten finden Sie in den [NVDA-Dokumentationen](https://github.com/nvaccess/nvda/blob/release-2024.1/projectDocs/dev/createDevEnvironment.md). (#14313)
+* Die folgenden Erweiterungspunkte wurden hinzugefügt:
   * `treeInterceptorHandler.post_browseModeStateChange`. (#14969, @nvdaes)
   * `speech.speechCanceled`. (#15700, @LeonarddeR)
-  * `_onErrorSoundRequested` (should be retrieved calling `logHandler.getOnErrorSoundRequested()`) (#15691, @CyrilleB79)
-* It is now possible to use plural forms in an add-on's translations. (#15661, @beqabeqa473)
-* Included python3.dll in the binary distribution for use by add-ons with external libraries utilizing the [stable ABI](https://docs.python.org/3.11/c-api/stable.html). (#15674, @mzanm)
-* The `BrailleDisplayDriver` base class now has `numRows` and `numCols` properties to provide information about multi line braille displays.
-Setting `numCells` is still supported for single line braille displays and `numCells` will return the total number of cells for multi line braille displays. (#15386)
-* Updated BrlAPI for BRLTTY to version 0.8.5, and its corresponding python module to a Python 3.11 compatible build. (#15652, @LeonarddeR)
-* Added the `speech.speakSsml` function, which allows you to write NVDA speech sequences using [SSML](https://www.w3.org/TR/speech-synthesis11/). (#15699, @LeonarddeR)
-  * The following tags are currently supported and translated to appropriate NVDA speech commands:
-    * `Prosody` (`pitch`, `rate` and `volume`). Only multiplication (e.g. `200%` are supported.
-    * `say-as` with the `interpret` attribute set to `characters`
-    * `voice` with the `xml:lang` set to an XML language
-    * `break` with the `time` attribute set to a value in milliseconds, e.g. `200ms`
-    * `mark` with the `name` attribute set to a mark name, e.g. `mark1`, requires providing a callback
-  * Example: `speech.speakSsml('<speak><prosody pitch="200%">hello</prosody><break time="500ms" /><prosody rate="50%">John</prosody></speak>')`
-  * The SSML parsing capabilities are backed by the `SsmlParser` class in the `speechXml` module.
-* Changes to the NVDA Controller Client library:
-  * The file names of the library no longer contain a suffix denoting the architecture, i.e. `nvdaControllerClient32/64.dll` are now called `nvdaControllerClient.dll`. (#15718, #15717, @LeonarddeR)
-  * Added an example to demonstrate using nvdaControllerClient.dll from Rust. (#15771, @LeonarddeR)
-  * Added the following functions to the controller client: (#15734, #11028, #5638, @LeonarddeR)
-    * `nvdaController_getProcessId`: To get the process id (PID) of the current instance of NVDA the controller client is using.
-    * `nvdaController_speakSsml`: To instruct NVDA to speak according to the given SSML. This function also supports:
-      * Providing the symbol level.
-      * Providing the priority of speech to be spoken.
-      * Speaking both synchronously (blocking) and asynchronously (instant return).
-    * `nvdaController_setOnSsmlMarkReachedCallback`: To register a callback of type `onSsmlMarkReachedFuncType` that is called in synchronous mode for every `<mark />` tag encountered in the SSML sequence provided to `nvdaController_speakSsml`.
-  * Note: the new functions in the controller client only support NVDA 2024.1 and above.
-* Updated `include` dependencies:
-  * detours to `4b8c659f549b0ab21cf649377c7a84eb708f5e68`. (#15695)
-  * ia2 to `3d8c7f0b833453f761ded6b12d8be431507bfe0b`. (#15695)
-  * sonic to `8694c596378c24e340c09ff2cd47c065494233f1`. (#15695)
-  * w3c-aria-practices to `9a5e55ccbeb0f1bf92b6127c9865da8426d1c864`. (#15695)
-  * wil to `5e9be7b2d2fe3834a7107f430f7d4c0631f69833`. (#15695)
-* Device info yielded by `hwPortUtils.listUsbDevices` now contain the bus reported description of the USB device (key `busReportedDeviceDescription`). (#15764, @LeonarddeR)
-* For USB serial devices, `bdDetect.getConnectedUsbDevicesForDriver` and `bdDetect.getDriversForConnectedUsbDevices` now yield device matches containing a `deviceInfo` dictionary enriched with data about the USB device, such as `busReportedDeviceDescription`. (#15764, @LeonarddeR)
-* When the configuration file `nvda.ini` is corrupted, a backup copy is saved before it is reinitialized. (#15779, @CyrilleB79)
-* When defining a script with the script decorator, the `speakOnDemand` boolean argument can be specified to control if a script should speak while in "on-demand" speech mode. (#481, @CyrilleB79)
-  * Scripts that provide information (e.g. say window title, report time/date) should speak in the "on-demand" mode.
-  * Scripts that perform an action (e.g. move the cursor, change a parameter) should not speak in the "on-demand" mode.
-* Fixed bug where deleting git-tracked files during `scons -c` resulted in missing UIA COM interfaces on rebuild. (#7070, #10833, @hwf1324)
-* Fix a bug where some code changes were not detected when building `dist`, that prevented a new build from being triggered.
-Now `dist` always rebuilds. (#13372, @hwf1324)
-* A `gui.nvdaControls.MessageDialog` with default type of standard, no longer throws a None conversion exception because no sound is assigned. (#16223, @XLTechie)
+  * `_onErrorSoundRequested` (sollte abgerufen werden, indem `logHandler.getOnErrorSoundRequested()` verwendet wird) (#15691, @CyrilleB79)
+* Es ist jetzt möglich, Pluralformen in den Übersetzungen einer NVDA-Erweiterung zu verwenden. (#15661, @beqabeqa473)
+* Aufnahme der Datei python3.dll in die Binär-Distribution zur Verwendung durch NVDA-Erweiterungen mit externen Bibliotheken, die die [API](https://docs.python.org/3.11/c-api/stable.html) verwenden. (#15674, @mzanm)
+* Die Basisklasse `BrailleDisplayDriver` hat jetzt die Eigenschaften `numRows` und `numCols`, um Informationen über mehrzeilige Braillezeilen bereitzustellen.
+Die Einstellung `numCells` wird weiterhin für einzeilige Braillezeilen unterstützt und `numCells` gibt die Gesamtzahl der Zellen für mehrzeilige Braillezeilen zurück. (#15386)
+* Die BrlAPI für BRLTTY wurde auf Version 0.8.5 aktualisiert, und das entsprechende Python-Modul auf eine Python 3.11 kompatible Version umgestellt. (#15652, @LeonarddeR)
+* Die Funktion `speech.speakSsml` wurde hinzugefügt, mit der Sie Sprachsequenzen in [SSML](https://www.w3.org/TR/speech-synthesis11/) in NVDA schreiben können. (#15699, @LeonarddeR)
+  * Die folgenden Tags werden derzeit unterstützt und in entsprechende Sprachbefehle in NVDA übersetzt:
+    * `Prosody` (`pitch`, `rate` und `volume`). Nur Multiplikation (z. B. `200%` werden unterstützt.
+    * `say-as` mit dem Attribut `interpret` auf `characters` gesetzt
+    * `voice` mit der Einstellung `xml:lang` auf eine XML-Sprache
+    * `break` mit dem Attribut `time`, das auf einen Wert in Millisekunden gesetzt ist, z. B. `200ms`.
+    * `mark` mit dem Attribut `name`, das auf einen Namen der Markierung gesetzt ist, z. B. `mark1`, erfordert die Bereitstellung eines Fallbacks
+  * Beispiel: `speech.speakSsml('<speak><prosody pitch="200%">hello</prosody><break time="500ms" /><prosody rate="50%">John</prosody></speak>')`
+  * Die SSML-Parsing-Fähigkeiten werden von der Klasse "SsmlParser" im Modul "SpeechXml" unterstützt.
+* Änderungen an der NVDA-Controller-Client-Bibliothek:
+  * Die Dateinamen der Bibliothek enthalten kein Suffix mehr, das die Architektur angibt, d. h., `nvdaControllerClient32/64.dll` heißt jetzt nur noch `nvdaControllerClient.dll`. (#15718, #15717, @LeonarddeR)
+  * Es wurde ein Beispiel hinzugefügt, um die Verwendung von nvdaControllerClient.dll in Rust zu demonstrieren. (#15771, @LeonarddeR)
+  * Dem Controller-Client wurden die folgenden Funktionen hinzugefügt: (#15734, #11028, #5638, @LeonarddeR)
+    * `nvdaController_getProcessId`: Zum Abrufen der Prozess-ID (PID) der aktuellen Instanz von NVDA, die der Controller-Client verwendet.
+    * `nvdaController_speakSsml`: So können Sie SSML in NVDA benutzen. Diese Funktion unterstützt auch:
+      * Die Bereitstellung der Symbolstufe.
+      * Festlegung der Priorität der zu sprechenden Sprache.
+      * Sowohl synchron (blockierend) als auch asynchron (sofortige Rückkehr) zu sprechen.
+    * `nvdaController_setOnSsmlMarkReachedCallback`: Um einen Callback vom Typ `onSsmlMarkReachedFuncType` zu registrieren, der im synchronen Modus für jeden Tag `<mark />`, das in der SSML-Sequenz, die `nvdaController_speakSsml` zur Verfügung gestellt wird, aufgerufen wird.
+  * Hinweis: Die neuen Funktionen im Controller-Client werden nur NVDA 2024.1 und neuer unterstützt.
+* Aktualisierte `include`-Abhängigkeiten:
+  * detours auf `4b8c659f549b0ab21cf649377c7a84eb708f5e68`. (#15695)
+  * ia2 auf `3d8c7f0b833453f761ded6b12d8be431507bfe0b`. (#15695)
+  * sonic auf `8694c596378c24e340c09ff2cd47c065494233f1`. (#15695)
+  * w3c-aria-practices auf `9a5e55ccbeb0f1bf92b6127c9865da8426d1c864`. (#15695)
+  * wil auf `5e9be7b2d2fe3834a7107f430f7d4c0631f69833`. (#15695)
+* Die von `hwPortUtils.listUsbDevices` gelieferten Geräte-Informationen enthalten nun die vom Bus mitgeteilten Beschreibung des USB-Geräts (Schlüssel `busReportedDeviceDescription`). (#15764, @LeonarddeR)
+* Für serielle USB-Geräte liefern `bdDetect.getConnectedUsbDevicesForDriver` und `bdDetect.getDriversForConnectedUsbDevices` jetzt Geräte-Übereinstimmungen, die ein Dictionary `deviceInfo` enthalten, das mit Daten über das USB-Gerät ausgestattet ist, wie zum Beispiel `busReportedDeviceDescription`. (#15764, @LeonarddeR)
+* Wenn die Konfigurationsdatei `nvda.ini` beschädigt ist, wird eine Sicherungskopie gespeichert, bevor sie neu initialisiert wird. (#15779, @CyrilleB79)
+* Wenn ein Skript mit dem Skript-Dekorator definiert wird, kann das boolesche Argument `speakOnDemand` angegeben werden, um zu kontrollieren, ob ein Skript im Sprachmodus "on-demand" sprechen soll. (#481, @CyrilleB79)
+  * Skripte, die Informationen bereitstellen (z. B. Fenstertitel, Uhrzeit/Datum mitteilen), sollten im Sprachmodus "on-demand" sprechen.
+  * Skripte, die eine Aktion ausführen (z. B. den Cursor bewegen, einen Parameter ändern), sollten im Sprachmodus "on-demand" nicht sprechen.
+* Fehler behoben, bei dem das Löschen von getrackten Dateien von Git während `scons -c` zu fehlenden UIA-COM-Schnittstellen beim Wiederaufbau führte. (#7070, #10833, @hwf1324)
+* Behebung eines Fehlers, bei dem einige Code-Änderungen beim Erstellen von `dist` nicht erkannt wurden, wodurch ein neuer Build nicht ausgelöst werden konnte.
+Jetzt wird `dist` immer neu aufgebaut. (#13372, @hwf1324)
+* Ein `gui.nvdaControls.MessageDialog` mit dem Standardtyp "Standard" löst nicht mehr die Konvertierungsausnahme "None" aus, weil kein Sound zugewiesen ist. (#16223, @XLTechie)
 
-#### API Breaking Changes
+#### API-Änderungen
 
-These are breaking API changes.
-Please open a GitHub issue if your Add-on has an issue with updating to the new API.
+Dies sind die Änderungen an der API in NVDA.
+Bitte reichen Sie bei Problemen ein Ticket auf GitHub ein, wenn bei einer NVDA-Erweiterung ein Problem mit dem Update auf die neue API auftreten.
 
-* NVDA is now built with Python 3.11. (#12064)
-* Updated pip dependencies:
-  * configobj to 5.1.0dev commit `e2ba4457c4651fa54f8d59d8dcdd3da950e956b8`. (#15544)
-  * Comtypes to 1.2.0. (#15513, @codeofdusk)
-  * Flake8 to 4.0.1. (#15636, @lukaszgo1)
-  * py2exe to 0.13.0.1dev commit `4e7b2b2c60face592e67cb1bc935172a20fa371d`. (#15544) 
-  * robotframework to 6.1.1. (#15544)
-  * SCons to 4.5.2. (#15529, @LeonarddeR)
-  * sphinx to 7.2.6. (#15544)
-  * wxPython to 4.2.2a commit `0205c7c1b9022a5de3e3543f9304cfe53a32b488`. (#12551, #16257)
-* Removed pip dependencies:
-  * typing_extensions, these should be supported natively in Python 3.11 (#15544)
-  * nose, instead unittest-xml-reporting is used to generate XML reports. (#15544)
-* `IAccessibleHandler.SecureDesktopNVDAObject` has been removed.
-Instead, when NVDA is running on the user profile, track the existence of the secure desktop with the extension point: `winAPI.secureDesktop.post_secureDesktopStateChange`. (#14488)
-* `braille.BrailleHandler.handlePendingCaretUpdate` has been removed with no public replacement. (#15163, @LeonarddeR)
-* `bdDetect.addUsbDevices and bdDetect.addBluetoothDevices` have been removed.
-Braille display drivers should implement the `registerAutomaticDetection` class method instead.
-That method receives a `DriverRegistrar` object on which the `addUsbDevices` and `addBluetoothDevices` methods can be used. (#15200, @LeonarddeR)
-* The default implementation of the check method on `BrailleDisplayDriver` now requires both the `threadSafe` and `supportsAutomaticDetection` attributes to be set to `True`. (#15200, @LeonarddeR)
-* Passing lambda functions to `hwIo.ioThread.IoThread.queueAsApc` is no longer possible, as functions should be weakly referenceable. (#14627, @LeonarddeR)
-* `IoThread.autoDeleteApcReference` has been removed. (#14924, @LeonarddeR)
-* To support capital pitch changes, synthesizers must now explicitly declare their support for the `PitchCommand` in the `supportedCommands` attribute on the driver. (#15433, @LeonarddeR)
-* `speechDictHandler.speechDictVars` has been removed. Use `NVDAState.WritePaths.speechDictsDir` instead of `speechDictHandler.speechDictVars.speechDictsPath`. (#15614, @lukaszgo1)
-* `languageHandler.makeNpgettext` and `languageHandler.makePgettext` have been removed.
-`npgettext` and `pgettext` are supported natively now. (#15546)
-* The app module for [Poedit](https://poedit.net) has been changed significantly. The `fetchObject` function has been removed. (#15313, #7303, @LeonarddeR)
-* The following redundant types and constants have been removed from `hwPortUtils`: (#15764, @LeonarddeR)
+* NVDA wird jetzt mit Python 3.11 erstellt. (#12064)
+* Aktualisierte Pip-Abhängigkeiten:
+  * configobj auf 5.1.0dev commit `e2ba4457c4651fa54f8d59d8dcdd3da950e956b8`. (#15544)
+  * Comtypes auf 1.2.0. (#15513, @codeofdusk)
+  * Flake8 auf 4.0.1. (#15636, @lukaszgo1)
+  * py2exe auf 0.13.0.1dev commit `4e7b2b2c60face592e67cb1bc935172a20fa371d`. (#15544) 
+  * robotframework auf 6.1.1. (#15544)
+  * SCons auf 4.5.2. (#15529, @LeonarddeR)
+  * sphinx auf 7.2.6. (#15544)
+  * wxPython auf 4.2.2a commit `0205c7c1b9022a5de3e3543f9304cfe53a32b488`. (#12551, #16257)
+* Entfernte Pip-Abhängigkeiten:
+  * typing_extensions, diese sollten in Python 3.11 nativ unterstützt werden. (#15544)
+  * Nose, stattdessen wird unittest-xml-reporting verwendet, um XML-Berichte zu erstellen. (#15544)
+* `IAccessibleHandler.SecureDesktopNVDAObject` wurde entfernt.
+Wenn NVDA auf dem Benutzerprofil ausgeführt wird, verfolgen Sie stattdessen das Vorhandensein des sicheren Desktops mit dem Erweiterungspunkt: `winAPI.secureDesktop.post_secureDesktopStateChange`. (#14488)
+* `braille.BrailleHandler.handlePendingCaretUpdate` wurde ersatzlos gestrichen. (#15163, @LeonarddeR)
+* `bdDetect.addUsbDevices` und `bdDetect.addBluetoothDevices` wurden entfernt.
+Braillezeilen-Treiber sollten stattdessen die Klassenmethode `registerAutomaticDetection` implementieren.
+Diese Methode erhält ein Objekt `DriverRegistrar`, auf das die Methoden `addUsbDevices` und `addBluetoothDevices` angewendet werden können. (#15200, @LeonarddeR)
+* Die Standard-Implementierung der Prüfmethode von `BrailleDisplayDriver` erfordert nun, dass die Attribute `threadSafe` und `supportsAutomaticDetection` auf `True` gesetzt werden. (#15200, @LeonarddeR)
+* Die Übergabe von Lambda-Funktionen an `hwIo.ioThread.IoThread.queueAsApc` ist nicht mehr möglich, da Funktionen schwach referenzierbar sein sollten. (#14627, @LeonarddeR)
+* `IoThread.autoDeleteApcReference` wurde entfernt. (#14924, @LeonarddeR)
+* Um Tonhöhenänderungen bei Großbuchstaben zu unterstützen, müssen Sprachausgaben nun explizit die Unterstützung für den `PitchCommand` im Attribut `supportedCommands` des Treibers deklarieren. (#15433, @LeonarddeR)
+* `speechDictHandler.speechDictVars` wurde entfernt. Verwenden Sie `NVDAState.WritePaths.speechDictsDir` anstelle von `speechDictHandler.speechDictVars.speechDictsPath`. (#15614, @lukaszgo1)
+* `languageHandler.makeNpgettext` und `languageHandler.makePgettext` wurden entfernt.
+* `npgettext` und `pgettext` werden jetzt nativ unterstützt. (#15546)
+* Das Anwendungsmodul für [Poedit](https://poedit.net) wurde erheblich geändert. Die Funktion `fetchObject` wurde entfernt. (#15313, #7303, @LeonarddeR)
+* Die folgenden nicht mehr benötigten Typen und Konstanten wurden aus `hwPortUtils` entfernt: (#15764, @LeonarddeR)
   * `PCWSTR`
-  * `HWND` (replaced by `ctypes.wintypes.HWND`)
+  * `HWND` (ersetzt durch `ctypes.wintypes.HWND`)
   * `ULONG_PTR`
   * `ULONGLONG`
   * `NULL`
   * `GUID` (replaced by `comtypes.GUID`)
-* `gui.addonGui.AddonsDialog` has been removed. (#15834)
-* `touchHandler.TouchInputGesture.multiFingerActionLabel` has been removed with no replacement. (#15864, @CyrilleB79)
-* `NVDAObjects.IAccessible.winword.WordDocument.script_reportCurrentHeaders` has been removed with no replacement. (#15904, @CyrilleB79)
-* The following app modules are removed.
-Code which imports from one of them, should instead import from the replacement module. (#15618, @lukaszgo1)
+* `gui.addonGui.AddonsDialog` wurde entfernt. (#15834)
+* `touchHandler.TouchInputGesture.multiFingerActionLabel` wurde ersatzlos gestrichen. (#15864, @CyrilleB79)
+* `NVDAObjects.IAccessible.winword.WordDocument.script_reportCurrentHeaders` wurde ersatzlos gestrichen. (#15904, @CyrilleB79)
+* Die folgenden Anwendungsmodule werden entfernt.
+Code, der von einem dieser Module stammt, sollte stattdessen vom Ersatzmodul erben. (#15618, @lukaszgo1)
 
-| Removed module name |Replacement module|
+| Veralteter Modulname |Ersatzmodul|
 |---|---|
 |`azardi-2.0` |`azardi20`|
 |`azuredatastudio` |`code`|
@@ -448,65 +448,65 @@ Code which imports from one of them, should instead import from the replacement 
 |`zend-eclipse-php` |`eclipse`|
 |`zendstudio` |`eclipse`|
 
-#### Deprecations
+#### Veraltete Funktionen
 
-* Using `watchdog.getFormattedStacksForAllThreads` is deprecated - please use `logHandler.getFormattedStacksForAllThreads` instead. (#15616, @lukaszgo1)
-* `easeOfAccess.canConfigTerminateOnDesktopSwitch` has been deprecated, as it became obsolete since Windows 7 is no longer supported. (#15644, @LeonarddeR)
-* `winVersion.isFullScreenMagnificationAvailable` has been deprecated - use `visionEnhancementProviders.screenCurtain.ScreenCurtainProvider.canStart` instead. (#15664, @josephsl)
-* The following Windows release constants has been deprecated from winVersion module (#15647, @josephsl):
+* Die Verwendung von `watchdog.getFormattedStacksForAllThreads` ist veraltet - bitte verwenden Sie stattdessen `logHandler.getFormattedStacksForAllThreads`. (#15616, @lukaszgo1)
+* `easeOfAccess.canConfigTerminateOnDesktopSwitch` ist veraltet, da Windows 7 nicht mehr unterstützt wird. (#15644, @LeonarddeR)
+* `winVersion.isFullScreenMagnificationAvailable` ist veraltet - verwenden Sie stattdessen `visionEnhancementProviders.screenCurtain.ScreenCurtainProvider.canStart`. (#15664, @josephsl)
+* Die folgenden Windows-Versionskonstanten im Modul winVersion sind veraltet (#15647, @josephsl):
   * `winVersion.WIN7`
   * `winVersion.WIN7_SP1`
   * `winVersion.WIN8`
-* The `bdDetect.KEY_*` constants have been deprecated.
-Use `bdDetect.DeviceType.*` instead. (#15772, @LeonarddeR).
-* The `bdDetect.DETECT_USB` and `bdDetect.DETECT_BLUETOOTH` constants have been deprecated with no public replacement. (#15772, @LeonarddeR).
-* Using `gui.ExecAndPump` is deprecated - please use `systemUtils.ExecAndPump` instead. (#15852, @lukaszgo1)
+* Die Konstanten `bdDetect.KEY_*` sind veraltet.
+Verwenden Sie stattdessen `bdDetect.DeviceType.*`. (#15772, @LeonarddeR).
+* Die Konstanten `bdDetect.DETECT_USB` und `bdDetect.DETECT_BLUETOOTH` sind veraltet und werden ersatzlos gestrichen. (#15772, @LeonarddeR).
+* Die Verwendung von `gui.ExecAndPump` ist veraltet - bitte verwenden Sie stattdessen `systemUtils.ExecAndPump`. (#15852, @lukaszgo1)
 
 ## 2023.3.4
 
-This is a patch release to fix a security issue and installer issue.
-Please responsibly disclose security issues following NVDA's [security policy](https://github.com/nvaccess/nvda/blob/master/security.md).
+Dies ist ein Patch-Release zur Behebung eines Sicherheitsproblems und eines Problems im Installationsprogramm.
+Bitte melden Sie Sicherheitsprobleme verantwortungsbewusst gemäß der [Sicherheitsrichtlinie](https://github.com/nvaccess/nvda/blob/master/security.md) von NVDA.
 
-### Security Fixes
+### Sicherheitskorrekturen
 
-* Prevents loading custom configuration while secure mode is forced.
+* Verhindert das Laden der benutzerdefinierten Konfiguration, wenn der sichere Modus erzwungen wird.
 ([GHSA-727q-h8j2-6p45](https://github.com/nvaccess/nvda/security/advisories/GHSA-727q-h8j2-6p45))
 
-### Bug Fixes
+### Fehlerbehebungen
 
-* Fixed bug which caused the NVDA process to fail to exit correctly. (#16123)
-* Fixed bug where if the previous NVDA process failed to exit correctly, an NVDA installation could fail to an unrecoverable state. (#16122)
+* Fehler behoben, durch den der NVDA-Prozess nicht korrekt beendet werden konnte. (#16123)
+* Fehler behoben, bei dem eine NVDA-Installation in einen nicht wiederherstellbaren Zustand fallen konnte, wenn der vorherige NVDA-Prozess nicht korrekt beendet wurde. (#16122)
 
 ## 2023.3.3
 
-This is a patch release to fix a security issue.
-Please responsibly disclose security issues following NVDA's [security policy](https://github.com/nvaccess/nvda/blob/master/security.md).
+Dies ist ein Patch-Release zur Behebung einer Sicherheitslücke.
+Bitte melden Sie Sicherheitsprobleme verantwortungsbewusst gemäß der [Sicherheitsrichtlinie](https://github.com/nvaccess/nvda/blob/master/security.md) von NVDA.
 
-### Security Fixes
+### Sicherheitskorrekturen
 
-* Prevents possible reflected XSS attack from crafted content to cause arbitrary code execution.
+* Verhindert einen möglichen reflektierten XSS-Angriff durch manipulierte Inhalte, der die Ausführung von beliebigem Code ermöglicht.
 ([GHSA-xg6w-23rw-39r8](https://github.com/nvaccess/nvda/security/advisories/GHSA-xg6w-23rw-39r8))
 
 ## 2023.3.2
 
-This is a patch release to fix a security issue.
-The security patch in 2023.3.1 was not resolved correctly.
-Please responsibly disclose security issues following NVDA's [security policy](https://github.com/nvaccess/nvda/blob/master/security.md).
+Dies ist ein Patch-Release zur Behebung einer Sicherheitslücke.
+Der Security-Patch in 2023.3.1 wurde nicht korrekt behoben.
+Bitte melden Sie Sicherheitsprobleme verantwortungsbewusst gemäß der [Sicherheitsrichtlinie](https://github.com/nvaccess/nvda/blob/master/security.md) von NVDA.
 
-### Security Fixes
+### Sicherheitskorrekturen
 
-* The security patch in 2023.3.1 was not resolved correctly.
-Prevents possible system access and arbitrary code execution with system privileges for unauthenticated users.
+* Der Security-Patch in 2023.3.1 wurde nicht korrekt behoben.
+Verhindert den möglichen Systemzugriff und die Ausführung von beliebigem Code mit Systemprivilegien für nicht authentifizierte Benutzer.
 ([GHSA-h7pp-6jqw-g3pj](https://github.com/nvaccess/nvda/security/advisories/GHSA-h7pp-6jqw-g3pj))
 
 ## 2023.3.1
 
-This is a patch release to fix a security issue.
-Please responsibly disclose security issues following NVDA's [security policy](https://github.com/nvaccess/nvda/blob/master/security.md).
+Dies ist ein Patch-Release zur Behebung einer Sicherheitslücke.
+Bitte melden Sie Sicherheitsprobleme verantwortungsbewusst gemäß der [Sicherheitsrichtlinie](https://github.com/nvaccess/nvda/blob/master/security.md) von NVDA.
 
-### Security Fixes
+### Sicherheitskorrekturen
 
-* Prevents possible system access and arbitrary code execution with system privileges for unauthenticated users.
+* Verhindert den möglichen Systemzugriff und die Ausführung von beliebigem Code mit Systemprivilegien für nicht authentifizierte Benutzer.
 ([GHSA-h7pp-6jqw-g3pj](https://github.com/nvaccess/nvda/security/advisories/GHSA-h7pp-6jqw-g3pj))
 
 ## 2023.3
@@ -1055,7 +1055,7 @@ Bitte lesen Sie das [Entwicklerhandbuch](https://www.nvaccess.org/files/nvda/doc
 Dies ist eine kleinere Version, die Fehler in 2022.3.2, 2022.3.1 und 2022.3 behebt.
 Damit wird auch ein Sicherheitsproblem gelöst.
 
-### Sicherheitsproblembehebungen
+### Sicherheitskorrekturen
 
 * Verhindert den möglichen Systemzugang (z. B. durch die Python-Konsole in NVDA) für nicht authentifizierte Benutzer.
 ([GHSA-fpwc-2gxx-j9v7](https://github.com/nvaccess/nvda/security/advisories/GHSA-fpwc-2gxx-j9v7))
@@ -1083,7 +1083,7 @@ Damit wird auch ein Sicherheitsproblem gelöst.
 
 Dies ist eine kleinere Version, die Probleme mit 2022.3.1 behebt und eine Sicherheitslücke schließt.
 
-### Sicherheitsproblembehebungen
+### Sicherheitskorrekturen
 
 * Verhindert den möglichen Zugriff auf Systemebene für nicht authentifizierte Benutzer.
 ([GHSA-3jj9-295f-h69w](https://github.com/nvaccess/nvda/security/advisories/GHSA-3jj9-295f-h69w))
@@ -1098,7 +1098,7 @@ Dies ist eine kleinere Version, die Probleme mit 2022.3.1 behebt und eine Sicher
 Dies ist eine kleinere Version, die mehrere Sicherheitsprobleme behebt.
 Bitte melden Sie Sicherheitsprobleme umgehend an <info@nvaccess.org>.
 
-### Sicherheitsproblembehebungen
+### Sicherheitskorrekturen
 
 * Ein Exploit wurde behoben, durch den es möglich war, von Benutzer- zu Systemrechten zu gelangen.
 ([GHSA-q7c2-pgqm-vvw5](https://github.com/nvaccess/nvda/security/advisories/GHSA-q7c2-pgqm-vvw5))
@@ -1200,7 +1200,7 @@ Dieser Patch behebt einen Fehler, der in Version 2022.2.1 beim Öffnen der Taste
 Dies ist eine kleinere Version zur Behebung einer Sicherheitslücke.
 Bitte melden Sie Sicherheitsprobleme umgehend an <info@nvaccess.org>.
 
-### Sicherheitsproblembehebungen
+### Sicherheitskorrekturen
 
 * Es wurde ein Exploit behoben, durch den es möglich war, die Python-Konsole über den Sperrbildschirm zu starten. (GHSA-rmq3-vvhq-gp32)
 * Es wurde ein Exploit behoben, bei dem es möglich war, den Sperrbildschirm durch die Objekt-Navigation zu umgehen. (GHSA-rmq3-vvhq-gp32)
@@ -1384,7 +1384,7 @@ Hinweis:
 * Standard-Tastenbefehle für das Umschalten von NVDA-Tasten für Braillezeilen von Freedom Scientific hinzugefügt (#13152)
 * Das Wort "Grundlinie" wird nicht mehr über den Befehl zur Textformatierung mittels NVDA+F mitgeteilt. (#11815)
 * Für die Aktivierung der langen Beschreibungen ist keine Standard-Tastenbefehl mehr zugewiesen. (#13380)
-* Für die Zusammenfassung der Details wurde nun standardmäßig der Tastenbefehl NVDA+D zugewiesen. (#13380)
+* Für die Zusammenfassung der Details wurde nun standardmäßig der Tastenbefehl `NVDA+D` zugewiesen. (#13380)
 * NVDA muss nach der Installation des MathPlayers neu gestartet werden. (#13486)
 
 ### Fehlerbehebungen
@@ -1436,9 +1436,11 @@ Hinweis:
     * Hinweis: `SVSFlagsAsync` sollte durch `SpeechVoiceSpeakFlags.Async` ersetzt werden, nicht durch `SpeechVoiceSpeakFlags.lagsAsync`.
   * Die Verwendung von `constants.SVE*` sollte durch `SpeechVoiceEvents.*` ersetzt werden.
 * Aus dem App-Modul `soffice` wurden die folgenden Klassen und Funktionen entfernt `JAB_OOTableCell`, `JAB_OOTable`, `gridCoordStringToNumbers`. (#12849)
-* core.CallCancelled`` ist jetzt `exceptions.CallCancelled`. (#12940)
+* `core.CallCancelled` ist jetzt `exceptions.CallCancelled`. (#12940)
 * Alle Konstanten, die mit RPC beginnen, aus `core` und `logHandler` wurden in `RPCConstants.RPC` enum verschoben. (#12940)
-* Es wird empfohlen, die Funktionen `mouseHandler.doPrimaryClick` und `mouseHandler.doSecondaryClick` zu verwenden, um die logische Maus-Aktion auszuführen, wie z. B. das Aktivieren (primär) oder sekundär (Kontextmenü anzeigen), anstatt `executeMouseEvent` zu verwenden und die linke oder rechte Maustaste festzulegen. Dies stellt sicher, daß der Code die Windows-Benutzereinstellung für das Vertauschen der primären Maustaste beachtet. (#12642)
+* Es wird empfohlen, die Funktionen `mouseHandler.doPrimaryClick` und `mouseHandler.doSecondaryClick` zu verwenden, um mit einem Mausklick eine logische Aktion wie die Aktivierung (primär) oder die Anzeige des Kontextmenüs (sekundär) durchzuführen,
+anstatt `executeMouseEvent` zu verwenden und speziell die linke oder rechte Maustaste anzugeben.
+Dadurch wird sichergestellt, dass der Code die Windows-Benutzereinstellung für das Umschalten der primären Maustaste berücksichtigt. (#12642)
 * `config.getSystemConfigPath` wurde entfernt - es gibt keinen Ersatz. (#12943)
 * `shlobj.SHGetFolderPath` wurde entfernt - bitte verwenden Sie stattdessen `shlobj.SHGetKnownFolderPath`. (#12943)
 * Die `shlobj`-Konstanten wurden entfernt. Ein neues Enum wurde erstellt, `shlobj.FolderId` für die Verwendung mit `SHGetKnownFolderPath`. (#12943)
@@ -1489,7 +1491,7 @@ Hinweis:
 Dies ist eine kleinere Version zur Behebung einer Sicherheitslücke.
 Bitte melden Sie Sicherheitsprobleme umgehend an <info@nvaccess.org>.
 
-### Sicherheitsproblembehebungen
+### Sicherheitskorrekturen
 
 * Behoben wurde der Sicherheitshinweis `GHSA-xc5m-v23f-pgr7`.
   * Das Dialogfeld für die Ansage von Symbolen wurde im geschützten Modus deaktiviert.
@@ -1499,7 +1501,7 @@ Bitte melden Sie Sicherheitsprobleme umgehend an <info@nvaccess.org>.
 In dieser Version wurden mehrere Sicherheitsprobleme behoben.
 Bitte melden Sie Sicherheitsprobleme umgehend an <info@nvaccess.org>! Vielen Dank.
 
-### Sicherheitsproblembehebungen
+### Sicherheitskorrekturen
 
 * Behoben wurde der Sicherheitshinweis `GHSA-354r-wr4v-cx28`. (#13488)
   * Die Möglichkeit, NVDA mit aktivierter Debug-Protokollierung zu starten, sobald NVDA im geschützten Modus läuft, wurde entfernt.
