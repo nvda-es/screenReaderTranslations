@@ -4731,26 +4731,27 @@ Für weitere Informationen sehen Sie in der <a href="keyCommands.html" title="Be
 <h3 id="anderungen-fur-entwickler_48">Änderungen für Entwickler</h3>
 <ul>
 <li>SCons wird nun verwendet, um den Quellcode vorzubereiten und eine portable Version oder ein Installationsprogramm zu erstellen. Weitere Informationen finden Sie in der Datei "Readme.txt" im Stammverzeichnis des Quellcodes.</li>
-<li>Die Bezeichnung für Tasten(kombinationen) wurden logischer und benutzerfreundlicher gestaltet. z. B. "upArrow" anstelle von "extendedUp" und "numpadPageUp" anstelle von "prior". Eine Liste aller Tastenbezeichnungen finden Sie im Modul "vKCodes".</li>
+<li>Die Bezeichnung für Tasten(kombinationen) wurden logischer und benutzerfreundlicher gestaltet. z. B. "upArrow" anstelle von "extendedUp" und "numpadPageUp" anstelle von "prior". Eine Liste aller Tastenbezeichnungen finden Sie im Modul "vkCodes".</li>
 <li>Sämtliche Benutzereingaben werden nun durch eine Instanz namens "inputCore.InputGesture" repräsentiert. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/601" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #601">#601</a>)</li>
-<li>Jede Eingabequelle bildet eine Unterklasse von "InputGesture". So werden beispielsweise Tastatureingaben von "keyboardHandler.KeyboardInputGesture" verarbeitet.</li>
-<li>"Input gestures" sind beim "SkriptableObjects" angesiedelt. Verwenden der Methode "SkriptableObject.bindGesture()" gehören zur Instanz der "__gestures dict" oder der Klasse der Skriptnamen, die die Tastenzuordnungen definiert. Lesen Sie mehr im Abschnitt "baseObject.SkriptableObject" für Details.</li>
-<li>Anwendungsmodule besitzen keine Dateien für die Tastenzuweisungen mehr. Alle Zuweisungen der Eingabemethoden müssen in den Anwendungsmodulen selbst erfolgen.</li>
-<li>Alle Skripte verarbeiten nun Instanzen von "imputgesture" anstelle von Tastendrücken.</li>
-<li>Es können nun Tastendrücke an das Betriebssystem gesendet werden, in dem die Methode "send()" eines "gesture"-Objekts verwendet wird.</li>
-<li>Um einen Tastendruck zu senden, müssen Sie zunächst ein Objekt vom Typ "keyboardinputgesture" erstellen. Verwenden Sie z. B. "keyboardinputgesture.fromname()". Benutzen Sie anschließend die Methode "send()" des erstellten Objekts.</li>
-<li>In den einzelnen Gebietsschemen können jetzt individuelle Zuweisungen der Eingabemethoden erstellt werden, die neue Eingabemethoden definieren oder vorhandene überschreiben können. Diese so erstelten Eingabemethodenzuweisungen sind überall in NVDA wirksam. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/810" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #810">#810</a>)</li>
-<li>Sprachspezifische Zurordnungen der Eingabemethoden müssen im Ordner "locale\\gestures.ini" liegen, wobei  der zweistellige Sprachcode ist (z. B. "en" für Englisch und "de" für Deutsch).</li>
+<li>Jede Eingabequelle ist eine Unterklasse der Basisklasse "InputGesture".</li>
+<li>Das Drücken von Tasten auf der Systemtastatur wird von der Klasse keyboardHandler.KeyboardInputGesture behandelt.</li>
+<li>Das Betätigen von Tasten, Rädern und anderen Bedienelementen auf einer Braillezeile wird von Unterklassen der Klasse braille.BrailleDisplayGesture erfasst. Diese Unterklassen werden von jedem Braillezeilen-Treiber bereitgestellt.</li>
+<li>Tastenbefehle werden an ScriptableObjects gebunden, indem die Methode ScriptableObject.bindGesture() für eine Instanz oder ein __gestures-Diktat für die Klasse verwendet wird, das Gestenbezeichner auf Skriptnamen abbildet. Siehe baseObject.ScriptableObject für Details.</li>
+<li>Anwendungsmodule besitzen keine Keymap-Dateien mehr. Alle Tastenbefehle für Tastenbefehle müssen im Anwendungsmodul selbst vorgenommen werden.</li>
+<li>Alle Skripte nehmen jetzt eine InputGesture-Instanz anstelle eines Tastendrucks.</li>
+<li>KeyboardInputGestures können mit der Mtehtode send() des Tastenbefehls an das Betriebssystem gesendet werden.</li>
+<li>Um einen beliebigen Tastendruck zu senden, müssen Sie nun eine KeyboardInputGesture mit KeyboardInputGesture.fromName() erstellen und dann deren send()-Methode verwenden.</li>
+<li>Sprachspezifisch kann man nun eine Zuordnungsdatei bereitstellen, um neue Tastenbefehle hinzuzufügen oder bestehende für Skripte global in NVDA zu überschreiben. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/810" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #810">#810</a>)</li>
+<li>Keymaps für Gebietsschema sollten in locale\LANG\gestures.ini abgelegt werden, wobei LANG der Sprachcode definiert.</li>
 <li>Lesen Sie im Abschnitt "inputCore.GlobalGestureMap" nach, um mehr über das Dateiformat zu erfahren.</li>
 <li>Das neue "LiveText und Terminal NVDAObject" erleichtert das automatische Ansagen von neuen Texten. Lesen Sie im Abschnitt "NVDAObjects.behaviors" zu diesen Klassen für Details. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/936" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #936">#936</a>)</li>
 <li>Die Overlay-Klasse "NVDAObjects.window.DisplayModelLiveText" kann für Objekte verwendet werden, die den anzuzeigenden Text direkt vom Bildschirm abfangen müssen.</li>
 <li>Sehen Sie sich die Anwendungsmodule für "Putty" und "Mirc" für Anwendungsbeispiele an.</li>
 <li>Es gibt jetzt kein Standard-Anwendungsmodul mehr. Anwendungsmodule sollten stattdessen die Klasse "appModuleHandler.AppModule" erben, welche die Basisklasse für alle Anwendungsmodule darstellt.</li>
-<li>Unterstützung für globale Erweiterungen hinzugefügt, die Anwendungsübergreifend Skripte zuweisen, "NVDAObject"-Ereignisse verarbeiten und "NVDAObject"-Overlay-Klassen auswählen können. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/281" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #281">#281</a>)</li>
-<li>Für weitere Details sehen Sie sich "globalPluginHandler.GlobalPlugin" an.</li>
+<li>Unterstützung für globale Erweiterungen hinzugefügt, die Anwendungsübergreifend Skripte zuweisen, "NVDAObject"-Ereignisse verarbeiten und "NVDAObject"-Overlay-Klassen auswählen können. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/281" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #281">#281</a>) Für weitere Details sehen Sie sich "globalPluginHandler.GlobalPlugin" an.</li>
 <li>Die verfügbaren Attribute von "SynthDriver"-Objekte für Einstellungen der Strings (im Allgemeinen "availableVoices" und "availableVariants") werden nun als "OrderedDicts" anstatt Listen bezeichnet.</li>
 <li>Die Klasse "synthDriverHandler.VoiceInfo" akzeptiert nun einen optionalen Parameter namens "language", der die Sprache der Stimme angibt.</li>
-<li>Die "SynthDriver"-Objekte stellen nun ein zusätzliches Attribut language zur Verfügung, das die Sprache der aktuellen Stimme angibt.</li>
+<li>Die "SynthDriver"-Objekte stellen nun ein zusätzliches Attribut "language" zur Verfügung, das die Sprache der aktuellen Stimme angibt.</li>
 <li>Die Basisimplementierung verwendet die Sprache, die im "VoiceInfo"-Objekt bei availablevoices angegeben ist. Dies trifft für alle Synthesizer zu, die eine Sprache pro Stimme bereitstellen.</li>
 <li>Braillezeilentreiber wurden so erweitert, dass Tasten, Rädchen und andere Steuerelemente an NVDA-Skripte zugewiesen werden können:</li>
 <li>Treiber können eine globale Eingabemethodenzuweisung bereitstellen, um Zuweisungen für Skripte an beliebiger Stelle inNVDA hinzuzufügen.</li>
@@ -4758,7 +4759,7 @@ Für weitere Informationen sehen Sie in der <a href="keyCommands.html" title="Be
 <li>Sehen Sie sich "braille.BrailleDisplayDriver" für weitere Informationen und vorhandene Treiber von Braillezeilen für Beispiele an.</li>
 <li>Die Eigenschaft "selfvoicing" der Klassen für Anwendungsmodule wurde in "sleepmode" umbenannt.</li>
 <li>Um die Namenskonventionen in Anwendungsmodulen und im Tree-interceptor einheitlich zu halten, wurden die Ereignisse "event_appLoseFocus" und "event_appGainFocus" in "event_appModule_loseFocus" bzw. "event_appModule_gainFocus" umbenannt.</li>
-<li>Alle Treiber von zeilen sollten nun "braille.BrailleDisplayDriver" anstelle von "braille.BrailleDisplayDriverWithCursor" verwenden.</li>
+<li>Alle Braillezeilen-Treiber sollten nun "braille.BrailleDisplayDriver" anstelle von "braille.BrailleDisplayDriverWithCursor" verwenden.</li>
 <li>Der Cursor wird nun außerhalb des Treibers verwaltet.</li>
 <li>In bereits vorhandenen Treibern muss nur noch die Klassendefinition entsprechend angepasst und die Methode "_display" in "display" umbenannt werden.</li>
 </ul>
