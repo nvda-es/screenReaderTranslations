@@ -4315,7 +4315,8 @@ Zu den wichtigsten Neuerungen gehören das Anzeigen von Farben, sowie die automa
 
 ### Neue Features
 
-* Die Ausgabe von Farben bei der Angabe der Textformatierung wird nun unterstützt (sowohl automatisch, einstellbar in den Einstellungen zur Dokument-Formatierung) als auch manuell (über die Tastenkombination NVDA+F. Dies betrifft IAccesible-Eingabefelder (wie z. B. in Mozilla-Anwendungen), Richedit-Eingabefelder (wie z. B. in Wordpad) soie Eingabefelder in IBM Lotus Symphony.
+* Für einige Steuerelemente können jetzt Farben abgerufen werden. Die automatische Anzeige kann in den Einstellungen der Dokumentformatierungen konfiguriert werden. Sie kann auch bei Bedarf mit dem Befehl zur Textformatierung (NVDA+F) abgefragt werden.
+ * Zunächst wird dies in den standardmäßigen IAccessible2-Steuerelementen für editierbaren Text (z. B. in Mozilla-Anwendungen), RichEdit-Steuerelementen (z. B. in WordPad) und IBM Lotus Symphony-Textsteuerelementen unterstützt.
 * Nun kann in virtuellen Ansichten seitenweise (Umschalt+Seite nach oben/Seite nach unten) oder absatzweise (Umschalt+Strg+Pfeil nach oben/Pfeil nach unten) markiert werden. (#639)
 * NVDA zeigt nun neu erscheinenden Text in Terminalfenstern korrekt an. Dies betrifft u. a. mIRC, PuTTY, Tera Term und SecureCRT. (#936)
 * Nun kann der Anwender neue NVDA-Tastenkombinationen hinzufügen oder vorhandene ersetzen, in dem er eine einfache Zuordnung von Benutzereingaben bereitstellt. (#194)
