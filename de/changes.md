@@ -346,7 +346,7 @@ Die Einstellung `numCells` wird weiterhin für einzeilige Braillezeilen unterst�
     * `break` mit dem Attribut `time`, das auf einen Wert in Millisekunden gesetzt ist, z. B. `200ms`.
     * `mark` mit dem Attribut `name`, das auf einen Namen der Markierung gesetzt ist, z. B. `mark1`, erfordert die Bereitstellung eines Fallbacks
   * Beispiel: `speech.speakSsml('<speak><prosody pitch="200%">hello</prosody><break time="500ms" /><prosody rate="50%">John</prosody></speak>')`
-  * Die SSML-Parsing-Fähigkeiten werden von der Klasse "SsmlParser" im Modul "SpeechXml" unterstützt.
+  * Die SSML-Parsing-Fähigkeiten werden von der Klasse `SsmlParser` im Modul `SpeechXml` unterstützt.
 * Änderungen an der NVDA-Controller-Client-Bibliothek:
   * Die Dateinamen der Bibliothek enthalten kein Suffix mehr, das die Architektur angibt, d. h., `nvdaControllerClient32/64.dll` heißt jetzt nur noch `nvdaControllerClient.dll`. (#15718, #15717, @LeonarddeR)
   * Es wurde ein Beispiel hinzugefügt, um die Verwendung von nvdaControllerClient.dll in Rust zu demonstrieren. (#15771, @LeonarddeR)
@@ -396,7 +396,7 @@ Bitte reichen Sie bei Problemen ein Ticket auf GitHub ein, wenn bei einer NVDA-E
 * `IAccessibleHandler.SecureDesktopNVDAObject` wurde entfernt.
 Wenn NVDA auf dem Benutzerprofil ausgeführt wird, verfolgen Sie stattdessen das Vorhandensein des sicheren Desktops mit dem Erweiterungspunkt: `winAPI.secureDesktop.post_secureDesktopStateChange`. (#14488)
 * `braille.BrailleHandler.handlePendingCaretUpdate` wurde ersatzlos gestrichen. (#15163, @LeonarddeR)
-* `bdDetect.addUsbDevices` und `bdDetect.addBluetoothDevices` wurden entfernt.
+* `bdDetect.addUsbDevices und bdDetect.addBluetoothDevices` wurden entfernt.
 Braillezeilen-Treiber sollten stattdessen die Klassenmethode `registerAutomaticDetection` implementieren.
 Diese Methode erhält ein Objekt `DriverRegistrar`, auf das die Methoden `addUsbDevices` und `addBluetoothDevices` angewendet werden können. (#15200, @LeonarddeR)
 * Die Standard-Implementierung der Prüfmethode von `BrailleDisplayDriver` erfordert nun, dass die Attribute `threadSafe` und `supportsAutomaticDetection` auf `True` gesetzt werden. (#15200, @LeonarddeR)
@@ -405,7 +405,7 @@ Diese Methode erhält ein Objekt `DriverRegistrar`, auf das die Methoden `addUsb
 * Um Tonhöhenänderungen bei Großbuchstaben zu unterstützen, müssen Sprachausgaben nun explizit die Unterstützung für den `PitchCommand` im Attribut `supportedCommands` des Treibers deklarieren. (#15433, @LeonarddeR)
 * `speechDictHandler.speechDictVars` wurde entfernt. Verwenden Sie `NVDAState.WritePaths.speechDictsDir` anstelle von `speechDictHandler.speechDictVars.speechDictsPath`. (#15614, @lukaszgo1)
 * `languageHandler.makeNpgettext` und `languageHandler.makePgettext` wurden entfernt.
-* `npgettext` und `pgettext` werden jetzt nativ unterstützt. (#15546)
+`npgettext` und `pgettext` werden jetzt nativ unterstützt. (#15546)
 * Das Anwendungsmodul für [Poedit](https://poedit.net) wurde erheblich geändert. Die Funktion `fetchObject` wurde entfernt. (#15313, #7303, @LeonarddeR)
 * Die folgenden nicht mehr benötigten Typen und Konstanten wurden aus `hwPortUtils` entfernt: (#15764, @LeonarddeR)
   * `PCWSTR`
@@ -1140,7 +1140,7 @@ Dies kann in den erweiterten NVDA-Einstellungen wieder aktiviert werden. (#11554
     * Belarussisch
     * Luxembourgisch
     * Totontepec Mixe
- Bei Verwendung von UIA für den Zugriff auf Steuerelemente von Microsoft Excel-Tabellenkalkulationen teilt NVDA nun mit, sobald eine Zelle zusammengeführt wird. (#12843)
+* Bei Verwendung von UIA für den Zugriff auf Steuerelemente von Microsoft Excel-Tabellenkalkulationen teilt NVDA nun mit, sobald eine Zelle zusammengeführt wird. (#12843)
 * Anstatt "hat Details" zu melden, wird, sofern möglich, der Zweck der Details angegeben, zum Beispiel "enthält Kommentar". (#13649)
 * Die Installationsgröße von NVDA wird nun im Abschnitt Windows-Programme und -Funktionen angezeigt. (#13909)
 
@@ -1261,7 +1261,7 @@ LibLouis wurde aktualisiert und enthält eine neue deutsche Braille-Tabelle.
 * Braille:
   * Braille-Ausgabe beim Navigieren in bestimmten Texten in Mozilla-RichEdit-Steuerelementen behoben, z. B. beim Verfassen einer Nachricht in Thunderbird. (#12542)
   * Wenn die Braillezeile automatisch verbunden wird und die Maus bei aktivierter Mausverfolgung bewegt wird,
-  Befehle für die Textanzeige aktualisieren nun die Ausgabe auf der Braillezeile mit dem vorgelesenen Inhalt. (#11519)
+   Befehle für die Textanzeige aktualisieren nun die Ausgabe auf der Braillezeile mit dem vorgelesenen Inhalt. (#11519)
   * Es ist nun möglich, die Braillezeile nach der Verwendung von Befehlen für die Textanzeige durch den Inhalt zu navigieren. (#8682)
 * Das NVDA-Installationsprogramm kann fortan von Verzeichnissen mit Sonderzeichen aus gestartet werden. (#13270)
 * In Firefox teilt NVDA keine Elemente auf Webseiten mehr mit, wenn die Attribute aria-rowindex, aria-colindex, aria-rowcount oder aria-colcount ungültig sind. (#13405)
@@ -1382,8 +1382,8 @@ Hinweis:
 * `NVDA+Nummernblock Komma` teilt standardmäßig die Position des Cursor oder des fokussierten Objekts mit. (#13060)
 * `NVDA+Umschalt+Nummernblock Komma` teilt die Position des NVDA-Cursors mit. (#13060)
 * Standard-Tastenbefehle für das Umschalten von NVDA-Tasten für Braillezeilen von Freedom Scientific hinzugefügt (#13152)
-* Das Wort "Grundlinie" wird nicht mehr über den Befehl zur Textformatierung mittels NVDA+F mitgeteilt. (#11815)
-* Für die Aktivierung der langen Beschreibungen ist keine Standard-Tastenbefehl mehr zugewiesen. (#13380)
+* Das Wort "Grundlinie" wird nicht mehr über den Befehl zur Textformatierung mittels `NVDA+F` mitgeteilt. (#11815)
+* Für die Aktivierung der langen Beschreibungen ist kein Standard-Tastenbefehl mehr zugewiesen. (#13380)
 * Für die Zusammenfassung der Details wurde nun standardmäßig der Tastenbefehl `NVDA+D` zugewiesen. (#13380)
 * NVDA muss nach der Installation des MathPlayers neu gestartet werden. (#13486)
 
@@ -1462,7 +1462,8 @@ Dadurch wird sichergestellt, dass der Code die Windows-Benutzereinstellung für 
 * `LOCALE_SLANGUAGE`, `LOCALE_SLIST` und `LOCALE_SLANGDISPLAYNAME` wurden aus `languageHandler` entfernt. Verwenden Sie stattdessen Mitglieder von `languageHandler.LOCALE`. (#12753)
 * Umstellung von Minhook auf Microsoft Detours als Hooking-Bibliothek für NVDA. Mit dieser Hooking-Bibliothek wird hauptsächlich zur Unterstützung des Anzeigemodells verwendet. (#12964)
 * `winVersion.WIN10_RELEASE_NAME_TO_BUILDS` wurde entfernt. (#13211)
-* SCons warnt nun davor, basierend mit einer Anzahl von Aufträgen, die der Anzahl der logischen Prozessorkerne im System entspricht. Dies kann die Erstellungszeit bei mehreren Kernen drastisch verkürzen. (#13226, #13371)
+* SCons warnt nun davor, basierend mit einer Anzahl von Aufträgen, die der Anzahl der logischen Prozessorkerne im System entspricht.
+Dies kann die Erstellungszeit bei mehreren Kernen drastisch verkürzen. (#13226, #13371)
 * Die Konstanten `characterProcessing.SYMLVL_*` wurden entfernt. Bitte verwenden Sie stattdessen `characterProcessing.SymbolLevel.*`. (#13248)
 * Die Funktionen `loadState` und `saveState` wurden aus addonHandler entfernt. Bitte verwenden Sie stattdessen `addonHandler.state.load` und `addonHandler.state.save`. (#13245)
 * Die Interaktionsbefehle aus NVDAHelper für UWP/OneCore wurden [von C++/CX nach C++/Winrt](https://docs.microsoft.com/de-de/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx) verschoben. (#10662)
