@@ -1488,7 +1488,8 @@ Dies kann die Erstellungszeit bei mehreren Kernen drastisch verkürzen. (#13226,
 * Die Information für die Struktur `state` in `EXCEL_CELLINFO` befindet sich nun in `nvCellStates`.
 * `mathPres.ensureInit` wurde entfernt, der MathPlayer wird nun beim Start von NVDA initialisiert. (#13486)
 
-+= 2021.3.5 =
+## 2021.3.5
+
 Dies ist eine kleinere Version zur Behebung einer Sicherheitslücke.
 Bitte melden Sie Sicherheitsprobleme umgehend an <info@nvaccess.org>.
 
