@@ -2464,6 +2464,9 @@ Zu den Highlights dieser Version gehören Leistungsverbesserungen in den neueste
 * In ARIA-Menüs im Web wird die Escape-Taste nun an das menü weitergereicht, sodass das Fokus-Modus nicht mehr unterbrochen wird. (#3215)
 * Während der Navigation mit den Schnellnavigationstasten in Nachrichten im neuen Gmail, liest NVDA nun nicht mehr den ganzen Text der Nachricht vor, sobald man ein entsprechendes Element fokusiert. (#8887)
 * Browser wie Mozilla Firefox und Google Chrome dürften nicht mehr abstürzen, nachdem NVDA aktualisiert wurde. Das Lesemodus müsste nun weiterhin Aktualisierungen in aktuell geladenen Dokumenten richtig reflektieren. (#7641)
+* NVDA meldet nicht mehr mehrmals hintereinander "anklickbar", wenn im Lesemodus durch klickbare Inhalte navigiert wird. (#7430)
+* Tastenbefehle, die für die Braillezeile Baum Vario 40 ausgeführt werden, werden nicht mehr ausgeführt. (#8894)
+* In Google Slides mit Mozilla Firefox meldet NVDA den ausgewählten Text nicht mehr bei jedem Steuerelement mit Fokus. (#8964)
 
 ### Änderungen für Entwickler
 
