@@ -2889,7 +2889,7 @@ Schwerpunkte dieser Version sind u. a. eine volle Unterstützung von Audio-Ducki
  * Wenn Sie normalisierte Eigenschaften wünschen, verwenden Sie stattdessen "InputGesture.normalizedIdentifiers".
 * Die Eigenschaft "InputGesture.logIdentifier" ist veraltet. Verwenden Sie stattdessen "InputGesture.identifiers[0]". (#6945)
 * Veralteter Code wurde entfernt:
- * Konstanten `speech.REASON_*`: Verwenden Sie stattdessen die Konstanten "controlTypes.REASON_*". (#6846)
+ * Konstanten `speech.REASON_*`: Verwenden Sie stattdessen die Konstanten `controlTypes.REASON_*`. (#6846)
  * `i18nName` für Sprachausgaben-Einstellungen: Verwenden Sie stattdessen `displayName` und `displayNameWithAccelerator`. (#6846, #5185)
  * `config.validateConfig`. (#6846, #667)
  * `config.save`: Verwenden Sie stattdessen `config.conf.save`. (#6846, #667)
@@ -4256,25 +4256,26 @@ Die wichtigsten Neuerungen in dieser Version beinhalten umfangreiche Verbesserun
 * NVDA zeigt nun die Empfänger in den Feldern "Kopie" und "Blindkopie" korrekt an. (#421)
 * Problem behoben, wonach im Dialogfeld für die Stimmen-Einstellung manchmal die Bildlaufleisten nicht richtig angezeigt wurden, wenn man Einstellungen geändert hat (#1411)
 * NVDA zeigt nun die neue ausgewählte Tabellenzelle korrekt an, nachdem Sie Inhalte über die Zwischenablage ausgeschnitten oder eingefügt haben. (#1567)
+* NVDA vernachlässigt nicht länger das Auslesen der Farbnamen, je mehr Farben angezeigt werden.
 * Wenn im Internet Explorer oder anderen MSHTML-Dokumenten eingebettete Rahmen mit dem ARIA-Attribut "presentation" gekennzeichnet sind, werden diese nun korrekt angezeigt. (#1569)
 * Problem behoben, wonach im Internet Explorer und anderen MSHTML-Dokumenten der Fokus ständig zwischen dem virtuellen Dokument und einem mehrzeiligen Eingabefeld wechselte. (#1566)
 * In Microsoft Word 2010 liest NVDA nun Bestätigungsdialoge automatisch vor. (#1538)
 * Wenn Sie in Internet Explorer oder anderen MSHTML-Dokumenten in mehrzeiligen Eingabefeldern Text unterhalb der ersten Zeile markieren, wird dies korrekt erkannt. (#1590)
-* die wortweise Navigation wurde verbessert; dies betrifft den Lesemodus sowie etliche Eingabefelder. (#1580)
+* Die wortweise Navigation wurde verbessert; dies betrifft den Lesemodus sowie etliche Eingabefelder. (#1580)
 * Wenn Sie NVDA auf einer Hongkong-Version von Windows Vista oder Windows 7 installieren, zeigt das Installationsprogramm nun keinen unsinnigen Text mehr an. (#1596)
-* Das laden von SAPI5-stimmen funktioniert nun auch dann korrekt, wenn zwar die Einstellungen für SAPI5 als Sprachausgabe, jedoch keine Stimmenenstellungen im benutzerspezifischen Konfigurationsverzeichnis existieren. (#1599)
-* NVDA fährt sich im Internet explorer oder anderen mshtml-Dokumenten nun nicht mehr in Eingabefeldern fest, wenn Braille aktiviert ist.
+* Das Laden von SAPI5-stimmen funktioniert nun auch dann korrekt, wenn zwar die Einstellungen für SAPI5 als Sprachausgabe, jedoch keine Stimmenenstellungen im benutzerspezifischen Konfigurationsverzeichnis existieren. (#1599)
+* NVDA fährt sich im Internet Explorer oder anderen MSHTML-Dokumenten nun nicht mehr in Eingabefeldern fest, wenn Braille aktiviert ist.
 * Im Firefox werden nun auch HTML-Elemente mit dem ARIA-Typ "presentation" berücksichtigt.
 * In Microsoft Word werden nun auch die Seiten 2 und folgende in Braille korrekt angezeigt. (#1603)
-* In Microsoft Word kann jetzt auch Text korrekt in Braille gelesen werden, der in einer Sprache mit Rechts-Links-Ausrichtung geschrieben ist (#627)
+* In Microsoft Word 2003 können Zeilen mit Text von rechts nach links wieder in Braille gelesen werden. (#627)
 * In Microsoft Word arbeitet die funktion zum Lesen eines kompletten Dokumentes jetzt korrekt, wenn das Dokument nicht mit einem abgeschlossenen Satz endet.
 * In Windows Live Mail 2011 können nun auch Textnachrichten korrekt gelesen werden.
-* In den Dialogen zum Verschieben und kopieren fährt sich NVDA nun nicht mehr fest. (#574)
+* In den Dialogfeldern zum Verschieben und kopieren fährt sich NVDA nun nicht mehr fest. (#574)
 * NVDA wird nun den Fokus in der Nachrichtenliste von Outlook 2010 korrekt verfolgen. (#1285)
-* einige Probleme beim Verbinden der MDV Lili-Braillezeile über USB behoben. (#241)
-* Im Internet Explorer und anderen MSHTML-Dokumenten werden nun Leerzeichen, die auf Links folgen, nicht mehr ignoriert.
+* Einige Probleme beim Verbinden der MDV Lili-Braillezeile über USB behoben. (#241)
+* Im Internet Explorer und anderen MSHTML-Steuerelementen werden Leerzeichen im Browse-Modus in bestimmten Fällen (z. B. nach einem Link) nicht mehr ignoriert.
 * Im Internet Explorer und anderen MSHTML-Dokumenten wurden unnötige Zeilenumbrüche entfernt, insbesondere erzeugen html-Elemente mit dem Attribut display=none keinen Zeilenumbruch mehr. (#1685)
-* Wenn NVDA nicht starten kann und die Wiedergabe des Klangs für kritische Fehler nicht möglich ist, wird keine Fehlermeldung mehr in die Protokolldatei geschrieben.
+* Wenn NVDA nicht starten kann und die Sound-Wiedergabe für kritische Fehler nicht möglich ist, wird keine Fehlermeldung mehr in die Protokolldatei geschrieben.
 
 ### Änderungen für Entwickler
 
