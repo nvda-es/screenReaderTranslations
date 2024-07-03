@@ -13,7 +13,11 @@
 <li><a href="#guide-de-lutilisateur-de-nvda-nvda_version" title="Guide de l'utilisateur de NVDA NVDA_VERSION">Guide de l'utilisateur de NVDA NVDA_VERSION</a><ul>
 <li><a href="#Introduction" title="Introduction">Introduction</a><ul>
 <li><a href="#GeneralFeatures" title="Caractéristiques Générales">Caractéristiques Générales</a></li>
-<li><a href="#SystemRequirements" title="Configuration Système Requise">Configuration Système Requise</a></li>
+<li><a href="#SystemRequirements" title="Configuration Système Requise">Configuration Système Requise</a><ul>
+<li><a href="#MinimumSystemRequirements" title="Configuration système recommandée">Configuration système recommandée</a></li>
+<li><a href="#MinimumSystemRequirements" title="Configuration système minimale requise">Configuration système minimale requise</a></li>
+</ul>
+</li>
 <li><a href="#Internationalization" title="Internationalisation">Internationalisation</a></li>
 <li><a href="#SpeechSynthesizerSupport" title="Support des Synthèses Vocales">Support des Synthèses Vocales</a></li>
 <li><a href="#BrailleSupport" title="Support du Braille">Support du Braille</a></li>
@@ -525,9 +529,21 @@ NVDA est développé par <a href="https://www.nvaccess.org/" rel="noopener" targ
 <li>La possibilité de mettre en évidence le focus système</li>
 </ul>
 <h3 id="SystemRequirements">Configuration Système Requise</h3>
+<h4 id="MinimumSystemRequirements">Configuration système recommandée</h4>
+<ul>
+<li>Systèmes d'exploitation&nbsp;: éditions 64 bits de Windows 10, Windows 11 et Windows Server 2022<ul>
+<li>Les variantes AMD64 et ARM64 de Windows sont prises en charge.</li>
+</ul>
+</li>
+<li>au moins 150 Mo d'espace de stockage.</li>
+<li>au moins 4 Go de RAM.</li>
+</ul>
+<h4 id="MinimumSystemRequirements">Configuration système minimale requise</h4>
 <ul>
 <li>Systèmes d'Exploitation&nbsp;: toutes les éditions 32-bit et 64-bit de Windows 8.1, Windows 10, Windows 11, et toutes les versions serveur à partir de Windows Server 2012 R2.<ul>
 <li>les variantes AMD64 et ARM64 de Windows sont prises en charge.</li>
+<li>Remarque : les systèmes d'exploitation 32 bits ne sont plus pris en charge activement.</li>
+<li>Veuillez noter que les versions de Windows 8.1 et Windows Server antérieures à 2022 ne sont plus prises en charge activement.</li>
 </ul>
 </li>
 <li>au moins 150 Mo d'espace de stockage.</li>
@@ -1005,6 +1021,10 @@ Appuyez sur <code>contrôle+tab</code> pour accéder à cet onglet depuis n'impo
 L'état de l'extension sera "Mise à jour disponible".
 La liste indiquera la version actuellement installée et la version disponible.
 Appuyez sur <code>entrée</code> sur l'extension pour ouvrir la liste d'actions&nbsp;; choisissez "Mettre à jour".</p>
+<p>By default, after NVDA startup, you will be notified if any add-on updates are available.
+To learn more about and configure this behaviour, refer to <a href="#AutomaticAddonUpdates" title="&quot;Update Notifications&quot;">"Update Notifications"</a>.
+Par défaut, après le démarrage de NVDA, vous serez averti si des mises à jour d'extensions sont disponibles.
+Pour en savoir plus et configurer ce comportement, reportez-vous à <a href="#AutomaticAddonUpdates" title="&quot;Notifications de mise à jour&quot;">"Notifications de mise à jour"</a>.</p>
 <h3 id="Community">Communauté</h3>
 <p>NVDA a une communauté d'utilisateurs dynamique.
 Il existe une <a href="https://nvda.groups.io/g/nvda" rel="noopener" target="_blank" title="liste de diffusion  principale en anglais">liste de diffusion  principale en anglais</a> et une page complète de <a href="https://github.com/nvaccess/nvda-community/wiki/Connect" rel="noopener" target="_blank" title="groupes de langues locales">groupes de langues locales</a> .
@@ -1063,9 +1083,13 @@ Cette option n'est disponible que lors de l'installation à partir d'une copie p
 Si vous avez déjà fermé ce dialogue ou si vous exécutez une copie installée de NVDA, choisissez l'élément de menu Créer une copie portable qui se trouve sous Outils dans le menu NVDA.</p>
 <p>Le dialogue qui apparaît vous permet de choisir où la copie portable doit être créée.
 Il peut s'agir d'un répertoire sur votre disque dur ou d'un emplacement sur une clé USB ou un autre support portable.
-Il existe également une option pour choisir si NVDA doit copier la configuration NVDA actuelle de l'utilisateur connecté pour l'utiliser avec la copie portable nouvellement créée.
-Cette option n'est disponible que lors de la création d'une copie portable à partir d'une copie installée, pas lors de la création à partir du package de téléchargement.
-Appuyer sur Continuer créera la copie portable.
+Par défaut, un nouveau répertoire est créé pour la copie portable.
+Vous pouvez également choisir d'utiliser un répertoire existant, cela écrasera les fichiers de ce répertoire.
+Si le répertoire existant est une copie portable de NVDA, cette copie sera mise à jour.</p>
+<p>Il existe également une option pour choisir si NVDA doit copier la configuration NVDA actuelle de l'utilisateur connecté pour l'utiliser avec la copie portable nouvellement créée.
+Cela inclut également les extensions.
+Cette option n'est disponible que lors de la création d'une copie portable à partir d'une copie installée, pas lors de la création à partir du package de téléchargement.</p>
+<p>Appuyer sur Continuer créera la copie portable.
 Une fois la création terminée, un message apparaîtra vous indiquant qu'elle a réussi.
 Appuyez sur OK pour fermer ce dialogue.</p>
 <h3 id="PortableAndTemporaryCopyRestrictions">Restrictions des Versions Portables et Temporaires</h3>
@@ -1111,8 +1135,7 @@ La première case à cocher vous permet de choisir si vous voulez utiliser la to
 La deuxième spécifie si NVDA doit démarrer à l'ouverture de votre session et est disponible uniquement sur la version installée.
 La troisième permet d'indiquer si ce dialogue d'accueil doit apparaître à chaque démarrage.</p>
 <h4 id="UsageStatsDialog">Dialogue de statistiques d'utilisation des données</h4>
-<p>Depuis NVDA 2018.3, il est demandé à l'utilisateur s'il veut autoriser l'envoi de données d'utilisation à NV Access afin d'aider à l'amélioration de NVDA à l'avenir.
-Au premier démarrage de NVDA, un dialogue vous demandant si vous désirer envoyer des données à NV Access durant l'utilisation de NVDA apparaîtra.
+<p>Au premier démarrage de NVDA, un dialogue vous demandant si vous désirer envoyer des données à NV Access durant l'utilisation de NVDA apparaîtra, afin d'aider à l'amélioration de NVDA à l'avenir.
 Vous pouvez obtenir plus d'informations concernant les données recueillies par NV Access dans la section paramètres généraux, <a href="#GeneralSettingsGatherUsageStats" title="Autoriser NV Access à recueillir des statistiques d'utilisation">Autoriser NV Access à recueillir des statistiques d'utilisation</a>.
 Note&nbsp;: l'appui sur "oui" ou "non" sauvegardera ce choix et ce dialogue n'apparaîtra plus à moins que vous réinstalliez NVDA.
 Cependant, vous pouvez activer ou désactiver le processus de collecte de données manuellement dans l'écran de paramètres généraux de NVDA. Pour modifier ce paramètre manuellement, vous pouvez cocher ou décocher la case appelée <a href="#GeneralSettingsGatherUsageStats" title="Autoriser le projet NVDA à recueillir des statistiques d'utilisation">Autoriser le projet NVDA à recueillir des statistiques d'utilisation</a>.</p>
@@ -1120,8 +1143,8 @@ Cependant, vous pouvez activer ou désactiver le processus de collecte de donné
 <h4 id="TheNVDAModifierKey">La Touche NVDA</h4>
 <p>La plupart des commandes spécifiques de NVDA se font en appuyant sur la touche NVDA en conjonction avec une ou plusieurs autres touches.
 Les fonctions de revue de texte qui n'utilisent que le pavé numérique constituent une des quelques exceptions.</p>
-<p>NVDA peut être configuré pour que les touches "Insert" du pavé numérique, "Insert" du clavier étendu ou verrouillage majuscules puissent être utilisées comme touche NVDA.
-Par défaut, les touches "Insert" du pavé numérique et du clavier étendu sont définies comme touche NVDA.</p>
+<p>NVDA peut être configuré pour que les touches "Insert" du clavier principal, "Insert" du pavé numérique ou verrouillage majuscules puissent être utilisées comme touche NVDA.
+Par défaut, les touches "Insert" du clavier principal et du pavé numérique sont définies comme touche NVDA.</p>
 <p>Si vous souhaitez que l'une des touches NVDA se comporte comme d'habitude, comme si NVDA n'était pas en cours d'exécution (par exemple si vous voulez utiliser verrouillage majuscules pour verrouiller les majuscules après l'avoir définie comme touche NVDA) vous devrez appuyer deux fois rapidement sur la touche.</p>
 <h4 id="KeyboardLayouts">Les Configurations Clavier</h4>
 <p>NVDA comporte actuellement deux configurations clavier&nbsp;: une pour les ordinateurs de bureau (Desktop) et une pour les ordinateurs portables (Laptop).
@@ -1964,6 +1987,34 @@ Si vous voulez en tirer profit, vous pouvez les configurer dans la catégorie <a
 <td>NVDA+maj+astérisque</td>
 <td>Aucun</td>
 <td>Verrouille le bouton droit de la souris en position enfoncée, un second appui déverrouille le bouton. Pour glisser-déposer avec la souris, verrouillez le bouton puis déplacez la souris soit physiquement ou par l'une des commandes NVDA prévues à cet effet</td>
+</tr>
+<tr>
+<td>Faire défiler vers le haut à la position de la souris</td>
+<td>aucun</td>
+<td>aucun</td>
+<td>aucun</td>
+<td>Faire défiler avec la molette de la souris vers le haut à la position courante de la souris</td>
+</tr>
+<tr>
+<td>Faire défiler vers le bas à la position de la souris</td>
+<td>aucun</td>
+<td>aucun</td>
+<td>aucun</td>
+<td>Faire défiler avec la molette de la souris vers le bas à la position courante de la souris</td>
+</tr>
+<tr>
+<td>Faire défiler vers la gauche à la position de la souris</td>
+<td>aucun</td>
+<td>aucun</td>
+<td>aucun</td>
+<td>Faire défiler avec la molette de la souris vers la gauche à la position courante de la souris</td>
+</tr>
+<tr>
+<td>Faire défiler vers la droite à la position de la souris</td>
+<td>aucun</td>
+<td>aucun</td>
+<td>aucun</td>
+<td>Faire défiler avec la molette de la souris vers la droite à la position courante de la souris</td>
 </tr>
 <tr>
 <td>Amener la souris à l'objet navigateur courant</td>
@@ -3253,6 +3304,7 @@ Les informations suivantes sont toujours envoyées&nbsp;:</p>
 Bien que votre adresse IP soit utilisée pour déterminer votre pays durant la mise à jour, elle ne sera jamais conservée.
 En plus des informations obligatoires nécessaires à la mise à jour, les informations supplémentaires suivantes sont également envoyées&nbsp;:</p>
 <ul>
+<li>Un identifiant unique pour l'utilisateur courant de NVDA, il change une fois par mois</li>
 <li>La langue d'interface de NVDA</li>
 <li>Copie en cours de NVDA installée ou portables</li>
 <li>Le nom du synthétiseur vocal actuellement utilisé (incluant le nom de l'extension dont provient le pilote)</li>
