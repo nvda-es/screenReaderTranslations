@@ -522,8 +522,8 @@ Voit kuitenkin ottaa käyttöön tai poistaa käytöstä tiedonkeruun manuaalise
 Useimmat NVDA:n näppäinkomennot koostuvat yleensä tietyn NVDA-näppäimeksi kutsutun näppäimen painamisesta yhdessä yhden tai useamman muun näppäimen kanssa.
 Poikkeuksia ovat pöytäkoneissa käytettävän näppäinasettelun tekstintarkastelukomennot sekä muutamat muut, joissa käytetään pelkkiä laskinnäppäimistön näppäimiä.
 
-NVDA on mahdollista määrittää käyttämään sekä tavallista että laskinnäppäimistön Insertiä ja/tai Caps Lockia NVDA-näppäimenä.
-Oletusarvoisesti käytetään sekä tavallista että laskinnäppäimistön Insertiä.
+NVDA on mahdollista määrittää käyttämään sekä `tavallista` että `laskinnäppäimistön Insertiä` ja/tai `Caps Lockia` NVDA-näppäimenä.
+Oletusarvoisesti käytetään sekä `tavallista` että `laskinnäppäimistön Insertiä`.
 
 Mikäli haluat jonkin NVDA-näppäimen toimivan samalla tavalla kuin silloin, kun NVDA ei ole käynnissä (haluat esim. ottaa Caps Lockin käyttöön, kun se on määritetty NVDA-näppäimeksi), paina sitä kaksi kertaa nopeasti peräkkäin.
 
@@ -1978,7 +1978,7 @@ Asetus kannattaa poistaa käytöstä, jos yksittäisten kirjainten lausumisessa 
 
 | . {.hideHeaderRow} | . |
 |---|---|
-| Vaihtoehdot | Käytössä, Ei käytössä |
+| Asetukset | –  Käytössä, Ei käytössä |
 | Oletus | Ei käytössä |
 
 Kun tämä asetus on käytössä, NVDA sanoo merkin kuvauksen liikkuessasi tekstissä merkki kerrallaan.
@@ -2134,7 +2134,7 @@ Tällöin pistenäyttö ei seuraa järjestelmän kohdistusta eikä kohdistinta.
 
 | . {.hideHeaderRow} | . |
 |---|---|
-| Vaihtoehdot | Oletus (Ei koskaan), Ei koskaan, Vain kun pistenäyttö seuraa automaattisesti, Aina |
+| Asetukset | –  Oletus (Ei koskaan), Ei koskaan, Vain kun pistenäyttö seuraa automaattisesti, Aina |
 | Oletus | Ei koskaan |
 
 Tämä asetus määrittää, siirretäänkö järjestelmäkohdistinta kosketuskohdistinnäppäimen painalluksella.
@@ -2216,7 +2216,7 @@ Kohdistuskontekstin näyttäminen -asetusta voidaan vaihtaa mistä tahansa liitt
 
 | . {.hideHeaderRow} | . |
 |---|---|
-| Vaihtoehdot | Oletus (Käytössä), Käytössä, Ei käytössä |
+| Asetukset | –  Oletus (Käytössä), Käytössä, Ei käytössä |
 | Oletus | Käytössä |
 
 Tämä asetus määrittää, keskeytetäänkö puhe vieritettäessä pistenäyttöä eteen/taaksepäin.
@@ -2231,7 +2231,7 @@ Tämän asetuksen poistaminen käytöstä sallii puheen kuulumisen samalla, kun 
 
 | . {.hideHeaderRow} | . |
 |---|---|
-| Vaihtoehdot | Oletus (Käytössä), Käytössä, Ei käytössä |
+| Asetukset | –  Oletus (Käytössä), Käytössä, Ei käytössä |
 | Oletus | Käytössä |
 
 Tämä asetus määrittää, näytetäänkö valinnan ilmaisin (pisteet 7 ja 8) pistenäytöllä.
@@ -2326,7 +2326,7 @@ Massamuisti- ja tilapäisversiot eivät tue äänenvaimennusta.
 
 | . {.hideHeaderRow} | . |
 |---|---|
-| Vaihtoehdot | Ei käytössä, Käytössä |
+| Asetukset | –  Ei käytössä, Käytössä |
 | Oletus | Ei käytössä |
 
 Kun tämä asetus on käytössä, NVDA:n äänien ja piippausten voimakkuus mukautuu käytettävän puheäänen voimakkuusasetukseen.
@@ -2909,7 +2909,7 @@ Tästä kategoriasta voit säätää asiakirjan selauksen asetuksia.
 
 | . {.hideHeaderRow} | . |
 |---|---|
-| Vaihtoehdot | Oletus (Sovelluksen määrittämä), Sovelluksen määrittämä, Yksi rivinvaihto, Useita rivinvaihtoja |
+| Asetukset | –  Oletus (Sovelluksen määrittämä), Sovelluksen määrittämä, Yksi rivinvaihto, Useita rivinvaihtoja |
 | Oletus | Sovelluksen määrittämä |
 
 Tästä yhdistelmäruudusta voit valita kappaletyylin, jota käytetään liikuttaessa kappaleittain näppäinkomennoilla `Ctrl+Nuoli ylös` ja `Ctrl+Nuoli alas`.
@@ -2995,7 +2995,7 @@ Se on käytettävissä vain, jos NVDA on määritetty lataamaan mukautettua kood
 
 | . {.hideHeaderRow} | . |
 |---|---|
-| Vaihtoehdot | Automaattinen, Valikoiva, Yleinen |
+| Asetukset | –  Automaattinen, Valikoiva, Yleinen |
 | Oletus | Automaattinen |
 
 Tä	mä asetus muuttaa tapaa, jolla NVDA rekisteröi Microsoft UI Automation -saavutettavuusrajapinnan käynnistämiä tapahtumia.
@@ -3032,7 +3032,7 @@ Excelin UI automation -rajapinnan toteutus muuttuu jatkuvasti, eivätkä Microso
 
 | . {.hideHeaderRow} | . |
 |---|---|
-| Vaihtoehdot | Oletus (Käytössä), Ei käytössä, Käytössä |
+| Asetukset | –  Oletus (Käytössä), Ei käytössä, Käytössä |
 | Oletus | Käytössä |
 
 Kun tämä asetus on käytössä, NVDA:n pitäisi reagoida nopeasti komentoihin, vaikka se vastaanottaisi runsaasti UI Automation -tapahtumia, kuten paljon tekstiä päätteessä.
@@ -3042,7 +3042,7 @@ Kun asetusta on muutettu, NVDA on käynnistettävä uudelleen, jotta muutos tule
 
 | . {.hideHeaderRow} | . |
 |---|---|
-| Vaihtoehdot | Automaattinen, UIA kun käytettävissä, Vanha |
+| Asetukset | –  Automaattinen, UIA kun käytettävissä, Vanha |
 | Oletus | Automaattinen |
 
 Tämä asetus määrittää, miten NVDA toimii vuorovaikutuksessa Windows-konsolin kanssa, jota Komentokehote, PowerShell ja Windowsin Linux-alijärjestelmä käyttävät.
@@ -3095,7 +3095,7 @@ Seuraavat vaihtoehdot ovat käytettävissä:
 
 | . {.hideHeaderRow} | . |
 |---|---|
-| Vaihtoehdot | Oletus (Käytössä), Ei käytössä, Käytössä |
+| Asetukset | –  Oletus (Käytössä), Ei käytössä, Käytössä |
 | Oletus | Käytössä |
 
 Tällä asetuksella voidaan valita, näyttääkö NVDA tietyt verkkosivulla tapahtuvat dynaamiset muutokset pistenäytöllä.
@@ -3133,7 +3133,7 @@ Kohdistimen jälkeinen teksti kuitenkin luetaan päätteissä, kun rivin keskell
 
 | . {.hideHeaderRow} | . |
 |---|---|
-| Vaihtoehdot | Oletus (Muutosten havaitseminen), Muutosten havaitseminen, UIA-ilmoitukset |
+| Asetukset | –  Oletus (Muutosten havaitseminen), Muutosten havaitseminen, UIA-ilmoitukset |
 | Oletus | Muutosten havaitseminen |
 
 Tämä asetus valitsee, miten NVDA määrittää "uuden" tekstin (ja näin ollen sen, mitä puhutaan "Puhu dynaamisen sisällön muutokset" -asetuksen ollessa käytössä) Windows-päätteessä sekä sen WPF-säätimessä, jota käytetään Visual Studio 2022:ssa.
@@ -3170,7 +3170,7 @@ Useiden historiallisesti suosittujen käyttöliittymärajapintojen avulla teksti
 
 | . {.hideHeaderRow} | . |
 |---|---|
-| Vaihtoehdot | Oletus (Käytössä), Ei käytössä, Käytössä |
+| Asetukset | –  Oletus (Käytössä), Ei käytössä, Käytössä |
 | Oletus | Käytössä |
 
 Tämä asetus mahdollistaa äänentoiston Windowsin äänentoistorajapinnan (WASAPI) kautta.
