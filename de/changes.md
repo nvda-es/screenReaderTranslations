@@ -1565,9 +1565,8 @@ Betroffene Benutzer müssen dieses Update manuell herunterladen.
 
 * Fügt einen Tastenbefehl zum Umschalten der Einstellungen zum Mitteilen des Stils von Zellenrahmen hinzu. (#10408)
 * Unterstützung der neuen HID-Braille-Spezifikation, die darauf abzielt, die Unterstützung für Braille-Displays zu standardisieren. (#12523)
- * Geräte, die diese Spezifikation unterstützen, werden von NVDA automatisch erkannt.
- * Technische Details zur Implementierung dieser Spezifikation durch NVDA finden Sie unter https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md
--
+  * Geräte, die diese Spezifikation unterstützen, werden von NVDA automatisch erkannt.
+  * Technische Details zur Implementierung dieser Spezifikation durch NVDA finden Sie unter https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md
 * Unterstützung für VisioBraille Vario 4 Braille hinzugefügt. (#12607)
 * Fehlermeldungen können bei Verwendung einer beliebigen Version von NVDA aktiviert werden (erweiterte Einstellungen). (#12672)
 * In Windows 10 und neuer gibt NVDA die Anzahl der Vorschläge bei der Eingabe von Suchbegriffen in Apps wie Einstellungen und Microsoft Store an. (#7330, #12758, #12790)
@@ -1575,9 +1574,9 @@ Betroffene Benutzer müssen dieses Update manuell herunterladen.
 
 ### Änderungen
 
-* eSpeak NG wurde auf 1.51-dev Commit `74068b91bcd578bd7030a7a6cde2085114b79b44` aktualisiert. (#12665)
+* Die Sprachausgabe eSpeak NG wurde auf 1.51-dev commit `74068b91bcd578bd7030a7a6cde2085114b79b44` aktualisiert. (#12665)
 * NVDA verwendet standardmäßig eSpeak, wenn keine installierten OneCore-Stimmen die von NVDA bevorzugte Sprache unterstützen. (#10451)
-* Wenn die OneCore-Stimmen nicht verwendet werden können, wird die Sprachausgabe auf eSpeak zurückgesetzt. (#11544)
+* Wenn die Windows OneCore-Stimmen nicht verwendet werden können, wird die Sprachausgabe auf eSpeak zurückgesetzt. (#11544)
 * Beim Lesen der Statusleiste mit `NVDA+Ende` wird der NVDA-Cursor nicht mehr an die Position verschoben.
 Wenn Sie jedoch diese Funktionalität benötigen, weisen Sie dem entsprechenden Skript in der Kategorie "Objekt-Navigation" im Dialogfeld für die Tastenbefehle einen entsprechenden Tastenbefehl zu. (#8600)
 * Beim Öffnen eines bereits geöffneten Einstellungsdialogs legt NVDA den Fokus auf den vorhandenen Dialog, anstatt einen Fehler auszulösen. (#5383)
