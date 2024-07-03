@@ -4303,7 +4303,7 @@ Dieses Release behebt wichtige Fehler und Sicherheitsprobleme, welche in NVDA 20
 
 * Der Eintrag "Spenden" im Menü ist nun bei sonstigen Sicherheitshinweisen, im Windows Anmeldebildschirm sowie u. a. der Benutzerkontensteuerung ausgeblendet. Dies stellte ein Sicherheitsrisiko dar. (#1419)
 * Es ist nun nicht länger möglich die benutzerdefinierte Konfiguration von NVDA während dieser Sicherheitsebenen zu kopieren oder einzufügen. Dies stellt ebenso ein Sicherheitsrisiko dar. (#1421)
-* In Firefox 4 funktioniert nun der Befehl `NVDA+Strg+Leertaste` für die eingebetteten Inhalte in der Virtuellen Ansicht. (#1429)
+* In Firefox 4 funktioniert der Befehl "In Virtuelle Ansicht verschieben" (NVDA+Strg+Leertaste) nun wie gewünscht, um eingebettete Objekte wie Flash-Inhalte zu vermeiden. (#1429)
 * Bei aktivierter Ansage der Funktionstasten werden nun die großgeschriebenen Zeichen nicht länger falsch angesagt. (#1422)
 * Wenn bei aktivierter Ansage der Funktionstasten die Leertaste mit der NVDA-Taste gedrückt wird, wird nun nicht mehr die Taste umgeschaltet, sondern dies auch mitgeteilt. (#1424)
 * Die Protokollierungsfunktion wurde bei der Windows-Anmeldung und in sämtlichen Dialogen der Sicherheitshinweisen sowie der Benutzerkontensteuerung und Dialogfeld zum Sperren des Computers komplett ausgeschaltet. Dies stellte ein Sicherheitsrisiko dar. (#1435)
@@ -4311,8 +4311,7 @@ Dieses Release behebt wichtige Fehler und Sicherheitsprobleme, welche in NVDA 20
 
 ## 2011.1
 
-Zu den wichtigsten Neuerungen gehören das Anzeigen von Farben, sowie die automatische Anzeige von neu erscheinendem Text in mIRC, PuTTY, Tera Term und SecureCRT;
-Unterstützung globaler Erweiterungen; die korrekte Anzeige von Aufzählungen und Numerierungen in Microsoft Word; zusätzliche Tastenzuweisungen für Braillezeilen, einschließlich Tasten zum Bewegen zur nächsten/vorigen Zeile; sowie Unterstützung von Braillezeilen von Baum, HumanWare und APH.
+Zu den wichtigsten Neuerungen gehören das Anzeigen von Farben, sowie die automatische Anzeige von neu erscheinendem Text in mIRC, PuTTY, Tera Term und SecureCRT; Unterstützung globaler NVDA-Erweiterungen; die korrekte Anzeige von Aufzählungen und Numerierungen in Microsoft Word; zusätzliche Tastenzuweisungen für Braillezeilen, einschließlich Tasten zum Bewegen zur nächsten/vorigen Zeile; sowie Unterstützung von Braillezeilen von Baum, HumanWare und APH.
 
 ### Neue Features
 
