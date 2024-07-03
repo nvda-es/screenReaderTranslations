@@ -2327,7 +2327,7 @@ Zu den Highlights dieser Version gehören die automatische Erkennung von braille
 ### Änderungen für Entwickler
 
 * Sie können nun die Eigenschaft "disableBrowseModeByDefault" in Anwendungsmodulen so einstellen, dass der Lesemodus standardmäßig ausgeschaltet ist. (#8846)
-* Der erweiterte Fensterstil eines Fensters wird nun mit der Eigenschaft "extendedWindowStyle" auf Fenster-Objekte und deren Derivate angewendet. (#9136)
+* Der erweiterte Fensterstil eines Fensters wird nun mit der Eigenschaft `extendedWindowStyle` auf Fenster-Objekte und deren Derivate angewendet. (#9136)
 * Das Paket "comTypes" wurde auf 1.1.7 aktualisiert. (#9440, #8522)
 * Das aktuell geladene Anwendungsmodul wird nun zuerst angesagt, wenn Sie den Befehl "report module info" verwenden. (#7338)
 * Ein Beispiel zur Demonstration der Verwendung der Datei "nvdaControllerClient.dll" aus C# hinzugefügt. (#9600)
@@ -2359,7 +2359,7 @@ Bitte beachten Sie die unten folgende Liste der Änderungen für weitere Details
 * Neue Braille-Tabellen: Afrikaans, Arabisches 8-Punkt-Computerbraille, Arabische Kurzschrift, Spanische Kurzschrift. (#4435)
 * Den Maus-Einstellungen von NVDA wurde eine Option hinzugefügt, womit NVDA nun auch die Maus erkennen kann, selbst wenn diese von einer anderen Anwendung gesteuert wird. (#8452)
  * Dies ermöglicht die Mausverfolgung in NVDA, wenn ein System durch Teamviewer oder ähnliche Software ferngesteuert wird.
-* Der Befehlszeilenparameter "--enable-start-on-logon" wurde hinzugefügt, um stille Installationen von NVDA zu ermöglichen, bei welchen NVDA danach standardmäßig nicht auf dem Anmeldebildschirm ausgeführt wird. (#8574)
+* Der Befehlszeilenparameter `--enable-start-on-logon` wurde hinzugefügt, um unbeaufsichtigte Installationen von NVDA zu ermöglichen, bei welchen NVDA danach standardmäßig nicht auf dem Anmeldebildschirm ausgeführt wird. (#8574)
 * Es ist nun möglich die Protokollierungsfunktionen von NVDA komplett auszuschalten, indem Sie im Bereich Allgemeine Einstellungen die Protokollierungsstufe auf "deaktiviert" setzen. (#8516)
 * Formeln in LibreOffice und Apache OpenOffice Tabellenkalkulationen werden nun gemeldet. (#860)
 * In Mozilla Firefox und Google Chrome meldet der Lesemodus nun das ausgewählte Element in Listenfeldern und Baumansichten.
@@ -2378,7 +2378,7 @@ Bitte beachten Sie die unten folgende Liste der Änderungen für weitere Details
 * Diese NVDA-Version ermöglicht die Installation und das Laden von Erweiterungen, die noch keine Informationen zur minimalen und letzten getesteten NVDA-Version enthalten, aber ein Upgrade auf zukünftige NVDA-Versionen (z. B. 2019.2) kann automatisch dazu führen, dass diese älteren Erweiterungen deaktiviert werden.
 * Der Befehl zum Bewegen der Maus zum Navigator-Objekt (NVDA-Cursor) funktioniert nun sowohl in Microsoft Word als auch für UIA-Steuerungen, insbesondere in Microsoft Edge. (#7916, #8371)
 * Das Melden des Textes unter dem Maus-Cursor wurde in Microsoft Edge und anderen UIA-Anwendungen verbessert. (#8370)
-* Wenn NVDA mit dem Befehlszeilenparameter "--portable-path" gestartet wird, wird der angegebene Pfad beim Erstellen einer portablen Version aus dem Menü automatisch ausgefüllt. (#8623)
+* Wenn NVDA mit dem Befehlszeilenparameter `--portable-path` gestartet wird, wird der angegebene Pfad beim Erstellen einer portablen Version aus dem Menü automatisch ausgefüllt. (#8623)
 * Der Pfad zur norwegischen Braille-Table wurde geändert, um dem Standard aus dem Jahr 2015 zu entsprechen. (#9170)
 * Bei der Navigation nach Absatz (Strg+Pfeiltasten) oder nach Tabellenzelle (Strg+Alt+Pfeiltasten) werden Rechtschreibfehler nicht mehr gemeldet, auch wenn dies in den Einstellungen aktiviert ist. Absätze und Tabellenzellen können recht groß sein und große Textmengen enthalten. Die Berechnung von Rechtschreibfehlern in einigen Anwendungen kann sehr kostspielig sein und die Performance stark beeinträchtigen. (#9217)
 * NVDA lädt nicht mehr automatisch benutzerdefinierte Anwendungsmodulle, globalPlugins sowie Braille- und Sprachausgabentreiber aus dem NVDA-Benutzer-Konfigurationsverzeichnis. Dieser Code sollte stattdessen als Erweiterung mit korrekten Versionsinformationen verpackt werden, um sicherzustellen, dass inkompatibler Code nicht mit aktuellen NVDA-Versionen ausgeführt wird. (#9238)
@@ -2450,9 +2450,6 @@ Zu den Highlights dieser Version gehören Leistungsverbesserungen in den neueste
 * NVDA zeigt unter einigen Windows-Versionen keine doppelten Informationen mehr an, wenn die Uhr in der Taskleiste vorgelesen wird. (#4364)
 * Der Braille-Übersetzer LibLouis wurde auf Version 3.7.0 aktualisiert. (#8697)
 * Die Sprachausgabe eSpeak-NG wurde auf Commit 919f3240cbb aktualisiert
-* NVDA meldet nicht mehr mehrfach hintereinander "Anklickbar", wenn Sie im Lesemodus durch klickbare Inhalte navigieren. (#7430)
-* Die Tastenbefehle, die auf Baum Vario 40 Braillezeilen ausgeführt werden, funktionieren nun korrekt. (#8894)
-* NVDA meldet nicht mehr "Text ausgewählt" bei jedem fokussierten Objekt in Google-Präsentationen mit Mozilla Firefox. (#8964)
 
 ### Fehlerbehebungen
 
