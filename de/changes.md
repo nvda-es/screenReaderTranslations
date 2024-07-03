@@ -4386,34 +4386,35 @@ Zu den wichtigsten Neuerungen gehören das Anzeigen von Farben, sowie die automa
 ### Änderungen für Entwickler
 
 * SCons wird nun verwendet, um den Quellcode vorzubereiten und eine portable Version oder ein Installationsprogramm zu erstellen. Weitere Informationen finden Sie in der Datei "Readme.txt" im Stammverzeichnis des Quellcodes.
-* Die Bezeichnung für Tasten(kombinationen) wurden logischer und benutzerfreundlicher gestaltet. z. B. "upArrow" anstelle von "extendedUp" und "numpadPageUp" anstelle von "prior". Eine Liste aller Tastenbezeichnungen finden Sie im Modul "vKCodes".
+* Die Bezeichnung für Tasten(kombinationen) wurden logischer und benutzerfreundlicher gestaltet. z. B. "upArrow" anstelle von "extendedUp" und "numpadPageUp" anstelle von "prior". Eine Liste aller Tastenbezeichnungen finden Sie im Modul "vkCodes".
 * Sämtliche Benutzereingaben werden nun durch eine Instanz namens "inputCore.InputGesture" repräsentiert. (#601)
-* Jede Eingabequelle bildet eine Unterklasse von "InputGesture". So werden beispielsweise Tastatureingaben von "keyboardHandler.KeyboardInputGesture" verarbeitet.
-* "Input gestures" sind beim "SkriptableObjects" angesiedelt. Verwenden der Methode "SkriptableObject.bindGesture()" gehören zur Instanz der "__gestures dict" oder der Klasse der Skriptnamen, die die Tastenzuordnungen definiert. Lesen Sie mehr im Abschnitt "baseObject.SkriptableObject" für Details.
-* Anwendungsmodule besitzen keine Dateien für die Tastenzuweisungen mehr. Alle Zuweisungen der Eingabemethoden müssen in den Anwendungsmodulen selbst erfolgen.
-* Alle Skripte verarbeiten nun Instanzen von "imputgesture" anstelle von Tastendrücken.
-* Es können nun Tastendrücke an das Betriebssystem gesendet werden, in dem die Methode "send()" eines "gesture"-Objekts verwendet wird.
-* Um einen Tastendruck zu senden, müssen Sie zunächst ein Objekt vom Typ "keyboardinputgesture" erstellen. Verwenden Sie z. B. "keyboardinputgesture.fromname()". Benutzen Sie anschließend die Methode "send()" des erstellten Objekts.
-* In den einzelnen Gebietsschemen können jetzt individuelle Zuweisungen der Eingabemethoden erstellt werden, die neue Eingabemethoden definieren oder vorhandene überschreiben können. Diese so erstelten Eingabemethodenzuweisungen sind überall in NVDA wirksam. (#810)
-* Sprachspezifische Zurordnungen der Eingabemethoden müssen im Ordner "locale\<Sprache>\gestures.ini" liegen, wobei <Sprache> der zweistellige Sprachcode ist (z. B. "en" für Englisch und "de" für Deutsch).
-* Lesen Sie im Abschnitt "inputCore.GlobalGestureMap" nach, um mehr über das Dateiformat zu erfahren.
+ * Jede Eingabequelle ist eine Unterklasse der Basisklasse "InputGesture".
+ * Das Drücken von Tasten auf der Systemtastatur wird von der Klasse keyboardHandler.KeyboardInputGesture behandelt.
+ * Das Betätigen von Tasten, Rädern und anderen Bedienelementen auf einer Braillezeile wird von Unterklassen der Klasse braille.BrailleDisplayGesture erfasst. Diese Unterklassen werden von jedem Braillezeilen-Treiber bereitgestellt.
+* Tastenbefehle werden an ScriptableObjects gebunden, indem die Methode ScriptableObject.bindGesture() für eine Instanz oder ein __gestures-Diktat für die Klasse verwendet wird, das Gestenbezeichner auf Skriptnamen abbildet. Siehe baseObject.ScriptableObject für Details.
+* Anwendungsmodule besitzen keine Keymap-Dateien mehr. Alle Tastenbefehle für Tastenbefehle müssen im Anwendungsmodul selbst vorgenommen werden.
+* Alle Skripte nehmen jetzt eine InputGesture-Instanz anstelle eines Tastendrucks.
+ * KeyboardInputGestures können mit der Mtehtode send() des Tastenbefehls an das Betriebssystem gesendet werden.
+* Um einen beliebigen Tastendruck zu senden, müssen Sie nun eine KeyboardInputGesture mit KeyboardInputGesture.fromName() erstellen und dann deren send()-Methode verwenden.
+* Sprachspezifisch kann man nun eine Zuordnungsdatei bereitstellen, um neue Tastenbefehle hinzuzufügen oder bestehende für Skripte global in NVDA zu überschreiben. (#810)
+ * Keymaps für Gebietsschema sollten in locale\LANG\gestures.ini abgelegt werden, wobei LANG der Sprachcode definiert.
+ * Lesen Sie im Abschnitt "inputCore.GlobalGestureMap" nach, um mehr über das Dateiformat zu erfahren.
 * Das neue "LiveText und Terminal NVDAObject" erleichtert das automatische Ansagen von neuen Texten. Lesen Sie im Abschnitt "NVDAObjects.behaviors" zu diesen Klassen für Details. (#936)
-* Die Overlay-Klasse "NVDAObjects.window.DisplayModelLiveText" kann für Objekte verwendet werden, die den anzuzeigenden Text direkt vom Bildschirm abfangen müssen.
-* Sehen Sie sich die Anwendungsmodule für "Putty" und "Mirc" für Anwendungsbeispiele an.
+ * Die Overlay-Klasse "NVDAObjects.window.DisplayModelLiveText" kann für Objekte verwendet werden, die den anzuzeigenden Text direkt vom Bildschirm abfangen müssen.
+ * Sehen Sie sich die Anwendungsmodule für "Putty" und "Mirc" für Anwendungsbeispiele an.
 * Es gibt jetzt kein Standard-Anwendungsmodul mehr. Anwendungsmodule sollten stattdessen die Klasse "appModuleHandler.AppModule" erben, welche die Basisklasse für alle Anwendungsmodule darstellt.
-* Unterstützung für globale Erweiterungen hinzugefügt, die Anwendungsübergreifend Skripte zuweisen, "NVDAObject"-Ereignisse verarbeiten und "NVDAObject"-Overlay-Klassen auswählen können. (#281)
- * Für weitere Details sehen Sie sich "globalPluginHandler.GlobalPlugin" an.
+* Unterstützung für globale Erweiterungen hinzugefügt, die Anwendungsübergreifend Skripte zuweisen, "NVDAObject"-Ereignisse verarbeiten und "NVDAObject"-Overlay-Klassen auswählen können. (#281) Für weitere Details sehen Sie sich "globalPluginHandler.GlobalPlugin" an.
 * Die verfügbaren Attribute von "SynthDriver"-Objekte für Einstellungen der Strings (im Allgemeinen "availableVoices" und "availableVariants") werden nun als "OrderedDicts" anstatt Listen bezeichnet.
 * Die Klasse "synthDriverHandler.VoiceInfo" akzeptiert nun einen optionalen Parameter namens "language", der die Sprache der Stimme angibt.
-* Die "SynthDriver"-Objekte stellen nun ein zusätzliches Attribut language zur Verfügung, das die Sprache der aktuellen Stimme angibt.
-* Die Basisimplementierung verwendet die Sprache, die im "VoiceInfo"-Objekt bei availablevoices angegeben ist. Dies trifft für alle Synthesizer zu, die eine Sprache pro Stimme bereitstellen.
+* Die "SynthDriver"-Objekte stellen nun ein zusätzliches Attribut "language" zur Verfügung, das die Sprache der aktuellen Stimme angibt.
+ * Die Basisimplementierung verwendet die Sprache, die im "VoiceInfo"-Objekt bei availablevoices angegeben ist. Dies trifft für alle Synthesizer zu, die eine Sprache pro Stimme bereitstellen.
 * Braillezeilentreiber wurden so erweitert, dass Tasten, Rädchen und andere Steuerelemente an NVDA-Skripte zugewiesen werden können:
  * Treiber können eine globale Eingabemethodenzuweisung bereitstellen, um Zuweisungen für Skripte an beliebiger Stelle inNVDA hinzuzufügen.
  * Die Treiber können auch ihre eigenen Skripte bereitstellen, um Zeilenspezifische Funktionen auszuführen.
  * Sehen Sie sich "braille.BrailleDisplayDriver" für weitere Informationen und vorhandene Treiber von Braillezeilen für Beispiele an.
 * Die Eigenschaft "selfvoicing" der Klassen für Anwendungsmodule wurde in "sleepmode" umbenannt.
 * Um die Namenskonventionen in Anwendungsmodulen und im Tree-interceptor einheitlich zu halten, wurden die Ereignisse "event_appLoseFocus" und "event_appGainFocus" in "event_appModule_loseFocus" bzw. "event_appModule_gainFocus" umbenannt.
-* Alle Treiber von zeilen sollten nun "braille.BrailleDisplayDriver" anstelle von "braille.BrailleDisplayDriverWithCursor" verwenden.
+* Alle Braillezeilen-Treiber sollten nun "braille.BrailleDisplayDriver" anstelle von "braille.BrailleDisplayDriverWithCursor" verwenden.
  * Der Cursor wird nun außerhalb des Treibers verwaltet.
  * In bereits vorhandenen Treibern muss nur noch die Klassendefinition entsprechend angepasst und die Methode "_display" in "display" umbenannt werden.
 
