@@ -1739,7 +1739,7 @@ Hinweis:
 * Die Leistung bei der Interaktion mit Visual Studio wurde verbessert. (#12171)
 * Behebung von Grafikfehlern wie fehlende Elemente bei Verwendung von NVDA mit einem Layout von Rechts nach Links. (#8859)
 * Die Richtung des GUI-Layouts wird nun basierend auf der NVDA-Sprache und nicht auf dem Systemgebietsschema berücksichtigt. (#638)
- * Ein bekanntes Problem für Sprachen, die von Rechts nach Links verlaufen: der rechte Rand von Gruppierungen klammert mit Beschriftungen/Steuerungen. (#12181)
+  * Ein bekanntes Problem für Sprachen, die von Rechts nach Links verlaufen: der rechte Rand von Gruppierungen klammert mit Beschriftungen/Steuerungen. (#12181)
 * Die Landessprache für Python wird konsistent auf die in den Voreinstellungen gewählte Sprache eingestellt und tritt bei Verwendung der Standardsprache auf. (#12214)
 * TextInfo.getTextInChunks friert nicht mehr ein, wenn es auf Rich-Edit-Steuerelementen wie dem NVDA Log Viewer aufgerufen wird. (#11613)
 * Es ist wieder möglich, NVDA in Sprachen zu verwenden, die Unterstriche im Gebietsschemennamen enthalten, wie z. B. de_CH unter Windows 10 Version 1803 und 1809. (#12250)
@@ -1784,7 +1784,7 @@ Hinweis:
 * Die Konstante "REASON_QUICKNAV" wurde aus browseMode entfernt - verwenden Sie stattdessen "controlTypes.OutputReason.QUICKNAV". (#11969)
 * Die Eigenschaft `isCurrent` von `NVDAObject` (und Derivaten) liefert nun strikt die Enum-Klasse `controlTypes.IsCurrent` zurück. (#11782)
   * `isCurrent` ist nicht länger mehr optional und gibt daher keinen Wert zurück.
-  * Wenn ein Objekt nicht aktuell ist, wird `controlTypes.IsCurrent.NO` zurückgegeben.
+    * Wenn ein Objekt nicht aktuell ist, wird `controlTypes.IsCurrent.NO` zurückgegeben.
 * Das Mapping `controlTypes.isCurrentLabels` wurde entfernt. (#11782)
   * Verwenden Sie stattdessen die Eigenschaft `displayString` für einen Enum-Wert `controlTypes.IsCurrent`.
     * Zum Beispiel: `controlTypes.IsCurrent.YES.displayString`.
@@ -2026,7 +2026,6 @@ Zu den Highlights dieser Version gehören die Unterstützung für eine neue Brai
 * NVDA startet nun korrekt, wenn keine Protokolldatei angelegt werden konnte. (#6330)
 * In neueren Versionen von Microsoft Word 365 meldet NVDA nicht mehr, dass "Rückwort löschen" beim Drücken von Strg+Rücktaste während der Bearbeitung eines Dokuments gelöscht wird. (#10851)
 * In Winamp meldet NVDA wieder die Umschaltung von der Zufallswiedergabe und der Wiederholen. (#10945)
-* Korrektur der Mausverfolgung für einige MSHTML-Elemente in Internet Explorer. (#10736)
 * NVDA reagiert nicht mehr extrem langsam beim navigieren in den Listeneinträgen in 1Password. (#10508)
 * Die Windows OneCore-Sprachausgabe verzögert nicht mehr bei den Ansagen. (#10721)
 * NVDA hängt sich nicht mehr auf, sobald Sie das Kontextmenü für 1Passwort aus dem Infobereich heraus öffnen. (#11017)
@@ -2035,6 +2034,7 @@ Zu den Highlights dieser Version gehören die Unterstützung für eine neue Brai
   * Kontextmenüeinträge werden wieder korrekt vorgelesen. (#9252)
   * Die Menübänder werden beim Navigieren mit Strg+Pfeiltasten durchgehend angesagt. (#7067)
 * Im Lesemodus in Mozilla Firefox und Google Chrome wird Text nicht mehr fälschlicherweise in einer separaten Zeile angezeigt, wenn Web-Inhalte die CSS-Darstellung verwenden: Inline-Flex. (#11075)
+* Im Lesemodus mit deaktiviertem System-Fokus automatisch auf fokussierbare Elemente setzen ist es nun möglich, Elemente zu aktivieren, die nicht fokussierbar sind.
 * Im Lesemodus mit deaktiviertem automatischen Setzen des System-Fokus auf fokussierbare Elemente ist es nun möglich, Elemente zu aktivieren, die durch Drücken der Tabulatortaste erreicht werden. (#8528)
 * Im Lesemodus mit deaktiviertem automatischen Setzen des System-Fokus auf fokussierbare Elemente werden bestimmte Elemente aktiviert und der Klick wird nicht mehr an einer falschen Stelle ausgeführt. (#9886)
 * Es sind keine NVDA-Fehlertöne mehr zu hören, wenn auf Textsteuerelemente von DevExpress zugegriffen wird. (#10918)
