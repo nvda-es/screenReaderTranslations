@@ -1,6 +1,7 @@
 # Mitä uutta NVDA:ssa
 
 ## 2024.3
+
 Lisäosakauppa ilmoittaa nyt NVDA:n käynnistyksen yhteydessä, jos lisäosapäivityksiä on saatavilla.
 
 Nyt on mahdollista soveltaa Unicode-normalisointia puhe- ja pistekirjoitustulosteeseen.
