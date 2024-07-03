@@ -2645,7 +2645,7 @@ Zu den Highlights dieser Version gehören die Unterstützung für Diagramme in M
 * Unterstützung für VitalSource Bookshelf wurde hinzugefügt. (#7155)
 * Unterstützung für den Optelec-Protokollkonverter wurde hinzugefügt. Dies ist ein Gerät, dass die Nutzung von Braille-Voyager- und Satellite-Braillezeielen ermöglicht. Dabei wird das ALVA BC6 Kommunikationsprotocol verwendet. (#6731)
 * Die Breilleeingabe über eine ALVA-640-Comfort-Braillezeile wird nun unterstützt. (#7733)
-* Die Braille-Eingabe kann auch mit den obigen oder mit anderen BC6-Braillezeilen mit Firmware 3.0.0 oder neuer genutzt werden.
+ * Die Braille-Eingabe kann auch mit den obigen oder mit anderen BC6-Braillezeilen mit Firmware 3.0.0 oder neuer genutzt werden.
 * Erstmalige Unterstützung von Google Tabellen mit aktiviertem Braillemodus. (#7935)
 * Die Braillezeilen Esys, Esytime und Iris von Eurobraille werden nun unterstützt. (#7488)
 
@@ -2889,10 +2889,10 @@ Schwerpunkte dieser Version sind u. a. eine volle Unterstützung von Audio-Ducki
  * Wenn Sie normalisierte Eigenschaften wünschen, verwenden Sie stattdessen "InputGesture.normalizedIdentifiers".
 * Die Eigenschaft "InputGesture.logIdentifier" ist veraltet. Verwenden Sie stattdessen "InputGesture.identifiers[0]". (#6945)
 * Veralteter Code wurde entfernt:
- * "speech.REASON_*"-Konstanten: Verwenden sie stattdessen die Konstanten "controlTypes.REASON_*". (#6846)
- * "i18nName" für Sprachausgaben-Einstellungen: Verwenden Sie stattdessen "displayName" und "displayNameWithAccelerator". (#6846, #5185)
- * "config.validateConfig". (#6846, #667)
- * "config.save": Verwenden Sie stattdessen "config.conf.save". (#6846, #667)
+ * Konstanten `speech.REASON_*`: Verwenden Sie stattdessen die Konstanten "controlTypes.REASON_*". (#6846)
+ * `i18nName` für Sprachausgaben-Einstellungen: Verwenden Sie stattdessen `displayName` und `displayNameWithAccelerator`. (#6846, #5185)
+ * `config.validateConfig`. (#6846, #667)
+ * `config.save`: Verwenden Sie stattdessen `config.conf.save`. (#6846, #667)
 * Die Liste mit Vorschlägen zur Autovervollständigung im Kontextmenü der Python-Konsole zeigt keine führenden Objektpfade mehr vor den Symbolnamen an. (#7023)
 * Es gibt jetzt ein Unit Test Framework für NVDA. (#7026)
  * Unit-Tests und Infrastruktur befinden sich im Verzeichnis tests/unit. Sehen Sie sich den Docstring in der Datei tests\unit\init.py für weitere Informationen an.
@@ -3456,7 +3456,7 @@ Schwerpunkte dieser Version sind: LeseModus für Microsoft Word- und Outlook-Dok
  * Die Befehle können außerdem mehrmals in einem Arbeitsblatt verwendet werden, um verschiedene Überschriften für unterschiedliche Regionen eines Arbeitsblattes zu definieren.
 * Unterstützung für die Anzeige von Reihen- und Spaltenüberschriften in Microsoft Word (#3110):
  * Es werden (JAWS-kompatible) Word-Lesezeichen verwendet, um Reihen- und Spaltenüberschriften zu identifizieren
- * Wenn Sie sich in der ersten Zeile/Spalte einer Tabelle befinden, können Sie diese mit NVDA+Umschalt+C und NVDA+Umschalt+R als Spalten-/Zeilenbeschriftung festlegen. Diese Beschriftungen werden im Word-Dokument gespeichert und stehen allen Bildschirmlesern zur Verfügung, die derartige Lesezeichen unterstützen.
+ - Wenn Sie sich in der ersten Zeile/Spalte einer Tabelle befinden, können Sie diese mit NVDA+Umschalt+C und NVDA+Umschalt+R als Spalten-/Zeilenbeschriftung festlegen. Diese Beschriftungen werden im Word-Dokument gespeichert und stehen allen Bildschirmlesern zur Verfügung, die derartige Lesezeichen unterstützen.
 * Microsoft Word: Wenn Sie Tab drücken, wird der Abstand zum linken Seitenrand ausgegeben. (#1353)
 * Für die meisten Befehle, die die Formatierungen in einem Word-Dokument verändern (Fett, Kursiv, unterstrichen; Gliederungsebenen, etc.) meldet NVDA die Änderung der Formatierung per Sprache und Braille. (#1353)
 * Wenn in einem Arbeitsblatt von Microsoft Excel die aktuelle Zelle einen Kommentar besitzt, können Sie diesen über die Tastenkombination NVDA+Alt+C sich anzeigen lassen. (#2920)
@@ -4063,15 +4063,16 @@ Die wichtigsten Neuerungen für diese Version beinhalten Funktionen, um Braille 
 * Wenn im Rechner die Rücktaste gedrückt wird, wird nun der aktualisierte Inhalt der Anzeige angesagt und angezeigt. (#2030)
 * Wenn im Lesemodus die Maus zum Navigator-Objekt gezogen wird, wird der mauszeiger nun in die Mitte des Objekts bewegt, was in manchen Fällen bessere Ergebnisse liefert. (#2029)
 * Wenn im Lesemodus mit automatischem Wechsel in den Fokusmodus eine Symbolleiste den Fokus erhält, so wird der Lesemodus automatisch verlassen. (#1339)
+* Der Befehl zum Vorlesen der Titelleiste funktioniert in Adobe Reader wieder korrekt.
+* Wenn die Option "Bei Änderungen des Fokuses automatisch den Fokusmodus einschalten" aktiviert ist, wird der Fokus-Modus korrekt für fokussierte Tabellenzeilen z. B. in ARIA-Gittern verwendet. (#1763)
 * In iTunes sind die Informationen zur Objektposition (z. B. 1 von 5) in Listenfeldern nun wieder korrekt.
-* Wenn die Option "Bei Änderungen des Fokuses automatisch den Fokusmodus einschalten" aktiviert ist, wird der Fokus-Modus korrekt für fokusierte Tabellenzeilen z. B. in ARIA-Gittern verwendet. (#1763)
 * In Adobe Reader werden einige Links nicht mehr fälschlicherweise als schreibgeschützte Eingabefelder erkannt.
 * Beim Lesen von Dialogfeldern werden nun keine Beschriftungen für Eingabefelder mehr einbezogen. (#1960)
 * Wenn die Ansage von Objektbeschreibungen aktiviert ist, werden nun auch Beschreibungen von Gruppenfeldern vorgelesen.
 * In den Laufwerks-Eigenschaften im Windows-Explorer wird nun auch die gerundete laufwerksgröße korrekt ausgelesen.
 * Die doppelte Ansage von Texten auf Registerkarten wird in einigen Fällen vermieden. (#218)
 * Das Verhalten in einigen Eingabefeldern wurde verbessert, bei denen der Text direkt auf den Bildschirm ausgegeben wird. Dies gilt insbesondere für den Excel-Zelleneditor und für den Nachrichteneditor in Eudora. (#1658)
-* In Mozilla Firefox 11 funktioniert der Befehl "Zum Inhalt des Lesemodus zurückkehren" (NVDA+Steuerung+Leertaste) nun ordnungsgemäß und verlässt eingebettete Objekte wie Flasch-Inhalte.
+* In Mozilla Firefox 11 funktioniert der Befehl "Zum Inhalt des Lesemodus zurückkehren" (NVDA+Strg+Leertaste) nun ordnungsgemäß und verlässt eingebettete Objekte wie Flash-Inhalte.
 * NVDA startet nun korrekt neu, wenn z. B. die eingestellte Sprache geändert und NVDA in einen Ordner installiert wurde, der keine ASCII-Zeichen enthält. (#2079)
 * In Braille werden nun die Einstellungen zur Anzeige von Objektposition, Kurztasten und objektbeschreibungen berücksichtigt.
 * In Mozilla-Anwendungen ist das wechseln zwischen Fokus- und Lesemodus nicht mehr so träge, wenn die Braille-Ausgabe aktiviert ist. (#2095)
