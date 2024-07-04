@@ -522,7 +522,7 @@ Sie können den Datenerhebungsprozess jedoch manuell in den NVDA-Einstellungen i
 In NVDA bestehen die Tastenkombinationen zumeist aus einer oder mehreren Tasten in Kombination mit der NVDA-Taste.
 Die Befehle zum Lesen von Text werden im Desktop-Tastatur-Layout hingegen mit den Tasten des Nummernblocks bedient. Des Weiteren gibt es einige weitere Ausnahmen.
 
-NVDA kann so konfiguriert werden, dass die `Einfügen-Taste`, die `Einfügen-Taste` auf dem Nummernblock und/oder die `Feststelltaste` als NVDA-Taste verwendet werden können.
+NVDA kann so konfiguriert werden, dass die `Einfügen-Taste`, die `Einfügen-Taste` auf dem Nummernblock und/oder die `Feststelltaste` als `NVDA-Taste` verwendet werden können.
 Standardmäßig sind sowohl die `Einfügen-Taste` als auch die `Einfügen-Taste` auf dem Nummernblock als NVDA-Tasten festgelegt.
 
 Bei Bedarf können Sie an Stelle der NVDA-Taste die Originalfunktion auslösen, indem Sie die entsprechende Taste zweimal kurz hintereinander drücken. Wenn Sie beispielsweise die Dauergroßschreibtaste dafür festgelegt haben, können Sie diese Taste trotzdem noch ein- und ausschalten, indem Sie sie zweimal drücken.
@@ -1927,7 +1927,7 @@ Zum Beispiel kann das Zeichen "ü" (u mit Umlaut / Diaeresis), ein in Sprachen w
 
 Um die Unicode-Normalisierung von überall aus umzuschalten, weisen Sie bitte einen benutzerdefinierten Tastenbefehl über das Dialogfeld für die [Tastenbefehle](#InputGestures) zu.
 
-##### "Normalisiert" mitteilen beim Navigieren von Zeichen  {#SpeechReportNormalizedForCharacterNavigation}
+##### Beim Navigieren von Zeichen "normalisiert" mitteilen {#SpeechReportNormalizedForCharacterNavigation}
 
 Diese Einstellung ist ein Kontrollkästchen, das, wenn es aktiviert ist, NVDA anweist, explizit mitzuteilen, dass ein Zeichen normalisiert ist, wenn es als einzelnes Zeichen vorgelesen wird, z. B. beim Buchstabieren.
 Wenn diese Option aktiviert ist, wird zum Beispiel das Zeichen "ĳ" als "i j normalisiert" vorgelesen.
@@ -2172,6 +2172,18 @@ Wenn diese Option ausgeschaltet ist, zeigt NVDA so viel wie möglich vom Wort an
 NVDA zeigt dann den Rest des Wortes im nächsten Bereich an.
 
 Die Aktivierung dieser Funktion kann ein flüssigeres Lesen ermöglichen, erfordert aber in der Regel ein stärkeres Scrollen der Anzeige.
+
+##### Unicode-Normalisierung {#BrailleUnicodeNormalization}
+| . {.hideHeaderRow} |.|
+|---|---|
+|Optionen |Standard (Ausgeschaltet), Eingeschaltet, Ausgeschaltet|
+|Standard |Ausgeschaltet|
+
+Wenn diese Option aktiviert ist, wird eine Unicode-Normalisierung des Textes durchgeführt, der auf der Braillezeile angezeigt wird.
+Dies ist von Vorteil, wenn man auf Zeichen in Braille stößt, die in einer bestimmten Braille-Tabelle nicht vorkommen und für die es eine kompatible Alternative gibt, wie z. B. die Zeichen in fett und kursiv, die häufig in Social Media verwendet werden.
+Weitere Vorteile der Unicode-Normalisierung werden im [Abschnitt für die entsprechende Sprachausgaben-Einstellung](#SpeechUnicodeNormalization) näher erläutert.
+
+Um die Unicode-Normalisierung von überall aus umzuschalten, weisen Sie bitte einen benutzerdefinierten Tastenbefehl über das Dialogfeld für die [Tastenbefehle](#InputGestures) zu.
 
 ##### Kontextbezogene Informationen anzeigen {#BrailleSettingsFocusContextPresentation}
 
