@@ -522,10 +522,10 @@ Cependant, vous pouvez activer ou désactiver le processus de collecte de donné
 La plupart des commandes spécifiques de NVDA se font en appuyant sur la touche NVDA en conjonction avec une ou plusieurs autres touches.
 Les fonctions de revue de texte qui n'utilisent que le pavé numérique constituent une des quelques exceptions.
 
-NVDA peut être configuré pour que les touches "Insert" du clavier principal, "Insert" du pavé numérique ou verrouillage majuscules puissent être utilisées comme touche NVDA.
-Par défaut, les touches "Insert" du clavier principal et du pavé numérique sont définies comme touche NVDA.
+NVDA peut être configuré pour que les touches `insert`, `pavnumInsert` ou `verrouillageMajuscule` puissent être utilisées comme touche `NVDA`.
+Par défaut, les touches `insert` et `pavnumInsert` sont définies comme touche NVDA.
 
-Si vous souhaitez que l'une des touches NVDA se comporte comme d'habitude, comme si NVDA n'était pas en cours d'exécution (par exemple si vous voulez utiliser verrouillage majuscules pour verrouiller les majuscules après l'avoir définie comme touche NVDA) vous devrez appuyer deux fois rapidement sur la touche.
+Si vous souhaitez que l'une des touches NVDA se comporte comme d'habitude, comme si NVDA n'était pas en cours d'exécution (par exemple si vous voulez utiliser verrouillage majuscules pour verrouiller les majuscules après l'avoir définie comme touche NVDA) vous devrez appuyer deux fois rapidement sur cette touche.
 
 #### Les Configurations Clavier {#KeyboardLayouts}
 
