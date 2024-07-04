@@ -361,8 +361,6 @@ L'état de l'extension sera "Mise à jour disponible".
 La liste indiquera la version actuellement installée et la version disponible.
 Appuyez sur `entrée` sur l'extension pour ouvrir la liste d'actions ; choisissez "Mettre à jour".
 
-By default, after NVDA startup, you will be notified if any add-on updates are available.
-To learn more about and configure this behaviour, refer to ["Update Notifications"](#AutomaticAddonUpdates).
 Par défaut, après le démarrage de NVDA, vous serez averti si des mises à jour d'extensions sont disponibles.
 Pour en savoir plus et configurer ce comportement, reportez-vous à ["Notifications de mise à jour"](#AutomaticAddonUpdates).
 
