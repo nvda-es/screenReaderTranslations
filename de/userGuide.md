@@ -39,8 +39,17 @@ Zu den wichtigsten Funktionen gehören:
 
 ### System-Voraussetzungen {#SystemRequirements}
 
+#### Empfohlene Systemanforderungen {#MinimumSystemRequirements}
+* Betriebssysteme (64-Bit): Windows 10, Windows 11 und Window Server 2022
+  * Sowohl AMD64- als auch ARM64-Varianten von Windows werden unterstützt.
+* Mindestens 150 MB Speicherplatz.
+* Mindestens 4 GB RAM.
+
+#### Minimale Systemanforderungen {#MinimumSystemRequirements}
 * Betriebssysteme: Alle 32-Bit- und 64-Bit-Versionen von Windows 8.1, Windows 10, Windows 11 und alle Server-Versionen ab Windows Server 20012 R2.
   * Es werden sowohl AMD64- als auch ARM64-Varianten von Windows unterstützt.
+  * Hinweis: Betriebssysteme (32-Bit) werden nicht mehr aktiv unterstützt.
+  * Beachten Sie, dass Windows 8.1 und Windows Server, die älter als 2022 sind, nicht mehr aktiv unterstützt werden.
 * Mindestens 150 MB Speicherplatz.
 
 ### Internationalisierung {#Internationalization}
@@ -352,6 +361,9 @@ Der Status wird als "Update verfügbar" angezeigt.
 In der Liste werden die derzeit installierte Version und die verfügbare Version angezeigt.
 Drücken Sie die `Eingabetaste`, um die Liste der Aktionen zu öffnen; wählen Sie dann hier "Aktualisieren" aus.
 
+Standardmäßig werden Sie nach dem Start von NVDA benachrichtigt, wenn Add-on-Updates verfügbar sind.
+Um mehr darüber zu erfahren und zu konfigurieren, lesen Sie bitte ["Update-Benachrichtigungen"](#AutomaticAddonUpdates).
+
 ### Die Community {#Community}
 
 NVDA hat eine Community von teils sehr aktiven Nutzern.
@@ -430,10 +442,16 @@ Diese Option ist nur verfügbar, wenn NVDA aus einer portablen Version heraus in
 Wenn Sie eine portable Version direkt aus dem NVDA-Downloadpaket erstellen möchten, klicken Sie auf den Schalter "Portable Version erstellen".
 Wenn Sie das Willkommensfenster bereits geschlossen haben oder gerade eine installierte NVDA-Version ausführen, können Sie über den Menüpunkt "Portable Version erstellen" aus dem Untermenü "Werkzeuge" eine portable Version anlegen.
 
-Im folgenden Dialogfeld können Sie das Verzeichnis angeben, in dem die portable Version erstellt werden soll.
+Im daraufhin angezeigten Dialogfeld können Sie auswählen, wo die portable Version erstellt werden soll.
 Dies kann ein Ordner auf einem Speichermedium sein.
-Des Weiteren können Sie entscheiden, ob die Benutzer spezifischen Konfigurationsdateien und NVDA-Erweiterungen der aktuell laufenden NVDA-Instanz in die portable Version übernommen werden sollen.
+Standardmäßig wird ein neues Verzeichnis für die portable Version erstellt.
+Sie können auch ein bereits vorhandenes Verzeichnis verwenden, wodurch die Dateien in diesem Verzeichnis überschrieben werden.
+Wenn das vorhandene Verzeichnis eine portable Version von NVDA ist, wird diese aktualisiert.
+
+Es gibt auch eine Option, mit der Sie festlegen können, ob NVDA die aktuelle Konfiguration des angemeldeten Benutzers zur Verwendung mit der neu erstellten portablen Version kopieren soll.
+Dazu gehören auch NVDA-Erweiterungen.
 Diese Option ist nur verfügbar, wenn die portable Version von einer installierten Version erstellt wird - nicht jedoch beim Ausführen einer heruntergeladenen Version.
+
 Wenn Sie auf "Fortfahren" klicken, wird die portable Version erstellt.
 Nach Abschluss des Vorgangs erscheint eine Meldung, die Sie über die erfolgreiche Erstellung informiert.
 Klicken Sie auf "OK", um das Dialogfeld zu schließen.
@@ -486,15 +504,14 @@ Bitte lesen Sie erst auf der Homepage nach, ob gegebenenfalls etwas darüber bek
 Beim ersten Starten von NVDA wird Ihnen eine Dialogbox mit einigen grundlegenden Informationen über die NVDA-Taste und das NVDA-Menü angezeigt.
 (Bitte beachten Sie weitere Themenabschnitte.)
 Das Dialogfeld enthält zudem ein Kombinationsfeld und drei Kontrollfelder.
-Mit dem Kombinationsfeld wählen Sie das Tastaturschema aus.
+Mit dem Kombinationsfeld wählen Sie das Tastatur-Layout aus.
 Mit dem ersten Kontrollkästchen können Sie steuern, ob NVDA die Dauergroßschreibtaste als NVDA-Taste verwenden soll.
 Mit dem zweiten Kontrollkästchen können Sie bestimmen, ob NVDA nach der Anmeldung automatisch gestartet werden soll. Diese Option steht nur bei installierten NVDA-Versionen zur Verfügung.
 Mit dem dritten Kontrollkästchen legen Sie fest, ob bei jedem Start das Willkommensfenster angezeigt werden soll.
 
 #### Das Dialogfeld zur Datennutzungsstatistik {#UsageStatsDialog}
 
-Seit NVDA 2018.3 wird der Benutzer gefragt, ob Nutzungsdaten an NV Access gesendet werden sollen, um in Zukunft zur Verbesserung von NVDA beizutragen.
-Beim ersten Start von NVDA erscheint ein Dialogfeld, in dem Sie gefragt werden, ob Sie das Senden der Nutzungsdaten an NV Access während der Verwendung von NVDA akzeptieren möchten.
+Wenn Sie NVDA zum ersten Mal starten, erscheint ein Dialogfeld, in dem Sie gefragt werden, ob Sie damit einverstanden sind, während der Verwendung von NVDA die Daten an NV Access zu senden, um NVDA in Zukunft zu verbessern.
 Weitere Informationen zu den von NV Access erfassten Daten finden Sie im Abschnitt "[NVDA-Nutzungsdaten sammeln und an NV Access übermitteln](#GeneralSettingsGatherUsageStats)" in "Allgemeine Einstellungen".
 Hinweis: Durch Klicken auf "Ja" oder "Nein" wird diese Einstellung gespeichert. Das Dialogfeld erscheint nicht wieder, bis Sie NVDA neu installieren.
 Sie können den Datenerhebungsprozess jedoch manuell in den NVDA-Einstellungen in der Kategorie "Allgemein" aktivieren oder deaktivieren. Um diese Einstellung manuell zu ändern, können Sie das Kontrollkästchen [NVDA-Nutzungsdaten sammeln und an NV Access übermitteln](#GeneralSettingsGatherUsageStats) aktivieren oder deaktivieren.
@@ -503,21 +520,21 @@ Sie können den Datenerhebungsprozess jedoch manuell in den NVDA-Einstellungen i
 #### Die NVDA-Taste {#TheNVDAModifierKey}
 
 In NVDA bestehen die Tastenkombinationen zumeist aus einer oder mehreren Tasten in Kombination mit der NVDA-Taste.
-Die Befehle zum Lesen von Text werden im Desktop-Tastaturschema hingegen mit den Tasten des Nummernblocks bedient. Des Weiteren gibt es einige weitere Ausnahmen.
+Die Befehle zum Lesen von Text werden im Desktop-Tastatur-Layout hingegen mit den Tasten des Nummernblocks bedient. Des Weiteren gibt es einige weitere Ausnahmen.
 
-NVDA kann so konfiguriert werden, dass die Einfüge-Taste des Nummernblocks, Erweiterte Einfüge-Taste und/oder die Dauergroßschreibtaste als NVDA-Taste verwendet werden können.
-Die Einfüge-Taste des Nummernblocks sowie die Einfüge-Taste der erweiterten Tastatur sind standardmäßig als NVDA-Taste vordefiniert.
+NVDA kann so konfiguriert werden, dass die `Einfügen-Taste`, die `Einfügen-Taste` auf dem Nummernblock und/oder die `Feststelltaste` als NVDA-Taste verwendet werden können.
+Standardmäßig sind sowohl die `Einfügen-Taste` als auch die `Einfügen-Taste` auf dem Nummernblock als NVDA-Tasten festgelegt.
 
-Bei Bedarf können Sie an Stelle der NVDA-Taste die Originalfunktion auslösen, indem Sie die entsprechende Taste zwei Mal kurz hintereinander betätigen. Wenn Sie beispielsweise die Dauergroßschreibtaste dafür festgelegt haben, können Sie diese Taste trotzdem noch ein- und ausschalten, indem Sie sie zweimal drücken.
+Bei Bedarf können Sie an Stelle der NVDA-Taste die Originalfunktion auslösen, indem Sie die entsprechende Taste zweimal kurz hintereinander drücken. Wenn Sie beispielsweise die Dauergroßschreibtaste dafür festgelegt haben, können Sie diese Taste trotzdem noch ein- und ausschalten, indem Sie sie zweimal drücken.
 
-#### Die Tastaturschemata {#KeyboardLayouts}
+#### Die Tastatur-Layouts {#KeyboardLayouts}
 
-NVDA ist derzeit mit zwei Typen von Tastenkombinationen (Tastaturschemata) ausgestattet. Es gibt eines für Desktops und eines für Laptops.
+NVDA ist derzeit mit zwei Typen von Tastenkombinationen (Tastatur-Layouts) ausgestattet. Es gibt eines für Desktops und eines für Laptops.
 Voreingestellt ist NVDA auf die Verwendung des Desktop-Layouts. Sie können jedoch in der Kategorie Tastatur des Dialogs [NVDA-Einstellungen](#NVDASettings), den Sie unter Einstellungen im NVDA-Menü finden, auf das Laptop-Layout umschalten.
 
 Das Desktop-Schema nutzt den Nummernblock (wenn dieser ausgeschaltet ist).
 Obwohl die meisten Laptop-Tastaturen keinen physikalischen Nummernblock haben, kann dieser mit Hilfe der FN-Taste in Kombination mit den Tasten des rechten Tastenfeldes emuliert werden. Dies sind die Tasten: 7, 8, 9, u, i, o, j, k, l, etc.).
-Wenn Ihr Laptop dies oder die Deaktivierung des Nummernblocks nicht unterstützt, können Sie an Stelle das Tastaturschema auf Laptop umstellen.
+Wenn Ihr Laptop dies oder die Deaktivierung des Nummernblocks nicht unterstützt, können Sie an Stelle das Tastatur-Layout auf Laptop umstellen.
 
 ### Touchscreen-Bedienung mit NVDA {#NVDATouchGestures}
 
@@ -537,7 +554,7 @@ Sie können den Finger dann auch über den Bildschirm bewegen, um Text und Steue
 
 #### Berührungsgesten {#TouchGestures}
 
-Weiter unten im Handbuch finden Sie bei den Beschreibungen zu den NVDA-Befehlen auch Gesten, mit denen die betreffenden Befehle ausgeführt werden können, wenn Sie einen Touchscreen verwenden.
+Weiter unten in diesem Benutzerhandbuch finden Sie bei den Beschreibungen zu den NVDA-Befehlen auch Gesten, mit denen die betreffenden Befehle ausgeführt werden können, wenn Sie einen Touchscreen verwenden.
 In den folgenden Abschnitten finden Sie Anweisungen, wie bestimmte Gesten mit dem Touchscreen verwendet werden.
 
 ##### Tippen {#Taps}
@@ -835,7 +852,7 @@ Die folgenden Tastenkombinationen zum Text betrachten sind verfügbar:
 
 Hinweis: Um die Tasten des Nummernblocks benutzen zu können, muss dieser deaktiviert sein!
 
-Um sich bei der Verwendung des Desktop-Tastaturschemas auf hilfreiche Weise die Tastenkombinationen merken zu können, wird dieses Textraster grundsätzlich in drei Mal drei "Felder" angeordnet; von oben nach unten, von links nach rechts sowie zum vorherigen, aktuellen und nächsten.
+Um sich bei der Verwendung des Desktop-Tastatur-Layouts auf hilfreiche Weise die Tastenkombinationen merken zu können, wird dieses Textraster grundsätzlich in drei Mal drei "Felder" angeordnet; von oben nach unten, von links nach rechts sowie zum vorherigen, aktuellen und nächsten.
 Das Layout ist wie folgt aufgebaut:
 
 | . {.hideHeaderRow} |. |.|
@@ -899,17 +916,22 @@ Richtig ausgerichtete Stereolautsprecher oder Kopfhörer vorausgesetzt, wird der
 Diese zusätzlichen Mausfunktionen sind in NVDA standardmäßig deaktiviert.
 Wenn Sie sie nutzen möchten, können Sie sie in den Einstellungen in der Kategorie [Maus](#MouseSettings) im Dialogfeld der [NVDA-Einstellungen](#NVDASettings) im Menü NVDA-Einstellungen konfigurieren.
 
-Zum Navigieren mit der Maus sollte eine richtige Maus oder eine Mauskugel benutzt werden. Folgende Tastenbefehle stehen in NVDA zur Verfügung:
+Zum Navigieren mit der Maus sollte eine richtige Maus oder ein Track-Pad benutzt werden. Folgende Tastenbefehle stehen in NVDA zur Verfügung:
+
 <!-- KC:beginInclude -->
 
-| Name |"Desktop"-Tastenkombination |"Laptop"-Tastenkombination |Geste |Beschreibung|
+| Name |Desktop-Tastenkombination |Laptop-Tastenkombination |Touch-Geste |Beschreibung|
 |---|---|---|---|---|
 |Linksklick |Nummernblock-Schrägstrich |NVDA+Ü |Keine |Führt einen Linksklick aus. Bei zweimal Drücken wird ein Doppelklick ausgeführt.|
 |Linke Maustaste feststellen |Umschalt+Nummernblock-Schrägstrich |NVDA+Strg+Ü |Keine |Hält die linke Maustaste gedrückt. Wird die Tastenkombination erneut gedrückt, wird die Maustaste wieder losgelassen. Um "Drag and Drop" durchzuführen, führen Sie diesen Schritt auf einem Objekt aus und wandern anschließend mit der Maus oder auch mit den Navigationstasten für die Simulation der Maus an eine andere Stelle des Bildschirms und lösen die linke Maustaste wieder.|
 |Rechtsklick |Nummernblock-Stern |NVDA+Plus |Mit einem Finger tippen und halten |Führt einen Rechtsklick aus.|
 |Rechte Maustaste feststellen |Umschalt+Nummernblock-Stern |NVDA+Strg+Plus |Keine |Hält die rechte Maustaste gedrückt. Wird die Tastenkombination erneut gedrückt, wird die Maustaste wieder losgelassen. Um "Drag and Drop" durchzuführen, führen Sie diesen Schritt auf einem Objekt aus und wandern anschließend mit der Maus oder auch mit den Navigationstasten für die Simulation der Maus an eine andere Stelle des Bildschirms und lösen die rechte Maustaste wieder.|
-|Die Maus zum aktuellen Navigator-Objekt ziehen |NVDA+Nummernblock-Schrägstrich |NVDA+Umschalt+M |Keine |Zieht die Maus zum aktuellen Standort des Navigator-Objektes oder des NVDA-Cursors.|
-|Zum Objekt unter der Maus navigieren |NVDA+Nummernblock-Stern |NVDA+Umschalt+N |Keine |Zieht das Navigator-Objekt zur Objektposition an der Mausposition.|
+|An der Maus-Position nach oben scrollen |Keine |Keine |Keine |Scrollt das Mausrad an der aktuellen Maus-Position nach oben.|
+|An der Maus-Position nach unten scrollen |Keine |Keine |Keine |Scrollt das Mausrad an der aktuellen Maus-Position nach unten.|
+|An der Maus-Position nach links scrollen |Keine |Keine |Keine |Scrollt das Mausrad an der aktuellen Maus-Position nach links.|
+|An der Maus-Position nach rechts scrollen |Keine |Keine |Keine |Scrollt das Mausrad an der aktuellen Maus-Position nach rechts.|
+|Mauszeiger zum aktuellen Navigator-Objekt ziehen |NVDA+Nummernblock-Schrägstrich |NVDA+Umschalt+M |Keine |Zieht die Maus zum aktuellen Standort des Navigator-Objektes oder des NVDA-Cursors.|
+|Zum Objekt unter dem Mauszeiger navigieren |NVDA+Nummernblock-Stern |NVDA+Umschalt+N |Keine |Zieht das Navigator-Objekt zur Objektposition an der Mausposition.|
 
 <!-- KC:endInclude -->
 
@@ -1781,12 +1803,13 @@ Die folgenden Informationen werden dabei gesendet:
 
 ##### NVDA-Nutzungsdaten sammeln und an NV Access übermitteln {#GeneralSettingsGatherUsageStats}
 
-Ist diese Option aktiviert, sammelt NV Access zusätzliche Informationen wie die Landessprache, das Land oder die geografische Region. Diese Informationen werden benutzt, um Nutzungsstatistiken über die Anzahl der NVDA-Nutzer zu erstellen.
+Sofern diese Option aktiviert ist, verwendet NV Access die Informationen aus den Daten zur Update-Abfrage, um die Anzahl der NVDA-Benutzer einschließlich bestimmter demografischer Daten wie Betriebssystem und Herkunftsland zu ermitteln.
 Auch wenn die IP-Adresse zum Ermitteln des (ungefähren) geografischen Standortes verwendet wird, wird sie niemals protokolliert.
 Wenn die Option aktiviert ist, werden die folgenden Daten zusätzlich gesendet:
 
+* Eine eindeutige ID für den aktuellen NVDA-Benutzer, diese ändert sich einmal pro Monat.
 * Eingestellte Landessprache in NVDA.
-* Art der NVDA-Instanz (portabel oder installiert).
+* Art der Instanz von NVDA (portabel oder installiert).
 * Name der verwendeten Sprachausgabe (einschließlich Name der NVDA-Erweiterung, aus der die Sprachausgabe stammt).
 * Name der verwendeten Braillezeile (einschließlich Name der NVDA-Erweiterung, aus der der Treiber stammt).
 * Aktuelle Ausgabetabelle (sofern Braille benutzt wird).
@@ -1877,6 +1900,39 @@ Diese Option gilt für alle Sprachausgaben, nicht nur für die aktuell ausgewäh
 
 Mit dieser standardmäßig aktivierten Option legen Sie fest, ob beim Vorlesen von Symbolen und Sonderzeichen immer die Sprache der momentan eingestellten Stimme berücksichtigt werden soll.
 Sollte in NVDA die Aussprache von Symbolen und Sonderzeichen nicht korrekt funktionieren, können Sie diese Option deaktivieren.
+
+##### Unicode-Normalisierung {#SpeechUnicodeNormalization}
+| . {.hideHeaderRow} |.|
+|---|---|
+|Optionen |Standard (Ausgeschaltet), Eingeschaltet, Ausgeschaltet|
+|Standard |Ausgeschaltet|
+
+Wenn diese Option aktiviert ist, wird der von NVDA vorgelesene Text einer Unicode-Normalisierung unterzogen.
+Dies ist von Vorteil, wenn Zeichen vorgelesen, die in verschiedenen Formen dargestellt werden können.
+NVDA verwendet den NFKC-Algorithmus (Normalization Form Compatibility Composition), der unter anderem die folgenden Vorteile bietet:
+
+1. Die Zeichen in fett und kursiv, die Teil des Unicode-Standards sind und häufig in sozialen Medien verwendet werden, werden auf ihre gängigste kompatible Entsprechung normalisiert.
+Zum Beispiel kann der lateinische Buchstabe "h" auch als "𝐡" (fett), "ℎ" (itallisch), etc. dargestellt werden, wird aber immer als "h" vorgelesen, wenn die Normalisierung aktiviert ist.
+Dieser Aspekt der Normalisierung hilft auch beim Lesen von Gleichungen im Gleichungs-Editor in Microsoft Word.
+
+1. Normalisierung auf zusammengesetzte Zeichen.
+Zum Beispiel kann das Zeichen "ü" (u mit Umlaut / Diaeresis), ein in Sprachen wie Deutsch und Türkisch gebräuchliches Zeichen, in zwei Formen dargestellt werden.
+  1. Ein eigenständiges Unicode-Zeichen (ü).
+  1. Eine Aufteilung in zwei Zeichen (ü), nämlich den normalen lateinischen Buchstaben u und einen Diaeresis-Modifikator.
+  Die Unicode-Normalisierung stellt sicher, dass in der gesamten Sprachausgabe nur eine Form verwendet wird, nämlich die eine Zeichenvariante.
+
+1. Aufteilung einiger Ligaturen, einschließlich "ĳ" (Ligatur ij) in ihre Zweibuchstabenform ("ij").
+
+1. Feste Anordnung von Modifikatoren in zusammengesetzten Zeichen, z. B. im Althebräischen.
+
+Um die Unicode-Normalisierung von überall aus umzuschalten, weisen Sie bitte einen benutzerdefinierten Tastenbefehl über das Dialogfeld für die [Tastenbefehle](#InputGestures) zu.
+
+##### "Normalisiert" mitteilen beim Navigieren von Zeichen  {#SpeechReportNormalizedForCharacterNavigation}
+
+Diese Einstellung ist ein Kontrollkästchen, das, wenn es aktiviert ist, NVDA anweist, explizit mitzuteilen, dass ein Zeichen normalisiert ist, wenn es als einzelnes Zeichen vorgelesen wird, z. B. beim Buchstabieren.
+Wenn diese Option aktiviert ist, wird zum Beispiel das Zeichen "ĳ" als "i j normalisiert" vorgelesen.
+
+Beachten Sie, dass diese Einstellung nur verfügbar ist, wenn "[Unicode-Normalisierung](#SpeechUnicodeNormalization)" aktiviert ist.
 
 ##### Unicode-Konsortiumsdaten (einschließlich Emoji) bei der Verarbeitung von Zeichen und Symbolen einbeziehen {#SpeechSettingsCLDR}
 
@@ -2115,12 +2171,12 @@ Bitte beachten Sie: Zu lange Wörter müssen trotzdem getrennt werden, um auf de
 Wenn diese Option ausgeschaltet ist, zeigt NVDA so viel wie möglich vom Wort an, aber ein Teil kann abgeschnitten sein.
 NVDA zeigt dann den Rest des Wortes im nächsten Bereich an.
 
-Das Einschalten dieser Option kann Ihnen ein flüssigeres Lesen ermöglichen, bewirkt aber, dass Sie die Braillezeile öfter weiterschalten müssen.
+Die Aktivierung dieser Funktion kann ein flüssigeres Lesen ermöglichen, erfordert aber in der Regel ein stärkeres Scrollen der Anzeige.
 
-##### Kontextinformationen anzeigen {#BrailleSettingsFocusContextPresentation}
+##### Kontextbezogene Informationen anzeigen {#BrailleSettingsFocusContextPresentation}
 
-Mit dieser Option können Sie festlegen wann Kontextinformationen auf der Braillezeile angezeigt werden sollen, wenn ein Objekt fokussiert wird.
-Kontextinformationen sind z. B. Informationen über übergeordnete Objekte.
+Mit dieser Option können Sie festlegen wann kontextbezogene Informationen auf der Braillezeile angezeigt werden sollen, sobald ein Objekt fokussiert wird.
+Kontextbezogene Informationen sind z. B. Informationen über übergeordnete Objekte.
 Ein Beispiel: Wenn Sie einen Listeneintrag ansteuern, ist dieser ein Teil einer Liste.
 Diese Liste könnte ein Teil eines Dialogs oder ähnliches sein.
 Weitere Informationen über die Objekthierarchie finden Sie im Abschnitt über [Objektnavigation](#ObjectNavigation).
@@ -2857,6 +2913,27 @@ Beachten Sie, dass dieses Absatzformat nicht in Microsoft Word oder Microsoft Ou
 
 Sie können von überall aus zwischen den verfügbaren Absatz-Eigenschaften umschalten, indem Sie eine Taste im Dialogfeld für die [Tastenbefehle](#InputGestures) zuweisen.
 
+#### Die Einstellungen für den Store {#AddonStoreSettings}
+
+In dieser Kategorie können Sie das Verhalten des Stores anpassen.
+
+##### Die Update-Benachrichtigungen {#AutomaticAddonUpdates}
+
+Wenn diese Option auf "Benachrichtigen" eingestellt ist, werden Sie über den Store benachrichtigt, nach dem Start von NVDA, wenn Updates zu NVDA-Erweiterungen verfügbar sind.
+Diese Überprüfung wird alle 24 Stunden durchgeführt.
+Benachrichtigungen erfolgen nur für NVDA-Erweiterungen, deren Updates im selben Kanal verfügbar sind.
+Bei installierten Beta-Versionen der NVDA-Erweiterungen werden Sie beispielsweise nur über Updates innerhalb des Beta-Kanals benachrichtigt.
+
+| . {.hideHeaderRow} |.|
+|---|---|
+|Optionen |Benachrichtigen (Standard), Ausgeschaltet |
+|Standard |Benachrichtigen |
+
+|Option |Verhalten |
+|---|---|
+|Eingeschaltet |Benachrichtigung, wenn Updates für NVDA-Erweiterungen innerhalb desselben Kanals verfügbar sind. |
+|Ausgeschaltet |Nicht automatisch nach Updates für NVDA-Erweiterungen suchen. |
+
 #### Die Einstellungen der Windows-Texterkennung {#Win10OcrSettings}
 
 Mit den Einstellungen in dieser Kategorie können Sie die [Windows-Texterkennung](#Win10Ocr) konfigurieren.
@@ -3199,7 +3276,7 @@ Unterhalb jeder Funktion werden die zugewiesenen Befehle, sofern vorhanden, ange
 um einen Befehl einer Funktion zuzuweisen, wählen Sie die Funktion aus und klicken Sie auf den Schalter "Hinzufügen".
 Führen Sie anschließend den zuzuweisenden Befehl aus - Drücken Sie die entsprechende Tastenkombination oder die Tasten an der Braillezeile.
 Oft kann eine NVDA-Funktion durch mehr als eine Tastenkombination ausgeführt werden.
-Bei Tastenkombinationen kann es beispielsweise sinnvoll sein, das Tastaturschema anzugeben, in dem diese Tastenkombination wirksam werden soll (Desktop/Laptop).
+Bei Tastenkombinationen kann es beispielsweise sinnvoll sein, das Tastatur-Layout anzugeben, in dem diese Tastenkombination wirksam werden soll (Desktop/Laptop).
 In solchen Fällen wird ein Menü angezeigt, in dem Sie die entsprechende Option auswählen können.
 
 Um eine Tastenkombination von einer Funktion zu entfernen, wählen Sie diese aus und klicken Sie anschließend auf den Schalter "Entfernen".
@@ -3442,6 +3519,9 @@ Wenn NVDA auf Ihrem System installiert ist und gestartet wurde, können Sie dies
 Wenn eine NVDA-Erweiterung aus einer externen Quelle installiert werden soll, werden Sie von NVDA aufgefordert, diese Installation zu bestätigen.
 Nach der Installation der NVDA-Erweiterung muss NVDA neu gestartet werden, damit die NVDA-Erweiterung ausgeführt werden kann. Sie können den Neustart von NVDA jedoch verschieben, wenn Sie weitere NVDA-Erweiterungen installieren oder aktualisieren möchten.
 
+Standardmäßig werden Sie nach dem Start von NVDA benachrichtigt, sofern Updates für NVDA-Erweiterungen verfügbar sind.
+Um mehr über darüber zu erfahren und zu konfigurieren, lesen Sie bitte den Abschnitt ["Update-Benachrichtigungen"](#AutomaticAddonUpdates).
+
 #### NVDA-Erweiterungen entfernen {#AddonStoreRemoving}
 
 Um eine NVDA-Erweiterung zu entfernen, wählen Sie sie aus der Liste aus und verwenden Sie die Aktion "Entfernen".
@@ -3564,14 +3644,10 @@ Für weitere Informationen lesen Sie bitte den ausführlichen Abschnitt: [NVDA-E
 ### Eine portable Version erstellen {#CreatePortableCopy}
 
 Mit dieser Option können Sie eine portable Version aus einer installierten Version erstellen.
-Wird die portable Version ausgeführt, erscheint an der gleichen Stelle im Menü "Extras" stattdessen der Eintrag "NVDA auf diesem Computer installieren".
 
-In diesem Dialogfeld werden Sie zur Auswahl des jeweiligen Zielpfads aufgewfordert den Pfad für die portable bzw. für die installierte Version auszuwählen.
+In diesem Dialogfeld werden Sie zur Auswahl des jeweiligen Zielpfads aufgefordert den Pfad für die portable bzw. für die installierte Version auszuwählen.
 
-In diesem Dialogfeld können Sie Folgendes aktivieren oder deaktivieren:
-
-* Kopieren der aktuellen Benutzerkonfiguration (inklusive der Dateien in "%appdata%\roaming\NVDA" oder in der Benutzerkonfiguration Ihrer portablen Version und NVDA-Erweiterungen oder der Module).
-* Starten Sie die neue portable Version nach der Erstellung oder starten Sie NVDA nach der Installation (NVDA startet automatisch nach der Erstellung der portablen Version oder der Installation).
+Folgen Sie den Anweisungen in [Erstellen einer portablen Version](#CreatingAPortableCopy) für weitere Informationen.
 
 ### Tool zur Behebung für die COM-Registrierung ausführen {#RunCOMRegistrationFixingTool}
 
@@ -4001,6 +4077,7 @@ Die folgenden zusätzlichen Geräte werden ebenfalls unterstützt (und erfordern
 * APH Chameleon 20
 * Humanware BrailleOne
 * NLS eReader
+  * Beachten Sie, dass der Zoomax derzeit nicht ohne externe Treiber unterstützt wird.
 
 Folgende Tastenkombinationen sind bei diesen Braillezeilen verfügbar
 Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechenden Tasten zu finden sind.
@@ -4995,8 +5072,8 @@ Folgende Kommandozeilenoptionen stehen zur Verfügung:
 |Keine |`--install-silent` |Installiert NVDA ohne Ausgabe von Rückmeldungen, startet die Version aber nicht.|
 |Keine |`--enable-start-on-logon=True|False` |Aktivieren Sie bei der Installation [NVDA bei der Windows-Anmeldung starten](#StartAtWindowsLogon).|
 |Keine |`--copy-portable-config` |Kopieren Sie bei der Installation die portable Konfiguration vom angegebenen Pfad (`--config-path`, `-c`) im aktuellen Benutzerkonto.|
-|Keine |`--create-portable` |Erstellt und startet eine neue portable NVDA-Version. Hierfür müssen Sie außerdem den Parameter `--portable-path` angeben.|
-|Keine |`--create-portable-silent` |Erstellt eine neue portable NVDA-Version, ohne diese zu starten. Hierfür müssen Sie außerdem den Parameter `--portable-path` angeben.|
+|Keine |`--create-portable` |Erstellt eine portable Version (und startet die neue Version). Erfordert die Angabe von `--portable-path`.|
+|Keine |`--create-portable-silent` |Erstellt eine portable Version (ohne die neue Version zu starten). Erfordert die Angabe von `--portable-path`. Diese Option unterdrückt Warnungen beim Schreiben in nicht leere Verzeichnisse und kann Dateien ohne Warnung überschreiben.|
 |Keine |`--portable-path=Ordner` |Gibt den Ordner an, in dem die portable Version erstellt werden soll.|
 
 ### Systemweite Parameter {#SystemWideParameters}
