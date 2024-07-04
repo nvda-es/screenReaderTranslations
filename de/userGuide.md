@@ -12,7 +12,7 @@ Willkommen bei NVDA!
 
 NVDA (NonVisual Desktop Access) ist ein freier und quell offener Screenreader für das Microsoft Windows-Betriebssystem.
 Es bietet Feedback via synthetischer Sprache und Braille. Dabei erhalten Blinde und hochgradig sehbehinderte Menschen kostenlos gleichermaßen Zugriff auf Windows wie ein Sehender.
-Entwickelt wird NVDA von [NV Access](https://www.nvaccess.org/) und allen Mitwirkenden aus der Commune.
+Entwickelt wird NVDA von [NV Access](https://www.nvaccess.org/) und allen Mitwirkenden aus der Community.
 
 ### Allgemeine Features {#GeneralFeatures}
 
@@ -37,7 +37,7 @@ Zu den wichtigsten Funktionen gehören:
 * Unterstützung für die Windows-Eingabeaufforderung und -Konsolenanwendungen.
 * Möglichkeit, den System-Fokus hervorzuheben.
 
-### System-Voraussetzungen {#SystemRequirements}
+### Systemanforderungen {#SystemRequirements}
 
 #### Empfohlene Systemanforderungen {#MinimumSystemRequirements}
 * Betriebssysteme (64-Bit): Windows 10, Windows 11 und Window Server 2022
@@ -67,8 +67,8 @@ Informationen über weitere unterstützte Sprachausgaben, können Sie im Abschni
 
 ### Braillezeilen-Unterstützung {#BrailleSupport}
 
-Für Anwender, die eine Braillezeile besitzen, kann NVDA die Informationen in Blindenschrift ausgeben.
-NVDA verwendet den Open-Source-Braille-Übersetzer [LibLouis](https://liblouis.io/), um Braille-Sequenzen aus Text zu generieren.
+Für Anwender, die eine Braillezeile besitzen, kann NVDA die Informationen in Braille ausgeben.
+NVDA verwendet den Braille-Übersetzer [LibLouis](https://liblouis.io/) (Open-Source), um Braille-Sequenzen aus Text zu generieren.
 Die Eingabe von Kurz-, Voll- und Basisschrift über die Braille-Tastatur der Braillezeile wird ebenfalls unterstützt.
 Zudem erkennt NVDA standardmäßig viele Braillezeilen automatisch.
 Für weitere Informationen lesen Sie bitte im Abschnitt [Unterstützte Braillezeilen](#SupportedBrailleDisplays) nach.
@@ -81,7 +81,7 @@ Copyright NVDA_COPYRIGHT_YEARS NVDA-Mitwirkende.
 
 NVDA ist unter der GNU General Public License Version 2 verfügbar, mit zwei besonderen Ausnahmen.
 Die Ausnahmen sind im Lizenz-Dokument unter den Abschnitten "Nicht-GPL-Komponenten in Plugins und Treibern" und "Microsoft Distributable Code" aufgeführt.
-NVDA verwendet auch Komponenten, die unter verschiedenen freien und Opensource-Lizenzen zur Verfügung gestellt werden.
+NVDA verwendet auch Komponenten, die unter verschiedenen freien und Open-Source-Lizenzen zur Verfügung gestellt werden.
 Es steht Ihnen frei, diese Software auf jede Art und Weise weiterzugeben oder zu verändern, solange Sie die Lizenz mitliefern und den gesamten Quellcode jedem zur Verfügung stellen.
 Dies gilt sowohl für Original- als auch für modifizierte Versionen dieser Software sowie für alle veränderten Versionen.
 
@@ -92,7 +92,7 @@ Einzelheiten zu Ausnahmen finden Sie im NVDA-Menü unter "Hilfe", "Lizenz".
 
 Diese Schnellstartanleitung enthält drei Hauptabschnitte: Herunterladen, Ersteinrichtung und Ausführung von NVDA.
 Es folgen Informationen über die Anpassung der Einstellungen, die Verwendung von NVDA-Erweiterungen, die Teilnahme an der Community und die Hilfe.
-Die Informationen in diesem Handbuch wurden aus anderen Teilen des NVDA-Benutzerhandbuchs zusammengefasst.
+Die Informationen in diesem Benutzerhandbuch wurden aus anderen Teilen des NVDA-Benutzerhandbuchs zusammengefasst.
 Ausführlichere Informationen zu den einzelnen Themen finden Sie im vollständigen Benutzerhandbuch.
 
 ### NVDA herunterladen {#GettingAndSettingUpNVDA}
@@ -628,7 +628,7 @@ Wenn das Menü erscheint, können Sie mit den Pfeiltasten durch das Menü navigi
 
 <!-- KC:beginInclude -->
 
-| Name |"Desktop"-Tastenkombination |"Laptop"-Tastenkombination |Geste |Beschreibung|
+| Name |Desktop-Tastenkombination |Laptop-Tastenkombination |Geste |Beschreibung|
 |---|---|---|---|---|
 |NVDA starten oder neustarten |Strg+Alt+N |Strg+Alt+N |Keine |Startet NVDA vom Desktop (neu), sofern diese Tastenkombination während der NVDA-Installation aktiviert wurde. Dies ist eine Windows-spezifische Verknüpfung und kann daher im Dialogfeld für die Tastenbefehle nicht neu zugewiesen werden.|
 |Sprachausgabe unterbrechen |Strg |Strg |zwei-Finger-tippen |unterbricht augenblicklich den laufenden Sprechvorgang.|
@@ -703,7 +703,7 @@ Wenn [Visuell hervorheben](#VisionFocusHighlight) aktiviert ist, wird die Positi
 Einige nützliche Tastenkombinationen zum Navigieren mit dem System-Fokus sind:
 <!-- KC:beginInclude -->
 
-| Name |"Desktop"-Tastenkombination |"Laptop"-Tastenkombination |Beschreibung|
+| Name |Desktop-Tastenkombination |Laptop-Tastenkombination |Beschreibung|
 |---|---|---|---|
 |Aktuellen Fokus ansagen |NVDA+Tab-Taste |NVDA+Tab-Taste |Spricht das aktuell hervorgehobene Objekt. Bei zweimal Drücken werden die Informationen buchstabiert.|
 |Titelleiste ansagen |NVDA+T |NVDA+T |Liest die Titelleiste der aktuellen Anwendung vor. Bei zweimal Drücken, werden die Informationen buchstabiert. Bei dreimal Drücken wird der Text in die Zwischenablage kopiert. Diese Information wird auch in Braille angezeigt.|
@@ -824,7 +824,7 @@ Hinweis: Die Braille-Ausgabe nach dem NVDA-Cursor kann über [Braille-Ausgabe ko
 Die folgenden Tastenkombinationen zum Text betrachten sind verfügbar:
 <!-- KC:beginInclude -->
 
-| Name |"Desktop"-Tastenkombination |"Laptop"-Tastenkombination |Geste |Beschreibung|
+| Name |Desktop-Tastenkombination |Laptop-Tastenkombination |Geste |Beschreibung|
 |---|---|---|---|---|
 |Zur obersten Zeile navigieren |Umschalt+Nummernblock 7 |NVDA+Strg+Pos1 |Keine |Zieht den NVDA-Cursor in die erste Zeile des Textes.|
 |Zur vorherigen Zeile navigieren |Nummernblock 7 |NVDA+Pfeiltaste nach oben |Nach oben streichen (Textmodus) |Zieht den NVDA-Cursor zur vorherigen Zeile des Textes.|
@@ -868,7 +868,7 @@ Abhängig vom eingestellten Betrachtungsmodus können Sie mit den [Befehlen zum 
 Die folgenden Befehle wechseln zwischen den Betrachtungsmodi:
 <!-- KC:beginInclude -->
 
-| Name |"Desktop"-Tastenkombination |"Laptop"-Tastenkombination |Geste |Beschreibung|
+| Name |Desktop-Tastenkombination |Laptop-Tastenkombination |Geste |Beschreibung|
 |---|---|---|---|---|
 |In den nächsten Betrachtungsmodus wechseln |NVDA+Nummernblock 7 |NVDA+Seite auf |Mit zwei Fingern nach oben streichen |Schaltet in den nächsten Betrachtungsmodus um.|
 |In den vorherigen Betrachtungsmodus wechseln |NVDA+Nummernblock1 |NVDA+Seite ab |Mit zwei Fingern nach unten streichen |Schaltet im vorherigen Betrachtungsmodus um.|
@@ -1222,10 +1222,10 @@ Dies bezieht sich nur auf die Verwendung von MathPlayer zur visuellen Anzeige ma
 ## Braille {#Braille}
 
 Wenn Sie eine Braillezeile besitzen, kann NVDA diese verwenden, um Informationen in Blindenschrift darzustellen.
-Falls Ihre Braillezeile eine Tastatur besitzt, können Sie außerdem Kurz-, Voll- oder Basisschrift eingeben.
+Falls die Braillezeile eine Tastatur besitzt, können Sie außerdem Kurz-, Voll- oder Basisschrift eingeben.
 Die Braillezeile kann auch mit dem [Braille-Btrachter](#BrailleViewer) anstelle oder gleichzeitig mit einer physischen Braille-Zeile auf dem Bildschirm angezeigt werden.
 
-Bitte lesen Sie im Abschnitt [Unterstützte Braillezeilen](#SupportedBrailleDisplays), ob Ihre Braillezeile unterstützt wird.
+Bitte lesen Sie im Abschnitt [Unterstützte Braillezeilen](#SupportedBrailleDisplays), ob die Braillezeile unterstützt wird.
 Dieser Abschnitt enthält auch Informationen darüber, welche Braillezeilen die automatische Braillezeilenerkennung von NVDA unterstützen.
 Sie können die Braille-Schrift über die Einstellungen in der Kategorie [Braille](#BrailleSettings) in den [NVDA-Einstellungen](#NVDASettings) konfigurieren.\
 
@@ -1911,7 +1911,7 @@ Wenn diese Option aktiviert ist, wird der von NVDA vorgelesene Text einer Unicod
 Dies ist von Vorteil, wenn Zeichen vorgelesen, die in verschiedenen Formen dargestellt werden können.
 NVDA verwendet den NFKC-Algorithmus (Normalization Form Compatibility Composition), der unter anderem die folgenden Vorteile bietet:
 
-1. Die Zeichen in fett und kursiv, die Teil des Unicode-Standards sind und häufig in sozialen Medien verwendet werden, werden auf ihre gängigste kompatible Entsprechung normalisiert.
+1. Die Zeichen in fett und kursiv, die Teil des Unicode-Standards sind und häufig in Social Media verwendet werden, werden auf ihre gängigste kompatible Entsprechung normalisiert.
 Zum Beispiel kann der lateinische Buchstabe "h" auch als "𝐡" (fett), "ℎ" (itallisch), etc. dargestellt werden, wird aber immer als "h" vorgelesen, wenn die Normalisierung aktiviert ist.
 Dieser Aspekt der Normalisierung hilft auch beim Lesen von Gleichungen im Gleichungs-Editor in Microsoft Word.
 
@@ -2023,7 +2023,7 @@ Dies ist für Anwender nützlich, die nur mit einer Braillezeile arbeiten möcht
 Wenn Sie rasch durch die verschiedenen Sprachausgabeneinstellungen schalten möchten, ohne zuvor extra in die Kategorie der NVDA-Einstellungen gehen zu müssen, so gibt es die folgenden Tastenkombinationen in NVDA, die Sie von überall aus benutzen können:
 <!-- KC:beginInclude -->
 
-| Name |"Desktop"-Tastenkombination |"Laptop"-Tastenkombination |Beschreibung|
+| Name |Desktop-Tastenkombination |Laptop-Tastenkombination |Beschreibung|
 |---|---|---|---|
 |Zur nächsten Sprachausgaben-Einstellung navigieren |NVDA+Strg+Pfeiltaste nach rechts |NVDA+Strg+Umschalt+Pfeiltaste nach rechts |Geht zur nächsten verfügbaren Sprachausgaben-Einstellung, ausgehend von der aktuellen Einstellung; beginnt von vorne, nach dem letzten Eintrag.|
 |Zur vorherigen Sprachausgaben-Einstellung springen |NVDA+Strg+Pfeiltaste nach links |NVDA+Strg+Umschalt+Pfeiltaste nach links |Geht zur vorherigen verfügbaren Sprachausgaben-Einstellung, ausgehend von der aktuellen Einstellung; beginnt von hinten, nach dem ersten Eintrag.|
@@ -2283,11 +2283,11 @@ In diesem Kombinationsfeld werden die möglichen Anschlussmöglichkeiten angezei
 
 Standardmäßig wird NVDA automatisch sämtliche USB-Anschlüsse und Bluetooth-Geräte nach Ihrer Braillezeile absuchen.
 Für manche Braillezeilen können Sie jedoch genau festlegen, wie die Zeile angeschlossen ist.
-Übliche Auswahlmöglichkeiten sind "automatisch" (die oben beschriebene automatische Suche nach dem Anschluss), "Bluetooth" "USB" oder einer der seriellen Anschlüsse, sofern Ihre Braillezeile diese Verbindungsart unterstützt.
+Übliche Auswahlmöglichkeiten sind "Automatisch" (die oben beschriebene automatische Suche nach dem Anschluss), "Bluetooth", "USB" oder einer der seriellen Anschlüsse, sofern die Braillezeile diese Verbindungsart unterstützt.
 
-Diese Option ist nicht verfügbar, wenn Ihre Braillezeile nur die automatische Suche nach dem Anschluss unterstützt.
+Diese Option ist nicht verfügbar, wenn die Braillezeile nur die automatische Suche nach dem Anschluss unterstützt.
 
-Für weitere Informationen sehen Sie im Abschnitt [Unterstützte Braillezeilen](#SupportedBrailleDisplays), welche Anschlüsse für Ihre Braillezeile zur Verfügung stehen.
+Für weitere Informationen sehen Sie im Abschnitt [Unterstützte Braillezeilen](#SupportedBrailleDisplays), welche Anschlüsse für die Braillezeile zur Verfügung stehen.
 
 Bitte beachten Sie: Wenn Sie mehrere Braillezeilen gleichzeitig an Ihr Gerät anschließen,
 die denselben Treiber verwenden (z. B. zwei Seika-Braillezeilen anschließen), ist es derzeit nicht möglich, NVDA mitzuteilen, welche Braillezeile verwendet werden soll.
@@ -3237,7 +3237,7 @@ Wenn man also das frühere Beispiel der Ersetzung des Wortes "Vogel" durch "Fros
 
 Ein sogenannter Regulärer Ausdruck ist ein Muster, welches spezielle Symbole enthält. Dies ermöglicht, dass das Muster auf Zahlen oder Buchstaben generell oder auf mehrere Zeichen gleichzeitig zutrifft.
 Reguläre Ausdrücke werden in diesem Benutzerhandbuch nicht behandelt.
-Ein Tutorial zur Einführung finden Sie in [Python's Handbuch für regulläre Ausdrücke](https://docs.python.org/3.11/howto/regex.html)..
+Ein Tutorial zur Einführung finden Sie im [Python-Handbuch für Regulläre Ausdrücke](https://docs.python.org/3.11/howto/regex.html)..
 
 #### Die Interpunktion und Symbol-Aussprache {#SymbolPronunciation}
 
@@ -3319,7 +3319,7 @@ Wenn Sie die Konfiguration auf die Standard-Einstellungen zurücksetzen möchten
 Die folgenden Tastenbefehle sind auch hilfreich:
 <!-- KC:beginInclude -->
 
-| Name |"Desktop"-Tastenkombination |"Laptop"-Tastenkombination |Beschreibung|
+| Name |Desktop-Tastenkombination |Laptop-Tastenkombination |Beschreibung|
 |---|---|---|---|
 |Konfiguration speichern |NVDA+Strg+C |NVDA+Strg+C |Speichert die Konfiguration ab, sodass sie nicht beim Beenden von NVDA verloren geht.|
 |Konfiguration zurücksetzen |NVDA+Strg+R |NVDA+Strg+R |Setzt bei einmal Drücken die NVDA-Einstellungen auf den letzten gespeicherten Stand zurück. Bei dreimal Drücken wird auf die Standard-Einstellung zurückgesetzt.|
@@ -4039,7 +4039,7 @@ Zuerst müssen Sie den USB-Treiber des Herstellers installieren.
 Diese Braillezeile unterstützt nicht die automatische Braillezeilenerkennung im Hintergrund von NVDA.
 
 Die folgenden Tastenkombinationen für diese Braillezeile sind in NVDA verfügbar:
-Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechenden Tasten zu finden sind.
+Bitte lesen Sie in der Dokumentation der Braillezeile, wo die entsprechenden Tasten zu finden sind.
 <!-- KC:beginInclude -->
 
 | Name |Tastenkombination|
@@ -4062,7 +4062,7 @@ Zuerst müssen Sie den USB-Treiber des Herstellers installieren.
 Diese Braillezeile unterstützt nicht die automatische Braillezeilenerkennung im Hintergrund von NVDA.
 
 Die folgenden Tastenkombinationen für diese Braillezeile sind in NVDA verfügbar:
-Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechenden Tasten zu finden sind.
+Bitte lesen Sie in der Dokumentation der Braillezeile, wo die entsprechenden Tasten zu finden sind.
 <!-- KC:beginInclude -->
 
 | Name |Tastenkombination|
@@ -4092,7 +4092,7 @@ Die folgenden zusätzlichen Geräte werden ebenfalls unterstützt (und erfordern
   * Beachten Sie, dass der Zoomax derzeit nicht ohne externe Treiber unterstützt wird.
 
 Folgende Tastenkombinationen sind bei diesen Braillezeilen verfügbar
-Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechenden Tasten zu finden sind.
+Bitte lesen Sie in der Dokumentation der Braillezeile, wo die entsprechenden Tasten zu finden sind.
 
 #### Tastenzuweisungen für alle Braillezeilenmodelle {#HumanWareBrailliantKeyAssignmentForAllModels}
 
@@ -4155,7 +4155,7 @@ NVDA unterstützt die Braillezeilenmodelle Braille Sense, Braille EDGE, SyncBrai
 Wenn Sie die Braillezeile per USB anschließen, müssen Sie noch die [USB-Treiber von Hims](http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip) auf Ihrem System installieren.
 
 Folgende Tastenkombinationen sind in NVDA verfügbar:
-Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechenden Tasten zu finden sind.
+Bitte lesen Sie in der Dokumentation der Braillezeile, wo die entsprechenden Tasten zu finden sind.
 <!-- KC:beginInclude -->
 
 | Name |Taste|
@@ -4241,7 +4241,7 @@ Weitere Informationen zu den Braillezeilen finden Sie auf der [Demo- und Treiber
 Die Treiber werden [vom Hersteller bereitgestellt](https://de.seika-braille.com/down/index.html).
 
 Nachfolgend die Tastenbelegungen der Seika-Braillezeile.
-Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechenden Tasten zu finden sind.
+Bitte lesen Sie in der Dokumentation der Braillezeile, wo die entsprechenden Tasten zu finden sind.
 <!-- KC:beginInclude -->
 
 | Name |Tastenkombination|
@@ -4511,10 +4511,10 @@ Für BrailleNote Touch lesen Sie bitte den Abschnitt [Brailliant BI-Serie / Brai
 Außer beim Braillenote PK werden sowohl Braille BT- und die QT-Tastaturen unterstützt.
 Die Emulation der PC-Tastatur von Braillenote QT wird (noch) nicht unterstützt.
 Sie können über die QWERTZ-Tastatur auch Braillepunkte eingeben.
-Weitere Informationen finden Sie im Abschnitt Braille-terminal des Handbuchs Ihrer Braillezeile.
+Weitere Informationen finden Sie im Abschnitt Braille-Terminal des Handbuchs Ihrer Braillezeile.
 
-Wenn Ihre Braillezeile mehr als eine Verbindungsmethode unterstützt, müssen Sie den verwendeten Anschluss in den Braille-Terminal-Einstellungen festlegen.
-Bitte sehen Sie in die Dokumentation Ihrer Braillezeile nach für weitere Informationen.
+Wenn die Braillezeile mehr als eine Verbindungsmethode unterstützt, müssen Sie den verwendeten Anschluss in den Braille-Terminal-Einstellungen festlegen.
+Bitte lesen Sie in der Dokumentation der Braillezeile für weitere Informationen.
 Zudem müssen Sie den verwendeten Anschluss in den [Braille-Einstellungen](#SelectBrailleDisplay) in NVDA festlegen.
 Wenn die Braillezeile über USB oder Bluetooth verbunden wird, können Sie "automatisch", "USB" oder "Bluetooth" einstellen.
 Wenn Sie einen seriellen Anschluss (oder einen USB-Zu-Seriell-Konverter) verwenden, müssen Sie den verwendeten Anschluss ausdrücklich auswählen.
@@ -4525,7 +4525,7 @@ Bei der Braillenote Apex BT können Sie das Scrollrad für die Ausführung von N
 Das Scrollrad besteht aus 4 punktförmigen Richtungstasten, einer mittleren Taste sowie dem eigentlichen Rad, das Sie mit und gegen den Uhrzeigersinn drehen können.
 
 Folgende BrailleNote-Befehle können Sie in NVDA verwenden:
-Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo sich die entsprechenden Tasten befinden.
+Bitte lesen Sie in der Dokumentation der Braillezeile, wo sich die entsprechenden Tasten befinden.
 
 <!-- KC:beginInclude -->
 
@@ -4608,7 +4608,7 @@ In dem [Dialogfeld zum Auswählen der Braillezeile](#SelectBrailleDisplay) in de
 Diese Braillezeilen unterstützen nicht die automatische Erkennung der Braillezeilen im Hintergrund von NVDA.
 
 Folgende Tastenbelegungen sind bei Verwendung der Ecobraille-Modelle verfügbar:
-Bitte sehen Sie in der [Dokumentation zur Ecobraille](ftp://ftp.once.es/pub/utt/bibliotecnia/Lineas_Braille/ECO/) nach, um zu erfahren, wo die entsprechenden Tasten zu finden sind.
+Bitte lesen Sie in der [Dokumentation zur Ecobraille](ftp://ftp.once.es/pub/utt/bibliotecnia/Lineas_Braille/ECO/), um zu erfahren, wo die entsprechenden Tasten zu finden sind.
 
 <!-- KC:beginInclude -->
 
