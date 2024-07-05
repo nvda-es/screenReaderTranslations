@@ -13,7 +13,11 @@
 <li><a href="#nvda-nvda_version-gebruikershandleiding" title="NVDA NVDA_VERSION Gebruikershandleiding">NVDA NVDA_VERSION Gebruikershandleiding</a><ul>
 <li><a href="#Introduction" title="Inleiding">Inleiding</a><ul>
 <li><a href="#GeneralFeatures" title="Algemene kenmerken">Algemene kenmerken</a></li>
-<li><a href="#SystemRequirements" title="Systeemvereisten">Systeemvereisten</a></li>
+<li><a href="#SystemRequirements" title="Systeemvereisten">Systeemvereisten</a><ul>
+<li><a href="#MinimumSystemRequirements" title="Aanbevolen Systeemvereisten">Aanbevolen Systeemvereisten</a></li>
+<li><a href="#MinimumSystemRequirements" title="Minimumsysteemvereisten">Minimumsysteemvereisten</a></li>
+</ul>
+</li>
 <li><a href="#Internationalization" title="Internationalisering">Internationalisering</a></li>
 <li><a href="#SpeechSynthesizerSupport" title="Ondersteuning voor spraaksynthese">Ondersteuning voor spraaksynthese</a></li>
 <li><a href="#BrailleSupport" title="Brailleondersteuning">Brailleondersteuning</a></li>
@@ -173,6 +177,7 @@
 </ul>
 </li>
 <li><a href="#Azardi" title="Azardi">Azardi</a></li>
+<li><a href="#WinConsole" title="Windowsconsool">Windowsconsool</a></li>
 </ul>
 </li>
 <li><a href="#ConfiguringNVDA" title="NVDA configureren">NVDA configureren</a><ul>
@@ -206,6 +211,8 @@
 <li><a href="#SpeechSettingsDialectSwitching" title="Automatisch van dialect wisselen">Automatisch van dialect wisselen</a></li>
 <li><a href="#SpeechSettingsSymbolLevel" title="Interpunctie-/symboolniveau">Interpunctie-/symboolniveau</a></li>
 <li><a href="#SpeechSettingsTrust" title="Vertrouw taal van stem bij het verwerken van karakters en symbolen">Vertrouw taal van stem bij het verwerken van karakters en symbolen</a></li>
+<li><a href="#SpeechUnicodeNormalization" title="Unicode-normalisering">Unicode-normalisering</a></li>
+<li><a href="#SpeechReportNormalizedForCharacterNavigation" title="&quot;Genormaliseerd&quot; melden bij het navigeren per teken">"Genormaliseerd" melden bij het navigeren per teken</a></li>
 <li><a href="#SpeechSettingsCLDR" title="Unicode Consortium data (met inbegrip van emoji) opnemen bij het verwerken van karakters en symbolen">Unicode Consortium data (met inbegrip van emoji) opnemen bij het verwerken van karakters en symbolen</a></li>
 <li><a href="#SpeechSettingsCapPitchChange" title="Percentage toonhoogteverandering bij hoofdletters">Percentage toonhoogteverandering bij hoofdletters</a></li>
 <li><a href="#SpeechSettingsSayCapBefore" title="Het woord &quot;Hoofdletter&quot; uitspreken bij lezen van hoofdletters">Het woord "Hoofdletter" uitspreken bij lezen van hoofdletters</a></li>
@@ -238,12 +245,13 @@
 <li><a href="#BrailleSettingsReviewRoutingMovesSystemCaret" title="Invoercursor verplaatsen bij routering van leescursor">Invoercursor verplaatsen bij routering van leescursor</a></li>
 <li><a href="#BrailleSettingsReadByParagraph" title="Lezen per alinea">Lezen per alinea</a></li>
 <li><a href="#BrailleSettingsWordWrap" title="Waar mogelijk woorden niet afbreken">Waar mogelijk woorden niet afbreken</a></li>
+<li><a href="#BrailleUnicodeNormalization" title="Unicode-normalisering">Unicode-normalisering</a></li>
 <li><a href="#BrailleSettingsFocusContextPresentation" title="Te tonen focuscontext">Te tonen focuscontext</a></li>
 <li><a href="#BrailleSettingsInterruptSpeech" title="Spraak onderbreken tijdens het scrollen">Spraak onderbreken tijdens het scrollen</a></li>
 <li><a href="#BrailleSettingsShowSelection" title="Selectie tonen">Selectie tonen</a></li>
 </ul>
 </li>
-<li><a href="#SelectBrailleDisplay" title="Brailleleesregel Selecteren (NVDA+control+a)">Brailleleesregel Selecteren (NVDA+control+a)</a><ul>
+<li><a href="#SelectBrailleDisplay" title="Brailleleesregel Selecteren">Brailleleesregel Selecteren</a><ul>
 <li><a href="#OpenSelectBrailleDisplay" title="Dialoogvenster brailleleesregel selecteren openen">Dialoogvenster brailleleesregel selecteren openen</a></li>
 <li><a href="#SelectBrailleDisplayDisplay" title="Brailleleesregel">Brailleleesregel</a></li>
 <li><a href="#SelectBrailleDisplayAutoDetect" title="Automatisch te detecteren leesregels">Automatisch te detecteren leesregels</a></li>
@@ -311,6 +319,7 @@
 <li><a href="#ObjectPresentationReportBalloons" title="Notificaties melden">Notificaties melden</a></li>
 <li><a href="#ObjectPresentationShortcutKeys" title="Objectsneltoetsen melden">Objectsneltoetsen melden</a></li>
 <li><a href="#ObjectPresentationPositionInfo" title="Informatie over objectpositie melden">Informatie over objectpositie melden</a></li>
+<li><a href="#objectpositie-raden-indien-deze-niet-beschikbaar-is" title="Objectpositie raden indien deze niet beschikbaar is">Objectpositie raden indien deze niet beschikbaar is</a></li>
 <li><a href="#ObjectPresentationReportDescriptions" title="Objectbeschrijvingen melden">Objectbeschrijvingen melden</a></li>
 <li><a href="#ObjectPresentationProgressBarOutput" title="Weergave voortgangsbalk">Weergave voortgangsbalk</a></li>
 <li><a href="#ObjectPresentationReportBackgroundProgressBars" title="Achtergrondvoortgangsbalken melden">Achtergrondvoortgangsbalken melden</a></li>
@@ -347,8 +356,13 @@
 <li><a href="#DocumentFormattingDetectFormatAfterCursor" title="Opmaakwijzigingen achter de cursor melden">Opmaakwijzigingen achter de cursor melden</a></li>
 </ul>
 </li>
+<li><a href="#DocumentFormattingSettingsLineIndentation" title="Regelinspringing melden">Regelinspringing melden</a></li>
 <li><a href="#DocumentNavigation" title="Documentnavigatie">Documentnavigatie</a><ul>
 <li><a href="#ParagraphStyle" title="Alineastijl">Alineastijl</a></li>
+</ul>
+</li>
+<li><a href="#AddonStoreSettings" title="Add-on Store Instellingen">Add-on Store Instellingen</a><ul>
+<li><a href="#AutomaticAddonUpdates" title="Update-meldingen">Update-meldingen</a></li>
 </ul>
 </li>
 <li><a href="#Win10OcrSettings" title="Windows OCR">Windows OCR</a><ul>
@@ -459,6 +473,7 @@
 </li>
 <li><a href="#Hims" title="HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Serie">HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Serie</a></li>
 <li><a href="#Seika" title="Seika Brailleleesregels">Seika Brailleleesregels</a><ul>
+<li><a href="#SeikaBrailleDisplays" title="Seika Versie 3, 4, en 5 (40 cellen), Seika80 (80 cellen)">Seika Versie 3, 4, en 5 (40 cellen), Seika80 (80 cellen)</a></li>
 <li><a href="#SeikaNotetaker" title="MiniSeika (16, 24 cellen), V6, en V6Pro (40 cellen)">MiniSeika (16, 24 cellen), V6, en V6Pro (40 cellen)</a></li>
 </ul>
 </li>
@@ -521,12 +536,24 @@ NVDA wordt ontwikkeld door <a href="https://www.nvaccess.org/" rel="noopener" ta
 <li>Mogelijkheid de systeemfocus uit te lichten</li>
 </ul>
 <h3 id="SystemRequirements">Systeemvereisten</h3>
+<h4 id="MinimumSystemRequirements">Aanbevolen Systeemvereisten</h4>
 <ul>
-<li>Besturingssystemen: alle 32-bit en 64-bit edities van Windows 8.1, Windows 10, Windows 11, en alle Server besturingsSystemen vanaf  Windows Server 2012 R2.<ul>
-<li>zowel AMD64- als ARM64-varianten van Windows worden ondersteund.</li>
+<li>Besturingssystemen: 64-bit edities van Windows 10, Windows 11, en Windows Server 2022<ul>
+<li>Zowel de AMD64- als de ARM64-varianten van Windows worden ondersteund.</li>
 </ul>
 </li>
-<li>tenminste 150 mb aan opslagruimte.</li>
+<li>Ten minste 150 MB opslagruimte.</li>
+<li>Ten minste 4 GB RAM.</li>
+</ul>
+<h4 id="MinimumSystemRequirements">Minimumsysteemvereisten</h4>
+<ul>
+<li>Besturingssystemen: alle 32-bit en 64-bit edities van Windows 8.1, Windows 10, Windows 11, en alle Server Besturingssystemen beginnend bij Windows Server 2012 R2.<ul>
+<li>Zowel de AMD64- als de ARM64-varianten van Windows worden ondersteund.</li>
+<li>Merk op dat  32-bit besturingssystemen niet langer actief ondersteund worden.
+Merk op dat Windows 8.1 en Windows Server versies die ouder zijn dan 2022 niet langer actief ondersteund worden.
+Ten minste 150 MB opslagruimte.</li>
+</ul>
+</li>
 </ul>
 <h3 id="Internationalization">Internationalisering</h3>
 <p>Het is belangrijk dat mensen overal ter wereld, ongeacht de taal die zij spreken, gelijke toegang krijgen tot technologie.
@@ -991,6 +1018,8 @@ Druk op  <code>control+tab</code> om naar dit tabblad te gaan vanuit elke willek
 De status van de add-on is voor zien van het predikaat "Update beschikbaar".
 De lijst  toont de momenteel geïnstalleerde versie en de beschikbare versie.
 Druk <code>enter</code> in op de add-on om de actie lijst te openen; kies "Bijwerken".</p>
+<p>Standaard krijg je, nadat NVDA opgestart is, een melding of er add-on updates beschikbaar zijn.
+Om hierover meer te weten te komen, en het verloop ervan aan te passen gaje naar <a href="#AutomatischeAddonUpdates" title="&quot;Update Notificaties&quot;">"Update Notificaties"</a>.</p>
 <h3 id="Community">Community</h3>
 <p>NVDA kent een levendige gebruikersgemeenschap.
 Zo is er een  <a href="https://nvda.groups.io/g/nvda" rel="noopener" target="_blank" title="veel gebruikte, belangrijke engelstalige emaillijst">veel gebruikte, belangrijke engelstalige emaillijst</a> en een pagina vol <a href="https://github.com/nvaccess/nvda-community/wiki/Connect" rel="noopener" target="_blank" title="gebruikersgroepen in de taal van de respectieve geografische locaties">gebruikersgroepen in de taal van de respectieve geografische locaties</a>.
@@ -1049,9 +1078,13 @@ Deze optie is alleen beschikbaar wanneer de installatie wordt uitgevoerd vanuit 
 Als u het dialoogvenster reeds gesloten hebt of als u werkt met een geïnstalleerde versie van NVDA, kiest u Draagbare Kopie Aanmaken wat u vindt onder Extra in het NVDA menu.</p>
 <p>In het dialoogvenster dat wordt geopend kunt u aangeven waar de draagbare versie moet worden aangemaakt.
 Dit kan een map op de harde schijf zijn of op een USB stick dan wel op een ander type draagbare media. 
-U vindt hier ook een optie waarmee de gebruikte NVDA instellingen van de momenteel aangemelde gebruiker kunnen worden gekopieerd naar de configuratie van de zojuist aangemaakte draagbare versie. 
-Deze optie is alleen beschikbaar wanneer de draagbare kopie wordt aangemaakt vanuit een op uw computer geïnstalleerde kopie van NVDA en niet wanneer u de kopie direct vanuit het downloadbestand uitvoert.
-Door op de knop Doorgaan te drukken wordt de draagbare kopie aangemaakt.
+Standaard wordt er voor de draagbare kopie een nieuwe bestandsmap aangemaakt.
+Je kunt er ook voor kiezen een bestaande bestandsmap te gebruiken met als gevolg dat de bestanden in die map worden overschreven.
+Als de bestaande bestandsmap een draagbare kopie van NVDA bevat, wordt die kopie bijgewerkt.</p>
+<p>Je vindt hier ook een optie waarmee de gebruikte NVDA instellingen van de momenteel aangemelde gebruiker kunnen worden gekopieerd naar de configuratie van de zojuist aangemaakte draagbare versie. 
+Dat is inclusief add-ons.
+Deze optie is alleen beschikbaar wanneer de draagbare kopie wordt aangemaakt vanuit een op uw computer geïnstalleerde kopie van NVDA en niet wanneer u de kopie direct vanuit het downloadbestand uitvoert.</p>
+<p>Door op de knop Doorgaan te drukken wordt de draagbare kopie aangemaakt.
 Zodra het aanmaken is voltooid, hoort u de melding dat dit gelukt is. 
 Druk nu op OK om het dialoogvenster te sluiten.</p>
 <h3 id="PortableAndTemporaryCopyRestrictions">Beperkingen van de draagbare en tijdelijke kopie van NVDA</h3>
@@ -1066,8 +1099,6 @@ Dit geldt eveneens voor het uitschakelen van het gebruik van de <a href="#Addons
 <p>Draagbare en  tijdelijke kopieën van NVDA kennen de volgende beperkingen:</p>
 <ul>
 <li>Automatisch opstarten tijdens en/of na aanmelding is niet mogelijk.</li>
-</ul>
-<ul>
 <li>Werken met toepassingen die met beheerdersrechten worden uitgevoerd is niet mogelijk, tenzij NVDA ook met deze rechten wordt uitgevoerd natuurlijk, (niet aan te bevelen),</li>
 <li>UAC-schermen (User Account Control) kunnen niet worden voorgelezen bij het starten van toepassingen die met beheerdersrechten worden uitgevoerd,</li>
 <li>Geen ondersteuning voor invoer via het aanraakscherm,</li>
@@ -1099,17 +1130,16 @@ Als u het eerste selectievakje inschakelt, wordt de CapsLock-toets ook als NVDA-
 Als u het tweede selectievakje inschakelt, zal NVDA automatisch opstarten zodra u bij Windows bent aangemeld. Deze mogelijkheid is alleen beschikbaar voor de geïnstalleerde versie van NVDA. 
 Het inschakelen van het derde selectievakje zorgt ervoor dat dit welkomsscherm verschijnt, telkens wanneer NVDA wordt gestart.</p>
 <h4 id="UsageStatsDialog">Dialoogvenster Gebruiksgegevensstatistiek</h4>
-<p>Met ingang van NVDA 2018.3, wordt de gebruiker gevraagd of hij / zij toestaat dat gegevens over het gebruik naar NV Access worden gestuurd met het doel NVDA verder te verbeteren.
-Wanneer NVDA de eerste keer start, verschijnt er een dialoogvenster  met de vraag of u ermee akkoord gaat dat er gegevens naar NV Access worden gestuurd tijdens uw gebruik van NVDA.
-U leest meer over de door NV Access verzamelde data in het onderdeel Algemene  Instellingen , <a href="#GeneralSettingsGatherUsageStats" title=" NV Access toestaan NVDA-gebruiksstatistieken te verzamelen"> NV Access toestaan NVDA-gebruiksstatistieken te verzamelen</a>.
-Merk op dat  door op "ja" of "nee"  te drukken  uw keuze wordt opgeslagen en dat  dit dialoogvenster dan niet meer zal verschijnen, tenzij u NVDA opnieuw installeert.
-U kunt het verzamelen van data echter handmatig in- of uitschakelen via de Instellingen van NVDA in de categorie Algemeen. Om de instelling handmatig te wijzigen zet of verwijdert u een vinkje in het selectievakje  met bijschrift Sta het NVDA project toe NVDA gebruiksstatistieken te verzamelen #GeneralSettingsGatherUsageStats].</p>
+<p>Wanneer NVDA de eerste keer start, verschijnt er een dialoogvenster  met de vraag of je ermee akkoord gaat dat er gegevens naar NV Access worden gestuurd tijdens uw gebruik van NVDA om zo te helpen het programma te verbeteren.
+Je leest meer over de door NV Access verzamelde data in het onderdeel Algemene  Instellingen , <a href="#GeneralSettingsGatherUsageStats" title=" NV Access toestaan NVDA-gebruiksstatistieken te verzamelen"> NV Access toestaan NVDA-gebruiksstatistieken te verzamelen</a>.
+Merk op dat  door op "ja" of "nee"  te drukken  je keuze wordt opgeslagen en dat  dit dialoogvenster dan niet meer zal verschijnen, tenzij u NVDA opnieuw installeert.
+Je kunt het verzamelen van data echter handmatig in- of uitschakelen via de Instellingen van NVDA in de categorie Algemeen. Om de instelling handmatig te wijzigen zet of verwijdert u een vinkje in het selectievakje  met bijschrift Sta het NVDA project toe NVDA gebruiksstatistieken te verzamelen #GeneralSettingsGatherUsageStats].</p>
 <h3 id="AboutNVDAKeyboardCommands">Over NVDA toetsenbordcommando’s</h3>
 <h4 id="TheNVDAModifierKey">De NVDA programmatoets</h4>
 <p>Voor de meeste commando's binnen NVDA drukt u op een bepaalde toets, de NVDA programmatoets (of kortweg NVDA-toets) in combinatie met een of meer andere toetsen.
 Als uitzondering hierop noemen we de commando's die gebruikt worden om tekst te laten voorlezen. Hiervoor gebruikt u alleen de toetsen van het numerieke toetsenbord zonder de NVDA programmatoets (dit geldt voor de desktoptoetsenbordindeling). Er zijn echter nog enkele andere uitzonderingen. </p>
-<p>U kunt NVDA zo configureren dat de numerieke Insert-toets, de uitgebreide Insert-toets en / of de CapsLock-toets als NVDA programmatoets worden/wordt gebruikt.
-Standaard zijn zowel de numerieke Insert als de uitgebreide Insert-toets als NVDA programmatoets ingesteld.</p>
+<p>U kunt NVDA zo configureren dat de Insert-toets, denumerieke Insert-toets en / of de CapsLock-toets als NVDA programmatoets worden/wordt gebruikt.
+Standaard zijn zowel de Insert als de numerieke Insert-toets als NVDA programmatoets ingesteld.</p>
 <p>Om een toets die u als NVDA programmatoets hebt ingesteld zijn oorspronkelijke functie te laten uitvoeren, u wilt CapsLock bij voorbeeld inschakelen om hoofdletters te typen, moet u deze toets tweemaal snel achter elkaar indrukken.</p>
 <h4 id="KeyboardLayouts">Toetsenbordindeling</h4>
 <p>Momenteel beschikt NVDA over twee profielen met toetscommando's die toetsenbordindelingen worden genoemd: de desktoptoetsenbordindeling en de laptoptoetsenbordindeling. 
@@ -1797,11 +1827,29 @@ Deze koppeling kan in- en uitgeschakeld worden.</p>
 <td>geen</td>
 <td>Bij de eerste maal drukken wordt tekst geselecteerd vanaf het eerder ingestelde beginpunt tot einde inclusief de huidige positie van de leescursor. Als de systeemcursor bij de tekst kan komen, zal die naar de geselecteerde tekst worden verplaatst. Nadat de toetscombinatie de 2de keer wordt ingedrukt wordt de tekst naar het klembord gekopieerd.</td>
 </tr>
+<tr>
+<td>Verplaats naar ingesteld beginpunt voor kopie in leesmodus</td>
+<td>NVDA+shift+f9</td>
+<td>NVDA+shift+f9</td>
+<td>geen</td>
+<td>Verplaatst  leescursor naar het eerder ingestelde beginpunt voor kopie</td>
+</tr>
+<tr>
+<td>Tekstopmaak melden</td>
+<td>NVDA+shift+f</td>
+<td>NVDA+shift+f</td>
+<td>geen</td>
+<td>NVDA laat horen hoe de tekst waarin de leescursor zich bevindt, is opgemaakt. Bij tweemaal drukken krijgt u de informatie in bladermodus.</td>
+</tr>
+<tr>
+<td>Actuele symboolvervanging melden</td>
+<td>geen</td>
+<td>geen</td>
+<td>geen</td>
+<td>Het symbool waarbij de leescursor zich bevindt wordt uitgesproken. Bij tweemaal drukken wordt het symbool en de voor het benoemen hiervan gebruikte tekst weergegeven in bladermodus.</td>
+</tr>
 </tbody>
 </table>
-<p>|Verplaats naar ingesteld beginpunt voor kopie in leesmodus | NVDA+shift+f9 | NVDA+shift+f9 | geen | Verplaatst  leescursor naar het eerder ingestelde beginpunt voor kopie |</p>
-<p>|Tekstopmaak melden |NVDA+shift+f |NVDA+shift+f |geen |NVDA laat horen hoe de tekst waarin de leescursor zich bevindt, is opgemaakt. Bij tweemaal drukken krijgt u de informatie in bladermodus.|
-|Actuele symboolvervanging melden| geen |geen |geen |Het symbool waarbij de leescursor zich bevindt wordt uitgesproken. Bij tweemaal drukken wordt het symbool en de voor het benoemen hiervan gebruikte tekst weergegeven in bladermodus.|</p>
 <!-- KC:endInclude -->
 
 <p>Let op: voor een goede werking van de numerieke toetsen moet NumLock worden uitgeschakeld.</p>
@@ -1934,6 +1982,34 @@ Als u deze functionaliteit wilt gebruiken, kunt u deze inschakelen in de categor
 <td>NVDA+control+]</td>
 <td>geen</td>
 <td>Hiermee wordt rechter muisknop ingedrukt gehouden. Door nogmaals te drukken wordt de vergrendeling opgeheven. Om te kunnen slepen met de muis drukt u deze toetscombinatie zodat de rechter muisknop ingedrukt blijft. Vervolgens kunt u de muis fysiek verplaatsen of met een van de andere daarvoor bestemde commando’s.</td>
+</tr>
+<tr>
+<td>Bij muispositie omhoog scrollen</td>
+<td>geen</td>
+<td>geen</td>
+<td>geen</td>
+<td>Scrollt het muiswieltje omhoog bij huidige muispositie</td>
+</tr>
+<tr>
+<td>Bij muispositie omlaag scrollen</td>
+<td>geen</td>
+<td>geen</td>
+<td>geen</td>
+<td>Scrollt het muiswieltje omlaag bij huidige muispositie</td>
+</tr>
+<tr>
+<td>Bij muispositie naar links scrollen</td>
+<td>geen</td>
+<td>geen</td>
+<td>geen</td>
+<td>Scrollt het muiswieltje naar links bij huidige muispositie</td>
+</tr>
+<tr>
+<td>Bijmuispositie naar rechts scrollen</td>
+<td>geen</td>
+<td>geen</td>
+<td>geen</td>
+<td>Scrollt het muiswieltje naar rechts bij huidige muispositie</td>
 </tr>
 <tr>
 <td>Muis naar huidige navigator object verplaatsen</td>
@@ -3096,15 +3172,13 @@ Vervolgens kiest u "Aantekening toevoegen".</p>
 </table>
 <!-- KC:endInclude -->
 
-<ol>
-<li>Windowsconsool ++[WinConsole]
-NVDA biedt ondersteuning voor het Windows-commandoconsool, ( ook wel de Windows-opdrachtmodule genoemd) dat gebruikt wordt door de Opdrachtprompt, de PowerShell, en het Subsysteem van Windows voor Linux.
+<h3 id="WinConsole">Windowsconsool</h3>
+<p>NVDA biedt ondersteuning voor het Windows-commandoconsool, ( ook wel de Windows-opdrachtmodule genoemd) dat gebruikt wordt door de Opdrachtprompt, de PowerShell, en het Subsysteem van Windows voor Linux.
 Het consoolvenster heeft een vaste grootte, in het algemeen veel kleiner dan de buffer met de uitvoer.
 Bij het toevoegen van nieuwe tekst schuift de inhoud omhoog en  eerdere tekst verdwijnt uit beeld.
 In Windows-versies ouder dan Windows 11 22H2 is tekst die niet getoond wordt in het venster niet toegankelijk met de leescommando's van NVDA.
 Daarom moet u het consoolvenster verschuiven om eerder ingevoerde tekst te lezen.
-In latere versies van het consool en in Windows Terminal kan de gehele tekstbuffer vrijelijk worden bekeken zonder dat u het venster hoeft te scrollen.</li>
-</ol>
+In latere versies van het consool en in Windows Terminal kan de gehele tekstbuffer vrijelijk worden bekeken zonder dat u het venster hoeft te scrollen.</p>
 <!-- KC:beginInclude -->
 <p>De volgende in het Windows-consool ingebouwde sneltoetscombinaties kunnen bij het <a href="#ReviewingText" title="nalezen van tekst">nalezen van tekst</a> met NVDA van pas komen in oudere versies van het Windows-consool:</p>
 <table>
@@ -3225,6 +3299,7 @@ De volgende informatie wordt altijd verstuurd:</p>
 Merk op dat uw IP-adres nooit wordt bewaard, al wordt het wel gebruikt tijdens de update-check om uw land te bepalen.
 Naast de vereiste informatie voor het controleren op updates, wordt de volgende extra informatie momenteel ook verstuurd:</p>
 <ul>
+<li>Een uniek ID voor de huidige NVDA-gebruiker, welke maandelijks wijzigt</li>
 <li>interface-taal van NVDA </li>
 <li>Of het gaat om een draagbare of geïnstalleerde kopie van NVDA </li>
 <li>Naam van de spraaksynthesizer die op dat moment in gebruik is(met inbegrip van de naam van de add-on waar de driver vandaan komt)</li>
@@ -3285,6 +3360,55 @@ Deze optie geldt voor alle synthesizers, niet enkel de actieve synthesizer.</p>
 <h5 id="SpeechSettingsTrust">Vertrouw taal van stem bij het verwerken van karakters en symbolen</h5>
 <p>Met deze optie, die standaard staat ingeschakeld, kunt u NVDA laten weten of de gebruikte stemtaal betrouwbaar moet worden geacht voor de verwerking van symbolen en tekens. 
 Als u vaststelt dat NVDA interpunctie in de verkeerde taal leest, een taal die niet overeenkomt met die van de gebruikte synthesizer of stem, dan wilt u deze optie wellicht uitschakelen waarmee u NVDA dwingt de algemene taalinstelling te gebruiken.</p>
+<h5 id="SpeechUnicodeNormalization">Unicode-normalisering</h5>
+<table>
+<thead>
+<tr>
+<th class="hideHeaderRow">.</th>
+<th>.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opties</td>
+<td>Standaard (Uitgeschakeld), Ingeschakeld, Uitgeschakeld</td>
+</tr>
+<tr>
+<td>Standaard</td>
+<td>Uitgeschakeld</td>
+</tr>
+</tbody>
+</table>
+<p>Wanneer deze optie is ingeschakeld, wordt unicode-normalisering toegepast  op de tekst die door NVDA wordt uitgesproken.
+Dit komt goed van pas bij het uitspreken van(letter)tekens die in verschillende vormen kunnen worden weergegeven.
+NVDA gebruikt het NFKC (Normalization Form Compatibility Composition) algoritme, dat o.a. de volgende voordelen biedt:</p>
+<ol>
+<li>
+<p>De vetgedrukted en cursieve versies van (letter)tekens die deel uitmaken van de unicodestandaard en doorgaans op sociale media worden gebruikt, worden tot hun meest algemene  compatibele equivalent genormaliseerd.
+For example, the latin letter "h" can also be presented as "𝐡" (bold), "ℎ" (itallic), etc. but will always be spoken as "h" when normalization is enabled.
+Dit aspect van normalisering biedt tevens steun bij het lezen van vergelijkingen in de  equation editor van Microsoft Word.</p>
+</li>
+<li>
+<p>Normalisering mbt samengestelde (letter)tekens.
+Het letterteken "ü" (u with umlaut/diaeresis) bijvoorbeeld, een veelvoorkomend letterteken in talen zoals Duits en Turks kan op twee manieren worden weergegeven.</p>
+<ol>
+<li>Een op zichzelfstaand unicode-letterteken (ü)</li>
+<li>Een uitsplitsing in twee lettertekens (ü), namelijk de normale latijnse letter u en een diakritisch, modificerend teken
+Unicodenormalisering zorgt ervoor dat er bij alle spraakuitvoer maar een vorm wordt gebruikt, te weten het enkelvoudige letterteken.</li>
+</ol>
+</li>
+<li>
+<p>Uitsplitsing van enkele letterparen, waaronder "ĳ" (lletterpaar ij) in hun twee-letterige vorm ("ij").</p>
+</li>
+<li>
+<p>Vaste ordening van modificerende tekens van samengestelde (letter)tekens, in Oud-Hebreeuws bijvoorbeeld.</p>
+</li>
+</ol>
+<p>Om Unicode-normalisering vanaf een willekeurige plaats in of uit te schakelen kun je via<a href="#InputGestures" title=" het dialoogvenster Invoerhandelingen"> het dialoogvenster Invoerhandelingen</a> een aangepaste handeling aanmaken.</p>
+<h5 id="SpeechReportNormalizedForCharacterNavigation">"Genormaliseerd" melden bij het navigeren per teken</h5>
+<p>Deze instelling is een selectievakje dat, aenneer het is aangevinkt, NVDA expliciet laat melden dat een (letter)teken genormaliseerd is als die als een enkel teken wordt gesproken, bijv. bij het spellen.
+Wanneer deze optie ingeschakeld is, zal bijvoorbeeld bij het spellen van het letterteken "ĳ"  dit uitgesproken worden als"i j genormaliseerd".</p>
+<p>Merk op dat deze instelling alleen beschikbaar is als "<a href="#SpeechUnicodeNormalization" title="Unicode-normalisering">Unicode-normalisering</a>" ingeschakeld is.</p>
 <h5 id="SpeechSettingsCLDR">Unicode Consortium data (met inbegrip van emoji) opnemen bij het verwerken van karakters en symbolen</h5>
 <p>Wanneer dit selectievakje aangevinkt is, zal NVDA extra uitspraakwoordenboeken raadplegen bij het uitspreken van (letter)tekens en symbolen.
 In deze woordenboeken staan beschrijvingen van symbolenin het bijzonder emoji) die afkomstig zijn van <a href="https://www.unicode.org/consortium/" rel="noopener" target="_blank" title="het Unicode Consortium">het Unicode Consortium</a> als onderdeel van hun <a href="http://cldr.unicode.org/" rel="noopener" target="_blank" title="Common Locale Data Repository">Common Locale Data Repository</a>.unicode.org/].
@@ -3326,16 +3450,8 @@ Als u problemen hiermee ondervindt, kunt u het selectievakje beter niet aanvinke
 <td>Ingeschakeld, Uitgeschakeld</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Standaard</td>
 <td>Uitgeschakeld</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -3491,16 +3607,8 @@ In dit geval  zal Braille  de systeemfocus en systeemaanwijzer niet volgen.</p>
 <td>Standaard (Nooit), Nooit, Alleen bij automatisch tethering, Altijd</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Standaard</td>
 <td>Nooit</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -3529,6 +3637,29 @@ Merk op dat een woord dat van zichzelf zodanig lang is dat het niet op de regel 
 <p>Wanneer deze optie is uitgeschakeld, wordt zoveel mogelijk tekst op de regel geplaatst terwijl wat overblijft wordt afgekapt. 
 Door te scrollen kunt u dan de rest van het woord lezen.</p>
 <p>Vloeiend lezen wordt gemakkelijker door deze optie in te schakelen, maar u zult als gevolg hiervan meer moeten scrollen.</p>
+<h5 id="BrailleUnicodeNormalization">Unicode-normalisering</h5>
+<table>
+<thead>
+<tr>
+<th class="hideHeaderRow">.</th>
+<th>.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opties</td>
+<td>Standaard (Uitgeschakeld), Ingeschakeld, Uitgeschakeld</td>
+</tr>
+<tr>
+<td>Standaard</td>
+<td>Uitgeschakeld</td>
+</tr>
+</tbody>
+</table>
+<p>Als deze optie is ingeschakeld, wordt er unicode-normalisering toegepast op de tekst die op de brailleleesregel (in braille) wordt weergegeven.
+Dit komt van pas  wanneer je (letter)tekens in braille tegenkomt die in een bepaalde brailletabel niet herkend worden en die een compatibel alternatief hebben, zoals de vetgedrukte en cursieve lettertekens die doorgaans op sociale media gebruikt worden.
+Verdere voordelen van unicode-normalisering worden meer gedetailleerd uitgelegd in de <a href="#SpeechUnicodeNormalization" title="paragraaf die betrekking heeftop de gelijkaardige instelling voor spraak">paragraaf die betrekking heeftop de gelijkaardige instelling voor spraak</a>.</p>
+<p>Om Unicode-normalisering vanaf een willekeurige plaats in of uit te schakelen kun je via<a href="#InputGestures" title=" het dialoogvenster Invoerhandelingen"> het dialoogvenster Invoerhandelingen</a> een aangepaste handeling aanmaken.</p>
 <h5 id="BrailleSettingsFocusContextPresentation">Te tonen focuscontext</h5>
 <p>Met deze optie kunt u kiezen welke contextinformatie NVDA op de brailleleesregel moet tonen wanneer een object de focus krijgt.
 Contextinformatie heeft betrekking op de hierarchie van objecten die de focus hebben.
@@ -3564,16 +3695,8 @@ Als u de context echter wilt lezen (dat wil zeggen wanneer u zich in een lijst b
 <td>Standaard (Ingeschakeld), Ingeschakeld, Uitgeschakeld</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Standaard</td>
 <td>Ingeschakeld</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -3596,16 +3719,8 @@ Dat is de reden dat de optie, spraak onderbreken tijdens het scrollen van braill
 <td>Standaard (Ingeschakeld), Ingeschakeld, Uitgeschakeld</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Standaard</td>
 <td>Ingeschakeld</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -3614,7 +3729,7 @@ De optie staat standaard aan, dus wordt de selectieaanwijzer  getoond.
 De Selectieaanwijzer kan tijdens het lezen storend zijn.
 De optie uitzetten kan het leesgemak bevorderen.</p>
 <p>Om "Toon selectie' van elke willekeurige plek in of uit te schakelen kunt u desgewenst een eigen invoerhandeling aanmaken met behulp van  het dialoogvenster <a href="#InputGestures" title="Invoerhandelingen">Invoerhandelingen</a>.</p>
-<h4 id="SelectBrailleDisplay">Brailleleesregel Selecteren (NVDA+control+a)</h4>
+<h4 id="SelectBrailleDisplay">Brailleleesregel Selecteren</h4>
 <!-- KC:setting -->
 
 <h5 id="OpenSelectBrailleDisplay">Dialoogvenster brailleleesregel selecteren openen</h5>
@@ -3681,16 +3796,8 @@ audio-onderdrukking kan niet worden ondersteund bij gebruik van de draagbare en 
 <td>Uitgeschakeld, Ingeschakeld</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Standaard</td>
 <td>Uitgeschakeld</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -3733,8 +3840,8 @@ Er is een commando waarmee je de modi voor stereosplitsing kunt doorlopen :</p>
 <li>NVDA via het linker en toepassingen via het rechter: spraak van NVDA komt via linker kanaal, terwijl andere toepassingen te horen zijn via het rechter kanaal.</li>
 <li>NVDA via het linker en toepassingen via beide kanalen: spraak van NVDA komt via linker kanaal, terwijl andere toepassingen te horen zijn zowel via het linker als rechter kanaal.</li>
 </ul>
-<p>Er zijn meer geavanceerde modi voor stereosplitsing beschikbaar in het vervolgkeuzemenu instellingen van NVDA.</p>
-<p>een van deze modi, "NVDA in beide kanalen en toepassingen in beide kanalen" zorgt ervoor dat alhet geluid naar beide kanalen wordt geleid.
+<p>Er zijn meer geavanceerde modi voor stereosplitsing beschikbaar in het vervolgkeuzemenu instellingen van NVDA.
+een van deze modi, "NVDA in beide kanalen en toepassingen in beide kanalen" zorgt ervoor dat alhet geluid naar beide kanalen wordt geleid.
 Deze modus kan afwijken van de modus "stereo-splitsing uitgeschakeld" in het geval dat andere audio-bewerking interfereert met kanaalvolumes.</p>
 <p>Merk op dat stereosplitsing (sound split) niet als mixer te gebruiken is.
 Als een bepaalde toepassing bijv een stereo track afspeelt terwijl stereosplitsing is ingesteld op  "NVDA via het linker  en toepassingen via het rechter kanaal", zul je alleen het rechter kanaal van de sound track horen terwijl het linker kanaal van de sound track onderdrukt wordt.</p>
@@ -3923,11 +4030,11 @@ Bij veel Windows schermen en besturingselementen verschijnt een kort berichtje, 
 Zo zal bij voorbeeld bij het onderdeel Bestand op de menubalk ook gemeld worden dat hiervoor de sneltoetscombinatie Alt + b. beschikbaar is.</p>
 <h5 id="ObjectPresentationPositionInfo">Informatie over objectpositie melden</h5>
 <p>Als dit selectievakje aangevinkt is, wordt de objectpositie gemeld,bijvoorbeeld 1 van 4, zodra het object focus krijgt, of zich in de objectnavigatie bevind.</p>
-<p>==== Objectpositie raden indien deze niet beschikbaar is [ObjectPresentationGuessPositionInfo]
-Als informatie van objectpositie weergeven is ingeschakeld, kan deze optie ervoor zorgen dat de positie van sommige objecten bij benadering wordt bepaald. Dit kan nodig zijn als de positie-informatie niet op een andere manier verkregen kan worden.</p>
+<h5 id="objectpositie-raden-indien-deze-niet-beschikbaar-is">Objectpositie raden indien deze niet beschikbaar is</h5>
+<p>Als informatie van objectpositie weergeven is ingeschakeld, kan deze optie ervoor zorgen dat de positie van sommige objecten bij benadering wordt bepaald. Dit kan nodig zijn als de positie-informatie niet op een andere manier verkregen kan worden.</p>
 <p>Als deze optie is ingeschakeld, zal positie-informatie voor meer objecten (zoals menu's en werkbalken) beschikbaar zijn, maar deze informatie is mogelijk niet geheel nauwkeurig.</p>
 <h5 id="ObjectPresentationReportDescriptions">Objectbeschrijvingen melden</h5>
-<p>Vink dit selectievakje niet aan als u, behalve de naam van het object, geen extra informatie hoeft te horen ( zoals zoeksuggesties, het melden van volledig dialoogvenster rechts na openen  van de dialoog). </p>
+<p>Haal het vinkje weg uit het selectievakje als u, behalve de naam van het object, geen extra informatie hoeft te horen ( zoals zoeksuggesties, het melden van volledig dialoogvenster rechts na openen  van de dialoog). </p>
 <!-- KC:setting -->
 
 <h5 id="ObjectPresentationProgressBarOutput">Weergave voortgangsbalk</h5>
@@ -4104,8 +4211,8 @@ U kunt de vermelding laten horen van:</p>
 <p>Als dit selectievakje aangevinkt is, zal NVDA proberen alle wijzigingen in de opmaak van een regel te melden bij het lezen van de regel ook als dit de prestatie vertraagt.</p>
 <p>Standaard wordt de opmaak bij de systeemcursor / review cursor gedetecteerd, maar in bepaalde gevallen wordt ook de opmaak in de rest van de regel gedetecteerd voor zover dit geen nadelige invloed heeft op de prestatie.</p>
 <p>Vink dit selectievakje aan bij het corrigeren van documenten in toepassingen zoals WordPad waar opmaak van belang is.</p>
-<p>==== Regelinspringing melden ==== [DocumentFormattingSettingsLineIndentation]
-Met deze optie kunt u bepalen hoe de inspringing van een regel wordt gemeld.
+<h4 id="DocumentFormattingSettingsLineIndentation">Regelinspringing melden</h4>
+<p>Met deze optie kunt u bepalen hoe de inspringing van een regel wordt gemeld.
 Het vervolgkeuzemenu voor het melden van regelinspringing heeft 4 keuzemogelijkheden.</p>
 <ul>
 <li>uit: NVDA maakt niet apart melding van inspringing.</li>
@@ -4132,16 +4239,8 @@ Dit kan handig zijn bij het lezen van een document waar blanco regels worden geb
 <td>Standaard (Verwerkt door applicatie), Verwerkt door applicatie, Enkelvoudig regeleinde, Meervoudige regeleinde</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Standaard</td>
 <td>Verwerkt door applicatie</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -4157,6 +4256,49 @@ Deze stijl werkt het best wanneer gewerkt wordt met documenten waarin blokalinea
 Merk op dat deze alineastijl niet in Microsoft Word of Microsoft Outlook, gebruikt kan worden tenzij u werkt met UIA zodat u toegang hebt tot de besturingselementen van Microsoft Word.</li>
 </ul>
 <p>U kunt door de beschikbare alineastijlen bladeren  vanuit elke willekeurige plek door in het dialoogvenster <a href="#InputGestures" title="Invoerhandelingen">Invoerhandelingen</a> hiervoor een toets toe te kennen.</p>
+<h4 id="AddonStoreSettings">Add-on Store Instellingen</h4>
+<p>Hiermee kun je  het gedrag van de Add-on Store aanpassen.</p>
+<h5 id="AutomaticAddonUpdates">Update-meldingen</h5>
+<p>Als je de optie instelt op "Melden", zal de Add-on Store je laten weten, nadat NVDA opgestart is, of er updates van add-ons beschikbaar zijn.
+Elke 24 uur wordt er een controle uitgevoerd.
+Meldingen over Add-ons waarvoor updates beschikbaar zijn worden alleen gedaan binnen hetzelfde kanaal.
+Zo krijg je voor geïnstalleerde beta add-ons, alleen meldingen  over updates binnen het beta kanaal.</p>
+<table>
+<thead>
+<tr>
+<th class="hideHeaderRow">.</th>
+<th>.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opties</td>
+<td>Melden (Standaard), Uitgeschakeld</td>
+</tr>
+<tr>
+<td>Standaard</td>
+<td>Melden</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Optie</th>
+<th>Gedrag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ingeschakeld</td>
+<td>Melden als er updates voor add-ons binnen hetzelfde kanaal beschikbaar zijn</td>
+</tr>
+<tr>
+<td>Uitgeschakeld</td>
+<td>Niet automatisch controleren op updates van add-ons</td>
+</tr>
+</tbody>
+</table>
 <h4 id="Win10OcrSettings">Windows OCR</h4>
 <p>Aan de hand van de instellingen in deze categorie kunt u<a href="#Win10Ocr" title="Windows OCR">Windows OCR</a> configureren.
 In deze categorie zijn de volgende keuzemogelijkheden beschikbaar:</p>
@@ -4200,16 +4342,8 @@ Deze knop is eerst dan ingeschakeld als NVDA zo is ingesteld dat het laden van a
 <td>Automatisch, Selectief, Globaal</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Standaard</td>
 <td>Automatisch</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -4254,16 +4388,8 @@ De implementatie van Microsoft Excel's UI automation is aan voortdurende verande
 <td>Standaard (Ingeschakeld), Uitgeschakeld, Ingeschakeld</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Standaard</td>
 <td>Ingeschakeld</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -4283,16 +4409,8 @@ Na wijziging in deze optie moet NVDA opnieuw gestart worden om de wijziging van 
 <td>Automatisch, UIA wanneer beschikbaar, Legacy</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Standaard</td>
 <td>Automatisch</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -4355,16 +4473,8 @@ Sommige van deze opties zijn mogelijk incompleet.</p>
 <td>Standaard (Ingeschakeld), Uitgeschakeld, Ingeschakeld</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Standaard</td>
 <td>Ingeschakeld</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -4407,16 +4517,8 @@ Wanneer er echter in terminal-toepassingen  een tekenmidden in een regel wordt i
 <td>Standaard (Diffing), Diffing, UIA notificaties</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Standaard</td>
 <td>Diffing</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -4458,16 +4560,8 @@ Bij verscheidene GUI API's, die al heel lang populair zijn, kan de  tekst weerge
 <td>Standaard (Ingeschakeld), Uitgeschakeld, Ingeschakeld</td>
 </tr>
 <tr>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
 <td>Standaard</td>
 <td>Ingeschakeld</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 </tbody>
 </table>
@@ -4631,7 +4725,7 @@ U kunt hiervoor ook de volgende toetscombinatie gebruiken:</p>
 </ul>
 <!-- KC:endInclude -->
 
-<p>Het eerste element in dit dialoogvenster is de profiellijst waaruit u een van de beschikbare profielen kunt selecteren.
+<p>Het eerste bedieningselement in dit dialoogvenster is de profiellijst waaruit u een van de beschikbare profielen kunt selecteren.
 Bij het openen van het dialoogvenster wordt het profiel dat u aan het bewerken bent, geselecteerd.
 Verder wordt van de actieve profielen aangegeven of ze handmatig, of automatisch (via trigger), worden aangezet en / of dat ze in bewerking zijn.</p>
 <p>U kunt een profiel hernoemen of verwijderen door respectievelijk op de knop "Hernoemen" of "Verwijderen" te drukken.</p>
@@ -4763,6 +4857,8 @@ Met het openen van het add-on-pakket begint het installatieproces.</p>
 <p>Als  NVDA op uw systeem is geïnstalleerd en actief is, kunt u een add-on-bestand ook rechtstreeks vanuit de browser of het bestandssysteem openen om met het installatieproces te beginnen.</p>
 <p>Wanneer een  add-on wordt geïnstalleerd uit een externe bron zal NVDA u vragen de  installatie te bevestigen.
 Als de add-on eenmaal is geïnstalleerd, moet NVDA opnieuw gestart worden om de add-on in werking te stellen, al kunt u de herstart van NVDA wel even opschorten als u nog andere add-ons wilt installeren of bijwerken.</p>
+<p>Standaard krijg je een melding, nadat NVDA is opgestart, of er add-on updatesbeschikbaar zijn.
+Meer hierover en over het aanpassen van deze optie  vind je onder <a href="#AutomaticAddonUpdates" title="&quot;Update-meldingen&quot;">"Update-meldingen"</a>.</p>
 <h4 id="AddonStoreRemoving">Add-ons verwijderen</h4>
 <p>Om een add-on, te verwijderen selecteert u  de add-on in de lijst en voert u de actie Verwijderen uit.
 NVDA zal u vragen de verwijderactie te bevestigen.
@@ -4867,14 +4963,9 @@ Voor meer informatie gaat u naar de <a href="https://www.nvaccess.org/files/nvda
 <p>Hiermee opent u de Add-on-store #AddonsManager].
 Hierover vindt u meer informatie in de uitgebreide rubriek: <a href="#AddonsManager" title="Add-ons en de Add-on Store">Add-ons en de Add-on Store</a>.</p>
 <h3 id="CreatePortableCopy">Draagbare versie aanmaken</h3>
-<p>Hiermee opent u een dialoogvenster dat u in staat stelt een draagbare kopie van NVDA aan te maken vanuit de geïnstalleerde versie.
-Zowel in het ene als in het andere geval geldt dat, wanneer u een draagbare versie van NVDA draait, er onder Extra in het NVDA-menu  het desbetreffende item vermeld staat als "NVDA op deze PC installeren" (in plaats van "Draagbare versie aanmaken').</p>
+<p>Hiermee opent u een dialoogvenster dat u in staat stelt een draagbare kopie van NVDA aan te maken vanuit de geïnstalleerde versie.</p>
 <p>Het dialoogvenster dat u in staat stelt een draagbare versie van NVDA aan te maken of NVDA op deze PC te installeren, laat u een pad naar een map kiezen waarin NVDA de draagbare versie moet aanmaken of waarin NVDA moet worden geïnstalleerd.</p>
-<p>In dit dialoogvenster  kunt u het volgende in- of uitschakelen:</p>
-<ul>
-<li>Kopieer  configuratie van huidige gebruiker (dat is inclusief de bestanden in %appdata%\roaming\NVDA of in de gebruikersconfiguratie van uw draagbare kopie alsmede add-ons en andere modules)</li>
-<li>Nieuwe draagbare kopie van NVDA na het aanmaken starten  of NVDA na installatie starten (Hiermee start NVDA automatisch op nadat de draagbare versie is aangemaakt of nadat die  is geïnstalleerd)</li>
-</ul>
+<p>Volg  de aanwijzingen in <a href="#CreatingAPortableCopy" title="Een draagbare kopie aanmaken">Een draagbare kopie aanmaken</a> voor meer informatie.</p>
 <h3 id="RunCOMRegistrationFixingTool">Hulpprogramma voor herstel van COM-registrfoutenn</h3>
 <p>Het installeren en deïnstalleren van programma's op een computer kan, er in bepaalde gevallen toe leiden dat COM DLL-bestanden niet langer in het register staan.
 Omdat COM Interfaces zoals IAccessible afhankelijk zijn van een correcte COM DLL registratie, kunnen zich problemen voordoen in het geval dat er bij de registratie iets fout is gegaan.</p>
@@ -4945,8 +5036,7 @@ Deze stemmen kunnen ook met NVDA gebruikt worden.</p>
 <li><a href="https://www.microsoft.com/download/en/details.aspx?id=27224" rel="noopener" target="_blank" title="Microsoft Speech Platform - Runtime Languages (Version 11)">Microsoft Speech Platform - Runtime Languages (Version 11)</a>
   -- Deze Webpagina bevat veel bestanden voor spraakin- en uitvoer.
  -Kies het tekst-naar-sprraakbestand voor de gewenste taal / stem.
- -Voorbeeld: Het bestand MSSpeech_TTS_en-US_ZiraPro.msi is een amerikaans-engelse stem.
-  -</li>
+ -Voorbeeld: Het bestand MSSpeech_TTS_en-US_ZiraPro.msi is een amerikaans-engelse stem.</li>
 </ul>
 <h3 id="OneCore">Windows OneCore-stemmen</h3>
 <p>In Windows 10 en later zijn nieuwe stemmen beschikbaar die bekend staan als "OneCore" of "mobiele" stemmen.
@@ -5764,7 +5854,10 @@ USB drivers zijn niet nodig als u van het OpenBraille protocol gebruik maakt.</p
 <li>APH Mantis Q40</li>
 <li>APH Chameleon 20</li>
 <li>Humanware BrailleOne</li>
-<li>NLS eReader</li>
+<li>NLS eReader<ul>
+<li>Merk op dat de Zoomax momenteel zonder externe drivers niet wordt ondersteund</li>
+</ul>
+</li>
 </ul>
 <p>Bij gebruik van de Brailliant BI/B en de BrailleNote touch met NVDA zijn de volgende toetscombinaties van toepassing:
 (Voor meer details kunt u de documentatie bij deze leesregels raadplegen.)</p>
@@ -5997,54 +6090,192 @@ Als u voor de USB-aansluiting kiest, moet u wel eerst de <a href="http://www.him
 <td>insert-toets</td>
 <td>punt2+punt4+spatie, F6</td>
 </tr>
+<tr>
+<td>Contextmenutoets</td>
+<td>punt1+punt2+punt3+punt4+spatie, F8</td>
+</tr>
+<tr>
+<td>Caps Locktoets</td>
+<td>punt1+punt3+punt6+spatie</td>
+</tr>
+<tr>
+<td>tab-toets</td>
+<td>punt4+punt5+spatie, F3, brailleedge:F2</td>
+</tr>
+<tr>
+<td>shift+alt+tab-toetscombinatie</td>
+<td>f2+f3+f1</td>
+</tr>
+<tr>
+<td>alt+tab-toetscombinatie</td>
+<td>f2+f3</td>
+</tr>
+<tr>
+<td>shift+tab-toetscombinatie</td>
+<td>punt1+punt2+spatie</td>
+</tr>
+<tr>
+<td>end-toets</td>
+<td>punt4+punt6+spatie</td>
+</tr>
+<tr>
+<td>control+end-toetscombinatie</td>
+<td>punt4+punt5+punt6+spatie</td>
+</tr>
+<tr>
+<td>home-toets</td>
+<td>punt1+punt3+spatie, smartbeetle:f4</td>
+</tr>
+<tr>
+<td>control+home-toetscombinatie</td>
+<td>punt1+punt2+punt3+spatie</td>
+</tr>
+<tr>
+<td>alt+f4-toetscombinatie</td>
+<td>punt1+punt3+punt5+punt6+spatie</td>
+</tr>
+<tr>
+<td>linker Pijltoets</td>
+<td>punt3+spatie, Linker PijlLinks</td>
+</tr>
+<tr>
+<td>control+shift+PijlLinks-toetscombinatie</td>
+<td>punt2+punt8+spatie+f1</td>
+</tr>
+<tr>
+<td>control+PijlLinks-toetscombinatie</td>
+<td>punt2+spatie</td>
+</tr>
+<tr>
+<td>shift+alt+PijlLinks-toetscombinatie</td>
+<td>punt2+punt7+f1</td>
+</tr>
+<tr>
+<td><code>alt+PijlLinks-toetscombinatie</code></td>
+<td><code>punt2+punt7+spatie</code></td>
+</tr>
+<tr>
+<td>PijlRechts-toets</td>
+<td>punt6+spatie, Linker PijlRechts</td>
+</tr>
+<tr>
+<td>control+shift+PijlRechts-toetscombinatie</td>
+<td>punt5+punt8+spatie+f1</td>
+</tr>
+<tr>
+<td>control+PijlRechts-toetscombinatie</td>
+<td>punt5+spatie</td>
+</tr>
+<tr>
+<td>shift+alt+PijlRechts-toetscombinatie</td>
+<td>punt5+punt7+f1</td>
+</tr>
+<tr>
+<td><code>alt+PijlRechts-toetscombinatie</code></td>
+<td><code>punft5+punt7+spatie</code></td>
+</tr>
+<tr>
+<td>pageUp-toets</td>
+<td>punt1+punt2+punt6+spatie</td>
+</tr>
+<tr>
+<td>control+pageUp-toetscombinatie</td>
+<td>punt1+punt2+punt6+punt8+spatie</td>
+</tr>
+<tr>
+<td>PijlOmhoog-toets</td>
+<td>punt1+spatie, linker pijl omhoog</td>
+</tr>
+<tr>
+<td>control+shift+PijlOmhoog-toetscombinatie</td>
+<td>punt2+punt3+punt8+spatie+F1</td>
+</tr>
+<tr>
+<td>control+PijlOmhoog-toets</td>
+<td>punt2+punt3+spatie</td>
+</tr>
+<tr>
+<td>shift+alt+PijlOmhoog-toetscombinatie</td>
+<td>punt2+punt3+punt7+F1</td>
+</tr>
+<tr>
+<td><code>alt+PijlOmhoog-toetscombinatie</code></td>
+<td><code>punt2+punt3+punt7+spatie</code></td>
+</tr>
+<tr>
+<td>shift+PijlOmhoog-toetscombinatie</td>
+<td>Linker ScrollOmlaag+spatie</td>
+</tr>
+<tr>
+<td>pageDown-toets</td>
+<td>punt3+punt4+punt5+spatie</td>
+</tr>
+<tr>
+<td>control+pageDown-toetscombinatie</td>
+<td>punt3+punt4+punt5+punt8+spatie</td>
+</tr>
+<tr>
+<td>PijlOmlaag-toets</td>
+<td>punt4+spatie, Linker PijlOmlaag</td>
+</tr>
+<tr>
+<td>control+shift+PijlOmlaag-toetscombinatie</td>
+<td>punt5+punt6+punt8+spatie+F1</td>
+</tr>
+<tr>
+<td>control+PijlOmlaag-toetscombinatie</td>
+<td>punt5+punt6+spatie</td>
+</tr>
+<tr>
+<td>shift+alt+PijlOmlaag-toetscombinatie</td>
+<td>punt5+punt6+punt7+F1</td>
+</tr>
+<tr>
+<td><code>alt+PijlOmlaag-toetscombinatie</code></td>
+<td><code>punt5+punt6+punt7+spatie</code></td>
+</tr>
+<tr>
+<td>shift+PijlOmlaag-toetscombinatie</td>
+<td>spatie+Rechter ScrollOmlaag</td>
+</tr>
+<tr>
+<td>escape-toets</td>
+<td>punt1+punt5+spatie, f4, brailleedge:f1</td>
+</tr>
+<tr>
+<td>del-toets</td>
+<td>punt1+punt3+punt5+spatie, punt1+punt4+punt5+spatie</td>
+</tr>
+<tr>
+<td>f1-toets</td>
+<td>punt1+punt2+punt5+spatie</td>
+</tr>
+<tr>
+<td>f3-toets</td>
+<td>punt1+punt4+punt8+spatie</td>
+</tr>
+<tr>
+<td>f4toets</td>
+<td>punt7+f3</td>
+</tr>
+<tr>
+<td>windows+b-toetscombinatie</td>
+<td>punt1+punt2+f1</td>
+</tr>
+<tr>
+<td>windows+d-toetscombinatie</td>
+<td>punt1+punt4+punt5+f1</td>
+</tr>
+<tr>
+<td>control+inserttoetscominatie</td>
+<td>smartbeetle: f1+Rechter Scroll</td>
+</tr>
+<tr>
+<td>alt+insert-toetscombinatie</td>
+<td>smartbeetle: f3+Rechter Scroll</td>
+</tr>
 </tbody>
 </table>
-<p>|Contextmenutoets | punt1+punt2+punt3+punt4+spatie, F8 |</p>
-<p>|Caps Locktoets |punt1+punt3+punt6+spatie|
-|tab-toets |punt4+punt5+spatie, F3, brailleedge:F2|
-|shift+alt+tab-toetscombinatie |f2+f3+f1|
-|alt+tab-toetscombinatie |f2+f3|
-|shift+tab-toetscombinatie |punt1+punt2+spatie|
-|end-toets |punt4+punt6+spatie|
-|control+end-toetscombinatie |punt4+punt5+punt6+spatie|
-|home-toets |punt1+punt3+spatie, smartbeetle:f4|
-|control+home-toetscombinatie |punt1+punt2+punt3+spatie|
-|alt+f4-toetscombinatie |punt1+punt3+punt5+punt6+spatie|
-|linker Pijltoets |punt3+spatie, Linker PijlLinks|
-|control+shift+PijlLinks-toetscombinatie |punt2+punt8+spatie+f1|
-|control+PijlLinks-toetscombinatie |punt2+spatie|
-|shift+alt+PijlLinks-toetscombinatie |punt2+punt7+f1|
-|<code>alt+PijlLinks-toetscombinatie</code> |<code>punt2+punt7+spatie</code>|
-|PijlRechts-toets |punt6+spatie, Linker PijlRechts|
-|control+shift+PijlRechts-toetscombinatie |punt5+punt8+spatie+f1|
-|control+PijlRechts-toetscombinatie |punt5+spatie|
-|shift+alt+PijlRechts-toetscombinatie |punt5+punt7+f1|
-|<code>alt+PijlRechts-toetscombinatie</code> |<code>punft5+punt7+spatie</code>|
-|pageUp-toets |punt1+punt2+punt6+spatie|
-|control+pageUp-toetscombinatie |punt1+punt2+punt6+punt8+spatie|
-|PijlOmhoog-toets |punt1+spatie, linker pijl omhoog|
-|control+shift+PijlOmhoog-toetscombinatie |punt2+punt3+punt8+spatie+F1|
-|control+PijlOmhoog-toets |punt2+punt3+spatie|
-|shift+alt+PijlOmhoog-toetscombinatie |punt2+punt3+punt7+F1|
-|<code>alt+PijlOmhoog-toetscombinatie</code> |<code>punt2+punt3+punt7+spatie</code>|
-|shift+PijlOmhoog-toetscombinatie |Linker ScrollOmlaag+spatie|
-|pageDown-toets |punt3+punt4+punt5+spatie|
-|control+pageDown-toetscombinatie |punt3+punt4+punt5+punt8+spatie|
-|PijlOmlaag-toets |punt4+spatie, Linker PijlOmlaag|
-|control+shift+PijlOmlaag-toetscombinatie |punt5+punt6+punt8+spatie+F1|
-|control+PijlOmlaag-toetscombinatie |punt5+punt6+spatie|
-|shift+alt+PijlOmlaag-toetscombinatie |punt5+punt6+punt7+F1|
-|<code>alt+PijlOmlaag-toetscombinatie</code> |<code>punt5+punt6+punt7+spatie</code>|
-|shift+PijlOmlaag-toetscombinatie |spatie+Rechter ScrollOmlaag|
-|escape-toets |punt1+punt5+spatie, f4, brailleedge:f1|
-|del-toets |punt1+punt3+punt5+spatie, punt1+punt4+punt5+spatie|
-|f1-toets |punt1+punt2+punt5+spatie|
-|f3-toets |punt1+punt4+punt8+spatie|
-|f4toets |punt7+f3|
-|windows+b-toetscombinatie |punt1+punt2+f1|
-|windows+d-toetscombinatie |punt1+punt4+punt5+f1|
-|control+inserttoetscominatie |smartbeetle: f1+Rechter Scroll|
-|alt+insert-toetscombinatie |smartbeetle: f3+Rechter Scroll|</p>
 <!-- KC:endInclude -->
 
 <h3 id="Seika">Seika Brailleleesregels</h3>
@@ -6054,7 +6285,7 @@ Als u voor de USB-aansluiting kiest, moet u wel eerst de <a href="http://www.him
 <li><a href="#SeikaNotetaker" title="MiniSeika (16, 24 cellen), V6, en V6Pro (40 cellen)">MiniSeika (16, 24 cellen), V6, en V6Pro (40 cellen)</a></li>
 </ul>
 <p>U vindt meer informatie over de leesregels op de <a href="https://en.seika-braille.com/down/index.html" rel="noopener" target="_blank" title="Demo en Driver Download pagina van de makers">Demo en Driver Download pagina van de makers</a>.</p>
-<p>++++ Seika Versie 3, 4, en 5 (40 cellen), Seika80 (80 cellen) +++[SeikaBrailleDisplays]</p>
+<h4 id="SeikaBrailleDisplays">Seika Versie 3, 4, en 5 (40 cellen), Seika80 (80 cellen)</h4>
 <ul>
 <li>Deze leesregels hebben nog geen ondersteuning voor de op de achtergrond uitgevoerde automatische leesregelherkenning van NVDA.</li>
 <li>Selecteer "Seika Braille Displays" om handmatig te configureren</li>
@@ -6092,10 +6323,6 @@ De stuurprogramma's zijn bij de fabrikant verkrijgbaar https://en.seika-braille.
 <tr>
 <td>Koppeling van leesregel omschakelen</td>
 <td>b5</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
 </tr>
 <tr>
 <td>alles lezen</td>
@@ -7472,7 +7699,8 @@ In de onderstaande beschrijving van het brailletoetsenbord wordt er van uitgegaa
 </tr>
 </tbody>
 </table>
-<p>+<!-- KC:endInclude --></p>
+<!-- KC:endInclude -->
+
 <h4 id="Eurobraillebnote">b.note-toetsenbordcommando's</h4>
 <!-- KC:beginInclude -->
 
@@ -7485,24 +7713,59 @@ In de onderstaande beschrijving van het brailletoetsenbord wordt er van uitgegaa
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td>Brailleleesregel terugscrollen</td>
+<td><code>linkerToetsenblokLLinks</code></td>
+</tr>
+<tr>
+<td>Leesregel vooruitscrollen</td>
+<td><code>linkerToetsenblokRechts</code></td>
+</tr>
+<tr>
+<td>Routeer naar braillecel</td>
+<td><code>routing</code></td>
+</tr>
+<tr>
+<td>Tekstopmaak onder braillecel melden</td>
+<td><code>dubbelRouting</code></td>
+</tr>
+<tr>
+<td>Naar volgende regel gaan in review</td>
+<td><code>linkerToetsenblokomlaag</code></td>
+</tr>
+<tr>
+<td>Omschakelen naar vorige leesmodus</td>
+<td><code>linkerToetsenLinks+linkerToetsenblokOmhoog</code></td>
+</tr>
+<tr>
+<td>Omschakelen naar volgende leesmodus</td>
+<td><code>linkerToetsenblokRechts+linkerToetsenblokomlaag</code></td>
+</tr>
+<tr>
+<td><code>llinkerPijl-toets</code></td>
+<td><code>rechterToetsenblokLinks</code></td>
+</tr>
+<tr>
+<td><code>rechterPijl-toets</code></td>
+<td><code>rechterToetsenblokRechts</code></td>
+</tr>
+<tr>
+<td><code>Pijlomhoog-toets</code></td>
+<td><code>rechterToetsenOmhoog</code></td>
+</tr>
+<tr>
+<td><code>Pijlomlaag-toets</code></td>
+<td><code>rechterToetsenblokomlaag</code></td>
+</tr>
+<tr>
+<td><code>control+home-toetscombinatie</code></td>
+<td><code>rechterToetsenLinks+rechterToetsenblokOmhoog</code></td>
+</tr>
+<tr>
+<td><code>control+end-toetscombinatie</code></td>
+<td><code>rechterToetsenblokLinks+rechterToetsenblokOmhoog</code></td>
 </tr>
 </tbody>
 </table>
-<p>|Brailleleesregel terugscrollen | <code>linkerToetsenblokLLinks</code> |</p>
-<p>|Leesregel vooruitscrollen |<code>linkerToetsenblokRechts</code>|
-|Routeer naar braillecel |<code>routing</code>|
-|Tekstopmaak onder braillecel melden |<code>dubbelRouting</code>|
-|Naar volgende regel gaan in review |<code>linkerToetsenblokomlaag</code>|
-|Omschakelen naar vorige leesmodus |<code>linkerToetsenLinks+linkerToetsenblokOmhoog</code>|
-|Omschakelen naar volgende leesmodus |<code>linkerToetsenblokRechts+linkerToetsenblokomlaag</code>|
-|<code>llinkerPijl-toets</code> |<code>rechterToetsenblokLinks</code>|
-|<code>rechterPijl-toets</code> |<code>rechterToetsenblokRechts</code>|
-|<code>Pijlomhoog-toets</code> |<code>rechterToetsenOmhoog</code>|
-|<code>Pijlomlaag-toets</code> |<code>rechterToetsenblokomlaag</code>|
-|<code>control+home-toetscombinatie</code> |<code>rechterToetsenLinks+rechterToetsenblokOmhoog</code>|
-|<code>control+end-toetscombinatie</code> |<code>rechterToetsenblokLinks+rechterToetsenblokOmhoog</code>|</p>
 <!-- KC:endInclude -->
 
 <h4 id="Eurobrailleesys">Esys-toetsenbordcommando's</h4>
@@ -7936,25 +8199,76 @@ U kunt in de documentatie bij deze leesregels nalezen waar deze toetsen zich pre
 <td>Doorloop de braille toon selectiestatus</td>
 <td><code>f1+f5</code>, <code>f9+f14</code></td>
 </tr>
+<tr>
+<td>Doorloop de stadia "braille systeemcursor verplaatsen bij routering leescursor"</td>
+<td><code>f1+f3</code>, <code>f9+f11</code></td>
+</tr>
+<tr>
+<td>Voert de standaardactie uit mbt het huidige navigatorobject</td>
+<td><code>f7+f8</code></td>
+</tr>
+<tr>
+<td>Geeft datum/tijdweer</td>
+<td><code>f9</code></td>
+</tr>
+<tr>
+<td>Geeft batterij-status en resterende tijd aan  als netvoeding niet is aangesloten</td>
+<td><code>f10</code></td>
+</tr>
+<tr>
+<td>Geeft titel weer</td>
+<td><code>f11</code></td>
+</tr>
+<tr>
+<td>Geeft statusbalk aan</td>
+<td><code>f12</code></td>
+</tr>
+<tr>
+<td>Geeft de huidige regel  onder de applicatie-cursor aan</td>
+<td><code>f13</code></td>
+</tr>
+<tr>
+<td>Alles weergeven</td>
+<td><code>f14</code></td>
+</tr>
+<tr>
+<td>Geeft huidige karakter onder leescursor</td>
+<td><code>f15</code></td>
+</tr>
+<tr>
+<td>Geeft de regel van het huidige navigatorobject waar de leescursor zich bevindt</td>
+<td><code>f16</code></td>
+</tr>
+<tr>
+<td>Leest het woord voor bij het huidige navigatorobject waar de leescursor zich bevindt</td>
+<td><code>f15+f16</code></td>
+</tr>
+<tr>
+<td>Verplaatst de leescursor naar de vorige regel  van het huidige navigatorobject en leest die voor</td>
+<td><code>lWheelUp</code>, <code>rWheelUp</code></td>
+</tr>
+<tr>
+<td>Verplaatst de leescursor naar de volgende regel  van het huidige navigatorobject en leest die voor</td>
+<td><code>lWheelDown</code>, <code>rWheelDown</code></td>
+</tr>
+<tr>
+<td><code>Windows+d</code> toetscombinatie  (alle toepassingen minimaliseren)</td>
+<td><code>attribute1</code></td>
+</tr>
+<tr>
+<td><code>Windows+e</code> toetscombinatie (deze computer)</td>
+<td><code>attribute2</code></td>
+</tr>
+<tr>
+<td><code>Windows+b</code> toetscombinatie (focus systeemvak)</td>
+<td><code>attribute3</code></td>
+</tr>
+<tr>
+<td><code>Windows+i</code> toetscombinatie (Windows-instellingen)</td>
+<td><code>attribute4</code></td>
+</tr>
 </tbody>
 </table>
-<p>|Doorloop de stadia "braille systeemcursor verplaatsen bij routering leescursor"  | <code>f1+f3</code>, <code>f9+f11</code> |</p>
-<p>|Voert de standaardactie uit mbt het huidige navigatorobject |<code>f7+f8</code>|
-|Geeft datum/tijdweer |<code>f9</code>|
-|Geeft batterij-status en resterende tijd aan  als netvoeding niet is aangesloten |<code>f10</code>|
-|Geeft titel weer |<code>f11</code>|
-|Geeft statusbalk aan |<code>f12</code>|
-|Geeft de huidige regel  onder de applicatie-cursor aan |<code>f13</code>|
-|Alles weergeven |<code>f14</code>|
-|Geeft huidige karakter onder leescursor |<code>f15</code>|
-|Geeft de regel van het huidige navigatorobject waar de leescursor zich bevindt |<code>f16</code>|
-|Leest het woord voor bij het huidige navigatorobject waar de leescursor zich bevindt |<code>f15+f16</code>|
-|Verplaatst de leescursor naar de vorige regel  van het huidige navigatorobject en leest die voor |<code>lWheelUp</code>, <code>rWheelUp</code>|
-|Verplaatst de leescursor naar de volgende regel  van het huidige navigatorobject en leest die voor |<code>lWheelDown</code>, <code>rWheelDown</code>|
-|<code>Windows+d</code> toetscombinatie  (alle toepassingen minimaliseren) |<code>attribute1</code>|
-|<code>Windows+e</code> toetscombinatie (deze computer) |<code>attribute2</code>|
-|<code>Windows+b</code> toetscombinatie (focus systeemvak) |<code>attribute3</code>|
-|<code>Windows+i</code> toetscombinatie (Windows-instellingen) |<code>attribute4</code>|</p>
 <!-- KC:endInclude -->
 
 <h3 id="HIDBraille">Standaard HID Brailleleesregels</h3>
@@ -8243,12 +8557,12 @@ Die parameters moeten achter de optie worden geplaatst en moeten daarvan geschei
 <tr>
 <td>Geen</td>
 <td><code>--Create-portable</code></td>
-<td>Draagbare kopie van NVDA wordt aangemaakt (waarbij de aangemaakte kopie vervolgens opstart). Het pad voor de draagbare kopie dient te worden opgegeven.</td>
+<td>Draagbare kopie van NVDA wordt aangemaakt (waarbij de aangemaakte kopie vervolgens opstart). Het pad voor de draagbare kopie dient te worden opgegeven</td>
 </tr>
 <tr>
 <td>Geen</td>
 <td><code>--Create-portable-silent</code></td>
-<td>Draagbare kopie van NVDA wordt aangemaakt (waarbij aangemaakte kopie vervolgens niet opstart). Het pad voor de draagbare kopie dient te worden opgegeven.</td>
+<td>Draagbare kopie van NVDA wordt aangemaakt (waarbij aangemaakte kopie vervolgens niet opstart). Vereist is dat   <code>--portable-path</code> wordt gespecifieerd. Hiermee worden waarschuwingen onderdrukt bij schrijven niet-lege mappen en kan bestanden overschrijven zonder waarschuwen.</td>
 </tr>
 <tr>
 <td>Geen</td>
