@@ -1972,6 +1972,7 @@ Note that this setting is only available when "[Unicode normalization](#SpeechUn
 
 В большинстве случаев этот флажок должен быть установлен.
 Однако, в некоторых SAPI синтезаторах от Microsoft корректная обработка этой опции не реализована и, если этот флажок установлен, то наблюдается странное поведение синтезатора.
+Synthesizers from Code Factory, both the add-on and the SAPI application, do not implement it correctly either and cause unwanted spelling of the spoken text (e.g. in NVDA menu or dialogs).
 Если у вас как раз такая проблема при чтении отдельных символов, попробуйте снять этот флажок.
 
 ##### Отложенные описания символов при перемещении курсора {#delayedCharacterDescriptions}
