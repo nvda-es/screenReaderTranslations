@@ -2925,26 +2925,26 @@ To toggle Unicode normalization from anywhere, please assign a custom gesture us
 
 Вы можете переключать доступные стили абзацев из любого места, назначив клавишу в диалоге [Жесты ввода](#InputGestures).
 
-#### Add-on Store Settings {#AddonStoreSettings}
+#### Настройки магазина дополнений {#AddonStoreSettings}
 
-This category allows you to adjust the behaviour of the Add-on Store.
+Эта категория позволяет настроить поведение магазина дополнений.
 
-##### Update Notifications {#AutomaticAddonUpdates}
+##### Уведомления об обновлениях {#AutomaticAddonUpdates}
 
-When this option is set to "Notify", the Add-on Store will notify you after NVDA startup if any add-on updates are available.
-This check is performed every 24 hours.
-Notifications will only occur for add-ons with updates available within the same channel.
-For example, for installed beta add-ons, you will only be notified of updates within the beta channel.
+Если для этого параметра установлено значение "Уведомлять", то после запуска NVDA магазин дополнений будет оповещать вас  о наличии обновлений для дополнений.
+Эта проверка выполняется каждые 24 часа.
+Уведомления будут приходить только для тех дополнений, обновления которых доступны в рамках одного канала.
+Например, для установленных бета-версий дополнений вы будете получать уведомления только об обновлениях в канале бета-версий.
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Options |Notify (Default), Disabled |
-|Default |Notify |
+|Опции |Уведомлять (по умолчанию), отключено |
+|По умолчанию |Уведомлять |
 
-|Option |Behaviour |
+|Опция |Поведение |
 |---|---|
-|Enabled |Notify when updates are available to add-ons within the same channel |
-|Disabled |Do not automatically check for updates to add-ons |
+|Включено | Уведомлять о появлении обновлений для дополнений в том же канале |
+|Отключено | Не проверять  наличие обновлений для дополнений автоматически |
 
 #### Windows OCR {#Win10OcrSettings}
 
