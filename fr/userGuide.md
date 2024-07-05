@@ -1972,7 +1972,6 @@ La plupart des synthétiseurs la supportent.
 
 En général, cette option devrait être activée.
 Cependant, certains synthétiseurs utilisant les API de parole Microsoft ne l'implémentent pas correctement et se comportent bizarrement quand cette option est activée.
-Synthesizers from Code Factory, both the add-on and the SAPI application, do not implement it correctly either and cause unwanted spelling of the spoken text (e.g. in NVDA menu or dialogs).
 Les synthétiseurs de chez Code Factory, aussi bien l'extension que l'application SAPI, ne l'implémentent pas non plus correctement et provoquent une épellation indésirable du texte annoncé (par exemple dans le menu ou les boîtes de dialogue NVDA).
 Si vous rencontrez des problèmes avec l'épellation de caractères, essayez de désactiver cette option.
 
