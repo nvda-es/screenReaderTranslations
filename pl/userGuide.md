@@ -917,6 +917,7 @@ Wyżej opisane opcje dotyczące nawigacji myszą nie są domyślnie włączone.
 Możesz skonfigurować je, korzystając z kategorii [Ustawienia myszy](#MouseSettings) w oknie [Preferencji NVDA](#NVDASettings), znajdującym się w podmenu Ustawienia w menu NVDA.
 
 Do właściwego korzystania z funkcji oferowanych przez urządzenia wskazujące powinno się używać fizycznej myszy lub touch pada, pomimo tego NVDA posiada kilka funkcji które ułatwiają korzystanie z myszy.
+
 <!-- KC:beginInclude -->
 
 | Nazwa |skrót układu desktop |Skrót układu laptop |Gest dotykowy |Opis|
