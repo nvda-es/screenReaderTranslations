@@ -522,8 +522,8 @@ Jednakże, możliwe jest ręczne włączenie lub wyłączenie tej opcji w ustawi
 Większość poleceń programu NVDA wymaga naciśnięcia specjalnego klawisza zwanego klawiszem NVDA w połączeniu z innymi klawiszami.
 Wyjątkiem są polecenia przeglądu tekstu, które przypisane są do pojedynczych klawiszy numerycznych, oraz niektóre inne polecenia.
 
-Można skonfigurować NVDA tak, by numeryczny insert, klawisz Insert znajdujący się w pobliżu klawiszy strzałek, albo klawisz CapsLock - mogły zostać użyte jako specjalny klawisz poleceń NVDA.
-Domyślnie obydwa klawisze Insert są ustawione jako klawisz poleceń NVDA.
+Można skonfigurować NVDA tak, by  `insert`, klawisz `Insert` znajdujący się w pobliżu klawiszy strzałek, albo klawisz `CapsLock` - mogły zostać użyte jako specjalny klawisz poleceń NVDA.
+Domyślnie obydwa klawisze `Insert` są ustawione jako klawisz poleceń NVDA.
 
 Aby którykolwiek z klawiszy poleceń NVDA wykonał oryginalnie przypisaną mu funkcję (np. dla przełączenia CapsLock, gdy jest on wybrany jako klawisz NVDA), należy nacisnąć ten klawisz dwukrotnie w krótkim odstępie czasu.
 
