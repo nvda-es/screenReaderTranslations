@@ -1972,6 +1972,7 @@ Ta funkcjonalność jest wspierana w większości syntezatorów.
 
 Ta opcja na ogół powinna być włączona.
 Niektóre syntezatory pracujące w standardzie Microsoft Speech API (SAPI)  nie obsługują prawidłowo tej funkcjonalności i zachowują się dziwnie, gdy jest ona włączona.
+Syntezatory firmy Code Factory, dodatek i aplikacja oparta na protokole sapi, nie implementują prawidłowo tej funkcji i nieprawidłowo literują (np. w meni NVDA lub oknach dialogowych).
 Jeśli napotykasz na problemy z wymową pojedynczych znaków, spróbuj wyłączyć tę opcję.
 
 ##### Opisy po nazwie liter podczas ruchu kursora {#delayedCharacterDescriptions}
