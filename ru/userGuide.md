@@ -4853,17 +4853,17 @@ Windows 10 и более поздние версии обнаруживают э
 ### BRLTTY {#BRLTTY}
 
 [BRLTTY](https://www.brltty.com/) - это отдельная программа, которая может использоваться для поддержки многих других брайлевских дисплеев.
-In order to use this, you need to install [BRLTTY for Windows](https://www.brltty.com/download.html).
-You should download and install the latest installer package, which will be named, for example, brltty-win-4.2-2.exe.
-When configuring the display and port to use, be sure to pay close attention to the instructions, especially if you are using a USB display and already have the manufacturer's drivers installed.
+Для её использования  вам необходимо установить [BRLTTY для Windows](https://www.brltty.com/download.html).
+Вам следует загрузить и установить последнюю версию установочного пакета, который будет называться, например, brltty-win-4.2-2.exe.
+При настройке дисплея и порта для использования обязательно внимательно ознакомьтесь с инструкциями, особенно если вы используете USB-дисплей и у вас уже установлены драйверы производителя.
 
-For displays which have a braille keyboard, BRLTTY currently handles braille input itself.
-Therefore, NVDA's braille input table setting is not relevant.
+Для дисплеев, оснащенных брайлевской клавиатурой, BRLTTY в настоящее время сама обрабатывает ввод данных по Брайлю.
+Таким образом, настройка брайлевской таблицы ввода данных в NVDA не имеет значения.
 
-BRLTTY is not involved in NVDA's automatic background braille display detection functionality.
+Функция BRLTTY не задействована в фоновом автоматическом определении брайлевского дисплея NVDA.
 
-Following are the BRLTTY command assignments for NVDA.
-Please see the [BRLTTY key binding lists](http://mielke.cc/brltty/doc/KeyBindings/) for information about how BRLTTY commands are mapped to controls on braille displays.
+Ниже приведены основные назначения команд для NVDA.
+Пожалуйста, ознакомьтесь с [списками привязки клавиш BRLTTY](http://mielke.cc/brltty/doc/KeyBindings/) для получения информации о сопоставлении команд BRLTTY с элементами управления брайлевских дисплеев.
 <!-- KC:beginInclude -->
 
 | Название |Команда BRLTTY|
@@ -4885,18 +4885,18 @@ Please see the [BRLTTY key binding lists](http://mielke.cc/brltty/doc/KeyBinding
 
 ### Tivomatic Caiku Albatross 46/80 {#Albatross}
 
-The Caiku Albatross devices, which were manufactured by Tivomatic and available in Finland, can be connected to by either USB or serial.
-You do not need any specific drivers to be installed to use these displays.
-Just plug in the display and configure NVDA to use it.
+Устройства Caiku Albatross, которые были изготовлены компанией Tivomatic и доступны в Финляндии, могут быть подключены как по USB, так и по последовательному порту.
+Для использования этих дисплеев не требуется устанавливать какие-либо специальные драйверы.
+Просто подключите дисплей и настройте NVDA для его использования.
 
-Note: Baud rate 19200 is strongly recommended.
-If required, switch Baud rate setting value to 19200 from the braille device's menu.
-Although the driver supports 9600 baud rate, it has no way to control what baud rate the display uses.
-Because 19200 is the display default baud rate, the driver tries it at first.
-If baud rates are not the same, the driver may behave unexpectedly.
+Примечание: Настоятельно рекомендуется скорость передачи данных 19200 Бит всекунду.
+При необходимости измените значение параметра скорости передачи данных  на 19200 Бит в секунду в меню брайлевского устройства.
+Хотя драйвер поддерживает скорость передачи данных 9600 Бит в секунду, у него нет возможности контролировать скорость передачи данных, используемую дисплеем.
+Поскольку скорость передачи данных на дисплее по умолчанию составляет 19200 Бит в секунду, драйвер сначала пробует именно её.
+Если скорость передачи данных в Бит в секунду отличается, драйвер может повести себя неожиданно.
 
-Following are key assignments for these displays with NVDA.
-Please see the display's documentation for descriptions of where these keys can be found.
+Ниже приведены основные назначения клавиш для этих дисплеев, поддерживаемые NVDA.
+Пожалуйста, ознакомьтесь с документацией к дисплею, чтобы узнать, где находятся эти клавиши.
 <!-- KC:beginInclude -->
 
 | Название |Комбинация клавиш|
