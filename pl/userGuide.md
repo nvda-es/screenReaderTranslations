@@ -46,7 +46,6 @@ Najważniejsze właściwości NVDA to:
 * Co najmniej 4 GB pamięci Ram.
 
 #### Minimalne wymagania systemowe {#MinimumSystemRequirements}
-
 * Systemy operacyjne: wsparcie wszystkich 32-bitowych i 64-bitowych wersji systemu Windows 8.1, Windows 10 i Windows 11 (w tym systemów operacyjnych dla serwerów od Windows Server 2012 R2).
   * Obie architektury AMD64 jak i ARM64 systemu Windows są wspierane.
   * Uwaga 32-bitowe systemy operacyjne nie są aktywnie wspierane.
