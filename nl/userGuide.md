@@ -522,8 +522,8 @@ Je kunt het verzamelen van data echter handmatig in- of uitschakelen via de Inst
 Voor de meeste commando's binnen NVDA drukt u op een bepaalde toets, de NVDA programmatoets (of kortweg NVDA-toets) in combinatie met een of meer andere toetsen.
 Als uitzondering hierop noemen we de commando's die gebruikt worden om tekst te laten voorlezen. Hiervoor gebruikt u alleen de toetsen van het numerieke toetsenbord zonder de NVDA programmatoets (dit geldt voor de desktoptoetsenbordindeling). Er zijn echter nog enkele andere uitzonderingen. 
 
-U kunt NVDA zo configureren dat de Insert-toets, denumerieke Insert-toets en / of de CapsLock-toets als NVDA programmatoets worden/wordt gebruikt.
-Standaard zijn zowel de Insert als de numerieke Insert-toets als NVDA programmatoets ingesteld.
+U kunt NVDA zo configureren dat de `Insert`-toets, de`numerieke Insert`-toets en / of de `CapsLock`-toets als `NVDA` programmatoets worden/wordt gebruikt.
+Standaard zijn zowel de `Insert` als de `numerieke Insert`-toets als `NVDA` programmatoets ingesteld.
 
 Om een toets die u als NVDA programmatoets hebt ingesteld zijn oorspronkelijke functie te laten uitvoeren, u wilt CapsLock bij voorbeeld inschakelen om hoofdletters te typen, moet u deze toets tweemaal snel achter elkaar indrukken.
 
