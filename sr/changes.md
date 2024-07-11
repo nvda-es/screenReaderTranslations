@@ -1582,7 +1582,7 @@ Ako vam je ova funkcija potrebna molimo dodelite prečicu odgovarajućoj komandi
 * Kada otvarate dijalog sa podešavanjima koji je već otvoren, NVDA će postaviti fokus na postojeći dijalog umesto da izbacuje grešku. (#5383)
 * Ažuriran liblouis brajev prevodilac na [3.19.0](https://github.com/liblouis/liblouis/releases/tag/v3.19.0). (#12810)
   * Nove brajeve tabele: Ruski stepen 1, Tshivenda stepen 1, Tshivenda stepen 2
-  * Umesto "Markiran sadržaj" ili "mrkd", "Obeleženo" ili "obel" će biti izgovoreno i prikazano na brajevom redu. (#12892)
+* Umesto "Markiran sadržaj" ili "mrkd", "Obeleženo" ili "obel" će biti izgovoreno i prikazano na brajevom redu. (#12892)
 * NVDA neće više pokušavati da se zatvori kada su otvoreni dijalozi koji zahtevaju potvrdu (na primer uz dostupne opcije potvrdi / otkaži). (#12984)
 
 ### Ispravljene greške
@@ -2570,12 +2570,13 @@ Glavne karakteristike ove verzije uključuju podršku za tabele u programu Kindl
 
 ### Nove karakteristike
 
- Opseg redova i kolona za ćelije u tabeli se sada izgovara i prikazuje na brajevom redu. (#2642)
+ * Opseg redova i kolona za ćelije u tabeli se sada izgovara i prikazuje na brajevom redu. (#2642)
 * NVDA komande za navigaciju kroz tabele su  sada podržane u servisu  Google Docs (sa omogućenim brajevim režimom). (#7946)
 * Dodata sposobnost čitanja i navigacije kroz tabele u programu Kindle za  PC. (#7977)
 * Podrška za  BrailleNote touch i  Brailliant BI 14 brajeve redove putem USB i  bluetooth veze. (#6524)
 * U Windows 10 jesenjem Creators ažuriranju i novijim, NVDA će  izgovarati obaveštenja u aplikacijama kao što su  kalkulator i  Windows prodavnica. (#8045)
 * Nove tabele za brajev prevod: Litvanski osmotačkasti, Ukrajinski, Mongolski. (#7839)
+* Dodata komanda za prijavljivanje formatiranja teksta ispod trenutne brajeve ćelije. (#7106)
 * Kada ažurirate  NVDA, moguće je odložiti instalaciju ažuriranja za kasnije. (#4263) 
 * Novi jezici: Mongolski, Švajcarski.
 * Sada možete pritisnuti Kontrol, šift, alt, windows i  NVDA sa vaše brajeve tastature i kombinovati ih sa brajevim unosom (na primer kombinacijom Kontrol+s). (#7306) 
@@ -2607,7 +2608,6 @@ Glavne karakteristike ove verzije uključuju podršku za tabele u programu Kindl
 * Menjanje glasova u Windows Onecore sintetizatoru je sada puno brže. (#7999)
 * Ispravljen pogrešan prikaz brajevog unosa za nekoliko brajevih tabela, uključujući velika slova u skraćenom unosu osmotačkaste Danske brajeve tabele. (#7526, #7693)
 * NVDA sada može  prijaviti više vrsta nabrajanja u programu  Microsoft Word. (#6778)
-* Dodata komanda za prijavljivanje formatiranja teksta ispod trenutne brajeve ćelije. (#7106)
 * Pritiskanje komande za prijavljivanje formatiranja više ne pomera poziciju pregleda, pa s time pritiskanje komande više puta ne daje različite rezultate. (#7869)
 * Brajev unos više ne dozvoljava unos skraćenog brajevog pisma u slučajevima u kojima to nije podržano (cele reči neće više biti poslane sistemu i neće raditi u režimu pretraživanja ). (#7306)
 * Ispravljeni problemi sa povezivanjem redova Handy Tech Easy Braille i  Braille Wave. (#8016)
