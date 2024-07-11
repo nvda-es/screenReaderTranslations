@@ -1258,7 +1258,6 @@ LibLouis je ažuriran, što uključuje novu Nemačku brajevu tabelu.
     * NVDA će sada izgovoriti stanje za dugme prekidača. (#9728)
   * NVDA će sada prepoznati prozor u Java aplikaciji sa više prozora. (#9184)
   * NVDA će sada izgovoriti informacije o poziciji za kontrole kartica. (#13744)
--
 * Ispravljene greške za brajeve redove:
   * Ispravljen brajev izlaz kada se krećete kroz određene tekstove u Mozilla obogaćenim kontrolama za pisanje, kao što su čuvanje poruke kao nacrt u programu Thunderbird. (#12542)
   * Kada je vezivanje brajevog reda podešeno na automatski i miš se pomera uz omogućeno praćenje miša,
@@ -2446,6 +2445,7 @@ Glavne karakteristike ove verzije uključuju poboljšanja brzine u novijim verzi
 
 ### Promene
 
+* "Prijavi balone pomoći" u dijalogu predstavljanja objekata je preimenovan u "Prijavi obaveštenja" kako bi uključilo prijavljivanje obaveštenja u Windowsu 8 i novijim. (#5789)
 * U dijalogu podešavanja tastature, izborna polja za izbor NVDA tastera su sada u listi, i više nisu prikazana kao posebno izborno polje za svaki taster.
 * NVDA više neće prikazivati bespotrebne informacije kada se čita sat u sistemskoj traci na određenim verzijama Windowsa. (#4364)
 * Ažuriran liblouis brajev prevodilac  na verziju 3.7.0. (#8697)
@@ -2570,6 +2570,7 @@ Glavne karakteristike ove verzije uključuju podršku za tabele u programu Kindl
 
 ### Nove karakteristike
 
+ Opseg redova i kolona za ćelije u tabeli se sada izgovara i prikazuje na brajevom redu. (#2642)
 * NVDA komande za navigaciju kroz tabele su  sada podržane u servisu  Google Docs (sa omogućenim brajevim režimom). (#7946)
 * Dodata sposobnost čitanja i navigacije kroz tabele u programu Kindle za  PC. (#7977)
 * Podrška za  BrailleNote touch i  Brailliant BI 14 brajeve redove putem USB i  bluetooth veze. (#6524)
@@ -2707,8 +2708,6 @@ Molimo imajte na umu da ova verzija programa  NVDA više ne podržava Windows XP
 * Ako je pokrenut na laptop ili tablet računaru, NVDA će sada prijaviti kada se punjač uključi ili isključi, i kada se orijentacija ekrana promeni . (#4574, #4612)
 * Novi jezik: Makedonski.
 * Nove tablice za brajev prevod: Hrvatski stepen 1, Vietnamski stepen 1. (#7518, #7565)
-* Rečnici glasova sada imaju svoju verziju i prebačeni su u folder "speechDicts/voiceDicts.v1". (#7592)
-* Datoteke koje imaju verziju (korisnička podešavanja, glasovni rečnici) se više ne čuvaju kada se privremena kopija programa NVDA pokrene. (#7688)
 * Podrška za Actilino brajev red kompanije Handy Tech je dodata. (#7590)
 * Brajev unos za  Handy Tech brajeve redove je sada podržan. (#7590)
 
@@ -2722,9 +2721,12 @@ Molimo imajte na umu da ova verzija programa  NVDA više ne podržava Windows XP
 * Espeak-ng je ažuriran na verziju 1.49.2, ova verzija ispravlja određene probleme sa objavljivanjem  novih verzija. (#7385, #7583)
 * Nakon što tri puta koristite komandu "pročitaj statusnu traku", njen sadržaj se kopira u privremenu memoriju. (#1785)
 * Kada podešavate prečice za korišćenje na Baum brajevom redu, možete ih ograničiti na model koji koristite (na primer VarioUltra ili  Pronto). (#7517)
+* Prečica za polje izdvajanja  u listi elemenata u režimu pretraživanja je promenjena iz alt+f u alt+i. (#7569)
 * Nedodeljena prečica je dodata za režim pretraživanja koja vam omogućava da brzo uključite i isključite tabele za izgled. Možete je pronaći u kategoriji režim pretraživanja ulaznih komandi. (#7634)
 * Ažuriran  liblouis brajev prevodilac na verziju 3.3.0. (#7565)
 * brajevi redovi Braillino, Bookworm i  Modular (sa starijim softverom) kompanije Handy Tech više nisu podržani. Instalirajte Handy Tech univerzalni driver i NVDA dodatak kako biste ih koristili. (#7590)
+* Rečnici glasova sada imaju svoju verziju i prebačeni su u folder "speechDicts/voiceDicts.v1". (#7592)
+* Datoteke koje imaju verziju (korisnička podešavanja, glasovni rečnici) se više ne čuvaju kada se privremena kopija programa NVDA pokrene. (#7688)
 
 ### Ispravljene greške
 
