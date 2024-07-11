@@ -683,8 +683,8 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
   * CLDR je ažuriran na verziju 43.0. (#14918)
 * LibreOffice promene:
   * Kada se prijavljuje lokacija preglednog kursora, trenutna lokacija kursora se sada prijavljuje u odnosu na trenutnu stranicu u programu LibreOffice Writer za LibreOffice verzije 7.6 i novije, slično prijavljivanju u programu Microsoft Word. (#11696)
-  * Kada se prebacite na neku drugu ćeliju u programu LibreOffice Calc, NVDA više neće neispravno izgovarati koordinate prethodno fokusirane ćelije kada se izgovor koordinata ćelija onemogući u NVDA podešavanjima. (#15098)
-  * Izgovor statusne trake (na primer kada se pritisne `NVDA+end`) radi u paketu LibreOffice. (#11698)
+    * Izgovor statusne trake (na primer kada se pritisne `NVDA+end`) radi u paketu LibreOffice. (#11698)
+* Kada se prebacite na neku drugu ćeliju u programu LibreOffice Calc, NVDA više neće neispravno izgovarati koordinate prethodno fokusirane ćelije kada se izgovor koordinata ćelija onemogući u NVDA podešavanjima. (#15098)
 * Brajeve promene:
   * Kada se koristi brajev red uz drajver za HID brajev standard, strelice se sada mogu koristiti za emuliranje strelica tastature i entera.
   Takođe,  `razmak+tačkica1` i `razmak+tačkica4` su sada podešene kao strelice dole i gore. (#14713)
