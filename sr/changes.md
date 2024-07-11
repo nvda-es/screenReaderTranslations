@@ -2727,6 +2727,7 @@ Molimo imajte na umu da ova verzija programa  NVDA više ne podržava Windows XP
 * brajevi redovi Braillino, Bookworm i  Modular (sa starijim softverom) kompanije Handy Tech više nisu podržani. Instalirajte Handy Tech univerzalni driver i NVDA dodatak kako biste ih koristili. (#7590)
 * Rečnici glasova sada imaju svoju verziju i prebačeni su u folder "speechDicts/voiceDicts.v1". (#7592)
 * Datoteke koje imaju verziju (korisnička podešavanja, glasovni rečnici) se više ne čuvaju kada se privremena kopija programa NVDA pokrene. (#7688)
+* Braillino, Bookworm i Modular (sa starim firmverom) brajevi redovi kompanije Handy Tech više nisu podrazumevano podržani. Instalirajte  Handy Tech univerzalni drajver i NVDA dodatak kako biste koristili ove redove. (#7590)
 
 ### Ispravljene greške
 
@@ -2859,7 +2860,6 @@ Glavne karakteristike ove verzije uključuju podršku za stišavanje pozadinskih
 ### Ispravljene greške
 
 * Stavke menija na web stranicama(stavka menija za potvrdu i radio dugme) se sada mogu aktivirati u režimu pretraživanja. (#6735)
-* Prijavljivanje imena listova u programu Excel je sada prevedeno. (#6848)
 * Ako se pritisne  ESC dok je dijalog u konfiguracionim profilima"potvrdi brisanje" aktivan dialog se zatvara. (#6851)
 * Popravljene određene nestabilnosti u programu Mozilla Firefox i drugim Gecko aplikacijama gde je multi-process stavka omogućena. (#6885)
 * Prijavljivanje boja u režimu pregleda ekrana je sada preciznije kada je tekst preslikan transparentnom pozadinom(#6467) 
