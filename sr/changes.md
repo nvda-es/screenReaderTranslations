@@ -1,6 +1,7 @@
 # NVDA šta je novo
 
 ## 2024.3
+
 Prodavnica dodataka će vas sada obavestiti ako postoje ažuriranja za vaše dodatke kada se NVDA pokrene.
 
 Sada postoje opcije za unikodno standardizovanje govornog i brajevog izlaza.
