@@ -715,9 +715,7 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
   * Kada pokušavate da čitate adresu linka bez href atributa NVDA više neće biti bez govora.
   Umesto togag NVDA će prijaviti da link  nema odredište. (#14723)
   * U režimu pretraživanja, NVDA neće neispravno ignorisati pomeranje fokusa na glavnu kontrolu ili kontrolu unutar nje na primer pomeranje sa kontrole na njenu unutrašnju stavku liste ili ćeliju mreže. (#14611)
-   * Napomena međutim da se ova ispravka primenjuje samo kada je opcija "Automatsko postavljanje fokusa na elemente koji se mogu fokusirati" u podešavanjima režima pretraživanja isključena (što je podrazumevano podešavanje).
-    -
--
+    * Napomena međutim da se ova ispravka primenjuje samo kada je opcija "Automatsko postavljanje fokusa na elemente koji se mogu fokusirati" u podešavanjima režima pretraživanja isključena (što je podrazumevano podešavanje).
 * Ispravke za Windows 11:
   * NVDA ponovo može da izgovara sadržaj statusne trake u beležnici. (#14573)
   * Prebacivanje između kartica će izgovoriti ime i poziciju nove kartice u beležnici i istraživaču datoteka. (#14587, #14388)
