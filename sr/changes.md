@@ -846,7 +846,6 @@ Isto kao i kada se dva puta pritisne `NVDA+k`, ali može biti korisnije za koris
   * na ARM verziji, x64 aplikacije se više ne označavaju kao ARM64 aplikacije. (#14403)
   * Sada možete pristupiti opcijama menija istorije privremene memorije kao što su "Zakači stavku". (#14508)
   * Na Windowsu 11 22H2 i novijim, ponovo je moguće koristiti miš i ekran osetljiv na dodir za interakciju sa delovima kao što su prozor sistemske trake i dijalog "Otvori". (#14538, #14539)
--
 * Predlozi se sada prijavljuju kada upišete @spominjanje u Microsoft Excel komentarima. (#13764)
 * U Google Chrome adresnoj traci, kontrole predloga (prebaci se na karticu, ukloni predlog i tako dalje) se sada prijavljuju kada se izaberu. (#13522)
 * Kada zahtevate informacije o formatiranju, boje se sada prijavljuju u Wordpadu ili pregledniku dnevnika, umesto da samo čujete "Podrazumevana boja". (#13959)
@@ -1919,6 +1918,7 @@ Takođe puno drugih poboljšanja i ispravljenih grešaka.
 * NVDA se više ne ruši kada se koristi tabela Engleski američki stepen 2 i opcija Proširi na kompjuterski brajev kod za reč na poziciji kursora je uključena, kada se prikazuje određen sadržaj kao što je Internet adresa. (#11754)
 * Ponovo je moguće prijaviti informacije o formatiranju za fokusiranu Excel ćeliju komandom NVDA+F. (#11914)
 * QWERTY unos na Papenmeier brajevim redovima koji ga podržavaju ponovo radi i više ne izaziva nasumična smrzavanja programa NVDA. (#11944)
+* U pretraživačima zasnovanim na Chromiumu, rešeno je nekoliko slučajeva u kojima navigacija po tabelama nije radila i NVDA nije prijavljivao broj redova i kolona tabele. (#12359)
 
 ### Promene za programere (engleski)
 
