@@ -1255,13 +1255,13 @@ LibLouis je ažuriran, što uključuje novu Nemačku brajevu tabelu.
   * NVDA će sada izgovoriti prečice funkcijskih tastera. (#13643)
   * NVDA sada može da pišti i izgovara trake napredovanja. (#13594)
   * NVDA više neće neispravno uklanjati tekst iz vidžeta kada se oni prikazuju korisnicima. (#13102)
-    * NVDA će sada izgovoriti stanje za dugme prekidača. (#9728)
+  * NVDA će sada izgovoriti stanje za dugme prekidača. (#9728)
   * NVDA će sada prepoznati prozor u Java aplikaciji sa više prozora. (#9184)
   * NVDA će sada izgovoriti informacije o poziciji za kontrole kartica. (#13744)
 * Ispravljene greške za brajeve redove:
   * Ispravljen brajev izlaz kada se krećete kroz određene tekstove u Mozilla obogaćenim kontrolama za pisanje, kao što su čuvanje poruke kao nacrt u programu Thunderbird. (#12542)
   * Kada je vezivanje brajevog reda podešeno na automatski i miš se pomera uz omogućeno praćenje miša,
-  komande pregleda teksta sada ažuriraju brajev red sa izgovorenim sadržajem. (#11519)
+   komande pregleda teksta sada ažuriraju brajev red sa izgovorenim sadržajem. (#11519)
   * Sada je moguće pomerati brajev red kroz sadržaja nakon korišćenja komandi za pregled teksta. (#8682)
 * NVDA instalacija se sada može pokrenuti iz foldera koji imaju posebne znakove. (#13270)
 * U pretraživaču Firefox, NVDA više ne greši u čitanju stavki na Web stranicama kada su aria-rowindex, aria-colindex, aria-rowcount ili aria-colcount atributi neispravni. (#13405)
@@ -1357,7 +1357,7 @@ Napomena:
 * NVDA će sada upozoriti o parametrima komandne linije koji su nepoznati i ne koriste se od strane dodataka. (#12795)
 * Kada se pristupa programu Microsoft Word uz UI Automation, NVDA će sada koristiti mathPlayer za navigaciju i čitanje Office matematičkih zadataka. (#12946)
   * Kako bi ovo  radilo, morate koristiti Microsoft Word 365/2016 verziju 14326 ili novije. 
-    * MathType zadaci se takođe moraju ručno pretvoriti u Office Math izborom svakog od njih, otvaranjem kontekstnog menija, izborom stavke opcije jednačina, pretvori u  Office Math.
+  * MathType zadaci se takođe moraju ručno pretvoriti u Office Math izborom svakog od njih, otvaranjem kontekstnog menija, izborom stavke opcije jednačina, pretvori u  Office Math.
 * Prijavljivanje kada objekat  "ima detalje " kao i odgovarajuća komanda za prijavljivanje odnosa detalja sada mogu da se koriste u režimu fokusiranja. (#13106)
 * Seika beležnica se sada može automatski prepoznati putem USB i Bluetooth veze. (#13191, #13142)
   * Ovo utiče na sledeće uređaje: MiniSeika (16, 24 ćelija), V6, i V6Pro (40 ćelija)
@@ -1379,7 +1379,7 @@ Napomena:
   * Dodata brajeva tabela Katalonski stepen 1. (#13408)
 * NVDA će prijaviti izbor i spajanje ćelija u programu LibreOffice Calc 7.3 i novijim. (#9310, #6897)
 * Ažuriran Unicode Common Locale Data Repository (CLDR) na 40.0. (#12999)
-* ``NVDA+numerički taster za brisanje `` podrazumevano prijavljuje lokaciju kursora ili fokusiranog objekta. (#13060)
+* `NVDA+numerički taster za brisanje ` podrazumevano prijavljuje lokaciju kursora ili fokusiranog objekta. (#13060)
 * `NVDA+šift+numerički taster za brisanje` prijavljuje lokaciju preglednog kursora. (#13060)
 * Dodate podrazumevane prečice za uključivanje i isključivanje modifikatorskih tastera na Freedom Scientific brajevim redovima (#13152)
 * "Osnovna linija " se više neće izgovarati kada se koristi komanda za prijavljivanje formatiranja  (`NVDA+f`). (#11815)
@@ -1582,8 +1582,8 @@ Ako vam je ova funkcija potrebna molimo dodelite prečicu odgovarajućoj komandi
 * Kada otvarate dijalog sa podešavanjima koji je već otvoren, NVDA će postaviti fokus na postojeći dijalog umesto da izbacuje grešku. (#5383)
 * Ažuriran liblouis brajev prevodilac na [3.19.0](https://github.com/liblouis/liblouis/releases/tag/v3.19.0). (#12810)
   * Nove brajeve tabele: Ruski stepen 1, Tshivenda stepen 1, Tshivenda stepen 2
-  * NVDA neće više pokušavati da se zatvori kada su otvoreni dijalozi koji zahtevaju potvrdu (na primer uz dostupne opcije potvrdi / otkaži). (#12984)
---
+  * Umesto "Markiran sadržaj" ili "mrkd", "Obeleženo" ili "obel" će biti izgovoreno i prikazano na brajevom redu. (#12892)
+* NVDA neće više pokušavati da se zatvori kada su otvoreni dijalozi koji zahtevaju potvrdu (na primer uz dostupne opcije potvrdi / otkaži). (#12984)
 
 ### Ispravljene greške
 
@@ -1873,8 +1873,8 @@ Takođe puno drugih poboljšanja i ispravljenih grešaka.
  * Dodaje brajevu tabelu Baškir stepen 1
  * Dodaje brajevu tablu Koptski osmotačkasti brajev kod
  * Dodaje tabele Ruski književni i Ruski književni (detaljniji)
-  * Dodaje brajevu tabelu Afrikanski stepen 2
-* Uklanja brajevu tabelu Ruski stepen 1
+ * Dodaje brajevu tabelu Afrikanski stepen 2
+ * Uklanja brajevu tabelu Ruski stepen 1
 * Kada čitate u režimu izgovori sve režima pretraživanja komande za pronalaženje sledeće i prethodne stavke više ne zaustavljaju čitanje ako je opcija dozvoli površno čitanje omogućena; režim izgovori sve će umesto toga nastaviti od pronađenog rezultata. (#11563)
 * Za HIMS brajeve redove F3 je promenjen u  razmak + tačke 148. (#11710)
 * Poboljšanja u korisničkom iskustvu opcija  "vreme isteka poruke" i "prikaži poruke". (#11602)
@@ -2255,9 +2255,9 @@ Iako ove promene izazivaju nekompatibilnosti starijih NVDA dodataka, ažuriranje
 
 Ovo je manje ažuriranje kako bi se ispravile neke nestabilnosti u verziji 2019.2. Ispravke uključuju:
 
-* Windows Explorer na  Windowsu 7 se više ne ruši kada se pristupa  poljima sa detaljima o podacima. (#5337) 
-* U  Windowsu 7, NVDA više neće izazvati rušenje Windows Explorera kada se miš koristi u start meniju. (#9435) 
 * Ispravljeno nekoliko grešaka u Gmailu u pretraživačima Firefox i Chrome prilikom interakcije sa određenim iskačujućim menijima, na primer menjanje filtera ili nekih Gmail podešavanja. (#10175, #9402, #8924)
+* U  Windowsu 7, NVDA više neće izazvati rušenje Windows Explorera kada se miš koristi u start meniju. (#9435) 
+* Windows Explorer na  Windowsu 7 se više ne ruši kada se pristupa  poljima sa detaljima o podacima. (#5337) 
 * NVDA više neće prestajati sa radom kada pristupate slikama  sa base64 URI u aplikaciji Mozilla Firefox ili Google Chrome. (#10227)
 
 ## 2019.2
@@ -2277,8 +2277,7 @@ Glavne karakteristike ove verzije uključuju automatsko prepoznavanje brajevih r
  * Prečica se mora podesiti u dijalogu "ulazne komande".
 * U programu  Eclipse, dodata podrška za automatsko dopunjavanje u uređivaču koda. (#5667)
  * Takođe, Javadoc informacije se mogu pročitati iz uređivača kada su dostupne korišćenjem komande NVDA+d.
-* Dodata eksperimentalna opcija u panel naprednih podešavanja koja sprečava da sistemski fokus prati kursor u režimu pretraživanja   (automatski postavi sistemski fokus na elemente koji se mogu fokusirati). (#2039) 
- * Iako možda ovo nije odgovarajuća opcija za sve sajtove, ovo može popraviti sledeće probleme: 
+* Dodata eksperimentalna opcija u panel naprednih podešavanja koja sprečava da sistemski fokus prati kursor u režimu pretraživanja   (automatski postavi sistemski fokus na elemente koji se mogu fokusirati). (#2039) Iako možda ovo nije odgovarajuća opcija za sve sajtove, ovo može popraviti sledeće probleme: 
  * Efekat vraćanja fokusa: NVDA ponekad poništava poslednju prečicu režima pretraživanja vraćanjem na prethodnu lokaciju.
  * Polja za unos preuzimaju sistemski fokus kada se krećete strelicama na nekim sajtovima.
  * Prečice režima pretraživanja sporo odgovaraju.
@@ -2293,6 +2292,7 @@ Glavne karakteristike ove verzije uključuju automatsko prepoznavanje brajevih r
 * Jačina sintetizatora se sada smanjuje za 5 umesto 10 procenata kada se koristi krug sintetizatora. (#6754)
 * Pojašnjen tekst u upravljaču dodataka kada je NVDA pokrenut uz opciju --disable-addons. (#9473)
 * Ažurirani Emoji   znakovi iz baze Unicode Common Locale  na verziju  35.0. (#9445)
+* Prečica za polje izdvajanja u listi elemenata režima pretraživanja na engleskom je promenjena u alt+y. (#8728)
 * Kada je automatski prepoznat brajev red povezan putem  Bluetooth veze, NVDA će nastaviti pretragu za USB redove podržane od strane istog drajvera i prebaciće se na USB vezu ako postane dostupna. (#8853)
 * Ažuriran  eSpeak-NG na verziju 67324cc.
 * Updated liblouis braille translator to version 3.10.0. (#9439, #9678)
