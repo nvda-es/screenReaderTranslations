@@ -2570,7 +2570,7 @@ Glavne karakteristike ove verzije uključuju podršku za tabele u programu Kindl
 
 ### Nove karakteristike
 
- * Opseg redova i kolona za ćelije u tabeli se sada izgovara i prikazuje na brajevom redu. (#2642)
+* Opseg redova i kolona za ćelije u tabeli se sada izgovara i prikazuje na brajevom redu. (#2642)
 * NVDA komande za navigaciju kroz tabele su  sada podržane u servisu  Google Docs (sa omogućenim brajevim režimom). (#7946)
 * Dodata sposobnost čitanja i navigacije kroz tabele u programu Kindle za  PC. (#7977)
 * Podrška za  BrailleNote touch i  Brailliant BI 14 brajeve redove putem USB i  bluetooth veze. (#6524)
@@ -2845,7 +2845,7 @@ Glavne karakteristike ove verzije uključuju podršku za stišavanje pozadinskih
 
 ### Nove karakteristike
 
-* Informacije o granicama ćelija sada mogu biti izgovorene u programu Microsoft Excel koristeći komandu `NVDA+f`. (#3044)
+* Informacije o granicama ćelija sada mogu biti izgovorene u programu Microsoft Excel koristeći komandu NVDA+f. (#3044)
 * U Web pretraživačima, NVDA sada izgovara kada se element označi kao trenutni(konkretno, koristeći aria-current svojstvo). (#6358)
 * Podrška za automatsku promenu jezika u programu Microsoft Edge. (#6852)
 * Podrška za Windows kalkulator na Windows 10 Enterprise LTSB (Long-Term Servicing Branch) i Server verzijama. (#6914)
