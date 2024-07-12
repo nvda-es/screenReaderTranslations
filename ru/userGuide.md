@@ -1,4 +1,4 @@
-#  Руководство пользователя NVDA NVDA_VERSION
+# Руководство пользователя NVDA NVDA_VERSION
 
 [TOC]
 
