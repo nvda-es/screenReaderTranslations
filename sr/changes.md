@@ -46,8 +46,8 @@ Unikodna CLDR baza je takođe ažurirana.
       * Jidiš.
       * Nekoliko drevnih jezika: Biblijski hebrejski, akadski, sirijski, ugarit i transliterovan sumerski.
       * Turski stepen 2. (#16735)
-        * Međunarodni fonetski alfabet. (#16773)
-* Ažuriran NSIS na 3.10 (#16674, @dpy013)
+      * Međunarodni fonetski alfabet. (#16773)
+  * Ažuriran NSIS na 3.10 (#16674, @dpy013)
   * Ažuriran markdown na 3.6 (#16725, @dpy013)
   * Ažuriran nh3 na 0.2.17 (#16725, @dpy013)
 * Ulazna brajeva tabela na koju se NVDA vraća je sada ista kao i izlazna tabela, a to je unificirani engleski brajev kod stepen 1. (#9863, @JulienCochuyt, @LeonarddeR)
