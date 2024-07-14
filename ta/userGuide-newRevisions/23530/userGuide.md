@@ -2186,7 +2186,7 @@ Other benefits of unicode normalization are explained in greater detail in the [
 To toggle Unicode normalization from anywhere, please assign a custom gesture using the [Input Gestures dialog](#InputGestures).
 
 ##### Focus context presentation {#BrailleSettingsFocusContextPresentation}
-
+???? ?????????? 
 This option allows you to choose what context information NVDA will show on the braille display when an object gets focus.
 Context information refers to the hierarchy of objects containing the focus.
 For example, when you focus a list item, this list item is part of a list.
