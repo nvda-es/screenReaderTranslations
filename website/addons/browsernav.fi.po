@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BrowserNav\n"
 "POT-Creation-Date: 2024-06-04 19:44+0000\n"
-"PO-Revision-Date: 2024-07-12 19:05+0300\n"
+"PO-Revision-Date: 2024-07-14 13:16+0300\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: Jani Kinnunen <jani.kinnunen@wippies.fi>\n"
 "Language: fi\n"
@@ -685,6 +685,8 @@ msgid ""
 "Return tuple `(i: int, s:str)` to indicate match with offset (see previous "
 "point) and have BrowserNav speak message `s`."
 msgstr ""
+"Palauttaa monikon `(i: int, s: str)` osoittamaan osuman, jossa on siirtymä "
+"(katso edellinen kohta) ja antaa Selausnavigoinnin puhua ilmoituksen `s`."
 
 #. type: Bullet: '* '
 msgid ""
@@ -692,6 +694,9 @@ msgid ""
 "an Exception, so that execution of your script will be terminated after "
 "calling match. The function is defined as:"
 msgstr ""
+"Kutsumalla `match()`-funktiota osoittaaksesi osuman. Tämä funktio aktivoi "
+"sisäisen virhekäsittelijän, joten skriptin suoritus keskeytyy `match`-kutsun "
+"jälkeen. Funktio on määritelty seuraavasti:"
 
 #. type: Plain text
 #, no-wrap
@@ -700,28 +705,35 @@ msgid ""
 "    def match(offset: int | TextInfo | Paragraph = None, message: str = None) -> None:\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    def match(offset: int | TextInfo | Paragraph = None, message: str = None) -> None:\n"
+"    ```\n"
 
 #. type: Plain text
 msgid ""
 "You are also allowed to import any modules and write general purpose scripts."
-msgstr ""
+msgstr "Voit myös tuoda moduuleja ja kirjoittaa yleiskäyttöisiä skriptejä."
 
 #. type: Plain text
 msgid ""
 "You can use `print()` statement to debug your script: the output will be "
 "printed to NVDA log."
 msgstr ""
+"Voit käyttää `print()`-lausetta skriptisi virheiden etsintään: tuloste näkyy "
+"NVDA:n lokissa."
 
 #. type: Title ####
 #, no-wrap
 msgid "Example scripts"
-msgstr ""
+msgstr "Skriptiesimerkkejä"
 
 #. type: Bullet: '1. '
 msgid ""
 "This script checks that current paragraph is a link and that the text of the "
 "previous heading level 5 starts with text of current paragraph:"
 msgstr ""
+"Tämä skripti tarkistaa, että nykyinen kappale on linkki ja että edellisen "
+"otsikkotason 5 teksti alkaa nykyisen kappaleen tekstillä:"
 
 #. type: Plain text
 #, no-wrap
@@ -735,12 +747,22 @@ msgid ""
 "        return None\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    try:\n"
+"        if controlTypes.Role.LINK in p.roles and p.previousHeading5.textInfo.text.startswith(p.text):\n"
+"            print(f\"pp5 {p.previousHeading5.textInfo.text}\")\n"
+"            return True\n"
+"    except NotFoundError:\n"
+"        return None\n"
+"    ```\n"
 
 #. type: Bullet: '2. '
 msgid ""
 "This script doesn't perform a match, but activates the last edit box on the "
 "page:"
 msgstr ""
+"Tämä skripti ei etsi vastinetta, vaan aktivoi viimeisen sivulla olevan "
+"muokkauskentän:"
 
 #. type: Plain text
 #, no-wrap
@@ -749,6 +771,9 @@ msgid ""
 "    p.end.previous.previousEdit.activate()\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    p.end.previous.previousEdit.activate()\n"
+"    ```\n"
 
 #. type: Bullet: '4. '
 msgid ""
