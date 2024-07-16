@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BrowserNav\n"
 "POT-Creation-Date: 2024-06-04 19:44+0000\n"
-"PO-Revision-Date: 2024-07-14 15:32+0300\n"
+"PO-Revision-Date: 2024-07-16 16:54+0300\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: Jani Kinnunen <jani.kinnunen@wippies.fi>\n"
 "Language: fi\n"
@@ -658,17 +658,17 @@ msgid ""
 "Your script must decide whether current paragraph matches your custom rule "
 "or not. You can either:"
 msgstr ""
-"Skriptisi on päätettävä, vastaako nykyinen kappale mukautettua sääntöäsi vai "
-"ei. Voit joko:"
+"Skriptisi on päätettävä, löytääkö mukautettu sääntösi nykyisen kappaleen "
+"vastaavuutena vai ei. Voit joko:"
 
 #. type: Bullet: '* '
 msgid "Return `True` if it matches, otherwise `False`."
-msgstr "Palauttaa arvon `True`, mikäli vastaa, muutoin `False`."
+msgstr "Palauttaa arvon `True`, mikäli vastaavuus löytyi, muutoin `False`."
 
 #. type: Bullet: '* '
 msgid "Return `None` or no `return` statement to indicate no match."
 msgstr ""
-"Palauttaa arvon `None` tai jättää `return`-lauseen pois ilmaistaksesi, ettei "
+"Palauttaa arvon `None` tai jättää `return`-lauseen pois ilmaisemaan, ettei "
 "vastaavuutta löytynyt."
 
 #. type: Bullet: '* '
@@ -676,17 +676,18 @@ msgid ""
 "Return an integer number `i` to indicate that `i`-th following or `i`-th "
 "preceding paragraph matches and must be spoken instead of current paragraph."
 msgstr ""
-"Palauttaa kokonaisluvun `i` ilmaistaksesi, että `i:n` mones seuraava tai `i:"
-"n` mones edeltävä kappale on vastaavuus ja se on puhuttava nykyisen "
-"kappaleen sijaan."
+"Palauttaa kokonaisluvun `i` ilmaisemaan, että seuraava `i`. tai edeltävä "
+"`i`. kappale on löytynyt vastaavuus ja se on puhuttava nykyisen kappaleen "
+"sijaan."
 
 #. type: Bullet: '* '
 msgid ""
 "Return tuple `(i: int, s:str)` to indicate match with offset (see previous "
 "point) and have BrowserNav speak message `s`."
 msgstr ""
-"Palauttaa monikon `(i: int, s: str)` osoittamaan osuman, jossa on siirtymä "
-"(katso edellinen kohta) ja antaa Selausnavigoinnin puhua ilmoituksen `s`."
+"Palauttaa monikon `(i: int, s: str)` osoittamaan löytyneen vastaavuuden, "
+"jossa on siirtymä (katso edellinen kohta) ja antaa Selausnavigoinnin puhua "
+"ilmoituksen `s`."
 
 #. type: Bullet: '* '
 msgid ""
@@ -694,9 +695,9 @@ msgid ""
 "an Exception, so that execution of your script will be terminated after "
 "calling match. The function is defined as:"
 msgstr ""
-"Kutsumalla `match()`-funktiota osoittaaksesi osuman. Tämä funktio aktivoi "
-"sisäisen virhekäsittelijän, joten skriptin suoritus keskeytyy `match`-kutsun "
-"jälkeen. Funktio on määritelty seuraavasti:"
+"Kutsumalla `match()`-funktiota osoittamaan löytyneen vastaavuuden. Tämä "
+"funktio aktivoi sisäisen virhekäsittelijän, joten skriptin suoritus "
+"keskeytyy `match`-kutsun jälkeen. Funktio on määritelty seuraavasti:"
 
 #. type: Plain text
 #, no-wrap
@@ -855,7 +856,7 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid "    This script performs a series of actions:\n"
-msgstr "Tämä skripti suorittaa toimintosarjan:\n"
+msgstr "    Tämä skripti suorittaa toimintosarjan:\n"
 
 #. type: Bullet: '    * '
 msgid "Finds a button with a given name and presses it."
@@ -870,21 +871,22 @@ msgstr ""
 msgid ""
 "Obtains newly focused element within that dialog: `d = getFocusParagraph()`"
 msgstr ""
-"Etsii äskettäin kohdistetun elementin kyseisessä valintaikkunassa: `d = "
+"Etsii valintaikkunasta äskettäin kohdistetun elementin: `d = "
 "getFocusParagraph()`"
 
 #. type: Bullet: '    * '
 msgid "Finds and checks checkbox in that dialog."
-msgstr ""
+msgstr "Etsii valintaikkunasta valintaruudun ja valitsee sen."
 
 #. type: Bullet: '    * '
 msgid "Finds another button in that dialog window by name and presses it."
 msgstr ""
+"Etsii valintaikkunasta toisen painikkeen nimen perusteella ja painaa sitä."
 
 #. type: Plain text
 #, no-wrap
 msgid "    These steps are repeated 20 times via `retry` function. Then after 500 ms pause, it finds \"Run Query\" button and presses it.\n"
-msgstr ""
+msgstr "    Nämä vaiheet toistetaan 20 kertaa `retry`-funktion avulla. 500 millisekunnin tauon jälkeen skripti etsii \"Run Query\" -painikkeen ja painaa sitä.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -902,6 +904,18 @@ msgid ""
 "            c.activate() \n"
 "        d.home.find(\"Link QCPR Project\").activate()\n"
 msgstr ""
+"    ```\n"
+"    def waitForDialogAndClickCheckbox():\n"
+"        try:\n"
+"            p.home.find(\"Link Last Used\").activate()\n"
+"            p.home.nextEmbeddedObject.activate()\n"
+"        except NotFoundError:\n"
+"            pass\n"
+"        d = getFocusParagraph()\n"
+"        c = d.home.nextCheckBox\n"
+"        if controlTypes.State.CHECKED not in c.obj.states:\n"
+"            c.activate() \n"
+"        d.home.find(\"Link QCPR Project\").activate()\n"
 
 #. type: Plain text
 #, no-wrap
@@ -911,6 +925,10 @@ msgid ""
 "    yield from retry(lambda: p.home.find(\"Run Query\").activate(), count=10)\n"
 "    ```\n"
 msgstr ""
+"    yield from retry(waitForDialogAndClickCheckbox, count=20)\n"
+"    yield 500\n"
+"    yield from retry(lambda: p.home.find(\"Run Query\").activate(), count=10)\n"
+"    ```\n"
 
 #. type: Bullet: '6. '
 msgid ""
@@ -918,6 +936,10 @@ msgid ""
 "finds `level`-th edit box from the beginning of the page (or from the end if "
 "level is negative) and invokes `script_editJupyter` on it."
 msgstr ""
+"Tämä on numeerinen skripti, sillä se ottaa syöteparametriksi `level`-"
+"muuttujan. Skripti etsii `level`:nnen muokkauskentän sivun alusta (tai "
+"lopusta, jos level on negatiivinen) ja suorittaa siinä `script_editJupyter`-"
+"funktion."
 
 #. type: Plain text
 #, no-wrap
@@ -939,6 +961,22 @@ msgid ""
 "    p.textInfo.obj.script_editJupyter(None)\n"
 "    ```\n"
 msgstr ""
+"    ```\n"
+"    if level > 0:\n"
+"        p = p.home\n"
+"        for i in range(level):\n"
+"            p = Paragraph(p.nextEdit.textInfo)\n"
+"    elif level <= 0:\n"
+"        level = 1-level\n"
+"        p = p.end.previous\n"
+"        tones.beep(500, 50)\n"
+"        for i in range(level):\n"
+"            p = Paragraph(p.previousEdit.textInfo)\n"
+"        else:\n"
+"            tones.beep(500, 50)\n"
+"    p.textInfo.obj.currentFocusableNVDAObject = p.textInfo.focusableNVDAObjectAtStart\n"
+"    p.textInfo.obj.script_editJupyter(None)\n"
+"    ```\n"
 
 #. type: Title ###
 #, no-wrap
@@ -1088,12 +1126,11 @@ msgid "Source code"
 msgstr "Lähdekoodi"
 
 #. type: Plain text
-#, fuzzy
 #| msgid ""
 #| "Source code is available at <https://github.com/mltony/nvda-browser-nav>."
 msgid "Source code is available at <http://github.com/mltony/nvda-indent-nav>."
 msgstr ""
-"Lähdekoodi on saatavilla osoitteessa <https://github.com/mltony/nvda-browser-"
+"Lähdekoodi on saatavilla osoitteessa <http://github.com/mltony/nvda-indent-"
 "nav>."
 
 #. type: Plain text
