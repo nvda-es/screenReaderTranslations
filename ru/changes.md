@@ -1,6 +1,6 @@
 # Что нового в NVDA
 
-## 2024.3
+## 2024.3 
 
 The Add-on Store will now notify you if any add-on updates are available on NVDA startup.
 
