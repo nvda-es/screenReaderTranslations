@@ -31,8 +31,8 @@ Unicode CLDR je također nadograđen.
 * Dodana podrška za Unicode normalizaciju za govor i brajicu. (#11570, #16466 @LeonarddeR).
   * To može biti korisno kada je određeni znak nepoznat za govornu jedinicu ili ne postoji u brajičnoj tablici, ali ima kompatibilnu alternativu kao što su to na primjer podebljani ili kosi znakovi koji se uobičajeno koriste na društvenim mrežama.
   * To također omogućuje čitanje jednadžbi u Microsoft Word uređivaču jednadžbi. (#4631)
-  * Ovu funkciju možete uključiti za govor i brajicu u dijaloškom okviru postavki u pripadajućim kategorijama.
-* Od sada ćete biti podrazumijeavano obavješteni o novim ažuriranjima dodataka prilikom pokretanja NVDA. (#15035)
+  * Ovu značajku možete uključiti za govor i brajicu u dijaloškom okviru postavki u pripadajućim kategorijama.
+* Od sada ćete biti podrazumijevano obavješteni o novim ažuriranjima dodataka prilikom pokretanja NVDA. (#15035)
   * To se može isključiti u "Add-on Store" kategoriji u postavkama.
   * NVDA provjerava svakodnevno za ažuriranje NVDA dodataka.
   * Provjeravat će se ažuriranja samo za jedan kanal (na primjer instalirani beta dodaci će biti provjeravani iz beta kanala).
@@ -74,8 +74,8 @@ Od sada će se prikazivati upozorenje ako pokušate pisati unutar mape koja nije
   * Poruke o pogrešci zabilježene kao `aria-errormessage` sada se izgovaraju u Google Chromeu i Mozilla Firefoxu. (#8318)
   * Ako postoji, NVDA će sada koristiti `aria-labelledby` atribut za  dohvaćanje pristupačnih naziva tablica u Mozilla Firefoxu. (#5183)
   * NVDA će ispravno izgovarati stavke izbornika u obliku izbornih gumbi i potvrdnih okvira prilikom prvog otvaranja podizbornika u Google Chromeu i Mozilla Firefoxu. (#14550)
-  * Funkcionalnost pretrage u modusu čitanja NVDA čitača zaslona sada je točnija kada stranica sadrži emoji znakove. (#16317, @LeonarddeR)
-  * U Mozilla Firefoxu, NVDA sada ispravno čita trenutni znak, trenutnu riječ i trenutni redak kada se kursor nalazi na točci umetanja na kraju redka. (#3156, @jcsteh)
+  * Značajka pretrage u modusu čitanja NVDA čitača zaslona sada je točnija kada stranica sadrži emoji znakove. (#16317, @LeonarddeR)
+  * U Mozilla Firefoxu, NVDA sada ispravno čita trenutni znak, trenutnu riječ i trenutni redak kada se kursor nalazi na točki umetanja na kraju redka. (#3156, @jcsteh)
 * NVDA će sada ispravno čitati prijedloge automatskog popunjavanja u Eclipse i drugim okruženjima baziranima na Eclipseu u Windowsima 11. (#16416, @thgcode)
 * Unapređena pouzdanost automatskog čitanja teksta, osobito u aplikacijama naredbenog redka. (#15850, #16027, @Danstiv)
 * NVDA će ispravno izgovarati promjene u označavanju pri uređivanju teksta ćelije u Microsoft Excelu. (#15843)
