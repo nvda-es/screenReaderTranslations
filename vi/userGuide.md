@@ -445,7 +445,7 @@ Nếu bạn đã đóng hộp thoại này hay đang sử dụng NVDA được c
 Một hộp thoại xuất hiện cho phép bạn chọn nơi sẽ tạo bản chạy trực tiếp.
 Đó có thể là một thư mục trên ổ đĩa cứng, trên ổ USB hay một phương tiện lưu trữ bất kỳ.
 Mặc định, một thư mục mới sẽ được tạo cho bản chạy trực tiếp..
-Bạn cũng có thể chọn dùng một thư mục đã tồn tại, nó sẽ ghi đè các tập tin trong thư mục.
+Bạn cũng có thể chọn dùng một thư mục có sẵn, nó sẽ ghi đè các tập tin trong thư mục đó.
 Nếu thư mục có sẵn là một bản chạy trực tiếp của NVDA, bản chạy đó sẽ được cập nhật.
 
 Ở đây cũng có tùy chọn chép thư mục cấu hình của người dùng hiện tại sang phiên bản chạy trực tiếp.
@@ -519,11 +519,11 @@ Tuy nhiên, bạn có thể bật hay tắt thủ công việc thu thập dữ l
 ### Giới thiệu về các lệnh bàn phím của NVDA {#AboutNVDAKeyboardCommands}
 #### phím bổ trợ NVDA {#TheNVDAModifierKey}
 
-Hầu hết các phím tắt trong NVDA thường là một tổ hợp phím với sự kết hợp của một phím gọi là phím bổ trợ NVDA với một hay nhiều phím khác.
+Hầu hết các phím tắt trong NVDA là một tổ hợp phím với sự kết hợp của một phím gọi là phím bổ trợ NVDA với một hay nhiều phím khác.
 Ngoại trừ trường hợp duyệt văn bản trong kiểu bàn phím Desktop sử dụng các phím số bên bàn phím số và một vài trường hợp ngoại lệ khác.
 
-NVDA có thể cấu hình để dùng phím Insert, Insert bên bàn phím số (numpad Insert)hay phím Khóa hoa (Caps Lock) làm phím bổ trợ NVDA.
-Mặc định thì cả hai phím Insert đều được chọn là phím bổ trợ cho NVDA.
+NVDA có thể cấu hình để dùng phím `Insert`, `Insert bên bàn phím số (numpad Insert)` hay `phím Khóa hoa (Caps Lock)` làm phím bổ trợ NVDA.
+Mặc định thì cả phím `Insert` và `Insert bàn phím số`đều được chọn là phím bổ trợ cho NVDA.
 
 Nếu muốn phím bổ trợ hoạt động theo đúng chức năng của nó(ví dụ phím Khóa hoa) thì bạn bấm nhanh hai lần phím đó 
 
@@ -926,10 +926,10 @@ Dù rằng phải dùng chuột vật lí khi muốn điều hướng bằng chu
 |Khóa nút chuột trái |shift+dấu chia bàn phím số |NVDA+control+[ |không có |Khóa nút chuột trái, bấm lần nữa để mở lại. Để kéo chuột, bấm lệnh này để khóa nút chuột trái rồi di chuyển bằng chuột  trên máy tính hoặc dùng các phím lệnh di chuyển chuột|
 |Kích hoạt nút chuột phải |dấu nhân bàn phím số |NVDA+] |Bấm và giữ |Kích hoạt nút chuột phải, thường dùng để mở thực đơn ngữ cảnh tại vị trí chuột.|
 |Khóa nút chuột phải |shift+dấu nhân bàn phím số |NVDA+control+] |không có |Khóa nút chuột phải, bấm một lần nữa để mở lại. Để kéo chuột, bấm lệnh này để khóa nút chuột phải rồi di chuyển bằng chuột  trên máy tính hoặc dùng các phím lệnh di chuyển chuột|
-|Cuộn lên tự vị trí chuột |không có |không có |không có |Cuộn con lăn chuột lên từ vị trí chuột hiện tại|
-|Cuộn xuống tự vị trí chuột|không có |không có |không có |Cuộn con lăn chuột xuống từ vị trí chuột hiện tại|
-|Cuộn qua trái tự vị trí chuột |không có |không có |không có |Cuộn con lăn chuột qua trái từ vị trí chuột hiện tại|
-|Cuộn qua phải tự vị trí chuột |không có |không có |không có |Cuộn con lăn chuột qua phải từ vị trí chuột hiện tại|
+|Cuộn lên từ vị trí chuột |không có |không có |không có |Cuộn con lăn chuột lên từ vị trí chuột hiện tại|
+|Cuộn xuống từ vị trí chuột|không có |không có |không có |Cuộn con lăn chuột xuống từ vị trí chuột hiện tại|
+|Cuộn qua trái từ vị trí chuột |không có |không có |không có |Cuộn con lăn chuột qua trái từ vị trí chuột hiện tại|
+|Cuộn qua phải từ vị trí chuột |không có |không có |không có |Cuộn con lăn chuột qua phải từ vị trí chuột hiện tại|
 |Di chuyển chuột đến vị trí đối tượng điều hướng |NVDA+dấu chia bàn phím số |NVDA+shift+m |không có |Di chuyển chuột đến vị trí đối tượng điều hướng hiện tại và con trỏ duyệt|
 |Chuyển đến đối tượng dưới con trỏ chuột |NVDA+dấu nhân bàn phím số |NVDA+shift+n |không có |Đưa đối tượng điều hướng đến đối tượng tại vị trí chuột|
 
@@ -1911,7 +1911,7 @@ Khi bật tùy chọn này, việc chuẩn hóa unicode được thực hiện t
 Điều này có lợi khi đọc các ký tự có thể được thể hiện dưới nhiều hình thức.
 NVDA dùng thuật toán NFKC (Normalization Form Compatibility Composition), mang lại những lợi ích sau, trong số những lợi ích khác:
 
-1. Phiên bản in đậm và in nghiêng của các ký tự là một phần của tiêu chuẩn unicode và thường được sử dụng trên phương tiện truyền thông xã hội được chuẩn hóa thành tương đương tương thích phổ biến nhất của chúng.
+1. Phiên bản in đậm và in nghiêng của các ký tự là một phần của tiêu chuẩn unicode và thường được sử dụng trên phương tiện truyền thông mạng xã hội được chuẩn hóa thành tương đương tương thích phổ biến nhất của chúng.
 Ví dụ: chữ "h" trong mẫu tự Latinh cũng có thể được trình bày dưới dạng "𝐡" (in đậm), "ℎ" (in nghiêng), v.v. nhưng sẽ luôn được đọc là "h" khi tính năng chuẩn hóa được bật.
 Khía cạnh chuẩn hóa này cũng hỗ trợ việc đọc các công thức trong trình biên soạn công thức của Microsoft Word.
 
@@ -1972,7 +1972,7 @@ Phần lớn các bộ đọc đều hỗ trợ chức năng này.
 
 Thường thì tùy chọn này được bật.
 Tuy nhiên, một số bộ đọc của Microsoft không phát triển tính năng này nên hoạt động không chính xác.
-Các bộ đọc từ Code Factory, cả add-on và ứng dụng SAPI, đều không thực hiện nó một cách chính xác và gây ra lỗi đánh vần ngoài ý muốn trong văn bản được đọc (ví dụ, trong trình hay hộp thoại NVDA).
+Các bộ đọc từ Code Factory, cả add-on và ứng dụng SAPI, đều không thực hiện nó một cách chính xác và gây ra lỗi đánh vần ngoài ý muốn trong văn bản được đọc (ví dụ, trong trình đơn hay hộp thoại của NVDA).
 Nếu bạn gặp trục trặc khi phát âm một số kí tự nhất định, hãy thử tắt nó đi.
 
 ##### Chờ để mô tả cho kí tự khi di chuyển con trỏ {#delayedCharacterDescriptions}
@@ -2181,7 +2181,7 @@ Bật tùy chọn này có thể giúp bạn đọc trôi chảy hơn, nhưng c�
 |Mặc định |Tắt|
 
 Khi tùy chọn này được bật, quá trình chuẩn hóa unicode sẽ được thực hiện trên văn bản có thể hiện bằng chữ nổi trên màn hình chữ nổi.
-Điều này có lợi khi gặp các ký tự bằng chữ nổi chưa được biết đến trong một bảng chữ nổi cụ thể và có ký tự thay thế tương thích, chẳng hạn như các ký tự in đậm và in nghiêng thường được sử dụng trên mạng xã hội.
+Điều này có lợi khi gặp các ký tự bằng chữ nổi chưa được biết đến trong một bảng chữ nổi cụ thể và có ký tự thay thế tương thích, chẳng hạn như các ký tự in đậm và in nghiêng thường được sử dụng trên phương tiện truyền thông mạng xã hội.
 Các lợi ích khác của việc chuẩn hóa unicode đã được giải thích trong greater chi tiết trong [phần dành cho cài đặt tiếng nói tương đương](#SpeechUnicodeNormalization).
 
 Để bật / tắt tính năng chuẩn hóa unicode ở mọi nơi, vui lòng gán thao tác / phím tắt thông qua [hộp thoại Quản lý các thao tác](#InputGestures).
@@ -2924,7 +2924,7 @@ Kiểu này hoạt động tốt nhất khi đọc tài liệu trong một ứng
 Kiểu này hoạt động tốt khi làm việc với một tài liệu sử dụng các khối đoạn văn bản.
 Lưu ý là kiểu đoạn này không dùng được trong Microsoft Word hay Microsoft Outlook, trừ khi bạn đang dùng UIA để truy cập các điều khiển của Microsoft Word.
 
-Bạn có thể chuyển qua lại giữa các kiểu đoạn được hỗ trợ ở bất cứ đâu bằng cách gán thao tác trong [Hộp thoại quản lý các thao tác](#InputGestures).
+Bạn có thể chuyển qua lại giữa các kiểu đoạn được hỗ trợ ở bất cứ đâu bằng cách gán thao tác / phím tắt trong [Hộp thoại quản lý các thao tác](#InputGestures).
 
 #### Cài Đặt Cửa Hàng Add-on {#AddonStoreSettings}
 
@@ -4088,7 +4088,7 @@ Các thiết bị thêm vào sau đây cũng được hỗ trợ, và không yê
 * APH Chameleon 20
 * Humanware BrailleOne
 * NLS eReader
-  * Lưu ý là Zoomax hiện không được hỗ trợ khi không có trình điều khiển gên ngoài
+  * Lưu ý là Zoomax hiện không được hỗ trợ khi không có trình điều khiển bên ngoài
 
 Sau đây là danh sách các phím được gán của mẫu màn hình chữ nổi này trong NVDA.
 Vui lòng xem tài liệu hướng dẫn của màn hình chữ nổi để biết các phím tương ứng.
