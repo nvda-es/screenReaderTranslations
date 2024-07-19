@@ -13,7 +13,6 @@ Help Tech Activator Pro braille ekranları için destek eklendi.
 Fare tekerleğini dikey ve yatay olarak kaydırmak için kısayolu atanmamış komutlar eklendi.
 
 Özellikle Windows 11 Emoji Paneli ve Pano geçmişi için birkaç hata düzeltmesi yapıldı.
-
 Web tarayıcılarında hata mesajlarının, figürlerin, resim yazılarının, tablo etiketlerinin ve onay kutusu/radyo düğmesi menü öğelerinin seslendirilmesiyle ilgili düzeltmeler yapıldı.
 
 LibLouis güncellendi, Kiril Sırpçası, Yidiş, birkaç eski dil, Türkçe ve Uluslararası Fonetik Alfabesi için yeni Braille tabloları eklendi.
