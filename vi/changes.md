@@ -19,7 +19,6 @@ Với các trình duyệt web, sửa lỗi đọc các thông điệp báo lỗi
 Đã cập nhật eSpeak, thêm hỗ trợ cho ngôn ngữ Karakalpak.
 Unicode CLDR cũng đã được cập nhật.
 
-
 ### Tính năng mới
 
 * Các phím lệnh mới:

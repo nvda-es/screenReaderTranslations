@@ -522,7 +522,7 @@ Tuy nhiên, bạn có thể bật hay tắt thủ công việc thu thập dữ l
 Hầu hết các phím tắt trong NVDA là một tổ hợp phím với sự kết hợp của một phím gọi là phím bổ trợ NVDA với một hay nhiều phím khác.
 Ngoại trừ trường hợp duyệt văn bản trong kiểu bàn phím Desktop sử dụng các phím số bên bàn phím số và một vài trường hợp ngoại lệ khác.
 
-NVDA có thể cấu hình để dùng phím `Insert`, `Insert bên bàn phím số (numpad Insert)` hay `phím Khóa hoa (Caps Lock)` làm phím bổ trợ NVDA.
+Có thể cấu hình NVDA để dùng phím `Insert`, `Insert bên bàn phím số (numpad Insert)` hay `phím Khóa hoa (Caps Lock)` làm phím bổ trợ `NVDA`.
 Mặc định thì cả phím `Insert` và `Insert bàn phím số`đều được chọn là phím bổ trợ cho NVDA.
 
 Nếu muốn phím bổ trợ hoạt động theo đúng chức năng của nó(ví dụ phím Khóa hoa) thì bạn bấm nhanh hai lần phím đó 
