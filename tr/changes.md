@@ -1,6 +1,5 @@
 # NVDA'daki Yenilikler
 
-
 ## 2024.3
 
 Eklenti Mağazası, NVDA başlangıcında herhangi bir eklenti güncellemesi olup olmadığını bildirecek.
@@ -14,16 +13,17 @@ Help Tech Activator Pro braille ekranları için destek eklendi.
 Fare tekerleğini dikey ve yatay olarak kaydırmak için kısayolu atanmamış komutlar eklendi.
 
 Özellikle Windows 11 Emoji Paneli ve Pano geçmişi için birkaç hata düzeltmesi yapıldı.
+
 Web tarayıcılarında hata mesajlarının, figürlerin, resim yazılarının, tablo etiketlerinin ve onay kutusu/radyo düğmesi menü öğelerinin seslendirilmesiyle ilgili düzeltmeler yapıldı.
 
 LibLouis güncellendi, Kiril Sırpçası, Yidiş, birkaç eski dil, Türkçe ve Uluslararası Fonetik Alfabesi için yeni Braille tabloları eklendi.
-eSpeak güncellendi, Karakalpak dili desteği eklendi.
+ESpeak güncellendi, Karakalpak dili desteği eklendi.
 Unicode CLDR de güncellendi.
 
 ### Yeni Özellikler
 
 * Yeni tuş komutları:
-   * Web sayfalarında ve Dism++ gibi dinamik içeriğe sahip uygulamalarda dolaşımı geliştirmek amacıyla fare tekerleğinin dikey ve yatay kaydırılması için kısayol tuşu atanmamış komutlar eklendi. (#16462, @ Cary - Rowen)
+  * Web sayfalarında ve Dism++ gibi dinamik içeriğe sahip uygulamalarda dolaşımı geliştirmek amacıyla fare tekerleğinin dikey ve yatay kaydırılması için kısayol tuşu atanmamış komutlar eklendi. (#16462, @ Cary - Rowen)
 * Konuşma ve braille çıktısı için Unicode Normalleştirmesi desteği eklendi. (#11570, #16466 @ LeonarddeR).
    * Bu, herhangi bir konuşma sentezleyicisi veya braille tablosu tarafından tanınmayan ve sosyal medyada yaygın olarak kullanılan kalın ve italik karakterler gibi uygun bir alternatife sahip karakterleri okurken yararlı olabilir.
       
