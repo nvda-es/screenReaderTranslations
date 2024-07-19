@@ -25,52 +25,52 @@ Unicode CLDR de güncellendi.
   * Web sayfalarında ve Dism++ gibi dinamik içeriğe sahip uygulamalarda dolaşımı geliştirmek amacıyla fare tekerleğinin dikey ve yatay kaydırılması için kısayol tuşu atanmamış komutlar eklendi. (#16462, @ Cary - Rowen)
 * Konuşma ve braille çıktısı için Unicode Normalleştirmesi desteği eklendi. (#11570, #16466 @ LeonarddeR).
   * Bu, herhangi bir konuşma sentezleyicisi veya braille tablosu tarafından tanınmayan ve sosyal medyada yaygın olarak kullanılan kalın ve italik karakterler gibi uygun bir alternatife sahip karakterleri okurken yararlı olabilir.
-   * Microsoft Word denklem düzenleyicisindeki denklemlerin okunmasını da sağlar. 4631
-   * Bu işlevi, NVDA Ayarları iletişim kutusundaki ilgili ayar kategorilerinden konuşma ve braille için etkinleştirebilirsiniz.
+  * Microsoft Word denklem düzenleyicisindeki denklemlerin okunmasını da sağlar. 4631
+  * Bu işlevi, NVDA Ayarları iletişim kutusundaki ilgili ayar kategorilerinden konuşma ve braille için etkinleştirebilirsiniz.
 * Varsayılan olarak, NVDA başlangıcından sonra herhangi bir eklenti güncellemesi olup olmadığı konusunda bilgilendirileceksiniz. (#15035)
-   * Bu işlev NVDA ayarlarındaki "Eklenti Mağazası" kategorisinden devre dışı bırakılabilir.
-   * NVDA eklenti güncellemelerini günlük olarak kontrol eder.
-   * Güncellemeler Yalnızca aynı kanal bazında kontrol edilecektir (örneğin, beta eklentiler için yalnızca beta kanalındaki güncellemeler bildirilecektir).
+  * Bu işlev NVDA ayarlarındaki "Eklenti Mağazası" kategorisinden devre dışı bırakılabilir.
+  * NVDA eklenti güncellemelerini günlük olarak kontrol eder.
+  * Güncellemeler Yalnızca aynı kanal bazında kontrol edilecektir (örneğin, beta eklentiler için yalnızca beta kanalındaki güncellemeler bildirilecektir).
 * Help Tech Activator Pro ekranları için destek eklendi. (#16668)
 
 ### Değişiklikler
 
 * Bileşen güncellemeleri:
-   * eSpeak NG 1.52 - dev commit `cb62d93fd7` sürümüne güncellendi. (#16495)
-      * Karakalpak dili eklendi.
-   * Unicode CLDR 45.0 sürümüne güncellendi. (# 16507, @OzancanKaratas)
-   * FAST_DIFF_MATCH_PATCH (terminallerdeki ve diğer dinamik içerikteki değişiklikleri algılamak için kullanılır) 2.1.0 sürümüne güncellendi. (#16508, @codeofdusk)
-   * LibLouis braille translator [3.30.0](https://github.com/liblouis/liblouis/releases/tag/v3.30.0) sürümüne güncellendi. (#16652, @codeofdusk)
-      * Yeni braille tabloları:
-         * Sırpça Kiril.
-         * Yidiş.
-         * Çeşitli eski diller: Kutsal İbranice, Akadça, Süryanice, Ugaritçe ve latin alfabesine çevrilmiş Çivi Yazısı.
-         * Türkçe derece 2. (#16735)
-         * Uluslararası Fonetik Alfabe. (#16773)
-   * NSIS 3.10 sürümüne güncellendi (#16674, @dpy013)
-   * Markdown 3.6 sürümüne güncellendi (#16725, @dpy013)
-   * Nh3 0.2.17 sürümüne güncellendi (#16725, @dpy013)
+  * eSpeak NG 1.52 - dev commit `cb62d93fd7` sürümüne güncellendi. (#16495)
+    * Karakalpak dili eklendi.
+  * Unicode CLDR 45.0 sürümüne güncellendi. (# 16507, @OzancanKaratas)
+  * FAST_DIFF_MATCH_PATCH (terminallerdeki ve diğer dinamik içerikteki değişiklikleri algılamak için kullanılır) 2.1.0 sürümüne güncellendi. (#16508, @codeofdusk)
+  * LibLouis braille translator [3.30.0](https://github.com/liblouis/liblouis/releases/tag/v3.30.0) sürümüne güncellendi. (#16652, @codeofdusk)
+    * Yeni braille tabloları:
+      * Sırpça Kiril.
+      * Yidiş.
+      * Çeşitli eski diller: Kutsal İbranice, Akadça, Süryanice, Ugaritçe ve latin alfabesine çevrilmiş Çivi Yazısı.
+      * Türkçe derece 2. (#16735)
+      * Uluslararası Fonetik Alfabe. (#16773)
+  * NSIS 3.10 sürümüne güncellendi (#16674, @dpy013)
+  * Markdown 3.6 sürümüne güncellendi (#16725, @dpy013)
+  * Nh3 0.2.17 sürümüne güncellendi (#16725, @dpy013)
 * Yedek braille çıktı tablosu birleşik İngilizce Braille Kod derece 1 olarak ayarlı. Yedek Braille girdi tablosu  da aynı şekilde birleşik İngilizce Braille Kod derece 1 olarak ayarlandı. (#9863, @JulienCochuyt, @LeonarddeR)
 * NVDA erişilebilir alt nesneleri olmayan ancak etiketi veya açıklaması olan figürleri seslendirecektir. (#14514)
 * Tarama kipinde satır satır okurken, "tablo başlığı" ifadesi uzun bir figürün veya tablo başlığının her satırında seslendirilmeyecek. (#14874)
 * Python konsolunda, giriş geçmişinde dolaşıldığında son çalıştırılmayan komut silinmeyecek. (#16653, @CyrilleB79)
 * İsteğe bağlı NVDA kullanım istatistiklerinin toplanmasının bir parçası olarak benzersiz bir anonim kimlik de gönderilecek. (#16266)
 * Varsayılan olarak, taşınabilir kopya oluşturulurken yeni bir klasör oluşturulacak.
-   Taşınabilir kopyayı boş olmayan bir klasöre oluşturmaya çalıştığınızda uyarı mesajıyla bilgilendirileceksiniz. (#16686)
+Taşınabilir kopyayı boş olmayan bir klasöre oluşturmaya çalıştığınızda uyarı mesajıyla bilgilendirileceksiniz. (#16686)
 
 ### Hata düzeltmeleri
 
 * Windows 11 düzeltmeleri:
-   * Pano geçmişi ve emoji paneli kapatıldığında NVDA donuyormuş gibi hareket etmeyecek. (# 16346, # 16347, @josephsl)
-   * NVDA, IME arayüzü açıldığında görünür önerileri tekrar seslendirecek. (#14023, @josephsl)
-   * Emoji paneli menü öğeleri arasında dolaşılırken NVDA artık "pano geçmişi" ifadesini iki kez seslendirmeyecek. (#16532, @josephsl)
-   * NVDA, emoji panelindeki kaomojiler ve semboller incelenirken konuşmayı ve braille çıktısını bölmeyecek. (#16533, @josephsl)
+  * Pano geçmişi ve emoji paneli kapatıldığında NVDA donuyormuş gibi hareket etmeyecek. (# 16346, # 16347, @josephsl)
+  * NVDA, IME arayüzü açıldığında görünür önerileri tekrar seslendirecek. (#14023, @josephsl)
+  * Emoji paneli menü öğeleri arasında dolaşılırken NVDA artık "pano geçmişi" ifadesini iki kez seslendirmeyecek. (#16532, @josephsl)
+  * NVDA, emoji panelindeki kaomojiler ve semboller incelenirken konuşmayı ve braille çıktısını bölmeyecek. (#16533, @josephsl)
 * Web tarayıcısı düzeltmeleri:
-   * `Aria -errormessage` ile  gösterilen hata mesajları Google Chrome ve Mozilla Firefox'ta seslendirilecek. (#8318)
-   * Varsa, NVDA Mozilla Firefox'taki tablolarda  erişilebilir adlar sağlamak için `aria-labelledby` özelliğini kullanacaktır. (#5183)
-   * NVDA, Google Chrome ve Mozilla Firefox'taki alt menülere ilk kez girilddiğinde radyo ve onay kutusu menü öğelerini doğru bir şekilde seslendirecek. (#14550)
-   * NVDA'nın tarama kipinde bulma işlevi, sayfa emoji içerdiğinde daha düzgün çalışacak. (# 16317, @LeonarddeR)
-   * Mozilla Firefox'ta, NVDA imleç bir satırın sonundaki ekleme noktasındayken geçerli karakteri, kelimeyi ve satırı doğru bir şekilde seslendirecek. (#3156, @jcsteh)
+  * `Aria -errormessage` ile  gösterilen hata mesajları Google Chrome ve Mozilla Firefox'ta seslendirilecek. (#8318)
+  * Varsa, NVDA Mozilla Firefox'taki tablolarda  erişilebilir adlar sağlamak için `aria-labelledby` özelliğini kullanacaktır. (#5183)
+  * NVDA, Google Chrome ve Mozilla Firefox'taki alt menülere ilk kez girilddiğinde radyo ve onay kutusu menü öğelerini doğru bir şekilde seslendirecek. (#14550)
+  * NVDA'nın tarama kipinde bulma işlevi, sayfa emoji içerdiğinde daha düzgün çalışacak. (# 16317, @LeonarddeR)
+  * Mozilla Firefox'ta, NVDA imleç bir satırın sonundaki ekleme noktasındayken geçerli karakteri, kelimeyi ve satırı doğru bir şekilde seslendirecek. (#3156, @jcsteh)
 * NVDA, Eclipse ve Windows 11 'deki diğer Eclipse tabanlı ortamlardaki otomatik tamamlama önerilerini doğru bir şekilde seslendirecek. (#16416, @thgcode)
 * Özellikle terminal uygulamalarında otomatik metin okumanın güvenilirliği artırıldı. (#15850, #16027, @Danstiv)
 * NVDA, Microsoft Excel'de bir hücrenin metnini düzenlerken seçim değişikliklerini doğru bir şekilde seslendirecek. (#15843)
@@ -224,6 +224,7 @@ Yeni Tayca, Filipin dili ve Rumence braille tabloları eklendi.
 Özellikle eklenti mağazası, braille, Libre Office, Microsoft Office ve ses için birçok hata düzeltmesi yapıldı.
 
 ### Önemli notlar
+
 * Bu sürüm mevcut eklentilerle uyumluluğu bozar
 * Windows 7 ve Windows 8 artık desteklenmiyor.
 Desteklenen asgari Windows sürümü Windows 8.1'dir.
