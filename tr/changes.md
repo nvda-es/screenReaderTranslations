@@ -58,7 +58,7 @@ Unicode CLDR de güncellendi.
 * Python konsolunda, giriş geçmişinde dolaşıldığında son çalıştırılmayan komut silinmeyecek. (#16653, @CyrilleB79)
 * İsteğe bağlı NVDA kullanım istatistiklerinin toplanmasının bir parçası olarak benzersiz bir anonim kimlik de gönderilecek. (#16266)
 * Varsayılan olarak, taşınabilir kopya oluşturulurken yeni bir klasör oluşturulacak.
-   Taşınabilir kopyayı boş olmayan bir klasöre oluşturmaya çalıştığınızda uyarı mesajıyla bilgilendirileceksiniz. (#16684)
+   Taşınabilir kopyayı boş olmayan bir klasöre oluşturmaya çalıştığınızda uyarı mesajıyla bilgilendirileceksiniz. (#16686)
 
 ### Hata düzeltmeleri
 
@@ -82,8 +82,9 @@ Unicode CLDR de güncellendi.
 * Windows 10/11 hesap makinesinde panodan yapıştırıldığında, NVDA yapıştırılan tam sayıyı doğru bir şekilde seslendirecek. (#16573, @TristanBurchett)
 * Uzak Masaüstü oturumu bağlantısı kesilip yeniden bağlanıldığında konuşma durmayacak. (#16722, @jcsteh)
 * Visual Studio Code'da bir nesnenin adı için metin inceleme komutları için destek eklendi. (# 16248, @ Cary - Rowen)
-* Mozilla Firefox'ta, NVDA imleç bir satırın sonundaki ekleme noktasındayken geçerli karakteri, kelimeyi ve satırı doğru bir şekilde seslendirecek. (#3156, @jcsteh)
 * NVDA sesleri mono ses cihazında da çalınabilecek. (#16770, @jcsteh)
+* Outlook.com ve yeni Outlook'ta kimden, gizli ve BCC alanlarında ok tuşlarıyla dolaşıldığında NVDA adresleri seslendirecek. (#16856)
+* NVDA eklenti kurulumunda hata oluştuğu durumlarda daha doğru biçimde davranacak. (#16704)
 
 ### Changes for Developers
 
