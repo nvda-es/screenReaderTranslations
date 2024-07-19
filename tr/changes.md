@@ -24,8 +24,7 @@ Unicode CLDR de güncellendi.
 * Yeni tuş komutları:
   * Web sayfalarında ve Dism++ gibi dinamik içeriğe sahip uygulamalarda dolaşımı geliştirmek amacıyla fare tekerleğinin dikey ve yatay kaydırılması için kısayol tuşu atanmamış komutlar eklendi. (#16462, @ Cary - Rowen)
 * Konuşma ve braille çıktısı için Unicode Normalleştirmesi desteği eklendi. (#11570, #16466 @ LeonarddeR).
-   * Bu, herhangi bir konuşma sentezleyicisi veya braille tablosu tarafından tanınmayan ve sosyal medyada yaygın olarak kullanılan kalın ve italik karakterler gibi uygun bir alternatife sahip karakterleri okurken yararlı olabilir.
-      
+  * Bu, herhangi bir konuşma sentezleyicisi veya braille tablosu tarafından tanınmayan ve sosyal medyada yaygın olarak kullanılan kalın ve italik karakterler gibi uygun bir alternatife sahip karakterleri okurken yararlı olabilir.
    * Microsoft Word denklem düzenleyicisindeki denklemlerin okunmasını da sağlar. 4631
    * Bu işlevi, NVDA Ayarları iletişim kutusundaki ilgili ayar kategorilerinden konuşma ve braille için etkinleştirebilirsiniz.
 * Varsayılan olarak, NVDA başlangıcından sonra herhangi bir eklenti güncellemesi olup olmadığı konusunda bilgilendirileceksiniz. (#15035)
