@@ -522,8 +522,8 @@ Ancak NVDA'nın genel ayarlar panelinde veri toplama işlemini manuel olarak etk
 NVDA'ya özel birçok klavye komutu NVDA değişken tuşu adı verilen özel bir tuş ile klavyedeki başka tuşlara basılarak meydana gelen kombinasyonlardan oluşmaktadır.
 Masaüstü klavye düzeninde sadece numaratördeki tuşları kullanan metin inceleme komutları istisnai durumlardandır ve elbette başka istisnalar da olabilir.
 
-Numaratördeki insert, diğer insert, veya büyük harf kilidi tuşlarından birisi NVDA değişken tuşu olarak ayarlanabilir.
-Varsayılan olarak, numaratördeki insert ve diğer insert tuşlarının her ikisi NVDA değişken tuşu olarak atanmıştır.
+Numaratördeki `insert`, diğer `insert`, veya `büyük harf kilidi` tuşlarından birisi `NVDA` değişken tuşu olarak ayarlanabilir.
+Varsayılan olarak, numaratördeki `insert` ve diğer `insert` tuşlarının her ikisi `NVDA` değişken tuşu olarak atanmıştır.
 
 NVDA değişken tuşu olarak atadığınız bir tuşun, kendi özgün görevini yapmasını istiyorsanız, (Örneğin NVDA tuşu olarak büyük harfkilidi tuşunu ayarladıysanız, büyük harf kilidini açabilmek için), bu tuşa peşpeşe 2 kez basmanız gerekir.
 
@@ -2175,15 +2175,14 @@ Ekranı kaydırdığınızda bölünmüş sözcüğün kalanını okuyabilirsini
 Bunu etkinleştirmek daha akıcı bir okuma olanağı sunmakla birlikte, ekranı kaydırmak için ilgili tuşlara daha fazla basmanızı gerektirecektir.
 
 #####Unicode normalleştirme {#BrailleUnicodeNormalization}
-+| . {.hideHeaderRow} |.|
+| . {.hideHeaderRow} |.|
 |---|---|
 |Seçenekler |Varsayılan (Devre Dışı), Etkin, Devre Dışı|
 |Varsayılan |Devre Dışı|
 
 Bu seçenek etkinleştirildiğinde, braille ekranında braille ile yazılan metin üzerinde unicode normalleştirme yapılır.
 Bu seçenek, belirli bir braille tablosunda bilinmeyen ve sosyal medyada yaygın olarak kullanılan kalın ve italik karakterler gibi uyumlu bir alternatifi olan braille karakterleriyle karşılaştığınızda işe yarar.
-Unicode normalleştirmeyle ilgili daha fazla bilgi için, rehberin konuşma bölümünde olan [unicode normalleştirme (#SpeechUnicodeNormalization) bakabilirsiniz.
-
+Unicode normalleştirmeyle ilgili daha fazla bilgi için, rehberin konuşma bölümünde olan [unicode normalleştirme](#SpeechUnicodeNormalization) kısmına bakabilirsiniz.
 Unicode normalleştirmeyi istediğiniz yerden değiştirmek için lütfen [Girdi Hareketleri iletişim kutusunu](#InputGestures) kullanarak bir hareket atayın.
 
 ##### Odak bağlam sunumu {#BrailleSettingsFocusContextPresentation}
@@ -2937,9 +2936,9 @@ Bu kontrol 24 saatte bir yapılır.
 Bildirimler yalnızca aynı kanalda güncellemeleri bulunan eklentiler için gerçekleşecektir.
 Örneğin, kurulu beta eklentiler için yalnızca beta kanalındaki güncellemelerden haberdar olursunuz.
 
-+| . {.hideHeaderRow} |.|
+| . {.hideHeaderRow} |.|
 |---|---|
-+|Seçenekler |Bildir (Varsayılan), Devre Dışı |
+|Seçenekler |Bildir (Varsayılan), Devre Dışı |
 |Varsayılan |Bildir |
 
 |Seçenek |Davranış |
