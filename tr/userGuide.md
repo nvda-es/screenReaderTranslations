@@ -523,7 +523,7 @@ NVDA'ya özel birçok klavye komutu NVDA değişken tuşu adı verilen özel bir
 Masaüstü klavye düzeninde sadece numaratördeki tuşları kullanan metin inceleme komutları istisnai durumlardandır ve elbette başka istisnalar da olabilir.
 
 Numaratördeki `insert`, diğer `insert`, veya `büyük harf kilidi` tuşlarından birisi `NVDA` değişken tuşu olarak ayarlanabilir.
-Varsayılan olarak, numaratördeki `insert` ve diğer `insert` tuşlarının her ikisi `NVDA` değişken tuşu olarak atanmıştır.
+Varsayılan olarak, `numaratör insert` ve `diğer insert` tuşlarının her ikisi NVDA değişken tuşu olarak atanmıştır.
 
 NVDA değişken tuşu olarak atadığınız bir tuşun, kendi özgün görevini yapmasını istiyorsanız, (Örneğin NVDA tuşu olarak büyük harfkilidi tuşunu ayarladıysanız, büyük harf kilidini açabilmek için), bu tuşa peşpeşe 2 kez basmanız gerekir.
 
@@ -2174,7 +2174,7 @@ Ekranı kaydırdığınızda bölünmüş sözcüğün kalanını okuyabilirsini
 
 Bunu etkinleştirmek daha akıcı bir okuma olanağı sunmakla birlikte, ekranı kaydırmak için ilgili tuşlara daha fazla basmanızı gerektirecektir.
 
-#####Unicode normalleştirme {#BrailleUnicodeNormalization}
+##### Unicode normalleştirme {#BrailleUnicodeNormalization}
 | . {.hideHeaderRow} |.|
 |---|---|
 |Seçenekler |Varsayılan (Devre Dışı), Etkin, Devre Dışı|
