@@ -2183,6 +2183,7 @@ Bunu etkinleştirmek daha akıcı bir okuma olanağı sunmakla birlikte, ekranı
 Bu seçenek etkinleştirildiğinde, braille ekranında braille ile yazılan metin üzerinde unicode normalleştirme yapılır.
 Bu seçenek, belirli bir braille tablosunda bilinmeyen ve sosyal medyada yaygın olarak kullanılan kalın ve italik karakterler gibi uyumlu bir alternatifi olan braille karakterleriyle karşılaştığınızda işe yarar.
 Unicode normalleştirmeyle ilgili daha fazla bilgi için, rehberin konuşma bölümünde olan [unicode normalleştirme](#SpeechUnicodeNormalization) kısmına bakabilirsiniz.
+
 Unicode normalleştirmeyi istediğiniz yerden değiştirmek için lütfen [Girdi Hareketleri iletişim kutusunu](#InputGestures) kullanarak bir hareket atayın.
 
 ##### Odak bağlam sunumu {#BrailleSettingsFocusContextPresentation}
