@@ -5,7 +5,7 @@
 Cửa Hàng Add-on giờ đây sẽ thông báo cho bạn nếu có cập nhật cho bất kì add-on nào trong khi khởi động NVDA.
 
 Giờ đây đã có tùy chọn để áp dụng việc  chuẩn hóa Unicode cho đầu ra của tiếng nói và chữ nổi.
-Điều này có thể hữu ích khi đọc các ký tự không xác định trong các bộ đọc hoặc bảng chữ nổi cụ thể và có ký tự thay thế tương thích, chẳng hạn như các ký tự in đậm và in nghiêng thường được sử dụng trên truyền thông mạng xã hội.
+Điều này có thể hữu ích khi đọc các ký tự không xác định trong các bộ đọc hoặc bảng chữ nổi cụ thể và có ký tự thay thế tương thích, chẳng hạn như các ký tự in đậm và in nghiêng thường được sử dụng trên mạng xã hội.
 Điều này cũng cho phép đọc công thức trong trình biên soạn công thức của Microsoft Word.
 
 Đã hỗ trợ cho các màn hình chữ nổi Help Tech Activator Pro.
@@ -24,7 +24,7 @@ Unicode CLDR cũng đã được cập nhật.
 * Các phím lệnh mới:
   * Thêm các lệnh chưa gán thao tác để cuộn con lăn chuột theo chiều dọc và chiều ngang, nhằm cải thiện việc điều hướng trên các trang web và ứng dụng với nội dung động, như là Dism++. (#16462, @Cary-Rowen)
 * Thêm hỗ trợ  Chuẩn Hóa Unicode cho đầu ra tiếng nói và chữ nổi. (#11570, #16466 @LeonarddeR).
-  * Điều này có thể hữu ích khi đọc các ký tự không xác định bằng một bộ đọc hoặc một bảng chữ nổi cụ thể và có ký tự thay thế tương thích, chẳng hạn như các ký tự in đậm và in nghiêng thường được sử dụng trên truyền thông mạng xã hội.
+  * Điều này có thể hữu ích khi đọc các ký tự không xác định bằng một bộ đọc hoặc một bảng chữ nổi cụ thể và có ký tự thay thế tương thích, chẳng hạn như các ký tự in đậm và in nghiêng thường được sử dụng trên mạng xã hội.
   * Nó cũng cho phép đọc các công thức trong trình biên soạn công thức của Microsoft Word. (#4631)
   * Bạn có thể bật tính năng này cho cả bộ đọc và chữ nổi trong các phân loại cài đặt tương ứng của chúng trong hộp thoại cài đặt NVDA.
 * Mặc Định, sau khi khởi động NVDA, bạn sẽ được thông báo nếu có bản cập nhật cho bất cứ add-on nào. (#15035)
@@ -59,6 +59,7 @@ Unicode CLDR cũng đã được cập nhật.
 Sẽ có thông báo cảnh báo cho bạn nếu nỗ lực ghi vào một thư mục không rỗng. (#16686)
 
 ### Sửa lỗi
+
 * Sửa lỗi cho Windows 11:
   * NVDA sẽ không còn bị kẹt khi đóng bảng lịch sử bộ nhớ tạm và biểu tượng cảm súc nữa. (#16346, #16347, @josephsl)
   * NVDA sẽ lại thông báo các thành phần hiển thị khi mở giao diện của IME. (#14023, @josephsl)

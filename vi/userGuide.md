@@ -1911,7 +1911,7 @@ Khi bật tùy chọn này, việc chuẩn hóa unicode được thực hiện t
 Điều này có lợi khi đọc các ký tự có thể được thể hiện dưới nhiều hình thức.
 NVDA dùng thuật toán NFKC (Normalization Form Compatibility Composition), mang lại những lợi ích sau, trong số những lợi ích khác:
 
-1. Phiên bản in đậm và in nghiêng của các ký tự là một phần của tiêu chuẩn unicode và thường được sử dụng trên phương tiện truyền thông mạng xã hội được chuẩn hóa thành tương đương tương thích phổ biến nhất của chúng.
+1. Phiên bản in đậm và in nghiêng của các ký tự là một phần của unicode tiêu chuẩn và thường được sử dụng trên mạng xã hội được chuẩn hóa thành tương đương tương thích phổ biến nhất của chúng.
 Ví dụ: chữ "h" trong mẫu tự Latinh cũng có thể được trình bày dưới dạng "𝐡" (in đậm), "ℎ" (in nghiêng), v.v. nhưng sẽ luôn được đọc là "h" khi tính năng chuẩn hóa được bật.
 Khía cạnh chuẩn hóa này cũng hỗ trợ việc đọc các công thức trong trình biên soạn công thức của Microsoft Word.
 
@@ -2181,7 +2181,7 @@ Bật tùy chọn này có thể giúp bạn đọc trôi chảy hơn, nhưng c�
 |Mặc định |Tắt|
 
 Khi tùy chọn này được bật, quá trình chuẩn hóa unicode sẽ được thực hiện trên văn bản có thể hiện bằng chữ nổi trên màn hình chữ nổi.
-Điều này có lợi khi gặp các ký tự bằng chữ nổi chưa được biết đến trong một bảng chữ nổi cụ thể và có ký tự thay thế tương thích, chẳng hạn như các ký tự in đậm và in nghiêng thường được sử dụng trên phương tiện truyền thông mạng xã hội.
+Điều này có lợi khi gặp các ký tự bằng chữ nổi chưa được biết đến trong một bảng chữ nổi cụ thể và có ký tự thay thế tương thích, chẳng hạn như các ký tự in đậm và in nghiêng thường được sử dụng trên mạng xã hội.
 Các lợi ích khác của việc chuẩn hóa unicode đã được giải thích trong greater chi tiết trong [phần dành cho cài đặt tiếng nói tương đương](#SpeechUnicodeNormalization).
 
 Để bật / tắt tính năng chuẩn hóa unicode ở mọi nơi, vui lòng gán thao tác / phím tắt thông qua [hộp thoại Quản lý các thao tác](#InputGestures).
