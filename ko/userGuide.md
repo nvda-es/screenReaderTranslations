@@ -41,7 +41,7 @@ NV Access YouTube 체널에 업로드된 ["What is NVDA?"](https://www.youtube.c
 
 #### 권장 요구사항 {#MinimumSystemRequirements}
 * 운영체제: 윈도우 10/11 64비트 (윈도우 서버 2022 이상 지원)
- * AMD64 및 ARM64 버전 지원.
+  * AMD64 및 ARM64 버전 지원.
 * 약 150 MB 이상의 설치공간
 * 4 GB 이상의 RAM
 
