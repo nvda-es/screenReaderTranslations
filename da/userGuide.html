@@ -13,7 +13,11 @@
 <li><a href="#nvda-nvda_version-brugervejledning" title="NVDA NVDA_VERSION brugervejledning">NVDA NVDA_VERSION brugervejledning</a><ul>
 <li><a href="#Introduction" title="Introduktion">Introduktion</a><ul>
 <li><a href="#GeneralFeatures" title="Generelle funktioner">Generelle funktioner</a></li>
-<li><a href="#SystemRequirements" title="Systemkrav">Systemkrav</a></li>
+<li><a href="#SystemRequirements" title="Systemkrav">Systemkrav</a><ul>
+<li><a href="#RecommendedSystemRequirements" title="Anbefalede Systemkrav">Anbefalede Systemkrav</a></li>
+<li><a href="#MinimumSystemRequirements" title="Minimum Systemkrav">Minimum Systemkrav</a></li>
+</ul>
+</li>
 <li><a href="#Internationalization" title="Internationalisering">Internationalisering</a></li>
 <li><a href="#SpeechSynthesizerSupport" title="Understøttelse af talesynteser">Understøttelse af talesynteser</a></li>
 <li><a href="#BrailleSupport" title="Understøttelse af punktskrift">Understøttelse af punktskrift</a></li>
@@ -525,12 +529,24 @@ NVDA er udviklet af <a href="https://www.nvaccess.org/" rel="noopener" target="_
 <li>Mulighed for at fremhæve det aktuelle systemfokus på skærmen</li>
 </ul>
 <h3 id="SystemRequirements">Systemkrav</h3>
+<h4 id="RecommendedSystemRequirements">Anbefalede Systemkrav</h4>
 <ul>
-<li>Operativsystemer: alle 32-bit og 64-bit versioner af Windows 8.1, Windows 10, Windows 11 samt alle serverstyresystemer fra Server 2012 R2.<ul>
-<li>Både AMD64 og ARM64 varianter af Windows understøttes.</li>
+<li>Operativsystemer: 64-bit udgaver af Windows 10, Windows 11, og Windows Server 2022<ul>
+<li>både AMD64 og ARM64 varianter af Windows understøttes.</li>
 </ul>
 </li>
-<li>Mindst 150 MB lagerplads.</li>
+<li>mindst 150 MB lagerplads.</li>
+<li>mindst 4 GB RAM.</li>
+</ul>
+<h4 id="MinimumSystemRequirements">Minimum Systemkrav</h4>
+<ul>
+<li>Operativsystemer: alle 32-bit og 64-bit udgaver af Windows 8.1, Windows 10, Windows 11, og alle Server Operativsystemer fra og med Windows Server 2012 R2.<ul>
+<li>både AMD64 og ARM64 varianter af Windows understøttes.</li>
+<li>Bemærk, at 32-bit operativsystemer ikke længere er under aktiv support.</li>
+<li>Bemærk, at Windows 8.1 og Windows Server versioner ældre end 2022 ikke længere er under aktiv support.</li>
+</ul>
+</li>
+<li>mindst 150 MB lagerplads.</li>
 </ul>
 <h3 id="Internationalization">Internationalisering</h3>
 <p>Det er vigtigt, at folk overalt i verden, uanset hvilket sprog de taler, får lige adgang til teknologi.
@@ -1005,6 +1021,8 @@ Tryk <code>control+tab</code> for at komme til denne fane fra hvor som helst i T
 Status for tilføjelsen vil være angivet som "Opdatering tilgængelig".
 Tabellen viser den aktuelt installerede version og den tilgængelige version.
 Tryk <code>enter</code> på tilføjelsen for at åbne handlingsmenuen og vælg "Opdatër".</p>
+<p>Som standard, vil du få besked om opdateringer for tilføjelser, når NVDA starter.
+For at lære mere om, hvordan denne indstilling konfigureres, læs <a href="#AutomaticAddonUpdates" title="&quot;Opdateringsmeddelelser&quot;">"Opdateringsmeddelelser"</a>.</p>
 <h3 id="Community">NVDAs internationale fællesskab</h3>
 <p>NVDA har et stærkt brugerfællesskab.
 Der er en <a href="https://nvda.groups.io/g/nvda" rel="noopener" target="_blank" title="e-mail-liste på engelsk">e-mail-liste på engelsk</a> og en side fuld af <a href="https://github.com/nvaccess/nvda-community/wiki/Connect" rel="noopener" target="_blank" title="lokale sproggrupper">lokale sproggrupper</a> .
@@ -1063,9 +1081,13 @@ Denne indstilling er kun tilgængelig når du installerer fra den flytbare kopi,
 Hvis du allerede har lukket denne dialog, eller hvis du kører en installeret kopi af NVDA, skal du vælge menupunktet Opret Flytbar Kopi under Værktøjer i NVDA-menuen.</p>
 <p>Dialogen der vises lader dig vælge hvor du vil oprette den flytbare kopi.
 Det kan være en mappe på din harddisk, et USB-drev eller andet bærbart medie.
-Der er også mulighed for at kopiere den aktuelle brugerkonfiguration fra den bruger, som er logget ind. Disse indstillinger vil blive anvendt når du benytter den flytbare kopi.
-Denne indstilling er kun tilgængelig når du opretter en flytbar kopi fra en installeret kopi, og ikke hvis du opretter en flytbar kopi fra den hentede fil.
-Trykker du Fortsæt vil den flytbare kopi blive oprettet.
+Som standard, vil en ny mappe blive oprettet for den flytbare kopi.
+Du kan også vælge at benytte en eksisterende mappe. Vær dog opmærksom på, at dette vil overskrive alle filer i mappen.
+Hvis mappen allerede eksisterer og har en kopi af NVDA, vil denne kopi i stedet blive opdateret.</p>
+<p>Der er også mulighed for at kopiere den aktuelle brugerkonfiguration fra den bruger, som er logget ind.
+Dette inkluderer også tilføjelser.
+Denne indstilling er kun tilgængelig når du opretter en flytbar kopi fra en installeret kopi, og ikke hvis du opretter en flytbar kopi fra den hentede fil.</p>
+<p>Trykker du Fortsæt vil den flytbare kopi blive oprettet.
 Når installationen er færdig vil du få en besked om, at installationen er fuldført.
 Tryk Ok for at lukke denne dialog.</p>
 <h3 id="PortableAndTemporaryCopyRestrictions">Begrænsninger for flytbare og midlertidige kopier af NVDA</h3>
@@ -1111,8 +1133,7 @@ Med den første check box kan du bestemme, om NVDA skal bruge capslock som en NV
 Den anden bestemmer, om NVDA skal starte automatisk, efter du har logget på Windows. Denne indstilling er kun tilgængelig i installerede kopier af NVDA.
 Den tredje lader dig styre, om denne Velkomstdialog boks skal vises hver gang NVDA starter.</p>
 <h4 id="UsageStatsDialog">Dialog om brugsstatistik</h4>
-<p>Hvis du kører NVDA 2018.3 eller nyere, vil en dialog fremkomme der beder dig tage stilling til om hvorvidt du ønsker at dele din brugsdata med NV Access. Disse data medvirker til at forbedre fremtidige versioner af NVDA.
-Når du kører NVDA første gang, vil denne dialog blive vist. Her kan du acceptere eller afvise indsamlingen af brugsstatistik til forbedring af NVDA.
+<p>Når du starter NVDA for første gang, vil der vises en dialogboks, der spørger, om du vil acceptere at sende data til NV Access, mens du bruger NVDA, for at hjælpe med at forbedre NVDA.
 Du kan læse yderligere information om, hvilke data indsamles i NVDAs generelle indstillinger under <a href="#GeneralSettingsGatherUsageStats" title="Tillad, at NV Access indsamler brugsdata">Tillad, at NV Access indsamler brugsdata</a>.
 Bemærk: Når du trykker "Ja" eller "Nej", vil denne dialog ikke fremkomme igen med mindre du geninstallerer NVDA.
 Du kan aktivere eller deaktivere denne indstilling i NVDAs generelle indstillinger ved at ændre indstillingen <a href="#GeneralSettingsGatherUsageStats" title="Tillad at NVDA-projektet indsamler brugsdata om NVDA">Tillad at NVDA-projektet indsamler brugsdata om NVDA</a>.</p>
@@ -1120,9 +1141,9 @@ Du kan aktivere eller deaktivere denne indstilling i NVDAs generelle indstilling
 <h4 id="TheNVDAModifierKey">NVDA-tasten</h4>
 <p>De fleste NVDA-specifikke tastaturkommandoer består normalt af at trykke på en særlig tast kaldet NVDA/tasten, samtidig med en eller flere andre taster.
 Bemærkelsesværdige undtagelser herfra er tekstlæsekommandoerne i desktop-tastaturlayoutet, som kun består af tasterne i det numeriske tastatur alene, men der er også andre undtagelser.</p>
-<p>NVDA kan konfigureres således, at enten den numeriske Insert Udvidede Insert, eller Caps Lock-tasten kan bruges som NVDA-tast.
-Som standard er både Numerisk Insert og udvidet Insert tasterne indstillet som NVDA-tast.</p>
-<p>Hvis du ønsker at få en af NVDA-tasterne til at brue dens oprindelige funktion (for eksempel, hvis du ønsker at tænde Caps Lock, når du har valgt Caps Lock til at være en NVDA/tast) kan du trykke på tasten to gange i hurtig rækkefølge.</p>
+<p>NVDA kan konfigureres således, at enten Insert, den numeriske Insert, eller Caps Lock-tasten kan bruges som NVDA-tast.
+Som standard er både Insert og Numerisk Insert tasterne indstillet som NVDA-tast.</p>
+<p>Hvis du ønsker at få en af NVDA-tasterne til at brue dens oprindelige funktion (for eksempel, hvis du ønsker at slå Caps Lock til og fra, når du har valgt Caps Lock som en NVDA-tast) kan du trykke på tasten to gange i hurtig rækkefølge.</p>
 <h4 id="KeyboardLayouts">Tastaturlayouts</h4>
 <p>NVDA har i øjeblikket to sæt tastaturkommandoer eller tastaturlayouts: Desktop-layoutet og laptop-layoutet.
 Som standard er NVDA sat til at bruge Desktop-layout, men du kan skifte til det bærbare/laptop layout ved brug af indstillingskategorien Tastatur i <a href="#NVDASettings" title="dialogen Indstillinger">dialogen Indstillinger</a>, under Opsætning i NVDA-menuen.</p>
