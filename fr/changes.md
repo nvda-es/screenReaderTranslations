@@ -1,38 +1,37 @@
 # Quoi de Neuf dans NVDA
 
-
-+## 2024.3
+## 2024.3
 
 L'Add-on Store vous informera désormais si des mises à jour d'extensions sont disponibles au démarrage de NVDA.
 
-Il existe désormais des options pour appliquer une normalisation Unicode à la sortie vocale et en Braille.
-Cela peut être utile lors de la lecture de certains caractères inconnus d'un synthétiseur ou d'une table Braille spécifique et qui ont une alternative compatible, comme les caractères de mise en gras ou en italique couramment utilisés sur les réseaux sociaux.
+Il existe désormais des options pour appliquer une normalisation Unicode à la sortie vocale et en braille.
+Cela peut être utile lors de la lecture de certains caractères inconnus d'un synthétiseur ou d'une table braille spécifique et qui ont une alternative compatible, comme les caractères de mise en gras ou en italique couramment utilisés sur les réseaux sociaux.
 Cela permet également la lecture des équations dans l'éditeur d'équations de Microsoft Word.
 
-Les afficheurs Braille Help Tech Activator Pro sont maintenant supportés.
+Les afficheurs braille Help Tech Activator Pro sont maintenant supportés.
 
-Des commandes non assignées ont été ajoutées pour faire défiler la molette de la souris verticalement et horizontalement.
+Des commandes non assignées ont été ajoutées pour faire défiler avec la molette de la souris verticalement et horizontalement.
 
 De nombreuses corrections de bogues sont présentes, en particulier pour le panneau d'emojis et l'historique du presse-papiers de Windows 11.
 Pour les navigateurs Web, des correctifs sont présents pour l'annonce des messages d'erreur, figures, légendes, étiquettes de tableau et les éléments de menu boutons radio ou cases à cocher.
 
-LibLouis a été mis à jour, ajoutant de nouvelles tables braille pour le cyrillique serbe, le yiddish, plusieurs langues anciennes, le turc et l'alphabet phonétique international.
+LibLouis a été mis à jour, ajoutant de nouvelles tables braille pour le cyrillique serbe, le yiddish, plusieurs langues anciennes, le turc et l'Alphabet Phonétique International.
 eSpeak a été mis à jour, ajoutant la prise en charge de la langue Karakalpak.
 Le CLDR Unicode a également été mis à jour.
 
 ### Nouvelles Fonctionnalités
 
 * Nouveaux gestes de commandes :
-  * Ajout de commandes non attribuées pour le défilement vertical et horizontal de la molette de la souris, afin d'améliorer la navigation sur les pages Web et les applications au contenu dynamique, telles que Dism++. (#16462, @Cary-Rowen)
+  * Ajout de commandes non attribuées pour le défilement vertical et horizontal avec la molette de la souris, afin d'améliorer la navigation sur les pages Web et les applications au contenu dynamique, telles que Dism++. (#16462, @Cary-Rowen)
 * Ajout de la prise en charge de la normalisation Unicode pour la sortie vocale et braille. (#11570, #16466 @LeonarddeR).
-  * Cela peut être utile lors de la lecture de certains caractères inconnus d'un synthétiseur ou d'une table Braille spécifique et qui ont une alternative compatible, comme les caractères de mise en gras ou en italique couramment utilisés sur les réseaux sociaux.
+  * Cela peut être utile lors de la lecture de certains caractères inconnus d'un synthétiseur ou d'une table braille spécifique et qui ont une alternative compatible, comme les caractères de mise en gras ou en italique couramment utilisés sur les réseaux sociaux.
   * Cela permet également la lecture des équations dans l'éditeur d'équations de Microsoft Word. (#4631)
   * Vous pouvez activer cette fonctionnalité pour la parole et le braille dans leurs catégories de paramètres respectives dans le dialogue des Paramètres de NVDA.
-* Par défaut, après le démarrage de NVDA, vous serez notifié si des mises à jour d'extensions sont disponibles. (#15035)
+* Par défaut, après le démarrage de NVDA, vous serez averti si des mises à jour d'extensions sont disponibles. (#15035)
   * Cela peut être désactivé dans la catégorie Add-on Store des paramètres.
   * NVDA vérifie quotidiennement les mises à jour d'extensions.
-  * Seules les mises à jour sur le même canal seront vérifiées (par exemple une extension installée en béta n'informera que des mises à jour sur le canal béta).
-* Ajout du support des afficheurs Braille Help Tech Activator Pro. (#16668)
+  * Seules les mises à jour sur le même canal seront vérifiées (par exemple une extension installée en béta n'avertira que des mises à jour sur le canal béta).
+* Ajout du support des afficheurs braille Help Tech Activator Pro. (#16668)
 
 ### Changements
 
@@ -41,17 +40,17 @@ Le CLDR Unicode a également été mis à jour.
     * Ajout de la langue Karakalpak.
   * Mise à jour du CLDR Unicode à la version 45.0. (#16507, @OzancanKaratas)
   * Mise à jour de Fast_diff_match_patch (utilisé pour détecter les changements de contenu dans les terminaux et autre contenus dynamiques) à la version 2.1.0. (#16508, @codeofdusk)
-  * Mise à jour du transcripteur Braille Liblouis à la version [3.30.0](https://github.com/liblouis/liblouis/releases/tag/v3.30.0). (#16652, @codeofdusk)
-    * Nouvelles tables Braille :
+  * Mise à jour du transcripteur braille Liblouis à la version [3.30.0](https://github.com/liblouis/liblouis/releases/tag/v3.30.0). (#16652, @codeofdusk)
+    * Nouvelles tables braille :
       * Cyrillique serbe.
       * Yiddish.
-      * Plusieurs langues anciennes : hébreu biblique, akkadien, syriaque, ougaritique et texte cunéiforme translittéré.
+      * Plusieurs langues anciennes : Hébreu biblique, Akkadien, Syriaque, Ougaritique et texte cunéiforme translittéré.
       * Turc abrégé. (#16735)
-      * Alphabet phonétique international. (#16773)
+      * Alphabet Phonétique International. (#16773)
   * Mise à jour de NSIS à la version 3.10 (#16674, @dpy013)
   * Mise à jour de markdown à la version 3.6 (#16725, @dpy013)
   * Mise à jour de nh3 à la version 0.2.17 (#16725, @dpy013)
-* La table Braille d'entrée de secours est désormais égale à la table de sortie de secours, qui est le code Braille anglais unifié intégral. (#9863, @JulienCochuyt, @LeonarddeR)
+* La table braille d'entrée de secours est désormais égale à la table de sortie de secours, qui est le code braille anglais unifié intégral. (#9863, @JulienCochuyt, @LeonarddeR)
 * NVDA annoncera désormais les figures sans élément enfant accessible, mais avec une étiquette ou une description. (#14514)
 * Lors de la lecture par ligne en mode navigation, "légende" n'est plus annoncé sur chaque ligne d'une longue légende de figure ou tableau. (#14874)
 * Dans la console Python, la dernière commande non exécutée ne sera plus perdue lors du déplacement dans l'historique de saisie. (#16653, @CyrilleB79)
@@ -65,12 +64,13 @@ Un message d'avertissement vous informera si vous tentez d'écrire dans un dossi
   * NVDA ne semblera plus être bloqué lors de la fermeture de l'historique du presse-papiers ou du panneau d'emojis. (#16346, #16347, @josephsl)
   * NVDA annoncera de nouveau les candidats visibles lors de l'ouverture de l'interface IME. (#14023, @josephsl)
   * NVDA n'annoncera plus deux fois "historique du presse-papiers" lors de la navigation dans les éléments du menu du panneau d'emojis. (#16532, @josephsl)
-  * NVDA ne coupera plus la parole et le Braille lors de la navigation dans les kaomojis et les symboles dans le panneau d'emojis. (#16533, @josephsl)
+  * NVDA ne coupera plus la parole et le braille lors de la navigation dans les kaomojis et les symboles dans le panneau d'emojis. (#16533, @josephsl)
 * Correctifs pour les navigateurs Web :
   * Les messages d'erreur référencés avec `aria-errormessage` sont maintenant annoncés dans Google Chrome et Mozilla Firefox. (#8318)
   * Si disponible, NVDA utilisera désormais `aria-labelledby` pour fournir un nom accessible pour les tableaux dans Mozilla Firefox. (#5183)
   * NVDA annoncera correctement les éléments de menu boutons radio et cases à cocher lors de la première entrée dans des sous-menus dans Google Chrome et Mozilla Firefox. (#14550)
   * La fonctionnalité de recherche du mode navigation de NVDA est désormais plus précise lorsque la page contient des emojis. (#16317, @LeonarddeR)
+  * Dans Mozilla Firefox, NVDA annonce désormais correctement le caractère, le mot et la ligne actuels lorsque le curseur est au point d'insertion à la fin d'une ligne. (#3156, @jcsteh)
 * NVDA annoncera correctement les suggestions de saisie semi-automatique dans Eclipse et d'autres environnements basés sur Eclipse sous Windows 11. (#16416, @thgcode)
 * Amélioration de la fiabilité de la lecture automatique de texte, en particulier dans les terminaux. (#15850, #16027, @Danstiv)
 * NVDA annoncera correctement les changements de sélection lors de l'édition du texte d'une cellule dans Microsoft Excel. (#15843)
@@ -80,7 +80,6 @@ Un message d'avertissement vous informera si vous tentez d'écrire dans un dossi
 * Lors du collage dans la calculatrice de Windows 10/11, NVDA annoncera désormais correctement le nombre collé entièrement. (#16573, @TristanBurchett)
 * La parole n'est plus silencieuse après la déconnexion et la reconnexion à une session de Bureau à distance. (#16722, @jcsteh)
 * Ajout de la prise en charge des commandes de révision de texte pour le nom d'un objet dans Visual Studio Code. (#16248, @Cary-Rowen)
-* Dans Mozilla Firefox, NVDA annonce désormais correctement le caractère, le mot et la ligne actuels lorsque le curseur est au point d'insertion à la fin d'une ligne. (#3156, @jcsteh)
 * La lecture des sons de NVDA n'échoue plus sur un périphérique audio mono. (#16770, @jcsteh)
 * NVDA annoncera les adresses en parcourant les champs À/Copie à/Copie cachée à dans Outlook.com/Outlook Moderne. (#16856)
 * NVDA gère désormais d'une meilleure manière les échecs d'installation d'extensions. (#16704)
@@ -91,18 +90,18 @@ Un message d'avertissement vous informera si vous tentez d'écrire dans un dossi
 * Correction du système de compilation de NVDA pour fonctionner correctement lors de l'utilisation de Visual Studio 2022 version 17.10 et au-delà. (#16480, @LeonarddeR)
 * Une police à largeur fixe est désormais utilisée dans la visionneuse du journal et dans la console Python NVDA afin que le curseur reste dans la même colonne lors de la navigation verticale.
 Cela est particulièrement utile pour lire l'emplacement des erreurs dans les tracebacks. (#16321, @CyrilleB79)
-* Le support pour les tables Braille personnalisées a été ajouté. (#3304, #16208, @JulienCochuyt, @LeonarddeR)
+* Le support pour les tables braille personnalisées a été ajouté. (#3304, #16208, @JulienCochuyt, @LeonarddeR)
   * Les tables peuvent être fournies dans le dossier `brailleTables` d'une extension.
   * Les métadonnées des tables peuvent être ajoutées à une section facultative `brailleTables` dans le manifeste de l'extension ou à un fichier `.ini` avec le même format que celui trouvé dans le sous-dossier brailleTables du dossier scratchpad.
-  * Veuillez consulter [la section braille translation tables dans le guide de développeur](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#BrailleTables) pour plus de détails.
+  * Veuillez consulter [la section Braille translation tables dans le guide du développeur](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#BrailleTables) pour plus de détails.
 * Lorsqu'un événement `gainFocus` est mis en file d'attente avec un objet qui a une propriété `focusRedirect` valide, l'objet pointé par la propriété `focusRedirect` est désormais détenu par `eventHandler.lastQueuedFocusObject`, plutôt que par l'objet initialement mis en file d'attente. (#15843)
 * NVDA journalisera son architecture d'exécution (x86) au démarrage. (#16432, @josephsl)
-* `wx.CallAfter`, qui est enveloppé dans `monkeyPatches/wxMonkeyPatches.py`, inclut désormais l'indication `functools.wraps` appropriée. (#16520, @XLTechie)
+* `wx.CallAfter`, dont le wrapper se situe dans `monkeyPatches/wxMonkeyPatches.py`, inclut désormais l'indication `functools.wraps` appropriée. (#16520, @XLTechie)
 * Il existe un nouveau module pour planifier les tâches `utils.schedule`, en utilisant le module pip `schedule`. (#16636)
   * Vous pouvez utiliser `scheduleThread.scheduleDailyJobAtStartUp` pour planifier automatiquement une tâche qui se produit après le démarrage de NVDA, et toutes les 24 heures par la suite.
   Les tâches sont planifiées avec un retard pour éviter les conflits.
   * `scheduleThread.scheduleDailyJob` et `scheduleJob` peuvent être utilisés pour planifier des tâches à des heures personnalisées, où une `JobClashError` sera déclenchée en cas de conflit de planification de tâches connu.
-* Il est désormais possible de créer des modules applicatifs pour les applications hébergeant des contrôles Edge WebView2 (msedgewebview2.exe).. (#16705, @josephsl)
+* Il est désormais possible de créer des modules applicatifs pour les applications hébergeant des contrôles Edge WebView2 (msedgewebview2.exe). (#16705, @josephsl)
 
 ## 2024.2
 
