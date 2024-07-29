@@ -522,8 +522,8 @@ Du kan aktivere eller deaktivere denne indstilling i NVDAs generelle indstilling
 De fleste NVDA-specifikke tastaturkommandoer består normalt af at trykke på en særlig tast kaldet NVDA-tasten, samtidig med en eller flere andre taster.
 Bemærkelsesværdige undtagelser herfra er tekstlæsekommandoerne i desktop-tastaturlayoutet, som kun består af tasterne i det numeriske tastatur alene, men der er også andre undtagelser.
 
-NVDA kan konfigureres således, at enten Insert, den numeriske Insert, eller Caps Lock-tasten kan bruges som NVDA-tast.
-Som standard er både Insert og Numerisk Insert tasterne indstillet som NVDA-tast.
+NVDA kan konfigureres således, at enten `Insert`, den `numeriske Insert`, eller `Caps Lock-tasten` kan bruges som NVDA-tast.
+Som standard er både `Insert` og `Numerisk Insert` tasterne indstillet som NVDA-tast.
 
 Hvis du ønsker at få en af NVDA-tasterne til at brue dens oprindelige funktion (for eksempel, hvis du ønsker at slå Caps Lock til og fra, når du har valgt Caps Lock som en NVDA-tast) kan du trykke på tasten to gange i hurtig rækkefølge.
 
@@ -1915,15 +1915,15 @@ NVDA bruger NFKC (Normalization Form Compatibility Composition) algoritme, som g
 For eksempel kan det latinske bogstav "h" også præsenteres som "𝐡" (fed), "ℎ" (kursiv) osv., men vil altid blive talt som "h", når normalisering er aktiveret.
 Dette aspekt af normalisering hjælper også med at læse ligninger i Microsoft Word ligningseditor.
 
-2. Normalisering til sammensatte tegn.
-For eksempel kan tegnet "ü" (u med trema), et almindeligt tegn i sprog som tysk og tyrkisk, repræsenteres i to former.
+1. Normalisering til sammensatte tegn.
+For eksempel kan tegnet "ü" (u med trema), et almindeligt tegn i sprog som tysk og tyrkisk, repræsenteres i to former:
   1. Et enkeltstående unicode-tegn (ü)
-  2. En dekomponering i to tegn (ü), nemlig det normale latinske bogstav u og en trema-modifikator
+  1. En dekomponering i to tegn (ü), nemlig det normale latinske bogstav u og en trema-modifikator
   Unicode-normalisering sikrer, at kun én form vil blive brugt i hele taleoutputtet, hvilket er den ene tegn-variant.
 
-3. Dekomponering af nogle ligaturer, herunder "ĳ" (ligatur ij) til deres to bogstav-form ("ij").
+1. Dekomponering af nogle ligaturer, herunder "ĳ" (ligatur ij) til deres to bogstav-form ("ij").
 
-4. Stabil rækkefølge af modifikatorer i sammensatte tegn, for eksempel på oldhebraisk.
+1. Stabil rækkefølge af modifikatorer i sammensatte tegn, for eksempel på oldhebraisk.
 
 For at aktivere eller deaktivere unicode-normalisering fra ethvert sted, bedes du tildele en brugerdefineret kommando ved hjælp af [Input Gestures dialogen](#InputGestures).
 
@@ -1972,6 +1972,7 @@ De fleste synteser understøtter denne funktion.
 
 Denne indstilling bør generelt være slået til.
 Nogle Microsoft Speech API synteser anvender dog ikke denne funktion korrekt og opfører sig mærkeligt når indstillingen er slået til.
+Talesynteser fra Code Factory implementerer heller ikke dette korrekt. Dette gælder både for NVDA-tilføjelsen og SAPI-syntesen. Dette vil også forårsage unødvendig stavning af tekst i f.eks. menuer og dialoger.
 Hvis du har problemer med udtalen af diverse bogstaver kan du prøve at deaktivere denne indstilling.
 
 ##### Forsinkede beskrivelser af tegn ved markørbevægelser {#delayedCharacterDescriptions}
@@ -2943,7 +2944,7 @@ For eksempel vil du for installerede beta-tilføjelser kun blive underrettet om 
 
 |Indstilling |Adfærd |
 |---|---|
-|Aktiveret |Underret når der er tilgængelige opdateringer til tilføjelser inden for samme kanal |
+|Underret |Underret når der er tilgængelige opdateringer til tilføjelser inden for samme kanal |
 |Deaktiveret |Kontrollér ikke automatisk for opdateringer til tilføjelser |
 
 #### Windows Tekstgenkendelse {#Win10OcrSettings}
@@ -3656,8 +3657,6 @@ For flere informationer, læse afnisttet [Tilføjelser og tilføjelsescenteret](
 ### Opret flytbar kopi {#CreatePortableCopy}
 
 Dette vil åbne en dialog, således du kan oprette en flytbar kopi fra den installerede version af NVDA.
-
-Den tilsvarende dialog der vil åbne, vil bede om en sti, hvor NVDA skal oprette en flytbar kopi eller installeres på computeren.
 
 Følg vejledningen [Opret en flytbar kopi](#CreatingAPortableCopy) for yderligere oplysninger.
 
