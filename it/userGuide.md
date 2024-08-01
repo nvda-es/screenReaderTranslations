@@ -39,7 +39,7 @@ Le caratteristiche principali possono essere riassunte nei seguenti punti:
 
 ### Requisiti di sistema {#SystemRequirements}
 
-#### Requisiti di sistema consigliati {#recommendedSystemRequirements}
+#### Requisiti di sistema consigliati {#MinimumSystemRequirements}
 * Sistemi operativi: Edizioni a 64 bit di Windows 10, Windows 11 e Window Server 2022
   * sono supportate entrambe le varianti AMD64 e ARM64 di Windows.
 * almeno 150 MB di spazio di archiviazione.
@@ -49,6 +49,7 @@ Le caratteristiche principali possono essere riassunte nei seguenti punti:
 * Sistemi operativi: tutte le versioni a 32 e 64 bit dei Sistemi Windows8.1, Windows10, Windows11 e tutte le edizioni Server a partire da Windows Server 2012 r2.
   * sono supportate entrambe le varianti AMD64 e ARM64 di Windows.
   * Si noti che i sistemi operativi a 32 bit non vengono più supportati in maniera attiva.
+  * Inoltre anche le versioni di Windows 8.1 e Windows Server precedenti al 2022 non godono di un supporto attivo.
 * Circa 150 Megabytes di spazio disco.
 
 ### Internazionalizzazione {#Internationalization}
