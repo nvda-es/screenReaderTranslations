@@ -12,8 +12,11 @@
 <ul>
 <li><a href="#nvda-nvda_version-manuale-utente" title="NVDA NVDA_VERSION Manuale utente">NVDA NVDA_VERSION Manuale utente</a><ul>
 <li><a href="#Introduction" title="Introduzione">Introduzione</a><ul>
-<li><a href="#GeneralFeatures" title="Caratteristiche principali">Caratteristiche principali</a></li>
-<li><a href="#SystemRequirements" title="Requisiti di sistema">Requisiti di sistema</a></li>
+<li><a href="#GeneralFeatures" title="Caratteristiche principali">Caratteristiche principali</a><ul>
+<li><a href="#MinimumSystemRequirements" title="Requisiti di sistema consigliati">Requisiti di sistema consigliati</a></li>
+<li><a href="#MinimumSystemRequirements" title="requisiti minimi di sistema">requisiti minimi di sistema</a></li>
+</ul>
+</li>
 <li><a href="#Internationalization" title="Internazionalizzazione">Internazionalizzazione</a></li>
 <li><a href="#SpeechSynthesizerSupport" title="Sintesi vocali supportate">Sintesi vocali supportate</a></li>
 <li><a href="#BrailleSupport" title="Supporto Braille">Supporto Braille</a></li>
@@ -207,6 +210,8 @@
 <li><a href="#SpeechSettingsDialectSwitching" title="cambiamento automatico dialetti (quando supportato)">cambiamento automatico dialetti (quando supportato)</a></li>
 <li><a href="#SpeechSettingsSymbolLevel" title="Livello di punteggiatura/simboli">Livello di punteggiatura/simboli</a></li>
 <li><a href="#SpeechSettingsTrust" title="Considera attendibile la lingua della voce corrente nel processare caratteri e simboli">Considera attendibile la lingua della voce corrente nel processare caratteri e simboli</a></li>
+<li><a href="#SpeechUnicodeNormalization" title="Normalizzazione Unicode">Normalizzazione Unicode</a></li>
+<li><a href="#SpeechReportNormalizedForCharacterNavigation" title="Annuncia &quot;Normalizzato durante la navigazione per caratteri">Annuncia "Normalizzato durante la navigazione per caratteri</a></li>
 <li><a href="#SpeechSettingsCLDR" title="Includi dati del consorzio Unicode (comprese le emoji) nel processare caratteri e simboli">Includi dati del consorzio Unicode (comprese le emoji) nel processare caratteri e simboli</a></li>
 <li><a href="#SpeechSettingsCapPitchChange" title="Percentuale di cambio tono per lettere maiuscole">Percentuale di cambio tono per lettere maiuscole</a></li>
 <li><a href="#SpeechSettingsSayCapBefore" title="Leggi Cap prima delle Maiuscole">Leggi Cap prima delle Maiuscole</a></li>
@@ -239,6 +244,7 @@
 <li><a href="#BrailleSettingsReviewRoutingMovesSystemCaret" title="Sposta il cursore di sistema con cursor routing anche se il braille segue il cursore di controllo">Sposta il cursore di sistema con cursor routing anche se il braille segue il cursore di controllo</a></li>
 <li><a href="#BrailleSettingsReadByParagraph" title="Lettura per paragrafi">Lettura per paragrafi</a></li>
 <li><a href="#BrailleSettingsWordWrap" title="Evita di spezzare le parole se possibile">Evita di spezzare le parole se possibile</a></li>
+<li><a href="#BrailleUnicodeNormalization" title="Normalizzazione unicode">Normalizzazione unicode</a></li>
 <li><a href="#BrailleSettingsFocusContextPresentation" title="Presentazione delle informazioni contestuali per il focus">Presentazione delle informazioni contestuali per il focus</a></li>
 <li><a href="#BrailleSettingsInterruptSpeech" title="Interrompi la voce durante lo scorrimento">Interrompi la voce durante lo scorrimento</a></li>
 <li><a href="#BrailleSettingsShowSelection" title="Mostra selezione">Mostra selezione</a></li>
@@ -352,6 +358,10 @@
 </li>
 <li><a href="#DocumentNavigation" title="Navigazione documento">Navigazione documento</a><ul>
 <li><a href="#ParagraphStyle" title="Stile Paragrafo">Stile Paragrafo</a></li>
+</ul>
+</li>
+<li><a href="#AddonStoreSettings" title="Impostazioni Add-on Store">Impostazioni Add-on Store</a><ul>
+<li><a href="#AutomaticAddonUpdates" title="Notifiche di aggiornamento">Notifiche di aggiornamento</a></li>
 </ul>
 </li>
 <li><a href="#Win10OcrSettings" title="OCR Windows">OCR Windows</a><ul>
@@ -524,10 +534,20 @@ Lo screen reader è sviluppato da <a href="https://www.nvaccess.org/" rel="noope
 <li>Supporto alle interfacce più comuni per l'accessibilità, come Microsoft Active Accessibility, Java Access Bridge, IAccessible2 e UI Automation.</li>
 <li>Capacità di evidenziare il focus di sistema.</li>
 </ul>
-<h3 id="SystemRequirements">Requisiti di sistema</h3>
+<h4 id="MinimumSystemRequirements">Requisiti di sistema consigliati</h4>
+<ul>
+<li>Sistemi operativi: Edizioni a 64 bit di Windows 10, Windows 11 e Window Server 2022<ul>
+<li>sono supportate entrambe le varianti AMD64 e ARM64 di Windows.</li>
+</ul>
+</li>
+<li>almeno 150 MB di spazio di archiviazione.</li>
+<li>almeno 4 GB di RAM.</li>
+</ul>
+<h4 id="MinimumSystemRequirements">requisiti minimi di sistema</h4>
 <ul>
 <li>Sistemi operativi: tutte le versioni a 32 e 64 bit dei Sistemi Windows8.1, Windows10, Windows11 e tutte le edizioni Server a partire da Windows Server 2012 r2.<ul>
 <li>sono supportate entrambe le varianti AMD64 e ARM64 di Windows.</li>
+<li>Si noti che i sistemi operativi a 32 bit non vengono più supportati in maniera attiva.</li>
 </ul>
 </li>
 <li>Circa 150 Megabytes di spazio disco.</li>
@@ -1005,6 +1025,8 @@ Premere <code>control+tab</code> per accedere a questa scheda da qualsiasi punto
 Lo stato del componente aggiuntivo verrà visualizzato come "Aggiornamento disponibile".
 L'elenco mostrerà la versione attualmente installata e la versione disponibile.
 Premere <code>invio</code> sull'add-on per aprire il menu azioni; scegliere "Aggiorna".</p>
+<p>Da impostazioni predefinite, dopo che NVDA si è avviato, si riceverà una notifica nel caso siano presenti aggiornamenti negli add-on..
+Per saperne di più e configurare questa opzione, fare riferimento a <a href="#AutomaticAddonUpdates" title="&quot;Notifiche di aggiornamento&quot;">"Notifiche di aggiornamento"</a>.</p>
 <h3 id="Community">Comunità</h3>
 <p>NVDA dispone di una vivace comunità di utenti.
 In primo luogo, esiste il <a href="https://groups.io/g/nvda-it" rel="noopener" target="_blank" title="gruppo di discussione in italiano">gruppo di discussione in italiano</a>, <a href="https://nvda.groups.io/g/nvda" rel="noopener" target="_blank" title="quello internazionale">quello internazionale</a> oltre ad una pagina con <a href="https://github.com/nvaccess/nvda-community/wiki/Connect" rel="noopener" target="_blank" title="le liste di discussione in varie lingue">le liste di discussione in varie lingue</a>.
@@ -1063,9 +1085,13 @@ L'opzione è disponibile soltanto quando si installa da una copia portable, non 
 Se invece si vuole creare una copia portable da una versione già installata di NVDA, sarà sufficiente andare al menu strumenti e selezionare la voce "Crea copia Portable".</p>
 <p>La finestra di dialogo che apparirà richiede la selezione della cartella nella quale inserire la versione portable.
 Può trattarsi di una cartella presente nel disco fisso, oppure dell'unità di una penna USB o di un altro dispositivo rimovibile.
-Esiste un'altra opzione, che permette di stabilire se NVDA debba copiare o meno la configurazione dell'utente attualmente loggato nella nuova versione portable che si desidera creare.
-Questa opzione è disponibile solo quando si vuole creare una copia portable a partire da una versione installata, non quando la si crea dal pacchetto scaricato.
-La pressione del pulsante "Continua" darà inizio al processo di creazione della versione portable.
+Da impostazione predefinita, per la copia portable viene creata una nuova cartella .
+è anche possibile scegliere di utilizzare una cartella esistente, questo sovrascriverà i file presenti al suo interno.
+Se la cartella esistente è una copia portable di NVDA, tale copia verrà aggiornata.</p>
+<p>Esiste un'altra opzione, che permette di stabilire se NVDA debba copiare o meno la configurazione dell'utente attualmente loggato nella nuova versione portable che si desidera creare.
+Ciò comprende anche la copia dei componenti aggiuntivi.
+Questa opzione è disponibile solo quando si vuole creare una copia portable a partire da una versione installata, non quando la si crea dal pacchetto scaricato.</p>
+<p>La pressione del pulsante "Continua" darà inizio al processo di creazione della versione portable.
 Una volta terminata l'operazione, apparirà un messaggio di conferma.
 Premere a questo punto il pulsante OK per chiudere questa finestra.</p>
 <h3 id="PortableAndTemporaryCopyRestrictions">Restrizioni nelle versioni portable o temporanee</h3>
@@ -1111,8 +1137,7 @@ La prima casella di controllo permette di stabilire se NVDA debba usare il tasto
 La seconda permette di specificare se NVDA debba avviarsi automaticamente dopo l'accesso a Windows ed è disponibile solo per le copie installate dello screen reader.
 La terza invece permette di decidere se questa finestra debba presentarsi ad ogni avvio dello Screen Reader.</p>
 <h4 id="UsageStatsDialog">Finestra di dialogo statistiche sull'utilizzo dei dati</h4>
-<p>A partire da NVDA 2018.3, viene chiesto all'utente il consenso alll'invio dei dati di utilizzo a NV Access al fine di contribuire a migliorare NVDA in futuro.
-Quando si avvia NVDA per la prima volta, viene visualizzata una finestra di dialogo dove si richiede di accettare l'invio di dati a NV Access durante l'utilizzo dello screen reader.
+<p>Quando si avvia NVDA per la prima volta, viene visualizzata una finestra di dialogo dove si richiede di accettare l'invio di dati a NV Access durante l'utilizzo dello screen reader.
 È possibile leggere ulteriori informazioni riguardo i dati raccolti da NV Access nella sezione impostazioni generali, <a href="#GeneralSettingsGatherUsageStats" title="Consenti a NVAccess di raccogliere statistiche sull'utilizzo dello screen reader">Consenti a NVAccess di raccogliere statistiche sull'utilizzo dello screen reader</a>.
 Nota: premendo "sì" o "no" l'impostazione verrà salvata e la finestra di dialogo non verrà più visualizzata se non si reinstalla NVDA.
 Tuttavia, è possibile abilitare o disabilitare manualmente il processo di raccolta dei dati nelle impostazioni generali di NVDA. Per modificare questa impostazione, selezionare o deselezionare la casella di controllo denominata <a href="#GeneralSettingsGatherUsageStats" title="Consenti al progetto NVDA di raccogliere statistiche sull'utilizzo dello screen reader">Consenti al progetto NVDA di raccogliere statistiche sull'utilizzo dello screen reader</a>.</p>
@@ -1120,8 +1145,8 @@ Tuttavia, è possibile abilitare o disabilitare manualmente il processo di racco
 <h4 id="TheNVDAModifierKey">Il tasto funzione NVDA</h4>
 <p>La maggior parte dei comandi da tastiera di NVDA è costituita dalla combinazione del tasto funzione NVDA più qualsiasi altro tasto o serie di tasti. 
 Fanno eccezione i tasti di revisione del testo che utilizzano i soli tasti del tastierino numerico.</p>
-<p>NVDA può essere configurato in modo tale che sia il tasto Insert del tastierino numerico, sia l'Insert della tastiera estesa e il tasto Blocca Maiuscole agiscano contemporaneamente come tasto funzione NVDA.
-Da impostazioni predefinite entrambi i tasti Insert, della tastiera estesa e del tastierino, sono configurati come tasti funzione di NVDA.</p>
+<p>NVDA può essere configurato in modo tale che sia il tasto <code>Insert del tastierino numerico</code>, sia <code>Insert della tastiera estesa</code> e il tasto <code>Blocca Maiuscole</code> agiscano contemporaneamente come tasto funzione <code>NVDA</code>.
+Da impostazioni predefinite entrambi i tasti <code>Insert</code>, della tastiera estesa e del tastierino, sono configurati come tasti funzione di NVDA.</p>
 <p>Se si desidera che uno dei tasti funzione NVDA agisca usando la sua funzione originale (ad esempio si potrebbe volere attivare il BloccaMaiuscole che però è stato impostato come tasto funzione NVDA) sarà sufficiente premere quel tasto due volte in rapida successione.</p>
 <h4 id="KeyboardLayouts">Layout Tastiera</h4>
 <p>Al momento NVDA viene distribuito con due set di comandi per le tastiere. Esiste infatti un layout denominato "desktop", utile per i computer fissi, ed uno chiamato "laptop", più consono ai pc portatili.
@@ -1971,6 +1996,34 @@ Se le si vuole provare sarà sufficiente configurarle dalla categoria <a href="#
 <td>NVDA+Shift+m</td>
 <td>nessuno</td>
 <td>Sposta il mouse alla posizione del navigatore ad oggetti e quindi del cursore di controllo</td>
+</tr>
+<tr>
+<td>Scorri verso l'alto alla posizione del mouse</td>
+<td>none</td>
+<td>none</td>
+<td>none</td>
+<td>Fa scorrere la rotellina del mouse verso l'alto alla posizione corrente del mouse</td>
+</tr>
+<tr>
+<td>Scorri verso il basso alla posizione del mouse</td>
+<td>none</td>
+<td>none</td>
+<td>none</td>
+<td>Fa scorrere la rotellina del mouse verso il basso alla posizione corrente del mouse</td>
+</tr>
+<tr>
+<td>Scorri verso sinistra alla posizione del mouse</td>
+<td>none</td>
+<td>none</td>
+<td>none</td>
+<td>Fa scorrere la rotellina del mouse verso sinistra alla posizione corrente del mouse</td>
+</tr>
+<tr>
+<td>Scorri verso destra alla posizione del mouse</td>
+<td>none</td>
+<td>none</td>
+<td>none</td>
+<td>Fa scorrere la rotellina del mouse verso destra alla posizione corrente del mouse</td>
 </tr>
 <tr>
 <td>Spostare il navigatore ad oggetti sul mouse</td>
@@ -3253,6 +3306,7 @@ Verranno sempre inviate le seguenti informazioni:</p>
 Si noti comunque che sebbene venga utilizzato l'indirizzo IP per calcolare lo stato di provenienza dell'utente, tale indirizzo IP non verrà mai salvato sui server.
 Oltre alle informazioni obbligatorie usate per controllare gli aggiornamenti, saranno inviati anche i seguenti dati:</p>
 <ul>
+<li>Un ID univoco per l'utente corrente NVDA, che cambia una volta al mese</li>
 <li>Lingua dell'interfaccia di NVDA</li>
 <li>Se la copia attualmente in uso è installer o portable</li>
 <li>Nome della sintesi vocale in uso (compreso il nome del driver del componente aggiuntivo e la sua provenienza)</li>
@@ -3313,6 +3367,55 @@ Questa impostazione viene applicata a tutti i sintetizzatori, non soltanto a que
 <h5 id="SpeechSettingsTrust">Considera attendibile la lingua della voce corrente nel processare caratteri e simboli</h5>
 <p>Da impostazioni predefinite, questa funzione risulta attiva e consente di stabilire se NVDA debba ritenere affidabile la lingua della voce corrente nel processare simboli e caratteri.
 Se per qualche motivo ci si accorge che NVDA sta leggendo la punteggiatura con un sintetizzatore o voce particolare in una lingua sbagliata, si consiglia di disattivare questa opzione, per forzare NVDA ad utilizzare le impostazioni globali per quella lingua.</p>
+<h5 id="SpeechUnicodeNormalization">Normalizzazione Unicode</h5>
+<table>
+<thead>
+<tr>
+<th class="hideHeaderRow">.</th>
+<th>.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opzioni</td>
+<td>Default (Disattivata), Attivata, Disattivata</td>
+</tr>
+<tr>
+<td>Default</td>
+<td>Disattivata</td>
+</tr>
+</tbody>
+</table>
+<p>Quando questa opzione è abilitata, viene eseguita la normalizzazione Unicode sul testo pronunciato da NVDA.
+Ciò è utile quando la sintesi vocale incontra caratteri che possono essere rappresentati in diverse forme.
+NVDA utilizza l'algoritmo NFKC (Normalization Form Compatibility Composition), che offre, tra gli altri, i seguenti vantaggi:</p>
+<ol>
+<li>
+<p>Le versioni in grassetto e corsivo dei caratteri che fanno parte dello standard Unicode e sono comunemente utilizzate sui social media vengono normalizzate al loro equivalente compatibile più comune.
+Ad esempio, la lettera latina "h" può anche essere presentata come"𝐡" (grassetto), "ℎ" (corsivo), etc. ma sarà sempre pronunciata come "h" quando la normalizzazione è abilitata.
+Questo aspetto della normalizzazione aiuta anche a leggere le equazioni nell'editor di equazioni di Microsoft Word.</p>
+</li>
+<li>
+<p>Normalizzazione per i caratteri composti.
+Ad esempio, il carattere "ü" (u con umlaut/dieresi), un carattere comune in lingue come il tedesco e il turco può essere rappresentato in due forme.</p>
+<ol>
+<li>Un carattere Unicode autonomo (ü)</li>
+<li>Una scomposizione in due caratteri (ü), ossia la lettera latina U e una parte aggiuntva, dieresi
+La normalizzazione Unicode garantisce che venga utilizzata una sola forma per la pronuncia di questi caratteri.</li>
+</ol>
+</li>
+<li>
+<p>Scomposizione di alcune legature, inclusa "ĳ" (legatura ij) nella loro forma di due lettere ("ij").</p>
+</li>
+<li>
+<p>Ordine stabile dei modificatori nei caratteri compositi, ad esempio nell'ebraico antico.</p>
+</li>
+</ol>
+<p>Per attivare/disattivare la normalizzazione Unicode da qualsiasi posto, assegnare un gesto personalizzato utilizzando la <a href="#InputGestures" title="finestra gesti e tasti di immissione">finestra gesti e tasti di immissione</a>.</p>
+<h5 id="SpeechReportNormalizedForCharacterNavigation">Annuncia "Normalizzato durante la navigazione per caratteri</h5>
+<p>Questa impostazione è una casella di controllo che, se selezionata, indica a NVDA di segnalare esplicitamente che un carattere viene normalizzato quando pronunciato come carattere individuale, ad esempio durante un controllo ortografico.
+Ad esempio, quando questa opzione è abilitata, l'ortografia del carattere "ĳ" sarà resa come "i j normalizzato".</p>
+<p>Si tenga presente che questa impostazione è disponibile solo quando l'opzione "<a href="#SpeechUnicodeNormalization" title="Normalizzazione unicode">Normalizzazione unicode</a>" risulta attiva.</p>
 <h5 id="SpeechSettingsCLDR">Includi dati del consorzio Unicode (comprese le emoji) nel processare caratteri e simboli</h5>
 <p>Quando questa casella di controllo è attiva, NVDA si servirà di ulteriori dizionari per pronunciare caratteri e simboli.
 Tali dizionari contengono le descrizioni per molti simboli (in particolare le emoji) che sono fornite dal <a href="http://www.unicode.org/consortium/" rel="noopener" target="_blank" title="Consorzio Unicode">Consorzio Unicode</a> come parte del <a href="http://cldr.unicode.org/" rel="noopener" target="_blank" title="Common Locale Data Repository">Common Locale Data Repository</a>.
@@ -3339,6 +3442,7 @@ Questa opzione permette ai sintetizzatori di operare una differenziazione tra i 
 La maggior parte dei sintetizzatori supportano questa funzione.</p>
 <p>Generalmente, si consiglia di abilitare questa impostazione.
 Talvolta, può succedere che alcune sintesi Microsoft Speech Api si comportino in modo strano nell'eseguire lo spelling.
+Anche i sintetizzatori di Code Factory, sia il componente aggiuntivo che l'applicazione SAPI, non lo implementano correttamente provocando lo spelling indesiderato del testo (ad esempio nel menu o nelle finestre di dialogo di NVDA).
 In caso ciò avvenga, consigliamo di disattivare questa caratteristica.</p>
 <h5 id="delayedCharacterDescriptions">Descrizione ritardata dei caratteri al movimento del cursore</h5>
 <table>
@@ -3541,6 +3645,29 @@ Si noti che nel caso in cui la parola sia troppo grande per starci sul display, 
 <p>Se invece la funzione è disabilitata, verrà mostrato il più possibile della parola, mentre il rimanente finirà sulla riga successiva.
 Scorrendo il display, sarà possibile leggere il resto della parola.</p>
 <p>L'attivazione di questa funzione permetterà una lettura molto più fluida, ma richiederà di scorrere il display braille molto più spesso.</p>
+<h5 id="BrailleUnicodeNormalization">Normalizzazione unicode</h5>
+<table>
+<thead>
+<tr>
+<th class="hideHeaderRow">.</th>
+<th>.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opzioni</td>
+<td>Default (Disattivata), Attivata, Disattivata</td>
+</tr>
+<tr>
+<td>Default</td>
+<td>Disattivata</td>
+</tr>
+</tbody>
+</table>
+<p>Quando questa opzione è abilitata, viene effettuata la normalizzazione Unicode del testo sul display Braille.
+Ciò è utile quando si incontrano caratteri in braille che sono sconosciuti in una particolare tabella e che hanno un’alternativa compatibile, come i caratteri in grassetto e corsivo comunemente usati sui social media.
+Altri vantaggi della normalizzazione Unicode sono spiegati con maggiori dettagli nella <a href="#SpeechUnicodeNormalization" title="sezione equivalente relativa alla sintesi vocale">sezione equivalente relativa alla sintesi vocale</a>.</p>
+<p>Per attivare/disattivare la normalizzazione Unicode da qualsiasi posto, assegnare un gesto personalizzato utilizzando la <a href="#InputGestures" title="finestra gesti e tasti di immissione">finestra gesti e tasti di immissione</a>.</p>
 <h5 id="BrailleSettingsFocusContextPresentation">Presentazione delle informazioni contestuali per il focus</h5>
 <p>Questa impostazione permette di stabilire quali informazioni di contesto NVDA mostrerà sul display braille quando un oggetto riceve il focus.
 Le informazioni di contesto fanno riferimento alla gerarchia di oggetti che contengono il focus.
@@ -4137,6 +4264,49 @@ Questo stile funziona meglio quando si lavora con documenti che utilizzano parag
 Si noti che questo stile di paragrafo non può essere utilizzato in Microsoft Word o Microsoft Outlook, a meno che non si utilizzi UIA per accedere ai controlli di Microsoft Word.</li>
 </ul>
 <p>è possibile passare tra gli stili di paragrafo disponibili da qualsiasi luogo assegnando una combinazione di tasti nella finestra <a href="#InputGestures" title="Tasti e gesti di immissione">Tasti e gesti di immissione</a>.</p>
+<h4 id="AddonStoreSettings">Impostazioni Add-on Store</h4>
+<p>Questa categoria consente di regolare il comportamento dello Store dei componenti aggiuntivi.</p>
+<h5 id="AutomaticAddonUpdates">Notifiche di aggiornamento</h5>
+<p>Quando questa opzione è impostata su "Notifica", si verrà avvisati dopo l'avvio di NVDA se sono disponibili aggiornamenti dei componenti aggiuntivi.
+Questo controllo viene eseguito ogni 24 ore.
+Le notifiche verranno inviate solo per i componenti aggiuntivi con aggiornamenti disponibili nello stesso canale.
+Ad esempio, se sono stati installati add-on in versione beta, si riceverà una notifica solo degli aggiornamenti relativi al canale beta.</p>
+<table>
+<thead>
+<tr>
+<th class="hideHeaderRow">.</th>
+<th>.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opzioni</td>
+<td>Notifica (Default), disattivata</td>
+</tr>
+<tr>
+<td>predefinito</td>
+<td>notifica</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>comportamento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Notifica</td>
+<td>Avvisa quando sono disponibili aggiornamenti per i componenti aggiuntivi all'interno dello stesso canale</td>
+</tr>
+<tr>
+<td>Disattivata</td>
+<td>Non verificare automaticamente la presenza di aggiornamenti per i componenti aggiuntivi</td>
+</tr>
+</tbody>
+</table>
 <h4 id="Win10OcrSettings">OCR Windows</h4>
 <p>Questa categoria di impostazioni permette di configurare <a href="#Win10Ocr" title="l'OCR di Windows">l'OCR di Windows</a>.
 Contiene le seguenti opzioni:</p>
@@ -4695,6 +4865,8 @@ Una volta aperto il pacchetto aggiuntivo, inizierà il processo di installazione
 <p>Se NVDA è installato e in esecuzione sul sistema, si può anche aprire un add-on direttamente dal browser o dal file system per iniziare il processo di installazione.</p>
 <p>Quando un componente aggiuntivo viene installato da una fonte esterna, NVDA chiederà di confermare l'installazione.
 Una volta installato il componente, NVDA deve essere riavviato affinché l'add-on possa funzionare, anche se è possibile posticipare il riavvio nel caso in cui vi siano altri add-on da installare o aggiornare.</p>
+<p>Per impostazione predefinita, dopo l'avvio di NVDA, si riceverà una notifica nel caso della presenza di aggiornamenti sugli add-on installati.
+Per saperne di più e configurare questo comportamento, consultare <a href="#AutomaticAddonUpdates" title="&quot;Notifiche sugli aggiornamenti&quot;">"Notifiche sugli aggiornamenti"</a>.</p>
 <h4 id="AddonStoreRemoving">Rimozione di componenti aggiuntivi</h4>
 <p>Per rimuovere un componente aggiuntivo, selezionare l'add-on dall'elenco e utilizzare l'azione Rimuovi.
 NVDA chiederà di confermare la rimozione.
@@ -4799,14 +4971,8 @@ Per ulteriori informazioni, si veda la <a href="https://www.nvaccess.org/files/n
 <p>Consente di aprire l'<a href="#AddonsManager" title="Add-on Store di NVDA">Add-on Store di NVDA</a>.
 Per maggiori informazioni, leggere la sezione di approfondimento: <a href="#AddonsManager" title="Componenti aggiuntivi e l'Add-on Store">Componenti aggiuntivi e l'Add-on Store</a>.</p>
 <h3 id="CreatePortableCopy">Crea copia portable</h3>
-<p>Verrà visualizzata una finestra di dialogo che consente di creare una copia portable di NVDA a partire dalla versione installata.
-Di contro, quando si esegue una copia portable di NVDA, nel sottomenu strumenti la voce di menu sarà chiamata "installa NVDA su questo PC" invece di "crea copia portable).</p>
-<p>In questa finestra, verrà chiesto di selezionare la cartella in cui lo screen reader dovrà essere copiato o installato.</p>
-<p>Inoltre è possibile attivare o disattivare le seguenti opzioni:</p>
-<ul>
-<li>Copia la configurazione utente corrente (ciò comprende i file presenti in %appdata%\roaming\NVDA, o quelli della configurazione utente della copia portable, oltre a componenti aggiuntivi e altri moduli)</li>
-<li>Avvia la nuova copia portable dopo la creazione o avvia NVDA dopo l'installazione, le due funzioni si spiegano da sé.)</li>
-</ul>
+<p>Verrà visualizzata una finestra di dialogo che consente di creare una copia portable di NVDA a partire dalla versione in esecuzione.</p>
+<p>Seguire le istruzioni in <a href="#CreatingAPortableCopy" title="Creazione di una copia portable">Creazione di una copia portable</a> per ulteriori informazioni.</p>
 <h3 id="RunCOMRegistrationFixingTool">Esegui Utility risoluzione registrazioni Com di sistema...</h3>
 <p>L'installazione e la disinstallazione di programmi su un computer può, in alcuni casi, causare l'annullamento della registrazione dei file DLL COM.
 Dato che le interfacce Com, come Iaccessible, dipendono dalla corretta registrazione delle dll, si possono verificare problemi nel caso in cui tale registrazione sia stata persa o non sia stata effettuata correttamente..</p>
@@ -5697,7 +5863,10 @@ Non è richiesto alcun driver USB invece nel caso in cui il protocollo sia impos
 <li>APH Mantis Q40</li>
 <li>APH Chameleon 20</li>
 <li>Humanware BrailleOne</li>
-<li>NLS eReader</li>
+<li>NLS eReader<ul>
+<li>Si noti che Zoomax non è supportato senza driver esterni</li>
+</ul>
+</li>
 </ul>
 <p>Di seguito, ecco l'elenco dell'assegnazione dei tasti per queste righe braille con NVDA.
 Si legga la documentazione della propria barra Braille per ottenere informazioni su dove sono situati i vari tasti.</p>
@@ -8405,7 +8574,7 @@ Questi parametri devono essere collocati dopo l'opzione, separati da essa da uno
 <tr>
 <td>None</td>
 <td><code>--create-portable-silent</code></td>
-<td>Crea una copia portable di NVDA (non avvia la nuova copia appena creata). Richiede <code>--portable-path</code> da specificare</td>
+<td>Crea una copia portable di NVDA (non avvia la nuova copia appena creata). Richiede <code>--portable-path</code> da specificare. Questa opzione elimina gli avvisi durante la scrittura in directory non vuote e potrebbe sovrascrivere i file senza avviso.</td>
 </tr>
 <tr>
 <td>None</td>
