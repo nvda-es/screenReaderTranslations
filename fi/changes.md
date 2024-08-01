@@ -71,7 +71,7 @@ Näkyviin tulee varoitus, jos yrität kirjoittaa hakemistoon, joka ei ole tyhjä
   * NVDA puhuu oikein valintaruutu- ja valintapainikevalikon kohteet siirryttäessä ensimmäistä kertaa alivalikkoihin Google Chromessa ja Mozilla Firefoxissa. (#14550)
   * NVDA:n selaustilan hakutoiminto on nyt tarkempi, kun sivu sisältää emojeita. (#16317, @LeonarddeR)
   * NVDA puhuu nyt oikein nykyisen merkin, sanan ja rivin Mozilla Firefoxissa, kun kohdistin on rivin lopussa. (#3156, @jcsteh)
-  * Google Chrome ei enää kaadu, kun se tai dokumentti suljetaan. (#16893)
+  * Google Chrome ei enää kaadu sen ikkunoita tai NVDA:ta suljettaessa. (#16893)
 * NVDA puhuu oikein automaattisen täydennyksen ehdotukset Eclipsessä ja muissa Eclipse-pohjaisissa ympäristöissä Windows 11:ssä. (#16416, @thgcode)
 * Paranneltu automaattisen tekstin lukemisen luotettavuutta erityisesti päätesovelluksissa. (#15850, #16027, @Danstiv)
 * Oletusasetukset on taas mahdollista palauttaa luotettavasti. (#16755, @Emil-18)
