@@ -37,7 +37,9 @@ Le caratteristiche principali possono essere riassunte nei seguenti punti:
 * Supporto alle interfacce più comuni per l'accessibilità, come Microsoft Active Accessibility, Java Access Bridge, IAccessible2 e UI Automation.
 * Capacità di evidenziare il focus di sistema.
 
-#### Requisiti di sistema consigliati {#MinimumSystemRequirements}
+### Requisiti di sistema {#SystemRequirements}
+
+#### Requisiti di sistema consigliati {#recommendedSystemRequirements}
 * Sistemi operativi: Edizioni a 64 bit di Windows 10, Windows 11 e Window Server 2022
   * sono supportate entrambe le varianti AMD64 e ARM64 di Windows.
 * almeno 150 MB di spazio di archiviazione.
