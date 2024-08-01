@@ -1979,8 +1979,8 @@ Ak pozorujete problémy s vyslovovaním jednotlivých znakov, skúste túto voľ
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Možnosti |Vypnuté, zapnuté|
-|predvolene |vypnuté|
+|Možnosti |Vypnuté, Zapnuté|
+|Predvolené |Vypnuté|
 
 Ak je táto možnosť zapnutá, bude NVDA vyslovovať aj fonetické popisky pre znaky, ktoré prečítate pod kurzorom.
 
@@ -2136,7 +2136,7 @@ V tomto prípade nebude brailový riadok sledovať systémový a textový kurzor
 | . {.hideHeaderRow} |.|
 |---|---|
 |Predvolené |Nikdy|
-|Možnosti |Predvolené (nikdy), nikdy, Len ak je zviazaný automaticky, vždy|
+|Možnosti |Predvolené (Nikdy), Nikdy, Len ak je zviazaný automaticky, Vždy|
 
 Toto nastavenie určuje, či sa systémový kurzor posúva pri použití smerových tlačidiel na brailovom riadku.
 Predvolene je toto nastavenie nastavené na nikdy, takže pri stláčaní smerových tlačidiel sa systémový kurzor neposúva.
@@ -2217,8 +2217,8 @@ Ak chcete toto nastavenie meniť kedykoľvek z klávesnice, môžete si k nemu p
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Predvolene |zapnuté|
-|Možnosti |Predvolené (zapnuté), zapnuté, vypnuté|
+|Predvolené |Zapnuté|
+|Možnosti |Predvolené (Zapnuté), Zapnuté, Vypnuté|
 
 Toto nastavenie určuje, či má byť reč prerušená, ak posuniete brailový riadok vpred alebo späť.
 Príkazy, ktoré prechádzajú na predchádzajúci alebo nasledujúci riadok, vždy prerušia tok reči.
@@ -2233,7 +2233,7 @@ Ak túto možnosť vypnete, je možné počúvať hlas a čítať text zároveň
 | . {.hideHeaderRow} |.|
 |---|---|
 |Predvolené |Povolené|
-|Možnosti |Predvolené (povolené), povolené, zakázané|
+|Možnosti |Predvolené (Povolené), Povolené, Zakázané|
 
 Určuje, či bude výber vyznačený na brailovom riadku bodmi 7 a 8.
 Predvolene je toto zapnuté a výber sa ukazuje.
@@ -2327,8 +2327,8 @@ Nemôžete ju využiť, ak NVDA beží v portable režime alebo z dočasnej kóp
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|predvolené |vypnuté|
-|Možnosti |vypnuté, zapnuté|
+|Predvolené |Vypnuté|
+|Možnosti |Vypnuté, Zapnuté|
 
 Ak je táto možnosť zapnutá, hlasitosť zvukov sa prispôsobí hlasitosti reči.
 Ak znížite hlasitosť reči, zníži sa hlasitosť zvukov.
@@ -2911,7 +2911,7 @@ Táto kategória nastavení umožňuje upraviť rôzne možnosti navigácie v do
 | . {.hideHeaderRow} |.|
 |---|---|
 |Predvolené |Podľa aplikácie|
-|Možnosti |Predvolené (podľa aplikácie), Podľa aplikácie, jeden zlom riadka, viacero zlomov riadka|
+|Možnosti |Predvolené (Podľa aplikácie), Podľa aplikácie, Jeden zlom riadka, Viacero zlomov riadka|
 
 Toto nastavenie určuje, čo bude považované za odseky, pri pohybe pomocou skratiek `ctrl+šípka hore` a `ctrl+šípka dole`.
 Dostupné sú tieto možnosti:
@@ -3033,7 +3033,7 @@ Implementácia rozhrania UI automation v programe Microsoft Excel sa stále zlep
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Možnosti |Predvolené (zapnuté), vypnuté, zapnuté|
+|Možnosti |Predvolené (Zapnuté), Vypnuté, Zapnuté|
 |Predvolené|  Zapnuté |
 
 Ak je toto zapnuté, NVDA má rýchlu odozvu aj v prípade, že dostáva množstvo udalostí cez rozhranie UIA, napríklad v oknách konzolových aplikácií a terminálov.
@@ -3043,7 +3043,7 @@ Aby sa prejavili zmeny, je potrebné NVDA po zmene tohto nastavenia reštartova�
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Možnosti |Automaticky, UIA ak je dostupné, staršie|
+|Možnosti |Automaticky, UIA ak je dostupné, Staršie|
 |Predvolené |Automaticky|
 
 Určuje, ako NVDA spolupracuje s Windows konzolami v príkazovom riadku, PowerShell a Windows Subsystémom pre Linux.
@@ -3096,7 +3096,7 @@ Dostupné sú tieto možnosti:
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Možnosti |predvolené (zapnuté), Vypnuté, zapnuté|
+|Možnosti |Predvolené (Zapnuté), Vypnuté, Zapnuté|
 |Predvolené |Zapnuté|
 
 Toto nastavenie určuje, či bude NVDA oznamovať niektoré typy dynamicky meneného obsahu na brailovom riadku.
@@ -3171,7 +3171,7 @@ Tiež je možné stretnúť sa s tým, že text je zobrazený s priehľadnou far
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|Možnosti |Predvolené (zapnuté), Vypnuté, zapnuté|
+|Možnosti |Predvolené (Zapnuté), Vypnuté, Zapnuté|
 |Predvolené |Zapnuté|
 
 Táto možnosť umožňuje na posielanie zvukového výstupu z NVDA využiť rozhranie Windows Audio Session API (WASAPI).
