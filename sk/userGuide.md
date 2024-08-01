@@ -522,8 +522,8 @@ Kedykoľvek môžete zasielanie štatistík zapnúť alebo vypnúť. Hľadajte z
 Väčšina klávesových príkazov NVDA je kombináciou zvláštneho klávesu nazývaného kláves NVDA s inými klávesmi.
 Výnimkou sú príkazy na navigáciu  v desktop rozložení pomocou prezeracieho kurzora, keďže tu sa používajú číslice na vypnutom  numerickom bloku bez klávesu NVDA. Existujú však aj ďalšie výnimky.
 
-Ako kláves NVDA je možné nastaviť klávesy insert, numerický insert a capslock pričom všetky je možné použiť súčasne.
-Predvolené nastavenia majú ako kláves NVDA nastavený insert aj numerický insert.
+Ako kláves `NVDA` je možné nastaviť klávesy `insert`, `numerický insert` a `capslock` pričom všetky je možné použiť súčasne.
+Predvolené nastavenia majú ako kláves NVDA nastavený `insert` aj `numerický insert`.
 
 Ak si želáte vykonať pôvodnú funkcionalitu klávesu, ktorý Ste nastavili ako kláves NVDA (napr. prepnúť stav veľkých písmen pomocou klávesu capslock) stlačte kláves NVDA 2 krát rýchlo za sebou.
 
@@ -1921,7 +1921,7 @@ Napríklad znak "ü" (u s prehláskou), často sa vyskytujúci znak v jazykoch a
   1. Rozklad na 2 znaky v kóde unicode (ü), bežné písmeno latinky u a modifikátor prehláska
   Normalizácia Unicode zabezpečuje, že NVDA bude celý čas pri syntéze reči používať len jednu formu, a to jeden variant znaku.
 
-+1. Rozklad niektorých ligatúr, vrátane "ĳ" (ligatúra ij) na dvojznakové formy ("ij").
+1. Rozklad niektorých ligatúr, vrátane "ĳ" (ligatúra ij) na dvojznakové formy ("ij").
 
 1. Rovnaké poradie oznamovania modifikátorov pre zložené znaky, napríklad v starovekej hebrejčine.
 
