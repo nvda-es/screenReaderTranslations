@@ -1973,7 +1973,6 @@ A maioria dos sintetizadores tem esse suporte.
 Esta opção deverá, em geral, estar activa.
 Todavia, alguns sintetizadores suportados via Microsoft Speech API não implementam correctamente esta funcionalidade e comportam-se de maneira estranha.
 Os sintetizadores da Code Factory, tanto o extra como a aplicação SAPI, também não o implementam corretamente e provocam uma soletração indesejada do texto falado (por exemplo, no menu ou nas caixas de diálogo do NVDA).
-
 Se estiver a ter problemas com a pronúncia de alguns caracteres individuais, desactive esta opção.
 
 ##### Descrição desfasada dos caracteres ao movimentar o cursor {#delayedCharacterDescriptions}
