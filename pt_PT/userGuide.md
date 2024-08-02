@@ -5107,4 +5107,5 @@ Os seguintes valores podem ser configurados nestas chaves:
 
 Caso necessite de mais informações ou suporte ao NVDA, por favor, visite a [página Internet do NVDA](NVDA_URL).
 Aqui poderá encontrar documentação adicional, bem como suporte técnico e recursos da comunidade.
+
 Estas páginas também fornecem informações referentes ao desenvolvimento do NVDA.
