@@ -1904,7 +1904,7 @@ Se quiser que o NVDA não leia a pontuação no idioma da voz, para um determina
 ##### Normalização Unicode {#SpeechUnicodeNormalization}
 | . {.hideHeaderRow} |.|
 |---|---|
-|Opções |Padrão (Desactivado), Activado, Desactivado
+|Opções |Padrão (Desactivado), Activado, Desactivado|
 |Padrão |Desactivado|
 
 Quando esta opção está activada, a normalização unicode é realizada no texto falado pelo NVDA.
@@ -1932,7 +1932,7 @@ Para alternar a normalização Unicode de qualquer lugar, por favor, atribua um 
 Esta configuração é uma caixa de verificação  que, quando marcada, instrui o NVDA a anunciar explicitamente que um caractere está normalizado quando falado como um caractere individual, como ao soletrar.
 Por exemplo, quando esta opção está activada, soletrar o caractere "ĳ" o pronunciará como "i j normalizado".
 
-Note que esta configuração só está disponível quando a "Normalização Unicode" está activada.
+Note que esta configuração só está disponível quando a "[Normalização Unicode](#SpeechUnicodeNormalization)" está activada.
 
 ##### Incluir dados do Unicode Consortium (incluindo emoji) ao processar caracteres e símbolos {#SpeechSettingsCLDR}
 
@@ -2181,7 +2181,7 @@ Se activar esta opção, poderá ter uma leitura mais fluída, mas geralmente ob
 
 Quando esta opção está activada, a normalização unicode é executada no texto que é apresentado em Braille no dispositivo Braille.
 Isto é benéfico quando se depara com caracteres em Braille que são desconhecidos numa determinada tabela Braille e que têm uma alternativa compatível, como os caracteres a negrito e itálico normalmente utilizados nas redes sociais.
-Outros benefícios da normalização unicode são explicados em maior detalhe na [secção para a definição de voz equivalente] (#SpeechUnicodeNormalization).
+Outros benefícios da normalização unicode são explicados em maior detalhe na [secção para a definição de voz equivalente](#SpeechUnicodeNormalization).
 
 Para alternar a normalização Unicode a partir de qualquer lugar, atribua um gesto personalizado utilizando a [caixa de diálogo Gestos de entrada](#InputGestures).
 
@@ -2926,7 +2926,6 @@ Note que este estilo não pode ser usado no Microsoft Word ou Microsoft Outlook,
 Pode alternar entre os estilos de parágrafo disponíveis associando um comando através do [diálogo "Definir comandos"](#InputGestures).
 
 #### Configurações da Loja de extras {#AddonStoreSettings}
-
 
 Esta categoria permite configurar o comportamento da Loja de extras
 
