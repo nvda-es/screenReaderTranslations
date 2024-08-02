@@ -522,7 +522,7 @@ Contudo, pode, manualmente, activar ou desactivar o processo de recolha de dados
 A maioria dos comandos de teclado do NVDA consiste, normalmente, no pressionar da tecla modificadora do NVDA em conjunto com uma ou mais teclas.
 As principais excepções são, usando o esquema de teclado Desktop, os comandos de revisão do texto, que utilizam somente o bloco numérico.
 
-O NVDA pode ser configurado para que, tanto o Insert do bloco numérico, o Insert do bloco intermédio, e a tecla Caps Lock, possam ser utilizados como teclas modificadoras do NVDA.
+O NVDA pode ser configurado para que tanto o Insert do bloco numérico, o Insert do bloco intermédio e Caps Lock, possam ser utilizados como teclas modificadoras do NVDA.
 Por padrão, tanto o Insert do bloco numérico como o Insert do bloco intermédio, são definidos como teclas modificadoras do NVDA.
 
 Se pretender que uma das teclas modificadoras do NVDA actue com a sua função original (por exemplo, quando tiver definido o Caps Lock como uma tecla modificadora do NVDA e desejar activá-la com a sua função original), deverá pressionar a tecla duas vezes, em rápida sucessão.
@@ -1972,6 +1972,7 @@ A maioria dos sintetizadores tem esse suporte.
 
 Esta opção deverá, em geral, estar activa.
 Todavia, alguns sintetizadores suportados via Microsoft Speech API não implementam correctamente esta funcionalidade e comportam-se de maneira estranha.
+Os sintetizadores da Code Factory, tanto o extra como a aplicação SAPI, também não o implementam corretamente e provocam uma soletração indesejada do texto falado (por exemplo, no menu ou nas caixas de diálogo do NVDA).
 Se estiver a ter problemas com a pronúncia de alguns caracteres individuais, desactive esta opção.
 
 ##### Descrição desfasada dos caracteres ao movimentar o cursor {#delayedCharacterDescriptions}
@@ -2943,7 +2944,7 @@ Por exemplo, para extras beta instalados, só será notificado de actualizaçõe
 
 |Opção |Comportamento |
 |---|---|
-|Activado |Anunciar actualizações de extras dentro do mesmo canal |
+|Anunciar |Anunciar actualizações de extras dentro do mesmo canal |
 |Desactivado |Não verificar automaticamente por actualizações de extras |
 
 #### configurações do OCR do Windows {#Win10OcrSettings}
@@ -3534,7 +3535,7 @@ Depois de instalado o extra, será necessário reiniciar o NVDA para que o extra
 Por padrão, após o NVDA ser iniciado, será avisado da existência de actualizações de extras.
 Para saber mais sobre, e configurar, este comportamento, vá a ["Notificação de actualizações"](#AutomaticAddonUpdates).
 
- #### Remover Extras {#AddonStoreRemoving}
+#### Remover Extras {#AddonStoreRemoving}
 
 Para remover um extra, selecione o extra na lista e utilize a ação de Remover.
 O NVDA irá solicitar a confirmação da remoção.
@@ -3655,9 +3656,7 @@ Para mais informações, leia o capítulo: [Extras e a Loja de extras](#AddonsMa
 
 ### Criar uma cópia portátil {#CreatePortableCopy}
 
-Esta opção abre uma caixa de diálogo que permite criar uma cópia portátil do NVDA a partir da versão instalada.
-
-A caixa de diálogo para criar uma cópia portátil  solicitará que escolha o directório onde criar a cópia portátil do NVDA.
+Esta opção abre uma caixa de diálogo que permite criar uma cópia portátil do NVDA a partir da versão em execução.
 
 Para mais informações, vá a [Criar uma Cópia Portátil](#CreatingAPortableCopy).
 
