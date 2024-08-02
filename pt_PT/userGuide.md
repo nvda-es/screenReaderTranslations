@@ -571,7 +571,6 @@ Tocar três vezes resultará num toque triplo, e assim, sucessivamente.
 
 ##### Varrimentos {#Flicks}
 
-
 Arraste rapidamente o seu dedo pelo ecrã.
 
 Existem 4 gestos de varrimento possíveis, dependendo da direcção: varrer para a esquerda, varrer para a direita, varrer para cima, e varrer para baixo.
