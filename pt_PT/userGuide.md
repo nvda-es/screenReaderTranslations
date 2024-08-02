@@ -522,8 +522,8 @@ Contudo, pode, manualmente, activar ou desactivar o processo de recolha de dados
 A maioria dos comandos de teclado do NVDA consiste, normalmente, no pressionar da tecla modificadora do NVDA em conjunto com uma ou mais teclas.
 As principais excepções são, usando o esquema de teclado Desktop, os comandos de revisão do texto, que utilizam somente o bloco numérico.
 
-O NVDA pode ser configurado para que tanto o Insert do bloco numérico, o Insert do bloco intermédio e Caps Lock, possam ser utilizados como teclas modificadoras do NVDA.
-Por padrão, tanto o Insert do bloco numérico como o Insert do bloco intermédio, são definidos como teclas modificadoras do NVDA.
+O NVDA pode ser configurado para que tanto o `Insert do bloco numérico`, o `Insert do bloco intermédio` e o `CapsLock`, possam ser utilizados como teclas modificadoras do `NVDA`.
+Por padrão, tanto o `Insert do bloco numérico` como o `Insert do bloco intermédio`, são definidos como teclas modificadoras do NVDA.
 
 Se pretender que uma das teclas modificadoras do NVDA actue com a sua função original (por exemplo, quando tiver definido o Caps Lock como uma tecla modificadora do NVDA e desejar activá-la com a sua função original), deverá pressionar a tecla duas vezes, em rápida sucessão.
 
