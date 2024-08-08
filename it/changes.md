@@ -80,14 +80,14 @@ Si riceverà un messaggio d'avviso nel caso in cui si provi a scrivere in una di
 * Nelle applicazioni che utilizzano Java Access Bridge, NVDA ora leggerà correttamente l'ultima riga vuota di un testo invece di ripetere la riga precedente. (#9376, @dmitrii-drobotov)
 * In LibreOffice Writer (versione 24.8 e successive), quando si attiva/disattiva la formattazione del testo (grassetto, corsivo, sottolineato, pedice/apice, allineamento) utilizzando la scorciatoia da tastiera corrispondente, NVDA annuncia il nuovo attributo di formattazione (ad esempio "Grassetto attivato", "Grassetto disattivato" ). (#4248, @michaelweghorn)
 * Quando si naviga con i tasti freccia nelle caselle di testo in applicazioni che fanno uso di UI Automation, NVDA non annuncerà più per errore il carattere, la parola o la riga errata. (#16711, @jcsteh)
-* Quando si incolla qualcosa nella calcolatrice di Windows 10/11, NVDA ora leggerà correttamente il numero completo appena incolato. (#16573, @TristanBurchett)
+* Quando si incolla qualcosa nella calcolatrice di Windows 10/11, NVDA ora leggerà correttamente il numero completo appena incollato. (#16573, @TristanBurchett)
 * Corretto un errore che zittiva la sintesi vocale dopo la disconnessione e la riconnessione a una sessione di Desktop remoto. (#16722, @jcsteh)
 * Aggiunto supporto per i comandi di revisione del testo per il nome di un oggetto in Visual Studio Code. (#16248, @Cary-Rowen)
 * è ora possibile ascoltare i suoni generati da NVDA anche sui dispositivi mono. (#16770, @jcsteh)
 * NVDA segnalerà gli indirizzi quando si scorrono i campi A/CC/BCC in outlook.com/Modern Outlook. (#16856)
 * NVDA ora gestisce gli errori di installazione dei componenti aggiuntivi in modo più efficace. (#16704)
 
-### Changes for Developers
+### Cambiamenti per sviluppatori, in inglese
 
 * NVDA now uses Ruff instead of flake8 for linting. (#14817)
 * Fixed NVDA's build system to work properly when using Visual Studio 2022 version 17.10 and above. (#16480, @LeonarddeR)
