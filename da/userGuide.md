@@ -39,7 +39,7 @@ Af væsentlige funktioner kan nævnes:
 
 ### Systemkrav {#SystemRequirements}
 
-#### Anbefalede Systemkrav {#RecommendedSystemRequirements}
+#### Anbefalede Systemkrav {#MinimumSystemRequirements}
 * Operativsystemer: 64-bit udgaver af Windows 10, Windows 11, og Windows Server 2022
   * både AMD64 og ARM64 varianter af Windows understøttes.
 * mindst 150 MB lagerplads.
@@ -1929,7 +1929,8 @@ For at aktivere eller deaktivere unicode-normalisering fra ethvert sted, bedes d
 
 ##### Rapportér "Normaliseret" ved navigation efter tegn {#SpeechReportNormalizedForCharacterNavigation}
 
-Denne indstilling er en check box, som, når den er markeret, får NVDA til at oplyse, hvis et tegn er normaliseret, når det siges som et enkelt tegn, f.eks. under stavning.
+Dette er en check box, der, når den er markeret, får NVDA til at oplyse, at et tegn er normaliseret, når det udtales som et enkelt tegn, f.eks. under stavning.
+Når denne indstilling er aktiveret, vil stavning af tegnet 'ĳ' for eksempel få det udtalt som 'i j normaliseret'.
 
 Bemærk, at denne indstilling kun er tilgængelig, når "[Unicode normalisering](#SpeechUnicodeNormalization)" er aktiveret.
 
