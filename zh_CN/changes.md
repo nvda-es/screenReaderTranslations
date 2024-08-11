@@ -22,7 +22,7 @@ Unicode CLDR 也得到了更新。
 ### 新特性
 
 * 新增快捷键命令：
-  为垂直和水平滚动鼠标滚轮增加了未分配命令，以增强在网页和应用程序中的导航体验，例如 Dism++。 (#16462, @Cary-Rowen)
+  * 为垂直和水平滚动鼠标滚轮增加了未分配命令，以增强在网页和应用程序中的导航体验，例如 Dism++。 (#16462, @Cary-Rowen)
 * 语音和盲文输出新增 Unicode 正规化支持。 (#11570, #16466 @LeonarddeR)
   * 该功能对于阅读某些语音合成器或盲文表无法识别的字符会非常有用，这些字符可能有兼容的替代字符，如社交媒体上常用的粗体和斜体字符。
   * 该功能也支持在 Microsoft Word 公式编辑器中读取公式。 (#4631)
@@ -93,7 +93,7 @@ Unicode CLDR 也得到了更新。
 * 在日志查看器和 NVDA Python 控制台中，现在使用等宽字体，以便在垂直导航时光标可以保持在同一列。
 这对于阅读 traceback 中的错误位置标记尤其有用。 (#16321, @CyrilleB79)
 * 添加了自定义盲文表的功能。 (#3304, #16208, @JulienCochuyt, @LeonarddeR)
-  * 盲文表可以放置在插件包中的 `brailleTables` 目录中。
+  * 盲文表可以放置在插件包中的 `brailleTables` 目录中。可以在插件 manifest 文件或与 `brailleTables` 子目录相同格式的 `.ini` 文件中，添加表的元数据。
   * 详情请参考[开发者指南中的 Braille translation tables 章节](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#BrailleTables)。
 * 当 `gainFocus` 事件排队处理带有有效 `focusRedirect` 属性的对象时，现在由 `eventHandler.lastQueuedFocusObject` 持有 `focusRedirect` 属性指向的对象，而不是最初排队的对象。 (#15843)
 * `wx.CallAfter`（在 `monkeyPatches/wxMonkeyPatches.py` 中包装）现在包含适当的 `functools.wraps` 标记。 (#16520, @XLTechie)
