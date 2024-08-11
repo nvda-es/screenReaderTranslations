@@ -523,7 +523,7 @@ NVDA 安装版的配置在“漫游”应用程序配置文件夹（比如 "`C:\
 需要注意的是，NVDA 的台式机键盘方案中，进行文本浏览仅需使用数字键盘（小键盘）的按键，但也有一些例外。
 
 NVDA 可以配置为使用 `insert` 键、小键盘 `numpadInsert` 键和/或 `capsLock` 键作为 `NVDA` 键。
-默认情况下，`insert` 键和小键盘 `numpadInsert` 键都被设置为 `NVDA` 键。
+默认情况下，`insert` 键和小键盘 `numpadInsert` 键都被设置为 NVDA 键。
 
 假如您想在运行 NVDA 时执行该按键的其中一个原有动作（举例来说，如果您设置了大小写锁定键作为 NVDA 键，但又需要用它来切换大写锁定状态），您可以快速连按两次该键。
 
@@ -4088,7 +4088,7 @@ The following extra devices are also supported (and do not require any special d
 * APH Chameleon 20
 * Humanware BrailleOne
 * NLS eReader
-* Note that the Zoomax is currently not supported without external drivers
+  * Note that the Zoomax is currently not supported without external drivers
 
 Following are the key assignments for  the Brailliant BI/B and BrailleNote touch displays with NVDA.
 Please see the display's documentation for descriptions of where these keys can be found.
