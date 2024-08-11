@@ -4088,7 +4088,7 @@ Følgende yderligere enheder understøttes også, men kræver ingen driver for a
 * APH Chameleon 20
 * Humanware BrailleOne
 * NLS eReader
-* Bemærk, at Zoomax ikke er Understøtet uden tredjepartsdrivere
+  * Bemærk, at Zoomax ikke er Understøtet uden tredjepartsdrivere
 
 Dette er tastekombinationerne til Brailliant BI/B og BrailleNote Touch displays til brug med NVDA.
 Se venligst dokumentationen til dit display for at finde ud af, hvor du kan finde knapperne.
