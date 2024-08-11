@@ -93,7 +93,8 @@ Unicode CLDR 也得到了更新。
 * 在日志查看器和 NVDA Python 控制台中，现在使用等宽字体，以便在垂直导航时光标可以保持在同一列。
 这对于阅读 traceback 中的错误位置标记尤其有用。 (#16321, @CyrilleB79)
 * 添加了自定义盲文表的功能。 (#3304, #16208, @JulienCochuyt, @LeonarddeR)
-  * 盲文表可以放置在插件包中的 `brailleTables` 目录中。可以在插件 manifest 文件或与 `brailleTables` 子目录相同格式的 `.ini` 文件中，添加表的元数据。
+  * 盲文表可以放置在插件包中的 `brailleTables` 目录中。
+  * 可以在插件 manifest 文件或与 `brailleTables` 子目录相同格式的 `.ini` 文件中，添加表的元数据。
   * 详情请参考[开发者指南中的 Braille translation tables 章节](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#BrailleTables)。
 * 当 `gainFocus` 事件排队处理带有有效 `focusRedirect` 属性的对象时，现在由 `eventHandler.lastQueuedFocusObject` 持有 `focusRedirect` 属性指向的对象，而不是最初排队的对象。 (#15843)
 * `wx.CallAfter`（在 `monkeyPatches/wxMonkeyPatches.py` 中包装）现在包含适当的 `functools.wraps` 标记。 (#16520, @XLTechie)
