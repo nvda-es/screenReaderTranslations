@@ -98,6 +98,7 @@ Unicode CLDR 也得到了更新。
   * 详情请参考[开发者指南中的 Braille translation tables 章节](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#BrailleTables)。
 * 当 `gainFocus` 事件排队处理带有有效 `focusRedirect` 属性的对象时，现在由 `eventHandler.lastQueuedFocusObject` 持有 `focusRedirect` 属性指向的对象，而不是最初排队的对象。 (#15843)
 * `wx.CallAfter`（在 `monkeyPatches/wxMonkeyPatches.py` 中包装）现在包含适当的 `functools.wraps` 标记。 (#16520, @XLTechie)
+* NVDA 现在在启动时会记录其可执行文件的架构（x86）。 (#16432, @josephsl)
 * 新增了一个用于任务调度的模块 `utils.schedule`，使用了 pip 模块 `schedule`。 (#16636)
   * 您可以使用 `scheduleThread.scheduleDailyJobAtStartUp` 来自动计划一个任务，该任务在 NVDA 启动后以及之后的每 24 小时运行一次。
   任务会延迟执行以避免冲突。
