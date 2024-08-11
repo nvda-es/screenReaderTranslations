@@ -522,7 +522,7 @@ Du kan aktivere eller deaktivere denne indstilling i NVDAs generelle indstilling
 De fleste NVDA-specifikke tastaturkommandoer består normalt af at trykke på en særlig tast kaldet NVDA-tasten, samtidig med en eller flere andre taster.
 Bemærkelsesværdige undtagelser herfra er tekstlæsekommandoerne i desktop-tastaturlayoutet, som kun består af tasterne i det numeriske tastatur alene, men der er også andre undtagelser.
 
-NVDA kan konfigureres således, at enten `Insert`, den `numeriske Insert`, eller `Caps Lock-tasten` kan bruges som NVDA-tast.
+NVDA kan konfigureres således, at enten `Insert`, den `numeriske Insert`, eller `Caps Lock-tasten` kan bruges som `NVDA`-tast.
 Som standard er både `Insert` og `Numerisk Insert` tasterne indstillet som NVDA-tast.
 
 Hvis du ønsker at få en af NVDA-tasterne til at brue dens oprindelige funktion (for eksempel, hvis du ønsker at slå Caps Lock til og fra, når du har valgt Caps Lock som en NVDA-tast) kan du trykke på tasten to gange i hurtig rækkefølge.
