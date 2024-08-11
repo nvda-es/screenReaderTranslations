@@ -1907,9 +1907,9 @@ Hvis du opdager, at NVDA læser tegn og symboler på et forkert sprog med en bes
 |Muligheder |Standard (Deaktiveret), Aktiveret, Deaktiveret|
 |Standard |Deaktiveret|
 
-Når denne indstilling er aktiveret, udføres unicode-normalisering på den tekst, der tales af NVDA.
+Når denne indstilling er aktiveret, udføres unicode-normalisering på den tekst, der siges af NVDA.
 Dette er gavnligt, når der siges tegn, der kan repræsenteres i flere former.
-NVDA bruger NFKC (Normalization Form Compatibility Composition) algoritme, som giver følgende fordele blandt andre:
+NVDA bruger NFKC (Normalization Form Compatibility Composition) algoritmen, som giver følgende fordele blandt andre:
 
 1. De fede og kursiverede versioner af tegn, der er en del af unicode-standarden og almindeligt anvendes på sociale medier, normaliseres til deres mest almindelige kompatible ækvivalent.
 For eksempel kan det latinske bogstav "h" også præsenteres som "𝐡" (fed), "ℎ" (kursiv) osv., men vil altid blive talt som "h", når normalisering er aktiveret.
@@ -1925,12 +1925,11 @@ For eksempel kan tegnet "ü" (u med trema), et almindeligt tegn i sprog som tysk
 
 1. Stabil rækkefølge af modifikatorer i sammensatte tegn, for eksempel på oldhebraisk.
 
-For at aktivere eller deaktivere unicode-normalisering fra ethvert sted, bedes du tildele en brugerdefineret kommando ved hjælp af [Input Gestures dialogen](#InputGestures).
+For at aktivere eller deaktivere unicode-normalisering fra ethvert sted, bedes du tildele en brugerdefineret kommando ved hjælp af [Dialogen Håndter Kommandoer](#InputGestures).
 
 ##### Rapportér "Normaliseret" ved navigation efter tegn {#SpeechReportNormalizedForCharacterNavigation}
 
-Denne indstilling er en check box, der, når den er markeret, fortæller NVDA eksplicit at rapportere, at et tegn er normaliseret, når det tales som et enkelt tegn, f.eks. når der staves.
-For eksempel, når denne indstilling er aktiveret, vil stavning af tegnet "ĳ" udtale det som "i j normaliseret".
+Denne indstilling er en check box, som, når den er markeret, får NVDA til at oplyse, hvis et tegn er normaliseret, når det siges som et enkelt tegn, f.eks. under stavning.
 
 Bemærk, at denne indstilling kun er tilgængelig, når "[Unicode normalisering](#SpeechUnicodeNormalization)" er aktiveret.
 
@@ -2932,7 +2931,7 @@ Denne kategori giver dig mulighed for at justere adfærden for Tilføjelsescente
 
 ##### Opdateringsmeddelelser {#AutomaticAddonUpdates}
 
-Når denne indstilling er sat til "Underret", vil Tilføjelsescenteret underrette dig efter NVDA opstart, hvis der er tilgængelige opdateringer til tilføjelser.
+Når denne indstilling er indstillet til "Underret", vil Tilføjelsescenteret underrette dig efter NVDA opstart, hvis der er tilgængelige opdateringer til tilføjelser.
 Denne kontrol udføres hver 24. time.
 Underretninger vil kun forekomme for tilføjelser med tilgængelige opdateringer inden for samme kanal.
 For eksempel vil du for installerede beta-tilføjelser kun blive underrettet om opdateringer inden for beta-kanalen.
@@ -2944,7 +2943,7 @@ For eksempel vil du for installerede beta-tilføjelser kun blive underrettet om 
 
 |Indstilling |Adfærd |
 |---|---|
-|Underret |Underret når der er tilgængelige opdateringer til tilføjelser inden for samme kanal |
+|Underret |Underret, når der er tilgængelige opdateringer til tilføjelser inden for samme kanal |
 |Deaktiveret |Kontrollér ikke automatisk for opdateringer til tilføjelser |
 
 #### Windows Tekstgenkendelse {#Win10OcrSettings}
