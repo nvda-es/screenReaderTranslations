@@ -362,7 +362,7 @@ NVDA 键也可以设定为`大小写锁定`键。
 找到要更新的插件按`回车键`以打开操作列表，选择“更新”。
 
 默认情况下，在 NVDA 启动后，如果插件有更新，您将会收到通知。
-要了解更多信息并设置该行为，请参阅 [“更新通知”](#AutomaticAddonUpdates)。
+要了解更多信息并设置该行为，请参阅“[更新通知](#AutomaticAddonUpdates)”。
 
 ### 社区 {#Community}
 
@@ -914,7 +914,7 @@ NVDA 提供了一个方式让用户了解鼠标所在的位置，即结合屏幕
 鼠标所在位置的左右距离，用提示音的左右方位来表示（假设用户拥有立体声喇叭或者耳机）。
 
 NVDA 这些额外的鼠标特性默认情况下是关闭的。
-如果您想使用这些特性，您可以在 “NVDA 菜单”中的“选项”子菜单下找到设置，打开 “[NVDA 设置](#NVDASettings)” 然后找到 “[鼠标](#MouseSettings)”类别进行配置。
+如果您想使用这些特性，您可以在 “NVDA 菜单”中的“选项”子菜单下找到设置，打开“[NVDA 设置](#NVDASettings)”然后找到“[鼠标](#MouseSettings)”类别进行配置。
 
 虽然一个物理鼠标或者触摸板就可以用来进行鼠标导航，但 NVDA 依然有一些与此相关的键盘命令：
 
@@ -1912,16 +1912,16 @@ Espeak NG的“变声”跟“语音”很像，您可以使用此组合框来�
 NVDA 使用 NFKC（Normalization Form Compatibility Composition）算法，该算法有以下优势：
 
 1. 对属于 Unicode 标准的字符的粗体和斜体版本进行正规化，这些字符通常在社交媒体上使用，会被正规化为它们最常见的兼容等效形式。
-例如，拉丁字母 "h" 也可以表示为 "𝐡"（粗体）、"ℎ"（斜体）等，但启用正规化后，这些字符总是会被发音为 "h"。
-使用Unicode 正规化还有助于在 Microsoft Word 公式编辑器中读取公式。
+例如，拉丁字母“h”也可以表示为“𝐡”（粗体）、“ℎ”（斜体）等，但启用正规化后，这些字符总是会被发音为“h”。
+使用 Unicode 正规化还有助于在 Microsoft Word 公式编辑器中读取公式。
 
 1. 正规化为组合字符。
-例如，字符 "ü"（带分音符/变音符的 u），在德语和土耳其语等语言中是常见字符，可以有两种表示形式：
+例如，字符“ü”（带分音符/变音符的 u），在德语和土耳其语等语言中是常见字符，可以有两种表示形式：
   1. 一个独立的 Unicode 字符（ü）
   1. 分解为两个字符（ü），即普通的拉丁字母 u 和分音符修饰符
   Unicode 正规化确保在所有语音输出中只使用一种形式，即单个字符的变体。
 
-1. 对某些连字进行分解，例如将 "ĳ"（连字 ij）分解为两个字母形式（"ij"）。
+1. 对某些连字进行分解，例如将“ĳ”（连字 ij）分解为两个字母形式（“ij”）。
 
 1. 稳定复合字符中修饰符的顺序，例如在古希伯来语中。
 
@@ -1930,9 +1930,9 @@ NVDA 使用 NFKC（Normalization Form Compatibility Composition）算法，该�
 ##### 字符导航时读出“正规化” {#SpeechReportNormalizedForCharacterNavigation}
 
 此设置是一个复选框，勾选后，NVDA 在单独朗读字符（如拼写时）会明确提示字符已正规化。
-例如，当启用此选项时，拼写字符 "ĳ" 将会朗读为 "i j 正规化"。
+例如，当启用此选项时，拼写字符“ĳ”将会朗读为“i j 正规化”。
 
-注意，此设置仅在启用了 "[Unicode 正规化](#SpeechUnicodeNormalization)" 时生效。
+注意，此设置仅在启用了“[Unicode 正规化](#SpeechUnicodeNormalization)”时生效。
 
 ##### 处理字符和符号时包含 Unicode 联盟提供的数据（包括表情符号） {#SpeechSettingsCLDR}
 
@@ -3533,7 +3533,7 @@ NVDA 的插件商店可以让您浏览和管理插件。
 安装插件后，必须重新启动 NVDA 才能使插件生效，但如果您还有其他插件需要安装或更新，则可以推迟重新启动 NVDA。
 
 默认情况下，在 NVDA 启动后，如果插件有更新，您将会收到通知。
-要了解更多信息并设置该行为，请参阅 [“更新通知”](#AutomaticAddonUpdates)。
+要了解更多信息并设置该行为，请参阅“[更新通知](#AutomaticAddonUpdates)”。
 
 #### 移除插件 {#AddonStoreRemoving}
 
@@ -5083,8 +5083,8 @@ NVDA 在安全界面使用系统配置文件作为首选项。
 | 无 | `--install-silent` | 静默安装 NVDA（但不启动安装后的副本）。 |
 | 无 | `--enable-start-on-logon=True|False` | 安装时开启或关闭[进入 Windows 欢迎界面时启用 NVDA](#StartAtWindowsLogon) 选项 |
 | 无 | `--copy-portable-config` | 安装时，将便携版配置从所提供的路径（`--config-path`、`-c`）复制到当前用户帐户目录下。 |
-|无 |`--create-portable` |创建一个便携版（并启动该便携版）。 必须和 `--portable-path` 一起使用。|
-|无 | `--create-portable-silent` |创建一个便携版（但不启动该便携版）。 必须和 `--portable-path` 一起使用。注意，该选项在写入非空目录时不显示警告，这可能会导致在无警告的情况下覆盖文件。|
+| 无 | `--create-portable` | 创建一个便携版（并启动该便携版）。 必须和 `--portable-path` 一起使用。 |
+| 无 | `--create-portable-silent` | 创建一个便携版（但不启动该便携版）。 必须和 `--portable-path` 一起使用。注意，该选项在写入非空目录时不显示警告，这可能会导致在无警告的情况下覆盖文件。 |
 | 无 | `--portable-path=PORTABLEPATH` | 创建便携版的目录 |
 
 ### 系统范围参数 {#SystemWideParameters}
