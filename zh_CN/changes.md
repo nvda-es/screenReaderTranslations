@@ -14,6 +14,7 @@
 
 修复了多个问题，尤其在 Windows 11 表情符号面板和剪贴板历史记录方面。
 对于浏览器，修复了错误消息朗读、图形、标题、表格标签以及复选框/单选按钮菜单项的系列问题。
+
 LibLouis 已更新，新增了塞尔维亚西里尔字母、意第绪语、多种古语盲文表、以及土耳其语和国际音标新盲文表。
 eSpeak 已更新，增加了对卡拉卡尔帕克语的支持。
 Unicode CLDR 也得到了更新。
@@ -85,24 +86,22 @@ Unicode CLDR 也得到了更新。
 * 修复了在 outlook.com / Modern Outlook 中，在 To/CC/BCC 字段之间导航时，NVDA 无法读出地址的错误。 (#16856)
 * 改进了插件安装失败时的处理，使 NVDA 的处理更加优雅。 (#16704)
 
-### Changes for Developers
+### 开发者需要了解的变化
 
-* NVDA now uses Ruff instead of flake8 for linting. (#14817)
-* Fixed NVDA's build system to work properly when using Visual Studio 2022 version 17.10 and above. (#16480, @LeonarddeR)
-* A fixed width font is now used in Log Viewer and in the NVDA Python Console so that the cursor remains in the same column during vertical navigation.
-It is especially useful to read the error location markers in tracebacks. (#16321, @CyrilleB79)
-* Support for custom braille tables has been added. (#3304, #16208, @JulienCochuyt, @LeonarddeR)
-  * Tables can be provided in the `brailleTables` folder in an add-on package.
-  * Table metadata can be added to an optional `brailleTables` section in the add-on manifest or to a `.ini` file with the same format found in the brailleTables subdirectory of the scratchpad directory.
-  * Please consult the [braille translation tables section in the developer guide](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#BrailleTables) for more details.
-* When a `gainFocus` event is queued with an object that has a valid `focusRedirect` property, the object pointed to by the `focusRedirect` property is now held by `eventHandler.lastQueuedFocusObject`, rather than the originally queued object. (#15843)
-* NVDA will log its executable architecture (x86) at startup. (#16432, @josephsl)
-* `wx.CallAfter`, which is wrapped in `monkeyPatches/wxMonkeyPatches.py`, now includes proper `functools.wraps` indication. (#16520, @XLTechie)
-* There is a new module for scheduling tasks `utils.schedule`, using the pip module `schedule`. (#16636)
-  * You can use `scheduleThread.scheduleDailyJobAtStartUp` to automatically schedule a job that happens after NVDA starts, and every 24 hours after that.
-  Jobs are scheduled with a delay to avoid conflicts.
-  * `scheduleThread.scheduleDailyJob` and `scheduleJob` can be used to schedule jobs at custom times, where a `JobClashError` will be raised on a known job scheduling clash.
-* It is now possible to create app modules for apps hosting Edge WebView2 (msedgewebview2.exe) controls. (#16705, @josephsl)
+* NVDA 代码库现在使用 Ruff 代替 flake8 进行代码质量检查。 (#14817)
+* 修复了 NVDA 的构建系统，使其在使用 Visual Studio 2022 版本 17.10 及以上版本时能够正常工作。 (#16480, @LeonarddeR)
+* 在日志查看器和 NVDA Python 控制台中，现在使用等宽字体，以便在垂直导航时光标可以保持在同一列。
+这对于阅读 traceback 中的错误位置标记尤其有用。 (#16321, @CyrilleB79)
+* 添加了自定义盲文表的功能。 (#3304, #16208, @JulienCochuyt, @LeonarddeR)
+  * 盲文表可以放置在插件包中的 `brailleTables` 目录中。
+  * 详情请参考[开发者指南中的 Braille translation tables 章节](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#BrailleTables)。
+* 当 `gainFocus` 事件排队处理带有有效 `focusRedirect` 属性的对象时，现在由 `eventHandler.lastQueuedFocusObject` 持有 `focusRedirect` 属性指向的对象，而不是最初排队的对象。 (#15843)
+* `wx.CallAfter`（在 `monkeyPatches/wxMonkeyPatches.py` 中包装）现在包含适当的 `functools.wraps` 标记。 (#16520, @XLTechie)
+* 新增了一个用于任务调度的模块 `utils.schedule`，使用了 pip 模块 `schedule`。 (#16636)
+  * 您可以使用 `scheduleThread.scheduleDailyJobAtStartUp` 来自动计划一个任务，该任务在 NVDA 启动后以及之后的每 24 小时运行一次。
+  任务会延迟执行以避免冲突。
+  * 可以使用 `scheduleThread.scheduleDailyJob` 和 `scheduleJob` 计划自定义时间任务，如果任务计划发生冲突将抛出 `JobClashError`。
+* 现在支持为托管 Edge WebView2（msedgewebview2.exe）控件的应用程序创建应用模块。 (#16705, @josephsl)
 
 ## 2024.2
 
