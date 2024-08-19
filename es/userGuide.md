@@ -1243,7 +1243,6 @@ Con el fin de tener la mayor cantidad de información posible en una pantalla br
 |btrot |botón rotatorio|
 |btdiv |botón divisor|
 |tlo |título|
-|rtlo |rótulo|
 |btcom |botón conmutable|
 |cc |cuadro combinado|
 |cv |casilla de verificación|
