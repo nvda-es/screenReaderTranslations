@@ -2029,7 +2029,9 @@ Si deseas cambiar rápidamente opciones de voz  sin ir a la categoría de Voz de
 |Mover a la siguiente opción de sintetizador |NVDA+control+Flecha derecha |NVDA+shift+control+Flecha derecha |Se mueve a la siguiente opción de voz disponible después de la actual, pasando por la primera opción de nuevo después de la última|
 |Mover a la opción de sintetizador anterior |NVDA+control+Flecha izquierda |NVDA+shift+control+Flecha izquierda |Se mueve a la opción de voz anterior disponible después de la actual, pasando por la primera opción de nuevo después de la última|
 |Incrementar actual opción de sintetizador |NVDA+control+Flecha arriba |NVDA+shift+control+Flecha arriba |incrementa la opción de voz actual sobre la que estés. por Ejemplo: incrementa la velocidad, elige la siguiente voz, incrementa el volumen|
+|Aumentar la opción actual del sintetizador en un paso largo |`NVDA+control+rePág` |`NVDA+shift+control+rePág` |aumenta el valor de la actual opción de voz sobre la que estés en pasos más largos. EJ.: cuando estés sobre una opción de voz, saltarás hacia adelante cada 20 voces; cuando estés en opciones de un deslizador (velocidad, tono, etc) saltará adelante el valor de 20%|
 |Decrementar actual opción de sintetizador |NVDA+control+Flecha abajo |NVDA+shift+control+Flecha abajo |decrementa la opción de voz actual sobre la que estés. por Ejemplo: decrementa la velocidad, elige  la voz anterior, decrementa el volumen|
+|Disminuir la actual opción del sintetizador en un paso largo |`NVDA+control+avPág` |`NVDA+shift+control+avPág` |Disminuye el valor de la actual opción de voz sobre la que estés en pasos más largos. ej.: cuando estés sobre una opción de voz, saltará hacia atrás cada 20 voces; cuando estés sobre una opción de deslizador, saltará atrás el valor de 20%|
 
 <!-- KC:endInclude -->
 
