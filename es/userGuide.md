@@ -169,8 +169,7 @@ Para más detalles sobre las opciones disponibles, por favor consulta [Opciones 
 Están marcadas de forma predeterminada.
 Si lo deseas, pulsa `tab` y `barra espaciadora` para cambiar cualquiera de estas opciones, o dejarlas como vienen por defecto.
 1. Pulsa `intro` para continuar.
-Si lo deseas, pulsa `tab` y `barra espaciadora` para cambiar cualquiera de estas opciones, o déjalas como están por omisión.
-1. Aparece un diálogo de Windows "Control de Cuenta de Usuario (UAC en inglés)" preguntándote "¿Quiere permitir que esta app haga cambios a su ordenador?".
+1. Aparece un diálogo de Windows "Control de Cuentas de Usuario (UAC en inglés)" preguntándote "¿Quiere permitir que esta aplicación haga cambios en su equipo?".
 1. Pulsa `alt+s` para aceptar el indicativo del UAC.
 1. Se rellena una barra de progreso según NVDA se instale.
 Durante este proceso NVDA emite un pitido cada vez más agudo.
