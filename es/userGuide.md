@@ -259,9 +259,9 @@ Las órdenes reales no se ejecutarán mientras se esté en modo ayuda de entrada
 |Aumentar la opción actual del sintetizador |`NVDA+control+flecha arriba` |`NVDA+shift+control+flecha arriba` |Aumenta la opción de voz actual en la que estés. Ej.: aumenta la velocidad, elige la siguiente voz, aumenta el volumen|
 |Aumentar la opción actual del sintetizador en un paso largo | `NVDA+control+rePág` | `NVDA+shift+control+rePág` | aumenta el valor de la actual opción de voz sobre la que estés en pasos más largos. EJ.: cuando estés sobre una opción de voz, saltarás hacia adelante cada 20 voces; cuando estés en opciones de un deslizador (velocidad, tono, etc) saltará adelante el valor de 20% |
 |Disminuir la opción actual del sintetizador |`NVDA+control+flecha abajo` |`NVDA+shift+control+flecha abajo` |Disminuye la opción de voz actual en la que estés. Ej.: disminuye la velocidad, elige la voz anterior, disminuye el volumen|
-|Disminuir la actual opción del sintetizador en un paso largo | ``NVDA+control+avPág`` | ``NVDA+shift+control+avPág`` | Disminuye el valor de la actual opción de voz sobre la que estés en pasos más largos. ej.: cuando estés sobre una opción de voz, saltará hacia atrás cada 20 voces; cuando estés sobre una opción de deslizador, saltará atrás el valor de 20%. |
+|Disminuir la actual opción del sintetizador en un paso largo | `NVDA+control+avPág` | `NVDA+shift+control+avPág` | Disminuye el valor de la actual opción de voz sobre la que estés en pasos más largos. ej.: cuando estés sobre una opción de voz, saltará hacia atrás cada 20 voces; cuando estés sobre una opción de deslizador, saltará atrás el valor de 20%. |
 
-También es posible establecer el primer o el último valor de la actual opción del sintetizador asignando gestos personalizados en el [diálogo Gestos de Entrada #InputGestures], en la categoría voz.
+También es posible establecer el primer o el último valor de la actual opción del sintetizador asignando gestos personalizados en el [diálogo Gestos de Entrada](#InputGestures), en la categoría voz.
 Esto significa, por ejemplo, que cuando estés sobre una opción de velocidad, la establecerá a 0 o a 100.
 Cuando estés sobre una opción de voz, establecerá la primera o la última voz.
 
@@ -429,7 +429,7 @@ Esta opción está habilitada por defecto para instalaciones nuevas.
 #### Crear Atajos del Escritorio (ctrl+alt+n) {#CreateDesktopShortcut}
 
 Esta opción te permite elegir si NVDA debería crear o no un atajo en el escritorio para iniciar NVDA. 
-Si se creó, a este atajo  también se le asignará una tecla rápida control+alt+n permitiéndote iniciar NVDA en cualquier ocasión con esta combinación de teclas.
+Si se creó, a este atajo  también se le asignará una tecla rápida `control+alt+n` permitiéndote iniciar NVDA en cualquier ocasión con esta combinación de teclas.
 
 #### Copiar Configuración Portable de la Actual Cuenta de Usuario {#CopyPortableConfigurationToCurrentUserAccount}
 
@@ -485,7 +485,7 @@ Además, puedes teclear NVDA en el diálogo Ejecutar y pulsar Intro.
 Si NVDA ya se está ejecutando, se reiniciará.
 También puedes pasar algunas [opciones de línea de órdenes](#CommandLineOptions) que te permiten salir (-q), desactivar complementos (--disable-addons), etc.
 
-Para las copias instaladas, NVDA almacena la configuración en la carpeta roaming application data del usuario actual por omisión (por ejemplo: "C:\Users\<user>\AppData\Roaming").
+Para las copias instaladas, NVDA almacena la configuración en la carpeta roaming application data del usuario actual por omisión (por ejemplo: "`C:\Users\<user>\AppData\Roaming`").
 Es posible cambiar esto de forma que NVDA cargue su configuración desde la carpeta local de datos de aplicación en su lugar.
 Consulta la sección acerca de [parámetros del sistema](#SystemWideParameters) para más detalles.
 
@@ -522,8 +522,8 @@ Sin embargo, puedes activar o desactivar el proceso de recopilación de datos ma
 La mayoría de las órdenes específicas de teclado de NVDA consisten normalmente en la pulsación de la tecla modificadora de NVDA, junto con una o más teclas. 
 Una notable excepción a  esto son las órdenes de revisión de texto para la distribución de teclado de escritorio que sólo utilizan las teclas del teclado numérico en sí mismas, pero hay algunas otras excepciones también.
 
-NVDA puede configurarse tal que o la tecla Insert del teclado numérico, o la Insert del extendido, y/o la BloqMayus puedan utilizarse como la tecla modificadora de NVDA.
-De forma predeterminada tanto el insert del teclado numérico como el del teclado extendido pueden utilizarse como teclas modificadoras.
+NVDA puede configurarse tal que o la tecla `Insert del teclado numérico`, o la `Insert` del extendido, y/o la `BloqMayus` puedan utilizarse como la tecla modificadora de `NVDA`.
+De forma predeterminada tanto el `insert del teclado numérico` como el `insert del teclado extendido` pueden utilizarse como teclas modificadoras.
 
 Si deseas hacer que una de las teclas modificadoras de NVDA se comporte como lo haría normalmente si NVDA no estuviese en marcha (por ejemplo deseas activar BloqMayus cuando tienes configurada BloqMayus para que sea una tecla modificadora de NVDA) puedes pulsar la tecla dos veces seguidas.
 
@@ -863,7 +863,7 @@ La disposición está ilustrada como sigue:
 
 ### Modos de Revisión {#ReviewModes}
 
-Las órdenes de revisión de texto de NVDA pueden revisar el contenido dentro del navegador de objetos actual, documento actual, o pantalla, dependiendo del modo de revisión seleccionado.
+Las [órdenes de revisión de texto](#ReviewingText) de NVDA pueden revisar el contenido dentro del navegador de objetos actual, documento actual, o pantalla, dependiendo del modo de revisión seleccionado.
 
 Las órdenes que siguen cambian entre los modos de revisión:
 <!-- KC:beginInclude -->
@@ -906,7 +906,7 @@ Ten en cuenta que en algunas aplicaciones modernas, NVDA podría no ver alguno o
 Cuando mueves el ratón, NVDA informa de forma predeterminada del texto que esté directamente bajo el puntero del mismo, según se mueva sobre él. 
 Donde se admita, NVDA leerá el valor de un párrafo de texto, aunque algunos controles sólo podrán leerse por líneas.
 
-NVDA también puede configurarse para anunciar el tipo de control u objeto sobre el que esté actualmente el ratón según se mueva (por ejemplo: lista, botón etc.). 
+NVDA también puede configurarse para anunciar el tipo de control u [objeto](#Objects) sobre el que esté actualmente el ratón según se mueva (por ejemplo: lista, botón etc.). 
 Esto podrá ser útil para usuarios ciegos totales cuando algunas veces el texto no baste.
 
 NVDA proporciona un modo para que los usuarios comprendan dónde está el ratón con respecto a las dimensiones de la pantalla, haciendo sonar las coordenadas actuales del ratón en forma de pitidos de audio. 
@@ -1009,7 +1009,7 @@ Las siguientes teclas por sí mismas saltan al siguiente campo, con la tecla shi
 * o: objeto integrado (reproductor de audio y vídeo, aplicación, diálogo, etc.)
 * 1 a 6: encabezados de 1 a 6 respectivamente
 * a: anotación (comentario, revisión del editor, etc.)
-* ``p``: párrafo de texto
+* `p`: párrafo de texto
 * w: error de ortografía
 
 Para moverte al comienzo o final de elementos contenedores tales como listas y tablas:
@@ -1101,7 +1101,7 @@ Utiliza las siguientes teclas para realizar  búsquedas:
 | Nombre |Tecla |Descripción|
 |---|---|---|
 |Buscar texto |NVDA+control+f |Abre el diálogo buscar|
-|Buscar siguiente |NVDA+f3 |Busca la siguiente ocurrencia del término buscado actual||
+|Buscar siguiente |NVDA+f3 |Busca la siguiente ocurrencia del término buscado actual|
 |Buscar anterior |NVDA+shift+f3 |Busca la ocurrencia anterior del término buscado actual|
 
 <!-- KC:endInclude -->
@@ -1489,7 +1489,7 @@ La Lista de Elementos puede listar encabezados, enlaces, anotaciones (las cuales
 <!-- KC:beginInclude -->
 Para anunciar cualquier comentario en la posición actual del cursor de edición, pulsa NVDA+alt+c.
 <!-- KC:endInclude -->
- Todos los comentarios para el documento con otro seguimiento de cambios también pueden listarse en la Lista de Elementos de NVDA al seleccionar Anotaciones según se teclea.
+Todos los comentarios para el documento, con otro seguimiento de cambios, también pueden listarse en la Lista de Elementos de NVDA al seleccionar Anotaciones según se teclea.
 
 ### Microsoft Excel {#MicrosoftExcel}
 #### Lectura Automática de Encabezado de Columna y fila {#ExcelAutomaticColumnAndRowHeaderReading}
@@ -1770,9 +1770,9 @@ Los niveles disponibles del registro son:
 * Información: NVDA registrará información básica tal como mensajes de inicio e información útil para los desarrolladores.
 * Advertencia de depuración: se registrarán mensajes de advertencia que no sean causados por errores graves.
 * Entrada/salida: se registrarán las entradas de las pantallas braille y de los teclados, así como la salida de la voz y del braille.
-* Si te preocupa la privacidad, no configures esta opción de nivel de registro.
+Si te preocupa la privacidad, no configures esta opción de nivel de registro.
 * Depuración: además de los mensajes de información, advertencia y entrada/salida, se registrarán mensajes de depuración adicionales.
-* Al igual que con la Entrada/salida, si te preocupa la privacidad, no deberías configurar el nivel de registro en esta opción.
+Al igual que con la Entrada/salida, si te preocupa la privacidad, no deberías configurar el nivel de registro en esta opción.
 
 ##### Arrancar NVDA después de que inicie sesión {#GeneralSettingsStartAfterLogOn}
 
@@ -1786,7 +1786,7 @@ Esta opción sólo está disponible para copias instaladas de NVDA.
 
 ##### Utilizar Opciones guardadas actualmente durante el inicio de sesión y en pantallas seguras {#GeneralSettingsCopySettings}
 
-Pulsando este botón copias tu configuración de usuario de NVDA actualmente guardada al directorio de sistema de configuración de NVDA, tal que NVDA lo utilizará cuando se ejecute durante el inicio de sesión, Control de Cuentas de Usuario (UAC) y otras pantallas seguras de Windows.
+Pulsando este botón copias tu configuración de usuario de NVDA actualmente guardada al directorio de sistema de configuración de NVDA, tal que NVDA lo utilizará cuando se ejecute durante el inicio de sesión, Control de Cuentas de Usuario (UAC) y otras [pantallas seguras](#SecureScreens) de Windows.
 Para estar seguro de que todas tus opciones se transfieren, asegúrate de guardar primeramente tu configuración con control+NVDA+c o guarda la configuración en el menú NVDA.
 Esta opción sólo está disponible para copias instaladas de NVDA.
 
@@ -1979,10 +1979,8 @@ Si estás teniendo problemas con la pronunciación de caracteres individuales,  
 
 | . {.hideHeaderRow} |.|
 |---|---|
-| Predeterminada |Deshabilitada|
-|---|---|
 | Opciones |Habilitada, Deshabilitada|
-|---|---|
+| Predeterminada |Deshabilitada|
 
 Cuando esta opción está marcada, NVDA dirá la descripción del carácter cuando te muevas por caracteres.
 
