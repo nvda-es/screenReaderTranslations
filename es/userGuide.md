@@ -2925,6 +2925,7 @@ Este estilo funciona mejor cuando se trabaje con documentos que utilicen bloques
 Ten en cuenta que este estilo de párrafo no puede utilizarse en Microsoft Word o Microsoft Outlook, a menos que estés utilizando UIA para acceder a controles de Microsoft Word.
 
 Puedes cambiar entre los estilos de párrafo disponibles desde cualquier lugar asignando una tecla en el [diálogo Gestos de Entrada](#InputGestures).
+
 #### Opciones de la tienda de complementos {#AddonStoreSettings}
 
 Esta categoría permite ajustar el comportamiento de la tienda de complementos.
