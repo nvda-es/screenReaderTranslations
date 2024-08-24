@@ -4005,8 +4005,8 @@ Por favor consulta la documentación de la pantalla braille para descripciones d
 |---|---|
 |Desplazar pantalla braille hacia atrás |`d2`|
 |Desplazar pantalla braille hacia adelante |`d5`|
-|Mover la pantalla braille a la línea anterior |d1|
-|Mover la pantalla braille a la línea siguiente |d3|
+|Mover la pantalla braille a la línea anterior |`d1`|
+|Mover la pantalla braille a la línea siguiente |`d3`|
 |Guiar a la celda braille |`sensor`|
 |teclas `shift+tab` |`espacio+punto1+punto3`|
 |`tecla tab` |`espacio+punto4+punto6`|
@@ -5085,7 +5085,7 @@ Seguidamente van las opciones de línea de órdenes para NVDA:
 |Ninguna |`--copy-portable-config` |Al instalar, copia la configuración portable desde la ruta proporcionada (`--config-path`, `-c`) a la actual cuenta de usuario|
 |Ninguna |`--create-portable` |Crea una copia portable de NVDA (e inicia la copia nueva). Requiere que se especifique `--portable-path`|
 |`None` |`--create-portable-silent` |Crea una copia portable de NVDA (sin iniciar la nueva copia). Requiere expecificarse --portable-path. Esta opción suprime  las advertencias al escribir en directorios no vacíos y puede sobreescribir ficheros sin avisar.|
-|`None` |`--portable-path=PORTABLEPATH` |La ruta donde se creará una copia portable|
+|Ninguna |`--portable-path=PORTABLEPATH` |La ruta donde se creará una copia portable|
 
 ### Parámetros del Sistema {#SystemWideParameters}
 
