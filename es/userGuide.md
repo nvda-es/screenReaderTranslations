@@ -3087,10 +3087,10 @@ Existen las siguientes opciones:
   Cuando la fuente de `accDescription` es aria-description, se anuncia la descripción.
   Esto es útil para las anotaciones en la web.
   Nota:
- * Hay muchas fuentes para `accDescription` varias tienen una semántica mixta o poco fiable.
-   Históricamente AT no ha sido capaz de diferenciar las fuentes de `accDescription` típicamente no se verbalizaba debido a la semántica mixta.
- * Esta opción está en un desarrollo muy primitivo, se basa en las características del navegador que aún no están ampliamente disponibles.
- * Se espera que funcione con Chromium 92.0.4479.0+
+  * Hay muchas fuentes para `accDescription` varias tienen una semántica mixta o poco fiable.
+    Históricamente AT no ha sido capaz de diferenciar las fuentes de `accDescription` típicamente no se verbalizaba debido a la semántica mixta.
+  * Esta opción está en un desarrollo muy primitivo, se basa en las características del navegador que aún no están ampliamente disponibles.
+  * Se espera que funcione con Chromium 92.0.4479.0+
 
 ##### Anunciar regiones activas {#BrailleLiveRegions}
 
@@ -3253,8 +3253,8 @@ Puedes filtrar los símbolos introduciendo el símbolo o una parte de su sustitu
 * El campo Reemplazar te permite cambiar el texto que debería verbalizarse en lugar de este símbolo.
 * Utilizando el campo Nivel, puedes ajustar el nivel más bajo del símbolo al cual este símbolo debería verbalizarse (no, alguno, la mayoría o todos).
 También puedes ajustar el nivel a carácter; en este caso el símbolo no se verbalizará independientemente del nivel de símbolo en uso, con las siguientes dos excepciones:
- * Al navegar por caracteres.
- * Cuando NVDA esté deletreando cualquier texto que contenga ese símbolo.
+  * Al navegar por caracteres.
+  * Cuando NVDA esté deletreando cualquier texto que contenga ese símbolo.
 * El campo Enviar símbolo actual al sintetizador especifica cuando el propio símbolo (en contraposición con su reemplazo) debería enviarse al sintetizador.
 Esto es útil si el símbolo causa que el sintetizador haga una pausa o cambie la entonación de la voz.
 Por ejemplo, una coma causa que el sintetizador haga una pausa.
@@ -3262,7 +3262,7 @@ Hay tres opciones:
   * nunca: nunca envía el símbolo actual al sintetizador.
   * Siempre: envía siempre el símbolo actual al sintetizador.
   * sólo bajo Nivel de los símbolos: Envía el símbolo actual sólo si el nivel de voz de símbolo configurado es más bajo que el nivel puesto por este símbolo.
- Por ejemplo, podrías utilizar esto tal que un símbolo tendrá su reemplazo verbalizado en niveles más altos sin pausar, mientras todavía esté indicado con una pausa en los niveles más bajos.
+  Por ejemplo, podrías utilizar esto tal que un símbolo tendrá su reemplazo verbalizado en niveles más altos sin pausar, mientras todavía esté indicado con una pausa en los niveles más bajos.
 
 Puedes añadir símbolos nuevos pulsando el botón Añadir.
 En el cuadro de diálogo que aparece, introduce el símbolo y pulsa el botón Aceptar.
@@ -3304,7 +3304,7 @@ Notas:
 
 * Las teclas asignadas deben tener gestos asignados para persistir cuando se guarden o se cierre el diálogo.
 * Un gesto de entrada con teclas modificadoras puede no ser capaz de mapearse a un gesto emulado sin teclas modificadoras.
-Por ejemplo, configurar la entrada emulada 'a' y configurar un gesto de entrada de 'ctrl+m', puede resultar en que la aplicación reciba un 'ctrl+a'.
+Por ejemplo, configurar la entrada emulada `a` y configurar un gesto de entrada de `ctrl+m`, puede resultar en que la aplicación reciba un `ctrl+a`.
 
 Cuando hayas terminado de realizar cambios, pulsa el botón Aceptar para guardarlos o el botón Cancelar para descartarlos.
 
@@ -3499,8 +3499,8 @@ Para enumerar complementos sólo para canales específicos, cambia la selección
 #### Buscar complementos {#AddonStoreFilterSearch}
 
 Para buscar complementos, utiliza el cuadro de texto "Buscar".
-Puedes acceder a él pulsando `shift+tab` desde la lista de complementos, o pulsando `alt+b` desde cualquier lugar en la interfaz de la Tienda de Complementos.
-Escribe una o dos palabras clave para 	el tipo de complemento que buscas y luego vuelve a la lista.
+Puedes acceder a él pulsando `shift+tab` desde la lista de complementos.
+Escribe una o dos palabras clave para el tipo de complemento que buscas y luego `tabula` a la lista.
 Los complementos se listarán si el texto buscado puede encontrarse en el ID del complemento, en el nombre mostrado, en el editor, en el autor o en la descripción.
 
 ### Acciones del complemento {#AddonStoreActions}
@@ -4003,20 +4003,20 @@ Por favor consulta la documentación de la pantalla braille para descripciones d
 
 | Nombre |Tecla|
 |---|---|
-|Desplazar pantalla braille hacia atrás |d2|
-|Desplazar pantalla braille hacia adelante |d5|
+|Desplazar pantalla braille hacia atrás |`d2`|
+|Desplazar pantalla braille hacia adelante |`d5`|
 |Mover la pantalla braille a la línea anterior |d1|
 |Mover la pantalla braille a la línea siguiente |d3|
-|Guiar a la celda braille |sensor|
-|teclas shift+tab |espacio+punto1+punto3|
-|tecla tab |espacio+punto4+punto6|
-|tecla alt |espacio+punto1+punto3+punto4 (espacio+m)|
-|tecla escape |espacio+punto1+punto5 (espacio+e)|
-|tecla windows |espacio+punto3+punto4|
-|teclas alt+tab |espacio+punto2+punto3+punto4+punto5 (espacio+t)|
-|Menú NVDA |espacio+punto1+punto3+punto4+punto5 (espacio+n)|
-|teclas windows+d (minimizar todas las aplicaciones) |espacio+punto1+punto4+punto5 (espacio+d)|
-|Verbalizar todo |espacio+punto1+punto2+punto3+punto4+punto5+punto6|
+|Guiar a la celda braille |`sensor`|
+|teclas `shift+tab` |`espacio+punto1+punto3`|
+|`tecla tab` |`espacio+punto4+punto6`|
+|tecla `alt` |`espacio+punto1+punto3+punto4` (`espacio+m`)|
+|tecla `escape` |`espacio+punto1+punto5` (`espacio+e`)|
+|tecla `windows` |`espacio+punto3+punto4`|
+|teclas `alt+tab` |`espacio+punto2+punto3+punto4+punto5` (`espacio+t`)|
+|Menú NVDA |`espacio+punto1+punto3+punto4+punto5` (`espacio+n`)|
+|teclas `windows+d` (minimizar todas las aplicaciones) |`espacio+punto1+punto4+punto5` (`espacio+d`)|
+|Verbalizar todo |`espacio+punto1+punto2+punto3+punto4+punto5+punto6`|
 
 Para pantallas que tengan un joystick:
 
@@ -4189,19 +4189,19 @@ Por favor consulta la documentación de las pantallas para descripciones de dón
 |teclas control+shift+flecha izquierda |punto2+punto8+espacio+f1|
 |teclas control+flecha izquierda |punto2+espacio|
 |teclas shift+flecha izquierda |punto2+punto7+f1|
-|teclas alt+flecha izquierda |punto2+punto7|
-|tecla flecha derecha |punto6+espacio, leftSideRightArrow|
+|teclas `alt+flecha izquierda` |`punto2+punto7`|
+|tecla flecha derecha |punto6+espacio, Flecha derecha del lateral izquierdo|
 |teclas control+shift+flecha derecha |punto5+punto8+espacio+f1|
 |teclas control+flecha derecha |punto5+espacio|
 |teclas shift+alt+flecha derecha |punto5+punto7+f1|
-|teclas alt+flecha derecha |punto5+punto7|
+|teclas `alt+flecha derecha` |`punto5+punto7`|
 |tecla rePág |punto1+punto2+punto6+espacio|
 |teclas control+rePág |punto1+punto2+punto6+punto8+espacio|
 |tecla flecha arriba |punto1+espacio, leftSideUpArrow|
 |teclas control+shift+flecha arriba |punto2+punto3+punto8+espacio+f1|
 |teclas control+flecha arriba |punto2+punto3+espacio|
 |teclas shift+alt+flecha arriba |punto2+punto3+punto7+f1|
-|teclas alt+flecha arriba |punto2+punto3+punto7|
+|teclas `alt+flecha arriba` |`punto2+punto3+punto7`|
 |teclas shift+flecha arriba |leftSideScrollDown+espacio|
 |tecla avPág |punto3+punto4+punto5+espacio|
 |teclas control+avPág |punto3+punto4+punto5+punto8+espacio|
@@ -4209,7 +4209,7 @@ Por favor consulta la documentación de las pantallas para descripciones de dón
 |teclas control+shift+flecha abajo |punto5+punto6+punto8+espacio+f1|
 |teclas control+flecha abajo |punto5+punto6+espacio|
 |teclas shift+alt+flecha abajo |punto5+punto6+punto7+f1|
-|teclas alt+flecha abajo |punto5+punto6+punto7|
+|teclas `alt+flecha abajo` |`punto5+punto6+punto7`|
 |teclas shift+flecha abajo |espacio+rightSideScrollDown|
 |tecla escape |punto1+punto5+espacio, f4, brailleedge:f1|
 |tecla suprimir |punto1+punto3+punto5+espacio, punto1+punto4+punto5+espacio|
@@ -4400,7 +4400,7 @@ Las teclas interiores se mapean a espacio.
 |tecla control+escape |espacio con puntos 1 2 3 4 5 6|
 |tecla tab |espacio con puntos 3 7|
 
-<!-- KC:endInclude  -->
+<!-- KC:endInclude -->
 
 ### Modelos Antiguos Papenmeier Braille BRAILLEX {#PapenmeierOld}
 
@@ -4425,8 +4425,8 @@ Generalmente, las siguientes teclas están disponibles en las pantallas braille:
 |l1 |Tecla frontal izquierda|
 |l2 |Tecla trasera izquierda|
 |r1 |Tecla frontal derecha|
-|r2 |Tecla trasera derecha||
-|up |1 paso arriba||
+|r2 |Tecla trasera derecha|
+|up |1 paso arriba|
 |up2 |2 pasos arriba|
 |left |1 paso a la izquierda|
 |left2 |2 pasos a la izquierda|
@@ -4505,7 +4505,7 @@ Se admiten los siguientes modelos:
 * BrailleNote MPower (Conexiones serie y bluetooth)
 * BrailleNote Apex (Conexiones USB y Bluetooth)
 
-Para el BrailleNote Touch, por favor consulta la sección [series de las Brailliant BI / BrailleNote Touch](HumanWareBrailliant).
+Para el BrailleNote Touch, por favor consulta la sección [series de las Brailliant BI / BrailleNote Touch](#HumanWareBrailliant).
 
 Excepto para el BrailleNote PK, se admiten ambos teclados braille (BT) y QWERTY (QT).
 Para el BrailleNote QT, no se admite la emulación del teclado de PC.
@@ -4866,18 +4866,18 @@ Por favor consulta las [listas de claves de vínculos de BRLTTY](http://mielke.c
 
 | Nombre |orden de BRLTTY|
 |---|---|
-|Desplazar pantalla braille hacia atrás |fwinlt (va a la izquierda una ventana)|
-|Desplazar pantalla braille hacia la derecha |fwinrt (va una ventana hacia la derecha)|
-|Mover la pantalla braille a la línea anterior |lnup (va una línea hacia arriba)|
-|Mover pantalla braille a la siguiente línea |lndn (va una línea hacia abajo)|
-|Guiar a la celda braille |route (lleva el cursor al carácter)|
-|Conmutar entrada de ayuda |learn (entra y sale del modo aprendizaje de órdenes)|
-|Abrir el menú NVDA |prefmenu (entra y sale del menú preferencias)|
-|Revertir configuración |prefload (restaura las preferencias desde el disco)|
-|Guardar configuración |prefsave (guarda las preferencias en el disco)|
-|Anunciar hora |time (muestra la fecha y la hora actuales)|
-|Verbalizar la línea donde esté el cursor de revisión |say_line (verbaliza la línea actual)|
-|Verbalizar todo utilizando el cursor de revisión |say_below (verbaliza desde la línea actual hasta el fondo de la pantalla)|
+|Desplazar pantalla braille hacia atrás |`fwinlt` (va a la izquierda una ventana)|
+|Desplazar pantalla braille hacia la derecha |`fwinrt` (va una ventana hacia la derecha)|
+|Mover la pantalla braille a la línea anterior |`lnup` (va una línea hacia arriba)|
+|Mover pantalla braille a la siguiente línea |`lndn` (va una línea hacia abajo)|
+|Guiar a la celda braille |`route` (lleva el cursor al carácter)|
+|Conmutar entrada de ayuda |`learn` (entra y sale del modo aprendizaje de órdenes)|
+|Abrir el menú NVDA |`prefmenu` (entra y sale del menú preferencias)|
+|Revertir configuración |`prefload` (restaura las preferencias desde el disco)|
+|Guardar configuración |`prefsave` (guarda las preferencias en el disco)|
+|Anunciar hora |`time` (muestra la fecha y la hora actuales)|
+|Verbalizar la línea donde esté el cursor de revisión |`say_line` (verbaliza la línea actual)|
+|Verbalizar todo utilizando el cursor de revisión |`say_below` (verbaliza desde la línea actual hasta el fondo de la pantalla)|
 
 <!-- KC:endInclude -->
 
@@ -4963,7 +4963,7 @@ Seguidamente van las asignaciones de teclas actuales para estas pantallas.
 |---|---|
 |Desplazar la pantalla braille hacia atrás |pan a la izquierda o balancín arriba|
 |Desplazar la pantalla braille hacia adelante |pan a la derecha o balancín abajo|
-|Llevar a la celda braille |conjunto de sensores de enrutamiento 1||
+|Llevar a la celda braille |conjunto de sensores de enrutamiento 1|
 |Alternar el seguimiento de braille |arriba+abajo|
 |Tecla flecha arriba |joystick arriba, dpad arriba o espacio+punto1|
 |Tecla flecha hacia abajo |joystick hacia abajo, dpad hacia abajo o espacio+punto4|
@@ -5038,7 +5038,7 @@ NVDA puede aceptar una o más opciones adicionales al arrancar que alteren su co
 Puedes pasar tantas opciones como necesites.
 Estas opciones pueden pasarse al arrancar desde un atajo de teclado (en las propiedades del atajo de teclado), desde el diálogo Ejecutar(Menú Inicio -> Ejecutar o Windows+r) o desde una consola de órdenes de Windows.
 Las opciones deberían separarse del nombre del fichero ejecutable de NVDA y de otras opciones por espacios.
-Por ejemplo, una opción útil es --disable-addons, que dice a NVDA que suspenda todos los complementos en ejecución.
+Por ejemplo, una opción útil es `--disable-addons`, que dice a NVDA que suspenda todos los complementos en ejecución.
 Esto te permite determinar si un problema está causado por un complemento y recuperarte de problemas serios causados por complementos.
 
 Como un ejemplo, puedes salir de la copia actualmente en ejecución de NVDA introduciendo lo siguiente en el diálogo Ejecutar:
@@ -5054,13 +5054,13 @@ Para aquellas que tengan una versión corta, puedes combinarlas así:
 |`nvda -mc CONFIGPATH --disable-addons` |Lo mismo que la de arriba, pero con complementos desactivados|
 
 Algunas de las opciones de línea de órdenes aceptan parámetros adicionales; por ejemplo: cómo debería ser el grado de detalle del registro o la ruta para el directorio de configuración del usuario.
-Esos parámetros deberían colocarse después de la opción, separados de la opción por un espacio cuando se utiliza la versión o un signo igual (=) cuando se utiliza  la versión larga; por ejemplo:
+Esos parámetros deberían colocarse después de la opción, separados de la opción por un espacio cuando se utiliza la versión o un signo igual (`=`) cuando se utiliza  la versión larga; por ejemplo:
 
 | . {.hideHeaderRow} |.|
 |---|---|
 |`nvda -l 10` |dice a NVDA que se inicie con el nivel de registro puesto en depuración|
-|`nvda --log-file=c:\nvda.log` |Dice a NVDA que escriba su registro en c:\nvda.log|
-|`nvda --log-level=20 -f c:\nvda.log` |Dice a NVDA que arranque con el nivel de registro puesto en info y que escriba su registro en c:\nvda.log|
+|`nvda --log-file=C:\nvda.log` |Dice a NVDA que escriba su registro en `C:\nvda.log`|
+|`nvda --log-level=20 -f C:\nvda.log` |Dice a NVDA que arranque con el nivel de registro puesto en info y que escriba su registro en `C:\nvda.log`|
 
 Seguidamente van las opciones de línea de órdenes para NVDA:
 
@@ -5072,18 +5072,18 @@ Seguidamente van las opciones de línea de órdenes para NVDA:
 |`-f LOGFILENAME` |`--log-file=LOGFILENAME` |El fichero donde se deberían escribir los mensajes del registro.  El registro siempre está desactivado si el modo seguro está habilitado.|
 |`-l LOGLEVEL` |`--log-level=LOGLEVEL` |El nivel más bajo del mensaje registrado (debug 10, input/output 12, debug warning 15, info 20, disabled 100). El registro está siempre deshabilitado si el modo seguro está habilitado.|
 |`-c CONFIGPATH` |`--config-path=CONFIGPATH` |La ruta donde se almacenan todas las opciones de NVDA. El valor predeterminado se fuerza si el modo seguro está habilitado.|
-|`None` |`--lang=LANGUAGE` |Sobrescribe el idioma configurado de NVDA. Establece "Windows" para el usuario actual por defecto, "en" para Inglés, etc.|
+|Ninguna |`--lang=IDIOMA` |Anula el idioma configurado de NVDA. Establece "Windows" para el usuario actual por defecto, "en" para Inglés, etc.|
 |`-m` |`--minimal` |Sin sonidos, sin interfaz, sin mensaje de inicio etc|
 |`-s` |`--secure` |Inicia NVDA en [Modo Seguro](#SecureMode)|
-|`None` |`--disable-addons` |Los complementos no tendrán efecto|
-|`None` |`--debug-logging` |Habilita el nivel de registro de depuración sólo para esta ejecución. Esta configuración sobreescribirá cualquier otro nivel de registro ( --loglevel, -l) argumento dado, incluyendo la opción no registro.|
-|`None` |`--no-logging` |Deshabilita el registro durante el uso de NVDA. Esta opción puede sobreescribirse si se especifica un nivel de registro ( --loglevel, -l) desde la línea de órdenes o si el registro de depuración está activado.|
-|`None` |`--no-sr-flag` |No cambia la bandera global de sistema del lector de pantalla|
-|`None` |`--install` |Se instala NVDA iniciando la nueva copia instalada|
-|`None` |`--install-silent` |Instala en silencio NVDA (No inicia la nueva copia instalada)|
-|`None` |`--enable-start-on-logon=True` |False |Al instalar, habilita [arrancar en la pantalla de inicio](#StartAtWindowsLogon) de NVDA|
-|`None` |`--copy-portable-config` |Al instalar, copia la configuración portable desde la ruta proporcionada (--config-path, -c) a la actual cuenta de usuario|
-|`None` |`--create-portable` |Crea una copia portable de NVDA (e inicia la copia nueva). Requiere que se especifique --portable-path|
+|Ninguna |`--disable-addons` |Los complementos no tendrán efecto|
+|Ninguna |`--debug-logging` |Habilita el nivel de registro de depuración sólo para esta ejecución. Esta configuración anulará cualquier otro argumento dado de nivel de registro ( `--loglevel`, `-l`), incluyendo la opción sin registro.|
+|Ninguna |`--no-logging` |Deshabilita el registro durante el uso de NVDA. Esta opción puede anularse si se especifica un nivel de registro ( `--loglevel`, `-l`) desde la línea de órdenes o si el registro de depuración está activado.|
+|Ninguna |`--no-sr-flag` |No cambia la bandera global de sistema del lector de pantalla|
+|Ninguna |`--install` |Se instala NVDA iniciando la nueva copia instalada|
+|Ninguna |`--install-silent` |Instala en silencio NVDA (No inicia la nueva copia instalada)|
+|Ninguna |`--enable-start-on-logon=True|False` |Al instalar, habilita [arrancar en la pantalla de inicio](#StartAtWindowsLogon) de NVDA|
+|Ninguna |`--copy-portable-config` |Al instalar, copia la configuración portable desde la ruta proporcionada (`--config-path`, `-c`) a la actual cuenta de usuario|
+|Ninguna |`--create-portable` |Crea una copia portable de NVDA (e inicia la copia nueva). Requiere que se especifique `--portable-path`|
 |`None` |`--create-portable-silent` |Crea una copia portable de NVDA (sin iniciar la nueva copia). Requiere expecificarse --portable-path. Esta opción suprime  las advertencias al escribir en directorios no vacíos y puede sobreescribir ficheros sin avisar.|
 |`None` |`--portable-path=PORTABLEPATH` |La ruta donde se creará una copia portable|
 
@@ -5092,15 +5092,15 @@ Seguidamente van las opciones de línea de órdenes para NVDA:
 NVDA permite configurar algunos valores en el registro del sistema que alteran el comportamiento de todo el sistema de NVDA.
 Estos valores se almacenan en el registro del sistema bajo una de las siguientes claves:
 
-* Sistema de 32 bits: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
-* Sistema de 64 bits: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+* Sistema de 32 bits: `HKEY_LOCAL_MACHINE\SOFTWARE\nvda`
+* Sistema de 64 bits: `HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda`
 
 Los siguientes valores pueden configurarse bajo estas claves del registro:
 
 | Nombre |Tipo |Valores Posibles |Descripción|
 |---|---|---|---|
-|configInLocalAppData |DWORD |0 (predeterminado) para deshabilitado, 1 para habilitado |Si está habilitado, almacena la configuración de usuario de NVDA en la carpeta local de datos de aplicación en lugar de la roaming application data|
-|serviceDebug |DWORD |0 (predeterminado) para deshabilitar, 1 para habilitar |Si se habilita, deshabilita el [Modo Seguro](#SecureMode) en las [pantallas seguras](#SecureScreens). de windows, permitiendo la utilización de la consola de Python y del visualizador del Registro. Debido a varias implicaciones importantes de seguridad, la utilización de esta opción está altamente desaconsejada|
+|`configInLocalAppData` |DWORD |0 (predeterminado) para deshabilitado, 1 para habilitado |Si está habilitado, almacena la configuración de usuario de NVDA en la carpeta local de datos de aplicación en lugar de la roaming application data|
+|`serviceDebug` |DWORD |0 (predeterminado) para deshabilitar, 1 para habilitar |Si se habilita, deshabilita el [Modo Seguro](#SecureMode) en las [pantallas seguras](#SecureScreens) de windows, permitiendo la utilización de la consola de Python y del visualizador del Registro. Debido a varias implicaciones importantes de seguridad, la utilización de esta opción está altamente desaconsejada|
 |`forceSecureMode` |DWORD |0 (predeterminado) para deshabilitar, 1 para habilitar |Si está habilitado, fuerza [Modo Seguro](#SecureMode) para habilitarse al ejecutar NVDA.|
 
 ## Información Adicional {#FurtherInformation}
