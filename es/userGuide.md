@@ -2312,7 +2312,7 @@ Esta opción te permite elegir la tarjeta de sonido que NVDA debería indicar pa
 
 ##### Modo Atenuación de Audio {#SelectSynthesizerDuckingMode}
 
-Tecla: NVDA+shift+d
+Tecla: `NVDA+shift+d`
 
 Esta opción te permite elegir si NVDA debería reducir el volumen de otras aplicaciones mientras esté hablando, o todo el tiempo mientras NVDA se esté ejecutando.
 
@@ -2360,7 +2360,7 @@ Por defecto esta orden recorrerá los siguientes modos:
 * Separación de sonido deshabilitada: NVDA no aplica ningún procesamiento de división de sonido.
 * NVDA en la izquierda y las aplicaciones en la derecha: NVDA hablará por el canal izquierdo, mientras las otras aplicaciones reproducirán el sonido por el canal de la derecha.
 * NVDA en la izquierda y las aplicaciones en ambos canales: NVDA hablará en el canal izquierdo, mientras las otras aplicaciones reproducirán el sonido en  ambos canales.
- 
+
 Hay más modos avanzados de separación de sonido disponibles en el cuadro combinado en las opciones de NVDA.
 Entre estos modos, "NVDA en ambos canales y las aplicaciones en ambos canales" obliga a que todos los sonidos se dirijan a ambos canales.
 Este modo puede diferir del modo "Separación de sonido deshabilitada" en caso de que otro procesamiento de audio interfiera con los volúmenes de los canales.
@@ -2646,7 +2646,7 @@ Esta casilla de verificación, cuando está marcada, dice a NVDA que anuncie los
 Cuando esta casilla de verificación está verificada, NVDA incluirá la tecla de atajo que esté asociada con cierto objeto o control cuando sea anunciado. 
 Por ejemplo el menú Archivo en una barra de menú podrá tener una tecla de atajo Alt+a.
 
-##### Anunciar Información de la Posición del Objeto {#ObjectPresentationReportDescriptions}
+##### Anunciar Información de la Posición del Objeto {#ObjectPresentationPositionInfo}
 
 Esta opción te permite elegir si deseas que se te informe sobre la posición del objeto (por ejemplo: 1 de 4) cuando te mueves al objeto con el foco o el navegador de objetos.
 
@@ -2785,7 +2785,7 @@ Cuando está desactivada, no se anuncian ni se encuentran con la navegación rá
 Sin embargo, el contenido de las tablas todavía se incluirá como texto normal.
 Esta opción está desactivada de forma predeterminada.
 
-Para conmutar la inclusión de tablas de diseño desde cualquier lugar, por favor asigna un gesto personalizado utilizando el diálogo `[Gestos de entrada](#InputGestures).
+Para conmutar la inclusión de tablas de diseño desde cualquier lugar, por favor asigna un gesto personalizado utilizando el diálogo [Gestos de entrada](#InputGestures).
 
 ##### Configurar el anunciado de campos tales como enlaces y encabezados {#BrowseModeLinksAndHeadings}
 
@@ -2925,6 +2925,9 @@ Este estilo funciona mejor cuando se trabaje con documentos que utilicen bloques
 Ten en cuenta que este estilo de párrafo no puede utilizarse en Microsoft Word o Microsoft Outlook, a menos que estés utilizando UIA para acceder a controles de Microsoft Word.
 
 Puedes cambiar entre los estilos de párrafo disponibles desde cualquier lugar asignando una tecla en el [diálogo Gestos de Entrada](#InputGestures).
+#### Opciones de la tienda de complementos {#AddonStoreSettings}
+
+Esta categoría permite ajustar el comportamiento de la tienda de complementos.
 
 ##### Notificaciones de Actualización {#AutomaticAddonUpdates}
 
