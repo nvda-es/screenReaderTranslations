@@ -1357,7 +1357,7 @@ eSpeak-NG ve LibLouis'in güncellenmesi ile Japonca, Almanca ve Katalanca Braill
 
 * Windows 11'de UI Otomasyonu  aktifse, artık NVDA MS Excel'deki notları bildiriyor. (#12861)
 * Windows 11'de UI Otomasyonu aktifse, Microsoft Word'ün son sürümlerinde yer imleri ve açıklamalar artık konuşma ve braille ile bildiriliyor. (#12861)
-* Eklenen --lang komut satır parametresi, mevcut NVDA dilinin  değiştirilmesini sağlıyor. (#10044)
+* Eklenen `--lang` komut satır parametresi, mevcut NVDA dilinin  değiştirilmesini sağlıyor. (#10044)
 * Artık NVDA bilinmeyen ve herhangi bir eklenti tarafından kullanılmayan komut satırı parametrelerini bildiriyor. (#12795)
 * UI Otomasyonu aktifse, NVDA Microsoft Word'de Office matematik denklemlerinde gezinme ve okuma işlemleri için mathPlayer'ı kullanacak. (#12946)
   * Bunun çalışması için Microsoft Word 365/2016 build 14326 veya sonraki bir sürümü kullanıyor olmanız gerekir. 
@@ -1386,8 +1386,8 @@ eSpeak-NG ve LibLouis'in güncellenmesi ile Japonca, Almanca ve Katalanca Braill
 * `NVDA+numaratör Delete` varsayılan olarak düzenleme imlecinin veya odaklanan nesnenin konumunu bildirir. (#13060)
 * `NVDA+Shift+numaratör Sil` inceleme imlecinin konumunu bildirir. (#13060)
 * Freedom Scientific Braille ekranlarda değişken tuşlarını açıp kapatmak için varsayılan komutlar eklendi (#13152)
-* “Temel hiza” artık metin biçimlendirmelerini bildirme komutu olan NVDA+f tuşuyla bildirilmiyor. (#11815)
-* Artık Uzun açıklamaları etkinleştir ayarısı için varsayılan bir girdi hareketi yoktur. (#13380)
+* “Temel hiza” artık metin biçimlendirmelerini bildirme komutu olan `NVDA+f` tuşuyla bildirilmiyor. (#11815)
+* Artık Uzun açıklamaları etkinleştir ayarı için varsayılan bir girdi hareketi yoktur. (#13380)
 * Ayrıntı özetini bildir için varsayılan bir girdi hareketi eklendi(`NVDA+d`). (#13380)
 * MathPlayer yüklendikten sonra NVDA'nın yeniden başlatılması gerekir. (#13486)
 
@@ -1406,7 +1406,7 @@ eSpeak-NG ve LibLouis'in güncellenmesi ile Japonca, Almanca ve Katalanca Braill
 * Windows 10 Hesap Makinesi'nde NVDA, geçmiş ve bellek listesi öğeleri için etiketleri bildirir.(#11858)
 * Kaydırma ve yönlendirme gibi hareketler tekrar HID Braille cihazlarıyla çalışır. (#13228)
 * Windows 11 Posta: Uygulamalar arasında odağı değiştirdikten sonra, uzun bir e-postayı okurken NVDA e-postanın bir satırına takılıp kalma sorunu çözüldü. (#13050)
-* HID Braille: Boşluk+4. Nokta gibi çoklu komutlar Braille ekranda gerçekleştirilebiliyor. (#13326)
+* HID Braille: `Boşluk+4. Nokta` gibi çoklu komutlar Braille ekranda gerçekleştirilebiliyor. (#13326)
 * Aynı anda birden fazla ayar iletişim kutusunun açılabilmesine neden olan bir sorun düzeltildi. (#12818)
 * Bilgisayar uyku modundan çıkarıldıktan sonra bazı Focus Blue Braille ekranlarının çalışmayı durdurmasına neden olan bir sorun düzeltildi. (#9830)
 * Üst ve alt simge bildirimi açık olduğunda yanlışlıkla “temel hiza” bildirilmiyor. (#11078)
@@ -1521,8 +1521,8 @@ Lütfen güvenlik sorunlarını <info@nvaccess.org> adresine bildirin.
 ## 2021.3.3
 
 Bu sürüm 2021.3.2 ile aynıdır. 
-NVDA 2021.3.2 sürümünde NVDA'nın kendisini 2021.3.1 olarak tanımlamasına neden oan bir hata vardı. Bu sürüm o hatayı düzeltiyor. 
-
+NVDA 2021.3.2 sürümünde NVDA'nın kendisini 2021.3.1 olarak tanımlamasına neden olan bir hata vardı.
+Bu sürüm o hatayı düzeltiyor. 
 ## 2021.3.2
 
 Bu sürüm bazı güvenlik sorunlarını giderir.
