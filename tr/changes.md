@@ -1028,6 +1028,7 @@ eSpeak ve LibLouis güncellendi.
   * UI Otomasyon etkinlikleri ve özellik değişiklikleri için seçimli kaydı etkinleştirme ayarı artık varsayılan olarak etkin.
 * Visual Studio 2022'nin gömülü Windows terminal kontrollerinde metin okuma, braille çıktısı ve şifre gizleme beklendiği gibi çalışıyor. (#14194)
 * Birden fazla ekran kullanırken NVDA artık DPİ kullanıyor.
+%100'den daha yüksek DPI ayarının kullanıldığı veya çoklu ekran kullanıldığı durumlar için çeşitli düzeltmeler yapıldı.
 Windows 10 1809 sürümünden önceki sürümlerde sorunlar olabilir.
 Düzeltmelerin etkili olması için NVDA'nın etkileşimde bulunduğu uygulamaların da DPİ kullanması gerekir.
 Chrome ve Edge ile ilgili hâlen bilinen sorunların olduğunu unutmayın. (#13254)
