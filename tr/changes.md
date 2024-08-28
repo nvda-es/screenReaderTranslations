@@ -1152,7 +1152,6 @@ NVDA'nın gelişmiş ayarlar iletişim kutusundan yeniden etkinleştirilebilir. 
 
 * PDF belgesi okurken Adobe Acrobat/Reader 64 bit artık çökmeyecek. (#12920)
   * Sorunun giderilebilmesi için Adobe Acrobat/Reader'ın en güncel sürümünün gerekli olduğunu unutmayın.
- -
 * Yazı tipi ölçüleri NVDA'da çevrilebiliyor. (#13573)
 * Java uygulamaları için pencere tanıtıcıları bulunamadığında Java Access Bridge olayları yoksayılıyor.
 Bu sayede IntelliJ IDEA dahil olmak üzere bazı Java uygulamalarında performans iyileşecek. (#13039)
