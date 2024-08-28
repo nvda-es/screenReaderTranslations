@@ -798,6 +798,7 @@ Yorum var, dipnot var gibi ek açıklamalar okunduğunda özetler arasında geç
 Tivomatic Caiku Albatross 46/80 braille ekranları artık destekleniyor.
 
 Windows'un ARM64 ve AMD64 sürümleri için destek iyileştirildi.
+
 Özellikle Windows11 için Birçok hata düzeltmesi yapıldı.
 
 eSpeak, LibLouis, Sonic hız arttırıcı ve Unicode CLDR güncellendi.
