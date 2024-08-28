@@ -234,7 +234,7 @@ Desteklenen asgari Windows sürümü Windows 8.1'dir.
 ### Yeni özellikler
 
 * Eklenti mağazası:
-  Eklenti mağazasında birden fazla eklenti seçilerek eklenti kurulumu ve etkinleştirilmesi gibi eylemler toplu olarak yapılabiliyor. (#15350, #15623, @CyrilleB79)
+  * Eklenti mağazasında birden fazla eklenti seçilerek eklenti kurulumu ve etkinleştirilmesi gibi eylemler toplu olarak yapılabiliyor. (#15350, #15623, @CyrilleB79)
   * Seçili eklenti hakkında geribildirimleri görmeyi veya geribildirim göndermeyi sağlayan bir web sayfasını açan eylem eklendi. (#15576, @nvdaes)
 * Bluetooth düşük enerjili HID braille ekranlar için destek eklendi. (#15470)
 * NVDA tarama kipinde, Mozilla Firefox için `NVDA+şift+f10` tuşlarıyla açılıp kapatılabilen yerel seçim kipi eklendi.
@@ -537,8 +537,9 @@ Eklenti mağazası, Microsoft Office, Microsoft Edge içerik menüleri ve Window
     * Ses aygıtı ve ses zayıflamasını değiştirme ayarları, sentezleyici seçimi iletişim kutusundan yeni ses ayarları kategorisine taşındı. 
     2024.1 sürümünde bu seçenekler sentezleyici seçimi iletişim kutusundan kaldırılacak. (#15486, #8711)
   * NVDA artık ses çıkışını Windows Audio Session API (WASAPI) aracılığıyla sağlayacak. NVDA konuşmasının ve seslerinin tepki hızı, performansı ve kararlılığı iyileşebilir. (#14697, #11169, #11615, #5096, #10185, #11061)
-  * Not: WASAPI bazı eklentilerle uyumsuzdur. Bu eklentiler için uyumlu güncellemeler mevcuttur, lütfen NVDA'yı güncellemeden önce bu eklentileri güncelleyin.
-NVDA güncellenirken şu eklentilerin uyumsuz sürümleri devre dışı bırakılacaktır:
+  * Not: WASAPI bazı eklentilerle uyumsuzdur.
+  Bu eklentiler için uyumlu güncellemeler mevcuttur, lütfen NVDA'yı güncellemeden önce bu eklentileri güncelleyin.
+  NVDA güncellenirken şu eklentilerin uyumsuz sürümleri devre dışı bırakılacaktır:
     * Tony's Enhancements 1.15 veya daha eski sürümler. (#15402)
     * NVDA global commands extension 12.0.8 veya daha eski sürümler. (#15443)
 * NVDA artık optik karakter tanıma (OCR) yaparken sonucu sürekli olarak güncelleyerek görünen yeni metni okuyabiliyor. (#2797)
