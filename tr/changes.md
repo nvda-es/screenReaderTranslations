@@ -692,7 +692,8 @@ eSpeak-NG, LibLouis braille translator ve Unicode CLDR güncellendi.
 * Braille değişiklikleri:
   * Braille ekran standart HID braille sürücüsüyle kullanıldığında, dpad ok tuşları ve giriş tuşu yerine kullanılabiliyor.
   Ayrıca `aralık+1. nokta` ve `aralık+4. nokta` sırasıyla yukarı ok ve aşağı ok görevi görüyor. (#14713)
-  * Dinamik web içeriği güncellemeleri (aria live bölgeleri) artık braille olarak gösteriliyor. Bu özellik gelişmiş ayarlar sayfasından devre dışı bırakılabilir. (#7756)
+  * Dinamik web içeriği güncellemeleri (aria live bölgeleri) artık braille olarak gösteriliyor.
+  Bu özellik gelişmiş ayarlar sayfasından devre dışı bırakılabilir. (#7756)
 * Tire ve uzuntire sembolleri artık her zaman sentezleyiciye gönderilecek. (#13830)
 * Microsoft Word'de okunan mesafe, Word belgelerine erişmek için UIA kullanılsa bile Word'ün gelişmiş ayarlarında ayarlanan birime göre seslendirilecek. (#14542)
 * Düzenleme denetimlerinde imleci hareket ettirirken NVDA daha hızlı tepki veriyor. (#14708)
