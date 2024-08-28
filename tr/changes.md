@@ -718,9 +718,8 @@ eSpeak-NG, LibLouis braille translator ve Unicode CLDR güncellendi.
   * Chrome ve Edge'de grafik linklerin yönlendirdikleri web adresleri artık daha fazla durumda doğru bir şekilde okunuyor. (#14783)
   * a href özelliği olmayan bir linkin web adresi okutulmaya çalışıldığında, NVDA susmayacak.
   Bunun yerine linkin yönlendirdiği web adresi olmadığını söyleyecek. (#14723)
-* Tarama kipinde, NVDA artık odağın üst öğe veya alt öğe denetimine hareket etmesini yok saymıyor. Buna örnek olarak bir denetimden onun üst ana öğesi olan listeye veya ızgara hücresine gitmek verilebilir. (#14611)
+  * Tarama kipinde, NVDA artık odağın üst öğe veya alt öğe denetimine hareket etmesini yok saymıyor. Buna örnek olarak bir denetimden onun üst ana öğesi olan listeye veya ızgara hücresine gitmek verilebilir. (#14611)
     * Bu düzeltme sadece tarama kipi ayarlarındaki sistem odağı otomatik olarak odaklanabilir öğelere taşınsın ayarı devre dışı olduğunda (varsayılan olarak devre dışıdır) geçerlidir.
-  -
 * Windows 11 için düzeltmeler:
   * NVDA yeniden not defterinin durum çubuğu içeriğini okuyabiliyor. (#14573)
   * Not defteri ve dosya gezgininde sekmeler arasında geçiş yapıldığında NVDA artık sekme adı ve konumunu bildirecek. (#14587, #14388)
