@@ -675,7 +675,7 @@ eSpeak-NG, LibLouis braille translator ve Unicode CLDR güncellendi.
     * NVDA seslerinin ses seviyesini ayrıca değiştirmek için bir ayar  (#1409, #15038)
   * WASAPI etkinleştirildiğinde aralıklı olarak çökme sorununun meydana geldiği biliniyor. (#15150)
 * Mozilla Firefox ve Google Chrome'da, bir öğe iletişim kutusu, ızgara, liste veya ağaç açıyorsa ve üretici bunu `aria-haspopup` kullanarak belirttiyse NVDA bu durumu artık seslendiriyor. (#8235)
- * NVDA'nın taşınabilir kopyasını oluştururken, taşınabilir kopya yolu olarak sistem değişkenleri (`%temp%` veya `%homepath%` gibi) artık kullanılabiliyor. (#14680)
+* NVDA'nın taşınabilir kopyasını oluştururken, taşınabilir kopya yolu olarak sistem değişkenleri (`%temp%` veya `%homepath%` gibi) artık kullanılabiliyor. (#14680)
 * Windows 10 May 2019 güncellemesi ve sonraki sürümlerde, sanal masaüstleri açıldığında, geçiş yapıldığında ve kapatıldığında sanal masaüstü adlarını NVDA seslendiriyor. (#5641)
 * Kullanıcıların ve sistem yöneticilerinin NVDA'yı güvenli modda başlamaya zorlayabilmesi için sistem genelinde bir parametre eklendi. (#10018)
 
@@ -689,8 +689,9 @@ eSpeak-NG, LibLouis braille translator ve Unicode CLDR güncellendi.
   * LibreOffice Writer 7.6 ve üzeri sürümlerinde, Microsoft Word ile benzer şekilde inceleme imlecinin konumu belirtilirken imleç/düzenleme imlecinin konumu üzerinde bulunulan sayfaya göre seslendirilecek. (#11696)
   * Durum çubuğu (örn. `NVDA+son` kısayoluna basıldığında) LibreOffice'te okunuyor. (#11698)
   * NVDA ayarlarında hücre koordinatları devre dışı bırakıldığında, libreOffice Calc'te farklı hücreye gidildiğinde NVDA artık bir önceki hücrenin koordinatlarını okumuyor. (#15098)
-Braille değişiklikleri:
-  * Braille ekran standart HID braille sürücüsüyle kullanıldığında, dpad ok tuşları ve giriş tuşu yerine kullanılabiliyor. Ayrıca `aralık+1. nokta` ve `aralık+4. nokta` sırasıyla yukarı ok ve aşağı ok görevi görüyor. (#14713)
+* Braille değişiklikleri:
+  * Braille ekran standart HID braille sürücüsüyle kullanıldığında, dpad ok tuşları ve giriş tuşu yerine kullanılabiliyor.
+  Ayrıca `aralık+1. nokta` ve `aralık+4. nokta` sırasıyla yukarı ok ve aşağı ok görevi görüyor. (#14713)
   * Dinamik web içeriği güncellemeleri (aria live bölgeleri) artık braille olarak gösteriliyor. Bu özellik gelişmiş ayarlar sayfasından devre dışı bırakılabilir. (#7756)
 * Tire ve uzuntire sembolleri artık her zaman sentezleyiciye gönderilecek. (#13830)
 * Microsoft Word'de okunan mesafe, Word belgelerine erişmek için UIA kullanılsa bile Word'ün gelişmiş ayarlarında ayarlanan birime göre seslendirilecek. (#14542)
