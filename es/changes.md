@@ -136,7 +136,7 @@ Hay muchas otras correcciones menores de fallos para aplicaciones tales como Thu
     * fórmula matemática (#16001, @mltony)
     * mismo estilo de texto (#16000, @mltony)
     * diferente estilo de texto (#16000, @mltony)
-    * Añadidas órdenes para saltar a la primera, última, adelante y atrás por las opciones del anillo del sintetizador. (#13768, #16095, @rmcpantoja)
+  * Añadidas órdenes para saltar a la primera, última, adelante y atrás por las opciones del anillo del sintetizador. (#13768, #16095, @rmcpantoja)
     * Establecer la opción primera y última en el anillo del sintetizador no tiene gesto asignado. (#13768)
     * Disminuir y aumentar la opción actual del anillo de opciones del sintetizador en pasos grandes (#13768):
       * Escritorio: `NVDA+control+rePág` y `NVDA+control+avPág`.
@@ -164,8 +164,8 @@ Hay muchas otras correcciones menores de fallos para aplicaciones tales como Thu
 * Actualización de componentes:
   * Actualizado el transcriptor braille LibLouis a [3.29.0](https://github.com/liblouis/liblouis/releases/tag/v3.29.0). (#16259, @codeofdusk)
     * Nuevas tablas detalladas braille (con letras mayúsculas indicadas) para bieloruso y ucraniano.
-	   * Nueva tabla braille española para leer textos en griego.
-	   * Nueva tabla para Lao grado 1.
+    * Nueva tabla braille española para leer textos en griego.
+    * Nueva tabla para Lao grado 1.
   * eSpeak NG se ha actualizado a 1.52-dev commit `cb62d93fd7`. (#15913)
     * Añadido nuevo idioma Tigrinya.
 * Se cambiaron varios gestos para dispositivos BrailleSense para evitar conflictos con caracteres de la tabla braille francesa. (#15306)
@@ -352,8 +352,8 @@ La configuración de `numCells` todavía está admitida para pantallas braille d
   * Ejemplo: `speech.speakSsml('<speak><prosody pitch="200%">hello</prosody><break time="500ms" /><prosody rate="50%">John</prosody></speak>')`
   * Las funciones de análisis sintáctico de SSML están respaldadas por la clase `SsmlParser` en el módulo `speechXml`.
 * Cambios para la librería NVDA Controller Client:
-  * Añadido un ejemplo para demostrar el uso de nvdaControllerClient.dll desde Rust. (#15771, @LeonarddeR)
   * Los nombres de fichero de la librería ya no contienen un sufijo denotando la arquitectura, es decir, `nvdaControllerClient32/64.dll` ahora se llama `nvdaControllerClient.dll`. (#15718, #15717, @LeonarddeR)
+  * Añadido un ejemplo para demostrar el uso de nvdaControllerClient.dll desde Rust. (#15771, @LeonarddeR)
   * Añadidas las siguientes funciones al controller client: (#15734, #11028, #5638, @LeonarddeR)
     * `nvdaController_getProcessId`: para obtener el id de proceso (PID) de la instancia actual que está utilizando el NVDA controller client.
     * `nvdaController_speakSsml`: para instruir a NVDA que hable de acuerdo con el SSML dado. Esta función también soporta:
@@ -478,8 +478,8 @@ Por favor comunica responsablemente los problemas de seguridad siguiendo las [po
 
 ### Corrección de Fallos
 
-* Corregido un fallo que provocaba que el proceso de NVDA fallase al no salir correctamente.
-Al ejecutar el instalador, provocaba que la instalación entrase en un estado irrecuperable. (#16122, #16123)
+* Corregido un fallo que provocaba que el proceso de NVDA fallase al no salir correctamente. (#16123)
+* Se corrige un fallo donde si el proceso de NVDA anterior fallaba al salir correctamente, una instalación podía entrar en un estado irrecuperable. (#16122)
 
 ## 2023.3.3
 
