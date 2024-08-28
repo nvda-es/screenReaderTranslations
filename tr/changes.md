@@ -715,8 +715,9 @@ eSpeak-NG, LibLouis braille translator ve Unicode CLDR güncellendi.
   * Mozilla Firefox ve Google Chrome'da, yazılan karakterleri seslendir ayarı devre dışı olmasına rağmen bazı metin kutularında yazılan karakterler artık seslendirilmeyecek. (#8442)
   * Önceden mümkün olmayan durumlarda Chromium gömülü denetimlerde artık tarama kipini kullanabiliyorsunuz. (#13493, #8553)
   * Mozilla Firefox'ta, fare bir linkin yanındaki metnin üzerine getirildiğinde metin artık her zaman okunuyor. (#9235)
-* Chrome ve Edge'de grafik linklerin yönlendirdikleri web adresleri artık daha fazla durumda doğru bir şekilde okunuyor. (#14783)
- * a href özelliği olmayan bir linkin web adresi okutulmaya çalışıldığında, NVDA bir şey seslendirmemek yerine linkin yönlendirdiği web adresi olmadığını söyleyecek. (#14723)
+  * Chrome ve Edge'de grafik linklerin yönlendirdikleri web adresleri artık daha fazla durumda doğru bir şekilde okunuyor. (#14783)
+  * a href özelliği olmayan bir linkin web adresi okutulmaya çalışıldığında, NVDA susmayacak.
+  Bunun yerine linkin yönlendirdiği web adresi olmadığını söyleyecek. (#14723)
 * Tarama kipinde, NVDA artık odağın üst öğe veya alt öğe denetimine hareket etmesini yok saymıyor. Buna örnek olarak bir denetimden onun üst ana öğesi olan listeye veya ızgara hücresine gitmek verilebilir. (#14611)
     * Bu düzeltme sadece tarama kipi ayarlarındaki sistem odağı otomatik olarak odaklanabilir öğelere taşınsın ayarı devre dışı olduğunda (varsayılan olarak devre dışıdır) geçerlidir.
   -
