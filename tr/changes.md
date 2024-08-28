@@ -707,7 +707,8 @@ eSpeak-NG, LibLouis braille translator ve Unicode CLDR güncellendi.
 * Braille:
   * Braille ekran girdisi/çıktısı için çeşitli kararlılık düzeltmeleri yapıldı. Sonuç olarak NVDA hataları ve çökmeleri azalacak. (#14627)
   * NVDA otomatik algılama sırasında gereksiz olarak birden fazla kez braille yok seçeneğine geçmeyecek. Böylece log daha temiz olacak ve ek yük azalacak. (#14524)
-  * HID bluetooth cihazı (HumanWare Brailliant veya APH Mantis gibi) otomatik olarak algılanırsa ve USB bağlantısı kullanılabilir olursa, NVDA artık USB bağlantısına geri dönecek. Önceden bu durum sadece bluetooth seri bağlantılar için geçerliydi. (#14524)
+  * HID bluetooth cihazı (HumanWare Brailliant veya APH Mantis gibi) otomatik olarak algılanırsa ve USB bağlantısı kullanılabilir olursa, NVDA artık USB bağlantısına geri dönecek.
+  Önceden bu durum sadece bluetooth seri bağlantılar için geçerliydi. (#14524)
   * Braille ekran bağlı olmadığında ve braille görüntüleyici `alt+f4` tuşlarına basarak veya kapat düğmesine tıklanarak kapatıldığında, braille alt sisteminin ekran boyutu yeniden 0 hücreye ayarlanacak. (#15214)
 * Web tarayıcılar:
   * NVDA, artık Mozilla Firefox'un nadiren çökmesine veya yanıt vermeyi durdurmasına neden olmayacak. (#14647)
