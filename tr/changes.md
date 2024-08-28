@@ -235,8 +235,7 @@ Desteklenen asgari Windows sürümü Windows 8.1'dir.
 
 * Eklenti mağazası:
   Eklenti mağazasında birden fazla eklenti seçilerek eklenti kurulumu ve etkinleştirilmesi gibi eylemler toplu olarak yapılabiliyor. (#15350, #15623, @CyrilleB79)
-  * Seçili eklenti hakkında geribildirimleri görmeyi veya geribildirim göndermeyi sağlayan bir web sayfasını açan eylem eklendi. (#15576, 
-@nvdaes)
+  * Seçili eklenti hakkında geribildirimleri görmeyi veya geribildirim göndermeyi sağlayan bir web sayfasını açan eylem eklendi. (#15576, @nvdaes)
 * Bluetooth düşük enerjili HID braille ekranlar için destek eklendi. (#15470)
 * NVDA tarama kipinde, Mozilla Firefox için `NVDA+şift+f10` tuşlarıyla açılıp kapatılabilen yerel seçim kipi eklendi.
 Kip açıkken tarama kipinde metin seçildiğinde Firefox'un kendisinde de metin seçilecek.
