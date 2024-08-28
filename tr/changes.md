@@ -1523,6 +1523,7 @@ Lütfen güvenlik sorunlarını <info@nvaccess.org> adresine bildirin.
 Bu sürüm 2021.3.2 ile aynıdır. 
 NVDA 2021.3.2 sürümünde NVDA'nın kendisini 2021.3.1 olarak tanımlamasına neden olan bir hata vardı.
 Bu sürüm o hatayı düzeltiyor. 
+
 ## 2021.3.2
 
 Bu sürüm bazı güvenlik sorunlarını giderir.
