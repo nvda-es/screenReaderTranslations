@@ -814,7 +814,7 @@ Not:
   * Not: Şeridin ekle panosundaki tablo düğmesiyle biçimlendirilen tablolar kast edilmektedir.
   "Tablo stili seçeneklerindeki İlk sütun ve üst bilgi satırı, sırasıyla sütun ve satır başlıklarına denk gelmektedir.
   * İsimli aralıklarla ekran okuyuculara özel başlıklandırma kast edilmemektedir. Bu tür başlıklandırma şu an UI otomasyonda desteklenmemektedir.
--Gecikmeli karakter açıklamalarını açıp kapatmak için kısayolu atanmamış bir script eklendi. (#14267)
+* Gecikmeli karakter açıklamalarını açıp kapatmak için kısayolu atanmamış bir script eklendi. (#14267)
 * Terminalde yeni veya değişen metni okumak amacıyla UIA bildirim desteğini kullanmak için deneysel bir seçenek eklendi. Bu seçenek kararlılığı ve tepki verme hızını arttırıyor. (#13781)
   * Bu deneysel seçeneğin kısıtlamaları hakkında detaylı bilgi için kullanıcı rehberine bakın.
 * Windows 11 ARM64'te Firefox, Google Chrome ve 1Password gibi AMD64 uygulamalarında tarama kipi artık kullanılabiliyor. (#14397)
@@ -877,6 +877,7 @@ Bir kez basıldığında nesne sunucusunun üzerinde bulunduğu linkin yönlendi
 * Chrome ve Firefox gibi web tarayıcılarda, dosya indirmeleri gibi uyarılar artık seslendirilmenin yanısıra braille olarak da gösteriliyor. (#14562)
 * Firefox'ta tablonun ilk ve son sütununa giderken meydana gelen bir hata düzeltildi  (#14554)
 * NVDA `--lang=Windows` parametresiyle çalıştırıldığında, NVDA'nın genel ayarlar iletişim kutusunu açmak yeniden mümkün oldu. (#14407)
+* NVDA Pc için Kindle'da sayfayı çevirdikten sonra okumayı durdurmuyor. (#14390)
 
 ### Changes for Developers
 
