@@ -352,9 +352,8 @@ A configuración de `numCells` aínda está admitida para pantallas braille de u
   * Exemplo: `speech.speakSsml('<speak><prosody pitch="200%">hello</prosody><break time="500ms" /><prosody rate="50%">John</prosody></speak>')`
   * As funcións de análise sintáctico de SSML están respaldadas pola crase `SsmlParser` no módulo `speechXml`.
 * Cambios para a librería NVDA Controller Client:
-  * Os nomes de ficheiro da biblioteca xa non conteñen un sufixo denotando a arquitectura, ex.: `nvdaControllerClient32/64.dll` agora chámase `nvdaControllerClient.dll`. (#15718, #15717, @LeonarddeR)
+  * Os nomes de ficheiro da libraría xa non conteñen un sufixo denotando a arquitectura, é dicir, `nvdaControllerClient32/64.dll` agora chámase `nvdaControllerClient.dll`. (#15718, #15717, @LeonarddeR)
   * Engadido un exemplo para demostrar o uso de nvdaControllerClient.dll dende Rust. (#15771, @LeonarddeR)
-  * Os nomes de ficheiro da librería xa non conteñen un sufixo denotando a arquitectura, é dicir, `nvdaControllerClient32/64.dll` agora chámase `nvdaControllerClient.dll`. (#15718, #15717, @LeonarddeR)
   * Engadidas as seguintes funcións ao controller client: (#15734, #11028, #5638, @LeonarddeR)
     * `nvdaController_getProcessId`: para obter o id de proceso (PID) da instancia actual que está utilizando o NVDA controller client.
     * `nvdaController_speakSsml`: para instruir ao NVDA que fale de acordo co SSML dado. Esta función tamén soporta:
