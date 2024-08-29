@@ -1699,8 +1699,8 @@ Office, Visual Studio ve çeşitli diller dahil olmak üzere birçok hata düzel
 
 Not:
 
-Bu, Eklenti API uyumluluğunu değiştiren bir sürümdür. Eklentilerin yeniden test edilmesi ve manifest  dosyalarının güncellenmesi gerekecektir.
-Bu sürüm ayrıca Adobe Flash desteğini de kaldırmaktadır.
+ * Bu, Eklenti API uyumluluğunu değiştiren bir sürümdür. Eklentilerin yeniden test edilmesi ve manifest  dosyalarının güncellenmesi gerekecektir.
+ * Bu sürüm ayrıca Adobe Flash desteğini de kaldırmaktadır.
 
 ### Yeni özellikler
 
@@ -1727,7 +1727,7 @@ Bu sürüm ayrıca Adobe Flash desteğini de kaldırmaktadır.
   * Yeni braille tabloları: Belarus edebi braille, Belarus bilgisayar braille, Urduca derece 1, Urduca derece 2.
 * Adobe Flash içerik desteği, Flash kullanımının Adobe tarafından etkin bir şekilde önerilmemesi nedeniyle NVDA'dan kaldırılmıştır. (#11131)
 * NVDA, pencereler hala açıkken bile kapatılabilir, çıkış işlemi artık tüm NVDA pencerelerini ve iletişim kutularını kapatır. (#1740)
-* Konuşma Görüntüleyici artık `` alt + F4 '' ile kapatılabilir ve işaretleme cihazı kullanıcılarının daha kolay etkileşimi için standart bir kapatma düğmesine sahiptir. (#12330)
+* Konuşma Görüntüleyici artık `alt + F4` ile kapatılabilir ve işaretleme cihazı kullanıcılarının daha kolay etkileşimi için standart bir kapatma düğmesine sahiptir. (#12330)
 * Braille Görüntüleyici artık işaretleme cihazı kullanıcılarının daha kolay etkileşimi için standart bir kapat düğmesine sahiptir. (#12328)
 * Öğeler Listesi iletişim kutusunda, bazı yerel dillerde bir öğe türü radyo düğmesi etiketi ile çakıştığı  için  "Etkinleştir" düğmesindeki hızlandırıcı anahtar kaldırılmıştır. Uygun olduğunda, düğme hala iletişim kutusu için varsayılandır  ve bu nedenle, öğeler listesinde  dolaşılırken enter tuşuna basılarak  basılabilir. (#6167)
 
@@ -1753,7 +1753,7 @@ Bu sürüm ayrıca Adobe Flash desteğini de kaldırmaktadır.
 * Hedefteki yapılandırma dizini boşken taşınabilir kopya konfigürasyonunun kurulum sırasında kopyalanmaması sorunu düzeltildi. (#12071, #12205)
 * 'Büyük harflerden önce büyük de' seçeneği işaretlendiğinde aksanlı veya şapkalı  bazı harflerin yanlış bildirimi  düzeltildi. (#11948)
 * SAPI4 konuşma sentezleyicisindeki perde değişim hatası düzeltildi. (#12311)
-* NVDA yükleyicisi artık `` --minimal '' komut satırı parametresini kabul ediyor ve kurulu veya taşınabilir bir NVDA yürütülebilir kopyasıyla aynı belgelenmiş davranışı izleyerek başlangıç ​​sesini çalmıyor. (#12289)
+* NVDA yükleyicisi artık `--minimal` komut satırı parametresini kabul ediyor ve kurulu veya taşınabilir bir NVDA yürütülebilir kopyasıyla aynı belgelenmiş davranışı izleyerek başlangıç ​​sesini çalmıyor. (#12289)
 * MS Word veya Outlook'ta, tarama kipi ayarlarında "düzenleme tablolarını göster" seçeneği etkinleştirilmişse, tablo hızlı gezinme tuşu artık düzen tablosuna atlayabilir. (#11899)
 * NVDA artık emojiler için bazı dillerde "↑↑↑" ifadesini söylemeyecektir. (#11963)
 * Espeak şimdi tekrar Kantonca ve Mandarin dilini destekliyor. (#10418)
@@ -1792,7 +1792,7 @@ Bu sürüm ayrıca Adobe Flash desteğini de kaldırmaktadır.
 * The `controlTypes.isCurrentLabels` mapping has been removed. (#11782)
   * Instead use the `displayString` property on a `controlTypes.IsCurrent` enum value.
     * For example: `controlTypes.IsCurrent.YES.displayString`.
-  `winKernel.GetTimeFormat` has been removed - use `winKernel.GetTimeFormatEx` instead. (#12139)
+* `winKernel.GetTimeFormat` has been removed - use `winKernel.GetTimeFormatEx` instead. (#12139)
 * `winKernel.GetDateFormat` has been removed - use `winKernel.GetDateFormatEx` instead. (#12139)
 * `gui.DriverSettingsMixin` has been removed - use `gui.AutoSettingsMixin`. (#12144)
 * `speech.getSpeechForSpelling` has been removed - use `speech.getSpellingSpeech`. (#12145)
@@ -1922,6 +1922,7 @@ Ayrıca aşağıda okuyacağınız üzere birçok önemli hata düzeltmesi ve iy
 * NVDA ABD Ingilizcesi 2. derece kullanirken ve bilgisayar Braille'ine açarken Braille imleci bir URL gibi belirli bir içerigi gösterirken artık çökmüyor.  (#11754)
 * NVDA + F kullanarak odaklanmış Excel hücresi için biçimlendirme bilgilerini almak yine mümkün. (#11914)
 * Papenmeier braille ekranlarındaki QWERTY girişi, onu destekleyen ekranlar için tekrar çalışıyor ve artık NVDA'nin rastgele donmasina neden olmuyor. (#11944)
+* Chromium tabanlı tarayıcılarda, tablo dolaşımının çalışmadığı ve NVDA'nın tablonun satır ve sütun sayısını söylemediği bazı durumlar düzeltildi. (#12359)
 
 ### Changes for Developers
 
