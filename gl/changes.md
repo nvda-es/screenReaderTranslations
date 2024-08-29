@@ -479,7 +479,7 @@ Por favor comunica responsablemente os problemas de seguridade seguindo as [pol�
 ### Arranxo de Fallos
 
 * Arranxado un fallo que provocaba que o proceso de NVDA fallase ao non saír correctamente.
-Ao se executar o instalador, provocaba que a instalación entrase nun estado irrecuperable. (#16122, #16123)
+* Arránxase un erro onde Ao se executar o instalador, provocaba que a instalación entrase nun estado irrecuperable. (#16122, #16123)
 
 ## 2023.3.3
 
@@ -534,10 +534,10 @@ Tamén se arranxaron erros na tenda de complementos, en Microsoft Office, nos me
     * Este pode abrirse con `NVDA+control+u`. (#15497)
     * Unha opción para facer que o volume dos sons e pitidos do NVDA siga á configuración do volúme da voz que esteas a usar. (#1409)
     * Unha opción para configurar por separado o volume dos sons do NVDA. (#1409, #15038)
-    * O NVDA agora sacará o audio a través da Windows Audio Session API (WASAPI), o que pode mellorar a resposta, o rendemento e a estabilidade da voz e dos sons do NVDA. (#14697)
     * As opcións para cambiar o dispositivo de audio e conmutar a atenuación de audio movéronse ao novo diálogo Opcións de audio do diálogo Selecionar Sintetizador.
     Estas opcións borraranse do diálogo "selecionar Sintetizador" en 2024.1. (#15486, #8711)
-  * - Nota: WASAPI é incompatible con algúns complementos.
+  * O NVDA agora sacará o audio a través da Windows Audio Session API (WASAPI), o que pode mellorar a resposta, o rendemento e a estabilidade da fala e dos sons do NVDA. (#14697)
+  * Nota: WASAPI é incompatible con algúns complementos.
   Hai actualizacións compatibles dispoñibles para estos complementos, por favor actualízaos antes de actualizar o NVDA.
   As versións incompatibles destos complementos desactivaranse ao se actualizar o NVDA:
     * Tony's Enhancements versión 1.15 ou anteriores. (#15402)
