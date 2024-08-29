@@ -66,7 +66,7 @@ Unha mensaxe de advertencia avisarache se tentas escrebir nun directorio non val
   * O NVDA xa non anunciará "histórico do portapapeis" dúas veces ao navegar polos elementos de menú do panel de emoji. (#16532, @josephsl)
   * O NVDA xa non cortará a fala e o braille ao revisar kaomojis e símbolos no panel de emoji. (#16533, @josephsl)
 * Arranxos para o navegador web:
-  As mensaxes de erro referenciadas con `aria-errormessage` agora anúncianse en Google Chrome e en Mozilla Firefox. (#8318)
+  * As mensaxes de erro referenciadas con `aria-errormessage` agora anúncianse en Google Chrome e en Mozilla Firefox. (#8318)
   * Se está presente, o NVDA agora usará `aria-labelledby` para proporcionar nomes acesibles para táboas en Mozilla Firefox. (#5183)
   * O NVDA anunciará correctamente elementos de menú con botóns de opción e caixas de verificación ao entrar por primeira vez en submenús en Google Chrome e en Mozilla Firefox. (#14550)
   * A funcionalidade de procura en modo exploración en NVDA agora é máis precisa cando a páxina contén emojis. (#16317, @LeonarddeR)
@@ -136,7 +136,7 @@ Hai moitos outros arranxos menores de fallos para aplicacións como Thunderbird,
     * fórmula matemática (#16001, @mltony)
     * mesmo estilo de texto (#16000, @mltony)
     * diferente estilo de texto (#16000, @mltony)
-    * Engadidas ordes para saltar cara a á primeira, última, adiante e atrás polas opcións do anel do sintetizador. (#13768, #16095, @rmcpantoja)
+  * Engadidas ordes para saltar cara a á primeira, última, adiante e atrás polas opcións do anel do sintetizador. (#13768, #16095, @rmcpantoja)
     * Estabrecer a opción primeira e última no anel do sintetizador non ten xesto asignado. (#13768)
     * Diminuir e aumentar a opción actual do anel de opcións do sintetizador en pasos longos (#13768):
       * Escritorio: `NVDA+control+rePáx` e `NVDA+control+avPáx`.
@@ -165,8 +165,8 @@ Hai moitos outros arranxos menores de fallos para aplicacións como Thunderbird,
   * Actualizado o transcriptor braille LibLouis a [3.29.0](https://github.com/liblouis/liblouis/releases/tag/v3.29.0). (#16259, @codeofdusk)
     * Novas táboas detalladas braille (con letras maiúsculas indicadas) para bieloruso e ucraniano.
     * Nova táboa braille española para ler textos en grego.
-	   * Nova táboa para Lao grao 1.
-* eSpeak NG actualizouse a 1.52-dev commit `cb62d93fd7`. (#15913)
+    * Nova táboa para Lao grao 1.
+  * eSpeak NG actualizouse a 1.52-dev commit `cb62d93fd7`. (#15913)
     * Engadida nova lingua Tigrinya.
 * Cambiáronse varios xestos para dispositivos BrailleSense para evitar conflictos con caracteres da táboa braille francesa. (#15306)
   * `alt+frecha esquerda` agora asígnase a `punto2+punto7+espazo`
@@ -352,6 +352,7 @@ A configuración de `numCells` aínda está admitida para pantallas braille de u
   * Exemplo: `speech.speakSsml('<speak><prosody pitch="200%">hello</prosody><break time="500ms" /><prosody rate="50%">John</prosody></speak>')`
   * As funcións de análise sintáctico de SSML están respaldadas pola crase `SsmlParser` no módulo `speechXml`.
 * Cambios para a librería NVDA Controller Client:
+  * Os nomes de ficheiro da biblioteca xa non conteñen un sufixo denotando a arquitectura, ex.: `nvdaControllerClient32/64.dll` agora chámase `nvdaControllerClient.dll`. (#15718, #15717, @LeonarddeR)
   * Engadido un exemplo para demostrar o uso de nvdaControllerClient.dll dende Rust. (#15771, @LeonarddeR)
   * Os nomes de ficheiro da librería xa non conteñen un sufixo denotando a arquitectura, é dicir, `nvdaControllerClient32/64.dll` agora chámase `nvdaControllerClient.dll`. (#15718, #15717, @LeonarddeR)
   * Engadidas as seguintes funcións ao controller client: (#15734, #11028, #5638, @LeonarddeR)
