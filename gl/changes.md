@@ -1357,7 +1357,7 @@ Nota:
 
 * Soporte para o anunciado de notas en MS Excel co UI Automation habilitado en Windows 11. (#12861)
 * En compilacións recentes de Microsoft Word a través de UI Automation en Windows 11, a existencia de marcas, borradores de comentarios e comentarios resoltos agora anúncianse en voz e braille. (#12861)
-* O novo parámetro de liña de ordes --lang sempre sobrescrebe a lingua configurada de NVDA. (#10044)
+* O novo parámetro de liña de ordes `--lang` sempre sobrescrebe a lingua configurada de NVDA. (#10044)
 * O NVDA agora advirte sobre os parámetros de liña de ordes que son descoñecidos e que non se usan por ningún compremento. (#12795)
 * En Microsoft Word acesado a través de UI Automation, o NVDA agora fará uso de mathPlayer para ler e navegar as ecuacións matemáticas de Office. (#12946)
   * Para que esto funcione, debes estar executando Microsoft Word 365/2016 compilación 14326 ou posterior. 
@@ -1386,7 +1386,7 @@ Nota:
 * `NVDA+Suprimir do teclado numérico` anuncia a localización do cursor ou do obxecto enfocado por defecto. (#13060)
 * `NVDA+Shift+Suprimir do teclado numérico` anuncia a localización do cursor de revisión. (#13060)
 * Engadidos bindings predeterminados para conmutar as teclas modificadoras ás pantallas braille de Freedom Scientific (#13152)
-* Xa non se anuncia 'Baseline' a través da orde anunciar formato de texto (NVDA+F). (#11815)
+* Xa non se anuncia  `Baseline` a través da orde anunciar formato de texto (`NVDA+F`). (#11815)
 * Activar descripción lnga xa non ten un xesto predeterminado asignado. (#13380)
 * Anunciar resumo de detalles agora ten un xesto predeterminado, `NVDA+d`. (#13380)
 * o NVDA necesita se reiniciar despois de instalar MathPlayer. (#13486)
@@ -1406,7 +1406,7 @@ Nota:
 * Na Calculadora de Windows 10, o NVDA anunciará as etiquetas da listaxe de elementos do historial e da memoria. (#11858)
 * Os xestos coma o desprazamento e enrutamento voltan a funcionar cos dispositivos HID Braille. (#13228)
 * Windows 11 Mail: despois de cambiar o foco entre aplicacións, mentres se lía un correo electrónico longo, o NVDA quedábase atascado nunha liña do correo. (#13050)
-* HID braille: os xestos cor (por exemplo: espazo+punto4) pódense realizar con éxito dende a pantalla braille. (#13326)
+* HID braille: os xestos cor (por exemplo: `espazo+punto4`) pódense realizar con éxito dende a pantalla braille. (#13326)
 * Arranxado un fallo polo que se podían abrir varios diálogos de opcións ao mesmo tempo. (#12818)
 * Arranxado un problema polo que algunhas pantallas braille Focus Blue deixaban de funcionar despois de que se espertase o computador tras a suspensión. (#9830)
 * Xa non se anuncia 'Baseline' cando a opción 'anunciar superíndice e subíndice' estea activa. (#11078)
@@ -1569,8 +1569,8 @@ Os usuarios afectados terán que descargar esta actualización manualmente.
 
 * Engádese un xesto de entrada para conmutar opcións para anunciar o estilo de bordes da celda. (#10408)
 * Soporte para a nova especificación HID Braille que pretende estandarizar o soporte para pantallas Braille. (#12523)
- * Os dispositivos que admitan esta especificación autodetectaranse polo NVDA.
- * Para máis detalles técnicos sobre a implementación de NVDA desta especificación, consulta https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md
+  * Os dispositivos que admitan esta especificación autodetectaranse polo NVDA.
+  * Para máis detalles técnicos sobre a implementación de NVDA desta especificación, consulta https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md
 * Engadido o soporte para o dispositivo braille VisioBraille Vario 4. (#12607)
 * Pódense habilitar as notificacións de erro (opcións avanzadas) cando se use calquera versión do NVDA. (#12672)
 * En Windows 10 e posterior, o NVDA anunciará o reconto de suxerencias ao introducir termos de busca en aplicacións como a configuración e a Tenda de Microsoft. (#7330, #12758, #12790)
@@ -1613,7 +1613,6 @@ Se necesitas esta funcionalidade por favor asigna un xesto ao script apropriado 
 * Cando se usa un método de entrada en chino como Taiwán - Microsoft Quick en Microsoft Word, o desprazamento da pantalla braille cara adiante e cara atrás xa non salta incorrectamente á posición orixinal do cursor. (#12855)
 * Ao acesar a documentos de Microsoft Word a través de UIA, a navegación por frases (alt+flecha abajo / alt+flecha arriba) volta a seren posible. (#9254)
 * Ao acesar a MS Word con UIA, agora anúnciase a sangría dos parágrafos. (#12899)
-* Ao acesar a MS Word con UIA, agora anúnciase a orde de seguemento de cambios e algunhas outras ordes localizadas en Word. (#12904)
 * Ao aceder a MS Word con UIA, agora anúnciase a orde de seguemento de cambios e algunhas outras ordes localizadas en Word. (#12904)
 * Arranxados os duplicados en braille e voz cando a 'descripción' coincida co 'contido' ou co 'nome'. (#12888)
 * En MS Word con UIA activado, hai unha reprodución máis precisa dos sons de erros ortográficos mentres se escribe. (#12161)
