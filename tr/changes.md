@@ -1695,7 +1695,6 @@ Güvenliği gözeterek Windows'un yeni bir sürümünü kullanırken Ekran Perde
 Bu sürüm, Excel ve Chromium tarayıcılarda UIA için isteğe bağlı deneysel destek içerir.
 Çeşitli diller ve bağlantılara Braille erişimi  için düzeltmelere sahip.
 Unicode CLDR, matematiksel semboller ve LibLouis için güncellemeler var.
-
 Office, Visual Studio ve çeşitli diller dahil olmak üzere birçok hata düzeltmesi ve iyileştirme.
 Not: Bu, Eklenti API uyumluluğunu değiştiren bir sürümdür.
 Eklentilerin yeniden test edilmesi ve manifest  dosyalarının güncellenmesi gerekecektir.
