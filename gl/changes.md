@@ -555,12 +555,12 @@ Tamén se arranxaron erros na tenda de complementos, en Microsoft Office, nos me
   * Cando o texto nunha terminal cambia sen actualizar o cursor do sistema, o texto nunha pantalla braille agora actualizarase correctamente ao situarse sobre unha liña que cambiara.
   Esto inclúe situacións onde o braille estea seguindo á revisión. (#15115)
   * Máis combinacións de teclas para BRLTTY están asignadas agora a ordes do NVDA (#6483):
-    * learn: conmuta a axuda de entrada do NVDA
-    * prefmenu: abre o menú do NVDA
-    * prefload e prefsave: carga e garda a configuración do NVDA
-    * time: amosa a hora
-    * say_line: fala a liña actual onde estea colocado o cursor de revisión
-  * say_below: le todo usando o cursor de revisión
+    * `learn`: conmuta a axuda de entrada do NVDA
+    * `prefmenu`: abre o menú do NVDA
+    * `prefload` e `prefsave`: carga e garda a configuración do NVDA
+    * `time`: amosa a hora
+    * `say_line`: fala a liña actual onde estea colocado o cursor de revisión
+    * `say_below`: le todo usando o cursor de revisión
   * O controlador BRLTTY só está dispoñible cando estea en execución unha instancia BRLTTY con BrlAPI habilitado. (#15335)
   * Borrouse a configuración avanzada para habilitar a compatibilidade con HID braille en favor dunha nova opción.
   Agora podes desactivar a auto detección de controladores específicos para pantallas braille no diálogo de seleción de pantalla braille. (#15196)
@@ -653,8 +653,8 @@ Actualizáronse eSpeak-NG, o transcriptor braille Liblouis e Unicode CLDR.
   * Controlador de Baum Braille: engadíronse varios xestos cor Braille para realizar ordes comúns de teclado como `windows+d` e `alt+tab`.
   Por favor consulta a Guía do Usuario do NVDA para unha listaxe compreta. (#14714)
 * Engadiuse a pronunciación de símbolos Unicode:
-  * símbolos braille como "⠐⠣⠃⠗⠇⠐⠜". (#14548)
-  * O símbolo da tecla Opción do Mac "⌥". (#14682)
+  * símbolos braille como `⠐⠣⠃⠗⠇⠐⠜`. (#14548)
+  * O símbolo da tecla Opción do Mac `⌥`. (#14682)
 * Engadíronse xestos para pantallas braille Tivomatic Caiku Albatross. (#14844, #15002)
   * amosar o diálogo de opcións braille
   * acesar á barra de estado
@@ -674,7 +674,7 @@ Actualizáronse eSpeak-NG, o transcriptor braille Liblouis e Unicode CLDR.
     * Unha opción para ter o volume dos sons e pitidos do NVDA seguindo á opción de volume da voz que esteas a usar. (#1409)
     * Unha opción para configurar por separado o volume dos sons do NVDA. (#1409, #15038)
   * Hai un fallo coñecido cun conxelamento intermitente cando WASAPI está habilitado. (#15150)
-* En Mozilla Firefox e en Google Chrome, NVDA agora anuncia cando un control abre un diálogo, unha grella, unha listaxe ou unha árbore se o autor especificou este uso de aria-haspopup. (#14709)
+* En Mozilla Firefox e en Google Chrome, o NVDA agora anuncia cando un control abre un diálogo, unha grella, unha listaxe ou unha árbore se o autor especificou este uso de `aria-haspopup`. (#14709)
 * Agora é posible usar variables do sistema (como `%temp%` ou `%homepath%`) na especificación da ruta mentres se crean copias portables do NVDA. (#14680)
 * Na actualización Windows 10 May 2019 e posteriores, o NVDA pode anunciar os nomes dos escritorios virtuais ao abrilos, cambialos e pechalos. (#5641)
 * Engadiuse un parámetro en todo o sistema para permitir aos usuarios e aos administradores do sistema forzar ao NVDA a arrancar en modo seguro. (#10018)
@@ -833,7 +833,7 @@ O mesmo que premer `NVDA+k` dúas veces, pero pode ser máis útil para usuarios
 
 ### Cambios
 
-Actualizouse o transcriptor braille LibLouis a [3.24.0](https://github.com/liblouis/liblouis/releases/tag/v3.24.0). (#14436)
+* Actualizouse o transcriptor braille LibLouis a [3.24.0](https://github.com/liblouis/liblouis/releases/tag/v3.24.0). (#14436)
   * Actualizaciones grandes ao braille úngaro, UEB e Chinés bopomofo.
   * Soporte para o braille danés estándar 2022.
   * Nobas táboas braille para braille xeorxiano literario, Swahili (Kenya) e Chichewa (Malawi).
@@ -892,7 +892,7 @@ Esta funcionalidad agora está dispoñible xenéricamente a través de `behaviou
 * A categoría UIA debug logging cando está habilitada agora produce un rexistro significativamente maior para os eventos, manexadores e utilidades UIA. (#14256)
 * Actualizados os estándares de compilación de NVDAHelper. (#13072)
   * Agora usa os estándares C++20, eran C++17.
-  * Agora usa a bandeira do compilador '/permissive-' que deshabilita comportamentos permisivos, e estabrece as opcións do compilador '/Zc' para unha conformidade estricta.
+  * Agora usa a bandeira do compilador `/permissive-` que deshabilita comportamentos permisivos, e estabrece as opcións do compilador `/Zc` para unha conformidade estricta.
 * Algúns obxectos de plugin (por exemplo: controladores e complementos) agora teñen unha descripción máis informativa na consola python de NVDA. (#14463)
 * O NVDA agora pode compilarse compretamente con Visual Studio 2022, xa non se require das ferramentas de compilación de Visual Studio 2019.
 * Rexistro máis detallado dos bloqueos do NVDA para axudar á depuración. (#14309)
@@ -1292,7 +1292,7 @@ coma Barra de tarefas e visualizador de Tarefas usando interación de rato e tac
 * Agora admítese compilar as dependencias do NVDA con Visual Studio 2022 (17.0). 
 aínda se usa Visual Studio 2019 para compilacións de desenvolvemento e de lanzamento. (#13033)
 * Cando se recupera a conta dos fillos selecionados a través de accSelection, 
-o caso se un ID de fillo negativo ou se devolve un IDispatch por IAccessible::get_accSelection agora manéxase apropriadamente. (#13276)
+o caso se un ID de fillo negativo ou se devolve un IDispatch por `IAccessible::get_accSelection` agora manéxase apropriadamente. (#13276)
 * Novas funcións convintes `registerExecutableWithAppModule` e `unregisterExecutable` engadíronse ao módulo `appModuleHandler`.
 Poden usarse para usar un so App Module con varios executables. (#13366)
 
@@ -1306,10 +1306,10 @@ Por favor proba a nova API e proporciona retroalimentación.
 Para autores de complementos, por favor abre un comentario de GitHub se estos cambios alonxan a API das túas necesidades.
 
 * Foi posto coma obsoleto `appModuleHandler.NVDAProcessID` - usa `globalVars.appPid` a cambio. (#13646)
-* `gui.quit` foi posto como obsoleto para borralo en 2023.1. (#13498)
+* `gui.quit` foi posto como obsoleto, usa `wx.CallAfter(mainFrame.onExitCommand, None)` a cambio. (#13498)
   -
 * Algúns alias appModules márcanse coma obsoletos e borraranse en 2023.1.
-O código que se importe dende un deles, debería importarse dende o m´`módulo reemplazado a cambio.  (#13366)
+O código que se importe dende un deles, debería importarse dende o módulo reemplazado a cambio.  (#13366)
 
 | Nome do módulo eliminado |Módulo de reemprazo|
 |---|---|
@@ -1338,7 +1338,8 @@ O código que se importe dende un deles, debería importarse dende o m´`módulo
 |zend-eclipse-php |eclipse|
 |zendstudio |eclipse|
 
-2022.1 =
+## 2022.1 =
+
 Esta versión inclúe grandes melloras para o soporte UIA con MS Office.
 Para Microsoft Office 16.0.15000 e superiores en Windows 11, o NVDA usará UI Automation para aceder a documentos de Microsoft Word por defecto.
 Esto proporciona unha mellora de rendemento significativa sobre o vello modelo de aceso de obxectos.
