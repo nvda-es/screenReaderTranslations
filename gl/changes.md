@@ -3697,9 +3697,9 @@ O sinalable nesta versión  inclúe o modo exploración para documentos en Micro
 * A caixa de verificación Anunciar táboas de deseño que se atopa no diálogo Opcións do Modo Navegación  agora renomeouse como Incluir Táboas de Deseño para reflectir que a navegación rápida non as localizará se a caixa está desmarcada. (#3140)
 * A revisión cha foi reemplazada polos modos de revisión de obxectos, documentos e pantalla. (#2996)
  * A revisión de obxectos revisa o texto só dentro do navegador de obxectos, a revisión de documentos revisa todo o texto nun documento en modo navegación (se hai algún) e a revisión de pantalla revisa o texto na pantalla para a aplicación actual.
-* As ordes que anteriormente movían cara ou dende revisión plana agora cambian entre estos novos modos de revisión.
+ * As ordes que anteriormente movían cara ou dende revisión plana agora cambian entre estos novos modos de revisión.
  * O navegador de obxectos segue automáticamente ó cursor de revisión de tal maneira que segue sendo o obxecto máis profundo na posición do cursor de revisión cando se está en modos de revisión de documentos ou de pantalla.
-* Despois de cambiar a modo revisión de pantalla, NVDA permanecerá neste modo hate que voltes explícitamente ós modos de revisión de documentos ou de obxectos.
+ * Despois de cambiar a modo revisión de pantalla, NVDA permanecerá neste modo hate que voltes explícitamente ós modos de revisión de documentos ou de obxectos.
  * Cando se estea en modo de revisión de documentos ou de obxectos, NVDA poderá cambiar automáticamente entre estos dous modos dependendo de se estás movéndote por un documento do modo navegación ou non.
 * Actualizado o transcriptor braille liblouis a 2.5.3. (#3371)
 
@@ -3720,7 +3720,7 @@ O sinalable nesta versión  inclúe o modo exploración para documentos en Micro
 * NVDA agora anuncia cambios no modo de conversión de IME en Windows 8.
 * NVDA xa non anuncia lixo no escritorio cando os métodos de entrada xaponeses Google ou IME ATOK están en uso. ;(# 3234)
 * En Windows 7 e superiores, NVDA xa non anuncia indebidamente o recoñecemento de voz ou a entrada táctil como un cambio de lingua do teclado.
- * NVDA xa non anuncia un carácter especial (0x7f) cando se prema control+retroceso en algúns editores mentres Falar Caracteres ó Escreber estea habilitado. (#3315)
+* NVDA xa non anuncia un carácter especial (0x7f) cando se prema control+retroceso en algúns editores mentres Falar Caracteres ó Escreber estea habilitado. (#3315)
 * espeak xa non fai cambios inapropriados no ton, volume, etc. cando NVDA lea texto que conteña certos caracteres de control ou XML. (#3334) (regresión de #437)
 * En aplicacións Java, os cambios no nivel ou no valor do control enfocado agora anúncianse automáticamente, e reflíctense ca subsiguinte saída do control. (#3119)
 * En controis Scintilla, as liñas agora anúncianse correctamente cando o corte de palabras está habilitado. (#885)
@@ -3755,7 +3755,8 @@ Esta versión corrixe o problema onde o NVDA se colgaba ó iniciarse se se confi
 * En Internet Explorer e outros controis MSHTML, os campos marcados como contendo unha entrada inválida agora manéxanse correctamente. (#3256)
 * NVDA xa non se colga cando se iniciou se se configurou para utilizar o idioma irlandés.
 
-= 2013.1 =
+## 2013.1
+
 O máis subliñable nesta versión inclúe unha distribución de teclado portátil máis intuitiva e consistente; soporte básico para o Microsoft PowerPoint; soporte para descripcións longas en navegadores web; e soporte para a entrada de braille computerizado para liñas braille que teñan un teclado braille.
 
 == Importante ==
