@@ -2093,7 +2093,7 @@ O subliñable desta versión inclúe o soporte de varias novas pantallas braille
 
 * Agora compílase a documentación para o desenvolvedor usando sphinx. (#9840)
 * Dividíronse en dous varias funcións da fala. (#10593)
- A versión speakX permanece, pero agora depende dunha función getXSpeech a que devolve unha secuencia de fala.
+  A versión speakX permanece, pero agora depende dunha función getXSpeech a que devolve unha secuencia de fala.
   * speakObjectProperties agora baséase en getObjectPropertiesSpeech
   * speakObject agora baséase en getObjectSpeech
   * speakTextInfo agora baséase en getTextInfoSpeech
@@ -3646,7 +3646,6 @@ O sinalable nesta versión  inclúe o modo exploración para documentos en Micro
 * Zend Studio agora funciona igual que Eclipse. (#3420)
 * O cambio de estado de certas caixas de verificación no diálogo de regras de correo do Microsoft Outlook 2010 agora anúnciase automáticamente. (#3063)
 * NVDA agora anunciará o estado fixado para controis fixos como  pestanas en Mozilla Firefox. (#3372)
-* NVDA agora pode anunciar información de revisión no Microsoft Word cando o Control de Cambios  estea habilitado. Ten en conta que Anunciar revisións do editor debe estar habilitado no diálogo de formateado de documentos do NVDA (desactivado predeterminadamente) tamén para que sexan anunciados. (#1670)
 * Agora é posible vincular scripts a xestos de teclado que conteñan as teclas Alt e/ou Windows como modificadoras. Anteriormente, se se facía esto, a execución do script causaba a activación do menú Inicio ou da barra de menú. (#3472)
 * Ó seleccionar texto en documentos en modo navegación (por exemplo ó utilizar control+shift+fin) xa non causa que se cambie a distribución de teclado en sistemas con varias distribucións de teclado instaladas. (#3472)
 * Internet Explorer xa non debería colgarse ou voltarse inusable  cando se pecha NVDA. (#3397)
@@ -3654,7 +3653,7 @@ O sinalable nesta versión  inclúe o modo exploración para documentos en Micro
 * NVDA agora compórtase como se esperaba enPoedit 1.5.7. os usuarios que utilicen versións anteriores necesitarán actualizar. (#3485)
 * NVDA agora pode ler documentos protexidos en Microsoft Word 2010,  non causando xa que Microsoft Word se bloquee. (#1686)
 * Se se da un parámetro de línea de comando descoñecido ó executar o paquete de distribución de NVDA, xa non se provoca un bucle sen fin de diálogos de mesaxes de erro. (# 3463)- 
--NVDA xa non falla ó anunciar o texto alternativo dos gráficos e obxectos en Microsoft Word se o texto alternativo contén comiñas ou outros caracteres non estándar. (#3579)
+* NVDA xa non falla ó anunciar o texto alternativo dos gráficos e obxectos en Microsoft Word se o texto alternativo contén comiñas ou outros caracteres non estándar. (#3579)
 * O número de elementos de certas listas horizontais en modo navegación agora está correcto. Anteriormente podía ter sido o doble da cantidade real. (#2151)
 * Ó premer control+e nunha folla de cálculo de Microsoft Excel, agora anunciarase a selección actualizada. (#3043)
 * NVDA agora pode ler correctamente os documentos XHTML en Microsoft Internet Explorer e outros controis MSHTML. (#3542)
