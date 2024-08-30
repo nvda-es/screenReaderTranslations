@@ -4194,14 +4194,14 @@ Por favor consulta a documentación das pantallas para descripcións de onde pod
 |teclas control+shift+frecha dereita |punto5+punto8+espazo+f1|
 |teclas control+frecha dereita |punto5+espazo|
 |teclas shift+alt+frecha dereita |punto5+punto7+f1|
-|teclas alt+frecha dereita |`punto5+punto7`|
+|teclas `alt+frecha dereita` |`punto5+punto7`|
 |tecla rePáx |punto1+punto2+punto6+espazo|
 |teclas control+rePáx |punto1+punto2+punto6+punto8+espazo|
 |tecla frecha arriba |punto1+espazo, leftSideUpArrow|
 |teclas control+shift+frecha arriba |punto2+punto3+punto8+espazo+f1|
 |teclas control+frecha arriba |punto2+punto3+espazo|
 |teclas shift+alt+frecha arriba |punto2+punto3+punto7+f1|
-|teclas ´alt+frecha arriba` |`punto2+punto3+punto7`|
+|teclas `alt+frecha arriba` |`punto2+punto3+punto7`|
 |teclas shift+frecha arriba |leftSideScrollDown+espazo|
 |tecla avPáx |punto3+punto4+punto5+espazo|
 |teclas control+avPáx |punto3+punto4+punto5+punto8+espazo|
@@ -4425,8 +4425,8 @@ Xeralmente, as seguintes teclas están dispoñibles nas pantallas braille:
 |l1 |Tecla frontal esquerda|
 |l2 |Tecla traseira esquerda|
 |r1 |Tecla frontal dereita|
-|r2 |Tecla traseira dereita||
-|up |1 paso arriba||
+|r2 |Tecla traseira dereita|
+|up |1 paso arriba|
 |up2 |2 pasos arriba|
 |left |1 paso á esquerda|
 |left2 |2 pasos á esquerda|
@@ -4505,7 +4505,7 @@ Sopórtanse os seguintes modelos:
 * BrailleNote MPower (Conexións serie e bluetooth)
 * BrailleNote Apex (Conexións USB e Bluetooth)
 
-Para o BrailleNote Touch, por favor consulta a seción [series das Brailliant BI / BrailleNote Touch](HumanWareBrailliant).
+Para o BrailleNote Touch, por favor consulta a seción [series das Brailliant BI / BrailleNote Touch](#HumanWareBrailliant).
 
 Excepto para o BrailleNote PK, admítense ambos teclados braille (BT) e QWERTY (QT).
 Para o BrailleNote QT, non se admite a emulación do teclado do PC.
@@ -4866,18 +4866,18 @@ Por favor consulta as [listas de claves de vínculos de BRLTTY](http://mielke.cc
 
 | Nome |orde de BRLTTY|
 |---|---|
-|Desprazar pantalla braille cara atrás |fwinlt (vai á esquerda unha ventá)|
-|Desprazar pantalla braille cara a dereita |fwinrt (vai unha ventá cara a dereita)|
-|Mover a pantalla braille á liña anterior |lnup (vai unha liña cara arriba)|
-|Mover pantalla braille á seguinte liña |lndn (vai unha liña cara abaixo)|
-|Guiar á celda braille |route (leva o cursor ao caracter)|
-|Conmutar entrada de axuda |learn (entra e sae do modo aprendizaxe de orde)|
-|Abrir o menú NVDA |prefmenu (entra e sae do menú preferencias)|
-|Revertir configuración |prefload (restaura as preferencias dende o disco)|
-|Gardar configuración |prefsave (garda as preferencias no disco)|
-|Anunciar hora |time (amosa a data e a hora actuais)|
-|Falar a liña onde estea o cursor de revisión |say_line (fala a liña actual)|
-|Falar todo usando o cursor de revisión |say_below (fala dende a liña actual ate o fondo da pantalla)|
+|Desprazar pantalla braille cara atrás |`fwinlt` (vai á esquerda unha ventá)|
+|Desprazar pantalla braille cara a dereita |`fwinrt` (vai unha ventá cara a dereita)|
+|Mover a pantalla braille á liña anterior |`lnup` (vai unha liña cara arriba)|
+|Mover pantalla braille á seguinte liña |`lndn` (vai unha liña cara abaixo)|
+|Guiar á celda braille |`route` (leva o cursor ao caracter)|
+|Conmutar entrada de axuda |`learn` (entra e sae do modo aprendizaxe de orde)|
+|Abrir o menú NVDA |`prefmenu` (entra e sae do menú preferencias)|
+|Revertir configuración |`prefload` (restaura as preferencias dende o disco)|
+|Gardar configuración |`prefsave` (garda as preferencias no disco)|
+|Anunciar hora |`time` (amosa a data e a hora actuais)|
+|Falar a liña onde estea o cursor de revisión |`say_line` (fala a liña actual)|
+|Falar todo usando o cursor de revisión |`say_below` (fala dende a liña actual ate o fondo da pantalla)|
 
 <!-- KC:endInclude -->
 
@@ -4963,11 +4963,11 @@ Seguidamente van as asignacións de teclas actuales para estas pantallas.
 |---|---|
 |Desprazar a pantalla braille cara atrás |pan á esquerda ou balancín arriba|
 |Desprazar a pantalla braille cara adiante |pan á dereita ou balancín abaixo|
-|Levar á celda braille |conxunto de sensores de enrutamento 1||
+|Levar á celda braille |conxunto de sensores de enrutamento 1|
 |Alternar o seguemento de braille |arriba+abaixo|
 |Tecla frecha arriba |joystick arriba, dpad arriba ou espazo+punto1|
 |Tecla frecha abaixo |joystick cara abaixo, dpad cara abaixo ou espazo+punto4|
-|Tecla frecha esquerda |espazo+punto3, joystick esquerdo ou dpad a esquerda||
+|Tecla frecha esquerda |espazo+punto3, joystick esquerdo ou dpad a esquerda|
 |Tecla frecha dereita |espazo+punto6, joystick dereita ou dpad dereita|
 |Teclas shift+tab |espazo+punto1+punto3|
 |tecla tab |espazo+punto4+punto6|
@@ -5038,7 +5038,7 @@ O NVDA pode aceptar unha ou máis opcións adicionais ao arrancar que alteren o 
 Podes pasar tantas opcións como necesites.
 Estas opcións poden pasarse ao arrancar dende un atallo de teclado (nas propiedades do atallo de teclado), dende o diálogo Executar(Menú Inicio -> Executar ou Windows+r) ou dende unha consola de ordes de Windows.
 As opcións deberían separarse do nome do ficheiro executable do NVDA e de outras opcións por espazos.
-Por exemplo, unha opción útil é --disable-addons, que di ao NVDA que suspenda todos os complementos en execución.
+Por exemplo, unha opción útil é `--disable-addons`, que di ao NVDA que suspenda todos os complementos en execución.
 Esto permíteche determinar se un problema é causado por un complemento e recuperarte de problemas serios causados por complementos.
 
 Como un exemplo, podes saír da copia actualmente en execución do NVDA introducindo o seguinte no diálogo Executar:
@@ -5054,13 +5054,13 @@ Para aquelas que teñan unha versión curta, podes combinalas así:
 |`nvda -mc CONFIGPATH --disable-addons` |O mesmo que a de arriba, pero con complementos desactivados|
 
 Algunhas das opcións de liña de ordes aceptan parámetros adicionais; ex.: cómo debería ser o grado de detalle do rexistro ou a vía para o directorio de configuración do usuario.
-Esos parámetros deberían colocarse despois da opción, separados da opción por un espazo cando se utiliza a versión ou un signo igual (=) cando se utiliza  a versión longa; ex.:
+Esos parámetros deberían colocarse despois da opción, separados da opción por un espazo cando se utiliza a versión ou un signo igual (`=`) cando se utiliza  a versión longa; ex.:
 
 | . {.hideHeaderRow} |.|
 |---|---|
 |`nvda -l 10` |di ao NVDA que se inicie co nivel de rexistro posto en depuración|
-|`nvda --log-file=c:\nvda.log` |Di ao NVDA que escriba o seu rexistro en c:\nvda.log|
-|`nvda --log-level=20 -f c:\nvda.log` |Di ao NVDA que inicie co nivel de rexistro posto en info e que escreba o seu  rexistro en c:\nvda.log|
+|`nvda --log-file=c:\nvda.log` |Di ao NVDA que escriba o seu rexistro en `c:\nvda.log`|
+|`nvda --log-level=20 -f c:\nvda.log` |Di ao NVDA que inicie co nivel de rexistro posto en `nfo e que escreba o seu  rexistro en `c:\nvda.log`|
 
 Seguidamente van as opcións de liña de ordes para o NVDA:
 
@@ -5072,35 +5072,35 @@ Seguidamente van as opcións de liña de ordes para o NVDA:
 |`-f LOGFILENAME` |`--log-file=LOGFILENAME` |O ficheiro onde se deberían escrebir as mensaxes do rexistro.  O rexistro sempre está desactivado se o modo seguro está habilitado.|
 |`-l LOGLEVEL` |`--log-level=LOGLEVEL` |O nivel máis baixo da mensaxe rexistrada (debug 10, input/output 12, debug warning 15, info 20, disabled 100). O rexistro está sempre deshabilitado se o modo seguro está habilitado.|
 |`-c CONFIGPATH` |`--config-path=CONFIGPATH` |A ruta onde se almacenan todas as opcións do NVDA. O valor predeterminado fórzase se o modo seguro está habilitado.|
-|`No` |`--lang=LANGUAGE` |Sobrescribe a lingua configurada do NVDA. Estabrece "Windows" para o usuario actual por defecto, "en" para Inglés, etc.|
+|None |`--lang=LANGUAGE` |Sobrescribe a lingua configurada do NVDA. Estabrece "Windows" para o usuario actual por defecto, "en" para Inglés, etc.|
 |`-m` |`--minimal` |Sen sons, sen interface, sen mesaxe de inicio etc|
 |`-s` |`--secure` |Inicia o NVDA en [Modo Seguro](#SecureMode)|
-|`Non` |`--disable-addons` |Os complementos non terán efecto|
-|`Non` |`--no-sr-flag` |Non cambia a bandeira global do sistema do lector de pantalla|
-|`Non` |`--debug-logging` |Habilita o nivel de rexistro de depuración só para esta execución. Esta configuración sobreescribirá calquera outro nivel de rexistro ( --loglevel, -l) argumento dado, incluindo a opción non rexistro.|
-|`Non` |`--no-logging` |Deshabilita o rexistro durante o uso do NVDA. Esta opción pode sobreescribirse se se especifica un nivel de rexistro ( --loglevel, -l) dende a liña de ordes ou se o rexistro de depuración está activado.|
-|`Non` |`--install` |Instálase o NVDA comezando a nova copia instalada|
-|`Non` |`--install-silent` |Instala en silenzo NVDA (Non comeza a nova copia instalada)|
-|`Non` |`--enable-start-on-logon=True|False` |Ao instalar, habilita [arrancar na pantalla de inicio](#StartAtWindowsLogon) do NVDA|
-|`Non` |`--copy-portable-config` |Ao instalar, copia a configuración portable dende a ruta proporcionada (--config-path, -c) á actual conta de usuario|
-|`Non` |`--create-portable` |Crea unha copia portable do NVDA (comezando a nova copia creada). Require especificarse --portable-path|
-|`Non` |`--create-portable-silent` |Crea unha copia portable do NVDA (sen comezar a nova copia instalada). Require expecificarse --portable-path.  Esta opción suprime  as advertencias ao escrebir en directorios non valdeiros e pode sobreescribir ficheiros sen avisar. |
-|`Non` |`--portable-path=PORTABLEPATH` |A ruta onde se creará unha copia portable|
+|None |`--disable-addons` |Os complementos non terán efecto|
+|None |`--no-sr-flag` |Non cambia a bandeira global do sistema do lector de pantalla|
+|None |`--debug-logging` |Habilita o nivel de rexistro de depuración só para esta execución. Esta configuración sobreescribirá calquera outro nivel de rexistro ( --loglevel, -l) argumento dado, incluindo a opción non rexistro.|
+|None |`--no-logging` |Deshabilita o rexistro durante o uso do NVDA. Esta opción pode sobreescribirse se se especifica un nivel de rexistro ( --loglevel, -l) dende a liña de ordes ou se o rexistro de depuración está activado.|
+|None |`--install` |Instálase o NVDA comezando a nova copia instalada|
+|None |`--install-silent` |Instala en silenzo NVDA (Non comeza a nova copia instalada)|
+|None |`--enable-start-on-logon=True|False` |Ao instalar, habilita [arrancar na pantalla de inicio](#StartAtWindowsLogon) do NVDA|
+|None |`--copy-portable-config` |Ao instalar, copia a configuración portable dende a ruta proporcionada (--config-path, -c) á actual conta de usuario|
+|None |`--create-portable` |Crea unha copia portable do NVDA (comezando a nova copia creada). Require especificarse --portable-path|
+|None |`--create-portable-silent` |Crea unha copia portable do NVDA (sen comezar a nova copia instalada). Require expecificarse --portable-path.  Esta opción suprime  as advertencias ao escrebir en directorios non valdeiros e pode sobreescribir ficheiros sen avisar. |
+|None |`--portable-path=PORTABLEPATH` |A ruta onde se creará unha copia portable|
 
 ### Parámetros do Sistema {#SystemWideParameters}
 
 NVDA permite configurar algúns valores no rexistro do sistema que alteran o comportamento de todo o sistema do NVDA.
 Estos valores almacénanse no rexistro do sistema baixo unha das seguintes claves:
 
-* Sistema de 32 bits: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
-* Sistema de 64 bits: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+* Sistema de 32 bits: `HKEY_LOCAL_MACHINE\SOFTWARE\nvda`
+* Sistema de 64 bits: `HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda`
 
 Os seguintes valores poden configurarse baixo estas claves do rexistro:
 
 | Nome |Tipo |Valores Posibles |Descripción|
 |---|---|---|---|
-|configInLocalAppData |DWORD |0 (predeterminado) para deshabilitado, 1 para habilitado |Se está habilitado, almacena a configuración do usuario do NVDA no cartafol local de datos de aplicación en lugar da roaming application data|
-|serviceDebug |DWORD |0 (predeterminado) para deshabilitar, 1 para habilitar |Se se habilita, deshabilita o [Modo Seguro](#SecureMode) nas [pantallas segura](#SecureScreens).  do windows, permitindo o uso da consola de Python e do visualizador do Rexistro. Debido a varias implicacións importantes de seguridade, o uso desta opción está altamente desaconsellada|
+|`configInLocalAppData` |DWORD |0 (predeterminado) para deshabilitado, 1 para habilitado |Se está habilitado, almacena a configuración do usuario do NVDA no cartafol local de datos de aplicación en lugar da roaming application data|
+|`serviceDebug` |DWORD |0 (predeterminado) para deshabilitar, 1 para habilitar |Se se habilita, deshabilita o [Modo Seguro](#SecureMode) nas [pantallas segura](#SecureScreens).  do windows, permitindo o uso da consola de Python e do visualizador do Rexistro. Debido a varias implicacións importantes de seguridade, o uso desta opción está altamente desaconsellada|
 |`forceSecureMode` |DWORD |0 (predeterminado) para deshabilitar, 1 para habilitar |Se está habilitado, forza [Modo Seguro](#SecureMode) para habilitarse ao executar o NVDA.|
 
 ## Información Adicional {#FurtherInformation}
