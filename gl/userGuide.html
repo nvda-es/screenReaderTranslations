@@ -318,7 +318,7 @@
 <li><a href="#ObjectPresentationReportToolTips" title="Anunciar Consellos">Anunciar Consellos</a></li>
 <li><a href="#ObjectPresentationReportNotifications" title="Anunciar notificacións">Anunciar notificacións</a></li>
 <li><a href="#ObjectPresentationShortcutKeys" title="Anunciar Teclas de Atallo dos Obxectos">Anunciar Teclas de Atallo dos Obxectos</a></li>
-<li><a href="#ObjectPresentationReportDescriptions" title="Anunciar Información da Posición do Obxecto">Anunciar Información da Posición do Obxecto</a></li>
+<li><a href="#ObjectPresentationPositionInfo" title="Anunciar Información da Posición do Obxecto">Anunciar Información da Posición do Obxecto</a></li>
 <li><a href="#ObjectPresentationGuessPositionInfo" title="Deducir a información de Posición do Obxecto cando non estea dispoñible">Deducir a información de Posición do Obxecto cando non estea dispoñible</a></li>
 <li><a href="#ObjectPresentationReportDescriptions" title="Anunciar Descripcións de Obxectos">Anunciar Descripcións de Obxectos</a></li>
 <li><a href="#ObjectPresentationProgressBarOutput" title="Saída nas Barras de Progreso">Saída nas Barras de Progreso</a></li>
@@ -3533,8 +3533,8 @@ Esto pode ser útil para alguén que desexe só usar o NVDA con braille, ou quiz
 </tr>
 <tr>
 <td>Ddiminuir actual opción de sintetizador</td>
-<td><code>NVDA+control+Frecha abaixo</code></td>
-<td><code>NVDA+shift+control+Frecha abaixo</code></td>
+<td>NVDA+control+Frecha abaixo</td>
+<td>NVDA+shift+control+Frecha abaixo</td>
 <td>decrementa a opción de voz actual sobre a que esteas. Ex.: decrementa a velocidade, elixe  a voz anterior, decrementa o volume</td>
 </tr>
 <tr>
@@ -3788,7 +3788,7 @@ Polo tanto, recoméndase conectar só unha Pantalla Braille dun determinado tipo
 <!-- KC:setting -->
 
 <h5 id="SelectSynthesizerDuckingMode">Modo Atenuación de Audio</h5>
-<p>Key: NVDA+shift+d</p>
+<p>Key: <code>NVDA+shift+d</code></p>
 <p>Esta opción permíteche escoller se o NVDA debería reducir o volume de outras aplicacións mentres estea falando, ou todo o tempo mentres o NVDA se estea a executar.</p>
 <ul>
 <li>Sen Atenuación: o NVDA nunca reducirá o volume do outro audio. </li>
@@ -4043,7 +4043,7 @@ Moitas ventás e controis amosan unha pequena mensaxe (ou consello) cando moves 
 <h5 id="ObjectPresentationShortcutKeys">Anunciar Teclas de Atallo dos Obxectos</h5>
 <p>Cando esta caixa de verificación está marcada, NVDA incluirá a tecla de atallo que estea asociada con certo obxecto ou control cando sexa anunciado. 
 Por exemplo o menú Archivo nunha barra de menú poderá ter unha tecla de atallo alt+a.</p>
-<h5 id="ObjectPresentationReportDescriptions">Anunciar Información da Posición do Obxecto</h5>
+<h5 id="ObjectPresentationPositionInfo">Anunciar Información da Posición do Obxecto</h5>
 <p>Esta opción permíteche escoller onde desexas ter unha posición do obxecto anunciada (ex.: 1 de 4) cando te moves ao obxecto co foco ou o navegador de obxectos.</p>
 <h5 id="ObjectPresentationGuessPositionInfo">Deducir a información de Posición do Obxecto cando non estea dispoñible</h5>
 <p>Se o anunciado de información de posición do obxecto está desactivada, esta opción permite ao NVDA deducir a información de posición do obxecto cando non estea dispoñible para un control en particular.</p>
@@ -4466,11 +4466,13 @@ Algunhas destas características poden estar incompretas.</p>
 <li>"Informar sempre de aria-description":
   Cando a fonte de <code>accDescription</code> é aria-description, anúnciase a descripción.
   Esto é útil para as anotacións na web.
-  Nota:</li>
+  Nota:<ul>
 <li>Hai moitas fontes para <code>accDescription</code> varias teñen unha semántica mixta ou puoco fiable.
-   Históricamente AT non foi quen de diferenciar as fontes de <code>accDescription</code> típicamente non se falaba debido á semántica mixta.</li>
+  Históricamente AT non foi quen de diferenciar as fontes de <code>accDescription</code> típicamente non se falaba debido á semántica mixta.</li>
 <li>Esta opción está nun desenvolvemento moi primitivo, baséase nas características do navegador que aínda non están ampliamente dispoñibles.</li>
 <li>Espérase que funcione con Chromium 92.0.4479.0+</li>
+</ul>
+</li>
 </ul>
 <h5 id="BrailleLiveRegions">Anunciar rexións activas</h5>
 <table>
@@ -4635,11 +4637,13 @@ Ten en conta que este diálogo respeta a opción "Confiar na lingua da voz ao se
 <p>Para cambiar un símbolo, primeiro selecciónao na lísta de Símbolos.
 Podes filtrar os símbolos introducindo o símbolo ou unha parte da súa sustitución no cuadro de edición Filtrar por.</p>
 <ul>
-<li>O campo Reemprazar permíteche cambiar o texto que debería falarse en lugar deste símbolo.
-Tamén podes axustar o nivel a carácter; neste caso o símbolo non se falará independentemente do nivel de símbolo en uso, coas seguintes dúas excepcións:</li>
+<li>O campo Reemprazar permíteche cambiar o texto que debería falarse en lugar deste símbolo.</li>
+<li>Utilizando o campo Nivel, podes axustar o nivel máis baixo do símbolo ao que este símbolo se debería falar (non, algún, a maioría ou todos).
+Tamén podes axustar o nivel a carácter; neste caso o símbolo non se falará independentemente do nivel de símbolo en uso, coas seguintes dúas excepcións:<ul>
 <li>Ao navegar por caracteres.</li>
 <li>Cando o NVDA estea a deletrear calquera texto que conteña ese símbolo.</li>
-<li>Utilizando o campo Nivel, podes axustar o nivel máis baixo do símbolo ao que este símbolo se debería falar (non, algún, a maioría ou todos).</li>
+</ul>
+</li>
 <li>O campo Enviar símbolo actual ao sintetizador especifica cando o proprio símbolo (en contraposición co seu reemplazamento) debería enviarse ao sintetizador.
 Esto é útil se o símbolo causa que o sintetizador faga unha pausa ou cambie a entoación da voz.
 Por exemplo, unha coma causa que o sintetizador faga unha pausa.
@@ -4680,7 +4684,7 @@ Despois deso, a tecla estará dispoñible dende a categoría Teclas do Sistema d
 <ul>
 <li>As teclas asignadas deben ter xestos asignados para persistir cando se garden ou se peche o diálogo.</li>
 <li>Un xesto de entrada con teclas modificadoras pode non seren capaz de mapearse a un xesto emulado sen teclas modificadoras.
-Por exemplo, configurar a entrada emulada 'a' e configurar un xesto de entrada de 'ctrl+m', pode resultar en que a aplicación reciba un 'ctrl+a'.</li>
+Por exemplo, configurar a entrada emulada <code>a</code> e configurar un xesto de entrada de <code>ctrl+m</code>, pode resultar en que a aplicación reciba un <code>ctrl+a</code>.</li>
 </ul>
 <p>Cando teñas rematado de facer cambios, preme o botón Aceptar para gardalos ou o botón Cancelar para descartalos.</p>
 <h3 id="SavingAndReloading">Gardar e Recargar a configuración</h3>
@@ -4723,7 +4727,7 @@ Tamén podes reiniciar as túas opcións aos seus valores predeterminados de fá
 Por exemplo, é posible que desexes ter o anunciado de sangría habilitado mentres estás editando ou o anunciado dos atributos da fonte activado mentres estás correxindo.
 O NVDA permíteche facer esto utilizando perfiles de configuración.</p>
 <p>Un perfil de configuración contén só as opcións que se cambian mentres que o perfil estea a ser editado.
-A maioría das opcións pódense cambiar nos perfís de configuración con excepción de aquelas que estean na categoría Xeral da caixa de diálogo [Opcións do NVDA #NVDASettings, as que se aplican á totalidade do NVDA.</p>
+A maioría das opcións pódense cambiar nos perfís de configuración con excepción de aquelas que estean na categoría Xeral da caixa de diálogo <a href="#NVDASettings" title="Opcións de NVDA">Opcións de NVDA</a> , as que se aplican á totalidade do NVDA.</p>
 <p>Os perfís de configuración pódense activar manualmente, sexa dende unha caixa de diálogo ou usando xestos engadidos persoalizados.
 Tamén se poden activar de forma automática debido aos disparadores como o cambio a unha aplicación en particular.</p>
 <h4 id="ProfilesBasicManagement">Manexo Básico</h4>
@@ -4845,8 +4849,8 @@ Os probadores alpha de NVDA poden necesitar usar as versións "Dev" dos seus com
 <p>Para enumerar complementos só para canles específicas, cambia a seleción do filtro de "Canle".</p>
 <h4 id="AddonStoreFilterSearch">Procurar complementos</h4>
 <p>Para procurar complementos, usa a caixa de texto "Procurar".
-Podes aceder a ela premendo <code>shift+tab</code> dende a listaxe de complementos, ou premendo <code>alt+p</code> dende calquera lugar na interface da Tenda de Complementos.
-Escribe unha ou dúas palabras chave para    o tipo de complemento que buscas e logo volta á listaxe.
+Podes aceder a ela premendo <code>shift+tab</code> dende a listaxe de complementos.
+Escribe unha ou dúas palabras chave para    o tipo de complemento que buscas e logo <code>tabula</code> ata a listaxe.
 Os complementos listaranse se o texto buscado pode atoparse no ID do complemento, no nome amosado, no editor, no autor ou na descripción.</p>
 <h3 id="AddonStoreActions">Accións do complemento</h3>
 <p>Os complementos teñen accións asociadas como instalar, axuda, deshabilitar e borrar.
@@ -5672,59 +5676,59 @@ Por favor consulta a documentación da pantalla braille para descripcións de on
 <tbody>
 <tr>
 <td>Desprazar pantalla braille cara atrás</td>
-<td>d2</td>
+<td><code>d2</code></td>
 </tr>
 <tr>
 <td>Desprazar pantalla braille cara adiante</td>
-<td>d5</td>
+<td><code>d5</code></td>
 </tr>
 <tr>
 <td>Mover a pantalla braille á liña anterior</td>
-<td>d1</td>
+<td><code>d1</code></td>
 </tr>
 <tr>
 <td>Mover a liña brailla á liña seguinte</td>
-<td>d3</td>
+<td><code>d3</code></td>
 </tr>
 <tr>
 <td>Guiar á celda braille</td>
-<td>sensor</td>
+<td><code>sensor</code></td>
 </tr>
 <tr>
-<td>teclas shift+tab</td>
-<td>espazo+punto1+punto3</td>
+<td>teclas <code>shift+tab</code></td>
+<td><code>espazo+punto1+punto3</code></td>
 </tr>
 <tr>
-<td>tecla tab</td>
-<td>espazo+punto4+punto6</td>
+<td>tecla <code>tab</code></td>
+<td><code>espazo+punto4+punto6</code></td>
 </tr>
 <tr>
-<td>tecla alt</td>
-<td>espazo+punto1+punto3+punto4 (espazo+m)</td>
+<td>tecla <code>alt</code></td>
+<td><code>espazo+punto1+punto3+punto4</code> (<code>espazo+m</code>)</td>
 </tr>
 <tr>
-<td>tecla escape</td>
-<td>espazo+punto1+punto5 (espazo+e)</td>
+<td>tecla <code>escape</code></td>
+<td><code>espazo+punto1+punto5</code> (<code>espazo+e</code>)</td>
 </tr>
 <tr>
-<td>tecla windows</td>
-<td>espazo+punto3+punto4</td>
+<td>tecla <code>windows</code></td>
+<td><code>espazo+punto3+punto4</code></td>
 </tr>
 <tr>
-<td>teclas alt+tab</td>
-<td>espazo+punto2+punto3+punto4+punto5 (espazo+t)</td>
+<td>teclas <code>alt+tab</code></td>
+<td><code>espazo+punto2+punto3+punto4+punto5</code> (<code>espazo+t</code>)</td>
 </tr>
 <tr>
 <td>Menú NVDA</td>
-<td>espazo+punto1+punto3+punto4+punto5 (espazo+n)</td>
+<td><code>espazo+punto1+punto3+punto4+punto5</code> (<code>espazo+n</code>)</td>
 </tr>
 <tr>
-<td>teclas windows+d (minimizar todas as aplicacións)</td>
-<td>espazo+punto1+punto4+punto5 (espazo+d)</td>
+<td>teclas <code>windows+d</code> (minimizar todas as aplicacións)</td>
+<td><code>espazo+punto1+punto4+punto5</code> (<code>espazo+d</code>)</td>
 </tr>
 <tr>
 <td>Falar todo</td>
-<td>espazo+punto1+punto2+punto3+punto4+punto5+punto6</td>
+<td><code>espazo+punto1+punto2+punto3+punto4+punto5+punto6</code></td>
 </tr>
 </tbody>
 </table>
@@ -6166,8 +6170,8 @@ Por favor consulta a documentación das pantallas para descripcións de onde pod
 <td>punto2+punto7+f1</td>
 </tr>
 <tr>
-<td>teclas alt+frecha esquerda</td>
-<td>punto2+punto7</td>
+<td>teclas <code>alt+frecha esquerda</code></td>
+<td><code>punto2+punto7</code></td>
 </tr>
 <tr>
 <td>tecla frecha dereita</td>
@@ -6187,7 +6191,7 @@ Por favor consulta a documentación das pantallas para descripcións de onde pod
 </tr>
 <tr>
 <td>teclas alt+frecha dereita</td>
-<td>punto5+punto7</td>
+<td><code>punto5+punto7</code></td>
 </tr>
 <tr>
 <td>tecla rePáx</td>
@@ -6214,8 +6218,8 @@ Por favor consulta a documentación das pantallas para descripcións de onde pod
 <td>punto2+punto3+punto7+f1</td>
 </tr>
 <tr>
-<td>teclas alt+frecha arriba</td>
-<td>punto2+punto3+punto7</td>
+<td>teclas ´alt+frecha arriba<code>|</code>punto2+punto3+punto7`</td>
+<td></td>
 </tr>
 <tr>
 <td>teclas shift+frecha arriba</td>
@@ -6246,8 +6250,8 @@ Por favor consulta a documentación das pantallas para descripcións de onde pod
 <td>punto5+punto6+punto7+f1</td>
 </tr>
 <tr>
-<td>teclas alt+frecha abaixo</td>
-<td>punto5+punto6+punto7</td>
+<td>teclas <code>alt+frecha abaixo</code></td>
+<td><code>punto5+punto6+punto7</code></td>
 </tr>
 <tr>
 <td>teclas shift+frecha abaixo</td>
@@ -6726,7 +6730,7 @@ As teclas interiores mapéanse a espazo.</p>
 </tr>
 </tbody>
 </table>
-<!-- KC:endInclude  -->
+<!-- KC:endInclude -->
 
 <h3 id="PapenmeierOld">Modelos Antigos Papenmeier Braille BRAILLEX</h3>
 <p>Sopórtanse as seguintes pantallas Braille: </p>
