@@ -4583,7 +4583,7 @@ O máis suliñable desta versión inclúe o soporte para edicións de 64 bit de 
 * NVDA xa non cancela a voz cando as teclas de control do volume son premedas no teclado, permitindo ó usuario cambiar o volume e escoitar os resultados actuais inmediatamente. (#287)
 * Reescribido Completamente o soporte para documentos de Microsoft Internet Explorer e Adobe Acrobat. Este soporte foi unificado co soporte interno utilizado por Mozilla Gecko, así características como a interpretación máis rápida de páxina, navegación extensa e rápida, lista de ligas, selección de texto, modo foco automático e soporte de braille están agora dispoñibles con estos documentos.
 * Mellorado o soporte para o control da selección de data atopado no diálogo de propiedades de data/Hora en Windows Vista.
- * Mellorado o soporte para o menú de inicio Moderno XP/Vista (específicamente os menús Todos os programas e lugares). A información de nivel apropriada é agora anunciada.
+* Mellorado o soporte para o menú de inicio Moderno XP/Vista (específicamente os menús Todos os programas e lugares). A información de nivel apropriada é agora anunciada.
 * A cantidade de texto que é anunciada co movemento do rato, é agora configurable dende o diálogo Opcións do rato. unha elección de párrafo, liña, palabra ou caracter pode ser feita.
 * Anúncianse erros de ortografía baixo o cursor en Microsoft Word.
 * soporte para a corrección ortográfica en Microsoft Word 2007. Soporte Parcial podería estar dispoñible para versións anteriores de Microsoft Word.
@@ -4605,8 +4605,8 @@ O máis suliñable desta versión inclúe o soporte para edicións de 64 bit de 
 * Soporte para arrastrar e soltar en ARIA en Mozilla Gecko. (#239)
 * A selección do título do documento e liña actual agora é falada cando movas o foco dentro dun modo virtual. Esto fai que o comportamento cando se move o foco nos modos virtuais sexa consistente como nun documento normal. (#210)
 * Nos modos virtuais, agora podes interactuar cos obxectos empotrados (como contidos Adobe Flash e Sun Java) premendo intro sobre o obxecto. Se é accesible, podes entón tabular por el como calquera outra aplicación. Para voltar o foco ó documento, preme NVDA+espacio. (#431)
-
 * Nos modos virtuais, o e shift+o moven ó seguinte e ó anterior obxecto empotrado, respectivamente.
+* NVDA agora pode acceder completamente a aplicacións que se executen como administrador en Windows Vista e posterior. Debes instalar unha versión oficial de NVDA para que esto funcione. Esto non funciona para versións portables e snapshots. (#397)
 
 ### Cambios
 
