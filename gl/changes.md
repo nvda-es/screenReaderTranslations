@@ -3759,9 +3759,10 @@ Esta versión corrixe o problema onde o NVDA se colgaba ó iniciarse se se confi
 
 O máis subliñable nesta versión inclúe unha distribución de teclado portátil máis intuitiva e consistente; soporte básico para o Microsoft PowerPoint; soporte para descripcións longas en navegadores web; e soporte para a entrada de braille computerizado para liñas braille que teñan un teclado braille.
 
-== Importante ==
+### Importante
 
-=== Nova Distribución Teclado Portátil ===
+#### Nova Distribución Teclado Portátil
+
 A distribución de teclado portátil redeseñouse por completo para facela máis intuitiva e consistente.
 A nova distribución utiliza as teclas do cursor en combinación ca tecla NVDA e outras modificadoras para ordes de revisión.
 
