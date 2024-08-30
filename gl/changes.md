@@ -1386,7 +1386,7 @@ Nota:
 * `NVDA+Suprimir do teclado numérico` anuncia a localización do cursor ou do obxecto enfocado por defecto. (#13060)
 * `NVDA+Shift+Suprimir do teclado numérico` anuncia a localización do cursor de revisión. (#13060)
 * Engadidos bindings predeterminados para conmutar as teclas modificadoras ás pantallas braille de Freedom Scientific (#13152)
-* Xa non se anuncia  `Baseline` a través da orde anunciar formato de texto (`NVDA+F`). (#11815)
+* Xa non se anuncia  "Baseline" a través da orde anunciar formato de texto (`NVDA+F`). (#11815)
 * Activar descripción lnga xa non ten un xesto predeterminado asignado. (#13380)
 * Anunciar resumo de detalles agora ten un xesto predeterminado, `NVDA+d`. (#13380)
 * o NVDA necesita se reiniciar despois de instalar MathPlayer. (#13486)
@@ -1688,7 +1688,7 @@ Por razóns de seguridade, ao usar unha versión nova de Windows, obtén unha co
   * As constantes `roleLabels`, `stateLabels` e `negativeStateLabels` quedaron obsoletas, os usos como `roleLabels[ROLE_*]` deberían reemprazarse polas súas equivalentes `Role.*.displayString` ou `State.*.negativeDisplayString`.
   * As etiquetas `processPositiveStates` e `processNegativeStates` quedaron obsoletas para a súa eliminación.
 * En Windows 10 Versión 1511 e posterior (incluindo compilaciones Insider Preview), o nome actual da versión da característica de actualización de Windows obtense do Rexistro de Windows. (#12509)
-* Obsoleto: winVersion.WIN10_RELEASE_NAME_TO_BUILDS eliminarase en 2022.1, non hai un reemprazo directo. (#12544)
+* Obsoleto: `winVersion.WIN10_RELEASE_NAME_TO_BUILDS` eliminarase en 2022.1, non hai un reemprazo directo. (#12544)
 
 ## 2021.1
 
@@ -1768,7 +1768,7 @@ Nota:
   * Para executar o NVDA dende o código fonte, en lugar de executar `source/nvda.pyw` directamente, o desenvolvedor debe agora utilizar `runnvda.bat` na raíz do repositorio. Se tentas executar `source/nvda.pyw`, unha caixa de mensaxe avisarache de que esto xa non se admite.
   * Para realizar probas unitarias, executa `rununittests.bat [<extra unittest discover options>]>]`.
   * Para realizar probas do sistema: executa `runsystemtests.bat extra robot options>]`
-  * Para realizar linting, executa ``runlint.bat <base branch>`.
+  * Para realizar linting, executa ``runlint.bat <base branch>`
   * Por favor, consulta o ficheiro readme.md para máis detalles.
 * Tamén se actualizaron as seguintes dependencias de Python:
   * comtypes actualizado a 1.1.8.
@@ -1786,12 +1786,12 @@ Nota:
   * getConfigDirs - usa globalVars.appArgs.configPath no seu lugar.
 * As constantes Module level REASON_* elimináronse de controlTypes - usa no seu lugar controlTypes.OutputReason. (#11969)
 * Eliminouse REASON_QUICKNAV de browseMode - usa controlTypes.OutputReason.QUICKNAV no seu lugar. (#11969)
-* A propiedade `NVDAObject` (e derivados) agora devolve estrictamente a crase Enum `controlTypes.IsCurrent`. (#11782)
+* A propiedade `NVDAObject` (y derivados) `isCurrent` ahora devolve estrictamente a crase Enum `controlTypes.IsCurrent`. (#11782)
   * A propiedade `isCurrent` xa non é Opcional, e polo tanto non devolverá Ningún.
-  * Cando un obxecto non é actual, devólvese `controlTypes.IsCurrent.NO`.
+    * Cando un obxecto non é actual, devólvese `controlTypes.IsCurrent.NO`.
 * O mapeado `controlTypes.isCurrentLabels` eliminouse. (#11782)
   * A cambio us a propiedade `displayString` en un valor enum `controlTypes.IsCurrent`.
-  * Por exemplo: `controlTypes.IsCurrent.YES.displayString`
+    * Por exemplo: `controlTypes.IsCurrent.YES.displayString`
 * Eliminouse `winKernel.GetTimeFormat` - débese usar `winKernel.GetTimeFormatEx`. 
 * Eliminouse `winKernel.GetDateFormat` - úsase `winKernel.GetDateFormatEx` no seu lugar. (#12139)
 * Eliminouse `gui.DriverSettingsMixin` - usa `gui.AutoSettingsMixin`. (#12144)
@@ -1812,7 +1812,7 @@ Nota:
 * Engadíronse métodos e tipos convenientes ao módulo winVersion para obter e comparar versións de Windows. (#11909)
   * Eliminouse a función isWin10 que se atopaba no módulo winVersion.
   * A crase winVersion.WinVersion é un tipo comparable e ordeable que encapsula a información da versión de Windows.
-    * Engadiuse a función winVersion.getWinVer para obter unha winVersion.WinVersion que represente o sistema operativo que se está executando actualmente.
+  * Engadiuse a función winVersion.getWinVer para obter unha winVersion.WinVersion que represente o sistema operativo que se está executando actualmente.
   * Engadíronse constantes de conveniencia para as versións conocidas de Windows, véase winVersion.WIN* constants.
 * IAccessibleHandler xa non importa de forma estelar todo o de as interfaces IAccessible e IA2 COM - por favor, úsaas directamente. (#12232)
 * Os obxectos TextInfo teñen agora propiedades de inicio y fin que poden compararse matemáticamente con operadores como < <= == != >= >. (#11613)
@@ -1838,7 +1838,7 @@ Nota:
 * Moviuse o seguinte a `speech.SpeechMode`. (#12395)
   * `speech.speechMode_off` convírtese en `speech.SpeechMode.off`.
   * `speech.speechMode_beeps` pasa a ser `speech.SpeechMode.beeps`
-  * speechMode_talk" pasa a ser "speech.Speech.SpeechMode.talk".
+  * `speechMode_talk` pasa a ser `speech.Speech.SpeechMode.talk`.
 * `IAccessibleHandler.IAccessibleObjectIdentifierType` é agora `IAccessibleHandler.types.IAccessibleObjectIdentifierType`. (#12367)
 * Cambiaron `NVDAObjects.UIA.WinConsoleUIA` (#12094)
   * `NVDAObjects.UIA.winConsoleUIA.is21H1Plus` renomeado a `NVDAObjects.UIA.winConsoleUIA.isImprovedTextRangeAvailable`.
@@ -1873,7 +1873,7 @@ Máis moitas outras importantes correcións de erros e melloras.
 ### Cambios
 
 * Actualizado o transcriptor braille liblouis á versión 3.16.1
-* Abórdánse múltiples colgues
+ * Abórdánse múltiples colgues
  * Engádese a táboa Braille grao 1 de Baskir
  * Engádese unha táboa braille de ordenador copto de 8 puntos
  * Engádense táboas de braille literario ruso e braille literario ruso (detallado).
@@ -2093,7 +2093,7 @@ O subliñable desta versión inclúe o soporte de varias novas pantallas braille
 
 * Agora compílase a documentación para o desenvolvedor usando sphinx. (#9840)
 * Dividíronse en dous varias funcións da fala. (#10593)
- A versión speakX permanece, pero agora depende dunha función getXSpeech a que devolve unha secuencia de fala.
+A versión speakX permanece, pero agora depende dunha función getXSpeech a que devolve unha secuencia de fala.
   * speakObjectProperties agora baséase en getObjectPropertiesSpeech
   * speakObject agora baséase en getObjectSpeech
   * speakTextInfo agora baséase en getTextInfoSpeech
@@ -2112,7 +2112,7 @@ O subliñable desta versión inclúe o soporte de varias novas pantallas braille
 
 O NVDA 2019.3 é unha versión moi importante que contén moitos cambios baixo o capó, incluíndo a actualización de Python 2 a Python 3, e unha importante reescritura do sistema da fala do NVDA.
 Aíndaque estos cambios rompan a compatibilidade cos antigos complemenhtos do NVDA, a actualización a Python 3 é necesaria por motivos de seguridade, e os cambios na fala permiten algunhas innovacións interesantes nun futuro cercano.
-Outros aspectos destacados nesta versión inclúen o soporte para 64 bits para Java VMs, as funcionalidades Cortina de Pantalla e Resaltado do Foco, admisión de máis pantallas braille e un novo visor braille, e moitos outros arranxos de erros.
+ Outros aspectos destacados nesta versión inclúen o soporte para 64 bits para Java VMs, as funcionalidades Cortina de Pantalla e Resaltado do Foco, admisión de máis pantallas braille e un novo visor braille, e moitos outros arranxos de erros.
 
 ### Novas Características
 
@@ -2126,7 +2126,7 @@ Outros aspectos destacados nesta versión inclúen o soporte para 64 bits para J
 * Engadida unha orde para mover o cursor de revisión á posición anteriormente axustada como marca de comezo de seleción ou copia: NVDA+shift+F9. (#1969)
 * En Internet Explorer, Microsoft Edge e versións recentes de Firefox e Chrome, as rexións agora anúncianse en modo foco e no navegador de obxectos. (#10101)
 * En Internet Explorer, Google Chrome e Mozilla Firefox, agora podes navegar por artigos e grupos usando os scripts de navegación rápida. Estos scripts non están vinculados por omisión e poden asignarse no diálogo Xestos de Entrada cando o diálogo se abra dende un documento en modo exploración. (#9227)
-* Agora anúncianse as figuras. Considéranse obxectos e, polo tanto, navegables coa tecla de navegación rápida o.
+ * Agora anúncianse as figuras. Considéranse obxectos e, polo tanto, navegables coa tecla de navegación rápida o.
 * En Internet Explorer, Google Chrome e Mozilla Firefox, agora anúncianse os elementos artigo co navegador de obxecto, e opcionalmente, en modo Exploración se se activou nas opcións de Formateado de Documentos. (#10424)
 * Engadiuse unha Cortina de Pantalla que, ao se activar, fai que toda a pantalla se torne negra en Windows 8 e posteriores. (#7857)
  * Engadiuse un script para activar a cortina de pantalla (ate o seguinte reinicio cunha soa pulsación, ou sempre mentres o NVDA estea en execución con dúas pulsacións), non se asigna ningún xesto predeterminado.
@@ -2656,7 +2656,7 @@ O subliñable desta versión inclúe o soporte para gráficos en Microsoft word 
 ### Cambios
 
 * reemplazáronse os controladores de pantallas braille HIMS Braille Sense/Braille EDGE/Smart Beetle e Hims Sync por un único controlador. O novo controlador activarase automáticamente para os antigos usuarios do controlador syncBraille. (#7459) 
-* Algunhas teclas, especialmente as teclas de desprazamento, reasignáronse para seguir as convencións usadas polos productos de Hims. Consulta a guía do usuario para máis detalles.
+ * Algunhas teclas, especialmente as teclas de desprazamento, reasignáronse para seguir as convencións usadas polos productos de Hims. Consulta a guía do usuario para máis detalles.
 * Ao se escrebir co teclado en pantalla a través da interación tactil, por defecto agora debes facer dobre tap en cada tecla do mesmo xeito no que activarías calquera outro control. (#7309)
  * Para usar o modo de "escritura tactil" existente onde chega con quitar o dedo da tecla para activala, habilita esta opción no novo diálogo Opcións de Interación Tactil que se atopa no menú Preferencias. (#7309)
 * Xa non é necesario que o braille sega explícitamente ao foco ou á revisión, xa que esto ocorrirá automáticamente por omisión. (#2385) 
@@ -2849,7 +2849,7 @@ O subliñable desta versión inclúe o soporte compreto para a atenuación de au
 
 ### Novas Características
 
-* Agora pódese anunciar a información do borde das celdas en Microsoft Excel usando `NVDA+f`. (#3044)
+* Agora pódese anunciar a información do borde das celdas en Microsoft Excel usando NVDA+f. (#3044)
 * Nos navegadores web, NVDA agora indica cando un elemento se marcou como actual (específicamente, usando o atributo aria-current). (#6358)
 * Agora sopórtase o cambio autumático de linguas no Microsoft Edge. (#6852)
 * Engadido o soporte para a Calculadora de Windows no Windows 10 Enterprise LTSB (Long-Term Servicing Branch) e Server. (#6914)
@@ -2896,7 +2896,7 @@ O subliñable desta versión inclúe o soporte compreto para a atenuación de au
  * As constantes `speech.REASON_*`, deberían usarse a cambio `controlTypes.REASON_*`. (#6846)
  * `i18nName` para opcións de sintetizador, `displayName` e `displayNameWithAccelerator` deberían usarse a cambio. (#6846, #5185)
  * `config.validateConfig`. (#6846, #667)
- * `config.save`. (#6846)
+ * `config.save`: deberíase usar a cambio `config.conf.save`. (#6846)
 * Aa listaxe de compretado no menú de contexto autocompretar da Consola Python xa non amosa calquera ruta de obxecto que leve ata o símbolo final que estea a ser compretado. (#7023)
 * Agora hai unha unidade de proba do framework para o NVDA. (#7026)
  * A unidade de proba e a infraestructura atópanse no directorio tests/unit. Consulta a cadea de documentación no ficheiro tests\unit\init.py para detalles.
@@ -3481,7 +3481,7 @@ O sinalable nesta versión  inclúe o modo exploración para documentos en Micro
  * Nos campos de edición estándar e no modo navegación, anúncianse a posición do cursor como unha porcentaxe do contido, e as súas cordinadas de pantalla .
  * En formas en presentacións de Powerpoint, anúnciase a posición da forma relativa á diapositiva  e outras formas.
  * Ó premer   esta orden dúas veces produciráse o vello comportamento do anunciado da información de localización para todo o control.
- * Nova lingua: Catalán. 
+* Nova lingua: Catalán. 
 
 ### Cambios
 
@@ -3514,7 +3514,7 @@ O sinalable nesta versión  inclúe o modo exploración para documentos en Micro
 * Microsoft Word: Ó ler a primeira ou a última liña dunha táboa de índice, xa non se le toda a táboa de índice. (#3421)
 * Ó falar palabras ó se escreber e nalgúns outros casos, as palabras xa non se separan incorrectamente en marcas como signos vocálicos e virama en linguas da India. (#4254)
 * Os campos numéricos  de texto editable en GoldWave agora manéllanse correctamente. (#670)
-+- Microsoft Word: ó nos mover por parágrafo con control+flecha abaixo / control+flecha arriba, xa non é necesario premelos dúas veces se nos movemos por listas numeradas ou de viñetas. (#3290)
+* Microsoft Word: ó nos mover por parágrafo con control+flecha abaixo / control+flecha arriba, xa non é necesario premelos dúas veces se nos movemos por listas numeradas ou de viñetas. (#3290)
 
 ### Cambios para Desenvolvedores
 
@@ -3605,11 +3605,9 @@ O sinalable nesta versión  inclúe o modo exploración para documentos en Micro
 * Cando se escribe ca entrada Asiática nun control dentro do proprio NVDA (ex.: no diálogo Buscar no modo navegación), "NVDA" xa non se anuncia incorrectamente en lugar do candidato. (#3726)
 * Agora anúncianse as pestanas no diálogo Opcións do Outlook 2013. (#3826)
 * Mellorado o soporte  para  rexiones ARIA live en Firefox e outras aplicacións Gecko de Mozilla:
-
-> - Soporte para actualizacións aria-atomic e filtrado de actualizacións aria-busy (#2640)
-> - Inclúese o texto alternativo (como o atributo alt ou aria-label) se non hai outro texto útil. (#3329)
-> - As actualizacións Live region xa non se silencian se se producen ó mesmo tempo que o desprazamento do foco. (# 3777)
-
+ * Soporte para actualizacións aria-atomic e filtrado de actualizacións aria-busy (#2640)
+ * Inclúese o texto alternativo (como o atributo alt ou aria-label) se non hai outro texto útil. (#3329)
+ * As actualizacións Live region xa non se silencian se se producen ó mesmo tempo que o desprazamento do foco. (# 3777)
 * Certos elementos de presentación en Firefox e outras aplicacións  Gecko de Mozilla xa non se amosan inapropriadamente en modo navegación (expresamente cando o elemento se marcóu con aria-presentation pero tamén é enfocable). (#3781)
 * Mellora do rendemento ó navegar por un documento en Microsoft Word ca corrección ortográfica activada. (#3785)
 * Varias correccións ó soporte para aplicacións Java accesibles:
