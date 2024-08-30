@@ -523,7 +523,7 @@ A maioría das ordes específicas de teclado do NVDA consisten normalmente na pu
 Unha notable excepción desto son as ordes de revisión de texto para a distribución de teclado de escritorio que só utiliza as teclas do teclado numérico por si mesmas, pero hai algunhas outras excepcións tamén.. 
 
 O NVDA pode configurarse tal que ou a tecla `Insert` do teclado numérico, ou a `Insert` do extendido, e/ou a `BloqMaius` podan utilizarse como a tecla modificadora do `NVDA`.
-De xeito predeterminado tanto o insert do teclado numérico como o do teclado extendido poden utilizarse como teclas modificadoras.
+De xeito predeterminado tanto o `Insert do teclado numérico` como o `Insert do teclado extendido` poden utilizarse como teclas modificadoras.
 
 Se desexas facer que unha das teclas modificadoras do NVDA se comporte como normalmente o faría sen estar NVDA en funcionamento (por exemplo desexas activar BloqMayus cando tes configurada BloqMayus para que sexa unha tecla modificadora do NVDA) podes premer a tecla dúas veces en sucesión rápida.
 
