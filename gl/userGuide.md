@@ -1009,7 +1009,7 @@ A seguintes teclas elas soas saltan ao seguinte campo, ca tecla shift saltan ao 
 * o: obxecto empotrado (reproductor de audio e vídeo, aplicación, diálogo, etc.)
 * 1 a 6: cabeceiras da 1 á 6 respectivamente
 * a: anotación (comentario, revisión do editor, etc.)
-* p: parágrafo de texto
+* `p`: parágrafo de texto
 * w: erro de ortografía
 
 Para te mover cara o comezo ou o remate de elementos contedores como listas e táboas:
@@ -2029,7 +2029,9 @@ Se desexas cambiar rápidamente opcións de voz  sen ir á categoría Voz do di�
 |Mover á seguinte opción de sintetizador |NVDA+control+Frecha dereita |NVDA+shift+control+Frecha dereita |Móvese á seguinte opción de voz dispoñible despois da actual, pasando pola primeira opción de novo despois da derradeira|
 |Mover á opción de sintetizador anterior |NVDA+control+Frecha esquerda |NVDA+shift+control+Frecha esquerda |Móvese á opción de voz anterior dispoñible despois da actual, pasando pola primeira opción de novo despois da derradeira|
 |Incrementar actual opción de sintetizador |NVDA+control+Frecha arriba |NVDA+shift+control+Frecha arriba |incrementa a opción de voz actual sobre a que esteas. Ex.: incrementa a velocidade, elixe a seguinte voz, incrementa o volume|
-|Decrementar actual opción de sintetizador |NVDA+control+Frecha abaixo |NVDA+shift+control+Frecha abaixo |decrementa a opción de voz actual sobre a que esteas. Ex.: decrementa a velocidade, elixe  a voz anterior, decrementa o volume|
+|Aumentar a opción actual do sintetizador en un paso longo |`NVDA+control+rePáx` |`NVDA+shift+control+rePáx` |aumenta o valor da actual opción de voz sobre a que esteas en pasos máis longos. Ex.: cando esteas sobre unha opción de voz, saltarás cara adiante cada 20 voces; cando esteas en opcións dun deslizador (velocidade, ton, etc) saltará adiante o valor de 20%|
+|Ddiminuir actual opción de sintetizador |`NVDA+control+Frecha abaixo` |`NVDA+shift+control+Frecha abaixo` |decrementa a opción de voz actual sobre a que esteas. Ex.: decrementa a velocidade, elixe  a voz anterior, decrementa o volume|
+|Diminuir a actual opción do sintetizador nun paso longo |`NVDA+control+avPáx` |`NVDA+shift+control+avPáx` |Diminúe o valor da actual opción de voz sobre a que esteas en pasos máis longos. ex.: cando esteas sobre unha opción de voz, saltará cara atrás cada 20 voces; cando esteas sobre unha opción de deslizador, saltará cara atrás o valor de 20%|
 
 <!-- KC:endInclude -->
 
@@ -2923,6 +2925,10 @@ Este estilo funciona mellor cando se traballe con documentos que usen bloques de
 Ten en conta que este estilo de parágrafo non pode usarse en Microsoft Word ou Microsoft Outlook, a menos que esteas usando UIA para acesar a controis de Microsoft Word.
 
 Podes cambiar entre os estilos de parágrafo dispoñibles dende calquera lugar asignando unha tecla no [diálogo Xestos de Entrada](#InputGestures).
+
+#### Opcións da tenda de complementos {#AddonStoreSettings}
+
+Esta categoría permite axustar o comportamento da tenda de complementos.
 
 ##### Notificacións de Actualización {#AutomaticAddonUpdates}
 
