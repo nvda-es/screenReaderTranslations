@@ -1768,7 +1768,7 @@ Nota:
   * Para executar o NVDA dende o código fonte, en lugar de executar `source/nvda.pyw` directamente, o desenvolvedor debe agora utilizar `runnvda.bat` na raíz do repositorio. Se tentas executar `source/nvda.pyw`, unha caixa de mensaxe avisarache de que esto xa non se admite.
   * Para realizar probas unitarias, executa `rununittests.bat [<extra unittest discover options>]>]`.
   * Para realizar probas do sistema: executa `runsystemtests.bat extra robot options>]`
-  * Para realizar linting, executa ``runlint.bat <base branch>`
+  * Para realizar linting, executa `runlint.bat <base branch>`.
   * Por favor, consulta o ficheiro readme.md para máis detalles.
 * Tamén se actualizaron as seguintes dependencias de Python:
   * comtypes actualizado a 1.1.8.
@@ -2093,7 +2093,7 @@ O subliñable desta versión inclúe o soporte de varias novas pantallas braille
 
 * Agora compílase a documentación para o desenvolvedor usando sphinx. (#9840)
 * Dividíronse en dous varias funcións da fala. (#10593)
-A versión speakX permanece, pero agora depende dunha función getXSpeech a que devolve unha secuencia de fala.
+ A versión speakX permanece, pero agora depende dunha función getXSpeech a que devolve unha secuencia de fala.
   * speakObjectProperties agora baséase en getObjectPropertiesSpeech
   * speakObject agora baséase en getObjectSpeech
   * speakTextInfo agora baséase en getTextInfoSpeech
@@ -3633,7 +3633,8 @@ O sinalable nesta versión  inclúe o modo exploración para documentos en Micro
 ### Novas Características
 
 * Os campos de formulario  agora anúncianse nos documentos de Microsoft word. (#2295)
-* As listas despregables no Microsoft Excel 2003 ó 2010 agora anúncianse cando se abran e naveguen. (#3382)
+* O NVDA agora pode anunciar información de revisión en Microsoft Word cando o seguemento de cambios estea activado. Ten en conta que Anunciar revisións do editor no diálogo opcións de documentos de NVDA (desactivado por omisión) debe estar habilitado tamén para que se anuncien. (#1670)
+* As listaxes despregables no Microsoft Excel 2003 ó 2010 agora anúncianse cando se abran e naveguen. (#3382)
 * Unha nova opción 'Permitir Lectura superficial en falar Todo' no diálogo Opcións de Teclado permite a navegación por un documento cas ordes de navegación rápida do modo navegación e movementos de liña / parágrafo, mentres permañece lendo todo. Esta opción está desactivada de maneira predeterminada. (#2766) 
 * Agora hai un diálogo Xestos de Entrada para permitir a persoalización sinxela dos xestos de entrada(como teclas no teclado) para ordes do NVDA. (#1532)
 * Agora podes ter diferentes opcións para diferentes situacións utilizando perfiles de configuración. Os perfiles pódense activar de xeito manual ou automático (ex.: para unha aplicación en particular). (#87, #667, #1913)
