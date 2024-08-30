@@ -5076,14 +5076,14 @@ Seguidamente van as opcións de liña de ordes para o NVDA:
 |`-m` |`--minimal` |Sen sons, sen interface, sen mesaxe de inicio etc|
 |`-s` |`--secure` |Inicia o NVDA en [Modo Seguro](#SecureMode)|
 |None |`--disable-addons` |Os complementos non terán efecto|
-|None |`--debug-logging` |Habilita o nivel de rexistro de depuración só para esta execución. Esta configuración sobreescribirá calquera outro nivel de rexistro ( --loglevel, -l) argumento dado, incluindo a opción non rexistro.|
-|None |`--no-logging` |Deshabilita o rexistro durante o uso do NVDA. Esta opción pode sobreescribirse se se especifica un nivel de rexistro ( --loglevel, -l) dende a liña de ordes ou se o rexistro de depuración está activado.|
+|None |`--debug-logging` |Habilita o nivel de rexistro de depuración só para esta execución. Esta configuración sobreescribirá calquera outro nivel de rexistro ( `--loglevel`, `-l`) argumento dado, incluindo a opción non rexistro.|
+|None |`--no-logging` |Deshabilita o rexistro durante o uso do NVDA. Esta opción pode sobreescribirse se se especifica un nivel de rexistro ( `--loglevel`, `-l`) dende a liña de ordes ou se o rexistro de depuración está activado.|
 |None |`--no-sr-flag` |Non cambia a bandeira global do sistema do lector de pantalla|
 |None |`--install` |Instálase o NVDA comezando a nova copia instalada|
 |None |`--install-silent` |Instala en silenzo NVDA (Non comeza a nova copia instalada)|
 |None |`--enable-start-on-logon=True|False` |Ao instalar, habilita [arrancar na pantalla de inicio](#StartAtWindowsLogon) do NVDA|
-|None |`--copy-portable-config` |Ao instalar, copia a configuración portable dende a ruta proporcionada (--config-path, -c) á actual conta de usuario|
-|None |`--create-portable` |Crea unha copia portable do NVDA (comezando a nova copia creada). Require especificarse --portable-path|
+|None |`--copy-portable-config` |Ao instalar, copia a configuración portable dende a ruta proporcionada (`--config-path`, `-c`) á actual conta de usuario|
+|None |`--create-portable` |Crea unha copia portable do NVDA (comezando a nova copia creada). Require especificarse `--portable-path`|
 |`None` |`--create-portable-silent` |Crea unha copia portable do NVDA (sen comezar a nova copia instalada). Require expecificarse --portable-path.  Esta opción suprime  as advertencias ao escrebir en directorios non valdeiros e pode sobreescribir ficheiros sen avisar. |
 |None |`--portable-path=PORTABLEPATH` |A ruta onde se creará unha copia portable|
 
