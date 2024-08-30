@@ -2030,7 +2030,7 @@ Se desexas cambiar rápidamente opcións de voz  sen ir á categoría Voz do di�
 |Mover á opción de sintetizador anterior |NVDA+control+Frecha esquerda |NVDA+shift+control+Frecha esquerda |Móvese á opción de voz anterior dispoñible despois da actual, pasando pola primeira opción de novo despois da derradeira|
 |Incrementar actual opción de sintetizador |NVDA+control+Frecha arriba |NVDA+shift+control+Frecha arriba |incrementa a opción de voz actual sobre a que esteas. Ex.: incrementa a velocidade, elixe a seguinte voz, incrementa o volume|
 |Aumentar a opción actual do sintetizador en un paso longo |`NVDA+control+rePáx` |`NVDA+shift+control+rePáx` |aumenta o valor da actual opción de voz sobre a que esteas en pasos máis longos. Ex.: cando esteas sobre unha opción de voz, saltarás cara adiante cada 20 voces; cando esteas en opcións dun deslizador (velocidade, ton, etc) saltará adiante o valor de 20%|
-|Ddiminuir actual opción de sintetizador |`NVDA+control+Frecha abaixo` |`NVDA+shift+control+Frecha abaixo` |decrementa a opción de voz actual sobre a que esteas. Ex.: decrementa a velocidade, elixe  a voz anterior, decrementa o volume|
+|Ddiminuir actual opción de sintetizador |NVDA+control+Frecha abaixo |NVDA+shift+control+Frecha abaixo |decrementa a opción de voz actual sobre a que esteas. Ex.: decrementa a velocidade, elixe  a voz anterior, decrementa o volume|
 |Diminuir a actual opción do sintetizador nun paso longo |`NVDA+control+avPáx` |`NVDA+shift+control+avPáx` |Diminúe o valor da actual opción de voz sobre a que esteas en pasos máis longos. ex.: cando esteas sobre unha opción de voz, saltará cara atrás cada 20 voces; cando esteas sobre unha opción de deslizador, saltará cara atrás o valor de 20%|
 
 <!-- KC:endInclude -->
@@ -2312,7 +2312,7 @@ Esta opción permíteche escoller a tarxeta de son que o NVDA debería indicar p
 
 ##### Modo Atenuación de Audio {#SelectSynthesizerDuckingMode}
 
-Key: NVDA+shift+d
+Key: `NVDA+shift+d`
 
 Esta opción permíteche escoller se o NVDA debería reducir o volume de outras aplicacións mentres estea falando, ou todo o tempo mentres o NVDA se estea a executar.
 
@@ -2646,7 +2646,7 @@ Esta caixa de verificación, cando está marcada, di ao NVDA que anuncie os glob
 Cando esta caixa de verificación está marcada, NVDA incluirá a tecla de atallo que estea asociada con certo obxecto ou control cando sexa anunciado. 
 Por exemplo o menú Archivo nunha barra de menú poderá ter unha tecla de atallo alt+a.
 
-##### Anunciar Información da Posición do Obxecto {#ObjectPresentationReportDescriptions}
+##### Anunciar Información da Posición do Obxecto {#ObjectPresentationPositionInfo}
 
 Esta opción permíteche escoller onde desexas ter unha posición do obxecto anunciada (ex.: 1 de 4) cando te moves ao obxecto co foco ou o navegador de obxectos.
 
@@ -3087,10 +3087,10 @@ Existen as seguintes opcións:
   Cando a fonte de `accDescription` é aria-description, anúnciase a descripción.
   Esto é útil para as anotacións na web.
   Nota:
- * Hai moitas fontes para `accDescription` varias teñen unha semántica mixta ou puoco fiable.
-   Históricamente AT non foi quen de diferenciar as fontes de `accDescription` típicamente non se falaba debido á semántica mixta.
- * Esta opción está nun desenvolvemento moi primitivo, baséase nas características do navegador que aínda non están ampliamente dispoñibles.
- * Espérase que funcione con Chromium 92.0.4479.0+
+  * Hai moitas fontes para `accDescription` varias teñen unha semántica mixta ou puoco fiable.
+    Históricamente AT non foi quen de diferenciar as fontes de `accDescription` típicamente non se falaba debido á semántica mixta.
+  * Esta opción está nun desenvolvemento moi primitivo, baséase nas características do navegador que aínda non están ampliamente dispoñibles.
+  * Espérase que funcione con Chromium 92.0.4479.0+
 
 ##### Anunciar rexións activas {#BrailleLiveRegions}
 
@@ -3251,10 +3251,10 @@ Para cambiar un símbolo, primeiro selecciónao na lísta de Símbolos.
 Podes filtrar os símbolos introducindo o símbolo ou unha parte da súa sustitución no cuadro de edición Filtrar por.
 
 * O campo Reemprazar permíteche cambiar o texto que debería falarse en lugar deste símbolo.
-Tamén podes axustar o nivel a carácter; neste caso o símbolo non se falará independentemente do nivel de símbolo en uso, coas seguintes dúas excepcións:
- * Ao navegar por caracteres.
- * Cando o NVDA estea a deletrear calquera texto que conteña ese símbolo.
 * Utilizando o campo Nivel, podes axustar o nivel máis baixo do símbolo ao que este símbolo se debería falar (non, algún, a maioría ou todos).
+Tamén podes axustar o nivel a carácter; neste caso o símbolo non se falará independentemente do nivel de símbolo en uso, coas seguintes dúas excepcións:
+  * Ao navegar por caracteres.
+  * Cando o NVDA estea a deletrear calquera texto que conteña ese símbolo.
 * O campo Enviar símbolo actual ao sintetizador especifica cando o proprio símbolo (en contraposición co seu reemplazamento) debería enviarse ao sintetizador.
 Esto é útil se o símbolo causa que o sintetizador faga unha pausa ou cambie a entoación da voz.
 Por exemplo, unha coma causa que o sintetizador faga unha pausa.
@@ -3262,7 +3262,7 @@ Hai tres opcións:
   * nunca: nunca envía o símbolo actual ao sintetizador.
   * Sempre: envía sempre o símbolo actual ao sintetizador.
   * só baixo nivel dos símbolos: Envía o símbolo actual só se o nivel de voz do símbolo configurado é máis baixo que o nivel posto por este símbolo.
-Por exemplo, poderías utilizar esto tal que un símbolo terá o seu reemplazamento falado en niveis máis altos sen pausar, mentres aínda estea indicado cunha pausa nos niveis máis baixos.
+  Por exemplo, poderías utilizar esto tal que un símbolo terá o seu reemplazamento falado en niveis máis altos sen pausar, mentres aínda estea indicado cunha pausa nos niveis máis baixos.
 
 Podes engadir símbolos novos premendo o botón Engadir.
 No diálogo que apareza, introduce o símbolo e preme o botón Aceptar.
@@ -3304,7 +3304,7 @@ Notas:
 
 * As teclas asignadas deben ter xestos asignados para persistir cando se garden ou se peche o diálogo.
 * Un xesto de entrada con teclas modificadoras pode non seren capaz de mapearse a un xesto emulado sen teclas modificadoras.
-Por exemplo, configurar a entrada emulada 'a' e configurar un xesto de entrada de 'ctrl+m', pode resultar en que a aplicación reciba un 'ctrl+a'.
+Por exemplo, configurar a entrada emulada `a` e configurar un xesto de entrada de `ctrl+m`, pode resultar en que a aplicación reciba un `ctrl+a`.
 
 Cando teñas rematado de facer cambios, preme o botón Aceptar para gardalos ou o botón Cancelar para descartalos.
 
@@ -3334,7 +3334,7 @@ Por exemplo, é posible que desexes ter o anunciado de sangría habilitado mentr
 O NVDA permíteche facer esto utilizando perfiles de configuración.
 
 Un perfil de configuración contén só as opcións que se cambian mentres que o perfil estea a ser editado.
-A maioría das opcións pódense cambiar nos perfís de configuración con excepción de aquelas que estean na categoría Xeral da caixa de diálogo [Opcións do NVDA #NVDASettings, as que se aplican á totalidade do NVDA.
+A maioría das opcións pódense cambiar nos perfís de configuración con excepción de aquelas que estean na categoría Xeral da caixa de diálogo [Opcións de NVDA](#NVDASettings) , as que se aplican á totalidade do NVDA.
 
 Os perfís de configuración pódense activar manualmente, sexa dende unha caixa de diálogo ou usando xestos engadidos persoalizados.
 Tamén se poden activar de forma automática debido aos disparadores como o cambio a unha aplicación en particular.
@@ -3499,8 +3499,8 @@ Para enumerar complementos só para canles específicas, cambia a seleción do f
 #### Procurar complementos {#AddonStoreFilterSearch}
 
 Para procurar complementos, usa a caixa de texto "Procurar".
-Podes aceder a ela premendo `shift+tab` dende a listaxe de complementos, ou premendo `alt+p` dende calquera lugar na interface da Tenda de Complementos.
-Escribe unha ou dúas palabras chave para 	o tipo de complemento que buscas e logo volta á listaxe.
+Podes aceder a ela premendo `shift+tab` dende a listaxe de complementos.
+Escribe unha ou dúas palabras chave para 	o tipo de complemento que buscas e logo `tabula` ata a listaxe.
 Os complementos listaranse se o texto buscado pode atoparse no ID do complemento, no nome amosado, no editor, no autor ou na descripción.
 
 ### Accións do complemento {#AddonStoreActions}
@@ -4003,20 +4003,20 @@ Por favor consulta a documentación da pantalla braille para descripcións de on
 
 | Nome |Tecla|
 |---|---|
-|Desprazar pantalla braille cara atrás |d2|
-|Desprazar pantalla braille cara adiante |d5|
-|Mover a pantalla braille á liña anterior |d1|
-|Mover a liña brailla á liña seguinte |d3|
-|Guiar á celda braille |sensor|
-|teclas shift+tab |espazo+punto1+punto3|
-|tecla tab |espazo+punto4+punto6|
-|tecla alt |espazo+punto1+punto3+punto4 (espazo+m)|
-|tecla escape |espazo+punto1+punto5 (espazo+e)|
-|tecla windows |espazo+punto3+punto4|
-|teclas alt+tab |espazo+punto2+punto3+punto4+punto5 (espazo+t)|
-|Menú NVDA |espazo+punto1+punto3+punto4+punto5 (espazo+n)|
-|teclas windows+d (minimizar todas as aplicacións) |espazo+punto1+punto4+punto5 (espazo+d)|
-|Falar todo |espazo+punto1+punto2+punto3+punto4+punto5+punto6|
+|Desprazar pantalla braille cara atrás |`d2`|
+|Desprazar pantalla braille cara adiante |`d5`|
+|Mover a pantalla braille á liña anterior |`d1`|
+|Mover a liña brailla á liña seguinte |`d3`|
+|Guiar á celda braille |`sensor`|
+|teclas `shift+tab` |`espazo+punto1+punto3`|
+|tecla `tab` |`espazo+punto4+punto6`|
+|tecla `alt` |`espazo+punto1+punto3+punto4` (`espazo+m`)|
+|tecla `escape` |`espazo+punto1+punto5` (`espazo+e`)|
+|tecla `windows` |`espazo+punto3+punto4`|
+|teclas `alt+tab` |`espazo+punto2+punto3+punto4+punto5` (`espazo+t`)|
+|Menú NVDA |`espazo+punto1+punto3+punto4+punto5` (`espazo+n`)|
+|teclas `windows+d` (minimizar todas as aplicacións) |`espazo+punto1+punto4+punto5` (`espazo+d`)|
+|Falar todo |`espazo+punto1+punto2+punto3+punto4+punto5+punto6`|
 
 Para liñas que teñan un joystick:
 
@@ -4189,19 +4189,19 @@ Por favor consulta a documentación das pantallas para descripcións de onde pod
 |teclas control+shift+frecha esquerda |punto2+punto8+espazo+f1|
 |teclas control+frecha esquerda |punto2+espazo|
 |teclas shift+frecha esquerda |punto2+punto7+f1|
-|teclas alt+frecha esquerda |punto2+punto7|
+|teclas `alt+frecha esquerda` |`punto2+punto7`|
 |tecla frecha dereita |punto6+espazo, leftSideRightArrow|
 |teclas control+shift+frecha dereita |punto5+punto8+espazo+f1|
 |teclas control+frecha dereita |punto5+espazo|
 |teclas shift+alt+frecha dereita |punto5+punto7+f1|
-|teclas alt+frecha dereita |punto5+punto7|
+|teclas alt+frecha dereita |`punto5+punto7`|
 |tecla rePáx |punto1+punto2+punto6+espazo|
 |teclas control+rePáx |punto1+punto2+punto6+punto8+espazo|
 |tecla frecha arriba |punto1+espazo, leftSideUpArrow|
 |teclas control+shift+frecha arriba |punto2+punto3+punto8+espazo+f1|
 |teclas control+frecha arriba |punto2+punto3+espazo|
 |teclas shift+alt+frecha arriba |punto2+punto3+punto7+f1|
-|teclas alt+frecha arriba |punto2+punto3+punto7|
+|teclas ´alt+frecha arriba` |`punto2+punto3+punto7`|
 |teclas shift+frecha arriba |leftSideScrollDown+espazo|
 |tecla avPáx |punto3+punto4+punto5+espazo|
 |teclas control+avPáx |punto3+punto4+punto5+punto8+espazo|
@@ -4209,7 +4209,7 @@ Por favor consulta a documentación das pantallas para descripcións de onde pod
 |teclas control+shift+frecha abaixo |punto5+punto6+punto8+espazo+f1|
 |teclas control+frecha abaixo |punto5+punto6+espazo|
 |teclas shift+alt+frecha abaixo |punto5+punto6+punto7+f1|
-|teclas alt+frecha abaixo |punto5+punto6+punto7|
+|teclas `alt+frecha abaixo` |`punto5+punto6+punto7`|
 |teclas shift+frecha abaixo |espacio+rightSideScrollDown|
 |tecla escape |punto1+punto5+espazo, f4, brailleedge:f1|
 |tecla borrar |punto1+punto3+punto5+espazo, punto1+punto4+punto5+espazo|
@@ -4400,7 +4400,7 @@ As teclas interiores mapéanse a espazo.
 |tecla control+escape |espazo cos puntos 1 2 3 4 5 6|
 |tecla tab |espazo cos puntos 3 7|
 
-<!-- KC:endInclude  -->
+<!-- KC:endInclude -->
 
 ### Modelos Antigos Papenmeier Braille BRAILLEX {#PapenmeierOld}
 
