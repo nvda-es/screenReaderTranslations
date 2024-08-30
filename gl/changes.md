@@ -4727,7 +4727,7 @@ O máis suliñable desta versión inclúe o soporte para edicións de 64 bit de 
 * Mellorada a leitura de liñas en campos de edición de MSHTML (mensaxes editables de Outlook Express e campos de entrada de texto en Internet Explorer).
 * NVDA xa non se colga ás veces completamente cando se edita texto en OpenOffice. (#148, #180)
 
-> = 0.6p2 =
+## 0.6p2
 
 * Mellorada a voz predeterminada de ESpeak en NVDA
 * Engadida unha disposición de teclado para ordenadores portátiles. As disposicións de teclado poden ser configuradas dende o diálogo de Opcións de teclado de NVDA. (#60)
@@ -4907,12 +4907,12 @@ O máis suliñable desta versión inclúe o soporte para edicións de 64 bit de 
 * Engadido soporte para máis campos de edición en Skype.
 * Os modos virtuais só se cargan cando o foco está sobre a xanela que necesita ser cargada. Esto arranxa algúns problemas cando o panel anterior está activado en Outlook Express.
 * Engadidos argumentos de liña de ordes a NVDA:
- --m, --minimal: non reproduce os sons de comezo/saír e non amosa a interface ó arrancar se se axustou a tal cousa.
- --q, --quit: abandoa calquera outra instancia xa en execución do NVDA e logo sae
- --s, --stderr-file nomeFicheiro: especifica onde debería colocar NVDA os erros e excepcións 
- --d, --debug-file nomeFicheiro: especifica onde debería colocar NVDA as mensaxes de depuración 
- --c, --config-file: especifica un ficheiro de configuración alternativo  
- --h, -help: amosa unha mensaxe de axuda listando os argumentos de liña de ordes
+ * -m, --minimal: non reproduce os sons de comezo/saír e non amosa a interface ó arrancar se se axustou a tal cousa.
+ * -q, --quit: abandoa calquera outra instancia xa en execución do NVDA e logo sae
+ * -s, --stderr-file nomeFicheiro: especifica onde debería colocar NVDA os erros e excepcións 
+ * -d, --debug-file nomeFicheiro: especifica onde debería colocar NVDA as mensaxes de depuración 
+ * -c, --config-file: especifica un ficheiro de configuración alternativo  
+ * -h, -help: amosa unha mensaxe de axuda listando os argumentos de liña de ordes
 * Correxido un fallo onde os símbolos de puntuación non deberían ser traducidos á lingua apropriada, cando se utiliza outra lingua que o inglés, e cando falar caracteres ó se escribir estivera activado.
 * Engadidos ficheiros da lingua eslovaca gracias a Peter Vagner 
 * Engadido o diálogo de Opcións de Modo virtual e un diálogo de opcións de formato de documento, de Peter Vagner.
