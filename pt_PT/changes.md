@@ -4,7 +4,9 @@
 
 A Loja de Extras agora notificará se houver atualizações de extras disponíveis no arranque do NVDA.
 
-Existem agora opções para aplicar normalização Unicode à saída de voz e braille. Isto pode ser útil ao ler caracteres desconhecidos para um determinado sintetizador de voz ou tabela de braille que tenham uma alternativa compatível, como os caracteres em negrito e itálico usados frequentemente nas redes sociais. Também permite a leitura de equações no editor de equações do Microsoft Word.
+Existem agora opções para aplicar normalização Unicode à saída de voz e Braille.
+Isto pode ser útil ao ler caracteres desconhecidos para um determinado sintetizador de voz ou tabela de braille que tenham uma alternativa compatível, como os caracteres em negrito e itálico usados frequentemente nas redes sociais.
+Também permite a leitura de equações no editor de equações do Microsoft Word.
 
 Os dispositivos braille Help Tech Activator Pro são agora suportados.
 
@@ -18,6 +20,7 @@ O eSpeak foi atualizado, adicionando suporte para a língua Caracalpaque.
 O Unicode CLDR também foi atualizado.
 
 ### Novas Funcionalidades
+
 * Novos comandos:
   * Adicionados comandos sem atribuição para rolar vertical e horizontalmente a roda do rato, para melhorar a navegação em páginas web e aplicações com conteúdo dinâmico, como o Dism++. (#16462, @Cary-Rowen)
 * Adicionado suporte para Normalização Unicode na saída de voz e braille. (#11570, #16466 @LeonarddeR).
@@ -31,6 +34,7 @@ O Unicode CLDR também foi atualizado.
 * Adicionado suporte para os dispositivos Braille Help Tech Activator Pro. (#16668)
 
 ### Alterações
+
 * Atualizações de Componentes:
   * O eSpeak NG foi atualizado para 1.52-dev commit `54ee11a79`. (#16495)
     * Adicionado suporte para a língua Caracalpaque.
@@ -51,7 +55,8 @@ O Unicode CLDR também foi atualizado.
 * Ao ler linha por linha no modo de navegação, "legenda" já não é reportado em cada linha de uma figura ou legenda de tabela longa. (#14874)
 * Na consola Python, o último comando não executado já não será perdido ao navegar no histórico de entradas. (#16653, @CyrilleB79)
 * Um ID anónimo único é agora enviado como parte da recolha opcional de estatísticas de uso do NVDA. (#16266)
-* Por padrão, uma nova pasta será criada ao fazer uma cópia portátil.Uma mensagem de aviso informará se tentar escrever numa pasta não vazia. (#16686)
+* Por padrão, uma nova pasta será criada ao fazer uma cópia portátil.
+Uma mensagem de aviso informará se tentar escrever numa pasta não vazia. (#16686)
 
 ## Correcções de Bugs
 
