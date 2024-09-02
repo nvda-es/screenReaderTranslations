@@ -58,7 +58,7 @@ O Unicode CLDR também foi atualizado.
 * Por padrão, uma nova pasta será criada ao fazer uma cópia portátil.
 Uma mensagem de aviso informará se tentar escrever numa pasta não vazia. (#16686)
 
-## Correcções de Bugs
+### Correcções de Bugs
 
 * Correcções para Windows 11:
   * O NVDA não parecerá mais ficar preso ao fechar o histórico da área de transferência e o painel de emojis. (#16346, #16347, @josephsl)
@@ -104,7 +104,6 @@ It is especially useful to read the error location markers in tracebacks. (#1632
   Jobs are scheduled with a delay to avoid conflicts.
   * `scheduleThread.scheduleDailyJob` and `scheduleJob` can be used to schedule jobs at custom times, where a `JobClashError` will be raised on a known job scheduling clash.
 * It is now possible to create app modules for apps hosting Edge WebView2 (msedgewebview2.exe) controls. (#16705, @josephsl)
-
 
 ## 2024.2
 
