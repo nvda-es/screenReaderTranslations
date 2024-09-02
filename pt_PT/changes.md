@@ -1,8 +1,7 @@
 # Novidades do  NVDA
-## Traduzido pela Equipa portuguesa do NVDA
-
 
 ## 2024.3
+
 A Loja de Extras agora notificará se houver atualizações de extras disponíveis no arranque do NVDA.
 
 Existem agora opções para aplicar normalização Unicode à saída de voz e braille. Isto pode ser útil ao ler caracteres desconhecidos para um determinado sintetizador de voz ou tabela de braille que tenham uma alternativa compatível, como os caracteres em negrito e itálico usados frequentemente nas redes sociais. Também permite a leitura de equações no editor de equações do Microsoft Word.
@@ -12,7 +11,7 @@ Os dispositivos braille Help Tech Activator Pro são agora suportados.
 Foram adicionados comandos sem atribuição para rolar a roda do rato vertical e horizontalmente.
 
 Existem várias correções de bugs, particularmente para o Painel de Emojis e o histórico da Área de Transferência no Windows 11.
-Para navegadores web, há correções para a apresentação de mensagens de erro, figuras, legendas, etiquetas de tabelas e itens de menu de caixas de seleção/botões de opção.
+Para navegadores web, há correções para a apresentação de mensagens de erro, figuras, legendas, etiquetas de tabelas e itens de menu de caixas de verificação/botões de opção.
 
 LibLouis foi atualizado, adicionando novas tabelas de braille para Sérvio Cirílico, Iídiche, várias línguas antigas, Turco e o Alfabeto Fonético Internacional.
 O eSpeak foi atualizado, adicionando suporte para a língua Caracalpaque.
@@ -5154,5 +5153,4 @@ O mais destacável desta versão inclui o suporte para versões de 64 bit do Win
 * Quando um sintetizador não pode ser carregado ao ser escolhido a partir do Diálogo de Sintetizadores, uma caixa de diálogo agora avisa ao usuário desse fato.
 * Ao carregar um sintetizador pela primeira vez, o NVDA deixa que ele escolha os parâmetros mais adequados de voz, velocidade e tom, em lugar de forçá-lo a usar os padrões que este supõe estar adequados. Isso resolve um problema com os sintetizadores  Eloquence e Viavoice sapi4 que iniciavam a falar de forma excessivamente rápida para uma primeira vez.
 35230
-
 
