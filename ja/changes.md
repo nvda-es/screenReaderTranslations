@@ -2962,6 +2962,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 * Baum SuperVario2, Baum Vario 340 および HumanWare Brailliant2 点字ディスプレイに対応しました。 (#6116)
 * Microsoft Edge のアニバーサリーアップデート版に対して初期的なサポートを行いました。 (#6271)
 * Windows 10 の「メール」アプリでメールの内容を読むときにブラウズモードが使われるようになりました。 (#6271)
+* New language: Lithuanian.
 
 ### 変更点
 
@@ -3000,7 +3001,6 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 * iTunes においてiTunesストアやApple Musicなどをブラウズモードで使用したときにフリーズする問題に対応しました。(#6502)
 * 64ビットのMozillaとChromeベースのアプリでクラッシュする問題に対応しました。(#6497)
 * マルチプロセスを有効化したFirefoxにおいて、ブラウズモードや編集可能テキストフィールドが正しく操作できるようになりました。(#6380)
-* In Firefox with multi-process enabled, browse mode and editable text fields now function correctly. (#6380)
 
 ### 開発者向けの変更
 
@@ -4183,7 +4183,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 * Internet Explorer及びその他のMSHTMLコントローラーにおいて、フォーカスが (fieldsetで囲まれた) コントロールのグループ内に移動したときに、グループの名称 (legend)  を読み上げるようになりました。 (#535)
 * Internet Explorer及びその他のMSHTMLコントローラーにおいて、aria-labelledBy及びaria-describedByプロパティーに対応しました。
 * Internet Explorer及びその他のMSHTMLコントローラーにおいて、ARIA list、gridcell、slider及びprogressbar controlのサポートが強化されました。
- * 利用者自身が句読点及びその他の記号の発音と読み上げレベルを変更できるようになりました。
+* 利用者自身が句読点及びその他の記号の発音と読み上げレベルを変更できるようになりました。
 * Microsoft Excelにおいて、Ctrl+PageUpまたはCtrl+PageDownを使ってシート間を移動した場合、現在アクティブなシートの名称を通知するようになりました。 (#760)
 * Microsoft Word内のテーブルをTabキーを使って移動している時、移動した先のセルを読み上げるようになりました。 (#159)
 * テーブルセルの座行を通知するかどうかを、書式設定ダイアログで設定できるようになりました。 (#719)
