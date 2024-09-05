@@ -573,6 +573,7 @@ Ispravljene su greške u Add-on Storeu, Microsoft Officeu, Microsoft Edge kontek
   * Ispravljeno rušenje u Microsoft Word Kada su opcije u postavkama oblikovanja "čitaj naslove" i "čitaj komentare i bilješke" isključene. (#15019)
   * U Wordu i Excelu, poravnanje će biti ispravno pročitano u više situacija. (#15206, #15220)
   * Ispravljeno čitanje nekih prečaca oblikovanja u Excelu. (#15527)
+  * Microsoft Edge:
   * NVDA se više neće vraćati na prethodnu poziciju u modusu čitanja pri otvaranju kontekstnog izbornika u Microsoft Edgeu. (#15309)
   * NVDA opet može čitati kontekstni izbornik preuzimanja u Microsoft Edgeu. (#14916)
 * Brajica:
