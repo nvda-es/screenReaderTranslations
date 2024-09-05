@@ -644,7 +644,6 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
   * Dodani podrazumjevani prečaci na tipkovnice za kretanje na sljedeći ili prethodni objekt u raskropljenom prikazu hierarhije objekata. (#15053)
     * stolno računalo: `NVDA+numerički9` i `NVDA+numerički3` za kretanje na slijedeći ili prethodni objekt.
     * prijenosno računalo: `šift+NVDA+[` i `šift+NVDA+]` za kretanje na prethodni i slijedeći objekt.
-
 * Nove funkcije za brajične retke:
   * Dodana podrška za Help Tech Activator brajični redak. (#14917)
   * Nova opcija za uključivanje ili isključivanje prikazivanja indikacije označenosti (točkice 7 i 8). (#14948)
