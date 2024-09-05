@@ -1499,8 +1499,7 @@ Prosimy o odpowiedzialne ujawnianie <info@nvaccess.org> problemów związanych z
 
 ### Poprawki bezpieczeństwa
 
-— Rozwiązano problem z poradnikiem bezpieczeństwa GHSA-xc5m-v23f-pgr7.
-
+* Rozwiązano problem z poradnikiem bezpieczeństwa GHSA-xc5m-v23f-pgr7.
   * Okno dialogowe wymowy symbolu jest teraz wyłączone w trybie bezpiecznym.
 
 ## 2021.3.4
