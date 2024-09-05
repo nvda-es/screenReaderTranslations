@@ -655,7 +655,6 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
 * Dodan izgovor Unicode znakova:
   * brajični znakovi kao što su `⠐⠣⠃⠗⠇⠐⠜`. (#14548)
   * Znak za Mac tipku opcije `⌥`. (#14682)
--
 * Dodani prečaci za Tivomatic Caiku Albatross brajične redke. (#14844, #15002)
   * prikaz dijaloškog okvira brajičnih postavki
   * Pristup traci stanja
