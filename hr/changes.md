@@ -718,7 +718,7 @@ Ovo se može onemogućiti na panelu naprednih postavki. (#7756)
   * U Mozilli Firefox, pomicanje miša do teksta nakon linka sada ispravno čita tekst. (#9235)
   * Odredište linkova na slikama se sada preciznije ispravno čita u većini slučajeva u programima Chrome i Edge. (#14779)
   * Kada pokušavate čitati adresu poveznice bez href atributa NVDA više neće biti bez govora.
-  Umesto toga NVDA će prijaviti da poveznica  nema odredište. (#14723)
+  Umjesto toga NVDA će prijaviti da poveznica  nema odredište. (#14723)
   * U modusu pretraživanja, NVDA neće neispravno ignorirati pomeranje fokusa na glavnu kontrolu ili kontrolu unutar nje na primer pomicanje sa kontrole na njenu unutrašnju stavku popisa ili ćeliju mreže. (#14611)
    * Napomena međutim da se ova ispravka primenjuje samo kada je opcija "Automatsko postavljanje fokusa na stavke koje se mogu fokusirati" u postavkama modusa pretraživanja isključena (što je podrazumevano postaka).
 * Ispravke za Windows 11:
