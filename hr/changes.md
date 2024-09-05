@@ -676,7 +676,6 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
   * Postoji poznat problem sa povremenim rušenjem kada je WASAPI omogućen. (#15150)
 * U preglednicima Mozilla Firefox i Google Chrome, NVDA sada čita ako kontrola otvara dijaloški okvir, mrežu, popis ili stablasti prikaz ako je autor ovo označio uz pomoć `aria-haspopup` atributa . (#14709)
 * Sada je moguće koristiti varijable  sustava (poput  `%temp%` ili  `%homepath%`) pri određivanju putanje pri stvaranju NVDA prijenosne kopije. (#14680)
-* Dodana podrška za brajični redak Help Tech Activator. (#14917)
 * u ažuriranju Windowsa 10 za svibanj 2019 i novijim, NVDA može izgovarati imena virtualnih radnih površina kada se otvaraju, mijenjaju ili zatvaraju. (#5641)
 * Dodan je sveopći parametar sustava koji će dozvoliti korisnicima i administratorima sustava prisilno pokretanje NVDA u sigurnom modusu. (#10018)
 
