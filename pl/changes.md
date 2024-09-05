@@ -1262,12 +1262,12 @@ LibLouis został zaktualizowany. Zawiera on nową niemiecką tablicę brajlowsk�
   * NVDA będzie czytać stan przełączników. (#9728)
   * NVDA zidentyfikuje teraz okno w aplikacji Java z wieloma oknami. (#9184)
   * NVDA będzie teraz czytać informacje o pozycji dla kontrolek kart właściwosci. (#13744)
- * Poprawki Braille'a:
+* Poprawki Braille'a:
   * Naprawiono wyjście brajla podczas nawigacji po pewnym tekście w kontrolkach edycji w aplikacjach mozilla, takich jak sporządzanie wiadomości w Thunderbirdzie. (#12542)
   * Gdy alfabet Braillea jest automatycznie powiązany, a mysz jest poruszana z włączonym śledzeniem myszy,
    Polecenia przeglądania tekstu aktualizują teraz monitor brajlowski zawartoscią mówioną. (#11519)
   * Możliwe jest teraz przesuwanie wyświetlacza brajlowskiego po treści za pomocą poleceń przeglądania tekstu. (#8682)
- * Instalator NVDA może teraz uruchamiać się z katalogów ze znakami specjalnymi. (#13270)
+* Instalator NVDA może teraz uruchamiać się z katalogów ze znakami specjalnymi. (#13270)
 * W Firefoksie NVDA nie zgłasza już elementów na stronach internetowych, gdy atrybuty aria-rowindex, aria-colindex, aria-rowcount lub aria-colcount są nieprawidłowe. (#13405)
 * Kursor nie przełącza już wiersza ani kolumny podczas korzystania z nawigacji po tabeli do nawigacji po scalonych komórkach. (#7278)
 * Podczas czytania nieinteraktywnych plików PDF w programie Adobe Reader typ i stan pól formularza (takich jak pola wyboru i przyciski opcji) są teraz raportowane. (#13285)
@@ -1275,7 +1275,7 @@ LibLouis został zaktualizowany. Zawiera on nową niemiecką tablicę brajlowsk�
 * Wszelkie zablokowane przyciski myszy zostaną odblokowane po wyjściu z NVDA, wcześniej przyciski myszy pozostawały zablokowany. (#13410)
 * Program Visual Studio zgłasza teraz numery wierszy. (#13604)
   * Zauważ, że aby raportowanie numerów wierszy działało, pokazywanie numerów wierszy musi być włączone w Visual Studio i NVDA.
- * Program Visual Studio teraz poprawnie zgłasza wcięcia linii. (#13574)
+* Program Visual Studio teraz poprawnie zgłasza wcięcia linii. (#13574)
 * NVDA po raz kolejny ogłosi szczegóły wyników wyszukiwania w menu Start w ostatnich wydaniach Windows 10 i 11. (#13544)
 * W Windows 10 i 11 Calculator w wersji 10.1908 i nowszych,
 NVDA ogłosi wyniki po naciśnięciu większej liczby poleceń, takich jak polecenia z trybu naukowego. (#13383)
@@ -1357,7 +1357,7 @@ Uwaga:
 
 * Obsługa notatek raportowania w MS Excel z włączoną UIA w systemie Windows 11. (#12861)
 * W ostatnich kompilacjach programu Microsoft Word za pośrednictwem UIA w systemie Windows 11 istnienie zakładek, komentarzy roboczych i rozwiązanych komentarzy jest teraz zgłaszane zarówno w mowie, jak i alfabecie Braille'a. (#12861)
-* Nowy parametr wiersza poleceń --lang umożliwia zastąpienie skonfigurowanego języka NVDA. (#10044)
+* Nowy parametr wiersza poleceń `--lang` umożliwia zastąpienie skonfigurowanego języka NVDA. (#10044)
 * NVDA ostrzega teraz o parametrach wiersza poleceń, które są nieznane i nie są używane przez żadne dodatki. (#12795)
 * W programie Microsoft Word dostępnym za pośrednictwem automatyzacji interfejsu użytkownika, NVDA będzie teraz korzystać z mathPlayer do czytania i poruszania się po równaniach matematycznych pakietu Office. (#12946)
   * Aby to zadziałało, musisz mieć uruchomiony program Microsoft Word 365/2016 kompilacja 14326 lub nowszy. 
@@ -1366,7 +1366,7 @@ Uwaga:
 * Seika Notetaker może być teraz automatycznie wykrywany po podłączeniu przez USB i Bluetooth. (#13191, #13142)
   * Dotyczy to następujących urządzeń: MiniSeika (16, 24 komórek), V6 i V6Pro (40 komórek)
   * Ręczne wybieranie portu COM Bluetooth jest teraz również obsługiwane.
-  * Dodano polecenie przełączania przeglądu brajlowskiej; nie ma domyślnie skojarzonego gestu. (#13258)
+* Dodano polecenie przełączania przeglądu brajla; nie ma domyślnie skojarzonego gestu. (#13258)
 * Dodano polecenia do przełączania wielu modyfikatorów jednocześnie z wyświetlaczem Braille'a (#13152)
 * Okno dialogowe Słownik mowy zawiera teraz przycisk "Usuń wszystko", aby pomóc wyczyścić cały słownik. (#11802)
 * Dodano obsługę Kalkulatora Windows 11. (#13212)
@@ -1376,22 +1376,23 @@ Uwaga:
 
 ### Zmiany
 
-* Espeak-ng został zaktualizowany do 1.51-dev commit 7e5457f91e10. (#12950)
-— Zaktualizowano liblouis Braille translator do [3.21.0](https://github.com/liblouis/liblouis/releases/tag/v3.21.0). (#13141, #13438)
+* Espeak-ng został zaktualizowany do 1.51-dev commit `7e5457f91e10`. (#12950)
+* Zaktualizowano liblouis Braille translator do [3.21.0](https://github.com/liblouis/liblouis/releases/tag/v3.21.0). (#13141, #13438)
   * Dodano nową tablicę brajlowską: japoński (Kantenji) brajl literacki.
   * Dodano nową niemiecką sześciopunktową komputerową tablicę brajlowską.
   * Dodano katalońską tablicę brajlowską pismo pełne. (#13408)
-  * - NVDA zgłosi wybór i scalone komórki w LibreOffice Calc 7.3 i nowszych. (#9310, #6897)
-— Zaktualizowano repozytorium danych regionalnych Unicode Common Locale Data Repository (CLDR) do wersji 40.0. (#12999)
-* NVDA+Numpad Delete domyślnie zgłasza lokalizację karetki lub obiektu skupionego. (#13060)
-* NVDA+Shift+Numpad Delete zgłasza lokalizację kursora recenzji. (#13060)
+* - NVDA zgłosi wybór i scalone komórki w LibreOffice Calc 7.3 i nowszych. (#9310, #6897)
+* Zaktualizowano repozytorium danych regionalnych Unicode Common Locale Data Repository (CLDR) do wersji 40.0. (#12999)
+* `NVDA+Numpad Delete` domyślnie zgłasza lokalizację karetki lub obiektu skupionego. (#13060)
+* `NVDA+Shift+Numpad Delete` zgłasza lokalizację kursora recenzji. (#13060)
 * Dodano domyślne powiązania do przełączania klawiszy modyfikatorów do wyświetlaczy Freedom Scientific (#13152)
-* "Baseline" nie jest już zgłaszany za pomocą polecenia formatowania tekstu raportu (NVDA+f). (#11815)
+* "Baseline" nie jest już zgłaszany za pomocą polecenia formatowania tekstu raportu (`NVDA+f`). (#11815)
 * Aktywuj długi opis nie ma już przypisanego domyślnego gestu. (#13380)
-* Podsumowanie szczegółów raportu ma teraz domyślny gest (NVDA+d). (#13380)
+* Podsumowanie szczegółów raportu ma teraz domyślny gest (`NVDA+d`). (#13380)
 * NVDA musi zostać ponownie uruchomiony po zainstalowaniu MathPlayer. (#13486)-
 
-== Poprawki błędów ==
+### Poprawki błędów
+
 * Okienko menedżera schowka nie powinno już niepoprawnie brać fokusu podczas otwierania niektórych programów pakietu Office. (#12736)
 * W systemie, w którym użytkownik zdecydował się zamienić główny przycisk myszy z lewej na prawą, NVDA nie będzie już przypadkowo wyświetlać menu kontekstowego zamiast aktywować element w aplikacjach takich jak przeglądarki internetowe. (#12642)
 * Podczas przesuwania kursora recenzji poza koniec kontrolek tekstowych, takich jak Microsoft Word z UIA, "dół" jest poprawnie zgłaszany w większej liczbie sytuacji. (#12808)
