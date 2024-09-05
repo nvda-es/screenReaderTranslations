@@ -3460,7 +3460,7 @@ Tämän version merkittävimpiä uusia ominaisuuksia ovat mm. selaustila Microso
  * Näitä komentoja voidaan käyttää nyt useita kertoja taulukkoa kohti eri otsikoiden määrittämiseen eri alueille.
 * Tuki sarake- ja riviotsikoiden automaattiselle lukemiselle Microsoft Wordissa (#3110) mukaan lukien:
  * Tuki Wordin kirjanmerkeille JAWS-ruudunlukuohjelman kanssa yhteensopivien otsikkosolujen tunnistamiseksi.
- * Määritä sarakeotsikot (NVDA+Shift+C)- ja Määritä riviotsikot (NVDA+Shift+R) -komennot kertovat NVDA:lle taulukon ensimmäisessä otsikkosolussa oltaessa, että kyseiset otsikot luetaan automaattisesti. Asetukset tallennetaan asiakirjaan, jotta ne ovat käytettävissä, kun se avataan seuraavan kerran. Muut kirjanmerkkijärjestelmää tukevat ruudunlukuohjelmat voivat myös hyödyntää näitä otsikoita.
+ -  Määritä sarakeotsikot (NVDA+Shift+C)- ja Määritä riviotsikot (NVDA+Shift+R) -komennot kertovat NVDA:lle taulukon ensimmäisessä otsikkosolussa oltaessa, että kyseiset otsikot luetaan automaattisesti. Asetukset tallennetaan asiakirjaan, jotta ne ovat käytettävissä, kun se avataan seuraavan kerran. Muut kirjanmerkkijärjestelmää tukevat ruudunlukuohjelmat voivat myös hyödyntää näitä otsikoita.
 * Microsoft Word: Etäisyys sivun vasemmasta reunasta luetaan sarkain-näppäintä painettaessa. (#1353)
 * Microsoft Word: Useimmille käytettävissä oleville muotoilupikanäppäimille (lihavointi, kursivointi, alleviivaus, tasaus ja jäsennystaso) annetaan palautetta sekä puheena että pistekirjoituksella. (#1353)
 * Microsoft Excel: Jos valittu solu sisältää kommentteja, ne voidaan lukea nyt painamalla NVDA+Alt+C (#2920)
@@ -3535,7 +3535,7 @@ Tämän version merkittävimpiä uusia ominaisuuksia ovat mm. selaustila Microso
 * Nimetyt alueet käsitellään nyt selaustilassa kiintopisteinä. (#3741)
 * W3C:n ARIA -standardiin kuuluvia aktiivisia alueita tuetaan nyt Internet Explorer -asiakirjoissa ja -sovelluksissa, mikä mahdollistaa sen, että verkkosivujen tekijät voivat merkitä tietyn sisällön automaattisesti puhuttavaksi sen muuttuessa. (#1846)
 
-= Muutokset ==
+### Muutokset
 
 * Kun selaustila-asiakirjassa olevasta valintaikkunasta tai sovelluksesta poistutaan, kyseisen asiakirjan nimeä ja tyyppiä ei enää lueta. (#4069)
 
@@ -3859,7 +3859,7 @@ Tämän version uusia ominaisuuksia ovat mm. tuki aasialaisten kielten merkkien 
 * NVDA tukee nyt aasialaisten kielten merkkien kirjoittamista IME- ja Tekstipalvelu-syöttömenetelmillä kaikissa sovelluksissa. Lisäksi on mahdollista:
  * Ehdotuslistojen lukeminen ja niissä liikkuminen.
  * Merkkiyhdistelmien lukeminen ja niissä liikkuminen.
-  * Lukumerkkijonon ilmoittaminen.
+ * Lukumerkkijonon ilmoittaminen.
 * Alle- ja yliviivaus ilmoitetaan nyt Adobe Reader -asiakirjoissa. (#2410)
 * NVDA-näppäin toimii nyt kuin muutkin toimintonäppäimet Windowsin alasjäävien näppäinten ollessa käytössä. Tämä mahdollistaa NVDA-näppäimen käytön tarvitsematta pitää sitä alhaalla painettaessa samaan aikaan muita näppäimiä. (#230)
 * Sarakkeiden ja rivien otsikoiden automaattista lukemista tuetaan nyt Microsoft Excelissä. Sarakkeiden otsikot sisältävä rivi määritetään painamalla NVDA+Shift+C ja rivien otsikot sisältävä sarake painamalla NVDA+Shift+R. Asetukset nollataan painamalla näitä komentoja kahdesti. (#1519)
@@ -4357,7 +4357,7 @@ Tämän version tärkeimpiä uusia ominaisuuksia ovat automaattinen uuden teksti
 * Näennäispuskureissa ei enää näytetä ylimääräisiä tyhjiä rivejä, kun ruutuasettelu on poistettu käytöstä.
 * Jos NVDA-näppäintä painetaan kaksi kertaa nopeasti, mutta mitään muuta näppäintä ei paineta sen jälkeen, sen toista painallusta ei enää huomioida.
 * Välimerkkinäppäimet sanotaan nyt näppäinohjeessa, vaikka välimerkkien puhuminen on poistettu käytöstä. (#977)
--  Näppäinasetteluiden nimet näppäimistöasetukset-valintaikkunassa näytetään nyt NVDA:ssa määritetyllä kielellä sen sijaan, että ne näytettäisiin aina englanniksi. (#558)
+* Näppäinasetteluiden nimet näppäimistöasetukset-valintaikkunassa näytetään nyt NVDA:ssa määritetyllä kielellä sen sijaan, että ne näytettäisiin aina englanniksi. (#558)
 * Korjattu ongelma, joka aiheutti sen, että jotkin kohteet näytettiin tyhjinä Adobe Reader -asiakirjoissa, esim. sisällysluettelon linkit Apple iPhone iOS 4.1 -käyttöohjeessa.
 * NVDA:n Yleiset asetukset -valintaikkunan "Käytä tallennettuja asetuksia kirjautumisikkunassa ja muissa suojatuissa ruuduissa" -painike toimii nyt, mikäli sitä on käytetty heti NVDA:n asennuksen jälkeen, mutta ennen kuin mikään suojattu ruutu on tullut näkyviin. NVDA ilmoitti aiemmin, että asetusten kopiointi onnistui, vaikka tosiasiassa ei tapahtunut mitään. (#1194)
 * Kahta NVDA:n asetusvalintaikkunaa ei voi enää olla auki samanaikaisesti. Tämä korjaa ongelmia, jotka aiheuttivat yhden avoimen valintaikkunan riippuvuutta toisesta, esim. syntetisaattorin vaihtaminen samaan aikaan kun Ääniasetukset-valintaikkuna on auki. (#603)
@@ -4901,18 +4901,18 @@ Tämän version tärkeimpiä uusia ominaisuuksia ovat tuki 64-bittisille Windows
 ## 0.5
 
 * NVDA:ssa on nyt sisäänrakennettu eSpeak-puhesyntetisaattori, joka tukee useita kieliä ja on erittäin herkkä ja kevyt. SAPI-syntetisaattoreita voidaan edelleen käyttää, mutta eSpeakia käytetään oletusarvoisesti.
-eSpeak ei ole riippuvainen mistään erikoisohjelmistoista, joten sitä voidaan käyttää NVDA:ssa millä tahansa tietokoneella, muistitikulla jne.
-Saadaksesi lisätietoja eSpeakista tai ladataksesi sen muita versioita, käy osoitteessa https://espeak.sourceforge.net/.
+ * eSpeak ei ole riippuvainen mistään erikoisohjelmistoista, joten sitä voidaan käyttää NVDA:ssa millä tahansa tietokoneella, muistitikulla jne.
+ * Saadaksesi lisätietoja eSpeakista tai ladataksesi sen muita versioita, käy osoitteessa https://espeak.sourceforge.net/.
 * Korjattu bugi, joka aiheutti  väärän merkin lukemisen painettaessa Delete-näppäintä Internet Explorerin ja Outlook Expressin muokkausruuduissa.
 * Lisätty tuki useimmille Skypen muokkauskentille.
 * Näennäispuskurit ladataan vain, kun kohdistus on ikkunassa, joka tarvitsee niitä. Korjaa joitakin ongelmia Outlook Expressin esikatseluruudun ollessa käytössä.
 * NVDA:han on lisätty komentoriviparametreja:
--m, --minimal: käynnistys- ja lopetusääniä ei toisteta eikä käyttöliittymää näytetä käynnistettäessä, jos niin on määritelty
--q, --quit: Sulkee käynnissä olevan NVDA:n
--s, --stderr-file tiedostonimi: määrittää, minne NVDA tallentaa tiedot kohdatuista virheistä ja poikkeuksista
--d, --debug-file tiedostonimi: määrittää, minne NVDA:n virheenkorjausilmoitukset tallennetaan
--c, --config-file: määritttää vaihtoehtoisen asetustiedoston
--h, -help: näyttää ohjeen, joka luettelee kaikki komentoriviparametrit
+ * -m, --minimal: käynnistys- ja lopetusääniä ei toisteta eikä käyttöliittymää näytetä käynnistettäessä, jos niin on määritelty
+ * -q, --quit: Sulkee käynnissä olevan NVDA:n
+ * -s, --stderr-file tiedostonimi: määrittää, minne NVDA tallentaa tiedot kohdatuista virheistä ja poikkeuksista
+ * -d, --debug-file tiedostonimi: määrittää, minne NVDA:n virheenkorjausilmoitukset tallennetaan
+ * -c, --config-file: määritttää vaihtoehtoisen asetustiedoston
+ * -h, -help: näyttää ohjeen, joka luettelee kaikki komentoriviparametrit
 * Korjattu bugi, joka aiheutti sen, ettei välimerkkien nimiä käännetty asianmukaiselle kielelle käytettäessä NVDA:ta muuna kuin englanninkielisenä ja kirjoitettujen merkkien lukemisen ollessa käytössä.
 * Lisätty  slovakinkielinen käännös.
 * Lisätty asetusvalintaikkunat näennäispuskureille ja asiakirjaen muotoilulle.
