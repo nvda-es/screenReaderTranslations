@@ -807,7 +807,6 @@ Dodane su nove brajične tablice za gruzijski, Swahili (Kenija) i Chichewa (Mala
 
 Upozorenje:
 U ovoj inačici narušena je kompatibilnost s postojećim dodacima.
--
 
 ### Nove značajke
 
@@ -1363,10 +1362,9 @@ Napomena:
 * Kada se pristupa programu Microsoft Word uz UI Automation, NVDA će sada koristiti mathPlayer za kretanje  po matematičkim zadacima i čitanje. (#12946)
   * Kako bi ovo  radilo, morate koristiti Microsoft Word 365/2016 verziju 14326 ili novije. 
     * MathType zadaci se takođe moraju ručno pretvoriti u Office Math izborom svakog od njih, otvaranjem kontekstnog menija, izborom stavke opcije jednadžba, pretvori u  Office Math.
--
 * Prijavljivanje kada objekat  "ima detalje " kao i odgovarajuća komanda za prijavljivanje odnosa detalja sada se mogu koristiti u režimu fokusiranja. (#13106)
 * Seika brajična bilježnica se sada može automatski prepoznati putem USB i Bluetooth veze. (#13191, #13142)
-  * Ovo utiče na sliedeće uređaje: MiniSeika (16, 24 znakova), V6, i V6Pro (40 znakova)
+  * Ovo utiče na slijedeće uređaje: MiniSeika (16, 24 znakova), V6, i V6Pro (40 znakova)
   * Ručno biranje bluetooth COM porta je sada takođe podržano.
 * Dodana komanda za uključivanje i isključivanje preglednika brajičnog redka; nema podrazumijevane pridružene prečice. (#13258)
 * Dodate komande za uključivanje ili isključivanje više modifikatora u isto vrieme  na brajičnom redku (#13152)
@@ -1519,8 +1517,7 @@ Molimo odgovorno prijavite sigurnosne probleme na adresu  <info@nvaccess.org>.
   * Uklonjena mogućnost otvaranja podrazumijevanog, privremenog i govornog rječnika u sigurnosnom načinu rada.
 * Ispravljena sigurnosna preporuka `GHSA-mvc8-5rv9-w3hx`. (#13487)
   -  wx GUI inspection alat je sada onemogućena u sigurnom načinu rada.
-  -
-
+  
 ## 2021.3.3
 
 Ova verzija je identična verziji 2021.3.2.
