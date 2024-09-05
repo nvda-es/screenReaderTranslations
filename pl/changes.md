@@ -136,7 +136,7 @@ Naprawiono dużo błędó w aplikacjach, takich jak Thunderbird, Adobe Reader, p
     * formułach matematycznych (#16001, @mltony)
     * tekstach tego samego stylu (#16000, @mltony)
     * tekstach o różnych stylach (#16000, @mltony)
-    * Dodano polecenia do przemieszczania się po pierwszym i ostatnim ustawieniu pierścienia mowy. (#13768, #16095, @rmcpantoja)
+  * Dodano polecenia do przemieszczania się po pierwszym i ostatnim ustawieniu pierścienia mowy. (#13768, #16095, @rmcpantoja)
     * Ten skrót nie jest domyślnie skojarzony. (#13768)
     * Zmniejszanie lub zwiększanie ustawień pierścienia mowy większymi krokami (#13768):
       * dla komputerów stacjonarnych: `NVDA+control+pageUp` or `NVDA+control+pageDown`.
@@ -1117,7 +1117,7 @@ Prosimy o odpowiednie zgłoszenie incydentów bezpieczeństwa na adres <info@nva
 
 ## 2022.3
 
- Znaczna część tej wersji została opracowana przez społeczność programistów NVDA.
+Znaczna część tej wersji została opracowana przez społeczność programistów NVDA.
 Zawiera ona opisy liter po ich nazwach  oraz poprawione wsparcie dla konsoli systemu operacyjnego Windows.
 
 Dodano również kilka poprawek błędów.
@@ -1129,7 +1129,7 @@ Do najnowszej wersji syntezatora mowy eSpeak dodano 3 nowe języki: białoruski,
 
 * W Hoście konsoli używanym przez wiersz poleceń, PowerShell oraz podsystem Linux dla systemu Windows 11 w wersji 22H2 (Sun Valley 2) i nowszych:
   * znacząco poprawiono wydajność i stabilność. (#10964)
-  * Po naciśnięciu "control+f", aby znaleźć tekst, pozycja kursora recenzji jest aktualizowana zgodnie ze znalezionym terminem. (#11172)
+  * Po naciśnięciu `control+f`, aby znaleźć tekst, pozycja kursora recenzji jest aktualizowana zgodnie ze znalezionym terminem. (#11172)
   * Raportowanie wpisanego tekstu, który nie pojawia się na ekranie (np. hasła), jest domyślnie wyłączone.
 Można go ponownie włączyć w panelu ustawień zaawansowanych NVDA. (#11554)
   * Tekst, który został przewinięty poza ekranem, można przeglądać bez przewijania okna konsoli.. (#12669)
@@ -1208,6 +1208,18 @@ Prosimy odpowiedzialnie zgłaszać problemy z bezpieczeństwem na adresie <info@
 
 * Naprawiono eksploit za pomocą którego było możliwe uruchomienie konzoli pythona z zablokowanego ekranu. (GHSA-rmq3-vvhq-gp32)
 * Naprawiono eksploit za pomocą którego było możliwe wyjście z ekranu blokowania używając nawigacji obiektowej. (GHSA-rmq3-vvhq-gp32)
+
+### Changes for Developers
+
+#### Deprecations
+
+These deprecations are currently not scheduled for removal.
+The deprecated aliases will remain until further notice.
+Please test the new API and provide feedback.
+For add-on authors, please open a GitHub issue if these changes stop the API from meeting your needs.
+
+* `appModules.lockapp.LockAppObject` should be replaced with `NVDAObjects.lockscreen.LockScreenObject`. (GHSA-rmq3-vvhq-gp32)
+* `appModules.lockapp.AppModule.SAFE_SCRIPTS` should be replaced with `utils.security.getSafeScripts()`. (GHSA-rmq3-vvhq-gp32)
 
 ## 2022.2
 
