@@ -136,7 +136,7 @@ Ispravljeno je puno pogrešaka u programima, poput Thunderbirda, Adobe Readera, 
     * matematičkim formulama (#16001, @mltony)
     * tekstovima istog stila (#16000, @mltony)
     * tekstovima različitog stila (#16000, @mltony)
-    * Dodan prečac za premještanje između prve postavke, posljednje postavke, za kretanje u naprijed te za kretanje u nazad unutar postavki prstena govorne jedinice. (#13768, #16095, @rmcpantoja)
+  * Dodan prečac za premještanje između prve postavke, posljednje postavke, za kretanje u naprijed te za kretanje u nazad unutar postavki prstena govorne jedinice. (#13768, #16095, @rmcpantoja)
     * Postavljanje prve ili posljednje postavke prstena govorne jedinice nema dodijeljen prečac. (#13768)
     * Povećavanje ili smanjivanje postavki govorne jedinice u većim koracima (#13768):
       * Prečac za stolna računala: `NVDA+control+pageUp` odnosno `NVDA+control+pageDown`.
@@ -210,7 +210,7 @@ Dodan je novi modus govora čitanja informacija na zahtjev.
 Kada je modus govora postavljen da izgovara informacije na zahtjev, NVDA ne čita informacije automatski na primjer prilikom pomicanja kursora, ali još uvijek izgovara informacije i koje se dobivaju uz pomoć prečaca, čiji je cilj izgovaranja određenih informacija na primjer, izgovaranje naslovne trake.
 U kategoriji "govor" NVDA postavki, sada je moguće izostavljanje neželjenih modusa govora iz odabira modusa govora (`NVDA+s`).
 
-Novi način kopiranja sa sačuvanim oblikovanjem, koji se poziva uz pomoć prečaca NVDA+f10 dostupan je na web stranicama u Mozilla Firefoxu.
+Novi način kopiranja sa sačuvanim oblikovanjem, koji se poziva uz pomoć prečaca `NVDA+shift+f10` dostupan je na web stranicama u Mozilla Firefoxu.
 Kada se uključi, koristit će se izvorno označavanje u Mozilli firefoxu.
 Kopiranje teksta uz pomoć prečaca `control+c` biti će proslijeđeno direktno Mozilli firefoxu što znači da će tekst biti kopiran sa sačuvanim oblikovanjem, umjesto čistog teksta bez oblikovanja.
 
@@ -535,8 +535,7 @@ Ispravljene su greške u Add-on Storeu, Microsoft Officeu, Microsoft Edge kontek
     * Opcija koja omogućuje ujednačavanje glasnoće zvukova sa glasnoćom govorne jedinice koju koristite. (#1409)
     * Opcija za odvojenu konfiguraciju glasnoće NVDA zvukova. (#1409, #15038)
     * Opcije za promjenu zvučne kartice i utišavanje zvukova premještene su u novu kategoriju postavki zvuka iz dijaloškog okvira odabira govorne jedinice.
-Ove će opcije biti uklonjene iz dijaloškog okvira  "odaberi govornu jedinicu" u inačici 2024.1. (#15486, #8711)
-   -
+    Ove će opcije biti uklonjene iz dijaloškog okvira  "odaberi govornu jedinicu" u inačici 2024.1. (#15486, #8711)
   * Upozorenje: WASAPI je nekompatibilan sa nekim dodacima.
   Dostupne su kompatibilne nadogradnje tih dodataka, Nadogradite ih prije nadogradnje NVDA.
   Nekompatibilne verzije tih dodataka bit će isključene prilikom nadogradnje NVDA:
