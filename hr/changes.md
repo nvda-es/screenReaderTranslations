@@ -573,7 +573,7 @@ Ispravljene su greške u Add-on Storeu, Microsoft Officeu, Microsoft Edge kontek
   * Ispravljeno rušenje u Microsoft Word Kada su opcije u postavkama oblikovanja "čitaj naslove" i "čitaj komentare i bilješke" isključene. (#15019)
   * U Wordu i Excelu, poravnanje će biti ispravno pročitano u više situacija. (#15206, #15220)
   * Ispravljeno čitanje nekih prečaca oblikovanja u Excelu. (#15527)
-  * Microsoft Edge:
+* Microsoft Edge:
   * NVDA se više neće vraćati na prethodnu poziciju u modusu čitanja pri otvaranju kontekstnog izbornika u Microsoft Edgeu. (#15309)
   * NVDA opet može čitati kontekstni izbornik preuzimanja u Microsoft Edgeu. (#14916)
 * Brajica:
@@ -583,12 +583,10 @@ Ispravljene su greške u Add-on Storeu, Microsoft Officeu, Microsoft Edge kontek
   * Ispravljena greška poslije odznačavanja "uključi nekompatibilne dodatke" koja je prouzrokovala vidljivost nekompatibilnih dodataka. (#15411)
   * Dodaci blokirani zbog nekompatibilnosti bi se sada trebali pravilno osvježavati prilikom sortiranja po statusu uključenosti ili isključenosti. (#15416)
   * Ispravljena pogreška nadpisivanja ili nadogradnje dodataka koristeći ručnu instalaciju. (#15417)
-* Ispravljena pogreška prilikom koje NVDA neće govoriti poslije ponovnog pokretanja i završetka NVDA instalacije. (#14525)
+  * Ispravljena pogreška prilikom koje NVDA neće govoriti poslije ponovnog pokretanja i završetka NVDA instalacije. (#14525)
   * Ispravljena pogreška  pri instalaciji dodataka ako je prethodna instalacija ili preuzimanje prekinuto. (#15469)
-* Ispravljene pogreške s rukovanjem nekompatibilnim dodacima pri nadogradnji NVDA. (#15414, #15412, #15437)
-  -
-* NVDA opet izgovara rezultate računskih operacija u 32-bitnom kalkulatoru za Windows u operacijskim sustavima Server, LTSC and LTSB. (#15230)
-
+  * Ispravljene pogreške s rukovanjem nekompatibilnim dodacima pri nadogradnji NVDA. (#15414, #15412, #15437)
+* NVDA opet izgovara rezultate računskih operacija u 32-bitnom kalkulatoru za Windows u operacijskim sustavima Server, LTSC i LTSB. (#15230)
 * NVDA više ne ignorira izmjene fokusa kada višeslojni prozor (prozor koji se nalazi iznad drugog prozora) postane fokusiran. (#15432)
 * Ispravljeno moguće rušenje prilikom pokretanja NVDA. (#15517)
 
