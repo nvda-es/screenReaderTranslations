@@ -2542,7 +2542,7 @@ Tämän version merkittävimpiä uusia ominaisuuksia ovat useiden pistenäyttöj
 * Kun tietyn pistenäytön toimintoja liitetään manuaalisesti näppäinkomentoihin, kyseiset näppäinkomennot näkyvät määriteltyinä juuri sille näytölle. Aiemmin ne näkyivät ikään kuin ne olisi määritelty sillä hetkellä käytössä olevalle näytölle. (#8108)
 * Lisätty tuki Media Player Classicin 64-bittiselle versiolle. (#6066)
 * Useita parannuksia Microsoft Wordin pistenäyttötukeen UI Automationin ollessa käytössä:
-* Kun pistenäytöllä ollaan asiakirjan alussa, teksti näkyy nyt näytöllä siten, että asiakirjan ensimmäinen merkki on näytön vasemmassa reunassa kuten muissakin monirivisissä tekstikentissä. (#8406)
+ * Kun pistenäytöllä ollaan asiakirjan alussa, teksti näkyy nyt näytöllä siten, että asiakirjan ensimmäinen merkki on näytön vasemmassa reunassa kuten muissakin monirivisissä tekstikentissä. (#8406)
  * Vähennetty kohdistuksen näyttämisen puheliaisuutta sekä puheella että pistekirjoituksella, kun kohdistus siirretään Word-asiakirjaan. (#8407)
  * Kohdistimen siirtäminen pistenäytön kosketuskohdistinnäppäimillä toimii nyt asianmukaisesti oltaessa luettelossa Word-asiakirjassa. (#7971)
  * Äskettäin Word-asiakirjaan lisätyt luettelomerkit/numerot ilmaistaan asianmukaisesti sekä puheella että pistenäytöllä. (#7970)
@@ -2789,11 +2789,9 @@ Tämän version merkittävimpiä uusia ominaisuuksia ovat lyhennepistekirjoituks
  * Tunnista nykyisen navigointiobjektin sisältö painamalla NVDA+R.
  * Katso lisätietoja käyttöoppaan Sisällöntunnistus-kappaleesta.
 * Uudella Pistekirjoitusasetukset-valintaikkunan "Kohdistuskontekstin näyttäminen" -asetuksella voit nyt valita, mitä kontekstitietoja pistenäytöllä näytetään kohdistuksen siirtyessä objektiin. (#217)
- * Esim. "täytä näyttö kontekstin muuttuessa"- ja "vain taaksepäin vieritettäessä" -vaihtoehdot voivat tehdä luetteloiden ja valikkojen käytöstä tehokkaampaa, koska kohteiden sijainti näytöllä ei jatkuvasti muutu.
+ * Esimerkiksi "täytä näyttö kontekstin muuttuessa"- ja "vain taaksepäin vieritettäessä" -vaihtoehdot voivat tehdä luetteloiden ja valikkojen käytöstä tehokkaampaa, koska kohteiden sijainti näytöllä ei jatkuvasti muutu.
  * Katso lisätietoja ja esimerkkejä käyttöoppaan "Kohdistuskontekstin näyttäminen" -kappaleesta.
 * NVDA tukee nyt Firefoxissa ja Chromessa monimuotoisia dynaamisia ruudukoita, kuten laskentataulukoita, joissa saatetaan ladata tai näyttää vain osa sisällöstä (erityisesti tuetaan ARIA 1.1:ssä esiteltyjä aria-rowcount-, aria-colcount-, aria-rowindex- ja aria-colindex-attribuutteja). (#7410)
-* Kohdistimen muoto voidaan määrittää pistenäyttöä käytettäessä erilaiseksi riippuen siitä, seurataanko kohdistusta vai tarkastelukohdistinta. (#7122)
-* NVDA-logo on päivitetty. Uusi logo on tyylitelty sekoitus valkoisista kirjaimista N, V, D ja A yhtenäisellä, violetilla taustalla. Tämä varmistaa, että se näkyy kaikenvärisillä taustoilla, ja siinä käytetään NV Accessin logon violettia väriä. (#7446)
 
 ### Muutokset
 
@@ -2807,6 +2805,8 @@ Tämän version merkittävimpiä uusia ominaisuuksia ovat lyhennepistekirjoituks
 * NVDA näyttää nyt pistenäytöllä oletusarvoisesti vain osan muuttuneista kontekstitiedoista kohdistuksen siirtyessä objektiin. (#217)
  * Ennen tietoja näytettiin mahdollisimman paljon riippumatta siitä, onko ne näytetty aiemmin.
  * Voit palauttaa aiemman toiminnallisuuden muuttamalla Pistekirjoitusasetukset-valintaikkunasta uuden "Kohdistuskontekstin näyttäminen" -asetuksen arvoksi "täytä näyttö aina".
+* Kohdistimen muoto voidaan määrittää pistenäyttöä käytettäessä erilaiseksi riippuen siitä, seurataanko kohdistusta vai tarkastelukohdistinta. (#7122)
+* NVDA-logo on päivitetty. Uusi logo on tyylitelty sekoitus valkoisista kirjaimista N, V, D ja A yhtenäisellä, violetilla taustalla. Tämä varmistaa, että se näkyy kaikenvärisillä taustoilla, ja siinä käytetään NV Accessin logon violettia väriä. (#7446)
 
 ### Bugikorjaukset
 
