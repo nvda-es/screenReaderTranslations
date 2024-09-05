@@ -1551,7 +1551,7 @@ Jest to niewielka wersja mająca na celu naprawienie kilku problemów w 2021.3.
 
 ## 2021.3
 
- To wydanie wprowadza wsparcie dla nowej specyfikacji brajlowskiej HID.
+To wydanie wprowadza wsparcie dla nowej specyfikacji brajlowskiej HID.
 Celem tej specyfikacji jest zapewnienie uniwersalnego standardu wsparcia wszystkich monitorów brajlowskich bez konieczności instalowania dodatkowych sterowników.
 Zaktualizowano też eSpeak-NG i LibLouis. Dodane zostały m.in. nowa tablica dla rosyjskiego i języka Tshivenda.
 Do ustawień zaawansowanych dodano opcję, która pozwala włączyć Dźwięki błędu również w wersjach stabilnych NVDA.
@@ -1848,6 +1848,13 @@ Uwaga!
     * Workarounds for `expand`, `collapse`, `compareEndPoints`, `setEndPoint`, etc
 
 ## 2020.4
+
+This release includes new Chinese Input methods, an update to Liblouis and the elements list (NVDA+f7) now works in focus mode.
+Context sensitive help is now available when pressing F1 in NVDA dialogs.
+Improvements to symbol pronunciation rules, speech dictionary, Braille message and skim reading.
+Bug fixes and improvements to Mail, Outlook, Teams, Visual Studio, Azure Data Studio, Foobar2000.
+On the web, there are improvements to Google Docs, and greater support for ARIA.
+Plus many other important bug fixes and improvements.
 
 ### Nowości
 
