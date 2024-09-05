@@ -536,6 +536,7 @@ Ispravljene su greške u Add-on Storeu, Microsoft Officeu, Microsoft Edge kontek
     * Opcija za odvojenu konfiguraciju glasnoće NVDA zvukova. (#1409, #15038)
     * Opcije za promjenu zvučne kartice i utišavanje zvukova premještene su u novu kategoriju postavki zvuka iz dijaloškog okvira odabira govorne jedinice.
     Ove će opcije biti uklonjene iz dijaloškog okvira  "odaberi govornu jedinicu" u inačici 2024.1. (#15486, #8711)
+* NVDA will now output audio via the Windows Audio Session API (WASAPI), which may improve the responsiveness, performance and stability of NVDA speech and sounds. (#14697, #11169, #11615, #5096, #10185, #11061)
   * Upozorenje: WASAPI je nekompatibilan sa nekim dodacima.
   Dostupne su kompatibilne nadogradnje tih dodataka, Nadogradite ih prije nadogradnje NVDA.
   Nekompatibilne verzije tih dodataka bit će isključene prilikom nadogradnje NVDA:
