@@ -153,7 +153,9 @@ Zaktualizowano LibLouis dodając nowe tablice brajlowskie z włączonym pokazywa
 <li>formułach matematycznych (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16001" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16001">#16001</a>, <a class="gh-link gh-mention" href="https://github.com/mltony" rel="noopener" target="_blank" title="GitHub User: @mltony">@mltony</a>)</li>
 <li>tekstach tego samego stylu (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16000" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16000">#16000</a>, <a class="gh-link gh-mention" href="https://github.com/mltony" rel="noopener" target="_blank" title="GitHub User: @mltony">@mltony</a>)</li>
 <li>tekstach o różnych stylach (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16000" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16000">#16000</a>, <a class="gh-link gh-mention" href="https://github.com/mltony" rel="noopener" target="_blank" title="GitHub User: @mltony">@mltony</a>)</li>
-<li>Dodano polecenia do przemieszczania się po pierwszym i ostatnim ustawieniu pierścienia mowy. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13768" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13768">#13768</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16095" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16095">#16095</a>, <a class="gh-link gh-mention" href="https://github.com/rmcpantoja" rel="noopener" target="_blank" title="GitHub User: @rmcpantoja">@rmcpantoja</a>)</li>
+</ul>
+</li>
+<li>Dodano polecenia do przemieszczania się po pierwszym i ostatnim ustawieniu pierścienia mowy. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13768" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13768">#13768</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16095" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16095">#16095</a>, <a class="gh-link gh-mention" href="https://github.com/rmcpantoja" rel="noopener" target="_blank" title="GitHub User: @rmcpantoja">@rmcpantoja</a>)<ul>
 <li>Ten skrót nie jest domyślnie skojarzony. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13768" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13768">#13768</a>)</li>
 <li>Zmniejszanie lub zwiększanie ustawień pierścienia mowy większymi krokami (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13768" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13768">#13768</a>):<ul>
 <li>dla komputerów stacjonarnych: <code>NVDA+control+pageUp</code> or <code>NVDA+control+pageDown</code>.</li>
@@ -1363,7 +1365,7 @@ Najistotniejsza poprawka błędów dla najnowszych wersji programów Adobe Acrob
 <ul>
 <li>W Hoście konsoli używanym przez wiersz poleceń, PowerShell oraz podsystem Linux dla systemu Windows 11 w wersji 22H2 (Sun Valley 2) i nowszych:<ul>
 <li>znacząco poprawiono wydajność i stabilność. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10964" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10964">#10964</a>)</li>
-<li>Po naciśnięciu "control+f", aby znaleźć tekst, pozycja kursora recenzji jest aktualizowana zgodnie ze znalezionym terminem. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11172" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11172">#11172</a>)</li>
+<li>Po naciśnięciu <code>control+f</code>, aby znaleźć tekst, pozycja kursora recenzji jest aktualizowana zgodnie ze znalezionym terminem. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11172" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11172">#11172</a>)</li>
 <li>Raportowanie wpisanego tekstu, który nie pojawia się na ekranie (np. hasła), jest domyślnie wyłączone.
 Można go ponownie włączyć w panelu ustawień zaawansowanych NVDA. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11554" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11554">#11554</a>)</li>
 <li>Tekst, który został przewinięty poza ekranem, można przeglądać bez przewijania okna konsoli.. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12669" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12669">#12669</a>)</li>
@@ -1443,6 +1445,16 @@ Prosimy odpowiedzialnie zgłaszać problemy z bezpieczeństwem na adresie <a hre
 <li>Naprawiono eksploit za pomocą którego było możliwe uruchomienie konzoli pythona z zablokowanego ekranu. (GHSA-rmq3-vvhq-gp32)</li>
 <li>Naprawiono eksploit za pomocą którego było możliwe wyjście z ekranu blokowania używając nawigacji obiektowej. (GHSA-rmq3-vvhq-gp32)</li>
 </ul>
+<h3 id="changes-for-developers_9">Changes for Developers</h3>
+<h4 id="deprecations_7">Deprecations</h4>
+<p>These deprecations are currently not scheduled for removal.
+The deprecated aliases will remain until further notice.
+Please test the new API and provide feedback.
+For add-on authors, please open a GitHub issue if these changes stop the API from meeting your needs.</p>
+<ul>
+<li><code>appModules.lockapp.LockAppObject</code> should be replaced with <code>NVDAObjects.lockscreen.LockScreenObject</code>. (GHSA-rmq3-vvhq-gp32)</li>
+<li><code>appModules.lockapp.AppModule.SAFE_SCRIPTS</code> should be replaced with <code>utils.security.getSafeScripts()</code>. (GHSA-rmq3-vvhq-gp32)</li>
+</ul>
 <h2 id="20222">2022.2</h2>
 <p>To wydanie zawiera wiele poprawek błędów.
 Warto zauważyć, że wprowadzono znaczące ulepszenia dla aplikacji opartych na Javie, monitorów brajlowskich i funkcji systemu Windows.</p>
@@ -1516,7 +1528,7 @@ takich jak Pasek zadań i Widok zadań za pomocą myszy i interakcji dotykowej. 
 <li>Naprawiono automatyczne przełączanie języka eSpeak na angielski i francuski z powrotem na brytyjski angielski i francuski (Francja). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13727" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13727">#13727</a>)</li>
 <li>Naprawiono automatyczne przełączanie języka OneCore podczas próby przejścia na wcześniej zainstalowany język. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13732" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13732">#13732</a>)</li>
 </ul>
-<h3 id="changes-for-developers_9">Changes for Developers</h3>
+<h3 id="changes-for-developers_10">Changes for Developers</h3>
 <ul>
 <li>Compiling NVDA dependencies with Visual Studio 2022 (17.0) is now supported.
 For development and release builds, Visual Studio 2019 is still used. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13033" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13033">#13033</a>)</li>
@@ -1525,7 +1537,7 @@ the case where a negative child ID or an IDispatch is returned by <code>IAccessi
 <li>New convenience functions <code>registerExecutableWithAppModule</code> and <code>unregisterExecutable</code> were added to the <code>appModuleHandler</code> module.
 They can be used to use a single App Module with multiple executables. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13366" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13366">#13366</a>)</li>
 </ul>
-<h4 id="deprecations_7">Deprecations</h4>
+<h4 id="deprecations_8">Deprecations</h4>
 <p>These are proposed API breaking changes.
 The deprecated part of the API will continue to be available until the specified release.
 If no release is specified, the plan for removal has not been determined.
@@ -1732,7 +1744,7 @@ Istnieją również różne poprawki błędów systemu Windows 11 dla aplikacji 
 * W programie Microsoft Word z UIA: numer strony i inne formatowanie nie jest już niewłaściwie ogłaszane podczas przechodzenia z pustej komórki tabeli do komórki z zawartością lub z końca dokumentu do istniejącej zawartości. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13458" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13458">#13458</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13459" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13459">#13459</a>)
 * NVDA nie będzie już nie zgłaszać tytułu strony i zacznie automatycznie czytać, gdy strona załaduje się w Google Chrome 100. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13571" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13571">#13571</a>)
 * NVDA nie ulega już awarii podczas resetowania konfiguracji NVDA do ustawień fabrycznych, gdy poleceń Speak są włączone. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13634" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13634">#13634</a>)-</p>
-<h3 id="changes-for-developers_10">Changes for Developers</h3>
+<h3 id="changes-for-developers_11">Changes for Developers</h3>
 <ul>
 <li>Note: this is a Add-on API compatibility breaking release. Add-ons will need to be re-tested and have their manifest updated.</li>
 <li>Although NVDA still requires Visual Studio 2019, Builds should no longer fail if a newer version of Visual Studio (E.g. 2022) is installed along side 2019. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13033" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13033">#13033</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13387" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13387">#13387</a>)</li>
@@ -1939,7 +1951,7 @@ Aby nadal móc przenosić punkt przeglądu do pasków stanu, należy przypisać 
 <li>W Windowsie 11, NVDA już nie będzie wymawiała "okno" podczas naciskania klawiszy Alt+Tab podczzas przełączania okien. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12648" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12648">#12648</a>)</li>
 <li>Nowoczesna strona komentarzy jest od teraz wspierana w programie MS Word gdy dokument nie jest używany za pomocą UIA. Naciśnij alt+f12 aby się przemieszczac pomiędzy stroną komentarzy i dokumencie. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12982" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12982">#12982</a>)</li>
 </ul>
-<h3 id="changes-for-developers_11">Changes for Developers</h3>
+<h3 id="changes-for-developers_12">Changes for Developers</h3>
 <ul>
 <li>Building NVDA now requires Visual Studio 2019 16.10.4 or later.
 To match the production build environment, update Visual Studio to keep in sync with the <a href="https://www.appveyor.com/docs/windows-images-software/#visual-studio-2019" rel="noopener" target="_blank" title="current version AppVeyor is using">current version AppVeyor is using</a>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12728" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12728">#12728</a>)</li>
@@ -2004,7 +2016,7 @@ Jeśli używasz nowej wersji systemu Windows, dla bezpieczeństwa upewnij się, 
 <li>Jeśli podczas filtrowania zdarzeń wejścia nie wyświetlają się żadne wyniki, ustawienia zdarzeń wejścia nadal działają tak jak powinny. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12673" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12673">#12673</a>)</li>
 <li>Naprawiono błąd, przez który pierwszy element w menu rozwijanym nie jest ogłaszany w niektórych kontekstach. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12624" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12624">#12624</a>)</li>
 </ul>
-<h3 id="changes-for-developers_12">Changes for Developers</h3>
+<h3 id="changes-for-developers_13">Changes for Developers</h3>
 <ul>
 <li><code>characterProcessing.SYMLVL_*</code> constants should be replaced using their equivalent <code>SymbolLevel.*</code> before 2022.1. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11856" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11856">#11856</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12636" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12636">#12636</a>)</li>
 <li><code>controlTypes</code> has been split up into various submodules, symbols marked for deprecation must be replaced before 2022.1. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12510" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12510">#12510</a>)<ul>
@@ -2094,7 +2106,7 @@ Poprawiono też liczne błędy i dodano ulepszenia dla programów takich jak Mic
 <li>W nowym Microsoft Edgeopartym na siliniku Chromium, pola tekstowe, takie jak pasek adresu są wymawiane gdy są puste. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12474" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12474">#12474</a>)</li>
 <li>Naprawiony sterownik dla monitorów brajlowskich Seika. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10787" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10787">#10787</a>)</li>
 </ul>
-<h3 id="changes-for-developers_13">Changes for Developers</h3>
+<h3 id="changes-for-developers_14">Changes for Developers</h3>
 <ul>
 <li>Note: this is an Add-on API compatibility breaking release. Add-ons will need to be re-tested and have their manifest updated.</li>
 <li>NVDA's build system now fetches all Python dependencies with pip and stores them in a Python virtual environment. This is all done transparently.<ul>
@@ -2282,7 +2294,7 @@ Poprawiono też liczne błędy i dodano ulepszenia dla programów takich jak Mic
 <li>W kalkulatorze systemu Windows 10, NVDA nie ogłasza już postępu obliczeń gdy czytanie wpisywanych znaków jest wyłączone. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/9428" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #9428">#9428</a>)</li>
 <li>Przy wyświetlaniu adresów URL z NVDA ustawionym na tablicę brajlowską Angielski  US skróty  i włączoną opcją rozwiń słowo pod kursorem do brajla komputerowego, NVDA się już nie wysypuje. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11754" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11754">#11754</a>)</li>
 </ul>
-<h3 id="changes-for-developers_14">Changes For Developers</h3>
+<h3 id="changes-for-developers_15">Changes For Developers</h3>
 <ul>
 <li>The GUI Helper's BoxSizerHelper.addDialogDismissButtons supports a new "separated" keyword argument, for adding a standard horizontal separator to dialogs (other than messages and single input dialogs). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6468" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6468">#6468</a>)</li>
 <li>Additional properties were added to app modules, including path for the executable (appPath), is a Windows Store app (isWindowsStoreApp), and machine architecture for the app (appArchitecture). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7894" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7894">#7894</a>)</li>
@@ -2354,7 +2366,7 @@ Dodano również możliwość odczytywania podkreślonego tekstu w przeglądarka
 <li>Niektóre głosy SAPI5 takie jak Ivona już nie omijają zdania. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10901" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10901">#10901</a>)</li>
 <li>Duże ulepszenia wydajności w Visual Studio Code. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11533" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11533">#11533</a>)</li>
 </ul>
-<h3 id="changes-for-developers_15">Changes For Developers</h3>
+<h3 id="changes-for-developers_16">Changes For Developers</h3>
 <ul>
 <li>The GUI Helper's BoxSizerHelper.addDialogDismissButtons supports a new "separated" keyword argument, for adding a standard horizontal separator to dialogs (other than messages and single input dialogs). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6468" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6468">#6468</a>)</li>
 <li>Additional properties were added to app modules, including path for the executable (appPath), is a Windows Store app (isWindowsStoreApp), and machine architecture for the app (appArchitecture). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7894" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7894">#7894</a>)</li>
@@ -2417,7 +2429,7 @@ Dodano również możliwość odczytywania podkreślonego tekstu w przeglądarka
 <li>Ponownie możliwym jest sprawdzenie aktualizacji NVDA na pewnych konfiguracjach na przykład czystych instalacjach systemu Windows. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11253" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11253">#11253</a>)</li>
 <li>Poprawiono błąd uniemożliwiający poprawne pozycjonowanie kursora w aplikacjach JAVA. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5989" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5989">#5989</a>)</li>
 </ul>
-<h3 id="changes-for-developers_16">Changes For Developers</h3>
+<h3 id="changes-for-developers_17">Changes For Developers</h3>
 <ul>
 <li>execElevated and hasUiAccess have moved from config module to systemUtils module. Usage via config module is deprecated. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10493" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10493">#10493</a>)</li>
 <li>Updated configobj to 5.1.0dev commit f9a265c4. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10939" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10939">#10939</a>)</li>
@@ -2457,7 +2469,7 @@ Dodano również możliwość odczytywania podkreślonego tekstu w przeglądarka
 <li>Wyjście strzałką z listy lub tabeli w trybie szybkiego czytania nie powoduje już ciągłego oznajmiania stanu elementu. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10706" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10706">#10706</a>)</li>
 <li>Naprawiono śledzenie myszy dla niektórych elementów MSHTML w Internet Explorerze. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10736" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10736">#10736</a>)</li>
 </ul>
-<h3 id="changes-for-developers_17">Changes for Developers</h3>
+<h3 id="changes-for-developers_18">Changes for Developers</h3>
 <ul>
 <li>Developer documentation is now build using sphinx. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/9840" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #9840">#9840</a>)</li>
 <li>Several speech functions have been split into two. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10593" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10593">#10593</a>)
@@ -2558,7 +2570,7 @@ Zmiany te powodują brak kompatybilności ze wcześniejszymi dodatkami programu,
 <li>W wypadku zmiany karty dźwiękowej w ustawieniach NVDA, dźwięki czytnika ekranu będą teraz odtwarzane przez nowowybraną kartę. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2167" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2167">#2167</a>)</li>
 <li>W przeglądarce Mozilla Firefox, przesuwanie kursora w trybie czytania jest szybsze. Powoduje to znaczne przyspieszenie działania w niektórych wypadkach. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10584" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10584">#10584</a>)</li>
 </ul>
-<h3 id="changes-for-developers_18">Changes for Developers</h3>
+<h3 id="changes-for-developers_19">Changes for Developers</h3>
 <ul>
 <li>Updated Python to 3.7. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7105" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7105">#7105</a>)</li>
 <li>Updated pySerial to version 3.4. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8815" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8815">#8815</a>)</li>
@@ -2704,7 +2716,7 @@ Zmiany te powodują brak kompatybilności ze wcześniejszymi dodatkami programu,
 <li>W Mozilla Firefox, aktualizacje obszarów dynamicznych nie są odczytywane  jeśli obszar znajduje się w zakładce będącej aktualnie w tle. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1318" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1318">#1318</a>)</li>
 <li>Poprawiona praca okna "Znajdź" w trybie czytania NVDA,  które nie funkcjonowało, gdy otwarte było w tle okno "O programie" NVDA. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8566" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8566">#8566</a>)</li>
 </ul>
-<h3 id="changes-for-developers_19">Changes for Developers</h3>
+<h3 id="changes-for-developers_20">Changes for Developers</h3>
 <ul>
 <li>You can now set the "disableBrowseModeByDefault" property on app modules to leave browse mode off by default. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8846" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8846">#8846</a>)</li>
 <li>The extended window style of a window is now exposed using the <code>extendedWindowStyle</code> property on Window objects and their derivatives. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/9136" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #9136">#9136</a>)</li>
@@ -2789,7 +2801,7 @@ Więcej informacji o wersjonowaniu dodatków, znajduje się na liście zmian pon
 <li>Nie powinno być dłużej potrzebne wyłączanie edycji bezpośrednio w komórce arkusza w Microsoft Excel aby uzyskać dostęp do kontrolki edycji komórki z NVDA w Excel 2016/365. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8146" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8146">#8146</a>).</li>
 <li>Poprawione zawieszanie w Firefox zdarzające się czasem podczas szybkiej nawigacji po punktach orientacyjnych, gdy używany był dodatek Enhanced Aria. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8980" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8980">#8980</a>)</li>
 </ul>
-<h3 id="changes-for-developers_20">Changes for Developers</h3>
+<h3 id="changes-for-developers_21">Changes for Developers</h3>
 <ul>
 <li>NVDA can now  be built with all editions of Microsoft Visual Studio 2017 (not just the Community edition). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8939" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8939">#8939</a>)</li>
 <li>You can now include log output from liblouis into the NVDA log by setting the louis boolean flag in the debugLogging section of the NVDA configuration. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4554" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4554">#4554</a>)</li>
@@ -2839,7 +2851,7 @@ Więcej informacji o wersjonowaniu dodatków, znajduje się na liście zmian pon
 <li>Zdarzenia wejścia wykonywane na linijkach brajlowskich baum Vario 40 będą od teraz prawidłowo uruchamiane. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8894" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8894">#8894</a>)</li>
 <li>W Slajdach Google z Mozilla Firefox, NVDA nie zgłasza zaznaczonego tekstu na każdej kontrolce z punktem uwagi. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8964" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8964">#8964</a>)</li>
 </ul>
-<h3 id="changes-for-developers_21">Changes for Developers</h3>
+<h3 id="changes-for-developers_22">Changes for Developers</h3>
 <ul>
 <li>gui.nvdaControls now contains two classes to create accessible lists with check boxes. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7325" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7325">#7325</a>)</li>
 <li>CustomCheckListBox is an accessible subclass of wx.CheckListBox.</li>
@@ -2910,7 +2922,7 @@ Więcej informacji o wersjonowaniu dodatków, znajduje się na liście zmian pon
 <li>W Windows 10 1803 i nowszych, możliwa jest teraz instalacja dodatków, gdy włączone jest używanie Unicode UTF-8 dla ogólnoświatowej obsługi języków. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8599" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8599">#8599</a>)</li>
 <li>NVDA nie powoduje, że iTunes 12.9 i nowsze stają się niemożliwe do interakcji. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8744" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8744">#8744</a>)</li>
 </ul>
-<h3 id="changes-for-developers_22">Changes for Developers</h3>
+<h3 id="changes-for-developers_23">Changes for Developers</h3>
 <ul>
 <li>Added scriptHandler.script, which can function as a decorator for scripts on scriptable objects. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6266" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6266">#6266</a>)</li>
 <li>A system test framework has been introduced for NVDA. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/708" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #708">#708</a>)</li>
@@ -2979,7 +2991,7 @@ Więcej informacji o wersjonowaniu dodatków, znajduje się na liście zmian pon
 <li>Nowsze głosy Microsoft SAPI5 nie powodują opóźnień na końcu mowy, co czyni pracę z użyciem tych głosów bardziej efektywną. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8174" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8174">#8174</a>)</li>
 <li>W Windows 10 RS5, NVDA nie zgłasza nadmiarowych zbędnych informacji  podczas przełączania zadań przy użyciu alt+tab. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8258" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8258">#8258</a>)</li>
 </ul>
-<h3 id="changes-for-developers_23">Changes for developers</h3>
+<h3 id="changes-for-developers_24">Changes for developers</h3>
 <ul>
 <li>The developer info for UIA objects now contains a list of the UIA patterns available. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5712" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5712">#5712</a>)</li>
 <li>App modules can now force certain windows to always use UIA by implementing the isGoodUIAWindow method. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7961" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7961">#7961</a>)</li>
@@ -3031,7 +3043,7 @@ Więcej informacji o wersjonowaniu dodatków, znajduje się na liście zmian pon
 <li>Wszystkie klawisze na linijce Hims Braille Sense Polaris, działają teraz tak jak powinny. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7865" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7865">#7865</a>)</li>
 <li>Rozwiązany problem uruchamiania NVDA na Windows 7 zgłaszającego wewnętrzny błąd api-ms dll, gdy konkretna wersja Visual Studio 2017 redistributables została zainstalowana przez inną aplikację. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7975" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7975">#7975</a>)</li>
 </ul>
-<h3 id="changes-for-developers_24">Changes for developers</h3>
+<h3 id="changes-for-developers_25">Changes for developers</h3>
 <ul>
 <li>Added a hidden boolean flag to the braille section in the configuration: "outputPass1Only". (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7301" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7301">#7301</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7693" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7693">#7693</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7702" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7702">#7702</a>) </li>
 <li>This flag defaults to true. If false, liblouis multi pass rules will be used for braille output.</li>
@@ -3094,7 +3106,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>Po użyciu komendy rozpoznawania treści (np. NVDA+r), NVDA zgłosi błąd zamiast milczenia, gdy obiekt nawigacyjny zniknął. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7567" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7567">#7567</a>)</li>
 <li>Poprawiona funkcjonalność przewijania wstecz dla monitorów freedom Scientific zawierających lewy pasek ochraniający. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7713" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7713">#7713</a>)</li>
 </ul>
-<h3 id="changes-for-developers_25">Changes for Developers</h3>
+<h3 id="changes-for-developers_26">Changes for Developers</h3>
 <ul>
 <li>"scons tests" now checks that translatable strings have translator comments. You can also run this alone with "scons checkPot". (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7492" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7492">#7492</a>)</li>
 <li>There is now a new extensionPoints module which provides a generic framework to enable code extensibility at specific points in the code. This allows interested parties to register to be notified when some action occurs (extensionPoints.Action), to modify a specific kind of data (extensionPoints.Filter) or to participate in deciding whether something will be done (extensionPoints.Decider). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3393" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3393">#3393</a>)</li>
@@ -3178,7 +3190,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>Komendy nawigacji po tabeli nie są odtąd dostępne dla tabel układu treści w trybie czytania, chyba, że włączone jest zgłaszanie tabel układu treści. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7382" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7382">#7382</a>)</li>
 <li>W Firefox i Chrome, komendy nawigacji po tabeli przeskakują ukryte komórki. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6652" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6652">#6652</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5655" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5655">#5655</a>)</li>
 </ul>
-<h3 id="changes-for-developers_26">Changes for Developers</h3>
+<h3 id="changes-for-developers_27">Changes for Developers</h3>
 <ul>
 <li>Timestamps in the log now include milliseconds. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7163" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7163">#7163</a>)</li>
 <li>NVDA must now be built with Visual Studio Community 2015. Visual Studio Express is no longer supported. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7110" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7110">#7110</a>)</li>
@@ -3226,7 +3238,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>W trybie czytania, komenda "Zaznacz wszystko" (control+a) nie ma od teraz problemów z zaznaczeniem całego tekstu jeśli kursor nie znajdował się na początku. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6909" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6909">#6909</a>)</li>
 <li>Naprawiono niektóre inne rzadkie problemy zaznaczania w trybie czytania. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7131" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7131">#7131</a>)</li>
 </ul>
-<h3 id="changes-for-developers_27">Changes for Developers</h3>
+<h3 id="changes-for-developers_28">Changes for Developers</h3>
 <ul>
 <li>Commandline arguments are now processed with Python's argparse module, rather than optparse. This allows certain options such as -r and -q to be handled exclusively. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6865" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6865">#6865</a>)</li>
 <li>core.callLater now queues the callback to NVDA's main queue after the given delay, rather than waking the core and executing it directly. This stops possible freezes due to the  core accidentally going to sleep after processing a callback, in the midle of  a modal call such as the desplaying of a message box. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6797" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6797">#6797</a>)</li>
@@ -3283,7 +3295,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>Śledzenie myszy działa na wszystkich ekranach na komputerach z wieloma monitorami. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6598" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6598">#6598</a>)</li>
 <li>NVDA od teraz nie staje się bezużyteczny po wyjściu z Windows Media Player , gdy punkt uwagi znajdował się na suwaku. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5467" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5467">#5467</a>)</li>
 </ul>
-<h3 id="changes-for-developers_28">Changes for Developers</h3>
+<h3 id="changes-for-developers_29">Changes for Developers</h3>
 <ul>
 <li>Profiles and configuration files are now automatically upgraded to meet the requirements of schema modifications. If there is an error during upgrade, a notification is shown, the configuration is reset and the old configuration file is available in the NVDA log at 'Info' level. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6470" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6470">#6470</a>)</li>
 </ul>
@@ -3339,7 +3351,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>Poprawiono awarie w 64-bitowych aplikacjach   Mozilla i bazujących na Chrome. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6497" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6497">#6497</a>)</li>
 <li>W Firefox z włączoną wieloprocesowością, tryb czytania i edytowalne pola tekstowe teraz działają prawidłowo. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6380" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6380">#6380</a>)</li>
 </ul>
-<h3 id="changes-for-developers_29">Changes for Developers</h3>
+<h3 id="changes-for-developers_30">Changes for Developers</h3>
 <ul>
 <li>It is now possible to provide app modules for executables containing a dot (.) in their names. Dots are replaced with underscores (_). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5323" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5323">#5323</a>)</li>
 <li>The new gui.guiHelper module includes utilities to simplify the creation of wxPython GUIs, including automatic management of spacing. This facilitates better visual appearance and consistency, as well as easing creation of new GUIs for blind developers. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6287" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6287">#6287</a>)</li>
@@ -3395,7 +3407,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>Na liście wiadomości  Outlook 2016,  informacja o powiązanym szkicu nie jest od teraz zgłaszana. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6219" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6219">#6219</a>)</li>
 <li>W Google Chrome i przeglądarkach bazujących na Chrome w językach innych niż angielski, tryb czytania nie zawodzi w wielu dokumentach. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6249" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6249">#6249</a>)</li>
 </ul>
-<h3 id="changes-for-developers_30">Changes for Developers</h3>
+<h3 id="changes-for-developers_31">Changes for Developers</h3>
 <ul>
 <li>Logging information directly from a property no longer results in the property  being called recursively over and over again. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6122" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6122">#6122</a>)</li>
 </ul>
@@ -3443,7 +3455,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>W Microsoft word, NVDA nie zgłasza nieprawidłowo jako nagłówek tekstu z poziomem konspektu (ale nie wbudowanym stylem nagłówka). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5186" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5186">#5186</a>)</li>
 <li>W trybie czytaniaW Microsoft Word, komendy przejścia do początku i końca kontenera (przecinek i Shift+przecinek) działają teraz dla tabel. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5883" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5883">#5883</a>)</li>
 </ul>
-<h3 id="changes-for-developers_31">Changes for Developers</h3>
+<h3 id="changes-for-developers_32">Changes for Developers</h3>
 <ul>
 <li>NVDA's C++ components are now built with Microsoft Visual Studio 2015. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5592" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5592">#5592</a>)</li>
 <li>You can now present a text or HTML message to the user in browse mode using ui.browseableMessage. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4908" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4908">#4908</a>)</li>
@@ -3496,7 +3508,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>W Microsoft Excel, naciśnięcie shift+f11 aby utworzyć nowy arkusz, zgłasza teraz nową pozycję. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5689" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5689">#5689</a>)</li>
 <li>Naprawione problemy z wyświetlaniem brajla na monitorach brajlowskich, podczas wprowadzania znaków koreańskich. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5640" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5640">#5640</a>)</li>
 </ul>
-<h3 id="changes-for-developers_32">Changes for Developers</h3>
+<h3 id="changes-for-developers_33">Changes for Developers</h3>
 <ul>
 <li>The new audioDucking.AudioDucker class allows code which outputs audio to indicate when background audio should be ducked. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3830" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3830">#3830</a>)</li>
 <li>nvwave.WavePlayer's constructor now has a wantDucking keyword argument which specifies whether background audio should be ducked while audio is playing. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3830" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3830">#3830</a>)</li>
@@ -3609,7 +3621,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>W Windows 7 i nowszych, tekst nie jest już nieczytelny podczas wpisywania w niektórych aplikacjach takich jak Wordpad czy Skype, przy użyciu monitora brajlowskiego. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4291" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4291">#4291</a>)</li>
 <li>Na ekranie startowym Windows 10, nie można od teraz czytać schowka, uzyskiwać dostępu do uruchomionych aplikacji przy użyciu kursora przeglądu, zmieniać konfiguracji NVDA, etc. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5269" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5269">#5269</a>)</li>
 </ul>
-<h3 id="changes-for-developers_33">Changes for Developers</h3>
+<h3 id="changes-for-developers_34">Changes for Developers</h3>
 <ul>
 <li>You can now inject raw input from a system keyboard that is not handled natively by Windows (e.g. a QWERTY keyboard on a braille display) using the new keyboardHandler.injectRawKeyboardInput function. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4576" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4576">#4576</a>)</li>
 <li>eventHandler.requestEvents has been added to request particular events that are blocked by default; e.g. show events from a specific control or certain events even when in the background. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3831" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3831">#3831</a>)</li>
@@ -3648,7 +3660,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>Poprawione problemy z wpisywaniem niektórych znaków interpunkcji i symboli, takich jak nawiasy, do pola filtru w oknie dialogowym zdarzeń wejścia. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5060" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5060">#5060</a>)</li>
 <li>W Internet Explorer i innych kontrolkach MSHTML, naciśnięcie g lub shift+g by nawigować po grafikach, uwzględnia teraz elementy oznaczone jako obrazki dla potrzeb dostępności (tj. rola ARIA img). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5062" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5062">#5062</a>)</li>
 </ul>
-<h3 id="changes-for-developers_34">Changes for Developers</h3>
+<h3 id="changes-for-developers_35">Changes for Developers</h3>
 <ul>
 <li>brailleInput.handler.sendChars(mychar) will no longer filter out a character if it is equal to the previous character by ensuring that the key sent is correctly released. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4139" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4139">#4139</a>)</li>
 <li>Scripts for changing touch modes will now honor new labeles added to touchHandler.touchModeLabels. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4699" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4699">#4699</a>)</li>
@@ -3710,7 +3722,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>W Internet Explorer i innych kontrolkach MSHTML, atrybut title na kontrolkach formularza nie jest od teraz nieprawidłowo preferowany względem innych powiązań ze znacznikami label. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4491" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4491">#4491</a>)</li>
 <li>W Internet Explorer i innych kontrolkach MSHTML, NVDA nie ignoruje od teraz ustawiania punktu uwagi na elementach w związku z atrybutem aria-activedescendant. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4667" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4667">#4667</a>)</li>
 </ul>
-<h3 id="changes-for-developers_35">Changes for Developers</h3>
+<h3 id="changes-for-developers_36">Changes for Developers</h3>
 <ul>
 <li>Updated wxPython to 3.0.2.0. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3763" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3763">#3763</a>)</li>
 <li>Updated Python to 2.7.9. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4715" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4715">#4715</a>)</li>
@@ -3752,7 +3764,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>Śledzenie myszy i eksploracja dotykowa w Internet Explorer i innych kontrolkach MSHTML  odczytuje teraz etykietę większej liczby przycisków. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4173" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4173">#4173</a>)</li>
 <li>Podczas używania monitora brajlowskiego Papenmeier BRAILLEX z BrxCom, klawisze monitora działają zgodnie z oczekiwaniami. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4614" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4614">#4614</a>)</li>
 </ul>
-<h3 id="changes-for-developers_36">Changes for Developers</h3>
+<h3 id="changes-for-developers_37">Changes for Developers</h3>
 <ul>
 <li>For executables which host many different apps (e.g. javaw.exe), code can now be provided to load specific app modules for each app instead of loading the same app module for all hosted apps. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4360" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4360">#4360</a>)</li>
 <li>See the code documentation for appModuleHandler.AppModule for details.</li>
@@ -3838,7 +3850,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>Numeryczne pola edycji w GoldWave są teraz prawidłowo obsługiwane. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/670" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #670">#670</a>)</li>
 <li>Microsoft Word: podczas przemieszczania się po akapitach klawiszami control+strzałka w dół / control+strzałka w górę, nie jest od teraz konieczne naciskanie ich dwukrotnie podczas przechodzenia przez listy numerowane lub punktowane. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3290" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3290">#3290</a>)</li>
 </ul>
-<h3 id="changes-for-developers_37">Changes for Developers</h3>
+<h3 id="changes-for-developers_38">Changes for Developers</h3>
 <ul>
 <li>NVDA now has unified support for add-on documentation. See the Add-on Documentation section of the Developer Guide for details. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2694" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2694">#2694</a>)</li>
 <li>When providing gesture bindings on a ScriptableObject via __gestures, it is now possible to provide the None keyword as the script. This unbinds the gesture in any base classes. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4240" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4240">#4240</a>)</li>
@@ -3942,7 +3954,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>Monitor brajlowski Papenmeier może teraz być używany, nawet jeśli nie był wcześniej podłączony przez USB. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3712" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3712">#3712</a>)</li>
 <li>NVDA nie zawiesza się teraz, gdy wybrano starsze modele monitora brajlowskiego Papenmeier BRAILLEX, a urządzenie nie jest podłączone.</li>
 </ul>
-<h3 id="changes-for-developers_38">Changes for Developers</h3>
+<h3 id="changes-for-developers_39">Changes for Developers</h3>
 <ul>
 <li>AppModules now contain productName and productVersion properties. This info is also now included in Developer Info (NVDA+f1). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1625" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1625">#1625</a>)</li>
 <li>In the Python Console, you can now press the tab key to complete the current identifier. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/433" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #433">#433</a>)</li>
@@ -3984,7 +3996,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>Naprawiono problem powodujący w niektórych przypadkach błąd sterownika Freedom Scientific, gdy port był ustawiony na USB. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3509" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3509">#3509</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3662" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3662">#3662</a>)</li>
 <li>Naprawiony problem niewykrywania klawiszy naciskanych na monitorach Freedom Scientific w niektórych sytuacjach. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3401" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3401">#3401</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3662" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3662">#3662</a>)</li>
 </ul>
-<h3 id="changes-for-developers_39">Changes for Developers</h3>
+<h3 id="changes-for-developers_40">Changes for Developers</h3>
 <ul>
 <li>You can specify the category to be displayed to the user for scripts using the scriptCategory attribute on ScriptableObject classes and the category attribute on script methods. See the documentation for baseObject.ScriptableObject for more details. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1532" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1532">#1532</a>)</li>
 <li>config.save is deprecated and may be removed in a future release. Use config.conf.save instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/667" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #667">#667</a>)</li>
@@ -4056,7 +4068,7 @@ Proszę zauważyć, że ta wersja NVDA nie obsługuje Windows XP ani Windows Vis
 <li>NVDA nie powoduje od teraz awarii bądź zawieszania Adobe Readera przy czytaniu niektórych źle sformatowanych dokumentów PDF zawierających wiersze tabel poza tabelą. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3399" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3399">#3399</a>)</li>
 <li>NVDA obecnie prawidłowo wykrywa następny slajd, gdy usuwany jest slajd w widoku miniatur Microsoft PowerPoint. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3415" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3415">#3415</a>)</li>
 </ul>
-<h3 id="changes-for-developers_40">Changes for Developers</h3>
+<h3 id="changes-for-developers_41">Changes for Developers</h3>
 <ul>
 <li>windowUtils.findDescendantWindow has been added to search for a descendant window (HWND) matching the specified visibility, control ID and/or class name.</li>
 <li>The remote Python console no longer times out after 10 seconds while waiting for input. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3126" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3126">#3126</a>)</li>
@@ -4168,7 +4180,7 @@ Wszystkie zmiany znajdują się w <a href="keyCommands.html" title="Liście klaw
 <li>NVDA nie zawiesza się, gdy używane jest wprowadzanie znaków azjatyckich w niektórych aplikacjach .NET. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3005" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3005">#3005</a>)</li>
 <li>Możliwe jest teraz używanie trybu czytania na stronach w Internet Explorer 10 w trybie zgodności; np. strona logowania <a href="http://www.gmail.com" rel="noopener" target="_blank" title="www.gmail.com">www.gmail.com</a>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3151" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3151">#3151</a>)</li>
 </ul>
-<h3 id="changes-for-developers_41">Changes for Developers</h3>
+<h3 id="changes-for-developers_42">Changes for Developers</h3>
 <ul>
 <li>Braille display drivers can now support manual port selection. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/426" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #426">#426</a>)</li>
 <li>This is most useful for braille displays which support connection via a legacy serial port.</li>
@@ -4215,7 +4227,7 @@ Wszystkie zmiany znajdują się w <a href="keyCommands.html" title="Liście klaw
 <li>Obsługa nowszych monitorów Papenmeyer BrailleX. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1265" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1265">#1265</a>)</li>
 <li>Informacja o pozycji na liście plików np. jeden z cztery, jest podawana w systemie windows7 i nowszych. Dotyczy to także dowolnych kontrolek UI Automation które to wspierają. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2643" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2643">#2643</a>)</li>
 </ul>
-<h3 id="changes-for-developers_42">Changes for Developers</h3>
+<h3 id="changes-for-developers_43">Changes for Developers</h3>
 <ul>
 <li>Previous log file is now copied to nvda-old.log on NVDA initialization. Therefore, if NVDA crashes or is restarted, logging information from that session is still accessible for inspection. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/916" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #916">#916</a>)</li>
 <li>Fetching the role property in chooseNVDAObjectOverlayClasses no longer causes the role to be incorrect and thus not reported on focus for certain objects such as Windows command consoles and Scintilla controls. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2569" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2569">#2569</a>)</li>
@@ -4247,7 +4259,7 @@ Wszystkie zmiany znajdują się w <a href="keyCommands.html" title="Liście klaw
 <ul>
 <li>NVDA jest teraz rozpowszechniany wyłącznie w jednym pakiecie instalacyjnym, po uruchomieniu którego użytkownik może samodzielnie utworzyć wersję przenośną bądź zainstalować screenreader. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1715" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1715">#1715</a>)</li>
 </ul>
-<h3 id="changes-for-developers_43">Changes for Developers</h3>
+<h3 id="changes-for-developers_44">Changes for Developers</h3>
 <ul>
 <li>Due to the replacement of the previous NSIS installer for NVDA with a built-in installer in Python, it is no longer necessary for translaters to maintain a langstrings.txt file for the installer. All localization strings are now managed by gettext po files.</li>
 </ul>
@@ -4275,7 +4287,7 @@ Wszystkie zmiany znajdują się w <a href="keyCommands.html" title="Liście klaw
 <li>Tryb przeglądania jest używany także dla pełnoekranowej zawartości adobe flash.</li>
 <li>Jakość dźwięku syntezatorów sapi 5, gdy urządzenie wyjściowe ustawione zostanie na kartę inną od domyślnego mapowania dźwięku windows powinna być leprza. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/749" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #749">#749</a>)</li>
 </ul>
-<h3 id="changes-for-developers_44">Changes for Developers</h3>
+<h3 id="changes-for-developers_45">Changes for Developers</h3>
 <ul>
 <li>There is now a remote Python console for situations where remote debugging is useful. See the Developer Guide for details.</li>
 <li>The base path of NVDA's code is now stripped from tracebacks in the log to improve readability. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1880" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1880">#1880</a>)</li>
@@ -4329,7 +4341,7 @@ Najważniejsze cechy tego wydania to dodana funkcjonalność automatycznej zmian
 <li>Powinno zdarzać się mniej sytuacji, w których stabilność NVDA zależy od aktywnej aplikacji i jej zawieszenie powoduje równierz zawieszenie screenreadera. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1408" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1408">#1408</a>)</li>
 <li>NVDA nie odmawia renderowania tekstu w trybie przeglądania Mozilla Firefox w pewnych specyficznych sytuacjach. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1373" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1373">#1373</a>)</li>
 </ul>
-<h3 id="changes-for-developers_45">Changes for Developers</h3>
+<h3 id="changes-for-developers_46">Changes for Developers</h3>
 <ul>
 <li>NVDA can now instruct speech synthesizers to switch languages for particular sections of speech.</li>
 <li>To support this, drivers must handle speech.LangChangeCommand in sequences past to SynthDriver.speak().</li>
@@ -4378,7 +4390,7 @@ Najważniejsze cechy tego wydania to dodana funkcjonalność automatycznej zmian
 <li>Gdy brajl jest związany z kursorem przeglądu, i gdy obiekt w hierarchii nawigacji przenosi się do wirtualnego bufora jak strona www, wiadomość w programie pocztowym, dokument pdf czy to ręcznie, czy to przez zmianę punktu uwagi, zawartość bufora jest już wyświetlana na monitorze brajlowskim. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1306" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1306">#1306</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1307" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1307">#1307</a>)</li>
 <li>Niektóre znaki interpunkcyjne nie będą już odczytywane przez pewne syntezatory  gdy ich odczyt zostanie wyłączony. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/332" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #332">#332</a>)</li>
 </ul>
-<h3 id="changes-for-developers_46">Changes for Developers</h3>
+<h3 id="changes-for-developers_47">Changes for Developers</h3>
 <ul>
 <li>Developer documentation can now be generated using SCons. See readme.txt at the root of the source distribution for details, including associated dependencies.</li>
 <li>Locales can now provide descriptions for characters. See the Character Descriptions section of the Developer Guide for details. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/55" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #55">#55</a>)</li>
@@ -4471,7 +4483,7 @@ Problemu nie rozwiązano dla języka arabskiego, w którym nadal nie można czyt
 <li>Screenreader nie odczytuje już całego tekstu kodu w Visual studio 2008 i 2005 przy próbie wprowadzenia jakiego kolwiek znaku. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/975" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #975">#975</a>)</li>
 <li>Punkt uwagi pojawiający się jako pierwszy, nie jest odczytywany dwa razy gdy NVDA wystartuje. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1359" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1359">#1359</a>)</li>
 </ul>
-<h3 id="changes-for-developers_47">Changes for Developers</h3>
+<h3 id="changes-for-developers_48">Changes for Developers</h3>
 <ul>
 <li>SCons is now used to prepare the source tree and create binary builds, portable archives, installers, etc. See readme.txt at the root of the source distribution for details.</li>
 <li>The key names used by NVDA (including key maps) have been made more friendly/logical; e.g. upArrow instead of extendedUp and numpadPageUp instead of prior. See the vkCodes module for a list.</li>
