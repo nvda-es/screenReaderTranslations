@@ -806,7 +806,7 @@ Dodane su nove brajične tablice za gruzijski, Swahili (Kenija) i Chichewa (Mala
 
 Upozorenje:
 
-U ovoj inačici narušena je kompatibilnost s postojećim dodacima.
+* U ovoj inačici narušena je kompatibilnost s postojećim dodacima.
 
 ### Nove značajke
 
@@ -1361,7 +1361,7 @@ Napomena:
 * NVDA će sada upozoriti o parametrima komandne linije koji su nepoznati i a dodaci ih ne koriste. (#12795)
 * Kada se pristupa programu Microsoft Word uz UI Automation, NVDA će sada koristiti mathPlayer za kretanje  po matematičkim zadacima i čitanje. (#12946)
   * Kako bi ovo  radilo, morate koristiti Microsoft Word 365/2016 verziju 14326 ili novije. 
-    * MathType zadaci se takođe moraju ručno pretvoriti u Office Math izborom svakog od njih, otvaranjem kontekstnog menija, izborom stavke opcije jednadžba, pretvori u  Office Math.
+  * MathType zadaci se takođe moraju ručno pretvoriti u Office Math izborom svakog od njih, otvaranjem kontekstnog menija, izborom stavke opcije jednadžba, pretvori u  Office Math.
 * Prijavljivanje kada objekat  "ima detalje " kao i odgovarajuća komanda za prijavljivanje odnosa detalja sada se mogu koristiti u režimu fokusiranja. (#13106)
 * Seika brajična bilježnica se sada može automatski prepoznati putem USB i Bluetooth veze. (#13191, #13142)
   * Ovo utiče na slijedeće uređaje: MiniSeika (16, 24 znakova), V6, i V6Pro (40 znakova)
@@ -1383,7 +1383,7 @@ Napomena:
   * Dodana brajična tablica Katalonsko puno pismo. (#13408)
 * NVDA će izgovarati označavanje i spajanje ćelija u programu LibreOffice Calc 7.3 i novijim. (#9310, #6897)
 * Ažuriran Unicode Common Locale Data Repository (CLDR) na 40.0. (#12999)
-* ``NVDA+numerička tipka za brisanje `` podrazumjevano prijavljuje lokaciju kursora ili fokusiranog objekta. (#13060)
+* `NVDA+numerička tipka za brisanje ` podrazumjevano prijavljuje lokaciju kursora ili fokusiranog objekta. (#13060)
 * `NVDA+šift+numerička tipka za brisanje` prijavljuje lokaciju preglednog kursora. (#13060)
 * Dodani podrazumjevani prečaci za uključivanje i isključivanje modifikatorskih tastera na Freedom Scientific brajevim redovima (#13152)
 * "Osnovna linija " se više neće izgovarati kada se koristi prečac za prijavljivanje oblikovanja  (`NVDA+f`). (#11815)
@@ -1516,8 +1516,8 @@ Molimo odgovorno prijavite sigurnosne probleme na adresu  <info@nvaccess.org>.
   * Uklonjena mogućnost otvaranja dijaloga ulaznih gesti u bezbednom načinu rada.
   * Uklonjena mogućnost otvaranja podrazumijevanog, privremenog i govornog rječnika u sigurnosnom načinu rada.
 * Ispravljena sigurnosna preporuka `GHSA-mvc8-5rv9-w3hx`. (#13487)
-  -  wx GUI inspection alat je sada onemogućena u sigurnom načinu rada.
-  
+  * wx GUI inspection alat je sada onemogućena u sigurnom načinu rada.
+
 ## 2021.3.3
 
 Ova verzija je identična verziji 2021.3.2.
@@ -1569,8 +1569,8 @@ Korisnici koji su se susreli sa tom greškom će trebati ručno preuzeti ovu nad
 
 * Dodan prečac za uključivanje ili isključivanje izgovoraa stila granice rubova. (#10408)
 * Podrška nove HID specifikacije za brajične redke koja ima za cilj standardizaciju podrške brajičnih redaka. (#12523)
- * NVDA će automatski prepoznavati uređaje koji podržavaju ovu specifikaciju.
- * Za tehničke detalje o NVDA implementaciji ove specifikacije, pogledajte https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md
+  * NVDA će automatski prepoznavati uređaje koji podržavaju ovu specifikaciju.
+  * Za tehničke detalje o NVDA implementaciji ove specifikacije, pogledajte https://github.com/nvaccess/nvda/blob/master/devDocs/hidBrailleTechnicalNotes.md
 * Dodana podrška za  VisioBraille Vario 4 brajični redak. (#12607)
 * Obavijesti o pogreškama mogu biti uključene (napredne postavkew) kada se koristi bilo koja inačica NVDA. (#12672)
 * Pri korištenju Windowsa 10 i novijih inačica, NVDA će izgovarati broj sugestija prilikom upisivanja upita pretrage u programima poput postavki i Microsoft Storea. (#7330, #12758, #12790)
@@ -1585,7 +1585,7 @@ Korisnici koji su se susreli sa tom greškom će trebati ručno preuzeti ovu nad
 Ako vam je ta značajka potrebna molimo dodijelite odgovarajući tipkovnički prečac u kategoriji objektna navigacija u dijaloškom okviru ulazne geste. (#8600)
 * Prilikom otvaranja postavki koje su već otvorene, NVDA će postaviti fokus na dijaloški okvir koji je već otvoren što je bolje od prikazivanja pogreške. (#5383)
 * Nadograđen liblouis brajični prevoditelj na inačicu [3.19.0](https://github.com/liblouis/liblouis/releases/tag/v3.19.0). (#12810)
- * Nove brajične tablice: ruski kratkopis, Tshivenda puno pismo, Tshivenda kratkopis
+  * Nove brajične tablice: ruski kratkopis, Tshivenda puno pismo, Tshivenda kratkopis
 * Umjesto "označeni sadržaj" ili "mrkd", "istaknuto" ili "istk." biti će prikazano na brajičnom retku. (#12892)
 * NVDA više se neće pokušati isključiti kada se očekuje konkretna izvršena akcija u dijaloškom okviru (eg Confirm/Cancel). (#12984)
 
@@ -1699,8 +1699,8 @@ Kao i puno ispravaka grešaka i unapređenja, uključujući ispravke grešaka u 
 
 Upozorenje:
 
-* Ova inačica zahtjeva nadogradnju na novije inačice dodataka.
-* Ova inačica također ukida podršku za tehnologiju Adobe flash.
+ * Ova inačica zahtjeva nadogradnju na novije inačice dodataka.
+ * Ova inačica također ukida podršku za tehnologiju Adobe flash.
 
 ### Nove značajke
 
@@ -1710,6 +1710,7 @@ Upozorenje:
   * alt+strelice gore/dolje skače na prethodni odnosno sljedeći rezultat (add shift for selecting).
   * control+l briše okno rezultata.
 * NVDA sada izgovara kategorije zadataka u Microsoft Outlooku, ako postoje. (#11598)
+* Podrška za Seika brajičnu bilježnicu tvrtke Nippon Telesoft. (#11514)
 
 ### Izmjene
 
