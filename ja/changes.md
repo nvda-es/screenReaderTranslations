@@ -1788,7 +1788,7 @@ Microsoft Office、Visual Studio、およびいくつかの言語に関する多
 * REASON_QUICKNAV は browseMode から削除されました - かわりに controlTypes.OutputReason.QUICKNAV を使用します。 (#11969)
 * `NVDAObject` (およびその派生) のプロパティ `isCurrent` は Enum クラス `controlTypes.IsCurrent` を返します。 (#11782)
   * `isCurrent` は Optional ではありません。つまり None を返さなくなりました。
-  * オブジェクトが current でない場合は `controlTypes.IsCurrent.NO` を返します。
+    * オブジェクトが current でない場合は `controlTypes.IsCurrent.NO` を返します。
 * `controlTypes.isCurrentLabels` のマッピングを削除しました。 (#11782)
   * かわりに `controlTypes.IsCurrent` enum 値の `displayString` プロパティを使います。例えば `controlTypes.IsCurrent.YES.displayString` です。
     * 例: `controlTypes.IsCurrent.YES.displayString`
@@ -3875,7 +3875,7 @@ NVDA 2019.3は非常に重要なリリースです。Python 2からPython 3へ�
 * Microsoft Outlook 2007 のメールアドレス入力で、自動補完候補をNVDAが通知するようになりました。 (#689)
 * 新しい eSpeak の音声 Gene および Gene2 が追加されました。 (#2512)
 * Adobe Readerにおいて、ページ番号を通知するようになりました。 (#2534)
-* Reader XI において、ページのラベルが存在すれば、セクションごとにページ番号のつけかたが変わっていても、通知されるようになりました。過去のバージョンでは、連続的なページ番号しか通知できませんでした。
+ * Reader XI において、ページのラベルが存在すれば、セクションごとにページ番号のつけかたが変わっていても、通知されるようになりました。過去のバージョンでは、連続的なページ番号しか通知できませんでした。
 * NVDA+コントロール+R をすばやく3回押すか、NVDA メニューの"設定をリセットして初期値に戻す"を選ぶことで、NVDA の設定を初期化できるようになりました。 (#2086)
 * 日本テレソフトの点字ディスプレイ清華バージョン3,4,5および清華80に対応しました。 (#2452)
 * Freedom Scientific の PAC Mate と Focus Braille 点字ディスプレイで前後へのスクロールができるようになりました。 (#2556)
