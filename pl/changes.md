@@ -1499,7 +1499,7 @@ Prosimy o odpowiedzialne ujawnianie <info@nvaccess.org> problemów związanych z
 
 ### Poprawki bezpieczeństwa
 
-* Rozwiązano problem z poradnikiem bezpieczeństwa GHSA-xc5m-v23f-pgr7.
+* Rozwiązano problem z poradnikiem bezpieczeństwa `GHSA-xc5m-v23f-pgr7`.
   * Okno dialogowe wymowy symbolu jest teraz wyłączone w trybie bezpiecznym.
 
 ## 2021.3.4
@@ -1509,16 +1509,12 @@ Prosimy o odpowiedzialne ujawnianie <info@nvaccess.org> problemów związanych z
 
 ### Poprawki bezpieczeństwa
 
-— Rozwiązano problem z poradnikiem bezpieczeństwa GHSA-354r-wr4v-cx28. (#13488)
-
+* Rozwiązano problem z poradnikiem bezpieczeństwa GHSA-354r-wr4v-cx28. (#13488)
   * Usuń możliwość uruchamiania NVDA z włączonym rejestrowaniem debugowania, gdy NVDA działa w trybie bezpiecznym.
   * Usuń możliwość aktualizacji NVDA, gdy NVDA działa w trybie bezpiecznym.
-
 * Rozwiązano problem z poradnikiem bezpieczeństwa GHSA-wg65-7r23-h6p9. (#13489)
-
   * Usuń możliwość otwierania okna dialogowego gestów wejściowych w trybie bezpiecznym.
   * Usuń możliwość otwierania domyślnych, tymczasowych i głosowych okien dialogowych słownika w trybie bezpiecznym.
-
 * Rozwiązano problem z poradnikiem bezpieczeństwa GHSA-mvc8-5rv9-w3hx. (#13487)
   * wx narzędzie do inspekcij okien jest od teraz wyłączone w trybie bezpiecznym.
 
