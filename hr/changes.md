@@ -691,9 +691,9 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
   * Kada se prebacite na neku drugu ćeliju u programu LibreOffice Calc, NVDA više neće neispravno izgovarati koordinate prethodno fokusirane ćelije kada se izgovor koordinata ćelija onemogući u NVDA postavkama. (#15098)
 * Promjene za brajične redke:
   * Kada se koristi brajični redak uz pomoć upravljačkog programa za Hid brajični standard, dpad se sada može koristiti za emuliranje strelica tipkovnice i entera.
-Takođe,  `razmaknica+točka1` i `razmaknica+točka4` sada se koriste kao strelice dole i gore. (#14713)
+  Takođe,  `razmaknica+točka1` i `razmaknica+točka4` sada se koriste kao strelice dole i gore. (#14713)
   * Ažuriranja dinamičkog sadržaja na Web stranicama (ARIA žive regije) se sada prikazuju na brajičnom redku.
-Ovo se može onemogućiti na panelu naprednih postavki. (#7756)
+  Ovo se može onemogućiti na panelu naprednih postavki. (#7756)
 * Simboli crtica i spojnica će uvijek biti poslani sintetizatoru. (#13830)
 * Udaljenost koju Microsoft Word čita će sada poštovati mjernu jedinicu koja je postavljena u naprednim postavkama Worda čak i kada se koristi UIA za pristup Word dokumentima. (#14542)
 * NVDA brže reagira kada se pomiće kursor u kontrolama za uređivanje. (#14708)
@@ -719,7 +719,7 @@ Ovo se može onemogućiti na panelu naprednih postavki. (#7756)
   * Kada pokušavate čitati adresu poveznice bez href atributa NVDA više neće biti bez govora.
   Umjesto toga NVDA će prijaviti da poveznica  nema odredište. (#14723)
   * U modusu pretraživanja, NVDA neće neispravno ignorirati pomeranje fokusa na glavnu kontrolu ili kontrolu unutar nje na primer pomicanje sa kontrole na njenu unutrašnju stavku popisa ili ćeliju mreže. (#14611)
-   * Napomena međutim da se ova ispravka primenjuje samo kada je opcija "Automatsko postavljanje fokusa na stavke koje se mogu fokusirati" u postavkama modusa pretraživanja isključena (što je podrazumevano postaka).
+    * Napomena međutim da se ova ispravka primenjuje samo kada je opcija "Automatsko postavljanje fokusa na stavke koje se mogu fokusirati" u postavkama modusa pretraživanja isključena (što je podrazumevano postaka).
 * Ispravke za Windows 11:
   * NVDA ponovo može izgovarati sadržaj trake stanja u bloku za pisanje. (#14573)
   * Prebacivanje između kartica će izgovoriti ime i poziciju nove kartice u bloku za pisanje i upravitelju datoteka. (#14587, #14388)
@@ -805,6 +805,7 @@ eSpeak, LibLouis, Sonic povećivač brzine i Unicode su ažurirani.
 Dodane su nove brajične tablice za gruzijski, Swahili (Kenija) i Chichewa (Malawi).
 
 Upozorenje:
+
 U ovoj inačici narušena je kompatibilnost s postojećim dodacima.
 
 ### Nove značajke
