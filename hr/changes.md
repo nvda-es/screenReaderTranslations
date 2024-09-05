@@ -619,7 +619,7 @@ Starting from NVDA 2024.1, in order for the base method to use `bdDetect.driverH
 ## 2023.2
 
 Ova verzija dodaje add-on store koja Zamjenjuje upravljanje dodacima.
-U  dAdd-on storeu možete pregledavati, pretraživati, instalirati i ažurirati dodatke zajednice.
+U  Add-on storeu možete pregledavati, pretraživati, instalirati i ažurirati dodatke zajednice.
 Sada možete ručno ignorirati probleme kompatibilnosti sa zastarjelim dodacima na vlastitu odgovornost.
 
 Dodane su nove funkcije za brajične redke, prečice i novi podržani brajični redci.
@@ -637,7 +637,7 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
   * Ručno učitajte nekompatibilne NVDA dodatke.
   * upravitelj dodacima je uklonjen i zamenjen add-on store.
   * za više informacija molimo pročitajte ažurirani korisnički priručnik.
-* Nove Novi prečaci:
+* Novi prečaci:
   * Nova ulazna gesta bez dodijeljenog prečaca za kruženje kroz dostupne jezike za Windows OCR. (#13036)
   * nova ulazna gesta bez dodijeljenog prečaca za kruženje kroz moduse prikazivanja poruka na brajičnom redku. (#14864)
   * Ulazna gesta bez dodijeljenog prečaca za uključivanje ili isključivanje indikacije označavanja. (#14948)
@@ -695,7 +695,6 @@ eSpeak-NG, LibLouis braille translator, i Unicode CLDR su ažurirani.
 Takođe,  `razmaknica+točka1` i `razmaknica+točka4` sada se koriste kao strelice dole i gore. (#14713)
   * Ažuriranja dinamičkog sadržaja na Web stranicama (ARIA žive regije) se sada prikazuju na brajičnom redku.
 Ovo se može onemogućiti na panelu naprednih postavki. (#7756)
--
 * Simboli crtica i spojnica će uvijek biti poslani sintetizatoru. (#13830)
 * Udaljenost koju Microsoft Word čita će sada poštovati mjernu jedinicu koja je postavljena u naprednim postavkama Worda čak i kada se koristi UIA za pristup Word dokumentima. (#14542)
 * NVDA brže reagira kada se pomiće kursor u kontrolama za uređivanje. (#14708)
@@ -722,8 +721,6 @@ Ovo se može onemogućiti na panelu naprednih postavki. (#7756)
   Umesto toga NVDA će prijaviti da poveznica  nema odredište. (#14723)
   * U modusu pretraživanja, NVDA neće neispravno ignorirati pomeranje fokusa na glavnu kontrolu ili kontrolu unutar nje na primer pomicanje sa kontrole na njenu unutrašnju stavku popisa ili ćeliju mreže. (#14611)
    * Napomena međutim da se ova ispravka primenjuje samo kada je opcija "Automatsko postavljanje fokusa na stavke koje se mogu fokusirati" u postavkama modusa pretraživanja isključena (što je podrazumevano postaka).
-    -
--
 * Ispravke za Windows 11:
   * NVDA ponovo može izgovarati sadržaj trake stanja u bloku za pisanje. (#14573)
   * Prebacivanje između kartica će izgovoriti ime i poziciju nove kartice u bloku za pisanje i upravitelju datoteka. (#14587, #14388)
