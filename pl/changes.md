@@ -1234,15 +1234,15 @@ LibLouis został zaktualizowany. Zawiera on nową niemiecką tablicę brajlowsk�
 
 * Obsługa interakcji ze składnikami Microsoft Loop w produktach Microsoft Office. (#13617)
 * Dodano nowe polecenia nawigacji po tabeli. (#957)
- * control+alt+home/end, aby przejść do pierwszej/ostatniej kolumny.
- * control+alt+pageUp/pageDown, aby przejść do pierwszego/ostatniego wiersza.
+ * `control+alt+home/end`, aby przejść do pierwszej/ostatniej kolumny.
+ * `control+alt+pageUp/pageDown`, aby przejść do pierwszego/ostatniego wiersza.
 * Dodano nieprzypisany skrypt do przełączania między trybami przełączania języka i dialektu. (#10253)-
 
 ### Zmiany
 
 * NSIS został zaktualizowany do wersji 3.08. (#9134)
 * CLDR został zaktualizowany do wersji 41.0. (#13582)
-— Zaktualizowano translator alfabetu Braille'a LibLouis do [3.22.0](https://github.com/liblouis/liblouis/releases/tag/v3.22.0). (#13775)
+* Zaktualizowano translator alfabetu Braille'a LibLouis do [3.22.0](https://github.com/liblouis/liblouis/releases/tag/v3.22.0). (#13775)
   * Nowa tablica brajlowska: niemiecki skróty (dwukierunkowe)
 * Dodano nową rolę dla kontrolek "wskaźnika zajętości". (#10644)
 * NVDA ogłasza teraz, kiedy nie można wykonać akcji NVDA. (#13500)
@@ -1262,12 +1262,12 @@ LibLouis został zaktualizowany. Zawiera on nową niemiecką tablicę brajlowsk�
   * NVDA będzie czytać stan przełączników. (#9728)
   * NVDA zidentyfikuje teraz okno w aplikacji Java z wieloma oknami. (#9184)
   * NVDA będzie teraz czytać informacje o pozycji dla kontrolek kart właściwosci. (#13744)
-  -- Poprawki Braille'a:
+ * Poprawki Braille'a:
   * Naprawiono wyjście brajla podczas nawigacji po pewnym tekście w kontrolkach edycji w aplikacjach mozilla, takich jak sporządzanie wiadomości w Thunderbirdzie. (#12542)
   * Gdy alfabet Braillea jest automatycznie powiązany, a mysz jest poruszana z włączonym śledzeniem myszy,
    Polecenia przeglądania tekstu aktualizują teraz monitor brajlowski zawartoscią mówioną. (#11519)
   * Możliwe jest teraz przesuwanie wyświetlacza brajlowskiego po treści za pomocą poleceń przeglądania tekstu. (#8682)
-  -- Instalator NVDA może teraz uruchamiać się z katalogów ze znakami specjalnymi. (#13270)
+ * Instalator NVDA może teraz uruchamiać się z katalogów ze znakami specjalnymi. (#13270)
 * W Firefoksie NVDA nie zgłasza już elementów na stronach internetowych, gdy atrybuty aria-rowindex, aria-colindex, aria-rowcount lub aria-colcount są nieprawidłowe. (#13405)
 * Kursor nie przełącza już wiersza ani kolumny podczas korzystania z nawigacji po tabeli do nawigacji po scalonych komórkach. (#7278)
 * Podczas czytania nieinteraktywnych plików PDF w programie Adobe Reader typ i stan pól formularza (takich jak pola wyboru i przyciski opcji) są teraz raportowane. (#13285)
@@ -1275,7 +1275,7 @@ LibLouis został zaktualizowany. Zawiera on nową niemiecką tablicę brajlowsk�
 * Wszelkie zablokowane przyciski myszy zostaną odblokowane po wyjściu z NVDA, wcześniej przyciski myszy pozostawały zablokowany. (#13410)
 * Program Visual Studio zgłasza teraz numery wierszy. (#13604)
   * Zauważ, że aby raportowanie numerów wierszy działało, pokazywanie numerów wierszy musi być włączone w Visual Studio i NVDA.
-  -- Program Visual Studio teraz poprawnie zgłasza wcięcia linii. (#13574)
+ * Program Visual Studio teraz poprawnie zgłasza wcięcia linii. (#13574)
 * NVDA po raz kolejny ogłosi szczegóły wyników wyszukiwania w menu Start w ostatnich wydaniach Windows 10 i 11. (#13544)
 * W Windows 10 i 11 Calculator w wersji 10.1908 i nowszych,
 NVDA ogłosi wyniki po naciśnięciu większej liczby poleceń, takich jak polecenia z trybu naukowego. (#13383)
@@ -1355,6 +1355,7 @@ Uwaga:
 
 ### Nowości
 
+* Obsługa notatek raportowania w MS Excel z włączoną UIA w systemie Windows 11. (#12861)
 * W ostatnich kompilacjach programu Microsoft Word za pośrednictwem UIA w systemie Windows 11 istnienie zakładek, komentarzy roboczych i rozwiązanych komentarzy jest teraz zgłaszane zarówno w mowie, jak i alfabecie Braille'a. (#12861)
 * Nowy parametr wiersza poleceń --lang umożliwia zastąpienie skonfigurowanego języka NVDA. (#10044)
 * NVDA ostrzega teraz o parametrach wiersza poleceń, które są nieznane i nie są używane przez żadne dodatki. (#12795)
@@ -1365,8 +1366,7 @@ Uwaga:
 * Seika Notetaker może być teraz automatycznie wykrywany po podłączeniu przez USB i Bluetooth. (#13191, #13142)
   * Dotyczy to następujących urządzeń: MiniSeika (16, 24 komórek), V6 i V6Pro (40 komórek)
   * Ręczne wybieranie portu COM Bluetooth jest teraz również obsługiwane.
-  -- Dodano polecenie przełączania przeglądu brajlowskiej; nie ma domyślnie skojarzonego gestu. (#13258)
-  * Obsługa notatek raportowania w MS Excel z włączoną UIA w systemie Windows 11. (#12861)
+  * Dodano polecenie przełączania przeglądu brajlowskiej; nie ma domyślnie skojarzonego gestu. (#13258)
 * Dodano polecenia do przełączania wielu modyfikatorów jednocześnie z wyświetlaczem Braille'a (#13152)
 * Okno dialogowe Słownik mowy zawiera teraz przycisk "Usuń wszystko", aby pomóc wyczyścić cały słownik. (#11802)
 * Dodano obsługę Kalkulatora Windows 11. (#13212)
