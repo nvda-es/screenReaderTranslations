@@ -1280,7 +1280,7 @@ LibLouis is bijgewerkt, wat een nieuwe Duitse brailletabel bevat.
 * In Windows 10 en 11 Calculator versie 10.1908 en later
 kondigt NVDA resultaten aan wanneer er meer opdrachten worden gegeven, zoals opdrachten in de wetenschappelijke modus. (#13383)
 * In Windows 11 is het opnieuw mogelijk om te navigeren en te communiceren met gebruikersinterface-elementen,
-  zoals de taakbalk en Taakweergave met behulp van muis- en aanraakinteracties. (#13506)
+zoals de taakbalk en Taakweergave met behulp van muis- en aanraakinteracties. (#13506)
 * NVDA kondigt de inhoud van de statusbalk aan in Windows 11 Kladblok. (#13688)
 * Het navigatieobject wordt nu onmiddellijk gemarkeerd bij het activeren van de functie. (#13641)
 * Oplossing voor het lezen van items in lijstweergaven met één kolom. (#13659, #13735)
@@ -1351,7 +1351,7 @@ eSpeak-NG en LibLouis zijn bijgewerkt, met nieuwe Japanse, Duitse en Catalaanse 
 
 Opmerking:
 
-* Deze release maakt bestaande add-ons incompatibel.
+ * Deze release maakt bestaande add-ons incompatibel.
 
 ### Nieuwe functies
 
@@ -1372,7 +1372,7 @@ Opmerking:
 * Ondersteuning toegevoegd voor de Windows 11 Rekenmachine. (#13212)
 * In Microsoft Word met UI Automation ingeschakeld op Windows 11 kunnen nu regelnummers en sectienummers worden gemeld. (#13283, #13515)
 * Voor Microsoft Office 16.0.15000 en hoger op Windows 11 gebruikt NVDA standaard UI Automation om toegang te krijgen tot Microsoft Word-documenten, wat een aanzienlijke prestatieverbetering biedt ten opzichte van de oude Object Model-toegang. (#13437)
-  * Dit geldt voor documenten in Microsoft Word zelf, en ook voor de berichtlezer en -componist in Microsoft Outlook.
+ * Dit geldt voor documenten in Microsoft Word zelf, en ook voor de berichtlezer en -componist in Microsoft Outlook.
 
 ### Veranderingen
 
@@ -1586,6 +1586,7 @@ Als u deze functionaliteit nodig hebt, wijst u een invoerhandeling toe aan het j
 * Bij het openen van een instellingendialoogvenster dat al geopend is, stelt NVDA de focus in op het bestaande dialoogvenster in plaats van een foutmelding te geven. (#5383)
 * Liblouis braillevertaler bijgewerkt naar [3.19.0](https://github.com/liblouis/liblouis/releases/tag/v3.19.0). (#12810)
   * Nieuwe brailletabellen: Russisch graad 1, Tshivenda graad 1, Tshivenda graad 2
+* Instead of "marked content" or "mrkd", "highlight" or "hlght" will be announced for speech and braille respectively. (#12892)
 * NVDA zal niet langer proberen af ​​te sluiten wanneer dialoogvensters wachten op een vereiste actie (bijv. Bevestigen/Annuleren). (#12984)
 
 ### Opgeloste problemen
