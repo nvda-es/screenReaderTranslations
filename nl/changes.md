@@ -250,7 +250,8 @@ Wanneer spraak op aanvraag is, spreekt NVDA niet automatisch (bijv. bij het verp
 
 ### Veranderingen
 
-* NVDA ondersteunt niet langer Windows 7 en Windows 8. Windows 8.1 is de minimaal ondersteunde Windows-versie. (#15544)
+* NVDA ondersteunt niet langer Windows 7 en Windows 8.
+Windows 8.1 is de minimaal ondersteunde Windows-versie. (#15544)
 * Componentupdates:
   * LibLouis braillevertaler bijgewerkt naar [3.28.0](https://github.com/liblouis/liblouis/releases/tag/v3.28.0). (#15435, #15876, @codeofdusk)
     * Nieuwe Thaise, Roemeense en Filippijnse brailletabellen toegevoegd.
