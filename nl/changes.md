@@ -265,10 +265,13 @@ Windows 8.1 is de minimaal ondersteunde Windows-versie. (#15544)
 * Microsoft Office:
   * Bij het opvragen van opmaakinformatie over Excel-cellen worden randen en achtergrond alleen gerapporteerd als er dergelijke opmaak is. (#15560, @CyrilleB79)
   * NVDA rapporteert opnieuw geen ongenummerde groepen meer zoals in recente versies van Microsoft Office 365-menu's. (#15638)
-* De opties voor het audio-uitvoerapparaat en ducking-modus zijn verwijderd uit het dialoogvenster "Selecteer synthesizer". Deze opties zijn te vinden in het audio-instellingenpaneel dat kan worden geopend met `NVDA+control+u`. (#15512, @codeofdusk)
-* De optie "Rol rapporteren wanneer muis object binnenkomt" in de muisinstellingen van NVDA is hernoemd naar "Object rapporteren wanneer muis het binnenkomt". Deze optie meldt nu aanvullende relevante informatie over een object wanneer de muis het binnenkomt, zoals statussen (aangevinkt/ingedrukt) of celcoördinaten in een tabel. (#15420, @LeonarddeR)
+* De opties voor het audio-uitvoerapparaat en ducking-modus zijn verwijderd uit het dialoogvenster "Selecteer synthesizer".
+Deze opties zijn te vinden in het audio-instellingenpaneel dat kan worden geopend met `NVDA+control+u`. (#15512, @codeofdusk)
+* De optie "Rol rapporteren wanneer muis object binnenkomt" in de muisinstellingen van NVDA is hernoemd naar "Object rapporteren wanneer muis het binnenkomt".
+Deze optie meldt nu aanvullende relevante informatie over een object wanneer de muis het binnenkomt, zoals statussen (aangevinkt/ingedrukt) of celcoördinaten in een tabel. (#15420, @LeonarddeR)
 * Nieuwe items zijn toegevoegd aan het Help-menu voor de NV Access "Get Help"-pagina en winkel. (#14631)
-* NVDA's ondersteuning voor [Poedit](https://poedit.net) is herzien voor Poedit versie 3 en hoger. Gebruikers van Poedit 1 worden aangemoedigd om bij te werken naar Poedit 3 als ze willen vertrouwen op verbeterde toegankelijkheid in Poedit, zoals sneltoetsen om vertalersnotities en opmerkingen te lezen. (#15313, #7303, @LeonarddeR)
+* NVDA's ondersteuning voor [Poedit](https://poedit.net) is herzien voor Poedit versie 3 en hoger.
+Gebruikers van Poedit 1 worden aangemoedigd om bij te werken naar Poedit 3 als ze willen vertrouwen op verbeterde toegankelijkheid in Poedit, zoals sneltoetsen om vertalersnotities en opmerkingen te lezen. (#15313, #7303, @LeonarddeR)
 * Braille viewer en spraakviewer zijn nu uitgeschakeld in beveiligde modus. (#15680)
 * Tijdens objectnavigatie worden uitgeschakelde (niet-beschikbare) objecten niet meer genegeerd. (#15477, @CyrilleB79)
 * Inhoudsopgave toegevoegd aan het document met toetscombinaties. (#16106)
