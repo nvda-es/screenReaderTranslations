@@ -228,7 +228,8 @@ Er zijn veel bugfixes, vooral voor de Add-on Store, braille, Libre Office, Micro
 ### Belangrijke opmerkingen
 
 * Deze release verbreekt de compatibiliteit met bestaande add-ons.
-* Windows 7 en Windows 8 worden niet langer ondersteund. Windows 8.1 is de minimaal ondersteunde Windows-versie.
+* Windows 7 en Windows 8 worden niet langer ondersteund.
+Windows 8.1 is de minimaal ondersteunde Windows-versie.
 
 ### Nieuwe functies
 
