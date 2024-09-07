@@ -206,15 +206,22 @@ Please refer to [the developer guide](https://www.nvaccess.org/files/nvda/docume
 
 ## 2024.1
 
-Een nieuwe "on-demand" spraakmodus is toegevoegd. Wanneer spraak op aanvraag is, spreekt NVDA niet automatisch (bijvoorbeeld bij het verplaatsen van de cursor), maar spreekt het nog steeds wanneer er opdrachten worden aangeroepen waarvan het doel expliciet is om iets te melden (bijvoorbeeld venstertitel rapporteren). In de categorie Spraak van de NVDA-instellingen is het nu mogelijk om ongewenste spraakmodi uit te sluiten van de Cyclus spraakmodi-opdracht (`NVDA+s`).
+Een nieuwe "on-demand" spraakmodus is toegevoegd.
+Wanneer spraak op aanvraag is, spreekt NVDA niet automatisch (bijvoorbeeld bij het verplaatsen van de cursor), maar spreekt het nog steeds wanneer er opdrachten worden aangeroepen waarvan het doel expliciet is om iets te melden (bijvoorbeeld venstertitel rapporteren).
+In de categorie Spraak van de NVDA-instellingen is het nu mogelijk om ongewenste spraakmodi uit te sluiten van de Cyclus spraakmodi-opdracht (`NVDA+s`).
 
-Een nieuwe Native Selectie-modus (geschakeld door `NVDA+shift+f10`) is nu beschikbaar in NVDA's browse-modus voor Mozilla Firefox. Wanneer ingeschakeld, wordt het selecteren van tekst in de browse-modus ook gekoppeld aan Firefox' eigen native selectie. Tekst kopiëren met `control+c` gaat rechtstreeks naar Firefox, waardoor de rijke inhoud wordt gekopieerd in plaats van NVDA's platte tekstweergave.
+Een nieuwe Native Selectie-modus (geschakeld door `NVDA+shift+f10`) is nu beschikbaar in NVDA's browse-modus voor Mozilla Firefox.
+Wanneer ingeschakeld, wordt het selecteren van tekst in de browse-modus ook gekoppeld aan Firefox' eigen native selectie.
+Tekst kopiëren met `control+c` gaat rechtstreeks naar Firefox, waardoor de rijke inhoud wordt gekopieerd in plaats van NVDA's platte tekstweergave.
 
-De Add-on Store ondersteunt nu bulkacties (bijv. installeren, inschakelen van add-ons) door meerdere add-ons te selecteren. Er is een nieuwe actie toegevoegd om een recensiepagina voor de geselecteerde add-on te openen.
+De Add-on Store ondersteunt nu bulkacties (bijv. installeren, inschakelen van add-ons) door meerdere add-ons te selecteren.
+Er is een nieuwe actie toegevoegd om een recensiepagina voor de geselecteerde add-on te openen.
 
-De opties voor het audio-uitvoerapparaat en ducking-modus zijn verwijderd uit het dialoogvenster "Selecteer synthesizer". Deze opties zijn te vinden in het audio-instellingenpaneel dat kan worden geopend met `NVDA+control+u`.
+De opties voor het audio-uitvoerapparaat en ducking-modus zijn verwijderd uit het dialoogvenster "Selecteer synthesizer".
+Deze opties zijn te vinden in het audio-instellingenpaneel dat kan worden geopend met `NVDA+control+u`.
 
-eSpeak-NG, LibLouis braillevertaler en Unicode CLDR zijn bijgewerkt. Nieuwe Thaise, Filippijnse en Roemeense brailletabellen zijn beschikbaar.
+eSpeak-NG, LibLouis braillevertaler en Unicode CLDR zijn bijgewerkt.
+Nieuwe Thaise, Filippijnse en Roemeense brailletabellen zijn beschikbaar.
 
 Er zijn veel bugfixes, vooral voor de Add-on Store, braille, Libre Office, Microsoft Office en audio.
 
