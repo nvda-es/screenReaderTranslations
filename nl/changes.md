@@ -1234,8 +1234,8 @@ LibLouis is bijgewerkt, wat een nieuwe Duitse brailletabel bevat.
 
 * Ondersteuning voor interactie met Microsoft Loop-componenten in Microsoft Office-producten. (#13617)
 * Nieuwe tabelnavigatieopdrachten toegevoegd. (#957)
-  * `control+alt+home/end` om naar de eerste/laatste kolom te springen.
-  * `control+alt+pageUp/pageDown` om naar de eerste/laatste rij te springen.
+ * `control+alt+home/end` om naar de eerste/laatste kolom te springen.
+ * `control+alt+pageUp/pageDown` om naar de eerste/laatste rij te springen.
 * Een niet toegewezen opdracht om te wisselen tussen taal- en dialectwisselmodi is toegevoegd. (#10253)
 
 ### Veranderingen
@@ -1265,7 +1265,7 @@ LibLouis is bijgewerkt, wat een nieuwe Duitse brailletabel bevat.
 * Braille-oplossingen:
   * Oplossing voor braille-uitvoer bij het navigeren door bepaalde tekst in Mozilla rich edit-controls, zoals bij het opstellen van een bericht in Thunderbird. (#12542)
   * Wanneer braille automatisch verankerd is en de muis wordt verplaatst met ingeschakelde muistracking,
-    worden tekstrecensieopdrachten nu weergegeven op de brailleleesregel met de gesproken inhoud. (#11519)
+   worden tekstreviewopdrachten nu weergegeven op de brailleleesregel met de gesproken inhoud. (#11519)
   * Het is nu mogelijk om door de inhoud te bladeren op de brailleleesregel na het gebruik van tekstrecensieopdrachten. (#8682)
 * De NVDA-installatie kan nu worden uitgevoerd vanuit mappen met speciale tekens. (#13270)
 * In Firefox meldt NVDA niet langer geen items op webpagina's wanneer aria-rowindex, aria-colindex, aria-rowcount of aria-colcount attributen ongeldig zijn. (#13405)
@@ -1277,7 +1277,8 @@ LibLouis is bijgewerkt, wat een nieuwe Duitse brailletabel bevat.
   * Let op dat voor het rapporteren van regelnummers het weergeven van regelnummers moet zijn ingeschakeld in zowel Visual Studio als NVDA.
 * Visual Studio meldt nu correct de inspringing van regels. (#13574)
 * NVDA kondigt opnieuw de details van zoekresultaten in het Startmenu aan in recente releases van Windows 10 en 11. (#13544)
-* In Windows 10 en 11 Calculator versie 10.1908 en later kondigt NVDA resultaten aan wanneer er meer opdrachten worden gegeven, zoals opdrachten in de wetenschappelijke modus. (#13383)
+* In Windows 10 en 11 Calculator versie 10.1908 en later
+kondigt NVDA resultaten aan wanneer er meer opdrachten worden gegeven, zoals opdrachten in de wetenschappelijke modus. (#13383)
 * In Windows 11 is het opnieuw mogelijk om te navigeren en te communiceren met gebruikersinterface-elementen,
   zoals de taakbalk en Taakweergave met behulp van muis- en aanraakinteracties. (#13506)
 * NVDA kondigt de inhoud van de statusbalk aan in Windows 11 Kladblok. (#13688)
