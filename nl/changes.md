@@ -2135,7 +2135,7 @@ Hoewel deze wijzigingen de compatibiliteit met oudere NVDA-add-ons verbreken, is
  * Highlighting of the focus, navigator object, and browse mode caret position can be enabled and configured via the 'vision' category in NVDA's settings dialog.
  * Note: This feature is incompatible with the focus highlight add-on, however, the add-on can still be used while the built-in highlighter is disabled.
 * Added Braille Viewer tool, allows viewing braille output via an on-screen window. (#7788)
- 
+
 ### Veranderingen
 
 * De gebruikershandleiding beschrijft nu hoe NVDA te gebruiken in de Windows Console. (#9957)
@@ -2145,8 +2145,14 @@ Hoewel deze wijzigingen de compatibiliteit met oudere NVDA-add-ons verbreken, is
 * Het NVDA-versienummer wordt nu vastgelegd als het eerste bericht in het logboek. Dit gebeurt zelfs als logboekregistratie is uitgeschakeld in de instellingen. (#9803)
 * In het instellingendialoogvenster kunt u het geconfigureerde logniveau niet meer wijzigen als dit is overschreven vanaf de opdrachtregel. (#10209)
 * In Microsoft Word meldt NVDA nu de weergavestatus van niet-afdrukbare tekens bij het indrukken van de sneltoets Ctrl+Shift+8. (#10241)
+* Updated Liblouis braille translator to commit 58d67e63. (#10094)
 * Wanneer het melden van CLDR-tekens (inclusief emoji) is ingeschakeld worden ze nu uitgesproken op alle symboolniveaus. (#8826)
 * Pythonpakketten van derden die zijn opgenomen in NVDA, zoals comtypes, registreren nu hun waarschuwingen en fouten in het NVDA-logboek. (#10393)
+* Updated Unicode Common Locale Data Repository emoji annotations to version 36.0. (#10426)
+* When focussing a grouping in browse mode, the description is now also read. (#10095)
+* The Java Access Bridge is now included with NVDA to enable access to Java applications, including for 64 bit Java VMs. (#7724)
+* If the Java Access Bridge is not enabled for the user, NVDA automatically enables it at NVDA startup. (#7952)
+* Updated eSpeak-NG to 1.51-dev, commit ca65812ac6019926f2fbd7f12c92d7edd3701e0c. (#10581)
 
 ### Opgeloste Problemen
 
@@ -2172,6 +2178,15 @@ Hoewel deze wijzigingen de compatibiliteit met oudere NVDA-add-ons verbreken, is
 * In de Instellingen-app in de Windows 10 april 2018 Update en nieuwer meldt NVDA niet langer voortgangsbalkinformatie voor volumemeters op de pagina Systeem / Geluid. (#10284)
 * Ongeldige reguliere expressies in spraakwoordenboeken zorgen er niet langer voor dat de spraak in NVDA stopt met werken. (#10334)
 * Bij het lezen van items met opsommingstekens in Microsoft Word met UIA ingeschakeld, wordt het opsommingsteken van het volgende lijstitem niet langer ten onrechte gemeld. (#9613)
+* Some rare braille translation issues and errors with liblouis have been resolved. (#9982)
+* Java applications started before NVDA are now accessible without the need to restart the Java app. (#10296)
+* In Mozilla Firefox, when the focused element becomes marked as current (aria-current), this change is no longer spoken multiple times. (#8960)
+* NVDA will now treat certain composit unicode characters such as e-acute as one single character when moving through text. (#10550)
+* Spring Tool Suite Version 4 is now supported. (#10001)
+* Don't double speak name when aria-labelledby relation target is an inner element. (#10552)
+* On Windows 10 version 1607 and later, typed characters from Braille keyboards are spoken in more situations. (#10569)
+* When changing the audio output device, tones played by NVDA will now play through the newly selected device. (#2167)
+* In Mozilla Firefox, moving focus in browse mode is faster. This makes moving the cursor in browse mode more responsive in many cases. (#10584)
 
 ### Veranderingen voor ontwikkelaars (niet vertaald)
 
