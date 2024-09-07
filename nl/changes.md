@@ -3142,5 +3142,5 @@ Deze zijn niet vertaald. We verwijzen naar [de Engelstalige versie van dit docum
 
 Hoogtepunten in deze versie zijn functies voor vlotter lezen van braille; aanduiding van documentopmaak in braille; toegang tot veel meer opmaakinformatie en verbeterde performantie in Microsoft Word; en ondersteuning voor de iTunes Store.
 
-De rest van dit document is niet vertaald. Voor informatie over oudere versies verwijzen we naar [het Engelstalige document](../en/changes.html).
+De rest van dit document is niet vertaald. Voor informatie over oudere versies verwijzen we naar [het Engelstalige document](../en/changes.html). Komt nog
 
