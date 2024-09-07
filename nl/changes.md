@@ -110,9 +110,13 @@ It is especially useful to read the error location markers in tracebacks. (#1632
 Er is een nieuwe functie genaamd "sound split".
 Hiermee kunnen NVDA-geluiden naar één kanaal worden gestuurd (bijv. links), terwijl geluiden van alle andere applicaties naar het andere kanaal worden gestuurd (bijv. rechts).
 
-Er zijn nieuwe commando's voor het aanpassen van de synth-instellingenring, waarmee gebruikers naar de eerste of laatste instelling kunnen springen, en de huidige instelling in grotere stappen kunnen verhogen of verlagen. Er zijn ook nieuwe snelnavigatiecommando's, waarmee gebruikers gebaren kunnen toewijzen om snel te springen tussen: alinea, verticaal uitgelijnde alinea, tekst met dezelfde stijl, tekst met een andere stijl, menu-item, schakelknop, voortgangsbalk, afbeelding en wiskundige formule.
+Er zijn nieuwe commando's voor het aanpassen van de synth-instellingenring, waarmee gebruikers naar de eerste of laatste instelling kunnen springen, en de huidige instelling in grotere stappen kunnen verhogen of verlagen.
+Er zijn ook nieuwe snelnavigatiecommando's, waarmee gebruikers gebaren kunnen toewijzen om snel te springen tussen: alinea, verticaal uitgelijnde alinea, tekst met dezelfde stijl, tekst met een andere stijl, menu-item, schakelknop, voortgangsbalk, afbeelding en wiskundige formule.
 
-Er zijn veel nieuwe braille-functies en opgeloste problemen. Een nieuwe braillemodus genaamd "weergave spraakuitvoer" is toegevoegd. Wanneer actief, toont het braille-display precies wat NVDA zegt. Er is ook ondersteuning toegevoegd voor de BrailleEdgeS2 en BrailleEdgeS3 displays. LibLouis is bijgewerkt, met nieuwe gedetailleerde (met hoofdletters aangeduid) Wit-Russische en Oekraïense brailletabellen, een Laotiaanse tabel en een Spaanse tabel voor het lezen van Griekse teksten.
+Er zijn veel nieuwe braille-functies en opgeloste problemen.
+Een nieuwe braillemodus genaamd "weergave spraakuitvoer" is toegevoegd. Wanneer actief, toont het braille-display precies wat NVDA zegt.
+Er is ook ondersteuning toegevoegd voor de BrailleEdgeS2 en BrailleEdgeS3 displays.
+LibLouis is bijgewerkt, met nieuwe gedetailleerde (met hoofdletters aangeduid) Wit-Russische en Oekraïense brailletabellen, een Laotiaanse tabel en een Spaanse tabel voor het lezen van Griekse teksten.
 
 eSpeak is bijgewerkt, met ondersteuning voor de nieuwe taal Tigrinya.
 
