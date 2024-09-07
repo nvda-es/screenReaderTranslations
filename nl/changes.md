@@ -1657,7 +1657,7 @@ Als u een nieuwe versie van Windows gebruikt, moet u om veiligheidsredenen om ee
 
 ### Veranderingen
 
-* Espeak-ng is bijgewerkt naar 1.51-dev commit `` ab11439b18238b7a08b965d1d5a6ef31cbb05cbb ''. (#12449, #12202, #12280, #12568)
+* Espeak-ng is bijgewerkt naar 1.51-dev commit `ab11439b18238b7a08b965d1d5a6ef31cbb05cbb`. (#12449, #12202, #12280, #12568)
 * Als artikel is ingeschakeld in de gebruikersinstellingen voor documentopmaak, kondigt NVDA "artikel" aan na de inhoud. (#11103)
 * Liblouis braillevertaler bijgewerkt naar [3.18.0](https://github.com/liblouis/liblouis/releases/tag/v3.18.0). (#12526)
   * Nieuwe brailletabellen: Bulgaars graad 1, Birmees graad 1, Birmees graad 2, Kazachs graad 1, Khmer graad 1, Noord-Koerdische graad 0, Sepedi graad 1, Sepedi graad 2, Sesotho graad 1, Sesotho graad 2, Setswana graad 1, Setswana graad 2, Tatar graad 1, Vietnamees graad 0, Vietnamees graad 2, Zuid-Vietnamees graad 1, Xhosa graad 1, Xhosa graad 2, Yakut graad 1, Zulu graad 1, Zulu graad 2
@@ -1698,9 +1698,9 @@ Er zijn updates voor Unicode CLDR, wiskundige symbolen en LibLouis.
 En verder Veel bugfixes en verbeteringen, o.a.  in Office, Visual Studio en verschillende talen.
 
 Opmerking:
- add-ons moeten worden bijgewerkt om met deze release van NVDA gebruikt te kunnen worden.
- Deze release heeft ook geen ondersteuning meer voor Adobe Flash.
- -
+
+ * add-ons moeten worden bijgewerkt om met deze release van NVDA gebruikt te kunnen worden.
+ * Deze release heeft ook geen ondersteuning meer voor Adobe Flash.
 
 ### Nieuwe functies
 
