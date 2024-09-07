@@ -56,7 +56,7 @@ Unicode CLDR is ook bijgewerkt.
 * In de Python-console gaat het laatste niet-uitgevoerde commando niet meer verloren bij het navigeren in de invoergeschiedenis. (#16653, @CyrilleB79)
 * Een unieke anonieme ID wordt nu verzonden als onderdeel van de optionele NVDA-gebruikersstatistieken. (#16266)
 * Standaard wordt een nieuwe map gemaakt bij het maken van een draagbare kopie.
-  Een waarschuwingsbericht informeert je als je probeert naar een niet-lege map te schrijven. (#16686)
+Een waarschuwingsbericht informeert je als je probeert naar een niet-lege map te schrijven. (#16686)
 
 ### Opgeloste problemen
 
@@ -107,7 +107,8 @@ It is especially useful to read the error location markers in tracebacks. (#1632
 
 ## 2024.2
 
-Er is een nieuwe functie genaamd "sound split". Hiermee kunnen NVDA-geluiden naar één kanaal worden gestuurd (bijv. links), terwijl geluiden van alle andere applicaties naar het andere kanaal worden gestuurd (bijv. rechts).
+Er is een nieuwe functie genaamd "sound split".
+Hiermee kunnen NVDA-geluiden naar één kanaal worden gestuurd (bijv. links), terwijl geluiden van alle andere applicaties naar het andere kanaal worden gestuurd (bijv. rechts).
 
 Er zijn nieuwe commando's voor het aanpassen van de synth-instellingenring, waarmee gebruikers naar de eerste of laatste instelling kunnen springen, en de huidige instelling in grotere stappen kunnen verhogen of verlagen. Er zijn ook nieuwe snelnavigatiecommando's, waarmee gebruikers gebaren kunnen toewijzen om snel te springen tussen: alinea, verticaal uitgelijnde alinea, tekst met dezelfde stijl, tekst met een andere stijl, menu-item, schakelknop, voortgangsbalk, afbeelding en wiskundige formule.
 
