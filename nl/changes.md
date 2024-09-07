@@ -1115,19 +1115,6 @@ Beveiligingsproblemen kunnen vertrouwelijk worden gemeld via <info@nvaccess.org>
 
 * Voorkom dat een niet-geverifieerde gebruiker instellingen voor de spraak- en brailleviewer kan aanpassen op het vergrendelscherm. ([GHSA-grvr-j2h8-3qm4](https://github.com/nvaccess/nvda/security/advisories/GHSA-grvr-j2h8-3qm4))
 
-
-## 2021.3.1
-
-### Veranderingen
-
-* Het nieuwe HID Braille-protocol heeft niet langer de voorkeur wanneer een ander brailleleesregelstuurprogramma kan worden gebruikt. (#13153)
-* Het nieuwe HID Braille-protocol kan worden uitgeschakeld via een instelling in het paneel met geavanceerde instellingen. (#13180)
-
-### Opgeloste problemen
-
-* Oriëntatiepunt wordt weer afgekort in braille. (#13158)
-* Instabiele automatische detectie van brailleleesregels voor Humanware Brailliant en APH Mantis Q40 brailleleesregels bij gebruik van Bluetooth opgelost. (#13153)
-
 ## 2022.3
 
 Een aanzienlijk deel van deze release is bijgedragen door de NVDA-ontwikkelingsgemeenschap.
@@ -1998,7 +1985,7 @@ Het bestaan ​​van gemarkeerde inhoud kan in browsers worden gemeld en er zij
 * NVDA detecteert automatisch de NLS eReader Humanware brailleleesregel via Bluetooth wanneer de Bluethooth-naam "NLS eReader Humanware" is. (#11561)
 * Grote prestatieverbeteringen in Visual Studio Code. (#11533)
 
-### Veranderingen voor ontwikkelaars
+### Veranderingen voor ontwikkelaars (niet vertaald)
 
 * The GUI Helper's BoxSizerHelper.addDialogDismissButtons supports a new "separated" keyword argument, for adding a standard horizontal separator to dialogs (other than messages and single input dialogs). (#6468)
 * Additional properties were added to app modules, including path for the executable (appPath), is a Windows Store app (isWindowsStoreApp), and machine architecture for the app (appArchitecture). (#7894)
@@ -3031,7 +3018,7 @@ Hoogtepunten in deze versie zijn de mogelijkheid om individuele add-ons uit te s
 * Als het melden van regelnummers is ingeschakeld in NVDA's voorkeuren voor Documentopmaak, dan worden regelnummers nu getoond op een brailleleesregel. (#5941)
 * Als spraakmodus uit is, verschijnen gemelde objecten (zoals het drukken van NVDA+tab om de focus te melden) nu in het spraakweergavevenster zoals verwacht. (#6049)
 
-### Veranderingen voor Ontwikkelaars
+### Veranderingen voor Ontwikkelaars (niet vertaald)
 
 * Logging information directly from a property no longer results in the property  being called recursively over and over again. (#6122)
 
@@ -3138,7 +3125,7 @@ Hoogtepunten in deze versie zijn de mogelijkheid om het volume van andere geluid
 * Als u in Microsoft Excel shift+f11 drukt om een nieuw werkblad te maken, wordt nu uw nieuwe positie gemeld in plaats van helemaal niets. (#5689)
 * Problemen opgelost met de uitvoer op de brailleleesregel bij het ingeven van Koreaanse karakters. (#5640)
 
-### Veranderingen voor Ontwikkelaars
+### Veranderingen voor Ontwikkelaars (niet vertaald)
 
 * The new audioDucking.AudioDucker class allows code which outputs audio to indicate when background audio should be ducked. (#3830)
 * nvwave.WavePlayer's constructor now has a wantDucking keyword argument which specifies whether background audio should be ducked while audio is playing. (#3830)
@@ -3253,7 +3240,7 @@ Hoogtepunten in deze versie zijn initiële ondersteuning voor Windows 10; de mog
 * In Windows 7 en hoger is tekst niet langer rommelig bij het typen in bepaalde toepassingen zoals Wordpad en Skype met een brailleleesregel. (#4291)
 * Op het Windows 10 lock screen is het niet langer mogelijk het klembord te lezen, draaiende toepassingen te bereiken met de leescursor, de NVDA-configuratie te wijzigen, etc. (#5269)
 
-### Veranderingen voor Ontwikkelaars
+### Veranderingen voor Ontwikkelaars (niet vertaald)
 
 * You can now inject raw input from a system keyboard that is not handled natively by Windows (e.g. a QWERTY keyboard on a braille display) using the new keyboardHandler.injectRawKeyboardInput function. (#4576)
 * eventHandler.requestEvents has been added to request particular events that are blocked by default; e.g. show events from a specific control or certain events even when in the background. (#3831)
@@ -3351,7 +3338,7 @@ Hoogtepunten in deze versie zijn bladermodus voor Microsoft Word en Outlook docu
 * Verschillende verbeteringen voor Mozilla Firefox, Internet Explorer en andere MSHTML elementen, onder andere voor ondersteuning van aria. Zie voor details [het Engelstalige document](../en/changes.html). (#4045, #4794, #4798, #4800, #4575, #4839, #3776, #4491, #4667)
 * Bij de spellingscontrole in Microsoft Outlook 2013 wordt het verkeerd gespelde woord nu gemeld. (#4848)
 
-### Veranderingen voor Ontwikkelaars
+### Veranderingen voor Ontwikkelaars (niet vertaald)
 
 * Updated wxPython to 3.0.2.0. (#3763)
 * Updated Python to 2.7.9. (#4715)
@@ -3475,7 +3462,7 @@ Hoogtepunten in deze versie zijn bladermodus voor Microsoft Word en Outlook docu
 * Invoervelden voor getallen worden nu correct behandeld in GoldWave. (#670)
 * Microsoft Word: als u per alinea navigeert met control+pijlOmlaag / control+pijlOmhoog is het niet langer nodig de toetscombinatie tweemaal te drukken als u door een lijst gaat. (#3290)
 
-### Veranderingen voor Ontwikkelaars
+### Veranderingen voor Ontwikkelaars (niet vertaald)
 
 * NVDA now has unified support for add-on documentation. See the Add-on Documentation section of the Developer Guide for details. (#2694)
 * When providing gesture bindings on a ScriptableObject via __gestures, it is now possible to provide the None keyword as the script. This unbinds the gesture in any base classes. (#4240)
@@ -3621,7 +3608,7 @@ Hoogtepunten in deze versie zijn bladermodus voor Microsoft Word en Outlook docu
 * De bladermoduscursor wordt niet langer foutief gepositioneerd bij het verlaten van een dialoogvenster of toepassing binnen het document. (#3145)
 * Een probleem opgelost waarbij op sommige systemen de driver voor de HumanWare Brailliant BI/B serie brailleleesregel niet als optie verscheen in het Braille-instellingen dialoogvenster, zelfs als de leesregel was verbonden via USB.
 
-### Veranderingen voor Ontwikkelaars
+### Veranderingen voor Ontwikkelaars (niet vertaald)
 
 * You can specify the category to be displayed to the user for scripts using the scriptCategory attribute on ScriptableObject classes and the category attribute on script methods. See the documentation for baseObject.ScriptableObject for more details. (#1532)
 * config.save is deprecated and may be removed in a future release. Use config.conf.save instead. (#667)
@@ -3796,7 +3783,7 @@ Bekijk het [Overzicht van Commando's](keyCommands.html) voor de nieuwe toetsen.
 * NVDA loopt niet langer vast bij gebruik van Aziatische karakterinvoer in sommige .NET-toepassingen. (#3005)
 * Het is nu mogelijk bladermodus te gebruiken voor pagina's in Internet Explorer 10 als u in standaardmodus bent; b.v. [www.gmail.com](http://www.gmail.com) login-pagina. (#3151)
 
-### Veranderingen voor Ontwikkelaars
+### Veranderingen voor Ontwikkelaars (niet vertaald)
 
 * Braille display drivers can now support manual port selection. (#426)
  * This is most useful for braille displays which support connection via a legacy serial port.
