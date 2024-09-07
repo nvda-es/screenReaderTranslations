@@ -114,7 +114,8 @@ Er zijn nieuwe commando's voor het aanpassen van de synth-instellingenring, waar
 Er zijn ook nieuwe snelnavigatiecommando's, waarmee gebruikers gebaren kunnen toewijzen om snel te springen tussen: alinea, verticaal uitgelijnde alinea, tekst met dezelfde stijl, tekst met een andere stijl, menu-item, schakelknop, voortgangsbalk, afbeelding en wiskundige formule.
 
 Er zijn veel nieuwe braille-functies en opgeloste problemen.
-Een nieuwe braillemodus genaamd "weergave spraakuitvoer" is toegevoegd. Wanneer actief, toont het braille-display precies wat NVDA zegt.
+Een nieuwe braillemodus genaamd "weergave spraakuitvoer" is toegevoegd.
+Wanneer actief, toont het braille-display precies wat NVDA zegt.
 Er is ook ondersteuning toegevoegd voor de BrailleEdgeS2 en BrailleEdgeS3 displays.
 LibLouis is bijgewerkt, met nieuwe gedetailleerde (met hoofdletters aangeduid) Wit-Russische en Oekraïense brailletabellen, een Laotiaanse tabel en een Spaanse tabel voor het lezen van Griekse teksten.
 
