@@ -1945,7 +1945,7 @@ Het bestaan ​​van gemarkeerde inhoud kan in browsers worden gemeld en er zij
 * Het bestaan ​​van gemarkeerde (gehighlighte) inhoud wordt in alle webbrowsers zowel in spraak als in braille gemeld. (#11436)
  * Dit kan worden in- en uitgeschakeld met de nieuwe optie voor gemarkeerde tekst in de NVDA-instellingen voor documentopmaak.
 * Nieuwe geëmuleerde systeemtoetsen kunnen worden toegevoegd vanuit het NVDA-dialoogvenster Invoerhandelingen. (#6060)
- * Om dit te doen, drukt u op de knop Toevoegen nadat u de categorie Geëmuleerde systeemtoetsen heeft geselecteerd.
+  * Om dit te doen, drukt u op de knop Toevoegen nadat u de categorie Geëmuleerde systeemtoetsen heeft geselecteerd.
 * Handy Tech Active Braille met joystick wordt nu ondersteund. (#11655)
 * De instelling "Automatische focusmodus bij cursorbeweging" is nu compatibel met het uitschakelen van "Systeemfocus automatisch verplaatsen naar focusbare elementen". (#11663)
 
@@ -2116,22 +2116,27 @@ Hoewel deze wijzigingen de compatibiliteit met oudere NVDA-add-ons verbreken, is
 
 ### Nieuwe Functies
 
-* In Opdrachtprompt, PowerShell en het Windows Subsystem for Linux op Windows 10 version 1809 en nieuwer:
- * Sterk verbeterde prestaties en stabiliteit. (#9771)
- * Het melden van getypte tekst die niet op het scherm verschijnt (zoals wachtwoorden) kan nu worden ingeschakeld via een optie in het geavanceerde instellingenpaneel van NVDA. (#9649)
 * De nauwkeurigheid van het commando muis naar navigatorobject verplaatsen is verbeterd in tekstvelden in Java-toepassingen. (#10157)
-* Schermgordijn, dat, indien ingeschakeld, het hele scherm zwart maakt op Windows 8 en hoger. (#7857)
 * Ondersteuning voor de volgende Handy Tech brailleleesregels toegevoegd (#8955):
  * Basic Braille Plus 40
  * Basic Braille Plus 32
  * Connect Braille
-* Alle door de gebruiker gedefinieerde invoerhandelingen kunnen nu worden verwijderd via een nieuwe knop "Fabrieksinstellingen herstellen" in het dialoogvenster Invoerhandelingen. (#10293)
+* Alle door de gebruiker gedefinieerde invoerhandelingen kunnen nu worden verwijderd via een nieuwe knop "Fabrieksinstellingen herstellen" in het dialoogvenster Invoerhandelingen. (#10293) 
 * Het melden van het lettertype in Microsoft Word omvat nu ook of tekst is gemarkeerd als verborgen. (#8713)
 * Een commando toegevoegd om de leescursor te verplaatsen naar de positie die eerder was ingesteld als startmarkering voor selectie of kopiëren: NVDA+shift+F9. (#1969)
 * In Internet Explorer, Microsoft Edge en recente versies van Firefox en Chrome worden oriëntatiepunten (landmarks) nu gemeld in focusmodus en bij objectnavigatie. (#10101)
 * In Internet Explorer, Google Chrome en Mozilla Firefox kunt u nu navigeren per artikel met gebruik van snelnavigatiescripts. Deze scripts zijn standaard niet toegewezen en kunnen worden toegewezen in het dialoogvenster Invoerhandelingen wanneer het dialoogvenster wordt geopend vanuit een bladermodusdocument. (#9227)
-* In Internet Explorer, Google Chrome en Mozilla Firefox worden artikel-elementen nu gemeld bij objectnavigatie en optioneel in de bladermodus indien ingeschakeld in de instellingen voor documentopmaak. (#10424)
-
+ * Figures are also reported. They are considered objects and therefore navigable with the o quick navigation key.
+ * In Internet Explorer, Google Chrome en Mozilla Firefox worden artikel-elementen nu gemeld bij objectnavigatie en optioneel in de bladermodus indien ingeschakeld in de instellingen voor documentopmaak. (#10424)
+* Schermgordijn, dat, indien ingeschakeld, het hele scherm zwart maakt op Windows 8 en hoger. (#7857)
+ * Added a script to enable screen curtain (until next restart with one press, or always while NVDA is running with two presses), no default gesture is assigned.
+ * Can be enabled and configured via the 'vision' category in NVDA's settings dialog.
+* Added screen highlight functionality to NVDA. (#971, #9064)
+ * Highlighting of the focus, navigator object, and browse mode caret position can be enabled and configured via the 'vision' category in NVDA's settings dialog.
+ * Note: This feature is incompatible with the focus highlight add-on, however, the add-on can still be used while the built-in highlighter is disabled.
+* In Opdrachtprompt, PowerShell en het Windows Subsystem for Linux op Windows 10 version 1809 en nieuwer:
+* Added Braille Viewer tool, allows viewing braille output via an on-screen window. (#7788)
+ 
 ### Veranderingen
 
 * De gebruikershandleiding beschrijft nu hoe NVDA te gebruiken in de Windows Console. (#9957)
