@@ -2296,6 +2296,7 @@ Hoogtepunten in deze versie zijn automatische detectie van Freedom Scientific br
 * Synthesizervolume wordt nu verhoogd en verlaagd met 5 in plaats van 10 bij gebruik van de instellingenring. (#6754)
 * De tekst in add-onbeheer verduidelijkt wanneer NVDA wordt gestart met de --disable-addons parameter. (#9473)
 * Unicode Common Locale Data Repository (uitspraak van emoji) bnbijgewerkt naar versie 35.0. (#9445)
+* The hotkey for the filter field in the elements list in browse mode has changed to alt+y. (#8728)
 * Wanneer een automatisch gedetecteerde brailleleesregel via Bluetooth verbonden is, zal NVDA blijven zoeken naar USB-leesregels die door dezelfde driver worden aangestuurd en overschakelen naar een USB-verbinding als deze beschikbaar komt. (#8853)
 * eSpeak-NG is bijgewerkt naar commit 67324cc.
 * Liblouis braillevertaler bijgewerkt naar versie 3.10.0. (#9439, #9678)
