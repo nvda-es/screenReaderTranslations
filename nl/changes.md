@@ -1722,12 +1722,12 @@ Opmerking:
 * "Niet-ondersteund" wordt nu gemeld bij een poging om de schermindeling te wijzigen in toepassingen die dit niet ondersteunen, zoals Microsoft Word. (#7297)
 * De optie 'Poging om spraak te annuleren voor verlopen focusgebeurtenissen' in het paneel met geavanceerde instellingen is nu standaard ingeschakeld. (#10885)
   * Dit gedrag kan worden uitgeschakeld door deze optie in te stellen op "Nee".
-* In webapplicaties (bijv. Gmail) wordt niet langer verouderde informatie meer uitgesproken wanneer de focus snel wordt verplaatst.
+  * In webapplicaties (bijv. Gmail) wordt niet langer verouderde informatie meer uitgesproken wanneer de focus snel wordt verplaatst.
 * Liblouis braillevertaler bijgewerkt naar [3.17.0](https://github.com/liblouis/liblouis/releases/tag/v3.17.0). (#12137)
   * Nieuwe brailletabellen: Wit-Russische literaire braille, Wit-Russische computerbraille, Urdu graad 1, Urdu graad 2.
 * Ondersteuning voor Adobe Flash-inhoud is verwijderd uit NVDA omdat het gebruik van Flash actief wordt ontmoedigd door Adobe. (#11131)
 * NVDA zal afsluiten, zelfs als de vensters nog open zijn, het afsluitproces sluit nu alle NVDA-vensters en dialoogvensters. (#1740)
-* Het Spraakweergavevenster kan nu worden afgesloten met `` alt + F4 '' en heeft een standaard sluitknop voor eenvoudigere interactie met gebruikers van aanwijsapparaten. (#12330)
+* Het Spraakweergavevenster kan nu worden afgesloten met `alt+F4` en heeft een standaard sluitknop voor eenvoudigere interactie met gebruikers van aanwijsapparaten. (#12330)
 * Het Brailleweergavevenster heeft nu een standaard sluitknop voor eenvoudigere interactie met gebruikers van aanwijsapparaten. (#12328)
 * In het dialoogvenster Elementenlijst is de sneltoets voor de knop "Activeren" in sommige landen verwijderd om een konflikt met een label van een keuzerondje van het elementtype te voorkomen. Indien beschikbaar, is de knop nog steeds de standaardinstelling van het dialoogvenster en kan als zodanig nog steeds worden opgeroepen door simpelweg op enter te drukken vanuit de elementenlijst zelf. (#6167)
 
@@ -1753,7 +1753,7 @@ Opmerking:
 * Probleem opgelost met het kopiëren van config tijdens installatie vanaf een draagbare kopie als de standaard bestemmingsconfiguratiemap leeg is. (# 12071, #12205)
 * Opgelost: onjuiste aankondiging van sommige letters met accenten of diakritische tekens wanneer de optie 'Het woord "Hoofdletter" uitspreken voor hoofdletters' is aangevinkt. (#11948)
 * Probleem met toonhoogteverandering opgelost in SAPI4-spraaksynthesizer. (#12311)
-* Het NVDA-installatieprogramma respecteert nu ook de ``--minimal'' opdrachtregelparameter en speelt het opstartgeluid niet af, volgens hetzelfde gedocumenteerde gedrag als een geïnstalleerd of draagbaar exemplaar van NVDA. (#12289)
+* Het NVDA-installatieprogramma respecteert nu ook de `--minimal` opdrachtregelparameter en speelt het opstartgeluid niet af, volgens hetzelfde gedocumenteerde gedrag als een geïnstalleerd of draagbaar exemplaar van NVDA. (#12289)
 * In MS Word of Outlook kan de snelnavigatietoets voor tabellen nu naar de lay-outtabel springen als de optie "Lay-outtabellen opnemen" is ingeschakeld in de instellingen van de bladermodus. (#11899)
 * NVDA zal niet langer "↑↑↑" aankondigen voor emoji's in bepaalde talen. (#11963)
 * Espeak ondersteunt nu weer Kantonees en Mandarijn. (#10418)
@@ -1922,6 +1922,7 @@ Plus vele andere belangrijke bugfixes en verbeteringen.
 * NVDA crasht niet langer bij gebruik van Engels US grade 2 en met Woord onder cursor uitbreiden naar computerbraille  ingeschakeld, bij het weergeven van bepaalde inhoud, zoals een URL in braille. (#11754)
 * Het is weer mogelijk om opmaakinformatie te rapporteren voor de gefocuste Excel-cel met NVDA + F. (#11914)
 * QWERTY-invoer op Papenmeier-brailleleesregels die dit ondersteunen, werkt weer en veroorzaakt niet langer dat NVDA willekeurig vastloopt. (#11944)
+* In Chromium based browsers, several cases were solved where table navigation didn't work and NVDA didn't report the number of rows/columns of the table. (#12359)
 
 ### Veranderingen voor ontwikkelaars (niet vertaald)
 
