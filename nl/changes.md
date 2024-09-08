@@ -3057,6 +3057,8 @@ Hoogtepunten in deze versie zijn de mogelijkheid om individuele add-ons uit te s
 * Het kon gebeuren dat NVDA geen toetsaanslagen meer herkende op Baum compatibele en HumanWare Brailliant B brailleleesregels. Dit is niet langer het geval. (#6035)
 * Als het melden van regelnummers is ingeschakeld in NVDA's voorkeuren voor Documentopmaak, dan worden regelnummers nu getoond op een brailleleesregel. (#5941)
 * Als spraakmodus uit is, verschijnen gemelde objecten (zoals het drukken van NVDA+tab om de focus te melden) nu in het spraakweergavevenster zoals verwacht. (#6049)
+* In the Outlook 2016 message list,  associated draft information is no longer reported. (#6219)
+* In Google Chrome and Chrome-based browsers in a language other than English, browse mode no longer fails to work in many documents. (#6249)
 
 ### Veranderingen voor Ontwikkelaars (niet vertaald)
 
