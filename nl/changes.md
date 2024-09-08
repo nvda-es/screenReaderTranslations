@@ -2367,8 +2367,8 @@ Raadpleeg de lijst met wijzigingen verderop voor meer informatie hierover.
 * Het is mogelijk om de logfuncties van NVDA uit te schakelen door het niveau van loggen in te stellen op "uitgeschakeld" in de categorie met Algemene instellingen. (#8516)
 * De aanwezigheid van formules in -spreadsheets in LibreOffice en Apache OpenOffice wordt nu gemeld. (#860)
 * In Mozilla Firefox en Google Chrome meldt de bladermodus nu het geselecteerde item in keuzelijsten en boomstructuren.
- - Dit werkt in Firefox 66 en later.
- - Dit werkt niet voor bepaalde keuzelijsten (HTML select elementen) in Chrome.
+ * Dit werkt in Firefox 66 en later.
+ * Dit werkt niet voor bepaalde keuzelijsten (HTML select elementen) in Chrome.
 * Vroege ondersteuning voor apps zoals Mozilla Firefox op computers met ARM64-processors (bijvoorbeeld Qualcomm Snapdragon). (#9216)
 * Er is een nieuwe geavanceerd categorie toegevoegd aan het dialoogvenster Instellingen van NVDA, inclusief een optie om NVDA's nieuwe ondersteuning voor Microsoft Word uit te proberen via de Microsoft UI Automation API. (#9200)
 * Ondersteuning toegevoegd voor de grafische weergave in Windows Schijfbeheer. (#1486)
@@ -2382,12 +2382,11 @@ Raadpleeg de lijst met wijzigingen verderop voor meer informatie hierover.
 * Deze versie van NVDA staat het installeren en laden van add-ons toe die nog geen gegevens over de Minimale en Laatst Getestte NVDA-versie bevatten. Het upgraden naar toekomstige versies van NVDA (bijv. 2019.2) zou er echter automatisch voor kunnen gaan zorgen dat deze oudere add-ons worden uitgeschakeld.
 * De opdracht om de muis naar het huidige navigatorobject te verplaatsen, is nu beschikbaar in Microsoft Word evenals voor UIA-besturingselementen, waaronder Microsoft Edge. (#7916, #8371)
 * Het melden van tekst onder de muis is verbeterd binnen Microsoft Edge en andere UIA-applicaties. (#8370)
-* Wanneer NVDA wordt gestart met de opdrachtregelparameter `--portable path', wordt het opgegeven pad automatisch ingevuld wanneer wordt geprobeerd een draagbare kopie van NVDA te maken met behulp van het NVDA-menu. (#8623)
+* Wanneer NVDA wordt gestart met de opdrachtregelparameter `--portable-path`, wordt het opgegeven pad automatisch ingevuld wanneer wordt geprobeerd een draagbare kopie van NVDA te maken met behulp van het NVDA-menu. (#8623)
 * Het pad naar de Noorse brailletabel is bijgewerkt voor gebruik van de standaard uit het jaar 2015. (#9170)
 * Bij navigeren op basis van een alinea (control + pijl omhoog of omlaag) of bij tabelnavigatie(control + alt + pijltjestoetsen), wordt de aanwezigheid ​​van spelfouten niet langer gemeld, zelfs als NVDA is geconfigureerd om deze automatisch te melden. Dit komt doordat alinea's en tabelcellen vrij omvangrijk kunnen zijn en het detecteren van spelfouten in sommige toepassingen erg veel tijd kan kosten. (#9217)
 * NVDA laadt niet langer automatisch aangepaste appModules, globalPlugins en brailleleesregel- en synthesizer drivers uit de NVDA-gebruikersconfiguratiemap. Deze code moet in plaats daarvan worden gedistribueerd als een add-on met de juiste versiegegevens, zodat incompatibele code niet wordt uitgevoerd door huidige versies van NVDA. (#9238)
  * Ontwikkelaars die code dienen te testen terwijl deze wordt ontwikkeld, kunnen NVDA's ontwikkelaarskladblokmap inschakelen via de categorie geavanceerd in de NVDA-instellingen. Na het inschakelen kan code geplaatst worden in de map 'scratchpad' in de NVDA-gebruikersconfiguratiemap.
-* Bij het gebruik van de Nederlandse taal wordt de punt nu alleen geïnterpreteerd als scheidingsteken voor duizendtallen wanneer de punt wordt gevolgd door 3 cijfers. Voorheen werd een punt tussen cijfers altijd geïnterpreteerd als een cijfergroeperingsteken.
 
 ### Opgeloste Problemen
 
