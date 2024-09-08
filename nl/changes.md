@@ -2996,6 +2996,11 @@ Hoogtepunten in deze versie zijn verbeterde ondersteuning voor Microsoft Edge; b
 * Het is niet langer mogelijk om het Patroonveld leeg te laten voor een nieuwe regel in het spraakwoordenboek. (#6412)
 * Een zeldzaam probleem opgelost bij het zoeken naar seriële poorten in sommige systemen wat sommige drivers voor brailleleesregels onbruikbaar maakte. (#6462)
 * Genummerde opsommingstekens in tabelcellen worden nu gelezen in Microsoft Word als u per cel navigeert. (#6446)
+* It is now possible to assign gestures to commands for the Handy Tech braille display driver in the NVDA Input Gestures dialog. (#6461)
+* In Microsoft Excel, pressing enter or numpadEnter when navigating a spreadsheet now correctly reports navigation to the next row. (#6500)
+* iTunes no longer intermittently freezes forever when using browse mode for the iTunes Store, Apple Music, etc. (#6502)
+* Fixed crashes in 64 bit Mozilla and Chrome-based applications. (#6497)
+* In Firefox with multi-process enabled, browse mode and editable text fields now function correctly. (#6380)
 
 ### Veranderingen voor Ontwikkelaars (niet vertaald)
 
