@@ -2798,6 +2798,7 @@ Hoogtepunten in deze versie zijn invoer van braille kortschrift, ondersteuning v
 * Er is een niet toegewezen invoerhandeling toegevoegd om NVDA op verzoek te herstarten. U kunt deze optie vinden in de categorie Diversen van het dialoogvenster Invoerhandelingen. (#6396)
 * De toetsenbordindeling kan nu worden ingesteld in het welkomscherm van NVDA. (#6863)
 * Veel meer soorten besturingselementen en bijbehorende status-indicatoren zijn afgekort voor braille. Ook oriëntatiepunten zijn afgekort. Zie "Braille-afkortingen voor besturingselementen, status-indicatoren en oriëntatiepunten" onder Braille in de Gebruikershandleiding voor een volledige lijst. (#7188, #3975)
+* Updated eSpeak NG to 1.49.1. (#7280)
 * In het dialoogvenster Braille-instellingen zijn de lijsten van uitvoer- en invoertabellen nu alfabetisch gerangschikt. (#6113)
 * liblouis braille translator bijgewerkt naar 3.2.0. (#6935)
 * De standaard brailletabel is nu Uniforme Engelse Braillecode graad 1. (#6952)
