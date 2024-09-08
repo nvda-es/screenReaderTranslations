@@ -2367,8 +2367,8 @@ Raadpleeg de lijst met wijzigingen verderop voor meer informatie hierover.
 * Het is mogelijk om de logfuncties van NVDA uit te schakelen door het niveau van loggen in te stellen op "uitgeschakeld" in de categorie met Algemene instellingen. (#8516)
 * De aanwezigheid van formules in -spreadsheets in LibreOffice en Apache OpenOffice wordt nu gemeld. (#860)
 * In Mozilla Firefox en Google Chrome meldt de bladermodus nu het geselecteerde item in keuzelijsten en boomstructuren.
- * Dit werkt in Firefox 66 en later.
- * Dit werkt niet voor bepaalde keuzelijsten (HTML select elementen) in Chrome.
+ * Dit werkt in Firefox 66 en later.
+ * Dit werkt niet voor bepaalde keuzelijsten (HTML select elementen) in Chrome.
 * Vroege ondersteuning voor apps zoals Mozilla Firefox op computers met ARM64-processors (bijvoorbeeld Qualcomm Snapdragon). (#9216)
 * Er is een nieuwe geavanceerd categorie toegevoegd aan het dialoogvenster Instellingen van NVDA, inclusief een optie om NVDA's nieuwe ondersteuning voor Microsoft Word uit te proberen via de Microsoft UI Automation API. (#9200)
 * Ondersteuning toegevoegd voor de grafische weergave in Windows Schijfbeheer. (#1486)
@@ -2623,6 +2623,7 @@ Hoogtepunten in deze versie zijn ondersteuning voor tabellen in Kindle voor PC, 
 * NVDA meldt niet langer links-naar-rechts- en rechts-naar-links-markeringen in braille of bij het navigeren per karakter in spraak wanneer de klok wordt bekeken in recente versies van Windows. (#5729)
 * Detectie van de scrolltoetsen op Hims Smart Beetle leesregels is opnieuw niet meer onbetrouwbaar. (#6086)
 * In sommige besturingselementen voor tekstinvoer, voornamelijk in Delphi-applicaties, is de informatie over bewerken en navigeren een stuk betrouwbaarder dan voorheen. (#636, #8102)
+* In Windows 10 RS5, NVDA no longer reports extra redundant information when switching tasks with alt+tab. (#8258)
 
 ### Veranderingen voor Ontwikkelaars (niet vertaald)
 
