@@ -10,10 +10,10 @@ Het maakt ook het lezen van vergelijkingen in de Microsoft Word-vergelijkingsedi
 
 Help Tech Activator Pro-brailleleesregels worden nu ondersteund.
 
-Ongeassigneerde opdrachten zijn toegevoegd om het muiswiel verticaal en horizontaal te scrollen.
+Niet toegewezen opdrachten zijn toegevoegd om het muiswiel verticaal en horizontaal te scrollen.
 
-Er zijn verschillende bugfixes, met name voor het Windows 11 Emoji-paneel en de geschiedenis van het klembord.
-Voor webbrowsers zijn er oplossingen voor het rapporteren van foutmeldingen, afbeeldingen, bijschriften, tabellabels en menu-items van selectievakjes/radioknoppen.
+Er zijn verschillende bugfixes, met name voor het Windows 11 Emoji-paneel en de klembordgeschiedenis.
+Voor webbrowsers zijn er oplossingen voor het melden van fouten, afbeeldingen, bijschriften, tabellabels en menu-items van selectievakjes/radioknoppen.
 
 LibLouis is bijgewerkt en voegt nieuwe brailletabellen toe voor Cyrillisch Servisch, Jiddisch, verschillende oude talen, Turks en het Internationaal Fonetisch Alfabet.
 eSpeak is bijgewerkt met ondersteuning voor de Karakalpaks taal.
@@ -22,7 +22,7 @@ Unicode CLDR is ook bijgewerkt.
 ### Nieuwe functies
 
 * Nieuwe toetsopdrachten:
-  * Ongeassigneerde opdrachten toegevoegd voor verticale en horizontale scroll van het muiswiel, om de navigatie op webpagina's en apps met dynamische inhoud, zoals Dism++, te verbeteren. (#16462, @Cary-Rowen)
+  * Niet toegewezen opdrachten toegevoegd voor verticale en horizontale scroll van het muiswiel, om de navigatie op webpagina's en apps met dynamische inhoud, zoals Dism++, te verbeteren. (#16462, @Cary-Rowen)
 * Ondersteuning toegevoegd voor Unicode-normalisatie in spraak- en braille-uitvoer. (#11570, #16466 @LeonarddeR).
   * Dit kan handig zijn bij het lezen van tekens die onbekend zijn voor een bepaalde spraaksynthesizer of brailletabel en die een compatibel alternatief hebben, zoals de vetgedrukte en cursieve tekens die vaak op sociale media worden gebruikt.
   * Het maakt ook het lezen van vergelijkingen in de Microsoft Word-vergelijkingseditor mogelijk. (#4631)
