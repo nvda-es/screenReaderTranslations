@@ -2849,7 +2849,7 @@ Hoogtepunten in deze versie zijn volledige ondersteuning voor audio-onderdrukkin
 
 ### Nieuwe Functies
 
-* Informatie over celranden kan nu worden gemeld in Microsoft Excel via `NVDA+f`. (#3044)
+* Informatie over celranden kan nu worden gemeld in Microsoft Excel via NVDA+f. (#3044)
 * Ondersteuning toegevoegd voor aria-current attributen. (#6358)
 * Automatische taalverandering wordt nu ondersteund in Microsoft Edge. (#6852)
 * Ondersteuning toegevoegd voor Windows Rekenmachine op Windows 10 Enterprise LTSB (Long-Term Servicing Branch) en Server. (#6914)
@@ -2886,12 +2886,22 @@ Hoogtepunten in deze versie zijn volledige ondersteuning voor audio-onderdrukkin
 
 ### Veranderingen voor Ontwikkelaars (niet vertaald)
 
-* Timestamps in the log now include milliseconds. (#7163)
-* NVDA must now be built with Visual Studio Community 2015. Visual Studio Express is no longer supported. (#7110)
- * The Windows 10 Tools and SDK are now also required, which can be enabled when installing Visual Studio.
- * See the Installed Dependencies section of the readme for additional details.
-* Support for content recognizers such as OCR and image description tools can be easily implemented using the new contentRecog package. (#7361)
-* The Python json package is now included in NVDA binary builds. (#3050)
+* Commandline arguments are now processed with Python's argparse module, rather than optparse. This allows certain options such as -r and -q to be handled exclusively. (#6865)
+* core.callLater now queues the callback to NVDA's main queue after the given delay, rather than waking the core and executing it directly. This stops possible freezes due to the  core accidentally going to sleep after processing a callback, in the midle of  a modal call such as the desplaying of a message box. (#6797)
+* The InputGesture.identifiers property has been changed so that it is no longer normalized. (#6945)
+ * Subclasses no longer need to normalize identifiers before returning them from this property.
+ * If you want normalized identifiers, there is now an InputGesture.normalizedIdentifiers property which normalizes the identifiers returned by the identifiers property .
+* The InputGesture.logIdentifier property is now deprecated. Callers should use InputGesture.identifiers[0] instead. (#6945)
+* Removed some deprecated code:
+ * `speech.REASON_*` constants: `controlTypes.REASON_*` should be used instead. (#6846)
+ * `i18nName` for synth settings: `displayName` and `displayNameWithAccelerator` should be used instead. (#6846, #5185)
+ * `config.validateConfig`. (#6846, #667)
+ * `config.save`: `config.conf.save` should be used instead. (#6846, #667)
+* The list of completions in the autocomplete context menu of the Python Console no longer shows  any object path leading up to the final symbol being completed. (#7023)
+* There is now a unit testing framework for NVDA. (#7026)
+ * Unit tests and infrastructure are located in the tests/unit directory. See the docstring in the tests\unit\init.py file for details.
+ * You can run tests using "scons tests". See the "Running Tests" section of readme.md for details.
+ * If you are submitting a pull request for NVDA, you should first run the tests and ensure they pass.
 
 ## 2017.1
 
