@@ -3460,7 +3460,7 @@ Hoogtepunten in deze versie zijn bladermodus voor Microsoft Word en Outlook docu
  * Deze commando's kunnen nu ook meerdere keren per blad worden gebruikt om verschillende koppen in te stellen voor verschillende gebieden.
 * Ondersteuning voor het automatisch lezen van kolom- en rijkoppen in Microsoft Word (#3110) inclusief:
  * Ondersteuning van MS Word bookmarks om kopcellen te identificeren (compatibel met de Jaws screenreader) 
- * De commando's kolomkoppen instellen (NVDA+shift+c) en rijkoppen instellen (NVDA+shift+r) laten u in de eerste kopcel van een tabel toe om NVDA te laten weten dat deze koppen automatisch gemeld moeten worden. De instellingen worden in het document bewaard zodat ze beschikbaar zijn de volgende keer dat het document wordt geopend, en ze zullen beschikbaar zijn voor andere schermlezers die het bookmark schema ondersteunen.
+ -  De commando's kolomkoppen instellen (NVDA+shift+c) en rijkoppen instellen (NVDA+shift+r) laten u in de eerste kopcel van een tabel toe om NVDA te laten weten dat deze koppen automatisch gemeld moeten worden. De instellingen worden in het document bewaard zodat ze beschikbaar zijn de volgende keer dat het document wordt geopend, en ze zullen beschikbaar zijn voor andere schermlezers die het bookmark schema ondersteunen.
 * Microsoft Word: meld de afstand van de linkerrand van de pagina als men op de tabtoets drukt. (#1353)
 * Microsoft Word: geeft feedback in spraak en braille voor de meest beschikbare opmaaksneltoetsen (vet, cursief, onderlijnen, uitlijning en kopniveau's). (#1353)
 * Microsoft Excel: als de geselecteerde cel opmerkingen bevat, kunnen deze nu gemeld worden via NVDA+alt+c (#2920)
@@ -3661,6 +3661,9 @@ Hoogtepunten in deze versie zijn bladermodus voor Microsoft Word en Outlook docu
 * In Microsoft Excel kondigt NVDA samengevoegde cellen nu anders aan dan meerdere geselecteerde cellen. (#3567)
 * De bladermoduscursor wordt niet langer foutief gepositioneerd bij het verlaten van een dialoogvenster of toepassing binnen het document. (#3145)
 * Een probleem opgelost waarbij op sommige systemen de driver voor de HumanWare Brailliant BI/B serie brailleleesregel niet als optie verscheen in het Braille-instellingen dialoogvenster, zelfs als de leesregel was verbonden via USB.
+* NVDA no longer fails  to switch to screen review when the navigator object has no actual screen location. In this case the review cursor is now placed at the top of the screen. (#3454)
+* Fixed an issue which caused the Freedom Scientific braille display driver to fail when the port was set to USB in some circumstances. (#3509, #3662)
+* Fixed an issue where keys on Freedom Scientific braille displays weren't detected in some circumstances. (#3401, #3662)
 
 ### Veranderingen voor Ontwikkelaars (niet vertaald)
 
