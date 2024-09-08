@@ -3412,17 +3412,22 @@ Hoogtepunten in deze versie zijn bladermodus voor Microsoft Word en Outlook docu
 
 ### Opgeloste Problemen
 
-* Verschillende probleemoplossingen voor bladermodusdocumenten en de werking van NVDA op het internet. Zie voor details [het Engelstalige document](../en/changes.html). (#4369, #4169, #4418, #4405, #3494, #4173)
+* When moving focus back to a browse mode document (e.g. alt+tabbing to an already opened web page), the review cursor is properly positioned at the virtual caret, rather than the focused control (e.g. a nearby link). (#4369)
 * In Powerpoint-presentaties volgt de leescursor nu de virtuele cursor op een correcte manier. (#4370)
+* In Mozilla Firefox and other Gecko-based browsers, new content within a live region will be announced even if the new content has a usable ARIA live type different to the parent live region; e.g. when content marked as assertive is added to a live region marked as polite. (#4169)
+* In Internet Explorer and other MSHTML controls, some cases where a document is contained within another document no longer prevent the user from accessing some of the content (specifically, framesets inside framesets). (#4418)
 * NVDA loopt in sommige gevallen niet langer vast bij het gebruik van een Handy Tech brailleleesregel. (#3709)
 * Het in een aantal gevallen weergeven van een foutmelding in Windows Vista, bijv. bij het starten van NVDA via de bureaubladsnelkoppeling of via de sneltoets, is opgelost.(#4235)
 * Er zijn ernstige problemen met tekstinvoer opgelost in dialoogvensters in recente versies van Eclipse. (#3872)
 * In Outlook 2010 werkt het verplaatsen van de cursor in het locatieveld van afspraken en vergaderverzoeken nu naar behoren. (#4126)
+* Inside a live region, content which is marked as not being live (e.g. aria-live="off") is now correctly ignored. (#4405)
 * Bij het melden van de tekst van een statusbalk met een naam wordt de naam nu correct gescheiden van het eerste woord van de statusbalktekst. (#4430)
 * Bij het invoeren van wachtwoorden met het uitspreken van woorden ingeschakeld worden er niet langer nodeloos meerdere sterretjes uitgesproken bij het beginnen aan een nieuw woord. (#4402)
 * In de berichtenlijst van Microsoft Outlook worden items niet langer nodeloos benoemd als data-items. (#4439)
 * Bij het selecteren van tekst in het codevenster van de Eclipse IDE wordt de hele selectie niet langer iedere keer uitgesproken bij een selectieverandering. (#2314)
 * Verschillende versies van Eclipse worden nu als zodanig herkend en behandeld. (#4360, #4454)
+* Mouse tracking and touch exploration in Internet Explorer and other MSHTML controls (including many Windows 8 applications) is now much more accurate  on high DPI displays or when document zoom is changed. (#3494) 
+* Mouse tracking and touch exploration in Internet Explorer and other MSHTML controls will now announce the label of more buttons. (#4173)
 * Bij het gebruik van een Papenmeier BRAILLEX brailleleesregel met BrxCom werken de toetsen op de leesregel nu als verwacht. (#4614)
 
 ### Veranderingen voor Ontwikkelaars (niet vertaald)
