@@ -2962,6 +2962,7 @@ Hoogtepunten in deze versie zijn verbeterde ondersteuning voor Microsoft Edge; b
 * Ondersteuning voor de Baum SuperVario2, Baum Vario 340 en HumanWare Brailliant2 brailleleesregels. (#6116)
 * Initiële ondersteuning voor de Verjaardagsupdate van Microsoft Edge. (#6271)
 * Bladermodus wordt nu gebruikt bij het lezen van emails in de Windows 10 mail app. (#6271)
+* New language: Lithuanian.
 
 ### Veranderingen
 
