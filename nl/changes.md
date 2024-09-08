@@ -3369,6 +3369,7 @@ Hoogtepunten in deze versie zijn bladermodus voor Microsoft Word en Outlook docu
 * Wanneer de focus verplaatst naar een nieuw item in boomstructuren in de Eclipse IDEen het eerder geselecteerde item een selectivakje is, wordt het niet langer onterecht gemeld. (#4586)
 * In het venster voor spellingscontrole van Microsoft Word zal de volgende fout automatisch gemeld moeten worden wanneer de laatste fout veranderd of genegeerd is met gebruik van de daarvoor bedoelde sneltoetsen. (#1938)
 * Tekst kan weer correct worden gelezen in plaatsen zoals het terminalvenster van Tera Term Pro en documenten in Balabolka. (#4229)
+* Focus now correctly returns to the document being edited When finishing input composition of text in Korean and other east Asian languages while editing within a frame in Internet Explorer and other MSHTML documents. (#4045)
 * Wanneer u in het dialoogvenster Invoerhandelingen koppelen tijdens het selecteren van een toetsenbordindeling voor een toetsenbordsneltoets op escape drukt, zal het menu gesloten worden in plaats van het hele venster. (#3617)
 * Bij het verwijderen van een add-on wordt de map van de add-on nu correct verwijderd na het herstarten van NVDA. Voorheen moest NVDA twee keer herstart worden. (#3461)
 * Er zijn belangrijke problemen opgelost bij het gebruik van Skype voor Desktop 7. (#4218)
@@ -3377,8 +3378,14 @@ Hoogtepunten in deze versie zijn bladermodus voor Microsoft Word en Outlook docu
 * Er is een probleem opgelost waarbij het NVDA-commando voor het melden van de datum/tijd de regionale instellingen van de gebruiker in sommige gevallen niet respecteerde. (#2987)
 * In de bladermodus wordt onzinnige tekst (die soms zelfs meerdere regels omvat) niet langer gepresenteerd voor bepaalde afbeeldingen zoals te vinden op Google Groups. Dit gebeurde specifiek met base64 gecodeerde afbeeldingen.) (#4793)
 * NVDA zou niet langer na enkele seconden moeten bevriezen wanneer de focus verplaatst wordt uit een app uit de Windows Store. (#4572)
-* Verschillende verbeteringen voor Mozilla Firefox, Internet Explorer en andere MSHTML elementen, onder andere voor ondersteuning van aria. Zie voor details [het Engelstalige document](../en/changes.html). (#4045, #4794, #4798, #4800, #4575, #4839, #3776, #4491, #4667)
+* The aria-atomic attribute on live regions in Mozilla Firefox is now honored even when the atomic element itself changes. Previously, it only affected descendant elements. (#4794)
+* Browse mode will reflect updates, and live regions will be announced, for   browse mode documents within ARIA applications embedded in a document in Internet Explorer or other MSHTML controls. (#4798)
+* When text is changed or added in live regions in Internet Explorer and other MSHTML controls where the author has specified that text is relevant, only the changed or added text is announced, rather than all of the text in the containing element. (#4800)
+* Content indicated by the aria-labelledby attribute on elements in Internet Explorer and other MSHTML controls correctly replaces the original content  where it is appropriate to do so. (#4575)
 * Bij de spellingscontrole in Microsoft Outlook 2013 wordt het verkeerd gespelde woord nu gemeld. (#4848)
+* In Internet Explorer and other MSHTML controls, content inside elements hidden with visibility:hidden is no longer inappropriately presented in browse mode. (#4839, #3776)
+* In Internet Explorer and other MSHTML controls, the title attribute on form controls no longer inappropriately takes preference over other label associations. (#4491)
+* In Internet Explorer and other MSHTML controls, NVDA no longer ignores focusing  of elements  due to the aria-activedescendant attribute. (#4667)
 
 ### Veranderingen voor Ontwikkelaars (niet vertaald)
 
