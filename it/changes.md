@@ -126,7 +126,7 @@ Sono disponibili numerose correzioni di bug minori per applicazioni come Thunder
 ### Novità
 
 * Nuovi tasti di scelta rapida:
-  * Nuovo comando di navigazione veloce "p" per passare al paragrafo di testo successivo/precedente in modalità navigazione. (#15998, @mltony)
+  * Nuovo comando di navigazione veloce `p` per passare al paragrafo di testo successivo/precedente in modalità navigazione. (#15998, @mltony)
   * Nuovi comandi di navigazione veloce non assegnati, che possono essere utilizzati per passare all'elemento  successivo/precedente indicati di seguito:
     * figura (#10826)
     * paragrafo allineato verticalmente (#15999, @mltony)
@@ -172,7 +172,7 @@ Sono disponibili numerose correzioni di bug minori per applicazioni come Thunder
   * `alt+frecciaSinistra` è ora mappato su `punto2+punto7+spazio`
   * `alt+frecciadestra` è ora mappato su `punto5+punto7+spazio`
   * `alt+frecciaSu` è ora mappato su `punto2+punto3+punto7+spazio`
-  * "alt+frecciaGiù" è ora mappato su "punto5+punto6+punto7+spazio"
+  * `alt+frecciaGiù` è ora mappato su `punto5+punto6+punto7+spazio`
 * I punti di riempimento comunemente utilizzati nei sommari non vengono più inseriti nei livelli di punteggiatura più bassi. (#15845, @CyrilleB79)
 
 ### Bug Corretti
@@ -322,7 +322,7 @@ Gli utenti di Poedit 1 sono fortemente pregati ad aggiornare a Poedit 3 se desid
   * Questo nuovo comportamento può essere disabilitato utilizzando la nuova impostazione "Utilizza elaborazione eventi avanzata" nelle impostazioni avanzate di NVDA.
 * NVDA è nuovamente in grado di seguire il focus nelle applicazioni in esecuzione all'interno di Windows Defender Application Guard (WDAG). (#15164)
 * Il testo parlato non viene più aggiornato quando il mouse si sposta nel Visualizzatore vocale. (#15952, @hwf1324)
-* NVDA tornerà nuovamente alla modalità navigazione quando si chiudono le caselle combinate con "escape" o "alt+freccia su" in Firefox o Chrome. (#15653)
+* NVDA tornerà nuovamente alla modalità navigazione quando si chiudono le caselle combinate con `escape` o `alt+freccia su` in Firefox o Chrome. (#15653)
 * L'utilizzo delle freccie su e giù nelle caselle combinate di iTunes non attiverà più erroneamente la modalità navigazione. (#15653)
 
 ### Changes for Developers
@@ -642,9 +642,8 @@ Come sempre, aggiornati eSpeak-NG, LibLouis braille translator, e Unicode CLDR.
   * Un gesto non associato per passare tra le modalità di visualizzazione dei messaggi in braille. (#14864)
   * Un gesto non associato per attivare o disattivare l'indicatore di selezione per il braille. (#14948)
   * Un gesto associato per spostarsi tra gli oggetti in modalità semplificata senza tener conto della gerarchia.  (#15053)
-      * Desktop: `NVDA+9TastierinoNumerico` e `NVDA+3TastierinoNumerico` per passare rispettivamente all'oggetto precedente e successivo.
-  * Laptop: `shift+NVDA+à` e `shift+NVDA+ù` per passare rispettivamente all'oggetto precedente e successivo.
-    -
+    * Desktop: `NVDA+9TastierinoNumerico` e `NVDA+3TastierinoNumerico` per passare rispettivamente all'oggetto precedente e successivo.
+    * Laptop: `shift+NVDA+à` e `shift+NVDA+ù` per passare rispettivamente all'oggetto precedente e successivo.
 * Nuove funzioni braille:
   * Aggiunto il supporto per il display Braille Help Tech Activator. (#14917)
   * Una nuova opzione Braille per attivare o disattivare l'indicatore di selezione (punti 7 e 8). (#14948)
