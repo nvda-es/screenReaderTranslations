@@ -1,6 +1,5 @@
 # ﻿Novità in NVDA 
 
-
 ## 2024.3
 
 Nel caso in cui vi siano aggiornamenti per gli add-on installati, si verrà avvisati all'avvio di NVDA.
