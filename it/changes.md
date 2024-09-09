@@ -1265,6 +1265,7 @@ Come sempre, aggiornate anche le tabelle LibLouis, con il supporto ad una nuova 
 * Problemi risolti inerenti il braille:
   * Risolto il problema con la lettura durante la navigazione in un testo nei controlli editazione avanzati di Mozilla, come la bozza di un messaggio in Thunderbird. (#12542)
   * Quando l'inseguimento braille è impostato su automatico e e il mouse viene spostato con la funzione di tracciamento mouse attiva, i comandi di revisione del testo ora aggiornano correttamente il display braille con ciò che la sintesi vocale legge.
+  i comandi di revisione del testo ora aggiornano il display braille con il contenuto parlato. (#11519)
   * Risulta ora possibile scorrere il display braille in un contenuto dopo che sono stati utilizzati i comandi di revisione del testo (#8682)
 * Il programma di installazione di NVDA ora può essere eseguito da directory con caratteri speciali. (#13270)
 * In Firefox, NVDA non incontra più problemi nel segnalare gli elementi nelle pagine Web quando gli attributi aria-rowindex, aria-colindex, aria-rowcount o aria-colcount non risultano validi. (#13405)
@@ -1277,16 +1278,21 @@ Come sempre, aggiornate anche le tabelle LibLouis, con il supporto ad una nuova 
 * Visual Studio ora segnala correttamente i rientri della riga. (#13574)
 * NVDA leggerà nuovamente i dettagli dei risultati di ricerca del menu Start nelle recenti versioni di Windows 10 e 11. (#13544)
 * Nella Calcolatrice versione 10.1908 e successive in Windows 10 e 11, NVDA annuncerà i risultati quando vengono premuti più comandi, come quelli della modalità scientifica. (#13386)
-* In Windows 11, è nuovamente possibile navigare e interagire con gli elementi dell'interfaccia utente come la barra delle applicazioni e la visualizzazione attività utilizzando il mouse o l'interazione a tocco. (#13508)
+NVDA annuncerà i risultati quando vengono premuti più comandi, come i comandi dalla modalità scientifica. (#13383)
+* In Windows 11, è nuovamente possibile navigare e interagire con gli elementi dell'interfaccia utente, 
+come la barra delle applicazioni e la visualizzazione attività utilizzando il mouse o l'interazione a tocco. (#13508)
 * NVDA annuncerà il contenuto della barra di stato nel Blocco note di Windows 11. (#13688)
 * L'evidenziazione del navigatore ad oggetti ora si attiverà istantaneamente subito dopo l'attivazione della funzione.. (#13641)
 * Sistemata la lettura della prima colonna nella visualizzazione ad elenco degli elementi. (#13659, #13735)
 * Sistemato il cambio lingua automatico in eSpeak per Inglese e Francese che selezioneranno British English and French (France). (#13727)
+* Risolto il problema con il cambio automatico della lingua di OneCore quando si tenta di passare a una lingua precedentemente installata. (#13732)
 
 ### Changes for Developers
 
-* Compiling NVDA dependencies with Visual Studio 2022 (17.0) is now supported. For development and release builds, Visual Studio 2019 is still used. (#13033)
-* When retrieving the count of selected children via accSelection, the case where a negative child ID or an IDispatch is returned by IAccessible::get_accSelection is now handled properly. (#13276)
+* Compiling NVDA dependencies with Visual Studio 2022 (17.0) is now supported.
+For development and release builds, Visual Studio 2019 is still used. (#13033)
+* When retrieving the count of selected children via accSelection,
+the case where a negative child ID or an IDispatch is returned by `IAccessible::get_accSelection` is now handled properly. (#13277)
 * New convenience functions `registerExecutableWithAppModule` and `unregisterExecutable` were added to the `appModuleHandler` module.
 They can be used to use a single App Module with multiple executables. (#13366)
 
@@ -1299,9 +1305,10 @@ Note, the roadmap for removals is 'best effort' and may be subject to change.
 Please test the new API and provide feedback.
 For add-on authors, please open a GitHub issue if these changes stop the API from meeting your needs.
 
-* `gui.quit` has been deprecated for removal in 2023.1. (#13498)
-  * Use `wx.CallAfter(mainFrame.onExitCommand, None)` directly instead.
-* Some alias appModules are marked as deprecated and will be removed in 2023.1.
+* `appModuleHandler.NVDAProcessID` is deprecated, use `globalVars.appPid` instead. (#13646)
+* `gui.quit` is deprecated, use `wx.CallAfter(mainFrame.onExitCommand, None)` instead. (#13498)
+  -
+* Some alias appModules are marked as deprecated.
 Code which imports from one of them, should instead import from the replacement module.  (#13366)
 
 | Removed module name |Replacement module|
