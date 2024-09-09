@@ -653,8 +653,8 @@ Come sempre, aggiornati eSpeak-NG, LibLouis braille translator, e Unicode CLDR.
   * Driver Baum Braille: aggiunti diversi gesti per l'esecuzione di comandi comuni da tastiera come `windows+d`, `alt+tab` ecc.
   Fare riferimento alla guida utente di NVDA per un elenco completo. (#14714)
 * Aggiunta pronuncia dei nuovi simboli Unicode:
-  * simboli braille quali "⠐⠣⠃⠗⠇⠐⠜". (#14548)
-  * Simbolo del tasto Opzione Mac "⌥". (#14682)
+  * simboli braille quali `⠐⠣⠃⠗⠇⠐⠜`. (#14548)
+  * Simbolo del tasto Opzione Mac `⌥`. (#14682)
 * Aggiunti gesti per i display Braille di Tivomatic Caiku Albatross. (#14844, #15002)
   * mostra la finestra di dialogo impostazioni braille
   * Accedere alla barra di stato
@@ -674,7 +674,7 @@ Come sempre, aggiornati eSpeak-NG, LibLouis braille translator, e Unicode CLDR.
     * Un'opzione che consente al volume dei suoni e dei beep di NVDA di seguire l'impostazione del volume della voce in uso. (#1409)
     * Un'opzione che consente di separare il volume della voce da quello dei suoni e di gestirli separatamente. (#1409, #15038)
   * Esiste un problema noto che provoca arresti anomali casuali quando WASAPI è abilitato. (#15150)
-* In Mozilla Firefox e Google Chrome, NVDA ora segnala se un controllo apre una finestra di dialogo, una griglia, un elenco o un albero, purché l'autore lo abbia specificato utilizzando aria-haspopup. (#14709)
+* In Mozilla Firefox e Google Chrome, NVDA ora segnala se un controllo apre una finestra di dialogo, una griglia, un elenco o un albero, purché l'autore lo abbia specificato utilizzando `aria-haspopup`. (#14709)
 * Ora è possibile utilizzare variabili di sistema (come `%temp%` o `%homepath%`) quando si specifica il percorso durante la creazione di copie portable di NVDA. (#14680)
 * In Windows 10 May 2019 Update e versioni successive, NVDA è in grado di leggere i nomi dei desktop virtuali durante l'apertura, la modifica e la chiusura. (#5641)
 * È stato aggiunto un parametro a livello di sistema per consentire agli utenti e agli amministratori di forzare l'avvio di NVDA in modalità protetta. (#10018)
@@ -691,7 +691,7 @@ Come sempre, aggiornati eSpeak-NG, LibLouis braille translator, e Unicode CLDR.
   * Se ci si sposta su una cella diversa in LibreOffice Calc, NVDA non annuncia più erroneamente le coordinate della cella precedente quando la lettura delle coordinate della cella è disabilitata nelle impostazioni di NVDA. (#15098)
 * Cambiamenti per il braille:
   * Quando si utilizza un display Braille tramite il driver braille HID standard, ci si può servire anche del dPad per emulare i tasti freccia e invio.
-  Anche spazio+punto1 e spazio+punto4 ora sono mappati rispettivamente alla freccia su e giù. (#14713)
+  Anche `spazio+punto1` e `spazio+punto4` ora sono mappati rispettivamente alla freccia su e giù. (#14713)
   * Gli aggiornamenti ai contenuti web dinamici (regioni live ARIA) possono ora essere visualizzati in braille.
   La funzione è disattivabile dalle impostazioni avanzate. (#7756)
 * I simboli trattino e trattino lungo verranno sempre inviati al sintetizzatore. (#13830)
@@ -798,6 +798,7 @@ Migliorato il supporto per i contenuti Web con annotazioni (come commenti e note
 Introdotto il supporto per i display braille Tivomatic Caiku Albatross 46/80.
 
 Migliorato anche il supporto per le versioni ARM64 e AMD64 di Windows.
+
 Sono stati risolti anche molti bug soprattutto inerenti a windows11..
 
 Come sempre, eSpeak, LibLouis, Sonic rate boost e Unicode CLDR sono stati aggiornati.
