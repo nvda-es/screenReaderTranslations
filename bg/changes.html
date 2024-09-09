@@ -481,7 +481,7 @@ LibLouis беше обновен, като са добавени нови под
 <li><code>IAccessibleHandler.SecureDesktopNVDAObject</code> беше премахнато.
 Вместо това, когато NVDA работи в потребителския профил, проследяването на съществуването на защитени екрани става с разширителната точка: <code>winAPI.secureDesktop.post_secureDesktopStateChange</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14488" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14488">#14488</a>)</li>
 <li><code>braille.BrailleHandler.handlePendingCaretUpdate</code> беше премахнато, без публичен заместител. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15163" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15163">#15163</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
-<li><code>bdDetect.addUsbDevices</code> и <code>bdDetect.addBluetoothDevices</code> бяха премахнати.
+<li><code>bdDetect.addUsbDevices и bdDetect.addBluetoothDevices</code> бяха премахнати.
 Драйверите за брайлов дисплей трябва вместо това да имплементират метода на класа <code>registerAutomaticDetection</code>.
 Този метод получава обект <code>DriverRegistrar</code>, върху който могат да се използват методите <code>addUsbDevices</code> и <code>addBluetoothDevices</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15200" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15200">#15200</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
 <li>Имплементацията по подразбиране на метода за проверка на <code>BrailleDisplayDriver</code> вече изисква атрибутите <code>threadSafe</code> и <code>supportsAutomaticDetection</code> да бъдат зададени на <code>True</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15200" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15200">#15200</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
@@ -970,7 +970,7 @@ LibLouis беше обновен, като са добавени нови под
 <li>NVDA вече няма да протоколира неточни предупреждения или грешки относно остарелите модули за приложения. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14806" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14806">#14806</a>)</li>
 <li>Всички разширителни точки на NVDA вече са описани накратко в нова, специална глава в Ръководството за разработчици. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14648" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14648">#14648</a>)</li>
 <li><code>scons checkpot</code> вече няма да проверява подпапката <code>userConfig</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14820" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14820">#14820</a>)</li>
-<li>Преводимите низове вече могат да бъдат дефинирани с форми за единствено и множествено число с помощта на „ngettext“ и „npgettext“. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12445" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12445">#12445</a>)</li>
+<li>Преводимите низове вече могат да бъдат дефинирани с форми за единствено и множествено число с помощта на <code>ngettext</code> и <code>npgettext</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12445" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12445">#12445</a>)</li>
 </ul>
 <h4 id="_30">Неща за оттегляне</h4>
 <ul>
@@ -1133,13 +1133,13 @@ LibLouis беше обновен, като са добавени нови под
 <li>В раздела <code>[documentFormatting]</code> (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14233" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14233">#14233</a>):<ul>
 <li><code>reportLineIndentation</code> съхранява целочислена стойност (от 0 до 3) вместо булева такава.</li>
 <li><code>reportLineIndentationWithTones</code> е премахнато.</li>
-<li><code>reportBorderStyle</code> и <code>reportBorderColor</code> са премахнати и са заменени от „reportCellBorders“.</li>
+<li><code>reportBorderStyle</code> и <code>reportBorderColor</code> са премахнати и са заменени от <code>reportCellBorders</code>.</li>
 </ul>
 </li>
 <li>В раздела <code>[braille]</code> (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14233" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14233">#14233</a>):<ul>
 <li><code>noMessageTimeout</code> е премахнато и заменено със стойност за <code>showMessages</code>.</li>
 <li><code>messageTimeout</code> вече не може да приема стойност 0 – заменено е от стойност за <code>showMessages</code>.</li>
-<li><code>autoTether</code> е премахнато – вместо това, <code>tetherTo</code> вече може да приема стойността <code>auto</code>.</li>
+<li><code>autoTether</code> е премахнато – вместо това, <code>tetherTo</code> вече може да приема стойността „auto“.</li>
 </ul>
 </li>
 <li>В раздела <code>[keyboard]</code> (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14528" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14528">#14528</a>):<ul>
@@ -1177,29 +1177,29 @@ LibLouis беше обновен, като са добавени нови под
 </ul>
 </li>
 <li>Следните вече не са единични (singletons) – методът им get е премахнат.
-Използването на „Example.get()“ вече е „Example()“. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14248" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14248">#14248</a>)<ul>
-<li>„UIAHandler.customAnnotations.CustomAnnotationTypesCommon“</li>
-<li>„UIAHandler.customProps.CustomPropertiesCommon“</li>
-<li>„NVDAObjects.UIA.excel.ExcelCustomProperties“</li>
-<li>„NVDAObjects.UIA.excel.ExcelCustomAnnotationTypes“</li>
+Използването на <code>Example.get()</code> вече е <code>Example()</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14248" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14248">#14248</a>)<ul>
+<li><code>UIAHandler.customAnnotations.CustomAnnotationTypesCommon</code></li>
+<li><code>UIAHandler.customProps.CustomPropertiesCommon</code></li>
+<li><code>NVDAObjects.UIA.excel.ExcelCustomProperties</code></li>
+<li><code>NVDAObjects.UIA.excel.ExcelCustomAnnotationTypes</code></li>
 </ul>
 </li>
 </ul>
 <h4 id="_36">Неща за оттегляне</h4>
 <ul>
-<li>„NVDAObjects.UIA.winConsoleUIA.WinTerminalUIA“ е оттеглено и използването му не се препоръчва. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14047" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14047">#14047</a>)</li>
-<li>„config.addConfigDirsToPythonPackagePath“ е преместено.
-Вместо това използвайте „addonHandler.packaging.addDirsToPythonPackagePath“. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14350" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14350">#14350</a>)</li>
-<li>„braille.BrailleHandler.TETHER_<em>“ са оттеглени.
-Вместо това използвайте „configFlags.TetherTo.</em>.value“. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14233" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14233">#14233</a>)</li>
-<li>„utils.security.postSessionLockStateChanged“ е оттеглено.
-Вместо това използвайте „utils.security.post_sessionLockStateChanged“. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14486" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14486">#14486</a>)</li>
-<li>„NVDAObject.hasDetails“, „NVDAObject.detailsSummary“, „NVDAObject.detailsRole“ са оттеглени.
-Вместо това използвайте „NVDAObject.annotations“. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14507" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14507">#14507</a>)</li>
-<li>„keyboardHandler.SUPPORTED_NVDA_MODIFIER_KEYS“ е оттеглено без директен заместител.
-Вместо това се препоръчва използването на класа „config.configFlags.NVDAKey“. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14528" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14528">#14528</a>)</li>
-<li>„gui.MainFrame.evaluateUpdatePendingUpdateMenuItemCommand“ е оттеглено.
-Вместо това използвайте „gui.MainFrame.SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand“. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14523" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14523">#14523</a>)</li>
+<li><code>NVDAObjects.UIA.winConsoleUIA.WinTerminalUIA</code> е оттеглено и използването му не се препоръчва. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14047" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14047">#14047</a>)</li>
+<li><code>config.addConfigDirsToPythonPackagePath</code> е преместено.
+Вместо това използвайте <code>addonHandler.packaging.addDirsToPythonPackagePath</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14350" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14350">#14350</a>)</li>
+<li><code>braille.BrailleHandler.TETHER_*</code> са оттеглени.
+Вместо това използвайте <code>configFlags.TetherTo.*.value</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14233" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14233">#14233</a>)</li>
+<li><code>utils.security.postSessionLockStateChanged</code> е оттеглено.
+Вместо това използвайте <code>utils.security.post_sessionLockStateChanged</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14486" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14486">#14486</a>)</li>
+<li><code>NVDAObject.hasDetails</code>, <code>NVDAObject.detailsSummary</code>, <code>NVDAObject.detailsRole</code> са оттеглени.
+Вместо това използвайте <code>NVDAObject.annotations</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14507" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14507">#14507</a>)</li>
+<li><code>keyboardHandler.SUPPORTED_NVDA_MODIFIER_KEYS</code> е оттеглено без директен заместител.
+Вместо това се препоръчва използването на класа <code>config.configFlags.NVDAKey</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14528" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14528">#14528</a>)</li>
+<li><code>gui.MainFrame.evaluateUpdatePendingUpdateMenuItemCommand</code> е оттеглено.
+Вместо това използвайте <code>gui.MainFrame.SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14523" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14523">#14523</a>)</li>
 </ul>
 <h2 id="20224">2022.4</h2>
 <p>Тази версия включва някои нови клавишни комбинации, включително такива за прочитане на всичко в таблици.
@@ -1211,28 +1211,28 @@ LibLouis беше обновен, като са добавени нови под
 <ul>
 <li>В ръководството за потребителя е добавен раздел „Кратко начално ръководство“. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13934" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13934">#13934</a>)</li>
 <li>Налична е нова команда за проверка на клавишната комбинация на текущия фокус. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13960" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13960">#13960</a>)<ul>
-<li>Настолна: Shift+2 от цифровия блок.</li>
-<li>Лаптоп: NVDA+Control+Shift+Точка.</li>
+<li>Настолна: <code>Shift+2 от цифровия блок</code>.</li>
+<li>Лаптоп: <code>NVDA+Control+Shift+Точка</code>.</li>
 </ul>
 </li>
 <li>Добавени са нови команди за преместване на курсора за преглед по страници, когато това се поддържа от приложението. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14021" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14021">#14021</a>)<ul>
 <li>Преминаване към предишна страница:<ul>
-<li>Настолна: NVDA+Page Up.</li>
-<li>Лаптоп: NVDA+Shift+Page Up.</li>
+<li>Настолна: <code>NVDA+Page Up</code>.</li>
+<li>Лаптоп: <code>NVDA+Shift+Page Up</code>.</li>
 </ul>
 </li>
 <li>Преминаване към следваща страница:<ul>
-<li>Настолна: NVDA+Page Down.</li>
-<li>Лаптоп: NVDA+Shift+Page Down.</li>
+<li>Настолна: <code>NVDA+Page Down</code>.</li>
+<li>Лаптоп: <code>NVDA+Shift+Page Down</code>.</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Добавени са следните команди за таблици. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14070" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14070">#14070</a>)<ul>
-<li>Прочитане на цялата колона в посока надолу: NVDA+Control+Alt+Стрелка надолу</li>
-<li>Прочитане на целия ред в посока надясно: NVDA+Control+Alt+Стрелка надясно</li>
-<li>Прочитане на цялата колона в посока нагоре: NVDA+Control+Alt+Стрелка нагоре</li>
-<li>Прочитане на целия ред в посока наляво: NVDA+Control+Alt+Стрелка наляво</li>
+<li>Прочитане на цялата колона в посока надолу: <code>NVDA+Control+Alt+Стрелка надолу</code></li>
+<li>Прочитане на целия ред в посока надясно: <code>NVDA+Control+Alt+Стрелка надясно</code></li>
+<li>Прочитане на цялата колона в посока нагоре: <code>NVDA+Control+Alt+Стрелка нагоре</code></li>
+<li>Прочитане на целия ред в посока наляво: <code>NVDA+Control+Alt+Стрелка наляво</code></li>
 </ul>
 </li>
 <li>В Microsoft Excel NVDA вече съобщава чрез UI Automation при излизане от таблица. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14165" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14165">#14165</a>)</li>
@@ -1240,7 +1240,7 @@ LibLouis беше обновен, като са добавени нови под
 </ul>
 <h3 id="_38">Промени</h3>
 <ul>
-<li>eSpeak NG е обновен до 1.52-dev ревизия 735ecdb8. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14060" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14060">#14060</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14079" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14079">#14079</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14118" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14118">#14118</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14203" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14203">#14203</a>)<ul>
+<li>eSpeak NG е обновен до 1.52-dev ревизия <code>735ecdb8</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14060" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14060">#14060</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14079" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14079">#14079</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14118" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14118">#14118</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14203" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14203">#14203</a>)<ul>
 <li>Коригирано е докладването на букви на латиница при използване на мандарин. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12952" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12952">#12952</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13572" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13572">#13572</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14197" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14197">#14197</a>)</li>
 </ul>
 </li>
@@ -1284,20 +1284,20 @@ LibLouis беше обновен, като са добавени нови под
 <li>Промените в ориентацията (пейзажна/портретна) вече се игнорират коректно, когато не са се случили (например при смяна на монитора). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14035" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14035">#14035</a>)</li>
 <li>NVDA ще докладва влаченето на елементи по екрана при пренареждане на плочки в менюто „Старт“ на Windows 10 и виртуални работни плотове в Windows 11. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12271" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12271">#12271</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14081" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14081">#14081</a>)</li>
 <li>В разширените настройки опцията „Просвирвай звук за протоколирани грешки“, се възстановява до стойността си по подразбиране при натискане на бутона „Възстанови настройките по подразбиране“. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14149" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14149">#14149</a>)</li>
-<li>NVDA вече може да избира текст чрез клавишната комбинация "NVDA+F10" в Java приложения. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14163" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14163">#14163</a>)</li>
+<li>NVDA вече може да избира текст чрез клавишната комбинация <code>NVDA+F10</code> в Java приложения. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14163" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14163">#14163</a>)</li>
 <li>NVDA вече няма да забива в меню, когато се придвижвате със стрелки нагоре и надолу в списъка с групирани дискусии на Microsoft Teams. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14355" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14355">#14355</a>)</li>
 </ul>
 <h3 id="_40">Промени за разработчици</h3>
 <p>Моля, прегледайте <a href="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API" rel="noopener" target="_blank" title="ръководството за разработчици (на английски език)">ръководството за разработчици (на английски език)</a> за информация относно процеса по оттегляне и премахване на ППИ на NVDA.</p>
 <ul>
 <li>Беше създаден <a href="https://groups.google.com/a/nvaccess.org/g/nvda-api/about" rel="noopener" target="_blank" title="пощенският списък за анонси за ППИ на NVDA (на английски език)">пощенският списък за анонси за ППИ на NVDA (на английски език)</a>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13999" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13999">#13999</a>)</li>
-<li>NVDA вече не обработва събития от тип „textChange“ за повечето приложения, използващи UI Automation, поради тяхното изключително отрицателно въздействие върху производителността. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11002" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11002">#11002</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14067" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14067">#14067</a>)</li>
+<li>NVDA вече не обработва събития от тип <code>textChange</code> за повечето приложения, използващи UI Automation, поради тяхното изключително отрицателно въздействие върху производителността. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11002" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11002">#11002</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14067" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14067">#14067</a>)</li>
 </ul>
 <h4 id="_41">Неща за оттегляне</h4>
 <ul>
-<li>„core.post_windowMessageReceipt“ е оттеглено – вместо това използвайте „winAPI.messageWindow.pre_handleWindowMessage“.</li>
-<li>„winKernel.SYSTEM_POWER_STATUS“ е оттеглено и използването му не се препоръчва. Преместено е в „winAPI._powerTracking.SystemPowerStatus“.</li>
-<li>Константите „winUser.SM_*“ са оттеглени – вместо това използвайте „winAPI.winUser.constants.SystemMetrics“.</li>
+<li><code>core.post_windowMessageReceipt</code> е оттеглено – вместо това използвайте <code>winAPI.messageWindow.pre_handleWindowMessage</code>.</li>
+<li><code>winKernel.SYSTEM_POWER_STATUS</code> е оттеглено и използването му не се препоръчва. Преместено е в <code>winAPI._powerTracking.SystemPowerStatus</code>.</li>
+<li>Константите <code>winUser.SM_*</code> са оттеглени – вместо това използвайте <code>winAPI.winUser.constants.SystemMetrics</code>.</li>
 </ul>
 <h2 id="202233">2022.3.3</h2>
 <p>Това е второстепенна версия за отстраняване на проблеми с 2022.3.2, 2022.3.1 и 2022.3.
@@ -1317,13 +1317,13 @@ LibLouis беше обновен, като са добавени нови под
 <h3 id="_44">Промени за разработчици</h3>
 <h4 id="_45">Неща за оттегляне</h4>
 <ul>
-<li>„utils.security.isObjectAboveLockScreen(obj)“ е оттеглено. Вместо това използвайте „obj.isBelowLockScreen“. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14416" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14416">#14416</a>)</li>
-<li>Следните функции в „winAPI.sessionTracking“ са планирани за оттегляне във версия 2023.1. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14416" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14416">#14416</a>)<ul>
-<li>„isWindowsLocked“</li>
-<li>„handleSessionChange“</li>
-<li>„unregister“</li>
-<li>„register“</li>
-<li>„isLockStateSuccessfullyTracked“</li>
+<li><code>utils.security.isObjectAboveLockScreen(obj)</code> е оттеглено. Вместо това използвайте <code>obj.isBelowLockScreen</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14416" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14416">#14416</a>)</li>
+<li>Следните функции в <code>winAPI.sessionTracking</code> са планирани за оттегляне във версия 2023.1. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14416" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14416">#14416</a>)<ul>
+<li><code>isWindowsLocked</code></li>
+<li><code>handleSessionChange</code></li>
+<li><code>unregister</code></li>
+<li><code>register</code></li>
+<li><code>isLockStateSuccessfullyTracked</code></li>
 </ul>
 </li>
 </ul>
@@ -1365,8 +1365,9 @@ LibLouis беше обновен, като са добавени нови под
 <ul>
 <li>В контейнера на конзолата на Windows, използван от командния ред, PowerShell и подсистемата на Windows за Linux под Windows 11 версия 22H2 (Sun Valley 2) и по-нови версии:<ul>
 <li>Значително подобрени производителност и стабилност. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10964" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10964">#10964</a>)</li>
-<li>При натискане на Control+F за търсене на текст, позицията на курсора за преглед се актуализира, за да следва намерения низ. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11172" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11172">#11172</a>)</li>
-<li>Докладването на въведен текст, който не се показва на екрана (например пароли), по подразбиране е изключено. Може да се включи отново в панела с разширените настройки на NVDA. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11554" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11554">#11554</a>)</li>
+<li>При натискане на <code>Control+F</code> за търсене на текст, позицията на курсора за преглед се актуализира, за да следва намерения низ. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11172" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11172">#11172</a>)</li>
+<li>Докладването на въведен текст, който не се показва на екрана (например пароли), по подразбиране е изключено.
+Може да се включи отново в панела с разширените настройки на NVDA. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11554" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11554">#11554</a>)</li>
 <li>Текст, който е превъртян извън екрана, може да бъде прегледан без нуждата от превъртане на прозореца на конзолата. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12669" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12669">#12669</a>)</li>
 <li>Налична е по-подробна информация за форматирането на текста. (<a href="https://github.com/microsoft/terminal/pull/10336" rel="noopener" target="_blank" title="microsoft/terminal PR 10336">microsoft/terminal PR 10336</a>)</li>
 </ul>
