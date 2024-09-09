@@ -493,6 +493,7 @@ Please responsibly disclose security issues following NVDA's [security policy](h
 
 ## 2023.3.2
 
+This is a patch release to fix a security issue.
 The security patch in 2023.3.1 was not resolved correctly.
 Please responsibly disclose security issues following NVDA's [security policy](https://github.com/nvaccess/nvda/blob/master/security.md).
 
