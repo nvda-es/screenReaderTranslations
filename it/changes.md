@@ -877,6 +877,7 @@ La doppia pressione presenterà il contenuto in una finestra, per una più agevo
 * Nei browser quali Chrome e Firefox, vengono mostrati anche in braille oltre ad essere annunciati alcuni avvisi quali il completamento del download di un file. (#14562)
 * Risolto un bug nella navigazione della prima e l'ultima colonna in una tabella in Firefox (#14554)
 * Quando NVDA viene eseguito con il parametro `--lang=Windows`, è nuovamente possibile aprire la finestra di dialogo Impostazioni generali di NVDA. (#14407)
+* NVDA non interrompe più la lettura su Kindle per PC dopo aver voltato pagina. (#14390)
 
 ### Changes for Developers
 
