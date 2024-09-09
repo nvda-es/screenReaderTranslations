@@ -1173,6 +1173,15 @@ Ciò migliorerà le prestazioni per alcune applicazioni Java, tra cui IntelliJ I
 
 There are no deprecations proposed in 2022.3.
 
+## 2022.2.4
+
+Questa è una versione patch per risolvere un problema di sicurezza.
+
+### Bug Fixes
+
+* Risolto un problema per cui era possibile aprire la console Python di NVDA tramite il visualizzatore di log nella schermata di blocco.
+([GHSA-585m-rpvv-93qg](https://github.com/nvaccess/nvda/security/advisories/GHSA-585m-rpvv-93qg))
+
 ## 2022.2.3
 
 Questa è una versione che va a correggere un errore presente nelle API della versione 2022.2.1.
@@ -1184,7 +1193,7 @@ In questo modo quando si usava NVDA Remote non venivano riconosciuti i Desktop S
 
 ## 2022.2.2
 
-This is a patch release to fix a bug introduced in 2022.2.1 with input gestures.
+Questa è una patch per correggere un bug introdotto nella versione 2022.2.1 con i gesti di input.
 
 ### Bug Fixes
 
