@@ -105,7 +105,6 @@ It is especially useful to read the error location markers in tracebacks. (#1632
   * `scheduleThread.scheduleDailyJob` and `scheduleJob` can be used to schedule jobs at custom times, where a `JobClashError` will be raised on a known job scheduling clash.
 * It is now possible to create app modules for apps hosting Edge WebView2 (msedgewebview2.exe) controls. (#16705, @josephsl)
 
-
 ## 2024.2
 
 Introdotta una nuova funzionalità chiamata hbilanciamento audio.
