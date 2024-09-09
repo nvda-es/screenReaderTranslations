@@ -42,7 +42,7 @@
   * تحديث fast_diff_match_patch (المستخدَم لاكتشاف التغييرات في وحدات التحكُّم الطرفية لتوجيه الأوامر والمحتوى النَشِط في غيرها) 2.1.0. (#16508, @codeofdusk)
   * تحديث مترجم برايل LibLouis إلى الإصدار [3.30.0](https://github.com/liblouis/liblouis/releases/tag/v3.30.0). (#16652, @codeofdusk)
     * احتوى على جداول برايل جديدة:
-    * صربي سيريلية.
+      * صربي سيريلية.
       * يديشي.
       * العديد من جداول للغات قديمة: العبرية التوراتية، الأكادية، السريانية، الأوغاريتية، والنص المسماري المترجم.
       * تركي الدرجة الثانية (باختصارات). (#16735)
@@ -66,7 +66,7 @@
   * لم يعُدْ NVDA يردد الإعلان عن "سجل الحافظة" مرتين عند التنقُّل ضمن عناصر قائمة لوحة رموز المشاعر. (#16532, @josephsl)
   * عند استعراض الرموز و kaomojis في لوحة الرموز التعبيرية، لن يتوقف NVDA عن النُطق وعرض برايل. (#16533, @josephsl)
 * إصلاحات متعلقة بمتصفحات الشبكة:
-  * سيُعلَن الآن عن رسائل الخطأ المعرَّفة على أنها aria-errormessage في Google Chrome وMozilla Firefox. (#8318)
+  * سيُعلَن الآن عن رسائل الخطأ المعرَّفة على أنها `aria-errormessage` في Google Chrome وMozilla Firefox. (#8318)
   * سيستعين NVDA الآن بخاصية `aria-labelledby` إن وُجدت، لتزويد المستخدم بتسميات بديلة قابلة للقراءة للجداول في Mozilla Firefox. (#5183)
   * سيقرأ NVDA عناصر القائمة من أزرار اختيار ومربعات تحديد بشكل صحيح، عند الدخول لأول مرة إلى القوائم الفرعية في Google Chrome وMozilla Firefox. (#14550)
   * ستعمل خاصية البحث في نمط التصفُّح الآن بدقة إذا وُجدت في الصفحة رموز تعبرية (Emoji). (#16317, @LeonarddeR)
@@ -88,7 +88,22 @@
 
 ### تعديلاتٌ للمطورين
 
-يضمُّ ملف المستجدات الخاص بهذا الإصدار العديد من التعديلات التي من شأنها تسهيل أداء وعمل مطوري البرنامج، إلا أنها لم تَرِدْ في النسخة العربية حيث أن المستخدم لن يستفيد منها بشكل مباشر كما أنها تضم مصطلحات تقنية متخصصة جدا لا يستخدمها ولا يحتاجها سوى مطوّرو البرنامج. ولمن يرغب في الاطلاع على هذا القسم يمكنه الرجوع إلى ملف المستجدات الموجود باللغة الإنجليزية
+* NVDA now uses Ruff instead of flake8 for linting. (#14817)
+* Fixed NVDA's build system to work properly when using Visual Studio 2022 version 17.10 and above. (#16480, @LeonarddeR)
+* A fixed width font is now used in Log Viewer and in the NVDA Python Console so that the cursor remains in the same column during vertical navigation.
+It is especially useful to read the error location markers in tracebacks. (#16321, @CyrilleB79)
+* Support for custom braille tables has been added. (#3304, #16208, @JulienCochuyt, @LeonarddeR)
+  * Tables can be provided in the `brailleTables` folder in an add-on package.
+  * Table metadata can be added to an optional `brailleTables` section in the add-on manifest or to a `.ini` file with the same format found in the brailleTables subdirectory of the scratchpad directory.
+  * Please consult the [braille translation tables section in the developer guide](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#BrailleTables) for more details.
+* When a `gainFocus` event is queued with an object that has a valid `focusRedirect` property, the object pointed to by the `focusRedirect` property is now held by `eventHandler.lastQueuedFocusObject`, rather than the originally queued object. (#15843)
+* NVDA will log its executable architecture (x86) at startup. (#16432, @josephsl)
+* `wx.CallAfter`, which is wrapped in `monkeyPatches/wxMonkeyPatches.py`, now includes proper `functools.wraps` indication. (#16520, @XLTechie)
+* There is a new module for scheduling tasks `utils.schedule`, using the pip module `schedule`. (#16636)
+  * You can use `scheduleThread.scheduleDailyJobAtStartUp` to automatically schedule a job that happens after NVDA starts, and every 24 hours after that.
+  Jobs are scheduled with a delay to avoid conflicts.
+  * `scheduleThread.scheduleDailyJob` and `scheduleJob` can be used to schedule jobs at custom times, where a `JobClashError` will be raised on a known job scheduling clash.
+* It is now possible to create app modules for apps hosting Edge WebView2 (msedgewebview2.exe) controls. (#16705, @josephsl)
 
 ## 2024.2
 
