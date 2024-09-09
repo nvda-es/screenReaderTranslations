@@ -389,7 +389,250 @@ Jobs are scheduled with a delay to avoid conflicts.</li>
 <li>لن يؤدي التحرُّك بالسهمين العلوي والسفلي في صناديق الخيارات في iTunes إلى العودة لنمط التصفُّح على نحو غير ملائم. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15653" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15653">#15653</a>)</li>
 </ul>
 <h3 id="_13">تعديلاتٌ للمطورين</h3>
-<p>يضمُّ ملف المستجدات الخاص بهذا الإصدار العديد من التعديلات التي من شأنها تسهيل أداء وعمل مطوري البرنامج، إلا أنها لم تَرِدْ في النسخة العربية حيث أن المستخدم لن يستفيد منها بشكل مباشر كما أنها تضم مصطلحات تقنية متخصصة جدا لا يستخدمها ولا يحتاجها سوى مطوّرو البرنامج. ولمن يرغب في الاطلاع على هذا القسم يمكنه الرجوع إلى ملف المستجدات الموجود باللغة الإنجليزية</p>
+<p>Please refer to <a href="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API" rel="noopener" target="_blank" title="the developer guide">the developer guide</a> for information on NVDA's API deprecation and removal process.</p>
+<ul>
+<li>Note: this is an Add-on API compatibility breaking release.
+Add-ons will need to be re-tested and have their manifest updated.</li>
+<li>Building NVDA now requires Visual Studio 2022.
+Please refer to the <a href="https://github.com/nvaccess/nvda/blob/release-2024.1/projectDocs/dev/createDevEnvironment.md" rel="noopener" target="_blank" title="NVDA docs">NVDA docs</a> for the specific list of Visual Studio components. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14313" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14313">#14313</a>)</li>
+<li>Added the following extension points:<ul>
+<li><code>treeInterceptorHandler.post_browseModeStateChange</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14969" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14969">#14969</a>, <a class="gh-link gh-mention" href="https://github.com/nvdaes" rel="noopener" target="_blank" title="GitHub User: @nvdaes">@nvdaes</a>)</li>
+<li><code>speech.speechCanceled</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15700" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15700">#15700</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li><code>_onErrorSoundRequested</code> (should be retrieved calling <code>logHandler.getOnErrorSoundRequested()</code>) (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15691" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15691">#15691</a>, <a class="gh-link gh-mention" href="https://github.com/CyrilleB79" rel="noopener" target="_blank" title="GitHub User: @CyrilleB79">@CyrilleB79</a>)</li>
+</ul>
+</li>
+<li>It is now possible to use plural forms in an add-on's translations. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15661" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15661">#15661</a>, <a class="gh-link gh-mention" href="https://github.com/beqabeqa473" rel="noopener" target="_blank" title="GitHub User: @beqabeqa473">@beqabeqa473</a>)</li>
+<li>Included python3.dll in the binary distribution for use by add-ons with external libraries utilizing the <a href="https://docs.python.org/3.11/c-api/stable.html" rel="noopener" target="_blank" title="stable ABI">stable ABI</a>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15674" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15674">#15674</a>, <a class="gh-link gh-mention" href="https://github.com/mzanm" rel="noopener" target="_blank" title="GitHub User: @mzanm">@mzanm</a>)</li>
+<li>The <code>BrailleDisplayDriver</code> base class now has <code>numRows</code> and <code>numCols</code> properties to provide information about multi line braille displays.
+Setting <code>numCells</code> is still supported for single line braille displays and <code>numCells</code> will return the total number of cells for multi line braille displays. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15386" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15386">#15386</a>)</li>
+<li>Updated BrlAPI for BRLTTY to version 0.8.5, and its corresponding python module to a Python 3.11 compatible build. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15652" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15652">#15652</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li>Added the <code>speech.speakSsml</code> function, which allows you to write NVDA speech sequences using <a href="https://www.w3.org/TR/speech-synthesis11/" rel="noopener" target="_blank" title="SSML">SSML</a>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15699" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15699">#15699</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)<ul>
+<li>The following tags are currently supported and translated to appropriate NVDA speech commands:<ul>
+<li><code>Prosody</code> (<code>pitch</code>, <code>rate</code> and <code>volume</code>). Only multiplication (e.g. <code>200%</code> are supported.</li>
+<li><code>say-as</code> with the <code>interpret</code> attribute set to <code>characters</code></li>
+<li><code>voice</code> with the <code>xml:lang</code> set to an XML language</li>
+<li><code>break</code> with the <code>time</code> attribute set to a value in milliseconds, e.g. <code>200ms</code></li>
+<li><code>mark</code> with the <code>name</code> attribute set to a mark name, e.g. <code>mark1</code>, requires providing a callback</li>
+</ul>
+</li>
+<li>Example: <code>speech.speakSsml('&lt;speak&gt;&lt;prosody pitch="200%"&gt;hello&lt;/prosody&gt;&lt;break time="500ms" /&gt;&lt;prosody rate="50%"&gt;John&lt;/prosody&gt;&lt;/speak&gt;')</code></li>
+<li>The SSML parsing capabilities are backed by the <code>SsmlParser</code> class in the <code>speechXml</code> module.</li>
+</ul>
+</li>
+<li>Changes to the NVDA Controller Client library:<ul>
+<li>The file names of the library no longer contain a suffix denoting the architecture, i.e. <code>nvdaControllerClient32/64.dll</code> are now called <code>nvdaControllerClient.dll</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15718" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15718">#15718</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15717" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15717">#15717</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li>Added an example to demonstrate using nvdaControllerClient.dll from Rust. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15771" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15771">#15771</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li>Added the following functions to the controller client: (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15734" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15734">#15734</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/11028" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #11028">#11028</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/5638" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #5638">#5638</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)<ul>
+<li><code>nvdaController_getProcessId</code>: To get the process id (PID) of the current instance of NVDA the controller client is using.</li>
+<li><code>nvdaController_speakSsml</code>: To instruct NVDA to speak according to the given SSML. This function also supports:<ul>
+<li>Providing the symbol level.</li>
+<li>Providing the priority of speech to be spoken.</li>
+<li>Speaking both synchronously (blocking) and asynchronously (instant return).</li>
+</ul>
+</li>
+<li><code>nvdaController_setOnSsmlMarkReachedCallback</code>: To register a callback of type <code>onSsmlMarkReachedFuncType</code> that is called in synchronous mode for every <code>&lt;mark /&gt;</code> tag encountered in the SSML sequence provided to <code>nvdaController_speakSsml</code>.</li>
+</ul>
+</li>
+<li>Note: the new functions in the controller client only support NVDA 2024.1 and above.</li>
+</ul>
+</li>
+<li>Updated <code>include</code> dependencies:<ul>
+<li>detours to <code>4b8c659f549b0ab21cf649377c7a84eb708f5e68</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15695" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15695">#15695</a>)</li>
+<li>ia2 to <code>3d8c7f0b833453f761ded6b12d8be431507bfe0b</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15695" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15695">#15695</a>)</li>
+<li>sonic to <code>8694c596378c24e340c09ff2cd47c065494233f1</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15695" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15695">#15695</a>)</li>
+<li>w3c-aria-practices to <code>9a5e55ccbeb0f1bf92b6127c9865da8426d1c864</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15695" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15695">#15695</a>)</li>
+<li>wil to <code>5e9be7b2d2fe3834a7107f430f7d4c0631f69833</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15695" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15695">#15695</a>)</li>
+</ul>
+</li>
+<li>Device info yielded by <code>hwPortUtils.listUsbDevices</code> now contain the bus reported description of the USB device (key <code>busReportedDeviceDescription</code>). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15764" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15764">#15764</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li>For USB serial devices, <code>bdDetect.getConnectedUsbDevicesForDriver</code> and <code>bdDetect.getDriversForConnectedUsbDevices</code> now yield device matches containing a <code>deviceInfo</code> dictionary enriched with data about the USB device, such as <code>busReportedDeviceDescription</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15764" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15764">#15764</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li>When the configuration file <code>nvda.ini</code> is corrupted, a backup copy is saved before it is reinitialized. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15779" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15779">#15779</a>, <a class="gh-link gh-mention" href="https://github.com/CyrilleB79" rel="noopener" target="_blank" title="GitHub User: @CyrilleB79">@CyrilleB79</a>)</li>
+<li>When defining a script with the script decorator, the <code>speakOnDemand</code> boolean argument can be specified to control if a script should speak while in "on-demand" speech mode. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/481" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #481">#481</a>, <a class="gh-link gh-mention" href="https://github.com/CyrilleB79" rel="noopener" target="_blank" title="GitHub User: @CyrilleB79">@CyrilleB79</a>)<ul>
+<li>Scripts that provide information (e.g. say window title, report time/date) should speak in the "on-demand" mode.</li>
+<li>Scripts that perform an action (e.g. move the cursor, change a parameter) should not speak in the "on-demand" mode.</li>
+</ul>
+</li>
+<li>Fixed bug where deleting git-tracked files during <code>scons -c</code> resulted in missing UIA COM interfaces on rebuild. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7070" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7070">#7070</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10833" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10833">#10833</a>, <a class="gh-link gh-mention" href="https://github.com/hwf1324" rel="noopener" target="_blank" title="GitHub User: @hwf1324">@hwf1324</a>)</li>
+<li>Fix a bug where some code changes were not detected when building <code>dist</code>, that prevented a new build from being triggered.
+Now <code>dist</code> always rebuilds. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13372" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13372">#13372</a>, <a class="gh-link gh-mention" href="https://github.com/hwf1324" rel="noopener" target="_blank" title="GitHub User: @hwf1324">@hwf1324</a>)</li>
+<li>A <code>gui.nvdaControls.MessageDialog</code> with default type of standard, no longer throws a None conversion exception because no sound is assigned. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16223" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16223">#16223</a>, <a class="gh-link gh-mention" href="https://github.com/XLTechie" rel="noopener" target="_blank" title="GitHub User: @XLTechie">@XLTechie</a>)</li>
+</ul>
+<h4 id="api-breaking-changes">API Breaking Changes</h4>
+<p>These are breaking API changes.
+Please open a GitHub issue if your Add-on has an issue with updating to the new API.</p>
+<ul>
+<li>NVDA is now built with Python 3.11. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12064" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12064">#12064</a>)</li>
+<li>Updated pip dependencies:<ul>
+<li>configobj to 5.1.0dev commit <code>e2ba4457c4651fa54f8d59d8dcdd3da950e956b8</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15544" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15544">#15544</a>)</li>
+<li>Comtypes to 1.2.0. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15513" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15513">#15513</a>, <a class="gh-link gh-mention" href="https://github.com/codeofdusk" rel="noopener" target="_blank" title="GitHub User: @codeofdusk">@codeofdusk</a>)</li>
+<li>Flake8 to 4.0.1. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15636" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15636">#15636</a>, <a class="gh-link gh-mention" href="https://github.com/lukaszgo1" rel="noopener" target="_blank" title="GitHub User: @lukaszgo1">@lukaszgo1</a>)</li>
+<li>py2exe to 0.13.0.1dev commit <code>4e7b2b2c60face592e67cb1bc935172a20fa371d</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15544" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15544">#15544</a>) </li>
+<li>robotframework to 6.1.1. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15544" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15544">#15544</a>)</li>
+<li>SCons to 4.5.2. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15529" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15529">#15529</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li>sphinx to 7.2.6. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15544" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15544">#15544</a>)</li>
+<li>wxPython to 4.2.2a commit <code>0205c7c1b9022a5de3e3543f9304cfe53a32b488</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12551" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12551">#12551</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16257" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16257">#16257</a>)</li>
+</ul>
+</li>
+<li>Removed pip dependencies:<ul>
+<li>typing_extensions, these should be supported natively in Python 3.11 (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15544" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15544">#15544</a>)</li>
+<li>nose, instead unittest-xml-reporting is used to generate XML reports. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15544" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15544">#15544</a>)</li>
+</ul>
+</li>
+<li><code>IAccessibleHandler.SecureDesktopNVDAObject</code> has been removed.
+Instead, when NVDA is running on the user profile, track the existence of the secure desktop with the extension point: <code>winAPI.secureDesktop.post_secureDesktopStateChange</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14488" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14488">#14488</a>)</li>
+<li><code>braille.BrailleHandler.handlePendingCaretUpdate</code> has been removed with no public replacement. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15163" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15163">#15163</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li><code>bdDetect.addUsbDevices and bdDetect.addBluetoothDevices</code> have been removed.
+Braille display drivers should implement the <code>registerAutomaticDetection</code> class method instead.
+That method receives a <code>DriverRegistrar</code> object on which the <code>addUsbDevices</code> and <code>addBluetoothDevices</code> methods can be used. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15200" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15200">#15200</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li>The default implementation of the check method on <code>BrailleDisplayDriver</code> now requires both the <code>threadSafe</code> and <code>supportsAutomaticDetection</code> attributes to be set to <code>True</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15200" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15200">#15200</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li>Passing lambda functions to <code>hwIo.ioThread.IoThread.queueAsApc</code> is no longer possible, as functions should be weakly referenceable. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li><code>IoThread.autoDeleteApcReference</code> has been removed. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14924" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14924">#14924</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li>To support capital pitch changes, synthesizers must now explicitly declare their support for the <code>PitchCommand</code> in the <code>supportedCommands</code> attribute on the driver. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15433" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15433">#15433</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li><code>speechDictHandler.speechDictVars</code> has been removed. Use <code>NVDAState.WritePaths.speechDictsDir</code> instead of <code>speechDictHandler.speechDictVars.speechDictsPath</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15614" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15614">#15614</a>, <a class="gh-link gh-mention" href="https://github.com/lukaszgo1" rel="noopener" target="_blank" title="GitHub User: @lukaszgo1">@lukaszgo1</a>)</li>
+<li><code>languageHandler.makeNpgettext</code> and <code>languageHandler.makePgettext</code> have been removed.
+<code>npgettext</code> and <code>pgettext</code> are supported natively now. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15546" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15546">#15546</a>)</li>
+<li>The app module for <a href="https://poedit.net" rel="noopener" target="_blank" title="Poedit">Poedit</a> has been changed significantly. The <code>fetchObject</code> function has been removed. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15313" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15313">#15313</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7303" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7303">#7303</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li>The following redundant types and constants have been removed from <code>hwPortUtils</code>: (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15764" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15764">#15764</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)<ul>
+<li><code>PCWSTR</code></li>
+<li><code>HWND</code> (replaced by <code>ctypes.wintypes.HWND</code>)</li>
+<li><code>ULONG_PTR</code></li>
+<li><code>ULONGLONG</code></li>
+<li><code>NULL</code></li>
+<li><code>GUID</code> (replaced by <code>comtypes.GUID</code>)</li>
+</ul>
+</li>
+<li><code>gui.addonGui.AddonsDialog</code> has been removed. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15834" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15834">#15834</a>)</li>
+<li><code>touchHandler.TouchInputGesture.multiFingerActionLabel</code> has been removed with no replacement. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15864" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15864">#15864</a>, <a class="gh-link gh-mention" href="https://github.com/CyrilleB79" rel="noopener" target="_blank" title="GitHub User: @CyrilleB79">@CyrilleB79</a>)</li>
+<li><code>NVDAObjects.IAccessible.winword.WordDocument.script_reportCurrentHeaders</code> has been removed with no replacement. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15904" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15904">#15904</a>, <a class="gh-link gh-mention" href="https://github.com/CyrilleB79" rel="noopener" target="_blank" title="GitHub User: @CyrilleB79">@CyrilleB79</a>)</li>
+<li>The following app modules are removed.
+Code which imports from one of them, should instead import from the replacement module. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15618" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15618">#15618</a>, <a class="gh-link gh-mention" href="https://github.com/lukaszgo1" rel="noopener" target="_blank" title="GitHub User: @lukaszgo1">@lukaszgo1</a>)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Removed module name</th>
+<th>Replacement module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>azardi-2.0</code></td>
+<td><code>azardi20</code></td>
+</tr>
+<tr>
+<td><code>azuredatastudio</code></td>
+<td><code>code</code></td>
+</tr>
+<tr>
+<td><code>azuredatastudio-insiders</code></td>
+<td><code>code</code></td>
+</tr>
+<tr>
+<td><code>calculatorapp</code></td>
+<td><code>calculator</code></td>
+</tr>
+<tr>
+<td><code>code - insiders</code></td>
+<td><code>code</code></td>
+</tr>
+<tr>
+<td><code>commsapps</code></td>
+<td><code>hxmail</code></td>
+</tr>
+<tr>
+<td><code>dbeaver</code></td>
+<td><code>eclipse</code></td>
+</tr>
+<tr>
+<td><code>digitaleditionspreview</code></td>
+<td><code>digitaleditions</code></td>
+</tr>
+<tr>
+<td><code>esybraille</code></td>
+<td><code>esysuite</code></td>
+</tr>
+<tr>
+<td><code>hxoutlook</code></td>
+<td><code>hxmail</code></td>
+</tr>
+<tr>
+<td><code>miranda64</code></td>
+<td><code>miranda32</code></td>
+</tr>
+<tr>
+<td><code>mpc-hc</code></td>
+<td><code>mplayerc</code></td>
+</tr>
+<tr>
+<td><code>mpc-hc64</code></td>
+<td><code>mplayerc</code></td>
+</tr>
+<tr>
+<td><code>notepad++</code></td>
+<td><code>notepadPlusPlus</code></td>
+</tr>
+<tr>
+<td><code>searchapp</code></td>
+<td><code>searchui</code></td>
+</tr>
+<tr>
+<td><code>searchhost</code></td>
+<td><code>searchui</code></td>
+</tr>
+<tr>
+<td><code>springtoolsuite4</code></td>
+<td><code>eclipse</code></td>
+</tr>
+<tr>
+<td><code>sts</code></td>
+<td><code>eclipse</code></td>
+</tr>
+<tr>
+<td><code>teamtalk3</code></td>
+<td><code>teamtalk4classic</code></td>
+</tr>
+<tr>
+<td><code>textinputhost</code></td>
+<td><code>windowsinternal_composableshell_experiences_textinput_inputapp</code></td>
+</tr>
+<tr>
+<td><code>totalcmd64</code></td>
+<td><code>totalcmd</code></td>
+</tr>
+<tr>
+<td><code>win32calc</code></td>
+<td><code>calc</code></td>
+</tr>
+<tr>
+<td><code>winmail</code></td>
+<td><code>msimn</code></td>
+</tr>
+<tr>
+<td><code>zend-eclipse-php</code></td>
+<td><code>eclipse</code></td>
+</tr>
+<tr>
+<td><code>zendstudio</code></td>
+<td><code>eclipse</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="deprecations">Deprecations</h4>
+<ul>
+<li>Using <code>watchdog.getFormattedStacksForAllThreads</code> is deprecated - please use <code>logHandler.getFormattedStacksForAllThreads</code> instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15616" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15616">#15616</a>, <a class="gh-link gh-mention" href="https://github.com/lukaszgo1" rel="noopener" target="_blank" title="GitHub User: @lukaszgo1">@lukaszgo1</a>)</li>
+<li><code>easeOfAccess.canConfigTerminateOnDesktopSwitch</code> has been deprecated, as it became obsolete since Windows 7 is no longer supported. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15644" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15644">#15644</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
+<li><code>winVersion.isFullScreenMagnificationAvailable</code> has been deprecated - use <code>visionEnhancementProviders.screenCurtain.ScreenCurtainProvider.canStart</code> instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15664" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15664">#15664</a>, <a class="gh-link gh-mention" href="https://github.com/josephsl" rel="noopener" target="_blank" title="GitHub User: @josephsl">@josephsl</a>)</li>
+<li>The following Windows release constants has been deprecated from winVersion module (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15647" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15647">#15647</a>, <a class="gh-link gh-mention" href="https://github.com/josephsl" rel="noopener" target="_blank" title="GitHub User: @josephsl">@josephsl</a>):<ul>
+<li><code>winVersion.WIN7</code></li>
+<li><code>winVersion.WIN7_SP1</code></li>
+<li><code>winVersion.WIN8</code></li>
+</ul>
+</li>
+<li>The <code>bdDetect.KEY_*</code> constants have been deprecated.
+Use <code>bdDetect.DeviceType.*</code> instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15772" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15772">#15772</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>).</li>
+<li>The <code>bdDetect.DETECT_USB</code> and <code>bdDetect.DETECT_BLUETOOTH</code> constants have been deprecated with no public replacement. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15772" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15772">#15772</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>).</li>
+<li>Using <code>gui.ExecAndPump</code> is deprecated - please use <code>systemUtils.ExecAndPump</code> instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15852" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15852">#15852</a>, <a class="gh-link gh-mention" href="https://github.com/lukaszgo1" rel="noopener" target="_blank" title="GitHub User: @lukaszgo1">@lukaszgo1</a>)</li>
+</ul>
 <h2 id="20233">2023.3</h2>
 <p>يشتمل هذا الإصدار على تحسيناتٍ على أداء واستجابة واستقرار إخراج الصوت.
 أُضيفت خيارات للتحكم بمستوى أصوات ونغمات NVDA على حدة، أو بجعلها تابعة لمستوى صوت النُطق الذي تستخدمه.</p>
