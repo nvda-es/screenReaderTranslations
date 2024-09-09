@@ -466,6 +466,53 @@ Use `bdDetect.DeviceType.*` instead. (#15772, @LeonarddeR).
 * The `bdDetect.DETECT_USB` and `bdDetect.DETECT_BLUETOOTH` constants have been deprecated with no public replacement. (#15772, @LeonarddeR).
 * Using `gui.ExecAndPump` is deprecated - please use `systemUtils.ExecAndPump` instead. (#15852, @lukaszgo1)
 
+## 2023.3.4
+
+هذا إصدار ثانوي لإصلاح مشكلة الأمان ومشكلة التثبيت.
+يرجى الإبلاغ بحذر عن المشكلات الأمنية باتباع [سياسة الأمان] الخاصة بـ NVDA(https://github.com/nvaccess/nvda/blob/master/security.md).
+
+### Security Fixes
+
+* Prevents loading custom configuration while secure mode is forced.
+([GHSA-727q-h8j2-6p45](https://github.com/nvaccess/nvda/security/advisories/GHSA-727q-h8j2-6p45))
+
+### Bug Fixes
+
+* Fixed bug which caused the NVDA process to fail to exit correctly. (#16123)
+* Fixed bug where if the previous NVDA process failed to exit correctly, an NVDA installation could fail to an unrecoverable state. (#16122)
+
+## 2023.3.3
+
+This is a patch release to fix a security issue.
+Please responsibly disclose security issues following NVDA's [security policy](https://github.com/nvaccess/nvda/blob/master/security.md).
+
+### Security Fixes
+
+* Prevents possible reflected XSS attack from crafted content to cause arbitrary code execution.
+([GHSA-xg6w-23rw-39r8](https://github.com/nvaccess/nvda/security/advisories/GHSA-xg6w-23rw-39r8))
+
+## 2023.3.2
+
+The security patch in 2023.3.1 was not resolved correctly.
+Please responsibly disclose security issues following NVDA's [security policy](https://github.com/nvaccess/nvda/blob/master/security.md).
+
+### إصلاحات أمنية
+
+This is a patch release to fix a security issue.
+* The security patch in 2023.3.1 was not resolved correctly.
+Prevents possible system access and arbitrary code execution with system privileges for unauthenticated users.
+([GHSA-h7pp-6jqw-g3pj](https://github.com/nvaccess/nvda/security/advisories/GHSA-h7pp-6jqw-g3pj))
+
+## 2023.3.1
+
+This is a patch release to fix a security issue.
+Please responsibly disclose security issues following NVDA's [security policy](https://github.com/nvaccess/nvda/blob/master/security.md).
+
+### إصلاحات أمنية
+
+* Prevents possible system access and arbitrary code execution with system privileges for unauthenticated users.
+([GHSA-h7pp-6jqw-g3pj](https://github.com/nvaccess/nvda/security/advisories/GHSA-h7pp-6jqw-g3pj))
+
 ## 2023.3
 
 يشتمل هذا الإصدار على تحسيناتٍ على أداء واستجابة واستقرار إخراج الصوت.
