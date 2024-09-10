@@ -1243,8 +1243,8 @@ Come sempre, aggiornate anche le tabelle LibLouis, con il supporto ad una nuova 
 * NSIS è stato aggiornato alla versione 3.08. (#9134)
 * CLDR è stato aggiornato alla versione 41.0. (#13582)
 * Aggiornato Liblouis alla versione [3.22.0](https://github.com/liblouis/liblouis/releases/tag/v3.22.0). (#13775)
-* Aggiunto un nuovo ruolo per i controlli "barre di avanzamento non determinabili". (#10644)
   * Nuova tabella braille: Tedesco grado 2 (dettagliato)
+* Aggiunto un nuovo ruolo per i controlli "barre di avanzamento non determinabili". (#10644)
 * NVDA ora annuncia quando un'azione NVDA non può essere eseguita. (#13500)
   * Questo include quando:
     * Si utilizza la versione NVDA per Windows Store.
@@ -1265,7 +1265,7 @@ Come sempre, aggiornate anche le tabelle LibLouis, con il supporto ad una nuova 
 * Problemi risolti inerenti il braille:
   * Risolto il problema con la lettura durante la navigazione in un testo nei controlli editazione avanzati di Mozilla, come la bozza di un messaggio in Thunderbird. (#12542)
   * Quando l'inseguimento braille è impostato su automatico e e il mouse viene spostato con la funzione di tracciamento mouse attiva, i comandi di revisione del testo ora aggiornano correttamente il display braille con ciò che la sintesi vocale legge.
-  i comandi di revisione del testo ora aggiornano il display braille con il contenuto parlato. (#11519)
+    i comandi di revisione del testo ora aggiornano il display braille con il contenuto parlato. (#11519)
   * Risulta ora possibile scorrere il display braille in un contenuto dopo che sono stati utilizzati i comandi di revisione del testo (#8682)
 * Il programma di installazione di NVDA ora può essere eseguito da directory con caratteri speciali. (#13270)
 * In Firefox, NVDA non incontra più problemi nel segnalare gli elementi nelle pagine Web quando gli attributi aria-rowindex, aria-colindex, aria-rowcount o aria-colcount non risultano validi. (#13405)
@@ -1386,7 +1386,7 @@ Nota:
 * `NVDA+canc del tastierino numerico` fornisce informazioni sulla posizione del cursore di sistema o sull'oggetto che ha il focus per impostazioni predefinite. (#13060)
 * `NVDA+Shift+Canc del tastierino numerico` fornisce informazioni sulla posizione del cursore di controllo. (#13060)
 * Aggiunti i riferimenti predefiniti per attivare/disattivare i tasti modificatori ai display di Freedom Scientific (#13152)
-* Non vengono più fornite informazioni sulla baseline quando si preme nvda-f . (#11815)
+* Non vengono più fornite informazioni sulla baseline quando si preme `nvda-f` . (#11815)
 * Non esiste più un tasto rapido dedicato per la funzione di attivazione long description. (#13380)
 * è stato introdotto un tasto rapido per la funzione "Annuncia un riepilogo dei dettagli" (`NVDA+d`). (#13380)
 * NVDA deve essere riavviato dopo aver installato MathPlayer. (#13486)
@@ -1717,8 +1717,7 @@ Nota:
 * In modalità navigazione, è possibile usare i cursor routing di un display braille per attivare i controlli, premendo sulla descrizione del controllo stesso (ad esempio "lnk" per un link). Ciò risulta molto utile anche per attivare caselle di controllo senza un'etichetta specifica. (#7447)
 * NVDA non permette l'utilizzo dell'OCR di Windows10 nel caso in cui la tenda schermo sia attiva. (#11911)
 * Aggiornato Unicode Common Locale Data Repository (CLDR) alla versione  39.0. (#11943, #12314)
-* Aggiunti diversi simboli matematici al dizionario simboli. Per l'Italia si ringrazia il Dipartimento di Matematica "Tullio Levi Civita", Università di
-Padova, nelle persone delle prof.sse Ombretta Gaggi ed Alessandra Buratto. (#11467)
+* Aggiunti diversi simboli matematici al dizionario simboli. Per l'Italia si ringrazia il Dipartimento di Matematica "Tullio Levi Civita", Università di Padova, nelle persone delle prof.sse Ombretta Gaggi ed Alessandra Buratto. (#11467)
 * Migliorato l'aspetto della guida utente, del file delle novità e dei comandi di scelta rapida. (#12027)
 * Se si cerca di usare la funzione di modifica layout schermo (NVDA+v) in applicazioni che non la gestiscono come Microsoft Word, NVDA ora lo segnalerà dicendo "non supportato". (#7297)
 * Viene attivata per impostazione predefinita la funzione 'Tenta di non leggere informazioni obsolete concernenti il focus', presente nella finestra "avanzate" delle impostazioni di NVDA. (#10885)
