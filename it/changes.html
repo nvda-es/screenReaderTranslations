@@ -3874,6 +3874,10 @@ Si prega di fare attenzione al fatto che questa versione di NVDA non supporta pi
 <h3 id="cambiamenti-per-gli-sviluppatori_1">Cambiamenti per gli sviluppatori</h3>
 <ul>
 <li>NVDA ha unito  ora il supporto per la documentazione sugli add-on. Consultare la sezione sulla documentazione sugli add-on della guida per sviluppatori per maggiori dettagli. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2694" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2694">#2694</a>)</li>
+<li>Quando si forniscono associazioni di gesti su uno ScriptableObject tramite __gestures, ora è possibile fornire la parola chiave None come script. Ciò scioglie il gesto in qualsiasi classe base. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/4240" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #4240">#4240</a>)</li>
+<li>Ora è possibile modificare il tasto di scelta rapida utilizzato per avviare NVDA per le versioni locali in cui la normale scorciatoia causa problemi. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2209" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2209">#2209</a>)</li>
+<li>Questo viene fatto tramite gettext.</li>
+<li>Tieni presente che anche il testo dell'opzione Crea collegamento sul desktop nella finestra di dialogo Installa NVDA, nonché il tasto di scelta rapida nella Guida per l'utente, devono essere aggiornati.</li>
 </ul>
 <h2 id="20142">2014.2</h2>
 <h3 id="novita_37">Novità</h3>
@@ -4009,6 +4013,9 @@ Si prega di fare attenzione al fatto che questa versione di NVDA non supporta pi
 <li>In Microsoft Excel, NVDA ora distingue correttamente tra l'unione di celle e selezione di celle multiple. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3567" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3567">#3567</a>)</li>
 <li>Il cursore in modalità navigazione non viene più posizionato in maniera errata all'uscita da una finestra di dialogo o da un'applicazione interna del documento. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3145" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3145">#3145</a>)</li>
 <li>Sistemato un problema che non faceva apparire il display braille HumanWare Brailliant BI/B series nell'elenco delle barre disponibili, sebbene esso fosse correttamente connesso.</li>
+<li>NVDA non fallisce più nel passare alla revisione dello schermo quando l'oggetto del navigatore non ha una posizione effettiva sullo schermo. In questo caso il cursore di revisione è ora posizionato nella parte superiore dello schermo. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3454" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3454">#3454</a>)</li>
+<li>Risolto un problema che causava il fallimento del driver del display braille di Freedom Scientific quando la porta era impostata su USB in alcune circostanze. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3509" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3509">#3509</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3662" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3662">#3662</a>)</li>
+<li>Risolto un problema per cui in alcune circostanze i tasti sui display braille di Freedom Scientific non venivano rilevati. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3401" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3401">#3401</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3662" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3662">#3662</a>)</li>
 </ul>
 <h3 id="cambiamenti-per-sviluppatoriin-inglese">Cambiamenti per sviluppatori(in inglese)</h3>
 <ul>
@@ -4090,10 +4097,12 @@ Si prega di fare attenzione al fatto che questa versione di NVDA non supporta pi
 <li>Add-ons which depend on bisect (including the urllib2 module) should be updated to include this module.</li>
 </ul>
 <h2 id="201311">2013.1.1</h2>
+<p>Questa versione risolve il problema per cui NVDA si bloccava all'avvio se configurato per utilizzare la lingua irlandese, oltre a includere aggiornamenti alle traduzioni e alcune altre correzioni di bug.</p>
 <h3 id="bug-corretti_42">Bug corretti</h3>
 <ul>
 <li>quando si utilizza un metodo di immissione coreano o giapponese ed esso è il metodo predefinito, vengono prodotti correttamente i caratteri quando si digita nella propria interfaccia utente di NVDA. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2909" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2909">#2909</a>)</li>
 <li>In Internet Explorer e altri controlli MSHTML, i campi contrassegnati come contenenti una voce non valida sono ora gestiti correttamente. (# 3256)</li>
+<li>NVDA non si blocca più all'avvio se è configurato per utilizzare la lingua irlandese.</li>
 </ul>
 <h2 id="20131">2013.1</h2>
 <p>Le caratteristiche più importanti di questa versione comprendono un layout tastiera per i portatili più coerente e intuitivo; il supporto di base per Microsoft PowerPoint; la gestione degli attributi longdesc nei browser web e il supporto per l'immissione del Braille computer per i display braille che dispongono una tastiera braille.</p>
@@ -4145,11 +4154,7 @@ Si prega di consultare il documento <a href="keyCommands.html" title="Comandi ra
 <li>Supporto per i display Braille Braillenote della Humanware quando configurati per funzionare come periferica per screen reader. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2012" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2012">#2012</a>)</li>
 <li>Supporto ai vecchi modelli Papenmeier utilizzati tramite porta seriale. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2679" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2679">#2679</a>)</li>
 <li>Supporto alla scrittura diretta tramite display braille con tastiera in stile perkins. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/804" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #804">#804</a>)</li>
-<li>
-<ul>
 <li>Nuove impostazioni della tastiera che consentono di selezionare se NVDA debba interrompere il parlato per i caratteri digitati e o il tasto ENTER. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/698" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #698">#698</a>)</li>
-</ul>
-</li>
 <li>Supporto per diversi browser basati su Google Chrome: Rockmelt, BlackHawk, Comodo Dragon e SRWare Iron. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2236" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2236">#2236</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2813" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2813">#2813</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2814" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2814">#2814</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2815" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2815">#2815</a>)</li>
 </ul>
 <h3 id="cambiamenti_42">Cambiamenti</h3>
@@ -4162,6 +4167,7 @@ Si prega di consultare il documento <a href="keyCommands.html" title="Comandi ra
 <ul>
 <li>Il tasto rapido per spostarsi di sezione in sezione ora funziona anche con Internet Explorer. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2781" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2781">#2781</a>)</li>
 <li>Se NVDA non riesce a caricare un sintetizzatore all'avvio ed è costretto a parlare tramite Espeak, la configurazione viene lasciata inalterata, il che significa che la prossima volta che si riavvierà NVDA, tenterà di caricare ancora il sintetizzatore scelto dall'utente in precedenza, anziché mantenere Espeak come predefinito. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2589" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2589">#2589</a>)</li>
+<li>Se NVDA torna a non utilizzare Braille a causa di un guasto del display braille configurato all'avvio di NVDA, il display configurato non viene più automaticamente impostato su non Braille. Ciò significa che al prossimo avvio di NVDA verrà riprovata la visualizzazione originale. traduzione con intelligenza artificiale orribile! (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2264" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2264">#2264</a>)</li>
 <li>Nelle applicazioni Mozilla in modalità navigazione, vengono ora riportati correttamente gli aggiornamenti delle tabelle. Ad esempio, nelle celle aggiornate, vengono annunciate correttamente le coordinate delle colonne e delle righe. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2684" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2684">#2684</a>)</li>
 <li>Nei browser web in modalità navigazione, ora vengono intercettati anche elementi grafici cliccabili non etichettati che non venivano mostrati in precedenza. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2838" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2838">#2838</a>)</li>
 <li>Vengono supportate tutte le versioni  del programma SecureCRT. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2800" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2800">#2800</a>)</li>
@@ -4193,6 +4199,7 @@ Si prega di consultare il documento <a href="keyCommands.html" title="Comandi ra
 <li>Migliorata in Espeak la lettura carattere per carattere. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3106" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3106">#3106</a>)</li>
 <li>NVDA ora è in grado di copiare la configurazione utente nella configurazione da usarsi per le schermate di logon, anche quando il percorso del profilo utente contiene caratteri non-ascii. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3092" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3092">#3092</a>)</li>
 <li>NVDA non si blocca più quando si utilizza l'immissione di caratteri asiatici in alcune applicazioni .NET. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3005" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3005">#3005</a>)</li>
+<li>ora è possibile utilizzare la modalità navigazione per le pagine in Internet Explorer 10 in modalità standard; per esempio. Pagina di accesso <a href="http://www.gmail.com" rel="noopener" target="_blank" title="www.gmail.com">www.gmail.com</a>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3151" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3151">#3151</a>)</li>
 </ul>
 <h3 id="cambiamenti-per-sviluppatori_2">Cambiamenti per sviluppatori</h3>
 <ul>
