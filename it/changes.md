@@ -2601,7 +2601,8 @@ Le caratteristiche principali di questa versione comprendono il supporto per le 
 * Tutte le preferenze di NVDA sono state raggruppate in un'unica finestra impostazioni, raggiungibile dal menu NVDA -> Preferenze -> Impostazioni, in modo da non disperdere le opzioni in tante finestre diverse. (#577)
 * Quando si utilizza Windows10, ora la sintesi vocale predefinita sarà Microsoft OneCore piuttosto che Espeak. (#8176)
 
-== Bug corretti ==
+### Bug corretti
+
 * NVDA non commette più errori nel leggere i controlli su cui viene posizionato il focus nella finestra di login account Microsoft richiamata da impostazioni, dopo aver inserito l'indirizzo email. (#7997)
 * NVDA non ha più problemi nel leggere una pagina in Microsoft Edge anche quando si torna ad una pagina precedente. (#7997)
 * NVDA non annuncerà più l'ultima cifra del pin quando si effettua l'accesso dalla schermata di sblocco di Windows10. (#7908)
@@ -2629,6 +2630,10 @@ Le caratteristiche principali di questa versione comprendono il supporto per le 
 * The developer info for UIA objects now contains a list of the UIA patterns available. (#5712)
 * App modules can now force certain windows to always use UIA by implementing the isGoodUIAWindow method. (#7961)
 * The hidden boolean flag "outputPass1Only" in the braille section of the configuration has again been removed. Liblouis no longer supports pass 1 only output. (#7839)
+
+## 2018.1.1
+
+Questa è una versione speciale di NVDA che risolve un bug nel driver del sintetizzatore vocale Onecore Windows, che lo faceva parlare con un tono e una velocità più elevati in Windows 10 Redstone 4 (1803). (#8082)
 
 ## 2018.1
 
