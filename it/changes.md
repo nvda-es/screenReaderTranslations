@@ -1243,8 +1243,8 @@ Come sempre, aggiornate anche le tabelle LibLouis, con il supporto ad una nuova 
 * NSIS è stato aggiornato alla versione 3.08. (#9134)
 * CLDR è stato aggiornato alla versione 41.0. (#13582)
 * Aggiornato Liblouis alla versione [3.22.0](https://github.com/liblouis/liblouis/releases/tag/v3.22.0). (#13775)
-  * Nuova tabella braille: Tedesco grado 2 (dettagliato)
 * Aggiunto un nuovo ruolo per i controlli "barre di avanzamento non determinabili". (#10644)
+  * Nuova tabella braille: Tedesco grado 2 (dettagliato)
 * NVDA ora annuncia quando un'azione NVDA non può essere eseguita. (#13500)
   * Questo include quando:
     * Si utilizza la versione NVDA per Windows Store.
@@ -1265,7 +1265,7 @@ Come sempre, aggiornate anche le tabelle LibLouis, con il supporto ad una nuova 
 * Problemi risolti inerenti il braille:
   * Risolto il problema con la lettura durante la navigazione in un testo nei controlli editazione avanzati di Mozilla, come la bozza di un messaggio in Thunderbird. (#12542)
   * Quando l'inseguimento braille è impostato su automatico e e il mouse viene spostato con la funzione di tracciamento mouse attiva, i comandi di revisione del testo ora aggiornano correttamente il display braille con ciò che la sintesi vocale legge.
-    i comandi di revisione del testo ora aggiornano il display braille con il contenuto parlato. (#11519)
+   i comandi di revisione del testo ora aggiornano il display braille con il contenuto parlato. (#11519)
   * Risulta ora possibile scorrere il display braille in un contenuto dopo che sono stati utilizzati i comandi di revisione del testo (#8682)
 * Il programma di installazione di NVDA ora può essere eseguito da directory con caratteri speciali. (#13270)
 * In Firefox, NVDA non incontra più problemi nel segnalare gli elementi nelle pagine Web quando gli attributi aria-rowindex, aria-colindex, aria-rowcount o aria-colcount non risultano validi. (#13405)
