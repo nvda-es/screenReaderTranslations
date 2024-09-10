@@ -503,11 +503,13 @@ Por favor, divulgue questões de segurança de forma responsável seguindo a [po
 Previne possível acesso ao sistema e execução arbitrária de código com privilégios de sistema para usuários não autenticados.
 ([GHSA-h7pp-6jqw-g3pj](https://github.com/nvaccess/nvda/security/advisories/GHSA-h7pp-6jqw-g3pj))
 
-= 2023.3.1 =
+## 2023.3.1
+
 Esta é uma versão de correção para resolver uma questão de segurança.
 Por favor, divulgue questões de segurança de forma responsável seguindo a [política de segurança do NVDA](https://github.com/nvaccess/nvda/blob/master/security.md).
 
 == Correções de Segurança ==
+
 * Previne possível acesso ao sistema e execução arbitrária de código com privilégios de sistema para usuários não autenticados.
 ([GHSA-h7pp-6jqw-g3pj](https://github.com/nvaccess/nvda/security/advisories/GHSA-h7pp-6jqw-g3pj))
 
