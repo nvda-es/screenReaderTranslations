@@ -3223,12 +3223,12 @@ Le principali migliorie presenti in questa versione si concentrano su un notevol
 * Sistemato l'aspetto visivo dei pulsanti nella finestra di avviso che viene visualizzata quando si tenta di passare a una versione precedente di NVDA. (#5325)
 * In Windows 8 e versioni successive, NVDA ora si avvia  molto prima, quando configurato per l'avvio dopo l'accesso a Windows. (#308)
  * Se ciò è stato attivato utilizzando una versione precedente di NVDA, sarà necessario disattivarlo e riattivarlo in modo che la modifica abbia effetto. Seguire questa procedura:
-  + Aprire la finestra di dialogo Impostazioni generali.
-  + Deselezionare la casella di controllo Avvia automaticamente NVDA dopo l'accesso a Windows.
-  + Premere il tasto OK.
-  + Aprire nuovamente la finestra di dialogo Impostazioni generali.
+  1. Aprire la finestra di dialogo Impostazioni generali.
+  1. Deselezionare la casella di controllo Avvia automaticamente NVDA dopo l'accesso a Windows.
+  1. Premere il tasto OK.
+  1. Aprire nuovamente la finestra di dialogo Impostazioni generali.
   1. Controllare la casella di controllo Avvia automaticamente NVDA dopo l'accesso a Windows.
-  + Premere il tasto OK.
+  1. Premere il tasto OK.
 * Miglioramenti delle prestazioni per UI Automation, tra cui File Explorer e Task Viewer. (#5293) 
 * NVDA ora passa correttamente alla modalità focus quando si preme tab e ci si sposta in un controllo Aria di una griglia di sola lettura, per Mozilla Firefox e altri controlli Gecko. (#5118)
 * NVDA ora annuncia correttamente l'assenza di oggetti precedenti quando si esegue un flick sul touch screen. 
@@ -3256,6 +3256,7 @@ Le principali migliorie presenti in questa versione si concentrano principalment
 * Nuove tabelle braille: Finlandese 6 punti, Irlandese grado 1, Irlandese grado 2, coreano grado 1 (2006), Coreano grado 2 (2006). (#5137, #5074, #5097)
 * Aggiunto il supporto alla tastiera Qwerty della barra braille Papenmeier Braillex Live Plus. (#5181)
 * Supporto sperimentale al nuovo Browser Edge di Microsoft, presente in Windows10. (#5212)
+* Nuova lingua: Kannada.
 
 ### Cambiamenti
 
