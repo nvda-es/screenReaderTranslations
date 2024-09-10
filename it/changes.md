@@ -3451,8 +3451,7 @@ Caratteristiche salienti di questa versione includono la modalità di navigazion
  * Possibilità di silenziare le intestazioni di colonna(daà oggetto etc) disattivando l'opzione annuncia le intestazioni di riga e colonna nelle impostazioni di formattazione documento,
  * Possibilità di usare icomandi di navigazione tabella (control + frecce)  per muoversi tra le singole colonne. 
 * Microsoft word: se un'immagine in linea non ha impostato un testo alternativo, al suo posto, NVDA riporterà il titolo se l'autore ne ha fornito uno. (#4193)
-* Microsoft Word: Viene riportata l'indentazione di paragrafo col comando 
-(NVDA+f) e in modo automatico quando la nuova impostazione notifica indentazione paragrafo nella formattazione documento è abilitata (#4165).
+* Microsoft Word: Viene riportata l'indentazione di paragrafo col comando (NVDA+f) e in modo automatico quando la nuova impostazione notifica indentazione paragrafo nella formattazione documento è abilitata (#4165).
 * Viene letto automaticamente il testo inserito come un nuovo bullet, numero o una tabulazione quando viene premuto invio nei documenti editabili o in un campo di testo. (#4185)
 * Microsoft word: Premendo NVDA+alt+c verrà letto il testo del commento se il cursore è posizionato sopra. (#3528)
 * Migliorato il supporto per la lettura automatica dell'intestazione di riga e colonna in Microsoft Excel (#3568) incluso:
@@ -3471,6 +3470,7 @@ Caratteristiche salienti di questa versione includono la modalità di navigazion
  * Spostamento di pagina orizzontale (alt+pagina su e alt+pagina giù)
  * Selezione estesa (i tasti precedenti più l'aggiunta del tasto Shift).
  * Selezionare la regione corrente  (control+shift+8)
+* New language: Catalan.
 
 ### Cambiamenti
 
