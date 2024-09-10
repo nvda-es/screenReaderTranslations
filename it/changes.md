@@ -2849,7 +2849,7 @@ Le principali novità di questa versione comprendono  il supporto completo alla 
 
 ### Novità
 
-* NVDA può annunciare le informazioni inerenti i bordi delle celle in Microsoft Excel tramite la combinazione `NVDA+f`. (#3044)
+* NVDA può annunciare le informazioni inerenti i bordi delle celle in Microsoft Excel tramite la combinazione NVDA+f. (#3044)
 * Aggiunto il supporto per l'attributo aria-current. (#6358)
 * In Microsoft Edge viene supportato il cambio automatico della lingua. (#6852)
 * Supporto per la calcolatrice in Windows 10 Enterprise LTSB (ramo Long-Term Servicing) e Server. (#6914)
@@ -2896,7 +2896,7 @@ Le principali novità di questa versione comprendono  il supporto completo alla 
  * `speech.REASON_*` constants, `controlTypes.REASON_*` should be used instead. (#6846)
  * `i18nName` for synth settings, `displayName` and `displayNameWithAccelerator` should be used instead. (#6846, #5185)
  * `config.validateConfig`. (#6846, #667)
- * `config.save`. (#6846)
+ * `config.save`: si dovrebbe utilizzare `config.conf.save`. (#6846)
 * The list of completions in the autocomplete context menu of the PythonConsole no longer shows  any objec path leading up to the final symbol being completed. (#7023)
 * There is now a unit testing framework for NVDA. (#7026)
  * Unit tests and infrastructure are located in the tests/unit directory. See the docstring in the tests\unit\init.py file for details.
@@ -2962,6 +2962,7 @@ Le principali caratteristiche di questa versione si focalizzano su un supporto m
 * Supporto per i Display Braille della Baum Supervario2, Vario340 e HumanWare Brailliant2. (#6116)
 * Supporto iniziale per Microsoft Edge Anniversary Update. (#6271)
 * Durante la lettura delle email, verrà utilizzata la modalità navigazione nell'app Posta di Windows10. (#6271)
+* Nuova lingua: lituano.
 
 ### Cambiamenti
 
