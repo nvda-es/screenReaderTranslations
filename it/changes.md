@@ -2830,7 +2830,6 @@ Le migliorie di questa versione possono essere riassunte nel supporto alle voci 
 * In Microsoft Edge, l'esplorazione di una pagina web in modalità navigazione funziona correttamente anche in siti con tema Wordpress 2015; in precedenza molti contenuti venivano omessi. (#7143)
 * In Microsoft Edge, vengono gestiti correttamente i punti di riferimento, traducendoli nel caso non siano di lingua inglese. (#7328)
 * Il Braille ora segue correttamente la selezione anche quando l'evidenziazione va oltre la larghezza del display. Per esempio, se si selezionano più righe con shift+freccia giù, il braille mostrerà l'ultima riga selezionata. (#5770) 
-
 * In Firefox, NVDA non annuncerà di continuo la parola "sezione" quando viene aperta la finestra dettagli di un tweet in twitter.com (#5741)
 * I comandi di navigazione tabella non sono più disponibili nelle tabelle di layout, in modalità navigazione,  a meno che non sia espressamente attivata l'opzione "leggi tabelle di layout". (#7382)
 * In Firefox e Chrome, i comandi di navigazione tabelle salteranno le celle nascoste di tale tabella. (#6652, #5655)
