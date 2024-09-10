@@ -4362,6 +4362,7 @@ Si prega di consultare il documento <a href="keyCommands.html" title="Comandi ra
 <li>L'albero nell'elenco elementi (disponibile nei documenti in modalità navigazione) è ora ridimensionato per visualizzare il testo di ciascun elemento. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2276" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2276">#2276</a>)</li>
 <li>Nelle applicazioni che fanno uso di Java Access bridge, i campi editazione ora vengono mostrati correttamente in Braille. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2284" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2284">#2284</a>)</li>
 <li>Nelle applicazioni che fanno uso di Java Access bridge, i campi editazione non vengono più visualizzati con caratteri strani in alcune circostanze. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1892" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1892">#1892</a>)</li>
+<li>Nelle applicazioni che utilizzano Java Access Bridge, giunti alla fine di un campo di testo modificabile, la riga corrente viene ora riportata correttamente. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1892" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1892">#1892</a>)</li>
 <li>In modalità navigazione nelle applicazioni che utilizzano Mozilla Gecko 14 e successivi (ad esempio Firefox 14), i tasti di navigazione veloce funzionano nei blocchi tra virgolette e negli oggetti. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/2287" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #2287">#2287</a>)</li>
 <li>In Internet Explorer 9, NVDA non legge più contenuti non desiderati quando il focus si sposta all'interno di un elemento div che risulta evidenziabile o che è marcato con una sezione ARIA.</li>
 <li>L'icona di NVDA nel desktop e i collegamenti nel menu di avvio nei sistemi a 64 bit sono visualizzati ora correttamente. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/354" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #354">#354</a>)</li>
@@ -4469,6 +4470,7 @@ Si prega di consultare il documento <a href="keyCommands.html" title="Comandi ra
 <li>Il colore del testo e dello sfondo ora sono compresi nell'annuncio delle informazioni di formattazione nelle celle di Microsoft Excel. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1655" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1655">#1655</a>)</li>
 <li>Nelle applicazioni dove si utilizza Java Access Bridge, il comando attiva l'oggetto alla posizione del navigatore ora funziona nei controlli appropriati. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1744" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1744">#1744</a>)</li>
 <li>Supporto Base per Design Science MathPlayer.</li>
+<li>Nuova lingua: tamil.</li>
 </ul>
 <h3 id="cambiamenti_46">Cambiamenti</h3>
 <ul>
@@ -4509,6 +4511,12 @@ Si prega di consultare il documento <a href="keyCommands.html" title="Comandi ra
 <li>NVDA ora funzionerà in maniera nettamente migliore nelle finestre  di dialogo di alcune applicazioni distribuite con Windows Xp, come ad esempio la finestra informazioni in Notepad e la finestra informazioni in Windows. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1853" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1853">#1853</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1855" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1855">#1855</a>)</li>
 <li>Risolti gli errori della funzione "spostarsi parola per parola" nei controlli editazione di Windows. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1877" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1877">#1877</a>)</li>
 <li>Lo spostamento al di fuori di un campo editazione di testo servendosi della freccia sinistra, superiore o pagina su, mentre ci si trova in modalità focus, ora attiverà la modalità navigazione, se la funzione modalità focus automatica per i movimenti del cursore è attiva. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1733" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1733">#1733</a>)</li>
+</ul>
+<h3 id="changes-for-developers_13">Changes for Developers</h3>
+<ul>
+<li>NVDA can now instruct speech synthesizers to switch languages for particular sections of speech.</li>
+<li>To support this, drivers must handle speech.LangChangeCommand in sequences past to SynthDriver.speak().</li>
+<li>SynthDriver objects should also provide the language argument to VoiceInfo objects (or override the language attribute to retrieve the current language). Otherwise, NVDA's user interface language will be used.</li>
 </ul>
 <h2 id="20112">2011.2</h2>
 <p>Le principali novità di questa versione riguardano una gestione avanzata della punteggiatura e dei simboli, con possibilità di avere livelli configurabili, etichette personalizzabili e descrizione dei caratteri; durante la lettura in modalità "dire tutto", non verranno più effettuate pause alla fine di ciascuna riga; migliorato il supporto Aria in Internet Explorer; supporto migliorato per i documenti pdf XFA/LiveCycle in Adobe Reader; accesso al testo presente a video in un maggior numero di applicazioni; aggiunte informazioni sul carattere, sui colori e sulla formattazione del testo presente a schermo.</p>
@@ -4618,7 +4626,26 @@ Si prega di consultare il documento <a href="keyCommands.html" title="Comandi ra
 <li>In Outlook 2010, NVDA ora segue il focus correttamente nell'elenco dei messaggi. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1285" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1285">#1285</a>)</li>
 <li>Corretti alcuni problemi di connessione USB con il Display Braille MDV Lilli. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/241" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #241">#241</a>)</li>
 </ul>
+<h3 id="changes-for-developers_14">Changes for Developers</h3>
+<ul>
+<li>Developer documentation can now be generated using SCons. See readme.txt at the root of the source distribution for details, including associated dependencies.</li>
+<li>Locales can now provide descriptions for characters. See the Character Descriptions section of the Developer Guide for details. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/55" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #55">#55</a>)</li>
+<li>Locales can now provide information about the pronunciation of specific punctuation and other symbols. See the Symbol Pronunciation section of the Developer Guide for details. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/332" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #332">#332</a>)</li>
+<li>You can now build NVDAHelper with several debugging options using the nvdaHelperDebugFlags SCons variable. See readme.txt at the root of the source distribution for details. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1390" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1390">#1390</a>)</li>
+<li>Synth drivers are now passed a sequence of text and speech commands to speak, instead of just text and an index.</li>
+<li>This allows for embedded indexes, parameter changes, etc.</li>
+<li>Drivers should implement SynthDriver.speak() instead of SynthDriver.speakText() and SynthDriver.speakCharacter().</li>
+<li>The old methods will be used if SynthDriver.speak() is not implemented, but they are deprecated and will be removed in a future release.</li>
+<li>gui.execute() has been removed. wx.CallAfter() should be used instead.</li>
+<li>gui.scriptUI has been removed.</li>
+<li>For message dialogs, use wx.CallAfter(gui.messageBox, ...).</li>
+<li>For all other dialogs, real wx dialogs should be used instead.</li>
+<li>A new gui.runScriptModalDialog() function simplifies using modal dialogs from scripts.</li>
+<li>Synth drivers can now support boolean settings. See SynthDriverHandler.BooleanSynthSetting.</li>
+<li>SCons now accepts a certTimestampServer variable specifying the URL of a timestamping server to use to timestamp authenticode signatures. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1644" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1644">#1644</a>)</li>
+</ul>
 <h2 id="201111">2011.1.1</h2>
+<p>Questa versione risolve diversi problemi di sicurezza e altri importanti problemi riscontrati in NVDA 2011.1.</p>
 <h3 id="bug-corretti_49">Bug Corretti</h3>
 <ul>
 <li>Il menù Fai una Donazione ora è disabilitato nelle schermate di Login e UAC, in quanto risultava essere un potenziale rischio per la sicurezza. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1419" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1419">#1419</a>)</li>
