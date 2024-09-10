@@ -4092,15 +4092,17 @@ Le principali novità di questa versione si concentrano su una lettura del brail
 * E' disponibile una console remota python da usarsi in quelle situazioni dove il debug da remoto risulta utile. Si veda la guida per sviluppatori per maggiori informazioni.
 * Il percorso di base del codice di NVDA viene catturato dal traceback nei log, per migliorarne la lettura. (#1880)
 * Gli oggetti TextInfo  ora possiedono il metodo activate() per attivare la posizione rappresentata da Textinfo.
-* Questo viene usato dai display braille per attivare la posizione con i cursor routing, ma vi saranno altre chiamate in futuro.
+ * Questo viene usato dai display braille per attivare la posizione con i cursor routing, ma vi saranno altre chiamate in futuro.
 * Gli elementi TreeInterceptors e NVDAObjects che espongono solo una pagina di testo alla volta ora supportano l'azione di girare pagina in modalità dire tutto, grazie all'uso di textInfos.DocumentWithPageTurns. (#1978)
 * Sono stati rinominati o spostati diversi controlli o costanti output. (#228)
  * Le costanti speech.REASON_* sono state spostate su controlTypes.
-  * In controlTypes, speechRoleLabels e speechStateLabels sono stati rinominati in roleLabels e stateLabels.
+ * In controlTypes, speechRoleLabels e speechStateLabels sono stati rinominati in roleLabels e stateLabels.
 * Implementato nelle funzioni di log anche l'output del braille. (#2102)
 * Le sottoclassi di Sapi5 Synthdrivers possono sovrascrivere _getVoiceTokens  e estendere init per supportare token di voce personalizzati come  con sapi.spObjectTokenCategory per ottenere token da una locazione di registro personalizzata.
 
 ## 2011.3
+
+I punti salienti di questa versione includono il cambio automatico della lingua vocale durante la lettura di documenti con informazioni sulla lingua appropriate; supporto per ambienti Java Runtime a 64 bit; segnalazione della formattazione del testo in modalità navigazione nelle applicazioni Mozilla; migliore gestione degli arresti anomali e dei blocchi delle applicazioni; e correzioni iniziali per Windows 8.
 
 ### Novità
 
