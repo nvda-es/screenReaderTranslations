@@ -2086,7 +2086,8 @@ Le principali migliorie presenti in questa versione si concentrano sul supporto 
 * NVDA annuncerà nuovamente  che il testo viene deselezionato in modalità navigazione se viene premuto un tasto freccia quando vi è del testo selezionato. (#10731).
 * NVDA non si chiuderà più nel caso in cui vi sia un errore durante l'inizializzazione di Espeak. (#10607)
 * Nel caso in cui vi siano errori unicode nelle traduzioni internazionali sui tasti rapidi, il programma di installazione non si bloccherà più e passerà alla lingua inglese. (#5166, #6326)
-* Migliorata la gestione di tabelle ed elenchi in modalità dire tutto, ora NVDA siulta meno prolisso. (#10706)
+* Migliorata la gestione di tabelle ed elenchi in modalità dire tutto, ora NVDA risulta meno prolisso. (#10706)
+* Risolto il problema con il tracciamento del mouse per alcuni elementi MSHTML in Internet Explorer. (#10736)
 
 ### Changes for Developers
 
