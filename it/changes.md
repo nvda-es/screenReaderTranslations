@@ -2547,6 +2547,7 @@ Le principali migliorie che caratterizzano questa versione di N VDA si possono r
  * Quando ci si trova in un elenco di Microsoft Word, i cursor routing ora funzionano correttamente. (#7971)
  * Vengono ora gestiti correttamente gli elenchi numerati e puntati appena inseriti, sia con sintesi vocale che con barra braille. (#7970)
 * In Windows 10 1803 e successivi, è ora possibile installare componenti aggiuntivi se la caratteristica "utilizza Unicode UTF-8 per le lingue internazionali" è abilitata. (#8599)
+* NVDA non renderà più iTunes 12.9 e versioni successive completamente inutilizzabili per interagire. (#8744)\n
 
 ### Cambiamenti per sviluppatori, solo inglese
 
