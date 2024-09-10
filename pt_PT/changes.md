@@ -471,11 +471,9 @@ Use `bdDetect.DeviceType.*` instead. (#15772, @LeonarddeR).
 Esta é uma versão de correção para resolver uma questão de segurança e outra questão na instalação.
 Por favor, divulgue questões de segurança de forma responsável seguindo a [política de segurança do NVDA](https://github.com/nvaccess/nvda/blob/master/security.md).
 
-### Security Fixes
-
 ### Correções de Segurança
 
-* Previne o carregamento de configurações específicas quando o modeo seguro é imposto.
+* Previne o carregamento de configurações específicas quando o modo seguro é imposto.
 ([GHSA-727q-h8j2-6p45](https://github.com/nvaccess/nvda/security/advisories/GHSA-727q-h8j2-6p45))
 
 ### Correcções de erros
