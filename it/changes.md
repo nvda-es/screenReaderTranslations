@@ -2679,6 +2679,7 @@ Le caratteristiche principali di questa versione riguardano la gestione dei graf
 * Sistemato un problema di sincronizzazione braille/sintesi vocale nell'annunciare informazioni di controllo. (#7076)
 * In app quali Windows 10 Mail, NVDA non avrà più problemi nel leggere i caratteri eliminati quando si preme backspace. (#7456)
 * Tutti i tasti del display braillesense Polaris prodotto da Hims funzionano correttamente. (#7865)
+* NVDA non fallisce più nell'avvio su Windows 7 lamentandosi di una dll api-ms interna, quando una particolare versione dei ridistribuibili di Visual Studio 2017 è stata installata da un'altra applicazione. (#7975)
 
 ### Cambiamenti per sviluppatori (in inglese)
 
