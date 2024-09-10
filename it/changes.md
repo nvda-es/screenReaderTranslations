@@ -3320,7 +3320,7 @@ Caratteristiche salienti di questa versione includono la capacità di leggere i 
 * La tabella Braille Danese ora funziona di nuovo regolarmente. (#4986)
 * I tasti paginaSu e pagina giù funzionano di nuovo per cambiare diapositiva in una presentazione di Powerpoint. (#4850)
 * In Skype Desktop 7.2 e versioni successive, sono stati risolti alcuni problemi che si evidenziavano spostandosi da una conversazione, ed inoltre viene di nuovo annunciato quando un contatto sta scrivendo. (#4972)
-Risolti i problemi durante la digitazione di alcuni simboli come le parentesi nel campo filtro della finestra di dialogo gesti e tasti di immissione. (#5060)
+* Risolti i problemi durante la digitazione di alcuni simboli come le parentesi nel campo filtro della finestra di dialogo gesti e tasti di immissione. (#5060)
 * In Internet Explorer e altri controlli MSHTML, la pressione dei tasti g o shift + g per spostarsi tra i grafici ora consente di spostarsi anche tra elementi contrassegnati come immagini a fini di accessibilità (ossia ARIA role img). (#5062)
 
 ### Cambiamenti per sviluppatori (in inglese)
@@ -3393,7 +3393,7 @@ Caratteristiche salienti di questa versione includono la modalità di navigazion
 * Aggiornato Python alla versione 2.7.9. (#4715)
 * NVDA non crasha più al riavvio dopo aver rimosso o  modificato un componente aggiuntivo che importa speechDictHandler nel suo modulo di installTasks. (#4496)
 
-== 2014.4 =
+## 2014.4
 
 ### Novità
 
@@ -3428,6 +3428,7 @@ Caratteristiche salienti di questa versione includono la modalità di navigazion
 * Varie versioni di Eclipse, quali Spring Tool Suite e la versione inclusa nel pacchetto  Android Developer Tools, vengono riconosciute e gestite di conseguenza. (#4360, #4454)
 * Il tracciamento Mouse e l'esplorazione a tocco in Internet Explorer e altri controlli MSHTML (incluse molte app di Windows8) risultano molto più accurate su display con molti DPI o quando l'ingrandimento del documento viene cambiata. (#3494) 
 * Il tracciamento Mouse e l'esplorazione a tocco in Internet Explorer e altri controlli MSHTML leggeranno un maggior numero di etichette di pulsanti. (#4173)
+* Quando si utilizza un display braille Papenmeier BRAILLEX con BrxCom, i tasti sul display ora funzionano come previsto. (#4614)
 
 ### Cambiamenti per sviluppatori, in inglese
 
