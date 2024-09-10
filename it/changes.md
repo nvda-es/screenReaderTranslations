@@ -2564,6 +2564,10 @@ Le principali migliorie che caratterizzano questa versione di N VDA si possono r
 * config.configProfileSwitch has been renamed to config.post_configProfileSwitch to reflect the fact that this action is called after profile switch takes place. (#7598)
 * UI Automation interfaces updated to Windows 10 October 2018 Update and Server 2019 (IUIAutomation6 / IUIAutomationElement9). (#8473)
 
+## 2018.2.1
+
+Questa versione include aggiornamenti di traduzione dovuti alla rimozione dell'ultimo minuto di una funzionalità che causava problemi.
+
 ## 2018.2
 
 Le caratteristiche principali di questa versione comprendono il supporto per le tabelle in Kindle per Pc,  la gestione dei Display Braille della HumanWare Braillenote Touch e BI14, grossi miglioramenti sulle voci Onecore e Sapi5, un sensibile miglioramento al supporto di Microsoft Outlook e molto altro.
