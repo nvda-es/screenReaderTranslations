@@ -137,10 +137,10 @@ Existem muitas correcções de erros menores para aplicações, tais como o Thun
     * texto com o mesmo estilo (#16000, @mltony)
     * texto de estilo diferente (#16000, @mltony)
   * Adicionados comandos para saltar para primeiro, último, a frente e para trás no anel de definições do sintetizador. (#13768, #16095, @rmcpantoja)
-  * Definir a primeira e a última definição no anel de definições de sintetizador não tem nenhum gesto atribuído. (#13768)
-  * Diminuir e aumentar a definição atual do anel de definições de sintetizador num passo maior (#13768):
-    * Desktop: `NVDA+control+pageUp` ou `NVDA+control+pageDown`.
-    * Laptop: `NVDA+controlo+shift+pageUp` ou `NVDA+controlo+shift+pageDown`.
+    * Definir a primeira e a última definição no anel de definições de sintetizador não tem nenhum gesto atribuído. (#13768)
+    * Diminuir e aumentar a definição atual do anel de definições de sintetizador num passo maior (#13768):
+      * Desktop: `NVDA+control+pageUp` ou `NVDA+control+pageDown`.
+      * Laptop: `NVDA+controlo+shift+pageUp` ou `NVDA+controlo+shift+pageDown`.
   * Adicionado um novo gesto de entrada não atribuído para alternar o anúncio de figuras e legendas. (#10826, #14349)
 * Braille:
   * Adicionado suporte para os dispositivos Braille BrailleEdgeS2 e BrailleEdgeS3. (#16033, #16279, @EdKweon)
@@ -377,6 +377,7 @@ Setting `numCells` is still supported for single line braille displays and `numC
 * Fixed bug where deleting git-tracked files during `scons -c` resulted in missing UIA COM interfaces on rebuild. (#7070, #10833, @hwf1324)
 * Fix a bug where some code changes were not detected when building `dist`, that prevented a new build from being triggered.
 Now `dist` always rebuilds. (#13372, @hwf1324)
+* A `gui.nvdaControls.MessageDialog` with default type of standard, no longer throws a None conversion exception because no sound is assigned. (#16223, @XLTechie)
 
 #### API Breaking Changes
 
@@ -3862,7 +3863,7 @@ Alguns itens ou termos desta seção não serão traduzidos, uma vez que são de
 * Resolvido um problema que fazia com que o driver para as linhas braille da Freedom Scientific falhasse quando a porta era definida para USB em algumas circunstâncias. (#3509, #3662)
 * Resolvido um problema onde as teclas de linhas braile da Freedom Scientific não eram  detectadas em algumas circunstâncias. (#3401, #3662)
 
-### Alterações específicas para desenvolvedores
+### Alterações para desenvolvedores
 
 Alguns itens ou termos desta seção não serão traduzidos, uma vez que são demasiado técnicos e relevantes apenas para desenvolvedores. Todavia, os itens que possam ser relevantes para usuários comuns, serão traduzidos.
 
