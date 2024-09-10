@@ -4605,7 +4605,7 @@ Le maggiori novità di questa release riguardano la capacità di funzionare anch
 * Aggiunto il supporto ai campi di testo riconosciuto in SiRecognizer. (#198)
 * Supporto per i Display Braille!
 * Aggiunto un comando (NVDA+c) per annunciare il testo contenuto negli appunti. (#193)
-* Nei Buffers Virtuali, se NVDA passa automaticamente alla modalità Focus, si può usare il tasto Esc per tornare alla modalità esplorazione. NVDA+spazio può ancora essere utilizzato.
+* Nei Buffer Virtuali, se NVDA passa automaticamente alla modalità Focus, si può usare il tasto Esc per tornare alla modalità esplorazione. NVDA+spazio può ancora essere utilizzato.
 * Nei buffer virtuali, quando il focus cambia o il cursore viene spostato, NVDA può passare automaticamente alla modalità focus o esplorazione a seconda del controllo sul cursore. L'opzione è configurabile dalle impostazioni del buffer virtuale. (#157)
 * Riscritto il Driver per i sintetizzatori Sapi4 che prende il posto dei due driver precedenti Microsoft e Serotek, e che dovrebbe risolvere i problemi che si incontravano con quest'ultimi.
 * L'applicazione NVDA ora include il Manifest, che significa che non viene più eseguita in modalità compatibilità in Windows Vista.
