@@ -2460,7 +2460,7 @@ Le migliorie più significative di questa versione si concentrano in un notevole
 * In Outlook 2016/365, viene annunciato se un messaggio è contrassegnato o meno e la categoria di appartenenza. (#8603)
 * Se NVDA viene impostato in una lingua quale il Kirgyz, il mongolo o il macedone, non verrà più visualizzato un messaggio all'avvio che avverte l'utente che la lingua selezionata non è supportata dal sistema operativo. (#8064)
 * Lo spostamento del mouse alla posizione del navigatore ad oggetti risulterà molto più accurato, specie quando si porta il mouse al cursore in Google Chrome, Mozilla Firefox e Acrobat Reader DC. (#6460)
- * Migliorata notevolmente l'interazione con le caselle combinate in Firefox, Chrome e Internet Explorer. (#8664)
+* Migliorata notevolmente l'interazione con le caselle combinate in Firefox, Chrome e Internet Explorer. (#8664)
 * Quando lo screen reader viene eseguito in versioni giapponesi di Windows Xp o Vista, NVDA visualizzerà correttamente i messaggi dei requisiti di sistema. (#8771)
 * Grosso miglioramento delle prestazioni durante la navigazione in documenti web molto complessi con cambiamenti di tipo dinamico in Mozilla Firefox. (#8678)
 * Non vengono più visualizzati gli attributi dei caratteri in Braille se essi sono stati disabilitati nelle impostazioni di formattazione documento. (#7615)
@@ -2481,6 +2481,14 @@ Le migliorie più significative di questa versione si concentrano in un notevole
  * See the implementation of gui.nvdaControls.ListCtrlAccPropServer for more info.
 * Updated configobj to 5.1.0dev commit 5b5de48a. (#4470)
 * The config.post_configProfileSwitch action now takes the optional prevConf keyword argument, allowing handlers to take action based on differences between configuration before and after the profile switch. (#8758)
+
+## 2018.3.2
+
+Si tratta di una versione minore per aggirare un arresto anomalo di Google Chrome durante la navigazione nei tweet su [www.twitter.com](http://www.twitter.com). (#8777)
+
+## 2018.3.1
+
+Questa è una versione minore per correggere un bug critico in NVDA che causava il crash delle versioni a 32 bit di Mozilla Firefox. (#8759)
 
 ## 2018.3
 
