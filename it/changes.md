@@ -2340,6 +2340,15 @@ Le novità più interessanti di questa versione riguardano il rilevamento automa
 * The result of the last executed command in the NVDA Python console is now accessible from the _ (line) variable. (#9782)
  * Note that this shadows the gettext translation function also called "_". To access the translation function: del _
 
+## 2019.1.1
+
+Questa versione minore risolve i seguenti bug:
+
+* NVDA non causa più il crash di Excel 2007 o rifiuta di segnalare se una cella contiene una formula. (#9431)
+* Google Chrome non si blocca più quando interagisce con determinate caselle di riepilogo. (#9364)
+* È stato risolto un problema che impediva di copiare la configurazione di un utente nel profilo di configurazione del sistema. (#9448)
+* In Microsoft Excel, NVDA utilizza nuovamente il messaggio localizzato quando segnala la posizione delle celle unite. (#9471)
+
 ## 2019.1
 
 Le novità principali di questa versione si possono riassumere in un grosso miglioramento delle prestazioni quando si accede a Microsoft Word ed Excel, miglioramenti di stabilità e sicurezza come il supporto per i componenti aggiuntivi con informazioni sulla compatibilità della versione e molte altre correzioni di bug.
