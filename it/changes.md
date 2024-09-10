@@ -1922,6 +1922,7 @@ Di seguito l'elenco di tutte le novità.
 * NVDA non si arresta più nel caso in cui si stia utilizzando la tabella Us-English grado 2 computer Braille con il cursore attivo, mentre ci si trova su stringhe di caratteri quali gli URL. (#11754)
 * È nuovamente possibile conoscere le informazioni di formattazione per la cella Excel focalizzata utilizzando NVDA + F. (#11914)
 * Nei Display Braille Papenmeier è nuovamente possibile servirsi della modalità qwerty, se supportata dalla barra, non causando più il blocco random dello screen reader. (#11944)
+* Nei browser basati su Chromium, sono stati risolti diversi casi in cui la navigazione nella tabella non funzionava e NVDA non riportava il numero di righe/colonne della tabella. (#12359)\n
 
 ### Changes for Developers
 
