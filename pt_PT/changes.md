@@ -508,7 +508,7 @@ Previne possível acesso ao sistema e execução arbitrária de código com priv
 Esta é uma versão de correção para resolver uma questão de segurança.
 Por favor, divulgue questões de segurança de forma responsável seguindo a [política de segurança do NVDA](https://github.com/nvaccess/nvda/blob/master/security.md).
 
-== Correções de Segurança ==
+### Correções de Segurança
 
 * Previne possível acesso ao sistema e execução arbitrária de código com privilégios de sistema para usuários não autenticados.
 ([GHSA-h7pp-6jqw-g3pj](https://github.com/nvaccess/nvda/security/advisories/GHSA-h7pp-6jqw-g3pj))
@@ -537,14 +537,14 @@ Também foram corrigidos erros na Loja de Extras, Microsoft Office, menus de con
     * As opções para alterar o dispositivo de saída de áudio e alternar a redução de áudio foram movidas para a nova secção Configurações de áudio a partir da caixa de diálogo Selecionar sintetizador.
     Estas opções serão removidas da caixa de diálogo "selecionar sintetizador" em 2024.1. (#15486, #8711)
   * O NVDA agora emitirá a voz e os sons  através da API de Sessão de Áudio do Windows (WASAPI), o que pode melhorar a responsividade, desempenho e estabilidade da voz e sons do NVDA. (#14697, #11169, #11615, #5096, #10185, #11061)
-  -  Nota: WASAPI é incompatível com alguns extras.
+  *  Nota: WASAPI é incompatível com alguns extras.
   Actualizações compatíveis estão disponíveis para esses extras, actualize-os antes de actualizar o NVDA.
   Versões incompatíveis destes extras serão desactivadas ao actualizar o NVDA:
     * Tony's Enhancements versão 1.15 ou anterior. (#15402)
     * NVDA global commands extension 12.0.8 ou anterior. (#15443)
 * O NVDA agora pode actualizar continuamente o resultado ao realizar reconhecimento ótico de caracteres (OCR), anunciando o novo texto à medida que aparece. (#2797)
   * Para activar esta funcionalidade, marque a opção "Actualizar periodicamente os conteúdos reconhecidos" na secção OCR do Windows das configurações do NVDA.
-  * Quando activada, pode alternar entre anunciar ou não, alternando o anúncio de alterações em conteúdos dinâmicos, pressionando "NVDA+5").
+  * Quando activada, pode alternar entre anunciar ou não, alternando o anúncio de alterações em conteúdos dinâmicos, pressionando `NVDA+5`).
 * Ao usar a detecção automática de dispositivos Braille, é agora possível optar por não incluir drivers na detecção.
 * Uma nova opção nas configurações de Formatação de Documento, "Ignorar linhas em branco para anúncio de indentação de linha". (#13394)
 * Adicionado um comando sem tteclas associadas para navegar por grupos de separadores em modo de navegação. (#15046)
@@ -561,12 +561,9 @@ Também foram corrigidos erros na Loja de Extras, Microsoft Office, menus de con
     * `time`: Diz a hora actual
     * `say_line`: Lê a linha actual onde está colocado o cursor de revisão
     * `say_below`: Lê tudo a partir do cursor de revisão
-
->  - O driver BRLTTY só está disponível quando o BRLTTY está em execução. (#15335)
-
+  * O driver BRLTTY só está disponível quando o BRLTTY está em execução. (#15335)
   * A opção para activar o suporte para HID braille foi removido das configurações avançadas sendo substituído por uma nova opção.
   Agora pode desactivar a detecção automática de dispositivos Braille na janela "Seleccionar linha Braille". (#15196)
-
 * Loja de Extras: Os extras instalados passam a ser também listados no separador Extras Disponíveis, se estiverem disponíveis na loja. (#15374)
 * Algumas teclas de atalho do menu do NVDA foram actualizadas. (#15364)
 
@@ -587,8 +584,8 @@ Também foram corrigidos erros na Loja de Extras, Microsoft Office, menus de con
   * Os extras bloqueados por razões de compatibilidade já devem ser filtrados correctamente quando se alterna o filtro para o estado activados/desactivados. (#15416)
   * Corrigido o erro que impedia extras incompatíveis instalados e activados de serem actualizados ou substtituídos utilizando a funcionalidade de instalar de fonte externa. (#15417)
   * Corrigido o erro que impedia o NVDA de falar até ser reiniciado após a instalação de extras. (#14525)
-  * Corrigido o erro em que os add-ons não podiam ser instalados se uma transferência anterior falhasse ou fosse cancelada. (#15469)
-  * Corrigidos problemas com o tratamento de complementos incompatíveis ao atualizar o NVDA. (#15414, #15412, #15437)
+  * Corrigido o erro em que os extras não podiam ser instalados se uma transferência anterior falhasse ou fosse cancelada. (#15469)
+  * Corrigidos problemas com o tratamento de extras incompatíveis ao atualizar o NVDA. (#15414, #15412, #15437)
 * O NVDA volta a anunciar os resultados na Calculadora do Windows 32bit nas versões do Windows Server, LTSC ed LTSB. (#15230)
 * O NVDA já não ignora as alterações de foco quando uma janela aninhada (janela neta) obtém o foco. (#15432)
 * corrigida uma causa provável do cras do NVDA durante o seu início. (#15517)
