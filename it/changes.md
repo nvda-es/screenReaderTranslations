@@ -4197,15 +4197,17 @@ Le principali novità di questa versione riguardano una gestione avanzata della 
 ### Cambiamenti
 
 * Per spostare il cursore di sistema alla posizione del cursore di controllo, bisogna utilizzare il comando sposta il focus alla posizione del navigatore ad oggetti (NVDA+Shift+meno del tastierino numerico per i computer fissi, NVDA+Shift+Backspace per i portatili) due volte in rapida successione. (#837)
-* Aggiornato il motore di sintesi Espeak alla versione 1.45.03. (#1465)
 * Per ascoltare la rappresentazione decimale o esadecimale di un carattere mentre si usa il cursore di controllo, premere il comando leggi carattere corrente tre volte anziché due, in quanto la doppia pressione ora riporta la descrizione del carattere.
+* Aggiornato il motore di sintesi Espeak alla versione 1.45.03. (#1465)
 * Le tabelle di layout non vengono più annunciate nelle applicazioni Mozilla Gecko se ci si trova in modalità focus e si sposta il cursore.
 * In Internet Explorer e altri controlli MSHTML, la modalità navigazione funziona per documenti all'interno di applicazioni ARIA. (#1452)
 * Aggiornato il pacchetto Liblouis Braille alla versione 2.3.0.
 * Quando ci si trova in modalità navigazione e si salta ad un controllo  con un tasto rapido di navigazione,   viene annunciata la descrizione di tale controllo se esiste.
 * Le barre di progresso ora vengono annunciate in modalità navigazione.
+* I nodi contrassegnati con un ruolo di presentazione ARIA in Internet Explorer e altri controlli MSHTML vengono ora filtrati dalla revisione semplice e dall'ascendenza del focus.
 * L'interfaccia utente di NVDA e la documentazione non utilizzeranno più la terminologia buffer virtuale, bensì modalità navigazione, in quanto il termine buffer virtuale risultava complicato per molti utenti. (#1509)
 * Quando l'utente desidera copiare le proprie impostazioni personali sul profilo di sistema in modo da poter esplorare anche le schermate di login, e questi settaggi contengono plugin personalizzati, viene mostrato un messaggio che avvisa che questa operazione può essere rischiosa per la sicurezza. (#1426)
+* Il servizio NVDA non avvia e arresta più NVDA sui desktop di input dell'utente.
 * In Windows XP e Windows Vista NVDA non effettua più uso delle UI Automation, nonostante esse possano essere disponibili attraverso gli aggiornamenti. Sebbene l'utilizzo di tale tecnologia può aumentare l'accessibilità di programmi moderni, in Windows Xp e Vista si verificavano troppi rallentamenti e crash durante il loro utilizzo. (#1437)
 * Nelle applicazioni che si avvalgono di Mozilla Gecko 2 e successivi (Firefox4 e seguenti per esempio), un documento può venir letto in modalità navigazione anche prima che esso sia caricato del tutto.
 * NVDA ora annuncia lo stato del documento quando il focus si sposta su di esso, ad esempio se il focus viene portato su un documento che è in fase di caricamento, NVDA dirà occupato.
@@ -4275,6 +4277,9 @@ Le principali novità di questa versione riguardano una gestione avanzata della 
 * NVDA non causerà ritardi e non smetterà temporaneamente di parlare nella finestra di dialogo Sposta in / Copia in di Windows Live Mail. (#574)
 * In Outlook 2010, NVDA ora segue il focus correttamente nell'elenco dei messaggi. (#1285)
 * Corretti alcuni problemi di connessione USB con il Display Braille MDV Lilli. (#241)
+* In Internet Explorer e altri controlli MSHTML, in alcuni casi (ad esempio dopo un collegamento) gli spazi non vengono più ignorati nella modalità di navigazione.
+* In Internet Explorer e altri controlli MSHTML, alcune interruzioni di riga estranee sono state eliminate nella modalità navigazione. in particolare, gli elementi HTML con uno stile di visualizzazione Nessuno non forzano più un'interruzione di riga. (#1685)
+* Se NVDA non è in grado di avviarsi, la mancata riproduzione del suono di arresto critico di Windows non blocca più il messaggio di errore critico nel file di registro.
 
 ### Changes for Developers
 
