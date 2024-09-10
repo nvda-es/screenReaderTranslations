@@ -3875,7 +3875,7 @@ Le novità principali in questa versione sono costituite dal supporto all'immiss
 * NVDA è in grado di leggere i suggerimenti nell'autocompletamento quando si inserisce un indirizzo in Microsoft Outlook 2007. (#689)
 * Nuove varianti di voce Espeak: Gene, Gene2. (#2512)
 * In Adobe Reader, ora possono venir annunciati i numeri di pagina. (#2534)
-* In Reader XI, le etichette delle pagine vengono annunciate laddove presenti, in accordo con i cambiamenti dei numeri di pagina nelle diverse sezioni, etc. Nelle versioni precedenti, questo non risulta possibile e vengono annunciate solo le numerazioni di pagina sequenziali..
+ * In Reader XI, le etichette delle pagine vengono annunciate laddove presenti, in accordo con i cambiamenti dei numeri di pagina nelle diverse sezioni, etc. Nelle versioni precedenti, questo non risulta possibile e vengono annunciate solo le numerazioni di pagina sequenziali..
 * è ora possibile ripristinare la configurazione di NVDA ai suoi valori di fabbrica sia premendo NVDA+control+r tre volte velocemente, oppure selezionando ripristina ai valori di fabbrica dal menu di NVDA.(#2086)
 * Supporto per i Display Braille Seika Versione 3, 4 e 5 e Seika80 prodotti da Nippon Telesoft. (#2452)
 * Il primo e l'ultimo pulsante superiore nel Pac Mate e nei Display Braille Focus di Freedom Scientific  può ora essere usato per scorrere in avanti e indietro. (#2556)
@@ -4007,6 +4007,7 @@ Le principali novità in questa versione riguardano la creazione di versioni por
 * L'albero nell'elenco elementi (disponibile nei documenti in modalità navigazione) è ora ridimensionato per visualizzare il testo di ciascun elemento. (#2276)
 * Nelle applicazioni che fanno uso di Java Access bridge, i campi editazione ora vengono mostrati correttamente in Braille. (#2284)
 * Nelle applicazioni che fanno uso di Java Access bridge, i campi editazione non vengono più visualizzati con caratteri strani in alcune circostanze. (#1892)
+* Nelle applicazioni che utilizzano Java Access Bridge, giunti alla fine di un campo di testo modificabile, la riga corrente viene ora riportata correttamente. (#1892)
 * In modalità navigazione nelle applicazioni che utilizzano Mozilla Gecko 14 e successivi (ad esempio Firefox 14), i tasti di navigazione veloce funzionano nei blocchi tra virgolette e negli oggetti. (#2287)
 * In Internet Explorer 9, NVDA non legge più contenuti non desiderati quando il focus si sposta all'interno di un elemento div che risulta evidenziabile o che è marcato con una sezione ARIA.
 * L'icona di NVDA nel desktop e i collegamenti nel menu di avvio nei sistemi a 64 bit sono visualizzati ora correttamente. (#354)
@@ -4026,8 +4027,8 @@ Le principali novità di questa versione si concentrano su una lettura del brail
 * NVDA è in grado di rilevare i colori nelle finestre console, come prompt dei comandi.
 * Vengono indicati in braille i simboli di sottolineato, grassetto e corsivo, utilizzando i segni della tabella braille selezionata. (#538)
 * Vengono annunciate molte più informazioni nei documenti Microsoft word, che comprendono:
-* Informazioni in linea come note a piè di pagina e note a fine testo, numerazioni, livello intestazioni, l'esistenza di commenti, livello di annidamento delle tabelle, link e colori del testo;
-* Annuncio di quando si raggiungono sezioni del documento come l'elenco dei commenti, delle note a piè di pagina o note a fine testo, e delle intestazioni e piè di pagina.
+ * Informazioni in linea come note a piè di pagina e note a fine testo, numerazioni, livello intestazioni, l'esistenza di commenti, livello di annidamento delle tabelle, link e colori del testo;
+ * Annuncio di quando si raggiungono sezioni del documento come l'elenco dei commenti, delle note a piè di pagina o note a fine testo, e delle intestazioni e piè di pagina.
 * In braille, i puntini 7 e 8 indicano la selezione del testo. (#889)
 * Vengono riportate in braille informazioni sui controlli contenuti nei documenti, come link, intestazioni e pulsanti. (#202)
 * Supporto per  i display Braille hedo ProfiLine e MobilLine USB. (#1863, #1897)
@@ -4115,6 +4116,7 @@ Le principali novità di questa versione si concentrano su una lettura del brail
 * Il colore del testo e dello sfondo ora sono compresi nell'annuncio delle informazioni di formattazione nelle celle di Microsoft Excel. (#1655)
 * Nelle applicazioni dove si utilizza Java Access Bridge, il comando attiva l'oggetto alla posizione del navigatore ora funziona nei controlli appropriati. (#1744)
 * Supporto Base per Design Science MathPlayer.
+* Nuova lingua: tamil.
 
 ### Cambiamenti
 
@@ -4156,6 +4158,12 @@ Le principali novità di questa versione si concentrano su una lettura del brail
 * Risolti gli errori della funzione "spostarsi parola per parola" nei controlli editazione di Windows. (#1877)
 * Lo spostamento al di fuori di un campo editazione di testo servendosi della freccia sinistra, superiore o pagina su, mentre ci si trova in modalità focus, ora attiverà la modalità navigazione, se la funzione modalità focus automatica per i movimenti del cursore è attiva. (#1733)
 
+### Changes for Developers
+
+* NVDA can now instruct speech synthesizers to switch languages for particular sections of speech.
+ * To support this, drivers must handle speech.LangChangeCommand in sequences past to SynthDriver.speak().
+ * SynthDriver objects should also provide the language argument to VoiceInfo objects (or override the language attribute to retrieve the current language). Otherwise, NVDA's user interface language will be used.
+
 ## 2011.2
 
 Le principali novità di questa versione riguardano una gestione avanzata della punteggiatura e dei simboli, con possibilità di avere livelli configurabili, etichette personalizzabili e descrizione dei caratteri; durante la lettura in modalità "dire tutto", non verranno più effettuate pause alla fine di ciascuna riga; migliorato il supporto Aria in Internet Explorer; supporto migliorato per i documenti pdf XFA/LiveCycle in Adobe Reader; accesso al testo presente a video in un maggior numero di applicazioni; aggiunte informazioni sul carattere, sui colori e sulla formattazione del testo presente a schermo.
@@ -4165,8 +4173,8 @@ Le principali novità di questa versione riguardano una gestione avanzata della 
 * Ora è possibile ascoltare la descrizione di un dato carattere premendo due volte il tasto che attiva lo script dire carattere nei comandi di revisione. Per l'italiano si tratta dell'alfabeto Nato: Alpha, Bravo, etc. Per lingue pittografiche come il cinese tradizionale, vengono annunciati uno o più esempi tramite delle frasi. Tutto ciò ha effetto anche con i comandi dire parola e dire riga premuti tre volte. (#55)
 * Può essere esaminata una maggior quantità di testo con la navigazione in linea per applicazioni tipo Mozilla Thunderbird che scrivono il testo direttamente a schermo.
 * E' possibile scegliere tra più livelli nell'annuncio di simboli e punteggiatura. (#332)
- * Quando vengono ripetuti più di 4 volte simboli di punteggiatura o simili, viene annunciato il numero dei simboli presenti piuttosto che annunciarli uno ad uno. (#43)
- * Nuove tabelle di traduzione Braille: Norvegese 8 punti braille computer, Etiope Grado1, Sloveno Grado1, Serbo Grado1. (#1456)
+* Quando vengono ripetuti più di 4 volte simboli di punteggiatura o simili, viene annunciato il numero dei simboli presenti piuttosto che annunciarli uno ad uno. (#43)
+* Nuove tabelle di traduzione Braille: Norvegese 8 punti braille computer, Etiope Grado1, Sloveno Grado1, Serbo Grado1. (#1456)
 * La sintesi vocale non effettua più pause innaturali alla fine di ogni riga nella modalità dire tutto. (#149)
 * NVDA annuncerà se un elemento  possiede l'attributo "ordinato" nei browser web, rispettando le proprietà Aria-sort. (#1500)
 * I simboli Braille Unicode vengono riprodotti correttamente nei Display Braille. (#1505)
@@ -4191,7 +4199,7 @@ Le principali novità di questa versione riguardano una gestione avanzata della 
 * Per ascoltare la rappresentazione decimale o esadecimale di un carattere mentre si usa il cursore di controllo, premere il comando leggi carattere corrente tre volte anziché due, in quanto la doppia pressione ora riporta la descrizione del carattere.
 * Le tabelle di layout non vengono più annunciate nelle applicazioni Mozilla Gecko se ci si trova in modalità focus e si sposta il cursore.
 * In Internet Explorer e altri controlli MSHTML, la modalità navigazione funziona per documenti all'interno di applicazioni ARIA. (#1452)
- * Aggiornato il pacchetto Liblouis Braille alla versione 2.3.0.
+* Aggiornato il pacchetto Liblouis Braille alla versione 2.3.0.
 * Quando ci si trova in modalità navigazione e si salta ad un controllo  con un tasto rapido di navigazione,   viene annunciata la descrizione di tale controllo se esiste.
 * Le barre di progresso ora vengono annunciate in modalità navigazione.
 * L'interfaccia utente di NVDA e la documentazione non utilizzeranno più la terminologia buffer virtuale, bensì modalità navigazione, in quanto il termine buffer virtuale risultava complicato per molti utenti. (#1509)
@@ -4199,7 +4207,7 @@ Le principali novità di questa versione riguardano una gestione avanzata della 
 * In Windows XP e Windows Vista NVDA non effettua più uso delle UI Automation, nonostante esse possano essere disponibili attraverso gli aggiornamenti. Sebbene l'utilizzo di tale tecnologia può aumentare l'accessibilità di programmi moderni, in Windows Xp e Vista si verificavano troppi rallentamenti e crash durante il loro utilizzo. (#1437)
 * Nelle applicazioni che si avvalgono di Mozilla Gecko 2 e successivi (Firefox4 e seguenti per esempio), un documento può venir letto in modalità navigazione anche prima che esso sia caricato del tutto.
 * NVDA ora annuncia lo stato del documento quando il focus si sposta su di esso, ad esempio se il focus viene portato su un documento che è in fase di caricamento, NVDA dirà occupato.
- * La documentazione di NVDA è stata aggiornata in modo da non utilizzare più alcuni termini come oggetto padre e oggetto figlio, in quanto poco comprensibili per la maggior parte degli utenti.
+* La documentazione di NVDA è stata aggiornata in modo da non utilizzare più alcuni termini come oggetto padre e oggetto figlio, in quanto poco comprensibili per la maggior parte degli utenti.
 * Il termine "espanso"  non viene più annunciato per alcuni elementi di menu che hanno al loro interno altri sotto menu.
 * Il comando NVDA+f ora annuncia la formattazione alla posizione del cursore di controllo, non più quindi all'altezza di quella del cursore di sistema. Poiche' in ogni caso da impostazioni predefinite il cursore di controllo segue il cursore di sistema, la maggior parte degli utenti non noteranno differenze. In ogni caso, questo fa sì che ora sia possibile esplorare la formattazione del testo con il cursore di controllo, soprattutto quando si utilizza la navigazione in linea.
 
@@ -4221,9 +4229,9 @@ Le principali novità di questa versione riguardano una gestione avanzata della 
 * Nei documenti in modalità navigazione, NVDA non passerà più automaticamente alla modalità focus in caso sia impostato l'attributo aria-activedescendant; ad esempio quando appare un elenco di elementi con completamento automatico.
 * In Adobe Reader, è ora annunciato il nome dei controlli quando viene spostato il focus o o vengono utilizzati tasti rapidi in modalità navigazione.
 * Nei documenti XFA Pdf in Adobe reader, vengono riconosciuti correttamente bottoni, links e grafici.
--  Nei documenti XFA Pdf in Adobe reader, tutti gli elementi vengono ora riportati su linee separate. Questo cambiamento è dovuto al fatto che vi erano alcune sezioni di testo o documenti interi che venivano letti senza alcuna interruzione a causa della mancanza di una struttura di base in essi.
+* Nei documenti XFA Pdf in Adobe reader, tutti gli elementi vengono ora riportati su linee separate. Questo cambiamento è dovuto al fatto che vi erano alcune sezioni di testo o documenti interi che venivano letti senza alcuna interruzione a causa della mancanza di una struttura di base in essi.
 * Risolti i problemi quando viene spostato il focus in campi di testo editabili nei documenti XFA PDF in Adobe Reader.
--  Nei documenti XFA Pdf in Adobe reader, vengono ora annunciati i cambiamenti dei valori di una casella combinata su cui è il focus.
+* Nei documenti XFA Pdf in Adobe reader, vengono ora annunciati i cambiamenti dei valori di una casella combinata su cui è il focus.
 * Sono ora accessibili a NVDA caselle combinate come quelle presenti in Outlook Express per la selezione del colore. (#1340)
 * Nelle lingue che utilizzano uno spazio per separare le cifre in gruppi come le migliaia in Francese e in Tedesco, i numeri presenti nelle varie porzioni di testo non vengono più pronunciati come cifre singole. Questo è risultato particolarmente problematico nelle celle in tabelle che contenevano numeri al proprio interno. (#555)
 * Elementi che contengono un ruolo Aria di descrizione in Internet Explorer e altri controlli MSHTML sono ora visti come testo statico anziché editabile.
@@ -4266,7 +4274,27 @@ Le principali novità di questa versione riguardano una gestione avanzata della 
 * In Outlook 2010, NVDA ora segue il focus correttamente nell'elenco dei messaggi. (#1285)
 * Corretti alcuni problemi di connessione USB con il Display Braille MDV Lilli. (#241)
 
+### Changes for Developers
+
+* Developer documentation can now be generated using SCons. See readme.txt at the root of the source distribution for details, including associated dependencies.
+* Locales can now provide descriptions for characters. See the Character Descriptions section of the Developer Guide for details. (#55)
+* Locales can now provide information about the pronunciation of specific punctuation and other symbols. See the Symbol Pronunciation section of the Developer Guide for details. (#332)
+* You can now build NVDAHelper with several debugging options using the nvdaHelperDebugFlags SCons variable. See readme.txt at the root of the source distribution for details. (#1390)
+* Synth drivers are now passed a sequence of text and speech commands to speak, instead of just text and an index.
+ * This allows for embedded indexes, parameter changes, etc.
+ * Drivers should implement SynthDriver.speak() instead of SynthDriver.speakText() and SynthDriver.speakCharacter().
+ * The old methods will be used if SynthDriver.speak() is not implemented, but they are deprecated and will be removed in a future release.
+* gui.execute() has been removed. wx.CallAfter() should be used instead.
+* gui.scriptUI has been removed.
+ * For message dialogs, use wx.CallAfter(gui.messageBox, ...).
+ * For all other dialogs, real wx dialogs should be used instead.
+ * A new gui.runScriptModalDialog() function simplifies using modal dialogs from scripts.
+* Synth drivers can now support boolean settings. See SynthDriverHandler.BooleanSynthSetting.
+* SCons now accepts a certTimestampServer variable specifying the URL of a timestamping server to use to timestamp authenticode signatures. (#1644)
+
 ## 2011.1.1
+
+Questa versione risolve diversi problemi di sicurezza e altri importanti problemi riscontrati in NVDA 2011.1.
 
 ### Bug Corretti
 
