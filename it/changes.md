@@ -4311,6 +4311,7 @@ Questa versione risolve diversi problemi di sicurezza e altri importanti problem
 * Quando la funzione leggi i tasti di comando è attivata, i caratteri digitati con il tasto Shift non vengono più letti come tasti di comando. (#1422)
 * Quando la funzione leggi i tasti di comando è attivata, la pressione della barra spazio con altri tasti speciali ad eccezione dello Shift (control, alt), viene ora annunciata come tasto di comando. (#1424)
 * Le funzioni di logging sono completamente disabilitate quando ci si trova in schermate di sicurezza, UAC, logon di Windows, etc, in quanto risultava essere un potenziale rischio per la sicurezza. (#1435)
+* Nella modalità di aiuto all'immissione, i gesti vengono ora registrati anche se non sono legati a uno script (in conformità con la guida per l'utente). (#1425)
 
 ## 2011.1
 
