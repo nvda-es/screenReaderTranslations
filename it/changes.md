@@ -3457,10 +3457,10 @@ Caratteristiche salienti di questa versione includono la modalità di navigazion
 * Migliorato il supporto per la lettura automatica dell'intestazione di riga e colonna in Microsoft Excel (#3568) incluso:
  * Supporto per range di nomi definiti in Excel per identificare le celle d'intestazione (compatibile con loscreen reader Jaws)
  * I comandi imposta l'intestazione di colonna (NVDA+shift+c) e imposta l'intestazione di riga (NVDA+shift+r) ora salvano le impostazioni nel foglio di lavoro in modo da essere disponibili la prossima volta che il foglio viene aperto, e saranno a disposizione degli screen reader che supportano lo schema di range nomi definiti.
- * Questi comandi possono venir utilizzati più volte in un foglio foglio per impostare diverse intestazioni per regioni differenti.
- * Supporto per la lettura automatica dell'intestazione di riga e colonna in Microsoft Word (#3110) incluso:
+ * Questi comandi possono venir utilizzati più volte in un foglio per impostare diverse intestazioni per regioni differenti.
+* Supporto per la lettura automatica dell'intestazione di riga e colonna in Microsoft Word (#3110) incluso:
  * Supporto dei segnalibri di MS Word per identificare le celle d'intestazione (compatibile con lo screen reader Jaws) 
- * I comandi imposta l'intestazione di colonna (NVDA+shift+c) e imposta l'intestazione di riga (NVDA+shift+r) quando ci si trova sulla prima cella d'intestazione in una tabella, permettono di dire a NVDA che le intestazioni vanno lette automaticamente. Le impostazioni sono salvate nel documento in modo da essere disponibili alla prossima apertura e sono disponibili per gli screen reader che supportano lo schema dei segnalibri.
+ -  I comandi imposta l'intestazione di colonna (NVDA+shift+c) e imposta l'intestazione di riga (NVDA+shift+r) quando ci si trova sulla prima cella d'intestazione in una tabella, permettono di dire a NVDA che le intestazioni vanno lette automaticamente. Le impostazioni sono salvate nel documento in modo da essere disponibili alla prossima apertura e sono disponibili per gli screen reader che supportano lo schema dei segnalibri.
 * Microsoft Word: Notifica la distanza dall'angolo sinistro della pagina quando viene premuto il tasto tab. (#1353)
 * Microsoft Word: fornito riscontro in voce e in braille per la maggior parte dei comandi rapidi di formattazione disponibili  (grassetto, corsivo, sottolineato, allineamento livello di rientro). (#1353)
 * Microsoft Excel: se la cella selezionata contiene commenti, ora possono essere letti prmendo  NVDA+alt+c (#2920)
@@ -3470,7 +3470,18 @@ Caratteristiche salienti di questa versione includono la modalità di navigazion
  * Spostamento di pagina orizzontale (alt+pagina su e alt+pagina giù)
  * Selezione estesa (i tasti precedenti più l'aggiunta del tasto Shift).
  * Selezionare la regione corrente  (control+shift+8)
-* New language: Catalan.
+* Microsoft Excel: l'allineamento verticale e orizzontale delle celle ora può essere riportato con il comando di formattazione del report (NVDA+f). Può anche essere segnalato automaticamente se l'opzione Allineamento report nelle impostazioni di formattazione del documento è abilitata. (#4212)
+* Microsoft Excel: ora è possibile riportare lo stile di una cella con il comando di formattazione del report (NVDA+f). Può anche essere segnalato automaticamente se l'opzione Stile report nelle impostazioni di formattazione del documento è abilitata. (#4213)
+* Microsoft PowerPoint: quando si spostano le forme all'interno di una diapositiva con i tasti freccia, viene ora segnalata la posizione corrente della forma (#4214), incluso:
+ * Viene segnalata la distanza tra la forma e ciascuno dei bordi della diapositiva.
+ * Se la sagoma copre o è coperta da un'altra sagoma, allora vengono riportate la distanza sovrapposta e la sagoma sovrapposta.
+ * Per segnalare queste informazioni in qualsiasi momento senza spostare una forma, premere il comando segnala posizione (NVDA+cancella).
+ * Quando si seleziona una forma, se questa è coperta da un'altra forma, NVDA segnalerà che è oscurata.
+* Il comando di ubicazione del report (NVDA+cancella) è più specifico del contesto in alcune situazioni. (#4219)
+ * Nei campi di modifica standard e nella modalità navigazione, vengono riportate la posizione del cursore come percentuale nel contenuto e le sue coordinate sullo schermo.
+ * Nelle forme nelle presentazioni PowerPoint viene segnalata la posizione della forma rispetto alla diapositiva e alle altre forme.
+ * Premendo questo comando due volte si produrrà il comportamento precedente di riportare le informazioni sulla posizione per l'intero controllo.
+* Nuova lingua: catalano.
 
 ### Cambiamenti
 
@@ -3494,7 +3505,16 @@ Caratteristiche salienti di questa versione includono la modalità di navigazion
 * migliorata la navigazione di alcune finestre di dialogo in prodotti MS Office come Word, Excel e Outlook non riportando particolari barre degli strumenti contenitore di controlli poco utili per gli utenti. (#4198) 
 * i riquadri attività come il clipboard manager o recupero File non ricevono più accidentalmente il fuoco quando si apre un'applicazione come Microsoft Word o Excel, che in qualche caso obbligavano l'utente a lasciare e riprendere l'applicazione per poter usare il documento o il foglio di calcolo. (#4199)
 * NVDA non fallisce più nell'avvio nei recenti sistemi operativi Windows se la lingua utente del sistema è impostata su Serba (Latin). (#4203) 
-* non è più necessario premere più volte tab per attivare i ribbon di Microsoft Office alla sua prima attivazione dopo l'apertura di un programma Office come Word o Excel. (#4207)
+* Premendo il tasto numlock mentre ci si trova in modalità di aiuto all'immissione ora si attiva/disattiva correttamente il numlock, invece di causare la non sincronizzazione della tastiera e del sistema operativo rispetto allo stato di questo tasto. (#4226)
+* In Google Chrome, il titolo del documento viene nuovamente riportato quando si passa da una scheda all'altra. Nella NVDA 2014.2 ciò in alcuni casi non si verificava. (#4222)
+* In Google Chrome e nei browser basati su Chrome, l'URL del documento non viene più riportato quando si segnala il documento. (#4223)
+* Quando si esegue dire tutto con il sintetizzatore vocale No selezionato (utile per i test automatizzati), dire tutto verrà ora completato invece di fermarsi dopo le prime righe. (#4225)
+* Finestra di dialogo Firma di Microsoft Outlook: il campo di modifica della firma è ora accessibile, consentendo il tracciamento completo del cursore e il rilevamento del formato. (#3833)
+* Microsoft Word: quando si legge l'ultima riga di una cella di tabella, non viene più letta l'intera cella della tabella. (#3421)
+* Microsoft Word: quando si legge la prima o l'ultima riga di un sommario, non viene più letto l'intero sommario. (#3421)
+* Quando si pronunciano parole digitate e in alcuni altri casi, le parole non vengono più interrotte erroneamente in corrispondenza di segni come i segni vocalici e i virama nelle lingue indiane. (#4254)
+* I campi di testo numerici modificabili in GoldWave ora vengono gestiti correttamente. (#670)
+* Microsoft Word: quando ci si sposta per paragrafo con control+freccia giù / control+freccia su, non è più necessario premerli due volte se ci si sposta negli elenchi puntati o numerati. (#3290)
 
 ### Cambiamenti per gli sviluppatori
 
@@ -3581,11 +3601,9 @@ Caratteristiche salienti di questa versione includono la modalità di navigazion
 * Quando vengono inseriti caratteri con il metodo di immissione asiatico nei controlli che fanno parte di NVDA (come la finestra trova in un browser), viene letto correttamente il carattere candidato invece che la parola NVDA. (#3726)
 * Vengono ora annunciate correttamente le schede nella finestra di opzioni di Outlook 2013. (#3826)
 * Migliorato il supporto alle regioni Aria in Firefox e ad altre applicazioni Mozilla:
-
-> - Supporto per gli aggiornamenti  ad aria-atomic e filtraggio degli aggiornamenti di aria-busy (#2640)
-> - Viene annunciato il testo alternativo (ad esempio l'attributo alt o aria-label) se non c'è altro testo utile. (#3329)
-> - Se il focus viene spostato e contemporaneamente viene aggiornato un controllo live-region, quest'ultimo sarà annunciato ugualmente. (#3777)
-
+ * Supporto per gli aggiornamenti  ad aria-atomic e filtraggio degli aggiornamenti di aria-busy (#2640)
+ * Viene annunciato il testo alternativo (ad esempio l'attributo alt o aria-label) se non c'è altro testo utile. (#3329)
+ * Se il focus viene spostato e contemporaneamente viene aggiornato un controllo live-region, quest'ultimo sarà annunciato ugualmente. (#3777)
 * Alcuni elementi di presentazione di Firefox e altre applicazioni Mozilla Gecko non vengono più impropriamente mostrati in modalità navigazione. (#3781)
 * Miglioramento delle prestazioni durante l'esplorazione di un documento di Microsoft Word con il controllo degli errori di ortografia abilitato. (#3785)
 * Diverse correzioni al supporto per le applicazioni Java accessibili:
@@ -3597,6 +3615,7 @@ Caratteristiche salienti di questa versione includono la modalità di navigazion
 * Risolto un problema che causava il crash di NVDA in Windows8 in concomitanza con controlli contenenti grosse porzioni di testo, come il visualizzatore log di NVDA. (#3867)
 * Nei sistemi con le impostazioni del display settate ad un numero molto alto di DPI, (ossia quasi tutti i pc più moderni), NVDA non ha più problemi nel portare il mouse nella posizione desiderata. (#3758, #3703)
 * Sistemato un fastidioso problema che occasionalmente, provocava l'arresto di NVDA durante la navigazione, inibendone però il riavvio. (#3804)
+* Ora è possibile utilizzare un display Braille Papenmeier anche se non è mai stato collegato un display Papenmeier tramite USB. (#3712)
 * NVDA non va più in crash quando si seleziona un vecchio modello di barra braille Braillex Papenmeier senza che quest'ultima sia connessa.
 
 ### Cambiamenti per sviluppatori in inglese
