@@ -3223,12 +3223,12 @@ Le principali migliorie presenti in questa versione si concentrano su un notevol
 * Sistemato l'aspetto visivo dei pulsanti nella finestra di avviso che viene visualizzata quando si tenta di passare a una versione precedente di NVDA. (#5325)
 * In Windows 8 e versioni successive, NVDA ora si avvia  molto prima, quando configurato per l'avvio dopo l'accesso a Windows. (#308)
  * Se ciò è stato attivato utilizzando una versione precedente di NVDA, sarà necessario disattivarlo e riattivarlo in modo che la modifica abbia effetto. Seguire questa procedura:
-  1. Aprire la finestra di dialogo Impostazioni generali.
-  1. Deselezionare la casella di controllo Avvia automaticamente NVDA dopo l'accesso a Windows.
-  1. Premere il tasto OK.
-  1. Aprire nuovamente la finestra di dialogo Impostazioni generali.
+  1. Aprire la finestra di dialogo Impostazioni generali.
+  1. Deselezionare la casella di controllo Avvia automaticamente NVDA dopo l'accesso a Windows.
+  1. Premere il tasto OK.
+  1. Aprire nuovamente la finestra di dialogo Impostazioni generali.
   1. Controllare la casella di controllo Avvia automaticamente NVDA dopo l'accesso a Windows.
-  1. Premere il tasto OK.
+  1. Premere il tasto OK.
 * Miglioramenti delle prestazioni per UI Automation, tra cui File Explorer e Task Viewer. (#5293) 
 * NVDA ora passa correttamente alla modalità focus quando si preme tab e ci si sposta in un controllo Aria di una griglia di sola lettura, per Mozilla Firefox e altri controlli Gecko. (#5118)
 * NVDA ora annuncia correttamente l'assenza di oggetti precedenti quando si esegue un flick sul touch screen. 
@@ -3266,7 +3266,7 @@ Le principali migliorie presenti in questa versione si concentrano principalment
 ### Bug corretti
 
 * Nella modalità navigazione in Internet Explorer e altri controlli MSHTML, lo spostamento con la navigazione veloce con il tasto "f" per andare al campo successivo non presenta più elementi ornamentali. (#4204)
-In Firefox, NVDA non cerca più di creare una descrizione per le schede  ARIA basata su tutto il testo all'interno. (#4638)
+* In Firefox, NVDA non cerca più di creare una descrizione per le schede  ARIA basata su tutto il testo all'interno. (#4638)
 * Migliorata la lettura dei contenuti quando si preme tab per spostarsi tra sezioni, articoli o finestre di dialogo in Internet Explorer e altri controlli MSHTML. (#5021, #5025) 
 * Quando si utilizzano le barre Baum / Humanware / APH  con una tastiera braille, la scrittura non smette di funzionare dopo aver premuto un altro tipo di tasto sul display. (#3541)
 * In Windows 10, non vengono più lette informazioni fuori luogo quando si preme ALT + TAB o alt + shift + tab per passare da un'applicazione all'altra. (#5116)
@@ -3296,8 +3296,7 @@ Caratteristiche salienti di questa versione includono la capacità di leggere i 
 
 ### Novità
 
-è ora possibile spostarsi avanti e indietro per frasi in Microsoft Word con la combinazione di tasti alt+freccia giù o freccia su. (#3288)
-
+* è ora possibile spostarsi avanti e indietro per frasi in Microsoft Word con la combinazione di tasti alt+freccia giù o freccia su. (#3288)
 * Nuove tabelle braille relative a molte lingue presenti in India. (#4778)
 * In Microsoft Excel, NVDA notifica quando una cella possiede del contenuto che ne supera i bordi. (#3040)
 * In Microsoft Excel, si può utilizzare la combinazione di tasti NVDA+f7 per ottenere un elenco dei grafici, dei commenti e delle formule. (#1987)
