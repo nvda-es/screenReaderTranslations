@@ -1357,7 +1357,7 @@ eSpeak-NG и Liblouis са обновени, добавени са нови та
 
 * Поддръжка за докладване на бележки в MS Excel с включен UI Automation в Windows 11. (#12861)
 * Наличието на показалци, чернови на коментари и разрешени коментари в последните версии на Microsoft Word вече се съобщава чрез реч и брайл посредством UI Automation в Windows 11. (#12861)
-* Новият „--lang“ параметър на командния ред позволява промяна на конфигурирания език на NVDA. (#10044)
+* Новият `--lang` параметър на командния ред позволява промяна на конфигурирания език на NVDA. (#10044)
 * NVDA вече предупреждава за параметри на командния ред, които са неизвестни и не се използват от никоя добавка. (#12795)
 * В Microsoft Word, достъпен чрез UI Automation, NVDA вече ще използва mathPlayer за четене и навигация в математически уравнения на Office. (#12946)
   * За да сработи това, трябва да използвате Microsoft Word 365/2016 компилация 14326 или по-нови.
@@ -1376,19 +1376,19 @@ eSpeak-NG и Liblouis са обновени, добавени са нови та
 
 ### Промени
 
-* eSpeak-NG е обновен до 1.51-dev ревизия „7e5457f91e10“. (#12950)
+* eSpeak-NG е обновен до 1.51-dev ревизия `7e5457f91e10`. (#12950)
 * Брайловият преводач Liblouis е обновен до [3.21.0](https://github.com/liblouis/liblouis/releases/tag/v3.21.0). (#13141, #13438)
   * Добавена е нова брайлова таблица: Японски (Кантенджи) литературен брайл.
   * Добавена е нова брайлова таблица: Немски 6-точков компютърен брайл.
   * Добавена е нова брайлова таблица: Каталунски ниво 1. (#13408)
 * NVDA ще докладва селекциите и обединените клетки в LibreOffice Calc 7.3 и по-нови. (#9310, #6897)
 * Хранилището за общи езикови данни на Уникод (CLDR) е обновено до 40.0. (#12999)
-* „NVDA+Delete от цифровия блок“ по подразбиране докладва местоположението на каретката или фокусирания обект. (#13060)
-* „NVDA+Shift+Delete от цифровия блок“ докладва местоположението на курсора за преглед. (#13060)
+* `NVDA+Delete от цифровия блок` по подразбиране докладва местоположението на каретката или фокусирания обект. (#13060)
+* `NVDA+Shift+Delete от цифровия блок` докладва местоположението на курсора за преглед. (#13060)
 * Добавени са комбинации по подразбиране за превключване на модификаторите за дисплеи на Freedom Scientific. (#13152)
-* Вече не се съобщава „Базова линия“ при използване на командата за докладване на форматирането на текста („NVDA+F“). (#11815)
+* Вече не се съобщава „Базова линия“ при използване на командата за докладване на форматирането на текста (`NVDA+F`). (#11815)
 * Извеждането на подробно описание вече по подразбиране няма присвоен жест. (#13380)
-* Докладването на обобщение за подробностите вече има жест по подразбиране („NVDA+D“). (#13380)
+* Докладването на обобщение за подробностите вече има жест по подразбиране (`NVDA+D`). (#13380)
 * NVDA трябва да се рестартира след инсталиране на MathPlayer. (#13486)
 
 ### Отстранени грешки
@@ -1406,7 +1406,7 @@ eSpeak-NG и Liblouis са обновени, добавени са нови та
 * В калкулатора на Windows 10 NVDA отново докладва етикетите на списъците с елементи за хронологията и паметта. (#11858)
 * Жестове като превъртане и преместване отново работят при HID Брайлови устройства. (#13228)
 * Поща в Windows 11: След преместване на фокуса между приложения, докато четете дълго писмо, NVDA вече не блокира в съответния ред от писмото. (#13050)
-* HID брайл: Жестове с интервал (напр. „Интервал+Точка4“) могат да се изпълняват успешно от брайловия дисплей. (#13326)
+* HID брайл: Жестове с интервал (напр. `Интервал+Точка4`) могат да се изпълняват успешно от брайловия дисплей. (#13326)
 * Коригиран е проблем, при който едновременно могат да бъдат отворени няколко диалога с настройки. (#12818)
 * Отстранен е проблем, при който някои брайлови дисплеи Focus Blue спират да работят при събуждане на компютъра след заспиване. (#9830)
 * Вече не се докладва некоректно „Базова линия“, когато е активна опцията „Докладвай горен и долен индекс“. (#11078)
@@ -1427,70 +1427,70 @@ eSpeak-NG и Liblouis са обновени, добавени са нови та
 * Въпреки че NVDA все още изисква Visual Studio 2019, компилирането вече не би трябвало да се проваля, ако по-нова версия на Visual Studio (напр. 2022) е инсталирана заедно с 2019. (#13033, #13387)
 * SCons е обновен до версия 4.3.0. (#13033)
 * py2exe е обновен до версия 0.11.1.0. (#13510)
-* „NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable“ беше премахнат. Вместо това използвайте „apiLevel“. (#12955, #12660)
-* „TVItemStruct“ беше премахнат от „sysTreeView32“. (#12935)
-* „MessageItem“ беше премахнат от модула за приложението Outlook. (#12935)
-* Константите „audioDucking.AUDIODUCKINGMODE_*“ сега са „DisplayStringIntEnum“. (#12926)
-  * Употребите трябва да бъдат заменени с „AudioDuckingMode.*“
-  * Употребите на „audioDucking.audioDuckingModes“ трябва да бъдат заменени с „AudioDuckingMode.*.displayString“
-* Употребата на константите „audioDucking.ANRUS_ducking_*“ трябва да бъде заменена с „ANRUSDucking.*“. (#12926)
-* Промени в „synthDrivers.sapi5“ (#12927):
-  * Употребите на „SPAS_*“ трябва да бъдат заменени с „SPAudioState.*“
-  * Употребите на „constants.SVSF*“ трябва да бъдат заменени със „SpeechVoiceSpeakFlags.*“
-    * Забележка: „SVSFlagsAsync“ трябва да бъде заменено с „SpeechVoiceSpeakFlags.Async“, а не с „SpeechVoiceSpeakFlags.lagsAsync“
-  * Употребите на „constants.SVE*“ трябва да бъдат заменени със „SpeechVoiceEvents.*“
-* От модула за приложение „soffice“ са премахнати следните класове и функции: „JAB_OOTableCell“, „JAB_OOTable“, „gridCoordStringToNumbers“. (#12849)
-* „core.CallCancelled“ сега е „exceptions.CallCancelled“. (#12940)
-* Всички константи, започващи с RPC от „core“ и „logHandler“ са преместени в „RPCConstants.RPC“ enum. (#12940)
-* Препоръчително е функциите „mouseHandler.doPrimaryClick“ и „mouseHandler.doSecondaryClick“ да се използват за щракване с мишката за извършване на логическо действие като задействане (основно) или вторично (показване на контекстното меню),
-вместо да се използва „executeMouseEvent“ и  специално да се указва левия или десния бутон на мишката.
+* `NVDAObjects.UIA.winConsoleUIA.WinConsoleUIA.isImprovedTextRangeAvailable` беше премахнат. Вместо това използвайте `apiLevel`. (#12955, #12660)
+* `TVItemStruct` беше премахнат от `sysTreeView32`. (#12935)
+* `MessageItem` беше премахнат от модула за приложението Outlook. (#12935)
+* Константите `audioDucking.AUDIODUCKINGMODE_*` сега са `DisplayStringIntEnum`. (#12926)
+  * Употребите трябва да бъдат заменени с `AudioDuckingMode.*`
+  * Употребите на `audioDucking.audioDuckingModes` трябва да бъдат заменени с `AudioDuckingMode.*.displayString`
+* Употребата на константите `audioDucking.ANRUS_ducking_*` трябва да бъде заменена с `ANRUSDucking.*`. (#12926)
+* Промени в `synthDrivers.sapi5` (#12927):
+  * Употребите на `SPAS_*` трябва да бъдат заменени с `SPAudioState.*`
+  * Употребите на `constants.SVSF*` трябва да бъдат заменени със `SpeechVoiceSpeakFlags.*`
+    * Забележка: `SVSFlagsAsync` трябва да бъде заменено с `SpeechVoiceSpeakFlags.Async`, а не с `SpeechVoiceSpeakFlags.lagsAsync`
+  * Употребите на `constants.SVE*` трябва да бъдат заменени със `SpeechVoiceEvents.*`
+* От модула за приложение `soffice` са премахнати следните класове и функции: `JAB_OOTableCell`, `JAB_OOTable`, `gridCoordStringToNumbers`. (#12849)
+* `core.CallCancelled` сега е `exceptions.CallCancelled`. (#12940)
+* Всички константи, започващи с RPC от `core` и `logHandler` са преместени в `RPCConstants.RPC` enum. (#12940)
+* Препоръчително е функциите `mouseHandler.doPrimaryClick` и `mouseHandler.doSecondaryClick` да се използват за щракване с мишката за извършване на логическо действие като задействане (основно) или вторично (показване на контекстното меню),
+вместо да се използва `executeMouseEvent` и специално да се указва левия или десния бутон на мишката.
 Това гарантира, че кодът ще се съобразява с потребителските настройки на Windows за промяна на основния бутон на мишката. (#12642)
-* „config.getSystemConfigPath“ беше премахнато и няма заместител. (#12943)
-* „shlobj.SHGetFolderPath“ беше премахнато. Моля, вместо това използвайте „shlobj.SHGetKnownFolderPath“. (#12943)
-* Константите „shlobj“ бяха премахнати. Беше създаден нов enum – „shlobj.FolderId“, за използване с „SHGetKnownFolderPath“. (#12943)
-* „diffHandler.get_dmp_algo“ и „diffHandler.get_difflib_algo“ бяха заменени съответно с „diffHandler.prefer_dmp“ и „diffHandler.prefer_difflib“. (#12974)
-* „languageHandler.curLang“ беше премахнато. За установяване на текущия език на NVDA, използвайте „languageHandler.getLanguage()“. (#13082)
-* Методът „getStatusBarText“ може да бъде внедрен в модул на приложение, за персонализиране на начина, по който NVDA извлича текста от лентата на състоянието. (#12845)
-* „globalVars.appArgsExtra“ беше премахнато. (#13087)
-  * Ако вашата добавка трябва да обработва допълнителни аргументи на командния ред, вижте документацията на „addonHandler.isCLIParamKnown“ и ръководството за разработчици, за подробности.
+* `config.getSystemConfigPath` беше премахнато и няма заместител. (#12943)
+* `shlobj.SHGetFolderPath` беше премахнато. Моля, вместо това използвайте `shlobj.SHGetKnownFolderPath`. (#12943)
+* Константите `shlobj` бяха премахнати. Беше създаден нов enum – `shlobj.FolderId`, за използване с `SHGetKnownFolderPath`. (#12943)
+* `diffHandler.get_dmp_algo` и `diffHandler.get_difflib_algo` бяха заменени съответно с `diffHandler.prefer_dmp` и `diffHandler.prefer_difflib`. (#12974)
+* `languageHandler.curLang` беше премахнато. За установяване на текущия език на NVDA, използвайте `languageHandler.getLanguage()`. (#13082)
+* Методът `getStatusBarText` може да бъде внедрен в модул на приложение, за персонализиране на начина, по който NVDA извлича текста от лентата на състоянието. (#12845)
+* `globalVars.appArgsExtra` беше премахнато. (#13087)
+  * Ако вашата добавка трябва да обработва допълнителни аргументи на командния ред, вижте документацията на `addonHandler.isCLIParamKnown` и ръководството за разработчици, за подробности.
 * Модулът за обработка на UIA и други модули за поддръжка на UIA вече са част от пакета UIAHandler. (#10916)
-  * „UIAUtils“ сега е „UIAHandler.utils“
-  * „UIABrowseMode“ сега е „UIAHandler.browseMode“
-  * „_UIAConstants“ сега е „UIAHandler.constants“
-  * „_UIACustomProps“ сега е „UIAHandler.customProps“
-  * „_UIACustomAnnotations“ сега е „UIAHandler.customAnnotations“
-* Константите „IAccessibleHandler“ и „IA2_RELATION_*“ бяха заменени с enum „IAccessibleHandler.RelationType“. (#13096)
-  * Премахнато е „IA2_RELATION_FLOWS_FROM“
-  * Премахнато е „IA2_RELATION_FLOWS_TO“
-  * Премахнато е „IA2_RELATION_CONTAINING_DOCUMENT“
-* „LOCALE_SLANGUAGE“, „LOCALE_SLIST“ и „LOCALE_SLANGDISPLAYNAME“ са премахнати от „languageHandler“. Вместо това използвайте членове на „languageHandler.LOCALE“. (#12753)
+  * `UIAUtils` сега е `UIAHandler.utils`
+  * `UIABrowseMode` сега е `UIAHandler.browseMode`
+  * `_UIAConstants` сега е `UIAHandler.constants`
+  * `_UIACustomProps` сега е `UIAHandler.customProps`
+  * `_UIACustomAnnotations` сега е `UIAHandler.customAnnotations`
+* Константите `IAccessibleHandler` и `IA2_RELATION_*` бяха заменени с enum `IAccessibleHandler.RelationType`. (#13096)
+  * Премахнато е `IA2_RELATION_FLOWS_FROM`
+  * Премахнато е `IA2_RELATION_FLOWS_TO`
+  * Премахнато е `IA2_RELATION_CONTAINING_DOCUMENT`
+* `LOCALE_SLANGUAGE`, `LOCALE_SLIST` и `LOCALE_SLANGDISPLAYNAME` са премахнати от `languageHandler`. Вместо това използвайте членове на `languageHandler.LOCALE`. (#12753)
 * Преминато е от Minhook към Microsoft Detours като библиотека за прихващане за NVDA. Прихващането към тази библиотека се използва главно за подпомагане на екранния модел. (#12964)
-* „winVersion.WIN10_RELEASE_NAME_TO_BUILDS“ е премахнато. (#13211)
+* `winVersion.WIN10_RELEASE_NAME_TO_BUILDS` е премахнато. (#13211)
 * SCons вече предупреждава за компилиране с брой задачи, равен на броя на логическите процесори в системата.
 Това може драстично да намали времето за компилиране на многоядрени системи. (#13226, #13371)
-* Константите „characterProcessing.SYMLVL_*“ са премахнати. Вместо това използвайте „characterProcessing.SymbolLevel.*“. (#13248)
-* Функциите „loadState“ и „saveState“ са премахнати от addonHandler. Вместо това използвайте „addonHandler.state.load“ и „addonHandler.state.save“. (#13245)
+* Константите `characterProcessing.SYMLVL_*` са премахнати. Вместо това използвайте `characterProcessing.SymbolLevel.*`. (#13248)
+* Функциите `loadState` и `saveState` са премахнати от addonHandler. Вместо това използвайте `addonHandler.state.load` и `addonHandler.state.save`. (#13245)
 * Слоят за взаимодействие с UWP/OneCore на NVDAHelper е преместен [от C++/CX към C++/Winrt](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx). (#10662)
-* Вече е задължително да се използва подклас „DictionaryDialog“, за да се използва. (#13268)
-* „config.RUN_REGKEY“ и „config.NVDA_REGKEY“ са оттеглени. Вместо това използвайте „config.RegistryKey.RUN“ и „config.RegistryKey.NVDA“. Те ще бъдат премахнати в 2023. (#13242)
-* „easeOfAccess.ROOT_KEY“ и „easeOfAccess.APP_KEY_PATH“ са оттеглени. Вместо това използвайте „easeOfAccess.RegistryKey.ROOT“ и „easeOfAccess.RegistryKey.APP“. Те ще бъдат премахнати в 2023. (#13242)
-* „easeOfAccess.APP_KEY_NAME“ е оттеглено и ще бъде премахнато в 2023. (#13242)
-* „DictionaryDialog“ и „DictionaryEntryDialog“ са преместени от „gui.settingsDialogs“ в „gui.speechDict“. (#13294)
+* Вече е задължително да се използва подклас `DictionaryDialog`, за да се използва. (#13268)
+* `config.RUN_REGKEY` и `config.NVDA_REGKEY` са оттеглени. Вместо това използвайте `config.RegistryKey.RUN` и `config.RegistryKey.NVDA`. Те ще бъдат премахнати в 2023. (#13242)
+* `easeOfAccess.ROOT_KEY` и `easeOfAccess.APP_KEY_PATH` са оттеглени. Вместо това използвайте `easeOfAccess.RegistryKey.ROOT` и `easeOfAccess.RegistryKey.APP`. Те ще бъдат премахнати в 2023. (#13242)
+* `easeOfAccess.APP_KEY_NAME` е оттеглено и ще бъде премахнато в 2023. (#13242)
+* `DictionaryDialog` и `DictionaryEntryDialog` са преместени от `gui.settingsDialogs` в `gui.speechDict`. (#13294)
 * IAccessible2 отношенията вече се показват в информацията за разработчици за IAccessible2 обекти. (#13315)
-* „languageHandler.windowsPrimaryLCIDsToLocaleNames“ беше премахнато. Вместо това използвайте „languageHandler.windowsLCIDToLocaleName“ или „winKernel.LCIDToLocaleName“. (#13342)
-* Свойството „UIAAutomationId“ за UIA обекти трябва да е с приоритет пред „cachedAutomationId“. (#13125, #11447)
-  * „cachedAutomationId“ може да се използва, ако е получено директно от елемента.
-* „NVDAObjects.window.scintilla.CharacterRangeStruct“ беше преместено в „NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct“. (#13364)
-* Булевата „gui.isInMessageBox“ е премахната. Вместо това използвайте функцията „gui.message.isModalMessageBoxActive“. (#12984, #13376)
-* „controlTypes“ е разделено на няколко подмодула. (#12510, #13588)
-  * „ROLE_*“ и ``STATE_*“ бяха заменени с „Role.*“ и „State.*“.
+* `languageHandler.windowsPrimaryLCIDsToLocaleNames` беше премахнато. Вместо това използвайте `languageHandler.windowsLCIDToLocaleName` или `winKernel.LCIDToLocaleName`. (#13342)
+* Свойството `UIAAutomationId` за UIA обекти трябва да е с приоритет пред `cachedAutomationId`. (#13125, #11447)
+  * `cachedAutomationId` може да се използва, ако е получено директно от елемента.
+* `NVDAObjects.window.scintilla.CharacterRangeStruct` беше преместено в `NVDAObjects.window.scintilla.Scintilla.CharacterRangeStruct`. (#13364)
+* Булевата `gui.isInMessageBox` е премахната. Вместо това използвайте функцията `gui.message.isModalMessageBoxActive`. (#12984, #13376)
+* `controlTypes` е разделено на няколко подмодула. (#12510, #13588)
+  * `ROLE_*` и `STATE_*` бяха заменени с `Role.*` и `State.*`.
   * Въпреки че все още са налице, следните неща се препоръчва да се считат за оттеглени:
-    * „ROLE_*“ и „STATE_*“ – вместо това използвайте „Role.*“ и „State.*“.
-    * „roleLabels“, „stateLabels“ и „negativeStateLabels“. Употреби като „roleLabels[ROLE_*]“ трябва да бъдат заменени с техните еквиваленти „Role.*.displayString“ или „State.*.negativeDisplayString“.
-    * „processPositiveStates“ и „processNegativeStates“ – вместо това използвайте „processAndLabelStates“.
-* Константите за състоянието на клетките в Excel („NVSTATE_*“) вече са стойности в enum „NvCellState“, огледално отразявани в „NvCellState“ в „NVDAObjects/window/excel.py“ и съпоставяни с „controlTypes.State“ чрез „_nvCellStatesToStates“. (#13465)
-* „EXCEL_CELLINFO“ struct членът „state“ сега е „nvCellStates“.
-* „mathPres.ensureInit“ беше премахнато. MathPlayer сега се инициализира когато NVDA се стартира. (#13486)
+    * `ROLE_*` и `STATE_*` – вместо това използвайте `Role.*` и `State.*`.
+    * `roleLabels`, `stateLabels` и `negativeStateLabels`. Употреби като `roleLabels[ROLE_*]` трябва да бъдат заменени с техните еквиваленти `Role.*.displayString` или `State.*.negativeDisplayString`.
+    * `processPositiveStates` и `processNegativeStates` – вместо това използвайте `processAndLabelStates`.
+* Константите за състоянието на клетките в Excel (`NVSTATE_*`) вече са стойности в enum `NvCellState`, огледално отразявани в `NvCellState` в `NVDAObjects/window/excel.py` и съпоставяни с `controlTypes.State` чрез `_nvCellStatesToStates`. (#13465)
+* `EXCEL_CELLINFO` struct членът `state` сега е `nvCellStates`.
+* `mathPres.ensureInit` беше премахнато. MathPlayer сега се инициализира когато NVDA се стартира. (#13486)
 
 ## 2021.3.5
 
