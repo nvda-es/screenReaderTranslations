@@ -1243,8 +1243,8 @@ Come sempre, aggiornate anche le tabelle LibLouis, con il supporto ad una nuova 
 * NSIS è stato aggiornato alla versione 3.08. (#9134)
 * CLDR è stato aggiornato alla versione 41.0. (#13582)
 * Aggiornato Liblouis alla versione [3.22.0](https://github.com/liblouis/liblouis/releases/tag/v3.22.0). (#13775)
-* Aggiunto un nuovo ruolo per i controlli "barre di avanzamento non determinabili". (#10644)
   * Nuova tabella braille: Tedesco grado 2 (dettagliato)
+* Aggiunto un nuovo ruolo per i controlli "barre di avanzamento non determinabili". (#10644)
 * NVDA ora annuncia quando un'azione NVDA non può essere eseguita. (#13500)
   * Questo include quando:
     * Si utilizza la versione NVDA per Windows Store.
@@ -1743,7 +1743,7 @@ Nota:
 * Migliorate le prestazioni durante l'interazione con Visual Studio. (#12171)
 * Risolti bug grafici come elementi mancanti quando si utilizza NVDA con un layout da destra a sinistra. (#8859)
 * Per quel che concerne la direzione del layout dell'interfaccia utente di NVDA, Viene rispettata la scelta dell'utente effettuata in base alla lingua dello screen reader piuttosto che fare riferimento a quella di sistema.  (#638)
-* problema noto per le lingue da destra a sinistra: il bordo destro dei raggruppamenti non è ben gestito con etichette/controlli. (#12181)
+  * problema noto per le lingue da destra a sinistra: il bordo destro dei raggruppamenti non è ben gestito con etichette/controlli. (#12181)
 * La localizzazione di Python è impostata per corrispondere alla lingua selezionata nelle preferenze in modo coerente. (#12214)
 * TextInfo.getTextInChunks non si blocca più quando incontrato sui controlli Rich Edit come il visualizzatore di log di NVDA. (#11613)
 * È nuovamente possibile utilizzare NVDA nelle lingue che contengono caratteri di sottolineatura nel nome, come de_CH su Windows 10 1803 e 1809. (#12250)
@@ -1878,6 +1878,7 @@ Di seguito l'elenco di tutte le novità.
  * Aggiunta la tabella Copto a otto punti
  * Aggiunte le tabelle per il braille letterario russo e letterario dettagliato.
  * Rimossa la tabella russo grado 1.
+ * Aggiunta tabella braille afrikaans di grado 2
 * Mentre si utilizza la funzione dire tutto in modalità navigazione, i comandi cerca testo successivo o precedente non interrompono più la lettura nel caso in cui sia attiva l'opzione consenti navigazione rapida in lettura; essa riprenderà subito dopo aver letto il termine di ricerca richiesto. (#11563)
 * Per i display braille Hims, il tasto f3 è stato rimappato alla combinazione Spazio + punti 148. (#11710)
 * Migliorata la presentazione delle funzioni di "timeout messaggi braille" e "Mostra messaggi a tempo indeterminato" (#11602)
