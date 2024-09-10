@@ -4320,7 +4320,7 @@ Le principali novità di questa versione riguardano l'annuncio automatico del te
 ### Nuove caratteristiche
 
 * I colori possono essere annunciati in alcuni controlli. La lettura automatica può essere configurata  nella finestra di dialogo formattazione documento. Risulta possibile ottenere le stesse informazioni anche manualmente, con il comando NVDA+f.
-* Per ora, questa funzione è supportata nei controlli editazione Iaccessible2 (ad esempio applicazioni Mozilla), controlli RichEdit (come Wordpad), e controlli IBM Lotus Symphony.
+ * Per ora, questa funzione è supportata nei controlli editazione Iaccessible2 (ad esempio applicazioni Mozilla), controlli RichEdit (come Wordpad), e controlli IBM Lotus Symphony.
 * Quando si utilizza il buffer virtuale, ora è possibile selezionare il testo anche per pagine (Shift+Pagina su e Shift+Pagina giù) oppure per paragrafi (Control+Shift+Freccia su e Control+Shift+Freccia giù). (#639)
 * NVDA annuncia automaticamente il testo in mIRC, PuTTY, Tera Term e SecureCRT. (#936)
 * Gli utenti possono aggiungere o modificare le assegnazioni di tasti per qualsiasi script in NVDA con una mappa utente delle gesture. (#194)
@@ -4388,8 +4388,6 @@ Le principali novità di questa versione riguardano l'annuncio automatico del te
 * Il focus iniziale non viene più annunciato una volta che NVDA viene attivato. (#1359)
 
 ### Cambiamenti per sviluppatori
-
-Questa sezione viene lasciata in inglese.
 
 * SCons is now used to prepare the source tree and create binary builds, portable archives, installers, etc. See readme.txt at the root of the source distribution for details.
 * The key names used by NVDA (including key maps) have been made more friendly/logical; e.g. upArrow instead of extendedUp and numpadPageUp instead of prior. See the vkCodes module for a list.
@@ -4500,7 +4498,6 @@ Le caratteristiche più importanti in questa versione riguardano la facilitazion
 * NVDA ora funziona correttamente in quei sistemi dove la directory di lavoro è stata rimossa dal percorso di ricerca DLL (impostando la chiave di registro CWDIllegalInDllSearch al valore 0xFFFFFFFF). Si noti che questo non dovrebbe essere di interesse per la stragrande maggioranza degli utenti. (#907)
 * Quando i comandi di navigazione tabella sono usati al di fuori di una tabella in Microsoft Word, non viene più annunciato "bordo della tabella" dopo "non in una tabella". (#921)
 * Quando non ci si può più spostare in una tabella di Microsoft Word con i comandi di navigazione perche' si è raggiunto il bordo della stessa, la frase "bordo della tabella" viene ora annunciata nella lingua dell'utente piuttosto che soltanto in inglese. (#921)
-* Quando si sposta il cursore principale nei buffers virtuali, il cursore di controllo è in grado di esplorare l'intero documento, non solo l'oggetto evidenziato.
 * In Outlook Express, Windows Mail e Windows Live Mail, lo stato delle caselle di controllo nell'elenco regole viene riportato correttamente. (#576)
 * La descrizione delle regole può essere letta anche in Windows Live Mail 2010.
 
@@ -4600,7 +4597,7 @@ Le maggiori novità di questa release riguardano la capacità di funzionare anch
 * In una pagina web, è possibile premere i tasti n e shift+n per saltare interi blocchi di link.
 * In una pagina web, vengono riportate le "sezioni", in inglese ARIA Landmarks. E' possibile passare da una sezione all'altra con i tasti d o Shift+d. (#192)
 * L'elenco dei links che si richiamava con la combinazione di tasti NVDA+f7 è ora diventata una finestra di dialogo con la possibilità da parte dell'utente di filtrare cosa visualizzare tra links, intestazioni e sezioni. Si noti che intestazioni e sezioni vengono presentate in modo gerarchico. (#363)
- * Questa nuova finestra di dialogo è in grado di filtrare anche gli elementi man mano che l'utente scrive. Esempio aggiuntivo del traduttore di questo documento: se premiamo NVDA+f7, e ci troviamo con un elenco di 55 links ed iniziamo a scrivere qualcosa, per esempio la lettera l, ci verranno mostrati solo quei links che contengono al loro interno la lettera l. Possiamo scrivere qualunque cosa, anche parole intere, in questo modo andremo direttamente sul link o l'elemento specifico, ad esempio se scrivo "video", e tale elemento esiste sulla pagina, mi verrà visualizzato soltanto il link "video" e premendo invio verrà attivato. Si noti che premendo Backspace verranno resettati i filtri e tutti gli elementi saranno visualizzati nuovamente. (#173)
+* Questa nuova finestra di dialogo è in grado di filtrare anche gli elementi man mano che l'utente scrive. Esempio aggiuntivo del traduttore di questo documento: se premiamo NVDA+f7, e ci troviamo con un elenco di 55 links ed iniziamo a scrivere qualcosa, per esempio la lettera l, ci verranno mostrati solo quei links che contengono al loro interno la lettera l. Possiamo scrivere qualunque cosa, anche parole intere, in questo modo andremo direttamente sul link o l'elemento specifico, ad esempio se scrivo "video", e tale elemento esiste sulla pagina, mi verrà visualizzato soltanto il link "video" e premendo invio verrà attivato. Si noti che premendo Backspace verranno resettati i filtri e tutti gli elementi saranno visualizzati nuovamente. (#173)
 * La versione portatile di NVDA ora ricerca le configurazioni dell'utente nella cartella user Config situata all'interno della cartella NVDA. In questo modo, come avviene con la versione installer, seppur con percorsi diversi, le configurazioni dell'utente sono indipendenti dalla struttura principale di NVDA.
 * Moduli personalizzati per le applicazioni, driver di sintesi vocali e driver per Display Braille possono essere salvati nella cartella userConfig. (#337)
 * L'elaborazione di lunghi o complessi documenti riguardanti il buffer virtuale vengono effettuati in background, in modo che l'utente possa interagire con il sistema operativo in altro modo, verrà avvisato non appena il documento sarà stato processato e pronto all'uso.
@@ -4905,7 +4902,7 @@ Le maggiori novità di questa release riguardano la capacità di funzionare anch
 
 * NVDA now has a built-in synthesizer called eSpeak, developed by Jonathan Duddington.It is very responsive and lite-weight, and has support for many different languages. Sapi synthesizers can still be used, but eSpeak will be used by default.
  * eSpeak does not depend on any special software to be installed, so it can be used with NVDA on any computer, on a USB thumb drive, or anywhere. 
- * For more info on eSpeak, or to find other versions, go to https://espeak.sourceforge.net/.
+ * For more info on eSpeak, or to find other versions, go to http://espeak.sourceforge.net/.
 * Fix bug where the wrong character was being announced when pressing delete in Internet Explorer / Outlook Express editable panes.
 * Added support for more edit fields in Skype.
 * VirtualBuffers only get loaded when focus is on the window that needs to be loaded. This fixes some problems when the preview pane is turned on in Outlook Express.
@@ -4962,4 +4959,3 @@ Le maggiori novità di questa release riguardano la capacità di funzionare anch
 * NVDA now asks if it should save configuration and restart if the user has just changed the language in the User Interface Settings Dialog. NVDA must be restarted for the language change to fully take effect.
 * If a synthesizer can not be loaded, when choosing it from the synthesizer dialog, a message box alerts the user to the fact.
 * When loading a synthesizer for the first time, NVDA lets the synthesizer choose the most suitable voice, rate and pitch parameters, rather than forcing it to defaults it thinks are ok. This fixes a problem where Eloquence and Viavoice sapi4 synths start speaking way too fast for the first time.
-
