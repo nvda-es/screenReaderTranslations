@@ -621,10 +621,13 @@ Starting from NVDA 2024.1, in order for the base method to use `bdDetect.driverH
 Esta versão introduz a Loja de Extras para substituir o Gestor de Extras.
 Na Loja de Extras, pode navegar, pesquisar, instalar e atualizar extras da comunidade.
 Agora pode, manualmente, ultrapassar os problemas de incompatibilidade com extras desactualizados por sua própria conta e risco.
+
 Existem novas funcionalidades, comandos e suporte para mais dispositivos Braille.
 Também há novos comandos para OCR e navegação usando a revisão plana por objectos.
 A navegação e o anúncio de formatação no Microsoft Office foram melhorados.
+
 Há muitas correções de erros, particularmente para braille, Microsoft Office, navegadores web e Windows 11.
+
 O eSpeak-NG, o conversor de braille LibLouis e o Unicode CLDR foram atualizados.
 
 ### Novas funcionalidades
