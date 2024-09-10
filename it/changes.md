@@ -3519,6 +3519,10 @@ Caratteristiche salienti di questa versione includono la modalità di navigazion
 ### Cambiamenti per gli sviluppatori
 
 * NVDA ha unito  ora il supporto per la documentazione sugli add-on. Consultare la sezione sulla documentazione sugli add-on della guida per sviluppatori per maggiori dettagli. (#2694)
+* Quando si forniscono associazioni di gesti su uno ScriptableObject tramite __gestures, ora è possibile fornire la parola chiave None come script. Ciò scioglie il gesto in qualsiasi classe base. (#4240)
+* Ora è possibile modificare il tasto di scelta rapida utilizzato per avviare NVDA per le versioni locali in cui la normale scorciatoia causa problemi. (#2209)
+ * Questo viene fatto tramite gettext.
+ * Tieni presente che anche il testo dell'opzione Crea collegamento sul desktop nella finestra di dialogo Installa NVDA, nonché il tasto di scelta rapida nella Guida per l'utente, devono essere aggiornati.
 
 ## 2014.2
 
@@ -3657,6 +3661,9 @@ Caratteristiche salienti di questa versione includono la modalità di navigazion
 * In Microsoft Excel, NVDA ora distingue correttamente tra l'unione di celle e selezione di celle multiple. (#3567)
 * Il cursore in modalità navigazione non viene più posizionato in maniera errata all'uscita da una finestra di dialogo o da un'applicazione interna del documento. (#3145)
 * Sistemato un problema che non faceva apparire il display braille HumanWare Brailliant BI/B series nell'elenco delle barre disponibili, sebbene esso fosse correttamente connesso.
+* NVDA non fallisce più nel passare alla revisione dello schermo quando l'oggetto del navigatore non ha una posizione effettiva sullo schermo. In questo caso il cursore di revisione è ora posizionato nella parte superiore dello schermo. (#3454)
+* Risolto un problema che causava il fallimento del driver del display braille di Freedom Scientific quando la porta era impostata su USB in alcune circostanze. (#3509, #3662)
+* Risolto un problema per cui in alcune circostanze i tasti sui display braille di Freedom Scientific non venivano rilevati. (#3401, #3662)
 
 ### Cambiamenti per sviluppatori(in inglese)
 
@@ -3740,10 +3747,13 @@ Caratteristiche salienti di questa versione includono la modalità di navigazion
 
 ## 2013.1.1
 
+Questa versione risolve il problema per cui NVDA si bloccava all'avvio se configurato per utilizzare la lingua irlandese, oltre a includere aggiornamenti alle traduzioni e alcune altre correzioni di bug.
+
 ### Bug corretti
 
 * quando si utilizza un metodo di immissione coreano o giapponese ed esso è il metodo predefinito, vengono prodotti correttamente i caratteri quando si digita nella propria interfaccia utente di NVDA. (#2909)
 * In Internet Explorer e altri controlli MSHTML, i campi contrassegnati come contenenti una voce non valida sono ora gestiti correttamente. (# 3256)
+* NVDA non si blocca più all'avvio se è configurato per utilizzare la lingua irlandese.
 
 ## 2013.1
 
@@ -3783,7 +3793,7 @@ Si prega di consultare il documento [Comandi rapidi](keyCommands.html) per i nuo
 * Supporto per i display Braille Braillenote della Humanware quando configurati per funzionare come periferica per screen reader. (#2012)
 * Supporto ai vecchi modelli Papenmeier utilizzati tramite porta seriale. (#2679)
 * Supporto alla scrittura diretta tramite display braille con tastiera in stile perkins. (#804)
-* - Nuove impostazioni della tastiera che consentono di selezionare se NVDA debba interrompere il parlato per i caratteri digitati e o il tasto ENTER. (#698)
+* Nuove impostazioni della tastiera che consentono di selezionare se NVDA debba interrompere il parlato per i caratteri digitati e o il tasto ENTER. (#698)
 * Supporto per diversi browser basati su Google Chrome: Rockmelt, BlackHawk, Comodo Dragon e SRWare Iron. (#2236, #2813, #2814, #2815)
 
 ### Cambiamenti
@@ -3796,6 +3806,7 @@ Si prega di consultare il documento [Comandi rapidi](keyCommands.html) per i nuo
 
 * Il tasto rapido per spostarsi di sezione in sezione ora funziona anche con Internet Explorer. (#2781)
 * Se NVDA non riesce a caricare un sintetizzatore all'avvio ed è costretto a parlare tramite Espeak, la configurazione viene lasciata inalterata, il che significa che la prossima volta che si riavvierà NVDA, tenterà di caricare ancora il sintetizzatore scelto dall'utente in precedenza, anziché mantenere Espeak come predefinito. (#2589)
+* Se NVDA torna a non utilizzare Braille a causa di un guasto del display braille configurato all'avvio di NVDA, il display configurato non viene più automaticamente impostato su non Braille. Ciò significa che al prossimo avvio di NVDA verrà riprovata la visualizzazione originale. traduzione con intelligenza artificiale orribile! (#2264)
 * Nelle applicazioni Mozilla in modalità navigazione, vengono ora riportati correttamente gli aggiornamenti delle tabelle. Ad esempio, nelle celle aggiornate, vengono annunciate correttamente le coordinate delle colonne e delle righe. (#2684)
 * Nei browser web in modalità navigazione, ora vengono intercettati anche elementi grafici cliccabili non etichettati che non venivano mostrati in precedenza. (#2838)
 * Vengono supportate tutte le versioni  del programma SecureCRT. (#2800)
@@ -3827,6 +3838,7 @@ Si prega di consultare il documento [Comandi rapidi](keyCommands.html) per i nuo
 * Migliorata in Espeak la lettura carattere per carattere. (#3106)
 * NVDA ora è in grado di copiare la configurazione utente nella configurazione da usarsi per le schermate di logon, anche quando il percorso del profilo utente contiene caratteri non-ascii. (#3092)
 * NVDA non si blocca più quando si utilizza l'immissione di caratteri asiatici in alcune applicazioni .NET. (#3005)
+* ora è possibile utilizzare la modalità navigazione per le pagine in Internet Explorer 10 in modalità standard; per esempio. Pagina di accesso [www.gmail.com](http://www.gmail.com). (#3151)
 
 ### Cambiamenti per sviluppatori
 
