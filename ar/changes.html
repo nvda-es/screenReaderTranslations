@@ -976,6 +976,22 @@ Similarly, the new <code>getCompletionRoutine</code> method allows you to conver
 <li><code>scons checkpot</code> will no longer check the <code>userConfig</code> subfolder anymore. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14820" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14820">#14820</a>)</li>
 <li>Translatable strings can now be defined with a singular and a plural form using <code>ngettext</code> and <code>npgettext</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12445" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12445">#12445</a>)</li>
 </ul>
+<h4 id="deprecations_2">Deprecations</h4>
+<ul>
+<li>Passing lambda functions to <code>hwIo.ioThread.IoThread.queueAsApc</code> is deprecated.
+Instead, functions should be weakly referenceable. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
+<li>Importing <code>LPOVERLAPPED_COMPLETION_ROUTINE</code> from <code>hwIo.base</code> is deprecated.
+Instead import from <code>hwIo.ioThread</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
+<li><code>IoThread.autoDeleteApcReference</code> is deprecated.
+It was introduced in NVDA 2023.1 and was never meant to be part of the public API.
+Until removal, it behaves as a no-op, i.e. a context manager yielding nothing. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14924" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14924">#14924</a>)</li>
+<li><code>gui.MainFrame.onAddonsManagerCommand</code> is deprecated, use <code>gui.MainFrame.onAddonStoreCommand</code> instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13985" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13985">#13985</a>)</li>
+<li><code>speechDictHandler.speechDictVars.speechDictsPath</code> is deprecated, use <code>NVDAState.WritePaths.speechDictsDir</code> instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15021" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15021">#15021</a>)</li>
+<li>Importing <code>voiceDictsPath</code> and <code>voiceDictsBackupPath</code> from <code>speechDictHandler.dictFormatUpgrade</code> is deprecated.
+Instead use <code>WritePaths.voiceDictsDir</code> and <code>WritePaths.voiceDictsBackupDir</code> from <code>NVDAState</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15048" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15048">#15048</a>)</li>
+<li><code>config.CONFIG_IN_LOCAL_APPDATA_SUBKEY</code> is deprecated.
+Instead use <code>config.RegistryKey.CONFIG_IN_LOCAL_APPDATA_SUBKEY</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15049" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15049">#15049</a>)</li>
+</ul>
 <h2 id="20231">2023.1</h2>
 <p>احتوى الإصدار على العديد من المستجدات منها: الخيار الجديد "نمط الفقرة" ضمن تصنيف "التنقُّل في المستند".
 يمكن استخدام هذا الخيار ضمن محررات النصوص التي لا تدعم التنقُّل وِفقًا للفقرة مثل: المفكرة و Notepad++.</p>
