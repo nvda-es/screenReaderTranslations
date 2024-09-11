@@ -648,27 +648,28 @@ O eSpeak-NG, o conversor de braille LibLouis e o Unicode CLDR foram atualizados.
   * Adicionado suporte para a linha Braille Help Tech Activator. (#14917)
   * Nova opção Braille para alternar a exibição do indicador de seleção (pontos 7 e 8). (#14948)
   * Nova opção para mover opcionalmente o cursor ou foco do sistema ao alterar a posição do cursor de revisão com as teclas de encaminhamento Braille. (#14885, #3166)
-  * Ao pressionar "2 do bloco numérico" três vezes para anunciar o valor numérico do caractere na posição do cursor de revisão, as informações também são fornecidas em Braille. (#14826)
+  * Ao pressionar `2 do bloco numérico` três vezes para anunciar o valor numérico do caractere na posição do cursor de revisão, as informações também são fornecidas em Braille. (#14826)
   * Adicionado suporte para o atributo ARIA 1.3 `aria-brailleroledescription`, permitindo que autores da web substituam o tipo de um elemento exibido no Braille. (#14748)
-  * Driver Braille Baum: adicionados vários comandos Braille para realizar comandos de teclado comuns, como "windows+d", "alt+tab", etc.
+  * Driver Braille Baum: adicionados vários comandos Braille para realizar comandos de teclado comuns, como `windows+d`, `alt+tab`, etc.
   Consulte o guia do utilizador do NVDA para obter uma lista completa. (#14714)
-  * Adicionada pronúncia de símbolos Unicode:
-    * Símbolos Braille como "⠐⠣⠃⠗⠇⠐⠜". (#14548)
-    * Símbolo da tecla Options do Mac "⌥". (#14682)
-  * Adicionados comandos para as linhas Braille Tivomatic Caiku Albatross. (#14844, #15002)
-    * Mostrar o diálogo de configurações do Braille.
-    * Aceder a barra de estado.
-    * Alternar a forma do cursor Braille.
-    * Alternar o modo de exibição de mensagens Braille.
-    * Activar/desactivar o cursor Braille.
-    * Alternar o estado do indicador de selecção em Braille.
+* Adicionada pronúncia de símbolos Unicode:
+  * Símbolos Braille como `⠐⠣⠃⠗⠇⠐⠜`. (#13778)
+  * Símbolo da tecla Options do Mac `⌥`. (#14682)
+* Adicionados comandos para as linhas Braille Tivomatic Caiku Albatross. (#14844, #15002)
+  * Mostrar o diálogo de configurações do Braille.
+  * Aceder a barra de estado.
+  * Alternar a forma do cursor Braille.
+  * Alternar o modo de exibição de mensagens Braille.
+  * Activar/desactivar o cursor Braille.
+  * Alternar o estado do indicador de selecção em Braille.
+  * Alternar entre os modos `Braille move o cursor do sistema quando o cursor de revisão é encaminhado`. (#15122)
 * Funcionalidades no Microsoft Office:
   * Ao activar o anúncio de texto realçado, as cores de realce passam a ser anunciadas no Microsoft Word. (#7396, #12101, #5866)
   * Ao activar o anúncio das cores, as cores de fundo passam a ser anunciadas no Microsoft Word. (#5866)
   * Ao usar atalhos do Excel para alternar o formato, como negrito, itálico, sublinhado e riscado de uma célula no Excel, o resultado passa a ser anunciado. (#14923)
 * Gestão melhorada do som (experimental):
   * O NVDA agora emite áudio através da API de Sessão de Áudio do Windows (WASAPI), o que pode melhorar a capacidade de resposta, desempenho e estabilidade da voz e dos sons do NVDA.
-  * Isso pode ser desativado nas configurações avançadas se ocorrerem problemas de áudio. (#14697)
+  * Isto pode ser desativado nas configurações avançadas se ocorrerem problemas de áudio. (#14697)
   Adicionalmente, se o uso de WASAPI estiver activado, pode configurar  as seguintes opções avançadas:
     * Ajustar o volume dos sons e bipes do NVDA de acordo com o actual volume da voz. (#1409)
     * Controlar separadamente o volume dos sons do NVDA. (#1409)
