@@ -916,8 +916,10 @@ Starting from NVDA 2024.1, in order for the base method to use <code>bdDetect.dr
 <li>في متصفّحَي Chrome و Edge؛ سيُعلَنُ عن عنوان الوجهة التي تقود إليها الروابط ذات الرسوم بدقة في حالات أكثر. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14783" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14783">#14783</a>)</li>
 <li>لن يصمت NVDA عند الاستعلام عن عنوان وجهة رابط لم تُعرَّف له خاصية href.
 بل سيُعلن NVDA بدلا من ذلك أنّه لا يوجد عنوان يقود إليه الرابط. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14723" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14723">#14723</a>)</li>
-<li>في نمط التصفُّح، لن يتجاوز NVDA خطأً موضع مؤشّر النظام، بحيث ينتقل لعنصر التحكُّم الأصلي الذي يتفرّع عنه، أو للعنصر الفرعي، على سبيل المثال: من عنصر التحكُّم لقائمة العناصر التي يندرج ضمنها، أو لخلية ضمن عرض شبكي. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14611" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14611">#14611</a>)</li>
+<li>في نمط التصفُّح، لن يتجاوز NVDA خطأً موضع مؤشّر النظام، بحيث ينتقل لعنصر التحكُّم الأصلي الذي يتفرّع عنه، أو للعنصر الفرعي، على سبيل المثال: من عنصر التحكُّم لقائمة العناصر التي يندرج ضمنها، أو لخلية ضمن عرض شبكي. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14611" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14611">#14611</a>)<ul>
 <li>لاحِظْ أن هذا ينطبق في حال تعطيل خيار "نقل مؤشّر النظام تلقائيا للعناصر القابلة لذلك" ضمن إعدادات نمط التصفُّح (وهو الوضع الافتراضي). </li>
+</ul>
+</li>
 </ul>
 </li>
 <li>إصلاحات تخصُّ Windows 11:<ul>
@@ -946,7 +948,34 @@ Starting from NVDA 2024.1, in order for the base method to use <code>bdDetect.dr
 <li>إصلاح خطأ يتسبب في قراءة الصفحة بدلا من قراءة السطر السابق عند "السحب لأعلى" في نمط اسعراض النص. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15127" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15127">#15127</a>)</li>
 </ul>
 <h3 id="_23">تعديلاتٌ للمطورين</h3>
-<p>يضمُّ ملف المستجدات الخاص بهذا الإصدار العديد من التعديلات التي من شأنها تسهيل أداء وعمل مطوري البرنامج، إلا أنها لم تَرِدْ في النسخة العربية حيث أن المستخدم لن يستفيد منها بشكل مباشر كما أنها تضم مصطلحات تقنية متخصصة جدا لا يستخدمها ولا يحتاجها سوى مطوّرو البرنامج. ولمن يرغب في الاطلاع على هذا القسم يمكنه الرجوع إلى ملف المستجدات الموجود باللغة الإنجليزية</p>
+<p>يضمُّ ملف المستجدات الخاص بهذا الإصدار العديد من التعديلات التي من شأنها تسهيل أداء وعمل مطوري البرنامج، إلا أنها لم تَرِدْ في النسخة العربية حيث أن المستخدم لن يستفيد منها بشكل مباشر كما أنها تضم مصطلحات تقنية متخصصة جدا لا يستخدمها ولا يحتاجها سوى مطوّرو البرنامج. ولمن يرغب في الاطلاع على هذا القسم يمكنه الرجوع إلى ملف المستجدات الموجود باللغة الإنجليزية. كما يُرجى برجاء الرجوع إلى <a href="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API" rel="noopener" target="_blank" title="دليل المطورين">دليل المطورين</a> للحصول على معلومات حول ما أُهمِلَ وأُزيل من واجهة برمجة التطبيقات الخاصة بـ NVDA.</p>
+<ul>
+<li>Suggested conventions have been added to the add-on manifest specification.
+These are optional for NVDA compatibility, but are encouraged or required for submitting to the Add-on Store. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14754" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14754">#14754</a>)<ul>
+<li>Use <code>lowerCamelCase</code> for the name field.</li>
+<li>Use <code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code> format for the version field (required for add-on datastore).</li>
+<li>Use <code>https://</code> as the schema for the url field (required for add-on datastore).</li>
+</ul>
+</li>
+<li>Added a new extension point type called <code>Chain</code>, which can be used to iterate over iterables returned by registered handlers. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14531" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14531">#14531</a>)</li>
+<li>Added the <code>bdDetect.scanForDevices</code> extension point.
+Handlers can be registered that yield <code>BrailleDisplayDriver/DeviceMatch</code> pairs that don't fit in existing categories, like USB or Bluetooth. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14531" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14531">#14531</a>)</li>
+<li>Added extension point: <code>synthDriverHandler.synthChanged</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14618" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14618">#14618</a>)</li>
+<li>The NVDA Synth Settings Ring now caches available setting values the first time they're needed, rather than when loading the synthesizer. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14704" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14704">#14704</a>)</li>
+<li>You can now call the export method on a gesture map to export it to a dictionary.
+This dictionary can be imported in another gesture by passing it either to the constructor of <code>GlobalGestureMap</code> or to the update method on an existing map. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14582" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14582">#14582</a>)</li>
+<li><code>hwIo.base.IoBase</code> and its derivatives now have a new constructor parameter to take a <code>hwIo.ioThread.IoThread</code>.
+If not provided, the default thread is used. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
+<li><code>hwIo.ioThread.IoThread</code> now has a <code>setWaitableTimer</code> method to set a waitable timer using a python function.
+Similarly, the new <code>getCompletionRoutine</code> method allows you to convert a python method into a completion routine safely. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
+<li><code>offsets.OffsetsTextInfo._get_boundingRects</code> should now always return <code>List[locationHelper.rectLTWH]</code> as expected for a subclass of <code>textInfos.TextInfo</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12424" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12424">#12424</a>)</li>
+<li><code>highlight-color</code> is now a format field attribute. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14610" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14610">#14610</a>)</li>
+<li>NVDA should more accurately determine if a logged message is coming from NVDA core. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14812" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14812">#14812</a>)</li>
+<li>NVDA will no longer log inaccurate warnings or errors about deprecated appModules. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14806" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14806">#14806</a>)</li>
+<li>All NVDA extension points are now briefly described in a new, dedicated chapter in the Developer Guide. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14648" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14648">#14648</a>)</li>
+<li><code>scons checkpot</code> will no longer check the <code>userConfig</code> subfolder anymore. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14820" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14820">#14820</a>)</li>
+<li>Translatable strings can now be defined with a singular and a plural form using <code>ngettext</code> and <code>npgettext</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12445" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12445">#12445</a>)</li>
+</ul>
 <h2 id="20231">2023.1</h2>
 <p>احتوى الإصدار على العديد من المستجدات منها: الخيار الجديد "نمط الفقرة" ضمن تصنيف "التنقُّل في المستند".
 يمكن استخدام هذا الخيار ضمن محررات النصوص التي لا تدعم التنقُّل وِفقًا للفقرة مثل: المفكرة و Notepad++.</p>
