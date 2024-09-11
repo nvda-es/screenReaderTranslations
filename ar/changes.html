@@ -769,7 +769,30 @@ Please responsibly disclose security issues following NVDA's <a href="https://gi
 <li>إصلاح مشكلة من المحتمل أنها تسبب انهيار NVDA أثناء عملية بدء تشغيله. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15517" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15517">#15517</a>)</li>
 </ul>
 <h3 id="_19">تعديلاتٌ للمطورين</h3>
-<p>يضمُّ ملف المستجدات الخاص بهذا الإصدار العديد من التعديلات التي من شأنها تسهيل أداء وعمل مطوري البرنامج، إلا أنها لم تَرِدْ في النسخة العربية حيث أن المستخدم لن يستفيد منها بشكل مباشر كما أنها تضم مصطلحات تقنية متخصصة جدا لا يستخدمها ولا يحتاجها سوى مطوّرو البرنامج. ولمن يرغب في الاطلاع على هذا القسم يمكنه الرجوع إلى ملف المستجدات الموجود باللغة الإنجليزية</p>
+<p>يضمُّ ملف المستجدات الخاص بهذا الإصدار العديد من التعديلات التي من شأنها تسهيل أداء وعمل مطوري البرنامج، إلا أنها لم تَرِدْ في النسخة العربية حيث أن المستخدم لن يستفيد منها بشكل مباشر كما أنها تضم مصطلحات تقنية متخصصة جدا لا يستخدمها ولا يحتاجها سوى مطوّرو البرنامج. ولمن يرغب في الاطلاع على هذا القسم يمكنه الرجوع إلى ملف المستجدات الموجود باللغة الإنجليزية. كما يُرجى برجاء الرجوع إلى <a href="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API" rel="noopener" target="_blank" title="دليل المطورين">دليل المطورين</a> للحصول على معلومات حول ما أُهمِلَ وأُزيل من واجهة برمجة التطبيقات الخاصة بـ NVDA.</p>
+<ul>
+<li><code>braille.handler.handleUpdate</code> and <code>braille.handler.handleReviewMove</code> have been changed in order not to update instantly.
+Before this change, when either of these methods was called very often, this would drain many resources.
+These methods now queue an update at the end of every core cycle instead.
+They should also be thread safe, making it possible to call them from background threads. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15163" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15163">#15163</a>)</li>
+<li>Added official support to register custom braille display drivers in the automatic braille display detection process.
+Consult the <code>braille.BrailleDisplayDriver</code> class documentation for more details.
+Most notably, the <code>supportsAutomaticDetection</code> attribute must be set to <code>True</code> and the <code>registerAutomaticDetection</code> <code>classmethod</code> must be implemented.  (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15196" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15196">#15196</a>)</li>
+</ul>
+<h4 id="deprecations_1">Deprecations</h4>
+<ul>
+<li><code>braille.BrailleHandler.handlePendingCaretUpdate</code> is now deprecated with no public replacement.
+It will be removed in 2024.1. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15163" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15163">#15163</a>)</li>
+<li>Importing the constants <code>xlCenter</code>, <code>xlJustify</code>, <code>xlLeft</code>, <code>xlRight</code>, <code>xlDistributed</code>, <code>xlBottom</code>, <code>xlTop</code> from <code>NVDAObjects.window.excel</code> is deprecated.
+Use <code>XlHAlign</code> or <code>XlVAlign</code> enumerations instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15205" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15205">#15205</a>)</li>
+<li>The mapping <code>NVDAObjects.window.excel.alignmentLabels</code> is deprecated.
+Use the <code>displayString</code> methods of <code>XlHAlign</code> or <code>XlVAlign</code> enumerations instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15205" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15205">#15205</a>)</li>
+<li><code>bdDetect.addUsbDevices</code> and <code>bdDetect.addBluetoothDevices</code> have been deprecated.
+Braille display drivers should implement the <code>registerAutomaticDetection</code> classmethod instead.
+That method receives a <code>DriverRegistrar</code> object on which the <code>addUsbDevices</code> and <code>addBluetoothDevices</code> methods can be used. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15200" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15200">#15200</a>)</li>
+<li>The default implementation of the check method on <code>BrailleDisplayDriver</code> uses <code>bdDetect.driverHasPossibleDevices</code> for devices that are marked as thread safe.
+Starting from NVDA 2024.1, in order for the base method to use <code>bdDetect.driverHasPossibleDevices</code>, the <code>supportsAutomaticDetection</code> attribute must be set to <code>True</code> as well. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15200" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15200">#15200</a>)</li>
+</ul>
 <h2 id="20232">2023.2</h2>
 <p>في هذا الإصدار، استُبدِل مدير الإضافات البرمجية بمستودع الإضافات. <br>
 عبر مستودع الإضافات، يمكنك استعراض الإضافات المتوفرة المطوَّرة من قَبَل مجتمع NVDA، والبحث وتحديث وتثبيت الإضافات.
