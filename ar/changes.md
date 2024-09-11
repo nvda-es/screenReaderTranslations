@@ -499,7 +499,6 @@ Please responsibly disclose security issues following NVDA's [security policy](h
 
 ### إصلاحات أمنية
 
-This is a patch release to fix a security issue.
 * The security patch in 2023.3.1 was not resolved correctly.
 Prevents possible system access and arbitrary code execution with system privileges for unauthenticated users.
 ([GHSA-h7pp-6jqw-g3pj](https://github.com/nvaccess/nvda/security/advisories/GHSA-h7pp-6jqw-g3pj))
