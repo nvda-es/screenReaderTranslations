@@ -1070,11 +1070,13 @@ Instead use <code>config.RegistryKey.CONFIG_IN_LOCAL_APPDATA_SUBKEY</code>. (<a 
 <li>عند تفعيل إصدار الصفير أو نُطق كلمة "CAP" عند المرور بالأحرف الكبيرة، إلى جانب تفعيل خيار الإعلان المتراخي عن الأوصاف الصوتية للأحرف؛ لن يتكرر الصفير أو نُطق كلمة "Cap". (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14239" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14239">#14239</a>)</li>
 <li>في تطبيقات Java، أصبح NVDA يعلن بدقة أكثر عن عناصر التحكُّم ضمن الجداول. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14347" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14347">#14347</a>)</li>
 <li>لن تختلف بعض الإعدادات على نحو غير متوقَّع عند استخدام أكثر من وضع. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14170" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14170">#14170</a>)<ul>
-<li>ينطبق هذا على الإعدادات الآتية:</li>
+<li>ينطبق هذا على الإعدادات الآتية:<ul>
 <li>المسافات البادئة للسطر في إعدادات تنسيق المستند.</li>
 <li>حدود الخلية في إعدادات تنسيق المستند.</li>
 <li>ظهور الرسائل في إعدادات برايل.</li>
 <li>إرفاق مؤشّر برايل في إعدادات برايل.</li>
+</ul>
+</li>
 <li>في بعض الحالات النادرة، قد يحدث تعديلات على هذه الإعدادات المستخدمة مع أكثر من وضع عند تثبيت هذا الإصدار من NVDA.</li>
 <li>يُرجى التأكُّد من هذه الخيارات في الأوضاع الخاصة بك بعد الترقية لهذا الإصدار.</li>
 </ul>
@@ -1090,7 +1092,118 @@ Instead use <code>config.RegistryKey.CONFIG_IN_LOCAL_APPDATA_SUBKEY</code>. (<a 
 <li>إمكانية فتح مربّع الحوار الخاص بالإعدادات العامة كما في السابق، عند تشغيل NVDA باستخدام الوسيط <code>--lang=Windows</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14407" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14407">#14407</a>)</li>
 </ul>
 <h3 id="_27">تعديلاتٌ للمطورين</h3>
-<p>يضمُّ ملف المستجدات الخاص بهذا الإصدار العديد من التعديلات التي من شأنها تسهيل أداء وعمل مطوري البرنامج، إلا أنها لم تَرِدْ في النسخة العربية حيث أن المستخدم لن يستفيد منها بشكل مباشر كما أنها تضم مصطلحات تقنية متخصصة جدا لا يستخدمها ولا يحتاجها سوى مطوّرو البرنامج. ولمن يرغب في الاطلاع على هذا القسم يمكنه الرجوع إلى ملف المستجدات الموجود باللغة الإنجليزية</p>
+<p>Note: this is an Add-on API compatibility breaking release.
+Add-ons will need to be re-tested and have their manifest updated.
+يضمُّ ملف المستجدات الخاص بهذا الإصدار العديد من التعديلات التي من شأنها تسهيل أداء وعمل مطوري البرنامج، إلا أنها لم تَرِدْ في النسخة العربية حيث أن المستخدم لن يستفيد منها بشكل مباشر كما أنها تضم مصطلحات تقنية متخصصة جدا لا يستخدمها ولا يحتاجها سوى مطوّرو البرنامج. ولمن يرغب في الاطلاع على هذا القسم يمكنه الرجوع إلى ملف المستجدات الموجود باللغة الإنجليزية. كما يُرجى برجاء الرجوع إلى <a href="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API" rel="noopener" target="_blank" title="دليل المطورين">دليل المطورين</a> للحصول على معلومات حول ما أُهمِلَ وأُزيل من واجهة برمجة التطبيقات الخاصة بـ NVDA.</p>
+<ul>
+<li>System tests should now pass when run locally on non-English systems. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13362" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13362">#13362</a>)</li>
+<li>In Windows 11 on ARM, x64 apps are no longer identified as ARM64 applications. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14403" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14403">#14403</a>)</li>
+<li>It is no longer necessary to use <code>SearchField</code> and <code>SuggestionListItem</code> <code>UIA</code> <code>NVDAObjects</code> in new UI Automation scenarios, where automatic reporting of search suggestions, and where typing has been exposed via UI Automation with the <code>controllerFor</code> pattern.
+This functionality is now available generically via <code>behaviours.EditableText</code> and the base <code>NVDAObject</code> respectively. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14222" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14222">#14222</a>)</li>
+<li>The UIA debug logging category when enabled now produces significantly more logging for UIA event handlers and utilities. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14256" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14256">#14256</a>)</li>
+<li>NVDAHelper build standards updated. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13072" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13072">#13072</a>)<ul>
+<li>Now uses the C++20 standard, was C++17.</li>
+<li>Now uses the <code>/permissive-</code> compiler flag which disables permissive behaviors, and sets the <code>/Zc</code> compiler options for strict conformance.</li>
+</ul>
+</li>
+<li>Some plugin objects (e.g. drivers and add-ons) now have a more informative description in the NVDA python console. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14463" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14463">#14463</a>)</li>
+<li>NVDA can now be fully compiled with Visual Studio 2022, no longer requiring the Visual Studio 2019 build tools. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14326" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14326">#14326</a>)</li>
+<li>More detailed logging for NVDA freezes to aid debugging. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14309" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14309">#14309</a>)</li>
+<li>The singleton <code>braille._BgThread</code> class has been replaced with <code>hwIo.ioThread.IoThread</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14130" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14130">#14130</a>)<ul>
+<li>A single instance <code>hwIo.bgThread</code> (in NVDA core) of this class provides background i/o for thread safe braille display drivers.</li>
+<li>This new class is not a singleton by design, add-on authors are encouraged to use their own instance when doing hardware i/o.</li>
+</ul>
+</li>
+<li>The processor architecture for the computer can be queried from <code>winVersion.WinVersion.processorArchitecture attribute.</code> (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14439" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14439">#14439</a>)</li>
+<li>New extension points have been added. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14503" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14503">#14503</a>)<ul>
+<li><code>inputCore.decide_executeGesture</code></li>
+<li><code>tones.decide_beep</code></li>
+<li><code>nvwave.decide_playWaveFile</code></li>
+<li><code>braille.pre_writeCells</code></li>
+<li><code>braille.filter_displaySize</code></li>
+<li><code>braille.decide_enabled</code></li>
+<li><code>braille.displayChanged</code></li>
+<li><code>braille.displaySizeChanged</code></li>
+</ul>
+</li>
+<li>It is possible to set useConfig to False on supported settings for a synthesizer driver. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14601" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14601">#14601</a>)</li>
+</ul>
+<h4 id="api-breaking-changes_1">API Breaking Changes</h4>
+<p>These are breaking API changes.
+Please open a GitHub issue if your Add-on has an issue with updating to the new API.</p>
+<ul>
+<li>The configuration specification has been altered, keys have been removed or modified:<ul>
+<li>In <code>[documentFormatting]</code> section (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14233" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14233">#14233</a>):<ul>
+<li><code>reportLineIndentation</code> stores an int value (0 to 3) instead of a boolean</li>
+<li><code>reportLineIndentationWithTones</code> has been removed.</li>
+<li><code>reportBorderStyle</code> and <code>reportBorderColor</code> have been removed and are replaced by <code>reportCellBorders</code>.</li>
+</ul>
+</li>
+<li>In <code>[braille]</code> section (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14233" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14233">#14233</a>):<ul>
+<li><code>noMessageTimeout</code> has been removed, replaced by a value for <code>showMessages</code>.</li>
+<li><code>messageTimeout</code> cannot take the value 0 anymore, replaced by a value for <code>showMessages</code>.</li>
+<li><code>autoTether</code> has been removed; <code>tetherTo</code> can now take the value "auto" instead.</li>
+</ul>
+</li>
+<li>In <code>[keyboard]</code> section  (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14528" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14528">#14528</a>):<ul>
+<li><code>useCapsLockAsNVDAModifierKey</code>, <code>useNumpadInsertAsNVDAModifierKey</code>, <code>useExtendedInsertAsNVDAModifierKey</code> have been removed.
+They are replaced by <code>NVDAModifierKeys</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The <code>NVDAHelper.RemoteLoader64</code> class has been removed with no replacement. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14449" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14449">#14449</a>)</li>
+<li>The following functions in <code>winAPI.sessionTracking</code> are removed with no replacement. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14416" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14416">#14416</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14490" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14490">#14490</a>)<ul>
+<li><code>isWindowsLocked</code></li>
+<li><code>handleSessionChange</code></li>
+<li><code>unregister</code></li>
+<li><code>register</code></li>
+<li><code>isLockStateSuccessfullyTracked</code></li>
+</ul>
+</li>
+<li>It is no longer possible to enable/disable the braille handler by setting <code>braille.handler.enabled</code>.
+To disable the braille handler programatically, register a handler to <code>braille.handler.decide_enabled</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14503" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14503">#14503</a>)</li>
+<li>It is no longer possible to update the display size of the handler by setting <code>braille.handler.displaySize</code>.
+To update the displaySize programatically, register a handler to <code>braille.handler.filter_displaySize</code>.
+Refer to <code>brailleViewer</code> for an example on how to do this. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14503" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14503">#14503</a>)</li>
+<li>There have been changes to the usage of <code>addonHandler.Addon.loadModule</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14481" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14481">#14481</a>)<ul>
+<li><code>loadModule</code> now expects dot as a separator, rather than backslash.
+For example "lib.example" instead of "lib\example".</li>
+<li><code>loadModule</code> now raises an exception when a module can't be loaded or has errors, instead of silently returning <code>None</code> without giving information about the cause.</li>
+</ul>
+</li>
+<li>The following symbols have been removed from <code>appModules.foobar2000</code> with no direct replacement. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14570" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14570">#14570</a>)<ul>
+<li><code>statusBarTimes</code></li>
+<li><code>parseIntervalToTimestamp</code></li>
+<li><code>getOutputFormat</code></li>
+<li><code>getParsingFormat</code></li>
+</ul>
+</li>
+<li>The following are no longer singletons - their get method has been removed.
+Usage of <code>Example.get()</code> is now <code>Example()</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14248" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14248">#14248</a>)<ul>
+<li><code>UIAHandler.customAnnotations.CustomAnnotationTypesCommon</code></li>
+<li><code>UIAHandler.customProps.CustomPropertiesCommon</code></li>
+<li><code>NVDAObjects.UIA.excel.ExcelCustomProperties</code></li>
+<li><code>NVDAObjects.UIA.excel.ExcelCustomAnnotationTypes</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="deprecations_3">Deprecations</h4>
+<ul>
+<li><code>NVDAObjects.UIA.winConsoleUIA.WinTerminalUIA</code> is deprecated and usage is discouraged. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14047" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14047">#14047</a>)</li>
+<li><code>config.addConfigDirsToPythonPackagePath</code> has been moved.
+Use <code>addonHandler.packaging.addDirsToPythonPackagePath</code> instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14350" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14350">#14350</a>)</li>
+<li><code>braille.BrailleHandler.TETHER_*</code> are deprecated.
+Use <code>configFlags.TetherTo.*.value</code> instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14233" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14233">#14233</a>)</li>
+<li><code>utils.security.postSessionLockStateChanged</code> is deprecated.
+Use <code>utils.security.post_sessionLockStateChanged</code> instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14486" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14486">#14486</a>)</li>
+<li><code>NVDAObject.hasDetails</code>, <code>NVDAObject.detailsSummary</code>, <code>NVDAObject.detailsRole</code> has been deprecated.
+Use <code>NVDAObject.annotations</code> instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14507" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14507">#14507</a>)</li>
+<li><code>keyboardHandler.SUPPORTED_NVDA_MODIFIER_KEYS</code> is deprecated with no direct replacement.
+Consider using the class <code>config.configFlags.NVDAKey</code> instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14528" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14528">#14528</a>)</li>
+<li><code>gui.MainFrame.evaluateUpdatePendingUpdateMenuItemCommand</code> has been deprecated.
+Use <code>gui.MainFrame.SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand</code> instead. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14523" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14523">#14523</a>)</li>
+</ul>
 <h2 id="20224">2022.4</h2>
 <p>يتضمّن هذا الإصدار عددا من مفاتيح الاختصار الجديدة، بما في ذلك أوامر لقراءة كامل عناصر الجداول.
 أيضًا، أُضيف قسم "دليل البدء السريع" إلى دليل الاستخدام.
