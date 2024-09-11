@@ -799,6 +799,8 @@ Instead use `config.RegistryKey.CONFIG_IN_LOCAL_APPDATA_SUBKEY`. (#15049)
 
 هناك أيضا تحسينات على دعم إصدارات Windows ARM64 و AMD64.
 
+هناك العديد من إصلاحات الأخطاء، أبرزها إصلاحات على Windows 11.
+
 كما حُدِّثت مكتبات eSpeak و LibLouis، و Sonic rate boost، و Unicode CLDR.
 هناك جداول برايل جديدة: جورجي، سواحلي (كينيا) شيشاوي (ملاوي).
 
