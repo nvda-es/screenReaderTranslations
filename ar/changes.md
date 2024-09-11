@@ -719,7 +719,7 @@ Starting from NVDA 2024.1, in order for the base method to use `bdDetect.driverH
   * لن يصمت NVDA عند الاستعلام عن عنوان وجهة رابط لم تُعرَّف له خاصية href.
   بل سيُعلن NVDA بدلا من ذلك أنّه لا يوجد عنوان يقود إليه الرابط. (#14723)
   * في نمط التصفُّح، لن يتجاوز NVDA خطأً موضع مؤشّر النظام، بحيث ينتقل لعنصر التحكُّم الأصلي الذي يتفرّع عنه، أو للعنصر الفرعي، على سبيل المثال: من عنصر التحكُّم لقائمة العناصر التي يندرج ضمنها، أو لخلية ضمن عرض شبكي. (#14611)
-   * لاحِظْ أن هذا ينطبق في حال تعطيل خيار "نقل مؤشّر النظام تلقائيا للعناصر القابلة لذلك" ضمن إعدادات نمط التصفُّح (وهو الوضع الافتراضي). 
+    * لاحِظْ أن هذا ينطبق في حال تعطيل خيار "نقل مؤشّر النظام تلقائيا للعناصر القابلة لذلك" ضمن إعدادات نمط التصفُّح (وهو الوضع الافتراضي). 
 * إصلاحات تخصُّ Windows 11:
   * سيقرأ NVDA الآن كالسابق محتوى شريط الحالة الخاص بالمفكرة. (#14573)
   * عند الانتقال بين علامات التبويب في المفكرة ومستكشف الملفات؛ سيُعلن عن اسم علامة التبويب. (#14587, #14388)
@@ -743,7 +743,31 @@ Starting from NVDA 2024.1, in order for the base method to use `bdDetect.driverH
 
 ### تعديلاتٌ للمطورين
 
-يضمُّ ملف المستجدات الخاص بهذا الإصدار العديد من التعديلات التي من شأنها تسهيل أداء وعمل مطوري البرنامج، إلا أنها لم تَرِدْ في النسخة العربية حيث أن المستخدم لن يستفيد منها بشكل مباشر كما أنها تضم مصطلحات تقنية متخصصة جدا لا يستخدمها ولا يحتاجها سوى مطوّرو البرنامج. ولمن يرغب في الاطلاع على هذا القسم يمكنه الرجوع إلى ملف المستجدات الموجود باللغة الإنجليزية
+يضمُّ ملف المستجدات الخاص بهذا الإصدار العديد من التعديلات التي من شأنها تسهيل أداء وعمل مطوري البرنامج، إلا أنها لم تَرِدْ في النسخة العربية حيث أن المستخدم لن يستفيد منها بشكل مباشر كما أنها تضم مصطلحات تقنية متخصصة جدا لا يستخدمها ولا يحتاجها سوى مطوّرو البرنامج. ولمن يرغب في الاطلاع على هذا القسم يمكنه الرجوع إلى ملف المستجدات الموجود باللغة الإنجليزية. كما يُرجى برجاء الرجوع إلى [دليل المطورين](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API) للحصول على معلومات حول ما أُهمِلَ وأُزيل من واجهة برمجة التطبيقات الخاصة بـ NVDA.
+
+* Suggested conventions have been added to the add-on manifest specification.
+These are optional for NVDA compatibility, but are encouraged or required for submitting to the Add-on Store. (#14754)
+  * Use `lowerCamelCase` for the name field.
+  * Use `<major>.<minor>.<patch>` format for the version field (required for add-on datastore).
+  * Use `https://` as the schema for the url field (required for add-on datastore).
+* Added a new extension point type called `Chain`, which can be used to iterate over iterables returned by registered handlers. (#14531)
+* Added the `bdDetect.scanForDevices` extension point.
+Handlers can be registered that yield `BrailleDisplayDriver/DeviceMatch` pairs that don't fit in existing categories, like USB or Bluetooth. (#14531)
+* Added extension point: `synthDriverHandler.synthChanged`. (#14618)
+* The NVDA Synth Settings Ring now caches available setting values the first time they're needed, rather than when loading the synthesizer. (#14704)
+* You can now call the export method on a gesture map to export it to a dictionary.
+This dictionary can be imported in another gesture by passing it either to the constructor of `GlobalGestureMap` or to the update method on an existing map. (#14582)
+* `hwIo.base.IoBase` and its derivatives now have a new constructor parameter to take a `hwIo.ioThread.IoThread`.
+If not provided, the default thread is used. (#14627)
+* `hwIo.ioThread.IoThread` now has a `setWaitableTimer` method to set a waitable timer using a python function.
+Similarly, the new `getCompletionRoutine` method allows you to convert a python method into a completion routine safely. (#14627)
+* `offsets.OffsetsTextInfo._get_boundingRects` should now always return `List[locationHelper.rectLTWH]` as expected for a subclass of `textInfos.TextInfo`. (#12424)
+* `highlight-color` is now a format field attribute. (#14610)
+* NVDA should more accurately determine if a logged message is coming from NVDA core. (#14812)
+* NVDA will no longer log inaccurate warnings or errors about deprecated appModules. (#14806)
+* All NVDA extension points are now briefly described in a new, dedicated chapter in the Developer Guide. (#14648)
+* `scons checkpot` will no longer check the `userConfig` subfolder anymore. (#14820)
+* Translatable strings can now be defined with a singular and a plural form using `ngettext` and `npgettext`. (#12445)
 
 ## 2023.1
 
