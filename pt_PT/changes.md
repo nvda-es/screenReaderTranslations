@@ -662,7 +662,7 @@ O eSpeak-NG, o conversor de braille LibLouis e o Unicode CLDR foram atualizados.
   * Alternar o modo de exibição de mensagens Braille.
   * Activar/desactivar o cursor Braille.
   * Alternar o estado do indicador de selecção em Braille.
-  * Alternar entre os modos `Braille move o cursor do sistema quando o cursor de revisão é encaminhado`. (#15122)
+  * Alternar entre os modos "Braille move o cursor do sistema quando o cursor de revisão é encaminhado". (#15122)
 * Funcionalidades no Microsoft Office:
   * Ao activar o anúncio de texto realçado, as cores de realce passam a ser anunciadas no Microsoft Word. (#7396, #12101, #5866)
   * Ao activar o anúncio das cores, as cores de fundo passam a ser anunciadas no Microsoft Word. (#5866)
@@ -674,7 +674,7 @@ O eSpeak-NG, o conversor de braille LibLouis e o Unicode CLDR foram atualizados.
     * Ajustar o volume dos sons e bipes do NVDA de acordo com o actual volume da voz. (#1409)
     * Controlar separadamente o volume dos sons do NVDA. (#1409)
   * Há um problema conhecido de falhas frequentes do NVDA com WASAPI activado. (#15150)
-* No Mozilla Firefox e no Google Chrome, o NVDA agora informa quando um controle abre um diálogo, grelha, lista ou árvore se o autor especificou isso usando aria-haspopup. (#14709)
+* No Mozilla Firefox e no Google Chrome, o NVDA agora informa quando um controle abre um diálogo, grelha, lista ou árvore se o autor especificou isso usando `aria-haspopup`. (#14709)
 * Agora é possível usar variáveis de sistema (como `%temp%` ou `%homepath%`) na especificação do caminho ao criar cópias portáteis do NVDA. (#14680)
 * No Windows 10 May 2019 Update e posterior, o NVDA pode anunciar os nomes dos Ambientes de trabalho virtuais ao abri-los, alterá-los e fechá-los. (#5641)
 * Foi adicionado um parâmetro de sistema para que utilizadores e administradores de sistema possam forçar o NVDA a iniciar em modo seguro. (#10018)
@@ -684,11 +684,7 @@ O eSpeak-NG, o conversor de braille LibLouis e o Unicode CLDR foram atualizados.
 * Actualização de componentes:
   * O eSpeak NG foi actualizado para a versão 1.52-dev commit `ed9a7bcf`. (#15036)
   * O conversor Braille LibLouis foi atualizado para [3.26.0](https://github.com/liblouis/liblouis/releases/tag/v3.26.0). (#14970)
-
-> > - O CLDR foi atualizado para a versão 43.0. (#14918)
-
-  -
-
+  * O CLDR foi atualizado para a versão 43.0. (#14918)
 * Alterações no LibreOffice:
   * Ao anunciar a localização do cursor de revisão, a localização actual do cursor passa a ser anunciada em relação à página atual no LibreOffice Writer para as versões do LibreOffice >= 7.6, similar ao que é feito para o Microsoft Word. (#11696)
   * O anúncio da barra de estado (NVDA+End) já funciona no LibreOffice. (#11698)
