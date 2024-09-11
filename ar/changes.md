@@ -769,6 +769,22 @@ Similarly, the new `getCompletionRoutine` method allows you to convert a python 
 * `scons checkpot` will no longer check the `userConfig` subfolder anymore. (#14820)
 * Translatable strings can now be defined with a singular and a plural form using `ngettext` and `npgettext`. (#12445)
 
+#### Deprecations
+
+* Passing lambda functions to `hwIo.ioThread.IoThread.queueAsApc` is deprecated.
+Instead, functions should be weakly referenceable. (#14627)
+* Importing `LPOVERLAPPED_COMPLETION_ROUTINE` from `hwIo.base` is deprecated.
+Instead import from `hwIo.ioThread`. (#14627)
+* `IoThread.autoDeleteApcReference` is deprecated.
+It was introduced in NVDA 2023.1 and was never meant to be part of the public API.
+Until removal, it behaves as a no-op, i.e. a context manager yielding nothing. (#14924)
+* `gui.MainFrame.onAddonsManagerCommand` is deprecated, use `gui.MainFrame.onAddonStoreCommand` instead. (#13985)
+* `speechDictHandler.speechDictVars.speechDictsPath` is deprecated, use `NVDAState.WritePaths.speechDictsDir` instead. (#15021)
+* Importing `voiceDictsPath` and `voiceDictsBackupPath` from `speechDictHandler.dictFormatUpgrade` is deprecated.
+Instead use `WritePaths.voiceDictsDir` and `WritePaths.voiceDictsBackupDir` from `NVDAState`. (#15048)
+* `config.CONFIG_IN_LOCAL_APPDATA_SUBKEY` is deprecated.
+Instead use `config.RegistryKey.CONFIG_IN_LOCAL_APPDATA_SUBKEY`. (#15049)
+
 ## 2023.1
 
 احتوى الإصدار على العديد من المستجدات منها: الخيار الجديد "نمط الفقرة" ضمن تصنيف "التنقُّل في المستند".
