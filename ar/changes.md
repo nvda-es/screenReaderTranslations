@@ -1081,6 +1081,7 @@ Use `gui.MainFrame.SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand` inste
   * `handleSessionChange`
   * `unregister`
   * `register`
+  * `isLockStateSuccessfullyTracked`
 
 ## 2022.3.2
 
