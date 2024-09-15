@@ -1038,7 +1038,7 @@ Use `gui.MainFrame.SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand` inste
 * عند عدم حدوث تغييرات على حالة اتجاه العرض  (أفُقي/عمودي)؛ ستُتجاهل بشكل صحيح (كما في تغييرات الشاشة). (#14035)
 * سيعلن NVDA عن سحب العناصر على الشاشة في حالات مثل إعادة ترتيب عناصر قائمة ابدأ في Windows 10، وإعادة ترتيب أسطح المكتب في Windows 11. (#12271, #14081)
 * في شاwww==شة الإعدادات المتقدمة، خيار "إصدار صوت للأخطاء المسجلة في سجلّ الأخطاء" سيستعيد قيمته الافتراضية الصحيحة عند ضغط زر "استعادة الإعدادات الافتراضية". (#14149)
-* في برامج Java، يمكن لNVDA تحديد النص باستخدام مفتاح الاختصار NVDA+f10. (#14163)
+* في برامج Java، يمكن لNVDA تحديد النص باستخدام مفتاح الاختصار `NVDA+f10`. (#14163)
 * في Microsoft Teams، لن يخفق NVDA ويتوقف عند استعراض الرسائل بالأسهم لأعلى وأسفل في قائمة محادثات مسلسلة. (#14355)
 
 ### تعديلاتٌ للمطورين
@@ -1060,6 +1060,7 @@ Use `gui.MainFrame.SysTrayIcon.evaluateUpdatePendingUpdateMenuItemCommand` inste
 وكذلك يعالج مشكلةً أمنية.
 
 ### إصلاحات أمنية
+
 * Prevents possible system access (e.g. NVDA Python console) for unauthenticated users.
 ([GHSA-fpwc-2gxx-j9v7](https://github.com/nvaccess/nvda/security/advisories/GHSA-fpwc-2
 
