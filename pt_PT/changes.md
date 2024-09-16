@@ -706,31 +706,25 @@ O eSpeak-NG, o conversor de braille LibLouis e o Unicode CLDR foram atualizados.
 
 * Braille:
   * Várias correções de estabilidade na entrada/saída para linhas Braille, resultando em erros e travamentos menos frequentes do NVDA. (#14627)
-  * O NVDA já não muda desnecessariamente para "Sem Braille" várias vezes durante a detecção automática, resultando num registo mais
-  limpo. (#14524)
-  * O NVDA agora voltará para a conexão USB se um dispositivo Bluetooth HID (como o HumanWare Brailliant ou APH Mantis) for detectado
-  automaticamente e uma conexão USB estiver disponível.
+  * O NVDA já não muda desnecessariamente para "Sem Braille" várias vezes durante a detecção automática, resultando num registo mais limpo. (#14524)
+  * O NVDA agora voltará para a conexão USB se um dispositivo Bluetooth HID (como o HumanWare Brailliant ou APH Mantis) for detectado automaticamente e uma conexão USB estiver disponível.
   Isso só funcionava para portas seriais Bluetooth antes. (#14524)
-  * Quando nenhuma linha braille estiver ligada e o Visualizador Braille for fechado, pressionando `alt+f4` ou clicando no botão fechar,
-  o tamanho da linha do subsistema braille será novamente redefinido para nenhuma célula. (#15214)
+  * Quando nenhuma linha braille estiver ligada e o Visualizador Braille for fechado, pressionando `alt+f4` ou clicando no botão fechar, o tamanho da linha do subsistema braille será novamente redefinido para nenhuma célula. (#15214)
 * Navegadores Web:
   * O NVDA já não causa, ocasionalmente, o travamento ou a parada de resposta do Mozilla Firefox. (#14647)
-  * No Mozilla Firefox e Google Chrome, os caracteres digitados já não são relatados em algumas caixas de texto, mesmo quando a opção de
-  falar caracteres digitados está desativada. (#14666)
+  * No Mozilla Firefox e Google Chrome, os caracteres digitados já não são relatados em algumas caixas de texto, mesmo quando a opção de falar caracteres digitados está desativada. (#14666)
   * Já é possível usar o modo de navegação em Controles Embutidos do Chromium onde antes não era possível. (#13493, #8553)
 * No Mozilla Firefox, ao passar o rato sobre o texto, após um link, o NVDA já anuncia correctamente o texto. (#9235)
   * O destino de links gráficos agora é relatado corretamente no Chrome e Edge. (#14779)
   * Ao tentar anunciar a URL de um link sem o atributo href, o NVDA não ficará mais em silêncio.
   Em vez disso, o NVDA informa que o link não tem destino. (#14723)
-  * No modo de navegação, o NVDA já não ignora, incorretamente, o movimento do foco para um controle de nível superior ou inferior, por
-  exemplo, movendo-se de um elemento para a lista ou grelha que o contém. (#14611)
-    * No entanto, observe que essa correção se aplica apenas quando a opção "Definir automaticamente o foco em elementos com foco" nas
-    configurações do modo de navegação está desativada (que é a configuração padrão).
+  * No modo de navegação, o NVDA já não ignora, incorretamente, o movimento do foco para um controle de nível superior ou inferior, por exemplo, movendo-se de um elemento para a lista ou grelha que o contém. (#14611)
+    * No entanto, observe que essa correção se aplica apenas quando a opção "Definir automaticamente o foco em elementos com foco" nas configurações do modo de navegação está desativada (que é a configuração padrão).
 * Correções para Windows 11:
   * O NVDA volta a poder anunciar o conteúdo da barra de estado do Bloco de Notas. (#14573)
   * Ao mudar de separadore é anunciado o novo nome, e sua posição, no Bloco de Notas e Explorador de Ficheiros. (#14587, #14388)
-  * No Windows 11, é possível abrir novamente os itens Colaboradores e Licença no menu Ajuda do NVDA. (#14725)
   * O NVDA volta a anunciar itens candidatos ao inserir texto em idiomas como chinês e japonês. (#14509)
+  * No Windows 11, é possível abrir novamente os itens Colaboradores e Licença no menu Ajuda do NVDA. (#14725)
 * Correções para o Microsoft Office:
 * Ao mover rapidamente entre células no Excel, o NVDA agora tem menos probabilidade de anunciar a célula ou seleção errada. (#14983, #12200, #12108)
 
