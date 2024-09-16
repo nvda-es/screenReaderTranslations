@@ -714,7 +714,7 @@ O eSpeak-NG, o conversor de braille LibLouis e o Unicode CLDR foram atualizados.
   * O NVDA já não causa, ocasionalmente, o travamento ou a parada de resposta do Mozilla Firefox. (#14647)
   * No Mozilla Firefox e Google Chrome, os caracteres digitados já não são relatados em algumas caixas de texto, mesmo quando a opção de falar caracteres digitados está desativada. (#14666)
   * Já é possível usar o modo de navegação em Controles Embutidos do Chromium onde antes não era possível. (#13493, #8553)
-* No Mozilla Firefox, ao passar o rato sobre o texto, após um link, o NVDA já anuncia correctamente o texto. (#9235)
+  * No Mozilla Firefox, ao passar o rato sobre o texto, após um link, o NVDA já anuncia correctamente o texto. (#9235)
   * O destino de links gráficos agora é relatado corretamente no Chrome e Edge. (#14779)
   * Ao tentar anunciar a URL de um link sem o atributo href, o NVDA não ficará mais em silêncio.
   Em vez disso, o NVDA informa que o link não tem destino. (#14723)
@@ -726,19 +726,20 @@ O eSpeak-NG, o conversor de braille LibLouis e o Unicode CLDR foram atualizados.
   * O NVDA volta a anunciar itens candidatos ao inserir texto em idiomas como chinês e japonês. (#14509)
   * No Windows 11, é possível abrir novamente os itens Colaboradores e Licença no menu Ajuda do NVDA. (#14725)
 * Correções para o Microsoft Office:
-* Ao mover rapidamente entre células no Excel, o NVDA agora tem menos probabilidade de anunciar a célula ou seleção errada. (#14983, #12200, #12108)
-
-* No Windows 10 e 11 Calculator, uma cópia portátil do NVDA não fará mais nada ou emitirá tons de erro ao inserir expressões no modo de  calculadora padrão em sobreposição compacta. (#14679)
+  * Ao mover rapidamente entre células no Excel, o NVDA agora tem menos probabilidade de anunciar a célula ou seleção errada. (#14983, #12200, #12108)
+  * Quando o foco cai numa célula do Excel vindo de fora da folha, o Braille e o realce do foco já não são actualizados desnecessariamente para o objecto que anteriormente estava focado. (#15136)
+  * O NVDA não falha mais ao anunciar a focalização de campos de senha no Microsoft Excel e Outlook. (#14839)
+* Para símbolos que não têm uma descrição de símbolo no idioma atual, será usada a descrição de símbolo padrão em inglês. (#14558, #14417)
+* Já é possível usar o caractere de barra invertida no campo de substituição de uma entrada de dicionário, quando o tipo não está definido como expressão regular. (#14556)
+* No Windows 10 e 11 Calculator, uma cópia portátil do NVDA não fará mais nada ou emitirá tons de erro ao inserir expressões no modo de  calculadora padrão em modo compacto. (#14679)
 * O NVDA se recupera novamente de muitas situações, como aplicativos que param de responder, que anteriormente causavam travamentos completos. (#14759)
 * Ao forçar o suporte UIA com determinado terminal e consoles, um bug foi corrigido que causava congelamento e spam no arquivo de log. (#14689)
-* O NVDA não falha mais ao anunciar a focalização de campos de senha no Microsoft Excel e Outlook. (#14839)
-* O NVDA não recusará mais salvar a configuração após uma reinicialização da configuração. (#13187)
-* Ao executar uma versão temporária a partir do lançador, o NVDA não induzirá os usuários a pensar que podem salvar a configuração. (#14914)
-* O anúncio das teclas de atalho do objeto foi melhorada. (#10807)
+* O NVDA não recusará mais guardar a configuração após uma reinicialização da configuração. (#13187)
+* Ao executar uma versão temporária a partir do instalador, o NVDA não induzirá os usuários a pensar que podem guardar a configuração. (#14914)
 * O NVDA agora responde de maneira geral um pouco mais rápida aos comandos e mudanças de foco. (#14928)
-  -
-  * Já é possível usar o caractere de barra invertida no campo de substituição de uma entrada de dicionário, quando o tipo não está definido como expressão regular. (#14556)
-* Para símbolos que não têm uma descrição de símbolo no idioma atual, será usada a descrição de símbolo padrão em inglês. (#14558, #14417)
+* Abrir as configurações de OCR já não falhará em alguns sistemas. (#15017)
+* Corrigido um erro relacionado com guardar e carregar as configurações do NVDA, incluindo mudar de sintetizador. (#14760)
+* Corrigido o erro que causava que o gesto "varrer para cima" em revisão de texto movesse páginas em vez de mover para a linha anterior. (#15127)
 
 ### Changes for Developers
 
@@ -746,7 +747,6 @@ Please refer to [the developer guide](https://www.nvaccess.org/files/nvda/docume
 
 * Suggested conventions have been added to the add-on manifest specification.
 These are optional for NVDA compatibility, but are encouraged or required for submitting to the add-on store.
-The new suggested conventions are:
   * Using `lowerCamelCase` for the name field.
   * Using `<major>.<minor>.<patch>` format for the version field (required for add-on datastore).
   * Using `https://` as the schema for the url field (required for add-on datastore).
@@ -780,6 +780,10 @@ It was introduced in NVDA 2023.1 and was never meant to be part of the public AP
 Until removal, it behaves as a no-op, i.e. a context manager yielding nothing. (#14924)
 * `gui.MainFrame.onAddonsManagerCommand` is deprecated, use `gui.MainFrame.onAddonStoreCommand` instead. (#13985)
 * `speechDictHandler.speechDictVars.speechDictsPath` is deprecated, use `WritePaths.speechDictsDir` instead. (#15021)
+* Importing `voiceDictsPath` and `voiceDictsBackupPath` from `speechDictHandler.dictFormatUpgrade` is deprecated.
+Instead use `WritePaths.voiceDictsDir` and `WritePaths.voiceDictsBackupDir` from `NVDAState`. (#15048)
+* `config.CONFIG_IN_LOCAL_APPDATA_SUBKEY` is deprecated.
+Instead use `config.RegistryKey.CONFIG_IN_LOCAL_APPDATA_SUBKEY`. (#15049)
 
 ## 2023.1
 
