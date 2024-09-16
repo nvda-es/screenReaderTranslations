@@ -822,24 +822,24 @@ Nota:
 Esta secção tem como único controlo o "Estilo de Parágrafo", que adiciona suporte para navegação por parágrafo de quebra de linha única (normal) e quebra de linha múltipla (bloco).
 Esta funcionalidade pode ser usada com editores de texto que não suportam navegação por parágrafo nativamente, tais como o Bloco de Notas e o Notepad++. (#13797)
 * A presença de múltiplas anotações passa a ser anunciada.
-"nvda+d" passa agora a alternar o anúncio do resumo de cada anotação para as origens com múltiplas anotações.
+`NVDA+d` passa agora a alternar o anúncio do resumo de cada anotação para as origens com múltiplas anotações.
 Por exemplo, quando o texto tem um comentário e uma nota de rodapé a ele associada. (#14507, #14480)
 * Adicionado suporte para as linhas Braille Tivomatic Caiku Albatross 46/80. (#13045)
-* Novo comando global: Anúncio de destino do link ("NVDA+k").
+* Novo comando global: Anúncio de destino do link (`NVDA+k`).
 Pressionando uma vez anuncia em voz e Braille o destino do link no objecto de navegação.
 Pressionando duas vezes, a informação será mostrada numa janela, para uma revisão mais detalhada. (#14583)
 * Novo comando global, sem associação de teclas, (Categoria Ferramentas): Anunciar o destino do link numa janela.
 O mesmo que pressionar `NVDA+k` duas vezes, mas pode ser mais útil para os utilizadores de braille. (#14583)-
 
-== Alterações ===
+### Alterações
 
 * Conversor Braille LibLouis actualizado para [3.24.0](https://github.com/liblouis/liblouis/releases/tag/v3.24.0). (#14436)
   * Grandes melhorias  no Braille húngaro, UEB e chinês bopomofo;
   * Suporte à norma dinamarquesa de Braile 2022;
   * Novas tabelas Braille para georgiano Braille literário, Suaíli (Quénia) e Chichewa (Malawi).
-* A biblioteca Sonic rate boost foi actualizada para o commit "1d70513". (#14180)
+* A biblioteca Sonic rate boost foi actualizada para o commit `1d70513`. (#14180)
 * O CLDR foi actualizado para a versão 42.0. (#14273)
-* O eSpeak NG foi actualizado para a versão 1,52-dev commit "f520fecb". (#14281, #14675)
+* O eSpeak NG foi actualizado para a versão 1,52-dev commit `f520fecb`. (#14281, #14675)
   * Corrigido o anúncio de grandes números. (#14241)
 * As aplicações Java com controlos utilizando o estado seleccionável anunciarão agora quando um item não está seleccionado e não quando o item está seleccionado. (#14336)
 
@@ -876,7 +876,8 @@ O mesmo que pressionar `NVDA+k` duas vezes, mas pode ser mais útil para os util
 * O tempo restante, passado e total é agora anunciado correctamente para ficheiros áudio ao longo de um dia no foobar2000. (#14127)
 * Em navegadores web como o Chrome e o Firefox, alertas como downloads de ficheiros são mostrados em braille, para além de serem falados. (#14562)
 * Corrigido o erro ao navegar para a primeira ou última coluna numa tabela no Firefox (#14554)
-* Quando o NVDA é iniciado com o parâmetro `--lang=Windows``, volta a ser possível abrir o diálogo de Configurações gerais do NVDA. (#14407)
+* Quando o NVDA é iniciado com o parâmetro `--lang=Windows`, volta a ser possível abrir o diálogo de Configurações gerais do NVDA. (#14407)
+* O NVDA volta a continuar a ler no Kindle for PC após voltar a página. (#14390)
 
 ### Changes for Developers
 
