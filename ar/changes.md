@@ -1931,7 +1931,6 @@ They are still available at the module level but are deprecated and to be remove
 * The aria live politeness setting for live regions can now be found on NVDA Objects using the liveRegionPoliteness property. (#11596)
 * It is now possible to define separate gestures for Outlook and Word document. (#11196)
 
-
 ## 2020.3
 
 يتضمّنُ هذا الإصدار تحسيناتٍ عديدة وكبيرة تتعلق باستقرار البرنامج وأدائه، خاصةً مع تطبيقات Microsoft Office. هناك أيضا إعداداتٌ جديدة للتبديل بين خيارات دعم التفاعل باللمس والإعلان عن الرسومات. كما يمكن الإعلان عن وجود محتوى مُعلَّم (مُميَّز بصريا) في متصفّحات الإنترنت. إضافةً لجداول برايل جديدة للغة الألمانية.
