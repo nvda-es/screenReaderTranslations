@@ -790,10 +790,10 @@ Instead use `config.RegistryKey.CONFIG_IN_LOCAL_APPDATA_SUBKEY`. (#15049)
 Foi adicionada uma nova opção, "Estilo do Parágrafo" em "Navegação em Documentos".
 Esta funcionalidade pode ser utilizada com editores de texto que não suportam a navegação por parágrafo nativamente, tais como o Bloco de Notas e o NotePad++.
 
-Foi adicionado um novo comando global para anunciar o destino de um link, associado a "NVDA+k`".
+Foi adicionado um novo comando global para anunciar o destino de um link, associado a `NVDA+k`".
 
 O suporte para o conteúdo anotado da web (como comentários e notas de rodapé) foi melhorado.
-Pressione "NVDA+d" para alternar entre resumos quando as anotações são anunciadas (por exemplo, "tem comentário, tem nota de rodapé").
+Pressione `NVDA+d` para alternar entre resumos quando as anotações são anunciadas (por exemplo, "tem comentário, tem nota de rodapé").
 
 As linhas Braille Tivomatic Caiku Albatross 46/80 já são suportadas nativamente.
 
@@ -805,7 +805,8 @@ eSpeak, LibLouis, Sonic rate boost e Unicode CLDR foram actualizados.
 Existem novas tabelas Braille da Geórgia, Suaíli (Quénia) e Chichewa (Malawi).
 
 Nota:
-Esta versão quebra a compatibilidade com os extras existentes.
+
+* Esta versão quebra a compatibilidade com os extras existentes.
 
 ### Novas funcionalidades
 
@@ -825,8 +826,8 @@ Esta funcionalidade pode ser usada com editores de texto que não suportam naveg
 Por exemplo, quando o texto tem um comentário e uma nota de rodapé a ele associada. (#14507, #14480)
 * Adicionado suporte para as linhas Braille Tivomatic Caiku Albatross 46/80. (#13045)
 * Novo comando global: Anúncio de destino do link ("NVDA+k").
-Pressionado uma vez anuncia em voz e Braille o destino do link no objecto de navegação.
-Pressionando duas vezes, a informação será mostrado numa janela, para uma revisão mais detalhada. (#14583)
+Pressionando uma vez anuncia em voz e Braille o destino do link no objecto de navegação.
+Pressionando duas vezes, a informação será mostrada numa janela, para uma revisão mais detalhada. (#14583)
 * Novo comando global, sem associação de teclas, (Categoria Ferramentas): Anunciar o destino do link numa janela.
 O mesmo que pressionar `NVDA+k` duas vezes, mas pode ser mais útil para os utilizadores de braille. (#14583)-
 
