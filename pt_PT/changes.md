@@ -687,11 +687,11 @@ O eSpeak-NG, o conversor de braille LibLouis e o Unicode CLDR foram atualizados.
   * O CLDR foi atualizado para a versão 43.0. (#14918)
 * Alterações no LibreOffice:
   * Ao anunciar a localização do cursor de revisão, a localização actual do cursor passa a ser anunciada em relação à página atual no LibreOffice Writer para as versões do LibreOffice >= 7.6, similar ao que é feito para o Microsoft Word. (#11696)
-  * O anúncio da barra de estado (NVDA+End) já funciona no LibreOffice. (#11698)
+  * O anúncio da barra de estado (`NVDA+End`) já funciona no LibreOffice. (#11698)
   * Ao mover para uma célula diferente no LibreOffice Calc, o NVDA já não anuncia incorretamente as coordenadas da célula anteriormente focada quando o anúncio de coordenadas da célula está desativado nas configurações do NVDA. (#15098)
 * Alterações no Braille:
   * Ao usar um Dispositivo Braille via driver Braille HID padrão, o D-pad pode ser usado para emular as teclas de seta e Enter. Além
-  disso, espaço+ponto1 e espaço+ponto4 agora correspondem, respectivamente, às teclas de seta para cima e para baixo. (#14713)
+  disso, `espaço+ponto1` e `espaço+ponto4` agora correspondem, respectivamente, às teclas de seta para cima e para baixo. (#14713)
   * As actualizações no conteúdo dinâmico da web (ARIA live regions) agora são exibidas em braille.
   Isso pode ser desactivado no painel Configurações avançadas. (#7756) 
 * Os símbolos de hífen e hífen emparelhado sempre serão enviados para o sintetizador. (#13830)
@@ -699,14 +699,13 @@ O eSpeak-NG, o conversor de braille LibLouis e o Unicode CLDR foram atualizados.
 * O NVDA responde mais rapidamente ao mover o cursor em controles de edição. (#14708)
 * O script para anunciar o destino de um link agora anuncia a partir da posição do cursor/foco em vez do objeto de navegação. (#14659)
 * A criação de uma cópia portátil não requer mais a inserção de uma letra de unidade como parte do caminho absoluto. (#14681)
-* Se o Windows estiver configurado para exibir segundos no relógio da barra do sistema, "NVDA+f12" para anunciar a hora passa a respeitar essa configuração. (#14742)
+* Se o Windows estiver configurado para exibir segundos no relógio da barra do sistema, `NVDA+f12` para anunciar a hora passa a respeitar essa configuração. (#14742)
 * O NVDA passa a anunciar grupos de controlos sem etiqueta, que possuam informações de posição úteis, como em versões recentes dos menus do Microsoft Office 365. (#14878)
 
 ### Correcções de erros
 
 * Braille:
-  * Várias correções de estabilidade na entrada/saída para linhas Braille, resultando em erros e 
-  travamentos menos frequentes do NVDA. (#14627)
+  * Várias correções de estabilidade na entrada/saída para linhas Braille, resultando em erros e travamentos menos frequentes do NVDA. (#14627)
   * O NVDA já não muda desnecessariamente para "Sem Braille" várias vezes durante a detecção automática, resultando num registo mais
   limpo. (#14524)
   * O NVDA agora voltará para a conexão USB se um dispositivo Bluetooth HID (como o HumanWare Brailliant ou APH Mantis) for detectado
