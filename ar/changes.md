@@ -3400,7 +3400,7 @@ They are still available at the module level but are deprecated and to be remove
 * ترجمة NVDA للغات: الكولمبية الأسبانية والبنجابية. 
 * أصبح من الممكن إعادة تشغيل NVDA أو إعادة التشغيل مع تعطيل الإضافات من محاورة الخروج من NVDA. (#4057)
  * كما يمكن أيضا بدأ تشغيل NVDA مع تعطيل الإضافات البرمجية باستخدام خيار الأمر النصي --disable-addons.
- * في معاجم الإدخال, أصبح من الممكن تخصيص ما إذا كان ينبغي أن تتطابق الكلمة الأصلية فقط عندما تكون كل الكلمة،  بمعنى أنها لا تظهر كجزء من كلمة أكبر. (#1704)
+* في معاجم الإدخال, أصبح من الممكن تخصيص ما إذا كان ينبغي أن تتطابق الكلمة الأصلية فقط عندما تكون كل الكلمة،  بمعنى أنها لا تظهر كجزء من كلمة أكبر. (#1704)
 
 ### التعديلات
 
@@ -3431,7 +3431,6 @@ They are still available at the module level but are deprecated and to be remove
 * عند استخدام السطر الإلكتروني Papenmeier BRAILLEX مع الأداة BrxCom, فإن المفاتيح ستعمل من الآن كما هو متوقع. (#4614)
 
 ### تعديلات للمطورين
-
 
 * For executables which host many different apps (e.g. javaw.exe), code can now be provided to load specific app modules for each app instead of loading the same app module for all hosted apps. (#4360)
  * See the code documentation for appModuleHandler.AppModule for details.
