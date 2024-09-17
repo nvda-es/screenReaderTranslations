@@ -2440,7 +2440,7 @@ They are still available at the module level but are deprecated and to be remove
 ### المستجدات
 
 * جداول برايل جديدة: صيني (الصين ماندرين) باختصارات وبدون اختصارات. (#5553)
--  الإعلان عن حالة الرسالة المردود عليها والمعاد توجيهها بقائمة الرسائل ب microsoft outlook. (#6911)
+* الإعلان عن حالة الرسالة المردود عليها والمعاد توجيهها بقائمة الرسائل ب microsoft outlook. (#6911)
 * أصبح NVDA الآن قادر على قراءة وصف رموز المشاعر وكذلك الأحرف الأخرى التي تعد جزء من مستودع بيانات التشفير المحلي الشائع. (#6523)
 * يمكن الآن قراءة مسافة المؤشر من الحافة العليا واليسرى للصفحة بالضغط على NVDA+numpadDelete ب microsoft word. (#1939)
 * لم يعد يعلن NVDA "مظلل" عند الحركة على كل خلية بأوراق عمل Google عند تفعيل البرايل. (#8879)
@@ -2545,7 +2545,7 @@ They are still available at the module level but are deprecated and to be remove
  * عند كتابة  حرف واحد بالمستند  فإنه سيظهر  على السطر الإلكتروني بدلا من وجود اسم المستند فقط شأنه في ذلك شأن المستند متعدد الأسطر. (#840h6)
  * تقليل الإطناب عند عرض المستند سواء بالنطق أو على البرايل. (#8407)
  * يعمل مؤشر البرايل بشكل صحيح الآن عند وجوده في قائمة سردية بمستند وورد. (#7971)
- -سيعلن عن التنقيطات والأرقام المدرجة حديثا بمستند وورد بشكل صحيح بالنطق أو على البرايل. (#7970)
+ * سيعلن عن التنقيطات والأرقام المدرجة حديثا بمستند وورد بشكل صحيح بالنطق أو على البرايل. (#7970)
 * أصبح من الممكن تثبيت الإضافات إذا كانت خاصية "استخدام تشفير UTF-8 الموحد لدعم اللغة العالمية" مفعلة بويندوز 10 1803 وما بعده. (#8599)
 * لم يعد يتسبب NVDA في جعل تطبيق iTunes 12.9 والإصدارات الأحدث غير قابلة للتفاعل معها. (#8744)
 
@@ -2585,7 +2585,7 @@ They are still available at the module level but are deprecated and to be remove
 * لغات جديدة: منغولي والألمانية السويسرية.
 * يمكنك الآن ضغط  مفاتيح ال control, alt, windows, shift, ومفتاح NVDA  عبر لوحة مفاتيح السطر الإلكتروني والمزج بينها وبين مفاتيح أخرى (على سبيل المثال, control+s). (#7306) 
  * كما يمكنك تعيين  هذه المفاتيح باستخدام الأوامر الموجودة بمحاكاة لوحة مفاتيح النظام بمحاورة تخصيص اختصارات البرنامج.
- * استرجاع دعم الأسطر الإلكترونية Handy Tech Braillino و Modular (بالإصدار القديم). (#8016)
+* استرجاع دعم الأسطر الإلكترونية Handy Tech Braillino و Modular (الإصدار القديم). (#8016)
 * دعم مزامنة الوقت والتاريخ بالأسطر الإلكترونية المدعومة كطراز Active Braille  و Active Star آليا. (#8016)
 * يمكن تعيين اختصار لتعطيل كافة مشغلات الأوضاع مؤقتا. (#4935)
 
@@ -2630,7 +2630,6 @@ They are still available at the module level but are deprecated and to be remove
 * The developer info for UIA objects now contains a list of the UIA patterns available. (#5712)
 * App modules can now force certain windows to always use UIA by implementing the isGoodUIAWindow method. (#7961)
 * The hidden boolean flag "outputPass1Only" in the braille section of the configuration has again been removed. Liblouis no longer supports pass 1 only output. (#7839)
-
 
 ## 2018.1.1
 
