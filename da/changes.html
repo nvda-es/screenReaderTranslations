@@ -109,7 +109,8 @@ En advarselsbesked vil informere dig, hvis du forsøger at skrive til en mappe, 
 <ul>
 <li>NVDA bruger nu Ruff i stedet for flake8 til linting. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14817" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14817">#14817</a>)</li>
 <li>Rettet NVDA's build-system, så det fungerer korrekt med Visual Studio 2022 version 17.10 og nyere. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16480" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16480">#16480</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)</li>
-<li>En fast bredde-skrifttype bruges nu i logviseren og i NVDA's Python-konsol, så markøren forbliver i samme kolonne under lodret navigation. Dette er især nyttigt for at læse fejlplaceringsmarkører i tracebacks. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16321" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16321">#16321</a>, <a class="gh-link gh-mention" href="https://github.com/CyrilleB79" rel="noopener" target="_blank" title="GitHub User: @CyrilleB79">@CyrilleB79</a>)</li>
+<li>En fast bredde-skrifttype bruges nu i logviseren og i NVDA's Python-konsol, så markøren forbliver i samme kolonne under lodret navigation.
+Dette er især nyttigt for at læse fejlplaceringsmarkører i tracebacks. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16321" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16321">#16321</a>, <a class="gh-link gh-mention" href="https://github.com/CyrilleB79" rel="noopener" target="_blank" title="GitHub User: @CyrilleB79">@CyrilleB79</a>)</li>
 <li>Understøttelse af brugerdefinerede punktoversættelsestabeller er tilføjet. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/3304" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #3304">#3304</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16208" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16208">#16208</a>, <a class="gh-link gh-mention" href="https://github.com/JulienCochuyt" rel="noopener" target="_blank" title="GitHub User: @JulienCochuyt">@JulienCochuyt</a>, <a class="gh-link gh-mention" href="https://github.com/LeonarddeR" rel="noopener" target="_blank" title="GitHub User: @LeonarddeR">@LeonarddeR</a>)<ul>
 <li>Tabeller kan leveres i mappen <code>brailleTables</code> i en tilføjelsespakke.</li>
 <li>Metadata om tabeller kan tilføjes i en valgfri <code>brailleTables</code>-sektion i tilføjelsesmanifestet eller til en <code>.ini</code>-fil med samme format, som findes i brailleTables-undermappen i scratchpad-mappen.</li>
@@ -120,16 +121,23 @@ En advarselsbesked vil informere dig, hvis du forsøger at skrive til en mappe, 
 <li>NVDA vil logge sin eksekverbare arkitektur (x86) ved opstart. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16432" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16432">#16432</a>, <a class="gh-link gh-mention" href="https://github.com/josephsl" rel="noopener" target="_blank" title="GitHub User: @josephsl">@josephsl</a>)</li>
 <li><code>wx.CallAfter</code>, som er pakket ind i <code>monkeyPatches/wxMonkeyPatches.py</code>, inkluderer nu korrekt <code>functools.wraps</code>-angivelse. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16520" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16520">#16520</a>, <a class="gh-link gh-mention" href="https://github.com/XLTechie" rel="noopener" target="_blank" title="GitHub User: @XLTechie">@XLTechie</a>)</li>
 <li>Der er et nyt modul til planlægning af opgaver <code>utils.schedule</code>, som bruger pip-modulet <code>schedule</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16636" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16636">#16636</a>)<ul>
-<li>Du kan bruge <code>scheduleThread.scheduleDailyJobAtStartUp</code> til automatisk at planlægge en opgave, der udføres, når NVDA starter, og hver 24. time derefter. Opgaver planlægges med en forsinkelse for at undgå konflikter.</li>
+<li>Du kan bruge <code>scheduleThread.scheduleDailyJobAtStartUp</code> til automatisk at planlægge en opgave, der udføres, når NVDA starter, og hver 24. time derefter.
+Opgaver planlægges med en forsinkelse for at undgå konflikter.</li>
 <li><code>scheduleThread.scheduleDailyJob</code> og <code>scheduleJob</code> kan bruges til at planlægge opgaver på brugerdefinerede tidspunkter, hvor en <code>JobClashError</code> vil blive udløst ved en kendt konflikt i opgaveplanlægningen.</li>
 </ul>
 </li>
 <li>Det er nu muligt at oprette app-moduler til apps, der er vært for Edge WebView2 (msedgewebview2.exe)-kontroller. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16705" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16705">#16705</a>, <a class="gh-link gh-mention" href="https://github.com/josephsl" rel="noopener" target="_blank" title="GitHub User: @josephsl">@josephsl</a>)</li>
 </ul>
 <h2 id="20242">2024.2</h2>
-<p>Der er en ny funktion kaldet lydopdeling. Funktionen gør det muligt at have NVDA-lyde i én kanal (f.eks. venstre), mens lyde fra alle andre programmer udsendes i den anden kanal (f.eks. højre).</p>
-<p>Der er nye kommandoer til ændring af ringen af talesynteseindstillinger, hvilket giver brugerne mulighed for at springe til den første eller sidste indstilling, og for at øge eller mindske den aktuelle indstilling med større trin. Der er også nye hurtignavigationskommandoer, der gør det muligt for brugere at tilknytte tastetryk til hurtigt at hoppe mellem: afsnit, lodret justeret afsnit, tekst med samme typografi, tekst med en anderledes typografi, menuemne, skifteknap, behandlingslinje, figur og matematisk formel.</p>
-<p>Der er mange nye punktskriftsfunktioner og fejlrettelser. En ny punktskrifttilstand kaldet "vis taleoutput" er blevet tilføjet. Når den er aktiv, viser punktdisplayet, hvad NVDA siger. Der er også tilføjet understøttelse for punktdisplays BrailleEdgeS2, BrailleEdgeS3. LibLouis blev opdateret, og tilføjede nye detaljerede (med store bogstaver angivet) hviderussiske og ukrainske punktskriftstabeller, en punkttabel for Lao, og en spansk tabel til læsning af græske tekster.</p>
+<p>Der er en ny funktion kaldet lydopdeling.
+Funktionen gør det muligt at have NVDA-lyde i én kanal (f.eks. venstre), mens lyde fra alle andre programmer udsendes i den anden kanal (f.eks. højre).</p>
+<p>Der er nye kommandoer til ændring af ringen af talesynteseindstillinger, hvilket giver brugerne mulighed for at springe til den første eller sidste indstilling, og for at øge eller mindske den aktuelle indstilling med større trin.
+Der er også nye hurtignavigationskommandoer, der gør det muligt for brugere at tilknytte tastetryk til hurtigt at hoppe mellem: afsnit, lodret justeret afsnit, tekst med samme typografi, tekst med en anderledes typografi, menuemne, skifteknap, behandlingslinje, figur og matematisk formel.</p>
+<p>Der er mange nye punktskriftsfunktioner og fejlrettelser.
+En ny punktskrifttilstand kaldet "vis taleoutput" er blevet tilføjet.
+Når den er aktiv, viser punktdisplayet, hvad NVDA siger.
+Der er også tilføjet understøttelse for punktdisplays BrailleEdgeS2, BrailleEdgeS3.
+LibLouis blev opdateret, og tilføjede nye detaljerede (med store bogstaver angivet) hviderussiske og ukrainske punktskriftstabeller, en punkttabel for Lao, og en spansk tabel til læsning af græske tekster.</p>
 <p>eSpeak blev opdateret med tilføjelsen af det nye sprog Tigrinya.</p>
 <p>Der er mange mindre fejlrettelser for programmer, såsom Thunderbird, Adobe Reader, webbrowsere, Nudi og Geekbench.</p>
 <h3 id="nye-funktioner_1">Nye funktioner</h3>
@@ -137,127 +145,110 @@ En advarselsbesked vil informere dig, hvis du forsøger at skrive til en mappe, 
 <li>Nye tastaturkommandoer:<ul>
 <li>Ny hurtignavigationskommando <code>p</code> til at hoppe til næste/forrige tekstafsnit i gennemsynstilstand. </li>
 <li>Nye ikke-tildelte hurtignavigationskommandoer, som kan bruges til at hoppe til næste/forrige:<ul>
-<li>figur</li>
-<li>lodret justeret afsnit</li>
-<li>menupunkt</li>
-<li>skifteknap</li>
-<li>behandlingslinje</li>
-<li>matematisk formel</li>
-<li>tekst med samme typografi</li>
-<li>tekst med en anden typografi</li>
+<li>figur  (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10826" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10826">#10826</a>)</li>
+<li>lodret justeret afsnit (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15999" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15999">#15999</a>, <a class="gh-link gh-mention" href="https://github.com/mltony" rel="noopener" target="_blank" title="GitHub User: @mltony">@mltony</a>)</li>
+<li>menupunkt (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16001" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16001">#16001</a>, <a class="gh-link gh-mention" href="https://github.com/mltony" rel="noopener" target="_blank" title="GitHub User: @mltony">@mltony</a>)</li>
+<li>skifteknap (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16001" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16001">#16001</a>, <a class="gh-link gh-mention" href="https://github.com/mltony" rel="noopener" target="_blank" title="GitHub User: @mltony">@mltony</a>)</li>
+<li>behandlingslinje (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16001" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16001">#16001</a>, <a class="gh-link gh-mention" href="https://github.com/mltony" rel="noopener" target="_blank" title="GitHub User: @mltony">@mltony</a>)</li>
+<li>matematisk formel (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16001" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16001">#16001</a>, <a class="gh-link gh-mention" href="https://github.com/mltony" rel="noopener" target="_blank" title="GitHub User: @mltony">@mltony</a>)</li>
+<li>tekst med samme typografi (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16000" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16000">#16000</a>, <a class="gh-link gh-mention" href="https://github.com/mltony" rel="noopener" target="_blank" title="GitHub User: @mltony">@mltony</a>)</li>
+<li>tekst med en anden typografi (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16000" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16000">#16000</a>, <a class="gh-link gh-mention" href="https://github.com/mltony" rel="noopener" target="_blank" title="GitHub User: @mltony">@mltony</a>)</li>
 </ul>
 </li>
 <li>Tilføjede kommandoer til at springe til første, sidste, frem og tilbage gennem indstillingsværdier i ringen for talesynteseindstillinger.<ul>
-<li>Skift til første og sidste værdi for den aktuelle indstilling i ringen af talesynteseindstillinger. Denne har ingen tildelt kommando.</li>
-<li>Formindske og forøge den aktuelle indstilling i ringen af talesynteseindstillinger med større trin:<ul>
+<li>Skift til første og sidste værdi for den aktuelle indstilling i ringen af talesynteseindstillinger. Denne har ingen tildelt kommando. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13768" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13768">#13768</a>)</li>
+<li>Formindske og forøge den aktuelle indstilling i ringen af talesynteseindstillinger med større trin: (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13768" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13768">#13768</a>):<ul>
 <li>Desktop: <code>NVDA+Ctrl+sideOp</code> eller <code>NVDA+Ctrl+sideNed</code></li>
 <li>Laptop: <code>NVDA+Ctrl+Shift+sideOp</code> eller <code>NVDA+Ctrl+Shift+sideNed</code></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Tilføjet en ny ikke-tildelt kommando til at skifte rapportering af figurer og billedtekster.</li>
+<li>Tilføjet en ny ikke-tildelt kommando til at skifte rapportering af figurer og billedtekster. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10826" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10826">#10826</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14349" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14349">#14349</a>)</li>
 </ul>
 </li>
-</ul>
-<ul>
 <li>Punktskrift:<ul>
-<li>Tilføjet support for BrailleEdgeS2, BrailleEdgeS3.</li>
-<li>En ny punktskrifttilstand kaldet "vis taleoutput" er blevet tilføjet.<ul>
+<li>Tilføjet support for BrailleEdgeS2, BrailleEdgeS3. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16033" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16033">#16033</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16279" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16279">#16279</a>, <a class="gh-link gh-mention" href="https://github.com/EdKweon" rel="noopener" target="_blank" title="GitHub User: @EdKweon">@EdKweon</a>)</li>
+<li>En ny punktskrifttilstand kaldet "vis taleoutput" er blevet tilføjet. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15898" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15898">#15898</a>, <a class="gh-link gh-mention" href="https://github.com/Emil-18" rel="noopener" target="_blank" title="GitHub User: @Emil-18">@Emil-18</a>)<ul>
 <li>Når aktiv, viser dit punktdisplay, hvad NVDA siger.</li>
-<li>Kan aktiveres ved at trykke <code>NVDA+alt+t</code>, eller fra punktskriftsindstillingsdialogen.</li>
+<li>Kan aktiveres ved at trykke <code>NVDA+alt+t</code>, eller fra punktskriftsindstillingsdialogen.   </li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>Lydopdeling:<ul>
+<li>Lydopdeling: (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12985" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12985">#12985</a>, <a class="gh-link gh-mention" href="https://github.com/mltony" rel="noopener" target="_blank" title="GitHub User: @mltony">@mltony</a>)<ul>
 <li>Gør det muligt at dele NVDA-lyde i én kanal (f.eks. venstre) mens lyde fra alle andre programmer udsendes i den anden kanal (f.eks. højre).</li>
-<li>Aktiveres med <code>NVDA+alt+s</code>.</li>
+<li>Aktiveres med <code>NVDA+alt+s</code>.  </li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>Rapportering af række- og kolonneoverskrifter understøttes nu i redigerbare HTML-elementer med indhold.</li>
-<li>Tilføjet muligheden for at deaktivere rapportering af figurer og billedtekster i indstillinger for dokumentformatering.</li>
-<li>I Windows 11 vil NVDA annoncere meddelelser fra stemmeindtastning og foreslåede handlinger, herunder det øverste forslag, når data som telefonnumre kopieres til udklipsholderen (Windows 11 2022-opdatering og senere).</li>
-<li>NVDA kan holde lydenheden i gang efter at tale er stoppet, for at forhindre at starten af næste tale bliver afbrudt med nogle lydenheder som Bluetooth-hovedtelefoner.</li>
-<li>HP Secure Browser er nu understøttet.</li>
+<li>Rapportering af række- og kolonneoverskrifter understøttes nu i redigerbare HTML-elementer med indhold. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14113" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14113">#14113</a>)</li>
+<li>Tilføjet muligheden for at deaktivere rapportering af figurer og billedtekster i indstillinger for dokumentformatering. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/10826" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #10826">#10826</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14349" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14349">#14349</a>)</li>
+<li>I Windows 11 vil NVDA annoncere meddelelser fra stemmeindtastning og foreslåede handlinger, herunder det øverste forslag, når data som telefonnumre kopieres til udklipsholderen (Windows 11 2022-opdatering og senere). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16009" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16009">#16009</a>, <a class="gh-link gh-mention" href="https://github.com/josephsl" rel="noopener" target="_blank" title="GitHub User: @josephsl">@josephsl</a>)</li>
+<li>NVDA kan holde lydenheden i gang efter at tale er stoppet, for at forhindre at starten af næste tale bliver afbrudt med nogle lydenheder som Bluetooth-hovedtelefoner. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14386" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14386">#14386</a>, <a class="gh-link gh-mention" href="https://github.com/jcsteh" rel="noopener" target="_blank" title="GitHub User: @jcsteh">@jcsteh</a>, <a class="gh-link gh-mention" href="https://github.com/mltony" rel="noopener" target="_blank" title="GitHub User: @mltony">@mltony</a>)</li>
+<li>HP Secure Browser er nu understøttet. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16377" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16377">#16377</a>)</li>
 </ul>
 <h3 id="ndringer_1">Ændringer</h3>
 <ul>
 <li>Tilføjelsescenter:<ul>
-<li>Den mindste og den sidst testede NVDA-version for en tilføjelse vises nu i området "andre detaljer".</li>
-<li>Handlingen for fællesskabets anmeldelser vil være tilgængelig i alle faner i centeret.</li>
+<li>Den mindste og den sidst testede NVDA-version for en tilføjelse vises nu i området "andre detaljer". (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15776" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15776">#15776</a>, <a class="gh-link gh-mention" href="https://github.com/Nael-Sayegh" rel="noopener" target="_blank" title="GitHub User: @Nael-Sayegh">@Nael-Sayegh</a>)</li>
+<li>Handlingen for fællesskabets anmeldelser vil være tilgængelig i alle faner i centeret. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16179" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16179">#16179</a>, <a class="gh-link gh-mention" href="https://github.com/nvdaes" rel="noopener" target="_blank" title="GitHub User: @nvdaes">@nvdaes</a>)</li>
 </ul>
 </li>
-</ul>
-<ul>
 <li>Komponentopdateringer:<ul>
-<li>Opdateret LibLouis punktskriftsoversætter til 3.29.0.<ul>
+<li>Opdateret LibLouis punktskriftsoversætter til 3.29.0. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16259" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16259">#16259</a>, <a class="gh-link gh-mention" href="https://github.com/codeofdusk" rel="noopener" target="_blank" title="GitHub User: @codeofdusk">@codeofdusk</a>)<ul>
 <li>Tilføjet nye detaljerede (med store bogstaver angivet) hviderussiske og ukrainske punktskriftstabeller.</li>
 <li>Ny spansk tabel til læsning af græske tekster.</li>
-<li>Ny tabel for Lao Niveau 1.</li>
+<li>Ny tabel for Lao Niveau 1. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16470" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16470">#16470</a>)</li>
 </ul>
 </li>
-<li>eSpeak NG er blevet opdateret til 1.52-dev commit <code>cb62d93fd7</code>.<ul>
+<li>eSpeak NG er blevet opdateret til 1.52-dev commit <code>cb62d93fd7</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15913" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15913">#15913</a>)<ul>
 <li>Tilføjet nyt sprog Tigrinya.</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>Ændret flere kommandoer for BrailleSense-enheder for at undgå konflikter med tegn fra den franske punktskriftstabel.<ul>
+<li>Ændret flere kommandoer for BrailleSense-enheder for at undgå konflikter med tegn fra den franske punktskriftstabel. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15306" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15306">#15306</a>)<ul>
 <li><code>alt+venstre pil</code> er nu tildelt <code>punkt2+punkt7+mellemrum</code>.</li>
 <li><code>alt+højre pil</code> er nu tildelt <code>punkt5+punkt7+mellemrum</code>.</li>
 <li><code>alt+pil op</code> er nu tildelt <code>punkt2+punkt3+punkt7+mellemrum</code>.</li>
 <li><code>alt+pil ned</code> er nu tildelt <code>punkt5+punkt6+punkt7+mellemrum</code>.</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>Prikker, der almindeligvis bruges i indholdsfortegnelser, rapporteres ikke længere på lave tegnsætningsniveauer.</li>
+<li>Prikker, der almindeligvis bruges i indholdsfortegnelser, rapporteres ikke længere på lave tegnsætningsniveauer. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15845" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15845">#15845</a>, <a class="gh-link gh-mention" href="https://github.com/CyrilleB79" rel="noopener" target="_blank" title="GitHub User: @CyrilleB79">@CyrilleB79</a>)</li>
 </ul>
 <h3 id="fejlrettelser_1">Fejlrettelser</h3>
 <ul>
 <li>Windows 11-rettelser:<ul>
-<li>NVDA vil igen oplyse forslag til hardwaretastaturindtastning.</li>
-<li>I version 24H2 (2024-opdatering og Windows Server 2025) kan mus og berøringsinteraktion bruges i hurtige indstillinger.</li>
+<li>NVDA vil igen oplyse forslag til hardwaretastaturindtastning. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16283" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16283">#16283</a>, <a class="gh-link gh-mention" href="https://github.com/josephsl" rel="noopener" target="_blank" title="GitHub User: @josephsl">@josephsl</a>)</li>
+<li>I version 24H2 (2024-opdatering og Windows Server 2025) kan mus og berøringsinteraktion bruges i hurtige indstillinger. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16348" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16348">#16348</a>, <a class="gh-link gh-mention" href="https://github.com/josephsl" rel="noopener" target="_blank" title="GitHub User: @josephsl">@josephsl</a>)</li>
 </ul>
 </li>
-</ul>
-<ul>
 <li>Tilføjelsescenter:<ul>
-<li>Når der trykkes på <code>ctrl+tab</code>, flyttes fokus korrekt til den nye aktuelle faneoverskrift.</li>
-<li>Hvis filer i NVDAs cache ikke er korrekte, vil NVDA ikke længere konstant genstarte.</li>
+<li>Når der trykkes på <code>ctrl+tab</code>, flyttes fokus korrekt til den nye aktuelle faneoverskrift. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14986" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14986">#14986</a>, <a class="gh-link gh-mention" href="https://github.com/ABuffEr" rel="noopener" target="_blank" title="GitHub User: @ABuffEr">@ABuffEr</a>)</li>
+<li>Hvis filer i NVDAs cache ikke er korrekte, vil NVDA ikke længere konstant genstarte. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16362" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16362">#16362</a>, <a class="gh-link gh-mention" href="https://github.com/nvdaes" rel="noopener" target="_blank" title="GitHub User: @nvdaes">@nvdaes</a>)</li>
 </ul>
 </li>
-</ul>
-<ul>
 <li>Rettelser for Chromium-baserede browsere, når de bruges med UIA:<ul>
-<li>Rettet fejl, der forårsagede, at NVDA sad fast.</li>
-<li>Backspace-tasten virker nu korrekt i Gmail-log-ind-felter.</li>
+<li>Rettet fejl, der forårsagede, at NVDA sad fast. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16393" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16393">#16393</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16394" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16394">#16394</a>)</li>
+<li>Backspace-tasten virker nu korrekt i Gmail-log-ind-felter. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16395" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16395">#16395</a>)</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>Backspace virker nu korrekt, når Nudi 6.1 bruges med NVDA's indstilling "Håndtér tastetryk fra andre programmer" aktiveret.</li>
-<li>Rettet en fejl, hvor lydkoordinater ville blive afspillet, mens applikationen er i dvaletilstand, når "Afspil lydkoordinater, når musen bevæger sig" er aktiveret.</li>
-<li>I Adobe Reader ignorerer NVDA ikke længere alternativ tekst, der benyttes i formularer i PDF'er.</li>
-<li>Rettet en fejl, der forårsagede, at NVDA ikke kunne læse båndet og indstillingerne i Geekbench.</li>
-<li>Rettet et sjældent tilfælde, hvor gemning af konfigurationen kunne fejle, når NVDA gemmer alle profiler.</li>
-<li>I Firefox og Chromium-baserede browsere vil NVDA korrekt gå ind i fokus-tilstand, når der trykkes enter, når man er placeret i en punktopstilling (med tal og punkttegn) i redigerbart indhold.</li>
-<li>Kolonnetilstandsændring rapporteres automatisk, når kolonner vælges til visning i Thunderbirds meddelelsesliste.</li>
-<li>Kommandolinjeparametre <code>-h</code>/<code>--help</code> virker nu igen.</li>
-<li>NVDAs understøttelse for PoEdit version 3.4 eller nyere fungerer nu igen korrekt, hvis du oversætter til et sprog med én eller flere flertalsformer (f.eks. kinesisk eller polsk).</li>
+<li>Backspace virker nu korrekt, når Nudi 6.1 bruges med NVDA's indstilling "Håndtér tastetryk fra andre programmer" aktiveret. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15822" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15822">#15822</a>, <a class="gh-link gh-mention" href="https://github.com/jcsteh" rel="noopener" target="_blank" title="GitHub User: @jcsteh">@jcsteh</a>)</li>
+<li>Rettet en fejl, hvor lydkoordinater ville blive afspillet, mens applikationen er i dvaletilstand, når "Afspil lydkoordinater, når musen bevæger sig" er aktiveret. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/8059" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #8059">#8059</a>, <a class="gh-link gh-mention" href="https://github.com/hwf1324" rel="noopener" target="_blank" title="GitHub User: @hwf1324">@hwf1324</a>)</li>
+<li>I Adobe Reader ignorerer NVDA ikke længere alternativ tekst, der benyttes i formularer i PDF'er. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12715" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12715">#12715</a>)</li>
+<li>Rettet en fejl, der forårsagede, at NVDA ikke kunne læse båndet og indstillingerne i Geekbench. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16251" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16251">#16251</a>, <a class="gh-link gh-mention" href="https://github.com/mzanm" rel="noopener" target="_blank" title="GitHub User: @mzanm">@mzanm</a>)</li>
+<li>Rettet et sjældent tilfælde, hvor gemning af konfigurationen kunne fejle, når NVDA gemmer alle profiler. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16343" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16343">#16343</a>, <a class="gh-link gh-mention" href="https://github.com/CyrilleB79" rel="noopener" target="_blank" title="GitHub User: @CyrilleB79">@CyrilleB79</a>)</li>
+<li>I Firefox og Chromium-baserede browsere vil NVDA korrekt gå ind i fokus-tilstand, når der trykkes enter, når man er placeret i en punktopstilling (med tal og punkttegn) i redigerbart indhold. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16325" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16325">#16325</a>)</li>
+<li>Kolonnetilstandsændring rapporteres automatisk, når kolonner vælges til visning i Thunderbirds meddelelsesliste. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16323" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16323">#16323</a>)</li>
+<li>Kommandolinjeparametre <code>-h</code>/<code>--help</code> virker nu igen. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16522" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16522">#16522</a>, <a class="gh-link gh-mention" href="https://github.com/XLTechie" rel="noopener" target="_blank" title="GitHub User: @XLTechie">@XLTechie</a>)</li>
+<li>NVDAs understøttelse for PoEdit version 3.4 eller nyere fungerer nu igen korrekt, hvis du oversætter til et sprog med én eller flere flertalsformer (f.eks. kinesisk eller polsk). (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16318" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16318">#16318</a>)</li>
 </ul>
 <h3 id="ndringer-for-udviklere_1">Ændringer for udviklere</h3>
+<p>Læs venligst <a href="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API" rel="noopener" target="_blank" title="Udviklerguiden">Udviklerguiden</a> for information on NVDA's API deprecation and removal process.</p>
 <ul>
-<li>Instansiering af <code>winVersion.WinVersion</code>-objekter med ukendte Windows-versioner over 10.0.22000, såsom 10.0.25398, returnerer nu "Windows 11 unknown" i stedet for "Windows 10 unknown" som versionsnavn.</li>
-<li>Gør AppVeyor-byggeprocessen nemmere for NVDA-forks ved at tilføje konfigurerbare variabler i <code>appveyor.yml</code> til at deaktivere eller ændre NV Access-specifikke dele af build-scripts.</li>
-<li>Tilføjet et "how-to"-dokument, der forklarer processen med at bygge NVDA-forks på AppVeyor.</li>
+<li>Instansiering af <code>winVersion.WinVersion</code>-objekter med ukendte Windows-versioner over 10.0.22000, såsom 10.0.25398, returnerer nu "Windows 11 unknown" i stedet for "Windows 10 unknown" som versionsnavn. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15992" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15992">#15992</a>, <a class="gh-link gh-mention" href="https://github.com/josephsl" rel="noopener" target="_blank" title="GitHub User: @josephsl">@josephsl</a>)</li>
+<li>Gør AppVeyor-byggeprocessen nemmere for NVDA-forks ved at tilføje konfigurerbare variabler i <code>appveyor.yml</code> til at deaktivere eller ændre NV Access-specifikke dele af build-scripts. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16216" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16216">#16216</a>, <a class="gh-link gh-mention" href="https://github.com/XLTechie" rel="noopener" target="_blank" title="GitHub User: @XLTechie">@XLTechie</a>)</li>
+<li>Tilføjet et "how-to"-dokument, der forklarer processen med at bygge NVDA-forks på AppVeyor. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/16293" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #16293">#16293</a>, <a class="gh-link gh-mention" href="https://github.com/XLTechie" rel="noopener" target="_blank" title="GitHub User: @XLTechie">@XLTechie</a>)</li>
 </ul>
 <h2 id="20241">2024.1</h2>
 <p>En ny taletilstand (efter behov) er blevet tilføjet.
@@ -722,7 +713,7 @@ Der er også nye BRLTTY-kommandoer.</p>
 <ul>
 <li>Punktdisplays:<ul>
 <li>Når teksten i en terminal ændres uden opdatering af systemmarkøren, vil teksten på et punktdisplay nu korrekt opdatere, når den er placeret på en ændret linje.
-  Dette inkluderer situationer, hvor punktskrift er tøjret til læsemarkøren. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15115" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15115">#15115</a>)</li>
+Dette inkluderer situationer, hvor punktskrift er tøjret til læsemarkøren. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15115" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15115">#15115</a>)</li>
 <li>Flere BRLTTY-tastetryk er nu tildelt NVDA-kommandoer (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/6483" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #6483">#6483</a>):<ul>
 <li><code>learn</code>: Slå tastaturhjælp til og fra</li>
 <li><code>prefmenu</code>: Åbn NVDA-menuen</li>
@@ -734,7 +725,7 @@ Der er også nye BRLTTY-kommandoer.</p>
 </li>
 <li>BRLTTY-driveren er kun tilgængelig, når en BRLTTY-instans med BrlAPI aktiveret kører. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15335" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15335">#15335</a>)</li>
 <li>Den avancerede indstilling til at aktivere support til HID-punktdisplay er blevet fjernet til fordel for en ny indstilling.
-  Du kan nu deaktivere specifikke drivere for automatisk detektion af punktdisplay i dialogboksen til valg af punktdisplay. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15196" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15196">#15196</a>)</li>
+Du kan nu deaktivere specifikke drivere for automatisk detektion af punktdisplay i dialogboksen til valg af punktdisplay. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15196" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15196">#15196</a>)</li>
 </ul>
 </li>
 <li>Tilføjelsescenter: Installerede tilføjelsesprogrammer vil nu blive vist i fanen Tilgængelige tilføjelser, hvis de er tilgængelige i Tilføjelsescenteret. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15374" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15374">#15374</a>)</li>
@@ -772,28 +763,29 @@ Der er også nye BRLTTY-kommandoer.</p>
 <li>Rettet en potentiel årsag til nedbrud under NVDA-opstart. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15517" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15517">#15517</a>)</li>
 </ul>
 <h3 id="ndringer-for-udviklere_3">Ændringer for udviklere</h3>
+<p>Læs venligst <a href="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API" rel="noopener" target="_blank" title="Udviklerdokumentationen">Udviklerdokumentationen</a> for information om NVDA's API-afskrivning- og fjernelsproces.</p>
 <ul>
 <li><code>braille.handler.handleUpdate</code> og <code>braille.handler.handleReviewMove</code> er blevet ændret, så de ikke opdaterer øjeblikkeligt.
   Før denne ændring, når en af disse metoder blev kaldt meget ofte, ville det dræne mange ressourcer.
   Disse metoder køer nu en opdatering i slutningen af hver kernecyklus i stedet.
   De bør også være trådsikre, hvilket gør det muligt at kalde dem fra baggrundstråde. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15163" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15163">#15163</a>)</li>
 <li>Tilføjet officiel support til at registrere brugerdefinerede punktdisplaydrivere i den automatiske punktdisplaydetektionsproces.
-  Konsulter <code>braille.BrailleDisplayDriver</code> klassedokumentationen for flere detaljer.
-  Især skal attributten <code>supportsAutomaticDetection</code> sættes til <code>True</code>, og <code>registerAutomaticDetection</code> <code>classmethod</code> skal implementeres. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15196" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15196">#15196</a>)</li>
+Konsulter <code>braille.BrailleDisplayDriver</code> klassedokumentationen for flere detaljer.
+Især skal attributten <code>supportsAutomaticDetection</code> sættes til <code>True</code>, og <code>registerAutomaticDetection</code> <code>classmethod</code> skal implementeres. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15196" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15196">#15196</a>)</li>
 </ul>
 <h4 id="afskrivninger_1">Afskrivninger</h4>
 <ul>
 <li><code>braille.BrailleHandler.handlePendingCaretUpdate</code> er nu afskrevet uden offentlig erstatning.
-  Den vil blive fjernet i 2024.1. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15163" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15163">#15163</a>)</li>
+Den vil blive fjernet i 2024.1. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15163" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15163">#15163</a>)</li>
 <li>Import af konstanterne <code>xlCenter</code>, <code>xlJustify</code>, <code>xlLeft</code>, <code>xlRight</code>, <code>xlDistributed</code>, <code>xlBottom</code>, <code>xlTop</code> fra <code>NVDAObjects.window.excel</code> er afskrevet.
-  Brug i stedet <code>XlHAlign</code> eller <code>XlVAlign</code> enumerationer. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15205" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15205">#15205</a>)</li>
+Brug i stedet <code>XlHAlign</code> eller <code>XlVAlign</code> enumerationer. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15205" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15205">#15205</a>)</li>
 <li>Mappingen <code>NVDAObjects.window.excel.alignmentLabels</code> er afskrevet.
-  Brug i stedet <code>displayString</code> metoderne for <code>XlHAlign</code> eller <code>XlVAlign</code> enumerationer. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15205" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15205">#15205</a>)</li>
+Brug i stedet <code>displayString</code> metoderne for <code>XlHAlign</code> eller <code>XlVAlign</code> enumerationer. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15205" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15205">#15205</a>)</li>
 <li><code>bdDetect.addUsbDevices</code> og <code>bdDetect.addBluetoothDevices</code> er afskrevet.
-  Punktdisplaydrivere bør i stedet implementere <code>registerAutomaticDetection</code> klassemetoden.
-  Den metode modtager et <code>DriverRegistrar</code> objekt, hvorpå <code>addUsbDevices</code> og <code>addBluetoothDevices</code> metoderne kan bruges. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15200" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15200">#15200</a>)</li>
+Punktdisplaydrivere bør i stedet implementere <code>registerAutomaticDetection</code> klassemetoden.
+Den metode modtager et <code>DriverRegistrar</code> objekt, hvorpå <code>addUsbDevices</code> og <code>addBluetoothDevices</code> metoderne kan bruges. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15200" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15200">#15200</a>)</li>
 <li>Standardimplementeringen af check-metoden på <code>BrailleDisplayDriver</code> bruger <code>bdDetect.driverHasPossibleDevices</code> for enheder, der er markeret som trådsikre.
-  Fra og med NVDA 2024.1, for at basismetoden kan bruge <code>bdDetect.driverHasPossibleDevices</code>, skal attributten <code>supportsAutomaticDetection</code> også sættes til <code>True</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15200" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15200">#15200</a>)</li>
+Fra og med NVDA 2024.1, for at basismetoden kan bruge <code>bdDetect.driverHasPossibleDevices</code>, skal attributten <code>supportsAutomaticDetection</code> også sættes til <code>True</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15200" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15200">#15200</a>)</li>
 </ul>
 <h2 id="20232">2023.2</h2>
 <p>Denne version af NVDA introducerer Tilføjelsescenteret, der erstatter den tidligere styring af tilføjelser.
@@ -831,7 +823,7 @@ Navigation og rapportering af formatering i Microsoft Office er forbedret.</p>
 <li>Når man trykker på <code>numpad2</code> tre gange for at rapportere den numeriske værdi af tegnet ved læsemarkørens position, vises oplysningerne nu også på punkt. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14826" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14826">#14826</a>)</li>
 <li>Tilføjet understøttelse for <code>aria-punktroledescription</code> ARIA 1.3 attribut, som giver webudviklere mulighed for at overskrive typen af et element vist i punktskriftsviseren. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14748" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14748">#14748</a>)</li>
 <li>Baum braille driver: Tilføjet nogle tastetryk der udfører ofte-benyttede kommandoer, når de skrives på disse punktdisplays, herunder <code>windows+d</code> og <code>alt+tab</code>.
-  Læs venligst NVDAs brugervejledning for den fulde liste over kommandoer. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14714" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14714">#14714</a>)</li>
+Læs venligst NVDAs brugervejledning for den fulde liste over kommandoer. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14714" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14714">#14714</a>)</li>
 </ul>
 </li>
 <li>Tilføjet udtalelse af Unicode-symboler:<ul>
@@ -858,7 +850,7 @@ Navigation og rapportering af formatering i Microsoft Office er forbedret.</p>
 <li>Forsøgsvise forbedringer til håndtering af lyd med NVDA:<ul>
 <li>NVDA udsender nu lyd via Windows Audio Session API (WASAPI), hvilket kan forbedre reaktionstiden, ydeevnen og stabiliteten af NVDAs tale og lyde.</li>
 <li>Dette kan deaktiveres i avancerede indstillinger, hvis der opstår lydproblemer. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14697" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14697">#14697</a>)
-  Hvis WASAPI er aktiveret, kan du også tilpasse følgende avancerede indstillinger:<ul>
+Hvis WASAPI er aktiveret, kan du også tilpasse følgende avancerede indstillinger:<ul>
 <li>En indstilling, der gør det muligt for NVDA's lyde og bip at følge stemmens lydstyrkeindstilling. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1409" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1409">#1409</a>)</li>
 <li>En indstilling for at justere lydstyrken af NVDA's lyde separat. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/1409" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #1409">#1409</a>, <a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15038" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15038">#15038</a>)</li>
 </ul>
@@ -887,9 +879,9 @@ Navigation og rapportering af formatering i Microsoft Office er forbedret.</p>
 </li>
 <li>Ændringer for punkt:<ul>
 <li>Når du bruger et punktdisplay via Standard HID punktdriveren, kan dpad bruges til at efterligne piletasterne og enter.
-  Mellemrum+punkt1 og mellemrum+punkt4 fungerer nu også som forventet som pil op og ned. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14713" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14713">#14713</a>)</li>
+Mellemrum+punkt1 og mellemrum+punkt4 fungerer nu også som forventet som pil op og ned. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14713" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14713">#14713</a>)</li>
 <li>Opdateringer til dynamisk webindhold (aria live regions) vises nu på punktskrift.
-  Dette kan deaktiveres i NVDAs avancerede indstillinger. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7756" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7756">#7756</a>)</li>
+Dette kan deaktiveres i NVDAs avancerede indstillinger. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/7756" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #7756">#7756</a>)</li>
 </ul>
 </li>
 <li>Symboler for bindestreg og kort/lang tankestreg vil altid blive sendt til talesyntesen. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13830" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13830">#13830</a>)</li>
@@ -906,7 +898,7 @@ Navigation og rapportering af formatering i Microsoft Office er forbedret.</p>
 <li>Flere stabilitetsrettelser angående input og output for punktdisplays, hvilket resulterer i mindre hyppige fejl og nedbrud af NVDA: (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
 <li>NVDA vil ikke længere unødigt skifte til "ingen punkt" flere gange under automatisk detektering af punktdisplays, hvilket resulterer i en renere log og et mindre unødvendigt ressourceforbrug. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14524" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14524">#14524</a>)</li>
 <li>NVDA vil nu skifte tilbage til USB, hvis en HID Bluetooth-enhed (såsom HumanWare Brailliant eller APH Mantis) automatisk detekteres, og en USB-forbindelse bliver tilgængelig.
-  Dette fungerede kun for Bluetooth-serielle porte tidligere. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14524" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14524">#14524</a>)</li>
+Dette fungerede kun for Bluetooth-serielle porte tidligere. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14524" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14524">#14524</a>)</li>
 <li>Når intet punktdisplay er forbundet og punktskriftsviseren lukkes med <code>alt+f4</code> eller ved at klikke på knappen "Luk", vil displaystørrelsen for punktsystemet korrekt blive nulstillet til "ingen celler". (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15214" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15214">#15214</a>)</li>
 </ul>
 </li>
@@ -917,7 +909,7 @@ Navigation og rapportering af formatering i Microsoft Office er forbedret.</p>
 <li>I Mozilla Firefox rapporteres teksten nu pålideligt, når musen bevæges over tekst efter et link. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/9235" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #9235">#9235</a>)</li>
 <li>Destinationen for grafiske links rapporteres nu mere præcist i flere tilfælde i Chrome og Edge. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14779" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14779">#14779</a>)</li>
 <li>Når du forsøger at rapportere URL'en for et link uden en href-attribut, er NVDA ikke længere stille.
-  I stedet oplyser NVDA, at linket ikke har nogen destination. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14723" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14723">#14723</a>)</li>
+I stedet oplyser NVDA, at linket ikke har nogen destination. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14723" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14723">#14723</a>)</li>
 <li>I gennemsynstilstand vil NVDA ikke længere fejlagtigt ignorere fokus, der flytter til en overordnet eller underordnet kontrol, f.eks. flytning fra en kontrol til dens overordnede listeemne eller gittercelle. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14611" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14611">#14611</a>)<ul>
 <li>Bemærk dog, at denne rettelse kun gælder, når indstillingen "Automatisk fokustilstand ved ændring af fokus" i indstillingerne for gennemsynstilstand er slået fra (som er standard).</li>
 </ul>
@@ -947,12 +939,13 @@ Navigation og rapportering af formatering i Microsoft Office er forbedret.</p>
 <li>NVDA reagerer nu generelt lidt hurtigere på kommandoer og fokusændringer. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14928" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14928">#14928</a>)</li>
 <li>Visning af indstillingerne for tekstgenkendelse i NVDA vil ikke længere fejle på nogle systemer. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15017" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15017">#15017</a>)</li>
 <li>Fejlretning i forbindelse med gemning og indlæsning af NVDA-indstillingerne, herunder skift af talesyntesen. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14760" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14760">#14760</a>)</li>
+<li>Rettet en fejl, der fik tekstlæsningskommandoen "svirp op" på en touchskærm til at flytte mellem sider i stedet for til forrige linje. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15127" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15127">#15127</a>)</li>
 </ul>
 <h3 id="ndringer-for-udviklere_4">Ændringer for udviklere</h3>
-<p>Venligst henvis til <a href="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API" rel="noopener" target="_blank" title="udviklerguiden">udviklerguiden</a> for information om NVDAs API-afskrivnings- og fjernelsesproces.</p>
+<p>Læs venligst <a href="https://www.nvaccess.org/files/nvda/documentation/developerGuide.html#API" rel="noopener" target="_blank" title="udviklerguiden">udviklerguiden</a> for information om NVDAs API-afskrivnings- og fjernelsesproces.</p>
 <ul>
 <li>Foreslåede konventioner er blevet tilføjet til tilføjelsesmanifest-specifikationen.
-  Disse er valgfrie for NVDA-kompatibilitet, men opfordres eller kræves ved indsendelse til Tilføjelsescenteret. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14754" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14754">#14754</a>)<ul>
+Disse er valgfrie for NVDA-kompatibilitet, men opfordres eller kræves ved indsendelse til Tilføjelsescenteret. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14754" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14754">#14754</a>)<ul>
 <li>Brug <code>lowerCamelCase</code> for navnefeltet.</li>
 <li>Brug formatet <code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code> for versionsfeltet (krævet for tilføjelsesdatabasen).</li>
 <li>Brug <code>https://</code> som schema for URL-feltet (krævet for tilføjelsesdatabasen).</li>
@@ -960,38 +953,38 @@ Navigation og rapportering af formatering i Microsoft Office er forbedret.</p>
 </li>
 <li>Tilføjet en ny udvidelsespunkt-type kaldet <code>Chain</code>, som kan bruges til at iterere over iterables returneret af registrerede håndtere. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14531" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14531">#14531</a>)</li>
 <li>Tilføjet <code>bdDetect.scanForDevices</code> udvidelsespunktet.
-  Håndtere kan registreres, der returnerer <code>BrailleDisplayDriver/DeviceMatch</code> par, der ikke passer ind i eksisterende kategorier som USB eller Bluetooth. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14531" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14531">#14531</a>)</li>
-<li>Tilføjet udvidelsespunkt: <code>synthDriverHandler.synthChanged</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14618" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14618">#14618</a>)</li>
-<li>NVDAs synteseringsindstillingsring cacher nu tilgængelige indstillingsværdier første gang de er nødvendige, i stedet for når syntesen indlæses. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14704" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14704">#14704</a>)</li>
-<li>Du kan nu kalde export-metoden på et gestus-kort for at eksportere det til en ordbog.
-  Denne ordbog kan importeres i en anden gestus ved at videregive den enten til konstruktøren af <code>GlobalGestureMap</code> eller til opdateringsmetoden på et eksisterende kort. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14582" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14582">#14582</a>)</li>
+Handlerer kan registreres, der returnerer <code>BrailleDisplayDriver/DeviceMatch</code> par, der ikke passer ind i eksisterende kategorier som USB eller Bluetooth. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14531" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14531">#14531</a>)</li>
+<li>Tilføjet extension Point: <code>synthDriverHandler.synthChanged</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14618" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14618">#14618</a>)</li>
+<li>NVDAs ring af talesynteseindstillinger cacher nu tilgængelige indstillingsværdier første gang de er nødvendige, i stedet for når syntesen indlæses. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14704" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14704">#14704</a>)</li>
+<li>Du kan nu kalde export-metoden på en gesture-map for at eksportere det til en ordbog.
+Denne ordbog kan importeres i en anden gesture ved at videregive den enten til konstruktøren af <code>GlobalGestureMap</code> eller til opdateringsmetoden på en eksisterende map. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14582" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14582">#14582</a>)</li>
 <li><code>hwIo.base.IoBase</code> og dets afledte klasser har nu en ny konstruktørparameter til at tage en <code>hwIo.ioThread.IoThread</code>.
-  Hvis ikke angivet, bruges standardtråden. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
+Hvis ikke angivet, bruges standardtråden. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
 <li><code>hwIo.ioThread.IoThread</code> har nu en <code>setWaitableTimer</code> metode til at sætte en ventbar timer ved hjælp af en Python-funktion.
-  Tilsvarende tillader den nye <code>getCompletionRoutine</code> metode dig at konvertere en Python-metode til en fuldførelsesrutine sikkert. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
+Tilsvarende tillader den nye <code>getCompletionRoutine</code> metode dig at konvertere en Python-metode til en fuldførelsesrutine sikkert. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
 <li><code>offsets.OffsetsTextInfo._get_boundingRects</code> bør nu altid returnere <code>List[locationHelper.rectLTWH]</code> som forventet for en underklasse af <code>textInfos.TextInfo</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12424" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12424">#12424</a>)</li>
-<li><code>highlight-color</code> er nu et formatfeltattribut. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14610" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14610">#14610</a>)</li>
+<li><code>highlight-color</code> er nu en formatfeltattribut. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14610" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14610">#14610</a>)</li>
 <li>NVDA bør mere præcist bestemme, om en logget besked kommer fra NVDA-kernen. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14812" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14812">#14812</a>)</li>
 <li>NVDA vil ikke længere logge unøjagtige advarsler eller fejl om afskrevne app-moduler. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14806" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14806">#14806</a>)</li>
-<li>Alle NVDA-udvidelsespunkter er nu kort beskrevet i et nyt, dedikeret kapitel i udviklerguiden. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14648" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14648">#14648</a>)</li>
+<li>Alle NVDA extension points er nu kort beskrevet i et nyt, dedikeret kapitel i udviklerguiden. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14648" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14648">#14648</a>)</li>
 <li><code>scons checkpot</code> vil ikke længere tjekke <code>userConfig</code> undermappen. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14820" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14820">#14820</a>)</li>
 <li>Oversættelige strenge kan nu defineres med en entals- og en flertalsform ved hjælp af <code>ngettext</code> og <code>npgettext</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/12445" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #12445">#12445</a>)</li>
 </ul>
 <h4 id="afskrivninger_2">Afskrivninger</h4>
 <ul>
-<li>At passere lambda-funktioner til <code>hwIo.ioThread.IoThread.queueAsApc</code> er afskrevet.
-  I stedet bør funktioner kunne refereres svagt. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
+<li>At sende lambda-funktioner til <code>hwIo.ioThread.IoThread.queueAsApc</code> er afskrevet.
+I stedet bør funktioner kunne  refereres via en svag reference. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
 <li>Import af <code>LPOVERLAPPED_COMPLETION_ROUTINE</code> fra <code>hwIo.base</code> er afskrevet.
-  Importer i stedet fra <code>hwIo.ioThread</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
+Importer i stedet fra <code>hwIo.ioThread</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14627" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14627">#14627</a>)</li>
 <li><code>IoThread.autoDeleteApcReference</code> er afskrevet.
-  Den blev introduceret i NVDA 2023.1 og var aldrig beregnet til at være en del af den offentlige API.
-  Indtil fjernelse opfører den sig som en no-op, dvs. en context manager, der ikke returnerer noget. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14924" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14924">#14924</a>)</li>
+Den blev introduceret i NVDA 2023.1 og var aldrig beregnet til at være en del af den offentlige API.
+Indtil fjernelse opfører den sig som en no-op, dvs. en context manager, der ikke returnerer noget. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14924" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14924">#14924</a>)</li>
 <li><code>gui.MainFrame.onAddonsManagerCommand</code> er afskrevet, brug <code>gui.MainFrame.onAddonStoreCommand</code> i stedet. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/13985" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #13985">#13985</a>)</li>
 <li><code>speechDictHandler.speechDictVars.speechDictsPath</code> er afskrevet, brug <code>NVDAState.WritePaths.speechDictsDir</code> i stedet. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15021" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15021">#15021</a>)</li>
 <li>Import af <code>voiceDictsPath</code> og <code>voiceDictsBackupPath</code> fra <code>speechDictHandler.dictFormatUpgrade</code> er afskrevet.
-  Brug i stedet <code>WritePaths.voiceDictsDir</code> og <code>WritePaths.voiceDictsBackupDir</code> fra <code>NVDAState</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15048" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15048">#15048</a>)</li>
+Brug i stedet <code>WritePaths.voiceDictsDir</code> og <code>WritePaths.voiceDictsBackupDir</code> fra <code>NVDAState</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15048" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15048">#15048</a>)</li>
 <li><code>config.CONFIG_IN_LOCAL_APPDATA_SUBKEY</code> er afskrevet.
-  Brug i stedet <code>config.RegistryKey.CONFIG_IN_LOCAL_APPDATA_SUBKEY</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15049" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15049">#15049</a>)</li>
+Brug i stedet <code>config.RegistryKey.CONFIG_IN_LOCAL_APPDATA_SUBKEY</code>. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/15049" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #15049">#15049</a>)</li>
 </ul>
 <h2 id="20231">2023.1</h2>
 <p>Der er tilføjet en ny kategori, der hedder "Dokumentnavigation" i NVDAs indstillinger. Her findes indstillingen "Navigering af afsnit".
@@ -1011,7 +1004,8 @@ Der er nye punkttabeller for georgisk, swahili (Kenya) og Chichewa (Malawi).</p>
 <h3 id="nye-funktioner_5">Nye funktioner</h3>
 <ul>
 <li>Microsoft Excel via UI Automation: Automatisk oplæsning af række- og kolonneoverskrifter i tabeller. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14228" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14228">#14228</a>)<ul>
-<li>Bemærk: Dette refererer til tabeller, der er formateret via knappen "Tabel" under "Indsæt" på båndet. "Første kolonne" og "Overskriftsrække" i "Tabelstilindstillinger" svarer til henholdsvis kolonne- og rækkeoverskrifter.</li>
+<li>Bemærk: Dette refererer til tabeller, der er formateret via knappen "Tabel" under "Indsæt" på båndet.
+"Første kolonne" og "Overskriftsrække" i "Tabelstilindstillinger" svarer til henholdsvis kolonne- og rækkeoverskrifter.</li>
 <li>Dette refererer ikke til skærmlæserspecifikke overskrifter via navngivne områder, som i øjeblikket ikke understøttes via UI Automation.</li>
 </ul>
 </li>
@@ -1090,6 +1084,7 @@ Det er det samme som at trykke <code>NVDA+k</code> to gange, men er muligvis mer
 <li>I webbrowsere som Chrome og Firefox vises advarsler som f.eks. downloads på punkt samtidigt med, at de også oplæses. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14562" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14562">#14562</a>)</li>
 <li>Fejl rettet, når der navigeres til første eller sidste kolonne i Firefox. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14554" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14554">#14554</a>)</li>
 <li>Når NVDA startes med systemparametret <code>--lang=Windows</code> kan man nu igen åbne NVDAs generelle indstillinger. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14407" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14407">#14407</a>)</li>
+<li>NVDA fejler nu ikke under automatisk læsning, når man vender en side i Kindle for PC. (<a class="gh-link gh-issue" href="https://github.com/nvaccess/nvda/issues/14390" rel="noopener" target="_blank" title="GitHub Issue nvaccess/nvda #14390">#14390</a>)</li>
 </ul>
 <h3 id="ndringer-for-udviklere_5">Ændringer for udviklere</h3>
 <p>Bemærk: denne udgivelse bryder API-kompatibilitet for tilføjelser.
@@ -2109,7 +2104,7 @@ Der er også mange fejlrettelser til Office, Visual Studio samt flere sprog.</p>
 <ul>
 <li>Bemærk: dette er en Add-on API-inkompatibel opdatering. Tilføjelser skal gen-testes og deres manifest opdateres.</li>
 <li>NVDAs build-system henter nu alle Python-afhængigheder med pip og gemmer dem i et Python-virtuelt miljø. Dette sker nu gennemsigtigt.<ul>
-<li>For at bygge NVDA, skal SCons fortsat bruges som normalt. F.eks. ved at udføre <code>scons.bat</code> i roden af repositoriet. Det er ikke længere understøttet at køre <code>py -m SCons</code>, og <code>scons.py</code> er også blevet fjernet.</li>
+<li>For at bygge NVDA, skal SCons fortsat bruges som normalt. F.eks. ved at afvikle scons.bat i roden af repositoriet. Det er ikke længere understøttet at køre <code>py -m SCons</code>, og <code>scons.py</code> er også blevet fjernet.</li>
 <li>For at køre NVDA fra kilden, skal udvikleren nu bruge <code>runnvda.bat</code> i roden af repositoriet, i stedet for direkte at køre <code>source/nvda.pyw</code>. Hvis du forsøger at køre <code>source/nvda.pyw</code>, vil en beskedboks advare dig om, at dette ikke længere er understøttet.</li>
 <li>For at udføre enhedstest, kør <code>rununittests.bat [&lt;ekstra unittest discover muligheder&gt;]</code></li>
 <li>For at udføre systemtests: kør <code>runsystemtests.bat [&lt;ekstra robot muligheder&gt;]</code></li>
