@@ -542,7 +542,7 @@ Der er også fejlrettelser for Tilføjelsescenteret, Microsoft Office, kontekstm
   Inkompatible versioner af disse tilføjelsesprogrammer vil blive deaktiveret, når du opdaterer NVDA:
     * Tony's Enhancements version 1.15 eller ældre. (#15402)
     * NVDA global commands extension 12.0.8 eller ældre. (#15443)
-	* NVDA kan nu automatisk opdatere resultatet, når der udføres tekstgenkendelse (OCR), og NVDA vil oplæse den nye tekst, når den vises. (#2797)
+* NVDA kan nu automatisk opdatere resultatet, når der udføres tekstgenkendelse (OCR), og NVDA vil oplæse den nye tekst, når den vises. (#2797)
   * For at aktivere denne funktionalitet, aktiver indstillingen "Opdater regelmæssigt genkendt indhold" i kategorien Windows Tekstgenkendelse i NVDA's indstillingsdialog.
   * Når dette er aktiveret, kan du bestemme om ny tekst skal oplæses ved at slå oplæsning af dynamisk indhold til og fra med `NVDA+5`.
 * Når du bruger automatisk detektion af punktdisplay, er det nu muligt at fravælge drivere fra detektion fra dialogboksen til valg af display. (#15196)
@@ -1786,8 +1786,8 @@ Bemærk:
   * getConfigDirs - brug globalVars.appArgs.configPath i stedet.
 * Modulniveau-REASON_*-konstanter er fjernet fra controlTypes - brug controlTypes.OutputReason i stedet. (#11969)
 * REASON_QUICKNAV er blevet fjernet fra browseMode - brug controlTypes.OutputReason.QUICKNAV i stedet. (#11969)
-* NVDAObject (og derivater) ejendommen isCurrent returnerer nu strengt Enum-klassen controlTypes.IsCurrent. (#11782)
-  * isCurrent er ikke længere valgfri og returnerer dermed ikke længere None.
+* `NVDAObject` (og derivater) egenskaben `isCurrent` returnerer nu strengt Enum-klassen `controlTypes.IsCurrent`. (#11782)
+  * `isCurrent` er ikke længere valgfri og returnerer dermed ikke længere None.
     * Når et objekt ikke er aktuelt, returneres `controlTypes.IsCurrent.NO`.
 * `controlTypes.isCurrentLabels`-kortlægningen er fjernet. (#11782)
   * Brug i stedet `displayString`-egenskaben på en `controlTypes.IsCurrent` enum-værdi.
@@ -1821,7 +1821,7 @@ Bemærk:
 * TextInfo-start- og slut-egenskaber kan også sættes til hinanden. (#11613)
   * F.eks. ti1.start = ti2.end
   * Denne anvendelse foretrækkes nu frem for ti1.SetEndPoint(ti2, "startToEnd")
-* wx.CENTRE_ON_SCREEN og wx.CENTER_ON_SCREEN er fjernet, brug `self.CentreOnScreen()` i stedet. (#12309)
+* `wx.CENTRE_ON_SCREEN` og `wx.CENTER_ON_SCREEN` er fjernet, brug `self.CentreOnScreen()` i stedet. (#12309)
 * `easeOfAccess.isSupported` er blevet fjernet, NVDA understøtter kun Windows-versioner, hvor dette evalueres som `True`. (#12222)
 * `sayAllHandler` er blevet flyttet til `speech.sayAll`. (#12251)
   * `speech.sayAll.SayAllHandler` eksponerer funktionerne `stop`, `isRunning`, `readObjects`, `readText`, `lastSayAllMode`.
