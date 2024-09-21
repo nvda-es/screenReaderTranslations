@@ -2855,7 +2855,7 @@ Højdepunkterne i denne version inkluderer fuld understøttelse af lydstyrkeneds
 * Tilføjet understøttelse for Windows Calculator på Windows 10 Enterprise LTSB (Long-Term Servicing Branch) og Server. (#6914)
 * At udføre kommandoen "læs aktuel linje" tre gange hurtigt vil stave linjen med bogstavbeskrivelser. (#6893)
 * Nyt sprog: Burmesisk.
-* Unicode pil op og pil ned samt brøksymboler tales nu korrekt. (#3805)
+* Unicode pil op og pil ned samt brøksymboler udtales nu korrekt. (#3805)
 
 ### Ændringer
 
@@ -2940,7 +2940,7 @@ Højdepunkterne i denne version inkluderer rapportering af sektioner og tekstkol
 * NVDA-launcheren viser ikke længere en advarselsdialog, når den ikke kan afspille logolyden på grund af manglende lydudstyr. (#6289)
 * Kontroller i Microsoft Excel-båndet, der ikke er tilgængelige, rapporteres nu som sådan. (#6430)
 * NVDA annoncerer ikke længere "rude", når vinduer minimeres. (#6671)
-* Tastede tegn tales nu i Universal Windows Platform (UWP) apps (inklusive Microsoft Edge) i Windows 10 Creators Update. (#6017)
+* Indtastede tegn udtales nu i Universal Windows Platform (UWP) apps (inklusive Microsoft Edge) i Windows 10 Creators Update. (#6017)
 * Museovervågning fungerer nu på tværs af alle skærme på computere med flere skærme. (#6598)
 * NVDA bliver ikke længere ubrugelig efter at have lukket Windows Media Player, mens der er fokus på en skydekontrol. (#5467)
 
@@ -3155,11 +3155,11 @@ Højdepunkterne i denne udgivelse inkluderer muligheden for at sænke lydstyrken
 * I Microsoft Word rapporteres sporbare ændringer som "indsat" ikke længere, når markeringen af ændringer ikke vises. (#5566)
 * Når en skift-knap er i fokus, rapporterer NVDA nu, når den ændres fra trykket til ikke trykket. (#5441)
 * Rapportering af museformændringer fungerer igen som forventet. (#5595)
-* Når der tales linjeindrykninger, behandles ikke-brudte mellemrum nu som normale mellemrum. Tidligere kunne dette medføre annonceringer som "mellemrum mellemrum mellemrum" i stedet for "3 mellemrum". (#5610)
+* Når linjeindrykninger udtales, behandles hårde mellemrum nu som normale mellemrum. Tidligere kunne dette medføre annonceringer som "mellemrum mellemrum mellemrum" i stedet for "3 mellemrum". (#5610)
 * Når en moderne Microsoft inputmetodeliste lukkes, gendannes fokus korrekt til enten inputkompositionen eller det underliggende dokument. (#4145)
 * I Microsoft Office 2013 og nyere, når båndet er indstillet til kun at vise faner, rapporteres elementer i båndet igen som forventet, når en fane aktiveres. (#5504)
 * Rettelser og forbedringer af registrering og binding af touchscreen-bevægelser. (#5652)
-* Touchscreen-hovers rapporteres ikke længere i inputhjælp. (#5652)
+* Touchscreen-hovers rapporteres ikke længere i Tastaturhjælp. (#5652)
 * NVDA undlader ikke længere at liste kommentarer i elementlisten for Microsoft Excel, hvis en kommentar findes på en flettet celle. (#5704)
 * I en meget sjælden sag undlader NVDA ikke længere at læse arkindhold i Microsoft Excel, når rapportering af række- og kolonneoverskrifter er aktiveret. (#5705)
 * I Google Chrome fungerer navigation inden for en inputkomposition, når østasiatiske tegn indtastes, nu som forventet. (#4080)
@@ -3927,7 +3927,7 @@ Højdepunkter i denne udgivelse inkluderer understøttelse af asiatisk tegninput
 * I gennemsynstilstand er det ikke længere muligt at falde af bunden af dokumentet med højre pil-tasten, når du er på det sidste tegn, eller ved at hoppe til slutningen af en container, når denne container er det sidste element i dokumentet. (#2463)
 * Ekstra indhold medtages ikke længere fejlagtigt, når teksten i dialogbokse i webapplikationer rapporteres (specifikt ARIA-dialoger uden aria-describedby-attribut). (#2390)
 * NVDA rapporterer eller lokaliserer ikke længere visse redigeringsfelter forkert i MSHTML-dokumenter (f.eks. Internet Explorer), specifikt hvor en eksplicit ARIA-rolle er blevet brugt af websideforfatteren. (#2435)
-* Backspace-tasten håndteres nu korrekt, når ord, der er skrevet, tales i Windows kommandokonsoller. (#2586)
+* Backspace-tasten håndteres nu korrekt, når ord, der er skrevet, udtales i Windows kommandokonsoller. (#2586)
 * Cellekoordinater i Microsoft Excel vises igen i punkt.
 * I Microsoft Word sidder NVDA ikke længere fast på et afsnit med listeformatering, når man forsøger at navigere ud over en punkt eller nummerering med venstre pil eller control+venstre pil. (#2402)
 * I gennemsynstilstand i Mozilla-applikationer gengives elementerne i visse listebokse (specifikt ARIA-listebokse) ikke længere forkert.
@@ -3935,7 +3935,7 @@ Højdepunkter i denne udgivelse inkluderer understøttelse af asiatisk tegninput
 * I gennemsynstilstand i Mozilla-applikationer er noget overflødigt mellemrum fjernet.
 * I gennemsynstilstand i webbrowsere ignoreres visse grafikfiler, der eksplicit er markeret som præsentationelle (specifikt med en alt=""-attribut), nu korrekt.
 * I webbrowsere skjuler NVDA nu indhold, der er markeret som skjult for skærmlæsere (specifikt ved hjælp af aria-hidden-attributten). (#2117)
-* Negative valutabeløb (f.eks. -$123) tales nu korrekt som negative, uanset symboletiveauet. (#2625)
+* Negative valutabeløb (f.eks. -$123) siges nu korrekt som negative, uanset symbolniveau. (#2625)
 * Under læs alt vil NVDA ikke længere fejlagtigt vende tilbage til standardsproget, hvor en linje ikke afslutter en sætning. (#2630)
 * Skriftoplysninger registreres nu korrekt i Adobe Reader 10.1 og senere. (#2175)
 * I Adobe Reader, hvis der leveres alternativ tekst, vil kun denne tekst blive gengivet. Tidligere blev overflødig tekst undertiden inkluderet. (#2174)
@@ -4327,7 +4327,7 @@ Højdepunkter i denne version inkluderer automatisk rapportering af ny tekstudga
 * Støtte til globale plugins. Globale plugins kan tilføje ny funktionalitet til NVDA, der fungerer på tværs af alle applikationer. (#281)
 * Et lille bip høres nu, når der skrives tegn med shift-tasten, mens capslock er aktiveret. Dette kan slås fra ved at fjerne markeringen af den relaterede nye indstilling i dialogboksen for tastaturindstillinger. (#663)
 * Hårde sideskift annonceres nu, når man bevæger sig linje for linje i Microsoft Word. (#758)
-* Punkttegn og nummerering tales nu i Microsoft Word, når man bevæger sig linje for linje. (#208)
+* Punkttegn og nummerering siges nu i Microsoft Word, når man bevæger sig linje for linje. (#208)
 * En kommando til at skifte dvaletilstand for den aktuelle applikation (NVDA+shift+s) er nu tilgængelig. Dvaletilstand (tidligere kendt som selvtalende tilstand) deaktiverer al skærmlæsningsfunktionalitet i NVDA for en bestemt applikation. Meget nyttigt for applikationer, der leverer deres egen tale- og/eller skærmlæsningsfunktionalitet. Tryk på denne kommando igen for at deaktivere dvaletilstand.
 * Nogle yderligere punktdisplay-tastaturbindinger er blevet tilføjet. Se sektionen Støttede punktdisplays i brugerguiden for detaljer. (#209)
 * Til bekvemmelighed for tredjepartsudviklere kan app-moduler samt globale plugins nu genindlæses uden at genstarte NVDA. Brug værktøjer -> Genindlæs plugins i NVDA-menuen eller NVDA+control+f3. (#544)
@@ -4356,7 +4356,7 @@ Højdepunkter i denne version inkluderer automatisk rapportering af ny tekstudga
 * På skydeknapperne i dialogboksen Taleindstillinger øger op-pil/side op/home nu indstillingen, og ned-pil/side ned/end mindsker den. Tidligere skete det modsatte, hvilket ikke er logisk og ikke stemmer overens med talesyntese-indstillingsringen. (#221)
 * I virtuelle buffere med skærmlayout deaktiveret vises nogle overflødige tomme linjer ikke længere.
 * Hvis en NVDA-modifikatortast trykkes to gange hurtigt, men der er en mellemliggende tastetryk, gives NVDA-modifikatortasten ikke længere videre ved det andet tryk.
-* Tegnsætningstaster tales nu i input-hjælp, selv når tale af tegnsætning er deaktiveret. (#977)
+* Tegnsætningstaster siges nu i Tastaturhjælp, selv når tale af tegnsætning er deaktiveret. (#977)
 * I dialogboksen for tastaturindstillinger præsenteres tastaturlayoutnavnene nu i det konfigurerede NVDA-sprog i stedet for altid på engelsk. (#558)
 * Rettede et problem, hvor nogle elementer blev gengivet som tomme i Adobe Reader-dokumenter; f.eks. linksene i indholdsfortegnelsen i Apple iPhone IOS 4.1 brugervejledningen.
 * Knappen "Brug aktuelt gemte indstillinger på logon og andre sikre skærme" i NVDA's Generelle indstillinger fungerer nu, hvis den bruges umiddelbart efter, at NVDA er nyinstalleret, men før en sikker skærm har vist sig. Tidligere rapporterede NVDA, at kopiering var succesfuld, men det havde faktisk ingen effekt. (#1194)
@@ -4567,7 +4567,7 @@ Denne udgivelse fokuserer primært på fejlrettelser og forbedringer af brugerop
 * Rettet nogle problemer med logning af beskeder, der indeholdt ikke-ASCII-tegn. Dette kunne i nogle tilfælde forårsage fejlagtige fejl på ikke-engelske systemer. (#581)
 * Informationerne i dialogboksen Om NVDA vises nu på brugerens konfigurerede sprog i stedet for altid på engelsk. (#586)
 * Der opstår ikke længere problemer ved brug af synteseindstillingsringen efter at stemmen er ændret til én, der har færre indstillinger end den forrige stemme.
-* I Skype 4.2 tales kontaktnavne ikke længere to gange i kontaktlisten.
+* I Skype 4.2 siges kontaktnavne ikke længere to gange i kontaktlisten.
 * Rettet nogle potentielt store hukommelseslækager i GUI'en og i virtuelle buffere. (#590, #591)
 * Omgået en irriterende fejl i nogle SAPI 4 talesynteser, som forårsagede hyppige fejl og nedbrud i NVDA. (#597)
 
@@ -4631,7 +4631,7 @@ Væsentlige højdepunkter i denne udgivelse inkluderer understøttelse af 64-bit
 * Bedre understøttelse af redigeringsfelter i Microsoft Word-dialoger (f.eks. dialogboksen Skrifttype). Det er nu muligt at navigere disse kontroller med piletasterne.
 * Bedre understøttelse af DOS-konsoller. Specifikt: NVDA kan nu læse indholdet af bestemte konsoller, som det tidligere troede var tomme. Ved at trykke på control+break afsluttes NVDA ikke længere.
 * På Windows Vista og nyere starter NVDA-installationsprogrammet NVDA med normale brugerrettigheder, når der anmodes om at køre NVDA på slutskærmen.
-* Backspace håndteres nu korrekt, når der tales indtastede ord. (#306)
+* Backspace håndteres nu korrekt, når indtastede ord oplæses. (#306)
 * Rapporter ikke længere "Startmenu" for visse genvejsmenuer i Windows Stifinder/Windows shell. (#257)
 * NVDA håndterer nu korrekt ARIA-etiketter i Mozilla Gecko, når der ikke er andet nyttigt indhold. (#156)
 * NVDA aktiverer ikke længere automatisk fokustilstand for redigerbare tekstfelter, der opdaterer deres værdi, når fokus ændres; f.eks. http://tigerdirect.com/. (#220)
@@ -4900,10 +4900,10 @@ Væsentlige højdepunkter i denne udgivelse inkluderer understøttelse af 64-bit
 
 ## 0.5
 
-* NVDA har nu en indbygget talesyntese kaldet eSpeak, udviklet af Jonathan Duddington. Den er meget responsiv og letvægts, og har understøttelse af mange forskellige sprog. SAPI-talesynteser kan stadig bruges, men eSpeak vil være standardtalesyntesen.
+* NVDA har nu en indbygget talesyntese kaldet eSpeak, udviklet af Jonathan Duddington. Den er meget responsiv og letvægtig, og har understøttelse af mange forskellige sprog. SAPI-talesynteser kan stadig bruges, men eSpeak vil være standardtalesyntesen.
  * eSpeak er ikke afhængig af nogen speciel softwareinstallation, så den kan bruges med NVDA på enhver computer, fra et USB-drev, eller hvor som helst.
  * For mere information om eSpeak, eller for at finde andre versioner, gå til [http://espeak.sourceforge.net/](http://espeak.sourceforge.net/).
-* Rettet fejl, hvor det forkerte tegn blev annonceret, når der blev trykket på delete i Internet Explorer/Outlook Express redigerbare felter.
+* Rettet fejl, hvor det forkerte tegn blev annonceret, når der blev trykket på delete i Internet Explorer/Outlook Express redigeringsfelter.
 * Tilføjet understøttelse af flere redigeringsfelter i Skype.
 * Virtuelle buffere indlæses kun, når fokus er på vinduet, der skal indlæses. Dette løser nogle problemer, når forhåndsvisningsruden er aktiveret i Outlook Express.
 * Tilføjet kommandolinjeargumenter til NVDA:
@@ -4920,12 +4920,12 @@ Væsentlige højdepunkter i denne udgivelse inkluderer understøttelse af 64-bit
 * Tilføjet et script til at skifte bip for fremgangsbjælker til og fra (insert+u). Bidraget af Peter Vagner.
 * Flere beskeder i NVDA kan nu oversættes til andre sprog. Dette inkluderer scriptbeskrivelser, når man er i tastaturhjælp.
 * Tilføjet en søgedialog til virtuelle buffere (Internet Explorer og Firefox). Ved at trykke på control+f på en side åbnes en dialog, hvor du kan indtaste noget tekst til at finde. Ved at trykke på enter vil denne tekst blive søgt, og den virtuelle buffers markør vil placeres på denne linje. Ved at trykke på f3 vil du også søge efter den næste forekomst af teksten.
-* Når "tal indtastede tegn" er aktiveret, bør flere tegn nu blive talt. Teknisk set kan tegn fra ASCII 32 til 255 nu tales.
+* Når "Sig indtastede tegn" er aktiveret, bør flere tegn nu blive talt. Teknisk set kan tegn fra ASCII 32 til 255 nu tales.
 * Omdøbt nogle kontroltyper for bedre læsbarhed. Redigerbar tekst er nu redigeringsfelt, outline er nu trævisning, og trykknap er nu knap.
-* Når man navigerer rundt i listeelementer i en liste eller trævisningselementer i en trævisning, tales kontroltypen (listeelement, trævisningselement) ikke længere, for at gøre navigationen hurtigere.
-* "Har popup" (for at indikere, at en menu har en undermenu) tales nu som "undermenu".
-* Hvor nogle sprog bruger kontrol og alt (eller altGR) til at indtaste et specialtegn, vil NVDA nu tale disse tegn, når "tal indtastede tegn" er aktiveret.
-* Rettet nogle problemer med gennemgang af statiske tekstkontroller.
+* Når man navigerer rundt i listeelementer i en liste eller trævisningselementer i en trævisning, udtales kontroltypen (listeelement, trævisningselement) ikke længere, for at gøre navigationen hurtigere.
+* "Har popup" (for at indikere, at en menu har en undermenu) siges nu som "undermenu".
+* Hvor nogle sprog bruger kontrol og alt (eller altGR) til at indtaste et specialtegn, vil NVDA nu udtale disse tegn, når "tal indtastede tegn" er aktiveret.
+* Rettet nogle problemer med læsning af statiske tekstkontroller.
 * Tilføjet traditionel kinesisk oversættelse takket være Coscell Kao.
 * Omstruktureret en vigtig del af NVDA's kode, som nu burde rette mange problemer med NVDA's brugergrænseflade (herunder indstillingsdialogbokse).
 * Tilføjet SAPI4-understøttelse til NVDA. Der er i øjeblikket to SAPI4-drivere, en baseret på kode bidraget af Serotek Corporation og en, der bruger ActiveVoice.ActiveVoice COM-interface. Begge disse drivere har problemer, se hvilken der fungerer bedst for dig.
@@ -4933,15 +4933,15 @@ Væsentlige højdepunkter i denne udgivelse inkluderer understøttelse af 64-bit
 * Omdøbt titlen på NVDA's brugergrænseflade fra NVDA Interface til NVDA.
 * Rettet en fejl i Outlook Express, hvor tryk på backspace i starten af en redigerbar besked forårsagede en fejl.
 * Tilføjet patch fra Rui Batista, der tilføjer et script til at rapportere den aktuelle batteristatus på bærbare computere (insert+shift+b).
-* Tilføjet en talesyntesedriver kaldet Silence. Dette er en talesyntesedriver, der ikke taler noget, hvilket tillader NVDA at forblive helt stille til enhver tid. Dette kan senere bruges sammen med punktskrifttilstand, når vi har det.
+* Tilføjet en talesyntesedriver kaldet Silence. Dette er en talesyntesedriver, der ikke siger noget, hvilket tillader NVDA at forblive helt stille til enhver tid. Dette kan senere bruges sammen med punktskrifttilstand, når vi har det.
 * Tilføjet "capitalPitchChange"-indstilling for talesynteser, takket være J.J. Meddaugh.
-* Tilføjet patch fra J.J. Meddaugh, der gør "tænd/sluk rapporter objekter under musen"-scriptet mere som de andre tænd/sluk-scripts (der siger til/fra i stedet for at ændre hele udsagnet).
+* Tilføjet patch fra J.J. Meddaugh, der gør "tænd/sluk rapporter objekter under musen"-scriptet mere som de andre tænd/sluk-scripts (der siger til/fra i stedet for at ændre hele ordlyden).
 * Tilføjet spansk oversættelse (es) bidraget af Juan C. Buno.
 * Tilføjet ungarsk sprogfil fra Tamas Gczy.
 * Tilføjet portugisisk sprogfil fra Rui Batista.
-* Når man ændrer stemmen i Stemmens indstillinger dialogboksen, indstilles hastigheds-, tonehøjde- og volumen-sliders til de nye værdier i henhold til talesyntesen, i stedet for at tvinge talesyntesen til at blive indstillet til de gamle værdier. Dette løser problemer, hvor en talesyntese som Eloquence eller Viavoice taler meget hurtigere end alle andre talesynteser.
+* Når man ændrer stemmen i Stemmens indstillinger dialogboksen, indstilles hastigheds-, tonehøjde- og skydere til lydstyrken til de nye værdier i henhold til talesyntesen, i stedet for at tvinge talesyntesen til at blive indstillet til de gamle værdier. Dette løser problemer, hvor en talesyntese som Eloquence eller Viavoice taler meget hurtigere end alle andre talesynteser.
 * Rettet en fejl, hvor enten tale stoppede, eller NVDA gik helt ned, når det var i et DOS-konsolvindue.
-* Hvis understøttelse for et bestemt sprog findes, kan NVDA nu automatisk vise sin brugergrænseflade og tale sine beskeder på det sprog, Windows er indstillet til. Et bestemt sprog kan stadig vælges manuelt fra dialogboksen for brugergrænsefladeindstillinger.
+* Hvis understøttelse for et bestemt sprog findes, kan NVDA nu automatisk vise sin brugergrænseflade og sige sine beskeder på det sprog, Windows er indstillet til. Et bestemt sprog kan stadig vælges manuelt fra dialogboksen for brugergrænsefladeindstillinger.
 * Tilføjet scriptet 'toggleReportDynamicContentChanges' (insert+5). Dette skifter, om nye tekster eller andre dynamiske ændringer skal annonceres automatisk. Indtil videre fungerer dette kun i DOS-konsolvinduer.
 * Tilføjet scriptet 'toggleCaretMovesReviewCursor' (insert+6). Dette skifter, om læsemarkøren automatisk skal genplaceres, når systemets markør flytter sig. Dette er nyttigt i DOS-konsolvinduer, når du forsøger at læse information, mens skærmen opdateres.
 * Tilføjet scriptet 'toggleFocusMovesNavigatorObject' (insert+7). Dette skifter, om navigatorobjektet automatisk skal genplaceres på objektet med fokus, når dette ændres.
