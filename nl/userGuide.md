@@ -1404,7 +1404,7 @@ U kunt Scherm Dimmen inschakelen in de categorie [zicht](#VisionSettings) in het
 
 <!-- KC:endInclude -->
 
-Wanneer Scherm Dimmen is ingeschakeld, zijn taken die rechtstreeks te maken hebben met wat er op het scherm verschijnt, zoals het uitvoeren van [OCR](#Win10OCR) of het maken van een schermafbeelding, niet uitvoerbaar.
+Wanneer Scherm Dimmen is ingeschakeld, zijn taken die rechtstreeks te maken hebben met wat er op het scherm verschijnt, zoals het uitvoeren van [OCR](#Win10Ocr) of het maken van een schermafbeelding, niet uitvoerbaar.
 
 Vanwege een wijziging in de Windows vergrotins-API, moetst Scherm Dimmen worden bijgewerkt om ondersteuning te kunnen bieden voor de nieuwste versies van Windows.
 Gebruik NVDA 2021.2 om Scherm Dimmen te activeren met Windows 10 21H2 (10.0.19044) of later.
@@ -2650,7 +2650,7 @@ Zo zal bij voorbeeld bij het onderdeel Bestand op de menubalk ook gemeld worden 
 
 Als dit selectievakje aangevinkt is, wordt de objectpositie gemeld,bijvoorbeeld 1 van 4, zodra het object focus krijgt, of zich in de objectnavigatie bevind.
 
-##### Informatie over objectpositie raden indien deze niet beschikbaar is {ObjectPresentationGuessPositionInfo}
+##### Informatie over objectpositie raden indien deze niet beschikbaar is {#ObjectPresentationGuessPositionInfo}
 
 Als informatie van objectpositie weergeven is ingeschakeld, kan deze optie ervoor zorgen dat de positie van sommige objecten bij benadering wordt bepaald. Dit kan nodig zijn als de positie-informatie niet op een andere manier verkregen kan worden.
 
@@ -2749,7 +2749,7 @@ In het invoerveld kunt u het aantal karakters per regel instellen dat een docume
 
 ##### Aantal regels per pagina {#BrowseModeSettingsPageLines}
 
- Je kunt hier het aantal regels invoeren dat opschuift als je Page Up of Page Down indrukt terwijl je je in een document in bladermodus bevindt.
+ Je kunt hier het aantal regels invoeren dat opschuift als je page up of page down indrukt terwijl je je in een document in bladermodus bevindt.
 
 <!-- KC:setting -->
 
@@ -3731,7 +3731,7 @@ Om van deze stemmen gebruik te maken dient u 2 componenten te installeren:
 
 * [Microsoft Speech Platform - Runtime (Version 11), x86](https://www.microsoft.com/download/en/details.aspx?id=27225)
 * [Microsoft Speech Platform - Runtime Languages (Version 11)](https://www.microsoft.com/download/en/details.aspx?id=27224)
-  Deze Webpagina bevat veel bestanden voor spraakherkenning en tekst naar spraak.
+  * Deze Webpagina bevat veel bestanden voor spraakherkenning en tekst naar spraak.
  Kies de tts databestanden voor de gewenste talen/stemmen.
  Bij voorbeeld, Het bestand MSSpeech_TTS_en-US_ZiraPro.msi is een amerikaans-engelse stem.
 
@@ -4008,14 +4008,14 @@ Waar de toetsen zich bevinden, leest u in de documentatie bij de leesregels.
 |Brailleregel naar vorige regel verplaatsen |`d1`|
 |Brailleregel naar volgende regel verplaatsen |`d3`|
 |Cursor naar braillecel verplaatsen |`routing`|
-|shift+tab-toetsen |`spatie+punt1+punt3`|
-|tab-toets |`spatie+punt4+punt6`|
-|alt-toets |`spatie+punt1+punt3+punt4` (`spatie+m`)|
-|`escape-toets` |`spatie+punt1+punt5` (`spatie+e`)|
-|windows-toets |`spatie+puntt3+punt4`|
-|`alt+tab-toetsen` |`spatie+punt2+punt3+punt4+punt5` (`spatie+t`)|
-|`NVDA-menu` |`spatie+punt1+punt3+punt4+punt5` (`spatie+n`)|
-|`windows+d-toetsen` (minimaliseer alle applicaties) |`spatie+punt1+punt4+punt5` (`spatie+d`)|
+|`shift+tab` toets |`spatie+punt1+punt3`|
+|`tab` toets |`spatie+punt4+punt6`|
+|`alt` toets |`spatie+punt1+punt3+punt4` (`spatie+m`)|
+|`escape` toets` |`spatie+punt1+punt5` (`spatie+e`)|
+|	 windows` toets |`spatie+punt3+punt4`|
+|`alt+tab` toets |`spatie+punt2+punt3+punt4+punt5` (`spatie+t`)|
+|NVDA-menu |`spatie+punt1+punt3+punt4+punt5` (`spatie+n`)|
+|`windows+d` sneltoets (minimaliseer alle applicaties) |`spatie+punt1+punt4+punt5` (`spatie+d`)|
 |Alles lezen |`spatie+punt1+punt2+punt3+punt4+punt5+punt6`|
 
 Voor leesregels die een Joystick hebben, geldt:
@@ -4030,7 +4030,7 @@ Voor leesregels die een Joystick hebben, geldt:
 
 <!-- KC:endInclude -->
 
-### Hedo Profiline usb {#HedoProfiline}
+### Hedo Profiline USB {#HedoProfiLine}
 
 De Profiline usb leesregels van [hedo Reha-Technik](https://www.hedo.de/) worden ondersteund.
 U moet eerst de usb-driver van de fabrikant installeren.
@@ -4130,8 +4130,8 @@ Bij gebruik van de Brailliant BI/B en de BrailleNote touch met NVDA zijn de volg
 |---|---|
 |NVDA Menu |c1+c3+c4+c5 (commando n)|
 |windows+d toets (alle toepassingen minimaliseren) |c1+c4+c5 (commanod d)|
+|Alles lezen |c1+c2+c3+c4+c5+c6|
 
-|Alles lezen | c1+c2+c3+c4+c5+c6 |
 <!-- KC:endInclude -->
 
 #### Toegewezen toetsen voor de Brailliant BI 14 {#HumanWareBrailliantKeyAssignmentForBI14}
@@ -4301,7 +4301,7 @@ Informatie over de plaats van de toetsen vindt u in de documentatie bij deze lee
 |control+home-toets |backspace+LJ up|
 |control+end-toets |backspace+LJ down|
 
-### Papenmeier Braillex Nieuwere Modellen {#PapenmeierNew}
+### Papenmeier BRAILLEX Nieuwere Modellen {#Papenmeier}
 
 De volgende brailleleesregels worden ondersteund:
 
@@ -4720,7 +4720,7 @@ In de onderstaande beschrijving van het brailletoetsenbord wordt er van uitgegaa
 |`control-toets` |`punt7+punt8+spatie`|
 |Schakelen met  `control-toets` |`punt1+punt7+punt8+spatie`, `punt4+punt7+punt8+spatie`|
 |`alt-toets` |`punt8+spatie`|
-|Schakelen met Alt-toets`` |`punt1+punt8+spatie`, `punt4+punt8+spatie`|
+|Schakelen met `alt` toets |`punt1+punt8+spatie`, `punt4+punt8+spatie`|
 |HID Toetsenbord simulatie aan/uit |`schakelaar1Links+joystick1Omlaag`, `schakelaar1Rechts+joystick1Omlaag`|
 
 <!-- KC:endInclude -->
@@ -4731,11 +4731,11 @@ In de onderstaande beschrijving van het brailletoetsenbord wordt er van uitgegaa
 
 | Naam |Toets|
 |---|---|
-|Leesregel terugscrollen |"achterwaarts"|
-|Leesregel vooruitscrollen |voorwaarts""|
+|Leesregel terugscrollen |`achterwaarts`|
+|Leesregel vooruitscrollen |`voorwaarts`|
 |Naar huidige focus gaan |`achterwaarts+voorwaarts`|
 |Routeer naar braillecel |`routing`|
-|`linkerPijl-toets` |``joystick2Links`|
+|`linkerPijltoets` |`joystick2Links`|
 |`rechterPijl-toets` |`joystick2Rechts`|
 |`Pijlomhoog-toets` |`joystick2Omhoog`|
 |`Pijlomlaag-toets` |`joystick2Omlaag`|
@@ -4963,7 +4963,7 @@ Hieronder volgen de momenteel geldende toetsen met hun funftie voor deze leesreg
 |---|---|
 |Brailleleesregel terugscrollen |naar  links pannen of rocker omhoog|
 |Brailleleesregel vooruitscrollen |naar rechts pannen of rocker omlaag|
-|Naar braillecel routeren |routing-set 1||
+|Naar braillecel routeren |routing-set 1|
 |Braille volgen aan/uit |Omhoog+Omlaag|
 |pijlOmhoog |joystick van je af, dpad omhoog of spatie+punt1|
 |pijlOmlaag |joystick naar je toe, dpad omlaag of spatie+punt4|
@@ -5050,24 +5050,24 @@ De opties met een korte notatie kunnen als volgt worden gecombineerd:
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|nvda -mc CONFIGPATH |Hiermee  start NVDA terwijl opstartgeluid en melding uit staat, en met de opgegeven configuratie|
-|nvda -mc CONFIGPATH --disable-addons |hetzelfde als hierboven, maar met uitgeschakelde add-ons|
+|`nvda -mc CONFIGPATH` |Hiermee  start NVDA terwijl opstartgeluid en melding uit staat, en met de opgegeven configuratie|
+|`nvda -mc CONFIGPATH --disable-addons` |hetzelfde als hierboven, maar met uitgeschakelde add-ons|
 
 Aan sommige commandoregelopties kunnen extra parameters worden toegevoegd, zoals het niveau van loggen of het pad naar het configuratie bestand van de gebruiker. 
-Die parameters moeten achter de optie worden geplaatst en moeten daarvan gescheiden worden door een spatie wanneer het de korte notatie betreft terwijl bij de lange notatie het = teken wordt gebruikt. Voorbeelden zijn:
+Die parameters moeten achter de optie worden geplaatst en moeten daarvan gescheiden worden door een spatie wanneer het de korte notatie betreft terwijl bij de lange notatie het = teken (`=`)wordt gebruikt. Voorbeelden zijn:
 
 | . {.hideHeaderRow} |.|
 |---|---|
-|nvda -l 10 |Geeft NVDA opdracht te starten met log-niveau ingesteld op debug|
-|nvda --log-file=c:\nvda.log |Geeft NVDA opdracht te loggen naar c:\nvda.log|
-|nvda --log-level=20 -f c:\nvda.log |Geeft NVDA opdracht te starten met het log-niveau ingesteld op info en te loggen naar c:\nvda.log|
+|`nvda -l 10` |Geeft NVDA opdracht te starten met log-niveau ingesteld op debug|
+|`nvda --log-file=c:\nvda.log` |Geeft NVDA opdracht te loggen naar `c:\nvda.log`|
+|`nvda --log-level=20 -f c:\nvda.log` |Geeft NVDA opdracht te starten met het log-niveau ingesteld op info en te loggen naar c:\nvda.log|
 
 Hieronder volgen de commandoregelopties voor NVDA:
 
 | Kort |Lang |Omschrijving|
 |---|---|---|
 |`-h` |`--help` |commandoregel-hulp tonen en afsluiten|
-|`-q` |``--quit |De reeds actieve kopie van NVDA afsluiten.|
+|`-q` |`--quit` |De reeds actieve kopie van NVDA afsluiten.|
 |`-k` |`--check-running` |Melden via afsluitcode of NVDA actief is,; 0 voor actief, 1 voor niet actief.|
 |`-f LOGFILENAME` |`--log-file=LOGFILENAME` |Het bestand waar log-berichten naartoe moeten worden geschreven. Logging wordt altijd uitgeschakeld als veilige modus wordt ingeschakeld.|
 |`-l LOGLEVEL` |`--log-level=LOGLEVEL` |Het laagste niveau gelogd bericht (debug 10, invoer/uitvoer 12, debug-melding 15, info 20, uitgeschakeld 100) Logging wordt altijd uitgeschakeld als veilige modus wordt ingeschakeld.|
@@ -5076,14 +5076,14 @@ Hieronder volgen de commandoregelopties voor NVDA:
 |`-m` |`--minimal` |Geen geluiden, geen interface, geen opstartbericht etc.|
 |`-s` |`--secure` |Start NVDA in [Veilige Modus](#SecureMode)|
 |Geen |`--disable-addons` |Add-ons buiten werking gesteld.|
-|geen |`--debug-logging` |Loggen op Debug niveau alleen voor deze sessie inschakelen. Met deze instelling wordt elk ander niveau van loggen buiten werking gesteld ( --loglevel, -l) gegeven argument, optie niet loggen inbegrepen.|
-|Geen |`--no-logging` |loggen volledig uitschakelen terwijl NVDA in gebruik is. Deze instelling kan onderdrukt worden als een logniveau ( --loglevel, -l) wordt gespecifieerd vanuit commandoregel of als debug-loggen wordt ingeschakeld.|
+|geen |`--debug-logging` |Loggen op Debug niveau alleen voor deze sessie inschakelen. Met deze instelling wordt elk ander niveau van loggen buiten werking gesteld ( `--loglevel`, `-l`) gegeven argument, optie niet loggen inbegrepen.|
+|Geen |`--no-logging` |loggen volledig uitschakelen terwijl NVDA in gebruik is. Deze instelling kan onderdrukt worden als een logniveau (`--loglevel`, `-l`) wordt gespecifieerd vanuit commandoregel of als debug-loggen wordt ingeschakeld.|
 |Geen |`--no-sr-flag` |Verander de systeem-brede vlag voor de schermlezer niet.|
 |Geen |`--install` |Installeert NVDA (de zojuist geïnstalleerde kopie wordt gestart)|
 |Geen |`--install-silent` |Silently stille installatie van NVDA (de zojuist geïnstalleerde kopie wordt niet gestart)|
 |Geen |`--enable-start-on-logon=True|False` |Bij het installeren NVDA [ gebruiken  voor aanmelding bij Windows](#StartAtWindowsLogon)|
-|Geen |`--copy-portable-config` |Bij het installeren de portable configuratie vanaf het aangeboden pad (--config-path, -c) naar huidige gebruikersaccount kopiëren|
-|Geen |`--Create-portable` |Draagbare kopie van NVDA wordt aangemaakt (waarbij de aangemaakte kopie vervolgens opstart). Het pad voor de draagbare kopie dient te worden opgegeven|
+|Geen |`--copy-portable-config` | Bij het installeren de portable configuratie vanaf het aangeboden pad (`--config-path`, `-c`) naar huidige gebruikersaccount kopiëren|
+|Geen |`--Create-portable` |Draagbare kopie van NVDA wordt aangemaakt (waarbij de aangemaakte kopie vervolgens opstart). Het pad `--portable-path` voor de draagbare kopie dient te worden opgegeven|
 |Geen |`--Create-portable-silent` |Draagbare kopie van NVDA wordt aangemaakt (waarbij aangemaakte kopie vervolgens niet opstart). Vereist is dat   `--portable-path` wordt gespecifieerd. Hiermee worden waarschuwingen onderdrukt bij schrijven niet-lege mappen en kan bestanden overschrijven zonder waarschuwen.|
 |Geen |`--portable-path=PORTABLEPATH` |Het pad waar een draagbare kopie wordt aangemaakt.|
 
