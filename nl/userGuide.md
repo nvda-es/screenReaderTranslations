@@ -2749,7 +2749,7 @@ In het invoerveld kunt u het aantal karakters per regel instellen dat een docume
 
 ##### Aantal regels per pagina {#BrowseModeSettingsPageLines}
 
- Je kunt hier het aantal regels invoeren dat opschuift als je page up of page down indrukt, terwijl je je in bladermodus bevindt.
+Dit invoervak bepaalt het aantal regels dat opschuift als je page up of page down indrukt terwijl je je in bladermodus bevindt.
 
 <!-- KC:setting -->
 
