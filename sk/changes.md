@@ -47,9 +47,9 @@ Napokon bola aktualizovaná aj databáza znakov Unicode CLDR.
       * Viaceré staroveké jazyky: Biblická Hebrejčina, Akkadčina, Sýrčina, ugaritština a klynové písmo.
       * Turečtina skratkopis (#16735)
       * Medzinárodná fonetická abeceda (IPA). (#16773)
-  * NSIS aktualizované na verziu 3.10 (#16674, @dpy013)
+  * NSIS aktualizovaný na verziu 3.10 (#16674, @dpy013)
   * markdown aktualizovaný na verziu  3.6 (#16725, @dpy013)
-  * nh3 aktualizované na verziu 0.2.17 (#16725, @dpy013)
+  * nh3 aktualizovaný na verziu 0.2.17 (#16725, @dpy013)
 * Ak nie je dostupná zvolená vstupná prekladová brailová tabuľka, zvolí sa tá istá, ktorá sa predvolene používa ako výstupná, konkrétne jednotný anglický brail plnopis. (#9863, @JulienCochuyt, @LeonarddeR)
 * NVDA odteraz oznamuje ilustrácie, aj ak nemajú podradený objekt s popisom, ale majú popis. (#14514)
 * Pri čítaní po riadkoch NVDA viac neoznamuje slovo "popis" pri každom riadku, ak je popis tabuľky alebo ilustrácie dlhší. (#14874)
@@ -119,7 +119,7 @@ V tomto prípade sa na riadku zobrazuje to, čo NVDA hovorí resp. posiela na hl
 Pridali sme tiež podporu pre riadky BrailleEdgeS2 a BrailleEdgeS3.
 Aktualizovali sme brailovú prekladovú tabuľku LibLouis, čím pribudli detailné tabuľky pre bieloruštinu, a Ukrajinčinu, tiež Laoštinu a Španielčinu s podporou pre grécke znaky.
 
-Hlasový výstupeSpeak bol tiež aktualizovaný a odteraz podporuje jazyk Tigrinya.
+Hlasový výstup eSpeak NG bol tiež aktualizovaný a odteraz podporuje jazyk Tigrinya.
 
 Opravili sme viaceré chyby hlásené v aplikáciách Thunderbird, Adobe Reader, webových prehliadačoch, Nudi a Geekbench.
 
@@ -142,7 +142,7 @@ Opravili sme viaceré chyby hlásené v aplikáciách Thunderbird, Adobe Reader,
       * Desktop: `NVDA+ctrl+pageUp` a `NVDA+ctrl+pageDown`.
       * Laptop: `NVDA+ctrl+shift+pageUp` a `NVDA+ctrl+shift+pageDown`.
   * Pridaná možnosť definovať skratku, ktorá zapína a vypína oznamovanie ilustrácií a ich popisov. (#10826, #14349)
-* Braille:
+* Brailový výstup:
   * Pridaná podpora pre riadky BrailleEdgeS2 a BrailleEdgeS3. (#16033, #16279, @EdKweon)
   * Pridaný nový režim zobrazovania na brailovom riadku s názvom "sledovanie reči". (#15898, @Emil-18)
     * Po aktivovaní tohto režimu sa na riadku zobrazuje presne to, čo NVDA hovorí.
@@ -173,7 +173,7 @@ Opravili sme viaceré chyby hlásené v aplikáciách Thunderbird, Adobe Reader,
   * `alt+pravá šípka` je namapovaná na `bod5+bod7+medzera`
   * `alt+šípka hore` je namapovaná na `bod2+bod3+bod7+medzera`
   * `alt+šípka dole` je namapovaná na `bod5+bod6+bod7+medzera`
-* Oddeľovacie bodky, ktoré sa často používajú pri tvorbe obsahov, viac nie sú oznamované pri nízkych úrovniach interpunkcie. Padding (#15845, @CyrilleB79)
+* Oddeľovacie bodky, ktoré sa často používajú pri tvorbe obsahov, viac nie sú oznamované pri nízkych úrovniach interpunkcie. (#15845, @CyrilleB79)
 
 ### Opravy
 
