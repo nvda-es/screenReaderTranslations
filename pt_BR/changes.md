@@ -3009,7 +3009,7 @@ Os destaques desta versão incluem melhoras no suporte para o Microsoft Edge; mo
 
 ## 2016.3
 
- Os destaques desta versão incluem a possibilidade de desabilitar complementos individualmente; suporte para campos de formulário no Microsoft Excel; implementações significativas no anúncio das cores; correções e implementações relacionadas a várias linhas braille; e correções e implementações no suporte para o Microsoft Word.
+Os destaques desta versão incluem a possibilidade de desabilitar complementos individualmente; suporte para campos de formulário no Microsoft Excel; implementações significativas no anúncio das cores; correções e implementações relacionadas a várias linhas braille; e correções e implementações no suporte para o Microsoft Word.
 
 ### Novas Características
 
@@ -3460,7 +3460,7 @@ Os destaques desta versão incluem o modo de navegação para documentos no Micr
  * Esses comandos também poderão ser usados múltiplas vezes por planilha para definir diferentes cabeçalhos para diferentes regiões.
 * Suporte para leitura automática de cabeçalhos de linhas e colunas das tabelas no Microsoft Word (#3110) incluindo:
  * Suporte para marcadores do MS Word para identificar cabeçalhos das células (compatível com o leitor de telas Jaws)
- * Os comandos para definir cabeçalhos de colunas (NVDA+shift+c) e definir cabeçalhos de linhas (NVDA+shift+r), caso você esteja sob a primeira célula do cabeçalho em uma tabela, informarão ao NVDA que esses cabeçalhos devem ser anunciados automaticamente. As configurações serão armazenadas no documento,de modo a estarem disponíveis na próxima vez que o documento for aberto, e estarão disponíveis para outros leitores de telas que suportem o esquema desses marcadores.
+ - Os comandos para definir cabeçalhos de colunas (NVDA+shift+c) e definir cabeçalhos de linhas (NVDA+shift+r), caso você esteja sob a primeira célula do cabeçalho em uma tabela, informarão ao NVDA que esses cabeçalhos devem ser anunciados automaticamente. As configurações serão armazenadas no documento,de modo a estarem disponíveis na próxima vez que o documento for aberto, e estarão disponíveis para outros leitores de telas que suportem o esquema desses marcadores.
 * Microsoft Word: Anúncio da distância para a borda esquerda da página quando a tecla tab é pressionada. (#1353)
 * Microsoft Word: obtenção de resposta em voz e braille para grande parte das teclas de atalho disponíveis para formatação (negrito, itálico, sublinhado, alinhamento e nível de rascunho. ). (#1353)
 * Microsoft Excel: Caso haja comentários na célula selecionada, estes agora podem ser anunciados pressionando-se NVDA+alt+c. (#2920)
@@ -3638,7 +3638,7 @@ Os destaques desta versão incluem o modo de navegação para documentos no Micr
 * Uma nova opção no diálogo de opções de teclado, "Permitir leitura dinâmica durante a leitura contínua", possibilita navegar ao longo dum documento com os comandos de navegação rápida e linha / parágrafo em modo de navegação e manter-se em leitura contínua. Essa opção está desativada por padrão. (#2766)
 * Existe agora um diálogo de gestos de entrada com o fim de possibilitar uma personalização mais simples dos gestos de entrada (tais como as teclas do teclado) para comandos do NVDA. (#1532)
 * Agora é possível ter diferentes opções para diferentes situações usando perfis de configuração. Os Perfis podem ser ativados manualmente ou automaticamente (isto é, para um aplicativo em particular). (#87, #667, #1913)
- * No Microsoft Excel, as células que são links agora são anunciadas como links. (#3042)
+* No Microsoft Excel, as células que são links agora são anunciadas como links. (#3042)
 * No Microsoft Excel, a existência de comentários numa célula agora é anunciada para o usuário. (#2921)
 
 ### Correção de falhas
@@ -3757,7 +3757,7 @@ Esta versão corrige o problema de o NVDA travar ao iniciar quando configurado p
 
 ## 2013.1
 
- Entre os destaques desta versão incluem-se um esquema de teclado mais intuitivo e consistente para laptops; suporte básico para o Microsoft PowerPoint; suporte para descrições longas em navegadores web; e suporte para a entrada de braille para computador em linhas que possuam um teclado braille.
+Entre os destaques desta versão incluem-se um esquema de teclado mais intuitivo e consistente para laptops; suporte básico para o Microsoft PowerPoint; suporte para descrições longas em navegadores web; e suporte para a entrada de braille para computador em linhas que possuam um teclado braille.
 
 ### Importante
 
@@ -3834,8 +3834,8 @@ Por favor consulte o documento da [Referência Rápida de Comandos](keyCommands.
 * Corrigido o suporte de Bluetooth para a linha braille Papenmeier Braillex Trio. (#2995)
 * Corrigida a incapacidade para usar certas vozes Microsoft Speech API versão 5 tais como as vozes Koba Speech 2. (#2629)
 * Em aplicações que usam Java Access Bridge, as linhas braille agora são atualizadas corretamente quando o cursor é movido em campos de edição de texto. (#3107)
-Suporte para marcas de formulários em documentos no modo de navegação, caso suportem marcas. (#2997)
- * O driver para o sintetizador eSpeak agora controla a leitura por caractere mais apropriadamente (por exemplo, anuncia o nome de uma letra ou seu valor ao invés de falar apenas seu som ou seu nome genérico). (#3106)
+* Suporte para marcos de formulários em documentos no modo de navegação, caso suportem marcos. (#2997)
+* O driver para o sintetizador eSpeak agora controla a leitura por caractere mais apropriadamente (por exemplo, anuncia o nome de uma letra ou seu valor ao invés de falar apenas seu som ou seu nome genérico). (#3106)
 * O NVDA já não falha ao copiar configurações do usuário para uso no logon e outras telas seguras, quando o caminho do perfil do usuário contém caracteres não-ascii. (#3092)
 * O NVDA já não trava quando se usa a entrada de caracteres Asiáticos em alguns aplicativos .NET. (#3005)
 * Agora é possível usar o modo de navegação para páginas no Internet Explorer 10 em modos standards; um exemplo é a página de login [www.gmail.com](http://www.gmail.com). (#3151)
@@ -4166,7 +4166,7 @@ Os destaques desta versão incluem a mudança automática do idioma do sintetiza
  * Para suportar essa função, os drivers precisam ter controle de speech.LangChangeCommand em seqüências passadas para SynthDriver.speak().
  * Os objetos para SynthDriver devem também fornecer a informação do idioma para OS OBJETOS de VoiceInfo (ou substituir o atributo do idioma para retomar o idioma atual). Caso contrário, o idioma da interface do usuário do NVDA será usado.
 
-### 2011.2
+## 2011.2
 
 Os destaques desta versão incluem maiores implementações no tocante à pontuação e sinais, como configuração dos níveis, personalização dos nomes e descrições de caracteres; Leitura contínua sem pausa ao fim das linhas; melhorado o suporte ARIA no Internet Explorer; suporte melhorado para documentos XFA/LiveCycle PDF no Adobe Reader; acesso aos textos escritos na tela em mais aplicativos; e acesso a informações de formatação e cor para os textos escritos na tela.
 
@@ -4563,7 +4563,7 @@ Esta revisão enfoca-se principalmente em Correção de Falhas e melhoras na exp
 * O NVDA já não anuncia que um documento do Firefox está ocupado (ex.: devido a uma atualização ou recarga) quando esse documento está em segundo plano. Isto também fazia com que a barra de status da aplicação em primeiro plano fosse anunciada falsamente.
 * quando o leiaute de teclado do Windows é alterado (com control+shift ou alt+shift), o nome completo do leiaute é anunciado em voz e braille. Anteriormente só se anunciava em voz, e leiautes alternativos (ex.: Dvorak) não eram anunciados.
 * Caso o anúncio de tabelas esteja desativado, a informação de tabela já não é anunciada quando o foco muda.
-Certos controles de vista em árvore em aplicações de 64 bit (como o conteúdo de vista em árvore no Microsoft HTML Help) são agora acessíveis. (#473)
+* Certos controles de vista em árvore em aplicações de 64 bit (como o conteúdo de vista em árvore no Microsoft HTML Help) são agora acessíveis. (#473)
 * Resolvidos alguns problemas com o registro de mensagens que contém caracteres não-ASCII. Isso poderia causar falsos erros em alguns casos em sistemas que não estão em inglês. (#581)
 * A informação no Diálogo Sobre o NVDA agora aparece no idioma configurado pelo usuário em lugar de somente em Inglês. (#586)
 * Problemas já não são encontrados ao usar o Anel de Opções de Voz depois que a voz é alterada para uma que possui menos opções que a anterior.
@@ -4583,7 +4583,7 @@ O mais destacável desta versão inclui o suporte para versões de 64 bit do Win
 * O NVDA já não interrompe a voz quando as teclas de controle do volume são pressionadas no teclado, permitindo ao usuário alterar o volume e ouvir os resultados atuais imediatamente. (#287)
 * Reescrito Completamente o suporte para documentos do Microsoft Internet Explorer e Adobe Acrobat. Este suporte foi unificado com suporte interno utilizado pelo Mozilla Gecko, assim características como a interpretação mais rápida de páginas, navegação extensa e rápida, lista de links, seleção de texto, modo de foco automático e suporte de braille estão agora disponíveis nestes documentos.
 * melhorado o suporte para o controle da seleção de data encontrado no diálogo de propriedades de data/Hora no Windows Vista.
- * melhorado o suporte para o menu iniciar Moderno XP/Vista (especificamente os menus Todos os programas e lugares). A informação de nível apropriada é agora anunciada.
+* melhorado o suporte para o menu iniciar Moderno XP/Vista (especificamente os menus Todos os programas e lugares). A informação de nível apropriada é agora anunciada.
 * A quantidade de texto que é anunciada com movimento do mouse, é agora configurável desde o diálogo Opções do mouse. uma escolha de parágrafo, linha, palavra ou caractere pode ser feita.
 * Anúncio de erros ortográficos sob o cursor no Microsoft Word.
 * suporte para correção ortográfica no Microsoft Word 2007. Suporte Parcial pode estar disponível para versões anteriores do Microsoft Word.
