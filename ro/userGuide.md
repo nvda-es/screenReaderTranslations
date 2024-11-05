@@ -35,6 +35,7 @@ Trăsăturile importante includ:
 * Raportare de comenzi și text în timpul folosirii gesturilor de atingere pe ecrane tactile
 * Suport pentru interfețe de control cunoscute cum ar fi Microsoft Active Accessibility, Java Access Bridge, IAccessible2 și UI Automation
 * Suport pentru Windows Command Prompt și aplicații de consolă
+* Capacitatea de a marca vizual focalizarea sistemului
 
 ### Internaționalizare {#Internationalizare}
 
