@@ -17,14 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.9\n"
 
-#. Translators: Dialog text shown when trying to install the add-on on an older version of Windows.
+#. Translators: Dialog text shown when trying to install the add-on on
+#. releases earlier than minimum supported release.
+#, python-brace-format
 msgid ""
-"You are using an older version of Windows. This add-on requires Windows 10 "
-"or later."
+"You are using {releaseName} ({build}), a Windows release not supported by "
+"this add-on.\n"
+"This add-on requires {supportedReleaseName} ({supportedBuild}) or later."
 msgstr ""
 
-#. Translators: title of the dialog shown when trying to install the add-on on an old version of Windows.
-msgid "Old Windows version"
+#. Translators: dialog title shown when trying to install the add-on in unsupported systems.
+msgid "Unsupported Windows release"
 msgstr ""
 
 #. Translators: announced in SPL Creator and Remote VT
@@ -142,6 +145,7 @@ msgid ""
 "A: Automation.\n"
 "C: Announce name of the currently playing track.\n"
 "D: Remaining time for the playlist.\n"
+"Control+D: Control keys toggle (Studio 6.10 and later).\n"
 "E: Overall metadata streaming status.\n"
 "Shift+1 through shift+4, shift+0: Metadata streaming status for DSP encoder "
 "and four additional URL's.\n"
@@ -195,6 +199,7 @@ msgid ""
 "A: Automation.\n"
 "C: Toggle cart explorer.\n"
 "Shift+C: Announce name of the currently playing track.\n"
+"Control+D: Control keys toggle (Studio 6.10 and later).\n"
 "E: Overall metadata streaming status.\n"
 "Shift+1 through shift+4, shift+0: Metadata streaming status for DSP encoder "
 "and four additional URL's.\n"
@@ -252,7 +257,6 @@ msgstr "SPL Studio Beállítások"
 msgid "SPL settings"
 msgstr "SPL beállítások"
 
-#. Translators: Presented when library scan is complete.
 #, fuzzy, python-brace-format
 msgid "Scan complete with {scanCount} items"
 msgstr "{itemCount} elem vizsgálata befejeződött"
@@ -265,8 +269,6 @@ msgstr "A Cart Explorer aktív"
 msgid "Warning: Microphone active"
 msgstr "Figyelem: A mikrofon aktív!"
 
-#. Translators: Presented when end of introduction is approaching
-#. (example output: 5 sec left in track introduction).
 #, python-brace-format
 msgid "Warning: {seconds} sec left in track introduction"
 msgstr ""
@@ -314,8 +316,6 @@ msgstr "Megnyitja az SPL Studio kiegészítő beállítási párbeszédpanelét.
 msgid "Toggles between various braille timer settings."
 msgstr "Váltogat a különböző braille időzítő beállítások között"
 
-#. Translators: Standard dialog message when an item one wishes to search is not found
-#. (copy this from main nvda.po).
 msgid "Search string not found."
 msgstr "A keresett kifejezés nem található."
 
@@ -411,12 +411,10 @@ msgstr "A vizsgálat elindult"
 msgid "{itemCount} items in the library"
 msgstr "{itemCount} elem a gyűjteményben"
 
-#. Translators: Presented after library scan is done.
 #, python-brace-format
 msgid "Scan complete with {itemCount} items"
 msgstr "{itemCount} elem vizsgálata befejeződött"
 
-#. Translators: Presented when library scan is in progress.
 msgid "Scanning"
 msgstr "Vizsgálat folyamatban"
 
@@ -605,6 +603,10 @@ msgstr ""
 msgid "Failed to locate Studio main window, cannot enter SPL Assistant"
 msgstr ""
 
+#. Translators: message shown when an SPL Assistant layer command cannot be performed.
+msgid "Control keys status announcement requires Studio 6.10 or later"
+msgstr ""
+
 #. Translators: presented when playlist modification message isn't shown.
 msgid "Playlist modification not available"
 msgstr "A lejátszási lista módosítása nem engedélyezett"
@@ -627,7 +629,6 @@ msgstr "A következő zeneszámról nem érhetők el információk."
 msgid "Announces title of the currently playing track"
 msgstr "Bemondja a lejátszás alatt álló &cart nevét."
 
-#. Translators: Presented when there is no information for the current track.
 #, fuzzy
 msgid "Cannot locate current track information"
 msgstr "A következő zeneszámról nem érhetők el információk."
@@ -775,7 +776,6 @@ msgid "active"
 msgstr ""
 
 #. Translators: A flag indicating the broadcast profile is an instant switch profile.
-#. Instant switch flag is set on another profile, so remove the flag first.
 msgid "instant switch"
 msgstr ""
 
@@ -838,7 +838,6 @@ msgstr ""
 msgid "Welcome to StationPlaylist add-on"
 msgstr "StationPlaylist Studio"
 
-#. Translators: A checkbox to show welcome dialog.
 msgid "Show welcome dialog when I start Studio"
 msgstr ""
 
@@ -928,8 +927,6 @@ msgstr ""
 msgid "Profile delete error"
 msgstr ""
 
-#. Translators: The confirmation prompt displayed
-#. when the user requests to delete the active broadcast profile.
 msgid ""
 "You are about to delete the currently active profile. Select yes if you wish "
 "to proceed."
@@ -1152,8 +1149,6 @@ msgstr "Vizsgálat száma"
 msgid "Top genre count (0 displays all genres)"
 msgstr ""
 
-#. Translators: the label for a setting in SPL add-on settings
-#. to show playlist snapshots window when the snapshots command is pressed once.
 msgid "&Show results window when playlist snapshots command is performed once"
 msgstr ""
 
@@ -1275,8 +1270,6 @@ msgstr ""
 msgid "Columns Explorer for SPL Creator"
 msgstr ""
 
-#. Translators: The label for a setting in SPL add-on settings
-#. to select column for this column slot.
 #, python-brace-format
 msgid "Slot {position}"
 msgstr ""
@@ -1301,8 +1294,6 @@ msgstr "&Hallgatók számának bejelentése"
 msgid "&Announce name of the currently playing cart"
 msgstr "Bemondja a lejátszás alatt álló &cart nevét."
 
-#. Translators: the label for a setting in SPL add-on settings
-#. to announce player position for the current and next tracks.
 msgid ""
 "Include track player &position when announcing current and next track "
 "information"
@@ -1351,7 +1342,6 @@ msgstr ""
 msgid "Warning"
 msgstr "Figyelmeztetés"
 
-#. Translators: A dialog message shown when settings were reset to defaults.
 msgid "Successfully applied default add-on settings."
 msgstr "A kiegészítő alapértelmezett beállításai sikeresen betöltve."
 
@@ -1375,7 +1365,6 @@ msgstr "Beállítások visszaállítása"
 msgid "StationPlaylist Add-on Settings"
 msgstr "Studio kiegészítő beállításai"
 
-#. Translators: presented when only normal profile is in use.
 msgid "Normal profile is in use, cannot open broadcast profiles dialog."
 msgstr ""
 
@@ -1405,7 +1394,6 @@ msgstr ""
 msgid "Time range finder"
 msgstr ""
 
-#. Translators: the label for a group to specify minimum track duration in time range finder dialog.
 msgid "Minimum duration"
 msgstr ""
 
@@ -1417,7 +1405,6 @@ msgstr ""
 msgid "Second"
 msgstr ""
 
-#. Translators: the label for a group to specify maximum track duration in time range finder dialog.
 msgid "Maximum duration"
 msgstr ""
 
@@ -1425,8 +1412,6 @@ msgstr ""
 msgid "Minimum duration is greater than the maximum duration."
 msgstr ""
 
-#. Translators: Presented when a track with a duration
-#. between minimum and maximum duration is not found.
 msgid "No track with duration between minimum and maximum duration."
 msgstr ""
 
@@ -1520,7 +1505,6 @@ msgstr ""
 msgid "Transcript action:"
 msgstr ""
 
-#. Translators: Message displayed if errors were found in encoder configuration file.
 msgid "Your encoder settings had errors and were reset to defaults."
 msgstr ""
 
@@ -1604,7 +1588,6 @@ msgstr "Váltson a Studiora a csatlakozás után."
 msgid "Do not switch to Studio after connecting"
 msgstr "Ne váltson a Studiora a csatlakozás után."
 
-#. Translators: Input help mode message for an encoder settings command.
 msgid ""
 "Toggles whether Studio will play the first song when connected to a "
 "streaming server."
@@ -1643,7 +1626,6 @@ msgstr "{encoderNumber} encoder nem lesz ellenőrizve"
 msgid "Encoder monitoring canceled"
 msgstr "Encoder ellenőrzés megszakítva"
 
-#. Translators: Input help mode message for an encoder settings command.
 msgid ""
 "Opens a dialog to erase encoder labels and settings from an encoder that was "
 "deleted."
@@ -1658,13 +1640,11 @@ msgstr "Írja be a törlendő encoder pozícióját!"
 msgid "Encoder label and settings eraser"
 msgstr "Beállítások visszaállítása"
 
-#. Translators: Input help mode message for a command in StationPlaylist add-on.
 msgid ""
 "Shows encoder settings dialog to configure various encoder settings such as "
 "encoder label."
 msgstr ""
 
-#. Translators: Text of the dialog when another encoder settings dialog is open.
 #, fuzzy
 msgid "Another encoder settings dialog is open."
 msgstr "Egy másik riasztás ablak már nyitva van."
@@ -1763,7 +1743,6 @@ msgstr ""
 "SPL Vezérlőpult parancs. Az elérhető parancsok listáját a kiegészítő "
 "útmutatójában találja."
 
-#. Translators: Presented when NVDA cannot enter SPL Controller layer since SPL Studio is focused.
 msgid ""
 "You are already in SPL Studio window. For status commands, use SPL Assistant "
 "commands."
@@ -1823,8 +1802,8 @@ msgstr "SPL Vezérlőpult Súgó"
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 #, fuzzy
 msgid ""
-"Enhances support for StationPlaylist apps.\n"
-"In addition, adds global commands for the studio from everywhere."
+"Enhances support for StationPlaylist apps. In addition, adds global commands "
+"for the Studio application from everywhere."
 msgstr ""
 "Javítja a Station Playlist Studio támogatását.\n"
 "Emellett olyan billentyűparancsok lettek hozzáadva, melyeket bármely "
